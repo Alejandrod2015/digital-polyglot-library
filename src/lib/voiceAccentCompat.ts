@@ -20,7 +20,7 @@
  *    fuera de la tabla). El UI lo trata como acceptable pero lo
  *    marca para auditoría.
  *
- * Importante: una voz `unverified` siempre cae en "unknown" — sin oído
+ * Importante: una voz `unverified` siempre cae en "unknown"; sin oído
  * humano que confirme el accent, no podemos rankear su compatibilidad.
  */
 
@@ -110,7 +110,7 @@ const COMPAT_TABLE: Record<StorySetting, CompatRule> = {
     block: ["argentine", "peninsular-castilian", "peninsular-andalusian", "peninsular-northern"],
   },
   spain: {
-    // Madrid / Castilla — el "Spanish from Spain" default.
+    // Madrid / Castilla; el "Spanish from Spain" default.
     perfect: ["peninsular-castilian"],
     acceptable: ["peninsular-northern", "peninsular-andalusian"],
     block: ["mexican", "argentine", "colombian", "chilean", "peruvian", "caribbean", "neutral-latam"],
@@ -216,7 +216,7 @@ const COMPAT_TABLE: Record<StorySetting, CompatRule> = {
  * Score de compatibilidad para un voice tagueado X cuando se castea
  * en una historia con setting Y. La voz puede tener varios tags; nos
  * quedamos con el mejor match (un tag `perfect` gana sobre uno
- * `block` aunque la voz tenga ambos — caso edge de bilingüe).
+ * `block` aunque la voz tenga ambos; caso edge de bilingüe).
  */
 export function compatScore(
   voiceTags: AccentTag[] | undefined,
@@ -226,10 +226,10 @@ export function compatScore(
     return { score: "unknown", reason: "Setting de la historia no determinado" };
   }
   if (!voiceTags || voiceTags.length === 0) {
-    return { score: "unknown", reason: "Voz sin accentTags — auditar antes de castear" };
+    return { score: "unknown", reason: "Voz sin accentTags; auditar antes de castear" };
   }
   if (voiceTags.includes("unverified")) {
-    return { score: "unknown", reason: "Voz `unverified` — auditar accent antes de usar" };
+    return { score: "unknown", reason: "Voz `unverified`; auditar accent antes de usar" };
   }
 
   const rule = COMPAT_TABLE[storySetting];

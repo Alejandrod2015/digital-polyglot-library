@@ -9,7 +9,7 @@ type RegionBadgeProps = {
 
 export default function RegionBadge({ region, className = "" }: RegionBadgeProps) {
   const label = formatRegion(region ?? undefined);
-  if (label === "—") return null;
+  if (label === "-") return null;
 
   return (
     <span

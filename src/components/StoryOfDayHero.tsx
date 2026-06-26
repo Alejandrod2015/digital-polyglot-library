@@ -12,7 +12,7 @@ type Story = {
   href: string;            // /stories/{slug} or /story-of-the-day
   title: string;
   bookTitle: string;       // "Colombian Spanish Stories for Beginners"
-  coverUrl: string;        // REQUIRED — full URL or absolute path
+  coverUrl: string;        // REQUIRED; full URL or absolute path
   description?: string;
   level?: string;
   language?: string;
@@ -44,7 +44,7 @@ function trimDescription(raw: string, maxChars = 200): string {
 }
 
 /**
- * STORY OF THE DAY HERO — the editorial 2-column layout.
+ * STORY OF THE DAY HERO; the editorial 2-column layout.
  *
  * Layout contract:
  *   - `grid grid-cols-[1.05fr_1fr]` on desktop ≥ 980px → IMAGE LEFT, BODY RIGHT

@@ -13,7 +13,7 @@ const BLOG_BACKEND = process.env.BLOG_BACKEND ?? "mdx";
 // boundary so e.g. /feed matches /feed and /feed/foo but not /feedback.
 //
 // NOTE: the WooCommerce *store* surface (/shop, /product, /product-category,
-// /cart, /checkout, /my-account) is intentionally NOT here — it moved to
+// /cart, /checkout, /my-account) is intentionally NOT here; it moved to
 // Shopify and is 308-redirected instead (see shopifyRedirectFor). The old WP
 // store rendered broken product images, an orphaned cart, and a 404 on
 // /my-account, so proxying it only kept dead pages alive.
@@ -100,7 +100,7 @@ export default clerkMiddleware(async (auth, req) => {
 
   // Blog: transparent proxy to the WordPress origin while BLOG_BACKEND !== mdx.
   // Done in middleware so we can keep the trailing slash on the upstream
-  // request — otherwise WP issues a 301 to wp.digitalpolyglot.com/.../,
+  // request; otherwise WP issues a 301 to wp.digitalpolyglot.com/.../,
   // leaking the internal host into the user's URL bar. We accept both
   // /blog/foo and /blog/foo/ as canonical. When BLOG_BACKEND === "mdx",
   // the request falls through to the Next.js routes in app/blog/*.

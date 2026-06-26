@@ -3,7 +3,7 @@
 import { MessageSquare } from "lucide-react";
 
 const FEEDBACK_MAILTO = `mailto:support@digitalpolyglot.com?subject=${encodeURIComponent(
-  "Feedback — Digital Polyglot Library"
+  "Feedback; Digital Polyglot Library"
 )}&body=${encodeURIComponent("Tell us what's on your mind:\n\n")}`;
 
 export default function FeedbackButton() {

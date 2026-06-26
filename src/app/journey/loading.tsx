@@ -30,7 +30,7 @@ function StoryRow({ offset, active }: { offset: number; active?: boolean }) {
 function TopicSection({ storyCount, activeIndex }: { storyCount: number; activeIndex?: number }) {
   return (
     <section className="mb-2">
-      {/* Topic banner — chunky full-width card: eyebrow + big title + icon */}
+      {/* Topic banner; chunky full-width card: eyebrow + big title + icon */}
       <div className="mb-8 flex w-full items-center gap-[14px] rounded-[22px] bg-white/[0.08] p-[22px] shadow-[inset_0_2px_0_rgba(255,255,255,0.10),0_5px_0_rgba(0,0,0,0.35)]">
         <div className="flex min-w-0 flex-1 flex-col gap-3">
           <div className="h-3 w-36 rounded bg-white/15" />
@@ -38,7 +38,7 @@ function TopicSection({ storyCount, activeIndex }: { storyCount: number; activeI
         </div>
         <div className="h-11 w-11 shrink-0 rounded-[14px] bg-white/12" />
       </div>
-      {/* Story node path — zigzag via wave offsets */}
+      {/* Story node path; zigzag via wave offsets */}
       <div className="mb-6 flex flex-col">
         {Array.from({ length: storyCount }).map((_, i) => (
           <StoryRow key={i} offset={WAVE[i % WAVE.length]} active={i === activeIndex} />

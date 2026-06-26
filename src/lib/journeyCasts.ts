@@ -321,7 +321,7 @@ export const SPANISH_LATAM_CAST: JourneyCast = {
 };
 
 /**
- * German conversational journey — 3 mini-casts (Berlin / München / Hamburg),
+ * German conversational journey; 3 mini-casts (Berlin / München / Hamburg),
  * each anchored to one of the 3 beta topics. Cast designed June 2026 against
  * the 10 approved German dialogue voices (4 original + 6 added in voice
  * audit rounds). Topic→city mapping:
@@ -472,7 +472,7 @@ export const GERMAN_TRAVELER_CAST: JourneyCast = {
     },
   ],
   notes:
-    "Beta inicial: 3 ciudades alemanas (Berlin/München/Hamburg) × 3 anchors estables cada una + roles menores (Frau Hoffmann secundaria; Bäckerin y Kollegin bit roles de una escena). 21 stories totales (3 topics × 7) al nivel A1. Cada topic ambientado en una ciudad específica: home-family→Berlin, meeting-new-people→München, food-everyday-life→Hamburg. Voces: las 9 anchors usan 9 slots; el único slot libre es Marius (MASCULINO), así que NO hay voz femenina libre — los roles femeninos menores reusan voces femeninas existentes garantizando que no choquen dentro de la misma historia. Si en el futuro se necesitan más mujeres distintas, hace falta sumar una voz femenina DE al pool. NARRADOR del journey = `gjango` (GERMAN_DIALOGUE_VOICES), elegido 2026-06-05 en reemplazo de Marius (que no gustó). Al regenerar audio, voiceMap.narrator = GERMAN_DIALOGUE_VOICES.gjango.",
+    "Beta inicial: 3 ciudades alemanas (Berlin/München/Hamburg) × 3 anchors estables cada una + roles menores (Frau Hoffmann secundaria; Bäckerin y Kollegin bit roles de una escena). 21 stories totales (3 topics × 7) al nivel A1. Cada topic ambientado en una ciudad específica: home-family→Berlin, meeting-new-people→München, food-everyday-life→Hamburg. Voces: las 9 anchors usan 9 slots; el único slot libre es Marius (MASCULINO), así que NO hay voz femenina libre; los roles femeninos menores reusan voces femeninas existentes garantizando que no choquen dentro de la misma historia. Si en el futuro se necesitan más mujeres distintas, hace falta sumar una voz femenina DE al pool. NARRADOR del journey = `gjango` (GERMAN_DIALOGUE_VOICES), elegido 2026-06-05 en reemplazo de Marius (que no gustó). Al regenerar audio, voiceMap.narrator = GERMAN_DIALOGUE_VOICES.gjango.",
 };
 
 /**
@@ -493,19 +493,19 @@ export const GERMAN_TRAVELER_V2_VOICEMAP: Record<string, keyof typeof GERMAN_DIA
   // feedback del usuario 2026-06-15. Kai/Ben se movieron de moritz a
   // joerg/michael para no chocar con el narrador.
   narrator: "moritz",
-  // food-everyday-life — Hamburg
+  // food-everyday-life; Hamburg
   lena: "ela_warm", jonas: "michael", verkäufer: "daniel_konv", pia: "eleonore",
-  // home-family — Berlin
+  // home-family; Berlin
   petra: "enniah", stefan: "joerg", tobias: "michael",
-  // meeting-new-people — München
+  // meeting-new-people; München
   sofie: "ela_calm", max: "marius", clara: "ela_warm", ben: "michael",
-  // places-getting-around — Köln
+  // places-getting-around; Köln
   greta: "jane", bernd: "daniel", nichte: "daien",
-  // community-celebrations — Nürnberg
+  // community-celebrations; Nürnberg
   anja: "eleonore", kai: "joerg", kundin: "marlena",
-  // nature-adventure — Schwarzwald
+  // nature-adventure; Schwarzwald
   mia: "ela_warm", finn: "marius",
-  // legends-folklore — Heidelberg
+  // legends-folklore; Heidelberg
   hanna: "daien", lukas: "daniel",
 };
 

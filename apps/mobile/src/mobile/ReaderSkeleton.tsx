@@ -6,7 +6,7 @@ import { Animated, Easing, StyleSheet, View } from "react-native";
  * fetched on tap. Mirrors the real reader: a tall cover area + a few
  * paragraph blocks so the page doesn't pop the moment text arrives.
  *
- * Uses a single shared opacity loop so all blocks breathe in unison —
+ * Uses a single shared opacity loop so all blocks breathe in unison -
  * cheaper than per-block animations and visually calmer than chasing
  * staggered pulses.
  */
@@ -38,7 +38,7 @@ export function ReaderSkeleton() {
 
   return (
     <View style={styles.container} accessibilityLabel="qa-reader-skeleton" testID="qa-reader-skeleton">
-      {/* Top bar — back button + bookmark icons, just shapes */}
+      {/* Top bar; back button + bookmark icons, just shapes */}
       <View style={styles.topBar}>
         <Animated.View style={[styles.topBarButton, animated]} />
         <View style={styles.topBarRight}>

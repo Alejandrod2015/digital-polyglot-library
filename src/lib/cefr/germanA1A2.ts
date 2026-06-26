@@ -153,7 +153,7 @@ export const GERMAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "gesundheit","krankheit","schmerz","medizin","arzt","ärztin","apotheke",
   "sport","spiel","musik","kunst","film","buch","roman","gedicht","nachricht",
 
-  // ── Round 2 (June 2026) — added during German conversational beta build.
+  // ── Round 2 (June 2026); added during German conversational beta build.
   // Common A1 nouns/verbs/expressions not in the initial list that surface
   // as false-positive C2 during v2-2026-06 audits.
   "klingel","lächeln","bäcker","bäckerei","schweigen","gewohnheit","kanne","gern","gerne",
@@ -225,7 +225,7 @@ export const GERMAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
 
   // ── Batch added 2026-06-15 for the German "Traveler" journey. All from
   //    the Goethe A1/A2 Wortliste (food, kitchen, home, harbor, daily life)
-  //    — the prior list was missing many first-months words. ──
+  //   ; the prior list was missing many first-months words. ──
   "morgens","vormittag","hafen","boot","meer","salz","fisch","möwe",
   "frisch","mitbewohner","bewohner","müde","becher","lachs","kabeljau",
   "teuer","billig","verkäufer","verkäuferin","käufer","preis","preise","eis",

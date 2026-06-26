@@ -48,7 +48,7 @@ export async function GET() {
       });
     }
 
-    // No custom config yet — return defaults
+    // No custom config yet; return defaults
     return NextResponse.json({
       source: "defaults",
       rules: PEDAGOGICAL_RULES,
@@ -56,7 +56,7 @@ export async function GET() {
       updatedAt: null,
     });
   } catch {
-    // Table might not exist yet — return defaults
+    // Table might not exist yet; return defaults
     return NextResponse.json({
       source: "defaults",
       rules: PEDAGOGICAL_RULES,

@@ -46,7 +46,7 @@ export async function GET() {
     const report: QAReport = JSON.parse(raw);
     return NextResponse.json(report);
   } catch {
-    // No report file yet — return empty report
+    // No report file yet; return empty report
     return NextResponse.json({
       generatedAt: new Date().toISOString(),
       summary: { critical: 0, warning: 0, info: 0, total: 0 },

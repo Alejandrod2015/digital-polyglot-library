@@ -115,7 +115,7 @@ export async function GET(req: NextRequest): Promise<Response> {
         : Promise.resolve([]),
     ]);
 
-    // Exclude story_opened from the audio set — it's an "opened" signal, not
+    // Exclude story_opened from the audio set; it's an "opened" signal, not
     // an actual listen.
     const audioBy = new Set(
       audioEvents.filter((e) => e.eventType !== "story_opened").map((e) => e.userId)

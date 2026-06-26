@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./LandingPage.module.css";
 
 /**
- * Word Quest "Meaning" exercise demo — mirrors the real mobile screen.
+ * Word Quest "Meaning" exercise demo; mirrors the real mobile screen.
  * Word in Spanish, 4 English definitions, animated cursor that sweeps
  * the cards and settles on the correct (green-accented) answer.
  *

@@ -162,7 +162,7 @@ export default function MenuClient({ plan }: Props) {
       }
       // FULL reload (no `router.push`). Test mode es destructivo y
       // queremos garantizar que TODO cache server-side y client-side
-      // arranca desde cero — RSC cache, useSWR, Clerk metadata,
+      // arranca desde cero; RSC cache, useSWR, Clerk metadata,
       // todo. router.push() reusa el state, lo cual dejaba al user
       // viendo la pantalla previa (e.g. /studio) con datos stale.
       window.location.href = "/";

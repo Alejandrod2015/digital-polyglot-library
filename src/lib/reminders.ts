@@ -3,7 +3,7 @@ import type { OnboardingGoal } from "@/lib/onboarding";
 // 24 chips, una por cada hora del día. Antes era [8, 12, 18, 20]
 // (4 slots fijos) pero el usuario quería poder elegir cualquier hora.
 // Para granularidad de minuto usamos REMINDER_MINUTE_OPTIONS (cada 15
-// minutos) — combinadas dan 96 slots posibles "HH:MM".
+// minutos); combinadas dan 96 slots posibles "HH:MM".
 export const REMINDER_HOUR_OPTIONS = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
   12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,

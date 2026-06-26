@@ -182,7 +182,7 @@ export default function StudioAudioClient() {
       try {
         parsed = JSON.parse(trimmed);
       } catch {
-        setError("JSON inválido — revisa los corchetes y comillas");
+        setError("JSON inválido; revisa los corchetes y comillas");
         return;
       }
     }
@@ -194,7 +194,7 @@ export default function StudioAudioClient() {
       });
       const data = await res.json();
       if (!res.ok) {
-        setError(data?.error ? `${data.error}${data.details ? ` — ${data.details}` : ""}` : `HTTP ${res.status}`);
+        setError(data?.error ? `${data.error}${data.details ? `; ${data.details}` : ""}` : `HTTP ${res.status}`);
         return;
       }
       await load();
@@ -266,7 +266,7 @@ export default function StudioAudioClient() {
       });
       const data = await res.json();
       if (!res.ok) {
-        const msg = data?.error ? `${data.error}${data.details ? ` — ${data.details}` : ""}${data.hint ? ` (${data.hint})` : ""}` : `HTTP ${res.status}`;
+        const msg = data?.error ? `${data.error}${data.details ? `; ${data.details}` : ""}${data.hint ? ` (${data.hint})` : ""}` : `HTTP ${res.status}`;
         setError(msg);
         return false;
       }
@@ -439,13 +439,13 @@ export default function StudioAudioClient() {
                   <Fragment key={s.id}>
                   <tr style={{ borderTop: "1px solid var(--card-border)" }}>
                     <td style={td}>
-                      <div style={{ fontWeight: 600 }}>{s.title ?? "—"}</div>
+                      <div style={{ fontWeight: 600 }}>{s.title ?? "-"}</div>
                       <div style={{ fontSize: 11, color: "var(--muted)" }}>{s.topic} · slot {s.slotIndex}</div>
                     </td>
                     <td style={td}>{s.journey.name}</td>
                     <td style={td}>{s.journey.language}</td>
                     <td style={td}>{s.level}</td>
-                    <td style={td}>{s.wordCount ?? "—"}</td>
+                    <td style={td}>{s.wordCount ?? "-"}</td>
                     <td style={td}>
                       <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
                         <select
@@ -455,7 +455,7 @@ export default function StudioAudioClient() {
                           style={{ ...selectStyle, maxWidth: 200, opacity: s.dialogueSpec && s.dialogueSpec.length > 0 ? 0.4 : 1 }}
                           title={s.dialogueSpec && s.dialogueSpec.length > 0 ? "Esta historia usa diálogo multi-voz; cada segmento define su voz" : ""}
                         >
-                          <option value="">— defecto del idioma —</option>
+                          <option value="">- defecto del idioma -</option>
                           {voices
                             .filter((v) => v.language === s.journey.language.toLowerCase() && v.status === "approved")
                             .map((v) => <option key={v.id} value={v.id}>{v.label}</option>)}
@@ -482,7 +482,7 @@ export default function StudioAudioClient() {
                         onChange={(e) => void setAmbientTag(s.id, e.target.value || null)}
                         style={selectStyle}
                       >
-                        <option value="">— ninguno —</option>
+                        <option value="">- ninguno -</option>
                         {ambients.map((a) => <option key={a} value={a}>{a}</option>)}
                       </select>
                     </td>
@@ -747,7 +747,7 @@ const DIALOGUE_CAST_GERMAN: DialogueCastVoice[] = [
     voiceId: "Ww7Sq9tx9CCOiNOwWgsx",
     role: "Narrador",
     accent: "Alemán nativo · M middle-aged",
-    profile: "Baritone — narrator default.",
+    profile: "Baritone; narrator default.",
     previewUrl: "https://storage.googleapis.com/eleven-public-prod/voices/Ww7Sq9tx9CCOiNOwWgsx/preview.mp3",
   },
   {
@@ -755,7 +755,7 @@ const DIALOGUE_CAST_GERMAN: DialogueCastVoice[] = [
     voiceId: "WHaUUVTDq47Yqc9aDbkH",
     role: "Mujer",
     accent: "Alemán nativo · F middle-aged",
-    profile: "Warm — primary female.",
+    profile: "Warm; primary female.",
     previewUrl: "https://storage.googleapis.com/eleven-public-prod/voices/WHaUUVTDq47Yqc9aDbkH/preview.mp3",
   },
   {
@@ -771,7 +771,7 @@ const DIALOGUE_CAST_GERMAN: DialogueCastVoice[] = [
     voiceId: "8SdTD5IMgFKT1jp7JbPC",
     role: "Mujer mayor",
     accent: "Alemán nativo · F middle-aged",
-    profile: "Mature narrator — Frau roles.",
+    profile: "Mature narrator; Frau roles.",
     previewUrl: "https://storage.googleapis.com/eleven-public-prod/voices/8SdTD5IMgFKT1jp7JbPC/preview.mp3",
   },
 ];
@@ -790,14 +790,14 @@ type DialogueCastCandidate = {
 };
 
 const DIALOGUE_CAST_CANDIDATES: DialogueCastCandidate[] = [
-  // Hueco prioritario #1: hombre mayor (abuelo) LATAM — cero voces hoy
+  // Hueco prioritario #1: hombre mayor (abuelo) LATAM; cero voces hoy
   {
     num: 1,
     name: "Ivan - Breathy, Wise-Sounding",
     voiceId: "oqO5cdAzjE5Ik5xWIZRL",
     region: "LATAM neutral",
     ageGender: "M old",
-    fitsRole: "Abuelo sabio — narrativo breathy",
+    fitsRole: "Abuelo sabio; narrativo breathy",
     previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/user/KvY1FoWUsvcW7pJIBqtQgoHlSad2/voices/oqO5cdAzjE5Ik5xWIZRL/breqON7QZP0TKZiWbprM.mp3",
   },
   {
@@ -806,7 +806,7 @@ const DIALOGUE_CAST_CANDIDATES: DialogueCastCandidate[] = [
     voiceId: "1hB7zCGWj11SeMuBseeI",
     region: "Cubano",
     ageGender: "M old",
-    fitsRole: "Abuelo caribeño — profesional sereno",
+    fitsRole: "Abuelo caribeño; profesional sereno",
     previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/5ce745e745794994ba2cb09963f9df13/voices/1hB7zCGWj11SeMuBseeI/61a7318f-fde0-4344-b428-e0139d39c62e.mp3",
   },
   {
@@ -815,7 +815,7 @@ const DIALOGUE_CAST_CANDIDATES: DialogueCastCandidate[] = [
     voiceId: "80lPKtzJMPh1vjYMUgwe",
     region: "Mexicano",
     ageGender: "M old",
-    fitsRole: "Abuelo norteño — profundo suave",
+    fitsRole: "Abuelo norteño; profundo suave",
     previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/f5ece55944454e93adeeae7c95a0bccd/voices/80lPKtzJMPh1vjYMUgwe/OdLhfMeDosUS2KjiTnPS.mp3",
   },
   // Hueco #2: F middle-aged en regiones no-rioplatenses
@@ -825,7 +825,7 @@ const DIALOGUE_CAST_CANDIDATES: DialogueCastCandidate[] = [
     voiceId: "jI8zlZKtaOjhGPBV6elt",
     region: "Mexicano",
     ageGender: "F middle-aged",
-    fitsRole: "Mamá en historia MX — cálida calmada serena",
+    fitsRole: "Mamá en historia MX; cálida calmada serena",
     previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/643d6ff739de47f48bc19e4fe4afd15a/voices/jI8zlZKtaOjhGPBV6elt/b3KecUcpfa1tLzBvIL2u.mp3",
   },
   {
@@ -834,7 +834,7 @@ const DIALOGUE_CAST_CANDIDATES: DialogueCastCandidate[] = [
     voiceId: "prblQcKOdF08ozhxP2mk",
     region: "Chileno",
     ageGender: "F middle-aged",
-    fitsRole: "Mamá en historia CL — cálida segura (slot angela_cl)",
+    fitsRole: "Mamá en historia CL; cálida segura (slot angela_cl)",
     previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/user/4eEn1XHsbXPotYgXL4dl1Vkc4tp2/voices/prblQcKOdF08ozhxP2mk/205da2a0-2615-4388-afc3-ea1635f07554.mp3",
   },
   {
@@ -843,7 +843,7 @@ const DIALOGUE_CAST_CANDIDATES: DialogueCastCandidate[] = [
     voiceId: "dyTONAae6PhdRb3hMKPM",
     region: "Peruano",
     ageGender: "F middle-aged",
-    fitsRole: "Mamá en historia Lima — versátil cercana",
+    fitsRole: "Mamá en historia Lima; versátil cercana",
     previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/f78f937dc6ee4a439a63795ce7ff139e/voices/dyTONAae6PhdRb3hMKPM/KYUWCzwNB7uZaXav7rsL.mp3",
   },
   {
@@ -852,7 +852,7 @@ const DIALOGUE_CAST_CANDIDATES: DialogueCastCandidate[] = [
     voiceId: "ebdrtet3LErOzR0r2i60",
     region: "Colombiano",
     ageGender: "F young",
-    fitsRole: "Mamá joven o hermana en historia Bogotá — clara natural profesional",
+    fitsRole: "Mamá joven o hermana en historia Bogotá; clara natural profesional",
     previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/81f58d58997f4f138c89d54f3e867004/voices/ebdrtet3LErOzR0r2i60/MmPqtEpNqIpuyP4XNOkg.mp3",
   },
   // Hueco #3: M young mexicano
@@ -862,7 +862,7 @@ const DIALOGUE_CAST_CANDIDATES: DialogueCastCandidate[] = [
     voiceId: "p1Q3ihQuPjyyENa1RGtl",
     region: "Mexicano",
     ageGender: "M young",
-    fitsRole: "Hijo/teen MX — amable sincero",
+    fitsRole: "Hijo/teen MX; amable sincero",
     previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/user/aaPjxuXAcUd7Vh0Ph6AQ6SqqhIp1/voices/p1Q3ihQuPjyyENa1RGtl/9uChkxn9F6NdRCMmjIeD.mp3",
   },
   {
@@ -871,7 +871,7 @@ const DIALOGUE_CAST_CANDIDATES: DialogueCastCandidate[] = [
     voiceId: "A1TMPwTwXl0r3bwjaTFc",
     region: "Mexicano",
     ageGender: "M young",
-    fitsRole: "Joven adulto MX — cálido articulado",
+    fitsRole: "Joven adulto MX; cálido articulado",
     previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/user/XDKQ0dHQAtWYQT2DVQ4macQKcKB3/voices/A1TMPwTwXl0r3bwjaTFc/dfBtrXKCTwurOqOu5BY8.mp3",
   },
   // Bonus: F young rioplatense (gap medio en region desarrollada)
@@ -881,7 +881,7 @@ const DIALOGUE_CAST_CANDIDATES: DialogueCastCandidate[] = [
     voiceId: "yA5jrK1S9cpCAojBYyMu",
     region: "Argentino",
     ageGender: "F young",
-    fitsRole: "Hermana/peer BA — cálida expresiva (slot lucia_arg)",
+    fitsRole: "Hermana/peer BA; cálida expresiva (slot lucia_arg)",
     previewUrl: "https://storage.googleapis.com/eleven-public-prod/database/user/0Fxn4XyfXfQ0sQ4RXHblZGBnRP23/voices/yA5jrK1S9cpCAojBYyMu/6m8A8BPRqNphBM5Isxsv.mp3",
   },
 ];
@@ -901,7 +901,7 @@ function DialogueCastCandidatesSection({ open, onToggle }: { open: boolean; onTo
       {open && (
         <div style={{ padding: "10px 12px", borderTop: "1px solid var(--card-border)", display: "flex", flexDirection: "column", gap: 6 }}>
           <p style={{ margin: "0 0 6px 0", fontSize: 12, color: "var(--muted)", lineHeight: 1.5 }}>
-            Audiciones pendientes — dale play a cada una y dime los números aprobados en chat. Cada aprobada se mueve a <code>SPANISH_DIALOGUE_VOICES</code> + cast aprobado abajo.
+            Audiciones pendientes; dale play a cada una y dime los números aprobados en chat. Cada aprobada se mueve a <code>SPANISH_DIALOGUE_VOICES</code> + cast aprobado abajo.
           </p>
           {DIALOGUE_CAST_CANDIDATES.map((c) => (
             <div
@@ -1115,7 +1115,7 @@ function VoiceSubsection({
           const langCloned = clonedByLang[lang] ?? [];
           const regionBuckets = new Map<string, VoiceEntry[]>();
           for (const v of langStatic) {
-            const key = v.region ?? "—";
+            const key = v.region ?? "-";
             const bucket = regionBuckets.get(key) ?? [];
             bucket.push(v);
             regionBuckets.set(key, bucket);
@@ -1386,7 +1386,7 @@ function DialoguePanel({
 
   // Setting de la historia para Capa 2 (gate de casting). Si no hay
   // mapping conocido, `inferStorySetting` devuelve null y el compat
-  // score cae a "unknown" — el UI no aplica restricciones.
+  // score cae a "unknown"; el UI no aplica restricciones.
   const storySetting = useMemo(
     () =>
       inferStorySetting({
@@ -1509,7 +1509,7 @@ function DialoguePanel({
                         onChange={(e) => handleCastChange(speaker, e.target.value)}
                         style={{ ...selectStyle, maxWidth: 360 }}
                       >
-                        <option value="">— elige voz —</option>
+                        <option value="">- elige voz -</option>
                         {sortedVoices.map(({ voice: v, compat }) => {
                           const badge = compatBadge(compat.score);
                           return (
@@ -1632,7 +1632,7 @@ function ClonedVoicesSection({
       const res = await fetch("/api/studio/audio/cloned-voices", { method: "POST", body: fd });
       const data = await res.json();
       if (!res.ok) {
-        onError(data?.error ? `${data.error}${data.details ? ` — ${data.details}` : ""}` : `HTTP ${res.status}`);
+        onError(data?.error ? `${data.error}${data.details ? `; ${data.details}` : ""}` : `HTTP ${res.status}`);
         return;
       }
       reset();
@@ -1697,7 +1697,7 @@ function ClonedVoicesSection({
           </label>
 
           <label style={{ display: "flex", flexDirection: "column", fontSize: 11, color: "var(--muted)", gap: 4 }}>
-            Transcripción exacta (opcional — si la dejas vacía, se autogenera con Whisper)
+            Transcripción exacta (opcional; si la dejas vacía, se autogenera con Whisper)
             <textarea
               value={refText}
               onChange={(e) => setRefText(e.target.value)}

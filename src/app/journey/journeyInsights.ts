@@ -4,7 +4,7 @@
 // `@/lib/prisma` y se usa desde server components. Cuando un client
 // component (e.g. `JourneyClient.tsx`) importa una función runtime
 // de `journeyData.ts`, webpack bundlea TODA la cadena transitiva al
-// cliente — incluyendo `prisma`, que peta en browser con
+// cliente; incluyendo `prisma`, que peta en browser con
 // "PrismaClient is unable to run in this browser environment".
 //
 // La regla: cualquier función *pura* que necesita un client component

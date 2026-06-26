@@ -69,11 +69,11 @@ type Props = {
   /** Callback: el padre intenta subir directamente la historia al
    *  Studio. Si tiene context (journey/level/topic) listo, hace POST
    *  a /stage; si no, devuelve el raw al form y pide elegir context.
-   *  La row delega — no maneja el modal de confirmación ella misma. */
+   *  La row delega; no maneja el modal de confirmación ella misma. */
   onStageDirect?: (raw: string, title: string) => void;
   /** Indica si el padre tiene journey/level/topic listos. Si no,
    *  el botón "Subir al Studio" sigue habilitado pero con label
-   *  "Cargar en el form" — el padre se encarga del scroll + hint. */
+   *  "Cargar en el form"; el padre se encarga del scroll + hint. */
   contextReady?: boolean;
   /** El padre nos avisa cuando una subida desde el historial terminó
    *  para que refresquemos el feed sin esperar al refresh manual. */
@@ -101,10 +101,10 @@ function isPending(it: HistoryItem): boolean {
 
 /** Bucket key used to group rows: language · journey · level · topic. */
 function bucketKey(it: HistoryItem): string {
-  const lang = it.journeyLanguage ?? "—";
-  const journey = it.journeyName ?? "—";
-  const level = (it.level ?? "—").toUpperCase();
-  const topic = it.topic ?? "—";
+  const lang = it.journeyLanguage ?? "-";
+  const journey = it.journeyName ?? "-";
+  const level = (it.level ?? "-").toUpperCase();
+  const topic = it.topic ?? "-";
   return `${lang} · ${journey} · ${level} · ${topic}`;
 }
 
@@ -284,7 +284,7 @@ export default function ValidationHistory({
       ) : items.length === 0 ? (
         <p style={{ color: "var(--mx-muted)", fontSize: 12 }}>
           Aún no has validado historias. Cuando pegues un JSON y valides,
-          aparecerá aquí — y verás cuáles ya subiste al Studio.
+          aparecerá aquí; y verás cuáles ya subiste al Studio.
         </p>
       ) : filtered.length === 0 ? (
         <p style={{ color: "var(--mx-muted)", fontSize: 12 }}>
@@ -694,7 +694,7 @@ function Detail({
                 >
                   ✗ {c.label ?? c.id}
                   {c.detail && (
-                    <span style={{ color: "var(--mx-muted)" }}> — {c.detail}</span>
+                    <span style={{ color: "var(--mx-muted)" }}>; {c.detail}</span>
                   )}
                 </li>
               ))}
@@ -705,7 +705,7 @@ function Detail({
                 >
                   ⚠ {c.label ?? c.id}
                   {c.detail && (
-                    <span style={{ color: "var(--mx-muted)" }}> — {c.detail}</span>
+                    <span style={{ color: "var(--mx-muted)" }}>; {c.detail}</span>
                   )}
                 </li>
               ))}

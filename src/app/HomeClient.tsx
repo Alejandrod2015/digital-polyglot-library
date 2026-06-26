@@ -2005,7 +2005,7 @@ export default function HomeClient({
       {isPersonalizationReady && featuredFreeStory && continueListening.length === 0 && (
         <section className="w-full mb-14">
           <SectionHead
-            // Para free/basic la copy "Your free story" es literal — es
+            // Para free/basic la copy "Your free story" es literal; es
             // la story diaria que pueden abrir sin pagar. Para
             // premium/polyglot todo está desbloqueado, así que llamarla
             // "Your free story" es confuso. Renombramos al rol real
@@ -2097,7 +2097,7 @@ export default function HomeClient({
       {isPersonalizationReady && featuredFreeStory && continueListening.length > 0 && (
         <section className="w-full mb-14">
           <SectionHead
-            // Para free/basic la copy "Your free story" es literal — es
+            // Para free/basic la copy "Your free story" es literal; es
             // la story diaria que pueden abrir sin pagar. Para
             // premium/polyglot todo está desbloqueado, así que llamarla
             // "Your free story" es confuso. Renombramos al rol real

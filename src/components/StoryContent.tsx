@@ -80,7 +80,7 @@ function stripHtml(raw: string): string {
   // preserving \n, capping \n{3,}→\n\n) is the job of
   // sanitizePlainStoryText, which always wraps this call. The old
   // implementation collapsed \s+ → " ", which silently destroyed every
-  // newline in plain-text multi-voice stories — making
+  // newline in plain-text multi-voice stories; making
   // detectDialogueBlocks receive one giant single-line blob and fall
   // back to prose rendering (dialogue + narrator crushed together).
   return raw.replace(/<[^>]+>/g, " ");
@@ -187,7 +187,7 @@ type DialogueRenderBlock = { speaker: string | null; text: string };
 // ANY accented Latin character (Spanish "Don Hernán", Italian "Niccolò",
 // French "Hélène", Portuguese "João"), not just the ASCII + German set.
 // The old hardcoded class silently failed every line whose speaker had
-// an accent — collapsing those lines into the paragraph above because
+// an accent; collapsing those lines into the paragraph above because
 // the 40% dialogue-line threshold below was never reached.
 const DIALOGUE_LABEL_REGEX =
   /^([\p{Lu}][\p{L}\p{M}.'-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'-]*){0,3}):\s+(.*\S)\s*$/u;
@@ -349,7 +349,7 @@ export default function StoryContent({
     [vocab]
   );
   // Map word (lowercase) → vocab type. Usa resolveVocabType (definido
-  // arriba) que prioriza morfología fuerte sobre la definición — así
+  // arriba) que prioriza morfología fuerte sobre la definición; así
   // verbos en -ar/-er/-ir no se confunden con sustantivos sólo porque
   // la definición empieza con "A " en lugar de "to ".
   const vocabTypeByLower = React.useMemo(() => {

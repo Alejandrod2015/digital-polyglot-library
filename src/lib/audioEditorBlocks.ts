@@ -20,7 +20,7 @@
 // became part of the alignment pipeline contain spurious tokens AT label
 // positions (e.g., a "Anna" token at the position where the label "Anna:"
 // sits). By making block boundaries exclude those positions, the label
-// tokens fall into no block and disappear from the editor — preventing
+// tokens fall into no block and disappear from the editor; preventing
 // the "next speaker's name shows up at the end of each block" bug.
 
 import { parseDialogueSegments } from "@/lib/elevenlabs";
@@ -48,7 +48,7 @@ const normWord = (s: string) =>
 /**
  * Build editor blocks directly from the captured `audioFragments` (the
  * ground truth), one block per body fragment. Char ranges come from
- * aligning each fragment's text to `storyPlainText` at the WORD level —
+ * aligning each fragment's text to `storyPlainText` at the WORD level -
  * robust where the speaker-label heuristic in `deriveAudioEditorBlocks`
  * fails (it produced empty blocks). Never yields an empty block, so every
  * section renders + is editable.
@@ -109,7 +109,7 @@ function isDialogueSpec(value: unknown): value is DialogueSpecEntry[] {
  *  - The segment's body-end is the next segment's LABEL start (or
  *    `plainText.length` for the last segment). Using label.start (not
  *    label.end or next segment's body-start) means the label chars are
- *    in no block — defending against legacy timings that have spurious
+ *    in no block; defending against legacy timings that have spurious
  *    word tokens at label positions.
  *  - voiceId comes from the matching `dialogueSpec[i]` entry; if the
  *    story is single-voice we use `story.voiceId` for every block.
@@ -198,7 +198,7 @@ export function deriveAudioEditorBlocks(args: {
 
 /**
  * Find which block contains `charStart`. Returns the block index or -1
- * if nothing matches (e.g. a selection that bridges blocks — caller
+ * if nothing matches (e.g. a selection that bridges blocks; caller
  * should reject those rather than picking a random voice).
  */
 export function findBlockForChar(blocks: AudioEditorBlock[], charStart: number, charEnd: number): number {

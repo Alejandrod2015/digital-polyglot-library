@@ -134,7 +134,7 @@ export function BookHomeCard({
     qaLabel?: string;
     /**
      * How to fit the cover inside the card frame. "cover" (default) fills the
-     * whole frame and crops — perfect for landscape story covers. "contain"
+     * whole frame and crops; perfect for landscape story covers. "contain"
      * letterboxes so portrait book covers aren't chopped; we also swap the
      * frame to a taller aspect so the letterbox blend is minimal.
      */

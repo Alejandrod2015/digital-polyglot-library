@@ -37,7 +37,7 @@ export type NotificationTypeDefault = {
 
 // Code-default copy. These are the fallback strings; Studio overrides
 // them per-row. Placeholders ({minutes} etc.) are resolved at schedule
-// time on the device — daily_reminder still goes through
+// time on the device; daily_reminder still goes through
 // `buildDailyReminderCopy` for context-aware text, so its copy here is
 // only the static fallback when no context is available.
 export const NOTIFICATION_TYPE_DEFAULTS: Record<NotificationTypeKey, NotificationTypeDefault> = {

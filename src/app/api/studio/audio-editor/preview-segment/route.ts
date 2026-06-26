@@ -248,7 +248,7 @@ export async function POST(request: Request) {
   }
   // The acrossfade filter needs at least `d` seconds on each side of the
   // splice. Cut-too-early or cut-too-late will fail with an opaque
-  // ffmpeg error — surface a clear message instead AND avoid spending
+  // ffmpeg error; surface a clear message instead AND avoid spending
   // an ElevenLabs credit on a selection we know we can't splice.
   if (startSec < CROSSFADE_SEC) {
     return NextResponse.json(
@@ -408,7 +408,7 @@ export async function POST(request: Request) {
       if (useDryStemPath) {
         // Match the dry stem's profile: dynaudnorm + loudnorm only
         // (same chain as normalizeLoudness in elevenlabs.ts). No tempo,
-        // no ambient — those happen later in the pipeline.
+        // no ambient; those happen later in the pipeline.
         ffArgs.push(
           "-af",
           `dynaudnorm=g=5:f=250:p=0.9:m=10,loudnorm=I=-16:LRA=11:TP=-1.5`,
@@ -506,7 +506,7 @@ export async function POST(request: Request) {
     // over the spliced dry. The ambient pass is identical to what
     // `mixAmbient` does at master-generation time, so the resulting
     // mixed master is bit-equivalent in ambient profile to a fresh
-    // generation — no seams, no shimmer.
+    // generation; no seams, no shimmer.
     let newDryUrl: string | null = null;
     let newDryFilename: string | null = null;
     if (useDryStemPath && ambientFile) {

@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 
 type Ctx = { params: Promise<{ id: string }> };
 
-/** PATCH /api/collections/:id — rename. Body: { name: string } */
+/** PATCH /api/collections/:id; rename. Body: { name: string } */
 export async function PATCH(req: NextRequest, { params }: Ctx) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
@@ -30,7 +30,7 @@ export async function PATCH(req: NextRequest, { params }: Ctx) {
   return NextResponse.json({ collection: updated });
 }
 
-/** DELETE /api/collections/:id — delete the whole collection. */
+/** DELETE /api/collections/:id; delete the whole collection. */
 export async function DELETE(_req: NextRequest, { params }: Ctx) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });

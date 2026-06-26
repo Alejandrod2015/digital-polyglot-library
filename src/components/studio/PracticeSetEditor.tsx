@@ -460,7 +460,7 @@ function ExerciseRow({
           <TypeBadge color={typeColor}>{TYPE_LABEL[exercise.type] ?? exercise.type}</TypeBadge>
         </td>
         <td style={{ ...td, fontWeight: 600, color: "var(--foreground)" }}>
-          {exercise.word || <span style={{ color: "var(--muted)" }}>—</span>}
+          {exercise.word || <span style={{ color: "var(--muted)" }}>-</span>}
         </td>
         <td style={{ ...td, color: "var(--foreground)", lineHeight: 1.4 }}>
           <span
@@ -471,7 +471,7 @@ function ExerciseRow({
               overflow: "hidden",
             }}
           >
-            {exercise.sentence || <span style={{ color: "var(--muted)" }}>—</span>}
+            {exercise.sentence || <span style={{ color: "var(--muted)" }}>-</span>}
           </span>
         </td>
         <td style={td}>
@@ -640,7 +640,7 @@ function ExerciseRow({
 }
 
 // ─────────────────────────────────────────────────────────────────────
-// MiniAudioPlayer — replaces native <audio controls> with a small
+// MiniAudioPlayer; replaces native <audio controls> with a small
 // circular play button + scrubber + time. Keeps the row visually quiet
 // and matches the Studio chrome.
 // ─────────────────────────────────────────────────────────────────────

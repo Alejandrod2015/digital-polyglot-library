@@ -126,7 +126,7 @@ export default function ValidarPageClient() {
   } | null>(null);
 
   // Pipeline grid: real journey stories grouped by journey/level/topic.
-  // (Reemplaza el "historial de validaciones" colapsable anterior — los
+  // (Reemplaza el "historial de validaciones" colapsable anterior; los
   // AgentRun del validador siguen guardándose en DB para audit pero ya
   // no se renderizan en esta pantalla.)
   const [pipelineStories, setPipelineStories] = useState<PipelineStory[]>([]);
@@ -410,7 +410,7 @@ export default function ValidarPageClient() {
       setStagedStory(data.story);
       setPipelineLoading(true);
       await loadPipelineStories();
-      // Bump tick to force ValidationHistory a refrescar — la fila
+      // Bump tick to force ValidationHistory a refrescar; la fila
       // que acabamos de subir cambia su badge a "✓ En Studio" sin
       // que la usuaria tenga que clickear Refrescar.
       setHistoryRefreshTick((n) => n + 1);
@@ -423,7 +423,7 @@ export default function ValidarPageClient() {
 
   // Live preview of the pasted JSON. Uses the same parser as the server
   // so what the worker sees here matches what gets validated. Returns
-  // null silently if the JSON doesn't parse yet — the textarea state
+  // null silently if the JSON doesn't parse yet; the textarea state
   // pill below already signals "vacío"/"pegado"/"validado" so workers
   // know whether the input is parseable.
   const parsedPreview: StoryPayload | null = useMemo(() => {
@@ -629,7 +629,7 @@ export default function ValidarPageClient() {
             </div>
           </div>
 
-          {/* Live preview of the parsed JSON — helps workers spot tone /
+          {/* Live preview of the parsed JSON; helps workers spot tone /
               coherence problems that the structural validator can't catch.
               Renders silently when the JSON parses; stays hidden otherwise
               so the textarea state pill above is the source of truth for
@@ -714,7 +714,7 @@ export default function ValidarPageClient() {
               <div className="flex justify-between gap-3">
                 <span className="text-neutral-500">Título</span>
                 <span className="font-medium text-neutral-200 truncate text-right max-w-[60%]">
-                  {result?.parsed?.title ?? "—"}
+                  {result?.parsed?.title ?? "-"}
                 </span>
               </div>
               {typeof result?.existingCount === "number" ? (
@@ -964,8 +964,8 @@ function DestinoCard({
       ) : (
         <div className="space-y-3">
           <div className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-3 text-sm space-y-1.5">
-            <Row label="Journey" value={journey?.name ?? "—"} />
-            <Row label="Nivel" value={level?.title ?? "—"} />
+            <Row label="Journey" value={journey?.name ?? "-"} />
+            <Row label="Nivel" value={level?.title ?? "-"} />
             <Row label="Tema" value={topicLabel} />
             {parsedTitle ? <Row label="Título" value={parsedTitle} /> : null}
             {existingCount != null ? (
@@ -1137,7 +1137,7 @@ function InventoryDots({
                         {list.map((s) => (
                           <span
                             key={s.id}
-                            title={`${s.title ?? "(sin título)"} — ${s.status}`}
+                            title={`${s.title ?? "(sin título)"}; ${s.status}`}
                             aria-hidden
                             className={`inline-block h-2 w-2 rounded-full ${
                               s.status === "published"

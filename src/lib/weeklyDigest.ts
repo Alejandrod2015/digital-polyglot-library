@@ -321,7 +321,7 @@ function renderHtml(d: DigestData): string {
     ? d.topStories
         .map(
           (s) =>
-            `<div style="margin:0 0 6px;font-size:13px"><span style="color:#9aa7bd;margin-right:6px">·</span><strong>${escapeHtml(s.title)}</strong> <span style="color:#6b7280">— ${s.plays} plays / ${s.completions} completions</span></div>`,
+            `<div style="margin:0 0 6px;font-size:13px"><span style="color:#9aa7bd;margin-right:6px">·</span><strong>${escapeHtml(s.title)}</strong> <span style="color:#6b7280">- ${s.plays} plays / ${s.completions} completions</span></div>`,
         )
         .join("")
     : `<p style="color:#9aa7bd;font-size:13px;margin:0">No plays this week.</p>`;

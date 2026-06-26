@@ -624,7 +624,7 @@ export default function PlannerClient() {
         ) : (
           <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
             {runHistory.map((run) => {
-              const d = run.startedAt ? new Date(run.startedAt).toLocaleDateString("es", { day: "numeric", month: "short" }) : run.createdAt ? new Date(run.createdAt).toLocaleDateString("es", { day: "numeric", month: "short" }) : "—";
+              const d = run.startedAt ? new Date(run.startedAt).toLocaleDateString("es", { day: "numeric", month: "short" }) : run.createdAt ? new Date(run.createdAt).toLocaleDateString("es", { day: "numeric", month: "short" }) : "-";
               const out = (run.output ?? {}) as Record<string, unknown>;
               return (
                 <div key={run.runId ?? run.id} style={{ display: "flex", alignItems: "center", gap: 6, padding: "3px 6px", borderRadius: 4, fontSize: 11 }}>

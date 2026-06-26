@@ -3,7 +3,7 @@ import { Animated, Dimensions, Easing, StyleSheet, View } from "react-native";
 
 /**
  * Programmatic confetti burst rendered on top of the "session complete"
- * panel when the user nails a perfect score. Pure RN Animated — no new
+ * panel when the user nails a perfect score. Pure RN Animated; no new
  * native deps. ~28 particles fall + rotate + fade so the moment feels
  * like a small celebration without being noisy.
  *

@@ -76,7 +76,7 @@ export default function VocabularyClient({ journeys, selectedId, rows }: Props) 
         showToast(`Error: ${json.error || res.status}`);
         return;
       }
-      showToast(`✓ "${lemma}" canónica aplicada — ${json.itemsUpdated ?? 0} items en ${json.storiesTouched ?? 0} historias`);
+      showToast(`✓ "${lemma}" canónica aplicada; ${json.itemsUpdated ?? 0} items en ${json.storiesTouched ?? 0} historias`);
       router.refresh();
     } catch (e) {
       showToast(`Error de red: ${e instanceof Error ? e.message : "?"}`);
@@ -223,7 +223,7 @@ export default function VocabularyClient({ journeys, selectedId, rows }: Props) 
         ) : (
           filtered.slice(0, 500).map((r) => {
             const isOpen = expandedKey === r.key;
-            const topDef = r.definitions[0]?.definition || "—";
+            const topDef = r.definitions[0]?.definition || "-";
             return (
               <div key={r.key} style={{ borderBottom: "1px solid var(--card-border)" }}>
                 <div

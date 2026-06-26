@@ -242,7 +242,7 @@ function Row({ left, right }: { left: string; right: number }) {
 }
 
 function Empty() {
-  return <span style={{ color: "#9ca3af", fontSize: 12 }}>—</span>;
+  return <span style={{ color: "#9ca3af", fontSize: 12 }}>-</span>;
 }
 
 function Th({ children }: { children: React.ReactNode }) {

@@ -1,17 +1,17 @@
 /**
  * Practice feedback sounds. Curated from the Mixkit free sound library
- * (https://mixkit.co — Mixkit License, free for commercial use, no
+ * (https://mixkit.co; Mixkit License, free for commercial use, no
  * attribution required). Source MP3s live in
  * `apps/mobile/assets/sounds/practice-{correct,wrong,perfect}.mp3` and
  * are embedded as base64 data URIs so call sites can keep using
  * `Audio.Sound.createAsync({ uri })` without expo-asset resolution.
  *
  * Selection (Mixkit sfx IDs):
- *   - correct  : 253  ("Success bell transition")  — short, agile, plays
+ *   - correct  : 253  ("Success bell transition") ; short, agile, plays
  *                on every right answer.
- *   - wrong    : 2569 ("Wrong answer fail notification") — brief, neutral
+ *   - wrong    : 2569 ("Wrong answer fail notification"); brief, neutral
  *                negative, no scolding buzz.
- *   - perfect  : 600  ("Achievement bell")  — richer celebratory chime
+ *   - perfect  : 600  ("Achievement bell") ; richer celebratory chime
  *                reserved for combos / streaks so it stays special.
  *
  * Alternative candidates (not in production but kept for swap experiments)

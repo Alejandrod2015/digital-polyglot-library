@@ -28,7 +28,7 @@ export const maxDuration = 300;
  *
  * Regenerate ONLY the title narration ([0s → titleEndSec] of the master)
  * with the new title text. Uses the narrator's voice (i.e. the voice
- * covering char 0 in the story — for multi-voice stories that's the
+ * covering char 0 in the story; for multi-voice stories that's the
  * first dialogueSpec entry). Splice with an 80ms crossfade at the right
  * boundary; left boundary is just the new clip's start.
  *
@@ -230,7 +230,7 @@ export async function POST(request: Request) {
   const timings = coerceAudioWordTimings(story.audioWordTimings);
   if (!timings) {
     return NextResponse.json(
-      { error: "Story has no word timings — run alignment first" },
+      { error: "Story has no word timings; run alignment first" },
       { status: 400 },
     );
   }
@@ -275,7 +275,7 @@ export async function POST(request: Request) {
 
   // Same dry-stem branching as /preview-segment. When the story has
   // voiceProvenance.dryUrl set, we splice voice-on-voice into the dry
-  // stem and re-render ambient continuously — bit-perfect ambient.
+  // stem and re-render ambient continuously; bit-perfect ambient.
   const provenance = readVoiceProvenance(story.voiceProvenance);
   const dryUrl = provenance.dryUrl ?? null;
   const useDryStemPath = !!dryUrl && !!ambientFile;
@@ -354,7 +354,7 @@ export async function POST(request: Request) {
       } else {
         // Legacy: match mixed master profile. The title is narrated by the
         // narrator (out-of-scene VO), so the ambient bed never plays under it
-        // (memory: feedback_ambient_not_under_narrator) — always render dry.
+        // (memory: feedback_ambient_not_under_narrator); always render dry.
         const tempo = DEFAULT_NARRATION_TEMPO;
         ffArgs.push(
           "-af",

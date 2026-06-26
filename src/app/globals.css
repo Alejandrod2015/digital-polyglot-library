@@ -49,7 +49,7 @@
   --font-mono: var(--font-geist-mono);
 
   /* =========================================================
-   * Design tokens (2026-04) — dark-first scale.
+   * Design tokens (2026-04); dark-first scale.
    * Add new UI with these; legacy vars above stay for now and
    * get migrated when each component is touched. See handoff
    * in .claude/handoff/ for the source palette.
@@ -117,7 +117,7 @@
   --r-xl: 12px;
 }
 
-/* Typography utility classes — map to the handoff type scale.
+/* Typography utility classes; map to the handoff type scale.
  * Display 32/900, Title 20/900, Body 14/700, Overline 11/800.
  * Letter-spacing follows the mockup to match its optical balance. */
 .type-display {
@@ -186,11 +186,11 @@
 }
 
 /* ============================================================
- * LIGHT MODE — v2 "warm paper"
+ * LIGHT MODE; v2 "warm paper"
  *
  * Reemplaza el v1 frío azul-grisáceo que se sentía plano y
  * roto. Tres principios:
- *   1. Canvas warm cream (#f6f4ee) — NO blue-grey frío
+ *   1. Canvas warm cream (#f6f4ee); NO blue-grey frío
  *   2. Cards SOLID white (#ffffff) con shadow real, no
  *      translucent tint (eso era el bug de v1)
  *   3. Mayor contraste de texto (#1a1a1a near-black)
@@ -235,7 +235,7 @@
   --badge-advanced-text: #a91131;
 
   /* Accent re-mapping para light. Los hues saturados de dark
-     se ven lavados sobre cream — usamos tonos más profundos.
+     se ven lavados sobre cream; usamos tonos más profundos.
      `--color-gold` lo usan toggles, "See all", series labels,
      hero eyebrow, Free Today pill, journey level stat. */
   --color-gold: #d18a1f;
@@ -269,7 +269,7 @@
     0 4px 10px -4px rgba(28, 25, 18, 0.18);
 }
 
-/* System theme (when no explicit data-theme is set) — espejo
+/* System theme (when no explicit data-theme is set); espejo
    exacto del bloque [data-theme="light"] de arriba. */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme]) {
@@ -754,7 +754,7 @@ body {
 }
 
 /* =========================================================
- * Metrics dashboard (.mx-*) — editorial analytics layout.
+ * Metrics dashboard (.mx-*); editorial analytics layout.
  * Used by /studio/metrics. Token-driven via --mx-* vars.
  * =======================================================*/
 /* El navy editorial ya es el bg default del StudioShell (inline style
@@ -1229,7 +1229,7 @@ body {
 }
 
 /* ============================================================
- * Home redesign utilities — Tailwind v4 doesn't always JIT
+ * Home redesign utilities; Tailwind v4 doesn't always JIT
  * arbitrary values like `aspect-[4/3]` or
  * `md:grid-cols-[1.05fr_1fr]` reliably when they appear in
  * components imported from another file. Define them once here
@@ -1291,14 +1291,14 @@ body {
 }
 .dp-aspect-2-3  { aspect-ratio: 2 / 3; }
 /* ============================================================
- * Journey screen — append to src/app/globals.css
+ * Journey screen; append to src/app/globals.css
  * Adds the pulsing halo for the active "next" story card, plus
  * a single rescue class so the halo positioning works the same
  * across Tailwind v4 JIT inconsistencies (same pattern used by
  * .dp-aspect-* rescue classes already in this file).
  * ============================================================ */
 
-/* Container for the journey content — keeps banners and cards in a
+/* Container for the journey content; keeps banners and cards in a
  * readable column on big screens. Mirror of the iPhone mobile width. */
 .dp-journey-page {
   max-width: 760px;
@@ -1338,10 +1338,10 @@ body {
   100% { transform: translateY(0)    scale(1);    opacity: 1; }
 }
 
-/* Active (next) story — three layered effects to scream "tap here":
+/* Active (next) story; three layered effects to scream "tap here":
  *   1. Brighter 3D button stack (the card sits visually raised).
  *   2. Pulsing color halo behind the card via ::before.
- *   3. Shimmer sweep via ::after — diagonal white gradient that travels
+ *   3. Shimmer sweep via ::after; diagonal white gradient that travels
  *      across the surface every few seconds, mirroring the "shine"
  *      pass on a real polished button.
  *   4. Gentle vertical float on the whole card (animation on the
@@ -1368,7 +1368,7 @@ body {
   animation: dp-journey-halo 2.4s ease-in-out infinite;
   pointer-events: none;
 }
-/* Shimmer sweep — diagonal white light that moves across the card
+/* Shimmer sweep; diagonal white light that moves across the card
  * every 4 seconds. Built as a wide gradient that translates from
  * -120% to +120% on the X axis. */
 .dp-journey-card.active-card::after {
@@ -1409,7 +1409,7 @@ body {
   transform: translateY(3px);
 }
 
-/* Topic banner sizing — same rescue pattern as the card.
+/* Topic banner sizing; same rescue pattern as the card.
  * The TSX uses `px-[22px] py-[22px] rounded-[22px]` arbitrary values
  * that may not compile from an imported file. */
 .dp-journey-banner {
@@ -1423,7 +1423,7 @@ body {
   position: relative;
   cursor: pointer;
   transition: filter 160ms, transform 60ms, margin 60ms;
-  /* 3D button stack — bigger than story card */
+  /* 3D button stack; bigger than story card */
   box-shadow:
     inset 0  2px 0 rgba(255,255,255,0.35),
     inset 0 -2px 0 rgba(0,0,0,0.20),
@@ -1699,7 +1699,7 @@ body {
   border: 1px solid rgba(20, 184, 166, 0.30);
 }
 
-/* Status badge — published / review / missing / stale. Used by Covers
+/* Status badge; published / review / missing / stale. Used by Covers
    today; intended as the shared primitive across Studio screens that
    render lifecycle state next to a row or hero. */
 .jm-status-badge {
@@ -2095,7 +2095,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 .jm-deprecated-list { display: flex; flex-direction: column; gap: 4px; padding: 6px 8px 4px; }
 .jm-deprecated-row { display: flex; align-items: center; gap: 8px; padding: 3px 4px; border-radius: 4px; }
 
-/* Spinner — replaces a sdot while a story is busy */
+/* Spinner; replaces a sdot while a story is busy */
 .jm-spinner {
   display: inline-block;
   width: 8px; height: 8px;
@@ -2514,16 +2514,16 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 }
 
 /* ============================================================
- * LIGHT MODE — component refinements
+ * LIGHT MODE; component refinements
  *
  * Spec: design/HANDOFF (2).md secciones B/C/D.
  *
  * Estos overrides aplican SOLO cuando data-theme="light" (o el
- * media query equivalente). El dark mode queda intacto — todo
+ * media query equivalente). El dark mode queda intacto; todo
  * este bloque es additivo. No quitar.
  * =========================================================== */
 
-/* --- B.1 Sidebar — active nav: white pill con shadow ---
+/* --- B.1 Sidebar; active nav: white pill con shadow ---
  * El active state dark usa `bg-[color:var(--color-gold)]/[0.18]`
  * inline en Sidebar.tsx. Marcamos esa item con `.dp-nav-active`
  * y aquí la pisamos en light por blanco sólido con shadow. */
@@ -2538,7 +2538,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   color: var(--color-gold) !important;
 }
 
-/* --- B.1 Sidebar — divider con inset highlight ---
+/* --- B.1 Sidebar; divider con inset highlight ---
  * Para que se lea como panel elevado y no como un slab plano. */
 :root[data-theme="light"] aside[class*="bg-[var(--bg-sidebar)]"] {
   border-right: 1px solid rgba(28, 25, 18, 0.08);
@@ -2567,9 +2567,9 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   box-shadow: var(--shadow-card-hover);
 }
 
-/* --- D.1 Journey story card — white con 3D shadow stack ---
+/* --- D.1 Journey story card; white con 3D shadow stack ---
  * Dark mode usa `background: var(--bg-1)` INLINE en
- * JourneyStoryCard. Inline gana a clases sin !important — por eso
+ * JourneyStoryCard. Inline gana a clases sin !important; por eso
  * los locked story rows seguían dark navy en light. Forzamos.
  * Active card (con `.active-card`) mantiene su color de tema y se
  * excluye del override. */
@@ -2591,7 +2591,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 
 /* --- D.3 Locked topic banner: warm grey en vez de slate ---
  * Slate `#3b4a66` viene como `style={{backgroundColor:"#3b4a66"}}`
- * inline en JourneyTopicBanner — necesitamos !important para
+ * inline en JourneyTopicBanner; necesitamos !important para
  * pisarlo. Tinta del texto también se ajusta. */
 :root[data-theme="light"] .dp-journey-banner.locked,
 :root[data-theme="light"] .j-topic-banner.locked {
@@ -2700,7 +2700,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 
 /* `bg-[#1B2347]` se usa SOLO en los nav buttons (prev/next) de los
  * carousels (Release, Story, BookStoriesGrid). Si los pusiéramos
- * blancos como las cards, quedarían white-on-cream sin contraste —
+ * blancos como las cards, quedarían white-on-cream sin contraste -
  * blob fantasma. Tratamiento dedicado: chip cream tint + border
  * visible + chevron en foreground dark. */
 :root[data-theme="light"] .bg-\[\#1B2347\] {
@@ -2746,7 +2746,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 
 /* --- bg-black/X overlays: en light cards blancas con overlay
  * negro semi-transparente queda como sombra borrosa. La mayoría
- * son cover-image overlays — los suavizamos a una tinta neutra. */
+ * son cover-image overlays; los suavizamos a una tinta neutra. */
 :root[data-theme="light"] .bg-black\/60,
 :root[data-theme="light"] .bg-black\/55,
 :root[data-theme="light"] .bg-black\/50,
@@ -2757,7 +2757,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 
 /* --- Vocab highlight readability ---
  * Los hues translucent del dark mode (0.55-0.65 opacity) son
- * demasiado fuertes sobre cream — bajamos opacity para que la
+ * demasiado fuertes sobre cream; bajamos opacity para que la
  * historia siga siendo legible en light. */
 :root[data-theme="light"] .vocab-word {
   background-color: rgba(148, 163, 184, 0.30) !important;
@@ -2776,7 +2776,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 :root[data-theme="light"] .vocab-word[data-vocab-type="expression"]:hover{ background-color: rgba(244, 114, 182, 0.55) !important; }
 
 /* ============================================================
- * LIGHT MODE — Tailwind utility overrides
+ * LIGHT MODE; Tailwind utility overrides
  *
  * El codebase fue dark-first y muchos componentes hardcodean
  * `text-white`, `bg-white/X`, `border-white/X` en JSX en vez de
@@ -2784,7 +2784,7 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
  * invisibles sobre cream. Pisamos las utilidades de Tailwind con
  * equivalentes apropiados sólo cuando data-theme="light".
  *
- * Sin esto, cambiar tokens no cambia nada visible — los hex
+ * Sin esto, cambiar tokens no cambia nada visible; los hex
  * literales ganan a las variables CSS por especificidad de hoja
  * generada por Tailwind.
  *

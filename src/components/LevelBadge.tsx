@@ -29,7 +29,7 @@ const levelStyles: Record<ReturnType<typeof normalizeLevel>, string> = {
 
 export default function LevelBadge({ level, className = "" }: LevelBadgeProps) {
   const label = formatLevel(level);
-  if (label === "—") return null;
+  if (label === "-") return null;
 
   return (
     <span

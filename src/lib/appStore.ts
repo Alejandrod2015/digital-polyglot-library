@@ -75,7 +75,7 @@ export type AppleNotificationPayload = {
 export type VerifiedAppleSubscription = {
   plan: PaidPlan;
   productId: string;
-  /** originalTransactionId — stable across renewals, used as purchaseToken. */
+  /** originalTransactionId; stable across renewals, used as purchaseToken. */
   originalTransactionId: string;
   transactionId: string;
   status: BillingStatusName;

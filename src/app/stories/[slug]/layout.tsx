@@ -13,7 +13,7 @@ type Props = {
 // The button is `position: fixed` (not absolute) so it stays in the
 // top-left while the page scrolls, matching mobile's behavior. Suspense
 // fallback is now a button-shaped <a href="/explore"> so taps before
-// hydration also navigate somewhere sane — previously the fallback was
+// hydration also navigate somewhere sane; previously the fallback was
 // a plain <div>, which is why early clicks felt unresponsive.
 export default function PolyglotStoryLayout({ children }: Props) {
   return (

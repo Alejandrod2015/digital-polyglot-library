@@ -1,7 +1,7 @@
 import { formatVariantLabel, VARIANT_OPTIONS_BY_LANGUAGE } from "./languageVariant";
 import { CEFR_LEVEL_LABELS, LEVEL_LABELS, type CefrLevel, type Level } from "./types/books";
 
-const FALLBACK = "—";
+const FALLBACK = "-";
 
 function normalizeWhitespace(value: string): string {
   return value.replace(/\s+/g, " ").trim();

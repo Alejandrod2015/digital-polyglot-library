@@ -23,7 +23,7 @@ function runFfmpeg(args: string[]): Promise<void> {
 
 /**
  * Loudness-normalize one section (single loudnorm pass, no dynaudnorm) so
- * a fresh TTS take — esp. v3, which runs hot — sits at the catalog level
+ * a fresh TTS take; esp. v3, which runs hot; sits at the catalog level
  * (~-16 LUFS) without clipping, and without the pumping/quality loss of a
  * heavier dynaudnorm+loudnorm chain run multiple times.
  */
@@ -46,7 +46,7 @@ async function normalizeSectionAudio(buffer: Buffer): Promise<Buffer> {
 
 /**
  * Concatenate section buffers into one master, RE-ENCODING (not stream-
- * copy) so mismatched input formats — backfilled cuts vs fresh sections —
+ * copy) so mismatched input formats; backfilled cuts vs fresh sections -
  * can't drop/truncate content. Inserts a fixed gap between sections via
  * the concat FILTER with per-input aformat normalization. Does NOT
  * loudnorm here: the sections are already at catalog level (backfill cuts
@@ -64,7 +64,7 @@ function ffprobeFormat(path: string): { sampleRate: number; channels: number } {
 
 /**
  * Concatenate sections into one master by STREAM-COPY (no re-encode), so
- * every unchanged section stays bit-identical to its stored file — zero
+ * every unchanged section stays bit-identical to its stored file; zero
  * quality loss per edit. Stream-copy concat requires uniform codec params
  * (sample rate + channels), so any section that isn't canonical (44100
  * stereo) is re-encoded to canonical first; matching sections are copied
@@ -114,7 +114,7 @@ async function robustConcat(buffers: Buffer[]): Promise<Buffer> {
  * Section-based audio editing. Multi-voice stories generated with the
  * fragment pipeline keep EACH section's standalone audio (its individual
  * TTS take) in `audioFragments[i].url`. To replace one section we swap
- * that buffer and re-concat the master from the sections — no
+ * that buffer and re-concat the master from the sections; no
  * time-splicing, no aeneas offsets, no drift.
  *
  * `prevUrl` holds the section's previous take so the editor can revert a
@@ -242,7 +242,7 @@ function ffprobeDurationFile(path: string): number {
 
 /**
  * IN-PLACE splice: replace the [startSec, endSec] span of the master with
- * `sectionBuffer` using a HARD cut (no crossfade) at the boundaries —
+ * `sectionBuffer` using a HARD cut (no crossfade) at the boundaries -
  * which sit inside the inter-section silence, so the cut is clean. Unlike
  * rebuilding from sections, this leaves the rest of the master untouched:
  * original pacing/pauses preserved, no tight-boundary clipping, only the
@@ -317,7 +317,7 @@ async function applyInPlace(args: {
       crossfadeSec: 0,
     });
     if (r.segDurationSec == null) {
-      throw new Error("El servidor de audio (Modal) no devolvió segDurationSec — redeploya audio_studio.py");
+      throw new Error("El servidor de audio (Modal) no devolvió segDurationSec; redeploya audio_studio.py");
     }
     newMasterUrl = r.url;
     newDur = r.segDurationSec;

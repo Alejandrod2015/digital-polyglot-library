@@ -5,7 +5,7 @@ import { prisma } from "@/lib/prisma";
 
 function toSlug(s: string) { return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
 
-/** GET — list languages with variants */
+/** GET; list languages with variants */
 export async function GET() {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -20,7 +20,7 @@ export async function GET() {
   return NextResponse.json(languages);
 }
 
-/** POST — create language. Body: { label, variants: [{ code, label }] } */
+/** POST; create language. Body: { label, variants: [{ code, label }] } */
 export async function POST(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -47,7 +47,7 @@ export async function POST(request: Request) {
   return NextResponse.json(lang);
 }
 
-/** PATCH — update language. Body: { id, label? } */
+/** PATCH; update language. Body: { id, label? } */
 export async function PATCH(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -85,7 +85,7 @@ export async function PATCH(request: Request) {
   return NextResponse.json(updated);
 }
 
-/** DELETE — delete language. Body: { id } */
+/** DELETE; delete language. Body: { id } */
 export async function DELETE(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

@@ -104,7 +104,7 @@ export default function VocabPanel({
   const [loadedFavs, setLoadedFavs] = useState<FavoriteItem[]>([]);
   // Sit the bubble ABOVE the audio player dock so it never covers the
   // controls (desktop or mobile). Measure the real dock height at runtime
-  // (#story-player-dock) instead of a fixed guess — the old static 98px
+  // (#story-player-dock) instead of a fixed guess; the old static 98px
   // assumed a ~92px dock, but the web player is taller (waveform + controls
   // ≈ 130-140px) so the bubble overlapped it. Fallback clears a tall dock.
   const [dockBottom, setDockBottom] = useState<string>(
@@ -457,7 +457,7 @@ export default function VocabPanel({
           </p>
         )}
 
-        {/* Action row: save chip — cyan glow at rest, gold when active */}
+        {/* Action row: save chip; cyan glow at rest, gold when active */}
         <div className="mt-3 flex">
           <button
             type="button"

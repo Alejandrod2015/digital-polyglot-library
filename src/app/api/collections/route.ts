@@ -8,7 +8,7 @@ import { prisma } from "@/lib/prisma";
 
 export const dynamic = "force-dynamic";
 
-/** GET /api/collections — list the current user's collections. */
+/** GET /api/collections; list the current user's collections. */
 export async function GET() {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ collections: [] }, { status: 401 });
@@ -20,7 +20,7 @@ export async function GET() {
   return NextResponse.json({ collections: rows });
 }
 
-/** POST /api/collections — create a new collection.
+/** POST /api/collections; create a new collection.
  *  Body: { name: string, language?: string, wordKeys?: string[] } */
 export async function POST(req: NextRequest) {
   const { userId } = await auth();

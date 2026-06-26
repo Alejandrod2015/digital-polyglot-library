@@ -1,7 +1,7 @@
 // Jurisdictions that legally require prior opt-in consent before loading
 // analytics cookies: the EEA (GDPR), the UK (UK GDPR) and Switzerland
-// (revFADP). Everywhere else — notably the US, which is the bulk of the
-// blog's organic traffic — defaults to analytics-on with an opt-out,
+// (revFADP). Everywhere else; notably the US, which is the bulk of the
+// blog's organic traffic; defaults to analytics-on with an opt-out,
 // matching common practice and recovering the data the opt-in gate loses.
 const CONSENT_OPT_IN_COUNTRIES = new Set([
   // EU-27
@@ -16,7 +16,7 @@ const CONSENT_OPT_IN_COUNTRIES = new Set([
 
 /**
  * True when the visitor's country requires explicit opt-in for analytics.
- * Unknown origin (no geo header) is treated as opt-in — the privacy-safe
+ * Unknown origin (no geo header) is treated as opt-in; the privacy-safe
  * default, so bots and unresolved IPs are not tracked without consent.
  */
 export function isConsentOptInCountry(country: string | null | undefined): boolean {

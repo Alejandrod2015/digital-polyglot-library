@@ -17,7 +17,7 @@ import type { AudioWordTimingsPayload } from "@domain";
  * Aeneas word-level alignment for a story. Tries JourneyStory first
  * (Studio-published curriculum), then `CatalogStoryAudioTimings` (the
  * sidecar table that holds timings for static catalog stories).
- * Returns null when the story has no alignment yet — practice items
+ * Returns null when the story has no alignment yet; practice items
  * still build, but their audio falls back to HQ TTS on mobile.
  */
 async function getAudioWordTimingsForSlug(slug: string): Promise<AudioWordTimingsPayload | null> {
@@ -184,7 +184,7 @@ export async function GET(request: NextRequest) {
   // If an editorially curated practice set exists for this journey
   // story, surface its exercises in the response. The mobile client
   // prefers `exercises` when present and falls back to building from
-  // `items` otherwise — so legacy clients keep working.
+  // `items` otherwise; so legacy clients keep working.
   const persistedExercises = await loadPersistedExercises(storySlug);
 
   return NextResponse.json({ items, exercises: persistedExercises ?? undefined });

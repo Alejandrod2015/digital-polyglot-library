@@ -696,7 +696,7 @@ export default function JourneyVariantPlanEditor({ plan, stories, highlightedLev
                                         {story.title || "Sin título"}
                                       </div>
                                       <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 2 }}>
-                                        Orden {story.journeyOrder ?? "—"} · {story.journeyFocus || "General"} · {story.hasDraft ? "Borrador" : story.published ? "Publicada" : "Pendiente"}
+                                        Orden {story.journeyOrder ?? "-"} · {story.journeyFocus || "General"} · {story.hasDraft ? "Borrador" : story.published ? "Publicada" : "Pendiente"}
                                       </div>
                                     </div>
                                     <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>

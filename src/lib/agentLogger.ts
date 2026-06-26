@@ -99,7 +99,7 @@ export function estimateTokens(text: string): number {
   return Math.ceil(text.length / 4);
 }
 
-// Cost per 1K tokens (USD) — approximate as of 2025
+// Cost per 1K tokens (USD); approximate as of 2025
 const TOKEN_COSTS: Record<string, { input: number; output: number }> = {
   "gpt-4o": { input: 0.0025, output: 0.01 },
   "gpt-4o-mini": { input: 0.00015, output: 0.0006 },

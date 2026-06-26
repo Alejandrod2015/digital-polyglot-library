@@ -15,30 +15,30 @@ function getDetailedRegionDescription(variant?: string, language?: string): stri
 
   const regionDetails: Record<string, Record<string, string>> = {
     spanish: {
-      latam: "Latin America (Colombia, Mexico, Argentina, Peru, Chile) — use regional foods (empanadas, arepas, tacos al pastor, asado, choripán, ceviche, pisco), neighborhoods (Palermo, Condesa, Miraflores, La Candelaria), and cultural markers",
-      spain: "Spain (Madrid, Barcelona, Valencia, Seville) — use regional foods (tortilla de patatas, jamón ibérico, paella, tapas, pulpo a la gallega), neighborhoods (Malasaña, Lavapiés, Gracia, Triana), and cultural markers",
+      latam: "Latin America (Colombia, Mexico, Argentina, Peru, Chile); use regional foods (empanadas, arepas, tacos al pastor, asado, choripán, ceviche, pisco), neighborhoods (Palermo, Condesa, Miraflores, La Candelaria), and cultural markers",
+      spain: "Spain (Madrid, Barcelona, Valencia, Seville); use regional foods (tortilla de patatas, jamón ibérico, paella, tapas, pulpo a la gallega), neighborhoods (Malasaña, Lavapiés, Gracia, Triana), and cultural markers",
     },
     english: {
-      us: "United States (New York, LA, Chicago) — use regional foods and brands, neighborhoods (Williamsburg, Silver Lake, Wicker Park, Mission), and cultural markers",
-      uk: "United Kingdom (London, Manchester, Edinburgh) — use regional foods (fish and chips, Sunday roast, Cornish pasty), neighborhoods (Shoreditch, Camden, Peckham), and cultural markers",
+      us: "United States (New York, LA, Chicago); use regional foods and brands, neighborhoods (Williamsburg, Silver Lake, Wicker Park, Mission), and cultural markers",
+      uk: "United Kingdom (London, Manchester, Edinburgh); use regional foods (fish and chips, Sunday roast, Cornish pasty), neighborhoods (Shoreditch, Camden, Peckham), and cultural markers",
     },
     portuguese: {
-      brazil: "Brazil (São Paulo, Rio, Salvador) — use regional foods (feijoada, pão de queijo, açaí, moqueca, coxinha), neighborhoods (Ipanema, Pinheiros, Pelourinho, Vila Madalena), and cultural markers",
-      portugal: "Portugal (Lisbon, Porto) — use regional foods (bacalhau à brás, pastel de nata, francesinha, bifana), neighborhoods (Alfama, Bairro Alto, Ribeira), and cultural markers",
+      brazil: "Brazil (São Paulo, Rio, Salvador); use regional foods (feijoada, pão de queijo, açaí, moqueca, coxinha), neighborhoods (Ipanema, Pinheiros, Pelourinho, Vila Madalena), and cultural markers",
+      portugal: "Portugal (Lisbon, Porto); use regional foods (bacalhau à brás, pastel de nata, francesinha, bifana), neighborhoods (Alfama, Bairro Alto, Ribeira), and cultural markers",
     },
     german: {
-      germany: "Germany (Berlin, Munich, Hamburg) — use regional foods (Sauerbraten, Königsberger Klopse, Currywurst, Bratwurst, Kartoffelsalat, Rouladen, Maultaschen), neighborhoods (Kreuzberg, Schwabing, Neukölln, Prenzlauer Berg), real markets (Winterfeldtmarkt, Markthalle Neun, Viktualienmarkt), and cultural markers",
-      austria: "Austria (Vienna, Salzburg) — use regional foods (Wiener Schnitzel, Tafelspitz, Sachertorte, Apfelstrudel, Kaiserschmarrn), neighborhoods (Neubau, Leopoldstadt, Wieden), real coffeehouses (Café Central, Café Sperl, Café Hawelka), and cultural markers",
+      germany: "Germany (Berlin, Munich, Hamburg); use regional foods (Sauerbraten, Königsberger Klopse, Currywurst, Bratwurst, Kartoffelsalat, Rouladen, Maultaschen), neighborhoods (Kreuzberg, Schwabing, Neukölln, Prenzlauer Berg), real markets (Winterfeldtmarkt, Markthalle Neun, Viktualienmarkt), and cultural markers",
+      austria: "Austria (Vienna, Salzburg); use regional foods (Wiener Schnitzel, Tafelspitz, Sachertorte, Apfelstrudel, Kaiserschmarrn), neighborhoods (Neubau, Leopoldstadt, Wieden), real coffeehouses (Café Central, Café Sperl, Café Hawelka), and cultural markers",
     },
     french: {
-      france: "France (Paris, Lyon, Marseille) — use regional foods (croque-monsieur, bouillabaisse, quenelles, tarte flambée, cassoulet), neighborhoods (Belleville, Le Marais, Croix-Rousse, Le Panier), and cultural markers",
-      "canada-fr": "French Canada (Quebec, Montreal) — use regional foods (poutine, tourtière, pâté chinois), neighborhoods (Plateau, Petite-Italie, Vieux-Québec), and cultural markers",
+      france: "France (Paris, Lyon, Marseille); use regional foods (croque-monsieur, bouillabaisse, quenelles, tarte flambée, cassoulet), neighborhoods (Belleville, Le Marais, Croix-Rousse, Le Panier), and cultural markers",
+      "canada-fr": "French Canada (Quebec, Montreal); use regional foods (poutine, tourtière, pâté chinois), neighborhoods (Plateau, Petite-Italie, Vieux-Québec), and cultural markers",
     },
     italian: {
-      italy: "Italy (Rome, Milan, Naples, Florence) — use regional foods (cacio e pepe, risotto alla milanese, pizza napoletana, cannoli, arancini, bistecca fiorentina), neighborhoods (Trastevere, Navigli, Quartieri Spagnoli, Oltrarno), and cultural markers",
+      italy: "Italy (Rome, Milan, Naples, Florence); use regional foods (cacio e pepe, risotto alla milanese, pizza napoletana, cannoli, arancini, bistecca fiorentina), neighborhoods (Trastevere, Navigli, Quartieri Spagnoli, Oltrarno), and cultural markers",
     },
     korean: {
-      "south-korea": "South Korea (Seoul, Busan) — use regional foods (kimchi jjigae, bibimbap, tteokbokki, samgyeopsal, japchae, galbi), neighborhoods (Hongdae, Itaewon, Gangnam, Seongsu), and cultural markers",
+      "south-korea": "South Korea (Seoul, Busan); use regional foods (kimchi jjigae, bibimbap, tteokbokki, samgyeopsal, japchae, galbi), neighborhoods (Hongdae, Itaewon, Gangnam, Seongsu), and cultural markers",
     },
   };
 
@@ -192,7 +192,7 @@ export async function POST(request: Request) {
           break;
         }
         synopsisFeedback = `Too similar to "${judgement.conflictingTitle ?? "another story"}": ${judgement.reason ?? "shared narrative arc"}.`;
-        // On the last attempt, accept the candidate even if similar —
+        // On the last attempt, accept the candidate even if similar -
         // better a slightly overlapping synopsis than no synopsis at all.
         if (attempt === MAX_SYNOPSIS_ATTEMPTS - 1) synopsis = candidate;
       } catch (e) {

@@ -7,7 +7,7 @@ import { prisma } from "@/lib/prisma";
 /**
  * Returns the full Studio language catalog so the mobile language switcher
  * mirrors the Planning page. A language is `comingSoon` when there is no
- * active Journey record for it yet — the user can see it as a future option
+ * active Journey record for it yet; the user can see it as a future option
  * but cannot pick it as a target language.
  *
  * Languages that have a Journey record but zero published stories (e.g. a new
@@ -36,7 +36,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   );
   // Per-(language, variant) availability. A language can be live overall while
   // a specific variant has zero journeys (e.g. Spanish has LATAM content but
-  // not Spain) — the picker must be able to disable just that variant.
+  // not Spain); the picker must be able to disable just that variant.
   const journeyVariantPairs = new Set(
     journeys
       .filter((j) => j.variant)

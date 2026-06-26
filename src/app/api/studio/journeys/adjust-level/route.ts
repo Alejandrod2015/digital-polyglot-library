@@ -32,7 +32,7 @@ Hard rules:
 - CRITICAL: Do NOT introduce new words above ${cefrLabel} when you reformulate. The replacement words must themselves be ${cefrLabel} or simpler. If you cannot find a ${cefrLabel}-or-below replacement, prefer a longer concrete description with basic words over a single fancy synonym.
 - Output the FULL story text (every paragraph), not just the changed sentences.
 
-ALSO: keep track of every replacement you make. Use short fragments — single words when 1-to-1, short phrases when reformulating. Ignore punctuation tweaks.
+ALSO: keep track of every replacement you make. Use short fragments; single words when 1-to-1, short phrases when reformulating. Ignore punctuation tweaks.
 
 STORY:
 ${text}
@@ -150,7 +150,7 @@ export async function POST(request: Request) {
   try {
     for (let i = 0; i < MAX_ITERATIONS; i += 1) {
       if (candidateWordsToAvoid.length === 0) break;
-      // Already at near-perfect — nothing left to gain.
+      // Already at near-perfect; nothing left to gain.
       if (bestScore >= 95) break;
 
       const { text: rewritten, replacements } = await callAdjustLLM({
@@ -185,7 +185,7 @@ export async function POST(request: Request) {
         candidateText = rewritten;
         candidateWordsToAvoid = audit.highlights.map((h) => h.word);
       } else {
-        // Regression or plateau — stop and keep the best so far.
+        // Regression or plateau; stop and keep the best so far.
         break;
       }
     }
@@ -194,7 +194,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: msg, iterations: iterationsLog }, { status: 500 });
   }
 
-  // Nothing improved over the original — leave the DB untouched.
+  // Nothing improved over the original; leave the DB untouched.
   if (bestText === story.text) {
     return NextResponse.json({
       id: story.id,

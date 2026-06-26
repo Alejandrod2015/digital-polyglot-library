@@ -148,7 +148,7 @@ export async function getStandaloneStoriesBySlugs(
     normalizeStandaloneStory
   );
 
-  // Also resolve slugs from Prisma JourneyStory rows — stories created in the
+  // Also resolve slugs from Prisma JourneyStory rows; stories created in the
   // Studio live there, not in the standalone catalog, and the reader needs
   // them to open.
   const foundSlugs = new Set(studioStories.map((s) => s.slug));

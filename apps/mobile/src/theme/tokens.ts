@@ -1,5 +1,5 @@
 /**
- * Mobile design tokens — mirrors the web tokens in src/app/globals.css so
+ * Mobile design tokens; mirrors the web tokens in src/app/globals.css so
  * the two surfaces stay visually consistent. Source of truth for the
  * palette and type scale is the handoff in .claude/handoff/.
  *
@@ -25,7 +25,7 @@ export const bg = {
 } as const;
 
 /**
- * Semantic accents — named by product meaning (streak, xp, gems)
+ * Semantic accents; named by product meaning (streak, xp, gems)
  * rather than hue so a future palette swap ripples through all usages
  * without a grep-and-replace.
  */
@@ -40,7 +40,7 @@ export const color = {
 
 /**
  * Font family names exposed by @expo-google-fonts/nunito. In React
- * Native, `fontWeight` alone is NOT enough with a custom font — the
+ * Native, `fontWeight` alone is NOT enough with a custom font; the
  * engine needs the exact PostScript family. Use these strings directly
  * in StyleSheet styles; the Text render patch in App.tsx also maps
  * `fontWeight` to these for legacy styles that predate tokens.

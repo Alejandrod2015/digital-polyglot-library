@@ -313,7 +313,7 @@ export default function CatalogBookEditorClient({ id }: Props) {
           <div>
             <label style={label}>Variante</label>
             <select style={input} value={form.variant ?? ""} onChange={(e) => patch("variant", e.target.value || null)}>
-              <option value="">—</option>
+              <option value="">-</option>
               {VARIANTS.map((v) => (
                 <option key={v} value={v}>
                   {v}
@@ -341,7 +341,7 @@ export default function CatalogBookEditorClient({ id }: Props) {
           <div>
             <label style={label}>CEFR</label>
             <select style={input} value={form.cefrLevel ?? ""} onChange={(e) => patch("cefrLevel", e.target.value || null)}>
-              <option value="">—</option>
+              <option value="">-</option>
               {CEFR.map((v) => (
                 <option key={v} value={v}>
                   {v.toUpperCase()}
@@ -415,7 +415,7 @@ export default function CatalogBookEditorClient({ id }: Props) {
                     </td>
                     <td style={{ padding: "6px 4px", fontSize: 11, color: "var(--muted)", fontFamily: "monospace" }}>{s.slug}</td>
                     <td style={{ padding: "6px 4px", fontSize: 11, color: "var(--muted)" }}>
-                      {s.text ? `${s.text.length} chars` : "—"}
+                      {s.text ? `${s.text.length} chars` : "-"}
                     </td>
                   </tr>
                 ))}

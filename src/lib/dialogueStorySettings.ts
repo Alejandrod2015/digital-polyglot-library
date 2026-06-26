@@ -12,7 +12,7 @@
  *  - El slug es el `JourneyStory.slug` exacto en DB.
  *  - El setting refleja DÓNDE pasa la historia, no el origen del
  *    narrador. "Carnitas en Coyoacán" ambienta en CDMX → "mexico".
- *  - Si la historia es genérica/sin setting fijo, NO la agregues —
+ *  - Si la historia es genérica/sin setting fijo, NO la agregues -
  *    `inferStorySetting` cae al fallback por (language, variant).
  */
 
@@ -37,7 +37,7 @@ export const STORY_SETTING_BY_SLUG: Record<string, StorySetting> = {
  * Devuelve el StorySetting que el casting debería usar para una
  * historia. Prefiere el override por slug; si no, infiere por
  * (language, variant) del journey. Devuelve null si ni siquiera la
- * inferencia funciona — el caller debería tratarlo como "unknown" y
+ * inferencia funciona; el caller debería tratarlo como "unknown" y
  * no aplicar restricciones de compat.
  */
 export function inferStorySetting(args: {

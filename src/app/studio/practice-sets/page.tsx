@@ -112,7 +112,7 @@ export default async function PracticeSetsListPage() {
                               <div style={titleCell}>{s.title ?? s.slug}</div>
                               <div style={slugCell}>{s.slug}</div>
                             </div>
-                            <div style={topicCell}>{s.topic ?? "—"}</div>
+                            <div style={topicCell}>{s.topic ?? "-"}</div>
                             <div>
                               {set ? (
                                 <Pill
@@ -120,7 +120,7 @@ export default async function PracticeSetsListPage() {
                                   tone={set.locked ? "green" : "blue"}
                                 />
                               ) : (
-                                <Pill text="—" tone="muted" />
+                                <Pill text="-" tone="muted" />
                               )}
                             </div>
                             <div>
@@ -130,7 +130,7 @@ export default async function PracticeSetsListPage() {
                                   tone={audioCount === exCount && exCount > 0 ? "green" : audioCount === 0 ? "muted" : "amber"}
                                 />
                               ) : (
-                                <Pill text="—" tone="muted" />
+                                <Pill text="-" tone="muted" />
                               )}
                             </div>
                             <div style={{ width: 80, textAlign: "right" }}>

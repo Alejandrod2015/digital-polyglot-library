@@ -54,7 +54,7 @@ function labelStyle(): React.CSSProperties {
 }
 
 // Recommended limits for clean display on an iPhone notification banner.
-// Not hard-enforced — past these, iOS may truncate (shown in amber).
+// Not hard-enforced; past these, iOS may truncate (shown in amber).
 const TITLE_MAX = 40;
 const BODY_MAX = 120;
 
@@ -633,7 +633,7 @@ function CampaignsPanel({ types }: { types: NotificationType[] }) {
               </div>
               <p style={{ margin: "0 0 8px", fontSize: 13, color: "var(--muted)" }}>{c.body}</p>
               <p style={{ margin: "0 0 8px", fontSize: 12, color: "var(--muted)" }}>
-                {c.target === "all" ? "Todos con token" : `Tipo: ${c.notificationTypeKey ?? "—"}`}
+                {c.target === "all" ? "Todos con token" : `Tipo: ${c.notificationTypeKey ?? "-"}`}
                 {c.scheduledAt ? ` · programada ${new Date(c.scheduledAt).toLocaleString()}` : ""}
                 {c.status === "sent" ? ` · ${c.deliveredCount}/${c.recipientCount} entregadas, ${c.failedCount} fallidas` : ""}
               </p>

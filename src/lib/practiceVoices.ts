@@ -7,7 +7,7 @@
  *   - scripts/regen-practice-audios.ts (CLI regen)
  *
  * Must stay in sync with `modal_app/audio_studio.py`'s PIPER_VOICES /
- * KOKORO_VOICES maps — every entry here MUST have a Modal handler.
+ * KOKORO_VOICES maps; every entry here MUST have a Modal handler.
  */
 
 export type PracticeVoice = {
@@ -63,7 +63,7 @@ export function getPracticeVoice(id: string | null | undefined): PracticeVoice |
 /**
  * Resolves the voice to actually use for a given (story, language) pair.
  * Order:
- *   1. Per-story override (`story.practiceVoiceId`) — if it exists AND
+ *   1. Per-story override (`story.practiceVoiceId`); if it exists AND
  *      is in the supported list AND matches the language.
  *   2. Per-language default.
  *   3. null (no voice available for this language; caller decides

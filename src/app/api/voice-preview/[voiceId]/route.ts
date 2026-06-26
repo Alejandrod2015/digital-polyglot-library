@@ -6,7 +6,7 @@ import { NextRequest } from "next/server";
 // Some browsers/configurations download instead of playing inline. By proxying
 // here and forcing `Content-Type: audio/mpeg`, every modern browser plays inline.
 //
-// Whitelisted IDs only — no SSRF. To add a voice, paste its preview_url here.
+// Whitelisted IDs only; no SSRF. To add a voice, paste its preview_url here.
 // Source: GET /v1/shared-voices (free; no generation, no credit cost).
 
 const VOICE_PREVIEWS: Record<string, string> = {
@@ -36,7 +36,7 @@ const VOICE_PREVIEWS: Record<string, string> = {
   UK00oAtGYBrHBUbesfMv: "https://storage.googleapis.com/eleven-public-prod/database/workspace/fcf849da20ce45a190ce7bd22d9445b6/voices/UK00oAtGYBrHBUbesfMv/qh8fxynvU2KCUjUfsBzL.mp3",
   "6Mo5ciGH5nWiQacn5FYk": "https://storage.googleapis.com/eleven-public-prod/database/workspace/b278ac7736434d48b8a05b2a6162de00/voices/6Mo5ciGH5nWiQacn5FYk/o4HrLH8KpxJUp60etPjT.mp3",
 
-  // German candidate round (June 2026) — 10 voices to evaluate for the
+  // German candidate round (June 2026); 10 voices to evaluate for the
   // German conversational beta (3 mini-casts Berlin/München/Hamburg).
   // Slots: 2× F young, 2× F older, 2× M older, 2× M middle-aged (alt to
   // Moritz), 2× M young (alt to Michael). Metadata is creator-set and
@@ -52,7 +52,7 @@ const VOICE_PREVIEWS: Record<string, string> = {
   "95KdOEhYVFqJAU4IIlRK": "https://api.us.elevenlabs.io/v1/voices/95KdOEhYVFqJAU4IIlRK/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI0ZjkxNTM2Y2JkNDA0Yjg2OGZhN2FjNTI2Y2QwODdlMCIsImZpbGVuYW1lIjoiRTlCSGQwS1NqcGNLc2l6OVl4TlEubXAzIiwidGltZXN0YW1wIjoxNzgwNDczNjAwMDAwMDAwfQ%3D%3D",
   "1QykRgkluVRz9xfOVUsh": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ff74bcc1751a4a3d933a8622466e2c83/voices/1QykRgkluVRz9xfOVUsh/MMkHqrRgq4mz2VgZtv97.mp3",
 
-  // German round 2 (June 2026) — 6 more for M older + M young slots
+  // German round 2 (June 2026); 6 more for M older + M young slots
   pfvZahoGcT3NdpxRuNkg: "https://api.us.elevenlabs.io/v1/voices/pfvZahoGcT3NdpxRuNkg/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiJiMjhjYzRhOWQwMzg0Y2Y5ODU3ODQwNjQ0YjQyOTI4MSIsImZpbGVuYW1lIjoianhHdWRnQlFRd3FpcUJ2TGwwNEoubXAzIiwidGltZXN0YW1wIjoxNzgwNDczNjAwMDAwMDAwfQ%3D%3D",
   R3XXDwKMU2YHwBcuYUH3: "https://api.us.elevenlabs.io/v1/voices/R3XXDwKMU2YHwBcuYUH3/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiJiMjhjYzRhOWQwMzg0Y2Y5ODU3ODQwNjQ0YjQyOTI4MSIsImZpbGVuYW1lIjoiTUF3R09EbTBBVWxYTEh0SWFwVVoubXAzIiwidGltZXN0YW1wIjoxNzgwNDczNjAwMDAwMDAwfQ%3D%3D",
   "2HmIg4yvRgcH2ZDgiwGz": "https://storage.googleapis.com/eleven-public-prod/database/user/6PepXtO6L5eOWtYyGObg2TDYJex2/voices/2HmIg4yvRgcH2ZDgiwGz/KvLob4tdGz64nANs4Yup.mp3",
@@ -60,7 +60,7 @@ const VOICE_PREVIEWS: Record<string, string> = {
   "8aPaMtDocayOBFDFyWHp": "https://api.us.elevenlabs.io/v1/voices/8aPaMtDocayOBFDFyWHp/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiJlNzY1MGI0ZDQ1ZTk0MmQzYmNmNGZhMWVkZDA3NWQyNSIsImZpbGVuYW1lIjoiM2U5eW9GQ09WU1FEdmJ2WkpPcTkubXAzIiwidGltZXN0YW1wIjoxNzgwNDczNjAwMDAwMDAwfQ%3D%3D",
   ygoBNrnmTEdu5NtDTmAY: "https://api.us.elevenlabs.io/v1/voices/ygoBNrnmTEdu5NtDTmAY/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiJiMjhjYzRhOWQwMzg0Y2Y5ODU3ODQwNjQ0YjQyOTI4MSIsImZpbGVuYW1lIjoiZ2dXT1ByelVmVUpjNzJkdDZuVjMubXAzIiwidGltZXN0YW1wIjoxNzgwNDczNjAwMDAwMDAwfQ%3D%3D",
 
-  // German round 2 STRICT (June 2026) — filtered hard: only conversational
+  // German round 2 STRICT (June 2026); filtered hard: only conversational
   // / narrative_story use_cases, no animation/fantasy/animal names.
   DsY1TMHF6R6uylNq96bs: "https://storage.googleapis.com/eleven-public-prod/database/user/W2pNjDhk8AeW0y0LyxBmbq5Jw5h1/voices/DsY1TMHF6R6uylNq96bs/Ox1x5yUbqEbRppErDrI4.mp3",
   cLemPw4efsDYbUMhZbhl: "https://storage.googleapis.com/eleven-public-prod/database/workspace/c698efeee7724b5a8434c36336a49f0f/voices/cLemPw4efsDYbUMhZbhl/ddb0679c-5336-454c-8f86-1120128af48d.mp3",
@@ -69,12 +69,12 @@ const VOICE_PREVIEWS: Record<string, string> = {
   HLL5Lh99l3pwG8HZW1N5: "https://api.us.elevenlabs.io/v1/voices/HLL5Lh99l3pwG8HZW1N5/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiJlZDliMDVlNjMyNGM0NTc2ODU0OTAzNTJlOWExZWM5MCIsImZpbGVuYW1lIjoiZG1YdnVxZXpLT2pZYWN0YWtQTlcubXAzIiwidGltZXN0YW1wIjoxNzgwNDczNjAwMDAwMDAwfQ%3D%3D",
   Ky0R9LbsUYxZtUQrNzTT: "https://api.us.elevenlabs.io/v1/voices/Ky0R9LbsUYxZtUQrNzTT/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiN2VFNGNkbE5jSU5kclUzSkpGSFpKb3F1UFY2MyIsImZpbGVuYW1lIjoiYjkzNTA0ZmMtZTRiMi00MWJkLTljN2QtZGE4YWNmZWU5ZWU0Lm1wMyIsInRpbWVzdGFtcCI6MTc4MDQ3MzYwMDAwMDAwMH0%3D",
 
-  // German round 3 (M young alt — 3 more to compare against Pascal R)
+  // German round 3 (M young alt; 3 more to compare against Pascal R)
   JDXBO1etYlVlJZRMoYzH: "https://storage.googleapis.com/eleven-public-prod/database/workspace/4f186a9c36e44105845eef8c92cb4857/voices/JDXBO1etYlVlJZRMoYzH/4bCFlOi6bjwzEWYjOc1Y.mp3",
   DWwtG6caf2ejed9VskEg: "https://storage.googleapis.com/eleven-public-prod/database/workspace/09830338be95492e897a18bc75422543/voices/DWwtG6caf2ejed9VskEg/6e203d4e-24b0-40c9-b16c-609bbbbfae34.mp3",
   Jim99kfwxzjlhP4r2Q6J: "https://storage.googleapis.com/eleven-public-prod/database/user/gYEAvBjsLWSbftewdHUuFsgYqzm1/voices/Jim99kfwxzjlhP4r2Q6J/aG2pFg9Ef4ToHPVHuIVX.mp3",
 
-  // German round 4 — M older candidates (4 conversational; dropped a 5th
+  // German round 4; M older candidates (4 conversational; dropped a 5th
   // "Gentle Santa Claus" as theatrical).
   PyRxkbWo30pCafyP2T3t: "https://storage.googleapis.com/eleven-public-prod/database/workspace/1a718c1a9a5843568ac9ad0b3151eb30/voices/PyRxkbWo30pCafyP2T3t/9RdkYNx83LqF8v3VHqqC.mp3",
   uAGsNqwYZTQBpvJk6b0J: "https://storage.googleapis.com/eleven-public-prod/database/workspace/3927b7dd5a0d4aeb81372239e1dce3b5/voices/uAGsNqwYZTQBpvJk6b0J/NesW7o28TxaWWFejoi2i.mp3",

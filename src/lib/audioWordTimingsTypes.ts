@@ -4,7 +4,7 @@
 // y alineamiento Modal. Cuando un client component como
 // `HighlightedStoryReader.tsx` importa una función runtime de
 // `audioWordTimings.ts`, webpack bundlea TODA la cadena transitiva al
-// cliente — incluyendo prisma — y peta con "PrismaClient is unable
+// cliente; incluyendo prisma; y peta con "PrismaClient is unable
 // to run in this browser environment".
 //
 // La regla: tipos + parsers/serializers de payload van acá. Cosas
@@ -31,7 +31,7 @@ export type AudioWordTimingsPayload = {
 /**
  * Parse + validate raw JSON-shaped data into a typed payload. Returns
  * `null` si el shape no encaja, así el caller usa fallback al legacy
- * sentence-level path. Pure function — safe en client y server.
+ * sentence-level path. Pure function; safe en client y server.
  */
 export function coerceAudioWordTimings(raw: unknown): AudioWordTimingsPayload | null {
   if (!raw || typeof raw !== "object") return null;

@@ -26,9 +26,9 @@ import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
  * computed CEFR level) or cancels.
  *
  * The runner is opened from two places:
- *   - Onboarding step 3 — after the user picks their self-reported
+ *   - Onboarding step 3; after the user picks their self-reported
  *     level, we offer the test as a more accurate alternative.
- *   - Locked-story tap — when the user tries to open a story above
+ *   - Locked-story tap; when the user tries to open a story above
  *     their current level.
  *
  * Both call sites pass the same `language` (and optional `variant`)
@@ -227,7 +227,7 @@ export function LevelTestRunner({
           </Pressable>
           {/* Title is absolutely-centered relative to the screen so
               we don't need a dummy placeholder on the right just to
-              balance the close button — that produced a confusing
+              balance the close button; that produced a confusing
               empty circle in the earlier version. */}
           <View pointerEvents="none" style={styles.headerCenterAbsolute}>
             <LanguageFlag language={language} variant={variant} size={26} />
@@ -235,7 +235,7 @@ export function LevelTestRunner({
           </View>
         </View>
 
-        {/* Progress bar — drives the user forward visually. */}
+        {/* Progress bar; drives the user forward visually. */}
         {!finished ? (
           <View style={styles.progressTrack}>
             <View style={[styles.progressFill, { width: `${progressPct}%` }]} />
@@ -321,13 +321,13 @@ export function LevelTestRunner({
                     {score} of {questions.length} correct.
                   </Text>
                   <Text style={styles.resultDescription}>
-                    {/* Plain apostrophe inside the template literal —
+                    {/* Plain apostrophe inside the template literal -
                         `&apos;` only works in raw JSX text, not inside
                         a `${...}` expression, where it would render as
                         the literal characters "&apos;". */}
                     {source === "onboarding"
                       ? `Your ${language} journey starts at ${levelDisplay}. Easier levels stay open whenever you want extra practice.`
-                      : `${levelName} stories are unlocked. Pick up where you wanted to go — earlier levels stay available too.`}
+                      : `${levelName} stories are unlocked. Pick up where you wanted to go; earlier levels stay available too.`}
                   </Text>
                 </View>
               );
@@ -335,7 +335,7 @@ export function LevelTestRunner({
           </ScrollView>
         ) : null}
 
-        {/* Footer: Check / Next / Claim — depends on state. */}
+        {/* Footer: Check / Next / Claim; depends on state. */}
         <View style={styles.footer}>
           {finished ? (
             <Pressable onPress={handleClaimResult} style={styles.primaryButton}>

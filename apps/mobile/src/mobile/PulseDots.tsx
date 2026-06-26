@@ -13,7 +13,7 @@ type Props = {
 /**
  * Three dots that pulse in sequence (opacity + scale). Used as a simple,
  * friendly loading indicator in places where a static skeleton doesn't add
- * value — e.g. the journey language switch.
+ * value; e.g. the journey language switch.
  */
 export function PulseDots({ color = "#f8c15c", size = 10, label }: Props) {
   const dots = [useRef(new Animated.Value(0.3)).current, useRef(new Animated.Value(0.3)).current, useRef(new Animated.Value(0.3)).current];

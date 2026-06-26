@@ -4,7 +4,7 @@
 // "spain", "latam"). We pick the flag from (language, variant) and fall
 // back to the canonical country for the language if no variant is set.
 //
-// We intentionally keep this tiny — no flag library, no SVGs, just
+// We intentionally keep this tiny; no flag library, no SVGs, just
 // emoji. iOS/Android render them perfectly; desktop is not the target
 // (the switcher is `md:hidden`).
 
@@ -77,7 +77,7 @@ const DEFAULT_COUNTRY_BY_LANGUAGE: Record<string, string> = {
 export function getLanguageCountry(language: string, variant?: string | null): string {
   // Only honor the variant if it actually belongs to this language. A stale
   // cross-language variant (e.g. preferredVariant="latam" left over from
-  // Spanish while the active language is German) must NOT pick the flag —
+  // Spanish while the active language is German) must NOT pick the flag -
   // that produced a Colombia flag next to a "DE" code. Fall back to the
   // language's canonical country instead.
   if (variant && isVariantValidForLanguage(variant, language)) {
@@ -119,7 +119,7 @@ export function isVariantValidForLanguage(
 //   "chinese".slice(0,2)    → "ch"  (should be ZH)
 //   "japanese".slice(0,2)   → "ja"  ✓ accidentally correct
 // Always use the lookup table below. If a new language is added,
-// extend the table — don't fall back to slicing.
+// extend the table; don't fall back to slicing.
 const ISO_BY_LANGUAGE: Record<string, string> = {
   // English keys (catalog / app surface)
   english: "EN",
@@ -154,7 +154,7 @@ const ISO_BY_LANGUAGE: Record<string, string> = {
 /**
  * Compact ISO 639-1 two-letter tag for a language name or slug.
  * Returns "??" for unknown languages so a future "SP" doesn't sneak in
- * via string slicing — extend ISO_BY_LANGUAGE explicitly when adding a
+ * via string slicing; extend ISO_BY_LANGUAGE explicitly when adding a
  * new language to the catalog.
  */
 export function getIsoLanguageTag(language: string | null | undefined): string {

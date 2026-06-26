@@ -17,7 +17,7 @@ import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
  * entry in the side menu. Replaces the inline list that used to
  * sit at the bottom of the menu and ate ~5 rows of vertical space.
  *
- * Same animation pattern as `LanguageSwitchSheet` — slide up from
+ * Same animation pattern as `LanguageSwitchSheet`; slide up from
  * the bottom, backdrop fade-in, dismiss via backdrop tap or the
  * close button. Drag-to-dismiss is intentionally omitted: the link
  * list is short and a tap-to-close model is enough.

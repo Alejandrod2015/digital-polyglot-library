@@ -149,7 +149,7 @@ export function getMobileSessionFromRequest(req: NextRequest): MobileSessionPayl
 
 /**
  * Like {@link getMobileSessionFromRequest}, but also rejects tokens whose user
- * has been revoked (e.g. the Clerk user was deleted — see the `user.deleted`
+ * has been revoked (e.g. the Clerk user was deleted; see the `user.deleted`
  * webhook). The mobile token is a stateless JWT verified by signature + exp
  * only, so this DB-backed check is the only thing that can invalidate an
  * already-issued token before it expires. Mobile API routes should use this

@@ -87,7 +87,7 @@ export default function MiniPlayer({ src, width }: Props) {
       <div onClick={seek} className="jm-mini__track">
         <div className="jm-mini__fill" style={{ width: `${progress}%` }} />
       </div>
-      <span className="jm-mini__time">{duration > 0 ? fmt(currentTime) : "—"}</span>
+      <span className="jm-mini__time">{duration > 0 ? fmt(currentTime) : "-"}</span>
     </div>
   );
 }

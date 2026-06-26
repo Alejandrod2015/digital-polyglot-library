@@ -22,7 +22,7 @@ export type TopicPreviewSheetProps = {
   stories?: TopicStoryPreview[];
   /** Story slugs in this topic. When provided, the sheet fetches the
    *  combined vocab list across all stories and renders it as a chip
-   *  row (iPhone parity — that's the panel's content there). */
+   *  row (iPhone parity; that's the panel's content there). */
   storySlugs?: string[];
   ctaHref?: string | null;
   ctaLabel?: string;

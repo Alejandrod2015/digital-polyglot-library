@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 
-/** GET — list levels */
+/** GET; list levels */
 export async function GET() {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -15,7 +15,7 @@ export async function GET() {
   return NextResponse.json(levels);
 }
 
-/** POST — create level. Body: { code, label } */
+/** POST; create level. Body: { code, label } */
 export async function POST(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
   return NextResponse.json(level);
 }
 
-/** PATCH — update level. Body: { id, label? } */
+/** PATCH; update level. Body: { id, label? } */
 export async function PATCH(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -50,7 +50,7 @@ export async function PATCH(request: Request) {
   return NextResponse.json(level);
 }
 
-/** DELETE — delete level. Body: { id } */
+/** DELETE; delete level. Body: { id } */
 export async function DELETE(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

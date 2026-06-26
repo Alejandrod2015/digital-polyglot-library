@@ -103,7 +103,7 @@ const NAV_SECTIONS = [
 */
 
 /* ── Colors (aligned with the landing + iOS app palette) ── */
-const ACCENT = "#fcd34d"; // gold — primary brand accent
+const ACCENT = "#fcd34d"; // gold; primary brand accent
 const ACCENT_SOFT = "rgba(252, 211, 77, 0.14)";
 // Navy editorial palette (mismas vars `--mx-*` que /studio/metrics).
 const SIDEBAR_BG = "#060d1c";
@@ -373,7 +373,7 @@ export default function StudioShell({
           overflow-x: hidden) para poder colgar como un "tab handle" al
           borde derecho del sidebar sin ser clipeado. Cuando expandido,
           va al top-right del brand area; cuando colapsado, queda en el
-          borde derecho del sidebar — siempre visible y nunca encima
+          borde derecho del sidebar; siempre visible y nunca encima
           del logo. */}
       <button
         type="button"

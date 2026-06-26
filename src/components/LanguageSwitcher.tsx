@@ -62,7 +62,7 @@ function readStatsByName(metadata: Record<string, unknown>) {
   return map;
 }
 
-// MOCK DATA — remove this whole block when PR 2 lands and
+// MOCK DATA; remove this whole block when PR 2 lands and
 // publicMetadata.targetLanguagesStats is populated server-side.
 // Reviewers: grep for "MOCK DATA" to find and delete in one diff.
 const MOCK_STATS: Record<string, { streak: number; xpTotal: number; progress: number }> = {
@@ -119,7 +119,7 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
   });
 
   const statsByName = readStatsByName(metadata);
-  // MOCK DATA — fallback so PR 1 looks identical to mockup-reference.html
+  // MOCK DATA; fallback so PR 1 looks identical to mockup-reference.html
   // even before publicMetadata.targetLanguagesStats is populated. Remove
   // this `if` block when PR 2 lands.
   if (statsByName.size === 0) {

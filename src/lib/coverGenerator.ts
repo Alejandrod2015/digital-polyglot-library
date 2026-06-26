@@ -91,11 +91,11 @@ const SHARED_CARTOON_STYLE = [
 // (yellow/sepia/aged) cast. The variants only shift accent temperature.
 const COVER_VARIANT_PALETTE: Record<CoverVariant, string> = {
   "cool-cartoon":
-    "PALETTE: Bright, clear midday daylight with clean white light. Vivid, fully saturated colors leaning cool and fresh — soft sky blue, fresh leaf green, clean cream-white — with warm coral or amber accents for pop. Colors read true, crisp and luminous, like a sunny modern poster.",
+    "PALETTE: Bright, clear midday daylight with clean white light. Vivid, fully saturated colors leaning cool and fresh; soft sky blue, fresh leaf green, clean cream-white; with warm coral or amber accents for pop. Colors read true, crisp and luminous, like a sunny modern poster.",
   "warm-cartoon":
-    "PALETTE: Bright, clear daylight with clean light. Vivid, fully saturated colors leaning warm — coral, warm amber, golden — balanced with sky blue and fresh green accents so the image stays bright and true and never collapses into a single warm cast. Crisp and luminous, like a sunny modern poster.",
+    "PALETTE: Bright, clear daylight with clean light. Vivid, fully saturated colors leaning warm; coral, warm amber, golden; balanced with sky blue and fresh green accents so the image stays bright and true and never collapses into a single warm cast. Crisp and luminous, like a sunny modern poster.",
   "earthy-cartoon":
-    "PALETTE: Bright, clear daylight with clean light. Vivid, fully saturated natural colors — fresh green, sky blue, warm coral and clean cream — with measured terracotta accents. Crisp and luminous, like a sunny modern poster.",
+    "PALETTE: Bright, clear daylight with clean light. Vivid, fully saturated natural colors; fresh green, sky blue, warm coral and clean cream; with measured terracotta accents. Crisp and luminous, like a sunny modern poster.",
 };
 
 // Strip proper nouns (character names, brand names) so Imagen-style models
@@ -121,7 +121,7 @@ function summarizeSynopsis(synopsis: string): string {
 }
 
 // Cast-aware summary: keeps proper nouns (the cast lines pin who's who) and
-// includes the first few sentences so the defining beat survives — e.g. the
+// includes the first few sentences so the defining beat survives; e.g. the
 // "third plate at the table" in Domingo con papá lives past sentence one. The
 // "No text" rule in the prompt still prevents names being drawn as captions.
 function summarizeSynopsisKeepNames(synopsis: string): string {
@@ -323,7 +323,7 @@ export async function generateFluxImageBuffer(prompt: string): Promise<Buffer> {
 
     const status = (extractFluxStatus(polled) ?? "").toLowerCase();
     if (status.includes("moderated") || status.includes("content policy") || status.includes("not found")) {
-      throw new Error(`Flux rejected the prompt (status: "${status}"). The cover prompt likely triggered content moderation — try simplifying the synopsis or reducing negative constraint words in the prompt.`);
+      throw new Error(`Flux rejected the prompt (status: "${status}"). The cover prompt likely triggered content moderation; try simplifying the synopsis or reducing negative constraint words in the prompt.`);
     }
     if (status.includes("error") || status.includes("fail")) {
       throw new Error("Flux generation failed while polling.");
@@ -333,7 +333,7 @@ export async function generateFluxImageBuffer(prompt: string): Promise<Buffer> {
   throw new Error("Flux generation timed out while polling.");
 }
 
-// Google Gemini API — image generation. Two distinct surfaces:
+// Google Gemini API; image generation. Two distinct surfaces:
 //   - Imagen 4 (`imagen-4.0-generate-001`): pure image model with explicit
 //     aspectRatio control. Best when you want predictable layouts.
 //   - Gemini 2.5 Flash Image (`gemini-2.5-flash-image-preview`): multimodal

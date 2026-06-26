@@ -380,7 +380,7 @@ export async function POST(req: NextRequest): Promise<Response> {
       const activeToWrite = active.filter((pair) => {
         const existing = existingByKey.get(`${pair.bookSlug}:${pair.storySlug}`);
         // Never create a resume point below the floor (position ~0 is not a
-        // resume point — it's the start of playback).
+        // resume point; it's the start of playback).
         if (!existing && !isMeaningfulResume(pair.progressSec)) return false;
         // Never downgrade an existing resume point to an earlier position.
         if (existing) {

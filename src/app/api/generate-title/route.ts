@@ -93,7 +93,7 @@ function tooSimilarToExisting(title: string, existingTitles: string[]): boolean 
       if (existingTokens.has(token)) overlap += 1;
     }
     const denominator = Math.max(tokens.size, existingTokens.size);
-    // 0.5 instead of 0.8 — half-overlap on a short title almost
+    // 0.5 instead of 0.8; half-overlap on a short title almost
     // always means the same cultural anchor is being reused (e.g.
     // "Quartieri Spagnoli, pizza margherita" vs "Arancini a
     // Quartieri Spagnoli" share 50% of tokens). Reject those.
@@ -139,7 +139,7 @@ export async function POST(req: Request) {
     const existingTitles = [...extraExistingTitles, ...sanityTitles];
     let feedback = "";
 
-    // Always-on existing titles block — shown even on the first
+    // Always-on existing titles block; shown even on the first
     // attempt so the model isn't blind to titles already used in
     // the catalog. Earlier this only appeared in retry blocks,
     // which let the first attempt happily pick "Quartieri Spagnoli"
@@ -147,7 +147,7 @@ export async function POST(req: Request) {
     // similarity check used an 80% token-overlap threshold that
     // didn't catch shared two-word anchors when the rest differed.
     const existingTitlesBlock = existingTitles.length
-      ? `\n\n# Titles already used — do NOT repeat their cultural anchor\nThe titles below already exist. Pick a fresh anchor (a different neighborhood, dish, venue, named object) characteristic of the same region but not appearing in this list:\n${existingTitles.slice(0, 80).join(" | ")}`
+      ? `\n\n# Titles already used; do NOT repeat their cultural anchor\nThe titles below already exist. Pick a fresh anchor (a different neighborhood, dish, venue, named object) characteristic of the same region but not appearing in this list:\n${existingTitles.slice(0, 80).join(" | ")}`
       : "";
     const patternGuidanceBlock = buildPatternGuidance(existingTitles);
 
@@ -155,19 +155,19 @@ export async function POST(req: Request) {
       const retryBlock =
         attempt === 0
           ? ""
-          : `\nPrevious attempt failed uniqueness: ${feedback}. Rotate the anchor — pick a different neighborhood, dish, venue, or named object than what you tried before AND than anything in the list above.`;
+          : `\nPrevious attempt failed uniqueness: ${feedback}. Rotate the anchor; pick a different neighborhood, dish, venue, or named object than what you tried before AND than anything in the list above.`;
 
       const prompt = `
 # Your task
 Write ONE story title in ${language}, 2 to 6 words.
 
 # The one thing that matters: a concrete cultural anchor
-The title must include at least ONE real-world proper noun or a culturally-specific common noun characteristic of the target region — a specific dish, a real neighborhood, a named venue, a traditional object. Not a generic noun like "meal", "food", "trip", "journey", "day", "adventure", "visit".
+The title must include at least ONE real-world proper noun or a culturally-specific common noun characteristic of the target region; a specific dish, a real neighborhood, a named venue, a traditional object. Not a generic noun like "meal", "food", "trip", "journey", "day", "adventure", "visit".
 
 That is the only hard requirement. Everything else below is advice on taste, not additional checkboxes.
 
 # Keep it simple. Do NOT over-engineer.
-Think of real book titles. "Mrs. Dalloway". "Der Prozess". "El Aleph". They are concrete names, not packed sentences. Most good titles contain ONE cultural element and nothing else. A second element (a small number, a name, an absence, a time) is OPTIONAL — include it only when the synopsis makes it feel natural, never to satisfy a checklist.
+Think of real book titles. "Mrs. Dalloway". "Der Prozess". "El Aleph". They are concrete names, not packed sentences. Most good titles contain ONE cultural element and nothing else. A second element (a small number, a name, an absence, a time) is OPTIONAL; include it only when the synopsis makes it feel natural, never to satisfy a checklist.
 
 # Also avoid falling into one safe shell
 If the recent titles all share the same syntax, do NOT keep cloning that syntax. Keep the specificity, rotate the shape.
@@ -180,13 +180,13 @@ If your title combines three or more of these into one title, you have over-engi
 - a specific location / venue
 - a specific number or time
 
-Concrete example of over-engineering to AVOID: "Kartoffelsalat ohne Senf am Flughafen" — a dish + an ingredient absence + a location is too many anchors. The result reads like the model was checking boxes.
+Concrete example of over-engineering to AVOID: "Kartoffelsalat ohne Senf am Flughafen"; a dish + an ingredient absence + a location is too many anchors. The result reads like the model was checking boxes.
 
 When tempted to add a second or third detail: delete elements instead of adding them, until the title feels like a natural name, not a description.
 
-# Graded examples — note the default is simple
+# Graded examples; note the default is simple
 
-## Level 1 (default — single anchor, nothing else, use this most of the time):
+## Level 1 (default; single anchor, nothing else, use this most of the time):
 - "Sauerbraten am Winterfeldtmarkt"
 - "Tres empanadas en Palermo"
 - "Augustiner, Tisch sieben"
@@ -194,20 +194,20 @@ When tempted to add a second or third detail: delete elements instead of adding 
 - "Croque-monsieur à Belleville"
 - "Ein Münchner im Berliner Biergarten"
 
-## Level 2 (anchor + one natural extra — only when the synopsis explicitly motivates it):
-- "Keine Kartoffeln für Anna" — a named character AND a simple absence
-- "Tre cannoli per Rosa" — a regional pastry AND a named character
-- "La Boca, domingo a las cuatro" — a neighborhood AND a specific time
+## Level 2 (anchor + one natural extra; only when the synopsis explicitly motivates it):
+- "Keine Kartoffeln für Anna"; a named character AND a simple absence
+- "Tre cannoli per Rosa"; a regional pastry AND a named character
+- "La Boca, domingo a las cuatro"; a neighborhood AND a specific time
 
-## Level 3 (rare — only when the absence is culturally essential to the dish):
-- "Choripán sin chimichurri" — chimichurri is structurally essential to a choripán, so its absence is meaningful
+## Level 3 (rare; only when the absence is culturally essential to the dish):
+- "Choripán sin chimichurri"; chimichurri is structurally essential to a choripán, so its absence is meaningful
 
 ## Healthy title-shape variety (use these to avoid formula)
-- "[anchor], [small concrete detail]" — "Bar Trieste, mesa cinco"
-- "[anchor] para [name]" — "Tres arepas para Lucía"
-- "[absence/problem] + [anchor]" — "Sin cambio para el tinto"
-- "[time/number] + [anchor]" — "Dos minutos para el ceviche"
-- "[named object] + [anchor]" — "La bolsa de Miraflores"
+- "[anchor], [small concrete detail]"; "Bar Trieste, mesa cinco"
+- "[anchor] para [name]"; "Tres arepas para Lucía"
+- "[absence/problem] + [anchor]"; "Sin cambio para el tinto"
+- "[time/number] + [anchor]"; "Dos minutos para el ceviche"
+- "[named object] + [anchor]"; "La bolsa de Miraflores"
 
 Default to Level 1. Go to Level 2 only if Level 1 feels too bare for this particular synopsis. Go to Level 3 almost never.
 
@@ -222,7 +222,7 @@ Default to Level 1. Go to Level 2 only if Level 1 feels too bare for this partic
 - Target language: ${language}
 ${region ? `- Region / cultural context: ${region}` : ""}
 ${topic ? `- Story topic: "${topic}"` : ""}
-${synopsis ? `- Synopsis: "${synopsis}" — mine it for ONE concrete noun (a dish, neighborhood, object, venue, character name) and build the title around that noun. Do not try to reflect every detail of the synopsis.` : ""}
+${synopsis ? `- Synopsis: "${synopsis}"; mine it for ONE concrete noun (a dish, neighborhood, object, venue, character name) and build the title around that noun. Do not try to reflect every detail of the synopsis.` : ""}
 ${existingTitlesBlock}
 ${patternGuidanceBlock}
 

@@ -67,7 +67,7 @@ const STYLE_OPTIONS = ["Cinematic", "Watercolor", "Editorial", "Studio Ghibli", 
 /**
  * Coalesces the API's story shape to a 4-state lifecycle for the
  * status badge + filters. The current backend exposes `coverDone`
- * only — `review` is local (whenever a variants batch is pending in
+ * only; `review` is local (whenever a variants batch is pending in
  * memory). `stale` isn't observable yet; flagged for a future field.
  */
 function statusForStory(story: Story, hasPendingVariants: boolean): CoverStatus {

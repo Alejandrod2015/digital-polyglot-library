@@ -24,7 +24,7 @@ export function sanitizePracticeSentence(sentence: string): string {
   s = s.replace(TRAILING_QUOTES_AFTER_PUNCT, "$1");
   // 2) Comilla recta solitaria al final cuya pareja no aparece en el
   //    resto de la frase (paridad impar). Si hay pareja la dejamos
-  //    tranquila — podría ser una contracción como `l'`.
+  //    tranquila; podría ser una contracción como `l'`.
   if (TRAILING_LONE_QUOTE.test(s)) {
     const last = s.at(-1)!;
     const earlier = s.slice(0, -1);

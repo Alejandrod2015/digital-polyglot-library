@@ -19,7 +19,7 @@ export const maxDuration = 120;
  *
  * Manual noise removal: splice OUT the [startSec, endSec] time region and
  * join the surrounding audio with a tiny crossfade to mask the seam click.
- * No TTS — purely surgical. Used by editors to delete clicks/pops/breaths
+ * No TTS; purely surgical. Used by editors to delete clicks/pops/breaths
  * that regenerating the whole tramo wouldn't reliably fix.
  *
  * Non-destructive: writes audioUrlPreview (master stays intact until the
@@ -28,14 +28,14 @@ export const maxDuration = 120;
  * the same region is cut from it too, keeping the stem in lockstep with the
  * mixed master so future segment regenerations still splice cleanly.
  *
- * Word timings are NOT touched here — Promote re-runs aeneas alignment over
+ * Word timings are NOT touched here; Promote re-runs aeneas alignment over
  * the new waveform, same as the regenerate flow.
  */
 
 // `aformat` normalizes channels + sample rate + sample format so acrossfade
 // can combine the two pieces (it is strict about layout matching).
 const NORM = "aformat=channel_layouts=stereo:sample_rates=44100:sample_fmts=fltp";
-// Short crossfade at the seam — long enough to kill the click, short enough
+// Short crossfade at the seam; long enough to kill the click, short enough
 // not to audibly blur speech on either side of a noise.
 const CUT_XFADE_SEC = 0.03;
 
@@ -99,7 +99,7 @@ function buildCutFilter(startSec: number, endSec: number, durationSec: number): 
   const headTooShort = startSec <= CUT_XFADE_SEC;
   const tailTooShort = endSec >= durationSec - CUT_XFADE_SEC;
   if (headTooShort && tailTooShort) {
-    // Whole thing selected — nothing sensible to keep; caller validates
+    // Whole thing selected; nothing sensible to keep; caller validates
     // against this, but guard anyway by keeping the head.
     return `[0:a]atrim=0:${s},asetpts=PTS-STARTPTS,${NORM}[out]`;
   }

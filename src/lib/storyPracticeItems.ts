@@ -70,7 +70,7 @@ export function parseLooseVocab(input: unknown): LooseVocabItem[] {
  * them into the featured plan, so the 10 that surface end-of-story are
  * the highest-value ones rather than just the first 10 in the JSON.
  *
- * Returns a new array — does not mutate input.
+ * Returns a new array; does not mutate input.
  */
 export function rankItemsForFeatured(
   items: PracticeFavoriteItem[],
@@ -96,7 +96,7 @@ export function rankItemsForFeatured(
       const stemLen = Math.max(3, lemma.length - 2);
       const stem = lemma.slice(0, stemLen);
       const escaped = stem.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      // \bstem\w* — word starting with the stem, any suffix.
+      // \bstem\w*; word starting with the stem, any suffix.
       const re = new RegExp(`\\b${escaped}\\w*`, "g");
       frequency = (cleanText.match(re) || []).length;
     }

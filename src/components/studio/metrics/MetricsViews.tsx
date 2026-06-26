@@ -842,11 +842,11 @@ export function FunnelsView({ data }: { data: DashboardData }) {
                       minute: "2-digit",
                     })}
                   </td>
-                  <td>{row.email ?? "—"}</td>
+                  <td>{row.email ?? "-"}</td>
                   <td className="mx-mono">{row.userId}</td>
-                  <td>{row.destination ?? "—"}</td>
+                  <td>{row.destination ?? "-"}</td>
                   <td style={{ color: "var(--mx-muted)" }}>
-                    {row.source ?? "—"}
+                    {row.source ?? "-"}
                   </td>
                 </tr>
               ))}

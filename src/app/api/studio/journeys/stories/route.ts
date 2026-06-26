@@ -4,7 +4,7 @@ import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 
 /**
- * GET /api/studio/journeys/stories?journeyId=xxx — get all stories for a journey
+ * GET /api/studio/journeys/stories?journeyId=xxx; get all stories for a journey
  */
 export async function GET(request: NextRequest) {
   const { userId } = await auth();
@@ -34,7 +34,7 @@ export async function GET(request: NextRequest) {
 }
 
 /**
- * DELETE /api/studio/journeys/stories — delete a single story
+ * DELETE /api/studio/journeys/stories; delete a single story
  * Body: { storyId }
  */
 export async function DELETE(request: Request) {
@@ -57,7 +57,7 @@ export async function DELETE(request: Request) {
 }
 
 /**
- * POST /api/studio/journeys/stories — add a new story slot to a topic
+ * POST /api/studio/journeys/stories; add a new story slot to a topic
  * Body: { journeyId, level, topic, slotIndex }
  */
 export async function POST(request: Request) {

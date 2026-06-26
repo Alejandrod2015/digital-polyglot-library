@@ -26,7 +26,7 @@ function findStoryAudio(): HTMLAudioElement | null {
  * TRIGGER: the prompt opens ONLY when the story's narration audio
  * finishes playing (HTMLAudioElement `ended` event). This matches the
  * iPhone reader where `playback.didJustFinish` is the single source of
- * truth — scroll-based triggers were removed there to avoid double-firing
+ * truth; scroll-based triggers were removed there to avoid double-firing
  * when the user scrubs back and forth. If the story has no audio, the
  * prompt simply never appears (the user navigates manually).
  *
@@ -47,7 +47,7 @@ export default function EndOfStoryPracticePrompt({
 
   // Attach an `ended` listener to the story's <audio>. We retry the
   // lookup because the Player component mounts after this component
-  // (audio src loaded async). Skip entirely when there's no vocab —
+  // (audio src loaded async). Skip entirely when there's no vocab -
   // nothing to practice. Mirrors `if (vocab.length === 0) return;`
   // in ReaderScreen.tsx.
   useEffect(() => {
@@ -107,7 +107,7 @@ export default function EndOfStoryPracticePrompt({
   }
 
   // Default to the story-practice URL the /practice page actually
-  // understands (see src/app/practice/page.tsx — searchParams `source`,
+  // understands (see src/app/practice/page.tsx; searchParams `source`,
   // `storySlug`, `storyTitle`, `storyHref`).
   const defaultHref = (() => {
     const params = new URLSearchParams();

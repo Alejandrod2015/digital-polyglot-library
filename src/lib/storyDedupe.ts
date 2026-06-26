@@ -21,8 +21,8 @@ function parseJsonLoose(content: string): unknown {
 /**
  * LLM extractor for real PERSON names across a journey's prior story texts.
  * Replaces the previous regex (`/\b[A-Z][a-zà-ü]+/`) which captured every
- * capitalized token — including places (Trastevere, Roma), days (Lunedì),
- * brands, and food names — and produced false positives that polluted the
+ * capitalized token; including places (Trastevere, Roma), days (Lunedì),
+ * brands, and food names; and produced false positives that polluted the
  * "do not reuse these names" prompt.
  *
  * Returns deduped lemma names (e.g. ["Marco", "Anna", "Luca"]). Empty when
@@ -102,7 +102,7 @@ export type SynopsisSimilarityResult = {
 /**
  * LLM-as-judge: does the new synopsis tell substantially the same story as
  * any of the existing synopses? "Same story" means: same core situation,
- * same conflict shape, or same payoff — not just sharing setting/cuisine.
+ * same conflict shape, or same payoff; not just sharing setting/cuisine.
  *
  * Returns `{ isSimilar: false }` when there are no existing synopses (no
  * round-trip).
@@ -117,13 +117,13 @@ export async function findSimilarSynopsis(args: {
   if (valid.length === 0 || !newSynopsis.trim()) return { isSimilar: false };
 
   const numbered = valid
-    .map((s, i) => `[${i + 1}] "${s.title}" — ${s.synopsis.trim()}`)
+    .map((s, i) => `[${i + 1}] "${s.title}"; ${s.synopsis.trim()}`)
     .join("\n");
 
   const prompt = `
 You are checking if a new story synopsis duplicates the narrative arc of any existing synopsis from the same journey.
 
-Two synopses are "the same story" when they share the CORE situation, conflict, OR payoff — for example: both are "character orders food, gets the wrong dish, stays polite", or both are "character meets old friend by chance and reminisces". Sharing only the SETTING (same neighborhood, same cuisine) is NOT enough — say NOT similar in that case.
+Two synopses are "the same story" when they share the CORE situation, conflict, OR payoff; for example: both are "character orders food, gets the wrong dish, stays polite", or both are "character meets old friend by chance and reminisces". Sharing only the SETTING (same neighborhood, same cuisine) is NOT enough; say NOT similar in that case.
 
 Treat these as the SAME underlying arc even if the food, city, or exact object changes:
 - customer wants a specific item, it is unavailable, worker offers substitute, customer accepts it and leaves pleasantly surprised

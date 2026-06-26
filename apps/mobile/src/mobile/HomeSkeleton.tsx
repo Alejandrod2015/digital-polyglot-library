@@ -4,7 +4,7 @@ import { Animated, Easing, StyleSheet, View } from "react-native";
 /**
  * Placeholder shown on Home while remote data hydrates. Shapes match the
  * real content (Continue listening + New releases carousels) so the layout
- * doesn't shift when the real cards arrive — and so the user has something
+ * doesn't shift when the real cards arrive; and so the user has something
  * to look at instead of a blank screen.
  */
 export function HomeSkeleton() {
@@ -36,7 +36,7 @@ export function HomeSkeleton() {
 
   return (
     <>
-      {/* Continue listening — single full-width card (matches
+      {/* Continue listening; single full-width card (matches
           BookHomeCard with fullWidth prop). */}
       <View style={styles.section}>
         <View style={styles.headerRow}>
@@ -53,7 +53,7 @@ export function HomeSkeleton() {
         </Animated.View>
       </View>
 
-      {/* New releases — horizontal carousel with a BookWebCard (book
+      {/* New releases; horizontal carousel with a BookWebCard (book
           cover on the left, text on the right). */}
       <View style={styles.section}>
         <View style={styles.headerRow}>

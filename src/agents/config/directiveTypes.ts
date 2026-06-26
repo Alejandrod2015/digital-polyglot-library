@@ -20,7 +20,7 @@ export type PipelineBudget = {
   autoRetryQA: boolean;
   /** Minimum QA score (0-100) to auto-promote a draft */
   minQAScore: number;
-  /** Max pipeline run duration in minutes — hard timeout */
+  /** Max pipeline run duration in minutes; hard timeout */
   maxRunDurationMinutes: number;
 };
 
@@ -39,7 +39,7 @@ export type ContentDirective = {
   languages: string[];
   /** Target CEFR levels (e.g. ["a1", "a2", "b1", "b2"]) */
   levels: string[];
-  /** Priority topics — empty means all topics (e.g. ["viajes", "cultura"]) */
+  /** Priority topics; empty means all topics (e.g. ["viajes", "cultura"]) */
   topics: string[];
   /** Stories to generate per language+level+topic combination */
   storiesPerSlot: number;

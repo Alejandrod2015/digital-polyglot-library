@@ -6,8 +6,8 @@ import { revalidateTag } from "next/cache";
 
 /**
  * POST /api/studio/journeys/publish
- * Body: { storyId } — marks a JourneyStory as published (readable in the app)
- * No longer writes to Sanity — the reader loads directly from PostgreSQL.
+ * Body: { storyId }; marks a JourneyStory as published (readable in the app)
+ * No longer writes to Sanity; the reader loads directly from PostgreSQL.
  */
 export async function POST(request: Request) {
   const { userId } = await auth();

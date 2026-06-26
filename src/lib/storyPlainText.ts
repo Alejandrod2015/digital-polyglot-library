@@ -14,7 +14,7 @@
 //   - Collapses runs of spaces/tabs to one space, runs of 3+ newlines
 //     to a blank line.
 /**
- * Find ranges of speaker labels at the start of paragraphs/lines —
+ * Find ranges of speaker labels at the start of paragraphs/lines -
  * e.g. "Tomás:", "Don Beto:", "Alma:". These are visual cues for who
  * speaks but are NOT pronounced in the narrated audio of multi-voice
  * stories. Aeneas, which aligns text↔audio assuming every token is

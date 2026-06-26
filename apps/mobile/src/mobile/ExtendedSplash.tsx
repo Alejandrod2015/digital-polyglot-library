@@ -4,8 +4,8 @@ import * as SplashScreen from "expo-splash-screen";
 
 // Logo dimensions are pinned to the EXACT same pt width as the
 // `expo-splash-screen` plugin's `imageWidth` in app.config.js (270).
-// Earlier this was `Math.min(SCREEN_WIDTH * 0.7, 320)` — a percentage
-// of screen width — which rendered ~273pt on an iPhone 14, ~301pt on
+// Earlier this was `Math.min(SCREEN_WIDTH * 0.7, 320)`; a percentage
+// of screen width; which rendered ~273pt on an iPhone 14, ~301pt on
 // a Pro Max, ~262pt on an SE: NEVER 270. During iOS's automatic
 // ~150-200ms fade-out of the native splash, the in-flow ExtendedSplash
 // is already mounted underneath, so a different-sized logo briefly
@@ -23,8 +23,8 @@ const LOGO_HEIGHT = LOGO_WIDTH * (437 / 904);
  * is seamless, then keeps the splash visible while the shell hydrates
  * its remote data. When the parent flips `visible` to false (i.e.
  * content is ready), the component plays a celebratory exit
- * animation — a soft glow ring expanding out from behind the logo
- * combined with a logo zoom — and then unmounts.
+ * animation; a soft glow ring expanding out from behind the logo
+ * combined with a logo zoom; and then unmounts.
  *
  * The skeleton state inside the shell is still rendered conditionally
  * on `!didFirstHydrate`, but in normal cases the user goes straight
@@ -47,12 +47,12 @@ export function ExtendedSplash({ visible }: Props) {
   // mounted. App.tsx calls preventAutoHideAsync() at module load so
   // the native splash stays up until this fires, preventing the
   // brief flash the user reported between the native logo and the
-  // React-rendered one. Safe to call multiple times — only the
+  // React-rendered one. Safe to call multiple times; only the
   // first call matters.
   useEffect(() => {
     if (mounted) {
       SplashScreen.hideAsync().catch(() => {
-        // Already hidden / not configured — ignore.
+        // Already hidden / not configured; ignore.
       });
     }
   }, [mounted]);
@@ -65,7 +65,7 @@ export function ExtendedSplash({ visible }: Props) {
   const glowScale = useRef(new Animated.Value(0.6)).current;
   const glowOpacity = useRef(new Animated.Value(0)).current;
 
-  // Subtle "breathing" loop while we're waiting on the data — gives
+  // Subtle "breathing" loop while we're waiting on the data; gives
   // the user a clear signal that the app hasn't frozen on the splash.
   useEffect(() => {
     if (!visible || !mounted) return;
@@ -100,7 +100,7 @@ export function ExtendedSplash({ visible }: Props) {
       overlayOpacity.setValue(1);
       glowScale.setValue(0.6);
       glowOpacity.setValue(0);
-      // Don't reset logoScale here — the breathing loop owns it.
+      // Don't reset logoScale here; the breathing loop owns it.
       return;
     }
     if (!mounted) return;
@@ -166,7 +166,7 @@ export function ExtendedSplash({ visible }: Props) {
       pointerEvents={visible ? "auto" : "none"}
       style={[styles.fill, { opacity: overlayOpacity }]}
     >
-      {/* Glow ring — sits behind the logo and expands during the
+      {/* Glow ring; sits behind the logo and expands during the
           exit. We use a translucent blue ring to read as a "burst"
           of brand color rather than a flat highlight. */}
       <Animated.View
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
     height: LOGO_HEIGHT,
   },
   // Glow ring rendered behind the logo. A translucent disc with a
-  // soft cyan tint — the in-flight tokens are dark navy, so a cyan
+  // soft cyan tint; the in-flight tokens are dark navy, so a cyan
   // glow stands out without clashing.
   glow: {
     position: "absolute",

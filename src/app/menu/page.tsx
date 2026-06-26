@@ -1,6 +1,6 @@
 // /src/app/menu/page.tsx
 //
-// Pantalla "Menu" — paridad con iPhone MobileLibraryShell.menuView.
+// Pantalla "Menu"; paridad con iPhone MobileLibraryShell.menuView.
 // Se muestra al tap del tab "Menu" del MobileTabBar. Lista las
 // secciones: Your activity (Progress / Library / Saved), Create
 // (Create story + plan-gated SoTW/SoTD) y Account (Upgrade

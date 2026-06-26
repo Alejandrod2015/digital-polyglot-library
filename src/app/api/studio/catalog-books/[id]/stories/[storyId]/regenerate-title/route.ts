@@ -2,7 +2,7 @@
 //
 // Regenerates just the title for a CatalogStory using the shared
 // /api/generate-title pipeline (same one JourneyStory uses). The slug is
-// NOT auto-derived here — catalog story IDs are composite (`bookId:slug`)
+// NOT auto-derived here; catalog story IDs are composite (`bookId:slug`)
 // and changing the slug means re-keying the row, which is a separate
 // flow (the user can hit "Slug ↻" if they want to align the slug).
 //

@@ -8,7 +8,7 @@ import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
 
 // Default ElevenLabs voice settings used across all journey TTS calls.
 //   stability=0.9        más alta que 0.8 anterior. Bajaba la incidencia
-//                         de "phantom syllable" al final de la oración —
+//                         de "phantom syllable" al final de la oración -
 //                         el modelo autorregresivo dejaba de generar 1-2
 //                         fonemas extra antes del stop. Trade-off: voces
 //                         menos expresivas; aceptable para A1/A2.
@@ -29,7 +29,7 @@ export const DEFAULT_VOICE_SETTINGS = {
 } as const;
 
 /** Per-voice settings override shape (mutable, unlike the `as const` defaults).
- *  Lets one render use distinct stability/style per voice — p.ej. subir
+ *  Lets one render use distinct stability/style per voice; p.ej. subir
  *  stability solo a voces que respiran de más a baja estabilidad. */
 export type VoiceSettings = {
   stability: number;
@@ -57,7 +57,7 @@ export type VoiceSettings = {
 //     the sweet spot for honoring audio tags while keeping voice identity
 //     stable. 0.9 ("Robust") would ignore tags. 0.0-0.3 ("Creative")
 //     over-emotes.
-//   - No SSML break tags — use punctuation (ellipses) for pauses.
+//   - No SSML break tags; use punctuation (ellipses) for pauses.
 export const ELEVENLABS_MODEL_V2 = "eleven_multilingual_v2" as const;
 export const ELEVENLABS_MODEL_V3 = "eleven_v3" as const;
 export type ElevenLabsModel = typeof ELEVENLABS_MODEL_V2 | typeof ELEVENLABS_MODEL_V3;
@@ -141,38 +141,38 @@ export const GERMAN_DIALOGUE_VOICES = {
   // No US-accent voices in this set (Sarah and Liam retired).
   //
   // BANNED voices (do NOT add back):
-  //   - Thorsten (Piper/Coqui, all variants) — monotone "deprimente"
-  //   - Bark Speaker 3 — muffled / monotone
-  //   - Simon Sunday (ElevenLabs) — monotone "deprimente"
-  //   - Sebastian "qVRpsZJDV29g1CIPzssm" — uptalk AND sounds boring /
+  //   - Thorsten (Piper/Coqui, all variants); monotone "deprimente"
+  //   - Bark Speaker 3; muffled / monotone
+  //   - Simon Sunday (ElevenLabs); monotone "deprimente"
+  //   - Sebastian "qVRpsZJDV29g1CIPzssm"; uptalk AND sounds boring /
   //     adult when used for a kid; rejected as Paul (9 yrs) in
   //     Apfelkuchen in Wedding (2026-05-14).
-  //   - Gesa Tess "cllvQaMvj0ZKxH88HGEn" — solo testing, nunca usada en
+  //   - Gesa Tess "cllvQaMvj0ZKxH88HGEn"; solo testing, nunca usada en
   //     producción; removida 2026-05-18.
-  //   - Luca "mmAbrxFQ9xjByXyBpqrK" — solo testing, nunca usada en
+  //   - Luca "mmAbrxFQ9xjByXyBpqrK"; solo testing, nunca usada en
   //     producción; removida 2026-05-18.
-  moritz:    "Ww7Sq9tx9CCOiNOwWgsx", // M middle-aged, native DE, baritone — narrator
-  enniah:    "WHaUUVTDq47Yqc9aDbkH", // F middle-aged, native DE, warm — primary female
-  michael:   "KSEa36Zojh7KLdIkb8Qu", // M young, native DE, "youthful + calm narrative" — preferred for teen/younger characters.
-  eleonore:  "8SdTD5IMgFKT1jp7JbPC", // F middle-aged, native DE, mature narrator — "Frau" roles
-  // ── Round 2 (June 2026) — added for German conversational beta cast
+  moritz:    "Ww7Sq9tx9CCOiNOwWgsx", // M middle-aged, native DE, baritone; narrator
+  enniah:    "WHaUUVTDq47Yqc9aDbkH", // F middle-aged, native DE, warm; primary female
+  michael:   "KSEa36Zojh7KLdIkb8Qu", // M young, native DE, "youthful + calm narrative"; preferred for teen/younger characters.
+  eleonore:  "8SdTD5IMgFKT1jp7JbPC", // F middle-aged, native DE, mature narrator; "Frau" roles
+  // ── Round 2 (June 2026); added for German conversational beta cast
   // (Berlin / München / Hamburg). NOTE: preview volume on these 4 is a
   // notch lower than the original 4; consider extra loudnorm headroom
   // when rendering with these voices.
   ela_calm:  "e3bIMyLemdwvh75g9Vpt", // F young, "Dry & Calm", narrative_story register
   ela_warm:  "SJJe86Va82zRzg6zi2dX", // F young, "Empathetic & Warm", conversational
   jane:      "hOBDmVrVUuqtp1I3KsIq", // F older-feeling (metadata: middle-aged), "Calm & Grounded", soft conversational
-  felix:     "IQuqJPpP2hMHjjDY2QTe", // M middle-aged, "Confident", conversational — alt to Moritz timbre
-  marius:    "JDXBO1etYlVlJZRMoYzH", // M young, professional, narrative_story — alt to Michael (round 3 pick)
+  felix:     "IQuqJPpP2hMHjjDY2QTe", // M middle-aged, "Confident", conversational; alt to Moritz timbre
+  marius:    "JDXBO1etYlVlJZRMoYzH", // M young, professional, narrative_story; alt to Michael (round 3 pick)
   daniel:    "wcqN36SUOZ0EhToc2OIu", // M older-feeling (metadata: middle-aged), "Calm & Real UGC", conversational
-  gjango:    "wZUI6Qb377V1PsC35d6y", // M middle-aged, native DE, calm, narrative_story — JOURNEY NARRATOR (replaces Marius, 2026-06-05). Preview level is low but loudnorm (-16 LUFS) normalizes it on render. Shared-library voice: add to the ElevenLabs account before the first render.
+  gjango:    "wZUI6Qb377V1PsC35d6y", // M middle-aged, native DE, calm, narrative_story; JOURNEY NARRATOR (replaces Marius, 2026-06-05). Preview level is low but loudnorm (-16 LUFS) normalizes it on render. Shared-library voice: add to the ElevenLabs account before the first render.
   // ── Round 4 (2026-06-15): approved for German "Traveler" V2 journey casting
   // (user auditioned A1/A2/B1/B2/C1/C2 in localhost player). All shared-library
   // → add each to the ElevenLabs account before the first render.
-  daien:     "9iYBWBbTzTDIt6imiMxp", // F young, native DE, pleasant, narrative_story — Hanna / Nichte
-  joerg:     "KVgqk9YVh0pWUJiWQN8j", // M middle-aged, native DE, confident, narrative_story — Stefan
-  daniel_konv:"2EkqFDbWjmOn56BMSmts", // M middle-aged, native DE, casual conversational ("Friendly Conversationalist") — Verkäufer
-  marlena:   "MTTjXkEpZepLTqO0xH0f", // F middle-aged, native DE, warm professional/conversational — Kundin
+  daien:     "9iYBWBbTzTDIt6imiMxp", // F young, native DE, pleasant, narrative_story; Hanna / Nichte
+  joerg:     "KVgqk9YVh0pWUJiWQN8j", // M middle-aged, native DE, confident, narrative_story; Stefan
+  daniel_konv:"2EkqFDbWjmOn56BMSmts", // M middle-aged, native DE, casual conversational ("Friendly Conversationalist"); Verkäufer
+  marlena:   "MTTjXkEpZepLTqO0xH0f", // F middle-aged, native DE, warm professional/conversational; Kundin
 } as const;
 
 // Approved Spanish (LATAM) voices for multi-character dialogue stories. IDs
@@ -182,101 +182,101 @@ export const GERMAN_DIALOGUE_VOICES = {
 // voices that work for A1-A2 contemplative stories set in LATAM cities.
 //
 // BANNED voices (do NOT add back, user feedback):
-//   - Cristian "F1SMDtOTbvqlHI6wVNVa" (Neutral, Warm, Confident) — preview reads as
+//   - Cristian "F1SMDtOTbvqlHI6wVNVa" (Neutral, Warm, Confident); preview reads as
 //     "narrador de fútbol" / locutor institucional, demasiado declarativo para A1
 //     historias íntimas. Rejected 2026-05-28 on Domingo con papá narrator audition.
-//   - Hernando "yHD4CsKkghm19ToGLJEC" (Rich and Commanding, colombian) — "no suena
+//   - Hernando "yHD4CsKkghm19ToGLJEC" (Rich and Commanding, colombian); "no suena
 //     como el papá", lectura comercial/autoritaria, no paternal. Rejected 2026-05-28.
-//   - El Abuelo Charlie "Yb8JGzcZyW5YYzenhRCm" (Wise-sounding, Calm) — teatral, "como
+//   - El Abuelo Charlie "Yb8JGzcZyW5YYzenhRCm" (Wise-sounding, Calm); teatral, "como
 //     narrador de cuentos para niños". Rejected 2026-05-28.
-//   - Harold "69cPH0Ypmuc48Y3Ty25o" (Natural, Friendly, Calm, 65 yrs) — buena
+//   - Harold "69cPH0Ypmuc48Y3Ty25o" (Natural, Friendly, Calm, 65 yrs); buena
 //     calidad pero acento se lee como venezolano, no encaja Bogotá. Rejected 2026-05-28.
 //   - Salvatore "wfTWLJ20rcMqvU8gIiAB" (Natural Conversations & Storyteller, latin
-//     american old) — rejected 2026-05-28 on Domingo con papá audition.
-//   - Aurelio "PHNjiQZ95SnMQ7rDQsXz" (Gentle and Tender, mexican old) — rejected
+//     american old); rejected 2026-05-28 on Domingo con papá audition.
+//   - Aurelio "PHNjiQZ95SnMQ7rDQsXz" (Gentle and Tender, mexican old); rejected
 //     2026-05-28 on Domingo con papá audition.
-//   - Juan "tL5DHtPRo8KiW5xsx8yD" (Romantic and Soft, colombian middle-aged) —
+//   - Juan "tL5DHtPRo8KiW5xsx8yD" (Romantic and Soft, colombian middle-aged) -
 //     rejected 2026-05-28 on Domingo con papá audition.
 //   - Tina "lZmnvfWF4ko4J7F7QDtX" (Warm, Friendly & Conversational, peruvian
-//     middle-aged) — "sounds muffled / tapada". Rejected 2026-05-29 on Una pizca
+//     middle-aged); "sounds muffled / tapada". Rejected 2026-05-29 on Una pizca
 //     de canela Lucía audition.
 //   - Esperanza "6sefJctHkzCgLShKcnrI" (Serene and Assured, colombian middle-aged)
-//     — "yells / too loud" in v3 + stability=0.5 context. Rejected 2026-05-29 on
+//    ; "yells / too loud" in v3 + stability=0.5 context. Rejected 2026-05-29 on
 //     Una pizca de canela Lucía audition.
 //
 // Old male LATAM audition (2026-06-01, hueco "abuelo"):
 //   - Benjamin "80lPKtzJMPh1vjYMUgwe" (Deep Smooth Rich, tagged mexican / es-MX)
-//     — Mislabeled. Usuario lo escuchó (2026-06-01) y dijo "es español de España".
+//    ; Mislabeled. Usuario lo escuchó (2026-06-01) y dijo "es español de España".
 //     Recordatorio estructural: el accent tag de ElevenLabs lo pone el creador
 //     y no se verifica. Ver feedback_elevenlabs_accent_unreliable.md.
 //
 // Rioplatense audition (2026-06-01, El control no funciona Beatriz + Mateo):
 //   - Andrea "CDrROTHWaKY3O9vD3F3t" (Calm Balanced Didactic, argentine F middle-aged)
-//     — Rejected 2026-06-01 on Beatriz audition.
+//    ; Rejected 2026-06-01 on Beatriz audition.
 //   - Argie "arMlPrYpUo1XH5F2zM6R" (Warm Argentine Female, F middle-aged)
-//     — Rejected 2026-06-01 on Beatriz audition.
+//    ; Rejected 2026-06-01 on Beatriz audition.
 //   - Zeta "8Nz6hV5TPv151P6ZNEBV" (Calm Clear Authoritative, argentine F middle-aged)
-//     — Rejected 2026-06-01 on Beatriz audition.
+//    ; Rejected 2026-06-01 on Beatriz audition.
 //   - Lisandro "nnTkGIqnpqpdIrWbRAtF" (Mellow and Suave, argentine M young)
-//     — Rejected 2026-06-01 on Mateo audition.
+//    ; Rejected 2026-06-01 on Mateo audition.
 //   - Bautista "Hw05DSJqSd5iZ9AswbcE" (Smooth and Articulated, argentine M young)
-//     — Rejected 2026-06-01 on Mateo audition.
+//    ; Rejected 2026-06-01 on Mateo audition.
 //   - Facundo "qnvusyIjzlSoWYJ0C2Nm" (Rhythmic and Expressive, argentine M young)
-//     — Rejected 2026-06-01 on Mateo audition.
+//    ; Rejected 2026-06-01 on Mateo audition.
 //   - Eduardo "hWlKHuPiFgEVc4rtnFfm" (Natural Warm Professional, argentine M middle-aged)
-//     — Rejected 2026-06-01 on Mateo audition.
+//    ; Rejected 2026-06-01 on Mateo audition.
 //   - Lucas "xcAUMhbpNX2WRGsuhjFy" (Solemn and calm, argentine M middle-aged)
-//     — Rejected 2026-06-01 on Mateo audition.
+//    ; Rejected 2026-06-01 on Mateo audition.
 //
 // SPAIN-ONLY voices (do NOT use for LATAM stories; reserve for future Spain
 // catalog when we add Iberian Spanish journeys):
 //   - Isabel "56yWreYpxeKhcXjVscuF" (Nurturing and poised, tagged latin american
-//     but actually Spain-Spanish accent — distinción c/z=θ, l alveolar). Strong
+//     but actually Spain-Spanish accent; distinción c/z=θ, l alveolar). Strong
 //     candidate for future Spain F middle-aged roles. Identified 2026-05-29.
 export const SPANISH_DIALOGUE_VOICES = {
   // Core LATAM neutral + Colombian (original cast)
-  angela:    "Po9nYFo9ScA7odSuQLIW", // F middle-aged, latin american, mature warm — narrator (poetry/documentary register)
-  horacio:   "57D8YIbQSuE3REDPO6Vm", // M middle-aged, colombian, natural+warm "safe & reliable" — older paternal male (don Hernán-type)
-  luna:      "1ZhMG5ZZgJ6XpkOrB8Az", // F young, colombian, conversational warm friendly — adult-young female (Marina-type)
-  alma:      "3ttovAt5bt3Kk38UGIob", // F middle-aged, latin american (neutral), conversational warm — adult female sibling/peer
+  angela:    "Po9nYFo9ScA7odSuQLIW", // F middle-aged, latin american, mature warm; narrator (poetry/documentary register)
+  horacio:   "57D8YIbQSuE3REDPO6Vm", // M middle-aged, colombian, natural+warm "safe & reliable"; older paternal male (don Hernán-type)
+  luna:      "1ZhMG5ZZgJ6XpkOrB8Az", // F young, colombian, conversational warm friendly; adult-young female (Marina-type)
+  alma:      "3ttovAt5bt3Kk38UGIob", // F middle-aged, latin american (neutral), conversational warm; adult female sibling/peer
   // Argentine / rioplatense
-  nieve:     "nAFxIJGj7iSTeltygOfB", // F old, argentine — acento CORDOBÉS (Córdoba, AR), verificado al oído por el usuario 2026-06-09 (NO porteño). Abuela mayor / Doña Sara. Ojo si la escena exige acento porteño de Buenos Aires.
-  paola:     "PoLFkTquRWtbexdwW3Xa", // F middle-aged, argentine, professional neutral versatile — madre/tía rioplatense ~45-55
-  mariana:   "9rvdnhrYoXoUt4igKpBw", // F middle-aged, argentine, intimate + assertive, deep clear emotional — peso emocional rioplatense
-  renzo:     "acHf5gp7AGOY30tJjvD4", // M young, argentine, bold + urban, modern street-smart — hombre rioplatense joven ~25-35
-  roma:      "6Mo5ciGH5nWiQacn5FYk", // F middle-aged, argentine, casual conversational — peer rioplatense (added 2026-06-01 round)
+  nieve:     "nAFxIJGj7iSTeltygOfB", // F old, argentine; acento CORDOBÉS (Córdoba, AR), verificado al oído por el usuario 2026-06-09 (NO porteño). Abuela mayor / Doña Sara. Ojo si la escena exige acento porteño de Buenos Aires.
+  paola:     "PoLFkTquRWtbexdwW3Xa", // F middle-aged, argentine, professional neutral versatile; madre/tía rioplatense ~45-55
+  mariana:   "9rvdnhrYoXoUt4igKpBw", // F middle-aged, argentine, intimate + assertive, deep clear emotional; peso emocional rioplatense
+  renzo:     "acHf5gp7AGOY30tJjvD4", // M young, argentine, bold + urban, modern street-smart; hombre rioplatense joven ~25-35
+  roma:      "6Mo5ciGH5nWiQacn5FYk", // F middle-aged, argentine, casual conversational; peer rioplatense (added 2026-06-01 round)
   // Mexican (added 2026-06-01)
-  ana_sofia: "ewn5JTa3lNPY8QVuZJi6", // F young, mexican, casual conversational — joven adulta MX
-  cindy:     "pBabaO9WxfrjXjKADHma", // F young, mexican — RECHAZADA 2026-06-10 (sonó muy mal al oído). NO reusar.
-  zetian:    "P5kgBjTRY5DDGaw8gXLc", // F young, mexican — RECHAZADA 2026-06-10 ("no me convence" al oído). NO reusar.
-  ana_maria: "m7yTemJqdIqrcNleANfX", // F young, mexican (es-MX), calm/natural/clear — Renata (CDMX) + Itzel (Oaxaca). Elegida 2026-06-10 tras A/B en la línea real (ganó a cindy/zetian/camila).
-  emilio:    "DV9FrN0pQkPWIoxW5dvT", // M middle-aged, mexican, calm informative — papá/tío MX
-  patricio:  "77K94gl6ZCRVTHG8Gi1w", // M middle-aged, mexican, pleasant social-media — alternativa MX middle
-  tom:       "p1Q3ihQuPjyyENa1RGtl", // M young, mexican, kind sincere calm — hijo/teen MX
+  ana_sofia: "ewn5JTa3lNPY8QVuZJi6", // F young, mexican, casual conversational; joven adulta MX
+  cindy:     "pBabaO9WxfrjXjKADHma", // F young, mexican; RECHAZADA 2026-06-10 (sonó muy mal al oído). NO reusar.
+  zetian:    "P5kgBjTRY5DDGaw8gXLc", // F young, mexican; RECHAZADA 2026-06-10 ("no me convence" al oído). NO reusar.
+  ana_maria: "m7yTemJqdIqrcNleANfX", // F young, mexican (es-MX), calm/natural/clear; Renata (CDMX) + Itzel (Oaxaca). Elegida 2026-06-10 tras A/B en la línea real (ganó a cindy/zetian/camila).
+  emilio:    "DV9FrN0pQkPWIoxW5dvT", // M middle-aged, mexican, calm informative; papá/tío MX
+  patricio:  "77K94gl6ZCRVTHG8Gi1w", // M middle-aged, mexican, pleasant social-media; alternativa MX middle
+  tom:       "p1Q3ihQuPjyyENa1RGtl", // M young, mexican, kind sincere calm; hijo/teen MX
   // Chilean (added 2026-06-01)
-  catalina:  "6Gr4AVmTax1pMJO0lHRK", // F young, chilean, professional conversational — joven adulta CL
-  angela_cl: "prblQcKOdF08ozhxP2mk", // F middle-aged, chilean, calm warm — mamá CL
-  vicente:   "6WgXEzo1HGn3i7ilT4Fh", // M young, chilean, confident — joven adulto CL
+  catalina:  "6Gr4AVmTax1pMJO0lHRK", // F young, chilean, professional conversational; joven adulta CL
+  angela_cl: "prblQcKOdF08ozhxP2mk", // F middle-aged, chilean, calm warm; mamá CL
+  vicente:   "6WgXEzo1HGn3i7ilT4Fh", // M young, chilean, confident; joven adulto CL
   // Peruvian (added 2026-06-01)
-  elena:     "dyTONAae6PhdRb3hMKPM", // F middle-aged, peruvian, versátil natural cercana — mamá Lima
-  joselo:    "UK00oAtGYBrHBUbesfMv", // M middle-aged, peruvian, confident informative — papá/tío Lima
+  elena:     "dyTONAae6PhdRb3hMKPM", // F middle-aged, peruvian, versátil natural cercana; mamá Lima
+  joselo:    "UK00oAtGYBrHBUbesfMv", // M middle-aged, peruvian, confident informative; papá/tío Lima
   // Mature female fill (added 2026-06-09, user-approved from shared library to
   // resolve same-story voice collisions: Lupita was sharing ana_sofia with
   // Sofía; Doña Rosa was sharing the narrator voice angela). Accent tags are
-  // creator-set and not verified by ear — confirm in audition before relying.
-  andreti:     "JW8DGEuLp9WxIS5IdxMM", // M ~50, latin american neutral, calm — NARRATOR del journey spanish-latam (elegido 2026-06-09, reemplaza a Angela). Las 3 stories viejas (La fonda, Alguien pregunta, El departamento nuevo) quedan con Angela hasta re-render.
-  azu:         "D3ws14YxTqcjPaXEOehR", // F old, mexican, calm soft melodic — señora mayor MX (Lupita)
-  maria_blanco:"HRi5Prm2B3PevwpDmVLP", // F old, colombian, airy rich pleasant — abuela/señora mayor CO (spare, no role yet)
-  lina_botero: "SnspHxfVcWQjJgnp6SL3", // F middle-aged, colombian, calm emotional — vecina/madre CO (Doña Rosa)
+  // creator-set and not verified by ear; confirm in audition before relying.
+  andreti:     "JW8DGEuLp9WxIS5IdxMM", // M ~50, latin american neutral, calm; NARRATOR del journey spanish-latam (elegido 2026-06-09, reemplaza a Angela). Las 3 stories viejas (La fonda, Alguien pregunta, El departamento nuevo) quedan con Angela hasta re-render.
+  azu:         "D3ws14YxTqcjPaXEOehR", // F old, mexican, calm soft melodic; señora mayor MX (Lupita)
+  maria_blanco:"HRi5Prm2B3PevwpDmVLP", // F old, colombian, airy rich pleasant; abuela/señora mayor CO (spare, no role yet)
+  lina_botero: "SnspHxfVcWQjJgnp6SL3", // F middle-aged, colombian, calm emotional; vecina/madre CO (Doña Rosa)
   // 7-theme restructure voice bank (added 2026-06-09, user-approved al oído
   // del preview; accent = tag del creador, no verificado más allá del timbre).
   // Para temas nuevos: Lima/Perú, Cartagena/Colombia, Oaxaca/México.
-  sabina:    "wnQAQM2xwHFeVXM7PQOq", // F adult, peruvian, calm refined — Lima
-  terry:     "ulJB4yAMefhHYn0FWgGy", // M young, peruvian, gentle narration — Lima
-  carito:    "J8BF9c7OgbHiqagCNoEj", // F young, colombian, gentle conversational — Cartagena
-  valentina: "CUpuXTxjB4hhpAJNei6V", // F young, colombian, casual calm — Cartagena
-  juan:      "beQfcCW5PgdTQs4cETaz", // M young, colombian, natural conversation — Cartagena
-  esme:      "dZtUsFRKkioPsu9syJF6", // F middle-aged, mexican, crisp — Oaxaca / llena el hueco mid-F MX
+  sabina:    "wnQAQM2xwHFeVXM7PQOq", // F adult, peruvian, calm refined; Lima
+  terry:     "ulJB4yAMefhHYn0FWgGy", // M young, peruvian, gentle narration; Lima
+  carito:    "J8BF9c7OgbHiqagCNoEj", // F young, colombian, gentle conversational; Cartagena
+  valentina: "CUpuXTxjB4hhpAJNei6V", // F young, colombian, casual calm; Cartagena
+  juan:      "beQfcCW5PgdTQs4cETaz", // M young, colombian, natural conversation; Cartagena
+  esme:      "dZtUsFRKkioPsu9syJF6", // F middle-aged, mexican, crisp; Oaxaca / llena el hueco mid-F MX
 } as const;
 
 // v3 voice WHITELIST. v2 is the safe default for every voice; v3 is
@@ -286,10 +286,10 @@ export const SPANISH_DIALOGUE_VOICES = {
 //
 // Why v2 default + v3 whitelist (inverted 2026-05-29):
 // - v3 introduced s-aspiration on Horacio (Caribbean/Rioplatense
-//   accent leak on a Colombian voice) — confirmed by user A/B test on
+//   accent leak on a Colombian voice); confirmed by user A/B test on
 //   "Trae los vasos de agua." in v3 stability=0.5, 0.7, with/without
 //   `[firm]` and `[matter-of-fact]` tags. All variants aspirated.
-// - v3 distorted Angela's narrator delivery — confirmed earlier same day.
+// - v3 distorted Angela's narrator delivery; confirmed earlier same day.
 // - The benefit of v3 audio tags ([firm] to fix imperative uptalk) is
 //   no longer needed: the writer-side rule (no bare short imperatives
 //   in dialogue, enforced by validator + spec + worker prompt) kills
@@ -305,7 +305,7 @@ export const SPANISH_DIALOGUE_VOICES = {
 // Only after passing all three, add to V3_WHITELIST below.
 export const V3_WHITELIST: ReadonlySet<string> = new Set<string>([
   // Empty until each voice is explicitly audited and approved.
-  // Format: "voiceId", // Voice Name — audition notes + date
+  // Format: "voiceId", // Voice Name; audition notes + date
 ]);
 
 export function pickModelForVoice(
@@ -589,7 +589,7 @@ export async function normalizeLoudness(buffer: Buffer): Promise<Buffer> {
 // strong cue for cheerfulness or animation. For language-learning A1/A2
 // stories the result sounds fake. This softener flattens "!" to "." before
 // TTS while preserving "?" (we want question intonation). The original story
-// text in the DB is not touched — this only affects the audio layer.
+// text in the DB is not touched; this only affects the audio layer.
 export function softenPunctuationForTts(text: string): string {
   return text.replace(/!+/g, ".").replace(/\.{2,}/g, ".");
 }
@@ -807,7 +807,7 @@ async function alignTrimSegment(args: {
     });
   } catch (err) {
     console.warn(`[elevenlabs] align upload-trimmed failed: ${err instanceof Error ? err.message : err}`);
-    // No es fatal — devolvemos el buffer recortado de todos modos; la
+    // No es fatal; devolvemos el buffer recortado de todos modos; la
     // cache va a quedar con el raw, próxima vez se re-genera.
   }
   return trimmedBuffer;
@@ -821,7 +821,7 @@ async function alignTrimSegment(args: {
 //    encadena al final de la oración.
 //
 // 2. End-trim duro de 60 ms via `areverse → atrim → asetpts → areverse`.
-//    Esto recorta contenido aunque NO sea silencio — es el único modo
+//    Esto recorta contenido aunque NO sea silencio; es el único modo
 //    de matar la "phantom syllable" donde el modelo autorregresivo
 //    genera 1-2 fonemas del próximo token antes del stop signal.
 //    silenceremove con threshold normal no lo toca porque es vocal.
@@ -919,7 +919,7 @@ async function ttsSegment(args: {
   // instead of paying ElevenLabs again.
   // Nota: previousText/nextText NO van en la cache key. Cambiarlos
   // produciría un audio ligeramente distinto pero no significativamente
-  // — y meterlos rompería la propiedad "regenero solo lo que cambió".
+  //; y meterlos rompería la propiedad "regenero solo lo que cambió".
   const cacheKey = multivoiceSegmentCacheKey(args.voiceId, softened, model, args.voiceSettings, args.disableStitching);
   const cacheUrl = getPublicObjectUrl(cacheKey);
   if (cacheUrl) {
@@ -961,7 +961,7 @@ async function ttsSegment(args: {
     //    "se prepara para seguir" y deja una exhalación. Por eso lo fijamos
     //    SIEMPRE a " " cuando hay disableStitching: corta la cola sin reñir
     //    con el inicio. (Apagar next_text del todo reintroduce el respiro de
-    //    cola — visto en la línea "¿...lleva un mole?").
+    //    cola; visto en la línea "¿...lleva un mole?").
     if (!args.disableStitching) {
       const prev = args.previousText?.trim();
       if (prev) requestBody.previous_text = prev.slice(-500);
@@ -1036,7 +1036,7 @@ async function ttsSegment(args: {
 // "invalid concatenated file detected" warnings. Running the segments through
 // ffmpeg's concat demuxer produces a single clean MP3 with one Xing frame.
 // `gapSec` inserts a short silence between consecutive segments so multi-voice
-// dialogue doesn't sound rushed — without it every turn butts straight into the
+// dialogue doesn't sound rushed; without it every turn butts straight into the
 // next with zero breath, which reads as robotic. The silence is generated to
 // match the segments' own sample rate + channel layout (probed from segment 0)
 // so the `-c copy` concat stays glitch-free.
@@ -1134,7 +1134,7 @@ export const DIALOGUE_GAP_SEC = 0.45;
  * Rebuild the merged master from an ordered list of section buffers,
  * reproducing the original generation's concat + loudnorm. Used by the
  * audio editor to replace a single section (swap its buffer, rebuild)
- * without time-splicing — the sections are the ground truth, so there is
+ * without time-splicing; the sections are the ground truth, so there is
  * no offset/alignment drift. Returns the new master mp3 buffer.
  */
 export async function rebuildMasterFromSections(sectionBuffers: Buffer[]): Promise<Buffer> {
@@ -1184,7 +1184,7 @@ async function mixAmbient(
   ambientPath: string,
   volume = 0.15,
   // Narrator (out-of-scene VO) ranges in seconds within `dialogue`. When given,
-  // the bed is silenced there — it belongs to the characters' scene, never the
+  // the bed is silenced there; it belongs to the characters' scene, never the
   // narrator (memory: feedback_ambient_not_under_narrator).
   narratorOffIntervals: [number, number][] = []
 ): Promise<Buffer> {
@@ -1256,7 +1256,7 @@ export type AudioFragmentOffset = {
   endSec: number;
   /** R2 URL of THIS section's standalone audio (the individual TTS take,
    *  pre-concat). This is the ground truth: the editor plays/replaces the
-   *  section file directly — no offsets, no alignment, no drift. */
+   *  section file directly; no offsets, no alignment, no drift. */
   url: string | null;
   /** The exact text synthesized for this section (so it can be re-rendered). */
   text: string;
@@ -1309,7 +1309,7 @@ export async function generateAndUploadMultiVoiceAudio(args: {
    *  in synthesis order: index 0 is the title fragment (when a title was
    *  narrated), then one per dialogue turn. Each segment is synthesized
    *  independently and concatenated with a fixed gap, so these offsets
-   *  are exact — the audio editor uses them for block boundaries instead
+   *  are exact; the audio editor uses them for block boundaries instead
    *  of reconstructing them from (drift-prone) aeneas word timings. */
   fragments: AudioFragmentOffset[];
 } | null> {
@@ -1399,7 +1399,7 @@ export async function generateAndUploadMultiVoiceAudio(args: {
   // Ground-truth per-fragment offsets in the merged timeline. Computed
   // ALWAYS (not just for ambient) from each fragment's real duration +
   // the fixed inter-turn gap. These are exact because we synthesized each
-  // fragment ourselves — the audio editor uses them as block boundaries
+  // fragment ourselves; the audio editor uses them as block boundaries
   // instead of reconstructing them from drift-prone aeneas timings.
   // loudnorm (amplitude) and amix(duration=first) don't change length,
   // so they stay valid for the final master.
@@ -1410,7 +1410,7 @@ export async function generateAndUploadMultiVoiceAudio(args: {
     let cursor = 0;
     for (let i = 0; i < fragments.length; i += 1) {
       const dur = await probeMp3DurationSec(audioBuffers[i]);
-      // Persist the INDIVIDUAL section take — this is the ground truth the
+      // Persist the INDIVIDUAL section take; this is the ground truth the
       // editor uses to play/replace a section without touching the rest.
       const secName = `${sectionBase}_sec${String(i).padStart(2, "0")}_${sectionTs}.mp3`;
       let secUrl: string | null = null;
@@ -1448,7 +1448,7 @@ export async function generateAndUploadMultiVoiceAudio(args: {
   }
 
   // Narrator (out-of-scene VO) time ranges, so the ambient bed can be
-  // silenced there — it belongs to the characters' scene, never the
+  // silenced there; it belongs to the characters' scene, never the
   // narrator (memory: feedback_ambient_not_under_narrator). Derived from
   // the same offsets.
   const narratorOffIntervals: [number, number][] = [];

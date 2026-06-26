@@ -3,7 +3,7 @@ import type { Insight } from "./MetricsPrimitives";
 /**
  * Computes the "Lo que cambió" rail for the Resumen view. The helper
  * is pure and deterministic so it can run server-side or in a
- * useMemo on the client. Cap output at 4 cards — the rail is meant
+ * useMemo on the client. Cap output at 4 cards; the rail is meant
  * to highlight the load-bearing movements, not every fluctuation.
  */
 

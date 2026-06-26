@@ -87,7 +87,7 @@ async function ensureMediaDirectory(kind: "images" | "audio"): Promise<string> {
 
 // 8-char djb2 hash of the source URL. Mixed into the cache filename so
 // that when a story's remote audio is re-generated upstream (different
-// MP3 URL) the destination path changes too — old caches no longer
+// MP3 URL) the destination path changes too; old caches no longer
 // shadow the new file. Pure JS, no crypto module needed.
 function hashUrl(url: string): string {
   let h = 5381;
@@ -104,7 +104,7 @@ function buildMediaPath(kind: "images" | "audio", key: string, sourceUrl: string
   return `${MEDIA_ROOT}/${kind}/${safeKey}-${urlHash}.${extension}`;
 }
 
-// MIN_AUDIO_BYTES is deliberately small — just large enough to reject
+// MIN_AUDIO_BYTES is deliberately small; just large enough to reject
 // zero-byte or a few-header-bytes failures. We do NOT use this as a
 // quality threshold; the real validation is Content-Length vs on-disk
 // size below.
@@ -116,7 +116,7 @@ const MAX_DOWNLOAD_ATTEMPTS = 3;
  * validation, and exponential backoff retries. Returns the local URI when
  * the downloaded file is trustworthy; `null` otherwise. Any intermediate
  * failure scrubs the partial file from disk so the next attempt starts
- * clean. Never throws — all errors turn into `null`.
+ * clean. Never throws; all errors turn into `null`.
  */
 async function downloadResumableWithValidation(
   remoteUrl: string,
@@ -199,7 +199,7 @@ async function cacheRemoteFile(args: {
 
   // Try the robust path (resumable + validated + retries). If it returns
   // null we fall back to the simpler one-shot downloadAsync as a last
-  // resort — this keeps the previous behaviour intact in the unlikely
+  // resort; this keeps the previous behaviour intact in the unlikely
   // event that createDownloadResumable itself has a problem on some iOS
   // version, so we never get worse than before.
   const robust = await downloadResumableWithValidation(remoteUrl, destination);
@@ -298,7 +298,7 @@ export async function hydrateOfflineAssets(
     snapshot.stories.map(async (story) => {
       // The cached path embeds an 8-char hash of the remote URL (see
       // `buildMediaPath`). When upstream regenerates the audio (different
-      // R2 filename), the hash changes — so a stale `localAudioUri` that
+      // R2 filename), the hash changes; so a stale `localAudioUri` that
       // doesn't match the current expected path is invalid; drop it so
       // the cacher re-downloads from the new URL.
       const expectedAudioPath = story.audioUrl
@@ -474,7 +474,7 @@ export async function saveStandaloneStoryOffline(
 /**
  * Persist the per-language Journey cache so a cold-start offline can still
  * show a Journey view for any language the user has previously opened. The
- * shape of the stored payload is opaque to this module — the caller pins a
+ * shape of the stored payload is opaque to this module; the caller pins a
  * concrete type on read.
  */
 export async function saveJourneyCache<T>(

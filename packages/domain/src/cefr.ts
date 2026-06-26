@@ -18,7 +18,7 @@ const CEFR_TO_BROAD_LEVEL: Record<CefrLevel, Level> = {
 
 // User-facing friendly level names. The internal code (a0..c2) NEVER
 // changes; only the label the learner sees. NEVER show raw CEFR codes
-// ("A0", "Pre-A1", "Level 0") as the primary label — the codes are an
+// ("A0", "Pre-A1", "Level 0") as the primary label; the codes are an
 // optional secondary annotation and are omitted entirely for a0.
 export const CEFR_DISPLAY_LABELS: Record<CefrLevel, string> = {
   a0: "Beginner",
@@ -44,7 +44,7 @@ export const CEFR_CODE_ANNOTATION: Record<CefrLevel, string | null> = {
 
 // Framing subtitle for the zero-contact tier so "Beginner" doesn't imply
 // prior exposure is expected.
-export const CEFR_A0_FRAMING_SUBTITLE = "Start from zero — no experience needed";
+export const CEFR_A0_FRAMING_SUBTITLE = "Start from zero; no experience needed";
 
 /** Friendly user-facing label for a level code (e.g. "a1" → "Elementary"). */
 export function cefrDisplayLabel(value?: string | null): string | null {

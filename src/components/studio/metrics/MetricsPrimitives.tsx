@@ -35,7 +35,7 @@ const LANG_HUE: Record<string, string> = {
 export function LangTag({ code }: { code?: string | null }) {
   const normalized = (code ?? "").toLowerCase();
   const hue = LANG_HUE[normalized] ?? "var(--mx-muted)";
-  const label = normalized ? normalized.toUpperCase() : "—";
+  const label = normalized ? normalized.toUpperCase() : "-";
   return (
     <span className="mx-langtag" style={{ color: hue, borderColor: hue }}>
       {label}

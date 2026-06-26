@@ -6,10 +6,10 @@ import { SPANISH_DIALOGUE_VOICES, GERMAN_DIALOGUE_VOICES } from "@/lib/elevenlab
  * operator knows WHICH ElevenLabs voice to generate a replacement
  * fragment with. Two sources, in priority order:
  *
- *   1. The live ElevenLabs account (`GET /v1/voices`) — the real name as
+ *   1. The live ElevenLabs account (`GET /v1/voices`); the real name as
  *      it appears in ElevenLabs (what the operator searches for). Cached
  *      in-memory for a few minutes so we don't refetch per request.
- *   2. Our canonical dialogue catalog slot names (angela, horacio, …) —
+ *   2. Our canonical dialogue catalog slot names (angela, horacio, …) -
  *      a fallback for voices not (yet) in the account listing.
  *
  * Voice IDs are normalized by stripping an optional "elevenlabs/" prefix
@@ -40,7 +40,7 @@ async function fetchElevenLabsNames(): Promise<Record<string, string>> {
   try {
     const res = await fetch("https://api.elevenlabs.io/v1/voices", {
       headers: { "xi-api-key": apiKey },
-      // GET listing only — never synthesis. Read-only, no credits.
+      // GET listing only; never synthesis. Read-only, no credits.
       cache: "no-store",
     });
     if (!res.ok) return cache?.byId ?? {};

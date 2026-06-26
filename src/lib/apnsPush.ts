@@ -7,11 +7,11 @@
 //
 // Required env (all must be set for sending; otherwise isApnsConfigured()
 // is false and callers should surface "not configured" instead of trying):
-//   APNS_KEY_ID      — the 10-char Key ID of the .p8 APNs auth key
-//   APNS_TEAM_ID     — Apple Developer Team ID (10 chars)
-//   APNS_AUTH_KEY    — contents of the .p8 file (PEM). Literal "\n" allowed.
-//   APNS_BUNDLE_ID   — the app bundle id (apns-topic)
-//   APNS_PRODUCTION  — "1"/"true" → api.push.apple.com, else sandbox
+//   APNS_KEY_ID     ; the 10-char Key ID of the .p8 APNs auth key
+//   APNS_TEAM_ID    ; Apple Developer Team ID (10 chars)
+//   APNS_AUTH_KEY   ; contents of the .p8 file (PEM). Literal "\n" allowed.
+//   APNS_BUNDLE_ID  ; the app bundle id (apns-topic)
+//   APNS_PRODUCTION ; "1"/"true" → api.push.apple.com, else sandbox
 
 import http2 from "node:http2";
 import { createPrivateKey, sign as cryptoSign } from "node:crypto";
@@ -89,7 +89,7 @@ export type ApnsPayload = {
 
 /**
  * Send one alert to many device tokens over a single HTTP/2 connection.
- * Never throws on a per-token failure — each token gets its own result.
+ * Never throws on a per-token failure; each token gets its own result.
  * Throws only if APNs is not configured (guard with isApnsConfigured()).
  */
 export async function sendApnsPush(
@@ -115,7 +115,7 @@ export async function sendApnsPush(
 
   // A locally-signed (development) build registers a SANDBOX token even
   // when built Release, while TestFlight/App Store builds register
-  // PRODUCTION tokens — and the token itself doesn't reveal which. So if a
+  // PRODUCTION tokens; and the token itself doesn't reveal which. So if a
   // token is rejected as BadDeviceToken on the primary host, retry it on
   // the other environment. One deploy then serves both, without flipping
   // APNS_PRODUCTION by hand.

@@ -6,7 +6,7 @@ import * as React from "react";
  * WHY: the journey pills (and language switcher / practice / favorites) used
  * flag EMOJI (🇨🇴, 🇪🇸, …). Regional-indicator emoji do NOT render on many
  * platforms (Windows, several browsers), where they fall back to the two
- * letters of the code — so users saw "CO" / "ES" instead of a flag. Inline
+ * letters of the code; so users saw "CO" / "ES" instead of a flag. Inline
  * SVG renders identically everywhere, no font/emoji support needed and no
  * external CDN dependency.
  *

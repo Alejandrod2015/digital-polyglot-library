@@ -253,7 +253,7 @@ export default async function StudioBlackFridayPage() {
                   <div key={c.rank} style={{ display: "flex", gap: 10, alignItems: "baseline" }}>
                     <span style={{ fontSize: 11, fontWeight: 800, color: ACCENT, minWidth: 16 }}>{c.rank}.</span>
                     <div style={{ fontSize: 12.5, color: TEXT_MUTED, lineHeight: 1.5 }}>
-                      <strong style={{ color: "var(--foreground)" }}>{c.name}</strong> — {c.note}
+                      <strong style={{ color: "var(--foreground)" }}>{c.name}</strong>; {c.note}
                     </div>
                   </div>
                 ))}

@@ -69,7 +69,7 @@ function createPrismaClient() {
   // Retry transitorio en TODAS las operaciones. Backoff exponencial
   // 200ms → 400ms → 800ms → 1600ms. Solo reintenta si el error
   // matchea el patrón conocido (pool cut idle, connection drop,
-  // engine not yet connected) — otros errores (constraint,
+  // engine not yet connected); otros errores (constraint,
   // validation) pasan directo.
   return base.$extends({
     query: {

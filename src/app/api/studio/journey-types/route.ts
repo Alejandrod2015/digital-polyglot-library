@@ -7,7 +7,7 @@ function toSlug(label: string): string {
   return label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
-/** GET /api/studio/journey-types — list all journey types */
+/** GET /api/studio/journey-types; list all journey types */
 export async function GET() {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -19,7 +19,7 @@ export async function GET() {
   return NextResponse.json(types);
 }
 
-/** POST /api/studio/journey-types — create a journey type. Body: { label } */
+/** POST /api/studio/journey-types; create a journey type. Body: { label } */
 export async function POST(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -46,7 +46,7 @@ export async function POST(request: Request) {
   return NextResponse.json(journeyType);
 }
 
-/** PATCH /api/studio/journey-types — update a journey type. Body: { id, label?, sortOrder? } */
+/** PATCH /api/studio/journey-types; update a journey type. Body: { id, label?, sortOrder? } */
 export async function PATCH(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -108,7 +108,7 @@ export async function PATCH(request: Request) {
   return NextResponse.json(journeyType);
 }
 
-/** DELETE /api/studio/journey-types — delete a journey type. Body: { id } */
+/** DELETE /api/studio/journey-types; delete a journey type. Body: { id } */
 export async function DELETE(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

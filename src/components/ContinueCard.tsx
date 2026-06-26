@@ -8,7 +8,7 @@ import RegionBadge from "@/components/RegionBadge";
 
 type Story = {
   href: string;
-  coverUrl?: string;       // optional — falls back to gradient (NEVER empty)
+  coverUrl?: string;       // optional; falls back to gradient (NEVER empty)
   bookTitle: string;
   title: string;
   level?: string;
@@ -22,7 +22,7 @@ type Story = {
 type Props = { story: Story };
 
 /**
- * CONTINUE LISTENING card — used inside the home carousel.
+ * CONTINUE LISTENING card; used inside the home carousel.
  *
  * ⚠️ Card contract (do NOT change):
  *   - Cover image at the top (aspect 4/3). If `coverUrl` missing → render
@@ -57,7 +57,7 @@ export default function ContinueCard({ story }: Props) {
           />
         )}
 
-        {/* Play FAB — hidden until card hover */}
+        {/* Play FAB; hidden until card hover */}
         <span className="absolute right-3 bottom-3 w-10 h-10 rounded-full bg-[var(--color-gold)] text-[#2a1a02] grid place-items-center opacity-0 translate-y-1.5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 shadow-[0_8px_22px_-6px_rgba(0,0,0,0.5)] z-10">
           <Play size={16} fill="currentColor" />
         </span>

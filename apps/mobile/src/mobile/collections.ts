@@ -13,7 +13,7 @@ export type FavoriteCollection = {
   wordKeys: string[];
   createdAt: string;
   /** Canonical language name the collection belongs to ("Spanish",
-   *  "German", …). Optional for backward compat — entries created
+   *  "German", …). Optional for backward compat; entries created
    *  before this field landed have it undefined and `collectionsForLanguage`
    *  treats them as global until they receive an explicit migration. */
   language?: string;
@@ -21,13 +21,13 @@ export type FavoriteCollection = {
 
 /** Public opts accepted by load/save. With `sessionToken` set the
  *  function syncs with the backend (`/api/collections/*`). Without it,
- *  the function is local-only — same behaviour the file had before the
+ *  the function is local-only; same behaviour the file had before the
  *  cloud sync landed. */
 export type CollectionsSyncOpts = {
   sessionToken?: string | null;
 };
 
-// SecureStore key — sólo se lee como fallback de migración para no
+// SecureStore key; sólo se lee como fallback de migración para no
 // perder colecciones creadas antes de que pasáramos a FileSystem.
 function getCollectionsKeyLegacy(userId?: string | null) {
   return `digital-polyglot/mobile-collections/${userId ?? "guest"}`;
@@ -145,7 +145,7 @@ async function clearFlag(path: string): Promise<void> {
 }
 
 // =============================================================================
-// Server I/O — every server response is mirrored back to the local
+// Server I/O; every server response is mirrored back to the local
 // file so an offline open still sees the latest known state. Errors
 // NEVER throw out the local file; the caller falls back to local.
 // =============================================================================
@@ -215,7 +215,7 @@ export async function deleteCollectionOnServer(
 }
 
 // =============================================================================
-// Migration — one-time push of pre-cloud local collections into the
+// Migration; one-time push of pre-cloud local collections into the
 // backend. Zero-risk: NEVER deletes the local file; writes a
 // timestamped backup BEFORE doing anything mutating; the MIGRATION_OK
 // flag is the LAST write, so any failure mid-flow leaves the flag
@@ -359,7 +359,7 @@ export async function saveCollections(
   try {
     await writeLocalCollections(userId, collections);
   } catch {
-    /* best-effort — local cache */
+    /* best-effort; local cache */
   }
 
   const token = opts?.sessionToken ?? null;
@@ -398,7 +398,7 @@ export function createCollection(name: string, language?: string | null): Favori
 /**
  * Filter collections that belong to the given language. Collections
  * without an explicit `language` field (legacy entries) are inferred
- * from their wordKeys — if every word in the collection is from the
+ * from their wordKeys; if every word in the collection is from the
  * same language we treat that as the collection's language; otherwise
  * the collection is treated as global and shown across all journeys.
  */

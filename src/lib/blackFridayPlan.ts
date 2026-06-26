@@ -1,5 +1,5 @@
 // ────────────────────────────────────────────────────────────────────
-// Black Friday 2026 campaign plan — single source of truth for the
+// Black Friday 2026 campaign plan; single source of truth for the
 // /studio/black-friday planning surface.
 //
 // This mirrors the research synthesis (7-angle deep research, 100+
@@ -89,7 +89,7 @@ export const BLACK_FRIDAY_PLAN: BlackFridayPlan = {
     {
       title: "El pico es la noche de Cyber Monday",
       body:
-        "Lun 30 nov, 8–10 PM ET — no el viernes. CM 2025 marcó récord de $14.25B vs $11.8B del Black Friday. Concentrar el último push ahí.",
+        "Lun 30 nov, 8–10 PM ET; no el viernes. CM 2025 marcó récord de $14.25B vs $11.8B del Black Friday. Concentrar el último push ahí.",
     },
     {
       title: "Ganar en canales propios, no en paid",

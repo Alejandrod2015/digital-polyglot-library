@@ -43,7 +43,7 @@ export async function sendBetaConfirmationEmail({
     "",
     "If you have questions before then, reply to this email or write to support@digitalpolyglot.com.",
     "",
-    "— Digital Polyglot",
+    "- Digital Polyglot",
   ].join("\n");
 
   const html = `

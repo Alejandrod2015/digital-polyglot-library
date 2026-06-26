@@ -15,7 +15,7 @@ export type LevelAuditResult = {
   summary: string;
   /**
    * A short, illustrative list of words/phrases that most stand out as
-   * above the target level. NOT an exhaustive offender list — the judge
+   * above the target level. NOT an exhaustive offender list; the judge
    * picks the most representative examples (typically 0-8). The lexical
    * adjuster uses these as `wordsToAvoid` seeds.
    */
@@ -62,7 +62,7 @@ function clampScore(n: unknown): number {
  * <handful of words>"). The lexical adjuster still gets actionable
  * seeds via `highlights`, just no longer pretends the list is complete.
  *
- * Multi-language by design — relies on the model's general CEFR sense
+ * Multi-language by design; relies on the model's general CEFR sense
  * rather than per-language frequency lists.
  */
 export async function auditStoryVocabularyLevel(args: {
@@ -81,14 +81,14 @@ export async function auditStoryVocabularyLevel(args: {
   const targetIdx = LEVEL_ORDER.indexOf(targetLevel);
   const flagFromIdx = targetIdx >= 0 ? targetIdx + 2 : LEVEL_ORDER.length;
   const flagFromLevel = flagFromIdx < LEVEL_ORDER.length ? LEVEL_ORDER[flagFromIdx] : null;
-  const flagLevels = flagFromLevel ? LEVEL_ORDER.slice(flagFromIdx).join(", ") : "(none — target is at the top)";
+  const flagLevels = flagFromLevel ? LEVEL_ORDER.slice(flagFromIdx).join(", ") : "(none; target is at the top)";
 
   const prompt = `
 You are a CEFR ${language} editor evaluating whether a story reads at the right level.
 
 Target level: ${targetLevel}
 
-# CRITICAL — what counts as "above target"
+# CRITICAL; what counts as "above target"
 Words ONE CEFR level above target are NORMAL exposure for any learner (the i+1 principle). They are NOT problems and must NOT lower the score, must NOT be mentioned in the summary, and must NOT be included in highlights.
 
 Only words TWO OR MORE CEFR levels above target count as above-target for ALL of: score, summary, and highlights. With target ${targetLevel}, "above target" means specifically: ${flagLevels}.
@@ -97,13 +97,13 @@ Only words TWO OR MORE CEFR levels above target count as above-target for ALL of
 Give a HOLISTIC verdict, not a word-by-word audit.
 
 1. Score (0-100): how well does the text read as ${targetLevel}, treating one-level-up words as in-level? Anchors:
-   - 95-100: feels solidly ${targetLevel} — none or very few words ${flagFromLevel ?? "above target"} or above.
+   - 95-100: feels solidly ${targetLevel}; none or very few words ${flagFromLevel ?? "above target"} or above.
    - 80-94: mostly ${targetLevel}, a small number of words at ${flagFromLevel ?? "above target"} or above.
-   - 60-79: noticeably above target — multiple ${flagFromLevel ?? "above-target"}+ words throughout.
+   - 60-79: noticeably above target; multiple ${flagFromLevel ?? "above-target"}+ words throughout.
    - Below 60: doesn't read as ${targetLevel} at all.
    Be willing to give 95-100 when it really fits. One-level-up vocabulary alone never blocks a 95+.
 
-2. Summary: one sentence in English describing the verdict. Mention only ${flagFromLevel ?? "above-target"}+ words if any — never mention one-level-up words even if you noticed them.
+2. Summary: one sentence in English describing the verdict. Mention only ${flagFromLevel ?? "above-target"}+ words if any; never mention one-level-up words even if you noticed them.
 
 3. Highlights: 0 to 8 illustrative words at ${flagLevels}. NOT an exhaustive list. Skip if score >= 95. If no word meets the threshold, return an empty array.
    For each, give the lemma, the surface form used, and your CEFR estimate (must be in {${flagLevels}}).

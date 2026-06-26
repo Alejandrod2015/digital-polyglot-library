@@ -597,7 +597,7 @@ function PlansInner() {
           }
         />
 
-        {/* Premium Annual — destacado */}
+        {/* Premium Annual; destacado */}
         <PlanCard
           eyebrow="Annual"
           price={annualDisplayPrice}
@@ -760,7 +760,7 @@ function PlanStatusBanner({
       <div>
         <p className="text-[13px] font-extrabold">
           You&apos;re on {planLabel}
-          {intervalLabel ? ` · ${intervalLabel}` : ''} — full access.
+          {intervalLabel ? ` · ${intervalLabel}` : ''}; full access.
         </p>
         {showAnnualNudge ? (
           <p className="mt-0.5 text-[12px] text-[var(--muted)]">

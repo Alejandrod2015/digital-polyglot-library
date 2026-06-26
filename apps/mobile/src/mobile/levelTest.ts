@@ -1,10 +1,10 @@
 /**
- * Level test — a 10-question multiple-choice quiz that estimates the
+ * Level test; a 10-question multiple-choice quiz that estimates the
  * user's CEFR level for a given language. Used in two places:
  *
- *   1. Onboarding step 3 — after the user picks their self-reported
+ *   1. Onboarding step 3; after the user picks their self-reported
  *      level, we offer the test as a more accurate alternative.
- *   2. Locked-story tap — when the user taps a story above their
+ *   2. Locked-story tap; when the user taps a story above their
  *      current level, we offer the test as a way to skip ahead
  *      instead of just blocking them.
  *
@@ -21,7 +21,7 @@ export type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1";
 
 export type LevelTestQuestion = {
   id: string;
-  /** CEFR difficulty of this question — drives the score → level
+  /** CEFR difficulty of this question; drives the score → level
    *  mapping in `levelFromScore`. */
   level: Exclude<CEFRLevel, "C1">;
   /** Short prompt shown to the user (e.g. "Complete the sentence"
@@ -120,7 +120,7 @@ const SPANISH_QUESTIONS: LevelTestQuestion[] = [
     sentence: "Por más que ___, no conseguí convencerlo.",
     options: ["intenté", "intentaba", "intente", "intentara"],
     answer: "intenté",
-    rationale: "Indicative preterite — the action actually happened.",
+    rationale: "Indicative preterite; the action actually happened.",
   },
   {
     id: "es-b2-2",
@@ -172,7 +172,7 @@ const GERMAN_QUESTIONS: LevelTestQuestion[] = [
     sentence: "Ich gebe ___ Mann das Buch.",
     options: ["dem", "den", "der", "das"],
     answer: "dem",
-    rationale: "Dative for indirect object — 'dem Mann' (to the man).",
+    rationale: "Dative for indirect object; 'dem Mann' (to the man).",
   },
   {
     id: "de-a2-3",
@@ -325,7 +325,7 @@ const ITALIAN_QUESTIONS: LevelTestQuestion[] = [
 
 /**
  * Map a 10-question score to the highest level the user can
- * comfortably access. The mapping is intentionally conservative —
+ * comfortably access. The mapping is intentionally conservative -
  * a perfect score lands the user at C1, but missing one B2
  * question still places them at B2 (we don't want to gate users
  * out of content they're nearly at).
@@ -340,7 +340,7 @@ export function levelFromScore(correct: number): CEFRLevel {
 
 /**
  * Resolve the question set for a (language, variant) pair. Returns
- * null when we don't have content authored yet — callers should
+ * null when we don't have content authored yet; callers should
  * gracefully hide the test entry point in that case.
  *
  * Variant currently doesn't affect the question set: a Mexican-

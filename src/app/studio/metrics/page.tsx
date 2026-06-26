@@ -168,7 +168,7 @@ const MUTED_TABS: Array<{ key: MetricsSection; label: string; icon: string }> = 
 const RANGE_OPTIONS = ["7", "30", "90", "180"];
 
 function formatRangeLabel(from: string, to: string) {
-  if (!from || !to) return "—";
+  if (!from || !to) return "-";
   return `${from.slice(0, 10)} → ${to.slice(0, 10)}`;
 }
 
@@ -288,7 +288,7 @@ export default function MetricsDashboard() {
   }, [section]);
 
   // Cuando cambia un filtro, invalidamos cache y disparamos refetch
-  // automático. NO reseteamos `data` a EMPTY_DATA — mantenemos los
+  // automático. NO reseteamos `data` a EMPTY_DATA; mantenemos los
   // números viejos visibles mientras la nueva fetch carga (el spinner
   // del botón "Actualizar" indica el cambio en curso). Excepción: cuando
   // se está editando un rango personalizado a medias (solo una fecha
@@ -909,7 +909,7 @@ function AcquisitionView({ data }: { data: DashboardData }) {
   const f = acq?.funnel;
   return (
     <div className="mx-view">
-      {/* Signups — sourced from Clerk (no depende del webhook) */}
+      {/* Signups; sourced from Clerk (no depende del webhook) */}
       <div className="mx-panel" style={{ marginBottom: 12 }}>
         <div className="mx-panel__head">
           <div>
@@ -973,7 +973,7 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                 <span title="App de iPhone">📱 iOS: {acq.signups.byPlatform.ios}</span>
                 <span title="Webapp">🌐 Web: {acq.signups.byPlatform.web}</span>
                 {acq.signups.byPlatform.unknown > 0 && (
-                  <span title="Sin actividad medida aún">— s/d: {acq.signups.byPlatform.unknown}</span>
+                  <span title="Sin actividad medida aún">- s/d: {acq.signups.byPlatform.unknown}</span>
                 )}
               </div>
             )}
@@ -998,11 +998,11 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                   <tr key={r.userId} style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
                     <td style={{ padding: "4px 6px" }}>{r.createdAt.slice(0, 10)}</td>
                     <td style={{ padding: "4px 6px" }}>
-                      {r.name ?? "—"}
-                      <span style={{ opacity: 0.5 }}> · {r.email ?? "—"}</span>
+                      {r.name ?? "-"}
+                      <span style={{ opacity: 0.5 }}> · {r.email ?? "-"}</span>
                     </td>
                     <td style={{ padding: "4px 6px" }}>
-                      {r.targetLanguages.length ? r.targetLanguages.join("/") : "—"}
+                      {r.targetLanguages.length ? r.targetLanguages.join("/") : "-"}
                       {r.level ? ` · ${r.level}` : ""}
                     </td>
                     <td style={{ padding: "4px 6px" }}>
@@ -1011,11 +1011,11 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                       ) : r.platform === "web" ? (
                         <span title="Webapp">🌐 Web</span>
                       ) : (
-                        "—"
+                        "-"
                       )}
                     </td>
-                    <td style={{ padding: "4px 6px" }}>{r.onboarded ? "✓" : "—"}</td>
-                    <td style={{ padding: "4px 6px" }}>{r.openedStory ? "✓" : "—"}</td>
+                    <td style={{ padding: "4px 6px" }}>{r.onboarded ? "✓" : "-"}</td>
+                    <td style={{ padding: "4px 6px" }}>{r.openedStory ? "✓" : "-"}</td>
                     <td style={{ padding: "4px 6px" }}>
                       {r.completedStory ? (
                         "✓"
@@ -1029,11 +1029,11 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                           ▶?
                         </span>
                       ) : (
-                        "—"
+                        "-"
                       )}
                     </td>
-                    <td style={{ padding: "4px 6px" }}>{r.viewedPlans ? "✓" : "—"}</td>
-                    <td style={{ padding: "4px 6px" }}>{r.paid ? "✓" : "—"}</td>
+                    <td style={{ padding: "4px 6px" }}>{r.viewedPlans ? "✓" : "-"}</td>
+                    <td style={{ padding: "4px 6px" }}>{r.paid ? "✓" : "-"}</td>
                   </tr>
                 ))}
               </tbody>
@@ -1139,7 +1139,7 @@ function ContentView({ data }: { data: PipelineData }) {
             value={
               data.drafts.avgQaScore !== null
                 ? data.drafts.avgQaScore.toFixed(2)
-                : "—"
+                : "-"
             }
             accent="gold"
           />
@@ -1170,7 +1170,7 @@ function ContentView({ data }: { data: PipelineData }) {
             value={
               data.pipeline.avgTimeToPublish !== null
                 ? Math.round(data.pipeline.avgTimeToPublish)
-                : "—"
+                : "-"
             }
             suffix="min"
             accent="gold"

@@ -17,7 +17,7 @@ type Props = {
 };
 
 /**
- * TOPIC BANNER — the big colored "LEVEL A1 / Food & Drink" header card.
+ * TOPIC BANNER; the big colored "LEVEL A1 / Food & Drink" header card.
  *
  * iPhone reference: `journeyTopicPanel` + `journeyTopicPanelBevel`.
  *

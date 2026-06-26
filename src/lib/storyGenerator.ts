@@ -49,7 +49,7 @@ export type GenerateStoryParams = {
    * First sentences of each story already in the same journey. Injected
    * into the prompt as a hard constraint: the new story's opening MUST
    * be syntactically distinct from every one of these. No prescribed
-   * "right" opening — variety is enforced negatively, not via a fixed
+   * "right" opening; variety is enforced negatively, not via a fixed
    * rotation menu (which the model just memorizes and reuses).
    */
   existingOpenings?: string[];
@@ -198,7 +198,7 @@ function isValidNarratorJourneyBody(text: string): { ok: boolean; reason?: strin
 }
 
 // ──────────────────────────────────────────────────────────────────────────
-// STYLE BLOCKS — body-format and style-specific Requirements bullets.
+// STYLE BLOCKS; body-format and style-specific Requirements bullets.
 //
 // These two constants are kept INDEPENDENT on purpose. The studio pipeline
 // ships multi-voice by default; the narrator variant exists for experiments
@@ -337,7 +337,7 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
   // zu-infinitives) toward A2+ even when the lexicon stays A1. The
   // multivoice format constrains grammar mechanically via speaker turns;
   // narrator prose does not. Worth knowing when choosing the style, but
-  // the caller decides — generator does not gate on level.
+  // the caller decides; generator does not gate on level.
 
   // Select the style-specific blocks/validator once per call. The branches
   // are intentionally fully separate; see the comment above the constants.
@@ -349,15 +349,15 @@ export async function generateStoryPayload(params: GenerateStoryParams): Promise
     storyStyle === "narrator" ? isValidNarratorJourneyBody : isValidMultiVoiceJourneyBody;
   const resolvedProvidedTitle = typeof providedTitle === "string" ? providedTitle.trim() : "";
   // Lexical constraint applies on every generation: keep the whole story
-  // body — not only the highlighted vocab items — within the target CEFR
+  // body; not only the highlighted vocab items; within the target CEFR
   // level. Narrow on purpose: lexicon only, no constraints on tense,
   // sentence length, or style.
   const lexicalEmphasis = cefrLabel
-    ? `\nVocabulary level: keep EVERY word in the story body — not only the highlighted vocab items — at or below CEFR ${cefrLabel}. If a higher-level word is essential, swap it for a simpler equivalent. Do not flatten narrative tension, dialogue, or pacing — this constrains the lexicon only.`
+    ? `\nVocabulary level: keep EVERY word in the story body; not only the highlighted vocab items; at or below CEFR ${cefrLabel}. If a higher-level word is essential, swap it for a simpler equivalent. Do not flatten narrative tension, dialogue, or pacing; this constrains the lexicon only.`
     : "";
   const dedupedWordsToAvoid = Array.from(new Set(wordsToAvoid.map((w) => w.trim()).filter(Boolean))).slice(0, 40);
   const wordsToAvoidClause = dedupedWordsToAvoid.length && cefrLabel
-    ? `\nA previous draft used these words flagged as above CEFR ${cefrLabel}. Do NOT reuse them — choose simpler equivalents that fit the level: ${dedupedWordsToAvoid.join(", ")}.`
+    ? `\nA previous draft used these words flagged as above CEFR ${cefrLabel}. Do NOT reuse them; choose simpler equivalents that fit the level: ${dedupedWordsToAvoid.join(", ")}.`
     : "";
   const normalizedVariant = normalizeVariant(variant);
   const regionClause = region ? `, specifically from ${region}` : "";
@@ -399,7 +399,7 @@ The reader should finish this story feeling something different from what the pr
   // memorized from training. Prescriptive rotation menus ("rotate among
   // 5 strategies") just become the new fallback. Instead, we list the
   // ACTUAL first sentences already in the journey and require the new
-  // opening to be syntactically distinct from every one of them — no
+  // opening to be syntactically distinct from every one of them; no
   // prescribed correct shape, just a forbidden set that grows with each
   // saved story.
   const existingOpeningsClause = existingOpenings.length
@@ -407,10 +407,10 @@ The reader should finish this story feeling something different from what the pr
 These are the first sentences of every story already in this journey:
 ${existingOpenings.slice(0, 24).map((o, i) => `[${i + 1}] ${o}`).join("\n")}
 Your story's first sentence MUST be syntactically distinct from every one of these. Do not echo their word order, their grammatical shape, their setup pattern, or their lead element. Specifically:
-- If many of them start with "Es ist [time-marker] ...", yours must NOT start with "Es ist" — not as a softer variant, not at all.
+- If many of them start with "Es ist [time-marker] ...", yours must NOT start with "Es ist"; not as a softer variant, not at all.
 - If many of them lead with a time-marker followed by a place-marker, yours must lead with something else entirely.
 - Vary verb position, sentence type (declarative / fragment / line of dialogue), subject placement, and the kind of detail you front-load (action, sensory, internal, environmental, object, character gesture).
-There is NO prescribed correct opening shape. Invent the opening you think serves THIS story best, with the only rule that it must not echo any of the openings above. The set of forbidden patterns grows with every saved story — variety is enforced cumulatively, not by a fixed rotation menu.`
+There is NO prescribed correct opening shape. Invent the opening you think serves THIS story best, with the only rule that it must not echo any of the openings above. The set of forbidden patterns grows with every saved story; variety is enforced cumulatively, not by a fixed rotation menu.`
     : "";
 
   let previousFeedback = "";
@@ -423,7 +423,7 @@ There is NO prescribed correct opening shape. Invent the opening you think serve
         : `\nRetry constraints: previous attempt failed: ${previousFeedback}. If it was about length, expand the scenes, dialogue, internal reactions, and consequences. If it was about vocab count, return more candidate items (22 or more) so that enough survive post-processing.`;
 
     const titleClause = resolvedProvidedTitle
-      ? `The story's title is already fixed: "${resolvedProvidedTitle}". Do NOT invent a different title. Return exactly this title in the JSON "title" field, and write the story so its content is coherent with it — the title's concrete nouns (dishes, places, objects, numbers) must appear or be clearly reflected in the narrative.`
+      ? `The story's title is already fixed: "${resolvedProvidedTitle}". Do NOT invent a different title. Return exactly this title in the JSON "title" field, and write the story so its content is coherent with it; the title's concrete nouns (dishes, places, objects, numbers) must appear or be clearly reflected in the narrative.`
       : "";
 
     const prompt = `
@@ -435,23 +435,23 @@ ${titleClause}
 ${variantClause}
 Return vocabulary items scaled to the story's DENSITY, not a fixed cap: aim for roughly one teachable item per 10 words of your story body (a ~250-word story → ~25 candidates; a denser ~330-word story → ~33). After post-processing filters transparent cognates and invalid multi-word fragments, the keeper list must still be at least 20 (hard minimum) and at most max(25, round(bodyWords/9)). Only include words that genuinely earn a slot (two-functions test below); do NOT pad to hit a number.
 Vocabulary serves TWO jobs and the list must cover both:
-1. Comprehension — gloss the words that would BLOCK this reader if unknown. At A1/A2 these are the rare, concrete, scene-specific nouns (e.g. cod, apron, lemon). Include them BECAUSE they are unfamiliar; that is the point of an in-story gloss. Do NOT skip a word just because it is low-frequency or only appears in this scene.
-2. Acquisition — high-frequency, transferable verbs/adjectives/connectors the learner reuses everywhere (to need, to take, important, nice, to pay).
-Aim for roughly one third concrete comprehension-blockers and two thirds transferable words. The only thing to exclude is "rare AND irrelevant": proper nouns (names, cities, neighborhoods, brands) are recognized without a gloss — never teach them. A rare common noun that is central to the scene IS taught.
+1. Comprehension; gloss the words that would BLOCK this reader if unknown. At A1/A2 these are the rare, concrete, scene-specific nouns (e.g. cod, apron, lemon). Include them BECAUSE they are unfamiliar; that is the point of an in-story gloss. Do NOT skip a word just because it is low-frequency or only appears in this scene.
+2. Acquisition; high-frequency, transferable verbs/adjectives/connectors the learner reuses everywhere (to need, to take, important, nice, to pay).
+Aim for roughly one third concrete comprehension-blockers and two thirds transferable words. The only thing to exclude is "rare AND irrelevant": proper nouns (names, cities, neighborhoods, brands) are recognized without a gloss; never teach them. A rare common noun that is central to the scene IS taught.
 All vocabulary definitions must be written in clear English, regardless of the story language.
 HARD LIMIT: each definition must be 3-7 English words AND no more than 50 characters total (counting spaces). Both bounds are mandatory; do not exceed either. Treat this as a UI constraint: the definition must fit on a small mobile chip without wrapping.
 Style: a concise gloss in the spirit of a translation app (Linguee/Reverso/DeepL). Lead with the noun/concept, with an infinitive verb ("To join..."), or with a descriptive adjective phrase. Two senses joined by ";" or "," are fine if they stay under the limit.
-Never use em-dashes (—); use semicolons, colons, commas, or parentheses instead.
+Never use em-dashes (-); use semicolons, colons, commas, or parentheses instead.
 Never return a single word with no qualifier (e.g. "Idea", "Stir"). Add at least one clarifying word or sense ("An idea or concept", "To stir gently").
 Never write long descriptive paraphrases ("An idea or concept about something abstract"); compress to the essential gloss.
 ${bodyFormatBlock}
 
-CRITICAL — no non-vocalized sounds, ever. The narrator voice is a real TTS (ElevenLabs) that CANNOT render laughs, sighs, hums, or stage directions. Any of these in the body breaks the audio and the story has to be re-written:
+CRITICAL; no non-vocalized sounds, ever. The narrator voice is a real TTS (ElevenLabs) that CANNOT render laughs, sighs, hums, or stage directions. Any of these in the body breaks the audio and the story has to be re-written:
 - NO laughter spelled out: "haha", "jaja", "jeje", "Hahaha", "ja ja", "hehe", "kkk", etc.
 - NO hesitation/filler sounds: "hmm", "hmmm", "uhm", "ehm", "uh", "eh", "mh", "ahh".
 - NO reaction sounds: "mmm" (as a sound), "oh!", "ohh", "aww", "ay", "uy", "ugh", "wow", "ay dios", "Mein Gott".
 - NO stage directions inside dialogue: "(laughs)", "(sighs)", "[ríe]", "*pause*".
-Render reactions as REAL WORDS instead: instead of "Hahaha! Ich auch, fast." write "Ich auch, fast." — the laugh is implied. Instead of "Mmm! Wieso ist roher Teig so lecker?" write "Wieso ist roher Teig so lecker?". If a character needs to express surprise, joy, or disgust, use complete words ("Was für ein Glück", "Ich war ungeduldig", "Das schmeckt seltsam") — never paralinguistic spelling.
+Render reactions as REAL WORDS instead: instead of "Hahaha! Ich auch, fast." write "Ich auch, fast."; the laugh is implied. Instead of "Mmm! Wieso ist roher Teig so lecker?" write "Wieso ist roher Teig so lecker?". If a character needs to express surprise, joy, or disgust, use complete words ("Was für ein Glück", "Ich war ungeduldig", "Das schmeckt seltsam"); never paralinguistic spelling.
 
 Requirements:
 Use a close third-person narrator with strong internal focalization.
@@ -472,7 +472,7 @@ Use a close third-person narrator with strong internal focalization.
 - Keep paragraphs short and dynamic (usually 1-3 sentences per paragraph).
 - Avoid long expository narrator blocks; reduce detached description and increase character-centered viewpoint.
 ${pacingBullets}
-- The opening must feel authored, not templated. The hard constraint on opening variety is enforced separately below (see "OPENING VARIETY") — that section, NOT a fixed rotation menu, is the source of truth on what your first sentence can look like.
+- The opening must feel authored, not templated. The hard constraint on opening variety is enforced separately below (see "OPENING VARIETY"); that section, NOT a fixed rotation menu, is the source of truth on what your first sentence can look like.
 - Do NOT default to this scene-setup formula in the first few sentences: time-marker, place-marker, smell/weather sentence, then "X enters/walks/sees a small local place", then a short inventory of tables / counter / window. Even if your first sentence is not literally "Es ist [time] [place]", front-loading all scene metadata in the same predictable order makes every story feel templated. Delay at least one of these on purpose: the exact place, the exact time of day, the food item, or the full visual layout of the venue.
 - If you mention sensory detail early, vary the sense; do not rely mostly on smell. Sound, texture, heat, light, crowd pressure, body tension, or an overheard fragment are equally valid.
 - If you mention sensory detail early, vary the sense; do not rely mostly on smell. Sound, texture, heat, light, crowd pressure, or body tension are equally valid.

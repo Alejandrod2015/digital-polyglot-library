@@ -371,7 +371,7 @@
 }
 .covers-v2 .cover-hero--empty .empty-inner span { font-size: 11.5px; }
 
-/* Studio rail (right column) — v2 collapses to one card */
+/* Studio rail (right column); v2 collapses to one card */
 .covers-v2 .studio-rail {
   display: flex;
   flex-direction: column;

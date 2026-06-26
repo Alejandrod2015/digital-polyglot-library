@@ -42,7 +42,7 @@ export default function OnboardingPlayCoachmark() {
         </button>
         <p className="text-sm leading-snug">
           <span className="font-semibold">This is your free story this week.</span>{" "}
-          Press play below to start listening — audio and reading together.
+          Press play below to start listening; audio and reading together.
         </p>
         {/* Tail pointing down toward the play button */}
         <div className="absolute left-1/2 -bottom-1.5 h-3 w-3 -translate-x-1/2 rotate-45 bg-blue-600" />

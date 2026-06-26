@@ -4,7 +4,7 @@ import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 
 /**
- * GET /api/studio/journeys — list all journeys with story counts
+ * GET /api/studio/journeys; list all journeys with story counts
  */
 export async function GET() {
   const { userId } = await auth();
@@ -47,7 +47,7 @@ export async function GET() {
 }
 
 /**
- * POST /api/studio/journeys — create a new journey with story slots
+ * POST /api/studio/journeys; create a new journey with story slots
  */
 export async function POST(request: Request) {
   const { userId } = await auth();
@@ -68,7 +68,7 @@ export async function POST(request: Request) {
 
   const spt = Math.max(1, Math.min(10, storiesPerTopic || 1));
 
-  // Build story slots — use topicsByLevel if available, otherwise fall back to flat topics
+  // Build story slots; use topicsByLevel if available, otherwise fall back to flat topics
   const storySlots: Array<{ level: string; topic: string; slotIndex: number; status: "draft" }> = [];
   for (const level of levels as string[]) {
     const levelTopics: string[] = topicsByLevel?.[level] ?? topics ?? [];
@@ -106,7 +106,7 @@ export async function POST(request: Request) {
 }
 
 /**
- * DELETE /api/studio/journeys — delete a journey and all its stories
+ * DELETE /api/studio/journeys; delete a journey and all its stories
  * Body: { journeyId }
  */
 export async function DELETE(request: Request) {
@@ -131,7 +131,7 @@ export async function DELETE(request: Request) {
 }
 
 /**
- * PATCH /api/studio/journeys — update journey name, add/remove levels,
+ * PATCH /api/studio/journeys; update journey name, add/remove levels,
  * or add/remove topics from an existing journey.
  *
  * Body: {

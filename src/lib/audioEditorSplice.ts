@@ -6,7 +6,7 @@ import { join } from "node:path";
 
 import { uploadPublicObject } from "@/lib/objectStorage";
 
-// Crossfade at each splice seam — matches CROSSFADE_SEC in preview-segment
+// Crossfade at each splice seam; matches CROSSFADE_SEC in preview-segment
 // and SPLICE_CROSSFADE_SEC in the Modal endpoint so every splice sounds alike.
 export const CROSSFADE_SEC = 0.2;
 
@@ -200,7 +200,7 @@ export async function spliceOnModal(args: {
   }
   if (!res.ok) {
     const detail = await res.text().catch(() => "");
-    throw new Error(`El empalme en Modal falló (${res.status})${detail ? ` — ${detail.slice(0, 300)}` : ""}`);
+    throw new Error(`El empalme en Modal falló (${res.status})${detail ? `; ${detail.slice(0, 300)}` : ""}`);
   }
   const json = (await res.json()) as { url?: string; filename?: string; segDurationSec?: number };
   if (!json?.url) throw new Error("Modal no devolvió una URL de audio");

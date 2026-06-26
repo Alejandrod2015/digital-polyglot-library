@@ -275,7 +275,7 @@ export async function loadPedagogicalRules(): Promise<Record<CEFRLevel, Pedagogi
       return _runtimeRules;
     }
   } catch {
-    // DB not available (table missing, sandbox, etc.) — use defaults
+    // DB not available (table missing, sandbox, etc.); use defaults
   }
 
   _runtimeRules = PEDAGOGICAL_RULES;
@@ -291,7 +291,7 @@ export function invalidatePedagogicalCache(): void {
 
 /**
  * Retrieve pedagogical rule for a given CEFR level (case-insensitive).
- * Synchronous — reads from hardcoded defaults or last-loaded cache.
+ * Synchronous; reads from hardcoded defaults or last-loaded cache.
  * For the freshest DB values, call loadPedagogicalRules() first.
  */
 export function getRuleForLevel(level: string): PedagogicalRule | null {
@@ -331,7 +331,7 @@ export function buildContentPromptContext(
 You are generating a language learning story for ${language} learners at the ${rule.label} (${level.toUpperCase()}) level.
 
 ## Content Constraints
-- **Word Count**: ${rule.wordCountRange.min}-${rule.wordCountRange.max} words (IMPORTANT: aim for at least ${rule.wordCountRange.min} words — this story will be narrated as audio and must be at least 2 minutes long)
+- **Word Count**: ${rule.wordCountRange.min}-${rule.wordCountRange.max} words (IMPORTANT: aim for at least ${rule.wordCountRange.min} words; this story will be narrated as audio and must be at least 2 minutes long)
 - **Topic**: ${topic}
 - **Sentence Complexity**: ${rule.sentenceComplexity} (${rule.sentenceComplexity === "simple" ? "short, direct statements" : rule.sentenceComplexity === "compound" ? "connected with and/but/because" : rule.sentenceComplexity === "complex" ? "with subordinate clauses and relative clauses" : "advanced syntax with multiple nested structures"})
 - **Vocabulary Items to Teach**: ${rule.vocabDensity.minItems}-${rule.vocabDensity.maxItems} new/important words
@@ -348,7 +348,7 @@ ${rule.exampleTopics.map((t) => `- ${t}`).join("\n")}
 
 ## Instructions
 1. Create an engaging, coherent narrative that naturally incorporates the grammar and vocabulary requirements above
-2. Do not artificially force structures—they should flow naturally
+2. Do not artificially force structures-they should flow naturally
 3. Ensure learners can understand context from story structure and familiar elements
 4. Include repetition of key vocabulary and structures
 5. Make the story memorable and emotionally engaging

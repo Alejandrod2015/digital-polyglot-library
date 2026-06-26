@@ -30,7 +30,7 @@ export async function saveStoredJourneys(
 ): Promise<void> {
   if (!FileSystem.documentDirectory) return;
   // Dedupe before persisting so the disk file is the source of
-  // truth for "no duplicates" — even if some upstream caller sent
+  // truth for "no duplicates"; even if some upstream caller sent
   // a dirty array, the file we write will be clean and the next
   // hydrate will be too.
   const cleanJourneys = dedupeJourneysById(journeys);
@@ -43,7 +43,7 @@ export async function saveStoredJourneys(
   try {
     await FileSystem.writeAsStringAsync(STORAGE_FILE, JSON.stringify(payload));
   } catch (err) {
-    // Non-fatal — the next save will retry. If disk is full or the
+    // Non-fatal; the next save will retry. If disk is full or the
     // path is unwritable the user just loses multi-variant restore
     // on next app open, which falls back to the synthesized list.
     console.warn("[journey-storage] save failed", err);
@@ -90,6 +90,6 @@ export async function clearStoredJourneys(): Promise<void> {
       await FileSystem.deleteAsync(STORAGE_FILE, { idempotent: true });
     }
   } catch {
-    /* swallow — clearing is best-effort */
+    /* swallow; clearing is best-effort */
   }
 }

@@ -61,7 +61,7 @@ function hasLeadingOneWordGloss(definition: string): boolean {
 }
 
 function hasEmDash(definition: string): boolean {
-  return /—/.test(definition);
+  return /-/.test(definition);
 }
 
 // Pragmatic detector for "this definition is not in English" without depending
@@ -103,10 +103,10 @@ function isLikelyDirectTranslation(definition: string): boolean {
   if (/^to\s+[a-z][a-z'\-\s]*$/i.test(normalized) && wc <= 4) return true;
   if (/^(a|an|the)\s+[a-z][a-z'\-\s]*$/i.test(normalized) && wc <= 4) return true;
   if (/^[a-z][a-z'\-]*$/i.test(normalized)) return true;
-  const firstClause = normalized.split(/[,:;—-]/, 1)[0]?.trim() ?? "";
+  const firstClause = normalized.split(/[,:;\u2014]/, 1)[0]?.trim() ?? "";
   const firstClauseWords = wordCount(firstClause);
   if (
-    /[,:;—-]/.test(normalized) &&
+    /[,:;\u2014]/.test(normalized) &&
     firstClauseWords > 0 &&
     firstClauseWords <= 4 &&
     (/^to\s+[a-z][a-z'\-\s]*$/i.test(firstClause) ||

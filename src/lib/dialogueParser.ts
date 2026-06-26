@@ -3,7 +3,7 @@
  * Strategy:
  *   1. Strip HTML, collapse whitespace.
  *   2. Find quoted spans (straight quotes "..." and curly “..."”).
- *      Em-dash dialogue (—…—) is also supported as paragraph-style turns.
+ *      Em-dash dialogue (-…-) is also supported as paragraph-style turns.
  *   3. For each quoted span, look at a 80-char window before/after for an
  *      attribution pattern: VERB + capitalized name, or capitalized name + VERB.
  *   4. If no attribution, mark speaker as "?" so the UI can ask the user.
@@ -93,10 +93,10 @@ function findCurlyQuotes(text: string): Quote[] {
 }
 
 function findEmDashTurns(text: string): Quote[] {
-  // Em-dash dialogue style: "— ¿Cómo estás? — preguntó Carmen."
+  // Em-dash dialogue style: "- ¿Cómo estás?; preguntó Carmen."
   // We treat each em-dash-prefixed segment as a quoted span up to the next em-dash, period, or paragraph end.
   const out: Quote[] = [];
-  const re = /—\s*([^—\n]+?)(?=\s*—|\s*$|\s*[.?!]\s+(?=[A-ZÁÉÍÓÚÑ]))/g;
+  const re = /-\s*([^-\n]+?)(?=\s*-|\s*$|\s*[.?!]\s+(?=[A-ZÁÉÍÓÚÑ]))/g;
   let m: RegExpExecArray | null;
   while ((m = re.exec(text)) !== null) {
     const c = m[1].trim();

@@ -2,7 +2,7 @@ import { Feather } from "@expo/vector-icons";
 import { StyleSheet, View } from "react-native";
 
 /**
- * Mini flag rendered with native Views — no SVG, no emoji, no images.
+ * Mini flag rendered with native Views; no SVG, no emoji, no images.
  *
  * Single container (border + clip) with the flag artwork placed
  * directly inside. Earlier revisions used a nested outer-ring +
@@ -31,7 +31,7 @@ type FlagSpec =
 // Colombia flag spec, used as the LATAM variant for Spanish. We use
 // a dedicated weighted hBands kind because the Colombian flag has a
 // 2:1:1 ratio (yellow takes the top half, blue and red split the
-// bottom half) — distinct from any other flag in our set.
+// bottom half); distinct from any other flag in our set.
 const COLOMBIA_SPEC: FlagSpec = {
   kind: "hBands",
   colors: ["#FCD116", "#003893", "#CE1126"],
@@ -42,7 +42,7 @@ const SPECS: Record<string, FlagSpec> = {
   Italian: { kind: "vBands", colors: ["#008C45", "#F4F5F0", "#CD212A"] },
   German: { kind: "hBands", colors: ["#000000", "#DD0000", "#FFCE00"] },
   French: { kind: "vBands", colors: ["#0055A4", "#FFFFFF", "#EF4135"] },
-  // Spanish in SPECS holds the Spain (ES) flag — red, gold, red
+  // Spanish in SPECS holds the Spain (ES) flag; red, gold, red
   // horizontal bands, weights 1:2:1. The LATAM variant uses the
   // Colombian flag (COLOMBIA_SPEC, hBands yellow/blue/red 2:1:1) and
   // is selected by `pickSpec("Spanish", "latam")`.
@@ -60,8 +60,8 @@ const SPECS: Record<string, FlagSpec> = {
  * with regional variants choose a different rendering based on the
  * variant code:
  *   - English → "us" (default) or "uk"
- *   - Portuguese → "br" (default — most learners) or "pt"
- *   - Spanish → "es" (default — Spain flag) or "latam" (Colombia
+ *   - Portuguese → "br" (default; most learners) or "pt"
+ *   - Spanish → "es" (default; Spain flag) or "latam" (Colombia
  *     flag, picked as a distinctive LATAM signal that's visually
  *     unrelated to Italy/Mexico/etc.)
  *
@@ -119,7 +119,7 @@ function pickSpec(language: string | null | undefined, variant?: string | null):
   if (lang === "Spanish") {
     // LATAM matches FIRST (broadest set). Spain wins on explicit "es"/
     // "spain". Anything unrecognized (e.g., a Studio cuid) falls back
-    // to Spain — that was the previous default and remains the safe
+    // to Spain; that was the previous default and remains the safe
     // bet when the region is genuinely unknown.
     if (LATAM_REGION_CODES.has(v)) return COLOMBIA_SPEC;
     if (SPAIN_REGION_CODES.has(v)) return SPECS.Spanish;
@@ -323,7 +323,7 @@ export function LanguageFlag({
     const diag = size * 1.45;
     return (
       <View style={[containerStyle, styles.center, { backgroundColor: blue }]}>
-        {/* White saltire (X) — two crossed bars */}
+        {/* White saltire (X); two crossed bars */}
         <View
           style={{
             position: "absolute",
@@ -361,7 +361,7 @@ export function LanguageFlag({
             transform: [{ rotate: "-45deg" }],
           }}
         />
-        {/* White upright cross — horizontal + vertical bars */}
+        {/* White upright cross; horizontal + vertical bars */}
         <View
           style={{
             position: "absolute",

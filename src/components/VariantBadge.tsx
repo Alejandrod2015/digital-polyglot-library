@@ -9,7 +9,7 @@ type VariantBadgeProps = {
 
 export default function VariantBadge({ variant, className = "" }: VariantBadgeProps) {
   const label = formatVariant(variant ?? undefined);
-  if (label === "—") return null;
+  if (label === "-") return null;
 
   return (
     <span

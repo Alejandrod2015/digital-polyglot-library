@@ -67,7 +67,7 @@ export default async function StoryOfTheWeekPage() {
   const book = story.book;
   const coverUrl = book.cover || "/covers/default.jpg";
   const unoptimizedCover = shouldBypassImageOptimization(coverUrl);
-  // Week label: "May 22 — May 28" or similar, anchored to the current
+  // Week label: "May 22; May 28" or similar, anchored to the current
   // week (Mon→Sun). Falls back to plain month label if computation
   // glitches. Mantiene una unidad temporal visible como el "today" en
   // story-of-the-day.
@@ -79,7 +79,7 @@ export default async function StoryOfTheWeekPage() {
     const sunday = new Date(monday);
     sunday.setDate(monday.getDate() + 6);
     const opts: Intl.DateTimeFormatOptions = { month: "short", day: "numeric" };
-    return `${monday.toLocaleDateString("en-US", opts)} — ${sunday.toLocaleDateString("en-US", opts)}`;
+    return `${monday.toLocaleDateString("en-US", opts)}; ${sunday.toLocaleDateString("en-US", opts)}`;
   })();
   const description = trimDescription(
     book.description ||
@@ -218,7 +218,7 @@ export default async function StoryOfTheWeekPage() {
       </div>
 
       <p className="mt-4 text-[12px] text-[var(--muted)]">
-        Free this week. New story every Monday — upgrade for the daily pick.
+        Free this week. New story every Monday; upgrade for the daily pick.
       </p>
     </div>
   );

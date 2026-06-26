@@ -35,7 +35,7 @@ import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
 // Bark cold-starts on GPU can take ~30-60 s; the rest of the engines
 // respond in 5-10 s. Set the route's max duration high enough to cover
 // the worst case. Hobby Vercel plans are capped at 60 s and will simply
-// time out a Bark cold start — the mobile client falls back to
+// time out a Bark cold start; the mobile client falls back to
 // expo-speech on timeout, so the cap is not catastrophic but does mean
 // the first DE clip after a long idle period will sound robotic.
 export const maxDuration = 300;
@@ -98,12 +98,12 @@ function modalEndpointFor(voiceId: string): string | null {
 // Bumping CACHE_VERSION invalidates every previously cached R2 path
 // without needing to delete the bucket. Use whenever the rendering
 // engine changes in a way that should force a regeneration (e.g. we
-// swap a default voice — old voices still cached under v1 are now
+// swap a default voice; old voices still cached under v1 are now
 // unreachable because every lookup goes through v2's hashes).
 // v4: append 150 ms trailing silence to every Modal-rendered mp3 so the
 // last fonema decays naturally instead of cutting on the final sample.
 // Piper does not insert tail silence when the input ends with `.` or
-// `!`/`?` — the audio terminates abruptly at audible volume and the ear
+// `!`/`?`; the audio terminates abruptly at audible volume and the ear
 // reads it as "iba a decir una letra más". Padding kills that artifact.
 // v5: also slow tempo to 0.80 (matches narration default per
 // project_audio_defaults memory). Piper Paola defaults are too fast for
@@ -112,14 +112,14 @@ function modalEndpointFor(voiceId: string): string | null {
 // comprehension of individual word boundaries.
 // v7: drop the server-side atempo entirely. The mobile client already
 // passes `rate: 0.65/0.75` to expo-av at playback time and expo-av
-// applies AVPlayer's pitch-corrected WSOLA — much higher quality than
+// applies AVPlayer's pitch-corrected WSOLA; much higher quality than
 // our ffmpeg pass. Both layers compounded (0.80 × 0.65 = 0.52) was
 // stretching vowels into a "possessed voice" timbre on isolated words
 // and short expressions. The server now stores native-rate audio; the
 // client owns the listening tempo. Trailing silence (apad) stays so
 // the last phoneme decays naturally.
 const CACHE_VERSION = "v7";
-const PRACTICE_TEMPO = 1.0; // No server-side slowdown — client controls rate.
+const PRACTICE_TEMPO = 1.0; // No server-side slowdown; client controls rate.
 
 function runFfmpeg(args: string[]): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -237,7 +237,7 @@ export async function POST(request: NextRequest) {
   // accept that practice clips live alongside generated story audio.
   // To keep things deterministic and skip the re-upload, we let the
   // Modal app place the file at `media/generated/audio/<hash>.mp3` and
-  // record that URL — the cache HEAD on the next request still hits
+  // record that URL; the cache HEAD on the next request still hits
   // because we re-derive the URL via getPublicObjectUrl(generatedKey).
   const generatedKey = `media/generated/audio/practice-${crypto
     .createHash("sha256")
@@ -286,7 +286,7 @@ export async function POST(request: NextRequest) {
   // Post-process: slow to PRACTICE_TEMPO + append trailing silence so
   // the audio ends with a natural decay instead of cutting on the last
   // sample. See CACHE_VERSION header for rationale. If ffmpeg fails, fall
-  // back to the raw mp3 — a tail-clipped, native-tempo clip is still
+  // back to the raw mp3; a tail-clipped, native-tempo clip is still
   // better than no audio at all.
   try {
     const processed = await postProcessPracticeAudio(modalResp.url, 0.15, PRACTICE_TEMPO);

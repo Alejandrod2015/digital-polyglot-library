@@ -35,7 +35,7 @@ export async function GET() {
   <channel>
     <title>Digital Polyglot Blog</title>
     <link>${SITE}/blog</link>
-    <description>Notes from the library — vocab posts, language deep-dives, and behind-the-scenes of how we build the catalogue.</description>
+    <description>Notes from the library; vocab posts, language deep-dives, and behind-the-scenes of how we build the catalogue.</description>
     <language>en</language>
     <atom:link href="${SITE}/feed.xml" rel="self" type="application/rss+xml"/>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>

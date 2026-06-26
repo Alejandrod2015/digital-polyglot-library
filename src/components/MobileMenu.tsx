@@ -20,7 +20,7 @@ import { SignedIn, SignedOut, SignOutButton, useUser } from "@clerk/nextjs";
 type Plan = "free" | "basic" | "premium" | "polyglot";
 
 const FEEDBACK_MAILTO = `mailto:alejandro@muvn.de?subject=${encodeURIComponent(
-  "Feedback — Digital Polyglot Library"
+  "Feedback; Digital Polyglot Library"
 )}&body=${encodeURIComponent("Tell us what's on your mind:\n\n")}`;
 
 export default function MobileMenu() {

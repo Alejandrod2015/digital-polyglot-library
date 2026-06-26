@@ -3,8 +3,8 @@ import type { JourneyFocus } from "../../../../src/lib/onboarding";
 /**
  * A single learning journey: a (language, variant, focus) tuple plus
  * its level + creation timestamp. The user can have multiple journeys
- * per language — e.g. "Spanish · Travelers" + "Spanish · Business"
- * — each tracking its own progress, streak, and active topic.
+ * per language; e.g. "Spanish · Travelers" + "Spanish · Business"
+ *; each tracking its own progress, streak, and active topic.
  *
  * Schema-stable design notes:
  *   - `id` is deterministic (`<language>:<variant?>:<focus>`) so the
@@ -26,7 +26,7 @@ export type Journey = {
    *  el código regional ("us" / "uk" / "latam"). null cuando el
    *  idioma tiene una sola variante y aún no se migró. */
   variant: string | null;
-  /** Uno de JOURNEY_FOCUS_OPTIONS — se conserva por compatibilidad
+  /** Uno de JOURNEY_FOCUS_OPTIONS; se conserva por compatibilidad
    *  con el modelo legacy. Bajo el nuevo flow siempre es "General"
    *  porque el nombre user-facing vive en `label`. */
   focus: JourneyFocus;
@@ -178,7 +178,7 @@ export type JourneyFeatherIcon =
  *
  * No inventamos categorías que no existen en Studio. Si en el futuro
  * el usuario crea un `JourneyType` nuevo (ej: "Foodie"), agregar la
- * entrada aquí — el sistema NO va a inferirla con keywords sueltos.
+ * entrada aquí; el sistema NO va a inferirla con keywords sueltos.
  */
 const JOURNEY_TYPE_ICONS: Array<{
   slugs: string[];
@@ -232,7 +232,7 @@ export function journeyIcon(journey: { focus: JourneyFocus; label?: string | nul
     }
   }
   // Default: book-open (lectura/estudio). Sucede cuando el JourneyType
-  // es nuevo y aún no se agregó a JOURNEY_TYPE_ICONS — síntoma de que
+  // es nuevo y aún no se agregó a JOURNEY_TYPE_ICONS; síntoma de que
   // hace falta sincronizar el mapping con la tabla `dp_journey_types_v1`.
   return { feather: "book-open", emoji: "📖" };
 }
@@ -241,7 +241,7 @@ export function journeyIcon(journey: { focus: JourneyFocus; label?: string | nul
  * Long-form "Spanish · Travelers" used in sheet rows + panel cards.
  * The middle-dot separator matches `journeyChipLabel` so the language
  * + focus pairing reads consistently across surfaces (cards, sheets,
- * header chip), and avoids the previous Spanish-for-X / Spanish—Everyday
+ * header chip), and avoids the previous Spanish-for-X / Spanish-Everyday
  * inconsistency where General had to be hand-cased to read naturally.
  */
 export function journeyDisplayName(journey: Journey): string {
@@ -274,7 +274,7 @@ export function journeyChipLabel(journey: Journey): string {
  * art (people associate "JP" with Japan, not "JA").
  *
  * Accepts both the capitalized form ("Spanish") and the DB slug form
- * ("spanish"). NEVER slice the full word — `"spanish".slice(0,2)` = "SP"
+ * ("spanish"). NEVER slice the full word; `"spanish".slice(0,2)` = "SP"
  * which is wrong; the ISO code is "ES".
  */
 const LANGUAGE_SHORT_CODES: Record<string, string> = {
@@ -294,7 +294,7 @@ export function languageShortCode(language: string | null | undefined): string {
   const key = language.toLowerCase().trim();
   const code = LANGUAGE_SHORT_CODES[key];
   if (code) return code;
-  // Unknown language — return "??" so a future bug is visible rather
+  // Unknown language; return "??" so a future bug is visible rather
   // than producing a misleading "SP"/"GE"/"PO" from string slicing.
   return "??";
 }
@@ -302,14 +302,14 @@ export function languageShortCode(language: string | null | undefined): string {
 /**
  * Backfill a journey list from the legacy single-language-focus
  * preferences. Used when the server returns `targetLanguages` but no
- * `journeys` field — i.e. existing accounts that predate this model.
+ * `journeys` field; i.e. existing accounts that predate this model.
  *
  *   - One journey per language in `targetLanguages`.
  *   - The first language inherits the prefs' `journeyFocus` (or
  *     "General" if missing). Other languages default to "General"
  *     since the legacy schema only stored one focus globally.
  *   - `variant` is taken from `preferredVariant` for the first language
- *     only. Other languages get null — same constraint as today.
+ *     only. Other languages get null; same constraint as today.
  *   - `activeJourneyId` is the first journey, mirroring
  *     `targetLanguages[0]` being the active one in the legacy UI.
  */
@@ -359,7 +359,7 @@ export function findActiveJourney(
 }
 
 /**
- * Stable deep-equality on a journey list — used by
+ * Stable deep-equality on a journey list; used by
  * `arePreferencesEqual()` so we don't fire spurious re-renders when
  * the server replays the same payload.
  */
@@ -411,7 +411,7 @@ export function existingJourneyKeys(journeys: Journey[]): Set<string> {
 
 /**
  * Collapse any accidental duplicates in a journey list down to a
- * single entry per `id`. Always preferred — two journeys with the
+ * single entry per `id`. Always preferred; two journeys with the
  * same `(language, variant, focus)` triplet are semantically
  * impossible (it's the user's same learning path).
  *
@@ -443,7 +443,7 @@ export function dedupeJourneysById(journeys: Journey[]): Journey[] {
     }
   }
   // Rebuild output preserving the FIRST appearance order in the
-  // input — keeps the panel layout stable for the user.
+  // input; keeps the panel layout stable for the user.
   const seen = new Set<string>();
   const out: Journey[] = [];
   for (const journey of journeys) {

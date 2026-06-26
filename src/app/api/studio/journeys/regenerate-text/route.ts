@@ -45,7 +45,7 @@ function getDetailedRegionDescription(variant?: string, language?: string): stri
 
 /**
  * POST /api/studio/journeys/regenerate-text
- * Body: { storyId } — regenerates ONLY the story text, keeping title/synopsis/vocab
+ * Body: { storyId }; regenerates ONLY the story text, keeping title/synopsis/vocab
  */
 export async function POST(request: Request) {
   const { userId } = await auth();
@@ -87,7 +87,7 @@ export async function POST(request: Request) {
       for (const m of matches) { if (!stop.has(m)) usedNames.add(m); }
     }
     const usedCharacterNames = [...usedNames].slice(0, 30);
-    // First sentences of every other story in the journey — feeds the
+    // First sentences of every other story in the journey; feeds the
     // opening-variety constraint in the generator so the regenerated
     // body's first sentence is structurally distinct from existing ones.
     const existingOpenings = (existingStories as Array<{ text: string | null }>)

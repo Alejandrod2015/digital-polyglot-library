@@ -119,7 +119,7 @@ export async function syncDailyReminderSchedule(args: {
     const copy = buildDailyReminderCopy({ learningGoal, dailyMinutes, context });
     // Trigger DAILY-recurring (repeats every day). Antes pasábamos un Date
     // único (`trigger: nextReminderAt as never`), lo que disparaba la
-    // notificación una sola vez y no se repetía — el usuario nunca recibía
+    // notificación una sola vez y no se repetía; el usuario nunca recibía
     // el reminder al día siguiente. Con `{ type: "daily", hour, minute,
     // repeats: true }` iOS programa una entrada que dispara cada día a la
     // hora local del device.

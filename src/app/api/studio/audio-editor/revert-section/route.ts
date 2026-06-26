@@ -10,7 +10,7 @@ export const maxDuration = 120;
  * POST /api/studio/audio-editor/revert-section   { storyId, fragmentIndex }
  *
  * Revert one section to its previous take (swaps url↔prevUrl) and
- * rebuilds the master. Toggleable — calling it again restores the other
+ * rebuilds the master. Toggleable; calling it again restores the other
  * version. No ElevenLabs cost (reuses already-uploaded section files).
  */
 export async function POST(request: Request) {

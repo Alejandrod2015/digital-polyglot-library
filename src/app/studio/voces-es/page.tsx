@@ -1,6 +1,6 @@
 "use client";
 
-// TEMPORAL / LOCAL — galería de audición de voces candidatas español de España
+// TEMPORAL / LOCAL; galería de audición de voces candidatas español de España
 // (Traveler ES Spain). No commitear/deployar; borrar cuando se cierre el casting.
 
 type Voice = { n: number; name: string; role: string; picked?: boolean; url: string };
@@ -23,13 +23,13 @@ const VOICES: Voice[] = [
   { n: 23, name: "Tete – Slow, Reflexive & Soft", role: "Abuela (F mayor)", url: "https://api.us.elevenlabs.io/v1/voices/RTuKyXJgRGAQSx8Qz8Mf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxN2VkYjhlYThlMjY0YzlmOTBkMThmODc3ZGRlMmQ0MiIsImZpbGVuYW1lIjoiSEhjZHh3aHZRY0hoc0JDMWxsQlQubXAzIiwidGltZXN0YW1wIjoxNzgxNDQyMDAwMDAwMDAwfQ%3D%3D" },
   { n: 24, name: "Alegría Sana – Diplomatic & Confident", role: "Abuela (F mayor)", url: "https://api.us.elevenlabs.io/v1/voices/9oWKy782oltLmeuOUdq7/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiJlY2MzZjMxODRlMzY0NGZiYWUxZDI5YTIxY2U3ZTdkMyIsImZpbGVuYW1lIjoiYk4zSXdkTjh1aHpLZnh0UEFYSFoubXAzIiwidGltZXN0YW1wIjoxNzgxNDQyMDAwMDAwMDAwfQ%3D%3D" },
   { n: 25, name: "Luis – Polished, Mature & Credible", role: "Abuelo (M mayor)", url: "https://storage.googleapis.com/eleven-public-prod/database/workspace/8f832f68794e4e7cb6cdb17339b25e9c/voices/GojDwihhnL1f7RrBuXsJ/4QJcYrdP20KGernlza4s.mp3" },
-  { n: 26, name: "Rafael – Expressive & Theatrical", role: "Abuelo (M mayor) — ojo teatral", url: "https://storage.googleapis.com/eleven-public-prod/database/workspace/70aeebf22b3d4b519e6b9d205612971d/voices/orF2qy9215xjwqqxqsWW/SJmtVEhMG2bXkGRJXG69.mp3" },
+  { n: 26, name: "Rafael – Expressive & Theatrical", role: "Abuelo (M mayor); ojo teatral", url: "https://storage.googleapis.com/eleven-public-prod/database/workspace/70aeebf22b3d4b519e6b9d205612971d/voices/orF2qy9215xjwqqxqsWW/SJmtVEhMG2bXkGRJXG69.mp3" },
 ];
 
 export default function VocesESPage() {
   return (
     <main style={{ maxWidth: 760, margin: "0 auto", padding: "32px 20px", fontFamily: "system-ui, sans-serif" }}>
-      <h1 style={{ fontSize: 22, fontWeight: 600, marginBottom: 4 }}>Voces candidatas — Español de España</h1>
+      <h1 style={{ fontSize: 22, fontWeight: 600, marginBottom: 4 }}>Voces candidatas; Español de España</h1>
       <p style={{ color: "#888", marginBottom: 24 }}>
         Dale al play en cada una. Las del bloque inferior (22-26) son las voces mayores (abuelos), que es lo que falta decidir.
       </p>

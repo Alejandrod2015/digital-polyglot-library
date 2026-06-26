@@ -7,12 +7,12 @@ import * as FileSystem from "expo-file-system/legacy";
  * present, we still know the user has signed in on this device and we
  * can enter the Shell in offline-degraded mode (no remote fetches, but
  * cached content renders). The token remains the source of truth when
- * it's readable — this is a strict fallback.
+ * it's readable; this is a strict fallback.
  *
  * We deliberately don't use SecureStore for this: the whole point is to
  * survive the exact failure modes that affect SecureStore cold-start.
  * `documentDirectory` is non-secure but always readable after the app
- * starts, and is wiped on uninstall — exactly the right lifetime for
+ * starts, and is wiped on uninstall; exactly the right lifetime for
  * a sign-in anchor.
  */
 
@@ -43,7 +43,7 @@ export async function saveSessionAnchor(anchor: SessionAnchor): Promise<void> {
     await FileSystem.writeAsStringAsync(ANCHOR_PATH, JSON.stringify(anchor));
   } catch {
     // Best-effort only. Losing the anchor just means the next offline
-    // cold-start falls back to AuthScreen — the exact scenario we were
+    // cold-start falls back to AuthScreen; the exact scenario we were
     // already in before this module existed.
   }
 }

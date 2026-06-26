@@ -27,7 +27,7 @@ import { prisma } from "@/lib/prisma";
 import { validateGeneratedStory } from "@/lib/validateGeneratedStory";
 
 export const dynamic = "force-dynamic";
-export const maxDuration = 300; // 5 min — validator is fast but list is unbounded.
+export const maxDuration = 300; // 5 min; validator is fast but list is unbounded.
 
 const LANG_MAP: Record<string, string> = {
   spanish: "es",

@@ -4,7 +4,7 @@ import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 
 /**
- * GET /api/studio/journeys/story?id=xxx — get full story content (text, vocab, synopsis)
+ * GET /api/studio/journeys/story?id=xxx; get full story content (text, vocab, synopsis)
  */
 export async function GET(request: NextRequest) {
   const { userId } = await auth();
@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
 }
 
 /**
- * PATCH /api/studio/journeys/story — update story fields (title, synopsis)
+ * PATCH /api/studio/journeys/story; update story fields (title, synopsis)
  * Body: { id, title?, synopsis? }
  */
 export async function PATCH(request: Request) {

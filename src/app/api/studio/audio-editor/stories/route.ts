@@ -38,7 +38,7 @@ export async function GET(request: Request) {
     const timings = coerceAudioWordTimings(story.audioWordTimings);
     if (!timings) {
       return NextResponse.json(
-        { error: "Story has no word timings — run alignment first" },
+        { error: "Story has no word timings; run alignment first" },
         { status: 400 },
       );
     }
@@ -99,7 +99,7 @@ export async function GET(request: Request) {
         : firstWordWithTime && typeof firstWordWithTime.startSec === "number"
           ? firstWordWithTime.startSec
           : null;
-    // The narrator voice is whatever voice covers char 0 — in multi-voice
+    // The narrator voice is whatever voice covers char 0; in multi-voice
     // stories that's `dialogueSpec[0].voice` (the title is concatenated
     // with the first narrator segment). For single-voice stories it's
     // `story.voiceId`.
@@ -124,7 +124,7 @@ export async function GET(request: Request) {
         startSec: typeof frag?.startSec === "number" ? frag.startSec : null,
         endSec: typeof frag?.endSec === "number" ? frag.endSec : null,
         // GROUND TRUTH: this section's standalone audio. When present the
-        // editor plays/replaces THIS file — no seeking in the master, so
+        // editor plays/replaces THIS file; no seeking in the master, so
         // playback is exact (no bleed, starts at the beginning).
         sectionUrl: frag?.url ?? null,
         // Previous take of this section (revert target), if any.

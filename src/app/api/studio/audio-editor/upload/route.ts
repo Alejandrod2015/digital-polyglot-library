@@ -18,7 +18,7 @@ export const maxDuration = 120;
  * Vercel) and store the result as `audioUrlPreview` (master stays intact
  * until "Guardar" → /promote swaps it in and re-runs aeneas alignment).
  *
- * No segment processing — the operator's file is treated as final.
+ * No segment processing; the operator's file is treated as final.
  */
 export async function POST(request: Request) {
   const { userId } = await auth();
@@ -77,7 +77,7 @@ export async function POST(request: Request) {
 
   const fragment = Buffer.from(await file.arrayBuffer());
 
-  // SECTION MODE: the uploaded mp3 IS the new section — swap it and
+  // SECTION MODE: the uploaded mp3 IS the new section; swap it and
   // rebuild the master (exact, no time-splice). Writes directly.
   if (sectionMode) {
     try {

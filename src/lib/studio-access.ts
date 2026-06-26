@@ -2,7 +2,7 @@
  * Studio Access Control
  *
  * Independent from Clerk subscription plans (free/basic/premium/polyglot).
- * Clerk handles "who are you?" — this module handles "can you use Studio?"
+ * Clerk handles "who are you?"; this module handles "can you use Studio?"
  *
  * Roles:
  *  - admin:            Full access (owner, deploys, billing, QA, metrics, content, team)
@@ -67,7 +67,7 @@ const DEFAULT_ROLE_PERMISSIONS: Record<StudioRole, readonly string[]> = {
 };
 
 // Permissions that can be toggled per role from the Studio Settings
-// page. Limited to CONTENIDO + PLANNING entries by design — ESTUDIO
+// page. Limited to CONTENIDO + PLANNING entries by design; ESTUDIO
 // (Progreso, Métricas) and ADMIN (Reglas pedagógicas, Beta Signups,
 // Settings) are admin-only and not configurable per role.
 export const TOGGLEABLE_PERMISSIONS: Array<{ id: string; label: string }> = [
@@ -219,7 +219,7 @@ async function loadMembers(): Promise<StudioMember[]> {
     }));
     cacheTimestamp = now;
   } catch {
-    // Table might not exist yet — use fallback
+    // Table might not exist yet; use fallback
     if (!membersCache) {
       membersCache = [FALLBACK_ADMIN];
       cacheTimestamp = now;

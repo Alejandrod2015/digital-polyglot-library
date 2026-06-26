@@ -132,7 +132,7 @@ export default function ProgressPage() {
     );
   }
 
-  // Week label "Week 21 · 2026" — ISO week number + current year.
+  // Week label "Week 21 · 2026"; ISO week number + current year.
   // Used in the iPhone-style top-right tag.
   const now = new Date();
   const weekNumber = (() => {

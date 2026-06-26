@@ -31,8 +31,8 @@ function resolveElevenLabsVoiceId(voiceId: string): string | null {
  *   { storyId, startSec, endSec, voiceId, text }
  *
  * Re-synthesize a tramo with its ElevenLabs voice (a fresh take of the
- * SAME voice + text), then splice it into the master — matching the
- * master's tempo + loudness — and store the result as a preview. Costs
+ * SAME voice + text), then splice it into the master; matching the
+ * master's tempo + loudness; and store the result as a preview. Costs
  * ElevenLabs credits; the UI gates this behind an explicit confirm.
  *
  * Splice runs on local ffmpeg or Modal (Vercel), so this works in prod.
@@ -149,7 +149,7 @@ export async function POST(request: Request) {
   }
 
   // ── SECTION MODE: swap this section's standalone file + rebuild master.
-  // Exact, no time-splice, no drift. Writes directly (no preview) — the
+  // Exact, no time-splice, no drift. Writes directly (no preview); the
   // old section file stays in R2, so re-regenerating is the "undo".
   if (sectionMode) {
     try {
@@ -160,7 +160,7 @@ export async function POST(request: Request) {
         newText: text || undefined,
         normalizeSection: true, // fresh TTS runs hot (esp. v3) → loudnorm
       });
-      // NOTE: we deliberately do NOT re-run aeneas here — playback uses
+      // NOTE: we deliberately do NOT re-run aeneas here; playback uses
       // the section files, so the edit loop stays fast (~seconds). The
       // word-highlight timings refresh once via the "Re-alinear" button
       // when the operator is done editing sections.

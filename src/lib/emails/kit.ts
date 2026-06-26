@@ -137,7 +137,7 @@ export function statChip({ n, label }: { n: string; label: string }): string {
 }
 
 /** A wrapping cloud of word pills: gives a big "words learned" number a tangible
- * face. Words only (no meanings) — the point is volume, not teaching. */
+ * face. Words only (no meanings); the point is volume, not teaching. */
 export function vocabChips(words: string[]): string {
   const pills = words
     .map(

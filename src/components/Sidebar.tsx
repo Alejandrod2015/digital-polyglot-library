@@ -178,7 +178,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
   const navLinkClass =
     "flex items-center gap-3.5 rounded-[10px] px-3 py-2.5 text-[15px] font-bold text-[var(--muted)] hover:bg-white/[0.04] hover:text-[var(--foreground)] transition-colors";
 
-  // `dp-nav-active` es un marker class — Tailwind solo no llega: en
+  // `dp-nav-active` es un marker class; Tailwind solo no llega: en
   // light mode `globals.css` lo usa para reemplazar el bg-gold/18 por
   // una píldora blanca con shadow (paper-card treatment del HANDOFF 2).
   const navLinkActiveClass =
@@ -344,7 +344,7 @@ export default function Sidebar({ onClose }: SidebarProps) {
         </Link>
       </nav>
 
-      {/* Streak card — always visible (paridad iPhone). Logged-out users
+      {/* Streak card; always visible (paridad iPhone). Logged-out users
           see a zero-state "Start today to begin a streak". Logged-in users
           see their real count from /api/me/streak. */}
       <StreakCard days={streakDays} />

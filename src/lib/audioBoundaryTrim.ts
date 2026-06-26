@@ -2,7 +2,7 @@
  * Limpieza de "phantom syllables" en audio multi-voz: el modelo TTS a
  * veces emite contenido vocal espurio al final de cada segmento (1-2
  * fonemas que suenan como el inicio de la siguiente palabra). Aplica
- * a TODA pipeline TTS — autorregresiva (ElevenLabs) y NAR (Kokoro,
+ * a TODA pipeline TTS; autorregresiva (ElevenLabs) y NAR (Kokoro,
  * Chatterbox) por igual, aunque por causas distintas.
  *
  * Solución content-aware (no umbral de silencio): aeneas alinea las
@@ -34,7 +34,7 @@ export type TrimAudioBoundariesArgs = {
   language: string;
   /** Gap entre word_end_i y word_start_{i+1} mayor a este valor lo
    *  consideramos "límite de segmento" donde puede haber phantom.
-   *  Default 0.25 s — en una oración natural rara vez hay > 250 ms
+   *  Default 0.25 s; en una oración natural rara vez hay > 250 ms
    *  de pausa entre palabras consecutivas. */
   gapThresholdSec?: number;
   /** Silencio fijo a insertar en cada límite. Default 0.35 s, igual
@@ -93,7 +93,7 @@ export async function trimAudioBoundariesByAlignment(
     return null;
   }
 
-  // 2. Identificar "chunks" — secuencias de palabras consecutivas
+  // 2. Identificar "chunks"; secuencias de palabras consecutivas
   //    cuyo gap intra-chunk es < threshold. Cada chunk corresponde a
   //    una oración natural (o sub-oración con pausas cortas).
   type Chunk = { start: number; end: number };
@@ -132,7 +132,7 @@ export async function trimAudioBoundariesByAlignment(
   //    un silencio limpio y predecible.
   const trimmed = await spliceChunksWithFfmpeg(args.audioBuffer, chunks, replacementSilence);
 
-  // Cleanup temp upload — best-effort. uploadPublicObject no expone
+  // Cleanup temp upload; best-effort. uploadPublicObject no expone
   // delete; el objeto vive en R2 hasta cleanup manual periódico.
   // Nombre con prefijo `media/multivoice-align-temp/` lo hace fácil
   // de barrer.
@@ -145,7 +145,7 @@ function msg(err: unknown): string {
 }
 
 function cryptoRandomKey(): string {
-  // Base36 random ID — colisiones imposibles en la práctica.
+  // Base36 random ID; colisiones imposibles en la práctica.
   return Math.random().toString(36).slice(2) + Date.now().toString(36);
 }
 

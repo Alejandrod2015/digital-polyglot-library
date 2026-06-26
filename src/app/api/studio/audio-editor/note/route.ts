@@ -7,7 +7,7 @@ import { isStudioMember } from "@/lib/studio-access";
 /**
  * POST /api/studio/audio-editor/note   { storyId, note }
  *
- * Save (or clear) the operator's free-form audio note — a manual reminder
+ * Save (or clear) the operator's free-form audio note; a manual reminder
  * of what still needs regenerating/uploading. Stored in
  * `JourneyStory.audioEditorNote`, which nothing else writes, so it
  * survives regeneration and QA passes.

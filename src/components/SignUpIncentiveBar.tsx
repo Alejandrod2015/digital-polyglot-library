@@ -8,7 +8,7 @@ import { trackGa4Event } from "@/lib/ga4";
  * Sticky bottom CTA that fades in after the user has scrolled past the
  * landing hero. Reinforces the primary "Get started free" path without
  * adding secondary links (per project rule: landing has one conversion
- * goal). Mobile-only — the desktop landing already has the CTA visible
+ * goal). Mobile-only; the desktop landing already has the CTA visible
  * via the marketing nav.
  */
 export function SignUpIncentiveBar() {

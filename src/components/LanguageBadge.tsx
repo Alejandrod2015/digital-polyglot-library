@@ -9,7 +9,7 @@ type LanguageBadgeProps = {
 
 export default function LanguageBadge({ language, className = "" }: LanguageBadgeProps) {
   const label = formatLanguageCode(language);
-  if (label === "—") return null;
+  if (label === "-") return null;
 
   return (
     <span

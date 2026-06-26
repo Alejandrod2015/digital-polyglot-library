@@ -776,14 +776,14 @@ export default function FavoritesPage() {
       })()
     : null;
   // "9 in journey": favorites that came from journey stories. We use the
-  // sourcePath as the marker — anything under /journey or with a storySlug
+  // sourcePath as the marker; anything under /journey or with a storySlug
   // counts as journey-sourced. Falls back to total favorites - dueFavorites.
   const journeyFavoritesCount = favorites.filter((f) => Boolean(f.storySlug)).length;
   const readyNowCount = dueFavorites.length;
 
   return (
     <div className="p-4 sm:p-8 max-w-2xl mx-auto text-[var(--foreground)] pb-24">
-      {/* ── iPhone-style hero — visible on every viewport ── */}
+      {/* ── iPhone-style hero; visible on every viewport ── */}
       <div className="mb-5">
         <div className="flex items-center gap-4 mb-3">
           {activeCountry && activeLangShort ? (
@@ -1043,11 +1043,11 @@ export default function FavoritesPage() {
             /* iPhone-style cards: word + type, segmented progress,
                story context italic, definition, play button.
                Las pills de tipo (líneas ~780) mutan `practiceType`,
-               pero antes solo filtraban Practice / Related — la lista
+               pero antes solo filtraban Practice / Related; la lista
                visible se mostraba completa. Ahora también filtramos
                aquí para que las pills sí filtren lo que el user ve. */
             <>
-            {/* Collections shelf — horizontal scroll of user's lists.
+            {/* Collections shelf; horizontal scroll of user's lists.
                 "All" is selected by default; tap a chip to filter the
                 grid below to only words in that collection. Long-press
                 or a future swipe could expose rename/delete; for now

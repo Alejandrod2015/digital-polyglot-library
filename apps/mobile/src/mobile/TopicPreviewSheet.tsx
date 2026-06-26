@@ -15,7 +15,7 @@ import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
 
 /**
  * Bottom sheet shown when the user taps a topic panel on the
- * journey path. Acts as a "teaser" for the topic — lists the
+ * journey path. Acts as a "teaser" for the topic; lists the
  * stories the user will read inside, plus a short vocabulary
  * preview so they get a sense of what they'll learn before they
  * dive in.
@@ -41,7 +41,7 @@ type Props = {
   stories: TopicPreviewStory[];
   /** Real vocabulary words pulled from the topic's downloaded
    *  stories. Shown as chips to give the user a concrete preview
-   *  of what they'll learn — not a generic description. Empty when
+   *  of what they'll learn; not a generic description. Empty when
    *  no stories in the topic are cached offline yet. */
   vocabWords: string[];
   /** When `true`, the shell is fetching vocab in the background.
@@ -155,7 +155,7 @@ export function TopicPreviewSheet({
           { transform: [{ translateY }] },
         ]}
       >
-        {/* Header card — same color as the topic panel on the path
+        {/* Header card; same color as the topic panel on the path
             so the user sees a clear continuity from the panel they
             tapped. */}
         <View style={[styles.headerCard, { backgroundColor: bgColor }]}>
@@ -168,7 +168,7 @@ export function TopicPreviewSheet({
           </Pressable>
         </View>
 
-        {/* Two independent scrolling sections — each gets its own
+        {/* Two independent scrolling sections; each gets its own
             fixed share of the sheet so adding more stories doesn't
             push the vocab section off screen. Stories: capped height,
             internal scroll if many. Vocab: takes the remaining space,
@@ -226,7 +226,7 @@ export function TopicPreviewSheet({
                   and the rows look organically staggered instead of
                   rigidly aligned. Earlier we used flexDirection:
                   column + flexWrap which forced every chip in a
-                  column to share the widest one's width — looked
+                  column to share the widest one's width; looked
                   like a spreadsheet. */}
               <View style={styles.vocabRows}>
                 {(() => {

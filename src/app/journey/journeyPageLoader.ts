@@ -68,7 +68,7 @@ export async function loadJourneyPageProps({
       ? normalizeVariant(user.publicMetadata.preferredVariant)
       : null;
   // Si el usuario está en "No preference", no hay un fallback de
-  // variant válido — todos los journeys son candidatos legítimos.
+  // variant válido; todos los journeys son candidatos legítimos.
   const fallbackVariant = targetLanguage
     ? getJourneyVariantFromPreferences(targetLanguage, preferredVariant, preferredRegion) ?? null
     : null;

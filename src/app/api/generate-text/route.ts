@@ -167,7 +167,7 @@ ${resolvedRequestedTopic ? `The topic of the story is "${resolvedRequestedTopic}
 ${resolvedSynopsis ? `Use this synopsis as the main narrative foundation and keep all key beats coherent: "${resolvedSynopsis}".` : "If no synopsis is provided, invent a coherent narrative arc with clear beginning, development, and payoff."}
 ${variantClause}
 All vocabulary definitions must be written in clear English, regardless of the story language.
-HARD LIMIT: each definition must be 3-7 English words AND ≤50 characters total (counting spaces). Both bounds mandatory — UI chip cannot wrap.
+HARD LIMIT: each definition must be 3-7 English words AND ≤50 characters total (counting spaces). Both bounds mandatory; UI chip cannot wrap.
 Style: concise gloss like a translation app (Linguee/Reverso). Lead with the concept, an infinitive ("To stir..."), or an adjective phrase.
 Never use em-dashes; use semicolons, colons, commas, parentheses.
 Never return a bare one-word translation; add at least one clarifying word.

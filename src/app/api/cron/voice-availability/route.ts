@@ -52,7 +52,7 @@ async function checkVoice(id: string, label: string): Promise<VoiceCheck> {
       headers: { "xi-api-key": apiKey },
     });
     if (resp.status === 404) {
-      return { id, label, ok: false, status: "missing", detail: "voice 404 — fully retired or revoked" };
+      return { id, label, ok: false, status: "missing", detail: "voice 404; fully retired or revoked" };
     }
     if (!resp.ok) {
       return { id, label, ok: false, status: "error", detail: `HTTP ${resp.status}` };

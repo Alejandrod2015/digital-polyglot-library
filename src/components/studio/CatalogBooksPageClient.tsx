@@ -5,7 +5,7 @@ import MediaUploadField from "@/components/studio/MediaUploadField";
 import { getIsoLanguageTag } from "@/lib/languageFlags";
 import type { StudioCatalogBook, StudioCatalogStory } from "@/lib/studioCatalogBooks";
 
-// ── Inline SVG icons (no emoji) — same set as MonitorClient ──
+// ── Inline SVG icons (no emoji); same set as MonitorClient ──
 type IconName = "chevron" | "edit" | "x" | "plus" | "trash" | "check" | "external";
 function Icon({ name, size = 14 }: { name: IconName; size?: number }) {
   const common = { width: size, height: size, viewBox: "0 0 16 16", fill: "none", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
@@ -66,7 +66,7 @@ type StoryGenerators = {
   onGenerateAudio: () => void;
   // Public reader URL for the story (or null while it has no slug). Used
   // by the "Ver en reader" button. The catalog reader lives at
-  // /books/[bookSlug]/[storySlug] — story.slug alone is not enough.
+  // /books/[bookSlug]/[storySlug]; story.slug alone is not enough.
   readerUrl: string | null;
   // Latest quality report for this story, if the editor has run it during
   // the current expand. Cleared on close / next reload.
@@ -713,7 +713,7 @@ export default function CatalogBooksPageClient() {
                 <span className="jm-chip jm-chip--teal jm-chip--mono">{form.cefrLevel.toUpperCase()}</span>
               )}
               <span className="jm-j-head__meta">
-                {form.level ?? "—"}{form.topic ? ` · ${form.topic}` : ""}
+                {form.level ?? "-"}{form.topic ? ` · ${form.topic}` : ""}
               </span>
               <span className="jm-row__spacer" />
               <span className="jm-j-head__count">
@@ -1002,7 +1002,7 @@ function BookEditorPanel({
         <div>
           <label className="jm-field-label">Variante</label>
           <select className="jm-input" value={form.variant ?? ""} onChange={(e) => onPatch("variant", e.target.value || null)}>
-            <option value="">—</option>
+            <option value="">-</option>
             {VARIANTS.map((v) => <option key={v} value={v}>{v}</option>)}
           </select>
         </div>
@@ -1019,7 +1019,7 @@ function BookEditorPanel({
         <div>
           <label className="jm-field-label">CEFR</label>
           <select className="jm-input" value={form.cefrLevel ?? ""} onChange={(e) => onPatch("cefrLevel", e.target.value || null)}>
-            <option value="">—</option>
+            <option value="">-</option>
             {CEFR.map((v) => <option key={v} value={v}>{v.toUpperCase()}</option>)}
           </select>
         </div>
@@ -1109,7 +1109,7 @@ function StoryEditorPanel({
     if (autoSlug && !touchedSlug) onPatch("slug", slugify(v));
   }
 
-  // Generation row — only shown when the story already exists (editor opens
+  // Generation row; only shown when the story already exists (editor opens
   // on an unsaved draft → no storyId yet, so no endpoints to hit). Buttons
   // follow the Journey Manager tone contract: yellow primary for "create
   // from scratch", purple for "deeper edit (text)", teal for analyze/vocab,
@@ -1149,7 +1149,7 @@ function StoryEditorPanel({
               Regenerar historia (off)
             </button>
           )}
-          {/* Granular regenerators — solo afectan title o synopsis, sin
+          {/* Granular regenerators; solo afectan title o synopsis, sin
               tocar el body. Costo de tokens bajo, riesgo controlado. */}
           <button
             type="button"
@@ -1279,21 +1279,21 @@ function StoryEditorPanel({
         <div>
           <label className="jm-field-label">Idioma (override)</label>
           <select className="jm-input" value={form.language ?? ""} onChange={(e) => onPatch("language", e.target.value || null)}>
-            <option value="">— hereda del libro</option>
+            <option value="">- hereda del libro</option>
             {LANGUAGES.map((v) => <option key={v} value={v}>{v}</option>)}
           </select>
         </div>
         <div>
           <label className="jm-field-label">Nivel (override)</label>
           <select className="jm-input" value={form.level ?? ""} onChange={(e) => onPatch("level", e.target.value || null)}>
-            <option value="">— hereda</option>
+            <option value="">- hereda</option>
             {LEVELS.map((v) => <option key={v} value={v}>{v}</option>)}
           </select>
         </div>
         <div>
           <label className="jm-field-label">CEFR (override)</label>
           <select className="jm-input" value={form.cefrLevel ?? ""} onChange={(e) => onPatch("cefrLevel", e.target.value || null)}>
-            <option value="">— hereda</option>
+            <option value="">- hereda</option>
             {CEFR.map((v) => <option key={v} value={v}>{v.toUpperCase()}</option>)}
           </select>
         </div>

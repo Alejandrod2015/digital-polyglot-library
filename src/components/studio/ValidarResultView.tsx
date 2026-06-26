@@ -148,12 +148,12 @@ export function humanize(check: Check): Humanized {
     case "synopsis-opening-duplicate":
       return {
         text: "La sinopsis y el opening del cuerpo describen la misma escena",
-        hint: `La sinopsis es metadata interna — el lector NUNCA la ve. No es para describir la escena (eso lo hace el opening del cuerpo); es para resumir el conflicto/tensión de la historia (gancho de arco). Reescribe la sinopsis como un hook: qué tensión se explora, no qué pasa visualmente. ${detail}`,
+        hint: `La sinopsis es metadata interna; el lector NUNCA la ve. No es para describir la escena (eso lo hace el opening del cuerpo); es para resumir el conflicto/tensión de la historia (gancho de arco). Reescribe la sinopsis como un hook: qué tensión se explora, no qué pasa visualmente. ${detail}`,
       };
     case "vocab-pedagogical-redundancy":
       return {
         text: "El vocab incluye palabras A0 universales que desperdician slot",
-        hint: `Partes del cuerpo básicas (ojos, mano, cabeza), pronombres, números 1-10, colores primarios, saludos — el aprendiz inglés-nativo los tiene del primer curso. Cambia esos items por algo con más valor pedagógico: una expresión multi-palabra ("con prisa", "al fin", "otra vez"), un sustantivo regional/concreto del topic, o una construcción verbal no-obvia (ponerse a, hacer falta). ${detail}`,
+        hint: `Partes del cuerpo básicas (ojos, mano, cabeza), pronombres, números 1-10, colores primarios, saludos; el aprendiz inglés-nativo los tiene del primer curso. Cambia esos items por algo con más valor pedagógico: una expresión multi-palabra ("con prisa", "al fin", "otra vez"), un sustantivo regional/concreto del topic, o una construcción verbal no-obvia (ponerse a, hacer falta). ${detail}`,
       };
     case "vocab-min-expressions":
       return {
@@ -248,7 +248,7 @@ export function humanize(check: Check): Humanized {
     case "vocab-definitions":
       return {
         text: "Algunas definiciones tienen problemas de formato",
-        hint: `Reglas: 8-14 palabras, máximo 120 caracteres, no empezar con 'Refers to', 'Describes', 'Used to', 'Used for' o 'Said when', y sin em-dash (—). Items con problemas: ${detail}`,
+        hint: `Reglas: 8-14 palabras, máximo 120 caracteres, no empezar con 'Refers to', 'Describes', 'Used to', 'Used for' o 'Said when', y sin em-dash (-). Items con problemas: ${detail}`,
       };
     case "vocab-types":
       return {
@@ -614,7 +614,7 @@ function buildChatGPTPrompt(
         .join("\n")}`
     : "";
   const storyBlock = parsed
-    ? `\n\nHistoria actual:\n\nTítulo: ${parsed.title ?? "—"}\n\nSinopsis: ${parsed.synopsis ?? "—"}\n\nCuerpo:\n${parsed.text ?? "—"}${vocabBlock}`
+    ? `\n\nHistoria actual:\n\nTítulo: ${parsed.title ?? "-"}\n\nSinopsis: ${parsed.synopsis ?? "-"}\n\nCuerpo:\n${parsed.text ?? "-"}${vocabBlock}`
     : "";
   return `${intro}\n\nCorrecciones:\n${fixes}${storyBlock}\n\nRegenera la historia entera con todas las correcciones aplicadas. Devuelve SOLO el JSON.`;
 }

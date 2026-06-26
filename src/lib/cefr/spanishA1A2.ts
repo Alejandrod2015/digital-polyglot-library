@@ -3,7 +3,7 @@
 // Source: high-frequency Spanish A1/A2 reference vocabulary
 // (CEFR Cervantes A1 + Routledge frequency dictionary top-1500).
 // Curated to match the practical A1 learner experience: words a
-// beginner meets in their first months — household items, daily
+// beginner meets in their first months; household items, daily
 // actions, family, food, places, weather, body, time, basic
 // adjectives, common verbs, function words.
 //
@@ -111,11 +111,11 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "parada","estación","aeropuerto","terminal","andén","embarcadero","muelle",
   "vía","carretera","autopista","semáforo","cruce","puente","puente peatonal","luz roja",
   "estacionamiento","taquilla","bocina",
-  // Regional transport types — A1 vocabulary in their respective regions.
+  // Regional transport types; A1 vocabulary in their respective regions.
   // Latin-American Spanish traveler journeys lean heavily on these; the
   // generic "autobús" is rare in actual speech in MX/AR/CO/PE.
   "combi","colectivo","micro","minibús",
-  // Travel logistics / lodging — basic A1-A2 across the Spanish-speaking world.
+  // Travel logistics / lodging; basic A1-A2 across the Spanish-speaking world.
   "hostal","pensión","alojamiento","mirador","malecón","distrito","sector","barrio",
   "visitante","sendero","senda","feria","feria artesanal","puerto",
 
@@ -719,7 +719,7 @@ export function normalizeSpanishLemma(input: string): string {
  *   1. Exact lemma lookup
  *   2. Strip plural -s → singular ("perros" → "perro")
  *   3. Strip plural -es → singular ("lápices" → "lápiz" via "lápic")
- *      — handled by stripping -es and trying common stem variants
+ *     ; handled by stripping -es and trying common stem variants
  *   4. Strip reflexive -se → -r infinitive ("ducharse" → "duchar")
  *   5. Strip diminutive -ito/-ita/-illo/-illa → base ("perrito" → "perro")
  *   6. Femenino → masculino (-a → -o) for adjectives ("buena" → "bueno")

@@ -1273,7 +1273,7 @@ export const spanishshortstorieson20mexicanwonders: Book = {
         },
         {
           "word": "Generación",
-          "definition": "People born around the same time—grandmother, mother, granddaughter."
+          "definition": "People born around the same time-grandmother, mother, granddaughter."
         },
         {
           "word": "Innovación",

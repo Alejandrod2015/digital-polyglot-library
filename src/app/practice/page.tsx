@@ -745,7 +745,7 @@ export default function PracticePage() {
     }
     // Deep-link sessions (journey / story / checkpoint) opened with no return
     // href have no mode picker to fall back to, so setSelectedMode(null) does
-    // nothing — navigate away instead so the back button never silently fails.
+    // nothing; navigate away instead so the back button never silently fails.
     if (isJourneyPractice || isStoryPractice || isJourneyCheckpoint) {
       if (typeof window !== "undefined") {
         if (window.history.length > 1) window.history.back();
@@ -1051,7 +1051,7 @@ export default function PracticePage() {
   }, [playGeneratedFeedbackTone]);
 
   // Combo celebration: every time the streak climbs, surface the tiered toast
-  // pill (iPhone parity). Visual ONLY — the celebration chime is reserved for
+  // pill (iPhone parity). Visual ONLY; the celebration chime is reserved for
   // the end-of-session perfect run, so it never plays mid-session. Each answer
   // still gets its own correct/wrong sound.
   useEffect(() => {

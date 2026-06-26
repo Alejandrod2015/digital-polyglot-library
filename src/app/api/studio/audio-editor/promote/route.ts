@@ -46,7 +46,7 @@ export async function POST(request: Request) {
   }
 
   // If the editor session sent a new title (because they regenerated the
-  // title clip), persist it now. We only persist the text column — the
+  // title clip), persist it now. We only persist the text column; the
   // dialogueSpec[0].text still contains the OLD title concatenated with
   // the narrator opening; that's a known limitation since re-running the
   // full multi-voice pipeline would otherwise revert the title. Flag it

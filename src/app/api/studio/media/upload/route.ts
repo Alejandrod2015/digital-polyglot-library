@@ -27,14 +27,14 @@ const ALLOWED: Record<Kind, { mimes: string[]; exts: string[]; maxBytes: number;
   cover: {
     mimes: ["image/jpeg", "image/png", "image/webp", "image/gif"],
     exts: ["jpg", "jpeg", "png", "webp", "gif"],
-    // 10 MB — covers should be optimized, this is the upper guard.
+    // 10 MB; covers should be optimized, this is the upper guard.
     maxBytes: 10 * 1024 * 1024,
     prefix: "media/uploads/covers",
   },
   audio: {
     mimes: ["audio/mpeg", "audio/mp3", "audio/wav", "audio/x-wav", "audio/ogg", "audio/m4a", "audio/mp4", "audio/aac", "audio/webm"],
     exts: ["mp3", "wav", "ogg", "m4a", "aac", "webm"],
-    // 25 MB — covers full-length story narration even at 192 kbps.
+    // 25 MB; covers full-length story narration even at 192 kbps.
     maxBytes: 25 * 1024 * 1024,
     prefix: "media/uploads/audio",
   },
@@ -106,7 +106,7 @@ export async function POST(req: NextRequest) {
   const originalName = "name" in file && typeof (file as File).name === "string" ? (file as File).name : "upload";
 
   if (!rules.mimes.includes(contentType)) {
-    // Some browsers send empty type for audio — accept by extension as a fallback.
+    // Some browsers send empty type for audio; accept by extension as a fallback.
     const ext = extFromFilename(originalName);
     if (!ext || !rules.exts.includes(ext)) {
       return NextResponse.json(

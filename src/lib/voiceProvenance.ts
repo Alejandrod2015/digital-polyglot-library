@@ -6,7 +6,7 @@
 // Why we store dry stems:
 // When a multi-voice master is generated, voices and ambient are fused
 // pixel-by-pixel into the final mp3. Splicing a new tramo into that
-// master forces us to re-mix ambient from scratch in the new tramo —
+// master forces us to re-mix ambient from scratch in the new tramo -
 // the ambient loop starts from sample 0 instead of continuing the
 // master's phase, producing an audible "shimmer" at the splice seam.
 //
@@ -16,7 +16,7 @@
 //      track. The ambient is now continuous; no seam in the noise.
 //
 // Old stories generated before this column was populated have no dry
-// stem — the editor falls back to the legacy splice path (with the
+// stem; the editor falls back to the legacy splice path (with the
 // shimmer) for those. New stories produced after this change get dry
 // stems automatically.
 

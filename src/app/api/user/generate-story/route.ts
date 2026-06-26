@@ -677,10 +677,10 @@ ${variantClause}
 - Each item must have:
   - "word": dictionary/root form learners should study
   - "surface": exact form as it appears in the story text
-  - "definition": clear English gloss, HARD LIMIT 8-14 words AND ≤120 characters total. Concise, practical, no clichés. Do NOT start with "Refers to", "Describes", "Used to", "Used for" or "Said when" — start with the meaning directly. Examples: "kochen → Heated ingredients in a pot to create a meal."; "vergessen → To forget, fail to remember or do something on time."
+  - "definition": clear English gloss, HARD LIMIT 8-14 words AND ≤120 characters total. Concise, practical, no clichés. Do NOT start with "Refers to", "Describes", "Used to", "Used for" or "Said when"; start with the meaning directly. Examples: "kochen → Heated ingredients in a pot to create a meal."; "vergessen → To forget, fail to remember or do something on time."
 
 CEFR LEXICAL DISCIPLINE (CRITICAL for A1/A2 stories):
-- For A1 and A2 levels, select vocab from the LEARNER'S top-1500 high-frequency words. The word must be one a beginner meets in their first months — household items, daily actions, family, food, places, weather, body, clothes, common verbs, basic adjectives.
+- For A1 and A2 levels, select vocab from the LEARNER'S top-1500 high-frequency words. The word must be one a beginner meets in their first months; household items, daily actions, family, food, places, weather, body, clothes, common verbs, basic adjectives.
 - FORBIDDEN for A1/A2 vocab slots: rare, literary, technical, or domain-specific synonyms. The LLM tendency to "vary vocabulary" by picking thesaurus synonyms is the #1 quality leak.
 - Spanish ANTI-EXAMPLES (DO NOT pick these for A1 vocab; pick the everyday alternative shown):
   - "anafe" → use "estufa" or "fogón"
@@ -839,7 +839,7 @@ Write a vivid, modern story in ${language}${regionClause} for a ${learnerProfile
 ${resolvedTopic ? `The topic is "${resolvedTopic}".` : "Choose a concrete, modern topic that fits the level."}
 ${variantClause}
 All vocabulary definitions must be written in clear English, regardless of the story language.
-HARD LIMIT: each definition must be 3-7 English words AND ≤50 characters total (counting spaces). Both bounds mandatory — UI chip cannot wrap.
+HARD LIMIT: each definition must be 3-7 English words AND ≤50 characters total (counting spaces). Both bounds mandatory; UI chip cannot wrap.
 Style: concise gloss like a translation app (Linguee/Reverso). Lead with the concept, an infinitive ("To stir..."), or an adjective phrase. Two senses joined by ";" or "," are fine.
 Never use em-dashes; use semicolons, colons, commas, parentheses.
 Never return a bare one-word translation; add at least one clarifying word.

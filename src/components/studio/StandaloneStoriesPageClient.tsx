@@ -191,8 +191,8 @@ export default function StandaloneStoriesPageClient() {
                       </Link>
                     </td>
                     <td style={{ ...td, fontFamily: "monospace", fontSize: 11, color: "var(--muted)" }}>{s.slug}</td>
-                    <td style={td}>{s.language ?? "—"}</td>
-                    <td style={td}>{s.cefrLevel?.toUpperCase() ?? "—"}</td>
+                    <td style={td}>{s.language ?? "-"}</td>
+                    <td style={td}>{s.cefrLevel?.toUpperCase() ?? "-"}</td>
                     <td style={td}>
                       <span style={badge("#a78bfa", "rgba(167, 139, 250, 0.15)")}>{s.sourceType}</span>
                     </td>

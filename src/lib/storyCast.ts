@@ -49,11 +49,11 @@ const GENDER_NOUN: Record<Gender, string> = { f: "woman", m: "man", nb: "person"
 
 /** Seeded casts, keyed by JourneyStory.id. */
 const SEED: Record<string, StoryCast> = {
-  // Domingo con papá — A1, home-family, Bogotá.
+  // Domingo con papá; A1, home-family, Bogotá.
   // Narrated by Valeria (adult LATAM woman), single narrator. The cover must
   // read consistent with that voice: an ADULT register, not an aged one. Both
   // Marina and Hernán are adults (thirties/forties); Hernán is the father but
-  // is drawn as a fit middle-aged man, NOT a grey, lined, elderly figure — a
+  // is drawn as a fit middle-aged man, NOT a grey, lined, elderly figure; a
   // visibly old man clashes with the adult-woman narration the listener hears.
   cmpqkibj70001326n3vpbzwvj: {
     characters: [
@@ -62,7 +62,7 @@ const SEED: Record<string, StoryCast> = {
       { name: "la madre", role: "esposa fallecida (ausente)", ageBand: "adult", gender: "f", present: false },
     ],
   },
-  // Una pizca de canela — A1, home-family, Cuenca.
+  // Una pizca de canela; A1, home-family, Cuenca.
   cmpr20r56000132b8a7pqugsv: {
     characters: [
       { name: "Lucía", role: "hermana en casa", ageBand: "adult", gender: "f", present: true },

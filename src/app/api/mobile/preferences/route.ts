@@ -168,7 +168,7 @@ type StoredJourney = {
 // Códigos regionales conocidos que el campo `variant` legacy podía
 // guardar antes del modelo "un track por Studio Journey". Si el
 // `variant` actual matchea uno de estos y `region` no está set, lo
-// usamos para backfill — así journeys legacy heredan `region` la
+// usamos para backfill; así journeys legacy heredan `region` la
 // próxima vez que el server los reescribe (efecto "lazy migration"
 // sin necesidad de tocar la DB).
 const KNOWN_REGION_CODES = new Set<string>([
@@ -437,7 +437,7 @@ export async function POST(req: NextRequest): Promise<Response> {
 
   if (onboardingSurveyCompletedAt !== undefined) {
     if (onboardingSurveyCompletedAt) updatedMetadata.onboardingSurveyCompletedAt = onboardingSurveyCompletedAt;
-    // Clerk's updateUserMetadata MERGES — deleting a key leaves the old value
+    // Clerk's updateUserMetadata MERGES; deleting a key leaves the old value
     // in place. To actually clear it, set null explicitly.
     else updatedMetadata.onboardingSurveyCompletedAt = null;
   }

@@ -22,7 +22,7 @@ export const APP_STORE_PREMIUM_ANNUAL_PRODUCT_ID =
   process.env.NEXT_PUBLIC_APP_STORE_PREMIUM_ANNUAL_PRODUCT_ID?.trim() ||
   "premium_annual";
 
-// Fallback display labels — used only if the live Stripe lookup fails.
+// Fallback display labels; used only if the live Stripe lookup fails.
 // Runtime source of truth is GET /api/stripe/prices (reads the price objects
 // above). Keep these roughly in sync with Stripe as a safety net.
 export const STRIPE_PREMIUM_MONTHLY_PRICE_FALLBACK = "€14.99";

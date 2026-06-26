@@ -20,7 +20,7 @@ const FEATURED_PLAN: PracticeMode[] = ["context", "meaning", "listening", "conte
 const POOL_EXTENSION_PLAN: PracticeMode[] = ["context", "meaning", "listening", "match", "context", "meaning", "listening", "match", "context", "meaning"];
 const FEATURED_SIZE = 10;
 // Hard cap on total pool size so generation cost stays bounded even for
-// stories with very rich vocab. Set generously — the actual cap per
+// stories with very rich vocab. Set generously; the actual cap per
 // story is min(this, vocab.length * 2) inside `buildMixedPracticeSession`.
 const POOL_TARGET_SIZE = 30;
 
@@ -90,7 +90,7 @@ export async function buildAndPersistStoryPracticeSet(
   if (featured.length === 0) return { status: "skipped", reason: "no-vocab" };
 
   // Pool extension: capped at min(POOL_TARGET_SIZE - featured.length, items.length).
-  // We pass the FULL item list again — buildMixedPracticeSession dedupes
+  // We pass the FULL item list again; buildMixedPracticeSession dedupes
   // within a single call, so we won't ship two fill_blank for the same
   // word here. There IS overlap with featured (same word can appear in
   // both featured and pool), which is fine: Practice tab queries by

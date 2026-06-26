@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { generateCoverForPublishedStory } from "@/agents/publish/coverGenerator";
 
-/** Vercel Hobby allows up to 60s — Flux polling can take up to 90s but usually ~30s */
+/** Vercel Hobby allows up to 60s; Flux polling can take up to 90s but usually ~30s */
 export const maxDuration = 60;
 
 /**

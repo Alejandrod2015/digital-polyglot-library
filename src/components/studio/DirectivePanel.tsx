@@ -152,7 +152,7 @@ export default function DirectivePanel() {
         </div>
       </div>
 
-      {/* Budget — collapsible */}
+      {/* Budget; collapsible */}
       <div style={{ borderTop: "1px solid var(--card-border)", paddingTop: 8 }}>
         <div onClick={() => setShowBudget(!showBudget)} style={{ display: "flex", alignItems: "center", gap: 6, cursor: "pointer", userSelect: "none" }}>
           <span style={{ fontSize: 10, color: "var(--muted)" }}>{showBudget ? "▾" : "▸"}</span>

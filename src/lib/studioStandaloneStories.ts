@@ -243,7 +243,7 @@ export async function patchStudioStandaloneStory(
 ): Promise<StudioStandaloneStory | null> {
   const patch = sanitizePatch(input);
   // If the caller updates the slug, also update the natural id (the slug
-  // doubles as the primary key for stable upserts) — only allowed when no
+  // doubles as the primary key for stable upserts); only allowed when no
   // other row already uses the new slug.
   if (patch.slug) {
     const existing = await prisma.standaloneStory.findUnique({ where: { slug: patch.slug } });

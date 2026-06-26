@@ -20,7 +20,7 @@ export default function HomeTopbar({ continueCount }: Props) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [q, setQ] = useState("");
 
-  // Cmd/Ctrl + K focusa el search. Sin badge visible — el atajo
+  // Cmd/Ctrl + K focusa el search. Sin badge visible; el atajo
   // funciona pero no le explicamos al user que existe.
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {

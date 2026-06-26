@@ -219,7 +219,7 @@ export default function PipelineRunner() {
           <p style={{ margin: 0, fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#14b8a6" }}>Pipeline</p>
           {(phase === "planned" || phase === "generating") && (
             <span style={{ fontSize: 12, color: "var(--muted)" }}>
-              {topicsDone}/{topics.length} topics — {totalDone}/{totalAll} historias
+              {topicsDone}/{topics.length} topics; {totalDone}/{totalAll} historias
             </span>
           )}
           {(phase === "planned" || phase === "generating") && totalAll > 0 && (
@@ -262,7 +262,7 @@ export default function PipelineRunner() {
 
             return (
               <div key={level}>
-                {/* Level header — clickable to collapse */}
+                {/* Level header; clickable to collapse */}
                 <div
                   onClick={() => toggleLevel(level)}
                   style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 8px", cursor: "pointer", borderRadius: 6, backgroundColor: hasActive ? "rgba(20, 184, 166, 0.04)" : "transparent", userSelect: "none" }}

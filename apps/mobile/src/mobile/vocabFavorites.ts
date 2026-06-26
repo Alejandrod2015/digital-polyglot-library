@@ -120,7 +120,7 @@ export type PendingFavoriteOp =
   | { kind: "add"; item: MobileFavoriteItem; queuedAt: string }
   | { kind: "remove"; word: string; queuedAt: string };
 
-// Legacy SecureStore key — sólo lectura como fallback de migración.
+// Legacy SecureStore key; sólo lectura como fallback de migración.
 function getPendingKeyLegacy(userId?: string | null) {
   return `digital-polyglot/mobile-favorites-pending/${userId ?? "guest"}`;
 }

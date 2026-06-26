@@ -4,7 +4,7 @@
 // `src/lib/storyVocabQuality.ts` against the CatalogStory's current text.
 // Returns a `quality` object the editor uses to decide whether the story
 // is rich enough to publish (status: "good" | "usable" | "weak"). Does
-// NOT mutate the row — this is a read-only QA check the editor pulls
+// NOT mutate the row; this is a read-only QA check the editor pulls
 // on demand. Mirrors `/api/check-story-vocab-quality` but is gated to
 // Studio members and resolves language from the parent book.
 

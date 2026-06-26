@@ -426,9 +426,9 @@ export default function JourneyStoryEditor({ story }: Props) {
             {/* Status pills */}
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 16 }}>
               <span style={qaPill}>Audio: {form.audioQaStatus || "Sin revisar"}</span>
-              <span style={qaPill}>Score audio: {form.audioQaScore ?? "—"}</span>
+              <span style={qaPill}>Score audio: {form.audioQaScore ?? "-"}</span>
               <span style={qaPill}>Entrega audio: {form.audioDeliveryQaStatus || "Sin revisar"}</span>
-              <span style={qaPill}>Score entrega: {form.audioDeliveryQaScore ?? "—"}</span>
+              <span style={qaPill}>Score entrega: {form.audioDeliveryQaScore ?? "-"}</span>
             </div>
 
             {/* Timestamps */}

@@ -20,7 +20,7 @@ export default function GA4Tracker({
 }: {
   // EEA/UK/CH: analytics only fire after explicit accept. Elsewhere
   // (e.g. US, the bulk of blog traffic) they fire by default unless the
-  // visitor has opted out. Defaults to opt-in — the privacy-safe fallback.
+  // visitor has opted out. Defaults to opt-in; the privacy-safe fallback.
   requiresConsentOptIn?: boolean;
 }) {
   const { user, isLoaded } = useUser();

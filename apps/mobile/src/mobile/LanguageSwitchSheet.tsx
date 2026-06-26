@@ -35,7 +35,7 @@ export type LanguageSwitchEntry = {
   /** Stable journey id from `journeys.ts`. The shell resolves taps
    *  back to the full Journey via this. */
   id: string;
-  /** Canonical language name — drives the flag coin. */
+  /** Canonical language name; drives the flag coin. */
   language: string;
   /** Variant code (us/uk for English) so the flag picks the right
    *  regional rendering. null when the language has one flag. */
@@ -52,7 +52,7 @@ export type LanguageSwitchEntry = {
   active: boolean;
   streak: number;
   xpTotal: number;
-  /** 0–100 — currently rendered as ring color only; future SVG arc. */
+  /** 0–100; currently rendered as ring color only; future SVG arc. */
   progress: number;
 };
 
@@ -109,7 +109,7 @@ export function LanguageSwitchSheet({
   // Earlier this was `new Animated.Value(0)` paired with a separate
   // useEffect that called `translateY.setValue(SHEET_TRAVEL)` on mount.
   // Effect ordering meant the reset effect ran *after* the open-
-  // animation effect when `mounted` flipped to true — it cancelled the
+  // animation effect when `mounted` flipped to true; it cancelled the
   // spring mid-flight, leaving the sheet at 720 (off-screen) even
   // though `open === true` and the backdrop had faded in. The user
   // saw a dim backdrop and no sheet, tapped the backdrop (=close),
@@ -163,7 +163,7 @@ export function LanguageSwitchSheet({
     }
   }, [open, mounted, backdrop, translateY, dragY]);
 
-  // Drag-to-dismiss. We only respond on downward drag — upward drag
+  // Drag-to-dismiss. We only respond on downward drag; upward drag
   // just elastics back. Release > 80 pt or velocity > 800 closes.
   const panResponder = useMemo(
     () =>
@@ -398,7 +398,7 @@ export function LanguageSwitchSheet({
 
         {hideFooter ? null : (
           <View style={styles.footer}>
-            {/* Single CTA — opens the full-screen "Your journeys"
+            {/* Single CTA; opens the full-screen "Your journeys"
                 panel where the user manages all journeys + creates new
                 ones. The sheet's "See all" button is gone because the
                 panel itself is the see-all view. */}

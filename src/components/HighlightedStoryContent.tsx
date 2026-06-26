@@ -86,14 +86,14 @@ function buildBlocks(
   let wordCursor = 0;
   // Highlight each vocab word only on its FIRST occurrence in the story (same
   // rule as StoryContent's `seenInStory` set). Without this the karaoke reader
-  // re-pilled repeats — e.g. "mija" appearing twice in la-fonda got two pills.
+  // re-pilled repeats; e.g. "mija" appearing twice in la-fonda got two pills.
   // The active-word karaoke highlight (by index) is unaffected; this only gates
   // the vocab pill class.
   const seenVocab = new Set<string>();
 
   // Split on EVERY newline, not just blank-line boundaries. Multi-voice
   // dialogue stories ("Speaker: line" turns separated by single \n) must
-  // render one paragraph per turn — and, critically, each chunk must remain a
+  // render one paragraph per turn; and, critically, each chunk must remain a
   // VERBATIM substring of `text` so `text.indexOf(chunk)` returns the real
   // char offset. The old `\n{2,}` + `\n`→space collapse merged every dialogue
   // turn into one paragraph AND broke the offset lookup (the space-collapsed
@@ -154,7 +154,7 @@ export default function HighlightedStoryContent({
   const vocabLookup = React.useMemo(() => buildVocabLookup(vocab), [vocab]);
   // Vocab type por palabra para colorear cada pill según categoría
   // (verb=coral, noun=sky, adjective=emerald, adverb=purple, expression=pink).
-  // Usa resolveVocabType arriba — morfología fuerte tiene prioridad sobre
+  // Usa resolveVocabType arriba; morfología fuerte tiene prioridad sobre
   // la definición narrativa (que el viejo helper interpretaba mal).
   const vocabTypeByLower = React.useMemo(() => {
     const map = new Map<string, string>();
@@ -185,7 +185,7 @@ export default function HighlightedStoryContent({
           {block.pieces.map((piece, pieceIndex) => {
             if (piece.kind === "gap") {
               // Bold the leading "Speaker:" label on dialogue turns (it is a
-              // gap, not a timed word — the audio never speaks the label).
+              // gap, not a timed word; the audio never speaks the label).
               const labelMatch =
                 pieceIndex === 0
                   ? piece.text.match(
@@ -210,7 +210,7 @@ export default function HighlightedStoryContent({
             // `padding: 0 0.15em` from globals.css and visibly shift the line
             // whenever an active word overlapped a vocab word.
             //
-            // Active uses warm amber (#f8c15c) — the same hue the legacy
+            // Active uses warm amber (#f8c15c); the same hue the legacy
             // reader used for vocab; vocab moved to sky-blue in globals.css
             // so the two highlight kinds read as distinctly different marks.
             const baseClass = "transition-colors duration-150 rounded";

@@ -101,7 +101,7 @@ export async function loadMobilePreviewState(
   } catch {
     // ignore, fall through to legacy
   }
-  // Path 2: migración desde SecureStore legacy — al primer load, si
+  // Path 2: migración desde SecureStore legacy; al primer load, si
   // había estado guardado en la versión vieja, lo rehidratamos al
   // FileSystem y lo devolvemos. Las entries de SecureStore quedan; el
   // FileSystem manda de aquí en adelante.

@@ -18,7 +18,7 @@ type Props = {
   onDeleteConfirmed: () => void;
   /** Word/label shown in the confirm dialog. */
   confirmLabel?: string;
-  /** Optional second action — "Add to collection". When provided, the
+  /** Optional second action; "Add to collection". When provided, the
    *  swipe reveals BOTH Collection + Delete (panel width doubles). */
   onAddToCollection?: () => void;
   children: React.ReactNode;

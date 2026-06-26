@@ -7,7 +7,7 @@ function toSlug(label: string): string {
   return label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
-/** GET /api/studio/topics — list topics. Optional ?journeyType=slug to get universal + that journey's specialized */
+/** GET /api/studio/topics; list topics. Optional ?journeyType=slug to get universal + that journey's specialized */
 export async function GET(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -48,7 +48,7 @@ export async function GET(request: Request) {
   })));
 }
 
-/** POST /api/studio/topics — create a topic. Body: { label } */
+/** POST /api/studio/topics; create a topic. Body: { label } */
 export async function POST(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -75,7 +75,7 @@ export async function POST(request: Request) {
   return NextResponse.json(topic);
 }
 
-/** PATCH /api/studio/topics — update a topic. Body: { id, label?, sortOrder? } */
+/** PATCH /api/studio/topics; update a topic. Body: { id, label?, sortOrder? } */
 export async function PATCH(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -103,7 +103,7 @@ export async function PATCH(request: Request) {
   return NextResponse.json(topic);
 }
 
-/** DELETE /api/studio/topics — delete a topic. Body: { id } */
+/** DELETE /api/studio/topics; delete a topic. Body: { id } */
 export async function DELETE(request: Request) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

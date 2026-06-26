@@ -10,5 +10,5 @@
 export async function syncCreateStoryMirror(
   _story: Record<string, unknown>
 ): Promise<void> {
-  // intentionally empty — UserStory is already written by the caller
+  // intentionally empty; UserStory is already written by the caller
 }

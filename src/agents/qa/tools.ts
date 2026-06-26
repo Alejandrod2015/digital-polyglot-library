@@ -367,7 +367,7 @@ export async function runLLMQualityCheck(params: {
   cefrLevel: string;
   topic: string;
   synopsis: string;
-  /** Override env var — when provided, takes precedence over ENABLE_LLM_QA */
+  /** Override env var; when provided, takes precedence over ENABLE_LLM_QA */
   enableLLMQA?: boolean;
 }): Promise<LLMQualityCheckResult> {
   // Budget param takes precedence over env var

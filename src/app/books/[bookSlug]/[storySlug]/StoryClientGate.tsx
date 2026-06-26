@@ -11,7 +11,7 @@ type Props = {
 };
 
 /**
- * StoryClientGate — versión visual con fade:
+ * StoryClientGate; versión visual con fade:
  * - Si `forceAllow` es true → muestra TODO el contenido sin bloqueo.
  * - Si no → muestra el contenido completo dentro de un contenedor recortado con fade + fallback.
  */

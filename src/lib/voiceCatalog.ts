@@ -1,6 +1,6 @@
 /** Voice catalog: shared between Studio UI and the local TTS endpoint.
  *
- * voiceId convention: "<engine>/<voiceName>" — e.g. "piper/es_ES-sharvard-medium".
+ * voiceId convention: "<engine>/<voiceName>"; e.g. "piper/es_ES-sharvard-medium".
  *
  * Each entry has a `status`:
  *  - "approved": validated by the user, available in the story dropdowns.
@@ -20,7 +20,7 @@
  *
  * Quality gate (mandatory before any voice gets added):
  *   1. Whisper WER ≤ 40% on a standard sentence (intelligibility).
- *   2. UTMOS ≥ 3.0 (predicted MOS, naturalness — calibrated against
+ *   2. UTMOS ≥ 3.0 (predicted MOS, naturalness; calibrated against
  *      user-approved voices: Sharvard 3.11, Paola 3.55, Cadu 4.03).
  *   3. Audio metrics in range (RMS, silence ratio).
  */
@@ -171,7 +171,7 @@ export const ENGINE_INFO: Record<Engine, EngineInfo> = {
  * Accent / dialect tags. Más granulares que `region` (que sólo
  * distingue LATAM/ES/BR/etc.) y permiten castear voces que matcheen
  * realmente la ambientación de la historia. Una voz puede llevar
- * varios — ej: una voz colombiana neutra puede ir tagueada como
+ * varios; ej: una voz colombiana neutra puede ir tagueada como
  * `["colombian", "neutral-latam"]` para que sirva de fallback en
  * historias LATAM no-colombianas.
  *
@@ -340,7 +340,7 @@ export const VOICE_CATALOG: VoiceEntry[] = [
 
   // Round 2: ajustes (Barcelona menos soft, Napoli/SãoPaulo más calmos, Salvador-style variación Recife).
   // accentTags `unverified` para las castellano que quedaron tagueadas region: LATAM
-  // — el catálogo ya señala que no salieron como Madrid, hay que escuchar para
+  //; el catálogo ya señala que no salieron como Madrid, hay que escuchar para
   // decidir si son neutral-latam u otra cosa.
   { id: "qwen17/es-barcelona_45m-v3", engine: "qwen", language: "spanish",    region: "LATAM", gender: "m", label: "Barcelona 45 v3 (intermedio)",   status: "approved",  accentTags: ["unverified"], license: "Apache-2.0", licenseSource: "https://github.com/QwenLM/Qwen3-TTS" },
   // Spain Spanish con prompt fonológico peninsular explícito (distinción c/z=θ vs s).
@@ -384,7 +384,7 @@ export const VOICE_CATALOG: VoiceEntry[] = [
   // candidate hasta que se auditen escuchando; accentTags `unverified` para
   // que el sistema de casting NO las recomiende automáticamente.
   // El usuario reportó que la masculina suena argentina aunque el ref es
-  // peninsular — el cloning con chatterbox tira hacia atractor rioplatense.
+  // peninsular; el cloning con chatterbox tira hacia atractor rioplatense.
   {
     id: "chatterbox/clone-madrid_55m", engine: "chatterbox", language: "spanish", region: "LATAM", gender: "m",
     label: "Clone Madrid 55m (chatterbox + qwen17 ref)", status: "candidate",

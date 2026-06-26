@@ -12,11 +12,11 @@ export const maxDuration = 300;
  * Re-run aeneas forced alignment on the current master audio to refresh
  * `audioWordTimings`. Useful when an existing story's timings were
  * produced before improvements to the alignment pipeline (e.g. before
- * `stripSpeakerLabels` was added — those legacy timings have spurious
+ * `stripSpeakerLabels` was added; those legacy timings have spurious
  * tokens at speaker-label positions which cause "next speaker name
  * appears at the end of each block" in the editor).
  *
- * Doesn't touch the audio file itself — only updates the timings JSON.
+ * Doesn't touch the audio file itself; only updates the timings JSON.
  */
 export async function POST(request: Request) {
   const { userId } = await auth();

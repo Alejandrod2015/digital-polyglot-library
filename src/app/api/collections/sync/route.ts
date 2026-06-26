@@ -20,7 +20,7 @@ type IncomingCollection = {
  * Semantics (designed to make the migration zero-risk):
  *  - For each incoming collection: upsert by id, scoped to the
  *    current Clerk userId.
- *  - On conflict, MERGE wordKeys (set union) — never drop entries.
+ *  - On conflict, MERGE wordKeys (set union); never drop entries.
  *    The remote may already have keys the local didn't, e.g. because
  *    the user added items from web; we keep both sides.
  *  - Name conflict: keep the local name. Migrations are user-initiated;
@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
   }
 
   // Normalize + sanitize each incoming entry. Drop malformed ones
-  // silently — the migration runs unattended on the device, we'd
+  // silently; the migration runs unattended on the device, we'd
   // rather succeed with the well-formed subset than fail completely.
   const sanitized: IncomingCollection[] = [];
   for (const raw of incoming) {

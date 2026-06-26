@@ -266,7 +266,7 @@ export async function POST(request: Request) {
         } catch (error) {
           const msg = error instanceof Error ? error.message : String(error);
           send({ step: "bootstrap", status: "failed", detail: `Error creando estructura: ${msg}` });
-          // Continue anyway — planner will just find no gaps for new languages
+          // Continue anyway; planner will just find no gaps for new languages
         }
 
         // ── Step 1: Planner ──
@@ -495,7 +495,7 @@ export async function POST(request: Request) {
 
               // ── Step 6: Auto-publish to Sanity ──
               if (testMode) {
-                // In test mode, do NOT auto-publish — leave as approved for review
+                // In test mode, do NOT auto-publish; leave as approved for review
                 send({
                   step: "publish",
                   status: "skipped",

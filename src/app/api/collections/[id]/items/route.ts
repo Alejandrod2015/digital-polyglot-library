@@ -14,7 +14,7 @@ function makeWordKey(word: string, language?: string | null): string {
   return `${l}::${w}`;
 }
 
-/** POST /api/collections/:id/items — add a word.
+/** POST /api/collections/:id/items; add a word.
  *  Body: { word: string, language?: string } */
 export async function POST(req: NextRequest, { params }: Ctx) {
   const { userId } = await auth();
@@ -44,7 +44,7 @@ export async function POST(req: NextRequest, { params }: Ctx) {
   return NextResponse.json({ collection: updated, added: true });
 }
 
-/** DELETE /api/collections/:id/items?key=... — remove a word. */
+/** DELETE /api/collections/:id/items?key=...; remove a word. */
 export async function DELETE(req: NextRequest, { params }: Ctx) {
   const { userId } = await auth();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });

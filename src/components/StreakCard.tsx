@@ -11,7 +11,7 @@ type Props = {
  * Streak card shown in the Sidebar, above the profile pill.
  *
  * Data source: `GamificationSummary` from src/lib/gamification.
- * If `weekDots` isn't available yet, omit it — the dots will render as empty.
+ * If `weekDots` isn't available yet, omit it; the dots will render as empty.
  */
 export default function StreakCard({ days, weekDots }: Props) {
   const dots =
@@ -34,7 +34,7 @@ export default function StreakCard({ days, weekDots }: Props) {
       <div className="text-[12.5px] font-bold text-[var(--muted)] mt-1">
         {days === 0
           ? "Start today to begin a streak"
-          : "Keep it going — listen today"}
+          : "Keep it going; listen today"}
       </div>
 
       <div className="flex gap-1 mt-2.5">

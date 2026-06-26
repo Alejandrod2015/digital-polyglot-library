@@ -81,7 +81,7 @@ export async function POST(req: Request) {
 
       // Revoke any still-valid mobile session JWTs for this user. The token is
       // stateless (signature + exp only), so deleting the data above does NOT
-      // cut off access — getActiveMobileSession reads this table to do that.
+      // cut off access; getActiveMobileSession reads this table to do that.
       // Best-effort + outside the transaction so that, if this code ships
       // before the RevokedUser migration is applied, a missing table can never
       // roll back the data cleanup above. upsert keeps a re-delete idempotent.

@@ -121,7 +121,7 @@ export async function generateExerciseAudio(args: GenerateExerciseAudioArgs): Pr
     .digest("hex")
     .slice(0, 24)}.mp3`;
 
-  // Skip cache when forced — editor wants a fresh take regardless of
+  // Skip cache when forced; editor wants a fresh take regardless of
   // whether the text changed.
   if (!args.force) {
     const cachedUrl = getPublicObjectUrl(key);

@@ -64,13 +64,13 @@ export type OnboardingPayload = {
 type OnboardingLevel = "Brand new" | "A few words" | "Some";
 
 type Props = {
-  /** First name to show in the prompt — falls back to "you" */
+  /** First name to show in the prompt; falls back to "you" */
   userName?: string | null;
   testMode?: boolean;
   /** Set of canonical language names ("Spanish", "Korean", …) flagged as
    *  Próximamente in Studio Planning. Coming-soon rows render a "Próximamente"
    *  pill and refuse selection. The shell hydrates this from
-   *  /api/mobile/languages — when the fetch fails we treat the set as empty
+   *  /api/mobile/languages; when the fetch fails we treat the set as empty
    *  and let everything be selectable rather than block onboarding. */
   comingSoonLanguages?: ReadonlySet<string>;
   /** Variants with no journeys yet, keyed `${language}:${regionFamily}`. Disables
@@ -119,7 +119,7 @@ const LANGUAGE_OPTIONS: LanguageOption[] = [
   // other flag in our set (vs. Mexico's green-white-red, which is
   // indistinguishable from Italy at coin scale).
   // `learners` is the row subtitle. It is an honest variant/region
-  // descriptor only — never a fabricated learner/speaker count. Empty
+  // descriptor only; never a fabricated learner/speaker count. Empty
   // string = no subtitle (the COMING SOON / variant badge carries the
   // context on its own).
   { key: "Spanish|es", name: "Spanish", variantLabel: "SPAIN", variantCode: "es", learners: "Castilian Spanish" },
@@ -133,7 +133,7 @@ const LANGUAGE_OPTIONS: LanguageOption[] = [
   { key: "Portuguese|pt", name: "Portuguese", variantLabel: "PORTUGAL", variantCode: "pt", learners: "European Portuguese" },
   { key: "Japanese", name: "Japanese", learners: "" },
   { key: "Korean", name: "Korean", learners: "" },
-  // Chinese added in build 68 — was previously only listed in the
+  // Chinese added in build 68; was previously only listed in the
   // Add-journey panel, never in onboarding. Now consistent across
   // both entry points.
   { key: "Chinese", name: "Chinese", learners: "Mandarin" },
@@ -232,7 +232,7 @@ export function OnboardingFlow({
   //   1. Languages
   //   2. Why / motivations
   //   3. Daily goal + reminders
-  //   4. Level (with optional level test for accuracy) — last step so
+  //   4. Level (with optional level test for accuracy); last step so
   //      the test result, when taken, lands right before submit.
   const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
   // We track selection by option *key*, not language name, so the two
@@ -310,7 +310,7 @@ export function OnboardingFlow({
     // the iOS notification permission popup right after they tap
     // Continue. iOS only shows the system prompt the FIRST time we
     // ask, so we couple it to the explicit toggle-on action where
-    // the user has already signaled intent — that gives the best
+    // the user has already signaled intent; that gives the best
     // grant rate. We don't gate navigation on the result; if the
     // user denies, the toggle stays as their stated preference and
     // they can re-enable from Settings later. The lazy require
@@ -324,7 +324,7 @@ export function OnboardingFlow({
         if (Notifications) {
           const current = await Notifications.getPermissionsAsync();
           // Only call request when the system hasn't already
-          // resolved — re-requesting after a deny is a no-op on iOS
+          // resolved; re-requesting after a deny is a no-op on iOS
           // (returns the same denied status without re-prompting),
           // but skipping the call avoids an unnecessary bridge hop.
           if (current.status === "undetermined" || current.canAskAgain) {
@@ -436,7 +436,7 @@ export function OnboardingFlow({
       {testMode ? (
         <View style={styles.testBadge}>
           <Feather name="zap" size={11} color={tokenColor.gold} />
-          <Text style={styles.testBadgeText}>TEST MODE — selections are not saved</Text>
+          <Text style={styles.testBadgeText}>TEST MODE; selections are not saved</Text>
         </View>
       ) : null}
 
@@ -452,7 +452,7 @@ export function OnboardingFlow({
             <Text style={styles.title}>What do you want to learn?</Text>
             <Text style={styles.subtitle}>
               Pick one or more. The first you pick becomes your starting journey
-              — the rest will be ready in your language switcher.
+             ; the rest will be ready in your language switcher.
             </Text>
             <View style={styles.languageList}>
               {LANGUAGE_OPTIONS.map((option) => {
@@ -471,7 +471,7 @@ export function OnboardingFlow({
                     key={option.key}
                     disabled={comingSoon}
                     onPress={() => {
-                      // Plain toggle — picking a Spanish-LATAM row
+                      // Plain toggle; picking a Spanish-LATAM row
                       // does NOT deselect Spanish-ES, and the same
                       // for any other language with multiple
                       // variants (Portuguese BR/PT, English US/UK).
@@ -674,7 +674,7 @@ export function OnboardingFlow({
                     onPress={() => {
                       setLevel(option.key);
                       // Picking a self-reported level after taking the
-                      // test means the user wants the self-pick — clear
+                      // test means the user wants the self-pick; clear
                       // the test result so submit uses the picked level.
                       setTestedLevel(null);
                     }}
@@ -719,7 +719,7 @@ export function OnboardingFlow({
               })}
             </View>
 
-            {/* Level test offer — only shown for languages where we
+            {/* Level test offer; only shown for languages where we
                 have authored test content (Spanish, German). The test
                 runner is a full-screen modal that overlays this flow. */}
             {language && hasLevelTest(language) ? (
@@ -780,7 +780,7 @@ export function OnboardingFlow({
         </Pressable>
       </View>
 
-      {/* Level test runner — full-screen overlay launched from step 4
+      {/* Level test runner; full-screen overlay launched from step 4
           when the user taps "Take the level test". Self-contained;
           calls back with a CEFR level which we store as `testedLevel`
           and surface as the placement when the user submits. */}
@@ -791,7 +791,7 @@ export function OnboardingFlow({
           variant={selectedOptions[0]?.variantCode ?? null}
           source="onboarding"
           onComplete={async (result) => {
-            // The user tapped "Start journey" in the test result —
+            // The user tapped "Start journey" in the test result -
             // the expectation is the journey actually starts. Bake the
             // tested level in and commit through the SAME submit() the
             // skip-test path uses (single source of truth), passing the

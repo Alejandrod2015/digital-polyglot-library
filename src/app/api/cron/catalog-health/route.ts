@@ -8,7 +8,7 @@
 // What it checks:
 //   1. Catalog row counts in Prisma match the baseline established at the
 //      cutover (Sanity is no longer the source of truth, so any drop is a
-//      regression — additions are fine).
+//      regression; additions are fine).
 //   2. The mobile API responds with X-Catalog-Source: studio (proving the
 //      runtime is reading from Prisma, not Sanity).
 //   3. A sample story slug can be loaded server-side from the reader page

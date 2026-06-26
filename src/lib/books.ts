@@ -22,7 +22,7 @@ export async function getBookMeta(slug: string) {
   };
 }
 
-/** Solo el título — útil para emails. */
+/** Solo el título; útil para emails. */
 export async function getBookTitle(slug: string): Promise<string> {
   const meta = await getCatalogBookMeta(slug);
   return meta?.title ?? slug;

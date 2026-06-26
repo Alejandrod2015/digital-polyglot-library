@@ -72,7 +72,7 @@ export async function GET(req: NextRequest): Promise<Response> {
 
   // SAFETY NET: si el usuario tiene `journeyPlacementLevel` set pero
   // todavía no ha terminado ni una sola historia EN EL IDIOMA ACTUAL,
-  // el placement no aporta — solo está marcando como `skipped` los
+  // el placement no aporta; solo está marcando como `skipped` los
   // niveles inferiores y empujando la "next" hacia abajo. En ese caso
   // lo limpiamos en Clerk y servimos la respuesta sin placement.
   // Self-healing: cualquier futura request ya verá
@@ -167,7 +167,7 @@ export async function GET(req: NextRequest): Promise<Response> {
             const practiceKey = getJourneyTopicPracticeKey(track.id, level.id, topic.slug);
             const checkpointKey = getJourneyTopicCheckpointKey(track.id, level.id, topic.slug);
             // Lock only at the level boundary. Within an unlocked CEFR level,
-            // every topic and every story is accessible — the user can read
+            // every topic and every story is accessible; the user can read
             // them in whatever order suits them. The recommended order is
             // still expressed via the "next" pointer, but it's a guide, not
             // a gate. Stories above the user's reach (locked level) still
@@ -200,7 +200,7 @@ export async function GET(req: NextRequest): Promise<Response> {
                 //     checkpoint is passed. Earns the green check.
                 //   - skipped: story belongs to a level below the
                 //     user's placement level. Stays unlocked and
-                //     re-readable but doesn't count as pending —
+                //     re-readable but doesn't count as pending -
                 //     used so the "next" pointer can jump straight
                 //     to the placement level without falsely
                 //     awarding the green check on unread stories.

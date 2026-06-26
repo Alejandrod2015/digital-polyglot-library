@@ -43,7 +43,7 @@ const normTokens = (s: string): string[] =>
 
 /**
  * Narrator time ranges, used to silence the ambient bed while the
- * (out-of-scene) narrator speaks — characters are in the scene, the narrator
+ * (out-of-scene) narrator speaks; characters are in the scene, the narrator
  * is voice-over, so the bed only plays under dialogue. See memory
  * `feedback_ambient_not_under_narrator`.
  *
@@ -52,7 +52,7 @@ const normTokens = (s: string): string[] =>
  * multiplying by `targetDuration / span` (see `buildAmbientStage`); this
  * auto-corrects any uniform stretch (e.g. atempo) without assuming a factor.
  * Returns `{ intervals: [], span: 0 }` when the inputs can't be trusted (no
- * segments / no parsable turns) — callers then mix the bed continuously.
+ * segments / no parsable turns); callers then mix the bed continuously.
  */
 export function computeNarratorOffIntervals(
   storyText: string,
@@ -186,7 +186,7 @@ export type ApplyNarrationPostProcessArgs = {
   skipAlignment?: boolean;
   /** Explicit narrator off-intervals (seconds, in the source/mixed timeline at
    *  tempo=1) to silence the bed. When provided, bypasses the drift-prone
-   *  re-derivation from re-aligned `audioSegments` — pass the generator's exact
+   *  re-derivation from re-aligned `audioSegments`; pass the generator's exact
    *  per-fragment offsets instead. Assumes tempo=1 (scale stays 1/tempo=1). */
   narratorOffIntervals?: [number, number][];
 };
@@ -201,7 +201,7 @@ export type ApplyNarrationPostProcessResult = {
 /**
  * Apply the catalog-wide narration post-processing to a story's audio.
  * Idempotent at the file level (always produces a fresh timestamped mp3),
- * but compound if the same source URL is passed twice in a row — pass an
+ * but compound if the same source URL is passed twice in a row; pass an
  * explicit `sourceUrl` pointing at the original (pre-stretch) file when
  * iterating.
  */

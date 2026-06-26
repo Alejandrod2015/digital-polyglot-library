@@ -1,5 +1,5 @@
 /**
- * Content Directive — server-only ops (load/save desde DB).
+ * Content Directive; server-only ops (load/save desde DB).
  *
  * Tipos, defaults y sanitizers viven en `./directiveTypes` (puro) para
  * que client components puedan importarlos sin arrastrar prisma al

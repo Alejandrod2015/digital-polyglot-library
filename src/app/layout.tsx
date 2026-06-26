@@ -16,7 +16,7 @@ import VisitLogger from "@/components/VisitLogger";
 // property (consumed in globals.css via `var(--font-nunito)`), and
 // `display: "swap"` avoids the invisible-text-while-loading flash.
 // Weight list cubre todos los pesos que el codebase usa de verdad:
-// 400 (body fallback), 500 (font-medium), 600 (font-semibold — usado
+// 400 (body fallback), 500 (font-medium), 600 (font-semibold; usado
 // en 236 lugares), 700 (font-bold), 800 (font-extrabold), 900
 // (font-black). Antes faltaban 500 y 600, y el browser caía a Arial
 // system para esos pesos → el menú lateral se veía con otra fuente

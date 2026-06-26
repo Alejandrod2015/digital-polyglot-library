@@ -62,7 +62,7 @@ type StoryPayload = {
   source: StorySource;
   /** True when the story comes from the Journey content table
    *  (getJourneyStoryBySlug). Used to hide UI that doesn't belong in
-   *  the curated journey path (e.g. the "save to library" bookmark —
+   *  the curated journey path (e.g. the "save to library" bookmark -
    *  the journey IS the library). */
   isJourney: boolean;
   audioSegments: unknown;
@@ -105,15 +105,15 @@ function normalizePolyglotStoryText(input: string): string {
     return input
       .split(/\n+/)
       .map((line) => line.trim())
-      .filter((line) => !/^[.?!,:;'"“”„«»\-–—]+$/.test(line))
+      .filter((line) => !/^[.?!,:;'"“”„«»\-–-]+$/.test(line))
       .join("\n\n");
   }
 
   return input
-    .replace(/<p>\s*[.?!,:;'"“”„«»\-–—]+\s*<\/p>/gi, "")
-    .replace(/<blockquote>\s*<p>\s*[.?!,:;'"“”„«»\-–—]+\s*<\/p>/gi, "<blockquote>")
-    .replace(/<p>\s*[.?!,:;'"“”„«»\-–—]+\s*<\/p>\s*<blockquote/gi, "<blockquote")
-    .replace(/<\/blockquote>\s*<p>\s*[.?!,:;'"“”„«»\-–—]+\s*<\/p>/gi, "</blockquote>")
+    .replace(/<p>\s*[.?!,:;'"“”„«»\-–-]+\s*<\/p>/gi, "")
+    .replace(/<blockquote>\s*<p>\s*[.?!,:;'"“”„«»\-–-]+\s*<\/p>/gi, "<blockquote>")
+    .replace(/<p>\s*[.?!,:;'"“”„«»\-–-]+\s*<\/p>\s*<blockquote/gi, "<blockquote")
+    .replace(/<\/blockquote>\s*<p>\s*[.?!,:;'"“”„«»\-–-]+\s*<\/p>/gi, "</blockquote>")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }

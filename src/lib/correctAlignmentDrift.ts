@@ -169,7 +169,7 @@ export async function correctAlignmentDrift(args: {
     // Advance past any silences whose start is before this token's
     // original start AND were not yet considered. For each such
     // silence we ask: "Is this token the first one after the silence?"
-    // — true when the previous token's original start was before the
+    //; true when the previous token's original start was before the
     // silence's start (or there is no previous token).
     while (silIdx < silences.length && silences[silIdx].start < originalStart) {
       const sil = silences[silIdx];
@@ -179,7 +179,7 @@ export async function correctAlignmentDrift(args: {
         const positionWithOffset = originalStart + currentOffset;
         const gap = sil.end - positionWithOffset;
         if (gap >= minDriftSec) {
-          // Aeneas was ahead of the narrator at this silence —
+          // Aeneas was ahead of the narrator at this silence -
           // push every remaining token forward so this one starts
           // exactly at silence.end.
           currentOffset += gap;
@@ -193,7 +193,7 @@ export async function correctAlignmentDrift(args: {
           // Aeneas was BEHIND the narrator (token marked after the
           // silence already ended). Pulling tokens back is safe as
           // long as the previous corrected token still ends before
-          // the silence — otherwise we'd invert the order. Cap the
+          // the silence; otherwise we'd invert the order. Cap the
           // pullback to preserve the invariant prev.endSec ≤ sil.end.
           const lastCorrected = corrected[corrected.length - 1];
           const prevEnd =

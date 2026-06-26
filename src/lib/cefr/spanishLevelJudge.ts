@@ -31,7 +31,7 @@ import { isSpanishProperNoun } from "./spanishProperNouns";
 
 export type SpanishLevel = "a1" | "a2" | "b1" | "b2" | "c1" | "c2";
 
-// A1 and A2 share the same effective floor — A1 stories are conventionally
+// A1 and A2 share the same effective floor; A1 stories are conventionally
 // allowed to use A1+A2 vocab (matches the curated `isSpanishA1A2` list).
 // From B1 up, ranks are strictly cumulative.
 const LEVEL_RANK: Record<SpanishLevel, number> = {
@@ -133,7 +133,7 @@ Be STRICT on level. When in doubt, assign a HIGHER level. Consider:
 For the "replacement" field:
 - Target level is ${targetLevel.toUpperCase()}.
 - Only include "replacement" when the judged level is ABOVE the target (e.g. target=a1 and judged=b2 → include replacement).
-- The replacement MUST be a Spanish word at or below the target level — common, neutral Spanish (no regionalism).
+- The replacement MUST be a Spanish word at or below the target level; common, neutral Spanish (no regionalism).
 - Keep the replacement short (1-3 words). If the original is a verb, give a verb. If a noun, give a noun.
 - The replacement should mean roughly the same thing or be a natural substitute in story context.
 - Examples: anafe (B2) at target A1 → "estufa". alfiletero (B2) at target A1 → "caja". escabel (B2) at target A1 → "banco". talega (B2) at target A1 → "bolsa".
@@ -261,7 +261,7 @@ export function extractSpanishContentWords(body: string): string[] {
   ]);
   // Tokenize preserving case so we can spot proper nouns.
   const rawTokens = body
-    .replace(/[¿¡"'()\[\]{}—–_*]/g, " ")
+    .replace(/[¿¡"'()\[\]{}-–_*]/g, " ")
     .split(/[\s.,;:!?"…]+/u)
     .filter(Boolean);
 

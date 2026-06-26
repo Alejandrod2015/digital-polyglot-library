@@ -1,4 +1,4 @@
-// Spanish B1 lemma list — words that become available at B1 (not
+// Spanish B1 lemma list; words that become available at B1 (not
 // in A1/A2 but legitimate for intermediate learners). Combined with
 // A1+A2 to form the full B1 vocabulary universe via
 // `isSpanishUpToLevel(word, "b1")`.

@@ -65,7 +65,7 @@ function pickEndSec(words: StoryWordToken[], rangeStart: number, rangeEnd: numbe
       lastOverlapIdx = i;
       const next = words[i + 1];
       // Some aeneas tokens (often at end-of-paragraph or end-of-story)
-      // come back with endSec === startSec — a 0-duration artifact.
+      // come back with endSec === startSec; a 0-duration artifact.
       // Look forward through subsequent tokens for a startSec that
       // actually advances. If none does (whole tail collapsed), pad.
       const startSec = typeof token.startSec === "number" ? token.startSec : null;
@@ -78,7 +78,7 @@ function pickEndSec(words: StoryWordToken[], rangeStart: number, rangeEnd: numbe
         }
         return token.endSec + 0.3;
       }
-      // Reference `next` so TS doesn't complain — kept in case future
+      // Reference `next` so TS doesn't complain; kept in case future
       // logic wants to peek without re-indexing.
       void next;
       return token.endSec;

@@ -4,7 +4,7 @@
 // American/Iberian place names ("Coyoacán", "Lisboa"), and brand /
 // landmark names ("ADO", "Bellas Artes"). The body-level-frequency
 // validator would flag these as out-of-level vocab if we didn't filter
-// them out. They are NOT teaching content — they're context.
+// them out. They are NOT teaching content; they're context.
 //
 // This file lists the most common Spanish first names + Latin American
 // + Iberian toponyms + cultural landmarks that appear in DPL stories.

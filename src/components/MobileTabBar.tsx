@@ -62,7 +62,7 @@ export default function MobileTabBar() {
   if (isStoryReaderPath(pathname) || isHiddenPath(pathname) || practiceActive) return null;
 
   // Bottom tabs: matches iPhone app exactly (Home, Explore, Practice,
-  // Favorites, Menu/Sign in). Journey is not surfaced here — paid users
+  // Favorites, Menu/Sign in). Journey is not surfaced here; paid users
   // get to it via the sidebar entry on desktop. Plan-specific extras
   // (Create) live in the sidebar, not the tab bar.
   const tabs = isSignedIn

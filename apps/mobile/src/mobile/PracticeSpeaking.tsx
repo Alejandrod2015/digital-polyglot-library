@@ -6,7 +6,7 @@ import * as FileSystem from "expo-file-system/legacy";
 import { apiFetch } from "../lib/api";
 
 /**
- * PracticeSpeaking — "Speak with AI", Polyglot-only.
+ * PracticeSpeaking; "Speak with AI", Polyglot-only.
  *
  * Single-turn spoken practice: the AI asks one short question in the
  * target language, the learner answers out loud, Whisper transcribes it

@@ -6,7 +6,7 @@ const MOBILE_SESSION_KEY = "digital-polyglot/mobile-session-token";
 // Keychain, pero SecureStore puede retornar null en cold-start
 // offline (antes de que el dispositivo desbloquee el keychain) y eso
 // dejaba al usuario en AuthScreen sin manera de recuperarse. El token
-// es un JWT con expiración corta — la pérdida de seguridad por
+// es un JWT con expiración corta; la pérdida de seguridad por
 // guardarlo en plain es menor que la pérdida de usabilidad por dejar
 // la app inutilizable offline.
 const TOKEN_BACKUP_PATH = `${FileSystem.documentDirectory ?? ""}digital-polyglot/mobile-session-token.txt`;

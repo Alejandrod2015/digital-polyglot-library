@@ -77,7 +77,7 @@ export default function PlanningClient() {
   const LEVEL_OPTIONS = ["a1", "a2", "b1", "b2", "c1", "c2"];
 
   function LevelBadge({ topic }: { topic: Topic }) {
-    const lvl = topic.defaultLevel?.toUpperCase() ?? "—";
+    const lvl = topic.defaultLevel?.toUpperCase() ?? "-";
     const isEditing = levelEditId === topic.id;
 
     if (isEditing) {
@@ -198,7 +198,7 @@ export default function PlanningClient() {
         </div>
       </div>
 
-      {/* ══ TEMAS — universal ══ */}
+      {/* ══ TEMAS; universal ══ */}
       <div style={card}>
         <p style={sectionLabel}>Temas universales</p>
         <p style={{ margin: 0, fontSize: 11, color: "var(--muted)" }}>Disponibles en todos los journeys</p>
@@ -226,7 +226,7 @@ export default function PlanningClient() {
         </div>
       </div>
 
-      {/* ══ TEMAS — specialized per journey type ══ */}
+      {/* ══ TEMAS; specialized per journey type ══ */}
       <div style={card}>
         <p style={sectionLabel}>Temas especializados</p>
         <p style={{ margin: 0, fontSize: 11, color: "var(--muted)" }}>Asignados a journeys específicos</p>

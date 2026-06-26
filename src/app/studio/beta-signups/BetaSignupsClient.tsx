@@ -408,7 +408,7 @@ export default function BetaSignupsClient() {
                 )}
               </div>
 
-              {/* Application reason — single-line collapsed with details */}
+              {/* Application reason; single-line collapsed with details */}
               {r.applicationReason && (
                 <details style={{ marginTop: 6, fontSize: 12 }}>
                   <summary style={{ cursor: "pointer", color: "var(--muted)", listStyle: "none" }}>
@@ -425,7 +425,7 @@ export default function BetaSignupsClient() {
                 </details>
               )}
 
-              {/* Legacy current apps field — collapsed details */}
+              {/* Legacy current apps field; collapsed details */}
               {r.currentApps && (
                 <details style={{ marginTop: 4, fontSize: 12 }}>
                   <summary style={{ cursor: "pointer", color: "var(--muted)", listStyle: "none" }}>
@@ -438,7 +438,7 @@ export default function BetaSignupsClient() {
                 </details>
               )}
 
-              {/* Admin notes — inline single line, click to edit */}
+              {/* Admin notes; inline single line, click to edit */}
               <div style={{ marginTop: 6, fontSize: 12 }}>
                 {editingNotesId === r.id ? (
                   <div style={{ display: "flex", gap: 6 }}>

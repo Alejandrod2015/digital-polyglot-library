@@ -164,9 +164,9 @@ export default function AudioEditorClient() {
     );
   }, [stories, filter]);
 
-  // Group the picker by the actual journey — LANGUAGE + journey name
+  // Group the picker by the actual journey; LANGUAGE + journey name
   // ("Español · Traveler", "Italiano · Traveler", "Alemán ·
-  // Conversational") — so each journey is its own short list instead of
+  // Conversational"); so each journey is its own short list instead of
   // 49 stories of every language piled under one "Traveler" type.
   // Within a journey, stories follow their reading order (level → slot),
   // not alphabetical, so the operator works top-to-bottom like the
@@ -436,8 +436,8 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
   // without re-binding on every render.
   const [activeRangeKey, setActiveRangeKey] = useState<string | null>(null);
   // Dedicated player for SECTION files (the ground-truth standalone takes).
-  // When a block has its own audio file we play THAT — exact, no bleed,
-  // starts at the beginning — instead of seeking inside the master.
+  // When a block has its own audio file we play THAT; exact, no bleed,
+  // starts at the beginning; instead of seeking inside the master.
   const sectionAudioRef = useRef<HTMLAudioElement | null>(null);
   const [sectionPlayingKey, setSectionPlayingKey] = useState<string | null>(null);
   const playSection = (key: string, url: string) => {
@@ -531,7 +531,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
   }, [activeRangeKey]);
 
   // Route the R2 audio through a same-origin proxy. WaveSurfer fetches the
-  // file to decode it for the waveform, and that fetch is CORS-gated — the
+  // file to decode it for the waveform, and that fetch is CORS-gated; the
   // R2 bucket's allowlist does not include the canonical `www.` host the
   // Studio runs on, so a direct fetch silently fails (empty waveform, 0:00).
   // The proxy resolves the URL from the DB by id (no SSRF) and streams it
@@ -568,7 +568,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     [],
   );
   // Hidden file input driving the manual fragment upload. `uploadTarget`
-  // holds the [startSec, endSec] span the next picked file replaces — set
+  // holds the [startSec, endSec] span the next picked file replaces; set
   // by either the selection bar or a per-block upload button right before
   // opening the picker.
   const fragmentInputRef = useRef<HTMLInputElement | null>(null);
@@ -582,7 +582,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     setTitlePromotePending(false);
   }, [detail.id, detail.title]);
 
-  // Operator note ("re-grabar bloque 3", "subir título") — a manual
+  // Operator note ("re-grabar bloque 3", "subir título"); a manual
   // reminder persisted on the story. Synced from detail; saved on demand.
   const [noteDraft, setNoteDraft] = useState(detail.audioEditorNote ?? "");
   const [savingNote, setSavingNote] = useState(false);
@@ -651,7 +651,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     waveRef.current = ws;
 
     // Regions plugin: drag on the waveform to mark a noise span to cut.
-    // Only one region lives at a time — creating a new one replaces it.
+    // Only one region lives at a time; creating a new one replaces it.
     const regions = ws.registerPlugin(RegionsPlugin.create());
     regionsRef.current = regions;
     regions.enableDragSelection({ color: "rgba(239, 68, 68, 0.25)" });
@@ -689,7 +689,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
       setCurrentTime(t);
       // When playback enters a constrained range, auto-pause exactly at
       // `stopAt`. We keep activeRangeKey so the row's icon stays in
-      // "play to resume" state — user can click again to replay from
+      // "play to resume" state; user can click again to replay from
       // start (handled in playRangeToggle).
       if (stopAtRef.current !== null && t >= stopAtRef.current) {
         ws.pause();
@@ -780,7 +780,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
    */
   // Schedule an exact pause at `safeStop` based on wall-clock time from
   // the current position (playbackRate is 1 here). This is what actually
-  // prevents the next-segment bleed — `timeupdate` alone is too coarse.
+  // prevents the next-segment bleed; `timeupdate` alone is too coarse.
   const scheduleStop = (ws: WaveSurfer, safeStop: number) => {
     clearStopTimer();
     const remainingMs = Math.max(0, (safeStop - ws.getCurrentTime()) * 1000);
@@ -845,7 +845,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
   /**
    * Re-synthesize a tramo with its ElevenLabs voice (same voice + text,
    * a fresh take) and splice it in as a preview. Costs ElevenLabs credits
-   * — always behind an explicit confirm so it's never accidental.
+   *; always behind an explicit confirm so it's never accidental.
    */
   const regenerate = async (
     startSec: number,
@@ -871,7 +871,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     if (!ok) return;
 
     const sectionMode = fragmentIndex !== null;
-    // Section mode: update IN PLACE — the screen stays put, the section's
+    // Section mode: update IN PLACE; the screen stays put, the section's
     // row shows progress, and we keep the previous take for revert.
     if (sectionMode) {
       setBusyFragment({ index: fragmentIndex, action: "regen" });
@@ -967,7 +967,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
       const res = await fetch("/api/studio/audio-editor/upload", { method: "POST", body: fd });
       const json = await res.json();
       if (!res.ok) {
-        throw new Error(json?.details ? `${json.error} — ${json.details}` : json?.error || `HTTP ${res.status}`);
+        throw new Error(json?.details ? `${json.error}; ${json.details}` : json?.error || `HTTP ${res.status}`);
       }
       if (sectionMode) {
         // In-place: update the section's url, keep the screen put.
@@ -1137,7 +1137,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
   const playTitle = () => {
     if (detail.titleEndSec === null) return;
     // detail.titleEndSec = startSec of the first body word. We don't
-    // know exactly when the title's last spoken syllable ends — there's
+    // know exactly when the title's last spoken syllable ends; there's
     // silence between title and body. Park the stop at titleEndSec - 0.1
     // so we capture the title fully without bleeding into "Es" (etc).
     const stop = Math.max(0.5, detail.titleEndSec - 0.1);
@@ -1349,7 +1349,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
             type="button"
             disabled={!isReady}
             onClick={() => {
-              // Transport play/pause is "free" mode — clear any active
+              // Transport play/pause is "free" mode; clear any active
               // constrained range so playback continues past the previous
               // block's stopAt.
               stopAtRef.current = null;
@@ -1525,7 +1525,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
           >
             Limpiar
           </button>
-          {/* Manual fragment upload — splices on Modal, so it works on
+          {/* Manual fragment upload; splices on Modal, so it works on
               production. Hidden input driven by the button. */}
           <input
             ref={fragmentInputRef}
@@ -1631,7 +1631,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
             justifyContent: "space-between",
           }}
         >
-          <span>BLOQUES DEL AUDIO — ⬆ sube un MP3 para reemplazar ese bloque; o click en palabras para un tramo</span>
+          <span>BLOQUES DEL AUDIO; ⬆ sube un MP3 para reemplazar ese bloque; o click en palabras para un tramo</span>
           <span style={{ fontWeight: 400 }}>
             título + {detail.blocks.length} bloque{detail.blocks.length !== 1 ? "s" : ""}
           </span>
@@ -1766,7 +1766,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
                   title={
                     detail.titleEndSec === null ? "No disponible (sin timing de título)"
                       : !detail.narratorVoiceId ? "Sin voz de narrador"
-                        : titleAtLimit ? `Límite de ${detail.regenLimit} regeneraciones alcanzado — usa “Subir fragmento”`
+                        : titleAtLimit ? `Límite de ${detail.regenLimit} regeneraciones alcanzado; usa “Subir fragmento”`
                           : anyBusy ? "Ocupado…"
                             : `Regenerar el título con ElevenLabs (gasta créditos) · ${titleUsed}/${detail.regenLimit}`
                   }
@@ -1836,7 +1836,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
             // word timings for stories without captured fragments.
             const blockStart = block.startSec ?? firstTimed?.startSec ?? null;
             const blockEnd = block.endSec ?? lastTimed?.endSec ?? null;
-            // Next block's start — exact offset preferred, else its first
+            // Next block's start; exact offset preferred, else its first
             // timed word. Used as the ceiling so playback doesn't bleed
             // into the next speaker.
             let nextStart: number | null = null;
@@ -1988,7 +1988,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
                           icon="regen"
                           title={
                             !block.voiceId ? "Sin voz asignada"
-                              : blockAtLimit ? `Límite de ${block.regenLimit} regeneraciones alcanzado — usa “Subir fragmento”`
+                              : blockAtLimit ? `Límite de ${block.regenLimit} regeneraciones alcanzado; usa “Subir fragmento”`
                                 : anyBusy ? "Ocupado…"
                                   : `Regenerar el bloque de ${block.speakerLabel} con ElevenLabs (gasta créditos) · ${blockUsed}/${block.regenLimit}`
                           }
@@ -2210,7 +2210,7 @@ function btnStyle(
   };
 }
 
-/** Inline SVG icons — flat, monochrome, no emojis. Each renders at 12px
+/** Inline SVG icons; flat, monochrome, no emojis. Each renders at 12px
  *  by default; pass `size` to override. */
 function PlayIcon({ size = 11 }: { size?: number }) {
   return (
@@ -2495,7 +2495,7 @@ function IconButton(props: {
 }
 
 /** Shows the voice name + ElevenLabs ID for a block, with a one-click
- *  copy of the ID — so the operator knows which voice to generate in
+ *  copy of the ID; so the operator knows which voice to generate in
  *  ElevenLabs before uploading a replacement. */
 function VoiceTag({ name, id }: { name: string | null; id: string | null }) {
   const [copied, setCopied] = useState(false);

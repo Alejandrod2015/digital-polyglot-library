@@ -7,7 +7,7 @@
 // Airtight rule: if the body has 2+ speakers, EVERY speaker must have a voice
 // in the dialogueSpec AND there must be ≥2 distinct voices. A spec that misses
 // a character (stale after a text edit) or maps everyone to one voice is
-// rejected — exactly the cases that otherwise leak a fallback/single voice.
+// rejected; exactly the cases that otherwise leak a fallback/single voice.
 import { parseDialogueSegments } from "@/lib/elevenlabs";
 
 /** Distinct speakers in a story body (narrator counts as one). Empty → 0. */

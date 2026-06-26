@@ -1101,7 +1101,7 @@ export default function MonitorClient() {
                                 : h.estimatedLevel === "B1" ? "jm-chip--amber"
                                 : "jm-chip--purple";
                               return (
-                                <span key={i} className={`jm-audit__highlight ${lvlClass}`} title={`${h.word} — estimado ${h.estimatedLevel}`}>
+                                <span key={i} className={`jm-audit__highlight ${lvlClass}`} title={`${h.word}; estimado ${h.estimatedLevel}`}>
                                   <span className="jm-audit__lvl">{h.estimatedLevel}</span>
                                   <strong>{h.surface}</strong>
                                   {h.surface.toLowerCase() !== h.word.toLowerCase() && (
@@ -1115,7 +1115,7 @@ export default function MonitorClient() {
                       )}
                       {replacements.length > 0 && (
                         <div style={{ display: "flex", flexDirection: "column", gap: 3, paddingTop: 4 }}>
-                          <span className="jm-tool-row__label">Último ajuste — {replacements.length} reemplazo{replacements.length === 1 ? "" : "s"}</span>
+                          <span className="jm-tool-row__label">Último ajuste; {replacements.length} reemplazo{replacements.length === 1 ? "" : "s"}</span>
                           <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                             {replacements.map((r, i) => (
                               <div key={i} className="jm-rep">
@@ -1141,7 +1141,7 @@ export default function MonitorClient() {
               <div className="jm-vocab-list">
                 {storyDetail.vocab.map((v: any, i: number) => (
                   <span key={i} className="jm-vocab">
-                    <strong>{v.word}</strong>{v.translation && <span className="jm-dim"> — {v.translation}</span>}
+                    <strong>{v.word}</strong>{v.translation && <span className="jm-dim">; {v.translation}</span>}
                   </span>
                 ))}
               </div>
@@ -1700,7 +1700,7 @@ export default function MonitorClient() {
                           );
                         })}
 
-                        {/* Agregar tema — paridad con "Agregar nivel". Abre
+                        {/* Agregar tema; paridad con "Agregar nivel". Abre
                             picker inline con los topics disponibles del
                             journey type para este nivel, filtrando los
                             que ya estén. */}

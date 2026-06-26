@@ -13,7 +13,7 @@ type Props = {
 
 /**
  * Wraps any view with a soft pulsing amber ring to flag "this is the next
- * logical action" — the story or topic the user is expected to tap next.
+ * logical action"; the story or topic the user is expected to tap next.
  *
  * The animation runs as long as `active` is true and uses the native driver
  * (opacity only) so it stays smooth even on slower devices. Two concentric

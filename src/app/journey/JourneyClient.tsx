@@ -41,7 +41,7 @@ type JourneyClientProps = {
   dueReviewItems: JourneyDueReviewItem[];
 };
 
-// Same order as the iPhone TOPIC_PANEL_PALETTE — cycle across the whole
+// Same order as the iPhone TOPIC_PANEL_PALETTE; cycle across the whole
 // flat list of topics (NOT per level) so colours don't reset at A2.
 const TOPIC_PALETTE = [
   "#1f7ee0", // blue
@@ -325,7 +325,7 @@ export default function JourneyClient({
   // Single GLOBAL "next" recommendation across the entire journey: the
   // first not-yet-complete story in the first incomplete topic of the
   // lowest unlocked level. Only this ONE story gets the pulsing halo +
-  // float + button effects — same behavior as iPhone
+  // float + button effects; same behavior as iPhone
   // (`globalJourneyNextStoryId` in MobileLibraryShell). Previously we
   // had one "next" per topic, which lit up the first story of every
   // topic and broke the "this is where to tap" cue.
@@ -364,7 +364,7 @@ export default function JourneyClient({
     levels.forEach((level, levelIndex) => {
       const isLevelUnlocked = levelIndex < unlockedLevelCount;
       for (const topic of level.topics) {
-        // Skip empty topics inside unlocked levels — they only add noise
+        // Skip empty topics inside unlocked levels; they only add noise
         // (banner with no rows). Locked levels keep their empty topics so
         // the user sees the upcoming map of what's gated.
         if (isLevelUnlocked && topic.stories.length === 0) continue;
@@ -383,7 +383,7 @@ export default function JourneyClient({
             state = "next";
           } else {
             // Inside an unlocked level the user can dive into any story
-            // they want — only the level gate stops them.
+            // they want; only the level gate stops them.
             state = "available";
           }
           return {

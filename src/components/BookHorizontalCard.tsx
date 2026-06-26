@@ -49,7 +49,7 @@ type BookHorizontalCardProps = {
  *   - grid 122px 1fr, gap 20px, align-items center, min-height 222px
  *   - cover: aspect 2/3, radius 10px, heavy box-shadow
  *   - title 18px / 900 / -0.015em
- *   - stats inline "20 stories · ~65 min · 7/20 done" — strongs are foreground 900,
+ *   - stats inline "20 stories · ~65 min · 7/20 done"; strongs are foreground 900,
  *     labels are muted
  *   - footer slot for "Start book" + "+ Library" CTAs (rendered by caller)
  */

@@ -18,7 +18,7 @@ import { Feather } from "@expo/vector-icons";
  *     para que el usuario decida con información, no por accidente.
  *
  * Headers reactivos al SCORE (no solo a la cantidad de ejercicios). Si
- * todos los intentos fueron timeout/wrong, "Nice work" es falso —
+ * todos los intentos fueron timeout/wrong, "Nice work" es falso -
  * mostramos un copy honesto que invite a no rendirse.
  */
 
@@ -34,7 +34,7 @@ export type PracticeExitSheetProps = {
   exercisesCorrect: number;
   /**
    * "Continue practicing": cierra el sheet y reanuda la sesión donde
-   * estaba. PRIMARY action — el sheet empuja al usuario a quedarse.
+   * estaba. PRIMARY action; el sheet empuja al usuario a quedarse.
    */
   onContinuePracticing: () => void;
   /**

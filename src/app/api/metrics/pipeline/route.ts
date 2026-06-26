@@ -305,7 +305,7 @@ async function fetchPipelineMetrics(): Promise<PipelineResponse> {
 
     qaQuality = { scoreTrend, recentReviews: recentReviewsFormatted, passRateTrend };
   } catch {
-    // Non-critical — qaQuality will be undefined
+    // Non-critical; qaQuality will be undefined
   }
 
   // ─── Agent Performance ──────────────────────────────────────

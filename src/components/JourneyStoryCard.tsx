@@ -26,7 +26,7 @@ type Props = {
 };
 
 /**
- * STORY NODE CARD — wide rounded card with thumbnail · title · check circle.
+ * STORY NODE CARD; wide rounded card with thumbnail · title · check circle.
  *
  * iPhone reference: the zigzag story rows. Match four visual states:
  *   - done:      cyan-filled check circle

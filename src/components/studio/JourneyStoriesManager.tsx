@@ -62,7 +62,7 @@ const btnGhost: React.CSSProperties = {
 
 // Horizontal pill row used for the Language + Journey filters. Each
 // option shows its result count under the current set of OTHER filters
-// — that's what lets a user decide "Italian narrows me from 110 → 28
+//; that's what lets a user decide "Italian narrows me from 110 → 28
 // without typing anything else." A pill with count=0 dims but stays
 // clickable so the user can still select it (and see the empty state).
 function PillRow({
@@ -167,7 +167,7 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
   const [level, setLevel] = useState("all");
   const [topic, setTopic] = useState("all");
   const [status, setStatus] = useState("all");
-  // "Solo sin cover" toggle — surfaces stories that still need a cover
+  // "Solo sin cover" toggle; surfaces stories that still need a cover
   // image so Jazlin (designer) can work through the list without
   // hunting visually for missing thumbnails. As covers get added the
   // rows disappear from this view, giving natural progress signal.
@@ -188,7 +188,7 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
 
   // Match logic factored so the per-pill counts can re-use it. Each
   // pill shows "N matches if you picked this option, holding the OTHER
-  // filters constant" — that's how users decide whether to click in.
+  // filters constant"; that's how users decide whether to click in.
   function matchesQuery(s: StudioJourneyStory, q: string): boolean {
     if (!q) return true;
     return (
@@ -284,7 +284,7 @@ export default function JourneyStoriesManager({ initialStories, initialGaps }: P
         return (a.title || "").localeCompare(b.title || "");
       });
     }
-    // Sort group entries by total count desc, then alpha — same
+    // Sort group entries by total count desc, then alpha; same
     // ordering as the Journey dropdown.
     return [...groups.entries()].sort((a, b) => {
       if (b[1].length !== a[1].length) return b[1].length - a[1].length;
@@ -728,7 +728,7 @@ function StoriesTable({
                           <span style={{ fontSize: 14, fontWeight: 700, color: "var(--foreground)" }}>{groupKey}</span>
                           <Badge color="#a78bfa">{rows.length} historias</Badge>
                           <Badge color="#10b981">{published} publicadas</Badge>
-                          <span style={{ fontSize: 12, color: "var(--muted)" }}>Niveles: {levels.join(" · ") || "—"}</span>
+                          <span style={{ fontSize: 12, color: "var(--muted)" }}>Niveles: {levels.join(" · ") || "-"}</span>
                         </div>
                       </th>
                     </tr>
@@ -780,15 +780,15 @@ function renderStoryRow(story: StudioJourneyStory, hideFocusColumn: boolean) {
       </td>
       <td style={{ padding: "10px 14px" }}><Badge color="#3b82f6">{story.cefrLevel.toUpperCase()}</Badge></td>
       <td style={{ padding: "10px 14px" }}>
-        <div style={{ fontSize: 13, color: "var(--foreground)" }}>{story.journeyTopic || story.topic || "—"}</div>
-        <div style={{ fontSize: 12, color: "var(--muted)" }}>Orden {story.journeyOrder ?? "—"}</div>
+        <div style={{ fontSize: 13, color: "var(--foreground)" }}>{story.journeyTopic || story.topic || "-"}</div>
+        <div style={{ fontSize: 12, color: "var(--muted)" }}>Orden {story.journeyOrder ?? "-"}</div>
       </td>
       {!hideFocusColumn ? (
         <td style={{ padding: "10px 14px", fontSize: 13, color: "var(--muted)" }}>{story.journeyFocus}</td>
       ) : null}
       <td style={{ padding: "10px 14px" }}><Badge color={stColor}>{st}</Badge></td>
       <td style={{ padding: "10px 14px", fontSize: 13, color: "var(--muted)" }}>
-        {story.updatedAt ? new Date(story.updatedAt).toLocaleDateString() : "—"}
+        {story.updatedAt ? new Date(story.updatedAt).toLocaleDateString() : "-"}
       </td>
       <td style={{ padding: "10px 14px" }}>
         <div style={{ display: "flex", gap: 4 }}>

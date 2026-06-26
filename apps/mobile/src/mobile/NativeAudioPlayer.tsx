@@ -95,7 +95,7 @@ export function NativeAudioPlayer({
   const [error, setError] = useState<string | null>(null);
   // Estilo Spotify: si el usuario toca play antes de que el audio
   // termine de cargar, recordamos la intención. Cuando el sound queda
-  // cargado, autoreproducimos. Así un solo tap arranca el playback —
+  // cargado, autoreproducimos. Así un solo tap arranca el playback -
   // antes el primer tap se ignoraba con un early return.
   const pendingPlayRef = useRef(false);
   const [pendingPlay, setPendingPlay] = useState(false);
@@ -234,7 +234,7 @@ export function NativeAudioPlayer({
 
         // Aquí (tras el await) el sound ya está cargado y soundRef
         // asignado. Si el usuario tocó play durante la carga, lo
-        // disparamos ahora — ÚNICA manera confiable de no perder el
+        // disparamos ahora; ÚNICA manera confiable de no perder el
         // tap. El check anterior dentro del status callback fallaba
         // porque el callback puede dispararse con `isLoaded: true`
         // ANTES de que await resuelva y soundRef se asigne, y luego
@@ -252,7 +252,7 @@ export function NativeAudioPlayer({
           });
           const message = loadError instanceof Error ? loadError.message : "Unable to load audio.";
           // For local file:// sources we let the parent decide whether to
-          // fall back to a remote URL before surfacing any error text —
+          // fall back to a remote URL before surfacing any error text -
           // seeing "Audio unavailable" flash for 400 ms and then the
           // player recovering is worse UX than a silent swap.
           const isLocalFile = normalizedSrc.startsWith("file://");
@@ -551,7 +551,7 @@ export function NativeAudioPlayer({
   );
 }
 
-// Color del check para la opción activa — definido fuera del JSX
+// Color del check para la opción activa; definido fuera del JSX
 // para evitar que el inline string se reevalúe en cada render.
 const tokenCheckColor = "#fcd34d";
 

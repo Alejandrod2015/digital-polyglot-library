@@ -239,7 +239,7 @@ export default function CatalogStoryEditorClient({ bookId, storyId }: Props) {
         }
         const j = (await res.json()) as { story: StudioCatalogStory };
         setForm({ ...j.story, vocabRaw: vocabToRaw(j.story.vocab) });
-        // If the slug changed, the id changed too — update the URL.
+        // If the slug changed, the id changed too; update the URL.
         if (j.story.id !== storyId) {
           router.replace(
             `/studio/catalog-books/${encodeURIComponent(bookId)}/stories/${encodeURIComponent(j.story.id)}`
@@ -351,7 +351,7 @@ export default function CatalogStoryEditorClient({ bookId, storyId }: Props) {
           <div>
             <label style={label}>Idioma (override)</label>
             <select style={input} value={form.language ?? ""} onChange={(e) => patch("language", e.target.value || null)}>
-              <option value="">— hereda del libro</option>
+              <option value="">- hereda del libro</option>
               {LANGUAGES.map((v) => (
                 <option key={v} value={v}>
                   {v}
@@ -362,7 +362,7 @@ export default function CatalogStoryEditorClient({ bookId, storyId }: Props) {
           <div>
             <label style={label}>Nivel (override)</label>
             <select style={input} value={form.level ?? ""} onChange={(e) => patch("level", e.target.value || null)}>
-              <option value="">— hereda</option>
+              <option value="">- hereda</option>
               {LEVELS.map((v) => (
                 <option key={v} value={v}>
                   {v}
@@ -373,7 +373,7 @@ export default function CatalogStoryEditorClient({ bookId, storyId }: Props) {
           <div>
             <label style={label}>CEFR (override)</label>
             <select style={input} value={form.cefrLevel ?? ""} onChange={(e) => patch("cefrLevel", e.target.value || null)}>
-              <option value="">— hereda</option>
+              <option value="">- hereda</option>
               {CEFR.map((v) => (
                 <option key={v} value={v}>
                   {v.toUpperCase()}

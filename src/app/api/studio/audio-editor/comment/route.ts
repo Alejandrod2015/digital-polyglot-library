@@ -8,7 +8,7 @@ import { isStudioMember } from "@/lib/studio-access";
 /**
  * POST /api/studio/audio-editor/comment   { storyId, fragmentIndex, comment }
  *
- * Save (or clear) a per-segment operator comment for the audio editor —
+ * Save (or clear) a per-segment operator comment for the audio editor -
  * a free-form reminder the worker leaves on an individual block/title
  * ("subí manual", "falta regenerar"). Stored in
  * `JourneyStory.audioEditorComments`, keyed by fragment index. Nothing

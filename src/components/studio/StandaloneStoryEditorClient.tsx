@@ -382,7 +382,7 @@ export default function StandaloneStoryEditorClient({ id }: Props) {
           <div>
             <label style={label}>Idioma</label>
             <select style={input} value={form.language ?? ""} onChange={(e) => patch("language", e.target.value || null)}>
-              <option value="">—</option>
+              <option value="">-</option>
               {LANGUAGES.map((v) => (
                 <option key={v} value={v}>
                   {v}
@@ -393,7 +393,7 @@ export default function StandaloneStoryEditorClient({ id }: Props) {
           <div>
             <label style={label}>Variante</label>
             <select style={input} value={form.variant ?? ""} onChange={(e) => patch("variant", e.target.value || null)}>
-              <option value="">—</option>
+              <option value="">-</option>
               {VARIANTS.map((v) => (
                 <option key={v} value={v}>
                   {v}
@@ -411,7 +411,7 @@ export default function StandaloneStoryEditorClient({ id }: Props) {
           <div>
             <label style={label}>Nivel</label>
             <select style={input} value={form.level ?? ""} onChange={(e) => patch("level", e.target.value || null)}>
-              <option value="">—</option>
+              <option value="">-</option>
               {LEVELS.map((v) => (
                 <option key={v} value={v}>
                   {v}
@@ -422,7 +422,7 @@ export default function StandaloneStoryEditorClient({ id }: Props) {
           <div>
             <label style={label}>CEFR</label>
             <select style={input} value={form.cefrLevel ?? ""} onChange={(e) => patch("cefrLevel", e.target.value || null)}>
-              <option value="">—</option>
+              <option value="">-</option>
               {CEFR.map((v) => (
                 <option key={v} value={v}>
                   {v.toUpperCase()}
@@ -433,7 +433,7 @@ export default function StandaloneStoryEditorClient({ id }: Props) {
           <div>
             <label style={label}>Enfoque</label>
             <select style={input} value={form.focus ?? ""} onChange={(e) => patch("focus", e.target.value || null)}>
-              <option value="">—</option>
+              <option value="">-</option>
               {FOCUS.map((v) => (
                 <option key={v} value={v}>
                   {v}
@@ -601,15 +601,15 @@ export default function StandaloneStoryEditorClient({ id }: Props) {
           <FieldRow>
             <div>
               <label style={label}>Audio QA</label>
-              <div style={{ fontSize: 13 }}>{form.audioQaStatus ?? "—"}</div>
+              <div style={{ fontSize: 13 }}>{form.audioQaStatus ?? "-"}</div>
             </div>
             <div>
               <label style={label}>Audio QA score</label>
-              <div style={{ fontSize: 13 }}>{form.audioQaScore ?? "—"}</div>
+              <div style={{ fontSize: 13 }}>{form.audioQaScore ?? "-"}</div>
             </div>
             <div>
               <label style={label}>Audio delivery QA</label>
-              <div style={{ fontSize: 13 }}>{form.audioDeliveryQaStatus ?? "—"}</div>
+              <div style={{ fontSize: 13 }}>{form.audioDeliveryQaStatus ?? "-"}</div>
             </div>
           </FieldRow>
         </div>

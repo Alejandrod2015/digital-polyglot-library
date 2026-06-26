@@ -207,7 +207,7 @@ export default async function StudioProgresoPage() {
       breadcrumbs={[{ label: "Studio", href: "/studio" }, { label: "Progreso" }]}
     >
       <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-        {/* Header band — global progress in one tight row + per-movida bars */}
+        {/* Header band; global progress in one tight row + per-movida bars */}
         <section
           style={{
             background: CARD_BG,

@@ -177,7 +177,7 @@ export async function proposeJourneys(params: {
       )
     );
 
-    if (existingPlan) continue; // Skip — topic already exists for this language
+    if (existingPlan) continue; // Skip; topic already exists for this language
 
     proposals.push({
       language: lang,
