@@ -230,6 +230,24 @@ function getLanguagePool(
   return filtered.length > 0 ? filtered : source;
 }
 
+// Rough Spanish gender/number from the surface form (no gender data on items).
+// Strip a leading article, drop a trailing plural "s", then read the ending:
+// -a → feminine, -o → masculine; other endings are undecidable (null). Used
+// only as a soft preference for distractor agreement, never a hard gate.
+function spanishAgreement(raw: string): { gender: "f" | "m"; plural: boolean } | null {
+  const w = raw
+    .trim()
+    .toLowerCase()
+    .replace(/^(el|la|los|las|un|una|unos|unas)\s+/, "");
+  if (!w || w.includes(" ")) return null;
+  const plural = w.endsWith("s");
+  const stem = plural ? w.slice(0, -1) : w;
+  const last = stem.charAt(stem.length - 1);
+  if (last === "a") return { gender: "f", plural };
+  if (last === "o") return { gender: "m", plural };
+  return null;
+}
+
 function getDistractorWords(
   item: PracticeFavoriteItem,
   pool: PracticeFavoriteItem[],
@@ -317,7 +335,20 @@ function getDistractorWords(
     }
   };
 
-  drainFrom(byLang(sameShapeAndType));
+  // Spanish gender/number agreement (soft, best-effort). A feminine-singular
+  // target ("una ___ nerviosa") should prefer feminine-singular distractors so
+  // the learner can't rule out masculine/plural options ("título", "botas") by
+  // agreement instead of meaning. Falls back to the looser tiers below when the
+  // pool can't fill 4 — so it never starves the exercise. CEFR-band filtering
+  // is intentionally NOT here: items carry no level yet (that's phase 1).
+  const targetAgr = normalizeKey(item.language) === "spanish" ? spanishAgreement(item.word) : null;
+  const agreementMatch = (candidate: PracticeFavoriteItem): boolean => {
+    if (!targetAgr) return false;
+    const a = spanishAgreement(candidate.word);
+    return !!a && a.gender === targetAgr.gender && a.plural === targetAgr.plural;
+  };
+  if (targetAgr) drainFrom(byLang(sameShapeAndType.filter(agreementMatch)));
+  if (picked.length < max) drainFrom(byLang(sameShapeAndType));
   if (picked.length < max) drainFrom(byLang(sameShape));
   if (picked.length < max) drainFrom(byLang(eligible));
   // Last resort: allow other-language candidates only if same-language ones
@@ -362,7 +393,7 @@ function getSentenceWithBlank(
   // antes usábamos `exampleSentence` crudo para items no-standalone,
   // un example multi-oración terminaba blankeando la palabra en (por
   // ej.) la segunda oración y después `shortenSentence` se quedaba
-  // con la primera — el usuario veía la primera oración intacta sin
+  // con la primera; el usuario veía la primera oración intacta sin
   // blank, con la respuesta correcta en un párrafo descartado.
   const sentence = getContextSentence(item);
   const word = normalizeText(item.word);
@@ -384,7 +415,7 @@ function getSentenceWithBlank(
     // Trailing chars must include accented letters / combining marks, NOT
     // just ASCII `\w`. With `\w*` the match stopped at the first accented
     // char, so "levantó" matched only "levant" and the blank rendered as
-    // "_____ó" — leaving the conjugation suffix visible gave the answer
+    // "_____ó"; leaving the conjugation suffix visible gave the answer
     // away (only the past-tense option fit). `[\p{L}\p{M}\d]*` (u flag)
     // swallows the whole inflected surface form across all languages.
     pattern = new RegExp(`\\b${escapeRegExp(stem)}[\\p{L}\\p{M}\\d]*`, "iu");
@@ -433,10 +464,10 @@ export function markTargetWordInSentence(sentence: string, word: string): string
 // `¿` ni `¡` (puntuación inicial significativa en español).
 function stripOrphanLeadingPunctuation(sentence: string): string {
   const cleaned = sentence
-    .replace(/^[\s,;:"'“”«»\-–—]+/, "")
+    .replace(/^[\s,;:"'“”«»\-–-]+/, "")
     .trim();
   if (!cleaned) return sentence;
-  // Capitalizamos la primera letra si quedó en minúsculas — en
+  // Capitalizamos la primera letra si quedó en minúsculas; en
   // alemán las oraciones empiezan en mayúscula y, tras strippear el
   // diálogo, el verbo ("sagte", "rief") queda al inicio.
   const first = cleaned.charAt(0);
@@ -483,7 +514,12 @@ function shortenSentence(sentence: string, anchor?: string): string {
     .filter(Boolean);
   const firstSentence = pickRelevant(splitOnStrongPunctuation, normalized);
 
-  if (firstSentence.length <= 140) return firstSentence;
+  // For a cloze (anchor present) we DON'T short-circuit on the full sentence:
+  // the lead-in clauses (names, setting) add length without helping the gap
+  // ("Sofía, una joven de la Ciudad de México, cuelga ... con una ___ nerviosa"
+  // → keep only "cuelga ... con una ___ nerviosa"). Narrow to the clause that
+  // holds the blank below. Non-cloze keeps the prior behaviour.
+  if (!anchor && firstSentence.length <= 140) return firstSentence;
 
   const splitOnComma = firstSentence
     .split(/,\s+/)
@@ -532,6 +568,18 @@ function buildAudioClip(item: PracticeFavoriteItem, sentence: string): PracticeA
   };
 }
 
+// Make a distractor's first-letter case match the correct answer's, so a
+// mid-sentence blank never reads "Parcial / Botas" beside "sonrisa" (a tell,
+// and visually broken). Keying off the answer keeps it language-safe: German
+// answers are capitalized nouns → distractors stay capitalized; Spanish answers
+// are lowercase → distractors get lowercased.
+function matchFirstCharCase(word: string, lower: boolean): string {
+  if (!word) return word;
+  const first = word.charAt(0);
+  const adjusted = lower ? first.toLocaleLowerCase() : first.toLocaleUpperCase();
+  return adjusted + word.slice(1);
+}
+
 function createFillBlankExercise(
   item: PracticeFavoriteItem,
   pool: PracticeFavoriteItem[]
@@ -555,7 +603,11 @@ function createFillBlankExercise(
   // the gap-fill answer didn't match the grammatical context the
   // learner was reading, so the option set felt nonsensical.
   const answerForm = blanked.matchedForm;
-  const options = shuffle([answerForm, ...getDistractorWords(item, getLanguagePool(item.language, pool))]);
+  const answerStartsLower = answerForm.charAt(0) === answerForm.charAt(0).toLocaleLowerCase();
+  const distractors = getDistractorWords(item, getLanguagePool(item.language, pool)).map((d) =>
+    matchFirstCharCase(d, answerStartsLower)
+  );
+  const options = shuffle([answerForm, ...distractors]);
   if (options.length < 4) return null;
   return {
     id: `fill_blank:${normalizeKey(item.word)}`,
@@ -745,7 +797,7 @@ export function buildPracticeSession(
   // Para los modos basados en frase (context/meaning) también
   // deduplicamos por oración subyacente. Si el usuario guardó varias
   // palabras de la misma frase, cada item arma un ejercicio distinto pero
-  // sobre la misma oración — solo cambiaba la palabra con el blank y el
+  // sobre la misma oración; solo cambiaba la palabra con el blank y el
   // bug reportado era ver "la misma oración varias veces y solo cambia
   // la palabra". El id del ejercicio se basa en la palabra, así que el
   // dedup por id no atrapaba esto.

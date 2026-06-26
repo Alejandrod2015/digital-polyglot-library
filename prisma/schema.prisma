@@ -400,6 +400,17 @@ model StoryPracticeExercise {
   /// tab query the pool by language without 3-table joins. Nullable for
   /// resilience; backfilled at migration time.
   language   String?
+  /// CEFR band of this item (a0..c2), from the source story level. Drives
+  /// distractor-band filtering and validation. Phase-1 scaffolding; backfilled.
+  cefr       String?
+  /// Exact text rendered to audio (for cloze, the full correct sentence, no
+  /// speaker label). Enables deterministic, content-addressed re-render.
+  audioText  String?
+  /// Voice used for the audio (character voice from the story's cast).
+  audioVoiceId String?
+  /// Provenance of the distractors: "authored" (curated) | "pool" (generated).
+  /// Lets us audit which sets still rely on the legacy sampler.
+  distractorSource String?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 
@@ -464,7 +475,7 @@ model Favorite {
 // User-defined favorite collections. Same shape as the mobile-side
 // `FavoriteCollection` (apps/mobile/src/mobile/collections.ts) so iPhone
 // can sync via this table in a future migration. Each `wordKeys` entry
-// is `${language}::${word}` lowercased — matches `collectionWordKey()`.
+// is `${language}::${word}` lowercased; matches `collectionWordKey()`.
 model FavoriteCollection {
   id        String   @id @default(cuid())
   userId    String
@@ -521,7 +532,7 @@ model LibraryStory {
 // Word-level audio alignments for stories that live in the static
 // catalog (`src/data/books/*.ts`), generated via Modal/aeneas (the same
 // pipeline that powers `JourneyStory.audioWordTimings`). Stored by slug
-// because the catalog is TS-static — there is no parent table to
+// because the catalog is TS-static; there is no parent table to
 // extend. Populated by `scripts/generateCatalogAudioTimings.ts`; served
 // by `/api/mobile/audio-word-timings` when the journey lookup misses.
 model CatalogStoryAudioTimings {
@@ -709,7 +720,7 @@ model NotificationTypeConfig {
   hourDefault           Int?
   // Whether the toggle starts ON for a user who never touched it.
   localEnabledByDefault Boolean  @default(true)
-  // local | remote | both — where this type can be delivered.
+  // local | remote | both; where this type can be delivered.
   channel               String   @default("local")
   // Soft on/off for the whole type (hides the toggle in the app).
   active                Boolean  @default(true)
