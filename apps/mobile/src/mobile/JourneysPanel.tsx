@@ -33,14 +33,44 @@ export type JourneysPanelTrack = {
   label: string;
   /** Friendly level label (e.g. "Beginner") shown to disambiguate tracks
    *  that share a name. By design journeys are single-level, so several
-   *  "Traveler" records differ only by their level — without this they all
+   *  "Traveler" records differ only by their level; without this they all
    *  render identically. Null when the level can't be resolved. */
   levelLabel?: string | null;
+  /** CEFR level code of the track's (single) level, e.g. "a0". Drives the
+   *  level meter so the card art reflects how advanced the journey is. */
+  levelCode?: string | null;
   /** Studio Journey.variant ("latam", "spain", …). The track list is fetched
    *  by language only, so this is used to filter to the variant the user
    *  picked (a Spain pick must not show LATAM journeys). */
   variant?: string | null;
 };
+
+// Level meter shown on each journey card instead of a generic map icon.
+// The cards differ only by level, so ascending bars (filled by how advanced
+// the level is) read at a glance and stop the three cards looking identical.
+const CEFR_ORDER = ["a0", "a1", "a2", "b1", "b2", "c1", "c2"];
+function levelMeterFilled(code?: string | null): number {
+  const idx = CEFR_ORDER.indexOf((code ?? "").trim().toLowerCase());
+  if (idx < 0) return 1;
+  return Math.min(idx + 1, 3);
+}
+function LevelMeter({ filled, active }: { filled: number; active: boolean }) {
+  const onColor = active ? tokenBg[1] : tokenColor.cyan;
+  const offColor = active ? "rgba(14,23,39,0.28)" : "rgba(125,211,252,0.25)";
+  return (
+    <View style={styles.levelMeter}>
+      {[0, 1, 2].map((i) => (
+        <View
+          key={i}
+          style={[
+            styles.levelMeterBar,
+            { height: 7 + i * 6, backgroundColor: i < filled ? onColor : offColor },
+          ]}
+        />
+      ))}
+    </View>
+  );
+}
 
 /** Default focus assigned when the user creates a journey from this
  *  panel. The journey is uniquely identified by (language, track.id),
@@ -53,21 +83,21 @@ const DEFAULT_NEW_JOURNEY_FOCUS: JourneyFocus = "General";
  * of the sheet pattern but covers the whole viewport) and houses three
  * states:
  *
- *   1. List — every journey rendered as a card; tapping makes one
+ *   1. List; every journey rendered as a card; tapping makes one
  *      active and closes. The active journey is pinned on top.
- *   2. Pick language (sub-state of "create") — 9-language grid, with
+ *   2. Pick language (sub-state of "create"); 9-language grid, with
  *      English split into US / UK rows. Combinations that already
  *      exist for the chosen focus are disabled and labeled.
- *   3. Pick focus (sub-state of "create") — 4 cards (Travelers,
+ *   3. Pick focus (sub-state of "create"); 4 cards (Travelers,
  *      Business, Culture, Everyday), then a `Start journey` CTA.
  *
- * Empty case: when the user has 0 journeys (rare — typically only
+ * Empty case: when the user has 0 journeys (rare; typically only
  * post-onboarding before the first commit) we skip the list and land
  * straight on the create flow with welcome copy.
  */
 
 type LanguageOption = {
-  /** Used as map key for selection state — for English this carries
+  /** Used as map key for selection state; for English this carries
    *  the variant: "English|us" / "English|uk". */
   key: string;
   /** Canonical name persisted to journey.language. */
@@ -80,7 +110,7 @@ type LanguageOption = {
 };
 
 const LANGUAGE_OPTIONS: LanguageOption[] = [
-  // Spanish: two entries — Spain flag (ES) and Colombia flag (LATAM).
+  // Spanish: two entries; Spain flag (ES) and Colombia flag (LATAM).
   // Mexico's flag was visually indistinguishable from Italy, so we
   // use Colombia (yellow-blue-red 2:1:1) as the LATAM signal.
   { key: "Spanish|es", name: "Spanish", variant: "es", variantLabel: "SPAIN" },
@@ -88,7 +118,7 @@ const LANGUAGE_OPTIONS: LanguageOption[] = [
   { key: "French", name: "French", variant: null, variantLabel: null },
   { key: "German", name: "German", variant: null, variantLabel: null },
   { key: "Italian", name: "Italian", variant: null, variantLabel: null },
-  // Two Portuguese rows — different flags + variant codes "br"/"pt"
+  // Two Portuguese rows; different flags + variant codes "br"/"pt"
   // so the LanguageFlag picks the right rendering and the journey
   // is keyed correctly (a Portugal-Travelers journey is distinct
   // from a Brazil-Travelers journey).
@@ -110,7 +140,7 @@ type Props = {
   /** Mock or real per-journey-language stats. The panel doesn't
    *  compute them; the shell hands them in keyed by language. */
   statsByLanguage: Record<string, { streak: number; xpTotal: number; progress: number }>;
-  /** Languages flagged as Próximamente in Studio Planning — they show up but
+  /** Languages flagged as Próximamente in Studio Planning; they show up but
    *  can't be picked yet. Hydrated by the shell from /api/mobile/languages. */
   comingSoonLanguages?: ReadonlySet<string>;
   /** Variants with no journeys yet, keyed `${language}:${regionFamily}`. Lets
@@ -140,7 +170,7 @@ type Props = {
   /** Fetch the Studio Journey tracks for a language. Used to populate
    *  Step 2 of the create flow with real journeys instead of the old
    *  4 hardcoded focus categories. The shell typically wraps the
-   *  /api/mobile/journey endpoint. Should never throw — return an
+   *  /api/mobile/journey endpoint. Should never throw; return an
    *  empty array on failure. */
   getTracksForLanguage: (language: string) => Promise<JourneysPanelTrack[]>;
   /** Synchronous cache hit for `getTracksForLanguage`. Returns the
@@ -183,7 +213,7 @@ export function JourneysPanel({
   const [submitting, setSubmitting] = useState(false);
 
   // When the panel opens with zero journeys, drop the user straight
-  // into the create flow — the list view would be empty otherwise.
+  // into the create flow; the list view would be empty otherwise.
   useEffect(() => {
     if (open) {
       if (journeys.length === 0) {
@@ -202,7 +232,7 @@ export function JourneysPanel({
   // opens, so by the time the user picks one in Step 1 the Step 2
   // cards render instantly. The shell's `getTracksForLanguage` reads
   // through an in-memory + disk cache, so duplicate calls are cheap.
-  // We fire all requests in parallel and ignore the result here — only
+  // We fire all requests in parallel and ignore the result here; only
   // the cache side-effect matters.
   const prefetchedRef = useRef(false);
   useEffect(() => {
@@ -278,7 +308,7 @@ export function JourneysPanel({
       setAvailableTracks([]);
       setTracksLoading(false);
     } else if (mode === "pick-language") {
-      // If there are no journeys yet, "back" closes — there's nowhere
+      // If there are no journeys yet, "back" closes; there's nowhere
       // to go in the list view.
       if (journeys.length === 0) handleClose();
       else setMode("list");
@@ -292,7 +322,7 @@ export function JourneysPanel({
     setPickedTrackId(null);
     // Sync cache hit: if the shell already has the tracks (typically
     // because the open-time prefetch already populated the cache),
-    // render them in this same render — no spinner.
+    // render them in this same render; no spinner.
     const cachedSync = getTracksForLanguageSync?.(option.name) ?? null;
     if (cachedSync !== null && cachedSync.length > 0) {
       setAvailableTracks(cachedSync);
@@ -338,7 +368,7 @@ export function JourneysPanel({
   }
 
   function handleDeletePress(journey: Journey) {
-    // Block the destructive path on the last journey — leaving the
+    // Block the destructive path on the last journey; leaving the
     // user with zero journeys would push them straight back into the
     // create flow with no obvious way out, and the activeJourneyId
     // bookkeeping would have nothing to point at.
@@ -511,7 +541,7 @@ export function JourneysPanel({
                         </Text>
                       </View>
                     </View>
-                    {/* Trash button — subtle in normal state, lights
+                    {/* Trash button; subtle in normal state, lights
                         up red on press. Tapping fires an Alert
                         confirm before any state mutation runs. The
                         button uses hitSlop so the small icon target
@@ -567,7 +597,7 @@ export function JourneysPanel({
                 <Text style={styles.welcomeTitle}>Pick your first language</Text>
                 <Text style={styles.welcomeBody}>
                   This is the first journey on your account. You can add more
-                  later — one per (language · focus) combination.
+                  later; one per (language · focus) combination.
                 </Text>
               </View>
             ) : null}
@@ -685,10 +715,9 @@ export function JourneysPanel({
                       ]}
                     >
                       <View style={styles.focusIconBox}>
-                        <Feather
-                          name="map"
-                          size={20}
-                          color={selected ? tokenBg[1] : tokenColor.cyan}
+                        <LevelMeter
+                          filled={levelMeterFilled(track.levelCode)}
+                          active={selected}
                         />
                       </View>
                       <View style={{ flex: 1 }}>
@@ -1041,6 +1070,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "rgba(125, 211, 252, 0.14)",
+  },
+  levelMeter: {
+    flexDirection: "row",
+    alignItems: "flex-end",
+    gap: 3,
+    height: 19,
+  },
+  levelMeterBar: {
+    width: 5,
+    borderRadius: 2,
   },
   focusCardTitle: {
     color: "#ffffff",
