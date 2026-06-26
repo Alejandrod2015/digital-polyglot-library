@@ -4,7 +4,7 @@ import { Feather } from "@expo/vector-icons";
 import Svg, { Circle, G } from "react-native-svg";
 
 /**
- * PracticeOrbit — pantalla "Practice" rediseñada.
+ * PracticeOrbit; pantalla "Practice" rediseñada.
  *
  * Idea: invertir el flujo previo (4 cards, usuario elige modo). Ahora el
  * algoritmo decide y el usuario solo presiona START. Los 4 modos siguen
@@ -44,6 +44,16 @@ export type PracticeOrbitProps = {
   onStart: () => void;
   onPickSkill: (mode: PracticeModeKey) => void;
   emptyState?: boolean;
+  /** Fired when the user taps the orbit/skills while there are no saved words
+   *  yet. The shell shows a hint pointing to Home (open a story first) instead
+   *  of starting an empty session. */
+  onEmptyTap?: () => void;
+  /** Count of words coming back within the hour (e.g. just-failed words at
+   *  +10 min). When nothing is due now but this is > 0, the orbit shows a
+   *  "review soon" state instead of "all caught up". */
+  reviewSoonCount?: number;
+  /** Minutes until the soonest of those reviews, for the caption. */
+  reviewSoonMinutes?: number | null;
 };
 
 const MODE_COLORS: Record<PracticeModeKey, string> = {
@@ -100,7 +110,7 @@ function buildRingSegments(
   // Cada segmento ocupa una porción del ring proporcional a su count.
   // Dejamos un gap pequeño entre segmentos para que se lean separados.
   // El "total" del anillo se deriva del breakdown mismo (suma) en vez
-  // de venir como prop externa — así el `count/total` siempre cuadra
+  // de venir como prop externa; así el `count/total` siempre cuadra
   // independiente de la semántica del breakdown (palabras vs ejercicios).
   const total = MODE_ORDER.reduce((sum, mode) => sum + (breakdown[mode] ?? 0), 0);
   const GAP_DEG = 4;
@@ -204,7 +214,7 @@ const SkillCard = memo(function SkillCard({
   // Card de "skill drill" con look videogame: bg tinteado del color
   // del modo (bajo alpha), borde del mismo color a alpha medio, e
   // icono en chip lleno. Hace match visual con el segmento del anillo
-  // de arriba — yellow card = yellow segment, pink card = pink
+  // de arriba; yellow card = yellow segment, pink card = pink
   // segment, etc. Counts hacen rollup de 0 → N al montar.
   const color = MODE_COLORS[mode];
   const animatedCount = useRollup(count, 700);
@@ -245,6 +255,9 @@ export function PracticeOrbit({
   onStart,
   onPickSkill,
   emptyState,
+  onEmptyTap,
+  reviewSoonCount = 0,
+  reviewSoonMinutes,
 }: PracticeOrbitProps) {
   const segments = useMemo(
     () => buildRingSegments(modeBreakdown),
@@ -255,7 +268,7 @@ export function PracticeOrbit({
   //   - mountProgress: fade + scale-in del anillo entero al primer
   //     paint. One-shot; no reinicia.
   //   - orbPulse: loop continuo 0↔1 que mueve scale del orbe entre
-  //     1.0 y 1.05 — efecto de "respiración" para hacer obvio que
+  //     1.0 y 1.05; efecto de "respiración" para hacer obvio que
   //     ese círculo es el CTA principal. useNativeDriver=true así no
   //     molesta al hilo de JS mientras el usuario mira.
   //   - rolledDue / rolledCounts: animan los números 0 → N en mount
@@ -304,19 +317,12 @@ export function PracticeOrbit({
 
   const rolledDue = useRollup(totalDue, 800);
 
-  if (emptyState) {
-    return (
-      <View style={styles.shell}>
-        <View style={styles.emptyCard}>
-          <Feather name="bookmark" size={28} color="#cdd9ec" />
-          <Text style={styles.emptyTitle}>No words to review yet</Text>
-          <Text style={styles.emptyBody}>
-            Save words while reading and they will show up here as practice exercises.
-          </Text>
-        </View>
-      </View>
-    );
-  }
+  // When there are no saved words yet we still render the full orbit (all
+  // zeros) so the user sees what Practice will look like. Taps don't start a
+  // session; they fire onEmptyTap, which surfaces a hint pointing to Home.
+  const handleStartPress = () => (emptyState ? onEmptyTap?.() : onStart());
+  const handleSkillPress = (mode: PracticeModeKey) =>
+    emptyState ? onEmptyTap?.() : onPickSkill(mode);
 
   return (
     <View style={styles.shell}>
@@ -370,17 +376,17 @@ export function PracticeOrbit({
         {/*
           Orbe central. Navy `#152844` (mismo card de los popups
           end-of-story / practice-exit) con play+START en una pill
-          amarilla `#f8c15c` — mismo lenguaje que los CTA primarios
+          amarilla `#f8c15c`; mismo lenguaje que los CTA primarios
           del resto de la app. Adentro: número grande con rollup
           0 → N + caption `DUE` arriba del play, así el contador
           queda centralizado en el CTA en vez de flotando.
 
           La Animated.View externa aplica un pulse continuo de scale
-          1 ↔ 1.05 para que el orbe respire — call-to-action visual.
+          1 ↔ 1.05 para que el orbe respire; call-to-action visual.
         */}
         <Animated.View style={[styles.centerOrbWrap, { transform: [{ scale: orbScale }] }]}>
           <Pressable
-            onPress={onStart}
+            onPress={handleStartPress}
             accessibilityRole="button"
             accessibilityLabel="Start practice session"
             testID="qa-practice-start"
@@ -390,10 +396,17 @@ export function PracticeOrbit({
             ]}
           >
             <View style={styles.centerOrbInner}>
-              {totalDue > 0 ? (
+              {totalDue > 0 || emptyState ? (
                 <>
-                  <Text style={styles.centerOrbCount}>{rolledDue}</Text>
+                  <Text style={styles.centerOrbCount}>{emptyState ? 0 : rolledDue}</Text>
                   <Text style={styles.centerOrbCountLabel}>DUE</Text>
+                </>
+              ) : reviewSoonCount > 0 ? (
+                <>
+                  <Feather name="clock" size={26} color="#7dd3fc" />
+                  <Text style={[styles.centerOrbCountLabel, styles.centerOrbReviewSoonLabel]}>
+                    REVIEW SOON
+                  </Text>
                 </>
               ) : (
                 <>
@@ -420,10 +433,18 @@ export function PracticeOrbit({
           implícita en los skill cards de abajo, mismo color que el
           segmento del anillo). */}
       <Text style={styles.sessionMeta}>
-        ~{estimateSessionMinutes(totalDue)} min
-        {" · "}
-        {MODE_ORDER.filter((m) => modeBreakdown[m] > 0).length} skills
-        {" · +"}{xpReward} XP
+        {totalDue === 0 && reviewSoonCount > 0 ? (
+          reviewSoonMinutes
+            ? `Next review in ~${reviewSoonMinutes} min`
+            : `${reviewSoonCount} word${reviewSoonCount === 1 ? "" : "s"} coming back soon`
+        ) : (
+          <>
+            ~{estimateSessionMinutes(totalDue)} min
+            {" · "}
+            {MODE_ORDER.filter((m) => modeBreakdown[m] > 0).length} skills
+            {" · +"}{xpReward} XP
+          </>
+        )}
       </Text>
 
       {/* Grid 2x2 de skill cards. Cada card tintada con el color de
@@ -437,7 +458,7 @@ export function PracticeOrbit({
             key={mode}
             mode={mode}
             count={modeBreakdown[mode] ?? 0}
-            onPress={() => onPickSkill(mode)}
+            onPress={() => handleSkillPress(mode)}
           />
         ))}
       </View>
@@ -451,7 +472,7 @@ const styles = StyleSheet.create({
     paddingTop: 6,
     // Padding inferior suficiente para clearing de la tab bar
     // flotante. El parent `container` aporta 56 pt; con 24 acá
-    // quedamos en 80 pt totales — la screen entra sin scroll.
+    // quedamos en 80 pt totales; la screen entra sin scroll.
     paddingBottom: 24,
   },
   headerRow: {
@@ -561,6 +582,10 @@ const styles = StyleSheet.create({
     color: "#6ee7b7",
     marginTop: 6,
   },
+  centerOrbReviewSoonLabel: {
+    color: "#7dd3fc",
+    marginTop: 6,
+  },
   centerOrbDivider: {
     width: 28,
     height: 1,
@@ -664,5 +689,23 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     textAlign: "center",
     lineHeight: 18,
+  },
+  emptyCta: {
+    marginTop: 14,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    backgroundColor: "#f8c15c",
+    borderRadius: 14,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+  },
+  emptyCtaPressed: {
+    opacity: 0.85,
+  },
+  emptyCtaText: {
+    color: "#0c1626",
+    fontSize: 14,
+    fontWeight: "800",
   },
 });

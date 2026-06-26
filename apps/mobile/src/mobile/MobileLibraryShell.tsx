@@ -61,6 +61,7 @@ import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
 import { LanguageFlag, regionFamily } from "./LanguageFlag";
 import { JourneysPanel, type JourneysPanelTrack } from "./JourneysPanel";
+import { JourneyIcon } from "./JourneyIcon";
 import { LegalSheet } from "./LegalSheet";
 import { TimePickerSheet } from "./TimePickerSheet";
 import { LevelTestRunner } from "./LevelTestRunner";
@@ -250,7 +251,7 @@ type MobileScreen =
   | "settings"
   | "create";
 
-type BottomTab = "home" | "explore" | "practice" | "favorites" | "menu" | "signin";
+type BottomTab = "home" | "explore" | "progress" | "practice" | "favorites" | "menu" | "signin";
 type MenuIconName =
   | "settings"
   | "library"
@@ -262,7 +263,8 @@ type MenuIconName =
   | "legal"
   | "journey"
   | "create"
-  | "progress";
+  | "progress"
+  | "explore";
 type HomeFeedMode = "stories" | "books";
 type SaveStatus = "idle" | "saving" | "saved" | "error";
 type CreateSection = "language" | "level" | "region" | "topic";
@@ -395,7 +397,7 @@ function getOptionalSpeechModule(): OptionalSpeechModule | null {
 }
 
 // Cached "best voice" lookup. iOS exposes "Default", "Enhanced" and
-// "Premium" voice variants — premium being the natural-sounding
+// "Premium" voice variants; premium being the natural-sounding
 // neural ones. We pick the highest-quality match per language code so
 // practice prompts no longer use the bare robotic default voice.
 //
@@ -614,10 +616,10 @@ type MobileStandaloneStory = {
   level?: string | null;
   cefrLevel?: string | null;
   topic?: string | null;
-  // Remote (http/https) URLs — always safe as a fallback when online.
+  // Remote (http/https) URLs; always safe as a fallback when online.
   coverUrl?: string | null;
   audioUrl?: string | null;
-  // Local (file://) URIs — preferred when available because they work
+  // Local (file://) URIs; preferred when available because they work
   // offline and skip the network. Callers that construct a standalone from
   // the offline snapshot populate both pairs so the reader can try local
   // first and fall back to remote automatically if the local file is
@@ -668,12 +670,12 @@ type MobileJourneyTopicSummary = {
      *  is "read" but the topic's exercises may still be pending. */
     audioFinished: boolean;
     /** Audio finished AND the topic's checkpoint is passed. This
-     *  is what earns the green check — the bar for full mastery. */
+     *  is what earns the green check; the bar for full mastery. */
     completed: boolean;
     /** Story belongs to a level below the user's placement test
      *  result. Stays unlocked and re-readable, but counted as
      *  "passed" for the purposes of the "next" pointer (so it
-     *  jumps to the placement level). Doesn't show a green check —
+     *  jumps to the placement level). Doesn't show a green check -
      *  the user didn't actually read it. */
     skipped: boolean;
   }>;
@@ -902,7 +904,7 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
     caption: "Best for repetition and confidence under pressure.",
     accent: tokenColor.cyan,
     background: "#ff9600", // naranja (4to topic del journey)
-    // Was "brain" — collided with the bottom-tab Practice icon. "link"
+    // Was "brain"; collided with the bottom-tab Practice icon. "link"
     // matches the "Connect words and meanings" copy and is unique
     // among the four practice modes.
     icon: "link",
@@ -1235,7 +1237,7 @@ function mapSharedExerciseToMobile(exercise: ReturnType<typeof buildPracticeSess
         kind: "multiple-choice",
         prompt: exercise.prompt,
         helper: "Choose the meaning that fits this word.",
-        // sentence intentionally null in meaning mode — the user only
+        // sentence intentionally null in meaning mode; the user only
         // sees the target word + audio + meaning options. The full
         // sentence is still passed via audioClip / favorite for audio
         // playback + spaced-rep storage.
@@ -1841,7 +1843,7 @@ export function MobileLibraryShell(args: {
   // own scroll-restore effect (see `previousActiveScreenRef` below) that
   // returns the user to the same place they were when they last left
   // Journey. Resetting to 0 here would race with that restore and
-  // sometimes win, snapping the user back to the top — exactly what the
+  // sometimes win, snapping the user back to the top; exactly what the
   // restore was trying to avoid.
   useEffect(() => {
     // After IA swap, the journey path lives in the "home" key. Skip
@@ -1852,6 +1854,14 @@ export function MobileLibraryShell(args: {
     setShellScrollY(0);
   }, [activeScreen]);
   const [menuOpen, setMenuOpen] = useState(false);
+  // Hint shown when the user taps Practice exercises or Favorites placeholders
+  // before saving any words. Points at the Journey tab (open a story first).
+  const [saveWordsHintVisible, setSaveWordsHintVisible] = useState(false);
+  // Any navigation dismisses the hint (and its Journey-tab highlight) so it
+  // never lingers when the user comes back to Practice/Favorites.
+  useEffect(() => {
+    setSaveWordsHintVisible(false);
+  }, [activeScreen]);
   const [exploreQuery, setExploreQuery] = useState("");
   const [isExploreSearchFocused, setIsExploreSearchFocused] = useState(false);
   const [homeFeedMode, setHomeFeedMode] = useState<HomeFeedMode>("stories");
@@ -1910,7 +1920,7 @@ export function MobileLibraryShell(args: {
   // Controls the "Exit without finishing?" confirmation overlay. Back button
   // opens it when the user is mid-session (has started at least one exercise
   // and hasn't completed the round). The Done button after completion skips
-  // straight past it — no confirmation needed then.
+  // straight past it; no confirmation needed then.
   const [practiceExitConfirmVisible, setPracticeExitConfirmVisible] = useState(false);
   // Story ID that should wear the "next up" glow on the topic / book list
   // after a story-based practice session completes. Cleared after a few
@@ -2107,7 +2117,7 @@ export function MobileLibraryShell(args: {
   const [reminderHint, setReminderHint] = useState<string | null>(null);
   const [customInterestInput, setCustomInterestInput] = useState("");
   // Initial `true` when we already know there's a session token at
-  // mount — that way the very first paint already shows the skeleton
+  // mount; that way the very first paint already shows the skeleton
   // instead of empty sections waiting for the fetch effect to flip
   // the flag. Without this the previous loadingRemote=false on frame
   // 1 produced the "home incompleta → skeleton → home completa"
@@ -2116,7 +2126,7 @@ export function MobileLibraryShell(args: {
   // Tracks whether the first remote hydrate has completed (success OR
   // failure). The Home skeleton is gated on `!didFirstHydrate` rather
   // than `loadingRemote` so the very first paint shows ONLY the
-  // skeleton — no flashes of half-loaded sections from local state
+  // skeleton; no flashes of half-loaded sections from local state
   // before the fetch effect runs and flips loadingRemote. Subsequent
   // refreshes don't re-show the skeleton because this flag stays true.
   const [didFirstHydrate, setDidFirstHydrate] = useState(false);
@@ -2224,7 +2234,7 @@ export function MobileLibraryShell(args: {
   const [onboardingSurveyStep, setOnboardingSurveyStep] = useState(0);
   const [onboardingTourStep, setOnboardingTourStep] = useState<number | null>(null);
   // Force-replay the tour ignoring the server `onboardingTourCompletedAt` gate
-  // (polyglot "Replay tour" menu entry — preview on an established account).
+  // (polyglot "Replay tour" menu entry; preview on an established account).
   const [forceTourPreview, setForceTourPreview] = useState(false);
   const [onboardingError, setOnboardingError] = useState<string | null>(null);
   const practiceStartTrackedRef = useRef(false);
@@ -2295,7 +2305,7 @@ export function MobileLibraryShell(args: {
   // tap of the flag chip in the journey top strip and replaces the
   // old full-screen "My Languages" hub.
   const [languageSwitchOpen, setLanguageSwitchOpen] = useState(false);
-  // Context the sheet is opened from: "switch" (default — picking the
+  // Context the sheet is opened from: "switch" (default; picking the
   // active journey from any top-bar flag) or "explore-filter" (picking
   // the Explore tab's language filter, which also exposes an "All"
   // option). The mode lets the same sheet UI back two intents without
@@ -2311,9 +2321,9 @@ export function MobileLibraryShell(args: {
   // exist in the Studio Planning catalog but have NO active Journey record
   // yet. Mobile shows them as "Próximamente" and disables selection. Hardcoded
   // language options not present in Studio at all (Japanese, Chinese) are also
-  // treated as coming-soon — Studio is the source of truth.
+  // treated as coming-soon; Studio is the source of truth.
   const [comingSoonLanguages, setComingSoonLanguages] = useState<Set<string>>(new Set());
-  // Keyed `${language}:${regionFamily}` — variants with no journeys yet.
+  // Keyed `${language}:${regionFamily}`; variants with no journeys yet.
   const [unavailableVariants, setUnavailableVariants] = useState<Set<string>>(new Set());
   // Bottom sheet that consolidates the 5 legal links (Impressum,
   // Privacy, Cookies, Terms, Data deletion) under a single "Legal"
@@ -2323,12 +2333,12 @@ export function MobileLibraryShell(args: {
   const [timePickerOpen, setTimePickerOpen] = useState(false);
   // Bottom-sheet popup for the streak / level / XP stats in the
   // journey top bar. Replaces the previous behavior of jumping to
-  // the Progress tab when the user tapped one of those badges —
+  // the Progress tab when the user tapped one of those badges -
   // a tab change felt like a navigation, the badges read more like
   // "show me a quick summary".
   const [progressSheetOpen, setProgressSheetOpen] = useState(false);
   // Drag-to-dismiss for the Progress sheet. Mirrors the gesture used in
-  // LanguageSwitchSheet — only downward drag is responsive; release > 80pt
+  // LanguageSwitchSheet; only downward drag is responsive; release > 80pt
   // or velocity > 0.8 closes the sheet, otherwise it springs back to 0.
   const progressSheetDragY = useRef(new Animated.Value(0)).current;
   const progressSheetPanResponder = useMemo(
@@ -2363,7 +2373,7 @@ export function MobileLibraryShell(args: {
       }),
     [progressSheetDragY]
   );
-  // Topic preview sheet — opens when the user taps a topic panel on
+  // Topic preview sheet; opens when the user taps a topic panel on
   // the journey path. Shows the stories that will appear inside the
   // topic plus the vocabulary teaser (real words pulled from the
   // offline cache) so the user gets a concrete preview of what
@@ -2385,7 +2395,7 @@ export function MobileLibraryShell(args: {
   // Two-phase: (1) load disk first, override the synthesized list
   // when the disk has more entries; THEN (2) start saving on every
   // change. Earlier these two ran in parallel as soon as
-  // didHydratePreferences flipped — the save fired with the
+  // didHydratePreferences flipped; the save fired with the
   // server-synthesized 1-entry list and overwrote whatever the
   // disk had BEFORE the load could read it. Result: the user's
   // multi-variant picks were lost on the very next cold start.
@@ -2404,7 +2414,7 @@ export function MobileLibraryShell(args: {
     // instalación). NO podemos simplemente marcar
     // `didHydratePreferences=true` en el catch porque eso dispara el
     // gate del onboarding (que asume usuario nuevo cuando las
-    // preferences están vacías). En lugar: usamos un segundo path —
+    // preferences están vacías). En lugar: usamos un segundo path -
     // si tenemos anchor (sessionUserId) Y el fetch ya falló
     // (preferencesStatus === "error"), también destrabamos el restore.
     const offlineDegraded =
@@ -2431,7 +2441,7 @@ export function MobileLibraryShell(args: {
     })();
   }, [didHydratePreferences, journeysRestored, sessionUserId, preferencesStatus]);
 
-  // (2) Save journeys to disk on every change — only AFTER the
+  // (2) Save journeys to disk on every change; only AFTER the
   // restore-from-disk pass has completed, to avoid the overwrite
   // race described above.
   useEffect(() => {
@@ -2442,7 +2452,7 @@ export function MobileLibraryShell(args: {
   // Pull the Studio Planning language catalog so the language pickers (in
   // OnboardingFlow + JourneysPanel) can mark languages without an active
   // Journey record as "Próximamente". The hardcoded LANGUAGE_OPTIONS in those
-  // components stays — we just annotate which entries are not ready yet.
+  // components stays; we just annotate which entries are not ready yet.
   useEffect(() => {
     if (!sessionToken) return;
     let cancelled = false;
@@ -2510,14 +2520,14 @@ export function MobileLibraryShell(args: {
     };
   }, [sessionToken]);
 
-  // Modal shown when the user taps a story locked by level — offers
+  // Modal shown when the user taps a story locked by level; offers
   // the level test as a way to skip ahead instead of just blocking
   // them with a toast.
   const [levelTestOfferOpen, setLevelTestOfferOpen] = useState<{
     targetLevel: string;
     targetLanguage: string;
   } | null>(null);
-  // Live the level test runner state — when set, the test screen
+  // Live the level test runner state; when set, the test screen
   // overlays the rest of the app. The runner handles its own scoring
   // and calls back when finished.
   const [levelTestActive, setLevelTestActive] = useState<{
@@ -2551,7 +2561,7 @@ export function MobileLibraryShell(args: {
   } | null>(null);
   const stickyTopicSlugRef = useRef<string | null>(null);
   // Set of destination slugs that already fired haptic during the current
-  // "scroll session" — a session runs from `onScrollBeginDrag` (finger
+  // "scroll session"; a session runs from `onScrollBeginDrag` (finger
   // touches the path) to `onMomentumScrollEnd` (deceleration finished).
   // Within a session each unique slug only fires haptic once, so
   // bounce / spring oscillation that revisits a topic the user already
@@ -2572,7 +2582,7 @@ export function MobileLibraryShell(args: {
   // topic panel during the eclipse. Earlier we either:
   //   - hardcoded it (wrong by 2–4 px on real devices, which made
   //     the sticky and the in-flow appear as a doubled / vibrating
-  //     edge during overlap — the "flicker on eclipse" bug)
+  //     edge during overlap; the "flicker on eclipse" bug)
   //   - re-measured on every render (created a feedback loop with
   //     setState → re-render → onLayout → setState).
   // Latch + once is the right balance: we get the exact device
@@ -2597,14 +2607,14 @@ export function MobileLibraryShell(args: {
   const [onboardingOverride, setOnboardingOverride] = useState<
     "proper" | null
   >(null);
-  // The "test" override variant was dropped — the "Test mode" menu
+  // The "test" override variant was dropped; the "Test mode" menu
   // entry now does a full preference reset (handleTestModeReset)
   // and lets the regular `shouldShowOnboardingSurvey` gate fire,
   // so we no longer need a transient flag to override the gate
   // without touching prefs.
   const forceOnboardingProper = onboardingOverride === "proper";
 
-  // MOCK DATA — per-language stats while we don't have a backend
+  // MOCK DATA; per-language stats while we don't have a backend
   // aggregator. Same source as the web handoff; reviewer should grep
   // "MOCK_LANG_STATS" to find and remove in one diff once stats land.
   const MOCK_LANG_STATS: Record<string, { streak: number; xpTotal: number; progress: number }> = {
@@ -2621,7 +2631,7 @@ export function MobileLibraryShell(args: {
   // Mapping coarse → CEFR ahora vive en `journeys.ts` como
   // `cefrFromCoarseLevel` para que el card del JourneysPanel y el row
   // de la sheet de switch idiomas usen exactamente la misma fuente.
-  // Antes había dos copias y empezaron a diferir — la sheet mostraba
+  // Antes había dos copias y empezaron a diferir; la sheet mostraba
   // "B1" y el card "Intermediate" para el mismo journey.
   const cefrFromPreferredLevel = cefrFromCoarseLevel;
   // When the user has no target languages picked yet (legacy onboarding
@@ -2660,13 +2670,13 @@ export function MobileLibraryShell(args: {
   // Falls back to preferences.preferredVariant as a last resort.
   //
   // Offline note: `remoteJourney` se hidrata desde disk al cold-start
-  // sin red, así que estos lookups siguen funcionando con el cache —
+  // sin red, así que estos lookups siguen funcionando con el cache -
   // PERO si el cache se guardó antes de que la API empezara a emitir
   // `track.variant`, el id-match retorna null. Para esos casos
   // tenemos un fallback adicional: agarrar el variant del primer
   // track con variant poblado (sea cual sea el id), porque los
   // tracks de un mismo Journey comparten familia regional (todos
-  // LATAM o todos UK, etc.) — nunca mezclamos España + LATAM en el
+  // LATAM o todos UK, etc.); nunca mezclamos España + LATAM en el
   // mismo Journey.
   const activeJourneyFlagVariant = (() => {
     if (!activeJourney) return preferences.preferredVariant;
@@ -2676,7 +2686,7 @@ export function MobileLibraryShell(args: {
     // variant si remoteJourney pertenece al mismo idioma que el
     // activeJourney. Sin esto, al cold-start offline el remoteJourney
     // puede ser el último journey cargado online (e.g. alemán) pero
-    // el activeJourney persistido es otro (e.g. español) — el resolver
+    // el activeJourney persistido es otro (e.g. español); el resolver
     // sacaba el variant de los tracks alemanes y pintaba bandera de
     // Alemania al lado de historias españolas. El usuario veía el
     // mismatch hasta que cambiaba de journey y volvía (lo que dispara
@@ -2705,7 +2715,7 @@ export function MobileLibraryShell(args: {
   })();
   // Build the rows the JourneySwitchSheet renders: one row per journey
   // (= one row per (language, variant, focus) tuple). Stats are still
-  // language-level mocks for now — when per-journey progress lands the
+  // language-level mocks for now; when per-journey progress lands the
   // lookup key changes to journey.id.
   const journeySwitchEntries: LanguageSwitchEntry[] = preferences.journeys.map((journey) => {
     const stats = MOCK_LANG_STATS[journey.language] ?? { streak: 0, xpTotal: 0, progress: 0 };
@@ -2715,7 +2725,7 @@ export function MobileLibraryShell(args: {
     // Solo mostramos el variantLabel cuando el variant es realmente
     // un código regional conocido (us/uk/latam/spain…). Bajo el nuevo
     // modelo "un track por Studio Journey", `journey.variant` puede
-    // ser un cuid (Journey.id) — formatVariantLabel lo escupe en
+    // ser un cuid (Journey.id); formatVariantLabel lo escupe en
     // mayúscula y el row terminaba mostrando "· CMONCZ14V0000…", que
     // es ruido para el usuario. La región canónica vive en
     // `journey.region` (y para journeys legacy en `journey.variant`).
@@ -2723,7 +2733,7 @@ export function MobileLibraryShell(args: {
     // Fallback offline: si journey.region/variant están vacíos pero
     // tenemos cache local del journey para ese idioma, sacamos el
     // variant del primer track con variant poblado. Mismo principio
-    // que activeJourneyFlagVariant — los tracks de un Journey siempre
+    // que activeJourneyFlagVariant; los tracks de un Journey siempre
     // pertenecen a una sola familia regional.
     let flagRegion = journeyFlagVariant(journey);
     if (!flagRegion) {
@@ -2745,7 +2755,7 @@ export function MobileLibraryShell(args: {
       // The active journey prefers the fine onboarding placement (e.g. A0)
       // over the level stored on the journey itself. Journeys created before
       // the placement fix stored the coarse "Beginner" bucket, which resolves
-      // to A1 and hid an A0 pick — recompute from placement so existing users
+      // to A1 and hid an A0 pick; recompute from placement so existing users
       // see the level they actually selected, not just fresh onboardings.
       //
       // Show the friendly label ("Beginner"/"Elementary"/…), never the raw
@@ -2794,7 +2804,7 @@ export function MobileLibraryShell(args: {
     setRemoteJourney(null);
     setOnboardingOverride(null);
     // Drop any leftover Replay-tour preview so the REAL gate (not the preview
-    // bypass) drives the tour after onboarding — exactly the new-user path.
+    // bypass) drives the tour after onboarding; exactly the new-user path.
     setForceTourPreview(false);
     setOnboardingTourStep(null);
     setActiveScreen("home");
@@ -2839,7 +2849,7 @@ export function MobileLibraryShell(args: {
 
   async function handleJourneyDelete(targetId: string) {
     // Block destructive paths the panel already guards but be
-    // defensive — a stale UI tap shouldn't be able to wipe the only
+    // defensive; a stale UI tap shouldn't be able to wipe the only
     // journey on the account.
     if (preferences.journeys.length <= 1) return;
     const wasActive = preferences.activeJourneyId === targetId;
@@ -2899,7 +2909,7 @@ export function MobileLibraryShell(args: {
 
   // Synchronous guard against rapid double-tap on the create button.
   // The previous `submitting` state lives in the panel and `existing`
-  // check reads `preferences.journeys` from closure — both lag the
+  // check reads `preferences.journeys` from closure; both lag the
   // first call by one render, so two clicks fired ~16ms apart could
   // both pass the existing-id check and emit two journeys with
   // identical ids. A ref flips synchronously and bridges the gap.
@@ -2921,7 +2931,7 @@ export function MobileLibraryShell(args: {
       void handleJourneySwitch(id);
       return;
     }
-    // Synchronous "already creating this id" check — see ref above.
+    // Synchronous "already creating this id" check; see ref above.
     if (journeyCreateInFlightRef.current.has(id)) {
       return;
     }
@@ -2936,8 +2946,8 @@ export function MobileLibraryShell(args: {
       createdAt: new Date().toISOString(),
       label: input.label?.trim() || null,
     };
-    // Computamos el siguiente estado SINCRÓNICAMENTE — antes de
-    // setPreferences — para evitar que el updater de React (que con
+    // Computamos el siguiente estado SINCRÓNICAMENTE; antes de
+    // setPreferences; para evitar que el updater de React (que con
     // concurrent mode / batching puede correr DESPUÉS del await) deje
     // `persistedJourneys` vacío cuando armamos el body del POST.
     // Bug previo: el body iba con `journeys: []` y el backend borraba
@@ -2976,7 +2986,7 @@ export function MobileLibraryShell(args: {
       }
     }
     // Release the in-flight slot regardless of how the persist call
-    // resolved — the journey is already in client state, and a
+    // resolved; the journey is already in client state, and a
     // subsequent retry of the same id would correctly take the
     // "existing" branch above.
     journeyCreateInFlightRef.current.delete(id);
@@ -2994,7 +3004,7 @@ export function MobileLibraryShell(args: {
       return;
     }
     try {
-      // Switch the active journey by id only — do NOT reorder
+      // Switch the active journey by id only; do NOT reorder
       // `journeys`. The LanguageSwitchSheet renders rows in array
       // order, so reordering on every tap shuffled the list under the
       // user (the language they came from kept jumping to the top),
@@ -3072,7 +3082,7 @@ export function MobileLibraryShell(args: {
   // a tiny loader on top of the practice session view.
   const [practiceLaunchLoading, setPracticeLaunchLoading] = useState(false);
 
-  // Hint surfaced when the user taps a locked journey story — tells
+  // Hint surfaced when the user taps a locked journey story; tells
   // them what they need to finish first instead of the tap silently
   // doing nothing. Auto-dismissed by an effect below.
   const [lockedStoryHint, setLockedStoryHint] = useState<string | null>(null);
@@ -3112,7 +3122,7 @@ export function MobileLibraryShell(args: {
     return () => clearTimeout(dismiss);
   }, [lockedStoryHint, lockedHintAnim]);
 
-  // Halo respirante detrás de la "next up" del journey — glow estilo
+  // Halo respirante detrás de la "next up" del journey; glow estilo
   // Duolingo, indefinido. Un solo loop alimenta el halo + el float de
   // la story. Animated.Value se declara aquí; el effect que maneja el
   // loop vive más abajo (después de que `activeJourneyTrack` y
@@ -3125,7 +3135,7 @@ export function MobileLibraryShell(args: {
   // `createAnimatedComponent` hacía detach+attach de listeners en cada
   // pase; bajo carga (scroll del path con sticky topics, setStates
   // varios) esa secuencia se desincronizaba y el listener nuevo no
-  // siempre enganchaba — la opacidad del halo se congelaba en el
+  // siempre enganchaba; la opacidad del halo se congelaba en el
   // último valor alcanzado mientras que el translateY del float
   // toleraba mejor el glitch y seguía visible. Memoizamos los nodos
   // para que vivan tanto como el componente y los Animated.View
@@ -3287,7 +3297,7 @@ export function MobileLibraryShell(args: {
     // la red regresó (NetInfo flip de true→false), el effect re-corra
     // y dispare el drain de la pending queue + un pull fresco del
     // server. Sin esto, los add/remove offline solo se sincronizaban
-    // tras matar y reabrir la app — el usuario veía únicamente la
+    // tras matar y reabrir la app; el usuario veía únicamente la
     // palabra recién agregada offline porque el state in-memory tenía
     // el snapshot pre-airplane y nunca se refrescaba.
   }, [sessionToken, sessionUserId, isOffline]);
@@ -3406,7 +3416,7 @@ export function MobileLibraryShell(args: {
       } else {
         // Anchor-only: we have proof of prior sign-in but no token
         // yet. The skeleton stays visible while Clerk catches up and
-        // mints a fresh token — when it does, this effect re-runs
+        // mints a fresh token; when it does, this effect re-runs
         // with sessionToken set and goes through the full-hydrate
         // branch, which is what flips didFirstHydrate=true normally.
         // If the token never arrives (offline for real), a 4s
@@ -3486,7 +3496,7 @@ export function MobileLibraryShell(args: {
       // When every single request rejected, we keep any previously
       // loaded remote state intact instead of wiping it. The banner
       // itself is driven by NetInfo (useOfflineStatus), not by this
-      // flag — so we only use `allRejected` to decide whether to
+      // flag; so we only use `allRejected` to decide whether to
       // blank arrays or preserve the last-known-good state.
       const allRejected = [booksResult, storiesResult, entitlementResult, progressResult, continueResult, journeyResult].every(
         (result) => result.status === "rejected"
@@ -3553,7 +3563,7 @@ export function MobileLibraryShell(args: {
       setLoadingRemote(false);
       setDidFirstHydrate(true);
       // Always drop the pull-to-refresh spinner once the hydrate cycle
-      // finishes, regardless of partial failures — the user pulled, we
+      // finishes, regardless of partial failures; the user pulled, we
       // attempted the fetch, the spinner has done its job. If the network
       // was bad and content didn't update, the offline banner will say so.
       setPullRefreshing(false);
@@ -3583,10 +3593,10 @@ export function MobileLibraryShell(args: {
       // For silent re-fetches (Clerk token refresh, language-mismatch check
       // after hydrate) we keep the currently-rendered journey visible so the
       // grid doesn't flash empty for a split-second. For explicit user-driven
-      // language switches we DO clear it — otherwise the old language's story
+      // language switches we DO clear it; otherwise the old language's story
       // covers ghost under the new header while the new payload loads.
       // However, if we already have a cached payload for this language we can
-      // render it instantly and then refresh in the background — no empty
+      // render it instantly and then refresh in the background; no empty
       // state at all.
       const shouldClearPrevious = options.clearPrevious !== false;
       setSelectedJourneyTrackId(null);
@@ -3640,7 +3650,7 @@ export function MobileLibraryShell(args: {
 
   // Lightweight tracks fetcher for the JourneysPanel "pick a journey"
   // step. Hits the same endpoint as `loadJourneyForLanguage` but does
-  // NOT mutate the active journey state — the panel needs the track
+  // NOT mutate the active journey state; the panel needs the track
   // list for an arbitrary language without disturbing what the user
   // is currently viewing on the journey screen.
   // Single-level journeys share a name (e.g. three "Traveler" records that
@@ -3651,6 +3661,7 @@ export function MobileLibraryShell(args: {
       id: track.id,
       label: track.label,
       levelLabel: cefrDisplayLabel(track.levels?.[0]?.id) ?? track.levels?.[0]?.title ?? null,
+      levelCode: track.levels?.[0]?.id ?? null,
       variant: track.variant ?? null,
     }),
     []
@@ -3680,7 +3691,7 @@ export function MobileLibraryShell(args: {
     [saveJourneyCacheToDisk, sessionToken, trackToPanelEntry]
   );
 
-  // Synchronous twin of `getTracksForLanguage` — returns the cached
+  // Synchronous twin of `getTracksForLanguage`; returns the cached
   // tracks immediately when present, or null when a network fetch
   // would be required. Used by the JourneysPanel to skip the
   // "Loading..." flicker when the prefetch has already populated the
@@ -3770,13 +3781,13 @@ export function MobileLibraryShell(args: {
   // sesión (`hasAutoPickedLanguageRef`), así que cualquier rehidratación
   // posterior (token refresh, race con el POST de switch, disk-restore)
   // volvía a desincronizar y ya no se reconciliaba. Ahora corre cada
-  // vez que detecta mismatch — el backend sigue ganando, pero el flag y
+  // vez que detecta mismatch; el backend sigue ganando, pero el flag y
   // el contenido nunca se separan.
   useEffect(() => {
     // Gate: normalmente esperamos al hidrate online. Offline el hidrate
     // falla y `didHydratePreferences` queda false; sin un fallback, este
     // reconcile no corre y `activeJourneyLanguage` queda desincronizado
-    // de `activeJourney?.language` — el resultado visible eran historias
+    // de `activeJourney?.language`; el resultado visible eran historias
     // de un idioma con la bandera de OTRO. Mismo patrón offline-degraded
     // que el load de stored journeys.
     const offlineDegraded =
@@ -3832,7 +3843,7 @@ export function MobileLibraryShell(args: {
 
   // Force-refresh the journey payload every time the user enters the
   // journey screen. Without this, the cached payload (from disk or
-  // previous session) wins forever — including stale unlock state
+  // previous session) wins forever; including stale unlock state
   // from when the user had a `journeyPlacementLevel` set in Clerk
   // that has since been removed. The cached version still renders
   // immediately for snappy UX; this just guarantees a fresh fetch
@@ -3849,7 +3860,7 @@ export function MobileLibraryShell(args: {
     // ago. A user toggling tabs quickly shouldn't hammer the API.
     // Excepción: si el cache está vacío de stories (p.ej. el primer
     // fetch global trajo solo el shell sin contenido), saltamos el
-    // throttle y forzamos otro fetch — caso reportado: "primera vez
+    // throttle y forzamos otro fetch; caso reportado: "primera vez
     // solo se veían los temas pero no las historias, tuve que matar
     // la app y volver a entrar".
     // Throttle bajado de 30 s a 4 s. Con 30 s, después de un fix
@@ -4007,7 +4018,7 @@ export function MobileLibraryShell(args: {
     };
   }, [sessionToken]);
 
-  // Daily-quest celebration effects removed alongside the toast — the
+  // Daily-quest celebration effects removed alongside the toast; the
   // related state (activeGamificationCelebration, dismissed IDs, the
   // celebrationAnim ref, CelebrationBurst, dismissGamificationCelebration)
   // is left in place as dead code to keep this diff focused; a follow-up
@@ -4348,7 +4359,7 @@ export function MobileLibraryShell(args: {
   // from `favoriteWords` (all languages), but the filter list and the
   // filtered results below operate on `journeyScopedFavoriteCards` (only
   // the active journey's language). That mismatch produced "Adjective (5)"
-  // chips that returned zero results when tapped — the 5 adjectives lived
+  // chips that returned zero results when tapped; the 5 adjectives lived
   // in other languages and never survived the journey scope. The
   // journey-scoped definitions live further down (line ~4595), after
   // journeyScopedFavoriteCards has been declared.
@@ -4443,6 +4454,26 @@ export function MobileLibraryShell(args: {
     () => sortPracticeItemsByOnboarding(getDuePracticeItems(buildPracticeFavorites(journeyScopedFavoriteWords)), onboardingPracticePrefs, true),
     [journeyScopedFavoriteWords, onboardingPracticePrefs]
   );
+
+  // Words scheduled to come back within the next hour (a just-failed word is
+  // pushed to +10 min). These are NOT "due now" so they don't count in
+  // duePracticeItems, but the orbit must not read "all caught up" while they
+  // exist — it shows a "review soon" state instead.
+  const reviewSoon = useMemo(() => {
+    const now = Date.now();
+    const windowMs = 60 * 60 * 1000;
+    let count = 0;
+    let soonest = Infinity;
+    for (const w of journeyScopedFavoriteWords) {
+      if (!w.nextReviewAt) continue;
+      const t = Date.parse(w.nextReviewAt);
+      if (!Number.isFinite(t) || t <= now || t - now > windowMs) continue;
+      count += 1;
+      if (t < soonest) soonest = t;
+    }
+    const minutes = soonest === Infinity ? null : Math.max(1, Math.round((soonest - now) / 60000));
+    return { count, minutes };
+  }, [journeyScopedFavoriteWords]);
 
   const recommendedPracticeMode = useMemo<PracticeModeKey>(() => {
     const base = getRecommendedPracticeModeFromItems(buildPracticeFavorites(journeyScopedFavoriteWords));
@@ -5008,14 +5039,14 @@ export function MobileLibraryShell(args: {
 
   const bottomTabs: { key: BottomTab; label: string }[] = isSignedIn
     ? [
-        { key: "home", label: "Home" },
-        { key: "explore", label: "Explore" },
+        { key: "home", label: "Journey" },
+        { key: "progress", label: "Progress" },
         { key: "practice", label: "Practice" },
         { key: "favorites", label: "Favorites" },
         { key: "menu", label: "Menu" },
       ]
     : [
-        { key: "home", label: "Home" },
+        { key: "home", label: "Journey" },
         { key: "explore", label: "Explore" },
         { key: "practice", label: "Practice" },
           { key: "favorites", label: "Favorites" },
@@ -5054,7 +5085,9 @@ export function MobileLibraryShell(args: {
   function tourTargetMatchesTab(tab: BottomTab) {
     if (!activeOnboardingTourTarget) return false;
     if (activeOnboardingTourTarget === "home") return tab === "home";
-    if (activeOnboardingTourTarget === "explore") return tab === "explore";
+    // Explore moved into the Menu (signed-in IA), so its tour step now points
+    // at the Menu tab; that's where browsing lives.
+    if (activeOnboardingTourTarget === "explore") return tab === "menu";
     if (activeOnboardingTourTarget === "practice") return tab === "practice";
     if (activeOnboardingTourTarget === "favorites") return tab === "favorites";
     return false;
@@ -5063,7 +5096,7 @@ export function MobileLibraryShell(args: {
   useEffect(() => {
     if (!activeOnboardingTourTarget) return;
     // Every step runs on the Journey path (home), behind one even scrim. The
-    // target is lifted ABOVE the scrim — step 1 shows the next story as a clean
+    // target is lifted ABOVE the scrim; step 1 shows the next story as a clean
     // chip in the card; tab steps lift the nav. Nothing depends on the path's
     // internal layout, so there's no drift to chase.
     setActiveScreen("home");
@@ -5073,7 +5106,7 @@ export function MobileLibraryShell(args: {
   }, [activeOnboardingTourTarget]);
 
   useEffect(() => {
-    // Preview mode drives the step directly from the menu — don't clobber it.
+    // Preview mode drives the step directly from the menu; don't clobber it.
     if (forceTourPreview) return;
     if (!isSignedIn || preferencesLoading) return;
     if (!preferences.onboardingSurveyCompletedAt) {
@@ -5259,7 +5292,7 @@ export function MobileLibraryShell(args: {
 
     // `override` lets a single deliberate action (e.g. flipping a
     // notification-type toggle) persist immediately without waiting for
-    // React state to flush — the closure-captured `preferences` would
+    // React state to flush; the closure-captured `preferences` would
     // otherwise lag one render behind the setPreferences call.
     const source = override ?? preferences;
 
@@ -5278,7 +5311,7 @@ export function MobileLibraryShell(args: {
         getJourneyFocusFromLearningGoal(normalizeLearningGoal(next.learningGoal));
       const resolvedPreferredVariant = next.preferredVariant ?? null;
       const resolvedPreferredLevel = next.preferredLevel ?? null;
-      // Server may not echo journeys yet — we keep the local list if
+      // Server may not echo journeys yet; we keep the local list if
       // the response omits it, so saving global prefs (interests,
       // reminders, etc.) doesn't wipe the multi-journey state.
       const remoteJourneys = Array.isArray((next as { journeys?: unknown }).journeys)
@@ -5652,7 +5685,7 @@ export function MobileLibraryShell(args: {
     await saveLocalFavorites(sessionUserId, nextItems);
     showDebug(`fav toggle: ${exists ? "remove" : "add"} "${favorite.word}" userId=${sessionUserId?.slice(0, 8) ?? "-"}`);
 
-    // Try the server now if we have a token; on failure (or no token —
+    // Try the server now if we have a token; on failure (or no token -
     // offline / signed-out-but-anchored), persist the operation in the
     // pending queue so the next hydrate replays it before pulling from
     // the server. Without this, the optimistic state silently disappears
@@ -5843,7 +5876,7 @@ export function MobileLibraryShell(args: {
     setMenuOpen(false);
   }
 
-  // Plans entry point. On iOS we MUST use the native paywall (Apple IAP) — the
+  // Plans entry point. On iOS we MUST use the native paywall (Apple IAP); the
   // App Store forbids the web Stripe checkout for digital content. Everywhere
   // else (Android/web) keep the web /plans page.
   function openPlans(): Promise<void> {
@@ -5883,7 +5916,7 @@ export function MobileLibraryShell(args: {
     showDebug(`tap: ${story.storySlug ?? "no-slug"}`);
     if (!story.storySlug) {
       showDebug("abort: no slug");
-      // Surface the failure instead of silently doing nothing —
+      // Surface the failure instead of silently doing nothing -
       // the user reported "tap and nothing happens", which traced
       // back to journey stories whose slug never made it into the
       // payload (a data inconsistency on the Studio side).
@@ -6032,7 +6065,7 @@ export function MobileLibraryShell(args: {
         // Sin offline copy y sin red: feedback claro al usuario en
         // lugar de tap silencioso. Antes el catch terminaba sin hacer
         // nada visible y el reporte era "no deja hacer tap en las
-        // historias" — el tap funcionaba, simplemente no había nada
+        // historias"; el tap funcionaba, simplemente no había nada
         // que abrir.
         setLockedStoryHint(
           "This story isn't downloaded. Connect to the internet or download it first."
@@ -6643,7 +6676,7 @@ export function MobileLibraryShell(args: {
         practicePrefetchBySlugRef.current.set(slug, { items, exercises });
       })
       .catch(() => {
-        // Swallow — openStoryPractice will retry with a live fetch and
+        // Swallow; openStoryPractice will retry with a live fetch and
         // surface the error there if it still fails.
       })
       .finally(() => {
@@ -6923,7 +6956,7 @@ export function MobileLibraryShell(args: {
     setPracticeExitConfirmVisible(false);
     if (practiceLaunchContext.source === "story" && practiceReturnSelection) {
       // If the user actually finished the round we DON'T re-open the story
-      // they just read — we send them back to the list (topic detail /
+      // they just read; we send them back to the list (topic detail /
       // library) with the next story glowing, so the natural next action is
       // visible the moment the practice screen clears. If they bailed
       // mid-session we restore the reader so they can keep listening.
@@ -6980,9 +7013,9 @@ export function MobileLibraryShell(args: {
   }
 
   function advancePractice() {
-    // Clear synchronously so effect 5c — which can race against the
+    // Clear synchronously so effect 5c; which can race against the
     // batched setPracticeRevealed(false) and see a stale revealed=true
-    // on the new slot — sees the ref empty and bails out.
+    // on the new slot; sees the ref empty and bails out.
     revealedSlotIdRef.current = null;
     void stopPracticeContextClip();
     // Cortar también cualquier HQ clip que pudiera estar sonando del
@@ -7075,7 +7108,7 @@ export function MobileLibraryShell(args: {
     // tanto cuando todos los pares están validados (matched) como
     // cuando el usuario ya formó los N pares tentativos (filled ===
     // total): en ese punto el ejercicio espera el tap de Check y no
-    // tiene sentido seguir presionando con el countdown — la siguiente
+    // tiene sentido seguir presionando con el countdown; la siguiente
     // decisión ya no depende del tiempo.
     if (current.kind === "match") {
       const filled = matchedWords.length + Object.keys(pendingPairings).length;
@@ -7126,7 +7159,7 @@ export function MobileLibraryShell(args: {
       //      llegamos aquí por race condition. Salimos.
       //   2. Pendings cubren los slots restantes (filled === total): el
       //      usuario terminó de emparejar y solo le faltaba pulsar
-      //      Check. Evaluamos lo que tiene en vez de penalizar todo —
+      //      Check. Evaluamos lo que tiene en vez de penalizar todo -
       //      es lo justo: no podemos saber si iba a confirmar o seguir
       //      ajustando, pero al menos los correctos cuentan.
       //   3. Filled < total: pares sin formar todavía. Marcamos todos
@@ -7207,7 +7240,7 @@ export function MobileLibraryShell(args: {
   // pares. El tick del timer ya se pausa cuando `filled === total`
   // (no tiene sentido contar tiempo sobre algo que ya está armado),
   // pero antes el usuario tenía que pulsar un botón "Check" para
-  // disparar el verdict — al usuario le parecía un freeze porque el
+  // disparar el verdict; al usuario le parecía un freeze porque el
   // contador quedaba a la mitad sin avanzar. Con este effect el
   // veredicto sale solo ~350 ms después de armar el último par: lo
   // suficiente para que se vea visualmente armado antes del flash
@@ -7318,7 +7351,7 @@ export function MobileLibraryShell(args: {
     lastAutoplayedExerciseIdRef.current = exId;
     // Meaning: SOLO la palabra (no la oración). Otros modos
     // (listening/match) usan playPracticeContextClipBest que es
-    // no-op cuando no hay audioClip — su propio play button se
+    // no-op cuando no hay audioClip; su propio play button se
     // encarga del audio en esos modos.
     if (
       currentPracticeExercise?.kind === "multiple-choice" &&
@@ -7368,7 +7401,7 @@ export function MobileLibraryShell(args: {
     // practiceRevealed=false on RN, so the effect can see revealed=true
     // (stale) on the NEW slot pre-reveal. The ref is set synchronously
     // when the user actually reveals a slot and cleared synchronously
-    // on advance — bypasses React batching entirely.
+    // on advance; bypasses React batching entirely.
     if (revealedSlotIdRef.current !== exId) return;
     if (lastContextRevealAudioIdRef.current === exId) return;
     lastContextRevealAudioIdRef.current = exId;
@@ -7399,7 +7432,7 @@ export function MobileLibraryShell(args: {
   // (5b) Prefetch HQ TTS para TODOS los ejercicios restantes (incluído
   // el current). Antes solo prefetcheábamos los próximos 2, lo cual
   // dejaba el current context exercise sin warm (porque autoplay-skip
-  // lo evita) — y al revelar la respuesta el HQ venía con cold-start
+  // lo evita); y al revelar la respuesta el HQ venía con cold-start
   // de Modal de 5-15s, así el audio del anterior podía escucharse en
   // el siguiente exercise. El ref `practicePrefetchSeenRef` dedupa
   // las llamadas: cada (sentence, language, voiceId) se pide UNA vez
@@ -7438,7 +7471,7 @@ export function MobileLibraryShell(args: {
           return;
         }
 
-        // 1) cached path (Studio-prebaked) — no Modal hit
+        // 1) cached path (Studio-prebaked); no Modal hit
         if (cachedUrl) {
           try {
             await FileSystem.downloadAsync(cachedUrl, fileUri);
@@ -7613,7 +7646,7 @@ export function MobileLibraryShell(args: {
     option: string,
     timedOut = false
   ) {
-    // Stop any in-flight audio the moment the user commits an answer —
+    // Stop any in-flight audio the moment the user commits an answer -
     // HQ clip, context clip, and on-device speech. Without this the TTS
     // keeps reading the sentence after the user has already chosen,
     // which feels noisy and clashes with the correct/wrong feedback SFX.
@@ -7640,7 +7673,7 @@ export function MobileLibraryShell(args: {
       setPracticeScore((value) => value + 1);
       setPracticeLastResult("correct");
       // maxStreak + combo toast se derivan del cambio en sessionStreak
-      // vía useEffect — evitamos el anti-pattern de side-effects dentro
+      // vía useEffect; evitamos el anti-pattern de side-effects dentro
       // del updater (en StrictMode el updater corre 2 veces, lo cual
       // duplicaba sonido/haptic, y bajo concurrent rendering la
       // actualización de maxStreak podía perderse si el componente
@@ -7683,7 +7716,7 @@ export function MobileLibraryShell(args: {
   // que el update de maxStreak ocurre DESPUÉS del commit de
   // sessionStreak, sin importar si el handler es multiple-choice o
   // match. Antes esto se hacía dentro del updater de
-  // setPracticeSessionStreak — pattern frágil bajo concurrent mode /
+  // setPracticeSessionStreak; pattern frágil bajo concurrent mode /
   // StrictMode que dejaba combo=0 en la result card.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
@@ -7800,7 +7833,7 @@ export function MobileLibraryShell(args: {
   ]);
 
   /**
-   * One-shot "perfect score" chime — louder + longer than the correct
+   * One-shot "perfect score" chime; louder + longer than the correct
    * tone so the moment feels like a real reward, not a repeat. Only
    * called when the user finishes a session with 100% accuracy.
    */
@@ -8063,7 +8096,7 @@ export function MobileLibraryShell(args: {
     const mySeq = ++favoriteRequestSeqRef.current;
     const stillCurrent = () => favoriteRequestSeqRef.current === mySeq;
 
-    // Fast path: prefetched MP3 sitting on local disk — load file://
+    // Fast path: prefetched MP3 sitting on local disk; load file://
     // directly, no network. ~150ms tap-to-sound.
     const localUri = prefetchedFavoriteFilesRef.current.get(key);
     let url: string | null = localUri ?? null;
@@ -8272,7 +8305,7 @@ export function MobileLibraryShell(args: {
     }
     // Cancellation token. advancePractice bumps the seq on each
     // slot transition; we capture the value at entry (without
-    // incrementing — this function calls HqOnly internally and HqOnly
+    // incrementing; this function calls HqOnly internally and HqOnly
     // bumps its own seq, so incrementing here would invalidate ourselves).
     const mySeq = practiceAudioSeqRef.current;
     const stillCurrent = () => practiceAudioSeqRef.current === mySeq;
@@ -8281,7 +8314,7 @@ export function MobileLibraryShell(args: {
     let segment = findSegmentForClip(storyAudio, clip);
     // Server-side pre-computed timings from aeneas word alignment win
     // over the fuzzy heuristic. When `clip.audioSentenceStartSec/EndSec`
-    // are set, synthesize a segment with those exact boundaries — same
+    // are set, synthesize a segment with those exact boundaries; same
     // playback code path, just with deterministic ranges instead of
     // word-token guessing.
     const explicitStart = clip.audioSentenceStartSec;
@@ -8305,7 +8338,7 @@ export function MobileLibraryShell(args: {
     const segmentClipUrl = resolvePracticeAudioUri(segment?.clipUrl ?? null);
     const audioUrl = segmentClipUrl ?? baseAudioUrl;
     // Sin segment del Story disponible: intentamos HQ TTS (Kokoro/Piper
-    // en Modal). Si HQ falla NO caemos a expo-speech — el usuario
+    // en Modal). Si HQ falla NO caemos a expo-speech; el usuario
     // prefirió silencio sobre la voz device-local "robótica horrible"
     // (decisión 2026-05-18).
     if ((!segment || !audioUrl) && clip.sentence?.trim()) {
@@ -8434,7 +8467,7 @@ export function MobileLibraryShell(args: {
     const cacheKey = `${lang}::${voiceId ?? ""}::${word}`;
 
     let uri: string | undefined = practiceAudioFilesRef.current.get(cacheKey);
-    // Prefer the editor-prebaked R2 mp3 when available — it eliminates
+    // Prefer the editor-prebaked R2 mp3 when available; it eliminates
     // Modal cold-start failures (decisión 2026-05-18). Studio's
     // PracticeSetEditor regenerates these from the editor surface.
     const cachedUrl = currentPracticeExercise.audioClip?.cachedUrl ?? null;
@@ -8519,7 +8552,7 @@ export function MobileLibraryShell(args: {
       // only after the stillCurrent + ref-assignment fence below.
       const { sound } = await Audio.Sound.createAsync(
         { uri },
-        // rate 1.0 — no client-side time-stretching for the meaning
+        // rate 1.0; no client-side time-stretching for the meaning
         // word audio. AVPlayer's WSOLA on iOS produces formant smearing
         // when stretching short mono 22050 Hz mp3s (Piper Paola, Piper
         // Sharvard) at extreme rates: a 0.65 stretch turned the female
@@ -8575,7 +8608,7 @@ export function MobileLibraryShell(args: {
     showDebug(`Hq cache ${uri ? "HIT" : "miss"} voiceId=${voiceId ?? "null"} sent=${clip.sentence.slice(0,25)}`);
 
     // Prefer the editor-prebaked R2 mp3 (audioClip.cachedUrl) when
-    // available — bypasses Modal Piper at runtime so cold-starts can't
+    // available; bypasses Modal Piper at runtime so cold-starts can't
     // produce silent plays. Falls through to the Modal TTS endpoint
     // only when no cached url is set on the exercise (legacy stories or
     // newly-generated exercises whose audios were never regen'd).
@@ -8658,7 +8691,7 @@ export function MobileLibraryShell(args: {
         interruptionModeIOS: InterruptionModeIOS.DoNotMix,
       });
       if (!stillCurrent()) return;
-      // shouldPlay:false + deferred playAsync — same fence as the
+      // shouldPlay:false + deferred playAsync; same fence as the
       // story and meaning paths, so a mid-flight Next never leaks a
       // fragment of the HQ TTS clip.
       // TEST: rate 1.0 (no pitch correction). If audio is audible at this
@@ -8735,7 +8768,7 @@ export function MobileLibraryShell(args: {
    * Autoplay path for practice: always generate a fresh TTS clip via
    * `/api/practice/sentence-tts` (Piper on Modal, cached in R2). The
    * old behaviour ranked Story segments first, but those segments are
-   * cut from the original narration with aeneas timings — they fall
+   * cut from the original narration with aeneas timings; they fall
    * short or run long when the alignment drifts, and they drag in any
    * background music / ambient noise the story had. A purpose-built
    * Piper clip is shorter, exact and clean. expo-speech stays as the
@@ -8753,7 +8786,7 @@ export function MobileLibraryShell(args: {
       await playPracticeContextClipHqOnly();
     } catch {
       // HQ TTS unavailable for this clip. Per policy (2026-05-18), no
-      // expo-speech fallback — silence is preferred over the device's
+      // expo-speech fallback; silence is preferred over the device's
       // robotic voice.
     }
   }
@@ -9528,7 +9561,7 @@ export function MobileLibraryShell(args: {
   // Reader comprehension events. Captures per-word interactions for adaptive
   // learning + corpus asset value. Fire-and-forget; failures are logged but
   // never block reader UX. `audio_complete` is the canonical "user finished
-  // the story audio" signal — the journey screen uses it to flip a story's
+  // the story audio" signal; the journey screen uses it to flip a story's
   // `audioFinished` flag (see src/lib/journeyProgress.ts). Without it the
   // journey would never repaint completed pills for mobile-only listeners,
   // because /api/continue-listening filters out >= 95% rows.
@@ -10173,7 +10206,7 @@ export function MobileLibraryShell(args: {
         key: standalone.key,
         title: standalone.title,
         topic,
-        levelLabel: cefr ? CEFR_DISPLAY_LABELS[cefr] : broadLevel || "—",
+        levelLabel: cefr ? CEFR_DISPLAY_LABELS[cefr] : broadLevel || "-",
         coverUrl: standalone.coverUrl,
         readMinutes: 4,
         xpReward: 16,
@@ -10507,7 +10540,7 @@ export function MobileLibraryShell(args: {
           that are about to arrive (Continue listening + New releases),
           so the layout doesn't jump and the user has something to look
           at during the ~500-900 ms hydration window. Gated on
-          `didFirstHydrate`, NOT `loadingRemote` — that distinction
+          `didFirstHydrate`, NOT `loadingRemote`; that distinction
           matters because `loadingRemote` only flips to true inside the
           fetch effect, after the first render has already painted the
           local-state sections. The flag stays true after the first
@@ -10628,12 +10661,12 @@ export function MobileLibraryShell(args: {
 
       {/* New releases uses static bundled data so it's available at T=0.
           The sections above (Continue listening, Recommended next) depend
-          on async data and land ~500-900 ms later — if we render New
+          on async data and land ~500-900 ms later; if we render New
           Releases before those arrive, it flashes at the top of the list
           and then jumps down. Gate on loadingRemote so the home layout
           stabilizes in a single paint. */}
       {/* Books and stories used to share a single "New releases" rail,
-          but the two cards have different intrinsic heights — the
+          but the two cards have different intrinsic heights; the
           shorter ones left a visual gap under them when alignItems
           collapsed everyone to the row's tallest card. Splitting them
           into two rails keeps each carousel uniform and makes the
@@ -10716,7 +10749,12 @@ export function MobileLibraryShell(args: {
                 size={28}
               />
               <Text style={styles.favoritesHeroFlagCode}>
-                {selectedExploreLanguage === "All" ? "ALL" : formatLanguageCode(selectedExploreLanguage)}
+                {/* Show the language code (ES), not "ALL": the flag is a
+                    specific country, so "ALL" beside it reads as a mismatch.
+                    Mirror the flag's default (Spanish) when the filter is All. */}
+                {formatLanguageCode(
+                  selectedExploreLanguage === "All" ? "Spanish" : selectedExploreLanguage
+                )}
               </Text>
               <Feather name="chevron-down" size={14} color="rgba(255,255,255,0.55)" />
             </Pressable>
@@ -11305,6 +11343,9 @@ export function MobileLibraryShell(args: {
             onStart={() => void openPracticeMode(recommendedPracticeMode ?? "meaning", true)}
             onPickSkill={(mode) => void openPracticeMode(mode, true)}
             emptyState={favoriteWords.length === 0}
+            onEmptyTap={() => setSaveWordsHintVisible(true)}
+            reviewSoonCount={reviewSoon.count}
+            reviewSoonMinutes={reviewSoon.minutes}
           />
           {effectivePlan === "polyglot" ? (
             <Pressable
@@ -11559,13 +11600,13 @@ export function MobileLibraryShell(args: {
                 if (isCheckpoint) {
                   headline = checkpointPassed
                     ? "Checkpoint cleared."
-                    : "Almost there — try again.";
+                    : "Almost there; try again.";
                 } else if (isPerfect) {
                   headline = "Every answer locked in.";
                 } else if (accuracyPct >= 70) {
                   headline = "You're sharper than last time.";
                 } else if (accuracyPct >= 40) {
-                  headline = "Solid practice — keep going.";
+                  headline = "Solid practice; keep going.";
                 } else {
                   headline = "These ones need another pass.";
                 }
@@ -11622,7 +11663,7 @@ export function MobileLibraryShell(args: {
                         <Feather name="clock" size={20} color="#f8c15c" />
                         <View style={styles.practiceResultStatCardText}>
                           <Text style={styles.practiceResultStatValueLarge}>
-                            {durationMs > 0 ? durationLabel : "—"}
+                            {durationMs > 0 ? durationLabel : "-"}
                           </Text>
                           <Text style={styles.practiceResultStatLabelLarge}>time</Text>
                         </View>
@@ -11631,7 +11672,7 @@ export function MobileLibraryShell(args: {
                   </>
                 );
               })()}
-              {/* WHAT'S NEXT zone — 3 acción cards horizontales.
+              {/* WHAT'S NEXT zone; 3 acción cards horizontales.
                   Reemplaza la pila vertical de botones primary +
                   secondary + extra. Cada card encapsula su micro-
                   contexto ("Review N due · ~Y min", "Fix N · You
@@ -11797,7 +11838,7 @@ export function MobileLibraryShell(args: {
           ) : currentPracticeExercise ? (
             <>
               {/* Top meta strip (progress dots + topic + XP). Shared
-                  across all practice modes, including match — match's
+                  across all practice modes, including match; match's
                   own internal hero panel (instructions + counter) was
                   removed to free vertical space for the word/meaning
                   chips, but this header stays. */}
@@ -11818,7 +11859,7 @@ export function MobileLibraryShell(args: {
                           que las sesiones cortas "se vieran llenas",
                           pero con eso un match de 1 ejercicio mostraba
                           10 dots y daba la sensación de que faltaban
-                          9 — desincronizado con el "1 pendiente" del
+                          9; desincronizado con el "1 pendiente" del
                           orbit. Ahora cada dot = un ejercicio real. */}
                       {Array.from({ length: practiceExercises.length }).map((_, index) => {
                         const isDone = index < practiceIndex + 1;
@@ -11970,7 +12011,7 @@ export function MobileLibraryShell(args: {
                                   : "Tap to listen"}
                           </Text>
                           {/* Intentionally NO word reveal under the
-                              icon when resolved — showing the answer
+                              icon when resolved; showing the answer
                               there defeats the listening exercise's
                               purpose (the user should match what they
                               HEARD against the options, not read it
@@ -12225,7 +12266,7 @@ export function MobileLibraryShell(args: {
                         const isWordPending = Boolean(wordPendingMeaning) && !isWordMatched;
                         const isWordWrong = wrongMatchWords.includes(pair.word);
 
-                        // Meaning side state — uses the meaning rendered on this row
+                        // Meaning side state; uses the meaning rendered on this row
                         // (NOT pair.answer; the columns are independently shuffled).
                         const matchedPairForMeaning = currentPracticeExercise.pairs.find(
                           (p) => p.answer === meaning && matchedWords.includes(p.word)
@@ -12248,7 +12289,7 @@ export function MobileLibraryShell(args: {
                           ? accentForPair(meaningPairedWord)
                           : null;
 
-                        // Disable rules — enforce "no two selections of the same side at once".
+                        // Disable rules; enforce "no two selections of the same side at once".
                         // Word side: lock if matched/wrong, or if a different word is already
                         //   half-selected (forces user to deselect it first).
                         // Meaning side: same logic mirrored.
@@ -12692,7 +12733,7 @@ export function MobileLibraryShell(args: {
                     {loadingFavoriteKey === key ? (
                       // Spinner mientras se descarga/genera el TTS.
                       // Da feedback inmediato de "estoy en eso, no
-                      // sigas tapeando" — previene la cascada de
+                      // sigas tapeando"; previene la cascada de
                       // requests en Modal cold-start.
                       <ActivityIndicator size="small" color="#f8c15c" />
                     ) : (
@@ -12760,12 +12801,56 @@ export function MobileLibraryShell(args: {
           )}
         </>
       ) : (
-        <View style={styles.emptyCard}>
-          <Text style={styles.emptyTitle}>No saved words yet</Text>
-          <Text style={styles.metaLine}>
-            Tap a highlighted word in any story to save it, and it will show up here.
+        <>
+          <Text style={styles.favoritePlaceholderIntro}>
+            This is what saved words look like. These are examples; tap one to learn how
+            to save your own.
           </Text>
-        </View>
+          {[
+            { word: "madrugar", type: "verb", translation: "to wake up early", meta: "From a sample story", mastery: 2 },
+            { word: "el antojo", type: "noun", translation: "a sudden craving", meta: "From a sample story", mastery: 1 },
+            { word: "platicar", type: "verb", translation: "to chat, to talk casually", meta: "From a sample story", mastery: 3 },
+          ].map((p) => (
+            <View key={p.word} style={[styles.favoriteCard, { marginBottom: 12 }]}>
+              <View style={[styles.favoriteAccentRail, styles.favoritePlaceholderRail]} />
+              <View style={styles.favoritePlaceholderContent}>
+                <View style={styles.favoriteHeader}>
+                  <View style={styles.favoriteIdentity}>
+                    <View style={styles.favoriteWordRow}>
+                      <Text style={styles.favoriteWord}>{p.word}</Text>
+                      <Text style={styles.favoriteInlineType}>{p.type}</Text>
+                      <View style={styles.favoriteSampleBadge}>
+                        <Text style={styles.favoriteSampleBadgeText}>SAMPLE</Text>
+                      </View>
+                    </View>
+                    <View style={styles.favoriteMasteryBar}>
+                      {[1, 2, 3, 4, 5].map((tier) => (
+                        <View
+                          key={tier}
+                          style={[
+                            styles.favoriteMasterySegment,
+                            tier <= p.mastery ? { backgroundColor: "#7dd3fc" } : null,
+                          ]}
+                        />
+                      ))}
+                    </View>
+                    <Text style={styles.favoriteMeta} numberOfLines={1}>{p.meta}</Text>
+                  </View>
+                  <View style={styles.favoritePlayCircle}>
+                    <Ionicons name="play" size={16} color="#f8c15c" style={{ marginLeft: 2 }} />
+                  </View>
+                </View>
+                <Text style={styles.favoriteDefinition} numberOfLines={2}>{p.translation}</Text>
+              </View>
+              <Pressable
+                onPress={() => setSaveWordsHintVisible(true)}
+                style={styles.favoritePlaceholderTapLayer}
+                accessibilityRole="button"
+                accessibilityLabel="Sample word. Open a story to save your own."
+              />
+            </View>
+          ))}
+        </>
       )}
     </>
   );
@@ -13739,7 +13824,7 @@ export function MobileLibraryShell(args: {
     return null;
   }, [activeJourneyTrack]);
 
-  // The global "next" story object (not just its id) — shown as the clean,
+  // The global "next" story object (not just its id); shown as the clean,
   // tappable chip inside the tour's step-1 card. Rendered by us, so it never
   // depends on the scrolling path node's position.
   const tourNextStory = useMemo(() => {
@@ -13756,13 +13841,13 @@ export function MobileLibraryShell(args: {
 
   // Set of story ids that come AFTER the global "next" pointer in
   // the path's logical order. Tapping any of these should show the
-  // placement-test offer popup instead of opening the reader —
+  // placement-test offer popup instead of opening the reader -
   // they're the user's "future" content, not yet earned. Stories
   // before the next (completed, audioFinished, skipped) are
   // re-readable; the next itself opens normally.
   const postNextStoryIds = useMemo<Set<string>>(() => {
     // Model B: candado solo en niveles que están bloqueados (CEFR boundary).
-    // Dentro de un nivel desbloqueado, todas las historias son accesibles —
+    // Dentro de un nivel desbloqueado, todas las historias son accesibles -
     // el orden secuencial sigue siendo visible vía la pill "next" pero ya
     // no es un gate. Una historia entra en este Set solo cuando el backend
     // marcó `unlocked: false`, lo que significa que su nivel todavía no ha
@@ -13782,7 +13867,7 @@ export function MobileLibraryShell(args: {
   // Ref attached to the "next" node once it renders, plus a flag that
   // makes sure the auto-scroll only fires once per track load. The
   // actual scroll is a one-shot in the onLayout handler of the next
-  // node — we measure its offset inside shellScrollRef and jump there.
+  // node; we measure its offset inside shellScrollRef and jump there.
   const journeyNextNodeRef = useRef<View | null>(null);
   const journeyAutoScrolledRef = useRef<string | null>(null);
   useEffect(() => {
@@ -13796,7 +13881,7 @@ export function MobileLibraryShell(args: {
   // shell ScrollView. We target (pillY + pillH/2 - viewport/2) so the
   // pill sits at the middle. The result is clamped to [0, maxScroll]:
   // if the next pill is in the upper half (first story of A1), the
-  // computed target is negative and scrollTo clamps to 0 — leaves the
+  // computed target is negative and scrollTo clamps to 0; leaves the
   // top header visible. Same on the lower edge: scrollTo clamps to
   // contentHeight - viewportHeight so the last story never tries to
   // pull past the bottom.
@@ -13840,7 +13925,7 @@ export function MobileLibraryShell(args: {
             if (cancelled) return;
             const { height: viewportH } = Dimensions.get("window");
             // Use 45% of viewport instead of 50% so the pill sits
-            // slightly above center — reading naturally pulls the eye
+            // slightly above center; reading naturally pulls the eye
             // a bit higher than geometric middle, and the "what's
             // next" pill earns more visual weight just above the
             // fold than buried under it.
@@ -13874,11 +13959,11 @@ export function MobileLibraryShell(args: {
   // señales para no quedar "muerto":
   //   - El journey se vuelve visible (activeScreen pasa a "home").
   //   - El track activo cambia (el usuario picó otro Studio Journey)
-  //     — los Animated.View se desmontan/remontan y necesitan
+  //    ; los Animated.View se desmontan/remontan y necesitan
   //     re-suscribirse al valor.
   //   - La "next" salta a otra historia (los views previos se
   //     desmontan; los nuevos necesitan ver el valor oscilando).
-  //   - La app vuelve de background — iOS puede pausar timings y al
+  //   - La app vuelve de background; iOS puede pausar timings y al
   //     despertar el loop puede no reanudar solo.
   // JS-driven (useNativeDriver:false): con native driver el loop se
   // pausa a mitad bajo Low Power Mode / frame drops y queda congelado.
@@ -14303,7 +14388,7 @@ export function MobileLibraryShell(args: {
   // (Removed: an older "force scrollTo(0) every time activeScreen
   // becomes journey" effect lived here. It was added to defeat a now-
   // gone auto-scroll-to-next behavior, and competed with the new
-  // scroll-restore-on-tab-return useEffect — its rAF would fire AFTER
+  // scroll-restore-on-tab-return useEffect; its rAF would fire AFTER
   // the restore, snapping the user back to the top. The restore path
   // already covers first-visit-lands-at-top because shellScrollYRef
   // defaults to 0.)
@@ -14320,17 +14405,17 @@ export function MobileLibraryShell(args: {
     setActiveJourneyLanguage(first);
     void loadJourneyForLanguage(first);
     // Intentionally narrow deps: we only want this to fire when the
-    // user's target list arrives or changes meaningfully — not on
+    // user's target list arrives or changes meaningfully; not on
     // every loadJourneyForLanguage identity bump.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeJourneyLanguage, preferences.targetLanguages, sessionToken]);
-  // The hub is gone — kept as a const for the few places below that
+  // The hub is gone; kept as a const for the few places below that
   // still branch on it, but it's always false now.
   const showJourneyHub = false;
 
   // Helper that renders a single story node row inside the journey
   // path. Extracted so the path render can be a flat ReactNode[]
-  // (no nested .map wrappers) — that flat structure is required for
+  // (no nested .map wrappers); that flat structure is required for
   // the ScrollView's native `stickyHeaderIndices` to pin the topic
   // panels at the top of the screen and produce the proper Duolingo
   // "next panel slides over previous" eclipse swap.
@@ -14349,11 +14434,11 @@ export function MobileLibraryShell(args: {
     // Soft serpentine: each story pill sits at a horizontal offset
     // that walks rightward by a fixed step until it hits the right
     // edge of the path, then walks back left, then back right, etc.
-    // Independent of total story count — with 3 stories we get
+    // Independent of total story count; with 3 stories we get
     // 0/25/50 (still ascending, no return yet); with 5 we get
     // 0/25/50/25/0 (full cycle); with 7 we get 0/25/50/25/0/25/50.
     // Earlier versions used a triangle wave with peak at the middle,
-    // which caused short topics (3 stories) to "return" too early —
+    // which caused short topics (3 stories) to "return" too early -
     // the third story landed back at the leftmost position even
     // though the second had only just reached the right edge.
     const STEP_PX = 28;
@@ -14414,7 +14499,7 @@ export function MobileLibraryShell(args: {
 
     return (
       <View
-        // Compound key (level.id + topic.slug + story.id) — story
+        // Compound key (level.id + topic.slug + story.id); story
         // ids should be globally unique already, but compound keys
         // are cheap insurance against any duplicate-key dedupe bug
         // similar to the topic-panel one we just fixed.
@@ -14458,7 +14543,7 @@ export function MobileLibraryShell(args: {
             ) : null;
 
           // Sheen superior translúcido (variante E elegida) sobre el
-          // sólido del color del topic — sólo en la "next".
+          // sólido del color del topic; sólo en la "next".
           const nextSheen =
             nodeVariant === "next" ? (
               <View
@@ -14477,7 +14562,7 @@ export function MobileLibraryShell(args: {
             ) : null;
 
           // Banda diagonal que pasa cada ~4 s usando shimmerPulse
-          // (loop con delay) — sólo en la "next".
+          // (loop con delay); sólo en la "next".
           const nextShimmer =
             nodeVariant === "next" ? (
               <View
@@ -14529,7 +14614,7 @@ export function MobileLibraryShell(args: {
               // popup; everything before (or at) next opens for
               // (re)reading. This preserves the rule that the
               // green check is earned only via audio + exercises
-              // — placement still gates progression but doesn't
+              //; placement still gates progression but doesn't
               // forge completions.
               if (postNextStoryIds.has(story.id)) {
                 showLockedHint();
@@ -14587,7 +14672,7 @@ export function MobileLibraryShell(args: {
                       style={[
                         styles.journeyNodePillCoverThumb,
                                 // The "next" recommended story shows its cover at
-                        // full brightness — same as `completed` — so the
+                        // full brightness; same as `completed`; so the
                         // box reads as luminous, not muted. Only past/locked
                         // stories get the dim treatment.
                         nodeVariant === "completed" || nodeVariant === "next"
@@ -14757,7 +14842,7 @@ export function MobileLibraryShell(args: {
           // re-measurements (image loads shifting the topic by a
           // few px) overwrite layout.y while the scroll handler is
           // mid-flight, which causes the sticky panel to "rotate"
-          // between two topics on every eclipse — exactly the
+          // between two topics on every eclipse; exactly the
           // flicker the user reported.
           //
           // The trade-off is that if a cover loads after the user
@@ -14782,7 +14867,7 @@ export function MobileLibraryShell(args: {
           recomputeStickyTopicRef.current?.(shellScrollYRef.current, true);
         },
         () => {
-          // measureLayout failures are common during fast scroll —
+          // measureLayout failures are common during fast scroll -
           // we just skip and rely on the next onLayout / scroll pass.
         }
       );
@@ -14795,7 +14880,7 @@ export function MobileLibraryShell(args: {
   const recomputeStickyTopicRef = useRef<((y: number, silent?: boolean) => void) | null>(null);
 
   // Re-evaluate which topic should be sticky based on the current
-  // scroll Y. `silent=true` skips the haptic — used by layout-driven
+  // scroll Y. `silent=true` skips the haptic; used by layout-driven
   // call sites (measureTopicY, scroll-restore on tab return) so layout
   // re-measurements and programmatic scroll don't masquerade as user
   // scroll events. Only `handleJourneyScroll` (the genuine onScroll
@@ -14847,7 +14932,7 @@ export function MobileLibraryShell(args: {
     if (foundCurrent) {
       current = foundCurrent;
     } else if (stickyTopicSlugRef.current === null) {
-      // Nothing has crossed yet, no previous value to keep — stay
+      // Nothing has crossed yet, no previous value to keep; stay
       // hidden (current === null).
       current = null;
     } else {
@@ -14897,7 +14982,7 @@ export function MobileLibraryShell(args: {
         if (!visitedSlugsInSessionRef.current.has(sessionKey)) {
           visitedSlugsInSessionRef.current.add(sessionKey);
           Haptics.selectionAsync().catch(() => {
-            // Ignore — devices without a Taptic engine just get the
+            // Ignore; devices without a Taptic engine just get the
             // visual swap with no haptic.
           });
         }
@@ -14910,7 +14995,7 @@ export function MobileLibraryShell(args: {
   // call this on first measurement to seed the floating panel.
   recomputeStickyTopicRef.current = recomputeStickyTopic;
 
-  // ScrollView onScroll handler. Cheap — just reads contentOffset.y
+  // ScrollView onScroll handler. Cheap; just reads contentOffset.y
   // and forwards to the recompute logic. Throttled to 16ms via
   // `scrollEventThrottle` on the ScrollView itself.
   const handleJourneyScroll = useCallback(
@@ -14956,7 +15041,7 @@ export function MobileLibraryShell(args: {
   // (different language, different track id). Without this, two
   // journeys whose topic slugs collide ("food-everyday-life" exists
   // in Italian + Spanish) inherit each other's measured Y/labels
-  // because `topicLayoutsRef` is keyed by slug only — the sticky
+  // because `topicLayoutsRef` is keyed by slug only; the sticky
   // panel then shows the wrong topic name or position. Clearing on
   // track change forces a fresh measurement pass.
   const trackIdentityRef = useRef<string | null>(null);
@@ -14990,7 +15075,7 @@ export function MobileLibraryShell(args: {
     if (wasOpen && !isOpen) {
       const targetY = shellScrollYRef.current;
       // Defer one frame so the ScrollView is mounted and ready.
-      // Silent recompute — programmatic scroll-restore should not
+      // Silent recompute; programmatic scroll-restore should not
       // emit a haptic.
       requestAnimationFrame(() => {
         shellScrollRef.current?.scrollTo({ y: targetY, animated: false });
@@ -15008,7 +15093,7 @@ export function MobileLibraryShell(args: {
   // Worse, `shellScrollYRef.current` still holds the journey's last Y
   // (since handleJourneyScroll only fires on Journey), so when topic
   // blocks remeasure on return they call recomputeStickyTopic against
-  // the stale Y — surfacing a sticky banner that doesn't match the
+  // the stale Y; surfacing a sticky banner that doesn't match the
   // actual scroll position. Re-applying the cached Y here aligns the
   // visual scroll with the cached value before the recompute runs.
   // Pending journey scroll-Y to restore the next time the ScrollView's
@@ -15017,7 +15102,7 @@ export function MobileLibraryShell(args: {
   // applied) or by onScrollBeginDrag (the user took over). The pending
   // ref pattern is necessary because a single requestAnimationFrame on
   // tab return often fires BEFORE the journey path has finished
-  // measuring its contentSize — `scrollTo(1500)` then gets clamped to
+  // measuring its contentSize; `scrollTo(1500)` then gets clamped to
   // whatever maxOffset the ScrollView has at that frame (e.g. 400),
   // which silently kills the restore. By keeping the target around and
   // re-applying it whenever contentSize grows, we recover even when
@@ -15032,14 +15117,14 @@ export function MobileLibraryShell(args: {
     if (selection !== null) return;
     const targetY = shellScrollYRef.current;
     pendingJourneyRestoreYRef.current = targetY;
-    // First-attempt scrollTo on the next frame — covers the common case
+    // First-attempt scrollTo on the next frame; covers the common case
     // where the content height is already large enough (warm cache,
     // returning from a quick tab visit). If it gets clamped, the
     // onContentSizeChange handler below will pick the pending target up
     // again once the content grows past it.
     requestAnimationFrame(() => {
       shellScrollRef.current?.scrollTo({ y: targetY, animated: false });
-      // Silent — programmatic scroll restore on tab return should not
+      // Silent; programmatic scroll restore on tab return should not
       // fire a haptic.
       recomputeStickyTopicRef.current?.(targetY, true);
     });
@@ -15048,7 +15133,7 @@ export function MobileLibraryShell(args: {
   // Lifted out of `journeyView` so the shell can render it OUTSIDE
   // the main ScrollView and have it stay pinned to the top of the
   // screen while the path content scrolls underneath. Earlier this
-  // sat at the top of the journey content and scrolled away — the
+  // sat at the top of the journey content and scrolled away; the
   // user reported "tampoco queda sticky la primera línea" because
   // of that. Rendered conditionally in the shell render below when
   // `activeScreen === "home" && !journeyDetailTopicId`.
@@ -15115,7 +15200,7 @@ export function MobileLibraryShell(args: {
     </View>
   );
 
-  // Sticky indices for the journey path's topic panels — computed
+  // Sticky indices for the journey path's topic panels; computed
   // based on their position within the journeyView's flat children
   // list. iOS native `stickyHeaderIndices` on the ScrollView uses
   // these to pin each topic panel at the top of the screen while
@@ -15158,7 +15243,7 @@ export function MobileLibraryShell(args: {
 
   const journeyView = (
     <>
-      {/* Detail-mode hero only — the path-mode top strip was lifted
+      {/* Detail-mode hero only; the path-mode top strip was lifted
           out of the scroll content and lives in the shell render
           (`journeyPathTopBar`) so it can stay sticky at the top of
           the screen while the path scrolls underneath. */}
@@ -15181,7 +15266,7 @@ export function MobileLibraryShell(args: {
           quedaría para JourneysPanel/settings; el path siempre debe
           mostrar contenido. */}
 
-      {/* Old insights bar (progress %, steps, due pills) removed — all that
+      {/* Old insights bar (progress %, steps, due pills) removed; all that
           info is now inline in the journey top strip. */}
 
       {!showJourneyHub && !journeyVariantPickerOpen && !journeyDetailTopicId && !loadingRemote && !journeyLanguageLoading && !activeJourneyTrack ? (
@@ -15224,7 +15309,7 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
 
-      {/* Full Duolingo-style path — flattened (no wrapping section /
+      {/* Full Duolingo-style path; flattened (no wrapping section /
           level / topic Views) so each topic panel can be a direct
           child of the shell ScrollView. stickyHeaderIndices for the
           topic panels was disabled (see ScrollView prop below) after
@@ -15234,7 +15319,7 @@ export function MobileLibraryShell(args: {
       {!showJourneyHub && !journeyVariantPickerOpen && activeJourneyTrack
         ? activeJourneyTrack.levels.flatMap((level, levelIdx) => {
             const items: React.ReactNode[] = [];
-            // Level header (skip for first level — the top bar
+            // Level header (skip for first level; the top bar
             // already shows the active level code).
             if (levelIdx > 0) {
               items.push(
@@ -15257,11 +15342,11 @@ export function MobileLibraryShell(args: {
             const requiredForLevel = Math.max(1, Math.ceil(gatingTopics.length * 0.75));
             const nextLevelInTrack = activeJourneyTrack?.levels[levelIdx + 1] ?? null;
             level.topics.forEach((topic, topicIdx) => {
-              // Topic panel — sticky. Direct sibling of other path
+              // Topic panel; sticky. Direct sibling of other path
               // children so stickyHeaderIndices on the ScrollView
               // can target it. Compound key (level.id + topic.slug)
               // because the same topic slug ("food", "home", etc.)
-              // can repeat across levels — React would silently
+              // can repeat across levels; React would silently
               // dedupe siblings with identical keys and skip the
               // A2 / B1 copies, which matches the user's report
               // that "only A1 levels show up".
@@ -15274,7 +15359,7 @@ export function MobileLibraryShell(args: {
                   // ScrollView. Used by the JS-driven floating
                   // sticky panel. Pressable would also accept a ref
                   // but its native node varies across RN versions
-                  // and platforms — a plain View is the reliable
+                  // and platforms; a plain View is the reliable
                   // measurement target.
                   key={`tp-${level.id}-${topic.slug}`}
                   ref={(node) => {
@@ -15284,7 +15369,7 @@ export function MobileLibraryShell(args: {
                       // layout for this slug. Re-renders that fire
                       // the ref callback again with a new node (a
                       // remount) used to also delete and re-measure
-                      // — that path turned a stray re-mount into a
+                      //; that path turned a stray re-mount into a
                       // recompute, which during a `setState` storm
                       // (e.g. from opening the locked-story modal)
                       // produced the cascading flicker the user
@@ -15315,7 +15400,7 @@ export function MobileLibraryShell(args: {
                   }}
                   onLayout={() => {
                     // Re-measure when story covers finish loading
-                    // and push content down — keeps the sticky swap
+                    // and push content down; keeps the sticky swap
                     // point accurate.
                     const node = topicViewsRef.current.get(topic.slug);
                     if (node)
@@ -15331,8 +15416,8 @@ export function MobileLibraryShell(args: {
                 >
                 <Pressable
                   onPress={() => {
-                    // Topics are always tappable — even on locked
-                    // levels — so the user can preview stories +
+                    // Topics are always tappable; even on locked
+                    // levels; so the user can preview stories +
                     // vocab as motivation to reach the level. Only
                     // the individual story nodes stay locked.
                     // 1. Open the preview instantly using whatever
@@ -15365,13 +15450,13 @@ export function MobileLibraryShell(args: {
                         offlineVocab.push(word);
                       }
                     }
-                    // Decide upfront if a background fetch will run —
+                    // Decide upfront if a background fetch will run -
                     // we want isVocabLoading to be `true` from the
                     // very first render of the sheet so the loading
                     // skeleton replaces the fallback hint without
                     // any one-frame flash.
                     // Re-fetch from server when the offline cache hasn't
-                    // covered every story in the topic — that gives us
+                    // covered every story in the topic; that gives us
                     // the full vocab (all stories, all unique words)
                     // even when the user has only downloaded some.
                     const offlineCoverage = topic.stories.filter((s) => {
@@ -15440,7 +15525,7 @@ export function MobileLibraryShell(args: {
                           }
                         }
                         // Only update if the preview is still open
-                        // for the same topic — otherwise the user
+                        // for the same topic; otherwise the user
                         // moved on and we'd be overwriting unrelated
                         // state.
                         setTopicPreviewOpen((current) => {
@@ -15494,7 +15579,7 @@ export function MobileLibraryShell(args: {
             //   1. Surface the 75% rule so the user knows what they're
             //      working toward instead of "next level just appeared".
             //   2. Discoverable express lane via the level test (already
-            //      reachable from locked stories — this makes it proactive).
+            //      reachable from locked stories; this makes it proactive).
             // Shown only on unlocked levels that have a next level above
             // and at least one gating topic. The user has nothing to "test
             // out of" at the last CEFR level, and an empty-scaffold level
@@ -15549,7 +15634,7 @@ export function MobileLibraryShell(args: {
           })
         : null}
 
-      {/* (Old nested-View rendering removed — the flat flatMap above
+      {/* (Old nested-View rendering removed; the flat flatMap above
           replaces the section / level-block / topic-block wrappers
           so the topic panels can be direct children of the
           ScrollView for native sticky.) */}
@@ -15598,7 +15683,7 @@ export function MobileLibraryShell(args: {
                   }}
                   style={styles.journeyPathTopicBlock}
                 >
-                  {/* Duolingo-style topic panel — rounded card with
+                  {/* Duolingo-style topic panel; rounded card with
                       eyebrow (level) + topic title on the left, and a
                       notepad icon on the right matching the
                       Duolingo reference. The card sits within the
@@ -15607,10 +15692,10 @@ export function MobileLibraryShell(args: {
                       divider. */}
                   <Pressable
                     onPress={() => {
-                      // Topics are always tappable — see comment in
+                      // Topics are always tappable; see comment in
                       // the other Pressable above. Locked story nodes
                       // still surface the placement-test offer.
-                      // Empty topic from the Studio scaffold — the user
+                      // Empty topic from the Studio scaffold; the user
                       // already sees the "Aún no hay historias" placeholder
                       // below the header, so don't pop a preview sheet that
                       // would just be blank.
@@ -15655,7 +15740,7 @@ export function MobileLibraryShell(args: {
                   {topic.stories.length === 0 ? (
                     // Placeholder for topics planned in Studio that don't
                     // have any published stories yet. The user said
-                    // "visibles pero vacíos" — keep the topic in the path
+                    // "visibles pero vacíos"; keep the topic in the path
                     // so the curriculum scaffold is visible, but make it
                     // clear nothing's there yet rather than rendering an
                     // empty gap that looks like a layout glitch.
@@ -15689,7 +15774,7 @@ export function MobileLibraryShell(args: {
                     const alignRight = storyIdx % 2 === 1;
                     // Reason a locked story is locked, computed when the
                     // user actually taps it. Cheaper to compute on demand
-                    // than once per render — most stories will never be
+                    // than once per render; most stories will never be
                     // tapped while locked.
                     const showLockedHint = () => {
                       // 1. Level-locked first: any story in a locked
@@ -15759,7 +15844,7 @@ export function MobileLibraryShell(args: {
                             side via the row alignment above so the path
                             zigzags down the screen. The "next" variant
                             gets its accent + a single soft glow built
-                            into its style — no extra ring overlay. */}
+                            into its style; no extra ring overlay. */}
                         {nodeVariant === "next" ? (
                           <View style={styles.journeyNextPillWrap}>
                             <Animated.View
@@ -15890,7 +15975,7 @@ export function MobileLibraryShell(args: {
                             </View>
                           </Pressable>
                         )}
-                        {/* Per-node download badge removed — the
+                        {/* Per-node download badge removed; the
                             offline action is available inside the
                             reader (bookmark / cloud icons in the
                             top bar) so the path can stay a clean,
@@ -15900,7 +15985,7 @@ export function MobileLibraryShell(args: {
                   })}
 
                   {/* Checkpoint chip removed in build 67 per product
-                      direction — checkpoints are no longer surfaced
+                      direction; checkpoints are no longer surfaced
                       between topics. The underlying state
                       (topic.checkpointPassed, openJourneyPractice
                       with kind: "checkpoint") is left intact in case
@@ -16082,7 +16167,7 @@ export function MobileLibraryShell(args: {
   // (race entre el select y el fetch), caemos a las 4 opciones hardcoded.
   const onboardingFocusTracks = remoteJourney?.tracks ?? [];
 
-  // PLACEMENT/FOCUS RESET para los usuarios de prueba — corre una vez por
+  // PLACEMENT/FOCUS RESET para los usuarios de prueba; corre una vez por
   // cold start (gated por un ref). El placement seteado en publicMetadata
   // marcaba historias de niveles inferiores como `skipped: true` y empujaba
   // la "next" hacia abajo, así que limpiamos placement + focus y forzamos
@@ -16206,7 +16291,7 @@ export function MobileLibraryShell(args: {
       title: "What's your focus?",
       body: "Pick the Journey you want to start. Each Journey is a curated track of stories.",
       // Always render Studio Journey tracks. NO hardcoded fallback
-      // anymore — if there's no Journey for this language we want the
+      // anymore; if there's no Journey for this language we want the
       // empty state, not the misleading "Travel & Local Life" copy.
       options: onboardingFocusTracks.map((t) => t.id),
       selected: preferences.preferredVariant ?? "",
@@ -16553,7 +16638,7 @@ export function MobileLibraryShell(args: {
             ? "Culture & Belonging"
             : "General";
     // If the user took the level test, its CEFR result wins over the
-    // self-reported level — the test is a more accurate placement
+    // self-reported level; the test is a more accurate placement
     // signal. Otherwise fall back to the coarse self-pick mapping.
     const placement = payload.testedLevel
       ? payload.testedLevel
@@ -16600,7 +16685,7 @@ export function MobileLibraryShell(args: {
       onboardingTourCompletedAt: null,
     });
 
-    // Override journeys client-side from `selections` — one journey
+    // Override journeys client-side from `selections`; one journey
     // per (language, variant, focus) tuple. This preserves the user's
     // multi-variant picks (e.g. Spanish ES + Spanish LATAM) which the
     // server doesn't yet model: server sees only the deduped
@@ -16609,7 +16694,7 @@ export function MobileLibraryShell(args: {
     // unique language and the secondary variants would be lost.
     if (payload.selections.length > 0) {
       const createdAt = new Date().toISOString();
-      // Dedupe before committing — `payload.selections` mirrors
+      // Dedupe before committing; `payload.selections` mirrors
       // every chip the user tapped in step 1; if the picker ever
       // returns the same (language, variant) twice (or the user
       // taps a chip rapidly enough to register twice), `journeyId`
@@ -16622,14 +16707,14 @@ export function MobileLibraryShell(args: {
           variant: sel.variant,
           focus: journeyFocus,
           // Only the PRIMARY (first picked) language gets the placement-derived
-          // level — the test/self-report was about that language. Secondary
+          // level; the test/self-report was about that language. Secondary
           // languages are brand new, so they start at Beginner instead of
           // inheriting the primary's (possibly Advanced) level.
           //
           // Store the FINE placement (A0 / A1 / B1 / tested CEFR) on the
           // primary, NOT the coarse preferredLevel ("Beginner"). The coarse
           // bucket collapsed A0 and A1 into "Beginner", which then resolved
-          // back to A1 — so a user who picked "Brand new" (A0) was shown an
+          // back to A1; so a user who picked "Brand new" (A0) was shown an
           // A1 journey. The fine value flows through cefrFromCoarseLevel
           // (which passes CEFR codes through unchanged) to the badge + chip.
           level: idx === 0 ? placement : "Beginner",
@@ -16657,7 +16742,7 @@ export function MobileLibraryShell(args: {
   }
 
   // Render the dedicated full-screen onboarding when the user hasn't
-  // completed the survey yet — or when an override (polyglot test or
+  // completed the survey yet; or when an override (polyglot test or
   // a tap on the empty flag chip) asked for it. Replaces the old
   // Modal-based survey.
   const showOnboarding = shouldShowOnboardingSurvey || forceOnboardingProper;
@@ -16666,7 +16751,7 @@ export function MobileLibraryShell(args: {
       <OnboardingFlow
         userName={sessionName ?? null}
         // Always persist now: the previous test-mode "throw away
-        // selections" path is gone — Test mode in the polyglot menu
+        // selections" path is gone; Test mode in the polyglot menu
         // does a full reset instead and runs onboarding normally.
         testMode={false}
         comingSoonLanguages={comingSoonLanguages}
@@ -16678,12 +16763,12 @@ export function MobileLibraryShell(args: {
           // Set activeScreen BEFORE the await: when the gate flips
           // (onboardingSurveyCompletedAt set inside commitOnboarding)
           // and the shell re-renders without the onboarding overlay,
-          // activeScreen is already set — so the user lands directly
+          // activeScreen is already set; so the user lands directly
           // there without a one-frame Home flash.
           setActiveScreen("home");
           setOnboardingOverride(null);
           // Land on the Journey path (not the reader): the product tour runs
-          // here next — its step 1 points the user at their first story.
+          // here next; its step 1 points the user at their first story.
           await commitOnboarding(payload);
         }}
         onCancel={
@@ -16711,7 +16796,7 @@ export function MobileLibraryShell(args: {
         <>
           <Text style={styles.menuScreenSectionTitle}>Your activity</Text>
           <View style={styles.menuScreenSection}>
-            <MenuScreenRow icon="progress" label="Progress" onPress={() => setActiveScreen("progress")} accent="#a8e845" />
+            <MenuScreenRow icon="explore" label="Explore" onPress={() => setActiveScreen("explore")} accent="#7dd3fc" />
             <MenuScreenRow icon="library" label="Library" onPress={() => setActiveScreen("journey")} accent="#7dd3fc" />
             <MenuScreenRow icon="saved" label="Saved" onPress={() => setActiveScreen("library")} accent="#7dd3fc" />
           </View>
@@ -16798,7 +16883,7 @@ export function MobileLibraryShell(args: {
   // Cuando usamos sticky nativo iOS, los hijos del ScrollView deben
   // ser un array PLANO (no un fragment con conditional-null siblings),
   // si no `stickyHeaderIndices` no resuelve correctamente las
-  // posiciones — fue exactamente lo que rompió el intento anterior.
+  // posiciones; fue exactamente lo que rompió el intento anterior.
   // `Children.toArray` aplana el fragment y filtra los nulls,
   // dejando el array que journeyStickyIndices espera.
   if (useNativeJourneySticky) {
@@ -16808,7 +16893,7 @@ export function MobileLibraryShell(args: {
   return (
     <View style={styles.shell}>
       {/* DEBUG OVERLAY (temporal): traza de eventos audio. Quitar tras
-          encontrar el bug — DEBUG_TRACE_ON=false desactiva. */}
+          encontrar el bug; DEBUG_TRACE_ON=false desactiva. */}
       {debugTrace.length > 0 ? (
         <View style={{ position: "absolute", top: 60, right: 4, zIndex: 9999, backgroundColor: "rgba(0,0,0,0.85)", padding: 4, maxWidth: 280, borderRadius: 4 }} pointerEvents="none">
           {debugTrace.map((line, idx) => (
@@ -16817,7 +16902,7 @@ export function MobileLibraryShell(args: {
         </View>
       ) : null}
       {/* Subtle "you're offline" banner. Only appears once we've actually
-          tried to hydrate and every request failed — so it does not flash
+          tried to hydrate and every request failed; so it does not flash
           during the initial in-flight window. Tappable to retry. */}
       {isOffline && (isSignedIn || Boolean(sessionUserId)) ? (
         <Pressable
@@ -16840,7 +16925,7 @@ export function MobileLibraryShell(args: {
       {/* Journey path top bar lifted out of the ScrollView so it
           stays pinned to the top of the screen while the path content
           scrolls underneath. Only rendered for the journey screen in
-          path mode — detail mode (`journeyDetailTopicId` set) keeps
+          path mode; detail mode (`journeyDetailTopicId` set) keeps
           its hero inside the scroll content. Hidden when a story is
           opening (`openingStoryId`) or already open (`selection`)
           so the journey UI doesn't linger over the reader for a
@@ -16870,7 +16955,7 @@ export function MobileLibraryShell(args: {
         style={styles.scrollView}
         // En path mode el primer panel arranca pegado al top bar
         // (paddingTop:0). Así el panel ya está en su posición sticky
-        // desde el render inicial: al hacer scroll no "sube" — sólo
+        // desde el render inicial: al hacer scroll no "sube"; sólo
         // las stories de abajo pasan por debajo. Los demás screens
         // (explore, practice, etc.) mantienen el `paddingTop:28`
         // original del container.
@@ -16878,7 +16963,7 @@ export function MobileLibraryShell(args: {
           styles.container,
           useNativeJourneySticky ? { paddingTop: 0 } : null,
           // Explore / Practice / Favorites siblings of Home in the bottom
-          // nav — match the same visual top as Home (in path mode the
+          // nav; match the same visual top as Home (in path mode the
           // ScrollView starts at 0 because JourneyPathTop already
           // provides clearance). For these screens we mimic that clearance
           // with a small padding so the title baseline lines up across
@@ -16957,7 +17042,7 @@ export function MobileLibraryShell(args: {
           pendingJourneyRestoreYRef.current = null;
         }}
         onMomentumScrollEnd={() => {
-          // Momentum decay finished. The session ends here — clear so
+          // Momentum decay finished. The session ends here; clear so
           // the next gesture starts fresh.
           if (activeScreen === "home" && !journeyDetailTopicId) {
             visitedSlugsInSessionRef.current.clear();
@@ -16979,7 +17064,7 @@ export function MobileLibraryShell(args: {
       >
         {content}
       </ScrollView>
-      {/* JS-driven floating sticky panel — overlays the ScrollView
+      {/* JS-driven floating sticky panel; overlays the ScrollView
           (NOT in flow) so appearing / disappearing never reflows the
           scroll content. Top edge sits flush with the journey top
           bar's bottom (height measured via onLayout above). The
@@ -16987,7 +17072,7 @@ export function MobileLibraryShell(args: {
           opacity:0 so the user only sees one panel at a time.
           Rendered unconditionally on the journey path screen and
           driven via opacity so we never pay a mount frame on the
-          first cross-over — that mount frame was the residual
+          first cross-over; that mount frame was the residual
           flicker the user reported on the first panel scroll. */}
       {activeScreen === "home" &&
       !journeyDetailTopicId &&
@@ -17017,7 +17102,7 @@ export function MobileLibraryShell(args: {
           </View>
         </View>
       ) : null}
-      {/* Floating "scroll to top" — only on Favorites where the
+      {/* Floating "scroll to top"; only on Favorites where the
           saved-words list can grow long. Shows up after the user has
           scrolled at least one viewport-ish (400 px) so it doesn't
           flash on short lists. Tap returns the shell scroll to 0.
@@ -17039,22 +17124,22 @@ export function MobileLibraryShell(args: {
         </Pressable>
       ) : null}
 
-      {/* Floating sticky topic panel — pinned just below the lifted
+      {/* Floating sticky topic panel; pinned just below the lifted
           top bar while the user scrolls through the path. The active
           topic is updated from the ScrollView's onScroll handler
           based on each topic block's measured Y. The in-flow panel
-          (rendered inside the path) keeps existing — this floating
+          (rendered inside the path) keeps existing; this floating
           one covers it as the user scrolls past, producing the
           Duolingo-style "section header that swaps as you cross
           boundaries" effect without flattening the path. */}
-      {/* (Floating JS-driven sticky panel removed — native
+      {/* (Floating JS-driven sticky panel removed; native
           stickyHeaderIndices on the ScrollView now pins the in-flow
           topic panel directly, producing the proper Duolingo
           eclipse swap without the flicker the floating overlay
           had.) */}
 
       {/* Floating FAB en el journey: el tap centra la story "next" en
-          la mitad del viewport — misma lógica que el auto-center on
+          la mitad del viewport; misma lógica que el auto-center on
           journey-open, pero con animación porque es gesto explícito
           del usuario. Si no podemos medir el pill (no hay next, o el
           node aún no se mountó), fallback a top. */}
@@ -17136,7 +17221,7 @@ export function MobileLibraryShell(args: {
                 // activeJourney.language revertía el cambio en el
                 // siguiente render porque `activeJourneyId` seguía
                 // apuntando al journey viejo. Solución: cambiar el
-                // journey activo de verdad — el cross-section sync
+                // journey activo de verdad; el cross-section sync
                 // propaga el cambio al filtro Explore automáticamente.
                 await handleJourneySwitch(id);
               }
@@ -17226,7 +17311,7 @@ export function MobileLibraryShell(args: {
       />
 
 
-      {/* Progress sheet — opens when the user taps the streak / level
+      {/* Progress sheet; opens when the user taps the streak / level
           / XP badges in the journey top bar. Same content as the
           Progress tab, but presented as a slide-up sheet with a
           dismissable backdrop instead of a tab navigation. */}
@@ -17263,7 +17348,7 @@ export function MobileLibraryShell(args: {
               // and the user keeps dragging down, contentOffset.y goes
               // negative (because bounces=true). Past a threshold, treat
               // it as "close the sheet". We intentionally do NOT use the
-              // velocity here — a fast scroll-up has a positive velocity
+              // velocity here; a fast scroll-up has a positive velocity
               // and would otherwise close the sheet by mistake.
               const y = e.nativeEvent.contentOffset.y;
               if (y < -70) {
@@ -17276,7 +17361,7 @@ export function MobileLibraryShell(args: {
         </Animated.View>
       </Modal>
 
-      {/* Topic preview — opens when the user taps a topic panel on
+      {/* Topic preview; opens when the user taps a topic panel on
           the journey path. Shows the stories that will appear inside
           plus a vocabulary teaser, helping the user understand
           what's coming before they start. */}
@@ -17291,7 +17376,7 @@ export function MobileLibraryShell(args: {
         isVocabLoading={topicPreviewOpen?.isVocabLoading ?? false}
       />
 
-      {/* Extended splash — keeps the brand logo visible until the
+      {/* Extended splash; keeps the brand logo visible until the
           first hydrate completes, so the user sees logo → loaded
           content instead of logo → skeleton → content. The skeleton
           inside the shell is still rendered when needed (e.g. very
@@ -17299,7 +17384,7 @@ export function MobileLibraryShell(args: {
           common case it's never visible. */}
       <ExtendedSplash visible={!didFirstHydrate} />
 
-      {/* Level test offer modal — opens when the user taps a story
+      {/* Level test offer modal; opens when the user taps a story
           gated by level. Offers the level test as a way to skip
           ahead instead of showing a dead-end toast. */}
       <Modal
@@ -17357,7 +17442,7 @@ export function MobileLibraryShell(args: {
         </View>
       </Modal>
 
-      {/* Level test runner — fires when launched from a locked story.
+      {/* Level test runner; fires when launched from a locked story.
           Onboarding has its own runner mounted inside OnboardingFlow,
           so this one is only for post-onboarding usage. */}
       {levelTestActive ? (
@@ -17575,7 +17660,7 @@ export function MobileLibraryShell(args: {
               activeOnboardingTourTarget === "home"
                 ? 0
                 : activeOnboardingTourTarget === "explore"
-                  ? 1
+                  ? bottomTabs.findIndex((t) => t.key === "menu") // Explore lives in the Menu now
                   : activeOnboardingTourTarget === "practice"
                     ? 2
                     : activeOnboardingTourTarget === "favorites"
@@ -17587,7 +17672,7 @@ export function MobileLibraryShell(args: {
               activeOnboardingTourTarget === "home"
                 ? "home"
                 : activeOnboardingTourTarget === "explore"
-                  ? "compass"
+                  ? "menu"
                   : activeOnboardingTourTarget === "practice"
                     ? "refresh-cw"
                     : activeOnboardingTourTarget === "favorites"
@@ -17673,10 +17758,56 @@ export function MobileLibraryShell(args: {
           })()
         : null}
 
-      <View style={[styles.bottomNav, tourOnTabStep ? styles.bottomNavAboveTour : null]}>
+      {saveWordsHintVisible && (activeScreen === "practice" || activeScreen === "favorites") ? (
+        <View pointerEvents="box-none" style={styles.tourOverlay} testID="qa-save-words-hint">
+          <Pressable onPress={() => setSaveWordsHintVisible(false)} style={styles.tourScrim} />
+          <View style={[styles.tourCard, { bottom: 96 }]}>
+            {/* Arrow points at the Journey tab (left-most, index 0). */}
+            <View
+              style={[
+                styles.tourArrowDown,
+                { left: (viewportWidth * 0.5) / (bottomTabs.length || 5) - 23 },
+              ]}
+            />
+            <View style={styles.tourTitleRow}>
+              <JourneyIcon size={20} color="#f8c15c" />
+              <Text style={styles.tourTitle}>No saved words yet</Text>
+            </View>
+            <Text style={styles.tourBody}>
+              On the Journey tab, open a story, listen, and tap a word to save it. Your
+              saved words show up in Favorites and Practice.
+            </Text>
+            <View style={styles.tourActionsRow}>
+              <Pressable onPress={() => setSaveWordsHintVisible(false)} hitSlop={8}>
+                <Text style={styles.tourBack}>Not now</Text>
+              </Pressable>
+              <Pressable
+                onPress={() => {
+                  setSaveWordsHintVisible(false);
+                  setActiveScreen("home");
+                }}
+                style={styles.tourNextBtn}
+              >
+                <Text style={styles.tourNextText}>Go to Journey</Text>
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      ) : null}
+
+      <View
+        style={[
+          styles.bottomNav,
+          tourOnTabStep || saveWordsHintVisible ? styles.bottomNavAboveTour : null,
+        ]}
+      >
         {bottomTabs.map((tab) => {
           const isActive = screenMatchesTab(tab.key);
-          const isTourHighlighted = tourTargetMatchesTab(tab.key);
+          // Highlight Home both during the onboarding tour and while the
+          // practice "start with a story" hint points at it.
+          const isTourHighlighted =
+            tourTargetMatchesTab(tab.key) ||
+            (saveWordsHintVisible && tab.key === "home");
           return (
             <Pressable
               key={tab.key}
@@ -17937,14 +18068,14 @@ export function MobileLibraryShell(args: {
                     <MenuLink label="Upgrade" icon="upgrade" onPress={() => void openPlans()} tone="accent" />
                   ) : null}
 
-                  {/* Polyglot-only — internal QA tool. Wipes the
+                  {/* Polyglot-only; internal QA tool. Wipes the
                       account's preferences (target languages,
                       journeys, focus, level, goals, reminders, the
                       onboarding-completed flag) on both client and
                       server, which makes the shell fall straight
                       into the onboarding gate again. The onboarding
                       runs in normal (persistent) mode so any new
-                      selections REPLACE the old setup — letting you
+                      selections REPLACE the old setup; letting you
                       test the new-user experience end-to-end on a
                       live account. Gated to `polyglot` because that
                       tier is for internal use only; this entry is
@@ -17981,7 +18112,7 @@ export function MobileLibraryShell(args: {
               )}
 
               {/* Legal links collapsed into a single MenuLink in
-                  build 68 — tapping it opens a bottom sheet with the
+                  build 68; tapping it opens a bottom sheet with the
                   5 individual links (Impressum, Privacy, Cookies,
                   Terms, Data deletion). The inline list was eating
                   ~5 rows in the side menu; the sheet keeps them
@@ -18185,7 +18316,7 @@ function SwipeableFavoriteCard({
   // Exit animation drives opacity + scaleY (height collapse via transform
   // since native driver can't animate raw layout height). The card stays
   // mounted for ~260ms after the user confirms delete, slides off-screen,
-  // fades, and shrinks vertically — only then we call onDeleteConfirmed
+  // fades, and shrinks vertically; only then we call onDeleteConfirmed
   // so the row removal from the list doesn't visually pop.
   const exitOpacity = useRef(new Animated.Value(1)).current;
   const exitScaleY = useRef(new Animated.Value(1)).current;
@@ -18204,7 +18335,7 @@ function SwipeableFavoriteCard({
 
   function runExitAnimation() {
     Animated.parallel([
-      // Continue leftward in the same direction as the swipe gesture —
+      // Continue leftward in the same direction as the swipe gesture -
       // sliding right would feel like a snap-back after the user already
       // committed to the left action.
       Animated.timing(exitTranslateX, {
@@ -18244,7 +18375,7 @@ function SwipeableFavoriteCard({
     PanResponder.create({
       // Capture as soon as the gesture is clearly horizontal. Lowering
       // the threshold to 1px catches slow drags whose deltas accumulate
-      // sub-pixel — iOS would otherwise hand the gesture to the parent
+      // sub-pixel; iOS would otherwise hand the gesture to the parent
       // ScrollView and the card would never move during a slow swipe.
       onMoveShouldSetPanResponderCapture: (_e, g) => Math.abs(g.dx) > 1 && Math.abs(g.dx) >= Math.abs(g.dy),
       onMoveShouldSetPanResponder: (_e, g) => Math.abs(g.dx) > 1 && Math.abs(g.dx) >= Math.abs(g.dy),
@@ -18378,8 +18509,9 @@ const swipeStyles = StyleSheet.create({
 
 function BottomTabIcon({ tab, active }: { tab: BottomTab; active: boolean }) {
   const color = active ? "#ffffff" : "#9cb0c9";
-  if (tab === "home") return <Feather name="home" size={18} color={color} />;
+  if (tab === "home") return <JourneyIcon size={22} color={color} />;
   if (tab === "explore") return <Feather name="compass" size={18} color={color} />;
+  if (tab === "progress") return <Feather name="bar-chart-2" size={18} color={color} />;
   if (tab === "practice") return <MaterialCommunityIcons name="brain" size={19} color={color} />;
   if (tab === "favorites") return <Feather name="star" size={18} color={color} />;
   if (tab === "menu") return <Feather name="menu" size={18} color={color} />;
@@ -18469,6 +18601,7 @@ function MenuIcon({ icon, tone = "default" }: { icon: MenuIconName; tone?: "defa
   if (icon === "signout") return <Feather name="log-out" size={18} color={color} />;
   if (icon === "signin") return <Feather name="log-in" size={18} color={color} />;
   if (icon === "progress") return <Feather name="bar-chart-2" size={18} color={color} />;
+  if (icon === "explore") return <Feather name="compass" size={18} color={color} />;
   return <Feather name="shield" size={18} color={color} />;
 }
 
@@ -18598,14 +18731,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     // Wider gap so the chip ("Travelers · B1") doesn't visually butt
-    // up against the gamification stats row's lightning bolt — the
+    // up against the gamification stats row's lightning bolt; the
     // previous 10pt gap let them touch on long focus names.
     gap: 14,
     paddingTop: 10,
     paddingBottom: 6,
   },
   // Journey top bar lifted OUT of the ScrollView so it stays pinned
-  // to the top of the screen. No background — the elements (flag
+  // to the top of the screen. No background; the elements (flag
   // chip, stats, menu) "float" over the page background, matching
   // Duolingo where the top row sits transparently over the dark
   // canvas instead of inside a separate-colored bar.
@@ -18618,7 +18751,7 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     backgroundColor: "transparent",
   },
-  // Floating sticky topic panel — sits just below the lifted top
+  // Floating sticky topic panel; sits just below the lifted top
   // bar via `top: <approx top bar height>`. Renders on top of the
   // ScrollView as a sibling overlay; the in-flow topic panels keep
   // existing inside the scroll content and get covered by this
@@ -18650,7 +18783,7 @@ const styles = StyleSheet.create({
   },
   journeyScrollTopButtonPressed: {
     // Darker amber for the pressed state, matching the new yellow
-    // base (#fcd34d). Earlier this was a darker LIME (#a3d647) —
+    // base (#fcd34d). Earlier this was a darker LIME (#a3d647) -
     // a leftover from when the base was lime green; the user saw
     // the green flash on press because the pressed shade hadn't
     // been swapped along with the base color.
@@ -18672,7 +18805,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   journeyStickyTopicPanel: {
-    // Floating sticky version of the topic panel — same dimensions
+    // Floating sticky version of the topic panel; same dimensions
     // as the in-flow card, plus a stronger shadow so it visually
     // separates from the path content scrolling underneath.
     marginBottom: 0,
@@ -19703,7 +19836,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
   },
   journeyMapSection: {
-    // Sits directly on the app background — no framing card.
+    // Sits directly on the app background; no framing card.
     gap: 12,
   },
   journeyMapList: {
@@ -19786,7 +19919,7 @@ const styles = StyleSheet.create({
     lineHeight: 16,
   },
   journeyMapConnectorRow: {
-    // Tighter curve again — brings consecutive nodes ~24 pt closer so the
+    // Tighter curve again; brings consecutive nodes ~24 pt closer so the
     // path fits more stops per viewport without feeling cramped.
     height: 64,
     width: "100%",
@@ -19878,7 +20011,7 @@ const styles = StyleSheet.create({
   },
   journeyStartBubbleArrow: {
     // Downward triangle, carved from an empty view via rotated square
-    // with two transparent sides — keeps us from pulling in an SVG
+    // with two transparent sides; keeps us from pulling in an SVG
     // dependency for one arrow.
     marginTop: -1,
     width: 0,
@@ -19981,7 +20114,7 @@ const styles = StyleSheet.create({
   journeyPathLevelHeaderLocked: {
     // Opacity bumped from 0.55 → 0.85: at the lower value the locked
     // level title (A2 / B1 / …) was hard to spot against the dark
-    // canvas — users were scrolling past it and reporting "only A1
+    // canvas; users were scrolling past it and reporting "only A1
     // shows up" because the rest blended in. 0.85 keeps it visibly
     // dimmer than the active level header without becoming a ghost.
     opacity: 0.85,
@@ -20001,14 +20134,14 @@ const styles = StyleSheet.create({
   journeyPathTopicBlock: {
     marginTop: 0,
     marginBottom: 8,
-    // No vertical gap — the topic panel sits flush with the stories
+    // No vertical gap; the topic panel sits flush with the stories
     // below it so the sticky panel + path read as a single unit.
     gap: 0,
   },
   // Duolingo-style "you are here" panel. Solid cyan-blue card with
   // a small eyebrow (LEVEL ·) and the topic title. Sits as a
   // floating rounded card with horizontal margins (NOT edge-to-
-  // edge) — Duolingo's reference uses this card-on-canvas look so
+  // edge); Duolingo's reference uses this card-on-canvas look so
   // the panel reads as content, not as a section divider.
   journeyTopicPanel: {
     flexDirection: "row",
@@ -20038,7 +20171,7 @@ const styles = StyleSheet.create({
     // the path's content padding (24) so the sticky and in-flow
     // panels stay pixel-aligned during the swap. Shadow values
     // mirror the in-flow card exactly so the eye can't tell which
-    // of the two is on top during the cross-over moment — earlier a
+    // of the two is on top during the cross-over moment; earlier a
     // heavier shadow on the floating panel made the swap visible.
     position: "absolute",
     left: 24,
@@ -20079,7 +20212,7 @@ const styles = StyleSheet.create({
   },
   journeyTopicPanelLocked: {
     // Was #1f2a40, only ~4% lighter than the canvas (#051834), so
-    // locked topic panels were almost invisible — users couldn't tell
+    // locked topic panels were almost invisible; users couldn't tell
     // there was content for A2 / B1 / etc. and reported "only A1
     // shows up". This shade is clearly distinguishable from the
     // canvas while still reading as muted vs the active cyan panel.
@@ -20209,7 +20342,7 @@ const styles = StyleSheet.create({
     color: "#6f88a8",
   },
   // ─── Compact Duolingo-style header (flag-only chip + stats) ───────
-  // The chip went text-less in build 67 — only flag + chevron — so it
+  // The chip went text-less in build 67; only flag + chevron; so it
   // stays compact and doesn't need a maxWidth/flexShrink dance to
   // share the row with the stats cluster. Level + topic live in the
   // sticky panel below the strip now.
@@ -20254,7 +20387,7 @@ const styles = StyleSheet.create({
   // ─── Level test offer modal (locked-story tap) ─────────────────
   // Absolute fill instead of `flex: 1` so it always takes the whole
   // Modal viewport. The user reported the alert appearing "arriba"
-  // (at the top) — that's a sign the parent Modal didn't pass a
+  // (at the top); that's a sign the parent Modal didn't pass a
   // flex height through, so the View collapsed against the top.
   levelTestOfferBackdrop: {
     position: "absolute",
@@ -20355,7 +20488,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
   },
   // ─── Horizontal pill nodes ─────────────────────────────────────────
-  // Pill keeps its full size — title space, cover thumb, badge — so
+  // Pill keeps its full size; title space, cover thumb, badge; so
   // long titles don't ellipsize unnecessarily. The compactness for
   // long topics (7+ stories) comes from tighter vertical spacing
   // between rows + a soft horizontal wave (see `journeyPathNodeRow`
@@ -20387,14 +20520,14 @@ const styles = StyleSheet.create({
     maxWidth: 290,
   },
   journeyNodePillNext: {
-    // Same dimensions and same neutral border as the other variants —
+    // Same dimensions and same neutral border as the other variants -
     // we deliberately keep the cyan accent OUT of the border. The user
     // wanted "no borde, simplemente" (no rim, just the glow), so the
     // visual cue lives entirely in the breathing fill on top.
     backgroundColor: "rgba(125, 211, 252, 0.16)",
   },
   // Soft cyan FILL overlay rendered INSIDE the next pill, pulsing in
-  // opacity. Replaces the earlier thin ring — the user reported the
+  // opacity. Replaces the earlier thin ring; the user reported the
   // ring alone read as "only the contour", which was too discreet.
   // A breathing fill makes the whole button glow gently while still
   // staying the exact same size/shape as the neutral pills. Native
@@ -20408,7 +20541,7 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     backgroundColor: tokenColor.cyan,
   },
-  // Experiment overlays — A: glow violeta para diferenciarlo del cyan
+  // Experiment overlays; A: glow violeta para diferenciarlo del cyan
   // del "next"; B: banda diagonal tipo shimmer que se mueve; C: borde
   // que respira sin halo de fondo.
   experimentGlow: {
@@ -20573,14 +20706,14 @@ const styles = StyleSheet.create({
     lineHeight: 17,
   },
   journeyNodePillCompleted: {
-    // Soft green wash + emerald edge — "you mastered this".
+    // Soft green wash + emerald edge; "you mastered this".
     // Subido de 0.1 → 0.18 para que la pill no se sienta muerta;
     // el "next" sigue dominando por su fondo sólido del topic.
     backgroundColor: "rgba(110, 231, 183, 0.18)",
     borderColor: "rgba(110, 231, 183, 0.55)",
   },
   journeyNodePillAudioFinished: {
-    // Cool muted cyan — "you've been here, exercises pending".
+    // Cool muted cyan; "you've been here, exercises pending".
     // Subido de 0.08 → 0.16 por la misma razón.
     backgroundColor: "rgba(125, 211, 252, 0.16)",
     borderColor: "rgba(125, 211, 252, 0.42)",
@@ -20616,7 +20749,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   journeyNodePillCoverThumbDim: {
-    // Covers ya no se atenúan — el user pidió que las imágenes se
+    // Covers ya no se atenúan; el user pidió que las imágenes se
     // vean siempre nítidas. El estado se comunica por el badge,
     // no por dim.
     opacity: 1,
@@ -20644,13 +20777,13 @@ const styles = StyleSheet.create({
     borderColor: tokenBg[1],
   },
   journeyNodePillThumbBadgeCompleted: {
-    // Bright emerald with a subtle inner highlight — meant to feel
+    // Bright emerald with a subtle inner highlight; meant to feel
     // celebratory, not muted. The dark check inside reads
     // immediately against the green.
     backgroundColor: "#34d399",
   },
   journeyNodePillThumbBadgeAudioFinished: {
-    // Outline cyan — same check shape as the green mastery badge
+    // Outline cyan; same check shape as the green mastery badge
     // but hollow, so the metaphor reads as "started, not finished".
     // The check inside is also cyan (matching the border) and
     // contrasts against the dark canvas behind the transparent
@@ -21054,7 +21187,7 @@ const styles = StyleSheet.create({
     color: "#8fa4c0",
   },
   journeyTopicDetailCard: {
-    // No framing card — the topic header + story list sit on the app bg.
+    // No framing card; the topic header + story list sit on the app bg.
     gap: 8,
   },
   journeyTopicDetailHeader: {
@@ -21783,6 +21916,40 @@ const styles = StyleSheet.create({
     padding: 18,
     gap: 8,
   },
+  favoritePlaceholderIntro: {
+    color: "#7a95b3",
+    fontSize: 13,
+    fontWeight: "600",
+    lineHeight: 18,
+    marginBottom: 12,
+    paddingHorizontal: 2,
+  },
+  favoritePlaceholderContent: {
+    gap: 6,
+  },
+  favoriteSampleBadge: {
+    backgroundColor: "rgba(125,211,252,0.16)",
+    borderColor: "rgba(125,211,252,0.4)",
+    borderWidth: 1,
+    borderRadius: 6,
+    paddingHorizontal: 7,
+    paddingVertical: 2,
+    marginLeft: 2,
+  },
+  favoriteSampleBadgeText: {
+    color: "#7dd3fc",
+    fontSize: 9,
+    fontWeight: "900",
+    letterSpacing: 1,
+  },
+  favoritePlaceholderTapLayer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 2,
+  },
   emptyTitle: {
     color: "#ffffff",
     fontSize: 18,
@@ -22054,6 +22221,11 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 999,
     backgroundColor: "#ffbf2f",
   },
+  // Sample/placeholder cards use a cyan rail so they read as templates at a
+  // glance, distinct from real saved words (gold rail).
+  favoritePlaceholderRail: {
+    backgroundColor: "#7dd3fc",
+  },
   favoriteHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -22063,7 +22235,7 @@ const styles = StyleSheet.create({
   favoriteWordRow: {
     flexDirection: "row",
     flexWrap: "wrap",
-    // alignItems was "baseline" — switched to "center" because RN's
+    // alignItems was "baseline"; switched to "center" because RN's
     // Yoga engine crashes in iOS Release when a baseline-aligned row
     // contains a non-text child (Pressable / View). Visually identical
     // for our two-text + small-icon row.
@@ -22151,7 +22323,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(248,193,92,0.10)",
     alignItems: "center",
     justifyContent: "center",
-    // Subtle outer glow via shadow — gives the button physical depth
+    // Subtle outer glow via shadow; gives the button physical depth
     // without competing with the word's typographic prominence.
     shadowColor: "#f8c15c",
     shadowOpacity: 0.35,
@@ -22398,7 +22570,7 @@ const styles = StyleSheet.create({
   },
   favoritesPracticeCta: {
     marginTop: 16,
-    // Clearance extra para el bottom tab bar — el `paddingBottom: 56`
+    // Clearance extra para el bottom tab bar; el `paddingBottom: 56`
     // del container global no alcanza para que el CTA primario quede
     // 100% visible sobre la tab bar flotante de iOS. Este margin
     // empuja el botón hacia arriba lo suficiente para que el tap
@@ -22652,7 +22824,7 @@ const styles = StyleSheet.create({
   },
   practiceSessionCard: {
     flex: 1,
-    // Background and border removed — the practice session now lives on the
+    // Background and border removed; the practice session now lives on the
     // same dark surface as Journey / Topic views. The only color accent is
     // the per-mode tint applied to the eyebrow pill and the progress bar,
     // which keeps the "which mode am I in" signal without the heavy panel.
@@ -23058,7 +23230,7 @@ const styles = StyleSheet.create({
     // bigger fonts + taller option rows, so the visible area gets
     // filled organically without centering. Earlier the card was
     // centered, but that produced an empty stripe ABOVE the card
-    // instead of below — same problem in a different position. The
+    // instead of below; same problem in a different position. The
     // fix now is to make the content elements (sentence + options)
     // larger so they naturally fill the space, while still
     // scrolling normally on smaller phones where they overflow.
@@ -23503,7 +23675,7 @@ const styles = StyleSheet.create({
   // Layout en filas: cada fila tiene la palabra a la izquierda (con
   // barrita accent vertical) y una definición a la derecha. La palabra
   // y la definición de la misma fila NO son necesariamente pareja
-  // correcta — el usuario tiene que conectarlas manualmente.
+  // correcta; el usuario tiene que conectarlas manualmente.
   practiceMatchRows: {
     gap: 12,
   },
@@ -23578,7 +23750,7 @@ const styles = StyleSheet.create({
     borderColor: "#67b5ff",
     backgroundColor: "rgba(103,181,255,0.14)",
   },
-  // Pending pair — formed by the user but not yet validated. Brighter
+  // Pending pair; formed by the user but not yet validated. Brighter
   // background so the row reads as "linked", but no green: green means
   // "confirmed correct after Check". The accent bar on each side carries
   // the per-pair color (A/B/C/D) so paired word+meaning visually rhyme.
@@ -23589,7 +23761,7 @@ const styles = StyleSheet.create({
   practiceMatchChipCorrect: {
     // Antes era verde sólido sobre toda la card, lo cual pisaba el
     // accent bar del color del par y se veía como flash. Ahora sólo
-    // refuerza el borde y deja el fondo dark — el feedback de
+    // refuerza el borde y deja el fondo dark; el feedback de
     // "correcto" lo da el ✓ a la derecha y el accent bar lleno.
     borderColor: "rgba(110,231,183,0.55)",
     backgroundColor: "rgba(110,231,183,0.10)",
@@ -25125,7 +25297,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 10,
     borderRadius: 10,
-    // Token color.gems lavender — matches the play button + collection
+    // Token color.gems lavender; matches the play button + collection
     // swipe action; library-surface family.
     backgroundColor: "#f8c15c",
   },
