@@ -74,7 +74,7 @@ export const getPublishedJourneyStories = unstable_cache(
     }
   },
   ["published-journey-stories-v2"],
-  // 5-minute soft cache — publish flow calls revalidateTag() so fresh
+  // 5-minute soft cache; publish flow calls revalidateTag() so fresh
   // content still appears immediately when a story is published; the
   // longer window just avoids refetching for every reader request when
   // nothing changed.
@@ -88,8 +88,16 @@ export async function getJourneyStoryBySlug(
   slug: string
 ): Promise<PublicStandaloneStory | null> {
   try {
+    // Local preview only (NODE_ENV !== production): also resolve draft stories
+    // that belong to the in-progress German A0 journey, so it can be read in
+    // the real story reader before publishing. Production stays published-only.
+    const PREVIEW_JOURNEY_ID = "cmqtnagxp0000324lf3u73vg1";
+    const statusWhere =
+      process.env.NODE_ENV !== "production"
+        ? { OR: [{ status: "published" as const }, { journeyId: PREVIEW_JOURNEY_ID }] }
+        : { status: "published" as const };
     const story = await prisma.journeyStory.findFirst({
-      where: { slug, status: "published" },
+      where: { slug, ...statusWhere },
       include: { journey: { select: { language: true, variant: true } } },
     });
     if (!story || !story.text || !story.title) return null;

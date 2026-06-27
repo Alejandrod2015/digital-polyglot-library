@@ -5,6 +5,7 @@ import { isStudioMember } from "@/lib/studio-access";
 import {
   validateGeneratedStory,
   parseStoryInput,
+  extractStoryMotifs,
   type ExistingStorySummary,
   type StoryPayload,
 } from "@/lib/validateGeneratedStory";
@@ -101,6 +102,7 @@ async function loadExisting(
       vocabLemmas,
       characterNames: r.text ? extractSpeakerNames(r.text) : [],
       openingFirstSentence,
+      motifTags: r.text ? extractStoryMotifs(r.text) : [],
     };
   });
 }
@@ -166,7 +168,7 @@ export async function POST(req: NextRequest) {
   }
   // DB stores `language` as a slug ("spanish", "german"...). Slicing the
   // first two chars would silently produce "SP"/"GE"/"PO" instead of the
-  // real ISO codes "ES"/"DE"/"PT" — use the canonical mapping helper.
+  // real ISO codes "ES"/"DE"/"PT"; use the canonical mapping helper.
   const languageIso = getIsoLanguageTag(journey.language ?? "");
 
   // Re-validate server-side against the live state of the journey.

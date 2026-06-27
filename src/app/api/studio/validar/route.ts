@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import {
   validateGeneratedStory,
+  extractStoryMotifs,
   type ExistingStorySummary,
 } from "@/lib/validateGeneratedStory";
 import { persistAgentRun } from "@/lib/agentPersistence";
@@ -58,6 +59,7 @@ async function loadExistingStories(
       vocabLemmas,
       characterNames,
       openingFirstSentence,
+      motifTags: r.text ? extractStoryMotifs(r.text) : [],
     };
   });
 }

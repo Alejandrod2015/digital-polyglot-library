@@ -57,6 +57,14 @@ export type ExistingStorySummary = {
    * without this populated.
    */
   openingFirstSentence?: string;
+  /**
+   * Motif tags present in this story's body, from `extractStoryMotifs`.
+   * Used by the `motif-cross-story` check to catch repeated narration
+   * crutches / cliché beats across the journey. Omit for legacy
+   * summaries that pre-date the field; the check treats a missing
+   * value as "no motifs" and simply skips it as a comparison source.
+   */
+  motifTags?: string[];
 };
 
 export type ValidationContext = {
@@ -101,7 +109,7 @@ export type ValidationResult = {
 };
 
 // 7-arc taxonomy anchored on kishōtenketsu (Japanese 4-act structure that
-// natively fits 250-word stories — engagement via reframe in act 3, not
+// natively fits 250-word stories; engagement via reframe in act 3, not
 // Western conflict escalation). Migrated 2026-06-02 from the previous 9-arc
 // Western taxonomy after deep-research surfaced extreme usage skew
 // (3 arcs accounted for 58% of 110 stories) and converging evidence that
@@ -120,7 +128,7 @@ export type ValidationResult = {
 const VALID_ARC_TYPES = new Set([
   "reframe-turn",              // ~30% target. Workhorse kishōtenketsu: act 3 reencuadra acts 1-2.
   "juxtaposition-discovery",   // ~15%. Two unrelated elements collide with meaning. Core ten mechanism.
-  "harmonic-close",            // ~15%. Comfort arc — completes in calm, no twist. Replaces "small-stake".
+  "harmonic-close",            // ~15%. Comfort arc; completes in calm, no twist. Replaces "small-stake".
   "mini-cliffhanger",          // ~15%. Ends on unresolved beat. PAIR with recurring character for bonding.
   "recurring-character-callback", // ~10%. Payoff for established character.
   "late-reveal",               // ~10%. Information withheld until final beat.
@@ -162,6 +170,14 @@ const BANNED_BODY_TOKENS = [
   /\buhm+\b/i,
   /\behm+\b/i,
   /\bmh+\b/i,
+  // 2026-06-26: hush / hum / onomatopoeia that the TTS reads as literal
+  // letters (or comically). Added after `Shhh`, `Mmm`, `Tap, tap` shipped
+  // in a0/a2 LATAM stories because the original list missed them.
+  /\bmm+\b/i,        // "Mmm" hum (mh+ above only caught m+h)
+  /\bsh+\b/i,        // "Sh" / "Shh" / "Shhh" hush
+  /\btap,?\s+tap\b/i, // "Tap, tap" knock onomatopoeia
+  /\btoc,?\s+toc\b/i, // "Toc, toc" knock onomatopoeia
+  /\bpum\b/i,        // "Pum" bang
   /\baww+\b/i,
   /\bohh+\b/i,
   /\bugh\b/i,
@@ -175,8 +191,8 @@ const BANNED_BODY_TOKENS = [
   // Em-dash (U+2014) and en-dash (U+2013). User rule (2026-05-29):
   // never use em-dashes in copy / story body / prompts. Substitute
   // with `;`, `:`, parentheses, or break the sentence. The new-system
-  // worker has internalized this — flag any lingering em-dash as fail.
-  /—/,
+  // worker has internalized this; flag any lingering em-dash as fail.
+  /-/,
   /–/,
 ];
 
@@ -190,7 +206,7 @@ const COGNATES_BY_LANG: Record<string, string[]> = {
     "restaurant", "park", "auto", "bus", "hotel", "adresse", "information",
     "foto", "musik", "konzert", "pizza", "spaghetti", "hamburger",
     // English-native transparent DE cognates. English-native A1 learners
-    // decode these at sight — including them as vocab wastes a slot.
+    // decode these at sight; including them as vocab wastes a slot.
     // Identical / one-letter-off / direct consonant-shift readable
     // (V↔F, B↔P). After audit 2026-06-04 added Mann, Buch, Winter,
     // Hunger, Sommer + family terms Mutter/Vater/Bruder.
@@ -292,6 +308,92 @@ function escapeRegex(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+// ── Story motifs (narration crutches + cliché beats) ───────────────
+//
+// Added 2026-06-25 after the es-LATAM A0 journey shipped with three
+// template tics repeated across ~20 of 21 stories (audit found them
+// only AFTER audio was generated, so they could not be cheaply fixed):
+//   1. the narrated rhetorical question ("Se pregunta: ¿…?") as a
+//      lazy substitute for showing tension; 16/21 stories.
+//   2. the stated-thought moral ("Piensa: [aforismo]") closing; 18/21.
+//   3. the "photo can't capture it" sentimental beat; 3 stories.
+// These are gestalt-level repetition: each story passed the old
+// per-story checks, but reading them back-to-back exposed the mold.
+//
+// `extractStoryMotifs` is a PURE helper (regex only, Spanish-targeted)
+// so both the per-story lints below AND the cross-story `motif-cross-
+// story` check can call it, and the stage/validar routes can compute
+// motif tags for already-published siblings from their body text.
+// See: docs/story-quality-spec.md § "Narration crutches & repeated beats".
+
+/** Last non-empty sentence of the body (used by the aphorism detector). */
+function lastSentenceOf(text: string): string {
+  const paras = (text || "").split(/\n{2,}/).map((p) => p.trim()).filter(Boolean);
+  const last = paras[paras.length - 1] ?? "";
+  const sentences = last.match(/[^.!?…]+[.!?…]?/g) ?? [last];
+  for (let i = sentences.length - 1; i >= 0; i--) {
+    const s = sentences[i].trim();
+    if (s) return s;
+  }
+  return last.trim();
+}
+
+// Generalizing maxim as the closing line ("fortune-cookie" ending).
+// Two high-precision signals: (a) the sentence opens with a generic
+// aphorism stem, or (b) it uses the "no (es) X; es/sino Y" reframe
+// structure that ChatGPT loves for tidy morals.
+const APHORISM_OPENERS =
+  /^(a\s+veces|algunas?\s|algo\s|cada\s|lo\s+m[áa]s|lo\s+importante|lo\s+mejor|la\s+vida|el\s+amor|las\s+leyendas?|el\s+secreto|el\s+misterio|en\s+\w+,\s+(la\s+|el\s+|los\s+|las\s+)?(comida|vida|gente|familia))/i;
+const APHORISM_STRUCT = /\bno\s+(es\s+)?[^.;]{2,}[;,]\s*(es|sino)\b/i;
+const IDENTITY_MAXIM = /^(hoy|ahora|por\s+fin),?\s+[\p{Lu}][\p{L}]+\s+(es|ya\s+(no\s+)?es)\b/u;
+
+function isAphoristicClose(text: string): boolean {
+  const s = lastSentenceOf(text);
+  if (!s) return false;
+  return APHORISM_OPENERS.test(s) || APHORISM_STRUCT.test(s) || IDENTITY_MAXIM.test(s);
+}
+
+type StoryMotif = { tag: string; label: string; crutch: boolean; test: (t: string) => boolean };
+
+// `crutch: true` motifs are bad on their first appearance (a lazy
+// device); they fire a per-story warn. ALL motifs additionally feed
+// the cross-story check, where reuse across siblings is the real sin.
+const STORY_MOTIFS: StoryMotif[] = [
+  {
+    tag: "inner-question-tell",
+    label: 'narrated rhetorical question ("Se pregunta: ¿…?")',
+    crutch: true,
+    test: (t) => /(?:se\s+pregunta|se\s+preguntó|piensa|pensó|se\s+dice)\s*:?\s*¿/iu.test(t),
+  },
+  {
+    tag: "stated-thought-tell",
+    label: 'stated inner thought as a tell ("Piensa: …")',
+    crutch: true,
+    test: (t) =>
+      /\b(?:piensa|pensó|se\s+dice|se\s+da\s+cuenta|comprende)\s*:\s*[¡¿"“]?\p{Lu}/u.test(t),
+  },
+  {
+    tag: "aphoristic-close",
+    label: "fortune-cookie maxim as the closing line",
+    crutch: true,
+    test: (t) => isAphoristicClose(t),
+  },
+  {
+    tag: "photo-cant-capture",
+    label: '"the photo can\'t capture it" sentimental beat',
+    crutch: true,
+    test: (t) =>
+      /\bfotos?\b/i.test(t) &&
+      /(no\s+captur|no\s+es\s+suficiente|m[áa]s\s+hermos[oa]\s+(que|en)\b|en\s+sus\s+(propios\s+)?ojos|no\s+quiere\s+olvidar)/iu.test(t),
+  },
+];
+
+/** Tags of every motif present in a body. Pure; safe for client + server. */
+export function extractStoryMotifs(text: string): string[] {
+  const t = text || "";
+  return STORY_MOTIFS.filter((m) => m.test(t)).map((m) => m.tag);
+}
+
 // `parseStoryInput` and `isStoryPayload` now live in ./storyPayload to
 // avoid pulling server-only deps into Client Components. Re-exported at
 // top of file.
@@ -381,7 +483,7 @@ export async function validateGeneratedStory(
 
   // Title × topic semantic match. For topics whose meaning is sharply
   // defined (airport vs hotel vs hospital), the title MUST reference
-  // the topic semantically — otherwise the cover image, audio voice
+  // the topic semantically; otherwise the cover image, audio voice
   // cast, and learner expectation drift apart from the actual content.
   // We catch the obvious case ("Praça Mauá" titled in `airport-transit`
   // because there's no airport at Praça Mauá) without needing an LLM.
@@ -431,7 +533,7 @@ export async function validateGeneratedStory(
   const variantLower = (context.variant ?? "").toLowerCase();
   const titleRegionLang = (context.language ?? "").toUpperCase();
   if (titleRegionLang === "ES" && variantLower === "latam") {
-    // Direct title scan — we cannot reuse extractProperNouns here
+    // Direct title scan; we cannot reuse extractProperNouns here
     // because its STOP list strips well-known city names (Madrid,
     // Roma, Lima, etc.) so the names-match check stays focused on
     // character names. For region detection we *want* to catch those.
@@ -595,7 +697,7 @@ export async function validateGeneratedStory(
 
   // Title formula default. Fires whenever the title matches "X en/de/
   // del/al Y" regardless of journey context. The pattern is the LLM
-  // default — most stories slip into it without a journey to compare
+  // default; most stories slip into it without a journey to compare
   // against. We warn standalone too so the worker sees the formula and
   // gets the alternative-structure menu before staging.
   if (titleMatchesFormula) {
@@ -609,7 +711,7 @@ export async function validateGeneratedStory(
 
   // Title anchor recognizability (A1/A2 ES only). For beginner Spanish
   // learners, a title anchored on Tungurahua/Sopocachi/Yanahuara is
-  // noise — they can't pronounce it or place it on a map. Prefer
+  // noise; they can't pronounce it or place it on a map. Prefer
   // widely-known cities and famous neighborhoods. Warn (not fail)
   // because some specific anchors are legitimate if the story builds
   // recognition around them.
@@ -812,7 +914,7 @@ export async function validateGeneratedStory(
     //
     // Opening ficha técnica. ChatGPT often produces openings like
     // "Elena es la madre de María. María estudia en la universidad.
-    //  Pablo trabaja en una tienda." — biography-as-list rather than
+    //  Pablo trabaja en una tienda."; biography-as-list rather than
     // scene. We detect this by counting copular/descriptive sentences
     // at the start: ProperNoun + (es | tiene | estudia | trabaja |
     // vive | viste | usa | lleva). Two or more in the opening = warn.
@@ -833,7 +935,7 @@ export async function validateGeneratedStory(
     }
 
     // Opening-formula check. The prompt explicitly forbids opening
-    // every story with "Es [día] [tiempo] en [Ciudad], [País]" — the
+    // every story with "Es [día] [tiempo] en [Ciudad], [País]"; the
     // template ChatGPT defaults to. It collapses 20+ stories into the
     // same first sentence and trains the reader to skip the opening.
     // The prompt rule was easy to ignore at generation time; this
@@ -855,7 +957,7 @@ export async function validateGeneratedStory(
       const formulaDeKombi =
         /^Es\s+ist\s+(Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag|Sonntag)(morgen|abend|nacht|mittag|nachmittag)\b/i;
       // "Es ist [(wieder|schon|noch|heute|gleich|fast)?] (Pause|Morgen|
-      //  Sonntag|...)" — direct or with one common intensifier. Avoids
+      //  Sonntag|...)"; direct or with one common intensifier. Avoids
       // false positives like "Es ist sein erster Samstag" (possessive +
       // ordinal don't read as the template).
       const formulaDeIstTime =
@@ -864,11 +966,11 @@ export async function validateGeneratedStory(
         /^(Morgens|Abends|Nachmittags|Mittags|Nachts)\s+um\s+/i;
       const formulaDeAm =
         /^Am\s+(Morgen|Abend|Nachmittag|Mittag|Wochenende|Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag|Sonntag)\b/i;
-      // "Donnerstag in Berlin." / "Sonntag im Frühling." — day name as
+      // "Donnerstag in Berlin." / "Sonntag im Frühling."; day name as
       // standalone opener.
       const formulaDeDayOpener =
         /^(Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag|Sonntag)\s+(in|im|am|bei|um)\s+/i;
-      // "In [Ort] ist es ein [Adj] (Morgen|Tag|Abend)" — inverted form
+      // "In [Ort] ist es ein [Adj] (Morgen|Tag|Abend)"; inverted form
       // ChatGPT falls back to when "Es ist..." is forbidden.
       const formulaDeInOrt =
         /^(In|Im|Am)\s+\w+\s+ist\s+es\s+ein\s+\w+\s+(Morgen|Tag|Abend|Mittag|Samstagmorgen|Sonntagmorgen)\b/i;
@@ -886,7 +988,7 @@ export async function validateGeneratedStory(
           id: "opening-formula-day-time-place",
           label: "Opening avoids the banned 'day + time + place' template",
           status: "fail",
-          detail: `First sentence uses the banned default template: "${firstSentence}". Start the body with an action, gesture, sound, smell, image, or dialogue line — never with "Es [day] [time] en/in [City]", "Es ist [Tag]morgen in [Ort]", "Morgens um [Uhrzeit]", or "Am [Tag/Morgen]". The city+country anchor can move to the SECOND sentence.`,
+          detail: `First sentence uses the banned default template: "${firstSentence}". Start the body with an action, gesture, sound, smell, image, or dialogue line; never with "Es [day] [time] en/in [City]", "Es ist [Tag]morgen in [Ort]", "Morgens um [Uhrzeit]", or "Am [Tag/Morgen]". The city+country anchor can move to the SECOND sentence.`,
         });
       } else {
         checks.push({
@@ -900,7 +1002,7 @@ export async function validateGeneratedStory(
     // Setting matches journey. Each journey has a fixed list of cities
     // / neighborhoods (from journeyCasts.ts). Catches the failure mode
     // where a story in the German Berlin journey opens with "Donnerstag
-    // in Bogotá." — the model bleeds settings from sibling journeys.
+    // in Bogotá."; the model bleeds settings from sibling journeys.
     // Logic: pull all city/neighborhood names from OTHER journeys' casts
     // and flag any that appear in the body. We do NOT enforce that the
     // story mention its own city (some stories are interior, no city
@@ -1014,7 +1116,7 @@ export async function validateGeneratedStory(
             id: "synopsis-opening-duplicate",
             label: "Synopsis and body opening describe the same scene",
             status: "warn",
-            detail: `${shared} content words overlap (${Math.round(overlap * 100)}% of the smaller set). The synopsis is internal metadata and shouldn't duplicate the body opening. Rewrite the synopsis as a HOOK: the conflict, tension, or question the story explores — not a re-description of props and actions. The body opens the scene; the synopsis explains the arc.`,
+            detail: `${shared} content words overlap (${Math.round(overlap * 100)}% of the smaller set). The synopsis is internal metadata and shouldn't duplicate the body opening. Rewrite the synopsis as a HOOK: the conflict, tension, or question the story explores; not a re-description of props and actions. The body opens the scene; the synopsis explains the arc.`,
           });
         }
       }
@@ -1058,9 +1160,9 @@ export async function validateGeneratedStory(
       // German imperative verbs (du-form). Match at the start of the
       // last sentence of a dialogue turn, when sentence is ≤4 words and
       // ends in period. Includes both bare ("Sag das.") and Sie-form
-      // ("Sagen Sie das.") variants — both render with uptalk in TTS.
+      // ("Sagen Sie das.") variants; both render with uptalk in TTS.
       // Negative lookahead `(?!\s+ich\b)` excludes "Sage ich", "Mache
-      // ich", "Komme ich" — German V2-order declaratives where the verb
+      // ich", "Komme ich"; German V2-order declaratives where the verb
       // looks imperative but is actually 1sg present with inverted
       // subject. False-positive guard.
       const GERMAN_IMPERATIVE_HEAD_RE =
@@ -1070,7 +1172,7 @@ export async function validateGeneratedStory(
       // siéntate.", "Usted espere."); without (Tú|Usted)?\s* the regex
       // misses those even though TTS treats them as bare imperatives.
       // Negative lookahead `(?!\s+(mí|ti|usted|...))` excludes "Para mí",
-      // "Para ti", "Para cuando vuelves" — "Para" used as preposition,
+      // "Para ti", "Para cuando vuelves"; "Para" used as preposition,
       // not imperative of parar. Same false-positive guard as German.
       const SPANISH_IMPERATIVE_HEAD_RE =
         /^(?:(?:Tú|Tu|Usted|Ustedes|Vosotros|Vosotras)\s+)?(Trae|Tráe|Pon|Pón|Mira|Mire|Espera|Espere|Ven|Venga|Dame|Deme|Toma|Tome|Saca|Saque|Abre|Abra|Cierra|Cierre|Lee|Lea|Habla|Hable|Ayuda|Ayúdame|Ayúdeme|Llama|Llame|Come|Coma|Bebe|Beba|Sigue|Siga|Para|Pare|Sube|Suba|Baja|Baje|Entra|Entre|Sal|Salga|Dale|Hazlo|Hazme|Dime|Anda|Ándale|Vete|Váyase|Pasa|Pase|Cuelga|Cuelgue|Coge|Coja|Agarra|Agarre|Busca|Busque|Lleva|Lleve|Deja|Deje|Quita|Quite|Apaga|Apague|Prende|Prenda|Enciende|Encienda|Cuenta|Cuente|Siéntate|Siéntese|Levántate|Levántese)\b(?!\s+(mí|ti|sí|no|usted|él|ella|nosotros|nosotras|ellos|ellas|cuando|que|qué|donde|dónde|los|las|nada|todo|siempre|nunca))/u;
@@ -1212,7 +1314,7 @@ export async function validateGeneratedStory(
 
       // Voseo detection. User rule (2026-06-16): español neutro con tú
       // forms por defecto, PERO las historias ambientadas en el Río de
-      // la Plata (Argentina / Uruguay) DEBEN ir en voseo auténtico —
+      // la Plata (Argentina / Uruguay) DEBEN ir en voseo auténtico -
       // ese es justo el eje de "lenguaje auténtico nativo en contexto".
       // Forzar tú a un porteño es falso. Por eso el check solo falla
       // cuando aparece voseo en una historia NO rioplatense (voseo
@@ -1251,6 +1353,38 @@ export async function validateGeneratedStory(
           detail: `Found ${voseoHits.length} voseo form(s): ${voseoHits.join(", ")}. Voseo is authentic ONLY for Argentine/Uruguayan settings. This story is not set there, so use tú forms: vos → tú, sos → eres, tenés → tienes, querés → quieres, decís → dices, etc.`,
         });
       }
+
+      // Inverse lock (2026-06-26): a rioplatense setting MUST use voseo. The
+      // check above only caught voseo leaking OUTSIDE the Río de la Plata; it
+      // let an Argentine story written entirely in tú slip through. Real
+      // defect: a0 Buenos Aires (meeting-new-people) shipped in tú while a1/a2
+      // of the SAME journey used voseo, so a learner was taught the wrong
+      // register then a different one a level later. Now: rioplatense setting
+      // + zero voseo forms + explicit tú-only second-person forms = fail.
+      if (RIOPLATENSE_SETTING && voseoHits.length === 0) {
+        const TU_ONLY_PATTERNS: Array<{ re: RegExp; voseo: string }> = [
+          { re: /\btienes\b/i, voseo: "tenés" },
+          { re: /\bquieres\b/i, voseo: "querés" },
+          { re: /\bvienes\b/i, voseo: "venís" },
+          { re: /\beres\b/i, voseo: "sos" },
+          { re: /\bsabes\b/i, voseo: "sabés" },
+          { re: /\bpuedes\b/i, voseo: "podés" },
+          { re: /\bdices\b/i, voseo: "decís" },
+          { re: /\bhaces\b/i, voseo: "hacés" },
+          { re: /\bvives\b/i, voseo: "vivís" },
+        ];
+        const tuHits = TU_ONLY_PATTERNS.filter(({ re }) => re.test(parsed.text)).map(
+          ({ re, voseo }) => `${parsed.text.match(re)![0]} → ${voseo}`,
+        );
+        if (tuHits.length > 0) {
+          checks.push({
+            id: "body-missing-voseo",
+            label: "Rioplatense setting written in tú instead of voseo",
+            status: "fail",
+            detail: `Set in the Río de la Plata (Argentina/Uruguay) but the dialogue uses tú with no voseo. Convert to authentic voseo to match the other levels of the journey: ${tuHits.join(", ")}.`,
+          });
+        }
+      }
     }
 
     // Spanish idiomatic / colloquial expressions in A1/A2 body. The
@@ -1266,7 +1400,7 @@ export async function validateGeneratedStory(
       (recognizabilityLevel === "a1" || recognizabilityLevel === "a2")
     ) {
       const COLLOQUIAL_ES_PATTERNS: Array<{ re: RegExp; phrase: string; meaning: string }> = [
-        // "X manda(n)" — colloquial "X rules"; matches when manda(n)
+        // "X manda(n)"; colloquial "X rules"; matches when manda(n)
         // follows a food / object noun (not literal "send").
         {
           re: /\b(carnitas?|tacos?|tortillas?|salsa|chiles?|frijoles?|arepas?|empanadas?|cebiche|asado|mole|guacamole|tamales?)\s+manda(?:n)?\b/i,
@@ -1310,7 +1444,7 @@ export async function validateGeneratedStory(
         if (!match) continue;
         const matched = match[0].toLowerCase().trim();
         // If the literal matched phrase (or the phrase key) is taught
-        // as an expression in vocab, skip — the worker chose to teach it.
+        // as an expression in vocab, skip; the worker chose to teach it.
         if (taughtExpressions.has(matched) || taughtExpressions.has(phrase.toLowerCase())) continue;
         // Also skip if any taught expression is a substring of the match.
         if ([...taughtExpressions].some((e) => matched.includes(e))) continue;
@@ -1359,7 +1493,7 @@ export async function validateGeneratedStory(
     ],
   };
   const ctxLevel = (context.level ?? "").toUpperCase();
-  const isBasic = ctxLevel === "A1" || ctxLevel === "A2";
+  const isBasic = ctxLevel === "A0" || ctxLevel === "A1" || ctxLevel === "A2";
   const ctxLang = (context.language ?? "").toUpperCase();
   const cefrFlags = CEFR_HIGH_WORDS[ctxLang] ?? [];
   if (isBasic && cefrFlags.length) {
@@ -1376,6 +1510,72 @@ export async function validateGeneratedStory(
         ? `Found: ${cefrHits.join(", ")} (B2+/C1 markers, revisa nivel)`
         : undefined,
     });
+  }
+
+  // ─── Narration crutches & cliché beats (per-story) ─────
+  // See the STORY_MOTIFS registry above and docs/story-quality-spec.md
+  // § "Narration crutches & repeated beats". Spanish-targeted (the
+  // patterns are Spanish strings; they no-op on other languages, but
+  // we gate on ES so the labels read correctly). All warn (style, not
+  // structural); a human can override, but the worker sees the device.
+  if (ctxLang === "ES") {
+    const motifsPresent = new Set(extractStoryMotifs(parsed.text));
+
+    const tellMotifs = STORY_MOTIFS.filter(
+      (m) => (m.tag === "inner-question-tell" || m.tag === "stated-thought-tell") && motifsPresent.has(m.tag)
+    );
+    checks.push({
+      id: "body-inner-monologue-tell",
+      label: "Body avoids the narrated-thought crutch (\"Se pregunta/Piensa: …\")",
+      status: tellMotifs.length ? "warn" : "pass",
+      detail: tellMotifs.length
+        ? `Uses ${tellMotifs.map((m) => m.label).join(" + ")}. This device tells the reader the character's inner state instead of showing it through action or dialogue, and it collapses every story into the same shape. Show the tension through what the character DOES or SAYS, or cut the line.`
+        : undefined,
+    });
+
+    checks.push({
+      id: "body-aphoristic-closing",
+      label: "Body does not end on a fortune-cookie maxim",
+      status: motifsPresent.has("aphoristic-close") ? "warn" : "pass",
+      detail: motifsPresent.has("aphoristic-close")
+        ? `Closing line "${lastSentenceOf(parsed.text)}" reads as a generalizing aphorism ("A veces…", "no es X; es Y", "Hoy, X es Y"). Land the ending on a concrete image, action, or a line of dialogue instead of a stated moral.`
+        : undefined,
+    });
+
+    const clicheBeats = STORY_MOTIFS.filter((m) => m.crutch && m.tag === "photo-cant-capture" && motifsPresent.has(m.tag));
+    checks.push({
+      id: "body-cliche-beat",
+      label: "Body avoids overused sentimental beats",
+      status: clicheBeats.length ? "warn" : "pass",
+      detail: clicheBeats.length
+        ? `Uses the ${clicheBeats.map((m) => m.label).join(", ")}. This beat is a known crutch in this journey; find a fresher way to land the emotion.`
+        : undefined,
+    });
+
+    // A0 grammar ceiling. Per the CEFR two-level rule, an A0 body may
+    // reach A1/A2 but NOT B1. The highest-signal B1 constructs that
+    // slipped into the A0 journey were: present subjunctive after a
+    // trigger ("aunque viva lejos"), the comparative subordinate "de lo
+    // que" ("más fuerte de lo que creo"), and the "hace X tiempo que +
+    // presente" idiom ("hace años que sueña"). High-precision regex,
+    // FAIL for A0 because these are level violations, not style.
+    if (ctxLevel === "A0") {
+      const a0Hits: string[] = [];
+      const subj =
+        /\b(aunque|para\s+que|cuando|hasta\s+que|antes\s+de\s+que|sin\s+que|ojal[áa]|que)\s+(sea|sean|est[ée]|est[ée]n|haya|hayan|tenga|tengan|venga|vengan|vaya|vayan|pueda|puedan|quiera|quieran|haga|hagan|diga|digan|ponga|salga|viva|vivan|d[ée]|sepa|conozca)\b/i;
+      if (subj.test(parsed.text)) a0Hits.push('present subjunctive after a trigger (e.g. "aunque viva"); B1');
+      if (/\bde\s+lo\s+que\b/i.test(parsed.text)) a0Hits.push('comparative subordinate "de lo que"; A2/B1');
+      if (/\bhace\s+\w+\s+(años?|meses?|d[ií]as?|semanas?|horas?)\s+que\b/i.test(parsed.text) || /\bhace\s+años?\s+que\b/i.test(parsed.text))
+        a0Hits.push('"hace X tiempo que + presente" idiom; B1');
+      checks.push({
+        id: "body-cefr-a0-grammar",
+        label: "A0 body stays within A0/A1 grammar (no B1 constructs)",
+        status: a0Hits.length ? "fail" : "pass",
+        detail: a0Hits.length
+          ? `Found B1-level grammar in an A0 story: ${a0Hits.join("; ")}. A0 bodies may reach A1/A2 but not B1. Rewrite with the indicative / a simpler comparative.`
+          : undefined,
+      });
+    }
   }
 
   // ─── arcType ───────────────────────────────────────────
@@ -1404,7 +1604,7 @@ export async function validateGeneratedStory(
     detail: `${vocabCount} items (body ${bodyWords}w → allowed 20-${vocabCeiling})`,
   });
 
-  // Definition rules — see docs/story-quality-spec.md §4. The corrected
+  // Definition rules; see docs/story-quality-spec.md §4. The corrected
   // target after the 2026-05-03 vocab audit is 8-14 English words per
   // definition across all CEFR levels. The previous 3-7w window was an
   // earlier draft that contradicted the spec and rejected the GOOD
@@ -1419,7 +1619,7 @@ export async function validateGeneratedStory(
     else if (c > 120) badDefs.push(`"${v.word}": ${c}ch`);
     else if (BANNED_DEFINITION_OPENERS.some((re) => re.test(v.definition))) {
       badDefs.push(`"${v.word}": banned opener`);
-    } else if (/—/.test(v.definition)) {
+    } else if (/-/.test(v.definition)) {
       badDefs.push(`"${v.word}": em-dash`);
     }
   }
@@ -1572,7 +1772,7 @@ export async function validateGeneratedStory(
         detail: offenders.length
           ? `${offenders.length} definition(s) use B1+ English: ${offenders
               .map((o) => `[${o.word}] ${o.hits.join(",")}`)
-              .join("; ")}. The definition is FOR an A1 learner — using B1+ English defeats the purpose. Rewrite with simple, common English a beginner already knows (e.g., "container" → "thing you put things in", "transparent" → "you can see through", "ability" → "what someone can do").`
+              .join("; ")}. The definition is FOR an A1 learner; using B1+ English defeats the purpose. Rewrite with simple, common English a beginner already knows (e.g., "container" → "thing you put things in", "transparent" → "you can see through", "ability" → "what someone can do").`
           : undefined,
       });
     }
@@ -1582,7 +1782,7 @@ export async function validateGeneratedStory(
   // without teaching anything new. Spanish English-native A1 learners
   // know body parts, basic pronouns, numbers, primary colors, common
   // greetings from any first-50-hours course. If the vocab list
-  // includes them, warn — that slot would be better spent on a
+  // includes them, warn; that slot would be better spent on a
   // multi-word expression, a regional noun, or a non-obvious verb
   // construction. Scope to ES + A1 (where slot scarcity matters most).
   const A0_UNIVERSALS_ES = new Set([
@@ -1622,7 +1822,7 @@ export async function validateGeneratedStory(
   }
 
   // Minimum multi-word expressions. A vocab list of 20-25 items with
-  // zero expressions is structurally lopsided — only atomic nouns get
+  // zero expressions is structurally lopsided; only atomic nouns get
   // taught, the learner never sees the lexicalized phrases that carry
   // everyday speech ("con prisa", "al fin", "otra vez", "que le vaya
   // bien"). Require ≥2 items typed as expression for A1/A2 ES.
@@ -1645,7 +1845,7 @@ export async function validateGeneratedStory(
   }
 
   // Vocab CEFR frequency check.
-  // ES: hybrid — curated lemma lists (A1+A2+B1+B2+C1 acumulativos) + LLM
+  // ES: hybrid; curated lemma lists (A1+A2+B1+B2+C1 acumulativos) + LLM
   //     fallback for any lemma not in the list. C2 sin restricción.
   //     Cached forever in src/lib/cefr/cache/spanish-llm-cache.json.
   // DE/IT/PT/FR: solo A1/A2 con listas (LLM fallback fase 2).
@@ -1671,7 +1871,7 @@ export async function validateGeneratedStory(
     );
     // Threshold: ANY palabra fuera de nivel = fail. El vocab array es
     // curado (20-25 items elegidos por la worker); cada item DEBE estar
-    // al nivel target. No hay margen "1-2 palabras OK" — eso dejaba
+    // al nivel target. No hay margen "1-2 palabras OK"; eso dejaba
     // pasar casos como "anafe" en un A1 con qa_pass. La regla es
     // estricta: cero tolerancia en vocab curado.
     const status: CheckStatus =
@@ -1775,7 +1975,7 @@ export async function validateGeneratedStory(
   }
 
   // No-consecutive-pills check (spec §4). Vocabulario en posiciones
-  // adyacentes del body crea "worksheet markup feel" — pills pegados
+  // adyacentes del body crea "worksheet markup feel"; pills pegados
   // sin texto entre ellos rompen la inmersión. Tokenizamos el body,
   // marcamos cuáles tokens son vocab match, y vemos si hay >2
   // consecutivos. Status warn (no fail) porque depende de la frase;
@@ -1788,7 +1988,7 @@ export async function validateGeneratedStory(
   if (vocabSurfaces.size > 0) {
     const bodyTokens = parsed.text
       .toLowerCase()
-      .split(/[\s.,;:!?¡¿"()—–\-]+/u)
+      .split(/[\s.,;:!?¡¿"()-–\-]+/u)
       .filter(Boolean);
     let currentRun = 0;
     let maxRun = 0;
@@ -1840,7 +2040,7 @@ export async function validateGeneratedStory(
         : `per ¶: [${perPara.join(", ")}]`,
   });
 
-  // Synopsis ↔ body character match — spec calls this "REQUIRED" and a
+  // Synopsis ↔ body character match; spec calls this "REQUIRED" and a
   // "hard defect": a story whose synopsis names characters that don't
   // appear in the body (Klaus/Sabine in synopsis, Anna/Tom in body) is
   // rejected at save time, not flagged for human review. The proper-noun
@@ -1903,7 +2103,7 @@ export async function validateGeneratedStory(
       "es","esta","este","estos","estas","ese","esa",
       "ha","han","hay","ser","estar",
       "muy","ya","también","aquí","allí",
-      // Italian / French / Portuguese — light coverage
+      // Italian / French / Portuguese; light coverage
       "il","lo","gli","le","e","ma","di","da","per","è","con","un","una",
       "le","les","des","et","ou","mais","ne","pas",
       "o","a","os","as","do","da","dos","das","com",
@@ -1945,6 +2145,40 @@ export async function validateGeneratedStory(
     }
   }
 
+  // Motif repetition across the journey. Each story's narration
+  // crutches / cliché beats (STORY_MOTIFS) are tagged; if the new
+  // story reuses a motif already present in prior siblings, the
+  // journey is sliding into one mold (exactly what happened to the
+  // A0 journey: 16/21 "Se pregunta", 18/21 "Piensa: [moral]"). Warn
+  // at the first repeat, fail once 2+ siblings already share it (the
+  // third instance = an established template per spec §3 logic).
+  if (existing.length) {
+    const myMotifs = extractStoryMotifs(parsed.text);
+    const motifLabel = (tag: string) =>
+      STORY_MOTIFS.find((m) => m.tag === tag)?.label ?? tag;
+    const repeated = myMotifs
+      .map((tag) => ({
+        tag,
+        siblings: existing.filter((e) => (e.motifTags ?? []).includes(tag)).length,
+      }))
+      .filter((x) => x.siblings >= 1);
+    if (repeated.length) {
+      const worst = repeated.reduce((a, b) => (a.siblings > b.siblings ? a : b));
+      checks.push({
+        id: "motif-cross-story",
+        label: "Story device/beat not already overused in this journey",
+        status: worst.siblings >= 2 ? "fail" : "warn",
+        detail: `${repeated
+          .map((r) => `${motifLabel(r.tag)} (in ${r.siblings} prior ${r.siblings === 1 ? "story" : "stories"})`)
+          .join("; ")}. Reusing the same narration device or emotional beat across the journey is what makes ${existing.length + 1} stories read as one template. ${
+          worst.siblings >= 2
+            ? "This is the 3rd+ instance; pick a different device/beat."
+            : "Vary it before it becomes the journey's mold."
+        }`,
+      });
+    }
+  }
+
   // Title token overlap
   const titleTokens = tokenize(parsed.title);
   const titleHit = existing.find((e) => {
@@ -1965,7 +2199,7 @@ export async function validateGeneratedStory(
 
     // Title-pattern monotony. Detecta cuando el generador cae en un
     // mismo "esqueleto" repetidamente (e.g. "Peceras en Miraflores",
-    // "Faroles en Tepoztlán", "Velas en Oaxaca" — todas son
+    // "Faroles en Tepoztlán", "Velas en Oaxaca"; todas son
     // "[Plural noun] en [Place]"). Skeleton = lista ordenada de
     // function words / connectors en lowercase ("en", "de", "y",
     // "a", "del", "la", "el", "con", "para"). Si 3+ existing comparten
@@ -1991,7 +2225,7 @@ export async function validateGeneratedStory(
         status: matches.length >= 3 ? "warn" : "pass",
         detail:
           matches.length >= 3
-            ? `${matches.length} prior titles share the "${newSkeleton}" skeleton — varíen la estructura`
+            ? `${matches.length} prior titles share the "${newSkeleton}" skeleton; varíen la estructura`
             : undefined,
       });
     }
@@ -2001,7 +2235,7 @@ export async function validateGeneratedStory(
   //
   // Tiered after the v2-2026-06 cohort: with recurring casts (Duolingo
   // Stories pattern, see docs/engagement-research-brief.pdf), structural
-  // overlap is unavoidable — stories set in the same fonda/edificio
+  // overlap is unavoidable; stories set in the same fonda/edificio
   // share words like "fonda", "ayudar", "pan", "esquina", "edificio".
   // The check now:
   //   - SHARED_WORLD allowlist (setting/cast-bound nouns + universal
@@ -2033,7 +2267,7 @@ export async function validateGeneratedStory(
       // Common A1 atmosphere / noise that recurs
       "ruido","silencio","luz","sombra","aire","sol",
       // ── German equivalents (added June 2026 for German conversational
-      // beta — same cast-recurrence pattern as LATAM). Universal A1
+      // beta; same cast-recurrence pattern as LATAM). Universal A1
       // conversational fillers + recurring setting/cast nouns.
       "vielleicht","gern","gerne","manchmal","danke","bitte","hallo",
       "wirklich","natürlich","tschüss","entschuldigung",
@@ -2054,7 +2288,7 @@ export async function validateGeneratedStory(
       "sommer","winter","frühling","herbst","stück","schreiben","schrieb","geschrieben",
       "gießen","gießt","lachen","lacht","backen","backt","gebacken","decken","deckt",
       "erzählen","erzählt","hängen","hängt","anschauen","schaut","schaute","angeschaut",
-      // ── Round 3 — German conversational beta polish (June 2026)
+      // ── Round 3; German conversational beta polish (June 2026)
       "salz","pfeffer","zitrone","zucker","mehl","butter","sahne","milch",
       "flur","küche","papier","marmeladenglas","kartoffel","kartoffeln","lauch",
       "kantine","tablett","brötchen","bäckerei","schluck","forelle","kabeljau",
@@ -2090,12 +2324,12 @@ export async function validateGeneratedStory(
         : undefined,
     });
 
-    // Journey over-representation — applies ONLY to expression-type
+    // Journey over-representation; applies ONLY to expression-type
     // vocab (function words / fillers like "vielleicht", "danke",
     // "gern", "wirklich"). Content nouns/verbs (Küche, Tisch, kochen)
     // can recur naturally across stories sharing a setting; the
     // existing `vocab-cross-story` check (≤30% overlap) bounds those.
-    // Filler words are different — they're not setting-bound and
+    // Filler words are different; they're not setting-bound and
     // shouldn't occupy a vocab slot in story after story (the learner
     // meets them once in the body, doesn't need a re-taught pill).
     {
@@ -2197,7 +2431,7 @@ function tokenize(s: string): string[] {
 // recognized tourist destinations, key airports, and Brazil cities a
 // Spanish-speaking traveler commonly transits through. Add curated
 // entries as new approved anchors emerge; do NOT add Spanish (Iberian)
-// cities here — those belong to variant=iberian once we wire it up.
+// cities here; those belong to variant=iberian once we wire it up.
 const LATAM_PLACES_SET = new Set<string>([
   // Mexico
   "méxico","mexico","ciudad de méxico","ciudad de mexico","cdmx","df",

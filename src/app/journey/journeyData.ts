@@ -10,6 +10,7 @@ import { getPublishedStandaloneStories } from "@/lib/standaloneStories";
 import { normalizeJourneyFocus, type JourneyFocus } from "@/lib/onboarding";
 import { getJourneyCurriculumPlans, getJourneyLevelPlanAsync } from "@/lib/journeyCurriculumSource";
 import { prisma } from "@/lib/prisma";
+import { Prisma } from "@/generated/prisma";
 
 export type JourneyStoryItem = {
   id: string;
@@ -162,7 +163,7 @@ export function getUnlockedTopicCount(
         if (!passedCheckpointKeys.has(checkpointKey)) break;
       }
     }
-    // Empty topic: doesn't gate progression — advance freely.
+    // Empty topic: doesn't gate progression; advance freely.
     unlockedCount += 1;
   }
   return Math.min(unlockedCount, level.topics.length);
@@ -383,7 +384,7 @@ async function buildLevelsForVariant(
       const topicsMap = grouped.get(meta.id) ?? new Map<string, JourneyStoryItem[]>();
       const curriculumLevel = await getJourneyLevelPlanAsync(language, variantId, meta.id);
       // The inner Map is now keyed by slug (the story's journeyTopic slug), so the slug
-      // here is authoritative — no lossy slugify(label) round-trip.
+      // here is authoritative; no lossy slugify(label) round-trip.
       const rawTopics: JourneyTopic[] = Array.from(topicsMap.entries()).map(([slug, stories]) => {
         const topicPlan = curriculumLevel?.topics.find((topic) => topic.slug === slug) ?? null;
         const label =
@@ -437,7 +438,7 @@ async function buildLevelsForVariant(
         });
       }
 
-      // Orden final por `Journey.topics` (DB) — fuente única compartida con el
+      // Orden final por `Journey.topics` (DB); fuente única compartida con el
       // journey-manager. Los temas ausentes del array conservan su orden previo
       // (sort estable) después de los conocidos.
       if (topicOrder.size > 0) {
@@ -479,25 +480,42 @@ function prettifyTopicLabel(slug: string): string {
  * Build journey tracks from Prisma Journey records (Studio-created content).
  * Studio is the source of truth: only levels, topics and stories configured
  * there show up in the reader. Returns an empty array when there is no
- * Studio content for the language — the caller falls back to legacy.
+ * Studio content for the language; the caller falls back to legacy.
  */
 // Cached Prisma read. Pair with revalidateTag("published-journey-stories")
-// — already fired by /api/studio/journeys/publish — so newly published
+//; already fired by /api/studio/journeys/publish; so newly published
 // content appears immediately while the reader avoids a round trip on
 // every request.
+// Local preview only: on localhost (NODE_ENV !== production) the reader also
+// surfaces archived journeys and draft stories, so a journey can be previewed
+// in the real reader UI BEFORE it is published — without flipping any status
+// in the shared Neon DB (which would also expose it in production). The
+// production build keeps the strict published/non-archived filters.
+// Scope the local preview to ONE specific in-progress journey (by id) instead
+// of surfacing every archived/legacy journey — otherwise the reader's "Switch
+// journey" list fills up with old archived content on localhost.
+const PREVIEW_JOURNEY_ID = "cmqtnagxp0000324lf3u73vg1"; // German A0 (Traveler · Beginner), still archived/draft
+const PREVIEW_DRAFTS = process.env.NODE_ENV !== "production";
+const JOURNEY_STATUS_WHERE: Prisma.JourneyWhereInput = PREVIEW_DRAFTS
+  ? { OR: [{ status: { not: "archived" } }, { id: PREVIEW_JOURNEY_ID }] }
+  : { status: { not: "archived" } };
+const STORY_STATUS_WHERE: Prisma.JourneyStoryWhereInput = PREVIEW_DRAFTS
+  ? { OR: [{ status: "published" }, { journeyId: PREVIEW_JOURNEY_ID }] }
+  : { status: "published" };
+
 const getStudioJourneysForLanguage = unstable_cache(
   async (language: string) => {
     return prisma.journey.findMany({
       where: {
         language: { equals: language, mode: "insensitive" },
-        status: { not: "archived" },
+        ...JOURNEY_STATUS_WHERE,
       },
       // Deterministic order across Journey records for a variant so the UI
       // shows them the same way every time.
       orderBy: { createdAt: "asc" },
       include: {
         stories: {
-          where: { status: "published", NOT: [{ text: null }, { title: null }] },
+          where: { ...STORY_STATUS_WHERE, NOT: [{ text: null }, { title: null }] },
           // Include `topic` in the order so stories with the same level/slot
           // don't get shuffled between topics; `slotIndex` is the sequence
           // within a topic, as assigned by the Studio creation flow.
@@ -506,7 +524,7 @@ const getStudioJourneysForLanguage = unstable_cache(
       },
     });
   },
-  ["studio-journeys-by-language-v5"],
+  ["studio-journeys-by-language-v7"],
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
@@ -516,17 +534,17 @@ const getStudioJourneysForLanguage = unstable_cache(
 const getAllStudioJourneys = unstable_cache(
   async () => {
     return prisma.journey.findMany({
-      where: { status: { not: "archived" } },
+      where: { ...JOURNEY_STATUS_WHERE },
       orderBy: [{ language: "asc" }, { createdAt: "asc" }],
       include: {
         stories: {
-          where: { status: "published", NOT: [{ text: null }, { title: null }] },
+          where: { ...STORY_STATUS_WHERE, NOT: [{ text: null }, { title: null }] },
           orderBy: [{ level: "asc" }, { topic: "asc" }, { slotIndex: "asc" }],
         },
       },
     });
   },
-  ["studio-journeys-all-v2"],
+  ["studio-journeys-all-v4"],
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
@@ -599,7 +617,7 @@ async function buildJourneyVariantsFromStudio(
 
   // ONE TRACK PER STUDIO JOURNEY RECORD. We used to group journeys by
   // variant code (e.g. "italy") and merge their stories into a single
-  // ladder — but that hid the fact that "Viajero" and "Conversacional"
+  // ladder; but that hid the fact that "Viajero" and "Conversacional"
   // are separate curated tracks. The mobile picker now exposes each
   // Journey record as its own option, labeled with `Journey.name`.
   const tracks: JourneyVariantTrack[] = [];
