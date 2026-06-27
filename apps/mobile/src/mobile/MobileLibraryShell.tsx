@@ -3967,6 +3967,30 @@ export function MobileLibraryShell(args: {
           requestPermissions: false,
         });
         if (!cancelled) setReminderHint(reminderState.message);
+        // Log `reminder_scheduled` here too (not just on the manual prefs-save
+        // path) so "Programados" reflects every user whose reminder is actually
+        // scheduled on launch. Guarded to once per local day per device so we
+        // count people/day, not app opens.
+        if (reminderState.status === "scheduled") {
+          try {
+            const todayKey = new Date().toISOString().slice(0, 10);
+            const lastLogged = await SecureStore.getItemAsync(
+              "digital-polyglot/reminder-scheduled-logged"
+            );
+            if (lastLogged !== todayKey) {
+              await SecureStore.setItemAsync(
+                "digital-polyglot/reminder-scheduled-logged",
+                todayKey
+              );
+              void trackReminderMetric("reminder_scheduled", {
+                reminderHour: normalized.reminderHour,
+                source: "launch_sync",
+              });
+            }
+          } catch {
+            // Best-effort metric; never block hydration on a storage hiccup.
+          }
+        }
       } catch (error) {
         if (cancelled) return;
         if (isApiErrorStatus(error, 401)) {
