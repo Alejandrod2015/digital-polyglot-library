@@ -29,6 +29,35 @@ export async function POST(request: Request) {
   if (!story) return NextResponse.json({ error: "Story not found" }, { status: 404 });
   if (!story.text || !story.title) return NextResponse.json({ error: "Story not generated yet" }, { status: 400 });
 
+  // Continuity gate (2026-06-27): a topic must NEVER end on an unresolved
+  // cliffhanger. A `mini-cliffhanger` is valid mid-topic, but only if a later
+  // slot pays it off. If this story is a mini-cliffhanger and NO later slot
+  // exists in its topic (any status), block the publish. This is the
+  // automatic, deterministic guard for the A1 LATAM 2026-06-26 incident
+  // (Community s3 / Meeting s3 shipped as the last story with no resolution).
+  // The full semantic + repetition audit lives in
+  // POST /api/studio/journeys/audit-continuity (run before launching a journey).
+  if (story.arcType === "mini-cliffhanger") {
+    const laterSlot = await prisma.journeyStory.findFirst({
+      where: {
+        journeyId: story.journeyId,
+        level: story.level,
+        topic: story.topic,
+        slotIndex: { gt: story.slotIndex },
+      },
+      select: { id: true },
+    });
+    if (!laterSlot) {
+      return NextResponse.json(
+        {
+          error:
+            "Continuity gate: this story is a mini-cliffhanger and the last slot in its topic, so the topic would end on an unresolved hook. Add a later slot that resolves it (a draft is enough), or change its arcType, before publishing.",
+        },
+        { status: 422 }
+      );
+    }
+  }
+
   try {
     await prisma.journeyStory.update({
       where: { id: storyId },

@@ -5,6 +5,8 @@ import { prisma } from "@/lib/prisma";
 import { generateAndUploadAudio, generateAndUploadMultiVoiceAudio } from "@/lib/elevenlabs";
 import { generateWordTimingsForStory } from "@/lib/audioWordTimings";
 import { multiVoiceGuardError } from "@/lib/multiVoiceGuard";
+import { auditTopicArc } from "@/lib/auditTopicArc";
+import { judgeTopicContinuity } from "@/lib/judgeTopicContinuity";
 
 export const maxDuration = 300;
 
@@ -15,7 +17,7 @@ export async function POST(request: Request) {
   if (!user?.primaryEmailAddress?.emailAddress || !(await isStudioMember(user.primaryEmailAddress.emailAddress)))
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 
-  let body: { storyId?: string };
+  let body: { storyId?: string; force?: boolean };
   try { body = await request.json(); } catch {
     return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   }
@@ -30,6 +32,59 @@ export async function POST(request: Request) {
   // HARD GUARD: a story with characters can NEVER be generated single-voice.
   const guardError = multiVoiceGuardError({ storyText: story.text, dialogueSpec: story.dialogueSpec });
   if (guardError) return NextResponse.json({ error: guardError }, { status: 400 });
+
+  // CONTINUITY GATE — runs BEFORE generation because audio is the expensive,
+  // irreversible step (the A1 LATAM 2026-06-26 incident burned credits on
+  // stories that were part of a broken arc). We check the WHOLE topic the
+  // story belongs to: deterministic (final-slot cliffhanger, name/role) +
+  // semantic LLM judge (plot contradictions, dropped threads). If anything
+  // fails, we refuse to spend audio credits. Pass { force: true } to override
+  // a judgement you disagree with. See docs/story-quality-spec.md.
+  if (!body.force) {
+    const topicStories = await prisma.journeyStory.findMany({
+      where: { journeyId: story.journeyId, level: story.level, topic: story.topic },
+      orderBy: { slotIndex: "asc" },
+      select: { slotIndex: true, arcType: true, title: true, text: true, cast: true },
+    });
+    const blockers: string[] = [];
+    for (const i of auditTopicArc(
+      topicStories.map((s) => ({
+        slotIndex: s.slotIndex,
+        arcType: s.arcType,
+        title: s.title,
+        text: s.text,
+        cast: s.cast as { characters?: { name?: string; ageBand?: string; gender?: string }[] } | null,
+      })),
+      { topicComplete: true }
+    )) {
+      if (i.severity === "fail") blockers.push(i.message);
+    }
+    try {
+      const verdict = await judgeTopicContinuity(
+        topicStories.map((s) => ({ slotIndex: s.slotIndex, title: s.title, text: s.text })),
+        { language: story.journey.language, topic: story.topic }
+      );
+      if (verdict.verdict === "issues") {
+        for (const c of verdict.contradictions) blockers.push(`Contradiction (slots ${c.slots.join(", ")}): ${c.detail}`);
+        for (const d of verdict.droppedThreads) blockers.push(`Dropped thread (slot ${d.slot}): ${d.detail}`);
+        if (verdict.finalCliffhangerUnresolved) blockers.push(`Unresolved final cliffhanger: ${verdict.finalCliffhangerDetail}`);
+      }
+    } catch {
+      // Judge unavailable (e.g. no OPENAI_API_KEY): keep the deterministic
+      // blockers; do not silently pass, but do not hard-block on the judge
+      // being down either.
+    }
+    if (blockers.length > 0) {
+      return NextResponse.json(
+        {
+          error: "Continuity gate blocked audio generation (the topic this story belongs to has unresolved continuity problems). Fix the arc, or retry with { force: true } if you disagree.",
+          topic: `${story.level}/${story.topic}`,
+          blockers,
+        },
+        { status: 422 }
+      );
+    }
+  }
 
   try {
     await prisma.journeyStory.update({ where: { id: storyId }, data: { audioStatus: "generating" } });
