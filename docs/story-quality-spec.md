@@ -98,9 +98,40 @@ ElevenLabs (and the entire TTS pipeline) cannot render laughs, hums, sighs, or s
 - Laughter spellings: `haha`, `Hahaha`, `jaja`, `jeje`, `hehe`, `ja ja`, `kkk`, `LOL`.
 - Hesitation / filler sounds: `hmm`, `hmmm`, `uhm`, `ehm`, `uh`, `eh`, `ah`, `mh`.
 - Reaction sounds: `mmm` (as a sound, not the adverb), `oh!`, `ohh`, `aww`, `ay`, `uy`, `ugh`, `wow`.
+- Onomatopoeia in narration or dialogue: `Shhh` / `Sh`, `Mmm`, `Tap, tap`, `Toc, toc`, `Pum`. The TTS reads them as literal letters.
 - Stage directions inside dialogue: `(laughs)`, `(sighs)`, `[ríe]`, `*pause*`, `[muttering]`.
 
+> Validator lock (2026-06-26): `body-no-banned-tokens` now also fails on `mm+`, `sh+`, `tap, tap`, `toc, toc`, `pum`. Added after `Shhh`/`Mmm`/`Tap, tap` shipped in a0/a2 LATAM stories because the original token list missed them. Replace a hush with words ("Baja la voz, nos van a oír"), a knock with narration ("un golpecito seco, y luego otro").
+
 **Render reactions as real words instead.** "Hahaha! Ich auch, fast." → "Ich auch, fast." The laugh is implied by the context. "Mmm! Wieso ist roher Teig so lecker?" → "Wieso ist roher Teig so lecker?". Use concrete vocabulary to convey emotion: `Ich war ungeduldig`, `Das schmeckt seltsam`, `Was für ein Glück`, `Komisch`, `Schade`. Pre-save check: grep the body for any of these tokens and remove before save — they're a hard defect, not stylistic preference.
+
+### Dialect matches setting (HARD)
+
+The dialect of the dialogue must match where the story is set, and must stay consistent with the other levels of the same journey.
+
+- **Río de la Plata (Argentina / Uruguay) → voseo is REQUIRED**, not optional: `vos`, `sos`, `tenés`, `querés`, `venís`, `decís`, `mirá`, `vení`, `quedate`, `¿sabés?`. Writing a porteño in `tú` is inauthentic — that's the opposite of the "authentic native language in context" thesis.
+- **Mexico / Colombia / Peru / Chile → tú / ustedes**, never voseo.
+- Validator locks: `body-voseo-forms` fails on voseo leaking into a non-rioplatense setting; `body-missing-voseo` (2026-06-26) fails on a rioplatense setting written in `tú` with no voseo. The second was added after a0 Buenos Aires shipped in `tú` while a1/a2 of the same journey used voseo — a learner was taught the wrong register, then a different one a level later.
+
+### Narration crutches & repeated beats (HARD BAN on overuse)
+
+Added 2026-06-25 after the es-LATAM **A0** journey shipped with three template tics repeated across ~20 of 21 stories. Each story passed the per-story checks; the mold only showed up reading them back-to-back (the mandatory gestalt step). By then the audio was generated, so it couldn't be cheaply fixed. These are now caught at validation, **before** audio.
+
+Banned devices (validator `body-inner-monologue-tell`, `body-aphoristic-closing`, `body-cliche-beat` — all warn per story; `motif-cross-story` escalates to fail once 2+ siblings already use the same one):
+
+- **Narrated rhetorical question** as a tell: `Se pregunta: ¿…?` / `Mateo se pregunta: ¿Es real?`. It announces the character's inner state instead of showing it. Show the tension through what the character **does or says**, or cut it.
+- **Stated-thought moral** / fortune-cookie closing: `X piensa: [aforismo]`, or a bare maxim as the last line (`A veces, un problema es un regalo.` / `la aventura no es llegar; es el camino.` / `Hoy, Camilo es Barranquilla.`). Land the ending on a **concrete image, action, or a line of dialogue**, never a stated lesson.
+- **Cliché sentimental beats**, e.g. the "the photo can't capture it / it's more beautiful in my own eyes" beat (used in 3 A0 stories). Find a fresher way to land the emotion.
+
+Rule of thumb: the **same** narration device or emotional beat must not recur across more than two stories in a journey. Variety of *how a story is told and how it ends* matters as much as variety of plot.
+
+### CEFR grammar ceiling per level
+
+The body (not just the vocab list) may reach **i+2** (A1 → up to A2/B1 lexis; see the two-level rule), **but A0 is special: an A0 body may reach A1/A2 and must NOT use B1 constructs.** Validator `body-cefr-a0-grammar` (A0 only) **fails** on:
+
+- Present **subjunctive** after a trigger: `aunque viva lejos`, `para que sepa`, `cuando llegue`. Use the indicative (`aunque vive lejos`).
+- The comparative subordinate **`de lo que`**: `más fuerte de lo que creo`. Use a simpler comparative.
+- The **`hace X tiempo que` + present** idiom: `hace años que sueña`. Rephrase (`sueña con esto desde hace mucho` is also B1 — prefer a plain present: `siempre quiere ver este lugar`).
 
 ### Length
 
@@ -132,6 +163,20 @@ The seven archetypes:
 **Cliffhanger rhythm across a journey**:
 
 Across any 10 consecutive stories within a journey, **50-70% should end on an unresolved beat** (i.e. use `mini-cliffhanger` OR end the final line of any other arc with an open hook). Never 100% — the bonding effect requires variation; constant cliffhangers fatigue. Research-backed (Hahn et al. 2023, Univ. of Buffalo, n=475; Chapter Chronicles NLP analysis of 9,752 Webnovel comments — see brief).
+
+**HARD: the LAST published story of a topic must NOT leave an unresolved cliffhanger.** A `mini-cliffhanger` is for the MIDDLE of a topic — the hook must be paid off by a later slot. If the final slot ends open, either resolve it in that slot or add a later slot that pays it off. Incident 2026-06-26: A1 LATAM Community s3 (man with a suitcase, "Es…") and Meeting s3 (Tomás doesn't show) shipped as the last story of their topic with no resolution anywhere — the arc hangs forever.
+
+This is a topic-level / whole-set property, so it is NOT caught by the per-story validator. It is enforced by the **topic-continuity gate**, wired at the points that matter:
+- **Audio generation (PRIMARY block — this is where money is spent):** `POST /api/studio/journeys/audio` runs the full gate (deterministic + LLM judge) over the story's whole topic BEFORE calling ElevenLabs, and returns 422 with the blockers if the arc is broken. Pass `{ force: true }` to override. This is the lock that prevents the 2026-06-26 failure mode: burning audio credits on a contradictory/cliffhanger-broken arc.
+- **Publish:** `POST /api/studio/journeys/publish` refuses to publish a `mini-cliffhanger` that is the last slot of its topic.
+- **Pre-launch full audit:** `POST /api/studio/journeys/audit-continuity { journeyId }` runs the whole journey and returns a report.
+
+The checks themselves:
+- `auditTopicArc` (`src/lib/auditTopicArc.ts`, deterministic): fails on a `mini-cliffhanger` in the final slot; warns on a character name reused with a different age/gender across slots.
+- `auditCrossStoryRepetition` (same file, journey-wide): warns on formulaic beats reused across 3+ stories (signature phrases + verbatim 6-grams) — the "toma una foto pero…", "respira hondo", "ya no es un extraño" class.
+- `judgeTopicContinuity` (`src/lib/judgeTopicContinuity.ts`, LLM): reads each topic's stories in order and flags plot contradictions and dropped threads (the semantic class no regex can catch, e.g. Places "reaches the sea then travels to it"). Best-effort: if `OPENAI_API_KEY` is missing it reports "unavailable", never a silent pass.
+
+The design premise the judge enforces: **episodic series** (recurring cast, each story self-contained, hooks that ARE paid off) — NOT a continuous novel, NOT unrelated vignettes. See user memory `feedback_story_arc_continuity_gate`.
 
 **Recurring cast (REQUIRED for engagement)**:
 
@@ -340,8 +385,10 @@ Before running the `save` script, walk through these ten binary questions. If an
 16. Is the body in the correct format for the journey type? Multi-voice Conversacional DE stories use `Speaker: line` plain text, NOT `<blockquote>` HTML.
 17. Is the vocab distributed across the body? Roughly 3-5 items per paragraph; no paragraph has 0 while another has 6+. (Pre-save sanity check: scan ¶ counts.)
 18. **Read-the-batch gestalt step (required when working on more than one story)**: dump the first sentences of every story in the journey side-by-side and read them as a sequence. Reject if the same opening template appears 3+ times (`opening-rhythm-rotation` check enforces this mechanically, but the human read catches subtler rhythm/tone repetition the regex can't). Anchor types to rotate through: time+place, sensory hook (smell/light/sound), weather/season, action, dialogue-immediate, character apposition, object-as-anchor. Never declare a journey "done" without doing this read.
+19. Does the body avoid the narrated-thought crutches (`Se pregunta: ¿…?`, `X piensa: [aforismo]`), avoid ending on a fortune-cookie maxim, and avoid cliché beats (e.g. "the photo can't capture it")? In the batch read, confirm no single narration device or emotional beat recurs in 3+ stories (`body-inner-monologue-tell` / `body-aphoristic-closing` / `body-cliche-beat` / `motif-cross-story` enforce this).
+20. **A0 only**: is the body free of B1 grammar — no present subjunctive (`aunque viva`), no `de lo que`, no `hace X tiempo que` + present? (`body-cefr-a0-grammar` fails on these.)
 
-If 13 or more answers are `yes`, save. If fewer, revise.
+If 15 or more answers are `yes`, save. If fewer, revise.
 
 ---
 
