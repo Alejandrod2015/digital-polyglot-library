@@ -5,6 +5,7 @@ import crypto from "crypto";
 import { shopifybundles } from "@/data/shopifybundles";
 import { sendClaimEmail } from "@/lib/email";
 import { prisma } from "@/lib/prisma";
+import { getCatalogBookMeta } from "@/lib/catalog";
 
 const SHOPIFY_WEBHOOK_SECRET = process.env.SHOPIFY_WEBHOOK_SECRET;
 
@@ -69,8 +70,8 @@ export async function POST(req: Request) {
     const isValid = verifyShopifyHmac(rawBody, receivedHmac);
     console.log("🧾 HMAC válido:", isValid);
     if (!isValid) {
-      console.warn("⚠️ Shopify HMAC inválido (ignorando para test)");
-      // return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      console.warn("⚠️ Shopify HMAC inválido: rechazando petición");
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     // 3️⃣ Parsear JSON validado
@@ -85,7 +86,7 @@ export async function POST(req: Request) {
     const line_items = pickLineItems(parsed);
     console.log("🛒 Line items detectados:", line_items);
 
-    const purchasedBooks = line_items
+    const candidateBooks = line_items
       .flatMap((i) => {
         const code = (i.sku ?? "").trim();
         if (!code) return [];
@@ -95,10 +96,37 @@ export async function POST(req: Request) {
       })
       .filter(Boolean);
 
-    console.log("📚 Libros detectados:", purchasedBooks);
+    console.log("📚 Candidatos detectados:", candidateBooks);
+
+    // 🛡️ GUARD anti-fantasma: solo emitimos acceso digital para productos que
+    // EXISTEN en el catálogo del reader. Muchos SKUs (líneas solo-papel) no
+    // tienen edición digital; antes se creaba un ClaimToken con el SKU crudo y
+    // se enviaba un email de claim que apuntaba a un libro inexistente
+    // (fantasma). Si ningún candidato resuelve, NO creamos claim ni mandamos
+    // email.
+    const purchasedBooks: string[] = [];
+    const skippedNoDigital: string[] = [];
+    for (const slug of candidateBooks) {
+      const meta = await getCatalogBookMeta(slug);
+      if (meta) purchasedBooks.push(slug);
+      else skippedNoDigital.push(slug);
+    }
+
+    if (skippedNoDigital.length > 0) {
+      console.warn(
+        `⏭️ Sin edición digital (no se concede ni se emite claim): ${JSON.stringify(
+          skippedNoDigital
+        )} — email=${email}. Si alguno DEBERÍA ser digital, cárgalo al catálogo y/o mapéalo en shopifybundles.ts.`
+      );
+    }
+
+    console.log("📚 Libros digitales válidos:", purchasedBooks);
     if (purchasedBooks.length === 0) {
-      console.warn("🚫 No se detectaron identificadores válidos de libro");
-      return NextResponse.json({ message: "No valid book identifiers found" });
+      console.warn("🚫 Ningún producto con edición digital: no se crea claim");
+      return NextResponse.json({
+        message: "No digital editions in order; no claim issued",
+        skipped: skippedNoDigital,
+      });
     }
 
     // 4️⃣ Crear registro de compra (ClaimToken)

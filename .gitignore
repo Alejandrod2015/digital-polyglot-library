@@ -83,3 +83,4 @@ data/vocab-shorten/
 # throwaway debug scripts / empty stubs
 _keys.mts
 /app.json
+.env*.local
