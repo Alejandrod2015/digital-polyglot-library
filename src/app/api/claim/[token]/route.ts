@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { createClerkClient } from "@clerk/backend";
 import { getBookMeta } from "@/lib/books";
+import { getCatalogBookMeta } from "@/lib/catalog";
 import { revalidateTag } from "next/cache";
 import { prisma } from "@/lib/prisma";
 
@@ -106,26 +107,58 @@ export async function GET(
     // 🧩 Si hay sesión, sincronizar Clerk + My Library
     if (userId) {
       try {
-        await patchUserMetadata(userId, redeemed.books);
-
+        // 🛡️ GUARD anti-fantasma: solo concedemos libros que EXISTEN en el
+        // catálogo del reader. Un SKU que no resuelve (p.ej. el SKU crudo de
+        // Shopify sin mapear en shopifybundles.ts) crearía una entrada fantasma
+        // (title = SKU, portada por defecto) en LibraryBook y en Clerk
+        // publicMetadata.books. Mejor NO materializar y alertar para repararlo.
+        const resolved: Array<{ bookId: string; title: string; cover: string }> = [];
+        const unresolved: string[] = [];
         for (const bookId of redeemed.books) {
-        const meta = await getBookMeta(bookId);
-        await prisma.libraryBook.upsert({
-          where: { userId_bookId: { userId, bookId } },
-          update: {}, // idempotente
-          create: {
+          const catalog = await getCatalogBookMeta(bookId);
+          if (!catalog) {
+            unresolved.push(bookId);
+            continue;
+          }
+          const meta = await getBookMeta(bookId);
+          resolved.push({ bookId, title: meta.title, cover: meta.cover });
+        }
+
+        if (unresolved.length > 0) {
+          console.error(
+            `🚨 CLAIM SIN CATÁLOGO — userId=${userId} buyer=${redeemed.buyerEmail} ` +
+              `sin_resolver=${JSON.stringify(unresolved)} — NO materializado. ` +
+              `Mapear en shopifybundles.ts o cargar el libro en el catálogo.`
+          );
+        }
+
+        if (resolved.length > 0) {
+          await patchUserMetadata(
             userId,
-            bookId,
-            title: meta.title,
-            coverUrl: meta.cover,
-          },
-        });
-      }
+            resolved.map((r) => r.bookId)
+          );
 
-      // 🔥 INVALIDAR CACHE DE LA BIBLIOTECA DEL USUARIO
-      revalidateTag("library-by-user");
+          for (const r of resolved) {
+            await prisma.libraryBook.upsert({
+              where: { userId_bookId: { userId, bookId: r.bookId } },
+              update: {}, // idempotente
+              create: {
+                userId,
+                bookId: r.bookId,
+                title: r.title,
+                coverUrl: r.cover,
+              },
+            });
+          }
 
-      console.log("📚 My Library sincronizada para:", userId);
+          // 🔥 INVALIDAR CACHE DE LA BIBLIOTECA DEL USUARIO
+          revalidateTag("library-by-user");
+        }
+
+        console.log(
+          `📚 My Library sincronizada para: ${userId} ` +
+            `(concedidos=${resolved.length} sin_resolver=${unresolved.length})`
+        );
       } catch (libErr) {
         console.error("⚠️ Error actualizando My Library:", libErr);
       }
