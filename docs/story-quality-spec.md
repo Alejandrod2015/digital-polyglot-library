@@ -136,8 +136,21 @@ The body (not just the vocab list) may reach **i+2** (A1 → up to A2/B1 lexis; 
 ### Length
 
 - Target 220-280 words. Hard maximum 320. Hard minimum 180.
-- Same target across all CEFR levels. What changes between levels is lexical and syntactic density, not volume.
+- Same target across all CEFR levels A1+. **A0 is the documented exception — see "A0 register" below.** What changes between levels A1+ is lexical and syntactic density, not volume.
 - If you go over 320, trim before saving (cut a sub-beat, tighten a dialogue exchange, remove a redundant transition). Going over is allowed only when explicitly authorized by the user for that specific story.
+
+### A0 register (lighter tier) — exception to the A1+ defaults
+
+A0 (Beginner) is **NOT a shorter A1**. It is a deliberately lighter, separate tier, fixed by the **es-LATAM A0 precedent** (measured 2026-06-28) and applied identically to de-germany A0:
+
+- **Narrator-style, single voice** — NOT multi-voice. Continuous third-person prose; brief quoted speech embedded inside narrator paragraphs (no `Speaker: line` blocks). One narrator voice (the journey/topic voice) reads the whole story.
+- **Body ~135-145 words** (NOT 220-280) so the narrated audio lasts **~1 minute on average** — the user's standing target. Calibrated to es-LATAM A0: ~139 words → ~63s real audio at tempo 0.94 (~0.45 s/word). ~100-120 words is too short (~50s); push up to land near a minute.
+- **Synopsis ~25-40 words** (NOT 45-90).
+- **Vocab ~22-26** (definitions still 8-14 English words).
+- **Standalone protagonists per topic** — A0 does NOT reuse the journey's A1 recurring cast / `journeyCasts.ts` voicemap. Each topic has its own simple lead (es-LATAM A0: Camilo, Elena, Ana, Valentina, Mateo, Lucía, Pablo; de-germany A0: Lena, Marie, Finn, Sofia, Nora, Emma, Mia).
+- **Grammar floor** as in "CEFR grammar ceiling per level" above: subject-first (no V2 inversion), no `es gibt`, no separable verbs, present only, one idea per short sentence. (`feedback_a0_true_floor`.)
+
+The A1+ validator checks `body-word-count` (180+), `synopsis-length` (45+), `body-dialogue-ratio`, `speakers-count`, `speaker-lines` are **known A0 exemptions** for narrator-style A0 stories — not defects. Everything else in this spec (banned tokens, bare imperatives, narration crutches, cultural anchor taught, vocab defs/distribution, opening variety, arc + final-slot resolution) still applies in full.
 
 ### Arc archetype (REQUIRED) — 7-arc kishōtenketsu taxonomy
 
