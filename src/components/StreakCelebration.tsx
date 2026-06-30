@@ -54,7 +54,7 @@ export function StreakCelebration() {
     <div
       role="status"
       aria-live="polite"
-      className="fixed bottom-20 left-1/2 z-[60] -translate-x-1/2 rounded-2xl border border-amber-300/30 bg-[rgba(31,22,8,0.96)] px-4 py-3 shadow-[0_18px_50px_rgba(252,211,77,0.22)] backdrop-blur"
+      className="dp-keep-dark fixed bottom-20 left-1/2 z-[60] -translate-x-1/2 rounded-2xl border border-amber-300/30 bg-[rgba(31,22,8,0.96)] px-4 py-3 shadow-[0_18px_50px_rgba(252,211,77,0.22)] backdrop-blur"
       style={{ animation: "streak-pop 320ms cubic-bezier(0.34,1.56,0.64,1) both" }}
     >
       <div className="flex items-center gap-3">

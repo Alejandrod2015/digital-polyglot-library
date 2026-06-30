@@ -348,7 +348,7 @@ export default function LanguageSwitcher({ open, onClose }: Props) {
                         className="shrink-0 rounded-full px-3 py-1.5 text-[10px] font-black tracking-[0.14em]"
                         style={{
                           background: "var(--color-gold)",
-                          color: "#2a1a02",
+                          color: "var(--color-gold-ink)",
                         }}
                       >
                         ACTIVE

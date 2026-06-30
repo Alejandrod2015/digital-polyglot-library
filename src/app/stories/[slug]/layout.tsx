@@ -23,7 +23,7 @@ export default function PolyglotStoryLayout({ children }: Props) {
           <a
             href="/explore"
             aria-label="Back"
-            className="fixed left-3 top-3 z-50 inline-grid h-10 w-10 place-items-center rounded-full border border-white/[0.12] bg-[rgba(4,9,17,0.78)] text-white/95 backdrop-blur-md md:left-6 md:top-6"
+            className="fixed left-3 top-3 z-50 inline-grid h-10 w-10 place-items-center rounded-full border border-white/12 bg-[#081a31] text-white backdrop-blur-md md:left-6 md:top-6"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

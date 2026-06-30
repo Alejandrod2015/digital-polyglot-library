@@ -614,7 +614,7 @@ function PlansInner() {
               onClick={() => handleSubscribe(annualBillingId)}
               disabled={loading === annualBillingId}
               className="w-full rounded-full px-4 py-3 text-[13px] font-extrabold transition hover:brightness-105 disabled:opacity-60"
-              style={{ background: 'var(--color-gold)', color: '#2a1a02' }}
+              style={{ background: 'var(--color-gold)', color: 'var(--color-gold-ink)' }}
             >
               {loading === annualBillingId
                 ? 'Processing…'
@@ -774,7 +774,7 @@ function PlanStatusBanner({
             onClick={onManage}
             disabled={loading}
             className="rounded-full px-4 py-2 text-[12px] font-extrabold transition hover:brightness-105 disabled:opacity-60"
-            style={{ background: 'var(--color-gold)', color: '#2a1a02' }}
+            style={{ background: 'var(--color-gold)', color: 'var(--color-gold-ink)' }}
           >
             {loading ? 'Opening…' : 'Switch to Annual'}
           </button>
@@ -843,7 +843,7 @@ function PlanCard({
       {badge ? (
         <div
           className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-[10px] font-black tracking-[0.18em]"
-          style={{ background: 'var(--color-gold)', color: '#2a1a02' }}
+          style={{ background: 'var(--color-gold)', color: 'var(--color-gold-ink)' }}
         >
           {badge}
         </div>

@@ -813,7 +813,7 @@ export default function SettingsPage() {
               className="px-4 py-1.5 rounded-full text-[13px] font-extrabold transition-colors"
               style={
                 themePref === mode
-                  ? { background: "var(--color-gold)", color: "#2a1a02" }
+                  ? { background: "var(--color-gold)", color: "var(--color-gold-ink)" }
                   : { background: "transparent", color: "var(--muted)" }
               }
             >
@@ -900,7 +900,7 @@ export default function SettingsPage() {
                     className="inline-grid h-4 w-4 place-items-center rounded-full text-[10px]"
                     style={
                       active
-                        ? { background: "var(--color-gold)", color: "#2a1a02" }
+                        ? { background: "var(--color-gold)", color: "var(--color-gold-ink)" }
                         : { border: "1.5px solid var(--card-border)" }
                     }
                   >
@@ -1138,7 +1138,7 @@ export default function SettingsPage() {
                           className="rounded-lg px-3 py-1.5 text-[12px] font-extrabold transition-colors"
                           style={
                             active
-                              ? { background: "var(--color-gold)", color: "#2a1a02" }
+                              ? { background: "var(--color-gold)", color: "var(--color-gold-ink)" }
                               : { background: "transparent", color: "var(--muted)" }
                           }
                           aria-pressed={active}
@@ -1174,7 +1174,7 @@ export default function SettingsPage() {
                 className="rounded-full px-3 py-1.5 text-[12px] font-bold transition-colors"
                 style={
                   active
-                    ? { background: "var(--color-gold)", color: "#2a1a02" }
+                    ? { background: "var(--color-gold)", color: "var(--color-gold-ink)" }
                     : { background: "var(--chip-bg)", color: "var(--foreground)", border: "1px solid var(--chip-border)" }
                 }
               >

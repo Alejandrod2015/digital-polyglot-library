@@ -65,7 +65,7 @@ export default function AppUpdateBanner({ currentVersion, enabled = true }: Prop
 
   return (
     <div className="fixed inset-x-3 top-[calc(env(safe-area-inset-top)+0.85rem)] z-[80] md:left-[calc(16rem+1rem)] md:right-4">
-      <div className="flex items-center justify-between gap-3 rounded-2xl border border-blue-300/20 bg-[#0d2648]/95 px-4 py-3 text-white shadow-2xl backdrop-blur">
+      <div className="dp-keep-dark flex items-center justify-between gap-3 rounded-2xl border border-blue-300/20 bg-[#0d2648]/95 px-4 py-3 text-white shadow-2xl backdrop-blur">
         <div className="min-w-0">
           <p className="text-sm font-semibold tracking-tight">A new version of Digital Polyglot is available.</p>
           <p className="text-xs text-blue-100/80">Refresh to load the latest updates.</p>

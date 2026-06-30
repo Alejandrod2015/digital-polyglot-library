@@ -554,13 +554,13 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
 )}
 
       {!resolvedStory.audioUrl && resolvedStory.source === "polyglot" && resolvedStory.audioStatus !== "failed" ? (
-        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 bg-[#081a31]/95 px-4 py-3 text-center text-sm text-blue-100/85 backdrop-blur">
+        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 bg-[#081a31] px-4 py-3 text-center text-sm text-blue-100/85 backdrop-blur">
           Audio is still being prepared. You can start reading now.
         </div>
       ) : null}
 
       {!resolvedStory.audioUrl && resolvedStory.source === "polyglot" && resolvedStory.audioStatus === "failed" ? (
-        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-amber-400/20 bg-[#2b1d10]/95 px-4 py-3 text-center text-sm text-amber-100 backdrop-blur">
+        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-amber-400/20 bg-[#2b1d10] px-4 py-3 text-center text-sm text-amber-100 backdrop-blur">
           This story is ready to read, but audio is currently unavailable.
         </div>
       ) : null}

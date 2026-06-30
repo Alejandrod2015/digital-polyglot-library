@@ -222,7 +222,7 @@ export function TopicPreviewSheet({
           href={ctaHref}
           onClick={onClose}
           className="mt-5 mb-2 inline-flex w-full items-center justify-center rounded-2xl px-4 py-3.5 text-sm font-extrabold tracking-wide hover:brightness-105"
-          style={{ background: "var(--color-gold)", color: "#2a1a02" }}
+          style={{ background: "var(--color-gold)", color: "var(--color-gold-ink)" }}
         >
           {ctaLabel}
         </Link>

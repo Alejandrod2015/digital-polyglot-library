@@ -43,7 +43,7 @@ export default function CookieConsentBanner({
   if (!requiresConsentOptIn) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-4xl rounded-3xl border border-white/10 bg-[#081a31]/95 p-4 shadow-[0_24px_80px_rgba(0,0,0,0.42)] backdrop-blur-xl sm:p-5">
+    <div className="dp-keep-dark fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-4xl rounded-3xl border border-white/10 bg-[#081a31]/95 p-4 shadow-[0_24px_80px_rgba(0,0,0,0.42)] backdrop-blur-xl sm:p-5">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-blue-200/75">
