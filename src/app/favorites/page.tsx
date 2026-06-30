@@ -71,6 +71,7 @@ type FavoriteItem = {
   nextReviewAt?: string | null;
   lastReviewedAt?: string | null;
   streak?: number | null;
+  createdAt?: string | null;
 };
 type ReviewScore = 'again' | 'hard' | 'easy';
 type SrsMeta = {
@@ -455,6 +456,16 @@ export default function FavoritesPage() {
   const sortedFavorites = useMemo(
     () => sortPracticeItemsByOnboarding(favorites, onboardingPracticePrefs, true),
     [favorites, onboardingPracticePrefs]
+  );
+  // The displayed list is ordered most-recently-added first (by createdAt).
+  // Items without a timestamp (e.g. local-only, not yet synced) sort last.
+  const favoritesByRecency = useMemo(
+    () =>
+      [...favorites].sort(
+        (a, b) =>
+          (b.createdAt ? Date.parse(b.createdAt) : 0) - (a.createdAt ? Date.parse(a.createdAt) : 0),
+      ),
+    [favorites]
   );
   const dueFavorites = useMemo(
     () => sortPracticeItemsByOnboarding(favorites.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now)), onboardingPracticePrefs, true),
@@ -1089,7 +1100,7 @@ export default function FavoritesPage() {
               </div>
             ) : null}
             <ul className="space-y-3">
-              {sortedFavorites
+              {favoritesByRecency
                 .filter((fav) => {
                   if (
                     practiceType !== 'all' &&
@@ -1143,7 +1154,7 @@ export default function FavoritesPage() {
                     <div className="flex items-center gap-3">
                       <div className="min-w-0 flex-1 pl-1">
                         <div className="flex items-baseline gap-2">
-                          <p className="text-[22px] font-black leading-none text-white truncate">
+                          <p className="text-[22px] font-black leading-[1.3] text-white truncate">
                             {fav.word}
                           </p>
                           <span className="text-[11px] font-bold text-white/45">
