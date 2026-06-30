@@ -7,6 +7,9 @@ import {
   ArrowLeft,
   ArrowRight,
   BookOpenText,
+  Bookmark,
+  BookmarkCheck,
+  Check,
   ChevronDown,
   Clock,
   Crown,
@@ -14,6 +17,7 @@ import {
   Headphones,
   Home,
   MessageCircleMore,
+  Pause,
   Play,
   Rocket,
   RotateCcw,
@@ -22,6 +26,7 @@ import {
   Target,
   TrendingUp,
   Volume2,
+  X,
   Zap,
   type LucideIcon,
 } from "lucide-react";
@@ -45,6 +50,7 @@ import {
   coerceAudioSegments,
   findBestAudioSegment,
   findBestAudioSegmentLegacy,
+  normalizeSegmentText,
   type AudioSegment,
 } from "@/lib/audioSegments";
 import {
@@ -58,10 +64,46 @@ import { PracticeCountdown } from "@/components/PracticeCountdown";
 import { Confetti } from "@/components/Confetti";
 
 type LoadState = "loading" | "ready" | "error";
+// Exact per-line concat offset for a multi-voice story. Unlike audioSegments
+// (aeneas-aligned, drifts vs the post-processed master), these are the byte-exact
+// boundaries captured while concatenating each synthesized line, plus the line's
+// own isolated mp3 url.
+type StoryAudioFragment = {
+  text: string;
+  startSec: number;
+  endSec: number;
+  url?: string | null;
+  speaker?: string | null;
+  voiceId?: string | null;
+};
+
 type StoryAudioData = {
   audioUrl: string | null;
   audioSegments: AudioSegment[];
+  audioFragments?: StoryAudioFragment[];
 };
+
+function coerceAudioFragments(raw: unknown): StoryAudioFragment[] {
+  if (!Array.isArray(raw)) return [];
+  const out: StoryAudioFragment[] = [];
+  for (const item of raw) {
+    if (!item || typeof item !== "object") continue;
+    const f = item as Record<string, unknown>;
+    const text = typeof f.text === "string" ? f.text : "";
+    const startSec = typeof f.startSec === "number" ? f.startSec : NaN;
+    const endSec = typeof f.endSec === "number" ? f.endSec : NaN;
+    if (!text || !Number.isFinite(startSec) || !Number.isFinite(endSec) || endSec <= startSec) continue;
+    out.push({
+      text,
+      startSec,
+      endSec,
+      url: typeof f.url === "string" ? f.url : null,
+      speaker: typeof f.speaker === "string" ? f.speaker : null,
+      voiceId: typeof f.voiceId === "string" ? f.voiceId : null,
+    });
+  }
+  return out;
+}
 
 type JourneyPracticeSource = {
   variantId?: string | null;
@@ -133,13 +175,72 @@ function normalizeStorySlug(value: string | null | undefined): string {
   return typeof value === "string" ? value.trim().toLowerCase() : "";
 }
 
+// Match a sentence against the story's exact per-line concat fragments. These
+// carry byte-exact boundaries (and an isolated per-line mp3) that, unlike the
+// aeneas-aligned audioSegments, never drift vs the post-processed master. The
+// returned pseudo-segment routes playback to the line's own clip url, so the
+// listening exercise plays exactly that one line with zero neighbour bleed.
+function matchFragment(
+  fragments: StoryAudioFragment[] | undefined,
+  sentence: string
+): { fragment: StoryAudioFragment; index: number } | null {
+  if (!fragments || fragments.length === 0) return null;
+  const normalizedSentence = normalizeSegmentText(sentence);
+  if (!normalizedSentence) return null;
+
+  let bestFragment: StoryAudioFragment | null = null;
+  let bestIndex = -1;
+  let bestScore = 0;
+  for (let index = 0; index < fragments.length; index += 1) {
+    const fragment = fragments[index];
+    const normalizedFragment = normalizeSegmentText(fragment.text);
+    if (!normalizedFragment) continue;
+    let score = 0;
+    if (normalizedFragment === normalizedSentence) score = 4;
+    else if (
+      normalizedFragment.includes(normalizedSentence) ||
+      normalizedSentence.includes(normalizedFragment)
+    )
+      score = 3;
+    if (score > bestScore) {
+      bestScore = score;
+      bestFragment = fragment;
+      bestIndex = index;
+    }
+  }
+
+  if (!bestFragment || bestScore < 3) return null;
+  return { fragment: bestFragment, index: bestIndex };
+}
+
+function findFragmentSegment(
+  fragments: StoryAudioFragment[] | undefined,
+  sentence: string
+): AudioSegment | null {
+  const match = matchFragment(fragments, sentence);
+  if (!match) return null;
+  const { fragment, index } = match;
+  return {
+    id: `fragment-${index}`,
+    text: fragment.text,
+    normalizedText: normalizeSegmentText(fragment.text),
+    startSec: fragment.startSec,
+    endSec: fragment.endSec,
+    index,
+    clipUrl: fragment.url ?? undefined,
+  };
+}
+
 function findSegmentForClip(
   storyAudio: StoryAudioData | null | undefined,
   clip: PracticeAudioClip | null | undefined
 ): AudioSegment | null {
   if (!storyAudio || !clip) return null;
   if (clip.storySource !== "standalone") {
-    return findBestAudioSegmentLegacy(storyAudio.audioSegments, clip.sentence);
+    return (
+      findFragmentSegment(storyAudio.audioFragments, clip.sentence) ??
+      findBestAudioSegmentLegacy(storyAudio.audioSegments, clip.sentence)
+    );
   }
   const segmentId = typeof clip.segmentId === "string" ? clip.segmentId.trim() : "";
 
@@ -265,6 +366,10 @@ const modeThemeByMode: Record<
 
 const CLIP_START_PADDING_SEC = 0.08;
 const CLIP_END_TRIM_SEC = 0.5;
+// Single vetted narrator voice for isolated-word audio (Narrador2). Lone-word
+// ElevenLabs renders vary a lot per voice; this one validated cleanest. Pre-
+// generated clips are cached under this voiceId, so the client must request it.
+const WORD_AUDIO_VOICE_ID = "yHD4CsKkghm19ToGLJEC";
 const CHECKPOINT_PASS_THRESHOLD = 0.8;
 
 type FeedbackTone = "correct" | "wrong";
@@ -349,6 +454,7 @@ export default function PracticePage() {
   const [streak, setStreak] = useState(0);
   const [maxStreak, setMaxStreak] = useState(0);
   const [lastResult, setLastResult] = useState<"correct" | "wrong" | null>(null);
+  const [savedWords, setSavedWords] = useState<Set<string>>(() => new Set());
   // Combo toast (iPhone parity): an animated celebration pill that pops in the
   // header when the streak hits a tier (≥2 in a row) and auto-dismisses.
   const [comboToast, setComboToast] = useState<{ streak: number; tier: ComboTier; label: string } | null>(null);
@@ -379,6 +485,12 @@ export default function PracticePage() {
   const [speakingClipId, setSpeakingClipId] = useState<string | null>(null);
   const [hqClipId, setHqClipId] = useState<string | null>(null);
   const [hqUrlBySentence, setHqUrlBySentence] = useState<Record<string, string>>({});
+  // Isolated-word audio (ElevenLabs, same voice as the story line). Separate
+  // element + state from the sentence/context clip so the two play buttons in a
+  // meaning exercise are independent.
+  const [wordClipId, setWordClipId] = useState<string | null>(null);
+  const [wordUrlByKey, setWordUrlByKey] = useState<Record<string, string>>({});
+  const wordAudioRef = useRef<HTMLAudioElement | null>(null);
   const [userStoryAudioBySlug, setUserStoryAudioBySlug] = useState<Record<string, StoryAudioData>>({});
   const [standaloneStoryAudioBySlug, setStandaloneStoryAudioBySlug] = useState<Record<string, StoryAudioData>>({});
   const clipAudioRef = useRef<HTMLAudioElement | null>(null);
@@ -399,6 +511,10 @@ export default function PracticePage() {
   const storyPracticeTitle = searchParams.get("storyTitle");
   const storyReturnHref = searchParams.get("storyHref");
   const storyNextHref = searchParams.get("nextHref");
+  const storyNextTitle = searchParams.get("nextTitle");
+  // "story" (default) or "topic" — when the next item starts a new topic (i.e.
+  // this was the last story of the current topic), the button reads "Next topic".
+  const storyNextKind = searchParams.get("nextKind") === "topic" ? "topic" : "story";
   const journeyVariant = searchParams.get("variant");
   const journeyLevelId = searchParams.get("levelId");
   const journeyTopicId = searchParams.get("topicId");
@@ -588,10 +704,14 @@ export default function PracticePage() {
   useEffect(() => {
     const userStorySlugs = Array.from(
       new Set(
-        favorites
-          .filter((favorite) => !isStandaloneFavorite(favorite))
-          .map((favorite) => (typeof favorite.storySlug === "string" ? favorite.storySlug.trim() : ""))
-          .filter(Boolean)
+        [
+          // The practiced story itself, so exercises can play its audio segments
+          // (e.g. the listening clip) without a saved favorite from that story.
+          ...(isStoryPractice && storyPracticeSlug ? [storyPracticeSlug.trim()] : []),
+          ...favorites
+            .filter((favorite) => !isStandaloneFavorite(favorite))
+            .map((favorite) => (typeof favorite.storySlug === "string" ? favorite.storySlug.trim() : "")),
+        ].filter(Boolean)
       )
     );
 
@@ -622,7 +742,7 @@ export default function PracticePage() {
         });
         if (!res.ok) throw new Error(`Error ${res.status}`);
         const data = (await res.json()) as {
-          stories?: Array<{ slug?: string; audioUrl?: string | null; audioSegments?: unknown }>;
+          stories?: Array<{ slug?: string; audioUrl?: string | null; audioSegments?: unknown; audioFragments?: unknown }>;
         };
 
         if (cancelled) return;
@@ -634,6 +754,7 @@ export default function PracticePage() {
           next[slug] = {
             audioUrl: typeof story.audioUrl === "string" ? story.audioUrl : null,
             audioSegments: coerceAudioSegments(story.audioSegments),
+            audioFragments: coerceAudioFragments(story.audioFragments),
           };
         }
         setUserStoryAudioBySlug(next);
@@ -679,26 +800,89 @@ export default function PracticePage() {
     return () => {
       cancelled = true;
     };
-  }, [favorites]);
+  }, [favorites, isStoryPractice, storyPracticeSlug]);
 
   const orderedFavorites = useMemo(
     () => sortPracticeItemsByOnboarding(favorites, onboardingPracticePrefs, true),
     [favorites, onboardingPracticePrefs]
   );
   const exercises = useMemo(() => {
+    // Story practice renders the editorially CURATED set (prefabExercises),
+    // the same source the mobile client prefers; the curated listen_choose
+    // carries the real story-segment audioClip, and curated fill_blanks carry
+    // hand-authored cloze + translations. Falling through to
+    // buildPracticeSession (which synthesises exercises from raw vocab) would
+    // play browser TTS and show vocab-derived distractors, so only use it when
+    // there is no curated set for this story. A selected mode filters the
+    // curated set by exercise type so the mode tabs keep working.
+    const modeType: Record<PracticeMode, PracticeExercise["type"]> = {
+      meaning: "meaning_in_context",
+      context: "fill_blank",
+      listening: "listen_choose",
+      match: "match_meaning",
+    };
     const base = isJourneyCheckpoint
       ? prefabExercises
-      : selectedMode
-        ? buildPracticeSession(orderedFavorites, selectedMode, onboardingPracticePrefs)
-        : [];
-    // `?ex=N` opens a single exercise (0-based) for previewing one type at a time.
+      : isStoryPractice && prefabExercises.length > 0
+        ? selectedMode
+          ? prefabExercises.filter((ex) => ex.type === modeType[selectedMode])
+          : prefabExercises
+        : selectedMode
+          ? buildPracticeSession(orderedFavorites, selectedMode, onboardingPracticePrefs)
+          : [];
+    // `?ex=N` (or a comma list `?ex=0,6,9`) opens just those exercises (0-based)
+    // for previewing specific items without playing the whole set. For story
+    // practice the indices address the FULL curated set (not the mode-filtered
+    // subset), so a review link like `?ex=10,0,6,9` always maps to the same
+    // curated exercises regardless of any auto-selected mode.
+    const pickPool =
+      isStoryPractice && prefabExercises.length > 0 && !isJourneyCheckpoint ? prefabExercises : base;
     if (onlyExerciseParam != null && onlyExerciseParam !== "") {
-      const idx = Number(onlyExerciseParam);
-      if (Number.isInteger(idx) && idx >= 0 && idx < base.length) return [base[idx]];
+      const picks = onlyExerciseParam
+        .split(",")
+        .map((s) => Number(s.trim()))
+        .filter((n) => Number.isInteger(n) && n >= 0 && n < pickPool.length);
+      if (picks.length) return picks.map((i) => pickPool[i]);
     }
     return base;
-  }, [isJourneyCheckpoint, onboardingPracticePrefs, onlyExerciseParam, orderedFavorites, prefabExercises, selectedMode]);
+  }, [isJourneyCheckpoint, isStoryPractice, onboardingPracticePrefs, onlyExerciseParam, orderedFavorites, prefabExercises, selectedMode]);
   const currentExercise = exercises[exerciseIndex] ?? null;
+
+  // Toggle a practiced word in Favorites: first tap saves, second tap removes.
+  // Optimistic; reverts on failure.
+  const toggleWord = useCallback(
+    async (es: string, en: string) => {
+      const key = (es || "").toLowerCase();
+      if (!es) return;
+      const wasSaved = savedWords.has(key);
+      setSavedWords((prev) => {
+        const next = new Set(prev);
+        if (wasSaved) next.delete(key);
+        else next.add(key);
+        return next;
+      });
+      try {
+        await fetch("/api/favorites", {
+          method: wasSaved ? "DELETE" : "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(
+            wasSaved
+              ? { word: es }
+              : { word: es, translation: en || es, storySlug: storyPracticeSlug ?? undefined, language: "spanish" },
+          ),
+        });
+      } catch {
+        setSavedWords((prev) => {
+          const next = new Set(prev);
+          if (wasSaved) next.add(key);
+          else next.delete(key);
+          return next;
+        });
+      }
+    },
+    [savedWords, storyPracticeSlug],
+  );
+
   const inferredModeFromExercise: PracticeMode | null =
     currentExercise?.type === "meaning_in_context"
       ? "meaning"
@@ -1152,6 +1336,7 @@ export default function PracticePage() {
     }
     if (audio) {
       audio.pause();
+      audio.onended = null;
     }
     clipStopAtRef.current = null;
     clipTimeHandlerRef.current = null;
@@ -1160,6 +1345,8 @@ export default function PracticePage() {
 
   useEffect(() => {
     stopClipPlayback();
+    if (wordAudioRef.current) wordAudioRef.current.pause();
+    setWordClipId(null);
   }, [exerciseIndex, stopClipPlayback]);
 
   const playExactContextClip = useCallback(
@@ -1187,8 +1374,11 @@ export default function PracticePage() {
 
       const startPlayback = async () => {
         const isStandaloneClip = clip.storySource === "standalone";
+        // An isolated per-line mp3 (standalone clip url, or a journey
+        // audioFragment url) plays start-to-finish with zero neighbour bleed and
+        // no boundary-trim guesswork, so always prefer it when present.
         const directClipUrl =
-          isStandaloneClip && typeof segment.clipUrl === "string" && segment.clipUrl.trim()
+          typeof segment.clipUrl === "string" && segment.clipUrl.trim()
             ? segment.clipUrl.trim()
             : null;
 
@@ -1198,6 +1388,10 @@ export default function PracticePage() {
             audio.src = directClipUrl;
           }
           audio.currentTime = 0;
+          // The isolated clip plays to its natural end (no timeupdate stop),
+          // so reset the play/pause state when it finishes; otherwise the
+          // button stays stuck on "pause" after the audio is done.
+          audio.onended = () => stopClipPlayback();
           setPlayingClipId(clipOwnerId);
           await audio.play();
           return;
@@ -1217,6 +1411,9 @@ export default function PracticePage() {
 
         clipStopAtRef.current = clipEndSec;
         audio.currentTime = clipStartSec;
+        // Slice playback stops via timeupdate, not natural end; clear any
+        // onended handler left over from a prior direct-clip play.
+        audio.onended = null;
 
         const onTimeUpdate = () => {
           if (clipStopAtRef.current == null) return;
@@ -1267,6 +1464,14 @@ export default function PracticePage() {
 
   const goNext = () => {
     if (exerciseIndex < exercises.length - 1) {
+      const nextExercise = exercises[exerciseIndex + 1] ?? null;
+      // Reset the countdown synchronously in the same batched render as the
+      // index bump. Otherwise, when advancing FROM an exercise whose timer
+      // already hit 0, the timeout-as-wrong effect re-runs on the new exercise
+      // with the stale `timerRemaining === 0` (the [exerciseIndex] reset effect
+      // hasn't committed yet) and force-reveals it as wrong. Seeding the fresh
+      // duration here means that effect's guard (`timerRemaining > 0`) holds.
+      setTimerRemaining(timerDurationForExercise(nextExercise));
       setExerciseIndex((prev) => prev + 1);
       return;
     }
@@ -1476,9 +1681,64 @@ export default function PracticePage() {
     [hqClipId, playingClipId, speakingClipId]
   );
 
+  // Play a SINGLE word (the meaning exercise's "play word" button). Rendered by
+  // ElevenLabs in ONE fixed, vetted narrator voice (not the line's speaker):
+  // lone-word renders are inconsistent per-voice, and this voice was validated
+  // as the cleanest. The sentence button still plays the authentic speaker, so
+  // only the isolated word standardises on this voice. Tapping again stops it.
+  const playWordTts = useCallback(
+    async (clipOwnerId: string, word: string, _clip: PracticeAudioClip | null | undefined) => {
+      if (!word || typeof window === "undefined") return;
+      const voiceId = WORD_AUDIO_VOICE_ID;
+      if (!voiceId) return;
+      const audio = wordAudioRef.current ?? new Audio();
+      wordAudioRef.current = audio;
+      if (wordClipId === clipOwnerId) {
+        audio.pause();
+        setWordClipId(null);
+        return;
+      }
+      const cacheKey = `${voiceId}|${word.toLowerCase()}`;
+      let url = wordUrlByKey[cacheKey];
+      if (!url) {
+        try {
+          const res = await fetch("/api/practice/word-tts", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ word, voiceId }),
+          });
+          if (!res.ok) {
+            console.error("[practice] word TTS failed", res.status);
+            return;
+          }
+          const data = (await res.json()) as { url?: string };
+          if (!data.url) return;
+          url = data.url;
+          setWordUrlByKey((prev) => ({ ...prev, [cacheKey]: data.url! }));
+        } catch (err) {
+          console.error("[practice] word TTS error", err);
+          return;
+        }
+      }
+      audio.src = url;
+      audio.currentTime = 0;
+      audio.onended = () => setWordClipId((current) => (current === clipOwnerId ? null : current));
+      setWordClipId(clipOwnerId);
+      try {
+        await audio.play();
+      } catch (err) {
+        console.error("[practice] word TTS play error", err);
+        setWordClipId(null);
+      }
+    },
+    [wordClipId, wordUrlByKey]
+  );
+
   // Context-mode reveal audio (iPhone parity): no autoplay while the user is
   // thinking, but the moment they reveal the answer we play the full sentence
   // so they hear the word in its natural context. Fires once per reveal.
+  // Meaning exercises don't autoplay here; they expose explicit word/sentence
+  // play buttons instead.
   useEffect(() => {
     if (!revealed || !currentExercise) return;
     if (currentExercise.type !== "fill_blank") return;
@@ -1487,24 +1747,6 @@ export default function PracticePage() {
     contextRevealAudioRef.current = currentExercise.id;
     playContextAudio(currentExercise.id, currentExercise.audioClip);
   }, [revealed, currentExercise, playContextAudio]);
-
-  // Meaning-mode word autoplay (iPhone parity): when a meaning exercise
-  // appears, play the target WORD (HQ TTS, same voice as the story) so the
-  // learner hears it while choosing the meaning. Fires once per exercise.
-  useEffect(() => {
-    if (!activeSession || sessionComplete) return;
-    if (!currentExercise || currentExercise.type !== "meaning_in_context") return;
-    if (!currentExercise.audioClip) return;
-    if (meaningAutoplayedRef.current === currentExercise.id) return;
-    meaningAutoplayedRef.current = currentExercise.id;
-    void playHqContextClip(currentExercise.id, {
-      storySlug: currentExercise.storySlug ?? "",
-      sentence: currentExercise.word,
-      storySource: "standalone",
-      language: currentExercise.audioClip.language ?? null,
-      voiceId: currentExercise.audioClip.voiceId ?? null,
-    });
-  }, [activeSession, sessionComplete, currentExercise, playHqContextClip]);
 
   const assignMatchMeaning = (meaning: string) => {
     if (!currentExercise || currentExercise.type !== "match_meaning" || !activeMatchWord || revealed) return;
@@ -1647,7 +1889,13 @@ export default function PracticePage() {
     if (selectedMode || pendingCountdownMode) return;
     if (storyAutoStartedRef.current) return;
     storyAutoStartedRef.current = true;
-    setPendingCountdownMode(reviewRecommendedMode);
+    // `?ex=` review/preview links open specific exercises directly — skip the
+    // 3-2-1 get-ready countdown (it's only for a real "start practicing" run).
+    if (onlyExerciseParam) {
+      openSession(reviewRecommendedMode);
+    } else {
+      setPendingCountdownMode(reviewRecommendedMode);
+    }
   }, [
     isStoryPractice,
     loadState,
@@ -1655,6 +1903,8 @@ export default function PracticePage() {
     selectedMode,
     pendingCountdownMode,
     reviewRecommendedMode,
+    onlyExerciseParam,
+    openSession,
   ]);
 
   const preferredPracticeMinutes =
@@ -1841,7 +2091,13 @@ export default function PracticePage() {
     const timerDuration = timerDurationForExercise(currentExercise);
     return (
       <div className="relative -mx-1 -my-6 box-border h-[calc(100dvh-env(safe-area-inset-top))] overflow-hidden px-4 py-2.5 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] text-[var(--foreground)] sm:px-5 sm:py-4 sm:pb-[calc(env(safe-area-inset-bottom)+1rem)]">
-        <div className="mx-auto grid h-full max-w-5xl grid-rows-[auto_minmax(0,1fr)_auto] gap-2 sm:grid-rows-[auto_minmax(0,1fr)_144px]">
+        <div
+          className={`mx-auto grid h-full max-w-[480px] gap-2 ${
+            sessionComplete
+              ? "grid-rows-[auto_minmax(0,1fr)]"
+              : "grid-rows-[auto_minmax(0,1fr)_auto] sm:grid-rows-[auto_minmax(0,1fr)_144px]"
+          }`}
+        >
           {/* HEADER exacto al iPhone:
               - Back arrow rounded-square
               - Eyebrow "WORD QUEST · 02 OF 07" + título "Meaning"
@@ -2010,13 +2266,24 @@ export default function PracticePage() {
                     ? `${Math.floor(totalSeconds / 60)}m ${totalSeconds % 60}s`
                     : `${totalSeconds}s`;
                 const firstName = (user?.firstName ?? "").trim().split(/\s+/)[0] || null;
+                // Greeting must track the actual score: praising a 0% run with
+                // "Nice run" reads as broken. Tier it, and keep it warm without
+                // overclaiming at the low end.
                 const greeting = isPerfect
                   ? firstName
                     ? `Perfect, ${firstName}.`
                     : "Perfect run."
-                  : firstName
-                    ? `Nice run, ${firstName}.`
-                    : "Session complete.";
+                  : accuracyPct >= 70
+                    ? firstName
+                      ? `Nice run, ${firstName}.`
+                      : "Nice run."
+                    : accuracyPct >= 40
+                      ? firstName
+                        ? `Good effort, ${firstName}.`
+                        : "Good effort."
+                      : firstName
+                        ? `Keep at it, ${firstName}.`
+                        : "Keep at it.";
                 const headline = isJourneyCheckpoint
                   ? checkpointPassed
                     ? "Checkpoint cleared."
@@ -2028,12 +2295,6 @@ export default function PracticePage() {
                       : accuracyPct >= 40
                         ? "Solid practice. Keep going."
                         : "These ones need another pass.";
-                const subtext = isJourneyCheckpoint
-                  ? checkpointPassed
-                    ? "Next step unlocked."
-                    : `${Math.max(0, Math.ceil(CHECKPOINT_PASS_THRESHOLD * total) - score)} more correct to pass.`
-                  : `${score} of ${total} correct.`;
-
                 // Ring geometry - animate the arc from empty to score/total.
                 const RING = 168;
                 const STROKE = 16;
@@ -2055,9 +2316,19 @@ export default function PracticePage() {
                 const actions: ResultAction[] = [];
                 let primaryIsReplay = false;
                 if (isJourneyCheckpoint && !checkpointPassed) {
-                  actions.push({ key: "retry", title: "Retry", subtitle: "Checkpoint", icon: RotateCcw, primary: true, onClick: restart });
+                  // "Retry" and "Replay" both just restart the same set, so show
+                  // ONE action; flag it so the redundant "Replay" isn't added.
+                  primaryIsReplay = true;
+                  actions.push({ key: "retry", title: "Try again", subtitle: "Same questions", icon: RotateCcw, primary: true, onClick: restart });
                 } else if (isStoryPractice && storyNextHref) {
-                  actions.push({ key: "next-story", title: "Continue", subtitle: "Next story", icon: ArrowRight, primary: true, href: storyNextHref });
+                  actions.push({
+                    key: "next-story",
+                    title: storyNextKind === "topic" ? "Next topic" : "Next story",
+                    subtitle: storyNextTitle?.trim() || "Continue",
+                    icon: ArrowRight,
+                    primary: true,
+                    href: storyNextHref,
+                  });
                 } else if (isJourneyPractice && journeyReturnHref) {
                   actions.push({
                     key: "journey",
@@ -2091,28 +2362,59 @@ export default function PracticePage() {
                 if (!primaryIsReplay && actions.length < 3) {
                   actions.push({ key: "replay2", title: "Replay", subtitle: `Same ${total}`, icon: RotateCcw, onClick: restart });
                 }
+                // A failed checkpoint should always offer a sensible second
+                // action. Prefer teasing the next story by name (intrigue);
+                // otherwise fall back to a plain exit.
+                if (isJourneyCheckpoint && !checkpointPassed && actions.length < 2) {
+                  if (storyNextHref) {
+                    actions.push({
+                      key: "next-story",
+                      title: storyNextKind === "topic" ? "Next topic" : "Next story",
+                      subtitle: storyNextTitle?.trim() || "Keep going",
+                      icon: ArrowRight,
+                      href: storyNextHref,
+                    });
+                  } else {
+                    actions.push({ key: "back", title: "Back", subtitle: "Exit practice", icon: Home, onClick: closeSession });
+                  }
+                }
                 if (actions.length < 3 && !isStoryPractice && !isJourneyPractice) {
                   actions.push({ key: "favorites", title: "Words", subtitle: "Favorites", icon: BookOpenText, href: "/favorites" });
                 }
 
+                // Words practiced this session (es word + en gloss), deduped, for
+                // a quick end-of-session review. Pulls from every exercise type.
+                const practicedWords: { es: string; en: string }[] = [];
+                const seenWords = new Set<string>();
+                const addWord = (es: string, en: string) => {
+                  const key = (es || "").toLowerCase();
+                  if (!es || seenWords.has(key)) return;
+                  seenWords.add(key);
+                  practicedWords.push({ es, en: en || "" });
+                };
+                for (const exItem of exercises) {
+                  if (exItem.type === "meaning_in_context") addWord(exItem.word, exItem.answer);
+                  else if (exItem.type === "fill_blank") {
+                    const ai = exItem.options.indexOf(exItem.answer);
+                    addWord(exItem.answer, exItem.optionTranslations?.[ai] ?? "");
+                  } else if (exItem.type === "listen_choose") {
+                    const ai = exItem.options.indexOf(exItem.answer);
+                    addWord(exItem.answer, exItem.optionTranslations?.[ai] ?? "");
+                  } else if (exItem.type === "match_meaning") {
+                    for (const p of exItem.pairs) addWord(p.word, p.answer);
+                  }
+                }
+
                 return (
                   <div
-                    className="relative flex min-h-full flex-col items-center gap-4 overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md sm:p-6"
+                    className="dp-practice-session relative flex h-full w-full flex-col items-center justify-start gap-3"
                     style={{ animation: "practice-result-in 280ms ease-out both" }}
                   >
-                    {/* One-shot diagonal shine sweep across the card on entry
-                        (iPhone result-card shine). */}
-                    <span
-                      aria-hidden
-                      className="pointer-events-none absolute inset-y-0 left-0 w-1/3"
-                      style={{
-                        background:
-                          "linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent)",
-                        animation: "practice-result-shine 1200ms ease-out 200ms both",
-                      }}
-                    />
                     <Confetti active={isPerfect} />
 
+                    {/* Celebration block (chips, ring, greeting) — fixed, always
+                        fully visible (never clipped). */}
+                    <div className="flex w-full shrink-0 flex-col items-center gap-3">
                     {/* Corner chips */}
                     <div className="flex w-full items-center justify-between">
                       <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5">
@@ -2130,7 +2432,7 @@ export default function PracticePage() {
                     {/* Score ring */}
                     <div className="relative grid place-items-center" style={{ width: RING, height: RING }}>
                       <svg width={RING} height={RING} className="-rotate-90">
-                        <circle cx={RING / 2} cy={RING / 2} r={R} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth={STROKE} />
+                        <circle cx={RING / 2} cy={RING / 2} r={R} fill="none" stroke="var(--practice-ring-track)" strokeWidth={STROKE} />
                         <circle
                           cx={RING / 2}
                           cy={RING / 2}
@@ -2161,31 +2463,31 @@ export default function PracticePage() {
                     <div className="flex flex-col items-center gap-1 px-2 text-center">
                       <span className="text-[12px] font-extrabold uppercase tracking-[0.22em] text-emerald-300">{greeting}</span>
                       <h2 className="text-[22px] font-black leading-tight tracking-tight text-white">{headline}</h2>
-                      <p className="text-[13px] leading-5 text-white/60">{subtext}</p>
+                    </div>
                     </div>
 
                     {/* Stat cards */}
-                    <div className="flex w-full gap-2.5">
-                      <div className="flex flex-1 items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5">
-                        <Target size={20} className="text-[#9fe8ff]" />
+                    <div className="flex w-full shrink-0 gap-2.5">
+                      <div className="flex flex-1 items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-2.5">
+                        <Target size={20} className="text-[color:var(--practice-audio-icon)]" />
                         <div>
-                          <p className="text-[20px] font-black leading-none text-white">{accuracyPct}%</p>
-                          <p className="mt-1 text-[11px] font-extrabold uppercase tracking-wider text-white/60">Accuracy</p>
+                          <p className="text-[18px] font-black leading-none text-white">{accuracyPct}%</p>
+                          <p className="mt-0.5 text-[10px] font-extrabold uppercase tracking-wider text-white/60">Accuracy</p>
                         </div>
                       </div>
-                      <div className="flex flex-1 items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5">
+                      <div className="flex flex-1 items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-2.5">
                         <Clock size={20} className="text-[#f8c15c]" />
                         <div>
-                          <p className="text-[20px] font-black leading-none text-white">{durationLabel}</p>
-                          <p className="mt-1 text-[11px] font-extrabold uppercase tracking-wider text-white/60">Time</p>
+                          <p className="text-[18px] font-black leading-none text-white">{durationLabel}</p>
+                          <p className="mt-0.5 text-[10px] font-extrabold uppercase tracking-wider text-white/60">Time</p>
                         </div>
                       </div>
                     </div>
 
                     {/* Checkpoint recovery words (only on failed checkpoint) */}
                     {isJourneyCheckpoint && !checkpointPassed && checkpointRecoveryWords.length > 0 ? (
-                      <div className="w-full rounded-2xl border border-rose-200/20 bg-rose-300/[0.08] px-4 py-3">
-                        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-rose-100/80">Review these first</p>
+                      <div className="w-full shrink-0 rounded-2xl border border-rose-200/20 bg-rose-300/[0.08] px-4 py-3">
+                        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-rose-100">Review these first</p>
                         <div className="mt-2 flex flex-wrap gap-1.5">
                           {checkpointRecoveryWords.map((word) => (
                             <span key={word} className="rounded-full border border-rose-200/20 bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-rose-50">
@@ -2196,29 +2498,86 @@ export default function PracticePage() {
                       </div>
                     ) : null}
 
-                    {/* WHAT'S NEXT */}
-                    <div className="mt-auto w-full">
-                      <p className="mb-2.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-white/50">What&rsquo;s next</p>
-                      <div className="flex gap-2.5">
+                    {/* Words you practiced — fixed-height, always visible. Tap a
+                        chip to save that word; the box scrolls only if there are
+                        more rows than fit. */}
+                    {practicedWords.length > 0 ? (
+                      <div className="w-full shrink-0">
+                        <p className="mb-2 text-[11px] font-extrabold uppercase tracking-[0.2em] text-white/50">
+                          Words you practiced
+                          <span className="ml-2 font-bold normal-case tracking-normal text-white/35">tap to save</span>
+                        </p>
+                        <div
+                          className="overflow-x-auto overscroll-contain pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                          style={{
+                            display: "grid",
+                            gridTemplateRows: "repeat(3, auto)",
+                            gridAutoFlow: "column",
+                            gridAutoColumns: "max-content",
+                            gap: "8px",
+                            justifyContent: "start",
+                            // rows at content height (no stretch → chips not tall)
+                            alignContent: "start",
+                            // each chip keeps its own width → varied, not a rigid grid
+                            justifyItems: "start",
+                          }}
+                        >
+                          {practicedWords.map((w) => {
+                            const isSaved = savedWords.has(w.es.toLowerCase());
+                            return (
+                              <button
+                                key={w.es}
+                                type="button"
+                                onClick={() => toggleWord(w.es, w.en)}
+                                aria-label={isSaved ? `Remove ${w.es}` : `Save ${w.es}`}
+                                className={`inline-flex h-fit shrink-0 items-center gap-2 rounded-full border px-3 py-1.5 text-left transition ${
+                                  isSaved
+                                    ? "border-emerald-300/40 bg-emerald-300/[0.10]"
+                                    : "border-white/10 bg-white/[0.05] hover:bg-white/[0.09]"
+                                }`}
+                              >
+                                <span className="text-[12.5px] font-bold leading-none text-white">{w.es}</span>
+                                {w.en ? <span className="dp-prac-chip-tr text-[11px] leading-none">{w.en}</span> : null}
+                                {isSaved ? (
+                                  <BookmarkCheck size={14} className="shrink-0 text-emerald-400" />
+                                ) : (
+                                  <Bookmark size={14} className="shrink-0 text-white/60" />
+                                )}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    ) : null}
+
+                    {/* Actions */}
+                    <div className="w-full shrink-0">
+                      {/* Equal-width buttons on one row (items-stretch → same
+                          height). The name wraps to as many lines as it needs, so
+                          the text adapts to its length without squashing the other
+                          button. min-w-0 keeps both at 50/50. */}
+                      <div className="flex items-stretch gap-2.5">
                         {actions.slice(0, 3).map((action) => {
                           const Icon = action.icon;
-                          const cardClass = `flex flex-1 flex-col gap-1.5 rounded-2xl border px-3 py-3.5 text-left transition ${
+                          const cardClass = `flex min-w-0 flex-1 items-center gap-2.5 rounded-2xl border px-3 py-2.5 text-left transition ${
                             action.primary
                               ? "border-[var(--color-gold)] bg-[var(--color-gold)] hover:brightness-105"
                               : "border-white/10 bg-white/[0.04] hover:bg-white/[0.07]"
                           }`;
-                          const iconWrapClass = `grid h-8 w-8 place-items-center rounded-[10px] ${
+                          const iconWrapClass = `grid h-8 w-8 shrink-0 place-items-center rounded-[10px] ${
                             action.primary ? "bg-black/15" : "bg-white/[0.06]"
                           }`;
-                          const titleClass = `text-[15px] font-black tracking-tight ${action.primary ? "text-[#0a1424]" : "text-white"}`;
-                          const subClass = `text-[11px] font-bold ${action.primary ? "text-[#0a1424]/70" : "text-white/60"}`;
+                          const titleClass = `text-[14px] font-black leading-tight tracking-tight ${action.primary ? "text-[#0a1424]" : "text-white"}`;
+                          const subClass = `break-words text-[11px] font-bold leading-snug ${action.primary ? "text-[#0a1424]/70" : "text-white/60"}`;
                           const inner = (
                             <>
                               <span className={iconWrapClass}>
                                 <Icon size={16} className={action.primary ? "text-[#0a1424]" : "text-white/80"} />
                               </span>
-                              <span className={titleClass}>{action.title}</span>
-                              <span className={subClass}>{action.subtitle}</span>
+                              <span className="flex min-w-0 flex-col">
+                                <span className={titleClass}>{action.title}</span>
+                                <span className={subClass}>{action.subtitle}</span>
+                              </span>
                             </>
                           );
                           return action.href ? (
@@ -2248,7 +2607,7 @@ export default function PracticePage() {
             ) : currentExercise ? (
               <div
                 key={exerciseIndex}
-                className="relative flex min-h-full flex-col rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md"
+                className="dp-practice-session relative flex h-full min-h-0 flex-col rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-md"
                 style={{ animation: "practice-exercise-in 280ms cubic-bezier(0.22,1,0.36,1) both" }}
               >
                 {activeModeTheme ? (
@@ -2276,30 +2635,40 @@ export default function PracticePage() {
                       const isListening = ex.type === "listen_choose";
                       const audioActive =
                         isListening
-                          ? speakingClipId === ex.id
+                          ? // a real story-segment clip plays via playingClipId;
+                            // the TTS fallback uses speakingClipId — cover both.
+                            isContextAudioActive(ex.id)
                           : isContextAudioActive(ex.id);
                       const accentColors = ["#fbbf24", "#60a5fa", "#a78bfa", "#34d399"];
                       return (
-                        <div className="flex flex-col gap-6">
+                        <div className="flex min-h-0 flex-1 flex-col gap-4">
                           {/* ── Hero ── */}
-                          <div className="flex flex-col items-center gap-3 pt-1">
+                          <div className="flex shrink-0 flex-col items-center gap-3 pt-1">
                             {isListening ? (
                               <div className="flex flex-col items-center gap-3 py-3">
                                 <button
                                   type="button"
-                                  onClick={playListenPrompt}
-                                  aria-label={audioActive ? "Stop" : "Play"}
+                                  onClick={() =>
+                                    ex.type === "listen_choose" && ex.audioClip
+                                      ? playContextAudio(ex.id, ex.audioClip)
+                                      : playListenPrompt()
+                                  }
+                                  aria-label={audioActive ? "Pause" : "Play"}
                                   className="grid h-24 w-24 place-items-center rounded-full border-2 transition active:scale-95"
                                   style={{
-                                    background: "rgba(82,160,214,0.20)",
-                                    borderColor: "rgba(159,232,255,0.32)",
-                                    boxShadow: "0 0 36px rgba(159,232,255,0.22)",
+                                    background: "var(--practice-audio-bg)",
+                                    borderColor: "var(--practice-audio-border)",
+                                    boxShadow: "0 0 36px var(--practice-audio-glow)",
                                   }}
                                 >
-                                  <Volume2 size={40} className="text-[#9fe8ff]" />
+                                  {audioActive ? (
+                                    <Pause size={40} className="text-[color:var(--practice-audio-icon)]" fill="currentColor" />
+                                  ) : (
+                                    <Volume2 size={40} className="text-[color:var(--practice-audio-icon)]" />
+                                  )}
                                 </button>
                                 <span className="text-[12px] font-black uppercase tracking-[0.2em] text-white/70">
-                                  {audioActive ? "Playing" : "Tap to listen"}
+                                  {audioActive ? "Tap to pause" : "Tap to listen"}
                                 </span>
                               </div>
                             ) : isContext ? (
@@ -2318,14 +2687,14 @@ export default function PracticePage() {
                                 {ex.sentence ? (
                                   <div
                                     className="flex w-full items-center justify-center gap-3 rounded-[20px] px-4 py-4"
-                                    style={{ background: "rgba(10,28,58,0.72)" }}
+                                    style={{ background: "var(--practice-box-bg)" }}
                                   >
                                     <p className="flex-1 text-center text-[clamp(1.05rem,2.2vw,1.45rem)] font-extrabold leading-[1.35] tracking-tight text-white">
-                                      {(revealed ? ex.sentence.replace(/_{3,}/g, ex.answer) : ex.sentence)
+                                      {(revealed ? ex.sentence.replace(/_{3,}/g, `[[${ex.answer}]]`) : ex.sentence)
                                         .split(/\[\[(.+?)\]\]/)
                                         .map((part, i) =>
                                           i % 2 === 1 ? (
-                                            <strong key={i} className="underline decoration-[#f8c15c] decoration-2 underline-offset-4">
+                                            <strong key={i} className="dp-prac-uline underline decoration-2 underline-offset-4">
                                               {part}
                                             </strong>
                                           ) : (
@@ -2340,14 +2709,33 @@ export default function PracticePage() {
                                         aria-label={audioActive ? "Stop" : "Listen"}
                                         className="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-full border transition"
                                         style={{
-                                          background: "rgba(82,160,214,0.18)",
-                                          borderColor: "rgba(159,232,255,0.14)",
+                                          background: "var(--practice-audio-bg-soft)",
+                                          borderColor: "var(--practice-audio-border-soft)",
                                         }}
                                       >
-                                        <Volume2 size={18} className="text-[#9fe8ff]" />
+                                        <Volume2 size={18} className="text-[color:var(--practice-audio-icon)]" />
                                       </button>
                                     ) : null}
                                   </div>
+                                ) : null}
+                                {ex.type === "fill_blank" && ex.translation ? (
+                                  <p className="px-2 text-center text-[12px] italic leading-snug text-white/40">
+                                    {(() => {
+                                      const t = ex.translation as string;
+                                      const ai = ex.options.indexOf(ex.answer);
+                                      const en = ex.optionTranslations?.[ai];
+                                      const filled = revealed && en ? t.replace(/_{3,}/g, `[[${en}]]`) : t;
+                                      return filled.split(/\[\[(.+?)\]\]/).map((part, i) =>
+                                        i % 2 === 1 ? (
+                                          <strong key={i} className="font-semibold not-italic text-white/70 dp-prac-uline underline decoration-2 underline-offset-2">
+                                            {part}
+                                          </strong>
+                                        ) : (
+                                          part
+                                        ),
+                                      );
+                                    })()}
+                                  </p>
                                 ) : null}
                               </div>
                             ) : isMeaning ? (
@@ -2356,38 +2744,46 @@ export default function PracticePage() {
                                   What does this word mean?
                                 </p>
                                 <div className="flex w-full items-center justify-center gap-3">
-                                  <span className="text-[clamp(2.2rem,7vw,2.9rem)] font-black leading-none tracking-tight text-white">
+                                  <span
+                                    className="text-[clamp(2.2rem,7vw,2.9rem)] font-black leading-none tracking-tight text-white dp-prac-uline underline decoration-[3px] underline-offset-[10px]"
+                                   
+                                  >
                                     {ex.word}
                                   </span>
                                   {ex.audioClip ? (
-                                    <button
-                                      type="button"
-                                      onClick={() => playContextAudio(ex.id, ex.audioClip)}
-                                      aria-label={audioActive ? "Stop" : "Listen"}
-                                      className="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-full border transition"
-                                      style={{
-                                        background: "rgba(82,160,214,0.18)",
-                                        borderColor: "rgba(159,232,255,0.14)",
-                                      }}
-                                    >
-                                      <Volume2 size={18} className="text-[#9fe8ff]" />
-                                    </button>
+                                    (() => {
+                                      const wordOwnerId = `${ex.id}:word`;
+                                      const wordActive = wordClipId === wordOwnerId;
+                                      return (
+                                        <button
+                                          type="button"
+                                          onClick={() => playWordTts(wordOwnerId, ex.word, ex.audioClip)}
+                                          aria-label={wordActive ? "Stop" : "Listen to the word"}
+                                          className="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-full border transition"
+                                          style={{
+                                            background: "var(--practice-audio-bg-soft)",
+                                            borderColor: "var(--practice-audio-border-soft)",
+                                          }}
+                                        >
+                                          {wordActive ? (
+                                            <Pause size={18} fill="currentColor" className="text-[color:var(--practice-audio-icon)]" />
+                                          ) : (
+                                            <Volume2 size={18} className="text-[color:var(--practice-audio-icon)]" />
+                                          )}
+                                        </button>
+                                      );
+                                    })()
                                   ) : null}
                                 </div>
-                                <span
-                                  aria-hidden
-                                  className="block rounded-full"
-                                  style={{ width: 64, height: 4, background: "#f8c15c" }}
-                                />
                                 {ex.sentence ? (
                                   <div
-                                    className="mt-1 w-full rounded-[20px] px-4 py-4"
-                                    style={{ background: "rgba(10,28,58,0.72)" }}
+                                    className="mt-1 flex w-full items-center gap-3 rounded-[20px] px-4 py-4"
+                                    style={{ background: "var(--practice-box-bg)" }}
                                   >
-                                    <p className="text-center text-[15px] font-semibold leading-6 text-white/[0.78]">
+                                    <p className="flex-1 text-center text-[15px] font-semibold leading-6 text-white/75">
                                       {markTargetWordInSentence(ex.sentence, ex.word).split(/\[\[(.+?)\]\]/).map((part, i) =>
                                         i % 2 === 1 ? (
-                                          <strong key={i} className="font-extrabold text-white underline decoration-[#f8c15c] decoration-2 underline-offset-4">
+                                          <strong key={i} className="font-extrabold text-white dp-prac-uline underline decoration-2 underline-offset-4">
                                             {part}
                                           </strong>
                                         ) : (
@@ -2395,6 +2791,24 @@ export default function PracticePage() {
                                         ),
                                       )}
                                     </p>
+                                    {ex.audioClip ? (
+                                      <button
+                                        type="button"
+                                        onClick={() => playContextAudio(ex.id, ex.audioClip)}
+                                        aria-label={isContextAudioActive(ex.id) ? "Stop" : "Listen to the example"}
+                                        className="grid h-[38px] w-[38px] shrink-0 place-items-center rounded-full border transition"
+                                        style={{
+                                          background: "var(--practice-audio-bg-soft)",
+                                          borderColor: "var(--practice-audio-border-soft)",
+                                        }}
+                                      >
+                                        {isContextAudioActive(ex.id) ? (
+                                          <Pause size={16} fill="currentColor" className="text-[color:var(--practice-audio-icon)]" />
+                                        ) : (
+                                          <Volume2 size={16} className="text-[color:var(--practice-audio-icon)]" />
+                                        )}
+                                      </button>
+                                    ) : null}
                                   </div>
                                 ) : null}
                               </>
@@ -2402,7 +2816,7 @@ export default function PracticePage() {
                           </div>
 
                           {/* ── 2×2 option grid ── */}
-                          <div className="grid grid-cols-2 gap-3.5">
+                          <div className="grid min-h-0 flex-1 grid-cols-2 grid-rows-2 gap-3">
                             {ex.options.map((option, idx) => {
                               const isSelected = selectedOption === option;
                               const isCorrect = revealed && option === ex.answer;
@@ -2414,31 +2828,51 @@ export default function PracticePage() {
                                   ? "rgba(251,113,133,0.18)"
                                   : isSelected
                                     ? "rgba(103,181,255,0.14)"
-                                    : "rgba(19,54,107,0.92)";
+                                    : "var(--practice-option-bg)";
                               const border = isCorrect
                                 ? "#6ee7b7"
                                 : isWrong
                                   ? "#fb7185"
                                   : isSelected
                                     ? "#67b5ff"
-                                    : "rgba(97,146,201,0.26)";
+                                    : "var(--practice-option-border)";
                               return (
                                 <button
                                   key={option}
                                   type="button"
                                   onClick={() => chooseOption(option)}
                                   disabled={revealed}
-                                  className="flex min-h-[120px] flex-col items-center justify-center gap-3 rounded-[22px] border-[1.5px] px-4 py-4 text-center transition disabled:cursor-not-allowed"
+                                  className="relative flex h-full min-h-0 flex-col items-center justify-center gap-2 rounded-[22px] border-[1.5px] px-4 py-3 text-center transition disabled:cursor-not-allowed"
                                   style={{ background: bg, borderColor: border }}
                                 >
+                                  {isCorrect || isWrong ? (
+                                    <span
+                                      aria-hidden
+                                      className="absolute right-2.5 top-2.5 grid h-6 w-6 place-items-center rounded-full"
+                                      style={{
+                                        background: isCorrect ? "rgba(22,163,74,0.15)" : "rgba(220,38,38,0.13)",
+                                        color: isCorrect ? "#16a34a" : "#dc2626",
+                                        boxShadow: isCorrect
+                                          ? "inset 0 0 0 1px rgba(22,163,74,0.35)"
+                                          : "inset 0 0 0 1px rgba(220,38,38,0.32)",
+                                      }}
+                                    >
+                                      {isCorrect ? <Check size={14} strokeWidth={3} /> : <X size={14} strokeWidth={3} />}
+                                    </span>
+                                  ) : null}
                                   <span
                                     aria-hidden
-                                    className="block rounded-full"
+                                    className="block shrink-0 rounded-full"
                                     style={{ width: 44, height: 10, background: accent }}
                                   />
-                                  <span className="text-[16px] font-extrabold leading-[1.4] text-white/95">
+                                  <span className="text-[16px] font-extrabold leading-[1.4] text-[color:var(--foreground)]">
                                     {option}
                                   </span>
+                                  {revealed && (ex.type === "fill_blank" || ex.type === "listen_choose") && ex.optionTranslations?.[idx] ? (
+                                    <span className="text-[12px] italic leading-snug text-white/45">
+                                      {ex.optionTranslations[idx]}
+                                    </span>
+                                  ) : null}
                                 </button>
                               );
                             })}
@@ -2589,10 +3023,10 @@ export default function PracticePage() {
                 <button
                   type="button"
                   onClick={continueWithAutoGrade}
-                  className={`flex w-full items-center justify-center gap-2 rounded-2xl px-6 py-[18px] text-[13px] font-black uppercase tracking-[0.18em] transition ${
+                  className={`flex w-full items-center justify-center gap-2.5 rounded-2xl px-6 py-[18px] text-[13px] font-black uppercase tracking-[0.18em] transition hover:brightness-95 ${
                     lastResult === "correct"
-                      ? "bg-emerald-300 text-slate-950 hover:bg-emerald-200"
-                      : "bg-rose-400 text-slate-950 hover:bg-rose-300"
+                      ? "dp-prac-next-ok shadow-[0_8px_20px_-8px_rgba(16,185,129,0.5)]"
+                      : "dp-prac-next-bad shadow-[0_8px_20px_-8px_rgba(244,63,94,0.5)]"
                   }`}
                 >
                   {exerciseIndex >= exercises.length - 1 ? "Finish" : "Next"}
@@ -2603,9 +3037,9 @@ export default function PracticePage() {
                   type="button"
                   onClick={revealCurrent}
                   disabled={!canSubmitAnswer}
-                  className={`flex w-full items-center justify-center gap-2 rounded-2xl px-6 py-[18px] text-[13px] font-black uppercase tracking-[0.18em] transition ${
+                  className={`flex w-full items-center justify-center gap-2.5 rounded-2xl px-6 py-[18px] text-[13px] font-black uppercase tracking-[0.18em] transition ${
                     canSubmitAnswer
-                      ? "bg-[var(--color-gold)] text-[#2a1a02] hover:bg-[#f59e0b]"
+                      ? "bg-[var(--color-gold)] text-[#2a1a02] shadow-[0_8px_20px_-8px_rgba(245,158,11,0.5)] hover:bg-[#f59e0b]"
                       : "cursor-not-allowed bg-white/[0.06] text-white/40"
                   }`}
                 >

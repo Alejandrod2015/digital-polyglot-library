@@ -1,0 +1,275 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "colgar",
+    "sentence": "Sofía [[cuelga]] el teléfono con una sonrisa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hang up (a call)",
+      "options": [
+        "to hang up (a call)",
+        "to pick up",
+        "to dial",
+        "to answer"
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sospecha",
+    "sentence": "Renata la mira con [[sospecha]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "suspicion",
+      "options": [
+        "suspicion",
+        "surprise",
+        "patience",
+        "excuse"
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fácil",
+    "sentence": "Eso fue un accidente. Vi un video y se ve muy [[fácil]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "easy",
+      "options": [
+        "easy",
+        "cheap",
+        "famous",
+        "strange"
+      ],
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "Vi un video y se ve muy fácil.",
+        "targetWord": "fácil",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avisar",
+    "sentence": "Yo ayudo, pero les [[aviso]] que solo sé hacer quesadillas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to warn / let know",
+      "options": [
+        "to warn / let know",
+        "to thank",
+        "to forget",
+        "to pay"
+      ],
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "Les aviso que solo sé hacer quesadillas.",
+        "targetWord": "aviso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suerte",
+    "sentence": "Vamos a necesitar mucha [[suerte]] con ese mole.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "luck",
+      "options": [
+        "luck",
+        "fear",
+        "hunger",
+        "noise"
+      ],
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "Vamos a necesitar mucha suerte con ese mole.",
+        "targetWord": "suerte",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casi",
+    "sentence": "Pues no tenemos [[casi]] nada. ¿Tú sabes cuántas cosas lleva un mole?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "almost",
+      "options": [
+        "almost",
+        "always",
+        "never",
+        "only"
+      ],
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "Pues no tenemos casi nada.",
+        "targetWord": "casi",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "quemaste",
+    "sentence": "Olvidaste el pan en el horno y lo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "quemaste",
+      "options": [
+        "quemaste",
+        "enfriaste",
+        "serviste",
+        "probaste"
+      ],
+      "translation": "You left the bread in the oven and you _____ it.",
+      "optionTranslations": [
+        "burned",
+        "cooled",
+        "served",
+        "tasted"
+      ],
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "Pero si la semana pasada quemaste el agua.",
+        "targetWord": "quemaste",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tamaño",
+    "sentence": "Para saber si la mesa cabe, primero mido su _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tamaño",
+      "options": [
+        "tamaño",
+        "precio",
+        "color",
+        "peso"
+      ],
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "nuestra cocina es del tamaño de una caja.",
+        "targetWord": "tamaño",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "adentro",
+    "sentence": "Está lloviendo, así que los niños juegan _____, en la sala.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "adentro",
+      "options": [
+        "adentro",
+        "afuera",
+        "arriba",
+        "lejos"
+      ],
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "mira adentro con cara de preocupación.",
+        "targetWord": "adentro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "mercado,cenar,caja,sillón",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "mercado",
+          "answer": "market",
+          "options": [
+            "market",
+            "to have dinner",
+            "box",
+            "armchair"
+          ]
+        },
+        {
+          "word": "cenar",
+          "answer": "to have dinner",
+          "options": [
+            "market",
+            "to have dinner",
+            "box",
+            "armchair"
+          ]
+        },
+        {
+          "word": "caja",
+          "answer": "box",
+          "options": [
+            "market",
+            "to have dinner",
+            "box",
+            "armchair"
+          ]
+        },
+        {
+          "word": "sillón",
+          "answer": "armchair",
+          "options": [
+            "market",
+            "to have dinner",
+            "box",
+            "armchair"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "pedir",
+    "sentence": "¿Y si mejor pedimos comida y ya?",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "pedimos",
+      "options": [
+        "pedimos",
+        "cocinamos",
+        "compramos",
+        "servimos"
+      ],
+      "optionTranslations": [
+        "we order",
+        "we cook",
+        "we buy",
+        "we serve"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "¿Y si mejor pedimos comida y ya?",
+        "targetWord": "pedimos",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  }
+]

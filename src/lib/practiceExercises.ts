@@ -43,6 +43,13 @@ export type FillBlankExercise = {
   type: "fill_blank";
   prompt: string;
   sentence: string;
+  // Optional English gloss of the sentence, shown small/italic under it so A2
+  // learners always understand the context. Curated sets may set it; the legacy
+  // generator leaves it undefined.
+  translation?: string | null;
+  // Optional per-option English gloss, parallel to `options`. On reveal it shows
+  // under each choice and fills the English `translation` blank with the answer's.
+  optionTranslations?: string[] | null;
   storySlug?: string | null;
   audioClip?: PracticeAudioClip | null;
   options: string[];
@@ -68,6 +75,12 @@ export type ListenChooseExercise = {
   speechText: string;
   language: string | null;
   options: string[];
+  // Optional per-option English gloss, parallel to `options`; shown under each
+  // choice on reveal (same as fill_blank).
+  optionTranslations?: string[] | null;
+  // Optional story audio segment to play instead of browser TTS — a real
+  // sentence-level clip from the story master (clean boundaries).
+  audioClip?: PracticeAudioClip | null;
   answer: string;
 };
 

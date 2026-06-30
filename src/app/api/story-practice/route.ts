@@ -190,6 +190,66 @@ export async function GET(request: NextRequest) {
   return NextResponse.json({ items, exercises: persistedExercises ?? undefined });
 }
 
+// Deterministic option shuffle. Curated/persisted sets often store the
+// correct answer as options[0] (it's the natural way to author them), and the
+// reader renders options in array order — so without this the right answer
+// always lands in the same (top-left) slot across every exercise, which is an
+// obvious giveaway. Seeding the shuffle on the exercise id keeps the order
+// STABLE across reloads (no jarring reshuffle) while varying it per exercise,
+// and makes the fix immune to how any future seed is authored. The answer is
+// matched by value downstream, never by index, so reordering is safe.
+function mulberry32(seed: number): () => number {
+  let a = seed >>> 0;
+  return () => {
+    a |= 0;
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function shuffleOptionsDeterministic(options: string[], seedStr: string): string[] {
+  if (options.length < 2) return options;
+  let h = 2166136261;
+  for (let i = 0; i < seedStr.length; i++) {
+    h ^= seedStr.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  const rand = mulberry32(h);
+  const out = [...options];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
+// Deterministic permutation of [0..n-1] for the given seed, so options AND any
+// parallel array (e.g. optionTranslations) can be shuffled together — otherwise
+// the English gloss ends up under the wrong word.
+function shuffleIndices(n: number, seedStr: string): number[] {
+  return shuffleOptionsDeterministic(Array.from({ length: n }, (_, i) => String(i)), seedStr).map(Number);
+}
+
+// Match meanings render index-aligned with the words column, so if the meaning
+// at row i is the answer for the word at row i the pairing is trivially given
+// away (just tap straight across). Derange the meanings column: deterministic
+// shuffle, then rotate until NO row's meaning equals that row's answer. This
+// guarantees the spatial alignment is broken while staying stable across
+// reloads and varied per exercise.
+function derangeMeanings(answersInRowOrder: string[], seedStr: string): string[] {
+  const n = answersInRowOrder.length;
+  if (n < 2) return [...answersInRowOrder];
+  let order = shuffleOptionsDeterministic(answersInRowOrder, `${seedStr}:m`);
+  let guard = 0;
+  while (order.some((m, i) => m === answersInRowOrder[i]) && guard < n) {
+    order = [...order.slice(1), order[0]];
+    guard++;
+  }
+  return order;
+}
+
 async function loadPersistedExercises(storySlug: string): Promise<PracticeExercise[] | null> {
   if (!storySlug) return null;
   // Only featured rows surface end-of-story; the rest live in the pool
@@ -201,6 +261,20 @@ async function loadPersistedExercises(storySlug: string): Promise<PracticeExerci
       exercises: {
         where: { featured: true },
         orderBy: { orderIndex: "asc" },
+        // Explicit select: only the columns this loop reads. The Fase-1
+        // additive columns (cefr/audioText/audioVoiceId/distractorSource)
+        // exist in the Prisma schema/client but are NOT migrated to prod
+        // yet, so an `include` (which selects every scalar) throws "column
+        // cefr does not exist". Scoping the select keeps this route working
+        // on the un-migrated DB and after the migration alike.
+        select: {
+          id: true,
+          type: true,
+          word: true,
+          sentence: true,
+          payload: true,
+          audioUrl: true,
+        },
       },
     },
   });
@@ -220,13 +294,19 @@ async function loadPersistedExercises(storySlug: string): Promise<PracticeExerci
       : (row.audioUrl ? { cachedUrl: row.audioUrl } : null);
     switch (row.type) {
       case "fill_blank": {
-        const options = Array.isArray(payload.options) ? (payload.options as string[]) : [];
+        const rawOptions = Array.isArray(payload.options) ? (payload.options as string[]) : [];
+        const rawTr = Array.isArray(payload.optionTranslations) ? (payload.optionTranslations as string[]) : null;
+        const order = shuffleIndices(rawOptions.length, row.id);
+        const options = order.map((i) => rawOptions[i]);
+        const optionTranslations = rawTr ? order.map((i) => rawTr[i]) : null;
         const answer = typeof payload.answer === "string" ? payload.answer : row.word;
         out.push({
           id: `fill_blank:${row.id}`,
           type: "fill_blank",
           prompt,
           sentence: row.sentence,
+          translation: typeof payload.translation === "string" ? payload.translation : null,
+          optionTranslations,
           storySlug,
           audioClip: audioClip as PracticeExercise extends { audioClip?: infer T } ? T : never,
           options,
@@ -235,7 +315,8 @@ async function loadPersistedExercises(storySlug: string): Promise<PracticeExerci
         break;
       }
       case "meaning_in_context": {
-        const options = Array.isArray(payload.options) ? (payload.options as string[]) : [];
+        const rawOptions = Array.isArray(payload.options) ? (payload.options as string[]) : [];
+        const options = shuffleOptionsDeterministic(rawOptions, row.id);
         const answer = typeof payload.answer === "string" ? payload.answer : "";
         out.push({
           id: `meaning_in_context:${row.id}`,
@@ -251,7 +332,11 @@ async function loadPersistedExercises(storySlug: string): Promise<PracticeExerci
         break;
       }
       case "listen_choose": {
-        const options = Array.isArray(payload.options) ? (payload.options as string[]) : [];
+        const rawOptions = Array.isArray(payload.options) ? (payload.options as string[]) : [];
+        const rawTr = Array.isArray(payload.optionTranslations) ? (payload.optionTranslations as string[]) : null;
+        const order = shuffleIndices(rawOptions.length, row.id);
+        const options = order.map((i) => rawOptions[i]);
+        const optionTranslations = rawTr ? order.map((i) => rawTr[i]) : null;
         const answer = typeof payload.answer === "string" ? payload.answer : row.word;
         const language = typeof payload.language === "string" ? payload.language : null;
         out.push({
@@ -261,12 +346,21 @@ async function loadPersistedExercises(storySlug: string): Promise<PracticeExerci
           speechText: row.sentence,
           language,
           options,
+          optionTranslations,
+          audioClip: audioClip as PracticeExercise extends { audioClip?: infer T } ? T : never,
           answer,
         });
         break;
       }
       case "match_meaning": {
-        const pairs = Array.isArray(payload.pairs) ? (payload.pairs as Array<{ word: string; answer: string; options: string[] }>) : [];
+        const rawPairs = Array.isArray(payload.pairs) ? (payload.pairs as Array<{ word: string; answer: string; options: string[] }>) : [];
+        // The meanings column renders from each pair's `options[index]`, aligned
+        // by row with the words column. Replace options with a deranged order so
+        // no meaning sits straight across from its own word. Answers are matched
+        // by value downstream, so reordering the displayed meanings is safe.
+        const answersInRowOrder = rawPairs.map((p) => p.answer);
+        const deranged = derangeMeanings(answersInRowOrder, row.id);
+        const pairs = rawPairs.map((p) => ({ ...p, options: deranged }));
         out.push({
           id: `match_meaning:${row.id}`,
           type: "match_meaning",

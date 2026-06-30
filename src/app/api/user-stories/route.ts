@@ -34,7 +34,6 @@ export async function GET(req: NextRequest) {
       );
 
       if (slugs.length === 0) {
-        await prisma.$disconnect();
         return NextResponse.json({ stories: [] });
       }
 
@@ -81,6 +80,10 @@ export async function GET(req: NextRequest) {
             slug: true,
             audioUrl: true,
             audioSegments: true,
+            // Exact per-line concat offsets (drift-free). The reader/practice
+            // clip player prefers these over audioSegments, whose aeneas-aligned
+            // timestamps drift vs the post-processed master.
+            audioFragments: true,
           },
         }),
         pseudoIds.length > 0
@@ -95,9 +98,10 @@ export async function GET(req: NextRequest) {
                 slug: true,
                 audioUrl: true,
                 audioSegments: true,
+                audioFragments: true,
               },
             })
-          : Promise.resolve([] as Array<{ id: string; slug: string | null; audioUrl: string | null; audioSegments: unknown }>),
+          : Promise.resolve([] as Array<{ id: string; slug: string | null; audioUrl: string | null; audioSegments: unknown; audioFragments: unknown }>),
       ]);
 
       // Para los matches por ID, sustituimos el slug retornado por el
@@ -109,13 +113,14 @@ export async function GET(req: NextRequest) {
           slug: journeyIdsFromPseudoSlugs.get(s.id) ?? s.slug,
           audioUrl: s.audioUrl,
           audioSegments: s.audioSegments,
+          audioFragments: s.audioFragments,
         })),
       ];
 
       // De-dup por slug: si ambos modelos tienen la misma slug, gana
       // UserStory (la fuente más antigua y específica del usuario).
       const seen = new Set<string>();
-      const merged: Array<{ slug: string | null; audioUrl: string | null; audioSegments: unknown }> = [];
+      const merged: Array<{ slug: string | null; audioUrl: string | null; audioSegments: unknown; audioFragments?: unknown }> = [];
       for (const story of userStories) {
         if (story.slug && !seen.has(story.slug)) {
           seen.add(story.slug);
@@ -186,14 +191,12 @@ export async function GET(req: NextRequest) {
         }
       }
 
-      await prisma.$disconnect();
       return NextResponse.json({ stories: merged });
     }
 
     // 🔹 Si viene un id → devolver solo esa historia
     if (storyId) {
       const story = await getUserStoryById(storyId);
-      await prisma.$disconnect();
 
       if (!story) {
         return NextResponse.json({ error: 'Story not found' }, { status: 404 });
@@ -207,7 +210,6 @@ export async function GET(req: NextRequest) {
       const mobileSession = getMobileSessionFromRequest(req);
       const effectiveUserId = userId ?? mobileSession?.sub ?? null;
       if (!effectiveUserId) {
-        await prisma.$disconnect();
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
       }
 
@@ -261,7 +263,6 @@ export async function GET(req: NextRequest) {
       });
 
       const canonicalStory = story ? await getUserStoryById(story.id) : null;
-      await prisma.$disconnect();
       return NextResponse.json({ story: canonicalStory ?? null });
     }
 
@@ -270,7 +271,6 @@ export async function GET(req: NextRequest) {
       const mobileSession = getMobileSessionFromRequest(req);
       const effectiveUserId = userId ?? mobileSession?.sub ?? null;
       if (!effectiveUserId) {
-        await prisma.$disconnect();
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
       }
 
@@ -304,18 +304,15 @@ export async function GET(req: NextRequest) {
         },
       });
 
-      await prisma.$disconnect();
       return NextResponse.json({ stories });
     }
 
     // 🔹 Si no hay id → devolver lista general
     const stories = await getPublicUserStories();
-    await prisma.$disconnect();
 
     return NextResponse.json({ stories });
   } catch (error) {
     console.error('Error fetching user stories:', error);
-    await prisma.$disconnect();
     return NextResponse.json(
       { error: 'Failed to load stories' },
       { status: 500 },
@@ -329,7 +326,6 @@ export async function PUT(req: NextRequest) {
     const storyId = typeof body?.id === 'string' ? body.id.trim() : '';
 
     if (!storyId) {
-      await prisma.$disconnect();
       return NextResponse.json({ error: 'Story id is required' }, { status: 400 });
     }
 
@@ -396,11 +392,9 @@ export async function PUT(req: NextRequest) {
       console.warn('[create-story-mirror] Update sync failed:', mirrorError);
     }
 
-    await prisma.$disconnect();
     return NextResponse.json({ story: updated });
   } catch (error) {
     console.error('Error updating user story:', error);
-    await prisma.$disconnect();
     return NextResponse.json(
       { error: 'Failed to update story' },
       { status: 500 },

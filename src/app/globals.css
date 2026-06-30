@@ -43,6 +43,21 @@
   --badge-advanced-border: rgba(251, 113, 133, 0.4);
   --badge-advanced-text: #fec3cf;
 
+  /* Practice session surfaces (dark = original hardcoded values, so
+     dark mode is unchanged). Light values live in the light blocks.
+     These exist because the practice SESSION uses inline styles that
+     CSS class overrides cannot reach. */
+  --practice-box-bg: rgba(10, 28, 58, 0.72);
+  --practice-option-bg: rgba(19, 54, 107, 0.92);
+  --practice-option-border: rgba(97, 146, 201, 0.26);
+  --practice-audio-bg: rgba(82, 160, 214, 0.20);
+  --practice-audio-bg-soft: rgba(82, 160, 214, 0.18);
+  --practice-audio-border: rgba(159, 232, 255, 0.32);
+  --practice-audio-border-soft: rgba(159, 232, 255, 0.14);
+  --practice-audio-glow: rgba(159, 232, 255, 0.22);
+  --practice-audio-icon: #9fe8ff;
+  --practice-ring-track: rgba(255, 255, 255, 0.08);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-nunito), var(--font-geist-sans);
@@ -71,6 +86,15 @@
   --color-gems:   #c4b5fd; /* gems, premium hints */
   --color-gold:   #fcd34d; /* rewards, achievements */
   --color-energy: #f0abfc; /* energy, boosts */
+
+  /* Practice color tokens. Defaults here are the ORIGINAL dark values so
+     dark mode is untouched; only [data-theme="light"] overrides them below. */
+  --prac-tunderline: #f8c15c;             /* target-word underline */
+  --prac-btn-ok-bg:  #6ee7b7;             /* "Next" after a correct answer */
+  --prac-btn-ok-fg:  #020617;
+  --prac-btn-bad-bg: #fb7185;             /* "Next" after a wrong answer */
+  --prac-btn-bad-fg: #020617;
+  --prac-chip-tr:    rgba(255,255,255,0.45); /* practiced-word chip translation */
 
   /* =========================================================
    * Metrics dashboard tokens (--mx-*). Editorial analytics
@@ -238,12 +262,20 @@
      se ven lavados sobre cream; usamos tonos más profundos.
      `--color-gold` lo usan toggles, "See all", series labels,
      hero eyebrow, Free Today pill, journey level stat. */
-  --color-gold: #d18a1f;
+  --color-gold: #2256c9;
   --color-streak: #d97757;
   --color-gems: #7c6ad6;
   --color-energy: #c93cbb;
   --color-cyan: #0a8bb4;
   --color-xp: #6a9c2e;
+
+  /* Practice color tokens — LIGHT only. Dark keeps the defaults in :root. */
+  --prac-tunderline: #2256c9;             /* blue underline (user request) */
+  --prac-btn-ok-bg:  #10b981;             /* darker green so white text reads */
+  --prac-btn-ok-fg:  #ffffff;
+  --prac-btn-bad-bg: #e2564e;             /* coral */
+  --prac-btn-bad-fg: #ffffff;
+  --prac-chip-tr:    rgba(10,20,36,0.72); /* legible on the light chip */
 
   /* Backgrounds elevados light (warm cream scale, per HANDOFF 2 §A.2).
      En dark estos son navy progresivo; en light son cream. Componentes
@@ -267,6 +299,20 @@
   --shadow-cover:
     0 14px 28px -10px rgba(28, 25, 18, 0.32),
     0 4px 10px -4px rgba(28, 25, 18, 0.18);
+
+  /* Practice session surfaces; light. Cajas de oración y opciones
+     pasan a cream/blanco con borde; el icono de audio a teal oscuro
+     legible (el celeste claro de dark era invisible sobre crema). */
+  --practice-box-bg: rgba(28, 25, 18, 0.05);
+  --practice-option-bg: #ffffff;
+  --practice-option-border: rgba(28, 25, 18, 0.14);
+  --practice-audio-bg: rgba(34, 86, 201, 0.12);
+  --practice-audio-bg-soft: rgba(34, 86, 201, 0.10);
+  --practice-audio-border: rgba(34, 86, 201, 0.32);
+  --practice-audio-border-soft: rgba(34, 86, 201, 0.22);
+  --practice-audio-glow: rgba(34, 86, 201, 0.16);
+  --practice-audio-icon: #2256c9;
+  --practice-ring-track: rgba(28, 25, 18, 0.10);
 }
 
 /* System theme (when no explicit data-theme is set); espejo
@@ -305,7 +351,7 @@
     --badge-advanced-bg: #fde2e6;
     --badge-advanced-border: rgba(190, 18, 60, 0.28);
     --badge-advanced-text: #a91131;
-    --color-gold: #d18a1f;
+    --color-gold: #2256c9;
     --color-streak: #d97757;
     --color-gems: #7c6ad6;
     --color-energy: #c93cbb;
@@ -327,6 +373,18 @@
     --shadow-cover:
       0 14px 28px -10px rgba(28, 25, 18, 0.32),
       0 4px 10px -4px rgba(28, 25, 18, 0.18);
+
+    /* Practice session surfaces; light (mirror). */
+    --practice-box-bg: rgba(28, 25, 18, 0.05);
+    --practice-option-bg: #ffffff;
+    --practice-option-border: rgba(28, 25, 18, 0.14);
+    --practice-audio-bg: rgba(34, 86, 201, 0.12);
+    --practice-audio-bg-soft: rgba(34, 86, 201, 0.10);
+    --practice-audio-border: rgba(34, 86, 201, 0.32);
+    --practice-audio-border-soft: rgba(34, 86, 201, 0.22);
+    --practice-audio-glow: rgba(34, 86, 201, 0.16);
+    --practice-audio-icon: #2256c9;
+    --practice-ring-track: rgba(28, 25, 18, 0.10);
   }
 }
 
@@ -2627,21 +2685,99 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
  * `text-{accent}-100` queda casi blanco sobre cream → invisible.
  * Mapeamos a tones 700/800 que dan contraste contra el wash claro
  * y respetan la familia cromática del modo. */
-:root[data-theme="light"] .dp-practice-mode .text-amber-100 {
+:root[data-theme="light"] .dp-practice-mode .text-amber-100,
+:root[data-theme="light"] .dp-practice-session .text-amber-100 {
   color: #b45309 !important;
 }
-:root[data-theme="light"] .dp-practice-mode .text-emerald-100 {
+:root[data-theme="light"] .dp-practice-mode .text-emerald-100,
+:root[data-theme="light"] .dp-practice-session .text-emerald-100 {
   color: #047857 !important;
 }
-:root[data-theme="light"] .dp-practice-mode .text-sky-100 {
+:root[data-theme="light"] .dp-practice-mode .text-sky-100,
+:root[data-theme="light"] .dp-practice-session .text-sky-100 {
   color: #0369a1 !important;
 }
-:root[data-theme="light"] .dp-practice-mode .text-fuchsia-100 {
+:root[data-theme="light"] .dp-practice-mode .text-fuchsia-100,
+:root[data-theme="light"] .dp-practice-session .text-fuchsia-100 {
   color: #a21caf !important;
 }
-:root[data-theme="light"] .dp-practice-mode .text-cyan-100 {
+:root[data-theme="light"] .dp-practice-mode .text-cyan-100,
+:root[data-theme="light"] .dp-practice-session .text-cyan-100 {
   color: #0e7490 !important;
 }
+/* Match incluye una 6ª familia (rose) que el bloque original no cubría,
+ * más los labels rose del checkpoint-recovery (rose-50/rose-100). */
+:root[data-theme="light"] .dp-practice-session .text-rose-100,
+:root[data-theme="light"] .dp-practice-session .text-rose-50 {
+  color: #be123c !important;
+}
+/* Greeting del result card ("Nice work!") usa emerald-300, muy claro
+ * sobre la card blanca; lo profundizamos. */
+:root[data-theme="light"] .dp-practice-session .text-emerald-300 {
+  color: #059669 !important;
+}
+
+/* --- dp-keep-dark: subárbol que se mantiene OSCURO a propósito en
+ * light (banners de cookies / update / streak). Su fondo es dark
+ * hardcoded con opacidad (escapa al mapeo a blanco), así que sus
+ * hijos `text-white` / `bg-white/N` / `border-white/N` NO deben
+ * recibir el override light (que los oscurecería y los volvería
+ * invisibles sobre el fondo oscuro). Aquí los revertimos. */
+:root[data-theme="light"] .dp-keep-dark .text-white { color: #ffffff !important; }
+:root[data-theme="light"] .dp-keep-dark .bg-white\/5 { background-color: rgba(255, 255, 255, 0.05) !important; }
+:root[data-theme="light"] .dp-keep-dark .border-white\/10 { border-color: rgba(255, 255, 255, 0.10) !important; }
+:root[data-theme="light"] .dp-keep-dark .hover\:bg-white\/10:hover { background-color: rgba(255, 255, 255, 0.10) !important; }
+
+/* --- Accent text sobre wash de color que se vuelve PÁLIDO en light.
+ * Selector compuesto en el MISMO elemento (wash + texto): solo dispara
+ * donde existe exactamente ese par, así que es seguro y no toca dark.
+ * Cubre: favorites (chips select/hover), create (banners de estado),
+ * OfflineIndicator, AddToCollectionModal. */
+:root[data-theme="light"] .bg-sky-400\/15.text-sky-100,
+:root[data-theme="light"] .bg-sky-400\/10.text-sky-200 { color: #0369a1 !important; }
+:root[data-theme="light"] .bg-emerald-900\/20.text-emerald-100 { color: #047857 !important; }
+:root[data-theme="light"] .bg-amber-400\/10.text-amber-100,
+:root[data-theme="light"] .bg-amber-400\/15.text-amber-100 { color: #b45309 !important; }
+:root[data-theme="light"] .hover\:bg-red-400\/10.hover\:text-red-100:hover { color: #b91c1c !important; }
+:root[data-theme="light"] .hover\:bg-yellow-300\/10.hover\:text-yellow-100:hover { color: #a16207 !important; }
+:root[data-theme="light"] .hover\:bg-emerald-300\/10.hover\:text-emerald-100:hover { color: #047857 !important; }
+/* Story reader: barras de aviso de audio. El bg pasa a claro vía el
+ * mapeo de hex; el texto teñido (que se quedaba casi-blanco) se
+ * profundiza. Mismo elemento, así que no afecta dark. */
+:root[data-theme="light"] .bg-\[\#081a31\].text-blue-100\/85 { color: #1e40af !important; }
+:root[data-theme="light"] .bg-\[\#2b1d10\].text-amber-100 { color: #92400e !important; }
+
+/* --- Acento cobalto (antes mostaza --color-gold). El fill ahora es
+ * azul oscuro, así que la tinta que iba oscura (pensada para el gold
+ * claro) pasa a blanca SOLO en light. Cubre texto en el propio botón
+ * e hijos (iconos/labels) con tinta explícita. Dark queda intacto
+ * (allí --color-gold sigue siendo claro y la tinta oscura es correcta). */
+:root[data-theme="light"] .bg-\[var\(--color-gold\)\].text-\[\#2a1a02\],
+:root[data-theme="light"] .bg-\[var\(--color-gold\)\] .text-\[\#2a1a02\],
+:root[data-theme="light"] .bg-\[var\(--color-gold\)\].text-\[\#0e1727\],
+:root[data-theme="light"] .bg-\[var\(--color-gold\)\] .text-\[\#0e1727\],
+:root[data-theme="light"] .bg-\[var\(--color-gold\)\].text-\[\#0a1424\],
+:root[data-theme="light"] .bg-\[var\(--color-gold\)\] .text-\[\#0a1424\],
+:root[data-theme="light"] .bg-\[var\(--color-gold\)\].text-slate-950,
+:root[data-theme="light"] .bg-\[var\(--color-gold\)\] .text-slate-950,
+:root[data-theme="light"] .bg-\[color\:var\(--color-gold\)\].text-\[\#2a1a02\],
+:root[data-theme="light"] .bg-\[color\:var\(--color-gold\)\] .text-\[\#2a1a02\],
+:root[data-theme="light"] .bg-\[color\:var\(--color-gold\)\]\/95.text-\[\#2a1a02\],
+:root[data-theme="light"] .bg-\[color\:var\(--color-gold\)\]\/95 .text-\[\#2a1a02\] { color: #ffffff !important; }
+:root[data-theme="light"] .bg-\[var\(--color-gold\)\] .text-\[\#0a1424\]\/70 { color: rgba(255, 255, 255, 0.75) !important; }
+/* hover ámbar de los botones gold -> cobalto más oscuro en light */
+:root[data-theme="light"] .hover\:bg-\[\#f59e0b\]:hover { background-color: #1b48b3 !important; }
+/* glow ámbar del CTA end-of-story -> cobalto en light */
+:root[data-theme="light"] .dp-eos-cta { box-shadow: 0 8px 24px -8px rgba(34, 86, 201, 0.5) !important; }
+
+/* Practice color tokens applied via real classes so Lightning CSS keeps the
+   --prac-* custom properties (vars referenced ONLY in inline styles get pruned
+   in Tailwind v4). The vars themselves are themed in :root / [data-theme=light],
+   so dark uses its original values and only light changes. */
+.dp-prac-uline { text-decoration-color: var(--prac-tunderline); }
+.dp-prac-next-ok { background-color: var(--prac-btn-ok-bg); color: var(--prac-btn-ok-fg); }
+.dp-prac-next-bad { background-color: var(--prac-btn-bad-bg); color: var(--prac-btn-bad-fg); }
+.dp-prac-chip-tr { color: var(--prac-chip-tr); }
 
 /* --- Favorites: vocab cards usan `bg-[#0c2342]` (deep-navy
  * intencional en dark). Tailwind compila a `.bg-\[\#0c2342\]`. */
@@ -2941,21 +3077,62 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
     box-shadow: var(--shadow-card);
   }
   /* Mismo fix de iconos legibles, mirror para "system" + sistema light. */
-  :root:not([data-theme]) .dp-practice-mode .text-amber-100 {
+  :root:not([data-theme]) .dp-practice-mode .text-amber-100,
+  :root:not([data-theme]) .dp-practice-session .text-amber-100 {
     color: #b45309 !important;
   }
-  :root:not([data-theme]) .dp-practice-mode .text-emerald-100 {
+  :root:not([data-theme]) .dp-practice-mode .text-emerald-100,
+  :root:not([data-theme]) .dp-practice-session .text-emerald-100 {
     color: #047857 !important;
   }
-  :root:not([data-theme]) .dp-practice-mode .text-sky-100 {
+  :root:not([data-theme]) .dp-practice-mode .text-sky-100,
+  :root:not([data-theme]) .dp-practice-session .text-sky-100 {
     color: #0369a1 !important;
   }
-  :root:not([data-theme]) .dp-practice-mode .text-fuchsia-100 {
+  :root:not([data-theme]) .dp-practice-mode .text-fuchsia-100,
+  :root:not([data-theme]) .dp-practice-session .text-fuchsia-100 {
     color: #a21caf !important;
   }
-  :root:not([data-theme]) .dp-practice-mode .text-cyan-100 {
+  :root:not([data-theme]) .dp-practice-mode .text-cyan-100,
+  :root:not([data-theme]) .dp-practice-session .text-cyan-100 {
     color: #0e7490 !important;
   }
+  :root:not([data-theme]) .dp-practice-session .text-rose-100,
+  :root:not([data-theme]) .dp-practice-session .text-rose-50 {
+    color: #be123c !important;
+  }
+  :root:not([data-theme]) .dp-practice-session .text-emerald-300 {
+    color: #059669 !important;
+  }
+  :root:not([data-theme]) .dp-keep-dark .text-white { color: #ffffff !important; }
+  :root:not([data-theme]) .dp-keep-dark .bg-white\/5 { background-color: rgba(255, 255, 255, 0.05) !important; }
+  :root:not([data-theme]) .dp-keep-dark .border-white\/10 { border-color: rgba(255, 255, 255, 0.10) !important; }
+  :root:not([data-theme]) .dp-keep-dark .hover\:bg-white\/10:hover { background-color: rgba(255, 255, 255, 0.10) !important; }
+  :root:not([data-theme]) .bg-sky-400\/15.text-sky-100,
+  :root:not([data-theme]) .bg-sky-400\/10.text-sky-200 { color: #0369a1 !important; }
+  :root:not([data-theme]) .bg-emerald-900\/20.text-emerald-100 { color: #047857 !important; }
+  :root:not([data-theme]) .bg-amber-400\/10.text-amber-100,
+  :root:not([data-theme]) .bg-amber-400\/15.text-amber-100 { color: #b45309 !important; }
+  :root:not([data-theme]) .hover\:bg-red-400\/10.hover\:text-red-100:hover { color: #b91c1c !important; }
+  :root:not([data-theme]) .hover\:bg-yellow-300\/10.hover\:text-yellow-100:hover { color: #a16207 !important; }
+  :root:not([data-theme]) .hover\:bg-emerald-300\/10.hover\:text-emerald-100:hover { color: #047857 !important; }
+  :root:not([data-theme]) .bg-\[\#081a31\].text-blue-100\/85 { color: #1e40af !important; }
+  :root:not([data-theme]) .bg-\[\#2b1d10\].text-amber-100 { color: #92400e !important; }
+  :root:not([data-theme]) .bg-\[var\(--color-gold\)\].text-\[\#2a1a02\],
+  :root:not([data-theme]) .bg-\[var\(--color-gold\)\] .text-\[\#2a1a02\],
+  :root:not([data-theme]) .bg-\[var\(--color-gold\)\].text-\[\#0e1727\],
+  :root:not([data-theme]) .bg-\[var\(--color-gold\)\] .text-\[\#0e1727\],
+  :root:not([data-theme]) .bg-\[var\(--color-gold\)\].text-\[\#0a1424\],
+  :root:not([data-theme]) .bg-\[var\(--color-gold\)\] .text-\[\#0a1424\],
+  :root:not([data-theme]) .bg-\[var\(--color-gold\)\].text-slate-950,
+  :root:not([data-theme]) .bg-\[var\(--color-gold\)\] .text-slate-950,
+  :root:not([data-theme]) .bg-\[color\:var\(--color-gold\)\].text-\[\#2a1a02\],
+  :root:not([data-theme]) .bg-\[color\:var\(--color-gold\)\] .text-\[\#2a1a02\],
+  :root:not([data-theme]) .bg-\[color\:var\(--color-gold\)\]\/95.text-\[\#2a1a02\],
+  :root:not([data-theme]) .bg-\[color\:var\(--color-gold\)\]\/95 .text-\[\#2a1a02\] { color: #ffffff !important; }
+  :root:not([data-theme]) .bg-\[var\(--color-gold\)\] .text-\[\#0a1424\]\/70 { color: rgba(255, 255, 255, 0.75) !important; }
+  :root:not([data-theme]) .hover\:bg-\[\#f59e0b\]:hover { background-color: #1b48b3 !important; }
+  :root:not([data-theme]) .dp-eos-cta { box-shadow: 0 8px 24px -8px rgba(34, 86, 201, 0.5) !important; }
   :root:not([data-theme]) .bg-\[\#0c2342\] {
     background-color: #ffffff !important;
     box-shadow: var(--shadow-card);
@@ -3022,3 +3199,4 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   :root:not([data-theme]) .bg-black\/25,
   :root:not([data-theme]) .bg-black\/20 { background-color: rgba(28, 25, 18, 0.18) !important; }
 }
+
