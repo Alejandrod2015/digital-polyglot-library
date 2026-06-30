@@ -185,9 +185,21 @@ export async function GET(request: NextRequest) {
   // story, surface its exercises in the response. The mobile client
   // prefers `exercises` when present and falls back to building from
   // `items` otherwise; so legacy clients keep working.
-  const persistedExercises = await loadPersistedExercises(storySlug);
+  // `?pool=1` returns the non-featured POOL (extra practice); default returns the
+  // featured ~10 that show at the end of the story. poolCount lets the result
+  // screen offer "Practice the rest" only when a pool actually exists.
+  const poolMode = searchParams.get("pool") === "1";
+  const persistedExercises = await loadPersistedExercises(storySlug, !poolMode);
+  let poolCount = 0;
+  try {
+    poolCount = await prisma.storyPracticeExercise.count({
+      where: { featured: false, set: { story: { slug: storySlug, status: "published" } } },
+    });
+  } catch {
+    poolCount = 0;
+  }
 
-  return NextResponse.json({ items, exercises: persistedExercises ?? undefined });
+  return NextResponse.json({ items, exercises: persistedExercises ?? undefined, poolCount });
 }
 
 // Deterministic option shuffle. Curated/persisted sets often store the
@@ -250,16 +262,20 @@ function derangeMeanings(answersInRowOrder: string[], seedStr: string): string[]
   return order;
 }
 
-async function loadPersistedExercises(storySlug: string): Promise<PracticeExercise[] | null> {
+async function loadPersistedExercises(
+  storySlug: string,
+  featuredOnly: boolean
+): Promise<PracticeExercise[] | null> {
   if (!storySlug) return null;
-  // Only featured rows surface end-of-story; the rest live in the pool
-  // and only show in the Practice tab. Migration 20260518180000 defaults
-  // featured=true so pre-migration sets keep their full 10 here.
+  // featuredOnly=true → the ~10 that surface end-of-story. featuredOnly=false →
+  // the POOL (the rest), shown when the user taps Practice for the story.
+  // Migration 20260518180000 defaults featured=true so pre-migration sets keep
+  // their full set in the featured bucket.
   const set = await prisma.storyPracticeSet.findFirst({
     where: { story: { slug: storySlug, status: "published" } },
     include: {
       exercises: {
-        where: { featured: true },
+        where: { featured: featuredOnly },
         orderBy: { orderIndex: "asc" },
         // Explicit select: only the columns this loop reads. The Fase-1
         // additive columns (cefr/audioText/audioVoiceId/distractorSource)

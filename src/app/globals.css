@@ -85,6 +85,7 @@
   --color-streak: #fb923c; /* streak, day counters */
   --color-gems:   #c4b5fd; /* gems, premium hints */
   --color-gold:   #fcd34d; /* rewards, achievements */
+  --color-gold-ink: #2a1a02; /* tinta sobre el fill gold: oscura en dark (gold claro), blanca en light (cobalto) */
   --color-energy: #f0abfc; /* energy, boosts */
 
   /* Practice color tokens. Defaults here are the ORIGINAL dark values so
@@ -263,6 +264,7 @@
      `--color-gold` lo usan toggles, "See all", series labels,
      hero eyebrow, Free Today pill, journey level stat. */
   --color-gold: #2256c9;
+  --color-gold-ink: #ffffff;
   --color-streak: #d97757;
   --color-gems: #7c6ad6;
   --color-energy: #c93cbb;
@@ -352,6 +354,7 @@
     --badge-advanced-border: rgba(190, 18, 60, 0.28);
     --badge-advanced-text: #a91131;
     --color-gold: #2256c9;
+    --color-gold-ink: #ffffff;
     --color-streak: #d97757;
     --color-gems: #7c6ad6;
     --color-energy: #c93cbb;
@@ -2770,6 +2773,44 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
 /* glow ámbar del CTA end-of-story -> cobalto en light */
 :root[data-theme="light"] .dp-eos-cta { box-shadow: 0 8px 24px -8px rgba(34, 86, 201, 0.5) !important; }
 
+/* --- Fill-blank (Context): hueco como línea PUNTEADA y, al revelar,
+ * la palabra sale con el color de la respuesta correcta (verde). Solo
+ * light (en dark el span muestra los guiones bajos como siempre). */
+:root[data-theme="light"] .dp-prac-blank {
+  color: transparent;
+  background-image: radial-gradient(circle, rgba(28, 25, 18, 0.5) 1.3px, transparent 1.7px);
+  background-repeat: repeat-x;
+  background-position: center bottom 1px;
+  background-size: 7px 4px;
+}
+:root[data-theme="light"] .dp-prac-answer {
+  color: var(--prac-answer-accent, #16a34a) !important;
+  text-decoration-color: var(--prac-answer-accent, #16a34a) !important;
+  text-decoration-style: dotted !important;
+}
+/* Chips "Words you practiced" sin guardar: sin fondo gris en light
+ * (el bg-white/[0.05] se mapeaba a tinte gris). element+class para
+ * ganarle al override de utilidad. El estado guardado (emerald) no
+ * lleva este marcador, así que conserva su wash verde. */
+:root[data-theme="light"] button.dp-word-pill {
+  background-color: transparent !important;
+}
+/* Result card: botones secundarios (Replay, etc.) en AMARILLO con tinta
+ * oscura (blanco sobre amarillo no se lee), para diferenciarlos del Fix
+ * cobalto. Amarillo + azul combinan. Solo light. */
+:root[data-theme="light"] a.dp-result-secondary,
+:root[data-theme="light"] button.dp-result-secondary {
+  background-color: #f5b82e !important;
+  border-color: #f5b82e !important;
+}
+:root[data-theme="light"] a.dp-result-secondary:hover,
+:root[data-theme="light"] button.dp-result-secondary:hover {
+  background-color: #e3a51f !important;
+}
+:root[data-theme="light"] .dp-result-secondary .text-white { color: #2a1a02 !important; }
+:root[data-theme="light"] .dp-result-secondary [class*="text-white/"] { color: rgba(42, 26, 2, 0.72) !important; }
+:root[data-theme="light"] .dp-result-secondary .bg-white\/\[0\.06\] { background-color: rgba(42, 26, 2, 0.12) !important; }
+
 /* Practice color tokens applied via real classes so Lightning CSS keeps the
    --prac-* custom properties (vars referenced ONLY in inline styles get pruned
    in Tailwind v4). The vars themselves are themed in :root / [data-theme=light],
@@ -3133,6 +3174,33 @@ textarea.jm-input { resize: vertical; min-height: 60px; line-height: 1.4; font-f
   :root:not([data-theme]) .bg-\[var\(--color-gold\)\] .text-\[\#0a1424\]\/70 { color: rgba(255, 255, 255, 0.75) !important; }
   :root:not([data-theme]) .hover\:bg-\[\#f59e0b\]:hover { background-color: #1b48b3 !important; }
   :root:not([data-theme]) .dp-eos-cta { box-shadow: 0 8px 24px -8px rgba(34, 86, 201, 0.5) !important; }
+  :root:not([data-theme]) .dp-prac-blank {
+    color: transparent;
+    background-image: radial-gradient(circle, rgba(28, 25, 18, 0.5) 1.3px, transparent 1.7px);
+    background-repeat: repeat-x;
+    background-position: center bottom 1px;
+    background-size: 7px 4px;
+  }
+  :root:not([data-theme]) .dp-prac-answer {
+    color: var(--prac-answer-accent, #16a34a) !important;
+    text-decoration-color: var(--prac-answer-accent, #16a34a) !important;
+    text-decoration-style: dotted !important;
+  }
+  :root:not([data-theme]) button.dp-word-pill {
+    background-color: transparent !important;
+  }
+  :root:not([data-theme]) a.dp-result-secondary,
+  :root:not([data-theme]) button.dp-result-secondary {
+    background-color: #f5b82e !important;
+    border-color: #f5b82e !important;
+  }
+  :root:not([data-theme]) a.dp-result-secondary:hover,
+  :root:not([data-theme]) button.dp-result-secondary:hover {
+    background-color: #e3a51f !important;
+  }
+  :root:not([data-theme]) .dp-result-secondary .text-white { color: #2a1a02 !important; }
+  :root:not([data-theme]) .dp-result-secondary [class*="text-white/"] { color: rgba(42, 26, 2, 0.72) !important; }
+  :root:not([data-theme]) .dp-result-secondary .bg-white\/\[0\.06\] { background-color: rgba(42, 26, 2, 0.12) !important; }
   :root:not([data-theme]) .bg-\[\#0c2342\] {
     background-color: #ffffff !important;
     box-shadow: var(--shadow-card);

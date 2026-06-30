@@ -435,6 +435,9 @@ export default function PracticePage() {
   const searchParams = useSearchParams();
   const [favorites, setFavorites] = useState<PracticeFavoriteItem[]>([]);
   const [prefabExercises, setPrefabExercises] = useState<PracticeExercise[]>([]);
+  // Count of non-featured (pool) exercises for the current story; drives the
+  // "Practice the rest" action on the result screen.
+  const [poolCount, setPoolCount] = useState(0);
   const [loadState, setLoadState] = useState<LoadState>("loading");
   const [selectedMode, setSelectedMode] = useState<PracticeMode | null>(null);
   const [exerciseIndex, setExerciseIndex] = useState(0);
@@ -471,6 +474,8 @@ export default function PracticePage() {
   // Tracks the last context exercise whose sentence audio we auto-played on
   // reveal, so the effect fires exactly once per reveal (iPhone parity).
   const contextRevealAudioRef = useRef<string | null>(null);
+  // Last exercise id whose audio we warmed into the HTTP cache (so play is instant).
+  const preloadedExerciseRef = useRef<string | null>(null);
   // Tracks the last meaning exercise whose target word we auto-played on
   // appearance (iPhone autoplays the word so the learner hears it while
   // choosing the meaning). Fires once per exercise.
@@ -481,6 +486,10 @@ export default function PracticePage() {
   const comboBurstDismissRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   // Words the user got wrong this round (for the result card's "Fix N" action).
   const [missedWords, setMissedWords] = useState<string[]>([]);
+  // Exercise ids answered wrong this round, and (when retrying) the subset of
+  // ids to re-run. "Fix the ones you missed" reruns just these instead of all.
+  const [wrongIds, setWrongIds] = useState<string[]>([]);
+  const [retryIds, setRetryIds] = useState<string[] | null>(null);
   const [playingClipId, setPlayingClipId] = useState<string | null>(null);
   const [speakingClipId, setSpeakingClipId] = useState<string | null>(null);
   const [hqClipId, setHqClipId] = useState<string | null>(null);
@@ -522,8 +531,22 @@ export default function PracticePage() {
   const explicitReturnLabel = searchParams.get("returnLabel");
   const isReviewFocus = searchParams.get("review") === "1";
   const requestedModeParam = searchParams.get("mode");
+  // A mode the user explicitly asked for via ?mode= (vs the auto-recommended
+  // one). Story practice only filters the curated set to a single type when a
+  // mode is explicit; otherwise it runs the WHOLE curated set as one mixed
+  // session (what "just finished the story" should feel like).
+  const explicitStoryMode: PracticeMode | null =
+    requestedModeParam === "meaning" ||
+    requestedModeParam === "context" ||
+    requestedModeParam === "listening" ||
+    requestedModeParam === "match"
+      ? requestedModeParam
+      : null;
   const isJourneyCheckpoint = searchParams.get("checkpoint") === "1";
   const onlyExerciseParam = searchParams.get("ex");
+  // `?pool=1`: practice the story's POOL (the non-featured extras) instead of the
+  // featured end-of-story set. Offered from the result screen as "Practice more".
+  const storyPoolMode = searchParams.get("pool") === "1";
   const isJourneyPractice = practiceSource === "journey" && Boolean(journeyLevelId) && Boolean(journeyTopicId);
   const isStoryPractice = practiceSource === "story" && Boolean(storyPracticeSlug);
   const journeyReturnHref =
@@ -605,7 +628,7 @@ export default function PracticePage() {
           : isStoryPractice && storyPracticeSlug
             ? `/api/story-practice?storySlug=${encodeURIComponent(storyPracticeSlug)}${
                 storyPracticeBookSlug ? `&bookSlug=${encodeURIComponent(storyPracticeBookSlug)}` : ""
-              }`
+              }${storyPoolMode ? "&pool=1" : ""}`
           : "/api/favorites";
 
       try {
@@ -626,6 +649,11 @@ export default function PracticePage() {
           const isDefaultFavoritesMode = !isJourneyPractice && !isStoryPractice;
           setFavorites(isDefaultFavoritesMode ? sortPracticeItemsByDueness(rawItems) : rawItems);
           setPrefabExercises(!Array.isArray(data) && Array.isArray(data.exercises) ? data.exercises : []);
+          setPoolCount(
+            !Array.isArray(data) && typeof (data as { poolCount?: number }).poolCount === "number"
+              ? (data as { poolCount?: number }).poolCount!
+              : 0
+          );
           setCheckpointToken(!Array.isArray(data) && typeof data.checkpointToken === "string" ? data.checkpointToken : null);
           setJourneyReviewMeta(
             !Array.isArray(data) && data.review && typeof data.review === "object" ? data.review : null
@@ -824,8 +852,8 @@ export default function PracticePage() {
     const base = isJourneyCheckpoint
       ? prefabExercises
       : isStoryPractice && prefabExercises.length > 0
-        ? selectedMode
-          ? prefabExercises.filter((ex) => ex.type === modeType[selectedMode])
+        ? explicitStoryMode
+          ? prefabExercises.filter((ex) => ex.type === modeType[explicitStoryMode])
           : prefabExercises
         : selectedMode
           ? buildPracticeSession(orderedFavorites, selectedMode, onboardingPracticePrefs)
@@ -837,15 +865,22 @@ export default function PracticePage() {
     // curated exercises regardless of any auto-selected mode.
     const pickPool =
       isStoryPractice && prefabExercises.length > 0 && !isJourneyCheckpoint ? prefabExercises : base;
+    let result = base;
     if (onlyExerciseParam != null && onlyExerciseParam !== "") {
       const picks = onlyExerciseParam
         .split(",")
         .map((s) => Number(s.trim()))
         .filter((n) => Number.isInteger(n) && n >= 0 && n < pickPool.length);
-      if (picks.length) return picks.map((i) => pickPool[i]);
+      if (picks.length) result = picks.map((i) => pickPool[i]);
     }
-    return base;
-  }, [isJourneyCheckpoint, isStoryPractice, onboardingPracticePrefs, onlyExerciseParam, orderedFavorites, prefabExercises, selectedMode]);
+    // "Fix the ones you missed" reruns just the wrong exercises from the set.
+    if (retryIds && retryIds.length) {
+      const wanted = new Set(retryIds);
+      const filtered = result.filter((ex) => wanted.has(ex.id));
+      if (filtered.length) return filtered;
+    }
+    return result;
+  }, [explicitStoryMode, isJourneyCheckpoint, isStoryPractice, onboardingPracticePrefs, onlyExerciseParam, orderedFavorites, prefabExercises, retryIds, selectedMode]);
   const currentExercise = exercises[exerciseIndex] ?? null;
 
   // Toggle a practiced word in Favorites: first tap saves, second tap removes.
@@ -893,7 +928,12 @@ export default function PracticePage() {
           : currentExercise?.type === "match_meaning"
             ? "match"
             : null;
-  const activePracticeMode = selectedMode ?? inferredModeFromExercise;
+  // In a mixed story run (whole curated set, no explicit ?mode), the header
+  // should reflect the CURRENT exercise's type, not the auto-selected mode.
+  const activePracticeMode =
+    isStoryPractice && !explicitStoryMode
+      ? inferredModeFromExercise ?? selectedMode
+      : selectedMode ?? inferredModeFromExercise;
   const revealed = currentExercise ? revealedIds.includes(currentExercise.id) : false;
   const activeSession = selectedMode !== null || (isJourneyCheckpoint && exercises.length > 0);
   const completedExerciseCount = sessionComplete ? exercises.length : revealedIds.length;
@@ -1295,6 +1335,7 @@ export default function PracticePage() {
             ? null
             : currentExercise.answer;
       if (missed) setMissedWords((prev) => (prev.includes(missed) ? prev : [...prev, missed]));
+      setWrongIds((prev) => (prev.includes(currentExercise.id) ? prev : [...prev, currentExercise.id]));
     }
   }, [currentExercise, matchAnswers, playFeedbackSound, revealedIds, selectedOption]);
 
@@ -1352,6 +1393,23 @@ export default function PracticePage() {
   const playExactContextClip = useCallback(
     async (clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
       if (!clip || typeof window === "undefined") return;
+      // Explicit pre-trimmed clip URL (e.g. a sentence carved out of a long
+      // narrator paragraph): play it directly, no segment/master logic.
+      const explicitUrl = typeof clip.clipUrl === "string" && clip.clipUrl.trim() ? clip.clipUrl.trim() : null;
+      if (explicitUrl) {
+        const a = clipAudioRef.current ?? new Audio();
+        clipAudioRef.current = a;
+        if (clipTimeHandlerRef.current) { a.removeEventListener("timeupdate", clipTimeHandlerRef.current); clipTimeHandlerRef.current = null; }
+        if (playingClipId === clipOwnerId) { stopClipPlayback(); return; }
+        stopClipPlayback();
+        clipStopAtRef.current = null;
+        if (a.src !== explicitUrl) a.src = explicitUrl;
+        a.currentTime = 0;
+        a.onended = () => stopClipPlayback();
+        setPlayingClipId(clipOwnerId);
+        try { await a.play(); } catch (err) { console.error("[practice] clip url play failed", err); stopClipPlayback(); }
+        return;
+      }
       const normalizedSlug = normalizeStorySlug(clip.storySlug);
       const storyAudio =
         clip.storySource === "standalone"
@@ -1520,7 +1578,7 @@ export default function PracticePage() {
     goNext();
   };
 
-  const restart = () => {
+  const resetRound = () => {
     setExerciseIndex(0);
     setSelectedOption(null);
     setMatchAnswers({});
@@ -1534,8 +1592,21 @@ export default function PracticePage() {
     perfectChimePlayedRef.current = false;
     setCheckpointSaveState("idle");
     setCheckpointResponses({});
+    setMissedWords([]);
     practiceStartTrackedRef.current = false;
     practiceCompletionTrackedRef.current = false;
+  };
+  // Full replay: every exercise again.
+  const restart = () => {
+    setRetryIds(null);
+    setWrongIds([]);
+    resetRound();
+  };
+  // Rerun ONLY the exercises answered wrong this round.
+  const restartMissed = () => {
+    setRetryIds(wrongIds);
+    setWrongIds([]);
+    resetRound();
   };
 
   const playSpeechText = useCallback((clipOwnerId: string, text: string, language: string | null | undefined) => {
@@ -1659,6 +1730,11 @@ export default function PracticePage() {
   const playContextAudio = useCallback(
     (clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
       if (!clip) return;
+      // Pre-trimmed clip URL wins (sentence carved from a narrator paragraph).
+      if (typeof clip.clipUrl === "string" && clip.clipUrl.trim()) {
+        void playExactContextClip(clipOwnerId, clip);
+        return;
+      }
       const normalizedSlug = normalizeStorySlug(clip.storySlug);
       const storyAudio =
         clip.storySource === "standalone"
@@ -1734,6 +1810,74 @@ export default function PracticePage() {
     [wordClipId, wordUrlByKey]
   );
 
+  // Preload this exercise's audio the moment it appears, so the play buttons
+  // react instantly instead of waiting ~1s for the word-tts round-trip and the
+  // mp3 download on click. Warms the browser's media cache via hidden <audio>
+  // elements; the actual play then loads from cache.
+  useEffect(() => {
+    if (!currentExercise) return;
+    if (preloadedExerciseRef.current === currentExercise.id) return;
+    preloadedExerciseRef.current = currentExercise.id;
+    let cancelled = false;
+
+    // Warm the browser HTTP cache by fetching the mp3 (R2 serves it `immutable`,
+    // so the play button's later request is served instantly from cache).
+    // A detached <audio preload> is NOT reliable — browsers defer/skip preload
+    // of media not in the DOM. fetch() actually downloads + caches.
+    const warm = (url: string | null | undefined) => {
+      if (!url || typeof window === "undefined") return;
+      void fetch(url, { cache: "force-cache" }).catch(() => {});
+    };
+    // Resolve a word-tts url (cache or endpoint), then warm its mp3.
+    const warmWord = (word: string) => {
+      const key = `${WORD_AUDIO_VOICE_ID}|${word.toLowerCase()}`;
+      if (wordUrlByKey[key]) {
+        warm(wordUrlByKey[key]);
+        return;
+      }
+      void fetch("/api/practice/word-tts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ word, voiceId: WORD_AUDIO_VOICE_ID }),
+      })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d: { url?: string } | null) => {
+          if (cancelled || !d?.url) return;
+          setWordUrlByKey((prev) => (prev[key] ? prev : { ...prev, [key]: d.url! }));
+          warm(d.url);
+        })
+        .catch(() => {});
+    };
+
+    // Match: warm each target-language word.
+    if (currentExercise.type === "match_meaning") {
+      for (const pair of currentExercise.pairs) warmWord(pair.word);
+      return () => {
+        cancelled = true;
+      };
+    }
+
+    const clip =
+      currentExercise.type === "meaning_in_context" || currentExercise.type === "fill_blank"
+        ? currentExercise.audioClip
+        : null;
+    if (!clip) return;
+
+    // Example-sentence audio: a pre-trimmed clip url, else the story master mp3.
+    warm(
+      typeof clip.clipUrl === "string" && clip.clipUrl.trim()
+        ? clip.clipUrl.trim()
+        : clip.storySource !== "standalone"
+          ? userStoryAudioBySlug[normalizeStorySlug(clip.storySlug)]?.audioUrl ?? null
+          : null
+    );
+    // Isolated word audio (meaning only).
+    if (currentExercise.type === "meaning_in_context") warmWord(currentExercise.word);
+    return () => {
+      cancelled = true;
+    };
+  }, [currentExercise, userStoryAudioBySlug, wordUrlByKey]);
+
   // Context-mode reveal audio (iPhone parity): no autoplay while the user is
   // thinking, but the moment they reveal the answer we play the full sentence
   // so they hear the word in its natural context. Fires once per reveal.
@@ -1794,11 +1938,9 @@ export default function PracticePage() {
     mode,
     ...theme,
   }));
-  const activeModeTheme = selectedMode
-    ? modeThemeByMode[selectedMode]
-    : inferredModeFromExercise
-      ? modeThemeByMode[inferredModeFromExercise]
-      : null;
+  // Use the per-exercise mode (activePracticeMode) so a mixed story run shows the
+  // CURRENT exercise's label/theme (e.g. "Match" on a match), not the auto mode.
+  const activeModeTheme = activePracticeMode ? modeThemeByMode[activePracticeMode] : null;
   const checkpointPassed = exercises.length > 0 && score / exercises.length >= CHECKPOINT_PASS_THRESHOLD;
   const checkpointNeedsSave = isJourneyCheckpoint && checkpointPassed && checkpointSaveState !== "saved";
   const checkpointMissedItems = useMemo(() => {
@@ -2118,17 +2260,21 @@ export default function PracticePage() {
                 <ArrowLeft size={18} />
               </button>
               <div className="min-w-0 flex-1">
-                <p className="text-[10.5px] font-extrabold uppercase tracking-[0.22em] text-white/55">
-                  {activeModeTheme?.eyebrow ?? "Word quest"}
-                  {" · "}
-                  {String(Math.min(exerciseIndex + 1, exercises.length)).padStart(2, "0")}
-                  {" OF "}
-                  {String(exercises.length).padStart(2, "0")}
-                </p>
-                <div className="flex items-center gap-2.5">
-                  <p className="text-[26px] font-black tracking-tight text-white leading-tight">
-                    {activeModeTheme?.title ?? "Practice"}
+                {!sessionComplete ? (
+                  <p className="text-[10.5px] font-extrabold uppercase tracking-[0.22em] text-white/55">
+                    {activeModeTheme?.eyebrow ?? "Word quest"}
+                    {" · "}
+                    {String(Math.min(exerciseIndex + 1, exercises.length)).padStart(2, "0")}
+                    {" OF "}
+                    {String(exercises.length).padStart(2, "0")}
                   </p>
+                ) : null}
+                <div className="flex items-center gap-2.5">
+                  {!sessionComplete ? (
+                    <p className="text-[26px] font-black tracking-tight text-white leading-tight">
+                      {activeModeTheme?.title ?? "Practice"}
+                    </p>
+                  ) : null}
                   {/* Combo toast (iPhone parity): pops in on a streak tier and
                       auto-dismisses. Icon + color escalate with the tier. */}
                   {comboToast ? (
@@ -2209,26 +2355,30 @@ export default function PracticePage() {
             ) : null}
 
             {/* Mini-segments por ejercicio (uno por exercise).
-                Sin big bar arriba - iPhone sólo muestra esta fila. */}
-            <div className="flex gap-1.5">
-              {exercises.map((_, i) => {
-                const done = i < completedExerciseCount;
-                const current = i === exerciseIndex && !sessionComplete;
-                return (
-                  <span
-                    key={i}
-                    aria-hidden
-                    className="flex-1 rounded-full"
-                    style={{
-                      height: 4,
-                      background: done || current
-                        ? "var(--color-gold)"
-                        : "rgba(255,255,255,0.08)",
-                    }}
-                  />
-                );
-              })}
-            </div>
+                Sin big bar arriba - iPhone sólo muestra esta fila.
+                Se oculta en la pantalla de resultado: el progreso de
+                sesión no aplica una vez terminado el set. */}
+            {!sessionComplete ? (
+              <div className="flex gap-1.5">
+                {exercises.map((_, i) => {
+                  const done = i < completedExerciseCount;
+                  const current = i === exerciseIndex && !sessionComplete;
+                  return (
+                    <span
+                      key={i}
+                      aria-hidden
+                      className="flex-1 rounded-full"
+                      style={{
+                        height: 4,
+                        background: done || current
+                          ? "var(--color-gold)"
+                          : "rgba(255,255,255,0.08)",
+                      }}
+                    />
+                  );
+                })}
+              </div>
+            ) : null}
 
             {/* Stats row: ⚡ +6 XP · ◆ 1 gem (cosmético) */}
             {!sessionComplete ? (
@@ -2320,15 +2470,49 @@ export default function PracticePage() {
                   // ONE action; flag it so the redundant "Replay" isn't added.
                   primaryIsReplay = true;
                   actions.push({ key: "retry", title: "Try again", subtitle: "Same questions", icon: RotateCcw, primary: true, onClick: restart });
-                } else if (isStoryPractice && storyNextHref) {
-                  actions.push({
-                    key: "next-story",
-                    title: storyNextKind === "topic" ? "Next topic" : "Next story",
-                    subtitle: storyNextTitle?.trim() || "Continue",
-                    icon: ArrowRight,
-                    primary: true,
-                    href: storyNextHref,
-                  });
+                } else if (isStoryPractice) {
+                  // Story practice: lead with fixing what you missed (more useful
+                  // than replaying everything), then a forward action (next
+                  // story, when known), then replay-all.
+                  const missedCount = Math.max(0, total - score);
+                  if (missedCount > 0) {
+                    actions.push({
+                      key: "fix-missed",
+                      title: `Fix the ${missedCount}`,
+                      subtitle: "you missed",
+                      icon: Target,
+                      primary: true,
+                      onClick: restartMissed,
+                    });
+                  }
+                  // The POOL (extra curated exercises) surfaces here: "Practice"
+                  // shows the rest of the story's vocab beyond the featured set.
+                  if (!storyPoolMode && poolCount > 0 && storyPracticeSlug) {
+                    actions.push({
+                      key: "pool",
+                      title: "Practice",
+                      subtitle: `${poolCount} more word${poolCount === 1 ? "" : "s"}`,
+                      icon: BookOpenText,
+                      primary: actions.length === 0,
+                      href: `/practice?source=story&storySlug=${encodeURIComponent(storyPracticeSlug)}${
+                        storyPracticeBookSlug ? `&bookSlug=${encodeURIComponent(storyPracticeBookSlug)}` : ""
+                      }&pool=1`,
+                    });
+                  }
+                  if (storyNextHref) {
+                    actions.push({
+                      key: "next-story",
+                      title: storyNextKind === "topic" ? "Next topic" : "Next story",
+                      subtitle: storyNextTitle?.trim() || "Continue",
+                      icon: ArrowRight,
+                      primary: actions.length === 0,
+                      href: storyNextHref,
+                    });
+                  } else if (storyReturnHref) {
+                    actions.push({ key: "story", title: "Done", subtitle: "Back to story", icon: Home, primary: actions.length === 0, href: storyReturnHref });
+                  }
+                  actions.push({ key: "replay", title: "Replay", subtitle: `All ${total}`, icon: RotateCcw, primary: actions.length === 0, onClick: restart });
+                  primaryIsReplay = true; // a replay action is already present
                 } else if (isJourneyPractice && journeyReturnHref) {
                   actions.push({
                     key: "journey",
@@ -2338,8 +2522,6 @@ export default function PracticePage() {
                     primary: true,
                     href: journeyReturnHref,
                   });
-                } else if (isStoryPractice && storyReturnHref) {
-                  actions.push({ key: "story", title: "Done", subtitle: "Back to story", icon: Home, primary: true, href: storyReturnHref });
                 } else {
                   primaryIsReplay = true;
                   actions.push({ key: "replay", title: "Replay", subtitle: `Same ${total}`, icon: RotateCcw, primary: true, onClick: restart });
@@ -2533,7 +2715,7 @@ export default function PracticePage() {
                                 className={`inline-flex h-fit shrink-0 items-center gap-2 rounded-full border px-3 py-1.5 text-left transition ${
                                   isSaved
                                     ? "border-emerald-300/40 bg-emerald-300/[0.10]"
-                                    : "border-white/10 bg-white/[0.05] hover:bg-white/[0.09]"
+                                    : "dp-word-pill border-white/10 bg-white/[0.05] hover:bg-white/[0.09]"
                                 }`}
                               >
                                 <span className="text-[12.5px] font-bold leading-none text-white">{w.es}</span>
@@ -2562,7 +2744,7 @@ export default function PracticePage() {
                           const cardClass = `flex min-w-0 flex-1 items-center gap-2.5 rounded-2xl border px-3 py-2.5 text-left transition ${
                             action.primary
                               ? "border-[var(--color-gold)] bg-[var(--color-gold)] hover:brightness-105"
-                              : "border-white/10 bg-white/[0.04] hover:bg-white/[0.07]"
+                              : "dp-result-secondary border-white/10 bg-white/[0.04] hover:bg-white/[0.07]"
                           }`;
                           const iconWrapClass = `grid h-8 w-8 shrink-0 place-items-center rounded-[10px] ${
                             action.primary ? "bg-black/15" : "bg-white/[0.06]"
@@ -2690,30 +2872,43 @@ export default function PracticePage() {
                                     style={{ background: "var(--practice-box-bg)" }}
                                   >
                                     <p className="flex-1 text-center text-[clamp(1.05rem,2.2vw,1.45rem)] font-extrabold leading-[1.35] tracking-tight text-white">
-                                      {(revealed ? ex.sentence.replace(/_{3,}/g, `[[${ex.answer}]]`) : ex.sentence)
-                                        .split(/\[\[(.+?)\]\]/)
-                                        .map((part, i) =>
-                                          i % 2 === 1 ? (
-                                            <strong key={i} className="dp-prac-uline underline decoration-2 underline-offset-4">
-                                              {part}
+                                      {ex.sentence.split(/(_{3,})/).map((part, i) =>
+                                        /^_{3,}$/.test(part) ? (
+                                          revealed ? (
+                                            <strong
+                                              key={i}
+                                              className="dp-prac-uline dp-prac-answer underline decoration-2 underline-offset-4"
+                                              style={{
+                                                ["--prac-answer-accent" as string]:
+                                                  selectedOption === ex.answer ? "#16a34a" : "#dc2626",
+                                              }}
+                                            >
+                                              {ex.answer}
                                             </strong>
                                           ) : (
-                                            part
-                                          ),
-                                        )}
+                                            <span key={i} className="dp-prac-blank">{part}</span>
+                                          )
+                                        ) : (
+                                          part
+                                        ),
+                                      )}
                                     </p>
                                     {revealed && ex.audioClip ? (
                                       <button
                                         type="button"
                                         onClick={() => playContextAudio(ex.id, ex.audioClip)}
-                                        aria-label={audioActive ? "Stop" : "Listen"}
+                                        aria-label={audioActive ? "Pause" : "Listen"}
                                         className="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-full border transition"
                                         style={{
                                           background: "var(--practice-audio-bg-soft)",
                                           borderColor: "var(--practice-audio-border-soft)",
                                         }}
                                       >
-                                        <Volume2 size={18} className="text-[color:var(--practice-audio-icon)]" />
+                                        {audioActive ? (
+                                          <Pause size={18} fill="currentColor" className="text-[color:var(--practice-audio-icon)]" />
+                                        ) : (
+                                          <Volume2 size={18} className="text-[color:var(--practice-audio-icon)]" />
+                                        )}
                                       </button>
                                     ) : null}
                                   </div>
@@ -2724,12 +2919,15 @@ export default function PracticePage() {
                                       const t = ex.translation as string;
                                       const ai = ex.options.indexOf(ex.answer);
                                       const en = ex.optionTranslations?.[ai];
-                                      const filled = revealed && en ? t.replace(/_{3,}/g, `[[${en}]]`) : t;
-                                      return filled.split(/\[\[(.+?)\]\]/).map((part, i) =>
-                                        i % 2 === 1 ? (
-                                          <strong key={i} className="font-semibold not-italic text-white/70 dp-prac-uline underline decoration-2 underline-offset-2">
-                                            {part}
-                                          </strong>
+                                      return t.split(/(_{3,})/).map((part, i) =>
+                                        /^_{3,}$/.test(part) ? (
+                                          revealed && en ? (
+                                            <strong key={i} className="font-semibold not-italic text-white/70 dp-prac-uline underline decoration-2 underline-offset-2">
+                                              {en}
+                                            </strong>
+                                          ) : (
+                                            <span key={i} className="dp-prac-blank">{part}</span>
+                                          )
                                         ) : (
                                           part
                                         ),
@@ -2924,8 +3122,9 @@ export default function PracticePage() {
 
                         return (
                           <div key={`${pair.word}-${meaning ?? index}`} className="contents">
-                            <button
-                              type="button"
+                            <div
+                              role="button"
+                              tabIndex={revealed ? -1 : 0}
                               onClick={() => {
                                 if (revealed) return;
                                 if (currentValue) {
@@ -2934,7 +3133,7 @@ export default function PracticePage() {
                                 }
                                 setActiveMatchWord((prev) => (prev === pair.word ? null : pair.word));
                               }}
-                              className={`flex h-full min-h-0 w-full items-center justify-center rounded-[1.2rem] border px-[clamp(0.4rem,0.8vw,0.7rem)] py-[clamp(0.4rem,0.8vw,0.7rem)] text-center transition ${
+                              className={`relative flex h-full min-h-0 w-full cursor-pointer items-center justify-center rounded-[1.2rem] border px-[clamp(0.4rem,0.8vw,0.7rem)] py-[clamp(0.4rem,0.8vw,0.7rem)] text-center transition ${
                                 isCorrect
                                   ? matchColor
                                   : isWrong
@@ -2946,12 +3145,28 @@ export default function PracticePage() {
                                         : "border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg-hover)]"
                               }`}
                             >
+                              {/* Listen to the target-language word. */}
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  void playWordTts(`${currentExercise.id}:m:${pair.word}`, pair.word, null);
+                                }}
+                                aria-label="Listen to the word"
+                                className="absolute right-1.5 top-1.5 grid h-7 w-7 place-items-center rounded-full border border-current/30 bg-white/10 text-current transition hover:bg-white/20"
+                              >
+                                {wordClipId === `${currentExercise.id}:m:${pair.word}` ? (
+                                  <Pause size={12} fill="currentColor" />
+                                ) : (
+                                  <Volume2 size={12} />
+                                )}
+                              </button>
                               <div>
                                 <p className="text-[clamp(1.1rem,2.4vw,1.9rem)] font-semibold tracking-tight">
                                   {pair.word}
                                 </p>
                               </div>
-                            </button>
+                            </div>
 
                             {meaning ? (
                               <button

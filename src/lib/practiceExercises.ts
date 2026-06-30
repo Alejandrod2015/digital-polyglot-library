@@ -117,6 +117,11 @@ export type PracticeAudioClip = {
    *  Modal Piper endpoint, eliminating cold-start failures. The editor
    *  (re)generates these from Studio via the regen-audio endpoint. */
   cachedUrl?: string | null;
+  /** Explicit pre-trimmed clip URL to play start-to-finish for THIS clip
+   *  (e.g. a single sentence carved out of a long narrator paragraph via
+   *  Scribe timestamps). When set, the web player plays it directly and
+   *  skips fragment matching / master slicing. */
+  clipUrl?: string | null;
 };
 
 export type PracticeExercise =

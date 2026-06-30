@@ -30,11 +30,13 @@ function genId(p: string, i: number): string {
     await prisma.$executeRawUnsafe(`INSERT INTO dp_story_practice_sets_v1 (id, "storyId", locked, "createdAt", "updatedAt") VALUES ($1,$2,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)`, setId, story.id);
     for (let i = 0; i < exs.length; i++) {
       const e = exs[i];
+      const featured = e.featured !== false; // default featured unless explicitly false
       await prisma.$executeRawUnsafe(
-        `INSERT INTO dp_story_practice_exercises_v1 (id,"setId","orderIndex",type,word,sentence,payload,"audioUrl",featured,language,"createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7::jsonb,NULL,true,'spanish',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)`,
-        genId("spe_", i), setId, i, e.type, e.word, e.sentence, JSON.stringify(e.payload));
+        `INSERT INTO dp_story_practice_exercises_v1 (id,"setId","orderIndex",type,word,sentence,payload,"audioUrl",featured,language,"createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7::jsonb,NULL,$8,'spanish',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)`,
+        genId("spe_", i), setId, i, e.type, e.word, e.sentence, JSON.stringify(e.payload), featured);
     }
-    console.log(`✓ ${slug}: ${exs.length} ex (set ${setId})`);
+    const featCount = exs.filter((e: any) => e.featured !== false).length;
+    console.log(`✓ ${slug}: ${exs.length} ex (${featCount} featured) (set ${setId})`);
     ok++;
   }
   console.log(`\n${ok}/${files.length} ${apply ? "seeded" : "dry"}`);

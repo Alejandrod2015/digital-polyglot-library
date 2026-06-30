@@ -12,7 +12,14 @@
         "to dial",
         "to answer"
       ],
-      "audioClip": null
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "Sofía cuelga el teléfono con una sonrisa.",
+        "targetWord": "cuelga",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef0a369e552830c5.mp3"
+      }
     }
   },
   {
@@ -28,7 +35,14 @@
         "patience",
         "excuse"
       ],
-      "audioClip": null
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "Renata la mira con sospecha.",
+        "targetWord": "sospecha",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f7cbca61c06dc871.mp3"
+      }
     }
   },
   {
@@ -142,9 +156,10 @@
       "audioClip": {
         "storySlug": "la-promesa-del-mole",
         "storySource": "user",
-        "sentence": "Pero si la semana pasada quemaste el agua.",
+        "sentence": "Olvidaste el pan en el horno y lo quemaste.",
         "targetWord": "quemaste",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/458717a6191978cc.mp3"
       }
     }
   },
@@ -161,12 +176,20 @@
         "color",
         "peso"
       ],
+      "translation": "To know if the table fits, first I measure its _____.",
+      "optionTranslations": [
+        "size",
+        "price",
+        "color",
+        "weight"
+      ],
       "audioClip": {
         "storySlug": "la-promesa-del-mole",
         "storySource": "user",
-        "sentence": "nuestra cocina es del tamaño de una caja.",
+        "sentence": "Para saber si la mesa cabe, primero mido su tamaño.",
         "targetWord": "tamaño",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f1a561a4eb8458d4.mp3"
       }
     }
   },
@@ -183,12 +206,20 @@
         "arriba",
         "lejos"
       ],
+      "translation": "It's raining, so the kids play _____, in the living room.",
+      "optionTranslations": [
+        "inside",
+        "outside",
+        "upstairs",
+        "far away"
+      ],
       "audioClip": {
         "storySlug": "la-promesa-del-mole",
         "storySource": "user",
-        "sentence": "mira adentro con cara de preocupación.",
+        "sentence": "Está lloviendo, así que los niños juegan adentro, en la sala.",
         "targetWord": "adentro",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7a54edbf88d7aed7.mp3"
       }
     }
   },
@@ -245,6 +276,7 @@
   {
     "type": "listen_choose",
     "word": "pedir",
+    "featured": false,
     "sentence": "¿Y si mejor pedimos comida y ya?",
     "payload": {
       "prompt": "Which word did you hear?",
@@ -269,6 +301,188 @@
         "targetWord": "pedimos",
         "language": "spanish",
         "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonrisa",
+    "featured": false,
+    "sentence": "Cuelga el teléfono con una [[sonrisa]] nerviosa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "smile",
+      "options": [
+        "smile",
+        "laugh",
+        "frown",
+        "sigh"
+      ],
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "Cuelga el teléfono con una sonrisa nerviosa.",
+        "targetWord": "sonrisa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5989a4dea6a0e1c4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vista",
+    "featured": false,
+    "sentence": "Mateo levanta la [[vista]] del sillón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gaze (eyes)",
+      "options": [
+        "gaze (eyes)",
+        "voice",
+        "hand",
+        "shoulder"
+      ],
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "Mateo levanta la vista del sillón.",
+        "targetWord": "vista",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fe21607bd8d3878e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acabar de",
+    "featured": false,
+    "sentence": "[[Acabo de]] invitar a unos amigos a cenar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I just (did)",
+      "options": [
+        "I just (did)",
+        "I'm going to",
+        "I have to",
+        "I want to"
+      ],
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "Acabo de invitar a unos amigos a cenar.",
+        "targetWord": "acabar de",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c7be39b2db4b3f5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mole",
+    "featured": false,
+    "sentence": "Yo prometí [[mole]], y lo vamos a hacer.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a Mexican sauce",
+      "options": [
+        "a Mexican sauce",
+        "a dance",
+        "a market",
+        "a festival"
+      ],
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "Yo prometí mole, y lo vamos a hacer.",
+        "targetWord": "mole",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30fef4193d1771ba.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "manos a la obra",
+    "featured": false,
+    "sentence": "Por eso mismo, [[manos a la obra]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "let's get to work",
+      "options": [
+        "let's get to work",
+        "step by step",
+        "no way",
+        "good luck"
+      ],
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "Por eso mismo, manos a la obra.",
+        "targetWord": "manos a la obra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c261896c98d813f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "llevar",
+    "featured": false,
+    "sentence": "Para el picnic voy a _____ comida y bebidas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "llevar",
+      "options": [
+        "llevar",
+        "lavar",
+        "vender",
+        "perder"
+      ],
+      "translation": "For the picnic I'm going to _____ food and drinks.",
+      "optionTranslations": [
+        "to bring",
+        "to wash",
+        "to sell",
+        "to lose"
+      ],
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "Para el picnic voy a llevar comida y bebidas.",
+        "targetWord": "llevar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/93b0c9b9f71047dd.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sacar",
+    "featured": false,
+    "sentence": "Antes de cocinar, voy a _____ los huevos del refrigerador.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sacar",
+      "options": [
+        "sacar",
+        "guardar",
+        "lavar",
+        "contar"
+      ],
+      "translation": "Before cooking, I'm going to _____ the eggs from the fridge.",
+      "optionTranslations": [
+        "to take out",
+        "to put away",
+        "to wash",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "la-promesa-del-mole",
+        "storySource": "user",
+        "sentence": "Antes de cocinar, voy a sacar los huevos del refrigerador.",
+        "targetWord": "sacar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e5be047f0061ea9.mp3"
       }
     }
   }
