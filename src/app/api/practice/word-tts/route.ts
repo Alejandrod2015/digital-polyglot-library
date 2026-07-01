@@ -28,7 +28,7 @@ export const maxDuration = 120;
 // "casi") to eleven_turbo_v2_5 with language_code forced to Spanish. The forced
 // language kills the wrong-accent problem entirely. Bumping the version
 // invalidates the v1 (mis-accented) clips.
-const CACHE_VERSION = "v2";
+const CACHE_VERSION = "v3"; // v3: dropped dynaudnorm (start-volume ramp)
 const WORD_MODEL = "eleven_turbo_v2_5";
 const WORD_LANGUAGE_CODE = "es";
 
@@ -68,7 +68,9 @@ async function normalizeWord(rawMp3: Buffer): Promise<Buffer> {
       "-i",
       inPath,
       "-af",
-      "dynaudnorm=g=5:f=250:p=0.9:m=10,loudnorm=I=-16:LRA=11:TP=-1.5,apad=pad_dur=0.15",
+      // No dynaudnorm: its ~1s adaptive window ramped the volume up over the
+      // clip start (audible "quiet then normal"). Plain loudnorm is constant.
+      "loudnorm=I=-16:LRA=11:TP=-1.5,apad=pad_dur=0.15",
       "-codec:a",
       "libmp3lame",
       "-b:a",

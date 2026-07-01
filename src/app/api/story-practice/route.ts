@@ -198,8 +198,62 @@ export async function GET(request: NextRequest) {
   } catch {
     poolCount = 0;
   }
+  const nextStory = await resolveNextStory(storySlug);
 
-  return NextResponse.json({ items, exercises: persistedExercises ?? undefined, poolCount });
+  // narratorVoiceId: the story's own narrator, so the practice page renders the
+  // isolated-word audio in the story's country accent (see lib/practiceVoice.ts).
+  return NextResponse.json({
+    items,
+    exercises: persistedExercises ?? undefined,
+    poolCount,
+    nextStory,
+    narratorVoiceId: storyVoiceId,
+  });
+}
+
+// The next story in the journey's curriculum order (level → topic → slotIndex,
+// where level/topic order comes from Journey.levels[]/topics[]). kind="topic"
+// when the next story starts a new topic. Powers the result-screen "Next story /
+// Next topic" action (never "Back to the story you just read").
+async function resolveNextStory(
+  storySlug: string
+): Promise<{ slug: string; title: string; kind: "story" | "topic"; topic: string } | null> {
+  try {
+    const cur = await prisma.journeyStory.findFirst({
+      where: { slug: storySlug, status: "published" },
+      select: {
+        journeyId: true,
+        level: true,
+        topic: true,
+        slotIndex: true,
+        journey: { select: { levels: true, topics: true } },
+      },
+    });
+    if (!cur) return null;
+    const stories = await prisma.journeyStory.findMany({
+      where: { journeyId: cur.journeyId, status: "published", slug: { not: null }, title: { not: null } },
+      select: { slug: true, title: true, level: true, topic: true, slotIndex: true },
+    });
+    const levels = cur.journey.levels;
+    const topics = cur.journey.topics;
+    const rank = (s: { level: string; topic: string; slotIndex: number }): [number, number, number] => [
+      levels.indexOf(s.level),
+      topics.indexOf(s.topic),
+      s.slotIndex,
+    ];
+    stories.sort((a, b) => {
+      const ra = rank(a);
+      const rb = rank(b);
+      for (let i = 0; i < 3; i++) if (ra[i] !== rb[i]) return ra[i] - rb[i];
+      return 0;
+    });
+    const idx = stories.findIndex((s) => s.slug === storySlug);
+    const next = idx >= 0 ? stories[idx + 1] : null;
+    if (!next || !next.slug || !next.title) return null;
+    return { slug: next.slug, title: next.title, kind: next.topic !== cur.topic ? "topic" : "story", topic: next.topic };
+  } catch {
+    return null;
+  }
 }
 
 // Deterministic option shuffle. Curated/persisted sets often store the

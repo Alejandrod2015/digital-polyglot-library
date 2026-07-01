@@ -1,0 +1,469 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "pasar",
+    "sentence": "Hola, [[pasen]], la puerta está abierta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come in",
+      "options": [
+        "to come in",
+        "to go out",
+        "to sit down",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "Hola, pasen, la puerta está abierta.",
+        "targetWord": "pasen",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/12da8d12f063d3b9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "olor",
+    "sentence": "Perdón por el [[olor]] a quemado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a smell",
+      "options": [
+        "a smell",
+        "a sound",
+        "a taste",
+        "a color"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "Perdón por el olor a quemado.",
+        "targetWord": "olor",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5a093a9286a020e9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perder",
+    "sentence": "El mole [[perdió]] la batalla contra el fuego.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lose",
+      "options": [
+        "to lose",
+        "to win",
+        "to start",
+        "to finish"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "El mole perdió la batalla contra el fuego.",
+        "targetWord": "perdió",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa2cc3b3e67aebc3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "servirse",
+    "sentence": "Los amigos se [[sirven]] más tacos y salsa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to serve oneself",
+      "options": [
+        "to serve oneself",
+        "to sit down",
+        "to stand up",
+        "to help out"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "Los amigos se sirven más tacos y salsa.",
+        "targetWord": "sirven",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a590f09247de83ff.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encantar",
+    "sentence": "A Pablo le [[encantó]] la cena de Sofía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to love (it)",
+      "options": [
+        "to love (it)",
+        "to dislike",
+        "to forget",
+        "to doubt"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "A Pablo le encantó la cena de Sofía.",
+        "targetWord": "encantó",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e22ef919a87e7265.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "no paró de",
+    "sentence": "Pablo [[no paró de]] mirarla en toda la noche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "didn't stop",
+      "options": [
+        "didn't stop",
+        "tried to",
+        "forgot to",
+        "refused to"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "Pablo no paró de mirarla en toda la noche.",
+        "targetWord": "no paró de",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/45dc75dd2b8c330c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "lleno",
+    "sentence": "El plato está _____ de comida rica.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lleno",
+      "options": [
+        "lleno",
+        "vacío",
+        "limpio",
+        "roto"
+      ],
+      "translation": "The plate is _____ of tasty food.",
+      "optionTranslations": [
+        "full",
+        "empty",
+        "clean",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "El plato está lleno de comida rica.",
+        "targetWord": "lleno",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/67572594d32320f5.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "enfermo",
+    "sentence": "No comas eso o vas a terminar _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "enfermo",
+      "options": [
+        "enfermo",
+        "cansado",
+        "aburrido",
+        "nervioso"
+      ],
+      "translation": "Don't eat that or you'll end up _____.",
+      "optionTranslations": [
+        "sick",
+        "tired",
+        "bored",
+        "nervous"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "No comas eso o vas a terminar enfermo.",
+        "targetWord": "enfermo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/354496d790666cb3.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "valiente",
+    "sentence": "El bombero fue muy _____ al entrar al fuego.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "valiente",
+      "options": [
+        "valiente",
+        "cobarde",
+        "tranquilo",
+        "curioso"
+      ],
+      "translation": "The firefighter was very _____ to enter the fire.",
+      "optionTranslations": [
+        "brave",
+        "cowardly",
+        "calm",
+        "curious"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "El bombero fue muy valiente al entrar al fuego.",
+        "targetWord": "valiente",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c31c8b4968a2548c.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "timbre,delantal,mesa,edificio",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "timbre",
+          "answer": "a doorbell",
+          "options": [
+            "a doorbell",
+            "an apron",
+            "a table",
+            "a building"
+          ]
+        },
+        {
+          "word": "delantal",
+          "answer": "an apron",
+          "options": [
+            "a doorbell",
+            "an apron",
+            "a table",
+            "a building"
+          ]
+        },
+        {
+          "word": "mesa",
+          "answer": "a table",
+          "options": [
+            "a doorbell",
+            "an apron",
+            "a table",
+            "a building"
+          ]
+        },
+        {
+          "word": "edificio",
+          "answer": "a building",
+          "options": [
+            "a doorbell",
+            "an apron",
+            "a table",
+            "a building"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poco",
+    "featured": false,
+    "sentence": "Solo fue un [[poco]] de humo, nada más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a little",
+      "options": [
+        "a little",
+        "a lot",
+        "a piece",
+        "a while"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "Solo fue un poco de humo, nada más.",
+        "targetWord": "poco",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0c14c826f0de1f3a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acercarse",
+    "featured": false,
+    "sentence": "Renata se [[acerca]] a Sofía en la mesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come closer",
+      "options": [
+        "to come closer",
+        "to move away",
+        "to turn around",
+        "to stand still"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "Renata se acerca a Sofía en la mesa.",
+        "targetWord": "acerca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a6633d846b6ae7f5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en voz baja",
+    "featured": false,
+    "sentence": "Renata le habla [[en voz baja]] a Sofía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in a low voice",
+      "options": [
+        "in a low voice",
+        "out loud",
+        "very fast",
+        "with a smile"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "Renata le habla en voz baja a Sofía.",
+        "targetWord": "en voz baja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/045a3fd6629c4083.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conversar",
+    "featured": false,
+    "sentence": "Todos comen y [[conversan]] hasta muy tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to chat",
+      "options": [
+        "to chat",
+        "to argue",
+        "to cook",
+        "to leave"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "Todos comen y conversan hasta muy tarde.",
+        "targetWord": "conversan",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/875bc8fc403ef628.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "manchas",
+    "featured": false,
+    "sentence": "El delantal tiene muchas _____ de salsa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "manchas",
+      "options": [
+        "manchas",
+        "flores",
+        "letras",
+        "fotos"
+      ],
+      "translation": "The apron has many salsa _____.",
+      "optionTranslations": [
+        "stains",
+        "flowers",
+        "letters",
+        "photos"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "El delantal tiene muchas manchas de salsa.",
+        "targetWord": "manchas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec06d8fb695d7b45.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "luchar",
+    "featured": false,
+    "sentence": "El equipo va a _____ por ganar el partido.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "luchar",
+      "options": [
+        "luchar",
+        "descansar",
+        "perder",
+        "mirar"
+      ],
+      "translation": "The team is going to _____ to win the match.",
+      "optionTranslations": [
+        "to fight",
+        "to rest",
+        "to lose",
+        "to watch"
+      ],
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "El equipo va a luchar por ganar el partido.",
+        "targetWord": "luchar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/72ddeb7b6aff5ebe.mp3"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "contar",
+    "featured": false,
+    "sentence": "Y ahora tienes una historia muy buena para contar durante años.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "contar",
+      "options": [
+        "contar",
+        "cantar",
+        "comprar",
+        "guardar"
+      ],
+      "optionTranslations": [
+        "to tell",
+        "to sing",
+        "to buy",
+        "to keep"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "tacos-para-todos",
+        "storySource": "user",
+        "sentence": "Y ahora tienes una historia muy buena para contar durante años.",
+        "targetWord": "contar",
+        "language": "spanish",
+        "voiceId": "p1Q3ihQuPjyyENa1RGtl"
+      }
+    }
+  }
+]

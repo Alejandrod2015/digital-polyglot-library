@@ -438,6 +438,17 @@ export default function PracticePage() {
   // Count of non-featured (pool) exercises for the current story; drives the
   // "Practice the rest" action on the result screen.
   const [poolCount, setPoolCount] = useState(0);
+  // Next story in the curriculum (resolved server-side), for the result-screen
+  // "Next story / Next topic" forward action.
+  const [nextStoryResolved, setNextStoryResolved] = useState<{
+    slug: string;
+    title: string;
+    kind: "story" | "topic";
+    topic: string;
+  } | null>(null);
+  // The story's own narrator voice, so isolated-word audio matches the story's
+  // country accent (RULE: see src/lib/practiceVoice.ts). Null until loaded.
+  const [narratorVoiceId, setNarratorVoiceId] = useState<string | null>(null);
   const [loadState, setLoadState] = useState<LoadState>("loading");
   const [selectedMode, setSelectedMode] = useState<PracticeMode | null>(null);
   const [exerciseIndex, setExerciseIndex] = useState(0);
@@ -653,6 +664,20 @@ export default function PracticePage() {
             !Array.isArray(data) && typeof (data as { poolCount?: number }).poolCount === "number"
               ? (data as { poolCount?: number }).poolCount!
               : 0
+          );
+          setNextStoryResolved(
+            !Array.isArray(data) &&
+              (data as { nextStory?: unknown }).nextStory &&
+              typeof (data as { nextStory?: { slug?: unknown } }).nextStory === "object"
+              ? ((data as unknown as {
+                  nextStory: { slug: string; title: string; kind: "story" | "topic"; topic: string };
+                }).nextStory)
+              : null
+          );
+          setNarratorVoiceId(
+            !Array.isArray(data) && typeof (data as { narratorVoiceId?: unknown }).narratorVoiceId === "string"
+              ? (data as unknown as { narratorVoiceId: string }).narratorVoiceId
+              : null
           );
           setCheckpointToken(!Array.isArray(data) && typeof data.checkpointToken === "string" ? data.checkpointToken : null);
           setJourneyReviewMeta(
@@ -1765,7 +1790,9 @@ export default function PracticePage() {
   const playWordTts = useCallback(
     async (clipOwnerId: string, word: string, _clip: PracticeAudioClip | null | undefined) => {
       if (!word || typeof window === "undefined") return;
-      const voiceId = WORD_AUDIO_VOICE_ID;
+      // RULE: the isolated word is spoken in the STORY'S narrator voice (country
+      // accent), falling back to the shared voice only for non-journey sources.
+      const voiceId = narratorVoiceId ?? WORD_AUDIO_VOICE_ID;
       if (!voiceId) return;
       const audio = wordAudioRef.current ?? new Audio();
       wordAudioRef.current = audio;
@@ -1807,7 +1834,7 @@ export default function PracticePage() {
         setWordClipId(null);
       }
     },
-    [wordClipId, wordUrlByKey]
+    [wordClipId, wordUrlByKey, narratorVoiceId]
   );
 
   // Preload this exercise's audio the moment it appears, so the play buttons
@@ -1829,8 +1856,9 @@ export default function PracticePage() {
       void fetch(url, { cache: "force-cache" }).catch(() => {});
     };
     // Resolve a word-tts url (cache or endpoint), then warm its mp3.
+    const wordVoiceId = narratorVoiceId ?? WORD_AUDIO_VOICE_ID;
     const warmWord = (word: string) => {
-      const key = `${WORD_AUDIO_VOICE_ID}|${word.toLowerCase()}`;
+      const key = `${wordVoiceId}|${word.toLowerCase()}`;
       if (wordUrlByKey[key]) {
         warm(wordUrlByKey[key]);
         return;
@@ -1838,7 +1866,7 @@ export default function PracticePage() {
       void fetch("/api/practice/word-tts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ word, voiceId: WORD_AUDIO_VOICE_ID }),
+        body: JSON.stringify({ word, voiceId: wordVoiceId }),
       })
         .then((r) => (r.ok ? r.json() : null))
         .then((d: { url?: string } | null) => {
@@ -1876,7 +1904,7 @@ export default function PracticePage() {
     return () => {
       cancelled = true;
     };
-  }, [currentExercise, userStoryAudioBySlug, wordUrlByKey]);
+  }, [currentExercise, userStoryAudioBySlug, wordUrlByKey, narratorVoiceId]);
 
   // Context-mode reveal audio (iPhone parity): no autoplay while the user is
   // thinking, but the moment they reveal the answer we play the full sentence
@@ -2462,6 +2490,9 @@ export default function PracticePage() {
                   primary?: boolean;
                   href?: string;
                   onClick?: () => void;
+                  // Distinct dark-mode tint for secondary actions ("next" vs
+                  // "replay"), so Next-story and Replay don't look identical.
+                  accent?: "next" | "replay";
                 };
                 const actions: ResultAction[] = [];
                 let primaryIsReplay = false;
@@ -2499,19 +2530,31 @@ export default function PracticePage() {
                       }&pool=1`,
                     });
                   }
-                  if (storyNextHref) {
+                  // Forward action: always move ahead in the curriculum, never
+                  // "back to the story you just read". Prefer the server-resolved
+                  // next story (knows topic boundaries); fall back to a URL param.
+                  if (nextStoryResolved) {
+                    actions.push({
+                      key: "next-story",
+                      title: nextStoryResolved.kind === "topic" ? "Next topic" : "Next story",
+                      subtitle: nextStoryResolved.title?.trim() || "Continue",
+                      icon: ArrowRight,
+                      accent: "next",
+                      primary: actions.length === 0,
+                      href: `/stories/${nextStoryResolved.slug}`,
+                    });
+                  } else if (storyNextHref) {
                     actions.push({
                       key: "next-story",
                       title: storyNextKind === "topic" ? "Next topic" : "Next story",
                       subtitle: storyNextTitle?.trim() || "Continue",
                       icon: ArrowRight,
+                      accent: "next",
                       primary: actions.length === 0,
                       href: storyNextHref,
                     });
-                  } else if (storyReturnHref) {
-                    actions.push({ key: "story", title: "Done", subtitle: "Back to story", icon: Home, primary: actions.length === 0, href: storyReturnHref });
                   }
-                  actions.push({ key: "replay", title: "Replay", subtitle: `All ${total}`, icon: RotateCcw, primary: actions.length === 0, onClick: restart });
+                  actions.push({ key: "replay", title: "Replay", subtitle: `All ${total}`, icon: RotateCcw, accent: "replay", primary: actions.length === 0, onClick: restart });
                   primaryIsReplay = true; // a replay action is already present
                 } else if (isJourneyPractice && journeyReturnHref) {
                   actions.push({
@@ -2741,10 +2784,21 @@ export default function PracticePage() {
                       <div className="flex items-stretch gap-2.5">
                         {actions.slice(0, 3).map((action) => {
                           const Icon = action.icon;
+                          // Dark-mode secondary tint: Next-story reads cobalt,
+                          // Replay reads amber, so they don't look identical.
+                          // Light mode overrides both to amber via
+                          // `.dp-result-secondary` (!important), so this is
+                          // dark-only by construction.
+                          const secondaryTint =
+                            action.accent === "next"
+                              ? "border-[#2256c9]/40 bg-[#2256c9]/[0.18] hover:bg-[#2256c9]/[0.26]"
+                              : action.accent === "replay"
+                                ? "border-amber-400/30 bg-amber-400/[0.10] hover:bg-amber-400/[0.17]"
+                                : "border-white/10 bg-white/[0.04] hover:bg-white/[0.07]";
                           const cardClass = `flex min-w-0 flex-1 items-center gap-2.5 rounded-2xl border px-3 py-2.5 text-left transition ${
                             action.primary
                               ? "border-[var(--color-gold)] bg-[var(--color-gold)] hover:brightness-105"
-                              : "dp-result-secondary border-white/10 bg-white/[0.04] hover:bg-white/[0.07]"
+                              : `dp-result-secondary ${secondaryTint}`
                           }`;
                           const iconWrapClass = `grid h-8 w-8 shrink-0 place-items-center rounded-[10px] ${
                             action.primary ? "bg-black/15" : "bg-white/[0.06]"

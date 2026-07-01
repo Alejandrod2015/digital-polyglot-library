@@ -20,10 +20,13 @@ import { mkdtempSync, readFileSync, rmSync, writeFileSync, mkdirSync } from "nod
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { getPublicObjectUrl, uploadPublicObject } from "../src/lib/objectStorage";
+import { practiceVoiceId } from "../src/lib/practiceVoice";
 
 const prisma = new PrismaClient();
-const CACHE_VERSION = "v2";
-const VOICE = "yHD4CsKkghm19ToGLJEC"; // Narrador2 — must match WORD_AUDIO_VOICE_ID in page.tsx
+const CACHE_VERSION = "v3"; // v3: dropped dynaudnorm — must match word-tts route
+// Voice is resolved per story (the story's narrator) — see practiceVoice.ts.
+// Must match what the practice page requests at runtime for the same story.
+let VOICE = "";
 const MODEL = "eleven_turbo_v2_5";
 const LANG = "es";
 const SETTINGS = { stability: 0.5, similarity_boost: 0.8, style: 0.25, speed: 0.95, use_speaker_boost: true };
@@ -58,7 +61,9 @@ async function loudnorm(raw: Buffer, outPath: string, pad: boolean): Promise<num
   try {
     writeFileSync(i, raw);
     const tail = pad ? "apad=pad_dur=0.15" : "silenceremove=start_periods=1:start_silence=0.05:start_threshold=-45dB:detection=peak,areverse,silenceremove=start_periods=1:start_silence=0.05:start_threshold=-45dB:detection=peak,areverse";
-    await ff(["-y", "-loglevel", "error", "-i", i, "-af", `dynaudnorm=g=5:f=250:p=0.9:m=10,loudnorm=I=-16:LRA=11:TP=-1.5,${tail}`, "-codec:a", "libmp3lame", "-b:a", "128k", outPath]);
+    // No dynaudnorm: its ~1s adaptive window ramped the volume up over the clip
+    // start. Plain loudnorm is constant-enough for these sub-second words.
+    await ff(["-y", "-loglevel", "error", "-i", i, "-af", `loudnorm=I=-16:LRA=11:TP=-1.5,${tail}`, "-codec:a", "libmp3lame", "-b:a", "128k", outPath]);
     return probe(outPath);
   } finally { rmSync(dir, { recursive: true, force: true }); }
 }
@@ -121,8 +126,10 @@ async function renderWord(word: string, apiKey: string, outDir: string): Promise
 (async () => {
   const slug = process.argv[2] || "la-promesa-del-mole";
   const apiKey = process.env.ELEVENLABS_API_KEY!;
-  const story = await prisma.journeyStory.findFirst({ where: { slug }, select: { id: true } });
+  const story = await prisma.journeyStory.findFirst({ where: { slug }, select: { id: true, voiceId: true } });
   if (!story) throw new Error(`story not found: ${slug}`);
+  VOICE = practiceVoiceId(story.voiceId); // RULE: story's own narrator voice
+  console.log(`voice (story narrator): ${VOICE}`);
   const rows = await prisma.$queryRawUnsafe<any[]>(
     `SELECT DISTINCT e.word FROM dp_story_practice_exercises_v1 e JOIN dp_story_practice_sets_v1 s ON s.id=e."setId"
      WHERE s."storyId"=$1 AND e.type='meaning_in_context' AND e.payload->'audioClip'->>'sentence' IS NOT NULL ORDER BY e.word`, story.id);

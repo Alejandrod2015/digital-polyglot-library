@@ -3,6 +3,7 @@ config({ path: ".env.local", quiet: true });
 config({ path: ".env", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
 import * as fs from "fs";
+import { validateSet } from "./_validateSets";
 const prisma = new PrismaClient();
 function genId(p: string, i: number): string {
   return `${p}${Date.now().toString(36)}${i.toString(36)}${Math.random().toString(36).slice(2, 8)}`;
@@ -12,6 +13,13 @@ function genId(p: string, i: number): string {
   const mole = await prisma.journeyStory.findFirst({ where: { slug: "la-promesa-del-mole" }, select: { journeyId: true } });
   const j = mole!.journeyId;
   const only = process.argv.find(a => a.startsWith("--only="))?.split("=")[1];
+  const force = process.argv.includes("--force");
+  // Vocab per story (for full-coverage enforcement) from the authoring snapshot.
+  const authoring: any[] = fs.existsSync("scripts/_authoring.json")
+    ? JSON.parse(fs.readFileSync("scripts/_authoring.json", "utf8")) : [];
+  const vocabBySlug = new Map<string, string[]>(
+    authoring.map((s: any) => [s.slug, (s.vocab ?? []).map((v: any) => v.word).filter(Boolean)])
+  );
   const files = fs.readdirSync("scripts/_sets")
     .filter(f => f.endsWith(".json"))
     .filter(f => !only || f === `${only}.json`)
@@ -20,6 +28,14 @@ function genId(p: string, i: number): string {
   for (const f of files) {
     const slug = f.replace(".json", "");
     const exs = JSON.parse(fs.readFileSync(`scripts/_sets/${f}`, "utf8"));
+    // GATE: never seed a set that fails the template validator (mix, featured/
+    // pool split, translations, audioClip specs, full vocab coverage, …).
+    const issues = validateSet(exs, vocabBySlug.get(slug));
+    if (issues.length && !force) {
+      console.log(`✗ ${slug}: BLOCKED by validator (${issues.length} issue${issues.length === 1 ? "" : "s"}):\n    ` + issues.join("\n    "));
+      continue;
+    }
+    if (issues.length && force) console.log(`! ${slug}: ${issues.length} validator issue(s) overridden by --force`);
     const story = await prisma.journeyStory.findFirst({ where: { journeyId: j, slug, status: "published" }, select: { id: true } });
     if (!story) { console.log(`✗ ${slug}: story not found`); continue; }
     if (!apply) { console.log(`[dry] ${slug}: ${exs.length} ex`); ok++; continue; }

@@ -1,0 +1,469 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "campo de batalla",
+    "sentence": "La cocina ya es un [[campo de batalla]] esta tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a battlefield",
+      "options": [
+        "a battlefield",
+        "a marketplace",
+        "a playground",
+        "a workshop"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "La cocina ya es un campo de batalla esta tarde.",
+        "targetWord": "campo de batalla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5cc570cf9ebaafcd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "olla",
+    "sentence": "Sofía y Renata pelean con las [[ollas]] en la cocina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cooking pot",
+      "options": [
+        "a cooking pot",
+        "a frying pan",
+        "a cutting board",
+        "a mixing bowl"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Sofía y Renata pelean con las ollas en la cocina.",
+        "targetWord": "ollas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e426668b3e92878.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oler",
+    "sentence": "Oigan, algo [[huele]] raro y feo aquí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smell",
+      "options": [
+        "to smell",
+        "to taste",
+        "to hear",
+        "to touch"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Oigan, algo huele raro y feo aquí.",
+        "targetWord": "huele",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f381eb4e641f4237.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "humo",
+    "sentence": "Una nube de [[humo]] gris sube hasta el techo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "smoke",
+      "options": [
+        "smoke",
+        "steam",
+        "dust",
+        "fog"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Una nube de humo gris sube hasta el techo.",
+        "targetWord": "humo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0f16be9be139686c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agitar",
+    "sentence": "Mateo [[agita]] la toalla debajo de la alarma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wave or shake",
+      "options": [
+        "to wave or shake",
+        "to fold or roll",
+        "to drop or throw",
+        "to tear or cut"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Mateo agita la toalla debajo de la alarma.",
+        "targetWord": "agita",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6868364337b36dad.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llorar",
+    "sentence": "Mateo corta cebolla y [[llora]] un poco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to cry",
+      "options": [
+        "to cry",
+        "to laugh",
+        "to sneeze",
+        "to yawn"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Mateo corta cebolla y llora un poco.",
+        "targetWord": "llora",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a120615dd317a720.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "quemado",
+    "sentence": "El mole huele feo porque está _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "quemado",
+      "options": [
+        "quemado",
+        "hervido",
+        "frío",
+        "crudo"
+      ],
+      "translation": "The mole smells bad because it is _____.",
+      "optionTranslations": [
+        "burned",
+        "boiled",
+        "cold",
+        "raw"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "El mole huele feo porque está quemado.",
+        "targetWord": "quemado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32c89837a353a23e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ruido",
+    "sentence": "La alarma hace tanto _____ que nadie oye nada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ruido",
+      "options": [
+        "ruido",
+        "humo",
+        "olor",
+        "calor"
+      ],
+      "translation": "The alarm makes so much _____ that no one hears anything.",
+      "optionTranslations": [
+        "noise",
+        "smoke",
+        "smell",
+        "heat"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "La alarma hace tanto ruido que nadie oye nada.",
+        "targetWord": "ruido",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3b788a0f6d449137.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "incendio",
+    "sentence": "Los bomberos llegan cuando hay un _____ grande.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "incendio",
+      "options": [
+        "incendio",
+        "apagón",
+        "choque",
+        "robo"
+      ],
+      "translation": "The firefighters come when there is a big _____.",
+      "optionTranslations": [
+        "a fire",
+        "a blackout",
+        "a crash",
+        "a robbery"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Los bomberos llegan cuando hay un incendio grande.",
+        "targetWord": "incendio",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f17e6ca41eefe97a.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cebolla,techo,ventana,toalla",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cebolla",
+          "answer": "an onion",
+          "options": [
+            "an onion",
+            "the ceiling",
+            "a window",
+            "a towel"
+          ]
+        },
+        {
+          "word": "techo",
+          "answer": "the ceiling",
+          "options": [
+            "an onion",
+            "the ceiling",
+            "a window",
+            "a towel"
+          ]
+        },
+        {
+          "word": "ventana",
+          "answer": "a window",
+          "options": [
+            "an onion",
+            "the ceiling",
+            "a window",
+            "a towel"
+          ]
+        },
+        {
+          "word": "toalla",
+          "answer": "a towel",
+          "options": [
+            "an onion",
+            "the ceiling",
+            "a window",
+            "a towel"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esquina",
+    "featured": false,
+    "sentence": "Mateo está de pie en una [[esquina]] de la cocina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a corner",
+      "options": [
+        "a corner",
+        "a shelf",
+        "a drawer",
+        "a doorway"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Mateo está de pie en una esquina de la cocina.",
+        "targetWord": "esquina",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/59df25508745bcea.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tapa",
+    "featured": false,
+    "sentence": "Sofía levanta la [[tapa]] de la olla caliente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lid",
+      "options": [
+        "a lid",
+        "a handle",
+        "a spoon",
+        "a tray"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Sofía levanta la tapa de la olla caliente.",
+        "targetWord": "tapa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a6ea15708878d5c4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "detenerse",
+    "featured": false,
+    "sentence": "El ruido de la alarma no se [[detiene]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stop",
+      "options": [
+        "to stop",
+        "to start",
+        "to speed up",
+        "to come back"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "El ruido de la alarma no se detiene.",
+        "targetWord": "detiene",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9dc2ee9e8158e7f2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a estas alturas",
+    "featured": false,
+    "sentence": "[[A estas alturas]] acepto cualquier idea nueva.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at this point",
+      "options": [
+        "at this point",
+        "from now on",
+        "once in a while",
+        "by the way"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "A estas alturas acepto cualquier idea nueva.",
+        "targetWord": "a estas alturas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/200c19ccfdbcee27.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "nube",
+    "featured": false,
+    "sentence": "Se ve una _____ de vapor sobre la sopa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "nube",
+      "options": [
+        "nube",
+        "gota",
+        "chispa",
+        "mancha"
+      ],
+      "translation": "You can see a _____ of steam over the soup.",
+      "optionTranslations": [
+        "a cloud",
+        "a drop",
+        "a spark",
+        "a stain"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Se ve una nube de vapor sobre la sopa.",
+        "targetWord": "nube",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdb88078ea1cafec.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "fuego",
+    "featured": false,
+    "sentence": "Baja el _____ para que no se queme.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fuego",
+      "options": [
+        "fuego",
+        "agua",
+        "aceite",
+        "vapor"
+      ],
+      "translation": "Lower the _____ so it doesn't burn.",
+      "optionTranslations": [
+        "the flame",
+        "the water",
+        "the oil",
+        "the steam"
+      ],
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Baja el fuego para que no se queme.",
+        "targetWord": "fuego",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5aba42390440f194.mp3"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "mentir",
+    "featured": false,
+    "sentence": "Te dije que ese video mentía. Nadie hace un buen mole en tres minutos.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "mentía",
+      "options": [
+        "mentía",
+        "gritaba",
+        "reía",
+        "dormía"
+      ],
+      "optionTranslations": [
+        "was lying",
+        "was shouting",
+        "was laughing",
+        "was sleeping"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "humo-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Te dije que ese video mentía. Nadie hace un buen mole en tres minutos.",
+        "targetWord": "mentía",
+        "language": "spanish",
+        "voiceId": "m7yTemJqdIqrcNleANfX"
+      }
+    }
+  }
+]
