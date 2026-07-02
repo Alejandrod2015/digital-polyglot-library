@@ -10,8 +10,19 @@
  * `listen_choose` is skipped (it replays a real story fragment via voiceId).
  * `match_meaning` is skipped (word audio is resolved at runtime by word-tts).
  *
- * Run: npx tsx scripts/_genPracticeClips.ts <slug> [--force]
- * Authorised only under the user's explicit "genera audio" instruction.
+ * Run: npx tsx scripts/_genPracticeClips.ts <slug> [--force] [--only=word1,word2]
+ * `--only` re-renders just those words (comma-separated, accent-insensitive)
+ * even if they already have a clipUrl. Re-renders bump `audioClip.rev`, which
+ * is part of the R2 key hash: R2 serves `immutable`, so a re-render MUST get a
+ * fresh URL or clients keep playing the old cached clip.
+ *
+ * Audition flow for re-renders (prosody can only be judged by ear):
+ *   --takes=N   render N QA-passing candidates per word, LOCAL ONLY (no R2, no
+ *               JSON write); writes a numbered audition page + manifest.
+ *   --pick=n,n  publish exactly the takes the user chose by number (uploads,
+ *               bumps rev, writes clipUrl). No TTS call, so not gated.
+ * Rendering (--takes or default) is authorised only under the user's explicit
+ * "genera audio" instruction.
  */
 import { config } from "dotenv";
 config({ path: ".env.local", quiet: true });
@@ -37,8 +48,8 @@ const MAX_TRIES = 4;
 const strip = (s: string) =>
   s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[“”„«»".,!?;:()¿¡'`]/g, "").replace(/\s+/g, " ").trim().toLowerCase();
 
-function clipKey(sentence: string): string {
-  const hash = crypto.createHash("sha256").update(`${CLIP_VERSION}|${VOICE}|${sentence}`).digest("hex").slice(0, 16);
+function clipKey(sentence: string, rev: number): string {
+  const hash = crypto.createHash("sha256").update(`${CLIP_VERSION}|${VOICE}|${sentence}${rev ? `|r${rev}` : ""}`).digest("hex").slice(0, 16);
   return `media/practice/sentence-clip/${hash}.mp3`;
 }
 function ff(args: string[]): Promise<void> {
@@ -94,13 +105,20 @@ async function sttText(buf: Buffer, apiKey: string): Promise<string> {
   return ((await res.json()) as { text?: string }).text || "";
 }
 
-// QA: every content word of the sentence must appear in the transcription
-// (light check — full-sentence STT is reliable enough for presence).
+// QA both directions: every content word of the sentence must appear in the
+// transcription (a miss = garbled/dropped word), and the transcription must
+// not contain content words absent from the sentence (an extra = hallucinated
+// word — the "gracias" appended to the mole clip passed the old miss-only
+// check). Scribe is accurate on short clean sentences, so slack is minimal.
 function transcriptOk(sentence: string, tx: string): boolean {
-  const heard = new Set(strip(tx).split(" "));
-  const want = strip(sentence).split(" ").filter((w) => w.length >= 3);
-  const miss = want.filter((w) => !heard.has(w));
-  return miss.length <= Math.floor(want.length * 0.15); // ≤15% slack for elisions
+  const wantList = strip(sentence).split(" ").filter((w) => w.length >= 3);
+  const heardList = strip(tx).split(" ");
+  const want = new Set(wantList);
+  const heard = new Set(heardList);
+  const miss = wantList.filter((w) => !heard.has(w));
+  const extra = heardList.filter((w) => w.length >= 4 && !want.has(w));
+  const missAllowed = wantList.length > 8 ? 1 : 0;
+  return miss.length <= missAllowed && extra.length === 0;
 }
 
 async function renderSentence(sentence: string, apiKey: string, outPath: string): Promise<{ ok: boolean; dur: number; tries: number }> {
@@ -118,27 +136,110 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
 (async () => {
   const slug = process.argv[2];
   const force = process.argv.includes("--force");
-  if (!slug) throw new Error("usage: _genPracticeClips.ts <slug> [--force]");
-  const apiKey = process.env.ELEVENLABS_API_KEY;
-  if (!apiKey) throw new Error("ELEVENLABS_API_KEY missing");
+  const onlyArg = process.argv.find((a) => a.startsWith("--only="));
+  const only = onlyArg ? new Set(onlyArg.slice(7).split(",").map((w) => strip(w))) : null;
+  const takesArg = process.argv.find((a) => a.startsWith("--takes="));
+  const takes = takesArg ? Math.max(1, parseInt(takesArg.slice(8), 10) || 1) : 1;
+  const pickArg = process.argv.find((a) => a.startsWith("--pick="));
+  if (!slug) throw new Error("usage: _genPracticeClips.ts <slug> [--force] [--only=w1,w2] [--takes=N | --pick=n1,n2]");
 
   // RULE: practice clips use the story's own narrator voice (country-matched).
   const story = await prisma.journeyStory.findFirst({ where: { slug }, select: { voiceId: true } });
   if (!story) throw new Error(`story not found: ${slug}`);
   VOICE = practiceVoiceId(story.voiceId);
-  console.log(`voice (story narrator): ${VOICE}`);
 
   const path = `scripts/_sets/${slug}.json`;
   const exs: any[] = JSON.parse(readFileSync(path, "utf8"));
   const outDir = join(process.cwd(), "public", `_practice-clips`);
   mkdirSync(outDir, { recursive: true });
+  const manifestPath = join(process.cwd(), "public", `_practice-clips-${slug}-takes.json`);
+
+  // ---- pick mode: publish the user-chosen takes (no TTS call, not gated) ----
+  if (pickArg) {
+    const picks = pickArg.slice(7).split(",").map((x) => parseInt(x.trim(), 10));
+    const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+    if (manifest.voice !== VOICE) throw new Error(`manifest voice ${manifest.voice} != story voice ${VOICE}`);
+    const byWord = new Map<string, any>();
+    for (const n of picks) {
+      const it = manifest.items.find((i: any) => i.n === n);
+      if (!it) throw new Error(`pick ${n} not in manifest`);
+      if (!it.ok) throw new Error(`pick ${n} (${it.word} take ${it.take}) FAILED QA, not publishable`);
+      if (byWord.has(strip(it.word))) throw new Error(`two picks for "${it.word}"`);
+      byWord.set(strip(it.word), it);
+    }
+    for (const e of exs) {
+      if (!e.payload?.audioClip?.sentence || !e.word) continue;
+      const it = byWord.get(strip(e.word));
+      if (!it) continue;
+      // Re-render of an existing clip → bump rev so the R2 key (and URL) change.
+      if (e.payload.audioClip.clipUrl) e.payload.audioClip.rev = (e.payload.audioClip.rev || 0) + 1;
+      const key = clipKey(e.payload.audioClip.sentence, e.payload.audioClip.rev || 0);
+      const body = readFileSync(join(outDir, it.file));
+      await uploadPublicObject({ key, body, contentType: "audio/mpeg" });
+      e.payload.audioClip.clipUrl = getPublicObjectUrl(key);
+      // Keep the canonical local mp3 in sync so the full audition page plays the chosen take.
+      writeFileSync(join(outDir, `${slug}__${strip(e.word).replace(/\s+/g, "-")}.mp3`), body);
+      console.log(`${it.n}: ${e.word} (take ${it.take}) → ${e.payload.audioClip.clipUrl}`);
+      byWord.delete(strip(e.word));
+    }
+    if (byWord.size) throw new Error(`words not found in set: ${[...byWord.keys()].join(", ")}`);
+    writeFileSync(path, JSON.stringify(exs, null, 2) + "\n");
+    console.log(`JSON updated: ${path}\nNow re-seed: npx tsx scripts/_seedAllSets.ts --only=${slug} --apply`);
+    return;
+  }
+
+  const apiKey = process.env.ELEVENLABS_API_KEY;
+  if (!apiKey) throw new Error("ELEVENLABS_API_KEY missing");
+  console.log(`voice (story narrator): ${VOICE}`);
 
   const targets = exs
     .map((e, i) => ({ e, i }))
     .filter(({ e }) => (e.type === "meaning_in_context" || e.type === "fill_blank") && e.payload?.audioClip?.sentence)
-    .filter(({ e }) => force || !e.payload.audioClip.clipUrl);
+    .filter(({ e }) => (only ? only.has(strip(e.word)) : force || !e.payload.audioClip.clipUrl));
+  if (only && targets.length !== only.size)
+    console.log(`WARN --only matched ${targets.length}/${only.size} words`);
 
-  console.log(`${slug}: ${targets.length} sentence-clip(s) to render${force ? " (force)" : ""}`);
+  console.log(`${slug}: ${targets.length} sentence-clip(s) to render${force ? " (force)" : ""}${takes > 1 ? ` × ${takes} takes` : ""}`);
+
+  // ---- multi-take audition mode: render candidates only. Nothing is uploaded
+  // to R2 and the set JSON is untouched; the user picks by number and a second
+  // run with --pick publishes only the approved takes. ----
+  if (takes > 1) {
+    const items: Array<{ n: number; word: string; take: number; ok: boolean; tries: number; dur: number; file: string; sentence: string }> = [];
+    let n = 1;
+    for (const { e } of targets) {
+      const sentence: string = e.payload.audioClip.sentence;
+      for (let k = 1; k <= takes; k++) {
+        const file = `${slug}__${strip(e.word).replace(/\s+/g, "-")}__t${k}.mp3`;
+        const res = await renderSentence(sentence, apiKey, join(outDir, file));
+        console.log(`${n}: ${e.word} take ${k} ${res.ok ? `✓ ${res.tries}t ${res.dur.toFixed(2)}s` : "✗ FAILED"}`);
+        items.push({ n, word: e.word, take: k, ok: res.ok, tries: res.tries, dur: res.dur, file, sentence });
+        n++;
+      }
+    }
+    writeFileSync(manifestPath, JSON.stringify({ voice: VOICE, items }, null, 2) + "\n");
+    const takeOpts = items.map((d) => `
+    <div class="opt ${d.ok ? "" : "bad"}"><div class="num">${d.n}</div>
+      <div class="body"><div class="lbl">${d.word} — take ${d.take} <span>${d.ok ? `${d.tries}t · ${d.dur.toFixed(2)}s` : "FAILED"}</span></div>
+      <div class="sen">${d.sentence}</div>
+      ${d.ok ? `<audio controls preload="none" src="/_practice-clips/${d.file}"></audio>` : ""}</div></div>`).join("");
+    const takesHtml = `<!doctype html><html lang="es"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/><title>Takes — ${slug}</title>
+<style>:root{color-scheme:dark}body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0a1424;color:#e9eef7;padding:24px}
+h1{font-size:18px;margin:0 0 4px}p.sub{color:#8ea0bd;font-size:13px;margin:0 0 18px}
+.opt{display:flex;align-items:flex-start;gap:14px;padding:12px;margin-bottom:12px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(52,211,153,.07)}
+.opt.bad{background:rgba(251,113,133,.12)}
+.num{flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:20px;font-weight:800;background:#1d4ed8;color:#fff}
+.body{flex:1}.lbl{font-size:15px;font-weight:700}.lbl span{font-weight:400;color:#8ea0bd;font-size:11px;margin-left:6px}
+.sen{color:#c7d3e6;font-size:13px;margin:4px 0}audio{width:100%;margin-top:6px}</style></head><body>
+<h1>Takes candidatos — ${slug}</h1>
+<p class="sub">NADA publicado aún (ni R2 ni DB). Dime un número por palabra y publico solo esos.</p>
+${takeOpts}</body></html>`;
+    writeFileSync(join(process.cwd(), "public", `_practice-clips-${slug}-takes.html`), takesHtml);
+    console.log(`\nManifest: ${manifestPath}\nPage: /_practice-clips-${slug}-takes.html`);
+    return;
+  }
+
   const done: Array<{ n: number; word: string; ok: boolean; tries: number; dur: number; file: string; sentence: string }> = [];
   let n = 1;
   for (const { e } of targets) {
@@ -147,7 +248,9 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
     const outPath = join(outDir, file);
     const res = await renderSentence(sentence, apiKey, outPath);
     if (res.ok) {
-      const key = clipKey(sentence);
+      // Re-render of an existing clip → bump rev so the R2 key (and URL) change.
+      if (e.payload.audioClip.clipUrl) e.payload.audioClip.rev = (e.payload.audioClip.rev || 0) + 1;
+      const key = clipKey(sentence, e.payload.audioClip.rev || 0);
       await uploadPublicObject({ key, body: readFileSync(outPath), contentType: "audio/mpeg" });
       e.payload.audioClip.clipUrl = getPublicObjectUrl(key);
     }
@@ -177,6 +280,8 @@ h1{font-size:18px;margin:0 0 4px}p.sub{color:#8ea0bd;font-size:13px;margin:0 0 1
 <h1>Sentence-clips — ${slug} (voz Narrador2, oración completa)</h1>
 <p class="sub">Ya cacheados en R2 y escritos al JSON. Dime el número de cualquiera que suene mal y lo regenero.</p>
 ${opts}</body></html>`;
-  writeFileSync(join(process.cwd(), "public", `_practice-clips-${slug}.html`), html);
-  console.log(`Page: /_practice-clips-${slug}.html`);
+  // --only runs write a separate page so the full-set audition page survives.
+  const pageName = `_practice-clips-${slug}${only ? "-regen" : ""}.html`;
+  writeFileSync(join(process.cwd(), "public", pageName), html);
+  console.log(`Page: /${pageName}`);
 })().catch((e) => { console.log("FATAL", e.message); process.exit(1); }).finally(() => prisma.$disconnect());
