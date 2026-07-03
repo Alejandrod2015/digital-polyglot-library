@@ -39,10 +39,31 @@ import { practiceVoiceId } from "../src/lib/practiceVoice";
 const prisma = new PrismaClient();
 // Voice is resolved per story (the story's narrator) — see practiceVoice.ts.
 let VOICE = "";
-const MODEL = "eleven_turbo_v2_5";
-const LANG = "es";
-const SETTINGS = { stability: 0.5, similarity_boost: 0.8, style: 0.25, speed: 0.9, use_speaker_boost: true };
-const CLIP_VERSION = "v2"; // v2: dropped dynaudnorm (start-volume ramp + tail breath)
+// multilingual_v2, NOT turbo: turbo_v2_5 is deprecated to the low-latency tier
+// with documented garbling; latency is irrelevant for pre-generated clips. v2
+// does not accept language_code, but a full Spanish sentence auto-detects fine
+// (isolated words do NOT — word-tts keeps turbo+language_code for that reason).
+const MODEL = "eleven_multilingual_v2";
+// (language_code intentionally not sent: v2 rejects it)
+// Neutral spoken context on both sides: the documented remedy for the upspeak
+// bias v2 shows on short isolated sentences (same fix elevenlabs.ts applies to
+// narration via request stitching). Conditions prosody only; never rendered.
+// Questions get QUESTION framing: the declarative context flattened the
+// interrogative contour (user-reported 2026-07-02, confirmed by F0: the two
+// question clips ended at +1.3/-0.1 st where a Spanish yes/no question rises).
+const PREV_TEXT = "Ahora escucha esta frase.";
+const NEXT_TEXT = "Muy bien. Ahora sigamos con la siguiente.";
+const PREV_TEXT_Q = "Él tiene una duda y pregunta:";
+const NEXT_TEXT_Q = "Ella le responde enseguida.";
+const isQuestion = (s: string) => s.includes("¿") || s.trim().endsWith("?");
+// Match the NARRATION settings (elevenlabs.ts DEFAULT_VOICE_SETTINGS): the
+// project already learned on 2026-06-10 that style 0 sounds flat/monotone; at
+// style 0 the voice has no expressive range for a question's final rise
+// (measured: narration question ends +11 st, style-0 clips max +1.3 st).
+// style>0 can add extra sounds/dirty tails, but the STT + tail gates catch
+// those now; do NOT "fix" artifacts by flattening style again.
+const SETTINGS = { stability: 0.4, similarity_boost: 0.8, style: 0.3, speed: 0.9, use_speaker_boost: true };
+const CLIP_VERSION = "v4"; // v2: dropped dynaudnorm; v3: multilingual_v2 + stitching + style 0; v4: narration settings (style .3)
 const MAX_TRIES = 4;
 
 const strip = (s: string) =>
@@ -59,9 +80,15 @@ function probe(f: string): Promise<number> {
   return new Promise((res) => { const p = spawn("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f]); let o = ""; p.stdout.on("data", (c) => (o += c)); p.on("close", () => res(parseFloat(o.trim()) || 0)); });
 }
 async function tts(text: string, apiKey: string): Promise<Buffer> {
+  const q = isQuestion(text);
   const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE}`, {
     method: "POST", headers: { "xi-api-key": apiKey, "Content-Type": "application/json" },
-    body: JSON.stringify({ text, model_id: MODEL, language_code: LANG, voice_settings: SETTINGS }),
+    body: JSON.stringify({
+      text, model_id: MODEL,
+      previous_text: q ? PREV_TEXT_Q : PREV_TEXT,
+      next_text: q ? NEXT_TEXT_Q : NEXT_TEXT,
+      voice_settings: SETTINGS,
+    }),
   });
   if (!res.ok) throw new Error(`TTS ${res.status} ${(await res.text()).slice(0, 80)}`);
   return Buffer.from(await res.arrayBuffer());
@@ -96,6 +123,75 @@ async function normalise(raw: Buffer, outPath: string): Promise<number> {
     return probe(outPath);
   } finally { rmSync(dir, { recursive: true, force: true }); }
 }
+// ---- Tail-artifact gate ----------------------------------------------------
+// v2 (and turbo) sometimes append voiced junk after the last word: babble,
+// breath, vocal fry. No STT sees it (Scribe and whisper both transcribed the
+// confirmed-bad clip as clean), so the check is geometric: where does the last
+// transcribed token END vs is there loud audio after it. Threshold measured on
+// 31 labeled mole clips: artifacts sat at -7.6 and -12.4 dB max-volume after
+// the last token; every clean clip was ≤ -25.0 dB. -20 splits with margin.
+// Uses local whisper.cpp (brew install whisper-cpp + ggml-base at
+// ~/.cache/whisper/); if missing, the gate is skipped with a warning.
+const WHISPER_MODEL = join(process.env.HOME || "", ".cache", "whisper", "ggml-base.bin");
+const TAIL_MAX_DB = -20;
+let tailGateWarned = false;
+function spawnCapture(cmd: string, args: string[]): Promise<{ code: number; out: string; err: string }> {
+  return new Promise((res, rej) => {
+    const p = spawn(cmd, args); let o = "", e = "";
+    p.stdout.on("data", (c) => (o += c)); p.stderr.on("data", (c) => (e += c));
+    p.on("error", rej); p.on("close", (code) => res({ code: code ?? 1, out: o, err: e }));
+  });
+}
+async function tailClean(mp3Path: string): Promise<{ ok: boolean; db: number | null }> {
+  const dir = mkdtempSync(join(tmpdir(), "tail-"));
+  try {
+    const wav = join(dir, "a.wav");
+    await ff(["-y", "-loglevel", "error", "-i", mp3Path, "-ar", "16000", "-ac", "1", wav]);
+    let json: any;
+    try {
+      const r = await spawnCapture("whisper-cli", ["-m", WHISPER_MODEL, "-l", "es", "-np", "-ojf", "-of", join(dir, "a"), wav]);
+      if (r.code !== 0) throw new Error(r.err.slice(0, 120));
+      json = JSON.parse(readFileSync(join(dir, "a.json"), "utf8"));
+    } catch (err) {
+      if (!tailGateWarned) { tailGateWarned = true; console.log(`WARN tail gate skipped (whisper-cli/model unavailable): ${(err as Error).message}`); }
+      return { ok: true, db: null };
+    }
+    const toks = (json.transcription || []).flatMap((s: any) => s.tokens || [])
+      .filter((t: any) => (t.text || "").trim() && !t.text.startsWith("[_"));
+    if (!toks.length) return { ok: false, db: 0 }; // no speech recognized at all
+    const lastMs: number = toks[toks.length - 1].offsets.to;
+    const dur = await probe(mp3Path);
+    const start = (lastMs + 60) / 1000;
+    if (start >= dur) return { ok: true, db: null };
+    const v = await spawnCapture("ffmpeg", ["-i", mp3Path, "-af", `atrim=start=${start},volumedetect`, "-f", "null", "-"]);
+    const m = v.err.match(/max_volume:\s*(-?[\d.]+) dB/);
+    const db = m ? parseFloat(m[1]) : null;
+    return { ok: db === null || db <= TAIL_MAX_DB, db };
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+}
+
+// ---- Intonation gate (F0) --------------------------------------------------
+// Spanish yes/no questions differ from statements almost solely by a final F0
+// rise; a flat question sounds like a statement. scripts/_f0gate.py (praat-
+// parselmouth in the ~/.cache/dpl-qa venv) rejects questions whose final
+// contour does not rise. Statements are warn-only there (pitch tracking on
+// final creak octave-jumps, a hard uptalk gate would false-reject).
+const F0_PYTHON = join(process.env.HOME || "", ".cache", "dpl-qa", "venv", "bin", "python");
+let f0GateWarned = false;
+async function f0Ok(mp3Path: string, sentence: string): Promise<{ ok: boolean; detail: string }> {
+  try {
+    const mode = isQuestion(sentence) ? "question" : "statement";
+    const r = await spawnCapture(F0_PYTHON, ["scripts/_f0gate.py", mp3Path, mode]);
+    if (r.code !== 0) throw new Error(r.err.slice(0, 120));
+    const v = JSON.parse(r.out.trim());
+    if (v.reason && v.reason.includes("warn")) console.log(`   f0 warn: ${v.reason} (slope ${v.slope}, end ${v.end})`);
+    return { ok: !!v.ok, detail: `${v.reason} (slope ${v.slope}, end ${v.end})` };
+  } catch (err) {
+    if (!f0GateWarned) { f0GateWarned = true; console.log(`WARN f0 gate skipped (venv/parselmouth unavailable): ${(err as Error).message}`); }
+    return { ok: true, detail: "skipped" };
+  }
+}
+
 async function sttText(buf: Buffer, apiKey: string): Promise<string> {
   const fd = new FormData();
   fd.append("model_id", "scribe_v1"); fd.append("language_code", "spa");
@@ -127,7 +223,12 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
       const raw = await tts(sentence, apiKey);
       const dur = await normalise(raw, outPath);
       const tx = await sttText(readFileSync(outPath), apiKey);
-      if (transcriptOk(sentence, tx) && dur >= 0.6) return { ok: true, dur, tries: t };
+      if (!transcriptOk(sentence, tx) || dur < 0.6) continue;
+      const tail = await tailClean(outPath);
+      if (!tail.ok) { console.log(`   tail reject (${tail.db} dB) try ${t}`); continue; }
+      const f0 = await f0Ok(outPath, sentence);
+      if (!f0.ok) { console.log(`   f0 reject: ${f0.detail} try ${t}`); continue; }
+      return { ok: true, dur, tries: t };
     } catch { /* retry */ }
   }
   return { ok: false, dur: 0, tries: MAX_TRIES };
@@ -141,12 +242,24 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
   const takesArg = process.argv.find((a) => a.startsWith("--takes="));
   const takes = takesArg ? Math.max(1, parseInt(takesArg.slice(8), 10) || 1) : 1;
   const pickArg = process.argv.find((a) => a.startsWith("--pick="));
+  // Voice override for AUDITION renders (e.g. testing a candidate voice before
+  // committing a swap). Only honored together with --takes (local-only), so an
+  // off-voice clip can never be published/seeded by accident.
+  const voiceArg = process.argv.find((a) => a.startsWith("--voice="));
   if (!slug) throw new Error("usage: _genPracticeClips.ts <slug> [--force] [--only=w1,w2] [--takes=N | --pick=n1,n2]");
+  // Calibration/debug: run the tail gate on one file and exit.
+  if (slug === "--tailcheck") { console.log(JSON.stringify(await tailClean(process.argv[3]))); return; }
 
-  // RULE: practice clips use the story's own narrator voice (country-matched).
-  const story = await prisma.journeyStory.findFirst({ where: { slug }, select: { voiceId: true } });
+  // RULE: practice clips use the story's own narrator voice (country-matched),
+  // unless the story carries a practiceVoiceId override (practiceVoice.ts).
+  const story = await prisma.journeyStory.findFirst({ where: { slug }, select: { voiceId: true, practiceVoiceId: true } });
   if (!story) throw new Error(`story not found: ${slug}`);
-  VOICE = practiceVoiceId(story.voiceId);
+  VOICE = practiceVoiceId(story);
+  if (voiceArg) {
+    if (!takesArg) throw new Error("--voice only works with --takes (audition renders are local-only)");
+    VOICE = voiceArg.slice(8);
+    console.log(`voice OVERRIDE (audition only): ${VOICE}`);
+  }
 
   const path = `scripts/_sets/${slug}.json`;
   const exs: any[] = JSON.parse(readFileSync(path, "utf8"));
@@ -203,8 +316,9 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
 
   // ---- multi-take audition mode: render candidates only. Nothing is uploaded
   // to R2 and the set JSON is untouched; the user picks by number and a second
-  // run with --pick publishes only the approved takes. ----
-  if (takes > 1) {
+  // run with --pick publishes only the approved takes. Any --takes value
+  // (including 1) stays local-only; --voice requires this path. ----
+  if (takesArg) {
     const items: Array<{ n: number; word: string; take: number; ok: boolean; tries: number; dur: number; file: string; sentence: string }> = [];
     let n = 1;
     for (const { e } of targets) {

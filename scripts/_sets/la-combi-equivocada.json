@@ -1,0 +1,485 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "combi",
+    "sentence": "¿Esta [[combi]] va al centro?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a shared minibus",
+      "options": [
+        "a shared minibus",
+        "a city taxi",
+        "a cargo truck",
+        "a night train"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "¿Esta combi va al centro?",
+        "targetWord": "combi",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7211887ecc1e046c.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paradero",
+    "sentence": "En el [[paradero]], un cobrador grita los destinos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bus stop",
+      "options": [
+        "a bus stop",
+        "a train station",
+        "a street market",
+        "a gas station"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "En el paradero, un cobrador grita los destinos.",
+        "targetWord": "paradero",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/14595096c32cb2ba.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entrevista",
+    "sentence": "Pilar tiene su primera [[entrevista]] de trabajo a las nueve.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an interview",
+      "options": [
+        "an interview",
+        "a contract",
+        "an office",
+        "a salary"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "Pilar tiene su primera entrevista de trabajo a las nueve.",
+        "targetWord": "entrevista",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7d306cb3ff835fff.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "carpeta",
+    "sentence": "Pilar sube con su [[carpeta]] apretada contra el pecho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a document folder",
+      "options": [
+        "a document folder",
+        "a school backpack",
+        "a small suitcase",
+        "a shopping bag"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "Pilar sube con su carpeta apretada contra el pecho.",
+        "targetWord": "carpeta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/39a9b04330d6a87e.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "llena",
+    "sentence": "La sala está tan _____ que nadie más puede entrar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "llena",
+      "options": [
+        "llena",
+        "vacía",
+        "limpia",
+        "oscura"
+      ],
+      "translation": "The room is so _____ that no one else can come in.",
+      "optionTranslations": [
+        "full",
+        "empty",
+        "clean",
+        "dark"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "La sala está tan llena que nadie más puede entrar.",
+        "targetWord": "llena",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c4ba47e21045776f.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ruta",
+    "sentence": "Yo me sé toda la [[ruta]] de memoria.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the route",
+      "options": [
+        "the route",
+        "the schedule",
+        "the price",
+        "the city"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "Yo me sé toda la ruta de memoria.",
+        "targetWord": "ruta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae314f3e07bafd50.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "trabajo",
+    "sentence": "Luis busca _____ porque necesita ganar dinero.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "trabajo",
+      "options": [
+        "trabajo",
+        "casa",
+        "agua",
+        "música"
+      ],
+      "translation": "Luis is looking for _____ because he needs to earn money.",
+      "optionTranslations": [
+        "work",
+        "a house",
+        "water",
+        "music"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "Luis busca trabajo porque necesita ganar dinero.",
+        "targetWord": "trabajo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/533c558cd4418e07.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vuelta",
+    "sentence": "Esta combi nunca toca el centro; da la [[vuelta]] por la costa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a turn or loop",
+      "options": [
+        "a turn or loop",
+        "a quick stop",
+        "a straight line",
+        "a long wait"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "Esta combi nunca toca el centro; da la vuelta por la costa.",
+        "targetWord": "vuelta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6014dec2604d6127.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cobrador",
+    "sentence": "Un [[cobrador]] grita los destinos muy rápido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the fare collector",
+      "options": [
+        "the fare collector",
+        "the bus driver",
+        "the street vendor",
+        "the police officer"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "Un cobrador grita los destinos muy rápido.",
+        "targetWord": "cobrador",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b5d52593ab0d8164.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "preocupada",
+    "sentence": "Su perro está enfermo y ella está muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "preocupada",
+      "options": [
+        "preocupada",
+        "contenta",
+        "aburrida",
+        "dormida"
+      ],
+      "translation": "Her dog is sick and she is very _____.",
+      "optionTranslations": [
+        "worried",
+        "happy",
+        "bored",
+        "asleep"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "Su perro está enfermo y ella está muy preocupada.",
+        "targetWord": "preocupada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/92b9e4724a9cc486.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "destino",
+    "featured": false,
+    "sentence": "El cobrador grita los [[destinos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a destination",
+      "options": [
+        "a destination",
+        "a passenger",
+        "a suitcase",
+        "a corner"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "El cobrador grita los destinos.",
+        "targetWord": "destinos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/18436e11e21f2489.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "memoria",
+    "featured": false,
+    "sentence": "Me sé toda la ruta de [[memoria]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "memory",
+      "options": [
+        "memory",
+        "attention",
+        "patience",
+        "courage"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "Me sé toda la ruta de memoria.",
+        "targetWord": "memoria",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6a2c20d5724b3628.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apretado",
+    "featured": false,
+    "sentence": "Pilar sube con su carpeta [[apretada]] contra el pecho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pressed tight",
+      "options": [
+        "pressed tight",
+        "wide open",
+        "very dirty",
+        "brand new"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "Pilar sube con su carpeta apretada contra el pecho.",
+        "targetWord": "apretada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/39a9b04330d6a87e.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "grita",
+    "featured": false,
+    "sentence": "No te oigo bien; ¡_____ más fuerte!",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "grita",
+      "options": [
+        "grita",
+        "canta",
+        "corre",
+        "salta"
+      ],
+      "translation": "I can't hear you well; _____ louder!",
+      "optionTranslations": [
+        "shout",
+        "sing",
+        "run",
+        "jump"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "No te oigo bien; ¡grita más fuerte!",
+        "targetWord": "grita",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ccd0807ffaf4d374.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "costa",
+    "featured": false,
+    "sentence": "Queremos ver el mar, así que vamos a la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "costa",
+      "options": [
+        "costa",
+        "montaña",
+        "plaza",
+        "granja"
+      ],
+      "translation": "We want to see the sea, so we are going to the _____.",
+      "optionTranslations": [
+        "coast",
+        "mountain",
+        "square",
+        "farm"
+      ],
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "Queremos ver el mar, así que vamos a la costa.",
+        "targetWord": "costa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8605e0c9e0134fff.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "mar,ventana,asiento,pecho",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "mar",
+          "answer": "the sea",
+          "options": [
+            "the sea",
+            "a window",
+            "a seat",
+            "the chest"
+          ]
+        },
+        {
+          "word": "ventana",
+          "answer": "a window",
+          "options": [
+            "the sea",
+            "a window",
+            "a seat",
+            "the chest"
+          ]
+        },
+        {
+          "word": "asiento",
+          "answer": "a seat",
+          "options": [
+            "the sea",
+            "a window",
+            "a seat",
+            "the chest"
+          ]
+        },
+        {
+          "word": "pecho",
+          "answer": "the chest",
+          "options": [
+            "the sea",
+            "a window",
+            "a seat",
+            "the chest"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "carro",
+    "featured": false,
+    "sentence": "La combi arranca y se pierde entre los carros.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "carros",
+      "options": [
+        "carros",
+        "cerros",
+        "caras",
+        "barrios"
+      ],
+      "optionTranslations": [
+        "cars",
+        "hills",
+        "faces",
+        "neighborhoods"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "la-combi-equivocada",
+        "storySource": "user",
+        "sentence": "La combi arranca y se pierde entre los carros.",
+        "targetWord": "carros",
+        "language": "spanish",
+        "voiceId": "kIVGrdJmAh9zNqLfBLUo"
+      }
+    }
+  }
+]

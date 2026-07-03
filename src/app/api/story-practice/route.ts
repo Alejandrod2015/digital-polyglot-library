@@ -161,9 +161,10 @@ export async function GET(request: NextRequest) {
   // attached to it carries the same voice hint to the TTS endpoint.
   const journeyVoice = await prisma.journeyStory.findFirst({
     where: { slug: storySlug },
-    select: { voiceId: true },
+    select: { voiceId: true, practiceVoiceId: true },
   });
-  const storyVoiceId = journeyVoice?.voiceId ?? null;
+  // practiceVoiceId override wins over the narrator voice (practiceVoice.ts).
+  const storyVoiceId = journeyVoice?.practiceVoiceId?.trim() || journeyVoice?.voiceId || null;
 
   const savedItems: PracticeFavoriteItem[] = savedFavorites.map((favorite) => ({
     word: favorite.word,

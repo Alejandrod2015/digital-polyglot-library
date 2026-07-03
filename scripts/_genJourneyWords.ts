@@ -126,9 +126,9 @@ async function renderWord(word: string, apiKey: string, outDir: string): Promise
 (async () => {
   const slug = process.argv[2] || "la-promesa-del-mole";
   const apiKey = process.env.ELEVENLABS_API_KEY!;
-  const story = await prisma.journeyStory.findFirst({ where: { slug }, select: { id: true, voiceId: true } });
+  const story = await prisma.journeyStory.findFirst({ where: { slug }, select: { id: true, voiceId: true, practiceVoiceId: true } });
   if (!story) throw new Error(`story not found: ${slug}`);
-  VOICE = practiceVoiceId(story.voiceId); // RULE: story's own narrator voice
+  VOICE = practiceVoiceId(story); // RULE: narrator voice, or practiceVoiceId override
   console.log(`voice (story narrator): ${VOICE}`);
   const rows = await prisma.$queryRawUnsafe<any[]>(
     `SELECT DISTINCT e.word FROM dp_story_practice_exercises_v1 e JOIN dp_story_practice_sets_v1 s ON s.id=e."setId"

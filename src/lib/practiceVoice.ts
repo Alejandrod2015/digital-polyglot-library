@@ -13,8 +13,15 @@
  * scripts (`_genPracticeClips`, `_genJourneyWords`) resolve the voice through
  * this one function, so the rule cannot drift between them.
  */
-export function practiceVoiceId(storyNarratorVoiceId: string | null | undefined): string {
-  const v = (storyNarratorVoiceId ?? "").trim();
+export function practiceVoiceId(
+  story: string | null | undefined | { voiceId?: string | null; practiceVoiceId?: string | null },
+): string {
+  // `JourneyStory.practiceVoiceId` is a per-story override for PRACTICE audio
+  // only (the narration keeps its own voice). Set when the user rejects the
+  // narrator's voice for practice (first case: la-combi-equivocada, Giancarlos
+  // → Jhenny, 2026-07-02). When null, practice follows the narrator as before.
+  const src = typeof story === "object" && story !== null ? story.practiceVoiceId?.trim() || story.voiceId : story;
+  const v = (src ?? "").trim();
   if (!v) throw new Error("practice voice: story has no narrator voiceId (JourneyStory.voiceId)");
   // Callers may store the voice with an `elevenlabs/` engine prefix; the raw
   // ElevenLabs id is what both the cache key and the API expect.
