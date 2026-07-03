@@ -47,6 +47,13 @@ function blogPostingJsonLd(post: BlogPost): Record<string, unknown> {
   };
 }
 
+// Serialize JSON-LD for injection into a <script> tag. Escapes "<" to its
+// unicode form so a post title/description containing "</script>" cannot break
+// out of the tag (XSS / broken markup). Parsers decode < transparently.
+function jsonLdScript(data: Record<string, unknown>): string {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
 // Splits the rendered article HTML so we can insert the inline newsletter
 // at a natural break (the second <h2>, falling back to the 6th </p>).
 // Reading-research consistently shows mid-article CTAs convert 3-5x better
@@ -131,7 +138,7 @@ export default async function BlogPostPage(
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd(post)) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(blogPostingJsonLd(post)) }}
       />
 
       <article className={landing.frame}>
