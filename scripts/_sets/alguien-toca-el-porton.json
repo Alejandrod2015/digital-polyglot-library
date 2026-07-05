@@ -1,0 +1,325 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "golpear",
+    "sentence": "Alguien [[golpea]] el portón de hierro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to knock",
+      "options": ["to knock", "to open", "to paint", "to clean"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "Alguien golpea el portón de hierro.",
+        "targetWord": "golpea",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "portón",
+    "sentence": "Doña Rosa camina hasta el [[portón]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a large gate",
+      "options": ["a large gate", "a window", "a roof", "a staircase"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "Doña Rosa camina hasta el portón.",
+        "targetWord": "portón",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reja",
+    "sentence": "Andrés y Daniela miran hacia la [[reja]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "iron bars",
+      "options": ["iron bars", "a curtain", "a ladder", "a mirror"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "Andrés y Daniela miran hacia la reja.",
+        "targetWord": "reja",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "silencio",
+    "sentence": "En la biblioteca hay que estar en _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "silencio",
+      "options": ["silencio", "peligro", "trabajo", "desorden"],
+      "translation": "In the library you have to be in _____.",
+      "optionTranslations": ["silence", "danger", "work", "mess"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "En la biblioteca hay que estar en silencio.",
+        "targetWord": "silencio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acompañar",
+    "sentence": "La [[acompaño]], doña Rosa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go with",
+      "options": ["to go with", "to call", "to wait for", "to leave"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "La acompaño, doña Rosa.",
+        "targetWord": "acompaño",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acordarse",
+    "sentence": "¿No [[se acuerda]] de mí?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to remember",
+      "options": ["to remember", "to complain", "to dream", "to laugh"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "¿No se acuerda de mí?",
+        "targetWord": "se acuerda",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por si acaso",
+    "sentence": "La acompaño, doña Rosa. [[Por si acaso]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "just in case",
+      "options": ["just in case", "right away", "of course", "at last"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "La acompaño, doña Rosa. Por si acaso.",
+        "targetWord": "Por si acaso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "velas",
+    "sentence": "Apago las diez _____ del pastel y pido un deseo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "velas",
+      "options": ["velas", "mesas", "tazas", "bolsas"],
+      "translation": "I blow out the ten _____ on the cake and make a wish.",
+      "optionTranslations": ["candles", "tables", "cups", "bags"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "Apago las diez velas del pastel y pido un deseo.",
+        "targetWord": "velas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "no que yo sepa",
+    "sentence": "[[No que yo sepa]]. Voy a ver quién es.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "not that I know of",
+      "options": ["not that I know of", "without a doubt", "once in a while", "little by little"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "No que yo sepa. Voy a ver quién es.",
+        "targetWord": "No que yo sepa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "mano,noche,maleta,voz",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "mano", "answer": "hand", "options": ["hand", "night", "suitcase", "voice"] },
+        { "word": "noche", "answer": "night", "options": ["hand", "night", "suitcase", "voice"] },
+        { "word": "maleta", "answer": "suitcase", "options": ["hand", "night", "suitcase", "voice"] },
+        { "word": "voz", "answer": "voice", "options": ["hand", "night", "suitcase", "voice"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hierro",
+    "featured": false,
+    "sentence": "Doña Rosa está por apagar las velas cuando alguien golpea el portón de [[hierro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "iron (metal)",
+      "options": ["iron (metal)", "wood", "glass (material)", "paper"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "Doña Rosa está por apagar las velas cuando alguien golpea el portón de hierro.",
+        "targetWord": "hierro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "suelo",
+    "featured": false,
+    "sentence": "Los juguetes están en el _____; recógelos, por favor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "suelo",
+      "options": ["suelo", "techo", "aire", "mar"],
+      "translation": "The toys are on the _____; pick them up, please.",
+      "optionTranslations": ["floor", "ceiling", "air", "sea"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "Los juguetes están en el suelo; recógelos, por favor.",
+        "targetWord": "suelo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pálido",
+    "featured": false,
+    "sentence": "Por un momento se queda [[pálida]] y casi no puede hablar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pale",
+      "options": ["pale", "dizzy", "proud", "silly"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "Por un momento se queda pálida y casi no puede hablar.",
+        "targetWord": "pálida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hombre",
+    "featured": false,
+    "sentence": "Afuera, en la noche, un [[hombre]] espera con una maleta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a man",
+      "options": ["a man", "a boy", "a woman", "a girl"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "Afuera, en la noche, un hombre espera con una maleta.",
+        "targetWord": "hombre",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pecho",
+    "featured": false,
+    "sentence": "El corazón está dentro del _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pecho",
+      "options": ["pecho", "brazo", "pelo", "pie"],
+      "translation": "The heart is inside the _____.",
+      "optionTranslations": ["chest", "arm", "hair", "foot"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "El corazón está dentro del pecho.",
+        "targetWord": "pecho",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "detener",
+    "featured": false,
+    "sentence": "Ya nadie se [[detiene]] a mirar el reloj.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stop",
+      "options": ["to stop", "to begin", "to return", "to shout"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "Ya nadie se detiene a mirar el reloj.",
+        "targetWord": "detiene",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "joven",
+    "featured": false,
+    "sentence": "¿Y usted quién es, [[joven]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a young man",
+      "options": ["a young man", "a doctor", "a neighbor", "a thief"],
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "¿Y usted quién es, joven?",
+        "targetWord": "joven",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "lejos",
+    "featured": false,
+    "sentence": "Vine desde muy lejos solo para verla.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "lejos",
+      "options": ["lejos", "viejos", "ojos", "rojos"],
+      "optionTranslations": ["far away", "old (plural)", "eyes", "red (plural)"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "alguien-toca-el-porton",
+        "storySource": "user",
+        "sentence": "Vine desde muy lejos solo para verla.",
+        "targetWord": "lejos",
+        "language": "spanish",
+        "voiceId": "57D8YIbQSuE3REDPO6Vm"
+      }
+    }
+  }
+]

@@ -1,0 +1,448 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "playa",
+    "sentence": "La isla tiene una pequeña [[playa]] de piedras.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a beach",
+      "options": [
+        "a beach",
+        "a forest",
+        "a bridge",
+        "a harbor"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "La isla tiene una pequeña playa de piedras.",
+        "targetWord": "playa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amarrar",
+    "sentence": "¿Dónde lo [[amarraste]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tie up",
+      "options": [
+        "to tie up",
+        "to lose",
+        "to buy",
+        "to wash"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "¿Dónde lo amarraste?",
+        "targetWord": "amarraste",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "helado",
+    "sentence": "El agua está muy [[helada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "freezing cold",
+      "options": [
+        "freezing cold",
+        "very dirty",
+        "too deep",
+        "a bit salty"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "El agua está muy helada.",
+        "targetWord": "helada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nublarse",
+    "sentence": "Ya se está [[nublando]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to cloud over",
+      "options": [
+        "to cloud over",
+        "to rain hard",
+        "to get dark",
+        "to clear up"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "Ya se está nublando.",
+        "targetWord": "nublando",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "meterse",
+    "sentence": "No te [[metas]], es peligroso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get in",
+      "options": [
+        "to get in",
+        "to run away",
+        "to look back",
+        "to slow down"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "No te metas, es peligroso.",
+        "targetWord": "metas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pequeño",
+    "sentence": "Los dos miran el kayak alejarse sobre el agua, cada vez más [[pequeño]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "small",
+      "options": [
+        "small",
+        "fast",
+        "dark",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "Los dos miran el kayak alejarse sobre el agua, cada vez más pequeño.",
+        "targetWord": "pequeño",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "traer",
+    "sentence": "Puedo nadar y [[traerlo]] de vuelta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bring",
+      "options": [
+        "to bring",
+        "to push",
+        "to fix",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "Puedo nadar y traerlo de vuelta.",
+        "targetWord": "traerlo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "peligroso",
+    "sentence": "No toques ese cable; es muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "peligroso",
+      "options": [
+        "peligroso",
+        "barato",
+        "moderno",
+        "cómodo"
+      ],
+      "translation": "Don't touch that cable; it is very _____.",
+      "optionTranslations": [
+        "dangerous",
+        "cheap",
+        "modern",
+        "comfortable"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "No toques ese cable; es muy peligroso.",
+        "targetWord": "peligroso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "boca",
+    "sentence": "Abre la _____: el doctor quiere ver tus dientes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "boca",
+      "options": [
+        "boca",
+        "mano",
+        "puerta",
+        "ventana"
+      ],
+      "translation": "Open your _____: the doctor wants to see your teeth.",
+      "optionTranslations": [
+        "mouth",
+        "hand",
+        "door",
+        "window"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "Abre la boca: el doctor quiere ver tus dientes.",
+        "targetWord": "boca",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "árbol,montaña,bote,piedra",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "árbol",
+          "answer": "a tree",
+          "options": [
+            "a tree",
+            "a mountain",
+            "a boat",
+            "a stone"
+          ]
+        },
+        {
+          "word": "montaña",
+          "answer": "a mountain",
+          "options": [
+            "a tree",
+            "a mountain",
+            "a boat",
+            "a stone"
+          ]
+        },
+        {
+          "word": "bote",
+          "answer": "a boat",
+          "options": [
+            "a tree",
+            "a mountain",
+            "a boat",
+            "a stone"
+          ]
+        },
+        {
+          "word": "piedra",
+          "answer": "a stone",
+          "options": [
+            "a tree",
+            "a mountain",
+            "a boat",
+            "a stone"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "levantarse",
+    "featured": false,
+    "sentence": "Benjamín se [[levanta]], mira hacia la playa de piedras.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get up",
+      "options": [
+        "to get up",
+        "to sit down",
+        "to fall down",
+        "to turn around"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "Benjamín se levanta, mira hacia la playa de piedras.",
+        "targetWord": "levanta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abierto",
+    "featured": false,
+    "sentence": "Se queda con la boca [[abierta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "open",
+      "options": [
+        "open",
+        "closed",
+        "dry",
+        "full"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "Se queda con la boca abierta.",
+        "targetWord": "abierta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "valer",
+    "featured": false,
+    "sentence": "[[Valió]] la pena remar tanto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be worth (it)",
+      "options": [
+        "to be worth (it)",
+        "to be free",
+        "to be enough",
+        "to be over"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "Valió la pena remar tanto.",
+        "targetWord": "valió",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "señal",
+    "featured": false,
+    "sentence": "Si le hacemos una [[señal]] bien grande, capaz que nos ve.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a signal",
+      "options": [
+        "a signal",
+        "a promise",
+        "a joke",
+        "a mistake"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "Si le hacemos una señal bien grande, capaz que nos ve.",
+        "targetWord": "señal",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "grande",
+    "featured": false,
+    "sentence": "Necesitamos una mesa _____ para los doce invitados.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "grande",
+      "options": [
+        "grande",
+        "oscura",
+        "vieja",
+        "limpia"
+      ],
+      "translation": "We need a _____ table for the twelve guests.",
+      "optionTranslations": [
+        "big",
+        "dark",
+        "old",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "Necesitamos una mesa grande para los doce invitados.",
+        "targetWord": "grande",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "corriendo",
+    "featured": false,
+    "sentence": "El bus ya llega, así que voy _____ a la parada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "corriendo",
+      "options": [
+        "corriendo",
+        "durmiendo",
+        "llorando",
+        "cantando"
+      ],
+      "translation": "The bus is arriving, so I go _____ to the stop.",
+      "optionTranslations": [
+        "running",
+        "sleeping",
+        "crying",
+        "singing"
+      ],
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "El bus ya llega, así que voy corriendo a la parada.",
+        "targetWord": "corriendo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "nadar",
+    "featured": false,
+    "sentence": "Puedo nadar y traerlo de vuelta.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "nadar",
+      "options": [
+        "nadar",
+        "andar",
+        "mandar",
+        "ganar"
+      ],
+      "optionTranslations": [
+        "to swim",
+        "to walk",
+        "to send",
+        "to win"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-kayak-se-va",
+        "storySource": "user",
+        "sentence": "Puedo nadar y traerlo de vuelta.",
+        "targetWord": "nadar",
+        "language": "spanish",
+        "voiceId": "6WgXEzo1HGn3i7ilT4Fh"
+      }
+    }
+  }
+]

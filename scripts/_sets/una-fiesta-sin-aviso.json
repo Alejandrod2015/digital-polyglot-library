@@ -1,0 +1,327 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "centro",
+    "sentence": "Buscan la calle Unión por el [[centro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the city center",
+      "options": ["the city center", "the bus station", "the main beach", "the old market"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "Buscan la calle Unión por el centro.",
+        "targetWord": "centro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "doblar",
+    "sentence": "[[Doblan]] en una esquina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to turn",
+      "options": ["to turn", "to jump", "to wait", "to shout"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "Doblan en una esquina.",
+        "targetWord": "Doblan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avanzar",
+    "sentence": "No pueden [[avanzar]]: la plaza entera está llena de música y color.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to move forward",
+      "options": ["to move forward", "to stand still", "to sit down", "to fall asleep"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "No pueden avanzar: la plaza entera está llena de música y color.",
+        "targetWord": "avanzar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "feria",
+    "sentence": "Es una [[feria]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a street fair",
+      "options": ["a street fair", "a train ride", "a soccer game", "a movie night"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "Es una feria.",
+        "targetWord": "feria",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "baile",
+    "sentence": "Mira, hay puestos, globos y [[baile]] por todos lados.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dancing",
+      "options": ["dancing", "cooking", "reading", "painting"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "Mira, hay puestos, globos y baile por todos lados.",
+        "targetWord": "baile",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alegre",
+    "sentence": "Qué ruido tan [[alegre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cheerful",
+      "options": ["cheerful", "angry", "quiet", "sad"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "Qué ruido tan alegre.",
+        "targetWord": "alegre",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "celebrar",
+    "sentence": "¿Sabes qué se [[celebra]] hoy?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to celebrate",
+      "options": ["to celebrate", "to clean", "to close", "to cook"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "¿Sabes qué se celebra hoy?",
+        "targetWord": "celebra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "globos",
+    "sentence": "Los niños juegan con _____ rojos que vuelan alto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "globos",
+      "options": ["globos", "zapatos", "libros", "vasos"],
+      "translation": "The children play with red _____ that fly high.",
+      "optionTranslations": ["balloons", "shoes", "books", "glasses"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "Los niños juegan con globos rojos que vuelan alto.",
+        "targetWord": "globos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "aburrida",
+    "sentence": "La película es muy _____; me quiero dormir.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aburrida",
+      "options": ["aburrida", "divertida", "pequeña", "roja"],
+      "translation": "The movie is very _____; I want to sleep.",
+      "optionTranslations": ["boring", "fun", "small", "red"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "La película es muy aburrida; me quiero dormir.",
+        "targetWord": "aburrida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "escenario",
+    "sentence": "La banda sube al _____ y el concierto empieza.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escenario",
+      "options": ["escenario", "mercado", "hospital", "aeropuerto"],
+      "translation": "The band goes up on the _____ and the concert begins.",
+      "optionTranslations": ["stage", "market", "hospital", "airport"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "La banda sube al escenario y el concierto empieza.",
+        "targetWord": "escenario",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gente",
+    "featured": false,
+    "sentence": "Toman su jugo entre la [[gente]] que celebra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "people",
+      "options": ["people", "trees", "cars", "doors"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "Toman su jugo entre la gente que celebra.",
+        "targetWord": "gente",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cantar",
+    "featured": false,
+    "sentence": "La gente [[canta]] y baila en fila bajo el sol.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sing",
+      "options": ["to sing", "to shout", "to read", "to draw"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "La gente canta y baila en fila bajo el sol.",
+        "targetWord": "canta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grupo",
+    "featured": false,
+    "sentence": "Un [[grupo]] toca tambores.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a group",
+      "options": ["a group", "a ticket", "a street", "a prize"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "Un grupo toca tambores.",
+        "targetWord": "grupo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dirección",
+    "featured": false,
+    "sentence": "Salimos por una [[dirección]] aburrida y encontramos una fiesta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an address",
+      "options": ["an address", "a person", "a mistake", "a question"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "Salimos por una dirección aburrida y encontramos una fiesta.",
+        "targetWord": "dirección",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "fila",
+    "featured": false,
+    "sentence": "Esperamos de pie, uno detrás de otro, en una _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fila",
+      "options": ["fila", "mesa", "cama", "taza"],
+      "translation": "We wait standing, one behind another, in a _____.",
+      "optionTranslations": ["line", "table", "bed", "cup"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "Esperamos de pie, uno detrás de otro, en una fila.",
+        "targetWord": "fila",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tambor",
+    "featured": false,
+    "sentence": "El músico golpea el _____ con las manos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tambor",
+      "options": ["tambor", "piano", "vaso", "libro"],
+      "translation": "The musician hits the _____ with his hands.",
+      "optionTranslations": ["drum", "piano", "glass", "book"],
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "El músico golpea el tambor con las manos.",
+        "targetWord": "tambor",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "por todos lados,ya que estamos,ruido,aviso",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "por todos lados", "answer": "everywhere", "options": ["everywhere", "since we are here", "noise", "warning"] },
+        { "word": "ya que estamos", "answer": "since we are here", "options": ["everywhere", "since we are here", "noise", "warning"] },
+        { "word": "ruido", "answer": "noise", "options": ["everywhere", "since we are here", "noise", "warning"] },
+        { "word": "aviso", "answer": "warning", "options": ["everywhere", "since we are here", "noise", "warning"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "frío",
+    "featured": false,
+    "sentence": "¿Quieren un jugo de fruta bien frío?",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "frío",
+      "options": ["frío", "río", "mío", "tío"],
+      "optionTranslations": ["cold", "river", "mine", "uncle"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "una-fiesta-sin-aviso",
+        "storySource": "user",
+        "sentence": "¿Quieren un jugo de fruta bien frío?",
+        "targetWord": "frío",
+        "language": "spanish",
+        "voiceId": "dyTONAae6PhdRb3hMKPM"
+      }
+    }
+  }
+]

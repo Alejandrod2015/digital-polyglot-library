@@ -1,0 +1,343 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "noche",
+    "sentence": "La [[noche]] cae sobre el valle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "night",
+      "options": ["night", "morning", "afternoon", "winter"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "La noche cae sobre el valle.",
+        "targetWord": "noche",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encender",
+    "sentence": "Benjamín [[enciende]] una fogata.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to light",
+      "options": ["to light", "to put out", "to clean", "to sell"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "Benjamín enciende una fogata.",
+        "targetWord": "enciende",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fuego",
+    "sentence": "Gloria mueve la leña y el [[fuego]] sube.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fire",
+      "options": ["fire", "smoke", "snow", "sand"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "Gloria mueve la leña y el fuego sube.",
+        "targetWord": "fuego",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "historia",
+    "sentence": "Cada noche me contaba una [[historia]] distinta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a story",
+      "options": ["a story", "a song", "a game", "a recipe"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "Cada noche me contaba una historia distinta.",
+        "targetWord": "historia",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cielo",
+    "sentence": "Las estrellas llenan todo el [[cielo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sky",
+      "options": ["the sky", "the sea", "the garden", "the roof"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "Las estrellas llenan todo el cielo.",
+        "targetWord": "cielo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "fogata",
+    "sentence": "En el campamento hacemos una _____ para calentarnos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fogata",
+      "options": ["fogata", "piscina", "tienda", "sombra"],
+      "translation": "At the campsite we make a _____ to warm up.",
+      "optionTranslations": ["campfire", "pool", "tent", "shade"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "En el campamento hacemos una fogata para calentarnos.",
+        "targetWord": "fogata",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "estrellas",
+    "sentence": "De noche, el cielo se llena de _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "estrellas",
+      "options": ["estrellas", "flores", "piedras", "mesas"],
+      "translation": "At night, the sky fills with _____.",
+      "optionTranslations": ["stars", "flowers", "stones", "tables"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "De noche, el cielo se llena de estrellas.",
+        "targetWord": "estrellas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "calor",
+    "sentence": "El sol de mediodía da mucho _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "calor",
+      "options": ["calor", "frío", "hielo", "miedo"],
+      "translation": "The midday sun gives a lot of _____.",
+      "optionTranslations": ["heat", "cold", "ice", "fear"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "El sol de mediodía da mucho calor.",
+        "targetWord": "calor",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "felices",
+    "sentence": "Ganamos el partido y estamos muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "felices",
+      "options": ["felices", "tristes", "solos", "lentos"],
+      "translation": "We won the game and we are very _____.",
+      "optionTranslations": ["happy", "sad", "alone", "slow"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "Ganamos el partido y estamos muy felices.",
+        "targetWord": "felices",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "en serio,mejor,padre,paz",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "en serio",
+          "answer": "seriously",
+          "options": ["seriously", "better", "a father", "peace"]
+        },
+        {
+          "word": "mejor",
+          "answer": "better",
+          "options": ["seriously", "better", "a father", "peace"]
+        },
+        {
+          "word": "padre",
+          "answer": "a father",
+          "options": ["seriously", "better", "a father", "peace"]
+        },
+        {
+          "word": "paz",
+          "answer": "peace",
+          "options": ["seriously", "better", "a father", "peace"]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "crecer",
+    "featured": false,
+    "sentence": "El fuego [[crece]] y la leña suena despacio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to grow",
+      "options": ["to grow", "to shrink", "to stop", "to fall"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "El fuego crece y la leña suena despacio.",
+        "targetWord": "crece",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mojado",
+    "featured": false,
+    "sentence": "La leña estaba casi [[mojada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wet",
+      "options": ["wet", "dry", "broken", "green"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "La leña estaba casi mojada.",
+        "targetWord": "mojada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "olvidar",
+    "featured": false,
+    "sentence": "Estas noches no se [[olvidan]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to forget",
+      "options": ["to forget", "to repeat", "to count", "to choose"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "Estas noches no se olvidan.",
+        "targetWord": "olvidan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acercarse",
+    "featured": false,
+    "sentence": "Javiera y su tía Gloria [[se acercan]] al fuego.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come closer",
+      "options": ["to come closer", "to move away", "to stand up", "to stay quiet"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "Javiera y su tía Gloria se acercan al fuego.",
+        "targetWord": "se acercan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rico",
+    "featured": false,
+    "sentence": "Qué [[rico]]. Después de caminar todo el día, esto es lo mejor del mundo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "delicious",
+      "options": ["delicious", "boring", "heavy", "dirty"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "Qué rico. Después de caminar todo el día, esto es lo mejor del mundo.",
+        "targetWord": "rico",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lago",
+    "featured": false,
+    "sentence": "Bueno, les cuento la del [[lago]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lake",
+      "options": ["a lake", "a forest", "a river", "a bridge"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "Bueno, les cuento la del lago.",
+        "targetWord": "lago",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ciudad",
+    "featured": false,
+    "sentence": "Hay mucho tráfico y ruido en la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ciudad",
+      "options": ["ciudad", "granja", "playa", "isla"],
+      "translation": "There is a lot of traffic and noise in the _____.",
+      "optionTranslations": ["city", "farm", "beach", "island"],
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "Hay mucho tráfico y ruido en la ciudad.",
+        "targetWord": "ciudad",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "leña",
+    "featured": false,
+    "sentence": "La leña estaba casi mojada.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "leña",
+      "options": ["leña", "seña", "piña", "niña"],
+      "optionTranslations": ["firewood", "sign", "pineapple", "girl"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "nadie-quiere-dormir-todavia",
+        "storySource": "user",
+        "sentence": "La leña estaba casi mojada.",
+        "targetWord": "leña",
+        "language": "spanish",
+        "voiceId": "OFrdGXwCzoE56a9sp1fk"
+      }
+    }
+  }
+]

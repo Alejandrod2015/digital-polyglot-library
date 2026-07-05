@@ -1,0 +1,325 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "lugar",
+    "sentence": "Camila busca un [[lugar]] con su taza en la mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a spot",
+      "options": ["a spot", "a ticket", "a gift", "a name"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Camila busca un lugar con su taza en la mano.",
+        "targetWord": "lugar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perdón",
+    "sentence": "Hola, [[perdón]]. ¿Está libre esta silla?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "excuse me",
+      "options": ["excuse me", "see you later", "you're welcome", "good night"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Hola, perdón. ¿Está libre esta silla?",
+        "targetWord": "perdón",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "primera vez",
+    "sentence": "Es la [[primera vez]]. Trabajo cerca y quería probar el lugar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the first time",
+      "options": ["the first time", "the last day", "the whole week", "the same place"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Es la primera vez. Trabajo cerca y quería probar el lugar.",
+        "targetWord": "primera vez",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "probar",
+    "sentence": "¿Y qué pedís vos siempre? No sé qué [[probar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to try",
+      "options": ["to try", "to pay", "to cook", "to bring"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "No sé qué probar.",
+        "targetWord": "probar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mucho gusto",
+    "sentence": "[[Mucho gusto]], Camila. Yo soy Tomás.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nice to meet you",
+      "options": ["nice to meet you", "see you tomorrow", "good luck", "happy birthday"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Mucho gusto, Camila. Yo soy Tomás.",
+        "targetWord": "Mucho gusto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conocer",
+    "sentence": "Me encanta leer. Un día voy a [[conocerla]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get to know",
+      "options": ["to get to know", "to forget", "to sell", "to paint"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Un día voy a conocerla.",
+        "targetWord": "conocerla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ocupadas",
+    "sentence": "Todas las mesas están _____; no podemos sentarnos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ocupadas",
+      "options": ["ocupadas", "limpias", "nuevas", "abiertas"],
+      "translation": "All the tables are _____; we cannot sit down.",
+      "optionTranslations": ["taken", "clean", "new", "open"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Todas las mesas están ocupadas; no podemos sentarnos.",
+        "targetWord": "ocupadas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "silla",
+    "sentence": "Estoy cansado de estar de pie; busco una _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "silla",
+      "options": ["silla", "puerta", "lámpara", "ventana"],
+      "translation": "I am tired of standing; I look for a _____.",
+      "optionTranslations": ["chair", "door", "lamp", "window"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Estoy cansado de estar de pie; busco una silla.",
+        "targetWord": "silla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "maestra",
+    "sentence": "La _____ enseña matemáticas a los niños.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "maestra",
+      "options": ["maestra", "doctora", "cocinera", "vendedora"],
+      "translation": "The _____ teaches math to the children.",
+      "optionTranslations": ["teacher", "doctor", "cook", "seller"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "La maestra enseña matemáticas a los niños.",
+        "targetWord": "maestra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "por cierto,taza,sol,calle",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "por cierto", "answer": "by the way", "options": ["by the way", "cup", "sun", "street"] },
+        { "word": "taza", "answer": "cup", "options": ["by the way", "cup", "sun", "street"] },
+        { "word": "sol", "answer": "sun", "options": ["by the way", "cup", "sun", "street"] },
+        { "word": "calle", "answer": "street", "options": ["by the way", "cup", "sun", "street"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encontrar",
+    "featured": false,
+    "sentence": "Bueno, ya sabés dónde [[encontrarme]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to find",
+      "options": ["to find", "to call", "to wait for", "to help"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Bueno, ya sabés dónde encontrarme.",
+        "targetWord": "encontrarme",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saludar",
+    "featured": false,
+    "sentence": "Los dos se [[saludan]] con la mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to greet",
+      "options": ["to greet", "to look for", "to push", "to follow"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Los dos se saludan con la mano.",
+        "targetWord": "saludan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brillar",
+    "featured": false,
+    "sentence": "Afuera, la calle [[brilla]] bajo el sol de la tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to shine",
+      "options": ["to shine", "to close", "to fall", "to grow"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Afuera, la calle brilla bajo el sol de la tarde.",
+        "targetWord": "brilla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "clase",
+    "featured": false,
+    "sentence": "Doy [[clases]] en una escuela acá cerca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a class",
+      "options": ["a class", "a party", "a concert", "a prize"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Doy clases en una escuela acá cerca.",
+        "targetWord": "clases",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuadra",
+    "featured": false,
+    "sentence": "Yo trabajo en una librería, a dos [[cuadras]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a city block",
+      "options": ["a city block", "a bus stop", "a bridge", "a market"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Yo trabajo en una librería, a dos cuadras.",
+        "targetWord": "cuadras",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "escuela",
+    "featured": false,
+    "sentence": "Mi hermano estudia inglés en la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escuela",
+      "options": ["escuela", "iglesia", "farmacia", "cocina"],
+      "translation": "My brother studies English at _____.",
+      "optionTranslations": ["school", "church", "pharmacy", "kitchen"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Mi hermano estudia inglés en la escuela.",
+        "targetWord": "escuela",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rato",
+    "featured": false,
+    "sentence": "Siguen conversando un [[rato]] más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a while",
+      "options": ["a while", "a month", "a game", "a dream"],
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Siguen conversando un rato más.",
+        "targetWord": "rato",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "libre",
+    "featured": false,
+    "sentence": "Esta silla está libre.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "libre",
+      "options": ["libre", "triste", "verde", "grande"],
+      "optionTranslations": ["free", "sad", "green", "big"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "cafe-para-dos",
+        "storySource": "user",
+        "sentence": "Esta silla está libre.",
+        "targetWord": "libre",
+        "language": "spanish",
+        "voiceId": "C22CAiFV8Zbbir1IaT0c"
+      }
+    }
+  }
+]

@@ -1,0 +1,401 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "tía",
+    "sentence": "Mateo busca a la [[tía]] Rosa en el patio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an aunt",
+      "options": ["an aunt", "a king", "a table", "a bird"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Mateo busca a la tía Rosa en el patio.",
+        "targetWord": "tía",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mover",
+    "sentence": "Ella [[mueve]] el alebrije un poco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to move",
+      "options": ["to move", "to eat", "to paint", "to read"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Ella mueve el alebrije un poco.",
+        "targetWord": "mueve",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "noche",
+    "sentence": "Trabajo de día y duermo de _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "noche",
+      "options": ["noche", "sopa", "silla", "falda"],
+      "translation": "I work during the day and sleep at _____.",
+      "optionTranslations": ["night", "soup", "chair", "skirt"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Trabajo de día y duermo de noche.",
+        "targetWord": "noche",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mostrar",
+    "sentence": "Le [[muestra]] un secreto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to show",
+      "options": ["to show", "to wash", "to close", "to run"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Le muestra un secreto.",
+        "targetWord": "muestra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "casa",
+    "sentence": "Mi _____ tiene dos puertas y cuatro ventanas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "casa",
+      "options": ["casa", "taza", "foto", "luna"],
+      "translation": "My _____ has two doors and four windows.",
+      "optionTranslations": ["house", "cup", "photo", "moon"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Mi casa tiene dos puertas y cuatro ventanas.",
+        "targetWord": "casa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reír",
+    "sentence": "La tía [[ríe]] con cariño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to laugh",
+      "options": ["to laugh", "to sleep", "to work", "to drink"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "La tía ríe con cariño.",
+        "targetWord": "ríe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cariño",
+    "sentence": "La mamá abraza a su bebé con _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cariño",
+      "options": ["cariño", "dinero", "papel", "hielo"],
+      "translation": "The mom hugs her baby with _____.",
+      "optionTranslations": ["affection", "money", "paper", "ice"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "La mamá abraza a su bebé con cariño.",
+        "targetWord": "cariño",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorprender",
+    "sentence": "Mueve el alebrije para [[sorprender]] a todos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to surprise",
+      "options": ["to surprise", "to clean", "to carry", "to study"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Mueve el alebrije para sorprender a todos.",
+        "targetWord": "sorprender",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "madera",
+    "sentence": "La magia no está en la [[madera]], Mateo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wood",
+      "options": ["wood", "metal", "water", "grass"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "La magia no está en la madera, Mateo.",
+        "targetWord": "madera",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "hijos",
+    "sentence": "Mis padres tienen tres _____: dos niños y una niña.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hijos",
+      "options": ["hijos", "libros", "perros", "carros"],
+      "translation": "My parents have three _____: two boys and one girl.",
+      "optionTranslations": ["children", "books", "dogs", "cars"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Mis padres tienen tres hijos: dos niños y una niña.",
+        "targetWord": "hijos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "venir",
+    "featured": false,
+    "sentence": "«[[Ven]], Mateo.»",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come",
+      "options": ["to come", "to buy", "to cook", "to dance"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Ven, Mateo.",
+        "targetWord": "Ven",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "días",
+    "featured": false,
+    "sentence": "Una semana tiene siete _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "días",
+      "options": ["días", "gatos", "manos", "vasos"],
+      "translation": "A week has seven _____.",
+      "optionTranslations": ["days", "cats", "hands", "glasses"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Una semana tiene siete días.",
+        "targetWord": "días",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estar",
+    "featured": false,
+    "sentence": "[[Está]] en la historia, en la imaginación.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be",
+      "options": ["to be", "to have", "to go", "to say"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Está en la historia, en la imaginación.",
+        "targetWord": "Está",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "algún",
+    "featured": false,
+    "sentence": "[[Algún]] día, yo voy a mover el alebrije.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "some",
+      "options": ["some", "none", "every", "this"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Algún día, yo voy a mover el alebrije.",
+        "targetWord": "Algún",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mañana",
+    "featured": false,
+    "sentence": "Primero es la _____, después la tarde.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mañana",
+      "options": ["mañana", "naranja", "montaña", "ventana"],
+      "translation": "First comes the _____, then the afternoon.",
+      "optionTranslations": ["morning", "orange", "mountain", "window"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Primero es la mañana, después la tarde.",
+        "targetWord": "mañana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "para",
+    "featured": false,
+    "sentence": "Son pequeños regalos [[para]] los pequeños.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for",
+      "options": ["for", "with", "without", "under"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Son pequeños regalos para los pequeños.",
+        "targetWord": "para",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "unir",
+    "featured": false,
+    "sentence": "[[Une]] a la familia y crea momentos especiales.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to unite",
+      "options": ["to unite", "to wash", "to sell", "to jump"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Une a la familia y crea momentos especiales.",
+        "targetWord": "Une",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ir",
+    "featured": false,
+    "sentence": "Yo [[voy]] a mover el alebrije para mis hijos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go",
+      "options": ["to go", "to see", "to give", "to put"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Yo voy a mover el alebrije para mis hijos.",
+        "targetWord": "voy",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pequeño",
+    "featured": false,
+    "sentence": "Una [[pequeña]] magia pasa de la tía a Mateo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "small",
+      "options": ["small", "long", "dark", "rich"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Una pequeña magia pasa de la tía a Mateo.",
+        "targetWord": "pequeña",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pero",
+    "featured": false,
+    "sentence": "La leyenda no es real, [[pero]] une a la familia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "but",
+      "options": ["but", "and", "or", "because"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "La leyenda no es real, pero une a la familia.",
+        "targetWord": "pero",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cada,entonces,así,todos",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "cada", "answer": "each", "options": ["each", "then", "so", "everyone"] },
+        { "word": "entonces", "answer": "then", "options": ["each", "then", "so", "everyone"] },
+        { "word": "así", "answer": "so", "options": ["each", "then", "so", "everyone"] },
+        { "word": "todos", "answer": "everyone", "options": ["each", "then", "so", "everyone"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "buscar",
+    "featured": false,
+    "sentence": "Por la mañana, Mateo busca a la tía Rosa en el patio.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "busca",
+      "options": ["busca", "baja", "pasa", "toca"],
+      "optionTranslations": ["looks for", "goes down", "passes", "touches"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa",
+        "storySource": "user",
+        "sentence": "Por la mañana, Mateo busca a la tía Rosa en el patio.",
+        "targetWord": "busca",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  }
+]

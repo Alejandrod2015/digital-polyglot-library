@@ -1,0 +1,455 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "urgente",
+    "sentence": "Necesitamos tu ayuda con algo [[urgente]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "urgent",
+      "options": [
+        "urgent",
+        "simple",
+        "secret",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "Necesitamos tu ayuda con algo urgente.",
+        "targetWord": "urgente",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llamar",
+    "sentence": "Beto saca su teléfono y empieza a [[llamar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to call (by phone)",
+      "options": [
+        "to call (by phone)",
+        "to text",
+        "to charge",
+        "to turn off"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "Beto saca su teléfono y empieza a llamar.",
+        "targetWord": "llamar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conocer",
+    "sentence": "En esta ruta todos nos [[conocemos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to know (people)",
+      "options": [
+        "to know (people)",
+        "to avoid",
+        "to greet",
+        "to follow"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "En esta ruta todos nos conocemos.",
+        "targetWord": "conocemos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saber",
+    "sentence": "Algo siempre se [[sabe]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to know (information)",
+      "options": [
+        "to know (information)",
+        "to forget",
+        "to hide",
+        "to ask"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "Algo siempre se sabe.",
+        "targetWord": "sabe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "sentence": "Después de tres llamadas, Beto [[sonríe]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smile",
+      "options": [
+        "to smile",
+        "to cry",
+        "to yawn",
+        "to wave"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "Después de tres llamadas, Beto sonríe.",
+        "targetWord": "sonríe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recoger",
+    "sentence": "Una señora la [[recogió]] en el centro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pick up",
+      "options": [
+        "to pick up",
+        "to throw away",
+        "to sell",
+        "to open"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "Una señora la recogió en el centro.",
+        "targetWord": "recogió",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ayudar",
+    "sentence": "Ustedes se [[ayudan]] entre todos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to help",
+      "options": [
+        "to help",
+        "to visit",
+        "to compete",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "Ustedes se ayudan entre todos.",
+        "targetWord": "ayudan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "calma",
+    "sentence": "Respira hondo y escucha con _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "calma",
+      "options": [
+        "calma",
+        "prisa",
+        "rabia",
+        "pena"
+      ],
+      "translation": "Take a deep breath and listen with _____.",
+      "optionTranslations": [
+        "calm",
+        "haste",
+        "anger",
+        "sorrow"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "Respira hondo y escucha con calma.",
+        "targetWord": "calma",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "temprano",
+    "sentence": "Nos levantamos muy _____ para ver el amanecer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "temprano",
+      "options": [
+        "temprano",
+        "tarde",
+        "despacio",
+        "fuerte"
+      ],
+      "translation": "We get up very _____ to see the sunrise.",
+      "optionTranslations": [
+        "early",
+        "late",
+        "slowly",
+        "loudly"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "Nos levantamos muy temprano para ver el amanecer.",
+        "targetWord": "temprano",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "listo",
+    "sentence": "El almuerzo ya está _____; vengan a comer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "listo",
+      "options": [
+        "listo",
+        "sucio",
+        "roto",
+        "vacío"
+      ],
+      "translation": "Lunch is _____ now; come and eat.",
+      "optionTranslations": [
+        "ready",
+        "dirty",
+        "broken",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "El almuerzo ya está listo; vengan a comer.",
+        "targetWord": "listo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apoyado",
+    "featured": false,
+    "sentence": "Allí, [[apoyado]] en su combi, está Beto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "leaning (resting on)",
+      "options": [
+        "leaning (resting on)",
+        "sleeping",
+        "waiting",
+        "working"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "Allí, apoyado en su combi, está Beto.",
+        "targetWord": "apoyado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saludo",
+    "featured": false,
+    "sentence": "Con un [[saludo]] basta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a greeting",
+      "options": [
+        "a greeting",
+        "a coin",
+        "a gift",
+        "a promise"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "Con un saludo basta.",
+        "targetWord": "saludo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuidar",
+    "featured": false,
+    "sentence": "Entre los de la ruta siempre se [[cuidan]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look after",
+      "options": [
+        "to look after",
+        "to forget",
+        "to follow",
+        "to pay"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "Entre los de la ruta siempre se cuidan.",
+        "targetWord": "cuidan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "guarda",
+    "featured": false,
+    "sentence": "Termina de leer y _____ el libro en su mochila.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "guarda",
+      "options": [
+        "guarda",
+        "rompe",
+        "pinta",
+        "vende"
+      ],
+      "translation": "She finishes reading and _____ the book in her backpack.",
+      "optionTranslations": [
+        "puts away",
+        "breaks",
+        "paints",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "Termina de leer y guarda el libro en su mochila.",
+        "targetWord": "guarda",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "basta",
+    "featured": false,
+    "sentence": "No necesito más ayuda; con esto _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "basta",
+      "options": [
+        "basta",
+        "falta",
+        "duele",
+        "suena"
+      ],
+      "translation": "I don't need more help; this is _____.",
+      "optionTranslations": [
+        "enough",
+        "missing",
+        "hurting",
+        "ringing"
+      ],
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "No necesito más ayuda; con esto basta.",
+        "targetWord": "basta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "chofer,señora,pata,aló",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "chofer",
+          "answer": "a driver",
+          "options": [
+            "a driver",
+            "a lady",
+            "a friend (Peru slang)",
+            "hello (on the phone)"
+          ]
+        },
+        {
+          "word": "señora",
+          "answer": "a lady",
+          "options": [
+            "a driver",
+            "a lady",
+            "a friend (Peru slang)",
+            "hello (on the phone)"
+          ]
+        },
+        {
+          "word": "pata",
+          "answer": "a friend (Peru slang)",
+          "options": [
+            "a driver",
+            "a lady",
+            "a friend (Peru slang)",
+            "hello (on the phone)"
+          ]
+        },
+        {
+          "word": "aló",
+          "answer": "hello (on the phone)",
+          "options": [
+            "a driver",
+            "a lady",
+            "a friend (Peru slang)",
+            "hello (on the phone)"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "rato",
+    "featured": false,
+    "sentence": "Cuéntame con calma, que tenemos un rato.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "rato",
+      "options": [
+        "rato",
+        "gato",
+        "dato",
+        "pato"
+      ],
+      "optionTranslations": [
+        "a while",
+        "a cat",
+        "a fact",
+        "a duck"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-chofer-que-conoce-a-todos",
+        "storySource": "user",
+        "sentence": "Cuéntame con calma, que tenemos un rato.",
+        "targetWord": "rato",
+        "language": "spanish",
+        "voiceId": "UK00oAtGYBrHBUbesfMv"
+      }
+    }
+  }
+]

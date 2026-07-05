@@ -1,0 +1,401 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "dormir",
+    "sentence": "Toda la familia [[duerme]], pero Mateo no.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sleep",
+      "options": ["to sleep", "to eat", "to walk", "to sing"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "Toda la familia duerme, pero Mateo no.",
+        "targetWord": "duerme",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sonido",
+    "sentence": "¡Pum! ¿Qué es ese _____?",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sonido",
+      "options": ["sonido", "zapato", "vestido", "plato"],
+      "translation": "Boom! What is that _____?",
+      "optionTranslations": ["sound", "shoe", "dress", "plate"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "¡Pum! ¿Qué es ese sonido?",
+        "targetWord": "sonido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pensar",
+    "sentence": "[[Piensa]] en el alebrije y en la leyenda de la tía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to think",
+      "options": ["to think", "to swim", "to sell", "to shout"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "Piensa en el alebrije y en la leyenda de la tía.",
+        "targetWord": "Piensa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "miedo",
+    "sentence": "Ve una araña grande y tiene _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "miedo",
+      "options": ["miedo", "hambre", "frío", "calor"],
+      "translation": "He sees a big spider and feels _____.",
+      "optionTranslations": ["fear", "hunger", "cold", "heat"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "Ve una araña grande y tiene miedo.",
+        "targetWord": "miedo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escuchar",
+    "sentence": "Mateo [[escucha]] un sonido pequeño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to listen",
+      "options": ["to listen", "to jump", "to clean", "to pay"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "Mateo escucha un sonido pequeño.",
+        "targetWord": "escucha",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "madera",
+    "sentence": "¿El animal de [[madera]] se mueve?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wood",
+      "options": ["wood", "glass", "paper", "stone"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "¿El animal de madera se mueve?",
+        "targetWord": "madera",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "luz",
+    "sentence": "Pero la [[luz]] de la luna es extraña.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "light",
+      "options": ["light", "noise", "rain", "smoke"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "Pero la luz de la luna es extraña.",
+        "targetWord": "luz",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "luna",
+    "sentence": "De noche, la _____ brilla en el cielo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "luna",
+      "options": ["luna", "cuchara", "ventana", "camisa"],
+      "translation": "At night, the _____ shines in the sky.",
+      "optionTranslations": ["moon", "spoon", "window", "shirt"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "De noche, la luna brilla en el cielo.",
+        "targetWord": "luna",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vivo",
+    "sentence": "Todo parece [[vivo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "alive",
+      "options": ["alive", "empty", "new", "cold"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "Todo parece vivo.",
+        "targetWord": "vivo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sueño",
+    "sentence": "Mateo piensa: ¿Es un [[sueño]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a dream",
+      "options": ["a dream", "a meal", "a gift", "a joke"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "Mateo piensa: ¿Es un sueño?",
+        "targetWord": "sueño",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tarde",
+    "featured": false,
+    "sentence": "Ya es muy [[tarde]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "late",
+      "options": ["late", "early", "never", "always"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "Ya es muy tarde.",
+        "targetWord": "tarde",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mesa",
+    "featured": false,
+    "sentence": "Mateo mira el techo, después la [[mesa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a table",
+      "options": ["a table", "a bed", "a shoe", "a tree"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "Mateo mira el techo, después la mesa.",
+        "targetWord": "mesa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tía",
+    "featured": false,
+    "sentence": "Quiere despertar a su [[tía]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an aunt",
+      "options": ["an aunt", "a boy", "a car", "a river"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "Quiere despertar a su tía.",
+        "targetWord": "tía",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "featured": false,
+    "sentence": "[[Mira]] hacia el alebrije.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look at",
+      "options": ["to look at", "to open", "to carry", "to push"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "Mira hacia el alebrije.",
+        "targetWord": "Mira",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "extraño",
+    "featured": false,
+    "sentence": "La luz de la luna es [[extraña]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strange",
+      "options": ["strange", "heavy", "clean", "round"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "La luz de la luna es extraña.",
+        "targetWord": "extraña",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pequeño",
+    "featured": false,
+    "sentence": "La hormiga es un animal muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pequeño",
+      "options": ["pequeño", "alto", "largo", "caro"],
+      "translation": "The ant is a very _____ animal.",
+      "optionTranslations": ["small", "tall", "long", "expensive"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "La hormiga es un animal muy pequeño.",
+        "targetWord": "pequeño",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lugar",
+    "featured": false,
+    "sentence": "Está en su [[lugar]] normal, tranquilo, de colores.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a place",
+      "options": ["a place", "a song", "a job", "a face"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "Está en su lugar normal, tranquilo, de colores.",
+        "targetWord": "lugar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tranquilo",
+    "featured": false,
+    "sentence": "No hay ruido en el parque; está muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tranquilo",
+      "options": ["tranquilo", "sucio", "lleno", "moderno"],
+      "translation": "There is no noise in the park; it is very _____.",
+      "optionTranslations": ["calm", "dirty", "full", "modern"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "No hay ruido en el parque; está muy tranquilo.",
+        "targetWord": "tranquilo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mañana",
+    "featured": false,
+    "sentence": "Tomo el desayuno por la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mañana",
+      "options": ["mañana", "noche", "silla", "pared"],
+      "translation": "I have breakfast in the _____.",
+      "optionTranslations": ["morning", "night", "chair", "wall"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "Tomo el desayuno por la mañana.",
+        "targetWord": "mañana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "empezar",
+    "featured": false,
+    "sentence": "El misterio del alebrije apenas [[empieza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to begin",
+      "options": ["to begin", "to end", "to wait", "to lose"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "El misterio del alebrije apenas empieza.",
+        "targetWord": "empieza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "hacia,casi,apenas,otra vez",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "hacia", "answer": "toward", "options": ["toward", "almost", "barely", "again"] },
+        { "word": "casi", "answer": "almost", "options": ["toward", "almost", "barely", "again"] },
+        { "word": "apenas", "answer": "barely", "options": ["toward", "almost", "barely", "again"] },
+        { "word": "otra vez", "answer": "again", "options": ["toward", "almost", "barely", "again"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "mover",
+    "featured": false,
+    "sentence": "Se pregunta: ¿El animal de madera se mueve?",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "mueve",
+      "options": ["mueve", "llueve", "vuelve", "puede"],
+      "optionTranslations": ["moves", "rains", "returns", "can"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-animal-de-madera",
+        "storySource": "user",
+        "sentence": "Se pregunta: ¿El animal de madera se mueve?",
+        "targetWord": "mueve",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  }
+]

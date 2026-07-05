@@ -1,0 +1,327 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "micro",
+    "sentence": "Pensé que el [[micro]] ya se iba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a small bus",
+      "options": ["a small bus", "a big truck", "a fast train", "a slow boat"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "Pensé que el micro ya se iba.",
+        "targetWord": "micro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "viaje",
+    "sentence": "El [[viaje]] cuesta poco y dura un buen rato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a trip",
+      "options": ["a trip", "a meal", "a song", "a game"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "El viaje cuesta poco y dura un buen rato.",
+        "targetWord": "viaje",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "asiento",
+    "sentence": "Me gusta ese [[asiento]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a seat",
+      "options": ["a seat", "a street", "a wheel", "a bag"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "Me gusta ese asiento.",
+        "targetWord": "asiento",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ventanilla",
+    "sentence": "Vamos atrás, al lado de la [[ventanilla]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a small window",
+      "options": ["a small window", "a wide door", "a long road", "a red light"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "Vamos atrás, al lado de la ventanilla.",
+        "targetWord": "ventanilla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avanzar",
+    "sentence": "El micro [[avanza]] despacio por la avenida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to move forward",
+      "options": ["to move forward", "to stop suddenly", "to turn around", "to go back"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "El micro avanza despacio por la avenida.",
+        "targetWord": "avanza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "parada",
+    "sentence": "Espero el bus en la _____ de la esquina.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "parada",
+      "options": ["parada", "puerta", "tienda", "farmacia"],
+      "translation": "I wait for the bus at the _____ on the corner.",
+      "optionTranslations": ["stop", "door", "shop", "pharmacy"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "Espero el bus en la parada de la esquina.",
+        "targetWord": "parada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barrio",
+    "sentence": "Qué bonito [[barrio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a neighborhood",
+      "options": ["a neighborhood", "a museum", "a highway", "a kitchen"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "Qué bonito barrio.",
+        "targetWord": "barrio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pasaje",
+    "sentence": "Subo al bus y pago mi _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pasaje",
+      "options": ["pasaje", "zapato", "cuaderno", "sombrero"],
+      "translation": "I get on the bus and pay my _____.",
+      "optionTranslations": ["fare", "shoe", "notebook", "hat"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "Subo al bus y pago mi pasaje.",
+        "targetWord": "pasaje",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plaza",
+    "sentence": "Ahí mismo queda la [[plaza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a town square",
+      "options": ["a town square", "a train station", "a small store", "a long bridge"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "Ahí mismo queda la plaza.",
+        "targetWord": "plaza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "bajan",
+    "sentence": "Los pasajeros _____ del tren en la estación.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bajan",
+      "options": ["bajan", "cantan", "duermen", "nadan"],
+      "translation": "The passengers _____ the train at the station.",
+      "optionTranslations": ["get off", "sing on", "sleep on", "swim off"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "Los pasajeros bajan del tren en la estación.",
+        "targetWord": "bajan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casa",
+    "featured": false,
+    "sentence": "Afuera, las [[casas]] del barrio brillan con colores fuertes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a house",
+      "options": ["a house", "a car", "a tree", "a shop"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "Afuera, las casas del barrio brillan con colores fuertes.",
+        "targetWord": "casas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "color",
+    "featured": false,
+    "sentence": "Cada calle tiene su [[color]] y su historia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a color",
+      "options": ["a color", "a name", "a sound", "a size"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "Cada calle tiene su color y su historia.",
+        "targetWord": "color",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paseo",
+    "featured": false,
+    "sentence": "Quiero terminar el [[paseo]] en la arena.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an outing",
+      "options": ["an outing", "a job", "a class", "a nap"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "Quiero terminar el paseo en la arena.",
+        "targetWord": "paseo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mar",
+    "featured": false,
+    "sentence": "El [[mar]] se oye más o menos cerca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sea",
+      "options": ["the sea", "the rain", "the train", "the crowd"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "El mar se oye más o menos cerca.",
+        "targetWord": "mar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "flores",
+    "featured": false,
+    "sentence": "En el jardín hay _____ rojas y amarillas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "flores",
+      "options": ["flores", "mesas", "puertas", "camas"],
+      "translation": "In the garden there are red and yellow _____.",
+      "optionTranslations": ["flowers", "tables", "doors", "beds"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "En el jardín hay flores rojas y amarillas.",
+        "targetWord": "flores",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "correr",
+    "featured": false,
+    "sentence": "Vamos tarde; tenemos que _____ para tomar el tren.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "correr",
+      "options": ["correr", "dormir", "comer", "leer"],
+      "translation": "We are late; we have to _____ to catch the train.",
+      "optionTranslations": ["run", "sleep", "eat", "read"],
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "Vamos tarde; tenemos que correr para tomar el tren.",
+        "targetWord": "correr",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "despacio,justo a tiempo,espejo,playa",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "despacio", "answer": "slowly", "options": ["slowly", "just in time", "a mirror", "a beach"] },
+        { "word": "justo a tiempo", "answer": "just in time", "options": ["slowly", "just in time", "a mirror", "a beach"] },
+        { "word": "espejo", "answer": "a mirror", "options": ["slowly", "just in time", "a mirror", "a beach"] },
+        { "word": "playa", "answer": "a beach", "options": ["slowly", "just in time", "a mirror", "a beach"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "subir",
+    "featured": false,
+    "sentence": "Sube, hay dos asientos atrás.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "sube",
+      "options": ["sube", "come", "abre", "vive"],
+      "optionTranslations": ["get on", "eat", "open", "live"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-micro-junto-al-mar",
+        "storySource": "user",
+        "sentence": "Sube, hay dos asientos atrás.",
+        "targetWord": "sube",
+        "language": "spanish",
+        "voiceId": "5vkxOzoz40FrElmLP4P7"
+      }
+    }
+  }
+]

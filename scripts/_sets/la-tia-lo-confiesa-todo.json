@@ -1,0 +1,309 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "grieta",
+    "sentence": "El viento entra por esta [[grieta]] delgada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a crack",
+      "options": ["a crack", "a wall", "a roof", "a bridge"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "El viento entra por esta grieta delgada.",
+        "targetWord": "grieta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "flauta",
+    "sentence": "¡Es como una [[flauta]] enorme!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a flute",
+      "options": ["a flute", "a drum", "a bell", "a guitar"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "¡Es como una flauta enorme!",
+        "targetWord": "flauta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "espíritu",
+    "sentence": "No hay ningún [[espíritu]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a spirit",
+      "options": ["a spirit", "a thief", "a treasure", "an animal"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "No hay ningún espíritu.",
+        "targetWord": "espíritu",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonar",
+    "sentence": "Y al pasar, la piedra [[suena]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to make a sound",
+      "options": ["to make a sound", "to fall down", "to move away", "to heat up"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "Y al pasar, la piedra suena.",
+        "targetWord": "suena",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fantasma",
+    "sentence": "¿Encontraron a su [[fantasma]] del cerro?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a ghost",
+      "options": ["a ghost", "a wolf", "a bird", "a king"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "¿Encontraron a su fantasma del cerro?",
+        "targetWord": "fantasma",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gota",
+    "sentence": "Empiezan a caer las primeras [[gotas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a drop",
+      "options": ["a drop", "a leaf", "a star", "a stone"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "Empiezan a caer las primeras gotas.",
+        "targetWord": "gotas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verdad",
+    "sentence": "Un cuento con algo de [[verdad]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "truth",
+      "options": ["truth", "luck", "magic", "noise"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "Un cuento con algo de verdad.",
+        "targetWord": "verdad",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "agujero",
+    "sentence": "Mi calcetín viejo tiene un _____ en el dedo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "agujero",
+      "options": ["agujero", "espejo", "conejo", "dibujo"],
+      "translation": "My old sock has a _____ at the toe.",
+      "optionTranslations": ["hole", "mirror", "rabbit", "drawing"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "Mi calcetín viejo tiene un agujero en el dedo.",
+        "targetWord": "agujero",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "frío",
+    "sentence": "Nieva mucho y el invierno aquí es muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "frío",
+      "options": ["frío", "dulce", "alto", "sucio"],
+      "translation": "It snows a lot and winter here is very _____.",
+      "optionTranslations": ["cold", "sweet", "tall", "dirty"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "Nieva mucho y el invierno aquí es muy frío.",
+        "targetWord": "frío",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "caer",
+    "sentence": "En otoño las hojas empiezan a _____ de los árboles.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "caer",
+      "options": ["caer", "comer", "leer", "correr"],
+      "translation": "In autumn the leaves start to _____ from the trees.",
+      "optionTranslations": ["to fall", "to eat", "to read", "to run"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "En otoño las hojas empiezan a caer de los árboles.",
+        "targetWord": "caer",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "manera",
+    "featured": false,
+    "sentence": "A su [[manera]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a way",
+      "options": ["a way", "a law", "a job", "a dream"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "A su manera.",
+        "targetWord": "manera",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sentir",
+    "featured": false,
+    "sentence": "Ponen la mano cerca del hueco y [[sienten]] el aire frío.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to feel",
+      "options": ["to feel", "to buy", "to count", "to throw"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "Ponen la mano cerca del hueco y sienten el aire frío.",
+        "targetWord": "sienten",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fuerte",
+    "featured": false,
+    "sentence": "El silbido suena [[fuerte]], justo frente a ellos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strong, loud",
+      "options": ["strong, loud", "soft, quiet", "slow, calm", "thin, weak"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "El silbido suena fuerte, justo frente a ellos.",
+        "targetWord": "fuerte",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "fresca",
+    "featured": false,
+    "sentence": "La brisa del mar es _____ y agradable.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fresca",
+      "options": ["fresca", "sucia", "larga", "cara"],
+      "translation": "The sea breeze is _____ and pleasant.",
+      "optionTranslations": ["cool", "dirty", "long", "expensive"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "La brisa del mar es fresca y agradable.",
+        "targetWord": "fresca",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "delgada",
+    "featured": false,
+    "sentence": "Mi hermana come poco y está muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "delgada",
+      "options": ["delgada", "gorda", "rubia", "vieja"],
+      "translation": "My sister eats little and is very _____.",
+      "optionTranslations": ["thin", "fat", "blond", "old"],
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "Mi hermana come poco y está muy delgada.",
+        "targetWord": "delgada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "mano,vaso,agua,niña",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "mano", "answer": "hand", "options": ["hand", "glass", "water", "girl"] },
+        { "word": "vaso", "answer": "glass", "options": ["hand", "glass", "water", "girl"] },
+        { "word": "agua", "answer": "water", "options": ["hand", "glass", "water", "girl"] },
+        { "word": "niña", "answer": "girl", "options": ["hand", "glass", "water", "girl"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "guardar",
+    "featured": false,
+    "sentence": "El viento fuerte trae la lluvia, y la gente lo guardó en un cuento.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "guardó",
+      "options": ["guardó", "ganó", "gastó", "gritó"],
+      "optionTranslations": ["kept, saved", "won", "spent", "shouted"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "la-tia-lo-confiesa-todo",
+        "storySource": "user",
+        "sentence": "El viento fuerte trae la lluvia, y la gente lo guardó en un cuento.",
+        "targetWord": "guardó",
+        "language": "spanish",
+        "voiceId": "22dcXdsgE2CBQsk9cnTY"
+      }
+    }
+  }
+]

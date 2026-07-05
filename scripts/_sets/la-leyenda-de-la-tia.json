@@ -1,0 +1,385 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "noche",
+    "sentence": "Ya es de [[noche]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "night",
+      "options": ["night", "door", "street", "hand"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "Ya es de noche.",
+        "targetWord": "noche",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "casa",
+    "sentence": "Mi familia vive en una _____ con jardín.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "casa",
+      "options": ["casa", "silla", "taza", "puerta"],
+      "translation": "My family lives in a _____ with a garden.",
+      "optionTranslations": ["house", "chair", "cup", "door"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "Mi familia vive en una casa con jardín.",
+        "targetWord": "casa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tía",
+    "sentence": "La voz de la [[tía]] es suave y misteriosa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an aunt",
+      "options": ["an aunt", "a dog", "a book", "a tree"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "La voz de la tía es suave y misteriosa.",
+        "targetWord": "tía",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escuchar",
+    "sentence": "Mateo [[escucha]] con atención.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to listen",
+      "options": ["to listen", "to run", "to cook", "to sell"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "Mateo escucha con atención.",
+        "targetWord": "escucha",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "luz",
+    "sentence": "El cuarto está oscuro; necesito _____ para leer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "luz",
+      "options": ["luz", "sal", "miel", "piel"],
+      "translation": "The room is dark; I need _____ to read.",
+      "optionTranslations": ["light", "salt", "honey", "skin"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "El cuarto está oscuro; necesito luz para leer.",
+        "targetWord": "luz",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "sentence": "La tía [[sonríe]], pero no responde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smile",
+      "options": ["to smile", "to cry", "to fall", "to drive"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "La tía sonríe, pero no responde.",
+        "targetWord": "sonríe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hermoso",
+    "sentence": "Es [[hermoso]] y un poco extraño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "beautiful",
+      "options": ["beautiful", "dirty", "slow", "cold"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "Es hermoso y un poco extraño.",
+        "targetWord": "hermoso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "madera",
+    "sentence": "La silla no es de metal; es de _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "madera",
+      "options": ["madera", "arena", "leche", "lana"],
+      "translation": "The chair is not made of metal; it is made of _____.",
+      "optionTranslations": ["wood", "sand", "milk", "wool"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "La silla no es de metal; es de madera.",
+        "targetWord": "madera",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuidar",
+    "sentence": "[[Cuida]] la casa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take care of",
+      "options": ["to take care of", "to forget", "to throw", "to win"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "Cuida la casa.",
+        "targetWord": "Cuida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "sentence": "Mateo [[mira]] el alebrije.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look at",
+      "options": ["to look at", "to drink", "to close", "to send"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "Mateo mira el alebrije.",
+        "targetWord": "mira",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "junto",
+    "featured": false,
+    "sentence": "La familia está [[junta]] en la casa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "together",
+      "options": ["together", "tired", "angry", "alone"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "La familia está junta en la casa.",
+        "targetWord": "junta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saber",
+    "featured": false,
+    "sentence": "Nadie [[sabe]] qué es.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to know",
+      "options": ["to know", "to swim", "to paint", "to carry"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "Nadie sabe qué es.",
+        "targetWord": "sabe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mesa",
+    "featured": false,
+    "sentence": "Ponemos los platos en la _____ para comer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mesa",
+      "options": ["mesa", "cama", "calle", "luna"],
+      "translation": "We put the plates on the _____ to eat.",
+      "optionTranslations": ["table", "bed", "street", "moon"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "Ponemos los platos en la mesa para comer.",
+        "targetWord": "mesa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parecer",
+    "featured": false,
+    "sentence": "Esta noche, en Oaxaca, todo [[parece]] posible.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to seem",
+      "options": ["to seem", "to shout", "to dance", "to pay"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "Esta noche, en Oaxaca, todo parece posible.",
+        "targetWord": "parece",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "montañas",
+    "featured": false,
+    "sentence": "Los Andes son _____ muy altas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "montañas",
+      "options": ["montañas", "ventanas", "naranjas", "cucharas"],
+      "translation": "The Andes are very tall _____.",
+      "optionTranslations": ["mountains", "windows", "oranges", "spoons"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "Los Andes son montañas muy altas.",
+        "targetWord": "montañas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "este",
+    "featured": false,
+    "sentence": "[[Este]] alebrije es mágico.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "this",
+      "options": ["this", "nothing", "something", "each"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "Este alebrije es mágico.",
+        "targetWord": "Este",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "antiguo",
+    "featured": false,
+    "sentence": "La tía Rosa cuenta una leyenda [[antigua]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ancient",
+      "options": ["ancient", "new", "round", "soft"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "La tía Rosa cuenta una leyenda antigua.",
+        "targetWord": "antigua",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "responde",
+    "featured": false,
+    "sentence": "La maestra pregunta y el niño _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "responde",
+      "options": ["responde", "corre", "duerme", "llora"],
+      "translation": "The teacher asks and the boy _____.",
+      "optionTranslations": ["answers", "runs", "sleeps", "cries"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "La maestra pregunta y el niño responde.",
+        "targetWord": "responde",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "extraño",
+    "featured": false,
+    "sentence": "¡Ese animal tiene tres ojos! Es muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "extraño",
+      "options": ["extraño", "alto", "limpio", "lento"],
+      "translation": "That animal has three eyes! It is very _____.",
+      "optionTranslations": ["strange", "tall", "clean", "slow"],
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "¡Ese animal tiene tres ojos! Es muy extraño.",
+        "targetWord": "extraño",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "nadie,alguien,todo,solo",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "nadie", "answer": "nobody", "options": ["nobody", "someone", "everything", "only"] },
+        { "word": "alguien", "answer": "someone", "options": ["nobody", "someone", "everything", "only"] },
+        { "word": "todo", "answer": "everything", "options": ["nobody", "someone", "everything", "only"] },
+        { "word": "solo", "answer": "only", "options": ["nobody", "someone", "everything", "only"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "contar",
+    "featured": false,
+    "sentence": "La tía Rosa cuenta una leyenda antigua.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "cuenta",
+      "options": ["cuenta", "canta", "corta", "cuesta"],
+      "optionTranslations": ["tells", "sings", "cuts", "costs"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "la-leyenda-de-la-tia",
+        "storySource": "user",
+        "sentence": "La tía Rosa cuenta una leyenda antigua.",
+        "targetWord": "cuenta",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  }
+]

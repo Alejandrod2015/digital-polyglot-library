@@ -1,0 +1,343 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "subir",
+    "sentence": "Javiera y Benjamín [[suben]] el sendero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to climb",
+      "options": ["to climb", "to rest", "to fall", "to wait"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "Javiera y Benjamín suben el sendero.",
+        "targetWord": "suben",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "montaña",
+    "sentence": "Así es la [[montaña]]. Primero cansa y después regala esto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a mountain",
+      "options": ["a mountain", "a river", "a beach", "a bridge"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "Así es la montaña. Primero cansa y después regala esto.",
+        "targetWord": "montaña",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "subida",
+    "sentence": "Yo ya casi no puedo con esta [[subida]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an uphill climb",
+      "options": ["an uphill climb", "a long rest", "a heavy backpack", "a dark tunnel"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "Yo ya casi no puedo con esta subida.",
+        "targetWord": "subida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hermoso",
+    "sentence": "Miren mejor ese bosque. Es muy [[hermoso]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "beautiful",
+      "options": ["beautiful", "dangerous", "empty", "dark"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "Miren mejor ese bosque. Es muy hermoso.",
+        "targetWord": "hermoso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lago",
+    "sentence": "¡Un [[lago]] grande, de color azul!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lake",
+      "options": ["a lake", "a valley", "a cave", "a garden"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "¡Un lago grande, de color azul!",
+        "targetWord": "lago",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sendero",
+    "sentence": "Caminamos por un _____ pequeño entre los árboles.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sendero",
+      "options": ["sendero", "puente", "muro", "techo"],
+      "translation": "We walk along a small _____ between the trees.",
+      "optionTranslations": ["trail", "bridge", "wall", "roof"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "Caminamos por un sendero pequeño entre los árboles.",
+        "targetWord": "sendero",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "frío",
+    "sentence": "En invierno hace _____ y usamos suéter.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "frío",
+      "options": ["frío", "calor", "humo", "polvo"],
+      "translation": "In winter there is _____ and we wear a sweater.",
+      "optionTranslations": ["cold", "heat", "smoke", "dust"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "En invierno hace frío y usamos suéter.",
+        "targetWord": "frío",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "viento",
+    "sentence": "La bandera se mueve porque hay _____ fuerte.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "viento",
+      "options": ["viento", "fuego", "hielo", "ruido"],
+      "translation": "The flag moves because there is a strong _____.",
+      "optionTranslations": ["wind", "fire", "ice", "noise"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "La bandera se mueve porque hay viento fuerte.",
+        "targetWord": "viento",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "premio",
+    "sentence": "El niño ganó la carrera y recibió un _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "premio",
+      "options": ["premio", "castigo", "precio", "boleto"],
+      "translation": "The boy won the race and received a _____.",
+      "optionTranslations": ["prize", "punishment", "price", "ticket"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "El niño ganó la carrera y recibió un premio.",
+        "targetWord": "premio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "gorro,abrigo,bosque,piedra",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "gorro",
+          "answer": "a wool hat",
+          "options": ["a wool hat", "a coat", "a forest", "a stone"]
+        },
+        {
+          "word": "abrigo",
+          "answer": "a coat",
+          "options": ["a wool hat", "a coat", "a forest", "a stone"]
+        },
+        {
+          "word": "bosque",
+          "answer": "a forest",
+          "options": ["a wool hat", "a coat", "a forest", "a stone"]
+        },
+        {
+          "word": "piedra",
+          "answer": "a stone",
+          "options": ["a wool hat", "a coat", "a forest", "a stone"]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "morder",
+    "featured": false,
+    "sentence": "El frío les [[muerde]] la cara.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bite",
+      "options": ["to bite", "to warm", "to wash", "to touch"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "El frío les muerde la cara.",
+        "targetWord": "muerde",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calma",
+    "featured": false,
+    "sentence": "La montaña pide [[calma]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calm",
+      "options": ["calm", "hurry", "anger", "fear"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "La montaña pide calma.",
+        "targetWord": "calma",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "árbol",
+    "featured": false,
+    "sentence": "El sendero sube entre [[árboles]] y piedras grises.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tree",
+      "options": ["a tree", "a flower", "a cloud", "a road"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "El sendero sube entre árboles y piedras grises.",
+        "targetWord": "árboles",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "con sus propios ojos",
+    "featured": false,
+    "sentence": "Pocos lo ven [[con sus propios ojos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with their own eyes",
+      "options": ["with their own eyes", "from far away", "once a year", "by accident"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "Pocos lo ven con sus propios ojos.",
+        "targetWord": "con sus propios ojos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paso",
+    "featured": false,
+    "sentence": "Vale cada [[paso]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a step",
+      "options": ["a step", "a stone", "a break", "a shout"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "Vale cada paso.",
+        "targetWord": "paso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "falta mucho",
+    "featured": false,
+    "sentence": "Tía, ¿[[falta mucho]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "there's a long way to go",
+      "options": ["there's a long way to go", "we're going too fast", "it's too dark", "the path is closed"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "Tía, ¿falta mucho?",
+        "targetWord": "falta mucho",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "esfuerzo",
+    "featured": false,
+    "sentence": "Aprender otro idioma pide tiempo y mucho _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esfuerzo",
+      "options": ["esfuerzo", "descanso", "espacio", "sueño"],
+      "translation": "Learning another language takes time and a lot of _____.",
+      "optionTranslations": ["effort", "rest", "space", "sleep"],
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "Aprender otro idioma pide tiempo y mucho esfuerzo.",
+        "targetWord": "esfuerzo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "helado",
+    "featured": false,
+    "sentence": "Estoy helada y cansada.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "helada",
+      "options": ["helada", "mojada", "pesada", "salada"],
+      "optionTranslations": ["freezing", "wet", "heavy", "salty"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "lo-que-hay-tras-la-subida",
+        "storySource": "user",
+        "sentence": "Estoy helada y cansada.",
+        "targetWord": "helada",
+        "language": "spanish",
+        "voiceId": "6Gr4AVmTax1pMJO0lHRK"
+      }
+    }
+  }
+]

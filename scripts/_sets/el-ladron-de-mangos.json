@@ -1,0 +1,448 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "masticar",
+    "sentence": "Los mira sin miedo y sigue [[masticando]] su mango.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to chew",
+      "options": [
+        "to chew",
+        "to sniff",
+        "to carry",
+        "to drop"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "Los mira sin miedo y sigue masticando su mango.",
+        "targetWord": "masticando",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agarrado",
+    "sentence": "Tiene como cinco crías [[agarradas]] encima.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "holding on tight",
+      "options": [
+        "holding on tight",
+        "sleeping quietly",
+        "running away",
+        "looking around"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "Tiene como cinco crías agarradas encima.",
+        "targetWord": "agarradas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "boca",
+    "sentence": "Pobre, tiene muchas [[bocas]] que llenar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a mouth to feed",
+      "options": [
+        "a mouth to feed",
+        "a tree to climb",
+        "a night to sleep",
+        "a path to follow"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "Pobre, tiene muchas bocas que llenar.",
+        "targetWord": "bocas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "miedo",
+    "sentence": "El tlacuache los mira sin ningún [[miedo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fear",
+      "options": [
+        "fear",
+        "hunger",
+        "interest",
+        "shame"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "El tlacuache los mira sin ningún miedo.",
+        "targetWord": "miedo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de sobra",
+    "sentence": "Total, mangos hay [[de sobra]] para ella y para nosotros.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "more than enough",
+      "options": [
+        "more than enough",
+        "almost none",
+        "hidden away",
+        "very ripe"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "Total, mangos hay de sobra para ella y para nosotros.",
+        "targetWord": "de sobra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "familia",
+    "sentence": "Come por ella y por toda su [[familia]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a family",
+      "options": [
+        "a family",
+        "a team",
+        "a crowd",
+        "a village"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "Come por ella y por toda su familia.",
+        "targetWord": "familia",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "gordo",
+    "sentence": "El gato comió tanto que está muy _____ y casi no camina.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gordo",
+      "options": [
+        "gordo",
+        "rápido",
+        "triste",
+        "oscuro"
+      ],
+      "translation": "The cat ate so much that it is very _____ and barely walks.",
+      "optionTranslations": [
+        "fat",
+        "fast",
+        "sad",
+        "dark"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "El gato comió tanto que está muy gordo y casi no camina.",
+        "targetWord": "gordo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tranquila",
+    "sentence": "Tras la buena noticia, respiró profundo y se quedó _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tranquila",
+      "options": [
+        "tranquila",
+        "mojada",
+        "perdida",
+        "enojada"
+      ],
+      "translation": "After the good news, she took a deep breath and stayed _____.",
+      "optionTranslations": [
+        "calm",
+        "wet",
+        "lost",
+        "angry"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "Tras la buena noticia, respiró profundo y se quedó tranquila.",
+        "targetWord": "tranquila",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "iluminar",
+    "sentence": "La linterna [[ilumina]] las ramas del mango.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to light up",
+      "options": [
+        "to light up",
+        "to warm up",
+        "to tie up",
+        "to pick up"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "La linterna ilumina las ramas del mango.",
+        "targetWord": "ilumina",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "ladrón,fantasma,paz,razón",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "ladrón",
+          "answer": "a thief",
+          "options": [
+            "a thief",
+            "a ghost",
+            "peace",
+            "a reason"
+          ]
+        },
+        {
+          "word": "fantasma",
+          "answer": "a ghost",
+          "options": [
+            "a thief",
+            "a ghost",
+            "peace",
+            "a reason"
+          ]
+        },
+        {
+          "word": "paz",
+          "answer": "peace",
+          "options": [
+            "a thief",
+            "a ghost",
+            "peace",
+            "a reason"
+          ]
+        },
+        {
+          "word": "razón",
+          "answer": "a reason",
+          "options": [
+            "a thief",
+            "a ghost",
+            "peace",
+            "a reason"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "animal",
+    "featured": false,
+    "sentence": "Solo un [[animal]] con muy buen gusto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an animal",
+      "options": [
+        "an animal",
+        "a machine",
+        "a child",
+        "a shadow"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "Solo un animal con muy buen gusto.",
+        "targetWord": "animal",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cabeza",
+    "featured": false,
+    "sentence": "Itzel mira a la mamá tlacuache y niega con la [[cabeza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the head",
+      "options": [
+        "the head",
+        "the hand",
+        "the shoulder",
+        "the voice"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "Itzel mira a la mamá tlacuache y niega con la cabeza.",
+        "targetWord": "cabeza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abuela",
+    "featured": false,
+    "sentence": "Mi [[abuela]] tenía razón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a grandmother",
+      "options": [
+        "a grandmother",
+        "an aunt",
+        "a cousin",
+        "a teacher"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "Mi abuela tenía razón.",
+        "targetWord": "abuela",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pata",
+    "featured": false,
+    "sentence": "Pero mi duende tiene cuatro [[patas]] y cinco hijos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an animal leg",
+      "options": [
+        "an animal leg",
+        "a tail",
+        "an ear",
+        "a tooth"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "Pero mi duende tiene cuatro patas y cinco hijos.",
+        "targetWord": "patas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "llenar",
+    "featured": false,
+    "sentence": "La botella está vacía; la voy a _____ con agua.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "llenar",
+      "options": [
+        "llenar",
+        "cerrar",
+        "romper",
+        "secar"
+      ],
+      "translation": "The bottle is empty; I am going to _____ it with water.",
+      "optionTranslations": [
+        "to fill",
+        "to close",
+        "to break",
+        "to dry"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "La botella está vacía; la voy a llenar con agua.",
+        "targetWord": "llenar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "gusto",
+    "featured": false,
+    "sentence": "Siempre eliges ropa bonita; tienes muy buen _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gusto",
+      "options": [
+        "gusto",
+        "humor",
+        "ritmo",
+        "precio"
+      ],
+      "translation": "You always choose pretty clothes; you have very good _____.",
+      "optionTranslations": [
+        "taste",
+        "mood",
+        "rhythm",
+        "price"
+      ],
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "Siempre eliges ropa bonita; tienes muy buen gusto.",
+        "targetWord": "gusto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "dejar",
+    "featured": false,
+    "sentence": "¿La sacamos del patio o la dejamos en paz?",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "dejamos",
+      "options": [
+        "dejamos",
+        "bajamos",
+        "tomamos",
+        "pasamos"
+      ],
+      "optionTranslations": [
+        "we leave (it)",
+        "we go down",
+        "we take",
+        "we pass"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-ladron-de-mangos",
+        "storySource": "user",
+        "sentence": "¿La sacamos del patio o la dejamos en paz?",
+        "targetWord": "dejamos",
+        "language": "spanish",
+        "voiceId": "77K94gl6ZCRVTHG8Gi1w"
+      }
+    }
+  }
+]

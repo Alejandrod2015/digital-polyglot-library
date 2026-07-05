@@ -1,0 +1,455 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "esperar",
+    "sentence": "Te [[esperé]] ayer, ¿sabés?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wait",
+      "options": [
+        "to wait",
+        "to call",
+        "to visit",
+        "to follow"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "Te esperé ayer, ¿sabés?",
+        "targetWord": "esperé",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apenas",
+    "sentence": "[[Apenas]] nos conocemos hace tres días.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "barely",
+      "options": [
+        "barely",
+        "always",
+        "already",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "Apenas nos conocemos hace tres días.",
+        "targetWord": "apenas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dudar",
+    "sentence": "Camila lo mira, [[dudando]] entre dos caminos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hesitate",
+      "options": [
+        "to hesitate",
+        "to run",
+        "to shout",
+        "to agree"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "Camila lo mira, dudando entre dos caminos.",
+        "targetWord": "dudando",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arrepentirse",
+    "sentence": "¿Y si me quedo y después me [[arrepiento]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to regret",
+      "options": [
+        "to regret",
+        "to celebrate",
+        "to escape",
+        "to improve"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "¿Y si me quedo y después me arrepiento?",
+        "targetWord": "arrepiento",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "intentar",
+    "sentence": "Tu familia va a estar igual de orgullosa si te quedás y lo [[intentás]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to try",
+      "options": [
+        "to try",
+        "to win",
+        "to leave",
+        "to rest"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "Tu familia va a estar igual de orgullosa si te quedás y lo intentás.",
+        "targetWord": "intentás",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salida",
+    "sentence": "Volver es la [[salida]] fácil, y yo no vine hasta acá para eso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a way out",
+      "options": [
+        "a way out",
+        "a mistake",
+        "a prize",
+        "a secret"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "Volver es la salida fácil, y yo no vine hasta acá para eso.",
+        "targetWord": "salida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "temprano",
+    "sentence": "La panadería abre muy _____, a las seis de la mañana.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "temprano",
+      "options": [
+        "temprano",
+        "tarde",
+        "despacio",
+        "afuera"
+      ],
+      "translation": "The bakery opens very _____, at six in the morning.",
+      "optionTranslations": [
+        "early",
+        "late",
+        "slowly",
+        "outside"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "La panadería abre muy temprano, a las seis de la mañana.",
+        "targetWord": "temprano",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "fallar",
+    "sentence": "Practiqué poco piano, así que puedo _____ en el concierto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fallar",
+      "options": [
+        "fallar",
+        "cantar",
+        "dormir",
+        "pagar"
+      ],
+      "translation": "I practiced little piano, so I might _____ at the concert.",
+      "optionTranslations": [
+        "to fail",
+        "to sing",
+        "to sleep",
+        "to pay"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "Practiqué poco piano, así que puedo fallar en el concierto.",
+        "targetWord": "fallar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "orgullosa",
+    "sentence": "La abuela está _____ porque su nieta terminó la universidad.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "orgullosa",
+      "options": [
+        "orgullosa",
+        "cansada",
+        "perdida",
+        "enojada"
+      ],
+      "translation": "The grandmother is _____ because her granddaughter finished university.",
+      "optionTranslations": [
+        "proud",
+        "tired",
+        "lost",
+        "angry"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "La abuela está orgullosa porque su nieta terminó la universidad.",
+        "targetWord": "orgullosa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "parada,pasaje,mediodía,aliento",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "parada",
+          "answer": "a bus stop",
+          "options": [
+            "a bus stop",
+            "a ticket",
+            "noon",
+            "breath"
+          ]
+        },
+        {
+          "word": "pasaje",
+          "answer": "a ticket",
+          "options": [
+            "a bus stop",
+            "a ticket",
+            "noon",
+            "breath"
+          ]
+        },
+        {
+          "word": "mediodía",
+          "answer": "noon",
+          "options": [
+            "a bus stop",
+            "a ticket",
+            "noon",
+            "breath"
+          ]
+        },
+        {
+          "word": "aliento",
+          "answer": "breath",
+          "options": [
+            "a bus stop",
+            "a ticket",
+            "noon",
+            "breath"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "olvidar",
+    "featured": false,
+    "sentence": "Pensé que se te [[olvidó]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to forget",
+      "options": [
+        "to forget",
+        "to lose",
+        "to break",
+        "to choose"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "Pensé que se te olvidó.",
+        "targetWord": "olvidó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aparecer",
+    "featured": false,
+    "sentence": "Tomás le había pedido un día, pero después no [[apareció]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to show up",
+      "options": [
+        "to show up",
+        "to answer",
+        "to complain",
+        "to rest"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "Tomás le había pedido un día, pero después no apareció.",
+        "targetWord": "apareció",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camino",
+    "featured": false,
+    "sentence": "Camila baja la maleta y lo mira, dudando entre dos [[caminos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a path",
+      "options": [
+        "a path",
+        "a wall",
+        "a bridge",
+        "a door"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "Camila baja la maleta y lo mira, dudando entre dos caminos.",
+        "targetWord": "caminos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "respirar",
+    "featured": false,
+    "sentence": "Camila saca el teléfono, [[respira]] hondo y cancela su pasaje.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to breathe",
+      "options": [
+        "to breathe",
+        "to jump",
+        "to whisper",
+        "to drive"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "Camila saca el teléfono, respira hondo y cancela su pasaje.",
+        "targetWord": "respira",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "empuja",
+    "featured": false,
+    "sentence": "El carrito está pesado, pero ella lo _____ hasta la puerta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "empuja",
+      "options": [
+        "empuja",
+        "pinta",
+        "seca",
+        "cuenta"
+      ],
+      "translation": "The cart is heavy, but she _____ it to the door.",
+      "optionTranslations": [
+        "pushes",
+        "paints",
+        "dries",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "El carrito está pesado, pero ella lo empuja hasta la puerta.",
+        "targetWord": "empuja",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cancela",
+    "featured": false,
+    "sentence": "El profesor está enfermo y _____ la clase de hoy.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cancela",
+      "options": [
+        "cancela",
+        "empieza",
+        "repite",
+        "dirige"
+      ],
+      "translation": "The teacher is sick and _____ today's class.",
+      "optionTranslations": [
+        "cancels",
+        "starts",
+        "repeats",
+        "leads"
+      ],
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "El profesor está enfermo y cancela la clase de hoy.",
+        "targetWord": "cancela",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "convencer",
+    "featured": false,
+    "sentence": "Estuve toda la noche pensando cómo convencerte.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "convencerte",
+      "options": [
+        "convencerte",
+        "conocerte",
+        "vencerte",
+        "ofrecerte"
+      ],
+      "optionTranslations": [
+        "to convince you",
+        "to meet you",
+        "to beat you",
+        "to offer you"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-micro-del-domingo",
+        "storySource": "user",
+        "sentence": "Estuve toda la noche pensando cómo convencerte.",
+        "targetWord": "convencerte",
+        "language": "spanish",
+        "voiceId": "acHf5gp7AGOY30tJjvD4"
+      }
+    }
+  }
+]

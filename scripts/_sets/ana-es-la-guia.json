@@ -1,0 +1,584 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "ser",
+    "sentence": "Ahora yo [[soy]] la experta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be",
+      "options": [
+        "to be",
+        "to have",
+        "to go",
+        "to see"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Ahora yo soy la experta.",
+        "targetWord": "soy",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "queremos",
+    "sentence": "Mis hermanos y yo _____ un helado grande.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "queremos",
+      "options": [
+        "queremos",
+        "vendemos",
+        "perdemos",
+        "rompemos"
+      ],
+      "translation": "My brothers and I _____ a big ice cream.",
+      "optionTranslations": [
+        "we want",
+        "we sell",
+        "we lose",
+        "we break"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Mis hermanos y yo queremos un helado grande.",
+        "targetWord": "queremos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esto",
+    "sentence": "¿Qué es [[esto]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "this",
+      "options": [
+        "this",
+        "nothing",
+        "everything",
+        "someone"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "¿Qué es esto?",
+        "targetWord": "esto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "amiga",
+    "sentence": "Marta es mi mejor _____; jugamos juntas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "amiga",
+      "options": [
+        "amiga",
+        "mesa",
+        "mano",
+        "moto"
+      ],
+      "translation": "Marta is my best _____; we play together.",
+      "optionTranslations": [
+        "friend",
+        "table",
+        "hand",
+        "motorcycle"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Marta es mi mejor amiga; jugamos juntas.",
+        "targetWord": "amiga",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "picante",
+    "sentence": "Uno [[picante]] para mí, uno no picante para Carla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "spicy",
+      "options": [
+        "spicy",
+        "sweet",
+        "cheap",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Uno picante para mí, uno no picante para Carla.",
+        "targetWord": "picante",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pregunta",
+    "sentence": "Elena no sabe la hora y _____ a un señor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pregunta",
+      "options": [
+        "pregunta",
+        "corre",
+        "duerme",
+        "canta"
+      ],
+      "translation": "Elena does not know the time and _____ a man.",
+      "optionTranslations": [
+        "asks",
+        "runs",
+        "sleeps",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Elena no sabe la hora y pregunta a un señor.",
+        "targetWord": "pregunta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aprender",
+    "sentence": "Carla [[aprende]] su primera palabra en el mercado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to learn",
+      "options": [
+        "to learn",
+        "to pay",
+        "to run",
+        "to sing"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Carla aprende su primera palabra en el mercado.",
+        "targetWord": "aprende",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sola",
+    "sentence": "Mi abuela vive _____ en su casa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sola",
+      "options": [
+        "sola",
+        "alta",
+        "rota",
+        "rica"
+      ],
+      "translation": "My grandmother lives _____ in her house.",
+      "optionTranslations": [
+        "alone",
+        "tall",
+        "broken",
+        "rich"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Mi abuela vive sola en su casa.",
+        "targetWord": "sola",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "sentence": "Carla [[mira]] el menú y no comprende mucho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look at",
+      "options": [
+        "to look at",
+        "to throw",
+        "to close",
+        "to fill"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Carla mira el menú y no comprende mucho.",
+        "targetWord": "mira",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "decir",
+    "sentence": "«Es salsa», [[dice]] Ana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to say",
+      "options": [
+        "to say",
+        "to eat",
+        "to open",
+        "to bring"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Es salsa, dice Ana.",
+        "targetWord": "dice",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "orgullosa",
+    "featured": false,
+    "sentence": "Ana está [[orgullosa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "proud",
+      "options": [
+        "proud",
+        "asleep",
+        "lost",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Ana está orgullosa.",
+        "targetWord": "orgullosa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "regresar",
+    "featured": false,
+    "sentence": "Ana [[regresa]] al mercado, pero hoy no está sola.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to return",
+      "options": [
+        "to return",
+        "to cook",
+        "to read",
+        "to jump"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Ana regresa al mercado, pero hoy no está sola.",
+        "targetWord": "regresa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "señora",
+    "featured": false,
+    "sentence": "Ana habla con la [[señora]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lady",
+      "options": [
+        "a lady",
+        "a girl",
+        "a cat",
+        "a door"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Ana habla con la señora.",
+        "targetWord": "señora",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "featured": false,
+    "sentence": "Ana [[sonríe]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smile",
+      "options": [
+        "to smile",
+        "to sleep",
+        "to jump",
+        "to write"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Ana sonríe.",
+        "targetWord": "sonríe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tomar",
+    "featured": false,
+    "sentence": "Carla [[toma]] su taco y abre los ojos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take",
+      "options": [
+        "to take",
+        "to hide",
+        "to cut",
+        "to push"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Carla toma su taco y abre los ojos.",
+        "targetWord": "toma",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "también",
+    "featured": false,
+    "sentence": "Carla [[también]] quiere aprender.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "also",
+      "options": [
+        "also",
+        "never",
+        "only",
+        "almost"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Carla también quiere aprender.",
+        "targetWord": "también",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "feliz",
+    "featured": false,
+    "sentence": "«Otra vez mañana», dice Ana, [[feliz]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "happy",
+      "options": [
+        "happy",
+        "angry",
+        "short",
+        "dark"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Otra vez mañana, dice Ana, feliz.",
+        "targetWord": "feliz",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cuidado",
+    "featured": false,
+    "sentence": "El piso está mojado; camina con _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cuidado",
+      "options": [
+        "cuidado",
+        "queso",
+        "dinero",
+        "papel"
+      ],
+      "translation": "The floor is wet; walk with _____.",
+      "optionTranslations": [
+        "care",
+        "cheese",
+        "money",
+        "paper"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "El piso está mojado; camina con cuidado.",
+        "targetWord": "cuidado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "primera",
+    "featured": false,
+    "sentence": "La letra A es la _____ del alfabeto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "primera",
+      "options": [
+        "primera",
+        "última",
+        "verde",
+        "fría"
+      ],
+      "translation": "The letter A is the _____ of the alphabet.",
+      "optionTranslations": [
+        "first",
+        "last",
+        "green",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "La letra A es la primera del alfabeto.",
+        "targetWord": "primera",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "contenta",
+    "featured": false,
+    "sentence": "Recibe un regalo y está muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "contenta",
+      "options": [
+        "contenta",
+        "enferma",
+        "mojada",
+        "cansada"
+      ],
+      "translation": "She gets a present and is very _____.",
+      "optionTranslations": [
+        "glad",
+        "sick",
+        "wet",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Recibe un regalo y está muy contenta.",
+        "targetWord": "contenta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "dos,uno,bien,más",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "dos",
+          "answer": "two",
+          "options": [
+            "two",
+            "one",
+            "well",
+            "more"
+          ]
+        },
+        {
+          "word": "uno",
+          "answer": "one",
+          "options": [
+            "two",
+            "one",
+            "well",
+            "more"
+          ]
+        },
+        {
+          "word": "bien",
+          "answer": "well",
+          "options": [
+            "two",
+            "one",
+            "well",
+            "more"
+          ]
+        },
+        {
+          "word": "más",
+          "answer": "more",
+          "options": [
+            "two",
+            "one",
+            "well",
+            "more"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "abrir",
+    "featured": false,
+    "sentence": "Carla toma su taco y abre los ojos: ¡Está delicioso!",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "abre",
+      "options": [
+        "abre",
+        "cabe",
+        "sabe",
+        "sube"
+      ],
+      "optionTranslations": [
+        "opens",
+        "fits",
+        "knows",
+        "goes up"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "ana-es-la-guia",
+        "storySource": "user",
+        "sentence": "Carla toma su taco y abre los ojos: ¡Está delicioso!",
+        "targetWord": "abre",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  }
+]

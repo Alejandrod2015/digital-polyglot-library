@@ -1,0 +1,480 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "cumbia",
+    "sentence": "Una fiesta sin [[cumbia]] no es fiesta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a Colombian dance",
+      "options": [
+        "a Colombian dance",
+        "a street food",
+        "a card game",
+        "a summer hat"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "Una fiesta sin cumbia no es fiesta.",
+        "targetWord": "cumbia",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/615d1d53e3ed3c42.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paso",
+    "sentence": "¿Y nadie más se sabe los [[pasos]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a dance step",
+      "options": [
+        "a dance step",
+        "a drum",
+        "a partner",
+        "a stage"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "¿Y nadie más se sabe los pasos?",
+        "targetWord": "pasos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a113468626b5580.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "aprendemos",
+    "sentence": "Si practicamos cada día, _____ los pasos rápido.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aprendemos",
+      "options": [
+        "aprendemos",
+        "olvidamos",
+        "perdemos",
+        "vendemos"
+      ],
+      "translation": "If we practice every day, we _____ the steps fast.",
+      "optionTranslations": [
+        "we learn",
+        "we forget",
+        "we lose",
+        "we sell"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "Si practicamos cada día, aprendemos los pasos rápido.",
+        "targetWord": "aprendemos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a86563cc29799c9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dirigir",
+    "sentence": "¿Y este año quién [[dirige]] el baile?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lead",
+      "options": [
+        "to lead",
+        "to watch",
+        "to copy",
+        "to enjoy"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "¿Y este año quién dirige el baile?",
+        "targetWord": "dirige",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1270d612df828d0c.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barrio",
+    "sentence": "El sábado es la fiesta del [[barrio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a neighborhood",
+      "options": [
+        "a neighborhood",
+        "a museum",
+        "a market",
+        "a stadium"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "El sábado es la fiesta del barrio.",
+        "targetWord": "barrio",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dd2f5a17de4c1e85.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ritmo",
+    "sentence": "El baterista marca el _____ de la canción.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ritmo",
+      "options": [
+        "ritmo",
+        "precio",
+        "olor",
+        "tamaño"
+      ],
+      "translation": "The drummer keeps the _____ of the song.",
+      "optionTranslations": [
+        "rhythm",
+        "price",
+        "smell",
+        "size"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "El baterista marca el ritmo de la canción.",
+        "targetWord": "ritmo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/45a87893b5456a49.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "animarse",
+    "sentence": "Nadie del barrio se [[anima]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dare to try",
+      "options": [
+        "to dare to try",
+        "to fall asleep",
+        "to move away",
+        "to complain"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "Nadie del barrio se anima.",
+        "targetWord": "anima",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d4c186535b61305c.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "baile",
+    "sentence": "¿Quién dirige el [[baile]] de la cumbia?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a dance",
+      "options": [
+        "a dance",
+        "a parade",
+        "a contest",
+        "a rehearsal"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "¿Quién dirige el baile de la cumbia?",
+        "targetWord": "baile",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/62d3f05c9b107c83.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "falta",
+    "sentence": "La sopa está casi lista; solo _____ la sal.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "falta",
+      "options": [
+        "falta",
+        "sobra",
+        "hierve",
+        "cae"
+      ],
+      "translation": "The soup is almost ready; only the salt _____.",
+      "optionTranslations": [
+        "is missing",
+        "is left over",
+        "boils",
+        "falls"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "La sopa está casi lista; solo falta la sal.",
+        "targetWord": "falta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a340fd157a0de774.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "olvidó",
+    "sentence": "Pedro quería traer el libro, pero lo _____ en casa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "olvidó",
+      "options": [
+        "olvidó",
+        "rompió",
+        "leyó",
+        "compró"
+      ],
+      "translation": "Pedro wanted to bring the book, but he _____ it at home.",
+      "optionTranslations": [
+        "forgot",
+        "broke",
+        "read",
+        "bought"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "Pedro quería traer el libro, pero lo olvidó en casa.",
+        "targetWord": "olvidó",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a4d693bcc7223749.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colores",
+    "featured": false,
+    "sentence": "Cuelga banderas de [[colores]] de lado a lado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "colors",
+      "options": [
+        "colors",
+        "lights",
+        "letters",
+        "flowers"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "Cuelga banderas de colores de lado a lado.",
+        "targetWord": "colores",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d254df3c49e10a9b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sostener",
+    "featured": false,
+    "sentence": "Andrés [[sostiene]] la escalera desde abajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hold steady",
+      "options": [
+        "to hold steady",
+        "to climb up",
+        "to put away",
+        "to repair"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "Andrés sostiene la escalera desde abajo.",
+        "targetWord": "sostiene",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bd766c1c0c424b2a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quieta",
+    "featured": false,
+    "sentence": "La calle se va a quedar callada y [[quieta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still, not moving",
+      "options": [
+        "still, not moving",
+        "crowded",
+        "shiny",
+        "warm"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "La calle se va a quedar callada y quieta.",
+        "targetWord": "quieta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d675cfdc7c9e78e7.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "claro",
+    "featured": false,
+    "sentence": "Ahí están los pasos completos. Se ve todo [[claro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clear",
+      "options": [
+        "clear",
+        "dark",
+        "loud",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "Ahí están los pasos completos. Se ve todo claro.",
+        "targetWord": "claro",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb46836878d88615.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "callada",
+    "featured": false,
+    "sentence": "La maestra pidió silencio y toda la clase quedó _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "callada",
+      "options": [
+        "callada",
+        "contenta",
+        "despierta",
+        "perdida"
+      ],
+      "translation": "The teacher asked for silence and the whole class went _____.",
+      "optionTranslations": [
+        "quiet",
+        "happy",
+        "awake",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "La maestra pidió silencio y toda la clase quedó callada.",
+        "targetWord": "callada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/98da898391b2d63d.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cama,escalera,puerta,bandera",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cama",
+          "answer": "a bed",
+          "options": [
+            "a bed",
+            "a ladder",
+            "a door",
+            "a flag"
+          ]
+        },
+        {
+          "word": "escalera",
+          "answer": "a ladder",
+          "options": [
+            "a bed",
+            "a ladder",
+            "a door",
+            "a flag"
+          ]
+        },
+        {
+          "word": "puerta",
+          "answer": "a door",
+          "options": [
+            "a bed",
+            "a ladder",
+            "a door",
+            "a flag"
+          ]
+        },
+        {
+          "word": "bandera",
+          "answer": "a flag",
+          "options": [
+            "a bed",
+            "a ladder",
+            "a door",
+            "a flag"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "grabar",
+    "featured": false,
+    "sentence": "El año pasado alguien grabó la cumbia en un video.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "grabó",
+      "options": [
+        "grabó",
+        "ganó",
+        "gritó",
+        "guardó"
+      ],
+      "optionTranslations": [
+        "recorded",
+        "won",
+        "shouted",
+        "put away"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "sin-cumbia-no-hay-fiesta",
+        "storySource": "user",
+        "sentence": "El año pasado alguien grabó la cumbia en un video.",
+        "targetWord": "grabó",
+        "language": "spanish",
+        "voiceId": "J8BF9c7OgbHiqagCNoEj"
+      }
+    }
+  }
+]

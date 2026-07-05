@@ -1,0 +1,343 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "nube",
+    "sentence": "Las [[nubes]] se vuelven negras.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cloud",
+      "options": ["a cloud", "a star", "a wave", "a stone"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "Las nubes se vuelven negras.",
+        "targetWord": "nubes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "valle",
+    "sentence": "Miren hacia el [[valle]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a valley",
+      "options": ["a valley", "a desert", "a beach", "an island"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "Miren hacia el valle.",
+        "targetWord": "valle",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cubrirse",
+    "sentence": "Javiera, Benjamín y Gloria [[se cubren]] bajo un árbol.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take cover",
+      "options": ["to take cover", "to fall asleep", "to run away", "to get lost"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "Javiera, Benjamín y Gloria se cubren bajo un árbol.",
+        "targetWord": "se cubren",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cielo",
+    "sentence": "Conozco bien este [[cielo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sky",
+      "options": ["the sky", "the ground", "the sea", "the wind"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "Conozco bien este cielo.",
+        "targetWord": "cielo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tormenta",
+    "sentence": "No salgas ahora: hay una _____ con lluvia y viento.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tormenta",
+      "options": ["tormenta", "fiesta", "sorpresa", "carrera"],
+      "translation": "Don't go out now: there is a _____ with rain and wind.",
+      "optionTranslations": ["storm", "party", "surprise", "race"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "No salgas ahora: hay una tormenta con lluvia y viento.",
+        "targetWord": "tormenta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "lluvia",
+    "sentence": "La _____ cae del cielo y moja las calles.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lluvia",
+      "options": ["lluvia", "arena", "fruta", "basura"],
+      "translation": "The _____ falls from the sky and wets the streets.",
+      "optionTranslations": ["rain", "sand", "fruit", "trash"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "La lluvia cae del cielo y moja las calles.",
+        "targetWord": "lluvia",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "relámpago",
+    "sentence": "Un _____ ilumina el cielo durante la tormenta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "relámpago",
+      "options": ["relámpago", "pájaro", "avión", "globo"],
+      "translation": "A _____ lights up the sky during the storm.",
+      "optionTranslations": ["lightning bolt", "bird", "plane", "balloon"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "Un relámpago ilumina el cielo durante la tormenta.",
+        "targetWord": "relámpago",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "limpio",
+    "sentence": "Lavo el plato con jabón y queda _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "limpio",
+      "options": ["limpio", "sucio", "roto", "lleno"],
+      "translation": "I wash the plate with soap and it ends up _____.",
+      "optionTranslations": ["clean", "dirty", "broken", "full"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "Lavo el plato con jabón y queda limpio.",
+        "targetWord": "limpio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "esperar",
+    "sentence": "El bus llega tarde; tenemos que _____ unos minutos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esperar",
+      "options": ["esperar", "correr", "pagar", "dormir"],
+      "translation": "The bus is late; we have to _____ a few minutes.",
+      "optionTranslations": ["to wait", "to run", "to pay", "to sleep"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "El bus llega tarde; tenemos que esperar unos minutos.",
+        "targetWord": "esperar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "de acuerdo,a lo lejos,pueblo,minuto",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "de acuerdo",
+          "answer": "in agreement",
+          "options": ["in agreement", "in the distance", "a town", "a minute"]
+        },
+        {
+          "word": "a lo lejos",
+          "answer": "in the distance",
+          "options": ["in agreement", "in the distance", "a town", "a minute"]
+        },
+        {
+          "word": "pueblo",
+          "answer": "a town",
+          "options": ["in agreement", "in the distance", "a town", "a minute"]
+        },
+        {
+          "word": "minuto",
+          "answer": "a minute",
+          "options": ["in agreement", "in the distance", "a town", "a minute"]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bajar",
+    "featured": false,
+    "sentence": "Poco a poco, la lluvia [[baja]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go down",
+      "options": ["to go down", "to speed up", "to return", "to begin"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "Poco a poco, la lluvia baja.",
+        "targetWord": "baja",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verdad",
+    "featured": false,
+    "sentence": "Es [[verdad]]. El cielo se está abriendo de a poco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the truth",
+      "options": ["the truth", "a secret", "a dream", "a joke"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "Es verdad. El cielo se está abriendo de a poco.",
+        "targetWord": "verdad",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camino",
+    "featured": false,
+    "sentence": "Siguen el [[camino]] entre charcos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a path",
+      "options": ["a path", "a wall", "a door", "a field"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "Siguen el camino entre charcos.",
+        "targetWord": "camino",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muerto de frío",
+    "featured": false,
+    "sentence": "Estaba [[muerta de frío]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "frozen stiff",
+      "options": ["frozen stiff", "wide awake", "very hungry", "out of breath"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "Estaba muerta de frío.",
+        "targetWord": "muerta de frío",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "valer la pena",
+    "featured": false,
+    "sentence": "Esperar un poco [[valió la pena]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be worth it",
+      "options": ["to be worth it", "to take too long", "to go wrong", "to cost nothing"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "Esperar un poco valió la pena.",
+        "targetWord": "valió la pena",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recordar",
+    "featured": false,
+    "sentence": "Voy a [[recordar]] esto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to remember",
+      "options": ["to remember", "to forget", "to repeat", "to hide"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "Voy a recordar esto.",
+        "targetWord": "recordar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brillar",
+    "featured": false,
+    "sentence": "El valle entero [[brilla]] como recién lavado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to shine",
+      "options": ["to shine", "to disappear", "to freeze", "to break"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "El valle entero brilla como recién lavado.",
+        "targetWord": "brilla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "mojado",
+    "featured": false,
+    "sentence": "Estoy mojada y muerta de frío.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "mojada",
+      "options": ["mojada", "enojada", "cansada", "callada"],
+      "optionTranslations": ["wet", "angry", "tired", "quiet"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "cuando-llega-la-tormenta",
+        "storySource": "user",
+        "sentence": "Estoy mojada y muerta de frío.",
+        "targetWord": "mojada",
+        "language": "spanish",
+        "voiceId": "6Gr4AVmTax1pMJO0lHRK"
+      }
+    }
+  }
+]

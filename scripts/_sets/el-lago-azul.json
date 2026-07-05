@@ -1,0 +1,385 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "llegar",
+    "sentence": "Valentina y su papá [[llegan]] a un lago.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to arrive",
+      "options": ["to arrive", "to leave", "to pay", "to sing"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "Valentina y su papá llegan a un lago.",
+        "targetWord": "llegan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agua",
+    "sentence": "El [[agua]] es como un espejo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "water",
+      "options": ["water", "milk", "fire", "sand"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "El agua es como un espejo.",
+        "targetWord": "agua",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "azul",
+    "sentence": "El mar y el cielo son de color _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "azul",
+      "options": ["azul", "rojo", "negro", "blanco"],
+      "translation": "The sea and the sky are the color _____.",
+      "optionTranslations": ["blue", "red", "black", "white"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "El mar y el cielo son de color azul.",
+        "targetWord": "azul",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "claro",
+    "sentence": "Llegan a un lago de agua azul, increíblemente [[clara]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clear",
+      "options": ["clear", "dark", "heavy", "dry"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "Llegan a un lago de agua azul, increíblemente clara.",
+        "targetWord": "clara",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "montaña",
+    "sentence": "El agua es como un espejo: refleja las [[montañas]] y el cielo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a mountain",
+      "options": ["a mountain", "a beach", "a city", "a store"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "El agua es como un espejo: refleja las montañas y el cielo.",
+        "targetWord": "montañas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se sienta",
+    "sentence": "Valentina [[se sienta]] en una roca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sits down",
+      "options": ["sits down", "stands up", "runs away", "falls asleep"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "Valentina se sienta en una roca.",
+        "targetWord": "se sienta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lugar",
+    "sentence": "¿Por qué este [[lugar]] es tan especial?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a place",
+      "options": ["a place", "a job", "a song", "a number"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "¿Por qué este lugar es tan especial?",
+        "targetWord": "lugar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "sentence": "Valentina se sienta en una roca y [[mira]] el agua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look at",
+      "options": ["to look at", "to hide", "to buy", "to clean"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "Valentina se sienta en una roca y mira el agua.",
+        "targetWord": "mira",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camino",
+    "sentence": "La aventura no es llegar; la aventura es el [[camino]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a path",
+      "options": ["a path", "a door", "a roof", "a garden"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "La aventura no es llegar; la aventura es el camino.",
+        "targetWord": "camino",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "corazón",
+    "sentence": "Cuando corro, mi _____ va muy rápido.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "corazón",
+      "options": ["corazón", "avión", "jamón", "limón"],
+      "translation": "When I run, my _____ goes very fast.",
+      "optionTranslations": ["heart", "airplane", "ham", "lemon"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "Cuando corro, mi corazón va muy rápido.",
+        "targetWord": "corazón",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "día",
+    "featured": false,
+    "sentence": "El último [[día]] en la Patagonia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a day",
+      "options": ["a day", "a night", "a month", "a year"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "El último día en la Patagonia.",
+        "targetWord": "día",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "último",
+    "featured": false,
+    "sentence": "Diciembre es el _____ mes del año.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "último",
+      "options": ["último", "primero", "pequeño", "verde"],
+      "translation": "December is the _____ month of the year.",
+      "optionTranslations": ["last", "first", "small", "green"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "Diciembre es el último mes del año.",
+        "targetWord": "último",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "lago",
+    "featured": false,
+    "sentence": "El _____ tiene agua tranquila y peces.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lago",
+      "options": ["lago", "carro", "sol", "pan"],
+      "translation": "The _____ has calm water and fish.",
+      "optionTranslations": ["lake", "car", "sun", "bread"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "El lago tiene agua tranquila y peces.",
+        "targetWord": "lago",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "roca",
+    "featured": false,
+    "sentence": "En la playa hay una _____ grande y dura.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "roca",
+      "options": ["roca", "cama", "sopa", "luna"],
+      "translation": "On the beach there is a big, hard _____.",
+      "optionTranslations": ["rock", "bed", "soup", "moon"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "En la playa hay una roca grande y dura.",
+        "targetWord": "roca",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "gente",
+    "featured": false,
+    "sentence": "En el concierto hay mucha _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gente",
+      "options": ["gente", "leche", "arena", "ropa"],
+      "translation": "At the concert there are a lot of _____.",
+      "optionTranslations": ["people", "milk", "sand", "clothes"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "En el concierto hay mucha gente.",
+        "targetWord": "gente",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cosa",
+    "featured": false,
+    "sentence": "Algunas [[cosas]] solo viven en la memoria.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a thing",
+      "options": ["a thing", "a person", "an animal", "a sound"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "Algunas cosas solo viven en la memoria.",
+        "targetWord": "cosas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "vivimos",
+    "featured": false,
+    "sentence": "Mi familia y yo _____ en una casa pequeña.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vivimos",
+      "options": ["vivimos", "abrimos", "subimos", "escribimos"],
+      "translation": "My family and I _____ in a small house.",
+      "optionTranslations": ["we live", "we open", "we go up", "we write"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "Mi familia y yo vivimos en una casa pequeña.",
+        "targetWord": "vivimos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aprender",
+    "featured": false,
+    "sentence": "Valentina [[aprende]] algo importante.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to learn",
+      "options": ["to learn", "to forget", "to sell", "to jump"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "Valentina aprende algo importante.",
+        "targetWord": "aprende",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ser",
+    "featured": false,
+    "sentence": "Aquí, solo [[somos]] tú, yo y la montaña.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be",
+      "options": ["to be", "to do", "to give", "to know"],
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "Aquí, solo somos tú, yo y la montaña.",
+        "targetWord": "somos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "aquí,tú,yo,algunas",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "aquí", "answer": "here", "options": ["here", "you", "I", "some"] },
+        { "word": "tú", "answer": "you", "options": ["here", "you", "I", "some"] },
+        { "word": "yo", "answer": "I", "options": ["here", "you", "I", "some"] },
+        { "word": "algunas", "answer": "some", "options": ["here", "you", "I", "some"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "nieve",
+    "featured": false,
+    "sentence": "Alrededor hay montañas con nieve.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "nieve",
+      "options": ["nieve", "nueve", "llueve", "mueve"],
+      "optionTranslations": ["snow", "nine", "it rains", "moves"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-lago-azul",
+        "storySource": "user",
+        "sentence": "Alrededor hay montañas con nieve.",
+        "targetWord": "nieve",
+        "language": "spanish",
+        "voiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
+  }
+]

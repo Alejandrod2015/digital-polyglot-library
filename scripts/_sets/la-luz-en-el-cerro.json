@@ -1,0 +1,309 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "viento",
+    "sentence": "¿Oyen el [[viento]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wind",
+      "options": ["wind", "fire", "snow", "smoke"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "¿Oyen el viento?",
+        "targetWord": "viento",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerro",
+    "sentence": "Cuentan que el [[cerro]] silba antes de la lluvia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a hill",
+      "options": ["a hill", "a lake", "a bridge", "a road"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "Cuentan que el cerro silba antes de la lluvia.",
+        "targetWord": "cerro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "silbido",
+    "sentence": "Es un [[silbido]] triste, como una voz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a whistle",
+      "options": ["a whistle", "a shout", "a song", "a knock"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "Es un silbido triste, como una voz.",
+        "targetWord": "silbido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "soplar",
+    "sentence": "[[Sopla]] mucho viento esta noche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to blow",
+      "options": ["to blow", "to fall", "to shine", "to burn"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "Sopla mucho viento esta noche.",
+        "targetWord": "Sopla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avisar",
+    "sentence": "El viento no [[avisa]] nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to warn",
+      "options": ["to warn", "to promise", "to answer", "to hide"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "El viento no avisa nada.",
+        "targetWord": "avisa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuento",
+    "sentence": "Después me dices si es solo un [[cuento]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tale",
+      "options": ["a tale", "a joke", "a game", "a gift"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "Después me dices si es solo un cuento.",
+        "targetWord": "cuento",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "asustar",
+    "sentence": "Eso es un cuento para [[asustar]] a los niños.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to scare",
+      "options": ["to scare", "to teach", "to feed", "to wake up"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "Eso es un cuento para asustar a los niños.",
+        "targetWord": "asustar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "miedo",
+    "sentence": "La película de terror me da mucho _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "miedo",
+      "options": ["miedo", "sueño", "calor", "trabajo"],
+      "translation": "The horror movie gives me a lot of _____.",
+      "optionTranslations": ["fear", "sleepiness", "heat", "work"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "La película de terror me da mucho miedo.",
+        "targetWord": "miedo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "oscuro",
+    "sentence": "Apaga la luz y el cuarto queda _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "oscuro",
+      "options": ["oscuro", "limpio", "caro", "seco"],
+      "translation": "Turn off the light and the room goes _____.",
+      "optionTranslations": ["dark", "clean", "expensive", "dry"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "Apaga la luz y el cuarto queda oscuro.",
+        "targetWord": "oscuro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "triste",
+    "sentence": "Ella llora porque está muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "triste",
+      "options": ["triste", "ocupada", "alta", "rubia"],
+      "translation": "She cries because she is very _____.",
+      "optionTranslations": ["sad", "busy", "tall", "blond"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "Ella llora porque está muy triste.",
+        "targetWord": "triste",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonido",
+    "featured": false,
+    "sentence": "De repente, un [[sonido]] largo baja del cerro oscuro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sound",
+      "options": ["a sound", "a light", "a smell", "a color"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "De repente, un sonido largo baja del cerro oscuro.",
+        "targetWord": "sonido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "razón",
+    "featured": false,
+    "sentence": "Si hay una [[razón]], la vamos a encontrar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a reason",
+      "options": ["a reason", "a question", "an answer", "a problem"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "Si hay una razón, la vamos a encontrar.",
+        "targetWord": "razón",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "featured": false,
+    "sentence": "Pero nadie ha subido a [[mirar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look",
+      "options": ["to look", "to help", "to run", "to write"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "Pero nadie ha subido a mirar.",
+        "targetWord": "mirar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "voz",
+    "featured": false,
+    "sentence": "Canta con una _____ muy bonita.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "voz",
+      "options": ["voz", "mesa", "casa", "flor"],
+      "translation": "She sings with a very beautiful _____.",
+      "optionTranslations": ["voice", "table", "house", "flower"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "Canta con una voz muy bonita.",
+        "targetWord": "voz",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "niños",
+    "featured": false,
+    "sentence": "Los _____ juegan en el parque con la pelota.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "niños",
+      "options": ["niños", "libros", "carros", "zapatos"],
+      "translation": "The _____ play in the park with the ball.",
+      "optionTranslations": ["children", "books", "cars", "shoes"],
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "Los niños juegan en el parque con la pelota.",
+        "targetWord": "niños",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "ventana,pueblo,lluvia,noche",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "ventana", "answer": "window", "options": ["window", "town", "rain", "night"] },
+        { "word": "pueblo", "answer": "town", "options": ["window", "town", "rain", "night"] },
+        { "word": "lluvia", "answer": "rain", "options": ["window", "town", "rain", "night"] },
+        { "word": "noche", "answer": "night", "options": ["window", "town", "rain", "night"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "subir",
+    "featured": false,
+    "sentence": "Mañana subimos con luz de día.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "subimos",
+      "options": ["subimos", "salimos", "vivimos", "pedimos"],
+      "optionTranslations": ["we go up", "we leave", "we live", "we ask for"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "la-luz-en-el-cerro",
+        "storySource": "user",
+        "sentence": "Mañana subimos con luz de día.",
+        "targetWord": "subimos",
+        "language": "spanish",
+        "voiceId": "m7yTemJqdIqrcNleANfX"
+      }
+    }
+  }
+]

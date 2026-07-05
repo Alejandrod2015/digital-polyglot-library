@@ -1,0 +1,455 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "lago",
+    "sentence": "El [[lago]] amanece azul y calmo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lake",
+      "options": [
+        "a lake",
+        "a river",
+        "a forest",
+        "a valley"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "El lago amanece azul y calmo.",
+        "targetWord": "lago",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "remar",
+    "sentence": "Los dos suben al kayak y empiezan a [[remar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to row",
+      "options": [
+        "to row",
+        "to swim",
+        "to fish",
+        "to jump"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "Los dos suben al kayak y empiezan a remar.",
+        "targetWord": "remar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "isla",
+    "sentence": "Tenemos que ir en kayak hasta la [[isla]] del medio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an island",
+      "options": [
+        "an island",
+        "a beach",
+        "a cave",
+        "a mountain"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "Tenemos que ir en kayak hasta la isla del medio.",
+        "targetWord": "isla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "orilla",
+    "sentence": "Yo los miro desde la [[orilla]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the shore",
+      "options": [
+        "the shore",
+        "the bridge",
+        "the balcony",
+        "the corner"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "Yo los miro desde la orilla.",
+        "targetWord": "orilla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avisar",
+    "sentence": "Alguien tiene que [[avisar]] si pasa algo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to let know",
+      "options": [
+        "to let know",
+        "to complain",
+        "to hide",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "Alguien tiene que avisar si pasa algo.",
+        "targetWord": "avisar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mojado",
+    "sentence": "Fue una sola vez y el muelle estaba [[mojado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wet",
+      "options": [
+        "wet",
+        "broken",
+        "dirty",
+        "old"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "Fue una sola vez y el muelle estaba mojado.",
+        "targetWord": "mojado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "canso",
+    "sentence": "Cuando subo muchas escaleras seguidas, me _____ muy rápido.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "canso",
+      "options": [
+        "canso",
+        "aburro",
+        "enojo",
+        "escondo"
+      ],
+      "translation": "When I climb many stairs in a row, I _____ very fast.",
+      "optionTranslations": [
+        "get tired",
+        "get bored",
+        "get angry",
+        "hide"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "Cuando subo muchas escaleras seguidas, me canso muy rápido.",
+        "targetWord": "canso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "muelle",
+    "sentence": "Los pescadores amarraron el bote al _____ para que no se fuera.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "muelle",
+      "options": [
+        "muelle",
+        "mercado",
+        "pueblo",
+        "jardín"
+      ],
+      "translation": "The fishermen tied the boat to the _____ so it wouldn't drift away.",
+      "optionTranslations": [
+        "dock",
+        "market",
+        "town",
+        "garden"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "Los pescadores amarraron el bote al muelle para que no se fuera.",
+        "targetWord": "muelle",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "enseño",
+    "sentence": "No sabes nadar, pero no te preocupes: yo te _____ este verano.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "enseño",
+      "options": [
+        "enseño",
+        "espero",
+        "escucho",
+        "sigo"
+      ],
+      "translation": "You can't swim, but don't worry: I'll _____ you this summer.",
+      "optionTranslations": [
+        "teach",
+        "wait for",
+        "listen to",
+        "follow"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "No sabes nadar, pero no te preocupes: yo te enseño este verano.",
+        "targetWord": "enseño",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "pan,fruta,viaje,chaleco",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "pan",
+          "answer": "bread",
+          "options": [
+            "bread",
+            "fruit",
+            "a trip",
+            "a vest"
+          ]
+        },
+        {
+          "word": "fruta",
+          "answer": "fruit",
+          "options": [
+            "bread",
+            "fruit",
+            "a trip",
+            "a vest"
+          ]
+        },
+        {
+          "word": "viaje",
+          "answer": "a trip",
+          "options": [
+            "bread",
+            "fruit",
+            "a trip",
+            "a vest"
+          ]
+        },
+        {
+          "word": "chaleco",
+          "answer": "a vest",
+          "options": [
+            "bread",
+            "fruit",
+            "a trip",
+            "a vest"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camino",
+    "featured": false,
+    "sentence": "Yo te enseño en el [[camino]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the way",
+      "options": [
+        "the way",
+        "the port",
+        "the school",
+        "the market"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "Yo te enseño en el camino.",
+        "targetWord": "camino",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caerse",
+    "featured": false,
+    "sentence": "Eso mismo decías el día que te [[caíste]] al agua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fall",
+      "options": [
+        "to fall",
+        "to jump",
+        "to swim",
+        "to shout"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "Eso mismo decías el día que te caíste al agua.",
+        "targetWord": "caíste",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cerca",
+    "featured": false,
+    "sentence": "La farmacia está muy _____: puedes ir caminando.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cerca",
+      "options": [
+        "cerca",
+        "lejos",
+        "arriba",
+        "afuera"
+      ],
+      "translation": "The pharmacy is very _____: you can walk there.",
+      "optionTranslations": [
+        "close by",
+        "far away",
+        "up high",
+        "outside"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "La farmacia está muy cerca: puedes ir caminando.",
+        "targetWord": "cerca",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agua",
+    "featured": false,
+    "sentence": "Te caíste al [[agua]] con zapatos y todo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "water",
+      "options": [
+        "water",
+        "mud",
+        "sand",
+        "grass"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "Te caíste al agua con zapatos y todo.",
+        "targetWord": "agua",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "zapatos",
+    "featured": false,
+    "sentence": "Estos _____ me quedan pequeños; me duelen los pies.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "zapatos",
+      "options": [
+        "zapatos",
+        "sombreros",
+        "guantes",
+        "cinturones"
+      ],
+      "translation": "These _____ are too small for me; my feet hurt.",
+      "optionTranslations": [
+        "shoes",
+        "hats",
+        "gloves",
+        "belts"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "Estos zapatos me quedan pequeños; me duelen los pies.",
+        "targetWord": "zapatos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alejarse",
+    "featured": false,
+    "sentence": "Gloria los mira [[alejarse]] despacio hacia el centro del lago.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to move away",
+      "options": [
+        "to move away",
+        "to come back",
+        "to slow down",
+        "to turn around"
+      ],
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "Gloria los mira alejarse despacio hacia el centro del lago.",
+        "targetWord": "alejarse",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "comida",
+    "featured": false,
+    "sentence": "Llevamos comida y pasamos el día allá.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "comida",
+      "options": [
+        "comida",
+        "salida",
+        "bebida",
+        "subida"
+      ],
+      "optionTranslations": [
+        "food",
+        "exit",
+        "drink",
+        "climb"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "la-isla-del-lago",
+        "storySource": "user",
+        "sentence": "Llevamos comida y pasamos el día allá.",
+        "targetWord": "comida",
+        "language": "spanish",
+        "voiceId": "6WgXEzo1HGn3i7ilT4Fh"
+      }
+    }
+  }
+]

@@ -1,0 +1,455 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "practicar",
+    "sentence": "Daniela y su amigo Andrés [[practican]] los pasos en el patio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to practice",
+      "options": [
+        "to practice",
+        "to teach",
+        "to watch",
+        "to invent"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "Daniela y su amigo Andrés practican los pasos en el patio.",
+        "targetWord": "practican",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "repetir",
+    "sentence": "El teléfono [[repite]] el video de la cumbia una y otra vez.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to repeat",
+      "options": [
+        "to repeat",
+        "to pause",
+        "to erase",
+        "to download"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "El teléfono repite el video de la cumbia una y otra vez.",
+        "targetWord": "repite",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marchar",
+    "sentence": "Pareces un soldado [[marchando]] para la guerra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to march",
+      "options": [
+        "to march",
+        "to crawl",
+        "to swim",
+        "to jump"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "Pareces un soldado marchando para la guerra.",
+        "targetWord": "marchando",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perder",
+    "sentence": "Uno, dos, y ya me [[pierdo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get lost",
+      "options": [
+        "to get lost",
+        "to speed up",
+        "to give up",
+        "to start over"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "Uno, dos, y ya me pierdo.",
+        "targetWord": "pierdo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gris",
+    "sentence": "De repente el cielo se pone [[gris]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gray",
+      "options": [
+        "gray",
+        "blue",
+        "green",
+        "brown"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "De repente el cielo se pone gris.",
+        "targetWord": "gris",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "golpe",
+    "sentence": "Cerró la puerta con un _____ muy fuerte.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "golpe",
+      "options": [
+        "golpe",
+        "grito",
+        "canto",
+        "silbido"
+      ],
+      "translation": "He closed the door with a very loud _____.",
+      "optionTranslations": [
+        "bang (hit)",
+        "shout",
+        "song",
+        "whistle"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "Cerró la puerta con un golpe muy fuerte.",
+        "targetWord": "golpe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "prisa",
+    "sentence": "Camina tranquilo; no tenemos ninguna _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "prisa",
+      "options": [
+        "prisa",
+        "sed",
+        "duda",
+        "queja"
+      ],
+      "translation": "Walk calmly; we are in no _____.",
+      "optionTranslations": [
+        "hurry",
+        "thirst",
+        "doubt",
+        "complaint"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "Camina tranquilo; no tenemos ninguna prisa.",
+        "targetWord": "prisa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "suave",
+    "sentence": "Duermo bien porque mi almohada es _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "suave",
+      "options": [
+        "suave",
+        "dura",
+        "sucia",
+        "fea"
+      ],
+      "translation": "I sleep well because my pillow is _____.",
+      "optionTranslations": [
+        "soft",
+        "hard",
+        "dirty",
+        "ugly"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "Duermo bien porque mi almohada es suave.",
+        "targetWord": "suave",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "manos",
+    "sentence": "Toco la guitarra con las dos _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "manos",
+      "options": [
+        "manos",
+        "piernas",
+        "orejas",
+        "rodillas"
+      ],
+      "translation": "I play the guitar with both _____.",
+      "optionTranslations": [
+        "hands",
+        "legs",
+        "ears",
+        "knees"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "Toco la guitarra con las dos manos.",
+        "targetWord": "manos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "hombros",
+    "sentence": "Llevo la mochila pesada sobre los _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hombros",
+      "options": [
+        "hombros",
+        "tobillos",
+        "codos",
+        "dedos"
+      ],
+      "translation": "I carry the heavy backpack on my _____.",
+      "optionTranslations": [
+        "shoulders",
+        "ankles",
+        "elbows",
+        "fingers"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "Llevo la mochila pesada sobre los hombros.",
+        "targetWord": "hombros",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brazo",
+    "featured": false,
+    "sentence": "Suelta los [[brazos]], que los tienes tiesos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an arm",
+      "options": [
+        "an arm",
+        "a leg",
+        "a knee",
+        "a wrist"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "Suelta los brazos, que los tienes tiesos.",
+        "targetWord": "brazos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "soltar",
+    "featured": false,
+    "sentence": "Le mueve los hombros con las manos para [[soltarlo]] un poco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to loosen up",
+      "options": [
+        "to loosen up",
+        "to warm up",
+        "to slow down",
+        "to cheer up"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "Le mueve los hombros con las manos para soltarlo un poco.",
+        "targetWord": "soltarlo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tropezar",
+    "featured": false,
+    "sentence": "Me salió esa vuelta sin [[tropezar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to trip",
+      "options": [
+        "to trip",
+        "to stop",
+        "to laugh",
+        "to breathe"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "Me salió esa vuelta sin tropezar.",
+        "targetWord": "tropezar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gota",
+    "featured": false,
+    "sentence": "Empiezan a caer [[gotas]] gordas sobre el patio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a drop (of rain)",
+      "options": [
+        "a drop (of rain)",
+        "a leaf",
+        "a stone",
+        "a flower"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "Empiezan a caer gotas gordas sobre el patio.",
+        "targetWord": "gotas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llover",
+    "featured": false,
+    "sentence": "Está empezando a [[llover]] bien fuerte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to rain",
+      "options": [
+        "to rain",
+        "to snow",
+        "to freeze",
+        "to blow (wind)"
+      ],
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "Está empezando a llover bien fuerte.",
+        "targetWord": "llover",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "tambor,soldado,falda,guerra",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "tambor",
+          "answer": "a drum",
+          "options": [
+            "a drum",
+            "a soldier",
+            "a skirt",
+            "war"
+          ]
+        },
+        {
+          "word": "soldado",
+          "answer": "a soldier",
+          "options": [
+            "a drum",
+            "a soldier",
+            "a skirt",
+            "war"
+          ]
+        },
+        {
+          "word": "falda",
+          "answer": "a skirt",
+          "options": [
+            "a drum",
+            "a soldier",
+            "a skirt",
+            "war"
+          ]
+        },
+        {
+          "word": "guerra",
+          "answer": "war",
+          "options": [
+            "a drum",
+            "a soldier",
+            "a skirt",
+            "war"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cuerpo",
+    "featured": false,
+    "sentence": "No todos nacimos con ritmo en el cuerpo.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "cuerpo",
+      "options": [
+        "cuerpo",
+        "cuento",
+        "cuerno",
+        "puerto"
+      ],
+      "optionTranslations": [
+        "body",
+        "tale",
+        "horn",
+        "port"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "aprender-la-cumbia",
+        "storySource": "user",
+        "sentence": "No todos nacimos con ritmo en el cuerpo.",
+        "targetWord": "cuerpo",
+        "language": "spanish",
+        "voiceId": "beQfcCW5PgdTQs4cETaz"
+      }
+    }
+  }
+]

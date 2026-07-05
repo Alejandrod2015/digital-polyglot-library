@@ -1,0 +1,327 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "despacio,casa,vaso,tarde",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "despacio", "answer": "slowly", "options": ["slowly", "house", "glass", "afternoon"] },
+        { "word": "casa", "answer": "house", "options": ["slowly", "house", "glass", "afternoon"] },
+        { "word": "vaso", "answer": "glass", "options": ["slowly", "house", "glass", "afternoon"] },
+        { "word": "tarde", "answer": "afternoon", "options": ["slowly", "house", "glass", "afternoon"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonar",
+    "sentence": "La música [[suena]] y el patio se llena de vecinos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sound, to play",
+      "options": ["to sound, to play", "to end", "to fall", "to grow"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "La música suena y el patio se llena de vecinos.",
+        "targetWord": "suena",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vestido",
+    "sentence": "Doña Rosa entra con su [[vestido]] blanco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a dress",
+      "options": ["a dress", "a hat", "a coat", "a ring"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "Doña Rosa entra con su vestido blanco.",
+        "targetWord": "vestido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aplaudir",
+    "sentence": "Todos [[aplauden]] y empiezan a cantar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to clap",
+      "options": ["to clap", "to shout", "to dance", "to whistle"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "Todos aplauden y empiezan a cantar.",
+        "targetWord": "aplauden",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vecino",
+    "sentence": "El patio se llena de [[vecinos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a neighbor",
+      "options": ["a neighbor", "a tourist", "a waiter", "a singer"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "El patio se llena de vecinos.",
+        "targetWord": "vecinos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "abraza",
+    "sentence": "La mamá _____ a su hijo con mucho amor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "abraza",
+      "options": ["abraza", "vende", "olvida", "empuja"],
+      "translation": "The mom _____ her son with a lot of love.",
+      "optionTranslations": ["hugs", "sells", "forgets", "pushes"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "La mamá abraza a su hijo con mucho amor.",
+        "targetWord": "abraza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mucho gusto",
+    "sentence": "[[Mucho gusto]], señora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nice to meet you",
+      "options": ["nice to meet you", "see you later", "excuse me", "you're welcome"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "Mucho gusto, señora.",
+        "targetWord": "Mucho gusto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abierto",
+    "sentence": "Esta casa siempre tiene la puerta [[abierta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "open",
+      "options": ["open", "clean", "dark", "narrow"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "Esta casa siempre tiene la puerta abierta.",
+        "targetWord": "abierta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "levanta",
+    "sentence": "Ella _____ la mano para hacer una pregunta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "levanta",
+      "options": ["levanta", "cierra", "esconde", "rompe"],
+      "translation": "She _____ her hand to ask a question.",
+      "optionTranslations": ["raises", "closes", "hides", "breaks"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "Ella levanta la mano para hacer una pregunta.",
+        "targetWord": "levanta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "que viva",
+    "sentence": "¡[[Que viva]] doña Rosa!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "long live",
+      "options": ["long live", "good luck", "happy birthday", "welcome back"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "¡Que viva doña Rosa!",
+        "targetWord": "Que viva",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vida",
+    "featured": false,
+    "sentence": "Cómo pasa la [[vida]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "life",
+      "options": ["life", "luck", "music", "truth"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "Cómo pasa la vida.",
+        "targetWord": "vida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cantar",
+    "featured": false,
+    "sentence": "En el karaoke me gusta _____ mis canciones favoritas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cantar",
+      "options": ["cantar", "comer", "dormir", "correr"],
+      "translation": "At karaoke I like to _____ my favorite songs.",
+      "optionTranslations": ["to sing", "to eat", "to sleep", "to run"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "En el karaoke me gusta cantar mis canciones favoritas.",
+        "targetWord": "cantar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parte",
+    "featured": false,
+    "sentence": "Daniela canta su [[parte]] de la canción.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a part",
+      "options": ["a part", "a copy", "a page", "a prize"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "Daniela canta su parte de la canción.",
+        "targetWord": "parte",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "blanco",
+    "featured": false,
+    "sentence": "El azúcar es _____; el café es negro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "blanco",
+      "options": ["blanco", "rojo", "verde", "azul"],
+      "translation": "Sugar is _____; coffee is black.",
+      "optionTranslations": ["white", "red", "green", "blue"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "El azúcar es blanco; el café es negro.",
+        "targetWord": "blanco",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bonito",
+    "featured": false,
+    "sentence": "Lo más [[bonito]] de la vida son los buenos vecinos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pretty, lovely",
+      "options": ["pretty, lovely", "expensive", "difficult", "funny"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "Lo más bonito de la vida son los buenos vecinos.",
+        "targetWord": "bonito",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "señora",
+    "featured": false,
+    "sentence": "Buenos días, _____ López. ¿Cómo está usted?",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "señora",
+      "options": ["señora", "hermana", "abuela", "amiga"],
+      "translation": "Good morning, _____ López. How are you?",
+      "optionTranslations": ["madam (Mrs.)", "sister", "grandmother", "friend"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "Buenos días, señora López. ¿Cómo está usted?",
+        "targetWord": "señora",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sentir",
+    "featured": false,
+    "sentence": "Daniela [[siente]] el patio entero a su lado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to feel",
+      "options": ["to feel", "to lose", "to move", "to open"],
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "Daniela siente el patio entero a su lado.",
+        "targetWord": "siente",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "abuela",
+    "featured": false,
+    "sentence": "Usted fue como una abuela para mí.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "abuela",
+      "options": ["abuela", "escuela", "muela", "ciruela"],
+      "optionTranslations": ["grandmother", "school", "molar (tooth)", "plum"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "por-fin-empieza-la-fiesta",
+        "storySource": "user",
+        "sentence": "Usted fue como una abuela para mí.",
+        "targetWord": "abuela",
+        "language": "spanish",
+        "voiceId": "beQfcCW5PgdTQs4cETaz"
+      }
+    }
+  }
+]

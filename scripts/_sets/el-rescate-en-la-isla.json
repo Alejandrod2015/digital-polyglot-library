@@ -1,0 +1,455 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "agitar",
+    "sentence": "Javiera y Benjamín [[agitan]] dos chaquetas de colores desde la playa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wave",
+      "options": [
+        "to wave",
+        "to fold",
+        "to wash",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "Javiera y Benjamín agitan dos chaquetas de colores desde la playa.",
+        "targetWord": "agitan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "separarse",
+    "sentence": "Un bote pequeño se [[separa]] de la orilla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pull away",
+      "options": [
+        "to pull away",
+        "to sink",
+        "to slow down",
+        "to turn around"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "Un bote pequeño se separa de la orilla.",
+        "targetWord": "separa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "divertirse",
+    "sentence": "Pero igual me [[divertí]] como hace años no me divertía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to have fun",
+      "options": [
+        "to have fun",
+        "to get lost",
+        "to wake up",
+        "to calm down"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "Pero igual me divertí como hace años no me divertía.",
+        "targetWord": "divertí",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "volver",
+    "sentence": "Los tres [[vuelven]] juntos sobre el agua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come back",
+      "options": [
+        "to come back",
+        "to swim",
+        "to fall",
+        "to sing"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "Los tres vuelven juntos sobre el agua.",
+        "targetWord": "vuelven",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "venir",
+    "sentence": "[[Viene]] un bote hacia acá.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come",
+      "options": [
+        "to come",
+        "to leave",
+        "to sink",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "Viene un bote hacia acá.",
+        "targetWord": "Viene",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "serio",
+    "sentence": "Gloria los mira con cara [[seria]] y después se ríe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "serious",
+      "options": [
+        "serious",
+        "happy",
+        "sleepy",
+        "angry"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "Gloria los mira con cara seria y después se ríe.",
+        "targetWord": "seria",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "lejos",
+    "sentence": "La escuela queda _____; vamos en bus, no a pie.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lejos",
+      "options": [
+        "lejos",
+        "cerca",
+        "temprano",
+        "despacio"
+      ],
+      "translation": "The school is _____; we go by bus, not on foot.",
+      "optionTranslations": [
+        "far away",
+        "nearby",
+        "early",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "La escuela queda lejos; vamos en bus, no a pie.",
+        "targetWord": "lejos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "culpa",
+    "sentence": "Rompiste el vaso tú; no fue _____ mía.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "culpa",
+      "options": [
+        "culpa",
+        "idea",
+        "tarea",
+        "fiesta"
+      ],
+      "translation": "You broke the glass; it wasn't my _____.",
+      "optionTranslations": [
+        "fault",
+        "idea",
+        "homework",
+        "party"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "Rompiste el vaso tú; no fue culpa mía.",
+        "targetWord": "culpa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "atrapados",
+    "sentence": "La puerta se cerró y quedamos _____ en el ascensor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "atrapados",
+      "options": [
+        "atrapados",
+        "dormidos",
+        "sentados",
+        "contentos"
+      ],
+      "translation": "The door closed and we were left _____ in the elevator.",
+      "optionTranslations": [
+        "trapped",
+        "asleep",
+        "seated",
+        "happy"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "La puerta se cerró y quedamos atrapados en el ascensor.",
+        "targetWord": "atrapados",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "avanzar",
+    "sentence": "Hay mucho tráfico y los carros no pueden _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "avanzar",
+      "options": [
+        "avanzar",
+        "parar",
+        "volar",
+        "girar"
+      ],
+      "translation": "There is a lot of traffic and the cars can't _____.",
+      "optionTranslations": [
+        "to move forward",
+        "to stop",
+        "to fly",
+        "to turn"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "Hay mucho tráfico y los carros no pueden avanzar.",
+        "targetWord": "avanzar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seguido",
+    "featured": false,
+    "sentence": "Creo que voy a venir mucho más [[seguido]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "often",
+      "options": [
+        "often",
+        "early",
+        "alone",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "Creo que voy a venir mucho más seguido.",
+        "targetWord": "seguido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encantar",
+    "featured": false,
+    "sentence": "Eso me [[encanta]] escucharlo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to love (it)",
+      "options": [
+        "to love (it)",
+        "to doubt (it)",
+        "to fear (it)",
+        "to forget (it)"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "Eso me encanta escucharlo.",
+        "targetWord": "encanta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "color",
+    "featured": false,
+    "sentence": "Los primos agitan dos chaquetas de [[colores]] desde la playa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a color",
+      "options": [
+        "a color",
+        "a size",
+        "a shape",
+        "a sound"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "Los primos agitan dos chaquetas de colores desde la playa.",
+        "targetWord": "colores",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perdido",
+    "featured": false,
+    "sentence": "El del kayak [[perdido]] fuiste tú.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lost",
+      "options": [
+        "lost",
+        "broken",
+        "new",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "El del kayak perdido fuiste tú.",
+        "targetWord": "perdido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "juntos",
+    "featured": false,
+    "sentence": "No quiero ir solo; vamos _____ al cine.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "juntos",
+      "options": [
+        "juntos",
+        "despacio",
+        "temprano",
+        "adentro"
+      ],
+      "translation": "I don't want to go alone; let's go to the movies _____.",
+      "optionTranslations": [
+        "together",
+        "slowly",
+        "early",
+        "inside"
+      ],
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "No quiero ir solo; vamos juntos al cine.",
+        "targetWord": "juntos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "chaqueta,nube,vecino,historia",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "chaqueta",
+          "answer": "a jacket",
+          "options": [
+            "a jacket",
+            "a cloud",
+            "a neighbor",
+            "a story"
+          ]
+        },
+        {
+          "word": "nube",
+          "answer": "a cloud",
+          "options": [
+            "a jacket",
+            "a cloud",
+            "a neighbor",
+            "a story"
+          ]
+        },
+        {
+          "word": "vecino",
+          "answer": "a neighbor",
+          "options": [
+            "a jacket",
+            "a cloud",
+            "a neighbor",
+            "a story"
+          ]
+        },
+        {
+          "word": "historia",
+          "answer": "a story",
+          "options": [
+            "a jacket",
+            "a cloud",
+            "a neighbor",
+            "a story"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "rescatar",
+    "featured": false,
+    "sentence": "El kayak lo rescatamos después.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "rescatamos",
+      "options": [
+        "rescatamos",
+        "regalamos",
+        "pescamos",
+        "amarramos"
+      ],
+      "optionTranslations": [
+        "we rescue",
+        "we give away",
+        "we fish",
+        "we tie up"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-rescate-en-la-isla",
+        "storySource": "user",
+        "sentence": "El kayak lo rescatamos después.",
+        "targetWord": "rescatamos",
+        "language": "spanish",
+        "voiceId": "prblQcKOdF08ozhxP2mk"
+      }
+    }
+  }
+]

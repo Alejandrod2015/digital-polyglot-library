@@ -1,0 +1,455 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "vergüenza",
+    "sentence": "Qué [[vergüenza]], llegué muy tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "embarrassment",
+      "options": [
+        "embarrassment",
+        "anger",
+        "boredom",
+        "surprise"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "Qué vergüenza, llegué muy tarde.",
+        "targetWord": "vergüenza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jefa",
+    "sentence": "Soy Carmen Ríos, la [[jefa]] del área.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a female boss",
+      "options": [
+        "a female boss",
+        "a receptionist",
+        "a client",
+        "a teacher"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "Soy Carmen Ríos, la jefa del área.",
+        "targetWord": "jefa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "devolver",
+    "sentence": "Carmen le [[devuelve]] la carpeta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to give back",
+      "options": [
+        "to give back",
+        "to throw away",
+        "to sign",
+        "to open"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "Carmen le devuelve la carpeta.",
+        "targetWord": "devuelve",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alivio",
+    "sentence": "Después se ríe, entre nervios y [[alivio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "relief",
+      "options": [
+        "relief",
+        "pride",
+        "doubt",
+        "envy"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "Después se ríe, entre nervios y alivio.",
+        "targetWord": "alivio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ofrecer",
+    "sentence": "Le [[ofrece]] un café para empezar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to offer",
+      "options": [
+        "to offer",
+        "to refuse",
+        "to demand",
+        "to forget"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "Le ofrece un café para empezar.",
+        "targetWord": "ofrece",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vereda",
+    "sentence": "Diego y Beto la esperan en la [[vereda]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sidewalk",
+      "options": [
+        "a sidewalk",
+        "a bus stop",
+        "an office",
+        "a parking lot"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "Diego y Beto la esperan en la vereda.",
+        "targetWord": "vereda",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "callada",
+    "sentence": "Le hice una pregunta difícil y se quedó _____, sin responder.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "callada",
+      "options": [
+        "callada",
+        "contenta",
+        "ocupada",
+        "cansada"
+      ],
+      "translation": "I asked her a hard question and she stayed _____, without answering.",
+      "optionTranslations": [
+        "silent",
+        "happy",
+        "busy",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "Le hice una pregunta difícil y se quedó callada, sin responder.",
+        "targetWord": "callada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "nervios",
+    "sentence": "Antes del examen final siento muchos _____ en el estómago.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "nervios",
+      "options": [
+        "nervios",
+        "sueños",
+        "recuerdos",
+        "planes"
+      ],
+      "translation": "Before the final exam I feel a lot of _____ in my stomach.",
+      "optionTranslations": [
+        "nerves",
+        "dreams",
+        "memories",
+        "plans"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "Antes del examen final siento muchos nervios en el estómago.",
+        "targetWord": "nervios",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tarde",
+    "sentence": "La película empezó sin nosotros porque llegamos _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tarde",
+      "options": [
+        "tarde",
+        "temprano",
+        "juntos",
+        "lejos"
+      ],
+      "translation": "The movie started without us because we arrived _____.",
+      "optionTranslations": [
+        "late",
+        "early",
+        "together",
+        "far"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "La película empezó sin nosotros porque llegamos tarde.",
+        "targetWord": "tarde",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "papel,empresa,carta,bienvenida",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "papel",
+          "answer": "a document",
+          "options": [
+            "a document",
+            "a company",
+            "a letter",
+            "welcome"
+          ]
+        },
+        {
+          "word": "empresa",
+          "answer": "a company",
+          "options": [
+            "a document",
+            "a company",
+            "a letter",
+            "welcome"
+          ]
+        },
+        {
+          "word": "carta",
+          "answer": "a letter",
+          "options": [
+            "a document",
+            "a company",
+            "a letter",
+            "welcome"
+          ]
+        },
+        {
+          "word": "bienvenida",
+          "answer": "welcome",
+          "options": [
+            "a document",
+            "a company",
+            "a letter",
+            "welcome"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mesa",
+    "featured": false,
+    "sentence": "Sobre la [[mesa]] está su carpeta azul.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a table",
+      "options": [
+        "a table",
+        "a chair",
+        "a shelf",
+        "a door"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "Sobre la mesa está su carpeta azul.",
+        "targetWord": "mesa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camino",
+    "featured": false,
+    "sentence": "Aquí nunca estás sola en el [[camino]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the road",
+      "options": [
+        "the road",
+        "the beach",
+        "the night",
+        "the market"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "Aquí nunca estás sola en el camino.",
+        "targetWord": "camino",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "peor",
+    "featured": false,
+    "sentence": "La jefa ya conoce mi [[peor]] día.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "worst",
+      "options": [
+        "worst",
+        "longest",
+        "first",
+        "busiest"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "La jefa ya conoce mi peor día.",
+        "targetWord": "peor",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encontrar",
+    "featured": false,
+    "sentence": "La [[encontré]] en la combi esta mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to find",
+      "options": [
+        "to find",
+        "to forget",
+        "to buy",
+        "to steal"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "La encontré en la combi esta mañana.",
+        "targetWord": "encontré",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sola",
+    "featured": false,
+    "sentence": "No necesito ayuda; puedo hacerlo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sola",
+      "options": [
+        "sola",
+        "cansada",
+        "dormida",
+        "descalza"
+      ],
+      "translation": "I don't need help; I can do it _____.",
+      "optionTranslations": [
+        "alone",
+        "tired",
+        "asleep",
+        "barefoot"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "No necesito ayuda; puedo hacerlo sola.",
+        "targetWord": "sola",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "creo",
+    "featured": false,
+    "sentence": "Es una historia rara, pero te _____ porque nunca mientes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "creo",
+      "options": [
+        "creo",
+        "espero",
+        "llamo",
+        "olvido"
+      ],
+      "translation": "It's a strange story, but I _____ you because you never lie.",
+      "optionTranslations": [
+        "believe",
+        "wait for",
+        "call",
+        "forget"
+      ],
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "Es una historia rara, pero te creo porque nunca mientes.",
+        "targetWord": "creo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "semana",
+    "featured": false,
+    "sentence": "Cualquiera se pierde la primera semana en Lima.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "semana",
+      "options": [
+        "semana",
+        "mañana",
+        "ventana",
+        "manzana"
+      ],
+      "optionTranslations": [
+        "week",
+        "morning",
+        "window",
+        "apple"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "vuelve-la-carpeta",
+        "storySource": "user",
+        "sentence": "Cualquiera se pierde la primera semana en Lima.",
+        "targetWord": "semana",
+        "language": "spanish",
+        "voiceId": "dyTONAae6PhdRb3hMKPM"
+      }
+    }
+  }
+]

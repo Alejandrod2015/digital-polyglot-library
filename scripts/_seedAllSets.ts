@@ -10,8 +10,8 @@ function genId(p: string, i: number): string {
 }
 (async () => {
   const apply = process.argv.includes("--apply");
-  const mole = await prisma.journeyStory.findFirst({ where: { slug: "la-promesa-del-mole" }, select: { journeyId: true } });
-  const j = mole!.journeyId;
+  // Journey-agnostic: stories are resolved by slug alone (slugs are unique
+  // across the catalog); the A2-anchored journeyId filter blocked A0/A1 seeds.
   const only = process.argv.find(a => a.startsWith("--only="))?.split("=")[1];
   const force = process.argv.includes("--force");
   // Vocab per story (for full-coverage enforcement) from the authoring snapshot.
@@ -20,6 +20,17 @@ function genId(p: string, i: number): string {
   const vocabBySlug = new Map<string, string[]>(
     authoring.map((s: any) => [s.slug, (s.vocab ?? []).map((v: any) => v.word).filter(Boolean)])
   );
+  // Coverage fallback for non-A2 journeys: _authoring.json only covers A2;
+  // pull vocab from the story row so the seed gate enforces coverage everywhere.
+  {
+    const slugsToSeed = fs.readdirSync("scripts/_sets").filter((f) => f.endsWith(".json")).map((f) => f.replace(".json", ""))
+      .filter((s) => !only || s === only).filter((s) => !vocabBySlug.has(s));
+    if (slugsToSeed.length) {
+      const rows = await prisma.journeyStory.findMany({ where: { slug: { in: slugsToSeed } }, select: { slug: true, vocab: true } });
+      for (const r of rows) vocabBySlug.set(r.slug!, ((r.vocab as any[]) ?? []).map((v: any) => v.word).filter(Boolean));
+    }
+  }
+
   const files = fs.readdirSync("scripts/_sets")
     .filter(f => f.endsWith(".json"))
     .filter(f => !only || f === `${only}.json`)
@@ -36,7 +47,7 @@ function genId(p: string, i: number): string {
       continue;
     }
     if (issues.length && force) console.log(`! ${slug}: ${issues.length} validator issue(s) overridden by --force`);
-    const story = await prisma.journeyStory.findFirst({ where: { journeyId: j, slug, status: "published" }, select: { id: true } });
+    const story = await prisma.journeyStory.findFirst({ where: { slug, status: "published" }, select: { id: true } });
     if (!story) { console.log(`✗ ${slug}: story not found`); continue; }
     if (!apply) { console.log(`[dry] ${slug}: ${exs.length} ex`); ok++; continue; }
     const setIds = await prisma.$queryRawUnsafe<{ id: string }[]>(`SELECT id FROM dp_story_practice_sets_v1 WHERE "storyId" = $1`, story.id);

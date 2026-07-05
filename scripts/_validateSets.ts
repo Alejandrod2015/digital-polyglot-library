@@ -9,6 +9,9 @@
  * Run standalone:  npx tsx scripts/_validateSets.ts [--only=<slug>]
  * Exit code != 0 when any file has issues (CI/pre-seed friendly).
  */
+import { config } from "dotenv";
+config({ path: ".env.local", quiet: true });
+config({ path: ".env", quiet: true });
 import * as fs from "fs";
 
 const DIR = "scripts/_sets";
@@ -130,6 +133,7 @@ export function validateSet(exs: any[], vocabWords?: string[]): string[] {
 
 // ---- CLI runner ----
 if (require.main === module) {
+(async () => {
   const only = process.argv.find((a) => a.startsWith("--only="))?.split("=")[1];
   const authoring: any[] = fs.existsSync(AUTHORING) ? JSON.parse(fs.readFileSync(AUTHORING, "utf8")) : [];
   const vocabBySlug = new Map<string, string[]>(
@@ -140,6 +144,20 @@ if (require.main === module) {
     .filter((f) => f.endsWith(".json"))
     .filter((f) => !only || f === `${only}.json`)
     .sort();
+  // Coverage vocab fallback: _authoring.json only holds the A2 journey; for
+  // any other slug (A0/A1) pull the vocab list from the story row so the
+  // full-coverage lock applies to every journey, not just A2.
+  {
+    const missing = files.map((f) => f.replace(".json", "")).filter((slug) => !vocabBySlug.has(slug));
+    if (missing.length) {
+      const { PrismaClient } = await import("../src/generated/prisma");
+      const prisma = new PrismaClient();
+      try {
+        const rows = await prisma.journeyStory.findMany({ where: { slug: { in: missing } }, select: { slug: true, vocab: true } });
+        for (const r of rows) vocabBySlug.set(r.slug!, ((r.vocab as any[]) ?? []).map((v: any) => v.word).filter(Boolean));
+      } finally { await prisma.$disconnect(); }
+    }
+  }
   let totalIssues = 0;
   for (const f of files) {
     const slug = f.replace(".json", "");
@@ -152,4 +170,5 @@ if (require.main === module) {
   }
   console.log(`\n${files.length} files, ${totalIssues} issues`);
   process.exit(totalIssues ? 1 : 0);
+})();
 }

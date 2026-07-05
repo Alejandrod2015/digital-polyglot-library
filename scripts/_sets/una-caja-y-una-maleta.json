@@ -1,0 +1,455 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "maleta",
+    "sentence": "Camila guarda su ropa en una [[maleta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a suitcase",
+      "options": [
+        "a suitcase",
+        "a closet",
+        "a drawer",
+        "a basket"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "Camila guarda su ropa en una maleta.",
+        "targetWord": "maleta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "volverse",
+    "sentence": "Ya casi decidió [[volverse]] a su pueblo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go back",
+      "options": [
+        "to go back",
+        "to stay",
+        "to travel",
+        "to study"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "Ya casi decidió volverse a su pueblo.",
+        "targetWord": "volverse",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guardar",
+    "sentence": "Camila [[guarda]] su ropa en una maleta, sobre la cama.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to put away",
+      "options": [
+        "to put away",
+        "to wash",
+        "to iron",
+        "to throw away"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "Camila guarda su ropa en una maleta, sobre la cama.",
+        "targetWord": "guarda",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "empacar",
+    "sentence": "Justo estoy [[empacando]], así que llega a tiempo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pack",
+      "options": [
+        "to pack",
+        "to clean",
+        "to cook",
+        "to paint"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "Justo estoy empacando, así que llega a tiempo.",
+        "targetWord": "empacando",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ganas",
+    "sentence": "Lo compré con muchas [[ganas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "enthusiasm",
+      "options": [
+        "enthusiasm",
+        "patience",
+        "sadness",
+        "fear"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "Lo compré con muchas ganas.",
+        "targetWord": "ganas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "común",
+    "sentence": "Íbamos a tener algo en [[común]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shared",
+      "options": [
+        "shared",
+        "secret",
+        "famous",
+        "modern"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "Íbamos a tener algo en común.",
+        "targetWord": "común",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "lío",
+    "sentence": "Anoté mal las fechas y ahora tengo un _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lío",
+      "options": [
+        "lío",
+        "regalo",
+        "premio",
+        "paseo"
+      ],
+      "translation": "I wrote down the wrong dates and now I have a _____.",
+      "optionTranslations": [
+        "mess",
+        "gift",
+        "prize",
+        "outing"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "Anoté mal las fechas y ahora tengo un lío.",
+        "targetWord": "lío",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mudarse",
+    "sentence": "Encontró un apartamento más grande y decidió _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mudarse",
+      "options": [
+        "mudarse",
+        "quedarse",
+        "esconderse",
+        "perderse"
+      ],
+      "translation": "She found a bigger apartment and decided _____.",
+      "optionTranslations": [
+        "to move",
+        "to stay",
+        "to hide",
+        "to get lost"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "Encontró un apartamento más grande y decidió mudarse.",
+        "targetWord": "mudarse",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "enorme",
+    "sentence": "La ballena es _____; no cabe en ningún acuario.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "enorme",
+      "options": [
+        "enorme",
+        "lenta",
+        "vieja",
+        "oscura"
+      ],
+      "translation": "The whale is _____; it doesn't fit in any aquarium.",
+      "optionTranslations": [
+        "huge",
+        "slow",
+        "old",
+        "dark"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "La ballena es enorme; no cabe en ningún acuario.",
+        "targetWord": "enorme",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "ukelele,caja,vecino,pueblo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "ukelele",
+          "answer": "a ukulele",
+          "options": [
+            "a ukulele",
+            "a box",
+            "a neighbor",
+            "a small town"
+          ]
+        },
+        {
+          "word": "caja",
+          "answer": "a box",
+          "options": [
+            "a ukulele",
+            "a box",
+            "a neighbor",
+            "a small town"
+          ]
+        },
+        {
+          "word": "vecino",
+          "answer": "a neighbor",
+          "options": [
+            "a ukulele",
+            "a box",
+            "a neighbor",
+            "a small town"
+          ]
+        },
+        {
+          "word": "pueblo",
+          "answer": "a small town",
+          "options": [
+            "a ukulele",
+            "a box",
+            "a neighbor",
+            "a small town"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "micro",
+    "featured": false,
+    "sentence": "Mi [[micro]] a casa sale el domingo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a long-distance bus",
+      "options": [
+        "a long-distance bus",
+        "a night train",
+        "a small plane",
+        "a city taxi"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "Mi micro a casa sale el domingo.",
+        "targetWord": "micro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mano",
+    "featured": false,
+    "sentence": "Se encuentra con un vecino con una caja en las [[manos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the hand",
+      "options": [
+        "the hand",
+        "the arm",
+        "the shoulder",
+        "the pocket"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "Se encuentra con un vecino con una caja en las manos.",
+        "targetWord": "manos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pagado",
+    "featured": false,
+    "sentence": "Mi micro sale el domingo y ya está [[pagado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "paid for",
+      "options": [
+        "paid for",
+        "reserved",
+        "delayed",
+        "canceled"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "Mi micro sale el domingo y ya está pagado.",
+        "targetWord": "pagado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "semana",
+    "featured": false,
+    "sentence": "Mi curso dura una _____, de lunes a domingo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "semana",
+      "options": [
+        "semana",
+        "hora",
+        "tarde",
+        "noche"
+      ],
+      "translation": "My course lasts one _____, from Monday to Sunday.",
+      "optionTranslations": [
+        "week",
+        "hour",
+        "afternoon",
+        "night"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "Mi curso dura una semana, de lunes a domingo.",
+        "targetWord": "semana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aprender",
+    "featured": false,
+    "sentence": "Lo compré con muchas ganas y nunca [[aprendí]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to learn",
+      "options": [
+        "to learn",
+        "to teach",
+        "to practice",
+        "to forget"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "Lo compré con muchas ganas y nunca aprendí.",
+        "targetWord": "aprendí",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ropa",
+    "featured": false,
+    "sentence": "Después de lavar la _____, la cuelgo al sol.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ropa",
+      "options": [
+        "ropa",
+        "mesa",
+        "taza",
+        "silla"
+      ],
+      "translation": "After washing the _____, I hang it in the sun.",
+      "optionTranslations": [
+        "clothes",
+        "table",
+        "cup",
+        "chair"
+      ],
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "Después de lavar la ropa, la cuelgo al sol.",
+        "targetWord": "ropa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "repartidor",
+    "featured": false,
+    "sentence": "El repartidor la dejó en tu puerta, qué lío.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "repartidor",
+      "options": [
+        "repartidor",
+        "vendedor",
+        "jugador",
+        "conductor"
+      ],
+      "optionTranslations": [
+        "delivery man",
+        "salesman",
+        "player",
+        "driver"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "una-caja-y-una-maleta",
+        "storySource": "user",
+        "sentence": "El repartidor la dejó en tu puerta, qué lío.",
+        "targetWord": "repartidor",
+        "language": "spanish",
+        "voiceId": "p7AwDmKvTdoHTBuueGvP"
+      }
+    }
+  }
+]

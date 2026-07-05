@@ -1,0 +1,401 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "cumpleaños",
+    "sentence": "El pastel tiene velas; es el _____ de Ana.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cumpleaños",
+      "options": ["cumpleaños", "desayuno", "trabajo", "mercado"],
+      "translation": "The cake has candles; it is Ana's _____.",
+      "optionTranslations": ["birthday", "breakfast", "work", "market"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "El pastel tiene velas; es el cumpleaños de Ana.",
+        "targetWord": "cumpleaños",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amigo",
+    "sentence": "Pablo conversa con todos como un [[amigo]] más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a friend",
+      "options": ["a friend", "a teacher", "a cat", "a shoe"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Pablo conversa con todos como un amigo más.",
+        "targetWord": "amigo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "venir",
+    "sentence": "Pablo recibe una invitación por teléfono: «¡[[Vení]] a la fiesta!»",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come",
+      "options": ["to come", "to sleep", "to work", "to sell"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Pablo recibe una invitación por teléfono: «¡Vení a la fiesta!»",
+        "targetWord": "Vení",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "feliz",
+    "sentence": "Pablo está [[feliz]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "happy",
+      "options": ["happy", "tired", "hungry", "cold"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Pablo está feliz.",
+        "targetWord": "feliz",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "globos",
+    "sentence": "Hay _____ de muchos colores que flotan en el aire.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "globos",
+      "options": ["globos", "gatos", "platos", "zapatos"],
+      "translation": "There are _____ of many colors floating in the air.",
+      "optionTranslations": ["balloons", "cats", "plates", "shoes"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Hay globos de muchos colores que flotan en el aire.",
+        "targetWord": "globos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conocer",
+    "sentence": "Pablo [[conoce]] a más amigos de Marta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to meet",
+      "options": ["to meet", "to forget", "to follow", "to call"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Pablo conoce a más amigos de Marta.",
+        "targetWord": "conoce",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "bailan",
+    "sentence": "La banda toca y todos _____ en la fiesta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bailan",
+      "options": ["bailan", "duermen", "estudian", "escriben"],
+      "translation": "The band plays and everyone _____ at the party.",
+      "optionTranslations": ["dances", "sleeps", "studies", "writes"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "La banda toca y todos bailan en la fiesta.",
+        "targetWord": "bailan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gustar",
+    "sentence": "«¿Te [[gusta]] Buenos Aires?»",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to like",
+      "options": ["to like", "to open", "to bring", "to wash"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "«¿Te gusta Buenos Aires?»",
+        "targetWord": "gusta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "vasos",
+    "sentence": "Mamá pone jugo en los _____ de los niños.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vasos",
+      "options": ["vasos", "zapatos", "libros", "carros"],
+      "translation": "Mom pours juice into the children's _____.",
+      "optionTranslations": ["glasses", "shoes", "books", "cars"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Mamá pone jugo en los vasos de los niños.",
+        "targetWord": "vasos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preguntar",
+    "sentence": "Marta sonríe y [[pregunta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to ask",
+      "options": ["to ask", "to answer", "to run", "to sell"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Marta sonríe y pregunta.",
+        "targetWord": "pregunta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sábado",
+    "featured": false,
+    "sentence": "El [[sábado]] es el cumpleaños de Lucas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Saturday",
+      "options": ["Saturday", "Wednesday", "October", "morning"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "El sábado es el cumpleaños de Lucas.",
+        "targetWord": "sábado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "vista",
+    "featured": false,
+    "sentence": "Desde la ventana del hotel hay una _____ del mar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vista",
+      "options": ["vista", "cocina", "puerta", "cama"],
+      "translation": "From the hotel window there is a _____ of the sea.",
+      "optionTranslations": ["view", "kitchen", "door", "bed"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Desde la ventana del hotel hay una vista del mar.",
+        "targetWord": "vista",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ciudad",
+    "featured": false,
+    "sentence": "Pablo responde: «Es mi [[ciudad]] favorita.»",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a city",
+      "options": ["a city", "a house", "a song", "a school"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Pablo responde: «Es mi ciudad favorita.»",
+        "targetWord": "ciudad",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reír",
+    "featured": false,
+    "sentence": "Todos hablan, [[ríen]] y bailan.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to laugh",
+      "options": ["to laugh", "to eat", "to swim", "to paint"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Todos hablan, ríen y bailan.",
+        "targetWord": "ríen",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "levantar",
+    "featured": false,
+    "sentence": "Todos [[levantan]] sus vasos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to raise",
+      "options": ["to raise", "to break", "to hide", "to count"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Todos levantan sus vasos.",
+        "targetWord": "levantan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tenemos",
+    "featured": false,
+    "sentence": "Mi hermana y yo _____ dos gatos en casa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tenemos",
+      "options": ["tenemos", "bebemos", "corremos", "leemos"],
+      "translation": "My sister and I _____ two cats at home.",
+      "optionTranslations": ["we have", "we drink", "we run", "we read"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Mi hermana y yo tenemos dos gatos en casa.",
+        "targetWord": "tenemos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aquí",
+    "featured": false,
+    "sentence": "Ahora tengo una familia [[aquí]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "here",
+      "options": ["here", "there", "never", "always"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Ahora tengo una familia aquí.",
+        "targetWord": "aquí",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "featured": false,
+    "sentence": "Marta [[sonríe]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smile",
+      "options": ["to smile", "to run", "to sleep", "to pay"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Marta sonríe.",
+        "targetWord": "sonríe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nuevo",
+    "featured": false,
+    "sentence": "Lucas dice: «Pablo, ¡un brindis por nuestro amigo [[nuevo]]!»",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "new",
+      "options": ["new", "tall", "dirty", "cheap"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Lucas dice: «Pablo, ¡un brindis por nuestro amigo nuevo!»",
+        "targetWord": "nuevo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "luz",
+    "featured": false,
+    "sentence": "Sobre las [[luces]] de Buenos Aires, Pablo sonríe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a light",
+      "options": ["a light", "a chair", "a shoe", "a bed"],
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Sobre las luces de Buenos Aires, Pablo sonríe.",
+        "targetWord": "luces",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "más,muchas,todos,solo",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "más", "answer": "more", "options": ["more", "many", "everyone", "alone"] },
+        { "word": "muchas", "answer": "many", "options": ["more", "many", "everyone", "alone"] },
+        { "word": "todos", "answer": "everyone", "options": ["more", "many", "everyone", "alone"] },
+        { "word": "solo", "answer": "alone", "options": ["more", "many", "everyone", "alone"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "hablar",
+    "featured": false,
+    "sentence": "Todos hablan, ríen y bailan.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "hablan",
+      "options": ["hablan", "lavan", "bajan", "pasan"],
+      "optionTranslations": ["they speak", "they wash", "they go down", "they pass"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-cumpleanos-de-lucas",
+        "storySource": "user",
+        "sentence": "Todos hablan, ríen y bailan.",
+        "targetWord": "hablan",
+        "language": "spanish",
+        "voiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  }
+]

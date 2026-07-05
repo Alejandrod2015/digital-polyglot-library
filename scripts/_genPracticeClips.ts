@@ -178,9 +178,14 @@ async function tailClean(mp3Path: string): Promise<{ ok: boolean; db: number | n
 // final creak octave-jumps, a hard uptalk gate would false-reject).
 const F0_PYTHON = join(process.env.HOME || "", ".cache", "dpl-qa", "venv", "bin", "python");
 let f0GateWarned = false;
+// Spanish wh-questions (¿quién/qué/cómo...?) end FALLING by nature: the
+// interrogative word carries the question cue, not a final rise. Only yes/no
+// questions require the rising-final gate. Accented forms only occur in
+// interrogatives, so their presence identifies a wh-question reliably.
+const WH_QUESTION = /(qué|quién|quiénes|cómo|cuándo|dónde|adónde|cuál|cuáles|cuánto|cuánta|cuántos|cuántas)/i;
 async function f0Ok(mp3Path: string, sentence: string): Promise<{ ok: boolean; detail: string }> {
   try {
-    const mode = isQuestion(sentence) ? "question" : "statement";
+    const mode = isQuestion(sentence) && !WH_QUESTION.test(sentence) ? "question" : "statement";
     const r = await spawnCapture(F0_PYTHON, ["scripts/_f0gate.py", mp3Path, mode]);
     if (r.code !== 0) throw new Error(r.err.slice(0, 120));
     const v = JSON.parse(r.out.trim());

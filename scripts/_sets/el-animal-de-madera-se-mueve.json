@@ -1,0 +1,309 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "origen",
+    "sentence": "Suben despacio para buscar el [[origen]] del silbido de anoche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the origin",
+      "options": ["the origin", "the name", "the price", "the size"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "Suben despacio para buscar el origen del silbido de anoche.",
+        "targetWord": "origen",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "roca",
+    "sentence": "Mira esas [[rocas]] altas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rock",
+      "options": ["a rock", "a tree", "a star", "a cloud"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "Mira esas rocas altas.",
+        "targetWord": "rocas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abertura",
+    "sentence": "Y ahí, ¿ves esa [[abertura]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an opening",
+      "options": ["an opening", "a ladder", "a shadow", "a corner"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "Y ahí, ¿ves esa abertura?",
+        "targetWord": "abertura",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entrar",
+    "sentence": "El aire [[entra]] y sale por ese hueco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go in",
+      "options": ["to go in", "to fly", "to break", "to shine"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "El aire entra y sale por ese hueco.",
+        "targetWord": "entra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salir",
+    "sentence": "¿Tú crees que de ahí [[sale]] el silbido?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go out",
+      "options": ["to go out", "to sleep", "to grow", "to wait"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "¿Tú crees que de ahí sale el silbido?",
+        "targetWord": "sale",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fuerza",
+    "sentence": "El viento pasa entre ellas con [[fuerza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strength",
+      "options": ["strength", "speed", "silence", "heat"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "El viento pasa entre ellas con fuerza.",
+        "targetWord": "fuerza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acercarse",
+    "sentence": "[[Acerquémonos]] con cuidado, sin hacer ruido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get closer",
+      "options": ["to get closer", "to run away", "to sit down", "to wake up"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "Acerquémonos con cuidado, sin hacer ruido.",
+        "targetWord": "Acerquémonos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "hueco",
+    "sentence": "El ratón entra por un _____ en la pared.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hueco",
+      "options": ["hueco", "huevo", "plato", "libro"],
+      "translation": "The mouse goes in through a _____ in the wall.",
+      "optionTranslations": ["hole", "egg", "plate", "book"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "El ratón entra por un hueco en la pared.",
+        "targetWord": "hueco",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cuidado",
+    "sentence": "El piso está mojado; camina con _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cuidado",
+      "options": ["cuidado", "azúcar", "papel", "vidrio"],
+      "translation": "The floor is wet; walk with _____.",
+      "optionTranslations": ["care", "sugar", "paper", "glass"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "El piso está mojado; camina con cuidado.",
+        "targetWord": "cuidado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ruido",
+    "sentence": "Los vecinos hacen mucho _____ y no puedo dormir.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ruido",
+      "options": ["ruido", "arroz", "hielo", "jugo"],
+      "translation": "The neighbors make a lot of _____ and I can't sleep.",
+      "optionTranslations": ["noise", "rice", "ice", "juice"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "Los vecinos hacen mucho ruido y no puedo dormir.",
+        "targetWord": "ruido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "día",
+    "featured": false,
+    "sentence": "Es de [[día]] y el sol calienta las piedras.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "day",
+      "options": ["day", "night", "week", "month"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "Es de día y el sol calienta las piedras.",
+        "targetWord": "día",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "piedra",
+    "featured": false,
+    "sentence": "El camino se llena de [[piedras]] grandes y plantas secas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a stone",
+      "options": ["a stone", "a flower", "a box", "a bell"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "El camino se llena de piedras grandes y plantas secas.",
+        "targetWord": "piedras",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "secreto",
+    "featured": false,
+    "sentence": "Si hay un [[secreto]], está aquí arriba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a secret",
+      "options": ["a secret", "a party", "a garden", "a letter"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "Si hay un secreto, está aquí arriba.",
+        "targetWord": "secreto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "permiso",
+    "featured": false,
+    "sentence": "¿Puedo salir? Necesito el _____ del profesor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "permiso",
+      "options": ["permiso", "zapato", "mercado", "pasillo"],
+      "translation": "May I go out? I need the teacher's _____.",
+      "optionTranslations": ["permission", "shoe", "market", "hallway"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "¿Puedo salir? Necesito el permiso del profesor.",
+        "targetWord": "permiso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "plantas",
+    "featured": false,
+    "sentence": "Riego las _____ del jardín todas las mañanas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "plantas",
+      "options": ["plantas", "ventanas", "cucharas", "camisas"],
+      "translation": "I water the _____ in the garden every morning.",
+      "optionTranslations": ["plants", "windows", "spoons", "shirts"],
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "Riego las plantas del jardín todas las mañanas.",
+        "targetWord": "plantas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "sol,abuela,aire,camino",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "sol", "answer": "sun", "options": ["sun", "grandmother", "air", "path"] },
+        { "word": "abuela", "answer": "grandmother", "options": ["sun", "grandmother", "air", "path"] },
+        { "word": "aire", "answer": "air", "options": ["sun", "grandmother", "air", "path"] },
+        { "word": "camino", "answer": "path", "options": ["sun", "grandmother", "air", "path"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "molestar",
+    "featured": false,
+    "sentence": "¿Y si molestamos a algo?",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "molestamos",
+      "options": ["molestamos", "ayudamos", "esperamos", "buscamos"],
+      "optionTranslations": ["we bother", "we help", "we wait for", "we look for"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-animal-de-madera-se-mueve",
+        "storySource": "user",
+        "sentence": "¿Y si molestamos a algo?",
+        "targetWord": "molestamos",
+        "language": "spanish",
+        "voiceId": "9LXcnNm9IC4VGWIDhfSn"
+      }
+    }
+  }
+]

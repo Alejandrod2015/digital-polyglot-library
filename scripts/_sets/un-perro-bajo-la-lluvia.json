@@ -1,0 +1,455 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "empapado",
+    "sentence": "Entra a su apartamento, [[empapado]] por la lluvia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "soaked",
+      "options": [
+        "soaked",
+        "exhausted",
+        "angry",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "Entra a su apartamento, empapado por la lluvia.",
+        "targetWord": "empapado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perrito",
+    "sentence": "Adentro hay un [[perrito]] pequeño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a little dog",
+      "options": [
+        "a little dog",
+        "a little cat",
+        "a little bird",
+        "a little rabbit"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "Adentro hay un perrito pequeño.",
+        "targetWord": "perrito",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aguacero",
+    "sentence": "¿Querías dejarlo ahí, temblando, con este [[aguacero]] tan fuerte?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a heavy rain",
+      "options": [
+        "a heavy rain",
+        "a flood",
+        "a strong wind",
+        "a snowstorm"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "¿Querías dejarlo ahí, temblando, con este aguacero tan fuerte?",
+        "targetWord": "aguacero",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "temblar",
+    "sentence": "Hay un perrito, mojado y [[temblando]] de frío.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tremble",
+      "options": [
+        "to tremble",
+        "to bark",
+        "to sleep",
+        "to eat"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "Hay un perrito, mojado y temblando de frío.",
+        "targetWord": "temblando",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lamer",
+    "sentence": "Mueve la cola despacio y le [[lame]] la mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lick",
+      "options": [
+        "to lick",
+        "to bite",
+        "to scratch",
+        "to smell"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "Mueve la cola despacio y le lame la mano.",
+        "targetWord": "lame",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dueño",
+    "sentence": "Mañana buscamos a su [[dueño]] o una solución.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the owner",
+      "options": [
+        "the owner",
+        "the neighbor",
+        "the vet",
+        "the driver"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "Mañana buscamos a su dueño o una solución.",
+        "targetWord": "dueño",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "llorando",
+    "sentence": "El bebé tenía hambre y llevaba una hora _____ sin parar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "llorando",
+      "options": [
+        "llorando",
+        "durmiendo",
+        "sonriendo",
+        "jugando"
+      ],
+      "translation": "The baby was hungry and had been _____ nonstop for an hour.",
+      "optionTranslations": [
+        "crying",
+        "sleeping",
+        "smiling",
+        "playing"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "El bebé tenía hambre y llevaba una hora llorando sin parar.",
+        "targetWord": "llorando",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mojado",
+    "sentence": "No te sientes ahí: el banco está _____ por la lluvia.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mojado",
+      "options": [
+        "mojado",
+        "roto",
+        "sucio",
+        "ocupado"
+      ],
+      "translation": "Don't sit there: the bench is _____ from the rain.",
+      "optionTranslations": [
+        "wet",
+        "broken",
+        "dirty",
+        "occupied"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "No te sientes ahí: el banco está mojado por la lluvia.",
+        "targetWord": "mojado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "reclama",
+    "sentence": "Nadie _____ la billetera que encontré, así que la entregué.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reclama",
+      "options": [
+        "reclama",
+        "vende",
+        "lava",
+        "maneja"
+      ],
+      "translation": "Nobody _____ the wallet I found, so I turned it in.",
+      "optionTranslations": [
+        "claims",
+        "sells",
+        "washes",
+        "drives"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "Nadie reclama la billetera que encontré, así que la entregué.",
+        "targetWord": "reclama",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "chaqueta,sofá,cola,carro",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "chaqueta",
+          "answer": "a jacket",
+          "options": [
+            "a jacket",
+            "a sofa",
+            "the tail",
+            "a car"
+          ]
+        },
+        {
+          "word": "sofá",
+          "answer": "a sofa",
+          "options": [
+            "a jacket",
+            "a sofa",
+            "the tail",
+            "a car"
+          ]
+        },
+        {
+          "word": "cola",
+          "answer": "the tail",
+          "options": [
+            "a jacket",
+            "a sofa",
+            "the tail",
+            "a car"
+          ]
+        },
+        {
+          "word": "carro",
+          "answer": "a car",
+          "options": [
+            "a jacket",
+            "a sofa",
+            "the tail",
+            "a car"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hermana",
+    "featured": false,
+    "sentence": "Su [[hermana]] Marina levanta la vista del sofá.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sister",
+      "options": [
+        "sister",
+        "aunt",
+        "neighbor",
+        "friend"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "Su hermana Marina levanta la vista del sofá.",
+        "targetWord": "hermana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "permitir",
+    "featured": false,
+    "sentence": "El edificio no lo [[permite]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to allow",
+      "options": [
+        "to allow",
+        "to need",
+        "to use",
+        "to have"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "El edificio no lo permite.",
+        "targetWord": "permite",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mañana",
+    "featured": false,
+    "sentence": "Hoy no puedo, pero _____ te ayudo con la tarea.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mañana",
+      "options": [
+        "mañana",
+        "ahora",
+        "nunca",
+        "siempre"
+      ],
+      "translation": "I can't today, but _____ I'll help you with your homework.",
+      "optionTranslations": [
+        "tomorrow",
+        "now",
+        "never",
+        "always"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "Hoy no puedo, pero mañana te ayudo con la tarea.",
+        "targetWord": "mañana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "traer",
+    "featured": false,
+    "sentence": "¿Y lo [[trajiste]] sin preguntarme nada?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bring",
+      "options": [
+        "to bring",
+        "to buy",
+        "to find",
+        "to wash"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "¿Y lo trajiste sin preguntarme nada?",
+        "targetWord": "trajiste",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "frío",
+    "featured": false,
+    "sentence": "Sin abrigo, en la nieve vas a sentir mucho _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "frío",
+      "options": [
+        "frío",
+        "calor",
+        "sueño",
+        "miedo"
+      ],
+      "translation": "Without a coat, in the snow you are going to feel very _____.",
+      "optionTranslations": [
+        "cold",
+        "heat",
+        "sleepiness",
+        "fear"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "Sin abrigo, en la nieve vas a sentir mucho frío.",
+        "targetWord": "frío",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "emocionarse",
+    "featured": false,
+    "sentence": "No te [[emociones]] tanto. Mañana buscamos a su dueño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get excited",
+      "options": [
+        "to get excited",
+        "to get angry",
+        "to get bored",
+        "to get lost"
+      ],
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "No te emociones tanto. Mañana buscamos a su dueño.",
+        "targetWord": "emociones",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "encariñarse",
+    "featured": false,
+    "sentence": "Mírale los ojos, ya se encariñó contigo.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "encariñó",
+      "options": [
+        "encariñó",
+        "enamoró",
+        "enojó",
+        "enfrió"
+      ],
+      "optionTranslations": [
+        "grew fond",
+        "fell in love",
+        "got angry",
+        "got cold"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "un-perro-bajo-la-lluvia",
+        "storySource": "user",
+        "sentence": "Mírale los ojos, ya se encariñó contigo.",
+        "targetWord": "encariñó",
+        "language": "spanish",
+        "voiceId": "beQfcCW5PgdTQs4cETaz"
+      }
+    }
+  }
+]

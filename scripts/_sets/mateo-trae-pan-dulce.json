@@ -1,0 +1,327 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "abrir",
+    "sentence": "Sofía [[abre]] la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to open",
+      "options": ["to open", "to clean", "to break", "to buy"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Sofía abre la puerta.",
+        "targetWord": "abre",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amigo",
+    "sentence": "Es Mateo, su [[amigo]], con una bolsa grande en la mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a friend",
+      "options": ["a friend", "a teacher", "a doctor", "a driver"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Es Mateo, su amigo, con una bolsa grande en la mano.",
+        "targetWord": "amigo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pan",
+    "sentence": "De la bolsa sale un olor rico a [[pan]] dulce.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bread",
+      "options": ["bread", "cheese", "meat", "rice"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "De la bolsa sale un olor rico a pan dulce.",
+        "targetWord": "pan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "concha",
+    "sentence": "Traje [[conchas]] y un poco de café de la tienda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sweet bun",
+      "options": ["a sweet bun", "a cold drink", "a hot soup", "a small taco"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Traje conchas y un poco de café de la tienda.",
+        "targetWord": "conchas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llorar",
+    "sentence": "Aquí no había café y ya casi [[llorábamos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to cry",
+      "options": ["to cry", "to laugh", "to sleep", "to shout"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Aquí no había café y ya casi llorábamos.",
+        "targetWord": "llorábamos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entrar",
+    "sentence": "Mateo [[entra]] y pone la bolsa en la mesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to enter",
+      "options": ["to enter", "to leave", "to wait", "to call"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Mateo entra y pone la bolsa en la mesa.",
+        "targetWord": "entra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sacar",
+    "sentence": "[[Saca]] las conchas y una bolsa de café para todos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take out",
+      "options": ["to take out", "to hide", "to carry", "to wash"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Saca las conchas y una bolsa de café para todos.",
+        "targetWord": "Saca",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "panadería",
+    "sentence": "Huele a pan fresco cuando paso por la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "panadería",
+      "options": ["panadería", "farmacia", "biblioteca", "escuela"],
+      "translation": "It smells like fresh bread when I pass by the _____.",
+      "optionTranslations": ["bakery", "pharmacy", "library", "school"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Huele a pan fresco cuando paso por la panadería.",
+        "targetWord": "panadería",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "olor",
+    "sentence": "Desde la cocina llega un _____ rico a café.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "olor",
+      "options": ["olor", "ruido", "color", "viento"],
+      "translation": "From the kitchen comes a nice _____ of coffee.",
+      "optionTranslations": ["smell", "noise", "color", "wind"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Desde la cocina llega un olor rico a café.",
+        "targetWord": "olor",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "comida",
+    "sentence": "Tenemos mucha _____ para la fiesta: arroz, pollo y ensalada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "comida",
+      "options": ["comida", "música", "ropa", "tarea"],
+      "translation": "We have a lot of _____ for the party: rice, chicken and salad.",
+      "optionTranslations": ["food", "music", "clothing", "homework"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Tenemos mucha comida para la fiesta: arroz, pollo y ensalada.",
+        "targetWord": "comida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "buenos días,de nada,próximo,puerta",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "buenos días", "answer": "good morning", "options": ["good morning", "you're welcome", "next", "a door"] },
+        { "word": "de nada", "answer": "you're welcome", "options": ["good morning", "you're welcome", "next", "a door"] },
+        { "word": "próximo", "answer": "next", "options": ["good morning", "you're welcome", "next", "a door"] },
+        { "word": "puerta", "answer": "a door", "options": ["good morning", "you're welcome", "next", "a door"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "servir",
+    "featured": false,
+    "sentence": "Y yo [[sirvo]] el café.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to serve",
+      "options": ["to serve", "to spill", "to heat", "to buy"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Y yo sirvo el café.",
+        "targetWord": "sirvo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sentarse",
+    "featured": false,
+    "sentence": "Los tres amigos [[se sientan]] a la mesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sit down",
+      "options": ["to sit down", "to stand up", "to go out", "to come back"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Los tres amigos se sientan a la mesa.",
+        "targetWord": "se sientan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comer",
+    "featured": false,
+    "sentence": "[[Comen]] pan dulce, fruta y toman café recién hecho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to eat",
+      "options": ["to eat", "to drink", "to cook", "to wash"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Comen pan dulce, fruta y toman café recién hecho.",
+        "targetWord": "Comen",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "feliz",
+    "featured": false,
+    "sentence": "Esto sí es un sábado [[feliz]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "happy",
+      "options": ["happy", "sad", "long", "boring"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Esto sí es un sábado feliz.",
+        "targetWord": "feliz",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "plato",
+    "featured": false,
+    "sentence": "La ensalada está en un _____ sobre la mesa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "plato",
+      "options": ["plato", "vaso", "cuchillo", "horno"],
+      "translation": "The salad is on a _____ on the table.",
+      "optionTranslations": ["plate", "glass", "knife", "oven"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "La ensalada está en un plato sobre la mesa.",
+        "targetWord": "plato",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "lleno",
+    "featured": false,
+    "sentence": "Comí mucho y no quiero más pastel; estoy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lleno",
+      "options": ["lleno", "cansado", "triste", "enfermo"],
+      "translation": "I ate a lot and I don't want more cake; I am _____.",
+      "optionTranslations": ["full", "tired", "sad", "sick"],
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Comí mucho y no quiero más pastel; estoy lleno.",
+        "targetWord": "lleno",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "poner",
+    "featured": false,
+    "sentence": "Yo pongo los platos.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "pongo",
+      "options": ["pongo", "tengo", "vengo", "salgo"],
+      "optionTranslations": ["I put", "I have", "I come", "I go out"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "mateo-trae-pan-dulce",
+        "storySource": "user",
+        "sentence": "Yo pongo los platos.",
+        "targetWord": "pongo",
+        "language": "spanish",
+        "voiceId": "ewn5JTa3lNPY8QVuZJi6"
+      }
+    }
+  }
+]

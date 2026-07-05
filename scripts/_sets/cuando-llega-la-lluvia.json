@@ -1,0 +1,403 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "llover",
+    "sentence": "Empieza a [[llover]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to rain",
+      "options": ["to rain", "to dance", "to read", "to pay"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "Empieza a llover.",
+        "targetWord": "llover",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "frío",
+    "sentence": "Tengo _____; necesito un suéter.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "frío",
+      "options": ["frío", "calor", "hambre", "sueño"],
+      "translation": "I feel _____; I need a sweater.",
+      "optionTranslations": ["cold", "heat", "hunger", "sleepiness"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "Tengo frío; necesito un suéter.",
+        "targetWord": "frío",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nube",
+    "sentence": "Hay [[nubes]] grises.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cloud",
+      "options": ["a cloud", "a table", "a shoe", "a river"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "Hay nubes grises.",
+        "targetWord": "nubes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lluvia",
+    "sentence": "Valentina escucha la [[lluvia]] sobre la roca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rain",
+      "options": ["rain", "snow", "sand", "smoke"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "Valentina escucha la lluvia sobre la roca.",
+        "targetWord": "lluvia",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "miedo",
+    "sentence": "Veo una araña grande y tengo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "miedo",
+      "options": ["miedo", "sed", "prisa", "suerte"],
+      "translation": "I see a big spider and I feel _____.",
+      "optionTranslations": ["fear", "thirst", "hurry", "luck"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "Veo una araña grande y tengo miedo.",
+        "targetWord": "miedo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esperar",
+    "sentence": "[[Esperan]], juntos, mientras la lluvia cae fuerte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wait",
+      "options": ["to wait", "to shout", "to sell", "to drive"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "Esperan, juntos, mientras la lluvia cae fuerte.",
+        "targetWord": "Esperan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arcoíris",
+    "sentence": "¡Hay un [[arcoíris]] enorme sobre el lago!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rainbow",
+      "options": ["a rainbow", "a storm", "a bridge", "a mirror"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "¡Hay un arcoíris enorme sobre el lago!",
+        "targetWord": "arcoíris",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caer",
+    "sentence": "La lluvia [[cae]] fuerte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fall",
+      "options": ["to fall", "to climb", "to shine", "to count"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "La lluvia cae fuerte.",
+        "targetWord": "cae",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cielo",
+    "sentence": "El [[cielo]] se abre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sky",
+      "options": ["the sky", "the floor", "the door", "the bread"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "El cielo se abre.",
+        "targetWord": "cielo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "regalo",
+    "sentence": "Es mi cumpleaños y recibo un _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "regalo",
+      "options": ["regalo", "plato", "zapato", "tomate"],
+      "translation": "It is my birthday and I receive a _____.",
+      "optionTranslations": ["gift", "plate", "shoe", "tomato"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "Es mi cumpleaños y recibo un regalo.",
+        "targetWord": "regalo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caminar",
+    "featured": false,
+    "sentence": "Valentina y su papá [[caminan]] cerca de un lago.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to walk",
+      "options": ["to walk", "to swim", "to cook", "to pay"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "Valentina y su papá caminan cerca de un lago.",
+        "targetWord": "caminan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gris",
+    "featured": false,
+    "sentence": "Hay nubes [[grises]] y mucho viento.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gray",
+      "options": ["gray", "yellow", "tall", "clean"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "Hay nubes grises y mucho viento.",
+        "targetWord": "grises",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "viento",
+    "featured": false,
+    "sentence": "El _____ mueve las hojas de los árboles.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "viento",
+      "options": ["viento", "dinero", "papel", "zapato"],
+      "translation": "The _____ moves the leaves of the trees.",
+      "optionTranslations": ["wind", "money", "paper", "shoe"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "El viento mueve las hojas de los árboles.",
+        "targetWord": "viento",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "buscamos",
+    "featured": false,
+    "sentence": "No encontramos las llaves; las _____ por toda la casa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "buscamos",
+      "options": ["buscamos", "cantamos", "lavamos", "pintamos"],
+      "translation": "We can't find the keys; we _____ for them all over the house.",
+      "optionTranslations": ["we look", "we sing", "we wash", "we paint"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "No encontramos las llaves; las buscamos por toda la casa.",
+        "targetWord": "buscamos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "roca",
+    "featured": false,
+    "sentence": "Buscan refugio bajo una [[roca]] grande.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rock",
+      "options": ["a rock", "a bed", "a leaf", "a cup"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "Buscan refugio bajo una roca grande.",
+        "targetWord": "roca",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parar",
+    "featured": false,
+    "sentence": "Después de poco, la lluvia [[para]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stop",
+      "options": ["to stop", "to begin", "to grow", "to send"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "Después de poco, la lluvia para.",
+        "targetWord": "para",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "featured": false,
+    "sentence": "Solo [[mira]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look at",
+      "options": ["to look at", "to carry", "to push", "to win"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "Solo mira.",
+        "targetWord": "mira",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hermoso",
+    "featured": false,
+    "sentence": "A veces, lo más [[hermoso]] llega después de la lluvia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "beautiful",
+      "options": ["beautiful", "boring", "dirty", "new"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "A veces, lo más hermoso llega después de la lluvia.",
+        "targetWord": "hermoso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "día",
+    "featured": false,
+    "sentence": "Hoy es un _____ bonito; hay mucho sol.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "día",
+      "options": ["día", "año", "pie", "té"],
+      "translation": "Today is a beautiful _____; there is a lot of sun.",
+      "optionTranslations": ["day", "year", "foot", "tea"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "Hoy es un día bonito; hay mucho sol.",
+        "targetWord": "día",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "lago",
+    "featured": false,
+    "sentence": "Nadamos en el _____ cerca de la montaña.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lago",
+      "options": ["lago", "gato", "pelo", "dedo"],
+      "translation": "We swim in the _____ near the mountain.",
+      "optionTranslations": ["lake", "cat", "hair", "finger"],
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "Nadamos en el lago cerca de la montaña.",
+        "targetWord": "lago",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cerca,después,juntos,difícil",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "cerca", "answer": "near", "options": ["near", "after", "together", "difficult"] },
+        { "word": "después", "answer": "after", "options": ["near", "after", "together", "difficult"] },
+        { "word": "juntos", "answer": "together", "options": ["near", "after", "together", "difficult"] },
+        { "word": "difícil", "answer": "difficult", "options": ["near", "after", "together", "difficult"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cambiar",
+    "featured": false,
+    "sentence": "De repente, el cielo cambia.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "cambia",
+      "options": ["cambia", "limpia", "copia", "estudia"],
+      "optionTranslations": ["changes", "cleans", "copies", "studies"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "cuando-llega-la-lluvia",
+        "storySource": "user",
+        "sentence": "De repente, el cielo cambia.",
+        "targetWord": "cambia",
+        "language": "spanish",
+        "voiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
+  }
+]

@@ -1,0 +1,584 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "tiene miedo",
+    "sentence": "Ahora no [[tiene miedo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "is afraid",
+      "options": [
+        "is afraid",
+        "is happy",
+        "is busy",
+        "is right"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Ahora no tiene miedo.",
+        "targetWord": "tiene miedo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "habla",
+    "sentence": "María _____ con su mamá por teléfono.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "habla",
+      "options": [
+        "habla",
+        "nada",
+        "vuela",
+        "pinta"
+      ],
+      "translation": "María _____ with her mom on the phone.",
+      "optionTranslations": [
+        "talks",
+        "swims",
+        "flies",
+        "paints"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "María habla con su mamá por teléfono.",
+        "targetWord": "habla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reconocer",
+    "sentence": "La señora la [[reconoce]] y sonríe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to recognize",
+      "options": [
+        "to recognize",
+        "to forget",
+        "to call",
+        "to push"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "La señora la reconoce y sonríe.",
+        "targetWord": "reconoce",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "vaso",
+    "sentence": "Quiero un _____ de agua, por favor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vaso",
+      "options": [
+        "vaso",
+        "plato",
+        "libro",
+        "zapato"
+      ],
+      "translation": "I want a _____ of water, please.",
+      "optionTranslations": [
+        "glass",
+        "plate",
+        "book",
+        "shoe"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Quiero un vaso de agua, por favor.",
+        "targetWord": "vaso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "horchata",
+    "sentence": "Un vaso de agua de [[horchata]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rice drink",
+      "options": [
+        "a rice drink",
+        "a corn soup",
+        "a meat dish",
+        "a hot coffee"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Un vaso de agua de horchata.",
+        "targetWord": "horchata",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "martes",
+    "sentence": "Hoy es lunes; mañana es _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "martes",
+      "options": [
+        "martes",
+        "jueves",
+        "domingo",
+        "enero"
+      ],
+      "translation": "Today is Monday; tomorrow is _____.",
+      "optionTranslations": [
+        "Tuesday",
+        "Thursday",
+        "Sunday",
+        "January"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Hoy es lunes; mañana es martes.",
+        "targetWord": "martes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "le gusta",
+    "sentence": "Toma un poco y [[le gusta]] mucho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "she likes it",
+      "options": [
+        "she likes it",
+        "she drops it",
+        "she pays for it",
+        "she hides it"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Toma un poco y le gusta mucho.",
+        "targetWord": "le gusta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "toma",
+    "sentence": "Ella _____ un vaso de jugo en el desayuno.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "toma",
+      "options": [
+        "toma",
+        "lava",
+        "rompe",
+        "vende"
+      ],
+      "translation": "She _____ a glass of juice at breakfast.",
+      "optionTranslations": [
+        "drinks",
+        "washes",
+        "breaks",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Ella toma un vaso de jugo en el desayuno.",
+        "targetWord": "toma",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verde",
+    "sentence": "La señora prepara el taco con salsa [[verde]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "green",
+      "options": [
+        "green",
+        "red",
+        "big",
+        "hot"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "La señora prepara el taco con salsa verde.",
+        "targetWord": "verde",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rica",
+    "sentence": "Ana piensa: ¡Qué [[rica]]!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tasty",
+      "options": [
+        "tasty",
+        "ugly",
+        "slow",
+        "loud"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Ana piensa: ¡Qué rica!",
+        "targetWord": "rica",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conocer",
+    "featured": false,
+    "sentence": "Ana no [[conoce]] la horchata.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to know",
+      "options": [
+        "to know",
+        "to drink",
+        "to make",
+        "to buy"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Ana no conoce la horchata.",
+        "targetWord": "conoce",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un poco",
+    "featured": false,
+    "sentence": "Toma [[un poco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a little",
+      "options": [
+        "a little",
+        "a lot",
+        "never",
+        "always"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Toma un poco.",
+        "targetWord": "un poco",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "canela",
+    "featured": false,
+    "sentence": "Es dulce, con un poco de [[canela]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cinnamon",
+      "options": [
+        "cinnamon",
+        "salt",
+        "butter",
+        "garlic"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Es dulce, con un poco de canela.",
+        "targetWord": "canela",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "blanca",
+    "featured": false,
+    "sentence": "La horchata es [[blanca]] y dulce.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "white",
+      "options": [
+        "white",
+        "black",
+        "dirty",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "La horchata es blanca y dulce.",
+        "targetWord": "blanca",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "regresar",
+    "featured": false,
+    "sentence": "Ana [[regresa]] al mercado en la Ciudad de México.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to return",
+      "options": [
+        "to return",
+        "to shout",
+        "to clean",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Ana regresa al mercado en la Ciudad de México.",
+        "targetWord": "regresa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agua",
+    "featured": false,
+    "sentence": "También un vaso de [[agua]] de horchata.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "water",
+      "options": [
+        "water",
+        "milk",
+        "bread",
+        "fruit"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "También un vaso de agua de horchata.",
+        "targetWord": "agua",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pensar",
+    "featured": false,
+    "sentence": "Ana [[piensa]]: Sí, mañana también.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to think",
+      "options": [
+        "to think",
+        "to dance",
+        "to open",
+        "to wash"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Ana piensa: Sí, mañana también.",
+        "targetWord": "piensa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pollo",
+    "featured": false,
+    "sentence": "Para la cena, mamá cocina _____ con arroz.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pollo",
+      "options": [
+        "pollo",
+        "agua",
+        "hielo",
+        "jugo"
+      ],
+      "translation": "For dinner, mom cooks _____ with rice.",
+      "optionTranslations": [
+        "chicken",
+        "water",
+        "ice",
+        "juice"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Para la cena, mamá cocina pollo con arroz.",
+        "targetWord": "pollo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "país",
+    "featured": false,
+    "sentence": "México es un _____ grande y bonito.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "país",
+      "options": [
+        "país",
+        "perro",
+        "piano",
+        "pastel"
+      ],
+      "translation": "Mexico is a big and beautiful _____.",
+      "optionTranslations": [
+        "country",
+        "dog",
+        "piano",
+        "cake"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "México es un país grande y bonito.",
+        "targetWord": "país",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "nuevo",
+    "featured": false,
+    "sentence": "Mi teléfono es viejo; quiero uno _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "nuevo",
+      "options": [
+        "nuevo",
+        "alto",
+        "lento",
+        "lleno"
+      ],
+      "translation": "My phone is old; I want a _____ one.",
+      "optionTranslations": [
+        "new",
+        "tall",
+        "slow",
+        "full"
+      ],
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Mi teléfono es viejo; quiero uno nuevo.",
+        "targetWord": "nuevo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "también,hoy,despacio,otra vez",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "también",
+          "answer": "also",
+          "options": [
+            "also",
+            "today",
+            "slowly",
+            "again"
+          ]
+        },
+        {
+          "word": "hoy",
+          "answer": "today",
+          "options": [
+            "also",
+            "today",
+            "slowly",
+            "again"
+          ]
+        },
+        {
+          "word": "despacio",
+          "answer": "slowly",
+          "options": [
+            "also",
+            "today",
+            "slowly",
+            "again"
+          ]
+        },
+        {
+          "word": "otra vez",
+          "answer": "again",
+          "options": [
+            "also",
+            "today",
+            "slowly",
+            "again"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "querer",
+    "featured": false,
+    "sentence": "Ana piensa: Hoy quiero un taco, pero no muy picante.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "quiero",
+      "options": [
+        "quiero",
+        "quito",
+        "quemo",
+        "creo"
+      ],
+      "optionTranslations": [
+        "I want",
+        "I remove",
+        "I burn",
+        "I believe"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "otra-vez-al-mercado",
+        "storySource": "user",
+        "sentence": "Ana piensa: Hoy quiero un taco, pero no muy picante.",
+        "targetWord": "quiero",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  }
+]

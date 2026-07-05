@@ -1,0 +1,403 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "estar",
+    "sentence": "[[Está]] en la plaza central con un mapa grande.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be",
+      "options": ["to be", "to want", "to run", "to sing"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "Está en la plaza central con un mapa grande.",
+        "targetWord": "Está",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "perdida",
+    "sentence": "María no encuentra su casa; está _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "perdida",
+      "options": ["perdida", "cansada", "sentada", "mojada"],
+      "translation": "María cannot find her house; she is _____.",
+      "optionTranslations": ["lost", "tired", "seated", "wet"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "María no encuentra su casa; está perdida.",
+        "targetWord": "perdida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dónde",
+    "sentence": "¿[[Dónde]] está mi hotel?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "where",
+      "options": ["where", "when", "who", "why"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "¿Dónde está mi hotel?",
+        "targetWord": "Dónde",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "hombre",
+    "sentence": "Mi papá es un _____ alto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hombre",
+      "options": ["hombre", "gato", "libro", "carro"],
+      "translation": "My dad is a tall _____.",
+      "optionTranslations": ["man", "cat", "book", "car"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "Mi papá es un hombre alto.",
+        "targetWord": "hombre",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preguntar",
+    "sentence": "Un hombre con una sonrisa [[pregunta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to ask",
+      "options": ["to ask", "to sell", "to sleep", "to drive"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "Un hombre con una sonrisa pregunta.",
+        "targetWord": "pregunta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ayuda",
+    "sentence": "No puedo abrir la puerta; necesito _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ayuda",
+      "options": ["ayuda", "agua", "fruta", "ropa"],
+      "translation": "I cannot open the door; I need _____.",
+      "optionTranslations": ["help", "water", "fruit", "clothes"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "No puedo abrir la puerta; necesito ayuda.",
+        "targetWord": "ayuda",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se llama",
+    "sentence": "[[Se llama]] Julio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "his name is",
+      "options": ["his name is", "he gets up", "he leaves", "he arrives"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "Se llama Julio.",
+        "targetWord": "Se llama",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "esquina",
+    "sentence": "La tienda está en la _____ de la calle.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esquina",
+      "options": ["esquina", "piscina", "cocina", "oficina"],
+      "translation": "The store is on the _____ of the street.",
+      "optionTranslations": ["corner", "pool", "kitchen", "office"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "La tienda está en la esquina de la calle.",
+        "targetWord": "esquina",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "sentence": "Julio [[mira]] el mapa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look at",
+      "options": ["to look at", "to hold", "to wash", "to hear"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "Julio mira el mapa.",
+        "targetWord": "mira",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pensar",
+    "sentence": "Elena [[piensa]]: A veces la solución es simple.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to think",
+      "options": ["to think", "to jump", "to cook", "to swim"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "Elena piensa: A veces la solución es simple.",
+        "targetWord": "piensa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "grande",
+    "featured": false,
+    "sentence": "El elefante es _____; el ratón es pequeño.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "grande",
+      "options": ["grande", "triste", "verde", "feliz"],
+      "translation": "The elephant is _____; the mouse is small.",
+      "optionTranslations": ["big", "sad", "green", "happy"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "El elefante es grande; el ratón es pequeño.",
+        "targetWord": "grande",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reír",
+    "featured": false,
+    "sentence": "Julio [[ríe]] un poco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to laugh",
+      "options": ["to laugh", "to sleep", "to walk", "to drink"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "Julio ríe un poco.",
+        "targetWord": "ríe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sonrisa",
+    "featured": false,
+    "sentence": "El bebé está feliz y tiene una gran _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sonrisa",
+      "options": ["sonrisa", "camisa", "mesa", "casa"],
+      "translation": "The baby is happy and has a big _____.",
+      "optionTranslations": ["smile", "shirt", "table", "house"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "El bebé está feliz y tiene una gran sonrisa.",
+        "targetWord": "sonrisa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "necesitar",
+    "featured": false,
+    "sentence": "«¿[[Necesitas]] ayuda?»",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to need",
+      "options": ["to need", "to give", "to open", "to hear"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "¿Necesitas ayuda?",
+        "targetWord": "Necesitas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "empezar",
+    "featured": false,
+    "sentence": "Su aventura en Perú [[empieza]] con una persona amable.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to begin",
+      "options": ["to begin", "to close", "to lose", "to send"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "Su aventura en Perú empieza con una persona amable.",
+        "targetWord": "empieza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "amable",
+    "featured": false,
+    "sentence": "La profesora ayuda a todos; es muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "amable",
+      "options": ["amable", "enferma", "alta", "fría"],
+      "translation": "The teacher helps everyone; she is very _____.",
+      "optionTranslations": ["kind", "sick", "tall", "cold"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "La profesora ayuda a todos; es muy amable.",
+        "targetWord": "amable",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "da las gracias",
+    "featured": false,
+    "sentence": "[[Da las gracias]] a Julio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "says thank you",
+      "options": ["says thank you", "says goodbye", "asks a question", "opens the door"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "Da las gracias a Julio.",
+        "targetWord": "Da las gracias",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bienvenida",
+    "featured": false,
+    "sentence": "Julio dice: «[[Bienvenida]] a Cusco.»",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "welcome",
+      "options": ["welcome", "goodbye", "good luck", "good night"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "Julio dice: Bienvenida a Cusco.",
+        "targetWord": "Bienvenida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entrar",
+    "featured": false,
+    "sentence": "Elena [[entra]] a su hotel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to enter",
+      "options": ["to enter", "to leave", "to clean", "to paint"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "Elena entra a su hotel.",
+        "targetWord": "entra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nada",
+    "featured": false,
+    "sentence": "Elena no comprende [[nada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nothing",
+      "options": ["nothing", "everything", "always", "someone"],
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "Elena no comprende nada.",
+        "targetWord": "nada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "aquí,cerca,lejos,a veces",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "aquí", "answer": "here", "options": ["here", "near", "far", "sometimes"] },
+        { "word": "cerca", "answer": "near", "options": ["here", "near", "far", "sometimes"] },
+        { "word": "lejos", "answer": "far", "options": ["here", "near", "far", "sometimes"] },
+        { "word": "a veces", "answer": "sometimes", "options": ["here", "near", "far", "sometimes"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "vivir",
+    "featured": false,
+    "sentence": "Se llama Julio y vive en Cusco.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "vive",
+      "options": ["vive", "sube", "sabe", "cabe"],
+      "optionTranslations": ["lives", "goes up", "knows", "fits"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-mapa",
+        "storySource": "user",
+        "sentence": "Se llama Julio y vive en Cusco.",
+        "targetWord": "vive",
+        "language": "spanish",
+        "voiceId": "kIVGrdJmAh9zNqLfBLUo"
+      }
+    }
+  }
+]

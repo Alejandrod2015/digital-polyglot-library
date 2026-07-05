@@ -1,0 +1,325 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "cuento",
+    "sentence": "¿Y de qué tratan los [[cuentos]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a short story",
+      "options": ["a short story", "a movie", "a song", "a drawing"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "¿Y de qué tratan los cuentos?",
+        "targetWord": "cuentos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sencillo",
+    "sentence": "Busco un libro de cuentos para mis alumnos. Algo [[sencillo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "simple",
+      "options": ["simple", "expensive", "heavy", "modern"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "Busco un libro de cuentos para mis alumnos. Algo sencillo.",
+        "targetWord": "sencillo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alumno",
+    "sentence": "Mis [[alumnos]] son chicos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a student",
+      "options": ["a student", "a neighbor", "a cousin", "a client"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "Mis alumnos son chicos.",
+        "targetWord": "alumnos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vender",
+    "sentence": "[[Vendés]] libros y además escribís.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sell",
+      "options": ["to sell", "to hide", "to count", "to wash"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "Vendés libros y además escribís.",
+        "targetWord": "Vendés",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "creer",
+    "sentence": "¡No lo puedo [[creer]]!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to believe",
+      "options": ["to believe", "to hear", "to open", "to wait"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "¡No lo puedo creer!",
+        "targetWord": "creer",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ganas",
+    "sentence": "Ahora lo voy a leer con más [[ganas]] todavía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "eagerness",
+      "options": ["eagerness", "patience", "sadness", "fear"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "Ahora lo voy a leer con más ganas todavía.",
+        "targetWord": "ganas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "leer",
+    "sentence": "Me gusta _____ novelas antes de dormir.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "leer",
+      "options": ["leer", "comprar", "vender", "romper"],
+      "translation": "I like to _____ novels before sleeping.",
+      "optionTranslations": ["to read", "to buy", "to sell", "to break"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "Me gusta leer novelas antes de dormir.",
+        "targetWord": "leer",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "estante",
+    "sentence": "Pongo los libros en el _____ de la pared.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "estante",
+      "options": ["estante", "espejo", "horno", "plato"],
+      "translation": "I put the books on the _____ on the wall.",
+      "optionTranslations": ["shelf", "mirror", "oven", "plate"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "Pongo los libros en el estante de la pared.",
+        "targetWord": "estante",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "campana",
+    "sentence": "La _____ de la iglesia suena a las doce.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "campana",
+      "options": ["campana", "puerta", "ventana", "mesa"],
+      "translation": "The church _____ rings at twelve.",
+      "optionTranslations": ["bell", "door", "window", "table"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "La campana de la iglesia suena a las doce.",
+        "targetWord": "campana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "con calma,de verdad,noche,sueño",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "con calma", "answer": "calmly", "options": ["calmly", "really", "night", "dream"] },
+        { "word": "de verdad", "answer": "really", "options": ["calmly", "really", "night", "dream"] },
+        { "word": "noche", "answer": "night", "options": ["calmly", "really", "night", "dream"] },
+        { "word": "sueño", "answer": "dream", "options": ["calmly", "really", "night", "dream"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "empujar",
+    "featured": false,
+    "sentence": "Camila [[empuja]] la puerta de la librería.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to push",
+      "options": ["to push", "to close", "to break", "to paint"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "Camila empuja la puerta de la librería.",
+        "targetWord": "empuja",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "local",
+    "featured": false,
+    "sentence": "El [[local]] abre temprano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a shop",
+      "options": ["a shop", "a school", "a garage", "a church"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "El local abre temprano.",
+        "targetWord": "local",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "corto",
+    "featured": false,
+    "sentence": "Son cuentos [[cortos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "short",
+      "options": ["short", "new", "sad", "strange"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "Son cuentos cortos.",
+        "targetWord": "cortos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mostrador",
+    "featured": false,
+    "sentence": "Detrás del [[mostrador]], Tomás la saluda con una sonrisa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a counter",
+      "options": ["a counter", "a window", "a wall", "a garden"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "Detrás del mostrador, Tomás la saluda con una sonrisa.",
+        "targetWord": "mostrador",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fácil",
+    "featured": false,
+    "sentence": "Son cuentos cortos, muy [[fáciles]] de leer.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "easy",
+      "options": ["easy", "long", "expensive", "serious"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "Son cuentos cortos, muy fáciles de leer.",
+        "targetWord": "fáciles",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "manera",
+    "featured": false,
+    "sentence": "Camila mira a Tomás de otra [[manera]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a way",
+      "options": ["a way", "a place", "a moment", "a reason"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "Camila mira a Tomás de otra manera.",
+        "targetWord": "manera",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "joven",
+    "featured": false,
+    "sentence": "La doctora es _____; tiene solo veinticinco años.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "joven",
+      "options": ["joven", "alta", "rica", "seria"],
+      "translation": "The doctor is _____; she is only twenty-five years old.",
+      "optionTranslations": ["young", "tall", "rich", "serious"],
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "La doctora es joven; tiene solo veinticinco años.",
+        "targetWord": "joven",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "escribir",
+    "featured": false,
+    "sentence": "¿Este libro lo escribiste vos?",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "escribiste",
+      "options": ["escribiste", "recibiste", "perdiste", "subiste"],
+      "optionTranslations": ["you wrote", "you received", "you lost", "you went up"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "quien-escribio-este-libro",
+        "storySource": "user",
+        "sentence": "¿Este libro lo escribiste vos?",
+        "targetWord": "escribiste",
+        "language": "spanish",
+        "voiceId": "p7AwDmKvTdoHTBuueGvP"
+      }
+    }
+  }
+]

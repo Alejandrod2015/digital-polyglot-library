@@ -1,0 +1,455 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "mordido",
+    "sentence": "Acaba de dejar un zapato [[mordido]] en la mitad de la sala.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "chewed up",
+      "options": [
+        "chewed up",
+        "brand new",
+        "soaking wet",
+        "very old"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "Acaba de dejar un zapato mordido en la mitad de la sala.",
+        "targetWord": "mordido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ladrar",
+    "sentence": "El perrito [[ladra]] fuerte tres veces.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bark",
+      "options": [
+        "to bark",
+        "to bite",
+        "to sleep",
+        "to escape"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "El perrito ladra fuerte tres veces.",
+        "targetWord": "ladra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "callar",
+    "sentence": "Baja la voz, [[calla]]. Si el vecino escucha, vamos a tener problemas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be quiet",
+      "options": [
+        "to be quiet",
+        "to speak up",
+        "to laugh",
+        "to cry"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "Baja la voz, calla. Si el vecino escucha, vamos a tener problemas.",
+        "targetWord": "calla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avisar",
+    "sentence": "Se portó valiente, solo quería [[avisarnos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to warn",
+      "options": [
+        "to warn",
+        "to greet",
+        "to follow",
+        "to feed"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "Se portó valiente, solo quería avisarnos.",
+        "targetWord": "avisarnos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delatar",
+    "sentence": "Claro, nuestro perro guardián que casi nos [[delata]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to give away",
+      "options": [
+        "to give away",
+        "to protect",
+        "to wake up",
+        "to cheer up"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "Claro, nuestro perro guardián que casi nos delata.",
+        "targetWord": "delata",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "esconde",
+    "sentence": "Ella no quiere mostrar su diario y lo _____ bajo la cama.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esconde",
+      "options": [
+        "esconde",
+        "lava",
+        "pinta",
+        "vende"
+      ],
+      "translation": "She doesn't want to show her diary and _____ it under the bed.",
+      "optionTranslations": [
+        "hides",
+        "washes",
+        "paints",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "Ella no quiere mostrar su diario y lo esconde bajo la cama.",
+        "targetWord": "esconde",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "quieto",
+    "sentence": "No te muevas; quédate _____ un momento.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "quieto",
+      "options": [
+        "quieto",
+        "limpio",
+        "lleno",
+        "solo"
+      ],
+      "translation": "Don't move; stay _____ for a moment.",
+      "optionTranslations": [
+        "still",
+        "clean",
+        "full",
+        "alone"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "No te muevas; quédate quieto un momento.",
+        "targetWord": "quieto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "descubren",
+    "sentence": "Los niños _____ un gato dormido dentro de la caja.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "descubren",
+      "options": [
+        "descubren",
+        "dibujan",
+        "esperan",
+        "cuentan"
+      ],
+      "translation": "The children _____ a sleeping cat inside the box.",
+      "optionTranslations": [
+        "discover",
+        "draw",
+        "wait for",
+        "count"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "Los niños descubren un gato dormido dentro de la caja.",
+        "targetWord": "descubren",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "aliviados",
+    "sentence": "La prueba salió bien y los estudiantes respiran _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aliviados",
+      "options": [
+        "aliviados",
+        "cansados",
+        "enojados",
+        "perdidos"
+      ],
+      "translation": "The test went well and the students breathe _____.",
+      "optionTranslations": [
+        "relieved",
+        "tired",
+        "angry",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "La prueba salió bien y los estudiantes respiran aliviados.",
+        "targetWord": "aliviados",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "zapato,sala,cuarto,mitad",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "zapato",
+          "answer": "a shoe",
+          "options": [
+            "a shoe",
+            "a living room",
+            "a bedroom",
+            "the middle"
+          ]
+        },
+        {
+          "word": "sala",
+          "answer": "a living room",
+          "options": [
+            "a shoe",
+            "a living room",
+            "a bedroom",
+            "the middle"
+          ]
+        },
+        {
+          "word": "cuarto",
+          "answer": "a bedroom",
+          "options": [
+            "a shoe",
+            "a living room",
+            "a bedroom",
+            "the middle"
+          ]
+        },
+        {
+          "word": "mitad",
+          "answer": "the middle",
+          "options": [
+            "a shoe",
+            "a living room",
+            "a bedroom",
+            "the middle"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "correr",
+    "featured": false,
+    "sentence": "Marina y su hermano Julián [[corren]] detrás del perrito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to run",
+      "options": [
+        "to run",
+        "to jump",
+        "to walk",
+        "to shout"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "Marina y su hermano Julián corren detrás del perrito.",
+        "targetWord": "corren",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sobrar",
+    "featured": false,
+    "sentence": "Energía le [[sobra]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be more than enough",
+      "options": [
+        "to be more than enough",
+        "to be missing",
+        "to be expensive",
+        "to be useless"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "Energía le sobra.",
+        "targetWord": "sobra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "congelado",
+    "featured": false,
+    "sentence": "Los dos hermanos se quedan [[congelados]] del susto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "frozen still",
+      "options": [
+        "frozen still",
+        "wide awake",
+        "very calm",
+        "fast asleep"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "Los dos hermanos se quedan congelados del susto.",
+        "targetWord": "congelados",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jugar",
+    "featured": false,
+    "sentence": "Tiene mucha energía y no para de [[jugar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to play",
+      "options": [
+        "to play",
+        "to eat",
+        "to sleep",
+        "to work"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "Tiene mucha energía y no para de jugar.",
+        "targetWord": "jugar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "molestia",
+    "featured": false,
+    "sentence": "Disculpe la [[molestia]], no vuelve a pasar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the trouble",
+      "options": [
+        "the trouble",
+        "the noise",
+        "the delay",
+        "the mess"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "Disculpe la molestia, no vuelve a pasar.",
+        "targetWord": "molestia",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "escucha",
+    "featured": false,
+    "sentence": "La música está muy alta y la abuela no te _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escucha",
+      "options": [
+        "escucha",
+        "mira",
+        "conoce",
+        "espera"
+      ],
+      "translation": "The music is very loud and grandma can't _____ you.",
+      "optionTranslations": [
+        "hear",
+        "see",
+        "know",
+        "wait for"
+      ],
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "La música está muy alta y la abuela no te escucha.",
+        "targetWord": "escucha",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "comer",
+    "featured": false,
+    "sentence": "Se comió uno de mis zapatos nuevos.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "comió",
+      "options": [
+        "comió",
+        "rompió",
+        "perdió",
+        "subió"
+      ],
+      "optionTranslations": [
+        "ate",
+        "broke",
+        "lost",
+        "went up"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "esconder-al-perro",
+        "storySource": "user",
+        "sentence": "Se comió uno de mis zapatos nuevos.",
+        "targetWord": "comió",
+        "language": "spanish",
+        "voiceId": "1ZhMG5ZZgJ6XpkOrB8Az"
+      }
+    }
+  }
+]

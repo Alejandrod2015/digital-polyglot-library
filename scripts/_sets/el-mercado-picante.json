@@ -1,0 +1,403 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "hay",
+    "sentence": "[[Hay]] tacos, fruta, salsa y agua de limón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "there is, there are",
+      "options": ["there is, there are", "he says", "she looks", "it rains"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "Hay tacos, fruta, salsa y agua de limón.",
+        "targetWord": "Hay",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tiene hambre",
+    "sentence": "Ana [[tiene hambre]] y visita un mercado tradicional.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "is hungry",
+      "options": ["is hungry", "is tired", "is late", "is cold"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "Ana tiene hambre y visita un mercado tradicional.",
+        "targetWord": "tiene hambre",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "agua",
+    "sentence": "Tengo sed; quiero un vaso de _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "agua",
+      "options": ["agua", "pan", "sal", "papel"],
+      "translation": "I am thirsty; I want a glass of _____.",
+      "optionTranslations": ["water", "bread", "salt", "paper"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "Tengo sed; quiero un vaso de agua.",
+        "targetWord": "agua",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "señora",
+    "sentence": "Una [[señora]] sonríe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lady",
+      "options": ["a lady", "a boy", "a dog", "a chair"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "Una señora sonríe.",
+        "targetWord": "señora",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "comida",
+    "sentence": "La cocina huele bien; la _____ está lista.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "comida",
+      "options": ["comida", "cama", "casa", "calle"],
+      "translation": "The kitchen smells good; the _____ is ready.",
+      "optionTranslations": ["food", "bed", "house", "street"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "La cocina huele bien; la comida está lista.",
+        "targetWord": "comida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "sentence": "Ana [[mira]] el menú.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look at",
+      "options": ["to look at", "to break", "to sell", "to carry"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "Ana mira el menú.",
+        "targetWord": "mira",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "picante",
+    "sentence": "¡Agua, por favor! La salsa está muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "picante",
+      "options": ["picante", "fría", "verde", "pequeña"],
+      "translation": "Water, please! The salsa is very _____.",
+      "optionTranslations": ["spicy", "cold", "green", "small"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "¡Agua, por favor! La salsa está muy picante.",
+        "targetWord": "picante",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dulce",
+    "sentence": "Es un mango con limón, [[dulce]] y perfecto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sweet",
+      "options": ["sweet", "salty", "empty", "fast"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "Es un mango con limón, dulce y perfecto.",
+        "targetWord": "dulce",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "feliz",
+    "sentence": "Es su cumpleaños y ella está muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "feliz",
+      "options": ["feliz", "triste", "alta", "fría"],
+      "translation": "It is her birthday and she is very _____.",
+      "optionTranslations": ["happy", "sad", "tall", "cold"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "Es su cumpleaños y ella está muy feliz.",
+        "targetWord": "feliz",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "decir",
+    "sentence": "Ella [[dice]]: ¿Tacos? ¡Son deliciosos!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to say",
+      "options": ["to say", "to cook", "to buy", "to wait"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "Ella dice: ¿Tacos? ¡Son deliciosos!",
+        "targetWord": "dice",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mucho",
+    "featured": false,
+    "sentence": "La música es alegre y hay [[mucha]] gente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lot of",
+      "options": ["a lot of", "a few", "none", "the same"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "La música es alegre y hay mucha gente.",
+        "targetWord": "mucha",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gente",
+    "featured": false,
+    "sentence": "Hay mucha [[gente]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "people",
+      "options": ["people", "houses", "cars", "tables"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "Hay mucha gente.",
+        "targetWord": "gente",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "featured": false,
+    "sentence": "La señora [[sonríe]] y dice: ¡Son deliciosos!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smile",
+      "options": ["to smile", "to sleep", "to jump", "to write"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "La señora sonríe y dice: ¡Son deliciosos!",
+        "targetWord": "sonríe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reír",
+    "featured": false,
+    "sentence": "La señora [[ríe]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to laugh",
+      "options": ["to laugh", "to cry", "to run", "to pay"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "La señora ríe.",
+        "targetWord": "ríe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "simpática",
+    "featured": false,
+    "sentence": "La señora ríe, pero es [[simpática]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "friendly",
+      "options": ["friendly", "angry", "tall", "busy"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "La señora ríe, pero es simpática.",
+        "targetWord": "simpática",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lugar",
+    "featured": false,
+    "sentence": "Este mercado es mi [[lugar]] favorito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a place",
+      "options": ["a place", "a name", "a game", "a color"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "Este mercado es mi lugar favorito.",
+        "targetWord": "lugar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pensar",
+    "featured": false,
+    "sentence": "Ana [[piensa]]: ¿Pero qué taco?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to think",
+      "options": ["to think", "to dance", "to open", "to wash"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "Ana piensa: ¿Pero qué taco?",
+        "targetWord": "piensa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "regresa",
+    "featured": false,
+    "sentence": "Va al trabajo por la mañana y _____ a casa de noche.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "regresa",
+      "options": ["regresa", "canta", "duerme", "come"],
+      "translation": "She goes to work in the morning and _____ home at night.",
+      "optionTranslations": ["returns", "sings", "sleeps", "eats"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "Va al trabajo por la mañana y regresa a casa de noche.",
+        "targetWord": "regresa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "lunes",
+    "featured": false,
+    "sentence": "El día después del domingo es el _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lunes",
+      "options": ["lunes", "viernes", "sábado", "agosto"],
+      "translation": "The day after Sunday is _____.",
+      "optionTranslations": ["Monday", "Friday", "Saturday", "August"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "El día después del domingo es el lunes.",
+        "targetWord": "lunes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "palabra",
+    "featured": false,
+    "sentence": "No comprendo esta _____; ¿qué significa?",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "palabra",
+      "options": ["palabra", "puerta", "persona", "pierna"],
+      "translation": "I do not understand this _____; what does it mean?",
+      "optionTranslations": ["word", "door", "person", "leg"],
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "No comprendo esta palabra; ¿qué significa?",
+        "targetWord": "palabra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "muy,pero,ahora,mañana",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "muy", "answer": "very", "options": ["very", "but", "now", "tomorrow"] },
+        { "word": "pero", "answer": "but", "options": ["very", "but", "now", "tomorrow"] },
+        { "word": "ahora", "answer": "now", "options": ["very", "but", "now", "tomorrow"] },
+        { "word": "mañana", "answer": "tomorrow", "options": ["very", "but", "now", "tomorrow"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "tomar",
+    "featured": false,
+    "sentence": "Ana toma agua rápido.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "toma",
+      "options": ["toma", "toca", "corta", "manda"],
+      "optionTranslations": ["takes, drinks", "touches", "cuts", "sends"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-mercado-picante",
+        "storySource": "user",
+        "sentence": "Ana toma agua rápido.",
+        "targetWord": "toma",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+      }
+    }
+  }
+]

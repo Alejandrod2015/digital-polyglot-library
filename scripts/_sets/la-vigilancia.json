@@ -1,0 +1,455 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "oscuro",
+    "sentence": "La noche está [[oscura]] y llena de grillos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dark",
+      "options": [
+        "dark",
+        "long",
+        "warm",
+        "quiet"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "La noche está oscura y llena de grillos.",
+        "targetWord": "oscura",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escondido",
+    "sentence": "Ella y Rodrigo esperan [[escondidos]] detrás de unas macetas grandes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hidden",
+      "options": [
+        "hidden",
+        "seated",
+        "awake",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "Ella y Rodrigo esperan escondidos detrás de unas macetas grandes.",
+        "targetWord": "escondidos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agachado",
+    "sentence": "Llevamos ya dos horas aquí [[agachados]], Itzel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "crouched down",
+      "options": [
+        "crouched down",
+        "standing up",
+        "stretched out",
+        "turned around"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "Llevamos ya dos horas aquí agachados, Itzel.",
+        "targetWord": "agachados",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sombra",
+    "sentence": "De repente algo se mueve entre las [[sombras]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a shadow",
+      "options": [
+        "a shadow",
+        "a branch",
+        "a wall",
+        "a cloud"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "De repente algo se mueve entre las sombras.",
+        "targetWord": "sombras",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "susto",
+    "sentence": "Se levanta de un salto, muerto del [[susto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a scare",
+      "options": [
+        "a scare",
+        "a laugh",
+        "a doubt",
+        "a dream"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "Se levanta de un salto, muerto del susto.",
+        "targetWord": "susto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alumbrar",
+    "sentence": "Voy a [[alumbrar]] despacio hacia el árbol.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to light up",
+      "options": [
+        "to light up",
+        "to climb",
+        "to look",
+        "to shout"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "Voy a alumbrar despacio hacia el árbol.",
+        "targetWord": "alumbrar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "calla",
+    "sentence": "El bebé duerme; _____ un poco, por favor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "calla",
+      "options": [
+        "calla",
+        "corre",
+        "salta",
+        "baila"
+      ],
+      "translation": "The baby is sleeping; _____ a little, please.",
+      "optionTranslations": [
+        "be quiet",
+        "run",
+        "jump",
+        "dance"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "El bebé duerme; calla un poco, por favor.",
+        "targetWord": "calla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "aguanta",
+    "sentence": "La maleta pesa mucho, pero él la _____ bien.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aguanta",
+      "options": [
+        "aguanta",
+        "vende",
+        "pinta",
+        "rompe"
+      ],
+      "translation": "The suitcase weighs a lot, but he _____ it fine.",
+      "optionTranslations": [
+        "holds (bears)",
+        "sells",
+        "paints",
+        "breaks"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "La maleta pesa mucho, pero él la aguanta bien.",
+        "targetWord": "aguanta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "salto",
+    "sentence": "El gato cruzó la mesa de un solo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "salto",
+      "options": [
+        "salto",
+        "beso",
+        "abrazo",
+        "canto"
+      ],
+      "translation": "The cat crossed the table in a single _____.",
+      "optionTranslations": [
+        "jump",
+        "kiss",
+        "hug",
+        "song"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "El gato cruzó la mesa de un solo salto.",
+        "targetWord": "salto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "despacio",
+    "sentence": "La tortuga es lenta: camina muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "despacio",
+      "options": [
+        "despacio",
+        "temprano",
+        "fuerte",
+        "alto"
+      ],
+      "translation": "The turtle is slow: it walks very _____.",
+      "optionTranslations": [
+        "slowly",
+        "early",
+        "loudly",
+        "high"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "La tortuga es lenta: camina muy despacio.",
+        "targetWord": "despacio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suave",
+    "featured": false,
+    "sentence": "Un ruido [[suave]] baja del mango.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "soft, gentle",
+      "options": [
+        "soft, gentle",
+        "loud",
+        "sharp",
+        "constant"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "Un ruido suave baja del mango.",
+        "targetWord": "suave",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "luz",
+    "featured": false,
+    "sentence": "Rodrigo sube la [[luz]] poco a poco por el tronco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "light (beam)",
+      "options": [
+        "light (beam)",
+        "rope",
+        "ladder",
+        "net"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "Rodrigo sube la luz poco a poco por el tronco.",
+        "targetWord": "luz",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brillar",
+    "featured": false,
+    "sentence": "Dos ojos que [[brillan]] entre las hojas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to shine",
+      "options": [
+        "to shine",
+        "to blink",
+        "to hide",
+        "to cry"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "Dos ojos que brillan entre las hojas.",
+        "targetWord": "brillan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lugar",
+    "featured": false,
+    "sentence": "Vuelve a tu [[lugar]] y quédate quieto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a place (spot)",
+      "options": [
+        "a place (spot)",
+        "a moment",
+        "a job",
+        "a story"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "Vuelve a tu lugar y quédate quieto.",
+        "targetWord": "lugar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pasos",
+    "featured": false,
+    "sentence": "Escucho _____ en la escalera; alguien sube.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pasos",
+      "options": [
+        "pasos",
+        "gritos",
+        "truenos",
+        "aplausos"
+      ],
+      "translation": "I hear _____ on the stairs; someone is coming up.",
+      "optionTranslations": [
+        "footsteps",
+        "shouts",
+        "thunder",
+        "applause"
+      ],
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "Escucho pasos en la escalera; alguien sube.",
+        "targetWord": "pasos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "gato,linterna,espalda,vecino",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "gato",
+          "answer": "a cat",
+          "options": [
+            "a cat",
+            "a flashlight",
+            "the back (of the body)",
+            "a neighbor"
+          ]
+        },
+        {
+          "word": "linterna",
+          "answer": "a flashlight",
+          "options": [
+            "a cat",
+            "a flashlight",
+            "the back (of the body)",
+            "a neighbor"
+          ]
+        },
+        {
+          "word": "espalda",
+          "answer": "the back (of the body)",
+          "options": [
+            "a cat",
+            "a flashlight",
+            "the back (of the body)",
+            "a neighbor"
+          ]
+        },
+        {
+          "word": "vecino",
+          "answer": "a neighbor",
+          "options": [
+            "a cat",
+            "a flashlight",
+            "the back (of the body)",
+            "a neighbor"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "doler",
+    "featured": false,
+    "sentence": "Me duele toda la espalda.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "duele",
+      "options": [
+        "duele",
+        "huele",
+        "muele",
+        "suele"
+      ],
+      "optionTranslations": [
+        "hurts",
+        "smells",
+        "grinds",
+        "usually does"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "la-vigilancia",
+        "storySource": "user",
+        "sentence": "Me duele toda la espalda.",
+        "targetWord": "duele",
+        "language": "spanish",
+        "voiceId": "77K94gl6ZCRVTHG8Gi1w"
+      }
+    }
+  }
+]

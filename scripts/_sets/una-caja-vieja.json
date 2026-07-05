@@ -1,0 +1,307 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "caja",
+    "sentence": "Marina abre la [[caja]] con cuidado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a box",
+      "options": ["a box", "a door", "a bag", "a bottle"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "Marina abre la caja con cuidado.",
+        "targetWord": "caja",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "papel",
+    "sentence": "Adentro hay [[papeles]], cartas y una foto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "paper",
+      "options": ["paper", "glass", "cloth", "plastic"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "Adentro hay papeles, cartas y una foto.",
+        "targetWord": "papeles",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "carta",
+    "sentence": "[[Cartas]] de amigas de entonces.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a letter",
+      "options": ["a letter", "a book", "a ticket", "a map"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "Cartas de amigas de entonces.",
+        "targetWord": "Cartas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ordenar",
+    "sentence": "Ayuda a su mamá a [[ordenar]] el cuarto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tidy up",
+      "options": ["to tidy up", "to paint", "to sell", "to fill"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "Ayuda a su mamá a ordenar el cuarto.",
+        "targetWord": "ordenar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "joven",
+    "sentence": "Te ves muy [[joven]] aquí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "young",
+      "options": ["young", "tall", "sad", "angry"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "Te ves muy joven aquí.",
+        "targetWord": "joven",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "polvo",
+    "sentence": "El libro viejo está cubierto de _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "polvo",
+      "options": ["polvo", "humo", "jugo", "hielo"],
+      "translation": "The old book is covered in _____.",
+      "optionTranslations": ["dust", "smoke", "juice", "ice"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "El libro viejo está cubierto de polvo.",
+        "targetWord": "polvo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuarto",
+    "sentence": "Es sábado y ayuda a su mamá a ordenar el [[cuarto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a room",
+      "options": ["a room", "a garden", "a garage", "a kitchen"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "Es sábado y ayuda a su mamá a ordenar el cuarto.",
+        "targetWord": "cuarto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "fiesta",
+    "sentence": "Hay música, globos y pastel en la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fiesta",
+      "options": ["fiesta", "escuela", "tienda", "iglesia"],
+      "translation": "There is music, balloons and cake at the _____.",
+      "optionTranslations": ["party", "school", "store", "church"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "Hay música, globos y pastel en la fiesta.",
+        "targetWord": "fiesta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contar",
+    "sentence": "Eso te lo [[cuento]] otro día.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tell",
+      "options": ["to tell", "to ask", "to hide", "to forget"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "Eso te lo cuento otro día.",
+        "targetWord": "cuento",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recuerdo",
+    "sentence": "Por un momento, los [[recuerdos]] vuelven a aquellos años.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a memory",
+      "options": ["a memory", "a dream", "a plan", "a joke"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "Por un momento, los recuerdos vuelven a aquellos años.",
+        "targetWord": "recuerdos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muchacho",
+    "featured": false,
+    "sentence": "¿Y quién es el [[muchacho]] a tu lado?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a young man",
+      "options": ["a young man", "an old man", "a little girl", "a teacher"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "¿Y quién es el muchacho a tu lado?",
+        "targetWord": "muchacho",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "limpiar",
+    "featured": false,
+    "sentence": "La cocina está sucia; la voy a _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "limpiar",
+      "options": ["limpiar", "romper", "vender", "cerrar"],
+      "translation": "The kitchen is dirty; I am going to _____ it.",
+      "optionTranslations": ["to clean", "to break", "to sell", "to close"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "La cocina está sucia; la voy a limpiar.",
+        "targetWord": "limpiar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tiempo",
+    "featured": false,
+    "sentence": "Cómo pasa el [[tiempo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "time",
+      "options": ["time", "money", "music", "fear"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "Cómo pasa el tiempo.",
+        "targetWord": "tiempo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "barrio",
+    "featured": false,
+    "sentence": "Conozco a todos los vecinos de mi _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "barrio",
+      "options": ["barrio", "colegio", "trabajo", "equipo"],
+      "translation": "I know all the neighbors in my _____.",
+      "optionTranslations": ["neighborhood", "school", "job", "team"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "Conozco a todos los vecinos de mi barrio.",
+        "targetWord": "barrio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dejar",
+    "featured": false,
+    "sentence": "Marina [[deja]] la caja en el suelo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to put down",
+      "options": ["to put down", "to pick up", "to throw", "to open"],
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "Marina deja la caja en el suelo.",
+        "targetWord": "deja",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "a ver,con cuidado,rápido,fin de semana",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "a ver", "answer": "let's see", "options": ["let's see", "carefully", "quickly", "weekend"] },
+        { "word": "con cuidado", "answer": "carefully", "options": ["let's see", "carefully", "quickly", "weekend"] },
+        { "word": "rápido", "answer": "quickly", "options": ["let's see", "carefully", "quickly", "weekend"] },
+        { "word": "fin de semana", "answer": "weekend", "options": ["let's see", "carefully", "quickly", "weekend"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "bailar",
+    "featured": false,
+    "sentence": "Nunca me contaste que bailabas.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "bailabas",
+      "options": ["bailabas", "cantabas", "bajabas", "hablabas"],
+      "optionTranslations": ["you danced", "you sang", "you went down", "you talked"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "una-caja-vieja",
+        "storySource": "user",
+        "sentence": "Nunca me contaste que bailabas.",
+        "targetWord": "bailabas",
+        "language": "spanish",
+        "voiceId": "1ZhMG5ZZgJ6XpkOrB8Az"
+      }
+    }
+  }
+]

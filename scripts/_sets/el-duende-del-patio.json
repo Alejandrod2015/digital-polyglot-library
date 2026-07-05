@@ -1,0 +1,470 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "duende",
+    "sentence": "Ah, eso es el [[duende]] del patio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a goblin from tales",
+      "options": [
+        "a goblin from tales",
+        "a stray cat",
+        "a night bird",
+        "a neighbor kid"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Ah, eso es el duende del patio.",
+        "targetWord": "duende",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb167b43928083d5.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "contamos",
+    "sentence": "Antes de pagar, _____ el dinero entre los dos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "contamos",
+      "options": [
+        "contamos",
+        "cantamos",
+        "pintamos",
+        "borramos"
+      ],
+      "translation": "Before paying, we _____ the money together.",
+      "optionTranslations": [
+        "we count",
+        "we sing",
+        "we paint",
+        "we erase"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Antes de pagar, contamos el dinero entre los dos.",
+        "targetWord": "contamos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c3c9e7efd398815f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "faltar",
+    "sentence": "Otra vez [[faltan]] mangos, Rodrigo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be missing",
+      "options": [
+        "to be missing",
+        "to fall down",
+        "to taste bad",
+        "to grow fast"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Otra vez faltan mangos, Rodrigo.",
+        "targetWord": "faltan",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0a1f3685185146c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "descubrir",
+    "sentence": "El detective revisa las pistas para _____ la verdad.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "descubrir",
+      "options": [
+        "descubrir",
+        "esconder",
+        "olvidar",
+        "vender"
+      ],
+      "translation": "The detective checks the clues to _____ the truth.",
+      "optionTranslations": [
+        "discover",
+        "hide",
+        "forget",
+        "sell"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "El detective revisa las pistas para descubrir la verdad.",
+        "targetWord": "descubrir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e343efbc079e3bb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raro",
+    "sentence": "Eso es todavía más [[raro]] que los mangos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strange",
+      "options": [
+        "strange",
+        "expensive",
+        "funny",
+        "dangerous"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Eso es todavía más raro que los mangos.",
+        "targetWord": "raro",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ebcc1677db7897b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "acompañas",
+    "sentence": "Voy a caminar al parque; ¿me _____ un rato?",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acompañas",
+      "options": [
+        "acompañas",
+        "llevas",
+        "sigues",
+        "cuidas"
+      ],
+      "translation": "I am going for a walk in the park; will you _____ me for a while?",
+      "optionTranslations": [
+        "come with",
+        "carry",
+        "follow",
+        "look after"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Voy a caminar al parque; ¿me acompañas un rato?",
+        "targetWord": "acompañas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6bab092d05bf4d8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jurar",
+    "sentence": "Mi abuela [[juraba]] que sí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to swear",
+      "options": [
+        "to swear",
+        "to doubt",
+        "to joke",
+        "to whisper"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Mi abuela juraba que sí.",
+        "targetWord": "juraba",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae376c3fd2fd9938.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "corriendo",
+    "sentence": "Perdía el bus, así que llegó _____ a la parada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "corriendo",
+      "options": [
+        "corriendo",
+        "durmiendo",
+        "cantando",
+        "llorando"
+      ],
+      "translation": "He was missing the bus, so he arrived _____ at the stop.",
+      "optionTranslations": [
+        "running",
+        "sleeping",
+        "singing",
+        "crying"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Perdía el bus, así que llegó corriendo a la parada.",
+        "targetWord": "corriendo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e93d0971b1a805eb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enojo",
+    "sentence": "Cuenta los mangos con cara de [[enojo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "anger",
+      "options": [
+        "anger",
+        "joy",
+        "surprise",
+        "boredom"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Cuenta los mangos con cara de enojo.",
+        "targetWord": "enojo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/479936e5a8959449.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vigilar",
+    "sentence": "Esta noche me quedo despierta y [[vigilo]] el árbol.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to keep watch",
+      "options": [
+        "to keep watch",
+        "to climb",
+        "to shake",
+        "to paint"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Esta noche me quedo despierta y vigilo el árbol.",
+        "targetWord": "vigilo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/186ffc9673c24098.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "divertido",
+    "featured": false,
+    "sentence": "Rodrigo la observa [[divertido]] desde la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "amused",
+      "options": [
+        "amused",
+        "bored",
+        "angry",
+        "distracted"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Rodrigo la observa divertido desde la puerta.",
+        "targetWord": "divertido",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1f436b02100cbbe1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuento",
+    "featured": false,
+    "sentence": "Tu abuela contaba [[cuentos]] bonitos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tale",
+      "options": [
+        "a tale",
+        "a recipe",
+        "a song",
+        "a secret"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Tu abuela contaba cuentos bonitos.",
+        "targetWord": "cuentos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0684a42bd06fa4ec.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "se porta bien",
+    "featured": false,
+    "sentence": "Dicen que el duende [[se porta bien]] cuando lo tratan con respeto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "behaves well",
+      "options": [
+        "behaves well",
+        "hides well",
+        "sleeps well",
+        "eats well"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Dicen que el duende se porta bien cuando lo tratan con respeto.",
+        "targetWord": "se porta bien",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/389b33ed15a9a505.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "negar",
+    "featured": false,
+    "sentence": "Itzel cruza los brazos y [[niega]] con la cabeza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to deny",
+      "options": [
+        "to deny",
+        "to accept",
+        "to applaud",
+        "to whistle"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Itzel cruza los brazos y niega con la cabeza.",
+        "targetWord": "niega",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e4e6786b673eb8d8.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "miedoso",
+    "featured": false,
+    "sentence": "Mi gato es muy _____; cualquier ruido lo asusta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "miedoso",
+      "options": [
+        "miedoso",
+        "goloso",
+        "perezoso",
+        "cariñoso"
+      ],
+      "translation": "My cat is very _____; any noise scares him.",
+      "optionTranslations": [
+        "fearful",
+        "greedy",
+        "lazy",
+        "affectionate"
+      ],
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Mi gato es muy miedoso; cualquier ruido lo asusta.",
+        "targetWord": "miedoso",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c4652fbbd63cdd79.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "árbol,pueblo,dulce,valiente",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "árbol",
+          "answer": "a tree",
+          "options": [
+            "a tree",
+            "a town",
+            "sweet",
+            "brave"
+          ]
+        },
+        {
+          "word": "pueblo",
+          "answer": "a town",
+          "options": [
+            "a tree",
+            "a town",
+            "sweet",
+            "brave"
+          ]
+        },
+        {
+          "word": "dulce",
+          "answer": "sweet",
+          "options": [
+            "a tree",
+            "a town",
+            "sweet",
+            "brave"
+          ]
+        },
+        {
+          "word": "valiente",
+          "answer": "brave",
+          "options": [
+            "a tree",
+            "a town",
+            "sweet",
+            "brave"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "atrapar",
+    "featured": false,
+    "sentence": "Entre los dos lo atrapamos, sea lo que sea.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "atrapamos",
+      "options": [
+        "atrapamos",
+        "apagamos",
+        "ayudamos",
+        "abrazamos"
+      ],
+      "optionTranslations": [
+        "we catch",
+        "we turn off",
+        "we help",
+        "we hug"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-duende-del-patio",
+        "storySource": "user",
+        "sentence": "Entre los dos lo atrapamos, sea lo que sea.",
+        "targetWord": "atrapamos",
+        "language": "spanish",
+        "voiceId": "m7yTemJqdIqrcNleANfX"
+      }
+    }
+  }
+]

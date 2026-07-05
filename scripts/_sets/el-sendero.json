@@ -1,0 +1,403 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "empezar",
+    "sentence": "Valentina y su papá [[empiezan]] un sendero en la montaña.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to start",
+      "options": ["to start", "to finish", "to wait", "to sell"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "Valentina y su papá empiezan un sendero en la montaña.",
+        "targetWord": "empiezan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mochila",
+    "sentence": "Llevo mis libros en la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mochila",
+      "options": ["mochila", "camisa", "silla", "pierna"],
+      "translation": "I carry my books in my _____.",
+      "optionTranslations": ["backpack", "shirt", "chair", "leg"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "Llevo mis libros en la mochila.",
+        "targetWord": "mochila",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fresco",
+    "sentence": "El aire es [[fresco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cool, fresh",
+      "options": ["cool, fresh", "dirty", "slow", "dark"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "El aire es fresco.",
+        "targetWord": "fresco",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cielo",
+    "sentence": "Miro las estrellas en el _____ de noche.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cielo",
+      "options": ["cielo", "piso", "carro", "pelo"],
+      "translation": "I look at the stars in the _____ at night.",
+      "optionTranslations": ["sky", "floor", "car", "hair"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "Miro las estrellas en el cielo de noche.",
+        "targetWord": "cielo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "azul",
+    "sentence": "El cielo es [[azul]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "blue",
+      "options": ["blue", "red", "black", "white"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "El cielo es azul.",
+        "targetWord": "azul",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caminar",
+    "sentence": "[[Camina]] despacio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to walk",
+      "options": ["to walk", "to sing", "to drink", "to buy"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "Camina despacio.",
+        "targetWord": "Camina",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "montaña",
+    "sentence": "Subimos muy alto a la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "montaña",
+      "options": ["montaña", "cocina", "ventana", "naranja"],
+      "translation": "We climb very high up the _____.",
+      "optionTranslations": ["mountain", "kitchen", "window", "orange"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "Subimos muy alto a la montaña.",
+        "targetWord": "montaña",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "volar",
+    "sentence": "Un pájaro grande [[vuela]] sobre ellos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fly",
+      "options": ["to fly", "to swim", "to run", "to eat"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "Un pájaro grande vuela sobre ellos.",
+        "targetWord": "vuela",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pesada",
+    "sentence": "La caja tiene muchos libros; está muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pesada",
+      "options": ["pesada", "vacía", "limpia", "fría"],
+      "translation": "The box has many books; it is very _____.",
+      "optionTranslations": ["heavy", "empty", "clean", "cold"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "La caja tiene muchos libros; está muy pesada.",
+        "targetWord": "pesada",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pájaro",
+    "sentence": "El _____ canta en el árbol por la mañana.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pájaro",
+      "options": ["pájaro", "zapato", "vaso", "plato"],
+      "translation": "The _____ sings in the tree in the morning.",
+      "optionTranslations": ["bird", "shoe", "glass", "plate"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "El pájaro canta en el árbol por la mañana.",
+        "targetWord": "pájaro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verano",
+    "featured": false,
+    "sentence": "En la Patagonia, Chile, es [[verano]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "summer",
+      "options": ["summer", "winter", "night", "breakfast"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "En la Patagonia, Chile, es verano.",
+        "targetWord": "verano",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llevar",
+    "featured": false,
+    "sentence": "Valentina [[lleva]] una mochila pesada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to carry",
+      "options": ["to carry", "to break", "to find", "to wash"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "Valentina lleva una mochila pesada.",
+        "targetWord": "lleva",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "featured": false,
+    "sentence": "Su papá [[sonríe]]: «Paso a paso, hija.»",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smile",
+      "options": ["to smile", "to sleep", "to jump", "to write"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "Su papá sonríe: «Paso a paso, hija.»",
+        "targetWord": "sonríe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "árbol",
+    "featured": false,
+    "sentence": "Hay [[árboles]] enormes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tree",
+      "options": ["a tree", "a river", "a cloud", "a table"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "Hay árboles enormes.",
+        "targetWord": "árboles",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "viento",
+    "featured": false,
+    "sentence": "Hoy hay mucho _____ y mi sombrero vuela.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "viento",
+      "options": ["viento", "dinero", "queso", "jabón"],
+      "translation": "Today there is a lot of _____ and my hat flies.",
+      "optionTranslations": ["wind", "money", "cheese", "soap"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "Hoy hay mucho viento y mi sombrero vuela.",
+        "targetWord": "viento",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "flor",
+    "featured": false,
+    "sentence": "Hay árboles enormes, [[flores]] y el sonido del viento.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a flower",
+      "options": ["a flower", "a stone", "a fish", "a hat"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "Hay árboles enormes, flores y el sonido del viento.",
+        "targetWord": "flores",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "featured": false,
+    "sentence": "Valentina [[mira]], fascinada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look at",
+      "options": ["to look at", "to wash", "to sell", "to open"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "Valentina mira, fascinada.",
+        "targetWord": "mira",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hermoso",
+    "featured": false,
+    "sentence": "La montaña es enorme y [[hermosa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "beautiful",
+      "options": ["beautiful", "ugly", "cold", "fast"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "La montaña es enorme y hermosa.",
+        "targetWord": "hermosa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "hija",
+    "featured": false,
+    "sentence": "La _____ de mi tía es mi prima.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hija",
+      "options": ["hija", "mesa", "casa", "sopa"],
+      "translation": "The _____ of my aunt is my cousin.",
+      "optionTranslations": ["daughter", "table", "house", "soup"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "La hija de mi tía es mi prima.",
+        "targetWord": "hija",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "principio",
+    "featured": false,
+    "sentence": "Y esto es solo el [[principio]] de la aventura.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the beginning",
+      "options": ["the beginning", "the end", "the game", "the street"],
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "Y esto es solo el principio de la aventura.",
+        "targetWord": "principio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "despacio,arriba,difícil,fuerte",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "despacio", "answer": "slowly", "options": ["slowly", "up", "difficult", "strong"] },
+        { "word": "arriba", "answer": "up", "options": ["slowly", "up", "difficult", "strong"] },
+        { "word": "difícil", "answer": "difficult", "options": ["slowly", "up", "difficult", "strong"] },
+        { "word": "fuerte", "answer": "strong", "options": ["slowly", "up", "difficult", "strong"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cansado",
+    "featured": false,
+    "sentence": "Valentina está cansada, pero feliz.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "cansada",
+      "options": ["cansada", "casada", "pintada", "cortada"],
+      "optionTranslations": ["tired", "married", "painted", "cut"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-sendero",
+        "storySource": "user",
+        "sentence": "Valentina está cansada, pero feliz.",
+        "targetWord": "cansada",
+        "language": "spanish",
+        "voiceId": "yytxkT3pNVMWDHn3KXrY"
+      }
+    }
+  }
+]

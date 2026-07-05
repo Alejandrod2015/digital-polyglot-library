@@ -1,0 +1,403 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "miércoles",
+    "sentence": "El [[miércoles]], Elena toma el tren.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Wednesday",
+      "options": ["Wednesday", "Friday", "Sunday", "April"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "El miércoles, Elena toma el tren.",
+        "targetWord": "miércoles",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tren",
+    "sentence": "Viajo en _____ de Lima a Cusco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tren",
+      "options": ["tren", "pan", "sol", "queso"],
+      "translation": "I travel by _____ from Lima to Cusco.",
+      "optionTranslations": ["train", "bread", "sun", "cheese"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Viajo en tren de Lima a Cusco.",
+        "targetWord": "tren",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tomar",
+    "sentence": "Elena [[toma]] el tren a Machu Picchu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take",
+      "options": ["to take", "to close", "to pay", "to hear"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Elena toma el tren a Machu Picchu.",
+        "targetWord": "toma",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pasar",
+    "sentence": "El tren [[pasa]] por montañas verdes y un río rápido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pass",
+      "options": ["to pass", "to buy", "to sing", "to sleep"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "El tren pasa por montañas verdes y un río rápido.",
+        "targetWord": "pasa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ventana",
+    "sentence": "Elena mira por la [[ventana]], emocionada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a window",
+      "options": ["a window", "a door", "a hand", "a tree"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Elena mira por la ventana, emocionada.",
+        "targetWord": "ventana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "soñar",
+    "sentence": "Hace años que [[sueña]] con este lugar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dream",
+      "options": ["to dream", "to work", "to swim", "to shout"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Hace años que sueña con este lugar.",
+        "targetWord": "sueña",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "río",
+    "sentence": "Los peces nadan en el _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "río",
+      "options": ["río", "libro", "zapato", "carro"],
+      "translation": "The fish swim in the _____.",
+      "optionTranslations": ["river", "book", "shoe", "car"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Los peces nadan en el río.",
+        "targetWord": "río",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "montaña",
+    "sentence": "El paisaje cambia cada minuto: [[montañas]], ríos y pequeños pueblos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a mountain",
+      "options": ["a mountain", "a star", "a table", "a shoe"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "El paisaje cambia cada minuto: montañas, ríos y pequeños pueblos.",
+        "targetWord": "montañas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enorme",
+    "sentence": "Machu Picchu es [[enorme]], antiguo y silencioso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "huge",
+      "options": ["huge", "empty", "cheap", "soft"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Machu Picchu es enorme, antiguo y silencioso.",
+        "targetWord": "enorme",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hermoso",
+    "sentence": "Es más [[hermoso]] que en las fotos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "beautiful",
+      "options": ["beautiful", "sad", "dirty", "slow"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Es más hermoso que en las fotos.",
+        "targetWord": "hermoso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lugar",
+    "featured": false,
+    "sentence": "Encuentra el [[lugar]] de sus sueños.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a place",
+      "options": ["a place", "a song", "a job", "a face"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Encuentra el lugar de sus sueños.",
+        "targetWord": "lugar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "viaje",
+    "featured": false,
+    "sentence": "Compro un boleto para mi _____ a Lima.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "viaje",
+      "options": ["viaje", "plato", "perro", "huevo"],
+      "translation": "I buy a ticket for my _____ to Lima.",
+      "optionTranslations": ["trip", "plate", "dog", "egg"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Compro un boleto para mi viaje a Lima.",
+        "targetWord": "viaje",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encontrar",
+    "featured": false,
+    "sentence": "Aquí, por fin, [[encuentra]] el lugar de sus sueños.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to find",
+      "options": ["to find", "to forget", "to carry", "to wash"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Aquí, por fin, encuentra el lugar de sus sueños.",
+        "targetWord": "encuentra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "rápido",
+    "featured": false,
+    "sentence": "Un carro de carreras es muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rápido",
+      "options": ["rápido", "frío", "sucio", "largo"],
+      "translation": "A race car is very _____.",
+      "optionTranslations": ["fast", "cold", "dirty", "long"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Un carro de carreras es muy rápido.",
+        "targetWord": "rápido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "antiguo",
+    "featured": false,
+    "sentence": "Es enorme, [[antiguo]] y silencioso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "very old",
+      "options": ["very old", "very happy", "very cold", "very loud"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Es enorme, antiguo y silencioso.",
+        "targetWord": "antiguo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "nubes",
+    "featured": false,
+    "sentence": "Hoy no hay sol; el cielo tiene muchas _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "nubes",
+      "options": ["nubes", "mesas", "tazas", "botas"],
+      "translation": "Today there is no sun; the sky has many _____.",
+      "optionTranslations": ["clouds", "tables", "cups", "boots"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Hoy no hay sol; el cielo tiene muchas nubes.",
+        "targetWord": "nubes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saber",
+    "featured": false,
+    "sentence": "[[Sabe]] que la foto no es suficiente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to know",
+      "options": ["to know", "to ask", "to run", "to give"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Sabe que la foto no es suficiente.",
+        "targetWord": "Sabe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "verdes",
+    "featured": false,
+    "sentence": "Las plantas del jardín son _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "verdes",
+      "options": ["verdes", "tristes", "dulces", "fuertes"],
+      "translation": "The plants in the garden are _____.",
+      "optionTranslations": ["green", "sad", "sweet", "strong"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Las plantas del jardín son verdes.",
+        "targetWord": "verdes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recordar",
+    "featured": false,
+    "sentence": "Elena [[recuerda]] a Julio, su primer amigo en Perú.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to remember",
+      "options": ["to remember", "to sell", "to open", "to dance"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Elena recuerda a Julio, su primer amigo en Perú.",
+        "targetWord": "recuerda",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "silencioso",
+    "featured": false,
+    "sentence": "La biblioteca es un lugar _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "silencioso",
+      "options": ["silencioso", "peligroso", "delicioso", "famoso"],
+      "translation": "The library is a _____ place.",
+      "optionTranslations": ["silent", "dangerous", "delicious", "famous"],
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "La biblioteca es un lugar silencioso.",
+        "targetWord": "silencioso",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "después,día,horas,años",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "después", "answer": "after", "options": ["after", "day", "hours", "years"] },
+        { "word": "día", "answer": "day", "options": ["after", "day", "hours", "years"] },
+        { "word": "horas", "answer": "hours", "options": ["after", "day", "hours", "years"] },
+        { "word": "años", "answer": "years", "options": ["after", "day", "hours", "years"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "llegar",
+    "featured": false,
+    "sentence": "Después de dos horas, Elena llega.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "llega",
+      "options": ["llega", "lleva", "llena", "llora"],
+      "optionTranslations": ["arrives", "carries", "fills", "cries"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-tren-a-machu-picchu",
+        "storySource": "user",
+        "sentence": "Después de dos horas, Elena llega.",
+        "targetWord": "llega",
+        "language": "spanish",
+        "voiceId": "kIVGrdJmAh9zNqLfBLUo"
+      }
+    }
+  }
+]

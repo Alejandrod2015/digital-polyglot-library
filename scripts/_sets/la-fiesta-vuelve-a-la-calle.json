@@ -1,0 +1,455 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "amanecer",
+    "sentence": "La calle del barrio [[amanece]] llena de globos y de gente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dawn",
+      "options": [
+        "to dawn",
+        "to grow dark",
+        "to shine",
+        "to open"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "La calle del barrio amanece llena de globos y de gente.",
+        "targetWord": "amanece",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "inventar",
+    "sentence": "Entonces los [[inventas]] con cara de segura y nadie se da cuenta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to make up",
+      "options": [
+        "to make up",
+        "to repeat",
+        "to forget",
+        "to practice"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "Entonces los inventas con cara de segura y nadie se da cuenta.",
+        "targetWord": "inventas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salir",
+    "sentence": "Daniela y Andrés [[salen]] al centro de la calle y bailan.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go out",
+      "options": [
+        "to go out",
+        "to sit down",
+        "to run off",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "Daniela y Andrés salen al centro de la calle y bailan.",
+        "targetWord": "salen",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sumarse",
+    "sentence": "Se está [[sumando]] la calle entera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to join in",
+      "options": [
+        "to join in",
+        "to give up",
+        "to show off",
+        "to calm down"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "Se está sumando la calle entera.",
+        "targetWord": "sumando",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aplaudir",
+    "sentence": "La gente [[aplaude]] y más vecinos se meten a bailar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to clap",
+      "options": [
+        "to clap",
+        "to whistle",
+        "to shout",
+        "to laugh"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "La gente aplaude y más vecinos se meten a bailar.",
+        "targetWord": "aplaude",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "volver",
+    "sentence": "La cumbia [[volvió]] a nuestro barrio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come back",
+      "options": [
+        "to come back",
+        "to go away",
+        "to start over",
+        "to stay quiet"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "La cumbia volvió a nuestro barrio.",
+        "targetWord": "volvió",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "nerviosos",
+    "sentence": "Hablan en público por primera vez y están _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "nerviosos",
+      "options": [
+        "nerviosos",
+        "dormidos",
+        "contentos",
+        "aburridos"
+      ],
+      "translation": "They are speaking in public for the first time and they are _____.",
+      "optionTranslations": [
+        "nervous",
+        "asleep",
+        "happy",
+        "bored"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "Hablan en público por primera vez y están nerviosos.",
+        "targetWord": "nerviosos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "segura",
+    "sentence": "Revisé dos veces; estoy _____ de que cerré la puerta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "segura",
+      "options": [
+        "segura",
+        "cansada",
+        "triste",
+        "enferma"
+      ],
+      "translation": "I checked twice; I am _____ that I closed the door.",
+      "optionTranslations": [
+        "sure",
+        "tired",
+        "sad",
+        "sick"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "Revisé dos veces; estoy segura de que cerré la puerta.",
+        "targetWord": "segura",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "secó",
+    "sentence": "Dejé la ropa al sol y el calor la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "secó",
+      "options": [
+        "secó",
+        "rompió",
+        "pintó",
+        "vendió"
+      ],
+      "translation": "I left the clothes in the sun and the heat _____ them.",
+      "optionTranslations": [
+        "dried",
+        "broke",
+        "painted",
+        "sold"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "Dejé la ropa al sol y el calor la secó.",
+        "targetWord": "secó",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "bailan",
+    "sentence": "En la boda, los novios _____ el vals primero.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bailan",
+      "options": [
+        "bailan",
+        "cocinan",
+        "leen",
+        "duermen"
+      ],
+      "translation": "At the wedding, the bride and groom _____ the waltz first.",
+      "optionTranslations": [
+        "dance",
+        "cook",
+        "read",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "En la boda, los novios bailan el vals primero.",
+        "targetWord": "bailan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trato hecho",
+    "featured": false,
+    "sentence": "[[Trato hecho]]. Pero la próxima, tú diriges y yo solo muevo los pies.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it's a deal",
+      "options": [
+        "it's a deal",
+        "good luck",
+        "no way",
+        "take it easy"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "Trato hecho. Pero la próxima, tú diriges y yo solo muevo los pies.",
+        "targetWord": "trato hecho",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vecino",
+    "featured": false,
+    "sentence": "Poco a poco, más [[vecinos]] se meten a bailar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a neighbor",
+      "options": [
+        "a neighbor",
+        "a singer",
+        "a stranger",
+        "a tourist"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "Poco a poco, más vecinos se meten a bailar.",
+        "targetWord": "vecinos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enseñar",
+    "featured": false,
+    "sentence": "El año que viene se la [[enseñamos]] a los niños.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to teach",
+      "options": [
+        "to teach",
+        "to sell",
+        "to read",
+        "to send"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "El año que viene se la enseñamos a los niños.",
+        "targetWord": "enseñamos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pleno",
+    "featured": false,
+    "sentence": "Más vecinos se meten a bailar en [[plena]] calle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right in the middle",
+      "options": [
+        "right in the middle",
+        "at the very end",
+        "on the other side",
+        "just outside"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "Más vecinos se meten a bailar en plena calle.",
+        "targetWord": "plena",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "paró",
+    "featured": false,
+    "sentence": "La lluvia _____ y por fin salimos al parque.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "paró",
+      "options": [
+        "paró",
+        "empezó",
+        "siguió",
+        "creció"
+      ],
+      "translation": "The rain _____ and we finally went out to the park.",
+      "optionTranslations": [
+        "stopped",
+        "started",
+        "continued",
+        "grew"
+      ],
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "La lluvia paró y por fin salimos al parque.",
+        "targetWord": "paró",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "globo,garganta,lluvia,gente",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "globo",
+          "answer": "a balloon",
+          "options": [
+            "a balloon",
+            "the throat",
+            "the rain",
+            "people"
+          ]
+        },
+        {
+          "word": "garganta",
+          "answer": "the throat",
+          "options": [
+            "a balloon",
+            "the throat",
+            "the rain",
+            "people"
+          ]
+        },
+        {
+          "word": "lluvia",
+          "answer": "the rain",
+          "options": [
+            "a balloon",
+            "the throat",
+            "the rain",
+            "people"
+          ]
+        },
+        {
+          "word": "gente",
+          "answer": "people",
+          "options": [
+            "a balloon",
+            "the throat",
+            "the rain",
+            "people"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "ver",
+    "featured": false,
+    "sentence": "Nos va a salir bien, ya verás.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "verás",
+      "options": [
+        "verás",
+        "irás",
+        "serás",
+        "darás"
+      ],
+      "optionTranslations": [
+        "you'll see",
+        "you'll go",
+        "you'll be",
+        "you'll give"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "la-fiesta-vuelve-a-la-calle",
+        "storySource": "user",
+        "sentence": "Nos va a salir bien, ya verás.",
+        "targetWord": "verás",
+        "language": "spanish",
+        "voiceId": "beQfcCW5PgdTQs4cETaz"
+      }
+    }
+  }
+]

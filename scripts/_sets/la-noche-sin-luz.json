@@ -1,0 +1,401 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "noche",
+    "sentence": "La [[noche]] llega a Cartagena, Colombia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the night",
+      "options": ["the night", "the street", "the kitchen", "the garden"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "La noche llega a Cartagena, Colombia.",
+        "targetWord": "noche",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tormenta",
+    "sentence": "Hay una [[tormenta]] tropical.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a storm",
+      "options": ["a storm", "a chair", "a river", "a song"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "Hay una tormenta tropical.",
+        "targetWord": "tormenta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "luz",
+    "sentence": "Está muy oscuro; enciende la _____, por favor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "luz",
+      "options": ["luz", "sal", "paz", "voz"],
+      "translation": "It is very dark; turn on the _____, please.",
+      "optionTranslations": ["light", "salt", "peace", "voice"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "Está muy oscuro; enciende la luz, por favor.",
+        "targetWord": "luz",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contento",
+    "sentence": "Lucía no está [[contenta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "happy",
+      "options": ["happy", "tired", "angry", "cold"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "Lucía no está contenta.",
+        "targetWord": "contenta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mamá",
+    "sentence": "Mi _____ prepara la cena para la familia.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mamá",
+      "options": ["mamá", "mesa", "mano", "moto"],
+      "translation": "My _____ prepares dinner for the family.",
+      "optionTranslations": ["mom", "table", "hand", "motorcycle"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "Mi mamá prepara la cena para la familia.",
+        "targetWord": "mamá",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vela",
+    "sentence": "Su mamá enciende una [[vela]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a candle",
+      "options": ["a candle", "a spoon", "a ball", "a hat"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "Su mamá enciende una vela.",
+        "targetWord": "vela",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abuela",
+    "sentence": "La [[abuela]] abre una caja vieja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a grandmother",
+      "options": ["a grandmother", "a teacher", "a nurse", "a singer"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "La abuela abre una caja vieja.",
+        "targetWord": "abuela",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "caja",
+    "sentence": "Guardo mis juguetes en una _____ grande.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "caja",
+      "options": ["caja", "cara", "copa", "luna"],
+      "translation": "I keep my toys in a big _____.",
+      "optionTranslations": ["box", "face", "cup", "moon"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "Guardo mis juguetes en una caja grande.",
+        "targetWord": "caja",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hombre",
+    "sentence": "Lucía mira una foto especial: un [[hombre]] joven con guitarra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a man",
+      "options": ["a man", "a tree", "a car", "a book"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "Lucía mira una foto especial: un hombre joven con guitarra.",
+        "targetWord": "hombre",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pensar",
+    "sentence": "Lucía [[piensa]]: Esta noche sin luz es perfecta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to think",
+      "options": ["to think", "to swim", "to paint", "to sell"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "Lucía piensa: Esta noche sin luz es perfecta.",
+        "targetWord": "piensa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estar",
+    "featured": false,
+    "sentence": "La televisión, el internet, todo [[está]] en silencio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be",
+      "options": ["to be", "to run", "to buy", "to hear"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "La televisión, el internet, todo está en silencio.",
+        "targetWord": "está",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abrir",
+    "featured": false,
+    "sentence": "La abuela [[abre]] una caja vieja con muchas fotos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to open",
+      "options": ["to open", "to carry", "to drink", "to count"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "La abuela abre una caja vieja con muchas fotos.",
+        "targetWord": "abre",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "vieja",
+    "featured": false,
+    "sentence": "Esta foto es de 1950; es muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vieja",
+      "options": ["vieja", "alta", "roja", "fría"],
+      "translation": "This photo is from 1950; it is very _____.",
+      "optionTranslations": ["old", "tall", "red", "cold"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "Esta foto es de 1950; es muy vieja.",
+        "targetWord": "vieja",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "casa",
+    "featured": false,
+    "sentence": "Vivo en una _____ blanca con jardín.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "casa",
+      "options": ["casa", "cara", "cosa", "taza"],
+      "translation": "I live in a white _____ with a garden.",
+      "optionTranslations": ["house", "face", "thing", "cup"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "Vivo en una casa blanca con jardín.",
+        "targetWord": "casa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "featured": false,
+    "sentence": "La abuela [[sonríe]], pero no responde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smile",
+      "options": ["to smile", "to cry", "to walk", "to read"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "La abuela sonríe, pero no responde.",
+        "targetWord": "sonríe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fuerte",
+    "featured": false,
+    "sentence": "La tormenta es [[fuerte]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strong",
+      "options": ["strong", "short", "clean", "sweet"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "La tormenta es fuerte.",
+        "targetWord": "fuerte",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "joven",
+    "featured": false,
+    "sentence": "Mi abuelo tiene ochenta años; no es _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "joven",
+      "options": ["joven", "alto", "feo", "lento"],
+      "translation": "My grandfather is eighty years old; he is not _____.",
+      "optionTranslations": ["young", "tall", "ugly", "slow"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "Mi abuelo tiene ochenta años; no es joven.",
+        "targetWord": "joven",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "junto",
+    "featured": false,
+    "sentence": "La familia está [[junta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "together",
+      "options": ["together", "alone", "asleep", "angry"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "La familia está junta.",
+        "targetWord": "junta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "featured": false,
+    "sentence": "Hablan, ríen y [[miran]] fotos por horas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look at",
+      "options": ["to look at", "to listen to", "to forget", "to break"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "Hablan, ríen y miran fotos por horas.",
+        "targetWord": "miran",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "regalo",
+    "featured": false,
+    "sentence": "A veces, un problema es un [[regalo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a gift",
+      "options": ["a gift", "a letter", "a shoe", "a window"],
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "A veces, un problema es un regalo.",
+        "targetWord": "regalo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "hay,ahora,quién,muchas",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "hay", "answer": "there is", "options": ["there is", "now", "who", "many"] },
+        { "word": "ahora", "answer": "now", "options": ["there is", "now", "who", "many"] },
+        { "word": "quién", "answer": "who", "options": ["there is", "now", "who", "many"] },
+        { "word": "muchas", "answer": "many", "options": ["there is", "now", "who", "many"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "encender",
+    "featured": false,
+    "sentence": "Su mamá enciende una vela.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "enciende",
+      "options": ["enciende", "entiende", "aprende", "vende"],
+      "optionTranslations": ["lights", "understands", "learns", "sells"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "la-noche-sin-luz",
+        "storySource": "user",
+        "sentence": "Su mamá enciende una vela.",
+        "targetWord": "enciende",
+        "language": "spanish",
+        "voiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    }
+  }
+]

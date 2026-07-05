@@ -1,0 +1,403 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "querer",
+    "sentence": "Elena [[quiere]] ver la ciudad.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to want",
+      "options": ["to want", "to sell", "to find", "to wash"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Elena quiere ver la ciudad.",
+        "targetWord": "quiere",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ciudad",
+    "sentence": "Vivo en una _____ con parques, tiendas y museos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ciudad",
+      "options": ["ciudad", "cocina", "camisa", "cuchara"],
+      "translation": "I live in a _____ with parks, stores and museums.",
+      "optionTranslations": ["city", "kitchen", "shirt", "spoon"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Vivo en una ciudad con parques, tiendas y museos.",
+        "targetWord": "ciudad",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tomar",
+    "sentence": "[[Toma]] muchas fotos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take",
+      "options": ["to take", "to give", "to lose", "to break"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Toma muchas fotos.",
+        "targetWord": "Toma",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chofer",
+    "sentence": "El [[chofer]] es Julio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a driver",
+      "options": ["a driver", "a teacher", "a doctor", "a singer"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "El chofer es Julio.",
+        "targetWord": "chofer",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ventana",
+    "sentence": "Abro la _____ porque hace calor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ventana",
+      "options": ["ventana", "cama", "mesa", "manzana"],
+      "translation": "I open the _____ because it is hot.",
+      "optionTranslations": ["window", "bed", "table", "apple"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Abro la ventana porque hace calor.",
+        "targetWord": "ventana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "subir",
+    "sentence": "El taxi [[sube]] por calles estrechas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go up",
+      "options": ["to go up", "to swim", "to wait", "to fall"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "El taxi sube por calles estrechas.",
+        "targetWord": "sube",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "vista",
+    "sentence": "Desde la montaña hay una _____ hermosa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vista",
+      "options": ["vista", "taza", "silla", "sopa"],
+      "translation": "From the mountain there is a beautiful _____.",
+      "optionTranslations": ["view", "cup", "chair", "soup"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Desde la montaña hay una vista hermosa.",
+        "targetWord": "vista",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parar",
+    "sentence": "De repente, Julio [[para]] el taxi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stop",
+      "options": ["to stop", "to buy", "to call", "to hear"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "De repente, Julio para el taxi.",
+        "targetWord": "para",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirador",
+    "sentence": "Hay un [[mirador]] con una vista increíble.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a viewpoint",
+      "options": ["a viewpoint", "a kitchen", "a school", "a bathroom"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Hay un mirador con una vista increíble.",
+        "targetWord": "mirador",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pensar",
+    "sentence": "Elena [[piensa]]: Este momento es perfecto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to think",
+      "options": ["to think", "to sing", "to sell", "to sleep"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Elena piensa: Este momento es perfecto.",
+        "targetWord": "piensa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "martes",
+    "featured": false,
+    "sentence": "El [[martes]], toma un taxi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Tuesday",
+      "options": ["Tuesday", "Thursday", "Sunday", "March"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "El martes, toma un taxi.",
+        "targetWord": "martes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "amigo",
+    "featured": false,
+    "sentence": "Hablo por teléfono con mi _____ Pedro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "amigo",
+      "options": ["amigo", "libro", "zapato", "queso"],
+      "translation": "I talk on the phone with my _____ Pedro.",
+      "optionTranslations": ["friend", "book", "shoe", "cheese"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Hablo por teléfono con mi amigo Pedro.",
+        "targetWord": "amigo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estrecho",
+    "featured": false,
+    "sentence": "Sube por calles [[estrechas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "narrow",
+      "options": ["narrow", "tall", "clean", "sweet"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Sube por calles estrechas.",
+        "targetWord": "estrechas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "nuevo",
+    "featured": false,
+    "sentence": "Mi carro es _____; tiene una semana.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "nuevo",
+      "options": ["nuevo", "viejo", "lento", "sucio"],
+      "translation": "My car is _____; it is one week old.",
+      "optionTranslations": ["new", "old", "slow", "dirty"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Mi carro es nuevo; tiene una semana.",
+        "targetWord": "nuevo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casa",
+    "featured": false,
+    "sentence": "Hay [[casas]] de colores, mercados y mucha gente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a house",
+      "options": ["a house", "a table", "a cloud", "a bird"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Hay casas de colores, mercados y mucha gente.",
+        "targetWord": "casas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "contento",
+    "featured": false,
+    "sentence": "Papá está _____ porque hoy no trabaja.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "contento",
+      "options": ["contento", "enfermo", "perdido", "nervioso"],
+      "translation": "Dad is _____ because today he does not work.",
+      "optionTranslations": ["happy", "sick", "lost", "nervous"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Papá está contento porque hoy no trabaja.",
+        "targetWord": "contento",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "montaña",
+    "featured": false,
+    "sentence": "Habla de los Incas y de las [[montañas]] sagradas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a mountain",
+      "options": ["a mountain", "a beach", "a hand", "a book"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Habla de los Incas y de las montañas sagradas.",
+        "targetWord": "montañas",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "calles",
+    "featured": false,
+    "sentence": "Los carros pasan por las _____ del centro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "calles",
+      "options": ["calles", "nubes", "camas", "tazas"],
+      "translation": "The cars go along the _____ of downtown.",
+      "optionTranslations": ["streets", "clouds", "beds", "cups"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Los carros pasan por las calles del centro.",
+        "targetWord": "calles",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "palabra",
+    "featured": false,
+    "sentence": "Elena se queda sin [[palabras]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a word",
+      "options": ["a word", "a hand", "a key", "a shoe"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Elena se queda sin palabras.",
+        "targetWord": "palabras",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "featured": false,
+    "sentence": "Elena [[sonríe]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smile",
+      "options": ["to smile", "to cry", "to drive", "to listen"],
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Elena sonríe.",
+        "targetWord": "sonríe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "mañana,cielo,azul,gente",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "mañana", "answer": "tomorrow", "options": ["tomorrow", "sky", "blue", "people"] },
+        { "word": "cielo", "answer": "sky", "options": ["tomorrow", "sky", "blue", "people"] },
+        { "word": "azul", "answer": "blue", "options": ["tomorrow", "sky", "blue", "people"] },
+        { "word": "gente", "answer": "people", "options": ["tomorrow", "sky", "blue", "people"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "mirar",
+    "featured": false,
+    "sentence": "Elena mira todo por la ventana.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "mira",
+      "options": ["mira", "gira", "tira", "respira"],
+      "optionTranslations": ["looks", "turns", "throws", "breathes"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-taxi",
+        "storySource": "user",
+        "sentence": "Elena mira todo por la ventana.",
+        "targetWord": "mira",
+        "language": "spanish",
+        "voiceId": "kIVGrdJmAh9zNqLfBLUo"
+      }
+    }
+  }
+]

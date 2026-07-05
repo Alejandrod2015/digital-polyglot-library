@@ -1,0 +1,455 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "nervioso",
+    "sentence": "Marina y Julián se miran [[nerviosos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nervous",
+      "options": [
+        "nervous",
+        "bored",
+        "proud",
+        "sleepy"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "Marina y Julián se miran nerviosos.",
+        "targetWord": "nerviosos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "confesar",
+    "sentence": "Tranquila, lo [[confesamos]] juntos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to confess",
+      "options": [
+        "to confess",
+        "to repeat",
+        "to promise",
+        "to prepare"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "Tranquila, lo confesamos juntos.",
+        "targetWord": "confesamos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "golpe",
+    "sentence": "Suenan dos [[golpes]] en la puerta del apartamento.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a knock",
+      "options": [
+        "a knock",
+        "a bell",
+        "a shout",
+        "a step"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "Suenan dos golpes en la puerta del apartamento.",
+        "targetWord": "golpes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contar",
+    "sentence": "Mamá, tenemos que [[contarte]] algo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tell",
+      "options": [
+        "to tell",
+        "to send",
+        "to ask",
+        "to give"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "Mamá, tenemos que contarte algo.",
+        "targetWord": "contarte",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "romper",
+    "sentence": "Parece que [[rompieron]] un plato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to break",
+      "options": [
+        "to break",
+        "to wash",
+        "to hide",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "Parece que rompieron un plato.",
+        "targetWord": "rompieron",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "juguete",
+    "sentence": "Un perro no es un [[juguete]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a toy",
+      "options": [
+        "a toy",
+        "a gift",
+        "a prize",
+        "a game"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "Un perro no es un juguete.",
+        "targetWord": "juguete",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "repartimos",
+    "sentence": "Somos dos hermanos y _____ las tareas para no hacer todo solos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "repartimos",
+      "options": [
+        "repartimos",
+        "olvidamos",
+        "compramos",
+        "pedimos"
+      ],
+      "translation": "We are two siblings and we _____ the chores so we don't do everything alone.",
+      "optionTranslations": [
+        "we share out",
+        "we forget",
+        "we buy",
+        "we ask for"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "Somos dos hermanos y repartimos las tareas para no hacer todo solos.",
+        "targetWord": "repartimos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cumplen",
+    "sentence": "Prometieron llegar a las ocho y siempre _____ lo que dicen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cumplen",
+      "options": [
+        "cumplen",
+        "olvidan",
+        "cambian",
+        "repiten"
+      ],
+      "translation": "They promised to arrive at eight and they always _____ what they say.",
+      "optionTranslations": [
+        "they keep",
+        "they forget",
+        "they change",
+        "they repeat"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "Prometieron llegar a las ocho y siempre cumplen lo que dicen.",
+        "targetWord": "cumplen",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "saca",
+    "sentence": "El perro necesita salir; Juan lo _____ un rato.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "saca",
+      "options": [
+        "saca",
+        "baña",
+        "peina",
+        "carga"
+      ],
+      "translation": "The dog needs to go out; Juan _____ him for a while.",
+      "optionTranslations": [
+        "takes out",
+        "bathes",
+        "brushes",
+        "carries"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "El perro necesita salir; Juan lo saca un rato.",
+        "targetWord": "saca",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "tarea,cara,dormido,convencer",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "tarea",
+          "answer": "a chore or task",
+          "options": [
+            "a chore or task",
+            "a face",
+            "asleep",
+            "to convince"
+          ]
+        },
+        {
+          "word": "cara",
+          "answer": "a face",
+          "options": [
+            "a chore or task",
+            "a face",
+            "asleep",
+            "to convince"
+          ]
+        },
+        {
+          "word": "dormido",
+          "answer": "asleep",
+          "options": [
+            "a chore or task",
+            "a face",
+            "asleep",
+            "to convince"
+          ]
+        },
+        {
+          "word": "convencer",
+          "answer": "to convince",
+          "options": [
+            "a chore or task",
+            "a face",
+            "asleep",
+            "to convince"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bolsa",
+    "featured": false,
+    "sentence": "Su mamá entra con una sonrisa y una [[bolsa]] de pan caliente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bag",
+      "options": [
+        "a bag",
+        "a box",
+        "a basket",
+        "a bottle"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "Su mamá entra con una sonrisa y una bolsa de pan caliente.",
+        "targetWord": "bolsa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "buscar",
+    "featured": false,
+    "sentence": "Mañana preguntamos casa por casa, por si alguien lo está [[buscando]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look for",
+      "options": [
+        "to look for",
+        "to feed",
+        "to follow",
+        "to scare"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "Mañana preguntamos casa por casa, por si alguien lo está buscando.",
+        "targetWord": "buscando",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hecho",
+    "featured": false,
+    "sentence": "Entonces lo convencemos entre todos, con [[hechos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fact",
+      "options": [
+        "a fact",
+        "an excuse",
+        "a secret",
+        "a joke"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "Entonces lo convencemos entre todos, con hechos.",
+        "targetWord": "hechos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vecino",
+    "featured": false,
+    "sentence": "A la primera queja del [[vecino]], lo hablamos de nuevo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a neighbor",
+      "options": [
+        "a neighbor",
+        "a cousin",
+        "a doorman",
+        "a stranger"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "A la primera queja del vecino, lo hablamos de nuevo.",
+        "targetWord": "vecino",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "queja",
+    "featured": false,
+    "sentence": "El cuarto del hotel está sucio y ella escribe una _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "queja",
+      "options": [
+        "queja",
+        "historia",
+        "receta",
+        "invitación"
+      ],
+      "translation": "The hotel room is dirty and she writes a _____.",
+      "optionTranslations": [
+        "complaint",
+        "story",
+        "recipe",
+        "invitation"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "El cuarto del hotel está sucio y ella escribe una queja.",
+        "targetWord": "queja",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "plato",
+    "featured": false,
+    "sentence": "Sirvo la sopa caliente en un _____ hondo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "plato",
+      "options": [
+        "plato",
+        "vaso",
+        "cuchillo",
+        "tenedor"
+      ],
+      "translation": "I serve the hot soup in a deep _____.",
+      "optionTranslations": [
+        "plate",
+        "glass",
+        "knife",
+        "fork"
+      ],
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "Sirvo la sopa caliente en un plato hondo.",
+        "targetWord": "plato",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "enterarse",
+    "featured": false,
+    "sentence": "Igual se va a enterar.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "enterar",
+      "options": [
+        "enterar",
+        "entrar",
+        "esperar",
+        "enseñar"
+      ],
+      "optionTranslations": [
+        "to find out",
+        "to go in",
+        "to wait",
+        "to teach"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "mama-conoce-al-perro",
+        "storySource": "user",
+        "sentence": "Igual se va a enterar.",
+        "targetWord": "enterar",
+        "language": "spanish",
+        "voiceId": "beQfcCW5PgdTQs4cETaz"
+      }
+    }
+  }
+]

@@ -1,0 +1,455 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "barrio",
+    "sentence": "Tomás la lleva a caminar por el [[barrio]] de Palermo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a neighborhood",
+      "options": [
+        "a neighborhood",
+        "a highway",
+        "a stadium",
+        "a museum"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "Tomás la lleva a caminar por el barrio de Palermo.",
+        "targetWord": "barrio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sola",
+    "sentence": "Un barrio lindo no me quita lo [[sola]] que me siento.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "alone",
+      "options": [
+        "alone",
+        "tired",
+        "lost",
+        "bored"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "Un barrio lindo no me quita lo sola que me siento.",
+        "targetWord": "sola",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "crecer",
+    "sentence": "Yo [[crecí]] ahí, cerca del cerro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to grow up",
+      "options": [
+        "to grow up",
+        "to work",
+        "to study",
+        "to travel"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "Yo crecí ahí, cerca del cerro.",
+        "targetWord": "crecí",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casualidad",
+    "sentence": "Caminan en silencio un rato, los dos sorprendidos por la [[casualidad]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a coincidence",
+      "options": [
+        "a coincidence",
+        "a promise",
+        "a secret",
+        "an accident"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "Caminan en silencio un rato, los dos sorprendidos por la casualidad.",
+        "targetWord": "casualidad",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oportunidad",
+    "sentence": "Quedate y dale una [[oportunidad]] a la ciudad.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a chance",
+      "options": [
+        "a chance",
+        "a gift",
+        "a name",
+        "a visit"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "Quedate y dale una oportunidad a la ciudad.",
+        "targetWord": "oportunidad",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "miedo",
+    "sentence": "Me dio [[miedo]] y decidí rendirme.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fear",
+      "options": [
+        "fear",
+        "shame",
+        "anger",
+        "hunger"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "Me dio miedo y decidí rendirme.",
+        "targetWord": "miedo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "volver",
+    "sentence": "Le dije a mi familia que [[vuelvo]] el domingo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go back",
+      "options": [
+        "to go back",
+        "to stay",
+        "to arrive",
+        "to move away"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "Le dije a mi familia que vuelvo el domingo.",
+        "targetWord": "vuelvo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sorprendida",
+    "sentence": "No esperaba tu visita; estoy muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sorprendida",
+      "options": [
+        "sorprendida",
+        "cansada",
+        "enojada",
+        "aburrida"
+      ],
+      "translation": "I wasn't expecting your visit; I am very _____.",
+      "optionTranslations": [
+        "surprised",
+        "tired",
+        "angry",
+        "bored"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "No esperaba tu visita; estoy muy sorprendida.",
+        "targetWord": "sorprendida",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cuadras",
+    "sentence": "Caminamos tres _____ hasta llegar al parque.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cuadras",
+      "options": [
+        "cuadras",
+        "puertas",
+        "mesas",
+        "camisas"
+      ],
+      "translation": "We walk three _____ until we reach the park.",
+      "optionTranslations": [
+        "blocks",
+        "doors",
+        "tables",
+        "shirts"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "Caminamos tres cuadras hasta llegar al parque.",
+        "targetWord": "cuadras",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "plaza,panadería,cerro,sombra",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "plaza",
+          "answer": "a town square",
+          "options": [
+            "a town square",
+            "a bakery",
+            "a hill",
+            "shade"
+          ]
+        },
+        {
+          "word": "panadería",
+          "answer": "a bakery",
+          "options": [
+            "a town square",
+            "a bakery",
+            "a hill",
+            "shade"
+          ]
+        },
+        {
+          "word": "cerro",
+          "answer": "a hill",
+          "options": [
+            "a town square",
+            "a bakery",
+            "a hill",
+            "shade"
+          ]
+        },
+        {
+          "word": "sombra",
+          "answer": "shade",
+          "options": [
+            "a town square",
+            "a bakery",
+            "a hill",
+            "shade"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "interior",
+    "featured": false,
+    "sentence": "De un pueblo del [[interior]], Tandil.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the countryside",
+      "options": [
+        "the countryside",
+        "the coast",
+        "the capital",
+        "the border"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "De un pueblo del interior, Tandil.",
+        "targetWord": "interior",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ubicar",
+    "featured": false,
+    "sentence": "Seguro ni lo [[ubicás]] en el mapa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to locate",
+      "options": [
+        "to locate",
+        "to visit",
+        "to remember",
+        "to imagine"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "Seguro ni lo ubicás en el mapa.",
+        "targetWord": "ubicás",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "locura",
+    "featured": false,
+    "sentence": "Qué [[locura]]. De repente esta ciudad enorme se siente un poco más mía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "craziness",
+      "options": [
+        "craziness",
+        "sadness",
+        "laziness",
+        "kindness"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "Qué locura. De repente esta ciudad enorme se siente un poco más mía.",
+        "targetWord": "locura",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "fresca",
+    "featured": false,
+    "sentence": "Guarda la leche en el refrigerador para que esté _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fresca",
+      "options": [
+        "fresca",
+        "sucia",
+        "rota",
+        "llena"
+      ],
+      "translation": "Keep the milk in the fridge so it stays _____.",
+      "optionTranslations": [
+        "cool",
+        "dirty",
+        "broken",
+        "full"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "Guarda la leche en el refrigerador para que esté fresca.",
+        "targetWord": "fresca",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "distinto",
+    "featured": false,
+    "sentence": "Los gemelos parecen iguales, pero su carácter es muy _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "distinto",
+      "options": [
+        "distinto",
+        "moderno",
+        "tranquilo",
+        "famoso"
+      ],
+      "translation": "The twins look alike, but their character is very _____.",
+      "optionTranslations": [
+        "different",
+        "modern",
+        "calm",
+        "famous"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "Los gemelos parecen iguales, pero su carácter es muy distinto.",
+        "targetWord": "distinto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sentimos",
+    "featured": false,
+    "sentence": "Después de dormir bien, nos _____ con mucha energía.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sentimos",
+      "options": [
+        "sentimos",
+        "vestimos",
+        "bañamos",
+        "peinamos"
+      ],
+      "translation": "After sleeping well, we _____ full of energy.",
+      "optionTranslations": [
+        "feel",
+        "get dressed",
+        "bathe",
+        "comb our hair"
+      ],
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "Después de dormir bien, nos sentimos con mucha energía.",
+        "targetWord": "sentimos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "rendirse",
+    "featured": false,
+    "sentence": "Me dio miedo y decidí rendirme.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "rendirme",
+      "options": [
+        "rendirme",
+        "dormirme",
+        "aburrirme",
+        "subirme"
+      ],
+      "optionTranslations": [
+        "to give up",
+        "to fall asleep",
+        "to get bored",
+        "to get on"
+      ],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "del-mismo-pueblo",
+        "storySource": "user",
+        "sentence": "Me dio miedo y decidí rendirme.",
+        "targetWord": "rendirme",
+        "language": "spanish",
+        "voiceId": "p7AwDmKvTdoHTBuueGvP"
+      }
+    }
+  }
+]

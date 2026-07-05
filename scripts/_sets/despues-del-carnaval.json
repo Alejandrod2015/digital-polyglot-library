@@ -1,0 +1,403 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "calle",
+    "sentence": "Las [[calles]] de Barranquilla están en silencio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a street",
+      "options": ["a street", "a mountain", "a spoon", "a bed"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "Las calles de Barranquilla están en silencio.",
+        "targetWord": "calles",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "flor",
+    "sentence": "Hay [[flores]] y confeti en el suelo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a flower",
+      "options": ["a flower", "a table", "a shoe", "a book"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "Hay flores y confeti en el suelo.",
+        "targetWord": "flores",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cansados",
+    "sentence": "Después de correr mucho, los niños están _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cansados",
+      "options": ["cansados", "limpios", "altos", "nuevos"],
+      "translation": "After running a lot, the children are _____.",
+      "optionTranslations": ["tired", "clean", "tall", "new"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "Después de correr mucho, los niños están cansados.",
+        "targetWord": "cansados",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contento",
+    "sentence": "Camilo y su familia están cansados, pero [[contentos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "glad",
+      "options": ["glad", "sad", "tall", "cold"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "Camilo y su familia están cansados, pero contentos.",
+        "targetWord": "contentos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abuela",
+    "sentence": "La [[abuela]] prepara un café y todos descansan en el patio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a grandmother",
+      "options": ["a grandmother", "a boy", "a nurse", "a driver"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "La abuela prepara un café y todos descansan en el patio.",
+        "targetWord": "abuela",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gente",
+    "sentence": "Es la [[gente]], junta, feliz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "people",
+      "options": ["people", "books", "cars", "trees"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "Es la gente, junta, feliz.",
+        "targetWord": "gente",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "descansar",
+    "sentence": "Todos [[descansan]] en el patio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to rest",
+      "options": ["to rest", "to run", "to shout", "to drive"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "Todos descansan en el patio.",
+        "targetWord": "descansan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "querer",
+    "sentence": "El próximo año, [[quiere]] bailar otra vez.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to want",
+      "options": ["to want", "to forget", "to clean", "to carry"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "El próximo año, quiere bailar otra vez.",
+        "targetWord": "quiere",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "día",
+    "sentence": "Nadie quiere que el [[día]] termine.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a day",
+      "options": ["a day", "a hand", "a song", "a shoe"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "Nadie quiere que el día termine.",
+        "targetWord": "día",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "miedo",
+    "sentence": "El niño ve un perro grande y tiene _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "miedo",
+      "options": ["miedo", "sed", "sueño", "frío"],
+      "translation": "The boy sees a big dog and feels _____.",
+      "optionTranslations": ["fear", "thirst", "sleepiness", "cold"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "El niño ve un perro grande y tiene miedo.",
+        "targetWord": "miedo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "suelo",
+    "featured": false,
+    "sentence": "El vaso cae al _____ y se rompe.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "suelo",
+      "options": ["suelo", "cielo", "mar", "sol"],
+      "translation": "The glass falls to the _____ and breaks.",
+      "optionTranslations": ["floor", "sky", "sea", "sun"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "El vaso cae al suelo y se rompe.",
+        "targetWord": "suelo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "featured": false,
+    "sentence": "Camilo [[mira]] las fotos del desfile en el teléfono.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look at",
+      "options": ["to look at", "to hide", "to throw", "to wash"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "Camilo mira las fotos del desfile en el teléfono.",
+        "targetWord": "mira",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desfile",
+    "featured": false,
+    "sentence": "Hablan del [[desfile]], de los disfraces y de los momentos favoritos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a parade",
+      "options": ["a parade", "a store", "a bridge", "a farm"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "Hablan del desfile, de los disfraces y de los momentos favoritos.",
+        "targetWord": "desfile",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "abuelo",
+    "featured": false,
+    "sentence": "El padre de mi papá es mi _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "abuelo",
+      "options": ["abuelo", "hermano", "amigo", "vecino"],
+      "translation": "My dad's father is my _____.",
+      "optionTranslations": ["grandfather", "brother", "friend", "neighbor"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "El padre de mi papá es mi abuelo.",
+        "targetWord": "abuelo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "disfraz",
+    "featured": false,
+    "sentence": "El Carnaval no son los [[disfraces]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a costume",
+      "options": ["a costume", "a drink", "a chair", "a plant"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "El Carnaval no son los disfraces.",
+        "targetWord": "disfraces",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "joven",
+    "featured": false,
+    "sentence": "Mi abuelo tiene ochenta años; no es _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "joven",
+      "options": ["joven", "alto", "rico", "malo"],
+      "translation": "My grandfather is eighty years old; he is not _____.",
+      "optionTranslations": ["young", "tall", "rich", "bad"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "Mi abuelo tiene ochenta años; no es joven.",
+        "targetWord": "joven",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lugar",
+    "featured": false,
+    "sentence": "El barrio entero es ahora su [[lugar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a place",
+      "options": ["a place", "a word", "a job", "a song"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "El barrio entero es ahora su lugar.",
+        "targetWord": "lugar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "barrio",
+    "featured": false,
+    "sentence": "Vivimos en un _____ con muchas casas y tiendas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "barrio",
+      "options": ["barrio", "carro", "plato", "zapato"],
+      "translation": "We live in a _____ with many houses and shops.",
+      "optionTranslations": ["neighborhood", "car", "plate", "shoe"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "Vivimos en un barrio con muchas casas y tiendas.",
+        "targetWord": "barrio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "año",
+    "featured": false,
+    "sentence": "Un _____ tiene doce meses.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "año",
+      "options": ["año", "mes", "minuto", "momento"],
+      "translation": "A _____ has twelve months.",
+      "optionTranslations": ["year", "month", "minute", "moment"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "Un año tiene doce meses.",
+        "targetWord": "año",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bailar",
+    "featured": false,
+    "sentence": "Quiere [[bailar]] otra vez, sin miedo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dance",
+      "options": ["to dance", "to work", "to study", "to drive"],
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "Quiere bailar otra vez, sin miedo.",
+        "targetWord": "bailar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "próximo,domingo,junta,verdad",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "próximo", "answer": "next", "options": ["next", "Sunday", "together", "truth"] },
+        { "word": "domingo", "answer": "Sunday", "options": ["next", "Sunday", "together", "truth"] },
+        { "word": "junta", "answer": "together", "options": ["next", "Sunday", "together", "truth"] },
+        { "word": "verdad", "answer": "truth", "options": ["next", "Sunday", "together", "truth"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "terminar",
+    "featured": false,
+    "sentence": "El Carnaval termina un domingo.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "termina",
+      "options": ["termina", "camina", "cocina", "imagina"],
+      "optionTranslations": ["ends", "walks", "cooks", "imagines"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "despues-del-carnaval",
+        "storySource": "user",
+        "sentence": "El Carnaval termina un domingo.",
+        "targetWord": "termina",
+        "language": "spanish",
+        "voiceId": "yHD4CsKkghm19ToGLJEC"
+      }
+    }
+  }
+]

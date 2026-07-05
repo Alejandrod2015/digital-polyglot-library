@@ -1,0 +1,401 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "ir",
+    "sentence": "Pablo [[va]] al parque.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go",
+      "options": ["to go", "to eat", "to sleep", "to buy"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Pablo va al parque.",
+        "targetWord": "va",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "gente",
+    "sentence": "El concierto es popular; hay mucha _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gente",
+      "options": ["gente", "mesa", "sopa", "luna"],
+      "translation": "The concert is popular; there are a lot of _____.",
+      "optionTranslations": ["people", "table", "soup", "moon"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "El concierto es popular; hay mucha gente.",
+        "targetWord": "gente",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amigo",
+    "sentence": "Pero Marta lo presenta a sus [[amigos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a friend",
+      "options": ["a friend", "a table", "a dog", "a book"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Pero Marta lo presenta a sus amigos.",
+        "targetWord": "amigos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sonrisa",
+    "sentence": "Está feliz y tiene una _____ grande en la cara.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sonrisa",
+      "options": ["sonrisa", "silla", "semana", "cuchara"],
+      "translation": "She is happy and has a big _____ on her face.",
+      "optionTranslations": ["smile", "chair", "week", "spoon"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Está feliz y tiene una sonrisa grande en la cara.",
+        "targetWord": "sonrisa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "todos",
+    "sentence": "[[Todos]] son simpáticos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "everyone",
+      "options": ["everyone", "nobody", "someone", "nothing"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Todos son simpáticos.",
+        "targetWord": "Todos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "empezar",
+    "sentence": "La música [[empieza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to start",
+      "options": ["to start", "to end", "to wait", "to lose"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "La música empieza.",
+        "targetWord": "empieza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bailar",
+    "sentence": "[[Baila]] un poco, tímido al principio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dance",
+      "options": ["to dance", "to cook", "to study", "to clean"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Baila un poco, tímido al principio.",
+        "targetWord": "Baila",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reír",
+    "sentence": "Pablo [[ríe]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to laugh",
+      "options": ["to laugh", "to sing", "to walk", "to drink"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Pablo ríe.",
+        "targetWord": "ríe",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ser",
+    "sentence": "No [[sos]] tímido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be",
+      "options": ["to be", "to have", "to do", "to know"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "No sos tímido.",
+        "targetWord": "sos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "lugar",
+    "sentence": "Este parque es un _____ tranquilo y bonito.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lugar",
+      "options": ["lugar", "regalo", "zapato", "número"],
+      "translation": "This park is a quiet and pretty _____.",
+      "optionTranslations": ["place", "gift", "shoe", "number"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Este parque es un lugar tranquilo y bonito.",
+        "targetWord": "lugar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lunes",
+    "featured": false,
+    "sentence": "Pablo va al parque el [[lunes]] para el concierto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Monday",
+      "options": ["Monday", "Friday", "June", "afternoon"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Pablo va al parque el lunes para el concierto.",
+        "targetWord": "lunes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "luces",
+    "featured": false,
+    "sentence": "Hay mucha gente, música y [[luces]] de colores.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lights",
+      "options": ["lights", "tables", "shoes", "flowers"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Hay mucha gente, música y luces de colores.",
+        "targetWord": "luces",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grande",
+    "featured": false,
+    "sentence": "Marta está allí, con una sonrisa [[grande]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "big",
+      "options": ["big", "empty", "cold", "short"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Marta está allí, con una sonrisa grande.",
+        "targetWord": "grande",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nadie",
+    "featured": false,
+    "sentence": "Pablo no conoce a [[nadie]] más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nobody",
+      "options": ["nobody", "everybody", "many people", "one person"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Pablo no conoce a nadie más.",
+        "targetWord": "nadie",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "palabras",
+    "featured": false,
+    "sentence": "El bebé es pequeño; dice solo dos _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "palabras",
+      "options": ["palabras", "puertas", "mesas", "flores"],
+      "translation": "The baby is small; he says only two _____.",
+      "optionTranslations": ["words", "doors", "tables", "flowers"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "El bebé es pequeño; dice solo dos palabras.",
+        "targetWord": "palabras",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "solo",
+    "featured": false,
+    "sentence": "Pablo no conoce a nadie más, [[solo]] a Marta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "only",
+      "options": ["only", "also", "never", "almost"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Pablo no conoce a nadie más, solo a Marta.",
+        "targetWord": "solo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "extraños",
+    "featured": false,
+    "sentence": "No conozco a esas personas; son _____ para mí.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "extraños",
+      "options": ["extraños", "hermanos", "maestros", "médicos"],
+      "translation": "I do not know those people; they are _____ to me.",
+      "optionTranslations": ["strangers", "brothers", "teachers", "doctors"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "No conozco a esas personas; son extraños para mí.",
+        "targetWord": "extraños",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ver",
+    "featured": false,
+    "sentence": "Marta dice: «¿[[Ves]]?»",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to see",
+      "options": ["to see", "to touch", "to carry", "to wash"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Marta dice: «¿Ves?»",
+        "targetWord": "Ves",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mucho",
+    "featured": false,
+    "sentence": "Hay [[mucha]] gente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lot of",
+      "options": ["a lot of", "a few", "the same", "the other"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Hay mucha gente.",
+        "targetWord": "mucha",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "principio",
+    "featured": false,
+    "sentence": "La primera página está al _____ del libro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "principio",
+      "options": ["principio", "final", "centro", "jardín"],
+      "translation": "The first page is at the _____ of the book.",
+      "optionTranslations": ["beginning", "end", "center", "garden"],
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "La primera página está al principio del libro.",
+        "targetWord": "principio",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "aquí,hoy,ya,poco",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "aquí", "answer": "here", "options": ["here", "today", "already", "a little"] },
+        { "word": "hoy", "answer": "today", "options": ["here", "today", "already", "a little"] },
+        { "word": "ya", "answer": "already", "options": ["here", "today", "already", "a little"] },
+        { "word": "poco", "answer": "a little", "options": ["here", "today", "already", "a little"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "tener",
+    "featured": false,
+    "sentence": "Piensa: Hoy tengo amigos en Buenos Aires.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "tengo",
+      "options": ["tengo", "vengo", "pongo", "salgo"],
+      "optionTranslations": ["I have", "I come", "I put", "I go out"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "el-concierto",
+        "storySource": "user",
+        "sentence": "Piensa: Hoy tengo amigos en Buenos Aires.",
+        "targetWord": "tengo",
+        "language": "spanish",
+        "voiceId": "MjtZn5tagxL1RO6w9ER5"
+      }
+    }
+  }
+]

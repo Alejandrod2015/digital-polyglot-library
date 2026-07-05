@@ -1,0 +1,325 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "silla",
+    "sentence": "En el centro hay una [[silla]] de madera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a chair",
+      "options": ["a chair", "a table", "a bed", "a lamp"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "En el centro hay una silla de madera.",
+        "targetWord": "silla",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ruido",
+    "sentence": "Lleva toda la mañana con ese [[ruido]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "noise",
+      "options": ["noise", "smell", "color", "taste"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "Lleva toda la mañana con ese ruido.",
+        "targetWord": "ruido",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "madera",
+    "sentence": "Y pregunté en la tienda de [[madera]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wood",
+      "options": ["wood", "glass", "metal", "paper"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "Y pregunté en la tienda de madera.",
+        "targetWord": "madera",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "golpe",
+    "sentence": "Desde temprano se oyen [[golpes]] y ruidos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bang",
+      "options": ["a bang", "a voice", "a light", "a smell"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "Desde temprano se oyen golpes y ruidos.",
+        "targetWord": "golpes",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preguntar",
+    "sentence": "Cada vez que [[pregunto]], cierra la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to ask",
+      "options": ["to ask", "to answer", "to shout", "to knock"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "Cada vez que pregunto, cierra la puerta.",
+        "targetWord": "pregunto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "arreglar",
+    "sentence": "La bicicleta no funciona; papá la va a _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "arreglar",
+      "options": ["arreglar", "vender", "lavar", "abrir"],
+      "translation": "The bicycle does not work; dad is going to _____ it.",
+      "optionTranslations": ["to fix", "to sell", "to wash", "to open"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "La bicicleta no funciona; papá la va a arreglar.",
+        "targetWord": "arreglar",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerrar",
+    "sentence": "[[Cierra]] los ojos y dame la mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to close",
+      "options": ["to close", "to open", "to wash", "to touch"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "Cierra los ojos y dame la mano.",
+        "targetWord": "Cierra",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "regalo",
+    "sentence": "Abro mi _____ de cumpleaños: ¡es una guitarra!",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "regalo",
+      "options": ["regalo", "libro", "plato", "vaso"],
+      "translation": "I open my birthday _____: it is a guitar!",
+      "optionTranslations": ["gift", "book", "plate", "glass"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "Abro mi regalo de cumpleaños: ¡es una guitarra!",
+        "targetWord": "regalo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonrisa",
+    "sentence": "Julián sale con una [[sonrisa]] grande.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a smile",
+      "options": ["a smile", "a laugh", "a shout", "a look"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "Julián sale con una sonrisa grande.",
+        "targetWord": "sonrisa",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abuela",
+    "sentence": "La silla de tu [[abuela]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "grandmother",
+      "options": ["grandmother", "aunt", "cousin", "neighbor"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "La silla de tu abuela.",
+        "targetWord": "abuela",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "domingo",
+    "featured": false,
+    "sentence": "Es [[domingo]] y no saben qué pasa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Sunday",
+      "options": ["Sunday", "Monday", "Saturday", "Friday"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "Es domingo y no saben qué pasa.",
+        "targetWord": "domingo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raro",
+    "featured": false,
+    "sentence": "Qué [[raro]]. Nunca se levanta tan temprano un domingo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strange",
+      "options": ["strange", "funny", "boring", "easy"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "Qué raro. Nunca se levanta tan temprano un domingo.",
+        "targetWord": "raro",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sucia",
+    "featured": false,
+    "sentence": "Después de jugar en el parque, mi ropa está _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sucia",
+      "options": ["sucia", "nueva", "cara", "lista"],
+      "translation": "After playing in the park, my clothes are _____.",
+      "optionTranslations": ["dirty", "new", "expensive", "ready"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "Después de jugar en el parque, mi ropa está sucia.",
+        "targetWord": "sucia",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "levantarse",
+    "featured": false,
+    "sentence": "Nunca [[se levanta]] tan temprano un domingo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get up",
+      "options": ["to get up", "to go out", "to have breakfast", "to work"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "Nunca se levanta tan temprano un domingo.",
+        "targetWord": "se levanta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "roto",
+    "featured": false,
+    "sentence": "No puedo usar mi lápiz porque está _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "roto",
+      "options": ["roto", "nuevo", "limpio", "bonito"],
+      "translation": "I cannot use my pencil because it is _____.",
+      "optionTranslations": ["broken", "new", "clean", "pretty"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "No puedo usar mi lápiz porque está roto.",
+        "targetWord": "roto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abrazar",
+    "featured": false,
+    "sentence": "Marina [[abraza]] a su hermano, todavía sorprendida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hug",
+      "options": ["to hug", "to push", "to call", "to follow"],
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "Marina abraza a su hermano, todavía sorprendida.",
+        "targetWord": "abraza",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "temprano,de pronto,hace años,valió la pena",
+    "featured": false,
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "temprano", "answer": "early", "options": ["early", "all of a sudden", "years ago", "it was worth it"] },
+        { "word": "de pronto", "answer": "all of a sudden", "options": ["early", "all of a sudden", "years ago", "it was worth it"] },
+        { "word": "hace años", "answer": "years ago", "options": ["early", "all of a sudden", "years ago", "it was worth it"] },
+        { "word": "valió la pena", "answer": "it was worth it", "options": ["early", "all of a sudden", "years ago", "it was worth it"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "pintar",
+    "featured": false,
+    "sentence": "Cambié la madera y la pinté de nuevo.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "pinté",
+      "options": ["pinté", "canté", "corté", "lavé"],
+      "optionTranslations": ["I painted", "I sang", "I cut", "I washed"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "por-fin-se-abre-la-puerta",
+        "storySource": "user",
+        "sentence": "Cambié la madera y la pinté de nuevo.",
+        "targetWord": "pinté",
+        "language": "spanish",
+        "voiceId": "beQfcCW5PgdTQs4cETaz"
+      }
+    }
+  }
+]

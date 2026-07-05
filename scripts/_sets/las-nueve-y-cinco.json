@@ -1,0 +1,325 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "venir",
+    "sentence": "¿Querés [[venir]] el viernes?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come",
+      "options": ["to come", "to cook", "to study", "to drive"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "¿Querés venir el viernes?",
+        "targetWord": "venir",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en voz alta",
+    "sentence": "Nunca leí mi libro [[en voz alta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "out loud",
+      "options": ["out loud", "in secret", "very fast", "at night"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "Nunca leí mi libro en voz alta.",
+        "targetWord": "en voz alta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "distinto",
+    "sentence": "Va a ser un día [[distinto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "different",
+      "options": ["different", "boring", "long", "cold"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "Va a ser un día distinto.",
+        "targetWord": "distinto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "callado",
+    "sentence": "Tomás se queda [[callado]] un momento.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "silent",
+      "options": ["silent", "asleep", "alone", "angry"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "Tomás se queda callado un momento.",
+        "targetWord": "callado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esperar",
+    "sentence": "Camila [[espera]] afuera con sus alumnos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wait",
+      "options": ["to wait", "to sing", "to run", "to draw"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "Camila espera afuera con sus alumnos.",
+        "targetWord": "espera",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aparecer",
+    "sentence": "Son las nueve y cinco, y Tomás todavía no [[aparece]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to show up",
+      "options": ["to show up", "to give up", "to sit down", "to wake up"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "Son las nueve y cinco, y Tomás todavía no aparece.",
+        "targetWord": "aparece",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "plan",
+    "sentence": "¿Qué hacemos el sábado? Ana tiene un _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "plan",
+      "options": ["plan", "regalo", "gato", "sombrero"],
+      "translation": "What do we do on Saturday? Ana has a _____.",
+      "optionTranslations": ["plan", "gift", "cat", "hat"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "¿Qué hacemos el sábado? Ana tiene un plan.",
+        "targetWord": "plan",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "miedo",
+    "sentence": "La película de terror me da mucho _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "miedo",
+      "options": ["miedo", "calor", "sueño", "trabajo"],
+      "translation": "The horror movie gives me a lot of _____.",
+      "optionTranslations": ["fear", "heat", "sleepiness", "work"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "La película de terror me da mucho miedo.",
+        "targetWord": "miedo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "contesta",
+    "sentence": "El teléfono suena y mi papá _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "contesta",
+      "options": ["contesta", "cocina", "baila", "camina"],
+      "translation": "The phone rings and my dad _____.",
+      "optionTranslations": ["answers", "cooks", "dances", "walks"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "El teléfono suena y mi papá contesta.",
+        "targetWord": "contesta",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "delante,una y otra vez,viernes,lado",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "delante", "answer": "in front", "options": ["in front", "over and over", "Friday", "side"] },
+        { "word": "una y otra vez", "answer": "over and over", "options": ["in front", "over and over", "Friday", "side"] },
+        { "word": "viernes", "answer": "Friday", "options": ["in front", "over and over", "Friday", "side"] },
+        { "word": "lado", "answer": "side", "options": ["in front", "over and over", "Friday", "side"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "respirar",
+    "featured": false,
+    "sentence": "Tomás [[respira]], aliviado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to breathe",
+      "options": ["to breathe", "to shout", "to laugh", "to jump"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "Tomás respira, aliviado.",
+        "targetWord": "respira",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "señor",
+    "featured": false,
+    "sentence": "Le pregunta si el [[señor]] va a venir o no.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a gentleman",
+      "options": ["a gentleman", "a boy", "a dog", "a bus"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "Le pregunta si el señor va a venir o no.",
+        "targetWord": "señor",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hondo",
+    "featured": false,
+    "sentence": "Mira los libros y respira [[hondo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "deeply",
+      "options": ["deeply", "quickly", "loudly", "softly"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "Mira los libros y respira hondo.",
+        "targetWord": "hondo",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mañana",
+    "featured": false,
+    "sentence": "El viernes por la [[mañana]] ahí voy a estar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the morning",
+      "options": ["the morning", "the night", "the week", "the summer"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "El viernes por la mañana ahí voy a estar.",
+        "targetWord": "mañana",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alumno",
+    "featured": false,
+    "sentence": "Uno de sus [[alumnos]] le tira de la manga.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a student",
+      "options": ["a student", "a parent", "a waiter", "a tourist"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "Uno de sus alumnos le tira de la manga.",
+        "targetWord": "alumnos",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pasar",
+    "featured": false,
+    "sentence": "¿Le habrá [[pasado]] algo?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to happen",
+      "options": ["to happen", "to finish", "to begin", "to change"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "¿Le habrá pasado algo?",
+        "targetWord": "pasado",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "minuto",
+    "featured": false,
+    "sentence": "El té está listo en un _____; espera un poco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "minuto",
+      "options": ["minuto", "año", "mes", "día"],
+      "translation": "The tea is ready in a _____; wait a little.",
+      "optionTranslations": ["minute", "year", "month", "day"],
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "El té está listo en un minuto; espera un poco.",
+        "targetWord": "minuto",
+        "language": "spanish"
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "nervioso",
+    "featured": false,
+    "sentence": "Me pongo nervioso con tanta gente.",
+    "payload": {
+      "prompt": "Which word did you hear?",
+      "answer": "nervioso",
+      "options": ["nervioso", "furioso", "curioso", "precioso"],
+      "optionTranslations": ["nervous", "furious", "curious", "precious"],
+      "language": "spanish",
+      "audioClip": {
+        "storySlug": "las-nueve-y-cinco",
+        "storySource": "user",
+        "sentence": "Me pongo nervioso con tanta gente.",
+        "targetWord": "nervioso",
+        "language": "spanish",
+        "voiceId": "C22CAiFV8Zbbir1IaT0c"
+      }
+    }
+  }
+]
