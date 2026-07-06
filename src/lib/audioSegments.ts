@@ -37,7 +37,11 @@ export function normalizeSegmentText(value: string): string {
   return value
     .replace(/<[^>]+>/g, " ")
     .replace(/[“”„«»"']/g, "")
-    .replace(/[.,!?;:()[\]{}]/g, " ")
+    // ¡¿… included: without them the first token of every Spanish
+    // question/exclamation ("¿Esta", "¡Claro") never matches the aeneas
+    // transcript token ("esta", "claro"), so sentence segments start at
+    // the SECOND word — a systematic late startSec on those sentences.
+    .replace(/[.,!?;:()[\]{}¡¿…]/g, " ")
     .replace(/\s+/g, " ")
     .trim()
     .toLowerCase();

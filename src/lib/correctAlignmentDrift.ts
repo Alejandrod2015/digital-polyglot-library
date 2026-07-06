@@ -21,7 +21,7 @@
 import { spawn } from "child_process";
 import type { StoryWordToken } from "./audioWordTimings";
 
-type SilenceSpan = { start: number; end: number; duration: number };
+export type SilenceSpan = { start: number; end: number; duration: number };
 
 /**
  * Run ffmpeg silencedetect on the given audio URL (or local path) and
@@ -29,7 +29,7 @@ type SilenceSpan = { start: number; end: number; duration: number };
  * we collect stderr and parse the `silence_start` / `silence_end`
  * pairs.
  */
-async function detectSilences(
+export async function detectSilences(
   audioUrl: string,
   options: { thresholdDb?: number; minDurationSec?: number } = {}
 ): Promise<SilenceSpan[]> {
