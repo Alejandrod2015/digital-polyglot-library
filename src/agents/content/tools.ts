@@ -19,12 +19,19 @@ export function generateSlug(
   variant: string,
   slot: number
 ): string {
-  const titleSlug = title
-    .toLowerCase()
-    .replace(/[áéíóúüñç]/g, (char) => {
-      const map: Record<string, string> = { á: "a", é: "e", í: "i", ó: "o", ú: "u", ü: "u", ñ: "n", ç: "c" };
-      return map[char] || char;
-    })
+  // German convention expands umlauts (Neukölln → neukoelln), it never just
+  // strips the diacritic. Only German: in Spanish ü must stay "u" (pingüino).
+  const isGerman = /german|deutsch|\bde\b/i.test(`${language} ${variant ?? ""}`);
+  let titleSlug = title.toLowerCase();
+  if (isGerman) {
+    const umlauts: Record<string, string> = { ä: "ae", ö: "oe", ü: "ue" };
+    titleSlug = titleSlug.replace(/[äöü]/g, (char) => umlauts[char]);
+  }
+  titleSlug = titleSlug
+    // ß has no NFD decomposition and only exists in German, so map it always.
+    .replace(/ß/g, "ss")
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
