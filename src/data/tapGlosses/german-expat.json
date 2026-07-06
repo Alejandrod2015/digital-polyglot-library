@@ -35,7 +35,7 @@
   },
   "alle": {
    "g": "all, every",
-   "t": "other"
+   "t": "pronoun"
   },
   "allein": {
    "g": "alone; here: just (the word alone)",
@@ -175,7 +175,7 @@
   },
   "berlin": {
    "g": "Berlin",
-   "t": "other"
+   "t": "noun"
   },
   "berliner": {
    "g": "Berliner, person from Berlin",
@@ -287,7 +287,7 @@
   },
   "das": {
    "g": "the; that",
-   "t": "other"
+   "t": "article"
   },
   "dass": {
    "g": "that (conjunction)",
@@ -303,15 +303,15 @@
   },
   "dem": {
    "g": "the (dative)",
-   "t": "other"
+   "t": "article"
   },
   "den": {
    "g": "the (accusative)",
-   "t": "other"
+   "t": "article"
   },
   "der": {
    "g": "the; who, which",
-   "t": "other"
+   "t": "article"
   },
   "derweil": {
    "g": "meanwhile",
@@ -319,7 +319,7 @@
   },
   "des": {
    "g": "of the (genitive)",
-   "t": "other"
+   "t": "article"
   },
   "deutlich": {
    "g": "clearly, noticeably",
@@ -331,19 +331,19 @@
   },
   "die": {
    "g": "the; who, which",
-   "t": "other"
+   "t": "article"
   },
   "diese": {
    "g": "this, these",
-   "t": "other"
+   "t": "pronoun"
   },
   "diesem": {
    "g": "this (dative)",
-   "t": "other"
+   "t": "pronoun"
   },
   "dieser": {
    "g": "this",
-   "t": "other"
+   "t": "pronoun"
   },
   "dir": {
    "g": "you (dative)",
@@ -403,27 +403,27 @@
   },
   "ein": {
    "g": "a, an; one",
-   "t": "other"
+   "t": "article"
   },
   "eine": {
    "g": "a, an",
-   "t": "other"
+   "t": "article"
   },
   "einem": {
    "g": "a, an (dative)",
-   "t": "other"
+   "t": "article"
   },
   "einen": {
    "g": "a, an (accusative)",
-   "t": "other"
+   "t": "article"
   },
   "einer": {
    "g": "one (of them); a (dative)",
-   "t": "other"
+   "t": "article"
   },
   "eines": {
    "g": "of a",
-   "t": "other"
+   "t": "article"
   },
   "elf": {
    "g": "eleven",
@@ -651,11 +651,11 @@
   },
   "halbe": {
    "g": "half",
-   "t": "other"
+   "t": "adjective"
   },
   "halben": {
    "g": "half (declined)",
-   "t": "other"
+   "t": "adjective"
   },
   "haltestellen": {
    "g": "bus/train stops (die Haltestelle)",
@@ -771,15 +771,15 @@
   },
   "jede": {
    "g": "every",
-   "t": "other"
+   "t": "pronoun"
   },
   "jeden": {
    "g": "every",
-   "t": "other"
+   "t": "pronoun"
   },
   "jedes": {
    "g": "every",
-   "t": "other"
+   "t": "pronoun"
   },
   "jemals": {
    "g": "ever",
@@ -803,7 +803,7 @@
   },
   "karl-marx-straße": {
    "g": "main street in Neukölln, Berlin",
-   "t": "other"
+   "t": "noun"
   },
   "karten": {
    "g": "tickets (die Karte)",
@@ -815,7 +815,7 @@
   },
   "katja": {
    "g": "(name)",
-   "t": "other"
+   "t": "noun"
   },
   "kehrt": {
    "g": "returns (zurückkehren; kehrt ... zurück)",
@@ -823,7 +823,7 @@
   },
   "kein": {
    "g": "no, not a",
-   "t": "other"
+   "t": "article"
   },
   "keiner": {
    "g": "nobody",
@@ -923,7 +923,7 @@
   },
   "lindner": {
    "g": "(name)",
-   "t": "other"
+   "t": "noun"
   },
   "längst": {
    "g": "long since",
@@ -959,7 +959,7 @@
   },
   "meisten": {
    "g": "die meisten = most people",
-   "t": "other"
+   "t": "pronoun"
   },
   "meistens": {
    "g": "mostly, usually",
@@ -971,7 +971,7 @@
   },
   "menzel": {
    "g": "(name)",
-   "t": "other"
+   "t": "noun"
   },
   "mich": {
    "g": "me (accusative)",
@@ -1027,7 +1027,7 @@
   },
   "nadia": {
    "g": "(name)",
-   "t": "other"
+   "t": "noun"
   },
   "nassem": {
    "g": "wet (nass)",
@@ -1043,7 +1043,7 @@
   },
   "neukölln": {
    "g": "district in Berlin",
-   "t": "other"
+   "t": "noun"
   },
   "neun": {
    "g": "nine",
@@ -1411,11 +1411,11 @@
   },
   "timo": {
    "g": "(name)",
-   "t": "other"
+   "t": "noun"
   },
   "timos": {
    "g": "Timo's",
-   "t": "other"
+   "t": "noun"
   },
   "tomaten": {
    "g": "tomatoes (die Tomate)",
@@ -1599,7 +1599,7 @@
   },
   "weigandufer": {
    "g": "canal-side street in Neukölln, Berlin",
-   "t": "other"
+   "t": "noun"
   },
   "weiter": {
    "g": "further, on; rechne du weiter = you keep counting",
@@ -1623,7 +1623,7 @@
   },
   "weserstraße": {
    "g": "street in Neukölln, Berlin",
-   "t": "other"
+   "t": "noun"
   },
   "wetter": {
    "g": "weather (das Wetter)",
