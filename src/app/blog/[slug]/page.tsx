@@ -1,12 +1,58 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllBlogSlugs, getBlogPost, renderBlogContent } from "@/lib/blog";
+import { getAllBlogSlugs, getBlogPost, renderBlogContent, type BlogPost } from "@/lib/blog";
 import landing from "@/components/marketing/LandingPage.module.css";
 import blog from "@/components/marketing/Blog.module.css";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import ReadingProgress from "@/components/blog/ReadingProgress";
 import InlineNewsletter from "@/components/blog/InlineNewsletter";
+
+// Canonical host for the blog. Kept in sync with src/app/sitemap.ts so the
+// canonical URL, the sitemap URL and the URL Google actually indexes all
+// match (https, www, no trailing slash).
+const SITE = "https://www.digitalpolyglot.com";
+
+// Absolute URL for an asset stored as either a relative path or a full URL in
+// frontmatter. JSON-LD and OpenGraph both require absolute image URLs.
+function absoluteUrl(pathOrUrl: string | undefined): string | undefined {
+  if (!pathOrUrl) return undefined;
+  if (/^https?:\/\//i.test(pathOrUrl)) return pathOrUrl;
+  return `${SITE}${pathOrUrl.startsWith("/") ? "" : "/"}${pathOrUrl}`;
+}
+
+// BlogPosting structured data. The pre-migration blog exposed schema; the MDX
+// rebuild dropped it, removing the rich-result and entity signals Google had.
+// This restores an Article/BlogPosting graph per post.
+function blogPostingJsonLd(post: BlogPost): Record<string, unknown> {
+  const url = `${SITE}/blog/${post.slug}`;
+  const image = absoluteUrl(post.hero);
+  const published = post.date || undefined;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.seoTitle ?? post.title,
+    description: post.metaDescription ?? post.excerpt,
+    ...(image ? { image } : {}),
+    ...(published ? { datePublished: published, dateModified: published } : {}),
+    author: { "@type": "Organization", name: post.author ?? "Digital Polyglot", url: SITE },
+    publisher: {
+      "@type": "Organization",
+      name: "Digital Polyglot",
+      logo: { "@type": "ImageObject", url: `${SITE}/favicon/apple-touch-icon.png` },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    url,
+    inLanguage: "en",
+  };
+}
+
+// Serialize JSON-LD for injection into a <script> tag. Escapes "<" to its
+// unicode form so a post title/description containing "</script>" cannot break
+// out of the tag (XSS / broken markup). Parsers decode < transparently.
+function jsonLdScript(data: Record<string, unknown>): string {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
 
 // Splits the rendered article HTML so we can insert the inline newsletter
 // at a natural break (the second <h2>, falling back to the 6th </p>).
@@ -39,9 +85,29 @@ export async function generateMetadata(
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) return { title: "Not found · Digital Polyglot Blog" };
+  const url = `${SITE}/blog/${post.slug}`;
+  const title = `${post.seoTitle ?? post.title} · Digital Polyglot`;
+  const description = post.metaDescription ?? post.excerpt;
+  const image = absoluteUrl(post.hero);
   return {
-    title: `${post.seoTitle ?? post.title} · Digital Polyglot`,
-    description: post.metaDescription ?? post.excerpt,
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title,
+      description,
+      siteName: "Digital Polyglot",
+      ...(post.date ? { publishedTime: post.date } : {}),
+      ...(image ? { images: [{ url: image }] } : {}),
+    },
+    twitter: {
+      card: image ? "summary_large_image" : "summary",
+      title,
+      description,
+      ...(image ? { images: [image] } : {}),
+    },
   };
 }
 
@@ -69,6 +135,11 @@ export default async function BlogPostPage(
     <main className={landing.page}>
       <MarketingNav />
       <ReadingProgress />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(blogPostingJsonLd(post)) }}
+      />
 
       <article className={landing.frame}>
         <div className={blog.post}>

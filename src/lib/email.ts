@@ -239,12 +239,14 @@ export async function sendClaimEmail({
   const preheader = "Access your books and start reading instantly.";
 
   const text = [
-    "Your Digital Polyglot books are ready.",
-    `Access them with this link: ${claimUrl}`,
+    "Your Digital Polyglot books are ready to read and listen.",
+    `Open them here: ${claimUrl}`,
+    "You will sign in or create a free account, and your books appear in My Library.",
     "",
-    "Included books:",
+    "Included books (each with narrated audio):",
     ...titles.map((t) => `• ${t}`),
     "",
+    "Come back anytime at digitalpolyglot.com and open My Library.",
     "If you didn’t make this purchase, ignore this message or contact us at support@digitalpolyglot.com.",
   ].join("\n");
 
@@ -273,22 +275,29 @@ export async function sendClaimEmail({
               <td style="padding:24px;">
                 <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#111827;line-height:1.6;">
                   
-                  <h1 style="margin:0 0 12px;font-size:22px;">📚 Your books are ready</h1>
-                  <p style="margin:0 0 20px;color:#374151;">
-                    If this was a gift, you can forward this email to the intended recipient so they can access the books.
+                  <h1 style="margin:0 0 12px;font-size:22px;">📚 Your books are ready to read and listen</h1>
+                  <p style="margin:0 0 8px;color:#374151;">
+                    Tap the button below to open your library. You will sign in or create a free account, and every book (with its narrated audio) appears in <strong>My Library</strong>, on any device.
+                  </p>
+                  <p style="margin:0 0 20px;color:#6B7280;font-size:14px;">
+                    If this was a gift, forward this email to the recipient so they can open the books.
                   </p>
 
                   <p style="margin:12px 0 28px;text-align:center;">
                     <a href="${claimUrl}"
                        style="background:#0ea5e9;color:#ffffff;padding:14px 24px;border-radius:10px;text-decoration:none;display:inline-block;font-weight:600;">
-                      Open my books
+                      Open my library
                     </a>
                   </p>
 
-                  <p style="margin:0 0 12px;font-weight:600;">Included books:</p>
+                  <p style="margin:0 0 12px;font-weight:600;">Included books (each with narrated audio):</p>
                   <ul style="margin:0 0 20px;padding-left:20px;color:#374151;">
                     ${titles.map((t) => `<li>${t}</li>`).join("")}
                   </ul>
+
+                  <p style="margin:0 0 20px;color:#374151;font-size:14px;">
+                    Come back anytime at <a href="https://digitalpolyglot.com" style="color:#0ea5e9;">digitalpolyglot.com</a> and open <strong>My Library</strong>. Your books stay in your account.
+                  </p>
 
                   <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;">
 
