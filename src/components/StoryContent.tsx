@@ -28,28 +28,18 @@ function resolveVocabType(item: {
   type?: string | null;
   definition?: string;
 }): string {
-  const word = (item.word ?? item.surface ?? "").trim().toLowerCase();
-  const def = (item.definition ?? "").trim().toLowerCase();
-
-  if (word.includes(" ") || word.includes("-")) return "expression";
-  if (word.endsWith("mente") || word.endsWith("ly")) return "adverb";
-
-  const ADJ_SUF = ["oso", "osa", "ivo", "iva", "able", "ible", "iento", "ienta"];
-  if (ADJ_SUF.some((s) => word.endsWith(s))) return "adjective";
-
-  const NOUN_SUF = ["ción", "sión", "dad", "tad", "tud", "aje", "anza", "encia", "ancia", "miento", "ismo", "ista", "ería", "azo", "ote"];
-  if (NOUN_SUF.some((s) => word.endsWith(s))) return "noun";
-
-  if (word.length >= 4 && /(?:ar|er|ir)$/.test(word)) return "verb";
-
-  if (item.type) {
-    const explicit = normalizeVocabType(item.type);
-    if (explicit) return explicit;
-  }
-
-  if (def.startsWith("to ")) return "verb";
-
-  return "other";
+  // MISMA resolución que VocabPanel (2026-07-06): el `type` explícito del
+  // vocab manda; la inferencia del dominio solo entra cuando falta. La
+  // heurística local vieja clasificaba "expression" cualquier lema con
+  // espacio ANTES de mirar el type, así que los sustantivos alemanes con
+  // artículo ("das Klingelschild") pintaban pill rosa mientras el panel
+  // decía NOUN azul. Pill y panel deben decir siempre lo mismo.
+  return (
+    normalizeVocabType(item.type, {
+      word: item.word ?? item.surface ?? "",
+      definition: item.definition ?? "",
+    }) ?? "other"
+  );
 }
 
 export type StoryContentProps = {
