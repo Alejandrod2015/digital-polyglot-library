@@ -24,6 +24,11 @@
  * de voces es limitado (~10 por idioma) y 3 mini-casts ya usan casi todo.
  * Contras a manejar al escribir: evitar monotonía (hacer evolucionar
  * relaciones/situaciones) y cuidar coherencia (edades, parentescos, pasado).
+ *
+ * REGLA DURA (usuario, 2026-07-07, "nunca más"): en contenido NUEVO no hay
+ * personajes viejos/ancianos ni niños/adolescentes. Solo adultos en activo
+ * (~25-55). Los abuelos/niños de casts legacy publicados quedan, pero no se
+ * reusan en historias nuevas.
  */
 
 import { SPANISH_DIALOGUE_VOICES, GERMAN_DIALOGUE_VOICES } from "@/lib/elevenlabs";
@@ -509,10 +514,83 @@ export const GERMAN_TRAVELER_V2_VOICEMAP: Record<string, keyof typeof GERMAN_DIA
   hanna: "daien", lukas: "daniel",
 };
 
+
+/**
+ * German "Expat" journey, B1 (journeyId cmr92f0qz…, created 2026-07-07).
+ * Un solo mini-cast: Berlín. Tema: sobrevivir Alemania como recién llegado
+ * (Anmeldung → WG → trabajo → Amt → alltag → amigos → salud). El cast
+ * crece con el alumno a lo largo de los 7 topics; los funcionarios/médicos
+ * puntuales rotan desde el pool sin entrar al cast fijo.
+ * Voces: SOLO del pool GERMAN_DIALOGUE_VOICES (licencias verificadas;
+ * respetar los BANNED de ese bloque).
+ */
+export const GERMAN_EXPAT_B1_CAST: JourneyCast = {
+  journeyKey: "german-germany",
+  countries: [
+    {
+      country: "Germany",
+      city: "Berlin",
+      members: [
+        {
+          slug: "nadia",
+          displayName: "Nadia",
+          voiceId: GERMAN_DIALOGUE_VOICES.ela_warm,
+          voiceSlot: "ela_warm",
+          age: "young",
+          relation: "protagonista",
+          description:
+            "Expat de ~29 que llega a Berlín por trabajo; alemán B1 real (se traba con el Amtsdeutsch, pide que le repitan). Proxy del alumno.",
+        },
+        {
+          slug: "timo",
+          displayName: "Timo",
+          voiceId: GERMAN_DIALOGUE_VOICES.marius,
+          voiceSlot: "marius",
+          age: "young",
+          relation: "Mitbewohner",
+          description:
+            "Berlinés de ~28, compañero de WG relajado; traduce la ciudad y sus códigos (du inmediato, ironía berlinesa suave, sin slang B1+).",
+        },
+        {
+          slug: "frau-brandt",
+          displayName: "Frau Brandt",
+          // ela_calm elegida por el usuario 2026-07-07 (audición vs marlena/
+          // daien); daien quedó APROBADA en banquillo para personajes futuros.
+          voiceId: GERMAN_DIALOGUE_VOICES.ela_calm,
+          voiceSlot: "ela_calm",
+          age: "middle-aged",
+          relation: "jefa",
+          description:
+            "Jefa de ~40 en la oficina de Nadia; formal (Sie estricto), seca pero justa. Motor del registro formal del journey.",
+        },
+        {
+          slug: "ayse",
+          displayName: "Ayşe",
+          voiceId: GERMAN_DIALOGUE_VOICES.enniah,
+          voiceSlot: "enniah",
+          age: "middle-aged",
+          relation: "vecina / dueña del Späti",
+          description:
+            "Berlinesa de familia turca, ~38, dueña del Späti de la esquina; cálida y directa. Puente entre el alltag y la amistad.",
+        },
+      ],
+      notes:
+        "Through-line: Nadia pasa de sobrevivir trámites a tener una vida (el topic 7 cierra con ella acompañando a otro recién llegado). Registro du/Sie como recurso narrativo: Timo/Ayşe = du, Frau Brandt/funcionarios = Sie.",
+      seedStories: [],
+    },
+  ],
+  notes:
+    "Narrador journey-wide = moritz (el narrador establecido del alemán). Funcionarios, médicos y personajes de una sola historia rotan desde el pool (felix, daniel, jane, michael, ela_calm...) sin reusar la voz de un miembro fijo dentro de la misma escena.",
+};
+
 /** Indexed by journey key for lookup. */
 export const JOURNEY_CASTS: Record<string, JourneyCast> = {
   "spanish-latam": SPANISH_LATAM_CAST,
-  "german-germany": GERMAN_TRAVELER_CAST,
+  // 2026-07-07: el key german-germany pasa del Traveler beta (ARCHIVADO,
+  // decisión del usuario: no reusar nada de los journeys alemanes viejos)
+  // al journey Expat B1 nuevo. GERMAN_TRAVELER_CAST queda arriba solo como
+  // documentación histórica.
+  "german-germany": GERMAN_EXPAT_B1_CAST,
 };
 
 export function getJourneyCast(

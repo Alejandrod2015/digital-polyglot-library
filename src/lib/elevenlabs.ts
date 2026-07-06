@@ -173,6 +173,13 @@ export const GERMAN_DIALOGUE_VOICES = {
   joerg:     "KVgqk9YVh0pWUJiWQN8j", // M middle-aged, native DE, confident, narrative_story; Stefan
   daniel_konv:"2EkqFDbWjmOn56BMSmts", // M middle-aged, native DE, casual conversational ("Friendly Conversationalist"); Verkäufer
   marlena:   "MTTjXkEpZepLTqO0xH0f", // F middle-aged, native DE, warm professional/conversational; Kundin
+  // ── Round 5 (2026-07-07): banquillo aprobado por el usuario para el journey
+  // Expat B1 (audición numerada; licencias verificadas: high_quality,
+  // notice_period 730 días, ya añadidas a la cuenta). Adultos en activo
+  // (regla dura: sin viejos ni niños en contenido nuevo).
+  ben_de:    "MMwckqU477oQxnAk1SgA", // M middle-aged, calm natural conversational
+  charlie:   "vmVmHDKBkkCgbLVIOJRb", // M middle-aged, casual real (colegas/amigos)
+  ela_cheer: "NE7AIW5DoJ7lUosXV2KR", // F young, urbana y alegre (amigas Berlín)
 } as const;
 
 // Approved Spanish (LATAM) voices for multi-character dialogue stories. IDs
