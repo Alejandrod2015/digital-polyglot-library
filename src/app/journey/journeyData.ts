@@ -503,6 +503,22 @@ const STORY_STATUS_WHERE: Prisma.JourneyStoryWhereInput = PREVIEW_DRAFTS
   ? { OR: [{ status: "published" }, { journeyId: PREVIEW_JOURNEY_ID }] }
   : { status: "published" };
 
+// Only the story columns buildJourneyVariantsFromStudio actually reads.
+// A full-row include drags every JSON blob (audioWordTimings, audioSegments,
+// dialogueSpec, audioFragments, cast, auditOffenders...) into the cached
+// payload, which blew past unstable_cache's 2MB per-entry limit and made
+// the cache write fail on every request.
+const STORY_TRACK_SELECT = {
+  id: true,
+  slug: true,
+  title: true,
+  text: true,
+  vocab: true,
+  coverUrl: true,
+  level: true,
+  topic: true,
+} satisfies Prisma.JourneyStorySelect;
+
 const getStudioJourneysForLanguage = unstable_cache(
   async (language: string) => {
     return prisma.journey.findMany({
@@ -520,11 +536,12 @@ const getStudioJourneysForLanguage = unstable_cache(
           // don't get shuffled between topics; `slotIndex` is the sequence
           // within a topic, as assigned by the Studio creation flow.
           orderBy: [{ level: "asc" }, { topic: "asc" }, { slotIndex: "asc" }],
+          select: STORY_TRACK_SELECT,
         },
       },
     });
   },
-  ["studio-journeys-by-language-v7"],
+  ["studio-journeys-by-language-v8"],
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
@@ -540,11 +557,12 @@ const getAllStudioJourneys = unstable_cache(
         stories: {
           where: { ...STORY_STATUS_WHERE, NOT: [{ text: null }, { title: null }] },
           orderBy: [{ level: "asc" }, { topic: "asc" }, { slotIndex: "asc" }],
+          select: STORY_TRACK_SELECT,
         },
       },
     });
   },
-  ["studio-journeys-all-v4"],
+  ["studio-journeys-all-v5"],
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
