@@ -27,11 +27,11 @@ const WORD_SPLIT = /([A-Za-zÄÖÜäöüß]+(?:-[A-Za-zÄÖÜäöüß]+)*)/u;
 
 export default function TapGlossReader({ text, vocab, glosses }: TapGlossReaderProps) {
   const [selected, setSelected] = React.useState<GlossState | null>(null);
-  // Misma lógica de posicionamiento que VocabPanel: la burbuja vive justo
-  // arriba del player dock; si no hay dock (historias sin audio aún), queda
-  // a 24px del borde inferior.
+  // Posicionamiento IDÉNTICO a VocabPanel (mismo default y misma medición
+  // del dock): las dos burbujas deben aparecer exactamente en el mismo
+  // lugar; solo cambia el estilo. Mantener en sync con VocabPanel.tsx.
   const [dockBottom, setDockBottom] = React.useState<string>(
-    "calc(24px + env(safe-area-inset-bottom))"
+    "max(150px, calc(140px + env(safe-area-inset-bottom) + 12px))"
   );
 
   React.useEffect(() => {
@@ -102,7 +102,7 @@ export default function TapGlossReader({ text, vocab, glosses }: TapGlossReaderP
       {selected ? (
         <div
           id="tap-gloss-bubble"
-          className="fixed z-[70]"
+          className="fixed z-[70] vocab-overlay-wrap"
           onClick={(e) => e.stopPropagation()}
           style={{
             bottom: dockBottom,
