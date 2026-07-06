@@ -19,6 +19,7 @@ import RegionBadge from "@/components/RegionBadge";
 import StoryContent from "@/components/StoryContent";
 import HighlightedStoryReader from "@/components/HighlightedStoryReader";
 import TapGlossReader from "@/components/TapGlossReader";
+import TapGlossLayer from "@/components/TapGlossLayer";
 import { getTapGlossesForSlug } from "@/lib/tapGlosses";
 import VocabPanel from "@/components/VocabPanel";
 import EndOfStoryPracticePrompt from "@/components/EndOfStoryPracticePrompt";
@@ -516,10 +517,25 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
         {hasFullAccess ? (
           <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
             {hasWordTimings ? (
-              <HighlightedStoryReader
-                story={{ vocab: safeVocab }}
-                audioWordTimings={audioWordTimings}
-              />
+              <>
+                <HighlightedStoryReader
+                  story={{ vocab: safeVocab }}
+                  audioWordTimings={audioWordTimings}
+                />
+                {/* Diccionario tap-any-word también en modo karaoke: los
+                    spans [data-word-index] del karaoke sirven de target,
+                    la capa solo aporta listener + burbuja. */}
+                {tapGlosses ? (
+                  <TapGlossLayer
+                    glosses={tapGlosses}
+                    story={{
+                      slug: resolvedStory.slug,
+                      title: resolvedStory.title,
+                      language: resolvedStory.language,
+                    }}
+                  />
+                ) : null}
+              </>
             ) : tapGlosses ? (
               <TapGlossReader
                 text={normalizedText}
