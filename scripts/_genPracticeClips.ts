@@ -55,7 +55,10 @@ const PREV_TEXT = "Ahora escucha esta frase.";
 const NEXT_TEXT = "Muy bien. Ahora sigamos con la siguiente.";
 const PREV_TEXT_Q = "Él tiene una duda y pregunta:";
 const NEXT_TEXT_Q = "Ella le responde enseguida.";
-const isQuestion = (s: string) => s.includes("¿") || s.trim().endsWith("?");
+// Final intonation is what the F0 gate measures, so what matters is how the
+// sentence ENDS: "Ella dice: ¿Tacos? ¡Son deliciosos!" contains a question
+// but ends exclamative (falling) and must be gated as a statement.
+const isQuestion = (s: string) => s.trim().endsWith("?");
 // Match the NARRATION settings (elevenlabs.ts DEFAULT_VOICE_SETTINGS): the
 // project already learned on 2026-06-10 that style 0 sounds flat/monotone; at
 // style 0 the voice has no expressive range for a question's final rise
@@ -183,9 +186,15 @@ let f0GateWarned = false;
 // questions require the rising-final gate. Accented forms only occur in
 // interrogatives, so their presence identifies a wh-question reliably.
 const WH_QUESTION = /(qué|quién|quiénes|cómo|cuándo|dónde|adónde|cuál|cuáles|cuánto|cuánta|cuántos|cuántas)/i;
+// Deliberative "¿Y si...?" questions also end falling in natural Spanish
+// (Jhenny rendered one falling 8/8; the narration reads it the same way).
+const DELIBERATIVE_QUESTION = /^\s*¿\s*y\s+si\b/i;
 async function f0Ok(mp3Path: string, sentence: string): Promise<{ ok: boolean; detail: string }> {
   try {
-    const mode = isQuestion(sentence) && !WH_QUESTION.test(sentence) ? "question" : "statement";
+    const mode =
+      isQuestion(sentence) && !WH_QUESTION.test(sentence) && !DELIBERATIVE_QUESTION.test(sentence)
+        ? "question"
+        : "statement";
     const r = await spawnCapture(F0_PYTHON, ["scripts/_f0gate.py", mp3Path, mode]);
     if (r.code !== 0) throw new Error(r.err.slice(0, 120));
     const v = JSON.parse(r.out.trim());

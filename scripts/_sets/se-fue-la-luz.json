@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "rain",
-      "options": ["rain", "wind", "snow", "heat"],
+      "options": [
+        "rain",
+        "wind",
+        "snow",
+        "heat"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "La lluvia pronto se va.",
         "targetWord": "lluvia",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9a41f442be182c5a.mp3"
       }
     }
   },
@@ -23,13 +29,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "living room",
-      "options": ["living room", "kitchen", "bathroom", "garden"],
+      "options": [
+        "living room",
+        "kitchen",
+        "bathroom",
+        "garden"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "Marina mira la lluvia por la ventana de la sala.",
         "targetWord": "sala",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/470502eb760f8437.mp3"
       }
     }
   },
@@ -40,13 +52,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "dark",
-      "options": ["dark", "empty", "cold", "wet"],
+      "options": [
+        "dark",
+        "empty",
+        "cold",
+        "wet"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "De repente, todo se queda oscuro.",
         "targetWord": "oscuro",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2ecc09f93abd36c5.mp3"
       }
     }
   },
@@ -57,13 +75,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "light",
-      "options": ["light", "water", "music", "air"],
+      "options": [
+        "light",
+        "water",
+        "music",
+        "air"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "Se apaga la luz en toda la casa.",
         "targetWord": "luz",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa38005e03aee59d.mp3"
       }
     }
   },
@@ -74,13 +98,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "drawer",
-      "options": ["drawer", "shelf", "closet", "basket"],
+      "options": [
+        "drawer",
+        "shelf",
+        "closet",
+        "basket"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "Tengo unas velas en el cajón.",
         "targetWord": "cajón",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/57d68df25b7cabc2.mp3"
       }
     }
   },
@@ -91,15 +121,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "tranquila",
-      "options": ["tranquila", "llena", "sucia", "cara"],
+      "options": [
+        "tranquila",
+        "llena",
+        "sucia",
+        "cara"
+      ],
       "translation": "The beach in the morning is _____, with no people.",
-      "optionTranslations": ["calm", "full", "dirty", "expensive"],
+      "optionTranslations": [
+        "calm",
+        "full",
+        "dirty",
+        "expensive"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "La playa por la mañana está tranquila, sin gente.",
         "targetWord": "tranquila",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a61f063c2956fb7e.mp3"
       }
     }
   },
@@ -110,13 +151,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a candle",
-      "options": ["a candle", "a lamp", "a blanket", "a plate"],
+      "options": [
+        "a candle",
+        "a lamp",
+        "a blanket",
+        "a plate"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "Los tres se sientan cerca de la vela.",
         "targetWord": "vela",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/651b2c1a902cea7d.mp3"
       }
     }
   },
@@ -127,15 +174,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "ventana",
-      "options": ["ventana", "cama", "mesa", "silla"],
+      "options": [
+        "ventana",
+        "cama",
+        "mesa",
+        "silla"
+      ],
       "translation": "I look at the street from the _____ of my room.",
-      "optionTranslations": ["window", "bed", "table", "chair"],
+      "optionTranslations": [
+        "window",
+        "bed",
+        "table",
+        "chair"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "Miro la calle desde la ventana de mi cuarto.",
         "targetWord": "ventana",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b77fffc05e87b1e0.mp3"
       }
     }
   },
@@ -146,13 +204,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to light",
-      "options": ["to light", "to buy", "to hide", "to count"],
+      "options": [
+        "to light",
+        "to buy",
+        "to hide",
+        "to count"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "Mamá enciende dos velas.",
         "targetWord": "enciende",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c595eb53d053d1d.mp3"
       }
     }
   },
@@ -163,13 +227,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to turn off",
-      "options": ["to turn off", "to charge", "to sell", "to lose"],
+      "options": [
+        "to turn off",
+        "to charge",
+        "to sell",
+        "to lose"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "Hoy lo dejo apagado.",
         "targetWord": "apagado",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c05dbd05f1b42e3c.mp3"
       }
     }
   },
@@ -181,13 +251,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "brother",
-      "options": ["brother", "cousin", "uncle", "neighbor"],
+      "options": [
+        "brother",
+        "cousin",
+        "uncle",
+        "neighbor"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "Su hermano Julián y su mamá están con ella en la casa.",
         "targetWord": "hermano",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/055d0c3fc26b2ef4.mp3"
       }
     }
   },
@@ -199,13 +275,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "soft",
-      "options": ["soft", "strong", "loud", "heavy"],
+      "options": [
+        "soft",
+        "strong",
+        "loud",
+        "heavy"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "La luz es suave y amarilla.",
         "targetWord": "suave",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/84ac2836759bf6a9.mp3"
       }
     }
   },
@@ -217,13 +299,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a story",
-      "options": ["a story", "a song", "a photo", "a secret"],
+      "options": [
+        "a story",
+        "a song",
+        "a photo",
+        "a secret"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "Mamá, cuéntanos una historia de cuando eras joven.",
         "targetWord": "historia",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/750105f73d376736.mp3"
       }
     }
   },
@@ -235,15 +323,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "cálida",
-      "options": ["cálida", "fea", "corta", "dura"],
+      "options": [
+        "cálida",
+        "fea",
+        "corta",
+        "dura"
+      ],
       "translation": "This blanket is _____ and perfect for the cold.",
-      "optionTranslations": ["warm", "ugly", "short", "hard"],
+      "optionTranslations": [
+        "warm",
+        "ugly",
+        "short",
+        "hard"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "Esta manta es cálida y perfecta para el frío.",
         "targetWord": "cálida",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f35a7c0502b8c2fd.mp3"
       }
     }
   },
@@ -255,13 +354,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to sit down",
-      "options": ["to sit down", "to stand up", "to come in", "to go out"],
+      "options": [
+        "to sit down",
+        "to stand up",
+        "to come in",
+        "to go out"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "Vengan, siéntense cerca de la vela.",
         "targetWord": "siéntense",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5affb797b2c39619.mp3"
       }
     }
   },
@@ -273,15 +378,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "fuerte",
-      "options": ["fuerte", "lento", "frío", "corto"],
+      "options": [
+        "fuerte",
+        "lento",
+        "frío",
+        "corto"
+      ],
       "translation": "The wind is so _____ that it moves the trees.",
-      "optionTranslations": ["strong", "slow", "cold", "short"],
+      "optionTranslations": [
+        "strong",
+        "slow",
+        "cold",
+        "short"
+      ],
       "audioClip": {
         "storySlug": "se-fue-la-luz",
         "storySource": "user",
         "sentence": "El viento es tan fuerte que mueve los árboles.",
         "targetWord": "fuerte",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9febbf91c1c43787.mp3"
       }
     }
   },
@@ -293,10 +409,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "de repente", "answer": "suddenly", "options": ["suddenly", "in the end", "of course", "gray"] },
-        { "word": "al final", "answer": "in the end", "options": ["suddenly", "in the end", "of course", "gray"] },
-        { "word": "claro que sí", "answer": "of course", "options": ["suddenly", "in the end", "of course", "gray"] },
-        { "word": "gris", "answer": "gray", "options": ["suddenly", "in the end", "of course", "gray"] }
+        {
+          "word": "de repente",
+          "answer": "suddenly",
+          "options": [
+            "suddenly",
+            "in the end",
+            "of course",
+            "gray"
+          ]
+        },
+        {
+          "word": "al final",
+          "answer": "in the end",
+          "options": [
+            "suddenly",
+            "in the end",
+            "of course",
+            "gray"
+          ]
+        },
+        {
+          "word": "claro que sí",
+          "answer": "of course",
+          "options": [
+            "suddenly",
+            "in the end",
+            "of course",
+            "gray"
+          ]
+        },
+        {
+          "word": "gris",
+          "answer": "gray",
+          "options": [
+            "suddenly",
+            "in the end",
+            "of course",
+            "gray"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -309,8 +461,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "pantalla",
-      "options": ["pantalla", "toalla", "batalla", "muralla"],
-      "optionTranslations": ["screen", "towel", "battle", "wall"],
+      "options": [
+        "pantalla",
+        "toalla",
+        "batalla",
+        "muralla"
+      ],
+      "optionTranslations": [
+        "screen",
+        "towel",
+        "battle",
+        "wall"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "se-fue-la-luz",

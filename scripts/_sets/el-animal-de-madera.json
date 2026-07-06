@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to sleep",
-      "options": ["to sleep", "to eat", "to walk", "to sing"],
+      "options": [
+        "to sleep",
+        "to eat",
+        "to walk",
+        "to sing"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "Toda la familia duerme, pero Mateo no.",
         "targetWord": "duerme",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/82d6723a4fd86ae3.mp3"
       }
     }
   },
@@ -23,15 +29,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "sonido",
-      "options": ["sonido", "zapato", "vestido", "plato"],
+      "options": [
+        "sonido",
+        "zapato",
+        "vestido",
+        "plato"
+      ],
       "translation": "Boom! What is that _____?",
-      "optionTranslations": ["sound", "shoe", "dress", "plate"],
+      "optionTranslations": [
+        "sound",
+        "shoe",
+        "dress",
+        "plate"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "¡Pum! ¿Qué es ese sonido?",
         "targetWord": "sonido",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e7b506c1473a6345.mp3"
       }
     }
   },
@@ -42,13 +59,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to think",
-      "options": ["to think", "to swim", "to sell", "to shout"],
+      "options": [
+        "to think",
+        "to swim",
+        "to sell",
+        "to shout"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "Piensa en el alebrije y en la leyenda de la tía.",
         "targetWord": "Piensa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30a4b24565137640.mp3"
       }
     }
   },
@@ -59,15 +82,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "miedo",
-      "options": ["miedo", "hambre", "frío", "calor"],
+      "options": [
+        "miedo",
+        "hambre",
+        "frío",
+        "calor"
+      ],
       "translation": "He sees a big spider and feels _____.",
-      "optionTranslations": ["fear", "hunger", "cold", "heat"],
+      "optionTranslations": [
+        "fear",
+        "hunger",
+        "cold",
+        "heat"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "Ve una araña grande y tiene miedo.",
         "targetWord": "miedo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cb0a937e85b932e7.mp3"
       }
     }
   },
@@ -78,13 +112,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to listen",
-      "options": ["to listen", "to jump", "to clean", "to pay"],
+      "options": [
+        "to listen",
+        "to jump",
+        "to clean",
+        "to pay"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "Mateo escucha un sonido pequeño.",
         "targetWord": "escucha",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aff55fff527b7065.mp3"
       }
     }
   },
@@ -95,13 +135,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "wood",
-      "options": ["wood", "glass", "paper", "stone"],
+      "options": [
+        "wood",
+        "glass",
+        "paper",
+        "stone"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "¿El animal de madera se mueve?",
         "targetWord": "madera",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba5eab85a2bef053.mp3"
       }
     }
   },
@@ -112,13 +158,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "light",
-      "options": ["light", "noise", "rain", "smoke"],
+      "options": [
+        "light",
+        "noise",
+        "rain",
+        "smoke"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "Pero la luz de la luna es extraña.",
         "targetWord": "luz",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/320b779bea48bade.mp3"
       }
     }
   },
@@ -129,15 +181,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "luna",
-      "options": ["luna", "cuchara", "ventana", "camisa"],
+      "options": [
+        "luna",
+        "cuchara",
+        "ventana",
+        "camisa"
+      ],
       "translation": "At night, the _____ shines in the sky.",
-      "optionTranslations": ["moon", "spoon", "window", "shirt"],
+      "optionTranslations": [
+        "moon",
+        "spoon",
+        "window",
+        "shirt"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "De noche, la luna brilla en el cielo.",
         "targetWord": "luna",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1b1e59079b2b905f.mp3"
       }
     }
   },
@@ -148,13 +211,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "alive",
-      "options": ["alive", "empty", "new", "cold"],
+      "options": [
+        "alive",
+        "empty",
+        "new",
+        "cold"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "Todo parece vivo.",
         "targetWord": "vivo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26f246d3865e0a1e.mp3"
       }
     }
   },
@@ -165,13 +234,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a dream",
-      "options": ["a dream", "a meal", "a gift", "a joke"],
+      "options": [
+        "a dream",
+        "a meal",
+        "a gift",
+        "a joke"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "Mateo piensa: ¿Es un sueño?",
         "targetWord": "sueño",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0bf7ffd036b6aa77.mp3"
       }
     }
   },
@@ -183,13 +258,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "late",
-      "options": ["late", "early", "never", "always"],
+      "options": [
+        "late",
+        "early",
+        "never",
+        "always"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "Ya es muy tarde.",
         "targetWord": "tarde",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/59fd86c6168eedfd.mp3"
       }
     }
   },
@@ -201,13 +282,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a table",
-      "options": ["a table", "a bed", "a shoe", "a tree"],
+      "options": [
+        "a table",
+        "a bed",
+        "a shoe",
+        "a tree"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "Mateo mira el techo, después la mesa.",
         "targetWord": "mesa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fe16f89363abfa8e.mp3"
       }
     }
   },
@@ -219,13 +306,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "an aunt",
-      "options": ["an aunt", "a boy", "a car", "a river"],
+      "options": [
+        "an aunt",
+        "a boy",
+        "a car",
+        "a river"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "Quiere despertar a su tía.",
         "targetWord": "tía",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/98edc150b63f5910.mp3"
       }
     }
   },
@@ -237,13 +330,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to look at",
-      "options": ["to look at", "to open", "to carry", "to push"],
+      "options": [
+        "to look at",
+        "to open",
+        "to carry",
+        "to push"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "Mira hacia el alebrije.",
         "targetWord": "Mira",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/18102002b691f6a4.mp3"
       }
     }
   },
@@ -255,13 +354,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "strange",
-      "options": ["strange", "heavy", "clean", "round"],
+      "options": [
+        "strange",
+        "heavy",
+        "clean",
+        "round"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "La luz de la luna es extraña.",
         "targetWord": "extraña",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9b6421816632ba1.mp3"
       }
     }
   },
@@ -273,15 +378,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pequeño",
-      "options": ["pequeño", "alto", "largo", "caro"],
+      "options": [
+        "pequeño",
+        "alto",
+        "largo",
+        "caro"
+      ],
       "translation": "The ant is a very _____ animal.",
-      "optionTranslations": ["small", "tall", "long", "expensive"],
+      "optionTranslations": [
+        "small",
+        "tall",
+        "long",
+        "expensive"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "La hormiga es un animal muy pequeño.",
         "targetWord": "pequeño",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/220d6cd8add2c15a.mp3"
       }
     }
   },
@@ -293,13 +409,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a place",
-      "options": ["a place", "a song", "a job", "a face"],
+      "options": [
+        "a place",
+        "a song",
+        "a job",
+        "a face"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "Está en su lugar normal, tranquilo, de colores.",
         "targetWord": "lugar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/98feb0f9f0074c29.mp3"
       }
     }
   },
@@ -311,15 +433,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "tranquilo",
-      "options": ["tranquilo", "sucio", "lleno", "moderno"],
+      "options": [
+        "tranquilo",
+        "sucio",
+        "lleno",
+        "moderno"
+      ],
       "translation": "There is no noise in the park; it is very _____.",
-      "optionTranslations": ["calm", "dirty", "full", "modern"],
+      "optionTranslations": [
+        "calm",
+        "dirty",
+        "full",
+        "modern"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "No hay ruido en el parque; está muy tranquilo.",
         "targetWord": "tranquilo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36a00fff4a1e327a.mp3"
       }
     }
   },
@@ -331,15 +464,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "mañana",
-      "options": ["mañana", "noche", "silla", "pared"],
+      "options": [
+        "mañana",
+        "noche",
+        "silla",
+        "pared"
+      ],
       "translation": "I have breakfast in the _____.",
-      "optionTranslations": ["morning", "night", "chair", "wall"],
+      "optionTranslations": [
+        "morning",
+        "night",
+        "chair",
+        "wall"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "Tomo el desayuno por la mañana.",
         "targetWord": "mañana",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb009526a47c9692.mp3"
       }
     }
   },
@@ -351,13 +495,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to begin",
-      "options": ["to begin", "to end", "to wait", "to lose"],
+      "options": [
+        "to begin",
+        "to end",
+        "to wait",
+        "to lose"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera",
         "storySource": "user",
         "sentence": "El misterio del alebrije apenas empieza.",
         "targetWord": "empieza",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5509dcd14ff1215d.mp3"
       }
     }
   },
@@ -369,10 +519,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "hacia", "answer": "toward", "options": ["toward", "almost", "barely", "again"] },
-        { "word": "casi", "answer": "almost", "options": ["toward", "almost", "barely", "again"] },
-        { "word": "apenas", "answer": "barely", "options": ["toward", "almost", "barely", "again"] },
-        { "word": "otra vez", "answer": "again", "options": ["toward", "almost", "barely", "again"] }
+        {
+          "word": "hacia",
+          "answer": "toward",
+          "options": [
+            "toward",
+            "almost",
+            "barely",
+            "again"
+          ]
+        },
+        {
+          "word": "casi",
+          "answer": "almost",
+          "options": [
+            "toward",
+            "almost",
+            "barely",
+            "again"
+          ]
+        },
+        {
+          "word": "apenas",
+          "answer": "barely",
+          "options": [
+            "toward",
+            "almost",
+            "barely",
+            "again"
+          ]
+        },
+        {
+          "word": "otra vez",
+          "answer": "again",
+          "options": [
+            "toward",
+            "almost",
+            "barely",
+            "again"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -385,8 +571,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "mueve",
-      "options": ["mueve", "llueve", "vuelve", "puede"],
-      "optionTranslations": ["moves", "rains", "returns", "can"],
+      "options": [
+        "mueve",
+        "llueve",
+        "vuelve",
+        "puede"
+      ],
+      "optionTranslations": [
+        "moves",
+        "rains",
+        "returns",
+        "can"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "el-animal-de-madera",

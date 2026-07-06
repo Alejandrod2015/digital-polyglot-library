@@ -6,7 +6,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a crack",
-      "options": ["a crack", "a wall", "a roof", "a bridge"],
+      "options": [
+        "a crack",
+        "a wall",
+        "a roof",
+        "a bridge"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -23,7 +28,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a flute",
-      "options": ["a flute", "a drum", "a bell", "a guitar"],
+      "options": [
+        "a flute",
+        "a drum",
+        "a bell",
+        "a guitar"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -40,7 +50,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a spirit",
-      "options": ["a spirit", "a thief", "a treasure", "an animal"],
+      "options": [
+        "a spirit",
+        "a thief",
+        "a treasure",
+        "an animal"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -57,7 +72,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to make a sound",
-      "options": ["to make a sound", "to fall down", "to move away", "to heat up"],
+      "options": [
+        "to make a sound",
+        "to fall down",
+        "to move away",
+        "to heat up"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -74,7 +94,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a ghost",
-      "options": ["a ghost", "a wolf", "a bird", "a king"],
+      "options": [
+        "a ghost",
+        "a wolf",
+        "a bird",
+        "a king"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -91,7 +116,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a drop",
-      "options": ["a drop", "a leaf", "a star", "a stone"],
+      "options": [
+        "a drop",
+        "a leaf",
+        "a star",
+        "a stone"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -108,7 +138,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "truth",
-      "options": ["truth", "luck", "magic", "noise"],
+      "options": [
+        "truth",
+        "luck",
+        "magic",
+        "noise"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -125,9 +160,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "agujero",
-      "options": ["agujero", "espejo", "conejo", "dibujo"],
+      "options": [
+        "agujero",
+        "espejo",
+        "conejo",
+        "dibujo"
+      ],
       "translation": "My old sock has a _____ at the toe.",
-      "optionTranslations": ["hole", "mirror", "rabbit", "drawing"],
+      "optionTranslations": [
+        "hole",
+        "mirror",
+        "rabbit",
+        "drawing"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -144,9 +189,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "frío",
-      "options": ["frío", "dulce", "alto", "sucio"],
+      "options": [
+        "frío",
+        "dulce",
+        "alto",
+        "sucio"
+      ],
       "translation": "It snows a lot and winter here is very _____.",
-      "optionTranslations": ["cold", "sweet", "tall", "dirty"],
+      "optionTranslations": [
+        "cold",
+        "sweet",
+        "tall",
+        "dirty"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -163,9 +218,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "caer",
-      "options": ["caer", "comer", "leer", "correr"],
+      "options": [
+        "caer",
+        "comer",
+        "leer",
+        "correr"
+      ],
       "translation": "In autumn the leaves start to _____ from the trees.",
-      "optionTranslations": ["to fall", "to eat", "to read", "to run"],
+      "optionTranslations": [
+        "to fall",
+        "to eat",
+        "to read",
+        "to run"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -183,7 +248,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a way",
-      "options": ["a way", "a law", "a job", "a dream"],
+      "options": [
+        "a way",
+        "a law",
+        "a job",
+        "a dream"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -201,7 +271,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to feel",
-      "options": ["to feel", "to buy", "to count", "to throw"],
+      "options": [
+        "to feel",
+        "to buy",
+        "to count",
+        "to throw"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -219,7 +294,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "strong, loud",
-      "options": ["strong, loud", "soft, quiet", "slow, calm", "thin, weak"],
+      "options": [
+        "strong, loud",
+        "soft, quiet",
+        "slow, calm",
+        "thin, weak"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -237,9 +317,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "fresca",
-      "options": ["fresca", "sucia", "larga", "cara"],
+      "options": [
+        "fresca",
+        "sucia",
+        "larga",
+        "cara"
+      ],
       "translation": "The sea breeze is _____ and pleasant.",
-      "optionTranslations": ["cool", "dirty", "long", "expensive"],
+      "optionTranslations": [
+        "cool",
+        "dirty",
+        "long",
+        "expensive"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -257,9 +347,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "delgada",
-      "options": ["delgada", "gorda", "rubia", "vieja"],
+      "options": [
+        "delgada",
+        "gorda",
+        "rubia",
+        "vieja"
+      ],
       "translation": "My sister eats little and is very _____.",
-      "optionTranslations": ["thin", "fat", "blond", "old"],
+      "optionTranslations": [
+        "thin",
+        "fat",
+        "blond",
+        "old"
+      ],
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",
         "storySource": "user",
@@ -277,10 +377,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "mano", "answer": "hand", "options": ["hand", "glass", "water", "girl"] },
-        { "word": "vaso", "answer": "glass", "options": ["hand", "glass", "water", "girl"] },
-        { "word": "agua", "answer": "water", "options": ["hand", "glass", "water", "girl"] },
-        { "word": "niña", "answer": "girl", "options": ["hand", "glass", "water", "girl"] }
+        {
+          "word": "mano",
+          "answer": "hand",
+          "options": [
+            "hand",
+            "glass",
+            "water",
+            "girl"
+          ]
+        },
+        {
+          "word": "vaso",
+          "answer": "glass",
+          "options": [
+            "hand",
+            "glass",
+            "water",
+            "girl"
+          ]
+        },
+        {
+          "word": "agua",
+          "answer": "water",
+          "options": [
+            "hand",
+            "glass",
+            "water",
+            "girl"
+          ]
+        },
+        {
+          "word": "niña",
+          "answer": "girl",
+          "options": [
+            "hand",
+            "glass",
+            "water",
+            "girl"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -293,8 +429,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "guardó",
-      "options": ["guardó", "ganó", "gastó", "gritó"],
-      "optionTranslations": ["kept, saved", "won", "spent", "shouted"],
+      "options": [
+        "guardó",
+        "ganó",
+        "gastó",
+        "gritó"
+      ],
+      "optionTranslations": [
+        "kept, saved",
+        "won",
+        "spent",
+        "shouted"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "la-tia-lo-confiesa-todo",

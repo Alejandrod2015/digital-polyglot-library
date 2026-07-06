@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a man",
-      "options": ["a man", "a dog", "a door", "a garden"],
+      "options": [
+        "a man",
+        "a dog",
+        "a door",
+        "a garden"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Mamá, ¿quién es el hombre de la foto?",
         "targetWord": "hombre",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c2b39c54561d2db.mp3"
       }
     }
   },
@@ -23,13 +29,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "an uncle",
-      "options": ["an uncle", "a teacher", "a doctor", "a friend"],
+      "options": [
+        "an uncle",
+        "a teacher",
+        "a doctor",
+        "a friend"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Es tu tío Jorge.",
         "targetWord": "tío",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e99bf19f4233ceb.mp3"
       }
     }
   },
@@ -40,15 +52,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "mañana",
-      "options": ["mañana", "noche", "semana", "puerta"],
+      "options": [
+        "mañana",
+        "noche",
+        "semana",
+        "puerta"
+      ],
       "translation": "I eat breakfast in the _____, at seven.",
-      "optionTranslations": ["morning", "night", "week", "door"],
+      "optionTranslations": [
+        "morning",
+        "night",
+        "week",
+        "door"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Tomo el desayuno por la mañana, a las siete.",
         "targetWord": "mañana",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7dd8d9470342fdcb.mp3"
       }
     }
   },
@@ -59,13 +82,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to look for",
-      "options": ["to look for", "to forget", "to close", "to carry"],
+      "options": [
+        "to look for",
+        "to forget",
+        "to close",
+        "to carry"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Lucía busca a su mamá en la sala.",
         "targetWord": "busca",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d2ed232fdb22db3.mp3"
       }
     }
   },
@@ -76,13 +105,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to want",
-      "options": ["to want", "to give", "to hear", "to find"],
+      "options": [
+        "to want",
+        "to give",
+        "to hear",
+        "to find"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Lucía piensa: Quiero conocer a mi tío.",
         "targetWord": "Quiero",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e9b785ac35a1084d.mp3"
       }
     }
   },
@@ -93,15 +128,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "hermano",
-      "options": ["hermano", "vecino", "médico", "maestro"],
+      "options": [
+        "hermano",
+        "vecino",
+        "médico",
+        "maestro"
+      ],
       "translation": "My mom's other son is my _____.",
-      "optionTranslations": ["brother", "neighbor", "doctor", "teacher"],
+      "optionTranslations": [
+        "brother",
+        "neighbor",
+        "doctor",
+        "teacher"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "El otro hijo de mi mamá es mi hermano.",
         "targetWord": "hermano",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9f07d7806aea1e34.mp3"
       }
     }
   },
@@ -112,13 +158,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to live",
-      "options": ["to live", "to dance", "to draw", "to cook"],
+      "options": [
+        "to live",
+        "to dance",
+        "to draw",
+        "to cook"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Jorge vive muy lejos.",
         "targetWord": "vive",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa9ce4656a773807.mp3"
       }
     }
   },
@@ -129,13 +181,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a face",
-      "options": ["a face", "a hand", "a street", "a tree"],
+      "options": [
+        "a face",
+        "a hand",
+        "a street",
+        "a tree"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "El tío Jorge tiene una cara simpática y alegre.",
         "targetWord": "cara",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f71a998fb0946cfe.mp3"
       }
     }
   },
@@ -146,15 +204,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "llamar",
-      "options": ["llamar", "lavar", "llevar", "llenar"],
+      "options": [
+        "llamar",
+        "lavar",
+        "llevar",
+        "llenar"
+      ],
       "translation": "I need to _____ my grandmother on the phone.",
-      "optionTranslations": ["to call", "to wash", "to carry", "to fill"],
+      "optionTranslations": [
+        "to call",
+        "to wash",
+        "to carry",
+        "to fill"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Necesito llamar a mi abuela por teléfono.",
         "targetWord": "llamar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d0cf2e902f2e8e22.mp3"
       }
     }
   },
@@ -165,13 +234,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a little",
-      "options": ["a little", "a lot", "never", "always"],
+      "options": [
+        "a little",
+        "a lot",
+        "never",
+        "always"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "La mamá sonríe, un poco triste.",
         "targetWord": "un poco",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a4166b950bf7e571.mp3"
       }
     }
   },
@@ -183,13 +258,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to think",
-      "options": ["to think", "to run", "to wash", "to sing"],
+      "options": [
+        "to think",
+        "to run",
+        "to wash",
+        "to sing"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Pero Lucía piensa en la foto.",
         "targetWord": "piensa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e959ff317986cc9a.mp3"
       }
     }
   },
@@ -201,15 +282,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "sala",
-      "options": ["sala", "mesa", "taza", "calle"],
+      "options": [
+        "sala",
+        "mesa",
+        "taza",
+        "calle"
+      ],
       "translation": "We watch television in the _____ of the house.",
-      "optionTranslations": ["living room", "table", "cup", "street"],
+      "optionTranslations": [
+        "living room",
+        "table",
+        "cup",
+        "street"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Vemos la televisión en la sala de la casa.",
         "targetWord": "sala",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b151d16acc5e1c5.mp3"
       }
     }
   },
@@ -221,13 +313,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the light",
-      "options": ["the light", "the water", "the bread", "the music"],
+      "options": [
+        "the light",
+        "the water",
+        "the bread",
+        "the music"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Por la mañana, hay luz otra vez.",
         "targetWord": "luz",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d727c006fd69737.mp3"
       }
     }
   },
@@ -239,13 +337,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to meet",
-      "options": ["to meet", "to sell", "to clean", "to jump"],
+      "options": [
+        "to meet",
+        "to sell",
+        "to clean",
+        "to jump"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Quiero conocer a mi tío.",
         "targetWord": "conocer",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4321e267dbb71ca0.mp3"
       }
     }
   },
@@ -257,13 +361,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to take",
-      "options": ["to take", "to send", "to break", "to wait"],
+      "options": [
+        "to take",
+        "to send",
+        "to break",
+        "to wait"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Su mamá toma la foto.",
         "targetWord": "toma",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab96008e15dec95e.mp3"
       }
     }
   },
@@ -275,15 +385,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "seria",
-      "options": ["seria", "baja", "verde", "rica"],
+      "options": [
+        "seria",
+        "baja",
+        "verde",
+        "rica"
+      ],
       "translation": "The teacher does not laugh; she is very _____.",
-      "optionTranslations": ["serious", "short", "green", "rich"],
+      "optionTranslations": [
+        "serious",
+        "short",
+        "green",
+        "rich"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "La profesora no ríe; es muy seria.",
         "targetWord": "seria",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5dd656ef442f305.mp3"
       }
     }
   },
@@ -295,13 +416,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "far",
-      "options": ["far", "soon", "slowly", "early"],
+      "options": [
+        "far",
+        "soon",
+        "slowly",
+        "early"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Jorge vive muy lejos, en Argentina.",
         "targetWord": "lejos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96f6bc73f4e84551.mp3"
       }
     }
   },
@@ -313,13 +440,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to listen to",
-      "options": ["to listen to", "to buy", "to paint", "to climb"],
+      "options": [
+        "to listen to",
+        "to buy",
+        "to paint",
+        "to climb"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Quiero escuchar su música.",
         "targetWord": "escuchar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36f5cd3b1fcab1be.mp3"
       }
     }
   },
@@ -331,13 +464,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "cheerful",
-      "options": ["cheerful", "tired", "dirty", "slow"],
+      "options": [
+        "cheerful",
+        "tired",
+        "dirty",
+        "slow"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Tiene una cara simpática y alegre.",
         "targetWord": "alegre",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0c67316f00177d69.mp3"
       }
     }
   },
@@ -349,15 +488,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "triste",
-      "options": ["triste", "bonita", "lenta", "limpia"],
+      "options": [
+        "triste",
+        "bonita",
+        "lenta",
+        "limpia"
+      ],
       "translation": "She cries; she is very _____.",
-      "optionTranslations": ["sad", "pretty", "slow", "clean"],
+      "optionTranslations": [
+        "sad",
+        "pretty",
+        "slow",
+        "clean"
+      ],
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",
         "storySource": "user",
         "sentence": "Ella llora; está muy triste.",
         "targetWord": "triste",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d4236be2e54e9bb3.mp3"
       }
     }
   },
@@ -369,10 +519,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "muy", "answer": "very", "options": ["very", "here", "maybe", "again"] },
-        { "word": "aquí", "answer": "here", "options": ["very", "here", "maybe", "again"] },
-        { "word": "tal vez", "answer": "maybe", "options": ["very", "here", "maybe", "again"] },
-        { "word": "otra vez", "answer": "again", "options": ["very", "here", "maybe", "again"] }
+        {
+          "word": "muy",
+          "answer": "very",
+          "options": [
+            "very",
+            "here",
+            "maybe",
+            "again"
+          ]
+        },
+        {
+          "word": "aquí",
+          "answer": "here",
+          "options": [
+            "very",
+            "here",
+            "maybe",
+            "again"
+          ]
+        },
+        {
+          "word": "tal vez",
+          "answer": "maybe",
+          "options": [
+            "very",
+            "here",
+            "maybe",
+            "again"
+          ]
+        },
+        {
+          "word": "otra vez",
+          "answer": "again",
+          "options": [
+            "very",
+            "here",
+            "maybe",
+            "again"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -385,8 +571,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "sonríe",
-      "options": ["sonríe", "ríe", "fríe", "oye"],
-      "optionTranslations": ["smiles", "laughs", "fries", "hears"],
+      "options": [
+        "sonríe",
+        "ríe",
+        "fríe",
+        "oye"
+      ],
+      "optionTranslations": [
+        "smiles",
+        "laughs",
+        "fries",
+        "hears"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "el-hombre-de-la-foto",

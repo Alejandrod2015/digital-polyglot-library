@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "there is, there are",
-      "options": ["there is, there are", "he says", "she looks", "it rains"],
+      "options": [
+        "there is, there are",
+        "he says",
+        "she looks",
+        "it rains"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "Hay tacos, fruta, salsa y agua de limón.",
         "targetWord": "Hay",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f4d677d6fbf048c.mp3"
       }
     }
   },
@@ -23,13 +29,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "is hungry",
-      "options": ["is hungry", "is tired", "is late", "is cold"],
+      "options": [
+        "is hungry",
+        "is tired",
+        "is late",
+        "is cold"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "Ana tiene hambre y visita un mercado tradicional.",
         "targetWord": "tiene hambre",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ed2959fc73bfa45.mp3"
       }
     }
   },
@@ -40,15 +52,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "agua",
-      "options": ["agua", "pan", "sal", "papel"],
+      "options": [
+        "agua",
+        "pan",
+        "sal",
+        "papel"
+      ],
       "translation": "I am thirsty; I want a glass of _____.",
-      "optionTranslations": ["water", "bread", "salt", "paper"],
+      "optionTranslations": [
+        "water",
+        "bread",
+        "salt",
+        "paper"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "Tengo sed; quiero un vaso de agua.",
         "targetWord": "agua",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/970a1d298963f956.mp3"
       }
     }
   },
@@ -59,13 +82,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a lady",
-      "options": ["a lady", "a boy", "a dog", "a chair"],
+      "options": [
+        "a lady",
+        "a boy",
+        "a dog",
+        "a chair"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "Una señora sonríe.",
         "targetWord": "señora",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/284e2a0726fc82d8.mp3"
       }
     }
   },
@@ -76,15 +105,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "comida",
-      "options": ["comida", "cama", "casa", "calle"],
+      "options": [
+        "comida",
+        "cama",
+        "casa",
+        "calle"
+      ],
       "translation": "The kitchen smells good; the _____ is ready.",
-      "optionTranslations": ["food", "bed", "house", "street"],
+      "optionTranslations": [
+        "food",
+        "bed",
+        "house",
+        "street"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "La cocina huele bien; la comida está lista.",
         "targetWord": "comida",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e7544d4d387996b8.mp3"
       }
     }
   },
@@ -95,13 +135,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to look at",
-      "options": ["to look at", "to break", "to sell", "to carry"],
+      "options": [
+        "to look at",
+        "to break",
+        "to sell",
+        "to carry"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "Ana mira el menú.",
         "targetWord": "mira",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6a005cdbe03a18cc.mp3"
       }
     }
   },
@@ -112,15 +158,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "picante",
-      "options": ["picante", "fría", "verde", "pequeña"],
+      "options": [
+        "picante",
+        "fría",
+        "verde",
+        "pequeña"
+      ],
       "translation": "Water, please! The salsa is very _____.",
-      "optionTranslations": ["spicy", "cold", "green", "small"],
+      "optionTranslations": [
+        "spicy",
+        "cold",
+        "green",
+        "small"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "¡Agua, por favor! La salsa está muy picante.",
         "targetWord": "picante",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c33e905211057a42.mp3"
       }
     }
   },
@@ -131,13 +188,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "sweet",
-      "options": ["sweet", "salty", "empty", "fast"],
+      "options": [
+        "sweet",
+        "salty",
+        "empty",
+        "fast"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "Es un mango con limón, dulce y perfecto.",
         "targetWord": "dulce",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c9f42e244eb25e9.mp3"
       }
     }
   },
@@ -148,15 +211,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "feliz",
-      "options": ["feliz", "triste", "alta", "fría"],
+      "options": [
+        "feliz",
+        "triste",
+        "alta",
+        "fría"
+      ],
       "translation": "It is her birthday and she is very _____.",
-      "optionTranslations": ["happy", "sad", "tall", "cold"],
+      "optionTranslations": [
+        "happy",
+        "sad",
+        "tall",
+        "cold"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "Es su cumpleaños y ella está muy feliz.",
         "targetWord": "feliz",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cce0e1f1e1c6441d.mp3"
       }
     }
   },
@@ -167,13 +241,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to say",
-      "options": ["to say", "to cook", "to buy", "to wait"],
+      "options": [
+        "to say",
+        "to cook",
+        "to buy",
+        "to wait"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "Ella dice: ¿Tacos? ¡Son deliciosos!",
         "targetWord": "dice",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/821e8f21055f07f7.mp3"
       }
     }
   },
@@ -185,13 +265,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a lot of",
-      "options": ["a lot of", "a few", "none", "the same"],
+      "options": [
+        "a lot of",
+        "a few",
+        "none",
+        "the same"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "La música es alegre y hay mucha gente.",
         "targetWord": "mucha",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8b3822f59300a69.mp3"
       }
     }
   },
@@ -203,13 +289,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "people",
-      "options": ["people", "houses", "cars", "tables"],
+      "options": [
+        "people",
+        "houses",
+        "cars",
+        "tables"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "Hay mucha gente.",
         "targetWord": "gente",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b8b38972864e74a.mp3"
       }
     }
   },
@@ -221,13 +313,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to smile",
-      "options": ["to smile", "to sleep", "to jump", "to write"],
+      "options": [
+        "to smile",
+        "to sleep",
+        "to jump",
+        "to write"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "La señora sonríe y dice: ¡Son deliciosos!",
         "targetWord": "sonríe",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9f50635bf361f325.mp3"
       }
     }
   },
@@ -239,13 +337,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to laugh",
-      "options": ["to laugh", "to cry", "to run", "to pay"],
+      "options": [
+        "to laugh",
+        "to cry",
+        "to run",
+        "to pay"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "La señora ríe.",
         "targetWord": "ríe",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3cb62fbd27bdf9db.mp3"
       }
     }
   },
@@ -257,13 +361,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "friendly",
-      "options": ["friendly", "angry", "tall", "busy"],
+      "options": [
+        "friendly",
+        "angry",
+        "tall",
+        "busy"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "La señora ríe, pero es simpática.",
         "targetWord": "simpática",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e88b166f9c3de0d.mp3"
       }
     }
   },
@@ -275,13 +385,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a place",
-      "options": ["a place", "a name", "a game", "a color"],
+      "options": [
+        "a place",
+        "a name",
+        "a game",
+        "a color"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "Este mercado es mi lugar favorito.",
         "targetWord": "lugar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fcdc578c7f43f3f5.mp3"
       }
     }
   },
@@ -293,13 +409,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to think",
-      "options": ["to think", "to dance", "to open", "to wash"],
+      "options": [
+        "to think",
+        "to dance",
+        "to open",
+        "to wash"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "Ana piensa: ¿Pero qué taco?",
         "targetWord": "piensa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f6865c5afdf332d.mp3"
       }
     }
   },
@@ -311,15 +433,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "regresa",
-      "options": ["regresa", "canta", "duerme", "come"],
+      "options": [
+        "regresa",
+        "canta",
+        "duerme",
+        "come"
+      ],
       "translation": "She goes to work in the morning and _____ home at night.",
-      "optionTranslations": ["returns", "sings", "sleeps", "eats"],
+      "optionTranslations": [
+        "returns",
+        "sings",
+        "sleeps",
+        "eats"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "Va al trabajo por la mañana y regresa a casa de noche.",
         "targetWord": "regresa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5cf827ed526ede5c.mp3"
       }
     }
   },
@@ -331,15 +464,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "lunes",
-      "options": ["lunes", "viernes", "sábado", "agosto"],
+      "options": [
+        "lunes",
+        "viernes",
+        "sábado",
+        "agosto"
+      ],
       "translation": "The day after Sunday is _____.",
-      "optionTranslations": ["Monday", "Friday", "Saturday", "August"],
+      "optionTranslations": [
+        "Monday",
+        "Friday",
+        "Saturday",
+        "August"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "El día después del domingo es el lunes.",
         "targetWord": "lunes",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a57956ed3685f3c8.mp3"
       }
     }
   },
@@ -351,15 +495,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "palabra",
-      "options": ["palabra", "puerta", "persona", "pierna"],
+      "options": [
+        "palabra",
+        "puerta",
+        "persona",
+        "pierna"
+      ],
       "translation": "I do not understand this _____; what does it mean?",
-      "optionTranslations": ["word", "door", "person", "leg"],
+      "optionTranslations": [
+        "word",
+        "door",
+        "person",
+        "leg"
+      ],
       "audioClip": {
         "storySlug": "el-mercado-picante",
         "storySource": "user",
         "sentence": "No comprendo esta palabra; ¿qué significa?",
         "targetWord": "palabra",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/87ba2a4b9a04fc04.mp3"
       }
     }
   },
@@ -371,10 +526,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "muy", "answer": "very", "options": ["very", "but", "now", "tomorrow"] },
-        { "word": "pero", "answer": "but", "options": ["very", "but", "now", "tomorrow"] },
-        { "word": "ahora", "answer": "now", "options": ["very", "but", "now", "tomorrow"] },
-        { "word": "mañana", "answer": "tomorrow", "options": ["very", "but", "now", "tomorrow"] }
+        {
+          "word": "muy",
+          "answer": "very",
+          "options": [
+            "very",
+            "but",
+            "now",
+            "tomorrow"
+          ]
+        },
+        {
+          "word": "pero",
+          "answer": "but",
+          "options": [
+            "very",
+            "but",
+            "now",
+            "tomorrow"
+          ]
+        },
+        {
+          "word": "ahora",
+          "answer": "now",
+          "options": [
+            "very",
+            "but",
+            "now",
+            "tomorrow"
+          ]
+        },
+        {
+          "word": "mañana",
+          "answer": "tomorrow",
+          "options": [
+            "very",
+            "but",
+            "now",
+            "tomorrow"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -387,8 +578,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "toma",
-      "options": ["toma", "toca", "corta", "manda"],
-      "optionTranslations": ["takes, drinks", "touches", "cuts", "sends"],
+      "options": [
+        "toma",
+        "toca",
+        "corta",
+        "manda"
+      ],
+      "optionTranslations": [
+        "takes, drinks",
+        "touches",
+        "cuts",
+        "sends"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "el-mercado-picante",

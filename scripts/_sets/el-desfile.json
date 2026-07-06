@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a parade",
-      "options": ["a parade", "a school", "a kitchen", "a garden"],
+      "options": [
+        "a parade",
+        "a school",
+        "a kitchen",
+        "a garden"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "Empieza el desfile.",
         "targetWord": "desfile",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d155b95c312c3d64.mp3"
       }
     }
   },
@@ -23,13 +29,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a street",
-      "options": ["a street", "a door", "a chair", "a tree"],
+      "options": [
+        "a street",
+        "a door",
+        "a chair",
+        "a tree"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "Las calles de Barranquilla están llenas de gente.",
         "targetWord": "calles",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6dbda6137ae6bbb0.mp3"
       }
     }
   },
@@ -40,15 +52,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "gente",
-      "options": ["gente", "agua", "fruta", "ropa"],
+      "options": [
+        "gente",
+        "agua",
+        "fruta",
+        "ropa"
+      ],
       "translation": "There are a lot of _____ at the concert.",
-      "optionTranslations": ["people", "water", "fruit", "clothes"],
+      "optionTranslations": [
+        "people",
+        "water",
+        "fruit",
+        "clothes"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "Hay mucha gente en el concierto.",
         "targetWord": "gente",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/52e05cf85fe7b4eb.mp3"
       }
     }
   },
@@ -59,13 +82,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a drum",
-      "options": ["a drum", "a hat", "a door", "a fish"],
+      "options": [
+        "a drum",
+        "a hat",
+        "a door",
+        "a fish"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "Hay música, tambores y mil colores.",
         "targetWord": "tambores",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2a64dce94f6d50c5.mp3"
       }
     }
   },
@@ -76,15 +105,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "bailan",
-      "options": ["bailan", "duermen", "leen", "nadan"],
+      "options": [
+        "bailan",
+        "duermen",
+        "leen",
+        "nadan"
+      ],
       "translation": "At the party, everyone _____ salsa.",
-      "optionTranslations": ["dances", "sleeps", "reads", "swims"],
+      "optionTranslations": [
+        "dances",
+        "sleeps",
+        "reads",
+        "swims"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "En la fiesta, todos bailan salsa.",
         "targetWord": "bailan",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/82560ecd9f2f8c4a.mp3"
       }
     }
   },
@@ -95,13 +135,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to sing",
-      "options": ["to sing", "to eat", "to open", "to wash"],
+      "options": [
+        "to sing",
+        "to eat",
+        "to open",
+        "to wash"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "La gente baila y canta.",
         "targetWord": "canta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7e9836431c7682e4.mp3"
       }
     }
   },
@@ -112,13 +158,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a day",
-      "options": ["a day", "a place", "a name", "a game"],
+      "options": [
+        "a day",
+        "a place",
+        "a name",
+        "a game"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "Por fin llega el sábado, el gran día del Carnaval.",
         "targetWord": "día",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0adcb241f9e70f7.mp3"
       }
     }
   },
@@ -129,15 +181,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "empezamos",
-      "options": ["empezamos", "comemos", "dormimos", "vivimos"],
+      "options": [
+        "empezamos",
+        "comemos",
+        "dormimos",
+        "vivimos"
+      ],
       "translation": "We _____ the class at nine.",
-      "optionTranslations": ["we start", "we eat", "we sleep", "we live"],
+      "optionTranslations": [
+        "we start",
+        "we eat",
+        "we sleep",
+        "we live"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "Nosotros empezamos la clase a las nueve.",
         "targetWord": "empezamos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1dea632ef6d3c37e.mp3"
       }
     }
   },
@@ -148,13 +211,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a costume",
-      "options": ["a costume", "a song", "a table", "a river"],
+      "options": [
+        "a costume",
+        "a song",
+        "a table",
+        "a river"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "Grupos con disfraces enormes: mariposas, leones, flores gigantes.",
         "targetWord": "disfraces",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/19d9602f5182fcbc.mp3"
       }
     }
   },
@@ -165,15 +234,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "corazón",
-      "options": ["corazón", "zapato", "vaso", "plato"],
+      "options": [
+        "corazón",
+        "zapato",
+        "vaso",
+        "plato"
+      ],
       "translation": "My _____ beats fast when I run.",
-      "optionTranslations": ["heart", "shoe", "glass", "plate"],
+      "optionTranslations": [
+        "heart",
+        "shoe",
+        "glass",
+        "plate"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "Mi corazón late rápido cuando corro.",
         "targetWord": "corazón",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cc3ec38890279e49.mp3"
       }
     }
   },
@@ -185,13 +265,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to pass by",
-      "options": ["to pass by", "to sleep", "to cook", "to write"],
+      "options": [
+        "to pass by",
+        "to sleep",
+        "to cook",
+        "to write"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "Pasan grupos con disfraces enormes.",
         "targetWord": "Pasan",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/258125f0ffee4e37.mp3"
       }
     }
   },
@@ -203,13 +289,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a turn",
-      "options": ["a turn", "a name", "a house", "a door"],
+      "options": [
+        "a turn",
+        "a name",
+        "a house",
+        "a door"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "De repente, es el turno del grupo de Camilo.",
         "targetWord": "turno",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b2145804fade21a.mp3"
       }
     }
   },
@@ -221,13 +313,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a butterfly",
-      "options": ["a butterfly", "a spider", "a bird", "a horse"],
+      "options": [
+        "a butterfly",
+        "a spider",
+        "a bird",
+        "a horse"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "Disfraces enormes: mariposas, leones, flores gigantes.",
         "targetWord": "mariposas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f0027329919fc08a.mp3"
       }
     }
   },
@@ -239,15 +337,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "llenas",
-      "options": ["llenas", "vacías", "rotas", "frías"],
+      "options": [
+        "llenas",
+        "vacías",
+        "rotas",
+        "frías"
+      ],
       "translation": "The bottles are _____ of water up to the top.",
-      "optionTranslations": ["full", "empty", "broken", "cold"],
+      "optionTranslations": [
+        "full",
+        "empty",
+        "broken",
+        "cold"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "Las botellas están llenas de agua hasta arriba.",
         "targetWord": "llenas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6218606e71fd1a23.mp3"
       }
     }
   },
@@ -259,15 +368,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "enormes",
-      "options": ["enormes", "pequeños", "tristes", "limpios"],
+      "options": [
+        "enormes",
+        "pequeños",
+        "tristes",
+        "limpios"
+      ],
       "translation": "Elephants are _____ animals.",
-      "optionTranslations": ["huge", "small", "sad", "clean"],
+      "optionTranslations": [
+        "huge",
+        "small",
+        "sad",
+        "clean"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "Los elefantes son animales enormes.",
         "targetWord": "enormes",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64f03d7634c83204.mp3"
       }
     }
   },
@@ -279,15 +399,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "flores",
-      "options": ["flores", "mesas", "puertas", "camas"],
+      "options": [
+        "flores",
+        "mesas",
+        "puertas",
+        "camas"
+      ],
       "translation": "In the garden there are many colorful _____.",
-      "optionTranslations": ["flowers", "tables", "doors", "beds"],
+      "optionTranslations": [
+        "flowers",
+        "tables",
+        "doors",
+        "beds"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "En el jardín hay muchas flores de colores.",
         "targetWord": "flores",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b24be1b9a95e0f3.mp3"
       }
     }
   },
@@ -299,13 +430,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "I make a mistake",
-      "options": ["I make a mistake", "I fall down", "I arrive late", "I sing badly"],
+      "options": [
+        "I make a mistake",
+        "I fall down",
+        "I arrive late",
+        "I sing badly"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "¿Y si me equivoco delante de todos?",
         "targetWord": "me equivoco",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/431daf5e394e418a.mp3"
       }
     }
   },
@@ -317,13 +454,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to beat",
-      "options": ["to beat", "to sleep", "to eat", "to fall"],
+      "options": [
+        "to beat",
+        "to sleep",
+        "to eat",
+        "to fall"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "El corazón le late rápido.",
         "targetWord": "late",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b1f6a7f2d0195228.mp3"
       }
     }
   },
@@ -335,13 +478,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a foot",
-      "options": ["a foot", "a hand", "a head", "an arm"],
+      "options": [
+        "a foot",
+        "a hand",
+        "a head",
+        "an arm"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "Los pies de Camilo bailan solos.",
         "targetWord": "pies",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e5af1b1017b6625.mp3"
       }
     }
   },
@@ -353,13 +502,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to feel",
-      "options": ["to feel", "to pay", "to sell", "to wait"],
+      "options": [
+        "to feel",
+        "to pay",
+        "to sell",
+        "to wait"
+      ],
       "audioClip": {
         "storySlug": "el-desfile",
         "storySource": "user",
         "sentence": "No piensa, solo siente.",
         "targetWord": "siente",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e1573005dceaceb.mp3"
       }
     }
   },
@@ -371,10 +526,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "hoy", "answer": "today", "options": ["today", "fast", "Saturday", "shy"] },
-        { "word": "rápido", "answer": "fast", "options": ["today", "fast", "Saturday", "shy"] },
-        { "word": "sábado", "answer": "Saturday", "options": ["today", "fast", "Saturday", "shy"] },
-        { "word": "tímido", "answer": "shy", "options": ["today", "fast", "Saturday", "shy"] }
+        {
+          "word": "hoy",
+          "answer": "today",
+          "options": [
+            "today",
+            "fast",
+            "Saturday",
+            "shy"
+          ]
+        },
+        {
+          "word": "rápido",
+          "answer": "fast",
+          "options": [
+            "today",
+            "fast",
+            "Saturday",
+            "shy"
+          ]
+        },
+        {
+          "word": "sábado",
+          "answer": "Saturday",
+          "options": [
+            "today",
+            "fast",
+            "Saturday",
+            "shy"
+          ]
+        },
+        {
+          "word": "tímido",
+          "answer": "shy",
+          "options": [
+            "today",
+            "fast",
+            "Saturday",
+            "shy"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -387,8 +578,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "grita",
-      "options": ["grita", "quita", "evita", "invita"],
-      "optionTranslations": ["shouts", "removes", "avoids", "invites"],
+      "options": [
+        "grita",
+        "quita",
+        "evita",
+        "invita"
+      ],
+      "optionTranslations": [
+        "shouts",
+        "removes",
+        "avoids",
+        "invites"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "el-desfile",

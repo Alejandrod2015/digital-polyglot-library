@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "lost",
-      "options": ["lost", "tired", "happy", "busy"],
+      "options": [
+        "lost",
+        "tired",
+        "happy",
+        "busy"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "Está perdido en una zona nueva de Lima.",
         "targetWord": "perdido",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5f1e8eadb3d8ec7.mp3"
       }
     }
   },
@@ -23,13 +29,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the sea",
-      "options": ["the sea", "the sky", "the river", "the field"],
+      "options": [
+        "the sea",
+        "the sky",
+        "the river",
+        "the field"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "¿Sabe cómo llegar al mar?",
         "targetWord": "mar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0af08238558eb035.mp3"
       }
     }
   },
@@ -40,13 +52,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to go in circles",
-      "options": ["to go in circles", "to run away", "to stand still", "to walk straight"],
+      "options": [
+        "to go in circles",
+        "to run away",
+        "to stand still",
+        "to walk straight"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "Llevo media hora dando vueltas con este mapa.",
         "targetWord": "dando vueltas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28dba755f19f2f3a.mp3"
       }
     }
   },
@@ -57,13 +75,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "an avenue",
-      "options": ["an avenue", "a bridge", "a market", "a river"],
+      "options": [
+        "an avenue",
+        "a bridge",
+        "a market",
+        "a river"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "Camina derecho dos cuadras por esta avenida.",
         "targetWord": "avenida",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c31e013d9cb01cf.mp3"
       }
     }
   },
@@ -74,13 +98,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to cross",
-      "options": ["to cross", "to watch", "to close", "to sell"],
+      "options": [
+        "to cross",
+        "to watch",
+        "to close",
+        "to sell"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "Después cruzas la calle en el semáforo.",
         "targetWord": "cruzas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/03834f1ed00abee3.mp3"
       }
     }
   },
@@ -91,15 +121,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "semáforo",
-      "options": ["semáforo", "puente", "camión", "edificio"],
+      "options": [
+        "semáforo",
+        "puente",
+        "camión",
+        "edificio"
+      ],
       "translation": "The car stops when the _____ is red.",
-      "optionTranslations": ["traffic light", "bridge", "truck", "building"],
+      "optionTranslations": [
+        "traffic light",
+        "bridge",
+        "truck",
+        "building"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "El carro para cuando el semáforo está en rojo.",
         "targetWord": "semáforo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ca1e155f7e5cf5e3.mp3"
       }
     }
   },
@@ -110,15 +151,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "doblas",
-      "options": ["doblas", "subes", "corres", "miras"],
+      "options": [
+        "doblas",
+        "subes",
+        "corres",
+        "miras"
+      ],
       "translation": "To get to the bank, you _____ left at the corner.",
-      "optionTranslations": ["turn", "go up", "run", "look"],
+      "optionTranslations": [
+        "turn",
+        "go up",
+        "run",
+        "look"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "Para ir al banco, doblas a la izquierda en la esquina.",
         "targetWord": "doblas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95ed78e995a03a0f.mp3"
       }
     }
   },
@@ -129,13 +181,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a park",
-      "options": ["a park", "a school", "a bank", "a bakery"],
+      "options": [
+        "a park",
+        "a school",
+        "a bank",
+        "a bakery"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "Sigues un poco más y vas a ver un parque grande.",
         "targetWord": "parque",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0df8af4cab22e5b.mp3"
       }
     }
   },
@@ -146,15 +204,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "llega",
-      "options": ["llega", "come", "duerme", "canta"],
+      "options": [
+        "llega",
+        "come",
+        "duerme",
+        "canta"
+      ],
       "translation": "The bus leaves at two and _____ at five.",
-      "optionTranslations": ["arrives", "eats", "sleeps", "sings"],
+      "optionTranslations": [
+        "arrives",
+        "eats",
+        "sleeps",
+        "sings"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "El bus sale a las dos y llega a las cinco.",
         "targetWord": "llega",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5288e4e52456eba.mp3"
       }
     }
   },
@@ -165,13 +234,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the view",
-      "options": ["the view", "the noise", "the smell", "the rain"],
+      "options": [
+        "the view",
+        "the noise",
+        "the smell",
+        "the rain"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "La vista es enorme y el viento llega fresco a la cara.",
         "targetWord": "vista",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7bdf9e7131c3b515.mp3"
       }
     }
   },
@@ -183,15 +258,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "entrada",
-      "options": ["entrada", "ventana", "cocina", "pared"],
+      "options": [
+        "entrada",
+        "ventana",
+        "cocina",
+        "pared"
+      ],
       "translation": "We wait in front of the _____ of the cinema before the movie.",
-      "optionTranslations": ["entrance", "window", "kitchen", "wall"],
+      "optionTranslations": [
+        "entrance",
+        "window",
+        "kitchen",
+        "wall"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "Esperamos frente a la entrada del cine antes de la película.",
         "targetWord": "entrada",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2fc1b701c7c089f2.mp3"
       }
     }
   },
@@ -203,9 +289,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "escaleras",
-      "options": ["escaleras", "ventanas", "mesas", "camas"],
+      "options": [
+        "escaleras",
+        "ventanas",
+        "mesas",
+        "camas"
+      ],
       "translation": "The elevator does not work; we use the _____.",
-      "optionTranslations": ["stairs", "windows", "tables", "beds"],
+      "optionTranslations": [
+        "stairs",
+        "windows",
+        "tables",
+        "beds"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
@@ -223,13 +319,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "people",
-      "options": ["people", "cars", "birds", "stores"],
+      "options": [
+        "people",
+        "cars",
+        "birds",
+        "stores"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "Mira hacia allá, donde está la gente.",
         "targetWord": "gente",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c3e9c0e7bf111091.mp3"
       }
     }
   },
@@ -241,13 +343,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a way down",
-      "options": ["a way down", "a way in", "a long wall", "a big door"],
+      "options": [
+        "a way down",
+        "a way in",
+        "a long wall",
+        "a big door"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "Veo unas escaleras y una bajada larga.",
         "targetWord": "bajada",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4736ff44a546b4c3.mp3"
       }
     }
   },
@@ -259,13 +367,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a step",
-      "options": ["a step", "a shoe", "a road", "a jump"],
+      "options": [
+        "a step",
+        "a shoe",
+        "a road",
+        "a jump"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "Da unos pasos más, hasta el borde.",
         "targetWord": "pasos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c6505a3b8f4f9efd.mp3"
       }
     }
   },
@@ -277,13 +391,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the edge",
-      "options": ["the edge", "the center", "the gate", "the corner"],
+      "options": [
+        "the edge",
+        "the center",
+        "the gate",
+        "the corner"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "Diego camina hasta el borde del parque.",
         "targetWord": "borde",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e34fd8498f0964bf.mp3"
       }
     }
   },
@@ -295,13 +415,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a seaside walkway",
-      "options": ["a seaside walkway", "a fishing boat", "a mountain road", "a city market"],
+      "options": [
+        "a seaside walkway",
+        "a fishing boat",
+        "a mountain road",
+        "a city market"
+      ],
       "audioClip": {
         "storySlug": "buscando-el-mar",
         "storySource": "user",
         "sentence": "El mar azul, justo abajo del malecón.",
         "targetWord": "malecón",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/824ecebcf04ff6b1.mp3"
       }
     }
   },
@@ -313,10 +439,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "lejos", "answer": "far", "options": ["far", "little by little", "the right side", "a map"] },
-        { "word": "poco a poco", "answer": "little by little", "options": ["far", "little by little", "the right side", "a map"] },
-        { "word": "derecha", "answer": "the right side", "options": ["far", "little by little", "the right side", "a map"] },
-        { "word": "mapa", "answer": "a map", "options": ["far", "little by little", "the right side", "a map"] }
+        {
+          "word": "lejos",
+          "answer": "far",
+          "options": [
+            "far",
+            "little by little",
+            "the right side",
+            "a map"
+          ]
+        },
+        {
+          "word": "poco a poco",
+          "answer": "little by little",
+          "options": [
+            "far",
+            "little by little",
+            "the right side",
+            "a map"
+          ]
+        },
+        {
+          "word": "derecha",
+          "answer": "the right side",
+          "options": [
+            "far",
+            "little by little",
+            "the right side",
+            "a map"
+          ]
+        },
+        {
+          "word": "mapa",
+          "answer": "a map",
+          "options": [
+            "far",
+            "little by little",
+            "the right side",
+            "a map"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -329,8 +491,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "camino",
-      "options": ["camino", "vecino", "destino", "molino"],
-      "optionTranslations": ["way, path", "neighbor", "destination", "mill"],
+      "options": [
+        "camino",
+        "vecino",
+        "destino",
+        "molino"
+      ],
+      "optionTranslations": [
+        "way, path",
+        "neighbor",
+        "destination",
+        "mill"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "buscando-el-mar",

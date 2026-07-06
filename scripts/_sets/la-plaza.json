@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "alone",
-      "options": ["alone", "tired", "angry", "late"],
+      "options": [
+        "alone",
+        "tired",
+        "angry",
+        "late"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "Pablo está solo en una plaza famosa.",
         "targetWord": "solo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f52ea66a8a2ef0f8.mp3"
       }
     }
   },
@@ -23,15 +29,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "ciudad",
-      "options": ["ciudad", "cama", "sopa", "foto"],
+      "options": [
+        "ciudad",
+        "cama",
+        "sopa",
+        "foto"
+      ],
       "translation": "Lima is a _____ with many people and streets.",
-      "optionTranslations": ["city", "bed", "soup", "photo"],
+      "optionTranslations": [
+        "city",
+        "bed",
+        "soup",
+        "photo"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "Lima es una ciudad con muchas personas y calles.",
         "targetWord": "ciudad",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/70159c7fe5c36ef6.mp3"
       }
     }
   },
@@ -42,13 +59,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to know",
-      "options": ["to know", "to sell", "to open", "to carry"],
+      "options": [
+        "to know",
+        "to sell",
+        "to open",
+        "to carry"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "No conoce a nadie.",
         "targetWord": "conoce",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/af08aa769e463638.mp3"
       }
     }
   },
@@ -59,15 +82,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "mujer",
-      "options": ["mujer", "mesa", "casa", "flor"],
+      "options": [
+        "mujer",
+        "mesa",
+        "casa",
+        "flor"
+      ],
       "translation": "My dad is a man and my mom is a _____.",
-      "optionTranslations": ["woman", "table", "house", "flower"],
+      "optionTranslations": [
+        "woman",
+        "table",
+        "house",
+        "flower"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "Mi papá es un hombre y mi mamá es una mujer.",
         "targetWord": "mujer",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4c9759bea8d6d2a4.mp3"
       }
     }
   },
@@ -78,13 +112,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to speak",
-      "options": ["to speak", "to run", "to sleep", "to drink"],
+      "options": [
+        "to speak",
+        "to run",
+        "to sleep",
+        "to drink"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "Pero la mujer habla primero.",
         "targetWord": "habla",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1cf0932ff0c95652.mp3"
       }
     }
   },
@@ -95,15 +135,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "tímido",
-      "options": ["tímido", "rápido", "amarillo", "frío"],
+      "options": [
+        "tímido",
+        "rápido",
+        "amarillo",
+        "frío"
+      ],
       "translation": "The boy does not talk to new people; he is very _____.",
-      "optionTranslations": ["shy", "fast", "yellow", "cold"],
+      "optionTranslations": [
+        "shy",
+        "fast",
+        "yellow",
+        "cold"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "El niño no habla con personas nuevas; es muy tímido.",
         "targetWord": "tímido",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b4eeb8949518eebc.mp3"
       }
     }
   },
@@ -114,13 +165,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "her name is",
-      "options": ["her name is", "she lives in", "she comes from", "she looks for"],
+      "options": [
+        "her name is",
+        "she lives in",
+        "she comes from",
+        "she looks for"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "Se llama Marta y es de Buenos Aires.",
         "targetWord": "Se llama",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b130f1b34d4d0dcd.mp3"
       }
     }
   },
@@ -131,13 +188,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to smile",
-      "options": ["to smile", "to cry", "to shout", "to wait"],
+      "options": [
+        "to smile",
+        "to cry",
+        "to shout",
+        "to wait"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "La mujer sonríe.",
         "targetWord": "sonríe",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d0ee4ae118ae4ecd.mp3"
       }
     }
   },
@@ -148,15 +211,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "amigo",
-      "options": ["amigo", "plato", "carro", "queso"],
+      "options": [
+        "amigo",
+        "plato",
+        "carro",
+        "queso"
+      ],
       "translation": "Carlos is not my brother, he is my _____.",
-      "optionTranslations": ["friend", "plate", "car", "cheese"],
+      "optionTranslations": [
+        "friend",
+        "plate",
+        "car",
+        "cheese"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "Carlos no es mi hermano, es mi amigo.",
         "targetWord": "amigo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e977c396be4fe60.mp3"
       }
     }
   },
@@ -167,15 +241,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "canción",
-      "options": ["canción", "cocina", "camisa", "cabeza"],
+      "options": [
+        "canción",
+        "cocina",
+        "camisa",
+        "cabeza"
+      ],
       "translation": "The musician sings a pretty _____.",
-      "optionTranslations": ["song", "kitchen", "shirt", "head"],
+      "optionTranslations": [
+        "song",
+        "kitchen",
+        "shirt",
+        "head"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "El músico canta una canción bonita.",
         "targetWord": "canción",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4828389f6489c6af.mp3"
       }
     }
   },
@@ -187,13 +272,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "Sunday",
-      "options": ["Sunday", "Tuesday", "April", "night"],
+      "options": [
+        "Sunday",
+        "Tuesday",
+        "April",
+        "night"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "En Buenos Aires, Argentina, es domingo.",
         "targetWord": "domingo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ca1cd64d473c3f8.mp3"
       }
     }
   },
@@ -205,13 +296,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "nobody",
-      "options": ["nobody", "everyone", "something", "someone"],
+      "options": [
+        "nobody",
+        "everyone",
+        "something",
+        "someone"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "No conoce a nadie en la ciudad.",
         "targetWord": "nadie",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b5b0cbceae392931.mp3"
       }
     }
   },
@@ -223,13 +320,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a bench",
-      "options": ["a bench", "a door", "a tree", "a lamp"],
+      "options": [
+        "a bench",
+        "a door",
+        "a tree",
+        "a lamp"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "En el mismo banco hay una mujer con un libro.",
         "targetWord": "banco",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d697b72c0909f449.mp3"
       }
     }
   },
@@ -241,15 +344,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "libro",
-      "options": ["libro", "gato", "vaso", "árbol"],
+      "options": [
+        "libro",
+        "gato",
+        "vaso",
+        "árbol"
+      ],
       "translation": "In the library, I read an interesting _____.",
-      "optionTranslations": ["book", "cat", "glass", "tree"],
+      "optionTranslations": [
+        "book",
+        "cat",
+        "glass",
+        "tree"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "En la biblioteca, leo un libro interesante.",
         "targetWord": "libro",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/39f6559ac5f2ba0e.mp3"
       }
     }
   },
@@ -261,13 +375,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "beautiful",
-      "options": ["beautiful", "short", "cheap", "dirty"],
+      "options": [
+        "beautiful",
+        "short",
+        "cheap",
+        "dirty"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "La música es melancólica y hermosa.",
         "targetWord": "hermosa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/12b9db5ed40ba854.mp3"
       }
     }
   },
@@ -279,13 +399,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "she, her",
-      "options": ["she, her", "he, him", "we, us", "they, them"],
+      "options": [
+        "she, her",
+        "he, him",
+        "we, us",
+        "they, them"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "Con ella, hablar es muy fácil.",
         "targetWord": "ella",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8077f9592f592dae.mp3"
       }
     }
   },
@@ -297,13 +423,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "big",
-      "options": ["big", "clean", "cheap", "dark"],
+      "options": [
+        "big",
+        "clean",
+        "cheap",
+        "dark"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "Pablo piensa: Quizás la ciudad no es tan grande.",
         "targetWord": "grande",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20b3854ca00b4e01.mp3"
       }
     }
   },
@@ -315,13 +447,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to come",
-      "options": ["to come", "to pay", "to read", "to cook"],
+      "options": [
+        "to come",
+        "to pay",
+        "to read",
+        "to cook"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "Marta dice: «Mañana hay un concierto en el parque. ¿Venís?»",
         "targetWord": "Venís",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8751768cf98b16a7.mp3"
       }
     }
   },
@@ -333,13 +471,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "new",
-      "options": ["new", "sad", "wet", "slow"],
+      "options": [
+        "new",
+        "sad",
+        "wet",
+        "slow"
+      ],
       "audioClip": {
         "storySlug": "la-plaza",
         "storySource": "user",
         "sentence": "Hay una canción en el aire y, quizás, un amigo nuevo.",
         "targetWord": "nuevo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/da566b13e8b20830.mp3"
       }
     }
   },
@@ -351,10 +495,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "primero", "answer": "first", "options": ["first", "a lot", "maybe", "tomorrow"] },
-        { "word": "mucho", "answer": "a lot", "options": ["first", "a lot", "maybe", "tomorrow"] },
-        { "word": "quizás", "answer": "maybe", "options": ["first", "a lot", "maybe", "tomorrow"] },
-        { "word": "mañana", "answer": "tomorrow", "options": ["first", "a lot", "maybe", "tomorrow"] }
+        {
+          "word": "primero",
+          "answer": "first",
+          "options": [
+            "first",
+            "a lot",
+            "maybe",
+            "tomorrow"
+          ]
+        },
+        {
+          "word": "mucho",
+          "answer": "a lot",
+          "options": [
+            "first",
+            "a lot",
+            "maybe",
+            "tomorrow"
+          ]
+        },
+        {
+          "word": "quizás",
+          "answer": "maybe",
+          "options": [
+            "first",
+            "a lot",
+            "maybe",
+            "tomorrow"
+          ]
+        },
+        {
+          "word": "mañana",
+          "answer": "tomorrow",
+          "options": [
+            "first",
+            "a lot",
+            "maybe",
+            "tomorrow"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -367,8 +547,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "toca",
-      "options": ["toca", "toma", "saca", "seca"],
-      "optionTranslations": ["plays", "takes", "takes out", "dries"],
+      "options": [
+        "toca",
+        "toma",
+        "saca",
+        "seca"
+      ],
+      "optionTranslations": [
+        "plays",
+        "takes",
+        "takes out",
+        "dries"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "la-plaza",

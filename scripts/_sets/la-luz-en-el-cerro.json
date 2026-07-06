@@ -6,7 +6,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "wind",
-      "options": ["wind", "fire", "snow", "smoke"],
+      "options": [
+        "wind",
+        "fire",
+        "snow",
+        "smoke"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -23,7 +28,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a hill",
-      "options": ["a hill", "a lake", "a bridge", "a road"],
+      "options": [
+        "a hill",
+        "a lake",
+        "a bridge",
+        "a road"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -40,7 +50,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a whistle",
-      "options": ["a whistle", "a shout", "a song", "a knock"],
+      "options": [
+        "a whistle",
+        "a shout",
+        "a song",
+        "a knock"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -57,7 +72,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to blow",
-      "options": ["to blow", "to fall", "to shine", "to burn"],
+      "options": [
+        "to blow",
+        "to fall",
+        "to shine",
+        "to burn"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -74,7 +94,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to warn",
-      "options": ["to warn", "to promise", "to answer", "to hide"],
+      "options": [
+        "to warn",
+        "to promise",
+        "to answer",
+        "to hide"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -91,7 +116,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a tale",
-      "options": ["a tale", "a joke", "a game", "a gift"],
+      "options": [
+        "a tale",
+        "a joke",
+        "a game",
+        "a gift"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -108,7 +138,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to scare",
-      "options": ["to scare", "to teach", "to feed", "to wake up"],
+      "options": [
+        "to scare",
+        "to teach",
+        "to feed",
+        "to wake up"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -125,9 +160,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "miedo",
-      "options": ["miedo", "sueño", "calor", "trabajo"],
+      "options": [
+        "miedo",
+        "sueño",
+        "calor",
+        "trabajo"
+      ],
       "translation": "The horror movie gives me a lot of _____.",
-      "optionTranslations": ["fear", "sleepiness", "heat", "work"],
+      "optionTranslations": [
+        "fear",
+        "sleepiness",
+        "heat",
+        "work"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -144,9 +189,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "oscuro",
-      "options": ["oscuro", "limpio", "caro", "seco"],
+      "options": [
+        "oscuro",
+        "limpio",
+        "caro",
+        "seco"
+      ],
       "translation": "Turn off the light and the room goes _____.",
-      "optionTranslations": ["dark", "clean", "expensive", "dry"],
+      "optionTranslations": [
+        "dark",
+        "clean",
+        "expensive",
+        "dry"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -163,9 +218,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "triste",
-      "options": ["triste", "ocupada", "alta", "rubia"],
+      "options": [
+        "triste",
+        "ocupada",
+        "alta",
+        "rubia"
+      ],
       "translation": "She cries because she is very _____.",
-      "optionTranslations": ["sad", "busy", "tall", "blond"],
+      "optionTranslations": [
+        "sad",
+        "busy",
+        "tall",
+        "blond"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -183,7 +248,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a sound",
-      "options": ["a sound", "a light", "a smell", "a color"],
+      "options": [
+        "a sound",
+        "a light",
+        "a smell",
+        "a color"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -201,7 +271,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a reason",
-      "options": ["a reason", "a question", "an answer", "a problem"],
+      "options": [
+        "a reason",
+        "a question",
+        "an answer",
+        "a problem"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -219,7 +294,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to look",
-      "options": ["to look", "to help", "to run", "to write"],
+      "options": [
+        "to look",
+        "to help",
+        "to run",
+        "to write"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -237,9 +317,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "voz",
-      "options": ["voz", "mesa", "casa", "flor"],
+      "options": [
+        "voz",
+        "mesa",
+        "casa",
+        "flor"
+      ],
       "translation": "She sings with a very beautiful _____.",
-      "optionTranslations": ["voice", "table", "house", "flower"],
+      "optionTranslations": [
+        "voice",
+        "table",
+        "house",
+        "flower"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -257,9 +347,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "niños",
-      "options": ["niños", "libros", "carros", "zapatos"],
+      "options": [
+        "niños",
+        "libros",
+        "carros",
+        "zapatos"
+      ],
       "translation": "The _____ play in the park with the ball.",
-      "optionTranslations": ["children", "books", "cars", "shoes"],
+      "optionTranslations": [
+        "children",
+        "books",
+        "cars",
+        "shoes"
+      ],
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",
         "storySource": "user",
@@ -277,10 +377,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "ventana", "answer": "window", "options": ["window", "town", "rain", "night"] },
-        { "word": "pueblo", "answer": "town", "options": ["window", "town", "rain", "night"] },
-        { "word": "lluvia", "answer": "rain", "options": ["window", "town", "rain", "night"] },
-        { "word": "noche", "answer": "night", "options": ["window", "town", "rain", "night"] }
+        {
+          "word": "ventana",
+          "answer": "window",
+          "options": [
+            "window",
+            "town",
+            "rain",
+            "night"
+          ]
+        },
+        {
+          "word": "pueblo",
+          "answer": "town",
+          "options": [
+            "window",
+            "town",
+            "rain",
+            "night"
+          ]
+        },
+        {
+          "word": "lluvia",
+          "answer": "rain",
+          "options": [
+            "window",
+            "town",
+            "rain",
+            "night"
+          ]
+        },
+        {
+          "word": "noche",
+          "answer": "night",
+          "options": [
+            "window",
+            "town",
+            "rain",
+            "night"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -293,8 +429,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "subimos",
-      "options": ["subimos", "salimos", "vivimos", "pedimos"],
-      "optionTranslations": ["we go up", "we leave", "we live", "we ask for"],
+      "options": [
+        "subimos",
+        "salimos",
+        "vivimos",
+        "pedimos"
+      ],
+      "optionTranslations": [
+        "we go up",
+        "we leave",
+        "we live",
+        "we ask for"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "la-luz-en-el-cerro",

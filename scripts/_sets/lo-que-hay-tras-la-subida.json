@@ -6,7 +6,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to climb",
-      "options": ["to climb", "to rest", "to fall", "to wait"],
+      "options": [
+        "to climb",
+        "to rest",
+        "to fall",
+        "to wait"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -23,7 +28,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a mountain",
-      "options": ["a mountain", "a river", "a beach", "a bridge"],
+      "options": [
+        "a mountain",
+        "a river",
+        "a beach",
+        "a bridge"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -40,7 +50,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "an uphill climb",
-      "options": ["an uphill climb", "a long rest", "a heavy backpack", "a dark tunnel"],
+      "options": [
+        "an uphill climb",
+        "a long rest",
+        "a heavy backpack",
+        "a dark tunnel"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -57,7 +72,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "beautiful",
-      "options": ["beautiful", "dangerous", "empty", "dark"],
+      "options": [
+        "beautiful",
+        "dangerous",
+        "empty",
+        "dark"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -74,7 +94,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a lake",
-      "options": ["a lake", "a valley", "a cave", "a garden"],
+      "options": [
+        "a lake",
+        "a valley",
+        "a cave",
+        "a garden"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -91,9 +116,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "sendero",
-      "options": ["sendero", "puente", "muro", "techo"],
+      "options": [
+        "sendero",
+        "puente",
+        "muro",
+        "techo"
+      ],
       "translation": "We walk along a small _____ between the trees.",
-      "optionTranslations": ["trail", "bridge", "wall", "roof"],
+      "optionTranslations": [
+        "trail",
+        "bridge",
+        "wall",
+        "roof"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -110,9 +145,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "frío",
-      "options": ["frío", "calor", "humo", "polvo"],
+      "options": [
+        "frío",
+        "calor",
+        "humo",
+        "polvo"
+      ],
       "translation": "In winter there is _____ and we wear a sweater.",
-      "optionTranslations": ["cold", "heat", "smoke", "dust"],
+      "optionTranslations": [
+        "cold",
+        "heat",
+        "smoke",
+        "dust"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -129,9 +174,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "viento",
-      "options": ["viento", "fuego", "hielo", "ruido"],
+      "options": [
+        "viento",
+        "fuego",
+        "hielo",
+        "ruido"
+      ],
       "translation": "The flag moves because there is a strong _____.",
-      "optionTranslations": ["wind", "fire", "ice", "noise"],
+      "optionTranslations": [
+        "wind",
+        "fire",
+        "ice",
+        "noise"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -148,9 +203,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "premio",
-      "options": ["premio", "castigo", "precio", "boleto"],
+      "options": [
+        "premio",
+        "castigo",
+        "precio",
+        "boleto"
+      ],
       "translation": "The boy won the race and received a _____.",
-      "optionTranslations": ["prize", "punishment", "price", "ticket"],
+      "optionTranslations": [
+        "prize",
+        "punishment",
+        "price",
+        "ticket"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -170,22 +235,42 @@
         {
           "word": "gorro",
           "answer": "a wool hat",
-          "options": ["a wool hat", "a coat", "a forest", "a stone"]
+          "options": [
+            "a wool hat",
+            "a coat",
+            "a forest",
+            "a stone"
+          ]
         },
         {
           "word": "abrigo",
           "answer": "a coat",
-          "options": ["a wool hat", "a coat", "a forest", "a stone"]
+          "options": [
+            "a wool hat",
+            "a coat",
+            "a forest",
+            "a stone"
+          ]
         },
         {
           "word": "bosque",
           "answer": "a forest",
-          "options": ["a wool hat", "a coat", "a forest", "a stone"]
+          "options": [
+            "a wool hat",
+            "a coat",
+            "a forest",
+            "a stone"
+          ]
         },
         {
           "word": "piedra",
           "answer": "a stone",
-          "options": ["a wool hat", "a coat", "a forest", "a stone"]
+          "options": [
+            "a wool hat",
+            "a coat",
+            "a forest",
+            "a stone"
+          ]
         }
       ],
       "audioClip": null
@@ -199,7 +284,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to bite",
-      "options": ["to bite", "to warm", "to wash", "to touch"],
+      "options": [
+        "to bite",
+        "to warm",
+        "to wash",
+        "to touch"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -217,7 +307,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "calm",
-      "options": ["calm", "hurry", "anger", "fear"],
+      "options": [
+        "calm",
+        "hurry",
+        "anger",
+        "fear"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -235,7 +330,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a tree",
-      "options": ["a tree", "a flower", "a cloud", "a road"],
+      "options": [
+        "a tree",
+        "a flower",
+        "a cloud",
+        "a road"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -253,7 +353,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "with their own eyes",
-      "options": ["with their own eyes", "from far away", "once a year", "by accident"],
+      "options": [
+        "with their own eyes",
+        "from far away",
+        "once a year",
+        "by accident"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -271,7 +376,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a step",
-      "options": ["a step", "a stone", "a break", "a shout"],
+      "options": [
+        "a step",
+        "a stone",
+        "a break",
+        "a shout"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -289,7 +399,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "there's a long way to go",
-      "options": ["there's a long way to go", "we're going too fast", "it's too dark", "the path is closed"],
+      "options": [
+        "there's a long way to go",
+        "we're going too fast",
+        "it's too dark",
+        "the path is closed"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -307,9 +422,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "esfuerzo",
-      "options": ["esfuerzo", "descanso", "espacio", "sueño"],
+      "options": [
+        "esfuerzo",
+        "descanso",
+        "espacio",
+        "sueño"
+      ],
       "translation": "Learning another language takes time and a lot of _____.",
-      "optionTranslations": ["effort", "rest", "space", "sleep"],
+      "optionTranslations": [
+        "effort",
+        "rest",
+        "space",
+        "sleep"
+      ],
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",
         "storySource": "user",
@@ -327,8 +452,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "helada",
-      "options": ["helada", "mojada", "pesada", "salada"],
-      "optionTranslations": ["freezing", "wet", "heavy", "salty"],
+      "options": [
+        "helada",
+        "mojada",
+        "pesada",
+        "salada"
+      ],
+      "optionTranslations": [
+        "freezing",
+        "wet",
+        "heavy",
+        "salty"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "lo-que-hay-tras-la-subida",

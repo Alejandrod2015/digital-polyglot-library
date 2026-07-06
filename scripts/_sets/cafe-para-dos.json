@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a spot",
-      "options": ["a spot", "a ticket", "a gift", "a name"],
+      "options": [
+        "a spot",
+        "a ticket",
+        "a gift",
+        "a name"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "Camila busca un lugar con su taza en la mano.",
         "targetWord": "lugar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4b5895759864729c.mp3"
       }
     }
   },
@@ -23,13 +29,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "excuse me",
-      "options": ["excuse me", "see you later", "you're welcome", "good night"],
+      "options": [
+        "excuse me",
+        "see you later",
+        "you're welcome",
+        "good night"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "Hola, perdón. ¿Está libre esta silla?",
         "targetWord": "perdón",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/695b2dca21f6dd2d.mp3"
       }
     }
   },
@@ -40,13 +52,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the first time",
-      "options": ["the first time", "the last day", "the whole week", "the same place"],
+      "options": [
+        "the first time",
+        "the last day",
+        "the whole week",
+        "the same place"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "Es la primera vez. Trabajo cerca y quería probar el lugar.",
         "targetWord": "primera vez",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed7c4cda2856cff2.mp3"
       }
     }
   },
@@ -57,13 +75,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to try",
-      "options": ["to try", "to pay", "to cook", "to bring"],
+      "options": [
+        "to try",
+        "to pay",
+        "to cook",
+        "to bring"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "No sé qué probar.",
         "targetWord": "probar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8108fbaa6e589af9.mp3"
       }
     }
   },
@@ -74,13 +98,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "nice to meet you",
-      "options": ["nice to meet you", "see you tomorrow", "good luck", "happy birthday"],
+      "options": [
+        "nice to meet you",
+        "see you tomorrow",
+        "good luck",
+        "happy birthday"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "Mucho gusto, Camila. Yo soy Tomás.",
         "targetWord": "Mucho gusto",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fbde5609e59b8e2f.mp3"
       }
     }
   },
@@ -91,13 +121,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to get to know",
-      "options": ["to get to know", "to forget", "to sell", "to paint"],
+      "options": [
+        "to get to know",
+        "to forget",
+        "to sell",
+        "to paint"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "Un día voy a conocerla.",
         "targetWord": "conocerla",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/89a21de9723e36e5.mp3"
       }
     }
   },
@@ -108,15 +144,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "ocupadas",
-      "options": ["ocupadas", "limpias", "nuevas", "abiertas"],
+      "options": [
+        "ocupadas",
+        "limpias",
+        "nuevas",
+        "abiertas"
+      ],
       "translation": "All the tables are _____; we cannot sit down.",
-      "optionTranslations": ["taken", "clean", "new", "open"],
+      "optionTranslations": [
+        "taken",
+        "clean",
+        "new",
+        "open"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "Todas las mesas están ocupadas; no podemos sentarnos.",
         "targetWord": "ocupadas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61a871f555cb2739.mp3"
       }
     }
   },
@@ -127,15 +174,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "silla",
-      "options": ["silla", "puerta", "lámpara", "ventana"],
+      "options": [
+        "silla",
+        "puerta",
+        "lámpara",
+        "ventana"
+      ],
       "translation": "I am tired of standing; I look for a _____.",
-      "optionTranslations": ["chair", "door", "lamp", "window"],
+      "optionTranslations": [
+        "chair",
+        "door",
+        "lamp",
+        "window"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "Estoy cansado de estar de pie; busco una silla.",
         "targetWord": "silla",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d24c2ad8b59babee.mp3"
       }
     }
   },
@@ -146,15 +204,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "maestra",
-      "options": ["maestra", "doctora", "cocinera", "vendedora"],
+      "options": [
+        "maestra",
+        "doctora",
+        "cocinera",
+        "vendedora"
+      ],
       "translation": "The _____ teaches math to the children.",
-      "optionTranslations": ["teacher", "doctor", "cook", "seller"],
+      "optionTranslations": [
+        "teacher",
+        "doctor",
+        "cook",
+        "seller"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "La maestra enseña matemáticas a los niños.",
         "targetWord": "maestra",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3dd9d950c85d4bb6.mp3"
       }
     }
   },
@@ -165,10 +234,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "por cierto", "answer": "by the way", "options": ["by the way", "cup", "sun", "street"] },
-        { "word": "taza", "answer": "cup", "options": ["by the way", "cup", "sun", "street"] },
-        { "word": "sol", "answer": "sun", "options": ["by the way", "cup", "sun", "street"] },
-        { "word": "calle", "answer": "street", "options": ["by the way", "cup", "sun", "street"] }
+        {
+          "word": "por cierto",
+          "answer": "by the way",
+          "options": [
+            "by the way",
+            "cup",
+            "sun",
+            "street"
+          ]
+        },
+        {
+          "word": "taza",
+          "answer": "cup",
+          "options": [
+            "by the way",
+            "cup",
+            "sun",
+            "street"
+          ]
+        },
+        {
+          "word": "sol",
+          "answer": "sun",
+          "options": [
+            "by the way",
+            "cup",
+            "sun",
+            "street"
+          ]
+        },
+        {
+          "word": "calle",
+          "answer": "street",
+          "options": [
+            "by the way",
+            "cup",
+            "sun",
+            "street"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -181,13 +286,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to find",
-      "options": ["to find", "to call", "to wait for", "to help"],
+      "options": [
+        "to find",
+        "to call",
+        "to wait for",
+        "to help"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "Bueno, ya sabés dónde encontrarme.",
         "targetWord": "encontrarme",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16a22dae95793e79.mp3"
       }
     }
   },
@@ -199,13 +310,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to greet",
-      "options": ["to greet", "to look for", "to push", "to follow"],
+      "options": [
+        "to greet",
+        "to look for",
+        "to push",
+        "to follow"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "Los dos se saludan con la mano.",
         "targetWord": "saludan",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1f5ecb3818e037be.mp3"
       }
     }
   },
@@ -217,13 +334,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to shine",
-      "options": ["to shine", "to close", "to fall", "to grow"],
+      "options": [
+        "to shine",
+        "to close",
+        "to fall",
+        "to grow"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "Afuera, la calle brilla bajo el sol de la tarde.",
         "targetWord": "brilla",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c47066e5722a9d1.mp3"
       }
     }
   },
@@ -235,13 +358,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a class",
-      "options": ["a class", "a party", "a concert", "a prize"],
+      "options": [
+        "a class",
+        "a party",
+        "a concert",
+        "a prize"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "Doy clases en una escuela acá cerca.",
         "targetWord": "clases",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ccdfdebce45d5236.mp3"
       }
     }
   },
@@ -253,13 +382,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a city block",
-      "options": ["a city block", "a bus stop", "a bridge", "a market"],
+      "options": [
+        "a city block",
+        "a bus stop",
+        "a bridge",
+        "a market"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "Yo trabajo en una librería, a dos cuadras.",
         "targetWord": "cuadras",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aea031551d946a37.mp3"
       }
     }
   },
@@ -271,15 +406,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "escuela",
-      "options": ["escuela", "iglesia", "farmacia", "cocina"],
+      "options": [
+        "escuela",
+        "iglesia",
+        "farmacia",
+        "cocina"
+      ],
       "translation": "My brother studies English at _____.",
-      "optionTranslations": ["school", "church", "pharmacy", "kitchen"],
+      "optionTranslations": [
+        "school",
+        "church",
+        "pharmacy",
+        "kitchen"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "Mi hermano estudia inglés en la escuela.",
         "targetWord": "escuela",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34ad7e1bec81174d.mp3"
       }
     }
   },
@@ -291,13 +437,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a while",
-      "options": ["a while", "a month", "a game", "a dream"],
+      "options": [
+        "a while",
+        "a month",
+        "a game",
+        "a dream"
+      ],
       "audioClip": {
         "storySlug": "cafe-para-dos",
         "storySource": "user",
         "sentence": "Siguen conversando un rato más.",
         "targetWord": "rato",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e7959e12727ecfa.mp3"
       }
     }
   },
@@ -309,8 +461,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "libre",
-      "options": ["libre", "triste", "verde", "grande"],
-      "optionTranslations": ["free", "sad", "green", "big"],
+      "options": [
+        "libre",
+        "triste",
+        "verde",
+        "grande"
+      ],
+      "optionTranslations": [
+        "free",
+        "sad",
+        "green",
+        "big"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "cafe-para-dos",

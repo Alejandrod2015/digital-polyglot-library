@@ -6,7 +6,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a cloud",
-      "options": ["a cloud", "a star", "a wave", "a stone"],
+      "options": [
+        "a cloud",
+        "a star",
+        "a wave",
+        "a stone"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -23,7 +28,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a valley",
-      "options": ["a valley", "a desert", "a beach", "an island"],
+      "options": [
+        "a valley",
+        "a desert",
+        "a beach",
+        "an island"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -40,7 +50,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to take cover",
-      "options": ["to take cover", "to fall asleep", "to run away", "to get lost"],
+      "options": [
+        "to take cover",
+        "to fall asleep",
+        "to run away",
+        "to get lost"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -57,7 +72,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the sky",
-      "options": ["the sky", "the ground", "the sea", "the wind"],
+      "options": [
+        "the sky",
+        "the ground",
+        "the sea",
+        "the wind"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -74,9 +94,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "tormenta",
-      "options": ["tormenta", "fiesta", "sorpresa", "carrera"],
+      "options": [
+        "tormenta",
+        "fiesta",
+        "sorpresa",
+        "carrera"
+      ],
       "translation": "Don't go out now: there is a _____ with rain and wind.",
-      "optionTranslations": ["storm", "party", "surprise", "race"],
+      "optionTranslations": [
+        "storm",
+        "party",
+        "surprise",
+        "race"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -93,9 +123,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "lluvia",
-      "options": ["lluvia", "arena", "fruta", "basura"],
+      "options": [
+        "lluvia",
+        "arena",
+        "fruta",
+        "basura"
+      ],
       "translation": "The _____ falls from the sky and wets the streets.",
-      "optionTranslations": ["rain", "sand", "fruit", "trash"],
+      "optionTranslations": [
+        "rain",
+        "sand",
+        "fruit",
+        "trash"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -112,9 +152,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "relámpago",
-      "options": ["relámpago", "pájaro", "avión", "globo"],
+      "options": [
+        "relámpago",
+        "pájaro",
+        "avión",
+        "globo"
+      ],
       "translation": "A _____ lights up the sky during the storm.",
-      "optionTranslations": ["lightning bolt", "bird", "plane", "balloon"],
+      "optionTranslations": [
+        "lightning bolt",
+        "bird",
+        "plane",
+        "balloon"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -131,9 +181,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "limpio",
-      "options": ["limpio", "sucio", "roto", "lleno"],
+      "options": [
+        "limpio",
+        "sucio",
+        "roto",
+        "lleno"
+      ],
       "translation": "I wash the plate with soap and it ends up _____.",
-      "optionTranslations": ["clean", "dirty", "broken", "full"],
+      "optionTranslations": [
+        "clean",
+        "dirty",
+        "broken",
+        "full"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -150,9 +210,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "esperar",
-      "options": ["esperar", "correr", "pagar", "dormir"],
+      "options": [
+        "esperar",
+        "correr",
+        "pagar",
+        "dormir"
+      ],
       "translation": "The bus is late; we have to _____ a few minutes.",
-      "optionTranslations": ["to wait", "to run", "to pay", "to sleep"],
+      "optionTranslations": [
+        "to wait",
+        "to run",
+        "to pay",
+        "to sleep"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -172,22 +242,42 @@
         {
           "word": "de acuerdo",
           "answer": "in agreement",
-          "options": ["in agreement", "in the distance", "a town", "a minute"]
+          "options": [
+            "in agreement",
+            "in the distance",
+            "a town",
+            "a minute"
+          ]
         },
         {
           "word": "a lo lejos",
           "answer": "in the distance",
-          "options": ["in agreement", "in the distance", "a town", "a minute"]
+          "options": [
+            "in agreement",
+            "in the distance",
+            "a town",
+            "a minute"
+          ]
         },
         {
           "word": "pueblo",
           "answer": "a town",
-          "options": ["in agreement", "in the distance", "a town", "a minute"]
+          "options": [
+            "in agreement",
+            "in the distance",
+            "a town",
+            "a minute"
+          ]
         },
         {
           "word": "minuto",
           "answer": "a minute",
-          "options": ["in agreement", "in the distance", "a town", "a minute"]
+          "options": [
+            "in agreement",
+            "in the distance",
+            "a town",
+            "a minute"
+          ]
         }
       ],
       "audioClip": null
@@ -201,7 +291,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to go down",
-      "options": ["to go down", "to speed up", "to return", "to begin"],
+      "options": [
+        "to go down",
+        "to speed up",
+        "to return",
+        "to begin"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -219,7 +314,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the truth",
-      "options": ["the truth", "a secret", "a dream", "a joke"],
+      "options": [
+        "the truth",
+        "a secret",
+        "a dream",
+        "a joke"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -237,7 +337,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a path",
-      "options": ["a path", "a wall", "a door", "a field"],
+      "options": [
+        "a path",
+        "a wall",
+        "a door",
+        "a field"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -255,7 +360,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "frozen stiff",
-      "options": ["frozen stiff", "wide awake", "very hungry", "out of breath"],
+      "options": [
+        "frozen stiff",
+        "wide awake",
+        "very hungry",
+        "out of breath"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -273,7 +383,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to be worth it",
-      "options": ["to be worth it", "to take too long", "to go wrong", "to cost nothing"],
+      "options": [
+        "to be worth it",
+        "to take too long",
+        "to go wrong",
+        "to cost nothing"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -291,7 +406,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to remember",
-      "options": ["to remember", "to forget", "to repeat", "to hide"],
+      "options": [
+        "to remember",
+        "to forget",
+        "to repeat",
+        "to hide"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -309,7 +429,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to shine",
-      "options": ["to shine", "to disappear", "to freeze", "to break"],
+      "options": [
+        "to shine",
+        "to disappear",
+        "to freeze",
+        "to break"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",
         "storySource": "user",
@@ -327,8 +452,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "mojada",
-      "options": ["mojada", "enojada", "cansada", "callada"],
-      "optionTranslations": ["wet", "angry", "tired", "quiet"],
+      "options": [
+        "mojada",
+        "enojada",
+        "cansada",
+        "callada"
+      ],
+      "optionTranslations": [
+        "wet",
+        "angry",
+        "tired",
+        "quiet"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "cuando-llega-la-tormenta",

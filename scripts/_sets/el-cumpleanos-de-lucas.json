@@ -6,15 +6,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "cumpleaños",
-      "options": ["cumpleaños", "desayuno", "trabajo", "mercado"],
+      "options": [
+        "cumpleaños",
+        "desayuno",
+        "trabajo",
+        "mercado"
+      ],
       "translation": "The cake has candles; it is Ana's _____.",
-      "optionTranslations": ["birthday", "breakfast", "work", "market"],
+      "optionTranslations": [
+        "birthday",
+        "breakfast",
+        "work",
+        "market"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "El pastel tiene velas; es el cumpleaños de Ana.",
         "targetWord": "cumpleaños",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d603575252a28e5a.mp3"
       }
     }
   },
@@ -25,13 +36,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a friend",
-      "options": ["a friend", "a teacher", "a cat", "a shoe"],
+      "options": [
+        "a friend",
+        "a teacher",
+        "a cat",
+        "a shoe"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Pablo conversa con todos como un amigo más.",
         "targetWord": "amigo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/69d3821b9b424f7f.mp3"
       }
     }
   },
@@ -42,13 +59,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to come",
-      "options": ["to come", "to sleep", "to work", "to sell"],
+      "options": [
+        "to come",
+        "to sleep",
+        "to work",
+        "to sell"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Pablo recibe una invitación por teléfono: «¡Vení a la fiesta!»",
         "targetWord": "Vení",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee456dc6e8dfed7f.mp3"
       }
     }
   },
@@ -59,13 +82,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "happy",
-      "options": ["happy", "tired", "hungry", "cold"],
+      "options": [
+        "happy",
+        "tired",
+        "hungry",
+        "cold"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Pablo está feliz.",
         "targetWord": "feliz",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4e33854225eb87f8.mp3"
       }
     }
   },
@@ -76,15 +105,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "globos",
-      "options": ["globos", "gatos", "platos", "zapatos"],
+      "options": [
+        "globos",
+        "gatos",
+        "platos",
+        "zapatos"
+      ],
       "translation": "There are _____ of many colors floating in the air.",
-      "optionTranslations": ["balloons", "cats", "plates", "shoes"],
+      "optionTranslations": [
+        "balloons",
+        "cats",
+        "plates",
+        "shoes"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Hay globos de muchos colores que flotan en el aire.",
         "targetWord": "globos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c2d8f87425261957.mp3"
       }
     }
   },
@@ -95,13 +135,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to meet",
-      "options": ["to meet", "to forget", "to follow", "to call"],
+      "options": [
+        "to meet",
+        "to forget",
+        "to follow",
+        "to call"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Pablo conoce a más amigos de Marta.",
         "targetWord": "conoce",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8756dd17100d7bdb.mp3"
       }
     }
   },
@@ -112,15 +158,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "bailan",
-      "options": ["bailan", "duermen", "estudian", "escriben"],
+      "options": [
+        "bailan",
+        "duermen",
+        "estudian",
+        "escriben"
+      ],
       "translation": "The band plays and everyone _____ at the party.",
-      "optionTranslations": ["dances", "sleeps", "studies", "writes"],
+      "optionTranslations": [
+        "dances",
+        "sleeps",
+        "studies",
+        "writes"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "La banda toca y todos bailan en la fiesta.",
         "targetWord": "bailan",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e202bfba5f9d7178.mp3"
       }
     }
   },
@@ -131,13 +188,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to like",
-      "options": ["to like", "to open", "to bring", "to wash"],
+      "options": [
+        "to like",
+        "to open",
+        "to bring",
+        "to wash"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "«¿Te gusta Buenos Aires?»",
         "targetWord": "gusta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fc4e83c05bed56dc.mp3"
       }
     }
   },
@@ -148,15 +211,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "vasos",
-      "options": ["vasos", "zapatos", "libros", "carros"],
+      "options": [
+        "vasos",
+        "zapatos",
+        "libros",
+        "carros"
+      ],
       "translation": "Mom pours juice into the children's _____.",
-      "optionTranslations": ["glasses", "shoes", "books", "cars"],
+      "optionTranslations": [
+        "glasses",
+        "shoes",
+        "books",
+        "cars"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Mamá pone jugo en los vasos de los niños.",
         "targetWord": "vasos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a60567480c14becb.mp3"
       }
     }
   },
@@ -167,13 +241,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to ask",
-      "options": ["to ask", "to answer", "to run", "to sell"],
+      "options": [
+        "to ask",
+        "to answer",
+        "to run",
+        "to sell"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Marta sonríe y pregunta.",
         "targetWord": "pregunta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1330cb242689f9d1.mp3"
       }
     }
   },
@@ -185,13 +265,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "Saturday",
-      "options": ["Saturday", "Wednesday", "October", "morning"],
+      "options": [
+        "Saturday",
+        "Wednesday",
+        "October",
+        "morning"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "El sábado es el cumpleaños de Lucas.",
         "targetWord": "sábado",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/93e474ededbd27ad.mp3"
       }
     }
   },
@@ -203,15 +289,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "vista",
-      "options": ["vista", "cocina", "puerta", "cama"],
+      "options": [
+        "vista",
+        "cocina",
+        "puerta",
+        "cama"
+      ],
       "translation": "From the hotel window there is a _____ of the sea.",
-      "optionTranslations": ["view", "kitchen", "door", "bed"],
+      "optionTranslations": [
+        "view",
+        "kitchen",
+        "door",
+        "bed"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Desde la ventana del hotel hay una vista del mar.",
         "targetWord": "vista",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/42b325aeb0f11ebd.mp3"
       }
     }
   },
@@ -223,13 +320,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a city",
-      "options": ["a city", "a house", "a song", "a school"],
+      "options": [
+        "a city",
+        "a house",
+        "a song",
+        "a school"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Pablo responde: «Es mi ciudad favorita.»",
         "targetWord": "ciudad",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/db07de3987792b9d.mp3"
       }
     }
   },
@@ -241,13 +344,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to laugh",
-      "options": ["to laugh", "to eat", "to swim", "to paint"],
+      "options": [
+        "to laugh",
+        "to eat",
+        "to swim",
+        "to paint"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Todos hablan, ríen y bailan.",
         "targetWord": "ríen",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3191ef41b2875b3b.mp3"
       }
     }
   },
@@ -259,13 +368,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to raise",
-      "options": ["to raise", "to break", "to hide", "to count"],
+      "options": [
+        "to raise",
+        "to break",
+        "to hide",
+        "to count"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Todos levantan sus vasos.",
         "targetWord": "levantan",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5478e5ded8b60826.mp3"
       }
     }
   },
@@ -277,15 +392,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "tenemos",
-      "options": ["tenemos", "bebemos", "corremos", "leemos"],
+      "options": [
+        "tenemos",
+        "bebemos",
+        "corremos",
+        "leemos"
+      ],
       "translation": "My sister and I _____ two cats at home.",
-      "optionTranslations": ["we have", "we drink", "we run", "we read"],
+      "optionTranslations": [
+        "we have",
+        "we drink",
+        "we run",
+        "we read"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Mi hermana y yo tenemos dos gatos en casa.",
         "targetWord": "tenemos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f2229c271d8c9403.mp3"
       }
     }
   },
@@ -297,13 +423,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "here",
-      "options": ["here", "there", "never", "always"],
+      "options": [
+        "here",
+        "there",
+        "never",
+        "always"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Ahora tengo una familia aquí.",
         "targetWord": "aquí",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bea34788d638bdee.mp3"
       }
     }
   },
@@ -315,13 +447,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to smile",
-      "options": ["to smile", "to run", "to sleep", "to pay"],
+      "options": [
+        "to smile",
+        "to run",
+        "to sleep",
+        "to pay"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Marta sonríe.",
         "targetWord": "sonríe",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f6c3c908c7fc3e45.mp3"
       }
     }
   },
@@ -333,13 +471,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "new",
-      "options": ["new", "tall", "dirty", "cheap"],
+      "options": [
+        "new",
+        "tall",
+        "dirty",
+        "cheap"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Lucas dice: «Pablo, ¡un brindis por nuestro amigo nuevo!»",
         "targetWord": "nuevo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64f3a115e6ad8706.mp3"
       }
     }
   },
@@ -351,13 +495,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a light",
-      "options": ["a light", "a chair", "a shoe", "a bed"],
+      "options": [
+        "a light",
+        "a chair",
+        "a shoe",
+        "a bed"
+      ],
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",
         "storySource": "user",
         "sentence": "Sobre las luces de Buenos Aires, Pablo sonríe.",
         "targetWord": "luces",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e4f03fb0c47b2aef.mp3"
       }
     }
   },
@@ -369,10 +519,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "más", "answer": "more", "options": ["more", "many", "everyone", "alone"] },
-        { "word": "muchas", "answer": "many", "options": ["more", "many", "everyone", "alone"] },
-        { "word": "todos", "answer": "everyone", "options": ["more", "many", "everyone", "alone"] },
-        { "word": "solo", "answer": "alone", "options": ["more", "many", "everyone", "alone"] }
+        {
+          "word": "más",
+          "answer": "more",
+          "options": [
+            "more",
+            "many",
+            "everyone",
+            "alone"
+          ]
+        },
+        {
+          "word": "muchas",
+          "answer": "many",
+          "options": [
+            "more",
+            "many",
+            "everyone",
+            "alone"
+          ]
+        },
+        {
+          "word": "todos",
+          "answer": "everyone",
+          "options": [
+            "more",
+            "many",
+            "everyone",
+            "alone"
+          ]
+        },
+        {
+          "word": "solo",
+          "answer": "alone",
+          "options": [
+            "more",
+            "many",
+            "everyone",
+            "alone"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -385,8 +571,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "hablan",
-      "options": ["hablan", "lavan", "bajan", "pasan"],
-      "optionTranslations": ["they speak", "they wash", "they go down", "they pass"],
+      "options": [
+        "hablan",
+        "lavan",
+        "bajan",
+        "pasan"
+      ],
+      "optionTranslations": [
+        "they speak",
+        "they wash",
+        "they go down",
+        "they pass"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "el-cumpleanos-de-lucas",

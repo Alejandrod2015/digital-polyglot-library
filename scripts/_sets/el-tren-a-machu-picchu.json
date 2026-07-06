@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "Wednesday",
-      "options": ["Wednesday", "Friday", "Sunday", "April"],
+      "options": [
+        "Wednesday",
+        "Friday",
+        "Sunday",
+        "April"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "El miércoles, Elena toma el tren.",
         "targetWord": "miércoles",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9619d4478568d90.mp3"
       }
     }
   },
@@ -23,15 +29,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "tren",
-      "options": ["tren", "pan", "sol", "queso"],
+      "options": [
+        "tren",
+        "pan",
+        "sol",
+        "queso"
+      ],
       "translation": "I travel by _____ from Lima to Cusco.",
-      "optionTranslations": ["train", "bread", "sun", "cheese"],
+      "optionTranslations": [
+        "train",
+        "bread",
+        "sun",
+        "cheese"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Viajo en tren de Lima a Cusco.",
         "targetWord": "tren",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/27757f7a79ce6440.mp3"
       }
     }
   },
@@ -42,13 +59,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to take",
-      "options": ["to take", "to close", "to pay", "to hear"],
+      "options": [
+        "to take",
+        "to close",
+        "to pay",
+        "to hear"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Elena toma el tren a Machu Picchu.",
         "targetWord": "toma",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c2dd8a56fd01198.mp3"
       }
     }
   },
@@ -59,13 +82,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to pass",
-      "options": ["to pass", "to buy", "to sing", "to sleep"],
+      "options": [
+        "to pass",
+        "to buy",
+        "to sing",
+        "to sleep"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "El tren pasa por montañas verdes y un río rápido.",
         "targetWord": "pasa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ab5e366ce5943eb.mp3"
       }
     }
   },
@@ -76,13 +105,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a window",
-      "options": ["a window", "a door", "a hand", "a tree"],
+      "options": [
+        "a window",
+        "a door",
+        "a hand",
+        "a tree"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Elena mira por la ventana, emocionada.",
         "targetWord": "ventana",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d08bf5dc65b946d.mp3"
       }
     }
   },
@@ -93,13 +128,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to dream",
-      "options": ["to dream", "to work", "to swim", "to shout"],
+      "options": [
+        "to dream",
+        "to work",
+        "to swim",
+        "to shout"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Hace años que sueña con este lugar.",
         "targetWord": "sueña",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d402dc0c420e02d7.mp3"
       }
     }
   },
@@ -110,15 +151,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "río",
-      "options": ["río", "libro", "zapato", "carro"],
+      "options": [
+        "río",
+        "libro",
+        "zapato",
+        "carro"
+      ],
       "translation": "The fish swim in the _____.",
-      "optionTranslations": ["river", "book", "shoe", "car"],
+      "optionTranslations": [
+        "river",
+        "book",
+        "shoe",
+        "car"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Los peces nadan en el río.",
         "targetWord": "río",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c5e32c9312632239.mp3"
       }
     }
   },
@@ -129,13 +181,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a mountain",
-      "options": ["a mountain", "a star", "a table", "a shoe"],
+      "options": [
+        "a mountain",
+        "a star",
+        "a table",
+        "a shoe"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "El paisaje cambia cada minuto: montañas, ríos y pequeños pueblos.",
         "targetWord": "montañas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ba05dc7b603c203.mp3"
       }
     }
   },
@@ -146,13 +204,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "huge",
-      "options": ["huge", "empty", "cheap", "soft"],
+      "options": [
+        "huge",
+        "empty",
+        "cheap",
+        "soft"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Machu Picchu es enorme, antiguo y silencioso.",
         "targetWord": "enorme",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/965dc5630b2df4cc.mp3"
       }
     }
   },
@@ -163,13 +227,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "beautiful",
-      "options": ["beautiful", "sad", "dirty", "slow"],
+      "options": [
+        "beautiful",
+        "sad",
+        "dirty",
+        "slow"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Es más hermoso que en las fotos.",
         "targetWord": "hermoso",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c30a299fac86c9e2.mp3"
       }
     }
   },
@@ -181,13 +251,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a place",
-      "options": ["a place", "a song", "a job", "a face"],
+      "options": [
+        "a place",
+        "a song",
+        "a job",
+        "a face"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Encuentra el lugar de sus sueños.",
         "targetWord": "lugar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/31b629451c53fe70.mp3"
       }
     }
   },
@@ -199,15 +275,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "viaje",
-      "options": ["viaje", "plato", "perro", "huevo"],
+      "options": [
+        "viaje",
+        "plato",
+        "perro",
+        "huevo"
+      ],
       "translation": "I buy a ticket for my _____ to Lima.",
-      "optionTranslations": ["trip", "plate", "dog", "egg"],
+      "optionTranslations": [
+        "trip",
+        "plate",
+        "dog",
+        "egg"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Compro un boleto para mi viaje a Lima.",
         "targetWord": "viaje",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd5152bb114ca170.mp3"
       }
     }
   },
@@ -219,13 +306,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to find",
-      "options": ["to find", "to forget", "to carry", "to wash"],
+      "options": [
+        "to find",
+        "to forget",
+        "to carry",
+        "to wash"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Aquí, por fin, encuentra el lugar de sus sueños.",
         "targetWord": "encuentra",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0ef0eb409d4b593b.mp3"
       }
     }
   },
@@ -237,15 +330,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "rápido",
-      "options": ["rápido", "frío", "sucio", "largo"],
+      "options": [
+        "rápido",
+        "frío",
+        "sucio",
+        "largo"
+      ],
       "translation": "A race car is very _____.",
-      "optionTranslations": ["fast", "cold", "dirty", "long"],
+      "optionTranslations": [
+        "fast",
+        "cold",
+        "dirty",
+        "long"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Un carro de carreras es muy rápido.",
         "targetWord": "rápido",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb326296ea451200.mp3"
       }
     }
   },
@@ -257,13 +361,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "very old",
-      "options": ["very old", "very happy", "very cold", "very loud"],
+      "options": [
+        "very old",
+        "very happy",
+        "very cold",
+        "very loud"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Es enorme, antiguo y silencioso.",
         "targetWord": "antiguo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ae7562291df9094.mp3"
       }
     }
   },
@@ -275,15 +385,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "nubes",
-      "options": ["nubes", "mesas", "tazas", "botas"],
+      "options": [
+        "nubes",
+        "mesas",
+        "tazas",
+        "botas"
+      ],
       "translation": "Today there is no sun; the sky has many _____.",
-      "optionTranslations": ["clouds", "tables", "cups", "boots"],
+      "optionTranslations": [
+        "clouds",
+        "tables",
+        "cups",
+        "boots"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Hoy no hay sol; el cielo tiene muchas nubes.",
         "targetWord": "nubes",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/66a3dae209f91b5e.mp3"
       }
     }
   },
@@ -295,13 +416,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to know",
-      "options": ["to know", "to ask", "to run", "to give"],
+      "options": [
+        "to know",
+        "to ask",
+        "to run",
+        "to give"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Sabe que la foto no es suficiente.",
         "targetWord": "Sabe",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5df55aa67eabc536.mp3"
       }
     }
   },
@@ -313,15 +440,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "verdes",
-      "options": ["verdes", "tristes", "dulces", "fuertes"],
+      "options": [
+        "verdes",
+        "tristes",
+        "dulces",
+        "fuertes"
+      ],
       "translation": "The plants in the garden are _____.",
-      "optionTranslations": ["green", "sad", "sweet", "strong"],
+      "optionTranslations": [
+        "green",
+        "sad",
+        "sweet",
+        "strong"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Las plantas del jardín son verdes.",
         "targetWord": "verdes",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/830e661e6b7dc2e2.mp3"
       }
     }
   },
@@ -333,13 +471,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to remember",
-      "options": ["to remember", "to sell", "to open", "to dance"],
+      "options": [
+        "to remember",
+        "to sell",
+        "to open",
+        "to dance"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "Elena recuerda a Julio, su primer amigo en Perú.",
         "targetWord": "recuerda",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a4cd197187b2f454.mp3"
       }
     }
   },
@@ -351,15 +495,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "silencioso",
-      "options": ["silencioso", "peligroso", "delicioso", "famoso"],
+      "options": [
+        "silencioso",
+        "peligroso",
+        "delicioso",
+        "famoso"
+      ],
       "translation": "The library is a _____ place.",
-      "optionTranslations": ["silent", "dangerous", "delicious", "famous"],
+      "optionTranslations": [
+        "silent",
+        "dangerous",
+        "delicious",
+        "famous"
+      ],
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",
         "storySource": "user",
         "sentence": "La biblioteca es un lugar silencioso.",
         "targetWord": "silencioso",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a6a14716ee96e36.mp3"
       }
     }
   },
@@ -371,10 +526,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "después", "answer": "after", "options": ["after", "day", "hours", "years"] },
-        { "word": "día", "answer": "day", "options": ["after", "day", "hours", "years"] },
-        { "word": "horas", "answer": "hours", "options": ["after", "day", "hours", "years"] },
-        { "word": "años", "answer": "years", "options": ["after", "day", "hours", "years"] }
+        {
+          "word": "después",
+          "answer": "after",
+          "options": [
+            "after",
+            "day",
+            "hours",
+            "years"
+          ]
+        },
+        {
+          "word": "día",
+          "answer": "day",
+          "options": [
+            "after",
+            "day",
+            "hours",
+            "years"
+          ]
+        },
+        {
+          "word": "horas",
+          "answer": "hours",
+          "options": [
+            "after",
+            "day",
+            "hours",
+            "years"
+          ]
+        },
+        {
+          "word": "años",
+          "answer": "years",
+          "options": [
+            "after",
+            "day",
+            "hours",
+            "years"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -387,8 +578,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "llega",
-      "options": ["llega", "lleva", "llena", "llora"],
-      "optionTranslations": ["arrives", "carries", "fills", "cries"],
+      "options": [
+        "llega",
+        "lleva",
+        "llena",
+        "llora"
+      ],
+      "optionTranslations": [
+        "arrives",
+        "carries",
+        "fills",
+        "cries"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "el-tren-a-machu-picchu",

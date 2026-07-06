@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a kitchen",
-      "options": ["a kitchen", "a bedroom", "a garage", "a garden"],
+      "options": [
+        "a kitchen",
+        "a bedroom",
+        "a garage",
+        "a garden"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "En la pequeña cocina del departamento, Sofía lava la fruta.",
         "targetWord": "cocina",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b2500c35f7edf74f.mp3"
       }
     }
   },
@@ -23,13 +29,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to look for",
-      "options": ["to look for", "to prepare", "to spill", "to drink"],
+      "options": [
+        "to look for",
+        "to prepare",
+        "to spill",
+        "to drink"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "Su amiga Renata busca el café por todos lados.",
         "targetWord": "busca",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f5535e20e3e389c.mp3"
       }
     }
   },
@@ -40,13 +52,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to wash",
-      "options": ["to wash", "to cut", "to eat", "to sell"],
+      "options": [
+        "to wash",
+        "to cut",
+        "to eat",
+        "to sell"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "Sofía lava la fruta.",
         "targetWord": "lava",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a27ff1aff860b430.mp3"
       }
     }
   },
@@ -57,13 +75,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "sugar",
-      "options": ["sugar", "salt", "flour", "rice"],
+      "options": [
+        "sugar",
+        "salt",
+        "flour",
+        "rice"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "Mira, solo hay azúcar y un poco de leche.",
         "targetWord": "azúcar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8bbb6f57ff3d0785.mp3"
       }
     }
   },
@@ -74,15 +98,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "leche",
-      "options": ["leche", "sopa", "harina", "sal"],
+      "options": [
+        "leche",
+        "sopa",
+        "harina",
+        "sal"
+      ],
       "translation": "The cow gives us fresh _____ every morning.",
-      "optionTranslations": ["milk", "soup", "flour", "salt"],
+      "optionTranslations": [
+        "milk",
+        "soup",
+        "flour",
+        "salt"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "La vaca nos da leche fresca cada mañana.",
         "targetWord": "leche",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eea69692677414c2.mp3"
       }
     }
   },
@@ -93,15 +128,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "reloj",
-      "options": ["reloj", "mapa", "plato", "libro"],
+      "options": [
+        "reloj",
+        "mapa",
+        "plato",
+        "libro"
+      ],
       "translation": "I look at the _____ to know what time it is.",
-      "optionTranslations": ["clock", "map", "plate", "book"],
+      "optionTranslations": [
+        "clock",
+        "map",
+        "plate",
+        "book"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "Miro el reloj para saber qué hora es.",
         "targetWord": "reloj",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/596315f6a677901a.mp3"
       }
     }
   },
@@ -112,13 +158,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a wall",
-      "options": ["a wall", "a floor", "a ceiling", "a window"],
+      "options": [
+        "a wall",
+        "a floor",
+        "a ceiling",
+        "a window"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "Renata mira el reloj de la pared.",
         "targetWord": "pared",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb74775c986368e6.mp3"
       }
     }
   },
@@ -129,13 +181,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "hot",
-      "options": ["hot", "cold", "sweet", "bitter"],
+      "options": [
+        "hot",
+        "cold",
+        "sweet",
+        "bitter"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "Yo quiero mi café caliente.",
         "targetWord": "caliente",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ee811acfe3c493c.mp3"
       }
     }
   },
@@ -146,15 +204,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "tienda",
-      "options": ["tienda", "cama", "silla", "ventana"],
+      "options": [
+        "tienda",
+        "cama",
+        "silla",
+        "ventana"
+      ],
       "translation": "I go to the _____ to buy soap and rice.",
-      "optionTranslations": ["shop", "bed", "chair", "window"],
+      "optionTranslations": [
+        "shop",
+        "bed",
+        "chair",
+        "window"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "Voy a la tienda a comprar jabón y arroz.",
         "targetWord": "tienda",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec8cb8a0098b6f72.mp3"
       }
     }
   },
@@ -165,15 +234,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "departamento",
-      "options": ["departamento", "jardín", "parque", "museo"],
+      "options": [
+        "departamento",
+        "jardín",
+        "parque",
+        "museo"
+      ],
       "translation": "I live in an _____ on the eighth floor of the building.",
-      "optionTranslations": ["apartment", "garden", "park", "museum"],
+      "optionTranslations": [
+        "apartment",
+        "garden",
+        "park",
+        "museum"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "Vivo en un departamento en el piso ocho del edificio.",
         "targetWord": "departamento",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc28a4255c2a21a8.mp3"
       }
     }
   },
@@ -185,10 +265,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "ayer", "answer": "yesterday", "options": ["yesterday", "early", "at that moment", "it's not the same"] },
-        { "word": "temprano", "answer": "early", "options": ["yesterday", "early", "at that moment", "it's not the same"] },
-        { "word": "en ese momento", "answer": "at that moment", "options": ["yesterday", "early", "at that moment", "it's not the same"] },
-        { "word": "no es lo mismo", "answer": "it's not the same", "options": ["yesterday", "early", "at that moment", "it's not the same"] }
+        {
+          "word": "ayer",
+          "answer": "yesterday",
+          "options": [
+            "yesterday",
+            "early",
+            "at that moment",
+            "it's not the same"
+          ]
+        },
+        {
+          "word": "temprano",
+          "answer": "early",
+          "options": [
+            "yesterday",
+            "early",
+            "at that moment",
+            "it's not the same"
+          ]
+        },
+        {
+          "word": "en ese momento",
+          "answer": "at that moment",
+          "options": [
+            "yesterday",
+            "early",
+            "at that moment",
+            "it's not the same"
+          ]
+        },
+        {
+          "word": "no es lo mismo",
+          "answer": "it's not the same",
+          "options": [
+            "yesterday",
+            "early",
+            "at that moment",
+            "it's not the same"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -201,13 +317,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a corner",
-      "options": ["a corner", "a square", "a bridge", "a station"],
+      "options": [
+        "a corner",
+        "a square",
+        "a bridge",
+        "a station"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "La tienda de la esquina abre a las nueve.",
         "targetWord": "esquina",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/712e05862cebe4b1.mp3"
       }
     }
   },
@@ -219,13 +341,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "an hour",
-      "options": ["an hour", "a day", "a week", "a moment"],
+      "options": [
+        "an hour",
+        "a day",
+        "a week",
+        "a moment"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "Falta una hora.",
         "targetWord": "hora",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2dc7afaefbb48daa.mp3"
       }
     }
   },
@@ -237,13 +365,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "juice",
-      "options": ["juice", "soup", "tea", "wine"],
+      "options": [
+        "juice",
+        "soup",
+        "tea",
+        "wine"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "Podemos tomar agua o un jugo.",
         "targetWord": "jugo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/33b347ce2de36570.mp3"
       }
     }
   },
@@ -255,13 +389,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a table",
-      "options": ["a table", "a bed", "a sofa", "a lamp"],
+      "options": [
+        "a table",
+        "a bed",
+        "a sofa",
+        "a lamp"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "Se sientan a la mesa con el plato de fruta.",
         "targetWord": "mesa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/92b3f8fadfa85c4b.mp3"
       }
     }
   },
@@ -273,13 +413,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to knock",
-      "options": ["to knock", "to open", "to close", "to paint"],
+      "options": [
+        "to knock",
+        "to open",
+        "to close",
+        "to paint"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "En ese momento, alguien toca la puerta.",
         "targetWord": "toca",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ddc1d0e9ce4a2ec0.mp3"
       }
     }
   },
@@ -291,15 +437,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "agua",
-      "options": ["agua", "sal", "ropa", "carne"],
+      "options": [
+        "agua",
+        "sal",
+        "ropa",
+        "carne"
+      ],
       "translation": "The plants in the garden need sun and _____.",
-      "optionTranslations": ["water", "salt", "clothing", "meat"],
+      "optionTranslations": [
+        "water",
+        "salt",
+        "clothing",
+        "meat"
+      ],
       "audioClip": {
         "storySlug": "no-hay-cafe",
         "storySource": "user",
         "sentence": "Las plantas del jardín necesitan sol y agua.",
         "targetWord": "agua",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9196db377de4e19d.mp3"
       }
     }
   },
@@ -311,8 +468,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "vacía",
-      "options": ["vacía", "fría", "limpia", "sucia"],
-      "optionTranslations": ["empty", "cold", "clean", "dirty"],
+      "options": [
+        "vacía",
+        "fría",
+        "limpia",
+        "sucia"
+      ],
+      "optionTranslations": [
+        "empty",
+        "cold",
+        "clean",
+        "dirty"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "no-hay-cafe",

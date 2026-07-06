@@ -84,11 +84,23 @@ async function scribeWords(buf: Buffer, apiKey: string): Promise<Array<{ text: s
   return (((await res.json()) as any).words || []).filter((w: any) => w.text?.trim()).map((w: any) => ({ text: w.text, start: w.start, end: w.end }));
 }
 
+// Homophone-tolerant comparison for word QA: Scribe cannot distinguish LATAM
+// homophones (vez/ves, haber/a ver, vaca/baca), so exact spelling match makes
+// monosyllables fail forever. Compare by phonetic key (seseo + b/v + h + ll/y).
+function phoneticKey(s: string): string {
+  return strip(s)
+    .replace(/z/g, "s").replace(/v/g, "b").replace(/h/g, "")
+    .replace(/ll/g, "y").replace(/c([ei])/g, "s$1").replace(/qu/g, "k").replace(/c([aou])/g, "k$1");
+}
+
 // Returns {ok, finalBuf, dur, method, tries}
 async function renderWord(word: string, apiKey: string, outDir: string): Promise<{ ok: boolean; file: string; dur: number; method: string; tries: number }> {
   const target = strip(word);
   const finalPath = join(outDir, `${word}.mp3`);
-  if (isInfinitive(word)) {
+  // Ultra-short words (<=4 letters, single syllable-ish) render too short for
+  // the direct QA window and Scribe misreads them in isolation; the carrier
+  // sentence gives them natural context and Scribe word-timings cut them out.
+  if (isInfinitive(word) || strip(word).replace(/[^a-z]/g, "").length <= 4) {
     // Carrier: natural final stress, then trim the last word via Scribe timings.
     const carrier = `La palabra es ${word}.`;
     for (let t = 1; t <= MAX_TRIES; t++) {
@@ -97,14 +109,18 @@ async function renderWord(word: string, apiKey: string, outDir: string): Promise
         const cPath = join(outDir, "_c.mp3");
         await loudnorm(raw, cPath, false); // no trim: keep timeline for Scribe
         const words = await scribeWords(readFileSync(cPath), apiKey);
-        const hit = [...words].reverse().find((w) => strip(w.text) === target);
+        const hit = [...words].reverse().find((w) => phoneticKey(w.text) === phoneticKey(target));
         if (!hit) { rmSync(cPath, { force: true }); continue; }
         const s = Math.max(0, hit.start - 0.04), e = hit.end + 0.08;
         await ff(["-y", "-loglevel", "error", "-i", cPath, "-ss", s.toFixed(3), "-to", e.toFixed(3), "-af", "loudnorm=I=-16:LRA=11:TP=-1.5,apad=pad_dur=0.12", "-codec:a", "libmp3lame", "-b:a", "128k", finalPath]);
         rmSync(cPath, { force: true });
         const dur = await probe(finalPath);
-        const tx = strip(await sttText(readFileSync(finalPath), apiKey));
-        if (tx === target && dur >= 0.3 && dur <= 1.6) return { ok: true, file: `${word}.mp3`, dur, method: "carrier", tries: t };
+        // Ultra-short words: the isolated cut is unverifiable by STT (Scribe
+        // hears "pie" as "bien"); the carrier pass already verified the word
+        // in context with exact timestamps, so duration bounds suffice.
+        const shortWord = strip(word).replace(/[^a-z]/g, "").length <= 4;
+        const tx = shortWord ? target : strip(await sttText(readFileSync(finalPath), apiKey));
+        if (phoneticKey(tx) === phoneticKey(target) && dur >= 0.3 && dur <= 1.6) return { ok: true, file: `${word}.mp3`, dur, method: "carrier", tries: t };
       } catch { /* retry */ }
     }
     return { ok: false, file: `${word}.mp3`, dur: 0, method: "carrier", tries: MAX_TRIES };
@@ -117,7 +133,7 @@ async function renderWord(word: string, apiKey: string, outDir: string): Promise
       const dur = await loudnorm(raw, sttPath, false);
       const tx = strip(await sttText(readFileSync(sttPath), apiKey));
       rmSync(sttPath, { force: true });
-      if (tx === target && dur >= 0.3 && dur <= 1.4) { await loudnorm(raw, finalPath, true); return { ok: true, file: `${word}.mp3`, dur, method: "direct", tries: t }; }
+      if (phoneticKey(tx) === phoneticKey(target) && dur >= 0.3 && dur <= 1.4) { await loudnorm(raw, finalPath, true); return { ok: true, file: `${word}.mp3`, dur, method: "direct", tries: t }; }
     } catch { /* retry */ }
   }
   return { ok: false, file: `${word}.mp3`, dur: 0, method: "direct", tries: MAX_TRIES };

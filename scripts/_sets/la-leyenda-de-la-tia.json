@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "night",
-      "options": ["night", "door", "street", "hand"],
+      "options": [
+        "night",
+        "door",
+        "street",
+        "hand"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "Ya es de noche.",
         "targetWord": "noche",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e8c7836b0bfc5f7.mp3"
       }
     }
   },
@@ -23,15 +29,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "casa",
-      "options": ["casa", "silla", "taza", "puerta"],
+      "options": [
+        "casa",
+        "silla",
+        "taza",
+        "puerta"
+      ],
       "translation": "My family lives in a _____ with a garden.",
-      "optionTranslations": ["house", "chair", "cup", "door"],
+      "optionTranslations": [
+        "house",
+        "chair",
+        "cup",
+        "door"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "Mi familia vive en una casa con jardín.",
         "targetWord": "casa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/14d7000c69abab5e.mp3"
       }
     }
   },
@@ -42,13 +59,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "an aunt",
-      "options": ["an aunt", "a dog", "a book", "a tree"],
+      "options": [
+        "an aunt",
+        "a dog",
+        "a book",
+        "a tree"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "La voz de la tía es suave y misteriosa.",
         "targetWord": "tía",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3dc6d895f688e55b.mp3"
       }
     }
   },
@@ -59,13 +82,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to listen",
-      "options": ["to listen", "to run", "to cook", "to sell"],
+      "options": [
+        "to listen",
+        "to run",
+        "to cook",
+        "to sell"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "Mateo escucha con atención.",
         "targetWord": "escucha",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05cf46d04536eb99.mp3"
       }
     }
   },
@@ -76,15 +105,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "luz",
-      "options": ["luz", "sal", "miel", "piel"],
+      "options": [
+        "luz",
+        "sal",
+        "miel",
+        "piel"
+      ],
       "translation": "The room is dark; I need _____ to read.",
-      "optionTranslations": ["light", "salt", "honey", "skin"],
+      "optionTranslations": [
+        "light",
+        "salt",
+        "honey",
+        "skin"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "El cuarto está oscuro; necesito luz para leer.",
         "targetWord": "luz",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7b9a1b9ee4eed63.mp3"
       }
     }
   },
@@ -95,13 +135,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to smile",
-      "options": ["to smile", "to cry", "to fall", "to drive"],
+      "options": [
+        "to smile",
+        "to cry",
+        "to fall",
+        "to drive"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "La tía sonríe, pero no responde.",
         "targetWord": "sonríe",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c90e651e7904529.mp3"
       }
     }
   },
@@ -112,13 +158,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "beautiful",
-      "options": ["beautiful", "dirty", "slow", "cold"],
+      "options": [
+        "beautiful",
+        "dirty",
+        "slow",
+        "cold"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "Es hermoso y un poco extraño.",
         "targetWord": "hermoso",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/685920f721138e08.mp3"
       }
     }
   },
@@ -129,15 +181,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "madera",
-      "options": ["madera", "arena", "leche", "lana"],
+      "options": [
+        "madera",
+        "arena",
+        "leche",
+        "lana"
+      ],
       "translation": "The chair is not made of metal; it is made of _____.",
-      "optionTranslations": ["wood", "sand", "milk", "wool"],
+      "optionTranslations": [
+        "wood",
+        "sand",
+        "milk",
+        "wool"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "La silla no es de metal; es de madera.",
         "targetWord": "madera",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e438346cbff30cea.mp3"
       }
     }
   },
@@ -148,13 +211,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to take care of",
-      "options": ["to take care of", "to forget", "to throw", "to win"],
+      "options": [
+        "to take care of",
+        "to forget",
+        "to throw",
+        "to win"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "Cuida la casa.",
         "targetWord": "Cuida",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d582a7818a1e197.mp3"
       }
     }
   },
@@ -165,13 +234,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to look at",
-      "options": ["to look at", "to drink", "to close", "to send"],
+      "options": [
+        "to look at",
+        "to drink",
+        "to close",
+        "to send"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "Mateo mira el alebrije.",
         "targetWord": "mira",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/47654916d513d8f2.mp3"
       }
     }
   },
@@ -183,13 +258,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "together",
-      "options": ["together", "tired", "angry", "alone"],
+      "options": [
+        "together",
+        "tired",
+        "angry",
+        "alone"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "La familia está junta en la casa.",
         "targetWord": "junta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0036609c2334746e.mp3"
       }
     }
   },
@@ -201,13 +282,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to know",
-      "options": ["to know", "to swim", "to paint", "to carry"],
+      "options": [
+        "to know",
+        "to swim",
+        "to paint",
+        "to carry"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "Nadie sabe qué es.",
         "targetWord": "sabe",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c925d1189da9075c.mp3"
       }
     }
   },
@@ -219,15 +306,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "mesa",
-      "options": ["mesa", "cama", "calle", "luna"],
+      "options": [
+        "mesa",
+        "cama",
+        "calle",
+        "luna"
+      ],
       "translation": "We put the plates on the _____ to eat.",
-      "optionTranslations": ["table", "bed", "street", "moon"],
+      "optionTranslations": [
+        "table",
+        "bed",
+        "street",
+        "moon"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "Ponemos los platos en la mesa para comer.",
         "targetWord": "mesa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c0349b87760d1a4.mp3"
       }
     }
   },
@@ -239,13 +337,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to seem",
-      "options": ["to seem", "to shout", "to dance", "to pay"],
+      "options": [
+        "to seem",
+        "to shout",
+        "to dance",
+        "to pay"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "Esta noche, en Oaxaca, todo parece posible.",
         "targetWord": "parece",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/831d35b6beaf009e.mp3"
       }
     }
   },
@@ -257,15 +361,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "montañas",
-      "options": ["montañas", "ventanas", "naranjas", "cucharas"],
+      "options": [
+        "montañas",
+        "ventanas",
+        "naranjas",
+        "cucharas"
+      ],
       "translation": "The Andes are very tall _____.",
-      "optionTranslations": ["mountains", "windows", "oranges", "spoons"],
+      "optionTranslations": [
+        "mountains",
+        "windows",
+        "oranges",
+        "spoons"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "Los Andes son montañas muy altas.",
         "targetWord": "montañas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7d37fc22bbda8341.mp3"
       }
     }
   },
@@ -277,13 +392,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "this",
-      "options": ["this", "nothing", "something", "each"],
+      "options": [
+        "this",
+        "nothing",
+        "something",
+        "each"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "Este alebrije es mágico.",
         "targetWord": "Este",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dbc8a4fedae94e53.mp3"
       }
     }
   },
@@ -295,13 +416,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "ancient",
-      "options": ["ancient", "new", "round", "soft"],
+      "options": [
+        "ancient",
+        "new",
+        "round",
+        "soft"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "La tía Rosa cuenta una leyenda antigua.",
         "targetWord": "antigua",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb81cb376038fdcc.mp3"
       }
     }
   },
@@ -313,15 +440,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "responde",
-      "options": ["responde", "corre", "duerme", "llora"],
+      "options": [
+        "responde",
+        "corre",
+        "duerme",
+        "llora"
+      ],
       "translation": "The teacher asks and the boy _____.",
-      "optionTranslations": ["answers", "runs", "sleeps", "cries"],
+      "optionTranslations": [
+        "answers",
+        "runs",
+        "sleeps",
+        "cries"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "La maestra pregunta y el niño responde.",
         "targetWord": "responde",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/35a1ce1cdd8efbac.mp3"
       }
     }
   },
@@ -333,15 +471,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "extraño",
-      "options": ["extraño", "alto", "limpio", "lento"],
+      "options": [
+        "extraño",
+        "alto",
+        "limpio",
+        "lento"
+      ],
       "translation": "That animal has three eyes! It is very _____.",
-      "optionTranslations": ["strange", "tall", "clean", "slow"],
+      "optionTranslations": [
+        "strange",
+        "tall",
+        "clean",
+        "slow"
+      ],
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",
         "storySource": "user",
         "sentence": "¡Ese animal tiene tres ojos! Es muy extraño.",
         "targetWord": "extraño",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34164eabb4389dce.mp3"
       }
     }
   },
@@ -353,10 +502,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "nadie", "answer": "nobody", "options": ["nobody", "someone", "everything", "only"] },
-        { "word": "alguien", "answer": "someone", "options": ["nobody", "someone", "everything", "only"] },
-        { "word": "todo", "answer": "everything", "options": ["nobody", "someone", "everything", "only"] },
-        { "word": "solo", "answer": "only", "options": ["nobody", "someone", "everything", "only"] }
+        {
+          "word": "nadie",
+          "answer": "nobody",
+          "options": [
+            "nobody",
+            "someone",
+            "everything",
+            "only"
+          ]
+        },
+        {
+          "word": "alguien",
+          "answer": "someone",
+          "options": [
+            "nobody",
+            "someone",
+            "everything",
+            "only"
+          ]
+        },
+        {
+          "word": "todo",
+          "answer": "everything",
+          "options": [
+            "nobody",
+            "someone",
+            "everything",
+            "only"
+          ]
+        },
+        {
+          "word": "solo",
+          "answer": "only",
+          "options": [
+            "nobody",
+            "someone",
+            "everything",
+            "only"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -369,8 +554,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "cuenta",
-      "options": ["cuenta", "canta", "corta", "cuesta"],
-      "optionTranslations": ["tells", "sings", "cuts", "costs"],
+      "options": [
+        "cuenta",
+        "canta",
+        "corta",
+        "cuesta"
+      ],
+      "optionTranslations": [
+        "tells",
+        "sings",
+        "cuts",
+        "costs"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "la-leyenda-de-la-tia",

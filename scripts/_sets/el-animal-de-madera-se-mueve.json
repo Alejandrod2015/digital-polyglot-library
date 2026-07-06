@@ -6,7 +6,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the origin",
-      "options": ["the origin", "the name", "the price", "the size"],
+      "options": [
+        "the origin",
+        "the name",
+        "the price",
+        "the size"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -23,7 +28,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a rock",
-      "options": ["a rock", "a tree", "a star", "a cloud"],
+      "options": [
+        "a rock",
+        "a tree",
+        "a star",
+        "a cloud"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -40,7 +50,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "an opening",
-      "options": ["an opening", "a ladder", "a shadow", "a corner"],
+      "options": [
+        "an opening",
+        "a ladder",
+        "a shadow",
+        "a corner"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -57,7 +72,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to go in",
-      "options": ["to go in", "to fly", "to break", "to shine"],
+      "options": [
+        "to go in",
+        "to fly",
+        "to break",
+        "to shine"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -74,7 +94,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to go out",
-      "options": ["to go out", "to sleep", "to grow", "to wait"],
+      "options": [
+        "to go out",
+        "to sleep",
+        "to grow",
+        "to wait"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -91,7 +116,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "strength",
-      "options": ["strength", "speed", "silence", "heat"],
+      "options": [
+        "strength",
+        "speed",
+        "silence",
+        "heat"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -108,7 +138,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to get closer",
-      "options": ["to get closer", "to run away", "to sit down", "to wake up"],
+      "options": [
+        "to get closer",
+        "to run away",
+        "to sit down",
+        "to wake up"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -125,9 +160,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "hueco",
-      "options": ["hueco", "huevo", "plato", "libro"],
+      "options": [
+        "hueco",
+        "huevo",
+        "plato",
+        "libro"
+      ],
       "translation": "The mouse goes in through a _____ in the wall.",
-      "optionTranslations": ["hole", "egg", "plate", "book"],
+      "optionTranslations": [
+        "hole",
+        "egg",
+        "plate",
+        "book"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -144,9 +189,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "cuidado",
-      "options": ["cuidado", "azúcar", "papel", "vidrio"],
+      "options": [
+        "cuidado",
+        "azúcar",
+        "papel",
+        "vidrio"
+      ],
       "translation": "The floor is wet; walk with _____.",
-      "optionTranslations": ["care", "sugar", "paper", "glass"],
+      "optionTranslations": [
+        "care",
+        "sugar",
+        "paper",
+        "glass"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -163,9 +218,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "ruido",
-      "options": ["ruido", "arroz", "hielo", "jugo"],
+      "options": [
+        "ruido",
+        "arroz",
+        "hielo",
+        "jugo"
+      ],
       "translation": "The neighbors make a lot of _____ and I can't sleep.",
-      "optionTranslations": ["noise", "rice", "ice", "juice"],
+      "optionTranslations": [
+        "noise",
+        "rice",
+        "ice",
+        "juice"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -183,7 +248,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "day",
-      "options": ["day", "night", "week", "month"],
+      "options": [
+        "day",
+        "night",
+        "week",
+        "month"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -201,7 +271,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a stone",
-      "options": ["a stone", "a flower", "a box", "a bell"],
+      "options": [
+        "a stone",
+        "a flower",
+        "a box",
+        "a bell"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -219,7 +294,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a secret",
-      "options": ["a secret", "a party", "a garden", "a letter"],
+      "options": [
+        "a secret",
+        "a party",
+        "a garden",
+        "a letter"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -237,9 +317,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "permiso",
-      "options": ["permiso", "zapato", "mercado", "pasillo"],
+      "options": [
+        "permiso",
+        "zapato",
+        "mercado",
+        "pasillo"
+      ],
       "translation": "May I go out? I need the teacher's _____.",
-      "optionTranslations": ["permission", "shoe", "market", "hallway"],
+      "optionTranslations": [
+        "permission",
+        "shoe",
+        "market",
+        "hallway"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -257,9 +347,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "plantas",
-      "options": ["plantas", "ventanas", "cucharas", "camisas"],
+      "options": [
+        "plantas",
+        "ventanas",
+        "cucharas",
+        "camisas"
+      ],
       "translation": "I water the _____ in the garden every morning.",
-      "optionTranslations": ["plants", "windows", "spoons", "shirts"],
+      "optionTranslations": [
+        "plants",
+        "windows",
+        "spoons",
+        "shirts"
+      ],
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",
         "storySource": "user",
@@ -277,10 +377,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "sol", "answer": "sun", "options": ["sun", "grandmother", "air", "path"] },
-        { "word": "abuela", "answer": "grandmother", "options": ["sun", "grandmother", "air", "path"] },
-        { "word": "aire", "answer": "air", "options": ["sun", "grandmother", "air", "path"] },
-        { "word": "camino", "answer": "path", "options": ["sun", "grandmother", "air", "path"] }
+        {
+          "word": "sol",
+          "answer": "sun",
+          "options": [
+            "sun",
+            "grandmother",
+            "air",
+            "path"
+          ]
+        },
+        {
+          "word": "abuela",
+          "answer": "grandmother",
+          "options": [
+            "sun",
+            "grandmother",
+            "air",
+            "path"
+          ]
+        },
+        {
+          "word": "aire",
+          "answer": "air",
+          "options": [
+            "sun",
+            "grandmother",
+            "air",
+            "path"
+          ]
+        },
+        {
+          "word": "camino",
+          "answer": "path",
+          "options": [
+            "sun",
+            "grandmother",
+            "air",
+            "path"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -293,8 +429,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "molestamos",
-      "options": ["molestamos", "ayudamos", "esperamos", "buscamos"],
-      "optionTranslations": ["we bother", "we help", "we wait for", "we look for"],
+      "options": [
+        "molestamos",
+        "ayudamos",
+        "esperamos",
+        "buscamos"
+      ],
+      "optionTranslations": [
+        "we bother",
+        "we help",
+        "we wait for",
+        "we look for"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "el-animal-de-madera-se-mueve",

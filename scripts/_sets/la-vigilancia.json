@@ -156,7 +156,8 @@
         "storySource": "user",
         "sentence": "El bebé duerme; calla un poco, por favor.",
         "targetWord": "calla",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4e89941e6ef06af2.mp3"
       }
     }
   },

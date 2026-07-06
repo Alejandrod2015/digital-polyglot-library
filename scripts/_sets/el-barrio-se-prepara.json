@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to hang",
-      "options": ["to hang", "to paint", "to break", "to carry"],
+      "options": [
+        "to hang",
+        "to paint",
+        "to break",
+        "to carry"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
         "sentence": "Andrés cuelga el último farol.",
         "targetWord": "cuelga",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4dab57aa73a21b4c.mp3"
       }
     }
   },
@@ -23,13 +29,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a birthday",
-      "options": ["a birthday", "a wedding", "a meeting", "a trip"],
+      "options": [
+        "a birthday",
+        "a wedding",
+        "a meeting",
+        "a trip"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
         "sentence": "Hoy el barrio prepara el cumpleaños de doña Rosa.",
         "targetWord": "cumpleaños",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/67ce3d7db6227920.mp3"
       }
     }
   },
@@ -40,13 +52,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to take care of",
-      "options": ["to take care of", "to forget", "to visit", "to pay"],
+      "options": [
+        "to take care of",
+        "to forget",
+        "to visit",
+        "to pay"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
         "sentence": "Ella cuidó a medio barrio cuando éramos niños.",
         "targetWord": "cuidó",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f05b07bf1a5f587.mp3"
       }
     }
   },
@@ -57,13 +75,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to decorate",
-      "options": ["to decorate", "to clean", "to sell", "to hide"],
+      "options": [
+        "to decorate",
+        "to clean",
+        "to sell",
+        "to hide"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
         "sentence": "Por eso adornamos todo con cariño.",
         "targetWord": "adornamos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0ba7c93c3d02ec1f.mp3"
       }
     }
   },
@@ -74,13 +98,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "beloved",
-      "options": ["beloved", "angry", "busy", "shy"],
+      "options": [
+        "beloved",
+        "angry",
+        "busy",
+        "shy"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
         "sentence": "Es muy querida acá.",
         "targetWord": "querida",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96d1e5a3e89250e3.mp3"
       }
     }
   },
@@ -91,15 +121,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "calor",
-      "options": ["calor", "frío", "hielo", "ruido"],
+      "options": [
+        "calor",
+        "frío",
+        "hielo",
+        "ruido"
+      ],
       "translation": "In the desert there is a lot of _____ and little water.",
-      "optionTranslations": ["heat", "cold", "ice", "noise"],
+      "optionTranslations": [
+        "heat",
+        "cold",
+        "ice",
+        "noise"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
         "sentence": "En el desierto hay mucho calor y poca agua.",
         "targetWord": "calor",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/391cd8b65f3d215b.mp3"
       }
     }
   },
@@ -110,13 +151,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "almost done",
-      "options": ["almost done", "too late", "very easy", "all wrong"],
+      "options": [
+        "almost done",
+        "too late",
+        "very easy",
+        "all wrong"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
         "sentence": "Lo sé, pero falta poco.",
         "targetWord": "falta poco",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bd0d5786eb6e6d8b.mp3"
       }
     }
   },
@@ -127,13 +174,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "boring",
-      "options": ["boring", "dangerous", "easy", "new"],
+      "options": [
+        "boring",
+        "dangerous",
+        "easy",
+        "new"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
         "sentence": "Esto no es un trabajo aburrido.",
         "targetWord": "aburrido",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d6385cbbdc6ff55.mp3"
       }
     }
   },
@@ -144,15 +197,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "vecina",
-      "options": ["vecina", "prima", "tía", "hija"],
+      "options": [
+        "vecina",
+        "prima",
+        "tía",
+        "hija"
+      ],
       "translation": "She is not from my family, but she lives next door: she is my _____.",
-      "optionTranslations": ["neighbor", "cousin", "aunt", "daughter"],
+      "optionTranslations": [
+        "neighbor",
+        "cousin",
+        "aunt",
+        "daughter"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
         "sentence": "No es de mi familia, pero vive al lado: es mi vecina.",
         "targetWord": "vecina",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5df512538ab3f513.mp3"
       }
     }
   },
@@ -163,10 +227,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "patio", "answer": "yard", "options": ["yard", "balloon", "flag", "lantern"] },
-        { "word": "globo", "answer": "balloon", "options": ["yard", "balloon", "flag", "lantern"] },
-        { "word": "bandera", "answer": "flag", "options": ["yard", "balloon", "flag", "lantern"] },
-        { "word": "farol", "answer": "lantern", "options": ["yard", "balloon", "flag", "lantern"] }
+        {
+          "word": "patio",
+          "answer": "yard",
+          "options": [
+            "yard",
+            "balloon",
+            "flag",
+            "lantern"
+          ]
+        },
+        {
+          "word": "globo",
+          "answer": "balloon",
+          "options": [
+            "yard",
+            "balloon",
+            "flag",
+            "lantern"
+          ]
+        },
+        {
+          "word": "bandera",
+          "answer": "flag",
+          "options": [
+            "yard",
+            "balloon",
+            "flag",
+            "lantern"
+          ]
+        },
+        {
+          "word": "farol",
+          "answer": "lantern",
+          "options": [
+            "yard",
+            "balloon",
+            "flag",
+            "lantern"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -179,13 +279,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a ribbon",
-      "options": ["a ribbon", "a bucket", "a broom", "a nail"],
+      "options": [
+        "a ribbon",
+        "a bucket",
+        "a broom",
+        "a nail"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
         "sentence": "Andrés cuelga unas cintas de colores.",
         "targetWord": "cintas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5abcccba00881488.mp3"
       }
     }
   },
@@ -197,15 +303,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "barre",
-      "options": ["barre", "lava", "pinta", "corta"],
+      "options": [
+        "barre",
+        "lava",
+        "pinta",
+        "corta"
+      ],
       "translation": "After the party, she _____ the floor with the broom.",
-      "optionTranslations": ["sweeps", "washes", "paints", "cuts"],
+      "optionTranslations": [
+        "sweeps",
+        "washes",
+        "paints",
+        "cuts"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
         "sentence": "Después de la fiesta, ella barre el piso con la escoba.",
         "targetWord": "barre",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e8edbf68e397925.mp3"
       }
     }
   },
@@ -217,13 +334,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to have no clue",
-      "options": ["to have no clue", "to be certain", "to agree", "to complain"],
+      "options": [
+        "to have no clue",
+        "to be certain",
+        "to agree",
+        "to complain"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
         "sentence": "No tenía idea. Pensé que era una vecina más.",
         "targetWord": "No tenía idea",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ced5237dbde0f272.mp3"
       }
     }
   },
@@ -235,15 +358,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "flores",
-      "options": ["flores", "piedras", "camisas", "sillas"],
+      "options": [
+        "flores",
+        "piedras",
+        "camisas",
+        "sillas"
+      ],
       "translation": "I cut some _____ from the garden and put them in water.",
-      "optionTranslations": ["flowers", "stones", "shirts", "chairs"],
+      "optionTranslations": [
+        "flowers",
+        "stones",
+        "shirts",
+        "chairs"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
         "sentence": "Corto unas flores del jardín y las pongo en agua.",
         "targetWord": "flores",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/860597a809691e08.mp3"
       }
     }
   },
@@ -255,7 +389,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "affection",
-      "options": ["affection", "anger", "fear", "hurry"],
+      "options": [
+        "affection",
+        "anger",
+        "fear",
+        "hurry"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
@@ -273,9 +412,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "luces",
-      "options": ["luces", "voces", "nubes", "llaves"],
+      "options": [
+        "luces",
+        "voces",
+        "nubes",
+        "llaves"
+      ],
       "translation": "At night we turn on the _____ to see well.",
-      "optionTranslations": ["lights", "voices", "clouds", "keys"],
+      "optionTranslations": [
+        "lights",
+        "voices",
+        "clouds",
+        "keys"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
@@ -293,7 +442,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to arrange",
-      "options": ["to arrange", "to throw", "to buy", "to count"],
+      "options": [
+        "to arrange",
+        "to throw",
+        "to buy",
+        "to count"
+      ],
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",
         "storySource": "user",
@@ -311,8 +465,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "cansada",
-      "options": ["cansada", "casada", "enojada", "sentada"],
-      "optionTranslations": ["tired", "married", "angry", "seated"],
+      "options": [
+        "cansada",
+        "casada",
+        "enojada",
+        "sentada"
+      ],
+      "optionTranslations": [
+        "tired",
+        "married",
+        "angry",
+        "seated"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "el-barrio-se-prepara",

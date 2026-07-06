@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to rain",
-      "options": ["to rain", "to dance", "to read", "to pay"],
+      "options": [
+        "to rain",
+        "to dance",
+        "to read",
+        "to pay"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "Empieza a llover.",
         "targetWord": "llover",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2bc5b38b4a70f174.mp3"
       }
     }
   },
@@ -23,15 +29,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "frío",
-      "options": ["frío", "calor", "hambre", "sueño"],
+      "options": [
+        "frío",
+        "calor",
+        "hambre",
+        "sueño"
+      ],
       "translation": "I feel _____; I need a sweater.",
-      "optionTranslations": ["cold", "heat", "hunger", "sleepiness"],
+      "optionTranslations": [
+        "cold",
+        "heat",
+        "hunger",
+        "sleepiness"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "Tengo frío; necesito un suéter.",
         "targetWord": "frío",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a21b0e6a896d8efe.mp3"
       }
     }
   },
@@ -42,13 +59,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a cloud",
-      "options": ["a cloud", "a table", "a shoe", "a river"],
+      "options": [
+        "a cloud",
+        "a table",
+        "a shoe",
+        "a river"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "Hay nubes grises.",
         "targetWord": "nubes",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ee91b09ecda3a7b.mp3"
       }
     }
   },
@@ -59,13 +82,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "rain",
-      "options": ["rain", "snow", "sand", "smoke"],
+      "options": [
+        "rain",
+        "snow",
+        "sand",
+        "smoke"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "Valentina escucha la lluvia sobre la roca.",
         "targetWord": "lluvia",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6b5583a64a00e5c6.mp3"
       }
     }
   },
@@ -76,15 +105,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "miedo",
-      "options": ["miedo", "sed", "prisa", "suerte"],
+      "options": [
+        "miedo",
+        "sed",
+        "prisa",
+        "suerte"
+      ],
       "translation": "I see a big spider and I feel _____.",
-      "optionTranslations": ["fear", "thirst", "hurry", "luck"],
+      "optionTranslations": [
+        "fear",
+        "thirst",
+        "hurry",
+        "luck"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "Veo una araña grande y tengo miedo.",
         "targetWord": "miedo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c27e2d22b3a95992.mp3"
       }
     }
   },
@@ -95,13 +135,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to wait",
-      "options": ["to wait", "to shout", "to sell", "to drive"],
+      "options": [
+        "to wait",
+        "to shout",
+        "to sell",
+        "to drive"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "Esperan, juntos, mientras la lluvia cae fuerte.",
         "targetWord": "Esperan",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f1de23c5dee67c85.mp3"
       }
     }
   },
@@ -112,13 +158,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a rainbow",
-      "options": ["a rainbow", "a storm", "a bridge", "a mirror"],
+      "options": [
+        "a rainbow",
+        "a storm",
+        "a bridge",
+        "a mirror"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "¡Hay un arcoíris enorme sobre el lago!",
         "targetWord": "arcoíris",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/608ef62b582bf112.mp3"
       }
     }
   },
@@ -129,13 +181,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to fall",
-      "options": ["to fall", "to climb", "to shine", "to count"],
+      "options": [
+        "to fall",
+        "to climb",
+        "to shine",
+        "to count"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "La lluvia cae fuerte.",
         "targetWord": "cae",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c83537705d71ab3.mp3"
       }
     }
   },
@@ -146,13 +204,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the sky",
-      "options": ["the sky", "the floor", "the door", "the bread"],
+      "options": [
+        "the sky",
+        "the floor",
+        "the door",
+        "the bread"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "El cielo se abre.",
         "targetWord": "cielo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/14d5c3583bdda346.mp3"
       }
     }
   },
@@ -163,15 +227,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "regalo",
-      "options": ["regalo", "plato", "zapato", "tomate"],
+      "options": [
+        "regalo",
+        "plato",
+        "zapato",
+        "tomate"
+      ],
       "translation": "It is my birthday and I receive a _____.",
-      "optionTranslations": ["gift", "plate", "shoe", "tomato"],
+      "optionTranslations": [
+        "gift",
+        "plate",
+        "shoe",
+        "tomato"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "Es mi cumpleaños y recibo un regalo.",
         "targetWord": "regalo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d7385d147025599.mp3"
       }
     }
   },
@@ -183,13 +258,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to walk",
-      "options": ["to walk", "to swim", "to cook", "to pay"],
+      "options": [
+        "to walk",
+        "to swim",
+        "to cook",
+        "to pay"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "Valentina y su papá caminan cerca de un lago.",
         "targetWord": "caminan",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/18c0010727b97855.mp3"
       }
     }
   },
@@ -201,13 +282,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "gray",
-      "options": ["gray", "yellow", "tall", "clean"],
+      "options": [
+        "gray",
+        "yellow",
+        "tall",
+        "clean"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "Hay nubes grises y mucho viento.",
         "targetWord": "grises",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/502fbf54ff077cc4.mp3"
       }
     }
   },
@@ -219,15 +306,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "viento",
-      "options": ["viento", "dinero", "papel", "zapato"],
+      "options": [
+        "viento",
+        "dinero",
+        "papel",
+        "zapato"
+      ],
       "translation": "The _____ moves the leaves of the trees.",
-      "optionTranslations": ["wind", "money", "paper", "shoe"],
+      "optionTranslations": [
+        "wind",
+        "money",
+        "paper",
+        "shoe"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "El viento mueve las hojas de los árboles.",
         "targetWord": "viento",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/56701c642301193c.mp3"
       }
     }
   },
@@ -239,15 +337,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "buscamos",
-      "options": ["buscamos", "cantamos", "lavamos", "pintamos"],
+      "options": [
+        "buscamos",
+        "cantamos",
+        "lavamos",
+        "pintamos"
+      ],
       "translation": "We can't find the keys; we _____ for them all over the house.",
-      "optionTranslations": ["we look", "we sing", "we wash", "we paint"],
+      "optionTranslations": [
+        "we look",
+        "we sing",
+        "we wash",
+        "we paint"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "No encontramos las llaves; las buscamos por toda la casa.",
         "targetWord": "buscamos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/24119329edbb6c89.mp3"
       }
     }
   },
@@ -259,13 +368,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a rock",
-      "options": ["a rock", "a bed", "a leaf", "a cup"],
+      "options": [
+        "a rock",
+        "a bed",
+        "a leaf",
+        "a cup"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "Buscan refugio bajo una roca grande.",
         "targetWord": "roca",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b103cea71d078e6b.mp3"
       }
     }
   },
@@ -277,13 +392,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to stop",
-      "options": ["to stop", "to begin", "to grow", "to send"],
+      "options": [
+        "to stop",
+        "to begin",
+        "to grow",
+        "to send"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "Después de poco, la lluvia para.",
         "targetWord": "para",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fd11241b08bb1a94.mp3"
       }
     }
   },
@@ -295,13 +416,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to look at",
-      "options": ["to look at", "to carry", "to push", "to win"],
+      "options": [
+        "to look at",
+        "to carry",
+        "to push",
+        "to win"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "Solo mira.",
         "targetWord": "mira",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f64af423dafda41.mp3"
       }
     }
   },
@@ -313,13 +440,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "beautiful",
-      "options": ["beautiful", "boring", "dirty", "new"],
+      "options": [
+        "beautiful",
+        "boring",
+        "dirty",
+        "new"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "A veces, lo más hermoso llega después de la lluvia.",
         "targetWord": "hermoso",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/70f04f4e39c719ab.mp3"
       }
     }
   },
@@ -331,15 +464,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "día",
-      "options": ["día", "año", "pie", "té"],
+      "options": [
+        "día",
+        "año",
+        "pie",
+        "té"
+      ],
       "translation": "Today is a beautiful _____; there is a lot of sun.",
-      "optionTranslations": ["day", "year", "foot", "tea"],
+      "optionTranslations": [
+        "day",
+        "year",
+        "foot",
+        "tea"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "Hoy es un día bonito; hay mucho sol.",
         "targetWord": "día",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/31df88d3e25dc9d5.mp3"
       }
     }
   },
@@ -351,15 +495,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "lago",
-      "options": ["lago", "gato", "pelo", "dedo"],
+      "options": [
+        "lago",
+        "gato",
+        "pelo",
+        "dedo"
+      ],
       "translation": "We swim in the _____ near the mountain.",
-      "optionTranslations": ["lake", "cat", "hair", "finger"],
+      "optionTranslations": [
+        "lake",
+        "cat",
+        "hair",
+        "finger"
+      ],
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",
         "storySource": "user",
         "sentence": "Nadamos en el lago cerca de la montaña.",
         "targetWord": "lago",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e029c3032e5cd8d2.mp3"
       }
     }
   },
@@ -371,10 +526,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "cerca", "answer": "near", "options": ["near", "after", "together", "difficult"] },
-        { "word": "después", "answer": "after", "options": ["near", "after", "together", "difficult"] },
-        { "word": "juntos", "answer": "together", "options": ["near", "after", "together", "difficult"] },
-        { "word": "difícil", "answer": "difficult", "options": ["near", "after", "together", "difficult"] }
+        {
+          "word": "cerca",
+          "answer": "near",
+          "options": [
+            "near",
+            "after",
+            "together",
+            "difficult"
+          ]
+        },
+        {
+          "word": "después",
+          "answer": "after",
+          "options": [
+            "near",
+            "after",
+            "together",
+            "difficult"
+          ]
+        },
+        {
+          "word": "juntos",
+          "answer": "together",
+          "options": [
+            "near",
+            "after",
+            "together",
+            "difficult"
+          ]
+        },
+        {
+          "word": "difícil",
+          "answer": "difficult",
+          "options": [
+            "near",
+            "after",
+            "together",
+            "difficult"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -387,8 +578,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "cambia",
-      "options": ["cambia", "limpia", "copia", "estudia"],
-      "optionTranslations": ["changes", "cleans", "copies", "studies"],
+      "options": [
+        "cambia",
+        "limpia",
+        "copia",
+        "estudia"
+      ],
+      "optionTranslations": [
+        "changes",
+        "cleans",
+        "copies",
+        "studies"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "cuando-llega-la-lluvia",

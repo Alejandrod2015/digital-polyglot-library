@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to be",
-      "options": ["to be", "to want", "to run", "to sing"],
+      "options": [
+        "to be",
+        "to want",
+        "to run",
+        "to sing"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "Está en la plaza central con un mapa grande.",
         "targetWord": "Está",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b7b947cbf471822.mp3"
       }
     }
   },
@@ -23,15 +29,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "perdida",
-      "options": ["perdida", "cansada", "sentada", "mojada"],
+      "options": [
+        "perdida",
+        "cansada",
+        "sentada",
+        "mojada"
+      ],
       "translation": "María cannot find her house; she is _____.",
-      "optionTranslations": ["lost", "tired", "seated", "wet"],
+      "optionTranslations": [
+        "lost",
+        "tired",
+        "seated",
+        "wet"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "María no encuentra su casa; está perdida.",
         "targetWord": "perdida",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cea2531cff1cd7c8.mp3"
       }
     }
   },
@@ -42,13 +59,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "where",
-      "options": ["where", "when", "who", "why"],
+      "options": [
+        "where",
+        "when",
+        "who",
+        "why"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "¿Dónde está mi hotel?",
         "targetWord": "Dónde",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8334cd49959759b3.mp3"
       }
     }
   },
@@ -59,15 +82,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "hombre",
-      "options": ["hombre", "gato", "libro", "carro"],
+      "options": [
+        "hombre",
+        "gato",
+        "libro",
+        "carro"
+      ],
       "translation": "My dad is a tall _____.",
-      "optionTranslations": ["man", "cat", "book", "car"],
+      "optionTranslations": [
+        "man",
+        "cat",
+        "book",
+        "car"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "Mi papá es un hombre alto.",
         "targetWord": "hombre",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a6476919c51cd69.mp3"
       }
     }
   },
@@ -78,13 +112,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to ask",
-      "options": ["to ask", "to sell", "to sleep", "to drive"],
+      "options": [
+        "to ask",
+        "to sell",
+        "to sleep",
+        "to drive"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "Un hombre con una sonrisa pregunta.",
         "targetWord": "pregunta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eea4605843fa640e.mp3"
       }
     }
   },
@@ -95,15 +135,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "ayuda",
-      "options": ["ayuda", "agua", "fruta", "ropa"],
+      "options": [
+        "ayuda",
+        "agua",
+        "fruta",
+        "ropa"
+      ],
       "translation": "I cannot open the door; I need _____.",
-      "optionTranslations": ["help", "water", "fruit", "clothes"],
+      "optionTranslations": [
+        "help",
+        "water",
+        "fruit",
+        "clothes"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "No puedo abrir la puerta; necesito ayuda.",
         "targetWord": "ayuda",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c456c1f097d21469.mp3"
       }
     }
   },
@@ -114,13 +165,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "his name is",
-      "options": ["his name is", "he gets up", "he leaves", "he arrives"],
+      "options": [
+        "his name is",
+        "he gets up",
+        "he leaves",
+        "he arrives"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "Se llama Julio.",
         "targetWord": "Se llama",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d15c7f4d661d6ab4.mp3"
       }
     }
   },
@@ -131,15 +188,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "esquina",
-      "options": ["esquina", "piscina", "cocina", "oficina"],
+      "options": [
+        "esquina",
+        "piscina",
+        "cocina",
+        "oficina"
+      ],
       "translation": "The store is on the _____ of the street.",
-      "optionTranslations": ["corner", "pool", "kitchen", "office"],
+      "optionTranslations": [
+        "corner",
+        "pool",
+        "kitchen",
+        "office"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "La tienda está en la esquina de la calle.",
         "targetWord": "esquina",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/71356d2d8be56b09.mp3"
       }
     }
   },
@@ -150,13 +218,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to look at",
-      "options": ["to look at", "to hold", "to wash", "to hear"],
+      "options": [
+        "to look at",
+        "to hold",
+        "to wash",
+        "to hear"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "Julio mira el mapa.",
         "targetWord": "mira",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6b495ca6fc3af621.mp3"
       }
     }
   },
@@ -167,13 +241,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to think",
-      "options": ["to think", "to jump", "to cook", "to swim"],
+      "options": [
+        "to think",
+        "to jump",
+        "to cook",
+        "to swim"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "Elena piensa: A veces la solución es simple.",
         "targetWord": "piensa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f1e61d0c903628b.mp3"
       }
     }
   },
@@ -185,15 +265,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "grande",
-      "options": ["grande", "triste", "verde", "feliz"],
+      "options": [
+        "grande",
+        "triste",
+        "verde",
+        "feliz"
+      ],
       "translation": "The elephant is _____; the mouse is small.",
-      "optionTranslations": ["big", "sad", "green", "happy"],
+      "optionTranslations": [
+        "big",
+        "sad",
+        "green",
+        "happy"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "El elefante es grande; el ratón es pequeño.",
         "targetWord": "grande",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6922ecc3353f46db.mp3"
       }
     }
   },
@@ -205,13 +296,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to laugh",
-      "options": ["to laugh", "to sleep", "to walk", "to drink"],
+      "options": [
+        "to laugh",
+        "to sleep",
+        "to walk",
+        "to drink"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "Julio ríe un poco.",
         "targetWord": "ríe",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9699d9c7c70598de.mp3"
       }
     }
   },
@@ -223,15 +320,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "sonrisa",
-      "options": ["sonrisa", "camisa", "mesa", "casa"],
+      "options": [
+        "sonrisa",
+        "camisa",
+        "mesa",
+        "casa"
+      ],
       "translation": "The baby is happy and has a big _____.",
-      "optionTranslations": ["smile", "shirt", "table", "house"],
+      "optionTranslations": [
+        "smile",
+        "shirt",
+        "table",
+        "house"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "El bebé está feliz y tiene una gran sonrisa.",
         "targetWord": "sonrisa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95e90f9e11b5812a.mp3"
       }
     }
   },
@@ -243,13 +351,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to need",
-      "options": ["to need", "to give", "to open", "to hear"],
+      "options": [
+        "to need",
+        "to give",
+        "to open",
+        "to hear"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "¿Necesitas ayuda?",
         "targetWord": "Necesitas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0c621b3a2d77da7f.mp3"
       }
     }
   },
@@ -261,13 +375,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to begin",
-      "options": ["to begin", "to close", "to lose", "to send"],
+      "options": [
+        "to begin",
+        "to close",
+        "to lose",
+        "to send"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "Su aventura en Perú empieza con una persona amable.",
         "targetWord": "empieza",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d5ee2b22bfbcc7e7.mp3"
       }
     }
   },
@@ -279,15 +399,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "amable",
-      "options": ["amable", "enferma", "alta", "fría"],
+      "options": [
+        "amable",
+        "enferma",
+        "alta",
+        "fría"
+      ],
       "translation": "The teacher helps everyone; she is very _____.",
-      "optionTranslations": ["kind", "sick", "tall", "cold"],
+      "optionTranslations": [
+        "kind",
+        "sick",
+        "tall",
+        "cold"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "La profesora ayuda a todos; es muy amable.",
         "targetWord": "amable",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f61ba03f2325536.mp3"
       }
     }
   },
@@ -299,13 +430,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "says thank you",
-      "options": ["says thank you", "says goodbye", "asks a question", "opens the door"],
+      "options": [
+        "says thank you",
+        "says goodbye",
+        "asks a question",
+        "opens the door"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "Da las gracias a Julio.",
         "targetWord": "Da las gracias",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f14da61d16e9738.mp3"
       }
     }
   },
@@ -317,13 +454,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "welcome",
-      "options": ["welcome", "goodbye", "good luck", "good night"],
+      "options": [
+        "welcome",
+        "goodbye",
+        "good luck",
+        "good night"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "Julio dice: Bienvenida a Cusco.",
         "targetWord": "Bienvenida",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/de5388b57b7a1e31.mp3"
       }
     }
   },
@@ -335,13 +478,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to enter",
-      "options": ["to enter", "to leave", "to clean", "to paint"],
+      "options": [
+        "to enter",
+        "to leave",
+        "to clean",
+        "to paint"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "Elena entra a su hotel.",
         "targetWord": "entra",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/31dc3ff3c327e7b2.mp3"
       }
     }
   },
@@ -353,13 +502,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "nothing",
-      "options": ["nothing", "everything", "always", "someone"],
+      "options": [
+        "nothing",
+        "everything",
+        "always",
+        "someone"
+      ],
       "audioClip": {
         "storySlug": "el-mapa",
         "storySource": "user",
         "sentence": "Elena no comprende nada.",
         "targetWord": "nada",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/24cfaf46ff69d873.mp3"
       }
     }
   },
@@ -371,10 +526,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "aquí", "answer": "here", "options": ["here", "near", "far", "sometimes"] },
-        { "word": "cerca", "answer": "near", "options": ["here", "near", "far", "sometimes"] },
-        { "word": "lejos", "answer": "far", "options": ["here", "near", "far", "sometimes"] },
-        { "word": "a veces", "answer": "sometimes", "options": ["here", "near", "far", "sometimes"] }
+        {
+          "word": "aquí",
+          "answer": "here",
+          "options": [
+            "here",
+            "near",
+            "far",
+            "sometimes"
+          ]
+        },
+        {
+          "word": "cerca",
+          "answer": "near",
+          "options": [
+            "here",
+            "near",
+            "far",
+            "sometimes"
+          ]
+        },
+        {
+          "word": "lejos",
+          "answer": "far",
+          "options": [
+            "here",
+            "near",
+            "far",
+            "sometimes"
+          ]
+        },
+        {
+          "word": "a veces",
+          "answer": "sometimes",
+          "options": [
+            "here",
+            "near",
+            "far",
+            "sometimes"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -387,8 +578,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "vive",
-      "options": ["vive", "sube", "sabe", "cabe"],
-      "optionTranslations": ["lives", "goes up", "knows", "fits"],
+      "options": [
+        "vive",
+        "sube",
+        "sabe",
+        "cabe"
+      ],
+      "optionTranslations": [
+        "lives",
+        "goes up",
+        "knows",
+        "fits"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "el-mapa",

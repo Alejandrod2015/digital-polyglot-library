@@ -6,7 +6,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "night",
-      "options": ["night", "morning", "afternoon", "winter"],
+      "options": [
+        "night",
+        "morning",
+        "afternoon",
+        "winter"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -23,7 +28,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to light",
-      "options": ["to light", "to put out", "to clean", "to sell"],
+      "options": [
+        "to light",
+        "to put out",
+        "to clean",
+        "to sell"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -40,7 +50,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "fire",
-      "options": ["fire", "smoke", "snow", "sand"],
+      "options": [
+        "fire",
+        "smoke",
+        "snow",
+        "sand"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -57,7 +72,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a story",
-      "options": ["a story", "a song", "a game", "a recipe"],
+      "options": [
+        "a story",
+        "a song",
+        "a game",
+        "a recipe"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -74,7 +94,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the sky",
-      "options": ["the sky", "the sea", "the garden", "the roof"],
+      "options": [
+        "the sky",
+        "the sea",
+        "the garden",
+        "the roof"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -91,9 +116,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "fogata",
-      "options": ["fogata", "piscina", "tienda", "sombra"],
+      "options": [
+        "fogata",
+        "piscina",
+        "tienda",
+        "sombra"
+      ],
       "translation": "At the campsite we make a _____ to warm up.",
-      "optionTranslations": ["campfire", "pool", "tent", "shade"],
+      "optionTranslations": [
+        "campfire",
+        "pool",
+        "tent",
+        "shade"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -110,9 +145,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "estrellas",
-      "options": ["estrellas", "flores", "piedras", "mesas"],
+      "options": [
+        "estrellas",
+        "flores",
+        "piedras",
+        "mesas"
+      ],
       "translation": "At night, the sky fills with _____.",
-      "optionTranslations": ["stars", "flowers", "stones", "tables"],
+      "optionTranslations": [
+        "stars",
+        "flowers",
+        "stones",
+        "tables"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -129,9 +174,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "calor",
-      "options": ["calor", "frío", "hielo", "miedo"],
+      "options": [
+        "calor",
+        "frío",
+        "hielo",
+        "miedo"
+      ],
       "translation": "The midday sun gives a lot of _____.",
-      "optionTranslations": ["heat", "cold", "ice", "fear"],
+      "optionTranslations": [
+        "heat",
+        "cold",
+        "ice",
+        "fear"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -148,9 +203,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "felices",
-      "options": ["felices", "tristes", "solos", "lentos"],
+      "options": [
+        "felices",
+        "tristes",
+        "solos",
+        "lentos"
+      ],
       "translation": "We won the game and we are very _____.",
-      "optionTranslations": ["happy", "sad", "alone", "slow"],
+      "optionTranslations": [
+        "happy",
+        "sad",
+        "alone",
+        "slow"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -170,22 +235,42 @@
         {
           "word": "en serio",
           "answer": "seriously",
-          "options": ["seriously", "better", "a father", "peace"]
+          "options": [
+            "seriously",
+            "better",
+            "a father",
+            "peace"
+          ]
         },
         {
           "word": "mejor",
           "answer": "better",
-          "options": ["seriously", "better", "a father", "peace"]
+          "options": [
+            "seriously",
+            "better",
+            "a father",
+            "peace"
+          ]
         },
         {
           "word": "padre",
           "answer": "a father",
-          "options": ["seriously", "better", "a father", "peace"]
+          "options": [
+            "seriously",
+            "better",
+            "a father",
+            "peace"
+          ]
         },
         {
           "word": "paz",
           "answer": "peace",
-          "options": ["seriously", "better", "a father", "peace"]
+          "options": [
+            "seriously",
+            "better",
+            "a father",
+            "peace"
+          ]
         }
       ],
       "audioClip": null
@@ -199,7 +284,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to grow",
-      "options": ["to grow", "to shrink", "to stop", "to fall"],
+      "options": [
+        "to grow",
+        "to shrink",
+        "to stop",
+        "to fall"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -217,7 +307,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "wet",
-      "options": ["wet", "dry", "broken", "green"],
+      "options": [
+        "wet",
+        "dry",
+        "broken",
+        "green"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -235,7 +330,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to forget",
-      "options": ["to forget", "to repeat", "to count", "to choose"],
+      "options": [
+        "to forget",
+        "to repeat",
+        "to count",
+        "to choose"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -253,7 +353,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to come closer",
-      "options": ["to come closer", "to move away", "to stand up", "to stay quiet"],
+      "options": [
+        "to come closer",
+        "to move away",
+        "to stand up",
+        "to stay quiet"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -271,7 +376,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "delicious",
-      "options": ["delicious", "boring", "heavy", "dirty"],
+      "options": [
+        "delicious",
+        "boring",
+        "heavy",
+        "dirty"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -289,7 +399,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a lake",
-      "options": ["a lake", "a forest", "a river", "a bridge"],
+      "options": [
+        "a lake",
+        "a forest",
+        "a river",
+        "a bridge"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -307,9 +422,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "ciudad",
-      "options": ["ciudad", "granja", "playa", "isla"],
+      "options": [
+        "ciudad",
+        "granja",
+        "playa",
+        "isla"
+      ],
       "translation": "There is a lot of traffic and noise in the _____.",
-      "optionTranslations": ["city", "farm", "beach", "island"],
+      "optionTranslations": [
+        "city",
+        "farm",
+        "beach",
+        "island"
+      ],
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",
         "storySource": "user",
@@ -327,8 +452,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "leña",
-      "options": ["leña", "seña", "piña", "niña"],
-      "optionTranslations": ["firewood", "sign", "pineapple", "girl"],
+      "options": [
+        "leña",
+        "seña",
+        "piña",
+        "niña"
+      ],
+      "optionTranslations": [
+        "firewood",
+        "sign",
+        "pineapple",
+        "girl"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "nadie-quiere-dormir-todavia",

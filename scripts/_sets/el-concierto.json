@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to go",
-      "options": ["to go", "to eat", "to sleep", "to buy"],
+      "options": [
+        "to go",
+        "to eat",
+        "to sleep",
+        "to buy"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "Pablo va al parque.",
         "targetWord": "va",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/725e0c69235b7114.mp3"
       }
     }
   },
@@ -23,15 +29,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "gente",
-      "options": ["gente", "mesa", "sopa", "luna"],
+      "options": [
+        "gente",
+        "mesa",
+        "sopa",
+        "luna"
+      ],
       "translation": "The concert is popular; there are a lot of _____.",
-      "optionTranslations": ["people", "table", "soup", "moon"],
+      "optionTranslations": [
+        "people",
+        "table",
+        "soup",
+        "moon"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "El concierto es popular; hay mucha gente.",
         "targetWord": "gente",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8d87a503305aed8c.mp3"
       }
     }
   },
@@ -42,13 +59,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a friend",
-      "options": ["a friend", "a table", "a dog", "a book"],
+      "options": [
+        "a friend",
+        "a table",
+        "a dog",
+        "a book"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "Pero Marta lo presenta a sus amigos.",
         "targetWord": "amigos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c43c4dda14f6961.mp3"
       }
     }
   },
@@ -59,15 +82,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "sonrisa",
-      "options": ["sonrisa", "silla", "semana", "cuchara"],
+      "options": [
+        "sonrisa",
+        "silla",
+        "semana",
+        "cuchara"
+      ],
       "translation": "She is happy and has a big _____ on her face.",
-      "optionTranslations": ["smile", "chair", "week", "spoon"],
+      "optionTranslations": [
+        "smile",
+        "chair",
+        "week",
+        "spoon"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "Está feliz y tiene una sonrisa grande en la cara.",
         "targetWord": "sonrisa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/387719b1f7020adf.mp3"
       }
     }
   },
@@ -78,13 +112,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "everyone",
-      "options": ["everyone", "nobody", "someone", "nothing"],
+      "options": [
+        "everyone",
+        "nobody",
+        "someone",
+        "nothing"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "Todos son simpáticos.",
         "targetWord": "Todos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9751074f122c54e4.mp3"
       }
     }
   },
@@ -95,13 +135,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to start",
-      "options": ["to start", "to end", "to wait", "to lose"],
+      "options": [
+        "to start",
+        "to end",
+        "to wait",
+        "to lose"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "La música empieza.",
         "targetWord": "empieza",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d8c140d9e9b735e.mp3"
       }
     }
   },
@@ -112,13 +158,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to dance",
-      "options": ["to dance", "to cook", "to study", "to clean"],
+      "options": [
+        "to dance",
+        "to cook",
+        "to study",
+        "to clean"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "Baila un poco, tímido al principio.",
         "targetWord": "Baila",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a450f26ca48134c4.mp3"
       }
     }
   },
@@ -129,13 +181,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to laugh",
-      "options": ["to laugh", "to sing", "to walk", "to drink"],
+      "options": [
+        "to laugh",
+        "to sing",
+        "to walk",
+        "to drink"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "Pablo ríe.",
         "targetWord": "ríe",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/584fec26fcd84ec2.mp3"
       }
     }
   },
@@ -146,13 +204,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to be",
-      "options": ["to be", "to have", "to do", "to know"],
+      "options": [
+        "to be",
+        "to have",
+        "to do",
+        "to know"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "No sos tímido.",
         "targetWord": "sos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49de6313bb040cbc.mp3"
       }
     }
   },
@@ -163,15 +227,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "lugar",
-      "options": ["lugar", "regalo", "zapato", "número"],
+      "options": [
+        "lugar",
+        "regalo",
+        "zapato",
+        "número"
+      ],
       "translation": "This park is a quiet and pretty _____.",
-      "optionTranslations": ["place", "gift", "shoe", "number"],
+      "optionTranslations": [
+        "place",
+        "gift",
+        "shoe",
+        "number"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "Este parque es un lugar tranquilo y bonito.",
         "targetWord": "lugar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6d33472ec062384.mp3"
       }
     }
   },
@@ -183,13 +258,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "Monday",
-      "options": ["Monday", "Friday", "June", "afternoon"],
+      "options": [
+        "Monday",
+        "Friday",
+        "June",
+        "afternoon"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "Pablo va al parque el lunes para el concierto.",
         "targetWord": "lunes",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f5fff9f6b316c88a.mp3"
       }
     }
   },
@@ -201,13 +282,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "lights",
-      "options": ["lights", "tables", "shoes", "flowers"],
+      "options": [
+        "lights",
+        "tables",
+        "shoes",
+        "flowers"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "Hay mucha gente, música y luces de colores.",
         "targetWord": "luces",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/991251f029ef1ed5.mp3"
       }
     }
   },
@@ -219,13 +306,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "big",
-      "options": ["big", "empty", "cold", "short"],
+      "options": [
+        "big",
+        "empty",
+        "cold",
+        "short"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "Marta está allí, con una sonrisa grande.",
         "targetWord": "grande",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26818ed38bdc7319.mp3"
       }
     }
   },
@@ -237,13 +330,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "nobody",
-      "options": ["nobody", "everybody", "many people", "one person"],
+      "options": [
+        "nobody",
+        "everybody",
+        "many people",
+        "one person"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "Pablo no conoce a nadie más.",
         "targetWord": "nadie",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/78600781933223e7.mp3"
       }
     }
   },
@@ -255,15 +354,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "palabras",
-      "options": ["palabras", "puertas", "mesas", "flores"],
+      "options": [
+        "palabras",
+        "puertas",
+        "mesas",
+        "flores"
+      ],
       "translation": "The baby is small; he says only two _____.",
-      "optionTranslations": ["words", "doors", "tables", "flowers"],
+      "optionTranslations": [
+        "words",
+        "doors",
+        "tables",
+        "flowers"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "El bebé es pequeño; dice solo dos palabras.",
         "targetWord": "palabras",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f47e119f353b18c1.mp3"
       }
     }
   },
@@ -275,13 +385,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "only",
-      "options": ["only", "also", "never", "almost"],
+      "options": [
+        "only",
+        "also",
+        "never",
+        "almost"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "Pablo no conoce a nadie más, solo a Marta.",
         "targetWord": "solo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b5c36ce8419fa8a.mp3"
       }
     }
   },
@@ -293,15 +409,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "extraños",
-      "options": ["extraños", "hermanos", "maestros", "médicos"],
+      "options": [
+        "extraños",
+        "hermanos",
+        "maestros",
+        "médicos"
+      ],
       "translation": "I do not know those people; they are _____ to me.",
-      "optionTranslations": ["strangers", "brothers", "teachers", "doctors"],
+      "optionTranslations": [
+        "strangers",
+        "brothers",
+        "teachers",
+        "doctors"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "No conozco a esas personas; son extraños para mí.",
         "targetWord": "extraños",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/68220045546e394c.mp3"
       }
     }
   },
@@ -313,13 +440,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to see",
-      "options": ["to see", "to touch", "to carry", "to wash"],
+      "options": [
+        "to see",
+        "to touch",
+        "to carry",
+        "to wash"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "Marta dice: «¿Ves?»",
         "targetWord": "Ves",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/967fecdaa77f607a.mp3"
       }
     }
   },
@@ -331,13 +464,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a lot of",
-      "options": ["a lot of", "a few", "the same", "the other"],
+      "options": [
+        "a lot of",
+        "a few",
+        "the same",
+        "the other"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "Hay mucha gente.",
         "targetWord": "mucha",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b8b38972864e74a.mp3"
       }
     }
   },
@@ -349,15 +488,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "principio",
-      "options": ["principio", "final", "centro", "jardín"],
+      "options": [
+        "principio",
+        "final",
+        "centro",
+        "jardín"
+      ],
       "translation": "The first page is at the _____ of the book.",
-      "optionTranslations": ["beginning", "end", "center", "garden"],
+      "optionTranslations": [
+        "beginning",
+        "end",
+        "center",
+        "garden"
+      ],
       "audioClip": {
         "storySlug": "el-concierto",
         "storySource": "user",
         "sentence": "La primera página está al principio del libro.",
         "targetWord": "principio",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3654a26899aae4c1.mp3"
       }
     }
   },
@@ -369,10 +519,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "aquí", "answer": "here", "options": ["here", "today", "already", "a little"] },
-        { "word": "hoy", "answer": "today", "options": ["here", "today", "already", "a little"] },
-        { "word": "ya", "answer": "already", "options": ["here", "today", "already", "a little"] },
-        { "word": "poco", "answer": "a little", "options": ["here", "today", "already", "a little"] }
+        {
+          "word": "aquí",
+          "answer": "here",
+          "options": [
+            "here",
+            "today",
+            "already",
+            "a little"
+          ]
+        },
+        {
+          "word": "hoy",
+          "answer": "today",
+          "options": [
+            "here",
+            "today",
+            "already",
+            "a little"
+          ]
+        },
+        {
+          "word": "ya",
+          "answer": "already",
+          "options": [
+            "here",
+            "today",
+            "already",
+            "a little"
+          ]
+        },
+        {
+          "word": "poco",
+          "answer": "a little",
+          "options": [
+            "here",
+            "today",
+            "already",
+            "a little"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -385,8 +571,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "tengo",
-      "options": ["tengo", "vengo", "pongo", "salgo"],
-      "optionTranslations": ["I have", "I come", "I put", "I go out"],
+      "options": [
+        "tengo",
+        "vengo",
+        "pongo",
+        "salgo"
+      ],
+      "optionTranslations": [
+        "I have",
+        "I come",
+        "I put",
+        "I go out"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "el-concierto",

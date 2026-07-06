@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a neighborhood",
-      "options": ["a neighborhood", "a kitchen", "a school", "a river"],
+      "options": [
+        "a neighborhood",
+        "a kitchen",
+        "a school",
+        "a river"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "El barrio entero vibra de emoción.",
         "targetWord": "barrio",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d4c04aedd5f6a0e.mp3"
       }
     }
   },
@@ -23,13 +29,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a street",
-      "options": ["a street", "a table", "a window", "a bed"],
+      "options": [
+        "a street",
+        "a table",
+        "a window",
+        "a bed"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "Los tambores suenan en toda la calle.",
         "targetWord": "calle",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/339baae1c8d3d48a.mp3"
       }
     }
   },
@@ -40,15 +52,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "casa",
-      "options": ["casa", "mesa", "taza", "cama"],
+      "options": [
+        "casa",
+        "mesa",
+        "taza",
+        "cama"
+      ],
       "translation": "My family lives in a _____ with a garden.",
-      "optionTranslations": ["house", "table", "cup", "bed"],
+      "optionTranslations": [
+        "house",
+        "table",
+        "cup",
+        "bed"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "Mi familia vive en una casa con jardín.",
         "targetWord": "casa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/14d7000c69abab5e.mp3"
       }
     }
   },
@@ -59,13 +82,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a flower",
-      "options": ["a flower", "a stone", "a door", "a shoe"],
+      "options": [
+        "a flower",
+        "a stone",
+        "a door",
+        "a shoe"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "Decoran la calle con flores y colores.",
         "targetWord": "flores",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee2b80eb8ee57b5a.mp3"
       }
     }
   },
@@ -76,13 +105,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a mom",
-      "options": ["a mom", "a boy", "a cat", "a table"],
+      "options": [
+        "a mom",
+        "a boy",
+        "a cat",
+        "a table"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "La mamá de Camilo prepara un disfraz fantástico.",
         "targetWord": "mamá",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/60e5f32b1594d952.mp3"
       }
     }
   },
@@ -93,13 +128,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to dance",
-      "options": ["to dance", "to cook", "to read", "to swim"],
+      "options": [
+        "to dance",
+        "to cook",
+        "to read",
+        "to swim"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "Camilo se pregunta: ¿Bailo bien?",
         "targetWord": "Bailo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/242d9c190abacb81.mp3"
       }
     }
   },
@@ -110,13 +151,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a costume",
-      "options": ["a costume", "a ticket", "a kitchen", "a garden"],
+      "options": [
+        "a costume",
+        "a ticket",
+        "a kitchen",
+        "a garden"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "Un disfraz fantástico, lleno de plumas rojas y amarillas.",
         "targetWord": "disfraz",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/58484a7fad4686bc.mp3"
       }
     }
   },
@@ -127,13 +174,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to look at",
-      "options": ["to look at", "to run", "to sing", "to sleep"],
+      "options": [
+        "to look at",
+        "to run",
+        "to sing",
+        "to sleep"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "Camilo mira, nervioso, pero también feliz.",
         "targetWord": "mira",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/477b72b6572b131d.mp3"
       }
     }
   },
@@ -144,15 +197,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "tímido",
-      "options": ["tímido", "alto", "rubio", "fuerte"],
+      "options": [
+        "tímido",
+        "alto",
+        "rubio",
+        "fuerte"
+      ],
       "translation": "Roberto does not talk much with new people; he is _____.",
-      "optionTranslations": ["shy", "tall", "blond", "strong"],
+      "optionTranslations": [
+        "shy",
+        "tall",
+        "blond",
+        "strong"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "Roberto no habla mucho con personas nuevas; es tímido.",
         "targetWord": "tímido",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/034d79e78c0e64d3.mp3"
       }
     }
   },
@@ -163,15 +227,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "noche",
-      "options": ["noche", "mesa", "silla", "puerta"],
+      "options": [
+        "noche",
+        "mesa",
+        "silla",
+        "puerta"
+      ],
       "translation": "The sun goes away and the _____ arrives.",
-      "optionTranslations": ["night", "table", "chair", "door"],
+      "optionTranslations": [
+        "night",
+        "table",
+        "chair",
+        "door"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "El sol se va y llega la noche.",
         "targetWord": "noche",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5a9b024a1251c6e6.mp3"
       }
     }
   },
@@ -183,13 +258,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "February",
-      "options": ["February", "Monday", "winter", "night"],
+      "options": [
+        "February",
+        "Monday",
+        "winter",
+        "night"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "Llega febrero a Barranquilla, Colombia.",
         "targetWord": "febrero",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0cbe0c19fe2d6a19.mp3"
       }
     }
   },
@@ -201,13 +282,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "gets ready",
-      "options": ["gets ready", "falls asleep", "gets lost", "sits down"],
+      "options": [
+        "gets ready",
+        "falls asleep",
+        "gets lost",
+        "sits down"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "Todo el barrio se prepara.",
         "targetWord": "se prepara",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/23a1ebd68dc8e6a6.mp3"
       }
     }
   },
@@ -219,13 +306,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a feather",
-      "options": ["a feather", "a hat", "a ball", "a spoon"],
+      "options": [
+        "a feather",
+        "a hat",
+        "a ball",
+        "a spoon"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "Lleno de plumas rojas y amarillas.",
         "targetWord": "plumas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/06ab61f6f03fb36f.mp3"
       }
     }
   },
@@ -237,15 +330,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "rojas",
-      "options": ["rojas", "negras", "azules", "grises"],
+      "options": [
+        "rojas",
+        "negras",
+        "azules",
+        "grises"
+      ],
       "translation": "Strawberries are _____ fruits.",
-      "optionTranslations": ["red", "black", "blue", "gray"],
+      "optionTranslations": [
+        "red",
+        "black",
+        "blue",
+        "gray"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "Las fresas son frutas rojas.",
         "targetWord": "rojas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64edbddc3380db4a.mp3"
       }
     }
   },
@@ -257,13 +361,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a grandfather",
-      "options": ["a grandfather", "a baby", "a teacher", "a driver"],
+      "options": [
+        "a grandfather",
+        "a baby",
+        "a teacher",
+        "a driver"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "Su abuelo ríe.",
         "targetWord": "abuelo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ddc0e90366805af5.mp3"
       }
     }
   },
@@ -275,15 +385,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "amarillas",
-      "options": ["amarillas", "negras", "blancas", "moradas"],
+      "options": [
+        "amarillas",
+        "negras",
+        "blancas",
+        "moradas"
+      ],
       "translation": "Bananas are not blue; they are _____.",
-      "optionTranslations": ["yellow", "black", "white", "purple"],
+      "optionTranslations": [
+        "yellow",
+        "black",
+        "white",
+        "purple"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "Las bananas no son azules; son amarillas.",
         "targetWord": "amarillas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/77b77a51abe0f858.mp3"
       }
     }
   },
@@ -295,13 +416,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a neighbor",
-      "options": ["a neighbor", "a tourist", "a waiter", "a student"],
+      "options": [
+        "a neighbor",
+        "a tourist",
+        "a waiter",
+        "a student"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "En la calle, los vecinos practican una danza tradicional.",
         "targetWord": "vecinos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f79114aaa373480a.mp3"
       }
     }
   },
@@ -313,15 +440,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "lleno",
-      "options": ["lleno", "vacío", "limpio", "nuevo"],
+      "options": [
+        "lleno",
+        "vacío",
+        "limpio",
+        "nuevo"
+      ],
       "translation": "There is no more space; the bus is _____.",
-      "optionTranslations": ["full", "empty", "clean", "new"],
+      "optionTranslations": [
+        "full",
+        "empty",
+        "clean",
+        "new"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "No hay más espacio; el autobús está lleno.",
         "targetWord": "lleno",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/adac57ffa21c740a.mp3"
       }
     }
   },
@@ -333,13 +471,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a heart",
-      "options": ["a heart", "a hand", "a foot", "a door"],
+      "options": [
+        "a heart",
+        "a hand",
+        "a foot",
+        "a door"
+      ],
       "audioClip": {
         "storySlug": "colores-en-el-barrio",
         "storySource": "user",
         "sentence": "No es solo una fiesta; es el corazón de la ciudad.",
         "targetWord": "corazón",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0156fd9e20fa13aa.mp3"
       }
     }
   },
@@ -351,10 +495,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "todos", "answer": "everyone", "options": ["everyone", "great", "tomorrow", "happy"] },
-        { "word": "gran", "answer": "great", "options": ["everyone", "great", "tomorrow", "happy"] },
-        { "word": "mañana", "answer": "tomorrow", "options": ["everyone", "great", "tomorrow", "happy"] },
-        { "word": "feliz", "answer": "happy", "options": ["everyone", "great", "tomorrow", "happy"] }
+        {
+          "word": "todos",
+          "answer": "everyone",
+          "options": [
+            "everyone",
+            "great",
+            "tomorrow",
+            "happy"
+          ]
+        },
+        {
+          "word": "gran",
+          "answer": "great",
+          "options": [
+            "everyone",
+            "great",
+            "tomorrow",
+            "happy"
+          ]
+        },
+        {
+          "word": "mañana",
+          "answer": "tomorrow",
+          "options": [
+            "everyone",
+            "great",
+            "tomorrow",
+            "happy"
+          ]
+        },
+        {
+          "word": "feliz",
+          "answer": "happy",
+          "options": [
+            "everyone",
+            "great",
+            "tomorrow",
+            "happy"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -367,8 +547,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "ríe",
-      "options": ["ríe", "ve", "lee", "cae"],
-      "optionTranslations": ["laughs", "sees", "reads", "falls"],
+      "options": [
+        "ríe",
+        "ve",
+        "lee",
+        "cae"
+      ],
+      "optionTranslations": [
+        "laughs",
+        "sees",
+        "reads",
+        "falls"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "colores-en-el-barrio",

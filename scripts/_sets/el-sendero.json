@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to start",
-      "options": ["to start", "to finish", "to wait", "to sell"],
+      "options": [
+        "to start",
+        "to finish",
+        "to wait",
+        "to sell"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "Valentina y su papá empiezan un sendero en la montaña.",
         "targetWord": "empiezan",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/98a53031fe6c7211.mp3"
       }
     }
   },
@@ -23,15 +29,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "mochila",
-      "options": ["mochila", "camisa", "silla", "pierna"],
+      "options": [
+        "mochila",
+        "camisa",
+        "silla",
+        "pierna"
+      ],
       "translation": "I carry my books in my _____.",
-      "optionTranslations": ["backpack", "shirt", "chair", "leg"],
+      "optionTranslations": [
+        "backpack",
+        "shirt",
+        "chair",
+        "leg"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "Llevo mis libros en la mochila.",
         "targetWord": "mochila",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4b8343c1a32396dd.mp3"
       }
     }
   },
@@ -42,13 +59,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "cool, fresh",
-      "options": ["cool, fresh", "dirty", "slow", "dark"],
+      "options": [
+        "cool, fresh",
+        "dirty",
+        "slow",
+        "dark"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "El aire es fresco.",
         "targetWord": "fresco",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29abaeb6246dc4ef.mp3"
       }
     }
   },
@@ -59,15 +82,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "cielo",
-      "options": ["cielo", "piso", "carro", "pelo"],
+      "options": [
+        "cielo",
+        "piso",
+        "carro",
+        "pelo"
+      ],
       "translation": "I look at the stars in the _____ at night.",
-      "optionTranslations": ["sky", "floor", "car", "hair"],
+      "optionTranslations": [
+        "sky",
+        "floor",
+        "car",
+        "hair"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "Miro las estrellas en el cielo de noche.",
         "targetWord": "cielo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5a5779d8498b67ff.mp3"
       }
     }
   },
@@ -78,13 +112,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "blue",
-      "options": ["blue", "red", "black", "white"],
+      "options": [
+        "blue",
+        "red",
+        "black",
+        "white"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "El cielo es azul.",
         "targetWord": "azul",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85177ad92be0b32f.mp3"
       }
     }
   },
@@ -95,13 +135,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to walk",
-      "options": ["to walk", "to sing", "to drink", "to buy"],
+      "options": [
+        "to walk",
+        "to sing",
+        "to drink",
+        "to buy"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "Camina despacio.",
         "targetWord": "Camina",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c927936ff5594b5b.mp3"
       }
     }
   },
@@ -112,15 +158,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "montaña",
-      "options": ["montaña", "cocina", "ventana", "naranja"],
+      "options": [
+        "montaña",
+        "cocina",
+        "ventana",
+        "naranja"
+      ],
       "translation": "We climb very high up the _____.",
-      "optionTranslations": ["mountain", "kitchen", "window", "orange"],
+      "optionTranslations": [
+        "mountain",
+        "kitchen",
+        "window",
+        "orange"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "Subimos muy alto a la montaña.",
         "targetWord": "montaña",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fdb0f9a3f4e8cbed.mp3"
       }
     }
   },
@@ -131,13 +188,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to fly",
-      "options": ["to fly", "to swim", "to run", "to eat"],
+      "options": [
+        "to fly",
+        "to swim",
+        "to run",
+        "to eat"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "Un pájaro grande vuela sobre ellos.",
         "targetWord": "vuela",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd45b817ad362ce3.mp3"
       }
     }
   },
@@ -148,15 +211,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pesada",
-      "options": ["pesada", "vacía", "limpia", "fría"],
+      "options": [
+        "pesada",
+        "vacía",
+        "limpia",
+        "fría"
+      ],
       "translation": "The box has many books; it is very _____.",
-      "optionTranslations": ["heavy", "empty", "clean", "cold"],
+      "optionTranslations": [
+        "heavy",
+        "empty",
+        "clean",
+        "cold"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "La caja tiene muchos libros; está muy pesada.",
         "targetWord": "pesada",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/244248647b73e863.mp3"
       }
     }
   },
@@ -167,15 +241,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pájaro",
-      "options": ["pájaro", "zapato", "vaso", "plato"],
+      "options": [
+        "pájaro",
+        "zapato",
+        "vaso",
+        "plato"
+      ],
       "translation": "The _____ sings in the tree in the morning.",
-      "optionTranslations": ["bird", "shoe", "glass", "plate"],
+      "optionTranslations": [
+        "bird",
+        "shoe",
+        "glass",
+        "plate"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "El pájaro canta en el árbol por la mañana.",
         "targetWord": "pájaro",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dcf783bc3dda087c.mp3"
       }
     }
   },
@@ -187,13 +272,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "summer",
-      "options": ["summer", "winter", "night", "breakfast"],
+      "options": [
+        "summer",
+        "winter",
+        "night",
+        "breakfast"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "En la Patagonia, Chile, es verano.",
         "targetWord": "verano",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c33c54bf1cbbfd41.mp3"
       }
     }
   },
@@ -205,13 +296,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to carry",
-      "options": ["to carry", "to break", "to find", "to wash"],
+      "options": [
+        "to carry",
+        "to break",
+        "to find",
+        "to wash"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "Valentina lleva una mochila pesada.",
         "targetWord": "lleva",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0005b08ef862ead3.mp3"
       }
     }
   },
@@ -223,13 +320,20 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to smile",
-      "options": ["to smile", "to sleep", "to jump", "to write"],
+      "options": [
+        "to smile",
+        "to sleep",
+        "to jump",
+        "to write"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "Su papá sonríe: «Paso a paso, hija.»",
         "targetWord": "sonríe",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d975630108a1d01f.mp3",
+        "rev": 2
       }
     }
   },
@@ -241,13 +345,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a tree",
-      "options": ["a tree", "a river", "a cloud", "a table"],
+      "options": [
+        "a tree",
+        "a river",
+        "a cloud",
+        "a table"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "Hay árboles enormes.",
         "targetWord": "árboles",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/48c0580528090805.mp3"
       }
     }
   },
@@ -259,15 +369,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "viento",
-      "options": ["viento", "dinero", "queso", "jabón"],
+      "options": [
+        "viento",
+        "dinero",
+        "queso",
+        "jabón"
+      ],
       "translation": "Today there is a lot of _____ and my hat flies.",
-      "optionTranslations": ["wind", "money", "cheese", "soap"],
+      "optionTranslations": [
+        "wind",
+        "money",
+        "cheese",
+        "soap"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "Hoy hay mucho viento y mi sombrero vuela.",
         "targetWord": "viento",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8d5d55c53222c27.mp3"
       }
     }
   },
@@ -279,13 +400,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a flower",
-      "options": ["a flower", "a stone", "a fish", "a hat"],
+      "options": [
+        "a flower",
+        "a stone",
+        "a fish",
+        "a hat"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "Hay árboles enormes, flores y el sonido del viento.",
         "targetWord": "flores",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b2fa0d6ece7b3f0f.mp3"
       }
     }
   },
@@ -297,13 +424,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to look at",
-      "options": ["to look at", "to wash", "to sell", "to open"],
+      "options": [
+        "to look at",
+        "to wash",
+        "to sell",
+        "to open"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "Valentina mira, fascinada.",
         "targetWord": "mira",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b966f237fcd4ea13.mp3"
       }
     }
   },
@@ -315,13 +448,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "beautiful",
-      "options": ["beautiful", "ugly", "cold", "fast"],
+      "options": [
+        "beautiful",
+        "ugly",
+        "cold",
+        "fast"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "La montaña es enorme y hermosa.",
         "targetWord": "hermosa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4935f1f30ec034b6.mp3"
       }
     }
   },
@@ -333,15 +472,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "hija",
-      "options": ["hija", "mesa", "casa", "sopa"],
+      "options": [
+        "hija",
+        "mesa",
+        "casa",
+        "sopa"
+      ],
       "translation": "The _____ of my aunt is my cousin.",
-      "optionTranslations": ["daughter", "table", "house", "soup"],
+      "optionTranslations": [
+        "daughter",
+        "table",
+        "house",
+        "soup"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "La hija de mi tía es mi prima.",
         "targetWord": "hija",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64e77d5ed2364e3e.mp3"
       }
     }
   },
@@ -353,13 +503,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "the beginning",
-      "options": ["the beginning", "the end", "the game", "the street"],
+      "options": [
+        "the beginning",
+        "the end",
+        "the game",
+        "the street"
+      ],
       "audioClip": {
         "storySlug": "el-sendero",
         "storySource": "user",
         "sentence": "Y esto es solo el principio de la aventura.",
         "targetWord": "principio",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdccb6e50ed4b2ac.mp3"
       }
     }
   },
@@ -371,10 +527,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "despacio", "answer": "slowly", "options": ["slowly", "up", "difficult", "strong"] },
-        { "word": "arriba", "answer": "up", "options": ["slowly", "up", "difficult", "strong"] },
-        { "word": "difícil", "answer": "difficult", "options": ["slowly", "up", "difficult", "strong"] },
-        { "word": "fuerte", "answer": "strong", "options": ["slowly", "up", "difficult", "strong"] }
+        {
+          "word": "despacio",
+          "answer": "slowly",
+          "options": [
+            "slowly",
+            "up",
+            "difficult",
+            "strong"
+          ]
+        },
+        {
+          "word": "arriba",
+          "answer": "up",
+          "options": [
+            "slowly",
+            "up",
+            "difficult",
+            "strong"
+          ]
+        },
+        {
+          "word": "difícil",
+          "answer": "difficult",
+          "options": [
+            "slowly",
+            "up",
+            "difficult",
+            "strong"
+          ]
+        },
+        {
+          "word": "fuerte",
+          "answer": "strong",
+          "options": [
+            "slowly",
+            "up",
+            "difficult",
+            "strong"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -387,8 +579,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "cansada",
-      "options": ["cansada", "casada", "pintada", "cortada"],
-      "optionTranslations": ["tired", "married", "painted", "cut"],
+      "options": [
+        "cansada",
+        "casada",
+        "pintada",
+        "cortada"
+      ],
+      "optionTranslations": [
+        "tired",
+        "married",
+        "painted",
+        "cut"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "el-sendero",

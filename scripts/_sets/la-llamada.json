@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to call",
-      "options": ["to call", "to eat", "to run", "to buy"],
+      "options": [
+        "to call",
+        "to eat",
+        "to run",
+        "to buy"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "Mamá, ¿podemos llamar ahora?",
         "targetWord": "llamar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5747b727498269aa.mp3"
       }
     }
   },
@@ -23,15 +29,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "miedo",
-      "options": ["miedo", "queso", "pelo", "humo"],
+      "options": [
+        "miedo",
+        "queso",
+        "pelo",
+        "humo"
+      ],
       "translation": "The boy sees a big dog and feels _____.",
-      "optionTranslations": ["fear", "cheese", "hair", "smoke"],
+      "optionTranslations": [
+        "fear",
+        "cheese",
+        "hair",
+        "smoke"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "El niño ve un perro grande y tiene miedo.",
         "targetWord": "miedo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30fef1b56680ed06.mp3"
       }
     }
   },
@@ -42,13 +59,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to have",
-      "options": ["to have", "to see", "to put", "to go"],
+      "options": [
+        "to have",
+        "to see",
+        "to put",
+        "to go"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "El domingo, Lucía tiene una idea.",
         "targetWord": "tiene",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e90bd63a2871889.mp3"
       }
     }
   },
@@ -59,15 +82,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "voz",
-      "options": ["voz", "sal", "flor", "luz"],
+      "options": [
+        "voz",
+        "sal",
+        "flor",
+        "luz"
+      ],
       "translation": "I hear her _____ on the phone.",
-      "optionTranslations": ["voice", "salt", "flower", "light"],
+      "optionTranslations": [
+        "voice",
+        "salt",
+        "flower",
+        "light"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "Escucho su voz por el teléfono.",
         "targetWord": "voz",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5499664a15e298cc.mp3"
       }
     }
   },
@@ -78,13 +112,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to speak",
-      "options": ["to speak", "to jump", "to clean", "to pay"],
+      "options": [
+        "to speak",
+        "to jump",
+        "to clean",
+        "to pay"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "Hablan por una hora.",
         "targetWord": "Hablan",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eab0955e1be96a1a.mp3"
       }
     }
   },
@@ -95,13 +135,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to play (music)",
-      "options": ["to play (music)", "to break", "to wash", "to sell"],
+      "options": [
+        "to play (music)",
+        "to break",
+        "to wash",
+        "to sell"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "Jorge toca la guitarra por teléfono.",
         "targetWord": "toca",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a6a20a73c73a2c96.mp3"
       }
     }
   },
@@ -112,13 +158,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "happy",
-      "options": ["happy", "tired", "hungry", "cold"],
+      "options": [
+        "happy",
+        "tired",
+        "hungry",
+        "cold"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "Lucía habla y habla, feliz.",
         "targetWord": "feliz",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/da405e7d3559bd38.mp3"
       }
     }
   },
@@ -129,13 +181,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to say",
-      "options": ["to say", "to wait", "to climb", "to draw"],
+      "options": [
+        "to say",
+        "to wait",
+        "to climb",
+        "to draw"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "La mamá tiene miedo, pero dice que sí.",
         "targetWord": "dice",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/609e3cf1533ff411.mp3"
       }
     }
   },
@@ -146,13 +204,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "beautiful",
-      "options": ["beautiful", "fast", "cheap", "heavy"],
+      "options": [
+        "beautiful",
+        "fast",
+        "cheap",
+        "heavy"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "La música es hermosa.",
         "targetWord": "hermosa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f0f1ce105540d1b.mp3"
       }
     }
   },
@@ -163,15 +227,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "puerta",
-      "options": ["puerta", "mesa", "cama", "taza"],
+      "options": [
+        "puerta",
+        "mesa",
+        "cama",
+        "taza"
+      ],
       "translation": "The key opens the _____ of the house.",
-      "optionTranslations": ["door", "table", "bed", "cup"],
+      "optionTranslations": [
+        "door",
+        "table",
+        "bed",
+        "cup"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "La llave abre la puerta de la casa.",
         "targetWord": "puerta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/10ff881b6f2134e6.mp3"
       }
     }
   },
@@ -183,13 +258,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to be",
-      "options": ["to be", "to do", "to know", "to give"],
+      "options": [
+        "to be",
+        "to do",
+        "to know",
+        "to give"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "Hola, tío. Soy Lucía.",
         "targetWord": "Soy",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a85e94479af451e9.mp3"
       }
     }
   },
@@ -201,15 +282,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "hora",
-      "options": ["hora", "casa", "luna", "mano"],
+      "options": [
+        "hora",
+        "casa",
+        "luna",
+        "mano"
+      ],
       "translation": "One _____ has sixty minutes.",
-      "optionTranslations": ["hour", "house", "moon", "hand"],
+      "optionTranslations": [
+        "hour",
+        "house",
+        "moon",
+        "hand"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "Una hora tiene sesenta minutos.",
         "targetWord": "hora",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d0a4fa97c99e1d1.mp3"
       }
     }
   },
@@ -221,13 +313,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to laugh",
-      "options": ["to laugh", "to shout", "to sleep", "to write"],
+      "options": [
+        "to laugh",
+        "to shout",
+        "to sleep",
+        "to write"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "Después, Jorge ríe, feliz.",
         "targetWord": "ríe",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0abc8709134b0d67.mp3"
       }
     }
   },
@@ -239,13 +337,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to look for",
-      "options": ["to look for", "to open", "to cook", "to sing"],
+      "options": [
+        "to look for",
+        "to open",
+        "to cook",
+        "to sing"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "Toma el teléfono de su mamá y busca el número de Jorge.",
         "targetWord": "busca",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b3129b6cac033bac.mp3"
       }
     }
   },
@@ -257,13 +361,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to cry",
-      "options": ["to cry", "to paint", "to count", "to fly"],
+      "options": [
+        "to cry",
+        "to paint",
+        "to count",
+        "to fly"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "La mamá llora un poco, pero es feliz.",
         "targetWord": "llora",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/41e4bccd28e9fec3.mp3"
       }
     }
   },
@@ -275,13 +385,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to take",
-      "options": ["to take", "to close", "to win", "to read"],
+      "options": [
+        "to take",
+        "to close",
+        "to win",
+        "to read"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "Toma el teléfono de su mamá.",
         "targetWord": "Toma",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e2cdbca15f1201ad.mp3"
       }
     }
   },
@@ -293,13 +409,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a time",
-      "options": ["a time", "a place", "a name", "a game"],
+      "options": [
+        "a time",
+        "a place",
+        "a name",
+        "a game"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "El teléfono suena... una vez, dos veces.",
         "targetWord": "vez",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/44544fe19dd3650e.mp3"
       }
     }
   },
@@ -311,15 +433,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "domingo",
-      "options": ["domingo", "martes", "jueves", "viernes"],
+      "options": [
+        "domingo",
+        "martes",
+        "jueves",
+        "viernes"
+      ],
       "translation": "The week ends on _____.",
-      "optionTranslations": ["Sunday", "Tuesday", "Thursday", "Friday"],
+      "optionTranslations": [
+        "Sunday",
+        "Tuesday",
+        "Thursday",
+        "Friday"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "La semana termina el domingo.",
         "targetWord": "domingo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8eaa33a265468117.mp3"
       }
     }
   },
@@ -331,15 +464,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "próximo",
-      "options": ["próximo", "último", "pequeño", "amarillo"],
+      "options": [
+        "próximo",
+        "último",
+        "pequeño",
+        "amarillo"
+      ],
       "translation": "This year is 2026; the _____ year is 2027.",
-      "optionTranslations": ["next", "last", "small", "yellow"],
+      "optionTranslations": [
+        "next",
+        "last",
+        "small",
+        "yellow"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "Este año es 2026; el próximo año es 2027.",
         "targetWord": "próximo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7a369c0ffb309103.mp3"
       }
     }
   },
@@ -351,15 +495,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "nueva",
-      "options": ["nueva", "verde", "lenta", "corta"],
+      "options": [
+        "nueva",
+        "verde",
+        "lenta",
+        "corta"
+      ],
       "translation": "My backpack is broken; I need a _____ one.",
-      "optionTranslations": ["new", "green", "slow", "short"],
+      "optionTranslations": [
+        "new",
+        "green",
+        "slow",
+        "short"
+      ],
       "audioClip": {
         "storySlug": "la-llamada",
         "storySource": "user",
         "sentence": "Mi mochila está rota; necesito una nueva.",
         "targetWord": "nueva",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ea14a29af3edf74.mp3"
       }
     }
   },
@@ -371,10 +526,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "ahora", "answer": "now", "options": ["now", "two", "after", "far"] },
-        { "word": "dos", "answer": "two", "options": ["now", "two", "after", "far"] },
-        { "word": "después", "answer": "after", "options": ["now", "two", "after", "far"] },
-        { "word": "lejos", "answer": "far", "options": ["now", "two", "after", "far"] }
+        {
+          "word": "ahora",
+          "answer": "now",
+          "options": [
+            "now",
+            "two",
+            "after",
+            "far"
+          ]
+        },
+        {
+          "word": "dos",
+          "answer": "two",
+          "options": [
+            "now",
+            "two",
+            "after",
+            "far"
+          ]
+        },
+        {
+          "word": "después",
+          "answer": "after",
+          "options": [
+            "now",
+            "two",
+            "after",
+            "far"
+          ]
+        },
+        {
+          "word": "lejos",
+          "answer": "far",
+          "options": [
+            "now",
+            "two",
+            "after",
+            "far"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -387,8 +578,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "suena",
-      "options": ["suena", "llena", "cena", "ordena"],
-      "optionTranslations": ["rings", "fills", "has dinner", "tidies up"],
+      "options": [
+        "suena",
+        "llena",
+        "cena",
+        "ordena"
+      ],
+      "optionTranslations": [
+        "rings",
+        "fills",
+        "has dinner",
+        "tidies up"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "la-llamada",

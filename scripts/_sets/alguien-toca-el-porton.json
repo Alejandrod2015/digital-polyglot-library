@@ -6,7 +6,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to knock",
-      "options": ["to knock", "to open", "to paint", "to clean"],
+      "options": [
+        "to knock",
+        "to open",
+        "to paint",
+        "to clean"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -23,7 +28,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a large gate",
-      "options": ["a large gate", "a window", "a roof", "a staircase"],
+      "options": [
+        "a large gate",
+        "a window",
+        "a roof",
+        "a staircase"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -40,7 +50,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "iron bars",
-      "options": ["iron bars", "a curtain", "a ladder", "a mirror"],
+      "options": [
+        "iron bars",
+        "a curtain",
+        "a ladder",
+        "a mirror"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -57,9 +72,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "silencio",
-      "options": ["silencio", "peligro", "trabajo", "desorden"],
+      "options": [
+        "silencio",
+        "peligro",
+        "trabajo",
+        "desorden"
+      ],
       "translation": "In the library you have to be in _____.",
-      "optionTranslations": ["silence", "danger", "work", "mess"],
+      "optionTranslations": [
+        "silence",
+        "danger",
+        "work",
+        "mess"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -76,7 +101,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to go with",
-      "options": ["to go with", "to call", "to wait for", "to leave"],
+      "options": [
+        "to go with",
+        "to call",
+        "to wait for",
+        "to leave"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -93,7 +123,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to remember",
-      "options": ["to remember", "to complain", "to dream", "to laugh"],
+      "options": [
+        "to remember",
+        "to complain",
+        "to dream",
+        "to laugh"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -110,7 +145,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "just in case",
-      "options": ["just in case", "right away", "of course", "at last"],
+      "options": [
+        "just in case",
+        "right away",
+        "of course",
+        "at last"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -127,9 +167,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "velas",
-      "options": ["velas", "mesas", "tazas", "bolsas"],
+      "options": [
+        "velas",
+        "mesas",
+        "tazas",
+        "bolsas"
+      ],
       "translation": "I blow out the ten _____ on the cake and make a wish.",
-      "optionTranslations": ["candles", "tables", "cups", "bags"],
+      "optionTranslations": [
+        "candles",
+        "tables",
+        "cups",
+        "bags"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -146,7 +196,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "not that I know of",
-      "options": ["not that I know of", "without a doubt", "once in a while", "little by little"],
+      "options": [
+        "not that I know of",
+        "without a doubt",
+        "once in a while",
+        "little by little"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -163,10 +218,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "mano", "answer": "hand", "options": ["hand", "night", "suitcase", "voice"] },
-        { "word": "noche", "answer": "night", "options": ["hand", "night", "suitcase", "voice"] },
-        { "word": "maleta", "answer": "suitcase", "options": ["hand", "night", "suitcase", "voice"] },
-        { "word": "voz", "answer": "voice", "options": ["hand", "night", "suitcase", "voice"] }
+        {
+          "word": "mano",
+          "answer": "hand",
+          "options": [
+            "hand",
+            "night",
+            "suitcase",
+            "voice"
+          ]
+        },
+        {
+          "word": "noche",
+          "answer": "night",
+          "options": [
+            "hand",
+            "night",
+            "suitcase",
+            "voice"
+          ]
+        },
+        {
+          "word": "maleta",
+          "answer": "suitcase",
+          "options": [
+            "hand",
+            "night",
+            "suitcase",
+            "voice"
+          ]
+        },
+        {
+          "word": "voz",
+          "answer": "voice",
+          "options": [
+            "hand",
+            "night",
+            "suitcase",
+            "voice"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -179,7 +270,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "iron (metal)",
-      "options": ["iron (metal)", "wood", "glass (material)", "paper"],
+      "options": [
+        "iron (metal)",
+        "wood",
+        "glass (material)",
+        "paper"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -197,9 +293,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "suelo",
-      "options": ["suelo", "techo", "aire", "mar"],
+      "options": [
+        "suelo",
+        "techo",
+        "aire",
+        "mar"
+      ],
       "translation": "The toys are on the _____; pick them up, please.",
-      "optionTranslations": ["floor", "ceiling", "air", "sea"],
+      "optionTranslations": [
+        "floor",
+        "ceiling",
+        "air",
+        "sea"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -217,7 +323,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "pale",
-      "options": ["pale", "dizzy", "proud", "silly"],
+      "options": [
+        "pale",
+        "dizzy",
+        "proud",
+        "silly"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -235,7 +346,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a man",
-      "options": ["a man", "a boy", "a woman", "a girl"],
+      "options": [
+        "a man",
+        "a boy",
+        "a woman",
+        "a girl"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -253,9 +369,19 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "pecho",
-      "options": ["pecho", "brazo", "pelo", "pie"],
+      "options": [
+        "pecho",
+        "brazo",
+        "pelo",
+        "pie"
+      ],
       "translation": "The heart is inside the _____.",
-      "optionTranslations": ["chest", "arm", "hair", "foot"],
+      "optionTranslations": [
+        "chest",
+        "arm",
+        "hair",
+        "foot"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -273,7 +399,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to stop",
-      "options": ["to stop", "to begin", "to return", "to shout"],
+      "options": [
+        "to stop",
+        "to begin",
+        "to return",
+        "to shout"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -291,7 +422,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a young man",
-      "options": ["a young man", "a doctor", "a neighbor", "a thief"],
+      "options": [
+        "a young man",
+        "a doctor",
+        "a neighbor",
+        "a thief"
+      ],
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",
         "storySource": "user",
@@ -309,8 +445,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "lejos",
-      "options": ["lejos", "viejos", "ojos", "rojos"],
-      "optionTranslations": ["far away", "old (plural)", "eyes", "red (plural)"],
+      "options": [
+        "lejos",
+        "viejos",
+        "ojos",
+        "rojos"
+      ],
+      "optionTranslations": [
+        "far away",
+        "old (plural)",
+        "eyes",
+        "red (plural)"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "alguien-toca-el-porton",

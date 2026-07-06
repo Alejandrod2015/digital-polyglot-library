@@ -17,7 +17,8 @@
         "storySource": "user",
         "sentence": "Te esperé ayer, ¿sabés?",
         "targetWord": "esperé",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/741dfa676b4d5277.mp3"
       }
     }
   },
@@ -105,7 +106,8 @@
         "storySource": "user",
         "sentence": "Tu familia va a estar igual de orgullosa si te quedás y lo intentás.",
         "targetWord": "intentás",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dc8bd56e14505cef.mp3"
       }
     }
   },

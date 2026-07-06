@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to walk",
-      "options": ["to walk", "to run", "to drive", "to wait"],
+      "options": [
+        "to walk",
+        "to run",
+        "to drive",
+        "to wait"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "Sofía y su amiga Renata caminan al mercado del barrio.",
         "targetWord": "caminan",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2ab8f56914d04e34.mp3"
       }
     }
   },
@@ -23,13 +29,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to buy",
-      "options": ["to buy", "to sell", "to wash", "to count"],
+      "options": [
+        "to buy",
+        "to sell",
+        "to wash",
+        "to count"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "Hoy quieren comprar fruta para el desayuno.",
         "targetWord": "comprar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/abfe6ede02ed1647.mp3"
       }
     }
   },
@@ -40,13 +52,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a market",
-      "options": ["a market", "a park", "a school", "a museum"],
+      "options": [
+        "a market",
+        "a park",
+        "a school",
+        "a museum"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "Caminan al mercado del barrio.",
         "targetWord": "mercado",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb1253305e14c71a.mp3"
       }
     }
   },
@@ -57,13 +75,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a mango",
-      "options": ["a mango", "an apple", "a pineapple", "a coconut"],
+      "options": [
+        "a mango",
+        "an apple",
+        "a pineapple",
+        "a coconut"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "Esos mangos se ven muy buenos.",
         "targetWord": "mangos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f9fabd410b5bee1.mp3"
       }
     }
   },
@@ -74,13 +98,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "expensive",
-      "options": ["expensive", "old", "heavy", "ugly"],
+      "options": [
+        "expensive",
+        "old",
+        "heavy",
+        "ugly"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "Sí, pero están caros.",
         "targetWord": "caros",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6903cd7c0b3446a1.mp3"
       }
     }
   },
@@ -91,13 +121,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "an orange",
-      "options": ["an orange", "a lemon", "a tomato", "an onion"],
+      "options": [
+        "an orange",
+        "a lemon",
+        "a tomato",
+        "an onion"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "Las naranjas están muy buenas hoy.",
         "targetWord": "naranjas",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49722cb8e4e3672d.mp3"
       }
     }
   },
@@ -108,13 +144,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "fruit",
-      "options": ["fruit", "meat", "bread", "fish"],
+      "options": [
+        "fruit",
+        "meat",
+        "bread",
+        "fish"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "Aquí les pongo la fruta en una bolsa.",
         "targetWord": "fruta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7fbe4af0e10c8952.mp3"
       }
     }
   },
@@ -125,15 +167,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "barato",
-      "options": ["barato", "pequeño", "nuevo", "limpio"],
+      "options": [
+        "barato",
+        "pequeño",
+        "nuevo",
+        "limpio"
+      ],
       "translation": "This phone costs little money; it is very _____.",
-      "optionTranslations": ["cheap", "small", "new", "clean"],
+      "optionTranslations": [
+        "cheap",
+        "small",
+        "new",
+        "clean"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "Este teléfono cuesta poco dinero; es muy barato.",
         "targetWord": "barato",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a8bcb6e3a62739a5.mp3"
       }
     }
   },
@@ -144,15 +197,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "paga",
-      "options": ["paga", "gana", "lava", "canta"],
+      "options": [
+        "paga",
+        "gana",
+        "lava",
+        "canta"
+      ],
       "translation": "María takes the bread and _____ ten pesos at the register.",
-      "optionTranslations": ["pays", "earns", "washes", "sings"],
+      "optionTranslations": [
+        "pays",
+        "earns",
+        "washes",
+        "sings"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "María toma el pan y paga diez pesos en la caja.",
         "targetWord": "paga",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa953a45cfb0bf89.mp3"
       }
     }
   },
@@ -163,15 +227,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "bolsa",
-      "options": ["bolsa", "mesa", "silla", "cama"],
+      "options": [
+        "bolsa",
+        "mesa",
+        "silla",
+        "cama"
+      ],
       "translation": "I put the apples in a _____ to carry them home.",
-      "optionTranslations": ["bag", "table", "chair", "bed"],
+      "optionTranslations": [
+        "bag",
+        "table",
+        "chair",
+        "bed"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "Pongo las manzanas en una bolsa para llevarlas a casa.",
         "targetWord": "bolsa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f9ba6203b928ff8.mp3"
       }
     }
   },
@@ -183,10 +258,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "está bien", "answer": "okay, fine", "options": ["okay, fine", "without hurry", "again", "breakfast"] },
-        { "word": "sin prisa", "answer": "without hurry", "options": ["okay, fine", "without hurry", "again", "breakfast"] },
-        { "word": "otra vez", "answer": "again", "options": ["okay, fine", "without hurry", "again", "breakfast"] },
-        { "word": "desayuno", "answer": "breakfast", "options": ["okay, fine", "without hurry", "again", "breakfast"] }
+        {
+          "word": "está bien",
+          "answer": "okay, fine",
+          "options": [
+            "okay, fine",
+            "without hurry",
+            "again",
+            "breakfast"
+          ]
+        },
+        {
+          "word": "sin prisa",
+          "answer": "without hurry",
+          "options": [
+            "okay, fine",
+            "without hurry",
+            "again",
+            "breakfast"
+          ]
+        },
+        {
+          "word": "otra vez",
+          "answer": "again",
+          "options": [
+            "okay, fine",
+            "without hurry",
+            "again",
+            "breakfast"
+          ]
+        },
+        {
+          "word": "desayuno",
+          "answer": "breakfast",
+          "options": [
+            "okay, fine",
+            "without hurry",
+            "again",
+            "breakfast"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -199,13 +310,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a lady",
-      "options": ["a lady", "a man", "a girl", "a baby"],
+      "options": [
+        "a lady",
+        "a man",
+        "a girl",
+        "a baby"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "¿Cuánto es todo, señora?",
         "targetWord": "señora",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7fa11501bf35d031.mp3"
       }
     }
   },
@@ -217,13 +334,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a market stall",
-      "options": ["a market stall", "a big store", "a street corner", "a parking lot"],
+      "options": [
+        "a market stall",
+        "a big store",
+        "a street corner",
+        "a parking lot"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "Se acercan a un puesto grande, lleno de fruta.",
         "targetWord": "puesto",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a495fe56aca005b6.mp3"
       }
     }
   },
@@ -235,13 +358,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to put away",
-      "options": ["to put away", "to throw away", "to open", "to forget"],
+      "options": [
+        "to put away",
+        "to throw away",
+        "to open",
+        "to forget"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "Sofía paga y guarda la bolsa.",
         "targetWord": "guarda",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/804a0ae7f0659de0.mp3"
       }
     }
   },
@@ -253,13 +382,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "work",
-      "options": ["work", "school", "rain", "traffic"],
+      "options": [
+        "work",
+        "school",
+        "rain",
+        "traffic"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "No hay trabajo y hace buen día.",
         "targetWord": "trabajo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dd7c18c96afc7c74.mp3"
       }
     }
   },
@@ -271,15 +406,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "hambre",
-      "options": ["hambre", "sed", "tarea", "suerte"],
+      "options": [
+        "hambre",
+        "sed",
+        "tarea",
+        "suerte"
+      ],
       "translation": "I haven't eaten anything since the morning; I have a lot of _____.",
-      "optionTranslations": ["hunger", "thirst", "homework", "luck"],
+      "optionTranslations": [
+        "hunger",
+        "thirst",
+        "homework",
+        "luck"
+      ],
       "audioClip": {
         "storySlug": "sabado-de-mercado",
         "storySource": "user",
         "sentence": "No como nada desde la mañana; tengo mucha hambre.",
         "targetWord": "hambre",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/65dbe6ec0eea7518.mp3"
       }
     }
   },
@@ -291,8 +437,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "plátanos",
-      "options": ["plátanos", "platos", "pájaros", "zapatos"],
-      "optionTranslations": ["bananas", "plates", "birds", "shoes"],
+      "options": [
+        "plátanos",
+        "platos",
+        "pájaros",
+        "zapatos"
+      ],
+      "optionTranslations": [
+        "bananas",
+        "plates",
+        "birds",
+        "shoes"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "sabado-de-mercado",

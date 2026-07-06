@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a chair",
-      "options": ["a chair", "a table", "a bed", "a lamp"],
+      "options": [
+        "a chair",
+        "a table",
+        "a bed",
+        "a lamp"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "En el centro hay una silla de madera.",
         "targetWord": "silla",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/699771e8d4ea681e.mp3"
       }
     }
   },
@@ -23,13 +29,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "noise",
-      "options": ["noise", "smell", "color", "taste"],
+      "options": [
+        "noise",
+        "smell",
+        "color",
+        "taste"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "Lleva toda la mañana con ese ruido.",
         "targetWord": "ruido",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/698711405137091e.mp3"
       }
     }
   },
@@ -40,13 +52,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "wood",
-      "options": ["wood", "glass", "metal", "paper"],
+      "options": [
+        "wood",
+        "glass",
+        "metal",
+        "paper"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "Y pregunté en la tienda de madera.",
         "targetWord": "madera",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/23cfb41197a6b376.mp3"
       }
     }
   },
@@ -57,13 +75,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a bang",
-      "options": ["a bang", "a voice", "a light", "a smell"],
+      "options": [
+        "a bang",
+        "a voice",
+        "a light",
+        "a smell"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "Desde temprano se oyen golpes y ruidos.",
         "targetWord": "golpes",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8193f866b31b868.mp3"
       }
     }
   },
@@ -74,13 +98,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to ask",
-      "options": ["to ask", "to answer", "to shout", "to knock"],
+      "options": [
+        "to ask",
+        "to answer",
+        "to shout",
+        "to knock"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "Cada vez que pregunto, cierra la puerta.",
         "targetWord": "pregunto",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8c35032c7a52a690.mp3"
       }
     }
   },
@@ -91,15 +121,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "arreglar",
-      "options": ["arreglar", "vender", "lavar", "abrir"],
+      "options": [
+        "arreglar",
+        "vender",
+        "lavar",
+        "abrir"
+      ],
       "translation": "The bicycle does not work; dad is going to _____ it.",
-      "optionTranslations": ["to fix", "to sell", "to wash", "to open"],
+      "optionTranslations": [
+        "to fix",
+        "to sell",
+        "to wash",
+        "to open"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "La bicicleta no funciona; papá la va a arreglar.",
         "targetWord": "arreglar",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/816fda19b1fa49c7.mp3"
       }
     }
   },
@@ -110,13 +151,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to close",
-      "options": ["to close", "to open", "to wash", "to touch"],
+      "options": [
+        "to close",
+        "to open",
+        "to wash",
+        "to touch"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "Cierra los ojos y dame la mano.",
         "targetWord": "Cierra",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/60d611676fca095b.mp3"
       }
     }
   },
@@ -127,15 +174,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "regalo",
-      "options": ["regalo", "libro", "plato", "vaso"],
+      "options": [
+        "regalo",
+        "libro",
+        "plato",
+        "vaso"
+      ],
       "translation": "I open my birthday _____: it is a guitar!",
-      "optionTranslations": ["gift", "book", "plate", "glass"],
+      "optionTranslations": [
+        "gift",
+        "book",
+        "plate",
+        "glass"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "Abro mi regalo de cumpleaños: ¡es una guitarra!",
         "targetWord": "regalo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8660b7c79100f42a.mp3"
       }
     }
   },
@@ -146,13 +204,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a smile",
-      "options": ["a smile", "a laugh", "a shout", "a look"],
+      "options": [
+        "a smile",
+        "a laugh",
+        "a shout",
+        "a look"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "Julián sale con una sonrisa grande.",
         "targetWord": "sonrisa",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/33f37df684bc8818.mp3"
       }
     }
   },
@@ -163,13 +227,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "grandmother",
-      "options": ["grandmother", "aunt", "cousin", "neighbor"],
+      "options": [
+        "grandmother",
+        "aunt",
+        "cousin",
+        "neighbor"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "La silla de tu abuela.",
         "targetWord": "abuela",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b2b9629eeb12313.mp3"
       }
     }
   },
@@ -181,13 +251,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "Sunday",
-      "options": ["Sunday", "Monday", "Saturday", "Friday"],
+      "options": [
+        "Sunday",
+        "Monday",
+        "Saturday",
+        "Friday"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "Es domingo y no saben qué pasa.",
         "targetWord": "domingo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/501fbf283ea66425.mp3"
       }
     }
   },
@@ -199,13 +275,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "strange",
-      "options": ["strange", "funny", "boring", "easy"],
+      "options": [
+        "strange",
+        "funny",
+        "boring",
+        "easy"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "Qué raro. Nunca se levanta tan temprano un domingo.",
         "targetWord": "raro",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/007add1449aeccfe.mp3"
       }
     }
   },
@@ -217,15 +299,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "sucia",
-      "options": ["sucia", "nueva", "cara", "lista"],
+      "options": [
+        "sucia",
+        "nueva",
+        "cara",
+        "lista"
+      ],
       "translation": "After playing in the park, my clothes are _____.",
-      "optionTranslations": ["dirty", "new", "expensive", "ready"],
+      "optionTranslations": [
+        "dirty",
+        "new",
+        "expensive",
+        "ready"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "Después de jugar en el parque, mi ropa está sucia.",
         "targetWord": "sucia",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/811d2f0ef0debf4b.mp3"
       }
     }
   },
@@ -237,13 +330,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to get up",
-      "options": ["to get up", "to go out", "to have breakfast", "to work"],
+      "options": [
+        "to get up",
+        "to go out",
+        "to have breakfast",
+        "to work"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "Nunca se levanta tan temprano un domingo.",
         "targetWord": "se levanta",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8ec64a23cb855776.mp3"
       }
     }
   },
@@ -255,15 +354,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "roto",
-      "options": ["roto", "nuevo", "limpio", "bonito"],
+      "options": [
+        "roto",
+        "nuevo",
+        "limpio",
+        "bonito"
+      ],
       "translation": "I cannot use my pencil because it is _____.",
-      "optionTranslations": ["broken", "new", "clean", "pretty"],
+      "optionTranslations": [
+        "broken",
+        "new",
+        "clean",
+        "pretty"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "No puedo usar mi lápiz porque está roto.",
         "targetWord": "roto",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/785aab9c3ebb078a.mp3"
       }
     }
   },
@@ -275,13 +385,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to hug",
-      "options": ["to hug", "to push", "to call", "to follow"],
+      "options": [
+        "to hug",
+        "to push",
+        "to call",
+        "to follow"
+      ],
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",
         "storySource": "user",
         "sentence": "Marina abraza a su hermano, todavía sorprendida.",
         "targetWord": "abraza",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02dd986d5ee332b5.mp3"
       }
     }
   },
@@ -293,10 +409,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "temprano", "answer": "early", "options": ["early", "all of a sudden", "years ago", "it was worth it"] },
-        { "word": "de pronto", "answer": "all of a sudden", "options": ["early", "all of a sudden", "years ago", "it was worth it"] },
-        { "word": "hace años", "answer": "years ago", "options": ["early", "all of a sudden", "years ago", "it was worth it"] },
-        { "word": "valió la pena", "answer": "it was worth it", "options": ["early", "all of a sudden", "years ago", "it was worth it"] }
+        {
+          "word": "temprano",
+          "answer": "early",
+          "options": [
+            "early",
+            "all of a sudden",
+            "years ago",
+            "it was worth it"
+          ]
+        },
+        {
+          "word": "de pronto",
+          "answer": "all of a sudden",
+          "options": [
+            "early",
+            "all of a sudden",
+            "years ago",
+            "it was worth it"
+          ]
+        },
+        {
+          "word": "hace años",
+          "answer": "years ago",
+          "options": [
+            "early",
+            "all of a sudden",
+            "years ago",
+            "it was worth it"
+          ]
+        },
+        {
+          "word": "valió la pena",
+          "answer": "it was worth it",
+          "options": [
+            "early",
+            "all of a sudden",
+            "years ago",
+            "it was worth it"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -309,8 +461,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "pinté",
-      "options": ["pinté", "canté", "corté", "lavé"],
-      "optionTranslations": ["I painted", "I sang", "I cut", "I washed"],
+      "options": [
+        "pinté",
+        "canté",
+        "corté",
+        "lavé"
+      ],
+      "optionTranslations": [
+        "I painted",
+        "I sang",
+        "I cut",
+        "I washed"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "por-fin-se-abre-la-puerta",

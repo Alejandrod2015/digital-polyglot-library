@@ -6,13 +6,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a short story",
-      "options": ["a short story", "a movie", "a song", "a drawing"],
+      "options": [
+        "a short story",
+        "a movie",
+        "a song",
+        "a drawing"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "¿Y de qué tratan los cuentos?",
         "targetWord": "cuentos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea6c4d4fb1817714.mp3"
       }
     }
   },
@@ -23,13 +29,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "simple",
-      "options": ["simple", "expensive", "heavy", "modern"],
+      "options": [
+        "simple",
+        "expensive",
+        "heavy",
+        "modern"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "Busco un libro de cuentos para mis alumnos. Algo sencillo.",
         "targetWord": "sencillo",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d4838663aeb279f.mp3"
       }
     }
   },
@@ -40,13 +52,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a student",
-      "options": ["a student", "a neighbor", "a cousin", "a client"],
+      "options": [
+        "a student",
+        "a neighbor",
+        "a cousin",
+        "a client"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "Mis alumnos son chicos.",
         "targetWord": "alumnos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0af2083902d2786d.mp3"
       }
     }
   },
@@ -57,13 +75,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to sell",
-      "options": ["to sell", "to hide", "to count", "to wash"],
+      "options": [
+        "to sell",
+        "to hide",
+        "to count",
+        "to wash"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "Vendés libros y además escribís.",
         "targetWord": "Vendés",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/21da42f1e40bcfc5.mp3"
       }
     }
   },
@@ -74,13 +98,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to believe",
-      "options": ["to believe", "to hear", "to open", "to wait"],
+      "options": [
+        "to believe",
+        "to hear",
+        "to open",
+        "to wait"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "¡No lo puedo creer!",
         "targetWord": "creer",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5a41512a9187b6b8.mp3"
       }
     }
   },
@@ -91,7 +121,12 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "eagerness",
-      "options": ["eagerness", "patience", "sadness", "fear"],
+      "options": [
+        "eagerness",
+        "patience",
+        "sadness",
+        "fear"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
@@ -108,15 +143,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "leer",
-      "options": ["leer", "comprar", "vender", "romper"],
+      "options": [
+        "leer",
+        "comprar",
+        "vender",
+        "romper"
+      ],
       "translation": "I like to _____ novels before sleeping.",
-      "optionTranslations": ["to read", "to buy", "to sell", "to break"],
+      "optionTranslations": [
+        "to read",
+        "to buy",
+        "to sell",
+        "to break"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "Me gusta leer novelas antes de dormir.",
         "targetWord": "leer",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d6430b1dd2b00e5.mp3"
       }
     }
   },
@@ -127,15 +173,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "estante",
-      "options": ["estante", "espejo", "horno", "plato"],
+      "options": [
+        "estante",
+        "espejo",
+        "horno",
+        "plato"
+      ],
       "translation": "I put the books on the _____ on the wall.",
-      "optionTranslations": ["shelf", "mirror", "oven", "plate"],
+      "optionTranslations": [
+        "shelf",
+        "mirror",
+        "oven",
+        "plate"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "Pongo los libros en el estante de la pared.",
         "targetWord": "estante",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/07da6fabad7b394e.mp3"
       }
     }
   },
@@ -146,15 +203,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "campana",
-      "options": ["campana", "puerta", "ventana", "mesa"],
+      "options": [
+        "campana",
+        "puerta",
+        "ventana",
+        "mesa"
+      ],
       "translation": "The church _____ rings at twelve.",
-      "optionTranslations": ["bell", "door", "window", "table"],
+      "optionTranslations": [
+        "bell",
+        "door",
+        "window",
+        "table"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "La campana de la iglesia suena a las doce.",
         "targetWord": "campana",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6939aa0f8f3c0c82.mp3"
       }
     }
   },
@@ -165,10 +233,46 @@
     "payload": {
       "prompt": "Match the words to their meanings.",
       "pairs": [
-        { "word": "con calma", "answer": "calmly", "options": ["calmly", "really", "night", "dream"] },
-        { "word": "de verdad", "answer": "really", "options": ["calmly", "really", "night", "dream"] },
-        { "word": "noche", "answer": "night", "options": ["calmly", "really", "night", "dream"] },
-        { "word": "sueño", "answer": "dream", "options": ["calmly", "really", "night", "dream"] }
+        {
+          "word": "con calma",
+          "answer": "calmly",
+          "options": [
+            "calmly",
+            "really",
+            "night",
+            "dream"
+          ]
+        },
+        {
+          "word": "de verdad",
+          "answer": "really",
+          "options": [
+            "calmly",
+            "really",
+            "night",
+            "dream"
+          ]
+        },
+        {
+          "word": "noche",
+          "answer": "night",
+          "options": [
+            "calmly",
+            "really",
+            "night",
+            "dream"
+          ]
+        },
+        {
+          "word": "sueño",
+          "answer": "dream",
+          "options": [
+            "calmly",
+            "really",
+            "night",
+            "dream"
+          ]
+        }
       ],
       "audioClip": null
     }
@@ -181,13 +285,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "to push",
-      "options": ["to push", "to close", "to break", "to paint"],
+      "options": [
+        "to push",
+        "to close",
+        "to break",
+        "to paint"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "Camila empuja la puerta de la librería.",
         "targetWord": "empuja",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/67fb2dde4c9b2560.mp3"
       }
     }
   },
@@ -199,13 +309,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a shop",
-      "options": ["a shop", "a school", "a garage", "a church"],
+      "options": [
+        "a shop",
+        "a school",
+        "a garage",
+        "a church"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "El local abre temprano.",
         "targetWord": "local",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/00e319f7ed9c2200.mp3"
       }
     }
   },
@@ -217,13 +333,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "short",
-      "options": ["short", "new", "sad", "strange"],
+      "options": [
+        "short",
+        "new",
+        "sad",
+        "strange"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "Son cuentos cortos.",
         "targetWord": "cortos",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/957538a1885619e7.mp3"
       }
     }
   },
@@ -235,13 +357,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a counter",
-      "options": ["a counter", "a window", "a wall", "a garden"],
+      "options": [
+        "a counter",
+        "a window",
+        "a wall",
+        "a garden"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "Detrás del mostrador, Tomás la saluda con una sonrisa.",
         "targetWord": "mostrador",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cc92d7107b5d84e7.mp3"
       }
     }
   },
@@ -253,13 +381,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "easy",
-      "options": ["easy", "long", "expensive", "serious"],
+      "options": [
+        "easy",
+        "long",
+        "expensive",
+        "serious"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "Son cuentos cortos, muy fáciles de leer.",
         "targetWord": "fáciles",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9816c15302fa3f2.mp3"
       }
     }
   },
@@ -271,13 +405,19 @@
     "payload": {
       "prompt": "Choose the meaning in context.",
       "answer": "a way",
-      "options": ["a way", "a place", "a moment", "a reason"],
+      "options": [
+        "a way",
+        "a place",
+        "a moment",
+        "a reason"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "Camila mira a Tomás de otra manera.",
         "targetWord": "manera",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/012ba8354e2ab720.mp3"
       }
     }
   },
@@ -289,15 +429,26 @@
     "payload": {
       "prompt": "Complete the sentence.",
       "answer": "joven",
-      "options": ["joven", "alta", "rica", "seria"],
+      "options": [
+        "joven",
+        "alta",
+        "rica",
+        "seria"
+      ],
       "translation": "The doctor is _____; she is only twenty-five years old.",
-      "optionTranslations": ["young", "tall", "rich", "serious"],
+      "optionTranslations": [
+        "young",
+        "tall",
+        "rich",
+        "serious"
+      ],
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
         "storySource": "user",
         "sentence": "La doctora es joven; tiene solo veinticinco años.",
         "targetWord": "joven",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa755aa9faa74f9a.mp3"
       }
     }
   },
@@ -309,8 +460,18 @@
     "payload": {
       "prompt": "Which word did you hear?",
       "answer": "escribiste",
-      "options": ["escribiste", "recibiste", "perdiste", "subiste"],
-      "optionTranslations": ["you wrote", "you received", "you lost", "you went up"],
+      "options": [
+        "escribiste",
+        "recibiste",
+        "perdiste",
+        "subiste"
+      ],
+      "optionTranslations": [
+        "you wrote",
+        "you received",
+        "you lost",
+        "you went up"
+      ],
       "language": "spanish",
       "audioClip": {
         "storySlug": "quien-escribio-este-libro",
