@@ -163,15 +163,16 @@ async function saveStory(storyId: string, jsonPath: string): Promise<void> {
 
   // Optional arcType: declared by the assistant per docs/story-quality-spec.md.
   // Validated against the closed enum so a typo can't slip into the DB.
+  // 2026-07-07: sincronizado con la taxonomía kishōtenketsu de 7 arcos
+  // (spec §Arc archetype); la lista vieja de 9 arcos quedó retirada en
+  // 2026-06-02 pero este script no se migró.
   const ARC_TYPES = new Set([
-    "white-lie",
-    "last-minute-decision",
-    "return-after-years",
-    "unspoken-subtext",
-    "plan-falls-short",
+    "reframe-turn",
+    "juxtaposition-discovery",
+    "harmonic-close",
+    "mini-cliffhanger",
+    "recurring-character-callback",
     "late-reveal",
-    "small-stake",
-    "open-ending",
     "daily-encounter",
   ]);
   const rawArc = typeof parsed.arcType === "string" ? parsed.arcType.trim() : "";
