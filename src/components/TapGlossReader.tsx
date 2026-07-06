@@ -1,32 +1,58 @@
 "use client";
 
 import React from "react";
-import { X } from "lucide-react";
+import { Heart, X } from "lucide-react";
+import { useUser } from "@clerk/nextjs";
 import StoryContent from "@/components/StoryContent";
 
 // Piloto "tap any word" (2026-07-06): envuelve el StoryContent existente.
 // Cada palabra con gloss precomputado se renderiza como span.tap-word; al
-// tocarla aparece una burbuja en el MISMO lugar que la del vocab curado
-// (arriba del player dock, centrada), pero visualmente distinta: etiqueta
-// gris "Dictionary", sin badge de tipo y sin Save. Feedback del usuario
-// 2026-07-06: el tooltip flotante junto a la palabra tapaba el texto.
+// tocarla aparece una burbuja en el MISMO lugar y geometría que la del
+// vocab curado (VocabPanel), pero visualmente distinta: etiqueta gris
+// "Dictionary", borde punteado, sin badge de tipo. Sí permite guardar en
+// favoritos: la palabra tapeada es la señal más pura de gap del usuario.
 // Las pills curadas (.vocab-word) tienen prioridad: su click sigue yendo
 // al VocabPanel.
 type TapGlossReaderProps = {
   text: string;
   vocab: Array<{ word: string; surface?: string; definition: string; type?: string }>;
   glosses: Record<string, string>;
+  story?: { slug: string; title: string; language?: string | null };
 };
 
 type GlossState = {
   word: string;
   gloss: string;
+  sentence?: string;
+};
+
+type FavoriteItem = {
+  word: string;
+  translation: string;
+  wordType?: string | null;
+  exampleSentence?: string;
+  storySlug?: string;
+  storyTitle?: string;
+  sourcePath?: string;
+  language?: string;
 };
 
 const WORD_SPLIT = /([A-Za-zÄÖÜäöüß]+(?:-[A-Za-zÄÖÜäöüß]+)*)/u;
 
-export default function TapGlossReader({ text, vocab, glosses }: TapGlossReaderProps) {
+function contextSentence(node: HTMLElement | null, word: string): string | undefined {
+  const raw = node?.textContent?.replace(/\s+/g, " ").trim();
+  if (!raw) return undefined;
+  const sentences = raw.split(/(?<=[.!?])\s+/).map((s) => s.trim()).filter(Boolean);
+  const best = sentences.find((s) => s.toLowerCase().includes(word.toLowerCase())) ?? sentences[0];
+  if (!best) return undefined;
+  return best.length > 160 ? `${best.slice(0, 159).trimEnd()}…` : best;
+}
+
+export default function TapGlossReader({ text, vocab, glosses, story }: TapGlossReaderProps) {
   const [selected, setSelected] = React.useState<GlossState | null>(null);
+  const [isFav, setIsFav] = React.useState(false);
+  const { user, isLoaded } = useUser();
+  const favsRef = React.useRef<FavoriteItem[]>([]);
   // Posicionamiento IDÉNTICO a VocabPanel (mismo default y misma medición
   // del dock): las dos burbujas deben aparecer exactamente en el mismo
   // lugar; solo cambia el estilo. Mantener en sync con VocabPanel.tsx.
@@ -44,6 +70,50 @@ export default function TapGlossReader({ text, vocab, glosses }: TapGlossReaderP
     window.addEventListener("resize", measure);
     return () => window.removeEventListener("resize", measure);
   }, [selected]);
+
+  // Carga de favoritos: mismo esquema de cache que VocabPanel para que
+  // ambos paneles vean el mismo estado.
+  const cacheKey = `dp_favorites_${user?.id ?? "guest"}`;
+  const persistFavs = React.useCallback(
+    (items: FavoriteItem[]) => {
+      favsRef.current = items;
+      try {
+        localStorage.setItem(cacheKey, JSON.stringify(items));
+        localStorage.setItem("favorites", JSON.stringify(items));
+      } catch {
+        // ignore storage errors
+      }
+      window.dispatchEvent(new CustomEvent("favorites-updated"));
+    },
+    [cacheKey]
+  );
+
+  React.useEffect(() => {
+    if (!isLoaded) return;
+    const readCache = (): FavoriteItem[] => {
+      try {
+        const raw = localStorage.getItem(cacheKey);
+        return raw ? (JSON.parse(raw) as FavoriteItem[]) : [];
+      } catch {
+        return [];
+      }
+    };
+    const load = async () => {
+      if (user) {
+        try {
+          const res = await fetch("/api/favorites", { cache: "no-store" });
+          if (res.ok) {
+            favsRef.current = (await res.json()) as FavoriteItem[];
+            return;
+          }
+        } catch {
+          // fall through to cache
+        }
+      }
+      favsRef.current = readCache();
+    };
+    void load();
+  }, [user, isLoaded, cacheKey]);
 
   const renderWord = React.useCallback(
     (chunk: string): React.ReactNode => {
@@ -85,11 +155,53 @@ export default function TapGlossReader({ text, vocab, glosses }: TapGlossReaderP
       const token = el.dataset.token ?? "";
       const gloss = glosses[token];
       if (!gloss) return;
-      setSelected({ word: el.textContent ?? token, gloss });
+      const word = el.textContent ?? token;
+      setSelected({
+        word,
+        gloss,
+        sentence: contextSentence(el.closest("p, blockquote"), word),
+      });
+      setIsFav(
+        favsRef.current.some((f) => (f.word ?? "").trim().toLowerCase() === word.trim().toLowerCase())
+      );
     };
     document.addEventListener("click", handler);
     return () => document.removeEventListener("click", handler);
   }, [glosses]);
+
+  const toggleFavorite = async () => {
+    if (!selected) return;
+    const prevFav = isFav;
+    setIsFav(!prevFav);
+    const item: FavoriteItem = {
+      word: selected.word,
+      translation: selected.gloss,
+      wordType: null,
+      exampleSentence: selected.sentence,
+      storySlug: story?.slug,
+      storyTitle: story?.title,
+      sourcePath: typeof window !== "undefined" ? window.location.pathname : undefined,
+      language: story?.language ?? undefined,
+    };
+    const optimistic = prevFav
+      ? favsRef.current.filter((f) => f.word !== selected.word)
+      : [...favsRef.current, item];
+    persistFavs(optimistic);
+    if (user) {
+      try {
+        const res = await fetch("/api/favorites", {
+          method: prevFav ? "DELETE" : "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify(prevFav ? { word: selected.word } : item),
+        });
+        if (!res.ok) throw new Error("Network error");
+      } catch (err) {
+        console.error("Error updating favorites:", err);
+        // Keep optimistic local state so the action feels responsive offline.
+      }
+    }
+  };
 
   return (
     <div className="relative">
@@ -170,6 +282,43 @@ export default function TapGlossReader({ text, vocab, glosses }: TapGlossReaderP
           >
             {selected.gloss}
           </p>
+          <div className="mt-3 flex">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                void toggleFavorite();
+              }}
+              aria-label={isFav ? "Remove from saved words" : "Save word"}
+              className="inline-flex items-center gap-2 transition-all cursor-pointer"
+              style={
+                isFav
+                  ? {
+                      backgroundColor: "#f8c15c",
+                      border: "1px solid rgba(248, 193, 92, 0.95)",
+                      color: "#0e1727",
+                      fontWeight: 800,
+                      fontSize: 13,
+                      padding: "8px 14px",
+                      borderRadius: 999,
+                      boxShadow: "0 4px 12px rgba(248, 193, 92, 0.45)",
+                    }
+                  : {
+                      backgroundColor: "var(--chip-bg)",
+                      border: "1px solid var(--card-border)",
+                      color: "var(--foreground)",
+                      fontWeight: 700,
+                      fontSize: 13,
+                      padding: "8px 14px",
+                      borderRadius: 999,
+                      boxShadow: "0 2px 6px rgba(0, 0, 0, 0.18)",
+                    }
+              }
+            >
+              <Heart size={14} strokeWidth={2.4} fill={isFav ? "currentColor" : "none"} />
+              {isFav ? "Saved" : "Save word"}
+            </button>
+          </div>
         </div>
       ) : null}
     </div>

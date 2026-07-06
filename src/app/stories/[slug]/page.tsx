@@ -518,6 +518,11 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
                 text={normalizedText}
                 vocab={safeVocab}
                 glosses={tapGlosses}
+                story={{
+                  slug: resolvedStory.slug,
+                  title: resolvedStory.title,
+                  language: resolvedStory.language,
+                }}
               />
             ) : (
               <StoryContent
