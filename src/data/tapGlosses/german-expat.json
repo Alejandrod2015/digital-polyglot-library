@@ -143,7 +143,7 @@
   },
   "b": {
    "g": "B (waiting-ticket series letter)",
-   "t": "number"
+   "t": "other"
   },
   "balanciert": {
    "g": "balances (balancieren)",
@@ -1439,7 +1439,7 @@
   },
   "u": {
    "g": "U (as in U8, Berlin subway line)",
-   "t": "number"
+   "t": "other"
   },
   "u-bahn": {
    "g": "subway, metro (die U-Bahn)",
