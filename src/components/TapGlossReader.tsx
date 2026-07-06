@@ -4,25 +4,45 @@ import React from "react";
 import { Heart, X } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import StoryContent from "@/components/StoryContent";
+import type { TapGloss } from "@/lib/tapGlosses";
+import { getVocabTypeLabel, normalizeVocabType, type VocabTypeKey } from "@/lib/vocabTypes";
+
+// Mirror de VocabPanel.tsx -> VOCAB_TYPE_BG (que a su vez espeja el bubble
+// de iPhone). Mantener los tres en sync: el badge de tipo del diccionario
+// usa los mismos colores que el del vocab curado.
+const VOCAB_TYPE_BG: Record<VocabTypeKey, string> = {
+  verb: "rgba(248, 113, 113, 0.6)",
+  noun: "rgba(56, 189, 248, 0.65)",
+  adjective: "rgba(52, 211, 153, 0.6)",
+  adverb: "rgba(167, 139, 250, 0.65)",
+  pronoun: "rgba(251, 191, 36, 0.6)",
+  preposition: "rgba(45, 212, 191, 0.6)",
+  conjunction: "rgba(129, 140, 248, 0.6)",
+  number: "rgba(190, 220, 80, 0.55)",
+  expression: "rgba(244, 114, 182, 0.6)",
+  other: "rgba(148, 163, 184, 0.55)",
+};
 
 // Piloto "tap any word" (2026-07-06): envuelve el StoryContent existente.
 // Cada palabra con gloss precomputado se renderiza como span.tap-word; al
 // tocarla aparece una burbuja en el MISMO lugar y geometría que la del
 // vocab curado (VocabPanel), pero visualmente distinta: etiqueta gris
-// "Dictionary", borde punteado, sin badge de tipo. Sí permite guardar en
-// favoritos: la palabra tapeada es la señal más pura de gap del usuario.
+// "Dictionary" + badge de tipo gramatical con los mismos colores del vocab.
+// Sí permite guardar en favoritos (con wordType correcto): la palabra
+// tapeada es la señal más pura de gap del usuario.
 // Las pills curadas (.vocab-word) tienen prioridad: su click sigue yendo
 // al VocabPanel.
 type TapGlossReaderProps = {
   text: string;
   vocab: Array<{ word: string; surface?: string; definition: string; type?: string }>;
-  glosses: Record<string, string>;
+  glosses: Record<string, TapGloss>;
   story?: { slug: string; title: string; language?: string | null };
 };
 
 type GlossState = {
   word: string;
   gloss: string;
+  type: VocabTypeKey;
   sentence?: string;
 };
 
@@ -153,12 +173,13 @@ export default function TapGlossReader({ text, vocab, glosses, story }: TapGloss
         return;
       }
       const token = el.dataset.token ?? "";
-      const gloss = glosses[token];
-      if (!gloss) return;
+      const entry = glosses[token];
+      if (!entry) return;
       const word = el.textContent ?? token;
       setSelected({
         word,
-        gloss,
+        gloss: entry.g,
+        type: normalizeVocabType(entry.t, { word, definition: entry.g }) ?? "other",
         sentence: contextSentence(el.closest("p, blockquote"), word),
       });
       setIsFav(
@@ -176,7 +197,7 @@ export default function TapGlossReader({ text, vocab, glosses, story }: TapGloss
     const item: FavoriteItem = {
       word: selected.word,
       translation: selected.gloss,
-      wordType: null,
+      wordType: selected.type === "other" ? null : selected.type,
       exampleSentence: selected.sentence,
       storySlug: story?.slug,
       storyTitle: story?.title,
@@ -238,22 +259,38 @@ export default function TapGlossReader({ text, vocab, glosses, story }: TapGloss
               >
                 {selected.word}
               </span>
-              <span
-                className="self-start"
-                style={{
-                  backgroundColor: "rgba(148, 163, 184, 0.28)",
-                  color: "var(--foreground)",
-                  fontSize: 10,
-                  fontWeight: 700,
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                  padding: "2px 8px",
-                  borderRadius: 999,
-                  marginTop: 3,
-                  opacity: 0.85,
-                }}
-              >
-                Dictionary
+              <span className="flex items-center gap-1.5" style={{ marginTop: 3 }}>
+                <span
+                  style={{
+                    backgroundColor: "rgba(148, 163, 184, 0.28)",
+                    color: "var(--foreground)",
+                    fontSize: 10,
+                    fontWeight: 700,
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                    padding: "2px 8px",
+                    borderRadius: 999,
+                    opacity: 0.85,
+                  }}
+                >
+                  Dictionary
+                </span>
+                {selected.type !== "other" ? (
+                  <span
+                    style={{
+                      backgroundColor: VOCAB_TYPE_BG[selected.type],
+                      color: "#ffffff",
+                      fontSize: 10,
+                      fontWeight: 700,
+                      letterSpacing: "0.06em",
+                      textTransform: "uppercase",
+                      padding: "2px 8px",
+                      borderRadius: 999,
+                    }}
+                  >
+                    {getVocabTypeLabel(selected.type)}
+                  </span>
+                ) : null}
               </span>
             </div>
             <button

@@ -5,14 +5,21 @@ import germanExpat from "@/data/tapGlosses/german-expat.json";
 // palabra con gloss en un span tapeable; las 20-25 curadas del vocab[]
 // siguen intactas como pills (capa de enseñanza). Este archivo decide
 // qué historias participan; hoy solo el journey Expat alemán C1.
+//
+// Cada entrada: { g: gloss en inglés, t: tipo gramatical } donde t usa las
+// mismas claves que el vocab curado (verb|noun|adjective|adverb|pronoun|
+// preposition|conjunction|number|expression|other) para reusar los colores
+// de badge y clasificar bien los favoritos guardados desde el diccionario.
+export type TapGloss = { g: string; t: string };
+
 type TapGlossBundle = {
   slugs: string[];
-  glosses: Record<string, string>;
+  glosses: Record<string, TapGloss>;
 };
 
 const BUNDLES: TapGlossBundle[] = [germanExpat as TapGlossBundle];
 
-export function getTapGlossesForSlug(slug: string): Record<string, string> | null {
+export function getTapGlossesForSlug(slug: string): Record<string, TapGloss> | null {
   for (const bundle of BUNDLES) {
     if (bundle.slugs.includes(slug)) return bundle.glosses;
   }
