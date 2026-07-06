@@ -8,9 +8,9 @@ import germanExpat from "@/data/tapGlosses/german-expat.json";
 //
 // Cada entrada: { g: gloss en inglés, t: tipo gramatical } donde t usa las
 // mismas claves que el vocab curado (verb|noun|adjective|adverb|pronoun|
-// preposition|conjunction|number|expression|other) para reusar los colores
+// preposition|conjunction|article|number|expression|other) para reusar los colores
 // de badge y clasificar bien los favoritos guardados desde el diccionario.
-export type TapGloss = { g: string; t: string };
+export type TapGloss = { g: string; t: string; r?: string };
 
 type TapGlossBundle = {
   slugs: string[];

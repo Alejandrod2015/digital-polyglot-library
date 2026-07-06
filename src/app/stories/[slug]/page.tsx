@@ -47,7 +47,7 @@ type StoryPageProps = {
   }>;
 };
 
-type SafeVocabItem = { word: string; surface?: string; definition: string; type?: string };
+type SafeVocabItem = { word: string; surface?: string; definition: string; type?: string; register?: string };
 type StorySource = "polyglot" | "standalone";
 type StoryPayload = {
   id: string;
@@ -82,8 +82,15 @@ function normalizePolyglotVocab(raw: unknown): SafeVocabItem[] {
           const surface = typeof record.surface === "string" ? record.surface.trim() : "";
           const definition = typeof record.definition === "string" ? record.definition.trim() : "";
           const type = typeof record.type === "string" ? record.type.trim() : "";
+          const register = typeof record.register === "string" ? record.register.trim() : "";
           if (!word || !definition) return null;
-          return { word, ...(surface ? { surface } : {}), definition, ...(type ? { type } : {}) };
+          return {
+            word,
+            ...(surface ? { surface } : {}),
+            definition,
+            ...(type ? { type } : {}),
+            ...(register ? { register } : {}),
+          };
         })
         .filter((item): item is SafeVocabItem => item !== null);
     }

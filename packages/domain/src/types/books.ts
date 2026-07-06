@@ -7,6 +7,7 @@ export interface VocabItem {
   surface?: string;
   definition: string;
   type?: string;
+  register?: string;
   note?: string;
 }
 

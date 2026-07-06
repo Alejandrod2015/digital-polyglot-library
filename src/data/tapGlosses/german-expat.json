@@ -383,7 +383,8 @@
   },
   "drücker": {
    "g": "auf den letzten Drücker = at the very last moment",
-   "t": "expression"
+   "t": "expression",
+   "r": "colloquial"
   },
   "du": {
    "g": "you",
@@ -831,7 +832,8 @@
   },
   "kiez": {
    "g": "neighborhood (Berlin word, der Kiez)",
-   "t": "noun"
+   "t": "noun",
+   "r": "regional"
   },
   "kleingartenkolonie": {
    "g": "allotment garden colony",
@@ -879,7 +881,8 @@
   },
   "kriegst": {
    "g": "you get (kriegen, colloquial)",
-   "t": "verb"
+   "t": "verb",
+   "r": "colloquial"
   },
   "könnte": {
    "g": "could (können, Konjunktiv II)",
@@ -1019,7 +1022,8 @@
   },
   "na": {
    "g": "well; na gut = alright then",
-   "t": "adverb"
+   "t": "adverb",
+   "r": "colloquial"
   },
   "nach": {
    "g": "after; to; nach Hause = home",
@@ -1127,7 +1131,8 @@
   },
   "platzt": {
    "g": "bursts; here: falls through (platzen)",
-   "t": "verb"
+   "t": "verb",
+   "r": "colloquial"
   },
   "portal": {
    "g": "web portal (das Portal)",
@@ -1159,7 +1164,8 @@
   },
   "raus": {
    "g": "out; Handy raus = phone out",
-   "t": "adverb"
+   "t": "adverb",
+   "r": "colloquial"
   },
   "rechne": {
    "g": "calculate, count (rechnen)",
@@ -1327,11 +1333,13 @@
   },
   "späti": {
    "g": "late-night corner shop (Berlin, der Späti)",
-   "t": "noun"
+   "t": "noun",
+   "r": "regional"
   },
   "spätis": {
    "g": "of a Späti (late-night corner shop)",
-   "t": "noun"
+   "t": "noun",
+   "r": "regional"
   },
   "stadt": {
    "g": "city (die Stadt)",
@@ -1491,7 +1499,8 @@
   },
   "verbleib": {
    "g": "whereabouts (der Verbleib)",
-   "t": "noun"
+   "t": "noun",
+   "r": "formal"
   },
   "vergnügen": {
    "g": "pleasure (das Vergnügen); zum Vergnügen = for fun",
@@ -1499,7 +1508,8 @@
   },
   "verkrümelt": {
    "g": "slips away quietly (sich verkrümeln, colloquial)",
-   "t": "verb"
+   "t": "verb",
+   "r": "colloquial"
   },
   "verliert": {
    "g": "loses (verlieren)",

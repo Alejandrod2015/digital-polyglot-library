@@ -128,11 +128,19 @@ function validatePayload(raw: unknown): {
     seen.add(key);
     const surface = typeof v.surface === "string" && v.surface.trim() ? v.surface.trim() : undefined;
     const type = typeof v.type === "string" && v.type.trim() ? v.type.trim() : undefined;
+    // register (2026-07-06): dimensión de uso ortogonal al tipo. "slang" ya
+    // NO es un type (alias -> expression en el dominio); va aquí.
+    const REGISTERS = new Set(["colloquial", "slang", "formal", "regional", "vulgar"]);
+    const rawRegister = typeof v.register === "string" ? v.register.trim().toLowerCase() : "";
+    if (rawRegister && !REGISTERS.has(rawRegister)) {
+      throw new Error(`register "${rawRegister}" inválido en "${word}". Permitidos: ${Array.from(REGISTERS).join(", ")}`);
+    }
     vocab.push({
       word,
       ...(surface && surface !== word ? { surface } : {}),
       definition,
       ...(type ? { type } : {}),
+      ...(rawRegister ? { register: rawRegister } : {}),
     });
   }
   if (vocab.length < 15) {

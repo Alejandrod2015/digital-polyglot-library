@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { BookOpen, Heart, X } from "lucide-react";
 import { VocabItem } from "@/types/books";
 import { useUser } from "@clerk/nextjs";
-import { normalizeVocabType, getVocabTypeLabel, type VocabTypeKey } from "@/lib/vocabTypes";
+import { normalizeVocabType, getVocabTypeLabel, normalizeVocabRegister, getVocabRegisterLabel, type VocabTypeKey } from "@/lib/vocabTypes";
 import {
   coerceAudioSegments,
   findBestAudioSegment,
@@ -339,14 +339,16 @@ export default function VocabPanel({
   };
 
   // Tipo normalizado del vocab seleccionado para pintar el badge.
+  const selectedItem = selectedWord
+    ? story.vocab?.find((v) => v.word === selectedWord || v.surface === selectedWord)
+    : undefined;
   const selectedType: VocabTypeKey | null = selectedWord
-    ? normalizeVocabType(
-        story.vocab?.find(
-          (v) => v.word === selectedWord || v.surface === selectedWord
-        )?.type,
-        { word: selectedWord, definition: definition ?? "" }
-      )
+    ? normalizeVocabType(selectedItem?.type, { word: selectedWord, definition: definition ?? "" })
     : null;
+  // Registro de uso (colloquial/slang/formal/regional/vulgar): dimensión
+  // ortogonal al tipo; chip outlined ámbar, mismo diseño que en el
+  // diccionario (TapGlossReader).
+  const selectedRegister = normalizeVocabRegister(selectedItem?.register);
 
   if (!selectedWord) return null;
 
@@ -435,6 +437,22 @@ export default function VocabPanel({
                   }}
                 >
                   {getVocabTypeLabel(selectedType)}
+                </span>
+              ) : null}
+              {selectedRegister ? (
+                <span
+                  style={{
+                    border: "1px solid rgba(248, 193, 92, 0.85)",
+                    color: "#f8c15c",
+                    fontSize: 11,
+                    fontWeight: 700,
+                    letterSpacing: "0.04em",
+                    textTransform: "uppercase",
+                    padding: "1px 8px",
+                    borderRadius: 999,
+                  }}
+                >
+                  {getVocabRegisterLabel(selectedRegister)}
                 </span>
               ) : null}
             </span>

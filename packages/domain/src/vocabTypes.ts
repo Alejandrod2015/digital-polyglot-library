@@ -41,6 +41,9 @@ const VOCAB_TYPE_ALIASES: Record<string, VocabTypeKey> = {
   collocations: "expression",
   expresion: "expression",
   expresiones: "expression",
+  slang: "expression",
+  argot: "expression",
+  jerga: "expression",
   pronoun: "pronoun",
   pronouns: "pronoun",
   pronombre: "pronoun",
@@ -89,6 +92,54 @@ const VOCAB_TYPE_LABELS: Record<VocabTypeKey, string> = {
   expression: "Expression",
   other: "Other",
 };
+
+// Registro de uso (dimensión ortogonal al tipo gramatical, 2026-07-06):
+// marca CUÁNDO usar la palabra, no qué es. "slang" dejó de ser un type
+// (alias -> expression) y pasó a ser un register. Mantener la lista corta
+// a propósito (regla del usuario: opciones simples).
+export const VOCAB_REGISTER_ORDER = [
+  "colloquial",
+  "slang",
+  "formal",
+  "regional",
+  "vulgar",
+] as const;
+
+export type VocabRegisterKey = (typeof VOCAB_REGISTER_ORDER)[number];
+
+const VOCAB_REGISTER_ALIASES: Record<string, VocabRegisterKey> = {
+  colloquial: "colloquial",
+  coloquial: "colloquial",
+  informal: "colloquial",
+  umgangssprachlich: "colloquial",
+  slang: "slang",
+  argot: "slang",
+  jerga: "slang",
+  formal: "formal",
+  official: "formal",
+  amtsdeutsch: "formal",
+  regional: "regional",
+  dialect: "regional",
+  vulgar: "vulgar",
+  offensive: "vulgar",
+};
+
+const VOCAB_REGISTER_LABELS: Record<VocabRegisterKey, string> = {
+  colloquial: "Colloquial",
+  slang: "Slang",
+  formal: "Formal",
+  regional: "Regional",
+  vulgar: "Vulgar",
+};
+
+export function normalizeVocabRegister(raw?: string | null): VocabRegisterKey | null {
+  if (!raw) return null;
+  return VOCAB_REGISTER_ALIASES[raw.trim().toLowerCase()] ?? null;
+}
+
+export function getVocabRegisterLabel(key: VocabRegisterKey): string {
+  return VOCAB_REGISTER_LABELS[key];
+}
 
 function compact(value: string): string {
   return value.replace(/\s+/g, " ").trim();

@@ -5,7 +5,7 @@ import { Heart, Search, X } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import StoryContent from "@/components/StoryContent";
 import type { TapGloss } from "@/lib/tapGlosses";
-import { getVocabTypeLabel, normalizeVocabType, type VocabTypeKey } from "@/lib/vocabTypes";
+import { getVocabTypeLabel, getVocabRegisterLabel, normalizeVocabRegister, normalizeVocabType, type VocabRegisterKey, type VocabTypeKey } from "@/lib/vocabTypes";
 
 // Mirror de VocabPanel.tsx -> VOCAB_TYPE_BG (que a su vez espeja el bubble
 // de iPhone). Mantener los tres en sync: el badge de tipo del diccionario
@@ -45,6 +45,7 @@ type GlossState = {
   word: string;
   gloss: string;
   type: VocabTypeKey;
+  register: VocabRegisterKey | null;
   sentence?: string;
 };
 
@@ -182,6 +183,7 @@ export default function TapGlossReader({ text, vocab, glosses, story }: TapGloss
         word,
         gloss: entry.g,
         type: normalizeVocabType(entry.t, { word, definition: entry.g }) ?? "other",
+        register: normalizeVocabRegister(entry.r),
         sentence: contextSentence(el.closest("p, blockquote"), word),
       });
       setIsFav(
@@ -293,6 +295,22 @@ export default function TapGlossReader({ text, vocab, glosses, story }: TapGloss
                     }}
                   >
                     {getVocabTypeLabel(selected.type)}
+                  </span>
+                ) : null}
+                {selected.register ? (
+                  <span
+                    style={{
+                      border: "1px solid rgba(248, 193, 92, 0.85)",
+                      color: "#f8c15c",
+                      fontSize: 10,
+                      fontWeight: 700,
+                      letterSpacing: "0.06em",
+                      textTransform: "uppercase",
+                      padding: "1px 8px",
+                      borderRadius: 999,
+                    }}
+                  >
+                    {getVocabRegisterLabel(selected.register)}
                   </span>
                 ) : null}
               </span>

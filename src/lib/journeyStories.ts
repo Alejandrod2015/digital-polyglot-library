@@ -33,6 +33,7 @@ function toPublicStory(s: {
             word: v.word ?? "",
             definition: v.definition ?? v.translation ?? "",
             ...(v.type ? { type: v.type } : {}),
+            ...(v.register ? { register: v.register } : {}),
             ...(v.surface ? { surface: v.surface } : {}),
           }))
         : s.vocab
