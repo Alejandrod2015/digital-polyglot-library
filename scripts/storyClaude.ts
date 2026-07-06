@@ -247,6 +247,24 @@ async function saveStory(storyId: string, jsonPath: string): Promise<void> {
         );
       }
     }
+
+    // Turn-length gate (2026-07-06): ningún turno de diálogo > 30 palabras.
+    // Un turno de 40 palabras con tres oraciones expositivas es monólogo, no
+    // conversación ("ritmo conversacional real" del spec, ahora cuantificado).
+    // Partir la exposición larga con reacciones del interlocutor.
+    const longTurns: string[] = [];
+    for (const para of text.split(/\n\s*\n/)) {
+      const m = para.trim().match(/^([A-ZÄÖÜ][\wäöüß]*(?:\s[A-ZÄÖÜ][\wäöüß]*)?):\s*([\s\S]+)$/);
+      if (!m) continue;
+      const w = m[2].split(/\s+/).length;
+      if (w > 30) longTurns.push(`  - ${m[1]}: ${w} palabras ("${m[2].slice(0, 60)}...")`);
+    }
+    if (longTurns.length > 0) {
+      throw new Error(
+        `Turn-length gate failed: ${longTurns.length} turno(s) sobre 30 palabras.\n${longTurns.join("\n")}\n` +
+        `Parte la exposición con una reacción o pregunta del interlocutor.`,
+      );
+    }
   }
 
   // Vocab type-balance gate (2026-07-06, niveles B2+): mínimo 2 expressions

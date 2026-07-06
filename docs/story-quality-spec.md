@@ -61,6 +61,7 @@ Both Conversacional and Viajero now default to **multi-voice dialogue**: a narra
 ### Dialogue
 
 - Real conversational rhythm: reactions, interruptions, brief silences. Not pure question→answer drill.
+- **Turn length (HARD, 2026-07-06): no dialogue turn above 30 words; healthy average ~15-20.** A 40-word turn with three expository sentences is a monologue wearing a speaker label — split it with a reaction or question from the interlocutor. Real case: German C1 story 1 shipped a 40w Nadia turn; the user flagged it. Enforced mechanically by the turn-length gate in `scripts/storyClaude.ts` save.
 - Each character has a voice: maternal, curious, teasing, deadpan, etc.
 - Callbacks within the story (a phrase reused with a twist late) build cohesion.
 - Lexical level matches the target CEFR. One level above is normal exposure (i+1); two levels above is a real problem to fix before saving.
