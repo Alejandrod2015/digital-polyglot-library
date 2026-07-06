@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Heart, X } from "lucide-react";
+import { BookOpen, Heart, X } from "lucide-react";
 import { VocabItem } from "@/types/books";
 import { useUser } from "@clerk/nextjs";
 import { normalizeVocabType, getVocabTypeLabel, type VocabTypeKey } from "@/lib/vocabTypes";
@@ -400,11 +400,14 @@ export default function VocabPanel({
             >
               {selectedWord}
             </span>
-            {selectedType && selectedType !== "other" ? (
+            {/* Rol explícito del panel: contraparte del chip "Quick
+                lookup" del diccionario (TapGlossReader). Azul + libro =
+                "palabra que esta historia te enseña". */}
+            <span className="flex items-center gap-1.5" style={{ marginTop: 4 }}>
               <span
-                className="self-start"
+                className="inline-flex items-center gap-1"
                 style={{
-                  backgroundColor: VOCAB_TYPE_BG[selectedType],
+                  backgroundColor: "rgba(59, 130, 246, 0.4)",
                   color: "#ffffff",
                   fontSize: 11,
                   fontWeight: 700,
@@ -412,12 +415,28 @@ export default function VocabPanel({
                   textTransform: "uppercase",
                   padding: "2px 8px",
                   borderRadius: 999,
-                  marginTop: 4,
                 }}
               >
-                {getVocabTypeLabel(selectedType)}
+                <BookOpen size={11} strokeWidth={2.6} />
+                Story vocab
               </span>
-            ) : null}
+              {selectedType && selectedType !== "other" ? (
+                <span
+                  style={{
+                    backgroundColor: VOCAB_TYPE_BG[selectedType],
+                    color: "#ffffff",
+                    fontSize: 11,
+                    fontWeight: 700,
+                    letterSpacing: "0.04em",
+                    textTransform: "uppercase",
+                    padding: "2px 8px",
+                    borderRadius: 999,
+                  }}
+                >
+                  {getVocabTypeLabel(selectedType)}
+                </span>
+              ) : null}
+            </span>
           </div>
           <button
             type="button"

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Heart, X } from "lucide-react";
+import { Heart, Search, X } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import StoryContent from "@/components/StoryContent";
 import type { TapGloss } from "@/lib/tapGlosses";
@@ -27,7 +27,8 @@ const VOCAB_TYPE_BG: Record<VocabTypeKey, string> = {
 // Cada palabra con gloss precomputado se renderiza como span.tap-word; al
 // tocarla aparece una burbuja en el MISMO lugar y geometría que la del
 // vocab curado (VocabPanel), pero visualmente distinta: etiqueta gris
-// "Dictionary" + badge de tipo gramatical con los mismos colores del vocab.
+// "Quick lookup" + badge de tipo gramatical con los mismos colores del vocab;
+// el VocabPanel lleva su contraparte azul "Story vocab" (rol explícito).
 // Sí permite guardar en favoritos (con wordType correcto): la palabra
 // tapeada es la señal más pura de gap del usuario.
 // Las pills curadas (.vocab-word) tienen prioridad: su click sigue yendo
@@ -261,6 +262,7 @@ export default function TapGlossReader({ text, vocab, glosses, story }: TapGloss
               </span>
               <span className="flex items-center gap-1.5" style={{ marginTop: 3 }}>
                 <span
+                  className="inline-flex items-center gap-1"
                   style={{
                     backgroundColor: "rgba(148, 163, 184, 0.28)",
                     color: "var(--foreground)",
@@ -273,7 +275,8 @@ export default function TapGlossReader({ text, vocab, glosses, story }: TapGloss
                     opacity: 0.85,
                   }}
                 >
-                  Dictionary
+                  <Search size={10} strokeWidth={2.6} />
+                  Quick lookup
                 </span>
                 {selected.type !== "other" ? (
                   <span
