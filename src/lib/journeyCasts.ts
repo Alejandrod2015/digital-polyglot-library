@@ -564,18 +564,18 @@ export const GERMAN_EXPAT_B1_CAST: JourneyCast = {
             "Jefa de ~40 en la oficina de Nadia; formal (Sie estricto), seca pero justa. Motor del registro formal del journey.",
         },
         {
-          slug: "ayse",
-          displayName: "Ayşe",
+          slug: "katja",
+          displayName: "Katja",
           voiceId: GERMAN_DIALOGUE_VOICES.enniah,
           voiceSlot: "enniah",
           age: "middle-aged",
           relation: "vecina / dueña del Späti",
           description:
-            "Berlinesa de familia turca, ~38, dueña del Späti de la esquina; cálida y directa. Puente entre el alltag y la amistad.",
+            "Berlinesa de ~38, dueña del Späti de la esquina; cálida y directa. Puente entre el Alltag y la amistad. (Era Ayşe; renombrada 2026-07-06: en historias solo nombres y ortografía del idioma del journey.)",
         },
       ],
       notes:
-        "Through-line: Nadia pasa de sobrevivir trámites a tener una vida (el topic 7 cierra con ella acompañando a otro recién llegado). Registro du/Sie como recurso narrativo: Timo/Ayşe = du, Frau Brandt/funcionarios = Sie.",
+        "Through-line: Nadia pasa de sobrevivir trámites a tener una vida (el topic 7 cierra con ella acompañando a otro recién llegado). Registro du/Sie como recurso narrativo: Timo/Katja = du, Frau Brandt/funcionarios = Sie.",
       seedStories: [],
     },
   ],

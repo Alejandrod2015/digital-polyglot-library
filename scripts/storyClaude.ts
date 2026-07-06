@@ -189,6 +189,40 @@ async function saveStory(storyId: string, jsonPath: string): Promise<void> {
   });
   if (!story) throw new Error(`Story ${storyId} not found.`);
 
+  // Orthography gate (2026-07-06): title/synopsis/text solo pueden usar el
+  // alfabeto del idioma del journey. Nombres propios incluidos: "Ayşe" en una
+  // historia alemana se coló hasta el reader y el usuario lo marcó como error
+  // grave ("solo nombres y escritura del idioma"). El gate lo vuelve imposible.
+  const LANGUAGE_LETTERS: Record<string, string> = {
+    german: "ÄÖÜäöüß",
+    spanish: "ÁÉÍÓÚÜÑáéíóúüñ",
+    italian: "ÀÈÉÌÍÎÒÓÙàèéìíîòóù",
+    portuguese: "ÁÂÃÀÇÉÊÍÓÔÕÚáâãàçéêíóôõú",
+    french: "ÀÂÆÇÉÈÊËÎÏÔŒÙÛÜŸàâæçéèêëîïôœùûüÿ",
+    english: "",
+  };
+  const extraLetters = LANGUAGE_LETTERS[story.journey.language];
+  if (extraLetters !== undefined) {
+    const offenders = new Map<string, string>();
+    for (const [field, value] of [["title", title], ["synopsis", synopsis], ["text", text]] as const) {
+      for (const ch of value) {
+        if (/\p{L}/u.test(ch) && !/[A-Za-z]/.test(ch) && !extraLetters.includes(ch)) {
+          if (!offenders.has(ch)) {
+            const idx = value.indexOf(ch);
+            offenders.set(ch, `${field}: "...${value.slice(Math.max(0, idx - 20), idx + 20)}..."`);
+          }
+        }
+      }
+    }
+    if (offenders.size > 0) {
+      const lines = Array.from(offenders.entries()).map(([ch, ctx]) => `  - "${ch}" en ${ctx}`);
+      throw new Error(
+        `Orthography gate failed: caracteres fuera del alfabeto de ${story.journey.language}.\n` +
+        `Solo nombres y escritura del idioma del journey (regla del usuario 2026-07-06).\n${lines.join("\n")}`,
+      );
+    }
+  }
+
   const baseSlug = generateSlug(title, story.journey.language, story.journey.variant, 0).replace(/-0$/, "");
   const slug = story.slotIndex > 0 ? `${baseSlug}-${story.slotIndex + 1}` : baseSlug;
   const wordCount = text.split(/\s+/).filter(Boolean).length;

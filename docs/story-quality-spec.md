@@ -113,6 +113,13 @@ The dialect of the dialogue must match where the story is set, and must stay con
 - **Mexico / Colombia / Peru / Chile → tú / ustedes**, never voseo.
 - Validator locks: `body-voseo-forms` fails on voseo leaking into a non-rioplatense setting; `body-missing-voseo` (2026-06-26) fails on a rioplatense setting written in `tú` with no voseo. The second was added after a0 Buenos Aires shipped in `tú` while a1/a2 of the same journey used voseo — a learner was taught the wrong register, then a different one a level later.
 
+### Names & orthography match the journey language (HARD) [2026-07-06]
+
+Every proper noun and every character in `title`, `synopsis` and `text` must use ONLY the target language's alphabet and naming conventions. No foreign diacritics or scripts, character names included: `Ayşe` (Turkish `ş`) in a German story reached the reader and the user flagged it as a never-repeat error ("solo nombres y escritura del idioma"). A Berlin Späti owner is `Katja`, not `Ayşe`; a Lima vendor is `Rosa`, not `Aiko`. The learner is acquiring the target language's writing system — a single out-of-alphabet glyph breaks that contract and can break TTS.
+
+- Allowed letters per language: base A-Z plus the language's own set (DE `äöüß`, ES `áéíóúüñ¿¡`, IT `àèéìíîòóù`, PT `ãõáâàçéêíóôú`, FR `àâæçéèêëîïôœùûüÿ`).
+- Enforced mechanically: `scripts/storyClaude.ts` save has an orthography gate that rejects any letter outside the journey language's alphabet in title/synopsis/text.
+
 ### Narration crutches & repeated beats (HARD BAN on overuse)
 
 Added 2026-06-25 after the es-LATAM **A0** journey shipped with three template tics repeated across ~20 of 21 stories. Each story passed the per-story checks; the mold only showed up reading them back-to-back (the mandatory gestalt step). By then the audio was generated, so it couldn't be cheaply fixed. These are now caught at validation, **before** audio.
