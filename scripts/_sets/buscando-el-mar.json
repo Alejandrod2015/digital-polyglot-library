@@ -307,7 +307,8 @@
         "storySource": "user",
         "sentence": "El elevador no funciona; usamos las escaleras.",
         "targetWord": "escaleras",
-        "language": "spanish"
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f77d52fac3d2996a.mp3"
       }
     }
   },
