@@ -46,7 +46,8 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   const book = studio?.book ?? fallbackBook;
   const story = studio?.story ?? fallbackStory;
 
-  if (!book || !story) {
+  // Stories of unpublished catalog books must not render, even by direct URL.
+  if (!book || !story || book.published === false) {
     return <div className="p-8 text-center">Historia no encontrada.</div>;
   }
 

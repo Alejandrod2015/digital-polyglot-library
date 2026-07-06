@@ -4,6 +4,7 @@ import { books } from "@/data/books";
 import type { Book } from "@/types/books";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
 import { getBookCardMeta } from "@domain/bookCardMeta";
+import { getPublishedCatalogBooks } from "@/lib/catalog";
 
 type ExploreBooksPageProps = {
   searchParams: Promise<{ topic?: string; language?: string; region?: string }>;
@@ -45,7 +46,11 @@ function toLanguageKeys(value: unknown): Set<string> | null {
 }
 
 export default async function ExploreBooksPage({ searchParams }: ExploreBooksPageProps) {
-  const [{ topic, language, region }, user] = await Promise.all([searchParams, currentUser()]);
+  const [{ topic, language, region }, user, publishedCatalogBooks] = await Promise.all([
+    searchParams,
+    currentUser(),
+    getPublishedCatalogBooks(),
+  ]);
   const topicKey = normalizeTopicKey(topic ?? "");
   const languageKey = normalizeTopicKey(language ?? "");
   const preferredLanguageKeys = toLanguageKeys(user?.publicMetadata?.targetLanguages);
@@ -56,7 +61,13 @@ export default async function ExploreBooksPage({ searchParams }: ExploreBooksPag
         : "")
   );
 
-  const allBooks = Object.values(books) as Book[];
+  // The visible catalog = the DB `published` books, unioned with the legacy
+  // static registry for any slug not yet in the DB. Dedup by slug (static wins
+  // for slugs present in both). Unpublished books never appear here.
+  const bySlug = new Map<string, Book>();
+  for (const b of publishedCatalogBooks) bySlug.set(b.slug, b);
+  for (const b of Object.values(books) as Book[]) bySlug.set(b.slug, b);
+  const allBooks = Array.from(bySlug.values());
   const languageFilteredBooks = languageKey
     ? allBooks.filter((book) => normalizeTopicKey(book.language) === languageKey)
     : preferredLanguageKeys

@@ -71,17 +71,89 @@ ejercicios** (distractores, nivel, dedup, tipos, audio) es débil de raíz.
 
 Quitar el `listen_choose` actual (palabra suelta + distractores random).
 
+### Compuerta de auto-validación (correr ANTES de mostrar cada set)
+
+No mostrar un set sin pasar cada ítem por esto (el autor lo corre, no el
+usuario):
+
+1. ¿Practica una palabra del vocab? (si no, fuera — ej. comprensión de trama en inglés)
+2. ¿Respuesta única? (ningún distractor sinónimo ni igual de válido)
+3. ¿Distractores mismo nivel CEFR (±1), misma categoría, insertables (género/persona/tiempo), sin nombres propios, minúscula?
+4. ¿La opción correcta NO se delata (no más larga/específica/detallada que las otras)?
+5. ¿Andamiaje en inglés (instrucción + opciones meta), español solo para lo que se aprende?
+6. ¿Forma de la glosa = forma de la palabra mostrada?
+7. ¿Sin etiqueta de hablante, sin em-dash, sin idioma mezclado en las opciones?
+8. ¿Match con significados desalineados de las palabras?
+9. ¿Resoluble solo sabiendo el idioma (no por descarte de nivel/longitud/categoría)?
+10. Gestalt: leer los ~9 seguidos — ¿variedad real de tipos? ¿algún patrón repetido?
+11. **Poca carga de texto.** Instrucción ≤ ~8 palabras; máximo UNA línea española corta; opciones de pocas palabras. NUNCA opciones que sean oraciones largas (eso fue el bug de la comprensión). Si un ítem exige leer mucho, se simplifica o se descarta.
+12. **Dificultad de distractores calibrada al nivel (CLAVE).** En **A2** los distractores son **claramente distintos** (significados obvios y separados) → el que entiende la oración elige el correcto. PROHIBIDO en A2: 4 opciones que son **sentidos de la misma palabra** (llevar = require/carry/take-time/wear) o casi-sinónimos — eso es discriminación de sentidos = **B1+**. Polisemia/idioms: testear su sentido básico o moverlos a niveles altos.
+13. **Resaltar la palabra objetivo** en la oración de ejemplo (envolver en `[[palabra]]`; el renderer la pone en negrita/subrayada).
+
+### Inventario de tipos (SOLO TEXTO, sin audio)
+
+La monotonía actual ("match + muro de meaning") no es por falta de audio: es
+por inventario pobre. Con texto solo hay variedad cognitiva real. Cada tipo
+prueba una faceta distinta y aplica a un perfil de palabra distinto:
+
+| Tipo | Tarea cognitiva | Cuándo aplica |
+|---|---|---|
+| `meaning_in_context` | reconocer el sentido | polisemia / idiom / figurado |
+| `reverse_recall` | **producir** la palabra desde su significado | palabra de alto valor que conviene producir |
+| `cloze` | producir en contexto | SOLO colocación fuerte / slot con respuesta única |
+| `collocation` | completar el chunk fijo | locuciones, colocaciones (dar la vuelta, fuego lento) |
+| `odd_one_out` | categorizar (el intruso) | conjunto de palabras de un campo (aprovecha transparentes) |
+| `word_order` | sintaxis (armar la frase) | una línea cuya estructura vale practicar |
+| `error_correction` | detectar la palabra mal | colocación / pares confundibles |
+| `comprehension` / `dialogue_next` | comprensión + pragmática de la escena | trama / qué diría el personaje |
+| `match_meaning` | reconocer (rápido) | calentamiento de un set chico |
+
+Regla de oro: **emparejar tipo↔palabra** (perfil §3) y **filtrar por valor**
+(descartar transparentes salvo que entren en un `odd_one_out`/`match`); ~6-9
+ejercicios buenos por historia, no 10 forzados. El audio añade una modalidad
+(reconocimiento auditivo) pero NO es requisito de variedad.
+
 ### Reglas por tipo
 - **cloze_context**: hueco = la **forma `surface`** que aparece en la historia
-  (no el lema), para que la opción concuerde con la sintaxis. La oración es una
-  oración real de la historia, **sin etiqueta de hablante**, recortada a una
-  unidad legible (≤ ~14 palabras).
+  (no el lema), para que la opción concuerde con la sintaxis. Oración corta
+  (≤ 12 palabras), **sin etiqueta de hablante**.
+  - **REGLA (objetivo = comprensión de la palabra, no memoria de la trama):** el
+    cloze debe resolverse **solo por significado**. Quien nunca leyó la historia
+    debe poder elegir la palabra correcta por el contexto de la oración. La frase
+    lleva una **pista semántica** (causa/efecto, objeto, descriptor) que solo la
+    palabra objetivo satisface. **NO copiar la oración de la historia cuando
+    depende de un evento o chiste del argumento** (ej. "quemar el agua"); en ese
+    caso se redacta una micro-oración nueva, autosuficiente, que revela el
+    significado (ej. "Dejaste la olla en el fuego demasiado tiempo y _____ la
+    sopa." → `quemaste`; distractores enfriaste/serviste/probaste). Si el
+    significado no se puede forzar por contexto, mover la palabra a
+    `meaning_in_context`. Esto se suma a la regla dura de respuesta única (§4.8).
 - **meaning_in_context**: 4 glosas en inglés, todas del **mismo registro/longitud**,
   semánticamente cercanas pero distinguibles; nunca mezclar idioma; nunca una
   glosa "obvia" (la correcta no debe ser la única plausible).
+  - **Oración ≤ 12 palabras**, recortada a la cláusula que contiene la palabra
+    marcada. NO usar la oración entera de la historia si trae cláusulas de
+    ambientación (nombres, ciudad/país, subordinadas): se cae fuera de la tarjeta
+    y carga de lectura innecesaria. La palabra ya se muestra arriba; la oración
+    solo da contexto mínimo. (Mismo tope que el cloze, §3.)
+  - **Headline = forma de diccionario, NUNCA la flexionada.** La palabra grande
+    que se enseña va en su forma de cita: sustantivo en singular, adjetivo/
+    participio en masculino singular, verbo en infinitivo, AUNQUE el vocab guarde
+    la forma flexionada como `word` (LATAM guarda "ollas", "destinos",
+    "agachados"). La flexión vive solo dentro del `[[ ]]` de la oración. Al pasar
+    el sustantivo a singular, las glosas también van en singular ("a cooking pot",
+    no "cooking pots"; el adjetivo inglés es invariable). Excepciones: plurales
+    lexicalizados ("ganas"), idiom verbal completo solo cuando el uso ES el idiom.
+- **match_meaning**: 4 palabras ↔ 4 glosas. Las palabras-tarjeta también en
+  **forma de diccionario** (singular: carro, vecino, bandera, paso, papel…);
+  solo se dejan adverbios invariables (lejos, juntos) y plurales lexicalizados.
+  No tiene oración, así que no hay superficie que respetar: siempre el lema.
 - **listen_comprehension**: reproduce una **línea completa** (voz personaje) y
   pregunta (a) qué palabra completó el hueco, o (b) cuál de 4 paráfrasis es
   verdadera. El audio es el activo central → debe ser exacto.
+
+**Mezcla por set (sin audio aún):** 10 ejercicios = 6 `meaning_in_context` + 3
+`cloze_context` + 1 `match_meaning`; 13 palabras distintas, ninguna repetida.
 
 ---
 
@@ -95,7 +167,11 @@ Un distractor válido cumple **todas**:
 2. **Banda CEFR = nivel de la historia ±1**, jamás por encima. (Usar el juez CEFR
    ya existente + nivel de historia.)
 3. **Insertable en el hueco** (cloze): que encaje sintácticamente, para que no se
-   descarte por gramática.
+   descarte por gramática. **Gramaticalmente neutro:** los 4 comparten conjugación/
+   género/número, para que la GRAMÁTICA nunca delate la respuesta (la única señal
+   debe ser el significado). La oración misma debe estar bien concordada ("la combi
+   iba llena", NO "el autobús llena"); los verbos reflexivos conservan -se
+   ("mudarse", no "mudar").
 4. **Plausible / near-miss semántico**: idealmente del mismo campo o cercanos en
    significado, de modo que distinguir exija comprensión (p.ej. para `fácil` →
    `simple`, `rápido`, `claro`; no `exuberante`).

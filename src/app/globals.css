@@ -1481,7 +1481,12 @@ body {
   border-radius: 22px;
   width: 100%;
   margin-bottom: 32px;
-  position: relative;
+  /* Sticky topic panel; paridad con iPhone (stickyHeaderIndices).
+   * El banner queda flotando mientras su <section> está en viewport
+   * y el siguiente topic lo empuja hacia arriba. */
+  position: sticky;
+  top: 24px;
+  z-index: 30;
   cursor: pointer;
   transition: filter 160ms, transform 60ms, margin 60ms;
   /* 3D button stack; bigger than story card */
@@ -1503,6 +1508,19 @@ body {
 .dp-journey-banner[disabled] { cursor: not-allowed; }
 .dp-journey-banner[disabled]:hover { filter: none; }
 .dp-journey-banner[disabled]:active { transform: none; margin-bottom: 32px; }
+
+/* El sticky del banner se ancla al scroll container ancestro más
+ * cercano; pero body (overflow-x hidden global de arriba) y
+ * main.dp-app-canvas (overflow-y-auto del AppShell) son scroll
+ * containers que nunca scrollean: el scroll real vive en <html>.
+ * Resultado: el banner jamás engancha. Cuando la página del journey
+ * está montada, ambos vuelven a overflow visible para que el sticky
+ * se ancle al viewport. <html> conserva su overflow-x hidden, así
+ * que el guard anti-ensanchamiento sigue activo. */
+body:has(.dp-journey-page),
+main.dp-app-canvas:has(.dp-journey-page) {
+  overflow: visible;
+}
 
 /* Menu section dividers (/menu page). Líneas casi imperceptibles
  * entre rows del mismo group. Antes usaba `divide-y` de Tailwind

@@ -28,9 +28,7 @@ const ROOT = path.resolve(__dirname, "..");
 const AMBIENT_DIR = path.join(ROOT, "scripts", "tts", "ambience");
 
 const MAPPINGS: Mapping[] = [
-  { slug: "cafe-in-kreuzberg", ambientTag: "cafeteria", ambientFile: path.join(AMBIENT_DIR, "cafeteria_de.mp3") },
-  { slug: "beim-baecker-am-hackeschen-markt", ambientTag: "cafeteria", ambientFile: path.join(AMBIENT_DIR, "cafeteria_de.mp3") },
-  { slug: "tomaten-vom-wochenmarkt", ambientTag: "mercado", ambientFile: path.join(AMBIENT_DIR, "mercado_de.mp3") },
+  { slug: "un-perro-bajo-la-lluvia", ambientTag: "lluvia", ambientFile: path.join(AMBIENT_DIR, "lluvia_es.mp3") },
 ];
 
 async function downloadToBuffer(url: string): Promise<Buffer> {

@@ -20,7 +20,8 @@ export default async function BookPage({ params, searchParams }: BookPageProps) 
   // dump only if the slug hasn't been migrated yet (legacy hand-off).
   const studioBook = await getCatalogBook(bookSlug);
   const book = studioBook ?? Object.values(books).find((b) => b.slug === bookSlug);
-  if (!book) {
+  // Unpublished catalog books must not render, even by direct URL.
+  if (!book || book.published === false) {
     return <div className="p-8 text-center">Libro no encontrado.</div>;
   }
 

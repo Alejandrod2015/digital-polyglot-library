@@ -11,6 +11,10 @@
       "schedule": "30 6 * * *"
     },
     {
+      "path": "/api/cron/journey-slot-counts",
+      "schedule": "45 6 * * *"
+    },
+    {
       "path": "/api/cron/revalidate-qa-pass",
       "schedule": "0 7 * * *"
     },

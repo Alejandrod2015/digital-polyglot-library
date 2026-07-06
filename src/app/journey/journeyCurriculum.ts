@@ -37,48 +37,27 @@ function topic(
   };
 }
 
-const a1LatamTopics: JourneyTopicPlan[] = [
-  topic("community-celebrations", "Community & Celebrations", 1, [
-    "colombian-spanish-stories-for-beginners:el-baile-en-la-plaza",
-    "colombian-spanish-stories-for-beginners:el-carnaval-de-barranquilla",
-    "colombian-spanish-stories-for-beginners:la-feria-de-las-flores",
-    "colombian-spanish-stories-for-beginners:la-fiesta-en-cartagena",
-  ]),
-  topic("food-daily-life", "Food & Drink", 1, [
-    "colombian-spanish-stories-for-beginners:el-mercado-de-medellin",
-    "colombian-spanish-stories-for-beginners:el-secreto-del-cafe",
-    "colombian-spanish-stories-for-beginners:el-festival-de-la-arepa",
-    "colombian-spanish-stories-for-beginners:el-misterio-del-bosque",
-  ]),
-  topic("places-getting-around", "Places & Getting Around", 1, [
-    "colombian-spanish-stories-for-beginners:el-tren-de-la-sabana",
-    "colombian-spanish-stories-for-beginners:el-viaje-a-villa-de-leyva",
-    "colombian-spanish-stories-for-beginners:el-tesoro-escondido",
-    "colombian-spanish-stories-for-beginners:el-misterio-de-la-catedral-de-sal",
-  ]),
-  topic("home-family", "Home & Family", 1),
-  topic("nature-adventure", "Nature & Adventure", 1, [
-    "colombian-spanish-stories-for-beginners:una-aventura-en-el-amazonas",
-    "colombian-spanish-stories-for-beginners:la-excursion-a-la-sierra-nevada",
-    "colombian-spanish-stories-for-beginners:la-finca-en-la-montana",
-    "colombian-spanish-stories-for-beginners:el-rescate-en-la-laguna",
-  ]),
-  topic("legends-folklore", "Legends & Folklore", 1, [
-    "colombian-spanish-stories-for-beginners:la-leyenda-de-el-dorado",
-    "colombian-spanish-stories-for-beginners:la-leyenda-de-la-llorona",
-    "colombian-spanish-stories-for-beginners:la-leyenda-de-bochica",
-    "colombian-spanish-stories-for-beginners:la-leyenda-del-mohan",
-  ]),
+// LATAM a0/a1/a2 share the SAME 7 published topics, each with 3 stories (= 21).
+// Verified against the DB on 2026-07-02: the three active LATAM journeys (a0,
+// a1, a2) all carry these 7 topic slugs. Labels here drive the curated topic
+// names in the app; when a DB topic has no curriculum match the UI falls back
+// to a title-cased slug (e.g. "Meeting New People"). The old `storyKeys`
+// entries were legacy Sanity references and are no longer read at runtime
+// (grep: zero consumers), so they're dropped. Topic ORDER at runtime comes
+// from `Journey.topics` in the DB, not from this array.
+const latamCoreTopics: JourneyTopicPlan[] = [
+  topic("food-everyday-life", "Food & Everyday Life", 3),
+  topic("home-family", "Home & Family", 3),
+  topic("meeting-new-people", "Meeting New People", 3),
+  topic("places-getting-around", "Places & Getting Around", 3),
+  topic("community-celebrations", "Community & Celebrations", 3),
+  topic("nature-adventure", "Nature & Adventure", 3),
+  topic("legends-folklore", "Legends & Folklore", 3),
 ];
 
-const a2LatamTopics: JourneyTopicPlan[] = [
-  topic("work-study", "Work & Study"),
-  topic("travel-plans", "Travel & Plans"),
-  topic("health-wellbeing", "Health & Wellbeing"),
-  topic("city-life-services", "City Life & Services"),
-  topic("relationships-feelings", "Relationships & Feelings"),
-  topic("traditions-daily-culture", "Traditions & Daily Culture"),
-];
+// a1 and a2 are the same 7 topics in the published corpus today.
+const a1LatamTopics: JourneyTopicPlan[] = latamCoreTopics;
+const a2LatamTopics: JourneyTopicPlan[] = latamCoreTopics;
 
 const b1LatamTopics: JourneyTopicPlan[] = [
   topic("opinions-life-choices", "Opinions & Life Choices"),
@@ -140,7 +119,7 @@ export const JOURNEY_CURRICULUM: JourneyVariantPlan[] = [
         title: "A1",
         subtitle: "First steps",
         topicTarget: a1LatamTopics.length,
-        storyTargetPerTopic: 1,
+        storyTargetPerTopic: 3,
         topics: a1LatamTopics,
       },
       {
@@ -148,7 +127,7 @@ export const JOURNEY_CURRICULUM: JourneyVariantPlan[] = [
         title: "A2",
         subtitle: "Building confidence",
         topicTarget: a2LatamTopics.length,
-        storyTargetPerTopic: 1,
+        storyTargetPerTopic: 3,
         topics: a2LatamTopics,
       },
       {

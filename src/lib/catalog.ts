@@ -105,6 +105,18 @@ export async function getCatalogBook(slug: string): Promise<Book | null> {
   return rowToBook(row, row.stories);
 }
 
+// All published catalog books, newest-source-first. Used by the web
+// /explore/books listing so the visible catalog follows the DB `published`
+// flag instead of a hand-maintained static registry.
+export async function getPublishedCatalogBooks(): Promise<Book[]> {
+  const rows = await prisma.catalogBook.findMany({
+    where: { published: true },
+    include: { stories: { orderBy: { position: "asc" } } },
+    orderBy: { sourceCreatedAt: "asc" },
+  });
+  return rows.map((row) => rowToBook(row, row.stories));
+}
+
 export async function getCatalogStory(
   bookSlug: string,
   storySlug: string
