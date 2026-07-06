@@ -18,6 +18,8 @@ import LanguageBadge from "@/components/LanguageBadge";
 import RegionBadge from "@/components/RegionBadge";
 import StoryContent from "@/components/StoryContent";
 import HighlightedStoryReader from "@/components/HighlightedStoryReader";
+import TapGlossReader from "@/components/TapGlossReader";
+import { getTapGlossesForSlug } from "@/lib/tapGlosses";
 import VocabPanel from "@/components/VocabPanel";
 import EndOfStoryPracticePrompt from "@/components/EndOfStoryPracticePrompt";
 import JourneyStoryReadTracker from "@/components/JourneyStoryReadTracker";
@@ -326,6 +328,9 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
 
   const displayText = resolvedStory.text;
   const normalizedText = normalizePolyglotStoryText(displayText);
+  // Piloto tap-any-word: glosses precomputados solo para las historias
+  // registradas en src/data/tapGlosses (hoy: journey Expat alemán C1).
+  const tapGlosses = getTapGlossesForSlug(resolvedStory.slug);
   const lockedPreviewHtml = getLockedStoryPreviewHtml(resolvedStory.text);
   const safeVocab = normalizePolyglotVocab(resolvedStory.vocab);
   const fallbackReturnHref =
@@ -507,6 +512,12 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
               <HighlightedStoryReader
                 story={{ vocab: safeVocab }}
                 audioWordTimings={audioWordTimings}
+              />
+            ) : tapGlosses ? (
+              <TapGlossReader
+                text={normalizedText}
+                vocab={safeVocab}
+                glosses={tapGlosses}
               />
             ) : (
               <StoryContent
