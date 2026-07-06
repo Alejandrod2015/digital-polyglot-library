@@ -130,7 +130,7 @@ function validatePayload(raw: unknown): {
     const type = typeof v.type === "string" && v.type.trim() ? v.type.trim() : undefined;
     // register (2026-07-06): dimensión de uso ortogonal al tipo. "slang" ya
     // NO es un type (alias -> expression en el dominio); va aquí.
-    const REGISTERS = new Set(["colloquial", "slang", "formal", "regional", "vulgar"]);
+    const REGISTERS = new Set(["colloquial", "slang", "regional", "vulgar"]);
     const rawRegister = typeof v.register === "string" ? v.register.trim().toLowerCase() : "";
     if (rawRegister && !REGISTERS.has(rawRegister)) {
       throw new Error(`register "${rawRegister}" inválido en "${word}". Permitidos: ${Array.from(REGISTERS).join(", ")}`);

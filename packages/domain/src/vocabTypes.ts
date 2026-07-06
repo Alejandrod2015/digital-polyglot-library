@@ -96,11 +96,13 @@ const VOCAB_TYPE_LABELS: Record<VocabTypeKey, string> = {
 // Registro de uso (dimensión ortogonal al tipo gramatical, 2026-07-06):
 // marca CUÁNDO usar la palabra, no qué es. "slang" dejó de ser un type
 // (alias -> expression) y pasó a ser un register. Mantener la lista corta
-// a propósito (regla del usuario: opciones simples).
+// a propósito (regla del usuario: opciones simples). Los 4 valores marcan
+// "cuidado dónde la usas"; "formal" se evaluó y se DESCARTÓ (2026-07-06):
+// la formalidad no es riesgo de uso y en journeys llenos de Amtsdeutsch
+// etiquetarla es ruido; ese matiz va en el texto de la definición.
 export const VOCAB_REGISTER_ORDER = [
   "colloquial",
   "slang",
-  "formal",
   "regional",
   "vulgar",
 ] as const;
@@ -115,9 +117,6 @@ const VOCAB_REGISTER_ALIASES: Record<string, VocabRegisterKey> = {
   slang: "slang",
   argot: "slang",
   jerga: "slang",
-  formal: "formal",
-  official: "formal",
-  amtsdeutsch: "formal",
   regional: "regional",
   dialect: "regional",
   vulgar: "vulgar",
@@ -127,7 +126,6 @@ const VOCAB_REGISTER_ALIASES: Record<string, VocabRegisterKey> = {
 const VOCAB_REGISTER_LABELS: Record<VocabRegisterKey, string> = {
   colloquial: "Colloquial",
   slang: "Slang",
-  formal: "Formal",
   regional: "Regional",
   vulgar: "Vulgar",
 };
