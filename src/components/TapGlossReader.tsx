@@ -1,30 +1,49 @@
 "use client";
 
 import React from "react";
+import { X } from "lucide-react";
 import StoryContent from "@/components/StoryContent";
 
 // Piloto "tap any word" (2026-07-06): envuelve el StoryContent existente.
-// Cada palabra con gloss precomputado se renderiza como span.tap-word;
-// al tocarla aparece un tooltip con el significado. Las pills curadas
-// (.vocab-word) tienen prioridad: su click sigue yendo al VocabPanel.
+// Cada palabra con gloss precomputado se renderiza como span.tap-word; al
+// tocarla aparece una burbuja en el MISMO lugar que la del vocab curado
+// (arriba del player dock, centrada), pero visualmente distinta: etiqueta
+// gris "Dictionary", sin badge de tipo y sin Save. Feedback del usuario
+// 2026-07-06: el tooltip flotante junto a la palabra tapaba el texto.
+// Las pills curadas (.vocab-word) tienen prioridad: su click sigue yendo
+// al VocabPanel.
 type TapGlossReaderProps = {
   text: string;
   vocab: Array<{ word: string; surface?: string; definition: string; type?: string }>;
   glosses: Record<string, string>;
 };
 
-type TooltipState = {
+type GlossState = {
   word: string;
   gloss: string;
-  x: number;
-  y: number;
 };
 
 const WORD_SPLIT = /([A-Za-zÄÖÜäöüß]+(?:-[A-Za-zÄÖÜäöüß]+)*)/u;
 
 export default function TapGlossReader({ text, vocab, glosses }: TapGlossReaderProps) {
-  const [tooltip, setTooltip] = React.useState<TooltipState | null>(null);
-  const rootRef = React.useRef<HTMLDivElement>(null);
+  const [selected, setSelected] = React.useState<GlossState | null>(null);
+  // Misma lógica de posicionamiento que VocabPanel: la burbuja vive justo
+  // arriba del player dock; si no hay dock (historias sin audio aún), queda
+  // a 24px del borde inferior.
+  const [dockBottom, setDockBottom] = React.useState<string>(
+    "calc(24px + env(safe-area-inset-bottom))"
+  );
+
+  React.useEffect(() => {
+    const measure = () => {
+      const dock = document.getElementById("story-player-dock");
+      const h = dock?.getBoundingClientRect().height ?? 0;
+      if (h > 0) setDockBottom(`calc(${Math.ceil(h)}px + 12px + env(safe-area-inset-bottom))`);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [selected]);
 
   const renderWord = React.useCallback(
     (chunk: string): React.ReactNode => {
@@ -53,49 +72,104 @@ export default function TapGlossReader({ text, vocab, glosses }: TapGlossReaderP
       if (!target) return;
       // Las pills curadas mandan: su click lo maneja el VocabPanel.
       if (target.closest(".vocab-word")) {
-        setTooltip(null);
+        setSelected(null);
         return;
       }
+      // Clicks dentro de la burbuja no la cierran.
+      if (target.closest("#tap-gloss-bubble")) return;
       const el = target.closest(".tap-word") as HTMLElement | null;
       if (!el) {
-        setTooltip(null);
+        setSelected(null);
         return;
       }
       const token = el.dataset.token ?? "";
       const gloss = glosses[token];
       if (!gloss) return;
-      const rect = el.getBoundingClientRect();
-      setTooltip({
-        word: el.textContent ?? token,
-        gloss,
-        x: rect.left + rect.width / 2,
-        y: rect.top,
-      });
+      setSelected({ word: el.textContent ?? token, gloss });
     };
-    const dismiss = () => setTooltip(null);
     document.addEventListener("click", handler);
-    window.addEventListener("scroll", dismiss, true);
-    return () => {
-      document.removeEventListener("click", handler);
-      window.removeEventListener("scroll", dismiss, true);
-    };
+    return () => document.removeEventListener("click", handler);
   }, [glosses]);
 
   return (
-    <div ref={rootRef} className="relative">
+    <div className="relative">
       <StoryContent
         text={text}
         sentencesPerParagraph={3}
         vocab={vocab}
         renderWord={renderWord}
       />
-      {tooltip ? (
+      {selected ? (
         <div
-          className="fixed z-[60] max-w-xs -translate-x-1/2 -translate-y-full rounded-xl border border-white/15 bg-[#102746] px-4 py-2.5 text-sm shadow-2xl"
-          style={{ left: tooltip.x, top: tooltip.y - 8 }}
+          id="tap-gloss-bubble"
+          className="fixed z-[70]"
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            bottom: dockBottom,
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "calc(100% - 36px)",
+            maxWidth: 448,
+            background: "var(--surface)",
+            border: "1px dashed var(--card-border)",
+            borderRadius: 20,
+            padding: "12px 18px",
+            boxShadow: "var(--shadow-card, 0 8px 14px rgba(0,0,0,0.22))",
+          }}
+          aria-label="qa-reader-tap-gloss-bubble"
         >
-          <div className="font-semibold text-white">{tooltip.word}</div>
-          <div className="mt-0.5 text-blue-100/85">{tooltip.gloss}</div>
+          <div className="flex items-start justify-between gap-3">
+            <div className="flex flex-1 flex-col gap-0.5 min-w-0">
+              <span
+                className="truncate text-[var(--foreground)]"
+                style={{ fontSize: 18, fontWeight: 700 }}
+              >
+                {selected.word}
+              </span>
+              <span
+                className="self-start"
+                style={{
+                  backgroundColor: "rgba(148, 163, 184, 0.28)",
+                  color: "var(--foreground)",
+                  fontSize: 10,
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  padding: "2px 8px",
+                  borderRadius: 999,
+                  marginTop: 3,
+                  opacity: 0.85,
+                }}
+              >
+                Dictionary
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelected(null);
+              }}
+              aria-label="Close"
+              className="shrink-0 grid place-items-center cursor-pointer"
+              style={{
+                width: 28,
+                height: 28,
+                borderRadius: 999,
+                backgroundColor: "var(--chip-bg)",
+                color: "var(--foreground)",
+                border: "1px solid var(--chip-border)",
+              }}
+            >
+              <X size={14} strokeWidth={2.6} style={{ pointerEvents: "none" }} />
+            </button>
+          </div>
+          <p
+            className="mt-1.5 text-[var(--foreground)]"
+            style={{ fontSize: 15, lineHeight: "22px", opacity: 0.9 }}
+          >
+            {selected.gloss}
+          </p>
         </div>
       ) : null}
     </div>
