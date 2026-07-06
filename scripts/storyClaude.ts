@@ -223,6 +223,52 @@ async function saveStory(storyId: string, jsonPath: string): Promise<void> {
     }
   }
 
+  // Dialogue-ratio gate (2026-07-06): default permanente 70% diálogo / 30%
+  // narrador. Solo aplica a historias multivoz (si hay 0 líneas "Speaker:",
+  // es narrator-style y el gate se salta). Piso duro 65% para dar margen.
+  // Origen: las 3 primeras C1 alemanas salieron 44-61% y hubo que reescribir.
+  {
+    const speakerRe = /^[A-ZÄÖÜ][\wäöüß]*(?:\s[A-ZÄÖÜ][\wäöüß]*)?:\s/;
+    let dialogWords = 0;
+    let narrWords = 0;
+    for (const para of text.split(/\n\s*\n/)) {
+      const t = para.trim();
+      if (!t) continue;
+      const w = t.split(/\s+/).length;
+      if (speakerRe.test(t)) dialogWords += w;
+      else narrWords += w;
+    }
+    if (dialogWords > 0) {
+      const ratio = dialogWords / (dialogWords + narrWords);
+      if (ratio < 0.65) {
+        throw new Error(
+          `Dialogue-ratio gate failed: ${(ratio * 100).toFixed(0)}% diálogo (piso 65%, default 70/30). ` +
+          `Convierte beats narrativos en intercambios antes de guardar.`,
+        );
+      }
+    }
+  }
+
+  // Vocab type-balance gate (2026-07-06, niveles B2+): mínimo 2 expressions
+  // por historia y nouns <= 45% duro (target ~40%). Origen: topic de llegada
+  // C1 alemán salió con expressions 4→1→0 y una historia 52% sustantivos.
+  if (["b2", "c1", "c2"].includes(story.level)) {
+    const exprCount = vocab.filter((v) => v.type === "expression").length;
+    const nounShare = vocab.filter((v) => v.type === "noun").length / vocab.length;
+    if (exprCount < 2) {
+      throw new Error(
+        `Type-balance gate failed: ${exprCount} expression(s), mínimo 2 en B2+. ` +
+        `Las expresiones idiomáticas son la adquisición más escasa del nivel avanzado.`,
+      );
+    }
+    if (nounShare > 0.45) {
+      throw new Error(
+        `Type-balance gate failed: ${(nounShare * 100).toFixed(0)}% nouns (techo duro 45%, target ~40%). ` +
+        `Cambia objetos concretos por verbos/expresiones transferibles.`,
+      );
+    }
+  }
+
   const baseSlug = generateSlug(title, story.journey.language, story.journey.variant, 0).replace(/-0$/, "");
   const slug = story.slotIndex > 0 ? `${baseSlug}-${story.slotIndex + 1}` : baseSlug;
   const wordCount = text.split(/\s+/).filter(Boolean).length;
