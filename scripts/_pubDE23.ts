@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 (async () => {
   const fixes = [
     { id: "cmr92f141000432ffq1nqs86b", slug: "der-spaeti-in-der-weserstrasse" },
-    { id: "cmr92f16x000632ffiyonegzx", slug: "schalter-neun" },
+    { id: "cmr92f16x000632ffiyonegzx", slug: "zwei-stempel-bis-zur-existenz" },
   ];
   for (const f of fixes) {
     const r = await prisma.journeyStory.update({ where: { id: f.id },
