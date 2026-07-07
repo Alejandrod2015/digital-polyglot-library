@@ -2,7 +2,10 @@
  "slugs": [
   "buergeramt-neukoelln-sieben-uhr",
   "der-spaeti-in-der-weserstrasse",
-  "zwei-stempel-bis-zur-existenz"
+  "zwei-stempel-bis-zur-existenz",
+  "bewerbungsgespraech-mit-katze",
+  "im-keller-wohnt-die-hausordnung",
+  "umzug-ohne-aufzug"
  ],
  "glosses": {
   "ab": {
@@ -1769,6 +1772,1014 @@
   "übrigens": {
    "g": "by the way",
    "t": "adverb"
+  },
+  "abends": {
+   "g": "in the evening(s)",
+   "t": "adverb"
+  },
+  "absicht": {
+   "g": "intention (die Absicht)",
+   "t": "noun"
+  },
+  "achten": {
+   "g": "eighth (acht-); beim achten Karton = at the eighth box",
+   "t": "adjective"
+  },
+  "aktenlage": {
+   "g": "what the files say; bureaucratic term (die Aktenlage)",
+   "t": "noun"
+  },
+  "altbau": {
+   "g": "pre-war building: high ceilings, rarely an elevator (der Altbau)",
+   "t": "noun"
+  },
+  "andere": {
+   "g": "other",
+   "t": "pronoun"
+  },
+  "anderen": {
+   "g": "other (declined)",
+   "t": "pronoun"
+  },
+  "arbeitet": {
+   "g": "works (arbeiten)",
+   "t": "verb"
+  },
+  "aufzug": {
+   "g": "elevator (der Aufzug)",
+   "t": "noun"
+  },
+  "ausgerechnet": {
+   "g": "of all things; marks an ironic coincidence",
+   "t": "adverb"
+  },
+  "balkon": {
+   "g": "balcony (der Balkon)",
+   "t": "noun"
+  },
+  "bauchgefühl": {
+   "g": "gut feeling, intuition (das Bauchgefühl)",
+   "t": "noun"
+  },
+  "beginnt": {
+   "g": "begins (beginnen)",
+   "t": "verb"
+  },
+  "beirat": {
+   "g": "residents' advisory council (der Beirat)",
+   "t": "noun"
+  },
+  "besichtigung": {
+   "g": "viewing, apartment visit (die Besichtigung)",
+   "t": "noun"
+  },
+  "besser": {
+   "g": "better (gut)",
+   "t": "adjective"
+  },
+  "bestanden": {
+   "g": "passed a test (bestehen)",
+   "t": "verb"
+  },
+  "beste": {
+   "g": "best (gut)",
+   "t": "adjective"
+  },
+  "bewerber": {
+   "g": "applicants (der Bewerber)",
+   "t": "noun"
+  },
+  "bewohnbar": {
+   "g": "habitable, fit to live in",
+   "t": "adjective"
+  },
+  "billige": {
+   "g": "cheap (billig)",
+   "t": "adjective"
+  },
+  "braucht": {
+   "g": "needs (brauchen)",
+   "t": "verb"
+  },
+  "bücherregal": {
+   "g": "bookshelf (das Bücherregal)",
+   "t": "noun"
+  },
+  "chefin": {
+   "g": "female boss (die Chefin)",
+   "t": "noun"
+  },
+  "deiner": {
+   "g": "your (dative)",
+   "t": "pronoun"
+  },
+  "dienstags": {
+   "g": "on Tuesdays",
+   "t": "adverb"
+  },
+  "dokumentiert": {
+   "g": "documented (dokumentieren)",
+   "t": "verb"
+  },
+  "donnerstag": {
+   "g": "Thursday (der Donnerstag)",
+   "t": "noun"
+  },
+  "donnerstags": {
+   "g": "on Thursdays",
+   "t": "adverb"
+  },
+  "dreizehn": {
+   "g": "thirteen",
+   "t": "number"
+  },
+  "drin": {
+   "g": "inside (colloquial for darin)",
+   "t": "adverb",
+   "r": "colloquial"
+  },
+  "durchhält": {
+   "g": "holds out to the end (durchhalten)",
+   "t": "verb"
+  },
+  "durchs": {
+   "g": "through the (durch + das)",
+   "t": "preposition"
+  },
+  "eigene": {
+   "g": "own (eigen)",
+   "t": "adjective"
+  },
+  "eigenen": {
+   "g": "own (declined)",
+   "t": "adjective"
+  },
+  "eigentlich": {
+   "g": "actually, come to think of it",
+   "t": "adverb"
+  },
+  "eiltempo": {
+   "g": "im Eiltempo = at top speed (das Eiltempo)",
+   "t": "noun"
+  },
+  "eingerieben": {
+   "g": "rubbed with a substance (einreiben)",
+   "t": "verb"
+  },
+  "einliest": {
+   "g": "sich einlesen = to read up on something",
+   "t": "verb"
+  },
+  "einzeln": {
+   "g": "one by one",
+   "t": "adverb"
+  },
+  "empfehlungsschreiben": {
+   "g": "letter of recommendation (das Empfehlungsschreiben)",
+   "t": "noun"
+  },
+  "empfängt": {
+   "g": "receives, welcomes (empfangen)",
+   "t": "verb"
+  },
+  "entscheidet": {
+   "g": "decides (entscheiden)",
+   "t": "verb"
+  },
+  "entscheidung": {
+   "g": "decision (die Entscheidung)",
+   "t": "noun"
+  },
+  "erbst": {
+   "g": "you inherit (erben)",
+   "t": "verb"
+  },
+  "fairer": {
+   "g": "fairer (fair)",
+   "t": "adjective"
+  },
+  "fehler": {
+   "g": "mistake (der Fehler)",
+   "t": "noun"
+  },
+  "fehlt": {
+   "g": "is missing (fehlen)",
+   "t": "verb"
+  },
+  "fenster": {
+   "g": "window; here: assigned time slot (das Fenster)",
+   "t": "noun"
+  },
+  "fest": {
+   "g": "halt dich fest = brace yourself; firm, tight",
+   "t": "adjective"
+  },
+  "finde": {
+   "g": "find, think (finden)",
+   "t": "verb"
+  },
+  "fitnessprogramm": {
+   "g": "fitness program (das Fitnessprogramm)",
+   "t": "noun"
+  },
+  "flasche": {
+   "g": "bottle (die Flasche)",
+   "t": "noun"
+  },
+  "frau": {
+   "g": "Mrs.; woman (die Frau)",
+   "t": "noun"
+  },
+  "frei": {
+   "g": "free, available",
+   "t": "adjective"
+  },
+  "freiheit": {
+   "g": "freedom (die Freiheit)",
+   "t": "noun"
+  },
+  "freitag": {
+   "g": "Friday (der Freitag)",
+   "t": "noun"
+  },
+  "friedlich": {
+   "g": "peaceful",
+   "t": "adjective"
+  },
+  "funkstille": {
+   "g": "radio silence; no contact at all (die Funkstille)",
+   "t": "noun"
+  },
+  "fällt": {
+   "g": "falls; die Entscheidung fällt = the decision is made",
+   "t": "verb"
+  },
+  "fühlt": {
+   "g": "feels (fühlen); fühlt sich an = feels like",
+   "t": "verb"
+  },
+  "führt": {
+   "g": "leads, guides (führen)",
+   "t": "verb"
+  },
+  "führung": {
+   "g": "guided tour (die Führung)",
+   "t": "noun"
+  },
+  "führungszeugnis": {
+   "g": "official certificate of good conduct (das Führungszeugnis)",
+   "t": "noun"
+  },
+  "fünftem": {
+   "g": "fifth (declined)",
+   "t": "adjective"
+  },
+  "fünften": {
+   "g": "fifth (declined)",
+   "t": "adjective"
+  },
+  "fünfzehn": {
+   "g": "fifteen",
+   "t": "number"
+  },
+  "ganz": {
+   "g": "completely, quite",
+   "t": "adverb"
+  },
+  "ganze": {
+   "g": "whole (ganz)",
+   "t": "adjective"
+  },
+  "gehaltsnachweise": {
+   "g": "salary certificates (der Gehaltsnachweis)",
+   "t": "noun"
+  },
+  "geheimakte": {
+   "g": "secret file (die Geheimakte)",
+   "t": "noun"
+  },
+  "gemeinsamen": {
+   "g": "shared, joint (gemeinsam)",
+   "t": "adjective"
+  },
+  "gemälde": {
+   "g": "painting (das Gemälde)",
+   "t": "noun"
+  },
+  "genieß": {
+   "g": "enjoy (genießen, imperative)",
+   "t": "verb"
+  },
+  "genommen": {
+   "g": "taken (nehmen); hätte mich genommen = would have taken me",
+   "t": "verb"
+  },
+  "gerade": {
+   "g": "just now",
+   "t": "adverb"
+  },
+  "gerochen": {
+   "g": "smelled (riechen)",
+   "t": "verb"
+  },
+  "geruch": {
+   "g": "smell (der Geruch)",
+   "t": "noun"
+  },
+  "gesagt": {
+   "g": "said (sagen)",
+   "t": "verb"
+  },
+  "gesündeste": {
+   "g": "healthiest (gesund)",
+   "t": "adjective"
+  },
+  "getauscht": {
+   "g": "swapped (tauschen)",
+   "t": "verb"
+  },
+  "gleich": {
+   "g": "right away",
+   "t": "adverb"
+  },
+  "graue": {
+   "g": "gray (grau)",
+   "t": "adjective"
+  },
+  "grillen": {
+   "g": "barbecuing (das Grillen)",
+   "t": "noun"
+  },
+  "gäste": {
+   "g": "guests (der Gast)",
+   "t": "noun"
+  },
+  "haken": {
+   "g": "the catch, hidden downside (der Haken)",
+   "t": "noun",
+   "r": "colloquial"
+  },
+  "halb": {
+   "g": "half; halb neun = half past EIGHT",
+   "t": "adjective"
+  },
+  "halt": {
+   "g": "halt dich fest = hold on tight (halten)",
+   "t": "verb"
+  },
+  "hast": {
+   "g": "have (haben, du form)",
+   "t": "verb"
+  },
+  "haus": {
+   "g": "house, building (das Haus)",
+   "t": "noun"
+  },
+  "hausmeister": {
+   "g": "building caretaker, janitor (der Hausmeister)",
+   "t": "noun"
+  },
+  "hausordnung": {
+   "g": "house rules of a German building (die Hausordnung)",
+   "t": "noun"
+  },
+  "herd": {
+   "g": "stove (der Herd)",
+   "t": "noun"
+  },
+  "herzlich": {
+   "g": "warm, cordial; herzlich willkommen = welcome",
+   "t": "adjective"
+  },
+  "hängt": {
+   "g": "hangs (hängen)",
+   "t": "verb"
+  },
+  "identischen": {
+   "g": "identical (identisch)",
+   "t": "adjective"
+  },
+  "immerhin": {
+   "g": "at least, after all",
+   "t": "adverb"
+  },
+  "inoffiziell": {
+   "g": "unofficially",
+   "t": "adverb"
+  },
+  "jahr": {
+   "g": "year (das Jahr)",
+   "t": "noun"
+  },
+  "jahrzehnt": {
+   "g": "decade (das Jahrzehnt)",
+   "t": "noun"
+  },
+  "jeder": {
+   "g": "every, each",
+   "t": "pronoun"
+  },
+  "jonas": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "karton": {
+   "g": "cardboard box (der Karton)",
+   "t": "noun"
+  },
+  "kartons": {
+   "g": "cardboard boxes (der Karton)",
+   "t": "noun"
+  },
+  "katjas": {
+   "g": "Katja's",
+   "t": "noun"
+  },
+  "katze": {
+   "g": "cat (die Katze)",
+   "t": "noun"
+  },
+  "katzen-wg": {
+   "g": "the cat flatshare (die Katzen-WG)",
+   "t": "noun"
+  },
+  "keine": {
+   "g": "no, not a (kein)",
+   "t": "article"
+  },
+  "keinem": {
+   "g": "no, not a (kein, dative)",
+   "t": "article"
+  },
+  "keller": {
+   "g": "basement, cellar (der Keller)",
+   "t": "noun"
+  },
+  "klemmendem": {
+   "g": "jamming, sticking (klemmen)",
+   "t": "verb"
+  },
+  "kochen": {
+   "g": "cooking (das Kochen); to cook",
+   "t": "verb"
+  },
+  "kommen": {
+   "g": "to come; Kommen Sie = come along",
+   "t": "verb"
+  },
+  "kommt": {
+   "g": "comes (kommen)",
+   "t": "verb"
+  },
+  "kontert": {
+   "g": "counters, strikes back (kontern)",
+   "t": "verb"
+  },
+  "konzertticket": {
+   "g": "concert ticket (das Konzertticket)",
+   "t": "noun"
+  },
+  "kostenlos": {
+   "g": "free of charge",
+   "t": "adjective"
+  },
+  "kriegt": {
+   "g": "gets (kriegen, colloquial)",
+   "t": "verb",
+   "r": "colloquial"
+  },
+  "küche": {
+   "g": "kitchen (die Küche)",
+   "t": "noun"
+  },
+  "kündigung": {
+   "g": "formal cancellation of a contract (die Kündigung)",
+   "t": "noun"
+  },
+  "künftigen": {
+   "g": "future (künftig)",
+   "t": "adjective"
+  },
+  "lagerraum": {
+   "g": "storage room (der Lagerraum)",
+   "t": "noun"
+  },
+  "laminiert": {
+   "g": "laminated, sealed in plastic",
+   "t": "adjective"
+  },
+  "lampe": {
+   "g": "lamp (die Lampe)",
+   "t": "noun"
+  },
+  "langsam": {
+   "g": "slowly; gradually",
+   "t": "adverb"
+  },
+  "lea": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "leben": {
+   "g": "life (das Leben)",
+   "t": "noun"
+  },
+  "lebt": {
+   "g": "lives (leben)",
+   "t": "verb"
+  },
+  "leeren": {
+   "g": "empty (leer)",
+   "t": "adjective"
+  },
+  "leipzig": {
+   "g": "Leipzig, city in Saxony",
+   "t": "noun"
+  },
+  "letzte": {
+   "g": "last (letzt-)",
+   "t": "adjective"
+  },
+  "liebe": {
+   "g": "dear (letter opening); love",
+   "t": "adjective"
+  },
+  "links": {
+   "g": "left, to the left",
+   "t": "adverb"
+  },
+  "lotto": {
+   "g": "lottery (das Lotto); Sechser im Lotto = jackpot",
+   "t": "noun"
+  },
+  "lärm": {
+   "g": "noise (der Lärm)",
+   "t": "noun"
+  },
+  "mappen": {
+   "g": "application folders (die Mappe)",
+   "t": "noun"
+  },
+  "markt": {
+   "g": "market (der Markt)",
+   "t": "noun"
+  },
+  "meinen": {
+   "g": "my (accusative)",
+   "t": "pronoun"
+  },
+  "meiner": {
+   "g": "my (dative)",
+   "t": "pronoun"
+  },
+  "melden": {
+   "g": "wir melden uns = we'll get back to you (sich melden)",
+   "t": "verb"
+  },
+  "miete": {
+   "g": "rent (die Miete)",
+   "t": "noun"
+  },
+  "mietvertrag": {
+   "g": "rental contract (der Mietvertrag)",
+   "t": "noun"
+  },
+  "mitbewohnerin": {
+   "g": "female flatmate (die Mitbewohnerin)",
+   "t": "noun"
+  },
+  "moment": {
+   "g": "moment (der Moment)",
+   "t": "noun"
+  },
+  "montag": {
+   "g": "Monday (der Montag)",
+   "t": "noun"
+  },
+  "mustert": {
+   "g": "inspects critically from head to toe (mustern)",
+   "t": "verb"
+  },
+  "möbel": {
+   "g": "furniture (das Möbel)",
+   "t": "noun"
+  },
+  "natürlich": {
+   "g": "of course, naturally",
+   "t": "adverb"
+  },
+  "neidisch": {
+   "g": "envious",
+   "t": "adjective"
+  },
+  "neunzehn": {
+   "g": "nineteen",
+   "t": "number"
+  },
+  "niemanden": {
+   "g": "nobody (accusative)",
+   "t": "pronoun"
+  },
+  "notiert": {
+   "g": "noted down (notieren)",
+   "t": "verb"
+  },
+  "oben": {
+   "g": "up, upstairs",
+   "t": "adverb"
+  },
+  "oder": {
+   "g": "or",
+   "t": "conjunction"
+  },
+  "passiert": {
+   "g": "happened (passieren)",
+   "t": "verb"
+  },
+  "perfekt": {
+   "g": "perfect",
+   "t": "adjective"
+  },
+  "person": {
+   "g": "person (die Person)",
+   "t": "noun"
+  },
+  "pfoten": {
+   "g": "paws (die Pfote)",
+   "t": "noun"
+  },
+  "pizza": {
+   "g": "pizza (die Pizza)",
+   "t": "noun"
+  },
+  "protokoll": {
+   "g": "report, record (das Protokoll)",
+   "t": "noun"
+  },
+  "quadratmeter": {
+   "g": "square meters (der Quadratmeter)",
+   "t": "noun"
+  },
+  "rascheln": {
+   "g": "to rustle, like paper or leaves",
+   "t": "verb"
+  },
+  "regeln": {
+   "g": "rules (die Regel); as verb: to settle",
+   "t": "noun"
+  },
+  "regelt": {
+   "g": "settles, governs (regeln)",
+   "t": "verb"
+  },
+  "reifliche": {
+   "g": "careful, thorough (reiflich)",
+   "t": "adjective"
+  },
+  "reiflicher": {
+   "g": "nach reiflicher Überlegung = after careful consideration",
+   "t": "adjective"
+  },
+  "ruhezeiten": {
+   "g": "legally protected quiet hours (die Ruhezeit)",
+   "t": "noun"
+  },
+  "rückweg": {
+   "g": "way back (der Rückweg)",
+   "t": "noun"
+  },
+  "samstag": {
+   "g": "Saturday (der Samstag)",
+   "t": "noun"
+  },
+  "sanderstraße": {
+   "g": "street in Neukölln, Berlin",
+   "t": "noun"
+  },
+  "satz": {
+   "g": "sentence (der Satz)",
+   "t": "noun"
+  },
+  "schlüsselbund": {
+   "g": "key ring, bundle of keys (der Schlüsselbund)",
+   "t": "noun"
+  },
+  "schmidt": {
+   "g": "(name); here, the cat",
+   "t": "noun"
+  },
+  "schmutzig": {
+   "g": "dirty",
+   "t": "adjective"
+  },
+  "schoß": {
+   "g": "lap (der Schoß)",
+   "t": "noun"
+  },
+  "schramme": {
+   "g": "scratch, scrape mark (die Schramme)",
+   "t": "noun"
+  },
+  "schriftlich": {
+   "g": "in writing",
+   "t": "adjective"
+  },
+  "schritt": {
+   "g": "step (der Schritt); Schritt für Schritt = step by step",
+   "t": "noun"
+  },
+  "schufa": {
+   "g": "Germany's credit score agency (die Schufa)",
+   "t": "noun",
+   "r": "regional"
+  },
+  "schwierig": {
+   "g": "difficult",
+   "t": "adjective"
+  },
+  "schwöre": {
+   "g": "swear (schwören)",
+   "t": "verb"
+  },
+  "sechser": {
+   "g": "Sechser im Lotto = jackpot (der Sechser)",
+   "t": "noun"
+  },
+  "segen": {
+   "g": "blessing, approval (der Segen)",
+   "t": "noun"
+  },
+  "seiten": {
+   "g": "pages (die Seite)",
+   "t": "noun"
+  },
+  "setzt": {
+   "g": "sits down (sich setzen)",
+   "t": "verb"
+  },
+  "siebzig": {
+   "g": "seventy",
+   "t": "number"
+  },
+  "sofa": {
+   "g": "sofa (das Sofa)",
+   "t": "noun"
+  },
+  "sofort": {
+   "g": "immediately",
+   "t": "adverb"
+  },
+  "sonntag": {
+   "g": "Sunday (der Sonntag)",
+   "t": "noun"
+  },
+  "spontan": {
+   "g": "spontaneous(ly)",
+   "t": "adjective"
+  },
+  "springt": {
+   "g": "jumps (springen)",
+   "t": "verb"
+  },
+  "spät": {
+   "g": "late; zu spät = too late",
+   "t": "adjective"
+  },
+  "stammbaum": {
+   "g": "family tree (der Stammbaum)",
+   "t": "noun"
+  },
+  "stammt": {
+   "g": "originates from (stammen aus)",
+   "t": "verb"
+  },
+  "stapeln": {
+   "g": "sich stapeln = to pile up",
+   "t": "verb"
+  },
+  "steht": {
+   "g": "stands; steht in = is written in (stehen)",
+   "t": "verb"
+  },
+  "stellt": {
+   "g": "puts (stellen); stellt ab = puts down",
+   "t": "verb"
+  },
+  "still": {
+   "g": "silent, quiet",
+   "t": "adjective"
+  },
+  "stock": {
+   "g": "floor, storey (der Stock)",
+   "t": "noun"
+  },
+  "straßen": {
+   "g": "streets (die Straße)",
+   "t": "noun"
+  },
+  "summt": {
+   "g": "buzzes, hums (summen)",
+   "t": "verb"
+  },
+  "sympathie": {
+   "g": "liking, personal warmth (die Sympathie)",
+   "t": "noun"
+  },
+  "tage": {
+   "g": "days (der Tag)",
+   "t": "noun"
+  },
+  "tagen": {
+   "g": "days (der Tag, dative)",
+   "t": "noun"
+  },
+  "tagt": {
+   "g": "convenes, holds a meeting (tagen)",
+   "t": "verb"
+  },
+  "teure": {
+   "g": "expensive (teuer)",
+   "t": "adjective"
+  },
+  "thront": {
+   "g": "sits enthroned (thronen)",
+   "t": "verb"
+  },
+  "thunfisch": {
+   "g": "tuna (der Thunfisch)",
+   "t": "noun"
+  },
+  "tipp": {
+   "g": "tip, insider hint (der Tipp)",
+   "t": "noun"
+  },
+  "traumobjekt": {
+   "g": "dream property (das Traumobjekt)",
+   "t": "noun"
+  },
+  "treppenhaus": {
+   "g": "stairwell (das Treppenhaus)",
+   "t": "noun"
+  },
+  "trotzdem": {
+   "g": "nevertheless, anyway",
+   "t": "adverb"
+  },
+  "tür": {
+   "g": "door (die Tür)",
+   "t": "noun"
+  },
+  "umklammert": {
+   "g": "clutches tightly (umklammern)",
+   "t": "verb"
+  },
+  "ummeldung": {
+   "g": "address re-registration after moving (die Ummeldung)",
+   "t": "noun"
+  },
+  "umweg": {
+   "g": "detour (der Umweg); ohne Umweg = directly",
+   "t": "noun"
+  },
+  "umzug": {
+   "g": "move, relocation (der Umzug)",
+   "t": "noun"
+  },
+  "unten": {
+   "g": "downstairs, below",
+   "t": "adverb"
+  },
+  "unter": {
+   "g": "under",
+   "t": "preposition"
+  },
+  "unterschreiben": {
+   "g": "to sign",
+   "t": "verb"
+  },
+  "verdient": {
+   "g": "deserved, earned (verdienen)",
+   "t": "adjective"
+  },
+  "vergangenheit": {
+   "g": "past (die Vergangenheit)",
+   "t": "noun"
+  },
+  "vergisst": {
+   "g": "forgets (vergessen)",
+   "t": "verb"
+  },
+  "verrate": {
+   "g": "reveal (verraten)",
+   "t": "verb"
+  },
+  "verrückt": {
+   "g": "crazy",
+   "t": "adjective"
+  },
+  "verrückteste": {
+   "g": "craziest (verrückt)",
+   "t": "adjective"
+  },
+  "viele": {
+   "g": "many",
+   "t": "pronoun"
+  },
+  "vorgeschichte": {
+   "g": "backstory, prior history (die Vorgeschichte)",
+   "t": "noun"
+  },
+  "vorlauf": {
+   "g": "advance notice, lead time (der Vorlauf)",
+   "t": "noun"
+  },
+  "vorsprechen": {
+   "g": "audition (das Vorsprechen)",
+   "t": "noun"
+  },
+  "warten": {
+   "g": "to wait",
+   "t": "verb"
+  },
+  "wartezeit": {
+   "g": "waiting time (die Wartezeit)",
+   "t": "noun"
+  },
+  "waschküche": {
+   "g": "shared laundry room (die Waschküche)",
+   "t": "noun"
+  },
+  "wichtig": {
+   "g": "important",
+   "t": "adjective"
+  },
+  "will": {
+   "g": "wants (wollen)",
+   "t": "verb"
+  },
+  "wird": {
+   "g": "becomes; is being (werden)",
+   "t": "verb"
+  },
+  "wohnungsmarkt": {
+   "g": "housing market (der Wohnungsmarkt)",
+   "t": "noun"
+  },
+  "wohnzimmer": {
+   "g": "living room (das Wohnzimmer)",
+   "t": "noun"
+  },
+  "wollny": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "wäsche": {
+   "g": "laundry (die Wäsche)",
+   "t": "noun"
+  },
+  "zeigen": {
+   "g": "to show",
+   "t": "verb"
+  },
+  "zieht": {
+   "g": "pulls; zieht nach Leipzig = moves; der Herd zieht = drifts (ziehen)",
+   "t": "verb"
+  },
+  "zimmer": {
+   "g": "room (das Zimmer)",
+   "t": "noun"
+  },
+  "zuhause": {
+   "g": "home (das Zuhause)",
+   "t": "noun"
+  },
+  "zweifel": {
+   "g": "doubt (der Zweifel); im Zweifel = when in doubt",
+   "t": "noun"
+  },
+  "zweimal": {
+   "g": "twice",
+   "t": "adverb"
+  },
+  "zählerstand": {
+   "g": "meter reading (der Zählerstand)",
+   "t": "noun"
+  },
+  "übergabeprotokoll": {
+   "g": "flat handover report, signed by both sides (das Übergabeprotokoll)",
+   "t": "noun"
+  },
+  "überlegung": {
+   "g": "consideration, deliberation (die Überlegung)",
+   "t": "noun"
+  },
+  "übertreib": {
+   "g": "exaggerate (übertreiben, imperative)",
+   "t": "verb"
+  },
+  "überzeugt": {
+   "g": "convinces (überzeugen)",
+   "t": "verb"
   }
  }
 }
