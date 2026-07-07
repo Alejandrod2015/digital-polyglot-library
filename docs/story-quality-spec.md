@@ -16,6 +16,8 @@ If you change a rule here, also update the matching feedback file in `~/.claude/
 - Banned patterns: "A/An [generic] in [city]", three or more stacked anchors, genre labels (mystery, secret, danger, escape), pronouns, "A Day in...", "The Story of X and Y".
 - Good examples: "Sauerbraten am Winterfeldtmarkt", "Apfelkuchen in Wedding", "Croque-monsieur à Belleville".
 
+- **Title must read as a STORY NAME, not a label or code (HARD, 2026-07-07).** Banned as title core: alphanumeric codes and administrative artifacts read literally (`Wartemarke B 247`, ticket numbers, license plates, form names as codes). The anchor must be evocative — a place, a moment, a culturally loaded object (`Schalter neun`, `Bürgeramt Neukölln, sieben Uhr`) — not a raw bureaucratic identifier. Real case: `Wartemarke B 247` passed every existing check and the user rejected it ("título de mierda"). Gestalt check: read the topic's 3 titles in sequence; they should sound like chapters of the same book, not inventory items.
+
 ## 2. Synopsis
 
 - 45 to 90 words.
