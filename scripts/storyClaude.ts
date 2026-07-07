@@ -126,6 +126,13 @@ function validatePayload(raw: unknown): {
     const key = word.toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
+    // Definition-length gate (2026-07-07): 8-14 palabras en TODOS los
+    // niveles, A0 incluido (spec §4 + §A0 register). Las 3 historias FR A0
+    // salieron con 59/75 definiciones telegráficas (<8) y hubo que rehacerlas.
+    const defWords = definition.split(/\s+/).filter(Boolean).length;
+    if (defWords < 8 || defWords > 14) {
+      throw new Error(`Definition-length gate: "${word}" tiene ${defWords} palabras (banda 8-14): "${definition}"`);
+    }
     const surface = typeof v.surface === "string" && v.surface.trim() ? v.surface.trim() : undefined;
     const type = typeof v.type === "string" && v.type.trim() ? v.type.trim() : undefined;
     // register (2026-07-06): dimensión de uso ortogonal al tipo. "slang" ya
