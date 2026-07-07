@@ -696,6 +696,46 @@
   "écoute": {
    "g": "listens (écouter)",
    "t": "verb"
+  },
+  "bouge": {
+   "g": "moves (bouger); ne bouge pas = does not move",
+   "t": "verb"
+  },
+  "gagne": {
+   "g": "wins (gagner); la peur gagne = fear wins",
+   "t": "verb"
+  },
+  "passe": {
+   "g": "passes by (passer), without stopping",
+   "t": "verb"
+  },
+  "ne": {
+   "g": "ne ... pas = not (negation)",
+   "t": "adverb"
+  },
+  "pas": {
+   "g": "ne ... pas = not (negation)",
+   "t": "adverb"
+  },
+  "rien": {
+   "g": "nothing; ne dit rien = says nothing",
+   "t": "pronoun"
+  },
+  "sans": {
+   "g": "without",
+   "t": "preposition"
+  },
+  "sienne": {
+   "g": "hers (la sienne = the one that is hers)",
+   "t": "pronoun"
+  },
+  "deuxième": {
+   "g": "second, number two in a series",
+   "t": "adjective"
+  },
+  "première": {
+   "g": "first (premier), number one in a series",
+   "t": "adjective"
   }
  }
 }
