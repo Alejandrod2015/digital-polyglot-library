@@ -413,7 +413,13 @@ export async function generateAndUploadAudio(
   storyText: string,
   title: string,
   language?: string,
-  region?: string
+  region?: string,
+  // 2026-07-07: la historia puede fijar su narrador (JourneyStory.voiceId).
+  // Sin esto, la selección caía SIEMPRE al pool default del idioma y el
+  // voiceId elegido por el usuario se ignoraba en silencio (bug FR A0:
+  // historia 1 salió con "Marie" y la 2 con "Alexandre" en vez de las
+  // voces aprobadas). El override gana; el pool queda como fallback.
+  voiceIdOverride?: string
 ): Promise<{
   url: string;
   filename: string;
@@ -480,7 +486,9 @@ export async function generateAndUploadAudio(
       voicesByLangRegion[normalizedLang]?.[normalizedRegion] ||
       voicesByLangRegion[normalizedLang]?.default ||
       voicesByLangRegion.English.default;
-    const selectedVoice = selectVoiceId(voiceCandidates, `${normalizedLang}:${normalizedRegion}:${title}`);
+    const selectedVoice = voiceIdOverride?.trim()
+      ? voiceIdOverride.trim()
+      : selectVoiceId(voiceCandidates, `${normalizedLang}:${normalizedRegion}:${title}`);
 
     console.log(
       `[elevenlabs] 🎙 Using voice ${selectedVoice} for ${normalizedLang} (${normalizedRegion})`

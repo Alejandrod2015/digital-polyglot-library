@@ -122,7 +122,10 @@ export async function POST(request: Request) {
       savedVoiceId = result.speakerVoiceMap?.narrator ?? voiceMap.narrator ?? null;
       audioFragments = result.fragments.length > 0 ? result.fragments : null;
     } else {
-      const result = await generateAndUploadAudio(story.text, story.title, story.journey.language, story.journey.variant);
+      // story.voiceId puede traer el prefijo de proveniencia "elevenlabs/"
+      // de una generación anterior; se sanea antes de usarlo como override.
+      const preferredVoice = story.voiceId?.replace(/^elevenlabs\//, "").trim() || undefined;
+      const result = await generateAndUploadAudio(story.text, story.title, story.journey.language, story.journey.variant, preferredVoice);
       if (!result) throw new Error("Audio generation returned null");
       audioUrl = result.url;
       audioFilename = result.filename;
