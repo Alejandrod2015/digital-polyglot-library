@@ -18,7 +18,7 @@ function genId(p: string, i: number): string {
   const authoring: any[] = fs.existsSync("scripts/_authoring.json")
     ? JSON.parse(fs.readFileSync("scripts/_authoring.json", "utf8")) : [];
   const vocabBySlug = new Map<string, string[]>(
-    authoring.map((s: any) => [s.slug, (s.vocab ?? []).map((v: any) => v.word).filter(Boolean)])
+    authoring.map((s: any) => [s.slug, (s.vocab ?? []).map((v: any) => (v.surface ? `${v.word}||${v.surface}` : v.word)).filter(Boolean)])
   );
   // Coverage fallback for non-A2 journeys: _authoring.json only covers A2;
   // pull vocab from the story row so the seed gate enforces coverage everywhere.
@@ -27,7 +27,7 @@ function genId(p: string, i: number): string {
       .filter((s) => !only || s === only).filter((s) => !vocabBySlug.has(s));
     if (slugsToSeed.length) {
       const rows = await prisma.journeyStory.findMany({ where: { slug: { in: slugsToSeed } }, select: { slug: true, vocab: true } });
-      for (const r of rows) vocabBySlug.set(r.slug!, ((r.vocab as any[]) ?? []).map((v: any) => v.word).filter(Boolean));
+      for (const r of rows) vocabBySlug.set(r.slug!, ((r.vocab as any[]) ?? []).map((v: any) => (v.surface ? `${v.word}||${v.surface}` : v.word)).filter(Boolean));
     }
   }
 

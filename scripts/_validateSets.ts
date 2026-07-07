@@ -39,10 +39,15 @@ const commonPrefix = (a: string, b: string) => {
   while (i < a.length && i < b.length && a[i] === b[i]) i++;
   return i;
 };
-const covers = (target: string, vocabWord: string) => {
+const covers = (target: string, vocabEntry: string) => {
+  // vocabEntry puede venir como "lemma||surface" (2026-07-07): el surface
+  // exacto cubre participios alemanes con ge- infijo (zurückziehen ->
+  // zurückgezogen) que el prefix-matching del lema no alcanza.
+  const [vocabWord, vocabSurface] = vocabEntry.split("||");
   const a = norm(target), b = norm(vocabWord);
   if (!a || !b) return false;
   if (a === b) return true;
+  if (vocabSurface && a === norm(vocabSurface)) return true;
   const ta = firstTok(a), tb = firstTok(b);
   const L = commonPrefix(ta, tb);
   return L >= Math.max(3, Math.min(ta.length, tb.length) - 3);
@@ -125,7 +130,7 @@ export function validateSet(exs: any[], vocabWords?: string[]): string[] {
   // Full vocab coverage (every vocab word taught by exactly one exercise).
   if (vocabWords && vocabWords.length) {
     const missing = vocabWords.filter((v) => !targetWords.some((t) => covers(t, v)));
-    if (missing.length) issues.push(`vocab NOT covered: ${missing.join(", ")}`);
+    if (missing.length) issues.push(`vocab NOT covered: ${missing.map((m) => m.split("||")[0]).join(", ")}`);
   }
 
   return issues;
@@ -137,7 +142,7 @@ if (require.main === module) {
   const only = process.argv.find((a) => a.startsWith("--only="))?.split("=")[1];
   const authoring: any[] = fs.existsSync(AUTHORING) ? JSON.parse(fs.readFileSync(AUTHORING, "utf8")) : [];
   const vocabBySlug = new Map<string, string[]>(
-    authoring.map((s) => [s.slug, (s.vocab ?? []).map((v: any) => v.word).filter(Boolean)])
+    authoring.map((s) => [s.slug, (s.vocab ?? []).map((v: any) => v.surface ? `${v.word}||${v.surface}` : v.word).filter(Boolean)])
   );
   const files = fs
     .readdirSync(DIR)
@@ -154,7 +159,7 @@ if (require.main === module) {
       const prisma = new PrismaClient();
       try {
         const rows = await prisma.journeyStory.findMany({ where: { slug: { in: missing } }, select: { slug: true, vocab: true } });
-        for (const r of rows) vocabBySlug.set(r.slug!, ((r.vocab as any[]) ?? []).map((v: any) => v.word).filter(Boolean));
+        for (const r of rows) vocabBySlug.set(r.slug!, ((r.vocab as any[]) ?? []).map((v: any) => (v.surface ? `${v.word}||${v.surface}` : v.word)).filter(Boolean));
       } finally { await prisma.$disconnect(); }
     }
   }

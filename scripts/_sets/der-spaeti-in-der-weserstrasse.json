@@ -1,0 +1,284 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "der Kiez",
+    "sentence": "Wenn in diesem [[Kiez]] jemand etwas weiß, dann Katja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "neighborhood",
+      "options": ["neighborhood", "town hall", "supermarket", "apartment"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Wenn in diesem Kiez jemand etwas weiß, dann Katja.", "targetWord": "Kiez", "language": "german" }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Pfandflasche",
+    "sentence": "Hinter der Theke stapelt Katja [[Pfandflaschen]] zu wackligen Türmen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "deposit bottle",
+      "options": ["deposit bottle", "wine glass", "coffee cup", "water tank"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Hinter der Theke stapelt Katja Pfandflaschen zu wackligen Türmen.", "targetWord": "Pfandflaschen", "language": "german" }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sich herumsprechen",
+    "sentence": "Hier hat sich noch jedes Geheimnis [[herumgesprochen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to spread by word of mouth",
+      "options": ["to spread by word of mouth", "to stay hidden forever", "to get written down", "to cause an argument"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Hier hat sich noch jedes Geheimnis herumgesprochen.", "targetWord": "herumgesprochen", "language": "german" }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seelenruhig",
+    "sentence": "Parzelle zwölf: Herr Lindner, [[seelenruhig]] im Liegestuhl.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "completely unfazed",
+      "options": ["completely unfazed", "deeply asleep", "very nervous", "half hidden"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Parzelle zwölf: Herr Lindner, seelenruhig im Liegestuhl.", "targetWord": "seelenruhig", "language": "german" }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Ersatzverkehr",
+    "sentence": "An der Treppe zur U-Bahn dann das gelbe Schild: [[Ersatzverkehr]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "replacement bus service",
+      "options": ["replacement bus service", "rush hour traffic", "ticket inspection", "night train line"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "An der Treppe zur U-Bahn dann das gelbe Schild: Ersatzverkehr.", "targetWord": "Ersatzverkehr", "language": "german" }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "auf den letzten Drücker",
+    "sentence": "[[Auf den letzten Drücker]], aber es reicht.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the very last moment",
+      "options": ["at the very last moment", "with plenty of time", "on the wrong day", "without any plan"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Auf den letzten Drücker, aber es reicht.", "targetWord": "Auf den letzten Drücker", "language": "german" }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "platzt",
+    "sentence": "Wir sind zu spät; jetzt _____ unser Termin.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "platzt",
+      "options": ["platzt", "beginnt", "klingelt", "wartet"],
+      "translation": "We are too late; now our appointment _____.",
+      "optionTranslations": ["falls through", "begins", "rings", "waits"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Wir sind zu spät; jetzt platzt unser Termin.", "targetWord": "platzt", "language": "german" }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mitspielt",
+    "sentence": "Wir grillen morgen im Park, wenn das Wetter _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mitspielt",
+      "options": ["mitspielt", "schläft", "verliert", "endet"],
+      "translation": "We will barbecue in the park tomorrow if the weather _____.",
+      "optionTranslations": ["cooperates", "sleeps", "loses", "ends"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Wir grillen morgen im Park, wenn das Wetter mitspielt.", "targetWord": "mitspielt", "language": "german" }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "verkrümelt",
+    "sentence": "Immer beim Abwasch _____ er sich leise ins Wohnzimmer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "verkrümelt",
+      "options": ["verkrümelt", "meldet", "erinnert", "freut"],
+      "translation": "Every time the dishes need washing, he quietly _____ into the living room.",
+      "optionTranslations": ["sneaks off", "reports", "reminds", "is glad"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Immer beim Abwasch verkrümelt er sich leise ins Wohnzimmer.", "targetWord": "verkrümelt", "language": "german" }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Späti,die Laube,die Theke,das Klingelschild",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        { "word": "der Späti", "answer": "late-night corner shop", "options": ["late-night corner shop", "garden hut", "shop counter", "doorbell name plate"] },
+        { "word": "die Laube", "answer": "garden hut", "options": ["late-night corner shop", "garden hut", "shop counter", "doorbell name plate"] },
+        { "word": "die Theke", "answer": "shop counter", "options": ["late-night corner shop", "garden hut", "shop counter", "doorbell name plate"] },
+        { "word": "das Klingelschild", "answer": "doorbell name plate", "options": ["late-night corner shop", "garden hut", "shop counter", "doorbell name plate"] }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "derweil",
+    "sentence": "Timo studiert [[derweil]] die Klingelschilder.",
+    "featured": false,
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "meanwhile",
+      "options": ["meanwhile", "afterwards", "yesterday", "instead"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Timo studiert derweil die Klingelschilder.", "targetWord": "derweil", "language": "german" }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Verbleib",
+    "sentence": "Als ließe sich daraus der [[Verbleib]] eines Vermieters ablesen.",
+    "featured": false,
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "whereabouts",
+      "options": ["whereabouts", "income", "birthday", "signature"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Als ließe sich daraus der Verbleib eines Vermieters ablesen.", "targetWord": "Verbleib", "language": "german" }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Anlaufstelle",
+    "sentence": "Ihr Späti ist die inoffizielle [[Anlaufstelle]] der halben Weserstraße.",
+    "featured": false,
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "go-to place",
+      "options": ["go-to place", "bus station", "parking lot", "storage room"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Ihr Späti ist die inoffizielle Anlaufstelle der halben Weserstraße.", "targetWord": "Anlaufstelle", "language": "german" }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Parzelle",
+    "sentence": "Kleingartenkolonie am Weigandufer, [[Parzelle]] zwölf.",
+    "featured": false,
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "garden plot",
+      "options": ["garden plot", "street corner", "bus stop", "front door"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Kleingartenkolonie am Weigandufer, Parzelle zwölf.", "targetWord": "Parzelle", "language": "german" }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Hausverwaltung",
+    "sentence": "So etwas erfährt man nicht von der [[Hausverwaltung]].",
+    "featured": false,
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "property management",
+      "options": ["property management", "fire department", "post office", "tourist office"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "So etwas erfährt man nicht von der Hausverwaltung.", "targetWord": "Hausverwaltung", "language": "german" }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aufreihen",
+    "sentence": "Die Tomaten sind ordentlicher [[aufgereiht]] als seine Klingelschilder.",
+    "featured": false,
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to line up",
+      "options": ["to line up", "to water", "to cut down", "to sell off"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Die Tomaten sind ordentlicher aufgereiht als seine Klingelschilder.", "targetWord": "aufgereiht", "language": "german" }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "wortlos",
+    "sentence": "Er verschwindet [[wortlos]] in der Laube.",
+    "featured": false,
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without a word",
+      "options": ["without a word", "with a smile", "in a hurry", "by mistake"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Er verschwindet wortlos in der Laube.", "targetWord": "wortlos", "language": "german" }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abgegriffen",
+    "sentence": "Er kehrt mit einem [[abgegriffenen]] Ordner zurück.",
+    "featured": false,
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "well-worn",
+      "options": ["well-worn", "brand new", "bright red", "half open"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Er kehrt mit einem abgegriffenen Ordner zurück.", "targetWord": "abgegriffenen", "language": "german" }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "auf Vorrat",
+    "sentence": "Ich habe die Formulare inzwischen [[auf Vorrat]].",
+    "featured": false,
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in stock, ready ahead",
+      "options": ["in stock, ready ahead", "under the table", "out of order", "for sale only"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Ich habe die Formulare inzwischen auf Vorrat.", "targetWord": "auf Vorrat", "language": "german" }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nehme ich an",
+    "sentence": "Wohnungsgeberbestätigung, [[nehme ich an]].",
+    "featured": false,
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I assume",
+      "options": ["I assume", "I refuse", "I promise", "I remember"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Wohnungsgeberbestätigung, nehme ich an.", "targetWord": "nehme ich an", "language": "german" }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "stapelt",
+    "sentence": "Niemand räumt auf; das Geschirr _____ sich in der Küche.",
+    "featured": false,
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "stapelt",
+      "options": ["stapelt", "wäscht", "versteckt", "bewegt"],
+      "translation": "Nobody cleans up; the dishes _____ up in the kitchen.",
+      "optionTranslations": ["pile", "wash", "hide", "move"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Niemand räumt auf; das Geschirr stapelt sich in der Küche.", "targetWord": "stapelt", "language": "german" }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "wackligen",
+    "sentence": "Setz dich nicht auf den _____ Stuhl; ein Bein ist kurz.",
+    "featured": false,
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "wackligen",
+      "options": ["wackligen", "neuen", "blauen", "leeren"],
+      "translation": "Don't sit on the _____ chair; one leg is short.",
+      "optionTranslations": ["wobbly", "new", "blue", "empty"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Setz dich nicht auf den wackligen Stuhl; ein Bein ist kurz.", "targetWord": "wackligen", "language": "german" }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "spurlos",
+    "sentence": "Der Schlüssel ist _____ verschwunden; niemand findet ihn.",
+    "featured": false,
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "spurlos",
+      "options": ["spurlos", "langsam", "laut", "zweimal"],
+      "translation": "The key has vanished _____; nobody can find it.",
+      "optionTranslations": ["without a trace", "slowly", "loudly", "twice"],
+      "audioClip": { "storySlug": "der-spaeti-in-der-weserstrasse", "storySource": "user", "sentence": "Der Schlüssel ist spurlos verschwunden; niemand findet ihn.", "targetWord": "spurlos", "language": "german" }
+    }
+  }
+]
