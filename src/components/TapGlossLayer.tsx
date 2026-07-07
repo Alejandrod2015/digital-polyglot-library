@@ -69,7 +69,7 @@ function contextSentence(node: HTMLElement | null, word: string): string | undef
 // Token de lookup desde el texto visible del span: minúsculas y sin
 // puntuación pegada ("Neukölln." -> "neukölln").
 function tokenFromText(text: string): string {
-  const m = text.toLowerCase().match(/[a-zäöüß]+(?:-[a-zäöüß]+)*/u);
+  const m = text.toLowerCase().match(/\p{L}+(?:-\p{L}+)*/u);
   return m ? m[0] : "";
 }
 

@@ -1,0 +1,701 @@
+{
+ "slugs": [
+  "l-ocean-dit-non",
+  "grande-plage-petite-peur",
+  "debout-sur-l-ocean"
+ ],
+ "glosses": {
+  "a": {
+   "g": "has (avoir); il y a = there is",
+   "t": "verb"
+  },
+  "abord": {
+   "g": "d'abord = first, before anything else",
+   "t": "adverb"
+  },
+  "ai": {
+   "g": "have (avoir); j'ai = I have",
+   "t": "verb"
+  },
+  "amie": {
+   "g": "friend, female (l'amie)",
+   "t": "noun"
+  },
+  "amour": {
+   "g": "love (l'amour); histoire d'amour = love story",
+   "t": "noun"
+  },
+  "applaudit": {
+   "g": "claps, applauds (applaudir)",
+   "t": "verb"
+  },
+  "apporte": {
+   "g": "brings (apporter)",
+   "t": "verb"
+  },
+  "après": {
+   "g": "after",
+   "t": "preposition"
+  },
+  "arrive": {
+   "g": "arrives (arriver)",
+   "t": "verb"
+  },
+  "assis": {
+   "g": "seated, sitting",
+   "t": "adjective"
+  },
+  "attend": {
+   "g": "waits (attendre)",
+   "t": "verb"
+  },
+  "attendons": {
+   "g": "we wait (attendre)",
+   "t": "verb"
+  },
+  "au": {
+   "g": "at the, to the (à + le)",
+   "t": "preposition"
+  },
+  "aujourd": {
+   "g": "aujourd'hui = today",
+   "t": "adverb"
+  },
+  "autre": {
+   "g": "other, different",
+   "t": "adjective"
+  },
+  "avec": {
+   "g": "with",
+   "t": "preposition"
+  },
+  "basque": {
+   "g": "Basque; gâteau basque = the famous local cake",
+   "t": "adjective"
+  },
+  "basques": {
+   "g": "la Côte des Basques = Biarritz's famous surf beach",
+   "t": "noun"
+  },
+  "bat": {
+   "g": "beats (battre), like a heart",
+   "t": "verb"
+  },
+  "belle": {
+   "g": "beautiful (beau)",
+   "t": "adjective"
+  },
+  "biarritz": {
+   "g": "Biarritz, surf capital on the French Basque coast",
+   "t": "noun"
+  },
+  "bien": {
+   "g": "well, good",
+   "t": "adverb"
+  },
+  "bleu": {
+   "g": "blue",
+   "t": "adjective"
+  },
+  "boit": {
+   "g": "drinks (boire)",
+   "t": "verb"
+  },
+  "bonne": {
+   "g": "good (bon); la bonne vague = the right wave",
+   "t": "adjective"
+  },
+  "bras": {
+   "g": "arm (le bras)",
+   "t": "noun"
+  },
+  "bravo": {
+   "g": "bravo, well done",
+   "t": "expression"
+  },
+  "brille": {
+   "g": "shines (briller)",
+   "t": "verb"
+  },
+  "c": {
+   "g": "c'est = it is, this is",
+   "t": "pronoun"
+  },
+  "café": {
+   "g": "café; coffee (le café)",
+   "t": "noun"
+  },
+  "calme": {
+   "g": "calm, quiet",
+   "t": "adjective"
+  },
+  "ce": {
+   "g": "this, that",
+   "t": "article"
+  },
+  "cette": {
+   "g": "this, that (feminine)",
+   "t": "article"
+  },
+  "chaud": {
+   "g": "hot, warm",
+   "t": "adjective"
+  },
+  "chocolat": {
+   "g": "chocolate (le chocolat); chocolat chaud = hot chocolate",
+   "t": "noun"
+  },
+  "ciel": {
+   "g": "sky (le ciel)",
+   "t": "noun"
+  },
+  "cinq": {
+   "g": "five",
+   "t": "number"
+  },
+  "combinaison": {
+   "g": "wetsuit (la combinaison)",
+   "t": "noun"
+  },
+  "comme": {
+   "g": "like, as",
+   "t": "conjunction"
+  },
+  "contente": {
+   "g": "happy, pleased (content)",
+   "t": "adjective"
+  },
+  "corps": {
+   "g": "body (le corps)",
+   "t": "noun"
+  },
+  "crie": {
+   "g": "shouts (crier)",
+   "t": "verb"
+  },
+  "célèbre": {
+   "g": "famous",
+   "t": "adjective"
+  },
+  "côte": {
+   "g": "coast (la côte); Côte des Basques = Biarritz surf beach",
+   "t": "noun"
+  },
+  "cœur": {
+   "g": "heart (le cœur)",
+   "t": "noun"
+  },
+  "d": {
+   "g": "d' = of, from (de before a vowel)",
+   "t": "preposition"
+  },
+  "dans": {
+   "g": "in, inside",
+   "t": "preposition"
+  },
+  "danse": {
+   "g": "dances (danser)",
+   "t": "verb"
+  },
+  "de": {
+   "g": "of, from",
+   "t": "preposition"
+  },
+  "debout": {
+   "g": "standing, on your feet",
+   "t": "adverb"
+  },
+  "demain": {
+   "g": "tomorrow",
+   "t": "adverb"
+  },
+  "demande": {
+   "g": "asks (demander)",
+   "t": "verb"
+  },
+  "dernier": {
+   "g": "last, final",
+   "t": "adjective"
+  },
+  "des": {
+   "g": "of the (de + les); some",
+   "t": "article"
+  },
+  "deux": {
+   "g": "two",
+   "t": "number"
+  },
+  "devant": {
+   "g": "in front of",
+   "t": "preposition"
+  },
+  "dit": {
+   "g": "says (dire)",
+   "t": "verb"
+  },
+  "douce": {
+   "g": "soft, gentle (doux)",
+   "t": "adjective"
+  },
+  "du": {
+   "g": "of the, from the (de + le)",
+   "t": "article"
+  },
+  "eau": {
+   "g": "water (l'eau)",
+   "t": "noun"
+  },
+  "elle": {
+   "g": "she; it (feminine)",
+   "t": "pronoun"
+  },
+  "emmène": {
+   "g": "takes someone along (emmener)",
+   "t": "verb"
+  },
+  "encore": {
+   "g": "again; still",
+   "t": "adverb"
+  },
+  "entre": {
+   "g": "enters (entrer); between",
+   "t": "verb"
+  },
+  "es": {
+   "g": "are (être, tu form)",
+   "t": "verb"
+  },
+  "est": {
+   "g": "is (être)",
+   "t": "verb"
+  },
+  "et": {
+   "g": "and",
+   "t": "conjunction"
+  },
+  "fatigué": {
+   "g": "tired",
+   "t": "adjective"
+  },
+  "femme": {
+   "g": "woman; wife (la femme)",
+   "t": "noun"
+  },
+  "fois": {
+   "g": "time, occasion (la fois); cette fois = this time",
+   "t": "noun"
+  },
+  "froide": {
+   "g": "cold (froid)",
+   "t": "adjective"
+  },
+  "glisse": {
+   "g": "glides, slides (glisser)",
+   "t": "verb"
+  },
+  "grande": {
+   "g": "big, large (grand)",
+   "t": "adjective"
+  },
+  "grandes": {
+   "g": "big, large (grand, plural)",
+   "t": "adjective"
+  },
+  "gâteau": {
+   "g": "cake (le gâteau); gâteau basque = famous local cake",
+   "t": "noun"
+  },
+  "haute": {
+   "g": "high, tall (haut)",
+   "t": "adjective"
+  },
+  "histoire": {
+   "g": "story (l'histoire); histoire d'amour = love story",
+   "t": "noun"
+  },
+  "hugo": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "hui": {
+   "g": "aujourd'hui = today",
+   "t": "adverb"
+  },
+  "ici": {
+   "g": "here",
+   "t": "adverb"
+  },
+  "il": {
+   "g": "he; it; il y a = there is",
+   "t": "pronoun"
+  },
+  "ils": {
+   "g": "they (masculine or mixed)",
+   "t": "pronoun"
+  },
+  "j": {
+   "g": "j' = I (je before a vowel)",
+   "t": "pronoun"
+  },
+  "je": {
+   "g": "I",
+   "t": "pronoun"
+  },
+  "l": {
+   "g": "l' = the (le/la before a vowel)",
+   "t": "article"
+  },
+  "la": {
+   "g": "the (feminine); her, it",
+   "t": "article"
+  },
+  "le": {
+   "g": "the (masculine); him, it",
+   "t": "article"
+  },
+  "lente": {
+   "g": "slow (lent)",
+   "t": "adjective"
+  },
+  "les": {
+   "g": "the (plural)",
+   "t": "article"
+  },
+  "leurs": {
+   "g": "their (plural)",
+   "t": "pronoun"
+  },
+  "longtemps": {
+   "g": "for a long time",
+   "t": "adverb"
+  },
+  "là": {
+   "g": "there; still there",
+   "t": "adverb"
+  },
+  "lève": {
+   "g": "raises, lifts (lever); lève le pouce = gives a thumbs-up",
+   "t": "verb"
+  },
+  "léa": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "magiques": {
+   "g": "magical (magique)",
+   "t": "adjective"
+  },
+  "main": {
+   "g": "hand (la main)",
+   "t": "noun"
+  },
+  "maintenant": {
+   "g": "now",
+   "t": "adverb"
+  },
+  "mais": {
+   "g": "but",
+   "t": "conjunction"
+  },
+  "manon": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "marchent": {
+   "g": "walk (marcher)",
+   "t": "verb"
+  },
+  "matin": {
+   "g": "morning (le matin)",
+   "t": "noun"
+  },
+  "mer": {
+   "g": "sea (la mer)",
+   "t": "noun"
+  },
+  "miroir": {
+   "g": "mirror (le miroir)",
+   "t": "noun"
+  },
+  "moi": {
+   "g": "me",
+   "t": "pronoun"
+  },
+  "monde": {
+   "g": "world (le monde); tout le monde = everybody",
+   "t": "noun"
+  },
+  "monte": {
+   "g": "gets on, climbs (monter)",
+   "t": "verb"
+  },
+  "montre": {
+   "g": "shows (montrer)",
+   "t": "verb"
+  },
+  "moyenne": {
+   "g": "medium (moyen)",
+   "t": "adjective"
+  },
+  "nage": {
+   "g": "swims (nager)",
+   "t": "verb"
+  },
+  "noire": {
+   "g": "black (noir)",
+   "t": "adjective"
+  },
+  "non": {
+   "g": "no",
+   "t": "adverb"
+  },
+  "normal": {
+   "g": "normal, usual",
+   "t": "adjective"
+  },
+  "nous": {
+   "g": "we, us",
+   "t": "pronoun"
+  },
+  "océan": {
+   "g": "ocean (l'océan)",
+   "t": "noun"
+  },
+  "on": {
+   "g": "one, we, people in general",
+   "t": "pronoun"
+  },
+  "oui": {
+   "g": "yes",
+   "t": "adverb"
+  },
+  "parfait": {
+   "g": "perfect",
+   "t": "adjective"
+  },
+  "parle": {
+   "g": "speaks (parler)",
+   "t": "verb"
+  },
+  "pars": {
+   "g": "leave (partir, tu form)",
+   "t": "verb"
+  },
+  "personnes": {
+   "g": "people (la personne)",
+   "t": "noun"
+  },
+  "petite": {
+   "g": "small, little (petit)",
+   "t": "adjective"
+  },
+  "petites": {
+   "g": "small, little (petit, plural)",
+   "t": "adjective"
+  },
+  "peu": {
+   "g": "little; un peu = a little",
+   "t": "adverb"
+  },
+  "peur": {
+   "g": "fear (la peur); j'ai peur = I am afraid",
+   "t": "noun"
+  },
+  "peut-être": {
+   "g": "maybe, perhaps",
+   "t": "adverb"
+  },
+  "plage": {
+   "g": "beach (la plage)",
+   "t": "noun"
+  },
+  "planche": {
+   "g": "board (la planche); here, the surfboard",
+   "t": "noun"
+  },
+  "planches": {
+   "g": "boards (la planche)",
+   "t": "noun"
+  },
+  "plus": {
+   "g": "more; plus douce = softer",
+   "t": "adverb"
+  },
+  "porte": {
+   "g": "wears; carries (porter)",
+   "t": "verb"
+  },
+  "pouce": {
+   "g": "thumb (le pouce); lever le pouce = thumbs-up",
+   "t": "noun"
+  },
+  "pour": {
+   "g": "for",
+   "t": "preposition"
+  },
+  "professeur": {
+   "g": "teacher, instructor (le professeur)",
+   "t": "noun"
+  },
+  "puis": {
+   "g": "then, afterwards",
+   "t": "adverb"
+  },
+  "rapides": {
+   "g": "fast (rapide)",
+   "t": "adjective"
+  },
+  "regarde": {
+   "g": "looks at (regarder)",
+   "t": "verb"
+  },
+  "reviens": {
+   "g": "come back (revenir, je form)",
+   "t": "verb"
+  },
+  "rit": {
+   "g": "laughs (rire)",
+   "t": "verb"
+  },
+  "sable": {
+   "g": "sand (le sable)",
+   "t": "noun"
+  },
+  "salée": {
+   "g": "salty (salé)",
+   "t": "adjective"
+  },
+  "secondes": {
+   "g": "seconds (la seconde)",
+   "t": "noun"
+  },
+  "ses": {
+   "g": "his, her (plural)",
+   "t": "pronoun"
+  },
+  "soleil": {
+   "g": "sun (le soleil)",
+   "t": "noun"
+  },
+  "son": {
+   "g": "his, her",
+   "t": "pronoun"
+  },
+  "sont": {
+   "g": "are (être)",
+   "t": "verb"
+  },
+  "sourit": {
+   "g": "smiles (sourire)",
+   "t": "verb"
+  },
+  "sur": {
+   "g": "on, on top of",
+   "t": "preposition"
+  },
+  "surf": {
+   "g": "surfing (le surf)",
+   "t": "noun"
+  },
+  "surfeurs": {
+   "g": "surfers (le surfeur)",
+   "t": "noun"
+  },
+  "surfeuse": {
+   "g": "surfer, female (la surfeuse)",
+   "t": "noun"
+  },
+  "série": {
+   "g": "series (la série); here, a set of waves",
+   "t": "noun"
+  },
+  "tombe": {
+   "g": "falls (tomber)",
+   "t": "verb"
+  },
+  "ton": {
+   "g": "your",
+   "t": "pronoun"
+  },
+  "touche": {
+   "g": "touches (toucher)",
+   "t": "verb"
+  },
+  "toujours": {
+   "g": "always; still",
+   "t": "adverb"
+  },
+  "tout": {
+   "g": "all; tout le monde = everybody",
+   "t": "pronoun"
+  },
+  "trois": {
+   "g": "three",
+   "t": "number"
+  },
+  "tu": {
+   "g": "you (informal)",
+   "t": "pronoun"
+  },
+  "un": {
+   "g": "a, an; one",
+   "t": "article"
+  },
+  "une": {
+   "g": "a, an (feminine)",
+   "t": "article"
+  },
+  "vague": {
+   "g": "wave (la vague)",
+   "t": "noun"
+  },
+  "vagues": {
+   "g": "waves (la vague)",
+   "t": "noun"
+  },
+  "vent": {
+   "g": "wind (le vent)",
+   "t": "noun"
+  },
+  "vers": {
+   "g": "toward",
+   "t": "preposition"
+  },
+  "verte": {
+   "g": "green (vert)",
+   "t": "adjective"
+  },
+  "visage": {
+   "g": "face (le visage)",
+   "t": "noun"
+  },
+  "vite": {
+   "g": "fast, quickly",
+   "t": "adverb"
+  },
+  "vraie": {
+   "g": "true, real (vrai)",
+   "t": "adjective"
+  },
+  "y": {
+   "g": "il y a = there is, there are",
+   "t": "pronoun"
+  },
+  "yeux": {
+   "g": "eyes (l'œil, plural: les yeux)",
+   "t": "noun"
+  },
+  "à": {
+   "g": "at, to, in",
+   "t": "preposition"
+  },
+  "école": {
+   "g": "school (l'école)",
+   "t": "noun"
+  },
+  "écoute": {
+   "g": "listens (écouter)",
+   "t": "verb"
+  }
+ }
+}

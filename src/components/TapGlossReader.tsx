@@ -16,7 +16,7 @@ type TapGlossReaderProps = {
   story?: { slug: string; title: string; language?: string | null };
 };
 
-const WORD_SPLIT = /([A-Za-zÄÖÜäöüß]+(?:-[A-Za-zÄÖÜäöüß]+)*)/u;
+const WORD_SPLIT = /(\p{L}+(?:-\p{L}+)*)/u;
 
 export default function TapGlossReader({ text, vocab, glosses, story }: TapGlossReaderProps) {
   const renderWord = React.useCallback(
