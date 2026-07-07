@@ -1788,7 +1788,7 @@ export default function PracticePage() {
   // as the cleanest. The sentence button still plays the authentic speaker, so
   // only the isolated word standardises on this voice. Tapping again stops it.
   const playWordTts = useCallback(
-    async (clipOwnerId: string, word: string, _clip: PracticeAudioClip | null | undefined) => {
+    async (clipOwnerId: string, word: string, clip: PracticeAudioClip | null | undefined) => {
       if (!word || typeof window === "undefined") return;
       // RULE: the isolated word is spoken in the STORY'S narrator voice (country
       // accent), falling back to the shared voice only for non-journey sources.
@@ -1801,14 +1801,15 @@ export default function PracticePage() {
         setWordClipId(null);
         return;
       }
-      const cacheKey = `${voiceId}|${word.toLowerCase()}`;
+      const wordLanguage = clip?.language ?? undefined;
+      const cacheKey = `${voiceId}|${word.toLowerCase()}|${wordLanguage ?? "es"}`;
       let url = wordUrlByKey[cacheKey];
       if (!url) {
         try {
           const res = await fetch("/api/practice/word-tts", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ word, voiceId }),
+            body: JSON.stringify({ word, voiceId, ...(wordLanguage ? { language: wordLanguage } : {}) }),
           });
           if (!res.ok) {
             console.error("[practice] word TTS failed", res.status);
@@ -1857,8 +1858,12 @@ export default function PracticePage() {
     };
     // Resolve a word-tts url (cache or endpoint), then warm its mp3.
     const wordVoiceId = narratorVoiceId ?? WORD_AUDIO_VOICE_ID;
+    const warmLanguage =
+      (currentExercise as { audioClip?: { language?: string } | null }).audioClip?.language ??
+      (currentExercise as { language?: string }).language ??
+      undefined;
     const warmWord = (word: string) => {
-      const key = `${wordVoiceId}|${word.toLowerCase()}`;
+      const key = `${wordVoiceId}|${word.toLowerCase()}|${warmLanguage ?? "es"}`;
       if (wordUrlByKey[key]) {
         warm(wordUrlByKey[key]);
         return;
@@ -1866,7 +1871,7 @@ export default function PracticePage() {
       void fetch("/api/practice/word-tts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ word, voiceId: wordVoiceId }),
+        body: JSON.stringify({ word, voiceId: wordVoiceId, ...(warmLanguage ? { language: warmLanguage } : {}) }),
       })
         .then((r) => (r.ok ? r.json() : null))
         .then((d: { url?: string } | null) => {

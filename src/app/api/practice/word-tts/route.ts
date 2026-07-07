@@ -30,11 +30,19 @@ export const maxDuration = 120;
 // invalidates the v1 (mis-accented) clips.
 const CACHE_VERSION = "v3"; // v3: dropped dynaudnorm (start-volume ramp)
 const WORD_MODEL = "eleven_turbo_v2_5";
-const WORD_LANGUAGE_CODE = "es";
+// 2026-07-07: idioma parametrizado (antes hardcodeado a "es", lo que habría
+// pronunciado las palabras alemanas/francesas con fonética española). El
+// caller manda el language del ejercicio; default "es" mantiene el
+// comportamiento y las cache keys existentes de LATAM intactas.
+const WORD_LANGUAGE_CODES: Record<string, string> = {
+  spanish: "es", german: "de", french: "fr", italian: "it", portuguese: "pt", english: "en",
+};
+const DEFAULT_WORD_LANGUAGE = "es";
 
 type Body = {
   word?: string;
   voiceId?: string;
+  language?: string;
 };
 
 function runFfmpeg(args: string[]): Promise<void> {
@@ -83,8 +91,11 @@ async function normalizeWord(rawMp3: Buffer): Promise<Buffer> {
   }
 }
 
-function cacheKey(voiceId: string, word: string): string {
-  const payload = `${CACHE_VERSION}|${voiceId}|${word.toLowerCase()}`;
+function cacheKey(voiceId: string, word: string, langCode: string): string {
+  // Las keys legacy (es) no llevan sufijo para no invalidar los clips LATAM
+  // ya pagados; los demás idiomas llevan su código.
+  const langSuffix = langCode === "es" ? "" : `|${langCode}`;
+  const payload = `${CACHE_VERSION}|${voiceId}|${word.toLowerCase()}${langSuffix}`;
   const hash = crypto.createHash("sha256").update(payload).digest("hex").slice(0, 24);
   return `media/practice/word-tts/${hash}.mp3`;
 }
@@ -123,7 +134,8 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const key = cacheKey(elVoiceId, word);
+  const langCode = WORD_LANGUAGE_CODES[(body.language ?? "").toLowerCase()] ?? DEFAULT_WORD_LANGUAGE;
+  const key = cacheKey(elVoiceId, word, langCode);
   const publicUrl = getPublicObjectUrl(key);
   if (publicUrl) {
     try {
@@ -149,7 +161,7 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         text: softenPunctuationForTts(word),
         model_id: WORD_MODEL,
-        language_code: WORD_LANGUAGE_CODE,
+        language_code: langCode,
         voice_settings: DEFAULT_VOICE_SETTINGS,
         // next_text=" " suppresses the trailing breath/exhale ElevenLabs adds
         // when a clip ends, same boundary trick the master pipeline uses.
