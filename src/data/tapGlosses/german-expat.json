@@ -11,7 +11,10 @@
   "feedback-auf-deutsch",
   "zustaendig-ist-ein-anderes-amt",
   "ein-brief-kuendigt-briefe-an",
-  "endgegner-auslaenderbehoerde"
+  "endgegner-auslaenderbehoerde",
+  "sonntags-schliesst-sogar-berlin",
+  "mit-freundlichen-gruessen-das-treppenhaus",
+  "ganz-berlin-wartet-auf-einen-mord"
  ],
  "glosses": {
   "ab": {
@@ -4353,6 +4356,828 @@
   "fand": {
    "g": "found (finden, past); fand gut = liked",
    "t": "verb"
+  },
+  "abspann": {
+   "g": "closing credits (der Abspann)",
+   "t": "noun"
+  },
+  "absätze": {
+   "g": "paragraphs (der Absatz)",
+   "t": "noun"
+  },
+  "aktenzeichen": {
+   "g": "file reference number (das Aktenzeichen)",
+   "t": "noun"
+  },
+  "alibi": {
+   "g": "alibi (das Alibi)",
+   "t": "noun"
+  },
+  "altpapier": {
+   "g": "waste paper for recycling (das Altpapier)",
+   "t": "noun"
+  },
+  "amtsdeutsch": {
+   "g": "bureaucratic German, officialese (das Amtsdeutsch)",
+   "t": "noun"
+  },
+  "ananas": {
+   "g": "pineapple (die Ananas)",
+   "t": "noun"
+  },
+  "anfang": {
+   "g": "beginning (der Anfang); von Anfang an = from the start",
+   "t": "noun"
+  },
+  "anonymer": {
+   "g": "anonymous (anonym, declined)",
+   "t": "adjective"
+  },
+  "antwort": {
+   "g": "answer, reply (die Antwort)",
+   "t": "noun"
+  },
+  "apotheke": {
+   "g": "pharmacy (die Apotheke)",
+   "t": "noun"
+  },
+  "aufgeklärt": {
+   "g": "solved, cleared up (aufklären)",
+   "t": "verb"
+  },
+  "aufsetzen": {
+   "g": "to draft a formal letter (ein Schreiben aufsetzen)",
+   "t": "verb"
+  },
+  "ausgestorben": {
+   "g": "deserted, empty of life (aussterben)",
+   "t": "adjective"
+  },
+  "außerdem": {
+   "g": "besides, in addition",
+   "t": "adverb"
+  },
+  "bank": {
+   "g": "bank; bench (die Bank)",
+   "t": "noun"
+  },
+  "baumarkt": {
+   "g": "hardware store (der Baumarkt)",
+   "t": "noun"
+  },
+  "bedeutet": {
+   "g": "means (bedeuten)",
+   "t": "verb"
+  },
+  "bedingung": {
+   "g": "condition (die Bedingung); unter einer Bedingung = on one condition",
+   "t": "noun"
+  },
+  "bekommt": {
+   "g": "gets, receives (bekommen)",
+   "t": "verb"
+  },
+  "bemerkenswert": {
+   "g": "remarkable",
+   "t": "adjective"
+  },
+  "benzin": {
+   "g": "gasoline, petrol (das Benzin)",
+   "t": "noun"
+  },
+  "beschwerde": {
+   "g": "complaint (die Beschwerde)",
+   "t": "noun"
+  },
+  "besten": {
+   "g": "best (gut, superlative declined)",
+   "t": "adjective"
+  },
+  "bier": {
+   "g": "beer (das Bier)",
+   "t": "noun"
+  },
+  "bittet": {
+   "g": "asks, requests (bitten); bittet um Entschuldigung = apologizes",
+   "t": "verb"
+  },
+  "bloß": {
+   "g": "bloß nicht! = definitely not, no way",
+   "t": "adverb",
+   "r": "colloquial"
+  },
+  "blumen": {
+   "g": "flowers (die Blume)",
+   "t": "noun"
+  },
+  "bohrmaschine": {
+   "g": "electric drill (die Bohrmaschine)",
+   "t": "noun"
+  },
+  "bäcker": {
+   "g": "bakery, baker (der Bäcker)",
+   "t": "noun"
+  },
+  "bürgerkrieg": {
+   "g": "civil war (der Bürgerkrieg)",
+   "t": "noun"
+  },
+  "danach": {
+   "g": "afterwards, after that",
+   "t": "adverb"
+  },
+  "darunter": {
+   "g": "underneath, below it",
+   "t": "adverb"
+  },
+  "datum": {
+   "g": "date (das Datum)",
+   "t": "noun"
+  },
+  "demselben": {
+   "g": "the same (derselbe, dative)",
+   "t": "pronoun"
+  },
+  "denkt": {
+   "g": "thinks (denken)",
+   "t": "verb"
+  },
+  "diskussion": {
+   "g": "discussion (die Diskussion)",
+   "t": "noun"
+  },
+  "drehen": {
+   "g": "to turn; drehen sich = turn around",
+   "t": "verb"
+  },
+  "dreimal": {
+   "g": "three times",
+   "t": "adverb"
+  },
+  "dritter": {
+   "g": "third (dritt, declined); dritter Stock = third floor",
+   "t": "number"
+  },
+  "eingeladen": {
+   "g": "invited (einladen, participle)",
+   "t": "verb"
+  },
+  "einkaufstag": {
+   "g": "shopping day (der Einkaufstag)",
+   "t": "noun"
+  },
+  "einladung": {
+   "g": "invitation (die Einladung)",
+   "t": "noun"
+  },
+  "einziges": {
+   "g": "single, only (einzig, declined)",
+   "t": "adjective"
+  },
+  "endlich": {
+   "g": "finally, at last",
+   "t": "adverb"
+  },
+  "erdgeschoss": {
+   "g": "ground floor (das Erdgeschoss)",
+   "t": "noun"
+  },
+  "errät": {
+   "g": "guesses correctly (erraten)",
+   "t": "verb"
+  },
+  "erste": {
+   "g": "first (erst, declined)",
+   "t": "number"
+  },
+  "esse": {
+   "g": "eat (essen, ich form)",
+   "t": "verb"
+  },
+  "falschen": {
+   "g": "wrong, false (falsch, declined)",
+   "t": "adjective"
+  },
+  "farben": {
+   "g": "colors (die Farbe); nach Farben = by color",
+   "t": "noun"
+  },
+  "fettflecken": {
+   "g": "grease stains (der Fettfleck)",
+   "t": "noun"
+  },
+  "fettig": {
+   "g": "greasy",
+   "t": "adjective"
+  },
+  "films": {
+   "g": "of the film (der Film)",
+   "t": "noun"
+  },
+  "folgen": {
+   "g": "to follow; Weitere Schritte folgen = further steps will follow",
+   "t": "verb"
+  },
+  "frage": {
+   "g": "question (die Frage)",
+   "t": "noun"
+  },
+  "fremden": {
+   "g": "strange, unknown (fremd, declined)",
+   "t": "adjective"
+  },
+  "freundlichen": {
+   "g": "friendly (freundlich, declined); Mit freundlichen Grüßen = letter closing",
+   "t": "adjective"
+  },
+  "früh": {
+   "g": "early; zu früh = too early",
+   "t": "adverb"
+  },
+  "förmlich": {
+   "g": "formal (förmlich)",
+   "t": "adjective"
+  },
+  "gefühlen": {
+   "g": "feelings (das Gefühl, dative)",
+   "t": "noun"
+  },
+  "gehabt": {
+   "g": "had (haben, participle); Pech gehabt = tough luck",
+   "t": "verb"
+  },
+  "geschlossen": {
+   "g": "closed (schließen, participle)",
+   "t": "adjective"
+  },
+  "geschäfte": {
+   "g": "shops, stores (das Geschäft)",
+   "t": "noun"
+  },
+  "geschützt": {
+   "g": "protected (schützen)",
+   "t": "adjective"
+  },
+  "gesetzlich": {
+   "g": "by law, legally",
+   "t": "adjective"
+  },
+  "getippt": {
+   "g": "typed (tippen)",
+   "t": "verb"
+  },
+  "glas": {
+   "g": "glass (das Glas); also glass recycling",
+   "t": "noun"
+  },
+  "gleiche": {
+   "g": "same (gleich, declined)",
+   "t": "adjective"
+  },
+  "gleichzeitig": {
+   "g": "simultaneously, at the same time",
+   "t": "adverb"
+  },
+  "größte": {
+   "g": "biggest (groß, superlative)",
+   "t": "adjective"
+  },
+  "grüßen": {
+   "g": "greetings (der Gruß, dative); to greet",
+   "t": "noun"
+  },
+  "gärtner": {
+   "g": "gardener (der Gärtner)",
+   "t": "noun"
+  },
+  "handschrift": {
+   "g": "handwriting (die Handschrift)",
+   "t": "noun"
+  },
+  "heilig": {
+   "g": "holy, sacred",
+   "t": "adjective"
+  },
+  "herrscht": {
+   "g": "reigns, prevails (herrschen)",
+   "t": "verb"
+  },
+  "hin": {
+   "g": "there (direction); allein hin = there alone",
+   "t": "adverb"
+  },
+  "hinsetzen": {
+   "g": "to sit down (sich hinsetzen)",
+   "t": "verb"
+  },
+  "hör": {
+   "g": "listen (hören, imperative); Hör zu = listen up",
+   "t": "verb"
+  },
+  "immer": {
+   "g": "always",
+   "t": "adverb"
+  },
+  "interessant": {
+   "g": "interesting",
+   "t": "adjective"
+  },
+  "jahrhundert": {
+   "g": "century (das Jahrhundert)",
+   "t": "noun"
+  },
+  "kapitalismus": {
+   "g": "capitalism (der Kapitalismus)",
+   "t": "noun"
+  },
+  "kirche": {
+   "g": "church (die Kirche)",
+   "t": "noun"
+  },
+  "kirchenglocken": {
+   "g": "church bells (die Kirchenglocke)",
+   "t": "noun"
+  },
+  "kleiner": {
+   "g": "smaller (klein, comparative)",
+   "t": "adjective"
+  },
+  "klingeln": {
+   "g": "to ring a doorbell",
+   "t": "verb"
+  },
+  "klingst": {
+   "g": "sound (klingen, du form)",
+   "t": "verb"
+  },
+  "klopft": {
+   "g": "knocks (klopfen); es klopft = someone knocks",
+   "t": "verb"
+  },
+  "kommissar": {
+   "g": "police inspector (der Kommissar)",
+   "t": "noun"
+  },
+  "konjunktiv": {
+   "g": "subjunctive mood (der Konjunktiv)",
+   "t": "noun"
+  },
+  "kriegserklärung": {
+   "g": "declaration of war (die Kriegserklärung)",
+   "t": "noun"
+  },
+  "kuchen": {
+   "g": "cake (der Kuchen)",
+   "t": "noun"
+  },
+  "köpfe": {
+   "g": "heads (der Kopf)",
+   "t": "noun"
+  },
+  "landes": {
+   "g": "of the country (das Land, genitive)",
+   "t": "noun"
+  },
+  "lasst": {
+   "g": "let (lassen, ihr imperative); Lasst mich raten = let me guess",
+   "t": "verb"
+  },
+  "lesebrille": {
+   "g": "reading glasses (die Lesebrille)",
+   "t": "noun"
+  },
+  "liege": {
+   "g": "lie (liegen); richtig liegen = to be right",
+   "t": "verb"
+  },
+  "lies": {
+   "g": "read (lesen, imperative)",
+   "t": "verb"
+  },
+  "liest": {
+   "g": "reads (lesen)",
+   "t": "verb"
+  },
+  "loch": {
+   "g": "hole (das Loch)",
+   "t": "noun"
+  },
+  "läuten": {
+   "g": "to ring (bells)",
+   "t": "verb"
+  },
+  "löcher": {
+   "g": "holes (das Loch, plural)",
+   "t": "noun"
+  },
+  "mache": {
+   "g": "do, make (machen, ich form)",
+   "t": "verb"
+  },
+  "meinung": {
+   "g": "opinion (die Meinung)",
+   "t": "noun"
+  },
+  "milch": {
+   "g": "milk (die Milch)",
+   "t": "noun"
+  },
+  "mitbringen": {
+   "g": "to bring along",
+   "t": "verb"
+  },
+  "miteinander": {
+   "g": "with each other, together",
+   "t": "adverb"
+  },
+  "mord": {
+   "g": "murder (der Mord)",
+   "t": "noun"
+  },
+  "muss": {
+   "g": "must (müssen); niemand muss = nobody has to",
+   "t": "verb"
+  },
+  "mutig": {
+   "g": "brave, daring",
+   "t": "adjective"
+  },
+  "mörder": {
+   "g": "murderer (der Mörder)",
+   "t": "noun"
+  },
+  "müll": {
+   "g": "trash, garbage (der Müll)",
+   "t": "noun"
+  },
+  "müssen": {
+   "g": "must, to have to",
+   "t": "verb"
+  },
+  "nachbarn": {
+   "g": "neighbors (der Nachbar)",
+   "t": "noun"
+  },
+  "neulich": {
+   "g": "recently, the other day",
+   "t": "adverb"
+  },
+  "normaler": {
+   "g": "normal (normal, declined)",
+   "t": "adjective"
+  },
+  "nummerierte": {
+   "g": "numbered (nummeriert, declined)",
+   "t": "adjective"
+  },
+  "nächsten": {
+   "g": "next (nächst, declined)",
+   "t": "adjective"
+  },
+  "obenauf": {
+   "g": "on top",
+   "t": "adverb"
+  },
+  "offene": {
+   "g": "open (offen, declined); offene Frage = open question",
+   "t": "adjective"
+  },
+  "ordentlich": {
+   "g": "neat, tidy, proper",
+   "t": "adjective"
+  },
+  "paketshop": {
+   "g": "parcel shop (der Paketshop)",
+   "t": "noun"
+  },
+  "papiertonne": {
+   "g": "paper recycling bin (die Papiertonne)",
+   "t": "noun"
+  },
+  "passiv": {
+   "g": "passive voice (das Passiv); passive",
+   "t": "noun"
+  },
+  "pause": {
+   "g": "break, pause (die Pause)",
+   "t": "noun"
+  },
+  "pech": {
+   "g": "bad luck (das Pech)",
+   "t": "noun"
+  },
+  "personen": {
+   "g": "persons, people (die Person)",
+   "t": "noun"
+  },
+  "pfand": {
+   "g": "bottle deposit (das Pfand)",
+   "t": "noun"
+  },
+  "pizzakarton": {
+   "g": "pizza box (der Pizzakarton)",
+   "t": "noun"
+  },
+  "platten": {
+   "g": "platters, trays (die Platte)",
+   "t": "noun"
+  },
+  "präzise": {
+   "g": "precise",
+   "t": "adjective"
+  },
+  "pünktlich": {
+   "g": "punctual, on time",
+   "t": "adjective"
+  },
+  "qualität": {
+   "g": "quality (die Qualität)",
+   "t": "noun"
+  },
+  "rasenmäher": {
+   "g": "lawn mower (der Rasenmäher)",
+   "t": "noun"
+  },
+  "recht": {
+   "g": "recht geben = to prove someone right (das Recht)",
+   "t": "noun"
+  },
+  "redet": {
+   "g": "talks (reden); wer redet, verliert",
+   "t": "verb"
+  },
+  "regal": {
+   "g": "shelf (das Regal)",
+   "t": "noun"
+  },
+  "reinkommen": {
+   "g": "to come in (colloquial)",
+   "t": "verb",
+   "r": "colloquial"
+  },
+  "restmüll": {
+   "g": "residual waste (der Restmüll)",
+   "t": "noun"
+  },
+  "ritterschlag": {
+   "g": "knighting, accolade (der Ritterschlag)",
+   "t": "noun"
+  },
+  "ruhe": {
+   "g": "quiet, peace (die Ruhe)",
+   "t": "noun"
+  },
+  "ruhestörung": {
+   "g": "disturbance of the peace (die Ruhestörung)",
+   "t": "noun"
+  },
+  "sage": {
+   "g": "say (sagen, ich form)",
+   "t": "verb"
+  },
+  "sauber": {
+   "g": "clean",
+   "t": "adjective"
+  },
+  "schafft": {
+   "g": "manages, achieves (schaffen)",
+   "t": "verb"
+  },
+  "scheitel": {
+   "g": "hair parting (der Scheitel)",
+   "t": "noun"
+  },
+  "schlimmer": {
+   "g": "worse (schlimm, comparative)",
+   "t": "adjective"
+  },
+  "schnittchen": {
+   "g": "small open sandwiches (das Schnittchen)",
+   "t": "noun"
+  },
+  "schraube": {
+   "g": "screw (die Schraube)",
+   "t": "noun"
+  },
+  "schreibt": {
+   "g": "writes (schreiben)",
+   "t": "verb"
+  },
+  "schweigepflicht": {
+   "g": "duty of silence (die Schweigepflicht)",
+   "t": "noun"
+  },
+  "schwester": {
+   "g": "sister (die Schwester)",
+   "t": "noun"
+  },
+  "siebert": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "solche": {
+   "g": "such, of that kind",
+   "t": "pronoun"
+  },
+  "sonntags": {
+   "g": "on Sundays",
+   "t": "adverb"
+  },
+  "sonntagsplan": {
+   "g": "Sunday plan (der Sonntagsplan)",
+   "t": "noun"
+  },
+  "sortiert": {
+   "g": "sorted (sortieren)",
+   "t": "adjective"
+  },
+  "steckt": {
+   "g": "is stuck, is placed (stecken)",
+   "t": "verb"
+  },
+  "stille": {
+   "g": "silence (die Stille)",
+   "t": "noun"
+  },
+  "stolz": {
+   "g": "proud",
+   "t": "adjective"
+  },
+  "strenger": {
+   "g": "strict (streng, declined)",
+   "t": "adjective"
+  },
+  "supermarkt": {
+   "g": "supermarket (der Supermarkt)",
+   "t": "noun"
+  },
+  "sämtliche": {
+   "g": "all, every single one (Amtsdeutsch flavor)",
+   "t": "pronoun"
+  },
+  "tag": {
+   "g": "day (der Tag)",
+   "t": "noun"
+  },
+  "tageslicht": {
+   "g": "daylight (das Tageslicht)",
+   "t": "noun"
+  },
+  "tankstelle": {
+   "g": "gas station (die Tankstelle)",
+   "t": "noun"
+  },
+  "taschentücher": {
+   "g": "tissues, handkerchiefs (das Taschentuch)",
+   "t": "noun"
+  },
+  "tatort": {
+   "g": "crime scene; Germany's Sunday crime show (der Tatort)",
+   "t": "noun"
+  },
+  "tippe": {
+   "g": "bet, guess (tippen auf); ich tippe auf = my guess is",
+   "t": "verb"
+  },
+  "titelmelodie": {
+   "g": "theme tune (die Titelmelodie)",
+   "t": "noun"
+  },
+  "tonnen": {
+   "g": "bins (die Tonne)",
+   "t": "noun"
+  },
+  "trenne": {
+   "g": "separate (trennen, ich form); Müll trennen = sort waste",
+   "t": "verb"
+  },
+  "täter": {
+   "g": "perpetrator, culprit (der Täter)",
+   "t": "noun"
+  },
+  "unangreifbar": {
+   "g": "unassailable, impossible to attack",
+   "t": "adjective"
+  },
+  "verbrechens": {
+   "g": "of the crime (das Verbrechen, genitive)",
+   "t": "noun"
+  },
+  "vergessen": {
+   "g": "forgotten; to forget",
+   "t": "verb"
+  },
+  "verkaufe": {
+   "g": "sell (verkaufen, ich form)",
+   "t": "verb"
+  },
+  "verkauft": {
+   "g": "sells (verkaufen)",
+   "t": "verb"
+  },
+  "verlorenen": {
+   "g": "lost (verloren, declined)",
+   "t": "adjective"
+  },
+  "verschiedenen": {
+   "g": "different, various (verschieden, declined)",
+   "t": "adjective"
+  },
+  "verstummen": {
+   "g": "to fall silent",
+   "t": "verb"
+  },
+  "vorher": {
+   "g": "beforehand, before that",
+   "t": "adverb"
+  },
+  "vorwurf": {
+   "g": "accusation, reproach (der Vorwurf)",
+   "t": "noun"
+  },
+  "vorwürfe": {
+   "g": "accusations (der Vorwurf, plural)",
+   "t": "noun"
+  },
+  "warst": {
+   "g": "were (sein, du past); Das warst du = that was you",
+   "t": "verb"
+  },
+  "wegen": {
+   "g": "because of",
+   "t": "preposition"
+  },
+  "weitere": {
+   "g": "further, additional (weiter, declined)",
+   "t": "adjective"
+  },
+  "wiederholt": {
+   "g": "repeated; repeatedly (wiederholen)",
+   "t": "adjective"
+  },
+  "wiederholter": {
+   "g": "repeated (wiederholt, declined)",
+   "t": "adjective"
+  },
+  "wieso": {
+   "g": "why, how come",
+   "t": "adverb"
+  },
+  "wirkt": {
+   "g": "seems, appears (wirken)",
+   "t": "verb"
+  },
+  "wohnungsnummer": {
+   "g": "apartment number (die Wohnungsnummer)",
+   "t": "noun"
+  },
+  "worte": {
+   "g": "words (das Wort)",
+   "t": "noun"
+  },
+  "wurde": {
+   "g": "was, became (werden, past); passive marker",
+   "t": "verb"
+  },
+  "während": {
+   "g": "during; while",
+   "t": "preposition"
+  },
+  "währung": {
+   "g": "currency (die Währung)",
+   "t": "noun"
+  },
+  "zettel-territorium": {
+   "g": "note territory (invented compound: der Zettel + das Territorium)",
+   "t": "noun"
+  },
+  "zufrieden": {
+   "g": "content, satisfied",
+   "t": "adjective"
+  },
+  "zurückgewiesen": {
+   "g": "rejected (zurückweisen, participle)",
+   "t": "verb"
+  },
+  "zurückschreiben": {
+   "g": "to write back",
+   "t": "verb"
+  },
+  "zweite": {
+   "g": "second (zweit, declined)",
+   "t": "number"
+  },
+  "zweiten": {
+   "g": "second (zweit, declined)",
+   "t": "number"
+  },
+  "zählt": {
+   "g": "counts (zählen); zählt nicht = does not count",
+   "t": "verb"
+  },
+  "überlebensmittel": {
+   "g": "survival goods (pun: die Lebensmittel + das Überleben)",
+   "t": "noun"
   }
  }
 }
