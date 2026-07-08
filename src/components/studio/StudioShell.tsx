@@ -46,6 +46,7 @@ const NAV_SECTIONS = [
     items: [
       { href: "/studio/planning", label: "Temas, Idiomas y Niveles", icon: "grid", exact: false },
       { href: "/studio/onboarding", label: "Onboarding", icon: "compass", exact: false },
+      { href: "/studio/user-journey", label: "User Journey", icon: "map", exact: false },
       { href: "/studio/validar", label: "Validar historia", icon: "file-text", exact: false },
     ],
   },
@@ -129,6 +130,8 @@ function NavIcon({ name, size = 16 }: { name: string; size?: number }) {
       return <svg {...props}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>;
     case "compass":
       return <svg {...props}><circle cx="12" cy="12" r="10" /><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" /></svg>;
+    case "map":
+      return <svg {...props}><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" /><line x1="8" y1="2" x2="8" y2="18" /><line x1="16" y1="6" x2="16" y2="22" /></svg>;
     case "pen":
       return <svg {...props}><path d="M12 19l7-7 3 3-7 7-3-3z" /><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" /><path d="M2 2l7.586 7.586" /><circle cx="11" cy="11" r="2" /></svg>;
     case "globe":
