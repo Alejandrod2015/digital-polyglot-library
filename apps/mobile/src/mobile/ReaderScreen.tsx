@@ -1316,20 +1316,10 @@ export function ReaderScreen(args: {
   // (looping isPlaying=false ticks), so without this guard we'd flood the
   // metrics endpoint with duplicate completion events.
   const audioCompleteFiredForStoryRef = useRef<string | null>(null);
-  // Segundos REALMENTE reproducidos de la historia (no la posición de la
-  // barra). Solo acumulamos avances pequeños durante playback real; los
-  // saltos del scrubber y los retrocesos no suman. Una historia se marca
-  // completada (prompt de practice + audio_complete) solo si esto supera el
-  // 85% de la duración, para que arrastrar el dedo hasta el final no cuente
-  // como escuchada.
-  const listenedMsRef = useRef(0);
-  const lastListenPositionMsRef = useRef<number | null>(null);
   useEffect(() => {
     setEndOfStoryPromptVisible(false);
     promptShownForStoryRef.current = null;
     audioCompleteFiredForStoryRef.current = null;
-    listenedMsRef.current = 0;
-    lastListenPositionMsRef.current = null;
   }, [story.id]);
 
   function maybeFireEndOfStoryPrompt() {
@@ -2189,25 +2179,6 @@ export function ReaderScreen(args: {
               const progressSec = playback.positionMillis / 1000;
               const durationSec = playback.durationMillis / 1000;
               const ratio = durationSec > 0 ? progressSec / durationSec : 0;
-              // Acumular tiempo REALMENTE reproducido: solo avances positivos y
-              // pequeños durante playback (un tick es ~500ms; toleramos hasta 2s
-              // por jitter). Un salto grande = scrub → no suma. Actualizamos la
-              // última posición en cada tick (aun en pausa) para que un scrub
-              // durante la pausa no genere un delta falso al reanudar.
-              {
-                const posMs = playback.positionMillis;
-                const prevMs = lastListenPositionMsRef.current;
-                if (playback.isPlaying && prevMs != null) {
-                  const deltaMs = posMs - prevMs;
-                  if (deltaMs > 0 && deltaMs <= 2000) {
-                    listenedMsRef.current += deltaMs;
-                  }
-                }
-                lastListenPositionMsRef.current = posMs;
-              }
-              const listenedRatio =
-                durationSec > 0 ? listenedMsRef.current / 1000 / durationSec : 0;
-              const listenedEnough = listenedRatio >= 0.85;
               const shouldPersist =
                 playback.isPlaying
                   ? progressSec >= 15 && Math.abs(progressSec - (lastPersistedProgressSecRef.current ?? 0)) >= 20
@@ -2216,11 +2187,10 @@ export function ReaderScreen(args: {
                 void persistContinueListening(progressSec, durationSec);
               }
               // Audio-path trigger: fire ONLY when the narration actually
-              // finishes (expo-av's didJustFinish) Y se haya reproducido de
-              // verdad al menos el 85% (listenedEnough). Sin el gate, soltar el
-              // scrubber cerca del final dejaba sonar el último tramo, disparaba
-              // didJustFinish y marcaba la historia completada sin escucharla.
-              if (playback.didJustFinish && listenedEnough) {
+              // finishes (expo-av's didJustFinish). Per-request the
+              // scroll-to-end trigger was removed, so audio completion is
+              // now the single source of truth for the end-of-story prompt.
+              if (playback.didJustFinish) {
                 maybeFireEndOfStoryPrompt();
                 // Tell the server the story audio is done so the journey
                 // pill flips to "audioFinished" (border = topic color,
