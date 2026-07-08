@@ -821,6 +821,11 @@ type PracticeMatchExercise = {
   pairs: Array<{
     word: string;
     answer: string;
+    // Metadatos para sintetizar el audio de la palabra (mismo path que
+    // meaning vía /api/practice/sentence-tts). Opcionales: si faltan se
+    // cae al idioma del journey y voz por defecto del endpoint.
+    language?: string | null;
+    voiceId?: string | null;
   }>;
 };
 
@@ -1311,6 +1316,8 @@ function mapSharedExerciseToMobile(exercise: ReturnType<typeof buildPracticeSess
         pairs: exercise.pairs.map((pair) => ({
           word: pair.word,
           answer: pair.answer,
+          language: pair.language ?? null,
+          voiceId: pair.voiceId ?? null,
         })),
       };
   }
@@ -1939,6 +1946,10 @@ export function MobileLibraryShell(args: {
   // Muestra spinner en el botón mientras tanto, para que el usuario
   // no tapee 4 veces creyendo que no se registró.
   const [loadingPracticeAudioId, setLoadingPracticeAudioId] = useState<string | null>(null);
+  // Match mode audio: qué palabra está cargando / sonando ahora mismo,
+  // para el spinner y el icono activo del botón de altavoz por palabra.
+  const [matchAudioLoadingWord, setMatchAudioLoadingWord] = useState<string | null>(null);
+  const [matchAudioPlayingWord, setMatchAudioPlayingWord] = useState<string | null>(null);
   // hqUrlBySentence cache removed intentionally: it was keyed only by
   // language+sentence and kept serving stale R2 URLs after the backend
   // default voice changed. The endpoint itself is cache-first against
@@ -2286,6 +2297,12 @@ export function MobileLibraryShell(args: {
   const practiceAudioSeqRef = useRef(0);
   const practiceClipStopAtMillisRef = useRef<number | null>(null);
   const practiceFeedbackSoundRef = useRef<Audio.Sound | null>(null);
+  // Gate para que el audio de palabra del context arranque JUSTO cuando el
+  // SFX de acierto/error termina (en vez de solaparse). Al reproducir el SFX
+  // publicamos una promesa que resuelve en su `didJustFinish`; el clip del
+  // context la espera antes de su `playAsync` final.
+  const practiceFeedbackDoneRef = useRef<Promise<void> | null>(null);
+  const practiceFeedbackResolveRef = useRef<(() => void) | null>(null);
   const practiceCelebrationSoundRef = useRef<Audio.Sound | null>(null);
   // Animated values for the "session complete" celebration. Driven by
   // an effect that fires when practiceComplete flips to true; reset
@@ -7766,6 +7783,23 @@ export function MobileLibraryShell(args: {
   }, [practiceSessionStreak]);
 
   async function playPracticeFeedbackSound(correct: boolean) {
+    // Publica una promesa que resuelve cuando el SFX termina, para que el
+    // audio de palabra del context espere a que el sonido de acierto acabe
+    // y no se solapen. Se resuelve también ante cualquier fallo para que el
+    // que espera nunca quede colgado.
+    const resolvePrev = practiceFeedbackResolveRef.current;
+    if (resolvePrev) resolvePrev();
+    let resolveDone: () => void = () => undefined;
+    practiceFeedbackDoneRef.current = new Promise<void>((resolve) => {
+      resolveDone = resolve;
+    });
+    practiceFeedbackResolveRef.current = resolveDone;
+    const settle = () => {
+      if (practiceFeedbackResolveRef.current === resolveDone) {
+        practiceFeedbackResolveRef.current = null;
+      }
+      resolveDone();
+    };
     try {
       await stopPracticeFeedbackSound();
       const { sound } = await Audio.Sound.createAsync(
@@ -7776,12 +7810,26 @@ export function MobileLibraryShell(args: {
       sound.setOnPlaybackStatusUpdate((status) => {
         if ("didJustFinish" in status && status.didJustFinish) {
           practiceFeedbackSoundRef.current = null;
+          settle();
           void sound.unloadAsync().catch(() => undefined);
         }
       });
     } catch {
       // Sound is best-effort
+      settle();
     }
+  }
+
+  // Espera (con cap de seguridad) a que el SFX de acierto/error termine.
+  // Cap por si el sonido nunca reporta `didJustFinish` (fallo silencioso):
+  // así el audio de palabra del context nunca queda bloqueado.
+  async function waitForPracticeFeedbackSound(capMs = 900) {
+    const done = practiceFeedbackDoneRef.current;
+    if (!done) return;
+    await Promise.race([
+      done,
+      new Promise<void>((resolve) => setTimeout(resolve, capMs)),
+    ]);
   }
 
   // Slide + fade the exercise card on every index change. Skip the
@@ -8622,6 +8670,118 @@ export function MobileLibraryShell(args: {
     }
   }
 
+  // Audio de una palabra individual en el ejercicio MATCH. Sintetiza el
+  // término vía /api/practice/sentence-tts (mismo path que meaning) y lo
+  // reproduce. Toggle: tocar la misma palabra que suena la detiene. Usa el
+  // slot compartido practiceHqSoundRef y estado propio (matchAudio*Word)
+  // para el spinner / icono activo, sin tocar playingHqPracticeClipId (que
+  // está keyed por id de ejercicio y lo consumen los effects de reveal).
+  async function playPracticeMatchWordAudio(pair: {
+    word: string;
+    language?: string | null;
+    voiceId?: string | null;
+  }) {
+    const word = pair.word?.trim();
+    if (!word) return;
+    const current = practiceExercises[practiceIndex];
+    if (!current || current.kind !== "match") return;
+
+    if (matchAudioPlayingWord === word) {
+      await stopPracticeHqClip();
+      setMatchAudioPlayingWord(null);
+      return;
+    }
+
+    const mySeq = ++practiceAudioSeqRef.current;
+    const stillCurrent = () => practiceAudioSeqRef.current === mySeq;
+
+    await stopPracticeContextClip();
+    await stopPracticeHqClip();
+    setMatchAudioPlayingWord(null);
+    getOptionalSpeechModule()?.stop();
+    setSpeakingPracticePromptId(null);
+
+    const lang = pair.language ?? activeJourneyLanguage ?? "italian";
+    const voiceId = pair.voiceId ?? undefined;
+    const cacheKey = `${lang}::${voiceId ?? ""}::${word}`;
+    let uri: string | undefined = practiceAudioFilesRef.current.get(cacheKey);
+    if (!uri) {
+      setMatchAudioLoadingWord(word);
+      try {
+        const resp = await apiFetch<{ url?: string }>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/practice/sentence-tts",
+          method: "POST",
+          token: sessionToken ?? undefined,
+          timeoutMs: 45000,
+          body: { sentence: word, language: lang, voiceId },
+        });
+        if (!stillCurrent()) return;
+        if (!resp?.url) {
+          setMatchAudioLoadingWord(null);
+          return;
+        }
+        try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
+        const voiceSafe = (voiceId ?? "v").replace(/[^a-z0-9]+/gi, "_");
+        const safeName = `${lang}-${voiceSafe}-${word.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+        const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
+        const info = await FileSystem.getInfoAsync(fileUri);
+        if (!info.exists) {
+          await FileSystem.downloadAsync(resp.url, fileUri);
+        }
+        if (!stillCurrent()) {
+          setMatchAudioLoadingWord((curr) => (curr === word ? null : curr));
+          return;
+        }
+        practiceAudioFilesRef.current.set(cacheKey, fileUri);
+        uri = fileUri;
+      } catch (err) {
+        console.error("[mobile practice] match word audio fetch failed", err);
+        if (stillCurrent()) setMatchAudioLoadingWord(null);
+        return;
+      }
+    }
+
+    if (!stillCurrent()) {
+      setMatchAudioLoadingWord((curr) => (curr === word ? null : curr));
+      return;
+    }
+
+    try {
+      await Audio.setAudioModeAsync({
+        playsInSilentModeIOS: true,
+        allowsRecordingIOS: false,
+        interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+      });
+      if (!stillCurrent()) return;
+      const { sound } = await Audio.Sound.createAsync(
+        { uri },
+        { shouldPlay: false, rate: 1.0, shouldCorrectPitch: false },
+        (status) => {
+          if ("didJustFinish" in status && status.didJustFinish) {
+            void stopPracticeHqClip();
+            setMatchAudioPlayingWord((curr) => (curr === word ? null : curr));
+          }
+        }
+      );
+      if (!stillCurrent()) {
+        try { await sound.unloadAsync(); } catch { /* ignore */ }
+        return;
+      }
+      practiceHqSoundRef.current = sound;
+      setMatchAudioLoadingWord(null);
+      setMatchAudioPlayingWord(word);
+      try { await sound.playAsync(); } catch { await stopPracticeHqClip(); setMatchAudioPlayingWord(null); }
+    } catch (err) {
+      console.error("[mobile practice] match word audio playback failed", err);
+      await stopPracticeHqClip();
+      if (stillCurrent()) {
+        setMatchAudioLoadingWord(null);
+        setMatchAudioPlayingWord(null);
+      }
+    }
+  }
+
   async function playPracticeContextClipHqOnly() {
     showDebug(`playHqOnly entry exId=${currentPracticeExercise?.id?.slice(-6)} kind=${currentPracticeExercise?.kind}`);
     if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") { showDebug("playHqOnly skip: not multiple-choice"); return; }
@@ -8776,6 +8936,15 @@ export function MobileLibraryShell(args: {
       } catch { /* ignore */ }
       showDebug(`Hq playAsync...`);
       try {
+        // No solapar con el SFX de acierto/error: si venimos del reveal del
+        // context, esperamos a que ese sonido termine antes de arrancar la
+        // voz. El createAsync de arriba ya corrió en paralelo al SFX, así que
+        // esta espera no suma latencia perceptible. Re-chequeamos stillCurrent
+        // por si el usuario tocó Next durante la espera.
+        if (isContextAtPlay) {
+          await waitForPracticeFeedbackSound();
+          if (!stillCurrent()) { showDebug("Hq abort pre-play (feedback wait)"); return; }
+        }
         await sound.playAsync();
         showDebug("Hq playAsync OK");
         // 600 ms later, poll status to see if position advanced.
@@ -12117,12 +12286,16 @@ export function MobileLibraryShell(args: {
                               {currentPracticeExercise.favorite.word}
                             </Text>
                             <Pressable
+                              // Siempre habilitado: playPracticeMeaningAudio
+                              // sintetiza desde la palabra vía sentence-tts aun
+                              // sin audioClip (usa el idioma del journey como
+                              // fallback), así que un audioClip nulo NO debe
+                              // dejar el botón muerto.
                               onPress={() => { void playPracticeMeaningAudio(); }}
-                              disabled={!currentPracticeExercise.audioClip}
+                              disabled={audioLoading}
                               style={[
                                 styles.practiceMeaningAudioButton,
                                 isCompactMeaningViewport ? styles.practiceMeaningAudioButtonCompact : null,
-                                !currentPracticeExercise.audioClip ? styles.practiceMeaningAudioButtonDisabled : null,
                               ]}
                             >
                               {audioLoading ? (
@@ -12131,7 +12304,7 @@ export function MobileLibraryShell(args: {
                                 <Feather
                                   name={audioActive ? "pause" : "volume-2"}
                                   size={18}
-                                  color={currentPracticeExercise.audioClip ? "#9fe8ff" : "rgba(159,232,255,0.35)"}
+                                  color="#9fe8ff"
                                 />
                               )}
                             </Pressable>
@@ -12403,6 +12576,25 @@ export function MobileLibraryShell(args: {
                               >
                                 {pair.word}
                               </Text>
+                              <Pressable
+                                // Audio de la palabra individual. Pressable
+                                // anidado: captura el toque y NO dispara el
+                                // tapMatchWord del chip contenedor. Funciona
+                                // aunque el chip esté disabled por el match.
+                                onPress={() => { void playPracticeMatchWordAudio(pair); }}
+                                hitSlop={8}
+                                style={{ paddingLeft: 8, paddingVertical: 2 }}
+                              >
+                                {matchAudioLoadingWord === pair.word ? (
+                                  <ActivityIndicator size="small" color="#9fe8ff" />
+                                ) : (
+                                  <Feather
+                                    name={matchAudioPlayingWord === pair.word ? "pause" : "volume-2"}
+                                    size={16}
+                                    color="#9fe8ff"
+                                  />
+                                )}
+                              </Pressable>
                             </Pressable>
                             <Pressable
                               onPress={() => tapMatchMeaning(meaning)}

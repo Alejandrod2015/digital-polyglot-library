@@ -1,4 +1,5 @@
 import { Audio, InterruptionModeIOS, type AVPlaybackStatus } from "expo-av";
+import { activateKeepAwakeAsync, deactivateKeepAwake } from "expo-keep-awake";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ActivityIndicator,
@@ -284,6 +285,20 @@ export function NativeAudioPlayer({
       }
     };
   }, [hasAudio, normalizedSrc]);
+
+  // Mantener la pantalla encendida mientras el audio esté sonando. El lock se
+  // libera al pausar/terminar y en el unmount para que nunca quede colgado.
+  useEffect(() => {
+    const tag = "dpl-audio-player";
+    if (playback.isPlaying) {
+      void activateKeepAwakeAsync(tag).catch(() => undefined);
+    } else {
+      void deactivateKeepAwake(tag).catch(() => undefined);
+    }
+    return () => {
+      void deactivateKeepAwake(tag).catch(() => undefined);
+    };
+  }, [playback.isPlaying]);
 
   async function togglePlayback() {
     const sound = soundRef.current;
