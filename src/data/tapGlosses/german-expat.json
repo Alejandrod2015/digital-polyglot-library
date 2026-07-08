@@ -14,7 +14,13 @@
   "endgegner-auslaenderbehoerde",
   "sonntags-schliesst-sogar-berlin",
   "mit-freundlichen-gruessen-das-treppenhaus",
-  "ganz-berlin-wartet-auf-einen-mord"
+  "ganz-berlin-wartet-auf-einen-mord",
+  "ein-antrag-auf-freizeit",
+  "wir-muessen-mal",
+  "blumen-giessen-ist-vertrauenssache",
+  "gute-besserung-im-oktober",
+  "zwei-meinungen-zu-einem-ruecken",
+  "die-mit-der-thermoskanne"
  ],
  "glosses": {
   "ab": {
@@ -5178,6 +5184,1206 @@
   "überlebensmittel": {
    "g": "survival goods (pun: die Lebensmittel + das Überleben)",
    "t": "noun"
+  },
+  "abklingt": {
+   "g": "subsides, dies down (abklingen)",
+   "t": "verb"
+  },
+  "ablehnung": {
+   "g": "rejection, refusal",
+   "t": "noun"
+  },
+  "abschrecken": {
+   "g": "to scare off, put someone off",
+   "t": "verb"
+  },
+  "abstimmung": {
+   "g": "a vote, a ballot",
+   "t": "noun"
+  },
+  "abwesenheit": {
+   "g": "absence, time away",
+   "t": "noun"
+  },
+  "akut": {
+   "g": "acute, urgent",
+   "t": "adjective"
+  },
+  "akuttermin": {
+   "g": "emergency appointment slot",
+   "t": "noun"
+  },
+  "all": {
+   "g": "all",
+   "t": "pronoun"
+  },
+  "amtlich": {
+   "g": "official, as if by authority",
+   "t": "adjective"
+  },
+  "anderes": {
+   "g": "other, something different",
+   "t": "adjective"
+  },
+  "angekommen": {
+   "g": "arrived; settled in (ankommen)",
+   "t": "verb"
+  },
+  "anruft": {
+   "g": "calls, phones (anrufen)",
+   "t": "verb"
+  },
+  "antrag": {
+   "g": "application, formal request",
+   "t": "noun"
+  },
+  "apothekerin": {
+   "g": "female pharmacist",
+   "t": "noun"
+  },
+  "art": {
+   "g": "way, manner; kind",
+   "t": "noun"
+  },
+  "arzt": {
+   "g": "doctor",
+   "t": "noun"
+  },
+  "aufgeschlagen": {
+   "g": "set up, opened (aufschlagen)",
+   "t": "verb"
+  },
+  "aufgesprungen": {
+   "g": "burst open (aufspringen)",
+   "t": "verb"
+  },
+  "aufnahme": {
+   "g": "admission, acceptance into a club",
+   "t": "noun"
+  },
+  "aufnahmegebühr": {
+   "g": "one-off admission fee",
+   "t": "noun"
+  },
+  "aufwachen": {
+   "g": "waking up (aufwachen)",
+   "t": "verb"
+  },
+  "aufwand": {
+   "g": "effort, hassle",
+   "t": "noun"
+  },
+  "außen": {
+   "g": "outside, on the outer side",
+   "t": "adverb"
+  },
+  "ball": {
+   "g": "ball",
+   "t": "noun"
+  },
+  "becher": {
+   "g": "cup, mug",
+   "t": "noun"
+  },
+  "bedient": {
+   "g": "serves customers (bedienen)",
+   "t": "verb"
+  },
+  "beide": {
+   "g": "both",
+   "t": "pronoun"
+  },
+  "beides": {
+   "g": "both things",
+   "t": "pronoun"
+  },
+  "beitrag": {
+   "g": "membership fee, contribution",
+   "t": "noun"
+  },
+  "bekannte": {
+   "g": "an acquaintance",
+   "t": "noun"
+  },
+  "bekanntschaft": {
+   "g": "acquaintance, someone you barely know",
+   "t": "noun"
+  },
+  "bekomme": {
+   "g": "get, receive (bekommen)",
+   "t": "verb"
+  },
+  "bereitschaftsdienst": {
+   "g": "on-call medical service",
+   "t": "noun"
+  },
+  "beschwert": {
+   "g": "complains (sich beschweren)",
+   "t": "verb"
+  },
+  "besserung": {
+   "g": "recovery, getting better",
+   "t": "noun"
+  },
+  "bestellt": {
+   "g": "orders food or drink (bestellen)",
+   "t": "verb"
+  },
+  "bestimmt": {
+   "g": "surely, definitely",
+   "t": "adverb"
+  },
+  "bewegung": {
+   "g": "movement, exercise",
+   "t": "noun"
+  },
+  "bietet": {
+   "g": "offers (bieten)",
+   "t": "verb"
+  },
+  "blau": {
+   "g": "blue",
+   "t": "adjective"
+  },
+  "brauchst": {
+   "g": "need (brauchen)",
+   "t": "verb"
+  },
+  "bringt": {
+   "g": "brings (bringen)",
+   "t": "verb"
+  },
+  "bring": {
+   "g": "bring! (bringen)",
+   "t": "verb"
+  },
+  "bräuchten": {
+   "g": "would need (brauchen)",
+   "t": "verb"
+  },
+  "bälle": {
+   "g": "balls",
+   "t": "noun"
+  },
+  "bös": {
+   "g": "meanly, unkindly (böse)",
+   "t": "adverb"
+  },
+  "dagegen": {
+   "g": "against it",
+   "t": "adverb"
+  },
+  "darf": {
+   "g": "may, is allowed to (dürfen)",
+   "t": "verb"
+  },
+  "darüber": {
+   "g": "about it, over it",
+   "t": "adverb"
+  },
+  "dauert": {
+   "g": "takes, lasts (dauern)",
+   "t": "verb"
+  },
+  "dazu": {
+   "g": "to it; along with it",
+   "t": "adverb"
+  },
+  "deinen": {
+   "g": "your (accusative)",
+   "t": "pronoun"
+  },
+  "derselbe": {
+   "g": "the same one",
+   "t": "pronoun"
+  },
+  "deutschland": {
+   "g": "Germany",
+   "t": "noun"
+  },
+  "donnerstagabend": {
+   "g": "Thursday evening",
+   "t": "noun"
+  },
+  "dr": {
+   "g": "Dr. (doctor, title)",
+   "t": "other"
+  },
+  "dran": {
+   "g": "at it; one's turn (colloquial)",
+   "t": "adverb"
+  },
+  "drückt": {
+   "g": "presses, pushes (drücken)",
+   "t": "verb"
+  },
+  "dunkel": {
+   "g": "dark",
+   "t": "adjective"
+  },
+  "durchkomme": {
+   "g": "get through on the phone (durchkommen)",
+   "t": "verb"
+  },
+  "dürfen": {
+   "g": "may, to be allowed to",
+   "t": "verb"
+  },
+  "ehrenamt": {
+   "g": "unpaid honorary post, volunteering",
+   "t": "noun"
+  },
+  "eigenem": {
+   "g": "own (dative)",
+   "t": "adjective"
+  },
+  "eingeht": {
+   "g": "withers and dies (eingehen)",
+   "t": "verb"
+  },
+  "einig": {
+   "g": "in agreement (sich einig sein)",
+   "t": "adjective"
+  },
+  "einleitet": {
+   "g": "kicks off, introduces (einleiten)",
+   "t": "verb"
+  },
+  "einreiben": {
+   "g": "to rub in ointment",
+   "t": "verb"
+  },
+  "ende": {
+   "g": "end",
+   "t": "noun"
+  },
+  "endgültig": {
+   "g": "finally, once and for all",
+   "t": "adverb"
+  },
+  "entscheiden": {
+   "g": "to decide, make up your mind",
+   "t": "verb"
+  },
+  "entweder": {
+   "g": "either",
+   "t": "conjunction"
+  },
+  "erklärt": {
+   "g": "explains (erklären)",
+   "t": "verb"
+  },
+  "ewig": {
+   "g": "forever, endlessly",
+   "t": "adverb"
+  },
+  "felder": {
+   "g": "fields, boxes on a form",
+   "t": "noun"
+  },
+  "formularen": {
+   "g": "forms (dative plural)",
+   "t": "noun"
+  },
+  "franzbranntwein": {
+   "g": "herbal rubbing alcohol remedy",
+   "t": "noun"
+  },
+  "freie": {
+   "g": "free, still available",
+   "t": "adjective"
+  },
+  "freizeit": {
+   "g": "free time, leisure",
+   "t": "noun"
+  },
+  "freundin": {
+   "g": "female friend",
+   "t": "noun"
+  },
+  "freundliche": {
+   "g": "friendly",
+   "t": "adjective"
+  },
+  "frisst": {
+   "g": "eats, of an animal (fressen)",
+   "t": "verb"
+  },
+  "förmlichste": {
+   "g": "most formal one (förmlich)",
+   "t": "adjective"
+  },
+  "füllen": {
+   "g": "fill in a form (füllen)",
+   "t": "verb"
+  },
+  "füllt": {
+   "g": "fills (füllen)",
+   "t": "verb"
+  },
+  "fünfte": {
+   "g": "fifth",
+   "t": "number"
+  },
+  "füttern": {
+   "g": "to feed an animal",
+   "t": "verb"
+  },
+  "fütterst": {
+   "g": "feed an animal (füttern)",
+   "t": "verb"
+  },
+  "ganzen": {
+   "g": "whole, all the (colloquial)",
+   "t": "adjective"
+  },
+  "gedauert": {
+   "g": "lasted, taken (dauern)",
+   "t": "verb"
+  },
+  "gedeihen": {
+   "g": "to thrive, flourish",
+   "t": "verb"
+  },
+  "geduldet": {
+   "g": "been patient (sich gedulden)",
+   "t": "verb"
+  },
+  "gefragt": {
+   "g": "asked (fragen)",
+   "t": "verb"
+  },
+  "geh": {
+   "g": "go! (gehen)",
+   "t": "verb"
+  },
+  "gehst": {
+   "g": "go (gehen)",
+   "t": "verb"
+  },
+  "geklingelt": {
+   "g": "rung the doorbell (klingeln)",
+   "t": "verb"
+  },
+  "gemeint": {
+   "g": "meant (meinen)",
+   "t": "verb"
+  },
+  "geregelt": {
+   "g": "regulated, sorted out (regeln)",
+   "t": "verb"
+  },
+  "gesundheitskarte": {
+   "g": "health insurance card",
+   "t": "noun"
+  },
+  "geworden": {
+   "g": "become (werden)",
+   "t": "verb"
+  },
+  "gewöhn": {
+   "g": "get used to it! (sich gewöhnen)",
+   "t": "verb"
+  },
+  "gibst": {
+   "g": "give (geben)",
+   "t": "verb"
+  },
+  "gieße": {
+   "g": "water plants (gießen)",
+   "t": "verb"
+  },
+  "gießen": {
+   "g": "to water plants; to pour",
+   "t": "verb"
+  },
+  "gießt": {
+   "g": "waters, pours (gießen)",
+   "t": "verb"
+  },
+  "glaub": {
+   "g": "believe (glauben)",
+   "t": "verb"
+  },
+  "glaube": {
+   "g": "believe (glauben)",
+   "t": "verb"
+  },
+  "greift": {
+   "g": "reaches for (greifen)",
+   "t": "verb"
+  },
+  "griff": {
+   "g": "grip, reach",
+   "t": "noun"
+  },
+  "großmütter": {
+   "g": "grandmothers",
+   "t": "noun"
+  },
+  "grundsätzlich": {
+   "g": "on principle, as a rule",
+   "t": "adverb"
+  },
+  "grüne": {
+   "g": "green",
+   "t": "adjective"
+  },
+  "halm": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "hand": {
+   "g": "hand",
+   "t": "noun"
+  },
+  "hart": {
+   "g": "hard, tough",
+   "t": "adjective"
+  },
+  "hattest": {
+   "g": "had (haben)",
+   "t": "verb"
+  },
+  "hausarzt": {
+   "g": "family doctor, GP",
+   "t": "noun"
+  },
+  "hausmittel": {
+   "g": "home remedy",
+   "t": "noun"
+  },
+  "heimlich": {
+   "g": "secretly",
+   "t": "adverb"
+  },
+  "heiratsantrag": {
+   "g": "marriage proposal",
+   "t": "noun"
+  },
+  "her": {
+   "g": "here, this way (zeig mal her)",
+   "t": "adverb"
+  },
+  "hilft": {
+   "g": "helps (helfen)",
+   "t": "verb"
+  },
+  "hinten": {
+   "g": "at the back",
+   "t": "adverb"
+  },
+  "hoffe": {
+   "g": "hope (hoffen)",
+   "t": "verb"
+  },
+  "hundert": {
+   "g": "hundred",
+   "t": "number"
+  },
+  "hunger": {
+   "g": "hunger, appetite",
+   "t": "noun"
+  },
+  "hälfte": {
+   "g": "half",
+   "t": "noun"
+  },
+  "hättest": {
+   "g": "would have (haben)",
+   "t": "verb"
+  },
+  "höchste": {
+   "g": "highest",
+   "t": "adjective"
+  },
+  "höflichste": {
+   "g": "most polite (höflich)",
+   "t": "adjective"
+  },
+  "höre": {
+   "g": "hear (hören)",
+   "t": "verb"
+  },
+  "hütet": {
+   "g": "watches over, minds (hüten)",
+   "t": "verb"
+  },
+  "inbegriffen": {
+   "g": "included in the price",
+   "t": "adjective"
+  },
+  "irgendwann": {
+   "g": "at some point, eventually",
+   "t": "adverb"
+  },
+  "juni": {
+   "g": "June",
+   "t": "noun"
+  },
+  "kalender": {
+   "g": "calendar, diary",
+   "t": "noun"
+  },
+  "kannst": {
+   "g": "can, are able to (können)",
+   "t": "verb"
+  },
+  "kassenpatient": {
+   "g": "patient on public insurance",
+   "t": "noun"
+  },
+  "kassenwart": {
+   "g": "club treasurer",
+   "t": "noun"
+  },
+  "kater": {
+   "g": "tomcat",
+   "t": "noun"
+  },
+  "katzensitterin": {
+   "g": "female cat-sitter",
+   "t": "noun"
+  },
+  "kaufst": {
+   "g": "buy (kaufen)",
+   "t": "verb"
+  },
+  "kaum": {
+   "g": "hardly, barely",
+   "t": "adverb"
+  },
+  "kennenlernen": {
+   "g": "to get to know, meet people",
+   "t": "verb"
+  },
+  "kennt": {
+   "g": "knows (kennen)",
+   "t": "verb"
+  },
+  "kern": {
+   "g": "core, kernel (here also a surname)",
+   "t": "noun"
+  },
+  "kämpfst": {
+   "g": "fight, struggle (kämpfen)",
+   "t": "verb"
+  },
+  "klub": {
+   "g": "club (informal spelling)",
+   "t": "noun"
+  },
+  "kokosnüsse": {
+   "g": "coconuts",
+   "t": "noun"
+  },
+  "krank": {
+   "g": "ill, sick",
+   "t": "adjective"
+  },
+  "krankenkasse": {
+   "g": "health insurance fund",
+   "t": "noun"
+  },
+  "kreuz": {
+   "g": "cross, the pharmacy sign",
+   "t": "noun"
+  },
+  "langsamkeit": {
+   "g": "slowness",
+   "t": "noun"
+  },
+  "lassen": {
+   "g": "to let, to leave",
+   "t": "verb"
+  },
+  "leichter": {
+   "g": "more easily, lighter",
+   "t": "adverb"
+  },
+  "lesen": {
+   "g": "to read",
+   "t": "verb"
+  },
+  "leute": {
+   "g": "people",
+   "t": "noun"
+  },
+  "liegt": {
+   "g": "lies; is due to (liegen)",
+   "t": "verb"
+  },
+  "lindert": {
+   "g": "soothes, eases (lindern)",
+   "t": "verb"
+  },
+  "mach": {
+   "g": "do, make (machen)",
+   "t": "verb"
+  },
+  "machst": {
+   "g": "do, make (machen)",
+   "t": "verb"
+  },
+  "meinungen": {
+   "g": "opinions",
+   "t": "noun"
+  },
+  "meldet": {
+   "g": "makes itself felt (sich melden)",
+   "t": "verb"
+  },
+  "merk": {
+   "g": "note it, remember (merken)",
+   "t": "verb"
+  },
+  "mira": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "mitglied": {
+   "g": "member",
+   "t": "noun"
+  },
+  "mitgliederversammlung": {
+   "g": "members' general meeting",
+   "t": "noun"
+  },
+  "mitgliedsantrag": {
+   "g": "membership application form",
+   "t": "noun"
+  },
+  "mitgliedschaft": {
+   "g": "membership",
+   "t": "noun"
+  },
+  "mitspielen": {
+   "g": "to join in, play along",
+   "t": "verb"
+  },
+  "monaten": {
+   "g": "months (dative)",
+   "t": "noun"
+  },
+  "morgens": {
+   "g": "in the mornings",
+   "t": "adverb"
+  },
+  "möchten": {
+   "g": "would like (mögen)",
+   "t": "verb"
+  },
+  "möglichst": {
+   "g": "as far as possible, ideally",
+   "t": "adverb"
+  },
+  "nachbarin": {
+   "g": "female neighbour",
+   "t": "noun"
+  },
+  "nachtklappe": {
+   "g": "pharmacy night-service hatch",
+   "t": "noun"
+  },
+  "nachts": {
+   "g": "at night",
+   "t": "adverb"
+  },
+  "nacken": {
+   "g": "back of the neck",
+   "t": "noun"
+  },
+  "netz": {
+   "g": "net",
+   "t": "noun"
+  },
+  "nickt": {
+   "g": "nods (nicken)",
+   "t": "verb"
+  },
+  "nirgends": {
+   "g": "nowhere",
+   "t": "adverb"
+  },
+  "notdienst": {
+   "g": "emergency out-of-hours service",
+   "t": "noun"
+  },
+  "notfall": {
+   "g": "emergency",
+   "t": "noun"
+  },
+  "nächstes": {
+   "g": "next",
+   "t": "adjective"
+  },
+  "oktober": {
+   "g": "October",
+   "t": "noun"
+  },
+  "ordnern": {
+   "g": "ring binders (dative)",
+   "t": "noun"
+  },
+  "orthopäden": {
+   "g": "orthopaedist (dative or plural)",
+   "t": "noun"
+  },
+  "paket": {
+   "g": "parcel, package",
+   "t": "noun"
+  },
+  "pflanze": {
+   "g": "plant",
+   "t": "noun"
+  },
+  "pflanzen": {
+   "g": "plants",
+   "t": "noun"
+  },
+  "pohl": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "praxen": {
+   "g": "doctors' practices (plural)",
+   "t": "noun"
+  },
+  "praxis": {
+   "g": "doctor's practice",
+   "t": "noun"
+  },
+  "privat": {
+   "g": "private, privately insured",
+   "t": "adjective"
+  },
+  "probe": {
+   "g": "trial; rehearsal (auf Probe)",
+   "t": "noun"
+  },
+  "probetraining": {
+   "g": "trial training session",
+   "t": "noun"
+  },
+  "quark": {
+   "g": "quark, soft curd cheese",
+   "t": "noun"
+  },
+  "quarkwickel": {
+   "g": "quark compress home remedy",
+   "t": "noun"
+  },
+  "quer": {
+   "g": "across, right across town",
+   "t": "adverb"
+  },
+  "rangordnung": {
+   "g": "pecking order, hierarchy",
+   "t": "noun"
+  },
+  "rate": {
+   "g": "guess (raten)",
+   "t": "verb"
+  },
+  "rechnung": {
+   "g": "bill; here a delayed cost",
+   "t": "noun"
+  },
+  "reibt": {
+   "g": "rubs in (reiben)",
+   "t": "verb"
+  },
+  "reinschnuppern": {
+   "g": "to have a quick look, try out",
+   "t": "verb"
+  },
+  "reservierte": {
+   "g": "reserved, kept back",
+   "t": "adjective"
+  },
+  "rezept": {
+   "g": "prescription",
+   "t": "noun"
+  },
+  "rezeptfrei": {
+   "g": "over the counter, no prescription",
+   "t": "adjective"
+  },
+  "ronja": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "rufen": {
+   "g": "to call, to phone",
+   "t": "verb"
+  },
+  "rücken": {
+   "g": "back, the body part",
+   "t": "noun"
+  },
+  "rückt": {
+   "g": "moves, shifts forward (rücken)",
+   "t": "verb"
+  },
+  "salbe": {
+   "g": "ointment",
+   "t": "noun"
+  },
+  "satzung": {
+   "g": "club bylaws, statutes",
+   "t": "noun"
+  },
+  "schaffst": {
+   "g": "manage, get done (schaffen)",
+   "t": "verb"
+  },
+  "schale": {
+   "g": "shell, peel, outer skin",
+   "t": "noun"
+  },
+  "schlage": {
+   "g": "hit, strike (schlagen)",
+   "t": "verb"
+  },
+  "schlange": {
+   "g": "queue; snake",
+   "t": "noun"
+  },
+  "schläger": {
+   "g": "racket, bat",
+   "t": "noun"
+  },
+  "schlüssel": {
+   "g": "key",
+   "t": "noun"
+  },
+  "schulter": {
+   "g": "shoulder",
+   "t": "noun"
+  },
+  "schwer": {
+   "g": "hard, heavy, difficult",
+   "t": "adjective"
+  },
+  "schwören": {
+   "g": "to swear, to vow",
+   "t": "verb"
+  },
+  "schwörst": {
+   "g": "swear by (schwören)",
+   "t": "verb"
+  },
+  "schwört": {
+   "g": "swears by (schwören)",
+   "t": "verb"
+  },
+  "schön": {
+   "g": "nice, lovely",
+   "t": "adjective"
+  },
+  "sei": {
+   "g": "be; is supposedly (sein)",
+   "t": "verb"
+  },
+  "selbstverständlich": {
+   "g": "of course, naturally",
+   "t": "adverb"
+  },
+  "sichern": {
+   "g": "to secure, to safeguard",
+   "t": "verb"
+  },
+  "sitzt": {
+   "g": "sits (sitzen)",
+   "t": "verb"
+  },
+  "small": {
+   "g": "small (English loan)",
+   "t": "adjective"
+  },
+  "sorge": {
+   "g": "worry (keine Sorge)",
+   "t": "noun"
+  },
+  "spielen": {
+   "g": "to play",
+   "t": "verb"
+  },
+  "spielt": {
+   "g": "plays (spielen)",
+   "t": "verb"
+  },
+  "sprechen": {
+   "g": "to speak",
+   "t": "verb"
+  },
+  "späte": {
+   "g": "late",
+   "t": "adjective"
+  },
+  "stammtisch": {
+   "g": "the regulars' table",
+   "t": "noun"
+  },
+  "steifen": {
+   "g": "stiff (steif)",
+   "t": "adjective"
+  },
+  "steigst": {
+   "g": "climb, rise (steigen)",
+   "t": "verb"
+  },
+  "stimme": {
+   "g": "voice",
+   "t": "noun"
+  },
+  "stimmt": {
+   "g": "votes; is correct (stimmen)",
+   "t": "verb"
+  },
+  "streiten": {
+   "g": "to argue, to quarrel",
+   "t": "verb"
+  },
+  "stufe": {
+   "g": "step, level",
+   "t": "noun"
+  },
+  "ständig": {
+   "g": "constantly, all the time",
+   "t": "adverb"
+  },
+  "stück": {
+   "g": "piece, bit",
+   "t": "noun"
+  },
+  "talk": {
+   "g": "talk (English loan)",
+   "t": "noun"
+  },
+  "tasche": {
+   "g": "bag, pocket",
+   "t": "noun"
+  },
+  "telefon": {
+   "g": "telephone",
+   "t": "noun"
+  },
+  "tisch": {
+   "g": "table",
+   "t": "noun"
+  },
+  "tischtennis": {
+   "g": "table tennis",
+   "t": "noun"
+  },
+  "trick": {
+   "g": "trick, clever shortcut",
+   "t": "noun"
+  },
+  "trinken": {
+   "g": "to drink",
+   "t": "verb"
+  },
+  "tritt": {
+   "g": "steps; joins (treten, beitreten)",
+   "t": "verb"
+  },
+  "tun": {
+   "g": "to do",
+   "t": "verb"
+  },
+  "unser": {
+   "g": "our",
+   "t": "pronoun"
+  },
+  "unterm": {
+   "g": "under the (unter dem)",
+   "t": "preposition"
+  },
+  "unvollständigen": {
+   "g": "incomplete (unvollständig)",
+   "t": "adjective"
+  },
+  "urlaub": {
+   "g": "holiday, vacation",
+   "t": "noun"
+  },
+  "verabredung": {
+   "g": "arranged meeting, a date",
+   "t": "noun"
+  },
+  "verein": {
+   "g": "club, registered association",
+   "t": "noun"
+  },
+  "vereinsheim": {
+   "g": "clubhouse",
+   "t": "noun"
+  },
+  "vereinsmeierei": {
+   "g": "obsession with club rules",
+   "t": "noun"
+  },
+  "verschweigst": {
+   "g": "keep quiet about (verschweigen)",
+   "t": "verb"
+  },
+  "versichert": {
+   "g": "insured",
+   "t": "adjective"
+  },
+  "verspannt": {
+   "g": "tense, knotted muscles",
+   "t": "adjective"
+  },
+  "verspannten": {
+   "g": "tense, knotted (verspannt)",
+   "t": "adjective"
+  },
+  "verstehe": {
+   "g": "understand (verstehen)",
+   "t": "verb"
+  },
+  "vertrauenssache": {
+   "g": "a matter of trust",
+   "t": "noun"
+  },
+  "viel": {
+   "g": "much, a lot",
+   "t": "adverb"
+  },
+  "vorsitz": {
+   "g": "chairmanship, the chair",
+   "t": "noun"
+  },
+  "vorstand": {
+   "g": "board, executive committee",
+   "t": "noun"
+  },
+  "völlig": {
+   "g": "completely, totally",
+   "t": "adverb"
+  },
+  "wahrheit": {
+   "g": "truth",
+   "t": "noun"
+  },
+  "warnung": {
+   "g": "warning",
+   "t": "noun"
+  },
+  "warteschleife": {
+   "g": "phone hold loop",
+   "t": "noun"
+  },
+  "wartest": {
+   "g": "wait (warten)",
+   "t": "verb"
+  },
+  "wasserkiste": {
+   "g": "crate of water bottles",
+   "t": "noun"
+  },
+  "wasserkisten": {
+   "g": "crates of water bottles",
+   "t": "noun"
+  },
+  "weg": {
+   "g": "away, gone",
+   "t": "adverb"
+  },
+  "wg-schlüssel": {
+   "g": "key to the shared flat",
+   "t": "noun"
+  },
+  "widerspruch": {
+   "g": "contradiction",
+   "t": "noun"
+  },
+  "wissenschaft": {
+   "g": "science",
+   "t": "noun"
+  },
+  "woher": {
+   "g": "from where, how come",
+   "t": "adverb"
+  },
+  "wohnungsschlüssel": {
+   "g": "key to a flat",
+   "t": "noun"
+  },
+  "wunder": {
+   "g": "wonder, miracle (kein Wunder)",
+   "t": "noun"
+  },
+  "wussten": {
+   "g": "knew (wissen)",
+   "t": "verb"
+  },
+  "wächst": {
+   "g": "grows (wachsen)",
+   "t": "verb"
+  },
+  "wählt": {
+   "g": "dials, chooses (wählen)",
+   "t": "verb"
+  },
+  "wärme": {
+   "g": "warmth, heat",
+   "t": "noun"
+  },
+  "wärmepflaster": {
+   "g": "stick-on heat patch",
+   "t": "noun"
+  },
+  "wärmflasche": {
+   "g": "hot water bottle",
+   "t": "noun"
+  },
+  "wärst": {
+   "g": "would be (sein)",
+   "t": "verb"
+  },
+  "wünschen": {
+   "g": "to wish",
+   "t": "verb"
+  },
+  "wünscht": {
+   "g": "wishes (wünschen)",
+   "t": "verb"
+  },
+  "zeig": {
+   "g": "show (zeigen)",
+   "t": "verb"
+  },
+  "zückt": {
+   "g": "whips out, draws (zücken)",
+   "t": "verb"
+  },
+  "übermorgen": {
+   "g": "the day after tomorrow",
+   "t": "adverb"
+  },
+  "übers": {
+   "g": "over the (über das)",
+   "t": "preposition"
+  },
+  "überweisen": {
+   "g": "to transfer money by bank",
+   "t": "verb"
+  },
+  "überweisung": {
+   "g": "referral note; bank transfer",
+   "t": "noun"
+  },
+  "kind": {
+   "g": "child; also a warm 'dear' when addressing someone",
+   "t": "noun"
+  },
+  "lehnt": {
+   "g": "leans (lehnen)",
+   "t": "verb"
   }
  }
 }

@@ -1,0 +1,830 @@
+[
+ {
+  "topic": "friends-and-free-time",
+  "slotIndex": 1,
+  "arcType": "mini-cliffhanger",
+  "title": "Ein Antrag auf Freizeit",
+  "synopsis": "Nadia will einfach nur Leute kennenlernen und ein paar Bälle spielen. Doch in Deutschland hat sogar der Feierabend eine Satzung: Wer mitspielen will, füllt einen Mitgliedsantrag aus, überweist eine Aufnahmegebühr und liest elf Seiten Vereinsrecht. Kassenwart Pohl empfängt sie wie einen unvollständigen Antrag, und ihre Aufnahme entscheidet ausgerechnet die Mitgliederversammlung. Am Ausgang flüstert Ronja eine Warnung: Bei jeder Aufnahme stimmt einer grundsätzlich dagegen, und rate mal, wer diesmal den Vorsitz führt.",
+  "text": "Nadia will einfach nur Leute kennenlernen. Timo hört zu, nickt, und sagt den Satz, der in Deutschland alles einleitet.\n\nTimo: Dann brauchst du einen Verein. Freizeit macht man hier nicht allein; hier tritt man bei.\n\nNadia: Ich wollte doch nur ein paar Bälle spielen. Nicht Mitglied werden.\n\nTimo: Genau das ist der Widerspruch. Man spielt hier nicht einfach; man organisiert sich. Komm, ich zeig dir das Vereinsheim.\n\nHinter einem Tisch mit drei Ordnern wartet Herr Pohl, der Kassenwart, und mustert Nadia wie einen unvollständigen Antrag.\n\nPohl: Sie möchten mitspielen? Sehr schön. Dann füllen Sie bitte den Mitgliedsantrag aus, lesen die Satzung und überweisen die Aufnahmegebühr.\n\nNadia: Für Tischtennis?\n\nPohl: Für die Mitgliedschaft. Das Tischtennis ist inbegriffen.\n\nNadia: Und wenn ich erst mal nur reinschnuppern will?\n\nPohl: Dafür gibt es das Probetraining. Zweimal dürfen Sie mitspielen, danach müssen Sie sich entscheiden. So will es die Satzung.\n\nTimo: Willkommen in der Vereinsmeierei. Ohne Formular kein Vergnügen.\n\nNadia: Elf Seiten Regeln, damit ich abends einen Ball übers Netz schlage.\n\nPohl: Elf Seiten sichern den Verein. Ehrenamt, Vorstand, Beitrag, alles sauber geregelt. Über Ihre Aufnahme entscheidet übrigens die Mitgliederversammlung.\n\nNadia: Es gibt eine Abstimmung? Darüber, ob ich Tischtennis spielen darf?\n\nPohl: Selbstverständlich. Bis dahin spielen Sie auf Probe. Nächsten Donnerstagabend, hier im Vereinsheim.\n\nNeben der Tür wartet Ronja, den Schläger unterm Arm, und drückt Nadia einen Kaffee in die Hand.\n\nRonja: Lass dich nicht abschrecken. Aber eine Warnung: Bei jeder Aufnahme stimmt einer grundsätzlich dagegen. Und rate mal, wer am Donnerstag den Vorsitz führt.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Verein",
+    "surface": "Verein",
+    "definition": "A registered club Germans found for almost any shared activity."
+   },
+   {
+    "type": "verb",
+    "word": "beitreten",
+    "surface": "tritt man bei",
+    "definition": "To formally join a club or organisation as a member."
+   },
+   {
+    "type": "verb",
+    "word": "mustern",
+    "surface": "mustert",
+    "definition": "To look someone up and down, sizing them up carefully."
+   },
+   {
+    "type": "adjective",
+    "word": "unvollständig",
+    "surface": "unvollständigen",
+    "definition": "Incomplete, missing a part that really should be there."
+   },
+   {
+    "type": "noun",
+    "word": "der Kassenwart",
+    "surface": "Kassenwart",
+    "definition": "The elected treasurer who guards a club's money and its dues."
+   },
+   {
+    "type": "noun",
+    "word": "der Mitgliedsantrag",
+    "surface": "Mitgliedsantrag",
+    "definition": "The written application form you fill in to become a member."
+   },
+   {
+    "type": "verb",
+    "word": "ausfüllen",
+    "surface": "füllen Sie bitte den Mitgliedsantrag aus",
+    "definition": "To complete a form by writing in all the required information."
+   },
+   {
+    "type": "noun",
+    "word": "die Satzung",
+    "surface": "Satzung",
+    "definition": "The formal written bylaws that govern how a German club runs."
+   },
+   {
+    "type": "verb",
+    "word": "überweisen",
+    "surface": "überweisen",
+    "definition": "To transfer money from one bank account to another electronically."
+   },
+   {
+    "type": "noun",
+    "word": "die Aufnahmegebühr",
+    "surface": "Aufnahmegebühr",
+    "definition": "A one-off fee you pay to be admitted somewhere new."
+   },
+   {
+    "type": "adjective",
+    "word": "inbegriffen",
+    "surface": "inbegriffen",
+    "definition": "Already included in the price, with nothing extra to pay."
+   },
+   {
+    "type": "verb",
+    "word": "reinschnuppern",
+    "surface": "reinschnuppern",
+    "definition": "To try something out briefly to see whether you like it."
+   },
+   {
+    "type": "verb",
+    "word": "sich entscheiden",
+    "surface": "müssen Sie sich entscheiden",
+    "definition": "To make up your mind and finally commit to one option."
+   },
+   {
+    "type": "expression",
+    "word": "ohne Formular kein Vergnügen",
+    "surface": "Ohne Formular kein Vergnügen",
+    "definition": "A joke that in Germany fun always needs a form first."
+   },
+   {
+    "type": "noun",
+    "word": "die Vereinsmeierei",
+    "surface": "Vereinsmeierei",
+    "definition": "A mocking word for Germans' excessive love of clubs and rules."
+   },
+   {
+    "type": "noun",
+    "word": "die Mitgliederversammlung",
+    "surface": "Mitgliederversammlung",
+    "definition": "The general meeting where members vote on the club's decisions."
+   },
+   {
+    "type": "expression",
+    "word": "auf Probe",
+    "surface": "auf Probe",
+    "definition": "On a trial basis, not yet accepted as a full member."
+   },
+   {
+    "type": "noun",
+    "word": "die Abstimmung",
+    "surface": "Abstimmung",
+    "definition": "A vote taken so a group can decide something together."
+   },
+   {
+    "type": "verb",
+    "word": "abschrecken",
+    "surface": "abschrecken",
+    "definition": "To scare someone off so they give up before even starting."
+   },
+   {
+    "type": "adverb",
+    "word": "grundsätzlich",
+    "surface": "grundsätzlich",
+    "definition": "On principle, always and as a firm matter of habit."
+   },
+   {
+    "type": "expression",
+    "word": "dagegen stimmen",
+    "surface": "stimmt einer grundsätzlich dagegen",
+    "definition": "To vote no, against the proposal on the table."
+   },
+   {
+    "type": "noun",
+    "word": "der Vorsitz",
+    "surface": "Vorsitz",
+    "definition": "The chair of a meeting, the person who leads and decides."
+   }
+  ]
+ },
+ {
+  "topic": "friends-and-free-time",
+  "slotIndex": 2,
+  "arcType": "reframe-turn",
+  "title": "Wir müssen mal",
+  "synopsis": "Zum dritten Mal diese Woche zückt jemand einen Kalender: Nadia fragt nur nach einem Kaffee und bekommt einen Termin in drei Wochen. Immer heißt es freundlich \"wir müssen mal\", und trotzdem fühlt sie sich nach Monaten noch als Bekannte, nie als Freundin. Katja erklärt die deutsche Kokosnuss, Timo verteidigt die Langsamkeit, und dann lehnt sich Ronja über den Tresen und lädt sie an den Stammtisch: kein Kalender, keine Verabredung, einfach kommen. An diesem Tresen versteht Nadia zum ersten Mal, dass die harte Schale keine Ablehnung war.",
+  "text": "Zum dritten Mal diese Woche zückt jemand einen Kalender. Nadia hat nur \"Kaffee?\" gefragt; die Antwort ist ein Termin in drei Wochen.\n\nNadia: Immer heißt es \"wir müssen mal\", und dann kommt ein Kalender. Niemand will spontan etwas trinken.\n\nKatja: Willkommen. Das \"wir müssen mal\" ist die höflichste Art, gar nichts zu versprechen.\n\nTimo: Nicht bös gemeint. Die Leute meinen es ernst; sie meinen es nur langsam.\n\nNadia: Zu Hause hat man einfach geklingelt. Hier bin ich nach Monaten noch die neue Bekanntschaft, nie die Freundin.\n\nKatja: Deutsche sind Kokosnüsse. Außen hart, und man kommt ewig nicht durch. Aber ist die Schale einmal auf, bleibt es ein Leben lang.\n\nAm Tresen lehnt Ronja, hört mit, und legt Nadia eine Hand auf die Schulter.\n\nRonja: Donnerstag, unser Stammtisch, hinten die reservierte Ecke. Kein Kalender, keine Verabredung. Du kommst einfach.\n\nNadia: Einfach so? Ohne drei Wochen Vorlauf?\n\nRonja: Der Stammtisch ist kein Termin. Wer einmal dort sitzt, gehört dazu; und irgendwann bietet dir dort sogar der Förmlichste das Du an.\n\nKatja: Genau da fängt es an. Small Talk ist die Schale, der Stammtisch ist der Kern.\n\nNadia: Und ich dachte schon, es liegt an mir.\n\nRonja: Liegt es nie. Es dauert nur. Bring Hunger mit; bestellt wird für alle.\n\nNadia versteht es an diesem Tresen zum ersten Mal: Die Langsamkeit war keine Ablehnung. Sie war nur die Schale. Und die ist gerade aufgesprungen.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "zücken",
+    "surface": "zückt",
+    "definition": "To pull something out quickly, ready to use it at once."
+   },
+   {
+    "type": "noun",
+    "word": "der Kalender",
+    "surface": "Kalender",
+    "definition": "The diary Germans consult before agreeing to almost any meeting."
+   },
+   {
+    "type": "expression",
+    "word": "wir müssen mal",
+    "surface": "wir müssen mal",
+    "definition": "A vague friendly phrase promising a meetup that rarely gets scheduled."
+   },
+   {
+    "type": "adverb",
+    "word": "spontan",
+    "surface": "spontan",
+    "definition": "On the spur of the moment, without any planning beforehand."
+   },
+   {
+    "type": "noun",
+    "word": "die Bekanntschaft",
+    "surface": "Bekanntschaft",
+    "definition": "An acquaintance, someone you know but are not yet close to."
+   },
+   {
+    "type": "verb",
+    "word": "klingeln",
+    "surface": "geklingelt",
+    "definition": "To ring a doorbell, often to drop by without warning first."
+   },
+   {
+    "type": "noun",
+    "word": "die Kokosnuss",
+    "surface": "Kokosnüsse",
+    "definition": "A coconut, the classic image for hard-shelled but warm-hearted Germans."
+   },
+   {
+    "type": "noun",
+    "word": "die Schale",
+    "surface": "Schale",
+    "definition": "The hard outer shell, here the reserve you must get through."
+   },
+   {
+    "type": "noun",
+    "word": "der Stammtisch",
+    "surface": "Stammtisch",
+    "definition": "The regulars' table where a fixed group meets again and again."
+   },
+   {
+    "type": "adjective",
+    "word": "reserviert",
+    "surface": "reservierte",
+    "definition": "Kept back for particular people, not free for anyone to take."
+   },
+   {
+    "type": "noun",
+    "word": "die Verabredung",
+    "surface": "Verabredung",
+    "definition": "An arranged meeting fixed with someone for a set time."
+   },
+   {
+    "type": "expression",
+    "word": "gehört dazu",
+    "surface": "gehört dazu",
+    "definition": "You are one of us now, fully part of the group."
+   },
+   {
+    "type": "expression",
+    "word": "jemandem das Du anbieten",
+    "surface": "bietet dir dort sogar der Förmlichste das Du an",
+    "definition": "To invite someone to switch to the friendlier, informal form of address."
+   },
+   {
+    "type": "adjective",
+    "word": "förmlich",
+    "surface": "der Förmlichste",
+    "definition": "Very formal and correct, keeping a polite distance from others."
+   },
+   {
+    "type": "noun",
+    "word": "der Vorlauf",
+    "surface": "Vorlauf",
+    "definition": "The lead time you need to arrange something well in advance."
+   },
+   {
+    "type": "noun",
+    "word": "der Kern",
+    "surface": "Kern",
+    "definition": "The inner core, here the real closeness under the polite shell."
+   },
+   {
+    "type": "verb",
+    "word": "mithören",
+    "surface": "hört mit",
+    "definition": "To listen in on a conversation you are not directly part of."
+   },
+   {
+    "type": "verb",
+    "word": "bestellen",
+    "surface": "bestellt wird für alle",
+    "definition": "To order food or drinks, here for the whole table together."
+   },
+   {
+    "type": "verb",
+    "word": "aufspringen",
+    "surface": "aufgesprungen",
+    "definition": "To burst or pop open suddenly, like a shell giving way."
+   },
+   {
+    "type": "adjective",
+    "word": "höflich",
+    "surface": "höflichste",
+    "definition": "Polite and considerate in how you treat other people."
+   },
+   {
+    "type": "verb",
+    "word": "versprechen",
+    "surface": "versprechen",
+    "definition": "To promise something and commit yourself to actually doing it."
+   }
+  ]
+ },
+ {
+  "topic": "friends-and-free-time",
+  "slotIndex": 3,
+  "arcType": "harmonic-close",
+  "title": "Blumen gießen ist Vertrauenssache",
+  "synopsis": "Ronja drückt Nadia einen Wohnungsschlüssel in die Hand, als wäre es nichts; dabei ist es in Berlin fast ein Heiratsantrag. Zwei Wochen Urlaub, ein Kater und ein paar Pflanzen, und plötzlich steht Nadia auf der höchsten Stufe des deutschen Vertrauens. Katja erklärt am Späti die Rangordnung von Paketannahme bis Katzenschlüssel, Timo rechnet nach, wie schnell Nadia aufsteigt, und am Ende bringt Ronja aus dem Urlaub ein Mitbringsel mit: für die Katzensitterin. Wer gießt, gehört dazu, und Nadia merkt, dass man ihr nicht nur Pflanzen anvertraut.",
+  "text": "Ronja drückt Nadia einen Wohnungsschlüssel in die Hand, als wäre es nichts. Dabei ist es in Berlin fast ein Heiratsantrag.\n\nRonja: Ich bin zwei Wochen weg. Gießt du meine Pflanzen? Und fütterst den Kater?\n\nNadia: Du gibst mir deinen Schlüssel? Einfach so?\n\nRonja: Einfach so. Das ist Vertrauenssache. Den Schlüssel bekommt nicht jeder, glaub mir.\n\nNadia: Und was, wenn ich etwas falsch mache?\n\nRonja: Der Kater frisst morgens und abends, die Pflanzen zweimal die Woche. Den Rest schaffst du schon.\n\nAm Späti erklärt Katja die Rangordnung, ganz amtlich.\n\nKatja: Ein Paket annehmen macht man für jeden. Pflanzen gießen für Bekannte. Aber den Kater füttern, mit eigenem Schlüssel; das ist die höchste Stufe. Da bist du drin.\n\nNadia: Ich dachte, ich sei hier immer noch die Neue.\n\nKatja: Warst du. Der Schlüssel sagt etwas anderes.\n\nTimo: Bei uns hat es neun Tage gedauert, bis du den WG-Schlüssel hattest. Bei Ronja gleich zwei Wochen Abwesenheit. Du steigst schnell auf.\n\nNadia: Und wenn eine Pflanze eingeht?\n\nKatja: Dann verschweigst du es und kaufst heimlich eine neue. So machen es alle.\n\nZwei Wochen später gedeihen alle Pflanzen, und Ronja bringt aus dem Urlaub etwas mit.\n\nRonja: Für die Katzensitterin. Nächstes Mal du zuerst; dann gieße ich deine.\n\nNadia: Ich habe gar keine Pflanzen.\n\nRonja: Dann wird es Zeit. Wer gießt, gehört dazu.\n\nNadia geht nach Hause, den Schlüssel in der Tasche. Sie hütet nicht nur Pflanzen; man vertraut ihr ein Stück Leben an.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "drücken",
+    "surface": "drückt",
+    "definition": "To press something firmly into someone's hand or against a surface."
+   },
+   {
+    "type": "noun",
+    "word": "der Wohnungsschlüssel",
+    "surface": "Wohnungsschlüssel",
+    "definition": "The key to a flat, handed over only to trusted people."
+   },
+   {
+    "type": "noun",
+    "word": "der Heiratsantrag",
+    "surface": "Heiratsantrag",
+    "definition": "A marriage proposal, used here to show how huge the gesture feels."
+   },
+   {
+    "type": "expression",
+    "word": "Blumen gießen",
+    "surface": "Gießt du meine Pflanzen",
+    "definition": "To water the plants, here the small task that signals real trust."
+   },
+   {
+    "type": "verb",
+    "word": "füttern",
+    "surface": "fütterst",
+    "definition": "To give an animal its food, here a cat left behind."
+   },
+   {
+    "type": "noun",
+    "word": "die Vertrauenssache",
+    "surface": "Vertrauenssache",
+    "definition": "A matter of trust, not something you hand to just anyone."
+   },
+   {
+    "type": "verb",
+    "word": "fressen",
+    "surface": "frisst",
+    "definition": "To eat, the verb used for animals rather than for people."
+   },
+   {
+    "type": "verb",
+    "word": "schaffen",
+    "surface": "schaffst",
+    "definition": "To manage a task and get it successfully done on your own."
+   },
+   {
+    "type": "noun",
+    "word": "die Rangordnung",
+    "surface": "Rangordnung",
+    "definition": "A pecking order that ranks who counts as how close."
+   },
+   {
+    "type": "adjective",
+    "word": "amtlich",
+    "surface": "amtlich",
+    "definition": "Official, as if stamped and approved by some authority."
+   },
+   {
+    "type": "verb",
+    "word": "annehmen",
+    "surface": "Ein Paket annehmen",
+    "definition": "To accept and take in something delivered, like a neighbour's parcel."
+   },
+   {
+    "type": "noun",
+    "word": "die Stufe",
+    "surface": "Stufe",
+    "definition": "A step or level on a scale, here of growing trust."
+   },
+   {
+    "type": "noun",
+    "word": "die Abwesenheit",
+    "surface": "Abwesenheit",
+    "definition": "The time during which someone is away and not present."
+   },
+   {
+    "type": "expression",
+    "word": "aufsteigen",
+    "surface": "Du steigst schnell auf",
+    "definition": "To move up quickly to a higher rank or closer status."
+   },
+   {
+    "type": "verb",
+    "word": "eingehen",
+    "surface": "eingeht",
+    "definition": "To wither and die, said of a plant that stops surviving."
+   },
+   {
+    "type": "verb",
+    "word": "verschweigen",
+    "surface": "verschweigst",
+    "definition": "To keep quiet about something and deliberately not mention it."
+   },
+   {
+    "type": "adverb",
+    "word": "heimlich",
+    "surface": "heimlich",
+    "definition": "Secretly, doing something so that nobody else notices it."
+   },
+   {
+    "type": "verb",
+    "word": "gedeihen",
+    "surface": "gedeihen",
+    "definition": "To thrive and grow well, said of plants or living things."
+   },
+   {
+    "type": "verb",
+    "word": "mitbringen",
+    "surface": "bringt aus dem Urlaub etwas mit",
+    "definition": "To bring a small present back for someone from a trip."
+   },
+   {
+    "type": "verb",
+    "word": "hüten",
+    "surface": "hütet",
+    "definition": "To watch over and take care of something entrusted to you."
+   },
+   {
+    "type": "expression",
+    "word": "gehört dazu",
+    "surface": "gehört dazu",
+    "definition": "To belong, to be counted as one of the group."
+   }
+  ]
+ },
+ {
+  "topic": "health-and-emergencies",
+  "slotIndex": 1,
+  "arcType": "mini-cliffhanger",
+  "title": "Gute Besserung im Oktober",
+  "synopsis": "Der Nacken meldet sich schon beim Aufwachen: Der fünfte Stock ohne Aufzug schickt seine späte Rechnung. Ein Termin beim Orthopäden, denkt Nadia, wie schwer kann das sein. Sehr schwer, wenn man gesetzlich versichert ist: Der nächste freie Termin ist im Oktober, und die Praxis wünscht freundlich gute Besserung bis dahin. Drei Praxen, dreimal derselbe Satz. Timo erklärt die zwei Klassen der Wartezimmer und rät zum Akuttermin am frühen Morgen. Nadia beschließt, den Nacken zu ignorieren; am Abend, beim Griff nach der Wasserkiste, gibt der Rücken endgültig nach.",
+  "text": "Der Nacken meldet sich schon beim Aufwachen. Nadia dreht den Kopf nach links, und der fünfte Stock ohne Aufzug schickt seine späte Rechnung.\n\nTimo: Verspannt. Kein Wunder, bei den ganzen Wasserkisten. Geh zum Orthopäden.\n\nNadia: Mach ich. Wie schwer kann ein Termin schon sein.\n\nSie greift zum Telefon. Erste Praxis, freundliche Stimme.\n\nKern: Praxis Dr. Halm, guten Morgen. Sind Sie gesetzlich oder privat versichert?\n\nNadia: Gesetzlich. Ich hätte gern einen Termin, mein Nacken ist völlig verspannt.\n\nKern: Der nächste freie Termin wäre im Oktober. Gute Besserung bis dahin.\n\nNadia: Oktober? Es ist Juni. Ich kann den Kopf kaum drehen.\n\nKern: Dann bräuchten Sie einen Akuttermin. Dafür rufen Sie morgen früh Punkt acht an, so wie hundert andere auch.\n\nNadia: Und wenn ich nicht durchkomme?\n\nKern: Dann versuchen Sie es übermorgen wieder.\n\nSie legt auf. Drei Praxen später ist der Satz derselbe. Timo kennt die Wahrheit hinter der Warteschleife.\n\nTimo: Wärst du privat versichert, hättest du morgen einen Termin und einen Kaffee dazu. Als Kassenpatient schiebt man dich auf die lange Bank.\n\nNadia: Also warte ich bis Oktober und hoffe, dass sich mein Nacken so lange geduldet?\n\nTimo: Oder du gehst über den Hausarzt. Der schreibt dir eine Überweisung, und im Notfall gibt es den Bereitschaftsdienst.\n\nNadia: Klingt nach viel Aufwand für einen steifen Hals.\n\nTimo: Willkommen im System. Entweder du kämpfst um den Termin, oder du wartest, bis es von allein wieder geht.\n\nNadia: Es geht bestimmt von allein.\n\nDas war ein Fehler. Am Abend, beim Griff nach der Wasserkiste, gibt der Rücken endgültig nach.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "der Nacken",
+    "surface": "Nacken",
+    "definition": "The back of the neck, here stiff and aching after lifting."
+   },
+   {
+    "type": "verb",
+    "word": "sich melden",
+    "surface": "meldet sich",
+    "definition": "To make itself felt or noticed, said of pain here."
+   },
+   {
+    "type": "adjective",
+    "word": "verspannt",
+    "surface": "Verspannt",
+    "definition": "Tense and knotted, said of muscles that will not relax."
+   },
+   {
+    "type": "noun",
+    "word": "der Orthopäde",
+    "surface": "Orthopäden",
+    "definition": "A specialist doctor for bones, joints, muscles and the back."
+   },
+   {
+    "type": "noun",
+    "word": "der Termin",
+    "surface": "Termin",
+    "definition": "A fixed appointment, the hardest thing to get in German healthcare."
+   },
+   {
+    "type": "verb",
+    "word": "greifen",
+    "surface": "greift",
+    "definition": "To reach for something and take hold of it quickly."
+   },
+   {
+    "type": "noun",
+    "word": "die Praxis",
+    "surface": "Praxis",
+    "definition": "A doctor's office where patients are seen and treated."
+   },
+   {
+    "type": "adjective",
+    "word": "gesetzlich versichert",
+    "surface": "gesetzlich oder privat versichert",
+    "definition": "Covered by the state health insurance most German employees have."
+   },
+   {
+    "type": "adjective",
+    "word": "frei",
+    "surface": "freie Termin",
+    "definition": "Free in the sense of still open and available to book."
+   },
+   {
+    "type": "expression",
+    "word": "Gute Besserung",
+    "surface": "Gute Besserung",
+    "definition": "Get well soon, the standard thing Germans wish a sick person."
+   },
+   {
+    "type": "noun",
+    "word": "der Akuttermin",
+    "surface": "Akuttermin",
+    "definition": "An emergency slot kept free for patients who cannot wait."
+   },
+   {
+    "type": "verb",
+    "word": "durchkommen",
+    "surface": "durchkomme",
+    "definition": "To get through on the phone, past the endless busy line."
+   },
+   {
+    "type": "verb",
+    "word": "sich gedulden",
+    "surface": "geduldet",
+    "definition": "To be patient and hold out calmly while you wait."
+   },
+   {
+    "type": "noun",
+    "word": "der Kassenpatient",
+    "surface": "Kassenpatient",
+    "definition": "A patient on public insurance, often waiting longer than private ones."
+   },
+   {
+    "type": "expression",
+    "word": "auf die lange Bank schieben",
+    "surface": "schiebt man dich auf die lange Bank",
+    "definition": "To put something off and keep delaying it for a long time."
+   },
+   {
+    "type": "noun",
+    "word": "der Hausarzt",
+    "surface": "Hausarzt",
+    "definition": "The family doctor who treats you first and refers you onward."
+   },
+   {
+    "type": "noun",
+    "word": "die Überweisung",
+    "surface": "Überweisung",
+    "definition": "A referral note sending you from your GP to a specialist."
+   },
+   {
+    "type": "noun",
+    "word": "der Bereitschaftsdienst",
+    "surface": "Bereitschaftsdienst",
+    "definition": "The on-call medical service for evenings, weekends and public holidays."
+   },
+   {
+    "type": "adjective",
+    "word": "steif",
+    "surface": "steifen Hals",
+    "definition": "Stiff and hard to move, said of a sore neck."
+   },
+   {
+    "type": "expression",
+    "word": "Willkommen im System",
+    "surface": "Willkommen im System",
+    "definition": "A dry welcome to a bureaucratic machine you cannot escape."
+   },
+   {
+    "type": "verb",
+    "word": "nachgeben",
+    "surface": "gibt der Rücken endgültig nach",
+    "definition": "To give way under strain, here a back that finally fails."
+   },
+   {
+    "type": "verb",
+    "word": "auflegen",
+    "surface": "legt auf",
+    "definition": "To hang up and end a telephone call."
+   }
+  ]
+ },
+ {
+  "topic": "health-and-emergencies",
+  "slotIndex": 2,
+  "arcType": "mini-cliffhanger",
+  "title": "Zwei Meinungen zu einem Rücken",
+  "synopsis": "Das grüne Kreuz über der Apotheke ist dunkel: Nur eine einzige hat Notdienst, quer durch die Stadt, und dort bedient man durch die Nachtklappe. Die Apothekerin gibt Nadia ein Wärmepflaster, eine Salbe und den nüchternen Rat, bei Wärme zu bleiben. Zurück im Kiez hat Katja am Späti längst ihre eigene Apotheke: Franzbranntwein, Wärmflasche, Quarkwickel. Zwei Welten, ein Rücken, und beide schwören auf dasselbe. Am Morgen dreht der Nacken sich schon leichter, und Punkt acht wählt Nadia die Nummer für den Akuttermin.",
+  "text": "Das grüne Kreuz über der Apotheke ist dunkel. Nur eine einzige hat Notdienst, quer durch die Stadt; dort bedient man durch die Nachtklappe.\n\nApothekerin: Sie wünschen?\n\nNadia: Etwas gegen einen verspannten Rücken. Möglichst ohne Rezept.\n\nApothekerin: Ein Wärmepflaster und eine Salbe zum Einreiben, beides rezeptfrei. Wärme lindert, Bewegung hilft.\n\nNadia: Und wenn es schlimmer wird?\n\nApothekerin: Wenn es in drei Tagen nicht abklingt, gehen Sie zum Arzt. Aber meistens ist es nur der Rücken, der sich beschwert. Gute Besserung.\n\nNadia: Wärme also. Das sagt meine Nachbarin auch.\n\nApothekerin: Dann hören Sie auf Ihre Nachbarin. Die Großmütter wussten das lange vor uns.\n\nZurück im Kiez hat Katja am Späti längst ihre eigene Apotheke aufgeschlagen.\n\nKatja: Ein Wärmepflaster? Kind, du brauchst Franzbranntwein und eine Wärmflasche. Und einen Quarkwickel, wenn es richtig zieht.\n\nNadia: Die Apothekerin schwört auf die Salbe, du schwörst auf Quark.\n\nKatja: Wir schwören beide auf Wärme. Der Rest ist Verpackung.\n\nNadia: Also die Wissenschaft hinter dem Tresen und das Hausmittel aus dem Späti.\n\nKatja: Und beide sagen dasselbe. Merk dir das, dann verstehst du dieses Land.\n\nNadia: Zwei Meinungen, ein Rücken, und am Ende sind sie sich einig.\n\nKatja: So ist es immer. Erst streiten alle, dann meinen sie dasselbe.\n\nNadia reibt die Salbe ein und füllt die Wärmflasche; beide raten dasselbe. Am Morgen dreht der Nacken sich leichter, und Punkt acht wählt sie die Nummer für den Akuttermin.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "die Apotheke",
+    "surface": "Apotheke",
+    "definition": "The pharmacy, the only shop allowed to sell most medicines here."
+   },
+   {
+    "type": "noun",
+    "word": "der Notdienst",
+    "surface": "Notdienst",
+    "definition": "The rota that keeps one pharmacy open at night or weekends."
+   },
+   {
+    "type": "noun",
+    "word": "die Nachtklappe",
+    "surface": "Nachtklappe",
+    "definition": "The little night hatch you speak through when the pharmacy is closed."
+   },
+   {
+    "type": "adjective",
+    "word": "rezeptfrei",
+    "surface": "rezeptfrei",
+    "definition": "Available over the counter, without needing a doctor's prescription first."
+   },
+   {
+    "type": "noun",
+    "word": "das Wärmepflaster",
+    "surface": "Wärmepflaster",
+    "definition": "A stick-on heat patch that slowly warms sore, tense muscles."
+   },
+   {
+    "type": "noun",
+    "word": "die Salbe",
+    "surface": "Salbe",
+    "definition": "An ointment you rub into the skin to ease pain."
+   },
+   {
+    "type": "verb",
+    "word": "einreiben",
+    "surface": "Einreiben",
+    "definition": "To rub a cream or ointment firmly into the skin."
+   },
+   {
+    "type": "verb",
+    "word": "lindern",
+    "surface": "lindert",
+    "definition": "To soothe and ease pain without fully curing the problem."
+   },
+   {
+    "type": "verb",
+    "word": "abklingen",
+    "surface": "abklingt",
+    "definition": "To fade and gradually die down, said of pain or symptoms."
+   },
+   {
+    "type": "verb",
+    "word": "sich beschweren",
+    "surface": "beschwert",
+    "definition": "To complain, here the back protesting about how it is treated."
+   },
+   {
+    "type": "noun",
+    "word": "das Hausmittel",
+    "surface": "Hausmittel",
+    "definition": "A home remedy passed down in families instead of bought medicine."
+   },
+   {
+    "type": "noun",
+    "word": "der Franzbranntwein",
+    "surface": "Franzbranntwein",
+    "definition": "A herbal rubbing alcohol Germans swear by for aching muscles."
+   },
+   {
+    "type": "noun",
+    "word": "die Wärmflasche",
+    "surface": "Wärmflasche",
+    "definition": "A hot water bottle held against the body to ease pain."
+   },
+   {
+    "type": "noun",
+    "word": "der Quarkwickel",
+    "surface": "Quarkwickel",
+    "definition": "A cold compress of quark cheese wrapped around a sore spot."
+   },
+   {
+    "type": "expression",
+    "word": "schwören auf",
+    "surface": "schwört auf die Salbe",
+    "definition": "To swear by something, trusting it completely to always work."
+   },
+   {
+    "type": "verb",
+    "word": "aufschlagen",
+    "surface": "aufgeschlagen",
+    "definition": "To set up shop, here Katja opening her own little pharmacy."
+   },
+   {
+    "type": "expression",
+    "word": "wenn es richtig zieht",
+    "surface": "wenn es richtig zieht",
+    "definition": "When it really pulls and aches, said of nagging pain."
+   },
+   {
+    "type": "expression",
+    "word": "Der Rest ist Verpackung",
+    "surface": "Der Rest ist Verpackung",
+    "definition": "Everything else is just packaging, mere surface that does not matter."
+   },
+   {
+    "type": "verb",
+    "word": "raten",
+    "surface": "raten",
+    "definition": "To advise someone, telling them what you think they should do."
+   },
+   {
+    "type": "expression",
+    "word": "sich einig sein",
+    "surface": "sind sie sich einig",
+    "definition": "To agree, to have reached the same view on something."
+   },
+   {
+    "type": "verb",
+    "word": "wählen",
+    "surface": "wählt",
+    "definition": "To dial a phone number in order to make a call."
+   }
+  ]
+ },
+ {
+  "topic": "health-and-emergencies",
+  "slotIndex": 3,
+  "arcType": "harmonic-close",
+  "title": "Die mit der Thermoskanne",
+  "synopsis": "Der Morgen ist noch blau, und Nadia hat eine Thermoskanne dabei; sie weiß inzwischen, warum das hier alle tun. Vor dem Bürgeramt steht die Schlange, und ganz hinten wartet Mira, angekommen vor drei Tagen, mit dem Blick einer Frau, die alles falsch gemacht zu haben glaubt. Nadia nimmt sie an die Hand: erst die Anmeldung, dann die Krankenkasse, dann die Gesundheitskarte, und für den Arzt der ganze bittere Trick mit den Terminen. Ein Jahr, zwei Stempel, ein Stammtisch. Berlin ist keine Behörde mehr; Berlin ist ein Zuhause geworden.",
+  "text": "Der Morgen ist noch blau. Nadia hat eine Thermoskanne dabei und weiß längst, warum das hier alle tun. Vor dem Bürgeramt steht die Schlange; ganz hinten wartet Mira, angekommen vor drei Tagen.\n\nMira: Entschuldigung, sprechen Sie Deutsch? Ich verstehe dieses Formular nicht. Und ich glaube, ich bin auch noch krank geworden.\n\nNadia: Zeig mal her. Erst die Anmeldung, dann die Krankenkasse, dann die Gesundheitskarte. Ohne Anmeldung geht hier gar nichts.\n\nMira: Und all die Felder hier?\n\nNadia: Die Hälfte kannst du frei lassen. Das sagt dir nur keiner.\n\nMira: Und wenn ich einen Arzt brauche? Ich bekomme nirgends einen Termin.\n\nNadia: Willkommen im Klub. Für akut gibt es den Bereitschaftsdienst und die Nummer, die man nachts anruft. Für alles andere: Hausarzt, Überweisung, Geduld.\n\nMira: Geduld. Das Wort höre ich hier ständig.\n\nNadia: Gewöhn dich dran. Sie ist hier die halbe Miete.\n\nMira: Und wenn ich hier alles falsch mache?\n\nNadia: Dann machst du es wie wir alle. Man wächst mit den Formularen.\n\nMira: Woher wissen Sie das alles?\n\nNadia: Vor einem Jahr stand ich genau hier, mit genau dem Blick, den du gerade hast. Jemand aus der Schlange hat mich an die Hand genommen. Jetzt bist du dran.\n\nNadia gießt Kaffee in einen zweiten Becher und reicht ihn weiter.\n\nNadia: Der erste Trick heißt Thermoskanne. Und keine Sorge, du kommst hier an. Es dauert nur.\n\nMira: Gute Besserung wünscht mir hier sonst keiner.\n\nNadia: Doch. Ich. Gute Besserung, Mira. Beides wird noch: der Termin und du.\n\nDie Tür geht auf, die Schlange rückt vor. Nadia denkt an Timo, an Katja, an Ronja, an einen Kater, der ihr vertraut. Ein Jahr, zwei Stempel, ein Stammtisch. Berlin ist keine Behörde mehr; Berlin ist ein Zuhause geworden.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "die Thermoskanne",
+    "surface": "Thermoskanne",
+    "definition": "The thermos flask every Berliner carries to survive an early queue."
+   },
+   {
+    "type": "noun",
+    "word": "die Schlange",
+    "surface": "Schlange",
+    "definition": "The queue of people waiting, here outside the registration office."
+   },
+   {
+    "type": "adjective",
+    "word": "krank",
+    "surface": "krank geworden",
+    "definition": "Ill or unwell, no longer healthy and needing some care."
+   },
+   {
+    "type": "noun",
+    "word": "die Anmeldung",
+    "surface": "Anmeldung",
+    "definition": "The registration of your address, the first step to everything else."
+   },
+   {
+    "type": "noun",
+    "word": "die Krankenkasse",
+    "surface": "Krankenkasse",
+    "definition": "The health insurance fund every resident must belong to here."
+   },
+   {
+    "type": "noun",
+    "word": "die Gesundheitskarte",
+    "surface": "Gesundheitskarte",
+    "definition": "The insurance card you show at every doctor or pharmacy visit."
+   },
+   {
+    "type": "verb",
+    "word": "frei lassen",
+    "surface": "frei lassen",
+    "definition": "To leave a form field blank instead of filling it in."
+   },
+   {
+    "type": "expression",
+    "word": "Willkommen im Klub",
+    "surface": "Willkommen im Klub",
+    "definition": "A wry welcome meaning you now share the same annoying problem."
+   },
+   {
+    "type": "noun",
+    "word": "die Geduld",
+    "surface": "Geduld",
+    "definition": "Patience, the quality German offices demand most of all."
+   },
+   {
+    "type": "verb",
+    "word": "sich gewöhnen",
+    "surface": "Gewöhn dich dran",
+    "definition": "To get used to something until it no longer bothers you."
+   },
+   {
+    "type": "expression",
+    "word": "die halbe Miete",
+    "surface": "die halbe Miete",
+    "definition": "Half the battle, a big part of the job already done."
+   },
+   {
+    "type": "expression",
+    "word": "an die Hand nehmen",
+    "surface": "hat mich an die Hand genommen",
+    "definition": "To take someone in hand and guide them patiently through something."
+   },
+   {
+    "type": "expression",
+    "word": "jetzt bist du dran",
+    "surface": "Jetzt bist du dran",
+    "definition": "It is now your turn to do or face something."
+   },
+   {
+    "type": "verb",
+    "word": "gießen",
+    "surface": "gießt",
+    "definition": "To pour a liquid, here coffee, from one container into another."
+   },
+   {
+    "type": "verb",
+    "word": "weiterreichen",
+    "surface": "reicht ihn weiter",
+    "definition": "To pass something on to the next person beside you."
+   },
+   {
+    "type": "noun",
+    "word": "der Trick",
+    "surface": "Trick",
+    "definition": "A clever shortcut through a system that officially resists you."
+   },
+   {
+    "type": "verb",
+    "word": "vorrücken",
+    "surface": "rückt vor",
+    "definition": "To move forward a step, here the queue inching ahead."
+   },
+   {
+    "type": "verb",
+    "word": "vertrauen",
+    "surface": "vertraut",
+    "definition": "To trust someone and rely on them completely."
+   },
+   {
+    "type": "verb",
+    "word": "ankommen",
+    "surface": "angekommen",
+    "definition": "To arrive, and here also to finally settle in somewhere."
+   },
+   {
+    "type": "noun",
+    "word": "der Stempel",
+    "surface": "Stempel",
+    "definition": "The official rubber stamp that makes a German document count."
+   },
+   {
+    "type": "noun",
+    "word": "das Zuhause",
+    "surface": "Zuhause",
+    "definition": "A home, the place where you finally feel you belong."
+   }
+  ]
+ }
+]
