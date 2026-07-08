@@ -6384,6 +6384,10 @@
   "lehnt": {
    "g": "leans (lehnen)",
    "t": "verb"
+  },
+  "näher": {
+   "g": "nearer, closer (näher kommen = approach)",
+   "t": "adverb"
   }
  }
 }
