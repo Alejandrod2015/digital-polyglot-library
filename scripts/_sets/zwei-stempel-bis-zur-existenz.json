@@ -1,638 +1,542 @@
 [
-  {
-    "type": "meaning_in_context",
-    "word": "die Anmeldebestätigung",
-    "sentence": "Er schiebt die [[Anmeldebestätigung]] über den Tresen.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "registration certificate",
-      "options": [
-        "registration certificate",
-        "parking ticket",
-        "job application",
-        "library card"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Er schiebt die Anmeldebestätigung über den Tresen.",
-        "targetWord": "Anmeldebestätigung",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40b7082e6abd094f.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "die Zwischenmiete",
-    "sentence": "Meine [[Zwischenmiete]] ist befristet, sechs Wochen noch.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "temporary sublet",
-      "options": [
-        "temporary sublet",
-        "monthly salary",
-        "storage rental",
-        "hotel booking"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Meine Zwischenmiete ist befristet, sechs Wochen noch.",
-        "targetWord": "Zwischenmiete",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eba3dcb8f1c937cf.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "die Wohnungssuche",
-    "sentence": "Gegen die Berliner [[Wohnungssuche]] war dieser Vormittag ein Spaziergang.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "apartment hunt",
-      "options": [
-        "apartment hunt",
-        "city marathon",
-        "job interview",
-        "spring cleaning"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Gegen die Berliner Wohnungssuche war dieser Vormittag ein Spaziergang.",
-        "targetWord": "Wohnungssuche",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8139b568c91e6767.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "der Sachbearbeiter",
-    "sentence": "Lass dich nicht von der Miene des [[Sachbearbeiters]] beeindrucken.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "caseworker",
-      "options": [
-        "caseworker",
-        "security guard",
-        "taxi driver",
-        "shop owner"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Lass dich nicht von der Miene des Sachbearbeiters beeindrucken.",
-        "targetWord": "Sachbearbeiters",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a9c1a27128b9977.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "eine halbe Ewigkeit",
-    "sentence": "Drei Nummern sind in diesem Gebäude [[eine halbe Ewigkeit]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "half an eternity",
-      "options": [
-        "half an eternity",
-        "a lucky number",
-        "a short break",
-        "an easy task"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Drei Nummern sind in diesem Gebäude eine halbe Ewigkeit.",
-        "targetWord": "eine halbe Ewigkeit",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2be402e400c05258.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "erst mal",
-    "sentence": "Drinnen bist du [[erst mal]] im System.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "for now",
-      "options": [
-        "for now",
-        "too late",
-        "once more",
-        "by chance"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Drinnen bist du erst mal im System.",
-        "targetWord": "erst mal",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37fa0f99d3f84c4d.mp3"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "kriecht",
-    "sentence": "Stau überall: Der Bus _____ nur langsam durch die Stadt.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "kriecht",
-      "options": [
-        "kriecht",
-        "fliegt",
-        "parkt",
-        "singt"
-      ],
-      "translation": "Traffic jams everywhere: the bus only _____ slowly through the city.",
-      "optionTranslations": [
-        "crawls",
-        "flies",
-        "parks",
-        "sings"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Stau überall: Der Bus kriecht nur langsam durch die Stadt.",
-        "targetWord": "kriecht",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a11ec3da53882330.mp3"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "scheitert",
-    "sentence": "Ohne Plan _____ das Projekt schon in der ersten Woche.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "scheitert",
-      "options": [
-        "scheitert",
-        "gewinnt",
-        "schläft",
-        "tanzt"
-      ],
-      "translation": "Without a plan, the project _____ in the very first week.",
-      "optionTranslations": [
-        "fails",
-        "wins",
-        "sleeps",
-        "dances"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Ohne Plan scheitert das Projekt schon in der ersten Woche.",
-        "targetWord": "scheitert",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c60ca4a1d0b423c.mp3"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "befristet",
-    "sentence": "Der Vertrag ist _____ ; er endet nach sechs Monaten.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "befristet",
-      "options": [
-        "befristet",
-        "unbezahlt",
-        "geheim",
-        "mündlich"
-      ],
-      "translation": "The contract is _____; it ends after six months.",
-      "optionTranslations": [
-        "fixed-term",
-        "unpaid",
-        "secret",
-        "verbal"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Der Vertrag ist befristet; er endet nach sechs Monaten.",
-        "targetWord": "befristet",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/312592c2fb9dcaee.mp3"
-      }
-    }
-  },
-  {
-    "type": "match_meaning",
-    "word": "die Wartemarke,der Stempel,die Anzeigetafel,die Unterlagen",
-    "sentence": "",
-    "payload": {
-      "prompt": "Match the words to their meanings.",
-      "pairs": [
-        {
-          "word": "die Wartemarke",
-          "answer": "waiting ticket",
-          "options": [
-            "waiting ticket",
-            "rubber stamp",
-            "display board",
-            "documents"
-          ]
-        },
-        {
-          "word": "der Stempel",
-          "answer": "rubber stamp",
-          "options": [
-            "waiting ticket",
-            "rubber stamp",
-            "display board",
-            "documents"
-          ]
-        },
-        {
-          "word": "die Anzeigetafel",
-          "answer": "display board",
-          "options": [
-            "waiting ticket",
-            "rubber stamp",
-            "display board",
-            "documents"
-          ]
-        },
-        {
-          "word": "die Unterlagen",
-          "answer": "documents",
-          "options": [
-            "waiting ticket",
-            "rubber stamp",
-            "display board",
-            "documents"
-          ]
-        }
-      ],
-      "audioClip": null
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "überspringen",
-    "sentence": "Wir ziehen die Marke, bevor die Anzeigetafel deine Uhrzeit [[überspringt]].",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to skip over",
-      "options": [
-        "to skip over",
-        "to slow down",
-        "to light up",
-        "to turn off"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Wir ziehen die Marke, bevor die Anzeigetafel deine Uhrzeit überspringt.",
-        "targetWord": "überspringt",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd4072c30b41a5cd.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "stolpern",
-    "sentence": "Um 11:17 [[stolpern]] sie durch die Glastür.",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to stumble",
-      "options": [
-        "to stumble",
-        "to knock",
-        "to sneak",
-        "to march"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Um 11:17 stolpern sie durch die Glastür.",
-        "targetWord": "stolpern",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6a827cb54ec70c52.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "der Puffer",
-    "sentence": "Drei Nummern [[Puffer]].",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "safety margin",
-      "options": [
-        "safety margin",
-        "loud noise",
-        "long queue",
-        "small ticket"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Drei Nummern Puffer.",
-        "targetWord": "Puffer",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/771ba072d06f06b4.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "rühren",
-    "sentence": "Dass mich eine Leuchttafel jemals so [[rühren]] könnte.",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to move emotionally",
-      "options": [
-        "to move emotionally",
-        "to blind briefly",
-        "to bore deeply",
-        "to confuse totally"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Dass mich eine Leuchttafel jemals so rühren könnte.",
-        "targetWord": "rühren",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f852ba52bd814a0c.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "die Miene",
-    "sentence": "Die [[Miene]] gehört zur Ausstattung.",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "facial expression",
-      "options": [
-        "facial expression",
-        "uniform jacket",
-        "name badge",
-        "office chair"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Die Miene gehört zur Ausstattung.",
-        "targetWord": "Miene",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ebc7526ebc1de92f.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "aufspüren",
-    "sentence": "Ich habe dafür einen Vermieter in seiner Laube [[aufgespürt]].",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to track down",
-      "options": [
-        "to track down",
-        "to lock out",
-        "to wake up",
-        "to call back"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Ich habe dafür einen Vermieter in seiner Laube aufgespürt.",
-        "targetWord": "aufgespürt",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/415847e076f0ee62.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "unscheinbar",
-    "sentence": "Ein [[unscheinbares]] Blatt, das Konto und Arbeitsvertrag freischaltet.",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "unremarkable",
-      "options": [
-        "unremarkable",
-        "colorful",
-        "gigantic",
-        "expensive"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Ein unscheinbares Blatt, das Konto und Arbeitsvertrag freischaltet.",
-        "targetWord": "unscheinbares",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d324717abd3388e5.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "zugleich",
-    "sentence": "Das Blatt schaltet Konto, Arbeitsvertrag und Handyvertrag [[zugleich]] frei.",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "at the same time",
-      "options": [
-        "at the same time",
-        "one by one",
-        "much later",
-        "in secret"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Das Blatt schaltet Konto, Arbeitsvertrag und Handyvertrag zugleich frei.",
-        "targetWord": "zugleich",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/58c3ed9206159937.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "freischalten",
-    "sentence": "Ein Blatt, das Konto, Arbeitsvertrag und Handyvertrag zugleich [[freischaltet]].",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to unlock",
-      "options": [
-        "to unlock",
-        "to cancel",
-        "to print",
-        "to hide"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Ein Blatt, das Konto, Arbeitsvertrag und Handyvertrag zugleich freischaltet.",
-        "targetWord": "freischaltet",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/50d6399887902038.mp3"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "aufleuchtet",
-    "sentence": "Warte, bis deine Nummer auf der Tafel _____.",
-    "featured": false,
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "aufleuchtet",
-      "options": [
-        "aufleuchtet",
-        "klingelt",
-        "tanzt",
-        "schmilzt"
-      ],
-      "translation": "Wait until your number _____ on the board.",
-      "optionTranslations": [
-        "lights up",
-        "rings",
-        "dances",
-        "melts"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Warte, bis deine Nummer auf der Tafel aufleuchtet.",
-        "targetWord": "aufleuchtet",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/07ec0cd85b4b2b32.mp3"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "begriffen",
-    "sentence": "Nach dem dritten Beispiel habe ich die Regel endlich _____.",
-    "featured": false,
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "begriffen",
-      "options": [
-        "begriffen",
-        "vergessen",
-        "gekauft",
-        "verloren"
-      ],
-      "translation": "After the third example I finally _____ the rule.",
-      "optionTranslations": [
-        "grasped",
-        "forgot",
-        "bought",
-        "lost"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Nach dem dritten Beispiel habe ich die Regel endlich begriffen.",
-        "targetWord": "begriffen",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/114eda0ff4318667.mp3"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "blättert",
-    "sentence": "Sie _____ im Wartezimmer gelangweilt durch eine Zeitschrift.",
-    "featured": false,
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "blättert",
-      "options": [
-        "blättert",
-        "singt",
-        "schwimmt",
-        "rechnet"
-      ],
-      "translation": "Bored in the waiting room, she _____ through a magazine.",
-      "optionTranslations": [
-        "leafs",
-        "sings",
-        "swims",
-        "calculates"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Sie blättert im Wartezimmer gelangweilt durch eine Zeitschrift.",
-        "targetWord": "blättert",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46a1f8a536367829.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "grinsen",
-    "sentence": "Timo [[grinst]] in seinen Kaffee.",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to grin",
-      "options": [
-        "to grin",
-        "to stare",
-        "to whisper",
-        "to sigh"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Timo grinst in seinen Kaffee.",
-        "targetWord": "grinst",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2a77d203d1a8a2f4.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "verdient",
-    "sentence": "[[Verdient]], Schritt für Schritt.",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "well earned",
-      "options": [
-        "well earned",
-        "too risky",
-        "almost free",
-        "very easy"
-      ],
-      "audioClip": {
-        "storySlug": "zwei-stempel-bis-zur-existenz",
-        "storySource": "user",
-        "sentence": "Verdient, Schritt für Schritt.",
-        "targetWord": "Verdient",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/88965efe60ca786f.mp3"
-      }
-    }
+ {
+  "type": "meaning_in_context",
+  "word": "die Anmeldebestätigung",
+  "sentence": "Er schiebt die [[Anmeldebestätigung]] über den Tresen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "registration certificate",
+   "options": [
+    "registration certificate",
+    "parking ticket",
+    "job application",
+    "library card"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Er schiebt die Anmeldebestätigung über den Tresen.",
+    "targetWord": "Anmeldebestätigung",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40b7082e6abd094f.mp3"
+   }
   }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Zwischenmiete",
+  "sentence": "Meine [[Zwischenmiete]] ist befristet, sechs Wochen noch.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "temporary sublet",
+   "options": [
+    "temporary sublet",
+    "monthly salary",
+    "storage rental",
+    "hotel booking"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Meine Zwischenmiete ist befristet, sechs Wochen noch.",
+    "targetWord": "Zwischenmiete",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eba3dcb8f1c937cf.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Wohnungssuche",
+  "sentence": "Gegen die Berliner [[Wohnungssuche]] war dieser Vormittag ein Spaziergang.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "apartment hunt",
+   "options": [
+    "apartment hunt",
+    "city marathon",
+    "job interview",
+    "spring cleaning"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Gegen die Berliner Wohnungssuche war dieser Vormittag ein Spaziergang.",
+    "targetWord": "Wohnungssuche",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8139b568c91e6767.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Sachbearbeiter",
+  "sentence": "Lass dich nicht von der Miene des [[Sachbearbeiters]] beeindrucken.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "caseworker",
+   "options": [
+    "caseworker",
+    "security guard",
+    "taxi driver",
+    "shop owner"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Lass dich nicht von der Miene des Sachbearbeiters beeindrucken.",
+    "targetWord": "Sachbearbeiters",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a9c1a27128b9977.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "eine halbe Ewigkeit",
+  "sentence": "Drei Nummern sind in diesem Gebäude [[eine halbe Ewigkeit]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "half an eternity",
+   "options": [
+    "half an eternity",
+    "a lucky number",
+    "a short break",
+    "an easy task"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Drei Nummern sind in diesem Gebäude eine halbe Ewigkeit.",
+    "targetWord": "eine halbe Ewigkeit",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2be402e400c05258.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "kriecht",
+  "sentence": "Stau überall: Der Bus _____ nur langsam durch die Stadt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kriecht",
+   "options": [
+    "kriecht",
+    "fliegt",
+    "parkt",
+    "singt"
+   ],
+   "translation": "Traffic jams everywhere: the bus only _____ slowly through the city.",
+   "optionTranslations": [
+    "crawls",
+    "flies",
+    "parks",
+    "sings"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Stau überall: Der Bus kriecht nur langsam durch die Stadt.",
+    "targetWord": "kriecht",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a11ec3da53882330.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "scheitert",
+  "sentence": "Ohne Plan _____ das Projekt schon in der ersten Woche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "scheitert",
+   "options": [
+    "scheitert",
+    "gewinnt",
+    "schläft",
+    "tanzt"
+   ],
+   "translation": "Without a plan, the project _____ in the very first week.",
+   "optionTranslations": [
+    "fails",
+    "wins",
+    "sleeps",
+    "dances"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Ohne Plan scheitert das Projekt schon in der ersten Woche.",
+    "targetWord": "scheitert",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c60ca4a1d0b423c.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "befristet",
+  "sentence": "Der Vertrag ist _____ ; er endet nach sechs Monaten.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "befristet",
+   "options": [
+    "befristet",
+    "unbezahlt",
+    "geheim",
+    "mündlich"
+   ],
+   "translation": "The contract is _____; it ends after six months.",
+   "optionTranslations": [
+    "fixed-term",
+    "unpaid",
+    "secret",
+    "verbal"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Der Vertrag ist befristet; er endet nach sechs Monaten.",
+    "targetWord": "befristet",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/312592c2fb9dcaee.mp3"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "die Wartemarke,der Stempel,die Anzeigetafel,die Unterlagen",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Wartemarke",
+     "answer": "waiting ticket",
+     "options": [
+      "waiting ticket",
+      "rubber stamp",
+      "display board",
+      "documents"
+     ]
+    },
+    {
+     "word": "der Stempel",
+     "answer": "rubber stamp",
+     "options": [
+      "waiting ticket",
+      "rubber stamp",
+      "display board",
+      "documents"
+     ]
+    },
+    {
+     "word": "die Anzeigetafel",
+     "answer": "display board",
+     "options": [
+      "waiting ticket",
+      "rubber stamp",
+      "display board",
+      "documents"
+     ]
+    },
+    {
+     "word": "die Unterlagen",
+     "answer": "documents",
+     "options": [
+      "waiting ticket",
+      "rubber stamp",
+      "display board",
+      "documents"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "überspringen",
+  "sentence": "Wir ziehen die Marke, bevor die Anzeigetafel deine Uhrzeit [[überspringt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to skip over",
+   "options": [
+    "to skip over",
+    "to slow down",
+    "to light up",
+    "to turn off"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Wir ziehen die Marke, bevor die Anzeigetafel deine Uhrzeit überspringt.",
+    "targetWord": "überspringt",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd4072c30b41a5cd.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stolpern",
+  "sentence": "Um 11:17 [[stolpern]] sie durch die Glastür.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stumble",
+   "options": [
+    "to stumble",
+    "to knock",
+    "to sneak",
+    "to march"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Um 11:17 stolpern sie durch die Glastür.",
+    "targetWord": "stolpern",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6a827cb54ec70c52.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Puffer",
+  "sentence": "Drei Nummern [[Puffer]].",
+  "featured": false,
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "safety margin",
+   "options": [
+    "safety margin",
+    "loud noise",
+    "long queue",
+    "small ticket"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Drei Nummern Puffer.",
+    "targetWord": "Puffer",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/771ba072d06f06b4.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rühren",
+  "sentence": "Dass mich eine Leuchttafel jemals so [[rühren]] könnte.",
+  "featured": false,
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to move emotionally",
+   "options": [
+    "to move emotionally",
+    "to blind briefly",
+    "to bore deeply",
+    "to confuse totally"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Dass mich eine Leuchttafel jemals so rühren könnte.",
+    "targetWord": "rühren",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f852ba52bd814a0c.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Miene",
+  "sentence": "Die [[Miene]] gehört zur Ausstattung.",
+  "featured": false,
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "facial expression",
+   "options": [
+    "facial expression",
+    "uniform jacket",
+    "name badge",
+    "office chair"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Die Miene gehört zur Ausstattung.",
+    "targetWord": "Miene",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ebc7526ebc1de92f.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aufspüren",
+  "sentence": "Ich habe dafür einen Vermieter in seiner Laube [[aufgespürt]].",
+  "featured": false,
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to track down",
+   "options": [
+    "to track down",
+    "to lock out",
+    "to wake up",
+    "to call back"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Ich habe dafür einen Vermieter in seiner Laube aufgespürt.",
+    "targetWord": "aufgespürt",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/415847e076f0ee62.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "freischalten",
+  "sentence": "Ein Blatt, das Konto, Arbeitsvertrag und Handyvertrag zugleich [[freischaltet]].",
+  "featured": false,
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to unlock",
+   "options": [
+    "to unlock",
+    "to cancel",
+    "to print",
+    "to hide"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Ein Blatt, das Konto, Arbeitsvertrag und Handyvertrag zugleich freischaltet.",
+    "targetWord": "freischaltet",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/50d6399887902038.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "aufleuchtet",
+  "sentence": "Warte, bis deine Nummer auf der Tafel _____.",
+  "featured": false,
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aufleuchtet",
+   "options": [
+    "aufleuchtet",
+    "klingelt",
+    "tanzt",
+    "schmilzt"
+   ],
+   "translation": "Wait until your number _____ on the board.",
+   "optionTranslations": [
+    "lights up",
+    "rings",
+    "dances",
+    "melts"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Warte, bis deine Nummer auf der Tafel aufleuchtet.",
+    "targetWord": "aufleuchtet",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/07ec0cd85b4b2b32.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "begriffen",
+  "sentence": "Nach dem dritten Beispiel habe ich die Regel endlich _____.",
+  "featured": false,
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "begriffen",
+   "options": [
+    "begriffen",
+    "vergessen",
+    "gekauft",
+    "verloren"
+   ],
+   "translation": "After the third example I finally _____ the rule.",
+   "optionTranslations": [
+    "grasped",
+    "forgot",
+    "bought",
+    "lost"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Nach dem dritten Beispiel habe ich die Regel endlich begriffen.",
+    "targetWord": "begriffen",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/114eda0ff4318667.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "blättert",
+  "sentence": "Sie _____ im Wartezimmer gelangweilt durch eine Zeitschrift.",
+  "featured": false,
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "blättert",
+   "options": [
+    "blättert",
+    "singt",
+    "schwimmt",
+    "rechnet"
+   ],
+   "translation": "Bored in the waiting room, she _____ through a magazine.",
+   "optionTranslations": [
+    "leafs",
+    "sings",
+    "swims",
+    "calculates"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Sie blättert im Wartezimmer gelangweilt durch eine Zeitschrift.",
+    "targetWord": "blättert",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46a1f8a536367829.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "grinsen",
+  "sentence": "Timo [[grinst]] in seinen Kaffee.",
+  "featured": false,
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to grin",
+   "options": [
+    "to grin",
+    "to stare",
+    "to whisper",
+    "to sigh"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-stempel-bis-zur-existenz",
+    "storySource": "user",
+    "sentence": "Timo grinst in seinen Kaffee.",
+    "targetWord": "grinst",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2a77d203d1a8a2f4.mp3"
+   }
+  }
+ }
 ]

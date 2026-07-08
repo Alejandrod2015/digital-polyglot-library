@@ -1,522 +1,490 @@
 [
-  {
-    "type": "meaning_in_context",
-    "word": "der Nacken",
-    "sentence": "Schon beim Aufwachen meldet sich der [[Nacken]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "back of the neck",
-      "options": [
-        "back of the neck",
-        "left knee",
-        "right hand",
-        "lower back"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Schon beim Aufwachen meldet sich der Nacken.",
-        "targetWord": "Nacken",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d42bbdf59a55f9d.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "sich melden",
-    "sentence": "Der verspannte Nacken [[meldet sich]] am Morgen.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "makes itself felt",
-      "options": [
-        "makes itself felt",
-        "stays silent",
-        "heals fully",
-        "gets colder"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Der verspannte Nacken meldet sich am Morgen.",
-        "targetWord": "meldet sich",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0fff3eb65ad9ee3.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "verspannt",
-    "sentence": "Vom Tragen ist Nadias Rücken völlig [[verspannt]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "tense, knotted",
-      "options": [
-        "tense, knotted",
-        "perfectly fine",
-        "freshly washed",
-        "brand new"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Vom Tragen ist Nadias Rücken völlig verspannt.",
-        "targetWord": "verspannt",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c2eb214b2371765c.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "gesetzlich versichert",
-    "sentence": "Am Telefon fragt man zuerst: [[gesetzlich versichert]]?",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "on public insurance",
-      "options": [
-        "on public insurance",
-        "born in Berlin",
-        "new in town",
-        "free this week"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Am Telefon fragt man zuerst: gesetzlich versichert?",
-        "targetWord": "gesetzlich versichert",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0d65b1fbb86b29e.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "frei",
-    "sentence": "Der nächste [[freie]] Termin ist erst im Oktober.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "free, available",
-      "options": [
-        "free, available",
-        "expensive",
-        "secret",
-        "cancelled"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Der nächste freie Termin ist erst im Oktober.",
-        "targetWord": "freie",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb7ebc7e590cad93.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "Gute Besserung",
-    "sentence": "Die Praxis wünscht freundlich [[Gute Besserung]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "get well soon",
-      "options": [
-        "get well soon",
-        "good luck",
-        "see you soon",
-        "many thanks"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Die Praxis wünscht freundlich Gute Besserung.",
-        "targetWord": "Gute Besserung",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/68976b7ab589866b.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "der Akuttermin",
-    "sentence": "Für heute gibt es höchstens einen [[Akuttermin]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "emergency slot",
-      "options": [
-        "emergency slot",
-        "free coffee",
-        "spare key",
-        "quiet room"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Für heute gibt es höchstens einen Akuttermin.",
-        "targetWord": "Akuttermin",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a34eb5048b2a7a73.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "sich gedulden",
-    "sentence": "Bis Oktober muss der Nacken sich [[gedulden]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "be patient",
-      "options": [
-        "be patient",
-        "get worse",
-        "disappear",
-        "complain"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Bis Oktober muss der Nacken sich gedulden.",
-        "targetWord": "gedulden",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0c80788508c96cb1.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "der Kassenpatient",
-    "sentence": "Als [[Kassenpatient]] wartet man deutlich länger.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "publicly insured patient",
-      "options": [
-        "publicly insured patient",
-        "private patient",
-        "new arrival",
-        "hospital nurse"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Als Kassenpatient wartet man deutlich länger.",
-        "targetWord": "Kassenpatient",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b6745f67d95feab4.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "auf die lange Bank schieben",
-    "sentence": "Termine werden gern [[auf die lange Bank geschoben]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "put off for ages",
-      "options": [
-        "put off for ages",
-        "dealt with fast",
-        "cancelled at once",
-        "handled for free"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Termine werden gern auf die lange Bank geschoben.",
-        "targetWord": "auf die lange Bank geschoben",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/330b633c81a5cc04.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "die Überweisung",
-    "sentence": "Der Hausarzt schreibt dir zuerst eine [[Überweisung]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "referral note",
-      "options": [
-        "referral note",
-        "credit report",
-        "rental contract",
-        "meter reading"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Der Hausarzt schreibt dir zuerst eine Überweisung.",
-        "targetWord": "Überweisung",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f1335de1816be302.mp3"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "der Bereitschaftsdienst",
-    "sentence": "Nachts hilft nur der ärztliche [[Bereitschaftsdienst]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "on-call service",
-      "options": [
-        "on-call service",
-        "family doctor",
-        "pharmacy counter",
-        "waiting room"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Nachts hilft nur der ärztliche Bereitschaftsdienst.",
-        "targetWord": "Bereitschaftsdienst",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdc60c2501956a0e.mp3"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "steif",
-    "sentence": "Nach dem Umzug ist Nadias Hals ganz [[steif]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "stiff",
-      "options": [
-        "stiff",
-        "warm",
-        "clean",
-        "strong"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Nach dem Umzug ist Nadias Hals ganz steif.",
-        "targetWord": "steif",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/80dacc5aed681fdb.mp3"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "Willkommen im System",
-    "sentence": "Timo grinst nur: [[Willkommen im System]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "welcome to the system",
-      "options": [
-        "welcome to the system",
-        "get well soon",
-        "better luck next time",
-        "see you around"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Timo grinst nur: Willkommen im System.",
-        "targetWord": "Willkommen im System",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/343e46b431142d7e.mp3"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "greifen",
-    "sentence": "Vor dem Anruf muss Nadia zum Telefon _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "greifen",
-      "options": [
-        "greifen",
-        "verstecken",
-        "zerbrechen",
-        "suchen"
-      ],
-      "translation": "Before the call Nadia has to _____ the phone.",
-      "optionTranslations": [
-        "reach for",
-        "hide",
-        "break",
-        "search"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Vor dem Anruf muss Nadia zum Telefon greifen.",
-        "targetWord": "greifen",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c74c90c8bcd8310a.mp3"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "durchkommen",
-    "sentence": "Um acht muss man erst mal am Telefon _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "durchkommen",
-      "options": [
-        "durchkommen",
-        "auflegen",
-        "warten",
-        "aufgeben"
-      ],
-      "translation": "At eight you first have to _____ on the phone.",
-      "optionTranslations": [
-        "get through",
-        "hang up",
-        "wait",
-        "give up"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Um acht muss man erst mal am Telefon durchkommen.",
-        "targetWord": "durchkommen",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dcccc32902777e17.mp3"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "auflegen",
-    "sentence": "Ohne Termin muss Nadia enttäuscht _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "auflegen",
-      "options": [
-        "auflegen",
-        "durchkommen",
-        "weiterreden",
-        "lächeln"
-      ],
-      "translation": "Without an appointment Nadia has to _____ disappointed.",
-      "optionTranslations": [
-        "hang up",
-        "get through",
-        "keep talking",
-        "smile"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Ohne Termin muss Nadia enttäuscht auflegen.",
-        "targetWord": "auflegen",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b32680df6addb7dc.mp3"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "fill_blank",
-    "word": "nachgeben",
-    "sentence": "Am Abend muss der überlastete Rücken endlich _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "nachgeben",
-      "options": [
-        "nachgeben",
-        "durchhalten",
-        "wachsen",
-        "glänzen"
-      ],
-      "translation": "In the evening the overworked back finally has to _____.",
-      "optionTranslations": [
-        "give way",
-        "hold out",
-        "grow",
-        "shine"
-      ],
-      "audioClip": {
-        "storySlug": "gute-besserung-im-oktober",
-        "storySource": "user",
-        "sentence": "Am Abend muss der überlastete Rücken endlich nachgeben.",
-        "targetWord": "nachgeben",
-        "language": "german",
-        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2185696b13a11aaf.mp3"
-      }
-    },
-    "featured": false
-  },
-  {
-    "type": "match_meaning",
-    "word": "der Orthopäde,der Termin,die Praxis,der Hausarzt",
-    "sentence": "",
-    "payload": {
-      "prompt": "Match the words to their meanings.",
-      "pairs": [
-        {
-          "word": "der Orthopäde",
-          "answer": "orthopaedist",
-          "options": [
-            "orthopaedist",
-            "appointment",
-            "doctor's practice",
-            "family doctor, GP"
-          ]
-        },
-        {
-          "word": "der Termin",
-          "answer": "appointment",
-          "options": [
-            "orthopaedist",
-            "appointment",
-            "doctor's practice",
-            "family doctor, GP"
-          ]
-        },
-        {
-          "word": "die Praxis",
-          "answer": "doctor's practice",
-          "options": [
-            "orthopaedist",
-            "appointment",
-            "doctor's practice",
-            "family doctor, GP"
-          ]
-        },
-        {
-          "word": "der Hausarzt",
-          "answer": "family doctor, GP",
-          "options": [
-            "orthopaedist",
-            "appointment",
-            "doctor's practice",
-            "family doctor, GP"
-          ]
-        }
-      ],
-      "audioClip": null
-    },
-    "featured": false
+ {
+  "type": "meaning_in_context",
+  "word": "der Nacken",
+  "sentence": "Schon beim Aufwachen meldet sich der [[Nacken]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "back of the neck",
+   "options": [
+    "back of the neck",
+    "left knee",
+    "right hand",
+    "lower back"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Schon beim Aufwachen meldet sich der Nacken.",
+    "targetWord": "Nacken",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d42bbdf59a55f9d.mp3"
+   }
   }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sich melden",
+  "sentence": "Der verspannte Nacken [[meldet sich]] am Morgen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "makes itself felt",
+   "options": [
+    "makes itself felt",
+    "stays silent",
+    "heals fully",
+    "gets colder"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Der verspannte Nacken meldet sich am Morgen.",
+    "targetWord": "meldet sich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0fff3eb65ad9ee3.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verspannt",
+  "sentence": "Vom Tragen ist Nadias Rücken völlig [[verspannt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tense, knotted",
+   "options": [
+    "tense, knotted",
+    "perfectly fine",
+    "freshly washed",
+    "brand new"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Vom Tragen ist Nadias Rücken völlig verspannt.",
+    "targetWord": "verspannt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c2eb214b2371765c.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gesetzlich versichert",
+  "sentence": "Am Telefon fragt man zuerst: [[gesetzlich versichert]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on public insurance",
+   "options": [
+    "on public insurance",
+    "born in Berlin",
+    "new in town",
+    "free this week"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Am Telefon fragt man zuerst: gesetzlich versichert?",
+    "targetWord": "gesetzlich versichert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0d65b1fbb86b29e.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "frei",
+  "sentence": "Der nächste [[freie]] Termin ist erst im Oktober.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "free, available",
+   "options": [
+    "free, available",
+    "expensive",
+    "secret",
+    "cancelled"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Der nächste freie Termin ist erst im Oktober.",
+    "targetWord": "freie",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb7ebc7e590cad93.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Gute Besserung",
+  "sentence": "Die Praxis wünscht freundlich [[Gute Besserung]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "get well soon",
+   "options": [
+    "get well soon",
+    "good luck",
+    "see you soon",
+    "many thanks"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Die Praxis wünscht freundlich Gute Besserung.",
+    "targetWord": "Gute Besserung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/68976b7ab589866b.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Akuttermin",
+  "sentence": "Für heute gibt es höchstens einen [[Akuttermin]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "emergency slot",
+   "options": [
+    "emergency slot",
+    "free coffee",
+    "spare key",
+    "quiet room"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Für heute gibt es höchstens einen Akuttermin.",
+    "targetWord": "Akuttermin",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a34eb5048b2a7a73.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sich gedulden",
+  "sentence": "Bis Oktober muss der Nacken sich [[gedulden]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "be patient",
+   "options": [
+    "be patient",
+    "get worse",
+    "disappear",
+    "complain"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Bis Oktober muss der Nacken sich gedulden.",
+    "targetWord": "gedulden",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0c80788508c96cb1.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Kassenpatient",
+  "sentence": "Als [[Kassenpatient]] wartet man deutlich länger.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "publicly insured patient",
+   "options": [
+    "publicly insured patient",
+    "private patient",
+    "new arrival",
+    "hospital nurse"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Als Kassenpatient wartet man deutlich länger.",
+    "targetWord": "Kassenpatient",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b6745f67d95feab4.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "auf die lange Bank schieben",
+  "sentence": "Termine werden gern [[auf die lange Bank geschoben]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "put off for ages",
+   "options": [
+    "put off for ages",
+    "dealt with fast",
+    "cancelled at once",
+    "handled for free"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Termine werden gern auf die lange Bank geschoben.",
+    "targetWord": "auf die lange Bank geschoben",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/330b633c81a5cc04.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Überweisung",
+  "sentence": "Der Hausarzt schreibt dir zuerst eine [[Überweisung]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "referral note",
+   "options": [
+    "referral note",
+    "credit report",
+    "rental contract",
+    "meter reading"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Der Hausarzt schreibt dir zuerst eine Überweisung.",
+    "targetWord": "Überweisung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f1335de1816be302.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Bereitschaftsdienst",
+  "sentence": "Nachts hilft nur der ärztliche [[Bereitschaftsdienst]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on-call service",
+   "options": [
+    "on-call service",
+    "family doctor",
+    "pharmacy counter",
+    "waiting room"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Nachts hilft nur der ärztliche Bereitschaftsdienst.",
+    "targetWord": "Bereitschaftsdienst",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdc60c2501956a0e.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "steif",
+  "sentence": "Nach dem Umzug ist Nadias Hals ganz [[steif]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stiff",
+   "options": [
+    "stiff",
+    "warm",
+    "clean",
+    "strong"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Nach dem Umzug ist Nadias Hals ganz steif.",
+    "targetWord": "steif",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/80dacc5aed681fdb.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Willkommen im System",
+  "sentence": "Timo grinst nur: [[Willkommen im System]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "welcome to the system",
+   "options": [
+    "welcome to the system",
+    "get well soon",
+    "better luck next time",
+    "see you around"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Timo grinst nur: Willkommen im System.",
+    "targetWord": "Willkommen im System",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/343e46b431142d7e.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "greifen",
+  "sentence": "Vor dem Anruf muss Nadia zum Telefon _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "greifen",
+   "options": [
+    "greifen",
+    "verstecken",
+    "zerbrechen",
+    "suchen"
+   ],
+   "translation": "Before the call Nadia has to _____ the phone.",
+   "optionTranslations": [
+    "reach for",
+    "hide",
+    "break",
+    "search"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Vor dem Anruf muss Nadia zum Telefon greifen.",
+    "targetWord": "greifen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c74c90c8bcd8310a.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "auflegen",
+  "sentence": "Ohne Termin muss Nadia enttäuscht _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "auflegen",
+   "options": [
+    "auflegen",
+    "durchkommen",
+    "weiterreden",
+    "lächeln"
+   ],
+   "translation": "Without an appointment Nadia has to _____ disappointed.",
+   "optionTranslations": [
+    "hang up",
+    "get through",
+    "keep talking",
+    "smile"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Ohne Termin muss Nadia enttäuscht auflegen.",
+    "targetWord": "auflegen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b32680df6addb7dc.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "nachgeben",
+  "sentence": "Am Abend muss der überlastete Rücken endlich _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nachgeben",
+   "options": [
+    "nachgeben",
+    "durchhalten",
+    "wachsen",
+    "glänzen"
+   ],
+   "translation": "In the evening the overworked back finally has to _____.",
+   "optionTranslations": [
+    "give way",
+    "hold out",
+    "grow",
+    "shine"
+   ],
+   "audioClip": {
+    "storySlug": "gute-besserung-im-oktober",
+    "storySource": "user",
+    "sentence": "Am Abend muss der überlastete Rücken endlich nachgeben.",
+    "targetWord": "nachgeben",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2185696b13a11aaf.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "der Orthopäde,der Termin,die Praxis,der Hausarzt",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Orthopäde",
+     "answer": "orthopaedist",
+     "options": [
+      "orthopaedist",
+      "appointment",
+      "doctor's practice",
+      "family doctor, GP"
+     ]
+    },
+    {
+     "word": "der Termin",
+     "answer": "appointment",
+     "options": [
+      "orthopaedist",
+      "appointment",
+      "doctor's practice",
+      "family doctor, GP"
+     ]
+    },
+    {
+     "word": "die Praxis",
+     "answer": "doctor's practice",
+     "options": [
+      "orthopaedist",
+      "appointment",
+      "doctor's practice",
+      "family doctor, GP"
+     ]
+    },
+    {
+     "word": "der Hausarzt",
+     "answer": "family doctor, GP",
+     "options": [
+      "orthopaedist",
+      "appointment",
+      "doctor's practice",
+      "family doctor, GP"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
 ]

@@ -1,597 +1,535 @@
 [
-  {
-    "type": "meaning_in_context",
-    "word": "die Wohnungsgeberbestätigung",
-    "sentence": "Was bitte ist eine [[Wohnungsgeberbestätigung]]?",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "landlord's confirmation",
-      "options": [
-        "landlord's confirmation",
-        "rental invoice",
-        "salary certificate",
-        "insurance card"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Was bitte ist eine Wohnungsgeberbestätigung?",
-        "targetWord": "Wohnungsgeberbestätigung",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/705a21889729070c.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "wie vom Erdboden verschluckt",
-    "sentence": "Mein Vermieter ist seit einer Woche [[wie vom Erdboden verschluckt]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "vanished without a trace",
-      "options": [
-        "vanished without a trace",
-        "back from a trip",
-        "busy at the office",
-        "angry at everyone"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Mein Vermieter ist seit einer Woche wie vom Erdboden verschluckt.",
-        "targetWord": "wie vom Erdboden verschluckt",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4e6da7a8a2a5c0c0.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "gnadenlos",
-    "sentence": "Ohne die schicken sie dich wieder nach Hause: freundlich, aber [[gnadenlos]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "merciless",
-      "options": [
-        "merciless",
-        "careless",
-        "harmless",
-        "pointless"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Ohne die schicken sie dich wieder nach Hause: freundlich, aber gnadenlos.",
-        "targetWord": "gnadenlos",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a716ebdbafc10639.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "durchstehen",
-    "sentence": "Ein Mensch, der so etwas schon öfter [[durchgestanden]] hat.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to endure",
-      "options": [
-        "to endure",
-        "to avoid",
-        "to forget",
-        "to explain"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Ein Mensch, der so etwas schon öfter durchgestanden hat.",
-        "targetWord": "durchgestanden",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b601fdbe435d78f.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "ausspucken",
-    "sentence": "Punkt sieben [[spuckt]] das Portal die stornierten Termine aus.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to spit out",
-      "options": [
-        "to spit out",
-        "to hold back",
-        "to count up",
-        "to write down"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Punkt sieben spuckt das Portal die stornierten Termine aus.",
-        "targetWord": "spuckt",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/179946adc634bd3b.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "im Sekundentakt",
-    "sentence": "Ab kurz vor sieben aktualisierst du [[im Sekundentakt]].",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "every single second",
-      "options": [
-        "every single second",
-        "once in a while",
-        "at the last minute",
-        "twice a day"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Ab kurz vor sieben aktualisierst du im Sekundentakt.",
-        "targetWord": "im Sekundentakt",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49c9c14ed25b7640.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "allmählich",
-    "sentence": "Nadia versteht [[allmählich]], warum hier alle eine Thermoskanne dabeihaben.",
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "gradually",
-      "options": [
-        "gradually",
-        "suddenly",
-        "rarely",
-        "loudly"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Nadia versteht allmählich, warum hier alle eine Thermoskanne dabeihaben.",
-        "targetWord": "allmählich",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/967582e96124e7df.mp3"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "kriegst",
-    "sentence": "Wenn du früh kommst, _____ du noch einen guten Platz.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "kriegst",
-      "options": [
-        "kriegst",
-        "verlierst",
-        "vergisst",
-        "bezahlst"
-      ],
-      "translation": "If you come early, you still _____ a good seat.",
-      "optionTranslations": [
-        "get",
-        "lose",
-        "forget",
-        "pay for"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Wenn du früh kommst, kriegst du noch einen guten Platz.",
-        "targetWord": "kriegst",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8bf7ef9bd9f5f9c.mp3"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "zurückgezogen",
-    "sentence": "Der Kunde war unsicher und hat sein Angebot schnell wieder _____.",
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "zurückgezogen",
-      "options": [
-        "zurückgezogen",
-        "erhöht",
-        "unterschrieben",
-        "wiederholt"
-      ],
-      "translation": "The customer was unsure and quickly _____ his offer again.",
-      "optionTranslations": [
-        "withdrew",
-        "raised",
-        "signed",
-        "repeated"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Der Kunde war unsicher und hat sein Angebot schnell wieder zurückgezogen.",
-        "targetWord": "zurückgezogen",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/87849b5e5e7e1388.mp3"
-      }
-    }
-  },
-  {
-    "type": "match_meaning",
-    "word": "das Vergnügen,der Anlauf,die Anzeige,gelassen",
-    "sentence": "",
-    "payload": {
-      "prompt": "Match the words to their meanings.",
-      "pairs": [
-        {
-          "word": "das Vergnügen",
-          "answer": "pleasure, fun",
-          "options": [
-            "pleasure, fun",
-            "attempt, try",
-            "display board",
-            "calm, composed"
-          ]
-        },
-        {
-          "word": "der Anlauf",
-          "answer": "attempt, try",
-          "options": [
-            "pleasure, fun",
-            "attempt, try",
-            "display board",
-            "calm, composed"
-          ]
-        },
-        {
-          "word": "die Anzeige",
-          "answer": "display board",
-          "options": [
-            "pleasure, fun",
-            "attempt, try",
-            "display board",
-            "calm, composed"
-          ]
-        },
-        {
-          "word": "gelassen",
-          "answer": "calm, composed",
-          "options": [
-            "pleasure, fun",
-            "attempt, try",
-            "display board",
-            "calm, composed"
-          ]
-        }
-      ],
-      "audioClip": null
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "sozusagen",
-    "sentence": "Ich pflege [[sozusagen]] eine Tradition.",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "so to speak",
-      "options": [
-        "so to speak",
-        "above all",
-        "by accident",
-        "for example"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Ich pflege sozusagen eine Tradition.",
-        "targetWord": "sozusagen",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d83647d8a3a4c39.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "ausverkauft",
-    "sentence": "Hier kriegst du eher Karten für ein [[ausverkauftes]] Konzert.",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "sold out",
-      "options": [
-        "sold out",
-        "brand new",
-        "half empty",
-        "very loud"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Hier kriegst du eher Karten für ein ausverkauftes Konzert.",
-        "targetWord": "ausverkauftes",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ccda37d64985f9a0.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "Wer zuerst kommt, mahlt zuerst",
-    "sentence": "[[Wer zuerst klickt, mahlt zuerst]].",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "first come, first served",
-      "options": [
-        "first come, first served",
-        "practice makes perfect",
-        "better late than never",
-        "no pain, no gain"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Wer zuerst klickt, mahlt zuerst.",
-        "targetWord": "Wer zuerst klickt, mahlt zuerst",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02d3192357b2bcfa.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "schriftlich",
-    "sentence": "Die [[schriftliche]] Bestätigung deines Vermieters.",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "in writing",
-      "options": [
-        "in writing",
-        "by phone",
-        "in person",
-        "on time"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Die schriftliche Bestätigung deines Vermieters.",
-        "targetWord": "schriftliche",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f47df82567d64df.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "balancieren",
-    "sentence": "Kurz vor sieben [[balanciert]] Nadia ihren Kaffee auf dem Unterarm.",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to balance",
-      "options": [
-        "to balance",
-        "to spill",
-        "to warm up",
-        "to give away"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Kurz vor sieben balanciert Nadia ihren Kaffee auf dem Unterarm.",
-        "targetWord": "balanciert",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/018a276f4059e3e0.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "pflegen",
-    "sentence": "Ich [[pflege]] sozusagen eine Tradition.",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "to keep up",
-      "options": [
-        "to keep up",
-        "to give up",
-        "to set up",
-        "to mix up"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Ich pflege sozusagen eine Tradition.",
-        "targetWord": "pflege",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d83647d8a3a4c39.mp3"
-      }
-    }
-  },
-  {
-    "type": "meaning_in_context",
-    "word": "eher ... als",
-    "sentence": "Hier kriegst du [[eher]] Karten für ein Konzert als einen Termin.",
-    "featured": false,
-    "payload": {
-      "prompt": "Choose the meaning in context.",
-      "answer": "sooner ... than",
-      "options": [
-        "sooner ... than",
-        "as well ... as",
-        "neither ... nor",
-        "not only ... but"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Hier kriegst du eher Karten für ein Konzert als einen Termin.",
-        "targetWord": "eher",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4fcdc01f027bd0b5.mp3"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "dabeihaben",
-    "sentence": "Es regnet oft hier; ich will meinen Schirm immer _____.",
-    "featured": false,
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "dabeihaben",
-      "options": [
-        "dabeihaben",
-        "vergessen",
-        "verkaufen",
-        "suchen"
-      ],
-      "translation": "It often rains here; I always want to _____ my umbrella.",
-      "optionTranslations": [
-        "have with me",
-        "forget",
-        "sell",
-        "look for"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Es regnet oft hier; ich will meinen Schirm immer dabeihaben.",
-        "targetWord": "dabeihaben",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a49c02c99a9f5256.mp3"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "flackert",
-    "sentence": "Die alte Lampe _____ , wenn der Wind stark ist.",
-    "featured": false,
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "flackert",
-      "options": [
-        "flackert",
-        "schweigt",
-        "schmilzt",
-        "klingelt"
-      ],
-      "translation": "The old lamp _____ when the wind is strong.",
-      "optionTranslations": [
-        "flickers",
-        "stays silent",
-        "melts",
-        "rings"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Die alte Lampe flackert, wenn der Wind stark ist.",
-        "targetWord": "flackert",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/52e110fceb2bf4d9.mp3"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "ausgefülltes",
-    "sentence": "Sie gibt das _____ Formular ab; jede Frage hat eine Antwort.",
-    "featured": false,
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "ausgefülltes",
-      "options": [
-        "ausgefülltes",
-        "leeres",
-        "gedrucktes",
-        "kopiertes"
-      ],
-      "translation": "She hands in the _____ form; every question has an answer.",
-      "optionTranslations": [
-        "filled-out",
-        "empty",
-        "printed",
-        "copied"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Sie gibt das ausgefüllte Formular ab; jede Frage hat eine Antwort.",
-        "targetWord": "ausgefülltes",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02c3941a1229a532.mp3"
-      }
-    }
-  },
-  {
-    "type": "fill_blank",
-    "word": "längst",
-    "sentence": "Der Film läuft seit einer Stunde; er hat _____ angefangen.",
-    "featured": false,
-    "payload": {
-      "prompt": "Complete the sentence.",
-      "answer": "längst",
-      "options": [
-        "längst",
-        "niemals",
-        "kaum",
-        "selten"
-      ],
-      "translation": "The film has been running for an hour; it started _____.",
-      "optionTranslations": [
-        "long ago",
-        "never",
-        "hardly",
-        "rarely"
-      ],
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Der Film läuft seit einer Stunde; er hat längst angefangen.",
-        "targetWord": "längst",
-        "language": "german",
-        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2be5cbcc2c2c33ca.mp3"
-      }
-    }
-  },
-  {
-    "type": "listen_choose",
-    "featured": false,
-    "word": "ergattern",
-    "sentence": "Ich habe tatsächlich einen Termin ergattert.",
-    "payload": {
-      "prompt": "Which word did you hear?",
-      "answer": "ergattert",
-      "options": [
-        "ergattert",
-        "erwartet",
-        "erhalten",
-        "ergriffen"
-      ],
-      "optionTranslations": [
-        "snagged",
-        "expected",
-        "received",
-        "grabbed"
-      ],
-      "language": "german",
-      "audioClip": {
-        "storySlug": "buergeramt-neukoelln-sieben-uhr",
-        "storySource": "user",
-        "sentence": "Ich habe tatsächlich einen Termin ergattert.",
-        "targetWord": "ergattert",
-        "language": "german",
-        "voiceId": "SJJe86Va82zRzg6zi2dX"
-      }
-    }
+ {
+  "type": "meaning_in_context",
+  "word": "die Wohnungsgeberbestätigung",
+  "sentence": "Was bitte ist eine [[Wohnungsgeberbestätigung]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "landlord's confirmation",
+   "options": [
+    "landlord's confirmation",
+    "rental invoice",
+    "salary certificate",
+    "insurance card"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Was bitte ist eine Wohnungsgeberbestätigung?",
+    "targetWord": "Wohnungsgeberbestätigung",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/705a21889729070c.mp3"
+   }
   }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wie vom Erdboden verschluckt",
+  "sentence": "Mein Vermieter ist seit einer Woche [[wie vom Erdboden verschluckt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "vanished without a trace",
+   "options": [
+    "vanished without a trace",
+    "back from a trip",
+    "busy at the office",
+    "angry at everyone"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Mein Vermieter ist seit einer Woche wie vom Erdboden verschluckt.",
+    "targetWord": "wie vom Erdboden verschluckt",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4e6da7a8a2a5c0c0.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gnadenlos",
+  "sentence": "Ohne die schicken sie dich wieder nach Hause: freundlich, aber [[gnadenlos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "merciless",
+   "options": [
+    "merciless",
+    "careless",
+    "harmless",
+    "pointless"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Ohne die schicken sie dich wieder nach Hause: freundlich, aber gnadenlos.",
+    "targetWord": "gnadenlos",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a716ebdbafc10639.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "durchstehen",
+  "sentence": "Ein Mensch, der so etwas schon öfter [[durchgestanden]] hat.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to endure",
+   "options": [
+    "to endure",
+    "to avoid",
+    "to forget",
+    "to explain"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Ein Mensch, der so etwas schon öfter durchgestanden hat.",
+    "targetWord": "durchgestanden",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b601fdbe435d78f.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ausspucken",
+  "sentence": "Punkt sieben [[spuckt]] das Portal die stornierten Termine aus.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to spit out",
+   "options": [
+    "to spit out",
+    "to hold back",
+    "to count up",
+    "to write down"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Punkt sieben spuckt das Portal die stornierten Termine aus.",
+    "targetWord": "spuckt",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/179946adc634bd3b.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "im Sekundentakt",
+  "sentence": "Ab kurz vor sieben aktualisierst du [[im Sekundentakt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "every single second",
+   "options": [
+    "every single second",
+    "once in a while",
+    "at the last minute",
+    "twice a day"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Ab kurz vor sieben aktualisierst du im Sekundentakt.",
+    "targetWord": "im Sekundentakt",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49c9c14ed25b7640.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "allmählich",
+  "sentence": "Nadia versteht [[allmählich]], warum hier alle eine Thermoskanne dabeihaben.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gradually",
+   "options": [
+    "gradually",
+    "suddenly",
+    "rarely",
+    "loudly"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Nadia versteht allmählich, warum hier alle eine Thermoskanne dabeihaben.",
+    "targetWord": "allmählich",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/967582e96124e7df.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "kriegst",
+  "sentence": "Wenn du früh kommst, _____ du noch einen guten Platz.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kriegst",
+   "options": [
+    "kriegst",
+    "verlierst",
+    "vergisst",
+    "bezahlst"
+   ],
+   "translation": "If you come early, you still _____ a good seat.",
+   "optionTranslations": [
+    "get",
+    "lose",
+    "forget",
+    "pay for"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Wenn du früh kommst, kriegst du noch einen guten Platz.",
+    "targetWord": "kriegst",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8bf7ef9bd9f5f9c.mp3"
+   }
+  }
+ },
+ {
+  "type": "match_meaning",
+  "word": "das Vergnügen,der Anlauf,die Anzeige,gelassen",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "das Vergnügen",
+     "answer": "pleasure, fun",
+     "options": [
+      "pleasure, fun",
+      "attempt, try",
+      "display board",
+      "calm, composed"
+     ]
+    },
+    {
+     "word": "der Anlauf",
+     "answer": "attempt, try",
+     "options": [
+      "pleasure, fun",
+      "attempt, try",
+      "display board",
+      "calm, composed"
+     ]
+    },
+    {
+     "word": "die Anzeige",
+     "answer": "display board",
+     "options": [
+      "pleasure, fun",
+      "attempt, try",
+      "display board",
+      "calm, composed"
+     ]
+    },
+    {
+     "word": "gelassen",
+     "answer": "calm, composed",
+     "options": [
+      "pleasure, fun",
+      "attempt, try",
+      "display board",
+      "calm, composed"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sozusagen",
+  "sentence": "Ich pflege [[sozusagen]] eine Tradition.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "so to speak",
+   "options": [
+    "so to speak",
+    "above all",
+    "by accident",
+    "for example"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Ich pflege sozusagen eine Tradition.",
+    "targetWord": "sozusagen",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d83647d8a3a4c39.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ausverkauft",
+  "sentence": "Hier kriegst du eher Karten für ein [[ausverkauftes]] Konzert.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sold out",
+   "options": [
+    "sold out",
+    "brand new",
+    "half empty",
+    "very loud"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Hier kriegst du eher Karten für ein ausverkauftes Konzert.",
+    "targetWord": "ausverkauftes",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ccda37d64985f9a0.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Wer zuerst kommt, mahlt zuerst",
+  "sentence": "[[Wer zuerst klickt, mahlt zuerst]].",
+  "featured": false,
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "first come, first served",
+   "options": [
+    "first come, first served",
+    "practice makes perfect",
+    "better late than never",
+    "no pain, no gain"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Wer zuerst klickt, mahlt zuerst.",
+    "targetWord": "Wer zuerst klickt, mahlt zuerst",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02d3192357b2bcfa.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schriftlich",
+  "sentence": "Die [[schriftliche]] Bestätigung deines Vermieters.",
+  "featured": false,
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in writing",
+   "options": [
+    "in writing",
+    "by phone",
+    "in person",
+    "on time"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Die schriftliche Bestätigung deines Vermieters.",
+    "targetWord": "schriftliche",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f47df82567d64df.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "balancieren",
+  "sentence": "Kurz vor sieben [[balanciert]] Nadia ihren Kaffee auf dem Unterarm.",
+  "featured": false,
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to balance",
+   "options": [
+    "to balance",
+    "to spill",
+    "to warm up",
+    "to give away"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Kurz vor sieben balanciert Nadia ihren Kaffee auf dem Unterarm.",
+    "targetWord": "balanciert",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/018a276f4059e3e0.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pflegen",
+  "sentence": "Ich [[pflege]] sozusagen eine Tradition.",
+  "featured": false,
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to keep up",
+   "options": [
+    "to keep up",
+    "to give up",
+    "to set up",
+    "to mix up"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Ich pflege sozusagen eine Tradition.",
+    "targetWord": "pflege",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d83647d8a3a4c39.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "eher ... als",
+  "sentence": "Hier kriegst du [[eher]] Karten für ein Konzert als einen Termin.",
+  "featured": false,
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sooner ... than",
+   "options": [
+    "sooner ... than",
+    "as well ... as",
+    "neither ... nor",
+    "not only ... but"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Hier kriegst du eher Karten für ein Konzert als einen Termin.",
+    "targetWord": "eher",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4fcdc01f027bd0b5.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "dabeihaben",
+  "sentence": "Es regnet oft hier; ich will meinen Schirm immer _____.",
+  "featured": false,
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dabeihaben",
+   "options": [
+    "dabeihaben",
+    "vergessen",
+    "verkaufen",
+    "suchen"
+   ],
+   "translation": "It often rains here; I always want to _____ my umbrella.",
+   "optionTranslations": [
+    "have with me",
+    "forget",
+    "sell",
+    "look for"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Es regnet oft hier; ich will meinen Schirm immer dabeihaben.",
+    "targetWord": "dabeihaben",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a49c02c99a9f5256.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "flackert",
+  "sentence": "Die alte Lampe _____ , wenn der Wind stark ist.",
+  "featured": false,
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "flackert",
+   "options": [
+    "flackert",
+    "schweigt",
+    "schmilzt",
+    "klingelt"
+   ],
+   "translation": "The old lamp _____ when the wind is strong.",
+   "optionTranslations": [
+    "flickers",
+    "stays silent",
+    "melts",
+    "rings"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Die alte Lampe flackert, wenn der Wind stark ist.",
+    "targetWord": "flackert",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/52e110fceb2bf4d9.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "ausgefülltes",
+  "sentence": "Sie gibt das _____ Formular ab; jede Frage hat eine Antwort.",
+  "featured": false,
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ausgefülltes",
+   "options": [
+    "ausgefülltes",
+    "leeres",
+    "gedrucktes",
+    "kopiertes"
+   ],
+   "translation": "She hands in the _____ form; every question has an answer.",
+   "optionTranslations": [
+    "filled-out",
+    "empty",
+    "printed",
+    "copied"
+   ],
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Sie gibt das ausgefüllte Formular ab; jede Frage hat eine Antwort.",
+    "targetWord": "ausgefülltes",
+    "language": "german",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02c3941a1229a532.mp3"
+   }
+  }
+ },
+ {
+  "type": "listen_choose",
+  "featured": false,
+  "word": "ergattern",
+  "sentence": "Ich habe tatsächlich einen Termin ergattert.",
+  "payload": {
+   "prompt": "Which word did you hear?",
+   "answer": "ergattert",
+   "options": [
+    "ergattert",
+    "erwartet",
+    "erhalten",
+    "ergriffen"
+   ],
+   "optionTranslations": [
+    "snagged",
+    "expected",
+    "received",
+    "grabbed"
+   ],
+   "language": "german",
+   "audioClip": {
+    "storySlug": "buergeramt-neukoelln-sieben-uhr",
+    "storySource": "user",
+    "sentence": "Ich habe tatsächlich einen Termin ergattert.",
+    "targetWord": "ergattert",
+    "language": "german",
+    "voiceId": "SJJe86Va82zRzg6zi2dX"
+   }
+  }
+ }
 ]
