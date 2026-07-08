@@ -1,456 +1,472 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "die Schraube",
-  "sentence": "Nadia braucht nur eine einzige [[Schraube]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "screw",
-   "options": [
-    "screw",
-    "shelf",
-    "drill",
-    "bell"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Nadia braucht nur eine einzige Schraube.",
-    "targetWord": "Schraube",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Kirchenglocke",
-  "sentence": "Am Sonntag darf nur die [[Kirchenglocke]] laut sein.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "church bell",
-   "options": [
-    "church bell",
-    "electric drill",
-    "alarm clock",
-    "car horn"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Am Sonntag darf nur die Kirchenglocke laut sein.",
-    "targetWord": "Kirchenglocke",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Regal",
-  "sentence": "Das neue [[Regal]] wartet noch in seiner Kiste.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "shelf",
-   "options": [
-    "shelf",
-    "drill",
-    "screw",
-    "stairwell"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Das neue Regal wartet noch in seiner Kiste.",
-    "targetWord": "Regal",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Kriegserklärung",
-  "sentence": "Der laminierte Zettel wirkt wie eine [[Kriegserklärung]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "declaration of war",
-   "options": [
-    "declaration of war",
-    "friendly note",
-    "shopping list",
-    "warm welcome"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Der laminierte Zettel wirkt wie eine Kriegserklärung.",
-    "targetWord": "Kriegserklärung",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "gesetzlich",
-  "sentence": "Sonntags ist Berlin [[gesetzlich]] geschlossen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "by law",
-   "options": [
-    "by law",
-    "by accident",
-    "for fun",
-    "in secret"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Sonntags ist Berlin gesetzlich geschlossen.",
-    "targetWord": "gesetzlich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ausgestorben",
-  "sentence": "Die Straßen wirken sonntags wie [[ausgestorben]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "deserted",
-   "options": [
-    "deserted",
-    "crowded",
-    "noisy",
-    "festive"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Die Straßen wirken sonntags wie ausgestorben.",
-    "targetWord": "ausgestorben",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "deutlich",
-  "sentence": "Der Zettel formuliert seine Warnung sehr [[deutlich]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "clear, unmistakable",
-   "options": [
-    "clear, unmistakable",
-    "polite",
-    "funny",
-    "vague"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Der Zettel formuliert seine Warnung sehr deutlich.",
-    "targetWord": "deutlich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ordentlich",
-  "sentence": "Der anonyme Zettel ist [[ordentlich]] und laminiert.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "neat, tidy",
-   "options": [
-    "neat, tidy",
-    "messy",
-    "funny",
-    "secret"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Der anonyme Zettel ist ordentlich und laminiert.",
-    "targetWord": "ordentlich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "laminiert",
-  "sentence": "Die Botschaft hängt [[laminiert]] im Treppenhaus.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "laminated",
-   "options": [
-    "laminated",
-    "handwritten",
-    "crumpled",
-    "printed"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Die Botschaft hängt laminiert im Treppenhaus.",
-    "targetWord": "laminiert",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "verloren",
-  "sentence": "Vor der geschlossenen Tür steht Nadia [[verloren]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "lost",
-   "options": [
-    "lost",
-    "proud",
-    "happy",
-    "angry"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Vor der geschlossenen Tür steht Nadia verloren.",
-    "targetWord": "verloren",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "zu haben",
-  "sentence": "Am Sonntag ist in Berlin fast alles [[zu]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "closed",
-   "options": [
-    "closed",
-    "open",
-    "free",
-    "new"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Am Sonntag ist in Berlin fast alles zu.",
-    "targetWord": "zu",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "Pech gehabt",
-  "sentence": "Kein Geschäft offen? [[Pech gehabt]], sagt Timo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "bad luck",
-   "options": [
-    "bad luck",
-    "well done",
-    "good idea",
-    "no problem"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Kein Geschäft offen? Pech gehabt, sagt Timo.",
-    "targetWord": "Pech gehabt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "läuten",
-  "sentence": "Nur die Kirchenglocken _____ durch die Stadt.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "läuten",
-   "options": [
-    "läuten",
-    "schweigen",
-    "platzen",
-    "brennen"
-   ],
-   "translation": "Only the church bells _____ across the city.",
-   "optionTranslations": [
-    "ring",
-    "stay silent",
-    "burst",
-    "burn"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Nur die Kirchenglocken läuten durch die Stadt.",
-    "targetWord": "läuten",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "raten",
-  "sentence": "Nadia kann nur _____, wer den Zettel schrieb.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "raten",
-   "options": [
-    "raten",
-    "wissen",
-    "beweisen",
-    "vergessen"
-   ],
-   "translation": "Nadia can only _____ who wrote the note.",
-   "optionTranslations": [
-    "guess",
-    "know",
-    "prove",
-    "forget"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Nadia kann nur raten, wer den Zettel schrieb.",
-    "targetWord": "raten",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "klopft",
-  "sentence": "Von unten _____ jemand wütend an die Decke.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "klopft",
-   "options": [
-    "klopft",
-    "winkt",
-    "singt",
-    "schläft"
-   ],
-   "translation": "From below someone angrily _____ on the ceiling.",
-   "optionTranslations": [
-    "knocks",
-    "waves",
-    "sings",
-    "sleeps"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Von unten klopft jemand wütend an die Decke.",
-    "targetWord": "klopft",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "schafft",
-  "sentence": "Nadia _____ nur ein Loch, dann klopft es.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "schafft",
-   "options": [
-    "schafft",
-    "verpasst",
-    "vergisst",
-    "zählt"
-   ],
-   "translation": "Nadia _____ only one hole, then there is knocking.",
-   "optionTranslations": [
-    "manages",
-    "misses",
-    "forgets",
-    "counts"
-   ],
-   "audioClip": {
-    "storySlug": "sonntags-schliesst-sogar-berlin",
-    "storySource": "user",
-    "sentence": "Nadia schafft nur ein Loch, dann klopft es.",
-    "targetWord": "schafft",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "der Baumarkt,die Bohrmaschine,das Treppenhaus,die Ruhestörung",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Baumarkt",
-     "answer": "hardware store",
-     "options": [
-      "hardware store",
-      "electric drill",
-      "stairwell",
-      "disturbance of the peace"
-     ]
-    },
-    {
-     "word": "die Bohrmaschine",
-     "answer": "electric drill",
-     "options": [
-      "hardware store",
-      "electric drill",
-      "stairwell",
-      "disturbance of the peace"
-     ]
-    },
-    {
-     "word": "das Treppenhaus",
-     "answer": "stairwell",
-     "options": [
-      "hardware store",
-      "electric drill",
-      "stairwell",
-      "disturbance of the peace"
-     ]
-    },
-    {
-     "word": "die Ruhestörung",
-     "answer": "disturbance of the peace",
-     "options": [
-      "hardware store",
-      "electric drill",
-      "stairwell",
-      "disturbance of the peace"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "die Schraube",
+    "sentence": "Nadia braucht nur eine einzige [[Schraube]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "screw",
+      "options": [
+        "screw",
+        "shelf",
+        "drill",
+        "bell"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Nadia braucht nur eine einzige Schraube.",
+        "targetWord": "Schraube",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d7c2822a7ccbbdd.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "die Kirchenglocke",
+    "sentence": "Am Sonntag darf nur die [[Kirchenglocke]] laut sein.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "church bell",
+      "options": [
+        "church bell",
+        "electric drill",
+        "alarm clock",
+        "car horn"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Am Sonntag darf nur die Kirchenglocke laut sein.",
+        "targetWord": "Kirchenglocke",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/743cf4c3eb8986e3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Regal",
+    "sentence": "Das neue [[Regal]] wartet noch in seiner Kiste.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shelf",
+      "options": [
+        "shelf",
+        "drill",
+        "screw",
+        "stairwell"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Das neue Regal wartet noch in seiner Kiste.",
+        "targetWord": "Regal",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/53100e89ad1f59ed.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Kriegserklärung",
+    "sentence": "Der laminierte Zettel wirkt wie eine [[Kriegserklärung]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "declaration of war",
+      "options": [
+        "declaration of war",
+        "friendly note",
+        "shopping list",
+        "warm welcome"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Der laminierte Zettel wirkt wie eine Kriegserklärung.",
+        "targetWord": "Kriegserklärung",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d7c778226a202245.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gesetzlich",
+    "sentence": "Sonntags ist Berlin [[gesetzlich]] geschlossen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "by law",
+      "options": [
+        "by law",
+        "by accident",
+        "for fun",
+        "in secret"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Sonntags ist Berlin gesetzlich geschlossen.",
+        "targetWord": "gesetzlich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d284badb7cd2bcf8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ausgestorben",
+    "sentence": "Die Straßen wirken sonntags wie [[ausgestorben]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "deserted",
+      "options": [
+        "deserted",
+        "crowded",
+        "noisy",
+        "festive"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Die Straßen wirken sonntags wie ausgestorben.",
+        "targetWord": "ausgestorben",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bd8b7c92aa35e660.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "deutlich",
+    "sentence": "Der Zettel formuliert seine Warnung sehr [[deutlich]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clear, unmistakable",
+      "options": [
+        "clear, unmistakable",
+        "polite",
+        "funny",
+        "vague"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Der Zettel formuliert seine Warnung sehr deutlich.",
+        "targetWord": "deutlich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ca28796a294bc6f7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ordentlich",
+    "sentence": "Der anonyme Zettel ist [[ordentlich]] und laminiert.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "neat, tidy",
+      "options": [
+        "neat, tidy",
+        "messy",
+        "funny",
+        "secret"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Der anonyme Zettel ist ordentlich und laminiert.",
+        "targetWord": "ordentlich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e48bd7ca295ef18.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "laminiert",
+    "sentence": "Die Botschaft hängt [[laminiert]] im Treppenhaus.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "laminated",
+      "options": [
+        "laminated",
+        "handwritten",
+        "crumpled",
+        "printed"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Die Botschaft hängt laminiert im Treppenhaus.",
+        "targetWord": "laminiert",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2705d5aa61ea4321.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verloren",
+    "sentence": "Vor der geschlossenen Tür steht Nadia [[verloren]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lost",
+      "options": [
+        "lost",
+        "proud",
+        "happy",
+        "angry"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Vor der geschlossenen Tür steht Nadia verloren.",
+        "targetWord": "verloren",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2ed5c3f1364d61cb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "zu haben",
+    "sentence": "Am Sonntag ist in Berlin fast alles [[zu]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "closed",
+      "options": [
+        "closed",
+        "open",
+        "free",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Am Sonntag ist in Berlin fast alles zu.",
+        "targetWord": "zu",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/22440ff1529118a0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Pech gehabt",
+    "sentence": "Kein Geschäft offen? [[Pech gehabt]], sagt Timo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bad luck",
+      "options": [
+        "bad luck",
+        "well done",
+        "good idea",
+        "no problem"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Kein Geschäft offen? Pech gehabt, sagt Timo.",
+        "targetWord": "Pech gehabt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec56b440f1bf988f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "läuten",
+    "sentence": "Nur die Kirchenglocken _____ durch die Stadt.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "läuten",
+      "options": [
+        "läuten",
+        "schweigen",
+        "platzen",
+        "brennen"
+      ],
+      "translation": "Only the church bells _____ across the city.",
+      "optionTranslations": [
+        "ring",
+        "stay silent",
+        "burst",
+        "burn"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Nur die Kirchenglocken läuten durch die Stadt.",
+        "targetWord": "läuten",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee3893069b55ac62.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "raten",
+    "sentence": "Nadia kann nur _____, wer den Zettel schrieb.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "raten",
+      "options": [
+        "raten",
+        "wissen",
+        "beweisen",
+        "vergessen"
+      ],
+      "translation": "Nadia can only _____ who wrote the note.",
+      "optionTranslations": [
+        "guess",
+        "know",
+        "prove",
+        "forget"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Nadia kann nur raten, wer den Zettel schrieb.",
+        "targetWord": "raten",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc73631faee233db.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "klopft",
+    "sentence": "Von unten _____ jemand wütend an die Decke.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "klopft",
+      "options": [
+        "klopft",
+        "winkt",
+        "singt",
+        "schläft"
+      ],
+      "translation": "From below someone angrily _____ on the ceiling.",
+      "optionTranslations": [
+        "knocks",
+        "waves",
+        "sings",
+        "sleeps"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Von unten klopft jemand wütend an die Decke.",
+        "targetWord": "klopft",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9dd937d556e28a28.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "schafft",
+    "sentence": "Nadia _____ nur ein Loch, dann klopft es.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schafft",
+      "options": [
+        "schafft",
+        "verpasst",
+        "vergisst",
+        "zählt"
+      ],
+      "translation": "Nadia _____ only one hole, then there is knocking.",
+      "optionTranslations": [
+        "manages",
+        "misses",
+        "forgets",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "sonntags-schliesst-sogar-berlin",
+        "storySource": "user",
+        "sentence": "Nadia schafft nur ein Loch, dann klopft es.",
+        "targetWord": "schafft",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b6372cd9604caf1f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Baumarkt,die Bohrmaschine,das Treppenhaus,die Ruhestörung",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Baumarkt",
+          "answer": "hardware store",
+          "options": [
+            "hardware store",
+            "electric drill",
+            "stairwell",
+            "disturbance of the peace"
+          ]
+        },
+        {
+          "word": "die Bohrmaschine",
+          "answer": "electric drill",
+          "options": [
+            "hardware store",
+            "electric drill",
+            "stairwell",
+            "disturbance of the peace"
+          ]
+        },
+        {
+          "word": "das Treppenhaus",
+          "answer": "stairwell",
+          "options": [
+            "hardware store",
+            "electric drill",
+            "stairwell",
+            "disturbance of the peace"
+          ]
+        },
+        {
+          "word": "die Ruhestörung",
+          "answer": "disturbance of the peace",
+          "options": [
+            "hardware store",
+            "electric drill",
+            "stairwell",
+            "disturbance of the peace"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]

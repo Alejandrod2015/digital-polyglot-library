@@ -1,480 +1,497 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "wir müssen mal",
-  "sentence": "Auf jeden Vorschlag folgt nur: [[wir müssen mal]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "we should meet sometime",
-   "options": [
-    "we should meet sometime",
-    "see you tomorrow",
-    "of course, gladly",
-    "no idea at all"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Auf jeden Vorschlag folgt nur: wir müssen mal.",
-    "targetWord": "wir müssen mal",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "spontan",
-  "sentence": "Niemand will hier einfach [[spontan]] etwas trinken.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "spontaneously",
-   "options": [
-    "spontaneously",
-    "officially",
-    "secretly",
-    "rarely"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Niemand will hier einfach spontan etwas trinken.",
-    "targetWord": "spontan",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Bekanntschaft",
-  "sentence": "Nach Monaten ist Nadia noch immer nur [[Bekanntschaft]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "an acquaintance",
-   "options": [
-    "an acquaintance",
-    "a stranger",
-    "a neighbour",
-    "a boss"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Nach Monaten ist Nadia noch immer nur Bekanntschaft.",
-    "targetWord": "Bekanntschaft",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Schale",
-  "sentence": "Small Talk ist bloß die harte [[Schale]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the outer shell",
-   "options": [
-    "the outer shell",
-    "the warm core",
-    "the empty box",
-    "the closed door"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Small Talk ist bloß die harte Schale.",
-    "targetWord": "Schale",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "reserviert",
-  "sentence": "Der Stammtisch hat hinten eine [[reservierte]] Ecke.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "reserved",
-   "options": [
-    "reserved",
-    "empty",
-    "noisy",
-    "cold"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Der Stammtisch hat hinten eine reservierte Ecke.",
-    "targetWord": "reservierte",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "gehört dazu",
-  "sentence": "Wer einmal am Stammtisch sitzt, [[gehört dazu]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "belongs, is one of them",
-   "options": [
-    "belongs, is one of them",
-    "pays the bill",
-    "stays formal",
-    "leaves early"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Wer einmal am Stammtisch sitzt, gehört dazu.",
-    "targetWord": "gehört dazu",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "jemandem das Du anbieten",
-  "sentence": "Irgendwann wird man dir [[das Du anbieten]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "offer the informal you",
-   "options": [
-    "offer the informal you",
-    "send you away",
-    "hand you a form",
-    "raise the price"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Irgendwann wird man dir das Du anbieten.",
-    "targetWord": "das Du anbieten",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "förmlich",
-  "sentence": "Selbst der [[Förmlichste]] taut am Stammtisch auf.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "most formal one",
-   "options": [
-    "most formal one",
-    "funniest one",
-    "youngest one",
-    "loudest one"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Selbst der Förmlichste taut am Stammtisch auf.",
-    "targetWord": "Förmlichste",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Vorlauf",
-  "sentence": "Für einen Kaffee braucht man hier drei Wochen [[Vorlauf]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "lead time",
-   "options": [
-    "lead time",
-    "small talk",
-    "good luck",
-    "spare change"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Für einen Kaffee braucht man hier drei Wochen Vorlauf.",
-    "targetWord": "Vorlauf",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Kern",
-  "sentence": "Der Stammtisch ist der eigentliche [[Kern]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the core",
-   "options": [
-    "the core",
-    "the shell",
-    "the door",
-    "the noise"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Der Stammtisch ist der eigentliche Kern.",
-    "targetWord": "Kern",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "aufspringen",
-  "sentence": "An diesem Tresen ist die Schale endlich [[aufgesprungen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "burst open",
-   "options": [
-    "burst open",
-    "fallen shut",
-    "dried out",
-    "filled up"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "An diesem Tresen ist die Schale endlich aufgesprungen.",
-    "targetWord": "aufgesprungen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "höflich",
-  "sentence": "\"Wir müssen mal\" ist nur besonders [[höflich]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "polite",
-   "options": [
-    "polite",
-    "rude",
-    "honest",
-    "late"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "\"Wir müssen mal\" ist nur besonders höflich.",
-    "targetWord": "höflich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "versprechen",
-  "sentence": "Mit dem Satz will niemand wirklich etwas [[versprechen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to promise",
-   "options": [
-    "to promise",
-    "to forbid",
-    "to repeat",
-    "to pay"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Mit dem Satz will niemand wirklich etwas versprechen.",
-    "targetWord": "versprechen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "zücken",
-  "sentence": "Bei jeder Frage muss hier jemand den Kalender _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "zücken",
-   "options": [
-    "zücken",
-    "verstecken",
-    "verschenken",
-    "zerreißen"
-   ],
-   "translation": "At every question someone here has to _____ the calendar.",
-   "optionTranslations": [
-    "whip out",
-    "hide",
-    "give away",
-    "tear up"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Bei jeder Frage muss hier jemand den Kalender zücken.",
-    "targetWord": "zücken",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "klingeln",
-  "sentence": "Zu Hause konnte man einfach an der Tür _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "klingeln",
-   "options": [
-    "klingeln",
-    "warten",
-    "bezahlen",
-    "fernsehen"
-   ],
-   "translation": "Back home you could just _____ at the door.",
-   "optionTranslations": [
-    "ring the bell",
-    "wait",
-    "pay",
-    "watch TV"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Zu Hause konnte man einfach an der Tür klingeln.",
-    "targetWord": "klingeln",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "mithören",
-  "sentence": "Ronja lehnt am Tresen und beginnt zu _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "mithören",
-   "options": [
-    "mithören",
-    "wegsehen",
-    "weglaufen",
-    "schweigen"
-   ],
-   "translation": "Ronja leans on the counter and starts to _____.",
-   "optionTranslations": [
-    "listen in",
-    "look away",
-    "run off",
-    "stay silent"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Ronja lehnt am Tresen und beginnt zu mithören.",
-    "targetWord": "mithören",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "bestellen",
-  "sentence": "Am Stammtisch lässt man für alle zusammen _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "bestellen",
-   "options": [
-    "bestellen",
-    "bezahlen",
-    "aufräumen",
-    "absagen"
-   ],
-   "translation": "At the regulars' table you _____ for everyone together.",
-   "optionTranslations": [
-    "order",
-    "pay",
-    "tidy up",
-    "cancel"
-   ],
-   "audioClip": {
-    "storySlug": "wir-muessen-mal",
-    "storySource": "user",
-    "sentence": "Am Stammtisch lässt man für alle zusammen bestellen.",
-    "targetWord": "bestellen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "der Kalender,die Kokosnuss,der Stammtisch,die Verabredung",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Kalender",
-     "answer": "calendar, diary",
-     "options": [
-      "calendar, diary",
-      "coconut",
-      "regulars' table",
-      "arranged meeting"
-     ]
-    },
-    {
-     "word": "die Kokosnuss",
-     "answer": "coconut",
-     "options": [
-      "calendar, diary",
-      "coconut",
-      "regulars' table",
-      "arranged meeting"
-     ]
-    },
-    {
-     "word": "der Stammtisch",
-     "answer": "regulars' table",
-     "options": [
-      "calendar, diary",
-      "coconut",
-      "regulars' table",
-      "arranged meeting"
-     ]
-    },
-    {
-     "word": "die Verabredung",
-     "answer": "arranged meeting",
-     "options": [
-      "calendar, diary",
-      "coconut",
-      "regulars' table",
-      "arranged meeting"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "wir müssen mal",
+    "sentence": "Auf jeden Vorschlag folgt nur: [[wir müssen mal]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "we should meet sometime",
+      "options": [
+        "we should meet sometime",
+        "see you tomorrow",
+        "of course, gladly",
+        "no idea at all"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Auf jeden Vorschlag folgt nur: wir müssen mal.",
+        "targetWord": "wir müssen mal",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/650dc72ea46d041f.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "spontan",
+    "sentence": "Niemand will hier einfach [[spontan]] etwas trinken.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "spontaneously",
+      "options": [
+        "spontaneously",
+        "officially",
+        "secretly",
+        "rarely"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Niemand will hier einfach spontan etwas trinken.",
+        "targetWord": "spontan",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85f964f661e1702f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Bekanntschaft",
+    "sentence": "Nach Monaten ist Nadia noch immer nur [[Bekanntschaft]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an acquaintance",
+      "options": [
+        "an acquaintance",
+        "a stranger",
+        "a neighbour",
+        "a boss"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Nach Monaten ist Nadia noch immer nur Bekanntschaft.",
+        "targetWord": "Bekanntschaft",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d3a596b028e6fe19.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Schale",
+    "sentence": "Small Talk ist bloß die harte [[Schale]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the outer shell",
+      "options": [
+        "the outer shell",
+        "the warm core",
+        "the empty box",
+        "the closed door"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Small Talk ist bloß die harte Schale.",
+        "targetWord": "Schale",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5063a942e0f353bb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reserviert",
+    "sentence": "Der Stammtisch hat hinten eine [[reservierte]] Ecke.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "reserved",
+      "options": [
+        "reserved",
+        "empty",
+        "noisy",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Der Stammtisch hat hinten eine reservierte Ecke.",
+        "targetWord": "reservierte",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c6858e63e376ed8a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gehört dazu",
+    "sentence": "Wer einmal am Stammtisch sitzt, [[gehört dazu]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "belongs, is one of them",
+      "options": [
+        "belongs, is one of them",
+        "pays the bill",
+        "stays formal",
+        "leaves early"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Wer einmal am Stammtisch sitzt, gehört dazu.",
+        "targetWord": "gehört dazu",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d1b96abb783327e4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jemandem das Du anbieten",
+    "sentence": "Irgendwann wird man dir [[das Du anbieten]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "offer the informal you",
+      "options": [
+        "offer the informal you",
+        "send you away",
+        "hand you a form",
+        "raise the price"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Irgendwann wird man dir das Du anbieten.",
+        "targetWord": "das Du anbieten",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/348a54317b2dfbfd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "förmlich",
+    "sentence": "Selbst der [[Förmlichste]] taut am Stammtisch auf.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "most formal one",
+      "options": [
+        "most formal one",
+        "funniest one",
+        "youngest one",
+        "loudest one"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Selbst der Förmlichste taut am Stammtisch auf.",
+        "targetWord": "Förmlichste",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/87397a8d09a9a6be.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Vorlauf",
+    "sentence": "Für einen Kaffee braucht man hier drei Wochen [[Vorlauf]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lead time",
+      "options": [
+        "lead time",
+        "small talk",
+        "good luck",
+        "spare change"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Für einen Kaffee braucht man hier drei Wochen Vorlauf.",
+        "targetWord": "Vorlauf",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d1d62c0f9e618693.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Kern",
+    "sentence": "Der Stammtisch ist der eigentliche [[Kern]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the core",
+      "options": [
+        "the core",
+        "the shell",
+        "the door",
+        "the noise"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Der Stammtisch ist der eigentliche Kern.",
+        "targetWord": "Kern",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28e6908754d8340a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aufspringen",
+    "sentence": "An diesem Tresen ist die Schale endlich [[aufgesprungen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "burst open",
+      "options": [
+        "burst open",
+        "fallen shut",
+        "dried out",
+        "filled up"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "An diesem Tresen ist die Schale endlich aufgesprungen.",
+        "targetWord": "aufgesprungen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/303b5afbd2536d8a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "höflich",
+    "sentence": "\"Wir müssen mal\" ist nur besonders [[höflich]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "polite",
+      "options": [
+        "polite",
+        "rude",
+        "honest",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "\"Wir müssen mal\" ist nur besonders höflich.",
+        "targetWord": "höflich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c5b60c115230579e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "versprechen",
+    "sentence": "Mit dem Satz will niemand wirklich etwas [[versprechen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to promise",
+      "options": [
+        "to promise",
+        "to forbid",
+        "to repeat",
+        "to pay"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Mit dem Satz will niemand wirklich etwas versprechen.",
+        "targetWord": "versprechen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bad1c268c47e49c5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "zücken",
+    "sentence": "Bei jeder Frage muss hier jemand den Kalender _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "zücken",
+      "options": [
+        "zücken",
+        "verstecken",
+        "verschenken",
+        "zerreißen"
+      ],
+      "translation": "At every question someone here has to _____ the calendar.",
+      "optionTranslations": [
+        "whip out",
+        "hide",
+        "give away",
+        "tear up"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Bei jeder Frage muss hier jemand den Kalender zücken.",
+        "targetWord": "zücken",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5d6f8eb1a7eb13ec.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "klingeln",
+    "sentence": "Zu Hause konnte man einfach an der Tür _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "klingeln",
+      "options": [
+        "klingeln",
+        "warten",
+        "bezahlen",
+        "fernsehen"
+      ],
+      "translation": "Back home you could just _____ at the door.",
+      "optionTranslations": [
+        "ring the bell",
+        "wait",
+        "pay",
+        "watch TV"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Zu Hause konnte man einfach an der Tür klingeln.",
+        "targetWord": "klingeln",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/71f5fb080dd36d3a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mithören",
+    "sentence": "Ronja lehnt am Tresen und beginnt zu _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mithören",
+      "options": [
+        "mithören",
+        "wegsehen",
+        "weglaufen",
+        "schweigen"
+      ],
+      "translation": "Ronja leans on the counter and starts to _____.",
+      "optionTranslations": [
+        "listen in",
+        "look away",
+        "run off",
+        "stay silent"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Ronja lehnt am Tresen und beginnt zu mithören.",
+        "targetWord": "mithören",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9e552ef9bb4e4eab.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bestellen",
+    "sentence": "Am Stammtisch lässt man für alle zusammen _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bestellen",
+      "options": [
+        "bestellen",
+        "bezahlen",
+        "aufräumen",
+        "absagen"
+      ],
+      "translation": "At the regulars' table you _____ for everyone together.",
+      "optionTranslations": [
+        "order",
+        "pay",
+        "tidy up",
+        "cancel"
+      ],
+      "audioClip": {
+        "storySlug": "wir-muessen-mal",
+        "storySource": "user",
+        "sentence": "Am Stammtisch lässt man für alle zusammen bestellen.",
+        "targetWord": "bestellen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e90a5be57f04dc64.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Kalender,die Kokosnuss,der Stammtisch,die Verabredung",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Kalender",
+          "answer": "calendar, diary",
+          "options": [
+            "calendar, diary",
+            "coconut",
+            "regulars' table",
+            "arranged meeting"
+          ]
+        },
+        {
+          "word": "die Kokosnuss",
+          "answer": "coconut",
+          "options": [
+            "calendar, diary",
+            "coconut",
+            "regulars' table",
+            "arranged meeting"
+          ]
+        },
+        {
+          "word": "der Stammtisch",
+          "answer": "regulars' table",
+          "options": [
+            "calendar, diary",
+            "coconut",
+            "regulars' table",
+            "arranged meeting"
+          ]
+        },
+        {
+          "word": "die Verabredung",
+          "answer": "arranged meeting",
+          "options": [
+            "calendar, diary",
+            "coconut",
+            "regulars' table",
+            "arranged meeting"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]

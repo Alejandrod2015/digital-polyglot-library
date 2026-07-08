@@ -1,473 +1,490 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "krank",
-  "sentence": "Mira ist neu und schon ein bisschen [[krank]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "ill, unwell",
-   "options": [
-    "ill, unwell",
-    "tired",
-    "late",
-    "lost"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Mira ist neu und schon ein bisschen krank.",
-    "targetWord": "krank",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Anmeldung",
-  "sentence": "Ohne [[Anmeldung]] geht in Berlin gar nichts.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "address registration",
-   "options": [
-    "address registration",
-    "health card",
-    "doctor's note",
-    "bank account"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Ohne Anmeldung geht in Berlin gar nichts.",
-    "targetWord": "Anmeldung",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "frei lassen",
-  "sentence": "Die halben Felder kannst du einfach [[frei lassen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "leave blank",
-   "options": [
-    "leave blank",
-    "fill in twice",
-    "cross out",
-    "sign again"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Die halben Felder kannst du einfach frei lassen.",
-    "targetWord": "frei lassen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Willkommen im Klub",
-  "sentence": "Keinen Arzttermin? [[Willkommen im Klub]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "welcome to the club",
-   "options": [
-    "welcome to the club",
-    "get well soon",
-    "good luck",
-    "see you later"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Keinen Arzttermin? Willkommen im Klub.",
-    "targetWord": "Willkommen im Klub",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Geduld",
-  "sentence": "Das wichtigste Wort am Amt heißt [[Geduld]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "patience",
-   "options": [
-    "patience",
-    "a stamp",
-    "a number",
-    "a form"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Das wichtigste Wort am Amt heißt Geduld.",
-    "targetWord": "Geduld",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sich gewöhnen",
-  "sentence": "An das Wort Geduld muss man sich [[gewöhnen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "get used to it",
-   "options": [
-    "get used to it",
-    "fight against it",
-    "laugh about it",
-    "write it down"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "An das Wort Geduld muss man sich gewöhnen.",
-    "targetWord": "gewöhnen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die halbe Miete",
-  "sentence": "Geduld ist hier schon die [[halbe Miete]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "half the battle",
-   "options": [
-    "half the battle",
-    "the monthly rent",
-    "a waste of time",
-    "a lucky guess"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Geduld ist hier schon die halbe Miete.",
-    "targetWord": "halbe Miete",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "an die Hand nehmen",
-  "sentence": "Nadia will Mira genau [[an die Hand nehmen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "take by the hand, guide",
-   "options": [
-    "take by the hand, guide",
-    "send away",
-    "hand a form",
-    "leave alone"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Nadia will Mira genau an die Hand nehmen.",
-    "targetWord": "an die Hand nehmen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "jetzt bist du dran",
-  "sentence": "Nadia sagt warm: [[jetzt bist du dran]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "now it is your turn",
-   "options": [
-    "now it is your turn",
-    "now you must pay",
-    "now you may leave",
-    "now you are late"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Nadia sagt warm: jetzt bist du dran.",
-    "targetWord": "jetzt bist du dran",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Trick",
-  "sentence": "Der erste [[Trick]] heißt einfach Thermoskanne.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "clever shortcut",
-   "options": [
-    "clever shortcut",
-    "strict rule",
-    "big mistake",
-    "long wait"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Der erste Trick heißt einfach Thermoskanne.",
-    "targetWord": "Trick",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "vertrauen",
-  "sentence": "Ein Kater zu Hause, der ihr [[vertraut]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "trusts",
-   "options": [
-    "trusts",
-    "fears",
-    "follows",
-    "ignores"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Ein Kater zu Hause, der ihr vertraut.",
-    "targetWord": "vertraut",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "ankommen",
-  "sentence": "Keine Sorge, du kommst hier schon [[an]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "arrive, settle in",
-   "options": [
-    "arrive, settle in",
-    "give up",
-    "get lost",
-    "fall back"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Keine Sorge, du kommst hier schon an.",
-    "targetWord": "an",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Stempel",
-  "sentence": "Ein Jahr, zwei [[Stempel]], ein Stammtisch.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "official stamps",
-   "options": [
-    "official stamps",
-    "empty forms",
-    "long queues",
-    "closed doors"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Ein Jahr, zwei Stempel, ein Stammtisch.",
-    "targetWord": "Stempel",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Zuhause",
-  "sentence": "Berlin ist keine Behörde mehr, sondern ein [[Zuhause]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a home",
-   "options": [
-    "a home",
-    "an office",
-    "a queue",
-    "a stamp"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Berlin ist keine Behörde mehr, sondern ein Zuhause.",
-    "targetWord": "Zuhause",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "gießen",
-  "sentence": "Nadia will Kaffee in den zweiten Becher _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "gießen",
-   "options": [
-    "gießen",
-    "verschütten",
-    "trinken",
-    "kaufen"
-   ],
-   "translation": "Nadia wants to _____ coffee into the second cup.",
-   "optionTranslations": [
-    "pour",
-    "spill",
-    "drink",
-    "buy"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Nadia will Kaffee in den zweiten Becher gießen.",
-    "targetWord": "gießen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "weiterreichen",
-  "sentence": "Den vollen Becher will sie an Mira _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "weiterreichen",
-   "options": [
-    "weiterreichen",
-    "wegwerfen",
-    "verstecken",
-    "behalten"
-   ],
-   "translation": "She wants to _____ the full cup to Mira.",
-   "optionTranslations": [
-    "pass on",
-    "throw away",
-    "hide",
-    "keep"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Den vollen Becher will sie an Mira weiterreichen.",
-    "targetWord": "weiterreichen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "vorrücken",
-  "sentence": "Sobald die Tür aufgeht, muss die Schlange _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "vorrücken",
-   "options": [
-    "vorrücken",
-    "stehenbleiben",
-    "umkehren",
-    "verschwinden"
-   ],
-   "translation": "As soon as the door opens, the queue has to _____.",
-   "optionTranslations": [
-    "move forward",
-    "stand still",
-    "turn back",
-    "vanish"
-   ],
-   "audioClip": {
-    "storySlug": "die-mit-der-thermoskanne",
-    "storySource": "user",
-    "sentence": "Sobald die Tür aufgeht, muss die Schlange vorrücken.",
-    "targetWord": "vorrücken",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "die Thermoskanne,die Schlange,die Krankenkasse,die Gesundheitskarte",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "die Thermoskanne",
-     "answer": "thermos flask",
-     "options": [
-      "thermos flask",
-      "the queue",
-      "health insurance fund",
-      "health insurance card"
-     ]
-    },
-    {
-     "word": "die Schlange",
-     "answer": "the queue",
-     "options": [
-      "thermos flask",
-      "the queue",
-      "health insurance fund",
-      "health insurance card"
-     ]
-    },
-    {
-     "word": "die Krankenkasse",
-     "answer": "health insurance fund",
-     "options": [
-      "thermos flask",
-      "the queue",
-      "health insurance fund",
-      "health insurance card"
-     ]
-    },
-    {
-     "word": "die Gesundheitskarte",
-     "answer": "health insurance card",
-     "options": [
-      "thermos flask",
-      "the queue",
-      "health insurance fund",
-      "health insurance card"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "krank",
+    "sentence": "Mira ist neu und schon ein bisschen [[krank]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ill, unwell",
+      "options": [
+        "ill, unwell",
+        "tired",
+        "late",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Mira ist neu und schon ein bisschen krank.",
+        "targetWord": "krank",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cf8e29054dd1122c.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "die Anmeldung",
+    "sentence": "Ohne [[Anmeldung]] geht in Berlin gar nichts.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "address registration",
+      "options": [
+        "address registration",
+        "health card",
+        "doctor's note",
+        "bank account"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Ohne Anmeldung geht in Berlin gar nichts.",
+        "targetWord": "Anmeldung",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e1d96704f0a1284b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frei lassen",
+    "sentence": "Die halben Felder kannst du einfach [[frei lassen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "leave blank",
+      "options": [
+        "leave blank",
+        "fill in twice",
+        "cross out",
+        "sign again"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Die halben Felder kannst du einfach frei lassen.",
+        "targetWord": "frei lassen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8aa5ad4a74e3ace8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Willkommen im Klub",
+    "sentence": "Keinen Arzttermin? [[Willkommen im Klub]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "welcome to the club",
+      "options": [
+        "welcome to the club",
+        "get well soon",
+        "good luck",
+        "see you later"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Keinen Arzttermin? Willkommen im Klub.",
+        "targetWord": "Willkommen im Klub",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ffdad78a9afb7ff5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Geduld",
+    "sentence": "Das wichtigste Wort am Amt heißt [[Geduld]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "patience",
+      "options": [
+        "patience",
+        "a stamp",
+        "a number",
+        "a form"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Das wichtigste Wort am Amt heißt Geduld.",
+        "targetWord": "Geduld",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a071308d2ce3ff6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sich gewöhnen",
+    "sentence": "An das Wort Geduld muss man sich [[gewöhnen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "get used to it",
+      "options": [
+        "get used to it",
+        "fight against it",
+        "laugh about it",
+        "write it down"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "An das Wort Geduld muss man sich gewöhnen.",
+        "targetWord": "gewöhnen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08509651e07879c1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die halbe Miete",
+    "sentence": "Geduld ist hier schon die [[halbe Miete]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half the battle",
+      "options": [
+        "half the battle",
+        "the monthly rent",
+        "a waste of time",
+        "a lucky guess"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Geduld ist hier schon die halbe Miete.",
+        "targetWord": "halbe Miete",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a32e1f308be1a22d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "an die Hand nehmen",
+    "sentence": "Nadia will Mira genau [[an die Hand nehmen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "take by the hand, guide",
+      "options": [
+        "take by the hand, guide",
+        "send away",
+        "hand a form",
+        "leave alone"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Nadia will Mira genau an die Hand nehmen.",
+        "targetWord": "an die Hand nehmen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e67025955d59eef9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jetzt bist du dran",
+    "sentence": "Nadia sagt warm: [[jetzt bist du dran]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "now it is your turn",
+      "options": [
+        "now it is your turn",
+        "now you must pay",
+        "now you may leave",
+        "now you are late"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Nadia sagt warm: jetzt bist du dran.",
+        "targetWord": "jetzt bist du dran",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32c166e2d5a5e5d8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Trick",
+    "sentence": "Der erste [[Trick]] heißt einfach Thermoskanne.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clever shortcut",
+      "options": [
+        "clever shortcut",
+        "strict rule",
+        "big mistake",
+        "long wait"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Der erste Trick heißt einfach Thermoskanne.",
+        "targetWord": "Trick",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d1e625e6c8195b1f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vertrauen",
+    "sentence": "Ein Kater zu Hause, der ihr [[vertraut]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "trusts",
+      "options": [
+        "trusts",
+        "fears",
+        "follows",
+        "ignores"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Ein Kater zu Hause, der ihr vertraut.",
+        "targetWord": "vertraut",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dc5be6171022526f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ankommen",
+    "sentence": "Keine Sorge, du kommst hier schon [[an]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "arrive, settle in",
+      "options": [
+        "arrive, settle in",
+        "give up",
+        "get lost",
+        "fall back"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Keine Sorge, du kommst hier schon an.",
+        "targetWord": "an",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/614e84dd59529220.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Stempel",
+    "sentence": "Ein Jahr, zwei [[Stempel]], ein Stammtisch.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "official stamps",
+      "options": [
+        "official stamps",
+        "empty forms",
+        "long queues",
+        "closed doors"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Ein Jahr, zwei Stempel, ein Stammtisch.",
+        "targetWord": "Stempel",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab3f20b0c4043bf8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Zuhause",
+    "sentence": "Berlin ist keine Behörde mehr, sondern ein [[Zuhause]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a home",
+      "options": [
+        "a home",
+        "an office",
+        "a queue",
+        "a stamp"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Berlin ist keine Behörde mehr, sondern ein Zuhause.",
+        "targetWord": "Zuhause",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/04b76355f2b78276.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gießen",
+    "sentence": "Nadia will Kaffee in den zweiten Becher _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gießen",
+      "options": [
+        "gießen",
+        "verschütten",
+        "trinken",
+        "kaufen"
+      ],
+      "translation": "Nadia wants to _____ coffee into the second cup.",
+      "optionTranslations": [
+        "pour",
+        "spill",
+        "drink",
+        "buy"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Nadia will Kaffee in den zweiten Becher gießen.",
+        "targetWord": "gießen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d0cfe7bf636290e6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "weiterreichen",
+    "sentence": "Den vollen Becher will sie an Mira _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "weiterreichen",
+      "options": [
+        "weiterreichen",
+        "wegwerfen",
+        "verstecken",
+        "behalten"
+      ],
+      "translation": "She wants to _____ the full cup to Mira.",
+      "optionTranslations": [
+        "pass on",
+        "throw away",
+        "hide",
+        "keep"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Den vollen Becher will sie an Mira weiterreichen.",
+        "targetWord": "weiterreichen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8d8b3831342d5c6d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vorrücken",
+    "sentence": "Sobald die Tür aufgeht, muss die Schlange _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vorrücken",
+      "options": [
+        "vorrücken",
+        "stehenbleiben",
+        "umkehren",
+        "verschwinden"
+      ],
+      "translation": "As soon as the door opens, the queue has to _____.",
+      "optionTranslations": [
+        "move forward",
+        "stand still",
+        "turn back",
+        "vanish"
+      ],
+      "audioClip": {
+        "storySlug": "die-mit-der-thermoskanne",
+        "storySource": "user",
+        "sentence": "Sobald die Tür aufgeht, muss die Schlange vorrücken.",
+        "targetWord": "vorrücken",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ba6c98b49da74b3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "die Thermoskanne,die Schlange,die Krankenkasse,die Gesundheitskarte",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "die Thermoskanne",
+          "answer": "thermos flask",
+          "options": [
+            "thermos flask",
+            "the queue",
+            "health insurance fund",
+            "health insurance card"
+          ]
+        },
+        {
+          "word": "die Schlange",
+          "answer": "the queue",
+          "options": [
+            "thermos flask",
+            "the queue",
+            "health insurance fund",
+            "health insurance card"
+          ]
+        },
+        {
+          "word": "die Krankenkasse",
+          "answer": "health insurance fund",
+          "options": [
+            "thermos flask",
+            "the queue",
+            "health insurance fund",
+            "health insurance card"
+          ]
+        },
+        {
+          "word": "die Gesundheitskarte",
+          "answer": "health insurance card",
+          "options": [
+            "thermos flask",
+            "the queue",
+            "health insurance fund",
+            "health insurance card"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]

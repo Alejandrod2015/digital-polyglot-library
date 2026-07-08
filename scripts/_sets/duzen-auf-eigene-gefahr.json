@@ -1,528 +1,547 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "die Landkarte",
-  "sentence": "Nadia lernt die soziale [[Landkarte]] des Büros kennen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "map, mental map",
-   "options": [
-    "map, mental map",
-    "lunch menu",
-    "seating plan",
-    "salary list"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Nadia lernt die soziale Landkarte des Büros kennen.",
-    "targetWord": "Landkarte",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Unternehmenskultur",
-  "sentence": "Jede Firma hat ihre eigene [[Unternehmenskultur]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "company culture",
-   "options": [
-    "company culture",
-    "annual budget",
-    "office building",
-    "dress code"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Jede Firma hat ihre eigene Unternehmenskultur.",
-    "targetWord": "Unternehmenskultur",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "förmlich",
-  "sentence": "Zur Chefin bleibt Nadia lieber [[förmlich]] und höflich.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "formal",
-   "options": [
-    "formal",
-    "rude",
-    "funny",
-    "late"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Zur Chefin bleibt Nadia lieber förmlich und höflich.",
-    "targetWord": "förmlich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sich dehnen",
-  "sentence": "Die Stille [[dehnt sich]], bis niemand mehr atmet.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "stretches out",
-   "options": [
-    "stretches out",
-    "breaks apart",
-    "fills up",
-    "warms up"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Die Stille dehnt sich, bis niemand mehr atmet.",
-    "targetWord": "dehnt sich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "jemandem liegen",
-  "sentence": "Das neue Projekt scheint Nadia wirklich zu [[liegen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to suit someone",
-   "options": [
-    "to suit someone",
-    "to bore someone",
-    "to scare someone",
-    "to cost someone"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Das neue Projekt scheint Nadia wirklich zu liegen.",
-    "targetWord": "liegen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "prüfen",
-  "sentence": "Frau Brandt will jede Zahl genau [[prüfen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to examine",
-   "options": [
-    "to examine",
-    "to praise",
-    "to hide",
-    "to sign"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Frau Brandt will jede Zahl genau prüfen.",
-    "targetWord": "prüfen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Kaugummi",
-  "sentence": "Der Fehler klebt wie ein [[Kaugummi]] am ganzen Tag.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "chewing gum",
-   "options": [
-    "chewing gum",
-    "name badge",
-    "coffee stain",
-    "paper note"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Der Fehler klebt wie ein Kaugummi am ganzen Tag.",
-    "targetWord": "Kaugummi",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Zettel",
-  "sentence": "Die Regel steht auf einem kleinen [[Zettel]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "slip of paper",
-   "options": [
-    "slip of paper",
-    "big screen",
-    "wooden door",
-    "glass wall"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Die Regel steht auf einem kleinen Zettel.",
-    "targetWord": "Zettel",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "handgezeichnet",
-  "sentence": "Die Bürokarte ist [[handgezeichnet]], nicht gedruckt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "hand-drawn",
-   "options": [
-    "hand-drawn",
-    "brand new",
-    "top secret",
-    "laminated"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Die Bürokarte ist handgezeichnet, nicht gedruckt.",
-    "targetWord": "handgezeichnet",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Etage",
-  "sentence": "Die Chefin sitzt eine [[Etage]] höher.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "floor, storey",
-   "options": [
-    "floor, storey",
-    "hour later",
-    "desk over",
-    "team bigger"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Die Chefin sitzt eine Etage höher.",
-    "targetWord": "Etage",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "heilig",
-  "sentence": "Der Feierabend ist den Deutschen [[heilig]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sacred",
-   "options": [
-    "sacred",
-    "boring",
-    "optional",
-    "expensive"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Der Feierabend ist den Deutschen heilig.",
-    "targetWord": "heilig",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "schwitzen",
-  "sentence": "Vor der Chefin beginnt Nadia zu [[schwitzen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to sweat",
-   "options": [
-    "to sweat",
-    "to smile",
-    "to whisper",
-    "to leave"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Vor der Chefin beginnt Nadia zu schwitzen.",
-    "targetWord": "schwitzen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "auf eigene Gefahr",
-  "sentence": "Wer die Chefin duzt, tut das [[auf eigene Gefahr]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "at your own risk",
-   "options": [
-    "at your own risk",
-    "free of charge",
-    "without a plan",
-    "by the rules"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Wer die Chefin duzt, tut das auf eigene Gefahr.",
-    "targetWord": "auf eigene Gefahr",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "im Hals stecken bleiben",
-  "sentence": "Das lockere Wort [[bleibt]] ihr [[im Hals stecken]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "gets stuck in the throat",
-   "options": [
-    "gets stuck in the throat",
-    "comes out too loud",
-    "sounds far too formal",
-    "makes everyone laugh"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Das lockere Wort bleibt ihr im Hals stecken.",
-    "targetWord": "bleibt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "unter Druck",
-  "sentence": "[[Unter Druck]] vergisst man leicht die richtige Anrede.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "under pressure",
-   "options": [
-    "under pressure",
-    "out of habit",
-    "late at night",
-    "for a joke"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Unter Druck vergisst man leicht die richtige Anrede.",
-    "targetWord": "Unter Druck",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "duzt",
-  "sentence": "An der Kaffeemaschine _____ Nadia fast die Chefin.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "duzt",
-   "options": [
-    "duzt",
-    "grüßt",
-    "meidet",
-    "bezahlt"
-   ],
-   "translation": "At the coffee machine Nadia almost _____ the boss.",
-   "optionTranslations": [
-    "says du to",
-    "greets",
-    "avoids",
-    "pays"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "An der Kaffeemaschine duzt Nadia fast die Chefin.",
-    "targetWord": "duzt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "verwechseln",
-  "sentence": "Bloß nicht die Chefin mit einer Kollegin _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "verwechseln",
-   "options": [
-    "verwechseln",
-    "vergleichen",
-    "begrüßen",
-    "einladen"
-   ],
-   "translation": "Just do not _____ the boss with a colleague.",
-   "optionTranslations": [
-    "mix up",
-    "compare",
-    "greet",
-    "invite"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Bloß nicht die Chefin mit einer Kollegin verwechseln.",
-    "targetWord": "verwechseln",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "ruinieren",
-  "sentence": "Ein falsches Wort kann den ganzen ersten Tag _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "ruinieren",
-   "options": [
-    "ruinieren",
-    "retten",
-    "planen",
-    "verlängern"
-   ],
-   "translation": "One wrong word can _____ the whole first day.",
-   "optionTranslations": [
-    "ruin",
-    "save",
-    "plan",
-    "extend"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "Ein falsches Wort kann den ganzen ersten Tag ruinieren.",
-    "targetWord": "ruinieren",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "rettet",
-  "sentence": "In letzter Sekunde _____ sie sich vor dem Fehler.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "rettet",
-   "options": [
-    "rettet",
-    "meldet",
-    "fürchtet",
-    "wiederholt"
-   ],
-   "translation": "At the last second she _____ herself from the mistake.",
-   "optionTranslations": [
-    "rescues",
-    "reports",
-    "fears",
-    "repeats"
-   ],
-   "audioClip": {
-    "storySlug": "duzen-auf-eigene-gefahr",
-    "storySource": "user",
-    "sentence": "In letzter Sekunde rettet sie sich vor dem Fehler.",
-    "targetWord": "rettet",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "der Dienstausweis,das Stockwerk,die Anrede,der Feierabend",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Dienstausweis",
-     "answer": "employee ID badge",
-     "options": [
-      "employee ID badge",
-      "floor of a building",
-      "form of address",
-      "end of the workday"
-     ]
-    },
-    {
-     "word": "das Stockwerk",
-     "answer": "floor of a building",
-     "options": [
-      "employee ID badge",
-      "floor of a building",
-      "form of address",
-      "end of the workday"
-     ]
-    },
-    {
-     "word": "die Anrede",
-     "answer": "form of address",
-     "options": [
-      "employee ID badge",
-      "floor of a building",
-      "form of address",
-      "end of the workday"
-     ]
-    },
-    {
-     "word": "der Feierabend",
-     "answer": "end of the workday",
-     "options": [
-      "employee ID badge",
-      "floor of a building",
-      "form of address",
-      "end of the workday"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "die Landkarte",
+    "sentence": "Nadia lernt die soziale [[Landkarte]] des Büros kennen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "map, mental map",
+      "options": [
+        "map, mental map",
+        "lunch menu",
+        "seating plan",
+        "salary list"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Nadia lernt die soziale Landkarte des Büros kennen.",
+        "targetWord": "Landkarte",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1697770ef08ab142.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "die Unternehmenskultur",
+    "sentence": "Jede Firma hat ihre eigene [[Unternehmenskultur]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "company culture",
+      "options": [
+        "company culture",
+        "annual budget",
+        "office building",
+        "dress code"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Jede Firma hat ihre eigene Unternehmenskultur.",
+        "targetWord": "Unternehmenskultur",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e89f2da802e53146.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "förmlich",
+    "sentence": "Zur Chefin bleibt Nadia lieber [[förmlich]] und höflich.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "formal",
+      "options": [
+        "formal",
+        "rude",
+        "funny",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Zur Chefin bleibt Nadia lieber förmlich und höflich.",
+        "targetWord": "förmlich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ad02f37eef8714f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sich dehnen",
+    "sentence": "Die Stille [[dehnt sich]], bis niemand mehr atmet.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stretches out",
+      "options": [
+        "stretches out",
+        "breaks apart",
+        "fills up",
+        "warms up"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Die Stille dehnt sich, bis niemand mehr atmet.",
+        "targetWord": "dehnt sich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f493196db211398a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jemandem liegen",
+    "sentence": "Das neue Projekt scheint Nadia wirklich zu [[liegen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to suit someone",
+      "options": [
+        "to suit someone",
+        "to bore someone",
+        "to scare someone",
+        "to cost someone"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Das neue Projekt scheint Nadia wirklich zu liegen.",
+        "targetWord": "liegen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/daccc55c060ceac5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prüfen",
+    "sentence": "Frau Brandt will jede Zahl genau [[prüfen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to examine",
+      "options": [
+        "to examine",
+        "to praise",
+        "to hide",
+        "to sign"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Frau Brandt will jede Zahl genau prüfen.",
+        "targetWord": "prüfen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/da6f21d0f838d5ea.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Kaugummi",
+    "sentence": "Der Fehler klebt wie ein [[Kaugummi]] am ganzen Tag.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "chewing gum",
+      "options": [
+        "chewing gum",
+        "name badge",
+        "coffee stain",
+        "paper note"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Der Fehler klebt wie ein Kaugummi am ganzen Tag.",
+        "targetWord": "Kaugummi",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3242d1759b5b677a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Zettel",
+    "sentence": "Die Regel steht auf einem kleinen [[Zettel]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slip of paper",
+      "options": [
+        "slip of paper",
+        "big screen",
+        "wooden door",
+        "glass wall"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Die Regel steht auf einem kleinen Zettel.",
+        "targetWord": "Zettel",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0fc21e41cc01beb8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "handgezeichnet",
+    "sentence": "Die Bürokarte ist [[handgezeichnet]], nicht gedruckt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hand-drawn",
+      "options": [
+        "hand-drawn",
+        "brand new",
+        "top secret",
+        "laminated"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Die Bürokarte ist handgezeichnet, nicht gedruckt.",
+        "targetWord": "handgezeichnet",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a602d412ec901c85.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Etage",
+    "sentence": "Die Chefin sitzt eine [[Etage]] höher.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "floor, storey",
+      "options": [
+        "floor, storey",
+        "hour later",
+        "desk over",
+        "team bigger"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Die Chefin sitzt eine Etage höher.",
+        "targetWord": "Etage",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/daff7043ba830885.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "heilig",
+    "sentence": "Der Feierabend ist den Deutschen [[heilig]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sacred",
+      "options": [
+        "sacred",
+        "boring",
+        "optional",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Der Feierabend ist den Deutschen heilig.",
+        "targetWord": "heilig",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36415ea7c5f079fa.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "schwitzen",
+    "sentence": "Vor der Chefin beginnt Nadia zu [[schwitzen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sweat",
+      "options": [
+        "to sweat",
+        "to smile",
+        "to whisper",
+        "to leave"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Vor der Chefin beginnt Nadia zu schwitzen.",
+        "targetWord": "schwitzen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4168de73011a5132.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "auf eigene Gefahr",
+    "sentence": "Wer die Chefin duzt, tut das [[auf eigene Gefahr]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at your own risk",
+      "options": [
+        "at your own risk",
+        "free of charge",
+        "without a plan",
+        "by the rules"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Wer die Chefin duzt, tut das auf eigene Gefahr.",
+        "targetWord": "auf eigene Gefahr",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/22a132ca8c0e030a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "im Hals stecken bleiben",
+    "sentence": "Das lockere Wort [[bleibt]] ihr [[im Hals stecken]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gets stuck in the throat",
+      "options": [
+        "gets stuck in the throat",
+        "comes out too loud",
+        "sounds far too formal",
+        "makes everyone laugh"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Das lockere Wort bleibt ihr im Hals stecken.",
+        "targetWord": "bleibt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/07964b161c2b5bab.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "unter Druck",
+    "sentence": "[[Unter Druck]] vergisst man leicht die richtige Anrede.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "under pressure",
+      "options": [
+        "under pressure",
+        "out of habit",
+        "late at night",
+        "for a joke"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Unter Druck vergisst man leicht die richtige Anrede.",
+        "targetWord": "Unter Druck",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8afbc64096adcc42.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "duzt",
+    "sentence": "An der Kaffeemaschine _____ Nadia fast die Chefin.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "duzt",
+      "options": [
+        "duzt",
+        "grüßt",
+        "meidet",
+        "bezahlt"
+      ],
+      "translation": "At the coffee machine Nadia almost _____ the boss.",
+      "optionTranslations": [
+        "says du to",
+        "greets",
+        "avoids",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "An der Kaffeemaschine duzt Nadia fast die Chefin.",
+        "targetWord": "duzt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa295d3195e11025.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "verwechseln",
+    "sentence": "Bloß nicht die Chefin mit einer Kollegin _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "verwechseln",
+      "options": [
+        "verwechseln",
+        "vergleichen",
+        "begrüßen",
+        "einladen"
+      ],
+      "translation": "Just do not _____ the boss with a colleague.",
+      "optionTranslations": [
+        "mix up",
+        "compare",
+        "greet",
+        "invite"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Bloß nicht die Chefin mit einer Kollegin verwechseln.",
+        "targetWord": "verwechseln",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dd5de357add7f16a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "ruinieren",
+    "sentence": "Ein falsches Wort kann den ganzen ersten Tag _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ruinieren",
+      "options": [
+        "ruinieren",
+        "retten",
+        "planen",
+        "verlängern"
+      ],
+      "translation": "One wrong word can _____ the whole first day.",
+      "optionTranslations": [
+        "ruin",
+        "save",
+        "plan",
+        "extend"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "Ein falsches Wort kann den ganzen ersten Tag ruinieren.",
+        "targetWord": "ruinieren",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f3da4bdfec9eb4f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rettet",
+    "sentence": "In letzter Sekunde _____ sie sich vor dem Fehler.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rettet",
+      "options": [
+        "rettet",
+        "meldet",
+        "fürchtet",
+        "wiederholt"
+      ],
+      "translation": "At the last second she _____ herself from the mistake.",
+      "optionTranslations": [
+        "rescues",
+        "reports",
+        "fears",
+        "repeats"
+      ],
+      "audioClip": {
+        "storySlug": "duzen-auf-eigene-gefahr",
+        "storySource": "user",
+        "sentence": "In letzter Sekunde rettet sie sich vor dem Fehler.",
+        "targetWord": "rettet",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0c1b1663375a88fe.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Dienstausweis,das Stockwerk,die Anrede,der Feierabend",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Dienstausweis",
+          "answer": "employee ID badge",
+          "options": [
+            "employee ID badge",
+            "floor of a building",
+            "form of address",
+            "end of the workday"
+          ]
+        },
+        {
+          "word": "das Stockwerk",
+          "answer": "floor of a building",
+          "options": [
+            "employee ID badge",
+            "floor of a building",
+            "form of address",
+            "end of the workday"
+          ]
+        },
+        {
+          "word": "die Anrede",
+          "answer": "form of address",
+          "options": [
+            "employee ID badge",
+            "floor of a building",
+            "form of address",
+            "end of the workday"
+          ]
+        },
+        {
+          "word": "der Feierabend",
+          "answer": "end of the workday",
+          "options": [
+            "employee ID badge",
+            "floor of a building",
+            "form of address",
+            "end of the workday"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]

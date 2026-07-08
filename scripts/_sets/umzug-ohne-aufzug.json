@@ -1,456 +1,472 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "der Altbau",
-  "sentence": "Der [[Altbau]] hat hohe Decken und keinen Aufzug.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "pre-war building",
-   "options": [
-    "pre-war building",
-    "new tower block",
-    "garden shed",
-    "office wing"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Der Altbau hat hohe Decken und keinen Aufzug.",
-    "targetWord": "Altbau",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Kündigung",
-  "sentence": "Für die alte Wohnung schreibt sie eine [[Kündigung]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "cancellation notice",
-   "options": [
-    "cancellation notice",
-    "welcome letter",
-    "rent receipt",
-    "credit report"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Für die alte Wohnung schreibt sie eine Kündigung.",
-    "targetWord": "Kündigung",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "erben",
-  "sentence": "Von Lea [[erbt]] Nadia ein ganzes Zimmer.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "inherits",
-   "options": [
-    "inherits",
-    "rents",
-    "buys",
-    "borrows"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Von Lea erbt Nadia ein ganzes Zimmer.",
-    "targetWord": "erbt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Stammbaum",
-  "sentence": "Das Zimmer hat einen langen [[Stammbaum]] von Mietern.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "family tree, lineage",
-   "options": [
-    "family tree, lineage",
-    "price tag",
-    "waiting list",
-    "floor plan"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Das Zimmer hat einen langen Stammbaum von Mietern.",
-    "targetWord": "Stammbaum",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Vorgeschichte",
-  "sentence": "Jedes Möbelstück hat hier seine eigene [[Vorgeschichte]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "backstory",
-   "options": [
-    "backstory",
-    "warranty",
-    "price",
-    "owner"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Jedes Möbelstück hat hier seine eigene Vorgeschichte.",
-    "targetWord": "Vorgeschichte",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Funkstille",
-  "sentence": "Nach neun Tagen [[Funkstille]] meldet sich die WG.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "radio silence",
-   "options": [
-    "radio silence",
-    "loud party",
-    "quick reply",
-    "short delay"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Nach neun Tagen Funkstille meldet sich die WG.",
-    "targetWord": "Funkstille",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "nach reiflicher Überlegung",
-  "sentence": "Die WG antwortet: [[nach reiflicher Überlegung]] leider nein.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "after careful consideration",
-   "options": [
-    "after careful consideration",
-    "by pure chance",
-    "in a great hurry",
-    "without any reason"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Die WG antwortet: nach reiflicher Überlegung leider nein.",
-    "targetWord": "nach reiflicher Überlegung",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "klemmen",
-  "sentence": "Der Herd zieht links, die Tür bleibt [[klemmend]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "jamming, sticking",
-   "options": [
-    "jamming, sticking",
-    "shining bright",
-    "running smoothly",
-    "perfectly new"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Der Herd zieht links, die Tür bleibt klemmend.",
-    "targetWord": "klemmend",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "bewohnbar",
-  "sentence": "Erst nach dem Putzen ist die Wohnung [[bewohnbar]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "habitable",
-   "options": [
-    "habitable",
-    "for sale",
-    "too small",
-    "brand new"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Erst nach dem Putzen ist die Wohnung bewohnbar.",
-    "targetWord": "bewohnbar",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "genießen",
-  "sentence": "[[Genieß]] den Moment; morgen wartet die Ummeldung.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "enjoy",
-   "options": [
-    "enjoy",
-    "postpone",
-    "forget",
-    "fear"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Genieß den Moment; morgen wartet die Ummeldung.",
-    "targetWord": "Genieß",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "verdient",
-  "sentence": "Der Blick vom fünften Stock ist ehrlich [[verdient]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "deserved",
-   "options": [
-    "deserved",
-    "expensive",
-    "dangerous",
-    "forbidden"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Der Blick vom fünften Stock ist ehrlich verdient.",
-    "targetWord": "verdient",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "Schritt für Schritt",
-  "sentence": "Sie tragen die Kartons [[Schritt für Schritt]] nach oben.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "step by step",
-   "options": [
-    "step by step",
-    "free of charge",
-    "late at night",
-    "all at once"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Sie tragen die Kartons Schritt für Schritt nach oben.",
-    "targetWord": "Schritt für Schritt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "kontert",
-  "sentence": "Der Altbau _____ jede Freude mit fünftem Stock.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "kontert",
-   "options": [
-    "kontert",
-    "belohnt",
-    "vergisst",
-    "öffnet"
-   ],
-   "translation": "The old building _____ every joy with a fifth floor.",
-   "optionTranslations": [
-    "counters",
-    "rewards",
-    "forgets",
-    "opens"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Der Altbau kontert jede Freude mit fünftem Stock.",
-    "targetWord": "kontert",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "durchhält",
-  "sentence": "Wer alle Kartons hochträgt, _____ bis zum Schluss.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "durchhält",
-   "options": [
-    "durchhält",
-    "aufgibt",
-    "stolpert",
-    "schläft"
-   ],
-   "translation": "Whoever carries up all the boxes _____ to the end.",
-   "optionTranslations": [
-    "holds out",
-    "gives up",
-    "stumbles",
-    "sleeps"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Wer alle Kartons hochträgt, durchhält bis zum Schluss.",
-    "targetWord": "durchhält",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "summt",
-  "sentence": "Beim achten Karton _____ plötzlich ihr Handy.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "summt",
-   "options": [
-    "summt",
-    "klingelt",
-    "schweigt",
-    "leuchtet"
-   ],
-   "translation": "At the eighth box her phone suddenly _____.",
-   "optionTranslations": [
-    "buzzes",
-    "rings",
-    "stays silent",
-    "lights up"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Beim achten Karton summt plötzlich ihr Handy.",
-    "targetWord": "summt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "bestanden",
-  "sentence": "Der Umzug ist wie eine Prüfung, endlich _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "bestanden",
-   "options": [
-    "bestanden",
-    "verpasst",
-    "verloren",
-    "begonnen"
-   ],
-   "translation": "The move is like an exam, finally _____.",
-   "optionTranslations": [
-    "passed",
-    "missed",
-    "lost",
-    "begun"
-   ],
-   "audioClip": {
-    "storySlug": "umzug-ohne-aufzug",
-    "storySource": "user",
-    "sentence": "Der Umzug ist wie eine Prüfung, endlich bestanden.",
-    "targetWord": "bestanden",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "das Übergabeprotokoll,die Schramme,der Zählerstand,die Ummeldung",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "das Übergabeprotokoll",
-     "answer": "handover report",
-     "options": [
-      "handover report",
-      "scratch mark",
-      "meter reading",
-      "address re-registration"
-     ]
-    },
-    {
-     "word": "die Schramme",
-     "answer": "scratch mark",
-     "options": [
-      "handover report",
-      "scratch mark",
-      "meter reading",
-      "address re-registration"
-     ]
-    },
-    {
-     "word": "der Zählerstand",
-     "answer": "meter reading",
-     "options": [
-      "handover report",
-      "scratch mark",
-      "meter reading",
-      "address re-registration"
-     ]
-    },
-    {
-     "word": "die Ummeldung",
-     "answer": "address re-registration",
-     "options": [
-      "handover report",
-      "scratch mark",
-      "meter reading",
-      "address re-registration"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "der Altbau",
+    "sentence": "Der [[Altbau]] hat hohe Decken und keinen Aufzug.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pre-war building",
+      "options": [
+        "pre-war building",
+        "new tower block",
+        "garden shed",
+        "office wing"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Der Altbau hat hohe Decken und keinen Aufzug.",
+        "targetWord": "Altbau",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3049a03c96d982cd.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "die Kündigung",
+    "sentence": "Für die alte Wohnung schreibt sie eine [[Kündigung]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cancellation notice",
+      "options": [
+        "cancellation notice",
+        "welcome letter",
+        "rent receipt",
+        "credit report"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Für die alte Wohnung schreibt sie eine Kündigung.",
+        "targetWord": "Kündigung",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf27b2c52a39495e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "erben",
+    "sentence": "Von Lea [[erbt]] Nadia ein ganzes Zimmer.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "inherits",
+      "options": [
+        "inherits",
+        "rents",
+        "buys",
+        "borrows"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Von Lea erbt Nadia ein ganzes Zimmer.",
+        "targetWord": "erbt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8fdf5f94ef8879fc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Stammbaum",
+    "sentence": "Das Zimmer hat einen langen [[Stammbaum]] von Mietern.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "family tree, lineage",
+      "options": [
+        "family tree, lineage",
+        "price tag",
+        "waiting list",
+        "floor plan"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Das Zimmer hat einen langen Stammbaum von Mietern.",
+        "targetWord": "Stammbaum",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/47ea22e3249d87fe.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Vorgeschichte",
+    "sentence": "Jedes Möbelstück hat hier seine eigene [[Vorgeschichte]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "backstory",
+      "options": [
+        "backstory",
+        "warranty",
+        "price",
+        "owner"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Jedes Möbelstück hat hier seine eigene Vorgeschichte.",
+        "targetWord": "Vorgeschichte",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa8e36a8f1693797.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Funkstille",
+    "sentence": "Nach neun Tagen [[Funkstille]] meldet sich die WG.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "radio silence",
+      "options": [
+        "radio silence",
+        "loud party",
+        "quick reply",
+        "short delay"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Nach neun Tagen Funkstille meldet sich die WG.",
+        "targetWord": "Funkstille",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ae28fe1ebc09635.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nach reiflicher Überlegung",
+    "sentence": "Die WG antwortet: [[nach reiflicher Überlegung]] leider nein.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "after careful consideration",
+      "options": [
+        "after careful consideration",
+        "by pure chance",
+        "in a great hurry",
+        "without any reason"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Die WG antwortet: nach reiflicher Überlegung leider nein.",
+        "targetWord": "nach reiflicher Überlegung",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/55f49a72799f9dd0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "klemmen",
+    "sentence": "Der Herd zieht links, die Tür bleibt [[klemmend]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "jamming, sticking",
+      "options": [
+        "jamming, sticking",
+        "shining bright",
+        "running smoothly",
+        "perfectly new"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Der Herd zieht links, die Tür bleibt klemmend.",
+        "targetWord": "klemmend",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b1de8055e5ff471e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bewohnbar",
+    "sentence": "Erst nach dem Putzen ist die Wohnung [[bewohnbar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "habitable",
+      "options": [
+        "habitable",
+        "for sale",
+        "too small",
+        "brand new"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Erst nach dem Putzen ist die Wohnung bewohnbar.",
+        "targetWord": "bewohnbar",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f261dd22ab010b82.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "genießen",
+    "sentence": "[[Genieß]] den Moment; morgen wartet die Ummeldung.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "enjoy",
+      "options": [
+        "enjoy",
+        "postpone",
+        "forget",
+        "fear"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Genieß den Moment; morgen wartet die Ummeldung.",
+        "targetWord": "Genieß",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aadd7d0c2ce526b9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verdient",
+    "sentence": "Der Blick vom fünften Stock ist ehrlich [[verdient]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "deserved",
+      "options": [
+        "deserved",
+        "expensive",
+        "dangerous",
+        "forbidden"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Der Blick vom fünften Stock ist ehrlich verdient.",
+        "targetWord": "verdient",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b75837881c3548b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Schritt für Schritt",
+    "sentence": "Sie tragen die Kartons [[Schritt für Schritt]] nach oben.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "step by step",
+      "options": [
+        "step by step",
+        "free of charge",
+        "late at night",
+        "all at once"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Sie tragen die Kartons Schritt für Schritt nach oben.",
+        "targetWord": "Schritt für Schritt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8d27d81bd196a4d6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "kontert",
+    "sentence": "Der Altbau _____ jede Freude mit fünftem Stock.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "kontert",
+      "options": [
+        "kontert",
+        "belohnt",
+        "vergisst",
+        "öffnet"
+      ],
+      "translation": "The old building _____ every joy with a fifth floor.",
+      "optionTranslations": [
+        "counters",
+        "rewards",
+        "forgets",
+        "opens"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Der Altbau kontert jede Freude mit fünftem Stock.",
+        "targetWord": "kontert",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9e229e03002d5d46.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "durchhält",
+    "sentence": "Wer alle Kartons hochträgt, _____ bis zum Schluss.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "durchhält",
+      "options": [
+        "durchhält",
+        "aufgibt",
+        "stolpert",
+        "schläft"
+      ],
+      "translation": "Whoever carries up all the boxes _____ to the end.",
+      "optionTranslations": [
+        "holds out",
+        "gives up",
+        "stumbles",
+        "sleeps"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Wer alle Kartons hochträgt, durchhält bis zum Schluss.",
+        "targetWord": "durchhält",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a31be1b6cae89405.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "summt",
+    "sentence": "Beim achten Karton _____ plötzlich ihr Handy.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "summt",
+      "options": [
+        "summt",
+        "klingelt",
+        "schweigt",
+        "leuchtet"
+      ],
+      "translation": "At the eighth box her phone suddenly _____.",
+      "optionTranslations": [
+        "buzzes",
+        "rings",
+        "stays silent",
+        "lights up"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Beim achten Karton summt plötzlich ihr Handy.",
+        "targetWord": "summt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b5f51b7a76cb7bf8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bestanden",
+    "sentence": "Der Umzug ist wie eine Prüfung, endlich _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bestanden",
+      "options": [
+        "bestanden",
+        "verpasst",
+        "verloren",
+        "begonnen"
+      ],
+      "translation": "The move is like an exam, finally _____.",
+      "optionTranslations": [
+        "passed",
+        "missed",
+        "lost",
+        "begun"
+      ],
+      "audioClip": {
+        "storySlug": "umzug-ohne-aufzug",
+        "storySource": "user",
+        "sentence": "Der Umzug ist wie eine Prüfung, endlich bestanden.",
+        "targetWord": "bestanden",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4eb1b2a4c7b1a384.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "das Übergabeprotokoll,die Schramme,der Zählerstand,die Ummeldung",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "das Übergabeprotokoll",
+          "answer": "handover report",
+          "options": [
+            "handover report",
+            "scratch mark",
+            "meter reading",
+            "address re-registration"
+          ]
+        },
+        {
+          "word": "die Schramme",
+          "answer": "scratch mark",
+          "options": [
+            "handover report",
+            "scratch mark",
+            "meter reading",
+            "address re-registration"
+          ]
+        },
+        {
+          "word": "der Zählerstand",
+          "answer": "meter reading",
+          "options": [
+            "handover report",
+            "scratch mark",
+            "meter reading",
+            "address re-registration"
+          ]
+        },
+        {
+          "word": "die Ummeldung",
+          "answer": "address re-registration",
+          "options": [
+            "handover report",
+            "scratch mark",
+            "meter reading",
+            "address re-registration"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]

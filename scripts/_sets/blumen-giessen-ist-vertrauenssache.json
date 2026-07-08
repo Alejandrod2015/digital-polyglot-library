@@ -1,480 +1,497 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "Blumen gießen",
-  "sentence": "Ronja bittet Nadia nur, ihre [[Blumen zu gießen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to water the plants",
-   "options": [
-    "to water the plants",
-    "to sell the flat",
-    "to feed guests",
-    "to pay rent"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Ronja bittet Nadia nur, ihre Blumen zu gießen.",
-    "targetWord": "Blumen zu gießen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Vertrauenssache",
-  "sentence": "Ein Schlüssel ist in Berlin reine [[Vertrauenssache]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a matter of trust",
-   "options": [
-    "a matter of trust",
-    "a legal duty",
-    "a lucky guess",
-    "a cheap trick"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Ein Schlüssel ist in Berlin reine Vertrauenssache.",
-    "targetWord": "Vertrauenssache",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "fressen",
-  "sentence": "Der Kater [[frisst]] morgens und abends.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "eats (of animals)",
-   "options": [
-    "eats (of animals)",
-    "sleeps",
-    "hides",
-    "plays"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Der Kater frisst morgens und abends.",
-    "targetWord": "frisst",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "schaffen",
-  "sentence": "Den Rest, sagt Ronja, [[schaffst]] du schon.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "will manage",
-   "options": [
-    "will manage",
-    "will forget",
-    "will lose",
-    "will fear"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Den Rest, sagt Ronja, schaffst du schon.",
-    "targetWord": "schaffst",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "amtlich",
-  "sentence": "Katja erklärt die Rangordnung fast [[amtlich]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "officially",
-   "options": [
-    "officially",
-    "quietly",
-    "jokingly",
-    "rarely"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Katja erklärt die Rangordnung fast amtlich.",
-    "targetWord": "amtlich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "annehmen",
-  "sentence": "Ein Paket [[annehmen]] macht man für jeden.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to accept, take in",
-   "options": [
-    "to accept, take in",
-    "to send back",
-    "to pay for",
-    "to open up"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Ein Paket annehmen macht man für jeden.",
-    "targetWord": "annehmen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Abwesenheit",
-  "sentence": "Zwei Wochen [[Abwesenheit]] sind viel Vertrauen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "absence",
-   "options": [
-    "absence",
-    "presence",
-    "holiday",
-    "delay"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Zwei Wochen Abwesenheit sind viel Vertrauen.",
-    "targetWord": "Abwesenheit",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "aufsteigen",
-  "sentence": "In der Rangordnung [[steigt]] Nadia schnell [[auf]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to move up",
-   "options": [
-    "to move up",
-    "to give up",
-    "to fall back",
-    "to hold still"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "In der Rangordnung steigt Nadia schnell auf.",
-    "targetWord": "steigt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "eingehen",
-  "sentence": "Falls eine Pflanze [[eingeht]], schweigt man besser.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "withers and dies",
-   "options": [
-    "withers and dies",
-    "grows too fast",
-    "gets stolen",
-    "blooms again"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Falls eine Pflanze eingeht, schweigt man besser.",
-    "targetWord": "eingeht",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "heimlich",
-  "sentence": "Man kauft [[heimlich]] eine neue und sagt nichts.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "secretly",
-   "options": [
-    "secretly",
-    "loudly",
-    "officially",
-    "slowly"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Man kauft heimlich eine neue und sagt nichts.",
-    "targetWord": "heimlich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "gedeihen",
-  "sentence": "Zwei Wochen später [[gedeihen]] alle Pflanzen prächtig.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "thrive",
-   "options": [
-    "thrive",
-    "wither",
-    "vanish",
-    "freeze"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Zwei Wochen später gedeihen alle Pflanzen prächtig.",
-    "targetWord": "gedeihen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "mitbringen",
-  "sentence": "Ronja will aus dem Urlaub etwas [[mitbringen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to bring back a gift",
-   "options": [
-    "to bring back a gift",
-    "to throw away",
-    "to forget",
-    "to sell"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Ronja will aus dem Urlaub etwas mitbringen.",
-    "targetWord": "mitbringen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "gehört dazu",
-  "sentence": "Wer die Pflanzen gießt, [[gehört dazu]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "belongs, is one of them",
-   "options": [
-    "belongs, is one of them",
-    "pays the rent",
-    "stays outside",
-    "leaves soon"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Wer die Pflanzen gießt, gehört dazu.",
-    "targetWord": "gehört dazu",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "drücken",
-  "sentence": "Ronja will Nadia den Schlüssel in die Hand _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "drücken",
-   "options": [
-    "drücken",
-    "werfen",
-    "verstecken",
-    "zeigen"
-   ],
-   "translation": "Ronja wants to _____ the key into Nadia's hand.",
-   "optionTranslations": [
-    "press",
-    "throw",
-    "hide",
-    "show"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Ronja will Nadia den Schlüssel in die Hand drücken.",
-    "targetWord": "drücken",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "füttern",
-  "sentence": "Zweimal am Tag muss Nadia den Kater _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "füttern",
-   "options": [
-    "füttern",
-    "waschen",
-    "kämmen",
-    "suchen"
-   ],
-   "translation": "Twice a day Nadia has to _____ the cat.",
-   "optionTranslations": [
-    "feed",
-    "wash",
-    "comb",
-    "search"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Zweimal am Tag muss Nadia den Kater füttern.",
-    "targetWord": "füttern",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "verschweigen",
-  "sentence": "Eine tote Pflanze kann man einfach _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "verschweigen",
-   "options": [
-    "verschweigen",
-    "gießen",
-    "bewundern",
-    "verkaufen"
-   ],
-   "translation": "A dead plant you can simply _____.",
-   "optionTranslations": [
-    "keep quiet about",
-    "water",
-    "admire",
-    "sell"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Eine tote Pflanze kann man einfach verschweigen.",
-    "targetWord": "verschweigen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "hüten",
-  "sentence": "Am Ende darf Nadia ein ganzes Leben _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "hüten",
-   "options": [
-    "hüten",
-    "verlassen",
-    "verlieren",
-    "stören"
-   ],
-   "translation": "In the end Nadia gets to _____ a whole life.",
-   "optionTranslations": [
-    "watch over",
-    "abandon",
-    "lose",
-    "disturb"
-   ],
-   "audioClip": {
-    "storySlug": "blumen-giessen-ist-vertrauenssache",
-    "storySource": "user",
-    "sentence": "Am Ende darf Nadia ein ganzes Leben hüten.",
-    "targetWord": "hüten",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "der Wohnungsschlüssel,der Heiratsantrag,die Rangordnung,die Stufe",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Wohnungsschlüssel",
-     "answer": "flat key",
-     "options": [
-      "flat key",
-      "marriage proposal",
-      "pecking order",
-      "step, level"
-     ]
-    },
-    {
-     "word": "der Heiratsantrag",
-     "answer": "marriage proposal",
-     "options": [
-      "flat key",
-      "marriage proposal",
-      "pecking order",
-      "step, level"
-     ]
-    },
-    {
-     "word": "die Rangordnung",
-     "answer": "pecking order",
-     "options": [
-      "flat key",
-      "marriage proposal",
-      "pecking order",
-      "step, level"
-     ]
-    },
-    {
-     "word": "die Stufe",
-     "answer": "step, level",
-     "options": [
-      "flat key",
-      "marriage proposal",
-      "pecking order",
-      "step, level"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "Blumen gießen",
+    "sentence": "Ronja bittet Nadia nur, ihre [[Blumen zu gießen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to water the plants",
+      "options": [
+        "to water the plants",
+        "to sell the flat",
+        "to feed guests",
+        "to pay rent"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Ronja bittet Nadia nur, ihre Blumen zu gießen.",
+        "targetWord": "Blumen zu gießen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a71bd7d9fa9a1b3.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "die Vertrauenssache",
+    "sentence": "Ein Schlüssel ist in Berlin reine [[Vertrauenssache]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a matter of trust",
+      "options": [
+        "a matter of trust",
+        "a legal duty",
+        "a lucky guess",
+        "a cheap trick"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Ein Schlüssel ist in Berlin reine Vertrauenssache.",
+        "targetWord": "Vertrauenssache",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4fd5428e01f0bf5a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fressen",
+    "sentence": "Der Kater [[frisst]] morgens und abends.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "eats (of animals)",
+      "options": [
+        "eats (of animals)",
+        "sleeps",
+        "hides",
+        "plays"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Der Kater frisst morgens und abends.",
+        "targetWord": "frisst",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/44ce4e6852caa6bd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "schaffen",
+    "sentence": "Den Rest, sagt Ronja, [[schaffst]] du schon.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "will manage",
+      "options": [
+        "will manage",
+        "will forget",
+        "will lose",
+        "will fear"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Den Rest, sagt Ronja, schaffst du schon.",
+        "targetWord": "schaffst",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0973655eb1976fea.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amtlich",
+    "sentence": "Katja erklärt die Rangordnung fast [[amtlich]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "officially",
+      "options": [
+        "officially",
+        "quietly",
+        "jokingly",
+        "rarely"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Katja erklärt die Rangordnung fast amtlich.",
+        "targetWord": "amtlich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b3ccb23c5469974c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "annehmen",
+    "sentence": "Ein Paket [[annehmen]] macht man für jeden.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to accept, take in",
+      "options": [
+        "to accept, take in",
+        "to send back",
+        "to pay for",
+        "to open up"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Ein Paket annehmen macht man für jeden.",
+        "targetWord": "annehmen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea8511004e4a336c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Abwesenheit",
+    "sentence": "Zwei Wochen [[Abwesenheit]] sind viel Vertrauen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "absence",
+      "options": [
+        "absence",
+        "presence",
+        "holiday",
+        "delay"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Zwei Wochen Abwesenheit sind viel Vertrauen.",
+        "targetWord": "Abwesenheit",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/718e1c284882b578.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aufsteigen",
+    "sentence": "In der Rangordnung [[steigt]] Nadia schnell [[auf]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to move up",
+      "options": [
+        "to move up",
+        "to give up",
+        "to fall back",
+        "to hold still"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "In der Rangordnung steigt Nadia schnell auf.",
+        "targetWord": "steigt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/01f0c7fad95cbf99.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "eingehen",
+    "sentence": "Falls eine Pflanze [[eingeht]], schweigt man besser.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "withers and dies",
+      "options": [
+        "withers and dies",
+        "grows too fast",
+        "gets stolen",
+        "blooms again"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Falls eine Pflanze eingeht, schweigt man besser.",
+        "targetWord": "eingeht",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9302e9a9085a27a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "heimlich",
+    "sentence": "Man kauft [[heimlich]] eine neue und sagt nichts.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "secretly",
+      "options": [
+        "secretly",
+        "loudly",
+        "officially",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Man kauft heimlich eine neue und sagt nichts.",
+        "targetWord": "heimlich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/affb16c55a931f07.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gedeihen",
+    "sentence": "Zwei Wochen später [[gedeihen]] alle Pflanzen prächtig.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thrive",
+      "options": [
+        "thrive",
+        "wither",
+        "vanish",
+        "freeze"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Zwei Wochen später gedeihen alle Pflanzen prächtig.",
+        "targetWord": "gedeihen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8c9ab2318fc9a41d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mitbringen",
+    "sentence": "Ronja will aus dem Urlaub etwas [[mitbringen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bring back a gift",
+      "options": [
+        "to bring back a gift",
+        "to throw away",
+        "to forget",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Ronja will aus dem Urlaub etwas mitbringen.",
+        "targetWord": "mitbringen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1b2ed93820090cfd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gehört dazu",
+    "sentence": "Wer die Pflanzen gießt, [[gehört dazu]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "belongs, is one of them",
+      "options": [
+        "belongs, is one of them",
+        "pays the rent",
+        "stays outside",
+        "leaves soon"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Wer die Pflanzen gießt, gehört dazu.",
+        "targetWord": "gehört dazu",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9a1441b834815a9d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "drücken",
+    "sentence": "Ronja will Nadia den Schlüssel in die Hand _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "drücken",
+      "options": [
+        "drücken",
+        "werfen",
+        "verstecken",
+        "zeigen"
+      ],
+      "translation": "Ronja wants to _____ the key into Nadia's hand.",
+      "optionTranslations": [
+        "press",
+        "throw",
+        "hide",
+        "show"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Ronja will Nadia den Schlüssel in die Hand drücken.",
+        "targetWord": "drücken",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a8b4c9dea1700d7c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "füttern",
+    "sentence": "Zweimal am Tag muss Nadia den Kater _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "füttern",
+      "options": [
+        "füttern",
+        "waschen",
+        "kämmen",
+        "suchen"
+      ],
+      "translation": "Twice a day Nadia has to _____ the cat.",
+      "optionTranslations": [
+        "feed",
+        "wash",
+        "comb",
+        "search"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Zweimal am Tag muss Nadia den Kater füttern.",
+        "targetWord": "füttern",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4576cd03f2bcf173.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "verschweigen",
+    "sentence": "Eine tote Pflanze kann man einfach _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "verschweigen",
+      "options": [
+        "verschweigen",
+        "gießen",
+        "bewundern",
+        "verkaufen"
+      ],
+      "translation": "A dead plant you can simply _____.",
+      "optionTranslations": [
+        "keep quiet about",
+        "water",
+        "admire",
+        "sell"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Eine tote Pflanze kann man einfach verschweigen.",
+        "targetWord": "verschweigen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/700438ae33aa29a4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "hüten",
+    "sentence": "Am Ende darf Nadia ein ganzes Leben _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hüten",
+      "options": [
+        "hüten",
+        "verlassen",
+        "verlieren",
+        "stören"
+      ],
+      "translation": "In the end Nadia gets to _____ a whole life.",
+      "optionTranslations": [
+        "watch over",
+        "abandon",
+        "lose",
+        "disturb"
+      ],
+      "audioClip": {
+        "storySlug": "blumen-giessen-ist-vertrauenssache",
+        "storySource": "user",
+        "sentence": "Am Ende darf Nadia ein ganzes Leben hüten.",
+        "targetWord": "hüten",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f214a312717f6a79.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Wohnungsschlüssel,der Heiratsantrag,die Rangordnung,die Stufe",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Wohnungsschlüssel",
+          "answer": "flat key",
+          "options": [
+            "flat key",
+            "marriage proposal",
+            "pecking order",
+            "step, level"
+          ]
+        },
+        {
+          "word": "der Heiratsantrag",
+          "answer": "marriage proposal",
+          "options": [
+            "flat key",
+            "marriage proposal",
+            "pecking order",
+            "step, level"
+          ]
+        },
+        {
+          "word": "die Rangordnung",
+          "answer": "pecking order",
+          "options": [
+            "flat key",
+            "marriage proposal",
+            "pecking order",
+            "step, level"
+          ]
+        },
+        {
+          "word": "die Stufe",
+          "answer": "step, level",
+          "options": [
+            "flat key",
+            "marriage proposal",
+            "pecking order",
+            "step, level"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]

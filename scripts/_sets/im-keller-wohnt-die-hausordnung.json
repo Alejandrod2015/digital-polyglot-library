@@ -1,504 +1,522 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "der Sechser im Lotto",
-  "sentence": "Der Preis klingt nach einem [[Sechser im Lotto]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a jackpot",
-   "options": [
-    "a jackpot",
-    "a bad joke",
-    "a small fine",
-    "a fair deal"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Der Preis klingt nach einem Sechser im Lotto.",
-    "targetWord": "Sechser im Lotto",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Haken",
-  "sentence": "Der [[Haken]] wartet unten im Keller.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the catch",
-   "options": [
-    "the catch",
-    "the reward",
-    "the exit",
-    "the mailbox"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Der Haken wartet unten im Keller.",
-    "targetWord": "Haken",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "verraten",
-  "sentence": "Katja will Nadia einen guten Tipp [[verraten]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to reveal",
-   "options": [
-    "to reveal",
-    "to forbid",
-    "to repeat",
-    "to sell"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Katja will Nadia einen guten Tipp verraten.",
-    "targetWord": "verraten",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ausgerechnet",
-  "sentence": "[[Ausgerechnet]] im Keller hängt die Hausordnung.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "of all places",
-   "options": [
-    "of all places",
-    "luckily",
-    "as usual",
-    "by law"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Ausgerechnet im Keller hängt die Hausordnung.",
-    "targetWord": "Ausgerechnet",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Vorlauf",
-  "sentence": "Für die Waschküche braucht man eine Woche [[Vorlauf]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "advance notice",
-   "options": [
-    "advance notice",
-    "extra money",
-    "good luck",
-    "loud music"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Für die Waschküche braucht man eine Woche Vorlauf.",
-    "targetWord": "Vorlauf",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "laminiert",
-  "sentence": "Die Regeln hängen [[laminiert]] und beleuchtet an der Wand.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "laminated",
-   "options": [
-    "laminated",
-    "handwritten",
-    "crumpled",
-    "forgotten"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Die Regeln hängen laminiert und beleuchtet an der Wand.",
-    "targetWord": "laminiert",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Ruhezeiten",
-  "sentence": "Am Sonntag gelten strenge [[Ruhezeiten]] im Haus.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "quiet hours",
-   "options": [
-    "quiet hours",
-    "opening times",
-    "office hours",
-    "rush hours"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Am Sonntag gelten strenge Ruhezeiten im Haus.",
-    "targetWord": "Ruhezeiten",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sich einlesen",
-  "sentence": "Nadia muss sich in die Hausordnung [[einlesen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "read up on it",
-   "options": [
-    "read up on it",
-    "sign for it",
-    "pay for it",
-    "laugh at it"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Nadia muss sich in die Hausordnung einlesen.",
-    "targetWord": "einlesen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "friedlich",
-  "sentence": "Der Hausmeister wirkt ruhig und [[friedlich]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "peaceful",
-   "options": [
-    "peaceful",
-    "furious",
-    "nervous",
-    "greedy"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Der Hausmeister wirkt ruhig und friedlich.",
-    "targetWord": "friedlich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Absicht",
-  "sentence": "Er unterstellt niemandem eine böse [[Absicht]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "intention",
-   "options": [
-    "intention",
-    "address",
-    "invoice",
-    "excuse"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Er unterstellt niemandem eine böse Absicht.",
-    "targetWord": "Absicht",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "im Zweifel",
-  "sentence": "[[Im Zweifel]] entscheidet immer der Beirat.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "in case of doubt",
-   "options": [
-    "in case of doubt",
-    "for free",
-    "by chance",
-    "at night"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Im Zweifel entscheidet immer der Beirat.",
-    "targetWord": "Im Zweifel",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Lärm",
-  "sentence": "Nach zehn Uhr ist jeder [[Lärm]] verboten.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "noise",
-   "options": [
-    "noise",
-    "light",
-    "smell",
-    "guest"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Nach zehn Uhr ist jeder Lärm verboten.",
-    "targetWord": "Lärm",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "herzlich willkommen",
-  "sentence": "Der Hausmeister sagt kühl: [[herzlich willkommen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "warmly welcome",
-   "options": [
-    "warmly welcome",
-    "get well soon",
-    "good luck",
-    "see you soon"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Der Hausmeister sagt kühl: herzlich willkommen.",
-    "targetWord": "herzlich willkommen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "halt dich fest",
-  "sentence": "Timo grinst und sagt: [[halt dich fest]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "brace yourself",
-   "options": [
-    "brace yourself",
-    "hold the door",
-    "stay calm",
-    "sit down"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Timo grinst und sagt: halt dich fest.",
-    "targetWord": "halt dich fest",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "stammt",
-  "sentence": "Die niedrige Miete _____ aus einem anderen Jahrzehnt.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "stammt",
-   "options": [
-    "stammt",
-    "verschwindet",
-    "steigt",
-    "platzt"
-   ],
-   "translation": "The low rent _____ from another decade.",
-   "optionTranslations": [
-    "comes from",
-    "disappears",
-    "rises",
-    "falls through"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Die niedrige Miete stammt aus einem anderen Jahrzehnt.",
-    "targetWord": "stammt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "empfängt",
-  "sentence": "Hausmeister Wollny _____ Nadia am Kellereingang.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "empfängt",
-   "options": [
-    "empfängt",
-    "verlässt",
-    "bezahlt",
-    "meldet"
-   ],
-   "translation": "Caretaker Wollny _____ Nadia at the cellar door.",
-   "optionTranslations": [
-    "receives",
-    "leaves",
-    "pays",
-    "reports"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Hausmeister Wollny empfängt Nadia am Kellereingang.",
-    "targetWord": "empfängt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "überzeugt",
-  "sentence": "Die günstige Miete _____ Nadia noch nicht ganz.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "überzeugt",
-   "options": [
-    "überzeugt",
-    "erschreckt",
-    "langweilt",
-    "verwirrt"
-   ],
-   "translation": "The cheap rent does not fully _____ Nadia yet.",
-   "optionTranslations": [
-    "convince",
-    "frighten",
-    "bore",
-    "confuse"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Die günstige Miete überzeugt Nadia noch nicht ganz.",
-    "targetWord": "überzeugt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "tagt",
-  "sentence": "Der Beirat _____ jeden ersten Montag im Monat.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "tagt",
-   "options": [
-    "tagt",
-    "schläft",
-    "feiert",
-    "schweigt"
-   ],
-   "translation": "The committee _____ every first Monday of the month.",
-   "optionTranslations": [
-    "convenes",
-    "sleeps",
-    "celebrates",
-    "stays silent"
-   ],
-   "audioClip": {
-    "storySlug": "im-keller-wohnt-die-hausordnung",
-    "storySource": "user",
-    "sentence": "Der Beirat tagt jeden ersten Montag im Monat.",
-    "targetWord": "tagt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "der Hausmeister,der Schlüsselbund,die Waschküche,der Beirat",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Hausmeister",
-     "answer": "building caretaker",
-     "options": [
-      "building caretaker",
-      "bunch of keys",
-      "shared laundry room",
-      "residents' committee"
-     ]
-    },
-    {
-     "word": "der Schlüsselbund",
-     "answer": "bunch of keys",
-     "options": [
-      "building caretaker",
-      "bunch of keys",
-      "shared laundry room",
-      "residents' committee"
-     ]
-    },
-    {
-     "word": "die Waschküche",
-     "answer": "shared laundry room",
-     "options": [
-      "building caretaker",
-      "bunch of keys",
-      "shared laundry room",
-      "residents' committee"
-     ]
-    },
-    {
-     "word": "der Beirat",
-     "answer": "residents' committee",
-     "options": [
-      "building caretaker",
-      "bunch of keys",
-      "shared laundry room",
-      "residents' committee"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "der Sechser im Lotto",
+    "sentence": "Der Preis klingt nach einem [[Sechser im Lotto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a jackpot",
+      "options": [
+        "a jackpot",
+        "a bad joke",
+        "a small fine",
+        "a fair deal"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Der Preis klingt nach einem Sechser im Lotto.",
+        "targetWord": "Sechser im Lotto",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e7e2acc339634db.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "der Haken",
+    "sentence": "Der [[Haken]] wartet unten im Keller.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the catch",
+      "options": [
+        "the catch",
+        "the reward",
+        "the exit",
+        "the mailbox"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Der Haken wartet unten im Keller.",
+        "targetWord": "Haken",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f6f7705f98a0e1d7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verraten",
+    "sentence": "Katja will Nadia einen guten Tipp [[verraten]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to reveal",
+      "options": [
+        "to reveal",
+        "to forbid",
+        "to repeat",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Katja will Nadia einen guten Tipp verraten.",
+        "targetWord": "verraten",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d97e2054a3b37da4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ausgerechnet",
+    "sentence": "[[Ausgerechnet]] im Keller hängt die Hausordnung.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "of all places",
+      "options": [
+        "of all places",
+        "luckily",
+        "as usual",
+        "by law"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Ausgerechnet im Keller hängt die Hausordnung.",
+        "targetWord": "Ausgerechnet",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb6b6b1cc0f7bb4e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Vorlauf",
+    "sentence": "Für die Waschküche braucht man eine Woche [[Vorlauf]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "advance notice",
+      "options": [
+        "advance notice",
+        "extra money",
+        "good luck",
+        "loud music"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Für die Waschküche braucht man eine Woche Vorlauf.",
+        "targetWord": "Vorlauf",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4c2ad4d1511de5dc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "laminiert",
+    "sentence": "Die Regeln hängen [[laminiert]] und beleuchtet an der Wand.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "laminated",
+      "options": [
+        "laminated",
+        "handwritten",
+        "crumpled",
+        "forgotten"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Die Regeln hängen laminiert und beleuchtet an der Wand.",
+        "targetWord": "laminiert",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2529c4b8ae4c3d36.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Ruhezeiten",
+    "sentence": "Am Sonntag gelten strenge [[Ruhezeiten]] im Haus.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "quiet hours",
+      "options": [
+        "quiet hours",
+        "opening times",
+        "office hours",
+        "rush hours"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Am Sonntag gelten strenge Ruhezeiten im Haus.",
+        "targetWord": "Ruhezeiten",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e855c0810366f70a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sich einlesen",
+    "sentence": "Nadia muss sich in die Hausordnung [[einlesen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "read up on it",
+      "options": [
+        "read up on it",
+        "sign for it",
+        "pay for it",
+        "laugh at it"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Nadia muss sich in die Hausordnung einlesen.",
+        "targetWord": "einlesen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d9cb7d5bc9349a12.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "friedlich",
+    "sentence": "Der Hausmeister wirkt ruhig und [[friedlich]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "peaceful",
+      "options": [
+        "peaceful",
+        "furious",
+        "nervous",
+        "greedy"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Der Hausmeister wirkt ruhig und friedlich.",
+        "targetWord": "friedlich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/87af3ed893f7a7ff.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Absicht",
+    "sentence": "Er unterstellt niemandem eine böse [[Absicht]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "intention",
+      "options": [
+        "intention",
+        "address",
+        "invoice",
+        "excuse"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Er unterstellt niemandem eine böse Absicht.",
+        "targetWord": "Absicht",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4af8a3c1e7be124c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "im Zweifel",
+    "sentence": "[[Im Zweifel]] entscheidet immer der Beirat.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in case of doubt",
+      "options": [
+        "in case of doubt",
+        "for free",
+        "by chance",
+        "at night"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Im Zweifel entscheidet immer der Beirat.",
+        "targetWord": "Im Zweifel",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7787dee052c1d57b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Lärm",
+    "sentence": "Nach zehn Uhr ist jeder [[Lärm]] verboten.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "noise",
+      "options": [
+        "noise",
+        "light",
+        "smell",
+        "guest"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Nach zehn Uhr ist jeder Lärm verboten.",
+        "targetWord": "Lärm",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e3c298e36a08ec3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "herzlich willkommen",
+    "sentence": "Der Hausmeister sagt kühl: [[herzlich willkommen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "warmly welcome",
+      "options": [
+        "warmly welcome",
+        "get well soon",
+        "good luck",
+        "see you soon"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Der Hausmeister sagt kühl: herzlich willkommen.",
+        "targetWord": "herzlich willkommen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9225171835bfe8f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "halt dich fest",
+    "sentence": "Timo grinst und sagt: [[halt dich fest]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "brace yourself",
+      "options": [
+        "brace yourself",
+        "hold the door",
+        "stay calm",
+        "sit down"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Timo grinst und sagt: halt dich fest.",
+        "targetWord": "halt dich fest",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/845b14aa7f9e4a4c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "stammt",
+    "sentence": "Die niedrige Miete _____ aus einem anderen Jahrzehnt.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "stammt",
+      "options": [
+        "stammt",
+        "verschwindet",
+        "steigt",
+        "platzt"
+      ],
+      "translation": "The low rent _____ from another decade.",
+      "optionTranslations": [
+        "comes from",
+        "disappears",
+        "rises",
+        "falls through"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Die niedrige Miete stammt aus einem anderen Jahrzehnt.",
+        "targetWord": "stammt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff5f5d3de3bfd694.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "empfängt",
+    "sentence": "Hausmeister Wollny _____ Nadia am Kellereingang.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "empfängt",
+      "options": [
+        "empfängt",
+        "verlässt",
+        "bezahlt",
+        "meldet"
+      ],
+      "translation": "Caretaker Wollny _____ Nadia at the cellar door.",
+      "optionTranslations": [
+        "receives",
+        "leaves",
+        "pays",
+        "reports"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Hausmeister Wollny empfängt Nadia am Kellereingang.",
+        "targetWord": "empfängt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1284b4252d2d9a41.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "überzeugt",
+    "sentence": "Die günstige Miete _____ Nadia noch nicht ganz.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "überzeugt",
+      "options": [
+        "überzeugt",
+        "erschreckt",
+        "langweilt",
+        "verwirrt"
+      ],
+      "translation": "The cheap rent does not fully _____ Nadia yet.",
+      "optionTranslations": [
+        "convince",
+        "frighten",
+        "bore",
+        "confuse"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Die günstige Miete überzeugt Nadia noch nicht ganz.",
+        "targetWord": "überzeugt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2ec3f37865b2a784.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "tagt",
+    "sentence": "Der Beirat _____ jeden ersten Montag im Monat.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tagt",
+      "options": [
+        "tagt",
+        "schläft",
+        "feiert",
+        "schweigt"
+      ],
+      "translation": "The committee _____ every first Monday of the month.",
+      "optionTranslations": [
+        "convenes",
+        "sleeps",
+        "celebrates",
+        "stays silent"
+      ],
+      "audioClip": {
+        "storySlug": "im-keller-wohnt-die-hausordnung",
+        "storySource": "user",
+        "sentence": "Der Beirat tagt jeden ersten Montag im Monat.",
+        "targetWord": "tagt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e43309ebe9a20861.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Hausmeister,der Schlüsselbund,die Waschküche,der Beirat",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Hausmeister",
+          "answer": "building caretaker",
+          "options": [
+            "building caretaker",
+            "bunch of keys",
+            "shared laundry room",
+            "residents' committee"
+          ]
+        },
+        {
+          "word": "der Schlüsselbund",
+          "answer": "bunch of keys",
+          "options": [
+            "building caretaker",
+            "bunch of keys",
+            "shared laundry room",
+            "residents' committee"
+          ]
+        },
+        {
+          "word": "die Waschküche",
+          "answer": "shared laundry room",
+          "options": [
+            "building caretaker",
+            "bunch of keys",
+            "shared laundry room",
+            "residents' committee"
+          ]
+        },
+        {
+          "word": "der Beirat",
+          "answer": "residents' committee",
+          "options": [
+            "building caretaker",
+            "bunch of keys",
+            "shared laundry room",
+            "residents' committee"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]

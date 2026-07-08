@@ -1,480 +1,497 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "die Bescheinigung",
-  "sentence": "Für das Projekt fehlt genau eine [[Bescheinigung]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "official certificate",
-   "options": [
-    "official certificate",
-    "waiting number",
-    "service counter",
-    "credit report"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Für das Projekt fehlt genau eine Bescheinigung.",
-    "targetWord": "Bescheinigung",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Wartezeit",
-  "sentence": "Die [[Wartezeit]] am Amt fühlt sich endlos an.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "waiting time",
-   "options": [
-    "waiting time",
-    "office hour",
-    "lunch break",
-    "opening day"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Die Wartezeit am Amt fühlt sich endlos an.",
-    "targetWord": "Wartezeit",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Absage",
-  "sentence": "Drei Ämter schicken Nadia nur eine [[Absage]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a rejection",
-   "options": [
-    "a rejection",
-    "an invoice",
-    "a stamp",
-    "a receipt"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Drei Ämter schicken Nadia nur eine Absage.",
-    "targetWord": "Absage",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Entschuldigung",
-  "sentence": "Der zweite Stempel gilt fast als [[Entschuldigung]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "apology",
-   "options": [
-    "apology",
-    "accusation",
-    "reminder",
-    "permit"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Der zweite Stempel gilt fast als Entschuldigung.",
-    "targetWord": "Entschuldigung",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Fall",
-  "sentence": "Kein Amt fühlt sich für ihren [[Fall]] zuständig.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "case, file",
-   "options": [
-    "case, file",
-    "room",
-    "desk",
-    "stamp"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Kein Amt fühlt sich für ihren Fall zuständig.",
-    "targetWord": "Fall",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "staunen",
-  "sentence": "Nadia kann nur [[staunen]], wie schnell es plötzlich geht.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to be amazed",
-   "options": [
-    "to be amazed",
-    "to complain",
-    "to give up",
-    "to wait"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Nadia kann nur staunen, wie schnell es plötzlich geht.",
-    "targetWord": "staunen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "besitzen",
-  "sentence": "Herr Lindner [[besitzt]] die Formulare längst auf Vorrat.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to own",
-   "options": [
-    "to own",
-    "to sign",
-    "to lose",
-    "to copy"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Herr Lindner besitzt die Formulare längst auf Vorrat.",
-    "targetWord": "besitzt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "zuständig",
-  "sentence": "Am Ende ist doch niemand [[zuständig]] gewesen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "responsible, in charge",
-   "options": [
-    "responsible, in charge",
-    "polite",
-    "absent",
-    "angry"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Am Ende ist doch niemand zuständig gewesen.",
-    "targetWord": "zuständig",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "nötig",
-  "sentence": "Der zweite Stempel ist gar nicht [[nötig]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "necessary",
-   "options": [
-    "necessary",
-    "expensive",
-    "official",
-    "secret"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Der zweite Stempel ist gar nicht nötig.",
-    "targetWord": "nötig",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "täglich",
-  "sentence": "Solche Wege macht Nadia inzwischen fast [[täglich]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "daily",
-   "options": [
-    "daily",
-    "rarely",
-    "secretly",
-    "proudly"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Solche Wege macht Nadia inzwischen fast täglich.",
-    "targetWord": "täglich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "schriftlich",
-  "sentence": "Frau Brandt will die Unzuständigkeit gern [[schriftlich]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "in writing",
-   "options": [
-    "in writing",
-    "for free",
-    "by phone",
-    "in person"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Frau Brandt will die Unzuständigkeit gern schriftlich.",
-    "targetWord": "schriftlich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Kreis schließt sich",
-  "sentence": "Turmstraße, Nordufer, Zentrale: [[der Kreis schließt sich]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the circle closes",
-   "options": [
-    "the circle closes",
-    "the office opens",
-    "the line moves",
-    "the stamp dries"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Turmstraße, Nordufer, Zentrale: der Kreis schließt sich.",
-    "targetWord": "der Kreis schließt sich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "hätte ich gern",
-  "sentence": "Die Absage [[hätte ich gern]] schriftlich, sagt Brandt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "I would like to have",
-   "options": [
-    "I would like to have",
-    "I already sent",
-    "I never asked",
-    "I fully understand"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Die Absage hätte ich gern schriftlich, sagt Brandt.",
-    "targetWord": "hätte ich gern",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "annehmen",
-  "sentence": "Am Schalter will niemand das Formular _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "annehmen",
-   "options": [
-    "annehmen",
-    "ablehnen",
-    "verlieren",
-    "kopieren"
-   ],
-   "translation": "At the counter nobody wants to _____ the form.",
-   "optionTranslations": [
-    "accept",
-    "reject",
-    "lose",
-    "copy"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Am Schalter will niemand das Formular annehmen.",
-    "targetWord": "annehmen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "bearbeiten",
-  "sentence": "Plötzlich lässt sich der Antrag doch _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "bearbeiten",
-   "options": [
-    "bearbeiten",
-    "verschieben",
-    "ignorieren",
-    "zerreißen"
-   ],
-   "translation": "Suddenly the application can be _____ after all.",
-   "optionTranslations": [
-    "process",
-    "postpone",
-    "ignore",
-    "tear up"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Plötzlich lässt sich der Antrag doch bearbeiten.",
-    "targetWord": "bearbeiten",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "beantragen",
-  "sentence": "Nadia muss die Bescheinigung förmlich _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "beantragen",
-   "options": [
-    "beantragen",
-    "verstecken",
-    "bezahlen",
-    "verschenken"
-   ],
-   "translation": "Nadia has to formally _____ the certificate.",
-   "optionTranslations": [
-    "apply for",
-    "hide",
-    "pay for",
-    "give away"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Nadia muss die Bescheinigung förmlich beantragen.",
-    "targetWord": "beantragen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "aufgeben",
-  "sentence": "Fast will Nadia den ganzen Kampf _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "aufgeben",
-   "options": [
-    "aufgeben",
-    "gewinnen",
-    "planen",
-    "verlängern"
-   ],
-   "translation": "Nadia almost wants to _____ the whole fight.",
-   "optionTranslations": [
-    "give up",
-    "win",
-    "plan",
-    "extend"
-   ],
-   "audioClip": {
-    "storySlug": "zustaendig-ist-ein-anderes-amt",
-    "storySource": "user",
-    "sentence": "Fast will Nadia den ganzen Kampf aufgeben.",
-    "targetWord": "aufgeben",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "der Schalter,die Außenstelle,die Zentrale,die Verwaltung",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Schalter",
-     "answer": "service counter",
-     "options": [
-      "service counter",
-      "branch office",
-      "headquarters",
-      "administration"
-     ]
-    },
-    {
-     "word": "die Außenstelle",
-     "answer": "branch office",
-     "options": [
-      "service counter",
-      "branch office",
-      "headquarters",
-      "administration"
-     ]
-    },
-    {
-     "word": "die Zentrale",
-     "answer": "headquarters",
-     "options": [
-      "service counter",
-      "branch office",
-      "headquarters",
-      "administration"
-     ]
-    },
-    {
-     "word": "die Verwaltung",
-     "answer": "administration",
-     "options": [
-      "service counter",
-      "branch office",
-      "headquarters",
-      "administration"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "die Bescheinigung",
+    "sentence": "Für das Projekt fehlt genau eine [[Bescheinigung]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "official certificate",
+      "options": [
+        "official certificate",
+        "waiting number",
+        "service counter",
+        "credit report"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Für das Projekt fehlt genau eine Bescheinigung.",
+        "targetWord": "Bescheinigung",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9ab354d3da112646.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "die Wartezeit",
+    "sentence": "Die [[Wartezeit]] am Amt fühlt sich endlos an.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "waiting time",
+      "options": [
+        "waiting time",
+        "office hour",
+        "lunch break",
+        "opening day"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Die Wartezeit am Amt fühlt sich endlos an.",
+        "targetWord": "Wartezeit",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c37b5bffb1c1f0e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Absage",
+    "sentence": "Drei Ämter schicken Nadia nur eine [[Absage]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rejection",
+      "options": [
+        "a rejection",
+        "an invoice",
+        "a stamp",
+        "a receipt"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Drei Ämter schicken Nadia nur eine Absage.",
+        "targetWord": "Absage",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3bca72288312dbd2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Entschuldigung",
+    "sentence": "Der zweite Stempel gilt fast als [[Entschuldigung]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "apology",
+      "options": [
+        "apology",
+        "accusation",
+        "reminder",
+        "permit"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Der zweite Stempel gilt fast als Entschuldigung.",
+        "targetWord": "Entschuldigung",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/23e30f2a23764b49.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Fall",
+    "sentence": "Kein Amt fühlt sich für ihren [[Fall]] zuständig.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "case, file",
+      "options": [
+        "case, file",
+        "room",
+        "desk",
+        "stamp"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Kein Amt fühlt sich für ihren Fall zuständig.",
+        "targetWord": "Fall",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2111e4cc3667658a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "staunen",
+    "sentence": "Nadia kann nur [[staunen]], wie schnell es plötzlich geht.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be amazed",
+      "options": [
+        "to be amazed",
+        "to complain",
+        "to give up",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Nadia kann nur staunen, wie schnell es plötzlich geht.",
+        "targetWord": "staunen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a4ecff9adb701072.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "besitzen",
+    "sentence": "Herr Lindner [[besitzt]] die Formulare längst auf Vorrat.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to own",
+      "options": [
+        "to own",
+        "to sign",
+        "to lose",
+        "to copy"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Herr Lindner besitzt die Formulare längst auf Vorrat.",
+        "targetWord": "besitzt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9ddf8a30f724d88c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "zuständig",
+    "sentence": "Am Ende ist doch niemand [[zuständig]] gewesen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "responsible, in charge",
+      "options": [
+        "responsible, in charge",
+        "polite",
+        "absent",
+        "angry"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Am Ende ist doch niemand zuständig gewesen.",
+        "targetWord": "zuständig",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ee3e7b625bb1e7d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nötig",
+    "sentence": "Der zweite Stempel ist gar nicht [[nötig]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "necessary",
+      "options": [
+        "necessary",
+        "expensive",
+        "official",
+        "secret"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Der zweite Stempel ist gar nicht nötig.",
+        "targetWord": "nötig",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d4b224ce6d69f17.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "täglich",
+    "sentence": "Solche Wege macht Nadia inzwischen fast [[täglich]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "daily",
+      "options": [
+        "daily",
+        "rarely",
+        "secretly",
+        "proudly"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Solche Wege macht Nadia inzwischen fast täglich.",
+        "targetWord": "täglich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0420642ebc84277b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "schriftlich",
+    "sentence": "Frau Brandt will die Unzuständigkeit gern [[schriftlich]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in writing",
+      "options": [
+        "in writing",
+        "for free",
+        "by phone",
+        "in person"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Frau Brandt will die Unzuständigkeit gern schriftlich.",
+        "targetWord": "schriftlich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5d2a795cc3439dd7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Kreis schließt sich",
+    "sentence": "Turmstraße, Nordufer, Zentrale: [[der Kreis schließt sich]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the circle closes",
+      "options": [
+        "the circle closes",
+        "the office opens",
+        "the line moves",
+        "the stamp dries"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Turmstraße, Nordufer, Zentrale: der Kreis schließt sich.",
+        "targetWord": "der Kreis schließt sich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc754626e0792d4c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hätte ich gern",
+    "sentence": "Die Absage [[hätte ich gern]] schriftlich, sagt Brandt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I would like to have",
+      "options": [
+        "I would like to have",
+        "I already sent",
+        "I never asked",
+        "I fully understand"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Die Absage hätte ich gern schriftlich, sagt Brandt.",
+        "targetWord": "hätte ich gern",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/90ad4bcf35176d20.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "annehmen",
+    "sentence": "Am Schalter will niemand das Formular _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "annehmen",
+      "options": [
+        "annehmen",
+        "ablehnen",
+        "verlieren",
+        "kopieren"
+      ],
+      "translation": "At the counter nobody wants to _____ the form.",
+      "optionTranslations": [
+        "accept",
+        "reject",
+        "lose",
+        "copy"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Am Schalter will niemand das Formular annehmen.",
+        "targetWord": "annehmen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa08dc26ad94c334.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bearbeiten",
+    "sentence": "Plötzlich lässt sich der Antrag doch _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bearbeiten",
+      "options": [
+        "bearbeiten",
+        "verschieben",
+        "ignorieren",
+        "zerreißen"
+      ],
+      "translation": "Suddenly the application can be _____ after all.",
+      "optionTranslations": [
+        "process",
+        "postpone",
+        "ignore",
+        "tear up"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Plötzlich lässt sich der Antrag doch bearbeiten.",
+        "targetWord": "bearbeiten",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b735619f67ec9fc6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "beantragen",
+    "sentence": "Nadia muss die Bescheinigung förmlich _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "beantragen",
+      "options": [
+        "beantragen",
+        "verstecken",
+        "bezahlen",
+        "verschenken"
+      ],
+      "translation": "Nadia has to formally _____ the certificate.",
+      "optionTranslations": [
+        "apply for",
+        "hide",
+        "pay for",
+        "give away"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Nadia muss die Bescheinigung förmlich beantragen.",
+        "targetWord": "beantragen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/41a987eedc37433d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aufgeben",
+    "sentence": "Fast will Nadia den ganzen Kampf _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aufgeben",
+      "options": [
+        "aufgeben",
+        "gewinnen",
+        "planen",
+        "verlängern"
+      ],
+      "translation": "Nadia almost wants to _____ the whole fight.",
+      "optionTranslations": [
+        "give up",
+        "win",
+        "plan",
+        "extend"
+      ],
+      "audioClip": {
+        "storySlug": "zustaendig-ist-ein-anderes-amt",
+        "storySource": "user",
+        "sentence": "Fast will Nadia den ganzen Kampf aufgeben.",
+        "targetWord": "aufgeben",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9cdb3be5a5f7860.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Schalter,die Außenstelle,die Zentrale,die Verwaltung",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Schalter",
+          "answer": "service counter",
+          "options": [
+            "service counter",
+            "branch office",
+            "headquarters",
+            "administration"
+          ]
+        },
+        {
+          "word": "die Außenstelle",
+          "answer": "branch office",
+          "options": [
+            "service counter",
+            "branch office",
+            "headquarters",
+            "administration"
+          ]
+        },
+        {
+          "word": "die Zentrale",
+          "answer": "headquarters",
+          "options": [
+            "service counter",
+            "branch office",
+            "headquarters",
+            "administration"
+          ]
+        },
+        {
+          "word": "die Verwaltung",
+          "answer": "administration",
+          "options": [
+            "service counter",
+            "branch office",
+            "headquarters",
+            "administration"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]

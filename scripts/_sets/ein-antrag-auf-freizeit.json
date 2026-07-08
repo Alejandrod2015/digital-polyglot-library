@@ -1,504 +1,522 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "mustern",
-  "sentence": "Herr Pohl [[mustert]] Nadia wie einen unvollständigen Antrag.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "looks up and down",
-   "options": [
-    "looks up and down",
-    "greets warmly",
-    "pays quickly",
-    "ignores fully"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Herr Pohl mustert Nadia wie einen unvollständigen Antrag.",
-    "targetWord": "mustert",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "unvollständig",
-  "sentence": "Für Pohl wirkt jeder Bewerber zuerst [[unvollständig]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "incomplete",
-   "options": [
-    "incomplete",
-    "official",
-    "perfect",
-    "expensive"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Für Pohl wirkt jeder Bewerber zuerst unvollständig.",
-    "targetWord": "unvollständig",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Mitgliedsantrag",
-  "sentence": "Zuerst füllt Nadia den [[Mitgliedsantrag]] aus.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "membership form",
-   "options": [
-    "membership form",
-    "rent receipt",
-    "credit report",
-    "quiet room"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Zuerst füllt Nadia den Mitgliedsantrag aus.",
-    "targetWord": "Mitgliedsantrag",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Aufnahmegebühr",
-  "sentence": "Vor dem ersten Spiel zahlt sie eine [[Aufnahmegebühr]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "admission fee",
-   "options": [
-    "admission fee",
-    "monthly rent",
-    "fine",
-    "deposit"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Vor dem ersten Spiel zahlt sie eine Aufnahmegebühr.",
-    "targetWord": "Aufnahmegebühr",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "inbegriffen",
-  "sentence": "Das eigentliche Tischtennis ist praktisch [[inbegriffen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "included",
-   "options": [
-    "included",
-    "forbidden",
-    "extra",
-    "optional"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Das eigentliche Tischtennis ist praktisch inbegriffen.",
-    "targetWord": "inbegriffen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "reinschnuppern",
-  "sentence": "Beim Probetraining darf man kurz [[reinschnuppern]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "try it out briefly",
-   "options": [
-    "try it out briefly",
-    "sign right away",
-    "pay upfront",
-    "stay forever"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Beim Probetraining darf man kurz reinschnuppern.",
-    "targetWord": "reinschnuppern",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sich entscheiden",
-  "sentence": "Nach zwei Malen muss Nadia sich [[entscheiden]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "make up her mind",
-   "options": [
-    "make up her mind",
-    "forget the rules",
-    "pay again",
-    "leave quietly"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Nach zwei Malen muss Nadia sich entscheiden.",
-    "targetWord": "entscheiden",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ohne Formular kein Vergnügen",
-  "sentence": "Timo lacht: [[ohne Formular kein Vergnügen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "no fun without a form",
-   "options": [
-    "no fun without a form",
-    "first come, first served",
-    "better late than never",
-    "all or nothing"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Timo lacht: ohne Formular kein Vergnügen.",
-    "targetWord": "ohne Formular kein Vergnügen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Vereinsmeierei",
-  "sentence": "Willkommen in der deutschen [[Vereinsmeierei]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "club-rule obsession",
-   "options": [
-    "club-rule obsession",
-    "free weekend",
-    "open house",
-    "quiet street"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Willkommen in der deutschen Vereinsmeierei.",
-    "targetWord": "Vereinsmeierei",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "auf Probe",
-  "sentence": "Bis zur Abstimmung spielt Nadia nur [[auf Probe]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "on a trial basis",
-   "options": [
-    "on a trial basis",
-    "free of charge",
-    "every day",
-    "against the rules"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Bis zur Abstimmung spielt Nadia nur auf Probe.",
-    "targetWord": "auf Probe",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Abstimmung",
-  "sentence": "Über ihre Aufnahme gibt es eine [[Abstimmung]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a vote",
-   "options": [
-    "a vote",
-    "a receipt",
-    "a party",
-    "a fine"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Über ihre Aufnahme gibt es eine Abstimmung.",
-    "targetWord": "Abstimmung",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "grundsätzlich",
-  "sentence": "Bei jeder Aufnahme stimmt einer [[grundsätzlich]] dagegen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "on principle",
-   "options": [
-    "on principle",
-    "by accident",
-    "just once",
-    "far too late"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Bei jeder Aufnahme stimmt einer grundsätzlich dagegen.",
-    "targetWord": "grundsätzlich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "dagegen stimmen",
-  "sentence": "Einer wird sicher wieder [[dagegen stimmen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "vote against it",
-   "options": [
-    "vote against it",
-    "pay for it",
-    "laugh at it",
-    "sign for it"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Einer wird sicher wieder dagegen stimmen.",
-    "targetWord": "dagegen stimmen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Vorsitz",
-  "sentence": "Am Donnerstag führt jemand Unbekanntes den [[Vorsitz]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the chair",
-   "options": [
-    "the chair",
-    "the noise",
-    "the money",
-    "the door"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Am Donnerstag führt jemand Unbekanntes den Vorsitz.",
-    "targetWord": "Vorsitz",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "beitreten",
-  "sentence": "In Deutschland muss man einem Verein _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "beitreten",
-   "options": [
-    "beitreten",
-    "absagen",
-    "gewinnen",
-    "verlassen"
-   ],
-   "translation": "In Germany you have to _____ a club.",
-   "optionTranslations": [
-    "join",
-    "cancel",
-    "win",
-    "leave"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "In Deutschland muss man einem Verein beitreten.",
-    "targetWord": "beitreten",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "ausfüllen",
-  "sentence": "Zuerst soll Nadia den Mitgliedsantrag _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "ausfüllen",
-   "options": [
-    "ausfüllen",
-    "zerreißen",
-    "vorlesen",
-    "verschenken"
-   ],
-   "translation": "First Nadia should _____ the membership form.",
-   "optionTranslations": [
-    "fill in",
-    "tear up",
-    "read aloud",
-    "give away"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Zuerst soll Nadia den Mitgliedsantrag ausfüllen.",
-    "targetWord": "ausfüllen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "überweisen",
-  "sentence": "Die Aufnahmegebühr muss man vorher _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "überweisen",
-   "options": [
-    "überweisen",
-    "verstecken",
-    "vergessen",
-    "zurückgeben"
-   ],
-   "translation": "You have to _____ the admission fee in advance.",
-   "optionTranslations": [
-    "transfer",
-    "hide",
-    "forget",
-    "give back"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "Die Aufnahmegebühr muss man vorher überweisen.",
-    "targetWord": "überweisen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "abschrecken",
-  "sentence": "So viel Bürokratie kann jeden Neuen _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "abschrecken",
-   "options": [
-    "abschrecken",
-    "einladen",
-    "begeistern",
-    "beruhigen"
-   ],
-   "translation": "So much bureaucracy can _____ every newcomer.",
-   "optionTranslations": [
-    "scare off",
-    "invite",
-    "excite",
-    "calm"
-   ],
-   "audioClip": {
-    "storySlug": "ein-antrag-auf-freizeit",
-    "storySource": "user",
-    "sentence": "So viel Bürokratie kann jeden Neuen abschrecken.",
-    "targetWord": "abschrecken",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "der Verein,der Kassenwart,die Satzung,die Mitgliederversammlung",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Verein",
-     "answer": "registered club",
-     "options": [
-      "registered club",
-      "club treasurer",
-      "club bylaws",
-      "members' meeting"
-     ]
-    },
-    {
-     "word": "der Kassenwart",
-     "answer": "club treasurer",
-     "options": [
-      "registered club",
-      "club treasurer",
-      "club bylaws",
-      "members' meeting"
-     ]
-    },
-    {
-     "word": "die Satzung",
-     "answer": "club bylaws",
-     "options": [
-      "registered club",
-      "club treasurer",
-      "club bylaws",
-      "members' meeting"
-     ]
-    },
-    {
-     "word": "die Mitgliederversammlung",
-     "answer": "members' meeting",
-     "options": [
-      "registered club",
-      "club treasurer",
-      "club bylaws",
-      "members' meeting"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "mustern",
+    "sentence": "Herr Pohl [[mustert]] Nadia wie einen unvollständigen Antrag.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "looks up and down",
+      "options": [
+        "looks up and down",
+        "greets warmly",
+        "pays quickly",
+        "ignores fully"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Herr Pohl mustert Nadia wie einen unvollständigen Antrag.",
+        "targetWord": "mustert",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8589f0a9e50703b4.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "unvollständig",
+    "sentence": "Für Pohl wirkt jeder Bewerber zuerst [[unvollständig]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "incomplete",
+      "options": [
+        "incomplete",
+        "official",
+        "perfect",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Für Pohl wirkt jeder Bewerber zuerst unvollständig.",
+        "targetWord": "unvollständig",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7c66ab90e7c6876.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Mitgliedsantrag",
+    "sentence": "Zuerst füllt Nadia den [[Mitgliedsantrag]] aus.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "membership form",
+      "options": [
+        "membership form",
+        "rent receipt",
+        "credit report",
+        "quiet room"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Zuerst füllt Nadia den Mitgliedsantrag aus.",
+        "targetWord": "Mitgliedsantrag",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e173afbfbf50202d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Aufnahmegebühr",
+    "sentence": "Vor dem ersten Spiel zahlt sie eine [[Aufnahmegebühr]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "admission fee",
+      "options": [
+        "admission fee",
+        "monthly rent",
+        "fine",
+        "deposit"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Vor dem ersten Spiel zahlt sie eine Aufnahmegebühr.",
+        "targetWord": "Aufnahmegebühr",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d423c0b6b8fdb3f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "inbegriffen",
+    "sentence": "Das eigentliche Tischtennis ist praktisch [[inbegriffen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "included",
+      "options": [
+        "included",
+        "forbidden",
+        "extra",
+        "optional"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Das eigentliche Tischtennis ist praktisch inbegriffen.",
+        "targetWord": "inbegriffen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8487c629a403dfd9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reinschnuppern",
+    "sentence": "Beim Probetraining darf man kurz [[reinschnuppern]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "try it out briefly",
+      "options": [
+        "try it out briefly",
+        "sign right away",
+        "pay upfront",
+        "stay forever"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Beim Probetraining darf man kurz reinschnuppern.",
+        "targetWord": "reinschnuppern",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a54aaad64adb26fe.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sich entscheiden",
+    "sentence": "Nach zwei Malen muss Nadia sich [[entscheiden]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "make up her mind",
+      "options": [
+        "make up her mind",
+        "forget the rules",
+        "pay again",
+        "leave quietly"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Nach zwei Malen muss Nadia sich entscheiden.",
+        "targetWord": "entscheiden",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4c0e2b5945f8b3fc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ohne Formular kein Vergnügen",
+    "sentence": "Timo lacht: [[ohne Formular kein Vergnügen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "no fun without a form",
+      "options": [
+        "no fun without a form",
+        "first come, first served",
+        "better late than never",
+        "all or nothing"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Timo lacht: ohne Formular kein Vergnügen.",
+        "targetWord": "ohne Formular kein Vergnügen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a5b750d476b8636.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Vereinsmeierei",
+    "sentence": "Willkommen in der deutschen [[Vereinsmeierei]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "club-rule obsession",
+      "options": [
+        "club-rule obsession",
+        "free weekend",
+        "open house",
+        "quiet street"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Willkommen in der deutschen Vereinsmeierei.",
+        "targetWord": "Vereinsmeierei",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/105f0dd9bad97076.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "auf Probe",
+    "sentence": "Bis zur Abstimmung spielt Nadia nur [[auf Probe]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on a trial basis",
+      "options": [
+        "on a trial basis",
+        "free of charge",
+        "every day",
+        "against the rules"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Bis zur Abstimmung spielt Nadia nur auf Probe.",
+        "targetWord": "auf Probe",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/78500ba9ff51316e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Abstimmung",
+    "sentence": "Über ihre Aufnahme gibt es eine [[Abstimmung]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a vote",
+      "options": [
+        "a vote",
+        "a receipt",
+        "a party",
+        "a fine"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Über ihre Aufnahme gibt es eine Abstimmung.",
+        "targetWord": "Abstimmung",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c4651a0d6f768290.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grundsätzlich",
+    "sentence": "Bei jeder Aufnahme stimmt einer [[grundsätzlich]] dagegen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on principle",
+      "options": [
+        "on principle",
+        "by accident",
+        "just once",
+        "far too late"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Bei jeder Aufnahme stimmt einer grundsätzlich dagegen.",
+        "targetWord": "grundsätzlich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9da232745522876f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dagegen stimmen",
+    "sentence": "Einer wird sicher wieder [[dagegen stimmen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "vote against it",
+      "options": [
+        "vote against it",
+        "pay for it",
+        "laugh at it",
+        "sign for it"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Einer wird sicher wieder dagegen stimmen.",
+        "targetWord": "dagegen stimmen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ca64bbdbb7b88f7a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Vorsitz",
+    "sentence": "Am Donnerstag führt jemand Unbekanntes den [[Vorsitz]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the chair",
+      "options": [
+        "the chair",
+        "the noise",
+        "the money",
+        "the door"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Am Donnerstag führt jemand Unbekanntes den Vorsitz.",
+        "targetWord": "Vorsitz",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0e2d1a6cb3b2b0a4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "beitreten",
+    "sentence": "In Deutschland muss man einem Verein _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "beitreten",
+      "options": [
+        "beitreten",
+        "absagen",
+        "gewinnen",
+        "verlassen"
+      ],
+      "translation": "In Germany you have to _____ a club.",
+      "optionTranslations": [
+        "join",
+        "cancel",
+        "win",
+        "leave"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "In Deutschland muss man einem Verein beitreten.",
+        "targetWord": "beitreten",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd16f33d40af4356.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "ausfüllen",
+    "sentence": "Zuerst soll Nadia den Mitgliedsantrag _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ausfüllen",
+      "options": [
+        "ausfüllen",
+        "zerreißen",
+        "vorlesen",
+        "verschenken"
+      ],
+      "translation": "First Nadia should _____ the membership form.",
+      "optionTranslations": [
+        "fill in",
+        "tear up",
+        "read aloud",
+        "give away"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Zuerst soll Nadia den Mitgliedsantrag ausfüllen.",
+        "targetWord": "ausfüllen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/14b24da927212dde.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "überweisen",
+    "sentence": "Die Aufnahmegebühr muss man vorher _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "überweisen",
+      "options": [
+        "überweisen",
+        "verstecken",
+        "vergessen",
+        "zurückgeben"
+      ],
+      "translation": "You have to _____ the admission fee in advance.",
+      "optionTranslations": [
+        "transfer",
+        "hide",
+        "forget",
+        "give back"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "Die Aufnahmegebühr muss man vorher überweisen.",
+        "targetWord": "überweisen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a08bf2d18a0da35.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "abschrecken",
+    "sentence": "So viel Bürokratie kann jeden Neuen _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "abschrecken",
+      "options": [
+        "abschrecken",
+        "einladen",
+        "begeistern",
+        "beruhigen"
+      ],
+      "translation": "So much bureaucracy can _____ every newcomer.",
+      "optionTranslations": [
+        "scare off",
+        "invite",
+        "excite",
+        "calm"
+      ],
+      "audioClip": {
+        "storySlug": "ein-antrag-auf-freizeit",
+        "storySource": "user",
+        "sentence": "So viel Bürokratie kann jeden Neuen abschrecken.",
+        "targetWord": "abschrecken",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d01af16f82c4060b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Verein,der Kassenwart,die Satzung,die Mitgliederversammlung",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Verein",
+          "answer": "registered club",
+          "options": [
+            "registered club",
+            "club treasurer",
+            "club bylaws",
+            "members' meeting"
+          ]
+        },
+        {
+          "word": "der Kassenwart",
+          "answer": "club treasurer",
+          "options": [
+            "registered club",
+            "club treasurer",
+            "club bylaws",
+            "members' meeting"
+          ]
+        },
+        {
+          "word": "die Satzung",
+          "answer": "club bylaws",
+          "options": [
+            "registered club",
+            "club treasurer",
+            "club bylaws",
+            "members' meeting"
+          ]
+        },
+        {
+          "word": "die Mitgliederversammlung",
+          "answer": "members' meeting",
+          "options": [
+            "registered club",
+            "club treasurer",
+            "club bylaws",
+            "members' meeting"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]

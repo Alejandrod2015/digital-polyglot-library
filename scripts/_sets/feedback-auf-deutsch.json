@@ -1,456 +1,472 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "der Beweis",
-  "sentence": "Das Lob ist der beste [[Beweis]] für gute Arbeit.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "proof, evidence",
-   "options": [
-    "proof, evidence",
-    "excuse for",
-    "reason for",
-    "copy of"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Das Lob ist der beste Beweis für gute Arbeit.",
-    "targetWord": "Beweis",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "gehören zu",
-  "sentence": "Kritik [[gehört]] in Deutschland einfach [[zu]] jedem Feedback.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to belong to",
-   "options": [
-    "to belong to",
-    "to protect from",
-    "to differ from",
-    "to laugh at"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Kritik gehört in Deutschland einfach zu jedem Feedback.",
-    "targetWord": "gehört",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Nachricht",
-  "sentence": "Am Abend schreibt Timo eine kurze [[Nachricht]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "message",
-   "options": [
-    "message",
-    "invoice",
-    "contract",
-    "receipt"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Am Abend schreibt Timo eine kurze Nachricht.",
-    "targetWord": "Nachricht",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Sektglas",
-  "sentence": "Timo hebt eine Pfandflasche wie ein [[Sektglas]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "champagne glass",
-   "options": [
-    "champagne glass",
-    "water bottle",
-    "coffee mug",
-    "name badge"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Timo hebt eine Pfandflasche wie ein Sektglas.",
-    "targetWord": "Sektglas",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Rabatt",
-  "sentence": "Timo hofft nur, dass Katja ihnen [[Rabatt]] gibt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "discount",
-   "options": [
-    "discount",
-    "advice",
-    "overtime",
-    "credit"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Timo hofft nur, dass Katja ihnen Rabatt gibt.",
-    "targetWord": "Rabatt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "überflüssig",
-  "sentence": "Frau Brandt streicht jedes [[überflüssige]] Wort.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "superfluous",
-   "options": [
-    "superfluous",
-    "honest",
-    "friendly",
-    "urgent"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Frau Brandt streicht jedes überflüssige Wort.",
-    "targetWord": "überflüssige",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ehrlich",
-  "sentence": "Deutsches Feedback ist direkt und schonungslos [[ehrlich]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "honest",
-   "options": [
-    "honest",
-    "polite",
-    "gentle",
-    "vague"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Deutsches Feedback ist direkt und schonungslos ehrlich.",
-    "targetWord": "ehrlich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "innerlich",
-  "sentence": "[[Innerlich]] macht sich Nadia auf das Schlimmste gefasst.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "inwardly",
-   "options": [
-    "inwardly",
-    "loudly",
-    "officially",
-    "rarely"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Innerlich macht sich Nadia auf das Schlimmste gefasst.",
-    "targetWord": "Innerlich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sich auf etwas gefasst machen",
-  "sentence": "Nadia [[macht sich]] auf harte Kritik [[gefasst]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to brace yourself",
-   "options": [
-    "to brace yourself",
-    "to look forward",
-    "to say sorry",
-    "to give up"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Nadia macht sich auf harte Kritik gefasst.",
-    "targetWord": "macht sich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "es ernst meinen",
-  "sentence": "Wenn Brandt lobt, dann [[meint]] sie [[es ernst]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to be serious about it",
-   "options": [
-    "to be serious about it",
-    "to be joking around",
-    "to be running late",
-    "to be very tired"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Wenn Brandt lobt, dann meint sie es ernst.",
-    "targetWord": "meint",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "Hauptsache",
-  "sentence": "[[Hauptsache]], Katja gibt uns am Späti Rabatt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the main thing is",
-   "options": [
-    "the main thing is",
-    "by the way",
-    "at long last",
-    "just in case"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Hauptsache, Katja gibt uns am Späti Rabatt.",
-    "targetWord": "Hauptsache",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "leiten",
-  "sentence": "Ab Montag darf Nadia das Projekt [[leiten]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to lead",
-   "options": [
-    "to lead",
-    "to leave",
-    "to test",
-    "to fear"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Ab Montag darf Nadia das Projekt leiten.",
-    "targetWord": "leiten",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "abliefern",
-  "sentence": "Bei der Präsentation will Nadia richtig _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "abliefern",
-   "options": [
-    "abliefern",
-    "verschlafen",
-    "zögern",
-    "schweigen"
-   ],
-   "translation": "At the presentation Nadia wants to really _____.",
-   "optionTranslations": [
-    "deliver, perform",
-    "oversleep",
-    "hesitate",
-    "stay silent"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Bei der Präsentation will Nadia richtig abliefern.",
-    "targetWord": "abliefern",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "verpacken",
-  "sentence": "Deutsches Feedback lässt die Kritik nicht schön _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "verpacken",
-   "options": [
-    "verpacken",
-    "auspacken",
-    "vergessen",
-    "betonen"
-   ],
-   "translation": "German feedback does not nicely _____ the criticism.",
-   "optionTranslations": [
-    "wrap up",
-    "unpack",
-    "forget",
-    "stress"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Deutsches Feedback lässt die Kritik nicht schön verpacken.",
-    "targetWord": "verpacken",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "unterschreibt",
-  "sentence": "Am Ende _____ Nadia den neuen Vertrag.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "unterschreibt",
-   "options": [
-    "unterschreibt",
-    "zerreißt",
-    "verliest",
-    "versteckt"
-   ],
-   "translation": "In the end Nadia _____ the new contract.",
-   "optionTranslations": [
-    "signs",
-    "tears up",
-    "misreads",
-    "hides"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Am Ende unterschreibt Nadia den neuen Vertrag.",
-    "targetWord": "unterschreibt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "klingt",
-  "sentence": "Der Satz _____ nach einer echten Beförderung.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "klingt",
-   "options": [
-    "klingt",
-    "riecht",
-    "schmeckt",
-    "aussieht"
-   ],
-   "translation": "The sentence _____ like a real promotion.",
-   "optionTranslations": [
-    "sounds",
-    "smells",
-    "tastes",
-    "looks"
-   ],
-   "audioClip": {
-    "storySlug": "feedback-auf-deutsch",
-    "storySource": "user",
-    "sentence": "Der Satz klingt nach einer echten Beförderung.",
-    "targetWord": "klingt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "der Konjunktiv,die Folie,die Beförderung,die Probezeit",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Konjunktiv",
-     "answer": "subjunctive mood",
-     "options": [
-      "subjunctive mood",
-      "presentation slide",
-      "a promotion",
-      "probation period"
-     ]
-    },
-    {
-     "word": "die Folie",
-     "answer": "presentation slide",
-     "options": [
-      "subjunctive mood",
-      "presentation slide",
-      "a promotion",
-      "probation period"
-     ]
-    },
-    {
-     "word": "die Beförderung",
-     "answer": "a promotion",
-     "options": [
-      "subjunctive mood",
-      "presentation slide",
-      "a promotion",
-      "probation period"
-     ]
-    },
-    {
-     "word": "die Probezeit",
-     "answer": "probation period",
-     "options": [
-      "subjunctive mood",
-      "presentation slide",
-      "a promotion",
-      "probation period"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "der Beweis",
+    "sentence": "Das Lob ist der beste [[Beweis]] für gute Arbeit.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "proof, evidence",
+      "options": [
+        "proof, evidence",
+        "excuse for",
+        "reason for",
+        "copy of"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Das Lob ist der beste Beweis für gute Arbeit.",
+        "targetWord": "Beweis",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb4b3e264edf41ac.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "gehören zu",
+    "sentence": "Kritik [[gehört]] in Deutschland einfach [[zu]] jedem Feedback.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to belong to",
+      "options": [
+        "to belong to",
+        "to protect from",
+        "to differ from",
+        "to laugh at"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Kritik gehört in Deutschland einfach zu jedem Feedback.",
+        "targetWord": "gehört",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8e3fcbed150549ee.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Nachricht",
+    "sentence": "Am Abend schreibt Timo eine kurze [[Nachricht]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "message",
+      "options": [
+        "message",
+        "invoice",
+        "contract",
+        "receipt"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Am Abend schreibt Timo eine kurze Nachricht.",
+        "targetWord": "Nachricht",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e14cac99c64c21b0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Sektglas",
+    "sentence": "Timo hebt eine Pfandflasche wie ein [[Sektglas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "champagne glass",
+      "options": [
+        "champagne glass",
+        "water bottle",
+        "coffee mug",
+        "name badge"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Timo hebt eine Pfandflasche wie ein Sektglas.",
+        "targetWord": "Sektglas",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7e1e43021d145920.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Rabatt",
+    "sentence": "Timo hofft nur, dass Katja ihnen [[Rabatt]] gibt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "discount",
+      "options": [
+        "discount",
+        "advice",
+        "overtime",
+        "credit"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Timo hofft nur, dass Katja ihnen Rabatt gibt.",
+        "targetWord": "Rabatt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0919fd3f861f6981.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "überflüssig",
+    "sentence": "Frau Brandt streicht jedes [[überflüssige]] Wort.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "superfluous",
+      "options": [
+        "superfluous",
+        "honest",
+        "friendly",
+        "urgent"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Frau Brandt streicht jedes überflüssige Wort.",
+        "targetWord": "überflüssige",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8de9b783fc58b71.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ehrlich",
+    "sentence": "Deutsches Feedback ist direkt und schonungslos [[ehrlich]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "honest",
+      "options": [
+        "honest",
+        "polite",
+        "gentle",
+        "vague"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Deutsches Feedback ist direkt und schonungslos ehrlich.",
+        "targetWord": "ehrlich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/571119a57102b8c7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "innerlich",
+    "sentence": "[[Innerlich]] macht sich Nadia auf das Schlimmste gefasst.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "inwardly",
+      "options": [
+        "inwardly",
+        "loudly",
+        "officially",
+        "rarely"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Innerlich macht sich Nadia auf das Schlimmste gefasst.",
+        "targetWord": "Innerlich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ea4cda6a27529c7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sich auf etwas gefasst machen",
+    "sentence": "Nadia [[macht sich]] auf harte Kritik [[gefasst]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to brace yourself",
+      "options": [
+        "to brace yourself",
+        "to look forward",
+        "to say sorry",
+        "to give up"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Nadia macht sich auf harte Kritik gefasst.",
+        "targetWord": "macht sich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49a22aec6a4cd2e0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "es ernst meinen",
+    "sentence": "Wenn Brandt lobt, dann [[meint]] sie [[es ernst]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be serious about it",
+      "options": [
+        "to be serious about it",
+        "to be joking around",
+        "to be running late",
+        "to be very tired"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Wenn Brandt lobt, dann meint sie es ernst.",
+        "targetWord": "meint",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a160770c25820ae.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Hauptsache",
+    "sentence": "[[Hauptsache]], Katja gibt uns am Späti Rabatt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the main thing is",
+      "options": [
+        "the main thing is",
+        "by the way",
+        "at long last",
+        "just in case"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Hauptsache, Katja gibt uns am Späti Rabatt.",
+        "targetWord": "Hauptsache",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8001d0eabfa3344e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "leiten",
+    "sentence": "Ab Montag darf Nadia das Projekt [[leiten]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lead",
+      "options": [
+        "to lead",
+        "to leave",
+        "to test",
+        "to fear"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Ab Montag darf Nadia das Projekt leiten.",
+        "targetWord": "leiten",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d999f01cb12639a7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "abliefern",
+    "sentence": "Bei der Präsentation will Nadia richtig _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "abliefern",
+      "options": [
+        "abliefern",
+        "verschlafen",
+        "zögern",
+        "schweigen"
+      ],
+      "translation": "At the presentation Nadia wants to really _____.",
+      "optionTranslations": [
+        "deliver, perform",
+        "oversleep",
+        "hesitate",
+        "stay silent"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Bei der Präsentation will Nadia richtig abliefern.",
+        "targetWord": "abliefern",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c200c06bd3fd9838.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "verpacken",
+    "sentence": "Deutsches Feedback lässt die Kritik nicht schön _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "verpacken",
+      "options": [
+        "verpacken",
+        "auspacken",
+        "vergessen",
+        "betonen"
+      ],
+      "translation": "German feedback does not nicely _____ the criticism.",
+      "optionTranslations": [
+        "wrap up",
+        "unpack",
+        "forget",
+        "stress"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Deutsches Feedback lässt die Kritik nicht schön verpacken.",
+        "targetWord": "verpacken",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7234260edd0cb0c8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "unterschreibt",
+    "sentence": "Am Ende _____ Nadia den neuen Vertrag.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "unterschreibt",
+      "options": [
+        "unterschreibt",
+        "zerreißt",
+        "verliest",
+        "versteckt"
+      ],
+      "translation": "In the end Nadia _____ the new contract.",
+      "optionTranslations": [
+        "signs",
+        "tears up",
+        "misreads",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Am Ende unterschreibt Nadia den neuen Vertrag.",
+        "targetWord": "unterschreibt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8e90334ade51fc20.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "klingt",
+    "sentence": "Der Satz _____ nach einer echten Beförderung.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "klingt",
+      "options": [
+        "klingt",
+        "riecht",
+        "schmeckt",
+        "aussieht"
+      ],
+      "translation": "The sentence _____ like a real promotion.",
+      "optionTranslations": [
+        "sounds",
+        "smells",
+        "tastes",
+        "looks"
+      ],
+      "audioClip": {
+        "storySlug": "feedback-auf-deutsch",
+        "storySource": "user",
+        "sentence": "Der Satz klingt nach einer echten Beförderung.",
+        "targetWord": "klingt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1b7c4c9b5bcf5f80.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Konjunktiv,die Folie,die Beförderung,die Probezeit",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Konjunktiv",
+          "answer": "subjunctive mood",
+          "options": [
+            "subjunctive mood",
+            "presentation slide",
+            "a promotion",
+            "probation period"
+          ]
+        },
+        {
+          "word": "die Folie",
+          "answer": "presentation slide",
+          "options": [
+            "subjunctive mood",
+            "presentation slide",
+            "a promotion",
+            "probation period"
+          ]
+        },
+        {
+          "word": "die Beförderung",
+          "answer": "a promotion",
+          "options": [
+            "subjunctive mood",
+            "presentation slide",
+            "a promotion",
+            "probation period"
+          ]
+        },
+        {
+          "word": "die Probezeit",
+          "answer": "probation period",
+          "options": [
+            "subjunctive mood",
+            "presentation slide",
+            "a promotion",
+            "probation period"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]

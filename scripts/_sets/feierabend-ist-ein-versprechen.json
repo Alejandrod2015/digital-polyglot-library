@@ -1,528 +1,547 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "sich leeren",
-  "sentence": "Schlag fünf [[leert sich]] das Büro wie auf Kommando.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "empties out",
-   "options": [
-    "empties out",
-    "fills up",
-    "heats up",
-    "lights up"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Schlag fünf leert sich das Büro wie auf Kommando.",
-    "targetWord": "leert sich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "überleben",
-  "sentence": "Nur mit Kaffee lässt sich der Montag [[überleben]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to survive",
-   "options": [
-    "to survive",
-    "to enjoy",
-    "to plan",
-    "to forget"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Nur mit Kaffee lässt sich der Montag überleben.",
-    "targetWord": "überleben",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "brennen",
-  "sentence": "Nur an Nadias Platz [[brennt]] noch das Licht.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "burns, shines",
-   "options": [
-    "burns, shines",
-    "rings loudly",
-    "turns off",
-    "breaks down"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Nur an Nadias Platz brennt noch das Licht.",
-    "targetWord": "brennt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "gelten als",
-  "sentence": "Wer lange bleibt, [[gilt]] hier nicht [[als]] fleißig.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to be considered as",
-   "options": [
-    "to be considered as",
-    "to be paid for",
-    "to be proud of",
-    "to be tired of"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Wer lange bleibt, gilt hier nicht als fleißig.",
-    "targetWord": "gilt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "vertrauen",
-  "sentence": "Frau Brandt lernt, Nadias Arbeit zu [[vertrauen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to trust",
-   "options": [
-    "to trust",
-    "to doubt",
-    "to copy",
-    "to check"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Frau Brandt lernt, Nadias Arbeit zu vertrauen.",
-    "targetWord": "vertrauen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "unsichtbar",
-  "sentence": "Ein [[unsichtbares]] Kommando leert das ganze Büro.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "invisible",
-   "options": [
-    "invisible",
-    "suspicious",
-    "expensive",
-    "friendly"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Ein unsichtbares Kommando leert das ganze Büro.",
-    "targetWord": "unsichtbares",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "gründlich",
-  "sentence": "Nadia arbeitet lieber langsam und [[gründlich]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "thorough",
-   "options": [
-    "thorough",
-    "careless",
-    "cheerful",
-    "loud"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Nadia arbeitet lieber langsam und gründlich.",
-    "targetWord": "gründlich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "fleißig",
-  "sentence": "In Deutschland gilt nicht jeder Vielarbeiter als [[fleißig]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "hard-working",
-   "options": [
-    "hard-working",
-    "well-rested",
-    "suspicious",
-    "invisible"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "In Deutschland gilt nicht jeder Vielarbeiter als fleißig.",
-    "targetWord": "fleißig",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "verdächtig",
-  "sentence": "Wer ständig Überstunden macht, wirkt fast [[verdächtig]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "suspicious",
-   "options": [
-    "suspicious",
-    "thorough",
-    "reliable",
-    "cheerful"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Wer ständig Überstunden macht, wirkt fast verdächtig.",
-    "targetWord": "verdächtig",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ausgeschlafen",
-  "sentence": "Am Morgen ist Nadia endlich wieder [[ausgeschlafen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "well-rested",
-   "options": [
-    "well-rested",
-    "under pressure",
-    "hard-working",
-    "invisible"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Am Morgen ist Nadia endlich wieder ausgeschlafen.",
-    "targetWord": "ausgeschlafen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "regelmäßig",
-  "sentence": "Wer [[regelmäßig]] zu lange bleibt, plant schlecht.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "regularly",
-   "options": [
-    "regularly",
-    "secretly",
-    "proudly",
-    "rarely"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Wer regelmäßig zu lange bleibt, plant schlecht.",
-    "targetWord": "regelmäßig",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "Schlag fünf",
-  "sentence": "[[Schlag fünf]] verschwinden fast alle Kollegen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "on the stroke of five",
-   "options": [
-    "on the stroke of five",
-    "late at night",
-    "once a week",
-    "after lunch"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Schlag fünf verschwinden fast alle Kollegen.",
-    "targetWord": "Schlag fünf",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "Punkt neun",
-  "sentence": "Der Satz lautet: [[Punkt neun]], mein Büro.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "at nine sharp",
-   "options": [
-    "at nine sharp",
-    "around noon",
-    "every evening",
-    "in an hour"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Der Satz lautet: Punkt neun, mein Büro.",
-    "targetWord": "Punkt neun",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Planung",
-  "sentence": "Gute [[Planung]] ersetzt viele Überstunden.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "planning",
-   "options": [
-    "planning",
-    "overtime",
-    "pressure",
-    "promise"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Gute Planung ersetzt viele Überstunden.",
-    "targetWord": "Planung",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Heimweg",
-  "sentence": "Auf dem [[Heimweg]] tippt Nadia drei Nachrichten.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the way home",
-   "options": [
-    "the way home",
-    "the lunch break",
-    "the meeting room",
-    "the coffee corner"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Auf dem Heimweg tippt Nadia drei Nachrichten.",
-    "targetWord": "Heimweg",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "warnen",
-  "sentence": "Timo will Nadia vor dem Fehler _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "warnen",
-   "options": [
-    "warnen",
-    "loben",
-    "fragen",
-    "einladen"
-   ],
-   "translation": "Timo wants to _____ Nadia about the mistake.",
-   "optionTranslations": [
-    "warn",
-    "praise",
-    "ask",
-    "invite"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Timo will Nadia vor dem Fehler warnen.",
-    "targetWord": "warnen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "bricht",
-  "sentence": "Ein Versprechen _____ man in Deutschland ungern.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "bricht",
-   "options": [
-    "bricht",
-    "hält",
-    "schreibt",
-    "feiert"
-   ],
-   "translation": "In Germany one reluctantly _____ a promise.",
-   "optionTranslations": [
-    "breaks",
-    "keeps",
-    "writes",
-    "celebrates"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Ein Versprechen bricht man in Deutschland ungern.",
-    "targetWord": "bricht",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "löscht",
-  "sentence": "Nadia tippt drei Nachrichten und _____ alle wieder.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "löscht",
-   "options": [
-    "löscht",
-    "sendet",
-    "speichert",
-    "liest"
-   ],
-   "translation": "Nadia types three messages and _____ them all again.",
-   "optionTranslations": [
-    "deletes",
-    "sends",
-    "saves",
-    "reads"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Nadia tippt drei Nachrichten und löscht alle wieder.",
-    "targetWord": "löscht",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "tippt",
-  "sentence": "Auf dem Heimweg _____ sie nervös aufs Handy.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "tippt",
-   "options": [
-    "tippt",
-    "starrt",
-    "ruft",
-    "wartet"
-   ],
-   "translation": "On the way home she nervously _____ on her phone.",
-   "optionTranslations": [
-    "types",
-    "stares",
-    "calls",
-    "waits"
-   ],
-   "audioClip": {
-    "storySlug": "feierabend-ist-ein-versprechen",
-    "storySource": "user",
-    "sentence": "Auf dem Heimweg tippt sie nervös aufs Handy.",
-    "targetWord": "tippt",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "der Bildschirm,die Überstunden,der Vorschlag,das Versprechen",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Bildschirm",
-     "answer": "computer screen",
-     "options": [
-      "computer screen",
-      "overtime hours",
-      "a suggestion",
-      "a promise"
-     ]
-    },
-    {
-     "word": "die Überstunden",
-     "answer": "overtime hours",
-     "options": [
-      "computer screen",
-      "overtime hours",
-      "a suggestion",
-      "a promise"
-     ]
-    },
-    {
-     "word": "der Vorschlag",
-     "answer": "a suggestion",
-     "options": [
-      "computer screen",
-      "overtime hours",
-      "a suggestion",
-      "a promise"
-     ]
-    },
-    {
-     "word": "das Versprechen",
-     "answer": "a promise",
-     "options": [
-      "computer screen",
-      "overtime hours",
-      "a suggestion",
-      "a promise"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "sich leeren",
+    "sentence": "Schlag fünf [[leert sich]] das Büro wie auf Kommando.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "empties out",
+      "options": [
+        "empties out",
+        "fills up",
+        "heats up",
+        "lights up"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Schlag fünf leert sich das Büro wie auf Kommando.",
+        "targetWord": "leert sich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8b97ddcf91d38814.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "überleben",
+    "sentence": "Nur mit Kaffee lässt sich der Montag [[überleben]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to survive",
+      "options": [
+        "to survive",
+        "to enjoy",
+        "to plan",
+        "to forget"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Nur mit Kaffee lässt sich der Montag überleben.",
+        "targetWord": "überleben",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/90ad636dd244e5ed.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brennen",
+    "sentence": "Nur an Nadias Platz [[brennt]] noch das Licht.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "burns, shines",
+      "options": [
+        "burns, shines",
+        "rings loudly",
+        "turns off",
+        "breaks down"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Nur an Nadias Platz brennt noch das Licht.",
+        "targetWord": "brennt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/781ed20e4dfe22f2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gelten als",
+    "sentence": "Wer lange bleibt, [[gilt]] hier nicht [[als]] fleißig.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be considered as",
+      "options": [
+        "to be considered as",
+        "to be paid for",
+        "to be proud of",
+        "to be tired of"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Wer lange bleibt, gilt hier nicht als fleißig.",
+        "targetWord": "gilt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0433444c8e0873d4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vertrauen",
+    "sentence": "Frau Brandt lernt, Nadias Arbeit zu [[vertrauen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to trust",
+      "options": [
+        "to trust",
+        "to doubt",
+        "to copy",
+        "to check"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Frau Brandt lernt, Nadias Arbeit zu vertrauen.",
+        "targetWord": "vertrauen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f31ce51f9aeb1d31.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "unsichtbar",
+    "sentence": "Ein [[unsichtbares]] Kommando leert das ganze Büro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "invisible",
+      "options": [
+        "invisible",
+        "suspicious",
+        "expensive",
+        "friendly"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Ein unsichtbares Kommando leert das ganze Büro.",
+        "targetWord": "unsichtbares",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9bb40d6319e6bcab.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gründlich",
+    "sentence": "Nadia arbeitet lieber langsam und [[gründlich]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thorough",
+      "options": [
+        "thorough",
+        "careless",
+        "cheerful",
+        "loud"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Nadia arbeitet lieber langsam und gründlich.",
+        "targetWord": "gründlich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bef25caa3b5c4e20.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fleißig",
+    "sentence": "In Deutschland gilt nicht jeder Vielarbeiter als [[fleißig]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hard-working",
+      "options": [
+        "hard-working",
+        "well-rested",
+        "suspicious",
+        "invisible"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "In Deutschland gilt nicht jeder Vielarbeiter als fleißig.",
+        "targetWord": "fleißig",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c91c2afe888c9f5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verdächtig",
+    "sentence": "Wer ständig Überstunden macht, wirkt fast [[verdächtig]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "suspicious",
+      "options": [
+        "suspicious",
+        "thorough",
+        "reliable",
+        "cheerful"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Wer ständig Überstunden macht, wirkt fast verdächtig.",
+        "targetWord": "verdächtig",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/66acb461387a228a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ausgeschlafen",
+    "sentence": "Am Morgen ist Nadia endlich wieder [[ausgeschlafen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "well-rested",
+      "options": [
+        "well-rested",
+        "under pressure",
+        "hard-working",
+        "invisible"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Am Morgen ist Nadia endlich wieder ausgeschlafen.",
+        "targetWord": "ausgeschlafen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d4745d6bd0e8fef6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "regelmäßig",
+    "sentence": "Wer [[regelmäßig]] zu lange bleibt, plant schlecht.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "regularly",
+      "options": [
+        "regularly",
+        "secretly",
+        "proudly",
+        "rarely"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Wer regelmäßig zu lange bleibt, plant schlecht.",
+        "targetWord": "regelmäßig",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5bbb7dc96e386a86.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Schlag fünf",
+    "sentence": "[[Schlag fünf]] verschwinden fast alle Kollegen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on the stroke of five",
+      "options": [
+        "on the stroke of five",
+        "late at night",
+        "once a week",
+        "after lunch"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Schlag fünf verschwinden fast alle Kollegen.",
+        "targetWord": "Schlag fünf",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7cd6153214f34d1f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Punkt neun",
+    "sentence": "Der Satz lautet: [[Punkt neun]], mein Büro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at nine sharp",
+      "options": [
+        "at nine sharp",
+        "around noon",
+        "every evening",
+        "in an hour"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Der Satz lautet: Punkt neun, mein Büro.",
+        "targetWord": "Punkt neun",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/713c9b39a472ff8f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Planung",
+    "sentence": "Gute [[Planung]] ersetzt viele Überstunden.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "planning",
+      "options": [
+        "planning",
+        "overtime",
+        "pressure",
+        "promise"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Gute Planung ersetzt viele Überstunden.",
+        "targetWord": "Planung",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/52fd228db41b46f9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Heimweg",
+    "sentence": "Auf dem [[Heimweg]] tippt Nadia drei Nachrichten.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the way home",
+      "options": [
+        "the way home",
+        "the lunch break",
+        "the meeting room",
+        "the coffee corner"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Auf dem Heimweg tippt Nadia drei Nachrichten.",
+        "targetWord": "Heimweg",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7fd066e9d363ab0e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "warnen",
+    "sentence": "Timo will Nadia vor dem Fehler _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "warnen",
+      "options": [
+        "warnen",
+        "loben",
+        "fragen",
+        "einladen"
+      ],
+      "translation": "Timo wants to _____ Nadia about the mistake.",
+      "optionTranslations": [
+        "warn",
+        "praise",
+        "ask",
+        "invite"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Timo will Nadia vor dem Fehler warnen.",
+        "targetWord": "warnen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef40a66b96f3a3d1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bricht",
+    "sentence": "Ein Versprechen _____ man in Deutschland ungern.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bricht",
+      "options": [
+        "bricht",
+        "hält",
+        "schreibt",
+        "feiert"
+      ],
+      "translation": "In Germany one reluctantly _____ a promise.",
+      "optionTranslations": [
+        "breaks",
+        "keeps",
+        "writes",
+        "celebrates"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Ein Versprechen bricht man in Deutschland ungern.",
+        "targetWord": "bricht",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8b5fcbaacb58c6aa.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "löscht",
+    "sentence": "Nadia tippt drei Nachrichten und _____ alle wieder.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "löscht",
+      "options": [
+        "löscht",
+        "sendet",
+        "speichert",
+        "liest"
+      ],
+      "translation": "Nadia types three messages and _____ them all again.",
+      "optionTranslations": [
+        "deletes",
+        "sends",
+        "saves",
+        "reads"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Nadia tippt drei Nachrichten und löscht alle wieder.",
+        "targetWord": "löscht",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d708275095b509e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "tippt",
+    "sentence": "Auf dem Heimweg _____ sie nervös aufs Handy.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tippt",
+      "options": [
+        "tippt",
+        "starrt",
+        "ruft",
+        "wartet"
+      ],
+      "translation": "On the way home she nervously _____ on her phone.",
+      "optionTranslations": [
+        "types",
+        "stares",
+        "calls",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-ist-ein-versprechen",
+        "storySource": "user",
+        "sentence": "Auf dem Heimweg tippt sie nervös aufs Handy.",
+        "targetWord": "tippt",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/718c222e56add4e1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Bildschirm,die Überstunden,der Vorschlag,das Versprechen",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Bildschirm",
+          "answer": "computer screen",
+          "options": [
+            "computer screen",
+            "overtime hours",
+            "a suggestion",
+            "a promise"
+          ]
+        },
+        {
+          "word": "die Überstunden",
+          "answer": "overtime hours",
+          "options": [
+            "computer screen",
+            "overtime hours",
+            "a suggestion",
+            "a promise"
+          ]
+        },
+        {
+          "word": "der Vorschlag",
+          "answer": "a suggestion",
+          "options": [
+            "computer screen",
+            "overtime hours",
+            "a suggestion",
+            "a promise"
+          ]
+        },
+        {
+          "word": "das Versprechen",
+          "answer": "a promise",
+          "options": [
+            "computer screen",
+            "overtime hours",
+            "a suggestion",
+            "a promise"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]

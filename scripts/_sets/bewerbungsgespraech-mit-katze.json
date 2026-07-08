@@ -1,504 +1,522 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "umklammern",
-  "sentence": "Nadia [[umklammert]] ihre Mappe wie ein Konzertticket.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "clutches tightly",
-   "options": [
-    "clutches tightly",
-    "waves it around",
-    "hides it away",
-    "tears it up"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Nadia umklammert ihre Mappe wie ein Konzertticket.",
-    "targetWord": "umklammert",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Vorsprechen",
-  "sentence": "Die Besichtigung ist kein Termin, sondern ein [[Vorsprechen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "an audition",
-   "options": [
-    "an audition",
-    "a signing",
-    "an inspection",
-    "a refusal"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Die Besichtigung ist kein Termin, sondern ein Vorsprechen.",
-    "targetWord": "Vorsprechen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "übertreiben",
-  "sentence": "Bei der Miete sollte man nicht maßlos [[übertreiben]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to exaggerate",
-   "options": [
-    "to exaggerate",
-    "to save up",
-    "to hurry",
-    "to complain"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Bei der Miete sollte man nicht maßlos übertreiben.",
-    "targetWord": "übertreiben",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "im Eiltempo",
-  "sentence": "Jonas führt sie [[im Eiltempo]] durch die Wohnung.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "at top speed",
-   "options": [
-    "at top speed",
-    "room by room",
-    "free of charge",
-    "after dark"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Jonas führt sie im Eiltempo durch die Wohnung.",
-    "targetWord": "im Eiltempo",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "einzeln",
-  "sentence": "Der Kassenwart prüft jedes Dokument ganz [[einzeln]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "one by one",
-   "options": [
-    "one by one",
-    "in secret",
-    "for free",
-    "by mail"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Der Kassenwart prüft jedes Dokument ganz einzeln.",
-    "targetWord": "einzeln",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "inoffiziell",
-  "sentence": "Die Katze entscheidet, ganz [[inoffiziell]], über jeden Bewerber.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "unofficially",
-   "options": [
-    "unofficially",
-    "reluctantly",
-    "politely",
-    "by chance"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Die Katze entscheidet, ganz inoffiziell, über jeden Bewerber.",
-    "targetWord": "inoffiziell",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Segen",
-  "sentence": "Ohne den [[Segen]] der Katze bekommt niemand das Zimmer.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "blessing, approval",
-   "options": [
-    "blessing, approval",
-    "rent receipt",
-    "spare key",
-    "house rules"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Ohne den Segen der Katze bekommt niemand das Zimmer.",
-    "targetWord": "Segen",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Aktenlage",
-  "sentence": "Nach der [[Aktenlage]] ist Nadia die beste Bewerberin.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "what the files say",
-   "options": [
-    "what the files say",
-    "by pure luck",
-    "against the rules",
-    "in her opinion"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Nach der Aktenlage ist Nadia die beste Bewerberin.",
-    "targetWord": "Aktenlage",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Bauchgefühl",
-  "sentence": "Am Ende zählt nur das [[Bauchgefühl]] der Katze.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "gut feeling",
-   "options": [
-    "gut feeling",
-    "credit report",
-    "monthly rent",
-    "legal duty"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Am Ende zählt nur das Bauchgefühl der Katze.",
-    "targetWord": "Bauchgefühl",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ohne Umweg",
-  "sentence": "Die Katze springt [[ohne Umweg]] auf Nadias Schoß.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "without any detour",
-   "options": [
-    "without any detour",
-    "after long hesitation",
-    "with great effort",
-    "by mistake"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Die Katze springt ohne Umweg auf Nadias Schoß.",
-    "targetWord": "ohne Umweg",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "neidisch",
-  "sentence": "Elf Bewerber schauen [[neidisch]] auf den warmen Schoß.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "envious",
-   "options": [
-    "envious",
-    "relieved",
-    "bored",
-    "proud"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Elf Bewerber schauen neidisch auf den warmen Schoß.",
-    "targetWord": "neidisch",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "immerhin",
-  "sentence": "[[Immerhin]] hat die Katze eine klare Meinung.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "at least",
-   "options": [
-    "at least",
-    "therefore",
-    "suddenly",
-    "rarely"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Immerhin hat die Katze eine klare Meinung.",
-    "targetWord": "Immerhin",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "sich melden",
-  "sentence": "Nach Tagen Stille [[meldet sich]] die WG endlich.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "gets back in touch",
-   "options": [
-    "gets back in touch",
-    "moves out quietly",
-    "raises the rent",
-    "locks the door"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Nach Tagen Stille meldet sich die WG endlich.",
-    "targetWord": "meldet sich",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Mietvertrag",
-  "sentence": "Am Ende unterschreibt Nadia den ersehnten [[Mietvertrag]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "rental contract",
-   "options": [
-    "rental contract",
-    "credit report",
-    "meter reading",
-    "quiet hours"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Am Ende unterschreibt Nadia den ersehnten Mietvertrag.",
-    "targetWord": "Mietvertrag",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "thront",
-  "sentence": "Die Katze _____ hoch oben auf dem besten Sofa.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "thront",
-   "options": [
-    "thront",
-    "versteckt",
-    "schläft",
-    "wartet"
-   ],
-   "translation": "The cat _____ high up on the best sofa.",
-   "optionTranslations": [
-    "sits enthroned",
-    "hides",
-    "sleeps",
-    "waits"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Die Katze thront hoch oben auf dem besten Sofa.",
-    "targetWord": "thront",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "mustert",
-  "sentence": "Herr Pohl _____ jeden Bewerber von oben bis unten.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "mustert",
-   "options": [
-    "mustert",
-    "begrüßt",
-    "bezahlt",
-    "ignoriert"
-   ],
-   "translation": "Mr Pohl _____ every applicant from head to toe.",
-   "optionTranslations": [
-    "inspects closely",
-    "greets",
-    "pays",
-    "ignores"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Herr Pohl mustert jeden Bewerber von oben bis unten.",
-    "targetWord": "mustert",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "rascheln",
-  "sentence": "Elf Bewerbungsmappen _____ enttäuscht im Flur.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "rascheln",
-   "options": [
-    "rascheln",
-    "warten",
-    "glänzen",
-    "fehlen"
-   ],
-   "translation": "Eleven application folders _____ in disappointment.",
-   "optionTranslations": [
-    "rustle",
-    "wait",
-    "shine",
-    "are missing"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Elf Bewerbungsmappen rascheln enttäuscht im Flur.",
-    "targetWord": "rascheln",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "einreiben",
-  "sentence": "Man kann eine Salbe gut in die Haut _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "einreiben",
-   "options": [
-    "einreiben",
-    "einpacken",
-    "waschen",
-    "schneiden"
-   ],
-   "translation": "One can _____ an ointment well into the skin.",
-   "optionTranslations": [
-    "rub in",
-    "pack up",
-    "wash",
-    "cut"
-   ],
-   "audioClip": {
-    "storySlug": "bewerbungsgespraech-mit-katze",
-    "storySource": "user",
-    "sentence": "Man kann eine Salbe gut in die Haut einreiben.",
-    "targetWord": "einreiben",
-    "language": "german",
-    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "der Gehaltsnachweis,die Schufa,das Empfehlungsschreiben,das Führungszeugnis",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "der Gehaltsnachweis",
-     "answer": "proof of salary",
-     "options": [
-      "proof of salary",
-      "German credit report",
-      "letter of recommendation",
-      "certificate of good conduct"
-     ]
-    },
-    {
-     "word": "die Schufa",
-     "answer": "German credit report",
-     "options": [
-      "proof of salary",
-      "German credit report",
-      "letter of recommendation",
-      "certificate of good conduct"
-     ]
-    },
-    {
-     "word": "das Empfehlungsschreiben",
-     "answer": "letter of recommendation",
-     "options": [
-      "proof of salary",
-      "German credit report",
-      "letter of recommendation",
-      "certificate of good conduct"
-     ]
-    },
-    {
-     "word": "das Führungszeugnis",
-     "answer": "certificate of good conduct",
-     "options": [
-      "proof of salary",
-      "German credit report",
-      "letter of recommendation",
-      "certificate of good conduct"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "umklammern",
+    "sentence": "Nadia [[umklammert]] ihre Mappe wie ein Konzertticket.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clutches tightly",
+      "options": [
+        "clutches tightly",
+        "waves it around",
+        "hides it away",
+        "tears it up"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Nadia umklammert ihre Mappe wie ein Konzertticket.",
+        "targetWord": "umklammert",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/45e5cc6fd6d1b3d5.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "das Vorsprechen",
+    "sentence": "Die Besichtigung ist kein Termin, sondern ein [[Vorsprechen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an audition",
+      "options": [
+        "an audition",
+        "a signing",
+        "an inspection",
+        "a refusal"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Die Besichtigung ist kein Termin, sondern ein Vorsprechen.",
+        "targetWord": "Vorsprechen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8bcd5afccce1f74.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "übertreiben",
+    "sentence": "Bei der Miete sollte man nicht maßlos [[übertreiben]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to exaggerate",
+      "options": [
+        "to exaggerate",
+        "to save up",
+        "to hurry",
+        "to complain"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Bei der Miete sollte man nicht maßlos übertreiben.",
+        "targetWord": "übertreiben",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9ff5e57e07ac0f1c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "im Eiltempo",
+    "sentence": "Jonas führt sie [[im Eiltempo]] durch die Wohnung.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at top speed",
+      "options": [
+        "at top speed",
+        "room by room",
+        "free of charge",
+        "after dark"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Jonas führt sie im Eiltempo durch die Wohnung.",
+        "targetWord": "im Eiltempo",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/18f080816d7d3ab2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "einzeln",
+    "sentence": "Der Kassenwart prüft jedes Dokument ganz [[einzeln]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "one by one",
+      "options": [
+        "one by one",
+        "in secret",
+        "for free",
+        "by mail"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Der Kassenwart prüft jedes Dokument ganz einzeln.",
+        "targetWord": "einzeln",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee4499a3a5a1dcb3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "inoffiziell",
+    "sentence": "Die Katze entscheidet, ganz [[inoffiziell]], über jeden Bewerber.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "unofficially",
+      "options": [
+        "unofficially",
+        "reluctantly",
+        "politely",
+        "by chance"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Die Katze entscheidet, ganz inoffiziell, über jeden Bewerber.",
+        "targetWord": "inoffiziell",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7e9f88390770b5b2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Segen",
+    "sentence": "Ohne den [[Segen]] der Katze bekommt niemand das Zimmer.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "blessing, approval",
+      "options": [
+        "blessing, approval",
+        "rent receipt",
+        "spare key",
+        "house rules"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Ohne den Segen der Katze bekommt niemand das Zimmer.",
+        "targetWord": "Segen",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8e7f3f0c2a7c7947.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Aktenlage",
+    "sentence": "Nach der [[Aktenlage]] ist Nadia die beste Bewerberin.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "what the files say",
+      "options": [
+        "what the files say",
+        "by pure luck",
+        "against the rules",
+        "in her opinion"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Nach der Aktenlage ist Nadia die beste Bewerberin.",
+        "targetWord": "Aktenlage",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a1f1e3441c4af72c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Bauchgefühl",
+    "sentence": "Am Ende zählt nur das [[Bauchgefühl]] der Katze.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gut feeling",
+      "options": [
+        "gut feeling",
+        "credit report",
+        "monthly rent",
+        "legal duty"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Am Ende zählt nur das Bauchgefühl der Katze.",
+        "targetWord": "Bauchgefühl",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/57a8c9d6a650be22.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ohne Umweg",
+    "sentence": "Die Katze springt [[ohne Umweg]] auf Nadias Schoß.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without any detour",
+      "options": [
+        "without any detour",
+        "after long hesitation",
+        "with great effort",
+        "by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Die Katze springt ohne Umweg auf Nadias Schoß.",
+        "targetWord": "ohne Umweg",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/01f748a1d900e23f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "neidisch",
+    "sentence": "Elf Bewerber schauen [[neidisch]] auf den warmen Schoß.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "envious",
+      "options": [
+        "envious",
+        "relieved",
+        "bored",
+        "proud"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Elf Bewerber schauen neidisch auf den warmen Schoß.",
+        "targetWord": "neidisch",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/526dd94fa3e11475.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "immerhin",
+    "sentence": "[[Immerhin]] hat die Katze eine klare Meinung.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at least",
+      "options": [
+        "at least",
+        "therefore",
+        "suddenly",
+        "rarely"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Immerhin hat die Katze eine klare Meinung.",
+        "targetWord": "Immerhin",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/68e3ff84c417c0d2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sich melden",
+    "sentence": "Nach Tagen Stille [[meldet sich]] die WG endlich.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gets back in touch",
+      "options": [
+        "gets back in touch",
+        "moves out quietly",
+        "raises the rent",
+        "locks the door"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Nach Tagen Stille meldet sich die WG endlich.",
+        "targetWord": "meldet sich",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7d67e6686877d33e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Mietvertrag",
+    "sentence": "Am Ende unterschreibt Nadia den ersehnten [[Mietvertrag]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rental contract",
+      "options": [
+        "rental contract",
+        "credit report",
+        "meter reading",
+        "quiet hours"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Am Ende unterschreibt Nadia den ersehnten Mietvertrag.",
+        "targetWord": "Mietvertrag",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e2408d6e4edf9a5a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "thront",
+    "sentence": "Die Katze _____ hoch oben auf dem besten Sofa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "thront",
+      "options": [
+        "thront",
+        "versteckt",
+        "schläft",
+        "wartet"
+      ],
+      "translation": "The cat _____ high up on the best sofa.",
+      "optionTranslations": [
+        "sits enthroned",
+        "hides",
+        "sleeps",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Die Katze thront hoch oben auf dem besten Sofa.",
+        "targetWord": "thront",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/239b86ce002da85b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mustert",
+    "sentence": "Herr Pohl _____ jeden Bewerber von oben bis unten.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mustert",
+      "options": [
+        "mustert",
+        "begrüßt",
+        "bezahlt",
+        "ignoriert"
+      ],
+      "translation": "Mr Pohl _____ every applicant from head to toe.",
+      "optionTranslations": [
+        "inspects closely",
+        "greets",
+        "pays",
+        "ignores"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Herr Pohl mustert jeden Bewerber von oben bis unten.",
+        "targetWord": "mustert",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34b581cad3b180ad.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rascheln",
+    "sentence": "Elf Bewerbungsmappen _____ enttäuscht im Flur.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rascheln",
+      "options": [
+        "rascheln",
+        "warten",
+        "glänzen",
+        "fehlen"
+      ],
+      "translation": "Eleven application folders _____ in disappointment.",
+      "optionTranslations": [
+        "rustle",
+        "wait",
+        "shine",
+        "are missing"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Elf Bewerbungsmappen rascheln enttäuscht im Flur.",
+        "targetWord": "rascheln",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ae54213983947dc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "einreiben",
+    "sentence": "Man kann eine Salbe gut in die Haut _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "einreiben",
+      "options": [
+        "einreiben",
+        "einpacken",
+        "waschen",
+        "schneiden"
+      ],
+      "translation": "One can _____ an ointment well into the skin.",
+      "optionTranslations": [
+        "rub in",
+        "pack up",
+        "wash",
+        "cut"
+      ],
+      "audioClip": {
+        "storySlug": "bewerbungsgespraech-mit-katze",
+        "storySource": "user",
+        "sentence": "Man kann eine Salbe gut in die Haut einreiben.",
+        "targetWord": "einreiben",
+        "language": "german",
+        "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ece2750d98a07165.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Gehaltsnachweis,die Schufa,das Empfehlungsschreiben,das Führungszeugnis",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Gehaltsnachweis",
+          "answer": "proof of salary",
+          "options": [
+            "proof of salary",
+            "German credit report",
+            "letter of recommendation",
+            "certificate of good conduct"
+          ]
+        },
+        {
+          "word": "die Schufa",
+          "answer": "German credit report",
+          "options": [
+            "proof of salary",
+            "German credit report",
+            "letter of recommendation",
+            "certificate of good conduct"
+          ]
+        },
+        {
+          "word": "das Empfehlungsschreiben",
+          "answer": "letter of recommendation",
+          "options": [
+            "proof of salary",
+            "German credit report",
+            "letter of recommendation",
+            "certificate of good conduct"
+          ]
+        },
+        {
+          "word": "das Führungszeugnis",
+          "answer": "certificate of good conduct",
+          "options": [
+            "proof of salary",
+            "German credit report",
+            "letter of recommendation",
+            "certificate of good conduct"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]
