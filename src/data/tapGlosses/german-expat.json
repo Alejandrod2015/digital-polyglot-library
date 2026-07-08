@@ -6388,6 +6388,26 @@
   "näher": {
    "g": "nearer, closer (näher kommen = approach)",
    "t": "adverb"
+  },
+  "anfingen": {
+   "g": "began, started (anfangen)",
+   "t": "verb"
+  },
+  "besitzen": {
+   "g": "to own, to possess",
+   "t": "verb"
+  },
+  "stehst": {
+   "g": "stand, are standing (stehen)",
+   "t": "verb"
+  },
+  "sicher": {
+   "g": "surely, certainly; safe",
+   "t": "adverb"
+  },
+  "deinem": {
+   "g": "your (dative, dein)",
+   "t": "pronoun"
   }
  }
 }
