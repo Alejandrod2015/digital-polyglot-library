@@ -77,6 +77,7 @@ const config = {
     "expo-secure-store",
     "expo-web-browser",
     "expo-notifications",
+    "expo-iap",
     "./plugins/without-apple-signin",
     [
       "expo-splash-screen",

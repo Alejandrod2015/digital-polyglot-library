@@ -353,7 +353,7 @@ function findSpeakerLabelRanges(plainText: string): Array<{ start: number; end: 
  * Devuelve un payload con los tokens de etiquetas de speaker
  * filtrados. Conservamos `storyPlainText` intacto para que el
  * renderer siga mostrando "Anna: " como gap-fill (texto inerte), pero
- * el array `words` ya no incluye esos tokens — y por tanto el
+ * el array `words` ya no incluye esos tokens; y por tanto el
  * highlight nunca aterriza en ellos. Idempotente: si la historia no
  * es dialogue, retorna el payload original.
  */
@@ -483,7 +483,7 @@ function lookupVocabToken(
 // Longest multi-word vocab surface starting at word index `start`. The
 // per-token `lookupVocabToken` can never match a surface like "se sirven",
 // "le encantó", "en voz baja" or "no paró de" because it only sees one
-// token at a time — so those reflexive verbs and idiomatic expressions
+// token at a time; so those reflexive verbs and idiomatic expressions
 // silently never render as pills. Here we join consecutive token texts
 // with single spaces and probe the lookup (which already registers the
 // full multi-word surface/word as a key in buildVocabLookup), greedy
@@ -526,15 +526,20 @@ function maxPhraseTokenSpan(lookup: Map<string, VocabItem>): number {
 // hue at moderate opacity so white bold text reads cleanly on top, and
 // the hues are spread across the wheel so a paragraph with mixed parts
 // of speech displays a clear visual key. Active highlight on a vocab
-// word INTENTIONALLY does NOT override these — vocab keeps its type
+// word INTENTIONALLY does NOT override these; vocab keeps its type
 // color throughout playback so the grammar signal stays stable.
 const VOCAB_TYPE_BACKGROUNDS: Record<VocabTypeKey, string> = {
-  verb: "rgba(248, 113, 113, 0.6)", // coral — action
-  noun: "rgba(56, 189, 248, 0.65)", // sky — entity
-  adjective: "rgba(52, 211, 153, 0.6)", // emerald — quality
-  adverb: "rgba(167, 139, 250, 0.65)", // purple — modifier
-  expression: "rgba(244, 114, 182, 0.6)", // pink — idiomatic
-  other: "rgba(148, 163, 184, 0.55)", // slate — neutral fallback
+  verb: "rgba(248, 113, 113, 0.6)", // coral; action
+  noun: "rgba(56, 189, 248, 0.65)", // sky; entity
+  adjective: "rgba(52, 211, 153, 0.6)", // emerald; quality
+  adverb: "rgba(167, 139, 250, 0.65)", // purple; modifier
+  pronoun: "rgba(251, 191, 36, 0.6)", // amber; reference
+  preposition: "rgba(45, 212, 191, 0.6)", // teal; relation
+  conjunction: "rgba(129, 140, 248, 0.6)", // indigo; connector
+  article: "rgba(100, 116, 139, 0.6)", // steel; determiner
+  number: "rgba(190, 220, 80, 0.55)", // lime; quantity
+  expression: "rgba(244, 114, 182, 0.6)", // pink; idiomatic
+  other: "rgba(148, 163, 184, 0.55)", // slate; neutral fallback
 };
 
 function vocabBackgroundForItem(item: VocabItem | null | undefined): string {
@@ -676,7 +681,7 @@ function renderKaraokeParagraph(args: {
     // the active highlight moves through. Because the View tree never
     // changes shape, iOS NSTextAttachment kerning is baked into the
     // layout once and the surrounding text never shifts when the
-    // highlight enters or leaves a word — the only path on iOS that
+    // highlight enters or leaves a word; the only path on iOS that
     // gives short + rounded + zero-shift simultaneously.
     //
     // Vocab words and non-vocab words use different inner pill styles:
@@ -691,7 +696,7 @@ function renderKaraokeParagraph(args: {
     if (isFirstVocabHit) {
       // Vocab pills keep their type color through the entire playback.
       // The audio cursor moving over a vocab word does NOT swap the pill
-      // to the active amber — the type signal stays stable so the user
+      // to the active amber; the type signal stays stable so the user
       // can still tell at a glance whether it was a noun / verb / etc.
       containerStyle = [
         styles.karaokeWordContainerVocab,
@@ -710,7 +715,7 @@ function renderKaraokeParagraph(args: {
     // the line). The inner <View> is the visible short rounded pill.
     //
     // Vocab words wrap the outer in a <Pressable> with a generous
-    // hitSlop so the tap target extends past the visible pill — small
+    // hitSlop so the tap target extends past the visible pill; small
     // pills like "de", "la", "in" used to require a near-pixel-perfect
     // tap, especially in mid-scroll. Pressable handles touches at the
     // gesture-responder level so it never conflicts with the parent
@@ -770,7 +775,7 @@ function findActiveKaraokeWordIndex(
   // "de los", "what's the"...). Si solo devolviéramos el primer
   // índice del cluster, los siguientes nunca se resaltarían. Acá
   // detectamos el cluster y repartimos su ventana en partes iguales
-  // entre las palabras del cluster — la mejor aproximación cuando
+  // entre las palabras del cluster; la mejor aproximación cuando
   // aeneas no midió mejor.
   let last: number | null = null;
   let i = 0;
@@ -813,8 +818,8 @@ function findActiveKaraokeWordIndex(
     if (nextStart === null || positionSec < nextStart) {
       if (cluster.length === 1) return cluster[0];
       // Reparto equitativo. En la cola (sin nextStart definido) usamos
-      // un slot fijo de 150 ms — duración típica de una palabra corta
-      // narrada — así el último cluster del audio también avanza por
+      // un slot fijo de 150 ms; duración típica de una palabra corta
+      // narrada; así el último cluster del audio también avanza por
       // sus palabras en vez de quedarse pegado en la primera.
       const FALLBACK_SLOT_SEC = 0.15;
       const slot = nextStart !== null
@@ -957,7 +962,7 @@ export function ReaderScreen(args: {
           cached = parsed;
         }
       } catch {
-        // ignore — corrupto, fetch fresco
+        // ignore; corrupto, fetch fresco
       }
     }
     setWordTimings(cached);
@@ -991,7 +996,7 @@ export function ReaderScreen(args: {
   // eliminando el flash legacy del primer paint. Después del payload
   // base aplicamos `withoutSpeakerTokens` para que las etiquetas
   // "Speaker:" de historias multi-voz (Café in Kreuzberg, Carnitas en
-  // Coyoacán, …) no se resalten — el TTS no las pronuncia, pero
+  // Coyoacán, …) no se resalten; el TTS no las pronuncia, pero
   // aeneas les asigna timestamps espurios.
   const effectiveWordTimings = useMemo<AudioWordTimingsPayload>(() => {
     const base = (() => {
@@ -1017,7 +1022,7 @@ export function ReaderScreen(args: {
   // 25 ms tick that interpolates the audio position between the
   // 500 ms callbacks from NativeAudioPlayer. Short connector words
   // ("y", "a", "la", "que") can last 60-100 ms in fluent speech, so a
-  // coarser sampler (50 ms) sometimes "jumped over" them — the cursor
+  // coarser sampler (50 ms) sometimes "jumped over" them; the cursor
   // would go from word i to i+2 without ever landing on i+1. At 25 ms
   // we get ~40 Hz, enough to catch words down to ~50 ms reliably; the
   // setState is a no-op when the value didn't change, so the doubled
@@ -1078,7 +1083,7 @@ export function ReaderScreen(args: {
   //
   // Tres fases:
   //   1. INTRO: la palabra activa va apareciendo arriba (Y < 40 % del
-  //      viewport). El scroll se queda en 0 — el usuario lee desde el
+  //      viewport). El scroll se queda en 0; el usuario lee desde el
   //      principio del texto sin que la pantalla se mueva.
   //   2. STEADY: cuando la palabra activa cruza el 40 % vertical, el
   //      scroll empieza a moverse para dejarla anclada en ese 40 %
@@ -1089,7 +1094,7 @@ export function ReaderScreen(args: {
   //      el bottom hasta el final, sin que aparezcan espacios vacíos.
   //
   // El callback de `onProgressChange` arriba ya NO scrollea cuando hay
-  // wordTimings — este efecto es la única fuente de scroll para
+  // wordTimings; este efecto es la única fuente de scroll para
   // karaoke.
   const lastSmartScrollYRef = useRef(0);
   // Offset Y del bloque de texto (`textCard`) dentro del ScrollView.
@@ -1191,7 +1196,7 @@ export function ReaderScreen(args: {
   // Scale spring for the vocab panel "Save" button. Pops the button
   // when the user taps to favorite a word so the action feels
   // tactile, matching the bookmark / download micro-animations in
-  // the top bar. No pop on unsave — we only celebrate the positive
+  // the top bar. No pop on unsave; we only celebrate the positive
   // outcome.
   const saveButtonScale = useRef(new Animated.Value(1)).current;
   const [endOfStoryPromptVisible, setEndOfStoryPromptVisible] = useState(false);
@@ -1205,7 +1210,7 @@ export function ReaderScreen(args: {
   const endOfStoryCardOpacity = useRef(new Animated.Value(0)).current;
   const endOfStoryCardTranslate = useRef(new Animated.Value(40)).current;
   const endOfStoryCardScale = useRef(new Animated.Value(0.92)).current;
-  // Pulsing halo behind the "Start practice" CTA to draw the eye — same
+  // Pulsing halo behind the "Start practice" CTA to draw the eye; same
   // feel as NextActionGlow on the journey map.
   const endOfStoryCtaPulse = useRef(new Animated.Value(0.3)).current;
   useEffect(() => {
@@ -1366,7 +1371,7 @@ export function ReaderScreen(args: {
   const lastTrackedReadingRatioRef = useRef<number | null>(null);
   const lastTrackedBlockIndexRef = useRef<number | null>(null);
   const remoteCoverUrl = story.cover || story.coverUrl || book.cover;
-  // Prefer the local (file://) copy when we have one — it's instant and
+  // Prefer the local (file://) copy when we have one; it's instant and
   // works offline. If it errors (file missing / truncated), ProgressiveImage
   // calls onError and we swap to the remote URL for a graceful recovery.
   const [localCoverFailed, setLocalCoverFailed] = useState(false);
@@ -1471,12 +1476,12 @@ export function ReaderScreen(args: {
   // The reader does not render anything based on the active block index
   // (it's only used to persist progress on scroll). Keeping it in state
   // would trigger a full re-render of the reader on every block boundary
-  // crossed during scroll — catastrophic for scroll performance. A ref
+  // crossed during scroll; catastrophic for scroll performance. A ref
   // avoids the re-renders entirely.
   const activeBlockIndexRef = useRef(
     Math.min(Math.max(initialProgress?.currentBlockIndex ?? 0, 0), Math.max(blocks.length - 1, 0))
   );
-  // Show the full definition — the bubble grows vertically and defs from the
+  // Show the full definition; the bubble grows vertically and defs from the
   // generator now target 17-25 words (~100-150 chars), so the old 56-char
   // shortener was truncating almost everything.
   const compactDefinition = useMemo(
@@ -1546,7 +1551,7 @@ export function ReaderScreen(args: {
   }
 
   function restoreReadingPosition() {
-    // Stories always open scrolled to the very top now — regardless of
+    // Stories always open scrolled to the very top now; regardless of
     // any persisted progress. The audio playhead still resumes via the
     // <NativeAudioPlayer/> initial position; only the visual scroll is
     // pinned to 0 so the user sees the cover + first line right away.
@@ -1617,14 +1622,14 @@ export function ReaderScreen(args: {
     trackReadingPosition(ratio, nextBlockIndex);
 
     // "Lock it in" prompt is now audio-only (fires on expo-av
-    // didJustFinish). The scroll-to-end trigger was removed per request —
+    // didJustFinish). The scroll-to-end trigger was removed per request -
     // reaching the bottom of the text is not the same thing as finishing
     // the story, especially if the listener is using audio.
   }
 
   return (
     <View style={styles.screen} accessibilityLabel="qa-reader-screen" testID="qa-reader-screen">
-      {/* Floating back button — always reachable regardless of scroll
+      {/* Floating back button; always reachable regardless of scroll
           position, so the user doesn't have to scroll back to the top of a
           long story to tap "back to journey". */}
       <Pressable
@@ -1692,7 +1697,7 @@ export function ReaderScreen(args: {
                 pressed ? styles.iconButtonPressed : null,
               ]}
             >
-              {/* Filled vs outline bookmark — the shape change (not just
+              {/* Filled vs outline bookmark; the shape change (not just
                   the colour) makes the toggle readable at a glance. */}
               {isSaved ? (
                 <MaterialCommunityIcons name="bookmark" size={19} color="#f8c15c" />
@@ -1768,7 +1773,7 @@ export function ReaderScreen(args: {
         {coverUrl ? (
           // w=640 is plenty for the 196pt-tall hero at @3x and is usually
           // already in the Next.js image cache because smaller cards share
-          // the same bucket — keeps first render fast.
+          // the same bucket; keeps first render fast.
           <ProgressiveImage
             uri={getCoverUrl(coverUrl, 640)}
             style={styles.readerCover}
@@ -1969,7 +1974,7 @@ export function ReaderScreen(args: {
 
       {selectedVocab ? (
         // Use pointerEvents="box-none" so taps on words in the ScrollView
-        // below pass through — tapping a different highlighted word simply
+        // below pass through; tapping a different highlighted word simply
         // switches the popup to that word instead of needing a separate
         // tap-to-close first. Tapping blank paragraph space closes the popup
         // via the Pressable wrapper around each block.
@@ -2026,7 +2031,7 @@ export function ReaderScreen(args: {
                           if (!wasSaved) {
                             // Pop only on save (positive action). On
                             // unsave the chip just toggles back to its
-                            // resting state — no celebration needed.
+                            // resting state; no celebration needed.
                             Animated.sequence([
                               Animated.spring(saveButtonScale, {
                                 toValue: 1.12,
@@ -2108,7 +2113,7 @@ export function ReaderScreen(args: {
               This is your free story this week.
             </Text>
             <Text style={{ color: "#fff", fontSize: 13, marginTop: 2, opacity: 0.95 }}>
-              Press play below to start listening — tap to dismiss.
+              Press play below to start listening; tap to dismiss.
             </Text>
             <View
               style={{
@@ -2252,7 +2257,7 @@ export function ReaderScreen(args: {
             // Scroll lineal sólo cuando NO hay karaoke. Con karaoke
             // (wordTimings presente) un useEffect aparte conduce un
             // scroll inteligente que ancla la palabra activa al 40%
-            // vertical de la pantalla — leer "del medio" mientras el
+            // vertical de la pantalla; leer "del medio" mientras el
             // texto rueda por debajo. Sin wordTimings no tenemos
             // posición de palabra, así que caemos al mapeo lineal
             // ratio→Y que ya funcionaba.
@@ -2638,8 +2643,8 @@ const styles = StyleSheet.create({
   // Karaoke (word-level audio highlight) styles. iOS NSTextAttachment
   // does not consistently honor negative `margin` on inline <View>
   // wrappers, so we keep the active pill's bounding box at exactly the
-  // text's natural width — zero horizontal padding, just a tight
-  // rounded background — to avoid the surrounding line being pushed
+  // text's natural width; zero horizontal padding, just a tight
+  // rounded background; to avoid the surrounding line being pushed
   // sideways every time the highlight advances.
   // Estilos legacy `karaokeActivePill`, `karaokeActivePillText` e
   // `karaokeActiveInlineText` (con `#fcd34d`, amarillo vivo) eliminados.
@@ -2653,7 +2658,7 @@ const styles = StyleSheet.create({
   // as the surrounding paragraph text. The outer wrapper occupies the
   // full 40 px line height (via vertical padding) so iOS computes the
   // line's baseline from a 40 px element instead of the 24 px inner
-  // pill — periods and commas in the gap text then sit on the correct
+  // pill; periods and commas in the gap text then sit on the correct
   // line baseline. The inner wrapper carries the visible rounded
   // background and is naturally sized by its 24 px inner Text.
   karaokeWordOuter: {
@@ -2708,7 +2713,7 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
   karaokeWordTextVocabBold: {
-    // Dark navy text on sky-blue vocab background — same dark hue as
+    // Dark navy text on sky-blue vocab background; same dark hue as
     // the legacy reader's vocab pill so the pre-fetch / post-fetch
     // transition is invisible.
     color: "#0e1727",
@@ -2822,7 +2827,7 @@ const styles = StyleSheet.create({
   },
   vocabActionActive: {
     // Gold matches the bookmark icon in the top bar and the karaoke
-    // active highlight — both signals already mean "this is yours
+    // active highlight; both signals already mean "this is yours
     // now". Reusing the hue ties the save action into the same
     // visual language instead of inventing a third color.
     backgroundColor: "#f8c15c",

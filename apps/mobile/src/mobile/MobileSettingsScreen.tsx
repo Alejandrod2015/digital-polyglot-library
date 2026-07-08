@@ -71,6 +71,16 @@ type Props = {
   reminderPreviewTitle?: string | null;
   reminderPreviewBody?: string | null;
   reminderHint: string;
+  /** Per-type notification toggles (streak, new content, practice…).
+   *  The daily reminder keeps its own card above; these are the extra
+   *  types the user can independently enable/disable. */
+  notificationToggles?: Array<{
+    key: string;
+    label: string;
+    description: string;
+    value: boolean;
+    onValueChange: (next: boolean) => void;
+  }>;
   summaryItems: SummaryTile[];
   pushMessage?: string | null;
   showSignOut: boolean;
@@ -133,6 +143,7 @@ export function MobileSettingsScreen({
   reminderPreviewTitle,
   reminderPreviewBody,
   reminderHint,
+  notificationToggles,
   summaryItems,
   pushMessage,
   showSignOut,
@@ -343,6 +354,44 @@ export function MobileSettingsScreen({
               {pushMessage ? <Text style={styles.helperText}>{pushMessage}</Text> : null}
               {reminderHint ? <Text style={styles.helperText}>{reminderHint}</Text> : null}
             </View>
+
+            {/* Per-type notification toggles */}
+            {notificationToggles && notificationToggles.length > 0 ? (
+              <View style={styles.reminderCard}>
+                <View style={styles.reminderHeader}>
+                  <View style={styles.reminderIcon}>
+                    <Feather name="sliders" size={16} color="#dbe9ff" />
+                  </View>
+                  <View style={styles.reminderCopy}>
+                    <Text style={styles.reminderTitle}>Notifications</Text>
+                    <Text style={styles.reminderSub} numberOfLines={1}>
+                      Choose what you want to hear about
+                    </Text>
+                  </View>
+                </View>
+                {notificationToggles.map((item, index) => (
+                  <View
+                    key={item.key}
+                    style={[
+                      styles.notifToggleRow,
+                      index > 0 ? styles.notifToggleRowDivider : null,
+                    ]}
+                  >
+                    <View style={styles.notifToggleCopy}>
+                      <Text style={styles.notifToggleLabel}>{item.label}</Text>
+                      <Text style={styles.notifToggleDesc}>{item.description}</Text>
+                    </View>
+                    <Switch
+                      value={item.value}
+                      onValueChange={item.onValueChange}
+                      trackColor={{ false: "#27405f", true: "#f8c15c" }}
+                      thumbColor={item.value ? "#fff7e2" : "#9cb0c9"}
+                      ios_backgroundColor="#27405f"
+                    />
+                  </View>
+                ))}
+              </View>
+            ) : null}
 
             {/* Footer actions */}
             <View style={styles.footerRow}>
@@ -868,6 +917,32 @@ const styles = StyleSheet.create({
     color: "#f8d48a",
   },
 
+  /* Per-type notification toggles */
+  notifToggleRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    paddingVertical: 10,
+  },
+  notifToggleRowDivider: {
+    borderTopWidth: 1,
+    borderTopColor: "#1e3450",
+  },
+  notifToggleCopy: {
+    flex: 1,
+    gap: 2,
+  },
+  notifToggleLabel: {
+    color: "#f5f7fb",
+    fontSize: 14,
+    fontWeight: "700",
+  },
+  notifToggleDesc: {
+    color: "#9cb0c9",
+    fontSize: 12,
+    lineHeight: 17,
+  },
+
   /* Footer row */
   footerRow: {
     flexDirection: "row",
@@ -936,7 +1011,7 @@ const styles = StyleSheet.create({
   preferenceCard: {
     gap: 10,
   },
-  /* Personalize tab — compact 2-column grid + save button. Designed
+  /* Personalize tab; compact 2-column grid + save button. Designed
      so the 7 preference tiles + the save button fit on one screen on
      iPhone 12 without scrolling. */
   personalizeWrap: {

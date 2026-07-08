@@ -2735,11 +2735,18 @@ export function MobileLibraryShell(args: {
     // variant del primer track con variant poblado. Mismo principio
     // que activeJourneyFlagVariant; los tracks de un Journey siempre
     // pertenecen a una sola familia regional.
+    // Live journey data (real Studio name + level) for THIS exact journey,
+    // matched by id so we never cross-wire two journeys. The saved preference
+    // can carry an empty label + stale level: a freshly activated German
+    // "Expat" (C1-only) journey showed "Travelers · Elementary" instead of
+    // "Expat · Advanced" because its saved label was empty and level defaulted.
+    // The web reads the journey record live, so it was always correct there.
+    const langKey = journey.language.toLowerCase();
+    const cached = journeyCacheByLanguageRef.current.get(langKey);
+    const cachedTrack = cached?.tracks?.find((t) => t.id === journey.id) ?? null;
     let flagRegion = journeyFlagVariant(journey);
     if (!flagRegion) {
-      const langKey = journey.language.toLowerCase();
-      const cached = journeyCacheByLanguageRef.current.get(langKey);
-      const firstWithVariant = cached?.tracks?.find((t) => t.variant);
+      const firstWithVariant = cachedTrack ?? cached?.tracks?.find((t) => t.variant);
       if (firstWithVariant?.variant) flagRegion = firstWithVariant.variant;
     }
     const rawVariant = (flagRegion ?? "").trim().toLowerCase();
@@ -2751,7 +2758,10 @@ export function MobileLibraryShell(args: {
       // bandera se pinte bien.
       variant: flagRegion,
       variantLabel,
-      displayName: journeyDisplayName(journey),
+      displayName: journeyDisplayName({
+        ...journey,
+        label: journey.label?.trim() || cachedTrack?.label?.trim() || null,
+      }),
       // The active journey prefers the fine onboarding placement (e.g. A0)
       // over the level stored on the journey itself. Journeys created before
       // the placement fix stored the coarse "Beginner" bucket, which resolves
@@ -2763,9 +2773,16 @@ export function MobileLibraryShell(args: {
       // only ever an optional secondary annotation.
       level: cefrDisplayLabel(
         cefrFromPreferredLevel(
-          isActive && preferences.journeyPlacementLevel
-            ? preferences.journeyPlacementLevel
-            : journey.level
+          // Single-level journeys (e.g. German "Expat" = C1 only) carry their
+          // real level in the live track; prefer it so the row can't show a
+          // stale/placeholder "Elementary" for an Advanced-only journey.
+          // Multi-level journeys keep the placement/saved logic untouched.
+          (cachedTrack && cachedTrack.levels.length === 1
+            ? cachedTrack.levels[0].id
+            : null) ||
+            (isActive && preferences.journeyPlacementLevel
+              ? preferences.journeyPlacementLevel
+              : journey.level)
         )
       ),
       active: isActive,
@@ -5102,16 +5119,15 @@ export function MobileLibraryShell(args: {
   const tourOnTabStep =
     tourVisible &&
     (activeOnboardingTourTarget === "home" ||
-      activeOnboardingTourTarget === "explore" ||
+      activeOnboardingTourTarget === "progress" ||
       activeOnboardingTourTarget === "practice" ||
       activeOnboardingTourTarget === "favorites");
 
   function tourTargetMatchesTab(tab: BottomTab) {
     if (!activeOnboardingTourTarget) return false;
     if (activeOnboardingTourTarget === "home") return tab === "home";
-    // Explore moved into the Menu (signed-in IA), so its tour step now points
-    // at the Menu tab; that's where browsing lives.
-    if (activeOnboardingTourTarget === "explore") return tab === "menu";
+    // The second tour step is Progress: it points at the Progress tab.
+    if (activeOnboardingTourTarget === "progress") return tab === "progress";
     if (activeOnboardingTourTarget === "practice") return tab === "practice";
     if (activeOnboardingTourTarget === "favorites") return tab === "favorites";
     return false;
@@ -17683,8 +17699,8 @@ export function MobileLibraryShell(args: {
             const tabIndex =
               activeOnboardingTourTarget === "home"
                 ? 0
-                : activeOnboardingTourTarget === "explore"
-                  ? bottomTabs.findIndex((t) => t.key === "menu") // Explore lives in the Menu now
+                : activeOnboardingTourTarget === "progress"
+                  ? bottomTabs.findIndex((t) => t.key === "progress")
                   : activeOnboardingTourTarget === "practice"
                     ? 2
                     : activeOnboardingTourTarget === "favorites"
@@ -17695,8 +17711,8 @@ export function MobileLibraryShell(args: {
             const iconName =
               activeOnboardingTourTarget === "home"
                 ? "home"
-                : activeOnboardingTourTarget === "explore"
-                  ? "menu"
+                : activeOnboardingTourTarget === "progress"
+                  ? "bar-chart-2"
                   : activeOnboardingTourTarget === "practice"
                     ? "refresh-cw"
                     : activeOnboardingTourTarget === "favorites"
