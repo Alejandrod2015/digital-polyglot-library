@@ -11,7 +11,7 @@ export default async function StudioUserJourneyPage() {
   return (
     <StudioShell
       title="User Journey"
-      description="El recorrido de un usuario nuevo en la app iOS, de la bienvenida al hábito diario, en 10 pantallas reales."
+      description="El recorrido de un usuario nuevo en la app iOS, de la bienvenida al hábito diario, en 15 pantallas reales."
       breadcrumbs={[{ label: "Studio", href: "/studio" }, { label: "User Journey" }]}
     >
       <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
@@ -33,7 +33,7 @@ export default async function StudioUserJourneyPage() {
             para verla en grande con su explicación (← → para navegar).
           </p>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            {["10 pantallas", "iOS · producción", "Journey LATAM"].map((chip) => (
+            {["15 pantallas", "iOS · producción", "Journey LATAM"].map((chip) => (
               <span
                 key={chip}
                 style={{
@@ -65,9 +65,10 @@ export default async function StudioUserJourneyPage() {
             lineHeight: 1.6,
           }}
         >
-          Las pantallas de Journey y Práctica se muestran en modo invitado (sin sesión). Con sesión iniciada esas mismas
-          vistas cambian por el progreso personalizado del usuario. Faltan por capturar los flujos signed-in (home
-          personalizado, tour de coachmarks y una ronda de práctica en curso).
+          Las pantallas de Journey y Práctica se muestran en modo invitado (sin sesión); con sesión iniciada cambian por
+          el progreso personalizado del usuario. Quedan fuera los flujos que exigen login o datos reales y no renderizan
+          en modo invitado: home personalizado con progreso, una ronda de práctica en curso, el test de nivel y el panel
+          de journeys. Se capturan cuando se habilite el login real en el simulador.
         </p>
       </div>
     </StudioShell>

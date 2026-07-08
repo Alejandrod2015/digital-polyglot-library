@@ -23,12 +23,14 @@ type Act = { kicker: string; title: string; intent: string; phases: Omit<Phase, 
 const ACTS: Act[] = [
   {
     kicker: "Acto I",
-    title: "Llegar y configurar",
+    title: "Descubrir y empezar",
     intent: "Del primer toque a un punto de partida claro.",
     phases: [
       { n: "01", img: "j01", label: "Bienvenida", title: "La promesa, en la primera pantalla", body: "Al abrir la app, el usuario ve la propuesta central y las formas de entrar: Google, Facebook o email. Un solo objetivo en foco: empezar." },
       { n: "02", img: "j02", label: "Onboarding", title: "Elige qué quieres aprender", body: "Paso 1 de 4. El primer idioma se vuelve el journey inicial; el resto queda listo en el selector. Selección múltiple, cero fricción." },
-      { n: "03", img: "j03", label: "Tu journey", title: "Un siguiente paso, siempre visible", body: "La pestaña Journey propone qué hacer ahora. En modo invitado invita a entrar; con sesión iniciada muestra el camino guiado." },
+      { n: "03", img: "j03", label: "Tour guiado", title: "Un tour que señala cada zona", body: "Coachmarks paso a paso al entrar. Paso 1: Home es tu journey, un camino de historias cortas de arriba hacia abajo." },
+      { n: "04", img: "j04", label: "Tour guiado", title: "El tour recorre las 4 áreas", body: "Paso 3 del tour: Practice fija las palabras aprendidas con rondas rápidas y enfocadas. El scrim resalta la pestaña activa." },
+      { n: "05", img: "j05", label: "Tu journey", title: "Un siguiente paso, siempre visible", body: "La pestaña Journey propone qué hacer ahora. En modo invitado invita a entrar; con sesión iniciada muestra el camino guiado." },
     ],
   },
   {
@@ -36,20 +38,30 @@ const ACTS: Act[] = [
     title: "Aprender en contexto",
     intent: "El lenguaje auténtico, dentro de una historia.",
     phases: [
-      { n: "04", img: "j04", label: "Explorar", title: "Una biblioteca viva", body: "80 historias filtrables por tema y nivel, con portadas propias. El usuario elige por interés, no por demografía." },
-      { n: "05", img: "j05", label: "Colección", title: "Contexto antes de entrar", body: "Cada colección muestra nivel, duración media y valoración. Se sabe qué esperar antes de abrir una historia." },
-      { n: "06", img: "j06", label: "Historia + audio", title: "El corazón del producto", core: true, body: "Texto auténtico, audio sincronizado y vocabulario resaltado en contexto (copal, cempasúchil, altar). Aquí es donde se aprende el lenguaje real." },
+      { n: "06", img: "j06", label: "Explorar", title: "Una biblioteca viva", body: "80 historias filtrables por tema y nivel, con portadas propias. El usuario elige por interés, no por demografía." },
+      { n: "07", img: "j07", label: "Colección", title: "Contexto antes de entrar", body: "Cada colección muestra nivel, duración media y valoración. Se sabe qué esperar antes de abrir una historia." },
+      { n: "08", img: "j08", label: "Historia + audio", title: "El corazón del producto", core: true, body: "Texto auténtico, audio sincronizado y vocabulario resaltado en contexto (copal, cempasúchil, altar). Aquí es donde se aprende el lenguaje real." },
     ],
   },
   {
     kicker: "Acto III",
-    title: "Retener y volver",
+    title: "Practicar y retener",
     intent: "Convertir una sesión en un hábito.",
     phases: [
-      { n: "07", img: "j07", label: "Vocabulario", title: "Palabras que se quedan", body: "Cada término guardado trae significado, contexto y una barra de dominio que sube con la práctica." },
-      { n: "08", img: "j08", label: "Práctica", title: "Refuerzo activo", body: "El vocabulario guardado se repasa en rondas de significado, contexto, escucha y emparejamiento." },
-      { n: "09", img: "j09", label: "Continuar", title: "Retomar sin buscar", body: "Todo lo que empezó queda sincronizado y listo para continuar, con un vistazo del progreso." },
-      { n: "10", img: "j10", label: "Multi-idioma", title: "Varios idiomas, un mismo hábito", body: "Desde el selector, el usuario cambia de journey o añade otro idioma sin perder su progreso." },
+      { n: "09", img: "j09", label: "Vocabulario", title: "Palabras que se quedan", body: "Cada término guardado trae significado, contexto y una barra de dominio que sube con la práctica." },
+      { n: "10", img: "j10", label: "Práctica", title: "Refuerzo activo", body: "El vocabulario guardado se repasa en rondas de significado, contexto, escucha y emparejamiento." },
+      { n: "11", img: "j11", label: "Continuar", title: "Retomar sin buscar", body: "Todo lo que empezó queda sincronizado y listo para continuar, con un vistazo del progreso." },
+      { n: "12", img: "j12", label: "Recordatorio", title: "Un empujón diario, opcional", body: "El usuario elige la hora de un único aviso al día. Es el gancho de retención, sin ser intrusivo." },
+    ],
+  },
+  {
+    kicker: "Acto IV",
+    title: "Cuenta y acceso",
+    intent: "Ajustar, mejorar y cambiar de idioma.",
+    phases: [
+      { n: "13", img: "j13", label: "Ajustes", title: "Todo en un lugar", body: "Cuenta, plan, personalización y privacidad; incluye el recordatorio diario, soporte y el acceso a los planes." },
+      { n: "14", img: "j14", label: "Premium", title: "Desbloquear todo", body: "Go Premium: todas las historias, acceso offline, práctica completa y las palabras guardadas. Compra vía App Store." },
+      { n: "15", img: "j15", label: "Multi-idioma", title: "Varios idiomas, un mismo hábito", body: "Desde el selector, el usuario cambia de journey o añade otro idioma sin perder su progreso." },
     ],
   },
 ];
