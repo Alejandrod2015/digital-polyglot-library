@@ -11,7 +11,7 @@ export default async function StudioUserJourneyPage() {
   return (
     <StudioShell
       title="User Journey"
-      description="El recorrido de un usuario nuevo en la app iOS, de la bienvenida al hábito diario, en 15 pantallas reales."
+      description="El recorrido de un usuario nuevo en la app iOS, de la bienvenida al hábito diario, en 17 pantallas reales (incluido el journey guiado con progreso)."
       breadcrumbs={[{ label: "Studio", href: "/studio" }, { label: "User Journey" }]}
     >
       <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
@@ -33,7 +33,7 @@ export default async function StudioUserJourneyPage() {
             para verla en grande con su explicación (← → para navegar).
           </p>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            {["15 pantallas", "iOS · producción", "Journey LATAM"].map((chip) => (
+            {["17 pantallas", "iOS · producción", "Journey LATAM"].map((chip) => (
               <span
                 key={chip}
                 style={{
@@ -65,10 +65,10 @@ export default async function StudioUserJourneyPage() {
             lineHeight: 1.6,
           }}
         >
-          Las pantallas de Journey y Práctica se muestran en modo invitado (sin sesión); con sesión iniciada cambian por
-          el progreso personalizado del usuario. Quedan fuera los flujos que exigen login o datos reales y no renderizan
-          en modo invitado: home personalizado con progreso, una ronda de práctica en curso, el test de nivel y el panel
-          de journeys. Se capturan cuando se habilite el login real en el simulador.
+          Incluye ahora los flujos signed-in reales (journey guiado con niveles y progreso, práctica con vocab, progreso
+          semanal, menú, test de nivel y panel de journeys), capturados con una sesión de prueba contra la base de datos
+          de producción. Queda pendiente lo más granular: una ronda de práctica en curso (tarjetas de ejercicio) y la
+          celebración post-ronda.
         </p>
       </div>
     </StudioShell>
