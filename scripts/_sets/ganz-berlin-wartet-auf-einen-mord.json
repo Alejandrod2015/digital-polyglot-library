@@ -1,0 +1,480 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "die Schweigepflicht",
+  "sentence": "Ab Viertel nach acht gilt strenge [[Schweigepflicht]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "duty of silence",
+   "options": [
+    "duty of silence",
+    "closing time",
+    "house rule",
+    "waiting time"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Ab Viertel nach acht gilt strenge Schweigepflicht.",
+    "targetWord": "Schweigepflicht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Abspann",
+  "sentence": "Erst der [[Abspann]] gibt Nadia am Ende recht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "closing credits",
+   "options": [
+    "closing credits",
+    "opening scene",
+    "theme tune",
+    "first suspect"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Erst der Abspann gibt Nadia am Ende recht.",
+    "targetWord": "Abspann",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Titelmelodie",
+  "sentence": "Bei der [[Titelmelodie]] verstummen alle acht Gäste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "theme tune",
+   "options": [
+    "theme tune",
+    "closing credits",
+    "doorbell",
+    "phone call"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Bei der Titelmelodie verstummen alle acht Gäste.",
+    "targetWord": "Titelmelodie",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Erdgeschoss",
+  "sentence": "Der Tatort läuft bei Frau Siebert im [[Erdgeschoss]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ground floor",
+   "options": [
+    "ground floor",
+    "top floor",
+    "back garden",
+    "stairwell"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Der Tatort läuft bei Frau Siebert im Erdgeschoss.",
+    "targetWord": "Erdgeschoss",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "beibringen",
+  "sentence": "Frau Siebert soll Nadia das Laminieren [[beibringen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to teach",
+   "options": [
+    "to teach",
+    "to forbid",
+    "to sell",
+    "to hide"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Frau Siebert soll Nadia das Laminieren beibringen.",
+    "targetWord": "beibringen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "streng",
+  "sentence": "Die Regeln des Abends sind erstaunlich [[streng]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "strict",
+   "options": [
+    "strict",
+    "funny",
+    "vague",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Die Regeln des Abends sind erstaunlich streng.",
+    "targetWord": "streng",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bemerkenswert",
+  "sentence": "Beim ersten Mal richtig zu tippen ist [[bemerkenswert]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "remarkable",
+   "options": [
+    "remarkable",
+    "normal",
+    "boring",
+    "risky"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Beim ersten Mal richtig zu tippen ist bemerkenswert.",
+    "targetWord": "bemerkenswert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mutig",
+  "sentence": "Auf den Gärtner zu tippen findet Siebert [[mutig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "brave, daring",
+   "options": [
+    "brave, daring",
+    "foolish",
+    "lazy",
+    "polite"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Auf den Gärtner zu tippen findet Siebert mutig.",
+    "targetWord": "mutig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gleichzeitig",
+  "sentence": "Sieben Köpfe drehen sich [[gleichzeitig]] zu Nadia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "simultaneously",
+   "options": [
+    "simultaneously",
+    "reluctantly",
+    "slowly",
+    "secretly"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Sieben Köpfe drehen sich gleichzeitig zu Nadia.",
+    "targetWord": "gleichzeitig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "neulich",
+  "sentence": "Der Lärm von [[neulich]] ist plötzlich vergessen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the other day",
+   "options": [
+    "the other day",
+    "next week",
+    "long ago",
+    "every day"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Der Lärm von neulich ist plötzlich vergessen.",
+    "targetWord": "neulich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hoch anrechnen",
+  "sentence": "Ihre Pünktlichkeit rechnet Frau Siebert ihr [[hoch an]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give real credit",
+   "options": [
+    "to give real credit",
+    "to hold against",
+    "to laugh off",
+    "to write down"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Ihre Pünktlichkeit rechnet Frau Siebert ihr hoch an.",
+    "targetWord": "hoch an",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "richtig liegen",
+  "sentence": "Seit Jahren kann hier nur die Gastgeberin [[richtig liegen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be right",
+   "options": [
+    "to be right",
+    "to sit still",
+    "to arrive late",
+    "to stay quiet"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Seit Jahren kann hier nur die Gastgeberin richtig liegen.",
+    "targetWord": "richtig liegen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "recht geben",
+  "sentence": "Am Ende muss der Abspann Nadia [[recht geben]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to prove someone right",
+   "options": [
+    "to prove someone right",
+    "to interrupt someone",
+    "to invite someone",
+    "to warn someone"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Am Ende muss der Abspann Nadia recht geben.",
+    "targetWord": "recht geben",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "erraten",
+  "sentence": "Nur die Gastgeberin kann den Mörder _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "erraten",
+   "options": [
+    "erraten",
+    "verstecken",
+    "spielen",
+    "bezahlen"
+   ],
+   "translation": "Only the hostess can _____ the murderer.",
+   "optionTranslations": [
+    "guess correctly",
+    "hide",
+    "play",
+    "pay"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Nur die Gastgeberin kann den Mörder erraten.",
+    "targetWord": "erraten",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "verstummt",
+  "sentence": "Um Viertel nach acht _____ das halbe Haus.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "verstummt",
+   "options": [
+    "verstummt",
+    "lacht",
+    "tanzt",
+    "ruft"
+   ],
+   "translation": "At quarter past eight half the house _____.",
+   "optionTranslations": [
+    "falls silent",
+    "laughs",
+    "dances",
+    "shouts"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Um Viertel nach acht verstummt das halbe Haus.",
+    "targetWord": "verstummt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "wirkt",
+  "sentence": "Der Gärtner _____ Nadia einfach zu freundlich.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "wirkt",
+   "options": [
+    "wirkt",
+    "riecht",
+    "schmeckt",
+    "klopft"
+   ],
+   "translation": "The gardener simply _____ too friendly to Nadia.",
+   "optionTranslations": [
+    "seems",
+    "smells",
+    "tastes",
+    "knocks"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Der Gärtner wirkt Nadia einfach zu freundlich.",
+    "targetWord": "wirkt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "herrscht",
+  "sentence": "Während des Films _____ absolute Stille.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "herrscht",
+   "options": [
+    "herrscht",
+    "verschwindet",
+    "beginnt",
+    "platzt"
+   ],
+   "translation": "During the film absolute silence _____.",
+   "optionTranslations": [
+    "reigns",
+    "disappears",
+    "begins",
+    "bursts"
+   ],
+   "audioClip": {
+    "storySlug": "ganz-berlin-wartet-auf-einen-mord",
+    "storySource": "user",
+    "sentence": "Während des Films herrscht absolute Stille.",
+    "targetWord": "herrscht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "der Mörder,der Kommissar,der Gärtner,das Schnittchen",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Mörder",
+     "answer": "the murderer",
+     "options": [
+      "the murderer",
+      "police inspector",
+      "the gardener",
+      "open-faced sandwich"
+     ]
+    },
+    {
+     "word": "der Kommissar",
+     "answer": "police inspector",
+     "options": [
+      "the murderer",
+      "police inspector",
+      "the gardener",
+      "open-faced sandwich"
+     ]
+    },
+    {
+     "word": "der Gärtner",
+     "answer": "the gardener",
+     "options": [
+      "the murderer",
+      "police inspector",
+      "the gardener",
+      "open-faced sandwich"
+     ]
+    },
+    {
+     "word": "das Schnittchen",
+     "answer": "open-faced sandwich",
+     "options": [
+      "the murderer",
+      "police inspector",
+      "the gardener",
+      "open-faced sandwich"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

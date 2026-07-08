@@ -1,0 +1,504 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "die Währung",
+  "sentence": "Am Späti ist Pfand fast eine eigene [[Währung]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "currency",
+   "options": [
+    "currency",
+    "language",
+    "danger",
+    "rule"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Am Späti ist Pfand fast eine eigene Währung.",
+    "targetWord": "Währung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Vorwurf",
+  "sentence": "Der Zettel erhebt einen schweren [[Vorwurf]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "accusation",
+   "options": [
+    "accusation",
+    "apology",
+    "reminder",
+    "welcome"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Der Zettel erhebt einen schweren Vorwurf.",
+    "targetWord": "Vorwurf",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Bürgerkrieg",
+  "sentence": "Timo nennt den Zettelstreit fast einen [[Bürgerkrieg]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "civil war",
+   "options": [
+    "civil war",
+    "friendly chat",
+    "short delay",
+    "great deal"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Timo nennt den Zettelstreit fast einen Bürgerkrieg.",
+    "targetWord": "Bürgerkrieg",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Ritterschlag",
+  "sentence": "Die Einladung zum Tatort ist ein [[Ritterschlag]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a knighting, acceptance",
+   "options": [
+    "a knighting, acceptance",
+    "a punishment",
+    "a rejection",
+    "a warning"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Die Einladung zum Tatort ist ein Ritterschlag.",
+    "targetWord": "Ritterschlag",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sauber",
+  "sentence": "Nadias Antwortbrief ist juristisch völlig [[sauber]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clean, flawless",
+   "options": [
+    "clean, flawless",
+    "greasy",
+    "messy",
+    "funny"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Nadias Antwortbrief ist juristisch völlig sauber.",
+    "targetWord": "sauber",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fettig",
+  "sentence": "Angeblich lag [[fettiger]] Restmüll in der Papiertonne.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "greasy",
+   "options": [
+    "greasy",
+    "clean",
+    "empty",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Angeblich lag fettiger Restmüll in der Papiertonne.",
+    "targetWord": "fettiger",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unangreifbar",
+  "sentence": "Ihr Schreiben ist präzise und [[unangreifbar]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "unassailable",
+   "options": [
+    "unassailable",
+    "friendly",
+    "cheap",
+    "vague"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Ihr Schreiben ist präzise und unangreifbar.",
+    "targetWord": "unangreifbar",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stolz",
+  "sentence": "Auf ihr Aktenzeichen ist Nadia fast [[stolz]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "proud",
+   "options": [
+    "proud",
+    "angry",
+    "tired",
+    "sorry"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Auf ihr Aktenzeichen ist Nadia fast stolz.",
+    "targetWord": "stolz",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "präzise",
+  "sentence": "Jeder Satz des Briefes ist kühl und [[präzise]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "precise",
+   "options": [
+    "precise",
+    "vague",
+    "warm",
+    "funny"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Jeder Satz des Briefes ist kühl und präzise.",
+    "targetWord": "präzise",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nummeriert",
+  "sentence": "Die Vorwürfe stehen [[nummeriert]] und förmlich da.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "numbered",
+   "options": [
+    "numbered",
+    "crumpled",
+    "handwritten",
+    "secret"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Die Vorwürfe stehen nummeriert und förmlich da.",
+    "targetWord": "nummeriert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schlimm",
+  "sentence": "Bei Tageslicht ist der Zettel noch [[schlimmer]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "worse, more serious",
+   "options": [
+    "worse, more serious",
+    "funnier",
+    "smaller",
+    "older"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Bei Tageslicht ist der Zettel noch schlimmer.",
+    "targetWord": "schlimmer",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "obenauf",
+  "sentence": "Auf dem Stapel liegt die Einladung [[obenauf]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on top",
+   "options": [
+    "on top",
+    "underneath",
+    "far away",
+    "upside down"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Auf dem Stapel liegt die Einladung obenauf.",
+    "targetWord": "obenauf",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "versteht sich",
+  "sentence": "Der Brief ist laminiert, [[versteht sich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "of course",
+   "options": [
+    "of course",
+    "who knows",
+    "not yet",
+    "by mistake"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Der Brief ist laminiert, versteht sich.",
+    "targetWord": "versteht sich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Viertel nach acht",
+  "sentence": "[[Viertel nach acht]] wird das ganze Land still.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quarter past eight",
+   "options": [
+    "quarter past eight",
+    "early next morning",
+    "late every night",
+    "once a year"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Viertel nach acht wird das ganze Land still.",
+    "targetWord": "Viertel nach acht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "trennen",
+  "sentence": "Den Müll muss man in Berlin streng _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "trennen",
+   "options": [
+    "trennen",
+    "mischen",
+    "wiegen",
+    "verschenken"
+   ],
+   "translation": "In Berlin you must strictly _____ the waste.",
+   "optionTranslations": [
+    "separate",
+    "mix",
+    "weigh",
+    "give away"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Den Müll muss man in Berlin streng trennen.",
+    "targetWord": "trennen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "aufsetzen",
+  "sentence": "Nadia will ein förmliches Schreiben _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aufsetzen",
+   "options": [
+    "aufsetzen",
+    "zerreißen",
+    "vorlesen",
+    "verschieben"
+   ],
+   "translation": "Nadia wants to _____ a formal letter.",
+   "optionTranslations": [
+    "draft, write",
+    "tear up",
+    "read aloud",
+    "postpone"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Nadia will ein förmliches Schreiben aufsetzen.",
+    "targetWord": "aufsetzen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "zurückweisen",
+  "sentence": "Den falschen Vorwurf will sie klar _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zurückweisen",
+   "options": [
+    "zurückweisen",
+    "annehmen",
+    "wiederholen",
+    "bezahlen"
+   ],
+   "translation": "She wants to clearly _____ the false accusation.",
+   "optionTranslations": [
+    "reject",
+    "accept",
+    "repeat",
+    "pay"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Den falschen Vorwurf will sie klar zurückweisen.",
+    "targetWord": "zurückweisen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "aufklären",
+  "sentence": "Am Ende lässt sich der Fall doch _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aufklären",
+   "options": [
+    "aufklären",
+    "vertuschen",
+    "verschieben",
+    "vergessen"
+   ],
+   "translation": "In the end the case can be _____ after all.",
+   "optionTranslations": [
+    "solved, cleared up",
+    "cover up",
+    "postpone",
+    "forget"
+   ],
+   "audioClip": {
+    "storySlug": "mit-freundlichen-gruessen-das-treppenhaus",
+    "storySource": "user",
+    "sentence": "Am Ende lässt sich der Fall doch aufklären.",
+    "targetWord": "aufklären",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "das Aktenzeichen,der Restmüll,das Pfand,der Täter",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "das Aktenzeichen",
+     "answer": "file reference number",
+     "options": [
+      "file reference number",
+      "residual waste",
+      "bottle deposit",
+      "the perpetrator"
+     ]
+    },
+    {
+     "word": "der Restmüll",
+     "answer": "residual waste",
+     "options": [
+      "file reference number",
+      "residual waste",
+      "bottle deposit",
+      "the perpetrator"
+     ]
+    },
+    {
+     "word": "das Pfand",
+     "answer": "bottle deposit",
+     "options": [
+      "file reference number",
+      "residual waste",
+      "bottle deposit",
+      "the perpetrator"
+     ]
+    },
+    {
+     "word": "der Täter",
+     "answer": "the perpetrator",
+     "options": [
+      "file reference number",
+      "residual waste",
+      "bottle deposit",
+      "the perpetrator"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

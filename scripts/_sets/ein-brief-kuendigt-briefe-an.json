@@ -1,0 +1,442 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "die Gefahrenstufe",
+  "sentence": "Timo sortiert die Post nach [[Gefahrenstufe]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "danger level",
+   "options": [
+    "danger level",
+    "alphabet",
+    "postcode",
+    "weight"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Timo sortiert die Post nach Gefahrenstufe.",
+    "targetWord": "Gefahrenstufe",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Haushalt",
+  "sentence": "Den Beitrag zahlt jeder [[Haushalt]] in Deutschland.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "household",
+   "options": [
+    "household",
+    "letter",
+    "office",
+    "citizen"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Den Beitrag zahlt jeder Haushalt in Deutschland.",
+    "targetWord": "Haushalt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Schreiben",
+  "sentence": "Ein feierliches [[Schreiben]] kündigt weitere Briefe an.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "official letter",
+   "options": [
+    "official letter",
+    "empty box",
+    "phone call",
+    "quiet room"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Ein feierliches Schreiben kündigt weitere Briefe an.",
+    "targetWord": "Schreiben",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Absender",
+  "sentence": "Als [[Absender]] steht die Ausländerbehörde auf dem Brief.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sender",
+   "options": [
+    "sender",
+    "stamp",
+    "address",
+    "weight"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Als Absender steht die Ausländerbehörde auf dem Brief.",
+    "targetWord": "Absender",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zugehen",
+  "sentence": "Der Bescheid wird ihr bald amtlich [[zugehen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be delivered",
+   "options": [
+    "to be delivered",
+    "to be lost",
+    "to be paid",
+    "to be signed"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Der Bescheid wird ihr bald amtlich zugehen.",
+    "targetWord": "zugehen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "harmlos",
+  "sentence": "Manche Umschläge sehen völlig [[harmlos]] aus.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "harmless",
+   "options": [
+    "harmless",
+    "official",
+    "urgent",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Manche Umschläge sehen völlig harmlos aus.",
+    "targetWord": "harmlos",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "einzig",
+  "sentence": "Die Ausländerbehörde ist die [[einzige]] wirklich ernste Behörde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "only, single",
+   "options": [
+    "only, single",
+    "biggest",
+    "nearest",
+    "cheapest"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Die Ausländerbehörde ist die einzige wirklich ernste Behörde.",
+    "targetWord": "einzige",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kommend",
+  "sentence": "Der Brief kündigt die [[kommenden]] Briefe feierlich an.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "coming, upcoming",
+   "options": [
+    "coming, upcoming",
+    "missing",
+    "harmless",
+    "private"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Der Brief kündigt die kommenden Briefe feierlich an.",
+    "targetWord": "kommenden",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "separat",
+  "sentence": "Jede Rechnung kommt in einem [[separaten]] Umschlag.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "separate",
+   "options": [
+    "separate",
+    "official",
+    "harmless",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Jede Rechnung kommt in einem separaten Umschlag.",
+    "targetWord": "separaten",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "anderthalb",
+  "sentence": "Der Briefkasten klemmt nach [[anderthalb]] Wochen Post.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "one and a half",
+   "options": [
+    "one and a half",
+    "exactly seven",
+    "almost ten",
+    "over twenty"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Der Briefkasten klemmt nach anderthalb Wochen Post.",
+    "targetWord": "anderthalb",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hiermit",
+  "sentence": "[[Hiermit]] kündigen wir Ihnen weitere Briefe an.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hereby",
+   "options": [
+    "hereby",
+    "luckily",
+    "by chance",
+    "at last"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Hiermit kündigen wir Ihnen weitere Briefe an.",
+    "targetWord": "Hiermit",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Keine Ahnung",
+  "sentence": "Was die Behörde will? [[Keine Ahnung]], sagt Timo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "no idea",
+   "options": [
+    "no idea",
+    "of course",
+    "good luck",
+    "not yet"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Was die Behörde will? Keine Ahnung, sagt Timo.",
+    "targetWord": "Keine Ahnung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "auf einmal",
+  "sentence": "Drei Wochen Deutschland-Post kommen [[auf einmal]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all at once",
+   "options": [
+    "all at once",
+    "one by one",
+    "far too late",
+    "free of charge"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Drei Wochen Deutschland-Post kommen auf einmal.",
+    "targetWord": "auf einmal",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fernsehen",
+  "sentence": "Den Beitrag zahlt man, ob man [[fernsieht]] oder nicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to watch TV",
+   "options": [
+    "to watch TV",
+    "to move house",
+    "to work late",
+    "to make calls"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Den Beitrag zahlt man, ob man fernsieht oder nicht.",
+    "targetWord": "fernsieht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "ankündigt",
+  "sentence": "Ein Brief, der weitere Briefe feierlich _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ankündigt",
+   "options": [
+    "ankündigt",
+    "verbietet",
+    "beantwortet",
+    "versteckt"
+   ],
+   "translation": "A letter that solemnly _____ further letters.",
+   "optionTranslations": [
+    "announces",
+    "forbids",
+    "answers",
+    "hides"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Ein Brief, der weitere Briefe feierlich ankündigt.",
+    "targetWord": "ankündigt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sortiert",
+  "sentence": "Timo _____ den Briefkasten nach Gefahr.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sortiert",
+   "options": [
+    "sortiert",
+    "leert",
+    "vergisst",
+    "öffnet"
+   ],
+   "translation": "Timo _____ the mailbox by danger.",
+   "optionTranslations": [
+    "sorts",
+    "empties",
+    "forgets",
+    "opens"
+   ],
+   "audioClip": {
+    "storySlug": "ein-brief-kuendigt-briefe-an",
+    "storySource": "user",
+    "sentence": "Timo sortiert den Briefkasten nach Gefahr.",
+    "targetWord": "sortiert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "der Briefkasten,die Mahnung,der Rundfunkbeitrag,die Behörde",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Briefkasten",
+     "answer": "mailbox",
+     "options": [
+      "mailbox",
+      "payment reminder",
+      "broadcasting fee",
+      "public authority"
+     ]
+    },
+    {
+     "word": "die Mahnung",
+     "answer": "payment reminder",
+     "options": [
+      "mailbox",
+      "payment reminder",
+      "broadcasting fee",
+      "public authority"
+     ]
+    },
+    {
+     "word": "der Rundfunkbeitrag",
+     "answer": "broadcasting fee",
+     "options": [
+      "mailbox",
+      "payment reminder",
+      "broadcasting fee",
+      "public authority"
+     ]
+    },
+    {
+     "word": "die Behörde",
+     "answer": "public authority",
+     "options": [
+      "mailbox",
+      "payment reminder",
+      "broadcasting fee",
+      "public authority"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,480 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "die Tätigkeit",
+  "sentence": "Das Formular fragt nach Nadias genauer [[Tätigkeit]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "occupation, activity",
+   "options": [
+    "occupation, activity",
+    "home address",
+    "phone number",
+    "date of birth"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Das Formular fragt nach Nadias genauer Tätigkeit.",
+    "targetWord": "Tätigkeit",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Erfahrung",
+  "sentence": "Solche Termine bringen vor allem eines: [[Erfahrung]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "experience",
+   "options": [
+    "experience",
+    "money",
+    "fear",
+    "luck"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Solche Termine bringen vor allem eines: Erfahrung.",
+    "targetWord": "Erfahrung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Geduld",
+  "sentence": "Die inoffizielle Eintrittskarte jedes Amtes heißt [[Geduld]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "patience",
+   "options": [
+    "patience",
+    "a permit",
+    "a stamp",
+    "a number"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Die inoffizielle Eintrittskarte jedes Amtes heißt Geduld.",
+    "targetWord": "Geduld",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Trumpf",
+  "sentence": "Ihre komplette Mappe ist heute Nadias [[Trumpf]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "trump card",
+   "options": [
+    "trump card",
+    "weak point",
+    "big problem",
+    "last chance"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Ihre komplette Mappe ist heute Nadias Trumpf.",
+    "targetWord": "Trumpf",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Niederlage",
+  "sentence": "Jede kleine [[Niederlage]] gehört zum langen Weg.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "defeat",
+   "options": [
+    "defeat",
+    "victory",
+    "holiday",
+    "reward"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Jede kleine Niederlage gehört zum langen Weg.",
+    "targetWord": "Niederlage",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vollständig",
+  "sentence": "Nadias Unterlagen sind heute endlich [[vollständig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "complete",
+   "options": [
+    "complete",
+    "missing",
+    "colorful",
+    "official"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Nadias Unterlagen sind heute endlich vollständig.",
+    "targetWord": "vollständig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rein",
+  "sentence": "Die Beamtin nennt es [[reine]] Routine.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pure, mere",
+   "options": [
+    "pure, mere",
+    "strict",
+    "new",
+    "difficult"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Die Beamtin nennt es reine Routine.",
+    "targetWord": "reine",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "farbig",
+  "sentence": "Alle Dokumente sind ordentlich [[farbig]] markiert.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "colored",
+   "options": [
+    "colored",
+    "folded",
+    "stamped",
+    "copied"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Alle Dokumente sind ordentlich farbig markiert.",
+    "targetWord": "farbig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vorbereitet",
+  "sentence": "Nadia kommt bestens [[vorbereitet]] zum Termin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "prepared",
+   "options": [
+    "prepared",
+    "late",
+    "nervous",
+    "alone"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Nadia kommt bestens vorbereitet zum Termin.",
+    "targetWord": "vorbereitet",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lehrreich",
+  "sentence": "Der Weg war schmerzhaft, aber sehr [[lehrreich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "instructive",
+   "options": [
+    "instructive",
+    "boring",
+    "cheap",
+    "short"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Der Weg war schmerzhaft, aber sehr lehrreich.",
+    "targetWord": "lehrreich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Platz nehmen",
+  "sentence": "Die Beamtin bittet Nadia höflich, [[Platz zu nehmen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take a seat",
+   "options": [
+    "to take a seat",
+    "to come back",
+    "to sign here",
+    "to wait outside"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Die Beamtin bittet Nadia höflich, Platz zu nehmen.",
+    "targetWord": "Platz zu nehmen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "in der Luft hängen",
+  "sentence": "Die neue Prüfung lässt alles [[in der Luft hängen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hang unresolved",
+   "options": [
+    "to hang unresolved",
+    "to fall through",
+    "to speed up",
+    "to work out"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Die neue Prüfung lässt alles in der Luft hängen.",
+    "targetWord": "in der Luft hängen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hängen an",
+  "sentence": "Ihr ganzes Leben [[hängt an]] diesem einen Stempel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to depend on",
+   "options": [
+    "to depend on",
+    "to laugh at",
+    "to run from",
+    "to pay for"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Ihr ganzes Leben hängt an diesem einen Stempel.",
+    "targetWord": "hängt an",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "klebt",
+  "sentence": "Zwanzig Minuten später _____ der neue Titel im Pass.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "klebt",
+   "options": [
+    "klebt",
+    "fehlt",
+    "reißt",
+    "verblasst"
+   ],
+   "translation": "Twenty minutes later the new permit _____ in the passport.",
+   "optionTranslations": [
+    "sticks",
+    "is missing",
+    "tears",
+    "fades"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Zwanzig Minuten später klebt der neue Titel im Pass.",
+    "targetWord": "klebt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "besiegen",
+  "sentence": "Diesen Endgegner will Nadia mit Ordnung _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "besiegen",
+   "options": [
+    "besiegen",
+    "fürchten",
+    "füttern",
+    "verlieren"
+   ],
+   "translation": "Nadia wants to _____ this final boss with order.",
+   "optionTranslations": [
+    "defeat",
+    "fear",
+    "feed",
+    "lose"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Diesen Endgegner will Nadia mit Ordnung besiegen.",
+    "targetWord": "besiegen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "verteidigen",
+  "sentence": "Ihre Papiere kann Nadia mühelos _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "verteidigen",
+   "options": [
+    "verteidigen",
+    "verstecken",
+    "verlieren",
+    "vergessen"
+   ],
+   "translation": "Nadia can effortlessly _____ her papers.",
+   "optionTranslations": [
+    "defend",
+    "hide",
+    "lose",
+    "forget"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Ihre Papiere kann Nadia mühelos verteidigen.",
+    "targetWord": "verteidigen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "bestätigt",
+  "sentence": "Die Beamtin _____ den Titel mit einem Stempel.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bestätigt",
+   "options": [
+    "bestätigt",
+    "verweigert",
+    "bezweifelt",
+    "zerstört"
+   ],
+   "translation": "The official _____ the permit with a stamp.",
+   "optionTranslations": [
+    "confirms",
+    "refuses",
+    "doubts",
+    "destroys"
+   ],
+   "audioClip": {
+    "storySlug": "endgegner-auslaenderbehoerde",
+    "storySource": "user",
+    "sentence": "Die Beamtin bestätigt den Titel mit einem Stempel.",
+    "targetWord": "bestätigt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "der Aufenthaltstitel,der Flur,die Verlängerung,der Endgegner",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Aufenthaltstitel",
+     "answer": "residence permit",
+     "options": [
+      "residence permit",
+      "corridor, hallway",
+      "extension",
+      "final boss"
+     ]
+    },
+    {
+     "word": "der Flur",
+     "answer": "corridor, hallway",
+     "options": [
+      "residence permit",
+      "corridor, hallway",
+      "extension",
+      "final boss"
+     ]
+    },
+    {
+     "word": "die Verlängerung",
+     "answer": "extension",
+     "options": [
+      "residence permit",
+      "corridor, hallway",
+      "extension",
+      "final boss"
+     ]
+    },
+    {
+     "word": "der Endgegner",
+     "answer": "final boss",
+     "options": [
+      "residence permit",
+      "corridor, hallway",
+      "extension",
+      "final boss"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]
