@@ -25,6 +25,16 @@ This is a hard constraint for this project.
 - API: Mobile calls reader.digitalpolyglot.com (production)
 - Deployments: Batch commits to avoid multiple Vercel builds
 
+## Grill before building (expensive/ambiguous features only)
+
+When the user proposes a NEW feature that is expensive (spends image/audio
+credits, Modal/ElevenLabs calls) or genuinely ambiguous (multi-file, open
+product decisions), OFFER the `/grill` skill before building: a short
+socratic round (max 3 ultra-short questions) that surfaces unstated
+decisions so the first attempt lands aligned. Do NOT grill trivial changes
+(copy tweaks, one-liners, clear asks). The user can always trigger it
+manually with `/grill`.
+
 ## Reporting status — no absolute claims
 
 **Never** declare a multi-item or multi-check task "done", "fully corrected",

@@ -293,11 +293,11 @@ export const PRODUCT_TOUR_MESSAGES = [
     body: "Home is your journey: a step-by-step path of short stories. Start at the top and work down. Each one teaches the real, everyday language in context.",
   },
   {
-    id: "explore",
-    target: "explore",
-    targetLabel: "Explore",
-    title: "Explore",
-    body: "Browse extra stories and topics any time you want to go beyond your path.",
+    id: "progress",
+    target: "progress",
+    targetLabel: "Progress",
+    title: "Progress",
+    body: "See how far you've come: your streak, the words you've learned and your progress across every journey.",
   },
   {
     id: "practice",
