@@ -381,13 +381,13 @@ export default function Player({
     };
     const handlerSeekBack = () => {
       if (!audioRef.current) return;
-      audioRef.current.currentTime = Math.max(0, audioRef.current.currentTime - 15);
+      audioRef.current.currentTime = Math.max(0, audioRef.current.currentTime - 10);
     };
     const handlerSeekForward = () => {
       if (!audioRef.current) return;
       audioRef.current.currentTime = Math.min(
         audioRef.current.duration || Infinity,
-        audioRef.current.currentTime + 15
+        audioRef.current.currentTime + 10
       );
     };
     const handlerPrev = prevStorySlug
@@ -501,8 +501,16 @@ export default function Player({
       void syncContinueListening(storySlug, bookSlug, currentProgress, currentDuration);
     };
     const handleVisibilityChange = () => {
-      if (document.visibilityState !== "hidden") return;
-      persistNow("beacon");
+      if (document.visibilityState === "hidden") {
+        persistNow("beacon");
+        return;
+      }
+      // El Wake Lock se suelta solo al ocultar la pestaña y no se
+      // re-adquiere solo. Si al volver el audio sigue sonando, lo pedimos
+      // de nuevo para que la pantalla no se apague.
+      if (audio && !audio.paused) {
+        void requestWakeLock();
+      }
     };
 
     const handlePageHide = () => persistNow("beacon");
@@ -714,13 +722,13 @@ export default function Player({
         )}
 
         <button
-          onClick={() => skip(-15)}
+          onClick={() => skip(-10)}
           className="relative p-1.5 rounded-full text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-          aria-label="Rewind 15 seconds"
+          aria-label="Rewind 10 seconds"
         >
           <RotateCcw className="w-7 h-7" strokeWidth={1.75} />
           <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold mt-[1px]">
-            15
+            10
           </span>
         </button>
 
@@ -737,13 +745,13 @@ export default function Player({
         </button>
 
         <button
-          onClick={() => skip(15)}
+          onClick={() => skip(10)}
           className="relative p-1.5 rounded-full text-[var(--foreground)] hover:bg-[var(--card-bg-hover)]"
-          aria-label="Forward 15 seconds"
+          aria-label="Forward 10 seconds"
         >
           <RotateCw className="w-7 h-7" strokeWidth={1.75} />
           <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold mt-[1px]">
-            15
+            10
           </span>
         </button>
 

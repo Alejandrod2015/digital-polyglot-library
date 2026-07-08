@@ -754,6 +754,52 @@ export default function PracticePage() {
     user,
   ]);
 
+  // Seed the "saved" state from the user's actual vocabulary so words the user
+  // bookmarked WHILE reading the story already render as saved in the
+  // end-of-exercises words panel. Without this, `savedWords` only ever holds
+  // words tapped inside this practice session (it starts empty), so
+  // reading-saved words wrongly showed as un-saved. Runs independently of the
+  // practice-source load because journey/story modes fetch their items from a
+  // different endpoint than /api/favorites.
+  useEffect(() => {
+    if (!isLoaded || !user) return;
+    let cancelled = false;
+
+    const seedFromWords = (words: Iterable<string>) => {
+      if (cancelled) return;
+      setSavedWords((prev) => {
+        const next = new Set(prev);
+        for (const w of words) {
+          const key = (w || "").toLowerCase();
+          if (key) next.add(key);
+        }
+        return next;
+      });
+    };
+
+    const seed = async () => {
+      try {
+        const res = await fetch("/api/favorites", { cache: "no-store" });
+        if (!res.ok) throw new Error(`Error ${res.status}`);
+        const data = (await res.json()) as PracticeFavoriteItem[];
+        if (Array.isArray(data)) {
+          seedFromWords(data.map((item) => item.word));
+          return;
+        }
+      } catch {
+        // Fall back to the reading-saved localStorage cache (written by the
+        // reader's VocabPanel), which covers the same-session save flow.
+      }
+      seedFromWords(readLocalPracticeFavorites(user.id).map((item) => item.word));
+    };
+
+    void seed();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [isLoaded, user]);
+
   useEffect(() => {
     const userStorySlugs = Array.from(
       new Set(
@@ -2539,6 +2585,17 @@ export default function PracticePage() {
                   // "back to the story you just read". Prefer the server-resolved
                   // next story (knows topic boundaries); fall back to a URL param.
                   if (nextStoryResolved) {
+                    // Carry the journey the current story came from as `returnTo`
+                    // so pressing Back inside the NEXT story lands on that journey
+                    // (the user already practiced these exercises). Without it the
+                    // reader falls through to router.back() → back to /practice.
+                    const nextReturnTo =
+                      explicitReturnTo && explicitReturnTo.startsWith("/") && !explicitReturnTo.startsWith("//")
+                        ? explicitReturnTo
+                        : journeyReturnHref;
+                    const nextStoryHrefResolved = nextReturnTo
+                      ? `/stories/${nextStoryResolved.slug}?returnTo=${encodeURIComponent(nextReturnTo)}&returnLabel=${encodeURIComponent(explicitReturnLabel?.trim() || "Journey")}`
+                      : `/stories/${nextStoryResolved.slug}`;
                     actions.push({
                       key: "next-story",
                       title: nextStoryResolved.kind === "topic" ? "Next topic" : "Next story",
@@ -2546,7 +2603,7 @@ export default function PracticePage() {
                       icon: ArrowRight,
                       accent: "next",
                       primary: actions.length === 0,
-                      href: `/stories/${nextStoryResolved.slug}`,
+                      href: nextStoryHrefResolved,
                     });
                   } else if (storyNextHref) {
                     actions.push({
