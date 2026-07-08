@@ -11,7 +11,7 @@ export default async function StudioUserJourneyPage() {
   return (
     <StudioShell
       title="User Journey"
-      description="El recorrido de un usuario nuevo en la app iOS, de la bienvenida al hábito diario, en 17 pantallas reales (incluido el journey guiado con progreso)."
+      description="El recorrido de un usuario nuevo en la app iOS, de la bienvenida al hábito diario, en 18 pantallas reales (incluido el journey guiado con progreso)."
       breadcrumbs={[{ label: "Studio", href: "/studio" }, { label: "User Journey" }]}
     >
       <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
@@ -33,7 +33,7 @@ export default async function StudioUserJourneyPage() {
             para verla en grande con su explicación (← → para navegar).
           </p>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            {["17 pantallas", "iOS · producción", "Journey LATAM"].map((chip) => (
+            {["18 pantallas", "iOS · producción", "Journey LATAM"].map((chip) => (
               <span
                 key={chip}
                 style={{

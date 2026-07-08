@@ -35,10 +35,12 @@ const ACTS: Act[] = [
   {
     kicker: "Acto II",
     title: "El journey",
-    intent: "El camino guiado, en secuencia y con progreso. Distinto de explorar.",
+    intent: "El camino guiado: seguirlo, abrir una historia y guardar palabras al vuelo.",
     phases: [
       { n: "05", img: "j05", label: "Tu journey", title: "El camino guiado, por niveles", core: true, body: "El corazón del producto: historias encadenadas por nivel (Food & Drink, Home & Family...) con racha, XP y tu avance. Se sigue de arriba hacia abajo, en secuencia." },
-      { n: "06", img: "j06", label: "Tus journeys", title: "Uno o varios idiomas", body: "El journey activo (Spanish · Travelers · Elementary) con su progreso; se cambia de journey o se añade otro idioma sin perder avance." },
+      { n: "06", img: "j06", label: "Abrir historia", title: "Del camino a la historia", body: "Tocar un nodo del journey abre la historia (aquí 'La promesa del mole'): texto auténtico, audio y vocabulario resaltado, listo para tocar." },
+      { n: "07", img: "j07", label: "Guardar palabra", title: "Toca una palabra, guárdala", body: "Cualquier palabra resaltada abre su significado en contexto ('colgar: to hang up') con un botón Save word. Así se llena tu vocabulario." },
+      { n: "08", img: "j08", label: "Tus journeys", title: "Uno o varios idiomas", body: "El journey activo (Spanish · Travelers · Elementary) con su progreso; se cambia de journey o se añade otro idioma sin perder avance." },
     ],
   },
   {
@@ -46,9 +48,8 @@ const ACTS: Act[] = [
     title: "Explorar la biblioteca",
     intent: "Un modo aparte del journey: navegar el catálogo libremente, por interés.",
     phases: [
-      { n: "07", img: "j07", label: "Explorar", title: "Una biblioteca viva", body: "Fuera del camino guiado: 80 historias filtrables por tema y nivel, con portadas propias. Se elige por interés, en cualquier orden." },
-      { n: "08", img: "j08", label: "Colección", title: "Contexto antes de entrar", body: "Cada colección (p. ej. Colombian Spanish Stories) muestra nivel, duración media y valoración antes de abrir una historia." },
-      { n: "09", img: "j09", label: "Historia + audio", title: "Donde se aprende el idioma", body: "Cualquier historia, del journey o del catálogo, abre igual: texto auténtico, audio sincronizado y vocabulario en contexto (copal, cempasúchil, altar)." },
+      { n: "09", img: "j09", label: "Explorar", title: "Una biblioteca viva", body: "Fuera del camino guiado: 80 historias filtrables por tema y nivel, con portadas propias. Se elige por interés, en cualquier orden." },
+      { n: "10", img: "j10", label: "Colección", title: "Contexto antes de entrar", body: "Cada colección (p. ej. Colombian Spanish Stories) muestra nivel, duración media y valoración antes de abrir una historia. Abre en el mismo lector del journey." },
     ],
   },
   {
@@ -56,11 +57,11 @@ const ACTS: Act[] = [
     title: "Practicar y retener",
     intent: "Convertir una sesión en un hábito.",
     phases: [
-      { n: "10", img: "j10", label: "Vocabulario", title: "Palabras que se quedan", body: "Cada término guardado trae significado, contexto y una barra de dominio que sube con la práctica." },
-      { n: "11", img: "j11", label: "Práctica", title: "Refuerzo activo con tu vocab", body: "Desde tus palabras guardadas: rondas de significado, contexto, escucha y match. 'All caught up' cuando estás al día." },
-      { n: "12", img: "j12", label: "Progreso", title: "Racha, XP y metas", body: "Panel semanal: racha, XP por nivel, precisión, palabras aprendidas y objetivos de historias, minutos y práctica." },
-      { n: "13", img: "j13", label: "Continuar", title: "Retomar sin buscar", body: "Todo lo que empezó queda sincronizado y listo para continuar, con un vistazo del progreso." },
-      { n: "14", img: "j14", label: "Recordatorio", title: "Un empujón diario, opcional", body: "El usuario elige la hora de un único aviso al día. Es el gancho de retención, sin ser intrusivo." },
+      { n: "11", img: "j11", label: "Vocabulario", title: "Palabras que se quedan", body: "Cada término guardado trae significado, contexto y una barra de dominio que sube con la práctica." },
+      { n: "12", img: "j12", label: "Práctica", title: "Refuerzo activo con tu vocab", body: "Desde tus palabras guardadas: rondas de significado, contexto, escucha y match. 'All caught up' cuando estás al día." },
+      { n: "13", img: "j13", label: "Progreso", title: "Racha, XP y metas", body: "Panel semanal: racha, XP por nivel, precisión, palabras aprendidas y objetivos de historias, minutos y práctica." },
+      { n: "14", img: "j14", label: "Continuar", title: "Retomar sin buscar", body: "Todo lo que empezó queda sincronizado y listo para continuar, con un vistazo del progreso." },
+      { n: "15", img: "j15", label: "Recordatorio", title: "Un empujón diario, opcional", body: "El usuario elige la hora de un único aviso al día. Es el gancho de retención, sin ser intrusivo." },
     ],
   },
   {
@@ -68,9 +69,9 @@ const ACTS: Act[] = [
     title: "Cuenta y acceso",
     intent: "Navegar, ajustar y mejorar.",
     phases: [
-      { n: "15", img: "j15", label: "Menú", title: "Todo a un toque", body: "Acceso a Progreso, Ajustes, Library, Saved, Story of the Day, Upgrade y Sign out." },
-      { n: "16", img: "j16", label: "Ajustes", title: "Cuenta y preferencias", body: "Cuenta, plan, personalización y privacidad; incluye el recordatorio diario, soporte y el acceso a los planes." },
-      { n: "17", img: "j17", label: "Premium", title: "Desbloquear todo", body: "Go Premium: todas las historias, acceso offline, práctica completa y las palabras guardadas. Compra vía App Store." },
+      { n: "16", img: "j16", label: "Menú", title: "Todo a un toque", body: "Acceso a Progreso, Ajustes, Library, Saved, Story of the Day, Upgrade y Sign out." },
+      { n: "17", img: "j17", label: "Ajustes", title: "Cuenta y preferencias", body: "Cuenta, plan, personalización y privacidad; incluye el recordatorio diario, soporte y el acceso a los planes." },
+      { n: "18", img: "j18", label: "Premium", title: "Desbloquear todo", body: "Go Premium: todas las historias, acceso offline, práctica completa y las palabras guardadas. Compra vía App Store." },
     ],
   },
 ];
