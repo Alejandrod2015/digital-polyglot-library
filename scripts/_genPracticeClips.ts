@@ -249,8 +249,33 @@ function transcriptOk(sentence: string, tx: string): boolean {
   const heardList = strip(tx).split(" ");
   const want = new Set(wantList);
   const heard = new Set(heardList);
-  const miss = wantList.filter((w) => !heard.has(w));
-  const extra = heardList.filter((w) => w.length >= 4 && !want.has(w));
+  // Tolerancias DE (2026-07-08), simétricas:
+  // 1) compuestos separados por el STT ("dabeihaben" -> "dabei haben"):
+  //    ni miss (la palabra está en el transcript sin espacios) ni extra
+  //    (los fragmentos están en la oración sin espacios).
+  // 2) nombres/grafías a distancia de edición 1 ("Nadia" -> "Nadja").
+  const heardJoined = heardList.join("");
+  const wantJoined = wantList.join("");
+  const ed1 = (a: string, b: string) => {
+    if (Math.abs(a.length - b.length) > 1) return false;
+    if (a === b) return true;
+    for (let i = 0; i < Math.min(a.length, b.length); i++) {
+      if (a[i] !== b[i]) {
+        return (
+          a.slice(i + 1) === b.slice(i + 1) || // sustitución
+          a.slice(i + 1) === b.slice(i) ||     // borrado en a
+          a.slice(i) === b.slice(i + 1)        // borrado en b
+        );
+      }
+    }
+    return true; // difieren solo en el último char extra
+  };
+  const miss = wantList.filter(
+    (w) => !heard.has(w) && !heardJoined.includes(w) && !heardList.some((h) => w.length >= 4 && ed1(w, h))
+  );
+  const extra = heardList.filter(
+    (w) => w.length >= 4 && !want.has(w) && !wantJoined.includes(w) && !wantList.some((t) => t.length >= 4 && ed1(w, t))
+  );
   const missAllowed = wantList.length > 8 ? 1 : 0;
   return miss.length <= missAllowed && extra.length === 0;
 }

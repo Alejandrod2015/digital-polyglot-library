@@ -86,7 +86,8 @@
         "storySource": "user",
         "sentence": "Ein Mensch, der so etwas schon öfter durchgestanden hat.",
         "targetWord": "durchgestanden",
-        "language": "german"
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b601fdbe435d78f.mp3"
       }
     }
   },
@@ -108,7 +109,8 @@
         "storySource": "user",
         "sentence": "Punkt sieben spuckt das Portal die stornierten Termine aus.",
         "targetWord": "spuckt",
-        "language": "german"
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/179946adc634bd3b.mp3"
       }
     }
   },
@@ -153,7 +155,8 @@
         "storySource": "user",
         "sentence": "Nadia versteht allmählich, warum hier alle eine Thermoskanne dabeihaben.",
         "targetWord": "allmählich",
-        "language": "german"
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/967582e96124e7df.mp3"
       }
     }
   },
@@ -287,7 +290,8 @@
         "storySource": "user",
         "sentence": "Ich pflege sozusagen eine Tradition.",
         "targetWord": "sozusagen",
-        "language": "german"
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d83647d8a3a4c39.mp3"
       }
     }
   },
@@ -310,7 +314,8 @@
         "storySource": "user",
         "sentence": "Hier kriegst du eher Karten für ein ausverkauftes Konzert.",
         "targetWord": "ausverkauftes",
-        "language": "german"
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ccda37d64985f9a0.mp3"
       }
     }
   },
@@ -357,14 +362,15 @@
         "storySource": "user",
         "sentence": "Die schriftliche Bestätigung deines Vermieters.",
         "targetWord": "schriftliche",
-        "language": "german"
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f47df82567d64df.mp3"
       }
     }
   },
   {
     "type": "meaning_in_context",
     "word": "balancieren",
-    "sentence": "Um 6:58 [[balanciert]] Nadia ihren Kaffee auf dem Unterarm.",
+    "sentence": "Kurz vor sieben [[balanciert]] Nadia ihren Kaffee auf dem Unterarm.",
     "featured": false,
     "payload": {
       "prompt": "Choose the meaning in context.",
@@ -378,9 +384,10 @@
       "audioClip": {
         "storySlug": "buergeramt-neukoelln-sieben-uhr",
         "storySource": "user",
-        "sentence": "Um 6:58 balanciert Nadia ihren Kaffee auf dem Unterarm.",
+        "sentence": "Kurz vor sieben balanciert Nadia ihren Kaffee auf dem Unterarm.",
         "targetWord": "balanciert",
-        "language": "german"
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/018a276f4059e3e0.mp3"
       }
     }
   },
@@ -403,7 +410,8 @@
         "storySource": "user",
         "sentence": "Ich pflege sozusagen eine Tradition.",
         "targetWord": "pflege",
-        "language": "german"
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d83647d8a3a4c39.mp3"
       }
     }
   },
@@ -426,7 +434,8 @@
         "storySource": "user",
         "sentence": "Hier kriegst du eher Karten für ein Konzert als einen Termin.",
         "targetWord": "eher",
-        "language": "german"
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4fcdc01f027bd0b5.mp3"
       }
     }
   },
@@ -456,7 +465,8 @@
         "storySource": "user",
         "sentence": "Es regnet oft hier; ich will meinen Schirm immer dabeihaben.",
         "targetWord": "dabeihaben",
-        "language": "german"
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a49c02c99a9f5256.mp3"
       }
     }
   },
@@ -486,7 +496,8 @@
         "storySource": "user",
         "sentence": "Die alte Lampe flackert, wenn der Wind stark ist.",
         "targetWord": "flackert",
-        "language": "german"
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/52e110fceb2bf4d9.mp3"
       }
     }
   },
@@ -547,7 +558,8 @@
         "storySource": "user",
         "sentence": "Der Film läuft seit einer Stunde; er hat längst angefangen.",
         "targetWord": "längst",
-        "language": "german"
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2be5cbcc2c2c33ca.mp3"
       }
     }
   },
