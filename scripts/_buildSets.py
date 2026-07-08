@@ -82,7 +82,7 @@ def build_story(spec, vocab_entries):
 
 if __name__=="__main__":
     specmod = sys.argv[1]  # python file exposing SPECS list
-    vocabf = "/tmp/expat67/vocab2345.json"
+    vocabf = sys.argv[2] if len(sys.argv) > 2 else "/tmp/expat67/vocab2345.json"
     vocab = json.load(open(vocabf,encoding="utf-8"))
     ns={}; exec(open(specmod,encoding="utf-8").read(), ns)
     SPECS = ns["SPECS"]

@@ -1,0 +1,480 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "der Notdienst",
+  "sentence": "Nur eine Apotheke hat heute [[Notdienst]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "out-of-hours service",
+   "options": [
+    "out-of-hours service",
+    "free parking",
+    "fresh bread",
+    "late opening"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Nur eine Apotheke hat heute Notdienst.",
+    "targetWord": "Notdienst",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rezeptfrei",
+  "sentence": "Die Apothekerin gibt ihr etwas [[Rezeptfreies]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "over the counter",
+   "options": [
+    "over the counter",
+    "prescription only",
+    "very expensive",
+    "strictly forbidden"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Die Apothekerin gibt ihr etwas Rezeptfreies.",
+    "targetWord": "Rezeptfreies",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Salbe",
+  "sentence": "Zum Einreiben empfiehlt sie eine [[Salbe]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ointment",
+   "options": [
+    "ointment",
+    "hot tea",
+    "cold pack",
+    "strong pill"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Zum Einreiben empfiehlt sie eine Salbe.",
+    "targetWord": "Salbe",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sich beschweren",
+  "sentence": "Meistens ist es nur der Rücken, der [[sich beschwert]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "complains",
+   "options": [
+    "complains",
+    "recovers",
+    "relaxes",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Meistens ist es nur der Rücken, der sich beschwert.",
+    "targetWord": "sich beschwert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Hausmittel",
+  "sentence": "Katja hat für alles ihr eigenes [[Hausmittel]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "home remedy",
+   "options": [
+    "home remedy",
+    "doctor's note",
+    "expensive pill",
+    "health card"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Katja hat für alles ihr eigenes Hausmittel.",
+    "targetWord": "Hausmittel",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Wärmflasche",
+  "sentence": "Katja schwört auf Franzbranntwein und eine [[Wärmflasche]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hot water bottle",
+   "options": [
+    "hot water bottle",
+    "cold compress",
+    "heavy blanket",
+    "strong pill"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Katja schwört auf Franzbranntwein und eine Wärmflasche.",
+    "targetWord": "Wärmflasche",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Quarkwickel",
+  "sentence": "Bei starkem Ziehen empfiehlt Katja einen [[Quarkwickel]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quark compress",
+   "options": [
+    "quark compress",
+    "warm bath",
+    "long walk",
+    "cold shower"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Bei starkem Ziehen empfiehlt Katja einen Quarkwickel.",
+    "targetWord": "Quarkwickel",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schwören auf",
+  "sentence": "Beide Frauen [[schwören auf]] dieselbe Wärme.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "swear by",
+   "options": [
+    "swear by",
+    "laugh at",
+    "warn against",
+    "give up"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Beide Frauen schwören auf dieselbe Wärme.",
+    "targetWord": "schwören auf",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wenn es richtig zieht",
+  "sentence": "Nimm den Wickel, [[wenn es richtig zieht]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "when it really aches",
+   "options": [
+    "when it really aches",
+    "when it feels fine",
+    "when it looks bad",
+    "when it stays warm"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Nimm den Wickel, wenn es richtig zieht.",
+    "targetWord": "wenn es richtig zieht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Der Rest ist Verpackung",
+  "sentence": "Wärme hilft; [[der Rest ist Verpackung]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the rest is just packaging",
+   "options": [
+    "the rest is just packaging",
+    "the rest is very important",
+    "the rest costs money",
+    "the rest is a secret"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Wärme hilft; der Rest ist Verpackung.",
+    "targetWord": "der Rest ist Verpackung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "raten",
+  "sentence": "Zwei Welten [[raten]] Nadia am Ende dasselbe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "advise",
+   "options": [
+    "advise",
+    "forbid",
+    "doubt",
+    "forget"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Zwei Welten raten Nadia am Ende dasselbe.",
+    "targetWord": "raten",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sich einig sein",
+  "sentence": "Apotheke und Späti [[sind sich einig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "agree",
+   "options": [
+    "agree",
+    "argue",
+    "stay silent",
+    "give up"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Apotheke und Späti sind sich einig.",
+    "targetWord": "sind sich einig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aufschlagen",
+  "sentence": "Am Späti hat Katja ihre eigene Apotheke [[aufgeschlagen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "set up shop",
+   "options": [
+    "set up shop",
+    "closed down",
+    "paid for",
+    "given away"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Am Späti hat Katja ihre eigene Apotheke aufgeschlagen.",
+    "targetWord": "aufgeschlagen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "einreiben",
+  "sentence": "Die Salbe soll Nadia in die Haut _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "einreiben",
+   "options": [
+    "einreiben",
+    "auspacken",
+    "waschen",
+    "schneiden"
+   ],
+   "translation": "Nadia should _____ the ointment into the skin.",
+   "optionTranslations": [
+    "rub in",
+    "unpack",
+    "wash",
+    "cut"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Die Salbe soll Nadia in die Haut einreiben.",
+    "targetWord": "einreiben",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "lindern",
+  "sentence": "Ein Wärmepflaster kann die Schmerzen _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lindern",
+   "options": [
+    "lindern",
+    "verstärken",
+    "zählen",
+    "ignorieren"
+   ],
+   "translation": "A heat patch can _____ the pain.",
+   "optionTranslations": [
+    "soothe",
+    "intensify",
+    "count",
+    "ignore"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Ein Wärmepflaster kann die Schmerzen lindern.",
+    "targetWord": "lindern",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "abklingen",
+  "sentence": "In drei Tagen sollte alles langsam _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "abklingen",
+   "options": [
+    "abklingen",
+    "zunehmen",
+    "platzen",
+    "brennen"
+   ],
+   "translation": "In three days everything should slowly _____.",
+   "optionTranslations": [
+    "subside",
+    "increase",
+    "burst",
+    "burn"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "In drei Tagen sollte alles langsam abklingen.",
+    "targetWord": "abklingen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "wählen",
+  "sentence": "Punkt acht will Nadia die Nummer _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "wählen",
+   "options": [
+    "wählen",
+    "verstecken",
+    "vergessen",
+    "aufschreiben"
+   ],
+   "translation": "At eight sharp Nadia wants to _____ the number.",
+   "optionTranslations": [
+    "dial",
+    "hide",
+    "forget",
+    "write down"
+   ],
+   "audioClip": {
+    "storySlug": "zwei-meinungen-zu-einem-ruecken",
+    "storySource": "user",
+    "sentence": "Punkt acht will Nadia die Nummer wählen.",
+    "targetWord": "wählen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "die Apotheke,die Nachtklappe,das Wärmepflaster,der Franzbranntwein",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Apotheke",
+     "answer": "pharmacy",
+     "options": [
+      "pharmacy",
+      "night service hatch",
+      "heat patch",
+      "herbal rubbing alcohol"
+     ]
+    },
+    {
+     "word": "die Nachtklappe",
+     "answer": "night service hatch",
+     "options": [
+      "pharmacy",
+      "night service hatch",
+      "heat patch",
+      "herbal rubbing alcohol"
+     ]
+    },
+    {
+     "word": "das Wärmepflaster",
+     "answer": "heat patch",
+     "options": [
+      "pharmacy",
+      "night service hatch",
+      "heat patch",
+      "herbal rubbing alcohol"
+     ]
+    },
+    {
+     "word": "der Franzbranntwein",
+     "answer": "herbal rubbing alcohol",
+     "options": [
+      "pharmacy",
+      "night service hatch",
+      "heat patch",
+      "herbal rubbing alcohol"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]
