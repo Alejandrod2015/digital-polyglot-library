@@ -92,6 +92,10 @@ export type MatchMeaningExercise = {
     word: string;
     answer: string;
     options: string[];
+    // Metadatos de audio de la palabra, para reproducir el término
+    // individual (mobile lo sintetiza vía /api/practice/sentence-tts).
+    language?: string | null;
+    voiceId?: string | null;
   }>;
 };
 
@@ -694,6 +698,8 @@ function createMatchMeaningExercise(items: PracticeFavoriteItem[]): MatchMeaning
     word: item.word,
     answer: item.translation,
     options: meanings,
+    language: item.language ?? null,
+    voiceId: item.voiceId ?? null,
   }));
   return {
     id: `match_meaning:${selected.map((item) => normalizeKey(item.word)).join("|")}`,

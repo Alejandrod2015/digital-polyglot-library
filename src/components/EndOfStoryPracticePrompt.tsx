@@ -69,6 +69,13 @@ export default function EndOfStoryPracticePrompt({
 
       function onEnded() {
         if (firedRef.current) return;
+        // Solo abrir si se reprodujo de verdad ≥85% (Player publica el ratio
+        // de tiempo escuchado en data-listened-ratio). Así arrastrar al final
+        // no abre el panel de practice sin haber escuchado. Si el dato falta
+        // (fallo del puente), no bloqueamos.
+        const ratioStr = audio!.dataset.listenedRatio;
+        const listened = ratioStr != null ? Number(ratioStr) : 1;
+        if (Number.isFinite(listened) && listened < 0.85) return;
         firedRef.current = true;
         setVisible(true);
       }

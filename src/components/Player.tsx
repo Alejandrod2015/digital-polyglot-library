@@ -191,6 +191,32 @@ export default function Player({
   const openedTrackedRef = useRef<string | null>(null);
   const navWL = getWakeLockNavigator();
 
+  // Segundos REALMENTE reproducidos (no la posición de la barra). Solo suman
+  // avances pequeños durante playback; los saltos del scrubber no cuentan.
+  // Una historia se marca completada solo si esto supera el 85% de la
+  // duración, para que arrastrar hasta el final no cuente como escuchada.
+  const listenedMsRef = useRef(0);
+  const lastListenPosRef = useRef<number | null>(null);
+  useEffect(() => {
+    listenedMsRef.current = 0;
+    lastListenPosRef.current = null;
+  }, [storySlug, bookSlug]);
+  const listenedRatioNow = () => {
+    const dur = audioRef.current?.duration ?? duration;
+    return dur > 0 ? listenedMsRef.current / 1000 / dur : 0;
+  };
+  // El servidor deriva "completada" cuando el progreso guardado supera el 95%
+  // de la duración. Para que un scrub al final no la marque completada sin
+  // escucharla, si no se llegó al 85% real topamos el progreso reportado justo
+  // por debajo de ese umbral (la posición de reanudar baja un poco, pero solo
+  // en ese caso tramposo).
+  const reportableProgress = (current: number, dur: number) => {
+    if (dur > 0 && current >= dur * 0.95 && listenedRatioNow() < 0.85) {
+      return Math.min(current, dur * 0.94);
+    }
+    return current;
+  };
+
   const requestWakeLock = async () => {
     try {
       if (!navWL) return;
@@ -459,8 +485,24 @@ export default function Player({
     if (!audio) return;
 
     const updateProgress = () => {
-      setProgress(audio.currentTime);
-      const ratio = audio.duration ? audio.currentTime / audio.duration : 0;
+      // Acumular tiempo REALMENTE reproducido: solo avances positivos y
+      // pequeños mientras suena (timeupdate dispara ~4x/s; un salto grande =
+      // scrub → no suma). Se actualiza la última posición siempre para que un
+      // seek en pausa no genere un delta falso al reanudar.
+      const now = audio.currentTime;
+      const prev = lastListenPosRef.current;
+      if (!audio.paused && prev != null) {
+        const delta = now - prev;
+        if (delta > 0 && delta <= 2.5) listenedMsRef.current += delta * 1000;
+      }
+      lastListenPosRef.current = now;
+      if (audio.duration > 0) {
+        // Expuesto para EndOfStoryPracticePrompt, que abre solo si se
+        // escuchó de verdad (no basta con arrastrar al final).
+        audio.dataset.listenedRatio = String(listenedMsRef.current / 1000 / audio.duration);
+      }
+      setProgress(now);
+      const ratio = audio.duration ? now / audio.duration : 0;
       window.dispatchEvent(new CustomEvent("audio-progress", { detail: ratio }));
     };
 
@@ -485,7 +527,12 @@ export default function Player({
         Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : duration;
       if (!shouldPersistProgress(audio.currentTime)) return;
       rememberContinueListening(audio.currentTime);
-      void syncContinueListening(storySlug, bookSlug, audio.currentTime, currentDuration);
+      void syncContinueListening(
+        storySlug,
+        bookSlug,
+        reportableProgress(audio.currentTime, currentDuration),
+        currentDuration
+      );
     }, CONTINUE_SYNC_INTERVAL_MS);
 
     const persistNow = (transport: "fetch" | "beacon" = "fetch") => {
@@ -494,11 +541,12 @@ export default function Player({
         Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : duration;
       if (!shouldPersistProgress(currentProgress)) return;
       rememberContinueListening(audio.currentTime);
+      const reportProgress = reportableProgress(currentProgress, currentDuration);
       if (transport === "beacon") {
-        syncContinueListeningBeacon(storySlug, bookSlug, currentProgress, currentDuration);
+        syncContinueListeningBeacon(storySlug, bookSlug, reportProgress, currentDuration);
         return;
       }
-      void syncContinueListening(storySlug, bookSlug, currentProgress, currentDuration);
+      void syncContinueListening(storySlug, bookSlug, reportProgress, currentDuration);
     };
     const handleVisibilityChange = () => {
       if (document.visibilityState === "hidden") {
@@ -564,8 +612,13 @@ export default function Player({
     if (!audio) return;
 
     const handleEnded = async () => {
-      await trackMetric(storySlug, bookSlug, "audio_complete", duration);
-      trackGa4Event("story_completed", { story_slug: storySlug, book_slug: bookSlug ?? "standalone", duration_sec: Math.round(duration) });
+      // Solo cuenta como completada si se reprodujo de verdad ≥85%. Sin el
+      // gate, arrastrar al ~99% y dejar sonar el último tramo disparaba
+      // "ended" y marcaba la historia terminada sin escucharla.
+      if (listenedRatioNow() >= 0.85) {
+        await trackMetric(storySlug, bookSlug, "audio_complete", duration);
+        trackGa4Event("story_completed", { story_slug: storySlug, book_slug: bookSlug ?? "standalone", duration_sec: Math.round(duration) });
+      }
       void releaseWakeLock();
       if (nextStorySlug) {
         router.push(`/books/${bookSlug}/${nextStorySlug}${navigationSuffix}`);
