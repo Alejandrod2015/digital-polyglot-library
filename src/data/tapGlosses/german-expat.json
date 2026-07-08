@@ -8,7 +8,10 @@
   "umzug-ohne-aufzug",
   "duzen-auf-eigene-gefahr",
   "feierabend-ist-ein-versprechen",
-  "feedback-auf-deutsch"
+  "feedback-auf-deutsch",
+  "zustaendig-ist-ein-anderes-amt",
+  "ein-brief-kuendigt-briefe-an",
+  "endgegner-auslaenderbehoerde"
  ],
  "glosses": {
   "ab": {
@@ -3600,6 +3603,756 @@
   "rabatt": {
    "g": "discount, reduced price (der Rabatt)",
    "t": "noun"
+  },
+  "angefangen": {
+   "g": "started (anfangen, participle)",
+   "t": "verb"
+  },
+  "anrufen": {
+   "g": "to call on the phone",
+   "t": "verb"
+  },
+  "ruft": {
+   "g": "calls (rufen); ruft an = phones",
+   "t": "verb"
+  },
+  "beamtin": {
+   "g": "official, civil servant, female (die Beamtin)",
+   "t": "noun"
+  },
+  "dasselbe": {
+   "g": "the same (neuter)",
+   "t": "pronoun"
+  },
+  "existiert": {
+   "g": "exists (existieren)",
+   "t": "verb"
+  },
+  "kollegen": {
+   "g": "colleagues (der Kollege)",
+   "t": "noun"
+  },
+  "kreis": {
+   "g": "circle (der Kreis)",
+   "t": "noun"
+  },
+  "lässt": {
+   "g": "lets (lassen); lässt sich = can be done",
+   "t": "verb"
+  },
+  "nordufer": {
+   "g": "(place: north bank)",
+   "t": "noun"
+  },
+  "papier": {
+   "g": "paper, document (das Papier)",
+   "t": "noun"
+  },
+  "petzold": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "kaminski": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "neumann": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "straße": {
+   "g": "street (die Straße)",
+   "t": "noun"
+  },
+  "stunde": {
+   "g": "hour (die Stunde)",
+   "t": "noun"
+  },
+  "turmstraße": {
+   "g": "(street name)",
+   "t": "noun"
+  },
+  "unterschreibt": {
+   "g": "signs (unterschreiben)",
+   "t": "verb"
+  },
+  "unzuständigkeit": {
+   "g": "non-responsibility (die Unzuständigkeit); Amtsdeutsch",
+   "t": "noun"
+  },
+  "vielleicht": {
+   "g": "maybe, perhaps",
+   "t": "adverb"
+  },
+  "expat": {
+   "g": "expat, person living abroad (der Expat)",
+   "t": "noun"
+  },
+  "namen": {
+   "g": "name (der Name, declined)",
+   "t": "noun"
+  },
+  "adresse": {
+   "g": "address (die Adresse)",
+   "t": "noun"
+  },
+  "ankündigungen": {
+   "g": "announcements (die Ankündigung)",
+   "t": "noun"
+  },
+  "ankündigung": {
+   "g": "announcement (die Ankündigung)",
+   "t": "noun"
+  },
+  "beitragsservice": {
+   "g": "(agency collecting the broadcasting fee)",
+   "t": "noun"
+  },
+  "beweisstück": {
+   "g": "piece of evidence (das Beweisstück)",
+   "t": "noun"
+  },
+  "bomben": {
+   "g": "bombs (die Bombe)",
+   "t": "noun"
+  },
+  "briefe": {
+   "g": "letters (der Brief)",
+   "t": "noun"
+  },
+  "brief": {
+   "g": "letter (der Brief)",
+   "t": "noun"
+  },
+  "deutschland-post": {
+   "g": "German mail (colloquial compound)",
+   "t": "noun"
+  },
+  "achtzehn": {
+   "g": "eighteen",
+   "t": "number"
+  },
+  "sechsunddreißig": {
+   "g": "thirty-six",
+   "t": "number"
+  },
+  "euro": {
+   "g": "euro (der Euro)",
+   "t": "noun"
+  },
+  "fensterkuvert": {
+   "g": "window envelope (das Fensterkuvert)",
+   "t": "noun"
+  },
+  "fernseher": {
+   "g": "television set (der Fernseher)",
+   "t": "noun"
+  },
+  "gewinnt": {
+   "g": "wins (gewinnen)",
+   "t": "verb"
+  },
+  "grundkurs": {
+   "g": "basic course, crash course (der Grundkurs)",
+   "t": "noun"
+  },
+  "hält": {
+   "g": "holds (halten)",
+   "t": "verb"
+  },
+  "hoch": {
+   "g": "up, high",
+   "t": "adverb"
+  },
+  "information": {
+   "g": "information (die Information)",
+   "t": "noun"
+  },
+  "jahrzehnten": {
+   "g": "decades (das Jahrzehnt, dative)",
+   "t": "noun"
+  },
+  "kampf": {
+   "g": "fight, battle (der Kampf)",
+   "t": "noun"
+  },
+  "klemmt": {
+   "g": "is jammed, stuck (klemmen)",
+   "t": "verb"
+  },
+  "kontoauszug": {
+   "g": "bank statement (der Kontoauszug)",
+   "t": "noun"
+  },
+  "korrekt": {
+   "g": "correct",
+   "t": "adjective"
+  },
+  "kostet": {
+   "g": "costs (kosten)",
+   "t": "verb"
+  },
+  "lauter": {
+   "g": "vor lauter = because of so much",
+   "t": "adverb"
+  },
+  "magen": {
+   "g": "stomach (der Magen)",
+   "t": "noun"
+  },
+  "party": {
+   "g": "party (die Party)",
+   "t": "noun"
+  },
+  "porto": {
+   "g": "postage (das Porto)",
+   "t": "noun"
+  },
+  "post": {
+   "g": "mail, post (die Post)",
+   "t": "noun"
+  },
+  "satire": {
+   "g": "satire (die Satire)",
+   "t": "noun"
+  },
+  "umschlag": {
+   "g": "envelope (der Umschlag)",
+   "t": "noun"
+  },
+  "umschläge": {
+   "g": "envelopes (der Umschlag)",
+   "t": "noun"
+  },
+  "visum": {
+   "g": "visa (das Visum)",
+   "t": "noun"
+  },
+  "weiße": {
+   "g": "white (weiß, declined)",
+   "t": "adjective"
+  },
+  "werbung": {
+   "g": "advertising, junk mail (die Werbung)",
+   "t": "noun"
+  },
+  "zahlt": {
+   "g": "pays (zahlen)",
+   "t": "verb"
+  },
+  "zahl": {
+   "g": "pay (zahlen, imperative)",
+   "t": "verb"
+  },
+  "abendessen": {
+   "g": "dinner (das Abendessen)",
+   "t": "noun"
+  },
+  "ausländerbehörde": {
+   "g": "immigration office (die Ausländerbehörde)",
+   "t": "noun"
+  },
+  "automatenkaffee": {
+   "g": "vending-machine coffee (der Automatenkaffee)",
+   "t": "noun"
+  },
+  "biometrisch": {
+   "g": "biometric",
+   "t": "adjective"
+  },
+  "definieren": {
+   "g": "to define",
+   "t": "verb"
+  },
+  "drama": {
+   "g": "drama (das Drama)",
+   "t": "noun"
+  },
+  "eins": {
+   "g": "one",
+   "t": "number"
+  },
+  "laufbahn": {
+   "g": "career path (die Laufbahn)",
+   "t": "noun"
+  },
+  "lehrer": {
+   "g": "teachers (der Lehrer)",
+   "t": "noun"
+  },
+  "passfoto": {
+   "g": "passport photo (das Passfoto)",
+   "t": "noun"
+  },
+  "pflicht": {
+   "g": "duty, obligation (die Pflicht)",
+   "t": "noun"
+  },
+  "prüfung": {
+   "g": "examination, check (die Prüfung)",
+   "t": "noun"
+  },
+  "register": {
+   "g": "folder tabs, index (das Register)",
+   "t": "noun"
+  },
+  "routine": {
+   "g": "routine (die Routine)",
+   "t": "noun"
+  },
+  "sonne": {
+   "g": "sun (die Sonne)",
+   "t": "noun"
+  },
+  "sprachnachricht": {
+   "g": "voice message (die Sprachnachricht)",
+   "t": "noun"
+  },
+  "titel": {
+   "g": "title; here, residence permit (der Titel)",
+   "t": "noun"
+  },
+  "vorsicht": {
+   "g": "careful! watch out (die Vorsicht)",
+   "t": "expression"
+  },
+  "weltgeschichte": {
+   "g": "world history (die Weltgeschichte)",
+   "t": "noun"
+  },
+  "wörtchen": {
+   "g": "little word (das Wörtchen, diminutive)",
+   "t": "noun"
+  },
+  "ämter": {
+   "g": "offices, authorities (das Amt, plural)",
+   "t": "noun"
+  },
+  "öffnet": {
+   "g": "opens (öffnen)",
+   "t": "verb"
+  },
+  "heißt": {
+   "g": "means, is called (heißen)",
+   "t": "verb"
+  },
+  "riecht": {
+   "g": "smells (riechen)",
+   "t": "verb"
+  },
+  "schickt": {
+   "g": "sends (schicken)",
+   "t": "verb"
+  },
+  "geschrieben": {
+   "g": "written (schreiben, participle)",
+   "t": "verb"
+  },
+  "markiert": {
+   "g": "marked (markieren)",
+   "t": "verb"
+  },
+  "angekündigt": {
+   "g": "announced (ankündigen, participle)",
+   "t": "verb"
+  },
+  "feierlich": {
+   "g": "solemnly, ceremoniously",
+   "t": "adverb"
+  },
+  "absage": {
+   "g": "rejection, refusal (die Absage)",
+   "t": "noun"
+  },
+  "absagen": {
+   "g": "rejections (die Absage)",
+   "t": "noun"
+  },
+  "absender": {
+   "g": "sender of a letter (der Absender)",
+   "t": "noun"
+  },
+  "ahnung": {
+   "g": "idea, clue (die Ahnung); Keine Ahnung = no idea",
+   "t": "noun"
+  },
+  "anderthalb": {
+   "g": "one and a half",
+   "t": "number"
+  },
+  "ankündigt": {
+   "g": "announces (ankündigen)",
+   "t": "verb"
+  },
+  "annehmen": {
+   "g": "to accept (a form, a package)",
+   "t": "verb"
+  },
+  "aufenthaltstitel": {
+   "g": "residence permit (der Aufenthaltstitel)",
+   "t": "noun"
+  },
+  "außenstelle": {
+   "g": "branch office of an authority (die Außenstelle)",
+   "t": "noun"
+  },
+  "bald": {
+   "g": "soon",
+   "t": "adverb"
+  },
+  "beantragen": {
+   "g": "to apply for something officially",
+   "t": "verb"
+  },
+  "bearbeiten": {
+   "g": "to process a case or file",
+   "t": "verb"
+  },
+  "bearbeitet": {
+   "g": "processes (bearbeiten)",
+   "t": "verb"
+  },
+  "behörde": {
+   "g": "public authority, government office (die Behörde)",
+   "t": "noun"
+  },
+  "bescheinigung": {
+   "g": "official certificate (die Bescheinigung)",
+   "t": "noun"
+  },
+  "besiegt": {
+   "g": "defeated (besiegen)",
+   "t": "verb"
+  },
+  "besitzt": {
+   "g": "owns, possesses (besitzen)",
+   "t": "verb"
+  },
+  "bestätigen": {
+   "g": "to confirm",
+   "t": "verb"
+  },
+  "briefkasten": {
+   "g": "mailbox (der Briefkasten)",
+   "t": "noun"
+  },
+  "deutsche": {
+   "g": "German (declined); die Deutsche = German woman",
+   "t": "adjective"
+  },
+  "deutschen": {
+   "g": "German (declined); Deutsche = Germans",
+   "t": "adjective"
+  },
+  "diesen": {
+   "g": "this (accusative)",
+   "t": "pronoun"
+  },
+  "dort": {
+   "g": "there, in that place",
+   "t": "adverb"
+  },
+  "einfach": {
+   "g": "simply, just; easy",
+   "t": "adverb"
+  },
+  "einzige": {
+   "g": "the only one (einzig)",
+   "t": "adjective"
+  },
+  "endgegner": {
+   "g": "final boss, hardest opponent (der Endgegner)",
+   "t": "noun",
+   "r": "colloquial"
+  },
+  "entschuldigung": {
+   "g": "apology; excuse me (die Entschuldigung)",
+   "t": "noun"
+  },
+  "erfahrung": {
+   "g": "experience (die Erfahrung)",
+   "t": "noun"
+  },
+  "fall": {
+   "g": "case, matter (der Fall)",
+   "t": "noun"
+  },
+  "fange": {
+   "g": "start (anfangen); ich fange an = I begin",
+   "t": "verb"
+  },
+  "farbig": {
+   "g": "colored, in color",
+   "t": "adjective"
+  },
+  "fast": {
+   "g": "almost, nearly",
+   "t": "adverb"
+  },
+  "fernsiehst": {
+   "g": "watch TV (fernsehen, du form)",
+   "t": "verb"
+  },
+  "flur": {
+   "g": "corridor, hallway (der Flur)",
+   "t": "noun"
+  },
+  "gebe": {
+   "g": "give (geben); ich gebe auf = I give up",
+   "t": "verb"
+  },
+  "geduld": {
+   "g": "patience (die Geduld)",
+   "t": "noun"
+  },
+  "gefahrenstufe": {
+   "g": "danger level (die Gefahrenstufe)",
+   "t": "noun"
+  },
+  "gern": {
+   "g": "gladly; hätte gern = would like",
+   "t": "adverb"
+  },
+  "gute": {
+   "g": "good (gut, declined)",
+   "t": "adjective"
+  },
+  "harmlos": {
+   "g": "harmless",
+   "t": "adjective"
+  },
+  "hatte": {
+   "g": "had (haben, past)",
+   "t": "verb"
+  },
+  "haushalt": {
+   "g": "household (der Haushalt)",
+   "t": "noun"
+  },
+  "hiermit": {
+   "g": "hereby (official language)",
+   "t": "adverb"
+  },
+  "hängen": {
+   "g": "to hang; hängt an = depends on",
+   "t": "verb"
+  },
+  "jahre": {
+   "g": "years (das Jahr)",
+   "t": "noun"
+  },
+  "kam": {
+   "g": "came (kommen, past)",
+   "t": "verb"
+  },
+  "klebt": {
+   "g": "sticks, is glued (kleben)",
+   "t": "verb"
+  },
+  "kommenden": {
+   "g": "coming, upcoming (kommend)",
+   "t": "adjective"
+  },
+  "können": {
+   "g": "can, to be able to",
+   "t": "verb"
+  },
+  "kündigen": {
+   "g": "kündigen an = announce (ankündigen); to cancel",
+   "t": "verb"
+  },
+  "land": {
+   "g": "country, land (das Land)",
+   "t": "noun"
+  },
+  "legt": {
+   "g": "lays, puts (legen); legt vor = presents",
+   "t": "verb"
+  },
+  "lehrreiche": {
+   "g": "instructive, full of lessons (lehrreich)",
+   "t": "adjective"
+  },
+  "luft": {
+   "g": "air (die Luft); in der Luft = in the air",
+   "t": "noun"
+  },
+  "lächeln": {
+   "g": "smile (das Lächeln); to smile",
+   "t": "noun"
+  },
+  "mahnung": {
+   "g": "payment reminder, warning (die Mahnung)",
+   "t": "noun"
+  },
+  "möchte": {
+   "g": "would like (mögen, Konjunktiv)",
+   "t": "verb"
+  },
+  "name": {
+   "g": "name (der Name)",
+   "t": "noun"
+  },
+  "nein": {
+   "g": "no",
+   "t": "adverb"
+  },
+  "neu": {
+   "g": "new",
+   "t": "adjective"
+  },
+  "neuer": {
+   "g": "new (neu, declined)",
+   "t": "adjective"
+  },
+  "niederlagen": {
+   "g": "defeats (die Niederlage)",
+   "t": "noun"
+  },
+  "niemand": {
+   "g": "nobody, no one",
+   "t": "pronoun"
+  },
+  "nötig": {
+   "g": "necessary, needed",
+   "t": "adjective"
+  },
+  "ob": {
+   "g": "whether, if",
+   "t": "conjunction"
+  },
+  "okay": {
+   "g": "okay",
+   "t": "expression",
+   "r": "colloquial"
+  },
+  "paar": {
+   "g": "ein paar = a few, a couple of",
+   "t": "pronoun"
+  },
+  "papiere": {
+   "g": "papers, documents (das Papier)",
+   "t": "noun"
+  },
+  "platz": {
+   "g": "seat, place (der Platz); Platz nehmen = sit down",
+   "t": "noun"
+  },
+  "reine": {
+   "g": "pure, mere (rein, declined)",
+   "t": "adjective"
+  },
+  "rundfunkbeitrag": {
+   "g": "public broadcasting fee (der Rundfunkbeitrag)",
+   "t": "noun"
+  },
+  "sagen": {
+   "g": "to say",
+   "t": "verb"
+  },
+  "sagt": {
+   "g": "says (sagen)",
+   "t": "verb"
+  },
+  "sagte": {
+   "g": "said (sagen, past)",
+   "t": "verb"
+  },
+  "schließt": {
+   "g": "closes (schließen); der Kreis schließt sich",
+   "t": "verb"
+  },
+  "schreiben": {
+   "g": "official letter (das Schreiben); to write",
+   "t": "noun"
+  },
+  "selbst": {
+   "g": "even; myself/itself",
+   "t": "adverb"
+  },
+  "separates": {
+   "g": "separate (separat, declined)",
+   "t": "adjective"
+  },
+  "sortieren": {
+   "g": "to sort into groups",
+   "t": "verb"
+  },
+  "staunen": {
+   "g": "to be amazed",
+   "t": "verb"
+  },
+  "thema": {
+   "g": "topic, subject (das Thema)",
+   "t": "noun"
+  },
+  "trümpfe": {
+   "g": "trump cards (der Trumpf)",
+   "t": "noun"
+  },
+  "täglich": {
+   "g": "daily, every day",
+   "t": "adverb"
+  },
+  "tätigkeit": {
+   "g": "occupation, activity (die Tätigkeit)",
+   "t": "noun"
+  },
+  "verlängerung": {
+   "g": "extension; extra time (die Verlängerung)",
+   "t": "noun"
+  },
+  "verstehen": {
+   "g": "to understand",
+   "t": "verb"
+  },
+  "verstehst": {
+   "g": "understand (verstehen, du form)",
+   "t": "verb"
+  },
+  "verteidigst": {
+   "g": "defend (verteidigen, du form)",
+   "t": "verb"
+  },
+  "verwaltung": {
+   "g": "administration, bureaucracy (die Verwaltung)",
+   "t": "noun"
+  },
+  "vollständig": {
+   "g": "complete, with everything in place",
+   "t": "adjective"
+  },
+  "vorbereitet": {
+   "g": "prepared (vorbereiten)",
+   "t": "adjective"
+  },
+  "warte": {
+   "g": "wait (warten); warte = hang on",
+   "t": "verb"
+  },
+  "werden": {
+   "g": "will (future); to become",
+   "t": "verb"
+  },
+  "wissen": {
+   "g": "to know (facts)",
+   "t": "verb"
+  },
+  "zentrale": {
+   "g": "headquarters, central office (die Zentrale)",
+   "t": "noun"
+  },
+  "zugehen": {
+   "g": "to be delivered (official language)",
+   "t": "verb"
+  },
+  "zuständig": {
+   "g": "responsible, officially in charge",
+   "t": "adjective"
+  },
+  "fand": {
+   "g": "found (finden, past); fand gut = liked",
+   "t": "verb"
   }
  }
 }
