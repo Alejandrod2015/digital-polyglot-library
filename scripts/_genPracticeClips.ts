@@ -51,10 +51,35 @@ const MODEL = "eleven_multilingual_v2";
 // Questions get QUESTION framing: the declarative context flattened the
 // interrogative contour (user-reported 2026-07-02, confirmed by F0: the two
 // question clips ended at +1.3/-0.1 st where a Spanish yes/no question rises).
-const PREV_TEXT = "Ahora escucha esta frase.";
-const NEXT_TEXT = "Muy bien. Ahora sigamos con la siguiente.";
-const PREV_TEXT_Q = "Él tiene una duda y pregunta:";
-const NEXT_TEXT_Q = "Ella le responde enseguida.";
+// 2026-07-07: parametrizado por idioma (--lang=de para alemán). El framing,
+// el modelo de whisper, el código de Scribe y el regex de W-Fragen dependen
+// del idioma; español sigue siendo el default (sets LATAM intactos).
+const LANGS: Record<string, { prev: string; next: string; prevQ: string; nextQ: string; whisper: string; scribe: string; wh: RegExp }> = {
+  es: {
+    prev: "Ahora escucha esta frase.",
+    next: "Muy bien. Ahora sigamos con la siguiente.",
+    prevQ: "Él tiene una duda y pregunta:",
+    nextQ: "Ella le responde enseguida.",
+    whisper: "es", scribe: "spa",
+    wh: /(qué|quién|quiénes|cómo|cuándo|dónde|adónde|cuál|cuáles|cuánto|cuánta|cuántos|cuántas)/i,
+  },
+  de: {
+    prev: "Hör dir diesen Satz an.",
+    next: "Gut. Weiter zum nächsten Satz.",
+    prevQ: "Er hat eine Frage und fragt:",
+    nextQ: "Sie antwortet ihm sofort.",
+    whisper: "de", scribe: "deu",
+    // W-Fragen terminan cayendo por naturaleza (como las wh españolas);
+    // solo las ja/nein-Fragen exigen subida final.
+    wh: /(\bwer\b|\bwen\b|\bwem\b|\bwessen\b|\bwas\b|\bwie\b|\bwieso\b|\bweshalb\b|\bwarum\b|\bwann\b|\bwo\b|\bwohin\b|\bwoher\b|\bwelch)/i,
+  },
+};
+const langArg = process.argv.find((a) => a.startsWith("--lang="));
+const LANG = LANGS[langArg ? langArg.slice(7) : "es"] ?? LANGS.es;
+const PREV_TEXT = LANG.prev;
+const NEXT_TEXT = LANG.next;
+const PREV_TEXT_Q = LANG.prevQ;
+const NEXT_TEXT_Q = LANG.nextQ;
 // Final intonation is what the F0 gate measures, so what matters is how the
 // sentence ENDS: "Ella dice: ¿Tacos? ¡Son deliciosos!" contains a question
 // but ends exclamative (falling) and must be gated as a statement.
@@ -152,7 +177,7 @@ async function tailClean(mp3Path: string): Promise<{ ok: boolean; db: number | n
     await ff(["-y", "-loglevel", "error", "-i", mp3Path, "-ar", "16000", "-ac", "1", wav]);
     let json: any;
     try {
-      const r = await spawnCapture("whisper-cli", ["-m", WHISPER_MODEL, "-l", "es", "-np", "-ojf", "-of", join(dir, "a"), wav]);
+      const r = await spawnCapture("whisper-cli", ["-m", WHISPER_MODEL, "-l", LANG.whisper, "-np", "-ojf", "-of", join(dir, "a"), wav]);
       if (r.code !== 0) throw new Error(r.err.slice(0, 120));
       json = JSON.parse(readFileSync(join(dir, "a.json"), "utf8"));
     } catch (err) {
@@ -185,14 +210,13 @@ let f0GateWarned = false;
 // interrogative word carries the question cue, not a final rise. Only yes/no
 // questions require the rising-final gate. Accented forms only occur in
 // interrogatives, so their presence identifies a wh-question reliably.
-const WH_QUESTION = /(qué|quién|quiénes|cómo|cuándo|dónde|adónde|cuál|cuáles|cuánto|cuánta|cuántos|cuántas)/i;
 // Deliberative "¿Y si...?" questions also end falling in natural Spanish
 // (Jhenny rendered one falling 8/8; the narration reads it the same way).
 const DELIBERATIVE_QUESTION = /^\s*¿\s*y\s+si\b/i;
 async function f0Ok(mp3Path: string, sentence: string): Promise<{ ok: boolean; detail: string }> {
   try {
     const mode =
-      isQuestion(sentence) && !WH_QUESTION.test(sentence) && !DELIBERATIVE_QUESTION.test(sentence)
+      isQuestion(sentence) && !LANG.wh.test(sentence) && !DELIBERATIVE_QUESTION.test(sentence)
         ? "question"
         : "statement";
     const r = await spawnCapture(F0_PYTHON, ["scripts/_f0gate.py", mp3Path, mode]);
@@ -208,7 +232,7 @@ async function f0Ok(mp3Path: string, sentence: string): Promise<{ ok: boolean; d
 
 async function sttText(buf: Buffer, apiKey: string): Promise<string> {
   const fd = new FormData();
-  fd.append("model_id", "scribe_v1"); fd.append("language_code", "spa");
+  fd.append("model_id", "scribe_v1"); fd.append("language_code", LANG.scribe);
   fd.append("file", new Blob([new Uint8Array(buf)], { type: "audio/mpeg" }), "s.mp3");
   const res = await fetch("https://api.elevenlabs.io/v1/speech-to-text", { method: "POST", headers: { "xi-api-key": apiKey }, body: fd });
   if (!res.ok) throw new Error(`STT ${res.status}`);
@@ -345,8 +369,20 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
         n++;
       }
     }
-    writeFileSync(manifestPath, JSON.stringify({ voice: VOICE, items }, null, 2) + "\n");
-    const takeOpts = items.map((d) => `
+    // MERGE (2026-07-07): conserva los takes previos de OTRAS palabras para
+    // poder iterar palabras sueltas sin perder candidatos ya renderizados.
+    // Los takes nuevos de la MISMA palabra reemplazan a los suyos anteriores.
+    let mergedItems = items;
+    try {
+      const prev = JSON.parse(readFileSync(manifestPath, "utf8"));
+      if (prev?.voice === VOICE && Array.isArray(prev.items)) {
+        const renderedWords = new Set(items.map((i: any) => strip(i.word)));
+        const kept = prev.items.filter((i: any) => !renderedWords.has(strip(i.word)));
+        mergedItems = [...kept, ...items].map((it: any, idx: number) => ({ ...it, n: idx + 1 }));
+      }
+    } catch { /* primer run: no hay manifest previo */ }
+    writeFileSync(manifestPath, JSON.stringify({ voice: VOICE, items: mergedItems }, null, 2) + "\n");
+    const takeOpts = mergedItems.map((d: any) => `
     <div class="opt ${d.ok ? "" : "bad"}"><div class="num">${d.n}</div>
       <div class="body"><div class="lbl">${d.word} — take ${d.take} <span>${d.ok ? `${d.tries}t · ${d.dur.toFixed(2)}s` : "FAILED"}</span></div>
       <div class="sen">${d.sentence}</div>
