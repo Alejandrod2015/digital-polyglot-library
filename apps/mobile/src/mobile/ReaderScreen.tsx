@@ -761,6 +761,12 @@ function renderKaraokeParagraph(args: {
   return <Text style={baseTextStyle}>{nodes}</Text>;
 }
 
+// GATE de prueba: solo estas historias usan la lógica de tick "confía en el
+// tick real" (arregla los saltos). El resto queda con el guard original, para
+// poder comparar en el device antes de aplicarlo a todo. Vaciar este set (o
+// quitar el branch) = aplicar a todas las historias.
+const KARAOKE_TICK_V2_SLUGS = new Set<string>(["buergeramt-neukoelln-sieben-uhr"]);
+
 function findActiveKaraokeWordIndex(
   words: StoryWordToken[],
   positionSec: number
@@ -1033,8 +1039,17 @@ export function ReaderScreen(args: {
   // actual reported position: small backward steps (1-2 words) are
   // ignored as jitter; bigger jumps are honored as real seeks/rewinds.
   const lastResolvedIndexRef = useRef<number | null>(null);
+  // Última posición REAL reportada por el player (positionMillis del tick de
+  // 500ms). Sirve para distinguir un tick fresco (posición nueva) de la
+  // extrapolación de 25ms entre ticks: al tick fresco le creemos siempre
+  // (incluso si corrige hacia atrás), y el anti-jitter solo se aplica mientras
+  // extrapolamos sobre el mismo snapshot. Sin esto, el guard descartaba la
+  // corrección del tick real y las palabras sobre las que la extrapolación se
+  // había adelantado quedaban saltadas para siempre.
+  const lastSnapPositionRef = useRef<number | null>(null);
   useEffect(() => {
     lastResolvedIndexRef.current = null;
+    lastSnapPositionRef.current = null;
   }, [story.id]);
   useEffect(() => {
     // El cursor solo avanza cuando hay wordTimings reales del backend.
@@ -1049,6 +1064,9 @@ export function ReaderScreen(args: {
       lastResolvedIndexRef.current = null;
       return;
     }
+    // Solo la(s) historia(s) gateada(s) usan la lógica nueva (confía en el tick
+    // real). El resto conserva el guard original para comparar en el device.
+    const karaokeV2 = KARAOKE_TICK_V2_SLUGS.has(story.slug);
     const interval = setInterval(() => {
       const snap = lastPlaybackRef.current;
       if (!snap) return;
@@ -1062,6 +1080,11 @@ export function ReaderScreen(args: {
       // tiene y el highlight saltaría a la palabra equivocada.
       const rawIdx = findActiveKaraokeWordIndex(effectiveWordTimings.words, estimatedSec);
       const lastIdx = lastResolvedIndexRef.current;
+      // ¿Este cómputo se apoya en un tick REAL nuevo, o es pura extrapolación
+      // sobre el snapshot anterior? Al tick real le creemos siempre; el
+      // anti-jitter solo aplica entre ticks.
+      const isFreshTick = snap.positionMillis !== lastSnapPositionRef.current;
+      lastSnapPositionRef.current = snap.positionMillis;
 
       let resolved = rawIdx;
       if (rawIdx === null && lastIdx !== null && snap.isPlaying) {
@@ -1069,9 +1092,13 @@ export function ReaderScreen(args: {
         // last index instead of clearing the highlight.
         resolved = lastIdx;
       } else if (rawIdx !== null && lastIdx !== null && rawIdx < lastIdx) {
-        // Backward steps of 1-2 words are jitter; bigger jumps are
-        // real seeks and let through.
-        if (lastIdx - rawIdx < 3) resolved = lastIdx;
+        // V2 (gateada): el anti-jitter (retroceso de 1-2 palabras) SOLO aplica
+        // entre ticks; un tick REAL que corrige hacia atrás se respeta.
+        // V1 (resto): guard original, sin distinguir tick real.
+        const suppress = karaokeV2
+          ? !isFreshTick && lastIdx - rawIdx < 3
+          : lastIdx - rawIdx < 3;
+        if (suppress) resolved = lastIdx;
       }
       lastResolvedIndexRef.current = resolved;
       setActiveWordIndex((prev) => (prev === resolved ? prev : resolved));
