@@ -9359,10 +9359,6 @@ export function MobileLibraryShell(args: {
     return activeScreen === tab;
   }
 
-  const syncedOnlyStoryCards = remoteStoryCards.filter(
-    (item) => !savedStoryIds.includes(item.key.replace(/^remote-/, ""))
-  );
-
   const featuredHomeStory = useMemo(() => {
     const spotlight = getSpotlightSelection();
     if (!spotlight) return null;
@@ -13212,34 +13208,6 @@ export function MobileLibraryShell(args: {
           </View>
         )}
       </View>
-
-      {syncedOnlyStoryCards.length > 0 ? (
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <View>
-              <Text style={styles.sectionEyebrow}>From your account</Text>
-              <Text style={styles.sectionTitle}>Synced stories</Text>
-            </View>
-            <Text style={styles.helperText}>{syncedOnlyStoryCards.length} stories</Text>
-          </View>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-            {syncedOnlyStoryCards.map((item) => (
-              <BookHomeCard
-                key={`library-remote-${item.key}`}
-                item={{
-                  key: item.key,
-                  title: item.title,
-                  coverUrl: item.coverUrl,
-                  subtitle: item.subtitle,
-                  meta: item.meta,
-                  progressLabel: item.progressLabel,
-                  onPress: item.onPress ?? (() => {}),
-                }}
-              />
-            ))}
-          </ScrollView>
-        </View>
-      ) : null}
     </>
   );
 
