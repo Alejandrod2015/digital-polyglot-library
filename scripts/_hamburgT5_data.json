@@ -19,7 +19,7 @@
    { "word": "Tüte", "definition": "a bag, usually of paper or plastic, for carrying goods", "type": "noun" },
    { "word": "glücklich", "surface": "glückliche", "definition": "happy and content; feeling lucky and thoroughly pleased", "type": "adjective" },
    { "word": "Lautstärke", "definition": "loudness; how much noise or volume something makes", "type": "noun" },
-   { "word": "wortkarg", "definition": "sparing with words; saying very little and rarely chatting", "type": "adjective" },
+   { "word": "sich beschweren", "surface": "beschwert", "definition": "to complain; to formally object that something is wrong", "type": "verb" },
    { "word": "Ausnahme", "definition": "an exception; a case that breaks the usual rule", "type": "noun" },
    { "word": "prall", "definition": "bulging; packed so full it is round and tight", "type": "adjective" },
    { "word": "widersprechen", "definition": "to contradict; to say the opposite of what was said", "type": "verb" },

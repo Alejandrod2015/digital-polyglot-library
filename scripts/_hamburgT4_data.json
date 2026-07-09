@@ -87,7 +87,7 @@
    { "word": "übergriffig", "definition": "overstepping boundaries; intrusive in an inappropriate, presumptuous way", "type": "adjective" },
    { "word": "herzlich", "definition": "warm-hearted; showing genuine warmth and friendliness toward people", "type": "adjective" },
    { "word": "feierlich", "definition": "solemnly; in a formal, ceremonious and deliberate manner", "type": "adverb" },
-   { "word": "schlicht", "surface": "schlicht", "definition": "simply; plainly and without any complication or fuss", "type": "adverb" },
+   { "word": "austauschen", "surface": "tauscht", "definition": "to exchange; to share things back and forth with others", "type": "verb" },
    { "word": "aufmachen", "surface": "aufmacht", "definition": "to open something, such as a door, for someone", "type": "verb" }
   ]
  }
