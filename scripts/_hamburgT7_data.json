@@ -1,0 +1,352 @@
+[
+ {
+  "topic": "sturm-und-gesundheit",
+  "slotIndex": 1,
+  "title": "Wenn die Elbe steigt",
+  "arcType": "reframe-turn",
+  "synopsis": "Während Nora vor der Sturmflut Handtücher unter die Tür stopft, kocht Ole seelenruhig Tee und erklärt die nördliche Gelassenheit.",
+  "text": "Das Radio warnt vor einer Sturmflut, der Wind drückt gegen die Fenster, und Nora stopft schon Handtücher unter die Wohnungstür. Ole steht seelenruhig in ihrer Küche und kocht Tee.\n\nNora: Warum bist du so gelassen? Draußen heult ein Orkan, und du machst Teewasser.\nOle: Weil eine Sturmflut hier zum Herbst gehört wie das Laub. Der Fischmarkt säuft alle paar Jahre ab und trocknet wieder.\nNora: Absaufen klingt für mich nicht nach Alltag. Müssen wir nicht irgendwohin?\nOle: Wir wohnen im dritten Stock. Höher kommt das Wasser nur in den Geschichten der Großeltern, von der großen Flut damals.\nNora: Und die war schlimm?\nOle: Schlimm genug, dass die Stadt danach ihre Deiche neu gebaut hat. Seitdem ist Hamburg auf Sturm eingestellt. Panik ist das Einzige, was hier keiner braucht.\nNora: Und seitdem? Passiert da nichts mehr?\nOle: Doch, fast jeden Herbst. Nur erschrickt darüber längst keiner mehr.\n\nEin Fensterladen schlägt, Nora zuckt zusammen, Ole rührt seelenruhig weiter.\n\nOle: Setz dich. Der Sturm macht viel Lärm und wenig Schaden. Morgen früh sammeln die Leute Treibholz, als wäre nichts gewesen.\nNora: Du meinst, ich soll einer Sturmflut mit einer Tasse Tee begegnen?\nOle: Genau so. Wer hier bei jedem Tief in Panik gerät, hält den Winter nicht durch. Der Norden bleibt ruhig, weil er den Sturm kennt.\nNora: Also atme ich durch und höre dem Wind zu, statt gegen ihn zu kämpfen.\nOle: Jetzt hast du es. Das ist der halbe Norden: Man baut Deiche und bleibt gelassen. Den Rest erledigt die Elbe von allein.",
+  "vocab": [
+   {
+    "word": "Sturmflut",
+    "definition": "a storm surge; a dangerous flood driven inland by a storm",
+    "type": "noun"
+   },
+   {
+    "word": "warnen",
+    "surface": "warnt",
+    "definition": "to warn; to alert people to a coming danger",
+    "type": "verb"
+   },
+   {
+    "word": "Handtuch",
+    "surface": "Handtücher",
+    "definition": "a towel, here stuffed against a door to block water",
+    "type": "noun"
+   },
+   {
+    "word": "seelenruhig",
+    "definition": "perfectly calm; unruffled and utterly at ease despite everything",
+    "type": "adjective"
+   },
+   {
+    "word": "gelassen",
+    "definition": "composed and relaxed; staying calm and unruffled under pressure",
+    "type": "adjective"
+   },
+   {
+    "word": "Orkan",
+    "definition": "a hurricane-force wind; a violent, raging and destructive storm",
+    "type": "noun"
+   },
+   {
+    "word": "Herbst",
+    "definition": "autumn; the season of falling leaves before winter",
+    "type": "noun"
+   },
+   {
+    "word": "Laub",
+    "definition": "foliage; the leaves of trees, especially once fallen",
+    "type": "noun"
+   },
+   {
+    "word": "absaufen",
+    "surface": "Absaufen",
+    "definition": "to be flooded and go under water; to drown out",
+    "type": "verb"
+   },
+   {
+    "word": "Deich",
+    "surface": "Deiche",
+    "definition": "a dyke; an earth wall built to hold back flood water",
+    "type": "noun"
+   },
+   {
+    "word": "eingestellt",
+    "definition": "geared up; fully prepared and set for something in advance",
+    "type": "adjective"
+   },
+   {
+    "word": "seitdem",
+    "surface": "Seitdem",
+    "definition": "ever since then; from that time onward without a break",
+    "type": "adverb"
+   },
+   {
+    "word": "als wäre nichts gewesen",
+    "definition": "as if nothing at all had happened; completely unfazed",
+    "type": "expression"
+   },
+   {
+    "word": "zucken",
+    "surface": "zuckt",
+    "definition": "to flinch; to jerk suddenly from a shock or fright",
+    "type": "verb"
+   },
+   {
+    "word": "Fensterladen",
+    "definition": "a shutter; a hinged panel that closes over a window",
+    "type": "noun"
+   },
+   {
+    "word": "Treibholz",
+    "definition": "driftwood; wood washed ashore by the tide and waves",
+    "type": "noun"
+   },
+   {
+    "word": "in Panik geraten",
+    "surface": "in Panik gerät",
+    "definition": "to be seized by panic and lose your head with fear",
+    "type": "expression"
+   },
+   {
+    "word": "begegnen",
+    "definition": "to meet or face something; to deal with it head-on",
+    "type": "verb"
+   },
+   {
+    "word": "kämpfen",
+    "definition": "to fight; to struggle hard against something or someone",
+    "type": "verb"
+   },
+   {
+    "word": "Schaden",
+    "definition": "damage; harm or destruction done to property or things",
+    "type": "noun"
+   }
+  ]
+ },
+ {
+  "topic": "sturm-und-gesundheit",
+  "slotIndex": 2,
+  "title": "Grog gegen alles",
+  "arcType": "daily-encounter",
+  "synopsis": "Mit einer Erkältung und einem Termin erst in Wochen entdeckt Nora das norddeutsche Heilmittel: Grog, Ruhe und eine ganze Nachbarschaft, die sich kümmert.",
+  "text": "Der Novembersturm hat Nora eine Erkältung beschert, und die Praxis bietet erst in Wochen einen Termin. Es klopft, und Grit steht mit einer dampfenden Kanne vor der Tür.\n\nGrit: Aufmachen, nicht reden. Ich habe Grog gekocht: heißes Wasser, brauner Zucker, ein Schuss Rum. Das norddeutsche Heilmittel Nummer eins.\nNora: Ich wollte gerade zum Arzt betteln. Der nächste Termin ist praktisch nächstes Jahr.\nGrit: Wegen einer Erkältung? Die kuriert sich von allein. Was der Arzt dir sagt, sage ich dir gratis: Wärme, Ruhe, Grog.\nNora: Kein Rezept, keine Tablette, nur ein heißes Getränk?\nGrit: Tabletten dämpfen, Grog wärmt von innen. Das eine kuriert, das andere tröstet.\nNora: Bei uns rennt man mit jedem Schnupfen zum Arzt. Hier soll ich mich einfach ins Bett legen?\nGrit: Auskurieren nennt man das. Wer sich verkriecht, ist in drei Tagen wieder auf den Beinen. Wer tapfer weiterarbeitet, in zwei Wochen.\n\nGrit stellt eine Wärmflasche aufs Sofa und zieht die Vorhänge zu.\n\nGrit: Der Grog ist gegen den Husten, die Wärmflasche gegen den Rest. Und morgen kommt Fiete und bringt Suppe.\nNora: Ihr organisiert eine ganze Pflegekette für einen simplen Schnupfen?\nGrit: Kein Aufheben, nur das Übliche. Man lässt hier keinen allein husten. Das gehört sich einfach.\nNora: Und wenn ich mich einmal revanchieren will?\nGrit: Dann kochst du beim nächsten Kranken den Grog. So ist das im Haus.\nNora: Und ich dachte immer, ich müsste hier alles mit mir selbst ausmachen.\nGrit: Bei Behörden ja. Bei Fieber nein. Trink aus, schlaf, und beschwer dich nicht.\nNora: Dann ergebe ich mich dem Grog und der nächsten Wärmflasche.",
+  "vocab": [
+   {
+    "word": "Erkältung",
+    "definition": "a common cold; a mild illness with a runny nose and cough",
+    "type": "noun"
+   },
+   {
+    "word": "bescheren",
+    "surface": "beschert",
+    "definition": "to land someone with something unwelcome; to bring it upon them",
+    "type": "verb"
+   },
+   {
+    "word": "dampfend",
+    "definition": "steaming; giving off hot, visible vapour into the air",
+    "type": "adjective"
+   },
+   {
+    "word": "Grog",
+    "definition": "a hot northern drink of rum, sugar and boiling water",
+    "type": "noun"
+   },
+   {
+    "word": "Rum",
+    "definition": "a strong spirit distilled from sugar cane, warming in Grog",
+    "type": "noun"
+   },
+   {
+    "word": "Heilmittel",
+    "definition": "a remedy; something used to cure or ease an illness",
+    "type": "noun"
+   },
+   {
+    "word": "gratis",
+    "definition": "free of charge; given for nothing at all",
+    "type": "adverb"
+   },
+   {
+    "word": "kurieren",
+    "surface": "kuriert",
+    "definition": "to cure; to make an illness or ailment go away",
+    "type": "verb"
+   },
+   {
+    "word": "Schnupfen",
+    "definition": "a head cold; a blocked or runny, sniffly nose",
+    "type": "noun"
+   },
+   {
+    "word": "auskurieren",
+    "surface": "Auskurieren",
+    "definition": "to fully recover from an illness by resting until well",
+    "type": "verb"
+   },
+   {
+    "word": "sich verkriechen",
+    "surface": "verkriecht",
+    "definition": "to hole up; to hide away somewhere warm and cosy",
+    "type": "verb"
+   },
+   {
+    "word": "auf den Beinen",
+    "definition": "up and about; back on your feet and active again",
+    "type": "expression"
+   },
+   {
+    "word": "tapfer",
+    "definition": "bravely; bearing hardship without a word of complaint",
+    "type": "adverb"
+   },
+   {
+    "word": "Wärmflasche",
+    "definition": "a hot-water bottle held against the body for warmth",
+    "type": "noun"
+   },
+   {
+    "word": "Husten",
+    "definition": "a cough; the reflex of forcing air out of the throat",
+    "type": "noun"
+   },
+   {
+    "word": "Pflegekette",
+    "definition": "a chain of people taking turns to care for someone",
+    "type": "noun"
+   },
+   {
+    "word": "Kein Aufheben",
+    "definition": "no fuss; making no big deal out of something",
+    "type": "expression"
+   },
+   {
+    "word": "simpel",
+    "surface": "simplen",
+    "definition": "simple; plain and ordinary, nothing complicated about it",
+    "type": "adjective"
+   },
+   {
+    "word": "das gehört sich",
+    "surface": "gehört sich",
+    "definition": "that is the done thing; it is only proper and decent",
+    "type": "expression"
+   },
+   {
+    "word": "sich ergeben",
+    "surface": "ergebe",
+    "definition": "to give in; to surrender to something you cannot fight",
+    "type": "verb"
+   }
+  ]
+ },
+ {
+  "topic": "sturm-und-gesundheit",
+  "slotIndex": 3,
+  "title": "Moin, Neuland",
+  "arcType": "harmonic-close",
+  "synopsis": "Ein Jahr später steht Nora selbst an Wiebkes Theke und nimmt eine neue Zugezogene an die Hand, genau so, wie es einst mit ihr geschah.",
+  "text": "Auf demselben Kopfsteinpflaster in Ottensen zieht eine Fremde ihren Koffer und übt laut eine viel zu lange Begrüßung. Nora, die gerade bei Wiebke Franzbrötchen holt, erkennt sich sofort wieder.\n\nSofia: Guten Morgen, ich wünsche Ihnen einen wunderschönen, angenehmen Tag! War das richtig? Ich will hier unbedingt höflich sein.\nNora: Fast. Aber spar dir die Hälfte. Hier sagt man einfach Moin, morgens, mittags, abends. Ein Wort für alles.\nSofia: Nur ein Wort? Das klingt so kurz, fast unfreundlich.\nNora: Das dachte ich am Anfang auch. Glaub mir, hinter dem einen Wort steckt mehr Wärme als hinter zehn höflichen Sätzen.\n\nWiebke reicht Nora die Tüte über die Theke und mustert die Neue mit stillem Wohlwollen.\n\nWiebke: Die Zweite, die du an die Hand nimmst. Vor einem Jahr standest du genau da, mit genau dem Blick.\nSofia: Und die Leute hier, sind die wirklich so verschlossen, wie alle sagen?\nNora: Verschlossen nicht. Sparsam mit Worten, großzügig mit Taten. Wer wenig fragt, meint es oft am ernstesten.\nSofia: Woher wissen Sie das alles schon nach so kurzer Zeit?\nNora: Weil mich vor einem Jahr jemand an genau dieser Theke an die Hand genommen hat. Jetzt bist du dran.\n\nNora bricht ihr Franzbrötchen in zwei Hälften und reicht Sofia die größere.\n\nNora: Der erste Trick heißt: nicht drängeln, nur dableiben. Der Rest kommt von allein.\nSofia: Danke. Und wie sage ich noch mal richtig hallo?\nNora: Moin. Mehr nicht. Und irgendwann sagst du es im Vorbeigehen, ohne nachzudenken, wie eine von hier.\nWiebke: So wird das. Aus dir wird auch noch eine Hamburgerin, Kind. Es dauert nur.",
+  "vocab": [
+   {
+    "word": "Fremde",
+    "definition": "a stranger; a person you do not yet know",
+    "type": "noun"
+   },
+   {
+    "word": "Koffer",
+    "definition": "a suitcase for carrying clothes and belongings when travelling",
+    "type": "noun"
+   },
+   {
+    "word": "sich wiedererkennen",
+    "surface": "erkennt sich",
+    "definition": "to see yourself in someone; to recognise your own past self",
+    "type": "verb"
+   },
+   {
+    "word": "unbedingt",
+    "definition": "absolutely; without fail, no matter what it takes",
+    "type": "adverb"
+   },
+   {
+    "word": "sparen",
+    "surface": "spar",
+    "definition": "to save; here to spare yourself needless words or effort",
+    "type": "verb"
+   },
+   {
+    "word": "Hälfte",
+    "definition": "a half; one of two equal parts of something",
+    "type": "noun"
+   },
+   {
+    "word": "unfreundlich",
+    "definition": "unfriendly; cold and not welcoming toward other people",
+    "type": "adjective"
+   },
+   {
+    "word": "Wärme",
+    "definition": "warmth; kindly, affectionate feeling shown toward other people",
+    "type": "noun"
+   },
+   {
+    "word": "an die Hand nehmen",
+    "surface": "an die Hand",
+    "definition": "to take someone under your wing and guide them",
+    "type": "expression"
+   },
+   {
+    "word": "verschlossen",
+    "definition": "closed-off; keeping your thoughts and feelings to yourself",
+    "type": "adjective"
+   },
+   {
+    "word": "still",
+    "surface": "stillem",
+    "definition": "quiet; silent and without any show or fuss about it",
+    "type": "adjective"
+   },
+   {
+    "word": "Taten",
+    "definition": "deeds; concrete actions taken rather than just words spoken",
+    "type": "noun"
+   },
+   {
+    "word": "Wohlwollen",
+    "definition": "goodwill; a kindly, benevolent attitude of quiet approval toward someone",
+    "type": "noun"
+   },
+   {
+    "word": "brechen",
+    "surface": "bricht",
+    "definition": "to break something apart into separate pieces or halves",
+    "type": "verb"
+   },
+   {
+    "word": "Trick",
+    "definition": "a trick; a clever knack for getting something right",
+    "type": "noun"
+   },
+   {
+    "word": "drängeln",
+    "definition": "to push and jostle; to impatiently press forward",
+    "type": "verb"
+   },
+   {
+    "word": "dableiben",
+    "definition": "to stay put; to remain where you are instead of leaving",
+    "type": "verb"
+   },
+   {
+    "word": "nachdenken",
+    "surface": "nachzudenken",
+    "definition": "to think something over carefully in your own mind",
+    "type": "verb"
+   },
+   {
+    "word": "eine von hier",
+    "definition": "one of the locals; someone who truly belongs here",
+    "type": "expression"
+   },
+   {
+    "word": "angenehm",
+    "definition": "pleasant; nice and thoroughly agreeable to be around",
+    "type": "adjective"
+   }
+  ]
+ }
+]
