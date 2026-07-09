@@ -141,6 +141,22 @@ if printf '%s' "$COMMAND" | grep -qE '\bvercel[[:space:]]+env[[:space:]]+rm\b'; 
     is_authorized || block "vercel env rm deletes a production environment variable. Confirm with the user first."
 fi
 
+# 5b. Hard-block: cover generation outside the locked style path.
+#     The user-approved style lives in scripts/cover-style.json and is
+#     enforced ONLY by scripts/generateCover.ts, which ALWAYS prepends
+#     styleBlock (adults 25-55, no elderly/children, zero text/lettering,
+#     flat-vector fine linework). Any other Flux/cover invocation, a
+#     free-form prompt, a raw generateFluxImageBuffer call, or the old
+#     generateStoryCoverFromPrompt, is refused so a cover can NEVER ship
+#     in an unapproved style. No env-var bypass: the whole point is that
+#     the model cannot opt out of the locked style.
+if printf '%s' "$COMMAND" | grep -qE '\b(tsx|ts-node|node|npx)\b' \
+   && printf '%s' "$COMMAND" | grep -qE '(generateStoryCoverFromPrompt|generateFluxImageBuffer|buildCoverPrompt|generateStoryCover\.ts)'; then
+    if ! printf '%s' "$COMMAND" | grep -qE 'generateCover\.ts'; then
+        block "Cover generation must go through scripts/generateCover.ts, which locks the user-approved style (scripts/cover-style.json: flat-vector fine linework, adults 25-55 only, zero text). Free-form cover prompts, generateStoryCoverFromPrompt and raw generateFluxImageBuffer are disabled. Write the SCENE only to a file and run: tsx scripts/generateCover.ts <storyId> <scene-file> --set"
+    fi
+fi
+
 # 6. Hard-block: git push --force / --force-with-lease / -f.
 #    No env-var bypass from inside Claude. If a force push is truly
 #    needed, the user runs it from their own terminal.

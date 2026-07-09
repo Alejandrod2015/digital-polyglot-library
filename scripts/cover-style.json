@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "styleName": "B - flat-vector fine linework (editorial)",
+  "approvedBy": "user",
+  "approvedAt": "2026-07-09",
+  "styleBlock": "FLAT-VECTOR editorial illustration: fine, confident, thin dark linework over clean flat colour fills; crisp modern vector look; stylised grown-up faces. Warm, bright morning-to-daytime light and a vivid, saturated palette of amber, terracotta, sage green, sky blue and cream. Landscape book-cover framing with a generous, confident composition. HARD GUARD-RAILS, never violate: absolutely NO text, letters, numbers, words, labels, signage-with-writing or logos anywhere in the image (blank signs only). EVERY person is an adult aged roughly 25 to 55, NEVER elderly, NEVER children or teenagers. NO 3D or Pixar/Disney render, NO cartoon mascot, NO Duolingo/Babbel app look, NO anime or kawaii cuteness, NO photorealism, NO painterly gouache, NO sepia, vintage or film grain, NO dark, gloomy or somber tones.",
+  "references": {
+    "buergeramt-neukoelln-sieben-uhr": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/images/b-rgeramt-neuk-lln-sieben-uhr-custom-flux-1783586599081.png",
+    "der-spaeti-in-der-weserstrasse": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/images/der-sp-ti-in-der-weserstra-e-custom-flux-1783587258766.png",
+    "zwei-stempel-bis-zur-existenz": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/images/zwei-stempel-bis-zur-existenz-custom-flux-1783587283974.png"
+  },
+  "note": "Single source of truth for cover style. scripts/generateCover.ts ALWAYS prepends styleBlock; the model only supplies the scene. The pre-bash-guard hook blocks any cover generation that does not go through generateCover.ts. To change the style, the user approves a new reference and this file is edited (visible in the diff)."
+}
