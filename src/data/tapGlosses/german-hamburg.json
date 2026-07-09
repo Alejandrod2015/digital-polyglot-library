@@ -1,0 +1,6037 @@
+{
+ "slugs": [
+  "moin-heisst-den-ganzen-tag",
+  "es-gibt-kein-schlechtes-wetter",
+  "hummel-hummel-mors-mors",
+  "anteile-statt-miete",
+  "bloss-nicht-schwaermen",
+  "der-hinterhof-kennt-dich",
+  "ein-kaufmann-ein-wort",
+  "understatement-verkauft",
+  "feierabend-an-der-elbe",
+  "das-du-muss-man-anbieten",
+  "ueberfall-mit-wein",
+  "man-fragt-nicht",
+  "der-fischmarkt-schreit",
+  "ein-franzbroetchen-ist-keine-schnecke",
+  "elbe-oder-alster",
+  "probetoern",
+  "am-millerntor-wird-geschrien",
+  "merles-zweiter-schluessel",
+  "wenn-das-wasser-kehrt",
+  "grog-gegen-alles",
+  "moin-neuland"
+ ],
+ "glosses": {
+  "nora": {
+   "g": "Nora, the newcomer protagonist",
+   "t": "other"
+  },
+  "zieht": {
+   "g": "pulls; zieht nach Leipzig = moves; der Herd zieht = drifts (ziehen)",
+   "t": "verb"
+  },
+  "ihren": {
+   "g": "her, your (declined)",
+   "t": "pronoun"
+  },
+  "koffer": {
+   "g": "a suitcase",
+   "t": "noun"
+  },
+  "über": {
+   "g": "over, across; about",
+   "t": "preposition"
+  },
+  "das": {
+   "g": "the; that",
+   "t": "article"
+  },
+  "kopfsteinpflaster": {
+   "g": "cobblestones, cobbled paving",
+   "t": "noun"
+  },
+  "von": {
+   "g": "from, of",
+   "t": "preposition"
+  },
+  "ottensen": {
+   "g": "Ottensen, a Hamburg district",
+   "t": "other"
+  },
+  "und": {
+   "g": "and",
+   "t": "conjunction"
+  },
+  "nimmt": {
+   "g": "takes (nehmen)",
+   "t": "verb"
+  },
+  "sich": {
+   "g": "oneself (reflexive)",
+   "t": "pronoun"
+  },
+  "vor": {
+   "g": "before, in front of",
+   "t": "preposition"
+  },
+  "in": {
+   "g": "in",
+   "t": "preposition"
+  },
+  "hamburg": {
+   "g": "Hamburg",
+   "t": "other"
+  },
+  "besonders": {
+   "g": "especially, particularly",
+   "t": "adverb"
+  },
+  "höflich": {
+   "g": "polite",
+   "t": "adjective"
+  },
+  "aufzutreten": {
+   "g": "to appear, behave (auftreten)",
+   "t": "verb"
+  },
+  "ole": {
+   "g": "Ole, Nora's colleague-friend",
+   "t": "other"
+  },
+  "ihr": {
+   "g": "her; their",
+   "t": "pronoun"
+  },
+  "neuer": {
+   "g": "new (neu, declined)",
+   "t": "adjective"
+  },
+  "kollege": {
+   "g": "colleague, male (der Kollege)",
+   "t": "noun"
+  },
+  "holt": {
+   "g": "fetches, gets (holen)",
+   "t": "verb"
+  },
+  "sie": {
+   "g": "she; they; you (formal)",
+   "t": "pronoun"
+  },
+  "ab": {
+   "g": "from (a point in time); ab 6:58 = from 6:58 on",
+   "t": "preposition"
+  },
+  "grinst": {
+   "g": "grins (grinsen)",
+   "t": "verb"
+  },
+  "schon": {
+   "g": "already",
+   "t": "adverb"
+  },
+  "bevor": {
+   "g": "before",
+   "t": "conjunction"
+  },
+  "den": {
+   "g": "the (accusative)",
+   "t": "article"
+  },
+  "mund": {
+   "g": "mouth",
+   "t": "noun"
+  },
+  "aufmacht": {
+   "g": "opens (aufmachen)",
+   "t": "verb"
+  },
+  "guten": {
+   "g": "good (gut, declined)",
+   "t": "adjective"
+  },
+  "morgen": {
+   "g": "morning; heute Morgen = this morning",
+   "t": "adverb"
+  },
+  "was": {
+   "g": "what",
+   "t": "pronoun"
+  },
+  "für": {
+   "g": "for",
+   "t": "preposition"
+  },
+  "ein": {
+   "g": "a, an; one",
+   "t": "article"
+  },
+  "wunderschöner": {
+   "g": "a beautiful (wunderschön)",
+   "t": "adjective"
+  },
+  "frischer": {
+   "g": "fresh, crisp (frisch)",
+   "t": "adjective"
+  },
+  "vormittag": {
+   "g": "morning, forenoon (der Vormittag)",
+   "t": "noun"
+  },
+  "hier": {
+   "g": "here",
+   "t": "adverb"
+  },
+  "im": {
+   "g": "in the (in + dem)",
+   "t": "preposition"
+  },
+  "norden": {
+   "g": "the North",
+   "t": "noun"
+  },
+  "moin": {
+   "g": "Moin, the all-day northern greeting",
+   "t": "expression"
+  },
+  "nur": {
+   "g": "only",
+   "t": "adverb"
+  },
+  "ich": {
+   "g": "I",
+   "t": "pronoun"
+  },
+  "habe": {
+   "g": "have (haben)",
+   "t": "verb"
+  },
+  "mir": {
+   "g": "me (dative)",
+   "t": "pronoun"
+  },
+  "eine": {
+   "g": "a, an",
+   "t": "article"
+  },
+  "ganze": {
+   "g": "whole (ganz)",
+   "t": "adjective"
+  },
+  "begrüßung": {
+   "g": "a greeting",
+   "t": "noun"
+  },
+  "zurechtgelegt": {
+   "g": "prepared, worked out (zurechtlegen)",
+   "t": "verb"
+  },
+  "genau": {
+   "g": "exactly",
+   "t": "adverb"
+  },
+  "ist": {
+   "g": "is (sein)",
+   "t": "verb"
+  },
+  "der": {
+   "g": "the; who, which",
+   "t": "article"
+  },
+  "fehler": {
+   "g": "mistake (der Fehler)",
+   "t": "noun"
+  },
+  "reicht": {
+   "g": "is enough (reichen)",
+   "t": "verb"
+  },
+  "wort": {
+   "g": "word (das Wort)",
+   "t": "noun"
+  },
+  "passt": {
+   "g": "fits, suits (passen)",
+   "t": "verb"
+  },
+  "morgens": {
+   "g": "in the mornings",
+   "t": "adverb"
+  },
+  "mittags": {
+   "g": "at midday, at lunchtime",
+   "t": "adverb"
+  },
+  "abends": {
+   "g": "in the evening(s)",
+   "t": "adverb"
+  },
+  "einziges": {
+   "g": "single, only (einzig, declined)",
+   "t": "adjective"
+  },
+  "ganzen": {
+   "g": "whole, all the (colloquial)",
+   "t": "adjective"
+  },
+  "tag": {
+   "g": "day (der Tag)",
+   "t": "noun"
+  },
+  "kommt": {
+   "g": "comes (kommen)",
+   "t": "verb"
+  },
+  "fast": {
+   "g": "almost, nearly",
+   "t": "adverb"
+  },
+  "unhöflich": {
+   "g": "rude, impolite",
+   "t": "adjective"
+  },
+  "bei": {
+   "g": "at, near, with",
+   "t": "preposition"
+  },
+  "uns": {
+   "g": "us",
+   "t": "pronoun"
+  },
+  "es": {
+   "g": "it",
+   "t": "pronoun"
+  },
+  "gegenteil": {
+   "g": "the opposite",
+   "t": "noun"
+  },
+  "wer": {
+   "g": "who; whoever",
+   "t": "pronoun"
+  },
+  "viele": {
+   "g": "many",
+   "t": "pronoun"
+  },
+  "worte": {
+   "g": "words (das Wort)",
+   "t": "noun"
+  },
+  "macht": {
+   "g": "makes, does (machen)",
+   "t": "verb"
+  },
+  "hält": {
+   "g": "holds (halten)",
+   "t": "verb"
+  },
+  "die": {
+   "g": "the; who, which",
+   "t": "article"
+  },
+  "anderen": {
+   "g": "other (declined)",
+   "t": "pronoun"
+  },
+  "auf": {
+   "g": "on, onto",
+   "t": "preposition"
+  },
+  "gehen": {
+   "g": "to go, walk",
+   "t": "verb"
+  },
+  "an": {
+   "g": "at, on, to",
+   "t": "preposition"
+  },
+  "einer": {
+   "g": "one (of them); a (dative)",
+   "t": "article"
+  },
+  "bäckerei": {
+   "g": "a bakery",
+   "t": "noun"
+  },
+  "vorbei": {
+   "g": "over, past; es ist vorbei",
+   "t": "adverb"
+  },
+  "hinter": {
+   "g": "behind",
+   "t": "preposition"
+  },
+  "theke": {
+   "g": "counter (die Theke)",
+   "t": "noun"
+  },
+  "stapelt": {
+   "g": "stacks (stapeln)",
+   "t": "verb"
+  },
+  "wiebke": {
+   "g": "Wiebke, the baker's first name",
+   "t": "other"
+  },
+  "frischen": {
+   "g": "fresh (frisch)",
+   "t": "adjective"
+  },
+  "franzbrötchen": {
+   "g": "Franzbrötchen, a flat Hamburg cinnamon pastry",
+   "t": "noun"
+  },
+  "darf": {
+   "g": "may, is allowed to (dürfen)",
+   "t": "verb"
+  },
+  "sein": {
+   "g": "to be; also: his",
+   "t": "verb"
+  },
+  "nehme": {
+   "g": "take (nehmen); nehme ich an = I assume",
+   "t": "verb"
+  },
+  "zwei": {
+   "g": "two",
+   "t": "number"
+  },
+  "diesen": {
+   "g": "this (accusative)",
+   "t": "pronoun"
+  },
+  "zimtigen": {
+   "g": "cinnamony (zimtig)",
+   "t": "adjective"
+  },
+  "teilchen": {
+   "g": "little pastries (Teilchen)",
+   "t": "noun"
+  },
+  "ihnen": {
+   "g": "you (formal, dative); them",
+   "t": "pronoun"
+  },
+  "noch": {
+   "g": "still, yet; noch vierzehn = fourteen more",
+   "t": "adverb"
+  },
+  "einen": {
+   "g": "a, an (accusative)",
+   "t": "article"
+  },
+  "schönen": {
+   "g": "nice, lovely (schön)",
+   "t": "adjective"
+  },
+  "nachmittag": {
+   "g": "afternoon (der Nachmittag)",
+   "t": "noun"
+  },
+  "sagen": {
+   "g": "to say",
+   "t": "verb"
+  },
+  "auch": {
+   "g": "also, too",
+   "t": "adverb"
+  },
+  "nachmittags": {
+   "g": "in the afternoon(s)",
+   "t": "adverb"
+  },
+  "doch": {
+   "g": "though, after all (emphasis particle)",
+   "t": "adverb"
+  },
+  "längst": {
+   "g": "long since",
+   "t": "adverb"
+  },
+  "nach": {
+   "g": "after; to; nach Hause = home",
+   "t": "preposition"
+  },
+  "dem": {
+   "g": "the (dative)",
+   "t": "article"
+  },
+  "mittag": {
+   "g": "midday, noon",
+   "t": "noun"
+  },
+  "hat": {
+   "g": "has (haben)",
+   "t": "verb"
+  },
+  "mit": {
+   "g": "with",
+   "t": "preposition"
+  },
+  "uhrzeit": {
+   "g": "time of day (die Uhrzeit)",
+   "t": "noun"
+  },
+  "nichts": {
+   "g": "nothing",
+   "t": "pronoun"
+  },
+  "zu": {
+   "g": "to; too; zu Türmen = into towers",
+   "t": "preposition"
+  },
+  "tun": {
+   "g": "to do",
+   "t": "verb"
+  },
+  "heißt": {
+   "g": "means, is called (heißen)",
+   "t": "verb"
+  },
+  "einfach": {
+   "g": "simply, just; easy",
+   "t": "adverb"
+  },
+  "sehe": {
+   "g": "I see (sehen)",
+   "t": "verb"
+  },
+  "dich": {
+   "g": "you (accusative)",
+   "t": "pronoun"
+  },
+  "wenn": {
+   "g": "if, when",
+   "t": "conjunction"
+  },
+  "komme": {
+   "g": "I come (kommen)",
+   "t": "verb"
+  },
+  "kurz": {
+   "g": "short, brief",
+   "t": "adjective"
+  },
+  "feierabend": {
+   "g": "end of the workday, sacred free time (der Feierabend)",
+   "t": "noun"
+  },
+  "dann": {
+   "g": "then",
+   "t": "adverb"
+  },
+  "sage": {
+   "g": "say (sagen, ich form)",
+   "t": "verb"
+  },
+  "du": {
+   "g": "you",
+   "t": "pronoun"
+  },
+  "sagst": {
+   "g": "you say (sagen)",
+   "t": "verb"
+  },
+  "gilt": {
+   "g": "gilt als = is considered as (gelten)",
+   "t": "verb"
+  },
+  "als": {
+   "g": "as; than; when",
+   "t": "conjunction"
+  },
+  "geschwätz": {
+   "g": "idle chatter",
+   "t": "noun"
+  },
+  "recht": {
+   "g": "recht geben = to prove someone right (das Recht)",
+   "t": "noun"
+  },
+  "giltst": {
+   "g": "you count as, are seen as (gelten)",
+   "t": "verb"
+  },
+  "sofort": {
+   "g": "immediately",
+   "t": "adverb"
+  },
+  "gesprächig": {
+   "g": "talkative, chatty",
+   "t": "adjective"
+  },
+  "hause": {
+   "g": "nach Hause = home(ward)",
+   "t": "expression"
+  },
+  "fragt": {
+   "g": "asks (fragen)",
+   "t": "verb"
+  },
+  "man": {
+   "g": "one, you (impersonal)",
+   "t": "pronoun"
+  },
+  "erst": {
+   "g": "only, not until; erst mal = for now",
+   "t": "adverb"
+  },
+  "befinden": {
+   "g": "how one is, one's wellbeing",
+   "t": "noun"
+  },
+  "wetter": {
+   "g": "weather (das Wetter)",
+   "t": "noun"
+  },
+  "familie": {
+   "g": "family",
+   "t": "noun"
+  },
+  "siehst": {
+   "g": "du siehst nicht aus = you don't look like (aussehen)",
+   "t": "verb"
+  },
+  "selbst": {
+   "g": "even; myself/itself",
+   "t": "adverb"
+  },
+  "fragen": {
+   "g": "to ask",
+   "t": "verb"
+  },
+  "wir": {
+   "g": "we",
+   "t": "pronoun"
+  },
+  "kennen": {
+   "g": "to know (a person, place)",
+   "t": "verb"
+  },
+  "paar": {
+   "g": "ein paar = a few, a couple of",
+   "t": "pronoun"
+  },
+  "jahren": {
+   "g": "years (das Jahr, dative)",
+   "t": "noun"
+  },
+  "vielleicht": {
+   "g": "maybe, perhaps",
+   "t": "adverb"
+  },
+  "nehmt": {
+   "g": "you take (nehmen)",
+   "t": "verb"
+  },
+  "zurückhaltung": {
+   "g": "reserve, restraint",
+   "t": "noun"
+  },
+  "wirklich": {
+   "g": "really",
+   "t": "adverb"
+  },
+  "ernst": {
+   "g": "serious (der Ernst); Dein Ernst? = seriously?",
+   "t": "noun"
+  },
+  "sind": {
+   "g": "are (sein)",
+   "t": "verb"
+  },
+  "sparsam": {
+   "g": "sparing, thrifty",
+   "t": "adjective"
+  },
+  "worten": {
+   "g": "words (Wort)",
+   "t": "noun"
+  },
+  "nicht": {
+   "g": "not",
+   "t": "adverb"
+  },
+  "herzen": {
+   "g": "heart (Herz)",
+   "t": "noun"
+  },
+  "verwechseln": {
+   "g": "to mix up, confuse",
+   "t": "verb"
+  },
+  "zugezogenen": {
+   "g": "newcomers (Zugezogene)",
+   "t": "noun"
+  },
+  "dauernd": {
+   "g": "constantly, all the time",
+   "t": "adverb"
+  },
+  "also": {
+   "g": "so, therefore",
+   "t": "conjunction"
+  },
+  "übe": {
+   "g": "I practise (üben)",
+   "t": "verb"
+  },
+  "jetzt": {
+   "g": "now",
+   "t": "adverb"
+  },
+  "kürzeste": {
+   "g": "the shortest (kurz)",
+   "t": "adjective"
+  },
+  "meines": {
+   "g": "of my (mein)",
+   "t": "pronoun"
+  },
+  "lebens": {
+   "g": "of life (Leben)",
+   "t": "noun"
+  },
+  "sag": {
+   "g": "say (sagen, imperative)",
+   "t": "verb"
+  },
+  "vorbeigehen": {
+   "g": "im Vorbeigehen = in passing",
+   "t": "noun"
+  },
+  "ohne": {
+   "g": "without",
+   "t": "preposition"
+  },
+  "stehen": {
+   "g": "to stand",
+   "t": "verb"
+  },
+  "bleiben": {
+   "g": "to stay, remain",
+   "t": "verb"
+  },
+  "klingt": {
+   "g": "sounds (klingen)",
+   "t": "verb"
+  },
+  "echt": {
+   "g": "real, genuine",
+   "t": "adjective"
+  },
+  "na": {
+   "g": "well; na gut = alright then",
+   "t": "adverb",
+   "r": "colloquial"
+  },
+  "wie": {
+   "g": "how; like, as",
+   "t": "conjunction"
+  },
+  "regen": {
+   "g": "rain",
+   "t": "noun"
+  },
+  "fällt": {
+   "g": "falls; die Entscheidung fällt = the decision is made",
+   "t": "verb"
+  },
+  "seit": {
+   "g": "since, for (a time span)",
+   "t": "preposition"
+  },
+  "stunden": {
+   "g": "hours (die Stunde)",
+   "t": "noun"
+  },
+  "seitwärts": {
+   "g": "sideways",
+   "t": "adverb"
+  },
+  "steht": {
+   "g": "stands; steht in = is written in (stehen)",
+   "t": "verb"
+  },
+  "schirm": {
+   "g": "an umbrella",
+   "t": "noun"
+  },
+  "unter": {
+   "g": "under",
+   "t": "preposition"
+  },
+  "einem": {
+   "g": "a, an (dative)",
+   "t": "article"
+  },
+  "vordach": {
+   "g": "a canopy, porch roof",
+   "t": "noun"
+  },
+  "schanze": {
+   "g": "the Schanze, a Hamburg district",
+   "t": "other"
+  },
+  "schlendert": {
+   "g": "strolls, saunters (schlendern)",
+   "t": "verb"
+  },
+  "gelben": {
+   "g": "yellow (gelb)",
+   "t": "adjective"
+  },
+  "ölmantel": {
+   "g": "an oilskin coat",
+   "t": "noun"
+  },
+  "heran": {
+   "g": "over, closer (this way)",
+   "t": "adverb"
+  },
+  "wäre": {
+   "g": "would be (sein, Konjunktiv II)",
+   "t": "verb"
+  },
+  "bestes": {
+   "g": "best (gut)",
+   "t": "adjective"
+  },
+  "hältst": {
+   "g": "you hold, bear (halten)",
+   "t": "verb"
+  },
+  "aus": {
+   "g": "out, out of; here part of: spuckt ... aus (ausspucken = to spit out)",
+   "t": "preposition"
+  },
+  "bin": {
+   "g": "am (sein)",
+   "t": "verb"
+  },
+  "komplett": {
+   "g": "completely",
+   "t": "adverb"
+  },
+  "durchnässt": {
+   "g": "soaked through",
+   "t": "adjective"
+  },
+  "friere": {
+   "g": "I'm freezing, cold (frieren)",
+   "t": "verb"
+  },
+  "hast": {
+   "g": "have (haben, du form)",
+   "t": "verb"
+  },
+  "falsche": {
+   "g": "wrong, false (falsch)",
+   "t": "adjective"
+  },
+  "problem": {
+   "g": "problem (das Problem)",
+   "t": "noun"
+  },
+  "schuld": {
+   "g": "at fault, to blame",
+   "t": "noun"
+  },
+  "sondern": {
+   "g": "but rather",
+   "t": "conjunction"
+  },
+  "deine": {
+   "g": "your",
+   "t": "pronoun"
+  },
+  "jacke": {
+   "g": "a jacket",
+   "t": "noun"
+  },
+  "meine": {
+   "g": "my",
+   "t": "pronoun"
+  },
+  "teuer": {
+   "g": "expensive",
+   "t": "adjective"
+  },
+  "angeblich": {
+   "g": "supposedly, allegedly",
+   "t": "adverb"
+  },
+  "wasserdicht": {
+   "g": "waterproof",
+   "t": "adjective"
+  },
+  "zählt": {
+   "g": "counts (zählen); zählt nicht = does not count",
+   "t": "verb"
+  },
+  "test": {
+   "g": "a test",
+   "t": "noun"
+  },
+  "übersteht": {
+   "g": "withstands, gets through (überstehen)",
+   "t": "verb"
+  },
+  "komm": {
+   "g": "come (kommen)",
+   "t": "verb"
+  },
+  "besorgen": {
+   "g": "to get, obtain, sort out",
+   "t": "verb"
+  },
+  "dir": {
+   "g": "you (dative)",
+   "t": "pronoun"
+  },
+  "ordentliches": {
+   "g": "something proper (ordentlich)",
+   "t": "adjective"
+  },
+  "laden": {
+   "g": "shop (der Laden); Seite laden = load the page",
+   "t": "verb"
+  },
+  "hängt": {
+   "g": "hangs (hängen)",
+   "t": "verb"
+  },
+  "wand": {
+   "g": "a wall",
+   "t": "noun"
+  },
+  "voller": {
+   "g": "full of (voll)",
+   "t": "adjective"
+  },
+  "gelber": {
+   "g": "yellow (gelb)",
+   "t": "adjective"
+  },
+  "regenmäntel": {
+   "g": "raincoats (Regenmantel)",
+   "t": "noun"
+  },
+  "verkäuferin": {
+   "g": "a saleswoman, shop assistant",
+   "t": "noun"
+  },
+  "mustert": {
+   "g": "inspects critically from head to toe (mustern)",
+   "t": "verb"
+  },
+  "noras": {
+   "g": "Nora's",
+   "t": "other"
+  },
+  "durchweichte": {
+   "g": "sodden, soggy (durchweicht)",
+   "t": "adjective"
+  },
+  "schuhe": {
+   "g": "shoes (Schuh)",
+   "t": "noun"
+  },
+  "neu": {
+   "g": "new",
+   "t": "adjective"
+  },
+  "richtig": {
+   "g": "right, correct",
+   "t": "adjective"
+  },
+  "sieht": {
+   "g": "sees (sehen)",
+   "t": "verb"
+  },
+  "schuhen": {
+   "g": "shoes (Schuh)",
+   "t": "noun"
+  },
+  "so": {
+   "g": "so, like that",
+   "t": "adverb"
+  },
+  "offensichtlich": {
+   "g": "obvious(ly)",
+   "t": "adjective"
+  },
+  "dachte": {
+   "g": "thought (denken)",
+   "t": "verb"
+  },
+  "ganz": {
+   "g": "completely, quite",
+   "t": "adverb"
+  },
+  "gut": {
+   "g": "good; na gut = alright then",
+   "t": "adverb"
+  },
+  "vorbereitet": {
+   "g": "prepared (vorbereiten)",
+   "t": "adjective"
+  },
+  "friesennerz": {
+   "g": "a yellow oilskin rain jacket",
+   "t": "noun"
+  },
+  "gummistiefel": {
+   "g": "rubber boots, wellies",
+   "t": "noun"
+  },
+  "redest": {
+   "g": "you talk (reden)",
+   "t": "verb"
+  },
+  "nie": {
+   "g": "never",
+   "t": "adverb"
+  },
+  "wieder": {
+   "g": "again",
+   "t": "adverb"
+  },
+  "übers": {
+   "g": "over the (über das)",
+   "t": "preposition"
+  },
+  "sagt": {
+   "g": "says (sagen)",
+   "t": "verb"
+  },
+  "gibt": {
+   "g": "gives (geben); es gibt = there is",
+   "t": "verb"
+  },
+  "kein": {
+   "g": "no, not a",
+   "t": "article"
+  },
+  "schlechtes": {
+   "g": "bad (schlecht)",
+   "t": "adjective"
+  },
+  "kleidung": {
+   "g": "clothing",
+   "t": "noun"
+  },
+  "lebensmotto": {
+   "g": "a motto to live by",
+   "t": "noun"
+  },
+  "eins": {
+   "g": "one",
+   "t": "number"
+  },
+  "sonne": {
+   "g": "sun (die Sonne)",
+   "t": "noun"
+  },
+  "wartet": {
+   "g": "waits (warten)",
+   "t": "verb"
+  },
+  "vergeblich": {
+   "g": "in vain, to no avail",
+   "t": "adverb"
+  },
+  "himmel": {
+   "g": "sky (der Himmel)",
+   "t": "noun"
+  },
+  "ändert": {
+   "g": "changes (ändern)",
+   "t": "verb"
+  },
+  "änderst": {
+   "g": "you change (ändern)",
+   "t": "verb"
+  },
+  "leute": {
+   "g": "people",
+   "t": "noun"
+  },
+  "joggen": {
+   "g": "to jog",
+   "t": "verb"
+  },
+  "diesem": {
+   "g": "this (dative)",
+   "t": "pronoun"
+  },
+  "unterwegs": {
+   "g": "on the way, out and about",
+   "t": "adverb"
+  },
+  "gesehen": {
+   "g": "seen (sehen)",
+   "t": "verb"
+  },
+  "natürlich": {
+   "g": "of course, naturally",
+   "t": "adverb"
+  },
+  "absagen": {
+   "g": "rejections (die Absage)",
+   "t": "noun"
+  },
+  "albern": {
+   "g": "silly, foolish",
+   "t": "adjective"
+  },
+  "käme": {
+   "g": "would come (kommen)",
+   "t": "verb"
+  },
+  "oktober": {
+   "g": "October",
+   "t": "noun"
+  },
+  "bis": {
+   "g": "until, by",
+   "t": "preposition"
+  },
+  "april": {
+   "g": "April",
+   "t": "noun"
+  },
+  "kaum": {
+   "g": "hardly, barely",
+   "t": "adverb"
+  },
+  "tür": {
+   "g": "door (die Tür)",
+   "t": "noun"
+  },
+  "andere": {
+   "g": "other",
+   "t": "pronoun"
+  },
+  "würden": {
+   "g": "would (werden)",
+   "t": "verb"
+  },
+  "gar": {
+   "g": "gar nichts = nothing at all",
+   "t": "adverb"
+  },
+  "bett": {
+   "g": "a bed",
+   "t": "noun"
+  },
+  "wagen": {
+   "g": "to dare, venture",
+   "t": "verb"
+  },
+  "hättet": {
+   "g": "you would have (haben)",
+   "t": "verb"
+  },
+  "echtes": {
+   "g": "a real, genuine (echt)",
+   "t": "adjective"
+  },
+  "zieh": {
+   "g": "pull; put on (ziehen)",
+   "t": "verb"
+  },
+  "nerz": {
+   "g": "the Friesennerz rain jacket (Nerz)",
+   "t": "noun"
+  },
+  "geh": {
+   "g": "go! (gehen)",
+   "t": "verb"
+  },
+  "raus": {
+   "g": "out; Handy raus = phone out",
+   "t": "adverb",
+   "r": "colloquial"
+  },
+  "wird": {
+   "g": "becomes; is being (werden)",
+   "t": "verb"
+  },
+  "gleichgültig": {
+   "g": "indifferent, not bothered",
+   "t": "adjective"
+  },
+  "schlüpft": {
+   "g": "slips into (schlüpfen)",
+   "t": "verb"
+  },
+  "mantel": {
+   "g": "coat (der Mantel)",
+   "t": "noun"
+  },
+  "tritt": {
+   "g": "steps; joins (treten, beitreten)",
+   "t": "verb"
+  },
+  "hinaus": {
+   "g": "out, outside",
+   "t": "adverb"
+  },
+  "weiter": {
+   "g": "further, on; rechne du weiter = you keep counting",
+   "t": "adverb"
+  },
+  "aber": {
+   "g": "but",
+   "t": "conjunction"
+  },
+  "er": {
+   "g": "he",
+   "t": "pronoun"
+  },
+  "erreicht": {
+   "g": "reaches (erreichen)",
+   "t": "verb"
+  },
+  "mehr": {
+   "g": "more; nicht mehr = no longer",
+   "t": "adverb"
+  },
+  "unglaublich": {
+   "g": "unbelievable",
+   "t": "adjective"
+  },
+  "merke": {
+   "g": "I notice (merken)",
+   "t": "verb"
+  },
+  "ihn": {
+   "g": "him (accusative)",
+   "t": "pronoun"
+  },
+  "willkommen": {
+   "g": "welcome",
+   "t": "adjective"
+  },
+  "fehlt": {
+   "g": "is missing (fehlen)",
+   "t": "verb"
+  },
+  "dass": {
+   "g": "that (conjunction)",
+   "t": "conjunction"
+  },
+  "irgendwann": {
+   "g": "at some point, eventually",
+   "t": "adverb"
+  },
+  "sogar": {
+   "g": "even",
+   "t": "adverb"
+  },
+  "magst": {
+   "g": "you like (mögen)",
+   "t": "verb"
+  },
+  "wirft": {
+   "g": "throws (werfen)",
+   "t": "verb"
+  },
+  "stammkunde": {
+   "g": "a regular customer",
+   "t": "noun"
+  },
+  "fröhliches": {
+   "g": "a cheerful (fröhlich)",
+   "t": "adjective"
+  },
+  "hummel": {
+   "g": "Hummel Hummel, a Hamburg call/greeting",
+   "t": "expression"
+  },
+  "hin": {
+   "g": "there (direction); allein hin = there alone",
+   "t": "adverb"
+  },
+  "schießt": {
+   "g": "shoots; fires back (schießen)",
+   "t": "verb"
+  },
+  "zurück": {
+   "g": "back; kehrt ... zurück = returns",
+   "t": "adverb"
+  },
+  "mors": {
+   "g": "Mors Mors, the reply to Hummel Hummel",
+   "t": "expression"
+  },
+  "bleibt": {
+   "g": "stays, remains (bleiben)",
+   "t": "verb"
+  },
+  "ihrem": {
+   "g": "her; your, formal (dative)",
+   "t": "pronoun"
+  },
+  "ratlos": {
+   "g": "at a loss, baffled",
+   "t": "adjective"
+  },
+  "war": {
+   "g": "was (sein)",
+   "t": "verb"
+  },
+  "denn": {
+   "g": "then, so (in questions)",
+   "t": "conjunction"
+  },
+  "geheimes": {
+   "g": "a secret (geheim)",
+   "t": "adjective"
+  },
+  "passwort": {
+   "g": "a password",
+   "t": "noun"
+  },
+  "ähnlich": {
+   "g": "similar; so ähnlich = something like that",
+   "t": "adjective"
+  },
+  "richtige": {
+   "g": "the right, correct (richtig)",
+   "t": "adjective"
+  },
+  "antwort": {
+   "g": "answer, reply (die Antwort)",
+   "t": "noun"
+  },
+  "gehört": {
+   "g": "belongs (gehören)",
+   "t": "verb"
+  },
+  "dazu": {
+   "g": "to it; along with it",
+   "t": "adverb"
+  },
+  "bedeutet": {
+   "g": "means (bedeuten)",
+   "t": "verb"
+  },
+  "mich": {
+   "g": "me (accusative)",
+   "t": "pronoun"
+  },
+  "reinem": {
+   "g": "pure (rein); reiner Unsinn",
+   "t": "adjective"
+  },
+  "unsinn": {
+   "g": "nonsense",
+   "t": "noun"
+  },
+  "geht": {
+   "g": "goes; Geht vor = go ahead (gehen)",
+   "t": "verb"
+  },
+  "hans": {
+   "g": "Hans, a first name (Hans Hummel)",
+   "t": "other"
+  },
+  "wasserträger": {
+   "g": "a water carrier",
+   "t": "noun"
+  },
+  "früher": {
+   "g": "earlier, in the past",
+   "t": "adverb"
+  },
+  "riefen": {
+   "g": "called out (rufen)",
+   "t": "verb"
+  },
+  "ihm": {
+   "g": "him (dative)",
+   "t": "pronoun"
+  },
+  "spitznamen": {
+   "g": "nickname (Spitzname)",
+   "t": "noun"
+  },
+  "antwortete": {
+   "g": "answered (antworten)",
+   "t": "verb"
+  },
+  "etwas": {
+   "g": "something",
+   "t": "pronoun"
+  },
+  "unhöflichem": {
+   "g": "something rude (unhöflich)",
+   "t": "adjective"
+  },
+  "ursprünglich": {
+   "g": "originally",
+   "t": "adverb"
+  },
+  "frechheit": {
+   "g": "cheek, impudence",
+   "t": "noun"
+  },
+  "heute": {
+   "g": "today",
+   "t": "adverb"
+  },
+  "gruß": {
+   "g": "a greeting",
+   "t": "noun"
+  },
+  "eingeweihten": {
+   "g": "insiders, those in the know (Eingeweihter)",
+   "t": "noun"
+  },
+  "kontert": {
+   "g": "counters, strikes back (kontern)",
+   "t": "verb"
+  },
+  "herein": {
+   "g": "in, inside",
+   "t": "adverb"
+  },
+  "hört": {
+   "g": "hears (hören); man hört = one hears",
+   "t": "verb"
+  },
+  "stichwort": {
+   "g": "a cue, keyword",
+   "t": "noun"
+  },
+  "bringt": {
+   "g": "brings (bringen)",
+   "t": "verb"
+  },
+  "gerade": {
+   "g": "just now",
+   "t": "adverb"
+  },
+  "wichtigste": {
+   "g": "most important (wichtig, superlative)",
+   "t": "adjective"
+  },
+  "damit": {
+   "g": "with that, thereby",
+   "t": "adverb"
+  },
+  "blamierst": {
+   "g": "embarrass yourself (blamieren)",
+   "t": "verb"
+  },
+  "fischmarkt": {
+   "g": "the fish market",
+   "t": "noun"
+  },
+  "jemand": {
+   "g": "someone",
+   "t": "pronoun"
+  },
+  "testet": {
+   "g": "tests (testen)",
+   "t": "verb"
+  },
+  "einfällt": {
+   "g": "comes to mind (einfallen)",
+   "t": "verb"
+  },
+  "bist": {
+   "g": "are (sein, du form)",
+   "t": "verb"
+  },
+  "enttarnt": {
+   "g": "exposed, unmasked (enttarnen)",
+   "t": "verb"
+  },
+  "zugezogen": {
+   "g": "newly moved in; an incomer",
+   "t": "adjective"
+  },
+  "stelle": {
+   "g": "auf der Stelle = on the spot",
+   "t": "noun"
+  },
+  "hamburger": {
+   "g": "a Hamburger, person from Hamburg",
+   "t": "noun"
+  },
+  "machen": {
+   "g": "to make, do; fertig machen = to finish",
+   "t": "verb"
+  },
+  "gern": {
+   "g": "gladly; hätte gern = would like",
+   "t": "adverb"
+  },
+  "fremder": {
+   "g": "a stranger (Fremder)",
+   "t": "noun"
+  },
+  "beiläufig": {
+   "g": "casually, in passing",
+   "t": "adverb"
+  },
+  "geprüft": {
+   "g": "tested, checked (prüfen)",
+   "t": "verb"
+  },
+  "ob": {
+   "g": "whether, if",
+   "t": "conjunction"
+  },
+  "parat": {
+   "g": "at the ready, to hand",
+   "t": "adjective"
+  },
+  "prüft": {
+   "g": "tests, examines (prüfen)",
+   "t": "verb"
+  },
+  "heimlich": {
+   "g": "secretly",
+   "t": "adverb"
+  },
+  "gemein": {
+   "g": "mean, nasty",
+   "t": "adjective"
+  },
+  "gleichzeitig": {
+   "g": "simultaneously, at the same time",
+   "t": "adverb"
+  },
+  "genial": {
+   "g": "brilliant, ingenious",
+   "t": "adjective"
+  },
+  "zettel": {
+   "g": "note, slip of paper (der Zettel)",
+   "t": "noun"
+  },
+  "keine": {
+   "g": "no, not a (kein)",
+   "t": "article"
+  },
+  "regel": {
+   "g": "rule (die Regel)",
+   "t": "noun"
+  },
+  "ruf": {
+   "g": "call (rufen); a call",
+   "t": "verb"
+  },
+  "weißt": {
+   "g": "know (wissen, du form)",
+   "t": "verb"
+  },
+  "lernt": {
+   "g": "learns (lernen)",
+   "t": "verb"
+  },
+  "schnell": {
+   "g": "fast, quickly",
+   "t": "adjective"
+  },
+  "eben": {
+   "g": "just now; simply, precisely",
+   "t": "adverb"
+  },
+  "zugezogene": {
+   "g": "a newcomer, incomer",
+   "t": "noun"
+  },
+  "kennerin": {
+   "g": "a female expert, connoisseur",
+   "t": "noun"
+  },
+  "weiterer": {
+   "g": "another, a further (weiter)",
+   "t": "adjective"
+  },
+  "kunde": {
+   "g": "a customer",
+   "t": "noun"
+  },
+  "ruft": {
+   "g": "calls (rufen); ruft an = phones",
+   "t": "verb"
+  },
+  "grinsend": {
+   "g": "grinning",
+   "t": "adjective"
+  },
+  "luft": {
+   "g": "air (die Luft); in der Luft = in the air",
+   "t": "noun"
+  },
+  "sitzt": {
+   "g": "sits (sitzen)",
+   "t": "verb"
+  },
+  "rest": {
+   "g": "the rest, remainder (der Rest)",
+   "t": "noun"
+  },
+  "stadt": {
+   "g": "city (die Stadt)",
+   "t": "noun"
+  },
+  "schaffst": {
+   "g": "manage, get done (schaffen)",
+   "t": "verb"
+  },
+  "anzeige": {
+   "g": "display, indicator (die Anzeige)",
+   "t": "noun"
+  },
+  "klang": {
+   "g": "sounded (klingen)",
+   "t": "verb"
+  },
+  "schön": {
+   "g": "nice, lovely",
+   "t": "adjective"
+  },
+  "um": {
+   "g": "at (a time); around",
+   "t": "preposition"
+  },
+  "wahr": {
+   "g": "true; zu schön, um wahr zu sein",
+   "t": "adjective"
+  },
+  "altbau": {
+   "g": "pre-war building: high ceilings, rarely an elevator (der Altbau)",
+   "t": "noun"
+  },
+  "hohe": {
+   "g": "high (hoch)",
+   "t": "adjective"
+  },
+  "decken": {
+   "g": "ceilings (Decke)",
+   "t": "noun"
+  },
+  "günstige": {
+   "g": "cheap, affordable (günstig)",
+   "t": "adjective"
+  },
+  "miete": {
+   "g": "rent (die Miete)",
+   "t": "noun"
+  },
+  "roten": {
+   "g": "red (rot)",
+   "t": "adjective"
+  },
+  "backsteinbau": {
+   "g": "a red-brick building",
+   "t": "noun"
+  },
+  "dessen": {
+   "g": "whose, of which",
+   "t": "pronoun"
+  },
+  "tor": {
+   "g": "a goal; a gate",
+   "t": "noun"
+  },
+  "grüner": {
+   "g": "green (grün)",
+   "t": "adjective"
+  },
+  "innenhof": {
+   "g": "an inner courtyard",
+   "t": "noun"
+  },
+  "liegt": {
+   "g": "lies; is due to (liegen)",
+   "t": "verb"
+  },
+  "frau": {
+   "g": "Mrs.; woman (die Frau)",
+   "t": "noun"
+  },
+  "vom": {
+   "g": "from the (von + dem)",
+   "t": "preposition"
+  },
+  "vorstand": {
+   "g": "board, executive committee",
+   "t": "noun"
+  },
+  "führt": {
+   "g": "leads, guides (führen)",
+   "t": "verb"
+  },
+  "herum": {
+   "g": "around",
+   "t": "adverb"
+  },
+  "greve": {
+   "g": "Greve, the co-op board member's surname",
+   "t": "other"
+  },
+  "da": {
+   "g": "there; da ist einer = there's one",
+   "t": "adverb"
+  },
+  "gleich": {
+   "g": "right away",
+   "t": "adverb"
+  },
+  "vorweg": {
+   "g": "in advance, up front",
+   "t": "adverb"
+  },
+  "vermietet": {
+   "g": "rents out, lets (vermieten)",
+   "t": "verb"
+  },
+  "genossenschaft": {
+   "g": "a housing cooperative",
+   "t": "noun"
+  },
+  "wohnung": {
+   "g": "apartment (die Wohnung)",
+   "t": "noun"
+  },
+  "werden": {
+   "g": "will (future); to become",
+   "t": "verb"
+  },
+  "mitglied": {
+   "g": "member",
+   "t": "noun"
+  },
+  "zeichnen": {
+   "g": "to subscribe to (shares); to draw",
+   "t": "verb"
+  },
+  "anteile": {
+   "g": "shares, stakes (Anteil)",
+   "t": "noun"
+  },
+  "wohnen": {
+   "g": "to live, reside",
+   "t": "verb"
+  },
+  "zur": {
+   "g": "to the (zu + der)",
+   "t": "preposition"
+  },
+  "nutzung": {
+   "g": "use; right of use",
+   "t": "noun"
+  },
+  "unterschied": {
+   "g": "a difference",
+   "t": "noun"
+  },
+  "nacht": {
+   "g": "night (die Nacht)",
+   "t": "noun"
+  },
+  "wirbt": {
+   "g": "advertises (werben)",
+   "t": "verb"
+  },
+  "unser": {
+   "g": "our",
+   "t": "pronoun"
+  },
+  "prinzip": {
+   "g": "principle (das Prinzip)",
+   "t": "noun"
+  },
+  "rendite": {
+   "g": "yield, financial return",
+   "t": "noun"
+  },
+  "spekulation": {
+   "g": "speculation",
+   "t": "noun"
+  },
+  "dafür": {
+   "g": "for that, in exchange",
+   "t": "adverb"
+  },
+  "entscheidet": {
+   "g": "decides (entscheiden)",
+   "t": "verb"
+  },
+  "einzug": {
+   "g": "moving in, move-in",
+   "t": "noun"
+  },
+  "allein": {
+   "g": "alone; here: just (the word alone)",
+   "t": "adverb"
+  },
+  "warteliste": {
+   "g": "a waiting list",
+   "t": "noun"
+  },
+  "frag": {
+   "g": "ask (fragen)",
+   "t": "verb"
+  },
+  "lieber": {
+   "g": "rather, preferably",
+   "t": "adverb"
+  },
+  "lang": {
+   "g": "long; eine Woche lang = for a whole week",
+   "t": "adjective"
+  },
+  "eigentliche": {
+   "g": "the actual, real (eigentlich)",
+   "t": "adjective"
+  },
+  "haken": {
+   "g": "the catch, hidden downside (der Haken)",
+   "t": "noun",
+   "r": "colloquial"
+  },
+  "lange": {
+   "g": "for a long time",
+   "t": "adverb"
+  },
+  "stehe": {
+   "g": "I stand (stehen)",
+   "t": "verb"
+  },
+  "dieser": {
+   "g": "this",
+   "t": "pronoun"
+  },
+  "liste": {
+   "g": "a list; the waiting list",
+   "t": "noun"
+  },
+  "realistisch": {
+   "g": "realistic(ally)",
+   "t": "adjective"
+  },
+  "jahre": {
+   "g": "years (das Jahr)",
+   "t": "noun"
+  },
+  "einzieht": {
+   "g": "moves in (einziehen)",
+   "t": "verb"
+  },
+  "beworben": {
+   "g": "applied (sich bewerben)",
+   "t": "verb"
+  },
+  "brauche": {
+   "g": "need (brauchen)",
+   "t": "verb"
+  },
+  "dach": {
+   "g": "a roof; ein Dach über dem Kopf",
+   "t": "noun"
+  },
+  "kopf": {
+   "g": "head (der Kopf); im Kopf = in her head",
+   "t": "noun"
+  },
+  "rente": {
+   "g": "a pension",
+   "t": "noun"
+  },
+  "verstehe": {
+   "g": "understand (verstehen)",
+   "t": "verb"
+  },
+  "einmal": {
+   "g": "once, one time",
+   "t": "adverb"
+  },
+  "drin": {
+   "g": "inside (colloquial for darin)",
+   "t": "adverb",
+   "r": "colloquial"
+  },
+  "oft": {
+   "g": "often",
+   "t": "adverb"
+  },
+  "leben": {
+   "g": "life (das Leben)",
+   "t": "noun"
+  },
+  "sicherheit": {
+   "g": "security, safety",
+   "t": "noun"
+  },
+  "vorrang": {
+   "g": "priority, precedence",
+   "t": "noun"
+  },
+  "tempo": {
+   "g": "pace, speed",
+   "t": "noun"
+  },
+  "deal": {
+   "g": "the deal",
+   "t": "noun"
+  },
+  "draußen": {
+   "g": "outside",
+   "t": "adverb"
+  },
+  "zahlst": {
+   "g": "you pay (zahlen)",
+   "t": "verb"
+  },
+  "arm": {
+   "g": "arm (der Arm)",
+   "t": "noun"
+  },
+  "fliegst": {
+   "g": "fly; here: get kicked out (fliegen)",
+   "t": "verb"
+  },
+  "drinnen": {
+   "g": "inside",
+   "t": "adverb"
+  },
+  "wenig": {
+   "g": "little, few",
+   "t": "adverb"
+  },
+  "bleibst": {
+   "g": "you stay (bleiben)",
+   "t": "verb"
+  },
+  "günstig": {
+   "g": "cheap, affordable",
+   "t": "adjective"
+  },
+  "sicher": {
+   "g": "surely, certainly; safe",
+   "t": "adverb"
+  },
+  "quälend": {
+   "g": "agonisingly, painfully slow",
+   "t": "adjective"
+  },
+  "langsam": {
+   "g": "slowly; gradually",
+   "t": "adverb"
+  },
+  "wohnungsanzeige": {
+   "g": "a flat listing, property ad",
+   "t": "noun"
+  },
+  "könnte": {
+   "g": "could (können, Konjunktiv II)",
+   "t": "verb"
+  },
+  "tragen": {
+   "g": "to carry; sich eintragen = to sign up",
+   "t": "verb"
+  },
+  "sehen": {
+   "g": "to see",
+   "t": "verb"
+  },
+  "zwischenzeit": {
+   "g": "in der Zwischenzeit = meanwhile",
+   "t": "noun"
+  },
+  "schlafe": {
+   "g": "I sleep (schlafen)",
+   "t": "verb"
+  },
+  "schließlich": {
+   "g": "after all; finally",
+   "t": "adverb"
+  },
+  "suchen": {
+   "g": "to look for; wir suchen Sie = we've been looking for you",
+   "t": "verb"
+  },
+  "freien": {
+   "g": "der freie Markt = the open market (frei)",
+   "t": "adjective"
+  },
+  "markt": {
+   "g": "market (der Markt)",
+   "t": "noun"
+  },
+  "kampf": {
+   "g": "fight, battle (der Kampf)",
+   "t": "noun"
+  },
+  "haustür": {
+   "g": "the front door",
+   "t": "noun"
+  },
+  "eimsbüttel": {
+   "g": "Eimsbüttel, a Hamburg district",
+   "t": "other"
+  },
+  "drängen": {
+   "g": "to push, press, urge",
+   "t": "verb"
+  },
+  "bewerber": {
+   "g": "applicants (der Bewerber)",
+   "t": "noun"
+  },
+  "jeder": {
+   "g": "every, each",
+   "t": "pronoun"
+  },
+  "mappe": {
+   "g": "a folder of documents",
+   "t": "noun"
+  },
+  "seite": {
+   "g": "page (die Seite); Seite laden = load the page",
+   "t": "noun"
+  },
+  "spricht": {
+   "g": "speaks (sprechen)",
+   "t": "verb"
+  },
+  "leise": {
+   "g": "quietly, softly",
+   "t": "adverb"
+  },
+  "schwärme": {
+   "g": "gush, rave (schwärmen)",
+   "t": "verb"
+  },
+  "toll": {
+   "g": "great, fantastic",
+   "t": "adjective"
+  },
+  "findet": {
+   "g": "finds (finden)",
+   "t": "verb"
+  },
+  "wirkt": {
+   "g": "seems, appears (wirken)",
+   "t": "verb"
+  },
+  "verzweifelt": {
+   "g": "desperate",
+   "t": "adjective"
+  },
+  "soll": {
+   "g": "should, is to (sollen)",
+   "t": "verb"
+  },
+  "lügen": {
+   "g": "to lie, tell lies",
+   "t": "verb"
+  },
+  "gelangweilt": {
+   "g": "bored (langweilen)",
+   "t": "adjective"
+  },
+  "sachlich": {
+   "g": "matter-of-fact, factual",
+   "t": "adjective"
+  },
+  "vermieter": {
+   "g": "landlord (der Vermieter)",
+   "t": "noun"
+  },
+  "vertraut": {
+   "g": "trusts (vertrauen)",
+   "t": "verb"
+  },
+  "ruhig": {
+   "g": "calm, quiet",
+   "t": "adjective"
+  },
+  "wo": {
+   "g": "where",
+   "t": "adverb"
+  },
+  "herkomme": {
+   "g": "wo ich herkomme = where I come from (herkommen)",
+   "t": "verb"
+  },
+  "bekommt": {
+   "g": "gets, receives (bekommen)",
+   "t": "verb"
+  },
+  "am": {
+   "g": "at the, on the (an + dem)",
+   "t": "preposition"
+  },
+  "meisten": {
+   "g": "die meisten = most people",
+   "t": "pronoun"
+  },
+  "begeisterung": {
+   "g": "enthusiasm",
+   "t": "noun"
+  },
+  "zeigt": {
+   "g": "shows (zeigen)",
+   "t": "verb"
+  },
+  "umgekehrt": {
+   "g": "the other way round",
+   "t": "adverb"
+  },
+  "verdächtig": {
+   "g": "suspicious",
+   "t": "adjective"
+  },
+  "seriös": {
+   "g": "serious, reputable, solid",
+   "t": "adjective"
+  },
+  "herr": {
+   "g": "Mr. (der Herr)",
+   "t": "noun"
+  },
+  "timm": {
+   "g": "Timm, the landlord's surname",
+   "t": "other"
+  },
+  "gruppe": {
+   "g": "a group",
+   "t": "noun"
+  },
+  "durch": {
+   "g": "through",
+   "t": "preposition"
+  },
+  "helle": {
+   "g": "bright, light (hell)",
+   "t": "adjective"
+  },
+  "zimmer": {
+   "g": "room (das Zimmer)",
+   "t": "noun"
+  },
+  "schwärmen": {
+   "g": "to gush, rave about",
+   "t": "verb"
+  },
+  "laut": {
+   "g": "loud",
+   "t": "adjective"
+  },
+  "nickt": {
+   "g": "nods (nicken)",
+   "t": "verb"
+  },
+  "knapp": {
+   "g": "terse, scant, barely",
+   "t": "adjective"
+  },
+  "ja": {
+   "g": "yes; indeed (emphasis particle)",
+   "t": "adverb"
+  },
+  "schnitt": {
+   "g": "the layout of a flat",
+   "t": "noun"
+  },
+  "vernünftig": {
+   "g": "sensible, reasonable",
+   "t": "adjective"
+  },
+  "viertel": {
+   "g": "quarter; Viertel vor sieben = quarter to seven",
+   "t": "expression"
+  },
+  "vorstellen": {
+   "g": "sich vorstellen = to imagine",
+   "t": "verb"
+  },
+  "höre": {
+   "g": "hear (hören)",
+   "t": "verb"
+  },
+  "zum": {
+   "g": "to the (zu + dem)",
+   "t": "preposition"
+  },
+  "ersten": {
+   "g": "first",
+   "t": "adjective"
+  },
+  "mal": {
+   "g": "time(s); erst mal = for now",
+   "t": "adverb"
+  },
+  "alle": {
+   "g": "all, every",
+   "t": "pronoun"
+  },
+  "reden": {
+   "g": "to talk, speak",
+   "t": "verb"
+  },
+  "traum": {
+   "g": "a dream",
+   "t": "noun"
+  },
+  "liebe": {
+   "g": "dear (letter opening); love",
+   "t": "adjective"
+  },
+  "blick": {
+   "g": "look, gaze (der Blick)",
+   "t": "noun"
+  },
+  "vertrag": {
+   "g": "contract (der Vertrag)",
+   "t": "noun"
+  },
+  "antrag": {
+   "g": "application, formal request",
+   "t": "noun"
+  },
+  "prüfe": {
+   "g": "I check, examine (prüfen)",
+   "t": "verb"
+  },
+  "funkelt": {
+   "g": "sparkles (funkeln)",
+   "t": "verb"
+  },
+  "diese": {
+   "g": "this, these",
+   "t": "pronoun"
+  },
+  "haltung": {
+   "g": "an attitude, a stance",
+   "t": "noun"
+  },
+  "suche": {
+   "g": "I look for (suchen)",
+   "t": "verb"
+  },
+  "mieter": {
+   "g": "tenants (der Mieter)",
+   "t": "noun"
+  },
+  "jahr": {
+   "g": "year (das Jahr)",
+   "t": "noun"
+  },
+  "enttäuscht": {
+   "g": "disappointed",
+   "t": "adjective"
+  },
+  "fühlt": {
+   "g": "feels (fühlen); fühlt sich an = feels like",
+   "t": "verb"
+  },
+  "zuschlag": {
+   "g": "the award, acceptance (of a flat)",
+   "t": "noun"
+  },
+  "kühl": {
+   "g": "cool; here: aloof",
+   "t": "adjective"
+  },
+  "verlässlich": {
+   "g": "dependable, reliable",
+   "t": "adjective"
+  },
+  "schwärmt": {
+   "g": "gushes, raves (schwärmen)",
+   "t": "verb"
+  },
+  "klagt": {
+   "g": "complains (klagen)",
+   "t": "verb"
+  },
+  "jede": {
+   "g": "every",
+   "t": "pronoun"
+  },
+  "kleinigkeit": {
+   "g": "a trifle, minor thing",
+   "t": "noun"
+  },
+  "außerdem": {
+   "g": "besides, in addition",
+   "t": "adverb"
+  },
+  "papiere": {
+   "g": "papers, documents (das Papier)",
+   "t": "noun"
+  },
+  "dabei": {
+   "g": "on me, with me (habe ich dabei = I have it on me)",
+   "t": "adverb"
+  },
+  "gehaltsnachweis": {
+   "g": "proof of income, a payslip",
+   "t": "noun"
+  },
+  "auskunft": {
+   "g": "a credit report; information",
+   "t": "noun"
+  },
+  "alles": {
+   "g": "everything",
+   "t": "pronoun"
+  },
+  "vollständig": {
+   "g": "complete, with everything in place",
+   "t": "adjective"
+  },
+  "setze": {
+   "g": "voraussetzen = to take for granted (setzen)",
+   "t": "verb"
+  },
+  "voraus": {
+   "g": "voraussetzen = to take for granted; ahead",
+   "t": "adverb"
+  },
+  "entscheidend": {
+   "g": "decisive, crucial",
+   "t": "adjective"
+  },
+  "satz": {
+   "g": "sentence (der Satz)",
+   "t": "noun"
+  },
+  "können": {
+   "g": "can, to be able to",
+   "t": "verb"
+  },
+  "haben": {
+   "g": "to have",
+   "t": "verb"
+  },
+  "betteln": {
+   "g": "to beg",
+   "t": "verb"
+  },
+  "muss": {
+   "g": "must (müssen); niemand muss = nobody has to",
+   "t": "verb"
+  },
+  "zeichen": {
+   "g": "a sign",
+   "t": "noun"
+  },
+  "verstanden": {
+   "g": "understood (verstehen)",
+   "t": "verb"
+  },
+  "tickt": {
+   "g": "ticks, works (a certain way) (ticken)",
+   "t": "verb"
+  },
+  "zwischen": {
+   "g": "between, among",
+   "t": "preposition"
+  },
+  "umzugskartons": {
+   "g": "moving boxes (Umzugskarton)",
+   "t": "noun"
+  },
+  "dritten": {
+   "g": "third",
+   "t": "adjective"
+  },
+  "stock": {
+   "g": "floor, storey (der Stock)",
+   "t": "noun"
+  },
+  "sucht": {
+   "g": "looks for (suchen)",
+   "t": "verb"
+  },
+  "wasserkocher": {
+   "g": "an electric kettle",
+   "t": "noun"
+  },
+  "klopft": {
+   "g": "knocks (klopfen); es klopft = someone knocks",
+   "t": "verb"
+  },
+  "davor": {
+   "g": "in front of it; before that",
+   "t": "adverb"
+  },
+  "nachbarin": {
+   "g": "female neighbour",
+   "t": "noun"
+  },
+  "hand": {
+   "g": "hand",
+   "t": "noun"
+  },
+  "brett": {
+   "g": "a board, a tray",
+   "t": "noun"
+  },
+  "brot": {
+   "g": "bread",
+   "t": "noun"
+  },
+  "salz": {
+   "g": "salt; Brot und Salz",
+   "t": "noun"
+  },
+  "boysen": {
+   "g": "Boysen, a neighbour's surname",
+   "t": "other"
+  },
+  "nebenan": {
+   "g": "next door",
+   "t": "adverb"
+  },
+  "ausgeht": {
+   "g": "runs out (ausgehen)",
+   "t": "verb"
+  },
+  "würze": {
+   "g": "spice, seasoning; zest",
+   "t": "noun"
+  },
+  "alter": {
+   "g": "old (alt)",
+   "t": "adjective"
+  },
+  "brauch": {
+   "g": "a custom, tradition",
+   "t": "noun"
+  },
+  "lieb": {
+   "g": "sweet, kind",
+   "t": "adjective"
+  },
+  "wollen": {
+   "g": "to want",
+   "t": "verb"
+  },
+  "hereinkommen": {
+   "g": "to come inside",
+   "t": "verb"
+  },
+  "chaos": {
+   "g": "chaos, a mess",
+   "t": "noun"
+  },
+  "wollte": {
+   "g": "wanted (wollen, past)",
+   "t": "verb"
+  },
+  "haus": {
+   "g": "house, building (das Haus)",
+   "t": "noun"
+  },
+  "wissen": {
+   "g": "to know (facts)",
+   "t": "verb"
+  },
+  "hinterhof": {
+   "g": "a back courtyard",
+   "t": "noun"
+  },
+  "allen": {
+   "g": "(to) all, everyone",
+   "t": "pronoun"
+  },
+  "fahrräder": {
+   "g": "bicycles (Fahrrad)",
+   "t": "noun"
+  },
+  "links": {
+   "g": "left, to the left",
+   "t": "adverb"
+  },
+  "mülltonnen": {
+   "g": "rubbish bins (Mülltonne)",
+   "t": "noun"
+  },
+  "rechts": {
+   "g": "on the right",
+   "t": "adverb"
+  },
+  "sonntags": {
+   "g": "on Sundays",
+   "t": "adverb"
+  },
+  "bohrmaschine": {
+   "g": "electric drill (die Bohrmaschine)",
+   "t": "noun"
+  },
+  "sonst": {
+   "g": "otherwise",
+   "t": "adverb"
+  },
+  "regeln": {
+   "g": "rules (die Regel); as verb: to settle",
+   "t": "noun"
+  },
+  "sollte": {
+   "g": "should (sollen)",
+   "t": "verb"
+  },
+  "langen": {
+   "g": "long (lang)",
+   "t": "adjective"
+  },
+  "grüßt": {
+   "g": "greets (grüßen)",
+   "t": "verb"
+  },
+  "hof": {
+   "g": "a yard, courtyard",
+   "t": "noun"
+  },
+  "sauber": {
+   "g": "clean",
+   "t": "adjective"
+  },
+  "zehn": {
+   "g": "ten",
+   "t": "number"
+  },
+  "keinen": {
+   "g": "no, none (kein)",
+   "t": "pronoun"
+  },
+  "lärm": {
+   "g": "noise (der Lärm)",
+   "t": "noun"
+  },
+  "kannte": {
+   "g": "knew (kennen)",
+   "t": "verb"
+  },
+  "namen": {
+   "g": "name (der Name, declined)",
+   "t": "noun"
+  },
+  "meiner": {
+   "g": "my (dative)",
+   "t": "pronoun"
+  },
+  "nachbarn": {
+   "g": "neighbors (der Nachbar)",
+   "t": "noun"
+  },
+  "kennt": {
+   "g": "knows (kennen)",
+   "t": "verb"
+  },
+  "schneller": {
+   "g": "faster (schnell)",
+   "t": "adjective"
+  },
+  "tonnen": {
+   "g": "bins (die Tonne)",
+   "t": "noun"
+  },
+  "verwechselt": {
+   "g": "mixes up (verwechseln)",
+   "t": "verb"
+  },
+  "nächsten": {
+   "g": "next (nächst, declined)",
+   "t": "adjective"
+  },
+  "stadtbekannt": {
+   "g": "known all over town",
+   "t": "adjective"
+  },
+  "schaut": {
+   "g": "looks (schauen)",
+   "t": "verb"
+  },
+  "stellt": {
+   "g": "puts (stellen); stellt ab = puts down",
+   "t": "verb"
+  },
+  "tüte": {
+   "g": "a bag",
+   "t": "noun"
+  },
+  "karton": {
+   "g": "cardboard box (der Karton)",
+   "t": "noun"
+  },
+  "erste": {
+   "g": "first (erst, declined)",
+   "t": "number"
+  },
+  "kennengelernt": {
+   "g": "got to know, met (kennenlernen)",
+   "t": "verb"
+  },
+  "gebracht": {
+   "g": "brought (bringen)",
+   "t": "verb"
+  },
+  "minuten": {
+   "g": "minutes (die Minute)",
+   "t": "noun"
+  },
+  "weg": {
+   "g": "away, gone",
+   "t": "adverb"
+  },
+  "umarmung": {
+   "g": "a hug",
+   "t": "noun"
+  },
+  "meint": {
+   "g": "means (meinen); meint es ernst = is serious about it",
+   "t": "verb"
+  },
+  "kontor": {
+   "g": "a Hanseatic trading office",
+   "t": "noun"
+  },
+  "alten": {
+   "g": "old (alt, declined)",
+   "t": "adjective"
+  },
+  "speicher": {
+   "g": "a warehouse, storehouse",
+   "t": "noun"
+  },
+  "elbe": {
+   "g": "the Elbe, Hamburg's river",
+   "t": "noun"
+  },
+  "knarrenden": {
+   "g": "creaking (knarrend)",
+   "t": "adjective"
+  },
+  "dielen": {
+   "g": "floorboards (Diele)",
+   "t": "noun"
+  },
+  "kräne": {
+   "g": "cranes (Kran)",
+   "t": "noun"
+  },
+  "ihrer": {
+   "g": "her; your, formal (dative fem.)",
+   "t": "pronoun"
+  },
+  "ankunft": {
+   "g": "arrival (die Ankunft)",
+   "t": "noun"
+  },
+  "eingewöhnt": {
+   "g": "settled in, acclimatised (eingewöhnen)",
+   "t": "verb"
+  },
+  "hinein": {
+   "g": "in, into it",
+   "t": "adverb"
+  },
+  "beginnt": {
+   "g": "begins (beginnen)",
+   "t": "verb"
+  },
+  "erster": {
+   "g": "first (erste)",
+   "t": "adjective"
+  },
+  "arbeitstag": {
+   "g": "a working day",
+   "t": "noun"
+  },
+  "carstens": {
+   "g": "Carstens, the Kontor boss's surname",
+   "t": "other"
+  },
+  "empfängt": {
+   "g": "receives, welcomes (empfangen)",
+   "t": "verb"
+  },
+  "festen": {
+   "g": "firm (fest)",
+   "t": "adjective"
+  },
+  "handschlag": {
+   "g": "a handshake (that seals a deal)",
+   "t": "noun"
+  },
+  "keinem": {
+   "g": "no, not a (kein, dative)",
+   "t": "article"
+  },
+  "überflüssigen": {
+   "g": "superfluous, needless (überflüssig)",
+   "t": "adjective"
+  },
+  "kaufmann": {
+   "g": "a merchant; ein Kaufmann, ein Wort",
+   "t": "noun"
+  },
+  "zusagen": {
+   "g": "to promise, agree to",
+   "t": "verb"
+  },
+  "halten": {
+   "g": "to hold, keep",
+   "t": "verb"
+  },
+  "finde": {
+   "g": "find, think (finden)",
+   "t": "verb"
+  },
+  "schriftlich": {
+   "g": "in writing",
+   "t": "adjective"
+  },
+  "handbuch": {
+   "g": "a manual, handbook",
+   "t": "noun"
+  },
+  "richtlinien": {
+   "g": "guidelines (Richtlinie)",
+   "t": "noun"
+  },
+  "prozesse": {
+   "g": "processes, procedures (Prozess)",
+   "t": "noun"
+  },
+  "meiste": {
+   "g": "the most (meist)",
+   "t": "adjective"
+  },
+  "wiegt": {
+   "g": "weighs (wiegen)",
+   "t": "verb"
+  },
+  "drei": {
+   "g": "three",
+   "t": "number"
+  },
+  "seiten": {
+   "g": "pages (die Seite)",
+   "t": "noun"
+  },
+  "per": {
+   "g": "by; per du = on first-name terms",
+   "t": "preposition"
+  },
+  "zusagt": {
+   "g": "agrees, commits (zusagen)",
+   "t": "verb"
+  },
+  "kneift": {
+   "g": "chickens out (kneifen)",
+   "t": "verb"
+  },
+  "unten": {
+   "g": "downstairs, below",
+   "t": "adverb"
+  },
+  "immer": {
+   "g": "always",
+   "t": "adverb"
+  },
+  "manchen": {
+   "g": "some (mancher)",
+   "t": "pronoun"
+  },
+  "ländern": {
+   "g": "countries (Land)",
+   "t": "noun"
+  },
+  "hätte": {
+   "g": "would have (haben, Konjunktiv II)",
+   "t": "verb"
+  },
+  "anwalt": {
+   "g": "a lawyer",
+   "t": "noun"
+  },
+  "einiges": {
+   "g": "quite a bit, a fair amount",
+   "t": "pronoun"
+  },
+  "anwälte": {
+   "g": "lawyers (Anwalt)",
+   "t": "noun"
+  },
+  "kommen": {
+   "g": "to come; Kommen Sie = come along",
+   "t": "verb"
+  },
+  "vertrauen": {
+   "g": "trust (das Vertrauen); to trust",
+   "t": "noun"
+  },
+  "weit": {
+   "g": "far; so weit",
+   "t": "adjective"
+  },
+  "lassen": {
+   "g": "to let, to leave",
+   "t": "verb"
+  },
+  "legt": {
+   "g": "lays, puts (legen); legt vor = presents",
+   "t": "verb"
+  },
+  "ihre": {
+   "g": "her; your (formal)",
+   "t": "pronoun"
+  },
+  "kalkulation": {
+   "g": "a costing, calculation",
+   "t": "noun"
+  },
+  "liest": {
+   "g": "reads (lesen)",
+   "t": "verb"
+  },
+  "kann": {
+   "g": "can (können)",
+   "t": "verb"
+  },
+  "tage": {
+   "g": "days (der Tag)",
+   "t": "noun"
+  },
+  "daran": {
+   "g": "at that; genau daran = at precisely that point",
+   "t": "adverb"
+  },
+  "gesessen": {
+   "g": "sat (sitzen)",
+   "t": "verb"
+  },
+  "dünn": {
+   "g": "thin; here: flimsy, weak",
+   "t": "adjective"
+  },
+  "nein": {
+   "g": "no",
+   "t": "adverb"
+  },
+  "auszusetzen": {
+   "g": "nichts auszusetzen = nothing to fault",
+   "t": "verb"
+  },
+  "übersetzung": {
+   "g": "a translation",
+   "t": "noun"
+  },
+  "lob": {
+   "g": "praise",
+   "t": "noun"
+  },
+  "absage": {
+   "g": "rejection, refusal (die Absage)",
+   "t": "noun"
+  },
+  "je": {
+   "g": "ever; je... desto",
+   "t": "adverb"
+  },
+  "hören": {
+   "g": "to listen; Hören Sie = listen (formal)",
+   "t": "verb"
+  },
+  "zeit": {
+   "g": "time (die Zeit)",
+   "t": "noun"
+  },
+  "beifall": {
+   "g": "applause",
+   "t": "noun"
+  },
+  "erwartet": {
+   "g": "expects (erwarten)",
+   "t": "verb"
+  },
+  "aufbaut": {
+   "g": "builds up (aufbauen)",
+   "t": "verb"
+  },
+  "merkt": {
+   "g": "notices; sich merken = to remember (merken)",
+   "t": "verb"
+  },
+  "kleineren": {
+   "g": "smaller (klein)",
+   "t": "adjective"
+  },
+  "vokabel": {
+   "g": "a vocabulary word",
+   "t": "noun"
+  },
+  "gelernt": {
+   "g": "learned (lernen)",
+   "t": "verb"
+  },
+  "sammle": {
+   "g": "I collect (sammeln)",
+   "t": "verb"
+  },
+  "eines": {
+   "g": "of a",
+   "t": "article"
+  },
+  "tages": {
+   "g": "of the day (Tag)",
+   "t": "noun"
+  },
+  "nicke": {
+   "g": "I nod (nicken)",
+   "t": "verb"
+  },
+  "neuen": {
+   "g": "new (neu)",
+   "t": "adjective"
+  },
+  "kunden": {
+   "g": "a customer (Kunde)",
+   "t": "noun"
+  },
+  "präsentation": {
+   "g": "presentation (die Präsentation)",
+   "t": "noun"
+  },
+  "superlative": {
+   "g": "superlatives (Superlativ)",
+   "t": "noun"
+  },
+  "gebaut": {
+   "g": "built (bauen)",
+   "t": "verb"
+  },
+  "beste": {
+   "g": "best (gut)",
+   "t": "adjective"
+  },
+  "qualität": {
+   "g": "quality (die Qualität)",
+   "t": "noun"
+  },
+  "schnellste": {
+   "g": "the fastest (schnell)",
+   "t": "adjective"
+  },
+  "lieferung": {
+   "g": "delivery",
+   "t": "noun"
+  },
+  "unschlagbarer": {
+   "g": "unbeatable (unschlagbar)",
+   "t": "adjective"
+  },
+  "preis": {
+   "g": "a price",
+   "t": "noun"
+  },
+  "überfliegt": {
+   "g": "skims, glances over (überfliegen)",
+   "t": "verb"
+  },
+  "folie": {
+   "g": "presentation slide (die Folie)",
+   "t": "noun"
+  },
+  "streichen": {
+   "g": "to cut, delete, strike out",
+   "t": "verb"
+  },
+  "gewinnt": {
+   "g": "wins (gewinnen)",
+   "t": "verb"
+  },
+  "auffallen": {
+   "g": "to stand out, get noticed",
+   "t": "verb"
+  },
+  "indem": {
+   "g": "by doing; the way in which",
+   "t": "conjunction"
+  },
+  "übertreibt": {
+   "g": "exaggerates (übertreiben)",
+   "t": "verb"
+  },
+  "ehrbarer": {
+   "g": "honourable; Ehrbarer Kaufmann",
+   "t": "adjective"
+  },
+  "verspricht": {
+   "g": "promises (versprechen)",
+   "t": "verb"
+  },
+  "weniger": {
+   "g": "less, fewer",
+   "t": "adverb"
+  },
+  "konkurrenz": {
+   "g": "the competition, rivals",
+   "t": "noun"
+  },
+  "blaue": {
+   "g": "das Blaue vom Himmel = the moon on a stick",
+   "t": "adjective"
+  },
+  "liefert": {
+   "g": "delivers (liefern)",
+   "t": "verb"
+  },
+  "enttäuschung": {
+   "g": "disappointment",
+   "t": "noun"
+  },
+  "liefern": {
+   "g": "to deliver",
+   "t": "verb"
+  },
+  "pünktlich": {
+   "g": "punctual, on time",
+   "t": "adjective"
+  },
+  "untertreiben": {
+   "g": "to understate, downplay",
+   "t": "verb"
+  },
+  "glänzen": {
+   "g": "to shine, dazzle",
+   "t": "verb"
+  },
+  "übertreffen": {
+   "g": "to surpass, exceed",
+   "t": "verb"
+  },
+  "kunst": {
+   "g": "art; die hohe Kunst = the fine art",
+   "t": "noun"
+  },
+  "voss": {
+   "g": "Voss, a client's surname",
+   "t": "other"
+  },
+  "schlicht": {
+   "g": "plainly, simply",
+   "t": "adverb"
+  },
+  "zahlen": {
+   "g": "figures, numbers; to pay",
+   "t": "noun"
+  },
+  "termine": {
+   "g": "appointments (der Termin)",
+   "t": "noun"
+  },
+  "superlativ": {
+   "g": "a superlative, extreme claim",
+   "t": "noun"
+  },
+  "großes": {
+   "g": "big, great (groß)",
+   "t": "adjective"
+  },
+  "theater": {
+   "g": "theatre; a fuss, drama",
+   "t": "noun"
+  },
+  "versprechen": {
+   "g": "promise (das Versprechen)",
+   "t": "noun"
+  },
+  "mond": {
+   "g": "the moon; Versprechen vom Mond",
+   "t": "noun"
+  },
+  "angenehm": {
+   "g": "pleasant, agreeable",
+   "t": "adjective"
+  },
+  "lauter": {
+   "g": "vor lauter = because of so much",
+   "t": "adverb"
+  },
+  "superlativen": {
+   "g": "superlatives (Superlativ)",
+   "t": "noun"
+  },
+  "misstrauisch": {
+   "g": "suspicious, distrustful",
+   "t": "adjective"
+  },
+  "sprache": {
+   "g": "language",
+   "t": "noun"
+  },
+  "will": {
+   "g": "wants (wollen)",
+   "t": "verb"
+  },
+  "ausschlag": {
+   "g": "den Ausschlag geben = to tip the balance",
+   "t": "noun"
+  },
+  "gab": {
+   "g": "gave; den Ausschlag gab (geben)",
+   "t": "verb"
+  },
+  "zurückhaltend": {
+   "g": "reserved, restrained",
+   "t": "adjective"
+  },
+  "drängt": {
+   "g": "pushes, presses (drängen)",
+   "t": "verb"
+  },
+  "meist": {
+   "g": "mostly, usually",
+   "t": "adverb"
+  },
+  "nötig": {
+   "g": "necessary, needed",
+   "t": "adjective"
+  },
+  "entsteht": {
+   "g": "arises, comes about (entstehen)",
+   "t": "verb"
+  },
+  "lautstärke": {
+   "g": "loudness, volume",
+   "t": "noun"
+  },
+  "schwören": {
+   "g": "to swear, to vow",
+   "t": "verb"
+  },
+  "schwächere": {
+   "g": "the weaker (schwach)",
+   "t": "adjective"
+  },
+  "version": {
+   "g": "a version",
+   "t": "noun"
+  },
+  "stärkere": {
+   "g": "the stronger (stark)",
+   "t": "adjective"
+  },
+  "gewesen": {
+   "g": "been; als wäre nichts gewesen (sein)",
+   "t": "verb"
+  },
+  "understatement": {
+   "g": "understatement",
+   "t": "noun"
+  },
+  "stil": {
+   "g": "style; mit Stil = in style",
+   "t": "noun"
+  },
+  "verkaufsargument": {
+   "g": "a selling point",
+   "t": "noun"
+  },
+  "lege": {
+   "g": "I put, lay (legen)",
+   "t": "verb"
+  },
+  "endgültig": {
+   "g": "finally, once and for all",
+   "t": "adverb"
+  },
+  "ins": {
+   "g": "into the (in das)",
+   "t": "preposition"
+  },
+  "archiv": {
+   "g": "an archive",
+   "t": "noun"
+  },
+  "ausgedient": {
+   "g": "served its time, obsolete",
+   "t": "verb"
+  },
+  "merk": {
+   "g": "note it, remember (merken)",
+   "t": "verb"
+  },
+  "auftritt": {
+   "g": "appears, performs (auftreten)",
+   "t": "verb"
+  },
+  "ende": {
+   "g": "end",
+   "t": "noun"
+  },
+  "lautesten": {
+   "g": "loudest (laut)",
+   "t": "adjective"
+  },
+  "kai": {
+   "g": "a quay, wharf",
+   "t": "noun"
+  },
+  "sammeln": {
+   "g": "to gather, collect",
+   "t": "verb"
+  },
+  "kollegen": {
+   "g": "colleagues (der Kollege)",
+   "t": "noun"
+  },
+  "flasche": {
+   "g": "bottle (die Flasche)",
+   "t": "noun"
+  },
+  "alsterwasser": {
+   "g": "shandy: beer with lemonade",
+   "t": "noun"
+  },
+  "traut": {
+   "g": "sich trauen = to dare (trauen)",
+   "t": "verb"
+  },
+  "wortkarg": {
+   "g": "taciturn, sparing with words",
+   "t": "adjective"
+  },
+  "runde": {
+   "g": "the group, gathering; a round",
+   "t": "noun"
+  },
+  "winkt": {
+   "g": "waves; winkt ab = waves off (winken)",
+   "t": "verb"
+  },
+  "neben": {
+   "g": "next to, beside",
+   "t": "preposition"
+  },
+  "lehnt": {
+   "g": "leans (lehnen)",
+   "t": "verb"
+  },
+  "merle": {
+   "g": "Merle, a colleague's first name",
+   "t": "other"
+  },
+  "buchhaltung": {
+   "g": "accounting, the accounts department",
+   "t": "noun"
+  },
+  "geländer": {
+   "g": "a railing, banister",
+   "t": "noun"
+  },
+  "her": {
+   "g": "here, this way (zeig mal her)",
+   "t": "adverb"
+  },
+  "heilig": {
+   "g": "holy, sacred",
+   "t": "adjective"
+  },
+  "trotzdem": {
+   "g": "nevertheless, anyway",
+   "t": "adverb"
+  },
+  "irritiert": {
+   "g": "irritates, puzzles (irritieren)",
+   "t": "verb"
+  },
+  "woanders": {
+   "g": "somewhere else",
+   "t": "adverb"
+  },
+  "arbeit": {
+   "g": "work",
+   "t": "noun"
+  },
+  "durcheinander": {
+   "g": "all at once, in confusion",
+   "t": "adverb"
+  },
+  "redet": {
+   "g": "talks (reden); wer redet, verliert",
+   "t": "verb"
+  },
+  "schweigen": {
+   "g": "silence; to stay silent",
+   "t": "noun"
+  },
+  "aussicht": {
+   "g": "a view, an outlook",
+   "t": "noun"
+  },
+  "schweigend": {
+   "g": "silently, in silence",
+   "t": "adverb"
+  },
+  "wasser": {
+   "g": "water",
+   "t": "noun"
+  },
+  "regelmäßig": {
+   "g": "regularly",
+   "t": "adverb"
+  },
+  "unsere": {
+   "g": "our",
+   "t": "pronoun"
+  },
+  "art": {
+   "g": "way, manner; kind",
+   "t": "noun"
+  },
+  "nähe": {
+   "g": "closeness, nearness",
+   "t": "noun"
+  },
+  "small": {
+   "g": "small (English loan)",
+   "t": "adjective"
+  },
+  "talk": {
+   "g": "talk (English loan)",
+   "t": "noun"
+  },
+  "zusammen": {
+   "g": "together; die Zähne zusammenbeißen",
+   "t": "adverb"
+  },
+  "woran": {
+   "g": "by what, how (do you tell)",
+   "t": "adverb"
+  },
+  "dazugehöre": {
+   "g": "I belong (dazugehören)",
+   "t": "verb"
+  },
+  "niemand": {
+   "g": "nobody, no one",
+   "t": "pronoun"
+  },
+  "erklärt": {
+   "g": "explains (erklären)",
+   "t": "verb"
+  },
+  "warum": {
+   "g": "why",
+   "t": "adverb"
+  },
+  "geschwiegen": {
+   "g": "stayed silent (schweigen)",
+   "t": "verb"
+  },
+  "sieh": {
+   "g": "look, see (sehen)",
+   "t": "verb"
+  },
+  "einlädt": {
+   "g": "invites (einladen)",
+   "t": "verb"
+  },
+  "einladung": {
+   "g": "invitation (die Einladung)",
+   "t": "noun"
+  },
+  "wert": {
+   "g": "worth; mehr wert",
+   "t": "adjective"
+  },
+  "ans": {
+   "g": "to the (an das)",
+   "t": "preposition"
+  },
+  "ordentliche": {
+   "g": "proper, decent (ordentlich)",
+   "t": "adjective"
+  },
+  "unterschrieben": {
+   "g": "signed (unterschreiben)",
+   "t": "verb"
+  },
+  "danke": {
+   "g": "thanks, thank you",
+   "t": "expression"
+  },
+  "bekomme": {
+   "g": "get, receive (bekommen)",
+   "t": "verb"
+  },
+  "sätze": {
+   "g": "sentences (Satz)",
+   "t": "noun"
+  },
+  "stück": {
+   "g": "piece, bit",
+   "t": "noun"
+  },
+  "grenzt": {
+   "g": "borders on; grenzt an (grenzen)",
+   "t": "verb"
+  },
+  "verschwendung": {
+   "g": "a waste",
+   "t": "noun"
+  },
+  "ausnahmsweise": {
+   "g": "for once, as an exception",
+   "t": "adverb"
+  },
+  "großzügig": {
+   "g": "generous",
+   "t": "adjective"
+  },
+  "schreibst": {
+   "g": "you write (schreiben)",
+   "t": "verb"
+  },
+  "besten": {
+   "g": "best (gut, superlative declined)",
+   "t": "adjective"
+  },
+  "rot": {
+   "g": "red; rot anstreichen = to mark red",
+   "t": "adjective"
+  },
+  "angestrichen": {
+   "g": "marked, painted (anstreichen)",
+   "t": "verb"
+  },
+  "chef": {
+   "g": "the boss",
+   "t": "noun"
+  },
+  "wurde": {
+   "g": "was, became (werden, past); passive marker",
+   "t": "verb"
+  },
+  "stoße": {
+   "g": "anstoßen = to clink glasses (stoßen)",
+   "t": "verb"
+  },
+  "wirst": {
+   "g": "you will, become (werden)",
+   "t": "verb"
+  },
+  "gesagt": {
+   "g": "said (sagen)",
+   "t": "verb"
+  },
+  "fühle": {
+   "g": "I feel (fühlen)",
+   "t": "verb"
+  },
+  "wohl": {
+   "g": "sich wohlfühlen = to feel at ease; probably",
+   "t": "adverb"
+  },
+  "kleinen": {
+   "g": "small, little (klein)",
+   "t": "adjective"
+  },
+  "einweihung": {
+   "g": "a housewarming",
+   "t": "noun"
+  },
+  "gäste": {
+   "g": "guests (der Gast)",
+   "t": "noun"
+  },
+  "selbstgebackenen": {
+   "g": "home-baked (selbstgebacken)",
+   "t": "adjective"
+  },
+  "kuchen": {
+   "g": "cake (der Kuchen)",
+   "t": "noun"
+  },
+  "tisch": {
+   "g": "table",
+   "t": "noun"
+  },
+  "wein": {
+   "g": "wine",
+   "t": "noun"
+  },
+  "gekommen": {
+   "g": "come (kommen)",
+   "t": "verb"
+  },
+  "entschuldigung": {
+   "g": "apology; excuse me (die Entschuldigung)",
+   "t": "noun"
+  },
+  "grund": {
+   "g": "a reason; kein Grund zur Eile",
+   "t": "noun"
+  },
+  "eile": {
+   "g": "hurry; kein Grund zur Eile",
+   "t": "noun"
+  },
+  "seinen": {
+   "g": "his (accusative)",
+   "t": "pronoun"
+  },
+  "sinn": {
+   "g": "sense, meaning, point",
+   "t": "noun"
+  },
+  "solange": {
+   "g": "as long as",
+   "t": "conjunction"
+  },
+  "beschnuppert": {
+   "g": "sizes up, gets acquainted (beschnuppern)",
+   "t": "verb"
+  },
+  "zweiten": {
+   "g": "second (zweit, declined)",
+   "t": "number"
+  },
+  "kaffee": {
+   "g": "coffee (der Kaffee)",
+   "t": "noun"
+  },
+  "anderswo": {
+   "g": "somewhere else, elsewhere",
+   "t": "adverb"
+  },
+  "tanzkurs": {
+   "g": "a dance class",
+   "t": "noun"
+  },
+  "weil": {
+   "g": "because",
+   "t": "conjunction"
+  },
+  "bietet": {
+   "g": "offers (bieten)",
+   "t": "verb"
+  },
+  "tut": {
+   "g": "does; das tut weh (tun)",
+   "t": "verb"
+  },
+  "ältere": {
+   "g": "the older one (alt)",
+   "t": "adjective"
+  },
+  "oder": {
+   "g": "or",
+   "t": "conjunction"
+  },
+  "hiesige": {
+   "g": "local, of this place (hiesig)",
+   "t": "adjective"
+  },
+  "person": {
+   "g": "person (die Person)",
+   "t": "noun"
+  },
+  "warten": {
+   "g": "to wait",
+   "t": "verb"
+  },
+  "anbietet": {
+   "g": "offers (anbieten)",
+   "t": "verb"
+  },
+  "passiert": {
+   "g": "happened (passieren)",
+   "t": "verb"
+  },
+  "verdient": {
+   "g": "deserved, earned (verdienen)",
+   "t": "adjective"
+  },
+  "schneidet": {
+   "g": "cuts (schneiden)",
+   "t": "verb"
+  },
+  "schiebt": {
+   "g": "pushes, slides (schieben)",
+   "t": "verb"
+  },
+  "beobachte": {
+   "g": "I watch, observe (beobachten)",
+   "t": "verb"
+  },
+  "grüßen": {
+   "g": "greetings (der Gruß, dative); to greet",
+   "t": "noun"
+  },
+  "genügt": {
+   "g": "is enough, suffices (genügen)",
+   "t": "verb"
+  },
+  "zeugnis": {
+   "g": "a report, reference",
+   "t": "noun"
+  },
+  "denke": {
+   "g": "I think (denken)",
+   "t": "verb"
+  },
+  "duzen": {
+   "g": "to use informal du with someone",
+   "t": "verb"
+  },
+  "grit": {
+   "g": "Grit, Frau Boysen's first name",
+   "t": "other"
+  },
+  "sehr": {
+   "g": "very, very much",
+   "t": "adverb"
+  },
+  "gerührt": {
+   "g": "moved, touched (rühren)",
+   "t": "adjective"
+  },
+  "ehrlich": {
+   "g": "honest, direct",
+   "t": "adjective"
+  },
+  "merkst": {
+   "g": "you notice (merken)",
+   "t": "verb"
+  },
+  "kriegen": {
+   "g": "to get (colloquial)",
+   "t": "verb"
+  },
+  "manche": {
+   "g": "some (people)",
+   "t": "pronoun"
+  },
+  "zwanzig": {
+   "g": "twenty",
+   "t": "number"
+  },
+  "behandle": {
+   "g": "treat (behandeln)",
+   "t": "verb"
+  },
+  "dieses": {
+   "g": "this (neuter)",
+   "t": "pronoun"
+  },
+  "auszeichnung": {
+   "g": "a distinction, an honour",
+   "t": "noun"
+  },
+  "iss": {
+   "g": "eat (essen)",
+   "t": "verb"
+  },
+  "dein": {
+   "g": "your; Dein Ernst? = are you serious?",
+   "t": "pronoun"
+  },
+  "trocken": {
+   "g": "dry; here: stale",
+   "t": "adjective"
+  },
+  "ewige": {
+   "g": "the endless, eternal (ewig)",
+   "t": "adjective"
+  },
+  "vertagen": {
+   "g": "to postpone, put off",
+   "t": "verb"
+  },
+  "satt": {
+   "g": "satthaben = to be fed up with",
+   "t": "adjective"
+  },
+  "unangekündigt": {
+   "g": "unannounced",
+   "t": "adjective"
+  },
+  "merles": {
+   "g": "Merle's",
+   "t": "other"
+  },
+  "beweis": {
+   "g": "proof, evidence (der Beweis)",
+   "t": "noun"
+  },
+  "spontane": {
+   "g": "spontaneous (spontan)",
+   "t": "adjective"
+  },
+  "lebensfreude": {
+   "g": "zest for life",
+   "t": "noun"
+  },
+  "öffnet": {
+   "g": "opens (öffnen)",
+   "t": "verb"
+  },
+  "jogginganzug": {
+   "g": "a tracksuit",
+   "t": "noun"
+  },
+  "erstarrt": {
+   "g": "freezes up (erstarren)",
+   "t": "verb"
+  },
+  "ordnung": {
+   "g": "order; in Ordnung = all right",
+   "t": "noun"
+  },
+  "schaue": {
+   "g": "I look; schaue vorbei (schauen)",
+   "t": "verb"
+  },
+  "spontan": {
+   "g": "spontaneous(ly)",
+   "t": "adjective"
+  },
+  "überraschung": {
+   "g": "a surprise",
+   "t": "noun"
+  },
+  "rein": {
+   "g": "in, inside (herein)",
+   "t": "adverb"
+  },
+  "aufgeräumt": {
+   "g": "tidy, cleared up",
+   "t": "adjective"
+  },
+  "flur": {
+   "g": "corridor, hallway (der Flur)",
+   "t": "noun"
+  },
+  "stapeln": {
+   "g": "sich stapeln = to pile up",
+   "t": "verb"
+  },
+  "wäschekörbe": {
+   "g": "laundry baskets (Wäschekorb)",
+   "t": "noun"
+  },
+  "serie": {
+   "g": "a TV series",
+   "t": "noun"
+  },
+  "läuft": {
+   "g": "runs; here: nothing works (laufen)",
+   "t": "verb"
+  },
+  "abendessen": {
+   "g": "dinner (das Abendessen)",
+   "t": "noun"
+  },
+  "störe": {
+   "g": "I'm intruding, disturbing (stören)",
+   "t": "verb"
+  },
+  "beweisen": {
+   "g": "to prove",
+   "t": "verb"
+  },
+  "klingeln": {
+   "g": "to ring a doorbell",
+   "t": "verb"
+  },
+  "meinem": {
+   "g": "my (dative)",
+   "t": "pronoun"
+  },
+  "geöffnet": {
+   "g": "opened (öffnen)",
+   "t": "verb"
+  },
+  "vorher": {
+   "g": "beforehand, before that",
+   "t": "adverb"
+  },
+  "klopfen": {
+   "g": "to knock",
+   "t": "verb"
+  },
+  "entschuldige": {
+   "g": "sorry, excuse me (entschuldigen)",
+   "t": "verb"
+  },
+  "tue": {
+   "g": "I do; einen Gefallen tun (tun)",
+   "t": "verb"
+  },
+  "beiden": {
+   "g": "both, the two",
+   "t": "pronoun"
+  },
+  "gefallen": {
+   "g": "a favour; einen Gefallen tun",
+   "t": "noun"
+  },
+  "weiß": {
+   "g": "knows (wissen)",
+   "t": "verb"
+  },
+  "setz": {
+   "g": "sit down (setzen)",
+   "t": "verb"
+  },
+  "leichter": {
+   "g": "more easily, lighter",
+   "t": "adverb"
+  },
+  "mitnehmen": {
+   "g": "to take along",
+   "t": "verb"
+  },
+  "lass": {
+   "g": "let (lassen); lass mich raten = let me guess",
+   "t": "verb"
+  },
+  "trink": {
+   "g": "drink (trinken)",
+   "t": "verb"
+  },
+  "andermal": {
+   "g": "another time",
+   "t": "adverb"
+  },
+  "angekündigt": {
+   "g": "announced (ankündigen, participle)",
+   "t": "verb"
+  },
+  "sitzen": {
+   "g": "to sit",
+   "t": "verb"
+  },
+  "gegenüber": {
+   "g": "opposite, facing",
+   "t": "preposition"
+  },
+  "lächelt": {
+   "g": "smiles (lächeln)",
+   "t": "verb"
+  },
+  "angespannt": {
+   "g": "tense, strained",
+   "t": "adjective"
+  },
+  "gehe": {
+   "g": "I go (gehen)",
+   "t": "verb"
+  },
+  "gute": {
+   "g": "good (gut, declined)",
+   "t": "adjective"
+  },
+  "idee": {
+   "g": "an idea",
+   "t": "noun"
+  },
+  "bisschen": {
+   "g": "a bit, a little",
+   "t": "adverb"
+  },
+  "nächste": {
+   "g": "next",
+   "t": "adjective"
+  },
+  "freue": {
+   "g": "ich freue mich = I am glad (sich freuen)",
+   "t": "verb"
+  },
+  "eher": {
+   "g": "sooner, rather; eher X als Y = sooner X than Y",
+   "t": "adverb"
+  },
+  "ertragen": {
+   "g": "to endure, put up with",
+   "t": "verb"
+  },
+  "weh": {
+   "g": "das tut weh = that hurts",
+   "t": "adverb"
+  },
+  "fair": {
+   "g": "fair",
+   "t": "adjective"
+  },
+  "böse": {
+   "g": "angry; nicht böse meinen = no offence",
+   "t": "adjective"
+  },
+  "mag": {
+   "g": "likes (mögen)",
+   "t": "verb"
+  },
+  "überfälle": {
+   "g": "surprise raids, unwanted drop-ins (Überfall)",
+   "t": "noun"
+  },
+  "lässt": {
+   "g": "lets (lassen); lässt sich = can be done",
+   "t": "verb"
+  },
+  "heißen": {
+   "g": "hot (heiß)",
+   "t": "adjective"
+  },
+  "ohren": {
+   "g": "ears; heiße Ohren (Ohr)",
+   "t": "noun"
+  },
+  "treppe": {
+   "g": "stairs (die Treppe)",
+   "t": "noun"
+  },
+  "hinunter": {
+   "g": "down, downwards",
+   "t": "adverb"
+  },
+  "teeküche": {
+   "g": "an office kitchenette",
+   "t": "noun"
+  },
+  "des": {
+   "g": "of the (genitive)",
+   "t": "article"
+  },
+  "kontors": {
+   "g": "of the Kontor (Kontor)",
+   "t": "noun"
+  },
+  "kollegin": {
+   "g": "a female colleague",
+   "t": "noun"
+  },
+  "eigentlich": {
+   "g": "actually, come to think of it",
+   "t": "adverb"
+  },
+  "verdiene": {
+   "g": "I earn (verdienen)",
+   "t": "verb"
+  },
+  "tasse": {
+   "g": "a cup",
+   "t": "noun"
+  },
+  "schweigt": {
+   "g": "stays silent (schweigen)",
+   "t": "verb"
+  },
+  "sekunde": {
+   "g": "second (die Sekunde)",
+   "t": "noun"
+  },
+  "kälte": {
+   "g": "cold, coldness",
+   "t": "noun"
+  },
+  "daheim": {
+   "g": "at home, back home",
+   "t": "adverb"
+  },
+  "tauscht": {
+   "g": "swaps, exchanges (austauschen)",
+   "t": "verb"
+  },
+  "offen": {
+   "g": "open, openly",
+   "t": "adjective"
+  },
+  "näher": {
+   "g": "nearer, closer (näher kommen = approach)",
+   "t": "adverb"
+  },
+  "desto": {
+   "g": "je... desto = the more... the more",
+   "t": "conjunction"
+  },
+  "bohrt": {
+   "g": "drills, pries (bohren)",
+   "t": "verb"
+  },
+  "leuchtet": {
+   "g": "shines, is lit (leuchten)",
+   "t": "verb"
+  },
+  "interesse": {
+   "g": "interest",
+   "t": "noun"
+  },
+  "kümmert": {
+   "g": "cares, looks after (sich kümmern)",
+   "t": "verb"
+  },
+  "verhör": {
+   "g": "an interrogation",
+   "t": "noun"
+  },
+  "gehalt": {
+   "g": "salary",
+   "t": "noun"
+  },
+  "beziehung": {
+   "g": "a relationship",
+   "t": "noun"
+  },
+  "kinderwunsch": {
+   "g": "the wish to have children",
+   "t": "noun"
+  },
+  "erzählt": {
+   "g": "tells, recounts (erzählen)",
+   "t": "verb"
+  },
+  "erkenne": {
+   "g": "I recognise, tell (erkennen)",
+   "t": "verb"
+  },
+  "ruhe": {
+   "g": "quiet, peace (die Ruhe)",
+   "t": "noun"
+  },
+  "respekt": {
+   "g": "respect; nice job",
+   "t": "noun"
+  },
+  "rührt": {
+   "g": "stirs (rühren)",
+   "t": "verb"
+  },
+  "tee": {
+   "g": "tea",
+   "t": "noun"
+  },
+  "denkt": {
+   "g": "thinks (denken)",
+   "t": "verb"
+  },
+  "weile": {
+   "g": "a while",
+   "t": "noun"
+  },
+  "nicht-fragen": {
+   "g": "not-asking, holding back questions",
+   "t": "noun"
+  },
+  "euch": {
+   "g": "you (plural, object)",
+   "t": "pronoun"
+  },
+  "ausfragen": {
+   "g": "to interrogate, quiz",
+   "t": "verb"
+  },
+  "übergriffig": {
+   "g": "overstepping, intrusive",
+   "t": "adjective"
+  },
+  "herzlich": {
+   "g": "warm, cordial; herzlich willkommen = welcome",
+   "t": "adjective"
+  },
+  "komplimente": {
+   "g": "compliments (das Kompliment)",
+   "t": "noun"
+  },
+  "wenigstens": {
+   "g": "at least",
+   "t": "adverb"
+  },
+  "aufdringlich": {
+   "g": "pushy, intrusive",
+   "t": "adjective"
+  },
+  "knappes": {
+   "g": "a curt, brief (knapp)",
+   "t": "adjective"
+  },
+  "wann": {
+   "g": "when",
+   "t": "adverb"
+  },
+  "persönlich": {
+   "g": "personal, in person",
+   "t": "adjective"
+  },
+  "frage": {
+   "g": "question (die Frage)",
+   "t": "noun"
+  },
+  "feierlich": {
+   "g": "solemnly, ceremoniously",
+   "t": "adverb"
+  },
+  "angenommen": {
+   "g": "accepted (annehmen)",
+   "t": "verb"
+  },
+  "fragst": {
+   "g": "you ask (fragen)",
+   "t": "verb"
+  },
+  "bestens": {
+   "g": "just fine, splendidly",
+   "t": "adverb"
+  },
+  "während": {
+   "g": "during; while",
+   "t": "preposition"
+  },
+  "schläft": {
+   "g": "sleeps (schlafen)",
+   "t": "verb"
+  },
+  "tobt": {
+   "g": "rages, is in uproar (toben)",
+   "t": "verb"
+  },
+  "hafen": {
+   "g": "the harbour",
+   "t": "noun"
+  },
+  "alte": {
+   "g": "old (alt)",
+   "t": "adjective"
+  },
+  "fischauktionshalle": {
+   "g": "the fish auction hall",
+   "t": "noun"
+  },
+  "mitten": {
+   "g": "right in the middle",
+   "t": "adverb"
+  },
+  "marktschreier": {
+   "g": "a market crier, barker",
+   "t": "noun"
+  },
+  "bergen": {
+   "g": "heaps, piles (Berg)",
+   "t": "noun"
+  },
+  "aalen": {
+   "g": "eels (Aal)",
+   "t": "noun"
+  },
+  "publikum": {
+   "g": "the audience, public",
+   "t": "noun"
+  },
+  "anbrüllt": {
+   "g": "bellows at (anbrüllen)",
+   "t": "verb"
+  },
+  "schreier": {
+   "g": "the crier, barker (Marktschreier)",
+   "t": "noun"
+  },
+  "junge": {
+   "g": "young (jung)",
+   "t": "adjective"
+  },
+  "blass": {
+   "g": "pale",
+   "t": "adjective"
+  },
+  "nase": {
+   "g": "nose; blass um die Nase",
+   "t": "noun"
+  },
+  "pack": {
+   "g": "I'll pack, wrap (packen)",
+   "t": "verb"
+  },
+  "räucheraale": {
+   "g": "smoked eels (Räucheraal)",
+   "t": "noun"
+  },
+  "leg": {
+   "g": "put, lay (legen)",
+   "t": "verb"
+  },
+  "makrelen": {
+   "g": "mackerel (Makrele)",
+   "t": "noun"
+  },
+  "lachs": {
+   "g": "salmon",
+   "t": "noun"
+  },
+  "geschenkt": {
+   "g": "given free; fast geschenkt = a steal",
+   "t": "verb"
+  },
+  "einzelnes": {
+   "g": "a single (einzeln)",
+   "t": "adjective"
+  },
+  "brötchen": {
+   "g": "a bread roll",
+   "t": "noun"
+  },
+  "halben": {
+   "g": "half (declined)",
+   "t": "adjective"
+  },
+  "spät": {
+   "g": "late; zu spät = too late",
+   "t": "adjective"
+  },
+  "kauft": {
+   "g": "buys (kaufen)",
+   "t": "verb"
+  },
+  "gesetz": {
+   "g": "a law, a rule",
+   "t": "noun"
+  },
+  "halle": {
+   "g": "a hall",
+   "t": "noun"
+  },
+  "hör": {
+   "g": "listen (hören, imperative); Hör zu = listen up",
+   "t": "verb"
+  },
+  "deinen": {
+   "g": "your (accusative)",
+   "t": "pronoun"
+  },
+  "freund": {
+   "g": "friend",
+   "t": "noun"
+  },
+  "augen": {
+   "g": "eyes (Auge)",
+   "t": "noun"
+  },
+  "gehst": {
+   "g": "go (gehen)",
+   "t": "verb"
+  },
+  "glückliche": {
+   "g": "a happy (glücklich)",
+   "t": "adjective"
+  },
+  "seid": {
+   "g": "you are (sein)",
+   "t": "verb"
+  },
+  "sechs": {
+   "g": "six",
+   "t": "number"
+  },
+  "woche": {
+   "g": "week (die Woche)",
+   "t": "noun"
+  },
+  "früh": {
+   "g": "early; zu früh = too early",
+   "t": "adverb"
+  },
+  "einzige": {
+   "g": "the only one (einzig)",
+   "t": "adjective"
+  },
+  "ausnahme": {
+   "g": "an exception",
+   "t": "noun"
+  },
+  "beschwert": {
+   "g": "complains (sich beschweren)",
+   "t": "verb"
+  },
+  "stunde": {
+   "g": "hour (die Stunde)",
+   "t": "noun"
+  },
+  "beschweren": {
+   "g": "to complain",
+   "t": "verb"
+  },
+  "mensch": {
+   "g": "a person, human",
+   "t": "noun"
+  },
+  "stopft": {
+   "g": "stuffs (stopfen)",
+   "t": "verb"
+  },
+  "prall": {
+   "g": "bulging, packed full",
+   "t": "adjective"
+  },
+  "gefüllte": {
+   "g": "filled (gefüllt)",
+   "t": "adjective"
+  },
+  "arme": {
+   "g": "arms (Arm)",
+   "t": "noun"
+  },
+  "ehe": {
+   "g": "before (conjunction)",
+   "t": "conjunction"
+  },
+  "widersprechen": {
+   "g": "to contradict, object",
+   "t": "verb"
+  },
+  "frisch": {
+   "g": "fresh",
+   "t": "adjective"
+  },
+  "strauß": {
+   "g": "a bunch (of flowers)",
+   "t": "noun"
+  },
+  "blumen": {
+   "g": "flowers (die Blume)",
+   "t": "noun"
+  },
+  "obendrauf": {
+   "g": "on top, as a bonus",
+   "t": "adverb"
+  },
+  "gesicht": {
+   "g": "face (das Gesicht)",
+   "t": "noun"
+  },
+  "gefällt": {
+   "g": "pleases; das gefällt mir (gefallen)",
+   "t": "verb"
+  },
+  "fisch": {
+   "g": "fish",
+   "t": "noun"
+  },
+  "ahnung": {
+   "g": "idea, clue (die Ahnung); Keine Ahnung = no idea",
+   "t": "noun"
+  },
+  "kommst": {
+   "g": "come (kommen, du form); Kommst du? = coming?",
+   "t": "verb"
+  },
+  "wegen": {
+   "g": "because of",
+   "t": "preposition"
+  },
+  "kilo": {
+   "g": "kilo(s)",
+   "t": "noun"
+  },
+  "aal": {
+   "g": "eel",
+   "t": "noun"
+  },
+  "danach": {
+   "g": "afterwards, after that",
+   "t": "adverb"
+  },
+  "brav": {
+   "g": "well-behaved, good",
+   "t": "adjective"
+  },
+  "livemusik": {
+   "g": "live music",
+   "t": "noun"
+  },
+  "fischbrötchen": {
+   "g": "a fish roll (harbour snack)",
+   "t": "noun"
+  },
+  "durchhält": {
+   "g": "holds out to the end (durchhalten)",
+   "t": "verb"
+  },
+  "sonntag": {
+   "g": "Sunday (der Sonntag)",
+   "t": "noun"
+  },
+  "gewonnen": {
+   "g": "won (gewinnen)",
+   "t": "verb"
+  },
+  "bleibe": {
+   "g": "I stay (bleiben)",
+   "t": "verb"
+  },
+  "jeden": {
+   "g": "every",
+   "t": "pronoun"
+  },
+  "kleines": {
+   "g": "a small, little (klein)",
+   "t": "adjective"
+  },
+  "mitbringsel": {
+   "g": "a small gift brought along",
+   "t": "noun"
+  },
+  "zimtschnecke": {
+   "g": "a cinnamon bun (Swedish-style)",
+   "t": "noun"
+  },
+  "schwedischen": {
+   "g": "Swedish (schwedisch)",
+   "t": "adjective"
+  },
+  "café": {
+   "g": "a café",
+   "t": "noun"
+  },
+  "wiebkes": {
+   "g": "Wiebke's",
+   "t": "other"
+  },
+  "betrachtet": {
+   "g": "looks at, regards (betrachten)",
+   "t": "verb"
+  },
+  "gebäck": {
+   "g": "baked goods, pastries",
+   "t": "noun"
+  },
+  "verdorbenes": {
+   "g": "something spoiled (verdorben)",
+   "t": "adjective"
+  },
+  "mein": {
+   "g": "my",
+   "t": "pronoun"
+  },
+  "kind": {
+   "g": "child; also a warm 'dear' when addressing someone",
+   "t": "noun"
+  },
+  "gerollt": {
+   "g": "rolled (rollen)",
+   "t": "verb"
+  },
+  "klebrig": {
+   "g": "sticky",
+   "t": "adjective"
+  },
+  "schweden": {
+   "g": "Sweden",
+   "t": "other"
+  },
+  "bekommst": {
+   "g": "you get (bekommen)",
+   "t": "verb"
+  },
+  "dasselbe": {
+   "g": "the same (neuter)",
+   "t": "pronoun"
+  },
+  "zimt": {
+   "g": "cinnamon",
+   "t": "noun"
+  },
+  "zucker": {
+   "g": "sugar",
+   "t": "noun"
+  },
+  "butter": {
+   "g": "butter",
+   "t": "noun"
+  },
+  "flach": {
+   "g": "flat",
+   "t": "adjective"
+  },
+  "gedrückt": {
+   "g": "pressed, pushed (drücken)",
+   "t": "verb"
+  },
+  "eigenen": {
+   "g": "own (declined)",
+   "t": "adjective"
+  },
+  "karamellisiert": {
+   "g": "caramelised (karamellisieren)",
+   "t": "verb"
+  },
+  "rollt": {
+   "g": "rolls; es rollt sich (rollen)",
+   "t": "verb"
+  },
+  "form": {
+   "g": "form, shape",
+   "t": "noun"
+  },
+  "weltanschauung": {
+   "g": "a worldview",
+   "t": "noun"
+  },
+  "platt": {
+   "g": "flat; plain-spoken",
+   "t": "adjective"
+  },
+  "schnickschnack": {
+   "g": "frills, needless fuss",
+   "t": "noun"
+  },
+  "ausgerechnet": {
+   "g": "of all things; marks an ironic coincidence",
+   "t": "adverb"
+  },
+  "rund": {
+   "g": "round",
+   "t": "adjective"
+  },
+  "praktischer": {
+   "g": "more practical (praktisch)",
+   "t": "adjective"
+  },
+  "greifen": {
+   "g": "to grip, grasp",
+   "t": "verb"
+  },
+  "beim": {
+   "g": "at the (bei + dem)",
+   "t": "preposition"
+  },
+  "backen": {
+   "g": "to bake",
+   "t": "verb"
+  },
+  "zusammensinkt": {
+   "g": "collapses, sinks down (zusammensinken)",
+   "t": "verb"
+  },
+  "falten": {
+   "g": "folds, creases (Falte)",
+   "t": "noun"
+  },
+  "geschmack": {
+   "g": "taste, flavour",
+   "t": "noun"
+  },
+  "tresen": {
+   "g": "counter (der Tresen)",
+   "t": "noun"
+  },
+  "zustimmend": {
+   "g": "approvingly",
+   "t": "adverb"
+  },
+  "mischt": {
+   "g": "sich einmischen = to butt in (mischen)",
+   "t": "verb"
+  },
+  "bloß": {
+   "g": "bloß nicht! = definitely not, no way",
+   "t": "adverb",
+   "r": "colloquial"
+  },
+  "beleidigung": {
+   "g": "an insult",
+   "t": "noun"
+  },
+  "name": {
+   "g": "name (der Name)",
+   "t": "noun"
+  },
+  "franzosen": {
+   "g": "the French (Franzose)",
+   "t": "noun"
+  },
+  "butterteig": {
+   "g": "buttery pastry dough",
+   "t": "noun"
+  },
+  "napoleonischer": {
+   "g": "Napoleonic (napoleonisch)",
+   "t": "adjective"
+  },
+  "französischer": {
+   "g": "French (französisch)",
+   "t": "adjective"
+  },
+  "herz": {
+   "g": "heart",
+   "t": "noun"
+  },
+  "geschichte": {
+   "g": "story; history",
+   "t": "noun"
+  },
+  "schmeckt": {
+   "g": "tastes (schmecken)",
+   "t": "verb"
+  },
+  "anders": {
+   "g": "differently, otherwise",
+   "t": "adverb"
+  },
+  "probier": {
+   "g": "try, taste (probieren)",
+   "t": "verb"
+  },
+  "schnecken": {
+   "g": "cinnamon buns, snails (Schnecke)",
+   "t": "noun"
+  },
+  "esse": {
+   "g": "eat (essen, ich form)",
+   "t": "verb"
+  },
+  "ehrfürchtig": {
+   "g": "reverently, with awe",
+   "t": "adverb"
+  },
+  "schnecke": {
+   "g": "a snail; a cinnamon bun",
+   "t": "noun"
+  },
+  "kluge": {
+   "g": "clever, wise (klug)",
+   "t": "adjective"
+  },
+  "entscheidung": {
+   "g": "decision (die Entscheidung)",
+   "t": "noun"
+  },
+  "versteht": {
+   "g": "understands (verstehen)",
+   "t": "verb"
+  },
+  "sonntagsspaziergang": {
+   "g": "a Sunday walk",
+   "t": "noun"
+  },
+  "deutet": {
+   "g": "points (deuten)",
+   "t": "verb"
+  },
+  "ufer": {
+   "g": "the bank, shore",
+   "t": "noun"
+  },
+  "dazugestoßen": {
+   "g": "joined in (dazustoßen)",
+   "t": "verb"
+  },
+  "richtung": {
+   "g": "direction",
+   "t": "noun"
+  },
+  "alster": {
+   "g": "the Alster, Hamburg's city lake",
+   "t": "noun"
+  },
+  "salzig": {
+   "g": "salty",
+   "t": "adjective"
+  },
+  "arbeitend": {
+   "g": "working, at work",
+   "t": "adjective"
+  },
+  "schlägt": {
+   "g": "beats, bangs (schlagen)",
+   "t": "verb"
+  },
+  "echte": {
+   "g": "real, genuine (echt)",
+   "t": "adjective"
+  },
+  "dort": {
+   "g": "there, in that place",
+   "t": "adverb"
+  },
+  "vornehm": {
+   "g": "genteel, refined",
+   "t": "adjective"
+  },
+  "segelboote": {
+   "g": "sailing boats (Segelboot)",
+   "t": "noun"
+  },
+  "statt": {
+   "g": "instead of",
+   "t": "preposition"
+  },
+  "containerschiffe": {
+   "g": "container ships",
+   "t": "noun"
+  },
+  "gewässer": {
+   "g": "a body of water",
+   "t": "noun"
+  },
+  "entscheiden": {
+   "g": "to decide, make up your mind",
+   "t": "verb"
+  },
+  "rivalisierenden": {
+   "g": "rival, competing (rivalisierend)",
+   "t": "adjective"
+  },
+  "vereinen": {
+   "g": "clubs (Verein)",
+   "t": "noun"
+  },
+  "welches": {
+   "g": "which",
+   "t": "pronoun"
+  },
+  "joggt": {
+   "g": "jogs (joggen)",
+   "t": "verb"
+  },
+  "rudert": {
+   "g": "rows (rudern)",
+   "t": "verb"
+  },
+  "schiffen": {
+   "g": "ships (Schiff)",
+   "t": "noun"
+  },
+  "besser": {
+   "g": "better (gut)",
+   "t": "adjective"
+  },
+  "zugehörigkeit": {
+   "g": "a sense of belonging",
+   "t": "noun"
+  },
+  "fürs": {
+   "g": "for the (für das)",
+   "t": "preposition"
+  },
+  "entlang": {
+   "g": "along",
+   "t": "preposition"
+  },
+  "schwimmponton": {
+   "g": "a floating pontoon",
+   "t": "noun"
+  },
+  "rieche": {
+   "g": "I smell (riechen)",
+   "t": "verb"
+  },
+  "wahl": {
+   "g": "a choice; gute Wahl",
+   "t": "noun"
+  },
+  "rau": {
+   "g": "rough, harsh",
+   "t": "adjective"
+  },
+  "verräter": {
+   "g": "a traitor",
+   "t": "noun"
+  },
+  "verzeiht": {
+   "g": "forgives (verzeihen)",
+   "t": "verb"
+  },
+  "großmütig": {
+   "g": "magnanimous, generous",
+   "t": "adjective"
+  },
+  "plötzlich": {
+   "g": "suddenly",
+   "t": "adverb"
+  },
+  "amt": {
+   "g": "government office (das Amt)",
+   "t": "noun"
+  },
+  "gestempelt": {
+   "g": "stamped (stempeln)",
+   "t": "verb"
+  },
+  "gespürt": {
+   "g": "felt, sensed (spüren)",
+   "t": "verb"
+  },
+  "heimisch": {
+   "g": "at home, settled",
+   "t": "adjective"
+  },
+  "wind": {
+   "g": "wind",
+   "t": "noun"
+  },
+  "schräg": {
+   "g": "at a slant, angled",
+   "t": "adjective"
+  },
+  "boot": {
+   "g": "a boat",
+   "t": "noun"
+  },
+  "krängt": {
+   "g": "heels over (krängen)",
+   "t": "verb"
+  },
+  "hart": {
+   "g": "hard, tough",
+   "t": "adjective"
+  },
+  "klammert": {
+   "g": "clings on (sich klammern)",
+   "t": "verb"
+  },
+  "nasse": {
+   "g": "wet (nass)",
+   "t": "adjective"
+  },
+  "reling": {
+   "g": "a boat's railing",
+   "t": "noun"
+  },
+  "dose": {
+   "g": "Dose, the club chairman's surname",
+   "t": "other"
+  },
+  "ruder": {
+   "g": "the helm, tiller",
+   "t": "noun"
+  },
+  "knappe": {
+   "g": "terse, curt (knapp)",
+   "t": "adjective"
+  },
+  "kommandos": {
+   "g": "commands, orders (Kommando)",
+   "t": "noun"
+  },
+  "fiete": {
+   "g": "Fiete, a Northern first name",
+   "t": "other"
+  },
+  "blitzschnell": {
+   "g": "lightning-fast",
+   "t": "adverb"
+  },
+  "handgriffe": {
+   "g": "hand movements, deft actions (Handgriff)",
+   "t": "noun"
+  },
+  "übersetzt": {
+   "g": "translates (übersetzen)",
+   "t": "verb"
+  },
+  "vorschot": {
+   "g": "the foresail sheet (a line)",
+   "t": "noun"
+  },
+  "dicht": {
+   "g": "close, tight; taut (of a sail)",
+   "t": "adjective"
+  },
+  "starren": {
+   "g": "to stare",
+   "t": "verb"
+  },
+  "seekrank": {
+   "g": "seasick",
+   "t": "adjective"
+  },
+  "welche": {
+   "g": "which",
+   "t": "pronoun"
+  },
+  "leine": {
+   "g": "a line, rope",
+   "t": "noun"
+  },
+  "deiner": {
+   "g": "your (dative)",
+   "t": "pronoun"
+  },
+  "rechten": {
+   "g": "right (hand) (recht)",
+   "t": "adjective"
+  },
+  "segel": {
+   "g": "a sail",
+   "t": "noun"
+  },
+  "fester": {
+   "g": "tighter, firmer (fest)",
+   "t": "adjective"
+  },
+  "bö": {
+   "g": "a gust of wind",
+   "t": "noun"
+  },
+  "erwischt": {
+   "g": "catches, hits (erwischen)",
+   "t": "verb"
+  },
+  "gischt": {
+   "g": "spray, sea foam",
+   "t": "noun"
+  },
+  "klatscht": {
+   "g": "claps; splashes (klatschen)",
+   "t": "verb"
+  },
+  "bord": {
+   "g": "an Bord = on board",
+   "t": "noun"
+  },
+  "verliert": {
+   "g": "loses (verlieren)",
+   "t": "verb"
+  },
+  "moment": {
+   "g": "moment (der Moment)",
+   "t": "noun"
+  },
+  "halt": {
+   "g": "halt dich fest = hold on tight (halten)",
+   "t": "verb"
+  },
+  "ausflug": {
+   "g": "an outing, a trip",
+   "t": "noun"
+  },
+  "ringkampf": {
+   "g": "a wrestling match",
+   "t": "noun"
+  },
+  "kostet": {
+   "g": "costs (kosten)",
+   "t": "verb"
+  },
+  "kraft": {
+   "g": "strength, energy",
+   "t": "noun"
+  },
+  "klarieren": {
+   "g": "to clear away, ready the deck",
+   "t": "verb"
+  },
+  "festhalten": {
+   "g": "to hold on tight",
+   "t": "verb"
+  },
+  "atmen": {
+   "g": "to breathe",
+   "t": "verb"
+  },
+  "reihenfolge": {
+   "g": "the order, sequence",
+   "t": "noun"
+  },
+  "machst": {
+   "g": "do, make (machen)",
+   "t": "verb"
+  },
+  "schlecht": {
+   "g": "bad, badly",
+   "t": "adjective"
+  },
+  "magen": {
+   "g": "stomach (der Magen)",
+   "t": "noun"
+  },
+  "musst": {
+   "g": "must, have to (müssen)",
+   "t": "verb"
+  },
+  "überreden": {
+   "g": "to talk round, persuade",
+   "t": "verb"
+  },
+  "horizont": {
+   "g": "the horizon",
+   "t": "noun"
+  },
+  "wellen": {
+   "g": "waves (Welle)",
+   "t": "noun"
+  },
+  "punkt": {
+   "g": "Punkt sieben = at seven sharp",
+   "t": "expression"
+  },
+  "beißt": {
+   "g": "bites; die Zähne zusammenbeißen (beißen)",
+   "t": "verb"
+  },
+  "zähne": {
+   "g": "teeth; die Zähne zusammenbeißen (Zahn)",
+   "t": "noun"
+  },
+  "kurs": {
+   "g": "a course, heading",
+   "t": "noun"
+  },
+  "ansteuerungstonne": {
+   "g": "a channel marker buoy",
+   "t": "noun"
+  },
+  "vorbeizieht": {
+   "g": "passes by (vorbeiziehen)",
+   "t": "verb"
+  },
+  "nicken": {
+   "g": "a nod; to nod",
+   "t": "noun"
+  },
+  "selten": {
+   "g": "rare, seldom",
+   "t": "adverb"
+  },
+  "überlebt": {
+   "g": "survived (überleben)",
+   "t": "verb"
+  },
+  "gehalten": {
+   "g": "held (halten)",
+   "t": "verb"
+  },
+  "land": {
+   "g": "country, land (das Land)",
+   "t": "noun"
+  },
+  "geredet": {
+   "g": "talked (reden)",
+   "t": "verb"
+  },
+  "gesegelt": {
+   "g": "sailed (segeln)",
+   "t": "verb"
+  },
+  "deshalb": {
+   "g": "that is why, therefore",
+   "t": "adverb"
+  },
+  "vorn": {
+   "g": "at the front, ahead",
+   "t": "adverb"
+  },
+  "versammlung": {
+   "g": "an assembly, meeting",
+   "t": "noun"
+  },
+  "millerntor": {
+   "g": "the Millerntor, St. Pauli's stadium",
+   "t": "other"
+  },
+  "menge": {
+   "g": "a crowd; a lot",
+   "t": "noun"
+  },
+  "braun": {
+   "g": "brown",
+   "t": "adjective"
+  },
+  "zugeknöpften": {
+   "g": "buttoned-up, reserved (zugeknöpft)",
+   "t": "adjective"
+  },
+  "brüllen": {
+   "g": "to bellow, roar",
+   "t": "verb"
+  },
+  "kehle": {
+   "g": "throat; aus voller Kehle",
+   "t": "noun"
+  },
+  "drückt": {
+   "g": "presses, pushes (drücken)",
+   "t": "verb"
+  },
+  "schal": {
+   "g": "a scarf",
+   "t": "noun"
+  },
+  "takt": {
+   "g": "im Takt = in rhythm, in time",
+   "t": "noun"
+  },
+  "st": {
+   "g": "St. (Saint); St. Pauli",
+   "t": "other"
+  },
+  "pauli": {
+   "g": "St. Pauli, Hamburg's underdog club/district",
+   "t": "other"
+  },
+  "verein": {
+   "g": "club, registered association",
+   "t": "noun"
+  },
+  "pokal": {
+   "g": "a cup, trophy",
+   "t": "noun"
+  },
+  "wen": {
+   "g": "whom",
+   "t": "pronoun"
+  },
+  "singst": {
+   "g": "you sing (singen)",
+   "t": "verb"
+  },
+  "totenkopf": {
+   "g": "a skull; St. Pauli's emblem",
+   "t": "noun"
+  },
+  "überall": {
+   "g": "everywhere",
+   "t": "adverb"
+  },
+  "piraten": {
+   "g": "pirates (Pirat)",
+   "t": "noun"
+  },
+  "fußball": {
+   "g": "football",
+   "t": "noun"
+  },
+  "gemeint": {
+   "g": "meant (meinen)",
+   "t": "verb"
+  },
+  "underdog": {
+   "g": "the underdog",
+   "t": "noun"
+  },
+  "kiez": {
+   "g": "neighborhood (Berlin word, der Kiez)",
+   "t": "noun",
+   "r": "regional"
+  },
+  "linke": {
+   "g": "left(-wing) (link)",
+   "t": "adjective"
+  },
+  "hsv": {
+   "g": "HSV, Hamburg's other football club",
+   "t": "other"
+  },
+  "feine": {
+   "g": "fine, genteel (fein)",
+   "t": "adjective"
+  },
+  "raue": {
+   "g": "rough, harsh (rau)",
+   "t": "adjective"
+  },
+  "hafenkante": {
+   "g": "the harbour's edge",
+   "t": "noun"
+  },
+  "spaltet": {
+   "g": "splits, divides (spalten)",
+   "t": "verb"
+  },
+  "lager": {
+   "g": "camps, sides; zwei Lager",
+   "t": "noun"
+  },
+  "schönste": {
+   "g": "the loveliest (schön)",
+   "t": "adjective"
+  },
+  "streit": {
+   "g": "an argument, quarrel",
+   "t": "noun"
+  },
+  "seinem": {
+   "g": "his (dative)",
+   "t": "pronoun"
+  },
+  "kennst": {
+   "g": "you know (kennen)",
+   "t": "verb"
+  },
+  "jedem": {
+   "g": "each, every (jeder)",
+   "t": "pronoun"
+  },
+  "gespräch": {
+   "g": "conversation, talk (das Gespräch)",
+   "t": "noun"
+  },
+  "viel": {
+   "g": "much, a lot",
+   "t": "adverb"
+  },
+  "singt": {
+   "g": "sings, chants (singen)",
+   "t": "verb"
+  },
+  "tribüne": {
+   "g": "the stands, terraces",
+   "t": "noun"
+  },
+  "explodiert": {
+   "g": "explodes, erupts (explodieren)",
+   "t": "verb"
+  },
+  "einzigen": {
+   "g": "the only, single (einzig)",
+   "t": "adjective"
+  },
+  "aufschrei": {
+   "g": "an outcry, a roar",
+   "t": "noun"
+  },
+  "darfst": {
+   "g": "you may (dürfen)",
+   "t": "verb"
+  },
+  "rauslassen": {
+   "g": "to let out, release",
+   "t": "verb"
+  },
+  "stadion": {
+   "g": "the stadium",
+   "t": "noun"
+  },
+  "samstag": {
+   "g": "Saturday (der Samstag)",
+   "t": "noun"
+  },
+  "eure": {
+   "g": "your (plural)",
+   "t": "pronoun"
+  },
+  "ventile": {
+   "g": "valves; outlets (Ventil)",
+   "t": "noun"
+  },
+  "deckel": {
+   "g": "a lid; Deckel drauf = keep a lid on it",
+   "t": "noun"
+  },
+  "drauf": {
+   "g": "on it, on top",
+   "t": "adverb"
+  },
+  "wochenende": {
+   "g": "the weekend",
+   "t": "noun"
+  },
+  "dampf": {
+   "g": "steam; Dampf ablassen = let off steam",
+   "t": "noun"
+  },
+  "ablassen": {
+   "g": "to let off (steam); to release",
+   "t": "verb"
+  },
+  "keiner": {
+   "g": "nobody",
+   "t": "pronoun"
+  },
+  "brülle": {
+   "g": "I roar, bellow (brüllen)",
+   "t": "verb"
+  },
+  "gesänge": {
+   "g": "chants, songs (Gesang)",
+   "t": "noun"
+  },
+  "herzblut": {
+   "g": "heart and soul, passion",
+   "t": "noun"
+  },
+  "texte": {
+   "g": "the words, lyrics (Text)",
+   "t": "noun"
+  },
+  "lernst": {
+   "g": "you learn (lernen)",
+   "t": "verb"
+  },
+  "spiel": {
+   "g": "a game, match",
+   "t": "noun"
+  },
+  "schlüssel": {
+   "g": "key",
+   "t": "noun"
+  },
+  "verschwunden": {
+   "g": "disappeared (verschwinden)",
+   "t": "verb"
+  },
+  "wohnungstür": {
+   "g": "the flat's front door",
+   "t": "noun"
+  },
+  "novemberkälte": {
+   "g": "November cold",
+   "t": "noun"
+  },
+  "warmen": {
+   "g": "the warm ones (warm)",
+   "t": "adjective"
+  },
+  "backstube": {
+   "g": "a bakery's back room",
+   "t": "noun"
+  },
+  "telefoniert": {
+   "g": "phones, calls (telefonieren)",
+   "t": "verb"
+  },
+  "erfolglos": {
+   "g": "without success, in vain",
+   "t": "adverb"
+  },
+  "kontakte": {
+   "g": "contacts (Kontakt)",
+   "t": "noun"
+  },
+  "furchtbar": {
+   "g": "terribly; here: very",
+   "t": "adverb"
+  },
+  "nett": {
+   "g": "nice, kind",
+   "t": "adjective"
+  },
+  "telefon": {
+   "g": "telephone",
+   "t": "noun"
+  },
+  "warm": {
+   "g": "warm",
+   "t": "adjective"
+  },
+  "klingen": {
+   "g": "to sound",
+   "t": "verb"
+  },
+  "helfen": {
+   "g": "to help",
+   "t": "verb"
+  },
+  "freundlich": {
+   "g": "friendly",
+   "t": "adverb"
+  },
+  "oberfläche": {
+   "g": "the surface",
+   "t": "noun"
+  },
+  "praktisch": {
+   "g": "practical(ly)",
+   "t": "adjective"
+  },
+  "später": {
+   "g": "later",
+   "t": "adverb"
+  },
+  "zweitschlüssel": {
+   "g": "a spare key",
+   "t": "noun"
+  },
+  "hab": {
+   "g": "I have (haben)",
+   "t": "verb"
+  },
+  "deinem": {
+   "g": "your (dative, dein)",
+   "t": "pronoun"
+  },
+  "nachmachen": {
+   "g": "to copy, duplicate (a key)",
+   "t": "verb"
+  },
+  "anruf": {
+   "g": "a phone call",
+   "t": "noun"
+  },
+  "fußweg": {
+   "g": "a walk (on foot)",
+   "t": "noun"
+  },
+  "darüber": {
+   "g": "about it, over it",
+   "t": "adverb"
+  },
+  "sprachlos": {
+   "g": "speechless",
+   "t": "adjective"
+  },
+  "kühlste": {
+   "g": "the coolest, most aloof (kühl)",
+   "t": "adjective"
+  },
+  "rettet": {
+   "g": "rescues, saves (retten)",
+   "t": "verb"
+  },
+  "kokosnuss": {
+   "g": "a coconut; hard outside, soft inside",
+   "t": "noun"
+  },
+  "außen": {
+   "g": "outside, on the outer side",
+   "t": "adverb"
+  },
+  "innen": {
+   "g": "inside; innen weich",
+   "t": "adverb"
+  },
+  "weich": {
+   "g": "soft; innen weich",
+   "t": "adjective"
+  },
+  "ewig": {
+   "g": "forever, endlessly",
+   "t": "adverb"
+  },
+  "schale": {
+   "g": "shell, peel, outer skin",
+   "t": "noun"
+  },
+  "lauten": {
+   "g": "the loud ones (laut)",
+   "t": "adjective"
+  },
+  "anfängerfehler": {
+   "g": "a beginner's mistake",
+   "t": "noun"
+  },
+  "wärme": {
+   "g": "warmth, heat",
+   "t": "noun"
+  },
+  "misst": {
+   "g": "measures (messen)",
+   "t": "verb"
+  },
+  "taten": {
+   "g": "deeds, actions (Tat)",
+   "t": "noun"
+  },
+  "falsch": {
+   "g": "wrong, incorrect",
+   "t": "adjective"
+  },
+  "geraten": {
+   "g": "to guess wrong; to end up (in a state)",
+   "t": "verb"
+  },
+  "kalt": {
+   "g": "cold",
+   "t": "adjective"
+  },
+  "trinken": {
+   "g": "to drink",
+   "t": "verb"
+  },
+  "wortlos": {
+   "g": "without a word",
+   "t": "adverb"
+  },
+  "sturmflut": {
+   "g": "a storm surge, storm flood",
+   "t": "noun"
+  },
+  "höchststand": {
+   "g": "the peak level, high point",
+   "t": "noun"
+  },
+  "gummistiefeln": {
+   "g": "rubber boots (Gummistiefel)",
+   "t": "noun"
+  },
+  "dutzend": {
+   "g": "a dozen",
+   "t": "noun"
+  },
+  "kaikante": {
+   "g": "the edge of the quay",
+   "t": "noun"
+  },
+  "leckt": {
+   "g": "laps, licks (lecken)",
+   "t": "verb"
+  },
+  "sollten": {
+   "g": "should (sollen)",
+   "t": "verb"
+  },
+  "flutwarnung": {
+   "g": "a flood warning",
+   "t": "noun"
+  },
+  "feuerwerk": {
+   "g": "fireworks",
+   "t": "noun"
+  },
+  "guck": {
+   "g": "look (gucken)",
+   "t": "verb"
+  },
+  "rennt": {
+   "g": "runs (rennen)",
+   "t": "verb"
+  },
+  "filmt": {
+   "g": "films, records (filmen)",
+   "t": "verb"
+  },
+  "schauen": {
+   "g": "to look, watch",
+   "t": "verb"
+  },
+  "wegspült": {
+   "g": "washes away (wegspülen)",
+   "t": "verb"
+  },
+  "stufen": {
+   "g": "steps (Stufe)",
+   "t": "noun"
+  },
+  "auswendig": {
+   "g": "by heart, off by heart",
+   "t": "adverb"
+  },
+  "breitschultriger": {
+   "g": "broad-shouldered (breitschultrig)",
+   "t": "adjective"
+  },
+  "mann": {
+   "g": "a man",
+   "t": "noun"
+  },
+  "ölzeug": {
+   "g": "oilskins, waterproofs",
+   "t": "noun"
+  },
+  "pegel": {
+   "g": "a water gauge, water level",
+   "t": "noun"
+  },
+  "heben": {
+   "g": "to lift, raise",
+   "t": "verb"
+  },
+  "kehrt": {
+   "g": "returns (zurückkehren; kehrt ... zurück)",
+   "t": "verb"
+  },
+  "graues": {
+   "g": "grey (grau)",
+   "t": "adjective"
+  },
+  "zittert": {
+   "g": "trembles, shivers (zittern)",
+   "t": "verb"
+  },
+  "stufe": {
+   "g": "step, level",
+   "t": "noun"
+  },
+  "nass": {
+   "g": "wet",
+   "t": "adjective"
+  },
+  "trocknet": {
+   "g": "dries (trocknen)",
+   "t": "verb"
+  },
+  "katastrophe": {
+   "g": "a catastrophe",
+   "t": "noun"
+  },
+  "gewartet": {
+   "g": "waited (warten)",
+   "t": "verb"
+  },
+  "stattdessen": {
+   "g": "instead",
+   "t": "adverb"
+  },
+  "schaust": {
+   "g": "you look (schauen)",
+   "t": "verb"
+  },
+  "komisch": {
+   "g": "odd, funny",
+   "t": "adjective"
+  },
+  "puls": {
+   "g": "the pulse",
+   "t": "noun"
+  },
+  "langsamer": {
+   "g": "slower (langsam)",
+   "t": "adjective"
+  },
+  "habt": {
+   "g": "you have (haben)",
+   "t": "verb"
+  },
+  "kinder": {
+   "g": "children (Kind)",
+   "t": "noun"
+  },
+  "gemacht": {
+   "g": "done, made (machen)",
+   "t": "verb"
+  },
+  "zusehen": {
+   "g": "to watch, look on",
+   "t": "verb"
+  },
+  "herbst": {
+   "g": "autumn",
+   "t": "noun"
+  },
+  "aufs": {
+   "g": "onto the (auf das)",
+   "t": "preposition"
+  },
+  "neue": {
+   "g": "die Neue = the new one, newcomer (female)",
+   "t": "noun"
+  },
+  "wächst": {
+   "g": "grows (wachsen)",
+   "t": "verb"
+  },
+  "heim": {
+   "g": "home; nach Hause",
+   "t": "adverb"
+  },
+  "dreht": {
+   "g": "turns (drehen); dreht sich um = turns around",
+   "t": "verb"
+  },
+  "ecke": {
+   "g": "corner (die Ecke)",
+   "t": "noun"
+  },
+  "folgt": {
+   "g": "follows (folgen)",
+   "t": "verb"
+  },
+  "treibholz": {
+   "g": "driftwood",
+   "t": "noun"
+  },
+  "liegen": {
+   "g": "to lie; das wird Ihnen liegen = it will suit you",
+   "t": "verb"
+  },
+  "novembersturm": {
+   "g": "a November storm",
+   "t": "noun"
+  },
+  "erkältung": {
+   "g": "a cold (illness)",
+   "t": "noun"
+  },
+  "beschert": {
+   "g": "lands (someone with), brings (bescheren)",
+   "t": "verb"
+  },
+  "praxis": {
+   "g": "doctor's practice",
+   "t": "noun"
+  },
+  "wochen": {
+   "g": "weeks (die Woche)",
+   "t": "noun"
+  },
+  "termin": {
+   "g": "appointment (der Termin)",
+   "t": "noun"
+  },
+  "dampfenden": {
+   "g": "steaming (dampfend)",
+   "t": "adjective"
+  },
+  "kanne": {
+   "g": "a pot, jug",
+   "t": "noun"
+  },
+  "aufmachen": {
+   "g": "to open (up)",
+   "t": "verb"
+  },
+  "grog": {
+   "g": "grog: hot rum, sugar and water",
+   "t": "noun"
+  },
+  "gekocht": {
+   "g": "cooked, brewed (kochen)",
+   "t": "verb"
+  },
+  "heißes": {
+   "g": "hot (heiß)",
+   "t": "adjective"
+  },
+  "brauner": {
+   "g": "brown (braun)",
+   "t": "adjective"
+  },
+  "schuss": {
+   "g": "a dash, a splash (of rum)",
+   "t": "noun"
+  },
+  "rum": {
+   "g": "rum",
+   "t": "noun"
+  },
+  "norddeutsche": {
+   "g": "north German (norddeutsch)",
+   "t": "adjective"
+  },
+  "heilmittel": {
+   "g": "a remedy, cure",
+   "t": "noun"
+  },
+  "nummer": {
+   "g": "number (die Nummer)",
+   "t": "noun"
+  },
+  "arzt": {
+   "g": "doctor",
+   "t": "noun"
+  },
+  "nächstes": {
+   "g": "next",
+   "t": "adjective"
+  },
+  "kuriert": {
+   "g": "cures (kurieren)",
+   "t": "verb"
+  },
+  "gratis": {
+   "g": "free of charge",
+   "t": "adverb"
+  },
+  "rezept": {
+   "g": "prescription",
+   "t": "noun"
+  },
+  "tablette": {
+   "g": "a pill, tablet",
+   "t": "noun"
+  },
+  "getränk": {
+   "g": "a drink",
+   "t": "noun"
+  },
+  "tabletten": {
+   "g": "pills, tablets (Tablette)",
+   "t": "noun"
+  },
+  "dämpfen": {
+   "g": "to dampen, dull, suppress",
+   "t": "verb"
+  },
+  "wärmt": {
+   "g": "warms (wärmen)",
+   "t": "verb"
+  },
+  "tröstet": {
+   "g": "comforts, soothes (trösten)",
+   "t": "verb"
+  },
+  "schnupfen": {
+   "g": "a head cold, sniffles",
+   "t": "noun"
+  },
+  "legen": {
+   "g": "to put, lay down",
+   "t": "verb"
+  },
+  "auskurieren": {
+   "g": "to fully recover from illness",
+   "t": "verb"
+  },
+  "nennt": {
+   "g": "calls, names (nennen)",
+   "t": "verb"
+  },
+  "verkriecht": {
+   "g": "holes up, hides away (sich verkriechen)",
+   "t": "verb"
+  },
+  "tagen": {
+   "g": "days (der Tag, dative)",
+   "t": "noun"
+  },
+  "beinen": {
+   "g": "auf den Beinen = up and about (Bein)",
+   "t": "noun"
+  },
+  "tapfer": {
+   "g": "bravely, stoically",
+   "t": "adverb"
+  },
+  "weiterarbeitet": {
+   "g": "keeps working (weiterarbeiten)",
+   "t": "verb"
+  },
+  "wärmflasche": {
+   "g": "hot water bottle",
+   "t": "noun"
+  },
+  "sofa": {
+   "g": "sofa (das Sofa)",
+   "t": "noun"
+  },
+  "vorhänge": {
+   "g": "curtains (Vorhang)",
+   "t": "noun"
+  },
+  "gegen": {
+   "g": "against; compared with",
+   "t": "preposition"
+  },
+  "husten": {
+   "g": "a cough; to cough",
+   "t": "noun"
+  },
+  "suppe": {
+   "g": "soup",
+   "t": "noun"
+  },
+  "organisiert": {
+   "g": "organized (organisieren)",
+   "t": "adjective"
+  },
+  "pflegekette": {
+   "g": "a chain of care, care rota",
+   "t": "noun"
+  },
+  "simplen": {
+   "g": "simple (simpel)",
+   "t": "adjective"
+  },
+  "aufheben": {
+   "g": "fuss; kein Aufheben = no fuss",
+   "t": "noun"
+  },
+  "übliche": {
+   "g": "the usual (üblich)",
+   "t": "adjective"
+  },
+  "revanchieren": {
+   "g": "to return a favour, reciprocate",
+   "t": "verb"
+  },
+  "kochst": {
+   "g": "you cook (kochen)",
+   "t": "verb"
+  },
+  "kranken": {
+   "g": "a sick person (Kranker)",
+   "t": "noun"
+  },
+  "müsste": {
+   "g": "would have to (müssen)",
+   "t": "verb"
+  },
+  "ausmachen": {
+   "g": "to sort out, settle",
+   "t": "verb"
+  },
+  "behörden": {
+   "g": "authorities, public offices (Behörde)",
+   "t": "noun"
+  },
+  "fieber": {
+   "g": "fever",
+   "t": "noun"
+  },
+  "schlaf": {
+   "g": "sleep (schlafen)",
+   "t": "verb"
+  },
+  "beschwer": {
+   "g": "complain (beschweren)",
+   "t": "verb"
+  },
+  "ergebe": {
+   "g": "sich ergeben = to give in (ergeben)",
+   "t": "verb"
+  },
+  "demselben": {
+   "g": "the same (derselbe, dative)",
+   "t": "pronoun"
+  },
+  "fremde": {
+   "g": "a stranger",
+   "t": "noun"
+  },
+  "übt": {
+   "g": "practises, rehearses (üben)",
+   "t": "verb"
+  },
+  "erkennt": {
+   "g": "recognises (erkennen)",
+   "t": "verb"
+  },
+  "sofia": {
+   "g": "Sofia, the new arrival in the finale",
+   "t": "other"
+  },
+  "wünsche": {
+   "g": "I wish (wünschen)",
+   "t": "verb"
+  },
+  "wunderschönen": {
+   "g": "beautiful (wunderschön)",
+   "t": "adjective"
+  },
+  "angenehmen": {
+   "g": "pleasant (angenehm)",
+   "t": "adjective"
+  },
+  "unbedingt": {
+   "g": "absolutely, at all costs",
+   "t": "adverb"
+  },
+  "spar": {
+   "g": "save; spar dir = spare yourself (sparen)",
+   "t": "verb"
+  },
+  "hälfte": {
+   "g": "half",
+   "t": "noun"
+  },
+  "unfreundlich": {
+   "g": "unfriendly",
+   "t": "adjective"
+  },
+  "anfang": {
+   "g": "beginning (der Anfang); von Anfang an = from the start",
+   "t": "noun"
+  },
+  "glaub": {
+   "g": "believe (glauben)",
+   "t": "verb"
+  },
+  "steckt": {
+   "g": "is stuck, is placed (stecken)",
+   "t": "verb"
+  },
+  "höflichen": {
+   "g": "polite (höflich)",
+   "t": "adjective"
+  },
+  "sätzen": {
+   "g": "sentences (Satz)",
+   "t": "noun"
+  },
+  "stillem": {
+   "g": "quiet, silent (still)",
+   "t": "adjective"
+  },
+  "wohlwollen": {
+   "g": "goodwill, benevolence",
+   "t": "noun"
+  },
+  "zweite": {
+   "g": "second (zweit, declined)",
+   "t": "number"
+  },
+  "nimmst": {
+   "g": "you take; an die Hand nehmen (nehmen)",
+   "t": "verb"
+  },
+  "standest": {
+   "g": "you stood (stehen)",
+   "t": "verb"
+  },
+  "verschlossen": {
+   "g": "closed off, reserved",
+   "t": "adjective"
+  },
+  "ernstesten": {
+   "g": "most seriously (ernst)",
+   "t": "adjective"
+  },
+  "woher": {
+   "g": "from where, how come",
+   "t": "adverb"
+  },
+  "kurzer": {
+   "g": "short (kurz)",
+   "t": "adjective"
+  },
+  "genommen": {
+   "g": "taken (nehmen); hätte mich genommen = would have taken me",
+   "t": "verb"
+  },
+  "dran": {
+   "g": "at it; one's turn (colloquial)",
+   "t": "adverb"
+  },
+  "bricht": {
+   "g": "breaks (brechen)",
+   "t": "verb"
+  },
+  "hälften": {
+   "g": "halves (Hälfte)",
+   "t": "noun"
+  },
+  "größere": {
+   "g": "the bigger (groß)",
+   "t": "adjective"
+  },
+  "trick": {
+   "g": "trick, clever shortcut",
+   "t": "noun"
+  },
+  "drängeln": {
+   "g": "to push and jostle",
+   "t": "verb"
+  },
+  "dableiben": {
+   "g": "to stay put",
+   "t": "verb"
+  },
+  "hallo": {
+   "g": "hello",
+   "t": "expression"
+  },
+  "nachzudenken": {
+   "g": "to think it over (nachdenken)",
+   "t": "verb"
+  },
+  "hamburgerin": {
+   "g": "a Hamburg woman",
+   "t": "noun"
+  },
+  "dauert": {
+   "g": "takes, lasts (dauern)",
+   "t": "verb"
+  }
+ }
+}

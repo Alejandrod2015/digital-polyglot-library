@@ -1,4 +1,5 @@
 import germanExpat from "@/data/tapGlosses/german-expat.json";
+import germanHamburg from "@/data/tapGlosses/german-hamburg.json";
 import frenchTraveler from "@/data/tapGlosses/french-traveler.json";
 
 // Piloto "tap any word" (2026-07-06): glosses contextuales autorados por
@@ -18,7 +19,11 @@ type TapGlossBundle = {
   glosses: Record<string, TapGloss>;
 };
 
-const BUNDLES: TapGlossBundle[] = [germanExpat as TapGlossBundle, frenchTraveler as TapGlossBundle];
+const BUNDLES: TapGlossBundle[] = [
+  germanExpat as TapGlossBundle,
+  germanHamburg as TapGlossBundle,
+  frenchTraveler as TapGlossBundle,
+];
 
 export function getTapGlossesForSlug(slug: string): Record<string, TapGloss> | null {
   for (const bundle of BUNDLES) {
