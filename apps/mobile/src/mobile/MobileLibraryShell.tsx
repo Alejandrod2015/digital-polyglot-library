@@ -4908,29 +4908,6 @@ export function MobileLibraryShell(args: {
     [continueReading, offlineStoriesById, readingProgress]
   );
 
-  const savedStoryCards = useMemo<StoryCardModel[]>(
-    () =>
-      savedStories.map(({ selection, offlineStory }) => {
-        const progress = readingProgress.find((entry) => entry.storyId === selection.story.id) ?? null;
-        return {
-          key: `saved-${selection.story.id}`,
-          title: selection.story.title,
-          subtitle: progress ? formatReadingProgressLabel(progress) ?? selection.book.title : selection.book.title,
-          coverUrl: getCoverUrl(selection.story.cover ?? selection.story.coverUrl ?? selection.book.cover),
-          meta: `${formatLanguage(selection.story.language ?? selection.book.language)} · ${formatTopic(selection.story.topic ?? selection.book.topic)}`,
-          badge: offlineStory ? "Offline ready" : selection.story.audio ? "Audio ready" : "Text",
-          progressLabel: formatReadingProgressLabel(progress),
-          onPress: () =>
-            setSelection({
-              book: selection.book,
-              story: selection.story,
-              resolvedAudioUrl: offlineStory?.localAudioUri ?? selection.story.audio,
-            }),
-        };
-      }),
-    [savedStories, readingProgress]
-  );
-
   const remoteStoryCards = useMemo<StoryCardModel[]>(
     () =>
       remoteOpenableStories.map(({ remote, selection, offlineStory }) => {
@@ -9382,13 +9359,9 @@ export function MobileLibraryShell(args: {
     return activeScreen === tab;
   }
 
-  const offlineReadyStoryCards = savedStoryCards.filter((item) =>
-    offlineSnapshot?.stories.some((story) => story.storyId === item.key.replace(/^saved-/, ""))
-  );
   const syncedOnlyStoryCards = remoteStoryCards.filter(
     (item) => !savedStoryIds.includes(item.key.replace(/^remote-/, ""))
   );
-  const savedLibraryCards = savedStoryCards.length > 0 ? savedStoryCards : remoteStoryCards;
 
   const featuredHomeStory = useMemo(() => {
     const spotlight = getSpotlightSelection();
@@ -13094,150 +13067,11 @@ export function MobileLibraryShell(args: {
           <View style={styles.heroTextBlock}>
             <Text style={styles.eyebrow}>Saved</Text>
             <Text style={styles.title}>Your saved reading</Text>
-            <Text style={styles.subtitle}>Saved, synced and ready to resume.</Text>
+            <Text style={styles.subtitle}>Pick up any of your saved stories.</Text>
           </View>
           <MenuTrigger onPress={() => setMenuOpen(true)} />
         </View>
       </View>
-
-      {continueReadingCards.length > 0 ? (
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <View>
-              <Text style={styles.sectionEyebrow}>Continue</Text>
-              <Text style={styles.sectionTitle}>Continue reading</Text>
-            </View>
-          </View>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-            {continueReadingCards.map((item) => (
-              <BookHomeCard
-                key={item.key}
-                item={{
-                  key: item.key,
-                  title: item.title,
-                  coverUrl: item.coverUrl,
-                  subtitle: item.subtitle,
-                  meta: item.meta,
-                  progressLabel: item.progressLabel,
-                  onPress: item.onPress ?? (() => {}),
-                }}
-              />
-            ))}
-          </ScrollView>
-        </View>
-      ) : null}
-
-      <View style={[styles.card, styles.accountCard, styles.librarySnapshotCard]}>
-        <View style={styles.librarySnapshotHeader}>
-          <Text style={styles.sectionTitle}>Library snapshot</Text>
-          <View style={styles.libraryMiniActions}>
-            <Pressable
-              onPress={() => {
-                if (continueReadingCards[0]?.onPress) {
-                  continueReadingCards[0].onPress();
-                  return;
-                }
-                if (remoteStoryCards[0]?.onPress) {
-                  remoteStoryCards[0].onPress();
-                  return;
-                }
-                if (savedStoryCards[0]?.onPress) {
-                  savedStoryCards[0].onPress();
-                  return;
-                }
-                setActiveScreen("explore");
-              }}
-              style={[styles.inlineButton, styles.primaryButton, styles.libraryMiniActionPrimary]}
-            >
-              <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
-                {continueReadingCards.length > 0
-                  ? "Resume"
-                  : remoteStoryCards.length > 0
-                    ? "Open synced"
-                    : savedStoryCards.length > 0
-                      ? "Open saved"
-                      : "Browse"}
-              </Text>
-            </Pressable>
-            <Pressable onPress={() => setActiveScreen("explore")} style={[styles.inlineButton, styles.libraryMiniActionGhost]}>
-              <Text style={styles.inlineButtonText}>Add more</Text>
-            </Pressable>
-          </View>
-        </View>
-        <View style={styles.summaryGrid}>
-          <View style={styles.summaryTile}>
-            <Text style={styles.summaryValue}>{savedBooks.length}</Text>
-            <Text style={styles.summaryLabel}>Saved books</Text>
-          </View>
-          <View style={styles.summaryTile}>
-            <Text style={styles.summaryValue}>{savedStoryCards.length}</Text>
-            <Text style={styles.summaryLabel}>Saved stories</Text>
-          </View>
-          <View style={styles.summaryTile}>
-            <Text style={styles.summaryValue}>{remoteStoryCards.length}</Text>
-            <Text style={styles.summaryLabel}>Synced stories</Text>
-          </View>
-          <View style={styles.summaryTile}>
-            <Text style={styles.summaryValue}>{offlineSnapshot?.stories.length ?? 0}</Text>
-            <Text style={styles.summaryLabel}>Offline ready</Text>
-          </View>
-        </View>
-        {remoteProgress ? (
-          <Text style={styles.helperText}>
-            {remoteProgress.weeklyStoriesFinished} story{remoteProgress.weeklyStoriesFinished === 1 ? "" : "ies"} finished this week · {remoteProgress.weeklyMinutesListened} min listened
-          </Text>
-        ) : null}
-        <View style={styles.libraryMicroStats}>
-          <View style={styles.libraryMicroStat}>
-            <Text style={styles.libraryMicroStatValue}>{continueReadingCards.length}</Text>
-            <Text style={styles.libraryMicroStatLabel}>In motion</Text>
-          </View>
-          <View style={styles.libraryMicroStat}>
-            <Text style={styles.libraryMicroStatValue}>{remoteProgress?.weeklyPracticeSessions ?? 0}</Text>
-            <Text style={styles.libraryMicroStatLabel}>This week</Text>
-          </View>
-          <View style={styles.libraryMicroStat}>
-            <Text style={styles.libraryMicroStatValue}>{savedStoryCards.length}</Text>
-            <Text style={styles.libraryMicroStatLabel}>Local</Text>
-          </View>
-          <View style={styles.libraryMicroStat}>
-            <Text style={styles.libraryMicroStatValue}>{remoteStoryCards.length}</Text>
-            <Text style={styles.libraryMicroStatLabel}>Synced</Text>
-          </View>
-        </View>
-        <Pressable onPress={() => setActiveScreen("favorites")} style={styles.libraryInlineLink}>
-          <Text style={styles.libraryInlineLinkText}>Open favorites</Text>
-          <Feather name="arrow-right" size={15} color="#dbe9ff" />
-        </Pressable>
-      </View>
-
-      {offlineReadyStoryCards.length > 0 ? (
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <View>
-              <Text style={styles.sectionEyebrow}>Offline</Text>
-              <Text style={styles.sectionTitle}>Ready without internet</Text>
-            </View>
-            <Text style={styles.helperText}>{offlineReadyStoryCards.length} stories</Text>
-          </View>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-            {offlineReadyStoryCards.map((item) => (
-              <BookHomeCard
-                key={`offline-${item.key}`}
-                item={{
-                  key: item.key,
-                  title: item.title,
-                  coverUrl: item.coverUrl,
-                  subtitle: item.subtitle,
-                  meta: item.meta,
-                  progressLabel: item.progressLabel,
-                  onPress: item.onPress ?? (() => {}),
-                }}
-              />
-            ))}
-          </ScrollView>
-        </View>
-      ) : null}
 
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
@@ -13246,25 +13080,47 @@ export function MobileLibraryShell(args: {
             <Text style={styles.sectionTitle}>Your reading shelf</Text>
           </View>
           <Text style={styles.helperText}>
-            {savedStoryCards.length > 0 ? `${savedStoryCards.length} stories` : "Save stories to build your shelf"}
+            {savedStories.length > 0 ? `${savedStories.length} stories` : "Save stories to build your shelf"}
           </Text>
         </View>
-        {savedStoryCards.length > 0 ? (
+        {savedStories.length > 0 ? (
           <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-            {savedStoryCards.map((item) => (
-              <BookHomeCard
-                key={`library-${item.key}`}
-                item={{
-                  key: item.key,
-                  title: item.title,
-                  coverUrl: item.coverUrl,
-                  subtitle: item.subtitle,
-                  meta: item.meta,
-                  progressLabel: item.progressLabel,
-                  onPress: item.onPress ?? (() => {}),
-                }}
-              />
-            ))}
+            {savedStories.map(({ selection, offlineStory }) => {
+              const { story, book } = selection;
+              const offlineReady = Boolean(offlineStory?.text && offlineStory?.localAudioUri);
+              const levelLabel =
+                cefrDisplayLabel(story.cefrLevel ?? book.cefrLevel) ??
+                formatLevel(story.level ?? book.level);
+              // formatLevel/formatTopic return "-" when unknown; drop those so
+              // the meta line never reads "- · Culture".
+              const meta = [levelLabel, formatTopic(story.topic ?? book.topic)]
+                .filter((part) => part && part !== "-")
+                .join(" · ");
+              const langRegion = formatLanguageAndRegion(
+                story.language ?? book.language,
+                story.region ?? book.region
+              );
+              return (
+                <BookHomeCard
+                  key={`library-${story.id}`}
+                  item={{
+                    key: story.id,
+                    title: story.title,
+                    coverUrl: getCoverUrl(story.cover ?? story.coverUrl ?? book.cover),
+                    subtitle: langRegion && langRegion !== "-" ? langRegion : undefined,
+                    meta,
+                    statusLine: offlineReady ? "Saved · offline ready" : "Saved",
+                    offlineReady,
+                    onPress: () =>
+                      setSelection({
+                        book,
+                        story,
+                        resolvedAudioUrl: offlineStory?.localAudioUri ?? story.audio,
+                      }),
+                  }}
+                />
+              );
+            })}
           </ScrollView>
         ) : latestStoryCards.length > 0 ? (
           <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
@@ -20014,32 +19870,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "800",
   },
-  summaryGrid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 10,
-  },
-  summaryTile: {
-    minWidth: "47%",
-    flexGrow: 1,
-    borderRadius: 20,
-    backgroundColor: "#0f1f34",
-    borderWidth: 1,
-    borderColor: "#29435f",
-    paddingHorizontal: 14,
-    paddingVertical: 14,
-    gap: 4,
-  },
-  summaryValue: {
-    color: "#ffffff",
-    fontSize: 24,
-    fontWeight: "800",
-  },
-  summaryLabel: {
-    color: "#aebcd3",
-    fontSize: 13,
-    lineHeight: 18,
-  },
   preferenceSummaryStack: {
     gap: 10,
   },
@@ -21610,40 +21440,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "800",
     lineHeight: 28,
-  },
-  libraryQuickRow: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 8,
-    marginTop: 2,
-    marginBottom: 2,
-  },
-  libraryMicroStats: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 8,
-    marginTop: 2,
-  },
-  libraryMicroStat: {
-    minWidth: "47%",
-    flexGrow: 1,
-    borderRadius: 14,
-    backgroundColor: "#102238",
-    borderWidth: 1,
-    borderColor: "#29435f",
-    paddingHorizontal: 10,
-    paddingVertical: 9,
-    gap: 2,
-  },
-  libraryMicroStatValue: {
-    color: "#ffffff",
-    fontSize: 18,
-    fontWeight: "800",
-  },
-  libraryMicroStatLabel: {
-    color: "#aebcd3",
-    fontSize: 11,
-    fontWeight: "700",
   },
   settingsSaveRow: {
     flexDirection: "row",
@@ -24925,28 +24721,6 @@ const styles = StyleSheet.create({
     gap: 8,
     paddingBottom: 2,
   },
-  librarySnapshotCard: {
-    gap: 8,
-  },
-  librarySnapshotHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 10,
-  },
-  libraryMiniActions: {
-    flexDirection: "row",
-    gap: 6,
-    alignItems: "center",
-  },
-  libraryMiniActionPrimary: {
-    paddingHorizontal: 10,
-    paddingVertical: 7,
-  },
-  libraryMiniActionGhost: {
-    paddingHorizontal: 10,
-    paddingVertical: 7,
-  },
   librarySwitcherRow: {
     flexDirection: "row",
     gap: 8,
@@ -24998,18 +24772,6 @@ const styles = StyleSheet.create({
     color: "#c3d0e2",
     fontSize: 12,
     lineHeight: 17,
-  },
-  libraryInlineLink: {
-    marginTop: 2,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 6,
-    alignSelf: "flex-start",
-  },
-  libraryInlineLinkText: {
-    color: "#dbe9ff",
-    fontSize: 13,
-    fontWeight: "700",
   },
   progressStatsGrid: {
     flexDirection: "row",

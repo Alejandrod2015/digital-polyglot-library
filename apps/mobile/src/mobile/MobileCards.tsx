@@ -128,9 +128,13 @@ export function BookHomeCard({
     key: string;
     title: string;
     coverUrl: string;
-    subtitle: string;
+    subtitle?: string;
     meta: string;
     progressLabel?: string;
+    /** Bottom status line, e.g. "Saved · offline ready". Rendered under meta. */
+    statusLine?: string;
+    /** Shows an "OFFLINE" pill over the cover when the story is downloaded. */
+    offlineReady?: boolean;
     qaLabel?: string;
     /**
      * How to fit the cover inside the card frame. "cover" (default) fills the
@@ -157,10 +161,16 @@ export function BookHomeCard({
         style={[styles.bookHomeCardImage, usePortraitFrame ? styles.bookHomeCardImagePortrait : null]}
         resizeMode={item.coverFit ?? "cover"}
       />
+      {item.offlineReady ? (
+        <View style={styles.bookHomeCardOfflineBadge}>
+          <Text style={styles.bookHomeCardOfflineBadgeText}>OFFLINE</Text>
+        </View>
+      ) : null}
       <View style={styles.bookHomeCardBody}>
         <Text style={styles.bookHomeCardTitle}>{item.title}</Text>
-        <Text style={styles.bookHomeCardSubtitle}>{item.subtitle}</Text>
+        {item.subtitle ? <Text style={styles.bookHomeCardSubtitle}>{item.subtitle}</Text> : null}
         <Text style={styles.bookHomeCardMeta}>{item.meta}</Text>
+        {item.statusLine ? <Text style={styles.bookHomeCardStatus}>{item.statusLine}</Text> : null}
         {item.progressLabel ? <Text style={styles.bookHomeCardProgress}>{item.progressLabel}</Text> : null}
       </View>
     </Pressable>
@@ -432,6 +442,29 @@ const styles = StyleSheet.create({
     color: "#dbe9ff",
     fontSize: 12,
     fontWeight: "700",
+  },
+  bookHomeCardStatus: {
+    color: "#dbe9ff",
+    fontSize: 13,
+    fontWeight: "700",
+    lineHeight: 18,
+  },
+  bookHomeCardOfflineBadge: {
+    position: "absolute",
+    top: 12,
+    left: 12,
+    borderRadius: 999,
+    backgroundColor: "rgba(9, 22, 40, 0.85)",
+    borderWidth: 1,
+    borderColor: "#315174",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+  bookHomeCardOfflineBadgeText: {
+    color: "#ffffff",
+    fontSize: 11,
+    fontWeight: "800",
+    letterSpacing: 0.8,
   },
   bookWebCard: {
     width: 324,
