@@ -1,0 +1,356 @@
+[
+ {
+  "topic": "hanseatische-formen",
+  "slotIndex": 2,
+  "title": "Überfall mit Wein",
+  "arcType": "reframe-turn",
+  "synopsis": "Genervt vom ewigen Terminplanen taucht Nora unangekündigt bei Merle auf, und der spontane Besuch endet in unbequemer Stille.",
+  "text": "Weil Nora das ewige Vertagen satt hat, steht sie unangekündigt vor Merles Tür, eine Flasche Wein in der Hand, als Beweis für spontane Lebensfreude. Merle öffnet im Jogginganzug und erstarrt.\n\nMerle: Nora? Ist etwas passiert? Bist du in Ordnung?\nNora: Alles gut, ich war nur in der Nähe und dachte, ich schaue spontan vorbei. Überraschung!\nMerle: Jetzt? Na gut, komm rein. Es ist gerade nicht besonders aufgeräumt.\n\nIm Flur stapeln sich Wäschekörbe.\n\nNora: Eine Serie läuft, dein Abendessen steht da, für eine Person. Ich störe, das sehe ich jetzt. Ich wollte nur beweisen, dass man auch mal einfach klingeln kann.\nMerle: Kann man. Es fühlt sich nur an, als hätte jemand die Tür zu meinem Kopf geöffnet, ohne vorher zu klopfen.\nNora: Entschuldige. Ich dachte, ich tue uns beiden einen Gefallen.\nMerle: Ich weiß. Setz dich trotzdem. Aber der Wein macht das gerade nicht leichter, ehrlich gesagt.\nNora: Soll ich ihn wieder mitnehmen?\nMerle: Lass ihn hier. Aber trink ihn ein andermal mit mir, angekündigt.\n\nSie sitzen sich gegenüber, und zum ersten Mal weiß Nora nicht, was sie sagen soll. Merle lächelt höflich, aber angespannt.\n\nNora: Ich gehe wieder, oder? Es war keine gute Idee.\nMerle: Ein bisschen. Ruf das nächste Mal kurz an, dann freue ich mich wirklich. Heute habe ich dich eher ertragen.\nNora: Das tut weh, aber es ist fair.\nMerle: So meine ich es nicht böse. Ich mag dich. Ich mag nur keine Überfälle.\n\nNora steht auf, lässt den Wein da und geht mit heißen Ohren die Treppe hinunter.",
+  "vocab": [
+   {
+    "word": "vertagen",
+    "surface": "Vertagen",
+    "definition": "to postpone; to put something off to a later day",
+    "type": "verb"
+   },
+   {
+    "word": "satthaben",
+    "surface": "satt hat",
+    "definition": "to be fed up with; to be thoroughly sick of something",
+    "type": "verb"
+   },
+   {
+    "word": "unangekündigt",
+    "definition": "unannounced; turning up with no warning given at all beforehand",
+    "type": "adjective"
+   },
+   {
+    "word": "spontan",
+    "definition": "spontaneous; done on impulse without planning it ahead",
+    "type": "adjective"
+   },
+   {
+    "word": "Lebensfreude",
+    "definition": "zest for life; joyful energy and a love of living",
+    "type": "noun"
+   },
+   {
+    "word": "beweisen",
+    "definition": "to prove; to show that something is true by demonstration",
+    "type": "verb"
+   },
+   {
+    "word": "in der Nähe",
+    "definition": "nearby; close at hand and only a short distance away",
+    "type": "expression"
+   },
+   {
+    "word": "erstarren",
+    "surface": "erstarrt",
+    "definition": "to freeze up; to go rigid with shock or surprise",
+    "type": "verb"
+   },
+   {
+    "word": "Jogginganzug",
+    "definition": "a tracksuit worn for lounging around or for exercise",
+    "type": "noun"
+   },
+   {
+    "word": "aufgeräumt",
+    "definition": "tidy; neat, with everything put in its place",
+    "type": "adjective"
+   },
+   {
+    "word": "Flur",
+    "definition": "a hallway; the entrance corridor inside a home",
+    "type": "noun"
+   },
+   {
+    "word": "Wäschekorb",
+    "surface": "Wäschekörbe",
+    "definition": "a laundry basket for carrying dirty or clean washing",
+    "type": "noun"
+   },
+   {
+    "word": "Abendessen",
+    "definition": "dinner; the main meal eaten in the evening at home",
+    "type": "noun"
+   },
+   {
+    "word": "stören",
+    "surface": "störe",
+    "definition": "to disturb; to intrude on and interrupt someone",
+    "type": "verb"
+   },
+   {
+    "word": "einen Gefallen tun",
+    "surface": "einen Gefallen",
+    "definition": "to do someone a favour; to help them out kindly",
+    "type": "expression"
+   },
+   {
+    "word": "angespannt",
+    "definition": "tense; strained, on edge and visibly ill at ease",
+    "type": "adjective"
+   },
+   {
+    "word": "ertragen",
+    "definition": "to endure; to put up with something unpleasant",
+    "type": "verb"
+   },
+   {
+    "word": "ehrlich gesagt",
+    "definition": "to be honest; speaking frankly and openly for once",
+    "type": "expression"
+   },
+   {
+    "word": "Überfall",
+    "surface": "Überfälle",
+    "definition": "an ambush; here an unwelcome, out-of-the-blue surprise visit",
+    "type": "noun"
+   },
+   {
+    "word": "heiße Ohren",
+    "surface": "heißen Ohren",
+    "definition": "burning ears; the hot flush of sudden embarrassment",
+    "type": "expression"
+   }
+  ]
+ },
+ {
+  "topic": "vereine-und-freundschaft",
+  "slotIndex": 1,
+  "title": "Probetörn",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Beim Probetörn auf stürmischer Elbe zählt kein Formular mehr, nur die nasse Leine in Noras Hand und Doses knappes Nicken.",
+  "text": "Der Wind steht schräg auf die Elbe, das Boot krängt hart, und Nora klammert sich an die nasse Reling. Dose steht am Ruder und ruft knappe Kommandos, die Fiete blitzschnell in Handgriffe übersetzt.\n\nDose: Vorschot dicht! Und nicht ins Wasser starren, das macht nur seekrank.\nNora: Welche Leine war die Vorschot? Es sind zu viele, und alle sehen gleich aus.\nFiete: Die in deiner rechten Hand. Zieh, bis das Segel steht. Fester. Fester!\n\nEine Bö erwischt das Boot, Gischt klatscht über Bord, und Nora verliert für einen Moment den Halt.\n\nNora: Das ist kein Ausflug, das ist ein Ringkampf mit dem Wetter.\nDose: Reden kostet Kraft. Klarieren, festhalten, atmen. In dieser Reihenfolge.\nFiete: Du machst das gar nicht schlecht. Nur deinen Magen musst du noch überreden.\nNora: Der Magen hört gerade auf keinen von uns.\nDose: Dann sieh zum Horizont, nicht auf die Wellen. Fester Punkt, fester Magen.\nNora: Horizont. Gut. Der bleibt wenigstens stehen.\n\nSie beißt die Zähne zusammen und hält den Kurs, bis die Ansteuerungstonne vorbeizieht. Dose nickt nur knapp.\n\nFiete: Das Nicken eben, hast du das gesehen? Das gibt es bei ihm selten.\nNora: Ich habe nur überlebt und eine Leine gehalten. Reicht das schon?\nDose: An Land wird geredet. Jetzt wird gesegelt. Das Ruder kommt gleich zu dir.\nNora: Zu mir? Ich kann das doch noch gar nicht.\nFiete: Genau deshalb. Hand ans Ruder, Blick nach vorn. Ob du bleibst, entscheidet die nächste Bö, nicht die Versammlung.",
+  "vocab": [
+   {
+    "word": "schräg",
+    "definition": "at a slant; angled sideways rather than straight on",
+    "type": "adjective"
+   },
+   {
+    "word": "krängen",
+    "surface": "krängt",
+    "definition": "to heel over; of a boat leaning far under the wind",
+    "type": "verb"
+   },
+   {
+    "word": "sich klammern",
+    "surface": "klammert",
+    "definition": "to cling on tightly to something out of fear",
+    "type": "verb"
+   },
+   {
+    "word": "Reling",
+    "definition": "the railing running around the edge of a boat's deck",
+    "type": "noun"
+   },
+   {
+    "word": "Ruder",
+    "definition": "the tiller or helm used to steer a boat",
+    "type": "noun"
+   },
+   {
+    "word": "knapp",
+    "surface": "knappe",
+    "definition": "terse; brief and sparing, giving only what is needed",
+    "type": "adjective"
+   },
+   {
+    "word": "Kommando",
+    "surface": "Kommandos",
+    "definition": "a sharp spoken order, especially barked on a boat",
+    "type": "noun"
+   },
+   {
+    "word": "blitzschnell",
+    "definition": "lightning-fast; done in a tiny fraction of a second",
+    "type": "adverb"
+   },
+   {
+    "word": "Handgriff",
+    "surface": "Handgriffe",
+    "definition": "a practised hand movement; a quick, deft manual action",
+    "type": "noun"
+   },
+   {
+    "word": "Vorschot",
+    "definition": "the foresail sheet, a line that trims the front sail",
+    "type": "noun"
+   },
+   {
+    "word": "starren",
+    "definition": "to stare fixedly and motionlessly at one single spot",
+    "type": "verb"
+   },
+   {
+    "word": "seekrank",
+    "definition": "seasick; feeling sick from a boat's motion on the water",
+    "type": "adjective"
+   },
+   {
+    "word": "Segel",
+    "definition": "a sail; the sheet of cloth that catches the wind",
+    "type": "noun"
+   },
+   {
+    "word": "Bö",
+    "definition": "a gust; a sudden sharp blast of wind",
+    "type": "noun"
+   },
+   {
+    "word": "Gischt",
+    "definition": "spray; the white foam thrown up by breaking water",
+    "type": "noun"
+   },
+   {
+    "word": "den Halt verlieren",
+    "surface": "den Halt",
+    "definition": "to lose your grip or footing and nearly fall",
+    "type": "expression"
+   },
+   {
+    "word": "die Zähne zusammenbeißen",
+    "surface": "die Zähne zusammen",
+    "definition": "to grit your teeth and push on through the pain",
+    "type": "expression"
+   },
+   {
+    "word": "klarieren",
+    "surface": "Klarieren",
+    "definition": "to clear and make the lines and gear ready on deck",
+    "type": "verb"
+   },
+   {
+    "word": "überreden",
+    "definition": "to talk round; to persuade someone into doing something",
+    "type": "verb"
+   },
+   {
+    "word": "Ansteuerungstonne",
+    "definition": "a marker buoy showing the safe way into a channel",
+    "type": "noun"
+   }
+  ]
+ },
+ {
+  "topic": "sturm-und-gesundheit",
+  "slotIndex": 1,
+  "title": "Wenn das Wasser kehrt",
+  "arcType": "reframe-turn",
+  "synopsis": "Statt vor der Sturmflut zu fliehen, steht Nora mit schweigenden Fremden am Wasser und sieht zu, wie die Flut kehrt.",
+  "text": "Als die Sturmflut ihren Höchststand erreicht, zieht Ole Nora in Gummistiefeln hinunter zum Fischmarkt. Ein Dutzend Leute steht dort schweigend am Wasser und schaut zu, wie die Elbe über die Kaikante leckt.\n\nNora: Sollten wir nicht eher weg vom Wasser als hin? Das ist eine Flutwarnung, kein Feuerwerk.\nOle: Guck sie dir an. Keiner rennt, keiner filmt. Sie schauen nur.\nNora: Und du bist sicher, dass das gleich nicht die ganze Halle wegspült?\nOle: Bis zur Fischauktionshalle sind es noch zwei Stufen. Die kennt das Wasser auswendig.\n\nEin breitschultriger Mann im Ölzeug nickt Richtung Pegel, ohne den Blick zu heben.\n\nMann: Kehrt. Jetzt geht sie zurück.\nNora: Woran sehen Sie das? Ich sehe nur graues Wasser, das zittert.\nMann: An der Treppe. Eine Stufe war eben noch nass, jetzt trocknet sie. Das reicht.\nNora: Und ich habe die ganze Zeit auf eine Katastrophe gewartet.\nOle: Stattdessen schaust du der Elbe beim Atmen zu.\nNora: Komisch. Mein Puls wird gerade langsamer, nicht schneller.\nOle: Siehst du. Sie kommt und sie geht. Das war schon lange vor uns so.\nNora: Und ihr habt das als Kinder schon gemacht, einfach zusehen?\nOle: Jeden Herbst aufs Neue. Man wächst damit auf.\nNora: Kein Wort dazu von den anderen. Sie stehen einfach da und wissen es besser.\nMann: Reden hält das Wasser nicht auf. Gehen Sie heim, es ist vorbei.\n\nNora dreht sich an der Ecke noch einmal zum Wasser um, dann folgt sie den anderen nach Hause, wo morgen nur noch Treibholz liegen wird.",
+  "vocab": [
+   {
+    "word": "Sturmflut",
+    "definition": "a storm surge; a dangerous flood driven inland by a storm",
+    "type": "noun"
+   },
+   {
+    "word": "Höchststand",
+    "definition": "the peak level; the very highest point something reaches",
+    "type": "noun"
+   },
+   {
+    "word": "erreichen",
+    "surface": "erreicht",
+    "definition": "to reach; to arrive at a certain level or point",
+    "type": "verb"
+   },
+   {
+    "word": "Kaikante",
+    "definition": "the edge of the quay running along the water",
+    "type": "noun"
+   },
+   {
+    "word": "lecken",
+    "surface": "leckt",
+    "definition": "to lap; of water licking up over an edge",
+    "type": "verb"
+   },
+   {
+    "word": "Flutwarnung",
+    "definition": "a flood warning issued before dangerously high water",
+    "type": "noun"
+   },
+   {
+    "word": "wegspülen",
+    "surface": "wegspült",
+    "definition": "to wash away; to sweep something off with rushing water",
+    "type": "verb"
+   },
+   {
+    "word": "auswendig",
+    "definition": "by heart; knowing something so well no thought is needed",
+    "type": "expression"
+   },
+   {
+    "word": "Ölzeug",
+    "definition": "oilskins; waterproof gear worn against wind and spray",
+    "type": "noun"
+   },
+   {
+    "word": "breitschultrig",
+    "surface": "breitschultriger",
+    "definition": "broad-shouldered; sturdily and powerfully built across the frame",
+    "type": "adjective"
+   },
+   {
+    "word": "Pegel",
+    "definition": "a water gauge showing how high the water is standing",
+    "type": "noun"
+   },
+   {
+    "word": "heben",
+    "definition": "to lift; to raise something up to a higher position",
+    "type": "verb"
+   },
+   {
+    "word": "zittern",
+    "surface": "zittert",
+    "definition": "to tremble; to shake with tiny, rapid movements",
+    "type": "verb"
+   },
+   {
+    "word": "Stufe",
+    "definition": "a step; one of the treads in a flight of stairs",
+    "type": "noun"
+   },
+   {
+    "word": "Puls",
+    "definition": "the pulse; the steady beat of blood you can feel",
+    "type": "noun"
+   },
+   {
+    "word": "langsam",
+    "surface": "langsamer",
+    "definition": "slow; here of a racing pulse gradually calming down",
+    "type": "adjective"
+   },
+   {
+    "word": "zuschauen",
+    "surface": "schaut zu",
+    "definition": "to watch on; to look on as something slowly unfolds",
+    "type": "verb"
+   },
+   {
+    "word": "es ist vorbei",
+    "definition": "it is over; the danger or the trouble has now passed",
+    "type": "expression"
+   },
+   {
+    "word": "sich umdrehen",
+    "surface": "dreht sich",
+    "definition": "to turn around, here to look back one last time",
+    "type": "verb"
+   },
+   {
+    "word": "Treibholz",
+    "definition": "driftwood; wood washed ashore by the tide and waves",
+    "type": "noun"
+   }
+  ]
+ }
+]
