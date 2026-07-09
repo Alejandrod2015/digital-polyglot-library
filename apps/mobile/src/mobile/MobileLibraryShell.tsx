@@ -53,6 +53,7 @@ import {
 import { requireOptionalNativeModule } from "expo-modules-core";
 import Svg, { Circle, G } from "react-native-svg";
 import { ReaderScreen } from "./ReaderScreen";
+import { DownloadProgressRing } from "./DownloadProgressRing";
 import { getCoverUrl } from "./coverUrl";
 import { NextActionGlow } from "./NextActionGlow";
 import { PracticeOrbit, type PracticeModeKey as OrbitModeKey } from "./PracticeOrbit";
@@ -2068,6 +2069,29 @@ export function MobileLibraryShell(args: {
   const [didHydrateState, setDidHydrateState] = useState(false);
   const [offlineSnapshot, setOfflineSnapshot] = useState<OfflineLibrarySnapshot | null>(null);
   const [offlineStoryIdInFlight, setOfflineStoryIdInFlight] = useState<string | null>(null);
+  // Progreso 0..1 de la descarga por historia (para el anillo que se llena).
+  const [offlineProgressById, setOfflineProgressById] = useState<Record<string, number>>({});
+  // Descarga de tema completo: id del tema en curso + progreso agregado 0..1.
+  const [offlineTopicIdInFlight, setOfflineTopicIdInFlight] = useState<string | null>(null);
+  const [offlineTopicProgress, setOfflineTopicProgress] = useState(0);
+  const setOfflineProgress = useCallback((storyId: string, ratio: number) => {
+    const clamped = Math.min(1, Math.max(0, ratio));
+    setOfflineProgressById((prev) => {
+      const cur = prev[storyId];
+      // El callback de bytes dispara muy seguido; evitamos re-renders del shell
+      // por cambios minúsculos: solo actualizamos en saltos >=2% o en 0/1.
+      if (cur !== undefined && clamped < 1 && Math.abs(clamped - cur) < 0.02) return prev;
+      return { ...prev, [storyId]: clamped };
+    });
+  }, []);
+  const clearOfflineProgress = useCallback((storyId: string) => {
+    setOfflineProgressById((prev) => {
+      if (!(storyId in prev)) return prev;
+      const next = { ...prev };
+      delete next[storyId];
+      return next;
+    });
+  }, []);
   const [remoteBooks, setRemoteBooks] = useState<RemoteLibraryBook[]>([]);
   const [remoteStories, setRemoteStories] = useState<RemoteLibraryStory[]>([]);
   const [remoteContinueListening, setRemoteContinueListening] = useState<RemoteContinueListeningItem[]>([]);
@@ -5621,6 +5645,7 @@ export function MobileLibraryShell(args: {
       return;
     }
     setOfflineStoryIdInFlight(story.id);
+    setOfflineProgress(story.id, 0);
     try {
       // Fetch word timings en paralelo al save. Sin esto el karaoke
       // offline cae al fallback sintético (que NO avanza con el
@@ -5644,22 +5669,31 @@ export function MobileLibraryShell(args: {
           // del flow (texto, audio, cover) continúa.
         }
       }
-      const nextSnapshot = await saveStoryOffline(PREVIEW_OFFLINE_USER_ID, book, story, {
-        wordTimingsRaw,
-      });
+      const nextSnapshot = await saveStoryOffline(
+        PREVIEW_OFFLINE_USER_ID,
+        book,
+        story,
+        { wordTimingsRaw },
+        (r) => setOfflineProgress(story.id, r)
+      );
       setOfflineSnapshot(nextSnapshot);
     } finally {
       setOfflineStoryIdInFlight(null);
+      clearOfflineProgress(story.id);
     }
   }
 
-  async function downloadJourneyStoryOffline(story: MobileJourneyTopicSummary["stories"][number]) {
+  async function downloadJourneyStoryOffline(
+    story: MobileJourneyTopicSummary["stories"][number],
+    onProgress?: (ratio: number) => void
+  ) {
     if (!canDownloadOffline) {
       void openPlans();
       return;
     }
     if (!story.storySlug) return;
     setOfflineStoryIdInFlight(story.id);
+    setOfflineProgress(story.id, 0);
     try {
       const payload = await apiFetch<{ stories?: MobileStandaloneStory[] }>({
         baseUrl: mobileConfig.apiBaseUrl,
@@ -5692,7 +5726,11 @@ export function MobileLibraryShell(args: {
       }
       const nextSnapshot = await saveStandaloneStoryOffline(
         PREVIEW_OFFLINE_USER_ID,
-        { ...standalone, wordTimingsRaw }
+        { ...standalone, wordTimingsRaw },
+        (r) => {
+          setOfflineProgress(story.id, r);
+          onProgress?.(r);
+        }
       );
       setOfflineSnapshot(nextSnapshot);
       // Verificación dura: el snapshot dice "descargada" pero ¿los
@@ -5720,6 +5758,43 @@ export function MobileLibraryShell(args: {
       setLockedStoryHint("Couldn't download the story. Check your connection.");
     } finally {
       setOfflineStoryIdInFlight(null);
+      clearOfflineProgress(story.id);
+    }
+  }
+
+  // Descarga TODAS las historias del tema a offline. Secuencial (una a la vez
+  // para no saturar la red), saltando las ya descargadas. El progreso agregado
+  // = (historias listas + fracción de la actual) / total.
+  async function downloadTopicOffline(
+    topicId: string,
+    stories: MobileJourneyTopicSummary["stories"]
+  ) {
+    if (!canDownloadOffline) {
+      void openPlans();
+      return;
+    }
+    const pending = stories.filter((s) => {
+      if (!s.storySlug) return false;
+      const copy = offlineStoriesBySlug.get(s.storySlug);
+      return !(copy?.text && copy?.localAudioUri);
+    });
+    if (pending.length === 0) return;
+    setOfflineTopicIdInFlight(topicId);
+    setOfflineTopicProgress(0);
+    try {
+      for (let i = 0; i < pending.length; i += 1) {
+        const story = pending[i];
+        await downloadJourneyStoryOffline(story, (r) => {
+          const agg = (i + r) / pending.length;
+          setOfflineTopicProgress((prev) =>
+            agg < 1 && Math.abs(agg - prev) < 0.02 ? prev : agg
+          );
+        });
+        setOfflineTopicProgress((i + 1) / pending.length);
+      }
+    } finally {
+      setOfflineTopicIdInFlight(null);
+      setOfflineTopicProgress(0);
     }
   }
 
@@ -15819,9 +15894,33 @@ export function MobileLibraryShell(args: {
                       {topic.label}
                     </Text>
                   </View>
-                  <View style={styles.journeyTopicPanelIconWrap}>
-                    <Feather name="list" size={18} color="#ffffff" />
-                  </View>
+                  {(() => {
+                    const topicStories = topic.stories.filter((s) => s.storySlug);
+                    const downloadedCount = topicStories.filter((s) => {
+                      const c = offlineStoriesBySlug.get(s.storySlug as string);
+                      return Boolean(c?.text && c?.localAudioUri);
+                    }).length;
+                    const allDownloaded =
+                      topicStories.length > 0 && downloadedCount === topicStories.length;
+                    const topicDownloading = offlineTopicIdInFlight === topic.slug;
+                    return (
+                      <Pressable
+                        onPress={() => void downloadTopicOffline(topic.slug, topic.stories)}
+                        disabled={topicDownloading || allDownloaded || topicStories.length === 0}
+                        hitSlop={8}
+                        accessibilityLabel="Download all stories in this topic"
+                        style={styles.journeyTopicPanelIconWrap}
+                      >
+                        {topicDownloading ? (
+                          <DownloadProgressRing progress={offlineTopicProgress} size={22} />
+                        ) : allDownloaded ? (
+                          <Feather name="check-circle" size={18} color="#8ef0c6" />
+                        ) : (
+                          <Feather name="download" size={18} color="#ffffff" />
+                        )}
+                      </Pressable>
+                    );
+                  })()}
                 </Pressable>
                 </View>
               );
@@ -16669,6 +16768,7 @@ export function MobileLibraryShell(args: {
           onTrackProgress={handleReaderTrackProgress}
           isAvailableOffline={Boolean(offlineStory?.text)}
           isDownloadingOffline={offlineStoryIdInFlight === selection.story.id}
+          offlineDownloadProgress={offlineProgressById[selection.story.id] ?? 0}
           onDownloadOffline={() => void downloadStoryOffline(selection.book, selection.story)}
           onRemoveOffline={() => void removeStoryFromOffline(selection.story)}
           onOpenPractice={() => void openStoryPractice(selection)}

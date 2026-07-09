@@ -30,6 +30,7 @@ import {
 } from "@digital-polyglot/domain";
 import * as FileSystem from "expo-file-system/legacy";
 import { NativeAudioPlayer } from "./NativeAudioPlayer";
+import { DownloadProgressRing } from "./DownloadProgressRing";
 import { ProgressiveImage } from "./ProgressiveImage";
 import { getCoverUrl } from "./coverUrl";
 import { apiFetch } from "../lib/api";
@@ -878,6 +879,7 @@ export function ReaderScreen(args: {
   }) => void;
   isAvailableOffline: boolean;
   isDownloadingOffline: boolean;
+  offlineDownloadProgress?: number;
   onDownloadOffline: () => void;
   onRemoveOffline: () => void;
   onOpenPractice?: () => void;
@@ -919,6 +921,7 @@ export function ReaderScreen(args: {
     onTrackProgress,
     isAvailableOffline,
     isDownloadingOffline,
+    offlineDownloadProgress = 0,
     onDownloadOffline,
     onRemoveOffline,
     onOpenPractice,
@@ -1762,32 +1765,19 @@ export function ReaderScreen(args: {
                 ]}
               />
               <Animated.View
-                style={{
-                  transform: [
-                    { scale: downloadCompleteScale },
-                    // Spin solo durante el download. Linear loop de
-                    // 0→360deg cada 900 ms. Cuando termina la
-                    // descarga el reset del effect lo deja en 0.
-                    {
-                      rotate: downloadLoadingRotate.interpolate({
-                        inputRange: [0, 1],
-                        outputRange: ["0deg", "360deg"],
-                      }),
-                    },
-                  ],
-                }}
+                style={{ transform: [{ scale: downloadCompleteScale }] }}
               >
-                <Feather
-                  name={
-                    isDownloadingOffline
-                      ? "loader"
-                      : isAvailableOffline
-                        ? "check-circle"
-                        : "download-cloud"
-                  }
-                  size={18}
-                  color={isAvailableOffline ? "#8ef0c6" : "#dbe9ff"}
-                />
+                {isDownloadingOffline ? (
+                  // Anillo que se LLENA con el progreso real (bytes del audio),
+                  // en vez de la rueda indeterminada.
+                  <DownloadProgressRing progress={offlineDownloadProgress} size={20} />
+                ) : (
+                  <Feather
+                    name={isAvailableOffline ? "check-circle" : "download-cloud"}
+                    size={18}
+                    color={isAvailableOffline ? "#8ef0c6" : "#dbe9ff"}
+                  />
+                )}
               </Animated.View>
             </Pressable>
           </View>

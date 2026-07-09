@@ -120,12 +120,24 @@ const MAX_DOWNLOAD_ATTEMPTS = 3;
  */
 async function downloadResumableWithValidation(
   remoteUrl: string,
-  destination: string
+  destination: string,
+  onProgress?: (ratio: number) => void
 ): Promise<string | null> {
   let backoffMs = 1000;
   for (let attempt = 0; attempt < MAX_DOWNLOAD_ATTEMPTS; attempt += 1) {
     try {
-      const downloader = FileSystem.createDownloadResumable(remoteUrl, destination);
+      const downloader = FileSystem.createDownloadResumable(
+        remoteUrl,
+        destination,
+        {},
+        onProgress
+          ? (p) => {
+              if (p.totalBytesExpectedToWrite > 0) {
+                onProgress(Math.min(1, p.totalBytesWritten / p.totalBytesExpectedToWrite));
+              }
+            }
+          : undefined
+      );
       const result = await downloader.downloadAsync();
       if (!result) throw new Error("download-null");
       if (result.status >= 400) throw new Error(`http-${result.status}`);
@@ -176,6 +188,7 @@ async function cacheRemoteFile(args: {
   kind: "images" | "audio";
   key: string;
   sourceUrl?: string | null;
+  onProgress?: (ratio: number) => void;
 }): Promise<string | null> {
   const remoteUrl = typeof args.sourceUrl === "string" ? args.sourceUrl.trim() : "";
   if (!remoteUrl || !/^https?:\/\//.test(remoteUrl)) return null;
@@ -186,6 +199,7 @@ async function cacheRemoteFile(args: {
   if (existing.exists) {
     const cachedSize = existing.size ?? 0;
     if (cachedSize >= MIN_AUDIO_BYTES) {
+      args.onProgress?.(1);
       return destination;
     }
     // Zero-byte / clearly truncated cache from a previous build: drop it so
@@ -202,7 +216,7 @@ async function cacheRemoteFile(args: {
   // resort; this keeps the previous behaviour intact in the unlikely
   // event that createDownloadResumable itself has a problem on some iOS
   // version, so we never get worse than before.
-  const robust = await downloadResumableWithValidation(remoteUrl, destination);
+  const robust = await downloadResumableWithValidation(remoteUrl, destination, args.onProgress);
   if (robust) return robust;
 
   try {
@@ -279,7 +293,12 @@ export async function updateOfflineProgress(
 
 export async function hydrateOfflineAssets(
   userId: string,
-  snapshot: OfflineLibrarySnapshot
+  snapshot: OfflineLibrarySnapshot,
+  // Progreso (0..1) del audio de la historia que se está descargando. Solo la
+  // historia nueva descarga de verdad (el resto está cacheado y retorna al
+  // instante), así que este callback refleja esa descarga. El audio es el
+  // archivo grande, por eso el anillo se ata a él (la cover es chica).
+  onAudioProgress?: (ratio: number) => void
 ): Promise<OfflineLibrarySnapshot> {
   const books = await Promise.all(
     snapshot.books.map(async (book) => ({
@@ -326,6 +345,7 @@ export async function hydrateOfflineAssets(
             kind: "audio",
             key: `story-audio-${userId}-${story.storyId}`,
             sourceUrl: story.audioUrl,
+            onProgress: onAudioProgress,
           })),
       };
     })
@@ -382,7 +402,8 @@ export async function saveStoryOffline(
   userId: string,
   book: Book,
   story: Story,
-  extras?: { wordTimingsRaw?: string | null }
+  extras?: { wordTimingsRaw?: string | null },
+  onAudioProgress?: (ratio: number) => void
 ): Promise<OfflineLibrarySnapshot> {
   const current = (await loadOfflineSnapshot(userId)) ?? {
     books: [],
@@ -411,7 +432,7 @@ export async function saveStoryOffline(
     books: nextBooks,
     stories: nextStories,
     savedAt: new Date().toISOString(),
-  });
+  }, onAudioProgress);
 }
 
 export async function saveStandaloneStoryOffline(
@@ -431,7 +452,8 @@ export async function saveStandaloneStoryOffline(
     topic?: string | null;
     coverUrl?: string | null;
     audioUrl?: string | null;
-  }
+  },
+  onAudioProgress?: (ratio: number) => void
 ): Promise<OfflineLibrarySnapshot> {
   const current = (await loadOfflineSnapshot(userId)) ?? {
     books: [],
@@ -468,7 +490,7 @@ export async function saveStandaloneStoryOffline(
     ...current,
     stories: nextStories,
     savedAt: new Date().toISOString(),
-  });
+  }, onAudioProgress);
 }
 
 /**
