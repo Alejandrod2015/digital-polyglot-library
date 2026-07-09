@@ -8,9 +8,13 @@ const LABELS = ["3", "2", "1", "GO"] as const;
 export function PracticeCountdown({
   accent = "#fcd34d",
   onComplete,
+  translucent = false,
 }: {
   accent?: string;
   onComplete: () => void;
+  /** When true, the backdrop is see-through + blurred so whatever is behind
+   *  (e.g. the first exercise) stays visible during the get-ready count. */
+  translucent?: boolean;
 }) {
   const [step, setStep] = useState(0);
   const onCompleteRef = useRef(onComplete);
@@ -34,7 +38,11 @@ export function PracticeCountdown({
 
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-center justify-center bg-[rgba(6,12,24,0.86)]"
+      className={`fixed inset-0 z-[60] flex items-center justify-center ${
+        translucent
+          ? "bg-[rgba(6,12,24,0.5)] backdrop-blur-md"
+          : "bg-[rgba(6,12,24,0.86)]"
+      }`}
       role="status"
       aria-live="polite"
       data-testid="qa-practice-countdown"

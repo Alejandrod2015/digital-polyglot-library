@@ -1413,7 +1413,7 @@ export default function PracticePage() {
   // Timer tick: count down once per second while an exercise is unanswered.
   // Stops on reveal/complete.
   useEffect(() => {
-    if (!activeSession || sessionComplete) return;
+    if (!activeSession || sessionComplete || pendingCountdownMode) return;
     if (!currentExercise) return;
     if (revealed) return;
     if (timerRemaining <= 0) return;
@@ -1421,17 +1421,17 @@ export default function PracticePage() {
       setTimerRemaining((value) => Math.max(0, value - 1));
     }, 1000);
     return () => window.clearTimeout(id);
-  }, [activeSession, sessionComplete, currentExercise, revealed, timerRemaining]);
+  }, [activeSession, sessionComplete, pendingCountdownMode, currentExercise, revealed, timerRemaining]);
 
   // Timeout-as-wrong: when the timer reaches 0 with no answer revealed, reveal
   // the exercise (an empty/incorrect selection grades as wrong).
   useEffect(() => {
-    if (!activeSession || sessionComplete) return;
+    if (!activeSession || sessionComplete || pendingCountdownMode) return;
     if (!currentExercise) return;
     if (revealed) return;
     if (timerRemaining > 0) return;
     revealCurrent();
-  }, [activeSession, sessionComplete, currentExercise, revealed, timerRemaining, revealCurrent]);
+  }, [activeSession, sessionComplete, pendingCountdownMode, currentExercise, revealed, timerRemaining, revealCurrent]);
 
   // Capture the round's wall-clock duration the moment it completes.
   useEffect(() => {
@@ -2115,6 +2115,10 @@ export default function PracticePage() {
     if (onlyExerciseParam) {
       openSession(reviewRecommendedMode);
     } else {
+      // Abre la sesión YA (el primer ejercicio se renderiza de fondo) y muestra
+      // el 3-2-1 como overlay translúcido encima. Así nunca se ve el hub de
+      // práctica al venir de una historia; el countdown queda sobre el ejercicio.
+      openSession(reviewRecommendedMode);
       setPendingCountdownMode(reviewRecommendedMode);
     }
   }, [
@@ -2984,10 +2988,10 @@ export default function PracticePage() {
                                 ) : null}
                                 {ex.sentence ? (
                                   <div
-                                    className="flex w-full items-center justify-center gap-3 rounded-[20px] px-4 py-4"
+                                    className="flex w-full min-w-0 items-center justify-center gap-3 rounded-[20px] px-4 py-4"
                                     style={{ background: "var(--practice-box-bg)" }}
                                   >
-                                    <p className="flex-1 text-center text-[clamp(1.05rem,2.2vw,1.45rem)] font-extrabold leading-[1.35] tracking-tight text-white">
+                                    <p className="min-w-0 flex-1 text-center [overflow-wrap:anywhere] text-[clamp(1.05rem,2.2vw,1.45rem)] font-extrabold leading-[1.35] tracking-tight text-white">
                                       {ex.sentence.split(/(_{3,})/).map((part, i) =>
                                         /^_{3,}$/.test(part) ? (
                                           revealed ? (
@@ -3057,10 +3061,9 @@ export default function PracticePage() {
                                 <p className="text-[13px] font-semibold text-white/55">
                                   What does this word mean?
                                 </p>
-                                <div className="flex w-full items-center justify-center gap-3">
+                                <div className="flex w-full min-w-0 items-center justify-center gap-3">
                                   <span
-                                    className="text-[clamp(2.2rem,7vw,2.9rem)] font-black leading-none tracking-tight text-white dp-prac-uline underline decoration-[3px] underline-offset-[10px]"
-                                   
+                                    className="min-w-0 max-w-full text-center [overflow-wrap:anywhere] text-[clamp(1.4rem,7vw,2.9rem)] font-black leading-[1.05] tracking-tight text-white dp-prac-uline underline decoration-[3px] underline-offset-[10px]"
                                   >
                                     {ex.word}
                                   </span>
@@ -3277,8 +3280,8 @@ export default function PracticePage() {
                                   <Volume2 size={12} />
                                 )}
                               </button>
-                              <div>
-                                <p className="text-[clamp(1.1rem,2.4vw,1.9rem)] font-semibold tracking-tight">
+                              <div className="min-w-0 max-w-full">
+                                <p className="[overflow-wrap:anywhere] text-[clamp(0.85rem,2.4vw,1.9rem)] font-semibold leading-[1.1] tracking-tight">
                                   {pair.word}
                                 </p>
                               </div>
@@ -3422,6 +3425,36 @@ export default function PracticePage() {
             100% { transform: translateX(230%) skewX(-18deg); opacity: 0; }
           }
         `}</style>
+        {/* 3-2-1 overlay ENCIMA del primer ejercicio (sesión ya abierta al venir
+            de una historia). Translúcido para que se vea el ejercicio de fondo. */}
+        {pendingCountdownMode ? (
+          <PracticeCountdown
+            translucent
+            onComplete={() => {
+              setPendingCountdownMode(null);
+            }}
+          />
+        ) : null}
+      </div>
+    );
+  }
+
+  // Al venir de una historia (source=story) NUNCA se debe pintar el hub de
+  // práctica: el efecto de auto-start abre la sesión + countdown, pero hasta que
+  // corre habría un frame de hub. Mientras tanto renderizamos el skeleton de
+  // carga (no el hub) para que el hub no aparezca nunca.
+  if (
+    isStoryPractice &&
+    !onlyExerciseParam &&
+    !selectedMode &&
+    !pendingCountdownMode &&
+    favorites.length > 0
+  ) {
+    return (
+      <div className="min-h-screen p-6 pb-24 text-[var(--foreground)]">
+        <div className="mb-4 h-9 w-48 animate-pulse rounded bg-[var(--card-bg)]" />
+        <div className="mb-3 h-4 w-80 animate-pulse rounded bg-[var(--card-bg)]" />
+        <div className="h-72 animate-pulse rounded-3xl bg-[var(--card-bg)]" />
       </div>
     );
   }
