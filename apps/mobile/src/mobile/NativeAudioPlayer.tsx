@@ -37,6 +37,18 @@ type PlaybackSnapshot = {
 };
 
 const SEEK_STEP_MS = 10_000;
+
+// Alturas de barra pseudo-aleatorias PERO deterministas (no parpadean entre
+// renders), espejo del waveform del web (src/components/Player.tsx). No es
+// análisis real del audio: es decorativo y se colorea según el progreso.
+// Variación rápida + un swell lento para un look orgánico. 0.18..1.0 de la
+// altura del track.
+const WAVEFORM_BARS = Array.from({ length: 44 }, (_, i) => {
+  const a = Math.abs(Math.sin((i + 1) * 12.9898) * 43758.5453);
+  const fast = a - Math.floor(a);
+  const slow = (Math.sin((i + 1) * 0.5) + 1) / 2;
+  return Math.min(1, 0.18 + fast * 0.62 + slow * 0.2);
+});
 const SPEEDS = [0.75, 1, 1.25, 1.5] as const;
 // Dimensiones del sheet del picker de velocidad. Hardcoded para que
 // `measureInWindow` pueda computar el `top`/`left` exacto al que el
@@ -402,22 +414,24 @@ export function NativeAudioPlayer({
           onLayout={handleTrackLayout}
           {...panResponder.panHandlers}
         >
-          <View style={[styles.progressTrack, isScrubbing ? styles.progressTrackActive : null]}>
-            <View
-              style={[
-                styles.progressFill,
-                { width: `${displayRatio * 100}%` },
-                isScrubbing ? styles.progressFillActive : null,
-              ]}
-            />
-            <View
-              style={[
-                styles.progressThumb,
-                { left: `${displayRatio * 100}%` },
-                isScrubbing ? styles.progressThumbActive : null,
-              ]}
-              pointerEvents="none"
-            />
+          <View style={styles.waveform} pointerEvents="none">
+            {WAVEFORM_BARS.map((h, i) => {
+              const played = (i + 0.5) / WAVEFORM_BARS.length <= displayRatio;
+              return (
+                <View
+                  key={i}
+                  style={[
+                    styles.waveBar,
+                    { height: `${Math.max(14, h * 100)}%` },
+                    played
+                      ? isScrubbing
+                        ? styles.waveBarPlayedActive
+                        : styles.waveBarPlayed
+                      : styles.waveBarRest,
+                  ]}
+                />
+              );
+            })}
           </View>
         </View>
         <Text style={styles.timeText}>{formatClock(playback.durationMillis)}</Text>
@@ -655,6 +669,29 @@ const styles = StyleSheet.create({
     height: "100%",
     borderRadius: 999,
     backgroundColor: "#f8c15c",
+  },
+  // Waveform (espejo del web): barras verticales centradas que se colorean
+  // según el progreso. El gesto de seek vive en trackWrapper (por encima).
+  waveform: {
+    flexDirection: "row",
+    alignItems: "center",
+    height: 34,
+    width: "100%",
+  },
+  waveBar: {
+    flex: 1,
+    marginHorizontal: 1,
+    minHeight: 3,
+    borderRadius: 2,
+  },
+  waveBarPlayed: {
+    backgroundColor: "#4C82F7",
+  },
+  waveBarPlayedActive: {
+    backgroundColor: "#8FB4FF",
+  },
+  waveBarRest: {
+    backgroundColor: "rgba(255,255,255,0.16)",
   },
   progressFillActive: {
     backgroundColor: "#ffd58c",
