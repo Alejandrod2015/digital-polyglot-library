@@ -1,0 +1,34 @@
+[
+ {
+  "topic": "ankommen-im-norden",
+  "slotIndex": 1,
+  "title": "Moin heißt den ganzen Tag",
+  "arcType": "fish-out-of-water",
+  "text": "Nora zieht ihren Koffer über das Kopfsteinpflaster von Ottensen und nimmt sich vor, in Hamburg besonders höflich aufzutreten. Ole, ihr neuer Kollege, holt sie ab und grinst schon, bevor sie den Mund aufmacht.\n\nNora: Guten Morgen! Was für ein wunderschöner, frischer Vormittag hier im Norden.\nOle: Moin.\nNora: Nur Moin? Ich habe mir eine ganze Begrüßung zurechtgelegt.\nOle: Genau das ist der Fehler. Hier reicht ein Wort. Moin passt morgens, mittags und abends.\nNora: Ein einziges Wort für den ganzen Tag? Das kommt mir fast unhöflich vor.\nOle: Bei uns ist es das Gegenteil. Wer viele Worte macht, hält die anderen nur auf.\n\nSie gehen an einer Bäckerei vorbei. Hinter der Theke stapelt Wiebke die frischen Franzbrötchen.\n\nWiebke: Moin. Was darf es sein?\nNora: Guten Tag! Ich nehme zwei von diesen zimtigen Teilchen. Und Ihnen noch einen schönen Nachmittag.\nWiebke: Moin.\nNora: Sie sagen auch nachmittags Moin? Es ist doch längst nach dem Mittag.\nWiebke: Moin hat mit der Uhrzeit nichts zu tun. Moin heißt einfach: Ich sehe dich.\nNora: Und wenn ich abends komme, kurz vor Feierabend?\nWiebke: Dann sage ich auch Moin. Und wenn du Moin Moin sagst, gilt das hier schon als Geschwätz.\nOle: Sie hat recht. Zwei Moin, und du giltst sofort als gesprächig.\nNora: Bei mir zu Hause fragt man erst nach dem Befinden, dem Wetter, der ganzen Familie.\nOle: Das Wetter siehst du selbst. Und nach der Familie fragen wir, wenn wir dich kennen. In ein paar Jahren vielleicht.\nNora: In ein paar Jahren. Ihr nehmt das mit der Zurückhaltung wirklich ernst.\nWiebke: Wir sind sparsam mit Worten, nicht mit dem Herzen. Das verwechseln die Zugezogenen dauernd.\nNora: Also übe ich ab jetzt das kürzeste Wort meines Lebens.\nOle: Sag es einfach im Vorbeigehen, ohne stehen zu bleiben. Dann klingt es echt.\nNora: Moin.\nWiebke: Na also. Fast wie eine von hier.",
+  "vocab": [
+   { "word": "Moin", "definition": "a north German greeting used at any hour of the day", "type": "expression" },
+   { "word": "Kopfsteinpflaster", "definition": "an old road surface made of rounded stone paving blocks", "type": "noun" },
+   { "word": "höflich", "definition": "polite and considerate in how you treat other people", "type": "adjective" },
+   { "word": "auftreten", "surface": "aufzutreten", "definition": "to behave or present yourself in a particular public way", "type": "verb" },
+   { "word": "Fehler", "definition": "a mistake; something done wrongly or an incorrect choice made", "type": "noun" },
+   { "word": "reichen", "surface": "reicht", "definition": "to be enough or sufficient for a given purpose", "type": "verb" },
+   { "word": "unhöflich", "definition": "rude; lacking good manners or basic politeness toward others", "type": "adjective" },
+   { "word": "Gegenteil", "definition": "the opposite; something completely different from the thing mentioned", "type": "noun" },
+   { "word": "aufhalten", "surface": "hält", "definition": "to delay someone or keep them from moving on", "type": "verb" },
+   { "word": "Theke", "definition": "a counter in a shop or bar where customers are served", "type": "noun" },
+   { "word": "Franzbrötchen", "definition": "a flattened Hamburg pastry with cinnamon and sugar, a local icon", "type": "noun" },
+   { "word": "zimtig", "definition": "tasting or smelling strongly of cinnamon and warm baking spice", "type": "adjective" },
+   { "word": "Uhrzeit", "definition": "the exact time of day as shown on a clock", "type": "noun" },
+   { "word": "Feierabend", "definition": "the end of the working day and the free time afterwards", "type": "noun" },
+   { "word": "Geschwätz", "definition": "idle chatter; talk regarded as excessive, empty or pointless", "type": "noun" },
+   { "word": "gesprächig", "definition": "talkative; keen to chat at length with other people", "type": "adjective" },
+   { "word": "Zurückhaltung", "definition": "reserve; a restrained, undemonstrative manner toward other people", "type": "noun" },
+   { "word": "sparsam", "definition": "careful and economical, using little of something on purpose", "type": "adjective" },
+   { "word": "Zugezogene", "definition": "a newcomer who has moved into a place from elsewhere", "type": "noun" },
+   { "word": "üben", "surface": "übe", "definition": "to practise a skill repeatedly in order to improve it", "type": "verb" },
+   { "word": "im Vorbeigehen", "definition": "casually, while passing by, without stopping to make an effort", "type": "expression" },
+   { "word": "Na also", "definition": "there you go; said when someone finally gets it right", "type": "expression" },
+   { "word": "zurechtlegen", "surface": "zurechtgelegt", "definition": "to prepare or arrange something in advance, ready for use", "type": "verb" }
+  ]
+ }
+]
