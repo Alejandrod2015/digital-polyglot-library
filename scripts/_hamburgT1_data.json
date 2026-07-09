@@ -30,5 +30,67 @@
    { "word": "Na also", "definition": "there you go; said when someone finally gets it right", "type": "expression" },
    { "word": "zurechtlegen", "surface": "zurechtgelegt", "definition": "to prepare or arrange something in advance, ready for use", "type": "verb" }
   ]
+ },
+ {
+  "topic": "ankommen-im-norden",
+  "slotIndex": 2,
+  "title": "Es gibt kein schlechtes Wetter",
+  "arcType": "everyday-obstacle",
+  "text": "Der Regen fällt seit Stunden seitwärts, und Nora steht ohne Schirm unter einem Vordach in der Schanze. Ole schlendert in einem gelben Ölmantel heran, als wäre bestes Wetter.\n\nNora: Wie hältst du das aus? Ich bin komplett durchnässt und friere.\nOle: Du hast das falsche Problem. Nicht der Regen ist schuld, sondern deine Jacke.\nNora: Meine Jacke ist teuer und angeblich wasserdicht.\nOle: Angeblich. Hier im Norden zählt nur, was den Test übersteht. Komm mit, wir besorgen dir was Ordentliches.\n\nIm Laden hängt eine ganze Wand voller gelber Regenmäntel. Eine Verkäuferin mustert Noras durchweichte Schuhe.\n\nVerkäuferin: Moin. Neu hier, richtig? Das sieht man an den Schuhen.\nNora: So offensichtlich? Ich dachte, ich sei ganz gut vorbereitet.\nVerkäuferin: Ein Friesennerz und Gummistiefel, dann redest du nie wieder übers Wetter. Bei uns sagt man: Es gibt kein schlechtes Wetter, nur falsche Kleidung.\nNora: Das klingt fast wie ein Lebensmotto.\nVerkäuferin: Es ist eins. Wer hier auf Sonne wartet, wartet vergeblich.\nOle: Sie hat recht. Der Himmel ändert sich nicht, also änderst du dich.\nNora: Und die Leute joggen wirklich bei diesem Himmel? Ich habe unterwegs zwei gesehen.\nOle: Natürlich. Absagen wäre albern. Dann käme man von Oktober bis April kaum vor die Tür.\nNora: Bei mir zu Hause bleibt bei so einem Wetter die halbe Stadt im Bett.\nVerkäuferin: Dann hättet ihr hier ein echtes Problem. Zieh den Nerz an, geh raus, und der Regen wird dir gleichgültig.\n\nNora schlüpft in den gelben Mantel und tritt hinaus vor die Tür. Der Regen fällt weiter, aber er erreicht sie nicht mehr.\n\nNora: Unglaublich. Ich merke ihn kaum noch.\nOle: Willkommen im Norden. Jetzt fehlt nur noch, dass du ihn irgendwann sogar magst.",
+  "vocab": [
+   { "word": "seitwärts", "definition": "sideways; toward the side rather than straight ahead of you", "type": "adverb" },
+   { "word": "Vordach", "definition": "a small roof or canopy jutting out above a doorway", "type": "noun" },
+   { "word": "durchnässt", "definition": "soaked through; completely wet from rain or water", "type": "adjective" },
+   { "word": "frieren", "surface": "friere", "definition": "to feel cold; to suffer from a low temperature", "type": "verb" },
+   { "word": "wasserdicht", "definition": "waterproof; built so that no water can get through", "type": "adjective" },
+   { "word": "überstehen", "surface": "übersteht", "definition": "to get through a hard test or situation successfully", "type": "verb" },
+   { "word": "ordentlich", "surface": "Ordentliches", "definition": "proper and of decent quality; done the right way", "type": "adjective" },
+   { "word": "Regenmantel", "surface": "Regenmäntel", "definition": "a coat worn to keep you dry in the rain", "type": "noun" },
+   { "word": "mustern", "surface": "mustert", "definition": "to look someone over carefully, sizing them up visually", "type": "verb" },
+   { "word": "durchweicht", "surface": "durchweichte", "definition": "thoroughly soaked and soggy from a lot of water", "type": "adjective" },
+   { "word": "offensichtlich", "definition": "obvious; easy to see or notice right away", "type": "adjective" },
+   { "word": "Friesennerz", "definition": "a bright yellow oilskin rain jacket typical of northern Germany", "type": "noun" },
+   { "word": "Gummistiefel", "definition": "rubber boots that keep your feet dry in wet weather", "type": "noun" },
+   { "word": "Es gibt kein schlechtes Wetter, nur falsche Kleidung", "definition": "a northern motto: bad weather is really just the wrong clothing", "type": "expression" },
+   { "word": "Lebensmotto", "definition": "a guiding saying that sums up how someone lives", "type": "noun" },
+   { "word": "vergeblich", "definition": "in vain; without the hoped-for result despite the effort", "type": "adverb" },
+   { "word": "Himmel", "definition": "the sky, especially seen as the source of weather", "type": "noun" },
+   { "word": "joggen", "definition": "to run at a steady, gentle pace for exercise", "type": "verb" },
+   { "word": "albern", "definition": "silly; foolish in a slightly childish, faintly ridiculous way", "type": "adjective" },
+   { "word": "gleichgültig", "definition": "indifferent; not caring about or bothered by something", "type": "adjective" },
+   { "word": "vor die Tür kommen", "surface": "vor die Tür", "definition": "to get out of the house and leave home at all", "type": "expression" }
+  ]
+ },
+ {
+  "topic": "ankommen-im-norden",
+  "slotIndex": 3,
+  "title": "Hummel Hummel, Mors Mors",
+  "arcType": "belonging-test",
+  "text": "An der Theke wirft ein Stammkunde Wiebke ein fröhliches Hummel Hummel hin, und sie schießt sofort zurück: Mors Mors. Nora bleibt mit ihrem Franzbrötchen ratlos stehen.\n\nNora: Was war das denn? Ein geheimes Passwort?\nWiebke: So ähnlich. Hummel Hummel, und die richtige Antwort ist Mors Mors. Das gehört hier einfach dazu.\nNora: Und was bedeutet es? Für mich klingt es nach reinem Unsinn.\nWiebke: Es geht auf Hans Hummel zurück, einen Wasserträger von früher. Die Leute riefen ihm den Spitznamen nach, und er antwortete mit etwas Unhöflichem.\nNora: Die Antwort war also ursprünglich eine Frechheit?\nWiebke: Genau. Heute ist es ein Gruß unter Eingeweihten. Wer richtig kontert, gehört dazu.\n\nOle kommt herein, hört das Stichwort und grinst.\n\nOle: Sie bringt dir gerade das Wichtigste bei. Damit blamierst du dich nie wieder auf dem Fischmarkt.\nNora: Und wenn mich jemand testet und mir nichts einfällt?\nOle: Dann bist du sofort enttarnt. Zugezogen, hört man auf der Stelle.\nWiebke: Die Hamburger machen das gern. Ein Fremder wird beiläufig geprüft, ob er die Antwort parat hat.\nNora: Ihr prüft die Leute also heimlich. Das ist gemein und gleichzeitig genial.\nOle: Kein Zettel, keine Regel. Nur ein Ruf, und du weißt, wer wirklich von hier ist.\nWiebke: Sie lernt schnell. Eben noch die Zugezogene, jetzt fast eine Kennerin.\n\nEin weiterer Kunde tritt ein, sieht Nora und ruft ihr grinsend Hummel Hummel zu. Sie holt kurz Luft.\n\nNora: Mors Mors.\nWiebke: Sitzt. Den Rest der Stadt schaffst du auch noch.",
+  "vocab": [
+   { "word": "Hummel Hummel", "definition": "a Hamburg call answered with Mors Mors, a local password", "type": "expression" },
+   { "word": "Mors Mors", "definition": "the required reply to the Hamburg greeting Hummel Hummel", "type": "expression" },
+   { "word": "fröhlich", "surface": "fröhliches", "definition": "cheerful; full of lighthearted good spirits and happiness", "type": "adjective" },
+   { "word": "Stammkunde", "definition": "a regular customer who returns to the same shop often", "type": "noun" },
+   { "word": "ratlos", "definition": "at a loss; unsure what to think, say or do", "type": "adjective" },
+   { "word": "Unsinn", "definition": "nonsense; something with no sense or meaning at all", "type": "noun" },
+   { "word": "Wasserträger", "definition": "someone who once carried and delivered water for a living", "type": "noun" },
+   { "word": "Spitzname", "surface": "Spitznamen", "definition": "a nickname; an informal name given to a person", "type": "noun" },
+   { "word": "Frechheit", "definition": "a cheeky, impudent remark or act that shows no respect", "type": "noun" },
+   { "word": "Gruß", "definition": "a word or gesture used to greet or acknowledge someone", "type": "noun" },
+   { "word": "Eingeweihter", "surface": "Eingeweihten", "definition": "an insider who knows a secret or shared code", "type": "noun" },
+   { "word": "kontern", "surface": "kontert", "definition": "to fire back a quick, fitting reply or counter", "type": "verb" },
+   { "word": "Stichwort", "definition": "a cue word that prompts a particular reaction or response", "type": "noun" },
+   { "word": "blamieren", "surface": "blamierst", "definition": "to embarrass yourself and lose face in front of others", "type": "verb" },
+   { "word": "enttarnen", "surface": "enttarnt", "definition": "to expose someone's hidden identity or true status", "type": "verb" },
+   { "word": "beiläufig", "definition": "casually; in passing, without drawing attention to it", "type": "adverb" },
+   { "word": "parat", "definition": "ready to hand; available for immediate use when needed", "type": "adjective" },
+   { "word": "prüfen", "surface": "geprüft", "definition": "to test or check something to see if it is right", "type": "verb" },
+   { "word": "gemein", "definition": "mean; unkind in a deliberately hurtful, unfair way", "type": "adjective" },
+   { "word": "genial", "definition": "brilliant; showing great cleverness or truly inventive skill", "type": "adjective" },
+   { "word": "Kennerin", "definition": "a woman with expert knowledge of a particular subject", "type": "noun" },
+   { "word": "Luft holen", "surface": "holt kurz Luft", "definition": "to take a breath, especially to steady yourself before acting", "type": "expression" },
+   { "word": "Fischmarkt", "definition": "Hamburg's famous Sunday market by the harbour selling fish and more", "type": "noun" }
+  ]
  }
 ]

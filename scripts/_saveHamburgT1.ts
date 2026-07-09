@@ -2,7 +2,11 @@ import { config } from "dotenv"; config({ path: ".env.local", quiet:true }); con
 import { PrismaClient } from "../src/generated/prisma";
 import * as fs from "fs";
 const J = "cmrdbz11t000032asrvo832i9";
-const SLUGS: Record<string,Record<number,string>> = { "ankommen-im-norden": { 1: "moin-heisst-den-ganzen-tag" } };
+const SLUGS: Record<string,Record<number,string>> = { "ankommen-im-norden": {
+  1: "moin-heisst-den-ganzen-tag",
+  2: "es-gibt-kein-schlechtes-wetter",
+  3: "hummel-hummel-mors-mors",
+} };
 (async()=>{
   const p=new PrismaClient();
   const data=JSON.parse(fs.readFileSync("scripts/_hamburgT1_data.json","utf8"));
