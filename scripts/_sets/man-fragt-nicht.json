@@ -1,0 +1,480 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "beiläufig",
+  "sentence": "Nora fragt Merle [[beiläufig]] nach dem Gehalt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "casually",
+   "options": [
+    "casually",
+    "loudly",
+    "officially",
+    "angrily"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Nora fragt Merle beiläufig nach dem Gehalt.",
+    "targetWord": "beiläufig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Kälte",
+  "sentence": "Merle schweigt, aber nicht aus [[Kälte]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "coldness",
+   "options": [
+    "coldness",
+    "boredom",
+    "fear",
+    "habit"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Merle schweigt, aber nicht aus Kälte.",
+    "targetWord": "Kälte",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das fragt man nicht",
+  "sentence": "Nach dem Gehalt? [[Das fragt man nicht]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "you don't ask that",
+   "options": [
+    "you don't ask that",
+    "that's easy to answer",
+    "everyone asks that",
+    "ask again later"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Nach dem Gehalt? Das fragt man nicht.",
+    "targetWord": "Das fragt man nicht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sich kümmern",
+  "sentence": "Nora meint, Interesse zeige, dass man sich [[kümmert]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cares",
+   "options": [
+    "cares",
+    "forgets",
+    "pays",
+    "hurries"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Nora meint, Interesse zeige, dass man sich kümmert.",
+    "targetWord": "kümmert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Beziehung",
+  "sentence": "Gehalt, Miete, [[Beziehung]]: das fragt man nicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "relationship",
+   "options": [
+    "relationship",
+    "address",
+    "hobby",
+    "surname"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Gehalt, Miete, Beziehung: das fragt man nicht.",
+    "targetWord": "Beziehung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Kinderwunsch",
+  "sentence": "Auch nach dem [[Kinderwunsch]] fragt man hier nicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wish to have children",
+   "options": [
+    "wish to have children",
+    "favourite food",
+    "yearly income",
+    "football team"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Auch nach dem Kinderwunsch fragt man hier nicht.",
+    "targetWord": "Kinderwunsch",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "in Ruhe lassen",
+  "sentence": "Zuneigung heißt, dass man dich [[in Ruhe lässt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "leaves you alone",
+   "options": [
+    "leaves you alone",
+    "pays for you",
+    "talks about you",
+    "waits for you"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Zuneigung heißt, dass man dich in Ruhe lässt.",
+    "targetWord": "in Ruhe lässt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Zurückhaltung",
+  "sentence": "[[Zurückhaltung]] ist hier ein Zeichen von Respekt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "reserve, restraint",
+   "options": [
+    "reserve, restraint",
+    "open curiosity",
+    "loud laughter",
+    "quick anger"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Zurückhaltung ist hier ein Zeichen von Respekt.",
+    "targetWord": "Zurückhaltung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "von selbst",
+  "sentence": "Man wartet, bis es einer [[von selbst]] erzählt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "of their own accord",
+   "options": [
+    "of their own accord",
+    "under pressure",
+    "for money",
+    "by mistake"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Man wartet, bis es einer von selbst erzählt.",
+    "targetWord": "von selbst",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "übergriffig",
+  "sentence": "Wer bohrt, wirkt [[übergriffig]], nicht herzlich.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "intrusive, overstepping",
+   "options": [
+    "intrusive, overstepping",
+    "warm",
+    "shy",
+    "honest"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Wer bohrt, wirkt übergriffig, nicht herzlich.",
+    "targetWord": "übergriffig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "herzlich",
+  "sentence": "Wer bohrt, wirkt übergriffig, nicht [[herzlich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm-hearted",
+   "options": [
+    "warm-hearted",
+    "suspicious",
+    "formal",
+    "bored"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Wer bohrt, wirkt übergriffig, nicht herzlich.",
+    "targetWord": "herzlich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "feierlich",
+  "sentence": "Nora nimmt ihre Frage [[feierlich]] zurück.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "solemnly",
+   "options": [
+    "solemnly",
+    "secretly",
+    "angrily",
+    "cheerfully"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Nora nimmt ihre Frage feierlich zurück.",
+    "targetWord": "feierlich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "austauschen",
+  "sentence": "Bei mir daheim [[tauscht]] man so etwas offen aus.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "swaps, shares openly",
+   "options": [
+    "swaps, shares openly",
+    "keeps strictly secret",
+    "writes down carefully",
+    "forgets right away"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Bei mir daheim tauscht man so etwas offen aus.",
+    "targetWord": "tauscht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "schweigt",
+  "sentence": "Merle stellt die Tasse ab und _____ zu lang.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schweigt",
+   "options": [
+    "schweigt",
+    "lacht",
+    "zahlt",
+    "singt"
+   ],
+   "translation": "Merle puts down the cup and _____ too long.",
+   "optionTranslations": [
+    "stays silent",
+    "laughs",
+    "pays",
+    "sings"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Merle stellt die Tasse ab und schweigt zu lang.",
+    "targetWord": "schweigt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "bohrt",
+  "sentence": "Je näher man sich ist, desto weniger _____ man.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bohrt",
+   "options": [
+    "bohrt",
+    "zahlt",
+    "lacht",
+    "schläft"
+   ],
+   "translation": "The closer you are, the less you _____.",
+   "optionTranslations": [
+    "pry",
+    "pay",
+    "laugh",
+    "sleep"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Je näher man sich ist, desto weniger bohrt man.",
+    "targetWord": "bohrt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "leuchtet",
+  "sentence": "Das _____ Nora zuerst nicht ein.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "leuchtet",
+   "options": [
+    "leuchtet",
+    "passt",
+    "hilft",
+    "stört"
+   ],
+   "translation": "At first that doesn't _____ sense to Nora.",
+   "optionTranslations": [
+    "make",
+    "fit",
+    "help",
+    "bother"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Das leuchtet Nora zuerst nicht ein.",
+    "targetWord": "leuchtet",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "aufmacht",
+  "sentence": "Erst wenn der andere die Tür _____, wird man persönlich.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aufmacht",
+   "options": [
+    "aufmacht",
+    "schließt",
+    "streicht",
+    "sucht"
+   ],
+   "translation": "Only when the other _____ the door do you get personal.",
+   "optionTranslations": [
+    "opens",
+    "closes",
+    "paints",
+    "searches"
+   ],
+   "audioClip": {
+    "storySlug": "man-fragt-nicht",
+    "storySource": "user",
+    "sentence": "Erst wenn der andere die Tür aufmacht, wird man persönlich.",
+    "targetWord": "aufmacht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Teeküche,Verhör,Gehalt,Respekt",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Teeküche",
+     "answer": "an office kitchenette",
+     "options": [
+      "an office kitchenette",
+      "an interrogation",
+      "salary",
+      "respect"
+     ]
+    },
+    {
+     "word": "Verhör",
+     "answer": "an interrogation",
+     "options": [
+      "an office kitchenette",
+      "an interrogation",
+      "salary",
+      "respect"
+     ]
+    },
+    {
+     "word": "Gehalt",
+     "answer": "salary",
+     "options": [
+      "an office kitchenette",
+      "an interrogation",
+      "salary",
+      "respect"
+     ]
+    },
+    {
+     "word": "Respekt",
+     "answer": "respect",
+     "options": [
+      "an office kitchenette",
+      "an interrogation",
+      "salary",
+      "respect"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

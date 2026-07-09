@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "zugeknöpft",
+  "sentence": "Die sonst so [[zugeknöpften]] Hamburger brüllen laut.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "buttoned-up, reserved",
+   "options": [
+    "buttoned-up, reserved",
+    "warm and open",
+    "tired and quiet",
+    "angry and rude"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "Die sonst so zugeknöpften Hamburger brüllen laut.",
+    "targetWord": "zugeknöpften",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aus voller Kehle",
+  "sentence": "Im Stadion singt man [[aus voller Kehle]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at the top of one's voice",
+   "options": [
+    "at the top of one's voice",
+    "under one's breath",
+    "word for word",
+    "now and then"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "Im Stadion singt man aus voller Kehle.",
+    "targetWord": "aus voller Kehle",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "im Takt",
+  "sentence": "Merle klatscht schon [[im Takt]] mit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in rhythm",
+   "options": [
+    "in rhythm",
+    "far too fast",
+    "out of tune",
+    "on her own"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "Merle klatscht schon im Takt mit.",
+    "targetWord": "im Takt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Underdog",
+  "sentence": "St. Pauli ist der [[Underdog]] der Stadt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the underdog",
+   "options": [
+    "the underdog",
+    "the champion",
+    "the referee",
+    "the sponsor"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "St. Pauli ist der Underdog der Stadt.",
+    "targetWord": "Underdog",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Kiez",
+  "sentence": "St. Pauli steht für den [[Kiez]] und das linke Herz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the neighbourhood",
+   "options": [
+    "the neighbourhood",
+    "the harbour",
+    "the office",
+    "the stadium"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "St. Pauli steht für den Kiez und das linke Herz.",
+    "targetWord": "Kiez",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Hafenkante",
+  "sentence": "St. Pauli ist die raue [[Hafenkante]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the rough harbour edge",
+   "options": [
+    "the rough harbour edge",
+    "the quiet lake shore",
+    "the fine city centre",
+    "the wide open sea"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "St. Pauli ist die raue Hafenkante.",
+    "targetWord": "Hafenkante",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rauslassen",
+  "sentence": "Zwei Stunden darf man hier alles [[rauslassen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "let out",
+   "options": [
+    "let out",
+    "hold in",
+    "write down",
+    "pay up"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "Zwei Stunden darf man hier alles rauslassen.",
+    "targetWord": "rauslassen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Dampf ablassen",
+  "sentence": "Am Wochenende darf man [[Dampf ablassen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "let off steam",
+   "options": [
+    "let off steam",
+    "keep a lid on it",
+    "stay reserved",
+    "work overtime"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "Am Wochenende darf man Dampf ablassen.",
+    "targetWord": "Dampf ablassen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Deckel drauf",
+  "sentence": "Unter der Woche heißt es [[Deckel drauf]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "keep a lid on it",
+   "options": [
+    "keep a lid on it",
+    "let it all out",
+    "speak your mind",
+    "take a break"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "Unter der Woche heißt es Deckel drauf.",
+    "targetWord": "Deckel drauf",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "singen",
+  "sentence": "Die sonst Wortkargen [[singen]] hier zwei Stunden am Stück.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sing",
+   "options": [
+    "sing",
+    "argue",
+    "whisper",
+    "sleep"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "Die sonst Wortkargen singen hier zwei Stunden am Stück.",
+    "targetWord": "singen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "am Stück",
+  "sentence": "Man singt hier zwei Stunden [[am Stück]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at a stretch",
+   "options": [
+    "at a stretch",
+    "by mistake",
+    "in silence",
+    "for money"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "Man singt hier zwei Stunden am Stück.",
+    "targetWord": "am Stück",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Herzblut",
+  "sentence": "Es gibt keine Regeln, nur [[Herzblut]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "heart and soul",
+   "options": [
+    "heart and soul",
+    "strict rules",
+    "spare change",
+    "polite talk"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "Es gibt keine Regeln, nur Herzblut.",
+    "targetWord": "Herzblut",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "brüllen",
+  "sentence": "Die zugeknöpften Hamburger _____ hier aus voller Kehle.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "brüllen",
+   "options": [
+    "brüllen",
+    "schweigen",
+    "flüstern",
+    "warten"
+   ],
+   "translation": "The buttoned-up Hamburgers _____ here at full voice.",
+   "optionTranslations": [
+    "bellow",
+    "stay silent",
+    "whisper",
+    "wait"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "Die zugeknöpften Hamburger brüllen hier aus voller Kehle.",
+    "targetWord": "brüllen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "spaltet",
+  "sentence": "Ein Fußball _____ die ganze Stadt in zwei Lager.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "spaltet",
+   "options": [
+    "spaltet",
+    "verbindet",
+    "füllt",
+    "schließt"
+   ],
+   "translation": "A game of football _____ the whole city into two camps.",
+   "optionTranslations": [
+    "splits",
+    "unites",
+    "fills",
+    "closes"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "Ein Fußball spaltet die ganze Stadt in zwei Lager.",
+    "targetWord": "spaltet",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "explodiert",
+  "sentence": "Bei einem Tor _____ die ganze Tribüne.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "explodiert",
+   "options": [
+    "explodiert",
+    "schweigt",
+    "schläft",
+    "zahlt"
+   ],
+   "translation": "When a goal is scored the whole stand _____.",
+   "optionTranslations": [
+    "erupts",
+    "goes silent",
+    "sleeps",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "Bei einem Tor explodiert die ganze Tribüne.",
+    "targetWord": "explodiert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "klatscht",
+  "sentence": "Merle _____ schon im Takt mit.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "klatscht",
+   "options": [
+    "klatscht",
+    "schweigt",
+    "geht",
+    "sitzt"
+   ],
+   "translation": "Merle is already _____ along in time.",
+   "optionTranslations": [
+    "clapping",
+    "staying silent",
+    "leaving",
+    "sitting"
+   ],
+   "audioClip": {
+    "storySlug": "am-millerntor-wird-geschrien",
+    "storySource": "user",
+    "sentence": "Merle klatscht schon im Takt mit.",
+    "targetWord": "klatscht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Menge,Schal,Totenkopf,Tribüne",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Menge",
+     "answer": "a crowd",
+     "options": [
+      "a crowd",
+      "a scarf",
+      "a skull emblem",
+      "the stands"
+     ]
+    },
+    {
+     "word": "Schal",
+     "answer": "a scarf",
+     "options": [
+      "a crowd",
+      "a scarf",
+      "a skull emblem",
+      "the stands"
+     ]
+    },
+    {
+     "word": "Totenkopf",
+     "answer": "a skull emblem",
+     "options": [
+      "a crowd",
+      "a scarf",
+      "a skull emblem",
+      "the stands"
+     ]
+    },
+    {
+     "word": "Tribüne",
+     "answer": "the stands",
+     "options": [
+      "a crowd",
+      "a scarf",
+      "a skull emblem",
+      "the stands"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

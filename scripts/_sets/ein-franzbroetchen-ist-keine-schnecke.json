@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "Gebäck",
+  "sentence": "Wiebke betrachtet das [[Gebäck]] misstrauisch.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the pastry",
+   "options": [
+    "the pastry",
+    "the bill",
+    "the customer",
+    "the counter"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Wiebke betrachtet das Gebäck misstrauisch.",
+    "targetWord": "Gebäck",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verdorben",
+  "sentence": "Sie schaut, als hätte man ihr etwas [[Verdorbenes]] gebracht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "spoiled",
+   "options": [
+    "spoiled",
+    "expensive",
+    "frozen",
+    "stolen"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Sie schaut, als hätte man ihr etwas Verdorbenes gebracht.",
+    "targetWord": "Verdorbenes",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "klebrig",
+  "sentence": "Eine Zimtschnecke ist gerollt und [[klebrig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sticky",
+   "options": [
+    "sticky",
+    "dry",
+    "salty",
+    "flat"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Eine Zimtschnecke ist gerollt und klebrig.",
+    "targetWord": "klebrig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "flach",
+  "sentence": "Ein Franzbrötchen wird [[flach]] gedrückt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "flat",
+   "options": [
+    "flat",
+    "round",
+    "tall",
+    "thin"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Ein Franzbrötchen wird flach gedrückt.",
+    "targetWord": "flach",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "platt",
+  "sentence": "Das Franzbrötchen ist [[platt]], ehrlich und ohne Schnickschnack.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "flat, down-to-earth",
+   "options": [
+    "flat, down-to-earth",
+    "tall and fancy",
+    "soft and sweet",
+    "cold and hard"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Das Franzbrötchen ist platt, ehrlich und ohne Schnickschnack.",
+    "targetWord": "platt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Schnickschnack",
+  "sentence": "Ein Franzbrötchen kommt ganz ohne [[Schnickschnack]] aus.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "needless frills",
+   "options": [
+    "needless frills",
+    "the right shape",
+    "enough sugar",
+    "a good name"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Ein Franzbrötchen kommt ganz ohne Schnickschnack aus.",
+    "targetWord": "Schnickschnack",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sich einmischen",
+  "sentence": "Ein Stammkunde nickt und [[mischt sich ein]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "butts in",
+   "options": [
+    "butts in",
+    "stays out",
+    "pays up",
+    "walks off"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Ein Stammkunde nickt und mischt sich ein.",
+    "targetWord": "mischt sich ein",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Beleidigung",
+  "sentence": "Zimtschnecke zu sagen ist hier fast eine [[Beleidigung]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an insult",
+   "options": [
+    "an insult",
+    "a compliment",
+    "a mistake",
+    "a joke"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Zimtschnecke zu sagen ist hier fast eine Beleidigung.",
+    "targetWord": "Beleidigung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nichts zu tun haben mit",
+  "sentence": "Das Franzbrötchen hat mit Schweden [[nichts zu tun]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "has nothing to do with",
+   "options": [
+    "has nothing to do with",
+    "comes straight from",
+    "looks a lot like",
+    "tastes just like"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Das Franzbrötchen hat mit Schweden nichts zu tun.",
+    "targetWord": "nichts zu tun",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ehrfürchtig",
+  "sentence": "Nora isst das Franzbrötchen [[ehrfürchtig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "reverently",
+   "options": [
+    "reverently",
+    "carelessly",
+    "quickly",
+    "sadly"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Nora isst das Franzbrötchen ehrfürchtig.",
+    "targetWord": "ehrfürchtig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "versteht sich",
+  "sentence": "Das nächste zahlst du wieder, [[versteht sich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "of course",
+   "options": [
+    "of course",
+    "for free",
+    "by mistake",
+    "much later"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Das nächste zahlst du wieder, versteht sich.",
+    "targetWord": "versteht sich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zustimmend",
+  "sentence": "Der Stammkunde nickt [[zustimmend]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "approvingly",
+   "options": [
+    "approvingly",
+    "angrily",
+    "sleepily",
+    "sadly"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Der Stammkunde nickt zustimmend.",
+    "targetWord": "zustimmend",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "betrachtet",
+  "sentence": "Wiebke _____ das Gebäck wie etwas Verdorbenes.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "betrachtet",
+   "options": [
+    "betrachtet",
+    "verkauft",
+    "backt",
+    "versteckt"
+   ],
+   "translation": "Wiebke _____ the pastry like something spoiled.",
+   "optionTranslations": [
+    "regards",
+    "sells",
+    "bakes",
+    "hides"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Wiebke betrachtet das Gebäck wie etwas Verdorbenes.",
+    "targetWord": "betrachtet",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "gedrückt",
+  "sentence": "Ein Franzbrötchen wird beim Backen flach _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gedrückt",
+   "options": [
+    "gedrückt",
+    "gerollt",
+    "gekocht",
+    "gefroren"
+   ],
+   "translation": "A Franzbrötchen gets pressed _____ while baking.",
+   "optionTranslations": [
+    "flat",
+    "rolled",
+    "boiled",
+    "frozen"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Ein Franzbrötchen wird beim Backen flach gedrückt.",
+    "targetWord": "gedrückt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "karamellisiert",
+  "sentence": "Der Zucker wird beim Backen _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "karamellisiert",
+   "options": [
+    "karamellisiert",
+    "gewogen",
+    "gezählt",
+    "versteckt"
+   ],
+   "translation": "While baking, the sugar gets _____.",
+   "optionTranslations": [
+    "caramelised",
+    "weighed",
+    "counted",
+    "hidden"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Der Zucker wird beim Backen karamellisiert.",
+    "targetWord": "karamellisiert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "probier",
+  "sentence": "Jetzt _____ eins, dann redest du nie wieder von Schnecken.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "probier",
+   "options": [
+    "probier",
+    "verkauf",
+    "zahl",
+    "wirf"
+   ],
+   "translation": "Now _____ one, then you'll never mention buns again.",
+   "optionTranslations": [
+    "try",
+    "sell",
+    "pay",
+    "throw"
+   ],
+   "audioClip": {
+    "storySlug": "ein-franzbroetchen-ist-keine-schnecke",
+    "storySource": "user",
+    "sentence": "Jetzt probier eins, dann redest du nie wieder von Schnecken.",
+    "targetWord": "probier",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Mitbringsel,Zimtschnecke,Weltanschauung,Butterteig",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Mitbringsel",
+     "answer": "a small gift brought along",
+     "options": [
+      "a small gift brought along",
+      "a Swedish cinnamon bun",
+      "a whole worldview",
+      "buttery pastry dough"
+     ]
+    },
+    {
+     "word": "Zimtschnecke",
+     "answer": "a Swedish cinnamon bun",
+     "options": [
+      "a small gift brought along",
+      "a Swedish cinnamon bun",
+      "a whole worldview",
+      "buttery pastry dough"
+     ]
+    },
+    {
+     "word": "Weltanschauung",
+     "answer": "a whole worldview",
+     "options": [
+      "a small gift brought along",
+      "a Swedish cinnamon bun",
+      "a whole worldview",
+      "buttery pastry dough"
+     ]
+    },
+    {
+     "word": "Butterteig",
+     "answer": "buttery pastry dough",
+     "options": [
+      "a small gift brought along",
+      "a Swedish cinnamon bun",
+      "a whole worldview",
+      "buttery pastry dough"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

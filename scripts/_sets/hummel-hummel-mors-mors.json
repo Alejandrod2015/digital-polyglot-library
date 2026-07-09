@@ -1,0 +1,528 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "Hummel Hummel",
+  "sentence": "Ein Kunde ruft Wiebke ein fröhliches [[Hummel Hummel]] zu.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a Hamburg call / password",
+   "options": [
+    "a Hamburg call / password",
+    "a fish order",
+    "a rude insult",
+    "a goodbye"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Ein Kunde ruft Wiebke ein fröhliches Hummel Hummel zu.",
+    "targetWord": "Hummel Hummel",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Mors Mors",
+  "sentence": "Die richtige Antwort darauf ist [[Mors Mors]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the fixed reply to it",
+   "options": [
+    "the fixed reply to it",
+    "a kind of fish",
+    "a street name",
+    "a bad word"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Die richtige Antwort darauf ist Mors Mors.",
+    "targetWord": "Mors Mors",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fröhlich",
+  "sentence": "Der Ruf klingt laut und [[fröhlich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cheerful",
+   "options": [
+    "cheerful",
+    "angry",
+    "tired",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Der Ruf klingt laut und fröhlich.",
+    "targetWord": "fröhlich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ratlos",
+  "sentence": "Nora bleibt mit ihrem Franzbrötchen [[ratlos]] stehen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at a loss",
+   "options": [
+    "at a loss",
+    "wide awake",
+    "very proud",
+    "half asleep"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Nora bleibt mit ihrem Franzbrötchen ratlos stehen.",
+    "targetWord": "ratlos",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Unsinn",
+  "sentence": "Für sie klingt der Ruf nach reinem [[Unsinn]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nonsense",
+   "options": [
+    "nonsense",
+    "a warning",
+    "a recipe",
+    "a promise"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Für sie klingt der Ruf nach reinem Unsinn.",
+    "targetWord": "Unsinn",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Frechheit",
+  "sentence": "Ursprünglich war die Antwort eine [[Frechheit]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a cheeky remark",
+   "options": [
+    "a cheeky remark",
+    "a polite bow",
+    "a formal rule",
+    "a kind gift"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Ursprünglich war die Antwort eine Frechheit.",
+    "targetWord": "Frechheit",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Gruß",
+  "sentence": "Heute ist es ein [[Gruß]] unter Eingeweihten.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a greeting",
+   "options": [
+    "a greeting",
+    "a complaint",
+    "a mistake",
+    "a payment"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Heute ist es ein Gruß unter Eingeweihten.",
+    "targetWord": "Gruß",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Eingeweihter",
+  "sentence": "Der Ruf gilt nur unter [[Eingeweihten]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "insiders, those in the know",
+   "options": [
+    "insiders, those in the know",
+    "total strangers",
+    "paying customers",
+    "new arrivals"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Der Ruf gilt nur unter Eingeweihten.",
+    "targetWord": "Eingeweihten",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Stichwort",
+  "sentence": "Ole kommt herein und hört das [[Stichwort]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the cue word",
+   "options": [
+    "the cue word",
+    "the loud music",
+    "the closing time",
+    "the wrong name"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Ole kommt herein und hört das Stichwort.",
+    "targetWord": "Stichwort",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "heimlich",
+  "sentence": "Die Hamburger prüfen einen Fremden gern [[heimlich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "secretly",
+   "options": [
+    "secretly",
+    "loudly",
+    "officially",
+    "rarely"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Die Hamburger prüfen einen Fremden gern heimlich.",
+    "targetWord": "heimlich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "parat",
+  "sentence": "Man prüft, ob er die Antwort [[parat]] hat.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at the ready",
+   "options": [
+    "at the ready",
+    "far away",
+    "in writing",
+    "for sale"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Man prüft, ob er die Antwort parat hat.",
+    "targetWord": "parat",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gemein",
+  "sentence": "Nora findet das [[gemein]] und gleichzeitig genial.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mean",
+   "options": [
+    "mean",
+    "kind",
+    "boring",
+    "useless"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Nora findet das gemein und gleichzeitig genial.",
+    "targetWord": "gemein",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "genial",
+  "sentence": "Nora findet das gemein und gleichzeitig [[genial]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "brilliant",
+   "options": [
+    "brilliant",
+    "terrible",
+    "normal",
+    "cheap"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Nora findet das gemein und gleichzeitig genial.",
+    "targetWord": "genial",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Kennerin",
+  "sentence": "Eben noch Zugezogene, jetzt fast eine [[Kennerin]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an expert",
+   "options": [
+    "an expert",
+    "a stranger",
+    "a tourist",
+    "a beginner"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Eben noch Zugezogene, jetzt fast eine Kennerin.",
+    "targetWord": "Kennerin",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Luft holen",
+  "sentence": "Bevor sie antwortet, muss Nora kurz [[Luft holen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "take a breath",
+   "options": [
+    "take a breath",
+    "turn away",
+    "sit down",
+    "pay up"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Bevor sie antwortet, muss Nora kurz Luft holen.",
+    "targetWord": "Luft holen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "kontert",
+  "sentence": "Wiebke _____ sofort mit Mors Mors.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kontert",
+   "options": [
+    "kontert",
+    "schweigt",
+    "zahlt",
+    "staunt"
+   ],
+   "translation": "Wiebke _____ at once with Mors Mors.",
+   "optionTranslations": [
+    "fires back",
+    "stays silent",
+    "pays",
+    "is amazed"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Wiebke kontert sofort mit Mors Mors.",
+    "targetWord": "kontert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "blamierst",
+  "sentence": "Damit _____ du dich nie wieder auf dem Fischmarkt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "blamierst",
+   "options": [
+    "blamierst",
+    "erholst",
+    "versteckst",
+    "langweilst"
+   ],
+   "translation": "This way you never _____ yourself again at the fish market.",
+   "optionTranslations": [
+    "embarrass",
+    "recover",
+    "hide",
+    "bore"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Damit blamierst du dich nie wieder auf dem Fischmarkt.",
+    "targetWord": "blamierst",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "enttarnt",
+  "sentence": "Ohne die Antwort bist du sofort _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "enttarnt",
+   "options": [
+    "enttarnt",
+    "gelobt",
+    "bezahlt",
+    "begrüßt"
+   ],
+   "translation": "Without the reply you are immediately _____.",
+   "optionTranslations": [
+    "exposed",
+    "praised",
+    "paid",
+    "greeted"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Ohne die Antwort bist du sofort enttarnt.",
+    "targetWord": "enttarnt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "geprüft",
+  "sentence": "Ein Fremder wird hier beiläufig _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "geprüft",
+   "options": [
+    "geprüft",
+    "gefeiert",
+    "bezahlt",
+    "gerufen"
+   ],
+   "translation": "A stranger here is casually _____.",
+   "optionTranslations": [
+    "tested",
+    "celebrated",
+    "paid",
+    "called"
+   ],
+   "audioClip": {
+    "storySlug": "hummel-hummel-mors-mors",
+    "storySource": "user",
+    "sentence": "Ein Fremder wird hier beiläufig geprüft.",
+    "targetWord": "geprüft",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Stammkunde,Wasserträger,Spitzname,Fischmarkt",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Stammkunde",
+     "answer": "a regular customer",
+     "options": [
+      "a regular customer",
+      "a water carrier",
+      "a nickname",
+      "the fish market"
+     ]
+    },
+    {
+     "word": "Wasserträger",
+     "answer": "a water carrier",
+     "options": [
+      "a regular customer",
+      "a water carrier",
+      "a nickname",
+      "the fish market"
+     ]
+    },
+    {
+     "word": "Spitzname",
+     "answer": "a nickname",
+     "options": [
+      "a regular customer",
+      "a water carrier",
+      "a nickname",
+      "the fish market"
+     ]
+    },
+    {
+     "word": "Fischmarkt",
+     "answer": "the fish market",
+     "options": [
+      "a regular customer",
+      "a water carrier",
+      "a nickname",
+      "the fish market"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

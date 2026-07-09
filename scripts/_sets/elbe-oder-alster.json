@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "Sonntagsspaziergang",
+  "sentence": "Bei einem [[Sonntagsspaziergang]] bleibt Ole an der Elbe stehen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a Sunday walk",
+   "options": [
+    "a Sunday walk",
+    "a business trip",
+    "a boat race",
+    "a fish market"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "Bei einem Sonntagsspaziergang bleibt Ole an der Elbe stehen.",
+    "targetWord": "Sonntagsspaziergang",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salzig",
+  "sentence": "Die Elbe ist [[salzig]], laut und arbeitend.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "salty",
+   "options": [
+    "salty",
+    "calm",
+    "sweet",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "Die Elbe ist salzig, laut und arbeitend.",
+    "targetWord": "salzig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vornehm",
+  "sentence": "Die Alster liegt ruhig und [[vornehm]] in der Stadt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "genteel, refined",
+   "options": [
+    "genteel, refined",
+    "rough and loud",
+    "cheap and busy",
+    "cold and empty"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "Die Alster liegt ruhig und vornehm in der Stadt.",
+    "targetWord": "vornehm",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sich entscheiden",
+  "sentence": "Muss Nora sich wirklich für ein Gewässer [[entscheiden]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "decide",
+   "options": [
+    "decide",
+    "pay",
+    "wait",
+    "leave"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "Muss Nora sich wirklich für ein Gewässer entscheiden?",
+    "targetWord": "entscheiden",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Zugehörigkeit",
+  "sentence": "Es geht nicht um besser, es geht um [[Zugehörigkeit]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "belonging",
+   "options": [
+    "belonging",
+    "money",
+    "distance",
+    "speed"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "Es geht nicht um besser, es geht um Zugehörigkeit.",
+    "targetWord": "Zugehörigkeit",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Schwimmponton",
+  "sentence": "Nora bleibt vor einem alten [[Schwimmponton]] stehen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a floating pontoon",
+   "options": [
+    "a floating pontoon",
+    "a market stall",
+    "a bus stop",
+    "a shop window"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "Nora bleibt vor einem alten Schwimmponton stehen.",
+    "targetWord": "Schwimmponton",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rau",
+  "sentence": "Wer die Kräne mag, nimmt die Stadt [[rau]] und ehrlich.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rough",
+   "options": [
+    "rough",
+    "gentle",
+    "sweet",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "Wer die Kräne mag, nimmt die Stadt rau und ehrlich.",
+    "targetWord": "rau",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "großmütig",
+  "sentence": "Die Alster ist [[großmütig]] und verzeiht die Wahl.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "magnanimous",
+   "options": [
+    "magnanimous",
+    "strict",
+    "jealous",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "Die Alster ist großmütig und verzeiht die Wahl.",
+    "targetWord": "großmütig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Verräter",
+  "sentence": "Merle nennt Nora scherzhaft eine [[Verräterin]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a traitor",
+   "options": [
+    "a traitor",
+    "a stranger",
+    "a winner",
+    "a guide"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "Merle nennt Nora scherzhaft eine Verräterin.",
+    "targetWord": "Verräterin",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "heimisch werden",
+  "sentence": "So [[heimisch]] wird man nicht durch Papiere.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to feel at home",
+   "options": [
+    "to feel at home",
+    "to earn money",
+    "to get lost",
+    "to fall ill"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "So heimisch wird man nicht durch Papiere.",
+    "targetWord": "heimisch",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Gute Wahl",
+  "sentence": "Ole sagt anerkennend: [[Gute Wahl]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "good choice",
+   "options": [
+    "good choice",
+    "bad luck",
+    "too late",
+    "no idea"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "Ole sagt anerkennend: Gute Wahl.",
+    "targetWord": "Gute Wahl",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verzeihen",
+  "sentence": "Die Alster [[verzeiht]] dir die Wahl für die Elbe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "forgives",
+   "options": [
+    "forgives",
+    "envies",
+    "forbids",
+    "charges"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "Die Alster verzeiht dir die Wahl für die Elbe.",
+    "targetWord": "verzeiht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "deutet",
+  "sentence": "Ole _____ auf die Kräne am anderen Ufer.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "deutet",
+   "options": [
+    "deutet",
+    "schweigt",
+    "zahlt",
+    "ruht"
+   ],
+   "translation": "Ole _____ at the cranes on the far bank.",
+   "optionTranslations": [
+    "points",
+    "stays silent",
+    "pays",
+    "rests"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "Ole deutet auf die Kräne am anderen Ufer.",
+    "targetWord": "deutet",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "winkt ab",
+  "sentence": "Merle _____ und zeigt zur Alster.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "winkt ab",
+   "options": [
+    "winkt ab",
+    "weint",
+    "wartet",
+    "zahlt"
+   ],
+   "translation": "Merle _____ and points to the Alster.",
+   "optionTranslations": [
+    "waves it off",
+    "cries",
+    "waits",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "Merle winkt ab und zeigt zur Alster.",
+    "targetWord": "winkt ab",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "rudert",
+  "sentence": "An der Alster joggt und _____ man.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rudert",
+   "options": [
+    "rudert",
+    "schläft",
+    "streitet",
+    "zahlt"
+   ],
+   "translation": "At the Alster people jog and _____.",
+   "optionTranslations": [
+    "row",
+    "sleep",
+    "argue",
+    "pay"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "An der Alster joggt und rudert man.",
+    "targetWord": "rudert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "rieche",
+  "sentence": "Ich _____ das Salz und bin sofort ruhig.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rieche",
+   "options": [
+    "rieche",
+    "verkaufe",
+    "vergesse",
+    "zähle"
+   ],
+   "translation": "I _____ the salt and feel instantly calm.",
+   "optionTranslations": [
+    "smell",
+    "sell",
+    "forget",
+    "count"
+   ],
+   "audioClip": {
+    "storySlug": "elbe-oder-alster",
+    "storySource": "user",
+    "sentence": "Ich rieche das Salz und bin sofort ruhig.",
+    "targetWord": "rieche",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Ufer,Segelboot,Containerschiff,Gewässer",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Ufer",
+     "answer": "the bank, shore",
+     "options": [
+      "the bank, shore",
+      "a sailing boat",
+      "a container ship",
+      "a body of water"
+     ]
+    },
+    {
+     "word": "Segelboot",
+     "answer": "a sailing boat",
+     "options": [
+      "the bank, shore",
+      "a sailing boat",
+      "a container ship",
+      "a body of water"
+     ]
+    },
+    {
+     "word": "Containerschiff",
+     "answer": "a container ship",
+     "options": [
+      "the bank, shore",
+      "a sailing boat",
+      "a container ship",
+      "a body of water"
+     ]
+    },
+    {
+     "word": "Gewässer",
+     "answer": "a body of water",
+     "options": [
+      "the bank, shore",
+      "a sailing boat",
+      "a container ship",
+      "a body of water"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

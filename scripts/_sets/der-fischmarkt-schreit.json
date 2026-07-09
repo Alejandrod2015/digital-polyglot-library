@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "blass",
+  "sentence": "Der Schreier fragt: Na, so [[blass]] um die Nase?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pale",
+   "options": [
+    "pale",
+    "cheerful",
+    "loud",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Der Schreier fragt: Na, so blass um die Nase?",
+    "targetWord": "blass",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Lachs",
+  "sentence": "Den [[Lachs]] gibt es fast geschenkt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "salmon",
+   "options": [
+    "salmon",
+    "bread",
+    "coffee",
+    "flowers"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Den Lachs gibt es fast geschenkt.",
+    "targetWord": "Lachs",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fast geschenkt",
+  "sentence": "Alles ist frisch und [[fast geschenkt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "almost free, a steal",
+   "options": [
+    "almost free, a steal",
+    "far too dear",
+    "already sold",
+    "out of stock"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Alles ist frisch und fast geschenkt.",
+    "targetWord": "fast geschenkt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "auf jemanden hören",
+  "sentence": "Der Schreier ruft: [[Hör auf]] deinen Freund!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "listen to",
+   "options": [
+    "listen to",
+    "laugh at",
+    "pay for",
+    "run from"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Der Schreier ruft: Hör auf deinen Freund!",
+    "targetWord": "Hör auf",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Tüte",
+  "sentence": "Er stopft ihr eine prall gefüllte [[Tüte]] in die Arme.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a bag",
+   "options": [
+    "a bag",
+    "a box",
+    "a jar",
+    "a net"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Er stopft ihr eine prall gefüllte Tüte in die Arme.",
+    "targetWord": "Tüte",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "glücklich",
+  "sentence": "Du gehst als [[glückliche]] Frau nach Hause.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "happy",
+   "options": [
+    "happy",
+    "angry",
+    "tired",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Du gehst als glückliche Frau nach Hause.",
+    "targetWord": "glückliche",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Lautstärke",
+  "sentence": "Nora staunt über die [[Lautstärke]] am Morgen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the loudness",
+   "options": [
+    "the loudness",
+    "the silence",
+    "the smell",
+    "the crowd"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Nora staunt über die Lautstärke am Morgen.",
+    "targetWord": "Lautstärke",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ausnahme",
+  "sentence": "Sonntags früh macht der Norden eine einzige [[Ausnahme]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an exception",
+   "options": [
+    "an exception",
+    "a rule",
+    "a mistake",
+    "a payment"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Sonntags früh macht der Norden eine einzige Ausnahme.",
+    "targetWord": "Ausnahme",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prall",
+  "sentence": "Er drückt ihr eine [[prall]] gefüllte Tüte in die Arme.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bulging",
+   "options": [
+    "bulging",
+    "empty",
+    "broken",
+    "tiny"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Er drückt ihr eine prall gefüllte Tüte in die Arme.",
+    "targetWord": "prall",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "widersprechen",
+  "sentence": "Er packt ein, ehe sie [[widersprechen]] kann.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to object",
+   "options": [
+    "to object",
+    "to pay",
+    "to leave",
+    "to laugh"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Er packt ein, ehe sie widersprechen kann.",
+    "targetWord": "widersprechen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "obendrauf",
+  "sentence": "Es gibt einen Strauß Blumen [[obendrauf]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on top, as a bonus",
+   "options": [
+    "on top, as a bonus",
+    "instead",
+    "far below",
+    "for a fee"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Es gibt einen Strauß Blumen obendrauf.",
+    "targetWord": "obendrauf",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mitnehmen",
+  "sentence": "Wenn der Norden laut wird, will Nora jeden Ruf [[mitnehmen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take along",
+   "options": [
+    "to take along",
+    "to forget",
+    "to sell",
+    "to miss"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Wenn der Norden laut wird, will Nora jeden Ruf mitnehmen.",
+    "targetWord": "mitnehmen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tobt",
+  "sentence": "Sonntags früh _____ die alte Fischauktionshalle.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tobt",
+   "options": [
+    "tobt",
+    "schläft",
+    "schließt",
+    "wartet"
+   ],
+   "translation": "Early on Sundays the old fish hall _____.",
+   "optionTranslations": [
+    "is in uproar",
+    "sleeps",
+    "closes",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Sonntags früh tobt die alte Fischauktionshalle.",
+    "targetWord": "tobt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "anbrüllt",
+  "sentence": "Der Marktschreier _____ sein Publikum.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "anbrüllt",
+   "options": [
+    "anbrüllt",
+    "begrüßt",
+    "ignoriert",
+    "bezahlt"
+   ],
+   "translation": "The market crier _____ his audience.",
+   "optionTranslations": [
+    "bellows at",
+    "greets",
+    "ignores",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Der Marktschreier anbrüllt sein Publikum.",
+    "targetWord": "anbrüllt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "beschwert",
+  "sentence": "Über den Lärm _____ sich hier keiner.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "beschwert",
+   "options": [
+    "beschwert",
+    "freut",
+    "kümmert",
+    "wundert"
+   ],
+   "translation": "Nobody here _____ about the noise.",
+   "optionTranslations": [
+    "complains",
+    "is glad",
+    "cares",
+    "wonders"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Über den Lärm beschwert sich hier keiner.",
+    "targetWord": "beschwert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "durchhält",
+  "sentence": "Wer bis zum Fischbrötchen _____, hat den Sonntag gewonnen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "durchhält",
+   "options": [
+    "durchhält",
+    "aufgibt",
+    "wegläuft",
+    "einschläft"
+   ],
+   "translation": "Whoever _____ until the fish roll has won the Sunday.",
+   "optionTranslations": [
+    "holds out",
+    "gives up",
+    "runs off",
+    "falls asleep"
+   ],
+   "audioClip": {
+    "storySlug": "der-fischmarkt-schreit",
+    "storySource": "user",
+    "sentence": "Wer bis zum Fischbrötchen durchhält, hat den Sonntag gewonnen.",
+    "targetWord": "durchhält",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Fischauktionshalle,Marktschreier,Aal,Fischbrötchen",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Fischauktionshalle",
+     "answer": "the fish auction hall",
+     "options": [
+      "the fish auction hall",
+      "a market crier",
+      "eel",
+      "a fish roll"
+     ]
+    },
+    {
+     "word": "Marktschreier",
+     "answer": "a market crier",
+     "options": [
+      "the fish auction hall",
+      "a market crier",
+      "eel",
+      "a fish roll"
+     ]
+    },
+    {
+     "word": "Aal",
+     "answer": "eel",
+     "options": [
+      "the fish auction hall",
+      "a market crier",
+      "eel",
+      "a fish roll"
+     ]
+    },
+    {
+     "word": "Fischbrötchen",
+     "answer": "a fish roll",
+     "options": [
+      "the fish auction hall",
+      "a market crier",
+      "eel",
+      "a fish roll"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

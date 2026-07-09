@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "sich wiedererkennen",
+  "sentence": "In der Fremden [[erkennt]] Nora sich sofort wieder.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "recognises herself",
+   "options": [
+    "recognises herself",
+    "loses herself",
+    "forgets herself",
+    "hides herself"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "In der Fremden erkennt Nora sich sofort wieder.",
+    "targetWord": "erkennt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unbedingt",
+  "sentence": "Sofia will hier [[unbedingt]] höflich sein.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "absolutely, at all costs",
+   "options": [
+    "absolutely, at all costs",
+    "barely",
+    "secretly",
+    "rarely"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Sofia will hier unbedingt höflich sein.",
+    "targetWord": "unbedingt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unfreundlich",
+  "sentence": "Ein Wort klingt für Sofia fast [[unfreundlich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "unfriendly",
+   "options": [
+    "unfriendly",
+    "cheerful",
+    "formal",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Ein Wort klingt für Sofia fast unfreundlich.",
+    "targetWord": "unfreundlich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Wärme",
+  "sentence": "Hinter dem einen Wort steckt mehr [[Wärme]] als in zehn Sätzen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warmth",
+   "options": [
+    "warmth",
+    "distance",
+    "noise",
+    "doubt"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Hinter dem einen Wort steckt mehr Wärme als in zehn Sätzen.",
+    "targetWord": "Wärme",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "an die Hand nehmen",
+  "sentence": "Nora will Sofia [[an die Hand]] nehmen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "take under her wing",
+   "options": [
+    "take under her wing",
+    "send far away",
+    "hand a form",
+    "charge a fee"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Nora will Sofia an die Hand nehmen.",
+    "targetWord": "an die Hand",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verschlossen",
+  "sentence": "Sofia fragt, ob die Leute wirklich so [[verschlossen]] sind.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "closed off, reserved",
+   "options": [
+    "closed off, reserved",
+    "open and warm",
+    "loud and rude",
+    "rich and proud"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Sofia fragt, ob die Leute wirklich so verschlossen sind.",
+    "targetWord": "verschlossen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "still",
+  "sentence": "Wiebke mustert die Neue mit [[stillem]] Wohlwollen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quiet",
+   "options": [
+    "quiet",
+    "angry",
+    "proud",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Wiebke mustert die Neue mit stillem Wohlwollen.",
+    "targetWord": "stillem",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Taten",
+  "sentence": "Sparsam mit Worten, großzügig mit [[Taten]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "deeds, actions",
+   "options": [
+    "deeds, actions",
+    "words",
+    "money",
+    "time"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Sparsam mit Worten, großzügig mit Taten.",
+    "targetWord": "Taten",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Wohlwollen",
+  "sentence": "Wiebke schaut die Neue mit [[Wohlwollen]] an.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "goodwill",
+   "options": [
+    "goodwill",
+    "suspicion",
+    "boredom",
+    "envy"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Wiebke schaut die Neue mit Wohlwollen an.",
+    "targetWord": "Wohlwollen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "eine von hier",
+  "sentence": "Irgendwann sagst du Moin wie [[eine von hier]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "one of the locals",
+   "options": [
+    "one of the locals",
+    "a total stranger",
+    "a lost tourist",
+    "a paying guest"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Irgendwann sagst du Moin wie eine von hier.",
+    "targetWord": "eine von hier",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "angenehm",
+  "sentence": "Sofia wünscht einen wunderschönen, [[angenehmen]] Tag.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pleasant",
+   "options": [
+    "pleasant",
+    "expensive",
+    "serious",
+    "rainy"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Sofia wünscht einen wunderschönen, angenehmen Tag.",
+    "targetWord": "angenehmen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nachdenken",
+  "sentence": "Irgendwann sagst du es, ohne [[nachzudenken]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thinking about it",
+   "options": [
+    "thinking about it",
+    "paying for it",
+    "stopping for it",
+    "asking about it"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Irgendwann sagst du es, ohne nachzudenken.",
+    "targetWord": "nachzudenken",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "spar",
+  "sentence": "Aber _____ dir die Hälfte der Begrüßung.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "spar",
+   "options": [
+    "spar",
+    "kauf",
+    "zahl",
+    "wirf"
+   ],
+   "translation": "But _____ yourself half the greeting.",
+   "optionTranslations": [
+    "save",
+    "buy",
+    "pay",
+    "throw"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Aber spar dir die Hälfte der Begrüßung.",
+    "targetWord": "spar",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "bricht",
+  "sentence": "Nora _____ ihr Franzbrötchen in zwei Hälften.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bricht",
+   "options": [
+    "bricht",
+    "kauft",
+    "versteckt",
+    "kocht"
+   ],
+   "translation": "Nora _____ her Franzbrötchen into two halves.",
+   "optionTranslations": [
+    "breaks",
+    "buys",
+    "hides",
+    "cooks"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Nora bricht ihr Franzbrötchen in zwei Hälften.",
+    "targetWord": "bricht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "drängeln",
+  "sentence": "Der erste Trick heißt: nicht _____, nur dableiben.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "drängeln",
+   "options": [
+    "drängeln",
+    "bezahlen",
+    "verschwinden",
+    "singen"
+   ],
+   "translation": "The first trick is: don't _____, just stay put.",
+   "optionTranslations": [
+    "push and shove",
+    "pay",
+    "disappear",
+    "sing"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Der erste Trick heißt: nicht drängeln, nur dableiben.",
+    "targetWord": "drängeln",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "dableiben",
+  "sentence": "Der Trick heißt: nicht drängeln, nur _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dableiben",
+   "options": [
+    "dableiben",
+    "weglaufen",
+    "aufgeben",
+    "streiten"
+   ],
+   "translation": "The trick is: don't push, just _____.",
+   "optionTranslations": [
+    "stay put",
+    "run off",
+    "give up",
+    "argue"
+   ],
+   "audioClip": {
+    "storySlug": "moin-neuland",
+    "storySource": "user",
+    "sentence": "Der Trick heißt: nicht drängeln, nur dableiben.",
+    "targetWord": "dableiben",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Fremde,Koffer,Hälfte,Trick",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Fremde",
+     "answer": "a stranger",
+     "options": [
+      "a stranger",
+      "a suitcase",
+      "a half",
+      "a knack, trick"
+     ]
+    },
+    {
+     "word": "Koffer",
+     "answer": "a suitcase",
+     "options": [
+      "a stranger",
+      "a suitcase",
+      "a half",
+      "a knack, trick"
+     ]
+    },
+    {
+     "word": "Hälfte",
+     "answer": "a half",
+     "options": [
+      "a stranger",
+      "a suitcase",
+      "a half",
+      "a knack, trick"
+     ]
+    },
+    {
+     "word": "Trick",
+     "answer": "a knack, trick",
+     "options": [
+      "a stranger",
+      "a suitcase",
+      "a half",
+      "a knack, trick"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,449 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "knarrend",
+  "sentence": "Das Kontor hat alte, [[knarrende]] Dielen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "creaking",
+   "options": [
+    "creaking",
+    "brand-new",
+    "polished",
+    "broken"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Das Kontor hat alte, knarrende Dielen.",
+    "targetWord": "knarrende",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fest",
+  "sentence": "Carstens empfängt Nora mit einem [[festen]] Handschlag.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "firm",
+   "options": [
+    "firm",
+    "limp",
+    "cold",
+    "quick"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Carstens empfängt Nora mit einem festen Handschlag.",
+    "targetWord": "festen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "überflüssig",
+  "sentence": "Er begrüßt sie ohne ein [[überflüssiges]] Wort.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "superfluous",
+   "options": [
+    "superfluous",
+    "friendly",
+    "written",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Er begrüßt sie ohne ein überflüssiges Wort.",
+    "targetWord": "überflüssiges",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Handschlag",
+  "sentence": "Ein [[Handschlag]] wiegt hier mehr als drei Seiten Vertrag.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a handshake",
+   "options": [
+    "a handshake",
+    "a signature",
+    "a payment",
+    "a promise"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Ein Handschlag wiegt hier mehr als drei Seiten Vertrag.",
+    "targetWord": "Handschlag",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ein Kaufmann, ein Wort",
+  "sentence": "Bei uns gilt: [[ein Kaufmann, ein Wort]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a merchant's word is binding",
+   "options": [
+    "a merchant's word is binding",
+    "the customer is king",
+    "time is money",
+    "rules are rules"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Bei uns gilt: ein Kaufmann, ein Wort.",
+    "targetWord": "ein Kaufmann, ein Wort",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unten durch sein",
+  "sentence": "Wer per Handschlag zusagt und kneift, ist [[unten durch]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "has lost all respect",
+   "options": [
+    "has lost all respect",
+    "gets a bonus",
+    "pays a fine",
+    "waits in line"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Wer per Handschlag zusagt und kneift, ist unten durch.",
+    "targetWord": "unten durch",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kann man so machen",
+  "sentence": "Sein höchstes Lob lautet nur: [[Kann man so machen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "that's entirely fine, well done",
+   "options": [
+    "that's entirely fine, well done",
+    "that is completely wrong",
+    "do it all again",
+    "far too slow"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Sein höchstes Lob lautet nur: Kann man so machen.",
+    "targetWord": "Kann man so machen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aussetzen",
+  "sentence": "An Noras Kalkulation gibt es nichts [[auszusetzen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to fault, criticise",
+   "options": [
+    "to fault, criticise",
+    "to add",
+    "to pay",
+    "to repeat"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "An Noras Kalkulation gibt es nichts auszusetzen.",
+    "targetWord": "auszusetzen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Lob",
+  "sentence": "Kann man so machen ist hier ein echtes [[Lob]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "praise",
+   "options": [
+    "praise",
+    "a warning",
+    "a joke",
+    "a fine"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Kann man so machen ist hier ein echtes Lob.",
+    "targetWord": "Lob",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sauber",
+  "sentence": "Kann man so machen heißt: [[sauber]], richtig, korrekt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clean, done properly",
+   "options": [
+    "clean, done properly",
+    "far too slow",
+    "much too bold",
+    "a little thin"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Kann man so machen heißt: sauber, richtig, korrekt.",
+    "targetWord": "sauber",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dünn",
+  "sentence": "Nora fragt, ob ihre Arbeit zu [[dünn]] sei.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thin, flimsy",
+   "options": [
+    "thin, flimsy",
+    "too long",
+    "too loud",
+    "too late"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Nora fragt, ob ihre Arbeit zu dünn sei.",
+    "targetWord": "dünn",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Zeichen",
+  "sentence": "Man merkt Vertrauen hier an kleineren [[Zeichen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "signs",
+   "options": [
+    "signs",
+    "prices",
+    "voices",
+    "rooms"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Man merkt Vertrauen hier an kleineren Zeichen.",
+    "targetWord": "Zeichen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Vokabel",
+  "sentence": "Kann man so machen ist Noras erste [[Vokabel]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a vocabulary word",
+   "options": [
+    "a vocabulary word",
+    "a big mistake",
+    "a warm hug",
+    "a fair price"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Kann man so machen ist Noras erste Vokabel.",
+    "targetWord": "Vokabel",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "zusagen",
+  "sentence": "Man soll hier nur das _____, was man halten kann.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zusagen",
+   "options": [
+    "zusagen",
+    "absagen",
+    "vergessen",
+    "bezahlen"
+   ],
+   "translation": "Here you should only _____ what you can keep.",
+   "optionTranslations": [
+    "commit to",
+    "cancel",
+    "forget",
+    "pay"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Man soll hier nur das zusagen, was man halten kann.",
+    "targetWord": "zusagen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "kneift",
+  "sentence": "Wer per Handschlag zusagt und dann _____, ist unten durch.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kneift",
+   "options": [
+    "kneift",
+    "lacht",
+    "zahlt",
+    "gewinnt"
+   ],
+   "translation": "Whoever agrees on a handshake and then _____ is finished.",
+   "optionTranslations": [
+    "chickens out",
+    "laughs",
+    "pays",
+    "wins"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Wer per Handschlag zusagt und dann kneift, ist unten durch.",
+    "targetWord": "kneift",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "aufbaut",
+  "sentence": "Wer Vertrauen _____, merkt es an kleinen Zeichen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aufbaut",
+   "options": [
+    "aufbaut",
+    "verliert",
+    "zerstört",
+    "kauft"
+   ],
+   "translation": "Whoever _____ trust notices it in small signs.",
+   "optionTranslations": [
+    "builds up",
+    "loses",
+    "destroys",
+    "buys"
+   ],
+   "audioClip": {
+    "storySlug": "ein-kaufmann-ein-wort",
+    "storySource": "user",
+    "sentence": "Wer Vertrauen aufbaut, merkt es an kleinen Zeichen.",
+    "targetWord": "aufbaut",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Kontor,Speicher,Kalkulation,Beifall",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Kontor",
+     "answer": "a Hanseatic trading office",
+     "options": [
+      "a Hanseatic trading office",
+      "a warehouse",
+      "a costing, calculation",
+      "applause"
+     ]
+    },
+    {
+     "word": "Speicher",
+     "answer": "a warehouse",
+     "options": [
+      "a Hanseatic trading office",
+      "a warehouse",
+      "a costing, calculation",
+      "applause"
+     ]
+    },
+    {
+     "word": "Kalkulation",
+     "answer": "a costing, calculation",
+     "options": [
+      "a Hanseatic trading office",
+      "a warehouse",
+      "a costing, calculation",
+      "applause"
+     ]
+    },
+    {
+     "word": "Beifall",
+     "answer": "applause",
+     "options": [
+      "a Hanseatic trading office",
+      "a warehouse",
+      "a costing, calculation",
+      "applause"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

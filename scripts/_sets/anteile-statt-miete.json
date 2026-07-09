@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "zu schön, um wahr zu sein",
+  "sentence": "Die Anzeige klang [[zu schön, um wahr zu sein]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "too good to be true",
+   "options": [
+    "too good to be true",
+    "cheaper than expected",
+    "hard to find",
+    "far too small"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Die Anzeige klang zu schön, um wahr zu sein.",
+    "targetWord": "zu schön, um wahr zu sein",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vorweg",
+  "sentence": "Die Frau vom Vorstand sagt es gleich [[vorweg]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "up front, in advance",
+   "options": [
+    "up front, in advance",
+    "much too late",
+    "very quietly",
+    "by mistake"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Die Frau vom Vorstand sagt es gleich vorweg.",
+    "targetWord": "vorweg",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Anteile",
+  "sentence": "Man wird Mitglied und zeichnet [[Anteile]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shares, stakes",
+   "options": [
+    "shares, stakes",
+    "monthly rent",
+    "free tickets",
+    "spare keys"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Man wird Mitglied und zeichnet Anteile.",
+    "targetWord": "Anteile",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ein Unterschied wie Tag und Nacht",
+  "sentence": "Nutzung statt Miete ist ein Unterschied [[wie Tag und Nacht]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a night-and-day difference",
+   "options": [
+    "a night-and-day difference",
+    "exactly the same thing",
+    "a minor detail",
+    "a lucky guess"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Nutzung statt Miete ist ein Unterschied wie Tag und Nacht.",
+    "targetWord": "wie Tag und Nacht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Rendite",
+  "sentence": "Die Genossenschaft macht keine [[Rendite]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "financial profit",
+   "options": [
+    "financial profit",
+    "noise at night",
+    "waiting time",
+    "free repairs"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Die Genossenschaft macht keine Rendite.",
+    "targetWord": "Rendite",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Einzug",
+  "sentence": "Über den [[Einzug]] entscheidet allein die Warteliste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "moving in",
+   "options": [
+    "moving in",
+    "the rent",
+    "the party",
+    "the deposit"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Über den Einzug entscheidet allein die Warteliste.",
+    "targetWord": "Einzug",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Haken",
+  "sentence": "Die lange Warteliste ist der eigentliche [[Haken]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the catch",
+   "options": [
+    "the catch",
+    "the bonus",
+    "the address",
+    "the reason"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Die lange Warteliste ist der eigentliche Haken.",
+    "targetWord": "Haken",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ein Dach über dem Kopf",
+  "sentence": "Nora braucht bald [[ein Dach über dem Kopf]], keine Rente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a roof over her head",
+   "options": [
+    "a roof over her head",
+    "a higher salary",
+    "a new job",
+    "a bigger car"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Nora braucht bald ein Dach über dem Kopf, keine Rente.",
+    "targetWord": "ein Dach über dem Kopf",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Vorrang",
+  "sentence": "Sicherheit hat hier [[Vorrang]] vor Tempo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "priority",
+   "options": [
+    "priority",
+    "a price",
+    "a problem",
+    "a limit"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Sicherheit hat hier Vorrang vor Tempo.",
+    "targetWord": "Vorrang",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quälend",
+  "sentence": "Das System ist günstig und sicher, aber [[quälend]] langsam.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "agonisingly",
+   "options": [
+    "agonisingly",
+    "surprisingly",
+    "cheerfully",
+    "officially"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Das System ist günstig und sicher, aber quälend langsam.",
+    "targetWord": "quälend",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "günstig",
+  "sentence": "Die Miete ist erstaunlich [[günstig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cheap, affordable",
+   "options": [
+    "cheap, affordable",
+    "far too high",
+    "already paid",
+    "hard to find"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Die Miete ist erstaunlich günstig.",
+    "targetWord": "günstig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sich arm zahlen",
+  "sentence": "Draußen auf dem Markt kann man sich [[arm zahlen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pay yourself into poverty",
+   "options": [
+    "pay yourself into poverty",
+    "save a fortune",
+    "get a discount",
+    "win the lottery"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Draußen auf dem Markt kann man sich arm zahlen.",
+    "targetWord": "arm zahlen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "zeichnen",
+  "sentence": "Statt zu mieten, muss man hier Anteile _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zeichnen",
+   "options": [
+    "zeichnen",
+    "verkaufen",
+    "verstecken",
+    "zerreißen"
+   ],
+   "translation": "Instead of renting, here you have to _____ shares.",
+   "optionTranslations": [
+    "subscribe to",
+    "sell",
+    "hide",
+    "tear up"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Statt zu mieten, muss man hier Anteile zeichnen.",
+    "targetWord": "zeichnen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "wirbt",
+  "sentence": "Genau mit der günstigen Miete _____ die Anzeige.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "wirbt",
+   "options": [
+    "wirbt",
+    "schweigt",
+    "lügt",
+    "zahlt"
+   ],
+   "translation": "The ad _____ with exactly that cheap rent.",
+   "optionTranslations": [
+    "advertises",
+    "stays silent",
+    "lies",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Genau mit der günstigen Miete wirbt die Anzeige.",
+    "targetWord": "wirbt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "einzieht",
+  "sentence": "Wer heute _____, hat sich vor Jahren beworben.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "einzieht",
+   "options": [
+    "einzieht",
+    "auszieht",
+    "wartet",
+    "kündigt"
+   ],
+   "translation": "Whoever _____ today applied years ago.",
+   "optionTranslations": [
+    "moves in",
+    "moves out",
+    "waits",
+    "gives notice"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Wer heute einzieht, hat sich vor Jahren beworben.",
+    "targetWord": "einzieht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "beworben",
+  "sentence": "Für die Wohnung hat sie sich vor Jahren _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "beworben",
+   "options": [
+    "beworben",
+    "bedankt",
+    "beschwert",
+    "verabschiedet"
+   ],
+   "translation": "She _____ for the flat years ago.",
+   "optionTranslations": [
+    "applied",
+    "thanked",
+    "complained",
+    "said goodbye"
+   ],
+   "audioClip": {
+    "storySlug": "anteile-statt-miete",
+    "storySource": "user",
+    "sentence": "Für die Wohnung hat sie sich vor Jahren beworben.",
+    "targetWord": "beworben",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Backsteinbau,Innenhof,Genossenschaft,Warteliste",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Backsteinbau",
+     "answer": "a red-brick building",
+     "options": [
+      "a red-brick building",
+      "an inner courtyard",
+      "a housing cooperative",
+      "a waiting list"
+     ]
+    },
+    {
+     "word": "Innenhof",
+     "answer": "an inner courtyard",
+     "options": [
+      "a red-brick building",
+      "an inner courtyard",
+      "a housing cooperative",
+      "a waiting list"
+     ]
+    },
+    {
+     "word": "Genossenschaft",
+     "answer": "a housing cooperative",
+     "options": [
+      "a red-brick building",
+      "an inner courtyard",
+      "a housing cooperative",
+      "a waiting list"
+     ]
+    },
+    {
+     "word": "Warteliste",
+     "answer": "a waiting list",
+     "options": [
+      "a red-brick building",
+      "an inner courtyard",
+      "a housing cooperative",
+      "a waiting list"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

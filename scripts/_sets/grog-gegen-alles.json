@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "Erkältung",
+  "sentence": "Eine [[Erkältung]] kuriert sich von allein.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a cold",
+   "options": [
+    "a cold",
+    "a fever",
+    "a headache",
+    "a broken leg"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Eine Erkältung kuriert sich von allein.",
+    "targetWord": "Erkältung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dampfend",
+  "sentence": "Grit steht mit einer [[dampfenden]] Kanne vor der Tür.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "steaming",
+   "options": [
+    "steaming",
+    "empty",
+    "broken",
+    "frozen"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Grit steht mit einer dampfenden Kanne vor der Tür.",
+    "targetWord": "dampfenden",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Rum",
+  "sentence": "In den Grog kommt ein Schuss [[Rum]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rum",
+   "options": [
+    "rum",
+    "milk",
+    "juice",
+    "oil"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "In den Grog kommt ein Schuss Rum.",
+    "targetWord": "Rum",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gratis",
+  "sentence": "Was der Arzt sagt, sagt Grit ihr [[gratis]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "free of charge",
+   "options": [
+    "free of charge",
+    "by mistake",
+    "far too late",
+    "word for word"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Was der Arzt sagt, sagt Grit ihr gratis.",
+    "targetWord": "gratis",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Schnupfen",
+  "sentence": "Eine ganze Pflegekette für einen simplen [[Schnupfen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sniffle, head cold",
+   "options": [
+    "a sniffle, head cold",
+    "a bad fall",
+    "a big debt",
+    "a long trip"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Eine ganze Pflegekette für einen simplen Schnupfen.",
+    "targetWord": "Schnupfen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "auf den Beinen",
+  "sentence": "Wer sich verkriecht, ist bald wieder [[auf den Beinen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "up and about",
+   "options": [
+    "up and about",
+    "short of money",
+    "out of luck",
+    "in a hurry"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Wer sich verkriecht, ist bald wieder auf den Beinen.",
+    "targetWord": "auf den Beinen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tapfer",
+  "sentence": "Wer [[tapfer]] weiterarbeitet, braucht zwei Wochen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bravely, stoically",
+   "options": [
+    "bravely, stoically",
+    "carefully",
+    "secretly",
+    "cheerfully"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Wer tapfer weiterarbeitet, braucht zwei Wochen.",
+    "targetWord": "tapfer",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Pflegekette",
+  "sentence": "Grit organisiert eine ganze [[Pflegekette]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a chain of care",
+   "options": [
+    "a chain of care",
+    "a shopping list",
+    "a phone bill",
+    "a guest list"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Grit organisiert eine ganze Pflegekette.",
+    "targetWord": "Pflegekette",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Kein Aufheben",
+  "sentence": "Grit macht [[Kein Aufheben]] darum.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "no fuss",
+   "options": [
+    "no fuss",
+    "no promise",
+    "no exception",
+    "no payment"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Grit macht Kein Aufheben darum.",
+    "targetWord": "Kein Aufheben",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "simpel",
+  "sentence": "Das alles für einen ganz [[simplen]] Schnupfen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "simple",
+   "options": [
+    "simple",
+    "serious",
+    "expensive",
+    "rare"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Das alles für einen ganz simplen Schnupfen.",
+    "targetWord": "simplen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das gehört sich",
+  "sentence": "Man lässt hier keinen allein husten, das [[gehört sich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "that's the done thing",
+   "options": [
+    "that's the done thing",
+    "that's forbidden",
+    "that's a secret",
+    "that costs extra"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Man lässt hier keinen allein husten, das gehört sich.",
+    "targetWord": "gehört sich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sich ergeben",
+  "sentence": "Nora [[ergibt]] sich dem Grog und der Wärmflasche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gives in",
+   "options": [
+    "gives in",
+    "stands up",
+    "runs off",
+    "holds out"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Nora ergibt sich dem Grog und der Wärmflasche.",
+    "targetWord": "ergibt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "beschert",
+  "sentence": "Der Novembersturm _____ Nora eine Erkältung.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "beschert",
+   "options": [
+    "beschert",
+    "heilt",
+    "verkauft",
+    "versteckt"
+   ],
+   "translation": "The November storm _____ Nora with a cold.",
+   "optionTranslations": [
+    "lands her with",
+    "heals",
+    "sells",
+    "hides"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Der Novembersturm beschert Nora eine Erkältung.",
+    "targetWord": "beschert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "kuriert",
+  "sentence": "Eine Erkältung _____ sich von allein.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kuriert",
+   "options": [
+    "kuriert",
+    "verschlimmert",
+    "kostet",
+    "dauert"
+   ],
+   "translation": "A cold _____ itself on its own.",
+   "optionTranslations": [
+    "cures",
+    "worsens",
+    "costs",
+    "lasts"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Eine Erkältung kuriert sich von allein.",
+    "targetWord": "kuriert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "auskurieren",
+  "sentence": "Man soll die Erkältung zu Hause in Ruhe _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "auskurieren",
+   "options": [
+    "auskurieren",
+    "verkaufen",
+    "verstecken",
+    "beweisen"
+   ],
+   "translation": "You should _____ the cold quietly at home.",
+   "optionTranslations": [
+    "recover from",
+    "sell",
+    "hide",
+    "prove"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Man soll die Erkältung zu Hause in Ruhe auskurieren.",
+    "targetWord": "auskurieren",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "verkriecht",
+  "sentence": "Wer sich ins Bett _____, ist in drei Tagen gesund.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "verkriecht",
+   "options": [
+    "verkriecht",
+    "stellt",
+    "setzt",
+    "legt"
+   ],
+   "translation": "Whoever _____ into bed is well in three days.",
+   "optionTranslations": [
+    "holes up",
+    "places",
+    "sits",
+    "lays"
+   ],
+   "audioClip": {
+    "storySlug": "grog-gegen-alles",
+    "storySource": "user",
+    "sentence": "Wer sich ins Bett verkriecht, ist in drei Tagen gesund.",
+    "targetWord": "verkriecht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Grog,Heilmittel,Wärmflasche,Husten",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Grog",
+     "answer": "hot rum, sugar and water",
+     "options": [
+      "hot rum, sugar and water",
+      "a remedy",
+      "a hot-water bottle",
+      "a cough"
+     ]
+    },
+    {
+     "word": "Heilmittel",
+     "answer": "a remedy",
+     "options": [
+      "hot rum, sugar and water",
+      "a remedy",
+      "a hot-water bottle",
+      "a cough"
+     ]
+    },
+    {
+     "word": "Wärmflasche",
+     "answer": "a hot-water bottle",
+     "options": [
+      "hot rum, sugar and water",
+      "a remedy",
+      "a hot-water bottle",
+      "a cough"
+     ]
+    },
+    {
+     "word": "Husten",
+     "answer": "a cough",
+     "options": [
+      "hot rum, sugar and water",
+      "a remedy",
+      "a hot-water bottle",
+      "a cough"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

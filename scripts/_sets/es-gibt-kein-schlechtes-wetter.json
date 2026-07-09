@@ -1,0 +1,480 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "seitwärts",
+  "sentence": "Der Regen fällt seit Stunden [[seitwärts]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sideways",
+   "options": [
+    "sideways",
+    "upward",
+    "gently",
+    "warmly"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Der Regen fällt seit Stunden seitwärts.",
+    "targetWord": "seitwärts",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "durchnässt",
+  "sentence": "Ohne Schirm ist Nora komplett [[durchnässt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "soaked through",
+   "options": [
+    "soaked through",
+    "perfectly dry",
+    "overdressed",
+    "well prepared"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Ohne Schirm ist Nora komplett durchnässt.",
+    "targetWord": "durchnässt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wasserdicht",
+  "sentence": "Ihre teure Jacke ist angeblich [[wasserdicht]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "waterproof",
+   "options": [
+    "waterproof",
+    "brand new",
+    "far too warm",
+    "see-through"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Ihre teure Jacke ist angeblich wasserdicht.",
+    "targetWord": "wasserdicht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ordentlich",
+  "sentence": "Ole besorgt ihr endlich etwas [[Ordentliches]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "proper, decent",
+   "options": [
+    "proper, decent",
+    "cheap",
+    "secondhand",
+    "colourful"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Ole besorgt ihr endlich etwas Ordentliches.",
+    "targetWord": "Ordentliches",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "durchweicht",
+  "sentence": "Die Verkäuferin mustert Noras [[durchweichte]] Schuhe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sodden, soggy",
+   "options": [
+    "sodden, soggy",
+    "brand-new",
+    "polished",
+    "tight"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Die Verkäuferin mustert Noras durchweichte Schuhe.",
+    "targetWord": "durchweichte",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "offensichtlich",
+  "sentence": "Dass sie neu ist, sieht man ganz [[offensichtlich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "obviously",
+   "options": [
+    "obviously",
+    "barely",
+    "secretly",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Dass sie neu ist, sieht man ganz offensichtlich.",
+    "targetWord": "offensichtlich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Es gibt kein schlechtes Wetter, nur falsche Kleidung",
+  "sentence": "Man sagt: [[Es gibt kein schlechtes Wetter, nur falsche Kleidung]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "no bad weather, only wrong clothes",
+   "options": [
+    "no bad weather, only wrong clothes",
+    "rain always ruins the day",
+    "stay inside when it pours",
+    "the sun always returns"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Man sagt: Es gibt kein schlechtes Wetter, nur falsche Kleidung.",
+    "targetWord": "Es gibt kein schlechtes Wetter, nur falsche Kleidung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Lebensmotto",
+  "sentence": "Für Nora klingt das fast wie ein [[Lebensmotto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a motto to live by",
+   "options": [
+    "a motto to live by",
+    "a weather report",
+    "a shopping list",
+    "an old excuse"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Für Nora klingt das fast wie ein Lebensmotto.",
+    "targetWord": "Lebensmotto",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vergeblich",
+  "sentence": "Wer hier auf Sonne wartet, wartet [[vergeblich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in vain",
+   "options": [
+    "in vain",
+    "for hours",
+    "every morning",
+    "far too long"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Wer hier auf Sonne wartet, wartet vergeblich.",
+    "targetWord": "vergeblich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Himmel",
+  "sentence": "Die Leute joggen sogar bei diesem [[Himmel]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the sky",
+   "options": [
+    "the sky",
+    "the harbour",
+    "the market",
+    "the wind"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Die Leute joggen sogar bei diesem Himmel.",
+    "targetWord": "Himmel",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "albern",
+  "sentence": "Einen Termin abzusagen wäre hier [[albern]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "silly",
+   "options": [
+    "silly",
+    "normal",
+    "expensive",
+    "polite"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Einen Termin abzusagen wäre hier albern.",
+    "targetWord": "albern",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gleichgültig",
+  "sentence": "Im Nerz wird ihr der Regen bald [[gleichgültig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "indifferent, unbothered",
+   "options": [
+    "indifferent, unbothered",
+    "unbearable",
+    "dangerous",
+    "delightful"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Im Nerz wird ihr der Regen bald gleichgültig.",
+    "targetWord": "gleichgültig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vor die Tür kommen",
+  "sentence": "Sonst käme man von Oktober bis April kaum [[vor die Tür]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "out of the house",
+   "options": [
+    "out of the house",
+    "to the office",
+    "across the street",
+    "down the stairs"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Sonst käme man von Oktober bis April kaum vor die Tür.",
+    "targetWord": "vor die Tür",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "friere",
+  "sentence": "Ich bin komplett durchnässt und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "friere",
+   "options": [
+    "friere",
+    "lache",
+    "schwitze",
+    "staune"
+   ],
+   "translation": "I'm completely soaked and _____.",
+   "optionTranslations": [
+    "am freezing",
+    "am laughing",
+    "am sweating",
+    "am amazed"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Ich bin komplett durchnässt und friere.",
+    "targetWord": "friere",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "übersteht",
+  "sentence": "Hier zählt nur, was den Test _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "übersteht",
+   "options": [
+    "übersteht",
+    "verliert",
+    "vergisst",
+    "beginnt"
+   ],
+   "translation": "Here only what _____ the test counts.",
+   "optionTranslations": [
+    "gets through",
+    "loses",
+    "forgets",
+    "begins"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Hier zählt nur, was den Test übersteht.",
+    "targetWord": "übersteht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mustert",
+  "sentence": "Die Verkäuferin _____ Noras nasse Schuhe.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mustert",
+   "options": [
+    "mustert",
+    "putzt",
+    "verkauft",
+    "versteckt"
+   ],
+   "translation": "The saleswoman _____ Nora's wet shoes.",
+   "optionTranslations": [
+    "looks over",
+    "cleans",
+    "sells",
+    "hides"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Die Verkäuferin mustert Noras nasse Schuhe.",
+    "targetWord": "mustert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "joggen",
+  "sentence": "Bei diesem Wetter gehen die Leute noch _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "joggen",
+   "options": [
+    "joggen",
+    "schlafen",
+    "frieren",
+    "streiten"
+   ],
+   "translation": "In this weather people still go _____.",
+   "optionTranslations": [
+    "jogging",
+    "sleeping",
+    "freezing",
+    "arguing"
+   ],
+   "audioClip": {
+    "storySlug": "es-gibt-kein-schlechtes-wetter",
+    "storySource": "user",
+    "sentence": "Bei diesem Wetter gehen die Leute noch joggen.",
+    "targetWord": "joggen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Vordach,Regenmantel,Friesennerz,Gummistiefel",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Vordach",
+     "answer": "a porch roof",
+     "options": [
+      "a porch roof",
+      "a raincoat",
+      "yellow oilskin jacket",
+      "rubber boots"
+     ]
+    },
+    {
+     "word": "Regenmantel",
+     "answer": "a raincoat",
+     "options": [
+      "a porch roof",
+      "a raincoat",
+      "yellow oilskin jacket",
+      "rubber boots"
+     ]
+    },
+    {
+     "word": "Friesennerz",
+     "answer": "yellow oilskin jacket",
+     "options": [
+      "a porch roof",
+      "a raincoat",
+      "yellow oilskin jacket",
+      "rubber boots"
+     ]
+    },
+    {
+     "word": "Gummistiefel",
+     "answer": "rubber boots",
+     "options": [
+      "a porch roof",
+      "a raincoat",
+      "yellow oilskin jacket",
+      "rubber boots"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

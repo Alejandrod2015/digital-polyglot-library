@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "schräg",
+  "sentence": "Der Wind steht [[schräg]] auf die Elbe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at a slant",
+   "options": [
+    "at a slant",
+    "dead calm",
+    "warm",
+    "gentle"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Der Wind steht schräg auf die Elbe.",
+    "targetWord": "schräg",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "knapp",
+  "sentence": "Dose ruft [[knappe]] Kommandos vom Ruder.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "terse, curt",
+   "options": [
+    "terse, curt",
+    "long-winded",
+    "cheerful",
+    "quiet"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Dose ruft knappe Kommandos vom Ruder.",
+    "targetWord": "knappe",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "blitzschnell",
+  "sentence": "Fiete übersetzt die Kommandos [[blitzschnell]] in Handgriffe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lightning-fast",
+   "options": [
+    "lightning-fast",
+    "far too slow",
+    "half-heartedly",
+    "word for word"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Fiete übersetzt die Kommandos blitzschnell in Handgriffe.",
+    "targetWord": "blitzschnell",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Handgriff",
+  "sentence": "Fiete kennt jeden [[Handgriff]] an Bord.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hand movement",
+   "options": [
+    "hand movement",
+    "spoken order",
+    "safety rule",
+    "warm drink"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Fiete kennt jeden Handgriff an Bord.",
+    "targetWord": "Handgriff",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Vorschot",
+  "sentence": "Dose ruft: [[Vorschot]] dicht!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the foresail sheet",
+   "options": [
+    "the foresail sheet",
+    "the anchor",
+    "the helm",
+    "the engine"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Dose ruft: Vorschot dicht!",
+    "targetWord": "Vorschot",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seekrank",
+  "sentence": "Beim Probetörn zählt nur, ob du [[seekrank]] wirst.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "seasick",
+   "options": [
+    "seasick",
+    "famous",
+    "tired",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Beim Probetörn zählt nur, ob du seekrank wirst.",
+    "targetWord": "seekrank",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Segel",
+  "sentence": "Nora zieht, bis das [[Segel]] steht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the sail",
+   "options": [
+    "the sail",
+    "the rope",
+    "the flag",
+    "the mast"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Nora zieht, bis das Segel steht.",
+    "targetWord": "Segel",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Bö",
+  "sentence": "Eine [[Bö]] erwischt das Boot mit voller Kraft.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a gust of wind",
+   "options": [
+    "a gust of wind",
+    "a calm patch",
+    "a big wave",
+    "a loud voice"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Eine Bö erwischt das Boot mit voller Kraft.",
+    "targetWord": "Bö",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Gischt",
+  "sentence": "[[Gischt]] klatscht über Bord.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sea spray",
+   "options": [
+    "sea spray",
+    "dry sand",
+    "warm rain",
+    "thick fog"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Gischt klatscht über Bord.",
+    "targetWord": "Gischt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "den Halt verlieren",
+  "sentence": "Für einen Moment kann Nora [[den Halt]] verlieren.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "her grip",
+   "options": [
+    "her grip",
+    "her temper",
+    "her way",
+    "her voice"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Für einen Moment kann Nora den Halt verlieren.",
+    "targetWord": "den Halt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Zähne zusammenbeißen",
+  "sentence": "Nora muss [[die Zähne zusammen]]beißen und weitermachen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "grit her teeth",
+   "options": [
+    "grit her teeth",
+    "raise her voice",
+    "let it go",
+    "turn around"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Nora muss die Zähne zusammenbeißen und weitermachen.",
+    "targetWord": "die Zähne zusammen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "überreden",
+  "sentence": "Nur ihren Magen muss Nora noch [[überreden]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "talk round",
+   "options": [
+    "talk round",
+    "pay off",
+    "wake up",
+    "shut down"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Nur ihren Magen muss Nora noch überreden.",
+    "targetWord": "überreden",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "krängt",
+  "sentence": "Bei der Bö _____ das Boot hart.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "krängt",
+   "options": [
+    "krängt",
+    "schwimmt",
+    "steht",
+    "sinkt"
+   ],
+   "translation": "In the gust the boat _____ hard.",
+   "optionTranslations": [
+    "heels over",
+    "swims",
+    "stands still",
+    "sinks"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Bei der Bö krängt das Boot hart.",
+    "targetWord": "krängt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "klammert",
+  "sentence": "Nora _____ sich an die nasse Reling.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "klammert",
+   "options": [
+    "klammert",
+    "setzt",
+    "lehnt",
+    "legt"
+   ],
+   "translation": "Nora _____ to the wet railing.",
+   "optionTranslations": [
+    "clings",
+    "sits",
+    "leans",
+    "lays"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Nora klammert sich an die nasse Reling.",
+    "targetWord": "klammert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "starren",
+  "sentence": "Dose sagt, man soll nicht ins Wasser _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "starren",
+   "options": [
+    "starren",
+    "springen",
+    "fallen",
+    "rufen"
+   ],
+   "translation": "Dose says you shouldn't _____ at the water.",
+   "optionTranslations": [
+    "stare",
+    "jump",
+    "fall",
+    "shout"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Dose sagt, man soll nicht ins Wasser starren.",
+    "targetWord": "starren",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "klarieren",
+  "sentence": "Auf Kommando muss Nora die Leinen _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "klarieren",
+   "options": [
+    "klarieren",
+    "verkaufen",
+    "verstecken",
+    "zählen"
+   ],
+   "translation": "On command Nora has to _____ the lines.",
+   "optionTranslations": [
+    "ready, clear",
+    "sell",
+    "hide",
+    "count"
+   ],
+   "audioClip": {
+    "storySlug": "probetoern",
+    "storySource": "user",
+    "sentence": "Auf Kommando muss Nora die Leinen klarieren.",
+    "targetWord": "klarieren",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Reling,Ruder,Kommando,Ansteuerungstonne",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Reling",
+     "answer": "a boat's railing",
+     "options": [
+      "a boat's railing",
+      "the helm, tiller",
+      "a sharp spoken order",
+      "a marker buoy"
+     ]
+    },
+    {
+     "word": "Ruder",
+     "answer": "the helm, tiller",
+     "options": [
+      "a boat's railing",
+      "the helm, tiller",
+      "a sharp spoken order",
+      "a marker buoy"
+     ]
+    },
+    {
+     "word": "Kommando",
+     "answer": "a sharp spoken order",
+     "options": [
+      "a boat's railing",
+      "the helm, tiller",
+      "a sharp spoken order",
+      "a marker buoy"
+     ]
+    },
+    {
+     "word": "Ansteuerungstonne",
+     "answer": "a marker buoy",
+     "options": [
+      "a boat's railing",
+      "the helm, tiller",
+      "a sharp spoken order",
+      "a marker buoy"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

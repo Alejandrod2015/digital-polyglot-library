@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "leise",
+  "sentence": "Ole zieht Nora zur Seite und spricht [[leise]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quietly",
+   "options": [
+    "quietly",
+    "loudly",
+    "slowly",
+    "angrily"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Ole zieht Nora zur Seite und spricht leise.",
+    "targetWord": "leise",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verzweifelt",
+  "sentence": "Wer die Wohnung zu toll findet, wirkt [[verzweifelt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "desperate",
+   "options": [
+    "desperate",
+    "reliable",
+    "relaxed",
+    "bored"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Wer die Wohnung zu toll findet, wirkt verzweifelt.",
+    "targetWord": "verzweifelt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sachlich",
+  "sentence": "Nora soll nicht schwärmen, nur [[sachlich]] bleiben.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "matter-of-fact",
+   "options": [
+    "matter-of-fact",
+    "enthusiastic",
+    "rude",
+    "cheerful"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Nora soll nicht schwärmen, nur sachlich bleiben.",
+    "targetWord": "sachlich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vernünftig",
+  "sentence": "Der Schnitt ist [[vernünftig]], das Viertel ruhig.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sensible",
+   "options": [
+    "sensible",
+    "perfect",
+    "tiny",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Der Schnitt ist vernünftig, das Viertel ruhig.",
+    "targetWord": "vernünftig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Liebe auf den ersten Blick",
+  "sentence": "Alle anderen reden von Traum und [[Liebe auf den ersten Blick]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "love at first sight",
+   "options": [
+    "love at first sight",
+    "a fair price",
+    "a quick decision",
+    "a long wait"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Alle anderen reden von Traum und Liebe auf den ersten Blick.",
+    "targetWord": "Liebe auf den ersten Blick",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Antrag",
+  "sentence": "Eine Wohnung ist ein Vertrag, kein [[Antrag]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an application",
+   "options": [
+    "an application",
+    "a contract",
+    "a gift",
+    "a joke"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Eine Wohnung ist ein Vertrag, kein Antrag.",
+    "targetWord": "Antrag",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Haltung",
+  "sentence": "Genau diese [[Haltung]] sucht der Vermieter.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "this attitude",
+   "options": [
+    "this attitude",
+    "this price",
+    "this street",
+    "this flat"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Genau diese Haltung sucht der Vermieter.",
+    "targetWord": "Haltung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Mieter",
+  "sentence": "[[Mieter]], die schwärmen, sind nach einem Jahr enttäuscht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tenants",
+   "options": [
+    "tenants",
+    "landlords",
+    "neighbours",
+    "visitors"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Mieter, die schwärmen, sind nach einem Jahr enttäuscht.",
+    "targetWord": "Mieter",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "enttäuscht",
+  "sentence": "Wer zu sehr schwärmt, ist bald [[enttäuscht]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "disappointed",
+   "options": [
+    "disappointed",
+    "delighted",
+    "suspicious",
+    "relieved"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Wer zu sehr schwärmt, ist bald enttäuscht.",
+    "targetWord": "enttäuscht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "voraussetzen",
+  "sentence": "Vollständige Papiere setzt Timm einfach [[voraus]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "takes for granted",
+   "options": [
+    "takes for granted",
+    "hands out",
+    "forbids",
+    "doubts"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Vollständige Papiere setzt Timm einfach voraus.",
+    "targetWord": "voraus",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ein schlechtes Zeichen",
+  "sentence": "Betteln ist hier [[ein schlechtes Zeichen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a bad sign",
+   "options": [
+    "a bad sign",
+    "a good idea",
+    "a fair offer",
+    "an old habit"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Betteln ist hier ein schlechtes Zeichen.",
+    "targetWord": "ein schlechtes Zeichen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ticken",
+  "sentence": "Nora versteht langsam, wie der Norden [[tickt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "works, ticks",
+   "options": [
+    "works, ticks",
+    "sounds",
+    "pays",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Nora versteht langsam, wie der Norden tickt.",
+    "targetWord": "tickt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "schwärmen",
+  "sentence": "Wer die Wohnung zu toll findet, sollte nicht _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schwärmen",
+   "options": [
+    "schwärmen",
+    "schweigen",
+    "zahlen",
+    "warten"
+   ],
+   "translation": "Whoever finds the flat too great shouldn't _____.",
+   "optionTranslations": [
+    "gush",
+    "stay silent",
+    "pay",
+    "wait"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Wer die Wohnung zu toll findet, sollte nicht schwärmen.",
+    "targetWord": "schwärmen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "vertraut",
+  "sentence": "Der Vermieter _____ dem, der ruhig bleibt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vertraut",
+   "options": [
+    "vertraut",
+    "misstraut",
+    "kündigt",
+    "schreibt"
+   ],
+   "translation": "The landlord _____ the one who stays calm.",
+   "optionTranslations": [
+    "trusts",
+    "distrusts",
+    "gives notice to",
+    "writes to"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Der Vermieter vertraut dem, der ruhig bleibt.",
+    "targetWord": "vertraut",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "funkelt",
+  "sentence": "Nora prüft, ob es passt, nicht ob es _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "funkelt",
+   "options": [
+    "funkelt",
+    "kostet",
+    "regnet",
+    "fehlt"
+   ],
+   "translation": "Nora checks whether it fits, not whether it _____.",
+   "optionTranslations": [
+    "sparkles",
+    "costs",
+    "rains",
+    "is missing"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Nora prüft, ob es passt, nicht ob es funkelt.",
+    "targetWord": "funkelt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "betteln",
+  "sentence": "Nora bekommt die Wohnung, ohne zu _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "betteln",
+   "options": [
+    "betteln",
+    "zahlen",
+    "lügen",
+    "warten"
+   ],
+   "translation": "Nora gets the flat without having to _____.",
+   "optionTranslations": [
+    "beg",
+    "pay",
+    "lie",
+    "wait"
+   ],
+   "audioClip": {
+    "storySlug": "bloss-nicht-schwaermen",
+    "storySource": "user",
+    "sentence": "Nora bekommt die Wohnung, ohne zu betteln.",
+    "targetWord": "betteln",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Begeisterung,Schnitt,Viertel,Vertrag",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Begeisterung",
+     "answer": "enthusiasm",
+     "options": [
+      "enthusiasm",
+      "a flat's layout",
+      "a neighbourhood",
+      "a contract"
+     ]
+    },
+    {
+     "word": "Schnitt",
+     "answer": "a flat's layout",
+     "options": [
+      "enthusiasm",
+      "a flat's layout",
+      "a neighbourhood",
+      "a contract"
+     ]
+    },
+    {
+     "word": "Viertel",
+     "answer": "a neighbourhood",
+     "options": [
+      "enthusiasm",
+      "a flat's layout",
+      "a neighbourhood",
+      "a contract"
+     ]
+    },
+    {
+     "word": "Vertrag",
+     "answer": "a contract",
+     "options": [
+      "enthusiasm",
+      "a flat's layout",
+      "a neighbourhood",
+      "a contract"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

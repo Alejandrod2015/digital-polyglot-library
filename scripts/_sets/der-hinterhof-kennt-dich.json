@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "Umzugskarton",
+  "sentence": "Zwischen den [[Umzugskartons]] sucht Nora den Wasserkocher.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "moving boxes",
+   "options": [
+    "moving boxes",
+    "kitchen shelves",
+    "garden tools",
+    "old letters"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Zwischen den Umzugskartons sucht Nora den Wasserkocher.",
+    "targetWord": "Umzugskartons",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Nachbarin",
+  "sentence": "Vor der Tür steht eine [[Nachbarin]] mit Brot und Salz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a female neighbour",
+   "options": [
+    "a female neighbour",
+    "a delivery man",
+    "an old friend",
+    "a saleswoman"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Vor der Tür steht eine Nachbarin mit Brot und Salz.",
+    "targetWord": "Nachbarin",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Brot und Salz",
+  "sentence": "Ein alter Brauch ist [[Brot und Salz]] zum Einzug.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bread and salt (for luck)",
+   "options": [
+    "bread and salt (for luck)",
+    "cake and coffee",
+    "wine and flowers",
+    "keys and forms"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Ein alter Brauch ist Brot und Salz zum Einzug.",
+    "targetWord": "Brot und Salz",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Brauch",
+  "sentence": "Brot und Salz ist ein alter [[Brauch]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a custom, tradition",
+   "options": [
+    "a custom, tradition",
+    "a mistake",
+    "a rule",
+    "a fee"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Brot und Salz ist ein alter Brauch.",
+    "targetWord": "Brauch",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unglaublich",
+  "sentence": "Nora findet die Geste [[unglaublich]] lieb.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "incredibly",
+   "options": [
+    "incredibly",
+    "barely",
+    "officially",
+    "suddenly"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Nora findet die Geste unglaublich lieb.",
+    "targetWord": "unglaublich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lieb",
+  "sentence": "Nora findet die Geste unglaublich [[lieb]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sweet, kind",
+   "options": [
+    "sweet, kind",
+    "strange",
+    "expensive",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Nora findet die Geste unglaublich lieb.",
+    "targetWord": "lieb",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Mülltonne",
+  "sentence": "Fahrräder links, [[Mülltonnen]] rechts.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rubbish bins",
+   "options": [
+    "rubbish bins",
+    "garden chairs",
+    "letter boxes",
+    "flower pots"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Fahrräder links, Mülltonnen rechts.",
+    "targetWord": "Mülltonnen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sonntags",
+  "sentence": "[[Sonntags]] bleibt die Bohrmaschine aus.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on Sundays",
+   "options": [
+    "on Sundays",
+    "every morning",
+    "at night",
+    "in winter"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Sonntags bleibt die Bohrmaschine aus.",
+    "targetWord": "Sonntags",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Rest findet sich",
+  "sentence": "Man grüßt und hält den Hof sauber, [[der Rest findet sich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the rest sorts itself out",
+   "options": [
+    "the rest sorts itself out",
+    "the rest stays a secret",
+    "the rest costs extra",
+    "the rest never changes"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Man grüßt und hält den Hof sauber, der Rest findet sich.",
+    "targetWord": "der Rest findet sich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verwechseln",
+  "sentence": "Wer die Tonnen [[verwechselt]], ist am nächsten Tag stadtbekannt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mixes up",
+   "options": [
+    "mixes up",
+    "empties",
+    "paints",
+    "sells"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Wer die Tonnen verwechselt, ist am nächsten Tag stadtbekannt.",
+    "targetWord": "verwechselt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stadtbekannt",
+  "sentence": "Ein Fehler im Hof macht dich schnell [[stadtbekannt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "known all over town",
+   "options": [
+    "known all over town",
+    "completely invisible",
+    "truly welcome",
+    "perfectly safe"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Ein Fehler im Hof macht dich schnell stadtbekannt.",
+    "targetWord": "stadtbekannt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nebenan",
+  "sentence": "Frau Boysen wohnt gleich [[nebenan]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "next door",
+   "options": [
+    "next door",
+    "far away",
+    "upstairs only",
+    "across town"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Frau Boysen wohnt gleich nebenan.",
+    "targetWord": "nebenan",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "klopft",
+  "sentence": "Nora sucht den Wasserkocher, als es an der Tür _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "klopft",
+   "options": [
+    "klopft",
+    "schläft",
+    "brennt",
+    "wartet"
+   ],
+   "translation": "Nora is looking for the kettle when someone _____ at the door.",
+   "optionTranslations": [
+    "knocks",
+    "sleeps",
+    "burns",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Nora sucht den Wasserkocher, als es an der Tür klopft.",
+    "targetWord": "klopft",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "ausgeht",
+  "sentence": "Brot, damit es dir nie _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ausgeht",
+   "options": [
+    "ausgeht",
+    "schmeckt",
+    "reicht",
+    "fehlt"
+   ],
+   "translation": "Bread, so that it never _____ for you.",
+   "optionTranslations": [
+    "runs out",
+    "tastes",
+    "is enough",
+    "is missing"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Brot, damit es dir nie ausgeht.",
+    "targetWord": "ausgeht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "hereinkommen",
+  "sentence": "Nora fragt die Nachbarin, ob sie _____ will.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hereinkommen",
+   "options": [
+    "hereinkommen",
+    "weggehen",
+    "aufräumen",
+    "bezahlen"
+   ],
+   "translation": "Nora asks the neighbour whether she wants to _____.",
+   "optionTranslations": [
+    "come inside",
+    "leave",
+    "tidy up",
+    "pay"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Nora fragt die Nachbarin, ob sie hereinkommen will.",
+    "targetWord": "hereinkommen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "grüßt",
+  "sentence": "Im Haus _____ man und hält den Hof sauber.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "grüßt",
+   "options": [
+    "grüßt",
+    "streitet",
+    "zahlt",
+    "schläft"
+   ],
+   "translation": "In the building you _____ and keep the yard clean.",
+   "optionTranslations": [
+    "greet",
+    "argue",
+    "pay",
+    "sleep"
+   ],
+   "audioClip": {
+    "storySlug": "der-hinterhof-kennt-dich",
+    "storySource": "user",
+    "sentence": "Im Haus grüßt man und hält den Hof sauber.",
+    "targetWord": "grüßt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Wasserkocher,Hinterhof,Bohrmaschine,Umarmung",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Wasserkocher",
+     "answer": "an electric kettle",
+     "options": [
+      "an electric kettle",
+      "a back courtyard",
+      "an electric drill",
+      "a hug"
+     ]
+    },
+    {
+     "word": "Hinterhof",
+     "answer": "a back courtyard",
+     "options": [
+      "an electric kettle",
+      "a back courtyard",
+      "an electric drill",
+      "a hug"
+     ]
+    },
+    {
+     "word": "Bohrmaschine",
+     "answer": "an electric drill",
+     "options": [
+      "an electric kettle",
+      "a back courtyard",
+      "an electric drill",
+      "a hug"
+     ]
+    },
+    {
+     "word": "Umarmung",
+     "answer": "a hug",
+     "options": [
+      "an electric kettle",
+      "a back courtyard",
+      "an electric drill",
+      "a hug"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

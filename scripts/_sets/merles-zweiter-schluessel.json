@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "erfolglos",
+  "sentence": "Nora telefoniert sich [[erfolglos]] durch ihre Kontakte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without success",
+   "options": [
+    "without success",
+    "in a hurry",
+    "very loudly",
+    "half asleep"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Nora telefoniert sich erfolglos durch ihre Kontakte.",
+    "targetWord": "erfolglos",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Kontakt",
+  "sentence": "Sie ruft einen [[Kontakt]] nach dem anderen an.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a contact",
+   "options": [
+    "a contact",
+    "a shop",
+    "a taxi",
+    "a form"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Sie ruft einen Kontakt nach dem anderen an.",
+    "targetWord": "Kontakt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "furchtbar",
+  "sentence": "Alle sind [[furchtbar]] nett, aber niemand hilft.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "terribly, very",
+   "options": [
+    "terribly, very",
+    "barely",
+    "secretly",
+    "rarely"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Alle sind furchtbar nett, aber niemand hilft.",
+    "targetWord": "furchtbar",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "an der Oberfläche",
+  "sentence": "Der Norden ist freundlich nur [[an der Oberfläche]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on the surface",
+   "options": [
+    "on the surface",
+    "deep down",
+    "behind closed doors",
+    "from far away"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Der Norden ist freundlich nur an der Oberfläche.",
+    "targetWord": "an der Oberfläche",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "praktisch",
+  "sentence": "Hier wird es erst [[praktisch]], wenn du nicht mehr fragst.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "practical, hands-on",
+   "options": [
+    "practical, hands-on",
+    "polite",
+    "loud",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Hier wird es erst praktisch, wenn du nicht mehr fragst.",
+    "targetWord": "praktisch",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sprachlos",
+  "sentence": "Nora ist [[sprachlos]], als Merle vor der Tür steht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "speechless",
+   "options": [
+    "speechless",
+    "annoyed",
+    "bored",
+    "proud"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Nora ist sprachlos, als Merle vor der Tür steht.",
+    "targetWord": "sprachlos",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kühl",
+  "sentence": "Ausgerechnet die [[Kühlste]] von allen rettet Nora zuerst.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the coolest, most aloof",
+   "options": [
+    "the coolest, most aloof",
+    "the warmest",
+    "the loudest",
+    "the busiest"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Ausgerechnet die Kühlste von allen rettet Nora zuerst.",
+    "targetWord": "Kühlste",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Kokosnuss",
+  "sentence": "Wiebke nennt Merle eine echte [[Kokosnuss]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a coconut (hard outside, soft inside)",
+   "options": [
+    "a coconut (hard outside, soft inside)",
+    "a cold fish",
+    "a busy bee",
+    "a lone wolf"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Wiebke nennt Merle eine echte Kokosnuss.",
+    "targetWord": "Kokosnuss",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "außen hart, innen weich",
+  "sentence": "Die Kokosnuss ist [[außen hart, innen weich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hard outside, soft inside",
+   "options": [
+    "hard outside, soft inside",
+    "all show, no substance",
+    "loud but harmless",
+    "quick but careless"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Die Kokosnuss ist außen hart, innen weich.",
+    "targetWord": "außen hart, innen weich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Schale",
+  "sentence": "Bei manchen kommt man ewig nicht durch die [[Schale]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the shell",
+   "options": [
+    "the shell",
+    "the door",
+    "the noise",
+    "the crowd"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Bei manchen kommt man ewig nicht durch die Schale.",
+    "targetWord": "Schale",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "durch die Schale kommen",
+  "sentence": "Nur schwer kann man [[durch die Schale]] kommen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "get through the shell",
+   "options": [
+    "get through the shell",
+    "stay on the surface",
+    "break the ice",
+    "keep the peace"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Nur schwer kann man durch die Schale kommen.",
+    "targetWord": "durch die Schale",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wortlos",
+  "sentence": "Am Ende trinken sie einen, [[wortlos]], wie immer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wordlessly",
+   "options": [
+    "wordlessly",
+    "cheerfully",
+    "angrily",
+    "loudly"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Am Ende trinken sie einen, wortlos, wie immer.",
+    "targetWord": "wortlos",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "nachmachen",
+  "sentence": "Merle hat den Schlüssel heimlich _____ lassen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nachmachen",
+   "options": [
+    "nachmachen",
+    "wegwerfen",
+    "verkaufen",
+    "verstecken"
+   ],
+   "translation": "Merle had the key secretly _____.",
+   "optionTranslations": [
+    "copied",
+    "thrown away",
+    "sold",
+    "hidden"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Merle hat den Schlüssel heimlich nachmachen lassen.",
+    "targetWord": "nachmachen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "rettet",
+  "sentence": "Die Kühlste von allen _____ Nora als Erste.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rettet",
+   "options": [
+    "rettet",
+    "ruft",
+    "vergisst",
+    "stört"
+   ],
+   "translation": "The coolest of them all _____ Nora first.",
+   "optionTranslations": [
+    "rescues",
+    "calls",
+    "forgets",
+    "disturbs"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Die Kühlste von allen rettet Nora als Erste.",
+    "targetWord": "rettet",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "geraten",
+  "sentence": "Nora hatte die Lauten für die Warmen gehalten, falsch _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "geraten",
+   "options": [
+    "geraten",
+    "gezahlt",
+    "gelacht",
+    "geschlafen"
+   ],
+   "translation": "Nora had taken the loud ones for the warm ones, wrongly _____.",
+   "optionTranslations": [
+    "guessed",
+    "paid",
+    "laughed",
+    "slept"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Nora hatte die Lauten für die Warmen gehalten, falsch geraten.",
+    "targetWord": "geraten",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "telefoniert",
+  "sentence": "Nora _____ sich erfolglos durch ihre Kontakte.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "telefoniert",
+   "options": [
+    "telefoniert",
+    "schläft",
+    "kocht",
+    "wartet"
+   ],
+   "translation": "Nora _____ her way through her contacts without luck.",
+   "optionTranslations": [
+    "phones",
+    "sleeps",
+    "cooks",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "merles-zweiter-schluessel",
+    "storySource": "user",
+    "sentence": "Nora telefoniert sich erfolglos durch ihre Kontakte.",
+    "targetWord": "telefoniert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Novemberkälte,Backstube,Zweitschlüssel,Mantel",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Novemberkälte",
+     "answer": "the November cold",
+     "options": [
+      "the November cold",
+      "a bakery's back room",
+      "a spare key",
+      "a coat"
+     ]
+    },
+    {
+     "word": "Backstube",
+     "answer": "a bakery's back room",
+     "options": [
+      "the November cold",
+      "a bakery's back room",
+      "a spare key",
+      "a coat"
+     ]
+    },
+    {
+     "word": "Zweitschlüssel",
+     "answer": "a spare key",
+     "options": [
+      "the November cold",
+      "a bakery's back room",
+      "a spare key",
+      "a coat"
+     ]
+    },
+    {
+     "word": "Mantel",
+     "answer": "a coat",
+     "options": [
+      "the November cold",
+      "a bakery's back room",
+      "a spare key",
+      "a coat"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

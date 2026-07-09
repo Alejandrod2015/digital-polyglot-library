@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "vertagen",
+  "sentence": "Nora hat das ewige [[Vertagen]] satt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "putting things off",
+   "options": [
+    "putting things off",
+    "paying the rent",
+    "cleaning the flat",
+    "reading the mail"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Nora hat das ewige Vertagen satt.",
+    "targetWord": "Vertagen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "satthaben",
+  "sentence": "Nora hat das ewige Vertagen [[satt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "is fed up with",
+   "options": [
+    "is fed up with",
+    "is proud of",
+    "is afraid of",
+    "is sure of"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Nora hat das ewige Vertagen satt.",
+    "targetWord": "satt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unangekündigt",
+  "sentence": "Sie steht [[unangekündigt]] vor Merles Tür.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "unannounced",
+   "options": [
+    "unannounced",
+    "far too early",
+    "perfectly dressed",
+    "completely lost"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Sie steht unangekündigt vor Merles Tür.",
+    "targetWord": "unangekündigt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "spontan",
+  "sentence": "Mit dem Wein will sie [[spontane]] Lebensfreude beweisen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "spontaneous",
+   "options": [
+    "spontaneous",
+    "careful",
+    "expensive",
+    "formal"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Mit dem Wein will sie spontane Lebensfreude beweisen.",
+    "targetWord": "spontane",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "in der Nähe",
+  "sentence": "Sie sagt, sie sei nur [[in der Nähe]] gewesen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nearby",
+   "options": [
+    "nearby",
+    "at work",
+    "abroad",
+    "asleep"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Sie sagt, sie sei nur in der Nähe gewesen.",
+    "targetWord": "in der Nähe",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aufgeräumt",
+  "sentence": "Bei Merle ist es gerade nicht besonders [[aufgeräumt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tidy",
+   "options": [
+    "tidy",
+    "dark",
+    "warm",
+    "quiet"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Bei Merle ist es gerade nicht besonders aufgeräumt.",
+    "targetWord": "aufgeräumt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Wäschekorb",
+  "sentence": "Im Flur stapeln sich die [[Wäschekörbe]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "laundry baskets",
+   "options": [
+    "laundry baskets",
+    "moving boxes",
+    "wine bottles",
+    "flower pots"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Im Flur stapeln sich die Wäschekörbe.",
+    "targetWord": "Wäschekörbe",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "einen Gefallen tun",
+  "sentence": "Nora dachte, sie würde beiden [[einen Gefallen]] tun.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "do a favour",
+   "options": [
+    "do a favour",
+    "play a trick",
+    "make a scene",
+    "break a rule"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Nora dachte, sie würde beiden einen Gefallen tun.",
+    "targetWord": "einen Gefallen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "angespannt",
+  "sentence": "Merle lächelt höflich, aber [[angespannt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tense",
+   "options": [
+    "tense",
+    "relaxed",
+    "cheerful",
+    "proud"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Merle lächelt höflich, aber angespannt.",
+    "targetWord": "angespannt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ehrlich gesagt",
+  "sentence": "Der Wein macht es gerade nicht leichter, [[ehrlich gesagt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be honest",
+   "options": [
+    "to be honest",
+    "word for word",
+    "just in case",
+    "once again"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Der Wein macht es gerade nicht leichter, ehrlich gesagt.",
+    "targetWord": "ehrlich gesagt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Überfall",
+  "sentence": "Merle sagt, sie möge keine [[Überfälle]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "surprise drop-ins",
+   "options": [
+    "surprise drop-ins",
+    "long letters",
+    "house rules",
+    "late payments"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Merle sagt, sie möge keine Überfälle.",
+    "targetWord": "Überfälle",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "heiße Ohren",
+  "sentence": "Nora geht mit [[heißen Ohren]] die Treppe hinunter.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "burning ears (of shame)",
+   "options": [
+    "burning ears (of shame)",
+    "open arms",
+    "empty hands",
+    "cold feet"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Nora geht mit heißen Ohren die Treppe hinunter.",
+    "targetWord": "heißen Ohren",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "erstarrt",
+  "sentence": "Merle öffnet die Tür und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "erstarrt",
+   "options": [
+    "erstarrt",
+    "lächelt",
+    "lacht",
+    "tanzt"
+   ],
+   "translation": "Merle opens the door and _____.",
+   "optionTranslations": [
+    "freezes up",
+    "smiles",
+    "laughs",
+    "dances"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Merle öffnet die Tür und erstarrt.",
+    "targetWord": "erstarrt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "störe",
+  "sentence": "Nora merkt: Ich _____ gerade.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "störe",
+   "options": [
+    "störe",
+    "helfe",
+    "koche",
+    "warte"
+   ],
+   "translation": "Nora realises: I'm _____ right now.",
+   "optionTranslations": [
+    "intruding",
+    "helping",
+    "cooking",
+    "waiting"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Nora merkt: Ich störe gerade.",
+    "targetWord": "störe",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "beweisen",
+  "sentence": "Nora wollte _____, dass man spontan klingeln kann.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "beweisen",
+   "options": [
+    "beweisen",
+    "vergessen",
+    "verbieten",
+    "absagen"
+   ],
+   "translation": "Nora wanted to _____ that you can just drop by.",
+   "optionTranslations": [
+    "prove",
+    "forget",
+    "forbid",
+    "cancel"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Nora wollte beweisen, dass man spontan klingeln kann.",
+    "targetWord": "beweisen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "ertragen",
+  "sentence": "Heute konnte Merle sie nur _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ertragen",
+   "options": [
+    "ertragen",
+    "einladen",
+    "loben",
+    "begrüßen"
+   ],
+   "translation": "Today Merle could only _____ her.",
+   "optionTranslations": [
+    "put up with",
+    "invite",
+    "praise",
+    "greet"
+   ],
+   "audioClip": {
+    "storySlug": "ueberfall-mit-wein",
+    "storySource": "user",
+    "sentence": "Heute konnte Merle sie nur ertragen.",
+    "targetWord": "ertragen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Lebensfreude,Jogginganzug,Flur,Abendessen",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Lebensfreude",
+     "answer": "zest for life",
+     "options": [
+      "zest for life",
+      "a tracksuit",
+      "a hallway",
+      "dinner"
+     ]
+    },
+    {
+     "word": "Jogginganzug",
+     "answer": "a tracksuit",
+     "options": [
+      "zest for life",
+      "a tracksuit",
+      "a hallway",
+      "dinner"
+     ]
+    },
+    {
+     "word": "Flur",
+     "answer": "a hallway",
+     "options": [
+      "zest for life",
+      "a tracksuit",
+      "a hallway",
+      "dinner"
+     ]
+    },
+    {
+     "word": "Abendessen",
+     "answer": "dinner",
+     "options": [
+      "zest for life",
+      "a tracksuit",
+      "a hallway",
+      "dinner"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

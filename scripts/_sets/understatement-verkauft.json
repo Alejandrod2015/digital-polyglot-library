@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "Superlativ",
+  "sentence": "Carstens will jeden [[Superlativ]] gestrichen haben.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a superlative claim",
+   "options": [
+    "a superlative claim",
+    "a spelling error",
+    "a phone number",
+    "a spare slide"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Carstens will jeden Superlativ gestrichen haben.",
+    "targetWord": "Superlativ",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ehrbarer Kaufmann",
+  "sentence": "Ein [[Ehrbarer Kaufmann]] verspricht weniger, als er hält.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an honourable merchant",
+   "options": [
+    "an honourable merchant",
+    "a clever salesman",
+    "a strict boss",
+    "a loyal client"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Ein Ehrbarer Kaufmann verspricht weniger, als er hält.",
+    "targetWord": "Ehrbarer Kaufmann",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Blaue vom Himmel versprechen",
+  "sentence": "Die Konkurrenz will [[das Blaue vom Himmel]] versprechen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to promise the moon",
+   "options": [
+    "to promise the moon",
+    "to deliver on time",
+    "to keep it plain",
+    "to name a price"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Die Konkurrenz will das Blaue vom Himmel versprechen.",
+    "targetWord": "das Blaue vom Himmel",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Enttäuschung",
+  "sentence": "Wer zu viel verspricht, liefert am Ende [[Enttäuschung]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "disappointment",
+   "options": [
+    "disappointment",
+    "a discount",
+    "a bonus",
+    "a warning"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Wer zu viel verspricht, liefert am Ende Enttäuschung.",
+    "targetWord": "Enttäuschung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pünktlich",
+  "sentence": "Wir übertreiben nicht, wir liefern [[pünktlich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on time",
+   "options": [
+    "on time",
+    "for free",
+    "by mistake",
+    "far too late"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Wir übertreiben nicht, wir liefern pünktlich.",
+    "targetWord": "pünktlich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sein Wort halten",
+  "sentence": "Der Kunde merkt sich, wer [[sein Wort hält]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "keeps their word",
+   "options": [
+    "keeps their word",
+    "raises the price",
+    "talks the loudest",
+    "waits the longest"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Der Kunde merkt sich, wer sein Wort hält.",
+    "targetWord": "sein Wort hält",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schlicht",
+  "sentence": "Nora stellt die Zahlen ganz [[schlicht]] vor.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "plainly, simply",
+   "options": [
+    "plainly, simply",
+    "very proudly",
+    "much too fast",
+    "word for word"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Nora stellt die Zahlen ganz schlicht vor.",
+    "targetWord": "schlicht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Versprechen vom Mond",
+  "sentence": "Voss mag keine [[Versprechen vom Mond]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "far-fetched promises",
+   "options": [
+    "far-fetched promises",
+    "honest numbers",
+    "fixed deadlines",
+    "low prices"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Voss mag keine Versprechen vom Mond.",
+    "targetWord": "Versprechen vom Mond",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "misstrauisch",
+  "sentence": "Zu viele Superlative machen den Kunden [[misstrauisch]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "suspicious",
+   "options": [
+    "suspicious",
+    "enthusiastic",
+    "generous",
+    "sleepy"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Zu viele Superlative machen den Kunden misstrauisch.",
+    "targetWord": "misstrauisch",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unschlagbar",
+  "sentence": "Zuerst versprach Nora einen [[unschlagbaren]] Preis.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "unbeatable",
+   "options": [
+    "unbeatable",
+    "reasonable",
+    "secret",
+    "final"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Zuerst versprach Nora einen unschlagbaren Preis.",
+    "targetWord": "unschlagbaren",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Verkaufsargument",
+  "sentence": "Understatement ist hier ein echtes [[Verkaufsargument]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a selling point",
+   "options": [
+    "a selling point",
+    "a private joke",
+    "a lost cause",
+    "a house rule"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Understatement ist hier ein echtes Verkaufsargument.",
+    "targetWord": "Verkaufsargument",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ausdienen",
+  "sentence": "Die Superlative haben endgültig [[ausgedient]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "have had their day",
+   "options": [
+    "have had their day",
+    "have been printed",
+    "have been paid",
+    "have been repeated"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Die Superlative haben endgültig ausgedient.",
+    "targetWord": "ausgedient",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "überfliegt",
+  "sentence": "Carstens _____ die erste Folie nur kurz.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "überfliegt",
+   "options": [
+    "überfliegt",
+    "unterschreibt",
+    "verliert",
+    "druckt"
+   ],
+   "translation": "Carstens just briefly _____ the first slide.",
+   "optionTranslations": [
+    "skims",
+    "signs",
+    "loses",
+    "prints"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Carstens überfliegt die erste Folie nur kurz.",
+    "targetWord": "überfliegt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "streichen",
+  "sentence": "Alle Superlative soll Nora aus der Folie _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "streichen",
+   "options": [
+    "streichen",
+    "betonen",
+    "wiederholen",
+    "drucken"
+   ],
+   "translation": "Nora should _____ all superlatives from the slide.",
+   "optionTranslations": [
+    "cut out",
+    "stress",
+    "repeat",
+    "print"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Alle Superlative soll Nora aus der Folie streichen.",
+    "targetWord": "streichen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "auffallen",
+  "sentence": "Mit Superlativen will man beim Kunden _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "auffallen",
+   "options": [
+    "auffallen",
+    "verschwinden",
+    "sparen",
+    "schweigen"
+   ],
+   "translation": "With superlatives you want to _____ with the client.",
+   "optionTranslations": [
+    "stand out",
+    "disappear",
+    "save",
+    "stay silent"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Mit Superlativen will man beim Kunden auffallen.",
+    "targetWord": "auffallen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "übertreibt",
+  "sentence": "Man gewinnt den Kunden, indem man nicht _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "übertreibt",
+   "options": [
+    "übertreibt",
+    "liefert",
+    "zahlt",
+    "wartet"
+   ],
+   "translation": "You win the client by not _____.",
+   "optionTranslations": [
+    "exaggerating",
+    "delivering",
+    "paying",
+    "waiting"
+   ],
+   "audioClip": {
+    "storySlug": "understatement-verkauft",
+    "storySource": "user",
+    "sentence": "Man gewinnt den Kunden, indem man nicht übertreibt.",
+    "targetWord": "übertreibt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Präsentation,Folie,Konkurrenz,Archiv",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Präsentation",
+     "answer": "a slide presentation",
+     "options": [
+      "a slide presentation",
+      "a slide",
+      "the competition",
+      "an archive"
+     ]
+    },
+    {
+     "word": "Folie",
+     "answer": "a slide",
+     "options": [
+      "a slide presentation",
+      "a slide",
+      "the competition",
+      "an archive"
+     ]
+    },
+    {
+     "word": "Konkurrenz",
+     "answer": "the competition",
+     "options": [
+      "a slide presentation",
+      "a slide",
+      "the competition",
+      "an archive"
+     ]
+    },
+    {
+     "word": "Archiv",
+     "answer": "an archive",
+     "options": [
+      "a slide presentation",
+      "a slide",
+      "the competition",
+      "an archive"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,442 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "sich trauen",
+  "sentence": "Nora [[traut sich]] kaum zur wortkargen Runde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dares",
+   "options": [
+    "dares",
+    "refuses",
+    "hurries",
+    "forgets"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Nora traut sich kaum zur wortkargen Runde.",
+    "targetWord": "traut sich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wortkarg",
+  "sentence": "Am Kai wirkt die Runde still und [[wortkarg]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sparing with words",
+   "options": [
+    "sparing with words",
+    "loud and chatty",
+    "angry and tense",
+    "warm and open"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Am Kai wirkt die Runde still und wortkarg.",
+    "targetWord": "wortkarg",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Runde",
+  "sentence": "Ole winkt Nora zur schweigenden [[Runde]] heran.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the group, gathering",
+   "options": [
+    "the group, gathering",
+    "the counter",
+    "the office",
+    "the harbour"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Ole winkt Nora zur schweigenden Runde heran.",
+    "targetWord": "Runde",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "heilig",
+  "sentence": "Der Feierabend ist hier [[heilig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sacred, untouchable",
+   "options": [
+    "sacred, untouchable",
+    "optional",
+    "very short",
+    "rather loud"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Der Feierabend ist hier heilig.",
+    "targetWord": "heilig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "durcheinander",
+  "sentence": "Woanders reden nach der Arbeit alle [[durcheinander]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all at once, in confusion",
+   "options": [
+    "all at once, in confusion",
+    "in perfect silence",
+    "one after another",
+    "far too slowly"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Woanders reden nach der Arbeit alle durcheinander.",
+    "targetWord": "durcheinander",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "regelmäßig",
+  "sentence": "Sie stehen gern und [[regelmäßig]] schweigend am Wasser.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "regularly",
+   "options": [
+    "regularly",
+    "never",
+    "by accident",
+    "in a hurry"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Sie stehen gern und regelmäßig schweigend am Wasser.",
+    "targetWord": "regelmäßig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Nähe",
+  "sentence": "Das gemeinsame Schweigen ist ihre Art von [[Nähe]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "closeness",
+   "options": [
+    "closeness",
+    "distance",
+    "boredom",
+    "politeness"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Das gemeinsame Schweigen ist ihre Art von Nähe.",
+    "targetWord": "Nähe",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Small Talk",
+  "sentence": "Kein [[Small Talk]], nur zusammen dabei sein.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "casual chit-chat",
+   "options": [
+    "casual chit-chat",
+    "hard bargaining",
+    "serious business",
+    "loud singing"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Kein Small Talk, nur zusammen dabei sein.",
+    "targetWord": "Small Talk",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Einladung",
+  "sentence": "Die [[Einladung]] zum Kai ist mehr wert als jede Umarmung.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the invitation",
+   "options": [
+    "the invitation",
+    "the payment",
+    "the warning",
+    "the excuse"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Die Einladung zum Kai ist mehr wert als jede Umarmung.",
+    "targetWord": "Einladung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Verschwendung",
+  "sentence": "Zwei Sätze von Carstens grenzen an [[Verschwendung]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a waste",
+   "options": [
+    "a waste",
+    "a bargain",
+    "a habit",
+    "a rule"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Zwei Sätze von Carstens grenzen an Verschwendung.",
+    "targetWord": "Verschwendung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "großzügig",
+  "sentence": "Am Feierabend darf man ausnahmsweise [[großzügig]] sein.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "generous",
+   "options": [
+    "generous",
+    "strict",
+    "silent",
+    "early"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Am Feierabend darf man ausnahmsweise großzügig sein.",
+    "targetWord": "großzügig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schweigend",
+  "sentence": "Nora stößt am Ende [[schweigend]] mit an.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in silence",
+   "options": [
+    "in silence",
+    "out loud",
+    "alone",
+    "in a hurry"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Nora stößt am Ende schweigend mit an.",
+    "targetWord": "schweigend",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wie es sich gehört",
+  "sentence": "Sie stößt schweigend mit an, [[wie es sich gehört]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "as is proper",
+   "options": [
+    "as is proper",
+    "just this once",
+    "by mistake",
+    "far too late"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Sie stößt schweigend mit an, wie es sich gehört.",
+    "targetWord": "wie es sich gehört",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "eine von uns",
+  "sentence": "Merle sagt: So wirst du mit der Zeit [[eine von uns]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "one of us",
+   "options": [
+    "one of us",
+    "a stranger",
+    "a guest",
+    "a tourist"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Merle sagt: So wirst du mit der Zeit eine von uns.",
+    "targetWord": "eine von uns",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "winkt",
+  "sentence": "Ole _____ Nora zur Runde heran.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "winkt",
+   "options": [
+    "winkt",
+    "schweigt",
+    "zahlt",
+    "läuft"
+   ],
+   "translation": "Ole _____ Nora over to the group.",
+   "optionTranslations": [
+    "waves",
+    "stays silent",
+    "pays",
+    "runs"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Ole winkt Nora zur Runde heran.",
+    "targetWord": "winkt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "einlädt",
+  "sentence": "Wer dich zum Kai _____, meint es ernst.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "einlädt",
+   "options": [
+    "einlädt",
+    "schickt",
+    "ruft",
+    "zahlt"
+   ],
+   "translation": "Whoever _____ you to the quay means it.",
+   "optionTranslations": [
+    "invites",
+    "sends",
+    "calls",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "feierabend-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Wer dich zum Kai einlädt, meint es ernst.",
+    "targetWord": "einlädt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Kai,Alsterwasser,Aussicht,Geländer",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Kai",
+     "answer": "a quay, wharf",
+     "options": [
+      "a quay, wharf",
+      "beer with lemonade",
+      "a view",
+      "a railing"
+     ]
+    },
+    {
+     "word": "Alsterwasser",
+     "answer": "beer with lemonade",
+     "options": [
+      "a quay, wharf",
+      "beer with lemonade",
+      "a view",
+      "a railing"
+     ]
+    },
+    {
+     "word": "Aussicht",
+     "answer": "a view",
+     "options": [
+      "a quay, wharf",
+      "beer with lemonade",
+      "a view",
+      "a railing"
+     ]
+    },
+    {
+     "word": "Geländer",
+     "answer": "a railing",
+     "options": [
+      "a quay, wharf",
+      "beer with lemonade",
+      "a view",
+      "a railing"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

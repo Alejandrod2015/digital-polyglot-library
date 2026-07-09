@@ -1,0 +1,535 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "Moin",
+  "sentence": "Hier sagt man den ganzen Tag nur [[Moin]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hi (any time of day)",
+   "options": [
+    "hi (any time of day)",
+    "good morning only",
+    "good night",
+    "goodbye"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Hier sagt man den ganzen Tag nur Moin.",
+    "targetWord": "Moin",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "höflich",
+  "sentence": "Nora will in Hamburg besonders [[höflich]] sein.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "polite",
+   "options": [
+    "polite",
+    "loud",
+    "funny",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Nora will in Hamburg besonders höflich sein.",
+    "targetWord": "höflich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Fehler",
+  "sentence": "Eine lange Begrüßung ist hier der [[Fehler]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the mistake",
+   "options": [
+    "the mistake",
+    "the custom",
+    "the joke",
+    "the rule"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Eine lange Begrüßung ist hier der Fehler.",
+    "targetWord": "Fehler",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unhöflich",
+  "sentence": "Ein einziges Wort klingt für Nora fast [[unhöflich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rude",
+   "options": [
+    "rude",
+    "warm",
+    "formal",
+    "cheerful"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Ein einziges Wort klingt für Nora fast unhöflich.",
+    "targetWord": "unhöflich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Gegenteil",
+  "sentence": "Für die Hamburger ist es genau das [[Gegenteil]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the opposite",
+   "options": [
+    "the opposite",
+    "the same",
+    "the reason",
+    "the problem"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Für die Hamburger ist es genau das Gegenteil.",
+    "targetWord": "Gegenteil",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Franzbrötchen",
+  "sentence": "Wiebke stapelt hinter der Theke frische [[Franzbrötchen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cinnamon pastries",
+   "options": [
+    "cinnamon pastries",
+    "fish rolls",
+    "rye loaves",
+    "sugar cubes"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Wiebke stapelt hinter der Theke frische Franzbrötchen.",
+    "targetWord": "Franzbrötchen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zimtig",
+  "sentence": "Nora nimmt zwei von diesen [[zimtigen]] Teilchen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cinnamony",
+   "options": [
+    "cinnamony",
+    "salty",
+    "sour",
+    "smoky"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Nora nimmt zwei von diesen zimtigen Teilchen.",
+    "targetWord": "zimtigen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Geschwätz",
+  "sentence": "Zwei Moin gelten hier schon als [[Geschwätz]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "idle chatter",
+   "options": [
+    "idle chatter",
+    "polite talk",
+    "a warm greeting",
+    "bad news"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Zwei Moin gelten hier schon als Geschwätz.",
+    "targetWord": "Geschwätz",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gesprächig",
+  "sentence": "Wer zu viel redet, gilt sofort als [[gesprächig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "talkative",
+   "options": [
+    "talkative",
+    "reliable",
+    "honest",
+    "quiet"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Wer zu viel redet, gilt sofort als gesprächig.",
+    "targetWord": "gesprächig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dauernd",
+  "sentence": "Das verwechseln die Zugezogenen [[dauernd]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "constantly",
+   "options": [
+    "constantly",
+    "rarely",
+    "secretly",
+    "politely"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Das verwechseln die Zugezogenen dauernd.",
+    "targetWord": "dauernd",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sparsam",
+  "sentence": "Die Hamburger sind [[sparsam]] mit Worten.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sparing",
+   "options": [
+    "sparing",
+    "generous",
+    "careless",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Die Hamburger sind sparsam mit Worten.",
+    "targetWord": "sparsam",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Zugezogene",
+  "sentence": "Nur die [[Zugezogenen]] verstehen das Moin nicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "newcomers",
+   "options": [
+    "newcomers",
+    "locals",
+    "tourists",
+    "children"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Nur die Zugezogenen verstehen das Moin nicht.",
+    "targetWord": "Zugezogenen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "im Vorbeigehen",
+  "sentence": "Sag es einfach [[im Vorbeigehen]], ohne stehenzubleiben.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in passing",
+   "options": [
+    "in passing",
+    "very slowly",
+    "word for word",
+    "out loud"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Sag es einfach im Vorbeigehen, ohne stehenzubleiben.",
+    "targetWord": "im Vorbeigehen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Na also",
+  "sentence": "Am Ende lächelt Wiebke und sagt: [[Na also]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "there you go",
+   "options": [
+    "there you go",
+    "no way",
+    "too bad",
+    "not yet"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Am Ende lächelt Wiebke und sagt: Na also.",
+    "targetWord": "Na also",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "auftreten",
+  "sentence": "In Hamburg will Nora besonders höflich _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "auftreten",
+   "options": [
+    "auftreten",
+    "verschwinden",
+    "schweigen",
+    "frieren"
+   ],
+   "translation": "In Hamburg Nora wants to come across especially _____.",
+   "optionTranslations": [
+    "behave / come across",
+    "disappear",
+    "stay silent",
+    "freeze"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "In Hamburg will Nora besonders höflich auftreten.",
+    "targetWord": "auftreten",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "reichen",
+  "sentence": "Für eine Begrüßung muss hier ein Wort _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "reichen",
+   "options": [
+    "reichen",
+    "fehlen",
+    "klingen",
+    "warten"
+   ],
+   "translation": "For a greeting one word has to _____ here.",
+   "optionTranslations": [
+    "be enough",
+    "be missing",
+    "sound",
+    "wait"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Für eine Begrüßung muss hier ein Wort reichen.",
+    "targetWord": "reichen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "aufhalten",
+  "sentence": "Wer viele Worte macht, will die anderen nur _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aufhalten",
+   "options": [
+    "aufhalten",
+    "begrüßen",
+    "loben",
+    "bezahlen"
+   ],
+   "translation": "Whoever makes many words only wants to _____ the others.",
+   "optionTranslations": [
+    "hold up",
+    "greet",
+    "praise",
+    "pay"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Wer viele Worte macht, will die anderen nur aufhalten.",
+    "targetWord": "aufhalten",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "üben",
+  "sentence": "Ab jetzt will Nora das kürzeste Wort _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "üben",
+   "options": [
+    "üben",
+    "vergessen",
+    "verkaufen",
+    "verbieten"
+   ],
+   "translation": "From now on Nora wants to _____ the shortest word.",
+   "optionTranslations": [
+    "practise",
+    "forget",
+    "sell",
+    "forbid"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Ab jetzt will Nora das kürzeste Wort üben.",
+    "targetWord": "üben",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "zurechtgelegt",
+  "sentence": "Nora hatte sich eine ganze Begrüßung _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zurechtgelegt",
+   "options": [
+    "zurechtgelegt",
+    "weggeworfen",
+    "vorgelesen",
+    "abgesagt"
+   ],
+   "translation": "Nora had _____ a whole greeting for herself.",
+   "optionTranslations": [
+    "prepared",
+    "thrown away",
+    "read aloud",
+    "cancelled"
+   ],
+   "audioClip": {
+    "storySlug": "moin-heisst-den-ganzen-tag",
+    "storySource": "user",
+    "sentence": "Nora hatte sich eine ganze Begrüßung zurechtgelegt.",
+    "targetWord": "zurechtgelegt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Kopfsteinpflaster,Theke,Uhrzeit,Feierabend",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Kopfsteinpflaster",
+     "answer": "cobblestones",
+     "options": [
+      "cobblestones",
+      "a shop counter",
+      "the time of day",
+      "end of the workday"
+     ]
+    },
+    {
+     "word": "Theke",
+     "answer": "a shop counter",
+     "options": [
+      "cobblestones",
+      "a shop counter",
+      "the time of day",
+      "end of the workday"
+     ]
+    },
+    {
+     "word": "Uhrzeit",
+     "answer": "the time of day",
+     "options": [
+      "cobblestones",
+      "a shop counter",
+      "the time of day",
+      "end of the workday"
+     ]
+    },
+    {
+     "word": "Feierabend",
+     "answer": "end of the workday",
+     "options": [
+      "cobblestones",
+      "a shop counter",
+      "the time of day",
+      "end of the workday"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

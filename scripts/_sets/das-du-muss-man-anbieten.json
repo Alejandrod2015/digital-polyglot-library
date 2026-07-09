@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "selbstgebacken",
+  "sentence": "Frau Boysen bringt einen [[selbstgebackenen]] Kuchen mit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "home-baked",
+   "options": [
+    "home-baked",
+    "store-bought",
+    "half-frozen",
+    "brand-new"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Frau Boysen bringt einen selbstgebackenen Kuchen mit.",
+    "targetWord": "selbstgebackenen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Kein Grund zur Eile",
+  "sentence": "Boysen sagt: [[Kein Grund zur Eile]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "no need to rush",
+   "options": [
+    "no need to rush",
+    "no way in",
+    "not my problem",
+    "no hard feelings"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Boysen sagt: Kein Grund zur Eile.",
+    "targetWord": "Kein Grund zur Eile",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sich beschnuppern",
+  "sentence": "Das Sie hat Sinn, solange man sich noch [[beschnuppert]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sizes each other up",
+   "options": [
+    "sizes each other up",
+    "argues loudly",
+    "pays the rent",
+    "says goodbye"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Das Sie hat Sinn, solange man sich noch beschnuppert.",
+    "targetWord": "beschnuppert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "per du sein",
+  "sentence": "Anderswo wäre Nora längst [[per du]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on first-name terms",
+   "options": [
+    "on first-name terms",
+    "far from home",
+    "out of time",
+    "in trouble"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Anderswo wäre Nora längst per du.",
+    "targetWord": "per du",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Du",
+  "sentence": "[[Das Du]] bietet man an, man nimmt es sich nicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the informal you",
+   "options": [
+    "the informal you",
+    "the front door",
+    "the first slice",
+    "the house rule"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Das Du bietet man an, man nimmt es sich nicht.",
+    "targetWord": "Das Du",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hiesig",
+  "sentence": "Das Du bietet meist die ältere oder [[hiesige]] Person an.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "local",
+   "options": [
+    "local",
+    "younger",
+    "louder",
+    "richer"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Das Du bietet meist die ältere oder hiesige Person an.",
+    "targetWord": "hiesige",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sich aufdrängen",
+  "sentence": "Boysen lobt, dass Nora sich nicht [[aufdrängt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "imposes herself",
+   "options": [
+    "imposes herself",
+    "pays too much",
+    "talks too fast",
+    "arrives too late"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Boysen lobt, dass Nora sich nicht aufdrängt.",
+    "targetWord": "aufdrängt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sich verdienen",
+  "sentence": "Wer wartet, muss sich das Du erst [[verdienen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "earn it",
+   "options": [
+    "earn it",
+    "forget it",
+    "buy it",
+    "cancel it"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Wer wartet, muss sich das Du erst verdienen.",
+    "targetWord": "verdienen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "duzen",
+  "sentence": "Boysen sagt: Ich denke, wir können uns [[duzen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "use the informal you",
+   "options": [
+    "use the informal you",
+    "shake hands",
+    "split the bill",
+    "start again"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Boysen sagt: Ich denke, wir können uns duzen.",
+    "targetWord": "duzen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gerührt",
+  "sentence": "Über das Angebot ist Nora ganz [[gerührt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "touched, moved",
+   "options": [
+    "touched, moved",
+    "quite bored",
+    "a bit angry",
+    "truly puzzled"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Über das Angebot ist Nora ganz gerührt.",
+    "targetWord": "gerührt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Stück",
+  "sentence": "Boysen schiebt Nora das erste [[Stück]] Kuchen hin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "piece",
+   "options": [
+    "piece",
+    "key",
+    "form",
+    "glass"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Boysen schiebt Nora das erste Stück Kuchen hin.",
+    "targetWord": "Stück",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trocken",
+  "sentence": "Iss dein Stück, bevor der Kuchen [[trocken]] wird.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dry, stale",
+   "options": [
+    "dry, stale",
+    "warm",
+    "famous",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Iss dein Stück, bevor der Kuchen trocken wird.",
+    "targetWord": "trocken",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "anbietet",
+  "sentence": "Das Du _____ man, man nimmt es sich nicht.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "anbietet",
+   "options": [
+    "anbietet",
+    "nimmt",
+    "kauft",
+    "vergisst"
+   ],
+   "translation": "One _____ the informal you; one doesn't just take it.",
+   "optionTranslations": [
+    "offers",
+    "takes",
+    "buys",
+    "forgets"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Das Du anbietet man, man nimmt es sich nicht.",
+    "targetWord": "anbietet",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "schneidet",
+  "sentence": "Boysen _____ den Kuchen feierlich an.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schneidet",
+   "options": [
+    "schneidet",
+    "isst",
+    "kauft",
+    "versteckt"
+   ],
+   "translation": "Boysen ceremonially _____ into the cake.",
+   "optionTranslations": [
+    "cuts",
+    "eats",
+    "buys",
+    "hides"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Boysen schneidet den Kuchen feierlich an.",
+    "targetWord": "schneidet",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "beobachte",
+  "sentence": "Ich _____ Sie schon seit dem Einzug.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "beobachte",
+   "options": [
+    "beobachte",
+    "bezahle",
+    "vergesse",
+    "störe"
+   ],
+   "translation": "I have been _____ you ever since you moved in.",
+   "optionTranslations": [
+    "watching",
+    "paying",
+    "forgetting",
+    "disturbing"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Ich beobachte Sie schon seit dem Einzug.",
+    "targetWord": "beobachte",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "genügt",
+  "sentence": "Sie drängt sich nicht auf, das _____ mir.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "genügt",
+   "options": [
+    "genügt",
+    "stört",
+    "fehlt",
+    "kostet"
+   ],
+   "translation": "She doesn't impose herself; that _____ for me.",
+   "optionTranslations": [
+    "is enough",
+    "disturbs",
+    "is missing",
+    "costs"
+   ],
+   "audioClip": {
+    "storySlug": "das-du-muss-man-anbieten",
+    "storySource": "user",
+    "sentence": "Sie drängt sich nicht auf, das genügt mir.",
+    "targetWord": "genügt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Einweihung,Gast,Zeugnis,Auszeichnung",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Einweihung",
+     "answer": "a housewarming",
+     "options": [
+      "a housewarming",
+      "a guest",
+      "a report, reference",
+      "a distinction, honour"
+     ]
+    },
+    {
+     "word": "Gast",
+     "answer": "a guest",
+     "options": [
+      "a housewarming",
+      "a guest",
+      "a report, reference",
+      "a distinction, honour"
+     ]
+    },
+    {
+     "word": "Zeugnis",
+     "answer": "a report, reference",
+     "options": [
+      "a housewarming",
+      "a guest",
+      "a report, reference",
+      "a distinction, honour"
+     ]
+    },
+    {
+     "word": "Auszeichnung",
+     "answer": "a distinction, honour",
+     "options": [
+      "a housewarming",
+      "a guest",
+      "a report, reference",
+      "a distinction, honour"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

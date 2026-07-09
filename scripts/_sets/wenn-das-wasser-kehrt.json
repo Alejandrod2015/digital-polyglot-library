@@ -1,0 +1,456 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "Höchststand",
+  "sentence": "Die Sturmflut erreicht ihren [[Höchststand]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "its peak level",
+   "options": [
+    "its peak level",
+    "its lowest point",
+    "its warmest hour",
+    "its widest bend"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Die Sturmflut erreicht ihren Höchststand.",
+    "targetWord": "Höchststand",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Kaikante",
+  "sentence": "Die Elbe leckt über die [[Kaikante]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the edge of the quay",
+   "options": [
+    "the edge of the quay",
+    "the harbour bridge",
+    "the market square",
+    "the church tower"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Die Elbe leckt über die Kaikante.",
+    "targetWord": "Kaikante",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "auswendig",
+  "sentence": "Die Halle kennt das Wasser [[auswendig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "by heart",
+   "options": [
+    "by heart",
+    "by chance",
+    "for money",
+    "from far"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Die Halle kennt das Wasser auswendig.",
+    "targetWord": "auswendig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ölzeug",
+  "sentence": "Ein breitschultriger Mann im [[Ölzeug]] steht daneben.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "oilskins",
+   "options": [
+    "oilskins",
+    "a suit",
+    "a uniform",
+    "pyjamas"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Ein breitschultriger Mann im Ölzeug steht daneben.",
+    "targetWord": "Ölzeug",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "breitschultrig",
+  "sentence": "Neben ihnen steht ein [[breitschultriger]] Mann.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "broad-shouldered",
+   "options": [
+    "broad-shouldered",
+    "white-haired",
+    "short and thin",
+    "richly dressed"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Neben ihnen steht ein breitschultriger Mann.",
+    "targetWord": "breitschultriger",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "heben",
+  "sentence": "Der Mann nickt, ohne den Blick zu [[heben]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lift, raise",
+   "options": [
+    "to lift, raise",
+    "to close",
+    "to hide",
+    "to wash"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Der Mann nickt, ohne den Blick zu heben.",
+    "targetWord": "heben",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Stufe",
+  "sentence": "Eine [[Stufe]] war eben noch nass, jetzt trocknet sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a step",
+   "options": [
+    "a step",
+    "a wall",
+    "a door",
+    "a bench"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Eine Stufe war eben noch nass, jetzt trocknet sie.",
+    "targetWord": "Stufe",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Puls",
+  "sentence": "Nora merkt, wie ihr eigener [[Puls]] langsamer wird.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pulse",
+   "options": [
+    "pulse",
+    "voice",
+    "breath",
+    "fear"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Nora merkt, wie ihr eigener Puls langsamer wird.",
+    "targetWord": "Puls",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "langsam",
+  "sentence": "Ihr Puls wird plötzlich [[langsamer]], nicht schneller.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slower",
+   "options": [
+    "slower",
+    "louder",
+    "warmer",
+    "harder"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Ihr Puls wird plötzlich langsamer, nicht schneller.",
+    "targetWord": "langsamer",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zuschauen",
+  "sentence": "Man muss der Flut nur [[zuschauen]], bis sie kehrt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "watch on",
+   "options": [
+    "watch on",
+    "fight back",
+    "run away",
+    "call for help"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Man muss der Flut nur zuschauen, bis sie kehrt.",
+    "targetWord": "zuschauen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "es ist vorbei",
+  "sentence": "Der Mann sagt: Gehen Sie heim, [[es ist vorbei]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it's over",
+   "options": [
+    "it's over",
+    "it's too late",
+    "it's beginning",
+    "it's dangerous"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Der Mann sagt: Gehen Sie heim, es ist vorbei.",
+    "targetWord": "es ist vorbei",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sich umdrehen",
+  "sentence": "An der Ecke muss Nora sich noch einmal [[umdrehen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "turn around",
+   "options": [
+    "turn around",
+    "sit down",
+    "speak up",
+    "give up"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "An der Ecke muss Nora sich noch einmal umdrehen.",
+    "targetWord": "umdrehen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "erreicht",
+  "sentence": "Die Sturmflut _____ ihren Höchststand.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "erreicht",
+   "options": [
+    "erreicht",
+    "verliert",
+    "sucht",
+    "verlässt"
+   ],
+   "translation": "The storm surge _____ its peak.",
+   "optionTranslations": [
+    "reaches",
+    "loses",
+    "seeks",
+    "leaves"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Die Sturmflut erreicht ihren Höchststand.",
+    "targetWord": "erreicht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "leckt",
+  "sentence": "Die Elbe _____ über die Kaikante.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "leckt",
+   "options": [
+    "leckt",
+    "sinkt",
+    "trocknet",
+    "brennt"
+   ],
+   "translation": "The Elbe _____ over the edge of the quay.",
+   "optionTranslations": [
+    "laps",
+    "sinks",
+    "dries",
+    "burns"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Die Elbe leckt über die Kaikante.",
+    "targetWord": "leckt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "wegspült",
+  "sentence": "Nora fürchtet, dass es die ganze Halle _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "wegspült",
+   "options": [
+    "wegspült",
+    "aufbaut",
+    "trocknet",
+    "wärmt"
+   ],
+   "translation": "Nora fears it will _____ the whole hall.",
+   "optionTranslations": [
+    "wash away",
+    "build up",
+    "dry out",
+    "warm up"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Nora fürchtet, dass es die ganze Halle wegspült.",
+    "targetWord": "wegspült",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "zittert",
+  "sentence": "Das graue Wasser steht und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zittert",
+   "options": [
+    "zittert",
+    "singt",
+    "brennt",
+    "wächst"
+   ],
+   "translation": "The grey water stands still and _____.",
+   "optionTranslations": [
+    "trembles",
+    "sings",
+    "burns",
+    "grows"
+   ],
+   "audioClip": {
+    "storySlug": "wenn-das-wasser-kehrt",
+    "storySource": "user",
+    "sentence": "Das graue Wasser steht und zittert.",
+    "targetWord": "zittert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Sturmflut,Flutwarnung,Pegel,Treibholz",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Sturmflut",
+     "answer": "a storm surge",
+     "options": [
+      "a storm surge",
+      "a flood warning",
+      "a water gauge",
+      "driftwood"
+     ]
+    },
+    {
+     "word": "Flutwarnung",
+     "answer": "a flood warning",
+     "options": [
+      "a storm surge",
+      "a flood warning",
+      "a water gauge",
+      "driftwood"
+     ]
+    },
+    {
+     "word": "Pegel",
+     "answer": "a water gauge",
+     "options": [
+      "a storm surge",
+      "a flood warning",
+      "a water gauge",
+      "driftwood"
+     ]
+    },
+    {
+     "word": "Treibholz",
+     "answer": "driftwood",
+     "options": [
+      "a storm surge",
+      "a flood warning",
+      "a water gauge",
+      "driftwood"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]
