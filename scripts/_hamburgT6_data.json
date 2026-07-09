@@ -1,0 +1,351 @@
+[
+ {
+  "topic": "vereine-und-freundschaft",
+  "slotIndex": 1,
+  "title": "Erst die Satzung, dann die See",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Nora will nur segeln lernen und landet erst einmal in elf Seiten Vereinssatzung, mit einem Probetörn als eigentlicher Prüfung.",
+  "text": "Im Clubheim des Segelvereins riecht es nach Teer und altem Kaffee. Herr Dose, der Vorsitzende, schiebt Nora einen Stapel Formulare über den Tresen, während Fiete, ein junges Mitglied, ihr grinsend zunickt.\n\nNora: Ich wollte eigentlich nur segeln lernen. Nicht einem Ministerium beitreten.\nDose: Segeln kommt zuletzt. Zuerst der Aufnahmeantrag, die Satzung und der Beitrag. Ordnung hält den Verein über Wasser, nicht der Wind.\nNora: Elf Seiten Satzung für ein Boot. Steht da auch, mit welchem Fuß ich an Bord gehe?\nDose: Backbord zuerst, aber das lernen Sie an Deck. Über Ihre Aufnahme stimmt die Versammlung ab, wie es sich gehört.\nFiete: Lass dich nicht abschrecken. Der Papierkram ist die eigentliche Prüfung. Wer die übersteht, meint es ernst.\nNora: Und wenn die Versammlung mich ablehnt? Nach elf Seiten Formular?\n\nFiete zieht sie beiseite, zur Fensterfront mit Blick auf die Masten.\n\nFiete: Abgelehnt wird fast keiner. Aber es gehört dazu, dass einer immer dagegenstimmt. Meist Dose selbst, aus Prinzip.\nNora: Der Vorsitzende stimmt gegen seine eigenen Neulinge?\nFiete: Nur beim ersten Mal. Es ist seine Art zu sagen: Zeig mir, dass du bleibst. Am Samstag ist Probetörn, da zählt ohnehin nur, ob du seekrank wirst.\nNora: Seekrank werde ich nicht. Das bin ich auf keiner Fähre je geworden.\nDose: Das behaupten alle, bis die erste Welle kommt. Samstag, sieben Uhr, pünktlich. Wer zu spät kommt, bleibt an Land.\nNora: Sieben Uhr also. Dann steht zwischen mir und dem Wasser nur noch eine Bootslänge Bürokratie.\nFiete: Und eine steife Brise. Schlaf dich aus, Neuland. Samstag wird ehrlich.",
+  "vocab": [
+   {
+    "word": "Clubheim",
+    "definition": "a club's own social premises where its members gather",
+    "type": "noun"
+   },
+   {
+    "word": "Segelverein",
+    "definition": "a sailing club whose members own and sail boats together",
+    "type": "noun"
+   },
+   {
+    "word": "Vorsitzender",
+    "definition": "the chairperson who heads and leads a club or board",
+    "type": "noun",
+    "surface": "Vorsitzende"
+   },
+   {
+    "word": "zuletzt",
+    "definition": "last of all; only after everything else has happened",
+    "type": "adverb"
+   },
+   {
+    "word": "Aufnahmeantrag",
+    "definition": "a written application to be admitted as a member",
+    "type": "noun"
+   },
+   {
+    "word": "Satzung",
+    "definition": "the written statutes and rules that govern a club",
+    "type": "noun"
+   },
+   {
+    "word": "Beitrag",
+    "definition": "a membership fee paid regularly to belong to something",
+    "type": "noun"
+   },
+   {
+    "word": "über Wasser halten",
+    "surface": "über Wasser",
+    "definition": "to keep something afloat and running despite the difficulties",
+    "type": "expression"
+   },
+   {
+    "word": "an Bord",
+    "definition": "on board; aboard a boat or ship as a passenger",
+    "type": "expression"
+   },
+   {
+    "word": "beitreten",
+    "definition": "to join a club or organisation as a new member",
+    "type": "verb"
+   },
+   {
+    "word": "abstimmen",
+    "surface": "stimmt",
+    "definition": "to vote; to decide a matter by a show of votes",
+    "type": "verb"
+   },
+   {
+    "word": "Versammlung",
+    "definition": "an assembly; a formal meeting of members to decide things",
+    "type": "noun"
+   },
+   {
+    "word": "sich abschrecken lassen",
+    "surface": "abschrecken",
+    "definition": "to let yourself be put off or scared away by something",
+    "type": "expression"
+   },
+   {
+    "word": "ablehnen",
+    "surface": "ablehnt",
+    "definition": "to reject or turn down an application or request",
+    "type": "verb"
+   },
+   {
+    "word": "dagegenstimmen",
+    "surface": "dagegenstimmt",
+    "definition": "to vote against something deliberately, as a matter of principle",
+    "type": "verb"
+   },
+   {
+    "word": "grinsend",
+    "definition": "grinning; smiling broadly in a cheeky, amused way",
+    "type": "adjective"
+   },
+   {
+    "word": "Probetörn",
+    "definition": "a trial sailing trip that tests a would-be member",
+    "type": "noun"
+   },
+   {
+    "word": "seekrank",
+    "definition": "seasick; feeling sick from a boat's motion on the water",
+    "type": "adjective"
+   },
+   {
+    "word": "steif",
+    "surface": "steife",
+    "definition": "stiff; here of a strong, firm and blustery sailing wind",
+    "type": "adjective"
+   },
+   {
+    "word": "segeln",
+    "definition": "to sail; to travel over water using a boat's sails",
+    "type": "verb"
+   }
+  ]
+ },
+ {
+  "topic": "vereine-und-freundschaft",
+  "slotIndex": 2,
+  "title": "Am Millerntor wird geschrien",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Im Stadion von St. Pauli sieht Nora, wie die sonst so zugeknöpften Hamburger zwei Stunden lang alles herausbrüllen.",
+  "text": "Am Millerntor drängt sich die Menge in Braun und Weiß, und die sonst so zugeknöpften Hamburger brüllen aus voller Kehle. Fiete drückt Nora einen Schal in die Hand, Merle klatscht schon im Takt mit.\n\nFiete: Willkommen bei St. Pauli. Kein Verein, eine Haltung. Hier zählt nicht der Pokal, hier zählt, für wen du singst.\nNora: Und der Totenkopf überall? Das wirkt eher nach Piraten als nach Fußball.\nMerle: Ist auch so gemeint. St. Pauli ist der Underdog, der Kiez, das linke Herz der Stadt. Der HSV ist die feine Alster, wir sind die raue Hafenkante.\nNora: Also spaltet ein Fußball die ganze Stadt in zwei Lager?\nFiete: In die schönste Art von Streit. Frag einen Hamburger nach seinem Verein, und du kennst ihn besser als nach jedem langen Gespräch.\nNora: Und ihr, die ihr sonst kein Wort zu viel sagt, singt hier zwei Stunden am Stück?\n\nEin Tor fällt, und die Tribüne explodiert in einem einzigen Aufschrei.\n\nMerle: Das ist es. Zwei Stunden lang darfst du hier alles rauslassen, was die Woche über drin bleibt.\nNora: Ich verstehe. Der Fischmarkt am Sonntag, das Stadion am Samstag. Eure Ventile für die ganze Zurückhaltung.\nFiete: Genau. Unter der Woche Deckel drauf, am Wochenende Dampf ablassen. Sonst hält das keiner aus.\nNora: Dann brülle ich jetzt einfach mit, auch ohne die Gesänge schon zu kennen.\nMerle: Regeln gibt es hier keine, nur Herzblut. Die Texte lernst du beim dritten Spiel von allein.",
+  "vocab": [
+   {
+    "word": "Menge",
+    "definition": "a crowd; a large mass of people gathered together",
+    "type": "noun"
+   },
+   {
+    "word": "zugeknöpft",
+    "definition": "buttoned-up; reserved and unwilling to open up to others",
+    "type": "adjective"
+   },
+   {
+    "word": "aus voller Kehle",
+    "definition": "at the top of one's voice; as loudly as possible",
+    "type": "expression"
+   },
+   {
+    "word": "Schal",
+    "definition": "a scarf, here worn to show which team you support",
+    "type": "noun"
+   },
+   {
+    "word": "im Takt",
+    "definition": "in time; keeping to the beat or rhythm together",
+    "type": "expression"
+   },
+   {
+    "word": "brüllen",
+    "surface": "brüllen",
+    "definition": "to bellow; to shout very loudly and forcefully",
+    "type": "verb"
+   },
+   {
+    "word": "Totenkopf",
+    "definition": "a skull emblem, the defiant symbol of the St. Pauli club",
+    "type": "noun"
+   },
+   {
+    "word": "Underdog",
+    "definition": "the underdog; the weaker side expected to lose",
+    "type": "noun"
+   },
+   {
+    "word": "Kiez",
+    "definition": "a lively city neighbourhood with its own strong character",
+    "type": "noun"
+   },
+   {
+    "word": "spalten",
+    "surface": "spaltet",
+    "definition": "to split something into opposed camps or bitterly divide it",
+    "type": "verb"
+   },
+   {
+    "word": "Hafenkante",
+    "definition": "the rough working edge of the harbour along the water",
+    "type": "noun"
+   },
+   {
+    "word": "Tribüne",
+    "definition": "the stand where spectators sit or stand at a stadium",
+    "type": "noun"
+   },
+   {
+    "word": "explodieren",
+    "surface": "explodiert",
+    "definition": "to erupt suddenly, here of a roaring, exploding crowd",
+    "type": "verb"
+   },
+   {
+    "word": "klatschen",
+    "surface": "klatscht",
+    "definition": "to clap; to applaud by striking your hands together",
+    "type": "verb"
+   },
+   {
+    "word": "rauslassen",
+    "definition": "to let something out; to release pent-up feelings freely",
+    "type": "verb"
+   },
+   {
+    "word": "Dampf ablassen",
+    "surface": "Dampf ablassen",
+    "definition": "to let off steam; to release built-up tension or frustration",
+    "type": "expression"
+   },
+   {
+    "word": "Deckel drauf",
+    "definition": "to keep a lid on it; to hold feelings firmly in",
+    "type": "expression"
+   },
+   {
+    "word": "singen",
+    "surface": "singt",
+    "definition": "to sing, here to chant the songs at a match",
+    "type": "verb"
+   },
+   {
+    "word": "am Stück",
+    "definition": "at a stretch; continuously without any break in between",
+    "type": "expression"
+   },
+   {
+    "word": "Herzblut",
+    "definition": "heart and soul; deep passion poured into something",
+    "type": "noun"
+   }
+  ]
+ },
+ {
+  "topic": "vereine-und-freundschaft",
+  "slotIndex": 3,
+  "title": "Merles zweiter Schlüssel",
+  "arcType": "late-reveal",
+  "synopsis": "Ausgesperrt in der ersten Novemberkälte lernt Nora, dass im Norden die Stillsten die Ersten sind, die wirklich helfen.",
+  "text": "Der Schlüssel bleibt verschwunden, die Wohnungstür zu, und draußen fällt die erste Novemberkälte. Nora sitzt bei Wiebke in der warmen Backstube und telefoniert sich erfolglos durch ihre Kontakte.\n\nNora: Alle sind furchtbar nett am Telefon und alle haben furchtbar viel zu tun. Warm klingen sie, aber helfen kann keiner.\nWiebke: Das ist der Norden. Freundlich an der Oberfläche, aber praktisch wird es erst, wenn du gar nicht mehr fragst. Ruf die Leute an, die wenig reden.\nNora: Die wenig reden? Merle hat heute noch keinen ganzen Satz gesagt.\nWiebke: Eben. Ruf genau die an.\n\nZwanzig Minuten später steht Merle in der Tür, ohne Mantel, dafür mit einem zweiten Schlüssel in der Hand.\n\nMerle: Hier. Zweitschlüssel zu deiner Wohnung. Hab ich nach deinem Einzug nachmachen lassen.\nNora: Du hast einen Schlüssel zu meiner Wohnung? Einfach so, ohne ein Wort?\nMerle: Für genau so einen Tag. Sagen muss man das nicht, man macht es.\nNora: Und du kommst sofort, ohne Mantel, bei dieser Kälte?\nMerle: Ein Anruf, zehn Minuten Fußweg. Darüber redet man doch nicht lange.\nNora: Ich bin sprachlos. Die Kühlste von allen rettet mich als Erste.\nWiebke: Das ist die Kokosnuss, Kind. Außen hart, innen weich, und man kommt ewig nicht durch die Schale. Ist sie aber einmal auf, dann ganz.\nNora: Und ich habe die ganze Zeit die Lauten für die Warmen gehalten.\nWiebke: Anfängerfehler. Wärme misst man hier nicht in Worten, sondern in Taten.\nMerle: Falsch geraten. Zieh dir was über, es ist kalt. Dann trinken wir einen, wortlos, wie immer.",
+  "vocab": [
+   {
+    "word": "Novemberkälte",
+    "definition": "the raw cold of November; early-winter chill in the air",
+    "type": "noun"
+   },
+   {
+    "word": "Backstube",
+    "definition": "the back room of a bakery where the baking is done",
+    "type": "noun"
+   },
+   {
+    "word": "erfolglos",
+    "definition": "without success; failing to achieve the hoped-for result",
+    "type": "adverb"
+   },
+   {
+    "word": "Kontakt",
+    "surface": "Kontakte",
+    "definition": "a contact; a person you know and can call on",
+    "type": "noun"
+   },
+   {
+    "word": "furchtbar",
+    "definition": "terribly; here used loosely to mean very or extremely",
+    "type": "adverb"
+   },
+   {
+    "word": "an der Oberfläche",
+    "definition": "on the surface; only superficially and not deep down",
+    "type": "expression"
+   },
+   {
+    "word": "praktisch",
+    "definition": "practical; concerned with real action rather than mere words",
+    "type": "adjective"
+   },
+   {
+    "word": "nachmachen",
+    "definition": "to have a copy made of something, such as a key",
+    "type": "verb"
+   },
+   {
+    "word": "Zweitschlüssel",
+    "definition": "a second, spare key kept in case of emergencies",
+    "type": "noun"
+   },
+   {
+    "word": "sprachlos",
+    "definition": "speechless; too surprised or moved to say anything",
+    "type": "adjective"
+   },
+   {
+    "word": "retten",
+    "surface": "rettet",
+    "definition": "to rescue or save someone from a difficult situation",
+    "type": "verb"
+   },
+   {
+    "word": "kühl",
+    "surface": "Kühlste",
+    "definition": "cool; here of a person who seems emotionally distant and aloof",
+    "type": "adjective"
+   },
+   {
+    "word": "Kokosnuss",
+    "definition": "a coconut; here a metaphor for someone hard outside, soft inside",
+    "type": "noun"
+   },
+   {
+    "word": "außen hart, innen weich",
+    "definition": "tough on the outside but soft and warm-hearted within",
+    "type": "expression",
+    "surface": "Außen hart, innen weich"
+   },
+   {
+    "word": "Schale",
+    "definition": "a shell; the hard protective outer layer around something",
+    "type": "noun"
+   },
+   {
+    "word": "durch die Schale kommen",
+    "surface": "durch die Schale",
+    "definition": "to get past someone's tough shell to their real self",
+    "type": "expression"
+   },
+   {
+    "word": "geraten",
+    "definition": "to guess; to end up judging something a particular way",
+    "type": "verb"
+   },
+   {
+    "word": "wortlos",
+    "definition": "wordlessly; without saying a single word at all",
+    "type": "adverb"
+   },
+   {
+    "word": "telefonieren",
+    "definition": "to make phone calls; to talk with someone by phone",
+    "type": "verb",
+    "surface": "telefoniert"
+   },
+   {
+    "word": "Mantel",
+    "definition": "a coat worn over your clothes against the cold",
+    "type": "noun"
+   }
+  ]
+ }
+]
