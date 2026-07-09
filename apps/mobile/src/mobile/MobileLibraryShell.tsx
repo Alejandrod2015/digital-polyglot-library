@@ -1110,6 +1110,22 @@ function normalizePracticeWord(value: string | null | undefined): string {
   return typeof value === "string" ? value.trim().toLowerCase() : "";
 }
 
+// GUARDRAIL (ver memoria feedback_exercise_audio_narrator_voice): el audio de
+// una PALABRA suelta de práctica SIEMPRE se sintetiza con /api/practice/word-tts
+// (ElevenLabs, en la voz del narrador de la historia), NUNCA con
+// /api/practice/sentence-tts (Modal Piper/Kokoro, voz genérica por idioma).
+// word-tts exige un voiceId de ElevenLabs; un id de motor local ("piper/..." o
+// "kokoro/...") o vacío lo rechaza con 400, así que caemos a este fallback EL
+// (el mismo WORD_AUDIO_VOICE_ID que usa la web en src/app/practice/page.tsx).
+// Usar este helper en TODO botón de audio de palabra evita volver a apuntar al
+// endpoint equivocado.
+const PRACTICE_WORD_FALLBACK_VOICE_ID = "yHD4CsKkghm19ToGLJEC";
+function resolvePracticeWordVoiceId(rawVoiceId: string | null | undefined): string {
+  const v = (rawVoiceId ?? "").trim();
+  // Los ids de ElevenLabs no llevan "/"; los motores locales sí (engine/voice).
+  return v && !v.includes("/") ? v : PRACTICE_WORD_FALLBACK_VOICE_ID;
+}
+
 function isExpressionLikeFavorite(item: Pick<PracticeFavoriteItem, "word" | "wordType">): boolean {
   const word = typeof item.word === "string" ? item.word.trim() : "";
   const wordType = typeof item.wordType === "string" ? item.wordType.toLowerCase() : "";
@@ -8589,11 +8605,11 @@ export function MobileLibraryShell(args: {
       try {
         const resp = await apiFetch<{ url?: string }>({
           baseUrl: mobileConfig.apiBaseUrl,
-          path: "/api/practice/sentence-tts",
+          path: "/api/practice/word-tts",
           method: "POST",
           token: sessionToken ?? undefined,
           timeoutMs: 45000,
-          body: { sentence: word, language: lang, voiceId },
+          body: { word, language: lang, voiceId: resolvePracticeWordVoiceId(voiceId) },
         });
         if (!stillCurrent()) return;
         if (!resp?.url) {
@@ -8710,11 +8726,11 @@ export function MobileLibraryShell(args: {
       try {
         const resp = await apiFetch<{ url?: string }>({
           baseUrl: mobileConfig.apiBaseUrl,
-          path: "/api/practice/sentence-tts",
+          path: "/api/practice/word-tts",
           method: "POST",
           token: sessionToken ?? undefined,
           timeoutMs: 45000,
-          body: { sentence: word, language: lang, voiceId },
+          body: { word, language: lang, voiceId: resolvePracticeWordVoiceId(voiceId) },
         });
         if (!stillCurrent()) return;
         if (!resp?.url) {
@@ -12278,6 +12294,11 @@ export function MobileLibraryShell(args: {
                             ]}
                           >
                             <Text
+                              // Palabras largas (compuestos alemanes) se
+                              // encogen para caber en vez de desbordarse.
+                              adjustsFontSizeToFit
+                              numberOfLines={2}
+                              minimumFontScale={0.4}
                               style={[
                                 styles.practiceMeaningTargetWord,
                                 isCompactMeaningViewport ? styles.practiceMeaningTargetWordCompact : null,
@@ -12569,6 +12590,9 @@ export function MobileLibraryShell(args: {
                                 ]}
                               />
                               <Text
+                                adjustsFontSizeToFit
+                                numberOfLines={2}
+                                minimumFontScale={0.5}
                                 style={[
                                   styles.practiceMatchRowWordText,
                                   isWordMatched ? { color: pairColor } : null,
