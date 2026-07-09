@@ -9,6 +9,7 @@ const SLUGS: Record<string,Record<number,string>> = { "hanseatische-formen": {
   const p=new PrismaClient();
   const data=JSON.parse(fs.readFileSync("scripts/_hamburgT4_data.json","utf8"));
   for(const d of data){
+    if(d.topic==="hanseatische-formen" && d.slotIndex===2){ console.log("SKIP #11 (reescrito; fuente = _hamburgRW_data.json)"); continue; }
     const slot=await p.journeyStory.findFirst({where:{journeyId:J, topic:d.topic, slotIndex:d.slotIndex}});
     if(!slot){ console.log("NO slot",d.topic,d.slotIndex); continue; }
     const slug=SLUGS[d.topic][d.slotIndex];

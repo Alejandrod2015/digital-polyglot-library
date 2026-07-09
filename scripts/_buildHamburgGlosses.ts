@@ -22,7 +22,7 @@ const TOK=/\p{L}+(?:-\p{L}+)*/u;
   }
   const extra=Object.keys(mine).filter(k=>!toks.has(k));
   console.log("slugs:",slugs.length,"| tokens:",toks.size,"| glosses:",Object.keys(glosses).length);
-  console.log("UNCOVERED (typos/faltan):",uncovered.length, uncovered.slice(0,40));
+  console.log("UNCOVERED:", JSON.stringify(uncovered));
   console.log("EXTRA en mi archivo (no en tokens):",extra.length, extra.slice(0,40));
   if(uncovered.length===0){
     fs.writeFileSync("src/data/tapGlosses/german-hamburg.json", JSON.stringify({slugs,glosses},null,1));

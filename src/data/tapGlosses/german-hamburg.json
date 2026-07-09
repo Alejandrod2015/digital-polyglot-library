@@ -3039,6 +3039,10 @@
    "g": "appointments (der Termin)",
    "t": "noun"
   },
+  "einzigen": {
+   "g": "the only, single (einzig)",
+   "t": "adjective"
+  },
   "superlativ": {
    "g": "a superlative, extreme claim",
    "t": "noun"
@@ -5192,10 +5196,6 @@
   "explodiert": {
    "g": "explodes, erupts (explodieren)",
    "t": "verb"
-  },
-  "einzigen": {
-   "g": "the only, single (einzig)",
-   "t": "adjective"
   },
   "aufschrei": {
    "g": "an outcry, a roar",
