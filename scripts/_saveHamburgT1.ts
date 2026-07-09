@@ -14,7 +14,7 @@ const SLUGS: Record<string,Record<number,string>> = { "ankommen-im-norden": {
     const slot=await p.journeyStory.findFirst({where:{journeyId:J, topic:d.topic, slotIndex:d.slotIndex}});
     if(!slot){ console.log("NO slot",d.topic,d.slotIndex); continue; }
     const slug=SLUGS[d.topic][d.slotIndex];
-    await p.journeyStory.update({where:{id:slot.id}, data:{ title:d.title, slug, text:d.text, vocab:d.vocab, arcType:d.arcType }});
+    await p.journeyStory.update({where:{id:slot.id}, data:{ title:d.title, slug, text:d.text, vocab:d.vocab, arcType:d.arcType, synopsis:d.synopsis }});
     console.log(`saved ${d.topic}#${d.slotIndex} -> ${slug} (${d.vocab.length} vocab)`);
   }
   await p.$disconnect();
