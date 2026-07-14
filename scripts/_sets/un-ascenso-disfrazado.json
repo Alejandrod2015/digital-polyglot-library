@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "Che",
+  "sentence": "[[Che]], escuchame bien lo que te voy a contar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hey",
+   "options": [
+    "hey",
+    "goodbye",
+    "thanks",
+    "sorry"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Che, escuchame bien lo que te voy a contar.",
+    "targetWord": "Che",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "boludo",
+  "sentence": "No te preocupes, [[boludo]], todavía no sabés nada seguro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dude",
+   "options": [
+    "dude",
+    "boss",
+    "stranger",
+    "kid"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "No te preocupes, boludo, todavía no sabés nada seguro.",
+    "targetWord": "boludo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "no doy más",
+  "sentence": "Estoy agotada, en serio, ya [[no doy más]] con esto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I'm exhausted",
+   "options": [
+    "I'm exhausted",
+    "I'm thrilled",
+    "I'm ready",
+    "I just started"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Estoy agotada, en serio, ya no doy más con esto.",
+    "targetWord": "no doy más",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hagás la cabeza",
+  "sentence": "No te [[hagás la cabeza]] sola con cosas que ni pasaron.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "overthink it",
+   "options": [
+    "overthink it",
+    "tell the truth",
+    "calm down",
+    "give up"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "No te hagás la cabeza sola con cosas que ni pasaron.",
+    "targetWord": "hagás la cabeza",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "al pedo",
+  "sentence": "Te preocupaste todo el día completamente [[al pedo]], para nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for nothing",
+   "options": [
+    "for nothing",
+    "on purpose",
+    "for money",
+    "in secret"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Te preocupaste todo el día completamente al pedo, para nada.",
+    "targetWord": "al pedo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mina",
+  "sentence": "Tranquila, [[mina]], seguro no es lo que pensás.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "girl, woman",
+   "options": [
+    "girl, woman",
+    "boss",
+    "kid",
+    "guy"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Tranquila, mina, seguro no es lo que pensás.",
+    "targetWord": "mina",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pibe",
+  "sentence": "Y encima el [[pibe]] de la oficina ni me miró.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "young guy",
+   "options": [
+    "young guy",
+    "old man",
+    "woman",
+    "boss"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Y encima el pibe de la oficina ni me miró.",
+    "targetWord": "pibe",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Posta",
+  "sentence": "[[Posta]] que estoy frita, no invento nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "seriously, for real",
+   "options": [
+    "seriously, for real",
+    "maybe",
+    "never",
+    "luckily"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Posta que estoy frita, no invento nada.",
+    "targetWord": "Posta",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "flaco",
+  "sentence": "Tranquilo, [[flaco]], no te enojes conmigo por eso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pal, dude",
+   "options": [
+    "pal, dude",
+    "boss",
+    "lady",
+    "kid"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Tranquilo, flaco, no te enojes conmigo por eso.",
+    "targetWord": "flaco",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tiro la toalla",
+  "sentence": "Yo casi [[tiro la toalla]] como una tonta, imaginate.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "throw in the towel",
+   "options": [
+    "throw in the towel",
+    "celebrate early",
+    "tell the boss",
+    "leave the bar"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Yo casi tiro la toalla como una tonta, imaginate.",
+    "targetWord": "tiro la toalla",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ni a palos",
+  "sentence": "[[Ni a palos]] era lo que vos pensabas, para nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "no way",
+   "options": [
+    "no way",
+    "exactly",
+    "for sure",
+    "almost"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Ni a palos era lo que vos pensabas, para nada.",
+    "targetWord": "Ni a palos",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Bancá",
+  "sentence": "[[Bancá]] a tu amiga, no la dejes sola ahora.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "support, back up",
+   "options": [
+    "support, back up",
+    "abandon",
+    "ignore",
+    "judge"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Bancá a tu amiga, no la dejes sola ahora.",
+    "targetWord": "Bancá",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "quilombo",
+  "sentence": "Acá adentro todo es un _____ total.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "quilombo",
+   "options": [
+    "quilombo",
+    "silencio",
+    "chiste",
+    "regalo"
+   ],
+   "translation": "In here everything is a total _____.",
+   "optionTranslations": [
+    "a mess",
+    "silence",
+    "a joke",
+    "a gift"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Acá adentro todo es un quilombo total.",
+    "targetWord": "quilombo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "laburo",
+  "sentence": "Si me echan del _____, no puedo pagar nada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "laburo",
+   "options": [
+    "laburo",
+    "cine",
+    "barrio",
+    "banco"
+   ],
+   "translation": "If they fire me from the _____, I can't pay anything.",
+   "optionTranslations": [
+    "the job",
+    "the cinema",
+    "the neighborhood",
+    "the bank"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Si me echan del laburo, no puedo pagar nada.",
+    "targetWord": "laburo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "guita",
+  "sentence": "Sin _____ no puedo pagar el alquiler este mes.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guita",
+   "options": [
+    "guita",
+    "tiempo",
+    "suerte",
+    "trabajo"
+   ],
+   "translation": "Without _____ I can't pay rent this month.",
+   "optionTranslations": [
+    "money, cash",
+    "time",
+    "luck",
+    "work"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Sin guita no puedo pagar el alquiler este mes.",
+    "targetWord": "guita",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mufa",
+  "sentence": "Qué _____, siempre me pasan cosas malas a mí.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mufa",
+   "options": [
+    "mufa",
+    "alegría",
+    "risa",
+    "calma"
+   ],
+   "translation": "What _____, bad things always happen to me.",
+   "optionTranslations": [
+    "bad luck, a jinx",
+    "joy",
+    "laughter",
+    "calm"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Qué mufa, siempre me pasan cosas malas a mí.",
+    "targetWord": "mufa",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "bajón",
+  "sentence": "Quedarme sin plata sería un _____ total.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bajón",
+   "options": [
+    "bajón",
+    "chiste",
+    "premio",
+    "alivio"
+   ],
+   "translation": "Ending up broke would be a total _____.",
+   "optionTranslations": [
+    "downer, bummer",
+    "joke",
+    "prize",
+    "relief"
+   ],
+   "audioClip": {
+    "storySlug": "un-ascenso-disfrazado",
+    "storySource": "user",
+    "sentence": "Quedarme sin plata sería un bajón total.",
+    "targetWord": "bajón",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "hecha pelota,Bajá un cambio,hinchando las pelotas,mandaste una cagada",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "hecha pelota",
+     "answer": "emotionally wrecked",
+     "options": [
+      "emotionally wrecked",
+      "to calm down",
+      "to annoy, be a pain",
+      "to screw up badly"
+     ]
+    },
+    {
+     "word": "Bajá un cambio",
+     "answer": "to calm down",
+     "options": [
+      "emotionally wrecked",
+      "to calm down",
+      "to annoy, be a pain",
+      "to screw up badly"
+     ]
+    },
+    {
+     "word": "hinchando las pelotas",
+     "answer": "to annoy, be a pain",
+     "options": [
+      "emotionally wrecked",
+      "to calm down",
+      "to annoy, be a pain",
+      "to screw up badly"
+     ]
+    },
+    {
+     "word": "mandaste una cagada",
+     "answer": "to screw up badly",
+     "options": [
+      "emotionally wrecked",
+      "to calm down",
+      "to annoy, be a pain",
+      "to screw up badly"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

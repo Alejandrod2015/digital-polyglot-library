@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "cascado",
+  "sentence": "Julián llegó del camello bien [[cascado]] y se tiró al sofá.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "worn out",
+   "options": [
+    "worn out",
+    "excited",
+    "well rested",
+    "angry"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "Julián llegó del camello bien cascado y se tiró al sofá.",
+    "targetWord": "cascado",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Quiubo",
+  "sentence": "¿[[Quiubo]], parceros? Vengo muerto del trabajo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what's up",
+   "options": [
+    "what's up",
+    "goodbye",
+    "thanks",
+    "cheers"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "¿Quiubo, parceros? Vengo muerto del trabajo.",
+    "targetWord": "Quiubo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "polas",
+  "sentence": "Yo llevo el guaro y ustedes las [[polas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "beers",
+   "options": [
+    "beers",
+    "chairs",
+    "snacks",
+    "keys"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "Yo llevo el guaro y ustedes las polas.",
+    "targetWord": "polas",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rumba",
+  "sentence": "Armamos una [[rumba]] en mi casa con buena música.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a party",
+   "options": [
+    "a party",
+    "a nap",
+    "a meeting",
+    "a diet"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "Armamos una rumba en mi casa con buena música.",
+    "targetWord": "rumba",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lucas",
+  "sentence": "Con tal de no poner las [[lucas]], yo voy de una.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "money",
+   "options": [
+    "money",
+    "excuses",
+    "rules",
+    "chairs"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "Con tal de no poner las lucas, yo voy de una.",
+    "targetWord": "lucas",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "boleta",
+  "sentence": "No sea [[boleta]], que todos ponemos algo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tacky, embarrassing",
+   "options": [
+    "tacky, embarrassing",
+    "generous",
+    "quiet",
+    "early"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "No sea boleta, que todos ponemos algo.",
+    "targetWord": "boleta",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sacó la piedra",
+  "sentence": "Ese chisme le [[sacó la piedra]] a medio edificio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "made them angry",
+   "options": [
+    "made them angry",
+    "cheered them up",
+    "confused them",
+    "bored them"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "Ese chisme le sacó la piedra a medio edificio.",
+    "targetWord": "sacó la piedra",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dar lidia",
+  "sentence": "El que fue quiso [[dar lidia]] regando todo eso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cause trouble",
+   "options": [
+    "cause trouble",
+    "stay calm",
+    "help out",
+    "keep quiet"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "El que fue quiso dar lidia regando todo eso.",
+    "targetWord": "dar lidia",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a la lata",
+  "sentence": "Se me escapó en una rumba, hablando [[a la lata]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nonstop",
+   "options": [
+    "nonstop",
+    "in secret",
+    "very slowly",
+    "by mistake"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "Se me escapó en una rumba, hablando a la lata.",
+    "targetWord": "a la lata",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "embarrada",
+  "sentence": "Ay, Julián, qué [[embarrada]] la que hiciste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a screwup",
+   "options": [
+    "a screwup",
+    "a good deed",
+    "a joke",
+    "a bargain"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "Ay, Julián, qué embarrada la que hiciste.",
+    "targetWord": "embarrada",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Estás frito",
+  "sentence": "[[Estás frito]], parcero; ese chisme costó un billete en broncas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "you're doomed",
+   "options": [
+    "you're doomed",
+    "you're safe",
+    "you're rich",
+    "you're right"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "Estás frito, parcero; ese chisme costó un billete en broncas.",
+    "targetWord": "Estás frito",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ñero",
+  "sentence": "Ahora pareces el [[ñero]] del cuento, todos hablan de ti.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a lowlife",
+   "options": [
+    "a lowlife",
+    "the hero",
+    "the boss",
+    "the winner"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "Ahora pareces el ñero del cuento, todos hablan de ti.",
+    "targetWord": "ñero",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "camello",
+  "sentence": "Julián llegó agotado de su _____ en la noche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "camello",
+   "options": [
+    "camello",
+    "cama",
+    "comida",
+    "carro"
+   ],
+   "translation": "Julián arrived exhausted from his _____ at night.",
+   "optionTranslations": [
+    "job",
+    "bed",
+    "food",
+    "car"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "Julián llegó agotado de su camello en la noche.",
+    "targetWord": "camello",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "guaro",
+  "sentence": "Yo llevo el _____ para la fiesta del finde.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guaro",
+   "options": [
+    "guaro",
+    "hielo",
+    "pan",
+    "radio"
+   ],
+   "translation": "I'll bring the _____ for the weekend party.",
+   "optionTranslations": [
+    "liquor",
+    "ice",
+    "bread",
+    "radio"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "Yo llevo el guaro para la fiesta del finde.",
+    "targetWord": "guaro",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tinto",
+  "sentence": "Mientras servían el _____, salió el tema del chisme.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tinto",
+   "options": [
+    "tinto",
+    "agua",
+    "vino",
+    "jugo"
+   ],
+   "translation": "While they served the _____, the gossip topic came up.",
+   "optionTranslations": [
+    "black coffee",
+    "water",
+    "wine",
+    "juice"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "Mientras servían el tinto, salió el tema del chisme.",
+    "targetWord": "tinto",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "billete",
+  "sentence": "Ese chisme costó un _____ en peleas y broncas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "billete",
+   "options": [
+    "billete",
+    "minuto",
+    "favor",
+    "susto"
+   ],
+   "translation": "That gossip cost a _____ in fights and quarrels.",
+   "optionTranslations": [
+    "pile of money",
+    "minute",
+    "favor",
+    "scare"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "Ese chisme costó un billete en peleas y broncas.",
+    "targetWord": "billete",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chino",
+  "sentence": "Uy, tan delicado el _____, cuéntenos algo bueno.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chino",
+   "options": [
+    "chino",
+    "perro",
+    "carro",
+    "radio"
+   ],
+   "translation": "Wow, so delicate the _____, tell us something good.",
+   "optionTranslations": [
+    "guy",
+    "dog",
+    "car",
+    "radio"
+   ],
+   "audioClip": {
+    "storySlug": "se-le-fue-la-lengua",
+    "storySource": "user",
+    "sentence": "Uy, tan delicado el chino, cuéntenos algo bueno.",
+    "targetWord": "chino",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "mamen gallo,no como cuento,hago el loco,echó el agua",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "mamen gallo",
+     "answer": "tease / mess with",
+     "options": [
+      "tease / mess with",
+      "I don't buy it",
+      "I play dumb",
+      "snitched"
+     ]
+    },
+    {
+     "word": "no como cuento",
+     "answer": "I don't buy it",
+     "options": [
+      "tease / mess with",
+      "I don't buy it",
+      "I play dumb",
+      "snitched"
+     ]
+    },
+    {
+     "word": "hago el loco",
+     "answer": "I play dumb",
+     "options": [
+      "tease / mess with",
+      "I don't buy it",
+      "I play dumb",
+      "snitched"
+     ]
+    },
+    {
+     "word": "echó el agua",
+     "answer": "snitched",
+     "options": [
+      "tease / mess with",
+      "I don't buy it",
+      "I play dumb",
+      "snitched"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "Bien o qué",
+  "sentence": "Marina entró gritando: ¡[[Bien o qué]], mi gente, tengo chisme fresco!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what's up",
+   "options": [
+    "what's up",
+    "goodbye",
+    "thank you",
+    "good night"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "Marina entró gritando: ¡Bien o qué, mi gente, tengo chisme fresco!",
+    "targetWord": "Bien o qué",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "para bolas",
+  "sentence": "Julián casi no le [[para bolas]] a Marina cuando llegó.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pays attention",
+   "options": [
+    "pays attention",
+    "says goodbye",
+    "lends money",
+    "cooks lunch"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "Julián casi no le para bolas a Marina cuando llegó.",
+    "targetWord": "para bolas",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "parcero",
+  "sentence": "Oiga, [[parcero]], venga le cuento algo bien jugoso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "buddy",
+   "options": [
+    "buddy",
+    "stranger",
+    "boss",
+    "cousin"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "Oiga, parcero, venga le cuento algo bien jugoso.",
+    "targetWord": "parcero",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chismoso",
+  "sentence": "No sea tan [[chismoso]], Julián, deje de regar todo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gossipy",
+   "options": [
+    "gossipy",
+    "generous",
+    "lazy",
+    "honest"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "No sea tan chismoso, Julián, deje de regar todo.",
+    "targetWord": "chismoso",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de una",
+  "sentence": "Cuente [[de una]], que me tiene muy intrigada con eso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right away",
+   "options": [
+    "right away",
+    "never",
+    "maybe later",
+    "by mistake"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "Cuente de una, que me tiene muy intrigada con eso.",
+    "targetWord": "de una",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Qué más",
+  "sentence": "¿[[Qué más]], pues? Cuénteme todo con detalles.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what's up",
+   "options": [
+    "what's up",
+    "how much",
+    "so what",
+    "why not"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "¿Qué más, pues? Cuénteme todo con detalles.",
+    "targetWord": "Qué más",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chimba",
+  "sentence": "¡Qué [[chimba]] de chisme, eso está buenísimo!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "awesome",
+   "options": [
+    "awesome",
+    "boring",
+    "sad",
+    "fake"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "¡Qué chimba de chisme, eso está buenísimo!",
+    "targetWord": "chimba",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jartera",
+  "sentence": "Igual eso suena a pura [[jartera]] de novela.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a drag",
+   "options": [
+    "a drag",
+    "a thrill",
+    "a lie",
+    "a party"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "Igual eso suena a pura jartera de novela.",
+    "targetWord": "jartera",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en la olla",
+  "sentence": "El man quedó [[en la olla]], sin novia y sin plata.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "broke, in trouble",
+   "options": [
+    "broke, in trouble",
+    "in love",
+    "well off",
+    "in charge"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "El man quedó en la olla, sin novia y sin plata.",
+    "targetWord": "en la olla",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Paila",
+  "sentence": "[[Paila]], pues, eso le pasa por bocón y cansón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "too bad",
+   "options": [
+    "too bad",
+    "great news",
+    "no rush",
+    "well done"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "Paila, pues, eso le pasa por bocón y cansón.",
+    "targetWord": "Paila",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "berraco",
+  "sentence": "Ese [[berraco]] trabaja durísimo, es bien echado pa'lante.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tough, gutsy",
+   "options": [
+    "tough, gutsy",
+    "a coward",
+    "a lazy man",
+    "a rich kid"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "Ese berraco trabaja durísimo, es bien echado pa'lante.",
+    "targetWord": "berraco",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "metimos la pata",
+  "sentence": "Sí [[metimos la pata]] contándolo por ahí sin saber.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "messed up",
+   "options": [
+    "messed up",
+    "fixed it",
+    "stayed quiet",
+    "paid up"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "Sí metimos la pata contándolo por ahí sin saber.",
+    "targetWord": "metimos la pata",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "man",
+  "sentence": "El _____ de la esquina se metió en tremendo lío.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "man",
+   "options": [
+    "man",
+    "carro",
+    "perro",
+    "árbol"
+   ],
+   "translation": "The _____ on the corner got into a big mess.",
+   "optionTranslations": [
+    "guy",
+    "car",
+    "dog",
+    "tree"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "El man de la esquina se metió en tremendo lío.",
+    "targetWord": "man",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "vieja",
+  "sentence": "El man salió con otra _____ a escondidas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vieja",
+   "options": [
+    "vieja",
+    "moto",
+    "plata",
+    "casa"
+   ],
+   "translation": "The guy went out with another _____ secretly.",
+   "optionTranslations": [
+    "chick",
+    "motorbike",
+    "money",
+    "house"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "El man salió con otra vieja a escondidas.",
+    "targetWord": "vieja",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "cansón",
+  "sentence": "Ese vecino es demasiado _____, no lo aguanto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cansón",
+   "options": [
+    "cansón",
+    "alto",
+    "nuevo",
+    "rápido"
+   ],
+   "translation": "That neighbor is too _____, I can't stand him.",
+   "optionTranslations": [
+    "annoying",
+    "tall",
+    "new",
+    "fast"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "Ese vecino es demasiado cansón, no lo aguanto.",
+    "targetWord": "cansón",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sapo",
+  "sentence": "No sea _____ y no ande contando lo ajeno.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sapo",
+   "options": [
+    "sapo",
+    "rico",
+    "tímido",
+    "lento"
+   ],
+   "translation": "Don't be a _____ and don't go telling others' business.",
+   "optionTranslations": [
+    "snitch",
+    "rich",
+    "shy",
+    "slow"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "No sea sapo y no ande contando lo ajeno.",
+    "targetWord": "sapo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "bacano",
+  "sentence": "Olvidemos el chisme, ¿le parece _____?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bacano",
+   "options": [
+    "bacano",
+    "caro",
+    "feo",
+    "triste"
+   ],
+   "translation": "Let's forget the gossip, sounds _____?",
+   "optionTranslations": [
+    "cool",
+    "expensive",
+    "ugly",
+    "sad"
+   ],
+   "audioClip": {
+    "storySlug": "el-chisme-de-la-esquina",
+    "storySource": "user",
+    "sentence": "Olvidemos el chisme, ¿le parece bacano?",
+    "targetWord": "bacano",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "dar papaya,ni de fundas,eché la carreta,hagamos vaca",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "dar papaya",
+     "answer": "leave yourself exposed",
+     "options": [
+      "leave yourself exposed",
+      "no way",
+      "chatted away",
+      "let's pool money"
+     ]
+    },
+    {
+     "word": "ni de fundas",
+     "answer": "no way",
+     "options": [
+      "leave yourself exposed",
+      "no way",
+      "chatted away",
+      "let's pool money"
+     ]
+    },
+    {
+     "word": "eché la carreta",
+     "answer": "chatted away",
+     "options": [
+      "leave yourself exposed",
+      "no way",
+      "chatted away",
+      "let's pool money"
+     ]
+    },
+    {
+     "word": "hagamos vaca",
+     "answer": "let's pool money",
+     "options": [
+      "leave yourself exposed",
+      "no way",
+      "chatted away",
+      "let's pool money"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

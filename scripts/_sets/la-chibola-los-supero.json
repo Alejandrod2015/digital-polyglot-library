@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "yunta",
+  "sentence": "Pilar ya habla la jerga mejor que su [[yunta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "best friend",
+   "options": [
+    "best friend",
+    "teacher",
+    "enemy",
+    "boss"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Pilar ya habla la jerga mejor que su yunta.",
+    "targetWord": "yunta",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chato",
+  "sentence": "Miren al [[chato]]... digo, oigan, escuchen esto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "short guy, buddy",
+   "options": [
+    "short guy, buddy",
+    "tall man",
+    "old man",
+    "stranger"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Miren al chato... digo, oigan, escuchen esto.",
+    "targetWord": "chato",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "figureti",
+  "sentence": "Este Diego es puro [[figureti]], habla por hablar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a show off",
+   "options": [
+    "a show off",
+    "a genius",
+    "a coward",
+    "a saint"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Este Diego es puro figureti, habla por hablar.",
+    "targetWord": "figureti",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "flaca",
+  "sentence": "Creo que la [[flaca]] anda templada por alguien.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the girl, chick",
+   "options": [
+    "the girl, chick",
+    "the old lady",
+    "the boss",
+    "the kid"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Creo que la flaca anda templada por alguien.",
+    "targetWord": "flaca",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pendeja",
+  "sentence": "Diego, te ganó de [[pendeja]], la chica es bien viva.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sly, cunning",
+   "options": [
+    "sly, cunning",
+    "honest",
+    "shy",
+    "lazy"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Diego, te ganó de pendeja, la chica es bien viva.",
+    "targetWord": "pendeja",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pisado",
+  "sentence": "El único [[pisado]] aquí eres tú, no yo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "whipped guy",
+   "options": [
+    "whipped guy",
+    "brave guy",
+    "rich guy",
+    "new guy"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "El único pisado aquí eres tú, no yo.",
+    "targetWord": "pisado",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cachuelos",
+  "sentence": "Tengo mis [[cachuelos]] por ahí, no soy tan misio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "side gigs, odd jobs",
+   "options": [
+    "side gigs, odd jobs",
+    "big houses",
+    "old friends",
+    "new cars"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Tengo mis cachuelos por ahí, no soy tan misio.",
+    "targetWord": "cachuelos",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "templada",
+  "sentence": "Creo que la flaca anda [[templada]] por alguien del grupo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "smitten, in love",
+   "options": [
+    "smitten, in love",
+    "angry",
+    "bored",
+    "sick"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Creo que la flaca anda templada por alguien del grupo.",
+    "targetWord": "templada",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cagaban de risa",
+  "sentence": "Todos se [[cagaban de risa]] mientras Diego se defendía.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cracking up laughing",
+   "options": [
+    "cracking up laughing",
+    "getting bored",
+    "falling asleep",
+    "paying up"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Todos se cagaban de risa mientras Diego se defendía.",
+    "targetWord": "cagaban de risa",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mándenme al diablo",
+  "sentence": "Ya, [[mándenme al diablo]], pero yo les enseñé a hablar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tell me to get lost",
+   "options": [
+    "tell me to get lost",
+    "buy me lunch",
+    "give me a hand",
+    "hear me out"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Ya, mándenme al diablo, pero yo les enseñé a hablar.",
+    "targetWord": "mándenme al diablo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hiciste la finta",
+  "sentence": "El primer día me [[hiciste la finta]] con lo de jerma.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "faked me out",
+   "options": [
+    "faked me out",
+    "helped me",
+    "paid me",
+    "ignored me"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "El primer día me hiciste la finta con lo de jerma.",
+    "targetWord": "hiciste la finta",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tienes ni un sol",
+  "sentence": "Andas misio, no [[tienes ni un sol]] para el pasaje.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not a single coin",
+   "options": [
+    "not a single coin",
+    "plenty saved",
+    "a fortune",
+    "lots of cash"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Andas misio, no tienes ni un sol para el pasaje.",
+    "targetWord": "tienes ni un sol",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "soqueta",
+  "sentence": "Ya no soy la _____ del grupo, aprendí rápido.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "soqueta",
+   "options": [
+    "soqueta",
+    "jefa",
+    "reina",
+    "dueña"
+   ],
+   "translation": "I'm not the group's _____ anymore, I learned fast.",
+   "optionTranslations": [
+    "dummy, fool",
+    "boss",
+    "queen",
+    "owner"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Ya no soy la soqueta del grupo, aprendí rápido.",
+    "targetWord": "soqueta",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "conchudo",
+  "sentence": "Diego, eres tan _____ que nunca invitas nada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "conchudo",
+   "options": [
+    "conchudo",
+    "tímido",
+    "serio",
+    "callado"
+   ],
+   "translation": "Diego, you're so _____ you never treat anyone.",
+   "optionTranslations": [
+    "shameless",
+    "shy",
+    "serious",
+    "quiet"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Diego, eres tan conchudo que nunca invitas nada.",
+    "targetWord": "conchudo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "calato",
+  "sentence": "Diego anda _____ de propinas, sin nada de plata.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "calato",
+   "options": [
+    "calato",
+    "lleno",
+    "cansado",
+    "feliz"
+   ],
+   "translation": "Diego is _____ of tips, with no money.",
+   "optionTranslations": [
+    "flat broke",
+    "full",
+    "tired",
+    "happy"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Diego anda calato de propinas, sin nada de plata.",
+    "targetWord": "calato",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "fumón",
+  "sentence": "Diego es medio _____, siempre anda como ido.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fumón",
+   "options": [
+    "fumón",
+    "santo",
+    "genio",
+    "tímido"
+   ],
+   "translation": "Diego is kind of a _____, always spaced out.",
+   "optionTranslations": [
+    "stoner, pothead",
+    "saint",
+    "genius",
+    "shy guy"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Diego es medio fumón, siempre anda como ido.",
+    "targetWord": "fumón",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "lorna",
+  "sentence": "Eres medio _____ para el billete, no ahorras nada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lorna",
+   "options": [
+    "lorna",
+    "vivo",
+    "rápido",
+    "listo"
+   ],
+   "translation": "You're kind of _____ with money, you save nothing.",
+   "optionTranslations": [
+    "clueless, slow",
+    "sharp",
+    "fast",
+    "clever"
+   ],
+   "audioClip": {
+    "storySlug": "la-chibola-los-supero",
+    "storySource": "user",
+    "sentence": "Eres medio lorna para el billete, no ahorras nada.",
+    "targetWord": "lorna",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "A la firme,habla por hablar,saca cara,Quedaste mal parado",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "A la firme",
+     "answer": "for real",
+     "options": [
+      "for real",
+      "to talk pointlessly",
+      "to stand up for yourself",
+      "to end up looking bad"
+     ]
+    },
+    {
+     "word": "habla por hablar",
+     "answer": "to talk pointlessly",
+     "options": [
+      "for real",
+      "to talk pointlessly",
+      "to stand up for yourself",
+      "to end up looking bad"
+     ]
+    },
+    {
+     "word": "saca cara",
+     "answer": "to stand up for yourself",
+     "options": [
+      "for real",
+      "to talk pointlessly",
+      "to stand up for yourself",
+      "to end up looking bad"
+     ]
+    },
+    {
+     "word": "Quedaste mal parado",
+     "answer": "to end up looking bad",
+     "options": [
+      "for real",
+      "to talk pointlessly",
+      "to stand up for yourself",
+      "to end up looking bad"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

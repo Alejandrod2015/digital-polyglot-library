@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "clavada",
+  "sentence": "Andaba muy [[clavada]] en mi terquedad.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stuck on, obsessed",
+   "options": [
+    "stuck on, obsessed",
+    "proud of",
+    "tired of",
+    "scared of"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "Andaba muy clavada en mi terquedad.",
+    "targetWord": "clavada",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hacen clic",
+  "sentence": "Ahora esos dichos me [[hacen clic]] por fin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "click, make sense",
+   "options": [
+    "click, make sense",
+    "bore me",
+    "scare me",
+    "annoy me"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "Ahora esos dichos me hacen clic por fin.",
+    "targetWord": "hacen clic",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "No cabe duda",
+  "sentence": "[[No cabe duda]], siempre tuve la razón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "there's no doubt",
+   "options": [
+    "there's no doubt",
+    "it's a shame",
+    "who knows",
+    "not yet"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "No cabe duda, siempre tuve la razón.",
+    "targetWord": "No cabe duda",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a fin de cuentas",
+  "sentence": "Pues [[a fin de cuentas]], lo que importa es la amistad.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in the end",
+   "options": [
+    "in the end",
+    "at first",
+    "for now",
+    "by chance"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "Pues a fin de cuentas, lo que importa es la amistad.",
+    "targetWord": "a fin de cuentas",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "buena vibra",
+  "sentence": "Había [[buena vibra]] en el grupo desde el principio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "good vibes",
+   "options": [
+    "good vibes",
+    "bad luck",
+    "a big fight",
+    "cold weather"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "Había buena vibra en el grupo desde el principio.",
+    "targetWord": "buena vibra",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "confianzudo",
+  "sentence": "Rodrigo se puso [[confianzudo]] y me abrazó fuerte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "too familiar, forward",
+   "options": [
+    "too familiar, forward",
+    "very shy",
+    "really angry",
+    "quite formal"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "Rodrigo se puso confianzudo y me abrazó fuerte.",
+    "targetWord": "confianzudo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "relajiento",
+  "sentence": "Es que soy bien [[relajiento]], siempre bromeando.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "always joking around",
+   "options": [
+    "always joking around",
+    "very serious",
+    "super lazy",
+    "kind of shy"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "Es que soy bien relajiento, siempre bromeando.",
+    "targetWord": "relajiento",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "valió la pena",
+  "sentence": "Sí [[valió la pena]] aguantarte todo este tiempo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "was worth it",
+   "options": [
+    "was worth it",
+    "was a waste",
+    "was too easy",
+    "was so boring"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "Sí valió la pena aguantarte todo este tiempo.",
+    "targetWord": "valió la pena",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "De la nada",
+  "sentence": "[[De la nada]] me tienen aquí bien feliz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "out of nowhere",
+   "options": [
+    "out of nowhere",
+    "on purpose",
+    "as always",
+    "little by little"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "De la nada me tienen aquí bien feliz.",
+    "targetWord": "De la nada",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pasar de pelos",
+  "sentence": "La vamos a [[pasar de pelos]] el próximo finde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "have a great time",
+   "options": [
+    "have a great time",
+    "work all day",
+    "save some cash",
+    "stay at home"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "La vamos a pasar de pelos el próximo finde.",
+    "targetWord": "pasar de pelos",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tienes madera",
+  "sentence": "Sí [[tienes madera]] de anfitriona, aunque cocines mal.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "have a natural talent",
+   "options": [
+    "have a natural talent",
+    "have no time",
+    "are afraid",
+    "hate the idea"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "Sí tienes madera de anfitriona, aunque cocines mal.",
+    "targetWord": "tienes madera",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "des el gatazo",
+  "sentence": "Aunque no [[des el gatazo]] cocinando, eres buena anfitriona.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quite cut it",
+   "options": [
+    "quite cut it",
+    "earn much money",
+    "wake up early",
+    "tell the truth"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "Aunque no des el gatazo cocinando, eres buena anfitriona.",
+    "targetWord": "des el gatazo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chorcha",
+  "sentence": "La _____ se armó tranquila en casa de Nayeli.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chorcha",
+   "options": [
+    "chorcha",
+    "lluvia",
+    "pelea",
+    "clase"
+   ],
+   "translation": "The _____ came together nicely at Nayeli's place.",
+   "optionTranslations": [
+    "fun hangout",
+    "rain",
+    "fight",
+    "class"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "La chorcha se armó tranquila en casa de Nayeli.",
+    "targetWord": "chorcha",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "apapacho",
+  "sentence": "Ese _____ de amigos no se paga con nada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "apapacho",
+   "options": [
+    "apapacho",
+    "dinero",
+    "favor",
+    "consejo"
+   ],
+   "translation": "That _____ from friends is priceless.",
+   "optionTranslations": [
+    "warm hug",
+    "money",
+    "favor",
+    "advice"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "Ese apapacho de amigos no se paga con nada.",
+    "targetWord": "apapacho",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "camarada",
+  "sentence": "Para eso está la _____, para apoyarte.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "camarada",
+   "options": [
+    "camarada",
+    "comida",
+    "fiesta",
+    "escuela"
+   ],
+   "translation": "That's what a _____ is for, to support you.",
+   "optionTranslations": [
+    "buddy, close friend",
+    "food",
+    "party",
+    "school"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "Para eso está la camarada, para apoyarte.",
+    "targetWord": "camarada",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chulada",
+  "sentence": "Ay, qué _____, ya te pusiste sentimental.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chulada",
+   "options": [
+    "chulada",
+    "lástima",
+    "flojera",
+    "susto"
+   ],
+   "translation": "Aw, how _____, now you're getting sentimental.",
+   "optionTranslations": [
+    "lovely thing",
+    "pity",
+    "laziness",
+    "fright"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "Ay, qué chulada, ya te pusiste sentimental.",
+    "targetWord": "chulada",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chingón",
+  "sentence": "El cariño entre amigos es bien _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chingón",
+   "options": [
+    "chingón",
+    "caro",
+    "raro",
+    "triste"
+   ],
+   "translation": "The love between friends is really _____.",
+   "optionTranslations": [
+    "awesome, badass",
+    "expensive",
+    "weird",
+    "sad"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-tiene-un-amigo",
+    "storySource": "user",
+    "sentence": "El cariño entre amigos es bien chingón.",
+    "targetWord": "chingón",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "El que tiene un amigo tiene un tesoro,Cada oveja con su pareja,echar la casa por la ventana,poner las cartas sobre la mesa",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "El que tiene un amigo tiene un tesoro",
+     "answer": "a good friend is a treasure",
+     "options": [
+      "a good friend is a treasure",
+      "birds of a feather",
+      "to go all out",
+      "to lay it all out"
+     ]
+    },
+    {
+     "word": "Cada oveja con su pareja",
+     "answer": "birds of a feather",
+     "options": [
+      "a good friend is a treasure",
+      "birds of a feather",
+      "to go all out",
+      "to lay it all out"
+     ]
+    },
+    {
+     "word": "echar la casa por la ventana",
+     "answer": "to go all out",
+     "options": [
+      "a good friend is a treasure",
+      "birds of a feather",
+      "to go all out",
+      "to lay it all out"
+     ]
+    },
+    {
+     "word": "poner las cartas sobre la mesa",
+     "answer": "to lay it all out",
+     "options": [
+      "a good friend is a treasure",
+      "birds of a feather",
+      "to go all out",
+      "to lay it all out"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

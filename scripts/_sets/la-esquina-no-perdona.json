@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "Erda",
+  "sentence": "¡[[Erda]], mani, mira ese corte tan fufurufo!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "whoa, damn",
+   "options": [
+    "whoa, damn",
+    "goodbye",
+    "thank you",
+    "let's go"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "¡Erda, mani, mira ese corte tan fufurufo!",
+    "targetWord": "Erda",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mani",
+  "sentence": "Fresco, [[mani]], que aquí todos comemos vaina igual.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "buddy, bro",
+   "options": [
+    "buddy, bro",
+    "boss",
+    "stranger",
+    "cousin"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "Fresco, mani, que aquí todos comemos vaina igual.",
+    "targetWord": "mani",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ajá",
+  "sentence": "[[Ajá]], ¿y entonces qué vas a hacer el sábado?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "so, okay",
+   "options": [
+    "so, okay",
+    "never",
+    "goodbye",
+    "maybe"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "Ajá, ¿y entonces qué vas a hacer el sábado?",
+    "targetWord": "Ajá",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "No joda",
+  "sentence": "[[No joda]], ese pelao sí se cree mucho.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "damn, come on",
+   "options": [
+    "damn, come on",
+    "of course",
+    "no problem",
+    "thank you"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "No joda, ese pelao sí se cree mucho.",
+    "targetWord": "No joda",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pelao",
+  "sentence": "Ese [[pelao]] sí sabe vestirse bien, vale.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kid, dude",
+   "options": [
+    "kid, dude",
+    "old man",
+    "teacher",
+    "boss"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "Ese pelao sí sabe vestirse bien, vale.",
+    "targetWord": "pelao",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vale",
+  "sentence": "No te creas tanto, [[vale]], que todos vacilamos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dude, mate",
+   "options": [
+    "dude, mate",
+    "money",
+    "okay then",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "No te creas tanto, vale, que todos vacilamos.",
+    "targetWord": "vale",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ombe",
+  "sentence": "[[Ombe]], no te pongas bravo por una simple broma.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "man, come on",
+   "options": [
+    "man, come on",
+    "goodbye",
+    "please",
+    "quietly"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "Ombe, no te pongas bravo por una simple broma.",
+    "targetWord": "Ombe",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bololó",
+  "sentence": "La esquina se volvió un [[bololó]] de pura risa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a commotion, uproar",
+   "options": [
+    "a commotion, uproar",
+    "a silence",
+    "a line",
+    "a nap"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "La esquina se volvió un bololó de pura risa.",
+    "targetWord": "bololó",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Qué vaina",
+  "sentence": "[[Qué vaina]] con esa fiesta, cuéntanos bien el plan.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what a thing",
+   "options": [
+    "what a thing",
+    "how nice",
+    "no idea",
+    "who knows"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "Qué vaina con esa fiesta, cuéntanos bien el plan.",
+    "targetWord": "Qué vaina",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "echo el cuento",
+  "sentence": "Déjame te [[echo el cuento]] completo de la fiesta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tell the story",
+   "options": [
+    "tell the story",
+    "pay the bill",
+    "end the party",
+    "sing the song"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "Déjame te echo el cuento completo de la fiesta.",
+    "targetWord": "echo el cuento",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "De pelota",
+  "sentence": "[[De pelota]], entonces nos vemos allá el sábado temprano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "perfect, great",
+   "options": [
+    "perfect, great",
+    "too bad",
+    "not yet",
+    "no way"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "De pelota, entonces nos vemos allá el sábado temprano.",
+    "targetWord": "De pelota",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ñapa",
+  "sentence": "Y de [[ñapa]] nos invitas los primeros roncitos, presumido.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a freebie extra",
+   "options": [
+    "a freebie extra",
+    "on credit",
+    "by mistake",
+    "for later"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "Y de ñapa nos invitas los primeros roncitos, presumido.",
+    "targetWord": "ñapa",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "fufurufo",
+  "sentence": "¿Y ese corte tan _____? Te ganaste la lotería.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fufurufo",
+   "options": [
+    "fufurufo",
+    "corroncho",
+    "viejo",
+    "barato"
+   ],
+   "translation": "And that _____ haircut? You won the lottery.",
+   "optionTranslations": [
+    "fancy, posh",
+    "tacky",
+    "old",
+    "cheap"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "¿Y ese corte tan fufurufo? Te ganaste la lotería.",
+    "targetWord": "fufurufo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "calidoso",
+  "sentence": "Uno tiene que verse _____, no como ustedes.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "calidoso",
+   "options": [
+    "calidoso",
+    "feo",
+    "cansado",
+    "aburrido"
+   ],
+   "translation": "One has to look _____, not like you all.",
+   "optionTranslations": [
+    "cool, top quality",
+    "ugly",
+    "tired",
+    "boring"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "Uno tiene que verse calidoso, no como ustedes.",
+    "targetWord": "calidoso",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "corronchos",
+  "sentence": "Ustedes andan bien _____, no saben vestirse.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "corronchos",
+   "options": [
+    "corronchos",
+    "elegantes",
+    "callados",
+    "ricos"
+   ],
+   "translation": "You all are pretty _____, you can't dress.",
+   "optionTranslations": [
+    "tacky, unrefined",
+    "elegant",
+    "quiet",
+    "rich"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "Ustedes andan bien corronchos, no saben vestirse.",
+    "targetWord": "corronchos",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "Fresco",
+  "sentence": "_____, mani, que aquí nadie se pone bravo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Fresco",
+   "options": [
+    "Fresco",
+    "Corre",
+    "Cállate",
+    "Apúrate"
+   ],
+   "translation": "_____, bro, nobody gets angry here.",
+   "optionTranslations": [
+    "chill, relax",
+    "Run",
+    "Shut up",
+    "Hurry"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "Fresco, mani, que aquí nadie se pone bravo.",
+    "targetWord": "Fresco",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "cipote",
+  "sentence": "Ese corte te costó un _____ de plata.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cipote",
+   "options": [
+    "cipote",
+    "poquito",
+    "peso",
+    "nada"
+   ],
+   "translation": "That haircut cost you a _____ of money.",
+   "optionTranslations": [
+    "a huge amount",
+    "a little bit",
+    "a peso",
+    "nothing"
+   ],
+   "audioClip": {
+    "storySlug": "la-esquina-no-perdona",
+    "storySource": "user",
+    "sentence": "Ese corte te costó un cipote de plata.",
+    "targetWord": "cipote",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Qué hubo pue',estar prendido,cogemos cancha,A lo bien",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Qué hubo pue'",
+     "answer": "what's up",
+     "options": [
+      "what's up",
+      "in full swing",
+      "grab a good spot",
+      "for real"
+     ]
+    },
+    {
+     "word": "estar prendido",
+     "answer": "in full swing",
+     "options": [
+      "what's up",
+      "in full swing",
+      "grab a good spot",
+      "for real"
+     ]
+    },
+    {
+     "word": "cogemos cancha",
+     "answer": "grab a good spot",
+     "options": [
+      "what's up",
+      "in full swing",
+      "grab a good spot",
+      "for real"
+     ]
+    },
+    {
+     "word": "A lo bien",
+     "answer": "for real",
+     "options": [
+      "what's up",
+      "in full swing",
+      "grab a good spot",
+      "for real"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

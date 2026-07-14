@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "No manches",
+  "sentence": "[[No manches]], cayó redondita en el mismísimo albur.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "no way, come on",
+   "options": [
+    "no way, come on",
+    "of course",
+    "too bad",
+    "well done"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "No manches, cayó redondita en el mismísimo albur.",
+    "targetWord": "No manches",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cayó redondita",
+  "sentence": "Sofía [[cayó redondita]] y ni cuenta se dio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fell for it completely",
+   "options": [
+    "fell for it completely",
+    "won easily",
+    "got angry fast",
+    "left the room"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "Sofía cayó redondita y ni cuenta se dio.",
+    "targetWord": "cayó redondita",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Neta",
+  "sentence": "[[Neta]], nadie le gana a Mateo en esto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "seriously, for real",
+   "options": [
+    "seriously, for real",
+    "maybe not",
+    "never once",
+    "almost always"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "Neta, nadie le gana a Mateo en esto.",
+    "targetWord": "Neta",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "des cuerda",
+  "sentence": "No le [[des cuerda]] a Mateo, que no para.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "egg him on",
+   "options": [
+    "egg him on",
+    "pay him",
+    "believe him",
+    "ignore him"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "No le des cuerda a Mateo, que no para.",
+    "targetWord": "des cuerda",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "albur",
+  "sentence": "Mateo la agarró con un [[albur]] bien pesado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a dirty wordplay pun",
+   "options": [
+    "a dirty wordplay pun",
+    "an old joke",
+    "a card game",
+    "a rude question"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "Mateo la agarró con un albur bien pesado.",
+    "targetWord": "albur",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "carnala",
+  "sentence": "Tú tranquila, [[carnala]], ahorita le entiendes al juego.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "close girl friend, sis",
+   "options": [
+    "close girl friend, sis",
+    "a cousin",
+    "the boss lady",
+    "a stranger"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "Tú tranquila, carnala, ahorita le entiendes al juego.",
+    "targetWord": "carnala",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sacada de onda",
+  "sentence": "Sofía quedó [[sacada de onda]] sin entender el chiste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thrown off, confused",
+   "options": [
+    "thrown off, confused",
+    "very proud",
+    "wide awake",
+    "fast asleep"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "Sofía quedó sacada de onda sin entender el chiste.",
+    "targetWord": "sacada de onda",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bajada",
+  "sentence": "Si te quedas callado, quedas de pura [[bajada]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the butt of the joke",
+   "options": [
+    "the butt of the joke",
+    "the winner",
+    "the leader",
+    "the judge"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "Si te quedas callado, quedas de pura bajada.",
+    "targetWord": "bajada",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "agarraste la onda",
+  "sentence": "¡Eso, Sofi, ya le [[agarraste la onda]] al albur!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "got the hang of it",
+   "options": [
+    "got the hang of it",
+    "lost the game",
+    "ended the round",
+    "changed the subject"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "¡Eso, Sofi, ya le agarraste la onda al albur!",
+    "targetWord": "agarraste la onda",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Órale",
+  "sentence": "[[Órale]], qué rápido aprendiste a contestar los albures.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wow, alright",
+   "options": [
+    "wow, alright",
+    "no way",
+    "too bad",
+    "not yet"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "Órale, qué rápido aprendiste a contestar los albures.",
+    "targetWord": "Órale",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quito el sombrero",
+  "sentence": "Me [[quito el sombrero]], contestaste mejor que nadie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I take my hat off",
+   "options": [
+    "I take my hat off",
+    "I give up now",
+    "I owe you money",
+    "I leave already"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "Me quito el sombrero, contestaste mejor que nadie.",
+    "targetWord": "quito el sombrero",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Está cabrón",
+  "sentence": "[[Está cabrón]], y eso que ni cuenta te dabas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "that is impressive, wild",
+   "options": [
+    "that is impressive, wild",
+    "that is boring",
+    "that is easy",
+    "that is wrong"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "Está cabrón, y eso que ni cuenta te dabas.",
+    "targetWord": "Está cabrón",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "cotorreando",
+  "sentence": "Los cuatro llevaban rato _____ en la sala.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cotorreando",
+   "options": [
+    "cotorreando",
+    "durmiendo",
+    "peleando",
+    "cocinando"
+   ],
+   "translation": "The four had been _____ a while in the living room.",
+   "optionTranslations": [
+    "chatting and joking",
+    "sleeping",
+    "fighting",
+    "cooking"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "Los cuatro llevaban rato cotorreando en la sala.",
+    "targetWord": "cotorreando",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "agandalló",
+  "sentence": "Mateo te _____ con un albur bien gacho.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "agandalló",
+   "options": [
+    "agandalló",
+    "ayudó",
+    "saludó",
+    "pagó"
+   ],
+   "translation": "Mateo _____ you with a really nasty pun.",
+   "optionTranslations": [
+    "got one over on",
+    "helped",
+    "greeted",
+    "paid"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "Mateo te agandalló con un albur bien gacho.",
+    "targetWord": "agandalló",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "valiste",
+  "sentence": "Si no contestas, ya _____ y quedas mal.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "valiste",
+   "options": [
+    "valiste",
+    "ganaste",
+    "dormiste",
+    "reíste"
+   ],
+   "translation": "If you don't answer, you already _____ and look bad.",
+   "optionTranslations": [
+    "blew it, lost",
+    "won",
+    "slept",
+    "laughed"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "Si no contestas, ya valiste y quedas mal.",
+    "targetWord": "valiste",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chido",
+  "sentence": "Le contestas parejo y ya, bien _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chido",
+   "options": [
+    "chido",
+    "feo",
+    "caro",
+    "lento"
+   ],
+   "translation": "You answer back evenly and that's it, really _____.",
+   "optionTranslations": [
+    "cool, nice",
+    "ugly",
+    "expensive",
+    "slow"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "Le contestas parejo y ya, bien chido.",
+    "targetWord": "chido",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "morra",
+  "sentence": "A ver, _____, demuéstrame que le sabes.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "morra",
+   "options": [
+    "morra",
+    "señor",
+    "maestro",
+    "niño"
+   ],
+   "translation": "Come on, _____, show me you've got it.",
+   "optionTranslations": [
+    "girl, young woman",
+    "sir",
+    "master",
+    "boy"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-se-enoja-pierde",
+    "storySource": "user",
+    "sentence": "A ver, morra, demuéstrame que le sabes.",
+    "targetWord": "morra",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "doble sentido,santo remedio,regreso la manita,ni en cuenta",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "doble sentido",
+     "answer": "a hidden double meaning",
+     "options": [
+      "a hidden double meaning",
+      "problem instantly solved",
+      "hit back in kind",
+      "completely unaware"
+     ]
+    },
+    {
+     "word": "santo remedio",
+     "answer": "problem instantly solved",
+     "options": [
+      "a hidden double meaning",
+      "problem instantly solved",
+      "hit back in kind",
+      "completely unaware"
+     ]
+    },
+    {
+     "word": "regreso la manita",
+     "answer": "hit back in kind",
+     "options": [
+      "a hidden double meaning",
+      "problem instantly solved",
+      "hit back in kind",
+      "completely unaware"
+     ]
+    },
+    {
+     "word": "ni en cuenta",
+     "answer": "completely unaware",
+     "options": [
+      "a hidden double meaning",
+      "problem instantly solved",
+      "hit back in kind",
+      "completely unaware"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "carrilla",
+  "sentence": "A Mateo nadie le gana en la [[carrilla]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "friendly teasing",
+   "options": [
+    "friendly teasing",
+    "the drinking",
+    "the cards",
+    "the cooking"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "A Mateo nadie le gana en la carrilla.",
+    "targetWord": "carrilla",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hace oso",
+  "sentence": "Tarde o temprano, el que presume [[hace oso]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "embarrasses himself",
+   "options": [
+    "embarrasses himself",
+    "wins the bet",
+    "pays the round",
+    "tells the truth"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "Tarde o temprano, el que presume hace oso.",
+    "targetWord": "hace oso",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Bájale",
+  "sentence": "[[Bájale]], no eres tan chingón como presumes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "chill out, tone it down",
+   "options": [
+    "chill out, tone it down",
+    "speak up",
+    "hurry up",
+    "cheer up"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "Bájale, no eres tan chingón como presumes.",
+    "targetWord": "Bájale",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reventón",
+  "sentence": "Miren lo que pasó en el [[reventón]] pasado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a wild party",
+   "options": [
+    "a wild party",
+    "the meeting",
+    "the game",
+    "the trip"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "Miren lo que pasó en el reventón pasado.",
+    "targetWord": "reventón",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Cámara",
+  "sentence": "[[Cámara]], le dijo, y le pasó su número.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "okay, deal",
+   "options": [
+    "okay, deal",
+    "no way",
+    "watch out",
+    "too late"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "Cámara, le dijo, y le pasó su número.",
+    "targetWord": "Cámara",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "echan montón",
+  "sentence": "Todos le [[echan montón]], felices de burlarse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gang up on him",
+   "options": [
+    "gang up on him",
+    "leave him alone",
+    "pay for him",
+    "believe him"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "Todos le echan montón, felices de burlarse.",
+    "targetWord": "echan montón",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ni modo",
+  "sentence": "[[Ni modo]], maestro, todos caemos alguna vez.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "oh well",
+   "options": [
+    "oh well",
+    "no way",
+    "of course",
+    "watch out"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "Ni modo, maestro, todos caemos alguna vez.",
+    "targetWord": "Ni modo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ponte las pilas",
+  "sentence": "Ahora [[Ponte las pilas]] y aguanta la carrilla.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "get it together",
+   "options": [
+    "get it together",
+    "sit down now",
+    "keep quiet",
+    "run away"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "Ahora Ponte las pilas y aguanta la carrilla.",
+    "targetWord": "Ponte las pilas",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ubícate",
+  "sentence": "Ya [[ubícate]], Pablo, que tú también caes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wise up, know your place",
+   "options": [
+    "wise up, know your place",
+    "sit down",
+    "hurry up",
+    "cheer up"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "Ya ubícate, Pablo, que tú también caes.",
+    "targetWord": "ubícate",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "No te claves",
+  "sentence": "[[No te claves]], Mateo, aquí todos caemos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "don't dwell on it",
+   "options": [
+    "don't dwell on it",
+    "don't be late",
+    "don't drink more",
+    "don't leave now"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "No te claves, Mateo, aquí todos caemos.",
+    "targetWord": "No te claves",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mala copa",
+  "sentence": "De [[mala copa]] no tienes nada, eso reconozco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a nasty drunk",
+   "options": [
+    "a nasty drunk",
+    "a great cook",
+    "a sore loser",
+    "a bad friend"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "De mala copa no tienes nada, eso reconozco.",
+    "targetWord": "mala copa",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Sale",
+  "sentence": "[[Sale]], entonces la próxima ronda la pagas tú.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "alright, deal",
+   "options": [
+    "alright, deal",
+    "no way",
+    "too bad",
+    "not yet"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "Sale, entonces la próxima ronda la pagas tú.",
+    "targetWord": "Sale",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chelas",
+  "sentence": "Le tocaba a Pablo traer las _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chelas",
+   "options": [
+    "chelas",
+    "cartas",
+    "papas",
+    "sillas"
+   ],
+   "translation": "It was Pablo's turn to bring the _____.",
+   "optionTranslations": [
+    "beers",
+    "cards",
+    "chips",
+    "chairs"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "Le tocaba a Pablo traer las chelas.",
+    "targetWord": "chelas",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "vacila",
+  "sentence": "Aquí el único que _____ soy yo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vacila",
+   "options": [
+    "vacila",
+    "cocina",
+    "paga",
+    "maneja"
+   ],
+   "translation": "Here the only one who _____ is me.",
+   "optionTranslations": [
+    "teases and jokes",
+    "cooks",
+    "pays",
+    "drives"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "Aquí el único que vacila soy yo.",
+    "targetWord": "vacila",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "crudo",
+  "sentence": "Mateo, bien _____, le creyó a un desconocido.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "crudo",
+   "options": [
+    "crudo",
+    "distraído",
+    "dormido",
+    "enojado"
+   ],
+   "translation": "Mateo, really _____, believed a stranger.",
+   "optionTranslations": [
+    "hungover",
+    "distracted",
+    "asleep",
+    "angry"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "Mateo, bien crudo, le creyó a un desconocido.",
+    "targetWord": "crudo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "gacha",
+  "sentence": "Pablo soltó una sonrisa medio _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gacha",
+   "options": [
+    "gacha",
+    "amable",
+    "triste",
+    "nerviosa"
+   ],
+   "translation": "Pablo let out a kind of _____ smile.",
+   "optionTranslations": [
+    "mean, sly",
+    "kind",
+    "sad",
+    "nervous"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "Pablo soltó una sonrisa medio gacha.",
+    "targetWord": "gacha",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "banda",
+  "sentence": "Por eso la _____ te trae bien cortito.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "banda",
+   "options": [
+    "banda",
+    "policía",
+    "escuela",
+    "jefa"
+   ],
+   "translation": "That's why the _____ keeps you in check.",
+   "optionTranslations": [
+    "crew, group of friends",
+    "police",
+    "school",
+    "boss"
+   ],
+   "audioClip": {
+    "storySlug": "el-maestro-tambien-cae",
+    "storySource": "user",
+    "sentence": "Por eso la banda te trae bien cortito.",
+    "targetWord": "banda",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "tirando choro,de pe a pa,sacarle la sopa,trae cortito",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "tirando choro",
+     "answer": "talking smooth nonsense",
+     "options": [
+      "talking smooth nonsense",
+      "from start to finish",
+      "getting the details out",
+      "keeping him in check"
+     ]
+    },
+    {
+     "word": "de pe a pa",
+     "answer": "from start to finish",
+     "options": [
+      "talking smooth nonsense",
+      "from start to finish",
+      "getting the details out",
+      "keeping him in check"
+     ]
+    },
+    {
+     "word": "sacarle la sopa",
+     "answer": "getting the details out",
+     "options": [
+      "talking smooth nonsense",
+      "from start to finish",
+      "getting the details out",
+      "keeping him in check"
+     ]
+    },
+    {
+     "word": "trae cortito",
+     "answer": "keeping him in check",
+     "options": [
+      "talking smooth nonsense",
+      "from start to finish",
+      "getting the details out",
+      "keeping him in check"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

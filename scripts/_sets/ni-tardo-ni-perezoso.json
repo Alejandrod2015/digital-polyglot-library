@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "eché los perros",
+  "sentence": "Le [[eché los perros]] a mi cuate por ti.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "openly flirted",
+   "options": [
+    "openly flirted",
+    "paid the bill",
+    "made a call",
+    "cooked dinner"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "Le eché los perros a mi cuate por ti.",
+    "targetWord": "eché los perros",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "te hagas del rogar",
+  "sentence": "No [[te hagas del rogar]], anímate a salir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "play hard to get",
+   "options": [
+    "play hard to get",
+    "get up early",
+    "pay the bill",
+    "tell the truth"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "No te hagas del rogar, anímate a salir.",
+    "targetWord": "te hagas del rogar",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guácala",
+  "sentence": "Si el galán es sangrón, [[guácala]], ni le hablo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "yuck, gross",
+   "options": [
+    "yuck, gross",
+    "awesome, cool",
+    "finally, at last",
+    "maybe, perhaps"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "Si el galán es sangrón, guácala, ni le hablo.",
+    "targetWord": "guácala",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "buena gente",
+  "sentence": "Para nada, es [[buena gente]], un chavo tranquilo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a kind, decent person",
+   "options": [
+    "a kind, decent person",
+    "a rich guy",
+    "a famous guy",
+    "a shy guy"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "Para nada, es buena gente, un chavo tranquilo.",
+    "targetWord": "buena gente",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en un dos por tres",
+  "sentence": "Lo cité [[en un dos por tres]], ya viene.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in a flash",
+   "options": [
+    "in a flash",
+    "after a week",
+    "by mistake",
+    "for free"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "Lo cité en un dos por tres, ya viene.",
+    "targetWord": "en un dos por tres",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ponle ganas",
+  "sentence": "[[Ponle ganas]], no seas de mala pata.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "put in effort",
+   "options": [
+    "put in effort",
+    "take a nap",
+    "stay home",
+    "give up"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "Ponle ganas, no seas de mala pata.",
+    "targetWord": "Ponle ganas",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mala pata",
+  "sentence": "No seas de [[mala pata]], dale una oportunidad.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bad luck, a jinx",
+   "options": [
+    "bad luck, a jinx",
+    "good taste",
+    "a big heart",
+    "a quick mind"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "No seas de mala pata, dale una oportunidad.",
+    "targetWord": "mala pata",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Sale y vale",
+  "sentence": "[[Sale y vale]], pero una y no más.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "okay, it's a deal",
+   "options": [
+    "okay, it's a deal",
+    "no way",
+    "too bad",
+    "not yet"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "Sale y vale, pero una y no más.",
+    "targetWord": "Sale y vale",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Quedé de a seis",
+  "sentence": "[[Quedé de a seis]], ni preparé qué decirle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "was totally stunned",
+   "options": [
+    "was totally stunned",
+    "was very happy",
+    "was fast asleep",
+    "was right on time"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "Quedé de a seis, ni preparé qué decirle.",
+    "targetWord": "Quedé de a seis",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ligue",
+  "sentence": "Pues ahí está tu [[ligue]], un chamaco decente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "date, crush",
+   "options": [
+    "date, crush",
+    "boss",
+    "cousin",
+    "neighbor"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "Pues ahí está tu ligue, un chamaco decente.",
+    "targetWord": "ligue",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chamaco",
+  "sentence": "Rodrigo invitó a un [[chamaco]] de lo más decente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "young guy, kid",
+   "options": [
+    "young guy, kid",
+    "old man",
+    "rich boss",
+    "close friend"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "Rodrigo invitó a un chamaco de lo más decente.",
+    "targetWord": "chamaco",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuate",
+  "sentence": "Rodrigo invitó a su [[cuate]] al café.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "buddy, close friend",
+   "options": [
+    "buddy, close friend",
+    "boss",
+    "brother",
+    "neighbor"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "Rodrigo invitó a su cuate al café.",
+    "targetWord": "cuate",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "metiche",
+  "sentence": "Ay, qué _____ saliste, no te metas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "metiche",
+   "options": [
+    "metiche",
+    "serio",
+    "codo",
+    "flojo"
+   ],
+   "translation": "Wow, how _____ you turned out, don't butt in.",
+   "optionTranslations": [
+    "nosy",
+    "serious",
+    "stingy",
+    "lazy"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "Ay, qué metiche saliste, no te metas.",
+    "targetWord": "metiche",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "galán",
+  "sentence": "¿Y cómo está el _____? ¿Es guapo?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "galán",
+   "options": [
+    "galán",
+    "café",
+    "plan",
+    "mezcal"
+   ],
+   "translation": "So how's the _____? Is he cute?",
+   "optionTranslations": [
+    "handsome guy",
+    "coffee",
+    "plan",
+    "mezcal"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "¿Y cómo está el galán? ¿Es guapo?",
+    "targetWord": "galán",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sangrón",
+  "sentence": "Si el chavo es _____, mejor ni salgo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sangrón",
+   "options": [
+    "sangrón",
+    "guapo",
+    "chistoso",
+    "rico"
+   ],
+   "translation": "If the guy is _____, I'd rather not go out.",
+   "optionTranslations": [
+    "stuck up",
+    "handsome",
+    "funny",
+    "rich"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "Si el chavo es sangrón, mejor ni salgo.",
+    "targetWord": "sangrón",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "feria",
+  "sentence": "Traigo _____, yo pago los cafés.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "feria",
+   "options": [
+    "feria",
+    "hambre",
+    "sueño",
+    "prisa"
+   ],
+   "translation": "I've got _____, I'll pay for the coffees.",
+   "optionTranslations": [
+    "money, cash",
+    "hunger",
+    "sleepiness",
+    "a hurry"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "Traigo feria, yo pago los cafés.",
+    "targetWord": "feria",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chavo",
+  "sentence": "Es un _____ bien tranquilo y decente.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chavo",
+   "options": [
+    "chavo",
+    "perro",
+    "café",
+    "plan"
+   ],
+   "translation": "He's a really chill, decent _____.",
+   "optionTranslations": [
+    "young guy",
+    "dog",
+    "coffee",
+    "plan"
+   ],
+   "audioClip": {
+    "storySlug": "ni-tardo-ni-perezoso",
+    "storySource": "user",
+    "sentence": "Es un chavo bien tranquilo y decente.",
+    "targetWord": "chavo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Ni tardo ni perezoso,El que no arriesga no gana,no hay mal que por bien no venga,sacar canas verdes",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Ni tardo ni perezoso",
+     "answer": "without wasting a second",
+     "options": [
+      "without wasting a second",
+      "no risk, no reward",
+      "every cloud has a silver lining",
+      "to drive someone crazy"
+     ]
+    },
+    {
+     "word": "El que no arriesga no gana",
+     "answer": "no risk, no reward",
+     "options": [
+      "without wasting a second",
+      "no risk, no reward",
+      "every cloud has a silver lining",
+      "to drive someone crazy"
+     ]
+    },
+    {
+     "word": "no hay mal que por bien no venga",
+     "answer": "every cloud has a silver lining",
+     "options": [
+      "without wasting a second",
+      "no risk, no reward",
+      "every cloud has a silver lining",
+      "to drive someone crazy"
+     ]
+    },
+    {
+     "word": "sacar canas verdes",
+     "answer": "to drive someone crazy",
+     "options": [
+      "without wasting a second",
+      "no risk, no reward",
+      "every cloud has a silver lining",
+      "to drive someone crazy"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

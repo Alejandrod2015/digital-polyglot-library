@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "se armó",
+  "sentence": "Para la medianoche, la peda [[se armó]] sola.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kicked off, got going",
+   "options": [
+    "kicked off, got going",
+    "ended early",
+    "calmed down",
+    "moved away"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "Para la medianoche, la peda se armó sola.",
+    "targetWord": "se armó",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Qué pedo",
+  "sentence": "[[Qué pedo]] con ustedes, ¿de qué se ríen?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what's up, what's going on",
+   "options": [
+    "what's up, what's going on",
+    "who is there",
+    "what a pity",
+    "how much"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "Qué pedo con ustedes, ¿de qué se ríen?",
+    "targetWord": "Qué pedo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "no mames",
+  "sentence": "Se puso serio y, [[no mames]], todos se rieron.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "no way, unbelievable",
+   "options": [
+    "no way, unbelievable",
+    "of course",
+    "too bad",
+    "not yet"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "Se puso serio y, no mames, todos se rieron.",
+    "targetWord": "no mames",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Está cañón",
+  "sentence": "[[Está cañón]] que ni puedo hablar sin burlas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it's rough, intense",
+   "options": [
+    "it's rough, intense",
+    "it's boring",
+    "it's easy",
+    "it's cheap"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "Está cañón que ni puedo hablar sin burlas.",
+    "targetWord": "Está cañón",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "A huevo",
+  "sentence": "[[A huevo]], ya lo hizo otra vez el maestro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hell yes, of course",
+   "options": [
+    "hell yes, of course",
+    "no way",
+    "too bad",
+    "not yet"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "A huevo, ya lo hizo otra vez el maestro.",
+    "targetWord": "A huevo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Híjole",
+  "sentence": "[[Híjole]], ya en serio, se traen algo pesado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "oh man, yikes",
+   "options": [
+    "oh man, yikes",
+    "hooray",
+    "goodbye",
+    "of course"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "Híjole, ya en serio, se traen algo pesado.",
+    "targetWord": "Híjole",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "me late",
+  "sentence": "La verdad, [[me late]] ir al reventón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sounds good to me",
+   "options": [
+    "sounds good to me",
+    "I doubt it",
+    "I refuse",
+    "I forgot"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "La verdad, me late ir al reventón.",
+    "targetWord": "me late",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chin",
+  "sentence": "Bueno, [[chin]], ya que insistes tanto, te cuento.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "darn, shoot",
+   "options": [
+    "darn, shoot",
+    "hooray",
+    "of course",
+    "goodbye"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "Bueno, chin, ya que insistes tanto, te cuento.",
+    "targetWord": "chin",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de volada",
+  "sentence": "Esa noche [[de volada]] le brotó el chiste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right away, instantly",
+   "options": [
+    "right away, instantly",
+    "very slowly",
+    "by mistake",
+    "much later"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "Esa noche de volada le brotó el chiste.",
+    "targetWord": "de volada",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jalan",
+  "sentence": "¿Por eso [[jalan]] con la burla hasta hoy?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "go along with it",
+   "options": [
+    "go along with it",
+    "pay for it",
+    "forget it",
+    "stop it"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "¿Por eso jalan con la burla hasta hoy?",
+    "targetWord": "jalan",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "desmadre",
+  "sentence": "Todo el cuarto era un puro [[desmadre]] de risas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wild chaos, mess",
+   "options": [
+    "wild chaos, mess",
+    "total silence",
+    "quiet order",
+    "sad mood"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "Todo el cuarto era un puro desmadre de risas.",
+    "targetWord": "desmadre",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Mande",
+  "sentence": "¿[[Mande]]? ¿O sea que el maestro es el Salado?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what?, pardon?",
+   "options": [
+    "what?, pardon?",
+    "of course",
+    "no way",
+    "too bad"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "¿Mande? ¿O sea que el maestro es el Salado?",
+    "targetWord": "Mande",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "peda",
+  "sentence": "Para la medianoche, la _____ se armó sola.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "peda",
+   "options": [
+    "peda",
+    "junta",
+    "cena",
+    "clase"
+   ],
+   "translation": "By midnight, the _____ got going on its own.",
+   "optionTranslations": [
+    "drinking party",
+    "meeting",
+    "dinner",
+    "class"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "Para la medianoche, la peda se armó sola.",
+    "targetWord": "peda",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "relajo",
+  "sentence": "El _____ no bajaba en toda la noche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "relajo",
+   "options": [
+    "relajo",
+    "silencio",
+    "calor",
+    "frío"
+   ],
+   "translation": "The _____ didn't die down all night.",
+   "optionTranslations": [
+    "rowdy fun",
+    "silence",
+    "heat",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "El relajo no bajaba en toda la noche.",
+    "targetWord": "relajo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "güey",
+  "sentence": "Ahorita entiendes, _____, no comas ansias.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "güey",
+   "options": [
+    "güey",
+    "señor",
+    "jefe",
+    "niño"
+   ],
+   "translation": "You'll get it soon, _____, don't be so anxious.",
+   "optionTranslations": [
+    "dude",
+    "sir",
+    "boss",
+    "kid"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "Ahorita entiendes, güey, no comas ansias.",
+    "targetWord": "güey",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "ahorita",
+  "sentence": "_____ te cae el veinte, no te apures.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ahorita",
+   "options": [
+    "ahorita",
+    "Nunca",
+    "Ayer",
+    "Mañana"
+   ],
+   "translation": "_____ the penny will drop, don't worry.",
+   "optionTranslations": [
+    "soon, in a bit",
+    "never",
+    "yesterday",
+    "tomorrow"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "ahorita te cae el veinte, no te apures.",
+    "targetWord": "ahorita",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "compa",
+  "sentence": "Por eso le decimos el Salado, _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "compa",
+   "options": [
+    "compa",
+    "jefe",
+    "doctor",
+    "vecino"
+   ],
+   "translation": "That's why we call him the Salado, _____.",
+   "optionTranslations": [
+    "buddy, pal",
+    "boss",
+    "doctor",
+    "neighbor"
+   ],
+   "audioClip": {
+    "storySlug": "asi-nacio-el-salado",
+    "storySource": "user",
+    "sentence": "Por eso le decimos el Salado, compa.",
+    "targetWord": "compa",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Échame la mano,hasta las chanclas,cayó el veinte,mero mero",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Échame la mano",
+     "answer": "lend me a hand",
+     "options": [
+      "lend me a hand",
+      "totally wasted, drunk",
+      "the penny dropped",
+      "the top dog"
+     ]
+    },
+    {
+     "word": "hasta las chanclas",
+     "answer": "totally wasted, drunk",
+     "options": [
+      "lend me a hand",
+      "totally wasted, drunk",
+      "the penny dropped",
+      "the top dog"
+     ]
+    },
+    {
+     "word": "cayó el veinte",
+     "answer": "the penny dropped",
+     "options": [
+      "lend me a hand",
+      "totally wasted, drunk",
+      "the penny dropped",
+      "the top dog"
+     ]
+    },
+    {
+     "word": "mero mero",
+     "answer": "the top dog",
+     "options": [
+      "lend me a hand",
+      "totally wasted, drunk",
+      "the penny dropped",
+      "the top dog"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

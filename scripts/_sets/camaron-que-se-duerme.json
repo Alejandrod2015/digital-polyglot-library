@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "salen sobrando",
+  "sentence": "Para Itzel, esos dichos ya [[salen sobrando]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "are pointless",
+   "options": [
+    "are pointless",
+    "are useful",
+    "are funny",
+    "are new"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "Para Itzel, esos dichos ya salen sobrando.",
+    "targetWord": "salen sobrando",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Al chile",
+  "sentence": "[[Al chile]], esos refranes ya no sirven.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "honestly, straight up",
+   "options": [
+    "honestly, straight up",
+    "maybe someday",
+    "sadly enough",
+    "luckily for us"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "Al chile, esos refranes ya no sirven.",
+    "targetWord": "Al chile",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "flojera",
+  "sentence": "A Itzel le da [[flojera]] sacar la lana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a lazy feeling",
+   "options": [
+    "a lazy feeling",
+    "sudden excitement",
+    "real fear",
+    "plain hunger"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "A Itzel le da flojera sacar la lana.",
+    "targetWord": "flojera",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "haces pato",
+  "sentence": "Te [[haces pato]] y luego te arrepientes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "play dumb",
+   "options": [
+    "play dumb",
+    "hurry up",
+    "get angry",
+    "pay up"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "Te haces pato y luego te arrepientes.",
+    "targetWord": "haces pato",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chueco",
+  "sentence": "Aparté el mío por si se ponía [[chueco]] el asunto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shady, not right",
+   "options": [
+    "shady, not right",
+    "fun, easy",
+    "cheap, simple",
+    "clear, safe"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "Aparté el mío por si se ponía chueco el asunto.",
+    "targetWord": "chueco",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "daba el avión",
+  "sentence": "Itzel solo le [[daba el avión]] a Rodrigo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nodded and ignored him",
+   "options": [
+    "nodded and ignored him",
+    "yelled at him",
+    "agreed sincerely",
+    "paid him back"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "Itzel solo le daba el avión a Rodrigo.",
+    "targetWord": "daba el avión",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ni pío",
+  "sentence": "Se quedó callada, sin soltar [[ni pío]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not a single word",
+   "options": [
+    "not a single word",
+    "a loud laugh",
+    "a single peso",
+    "one small tear"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "Se quedó callada, sin soltar ni pío.",
+    "targetWord": "ni pío",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ándele",
+  "sentence": "[[Ándele]], pues, luego no andes de chillona.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "come on, alright",
+   "options": [
+    "come on, alright",
+    "goodbye now",
+    "no way",
+    "too bad"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "Ándele, pues, luego no andes de chillona.",
+    "targetWord": "Ándele",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "De perdis",
+  "sentence": "[[De perdis]] admite que el refrán tenía razón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at the very least",
+   "options": [
+    "at the very least",
+    "at the most",
+    "for once",
+    "as always"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "De perdis admite que el refrán tenía razón.",
+    "targetWord": "De perdis",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "padrísimo",
+  "sentence": "El refrán del abuelo estuvo [[padrísimo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "awesome, super cool",
+   "options": [
+    "awesome, super cool",
+    "really boring",
+    "totally useless",
+    "kind of cruel"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "El refrán del abuelo estuvo padrísimo.",
+    "targetWord": "padrísimo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chamba",
+  "sentence": "Para la otra le entro a la [[chamba]] temprano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "work, the task",
+   "options": [
+    "work, the task",
+    "the party",
+    "my bed",
+    "the line"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "Para la otra le entro a la chamba temprano.",
+    "targetWord": "chamba",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Chance",
+  "sentence": "[[Chance]] el abuelo sí sabía de la vida.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "maybe, perhaps",
+   "options": [
+    "maybe, perhaps",
+    "surely, for sure",
+    "never, no way",
+    "barely, hardly"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "Chance el abuelo sí sabía de la vida.",
+    "targetWord": "Chance",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "codo",
+  "sentence": "No seas tan _____, invítanos unos mezcales.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "codo",
+   "options": [
+    "codo",
+    "generoso",
+    "flojo",
+    "serio"
+   ],
+   "translation": "Don't be so _____, treat us to some mezcals.",
+   "optionTranslations": [
+    "stingy",
+    "generous",
+    "lazy",
+    "serious"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "No seas tan codo, invítanos unos mezcales.",
+    "targetWord": "codo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "lana",
+  "sentence": "No traigo _____ para los boletos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lana",
+   "options": [
+    "lana",
+    "hambre",
+    "tiempo",
+    "ganas"
+   ],
+   "translation": "I don't have _____ for the tickets.",
+   "optionTranslations": [
+    "money, cash",
+    "hunger",
+    "time",
+    "energy"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "No traigo lana para los boletos.",
+    "targetWord": "lana",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "varo",
+  "sentence": "El _____ no alcanza para todos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "varo",
+   "options": [
+    "varo",
+    "café",
+    "mezcal",
+    "plan"
+   ],
+   "translation": "The _____ isn't enough for everyone.",
+   "optionTranslations": [
+    "money, cash",
+    "coffee",
+    "mezcal",
+    "plan"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "El varo no alcanza para todos.",
+    "targetWord": "varo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chafa",
+  "sentence": "El plan quedó bien _____ sin ella.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chafa",
+   "options": [
+    "chafa",
+    "padre",
+    "caro",
+    "largo"
+   ],
+   "translation": "The plan turned out really _____ without her.",
+   "optionTranslations": [
+    "lame, low quality",
+    "awesome",
+    "expensive",
+    "long"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "El plan quedó bien chafa sin ella.",
+    "targetWord": "chafa",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "fresa",
+  "sentence": "Eres bien _____ para estas cosas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fresa",
+   "options": [
+    "fresa",
+    "codo",
+    "flojo",
+    "serio"
+   ],
+   "translation": "You're so _____ about these things.",
+   "optionTranslations": [
+    "posh, snobby",
+    "stingy",
+    "lazy",
+    "serious"
+   ],
+   "audioClip": {
+    "storySlug": "camaron-que-se-duerme",
+    "storySource": "user",
+    "sentence": "Eres bien fresa para estas cosas.",
+    "targetWord": "fresa",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "Camarón que se duerme se lo lleva la corriente,Ponte trucha,hasta el gorro,de a tiro",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Camarón que se duerme se lo lleva la corriente",
+     "answer": "you snooze, you lose",
+     "options": [
+      "you snooze, you lose",
+      "stay sharp, stay alert",
+      "totally fed up",
+      "completely, totally"
+     ]
+    },
+    {
+     "word": "Ponte trucha",
+     "answer": "stay sharp, stay alert",
+     "options": [
+      "you snooze, you lose",
+      "stay sharp, stay alert",
+      "totally fed up",
+      "completely, totally"
+     ]
+    },
+    {
+     "word": "hasta el gorro",
+     "answer": "totally fed up",
+     "options": [
+      "you snooze, you lose",
+      "stay sharp, stay alert",
+      "totally fed up",
+      "completely, totally"
+     ]
+    },
+    {
+     "word": "de a tiro",
+     "answer": "completely, totally",
+     "options": [
+      "you snooze, you lose",
+      "stay sharp, stay alert",
+      "totally fed up",
+      "completely, totally"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

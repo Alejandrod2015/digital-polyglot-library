@@ -7,6 +7,10 @@
           {
             "type": "command",
             "command": ".claude/safety/pre-bash-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/safety/pre-story-save-guard.sh"
           }
         ]
       }

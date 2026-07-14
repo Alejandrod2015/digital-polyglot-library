@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "parranda",
+  "sentence": "El sábado la [[parranda]] estaba a millón, todos gozando.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a wild party",
+   "options": [
+    "a wild party",
+    "the office",
+    "the line",
+    "the nap"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "El sábado la parranda estaba a millón, todos gozando.",
+    "targetWord": "parranda",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a millón",
+  "sentence": "La fiesta estaba [[a millón]] con birras bien frías.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at full throttle",
+   "options": [
+    "at full throttle",
+    "half empty",
+    "very quiet",
+    "almost over"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "La fiesta estaba a millón con birras bien frías.",
+    "targetWord": "a millón",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gozando",
+  "sentence": "Todo el mundo estaba [[gozando]] en plena parranda sabatina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "having a blast",
+   "options": [
+    "having a blast",
+    "sleeping",
+    "complaining",
+    "leaving"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "Todo el mundo estaba gozando en plena parranda sabatina.",
+    "targetWord": "gozando",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "traga",
+  "sentence": "Andrés no le quitaba el ojo a su [[traga]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "his crush",
+   "options": [
+    "his crush",
+    "his boss",
+    "his cousin",
+    "his beer"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "Andrés no le quitaba el ojo a su traga.",
+    "targetWord": "traga",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tirar paso",
+  "sentence": "Andrés se lanzó a la pista a [[tirar paso]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to dance",
+   "options": [
+    "to dance",
+    "to rest",
+    "to argue",
+    "to pay"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "Andrés se lanzó a la pista a tirar paso.",
+    "targetWord": "tirar paso",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cotorra",
+  "sentence": "Mira la [[cotorra]] que se trae para presumir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nonstop chatter",
+   "options": [
+    "nonstop chatter",
+    "the silence",
+    "the dance",
+    "the drink"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "Mira la cotorra que se trae para presumir.",
+    "targetWord": "cotorra",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chicharrón",
+  "sentence": "Qué [[chicharrón]], mano, sudaste tanto para puro nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a mess, hassle",
+   "options": [
+    "a mess, hassle",
+    "a treat",
+    "a nap",
+    "a joke"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "Qué chicharrón, mano, sudaste tanto para puro nada.",
+    "targetWord": "chicharrón",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lambón",
+  "sentence": "No te hagas el [[lambón]] con esa chica, Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a suck-up",
+   "options": [
+    "a suck-up",
+    "the hero",
+    "the singer",
+    "the boss"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "No te hagas el lambón con esa chica, Andrés.",
+    "targetWord": "lambón",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jodan la vida",
+  "sentence": "Ya, no me [[jodan la vida]] con tantas burlas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bug, annoy me",
+   "options": [
+    "bug, annoy me",
+    "help me out",
+    "pay me back",
+    "wake me up"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "Ya, no me jodan la vida con tantas burlas.",
+    "targetWord": "jodan la vida",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Un chorro",
+  "sentence": "[[Un chorro]] de gente te vio caer, Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a whole bunch",
+   "options": [
+    "a whole bunch",
+    "a couple",
+    "nobody",
+    "a little"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "Un chorro de gente te vio caer, Andrés.",
+    "targetWord": "Un chorro",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ponte pila",
+  "sentence": "[[Ponte pila]] la próxima, que te vieron todos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "get sharp",
+   "options": [
+    "get sharp",
+    "calm down",
+    "sit down",
+    "give up"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "Ponte pila la próxima, que te vieron todos.",
+    "targetWord": "Ponte pila",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de una vez",
+  "sentence": "Con guayabo mañana ni se acuerdan, [[de una vez]] digo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right now",
+   "options": [
+    "right now",
+    "little by little",
+    "never again",
+    "some other day"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "Con guayabo mañana ni se acuerdan, de una vez digo.",
+    "targetWord": "de una vez",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "birras",
+  "sentence": "La parranda estaba a millón con _____ bien frías.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "birras",
+   "options": [
+    "birras",
+    "sillas",
+    "canciones",
+    "reglas"
+   ],
+   "translation": "The party was full throttle with cold _____.",
+   "optionTranslations": [
+    "beers",
+    "chairs",
+    "songs",
+    "rules"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "La parranda estaba a millón con birras bien frías.",
+    "targetWord": "birras",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "arrecho",
+  "sentence": "Se va a poner _____ cuando lo dejen en evidencia.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "arrecho",
+   "options": [
+    "arrecho",
+    "callado",
+    "feliz",
+    "flaco"
+   ],
+   "translation": "He'll get _____ when they show him up.",
+   "optionTranslations": [
+    "worked up, angry",
+    "quiet",
+    "happy",
+    "skinny"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "Se va a poner arrecho cuando lo dejen en evidencia.",
+    "targetWord": "arrecho",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "picao",
+  "sentence": "Ya está bien _____ el man con tanta actitud.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "picao",
+   "options": [
+    "picao",
+    "cansado",
+    "triste",
+    "sobrio"
+   ],
+   "translation": "The guy is already pretty _____ with all that attitude.",
+   "optionTranslations": [
+    "cocky, full of himself",
+    "tired",
+    "sad",
+    "sober"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "Ya está bien picao el man con tanta actitud.",
+    "targetWord": "picao",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "rascado",
+  "sentence": "Y ya andas medio _____, no bailes más.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rascado",
+   "options": [
+    "rascado",
+    "dormido",
+    "serio",
+    "elegante"
+   ],
+   "translation": "And you're already half _____, stop dancing.",
+   "optionTranslations": [
+    "drunk, tipsy",
+    "asleep",
+    "serious",
+    "elegant"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "Y ya andas medio rascado, no bailes más.",
+    "targetWord": "rascado",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "guayabo",
+  "sentence": "Mañana con el _____ ni se acuerdan de nada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guayabo",
+   "options": [
+    "guayabo",
+    "frío",
+    "hambre",
+    "susto"
+   ],
+   "translation": "Tomorrow with the _____ they won't remember a thing.",
+   "optionTranslations": [
+    "hangover",
+    "cold",
+    "hunger",
+    "fright"
+   ],
+   "audioClip": {
+    "storySlug": "andres-rey-de-la-pista",
+    "storySource": "user",
+    "sentence": "Mañana con el guayabo ni se acuerdan de nada.",
+    "targetWord": "guayabo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "está como un mango,montar el show,quedó como un ocho,sudaste la gota gorda",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "está como un mango",
+     "answer": "really hot",
+     "options": [
+      "really hot",
+      "put on a scene",
+      "ended up embarrassed",
+      "sweated buckets"
+     ]
+    },
+    {
+     "word": "montar el show",
+     "answer": "put on a scene",
+     "options": [
+      "really hot",
+      "put on a scene",
+      "ended up embarrassed",
+      "sweated buckets"
+     ]
+    },
+    {
+     "word": "quedó como un ocho",
+     "answer": "ended up embarrassed",
+     "options": [
+      "really hot",
+      "put on a scene",
+      "ended up embarrassed",
+      "sweated buckets"
+     ]
+    },
+    {
+     "word": "sudaste la gota gorda",
+     "answer": "sweated buckets",
+     "options": [
+      "really hot",
+      "put on a scene",
+      "ended up embarrassed",
+      "sweated buckets"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

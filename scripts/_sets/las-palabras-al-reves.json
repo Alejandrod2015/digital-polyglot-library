@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "causa",
+  "sentence": "¿Qué tal, [[causa]]? Bacán verte por acá después de tanto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "buddy, pal",
+   "options": [
+    "buddy, pal",
+    "an enemy",
+    "a stranger",
+    "a boss"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "¿Qué tal, causa? Bacán verte por acá después de tanto.",
+    "targetWord": "causa",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pata",
+  "sentence": "Diego es mi [[pata]] del barrio desde el colegio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "friend, mate",
+   "options": [
+    "friend, mate",
+    "enemy",
+    "cousin",
+    "boss"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "Diego es mi pata del barrio desde el colegio.",
+    "targetWord": "pata",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chibolo",
+  "sentence": "Ese [[chibolo]] malcriado no le hace caso a nadie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kid, youngster",
+   "options": [
+    "kid, youngster",
+    "old man",
+    "teacher",
+    "boss"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "Ese chibolo malcriado no le hace caso a nadie.",
+    "targetWord": "chibolo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jato",
+  "sentence": "Vamos a mi [[jato]] a descansar un rato, causa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "house, home",
+   "options": [
+    "house, home",
+    "office",
+    "school",
+    "car"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "Vamos a mi jato a descansar un rato, causa.",
+    "targetWord": "jato",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "floro",
+  "sentence": "Diego le metió puro [[floro]] a la chica toda la noche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "smooth talk",
+   "options": [
+    "smooth talk",
+    "silence",
+    "truth",
+    "money"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "Diego le metió puro floro a la chica toda la noche.",
+    "targetWord": "floro",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Asu",
+  "sentence": "[[Asu]], no puedo creer lo que hiciste, causa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wow, damn",
+   "options": [
+    "wow, damn",
+    "goodbye",
+    "thanks",
+    "sorry"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "Asu, no puedo creer lo que hiciste, causa.",
+    "targetWord": "Asu",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jerma",
+  "sentence": "Diego conoció a una [[jerma]] bien bacana en el tono.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a woman, girl",
+   "options": [
+    "a woman, girl",
+    "a car",
+    "a party",
+    "a drink"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "Diego conoció a una jerma bien bacana en el tono.",
+    "targetWord": "jerma",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hagas paltas",
+  "sentence": "No te [[hagas paltas]] por una palabra que no cachas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "get flustered",
+   "options": [
+    "get flustered",
+    "get angry",
+    "fall asleep",
+    "get rich"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "No te hagas paltas por una palabra que no cachas.",
+    "targetWord": "hagas paltas",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Ni cagando",
+  "sentence": "[[Ni cagando]] le enseño mal a mi propia pata.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "no way at all",
+   "options": [
+    "no way at all",
+    "of course",
+    "maybe later",
+    "right away"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "Ni cagando le enseño mal a mi propia pata.",
+    "targetWord": "Ni cagando",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pasamos piña",
+  "sentence": "Si no corremos, [[pasamos piña]] y perdemos la combi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "have bad luck",
+   "options": [
+    "have bad luck",
+    "arrive early",
+    "get lucky",
+    "save money"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "Si no corremos, pasamos piña y perdemos la combi.",
+    "targetWord": "pasamos piña",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tiramos dedo",
+  "sentence": "Sin plata para el pasaje, mejor [[tiramos dedo]] en la pista.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "we hitchhike",
+   "options": [
+    "we hitchhike",
+    "take a taxi",
+    "walk fast",
+    "stay home"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "Sin plata para el pasaje, mejor tiramos dedo en la pista.",
+    "targetWord": "tiramos dedo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hablan huevadas",
+  "sentence": "Ustedes [[hablan huevadas]], no les entiendo nada, causas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "talk nonsense",
+   "options": [
+    "talk nonsense",
+    "speak clearly",
+    "tell secrets",
+    "sing songs"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "Ustedes hablan huevadas, no les entiendo nada, causas.",
+    "targetWord": "hablan huevadas",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "misio",
+  "sentence": "Quedé _____ después de invitar todos los tragos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "misio",
+   "options": [
+    "misio",
+    "feliz",
+    "cansado",
+    "borracho"
+   ],
+   "translation": "I ended up _____ after buying all the drinks.",
+   "optionTranslations": [
+    "broke",
+    "happy",
+    "tired",
+    "drunk"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "Quedé misio después de invitar todos los tragos.",
+    "targetWord": "misio",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "roche",
+  "sentence": "Me morí de _____ cuando confundí la palabra.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "roche",
+   "options": [
+    "roche",
+    "risa",
+    "hambre",
+    "sueño"
+   ],
+   "translation": "I died of _____ when I mixed up the word.",
+   "optionTranslations": [
+    "embarrassment",
+    "laughter",
+    "hunger",
+    "sleepiness"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "Me morí de roche cuando confundí la palabra.",
+    "targetWord": "roche",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "camote",
+  "sentence": "¿No será que estás _____ con Diego, ah?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "camote",
+   "options": [
+    "camote",
+    "molesto",
+    "aburrido",
+    "peleado"
+   ],
+   "translation": "Could it be you're _____ on Diego, huh?",
+   "optionTranslations": [
+    "crushing, in love",
+    "annoyed",
+    "bored",
+    "fighting"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "¿No será que estás camote con Diego, ah?",
+    "targetWord": "camote",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "paja",
+  "sentence": "Esta jerga está bien _____, ya la agarré rápido.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "paja",
+   "options": [
+    "paja",
+    "aburrida",
+    "difícil",
+    "fea"
+   ],
+   "translation": "This slang is really _____, I picked it up fast.",
+   "optionTranslations": [
+    "cool, awesome",
+    "boring",
+    "difficult",
+    "ugly"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "Esta jerga está bien paja, ya la agarré rápido.",
+    "targetWord": "paja",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "Bacán",
+  "sentence": "_____ verte por acá después de tanto tiempo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Bacán",
+   "options": [
+    "Bacán",
+    "Raro",
+    "Feo",
+    "Triste"
+   ],
+   "translation": "_____ to see you around after so long.",
+   "optionTranslations": [
+    "great, cool",
+    "weird",
+    "ugly",
+    "sad"
+   ],
+   "audioClip": {
+    "storySlug": "las-palabras-al-reves",
+    "storySource": "user",
+    "sentence": "Bacán verte por acá después de tanto tiempo.",
+    "targetWord": "Bacán",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "sacar la vuelta,en la luna,al toque,de a verdad",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "sacar la vuelta",
+     "answer": "to dodge work",
+     "options": [
+      "to dodge work",
+      "spaced out",
+      "right away",
+      "for real"
+     ]
+    },
+    {
+     "word": "en la luna",
+     "answer": "spaced out",
+     "options": [
+      "to dodge work",
+      "spaced out",
+      "right away",
+      "for real"
+     ]
+    },
+    {
+     "word": "al toque",
+     "answer": "right away",
+     "options": [
+      "to dodge work",
+      "spaced out",
+      "right away",
+      "for real"
+     ]
+    },
+    {
+     "word": "de a verdad",
+     "answer": "for real",
+     "options": [
+      "to dodge work",
+      "spaced out",
+      "right away",
+      "for real"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

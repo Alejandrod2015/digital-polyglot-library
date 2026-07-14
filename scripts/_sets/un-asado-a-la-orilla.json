@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "de menos",
+  "sentence": "Los echaba harto [[de menos]], cabros.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "missed, longed for",
+   "options": [
+    "missed, longed for",
+    "right nearby",
+    "learned by heart",
+    "up for sale"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "Los echaba harto de menos, cabros.",
+    "targetWord": "de menos",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "patiperra",
+  "sentence": "Andái de [[patiperra]] por el mundo, weón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a restless wanderer",
+   "options": [
+    "a restless wanderer",
+    "a total homebody",
+    "a posh snob",
+    "a heavy drinker"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "Andái de patiperra por el mundo, weón.",
+    "targetWord": "patiperra",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "condoro",
+  "sentence": "¿Se acuerdan del [[condoro]] de Nico en la playa?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a big blunder",
+   "options": [
+    "a big blunder",
+    "a wild party",
+    "a nice gift",
+    "a quick nap"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "¿Se acuerdan del condoro de Nico en la playa?",
+    "targetWord": "condoro",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Brígido",
+  "sentence": "Fue [[Brígido]] el condoro de Nico, qué vergüenza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "intense, wild",
+   "options": [
+    "intense, wild",
+    "boring, dull",
+    "cheap, tacky",
+    "tiny, small"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "Fue Brígido el condoro de Nico, qué vergüenza.",
+    "targetWord": "Brígido",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cahuín",
+  "sentence": "No echís ese [[cahuín]] de nuevo, weón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gossip, drama",
+   "options": [
+    "gossip, drama",
+    "a small coin",
+    "a quick nap",
+    "a steady job"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "No echís ese cahuín de nuevo, weón.",
+    "targetWord": "cahuín",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "avispao",
+  "sentence": "Igual Nico es [[avispao]] pa' salir del paso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sharp, clever",
+   "options": [
+    "sharp, clever",
+    "slow, dim",
+    "broke, poor",
+    "drunk, wasted"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "Igual Nico es avispao pa' salir del paso.",
+    "targetWord": "avispao",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piola",
+  "sentence": "Juguemos algo [[piola]], sin apostar na'.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "chill, low-key",
+   "options": [
+    "chill, low-key",
+    "expensive, posh",
+    "crazy, wild",
+    "loud, noisy"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "Juguemos algo piola, sin apostar na'.",
+    "targetWord": "piola",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pichanga",
+  "sentence": "Después del asado tiramos una [[pichanga]] tranquila.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a pickup soccer game",
+   "options": [
+    "a pickup soccer game",
+    "a bad hangover",
+    "a quick nap",
+    "a nice gift"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "Después del asado tiramos una pichanga tranquila.",
+    "targetWord": "pichanga",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Quedó la crema",
+  "sentence": "[[Quedó la crema]] el día, valió la pena.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it turned out great",
+   "options": [
+    "it turned out great",
+    "it rained hard",
+    "it got ruined",
+    "it got boring"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "Quedó la crema el día, valió la pena.",
+    "targetWord": "Quedó la crema",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "metemos al agua",
+  "sentence": "La otra semana nos [[metemos al agua]], aunque esté helada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "jump in the water",
+   "options": [
+    "jump in the water",
+    "leave real early",
+    "cook an asado",
+    "stay home resting"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "La otra semana nos metemos al agua, aunque esté helada.",
+    "targetWord": "metemos al agua",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ni una wea",
+  "sentence": "No cambio esto por [[ni una wea]] del mundo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nothing at all",
+   "options": [
+    "nothing at all",
+    "all the money",
+    "a great party",
+    "the whole world"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "No cambio esto por ni una wea del mundo.",
+    "targetWord": "ni una wea",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dejemos la cagá",
+  "sentence": "No [[dejemos la cagá]] con los platos, cabros.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "make a huge mess",
+   "options": [
+    "make a huge mess",
+    "win the whole game",
+    "pay the full bill",
+    "take a long nap"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "No dejemos la cagá con los platos, cabros.",
+    "targetWord": "dejemos la cagá",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "regio",
+  "sentence": "Todo salió _____ en el asado a la orilla.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "regio",
+   "options": [
+    "regio",
+    "malo",
+    "caro",
+    "largo"
+   ],
+   "translation": "Everything turned out _____ at the barbecue.",
+   "optionTranslations": [
+    "great, lovely",
+    "bad",
+    "expensive",
+    "long"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "Todo salió regio en el asado a la orilla.",
+    "targetWord": "regio",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chori",
+  "sentence": "Qué _____ tenerlos a todos acá.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chori",
+   "options": [
+    "chori",
+    "raro",
+    "caro",
+    "tarde"
+   ],
+   "translation": "How _____ to have you all here.",
+   "optionTranslations": [
+    "cool, nice",
+    "weird",
+    "expensive",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "Qué chori tenerlos a todos acá.",
+    "targetWord": "chori",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "harto",
+  "sentence": "Los echaba _____ de menos, cabros.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "harto",
+   "options": [
+    "harto",
+    "poco",
+    "rápido",
+    "tarde"
+   ],
+   "translation": "I missed you all _____.",
+   "optionTranslations": [
+    "a lot",
+    "a little",
+    "fast",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "Los echaba harto de menos, cabros.",
+    "targetWord": "harto",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "guata",
+  "sentence": "Me dolía la _____ de tanta risa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guata",
+   "options": [
+    "guata",
+    "cabeza",
+    "pierna",
+    "espalda"
+   ],
+   "translation": "My _____ hurt from laughing so much.",
+   "optionTranslations": [
+    "belly",
+    "head",
+    "leg",
+    "back"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "Me dolía la guata de tanta risa.",
+    "targetWord": "guata",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mino",
+  "sentence": "Benjamín se cree el _____ del grupo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mino",
+   "options": [
+    "mino",
+    "jefe",
+    "tonto",
+    "payaso"
+   ],
+   "translation": "Benjamín thinks he's the _____ of the group.",
+   "optionTranslations": [
+    "hot guy",
+    "boss",
+    "fool",
+    "clown"
+   ],
+   "audioClip": {
+    "storySlug": "un-asado-a-la-orilla",
+    "storySource": "user",
+    "sentence": "Benjamín se cree el mino del grupo.",
+    "targetWord": "mino",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "hacerle el quite,subieron los tragos,arriba de la pelota,hasta las masas",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "hacerle el quite",
+     "answer": "to dodge, avoid",
+     "options": [
+      "to dodge, avoid",
+      "the drinks hit you",
+      "to be doing great",
+      "packed full, stuffed"
+     ]
+    },
+    {
+     "word": "subieron los tragos",
+     "answer": "the drinks hit you",
+     "options": [
+      "to dodge, avoid",
+      "the drinks hit you",
+      "to be doing great",
+      "packed full, stuffed"
+     ]
+    },
+    {
+     "word": "arriba de la pelota",
+     "answer": "to be doing great",
+     "options": [
+      "to dodge, avoid",
+      "the drinks hit you",
+      "to be doing great",
+      "packed full, stuffed"
+     ]
+    },
+    {
+     "word": "hasta las masas",
+     "answer": "packed full, stuffed",
+     "options": [
+      "to dodge, avoid",
+      "the drinks hit you",
+      "to be doing great",
+      "packed full, stuffed"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "tono",
+  "sentence": "Diego conoció a alguien en el [[tono]] del sábado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a party",
+   "options": [
+    "a party",
+    "a job",
+    "a market",
+    "a class"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "Diego conoció a alguien en el tono del sábado.",
+    "targetWord": "tono",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pituca",
+  "sentence": "No seas [[pituca]] ahora que vives en Lima.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "posh, snobby",
+   "options": [
+    "posh, snobby",
+    "poor",
+    "shy",
+    "funny"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "No seas pituca ahora que vives en Lima.",
+    "targetWord": "pituca",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "achorado",
+  "sentence": "Tú eres el [[achorado]] que se cree bien vivo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cocky, aggressive",
+   "options": [
+    "cocky, aggressive",
+    "calm",
+    "generous",
+    "polite"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "Tú eres el achorado que se cree bien vivo.",
+    "targetWord": "achorado",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "telo",
+  "sentence": "Diego ni siquiera llegó al [[telo]] con ella.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "love motel",
+   "options": [
+    "love motel",
+    "party",
+    "market",
+    "office"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "Diego ni siquiera llegó al telo con ella.",
+    "targetWord": "telo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "broder",
+  "sentence": "Pasen, [[broder]], siéntanse como en su propia casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "buddy, bro",
+   "options": [
+    "buddy, bro",
+    "boss",
+    "stranger",
+    "enemy"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "Pasen, broder, siéntanse como en su propia casa.",
+    "targetWord": "broder",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chochera",
+  "sentence": "Siéntate tranquilo, [[chochera]], aquí eres de la casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "buddy, close crew",
+   "options": [
+    "buddy, close crew",
+    "rival",
+    "teacher",
+    "customer"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "Siéntate tranquilo, chochera, aquí eres de la casa.",
+    "targetWord": "chochera",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "coco",
+  "sentence": "Ando sin un [[coco]] desde el lunes, causa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a coin, money",
+   "options": [
+    "a coin, money",
+    "a car",
+    "a friend",
+    "a job"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "Ando sin un coco desde el lunes, causa.",
+    "targetWord": "coco",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "palta",
+  "sentence": "Terminaron de comer sin la [[palta]] del inicio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "embarrassment",
+   "options": [
+    "embarrassment",
+    "hunger",
+    "money",
+    "music"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "Terminaron de comer sin la palta del inicio.",
+    "targetWord": "palta",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "saca pica",
+  "sentence": "Diego solo [[saca pica]] porque siempre le ganas hablando.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stirs up envy",
+   "options": [
+    "stirs up envy",
+    "tells jokes",
+    "pays up",
+    "stays quiet"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "Diego solo saca pica porque siempre le ganas hablando.",
+    "targetWord": "saca pica",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "metiendo letra",
+  "sentence": "Tú siempre [[metiendo letra]] a cualquier chica del tono.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "chatting up",
+   "options": [
+    "chatting up",
+    "paying for",
+    "laughing at",
+    "running from"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "Tú siempre metiendo letra a cualquier chica del tono.",
+    "targetWord": "metiendo letra",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aguja",
+  "sentence": "Cuando andes [[aguja]], este jato tiene la puerta abierta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "broke, out of money",
+   "options": [
+    "broke, out of money",
+    "happy",
+    "sleepy",
+    "hungry"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "Cuando andes aguja, este jato tiene la puerta abierta.",
+    "targetWord": "aguja",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pongas cara de",
+  "sentence": "No [[pongas cara de]] pituca cuando te hablemos feo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "make a face",
+   "options": [
+    "make a face",
+    "run out",
+    "speak up",
+    "sit down"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "No pongas cara de pituca cuando te hablemos feo.",
+    "targetWord": "pongas cara de",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "jamear",
+  "sentence": "Beto nos invitó a su jato a _____ algo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "jamear",
+   "options": [
+    "jamear",
+    "dormir",
+    "pelear",
+    "cantar"
+   ],
+   "translation": "Beto invited us to his place to _____ something.",
+   "optionTranslations": [
+    "eat, grab food",
+    "sleep",
+    "fight",
+    "sing"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "Beto nos invitó a su jato a jamear algo.",
+    "targetWord": "jamear",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chapo",
+  "sentence": "El sábado casi _____ con una en el tono.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chapo",
+   "options": [
+    "chapo",
+    "peleé",
+    "lloré",
+    "corrí"
+   ],
+   "translation": "Saturday I almost _____ with someone at the party.",
+   "optionTranslations": [
+    "made out, kissed",
+    "fought",
+    "cried",
+    "ran"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "El sábado casi chapo con una en el tono.",
+    "targetWord": "chapo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "manyo",
+  "sentence": "Ya _____ casi toda su jerga, gracias, causas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "manyo",
+   "options": [
+    "manyo",
+    "olvido",
+    "invento",
+    "escribo"
+   ],
+   "translation": "I already _____ almost all their slang now, thanks.",
+   "optionTranslations": [
+    "understand, get it",
+    "forget",
+    "make up",
+    "write"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "Ya manyo casi toda su jerga, gracias, causas.",
+    "targetWord": "manyo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "monse",
+  "sentence": "Eres medio _____ para tus propias cosas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "monse",
+   "options": [
+    "monse",
+    "vivo",
+    "alto",
+    "rico"
+   ],
+   "translation": "You're kind of _____ with your own stuff.",
+   "optionTranslations": [
+    "dumb, clueless",
+    "clever",
+    "tall",
+    "rich"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "Eres medio monse para tus propias cosas.",
+    "targetWord": "monse",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "choborra",
+  "sentence": "El sábado terminé bien _____ en el tono.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "choborra",
+   "options": [
+    "choborra",
+    "cansado",
+    "aburrido",
+    "molesto"
+   ],
+   "translation": "Saturday I ended up really _____ at the party.",
+   "optionTranslations": [
+    "drunk, wasted",
+    "tired",
+    "bored",
+    "annoyed"
+   ],
+   "audioClip": {
+    "storySlug": "almuerzo-en-el-jato",
+    "storySource": "user",
+    "sentence": "El sábado terminé bien choborra en el tono.",
+    "targetWord": "choborra",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "al grano,hacían hora,paso el dato,agarres de punto",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "al grano",
+     "answer": "get to the point",
+     "options": [
+      "get to the point",
+      "killing time",
+      "to give a tip",
+      "to pick on someone"
+     ]
+    },
+    {
+     "word": "hacían hora",
+     "answer": "killing time",
+     "options": [
+      "get to the point",
+      "killing time",
+      "to give a tip",
+      "to pick on someone"
+     ]
+    },
+    {
+     "word": "paso el dato",
+     "answer": "to give a tip",
+     "options": [
+      "get to the point",
+      "killing time",
+      "to give a tip",
+      "to pick on someone"
+     ]
+    },
+    {
+     "word": "agarres de punto",
+     "answer": "to pick on someone",
+     "options": [
+      "get to the point",
+      "killing time",
+      "to give a tip",
+      "to pick on someone"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "cuadre",
+  "sentence": "Andrés por fin tenía [[cuadre]] con la chica linda.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a hookup, date",
+   "options": [
+    "a hookup, date",
+    "a fight",
+    "a beer",
+    "a ride"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "Andrés por fin tenía cuadre con la chica linda.",
+    "targetWord": "cuadre",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guachimán",
+  "sentence": "El [[guachimán]] de la esquina pegó el grito enojado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the watchman, guard",
+   "options": [
+    "the watchman, guard",
+    "the neighbor",
+    "the singer",
+    "the driver"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "El guachimán de la esquina pegó el grito enojado.",
+    "targetWord": "guachimán",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pegó el grito",
+  "sentence": "El guachimán [[pegó el grito]] para que bajaran la música.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shouted out",
+   "options": [
+    "shouted out",
+    "fell asleep",
+    "paid up",
+    "walked off"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "El guachimán pegó el grito para que bajaran la música.",
+    "targetWord": "pegó el grito",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zafarrancho",
+  "sentence": "Se armó un [[zafarrancho]] apenas llegaron las primeras quejas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a chaotic uproar",
+   "options": [
+    "a chaotic uproar",
+    "a quiet nap",
+    "a slow dance",
+    "a long line"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "Se armó un zafarrancho apenas llegaron las primeras quejas.",
+    "targetWord": "zafarrancho",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "embale",
+  "sentence": "Erda, qué [[embale]], se nos va a dañar todo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a mess, jam",
+   "options": [
+    "a mess, jam",
+    "a treat",
+    "a break",
+    "a deal"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "Erda, qué embale, se nos va a dañar todo.",
+    "targetWord": "embale",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tombos",
+  "sentence": "Alguien gritó que venían los [[tombos]] y todos corrieron.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the cops",
+   "options": [
+    "the cops",
+    "the neighbors",
+    "the guests",
+    "the singers"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "Alguien gritó que venían los tombos y todos corrieron.",
+    "targetWord": "tombos",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pelotera",
+  "sentence": "Si nos cogen es [[pelotera]] y multa bien segura.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a big brawl",
+   "options": [
+    "a big brawl",
+    "a party",
+    "a nap",
+    "a discount"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "Si nos cogen es pelotera y multa bien segura.",
+    "targetWord": "pelotera",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cojan monte",
+  "sentence": "¡Yo no vuelvo, [[cojan monte]] cada uno por su lado!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "run off and flee",
+   "options": [
+    "run off and flee",
+    "sit tight",
+    "pay up",
+    "line up"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "¡Yo no vuelvo, cojan monte cada uno por su lado!",
+    "targetWord": "cojan monte",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salimos en carrera",
+  "sentence": "[[Salimos en carrera]] sin mirar atrás, empujándonos entre todos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "took off running",
+   "options": [
+    "took off running",
+    "sat down calmly",
+    "walked in slowly",
+    "stayed to help"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "Salimos en carrera sin mirar atrás, empujándonos entre todos.",
+    "targetWord": "Salimos en carrera",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "A las volandas",
+  "sentence": "[[A las volandas]] se nos quedó Andrés allá solo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in a big rush",
+   "options": [
+    "in a big rush",
+    "on purpose",
+    "little by little",
+    "without a doubt"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "A las volandas se nos quedó Andrés allá solo.",
+    "targetWord": "A las volandas",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "echo para atrás",
+  "sentence": "Yo no [[echo para atrás]], pero pobre Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "back out, chicken out",
+   "options": [
+    "back out, chicken out",
+    "show up",
+    "pay up",
+    "calm down"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "Yo no echo para atrás, pero pobre Andrés.",
+    "targetWord": "echo para atrás",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "metió en un lío",
+  "sentence": "Se [[metió en un lío]] tremendo por ir comprando mecato.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "got into a mess",
+   "options": [
+    "got into a mess",
+    "took a nap",
+    "won a prize",
+    "made a friend"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "Se metió en un lío tremendo por ir comprando mecato.",
+    "targetWord": "metió en un lío",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "frías",
+  "sentence": "De madrugada, con las _____ ya calientes, seguía la parranda.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "frías",
+   "options": [
+    "frías",
+    "sillas",
+    "luces",
+    "canciones"
+   ],
+   "translation": "At dawn, with the _____ already warm, the party went on.",
+   "optionTranslations": [
+    "cold beers",
+    "chairs",
+    "lights",
+    "songs"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "De madrugada, con las frías ya calientes, seguía la parranda.",
+    "targetWord": "frías",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "jincho",
+  "sentence": "A esa hora medio mundo andaba bien _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "jincho",
+   "options": [
+    "jincho",
+    "callado",
+    "flaco",
+    "serio"
+   ],
+   "translation": "By then half the crowd was pretty _____.",
+   "optionTranslations": [
+    "drunk, wasted",
+    "quiet",
+    "skinny",
+    "serious"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "A esa hora medio mundo andaba bien jincho.",
+    "targetWord": "jincho",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mecato",
+  "sentence": "Voy a comprar _____ aquí en la tienda, ya vengo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mecato",
+   "options": [
+    "mecato",
+    "ropa",
+    "gasolina",
+    "tiempo"
+   ],
+   "translation": "I'll go buy some _____ at the store, be right back.",
+   "optionTranslations": [
+    "snacks",
+    "clothes",
+    "gasoline",
+    "time"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "Voy a comprar mecato aquí en la tienda, ya vengo.",
+    "targetWord": "mecato",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "ñato",
+  "sentence": "Apúrate, _____, no te pierdas lo mejor de la noche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ñato",
+   "options": [
+    "ñato",
+    "señor",
+    "doctor",
+    "vecino"
+   ],
+   "translation": "Hurry up, _____, don't miss the best of the night.",
+   "optionTranslations": [
+    "dude, pal",
+    "sir",
+    "doctor",
+    "neighbor"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "Apúrate, ñato, no te pierdas lo mejor de la noche.",
+    "targetWord": "ñato",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "pelá",
+  "sentence": "Se nos quedó allá con la _____ en plena corrida.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pelá",
+   "options": [
+    "pelá",
+    "música",
+    "comida",
+    "plata"
+   ],
+   "translation": "He stayed back there with the _____ during the chaos.",
+   "optionTranslations": [
+    "the girl",
+    "music",
+    "food",
+    "money"
+   ],
+   "audioClip": {
+    "storySlug": "se-dano-la-parranda",
+    "storySource": "user",
+    "sentence": "Se nos quedó allá con la pelá en plena corrida.",
+    "targetWord": "pelá",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "puso los pelos de punta,se armó la gorda,No veo la hora,quedó en veremos",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "puso los pelos de punta",
+     "answer": "hair stood on end",
+     "options": [
+      "hair stood on end",
+      "all hell broke loose",
+      "can't wait",
+      "up in the air"
+     ]
+    },
+    {
+     "word": "se armó la gorda",
+     "answer": "all hell broke loose",
+     "options": [
+      "hair stood on end",
+      "all hell broke loose",
+      "can't wait",
+      "up in the air"
+     ]
+    },
+    {
+     "word": "No veo la hora",
+     "answer": "can't wait",
+     "options": [
+      "hair stood on end",
+      "all hell broke loose",
+      "can't wait",
+      "up in the air"
+     ]
+    },
+    {
+     "word": "quedó en veremos",
+     "answer": "up in the air",
+     "options": [
+      "hair stood on end",
+      "all hell broke loose",
+      "can't wait",
+      "up in the air"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

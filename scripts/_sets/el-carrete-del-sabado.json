@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "carrete",
+  "sentence": "El sábado armamos un buen [[carrete]] en la casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a party, night out",
+   "options": [
+    "a party, night out",
+    "a fistfight",
+    "a steady job",
+    "a quick nap"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "El sábado armamos un buen carrete en la casa.",
+    "targetWord": "carrete",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cabros",
+  "sentence": "Vengan temprano, [[cabros]], no lleguen curaos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "guys, dudes",
+   "options": [
+    "guys, dudes",
+    "strict bosses",
+    "little kids only",
+    "grumpy old men"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "Vengan temprano, cabros, no lleguen curaos.",
+    "targetWord": "cabros",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caña",
+  "sentence": "Al otro día tenía una [[caña]] brígida, weón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a hangover",
+   "options": [
+    "a hangover",
+    "a wild party",
+    "a small coin",
+    "a nasty fight"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "Al otro día tenía una caña brígida, weón.",
+    "targetWord": "caña",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "flaite",
+  "sentence": "Ese weón medio [[flaite]] casi nos roba.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a trashy lowlife",
+   "options": [
+    "a trashy lowlife",
+    "a posh snob",
+    "a street cop",
+    "a close friend"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "Ese weón medio flaite casi nos roba.",
+    "targetWord": "flaite",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuico",
+  "sentence": "El otro [[cuico]] ni pescaba a nadie, pesado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a posh snob",
+   "options": [
+    "a posh snob",
+    "a trashy lowlife",
+    "a total drunk",
+    "a little kid"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "El otro cuico ni pescaba a nadie, pesado.",
+    "targetWord": "cuico",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pituto",
+  "sentence": "Sin [[pituto]] no cae ninguna pega, po.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an inside connection",
+   "options": [
+    "an inside connection",
+    "a wild party",
+    "a bad hangover",
+    "a small coin"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "Sin pituto no cae ninguna pega, po.",
+    "targetWord": "pituto",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pa'l gato",
+  "sentence": "El sistema está [[pa'l gato]], no sirve na'.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "useless, busted",
+   "options": [
+    "useless, busted",
+    "brand new",
+    "really posh",
+    "right away"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "El sistema está pa'l gato, no sirve na'.",
+    "targetWord": "pa'l gato",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pasar piola",
+  "sentence": "Mi ex quiere [[pasar piola]] y caer igual.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go unnoticed",
+   "options": [
+    "to go unnoticed",
+    "to show off",
+    "to pay up",
+    "to pick a fight"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "Mi ex quiere pasar piola y caer igual.",
+    "targetWord": "pasar piola",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cae mal",
+  "sentence": "Ese weón siempre me [[cae mal]], qué pesado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rubs me wrong",
+   "options": [
+    "rubs me wrong",
+    "makes me laugh",
+    "pays my bill",
+    "helps me out"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "Ese weón siempre me cae mal, qué pesado.",
+    "targetWord": "cae mal",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dai jugo",
+  "sentence": "No [[dai jugo]], weón; algo va a salir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "waste time, be useless",
+   "options": [
+    "waste time, be useless",
+    "work really hard",
+    "stay positive",
+    "pay the bill"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "No dai jugo, weón; algo va a salir.",
+    "targetWord": "dai jugo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fue la micro",
+  "sentence": "No sé qué hacer, se me [[fue la micro]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lost my train of thought",
+   "options": [
+    "lost my train of thought",
+    "won the game",
+    "paid the bill",
+    "got wasted"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "No sé qué hacer, se me fue la micro.",
+    "targetWord": "fue la micro",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pololo",
+  "sentence": "Es mi ex [[pololo]], quiere caer igual.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "boyfriend",
+   "options": [
+    "boyfriend",
+    "strict boss",
+    "nosy neighbor",
+    "distant cousin"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "Es mi ex pololo, quiere caer igual.",
+    "targetWord": "pololo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "copete",
+  "sentence": "Yo llevo el _____ pa'l carrete del sábado.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "copete",
+   "options": [
+    "copete",
+    "auto",
+    "perro",
+    "pan"
+   ],
+   "translation": "I'll bring the _____ for the party.",
+   "optionTranslations": [
+    "booze",
+    "car",
+    "dog",
+    "bread"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "Yo llevo el copete pa'l carrete del sábado.",
+    "targetWord": "copete",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "luca",
+  "sentence": "Ando corto de _____, no me alcanza.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "luca",
+   "options": [
+    "luca",
+    "tiempo",
+    "sueño",
+    "amigos"
+   ],
+   "translation": "I'm short on _____.",
+   "optionTranslations": [
+    "cash, grand",
+    "time",
+    "sleep",
+    "friends"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "Ando corto de luca, no me alcanza.",
+    "targetWord": "luca",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "gamba",
+  "sentence": "Junta lo que tengái, aunque sea una _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gamba",
+   "options": [
+    "gamba",
+    "casa",
+    "idea",
+    "mano"
+   ],
+   "translation": "Chip in whatever you have, even a _____.",
+   "optionTranslations": [
+    "hundred pesos",
+    "house",
+    "idea",
+    "hand"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "Junta lo que tengái, aunque sea una gamba.",
+    "targetWord": "gamba",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "curao",
+  "sentence": "Llegaron todos _____ de otro lado.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "curao",
+   "options": [
+    "curao",
+    "cansados",
+    "tarde",
+    "solos"
+   ],
+   "translation": "They all arrived _____ from somewhere else.",
+   "optionTranslations": [
+    "drunk",
+    "tired",
+    "late",
+    "alone"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "Llegaron todos curao de otro lado.",
+    "targetWord": "curao",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "pega",
+  "sentence": "Ando buscando _____, pero sin pituto nada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pega",
+   "options": [
+    "pega",
+    "casa",
+    "novia",
+    "perro"
+   ],
+   "translation": "I'm looking for _____, but without a contact nothing.",
+   "optionTranslations": [
+    "a job",
+    "a house",
+    "a girlfriend",
+    "a dog"
+   ],
+   "audioClip": {
+    "storySlug": "el-carrete-del-sabado",
+    "storySource": "user",
+    "sentence": "Ando buscando pega, pero sin pituto nada.",
+    "targetWord": "pega",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "hace perro muerto,sacái la cresta,tirar pa'rriba,quedar pa'dentro",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "hace perro muerto",
+     "answer": "to dine and dash",
+     "options": [
+      "to dine and dash",
+      "to bust your butt",
+      "to stay positive",
+      "to be screwed"
+     ]
+    },
+    {
+     "word": "sacái la cresta",
+     "answer": "to bust your butt",
+     "options": [
+      "to dine and dash",
+      "to bust your butt",
+      "to stay positive",
+      "to be screwed"
+     ]
+    },
+    {
+     "word": "tirar pa'rriba",
+     "answer": "to stay positive",
+     "options": [
+      "to dine and dash",
+      "to bust your butt",
+      "to stay positive",
+      "to be screwed"
+     ]
+    },
+    {
+     "word": "quedar pa'dentro",
+     "answer": "to be screwed",
+     "options": [
+      "to dine and dash",
+      "to bust your butt",
+      "to stay positive",
+      "to be screwed"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]

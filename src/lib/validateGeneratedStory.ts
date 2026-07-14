@@ -1862,8 +1862,20 @@ export async function validateGeneratedStory(
     // single lemmas; routing them through the per-lemma frequency judge marks
     // them C2 by default. They are governed by their own checks (colloquial
     // expression + vocab-min-expressions), so exempt them here.
+    //
+    // SLANG is exempt for the same reason (2026-07-09): the frequency judge
+    // measures CEFR difficulty via corpus frequency, but slang/regionalisms
+    // ("albur", "neta", "carnala", "chido") are low-frequency by nature —
+    // register, not difficulty. A journey that TEACHES colloquial/vulgar
+    // register at C1 (e.g. "Friends" ES LATAM) must be able to curate slang
+    // without the frequency gate flagging it C2. This is NOT a relaxation of
+    // the bar: slang items are still governed by every other vocab check
+    // (surface-literal, definition quality, no-same-root, distribution, type
+    // validity). Only the frequency axis — the wrong instrument for register
+    // — is skipped for type "slang", exactly as for "expression".
+    const REGISTER_EXEMPT = new Set(["expression", "slang"]);
     const vocabWords = parsed.vocab
-      .filter((v) => (v.type ?? "").toLowerCase() !== "expression")
+      .filter((v) => !REGISTER_EXEMPT.has((v.type ?? "").toLowerCase()))
       .map((v) => v.word);
     const { aboveLevel } = await filterSpanishWordsAtOrBelow(
       vocabWords,

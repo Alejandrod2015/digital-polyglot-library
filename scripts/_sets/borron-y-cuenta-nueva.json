@@ -1,0 +1,487 @@
+[
+ {
+  "type": "meaning_in_context",
+  "word": "sin rodeos",
+  "sentence": "Hablemos [[sin rodeos]]: ¿dejamos todo esto quieto o qué?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "straight up",
+   "options": [
+    "straight up",
+    "in secret",
+    "very slowly",
+    "by letter"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Hablemos sin rodeos: ¿dejamos todo esto quieto o qué?",
+    "targetWord": "sin rodeos",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "las cosas quietas",
+  "sentence": "Mejor dejemos [[las cosas quietas]] y no peleamos más.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "things alone",
+   "options": [
+    "things alone",
+    "the door open",
+    "the music loud",
+    "the bill unpaid"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Mejor dejemos las cosas quietas y no peleamos más.",
+    "targetWord": "las cosas quietas",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "juicioso",
+  "sentence": "Yo prometo portarme [[juicioso]] y no abrir la boca.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "well behaved",
+   "options": [
+    "well behaved",
+    "lazy",
+    "broke",
+    "rude"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Yo prometo portarme juicioso y no abrir la boca.",
+    "targetWord": "juicioso",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cantaleta",
+  "sentence": "Nada de [[cantaleta]] eterna, ya olvidemos el asunto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nagging",
+   "options": [
+    "nagging",
+    "dancing",
+    "cooking",
+    "paying"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Nada de cantaleta eterna, ya olvidemos el asunto.",
+    "targetWord": "cantaleta",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "buena leche",
+  "sentence": "Tuve [[buena leche]] de que ustedes no me mataran.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "good luck",
+   "options": [
+    "good luck",
+    "bad news",
+    "hard work",
+    "cold milk"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Tuve buena leche de que ustedes no me mataran.",
+    "targetWord": "buena leche",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "doy la mano",
+  "sentence": "Para compensar, yo [[doy la mano]] con la próxima cena.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lend a hand",
+   "options": [
+    "lend a hand",
+    "stay home",
+    "say no",
+    "take off"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Para compensar, yo doy la mano con la próxima cena.",
+    "targetWord": "doy la mano",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Estoy a la orden",
+  "sentence": "Cuenten conmigo para lo que sea; [[Estoy a la orden]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at your service",
+   "options": [
+    "at your service",
+    "in a hurry",
+    "out of money",
+    "half asleep"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Cuenten conmigo para lo que sea; Estoy a la orden.",
+    "targetWord": "Estoy a la orden",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lobo",
+  "sentence": "No sea tan [[lobo]] con el detalle y quedamos bien.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tacky, cheap",
+   "options": [
+    "tacky, cheap",
+    "generous",
+    "quiet",
+    "early"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "No sea tan lobo con el detalle y quedamos bien.",
+    "targetWord": "lobo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quedamos de perlas",
+  "sentence": "Con eso [[quedamos de perlas]] y todos contentos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "turn out perfectly",
+   "options": [
+    "turn out perfectly",
+    "end up broke",
+    "stay upset",
+    "lose it all"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Con eso quedamos de perlas y todos contentos.",
+    "targetWord": "quedamos de perlas",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hago la vuelta",
+  "sentence": "Yo [[hago la vuelta]] de traer los tragos ahora mismo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "run the errand",
+   "options": [
+    "run the errand",
+    "tell the story",
+    "skip the party",
+    "pay the rent"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Yo hago la vuelta de traer los tragos ahora mismo.",
+    "targetWord": "hago la vuelta",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tragos",
+  "sentence": "Brindamos con unos [[tragos]] por dejar el chisme atrás.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "drinks",
+   "options": [
+    "drinks",
+    "chairs",
+    "photos",
+    "keys"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Brindamos con unos tragos por dejar el chisme atrás.",
+    "targetWord": "tragos",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "una nota",
+  "sentence": "Este parche es [[una nota]], no lo cambio por nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "something great",
+   "options": [
+    "something great",
+    "a big drag",
+    "a total mess",
+    "a bad joke"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Este parche es una nota, no lo cambio por nada.",
+    "targetWord": "una nota",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "parche",
+  "sentence": "El domingo el _____ se reunió a arreglar todo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "parche",
+   "options": [
+    "parche",
+    "reloj",
+    "carro",
+    "perro"
+   ],
+   "translation": "On Sunday the _____ got together to fix everything.",
+   "optionTranslations": [
+    "crew",
+    "clock",
+    "car",
+    "dog"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "El domingo el parche se reunió a arreglar todo.",
+    "targetWord": "parche",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "llave",
+  "sentence": "Tranquilo, _____, todos metemos la pata a veces.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "llave",
+   "options": [
+    "llave",
+    "señor",
+    "jefe",
+    "vecino"
+   ],
+   "translation": "Relax, _____, we all mess up sometimes.",
+   "optionTranslations": [
+    "close buddy",
+    "sir",
+    "boss",
+    "neighbor"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Tranquilo, llave, todos metemos la pata a veces.",
+    "targetWord": "llave",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chévere",
+  "sentence": "Borrón y cuenta nueva, ¿le parece _____?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chévere",
+   "options": [
+    "chévere",
+    "caro",
+    "feo",
+    "tarde"
+   ],
+   "translation": "Clean slate, sounds _____?",
+   "optionTranslations": [
+    "cool",
+    "expensive",
+    "ugly",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Borrón y cuenta nueva, ¿le parece chévere?",
+    "targetWord": "chévere",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "gomelo",
+  "sentence": "Uy, qué _____ saliste, pagando como todo un rico.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gomelo",
+   "options": [
+    "gomelo",
+    "tímido",
+    "lento",
+    "serio"
+   ],
+   "translation": "Wow, what a _____ you turned out, paying like a rich guy.",
+   "optionTranslations": [
+    "preppy rich kid",
+    "shy",
+    "slow",
+    "serious"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Uy, qué gomelo saliste, pagando como todo un rico.",
+    "targetWord": "gomelo",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "toches",
+  "sentence": "Los quiero aunque sean todos unos _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "toches",
+   "options": [
+    "toches",
+    "santos",
+    "genios",
+    "ricos"
+   ],
+   "translation": "I love you even if you're all _____.",
+   "optionTranslations": [
+    "fools",
+    "saints",
+    "geniuses",
+    "rich guys"
+   ],
+   "audioClip": {
+    "storySlug": "borron-y-cuenta-nueva",
+    "storySource": "user",
+    "sentence": "Los quiero aunque sean todos unos toches.",
+    "targetWord": "toches",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "match_meaning",
+  "word": "borrón y cuenta nueva,limar asperezas,por si las moscas,echar pa'lante",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "borrón y cuenta nueva",
+     "answer": "clean slate",
+     "options": [
+      "clean slate",
+      "smooth things over",
+      "just in case",
+      "push forward"
+     ]
+    },
+    {
+     "word": "limar asperezas",
+     "answer": "smooth things over",
+     "options": [
+      "clean slate",
+      "smooth things over",
+      "just in case",
+      "push forward"
+     ]
+    },
+    {
+     "word": "por si las moscas",
+     "answer": "just in case",
+     "options": [
+      "clean slate",
+      "smooth things over",
+      "just in case",
+      "push forward"
+     ]
+    },
+    {
+     "word": "echar pa'lante",
+     "answer": "push forward",
+     "options": [
+      "clean slate",
+      "smooth things over",
+      "just in case",
+      "push forward"
+     ]
+    }
+   ],
+   "audioClip": null
+  },
+  "featured": false
+ }
+]
