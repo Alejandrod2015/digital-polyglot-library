@@ -59,7 +59,7 @@ const config = {
   owner: "delcarpio321",
   slug: "digital-polyglot-mobile",
   scheme: "digitalpolyglot",
-  version: "0.1.0",
+  version: "1.0",
   newArchEnabled: false,
   orientation: "portrait",
   userInterfaceStyle: "automatic",
@@ -94,7 +94,9 @@ const config = {
     ],
   ],
   ios: {
-    supportsTablet: true,
+    // iPhone-only para el lanzamiento: declarar iPad obliga a subir capturas
+    // de iPad. Se puede añadir iPad después; quitarlo una vez publicado, no.
+    supportsTablet: false,
     bundleIdentifier: "com.digitalpolyglot.mobile",
     // OJO: este `buildNumber` es la fuente de verdad para el
     // CFBundleVersion del IPA. Tiene PRECEDENCIA sobre `app.json`
@@ -102,7 +104,7 @@ const config = {
     // `autoIncrement: true` NO funciona aquí porque EAS no muta JS.
     // Bumpear manualmente cada release a (max submitted on App Store
     // Connect) + 1.
-    buildNumber: "265",
+    buildNumber: "266",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
     },

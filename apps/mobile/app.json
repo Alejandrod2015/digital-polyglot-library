@@ -3,14 +3,15 @@
     "name": "Digital Polyglot",
     "slug": "digital-polyglot-mobile",
     "scheme": "digitalpolyglot",
-    "version": "0.1.0",
+    "version": "1.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
+      "buildNumber": "266",
       "bundleIdentifier": "com.digitalpolyglot.mobile"
     },
     "android": {
