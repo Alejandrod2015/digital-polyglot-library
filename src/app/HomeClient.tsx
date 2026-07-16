@@ -179,6 +179,7 @@ type HomeProgressPayload = {
 };
 
 type OnboardingPreferenceState = {
+  firstName: string;
   targetLanguages: string[];
   interests: string[];
   preferredLevel: string | null;
@@ -401,6 +402,7 @@ export default function HomeClient({
   );
   const [homeProgress, setHomeProgress] = useState<HomeProgressPayload | null>(null);
   const [onboardingState, setOnboardingState] = useState<OnboardingPreferenceState>({
+    firstName: "",
     targetLanguages: initialTargetLanguages,
     interests: initialInterests,
     preferredLevel: null,
@@ -512,6 +514,7 @@ export default function HomeClient({
       ? publicMetadata.interests
       : initialInterests;
     setOnboardingState({
+      firstName: typeof user.firstName === "string" ? user.firstName : "",
       targetLanguages: nextTargetLanguages.length > 0 ? nextTargetLanguages : ["Spanish"],
       interests: nextInterests,
       preferredLevel:
@@ -606,6 +609,7 @@ export default function HomeClient({
       const data = (await response.json()) as Partial<OnboardingPreferenceState>;
       setOnboardingState((current) => ({
         ...current,
+        firstName: typeof data.firstName === "string" ? data.firstName : current.firstName,
         targetLanguages: Array.isArray(data.targetLanguages) ? data.targetLanguages : current.targetLanguages,
         interests: Array.isArray(data.interests) ? data.interests : current.interests,
         preferredLevel: typeof data.preferredLevel === "string" ? data.preferredLevel : current.preferredLevel,
@@ -1611,6 +1615,23 @@ export default function HomeClient({
 
   const onboardingSteps = [
     {
+      title: "What should we call you?",
+      body: "Optional — we'll use your first name to greet you. Feel free to skip.",
+      render: (
+        <input
+          type="text"
+          value={onboardingState.firstName}
+          onChange={(event) =>
+            setOnboardingState((current) => ({ ...current, firstName: event.target.value }))
+          }
+          placeholder="First name"
+          autoComplete="given-name"
+          maxLength={80}
+          className="w-full rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3 text-base text-[var(--foreground)] placeholder:text-slate-400 focus:border-[var(--primary)] focus:outline-none"
+        />
+      ),
+    },
+    {
       title: "What are you learning?",
       body: "We will use this to tailor stories, books, Journey and Create.",
       render: (
@@ -1827,6 +1848,7 @@ export default function HomeClient({
 
   const completeSurvey = async () => {
     const success = await saveOnboardingPreferences({
+      firstName: onboardingState.firstName.trim(),
       targetLanguages: onboardingState.targetLanguages,
       interests: onboardingState.interests,
       preferredLevel: onboardingState.preferredLevel,
