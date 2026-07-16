@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Switch,
   Text,
+  TextInput,
   View,
 } from "react-native";
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
@@ -34,6 +35,10 @@ import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
  */
 
 export type OnboardingPayload = {
+  /** Optional first name captured at the top of step 1. Persisted to
+   *  Clerk's top-level firstName field so it populates greetings and
+   *  the acquisition "Usuario" column. null when the user skips it. */
+  firstName: string | null;
   /** Every (language, variant) tuple the user picked, in order of
    *  selection. The first one becomes the active journey; the rest
    *  are persisted as additional journeys on the account. Picking
@@ -265,6 +270,11 @@ export function OnboardingFlow({
   const [reminderMinute, setReminderMinute] = useState<number | null>(0);
   const [timePickerOpen, setTimePickerOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  // Optional first name (step 1). Seed from the session name when we
+  // already have one, so returning users see it pre-filled.
+  const [firstName, setFirstName] = useState(
+    typeof userName === "string" && userName.trim() ? userName.trim() : ""
+  );
 
   // Fire onboarding_started exactly once per mount. The ref guard
   // protects against StrictMode double-invokes and re-renders.
@@ -379,6 +389,7 @@ export function OnboardingFlow({
     setSubmitting(true);
     try {
       await onComplete({
+        firstName: firstName.trim() || null,
         selections: selectedOptions.map((option) => ({
           language: option.name,
           variant: option.variantCode ?? null,
@@ -454,6 +465,19 @@ export function OnboardingFlow({
               Pick one or more. The first you pick becomes your starting journey
              ; the rest will be ready in your language switcher.
             </Text>
+            <Text style={styles.nameLabel}>What should we call you? (optional)</Text>
+            <TextInput
+              style={styles.nameInput}
+              value={firstName}
+              onChangeText={setFirstName}
+              placeholder="First name"
+              placeholderTextColor="rgba(255,255,255,0.4)"
+              autoCapitalize="words"
+              autoComplete="given-name"
+              textContentType="givenName"
+              returnKeyType="done"
+              maxLength={80}
+            />
             <View style={styles.languageList}>
               {LANGUAGE_OPTIONS.map((option) => {
                 const selectedIndex = selectedKeys.indexOf(option.key);
@@ -910,8 +934,26 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
   // ─── Step 1: language list ────────────────────────────────────────
+  nameLabel: {
+    marginTop: 18,
+    color: "rgba(255,255,255,0.6)",
+    fontSize: 13,
+    fontWeight: "800",
+  },
+  nameInput: {
+    marginTop: 8,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    borderRadius: 14,
+    borderWidth: 1.5,
+    borderColor: "rgba(255,255,255,0.08)",
+    backgroundColor: "rgba(255,255,255,0.03)",
+    color: "#ffffff",
+    fontSize: 16,
+    fontWeight: "700",
+  },
   languageList: {
-    marginTop: 6,
+    marginTop: 18,
     gap: 10,
   },
   languageRow: {

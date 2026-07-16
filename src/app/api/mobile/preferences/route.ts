@@ -286,6 +286,11 @@ export async function POST(req: NextRequest): Promise<Response> {
   }
 
   const payload = body as Record<string, unknown>;
+  const firstName = Object.prototype.hasOwnProperty.call(payload, "firstName")
+    ? typeof payload.firstName === "string"
+      ? payload.firstName.trim().slice(0, 80)
+      : null
+    : undefined;
   const targetLanguages = Object.prototype.hasOwnProperty.call(payload, "targetLanguages")
     ? isStringArray(payload.targetLanguages)
       ? normalizeTargetLanguages(payload.targetLanguages)
@@ -460,6 +465,14 @@ export async function POST(req: NextRequest): Promise<Response> {
   await clerkClient.users.updateUserMetadata(session.sub, {
     publicMetadata: updatedMetadata,
   });
+
+  // firstName is a top-level Clerk field (NOT publicMetadata), so it needs a
+  // separate updateUser. Only write a non-empty value so skipping the optional
+  // onboarding name step never clears an existing name. Populates the metrics
+  // "Usuario" column and mobile greetings.
+  if (firstName) {
+    await clerkClient.users.updateUser(session.sub, { firstName });
+  }
 
   const after = await clerkClient.users.getUser(session.sub);
   const publicMetadata = (after.publicMetadata as Record<string, unknown>) ?? {};
