@@ -1,0 +1,522 @@
+[
+ {
+  "topic": "el-cotorreo",
+  "slotIndex": 1,
+  "title": "Le toca a Mateo",
+  "arcType": "late-reveal",
+  "synopsis": "El jueves que le toca pagar la cena, Mateo llega anunciando que anda corto y se pone a echar choro sobre que ya pagó la vez pasada. Renata lo chotea, Pablo se suma, pero es Sofia la que lo deja cotorrear hasta enredarse solo antes de sacarle la sopa: traia lana de sobra de una apuesta. No le queda mas que aflojar y aguantar la carrilla.",
+  "text": "En el grupo de Sofía había una regla que nadie escribió: el jueves que te tocaba pedir la cena, pagabas y punto. Ninguno quería quedar como el codo del cuento, pero a todos les daba hueva soltar la lana. En la práctica, cada semana era una negociación.\n\nEsa noche le tocaba a Mateo, y el muy vivales llevaba días anunciando que andaba corto. Llegaron los tacos y las chelas, y él se puso a contar las monedas de su cartera con una lentitud sospechosa. Renata lo cachó de inmediato.\n\n\"No mames, güey, ni que fueras a quebrar\", le soltó. Siguió choteándolo, y Pablo levantó la vista del celular para sumarse. La mesa entera se le echó encima.\n\nAlguien propuso lo de siempre: hacer vaquita y terminar con el asunto. Pero Mateo se puso a echar choro sobre que él ya había pagado la vez pasada, que le tocaba a otro, que las cuentas no cuadraban. Pura mamada, y nadie le creyó una palabra.\n\nYa los había tranzado igual el mes anterior. Intentó zafarse diciendo que había dejado la cartera en el coche. Sofía no dijo nada; lo dejó cotorrear un rato, dejándolo enredarse solito.\n\nCuando lo tuvo montado en la mentira, le sacó la sopa: el sábado había ganado una apuesta y traía dinero de sobra. \"Eres un cabrón\", se rió Renata. La mesa se le vino encima con pura carrilla.\n\nNo hubo defensa posible, así que al pinche Mateo no le quedó de otra que aflojar. Pagó con una sonrisa que le duró la noche entera. Así se cerraba otro jueves: el que se hacía pato pagaba, y encima aguantaba la burla hasta el jueves siguiente.",
+  "vocab": [
+   {
+    "word": "codo",
+    "surface": "codo",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "stingy, cheap, hating to spend any money at all"
+   },
+   {
+    "word": "hueva",
+    "surface": "hueva",
+    "type": "noun",
+    "register": "slang",
+    "definition": "laziness, or the reluctance to do something you should do"
+   },
+   {
+    "word": "lana",
+    "surface": "lana",
+    "type": "noun",
+    "register": "slang",
+    "definition": "common Mexican slang for money, cash, or dough"
+   },
+   {
+    "word": "vivales",
+    "surface": "vivales",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a sly opportunist who always looks out for himself"
+   },
+   {
+    "word": "chela",
+    "surface": "chelas",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a beer; the everyday Mexican word you hear constantly"
+   },
+   {
+    "word": "cachar",
+    "surface": "cachó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to catch someone in the act or notice something"
+   },
+   {
+    "word": "no mames",
+    "surface": "No mames",
+    "type": "expression",
+    "register": "slang",
+    "definition": "no way, you're kidding; vulgar but constant among Mexican friends"
+   },
+   {
+    "word": "güey",
+    "surface": "güey",
+    "type": "noun",
+    "register": "slang",
+    "definition": "dude or guy; the most common filler word in Mexican speech"
+   },
+   {
+    "word": "chotear",
+    "surface": "choteándolo",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to tease, mock, or make fun of someone playfully"
+   },
+   {
+    "word": "vaquita",
+    "surface": "vaquita",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a whip round where everyone chips in some money"
+   },
+   {
+    "word": "echar choro",
+    "surface": "echar choro",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to talk a lot of smooth nonsense to convince people"
+   },
+   {
+    "word": "mamada",
+    "surface": "mamada",
+    "type": "noun",
+    "register": "slang",
+    "definition": "nonsense or bullshit; something obviously untrue or ridiculous"
+   },
+   {
+    "word": "tranzar",
+    "surface": "tranzado",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to swindle or cheat someone, usually over money"
+   },
+   {
+    "word": "zafarse",
+    "surface": "zafarse",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to wriggle out of an obligation, getting yourself off the hook"
+   },
+   {
+    "word": "cotorrear",
+    "surface": "cotorrear",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to chat and joke around, often teasing someone lightly"
+   },
+   {
+    "word": "sacar la sopa",
+    "surface": "sacó la sopa",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to get the juicy truth or details out of someone"
+   },
+   {
+    "word": "cabrón",
+    "surface": "cabrón",
+    "type": "noun",
+    "register": "slang",
+    "definition": "bastard, but among friends it is affectionate, like rascal"
+   },
+   {
+    "word": "carrilla",
+    "surface": "carrilla",
+    "type": "noun",
+    "register": "slang",
+    "definition": "nonstop friendly teasing or mockery aimed at one person"
+   },
+   {
+    "word": "pinche",
+    "surface": "pinche",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "damn or bloody; a very common Mexican intensifier before nouns"
+   },
+   {
+    "word": "aflojar",
+    "surface": "aflojar",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to finally hand over money you were reluctant to pay"
+   },
+   {
+    "word": "hacerse pato",
+    "surface": "hacía pato",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to play dumb and pretend you did not notice"
+   },
+   {
+    "word": "andar corto",
+    "surface": "andaba corto",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to be short on cash, low on money right now"
+   },
+   {
+    "word": "no quedar de otra",
+    "surface": "no le quedó de otra",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to have no other choice left but to do it"
+   },
+   {
+    "word": "de sobra",
+    "surface": "de sobra",
+    "type": "expression",
+    "register": "slang",
+    "definition": "more than enough, with plenty of it to spare"
+   }
+  ]
+ },
+ {
+  "topic": "el-cotorreo",
+  "slotIndex": 2,
+  "title": "Ahorita salgo",
+  "arcType": "reframe-turn",
+  "synopsis": "El reloj de Renata funciona distinto y la banda lleva años haciendo deporte de su impuntualidad. Esa noche llega tardisima otra vez, con los demas echando raices en la esquina, y aguanta las burlas sin despeinarse mientras suelta su pretexto de siempre. Pero traia una movida preparada que le da vuelta a la noche y los apantalla a todos.",
+  "text": "En la banda de Sofía todos sabían que el reloj de Renata funcionaba distinto. Cuando decía \"ahorita salgo\", había que sumarle una hora, a veces dos. Esa noche los demás llevaban rato echando raíces en la esquina, muertos de frío.\n\nNeta, era la reina de llegar tarde, y el grupo lo había convertido en deporte. Cuando por fin apareció la morra, Mateo la recibió con una cara de falsa sorpresa. \"¿Qué pedo, ya te acordaste de nosotros?\", anunció, para que lo oyera toda la cuadra.\n\nA Mateo nunca se le iba la oportunidad de vacilar. Los demás se sumaron igual de gachos, cada uno con su versión del mismo chiste. Pablo estuvo especialmente culero, contando la vez que los dejó afuera de un cine.\n\nRenata, sin despeinarse, sacó su pretexto de siempre: el tráfico, el trabajo, la vida. Dijo que le había tocado chambear hasta tarde, como siempre. Ya nadie se lo creía, porque los había plantado demasiadas veces como para tener crédito.\n\nLo raro es que esta vez no se defendió ni armó bronca. Lo que ninguno sabía es que traía una movida preparada desde el lunes. Dejó que la siguieran agandallando un rato más, tranquila, esperando su momento.\n\nCuando el grupo se cansó de burlarse, abrió el bolso y sacó cuatro entradas para el concierto que llevaban meses queriendo ver. \"Está bien chido\", admitió Mateo, sin poder disimular. Los apantalló a los tres de una sola vez, con un movimiento bien chingón.\n\nNadie volvió a mencionar la hora en toda la noche. El reventón terminó a las cuatro y amanecieron crudos, arrepentidos y felices. Renata se rifó, y por una semana entera nadie le dijo nada de su reloj.",
+  "vocab": [
+   {
+    "word": "banda",
+    "surface": "banda",
+    "type": "noun",
+    "register": "slang",
+    "definition": "your crew, the group of friends you hang with"
+   },
+   {
+    "word": "ahorita",
+    "surface": "ahorita",
+    "type": "adverb",
+    "register": "slang",
+    "definition": "Mexican now that can mean soon, later, or never"
+   },
+   {
+    "word": "echar raíces",
+    "surface": "echando raíces",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to wait so long you seem rooted to the spot"
+   },
+   {
+    "word": "neta",
+    "surface": "Neta",
+    "type": "noun",
+    "register": "slang",
+    "definition": "Mexican slang for the honest truth, or seriously"
+   },
+   {
+    "word": "morra",
+    "surface": "morra",
+    "type": "noun",
+    "register": "slang",
+    "definition": "Mexican slang for a young woman or girl"
+   },
+   {
+    "word": "qué pedo",
+    "surface": "Qué pedo",
+    "type": "expression",
+    "register": "slang",
+    "definition": "what's up; a very common vulgar greeting among Mexican friends"
+   },
+   {
+    "word": "vacilar",
+    "surface": "vacilar",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to tease and joke around with someone in fun"
+   },
+   {
+    "word": "gacho",
+    "surface": "gachos",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "mean, uncool, or nasty in the way someone acts"
+   },
+   {
+    "word": "culero",
+    "surface": "culero",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "mean or nasty; someone who behaves badly toward others"
+   },
+   {
+    "word": "sin despeinarse",
+    "surface": "sin despeinarse",
+    "type": "expression",
+    "register": "slang",
+    "definition": "without breaking a sweat, totally cool and unbothered"
+   },
+   {
+    "word": "chambear",
+    "surface": "chambear",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to work; the everyday Mexican word for having a job"
+   },
+   {
+    "word": "plantar",
+    "surface": "plantado",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to stand someone up, leaving them waiting at the meeting place"
+   },
+   {
+    "word": "bronca",
+    "surface": "bronca",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a problem, an argument, or beef between people"
+   },
+   {
+    "word": "movida",
+    "surface": "movida",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a clever move or arrangement someone pulls off, often kept secret"
+   },
+   {
+    "word": "agandallar",
+    "surface": "agandallando",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to take advantage of someone, piling on them unfairly"
+   },
+   {
+    "word": "chido",
+    "surface": "chido",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "Mexican slang for cool, great, or nicely done"
+   },
+   {
+    "word": "apantallar",
+    "surface": "apantalló",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to impress or dazzle people, usually by showing something off"
+   },
+   {
+    "word": "chingón",
+    "surface": "chingón",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "awesome or badass; strong praise, vulgar but widely used"
+   },
+   {
+    "word": "reventón",
+    "surface": "reventón",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a big party that goes on late into the night"
+   },
+   {
+    "word": "crudo",
+    "surface": "crudos",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "hungover; feeling terrible the morning after drinking too much"
+   },
+   {
+    "word": "rifarse",
+    "surface": "se rifó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to come through for someone, doing something genuinely impressive"
+   },
+   {
+    "word": "muerto de frío",
+    "surface": "muertos de frío",
+    "type": "expression",
+    "register": "slang",
+    "definition": "freezing cold, absolutely frozen from waiting around outside"
+   },
+   {
+    "word": "llevar rato",
+    "surface": "llevaban rato",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to have been somewhere or doing something for a while"
+   }
+  ]
+ },
+ {
+  "topic": "el-cotorreo",
+  "slotIndex": 3,
+  "title": "Diez intentos",
+  "arcType": "harmonic-close",
+  "synopsis": "A Sofia se le ocurre la idea medio cursi de tomarse una foto para el refri, y lo que parecia simple se vuelve un desmadre: Mateo aventandose poses de galan, Pablo diciendo que se ve bien chafa, y nadie que sepa usar el temporizador. Se chutan diez intentos y la decima queda toda chueca, y justo por eso la cuelgan igual.",
+  "text": "Después de tantos jueves juntos, a Sofía se le ocurrió una idea medio cursi: tomarse una foto de los cuatro para colgarla en el refri. Nadie se opuso. Lo que nadie imaginó es que algo tan simple se iba a volver semejante desmadre.\n\nTardaron más en acomodarse que en cenar. Mateo se aventó una pose de portada de disco que nadie le había pedido, convencido de que era el galán del grupo. Se puso hasta adelante, con una cara de mamón que dio risa.\n\nAhí estaba, parado como el mero mero, cuando en realidad se veía bastante chafa. \"Te ves bien naco\", le dijo Pablo, sin piedad. Proponía tomarla así como estaban, sin tanta producción.\n\nRenata apuraba desde atrás, muerta de hambre, diciendo que se estaban clavando demasiado. La cagada llegó cuando apoyaron el celular en una silla, corrieron a la marca, y resultó que nadie sabía usar el temporizador. Qué oso.\n\nSe chutaron diez intentos antes de que saliera una decente. \"Órale, ahora sí, todos quietos\", gritaba Sofía cada vez, y cada vez se movía alguien. \"Ya, compa, es una foto, no una boda\", le contestaba Mateo desde el fondo.\n\nLa primera salió borrosa y la tercera, sin Pablo. La décima quedó toda chueca, con la mesa inclinada y medio mantel de protagonista. De perdis, esa sí los agarró a los cuatro viendo a la cámara, y a esas alturas ya les valía madres.\n\nLa colgaron igual, con un imán del súper, y ahí sigue. Al final eso era el grupo: cuates con los que uno la riega, hace pendejadas y termina contento de haberlo hecho. Nadie recuerda la foto; todos recuerdan la hora que perdieron intentándola.",
+  "vocab": [
+   {
+    "word": "cursi",
+    "surface": "cursi",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "corny, cheesy, sentimental in a slightly embarrassing way"
+   },
+   {
+    "word": "refri",
+    "surface": "refri",
+    "type": "noun",
+    "register": "slang",
+    "definition": "Mexican short word for the fridge or refrigerator"
+   },
+   {
+    "word": "desmadre",
+    "surface": "desmadre",
+    "type": "noun",
+    "register": "slang",
+    "definition": "wild chaos or a total noisy mess of fun"
+   },
+   {
+    "word": "aventarse",
+    "surface": "se aventó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to boldly go for it, throwing yourself into something"
+   },
+   {
+    "word": "galán",
+    "surface": "galán",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a handsome guy or a smooth ladies man"
+   },
+   {
+    "word": "mamón",
+    "surface": "mamón",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "stuck up or full of yourself; someone acting superior"
+   },
+   {
+    "word": "el mero mero",
+    "surface": "el mero mero",
+    "type": "expression",
+    "register": "slang",
+    "definition": "the top dog, the big boss, the main one"
+   },
+   {
+    "word": "chafa",
+    "surface": "chafa",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "cheap, tacky or badly done; the opposite of good quality"
+   },
+   {
+    "word": "naco",
+    "surface": "naco",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "tacky or lower class; a common and rather harsh Mexican insult"
+   },
+   {
+    "word": "clavarse",
+    "surface": "clavando",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to get obsessed with something, spending far too long on it"
+   },
+   {
+    "word": "cagada",
+    "surface": "cagada",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a mess or a bad screw up; vulgar but very common"
+   },
+   {
+    "word": "qué oso",
+    "surface": "Qué oso",
+    "type": "expression",
+    "register": "slang",
+    "definition": "how embarrassing, what a cringe moment that was"
+   },
+   {
+    "word": "chutarse",
+    "surface": "Se chutaron",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to sit through or endure something long and tedious"
+   },
+   {
+    "word": "órale",
+    "surface": "Órale",
+    "type": "expression",
+    "register": "slang",
+    "definition": "wow, or come on; an all purpose Mexican interjection"
+   },
+   {
+    "word": "compa",
+    "surface": "compa",
+    "type": "noun",
+    "register": "slang",
+    "definition": "buddy or mate; short for compañero, very common in Mexico"
+   },
+   {
+    "word": "chueco",
+    "surface": "chueca",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "crooked, skewed, or not quite straight at all"
+   },
+   {
+    "word": "de perdis",
+    "surface": "De perdis",
+    "type": "expression",
+    "register": "slang",
+    "definition": "at the very least, if nothing else at all"
+   },
+   {
+    "word": "valer madres",
+    "surface": "valía madres",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to not matter at all; vulgar way of saying who cares"
+   },
+   {
+    "word": "cuate",
+    "surface": "cuates",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a close friend or buddy; extremely common in Mexico"
+   },
+   {
+    "word": "regarla",
+    "surface": "la riega",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to mess something up or make an obvious mistake"
+   },
+   {
+    "word": "pendejada",
+    "surface": "pendejadas",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a stupid thing to do or say; vulgar but everyday"
+   },
+   {
+    "word": "muerto de hambre",
+    "surface": "muerta de hambre",
+    "type": "expression",
+    "register": "slang",
+    "definition": "starving, extremely hungry and unable to wait any longer"
+   },
+   {
+    "word": "hasta adelante",
+    "surface": "hasta adelante",
+    "type": "expression",
+    "register": "slang",
+    "definition": "right at the very front of the group"
+   }
+  ]
+ }
+]

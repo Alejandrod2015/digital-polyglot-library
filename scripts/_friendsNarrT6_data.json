@@ -1,0 +1,452 @@
+[
+ {
+  "topic": "la-jerga",
+  "slotIndex": 1,
+  "title": "Pilar no entiende nada",
+  "arcType": "reframe-turn",
+  "synopsis": "En el paradero esperando la combi, Diego y Beto saludan a Pilar con una catarata de jerga limeña que la deja en blanco. Ella se paltea porque no cachea ni una palabra y siente el roche de quedar como la lorna del grupo. Pero cuando descubre que muchas palabras van al revés, le da la vuelta a la broma y los deja mostros.",
+  "text": "En el paradero, esperando la combi bajo el cielo gris de Lima, Diego saludó a Pilar a toda velocidad. La recibió con un \"Asu\", un \"habla causa\" y un \"todo piña\" que le salieron de corrido. Pilar se quedó en blanco, sin entender ni la mitad de lo que le decían.\n\nBeto se sumó al toque, tirando más jerga encima como si nada. \"Tranquila, es floro nomás, no te paltees por la firme\", le dijo entre risas. Pero cada palabra rara la hundía más en el roche de no entender nada.\n\nDiego notó su cara de lorna perdida y quiso echarle una mano rápido. Le fue traduciendo despacio que causa y pata querían decir amigo del alma. Pilar asentía, todavía sintiéndose la más monse del paradero.\n\nEntre tanta palabra nueva, empezó a cachear algo curioso en cómo hablaban. Varias palabras sonaban como volteadas, con las sílabas cambiadas de lugar. Se quedó un rato callada, armando el rompecabezas en la cabeza.\n\nDe pronto se le prendió el foco y una sonrisa pícara le cruzó la cara. Había cachado que la jerga limeña voltea las palabras para despistar al de afuera. Sin avisar, les devolvió una frase entera hablada al revés, perfecta.\n\nDiego y Beto se miraron con los ojos como platos, sin poder creerlo. La chibola que hace un rato no pescaba nada les acababa de ganar en su propio juego. Beto, muerto de risa, soltó que esa germa era una mostra.\n\nPilar se paró derecha, saboreando su pequeña victoria en plena vereda. De lorna perdida pasó a ser la sensación del grupo en cinco minutos. Para entrar de verdad a una yunta, hay que aprender a hablarles en su propio código.",
+  "vocab": [
+   {
+    "word": "paradero",
+    "surface": "paradero",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a bus stop, the everyday Peruvian word for one"
+   },
+   {
+    "word": "combi",
+    "surface": "combi",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a small crowded minibus that runs across Lima"
+   },
+   {
+    "word": "asu",
+    "surface": "Asu",
+    "type": "expression",
+    "register": "slang",
+    "definition": "a Lima exclamation of surprise, like wow or whoa"
+   },
+   {
+    "word": "habla causa",
+    "surface": "habla causa",
+    "type": "expression",
+    "register": "slang",
+    "definition": "hey buddy, a classic Lima greeting between friends"
+   },
+   {
+    "word": "piña",
+    "surface": "piña",
+    "type": "noun",
+    "register": "slang",
+    "definition": "bad luck, or being unlucky; todo piña means all going wrong"
+   },
+   {
+    "word": "cachear",
+    "surface": "cachear",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to understand or catch on to what is being said"
+   },
+   {
+    "word": "al toque",
+    "surface": "al toque",
+    "type": "expression",
+    "register": "slang",
+    "definition": "right away, immediately, in a flash without waiting"
+   },
+   {
+    "word": "floro",
+    "surface": "floro",
+    "type": "noun",
+    "register": "slang",
+    "definition": "smooth talk or nonsense meant to charm or mislead"
+   },
+   {
+    "word": "paltearse",
+    "surface": "paltees",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to get flustered, embarrassed or worried over something"
+   },
+   {
+    "word": "por la firme",
+    "surface": "por la firme",
+    "type": "expression",
+    "register": "slang",
+    "definition": "honestly and for real, no kidding around at all"
+   },
+   {
+    "word": "roche",
+    "surface": "roche",
+    "type": "noun",
+    "register": "slang",
+    "definition": "embarrassment or shame from an awkward humiliating moment"
+   },
+   {
+    "word": "lorna",
+    "surface": "lorna",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a clueless fool, someone slow on the uptake"
+   },
+   {
+    "word": "pata",
+    "surface": "pata",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a friend or buddy, a Lima staple word"
+   },
+   {
+    "word": "monse",
+    "surface": "monse",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "dull, lame or clueless, not really with it"
+   },
+   {
+    "word": "prenderse el foco",
+    "surface": "se le prendió el foco",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to have a sudden bright idea, the lightbulb moment"
+   },
+   {
+    "word": "cachado",
+    "surface": "cachado",
+    "type": "verb",
+    "register": "slang",
+    "definition": "figured out or understood, caught on to it"
+   },
+   {
+    "word": "chibola",
+    "surface": "chibola",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a young girl or kid, a Lima word"
+   },
+   {
+    "word": "germa",
+    "surface": "germa",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a girl or young woman, from mujer flipped around"
+   },
+   {
+    "word": "mostro",
+    "surface": "mostra",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "awesome, amazing and really impressive, simply top quality"
+   },
+   {
+    "word": "yunta",
+    "surface": "yunta",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a tight crew of close friends, ride or die"
+   }
+  ]
+ },
+ {
+  "topic": "la-jerga",
+  "slotIndex": 2,
+  "title": "Almuerzo en el jato",
+  "arcType": "daily-encounter",
+  "synopsis": "Al mediodía Beto invita a la chochera a su jato a jamear algo rico mientras matan el hambre y hacen hora. Entre ceviche, floro y un par de chelas heladas, la sobremesa se llena de risas, cuentos exagerados y pura jerga cruzada. Es un almuerzo cualquiera, del montón, pero de esos que valen por la buena onda de la yunta.",
+  "text": "Al mediodía, Beto invitó a la chochera a su jato a jamear algo rico. \"Pasen, causas, siéntanse en su casa, que ya casi sale el ceviche\", los recibió contento. La cocina olía a limón y cebolla, y a todos se les hizo agua la boca.\n\nDiego llegó misio como siempre, pero con un hambre de la gran flauta. \"Broder, sírveme harto que ando sin un sol en el bolsillo\", pidió sin roche. Beto se rió y le dijo que en su casa nunca se iba nadie con hambre.\n\nSe sentaron todos apretados alrededor de la mesa pequeña de la sala. Pilar, que ya iba cachando la jerga, soltó un par de palabras nuevas como yapa. Los patas la aplaudieron, orgullosos de cómo la chibola iba agarrando calle.\n\nEntre bocado y bocado, empezó la sobremesa con puros cuentos exagerados. Diego juraba que una vez se comió veinte anticuchos con ají, y nadie le creía. \"No florees tanto, pues, que a ti te llena medio plato\", lo picó Pilar.\n\nLa mesa entera se cayó de risa con la respondida de la novata. Beto sacó unas chelas bien al polo para acompañar la tarde tranquila. Total, no tenían apuro, solo estaban matando el rato y haciendo hora.\n\nEra un almuerzo del montón, nada del otro mundo, sin planes ni pretensiones. Y sin embargo, era justo esa clase de tarde la que después uno extraña. La comida se terminó rápido, pero la conversación siguió por horas.\n\nCuando por fin se pararon, ya era media tarde y nadie quería moverse. Se despidieron con abrazos y la promesa de repetir el jato la otra semana. Ninguno lo dijo, pero ya todos esperaban que la otra semana llegara rápido.",
+  "vocab": [
+   {
+    "word": "chochera",
+    "surface": "chochera",
+    "type": "noun",
+    "register": "slang",
+    "definition": "your gang or close group of buddies in Lima"
+   },
+   {
+    "word": "jato",
+    "surface": "jato",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a house or home, where you crash and hang out"
+   },
+   {
+    "word": "jamear",
+    "surface": "jamear",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to eat and have yourself a good hearty feed"
+   },
+   {
+    "word": "ceviche",
+    "surface": "ceviche",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the classic Peruvian dish of raw fish cured in lime"
+   },
+   {
+    "word": "hacérsele agua la boca",
+    "surface": "se les hizo agua la boca",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to make your mouth water with pure hunger"
+   },
+   {
+    "word": "misio",
+    "surface": "misio",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "broke, dead flat without a single coin to spare"
+   },
+   {
+    "word": "de la gran flauta",
+    "surface": "de la gran flauta",
+    "type": "expression",
+    "register": "slang",
+    "definition": "enormous, a whole heap; here a huge hunger"
+   },
+   {
+    "word": "broder",
+    "surface": "Broder",
+    "type": "noun",
+    "register": "slang",
+    "definition": "bro or mate, borrowed from the English brother"
+   },
+   {
+    "word": "harto",
+    "surface": "harto",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "a lot, plenty, a big amount of something"
+   },
+   {
+    "word": "sol",
+    "surface": "sol",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the Peruvian currency, a single coin of money"
+   },
+   {
+    "word": "agarrar calle",
+    "surface": "agarrando calle",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to get street smarts and learn how things really work"
+   },
+   {
+    "word": "anticucho",
+    "surface": "anticuchos",
+    "type": "noun",
+    "register": "slang",
+    "definition": "grilled beef heart skewers, a beloved Peruvian street food"
+   },
+   {
+    "word": "florear",
+    "surface": "florees",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to lay it on thick with smooth talk or tall tales"
+   },
+   {
+    "word": "picar",
+    "surface": "picó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to needle someone and tease them a little"
+   },
+   {
+    "word": "matar el rato",
+    "surface": "matando el rato",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to kill time and pass the hours casually"
+   },
+   {
+    "word": "del montón",
+    "surface": "del montón",
+    "type": "expression",
+    "register": "slang",
+    "definition": "just ordinary and plain, nothing special about it really"
+   },
+   {
+    "word": "nada del otro mundo",
+    "surface": "nada del otro mundo",
+    "type": "expression",
+    "register": "slang",
+    "definition": "nothing out of this world, quite plain and simple"
+   },
+   {
+    "word": "ají",
+    "surface": "ají",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a hot chili pepper, the soul of Peruvian cooking"
+   },
+   {
+    "word": "sobremesa",
+    "surface": "sobremesa",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the lazy chat that lingers long after a meal"
+   },
+   {
+    "word": "yapa",
+    "surface": "yapa",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a little something extra thrown in for free"
+   }
+  ]
+ },
+ {
+  "topic": "la-jerga",
+  "slotIndex": 3,
+  "title": "La chibola nos superó",
+  "arcType": "recurring-character-callback",
+  "synopsis": "Semanas después, Pilar ya habla la jerga mejor que nadie y deja a Diego y Beto botados con cada palabra nueva que inventa. En plena reunión les mete un floro tan cerrado que los propios maestros quedan monses, sin cachear a su alumna. El grupo entero se rinde ante la novata que se volvió la más pro de todos.",
+  "text": "Semanas después, Pilar ya manejaba la jerga mejor que sus propios maestros. Lo que empezó como pura confusión en el paradero se había vuelto su cancha. Diego y Beto la escuchaban ahora con una mezcla de orgullo y de miedo.\n\nEn plena reunión, la novata soltó una frase tan cerrada que los dejó botados. Mezcló palabras al revés, apócopes y muletillas que ni ellos habían escuchado antes. Diego admitió con un \"Oe\" que no había cacheado ni michi de dónde había sacado esa.\n\nBeto trató de responderle con la misma moneda, tirando su mejor floro. Pero Pilar le devolvió otra frase todavía más enredada, sin despeinarse siquiera. El maestro terminó monse, rascándose la cabeza como el peor novato.\n\nLa cosa se volvió un duelo de jerga en plena mesa del jato. Cada uno disparaba palabras más raras, buscando dejar al otro sin respuesta. Pilar iba siempre un paso adelante, como si hubiera nacido hablando así.\n\nDiego, que se creía el más pro del grupo, tuvo que bajar la cabeza. \"Ya, me rindo, tú ganas, eres una crack, chata\", declaró entre risas. Beto levantó la mano de Pilar como a una campeona de box.\n\nLa chibola que llegó sin cachear nada ahora era la reina indiscutible. Los que la habían adoptado como alumna terminaron pidiéndole clases a ella. El mundo al revés, igual que las palabras que tanto le costó entender.\n\nPilar disfrutó el momento, pero no se achoró ni se le subió a la cabeza. \"Igual ustedes me enseñaron, así que somos yunta para siempre\", les dijo. Para ese grupo, la jerga nunca fue solo un idioma: era su forma de quererse.",
+  "vocab": [
+   {
+    "word": "manejar",
+    "surface": "manejaba",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to handle something skillfully, to have it down pat"
+   },
+   {
+    "word": "cancha",
+    "surface": "cancha",
+    "type": "noun",
+    "register": "slang",
+    "definition": "your home turf, a place where you feel in command"
+   },
+   {
+    "word": "dejar botado",
+    "surface": "los dejó botados",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to leave people stumped and stranded, unable to respond"
+   },
+   {
+    "word": "muletilla",
+    "surface": "muletillas",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a filler word or verbal tic repeated out of habit"
+   },
+   {
+    "word": "oe",
+    "surface": "Oe",
+    "type": "expression",
+    "register": "slang",
+    "definition": "hey, a Lima way to call someone's attention"
+   },
+   {
+    "word": "ni michi",
+    "surface": "ni michi",
+    "type": "expression",
+    "register": "slang",
+    "definition": "nothing at all, not even a tiny bit"
+   },
+   {
+    "word": "con la misma moneda",
+    "surface": "con la misma moneda",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to respond in kind, giving back the same treatment"
+   },
+   {
+    "word": "enredado",
+    "surface": "enredada",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "tangled and complicated, really quite hard to follow along"
+   },
+   {
+    "word": "maestro",
+    "surface": "maestro",
+    "type": "noun",
+    "register": "slang",
+    "definition": "master or expert; also a friendly term of respect"
+   },
+   {
+    "word": "novato",
+    "surface": "novato",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a beginner or rookie, still learning the ropes"
+   },
+   {
+    "word": "duelo",
+    "surface": "duelo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a duel or showdown between two rivals facing off head to head"
+   },
+   {
+    "word": "pro",
+    "surface": "pro",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "a pro, really good and skilled at something"
+   },
+   {
+    "word": "bajar la cabeza",
+    "surface": "bajar la cabeza",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to admit defeat and accept you have lost"
+   },
+   {
+    "word": "crack",
+    "surface": "crack",
+    "type": "noun",
+    "register": "slang",
+    "definition": "an ace, someone brilliant and top notch at something"
+   },
+   {
+    "word": "campeona",
+    "surface": "campeona",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a champion, the undefeated winner of the entire contest"
+   },
+   {
+    "word": "indiscutible",
+    "surface": "indiscutible",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "undisputed, beyond any argument or the slightest doubt"
+   },
+   {
+    "word": "subírsele a la cabeza",
+    "surface": "se le subió a la cabeza",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to let success go to your head and get cocky"
+   },
+   {
+    "word": "chato",
+    "surface": "chata",
+    "type": "noun",
+    "register": "slang",
+    "definition": "shorty, an affectionate nickname you call a close friend"
+   },
+   {
+    "word": "disparar",
+    "surface": "disparaba",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to fire off words or lines one after another"
+   },
+   {
+    "word": "achorarse",
+    "surface": "se achoró",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to get cocky and act tough or aggressive"
+   }
+  ]
+ }
+]

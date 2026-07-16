@@ -1,0 +1,473 @@
+[
+ {
+  "topic": "la-carrilla",
+  "slotIndex": 1,
+  "title": "Rodrigo se lo buscó",
+  "arcType": "reframe-turn",
+  "synopsis": "Los sábados la palomilla de Nayeli se junta en el zócalo de Oaxaca a echar relajo, y esa tarde el blanco es Rodrigo, que llegó estrenando unos tenis bien fresas. Le tiran carrilla sin piedad hasta que se le sale la verdad: consiguió un jale de guía en una mezcalería y los tenis eran para verse decente. La burla se vuelve aplauso cuando promete llevar a todos de gorra.",
+  "text": "Los sábados, la palomilla de Nayeli se juntaba en el zócalo de Oaxaca a echar relajo hasta que dolía la panza. En ese grupo, el que se picaba por una broma ya había perdido. Esa tarde el blanco fue Rodrigo, que llegó estrenando unos tenis bien fresas.\n\nItzel arrancó luego luego, diciendo que con esos tenis ya se sentía muy fifí. Nayeli remató preguntándole si había vendido un riñón para pagarlos. El vato aguantó vara sin enojarse, porque defenderse solo lo iba a hundir más.\n\nEn lugar de rajarse, les siguió la corriente e inventó que los tenis eran de oro. Cuando Nayeli le preguntó si ya se sentía muy salsa, Rodrigo soltó una carcajada. \"Nomás me tienen envidia de la buena\", contestó, bien quitado de la pena.\n\nItzel no lo soltó y le preguntó de dónde había sacado tanto billete de repente. Rodrigo se hizo el occiso un buen rato, dándole vueltas al asunto. Al final, entre tanta broma, acabó soltando la verdad.\n\nResulta que se había apalabrado un jale de guía en una mezcalería del centro. Los tenis no eran por fresa, sino para verse decente frente a los turistas. Se había puesto las pilas durante meses para ahorrar y estrenar en forma.\n\nEl silencio duró poco antes de que la burla se volviera aplauso. \"Entonces ya la armaste, mano\", le dijo Nayeli con harto orgullo. Itzel, más práctica, de volada preguntó si había descuento para la raza.\n\nRodrigo prometió llevarlos a todos de gorra en su primer recorrido de mezcal. Brindaron con unas caguamas heladas por el trabajo del que tanto se habían burlado. Esa tarde la carrilla terminó, como casi siempre, en puro apapacho.",
+  "vocab": [
+   {
+    "word": "palomilla",
+    "surface": "palomilla",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a tight group of friends who hang out together all the time"
+   },
+   {
+    "word": "relajo",
+    "surface": "relajo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "rowdy fun and joking around, a cheerful kind of chaos"
+   },
+   {
+    "word": "picarse",
+    "surface": "se picaba",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to take a joke personally and get annoyed or offended"
+   },
+   {
+    "word": "fresa",
+    "surface": "fresas",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "posh, snobby and preppy, into expensive brands and looks"
+   },
+   {
+    "word": "luego luego",
+    "surface": "luego luego",
+    "type": "adverb",
+    "register": "slang",
+    "definition": "right away, immediately, without any delay at all"
+   },
+   {
+    "word": "fifí",
+    "surface": "fifí",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "snooty and elitist, acting like high society and above others"
+   },
+   {
+    "word": "vato",
+    "surface": "vato",
+    "type": "noun",
+    "register": "slang",
+    "definition": "dude or guy, a very common Mexican word for a man"
+   },
+   {
+    "word": "aguantar vara",
+    "surface": "aguantó vara",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to take teasing or a hard time without complaining or cracking"
+   },
+   {
+    "word": "rajarse",
+    "surface": "rajarse",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to chicken out or back down from something at the last moment"
+   },
+   {
+    "word": "seguir la corriente",
+    "surface": "siguió la corriente",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to play along with someone instead of arguing against them"
+   },
+   {
+    "word": "salsa",
+    "surface": "muy salsa",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "cocky and full of yourself, acting like a hotshot"
+   },
+   {
+    "word": "quitado de la pena",
+    "surface": "quitado de la pena",
+    "type": "expression",
+    "register": "slang",
+    "definition": "totally carefree and unbothered, as if nothing were wrong"
+   },
+   {
+    "word": "billete",
+    "surface": "billete",
+    "type": "noun",
+    "register": "slang",
+    "definition": "money or cash, the informal everyday word for it"
+   },
+   {
+    "word": "hacerse el occiso",
+    "surface": "se hizo el occiso",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to play dumb and pretend you have no idea what is happening"
+   },
+   {
+    "word": "jale",
+    "surface": "jale",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a job or a gig, informal word for paid work"
+   },
+   {
+    "word": "ponerse las pilas",
+    "surface": "puesto las pilas",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to get your act together and put in real effort"
+   },
+   {
+    "word": "armarla",
+    "surface": "la armaste",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to pull it off or make it happen against the odds"
+   },
+   {
+    "word": "mano",
+    "surface": "mano",
+    "type": "noun",
+    "register": "slang",
+    "definition": "buddy or bro, short for hermano, used to address a friend"
+   },
+   {
+    "word": "de volada",
+    "surface": "de volada",
+    "type": "adverb",
+    "register": "slang",
+    "definition": "quickly and right away, in a flash without waiting"
+   },
+   {
+    "word": "raza",
+    "surface": "la raza",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the crew or the people, your close group of friends"
+   },
+   {
+    "word": "de gorra",
+    "surface": "de gorra",
+    "type": "expression",
+    "register": "slang",
+    "definition": "for free, without paying, at someone else's expense"
+   },
+   {
+    "word": "caguama",
+    "surface": "caguamas",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a large family size bottle of beer, shared among friends"
+   },
+   {
+    "word": "apapacho",
+    "surface": "apapacho",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a warm affectionate hug or gesture of caring for someone"
+   }
+  ]
+ },
+ {
+  "topic": "la-carrilla",
+  "slotIndex": 2,
+  "title": "Itzel no sabe nada",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Rodrigo llega al café presumiendo que le echó los perros a su cuate para que salga con Itzel, sin que ella tenga ni idea del borlote que le arma. El viernes en el bar todos esperan al amigo, que no aparece ni contesta, mientras Rodrigo suda frío pensando que se echó para atrás. Justo cuando iba a rendirse, la puerta se abre y entra alguien que nadie esperaba.",
+  "text": "Rodrigo llegó al café con una sonrisa que olía a travesura desde lejos. Traía un plan entre manos y no aguantaba las ganas de presumirlo. Sin que Itzel lo pescara, le hizo una seña a Nayeli para que se acercara.\n\n\"Le eché los perros a mi cuate para que salga con Itzel\", le confesó en voz baja. Nayeli abrió los ojos, entre emocionada y asustada por el borlote que se venía. Según Rodrigo, esos dos iban a hacer buena química de inmediato.\n\nEl problema es que Itzel no tenía ni idea y odiaba que le arreglaran citas. \"Si se entera, nos va a poner una madriza\", bromeó Nayeli en voz bajita. Rodrigo se lavó las manos diciendo que él solo era el mensajero del asunto.\n\nAun así, el muy necio ya había apalabrado todo para el viernes en la noche. Su amigo, un chavo medio tímido, prometió caer al bar sin falta. Lo que nadie sabía era si Itzel iba a querer pelarlo siquiera.\n\nLlegó el viernes y el grupo se juntó en un bar de la calle Alcalá. Itzel andaba de buenas, sin sospechar la encerrona que le tenían montada. Rodrigo checaba la puerta cada dos minutos, sudando frío por dentro.\n\nLas horas pasaban y el cuate no aparecía ni contestaba el celular. Rodrigo empezó a temer que su amigo se hubiera arrugado a última hora. La cosa se estaba poniendo bien cañón para su reputación.\n\nJusto cuando iba a cantar la retirada, la puerta se abrió de golpe. No era su amigo el que entró, sino alguien que nadie en esa mesa esperaba ver. Itzel se quedó tiesa, y el bar entero contuvo el aliento.",
+  "vocab": [
+   {
+    "word": "entre manos",
+    "surface": "entre manos",
+    "type": "expression",
+    "register": "slang",
+    "definition": "secretly planning or scheming something, up to something"
+   },
+   {
+    "word": "presumir",
+    "surface": "presumirlo",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to show off or brag about something to others"
+   },
+   {
+    "word": "pescar",
+    "surface": "pescara",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to catch on or notice something someone is doing"
+   },
+   {
+    "word": "echar los perros",
+    "surface": "eché los perros",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to flirt with someone or make a romantic move on them"
+   },
+   {
+    "word": "borlote",
+    "surface": "borlote",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a big fuss, commotion or noisy mess of a situation"
+   },
+   {
+    "word": "madriza",
+    "surface": "madriza",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a beating or thrashing; vulgar but very common in Mexico"
+   },
+   {
+    "word": "lavarse las manos",
+    "surface": "se lavó las manos",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to disclaim all responsibility, insisting it is not your fault"
+   },
+   {
+    "word": "apalabrar",
+    "surface": "apalabrado",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to arrange or agree on something verbally beforehand"
+   },
+   {
+    "word": "chavo",
+    "surface": "chavo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a young guy, a common word for a boy or young man"
+   },
+   {
+    "word": "caer",
+    "surface": "caer",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to show up or drop by a place informally"
+   },
+   {
+    "word": "pelar",
+    "surface": "pelarlo",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to pay attention to someone or acknowledge them at all"
+   },
+   {
+    "word": "andar de buenas",
+    "surface": "andaba de buenas",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to be in a good mood and cheerful for the moment"
+   },
+   {
+    "word": "encerrona",
+    "surface": "encerrona",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a set up or trap arranged to corner someone by surprise"
+   },
+   {
+    "word": "checar",
+    "surface": "checaba",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to check or keep an eye on something"
+   },
+   {
+    "word": "arrugarse",
+    "surface": "se hubiera arrugado",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to chicken out and back down out of fear"
+   },
+   {
+    "word": "estar cañón",
+    "surface": "poniendo bien cañón",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to be tough, intense or getting seriously complicated"
+   },
+   {
+    "word": "cantar la retirada",
+    "surface": "cantar la retirada",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to give up and call it off, admitting defeat"
+   },
+   {
+    "word": "quedarse tieso",
+    "surface": "se quedó tiesa",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to freeze up stiff, unable to move from shock"
+   },
+   {
+    "word": "seña",
+    "surface": "seña",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a hand signal or gesture to communicate without words"
+   },
+   {
+    "word": "necio",
+    "surface": "necio",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "stubborn and insistent, refusing to drop an idea"
+   }
+  ]
+ },
+ {
+  "topic": "la-carrilla",
+  "slotIndex": 3,
+  "title": "Café y pan de yema",
+  "arcType": "harmonic-close",
+  "synopsis": "El domingo la bola se junta callada en casa de Nayeli porque a Itzel la corrieron del trabajo y anda con el ánimo por los suelos. Sin preguntas, cada quien llega con tejate, tlayudas y un conecte para buscarle otra chamba, como una guelaguetza de hoy por ti mañana por mí. Nadie resuelve el problema esa tarde, pero Itzel se va con el corazón lleno.",
+  "text": "El domingo siguiente, la bola se juntó tranquila en casa de Nayeli, con café y pan de yema. No hubo carrilla esta vez, porque Itzel andaba con el ánimo por los suelos. La habían corrido del trabajo el jueves, así nomás, sin avisar.\n\nNayeli, sin hacer preguntas, le sirvió un tejate bien frío y se sentó a su lado. Rodrigo llegó cargado de tlayudas, diciendo que nadie llora con la panza llena. Poco a poco, la bola fue cayendo con algo para compartir.\n\nAsí funcionaba entre ellos, como una guelaguetza: hoy por ti, mañana por mí. Cuando a uno se le caía el mundo, los demás le hacían el paro sin que lo pidiera. No era lástima, era puro cariño del bueno.\n\nItzel intentó disculparse por aguarles el domingo con sus penas. \"Híjole, ni te disculpes, para eso estamos\", la cortó Rodrigo de inmediato. \"Ni modo que te dejáramos sola\", remató Nayeli con cariño.\n\nEntre todos empezaron a echarle la mano para buscar otra chamba. Uno tenía un conecte, otro conocía a alguien que jalaba gente, y así. La red de la bola valía más que cualquier bolsa de trabajo.\n\nPara la tarde, Itzel ya se reía otra vez con las puntadas de Rodrigo. El café se había vuelto pura fiesta sin que nadie lo planeara siquiera. La casa de Nayeli olía a pan, a café y a buena onda.\n\nNadie le resolvió el problema esa tarde, pero Itzel se fue con el corazón lleno. Sabía que, pasara lo que pasara, esta bola no la iba a dejar sola. Un amigo de a de veras se reconoce así: aparece con tlayudas justo cuando el mundo se te cae.",
+  "vocab": [
+   {
+    "word": "bola",
+    "surface": "bola",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the gang, the whole group of friends together"
+   },
+   {
+    "word": "pan de yema",
+    "surface": "pan de yema",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a rich egg yolk bread typical of Oaxaca, eaten with coffee"
+   },
+   {
+    "word": "ánimo por los suelos",
+    "surface": "ánimo por los suelos",
+    "type": "expression",
+    "register": "slang",
+    "definition": "feeling completely down and low in spirits, totally deflated"
+   },
+   {
+    "word": "correr",
+    "surface": "corrido",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to fire someone or kick them out of a job"
+   },
+   {
+    "word": "tejate",
+    "surface": "tejate",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a cold Oaxacan drink of maize and cacao, foamy on top"
+   },
+   {
+    "word": "tlayuda",
+    "surface": "tlayudas",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a large crispy Oaxacan tortilla loaded with beans and toppings"
+   },
+   {
+    "word": "guelaguetza",
+    "surface": "guelaguetza",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the Oaxacan spirit of mutual giving, helping now to be helped later"
+   },
+   {
+    "word": "hacer el paro",
+    "surface": "hacían el paro",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to do someone a favor or help them out of a jam"
+   },
+   {
+    "word": "cariño del bueno",
+    "surface": "cariño del bueno",
+    "type": "expression",
+    "register": "slang",
+    "definition": "genuine affection, the real caring kind and not fake"
+   },
+   {
+    "word": "aguar",
+    "surface": "aguarles",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to spoil or dampen a good time for others"
+   },
+   {
+    "word": "híjole",
+    "surface": "Híjole",
+    "type": "expression",
+    "register": "slang",
+    "definition": "an all purpose exclamation of surprise, worry or sympathy"
+   },
+   {
+    "word": "ni modo",
+    "surface": "Ni modo",
+    "type": "expression",
+    "register": "slang",
+    "definition": "oh well, there is nothing to be done about it"
+   },
+   {
+    "word": "conecte",
+    "surface": "conecte",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a useful contact or connection who can hook you up"
+   },
+   {
+    "word": "jalar",
+    "surface": "jalaba",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to recruit or bring people in; also to pull or work"
+   },
+   {
+    "word": "puntada",
+    "surface": "puntadas",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a witty funny remark that makes everyone laugh"
+   },
+   {
+    "word": "buena onda",
+    "surface": "buena onda",
+    "type": "expression",
+    "register": "slang",
+    "definition": "good vibes, a warm and friendly feeling or person"
+   },
+   {
+    "word": "de a de veras",
+    "surface": "de a de veras",
+    "type": "expression",
+    "register": "slang",
+    "definition": "for real, genuine and true, with no pretending at all"
+   },
+   {
+    "word": "panza llena",
+    "surface": "panza llena",
+    "type": "expression",
+    "register": "slang",
+    "definition": "a full belly; nobody stays sad on a full stomach"
+   },
+   {
+    "word": "cargado",
+    "surface": "cargado",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "loaded up and carrying a lot of stuff"
+   },
+   {
+    "word": "así nomás",
+    "surface": "así nomás",
+    "type": "expression",
+    "register": "slang",
+    "definition": "just like that, with no warning or explanation"
+   }
+  ]
+ }
+]

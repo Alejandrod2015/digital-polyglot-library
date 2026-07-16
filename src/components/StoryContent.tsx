@@ -5,6 +5,7 @@
 
 import * as React from "react";
 import { normalizeVocabType } from "@/lib/vocabTypes";
+import { splitSentences, chunk } from "@/lib/readerParagraphs";
 
 /**
  * Stricter type resolution for vocab pills: priorizar morfología
@@ -97,33 +98,9 @@ function sanitizePlainStoryText(raw: string): string {
     .trim();
 }
 
-function splitSentences(raw: string): string[] {
-  const text = raw.replace(/\s*\n+\s*/g, " ").trim();
-  if (!text) return [];
-  const parts = text.split(/(?<=[.!?…\u203D\u2047\u2049]["»”’]?)(?:\s+|$)/u);
-  const clean = parts
-    .map((s) => s.trim())
-    .filter((s) => s.length > 0)
-    .filter((s) => /[\p{L}\p{N}]/u.test(s));
-
-  const merged: string[] = [];
-  for (const segment of clean) {
-    const shouldAttachToPrev =
-      merged.length > 0 && /^[\s,"'“”„«»)\]]*[\p{Ll}]/u.test(segment);
-    if (shouldAttachToPrev) {
-      merged[merged.length - 1] = `${merged[merged.length - 1]} ${segment}`;
-      continue;
-    }
-    merged.push(segment);
-  }
-  return merged;
-}
-
-function chunk<T>(arr: T[], size: number): T[][] {
-  const out: T[][] = [];
-  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
-  return out;
-}
+// splitSentences/chunk viven en @/lib/readerParagraphs (import arriba): el gate
+// de historias mide la distribucion de vocab sobre los MISMOS bloques que se
+// renderizan aqui, y asi no pueden divergir.
 
 function escapeRegex(input: string): string {
   return input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");

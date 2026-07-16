@@ -1,6 +1,12 @@
 /**
  * Audio pacing tool for multi-voice journey stories.
  *
+ * `--apply` REQUIRES the react-server condition, because regenerating the word
+ * timings pulls in a server-only module:
+ *   NODE_OPTIONS="--conditions=react-server" npx tsx scripts/normalizeAudioPace.ts --apply 2.8 <slug>
+ * `--measure` runs fine without it. Omitting it on --apply used to corrupt the
+ * story silently; it now fails before writing anything (see apply()).
+ *
  * WHY: a fixed atempo (e.g. 0.90 for all) does NOT make stories sound equally
  * paced, because each story's native articulation rate differs (e.g. la-combi
  * native = 2.91 w/s, the fastest in the latam journey — which is why the
@@ -75,6 +81,16 @@ async function apply(slug: string, target: number) {
   const cur = rate(s.frags).artic;
   const ratio = +(target / cur).toFixed(3);
   if (Math.abs(ratio - 1) < 0.01) { console.log(`[${slug}] ya en objetivo (${cur} w/s)`); return; }
+  // Load the word-timings module BEFORE mutating anything (2026-07-09). It used
+  // to be imported at the end, after the slowed audio was already uploaded and
+  // written to the DB — so running this without
+  // NODE_OPTIONS="--conditions=react-server" threw on the import and left the
+  // story with NEW audio and OLD timings: the mp3 ran 100.9s while
+  // audioWordTimings still said 92.7s, i.e. karaoke ~8s ahead by the end. And a
+  // re-run was no help: it measured the already-paced audio, said "ya en
+  // objetivo" and returned without ever fixing the timings. Failing here costs
+  // nothing; failing after the write is silent corruption.
+  const { generateWordTimingsForStory } = await import("../src/lib/audioWordTimings");
   const scale = 1 / ratio;
   const tmp = mkdtempSync(join(tmpdir(), "np-")), ts = Date.now();
   const base = (s.audioFilename || slug).replace(/\.mp3$/, "").replace(/_slow\d+$/, "").replace(/[^a-zA-Z0-9_-]/g, "_");
@@ -91,8 +107,9 @@ async function apply(slug: string, target: number) {
   }
   await prisma.journeyStory.update({ where: { id: s.id }, data: { audioUrl: mUp!.url, audioFilename: `${base}_slow${ts}.mp3`, audioFragments: nf as any } });
   rmSync(tmp, { recursive: true, force: true });
-  const { generateWordTimingsForStory } = await import("../src/lib/audioWordTimings");
-  try { await generateWordTimingsForStory(s.id); } catch (e: any) { console.log(`[${slug}] timings ERR ${e.message?.slice(0, 100)}`); }
+  // Do NOT swallow this: stale timings against new audio are worse than a loud
+  // failure, and the re-run won't catch it (see the note above).
+  await generateWordTimingsForStory(s.id);
   console.log(`[${slug}] ✓ ${cur} → ${target} w/s (atempo ${ratio}, ${nf.length} secciones)`);
 }
 

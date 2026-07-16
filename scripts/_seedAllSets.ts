@@ -47,8 +47,17 @@ function genId(p: string, i: number): string {
       continue;
     }
     if (issues.length && force) console.log(`! ${slug}: ${issues.length} validator issue(s) overridden by --force`);
-    const story = await prisma.journeyStory.findFirst({ where: { slug, status: "published" }, select: { id: true } });
+    // Resolve by slug REGARDLESS of status (2026-07-09). This used to require
+    // status:"published", which had a perverse effect: to seed practice for a
+    // journey still in construction you had to publish its stories — and the
+    // reader does NOT filter by Journey.status, so a "published" story of an
+    // archived/in-progress journey is reachable by direct URL IN PRODUCTION.
+    // That is exactly why Friends and Hanseat ended up exposed. Practice sets
+    // are inert until the story is readable, so seeding a draft is harmless;
+    // forcing a publish to seed was the actual hazard.
+    const story = await prisma.journeyStory.findFirst({ where: { slug }, select: { id: true, status: true } });
     if (!story) { console.log(`✗ ${slug}: story not found`); continue; }
+    if (story.status !== "published") console.log(`  (${slug} is ${story.status}; seeding anyway, no publish needed)`);
     if (!apply) { console.log(`[dry] ${slug}: ${exs.length} ex`); ok++; continue; }
     const setIds = await prisma.$queryRawUnsafe<{ id: string }[]>(`SELECT id FROM dp_story_practice_sets_v1 WHERE "storyId" = $1`, story.id);
     for (const s of setIds) await prisma.$executeRawUnsafe(`DELETE FROM dp_story_practice_exercises_v1 WHERE "setId" = $1`, s.id);
