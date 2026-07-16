@@ -162,6 +162,48 @@ A0 (Beginner) is **NOT a shorter A1**. It is a deliberately lighter, separate ti
 
 The A1+ validator checks `body-word-count` (180+), `synopsis-length` (45+), `body-dialogue-ratio`, `speakers-count`, `speaker-lines` are **known A0 exemptions** for narrator-style A0 stories — not defects. Everything else in this spec (banned tokens, bare imperatives, narration crutches, cultural anchor taught, vocab defs/distribution, opening variety, arc + final-slot resolution) still applies in full.
 
+### Narrator profile (single-voice narrated prose, any level) [2026-07-09]
+
+Narrated prose at A1+ — the "Friends" ES C1 mould, not only A0. Save with
+`npx tsx scripts/saveStory.ts <data.json> --narrator ...`, which exempts **only**
+the four format checks that assume `Speaker: line` turns (`body-dialogue-ratio`,
+`speakers-count`, `speaker-lines`, `names-match`) — the same four the A0 section
+lists. Every other check gates in full.
+
+- **The reader DISCARDS your paragraphs.** `StoryContent` flattens newlines and
+  re-groups narrated prose into blocks of 3 sentences (`src/lib/readerParagraphs`).
+  Only multi-voice stories keep authored blocks (one paragraph per turn). So
+  **write paragraphs of exactly 3 sentences** — then what you author is what
+  renders. Vocab distribution measured per authored paragraph is fiction, which is
+  why `--narrator` re-runs the distribution rule on `renderedParagraphs()`.
+- **Vocab count is the §4 rule, unchanged: hard minimum 20**, ~1 item per 10 body
+  words. Narrator prose does NOT get a lighter vocab budget. The A0 narrator
+  precedent settles it: 22-26 items in 135-145 words is ~1 pill per 6 words, and it
+  shipped. **A high count is bounded by DISTRIBUTION, never by cutting the count** —
+  if pills crowd, shorten sentences so the reader forms more blocks, and spread.
+- **Distribution (`narrator-block-cluster`, `narrator-block-distribution`)**: same
+  calibration as the canonical check, applied to rendered blocks — no block empty
+  while another carries 6+, and no more than 30% of the story's items in one block.
+
+**History (do not repeat):** 2026-07-09 this profile briefly exempted `vocab-count`
+and substituted a homegrown minimum of 12 (~1/20), justified as avoiding
+"highlighter soup". It was wrong — refuted by the A0 precedent 20 lines above, and
+a textbook case of relaxing a gate so the output passes. The stories shipped at
+13-14 items and the user caught it: "muy pocas palabras de vocabulario, por qué no
+sigues las reglas?". Calibrate to the gold standard; never to your own output.
+- **`type` is the GRAMMATICAL category, `register` is the register.** The reader
+  paints the pill colour from `type` (verb/noun/adjective/adverb/expression). Do NOT
+  write `type: "slang"` — vocabTypes aliases slang → expression, so every item
+  collapses into one category and the story renders in a single colour. Say
+  `type: "noun"` + `register: "slang"`; the CEFR frequency exemption hangs off
+  `register` (validateGeneratedStory), so both the colour and the exemption are right.
+- **Distribution across types.** Published journeys sit at noun 33-55%, verb 22-35%,
+  adjective 12-17%, adverb 2-11%, expression 2-14%. A slang/idiom journey legitimately
+  runs expressions higher (~20-25%), but **verbs and nouns must not collapse**: reaching
+  for multi-word idioms is the easy reflex and it starves them. Single-word slang also
+  earns its slot better — `lana`, `chido`, `agandallar` serve the reader in many
+  contexts, `sacar la sopa` in one.
+
 ### Arc archetype (REQUIRED) — 7-arc kishōtenketsu taxonomy
 
 Every story must declare an `arcType` field in its JSON shape and execute that arc in the body. **Migrated 2026-06-02** from the previous Western 9-arc taxonomy to a 7-arc system anchored on kishōtenketsu (Japanese 4-act structure: setup / development / reframe-turn / harmonic close). The reason: research showed kishōtenketsu natively fits 250-word stories (each act ≈ 60 words) and engagement comes from the act-3 reframe, not from Western conflict escalation — which is hard to sustain at A1 vocab budgets. See `docs/engagement-research-brief.pdf`.

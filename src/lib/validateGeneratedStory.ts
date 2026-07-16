@@ -1872,10 +1872,26 @@ export async function validateGeneratedStory(
     // the bar: slang items are still governed by every other vocab check
     // (surface-literal, definition quality, no-same-root, distribution, type
     // validity). Only the frequency axis — the wrong instrument for register
-    // — is skipped for type "slang", exactly as for "expression".
-    const REGISTER_EXEMPT = new Set(["expression", "slang"]);
+    // — is skipped.
+    //
+    // The exemption hangs off `register`, NOT `type` (fixed 2026-07-09).
+    // `type` is the GRAMMATICAL category and the reader paints the pill colour
+    // from it (StoryContent: verb/noun/adjective/adverb/expression). Keying the
+    // exemption on type forced authors to write type:"slang" to get it — and
+    // since vocabTypes aliases slang → expression, every slang item collapsed
+    // into one category and the whole story rendered in a single colour, with
+    // `lana` (noun), `cachar` (verb) and `chido` (adjective) indistinguishable.
+    // Register and part of speech are orthogonal: say `type:"noun"` +
+    // `register:"slang"` and both the colour and the exemption are correct.
+    const REGISTER_EXEMPT = new Set(["slang", "colloquial", "vulgar", "coloquial", "argot", "jerga"]);
     const vocabWords = parsed.vocab
-      .filter((v) => !REGISTER_EXEMPT.has((v.type ?? "").toLowerCase()))
+      .filter((v) => {
+        const type = (v.type ?? "").toLowerCase();
+        const register = ((v as { register?: string }).register ?? "").toLowerCase();
+        // type "expression"/"slang" kept for back-compat with stories authored
+        // before register existed; new stories should use `register`.
+        return !(type === "expression" || type === "slang" || REGISTER_EXEMPT.has(register));
+      })
       .map((v) => v.word);
     const { aboveLevel } = await filterSpanishWordsAtOrBelow(
       vocabWords,

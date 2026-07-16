@@ -1,96 +1,90 @@
 # -*- coding: utf-8 -*-
+# Tema 4 (la-vacilada, Cartagena costeño) — REAUTORADO 2026-07-09 sobre las historias
+# NARRADOR. Reglas: docs/practice-exercises-redesign.md + scripts/_EXERCISE_SPEC.md.
+# Headline en forma de diccionario; flexion en [[ ]] o en la respuesta del cloze.
+# Cloze = frase FRESCA, resoluble por significado, nunca por la trama.
 SPECS = [
 {
- "slug":"la-esquina-no-perdona",
- "X":[["Qué hubo pue'","what's up"],["estar prendido","in full swing"],
-      ["cogemos cancha","grab a good spot"],["A lo bien","for real"]],
+ "slug":"el-corte-nuevo-de-andres",
+ "X":[["picó","a big coastal sound system"],["birra","a beer"],
+      ["china","a girl (coast)"],["pelao","a young guy (coast)"]],
  "M":[
-  ["Erda","¡[[Erda]], mani, mira ese corte tan fufurufo!","whoa, damn","goodbye","thank you","let's go"],
-  ["mani","Fresco, [[mani]], que aquí todos comemos vaina igual.","buddy, bro","boss","stranger","cousin"],
-  ["Ajá","[[Ajá]], ¿y entonces qué vas a hacer el sábado?","so, okay","never","goodbye","maybe"],
-  ["No joda","[[No joda]], ese pelao sí se cree mucho.","damn, come on","of course","no problem","thank you"],
-  ["pelao","Ese [[pelao]] sí sabe vestirse bien, vale.","kid, dude","old man","teacher","boss"],
-  ["vale","No te creas tanto, [[vale]], que todos vacilamos.","dude, mate","money","okay then","never"],
-  ["Ombe","[[Ombe]], no te pongas bravo por una simple broma.","man, come on","goodbye","please","quietly"],
-  ["bololó","La esquina se volvió un [[bololó]] de pura risa.","a commotion, uproar","a silence","a line","a nap"],
-  ["Qué vaina","[[Qué vaina]] con esa fiesta, cuéntanos bien el plan.","what a thing","how nice","no idea","who knows"],
-  ["echo el cuento","Déjame te [[echo el cuento]] completo de la fiesta.","tell the story","pay the bill","end the party","sing the song"],
-  ["De pelota","[[De pelota]], entonces nos vemos allá el sábado temprano.","perfect, great","too bad","not yet","no way"],
-  ["ñapa","Y de [[ñapa]] nos invitas los primeros roncitos, presumido.","a freebie extra","on credit","by mistake","for later"]
+  ["fresco","Andrés apareció caminando bien [[fresco]].","cool and relaxed","tense and nervous","sad and slow","rude and loud"],
+  ["ombe","[[Ombe]], ¿y ese peinado tan tieso?","hey man, come on","yes of course","too bad for you","not right now"],
+  ["tieso","¿Y ese peinado tan [[tieso]], mane?","stiff and rigid","soft and loose","clean and fresh","dark and long"],
+  ["mane","¿Y ese peinado tan tieso, [[mane]]?","dude, guy","boss, chief","kid, child","sir, mister"],
+  ["montar chercha","Yuly le siguió [[montando chercha]] sin piedad.","relentlessly teasing","kindly helping","calmly ignoring","quietly praising"],
+  ["eche","[[Eche]], ese corte te lo hizo el barbero dormido.","wow, no way","yes, exactly","fine, okay","stop, enough"],
+  ["ajá","[[Ajá]], ríanse, que hoy sí caigo con alguna.","so go on then","never again","not at all","right this second"],
+  ["caer parado","Hoy sí [[caigo parado]] con alguna china.","land on my feet lucky","fall flat on my face","stay home alone","give up early"],
+  ["tirarse los peros","Llevaba meses [[tirándose los peros]] sin éxito.","flirting hard","working overtime","saving up money","hiding away"],
+  ["quedar en calabaza","Cada intento suyo [[terminaba en calabaza]].","ending in nothing","ending in triumph","ending in a fight","ending in tears"],
+  ["arrecharse","Andrés, lejos de [[arrecharse]], se rió.","getting angry","getting scared","getting bored","getting sleepy"],
+  ["sacar de casillas","Le montó chercha para [[sacarlo de casillas]].","wind him up","calm him down","cheer him up","pay him back"],
+  ["picaflor","\"Bueno, [[picaflor]], muéstranos cómo se hace.\"","a flirt, a womanizer","a hard worker","a quiet loner","a rich boss"]
  ],
  "F":[
-  ["fufurufo","¿Y ese corte tan _____? Te ganaste la lotería.","And that _____ haircut? You won the lottery.",
-   "corroncho","viejo","barato","fancy, posh","tacky","old","cheap"],
-  ["calidoso","Uno tiene que verse _____, no como ustedes.","One has to look _____, not like you all.",
-   "feo","cansado","aburrido","cool, top quality","ugly","tired","boring"],
-  ["corronchos","Ustedes andan bien _____, no saben vestirse.","You all are pretty _____, you can't dress.",
-   "elegantes","callados","ricos","tacky, unrefined","elegant","quiet","rich"],
-  ["Fresco","_____, mani, que aquí nadie se pone bravo.","_____, bro, nobody gets angry here.",
-   "Corre","Cállate","Apúrate","chill, relax","Run","Shut up","Hurry"],
-  ["cipote","Ese corte te costó un _____ de plata.","That haircut cost you a _____ of money.",
-   "poquito","peso","nada","a huge amount","a little bit","a peso","nothing"]
+  ["enredarse","A ver si no te vas a _____ en el intento.","Let us see if you do not _____ in the attempt.",
+   "dormir","reír","tardar","get tangled up","sleep","laugh","take long"],
+  ["acomodarse","Se _____ el cuello de la camisa antes de hablar.","He _____ his shirt collar before speaking.",
+   "quitó","rompió","manchó","straightened","took off","tore","stained"],
+  ["conquistador","Le lanzó su mejor sonrisa de _____.","He flashed his best _____ smile.",
+   "vendedor","cocinero","cartero","charmer","salesman","cook","postman"]
  ]
 },
 {
- "slug":"andres-rey-de-la-pista",
- "X":[["está como un mango","really hot"],["montar el show","put on a scene"],
-      ["quedó como un ocho","ended up embarrassed"],["sudaste la gota gorda","sweated buckets"]],
+ "slug":"andres-en-la-pista",
+ "X":[["champeta","coastal music and dance"],["traga","a crush"],
+      ["papelón","an embarrassing spectacle"],["codazo","a nudge with the elbow"]],
  "M":[
-  ["parranda","El sábado la [[parranda]] estaba a millón, todos gozando.","a wild party","the office","the line","the nap"],
-  ["a millón","La fiesta estaba [[a millón]] con birras bien frías.","at full throttle","half empty","very quiet","almost over"],
-  ["gozando","Todo el mundo estaba [[gozando]] en plena parranda sabatina.","having a blast","sleeping","complaining","leaving"],
-  ["traga","Andrés no le quitaba el ojo a su [[traga]].","his crush","his boss","his cousin","his beer"],
-  ["tirar paso","Andrés se lanzó a la pista a [[tirar paso]].","to dance","to rest","to argue","to pay"],
-  ["cotorra","Mira la [[cotorra]] que se trae para presumir.","nonstop chatter","the silence","the dance","the drink"],
-  ["chicharrón","Qué [[chicharrón]], mano, sudaste tanto para puro nada.","a mess, hassle","a treat","a nap","a joke"],
-  ["lambón","No te hagas el [[lambón]] con esa chica, Andrés.","a suck-up","the hero","the singer","the boss"],
-  ["jodan la vida","Ya, no me [[jodan la vida]] con tantas burlas.","bug, annoy me","help me out","pay me back","wake me up"],
-  ["Un chorro","[[Un chorro]] de gente te vio caer, Andrés.","a whole bunch","a couple","nobody","a little"],
-  ["Ponte pila","[[Ponte pila]] la próxima, que te vieron todos.","get sharp","calm down","sit down","give up"],
-  ["de una vez","Con guayabo mañana ni se acuerdan, [[de una vez]] digo.","right now","little by little","never again","some other day"]
+  ["a millón","La parranda estaba [[a millón]] con champeta.","at full blast","dead and quiet","half empty","almost over"],
+  ["bailar sabroso","Una traga [[bailaba sabroso]] en la pista.","dancing with real flavor","standing totally still","tripping over herself","sitting off to the side"],
+  ["embarrarla","Ahí está tu momento, no la vayas a [[embarrar]].","screw it up","pull it off","think it over","hand it over"],
+  ["vale","Esto lo tengo que ver, [[vale]].","buddy, mate","boss, chief","kid, child","sir, mister"],
+  ["show","Va a ser un [[show]], le comentó a Yuly.","a spectacle to watch","a quiet chat","a long wait","a fair deal"],
+  ["descoordinado","Se movía de una forma bien [[descoordinada]].","clumsy and out of sync","smooth and in time","slow and careful","proud and stiff"],
+  ["ridiculez","El parche se dobló al verlo hacer esa [[ridiculez]].","an absurd silly thing","a clever smart move","a kind sweet gesture","a bold brave act"],
+  ["dejar en ridículo","Por un segundo pareció que lo iba a [[dejar en ridículo]].","publicly humiliate him","warmly welcome him","quietly ignore him","secretly help him"],
+  ["marcar el paso","La china le empezó a [[marcar el paso]].","guide the dance steps","block the exit door","pay the whole bill","tell the sad news"],
+  ["congelado","Por poco se queda [[congelado]] de la dicha.","frozen stiff","warmed right up","fast asleep","calmly seated"],
+  ["agarrar el ritmo","Poco a poco fue [[agarrando el ritmo]].","finding his groove","losing his nerve","paying his debt","telling his story"],
+  ["buenona","Bailaba con la traga más [[buenona]] de la fiesta.","most attractive","most boring","most tired","most angry"],
+  ["en las nubes","Andrés volvió al parche [[en las nubes]].","walking on air","dragging his feet","hanging his head","biting his nails"],
+  ["quedarse con la boca abierta","Las amigas [[se quedaron con la boca abierta]].","astonished, jaw dropped","calm and quite bored","angry and red faced","sleepy and very slow"]
  ],
  "F":[
-  ["birras","La parranda estaba a millón con _____ bien frías.","The party was full throttle with cold _____.",
-   "sillas","canciones","reglas","beers","chairs","songs","rules"],
-  ["arrecho","Se va a poner _____ cuando lo dejen en evidencia.","He'll get _____ when they show him up.",
-   "callado","feliz","flaco","worked up, angry","quiet","happy","skinny"],
-  ["picao","Ya está bien _____ el man con tanta actitud.","The guy is already pretty _____ with all that attitude.",
-   "cansado","triste","sobrio","cocky, full of himself","tired","sad","sober"],
-  ["rascado","Y ya andas medio _____, no bailes más.","And you're already half _____, stop dancing.",
-   "dormido","serio","elegante","drunk, tipsy","asleep","serious","elegant"],
-  ["guayabo","Mañana con el _____ ni se acuerdan de nada.","Tomorrow with the _____ they won't remember a thing.",
-   "frío","hambre","susto","hangover","cold","hunger","fright"]
+  ["no joda","_____, el milagro sí existe, murmuró Yuly.","_____, the miracle really does exist, Yuly murmured.",
+   "de malas","de gratis","de sobra","no way","unlucky","for free","to spare"],
+  ["insoportable","Puso una cara de triunfo bien _____.","He put on a really _____ look of triumph.",
+   "callada","cansada","limpia","unbearable","quiet","tired","clean"]
  ]
 },
 {
- "slug":"se-dano-la-parranda",
- "X":[["puso los pelos de punta","hair stood on end"],["se armó la gorda","all hell broke loose"],
-      ["No veo la hora","can't wait"],["quedó en veremos","up in the air"]],
+ "slug":"llega-el-guachiman",
+ "X":[["jincho","drunk, wasted"],["cuadre","a romantic connection"],["rumba","a party"],["muro","a wall, an obstacle"]],
  "M":[
-  ["cuadre","Andrés por fin tenía [[cuadre]] con la chica linda.","a hookup, date","a fight","a beer","a ride"],
-  ["guachimán","El [[guachimán]] de la esquina pegó el grito enojado.","the watchman, guard","the neighbor","the singer","the driver"],
-  ["pegó el grito","El guachimán [[pegó el grito]] para que bajaran la música.","shouted out","fell asleep","paid up","walked off"],
-  ["zafarrancho","Se armó un [[zafarrancho]] apenas llegaron las primeras quejas.","a chaotic uproar","a quiet nap","a slow dance","a long line"],
-  ["embale","Erda, qué [[embale]], se nos va a dañar todo.","a mess, jam","a treat","a break","a deal"],
-  ["tombos","Alguien gritó que venían los [[tombos]] y todos corrieron.","the cops","the neighbors","the guests","the singers"],
-  ["pelotera","Si nos cogen es [[pelotera]] y multa bien segura.","a big brawl","a party","a nap","a discount"],
-  ["cojan monte","¡Yo no vuelvo, [[cojan monte]] cada uno por su lado!","run off and flee","sit tight","pay up","line up"],
-  ["salimos en carrera","[[Salimos en carrera]] sin mirar atrás, empujándonos entre todos.","took off running","sat down calmly","walked in slowly","stayed to help"],
-  ["A las volandas","[[A las volandas]] se nos quedó Andrés allá solo.","in a big rush","on purpose","little by little","without a doubt"],
-  ["echo para atrás","Yo no [[echo para atrás]], pero pobre Andrés.","back out, chicken out","show up","pay up","calm down"],
-  ["metió en un lío","Se [[metió en un lío]] tremendo por ir comprando mecato.","got into a mess","took a nap","won a prize","made a friend"]
+  ["guachimán","Apareció el [[guachimán]] del edificio de repente.","a security guard","a party host","a dance partner","a next door neighbor"],
+  ["seguir el juego","La china le [[seguía el juego]] con gusto.","played along with him","argued back at him","walked away from him","laughed only at him"],
+  ["bobo","Míralo, el [[bobo]] por fin la está haciendo bien.","the fool, said fondly","the boss, in charge","the stranger, unknown","the expert, skilled"],
+  ["cruzar los dedos","Yuly [[cruzó los dedos]], rogando que no fallara.","hoped hard for luck","gave up all hope","paid a big debt","told a white lie"],
+  ["armarse de valor","Andrés [[se armó de valor]] para la pregunta clave.","worked up the courage","lost all his nerve","made a bad joke","paid the whole tab"],
+  ["a mil","Estaba a nada de lograrlo, con el corazón [[a mil]].","racing fast","totally calm","dead slow","half asleep"],
+  ["cara de pocos amigos","El guachimán llegó con [[cara de pocos amigos]].","a sour unfriendly face","a warm kind smile","a blank tired look","a proud smug grin"],
+  ["mal genio","\"A bajarle al ruido\", ladró de [[mal genio]].","in a bad temper","in a good mood","in a great hurry","in deep thought"],
+  ["pegar el grito al cielo","Todo el mundo [[pegó el grito al cielo]].","cried out in protest","fell totally silent","clapped with joy","left without a word"],
+  ["plantarse","El guachimán [[se plantó]] entre los dos.","planted himself firmly","stepped politely aside","sat down quietly","ran quickly off"],
+  ["espantar","Empezó a [[espantar a la gente]] sin piedad.","shoo people away","invite people in","serve people drinks","thank people kindly"],
+  ["a medio dar","Se quedó con el número [[a medio dar]].","half given, unfinished","fully paid, complete","freshly bought, new","long lost, gone"]
  ],
  "F":[
-  ["frías","De madrugada, con las _____ ya calientes, seguía la parranda.","At dawn, with the _____ already warm, the party went on.",
-   "sillas","luces","canciones","cold beers","chairs","lights","songs"],
-  ["jincho","A esa hora medio mundo andaba bien _____.","By then half the crowd was pretty _____.",
-   "callado","flaco","serio","drunk, wasted","quiet","skinny","serious"],
-  ["mecato","Voy a comprar _____ aquí en la tienda, ya vengo.","I'll go buy some _____ at the store, be right back.",
-   "ropa","gasolina","tiempo","snacks","clothes","gasoline","time"],
-  ["ñato","Apúrate, _____, no te pierdas lo mejor de la noche.","Hurry up, _____, don't miss the best of the night.",
-   "señor","doctor","vecino","dude, pal","sir","doctor","neighbor"],
-  ["pelá","Se nos quedó allá con la _____ en plena corrida.","He stayed back there with the _____ during the chaos.",
-   "música","comida","plata","the girl","music","food","money"]
+  ["bajarle","El guachimán les pidió _____ al ruido ya mismo.","The guard asked them to _____ the noise right away.",
+   "subirle","cerrarle","abrirle","turn it down","turn it up","close it","open it"],
+  ["rogar","Andrés le _____ con la mirada un minuto más.","Andrés _____ him with his eyes for one more minute.",
+   "gritó","pagó","llamó","begged","shouted at","paid","called"],
+  ["alcanzar","No supo si _____ a agarrar el número a tiempo.","He did not know if he _____ to grab the number in time.",
+   "olvidó","perdió","rompió","managed","forgot","lost","tore"],
+  ["dañar","El guachimán llegó a _____ toda la nota de una vez.","The guard came to _____ the whole vibe at once.",
+   "alegrar","pagar","limpiar","ruin","brighten","pay for","clean"]
  ]
 }
 ]

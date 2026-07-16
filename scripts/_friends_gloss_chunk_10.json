@@ -1,0 +1,566 @@
+{
+ "acercó": {
+  "g": "came closer",
+  "t": "verb"
+ },
+ "acomodó": {
+  "g": "straightened, adjusted",
+  "t": "verb"
+ },
+ "agarrando": {
+  "g": "agarrar el ritmo = finding the groove",
+  "t": "verb"
+ },
+ "alcanzó": {
+  "g": "managed just in time",
+  "t": "verb"
+ },
+ "alguna": {
+  "g": "some, any (girl)",
+  "t": "adjective"
+ },
+ "altísimo": {
+  "g": "really high, sky high",
+  "t": "adjective"
+ },
+ "aparte": {
+  "g": "aside, off to one side",
+  "t": "adverb"
+ },
+ "aplaudir": {
+  "g": "to clap, applaud",
+  "t": "verb"
+ },
+ "armaba": {
+  "g": "se armaba = would get going",
+  "t": "verb"
+ },
+ "arrecharse": {
+  "g": "to get angry; coastal vulgar",
+  "t": "verb"
+ },
+ "bailaba": {
+  "g": "was dancing",
+  "t": "verb"
+ },
+ "bajarle": {
+  "g": "to turn it down, ease off",
+  "t": "verb"
+ },
+ "barbero": {
+  "g": "a barber",
+  "t": "noun"
+ },
+ "birra": {
+  "g": "a beer",
+  "t": "noun"
+ },
+ "bobo": {
+  "g": "a fool, said fondly",
+  "t": "noun"
+ },
+ "brazos": {
+  "g": "arms",
+  "t": "noun"
+ },
+ "buenona": {
+  "g": "very good looking, attractive",
+  "t": "adjective"
+ },
+ "caigo": {
+  "g": "caer parado = to land on my feet",
+  "t": "verb"
+ },
+ "calabaza": {
+  "g": "quedar en calabaza = to flop",
+  "t": "noun"
+ },
+ "caminando": {
+  "g": "walking",
+  "t": "verb"
+ },
+ "camisa": {
+  "g": "shirt",
+  "t": "noun"
+ },
+ "canción": {
+  "g": "a song",
+  "t": "noun"
+ },
+ "casillas": {
+  "g": "sacar de casillas = to wind up",
+  "t": "noun"
+ },
+ "cejas": {
+  "g": "eyebrows",
+  "t": "noun"
+ },
+ "cerrados": {
+  "g": "closed",
+  "t": "adjective"
+ },
+ "champeta": {
+  "g": "fast Afro Caribbean music and dance",
+  "t": "noun"
+ },
+ "chercha": {
+  "g": "montar chercha = to tease",
+  "t": "noun"
+ },
+ "china": {
+  "g": "a girl, on the coast",
+  "t": "noun"
+ },
+ "chistes": {
+  "g": "jokes",
+  "t": "noun"
+ },
+ "cielo": {
+  "g": "pegar el grito al cielo = to protest loudly",
+  "t": "noun"
+ },
+ "clave": {
+  "g": "key, crucial",
+  "t": "adjective"
+ },
+ "codazo": {
+  "g": "a nudge with the elbow",
+  "t": "noun"
+ },
+ "comentó": {
+  "g": "commented",
+  "t": "verb"
+ },
+ "confianza": {
+  "g": "confidence",
+  "t": "noun"
+ },
+ "congelado": {
+  "g": "frozen stiff with nerves",
+  "t": "adjective"
+ },
+ "conquistador": {
+  "g": "a smooth charmer",
+  "t": "noun"
+ },
+ "conseguir": {
+  "g": "to get, to land",
+  "t": "verb"
+ },
+ "conversación": {
+  "g": "conversation",
+  "t": "noun"
+ },
+ "creer": {
+  "g": "to believe",
+  "t": "verb"
+ },
+ "creerlo": {
+  "g": "to believe it",
+  "t": "verb"
+ },
+ "cruzó": {
+  "g": "cruzar los dedos = crossed fingers",
+  "t": "verb"
+ },
+ "cuello": {
+  "g": "collar, neck",
+  "t": "noun"
+ },
+ "darle": {
+  "g": "to give him",
+  "t": "verb"
+ },
+ "dañando": {
+  "g": "dañar = ruining, spoiling",
+  "t": "verb"
+ },
+ "dedos": {
+  "g": "fingers",
+  "t": "noun"
+ },
+ "derecho": {
+  "g": "straight ahead",
+  "t": "adverb"
+ },
+ "descoordinada": {
+  "g": "clumsy, out of sync",
+  "t": "adjective"
+ },
+ "dicha": {
+  "g": "bliss, joy",
+  "t": "noun"
+ },
+ "diera": {
+  "g": "would give",
+  "t": "verb"
+ },
+ "distinta": {
+  "g": "different",
+  "t": "adjective"
+ },
+ "doblaron": {
+  "g": "doblarse de risa = to crack up",
+  "t": "verb"
+ },
+ "dobló": {
+  "g": "doubled over laughing",
+  "t": "verb"
+ },
+ "durísimo": {
+  "g": "really loud, super hard",
+  "t": "adverb"
+ },
+ "eche": {
+  "g": "coastal exclamation of surprise",
+  "t": "noun"
+ },
+ "ellas": {
+  "g": "they, them (women)",
+  "t": "pronoun"
+ },
+ "embarrar": {
+  "g": "embarrarla = to screw it up",
+  "t": "verb"
+ },
+ "embarrarla": {
+  "g": "to screw it up, ruin the chance",
+  "t": "verb"
+ },
+ "enredas": {
+  "g": "enredarse = to fumble, tangle up",
+  "t": "verb"
+ },
+ "envolvió": {
+  "g": "wrapped up, swept up",
+  "t": "verb"
+ },
+ "escena": {
+  "g": "a scene",
+  "t": "noun"
+ },
+ "espantar": {
+  "g": "to shoo away, scare off",
+  "t": "verb"
+ },
+ "espectáculo": {
+  "g": "a spectacle, a show",
+  "t": "noun"
+ },
+ "estirada": {
+  "g": "stretched out",
+  "t": "adjective"
+ },
+ "existe": {
+  "g": "exists",
+  "t": "verb"
+ },
+ "fluía": {
+  "g": "flowed easily",
+  "t": "verb"
+ },
+ "genio": {
+  "g": "mal genio = a bad temper",
+  "t": "noun"
+ },
+ "haciendo": {
+  "g": "doing",
+  "t": "verb"
+ },
+ "hombre": {
+  "g": "man",
+  "t": "noun"
+ },
+ "hondo": {
+  "g": "respirar hondo = to breathe deep",
+  "t": "adjective"
+ },
+ "imposible": {
+  "g": "impossible",
+  "t": "adjective"
+ },
+ "insoportable": {
+  "g": "unbearable, too much",
+  "t": "adjective"
+ },
+ "intento": {
+  "g": "an attempt, a try",
+  "t": "noun"
+ },
+ "irse": {
+  "g": "to leave",
+  "t": "verb"
+ },
+ "ladró": {
+  "g": "barked (an order)",
+  "t": "verb"
+ },
+ "lanzar": {
+  "g": "to throw out, to launch",
+  "t": "verb"
+ },
+ "lanzarse": {
+  "g": "to throw yourself in",
+  "t": "verb"
+ },
+ "latiendo": {
+  "g": "beating (heart)",
+  "t": "verb"
+ },
+ "llevado": {
+  "g": "carried, led",
+  "t": "verb"
+ },
+ "llevó": {
+  "g": "took, led away",
+  "t": "verb"
+ },
+ "malos": {
+  "g": "bad",
+  "t": "adjective"
+ },
+ "mane": {
+  "g": "a guy, on the coast",
+  "t": "noun"
+ },
+ "marcar": {
+  "g": "marcar el paso = to guide the steps",
+  "t": "verb"
+ },
+ "mercado": {
+  "g": "the market",
+  "t": "noun"
+ },
+ "milagro": {
+  "g": "a miracle",
+  "t": "noun"
+ },
+ "miraba": {
+  "g": "was looking at",
+  "t": "verb"
+ },
+ "miraron": {
+  "g": "looked at each other",
+  "t": "verb"
+ },
+ "montando": {
+  "g": "montar chercha = teasing",
+  "t": "verb"
+ },
+ "montó": {
+  "g": "montó chercha = teased",
+  "t": "verb"
+ },
+ "moviéndose": {
+  "g": "moving",
+  "t": "verb"
+ },
+ "muchachos": {
+  "g": "guys, folks",
+  "t": "noun"
+ },
+ "mujeres": {
+  "g": "women",
+  "t": "noun"
+ },
+ "murmuró": {
+  "g": "murmured",
+  "t": "verb"
+ },
+ "muro": {
+  "g": "a wall, an obstacle",
+  "t": "noun"
+ },
+ "muéstranos": {
+  "g": "show us",
+  "t": "verb"
+ },
+ "nubes": {
+  "g": "en las nubes = walking on air",
+  "t": "noun"
+ },
+ "orgullosas": {
+  "g": "proud",
+  "t": "adjective"
+ },
+ "orgulloso": {
+  "g": "proud",
+  "t": "adjective"
+ },
+ "paciencia": {
+  "g": "patience",
+  "t": "noun"
+ },
+ "papelón": {
+  "g": "an embarrassing spectacle",
+  "t": "noun"
+ },
+ "pasarle": {
+  "g": "to pass to him or her",
+  "t": "verb"
+ },
+ "pegada": {
+  "g": "champeta pegada = blasting music",
+  "t": "adjective"
+ },
+ "pegado": {
+  "g": "dancing close together",
+  "t": "adjective"
+ },
+ "peinado": {
+  "g": "hairstyle, hairdo",
+  "t": "noun"
+ },
+ "peleaba": {
+  "g": "was fighting, struggling",
+  "t": "verb"
+ },
+ "pelo": {
+  "g": "hair",
+  "t": "noun"
+ },
+ "pensaba": {
+  "g": "no lo pensaba = was not going to",
+  "t": "verb"
+ },
+ "perdedor": {
+  "g": "a loser",
+  "t": "noun"
+ },
+ "peros": {
+  "g": "tirarse los peros = to flirt hard",
+  "t": "noun"
+ },
+ "picaflor": {
+  "g": "a flirt, a womanizer",
+  "t": "noun"
+ },
+ "plantó": {
+  "g": "plantarse = planted himself, blocking",
+  "t": "verb"
+ },
+ "podía": {
+  "g": "could",
+  "t": "verb"
+ },
+ "prometía": {
+  "g": "promised, hinted at",
+  "t": "verb"
+ },
+ "quedándose": {
+  "g": "staying, ending up",
+  "t": "verb"
+ },
+ "retó": {
+  "g": "dared, challenged",
+  "t": "verb"
+ },
+ "rey": {
+  "g": "king",
+  "t": "noun"
+ },
+ "ridiculez": {
+  "g": "an absurd silly thing",
+  "t": "noun"
+ },
+ "ridículo": {
+  "g": "dejar en ridículo = to humiliate",
+  "t": "adjective"
+ },
+ "riendo": {
+  "g": "laughing",
+  "t": "verb"
+ },
+ "rincón": {
+  "g": "a corner",
+  "t": "noun"
+ },
+ "ritmo": {
+  "g": "agarrar el ritmo = to find the groove",
+  "t": "noun"
+ },
+ "rogó": {
+  "g": "begged, pleaded",
+  "t": "verb"
+ },
+ "ruido": {
+  "g": "noise",
+  "t": "noun"
+ },
+ "ríanse": {
+  "g": "laugh (you all)",
+  "t": "verb"
+ },
+ "sabroso": {
+  "g": "bailar sabroso = to dance with flavor",
+  "t": "adjective"
+ },
+ "sacarlo": {
+  "g": "sacar de casillas = to wind him up",
+  "t": "verb"
+ },
+ "separó": {
+  "g": "separated, split apart",
+  "t": "verb"
+ },
+ "shock": {
+  "g": "shock, stunned state",
+  "t": "noun"
+ },
+ "soltaron": {
+  "g": "let out (a laugh)",
+  "t": "verb"
+ },
+ "susurró": {
+  "g": "whispered",
+  "t": "verb"
+ },
+ "suya": {
+  "g": "as if the street were his",
+  "t": "adjective"
+ },
+ "terminaba": {
+  "g": "ended up",
+  "t": "verb"
+ },
+ "tieso": {
+  "g": "stiff, rigid",
+  "t": "adjective"
+ },
+ "tomó": {
+  "g": "se tomó = drank down",
+  "t": "verb"
+ },
+ "trago": {
+  "g": "a swig, a gulp of drink",
+  "t": "noun"
+ },
+ "trampolín": {
+  "g": "a diving board",
+  "t": "noun"
+ },
+ "triunfo": {
+  "g": "triumph, victory",
+  "t": "noun"
+ },
+ "valor": {
+  "g": "armarse de valor = to gather courage",
+  "t": "noun"
+ },
+ "vayas": {
+  "g": "no la vayas a embarrar = do not screw it up",
+  "t": "verb"
+ },
+ "verlo": {
+  "g": "to see him",
+  "t": "verb"
+ },
+ "viejo": {
+  "g": "old",
+  "t": "adjective"
+ },
+ "vigilaban": {
+  "g": "were keeping watch",
+  "t": "verb"
+ }
+}

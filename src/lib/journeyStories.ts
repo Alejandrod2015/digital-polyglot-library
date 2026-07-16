@@ -90,12 +90,24 @@ export async function getJourneyStoryBySlug(
 ): Promise<PublicStandaloneStory | null> {
   try {
     // Local preview only (NODE_ENV !== production): also resolve draft stories
-    // that belong to the in-progress German A0 journey, so it can be read in
-    // the real story reader before publishing. Production stays published-only.
-    const PREVIEW_JOURNEY_ID = "cmqtnagxp0000324lf3u73vg1";
+    // that belong to an in-progress journey, so it can be read in the REAL story
+    // reader before publishing. Production stays published-only.
+    //
+    // A list, not a single id, so several journeys can be in progress at once
+    // (2026-07-09: added Friends ES C1 LATAM alongside the German A0).
+    // NOTE: the reader does NOT filter by Journey.status — a story with
+    // status:"published" is reachable by direct URL in production even when its
+    // journey is "archived". Keep in-progress journeys' stories in "draft" and
+    // preview them via this list instead of publishing them.
+    const PREVIEW_JOURNEY_IDS = [
+      "cmqtnagxp0000324lf3u73vg1", // German A0 (in progress)
+      "cmrdqk484000032r4rt2vw4ej", // Friends ES C1 LATAM (in progress)
+      "cmrdbz11t000032asrvo832i9", // Hanseat DE C1 (in progress; un-published 2026-07-09)
+      "cmraj8ihq000032a6sghnrim9", // Traveler FR A0 Biarritz (archived; un-published 2026-07-09)
+    ];
     const statusWhere =
       process.env.NODE_ENV !== "production"
-        ? { OR: [{ status: "published" as const }, { journeyId: PREVIEW_JOURNEY_ID }] }
+        ? { OR: [{ status: "published" as const }, { journeyId: { in: PREVIEW_JOURNEY_IDS } }] }
         : { status: "published" as const };
     const story = await prisma.journeyStory.findFirst({
       where: { slug, ...statusWhere },

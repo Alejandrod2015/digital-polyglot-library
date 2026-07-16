@@ -10,7 +10,7 @@ const TOPICS=["el-cotorreo","la-carrilla","el-chisme","la-vacilada","el-desahogo
   const slugs=rows.map((r:any)=>r.slug);
   // merge 6 gloss chunks
   const merged:Record<string,any>={};
-  for(let i=1;i<=6;i++){
+  for(let i=1;i<=14;i++){
     const part=JSON.parse(fs.readFileSync(`scripts/_friends_gloss_chunk_${i}.json`,"utf8"));
     for(const [k,v] of Object.entries(part)) merged[k.normalize("NFC")]=v;
   }

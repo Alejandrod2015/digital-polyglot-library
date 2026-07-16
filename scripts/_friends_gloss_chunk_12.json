@@ -1,0 +1,510 @@
+{
+ "abrazos": {
+  "g": "hugs",
+  "t": "noun"
+ },
+ "achoró": {
+  "g": "achorarse = got cocky and tough",
+  "t": "verb"
+ },
+ "acompañar": {
+  "g": "to go with, accompany",
+  "t": "verb"
+ },
+ "adoptado": {
+  "g": "adopted, taken in",
+  "t": "verb"
+ },
+ "ají": {
+  "g": "a hot chili pepper",
+  "t": "noun"
+ },
+ "almuerzo": {
+  "g": "lunch",
+  "t": "noun"
+ },
+ "alrededor": {
+  "g": "around",
+  "t": "adverb"
+ },
+ "alumna": {
+  "g": "a female student",
+  "t": "noun"
+ },
+ "anticuchos": {
+  "g": "grilled beef heart skewers",
+  "t": "noun"
+ },
+ "aplaudieron": {
+  "g": "applauded",
+  "t": "verb"
+ },
+ "apretados": {
+  "g": "squeezed in tight",
+  "t": "adjective"
+ },
+ "apócopes": {
+  "g": "clipped shortened words",
+  "t": "noun"
+ },
+ "armando": {
+  "g": "armar el rompecabezas = piecing it together",
+  "t": "verb"
+ },
+ "asentía": {
+  "g": "was nodding",
+  "t": "verb"
+ },
+ "bajar": {
+  "g": "bajar la cabeza = to admit defeat",
+  "t": "verb"
+ },
+ "bolsillo": {
+  "g": "a pocket",
+  "t": "noun"
+ },
+ "botados": {
+  "g": "dejar botados = left stumped",
+  "t": "adjective"
+ },
+ "box": {
+  "g": "boxing",
+  "t": "noun"
+ },
+ "cachado": {
+  "g": "figured out, understood",
+  "t": "verb"
+ },
+ "cachear": {
+  "g": "to understand, catch on",
+  "t": "verb"
+ },
+ "cacheé": {
+  "g": "I understood, I caught on",
+  "t": "verb"
+ },
+ "cambiadas": {
+  "g": "swapped, switched around",
+  "t": "adjective"
+ },
+ "campeona": {
+  "g": "a champion",
+  "t": "noun"
+ },
+ "cebolla": {
+  "g": "onion",
+  "t": "noun"
+ },
+ "cerrada": {
+  "g": "thick, hard to follow (slang)",
+  "t": "adjective"
+ },
+ "ceviche": {
+  "g": "raw fish cured in lime",
+  "t": "noun"
+ },
+ "chata": {
+  "g": "chato = shorty, a fond nickname",
+  "t": "noun"
+ },
+ "cinco": {
+  "g": "five",
+  "t": "number"
+ },
+ "clase": {
+  "g": "class, kind",
+  "t": "noun"
+ },
+ "clases": {
+  "g": "lessons, classes",
+  "t": "noun"
+ },
+ "comió": {
+  "g": "ate",
+  "t": "verb"
+ },
+ "confusión": {
+  "g": "confusion",
+  "t": "noun"
+ },
+ "crack": {
+  "g": "an ace, top notch",
+  "t": "noun"
+ },
+ "cuentos": {
+  "g": "stories, tales",
+  "t": "noun"
+ },
+ "curioso": {
+  "g": "curious, odd",
+  "t": "adjective"
+ },
+ "código": {
+  "g": "a code, a secret way of speaking",
+  "t": "noun"
+ },
+ "decir": {
+  "g": "to say, to mean",
+  "t": "verb"
+ },
+ "declaró": {
+  "g": "declared",
+  "t": "verb"
+ },
+ "decían": {
+  "g": "were saying",
+  "t": "verb"
+ },
+ "derecha": {
+  "g": "pararse derecha = to stand up straight",
+  "t": "adjective"
+ },
+ "despistar": {
+  "g": "to throw off, mislead",
+  "t": "verb"
+ },
+ "disfrutó": {
+  "g": "enjoyed",
+  "t": "verb"
+ },
+ "disparaba": {
+  "g": "disparar = was firing off words",
+  "t": "verb"
+ },
+ "duelo": {
+  "g": "a duel, a showdown",
+  "t": "noun"
+ },
+ "embargo": {
+  "g": "sin embargo = however",
+  "t": "noun"
+ },
+ "enredada": {
+  "g": "tangled, hard to follow",
+  "t": "adjective"
+ },
+ "enseñaron": {
+  "g": "taught",
+  "t": "verb"
+ },
+ "entrar": {
+  "g": "to get into, to join",
+  "t": "verb"
+ },
+ "escuchaban": {
+  "g": "were listening",
+  "t": "verb"
+ },
+ "escuchado": {
+  "g": "heard",
+  "t": "verb"
+ },
+ "exagerados": {
+  "g": "exaggerated, over the top",
+  "t": "adjective"
+ },
+ "flauta": {
+  "g": "de la gran flauta = enormous",
+  "t": "noun"
+ },
+ "florees": {
+  "g": "florear = lay it on thick",
+  "t": "verb"
+ },
+ "foco": {
+  "g": "prenderse el foco = the lightbulb moment",
+  "t": "noun"
+ },
+ "ganar": {
+  "g": "to win, to beat",
+  "t": "verb"
+ },
+ "germa": {
+  "g": "a girl (mujer flipped)",
+  "t": "noun"
+ },
+ "gris": {
+  "g": "gray",
+  "t": "adjective"
+ },
+ "hablaban": {
+  "g": "were speaking",
+  "t": "verb"
+ },
+ "hablada": {
+  "g": "spoken",
+  "t": "adjective"
+ },
+ "hablarles": {
+  "g": "to speak to them",
+  "t": "verb"
+ },
+ "hundía": {
+  "g": "was sinking her deeper",
+  "t": "verb"
+ },
+ "indiscutible": {
+  "g": "undisputed, beyond doubt",
+  "t": "adjective"
+ },
+ "juraba": {
+  "g": "swore, insisted",
+  "t": "verb"
+ },
+ "limeña": {
+  "g": "from Lima, Lima style",
+  "t": "adjective"
+ },
+ "limón": {
+  "g": "lime, lemon",
+  "t": "noun"
+ },
+ "maestros": {
+  "g": "masters, experts",
+  "t": "noun"
+ },
+ "manera": {
+  "g": "the way, the manner",
+  "t": "noun"
+ },
+ "matando": {
+  "g": "matar el rato = killing time",
+  "t": "verb"
+ },
+ "mezcla": {
+  "g": "a mix, a blend",
+  "t": "noun"
+ },
+ "mezcló": {
+  "g": "mixed, blended",
+  "t": "verb"
+ },
+ "michi": {
+  "g": "ni michi = nothing at all",
+  "t": "noun"
+ },
+ "moneda": {
+  "g": "con la misma moneda = paying back in kind",
+  "t": "noun"
+ },
+ "mostra": {
+  "g": "mostro = awesome, amazing",
+  "t": "adjective"
+ },
+ "moverse": {
+  "g": "to move",
+  "t": "verb"
+ },
+ "muletillas": {
+  "g": "filler words, verbal tics",
+  "t": "noun"
+ },
+ "nacido": {
+  "g": "born",
+  "t": "verb"
+ },
+ "necesita": {
+  "g": "needs",
+  "t": "verb"
+ },
+ "notó": {
+  "g": "noticed",
+  "t": "verb"
+ },
+ "novata": {
+  "g": "a female newbie",
+  "t": "noun"
+ },
+ "novato": {
+  "g": "a newbie, a rookie",
+  "t": "noun"
+ },
+ "nuevas": {
+  "g": "new",
+  "t": "adjective"
+ },
+ "orgullosos": {
+  "g": "proud",
+  "t": "adjective"
+ },
+ "paltees": {
+  "g": "paltearse = get flustered",
+  "t": "verb"
+ },
+ "pararon": {
+  "g": "stood up",
+  "t": "verb"
+ },
+ "paró": {
+  "g": "pararse derecha = stood up straight",
+  "t": "verb"
+ },
+ "pequeña": {
+  "g": "small, little",
+  "t": "adjective"
+ },
+ "perdida": {
+  "g": "lost, clueless",
+  "t": "adjective"
+ },
+ "perfecta": {
+  "g": "perfect",
+  "t": "adjective"
+ },
+ "pidiéndole": {
+  "g": "asking her for",
+  "t": "verb"
+ },
+ "planes": {
+  "g": "plans",
+  "t": "noun"
+ },
+ "plato": {
+  "g": "a plate, a dish",
+  "t": "noun"
+ },
+ "plena": {
+  "g": "en plena mesa = right in the middle of",
+  "t": "adjective"
+ },
+ "polo": {
+  "g": "al polo = ice cold",
+  "t": "noun"
+ },
+ "prendió": {
+  "g": "prenderse el foco = the lightbulb went on",
+  "t": "verb"
+ },
+ "pretensiones": {
+  "g": "pretensions, airs",
+  "t": "noun"
+ },
+ "pro": {
+  "g": "a pro, really skilled",
+  "t": "noun"
+ },
+ "promesa": {
+  "g": "a promise",
+  "t": "noun"
+ },
+ "propio": {
+  "g": "their own",
+  "t": "adjective"
+ },
+ "puros": {
+  "g": "nothing but, sheer",
+  "t": "adjective"
+ },
+ "quererse": {
+  "g": "to care for each other",
+  "t": "verb"
+ },
+ "querían": {
+  "g": "querían decir = meant",
+  "t": "verb"
+ },
+ "rara": {
+  "g": "strange, odd",
+  "t": "adjective"
+ },
+ "raras": {
+  "g": "strange, weird",
+  "t": "adjective"
+ },
+ "rascándose": {
+  "g": "scratching",
+  "t": "verb"
+ },
+ "repetir": {
+  "g": "to do it again",
+  "t": "verb"
+ },
+ "responderle": {
+  "g": "to answer him back",
+  "t": "verb"
+ },
+ "respondida": {
+  "g": "a comeback, a retort",
+  "t": "noun"
+ },
+ "respuesta": {
+  "g": "an answer, a response",
+  "t": "noun"
+ },
+ "rompecabezas": {
+  "g": "a puzzle",
+  "t": "noun"
+ },
+ "saboreando": {
+  "g": "savoring",
+  "t": "verb"
+ },
+ "sacaste": {
+  "g": "de dónde sacaste = where did you get",
+  "t": "verb"
+ },
+ "sensación": {
+  "g": "the sensation, the star",
+  "t": "noun"
+ },
+ "sentaron": {
+  "g": "sat down",
+  "t": "verb"
+ },
+ "sintiéndose": {
+  "g": "feeling",
+  "t": "verb"
+ },
+ "sobremesa": {
+  "g": "the after meal chat",
+  "t": "noun"
+ },
+ "sonaban": {
+  "g": "sounded",
+  "t": "verb"
+ },
+ "subió": {
+  "g": "subírsele a la cabeza = went to her head",
+  "t": "verb"
+ },
+ "sumó": {
+  "g": "sumarse = joined in",
+  "t": "verb"
+ },
+ "sílabas": {
+  "g": "syllables",
+  "t": "noun"
+ },
+ "sírveme": {
+  "g": "serve me",
+  "t": "verb"
+ },
+ "traduciendo": {
+  "g": "translating",
+  "t": "verb"
+ },
+ "varias": {
+  "g": "several",
+  "t": "adjective"
+ },
+ "vereda": {
+  "g": "the sidewalk",
+  "t": "noun"
+ },
+ "victoria": {
+  "g": "victory",
+  "t": "noun"
+ },
+ "voltea": {
+  "g": "flips around, inverts",
+  "t": "verb"
+ },
+ "volteadas": {
+  "g": "flipped, inverted",
+  "t": "adjective"
+ },
+ "yapa": {
+  "g": "a little extra for free",
+  "t": "noun"
+ }
+}

@@ -1,0 +1,452 @@
+[
+ {
+  "topic": "la-vacilada",
+  "slotIndex": 1,
+  "title": "El corte nuevo de Andrés",
+  "arcType": "daily-encounter",
+  "synopsis": "En la esquina del barrio, con el picó a todo volumen, Andrés llega estrenando corte y bien fresco, seguro de que hoy sí levanta. Daniela y Yuly no le perdonan una y le montan chercha por el peinado y por su fama de perdedor con las peladas. Andrés aguanta la molestadera y jura que esta vez la vacilada le va a salir bien.",
+  "text": "En la esquina del barrio, con el picó sonando durísimo, se armaba la reunión de siempre. Andrés apareció estrenando corte y caminando bien fresco, como si la calle fuera suya. Apenas lo vio, Daniela le soltó un \"Ombe\" y le preguntó por ese peinado tan tieso, mane.\n\nYuly se rió de una y le siguió montando chercha sin piedad. Entre risas, remató con un \"Eche\": ese corte se lo había hecho el barbero con los ojos cerrados. Andrés, lejos de arrecharse, se pasó la mano por el pelo bien orgulloso.\n\nEl pelao arrancó con un \"Ajá\" y prometió, con toda la confianza, que \"hoy sí caigo parado con alguna china\". Las dos amigas se miraron y soltaron la carcajada al mismo tiempo. La fama de Andrés con las mujeres era un chiste viejo en el parche.\n\nSegún ellas, el man llevaba meses tirándose los peros y quedándose siempre solo. Cada vacilada suya terminaba en calabaza, y el barrio entero lo sabía de sobra. Aun así, Andrés insistía en que esta vez la cosa iba a ser distinta.\n\nDaniela le montó más chercha para sacarlo de casillas. \"Bueno, picaflor, muéstranos entonces cómo se hace, a ver si no te enredas\", lo retó. Yuly le pasó una birra fría para darle valor antes del intento.\n\nAndrés se tomó la birra de un solo trago y se acomodó el cuello de la camisa. Respiró hondo, como si fuera a lanzarse de un trampolín altísimo. La esquina entera se quedó mirando el espectáculo que se venía.\n\nJusto pasó una vecina, y Andrés le lanzó su mejor sonrisa de conquistador. Ella ni lo miró y siguió derecho con su bolsa del mercado. Daniela y Yuly se doblaron de la risa, y Andrés juró que la próxima sí caía.",
+  "vocab": [
+   {
+    "word": "picó",
+    "surface": "picó",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a huge coastal sound system that blasts music at parties"
+   },
+   {
+    "word": "fresco",
+    "surface": "fresco",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "cool, relaxed and unbothered, taking everything nice and easy"
+   },
+   {
+    "word": "ombe",
+    "surface": "Ombe",
+    "type": "expression",
+    "register": "slang",
+    "definition": "a coastal exclamation like man or come on, showing surprise"
+   },
+   {
+    "word": "tieso",
+    "surface": "tieso",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "stiff and rigid, said of overly gelled hair here"
+   },
+   {
+    "word": "mane",
+    "surface": "mane",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a guy or dude on the Colombian coast"
+   },
+   {
+    "word": "montar chercha",
+    "surface": "montando chercha",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to relentlessly tease and poke fun at someone"
+   },
+   {
+    "word": "eche",
+    "surface": "Eche",
+    "type": "expression",
+    "register": "slang",
+    "definition": "a classic coastal filler exclamation of surprise or disbelief"
+   },
+   {
+    "word": "ajá",
+    "surface": "Ajá",
+    "type": "expression",
+    "register": "slang",
+    "definition": "a coastal so what or go on, prompting more talk"
+   },
+   {
+    "word": "caer parado",
+    "surface": "caigo parado",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to land on your feet and come out lucky or winning"
+   },
+   {
+    "word": "china",
+    "surface": "china",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a girl or young woman on the coast"
+   },
+   {
+    "word": "pelao",
+    "surface": "pelao",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a kid or young guy, the coastal word for it"
+   },
+   {
+    "word": "tirarse los peros",
+    "surface": "tirándose los peros",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to try to chat someone up and flirt hard"
+   },
+   {
+    "word": "quedar en calabaza",
+    "surface": "terminaba en calabaza",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to end in nothing, a total flop with no result"
+   },
+   {
+    "word": "enredarse",
+    "surface": "enredas",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to get tangled up and fumble what you are doing"
+   },
+   {
+    "word": "birra",
+    "surface": "birra",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a beer, the informal everyday word for one"
+   },
+   {
+    "word": "acomodarse",
+    "surface": "se acomodó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to adjust or straighten yourself up, fixing your look"
+   },
+   {
+    "word": "conquistador",
+    "surface": "conquistador",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a smooth charmer who tries to win people over romantically"
+   },
+   {
+    "word": "arrecharse",
+    "surface": "arrecharse",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to get worked up and angry, a coastal vulgar word"
+   },
+   {
+    "word": "sacar de casillas",
+    "surface": "sacarlo de casillas",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to wind someone up until they lose their patience"
+   },
+   {
+    "word": "picaflor",
+    "surface": "picaflor",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a flirt or womanizer who chases many people at once"
+   }
+  ]
+ },
+ {
+  "topic": "la-vacilada",
+  "slotIndex": 2,
+  "title": "Andrés en la pista",
+  "arcType": "recurring-character-callback",
+  "synopsis": "El sábado la parranda está a millón con champeta y birras frías, y Andrés no le quita el ojo a una traga que baila en la pista. Fiel a su fama, se lanza a bailar de una manera tan enredada que Daniela y Yuly no aguantan la risa. Pero por una vez el vacilón le sale bien y la chica termina bailando con él, dejando al parche con la boca abierta.",
+  "text": "El sábado la parranda estaba a millón, con champeta pegada y birras bien frías. Andrés no le quitaba el ojo a una traga que bailaba sabroso en la mitad de la pista. \"Ahí está tu momento, galán, no la vayas a embarrar\", le dijo Yuly dándole un codazo.\n\nDaniela ya se estaba riendo antes de que él diera el primer paso. Recordaba el corte tieso y el papelón con la vecina. \"Esto lo tengo que ver, vale, va a ser un show\", le comentó a Yuly.\n\nAndrés se metió a la pista moviéndose bien descoordinada. Parecía que peleaba con la música, todo tieso de los brazos. El parche entero se dobló de la risa al verlo hacer semejante ridiculez.\n\nLa traga lo miró de arriba abajo, como si lo fuera a dejar en ridículo. Pero algo en la cara de bobo feliz de Andrés le sacó una sonrisa. En vez de irse, se acercó y le empezó a marcar el paso con paciencia.\n\nAndrés no lo podía creer y por poco se queda congelado de la dicha. Poco a poco fue agarrando el ritmo, llevado por la mano de la china. La champeta los envolvió y de repente el pelao ya no se veía tan ridículo.\n\nDaniela y Yuly se quedaron con la boca abierta, sin saber si reírse o aplaudir. El perdedor de siempre estaba bailando pegado con la traga más buenona de la fiesta. Yuly, todavía en shock, murmuró un \"No joda\" y admitió que el milagro existía.\n\nCuando terminó la canción, Andrés volvió al parche caminando en las nubes. No dijo nada, solo levantó las cejas con una cara de triunfo insoportable. Por una vez, el rey de la pista no era un chiste.",
+  "vocab": [
+   {
+    "word": "a millón",
+    "surface": "a millón",
+    "type": "expression",
+    "register": "slang",
+    "definition": "at full blast, going with maximum energy and intensity"
+   },
+   {
+    "word": "champeta",
+    "surface": "champeta",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a fast Afro Caribbean music and dance from Cartagena"
+   },
+   {
+    "word": "traga",
+    "surface": "traga",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a crush, the person you are romantically stuck on"
+   },
+   {
+    "word": "bailar sabroso",
+    "surface": "bailaba sabroso",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to dance with great flavor and easy natural rhythm"
+   },
+   {
+    "word": "embarrarla",
+    "surface": "embarrar",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to screw it up and ruin your chance"
+   },
+   {
+    "word": "codazo",
+    "surface": "codazo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a nudge with the elbow to get someone's attention"
+   },
+   {
+    "word": "papelón",
+    "surface": "papelón",
+    "type": "noun",
+    "register": "slang",
+    "definition": "an embarrassing spectacle that makes you look foolish"
+   },
+   {
+    "word": "vale",
+    "surface": "vale",
+    "type": "noun",
+    "register": "slang",
+    "definition": "buddy or mate, a coastal way to address a friend"
+   },
+   {
+    "word": "show",
+    "surface": "show",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a scene or spectacle put on for everyone to watch"
+   },
+   {
+    "word": "descoordinado",
+    "surface": "descoordinada",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "clumsy and out of sync, with limbs all over the place"
+   },
+   {
+    "word": "ridiculez",
+    "surface": "ridiculez",
+    "type": "noun",
+    "register": "slang",
+    "definition": "an absurd silly thing that makes you look ridiculous"
+   },
+   {
+    "word": "dejar en ridículo",
+    "surface": "dejar en ridículo",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to publicly humiliate someone and make them look foolish"
+   },
+   {
+    "word": "marcar el paso",
+    "surface": "marcar el paso",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to guide someone step by step through the dance"
+   },
+   {
+    "word": "congelado",
+    "surface": "congelado",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "frozen stiff, unable to move from shock or nerves"
+   },
+   {
+    "word": "agarrar el ritmo",
+    "surface": "agarrando el ritmo",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to get the hang of the rhythm and find your groove"
+   },
+   {
+    "word": "buenona",
+    "surface": "buenona",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "very good looking and attractive, said of a person"
+   },
+   {
+    "word": "no joda",
+    "surface": "No joda",
+    "type": "expression",
+    "register": "slang",
+    "definition": "a coastal come on or no way, half surprise half protest"
+   },
+   {
+    "word": "en las nubes",
+    "surface": "en las nubes",
+    "type": "expression",
+    "register": "slang",
+    "definition": "walking on air, floating happily far above the ground"
+   },
+   {
+    "word": "insoportable",
+    "surface": "insoportable",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "unbearable, way too much for anyone to put up with"
+   },
+   {
+    "word": "quedarse con la boca abierta",
+    "surface": "se quedaron con la boca abierta",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to be left astonished with your jaw dropped in amazement"
+   }
+  ]
+ },
+ {
+  "topic": "la-vacilada",
+  "slotIndex": 3,
+  "title": "Llega el guachimán",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Ya de madrugada, con las birras calientes y medio mundo jincho, Andrés por fin tiene el cuadre con la china y se la lleva aparte a hablar. Pero justo cuando la cosa va bien encaminada, aparece el guachimán del edificio a dañar la nota con cara de pocos amigos. Andrés queda a punto de perder su gran momento, y el parche contiene la respiración.",
+  "text": "Ya de madrugada, con las birras calientes y medio mundo jincho, la parranda iba de salida. Andrés por fin tenía el cuadre con la china y no lo pensaba soltar. Se la llevó aparte, a un rincón, para hablar sin tanto ruido.\n\nLa conversación fluía sabroso, y por primera vez el pelao no estaba dañando el momento. La china se reía de sus chistes malos y le seguía el juego con gusto. Daniela y Yuly vigilaban de lejos, orgullosas del milagro.\n\n\"Míralo, el bobo por fin la está haciendo bien\", susurró Daniela sin poder creerlo. Yuly cruzó los dedos, rogando que Andrés no fuera a embarrarla en el último minuto. La escena parecía sacada de una novela.\n\nAndrés bajó la voz y se armó de valor para lanzar la pregunta clave. Estaba a nada de conseguir el número, con el corazón latiendo a mil. La china lo miraba con una sonrisa que prometía puro sí.\n\nJusto en ese momento apareció el guachimán del edificio con cara de pocos amigos. \"Se acabó la rumba, muchachos, a bajarle al ruido ya mismo\", ladró de mal genio. La música se cortó de golpe y todo el mundo pegó el grito al cielo.\n\nEl guachimán se plantó entre Andrés y la china, como un muro imposible. Andrés le rogó con la mirada un minuto más, uno solo. Pero el hombre no estaba para vacilar y empezó a espantar a la gente sin piedad.\n\nLa china sacó su celular para pasarle el número antes de irse. En eso, el guachimán se metió en el medio y la corriente de gente los separó. Andrés se quedó con la mano estirada y el número a medio dar, sin saber si lo alcanzó a agarrar.",
+  "vocab": [
+   {
+    "word": "jincho",
+    "surface": "jincho",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "drunk and thoroughly wasted from far too much drinking"
+   },
+   {
+    "word": "cuadre",
+    "surface": "cuadre",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a romantic connection or arrangement between two people"
+   },
+   {
+    "word": "seguir el juego",
+    "surface": "seguía el juego",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to play along and go with someone's banter or flirting"
+   },
+   {
+    "word": "bobo",
+    "surface": "bobo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a fool or dummy, said with affection here"
+   },
+   {
+    "word": "cruzar los dedos",
+    "surface": "cruzó los dedos",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to cross your fingers and hope hard for good luck"
+   },
+   {
+    "word": "armarse de valor",
+    "surface": "se armó de valor",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to work up the courage to do something scary"
+   },
+   {
+    "word": "a mil",
+    "surface": "a mil",
+    "type": "expression",
+    "register": "slang",
+    "definition": "racing at full speed, pounding with excitement and nerves"
+   },
+   {
+    "word": "guachimán",
+    "surface": "guachimán",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a security guard or watchman, from the English watchman"
+   },
+   {
+    "word": "cara de pocos amigos",
+    "surface": "cara de pocos amigos",
+    "type": "expression",
+    "register": "slang",
+    "definition": "a sour unfriendly face that warns you to back off"
+   },
+   {
+    "word": "rumba",
+    "surface": "rumba",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a party, a night of dancing and drinking"
+   },
+   {
+    "word": "bajarle",
+    "surface": "bajarle",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to turn it down or ease off, lower the intensity"
+   },
+   {
+    "word": "mal genio",
+    "surface": "mal genio",
+    "type": "expression",
+    "register": "slang",
+    "definition": "a bad temper, being grumpy and short with people"
+   },
+   {
+    "word": "pegar el grito al cielo",
+    "surface": "pegó el grito al cielo",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to protest loudly and cry out in outrage"
+   },
+   {
+    "word": "plantarse",
+    "surface": "se plantó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to plant yourself firmly in place, blocking the way"
+   },
+   {
+    "word": "rogar",
+    "surface": "rogó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to beg and plead for something you badly want"
+   },
+   {
+    "word": "muro",
+    "surface": "muro",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a wall, here an immovable obstacle in your way"
+   },
+   {
+    "word": "a medio dar",
+    "surface": "a medio dar",
+    "type": "expression",
+    "register": "slang",
+    "definition": "half given and left hanging, never actually finished"
+   },
+   {
+    "word": "alcanzar",
+    "surface": "alcanzó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to manage to do something just in time"
+   },
+   {
+    "word": "dañar",
+    "surface": "dañando",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to ruin or spoil something good, wreck the moment"
+   },
+   {
+    "word": "espantar",
+    "surface": "espantar a la gente",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to shoo people away and scare them off"
+   }
+  ]
+ }
+]

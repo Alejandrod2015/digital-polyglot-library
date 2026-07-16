@@ -1,0 +1,452 @@
+[
+ {
+  "topic": "el-desahogo",
+  "slotIndex": 1,
+  "title": "Camila no da más",
+  "arcType": "reframe-turn",
+  "synopsis": "Camila entra al bar hecha pelota y larga todo de una: el laburo la tiene reventada y está a nada de mandar todo al carajo. Tomás y Flor la bancan mientras ella renegó de su jefe, del quilombo de la oficina y de la guita que no le alcanza. El desahogo cambia de color cuando entiende que ese jefe insoportable la estaba probando para ascenderla.",
+  "text": "Camila entró al bar tirándose en la silla, hecha pelota, y largó todo de una. \"Che, no doy más con este laburo, boludo\", disparó antes de acomodarse bien. Tomás y Flor se miraron, ya listos para el desahogo de siempre.\n\nSegún ella, el jefe le mandaba un quilombo tras otro sin respiro ni un gracias. Se quedaba renegando hasta tarde, reventada, mientras los demás rajaban a horario. Encima el sueldo era una miseria, y con ese mango no le alcanzaba para nada.\n\nTomás la bancó en silencio, dejándola descargar todo el bajón sin interrumpir. Flor le acercó una birra y le dijo que se despachara con confianza. \"Está todo mal, es un garrón, me quiero borrar de ahí\", cerró Camila.\n\nEntre queja y queja, empezó a contar los detalles del último proyecto imposible. El jefe le había soltado la cuenta más grande de la empresa, ella sola. Se pasó tres semanas al horno, sin dormir, sacando el laburo adelante.\n\nFlor la frenó en seco con una pregunta que la dejó pensando. \"Pará, ¿y por qué te daría el cliente más importante a vos, si te odia?\" La pregunta quedó flotando y Camila se quedó muda un rato largo.\n\nJusto ahí le sonó el celular con un mensaje del jefe en persona. Lo leyó dos veces, sin creerlo, y la cara se le fue transformando de a poco. El viejo la felicitaba por el proyecto y la ascendía a jefa de área.\n\nEl bajón se le dio vuelta y de golpe todo tenía otro sentido. El maltrato no era maltrato, era una prueba de fuego que había pasado. Tomás levantó la birra y brindó por la nueva jefa, muerto de risa.",
+  "vocab": [
+   {
+    "word": "hecho pelota",
+    "surface": "hecha pelota",
+    "type": "expression",
+    "register": "slang",
+    "definition": "totally wrecked and worn out, falling apart physically or emotionally"
+   },
+   {
+    "word": "largar",
+    "surface": "largó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to blurt out and let everything spill at once"
+   },
+   {
+    "word": "no dar más",
+    "surface": "no doy más",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to be completely done, unable to take any more"
+   },
+   {
+    "word": "laburo",
+    "surface": "laburo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a job or work, the everyday Buenos Aires word for it"
+   },
+   {
+    "word": "boludo",
+    "surface": "boludo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "dude or idiot; among friends a warm term of address"
+   },
+   {
+    "word": "quilombo",
+    "surface": "quilombo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a chaotic mess, a huge tangle of problems"
+   },
+   {
+    "word": "renegar",
+    "surface": "renegando",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to grumble and toil away endlessly in frustration and anger"
+   },
+   {
+    "word": "reventado",
+    "surface": "reventada",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "utterly exhausted and burnt out, running on empty"
+   },
+   {
+    "word": "mango",
+    "surface": "mango",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a peso, a unit of money; not a mango without any"
+   },
+   {
+    "word": "bancar",
+    "surface": "la bancó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to support someone and put up with them patiently"
+   },
+   {
+    "word": "bajón",
+    "surface": "bajón",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a low, gloomy mood, a wave of feeling down"
+   },
+   {
+    "word": "despacharse",
+    "surface": "se despachara",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to let it all out, unloading everything on your mind"
+   },
+   {
+    "word": "garrón",
+    "surface": "garrón",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a raw deal or a real bummer of a situation"
+   },
+   {
+    "word": "borrarse",
+    "surface": "borrar",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to disappear and get yourself out of somewhere"
+   },
+   {
+    "word": "al horno",
+    "surface": "al horno",
+    "type": "expression",
+    "register": "slang",
+    "definition": "in deep trouble, in a really tough spot"
+   },
+   {
+    "word": "frenar en seco",
+    "surface": "frenó en seco",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to stop someone dead in their tracks abruptly"
+   },
+   {
+    "word": "pará",
+    "surface": "Pará",
+    "type": "verb",
+    "register": "slang",
+    "definition": "hold on, wait a second, said to interrupt"
+   },
+   {
+    "word": "viejo",
+    "surface": "viejo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the old man; here an affectionate word for the boss"
+   },
+   {
+    "word": "prueba de fuego",
+    "surface": "prueba de fuego",
+    "type": "expression",
+    "register": "slang",
+    "definition": "a hard trial that tests what you are made of"
+   },
+   {
+    "word": "dar vuelta",
+    "surface": "se le dio vuelta",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to flip around completely, turning into its opposite"
+   }
+  ]
+ },
+ {
+  "topic": "el-desahogo",
+  "slotIndex": 2,
+  "title": "El psicólogo de la barra",
+  "arcType": "late-reveal",
+  "synopsis": "Flor llega bajoneada por un chabón careta y Tomás se ofrece de psicólogo de la barra, repartiendo consejos como si fuera un experto. Le chamuya teorías sobre las minas, los pibes y el amor mientras se manda una birra tras otra, muy pancho. El remate llega cuando se descubre que el gran consejero nunca en su vida tuvo una cita.",
+  "text": "Flor llegó bajoneada y Tomás se ofreció de psicólogo improvisado de la barra. \"Contame todo, flaca, que para eso están los amigos\", dijo, muy pancho. Se acomodó en el taburete como si fuera un diván carísimo de consultorio.\n\nFlor arrancó a contar que el chabón que le gustaba era un careta total. La había dejado colgada dos veces y encima chamuyaba a otras minas al mismo tiempo. \"Es un forro, sacátelo de la cabeza ya\", sentenció Tomás con autoridad.\n\nEl pibe se mandó una teoría larguísima sobre cómo funcionaba el amor. Hablaba de señales, de códigos y de banderas rojas como todo un experto del tema. Flor lo escuchaba entre sorprendida y aliviada de tener semejante gurú al lado.\n\n\"Vos tenés que hacerte la difícil, no le des bola tan fácil\", le aconsejaba. \"Si te busca, que labure para conseguirte, no le regales nada\", agregaba convencido. Cada consejo sonaba más pulido que el anterior, como sacado de un libro.\n\nFlor, ya casi curada del bajón, lo miró con una admiración nueva. \"Sos un genio, Tomás, ¿de dónde sacás toda esta posta?\", le preguntó agradecida. Él sonrió con humildad falsa y se mandó otro trago sin apuro.\n\nCamila, que venía llegando, escuchó la última parte y soltó una carcajada enorme. \"¿En serio este te está dando consejos de mujeres?\", tiró sin filtro. Tomás le hizo señas desesperadas para que se callara la boca.\n\nPero Camila ya estaba lanzada y soltó la bomba sin piedad ninguna. \"Flor, este pibe no tuvo una cita en toda su vida, es más solo que perro en la calle.\" El gran psicólogo de la barra se puso rojo y no pudo defenderse.",
+  "vocab": [
+   {
+    "word": "bajoneado",
+    "surface": "bajoneada",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "feeling down and gloomy, with your spirits scraping the floor"
+   },
+   {
+    "word": "contame",
+    "surface": "Contame",
+    "type": "verb",
+    "register": "slang",
+    "definition": "tell me, the voseo form used across Buenos Aires"
+   },
+   {
+    "word": "flaco",
+    "surface": "flaca",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a term of address for a friend, literally skinny one"
+   },
+   {
+    "word": "pancho",
+    "surface": "pancho",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "totally relaxed and unbothered, cool as a cucumber"
+   },
+   {
+    "word": "chabón",
+    "surface": "chabón",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a guy or dude, the porteño word for a man"
+   },
+   {
+    "word": "careta",
+    "surface": "careta",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "a fake two faced person who puts on a front"
+   },
+   {
+    "word": "dejar colgado",
+    "surface": "dejado colgada",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to leave someone hanging, ignored and stuck waiting around"
+   },
+   {
+    "word": "chamuyar",
+    "surface": "chamuyaba",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to sweet talk and flirt with smooth persuasive lines"
+   },
+   {
+    "word": "mina",
+    "surface": "minas",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a woman or girl, the porteño word for one"
+   },
+   {
+    "word": "forro",
+    "surface": "forro",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a jerk or scumbag; a strong porteño insult"
+   },
+   {
+    "word": "pibe",
+    "surface": "pibe",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a kid or young guy, very common in Buenos Aires"
+   },
+   {
+    "word": "mandarse",
+    "surface": "se mandó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to launch into something, here into a long speech"
+   },
+   {
+    "word": "dar bola",
+    "surface": "des bola",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to pay attention to someone or take interest in them"
+   },
+   {
+    "word": "laburar",
+    "surface": "labure",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to work; here to work hard to earn something"
+   },
+   {
+    "word": "posta",
+    "surface": "posta",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the real deal, honest truth or solid wisdom"
+   },
+   {
+    "word": "tirar",
+    "surface": "tiró",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to toss out a comment or remark bluntly"
+   },
+   {
+    "word": "sin filtro",
+    "surface": "sin filtro",
+    "type": "expression",
+    "register": "slang",
+    "definition": "saying whatever comes to mind with no restraint"
+   },
+   {
+    "word": "lanzado",
+    "surface": "lanzada",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "on a roll and unstoppable, going for it fully"
+   },
+   {
+    "word": "soltar la bomba",
+    "surface": "soltó la bomba",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to drop a shocking revelation that stuns everyone present"
+   },
+   {
+    "word": "más solo que perro en la calle",
+    "surface": "más solo que perro en la calle",
+    "type": "expression",
+    "register": "slang",
+    "definition": "utterly alone, as lonely as a stray street dog"
+   }
+  ]
+ },
+ {
+  "topic": "el-desahogo",
+  "slotIndex": 3,
+  "title": "El mismo chabón",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "En la previa, Camila y Flor se ponen a largar todo sobre sus nuevos amores, cada una re enganchada con un pibe soñado. Mientras comparan detalles entre risas y escabio, las coincidencias se vuelven demasiado exactas para ser casualidad. Descubren de golpe que el chabón perfecto de las dos es el mismo forro chamuyero.",
+  "text": "En la previa, con música y escabio, Camila y Flor se pusieron a largar todo. \"Estoy re mal, piba, conocí un pibe soñado\", arrancó Camila con una sonrisa boba. Flor casi salta de la silla, porque ella también venía embalada con alguien.\n\nLas dos empezaron a describir a sus respectivos candidatos, muertas de la emoción. Camila contó que el suyo era alto, canchero y con una labia impresionante. Flor asintió rarísimo, porque el suyo tenía exactamente la misma descripción.\n\nSiguieron comparando entre risas, sin darse cuenta del bardo que se venía encima. Los dos pibes las habían invitado al mismo bar, con el mismo verso trillado. Hasta la remera que describían, azul con letras blancas, era idéntica.\n\nEl clima fue cambiando de la euforia a una sospecha bastante incómoda. \"Pará, piba, ¿el tuyo no se llamará Nico, no?\", preguntó Camila despacio. Flor se quedó dura, con el vaso a mitad de camino de la boca.\n\nEra el mismo chabón, chamuyándose a las dos amigas al mismo tiempo. El pibe soñado de cada una era un chamuyero serial que las verseaba en paralelo. La previa alegre se pinchó de golpe con la calentura subiendo.\n\nDespués del cachetazo inicial, las dos se miraron y la calentura cambió de destino. En vez de pelearse entre ellas, se aliaron contra el forro con una sonrisa peligrosa. Si el pibe quería jugar con las dos, iba a cobrarla doble.\n\nArmaron un plan de venganza ahí mismo, entre carcajadas y trago va trago viene. El chamuyero no tenía ni idea del quilombo que se le venía encima. Nada cura un desamor tan rápido como una amiga con sed de revancha.",
+  "vocab": [
+   {
+    "word": "previa",
+    "surface": "previa",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the pre party warm up with drinks before going out"
+   },
+   {
+    "word": "escabio",
+    "surface": "escabio",
+    "type": "noun",
+    "register": "slang",
+    "definition": "booze, the alcohol that fuels a party in Argentina"
+   },
+   {
+    "word": "re",
+    "surface": "re mal",
+    "type": "adverb",
+    "register": "slang",
+    "definition": "super or really, an intensifier stuck before words"
+   },
+   {
+    "word": "piba",
+    "surface": "piba",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a girl or young woman, very common in Buenos Aires"
+   },
+   {
+    "word": "embalado",
+    "surface": "embalada",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "carried away with excitement and rushing headlong into something"
+   },
+   {
+    "word": "canchero",
+    "surface": "canchero",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "smooth, confident and effortlessly cool without even trying"
+   },
+   {
+    "word": "labia",
+    "surface": "labia",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a smooth gift of the gab for talking people around"
+   },
+   {
+    "word": "bardo",
+    "surface": "bardo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "trouble, a mess or a brewing conflict about to blow"
+   },
+   {
+    "word": "verso",
+    "surface": "verso",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a smooth lie or a well rehearsed line to fool someone"
+   },
+   {
+    "word": "remera",
+    "surface": "remera",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a T shirt, the everyday Argentine word for one"
+   },
+   {
+    "word": "quedarse duro",
+    "surface": "se quedó dura",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to freeze stiff, stunned and unable to react"
+   },
+   {
+    "word": "chamuyero",
+    "surface": "chamuyero",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a smooth talker who flirts and lies to charm people"
+   },
+   {
+    "word": "versear",
+    "surface": "verseaba",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to feed someone smooth lies and empty promises"
+   },
+   {
+    "word": "pincharse",
+    "surface": "se pinchó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to deflate suddenly, when the good mood collapses"
+   },
+   {
+    "word": "calentura",
+    "surface": "calentura",
+    "type": "noun",
+    "register": "slang",
+    "definition": "hot anger and worked up fury boiling over inside"
+   },
+   {
+    "word": "cachetazo",
+    "surface": "cachetazo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a slap in the face, a sudden harsh shock"
+   },
+   {
+    "word": "aliarse",
+    "surface": "se aliaron",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to team up and join forces against a common enemy"
+   },
+   {
+    "word": "cobrarla",
+    "surface": "cobrarla",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to make someone pay for what they did"
+   },
+   {
+    "word": "venganza",
+    "surface": "venganza",
+    "type": "noun",
+    "register": "slang",
+    "definition": "revenge, getting even with someone who wronged you"
+   },
+   {
+    "word": "revancha",
+    "surface": "revancha",
+    "type": "noun",
+    "register": "slang",
+    "definition": "payback, a rematch to get even and settle the score"
+   }
+  ]
+ }
+]

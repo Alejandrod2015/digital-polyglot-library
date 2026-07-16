@@ -37,6 +37,7 @@ try {
 import * as fs from "fs";
 import { PrismaClient } from "../src/generated/prisma";
 import { validateGeneratedStory, extractStoryMotifs, type ExistingStorySummary } from "@/lib/validateGeneratedStory";
+import { renderedParagraphs } from "@/lib/readerParagraphs";
 
 /** Build the cross-story summary the canonical validator needs to run its
  *  repetition / rotation / opening-rhythm / motif checks against siblings. */
@@ -83,6 +84,28 @@ function slugify(s: string): string {
   const journeyId = arg("journey");
   const dry = flag("dry");
   const publish = flag("publish");
+  // C1-NARRATOR profile: single-voice narrated prose (3rd person + brief quotes),
+  // NOT multi-voice dialogue. It legitimately fails the format checks that assume
+  // "Speaker: line" turns. --narrator exempts EXACTLY those three format checks
+  // (dialogue-ratio, speakers-count, speaker-lines) and NOTHING else — modismos,
+  // defs, no-digits, arc, CEFR, distribution, cross-story dedup all still gate.
+  const narrator = flag("narrator");
+  // These checks all assume the multivoice "Speaker: line" format: they read
+  // character names / turns from speaker labels, which a narrated prose story
+  // (names in the prose, not in labels) does not have. Exempt ONLY these — the
+  // same four the spec lists as known A0-narrator exemptions.
+  //
+  // vocab-count is NOT exempt (2026-07-09). It was, briefly, and that was a
+  // mistake: the profile "replaced" the spec's hard minimum of 20 with a
+  // homegrown minimum of 12, on the theory that pills stack in prose and read
+  // like a highlighted exercise. Our own A0 narrator precedent refutes it —
+  // 22-26 items in 135-145 words, ~1 pill per 6 words, shipped and approved,
+  // 3x denser. Relaxing a gate so the output passes is exactly what
+  // `feedback_calibrate_gates_to_gold_standard` forbids. A high count is
+  // bounded by DISTRIBUTION (spread it), never by cutting the count.
+  const NARRATOR_EXEMPT = new Set([
+    "body-dialogue-ratio", "speakers-count", "speaker-lines", "names-match",
+  ]);
   const ctx = {
     language: arg("lang", "ES")!,
     level: arg("level", "c1")!,
@@ -112,11 +135,44 @@ function slugify(s: string): string {
       existing: [...priorSummaries],
     });
     priorSummaries.push(summarize(d));
-    const fails = r.checks.filter((c) => c.status === "fail").map((c) => `[${c.id}] ${c.detail ?? c.label}`);
+    const hardFails = r.checks.filter((c) => c.status === "fail" && !(narrator && NARRATOR_EXEMPT.has(c.id)));
+    const warnsExtra: string[] = [];
+    // Distribution, re-measured on the blocks the reader ACTUALLY renders.
+    //
+    // This is the one piece of the narrator profile that earns its keep. The
+    // canonical vocab-distribution check counts pills per AUTHORED paragraph,
+    // but the reader throws narrated prose's "\n\n" away and re-groups it into
+    // 3-sentence blocks (src/lib/readerParagraphs) — so in narrator mode that
+    // check measures a structure nobody sees. Same rule, right object.
+    //
+    // CALIBRATION IS THE CANONICAL ONE, not a homegrown "max 3": cluster =
+    // some block empty while another carries 6+, ceiling = 30% of the story's
+    // items in a single block. Measured with the reader's own function so the
+    // rule cannot drift from the render.
+    if (narrator) {
+      const blocks = renderedParagraphs(String(d.text));
+      const vocab = (d.vocab ?? []) as any[];
+      const perBlock = blocks.map((b) => vocab.filter((v) => b.includes(v.surface ?? v.word)).length);
+      const worst = perBlock.length ? Math.max(...perBlock) : 0;
+      const empty = perBlock.filter((n) => n === 0).length;
+      const maxPct = vocab.length > 0 ? worst / vocab.length : 0;
+      if (empty > 0 && worst >= 6) {
+        hardFails.push({ id: "narrator-block-cluster", label: "", status: "fail",
+          detail: `pills cluster: ${empty} rendered paragraph(s) with none while another carries ${worst}. Per-block: [${perBlock.join(", ")}]` } as any);
+      } else if (maxPct > 0.3) {
+        hardFails.push({ id: "narrator-block-distribution", label: "", status: "fail",
+          detail: `${worst}/${vocab.length} items (${(maxPct * 100).toFixed(0)}%) land in one rendered paragraph (max 30%). Per-block: [${perBlock.join(", ")}]` } as any);
+      }
+      if (empty > 0) warnsExtra.push(`[narrator-empty-blocks] ${empty} rendered paragraph(s) with no vocab: [${perBlock.join(", ")}]`);
+    }
+    const exempted = r.checks.filter((c) => c.status === "fail" && narrator && NARRATOR_EXEMPT.has(c.id));
+    const fails = hardFails.map((c) => `[${c.id}] ${c.detail ?? c.label}`);
     const warns = r.checks.filter((c) => c.status === "warn").map((c) => `[${c.id}] ${c.detail ?? c.label}`);
-    results.push({ d, ok: r.ok, fails, warns });
-    const tag = r.ok ? "OK  " : "FAIL";
-    console.log(`\n=== ${tag} ${d.topic}#${d.slotIndex} "${d.title}"  pass=${r.summary.pass} warn=${r.summary.warn} fail=${r.summary.fail}`);
+    warns.push(...warnsExtra);
+    if (exempted.length) warns.push(...exempted.map((c) => `[narrator-exempt: ${c.id}]`));
+    results.push({ d, ok: hardFails.length === 0, fails, warns });
+    const tag = hardFails.length === 0 ? "OK  " : "FAIL";
+    console.log(`\n=== ${tag} ${d.topic}#${d.slotIndex} "${d.title}"${narrator ? " [narrator]" : ""}  pass=${r.summary.pass} warn=${r.summary.warn} fail=${r.summary.fail}`);
     for (const f of fails) console.log("   FAIL " + f);
     for (const w of warns) console.log("   warn " + w);
   }
