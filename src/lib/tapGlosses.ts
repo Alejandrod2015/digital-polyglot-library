@@ -1,5 +1,4 @@
 import germanExpat from "@/data/tapGlosses/german-expat.json";
-import germanHamburg from "@/data/tapGlosses/german-hamburg.json";
 import frenchTraveler from "@/data/tapGlosses/french-traveler.json";
 import spanishFriends from "@/data/tapGlosses/spanish-friends.json";
 
@@ -22,7 +21,6 @@ type TapGlossBundle = {
 
 const BUNDLES: TapGlossBundle[] = [
   germanExpat as TapGlossBundle,
-  germanHamburg as TapGlossBundle,
   frenchTraveler as TapGlossBundle,
   spanishFriends as TapGlossBundle,
 ];
