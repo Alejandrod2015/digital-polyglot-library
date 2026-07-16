@@ -45,6 +45,22 @@ export async function POST(req: NextRequest) {
     ]);
 
     const publicMetadata = user.publicMetadata ?? {};
+
+    // Stamp signupPlatform = "ios" on first mobile session (set-if-absent).
+    // This fires on every app launch after Clerk auth, so it covers 100% of iOS
+    // users — even those who never listen and have no push token — feeding the
+    // acquisition funnel a reliable platform instead of inferring it later.
+    // Best-effort: a stamping failure must never block the session.
+    if (typeof publicMetadata.signupPlatform !== "string" || !publicMetadata.signupPlatform) {
+      try {
+        await clerkClient.users.updateUserMetadata(userId, {
+          publicMetadata: { ...publicMetadata, signupPlatform: "ios" },
+        });
+      } catch (stampErr) {
+        console.error("Failed to stamp signupPlatform=ios:", stampErr);
+      }
+    }
+
     const token = createMobileSessionToken({
       userId,
       email: user.primaryEmailAddress?.emailAddress ?? null,

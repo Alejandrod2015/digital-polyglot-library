@@ -174,6 +174,11 @@ export async function GET(req: NextRequest): Promise<Response> {
       return Array.isArray(pm.mobilePushTokens) && pm.mobilePushTokens.length > 0;
     };
     const platformFor = (u: (typeof cohort)[number]): "ios" | "web" | null => {
+      // Authoritative: stamped at signup by the mobile session route ("ios")
+      // and the web platform ping ("web"). Only legacy cohorts (created before
+      // stamping) fall through to activity/push-token inference below.
+      const sp = (u.publicMetadata as Record<string, unknown>)?.signupPlatform;
+      if (sp === "ios" || sp === "web") return sp;
       if (eventIos.has(u.id) || hasMobilePushToken(u)) return "ios";
       if (eventWeb.has(u.id)) return "web";
       return null;

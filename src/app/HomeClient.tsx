@@ -577,6 +577,22 @@ export default function HomeClient({
     window.localStorage.setItem(key, "1");
   }, [isLoaded, userId, plan, trialStartedAt]);
 
+  // Stamp signupPlatform = "web" once per user, the first time the app loads in
+  // a browser. Set-if-absent server-side, so an "ios" stamp from the mobile
+  // session route always wins. This covers web users who never onboard or never
+  // listen — otherwise they'd have no platform signal and land in the "s/d"
+  // (sin dato) bucket of the acquisition funnel.
+  useEffect(() => {
+    if (!isLoaded || !userId) return;
+    if (typeof window === "undefined") return;
+    const key = `dp_platform_stamped_v1:${userId}`;
+    if (window.localStorage.getItem(key) === "1") return;
+    window.localStorage.setItem(key, "1");
+    void fetch("/api/user/platform", { method: "POST" }).catch(() => {
+      window.localStorage.removeItem(key);
+    });
+  }, [isLoaded, userId]);
+
   const saveOnboardingPreferences = async (payload: Partial<OnboardingPreferenceState>) => {
     setOnboardingSaving(true);
     setOnboardingError("");
