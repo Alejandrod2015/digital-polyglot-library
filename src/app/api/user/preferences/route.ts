@@ -199,6 +199,7 @@ export async function POST(req: Request) {
     }
 
     const body = await req.json();
+    const hasFirstName = Object.prototype.hasOwnProperty.call(body ?? {}, "firstName");
     const hasTargetLanguages = Object.prototype.hasOwnProperty.call(body ?? {}, "targetLanguages");
     const hasInterests = Object.prototype.hasOwnProperty.call(body ?? {}, "interests");
     const hasPreferredLevel = Object.prototype.hasOwnProperty.call(body ?? {}, "preferredLevel");
@@ -215,6 +216,7 @@ export async function POST(req: Request) {
     const hasOnboardingTourCompletedAt = Object.prototype.hasOwnProperty.call(body ?? {}, "onboardingTourCompletedAt");
     const hasJourneys = Object.prototype.hasOwnProperty.call(body ?? {}, "journeys");
     const hasActiveJourneyId = Object.prototype.hasOwnProperty.call(body ?? {}, "activeJourneyId");
+    const firstName = body?.firstName;
     const targetLanguages = body?.targetLanguages;
     const interests = body?.interests;
     const preferredLevel = body?.preferredLevel;
@@ -230,6 +232,9 @@ export async function POST(req: Request) {
     const onboardingSurveyCompletedAt = body?.onboardingSurveyCompletedAt;
     const onboardingTourCompletedAt = body?.onboardingTourCompletedAt;
 
+    if (hasFirstName && firstName !== null && typeof firstName !== "string") {
+      return NextResponse.json({ error: "Invalid firstName: expected string|null" }, { status: 400 });
+    }
     if (hasTargetLanguages && !isStringArray(targetLanguages)) {
       return NextResponse.json(
         { error: "Invalid targetLanguages: expected string[]" },
@@ -467,10 +472,21 @@ export async function POST(req: Request) {
       publicMetadata: updatedMetadata,
     });
 
+    // firstName is a top-level Clerk user field (NOT publicMetadata), so it
+    // needs a separate updateUser call. Only write when a non-empty value was
+    // sent, so skipping the optional onboarding name step never clears an
+    // existing name. This is what populates the "Usuario" column in metrics.
+    const normalizedFirstName =
+      hasFirstName && typeof firstName === "string" ? firstName.trim().slice(0, 80) : null;
+    if (normalizedFirstName) {
+      await clerkClient.users.updateUser(userId, { firstName: normalizedFirstName });
+    }
+
     // 3) Confirmar estado final desde Clerk (lectura posterior al update)
     const after = await clerkClient.users.getUser(userId);
     const finalMeta =
       (after.publicMetadata as Record<string, unknown>) ?? {};
+    const finalFirstName = typeof after.firstName === "string" && after.firstName ? after.firstName : null;
     const finalTL = Array.isArray(finalMeta.targetLanguages)
       ? finalMeta.targetLanguages.filter((x): x is string => typeof x === "string")
       : [];
@@ -512,6 +528,7 @@ export async function POST(req: Request) {
 
     return new NextResponse(
       JSON.stringify({
+        firstName: finalFirstName,
         targetLanguages: finalTL,
         interests: finalInterests,
         preferredLevel: finalPreferredLevel,
