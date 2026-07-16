@@ -3,6 +3,7 @@ import {
   ActivityIndicator,
   Linking,
   Modal,
+  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -14,19 +15,30 @@ import type { Purchase } from "expo-iap";
 import { apiFetch } from "../lib/api";
 
 /**
- * Native iOS paywall (Apple In-App Purchase via StoreKit 2 / expo-iap).
- * Replaces the non-compliant web Stripe checkout inside the app. On a
- * successful purchase it sends the StoreKit 2 signed transaction
- * (`purchase.purchaseToken`, which on iOS is the JWS) to the server, which
- * verifies it and unlocks premium.
+ * Native paywall (Apple In-App Purchase via StoreKit 2, Google Play Billing on
+ * Android, both through expo-iap). Replaces the non-compliant web Stripe
+ * checkout inside the app. On a successful purchase it sends the store's proof
+ * of purchase to the server, which verifies it and unlocks premium.
  *
- * SKUs must match the auto-renewable subscription product IDs created in App
- * Store Connect (and the server's APP_STORE_PRODUCT_PLAN_MAP).
+ * `purchase.purchaseToken` means a different thing per store: on iOS it is the
+ * StoreKit 2 signed transaction (JWS); on Android it is the Play purchase
+ * token. Each goes to its own verify route.
+ *
+ * SKUs must match the subscription product IDs created in App Store Connect and
+ * in Play Console (and the server's APP_STORE_PRODUCT_PLAN_MAP /
+ * GOOGLE_PLAY_PRODUCT_PLAN_MAP).
  */
 const PREMIUM_SKUS = ["premium_monthly", "premium_annual"];
 
 const TERMS_URL = "https://digitalpolyglot.com/terms";
 const PRIVACY_URL = "https://digitalpolyglot.com/privacy";
+
+// Both stores require the billing terms to name the account that gets charged
+// and where to cancel, so this cannot be one shared string.
+const BILLING_LEGAL_COPY =
+  Platform.OS === "android"
+    ? "Payment is charged to your Google Play account. Subscriptions renew automatically unless cancelled at least 24h before the period ends. Manage or cancel in your Google Play subscriptions."
+    : "Payment is charged to your Apple ID. Subscriptions renew automatically unless cancelled at least 24h before the period ends. Manage or cancel in your App Store account settings.";
 
 type Props = {
   visible: boolean;
@@ -43,16 +55,19 @@ export function AppStorePaywall({ visible, onClose, apiBaseUrl, sessionToken, on
 
   const verifyOnServer = useCallback(
     async (purchase: Purchase) => {
-      const signedTransactionInfo = purchase.purchaseToken;
-      if (!signedTransactionInfo) {
-        throw new Error("Missing signed transaction from the App Store.");
+      const token = purchase.purchaseToken;
+      if (!token) {
+        throw new Error("Missing proof of purchase from the store.");
       }
+      const isAndroid = Platform.OS === "android";
       await apiFetch({
         baseUrl: apiBaseUrl,
-        path: "/api/mobile/billing/app-store/verify",
+        path: isAndroid
+          ? "/api/mobile/billing/google-play/verify"
+          : "/api/mobile/billing/app-store/verify",
         token: sessionToken,
         method: "POST",
-        body: { signedTransactionInfo },
+        body: isAndroid ? { purchaseToken: token } : { signedTransactionInfo: token },
       });
     },
     [apiBaseUrl, sessionToken]
@@ -101,13 +116,31 @@ export function AppStorePaywall({ visible, onClose, apiBaseUrl, sessionToken, on
       setError(null);
       setBusy(true);
       try {
-        void requestPurchase({ request: { ios: { sku } }, type: "subs" });
+        if (Platform.OS === "android") {
+          // Play needs the offer token of the base plan being bought; it only
+          // exists on the product details fetched above, so a purchase started
+          // before `fetchProducts` resolves has nothing to send.
+          const product = subscriptions.find((s) => s.id === sku);
+          const offerToken =
+            product?.platform === "android"
+              ? product.subscriptionOfferDetailsAndroid?.[0]?.offerToken
+              : undefined;
+          if (!offerToken) {
+            throw new Error("This subscription is not available right now.");
+          }
+          void requestPurchase({
+            request: { android: { skus: [sku], subscriptionOffers: [{ sku, offerToken }] } },
+            type: "subs",
+          });
+        } else {
+          void requestPurchase({ request: { ios: { sku } }, type: "subs" });
+        }
       } catch (e) {
         setBusy(false);
         setError(e instanceof Error ? e.message : "The purchase could not be started.");
       }
     },
-    [requestPurchase]
+    [requestPurchase, subscriptions]
   );
 
   const restore = useCallback(() => {
@@ -169,9 +202,7 @@ export function AppStorePaywall({ visible, onClose, apiBaseUrl, sessionToken, on
             </Pressable>
 
             <Text style={styles.legal}>
-              Payment is charged to your Apple ID. Subscriptions renew automatically unless cancelled
-              at least 24h before the period ends. Manage or cancel in your App Store account
-              settings.{" "}
+              {BILLING_LEGAL_COPY}{" "}
               <Text style={styles.link} onPress={() => void Linking.openURL(TERMS_URL)}>
                 Terms
               </Text>{" "}

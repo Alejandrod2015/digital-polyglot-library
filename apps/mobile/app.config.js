@@ -59,7 +59,7 @@ const config = {
   owner: "delcarpio321",
   slug: "digital-polyglot-mobile",
   scheme: "digitalpolyglot",
-  version: "0.1.0",
+  version: "1.0",
   newArchEnabled: false,
   orientation: "portrait",
   userInterfaceStyle: "automatic",
@@ -108,7 +108,38 @@ const config = {
     },
   },
   android: {
-    package: "com.digitalpolyglot.mobile",
+    // OJO: NO es `com.digitalpolyglot.mobile` (el bundle id de iOS). Play ya
+    // tiene reservado `com.digitalpolyglot.app` desde la TWA de Bubblewrap de
+    // marzo 2026 (app ID 4973262390913816082, borrador en prueba interna), con
+    // Play App Signing ya configurado y `android-twa/android.keystore` como
+    // clave de subida. Un package name en Play es irreversible, así que la app
+    // Expo reusa esa entrada en vez de quemar un segundo nombre. El servidor ya
+    // apunta aquí vía GOOGLE_PLAY_PACKAGE_NAME, y el assetlinks.json de
+    // producción publica las huellas de este package.
+    package: "com.digitalpolyglot.app",
+    // Fuente de verdad del versionCode del AAB, igual que `ios.buildNumber`
+    // para el IPA: Expo descarta app.json, y EAS `autoIncrement` no muta JS.
+    // La TWA gastó el 1, así que la app Expo arranca en 2. Bumpear a mano en
+    // cada subida a Play; Play rechaza un versionCode repetido o menor.
+    versionCode: 2,
+    adaptiveIcon: {
+      // Android recorta el foreground a un círculo/squircle según el launcher y
+      // solo respeta el 66% central, así que reusar `icon.png` (el mark llena
+      // el 87% del ancho) le comería los bordes al logo.
+      // `icon-adaptive-foreground.png` es el mismo mark al 62% sobre blanco
+      // opaco: el mask lo recorta a la forma del launcher y queda igual que en
+      // iOS. Al ser opaco, `backgroundColor` no llega a verse; se deja en
+      // blanco por coherencia.
+      foregroundImage: "./assets/icon-adaptive-foreground.png",
+      backgroundColor: "#ffffff",
+    },
+    permissions: [
+      // expo-notifications en Android 13+ (API 33). Sin declararlo no se puede
+      // ni pedir el permiso en runtime.
+      "android.permission.POST_NOTIFICATIONS",
+    ],
+    // Play Billing lo añade el plugin de expo-iap; no declarar
+    // com.android.vending.BILLING a mano para no duplicarlo.
   },
   extra: {
     clerkPublishableKey,
