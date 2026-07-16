@@ -1862,8 +1862,36 @@ export async function validateGeneratedStory(
     // single lemmas; routing them through the per-lemma frequency judge marks
     // them C2 by default. They are governed by their own checks (colloquial
     // expression + vocab-min-expressions), so exempt them here.
+    //
+    // SLANG is exempt for the same reason (2026-07-09): the frequency judge
+    // measures CEFR difficulty via corpus frequency, but slang/regionalisms
+    // ("albur", "neta", "carnala", "chido") are low-frequency by nature —
+    // register, not difficulty. A journey that TEACHES colloquial/vulgar
+    // register at C1 (e.g. "Friends" ES LATAM) must be able to curate slang
+    // without the frequency gate flagging it C2. This is NOT a relaxation of
+    // the bar: slang items are still governed by every other vocab check
+    // (surface-literal, definition quality, no-same-root, distribution, type
+    // validity). Only the frequency axis — the wrong instrument for register
+    // — is skipped.
+    //
+    // The exemption hangs off `register`, NOT `type` (fixed 2026-07-09).
+    // `type` is the GRAMMATICAL category and the reader paints the pill colour
+    // from it (StoryContent: verb/noun/adjective/adverb/expression). Keying the
+    // exemption on type forced authors to write type:"slang" to get it — and
+    // since vocabTypes aliases slang → expression, every slang item collapsed
+    // into one category and the whole story rendered in a single colour, with
+    // `lana` (noun), `cachar` (verb) and `chido` (adjective) indistinguishable.
+    // Register and part of speech are orthogonal: say `type:"noun"` +
+    // `register:"slang"` and both the colour and the exemption are correct.
+    const REGISTER_EXEMPT = new Set(["slang", "colloquial", "vulgar", "coloquial", "argot", "jerga"]);
     const vocabWords = parsed.vocab
-      .filter((v) => (v.type ?? "").toLowerCase() !== "expression")
+      .filter((v) => {
+        const type = (v.type ?? "").toLowerCase();
+        const register = ((v as { register?: string }).register ?? "").toLowerCase();
+        // type "expression"/"slang" kept for back-compat with stories authored
+        // before register existed; new stories should use `register`.
+        return !(type === "expression" || type === "slang" || REGISTER_EXEMPT.has(register));
+      })
       .map((v) => v.word);
     const { aboveLevel } = await filterSpanishWordsAtOrBelow(
       vocabWords,

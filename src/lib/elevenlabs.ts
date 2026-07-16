@@ -507,6 +507,10 @@ export async function generateAndUploadAudio(
           text: softenPunctuationForTts(narrationText),
           model_id: "eleven_multilingual_v2",
           voice_settings: DEFAULT_VOICE_SETTINGS,
+          // Deletrea números/fechas en el idioma (horas, cantidades) en vez de
+          // dejarlos en "auto"; junto al separado de códigos alfanuméricos
+          // arregla el audio cuando hay números.
+          apply_text_normalization: "on",
         }),
       }
     );
@@ -605,8 +609,22 @@ export async function normalizeLoudness(buffer: Buffer): Promise<Buffer> {
 // stories the result sounds fake. This softener flattens "!" to "." before
 // TTS while preserving "?" (we want question intonation). The original story
 // text in the DB is not touched; this only affects the audio layer.
+// Códigos alfanuméricos (B244, A12, sala 305B) los TTS los leen mal: intentan
+// interpretarlos como una palabra/número raro. Los separamos char-a-char para
+// que, con apply_text_normalization="on", cada letra se lea como letra y cada
+// dígito por separado ("B244" → "B 2 4 4" → "be dos cuatro cuatro"). Exigimos
+// >=2 dígitos para no tocar unidades tipo "m2"/"km2".
+function spaceOutAlphanumericCodes(text: string): string {
+  return text.replace(
+    /\b([A-Za-zÀ-ÿ]{1,3}\d{2,4}|\d{2,4}[A-Za-zÀ-ÿ]{1,3})\b/g,
+    (match) => match.split("").join(" ")
+  );
+}
+
 export function softenPunctuationForTts(text: string): string {
-  return text.replace(/!+/g, ".").replace(/\.{2,}/g, ".");
+  return spaceOutAlphanumericCodes(
+    text.replace(/!+/g, ".").replace(/\.{2,}/g, ".")
+  );
 }
 
 // Parses a story body that opens with a narrator paragraph and then has
@@ -628,8 +646,33 @@ export function parseDialogueSegments(storyText: string): DialogueSegment[] {
     if (text) segments.push({ speaker: "narrator", text });
     narratorBuffer = [];
   };
+  // A blank line ends a narrator PARAGRAPH (2026-07-09). It used to be skipped
+  // outright, so narrated prose collapsed into ONE segment — and since the gap
+  // (DIALOGUE_GAP_SEC) is inserted BETWEEN segments, a narrator story got no
+  // paragraph pauses at all and ran on breathlessly. Multi-voice never showed it:
+  // every turn is its own segment, so it got its gaps for free.
+  //
+  // The flush is GUARDED on sentence-final punctuation, and that guard is the
+  // point: splitting on blank lines alone would be trusting the text to be
+  // well-formed. It is today (measured: 161/161 segments across every
+  // single-voice story end on closing punctuation), but a stray blank line mid
+  // sentence would silently cut narration in half and nobody would notice until
+  // they heard it. If the buffer is not at a sentence end, the blank line is
+  // treated as a soft wrap and the paragraph keeps accumulating — so a mid
+  // sentence split is impossible by construction, not by luck.
+  // `\s*` before the closing quote is not cosmetic: French typography puts a
+  // space before the guillemet (`... oui. »`), so a tight regex would fail to
+  // see the sentence end, skip the flush, and silently merge French paragraphs
+  // back into one segment — reintroducing this very bug for fr stories.
+  const SENTENCE_END = /[.!?…‽⁇⁉]\s*["»”’)\]]*$/u;
+  const flushParagraph = () => {
+    if (narratorBuffer.length === 0) return;
+    const sofar = narratorBuffer.join(" ").replace(/\s+/g, " ").trim();
+    if (!SENTENCE_END.test(sofar)) return; // mid-sentence: not a real paragraph break
+    flushNarrator();
+  };
   for (const line of lines) {
-    if (!line) continue;
+    if (!line) { flushParagraph(); continue; }
     const m = line.match(SPEAKER_LABEL_REGEX);
     if (m) {
       flushNarrator();
@@ -961,6 +1004,9 @@ async function ttsSegment(args: {
     voice_settings: voiceSettings,
   };
   if (model !== ELEVENLABS_MODEL_V3) {
+    // Deletrea números/fechas en el idioma en vez de "auto". Scoped a no-v3
+    // (v2/turbo/flash) para no arriesgar en v3.
+    requestBody.apply_text_normalization = "on";
     // v2: previous_text/next_text dan al modelo contexto de los turnos
     // vecinos. Los dos efectos son OPUESTOS y hay que tratarlos por separado
     // (aprendido a oído el 2026-06-11):

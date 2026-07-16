@@ -260,8 +260,13 @@ export function extractSpanishContentWords(body: string): string[] {
     "al",
   ]);
   // Tokenize preserving case so we can spot proper nouns.
+  // NOTE: the hyphen MUST be escaped (or last) in this class. Unescaped
+  // between `}` and `–` it formed the range `}`(U+007D)–`–`(U+2013), which
+  // swallowed every accented vowel and ñ (á/é/í/ó/ú/ñ/ü all fall inside it),
+  // shredding words like "órale"→"rale", "cámara"→"mara", "güey"→"g ey" and
+  // wildly inflating the out-of-level %. Fixed 2026-07-09.
   const rawTokens = body
-    .replace(/[¿¡"'()\[\]{}-–_*]/g, " ")
+    .replace(/[¿¡"'()[\]{}\-–_*]/g, " ")
     .split(/[\s.,;:!?"…]+/u)
     .filter(Boolean);
 

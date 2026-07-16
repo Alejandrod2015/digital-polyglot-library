@@ -1,0 +1,626 @@
+{
+ "aconsejaba": {
+  "g": "was advising",
+  "t": "verb"
+ },
+ "admiración": {
+  "g": "admiration",
+  "t": "noun"
+ },
+ "agradecida": {
+  "g": "grateful",
+  "t": "adjective"
+ },
+ "agregaba": {
+  "g": "added, chimed in",
+  "t": "verb"
+ },
+ "alcanzaba": {
+  "g": "no le alcanzaba = was not enough",
+  "t": "verb"
+ },
+ "alegre": {
+  "g": "cheerful, happy",
+  "t": "adjective"
+ },
+ "aliaron": {
+  "g": "aliarse = teamed up",
+  "t": "verb"
+ },
+ "aliviada": {
+  "g": "relieved",
+  "t": "adjective"
+ },
+ "alto": {
+  "g": "tall",
+  "t": "adjective"
+ },
+ "amiga": {
+  "g": "a female friend",
+  "t": "noun"
+ },
+ "amor": {
+  "g": "love",
+  "t": "noun"
+ },
+ "ascendía": {
+  "g": "was promoting",
+  "t": "verb"
+ },
+ "asintió": {
+  "g": "nodded",
+  "t": "verb"
+ },
+ "autoridad": {
+  "g": "authority",
+  "t": "noun"
+ },
+ "azul": {
+  "g": "blue",
+  "t": "adjective"
+ },
+ "bancó": {
+  "g": "bancar = backed, supported",
+  "t": "verb"
+ },
+ "banderas": {
+  "g": "banderas rojas = red flags",
+  "t": "noun"
+ },
+ "barra": {
+  "g": "the bar counter",
+  "t": "noun"
+ },
+ "blancas": {
+  "g": "white",
+  "t": "adjective"
+ },
+ "boba": {
+  "g": "silly, goofy",
+  "t": "adjective"
+ },
+ "bomba": {
+  "g": "soltar la bomba = to drop a bombshell",
+  "t": "noun"
+ },
+ "borrar": {
+  "g": "borrarse = to slip away, disappear",
+  "t": "verb"
+ },
+ "brindó": {
+  "g": "made a toast",
+  "t": "verb"
+ },
+ "busca": {
+  "g": "looks for, seeks",
+  "t": "verb"
+ },
+ "cachetazo": {
+  "g": "a slap in the face, a shock",
+  "t": "noun"
+ },
+ "calentura": {
+  "g": "hot anger boiling over",
+  "t": "noun"
+ },
+ "callara": {
+  "g": "would shut up",
+  "t": "verb"
+ },
+ "cambiando": {
+  "g": "changing",
+  "t": "verb"
+ },
+ "cambió": {
+  "g": "changed",
+  "t": "verb"
+ },
+ "canchero": {
+  "g": "smooth, confident, cool",
+  "t": "adjective"
+ },
+ "candidatos": {
+  "g": "the candidates, prospects",
+  "t": "noun"
+ },
+ "carcajadas": {
+  "g": "bursts of loud laughter",
+  "t": "noun"
+ },
+ "carísimo": {
+  "g": "super expensive",
+  "t": "adjective"
+ },
+ "cerró": {
+  "g": "wrapped up, concluded",
+  "t": "verb"
+ },
+ "chamuyaba": {
+  "g": "chamuyar = was sweet talking",
+  "t": "verb"
+ },
+ "chamuyero": {
+  "g": "a smooth talking flirt",
+  "t": "noun"
+ },
+ "chamuyándose": {
+  "g": "chamuyar = sweet talking",
+  "t": "verb"
+ },
+ "cita": {
+  "g": "a date",
+  "t": "noun"
+ },
+ "cliente": {
+  "g": "a client",
+  "t": "noun"
+ },
+ "clima": {
+  "g": "the mood, atmosphere",
+  "t": "noun"
+ },
+ "cobrarla": {
+  "g": "to make someone pay for it",
+  "t": "verb"
+ },
+ "colgada": {
+  "g": "dejar colgada = left hanging",
+  "t": "adjective"
+ },
+ "comparando": {
+  "g": "comparing",
+  "t": "verb"
+ },
+ "conseguirte": {
+  "g": "to win you over",
+  "t": "verb"
+ },
+ "consejo": {
+  "g": "advice, a tip",
+  "t": "noun"
+ },
+ "consejos": {
+  "g": "pieces of advice",
+  "t": "noun"
+ },
+ "consultorio": {
+  "g": "a doctor's office",
+  "t": "noun"
+ },
+ "contra": {
+  "g": "against",
+  "t": "preposition"
+ },
+ "contó": {
+  "g": "told, recounted",
+  "t": "verb"
+ },
+ "cura": {
+  "g": "a cure, a remedy",
+  "t": "noun"
+ },
+ "curada": {
+  "g": "cured, healed",
+  "t": "adjective"
+ },
+ "códigos": {
+  "g": "unwritten codes and rules",
+  "t": "noun"
+ },
+ "dando": {
+  "g": "giving",
+  "t": "verb"
+ },
+ "daría": {
+  "g": "would give",
+  "t": "verb"
+ },
+ "dejándola": {
+  "g": "letting her",
+  "t": "verb"
+ },
+ "desahogo": {
+  "g": "letting off steam, venting",
+  "t": "noun"
+ },
+ "desamor": {
+  "g": "heartbreak, lost love",
+  "t": "noun"
+ },
+ "descargar": {
+  "g": "to unload, to vent it all",
+  "t": "verb"
+ },
+ "describir": {
+  "g": "to describe",
+  "t": "verb"
+ },
+ "descripción": {
+  "g": "description",
+  "t": "noun"
+ },
+ "desesperadas": {
+  "g": "desperate",
+  "t": "adjective"
+ },
+ "despachara": {
+  "g": "despacharse = to let it all out",
+  "t": "verb"
+ },
+ "difícil": {
+  "g": "hacerse la difícil = to play hard to get",
+  "t": "adjective"
+ },
+ "disparó": {
+  "g": "blurted out, fired off",
+  "t": "verb"
+ },
+ "diván": {
+  "g": "a therapy couch",
+  "t": "noun"
+ },
+ "dormir": {
+  "g": "to sleep",
+  "t": "verb"
+ },
+ "embalada": {
+  "g": "embalado = carried away with excitement",
+  "t": "adjective"
+ },
+ "emoción": {
+  "g": "excitement, emotion",
+  "t": "noun"
+ },
+ "empresa": {
+  "g": "a company, a firm",
+  "t": "noun"
+ },
+ "enorme": {
+  "g": "huge, enormous",
+  "t": "adjective"
+ },
+ "escuchaba": {
+  "g": "was listening",
+  "t": "verb"
+ },
+ "están": {
+  "g": "para eso están = that is what they are for",
+  "t": "verb"
+ },
+ "euforia": {
+  "g": "euphoria, elation",
+  "t": "noun"
+ },
+ "exactamente": {
+  "g": "exactly",
+  "t": "adverb"
+ },
+ "felicitaba": {
+  "g": "was congratulating",
+  "t": "verb"
+ },
+ "filtro": {
+  "g": "sin filtro = with no filter",
+  "t": "noun"
+ },
+ "flotando": {
+  "g": "floating, hanging in the air",
+  "t": "verb"
+ },
+ "fuego": {
+  "g": "prueba de fuego = a trial by fire",
+  "t": "noun"
+ },
+ "fácil": {
+  "g": "easy",
+  "t": "adjective"
+ },
+ "garrón": {
+  "g": "a raw deal, a bummer",
+  "t": "noun"
+ },
+ "gran": {
+  "g": "great, grand",
+  "t": "adjective"
+ },
+ "gurú": {
+  "g": "a guru, an expert",
+  "t": "noun"
+ },
+ "gustaba": {
+  "g": "le gustaba = she liked him",
+  "t": "verb"
+ },
+ "hacerte": {
+  "g": "hacerte la difícil = to play hard to get",
+  "t": "verb"
+ },
+ "horario": {
+  "g": "a horario = right on time",
+  "t": "noun"
+ },
+ "horno": {
+  "g": "al horno = in deep trouble",
+  "t": "noun"
+ },
+ "humildad": {
+  "g": "humility",
+  "t": "noun"
+ },
+ "idéntica": {
+  "g": "identical",
+  "t": "adjective"
+ },
+ "impresionante": {
+  "g": "impressive",
+  "t": "adjective"
+ },
+ "incómoda": {
+  "g": "uncomfortable, awkward",
+  "t": "adjective"
+ },
+ "inicial": {
+  "g": "initial, at first",
+  "t": "adjective"
+ },
+ "interrumpir": {
+  "g": "to interrupt",
+  "t": "verb"
+ },
+ "jefa": {
+  "g": "a female boss",
+  "t": "noun"
+ },
+ "labia": {
+  "g": "the gift of the gab",
+  "t": "noun"
+ },
+ "labure": {
+  "g": "laburar = to work hard for it",
+  "t": "verb"
+ },
+ "lanzada": {
+  "g": "lanzado = on a roll, unstoppable",
+  "t": "adjective"
+ },
+ "larguísima": {
+  "g": "very long",
+  "t": "adjective"
+ },
+ "leyó": {
+  "g": "read",
+  "t": "verb"
+ },
+ "libro": {
+  "g": "a book",
+  "t": "noun"
+ },
+ "listos": {
+  "g": "ready",
+  "t": "adjective"
+ },
+ "llamará": {
+  "g": "no se llamará = would not be called",
+  "t": "verb"
+ },
+ "llegando": {
+  "g": "arriving",
+  "t": "verb"
+ },
+ "maltrato": {
+  "g": "mistreatment, abuse",
+  "t": "noun"
+ },
+ "mandaba": {
+  "g": "kept dumping on her",
+  "t": "verb"
+ },
+ "mensaje": {
+  "g": "a message",
+  "t": "noun"
+ },
+ "minas": {
+  "g": "women, girls (porteño)",
+  "t": "noun"
+ },
+ "miseria": {
+  "g": "a pittance, a miserable amount",
+  "t": "noun"
+ },
+ "muda": {
+  "g": "speechless, struck dumb",
+  "t": "adjective"
+ },
+ "muertas": {
+  "g": "muertas de la emoción = dying of excitement",
+  "t": "adjective"
+ },
+ "odia": {
+  "g": "hates",
+  "t": "verb"
+ },
+ "paralelo": {
+  "g": "en paralelo = at the same time",
+  "t": "adjective"
+ },
+ "pelearse": {
+  "g": "to fight each other",
+  "t": "verb"
+ },
+ "peligrosa": {
+  "g": "dangerous",
+  "t": "adjective"
+ },
+ "pensando": {
+  "g": "thinking",
+  "t": "verb"
+ },
+ "persona": {
+  "g": "en persona = in person",
+  "t": "noun"
+ },
+ "pibes": {
+  "g": "young guys (porteño)",
+  "t": "noun"
+ },
+ "pinchó": {
+  "g": "pincharse = deflated, went flat",
+  "t": "verb"
+ },
+ "proyecto": {
+  "g": "a project",
+  "t": "noun"
+ },
+ "pudo": {
+  "g": "could, managed",
+  "t": "verb"
+ },
+ "pulido": {
+  "g": "polished, refined",
+  "t": "adjective"
+ },
+ "queja": {
+  "g": "a complaint",
+  "t": "noun"
+ },
+ "rajaban": {
+  "g": "were bolting off, leaving",
+  "t": "verb"
+ },
+ "rarísimo": {
+  "g": "really strange",
+  "t": "adjective"
+ },
+ "regales": {
+  "g": "no le regales = do not hand it over free",
+  "t": "verb"
+ },
+ "remera": {
+  "g": "a T shirt (Argentine)",
+  "t": "noun"
+ },
+ "renegando": {
+  "g": "renegar = grumbling and toiling",
+  "t": "verb"
+ },
+ "respectivos": {
+  "g": "respective, each their own",
+  "t": "adjective"
+ },
+ "respiro": {
+  "g": "a breather, a break",
+  "t": "noun"
+ },
+ "reventada": {
+  "g": "burnt out, exhausted",
+  "t": "adjective"
+ },
+ "rojas": {
+  "g": "banderas rojas = red flags",
+  "t": "adjective"
+ },
+ "rojo": {
+  "g": "red, blushing",
+  "t": "adjective"
+ },
+ "sacando": {
+  "g": "sacar adelante = pulling it off",
+  "t": "verb"
+ },
+ "sacás": {
+  "g": "de dónde sacás = where you get it",
+  "t": "verb"
+ },
+ "sacátelo": {
+  "g": "get him out of your head",
+  "t": "verb"
+ },
+ "salta": {
+  "g": "jumps up",
+  "t": "verb"
+ },
+ "sed": {
+  "g": "thirst; sed de revancha = thirst for payback",
+  "t": "noun"
+ },
+ "sentenció": {
+  "g": "declared with authority",
+  "t": "verb"
+ },
+ "serial": {
+  "g": "serial, repeat",
+  "t": "adjective"
+ },
+ "señales": {
+  "g": "signs, signals",
+  "t": "noun"
+ },
+ "señas": {
+  "g": "hand signals, gestures",
+  "t": "noun"
+ },
+ "sorprendida": {
+  "g": "surprised",
+  "t": "adjective"
+ },
+ "sospecha": {
+  "g": "suspicion",
+  "t": "noun"
+ },
+ "soñado": {
+  "g": "dreamy, ideal",
+  "t": "adjective"
+ },
+ "subiendo": {
+  "g": "rising, building up",
+  "t": "verb"
+ },
+ "sueldo": {
+  "g": "a salary, wages",
+  "t": "noun"
+ },
+ "taburete": {
+  "g": "a bar stool",
+  "t": "noun"
+ },
+ "tenés": {
+  "g": "you have (voseo)",
+  "t": "verb"
+ },
+ "teoría": {
+  "g": "a theory",
+  "t": "noun"
+ },
+ "transformando": {
+  "g": "transforming, changing",
+  "t": "verb"
+ },
+ "tras": {
+  "g": "uno tras otro = one after another",
+  "t": "preposition"
+ },
+ "trillado": {
+  "g": "worn out, overused (a line)",
+  "t": "adjective"
+ },
+ "vaso": {
+  "g": "a glass",
+  "t": "noun"
+ },
+ "venganza": {
+  "g": "revenge",
+  "t": "noun"
+ },
+ "verseaba": {
+  "g": "versear = was feeding smooth lies",
+  "t": "verb"
+ },
+ "verso": {
+  "g": "a smooth lie, a rehearsed line",
+  "t": "noun"
+ },
+ "área": {
+  "g": "jefa de área = area manager",
+  "t": "noun"
+ }
+}

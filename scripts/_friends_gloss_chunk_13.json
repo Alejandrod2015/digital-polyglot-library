@@ -1,0 +1,498 @@
+{
+ "achuntado": {
+  "g": "achuntar = hit the mark, got it right",
+  "t": "verb"
+ },
+ "achuntarle": {
+  "g": "achuntar = to guess right",
+  "t": "verb"
+ },
+ "agarraría": {
+  "g": "agarrar para su lado = would go own way",
+  "t": "verb"
+ },
+ "apodo": {
+  "g": "a nickname",
+  "t": "noun"
+ },
+ "apuesto": {
+  "g": "I bet",
+  "t": "verb"
+ },
+ "armado": {
+  "g": "put together, staged",
+  "t": "adjective"
+ },
+ "asegurado": {
+  "g": "guaranteed, secured",
+  "t": "adjective"
+ },
+ "aviso": {
+  "g": "sin previo aviso = without warning",
+  "t": "noun"
+ },
+ "avivó": {
+  "g": "avivarse = wised up, caught on",
+  "t": "verb"
+ },
+ "año": {
+  "g": "year",
+  "t": "noun"
+ },
+ "buscarle": {
+  "g": "buscarle la lógica = looking for the logic",
+  "t": "verb"
+ },
+ "buscarlo": {
+  "g": "to go get it",
+  "t": "verb"
+ },
+ "cabro": {
+  "g": "a guy, young dude (Chile)",
+  "t": "noun"
+ },
+ "cagaba": {
+  "g": "cagarse de la risa = cracking up",
+  "t": "verb"
+ },
+ "cagadas": {
+  "g": "screw ups, blunders",
+  "t": "noun"
+ },
+ "callados": {
+  "g": "quiet, silent",
+  "t": "adjective"
+ },
+ "cambiaban": {
+  "g": "changed, shifted",
+  "t": "verb"
+ },
+ "cargo": {
+  "g": "a cargo de = in charge of",
+  "t": "noun"
+ },
+ "carne": {
+  "g": "meat",
+  "t": "noun"
+ },
+ "carretes": {
+  "g": "parties, nights out",
+  "t": "noun"
+ },
+ "cerro": {
+  "g": "a hill",
+  "t": "noun"
+ },
+ "chilenos": {
+  "g": "Chileans",
+  "t": "noun"
+ },
+ "choripán": {
+  "g": "grilled sausage in bread",
+  "t": "noun"
+ },
+ "clavo": {
+  "g": "al clavo = spot on, exactly right",
+  "t": "noun"
+ },
+ "confiado": {
+  "g": "confident, trusting",
+  "t": "adjective"
+ },
+ "conocían": {
+  "g": "knew each other",
+  "t": "verb"
+ },
+ "conseguía": {
+  "g": "was getting, sourcing",
+  "t": "verb"
+ },
+ "contaba": {
+  "g": "was telling",
+  "t": "verb"
+ },
+ "convertirse": {
+  "g": "to turn into",
+  "t": "verb"
+ },
+ "cuea": {
+  "g": "por pura cuea = by sheer luck",
+  "t": "noun"
+ },
+ "curados": {
+  "g": "curao = drunk, tipsy",
+  "t": "adjective"
+ },
+ "dejaban": {
+  "g": "left, made into",
+  "t": "verb"
+ },
+ "dejo": {
+  "g": "a faint hint of feeling",
+  "t": "noun"
+ },
+ "desconfianza": {
+  "g": "distrust, suspicion",
+  "t": "noun"
+ },
+ "deseo": {
+  "g": "a wish",
+  "t": "noun"
+ },
+ "detrás": {
+  "g": "behind",
+  "t": "adverb"
+ },
+ "discurso": {
+  "g": "a speech",
+  "t": "noun"
+ },
+ "disfrutar": {
+  "g": "to enjoy",
+  "t": "verb"
+ },
+ "durar": {
+  "g": "to last",
+  "t": "verb"
+ },
+ "encontraba": {
+  "g": "thought, found (an opinion)",
+  "t": "verb"
+ },
+ "engrupió": {
+  "g": "engrupir = conned, sweet talked",
+  "t": "verb"
+ },
+ "enredado": {
+  "g": "tangled, convoluted",
+  "t": "adjective"
+ },
+ "entendían": {
+  "g": "understood each other",
+  "t": "verb"
+ },
+ "entiende": {
+  "g": "understands",
+  "t": "verb"
+ },
+ "entusiasmado": {
+  "g": "excited, enthusiastic",
+  "t": "adjective"
+ },
+ "escondió": {
+  "g": "hid, went down",
+  "t": "verb"
+ },
+ "espejo": {
+  "g": "a mirror",
+  "t": "noun"
+ },
+ "esperanza": {
+  "g": "hope",
+  "t": "noun"
+ },
+ "estemos": {
+  "g": "aunque estemos = even if we are",
+  "t": "verb"
+ },
+ "estómago": {
+  "g": "stomach",
+  "t": "noun"
+ },
+ "eterno": {
+  "g": "eternal, forever",
+  "t": "adjective"
+ },
+ "filete": {
+  "g": "great, top quality (Chile)",
+  "t": "adjective"
+ },
+ "fracaso": {
+  "g": "a failure, a flop",
+  "t": "noun"
+ },
+ "fuerte": {
+  "g": "loud, strong",
+  "t": "adjective"
+ },
+ "fuertes": {
+  "g": "hard, strong",
+  "t": "adjective"
+ },
+ "funamos": {
+  "g": "funar = we call out and shame",
+  "t": "verb"
+ },
+ "gastar": {
+  "g": "to spend",
+  "t": "verb"
+ },
+ "gil": {
+  "g": "a fool, a sucker",
+  "t": "noun"
+ },
+ "golpes": {
+  "g": "knocks, blows",
+  "t": "noun"
+ },
+ "hablái": {
+  "g": "you talk (Chilean voseo)",
+  "t": "verb"
+ },
+ "hacia": {
+  "g": "toward",
+  "t": "preposition"
+ },
+ "hilo": {
+  "g": "con el alma en un hilo = on tenterhooks",
+  "t": "noun"
+ },
+ "huella": {
+  "g": "dejar huella = to leave a mark",
+  "t": "noun"
+ },
+ "instaló": {
+  "g": "settled in",
+  "t": "verb"
+ },
+ "invitados": {
+  "g": "the guests",
+  "t": "noun"
+ },
+ "latear": {
+  "g": "to bore stiff, to drag on",
+  "t": "verb"
+ },
+ "legendarios": {
+  "g": "legendary",
+  "t": "adjective"
+ },
+ "leía": {
+  "g": "was read, interpreted",
+  "t": "verb"
+ },
+ "llegái": {
+  "g": "you arrive (Chilean voseo)",
+  "t": "verb"
+ },
+ "llenando": {
+  "g": "filling up",
+  "t": "verb"
+ },
+ "lote": {
+  "g": "al lote = carelessly, sloppily",
+  "t": "noun"
+ },
+ "lógica": {
+  "g": "logic",
+  "t": "noun"
+ },
+ "mueca": {
+  "g": "a face or grimace",
+  "t": "noun"
+ },
+ "nerviosa": {
+  "g": "nervous",
+  "t": "adjective"
+ },
+ "nostalgia": {
+  "g": "nostalgia, wistfulness",
+  "t": "noun"
+ },
+ "parrilla": {
+  "g": "the barbecue grill",
+  "t": "noun"
+ },
+ "partido": {
+  "g": "sin un peso partido = penniless",
+  "t": "adjective"
+ },
+ "pasaron": {
+  "g": "passed, went by",
+  "t": "verb"
+ },
+ "pase": {
+  "g": "pase lo que pase = whatever happens",
+  "t": "verb"
+ },
+ "pecho": {
+  "g": "apretar el pecho = a tight ache in the chest",
+  "t": "noun"
+ },
+ "peligrosamente": {
+  "g": "dangerously",
+  "t": "adverb"
+ },
+ "perdían": {
+  "g": "were losing",
+  "t": "verb"
+ },
+ "perfecto": {
+  "g": "perfectly",
+  "t": "adjective"
+ },
+ "pesao": {
+  "g": "unpleasant, annoying (Chile)",
+  "t": "adjective"
+ },
+ "peso": {
+  "g": "a peso, a coin",
+  "t": "noun"
+ },
+ "pillaba": {
+  "g": "pillar = caught on, figured out",
+  "t": "verb"
+ },
+ "pintaba": {
+  "g": "pintar para = was heading toward",
+  "t": "verb"
+ },
+ "pisco": {
+  "g": "Chilean grape brandy",
+  "t": "noun"
+ },
+ "ponerse": {
+  "g": "to start to, to get",
+  "t": "verb"
+ },
+ "ponía": {
+  "g": "was getting",
+  "t": "verb"
+ },
+ "precio": {
+  "g": "a precio de risa = dirt cheap",
+  "t": "noun"
+ },
+ "preguntaban": {
+  "g": "were asking",
+  "t": "verb"
+ },
+ "preocupen": {
+  "g": "no se preocupen = do not worry",
+  "t": "verb"
+ },
+ "previo": {
+  "g": "sin previo aviso = with no warning",
+  "t": "adjective"
+ },
+ "probar": {
+  "g": "to test, to try",
+  "t": "verb"
+ },
+ "promesas": {
+  "g": "promises",
+  "t": "noun"
+ },
+ "pronóstico": {
+  "g": "contra todo pronóstico = against all odds",
+  "t": "noun"
+ },
+ "pulgar": {
+  "g": "the thumb",
+  "t": "noun"
+ },
+ "quieto": {
+  "g": "still, quiet",
+  "t": "adjective"
+ },
+ "reclamo": {
+  "g": "a complaint",
+  "t": "noun"
+ },
+ "reclamó": {
+  "g": "complained",
+  "t": "verb"
+ },
+ "relato": {
+  "g": "a story, an account",
+  "t": "noun"
+ },
+ "rica": {
+  "g": "tasty, delicious",
+  "t": "adjective"
+ },
+ "seca": {
+  "g": "seco = really skilled, an ace",
+  "t": "adjective"
+ },
+ "sentir": {
+  "g": "to feel",
+  "t": "verb"
+ },
+ "separara": {
+  "g": "se separara = would split up",
+  "t": "verb"
+ },
+ "significado": {
+  "g": "meaning",
+  "t": "noun"
+ },
+ "sincero": {
+  "g": "sincere, heartfelt",
+  "t": "adjective"
+ },
+ "solemnidad": {
+  "g": "solemnity, mock seriousness",
+  "t": "noun"
+ },
+ "tallas": {
+  "g": "jokes, witty cracks",
+  "t": "noun"
+ },
+ "terremoto": {
+  "g": "a strong sweet Chilean drink",
+  "t": "noun"
+ },
+ "timbre": {
+  "g": "the doorbell",
+  "t": "noun"
+ },
+ "tomar": {
+  "g": "to drink",
+  "t": "verb"
+ },
+ "vacía": {
+  "g": "empty",
+  "t": "adjective"
+ },
+ "vaga": {
+  "g": "vague",
+  "t": "adjective"
+ },
+ "volando": {
+  "g": "flying, whizzing by",
+  "t": "verb"
+ },
+ "volvía": {
+  "g": "was coming back",
+  "t": "verb"
+ },
+ "weona": {
+  "g": "weona = a woman, fem of weon",
+  "t": "noun"
+ },
+ "weveo": {
+  "g": "Chilean messing about and banter",
+  "t": "noun"
+ },
+ "weviaban": {
+  "g": "weviar = were teasing, messing around",
+  "t": "verb"
+ },
+ "weviar": {
+  "g": "to mess around and joke (Chile)",
+  "t": "verb"
+ },
+ "weá": {
+  "g": "a thing, thingy (Chile)",
+  "t": "noun"
+ },
+ "épicas": {
+  "g": "epic",
+  "t": "adjective"
+ },
+ "íntima": {
+  "g": "intimate, personal",
+  "t": "adjective"
+ }
+}

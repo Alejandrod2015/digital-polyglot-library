@@ -1,0 +1,466 @@
+[
+ {
+  "topic": "el-chisme",
+  "slotIndex": 1,
+  "title": "Marina llega con visaje",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Marina llega al apartamento con un chisme jugoso del edificio y arma tremendo visaje contándolo, hasta que Julián y Valeria quedan enganchados. Pero los detalles empiezan a sonarle rarísimos a Valeria, porque el man del cuento resulta ser su primo y la fiesta fue en su propia casa. El chisme había dado tantas vueltas que volvió deformado, y el parche termina muerto de risa.",
+  "text": "Marina entró al apartamento con cara de que traía un chisme bien jugoso. Julián, tirado en el sofá con el celular, casi ni levantó la cabeza. \"Parce, suelte ese aparato, que esto está muy bacano\", le soltó ella.\n\nSegún Marina, alguien del edificio andaba en un enredo tremendo con una vecina. Valeria salió de la cocina con un tinto y se sentó a chismosear también. \"Cuente, cuente, no me deje en ascuas\", la apuró, toda intrigada.\n\nMarina bajó la voz como si fuera un secreto de Estado y arrancó con todo el visaje. Habló de mensajes escondidos, de una fiesta a las malas y de un man sospechoso. Julián por fin soltó el celular, ya bien enganchado en el cuento.\n\nEl problema empezó cuando los detalles se le hicieron rarísimos a Valeria. La fecha, el edificio, el carro que describían: todo le sonaba demasiado conocido. Se quedó callada un momentico, atando cabos con cara de susto.\n\n\"Pare ahí\", los frenó de una, entre la risa y el sofocón. \"Ese man del que hablan es mi primo, y esa fiesta fue en mi casa.\" El silencio duró dos segundos antes de que estallaran de la carcajada.\n\nResulta que el chisme había dado tantas vueltas por el edificio que volvió todo deformado. De boca en boca, una reunión familiar se había vuelto un escándalo de telenovela. Marina, toda achantada, juró que ella solo repetía lo que le habían rajado.\n\nAl final se rieron un buen rato del teléfono roto en que se volvió el parche. Valeria los amenazó con inventarles a ellos un chisme peor la próxima vez. Así aprendieron que el mejor chisme casi siempre es puro cuento inflado.",
+  "vocab": [
+   {
+    "word": "jugoso",
+    "surface": "jugoso",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "juicy and full of scandalous detail, said of gossip"
+   },
+   {
+    "word": "parce",
+    "surface": "Parce",
+    "type": "noun",
+    "register": "slang",
+    "definition": "buddy or mate, the classic Colombian word for a friend"
+   },
+   {
+    "word": "bacano",
+    "surface": "bacano",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "cool, great or awesome, a very Colombian compliment"
+   },
+   {
+    "word": "enredo",
+    "surface": "enredo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a tangled mess or complicated affair between people"
+   },
+   {
+    "word": "tinto",
+    "surface": "tinto",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a small cup of black coffee, drunk all day in Colombia"
+   },
+   {
+    "word": "chismosear",
+    "surface": "chismosear",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to gossip and swap juicy stories about other people"
+   },
+   {
+    "word": "tener en ascuas",
+    "surface": "en ascuas",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to keep someone in agonizing suspense, dying to know"
+   },
+   {
+    "word": "visaje",
+    "surface": "visaje",
+    "type": "noun",
+    "register": "slang",
+    "definition": "showy drama or a big fuss made over something"
+   },
+   {
+    "word": "a las malas",
+    "surface": "a las malas",
+    "type": "expression",
+    "register": "slang",
+    "definition": "by force or on the sly, not the proper honest way"
+   },
+   {
+    "word": "man",
+    "surface": "man",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a guy or dude, borrowed from English and used constantly"
+   },
+   {
+    "word": "enganchado",
+    "surface": "enganchado",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "hooked and totally absorbed in something, unable to look away"
+   },
+   {
+    "word": "de una",
+    "surface": "de una",
+    "type": "expression",
+    "register": "slang",
+    "definition": "right away, at once, without a second thought"
+   },
+   {
+    "word": "momentico",
+    "surface": "momentico",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a tiny little moment, said with the fond Colombian diminutive"
+   },
+   {
+    "word": "atar cabos",
+    "surface": "atando cabos",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to put the pieces together and figure something out"
+   },
+   {
+    "word": "sofocón",
+    "surface": "sofocón",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a sudden fluster of shock, heat and embarrassment"
+   },
+   {
+    "word": "achantado",
+    "surface": "achantada",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "embarrassed and sheepish, wishing you could vanish on the spot"
+   },
+   {
+    "word": "rajar",
+    "surface": "rajado",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to badmouth or spill gossip about someone behind their back"
+   },
+   {
+    "word": "teléfono roto",
+    "surface": "teléfono roto",
+    "type": "expression",
+    "register": "slang",
+    "definition": "a message so passed around it comes back distorted"
+   },
+   {
+    "word": "parche",
+    "surface": "parche",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the friend group, or the hangout where they meet"
+   },
+   {
+    "word": "de boca en boca",
+    "surface": "De boca en boca",
+    "type": "expression",
+    "register": "slang",
+    "definition": "passed from person to person by word of mouth"
+   },
+   {
+    "word": "inflado",
+    "surface": "inflado",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "blown up and exaggerated far beyond the real facts"
+   }
+  ]
+ },
+ {
+  "topic": "el-chisme",
+  "slotIndex": 2,
+  "title": "La lengua de Julián",
+  "arcType": "late-reveal",
+  "synopsis": "Julián llega cansado del camello y con guayabo, y entre pola y pola en la rumba se le va la lengua contando un secreto de Marina que había jurado guardar. Al otro día se da cuenta de la embarrada y el sapo del parche ya regó todo. El remate llega cuando se descubre que quien lo puso a hablar de más fue la propia Marina, para probarlo.",
+  "text": "Julián llegó del camello bien cascado y con un guayabo del sábado que no lo dejaba. Se tiró en el sofá jurando que esa noche no salía ni amarrado. \"No me manden a rumbear, parceros, que vengo muerto\", pidió con voz de trapo.\n\nPero el parche insistió, y a las dos polas ya estaba prendido y hablando hasta por los codos. Entre risas y guaro, la lengua se le fue soltando más de la cuenta. Sin darse cuenta, soltó un secreto de Marina que había jurado guardar con el alma.\n\nEl cuarto entero se quedó callado, y Julián sintió el frío de la embarrada. Trató de echar para atrás, pero ya el chisme estaba servido en bandeja. Uno del parche, más sapo que otra cosa, se relamió con la primicia.\n\nAl otro día, Julián despertó con el guayabo y con una preocupación peor. Recordaba a pedazos la noche, pero la cara de todos se la recordaba completa. Sabía que había metido las patas hasta el fondo.\n\nLlamó a Marina con el corazón en la mano para confesar antes de que le llegara por otro lado. Ella lo escuchó en silencio, dejándolo sudar cada palabra. Julián pedía perdón como si le fuera la vida en cada frase.\n\nCuando por fin se calló, Marina soltó una risa que lo descolocó por completo. \"Tranquilo, güevón, ese secreto me lo inventé yo\", le confesó sin culpa. Lo había soltado a propósito para ver si el man aguantaba una prueba.\n\nJulián no supo si sentirse aliviado o estafado por semejante trampa. La lección le quedó grabada: al que tiene la lengua floja, tarde o temprano lo cazan. Y en ese parche, los secretos siempre tenían dueño y trampa.",
+  "vocab": [
+   {
+    "word": "camello",
+    "surface": "camello",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a job or work, the everyday Colombian word for it"
+   },
+   {
+    "word": "cascado",
+    "surface": "cascado",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "worn out and beat, physically wrecked and exhausted"
+   },
+   {
+    "word": "guayabo",
+    "surface": "guayabo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a hangover, the rough morning after a night of heavy drinking"
+   },
+   {
+    "word": "amarrado",
+    "surface": "amarrado",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "tied down or forced; ni amarrado means not even by force"
+   },
+   {
+    "word": "rumbear",
+    "surface": "rumbear",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to go out partying and dancing all night long"
+   },
+   {
+    "word": "pola",
+    "surface": "polas",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a beer, the affectionate Colombian word for one"
+   },
+   {
+    "word": "prendido",
+    "surface": "prendido",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "tipsy and lively, warmed up but not fully drunk"
+   },
+   {
+    "word": "hablar hasta por los codos",
+    "surface": "hablando hasta por los codos",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to talk nonstop and far too much, unable to shut up"
+   },
+   {
+    "word": "guaro",
+    "surface": "guaro",
+    "type": "noun",
+    "register": "slang",
+    "definition": "aguardiente, the anise liquor that fuels Colombian parties"
+   },
+   {
+    "word": "más de la cuenta",
+    "surface": "más de la cuenta",
+    "type": "expression",
+    "register": "slang",
+    "definition": "more than you should, past the sensible limit"
+   },
+   {
+    "word": "embarrada",
+    "surface": "embarrada",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a big blunder or mess up that ruins everything"
+   },
+   {
+    "word": "servido en bandeja",
+    "surface": "servido en bandeja",
+    "type": "expression",
+    "register": "slang",
+    "definition": "handed over ready and easy, with no effort needed"
+   },
+   {
+    "word": "sapo",
+    "surface": "sapo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a snitch or tattletale who loves spreading news"
+   },
+   {
+    "word": "relamerse",
+    "surface": "se relamió",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to lick your lips with relish over a tasty piece of news"
+   },
+   {
+    "word": "primicia",
+    "surface": "primicia",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a fresh scoop, gossip nobody else has heard yet"
+   },
+   {
+    "word": "meter las patas",
+    "surface": "metido las patas",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to blunder badly and put your foot right in it"
+   },
+   {
+    "word": "con el corazón en la mano",
+    "surface": "con el corazón en la mano",
+    "type": "expression",
+    "register": "slang",
+    "definition": "speaking openly and sincerely, laying your feelings bare"
+   },
+   {
+    "word": "descolocar",
+    "surface": "descolocó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to throw someone off completely, catching them unprepared"
+   },
+   {
+    "word": "güevón",
+    "surface": "güevón",
+    "type": "noun",
+    "register": "slang",
+    "definition": "dude or fool; a rough word used warmly between friends"
+   },
+   {
+    "word": "lengua floja",
+    "surface": "lengua floja",
+    "type": "expression",
+    "register": "slang",
+    "definition": "a loose tongue that cannot keep a secret"
+   },
+   {
+    "word": "cazar",
+    "surface": "cazan",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to catch someone out or trap them in the act"
+   }
+  ]
+ },
+ {
+  "topic": "el-chisme",
+  "slotIndex": 3,
+  "title": "El domingo se arregla",
+  "arcType": "harmonic-close",
+  "synopsis": "El domingo el parche se junta con arepa y chocolate a arreglar el enredo sin rodeos, porque la mamera de andar bravos ya cansaba a todos. Cada uno pone su parte, se piden perdón y hacen las paces con un abrazo de esos que valen. Deciden que en ese grupo el chisme se queda entre ellos, y cierran el domingo con pura recocha.",
+  "text": "El domingo, el parche se juntó en casa de Valeria con arepa y chocolate caliente. Nadie quería seguir bravo, porque la mamera de andar peleados ya cansaba a todos. \"Hablemos sin rodeos y cuadremos esta vaina de una vez\", propuso ella.\n\nJulián fue el primero en dar la cara y reconocer que había hablado de más. Marina admitió que su prueba de la lengua floja tampoco había estado muy chévere. Cada uno puso su parte sobre la mesa, sin echarse la culpa entero.\n\nEntre mordisco de arepa y sorbo de chocolate, el ambiente se fue soltando. Valeria, que odiaba los pleitos, hacía de juez para que nadie se pasara de listo. Poco a poco, la bravura se volvió recocha y risa floja.\n\n\"Marica, ya, dejemos esta bobada quieta\", soltó Julián estirando la mano. Marina se la apretó e hicieron las paces con un abrazo de esos que valen más que mil perdones. El parche entero respiró, como si le hubieran quitado un bulto de encima.\n\nAcordaron una regla nueva para el grupo, medio en serio y medio en chiste. Lo que se hablara en el parche se quedaba en el parche, sin soltar prenda por fuera. El que soltara la lengua pagaba la próxima rumba completa.\n\nSellaron el trato con un brindis de chocolate, chocando las tazas como si fueran polas. Valeria dijo que ese pacto duraba hasta el próximo chisme irresistible. Todos sabían que no aguantarían ni una semana, y les dio risa la mentira.\n\nAl caer la tarde, el enredo ya era otra anécdota más para reírse. Se despidieron con la panza llena de arepa y el corazón liviano. Y como buen parche, ya andaban planeando de qué reírse la próxima vez.",
+  "vocab": [
+   {
+    "word": "bravo",
+    "surface": "bravo",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "angry and sulking, cross with someone over a fight"
+   },
+   {
+    "word": "mamera",
+    "surface": "mamera",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a tiresome drag, something boring and thoroughly annoying"
+   },
+   {
+    "word": "sin rodeos",
+    "surface": "sin rodeos",
+    "type": "expression",
+    "register": "slang",
+    "definition": "straight to the point, with no beating around the bush"
+   },
+   {
+    "word": "vaina",
+    "surface": "vaina",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a thing or matter, the most common Colombian filler word"
+   },
+   {
+    "word": "dar la cara",
+    "surface": "dar la cara",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to face up to something and own your responsibility"
+   },
+   {
+    "word": "chévere",
+    "surface": "chévere",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "cool, nice or great, a warm word of approval"
+   },
+   {
+    "word": "arepa",
+    "surface": "arepa",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a round grilled corn cake, a Colombian staple at any hour"
+   },
+   {
+    "word": "pleito",
+    "surface": "pleitos",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a quarrel or a nasty falling out between friends"
+   },
+   {
+    "word": "pasarse de listo",
+    "surface": "se pasara de listo",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to be a smart aleck and take unfair advantage"
+   },
+   {
+    "word": "recocha",
+    "surface": "recocha",
+    "type": "noun",
+    "register": "slang",
+    "definition": "rowdy joking around and playful teasing among friends"
+   },
+   {
+    "word": "marica",
+    "surface": "Marica",
+    "type": "noun",
+    "register": "slang",
+    "definition": "dude or mate; a rough word used constantly among Colombian friends"
+   },
+   {
+    "word": "bobada",
+    "surface": "bobada",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a silly little thing not worth arguing over"
+   },
+   {
+    "word": "quitarse un bulto de encima",
+    "surface": "quitado un bulto de encima",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to be relieved of a heavy weight or worry"
+   },
+   {
+    "word": "sellar el trato",
+    "surface": "Sellaron el trato",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to seal the deal and make an agreement final"
+   },
+   {
+    "word": "liviano",
+    "surface": "liviano",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "light and unburdened, free of worry or weight"
+   },
+   {
+    "word": "medio en serio",
+    "surface": "medio en serio y medio en chiste",
+    "type": "expression",
+    "register": "slang",
+    "definition": "half seriously and half joking, not fully committing"
+   },
+   {
+    "word": "risa floja",
+    "surface": "risa floja",
+    "type": "expression",
+    "register": "slang",
+    "definition": "helpless giggles you cannot stop once they start"
+   },
+   {
+    "word": "soltar prenda",
+    "surface": "soltar prenda",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to give away a secret or reveal what you know"
+   },
+   {
+    "word": "hacer las paces",
+    "surface": "hicieron las paces",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to make up and patch things up after a fight"
+   },
+   {
+    "word": "cuadrar",
+    "surface": "cuadremos",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to sort something out, arrange it or patch it up"
+   }
+  ]
+ }
+]

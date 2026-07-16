@@ -1,0 +1,459 @@
+[
+ {
+  "topic": "el-weveo",
+  "slotIndex": 1,
+  "title": "Todo es weón",
+  "arcType": "reframe-turn",
+  "synopsis": "En la terraza mirando el lago del sur, Benjamín arranca una historia tan larga en que cada cosa es una weá o un weón, que Javiera se pierde entera. Ella reclama que así no se entiende nada y que el weveo chileno es puro enredo fome. Pero cuando lo escucha bien, cacha que todos entienden perfecto, y que esa vaguedad es justo la gracia.",
+  "text": "En la terraza, mirando el lago del sur, Benjamín arrancó una historia bien choro. \"Resulta que el weón llegó con la weá, y le pasó la otra weá al otro weón\", contaba entusiasmado. Javiera lo miraba con cara de perdida, sin cachar absolutamente nada.\n\n\"Oye, no se te entiende ni una cuando hablái así, po\", lo cortó ella. Benjamín la miró como si el problema fuera de ella y no de su relato. Nico se cagaba de la risa con el weveo cuático que se armaba.\n\nPara Javiera, hablar así de enredado era la cosa más fome del mundo. Encontraba que puro weón y pura weá dejaban la conversación como las pelotas. Pensaba que hablaban en clave a propósito para latear a los de afuera.\n\nBenjamín, lejos de achuntarle al reclamo, siguió con su historia igual de vaga. Nico asentía, cachando perfecto quién era cada weón. Ahí Javiera se avivó de algo raro que la dejó pensando un buen rato.\n\nA pesar de que no se decía ningún nombre, los dos se entendían regio. La weá y el weón cambiaban de significado según el tono y la mueca de la cara. Era un idioma secreto medio brígido, que se leía más por la actitud que por la palabra.\n\nDe a poco, Javiera se puso a jugar el mismo juego. \"Ah, ya, ¿entonces el weón ese hizo la weá con la otra weona?\", lanzó al tiro. Benjamín levantó el pulgar, feliz, porque le había achuntado justo al clavo.\n\nEl secreto no estaba en las palabras, sino en lo bien que se conocían. De tanto weviar juntos, tenían un código que nadie de afuera pillaba. Para entrar al weveo no hay que buscarle la lógica, sino sentirle la talla.",
+  "vocab": [
+   {
+    "word": "weón",
+    "surface": "weón",
+    "type": "noun",
+    "register": "slang",
+    "definition": "dude or guy; the all purpose Chilean word, sometimes an insult"
+   },
+   {
+    "word": "weá",
+    "surface": "weá",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a thing or thingy, the vaguest Chilean word for anything"
+   },
+   {
+    "word": "weveo",
+    "surface": "weveo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "messing about and joking around, the Chilean art of banter"
+   },
+   {
+    "word": "po",
+    "surface": "po",
+    "type": "expression",
+    "register": "slang",
+    "definition": "a Chilean filler tacked onto the end for emphasis"
+   },
+   {
+    "word": "hablái",
+    "surface": "hablái",
+    "type": "verb",
+    "register": "slang",
+    "definition": "you talk, the Chilean voseo ending on the verb"
+   },
+   {
+    "word": "ni una",
+    "surface": "ni una",
+    "type": "expression",
+    "register": "slang",
+    "definition": "not a single thing, absolutely nothing at all"
+   },
+   {
+    "word": "cagarse de la risa",
+    "surface": "se cagaba de la risa",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to crack up laughing, to die of pure laughter"
+   },
+   {
+    "word": "fome",
+    "surface": "fome",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "boring, dull and lame, no fun at all"
+   },
+   {
+    "word": "como las pelotas",
+    "surface": "como las pelotas",
+    "type": "expression",
+    "register": "slang",
+    "definition": "terrible, a total mess, in a really bad state"
+   },
+   {
+    "word": "latear",
+    "surface": "latear",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to bore someone stiff, to be a total drag"
+   },
+   {
+    "word": "achuntar",
+    "surface": "achuntarle",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to hit the mark, to guess or get it right"
+   },
+   {
+    "word": "regio",
+    "surface": "regio",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "great and lovely, working out perfectly well indeed"
+   },
+   {
+    "word": "mueca",
+    "surface": "mueca",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a face or grimace that carries the real meaning"
+   },
+   {
+    "word": "al tiro",
+    "surface": "al tiro",
+    "type": "expression",
+    "register": "slang",
+    "definition": "right away, immediately, on the spot without delay"
+   },
+   {
+    "word": "pillar",
+    "surface": "pillaba",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to catch on to or figure something out"
+   },
+   {
+    "word": "talla",
+    "surface": "talla",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a joke or witty crack, the Chilean sense of humor"
+   },
+   {
+    "word": "choro",
+    "surface": "choro",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "cool, gutsy and full of attitude in a good way"
+   },
+   {
+    "word": "cuático",
+    "surface": "cuático",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "intense, way over the top or wildly complicated stuff"
+   },
+   {
+    "word": "brígido",
+    "surface": "brígido",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "intense, heavy or a little scary and hardcore"
+   },
+   {
+    "word": "avivarse",
+    "surface": "se avivó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to wise up and suddenly catch on to something"
+   }
+  ]
+ },
+ {
+  "topic": "el-weveo",
+  "slotIndex": 2,
+  "title": "El carrete del sábado",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "El sábado arman carrete en la casa de Javiera y cada uno pone su parte, pero Benjamín se compromete a llevar el copete y anda pato sin un peso. Prometiendo un pituto que le iba a conseguir el trago gratis, desaparece toda la tarde mientras el carrete se llena de gente sedienta. Justo cuando todos preguntan por él, suena el timbre y nadie sabe qué trae.",
+  "text": "El sábado armaron carrete en la casa de Javiera, cada uno poniendo su parte. \"Yo llevo el copete, no se preocupen, tengo un pituto filete\", prometió Benjamín. El problema es que andaba pato, sin un peso partido por la mitad.\n\nNico lo miró con desconfianza, porque ya conocía sus promesas al lote. \"Seguro, cabro, mira que si llegái sin nada, te funamos delante de todos\", lo picó. Benjamín engrupió jurando que el trago estaba asegurado.\n\nLa idea era simple: un amigo de un amigo le conseguía el copete a precio de risa. Con ese pituto pensaba quedar como rey sin gastar casi nada de lucas. Confiado, se fue temprano a buscarlo y dijo que volvía en una hora.\n\nPasaron las horas y el carrete se fue llenando de gente con sed. La música sonaba fuerte, pero la mesa de los tragos seguía peligrosamente vacía. Javiera empezó a ponerse nerviosa mirando la puerta cada cinco minutos.\n\n\"Este gil nos cagó, apuesto que se quedó pegado en otra parte\", reclamó Nico. Los invitados ya preguntaban por el trago que nadie veía aparecer. El ambiente se estaba poniendo penca, con puro ambiente pesao y nada que tomar.\n\nJaviera le mandó como veinte mensajes que quedaron en visto, sin respuesta. La cosa pintaba para desastre, y ella ya se imaginaba el ridículo delante de todos. El carrete estaba a un pelo de convertirse en el fracaso del año.\n\nJusto cuando perdían la esperanza, sonó el timbre con tres golpes fuertes. Todos se quedaron callados, mirando hacia la entrada con el alma en un hilo. Nadie tenía idea de si era Benjamín, y menos de con qué venía cargado.",
+  "vocab": [
+   {
+    "word": "carrete",
+    "surface": "carrete",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a party, a night out drinking and dancing in Chile"
+   },
+   {
+    "word": "copete",
+    "surface": "copete",
+    "type": "noun",
+    "register": "slang",
+    "definition": "booze, any alcoholic drink brought for a party"
+   },
+   {
+    "word": "pituto",
+    "surface": "pituto",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a handy contact or connection who hooks you up"
+   },
+   {
+    "word": "filete",
+    "surface": "filete",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "great, excellent, top quality and really first rate"
+   },
+   {
+    "word": "andar pato",
+    "surface": "andaba pato",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to be flat broke, without a single coin"
+   },
+   {
+    "word": "al lote",
+    "surface": "al lote",
+    "type": "expression",
+    "register": "slang",
+    "definition": "carelessly and haphazardly, in a sloppy random way"
+   },
+   {
+    "word": "llegái",
+    "surface": "llegái",
+    "type": "verb",
+    "register": "slang",
+    "definition": "you arrive, showing the Chilean voseo verb ending"
+   },
+   {
+    "word": "funar",
+    "surface": "funamos",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to publicly call someone out and shame them"
+   },
+   {
+    "word": "engrupir",
+    "surface": "engrupió",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to con or sweet talk with slick empty promises"
+   },
+   {
+    "word": "a precio de risa",
+    "surface": "a precio de risa",
+    "type": "expression",
+    "register": "slang",
+    "definition": "dirt cheap, at a laughably low bargain price"
+   },
+   {
+    "word": "lucas",
+    "surface": "lucas",
+    "type": "noun",
+    "register": "slang",
+    "definition": "money in thousands of pesos, the Chilean cash word"
+   },
+   {
+    "word": "quedar como rey",
+    "surface": "quedar como rey",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to come off looking great and very generous"
+   },
+   {
+    "word": "pegado",
+    "surface": "pegado",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "stuck somewhere, held up and unable to leave"
+   },
+   {
+    "word": "cagar",
+    "surface": "nos cagó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to let someone down badly and screw them over"
+   },
+   {
+    "word": "gil",
+    "surface": "gil",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a fool or sucker, someone naive and clueless"
+   },
+   {
+    "word": "penca",
+    "surface": "penca",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "lousy, dull and disappointing, a real letdown of a thing"
+   },
+   {
+    "word": "pesao",
+    "surface": "pesao",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "unpleasant and heavy going, an annoying vibe or person"
+   },
+   {
+    "word": "cabro",
+    "surface": "cabro",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a guy or young dude, a common Chilean word"
+   },
+   {
+    "word": "pintar para",
+    "surface": "pintaba para",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to look like it is heading toward some outcome"
+   },
+   {
+    "word": "a un pelo",
+    "surface": "a un pelo",
+    "type": "expression",
+    "register": "slang",
+    "definition": "a hair away, extremely close to happening now"
+   },
+   {
+    "word": "con el alma en un hilo",
+    "surface": "con el alma en un hilo",
+    "type": "expression",
+    "register": "slang",
+    "definition": "on tenterhooks, sick with worry and gripping suspense"
+   }
+  ]
+ },
+ {
+  "topic": "el-weveo",
+  "slotIndex": 3,
+  "title": "El asado a la orilla",
+  "arcType": "harmonic-close",
+  "synopsis": "El último día del verano hacen un asado a la orilla del lago y todo sale regio, con la carne en su punto y el weveo a millón. Entre talla y talla, se ponen a recordar los mejores momentos del grupo, hasta que el ambiente se pone medio emotivo. Sin decirlo derechamente, se prometen que la amistad va a seguir firme aunque cada uno agarre para su lado.",
+  "text": "El último día del verano, hicieron un asado a la orilla del lago, y quedó la escoba. Benjamín se puso a cargo de la parrilla, jurando que la carne le salía seca. Nico y Javiera lo weviaban: de seco no tenía ni el apodo.\n\nContra todo pronóstico y por pura cuea, la carne salió en su punto y quedó rica. Entre choripán, un terremoto y un pisco, el grupo se instaló a disfrutar la tarde. El weveo estaba prendido, con tallas volando de un lado para el otro.\n\nCon el estómago lleno, la conversación se fue poniendo más íntima. Recordaron los carretes legendarios y las cagadas épicas de cada uno. Cada anécdota venía con su carcajada, pero también con un dejo de nostalgia.\n\nJaviera comentó que el verano se había pasado volando. Pronto cada uno agarraría para su lado, con la pega y la vida tirando fuerte. La idea de que el grupo se separara les apretó el pecho a todos.\n\nNico, que nunca se ponía sentimental, soltó algo sincero de repente. \"Igual pase lo que pase, ustedes son mi gente, cachái\", dijo mirando el lago. El silencio que siguió valió más que cualquier discurso.\n\nBenjamín levantó su vaso y propuso un brindis medio en talla, medio en serio. \"Por el weveo eterno, aunque estemos viejos y con guata\", declaró con solemnidad falsa. Todos se rieron ya medio curados, pero por dentro sabían que ese deseo era la firme.\n\nEl sol se escondió tras el cerro y el lago quedó quieto como espejo. Nadie quería ser el primero en decir que era hora de irse a la casa. Un weveo no tiene que durar para siempre; le basta con dejar huella.",
+  "vocab": [
+   {
+    "word": "asado",
+    "surface": "asado",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a barbecue, a social grill out with good friends"
+   },
+   {
+    "word": "quedar la escoba",
+    "surface": "quedó la escoba",
+    "type": "expression",
+    "register": "slang",
+    "definition": "here it turned out wild; usually a huge mess though"
+   },
+   {
+    "word": "parrilla",
+    "surface": "parrilla",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the grill where the meat is cooked at an asado"
+   },
+   {
+    "word": "seco",
+    "surface": "seca",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "really skilled and good at something, a total ace"
+   },
+   {
+    "word": "apodo",
+    "surface": "apodo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a nickname given affectionately or in playful jest"
+   },
+   {
+    "word": "weviar",
+    "surface": "weviaban",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to tease and mess around with someone playfully"
+   },
+   {
+    "word": "en su punto",
+    "surface": "en su punto",
+    "type": "expression",
+    "register": "slang",
+    "definition": "cooked just right, perfectly done to a turn"
+   },
+   {
+    "word": "choripán",
+    "surface": "choripán",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a grilled sausage in bread, a barbecue staple"
+   },
+   {
+    "word": "terremoto",
+    "surface": "terremoto",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a sweet potent Chilean drink of wine and ice cream"
+   },
+   {
+    "word": "pisco",
+    "surface": "pisco",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the grape brandy at the heart of Chilean drinks"
+   },
+   {
+    "word": "cuea",
+    "surface": "cuea",
+    "type": "noun",
+    "register": "slang",
+    "definition": "luck; por pura cuea means by sheer dumb luck"
+   },
+   {
+    "word": "curao",
+    "surface": "curados",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "drunk, tipsy from one too many at the party"
+   },
+   {
+    "word": "dejo",
+    "surface": "dejo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a faint trace or gentle hint of a feeling"
+   },
+   {
+    "word": "agarrar para su lado",
+    "surface": "agarraría para su lado",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to go each their own separate way in life"
+   },
+   {
+    "word": "pega",
+    "surface": "pega",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a job or work, the Chilean everyday word for it"
+   },
+   {
+    "word": "apretar el pecho",
+    "surface": "apretó el pecho",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to feel a tight ache of emotion in your chest"
+   },
+   {
+    "word": "cachái",
+    "surface": "cachái",
+    "type": "verb",
+    "register": "slang",
+    "definition": "you get it, the classic Chilean tag on sentences"
+   },
+   {
+    "word": "guata",
+    "surface": "guata",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the belly or tummy, a beloved Chilean word"
+   },
+   {
+    "word": "la firme",
+    "surface": "la firme",
+    "type": "expression",
+    "register": "slang",
+    "definition": "the honest truth, the real and genuine thing indeed"
+   },
+   {
+    "word": "dejar huella",
+    "surface": "dejar huella",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to leave a lasting mark you never quite forget"
+   }
+  ]
+ }
+]
