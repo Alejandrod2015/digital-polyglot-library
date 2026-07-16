@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   ActivityIndicator,
   Linking,
@@ -20,15 +20,28 @@ import { apiFetch } from "../lib/api";
  * checkout inside the app. On a successful purchase it sends the store's proof
  * of purchase to the server, which verifies it and unlocks premium.
  *
+ * The two stores model the plans differently, so the plan list is built per
+ * platform and then rendered uniformly:
+ *  - iOS: two separate products, `premium_monthly` and `premium_annual`
+ *    (StoreKit has no "base plans" — each duration is its own product).
+ *  - Android: one product, `premium_monthly`, with two base plans
+ *    (`monthly`, `yearly`); each base plan carries its own offer token.
+ * Either way the server verifies the purchase and both resolve to `premium`
+ * (the Play productId is `premium_monthly` for both base plans).
+ *
  * `purchase.purchaseToken` means a different thing per store: on iOS it is the
  * StoreKit 2 signed transaction (JWS); on Android it is the Play purchase
  * token. Each goes to its own verify route.
- *
- * SKUs must match the subscription product IDs created in App Store Connect and
- * in Play Console (and the server's APP_STORE_PRODUCT_PLAN_MAP /
- * GOOGLE_PLAY_PRODUCT_PLAN_MAP).
  */
-const PREMIUM_SKUS = ["premium_monthly", "premium_annual"];
+const IOS_SKUS = ["premium_monthly", "premium_annual"];
+// Android: a single subscription product exposing the base plans.
+const ANDROID_PRODUCT_SKU = "premium_monthly";
+const FETCH_SKUS = Platform.OS === "android" ? [ANDROID_PRODUCT_SKU] : IOS_SKUS;
+
+const IOS_SKU_TITLES: Record<string, string> = {
+  premium_monthly: "Monthly",
+  premium_annual: "Yearly",
+};
 
 const TERMS_URL = "https://digitalpolyglot.com/terms";
 const PRIVACY_URL = "https://digitalpolyglot.com/privacy";
@@ -39,6 +52,25 @@ const BILLING_LEGAL_COPY =
   Platform.OS === "android"
     ? "Payment is charged to your Google Play account. Subscriptions renew automatically unless cancelled at least 24h before the period ends. Manage or cancel in your Google Play subscriptions."
     : "Payment is charged to your Apple ID. Subscriptions renew automatically unless cancelled at least 24h before the period ends. Manage or cancel in your App Store account settings.";
+
+/** "Monthly" / "Yearly" / "Weekly", falling back to "Every N units". */
+function periodLabel(unit: string | null | undefined, value: number | null | undefined): string | null {
+  if (!unit || unit === "unknown") return null;
+  if ((value ?? 1) === 1) {
+    if (unit === "month") return "Monthly";
+    if (unit === "year") return "Yearly";
+    if (unit === "week") return "Weekly";
+    if (unit === "day") return "Daily";
+  }
+  return `Every ${value} ${unit}s`;
+}
+
+type PlanOption = {
+  key: string;
+  title: string;
+  price: string;
+  buy: () => void;
+};
 
 type Props = {
   visible: boolean;
@@ -107,41 +139,68 @@ export function AppStorePaywall({ visible, onClose, apiBaseUrl, sessionToken, on
   // Load the subscription products once the store connection is ready.
   useEffect(() => {
     if (visible && connected) {
-      void fetchProducts({ skus: PREMIUM_SKUS, type: "subs" });
+      void fetchProducts({ skus: FETCH_SKUS, type: "subs" });
     }
   }, [visible, connected, fetchProducts]);
 
-  const buy = useCallback(
-    (sku: string) => {
+  const startPurchase = useCallback(
+    (run: () => void) => {
       setError(null);
       setBusy(true);
       try {
-        if (Platform.OS === "android") {
-          // Play needs the offer token of the base plan being bought; it only
-          // exists on the product details fetched above, so a purchase started
-          // before `fetchProducts` resolves has nothing to send.
-          const product = subscriptions.find((s) => s.id === sku);
-          const offerToken =
-            product?.platform === "android"
-              ? product.subscriptionOfferDetailsAndroid?.[0]?.offerToken
-              : undefined;
-          if (!offerToken) {
-            throw new Error("This subscription is not available right now.");
-          }
-          void requestPurchase({
-            request: { android: { skus: [sku], subscriptionOffers: [{ sku, offerToken }] } },
-            type: "subs",
-          });
-        } else {
-          void requestPurchase({ request: { ios: { sku } }, type: "subs" });
-        }
+        run();
       } catch (e) {
         setBusy(false);
         setError(e instanceof Error ? e.message : "The purchase could not be started.");
       }
     },
-    [requestPurchase, subscriptions]
+    []
   );
+
+  // Build the per-platform plan options into one uniform list for rendering.
+  const options = useMemo<PlanOption[]>(() => {
+    if (Platform.OS === "android") {
+      const product = subscriptions.find((s) => s.id === ANDROID_PRODUCT_SKU);
+      const offers = product?.platform === "android" ? product.subscriptionOffers ?? [] : [];
+      const seen = new Set<string>();
+      const out: PlanOption[] = [];
+      for (const offer of offers) {
+        const basePlanId = offer.basePlanIdAndroid;
+        const offerToken = offer.offerTokenAndroid;
+        // One entry per base plan; skip promo offers layered on the same plan.
+        if (!basePlanId || !offerToken || seen.has(basePlanId)) continue;
+        seen.add(basePlanId);
+        out.push({
+          key: offer.id,
+          title: periodLabel(offer.period?.unit, offer.period?.value) ?? basePlanId,
+          price: offer.displayPrice,
+          buy: () =>
+            startPurchase(() =>
+              void requestPurchase({
+                request: {
+                  android: {
+                    skus: [ANDROID_PRODUCT_SKU],
+                    subscriptionOffers: [{ sku: ANDROID_PRODUCT_SKU, offerToken }],
+                  },
+                },
+                type: "subs",
+              })
+            ),
+        });
+      }
+      return out;
+    }
+
+    // iOS: keep the two products in the declared order.
+    return IOS_SKUS.map((sku) => subscriptions.find((s) => s.id === sku))
+      .filter((s): s is NonNullable<typeof s> => Boolean(s))
+      .map((sub) => ({
+        key: sub.id,
+        title: IOS_SKU_TITLES[sub.id] ?? sub.title ?? sub.id,
+        price: sub.displayPrice,
+        buy: () => startPurchase(() => void requestPurchase({ request: { ios: { sku: sub.id } }, type: "subs" })),
+      }));
+  }, [subscriptions, requestPurchase, startPurchase]);
 
   const restore = useCallback(() => {
     setError(null);
@@ -158,10 +217,6 @@ export function AppStorePaywall({ visible, onClose, apiBaseUrl, sessionToken, on
     })();
   }, [restorePurchases, onPurchased]);
 
-  const ordered = PREMIUM_SKUS.map((sku) => subscriptions.find((s) => s.id === sku)).filter(
-    (s): s is NonNullable<typeof s> => Boolean(s)
-  );
-
   return (
     <Modal visible={visible} animationType="slide" transparent onRequestClose={onClose}>
       <View style={styles.backdrop}>
@@ -173,22 +228,22 @@ export function AppStorePaywall({ visible, onClose, apiBaseUrl, sessionToken, on
               Unlock every story, offline access, full practice and your saved words.
             </Text>
 
-            {!connected || ordered.length === 0 ? (
+            {!connected || options.length === 0 ? (
               <View style={styles.loading}>
                 <ActivityIndicator color="#f8c15c" />
                 <Text style={styles.loadingText}>Loading plans…</Text>
               </View>
             ) : (
-              ordered.map((sub) => (
+              options.map((opt) => (
                 <Pressable
-                  key={sub.id}
+                  key={opt.key}
                   disabled={busy}
-                  onPress={() => buy(sub.id)}
+                  onPress={opt.buy}
                   style={[styles.planCard, busy ? styles.disabled : null]}
                 >
                   <View style={styles.planText}>
-                    <Text style={styles.planTitle}>{sub.title || sub.displayName || sub.id}</Text>
-                    <Text style={styles.planPrice}>{sub.displayPrice}</Text>
+                    <Text style={styles.planTitle}>{opt.title}</Text>
+                    <Text style={styles.planPrice}>{opt.price}</Text>
                   </View>
                   <Text style={styles.planCta}>{busy ? "…" : "Choose"}</Text>
                 </Pressable>
