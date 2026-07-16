@@ -511,6 +511,10 @@ type RemoteContinueListeningItem = {
 };
 
 type MobilePreferences = {
+  /** Optional first name captured in onboarding; persisted to Clerk's
+   *  top-level firstName. Optional so existing preference literals that
+   *  predate it stay valid. */
+  firstName?: string | null;
   targetLanguages: string[];
   interests: string[];
   preferredLevel: string | null;
@@ -4612,7 +4616,7 @@ export function MobileLibraryShell(args: {
         body:
           dueFavoritesCount > 0
             ? `${dueFavoritesCount} due ${dueFavoritesCount === 1 ? "word is" : "words are"} waiting after your story.`
-            : `You already have a story in motion. A quick ${preferredPracticeMinutes}-minute review after reading will keep the rhythm alive.`,
+            : `You already have a story in motion. A quick ${preferredPracticeMinutes}-minute review after the story will keep the rhythm alive.`,
         primaryLabel: "Resume story",
         secondaryLabel: "Start review",
       };
@@ -4645,7 +4649,7 @@ export function MobileLibraryShell(args: {
     }
     return {
       title: "Grow the next review round",
-      body: `You are clear for now. Read one more story and save a few words to keep your ${preferredPracticeMinutes}-minute habit alive.`,
+      body: `You are clear for now. Open one more story and save a few words to keep your ${preferredPracticeMinutes}-minute habit alive.`,
       primaryLabel: "Practice all",
       secondaryLabel: "Open Journey",
     };
@@ -4940,7 +4944,7 @@ export function MobileLibraryShell(args: {
           subtitle: progress ? formatReadingProgressLabel(progress) ?? item.book.title : item.book.title,
           coverUrl: getCoverUrl(item.story.cover ?? item.story.coverUrl ?? item.book.cover),
           meta: `${formatLanguage(item.story.language ?? item.book.language)} · ${formatTopic(item.story.topic ?? item.book.topic)}`,
-          badge: offlineStoriesById.has(item.story.id) ? "Offline ready" : item.story.audio ? "Audio" : "Read",
+          badge: offlineStoriesById.has(item.story.id) ? "Offline ready" : item.story.audio ? "Audio" : "Text",
           progressLabel: formatReadingProgressLabel(progress),
           onPress: () => setSelection(item),
         };
@@ -4981,7 +4985,7 @@ export function MobileLibraryShell(args: {
           subtitle: progress ? formatReadingProgressLabel(progress) ?? selection.book.title : selection.book.title,
           coverUrl: getCoverUrl(selection.story.cover || remote.coverUrl || selection.book.cover),
           meta: `${formatLanguage(remote.language ?? selection.story.language ?? selection.book.language)} · ${formatTopic(remote.topic ?? selection.story.topic ?? selection.book.topic)}`,
-          badge: offlineStory ? "Offline ready" : remote.audioUrl ? "Audio ready" : "Read",
+          badge: offlineStory ? "Offline ready" : remote.audioUrl ? "Audio ready" : "Text",
           progressLabel: formatReadingProgressLabel(progress),
           onPress: () =>
             setSelection({
@@ -5029,7 +5033,7 @@ export function MobileLibraryShell(args: {
         subtitle: selection.book.title,
         coverUrl: getCoverUrl(selection.story.cover || remote.coverUrl || selection.book.cover),
         meta: `${formatLanguage(remote.language ?? selection.story.language ?? selection.book.language)} · ${formatTopic(remote.topic ?? selection.story.topic ?? selection.book.topic)}`,
-        badge: offlineStory ? "Offline ready" : remote.audioUrl ? "Audio ready" : "Read",
+        badge: offlineStory ? "Offline ready" : remote.audioUrl ? "Audio ready" : "Text",
         onPress: () =>
           setSelection({
             book: selection.book,
@@ -5076,7 +5080,7 @@ export function MobileLibraryShell(args: {
         meta: [story.level ? LEVEL_LABELS[toDomainLevel(story.level)] : null, formatTopic(story.topic ?? "")]
           .filter(Boolean)
           .join(" · "),
-        badge: story.audioUrl ? "Audio ready" : "Read",
+        badge: story.audioUrl ? "Audio ready" : "Text",
         onPress: () => {
           void openStandaloneStory(story);
         },
@@ -5101,7 +5105,7 @@ export function MobileLibraryShell(args: {
           meta: [story.level ? LEVEL_LABELS[toDomainLevel(story.level)] : null, formatTopic(story.topic ?? "")]
             .filter(Boolean)
             .join(" · "),
-          badge: story.audioUrl ? "Audio ready" : "Read",
+          badge: story.audioUrl ? "Audio ready" : "Text",
           onPress: () => {
             void openStandaloneStory(story);
           },
@@ -6522,7 +6526,7 @@ export function MobileLibraryShell(args: {
           syncCreatedStoryState(pending.lastKnownStory, {
             notice:
               pending.lastKnownStory.audioStatus === "pending"
-                ? "Audio is still being prepared. You can keep reading now."
+                ? "Audio is still being prepared. You can dive in now."
                 : "Resumed your last generated story.",
           });
         }
@@ -10179,7 +10183,7 @@ export function MobileLibraryShell(args: {
                 subtitle: book.title,
                 coverUrl: getCoverUrl(story.cover ?? story.coverUrl ?? book.cover),
                 meta: `${formatLanguage(story.language ?? book.language)} · ${formatTopic(story.topic ?? book.topic)}`,
-                badge: story.audio ? "Audio ready" : "Read",
+                badge: story.audio ? "Audio ready" : "Text",
                 onPress: () => openSelection(resolved),
               }
             : null;
@@ -10589,7 +10593,7 @@ export function MobileLibraryShell(args: {
     return [
       {
         key: "quick-reads",
-        title: "Quick reads",
+        title: "Quick stories",
         subtitle: "< 5 min",
         count: quickReads,
         countLabel: `${quickReads} stories`,
@@ -11330,7 +11334,7 @@ export function MobileLibraryShell(args: {
           </Pressable>
           <View style={styles.sectionHeader}>
             <View>
-              <Text style={styles.sectionEyebrow}>{expandedExploreSection === "stories" ? "Read" : expandedExploreSection === "books" ? "Library" : "Standalone"}</Text>
+              <Text style={styles.sectionEyebrow}>{expandedExploreSection === "stories" ? "Stories" : expandedExploreSection === "books" ? "Library" : "Standalone"}</Text>
               <Text style={styles.sectionTitle}>{expandedExploreSection === "stories" ? `All stories (${filteredExploreStories.length})` : expandedExploreSection === "books" ? `All books (${filteredExploreBooks.length})` : `All individual stories (${filteredStandaloneStoryCards.length})`}</Text>
             </View>
           </View>
@@ -11454,7 +11458,7 @@ export function MobileLibraryShell(args: {
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
               <View>
-                <Text style={styles.exploreSectionEyebrow}>Listen & read</Text>
+                <Text style={styles.exploreSectionEyebrow}>Listen & explore</Text>
                 <Text style={styles.exploreSectionTitle}>Books</Text>
               </View>
               <View style={styles.sectionHeaderActions}>
@@ -13047,7 +13051,7 @@ export function MobileLibraryShell(args: {
                       ))}
                     </View>
                     <Text style={styles.favoriteMeta} numberOfLines={1}>
-                      {synonymsLine ?? item.storyTitle ?? item.translation ?? "Saved from reader"}
+                      {synonymsLine ?? item.storyTitle ?? item.translation ?? "Saved from a story"}
                     </Text>
                   </View>
                   <Pressable
@@ -13192,7 +13196,7 @@ export function MobileLibraryShell(args: {
         <View style={styles.heroHeaderRow}>
           <View style={styles.heroTextBlock}>
             <Text style={styles.eyebrow}>Saved</Text>
-            <Text style={styles.title}>Your saved reading</Text>
+            <Text style={styles.title}>Your saved stories</Text>
             <Text style={styles.subtitle}>Saved, synced and ready to resume.</Text>
           </View>
           <MenuTrigger onPress={() => setMenuOpen(true)} />
@@ -13204,7 +13208,7 @@ export function MobileLibraryShell(args: {
           <View style={styles.sectionHeader}>
             <View>
               <Text style={styles.sectionEyebrow}>Continue</Text>
-              <Text style={styles.sectionTitle}>Continue reading</Text>
+              <Text style={styles.sectionTitle}>Continue</Text>
             </View>
           </View>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
@@ -13342,7 +13346,7 @@ export function MobileLibraryShell(args: {
         <View style={styles.sectionHeader}>
           <View>
             <Text style={styles.sectionEyebrow}>Saved stories</Text>
-            <Text style={styles.sectionTitle}>Your reading shelf</Text>
+            <Text style={styles.sectionTitle}>Your story shelf</Text>
           </View>
           <Text style={styles.helperText}>
             {savedStoryCards.length > 0 ? `${savedStoryCards.length} stories` : "Save stories to build your shelf"}
@@ -13708,7 +13712,7 @@ export function MobileLibraryShell(args: {
       planLabel={`Current plan: ${remoteEntitlement?.plan ?? sessionPlan ?? "free"}`}
       planBody={
         effectivePlan === "polyglot"
-          ? "Creation, reading, favorites and practice are unlocked."
+          ? "Creation, stories, favorites and practice are unlocked."
           : "Manage your plan from here. Free users can review available options."
       }
       billingCta={effectivePlan === "free" || effectivePlan === "basic" ? "See plans" : "Manage billing"}
@@ -13926,7 +13930,7 @@ export function MobileLibraryShell(args: {
                   ? "Your story is ready, but audio could not be generated this time."
                   : createdStory.audioStatus === "pending"
                     ? "Text is ready now. Audio is still being prepared in the background."
-                    : "Your story is ready to open in the reader.",
+                    : "Your story is ready to open.",
               onOpenReader: () => openSelection(createSelectionFromGeneratedStory(createdStory)),
               onPractice: () => void openStoryPractice(createSelectionFromGeneratedStory(createdStory)),
               onRefresh: () => void refreshCreatedStory(createdStory.id),
@@ -14381,7 +14385,7 @@ export function MobileLibraryShell(args: {
       return {
         title: activeJourneyNextStory.completed ? "Resume story" : "Continue story",
         body: activeJourneyNextStory.title,
-        cta: activeJourneyNextStory.completed ? "Open story" : "Read next",
+        cta: activeJourneyNextStory.completed ? "Open story" : "Next story",
         onPress: () => openJourneyStory(activeJourneyNextStory),
       };
     }
@@ -14406,7 +14410,7 @@ export function MobileLibraryShell(args: {
     if (activeJourneyTopic.complete && !activeJourneyTopic.practiced) {
       return {
         title: "Practice topic",
-        body: "You finished the reading. Lock it in with focused practice now.",
+        body: "You finished the story. Lock it in with focused practice now.",
         cta: "Open practice",
         onPress: () => {
           void openJourneyPractice({
@@ -15584,7 +15588,7 @@ export function MobileLibraryShell(args: {
             <View style={[styles.heroTextBlock, styles.journeyHeroTextBlock]}>
               <Text style={styles.sectionEyebrow}>{activeJourneyLevel?.title ?? "Journey"}</Text>
               <Text style={styles.journeyHeroTitle}>{activeJourneyTopic.label}</Text>
-              <Text style={styles.journeyHeroSubtitle}>Read the stories, practice, then clear the checkpoint.</Text>
+              <Text style={styles.journeyHeroSubtitle}>Go through the stories, practice, then clear the checkpoint.</Text>
             </View>
           </View>
         </View>
@@ -16785,7 +16789,7 @@ export function MobileLibraryShell(args: {
     const selectedBookDescription =
       selectedBook.description?.trim() ||
       selectedBook.subtitle?.trim() ||
-      "A rich collection of stories for daily reading and listening practice.";
+      "A rich collection of stories for daily practice and listening.";
     const selectedBookNeedsDescriptionToggle = selectedBookDescription.length > 180;
     const averageMinutes = Math.max(
       1,
@@ -16904,7 +16908,7 @@ export function MobileLibraryShell(args: {
           key: `book-story-${story.id}`,
           title: story.title,
           subtitle: selectedBook.title,
-          meta: `${readMinutes} min read · ${topic}`,
+          meta: `${readMinutes} min · ${topic}`,
           coverUrl: getCoverUrl(story.cover ?? story.coverUrl ?? selectedBook.cover),
           qaLabel: index === 0 ? "qa-book-story-row-0" : `qa-book-story-row-${story.id}`,
           onPress: () => openSelection(resolved),
@@ -17014,6 +17018,7 @@ export function MobileLibraryShell(args: {
         : "Intermediate";
 
     await saveOnboardingPreferences({
+      firstName: payload.firstName,
       targetLanguages: payload.languages,
       // The picker now lets the user choose US vs UK English. When the
       // primary language has a regional flag we persist that choice as
