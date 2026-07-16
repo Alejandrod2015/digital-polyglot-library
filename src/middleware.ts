@@ -145,6 +145,14 @@ export default clerkMiddleware(async (auth, req) => {
     return NextResponse.next();
   }
 
+  // Google Play RTDN is a Pub/Sub push authenticated with a Google-signed OIDC
+  // bearer token. Clerk's middleware would try to parse that `Authorization:
+  // Bearer` as its own session JWT and crash (500) before the handler runs. The
+  // route verifies the OIDC token itself, so let it through untouched.
+  if (url === "/api/billing/google-play/rtdn") {
+    return NextResponse.next();
+  }
+
   if (isProd && url.startsWith("/studio/metrics")) {
     const { userId } = await auth();
     if (userId) {

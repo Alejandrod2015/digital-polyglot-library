@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { verifyGooglePlaySubscriptionPurchase } from "@/lib/googlePlay";
-import { syncClerkPlanFromEntitlement } from "@/lib/billingClerk";
+import { verifyPubSubOidcToken } from "@/lib/googlePubSub";
+import { applyGooglePlayVerifiedPurchase } from "@/lib/googlePlayEntitlement";
 
 export const runtime = "nodejs";
 
@@ -34,6 +34,15 @@ function decodePubSubData(data: string) {
 }
 
 export async function POST(req: Request) {
+  // Authenticate the caller before doing anything else: the push must carry a
+  // valid Google-signed OIDC token, or this endpoint would accept forged
+  // renewal/cancellation notifications from anyone.
+  try {
+    await verifyPubSubOidcToken(req.headers.get("authorization"));
+  } catch {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   try {
     const body = (await req.json()) as PubSubPushBody;
     const rawData = body.message?.data;
@@ -44,6 +53,13 @@ export async function POST(req: Request) {
 
     const decoded = decodePubSubData(rawData);
     const payload = JSON.parse(decoded) as GooglePlayRtdnPayload;
+
+    // Ignore notifications for any other app that might share this endpoint.
+    const expectedPackage = process.env.GOOGLE_PLAY_PACKAGE_NAME?.trim();
+    if (expectedPackage && payload.packageName && payload.packageName !== expectedPackage) {
+      return NextResponse.json({ ok: true, ignored: true });
+    }
+
     const purchaseToken =
       payload.subscriptionNotification?.purchaseToken ??
       payload.oneTimeProductNotification?.purchaseToken ??
@@ -64,22 +80,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: true, ignored: true });
     }
 
-    const verified = await verifyGooglePlaySubscriptionPurchase(purchaseToken);
-    const entitlement = await prisma.billingEntitlement.update({
-      where: { userId: existing.userId },
-      data: {
-        plan: verified.plan,
-        status: verified.status,
-        productId: verified.productId,
-        orderId: verified.orderId,
-        willRenew: verified.willRenew,
-        renewedAt: new Date(),
-        expiresAt: verified.expiresAt,
-        rawPayload: verified.rawPayload,
-      },
-    });
-
-    await syncClerkPlanFromEntitlement(existing.userId, entitlement);
+    // Re-verify against Google and re-apply, sharing the same verify + upsert +
+    // Clerk-sync path as the verify/sync routes.
+    await applyGooglePlayVerifiedPurchase(existing.userId, purchaseToken);
 
     return NextResponse.json({ ok: true });
   } catch (error) {

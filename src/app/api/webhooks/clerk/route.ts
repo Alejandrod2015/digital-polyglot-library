@@ -2,6 +2,7 @@ import { Webhook } from "svix";
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { sendWelcomeEmail } from "@/lib/email";
+import { deleteAllUserData } from "@/lib/deleteUserData";
 
 type UserDeletedEvent = {
   type: "user.deleted";
@@ -67,34 +68,11 @@ export async function POST(req: Request) {
 
     if (isUserDeletedEvent(eventUnknown)) {
       const userId = eventUnknown.data.id;
-
-      await prisma.$transaction([
-        prisma.favorite.deleteMany({ where: { userId } }),
-        prisma.libraryBook.deleteMany({ where: { userId } }),
-        prisma.libraryStory.deleteMany({ where: { userId } }),
-        prisma.userStory.deleteMany({ where: { userId } }),
-        prisma.claimToken.updateMany({
-          where: { redeemedBy: userId },
-          data: { redeemedBy: null },
-        }),
-      ]);
-
-      // Revoke any still-valid mobile session JWTs for this user. The token is
-      // stateless (signature + exp only), so deleting the data above does NOT
-      // cut off access; getActiveMobileSession reads this table to do that.
-      // Best-effort + outside the transaction so that, if this code ships
-      // before the RevokedUser migration is applied, a missing table can never
-      // roll back the data cleanup above. upsert keeps a re-delete idempotent.
-      try {
-        await prisma.revokedUser.upsert({
-          where: { userId },
-          update: {},
-          create: { userId },
-        });
-      } catch (revokeErr) {
-        console.error(`⚠️ Could not record revocation for ${userId}:`, revokeErr);
-      }
-
+      // Single source of truth for the erase (shared with the user-facing
+      // /api/user/delete endpoint). Previously this block only cleared 4 of the
+      // 10 per-user tables, orphaning favorite collections, metrics, email
+      // prefs, continue-listening and billing rows.
+      await deleteAllUserData(userId);
       console.log(`🧹 Datos del usuario ${userId} eliminados/anonimizados + sesión revocada`);
     }
 
