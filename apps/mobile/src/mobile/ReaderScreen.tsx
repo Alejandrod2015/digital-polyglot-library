@@ -37,6 +37,17 @@ import { apiFetch } from "../lib/api";
 import { mobileConfig } from "../config";
 import { extractStoryPlainText } from "../../../../src/lib/storyPlainText";
 
+// Piloto tap-any-word: cada palabra FUERA del vocab curado puede tener un
+// "quick lookup" gloss ({ g: traducción EN, t?: tipo, r?: register }), servido
+// por /api/mobile/tap-glosses por slug. `glossTokenFromText` normaliza el
+// texto visible de un token a la key del bundle (minúsculas, sin puntuación),
+// igual que `tokenFromText` en TapGlossLayer (web), para que matcheen.
+type TapGloss = { g: string; t?: string; r?: string };
+function glossTokenFromText(text: string): string {
+  const m = text.toLowerCase().match(/\p{L}+(?:-\p{L}+)*/u);
+  return m ? m[0] : "";
+}
+
 type StoryBlock = {
   type: "paragraph" | "quote";
   text: string;
@@ -581,6 +592,11 @@ function renderKaraokeParagraph(args: {
   // dedup logic so karaoke stories don't look denser than non-karaoke
   // ones for the same vocab list.
   alreadyHighlighted: Set<string>;
+  // Piloto tap-any-word: glosses "quick lookup" por palabra (fuera del vocab
+  // curado). Cualquier palabra NO-vocab cuyo token esté en `glosses` se
+  // vuelve tapeable y dispara `onQuickLookup` con su traducción.
+  glosses: Record<string, TapGloss>;
+  onQuickLookup: (word: string, gloss: TapGloss, contextSentence?: string) => void;
 }) {
   const {
     paragraph,
@@ -592,6 +608,8 @@ function renderKaraokeParagraph(args: {
     onWordPress,
     variant,
     alreadyHighlighted,
+    glosses,
+    onQuickLookup,
   } = args;
   const baseTextStyle = variant === "quote" ? styles.quoteParagraph : styles.paragraph;
 
@@ -787,13 +805,35 @@ function renderKaraokeParagraph(args: {
         </Pressable>
       );
     } else {
-      nodes.push(
-        <View key={`${paragraphKey}-w-${i}`} style={styles.karaokeWordOuter}>
-          <View style={containerStyle}>
-            <Text style={wordTextStyle}>{w.text}</Text>
+      // Piloto tap-any-word: palabra FUERA del vocab curado. Si su token
+      // tiene un gloss "quick lookup", la hacemos tapeable (misma estructura
+      // de <View> que el resto para no alterar la línea) sin pill de color:
+      // el color se reserva para el story-vocab. Sin gloss, queda como texto
+      // no interactivo, igual que antes.
+      const glossToken = glossTokenFromText(w.text);
+      const gloss = glossToken ? glosses[glossToken] : undefined;
+      if (gloss) {
+        nodes.push(
+          <Pressable
+            key={`${paragraphKey}-w-${i}`}
+            style={styles.karaokeWordOuter}
+            hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
+            onPress={() => onQuickLookup(w.text, gloss, paragraph.text)}
+          >
+            <View style={containerStyle}>
+              <Text style={wordTextStyle}>{w.text}</Text>
+            </View>
+          </Pressable>
+        );
+      } else {
+        nodes.push(
+          <View key={`${paragraphKey}-w-${i}`} style={styles.karaokeWordOuter}>
+            <View style={containerStyle}>
+              <Text style={wordTextStyle}>{w.text}</Text>
+            </View>
           </View>
-        </View>
-      );
+        );
+      }
     }
 
     cursor = w.charEnd;
@@ -990,6 +1030,10 @@ export function ReaderScreen(args: {
   // Every other story keeps the existing renderHighlightedParagraph path.
   const [wordTimings, setWordTimings] = useState<AudioWordTimingsPayload | null>(null);
   const [activeWordIndex, setActiveWordIndex] = useState<number | null>(null);
+  // Piloto tap-any-word: glosses "quick lookup" de esta historia, fetch por
+  // slug desde /api/mobile/tap-glosses. Vacío mientras carga o si el journey
+  // aún no tiene bundle (el reader degrada a solo story-vocab).
+  const [tapGlosses, setTapGlosses] = useState<Record<string, TapGloss>>({});
   // Snapshot of the last NativeAudioPlayer tick (it fires every 500ms).
   // We interpolate between ticks so words shorter than the player update
   // interval (e.g. German "in" at ~160ms) still get highlighted.
@@ -1042,6 +1086,31 @@ export function ReaderScreen(args: {
       cancelled = true;
     };
   }, [story.slug, sessionToken, cachedWordTimingsRaw]);
+
+  // Piloto tap-any-word: trae los glosses "quick lookup" de esta historia.
+  // Fetch best-effort; si falla o el journey no tiene bundle, `tapGlosses`
+  // queda {} y el reader muestra solo el vocab curado (degradación limpia).
+  useEffect(() => {
+    let cancelled = false;
+    setTapGlosses({});
+    (async () => {
+      try {
+        const data = await apiFetch<{ glosses?: Record<string, TapGloss> }>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: `/api/mobile/tap-glosses?slug=${encodeURIComponent(story.slug)}`,
+          method: "GET",
+          token: sessionToken,
+          timeoutMs: 8000,
+        });
+        if (!cancelled && data?.glosses) setTapGlosses(data.glosses);
+      } catch {
+        // silent: degrade to story-vocab only
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [story.slug, sessionToken]);
 
   // wordTimings reales del backend cuando estén disponibles; sino,
   // un payload sintético tokenizado del texto local. Garantiza que
@@ -1245,7 +1314,12 @@ export function ReaderScreen(args: {
       ? story.audio
       : preferredAudioUrl;
   const isOfflineAudio = typeof audioUrl === "string" && audioUrl.startsWith("file://");
-  const [selectedVocab, setSelectedVocab] = useState<VocabItem | null>(null);
+  // El popup se reusa para dos fuentes: el vocab curado (definición completa)
+  // y el "quick lookup" del piloto tap-any-word (gloss). `quickLookup` marca
+  // la segunda para mostrar el chip correcto en la burbuja.
+  const [selectedVocab, setSelectedVocab] = useState<
+    (VocabItem & { quickLookup?: boolean }) | null
+  >(null);
   // Scale spring for the vocab panel "Save" button. Pops the button
   // when the user taps to favorite a word so the action feels
   // tactile, matching the bookmark / download micro-animations in
@@ -1917,6 +1991,31 @@ export function ReaderScreen(args: {
                     },
                     variant: "paragraph",
                     alreadyHighlighted: karaokeAlreadyHighlighted,
+                    glosses: tapGlosses,
+                    onQuickLookup: (word, gloss, contextSentence) => {
+                      // Reusa el mismo popup del vocab curado, marcado como
+                      // quickLookup para mostrar el chip "Quick lookup" y NO
+                      // el de tipo curado. La traducción vive en gloss.g.
+                      setSelectedVocab({
+                        word,
+                        definition: gloss.g,
+                        type: gloss.t,
+                        register: gloss.r,
+                        note: contextSentence,
+                        quickLookup: true,
+                      });
+                      onTrackReaderEvent?.("vocab_clicked", {
+                        storySlug: story.slug ?? story.id,
+                        bookSlug: book.slug,
+                        metadata: {
+                          word,
+                          wordType: gloss.t ?? null,
+                          language: book.language ?? null,
+                          variant: book.variant ?? null,
+                          source: "quick_lookup",
+                        },
+                      });
+                    },
                   })}
                 </Pressable>
               ));
@@ -2042,6 +2141,12 @@ export function ReaderScreen(args: {
               <View style={styles.vocabBubbleHeader}>
                 <View style={styles.vocabBubbleTitleStack}>
                   <Text style={styles.vocabBubbleWord}>{selectedVocab.word}</Text>
+                  {selectedVocab.quickLookup ? (
+                    <View style={styles.vocabBubbleQuickLookupBadge}>
+                      <Feather name="search" size={10} color="#cbd5e1" />
+                      <Text style={styles.vocabBubbleQuickLookupText}>Quick lookup</Text>
+                    </View>
+                  ) : null}
                   {(() => {
                     // Small type badge under the word (Verb / Noun / etc.)
                     // Tinted with the same hue family as the inline pill so
@@ -2845,6 +2950,27 @@ const styles = StyleSheet.create({
   },
   vocabBubbleTypeBadgeText: {
     color: "#ffffff",
+    fontSize: 11,
+    fontWeight: "700",
+    letterSpacing: 0.4,
+    textTransform: "uppercase",
+  },
+  // Chip "Quick lookup" (piloto tap-any-word): gris neutro para distinguir
+  // una palabra glosada on-the-fly del vocab curado (que lleva su color de
+  // tipo). Mismo lenguaje visual que el chip Quick lookup del reader web.
+  vocabBubbleQuickLookupBadge: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 999,
+    marginTop: 4,
+    backgroundColor: "rgba(148, 163, 184, 0.28)",
+  },
+  vocabBubbleQuickLookupText: {
+    color: "#cbd5e1",
     fontSize: 11,
     fontWeight: "700",
     letterSpacing: 0.4,
