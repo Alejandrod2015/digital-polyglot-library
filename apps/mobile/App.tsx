@@ -17,6 +17,7 @@ SplashScreen.preventAutoHideAsync().catch(() => {
 import {
   Image,
   Linking,
+  Platform,
   SafeAreaView,
   StatusBar,
   StyleSheet,
@@ -584,6 +585,13 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: "#0c1626",
+    // SafeAreaView de react-native CORE no aplica insets en Android (ahí es
+    // un View normal; solo funciona en iOS), y react-native-safe-area-context
+    // no está instalado. Sin esto, en Android TODO el contenido del shell
+    // (home, journey, practice, settings…) arranca pegado bajo la barra de
+    // estado: el "problema de márgenes". Aplicamos el inset del status bar a
+    // mano en Android; en iOS lo maneja el SafeAreaView, por eso 0 (no duplicar).
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight ?? 0 : 0,
   },
   authContainer: {
     flex: 1,

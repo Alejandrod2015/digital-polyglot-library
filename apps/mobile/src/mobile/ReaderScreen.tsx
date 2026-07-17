@@ -3,10 +3,8 @@ import {
   Animated,
   AppState,
   Easing,
-  Platform,
   Pressable,
   ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   View,
@@ -14,10 +12,6 @@ import {
   type NativeSyntheticEvent,
 } from "react-native";
 
-// Top inset for the status bar. react-native-safe-area-context isn't installed,
-// so on Android we reserve StatusBar.currentHeight; iOS keeps 0 (unchanged).
-// Fixes the header + floating back button rendering under the status bar.
-const TOP_INSET = Platform.OS === "android" ? StatusBar.currentHeight ?? 0 : 0;
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   formatCefrLevel,
@@ -642,11 +636,36 @@ function renderKaraokeParagraph(args: {
     if (w.charStart > cursor) {
       const gap = payloadText.slice(cursor, w.charStart).replace(/\n/g, " ");
       if (gap) {
-        nodes.push(
-          <Text key={`${paragraphKey}-gap-${key++}`} style={baseTextStyle}>
-            {gap}
-          </Text>
-        );
+        // La puntuación (comas/puntos) vive en estos "gaps" entre palabras.
+        // Si el gap se renderiza como <Text> suelto, en Android se sienta en
+        // la baseline mientras las palabras (envueltas en <View> inline)
+        // cuelgan por su borde inferior: la puntuación queda visiblemente más
+        // abajo que el texto. Fix: separamos los espacios (siguen como <Text>
+        // para que el salto de línea ocurra en ellos) de los tramos de
+        // puntuación, y a estos los envolvemos en la MISMA estructura de
+        // <View> que las palabras, para que cuelguen idéntico y queden
+        // alineados con el texto.
+        const gapParts = gap.match(/\s+|\S+/g) ?? [gap];
+        for (const part of gapParts) {
+          if (/^\s+$/.test(part)) {
+            nodes.push(
+              <Text key={`${paragraphKey}-gap-${key++}`} style={baseTextStyle}>
+                {part}
+              </Text>
+            );
+          } else {
+            nodes.push(
+              <View
+                key={`${paragraphKey}-gap-${key++}`}
+                style={styles.karaokeWordOuter}
+              >
+                <View style={styles.karaokeWordContainerPlain}>
+                  <Text style={styles.karaokeWordText}>{part}</Text>
+                </View>
+              </View>
+            );
+          }
+        }
       }
     }
 
@@ -2319,7 +2338,7 @@ const styles = StyleSheet.create({
   container: {
     gap: 10,
     paddingHorizontal: 18,
-    paddingTop: 6 + TOP_INSET,
+    paddingTop: 6,
     paddingBottom: 172,
   },
   containerGrow: {
@@ -2327,7 +2346,7 @@ const styles = StyleSheet.create({
   },
   floatingBackButton: {
     position: "absolute",
-    top: 18 + TOP_INSET,
+    top: 18,
     left: 14,
     width: 40,
     height: 40,

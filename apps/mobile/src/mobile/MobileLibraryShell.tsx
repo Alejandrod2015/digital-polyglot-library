@@ -16204,8 +16204,6 @@ export function MobileLibraryShell(args: {
                               <Text
                                 style={styles.journeyNodePillLabel}
                                 numberOfLines={2}
-                                adjustsFontSizeToFit
-                                minimumFontScale={0.82}
                               >
                                 {pillLabel}
                               </Text>
@@ -17221,11 +17219,16 @@ export function MobileLibraryShell(args: {
         // tintColor matches the warm cream accent already used in other
         // shell ornaments (offline banner dot etc.).
         refreshControl={
-          <RefreshControl
-            refreshing={pullRefreshing}
-            onRefresh={onPullRefresh}
-            tintColor="#f5e0b5"
-          />
+          // Pull-to-refresh SOLO en iOS, donde es el gesto nativo esperado.
+          // En Android el spinner circular que baja al arrastrar se siente
+          // "web"/ajeno al patrón nativo, así que ahí no montamos RefreshControl.
+          Platform.OS === "ios" ? (
+            <RefreshControl
+              refreshing={pullRefreshing}
+              onRefresh={onPullRefresh}
+              tintColor="#f5e0b5"
+            />
+          ) : undefined
         }
         // Sticky nativo iOS sólo en path mode. Los hijos del
         // ScrollView se generan con `Children.toArray(...)` justo
@@ -21104,9 +21107,13 @@ const styles = StyleSheet.create({
   },
   journeyNodePillLabel: {
     color: "#ffffff",
-    fontSize: 13,
+    // fontSize 13 + letterSpacing 0.6 hacía que compuestos alemanes largos
+    // ("Bewerbungsgespräch") no cupieran en las cards angostas del path y se
+    // partieran a mitad de palabra. Bajamos a 12 y casi eliminamos el
+    // letterSpacing para ganar ancho real por línea sin re-maquetar el path.
+    fontSize: 12,
     fontWeight: "900",
-    letterSpacing: 0.6,
+    letterSpacing: 0.1,
   },
   journeyNodePillLabelNext: {
     color: "#0c1626",
