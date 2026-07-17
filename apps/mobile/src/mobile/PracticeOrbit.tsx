@@ -63,6 +63,14 @@ const MODE_COLORS: Record<PracticeModeKey, string> = {
   match: "#7dd3fc", // cyan
 };
 
+// Uniform card fill for all four skills. Each card used to fill with
+// `${color}1F` (12% of its own color); amber/pink read far brighter than
+// mint/cyan at the same alpha, so Meaning/Listening looked filled while
+// Context/Match looked nearly black — the four never matched. A shared
+// neutral fill evens them out; each mode's color still lives in the border,
+// icon chip and glow, so the ring-segment match is preserved.
+const SKILL_CARD_BG = "rgba(255,255,255,0.05)";
+
 const MODE_ICONS: Record<PracticeModeKey, "zap" | "message-circle" | "headphones" | "link"> = {
   meaning: "zap",
   context: "message-circle",
@@ -227,7 +235,7 @@ const SkillCard = memo(function SkillCard({
       style={({ pressed }) => [
         styles.skillCard,
         {
-          backgroundColor: `${color}1F`,
+          backgroundColor: SKILL_CARD_BG,
           borderColor: `${color}66`,
           shadowColor: color,
         },

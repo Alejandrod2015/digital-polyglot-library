@@ -307,7 +307,7 @@ export function AuthScreen(args: {
       <Header />
       <Text style={styles.headline}>Speak the{"\n"}real language.</Text>
       <Text style={styles.subtext}>
-        Sign in to keep your saved words, stories, and listening progress on iPhone.
+        Sign in to keep your saved words, stories, and listening progress on all your devices.
       </Text>
       <View style={styles.actions}>
         <View style={styles.socialRow}>

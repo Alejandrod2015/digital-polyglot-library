@@ -3,14 +3,21 @@ import {
   Animated,
   AppState,
   Easing,
+  Platform,
   Pressable,
   ScrollView,
+  StatusBar,
   StyleSheet,
   Text,
   View,
   type NativeScrollEvent,
   type NativeSyntheticEvent,
 } from "react-native";
+
+// Top inset for the status bar. react-native-safe-area-context isn't installed,
+// so on Android we reserve StatusBar.currentHeight; iOS keeps 0 (unchanged).
+// Fixes the header + floating back button rendering under the status bar.
+const TOP_INSET = Platform.OS === "android" ? StatusBar.currentHeight ?? 0 : 0;
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   formatCefrLevel,
@@ -219,23 +226,22 @@ function renderHighlightedParagraph(
         return word === canonicalKey || surface === canonicalKey;
       }) ?? null;
 
-    const highlightStyle =
-      alreadyHighlighted.has(canonicalKey) || !vocabItem ? baseTextStyle : styles.highlightedWord;
-
-    if (!alreadyHighlighted.has(canonicalKey)) {
+    // Una palabra de vocab se muestra con pill de color SOLO la primera
+    // vez que aparece en la historia; pero TODA aparición sigue siendo
+    // tapeable (idéntico al motor karaoke). Antes la repetición perdía el
+    // onPress y quedaba como texto muerto.
+    const isFirstHighlight = !!vocabItem && !alreadyHighlighted.has(canonicalKey);
+    if (vocabItem && !alreadyHighlighted.has(canonicalKey)) {
       alreadyHighlighted.add(canonicalKey);
     }
 
-    const isActualHighlight = highlightStyle !== baseTextStyle;
-
-    if (isActualHighlight) {
-      // Wrapper two-layer y styles IDÉNTICOS al path karaoke
-      // (`karaokeWordOuter` + `karaokeWordContainerVocab` +
-      // `karaokeWordTextVocabWhite`). Así cuando wordTimings carga y
-      // el render salta de legacy → karaoke, el pill no cambia ni
-      // posición ni color de texto: la transición es 0-frames visible.
-      // El texto se mantiene BLANCO sobre cyan (es lo que el diseño
-      // pidió y lo que karaoke ya hacía).
+    if (isFirstHighlight) {
+      // Primera aparición: wrapper two-layer y styles IDÉNTICOS al path
+      // karaoke (`karaokeWordOuter` + `karaokeWordContainerVocab` +
+      // `karaokeWordTextVocabWhite`). Así cuando wordTimings carga y el
+      // render salta de legacy → karaoke, el pill no cambia ni posición ni
+      // color de texto: la transición es 0-frames visible. El texto se
+      // mantiene BLANCO sobre cyan (lo que karaoke ya hacía).
       nodes.push(
         <View
           key={`${paragraphKey}-voc-${key++}`}
@@ -251,11 +257,27 @@ function renderHighlightedParagraph(
           </View>
         </View>
       );
-    } else {
+    } else if (vocabItem) {
+      // Repetición de una palabra de vocab: se ve como texto normal (el
+      // pill de color se muestra solo la 1a vez) pero SIGUE siendo
+      // tapeable. Un <Text> inline con onPress (sin el <View> wrapper) no
+      // altera la métrica de línea del párrafo, así que no toca el layout
+      // de los pills existentes.
       nodes.push(
         <Text
           key={`${paragraphKey}-voc-${key++}`}
-          style={highlightStyle}
+          style={baseTextStyle}
+          onPress={() => onWordPress(vocabItem, text)}
+        >
+          {matchedText}
+        </Text>
+      );
+    } else {
+      // Palabra fuera del vocab: texto plano, no tapeable.
+      nodes.push(
+        <Text
+          key={`${paragraphKey}-voc-${key++}`}
+          style={baseTextStyle}
         >
           {matchedText}
         </Text>
@@ -637,36 +659,48 @@ function renderKaraokeParagraph(args: {
       const phrase = matchVocabPhrase(vocabLookup, words, i, lastWordIdx + 1, maxPhrase);
       if (phrase) {
         const canon = (phrase.item.word ?? "").toLowerCase();
-        if (canon && !alreadyHighlighted.has(canon)) {
-          alreadyHighlighted.add(canon);
-          const firstTok = words[i];
-          const lastTok = words[phrase.spanEnd - 1];
-          const spanText = payloadText
-            .slice(firstTok.charStart, lastTok.charEnd)
-            .replace(/\n/g, " ");
-          nodes.push(
-            <Pressable
-              key={`${paragraphKey}-ph-${i}`}
-              style={styles.karaokeWordOuter}
-              hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
-              onPress={() => onWordPress(phrase.item, paragraph.text)}
+        const firstTok = words[i];
+        const lastTok = words[phrase.spanEnd - 1];
+        const spanText = payloadText
+          .slice(firstTok.charStart, lastTok.charEnd)
+          .replace(/\n/g, " ");
+        // Pill de color solo la 1a vez; la repetición se ve plana pero
+        // sigue siendo tapeable (antes hacía fall-through a tokens sueltos
+        // que, al no estar en el vocab individualmente, quedaban muertos).
+        const isFirstPhraseHit = !!canon && !alreadyHighlighted.has(canon);
+        if (isFirstPhraseHit) alreadyHighlighted.add(canon);
+        nodes.push(
+          <Pressable
+            key={`${paragraphKey}-ph-${i}`}
+            style={styles.karaokeWordOuter}
+            hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
+            onPress={() => onWordPress(phrase.item, paragraph.text)}
+          >
+            <View
+              style={
+                isFirstPhraseHit
+                  ? [
+                      styles.karaokeWordContainerVocab,
+                      { backgroundColor: vocabBackgroundForItem(phrase.item) },
+                    ]
+                  : styles.karaokeWordContainerPlain
+              }
             >
-              <View
-                style={[
-                  styles.karaokeWordContainerVocab,
-                  { backgroundColor: vocabBackgroundForItem(phrase.item) },
-                ]}
+              <Text
+                style={
+                  isFirstPhraseHit
+                    ? styles.karaokeWordTextVocabWhite
+                    : styles.karaokeWordText
+                }
               >
-                <Text style={styles.karaokeWordTextVocabWhite}>{spanText}</Text>
-              </View>
-            </Pressable>
-          );
-          cursor = lastTok.charEnd;
-          i = phrase.spanEnd;
-          continue;
-        }
-        // Already pilled earlier in the story: fall through so the tokens
-        // render plain (no re-pill), same as single-word dedup.
+                {spanText}
+              </Text>
+            </View>
+          </Pressable>
+        );
+        cursor = lastTok.charEnd;
+        i = phrase.spanEnd;
+        continue;
       }
     }
 
@@ -2285,7 +2319,7 @@ const styles = StyleSheet.create({
   container: {
     gap: 10,
     paddingHorizontal: 18,
-    paddingTop: 6,
+    paddingTop: 6 + TOP_INSET,
     paddingBottom: 172,
   },
   containerGrow: {
@@ -2293,7 +2327,7 @@ const styles = StyleSheet.create({
   },
   floatingBackButton: {
     position: "absolute",
-    top: 18,
+    top: 18 + TOP_INSET,
     left: 14,
     width: 40,
     height: 40,
@@ -2599,11 +2633,18 @@ const styles = StyleSheet.create({
     // touch the adjacent line's box. 40 (paragraph) - 24 (highlight) = 16 px
     // of guaranteed vertical separation.
     lineHeight: 40,
+    // Android adds asymmetric font padding to <Text> by default, which
+    // pushed the gap text (commas/periods between the inline <View> word
+    // pills) off the shared baseline: punctuation visibly floated above or
+    // below the line. Turning it off makes gap text and word text share the
+    // same metric so punctuation sits on the line. No-op on iOS.
+    includeFontPadding: false,
   },
   quoteParagraph: {
     color: "#e5eefb",
     fontSize: 20,
     lineHeight: 40,
+    includeFontPadding: false,
   },
   // Kept for the (rare) case where the renderer falls back to a plain
   // <Text> instead of the <View> pill (e.g. already-highlighted duplicates
@@ -2705,12 +2746,14 @@ const styles = StyleSheet.create({
     color: "#eef4ff",
     fontSize: 20,
     lineHeight: 24,
+    includeFontPadding: false,
   },
   karaokeWordTextDark: {
     // Dark navy text on warm amber active background.
     color: "#0e1727",
     fontSize: 20,
     lineHeight: 24,
+    includeFontPadding: false,
   },
   karaokeWordTextVocabBold: {
     // Dark navy text on sky-blue vocab background; same dark hue as
@@ -2720,6 +2763,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "700",
     lineHeight: 24,
+    includeFontPadding: false,
   },
   karaokeWordTextVocabWhite: {
     // White text variant for the vocab palette sandbox. Pairs with the
@@ -2728,6 +2772,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "700",
     lineHeight: 24,
+    includeFontPadding: false,
   },
   vocabOverlay: {
     position: "absolute",

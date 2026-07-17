@@ -16201,7 +16201,12 @@ export function MobileLibraryShell(args: {
                               )}
                             </View>
                             <View style={styles.journeyNodePillTextStack}>
-                              <Text style={styles.journeyNodePillLabel} numberOfLines={2}>
+                              <Text
+                                style={styles.journeyNodePillLabel}
+                                numberOfLines={2}
+                                adjustsFontSizeToFit
+                                minimumFontScale={0.82}
+                              >
                                 {pillLabel}
                               </Text>
                             </View>

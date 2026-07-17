@@ -86,10 +86,21 @@ const config = {
         // native splash. Setting it to ~270pt matches the
         // explicit pixel width in ExtendedSplash so the user
         // doesn't see a size-pop when the React-rendered splash
-        // takes over.
+        // takes over. (iOS: the wide wordmark renders fine.)
         backgroundColor: "#0c1626",
         image: "./assets/splash-logo-white.png",
         imageWidth: 270,
+        // Android 12+ forces the system splash into a centered
+        // ICON format (a bounded circle) and crops anything wider,
+        // which chopped the horizontal wordmark to "Digital Polyglo".
+        // So Android gets the SQUARE monogram (dP composited onto the
+        // same #0c1626 navy, no white box) which fits the icon slot
+        // without cropping; the full wordmark still appears a beat
+        // later via the React ExtendedSplash.
+        android: {
+          image: "./assets/splash-android.png",
+          imageWidth: 180,
+        },
       },
     ],
   ],
@@ -121,7 +132,7 @@ const config = {
     // para el IPA: Expo descarta app.json, y EAS `autoIncrement` no muta JS.
     // La TWA gastó el 1, así que la app Expo arranca en 2. Bumpear a mano en
     // cada subida a Play; Play rechaza un versionCode repetido o menor.
-    versionCode: 2,
+    versionCode: 3,
     adaptiveIcon: {
       // Android recorta el foreground a un círculo/squircle según el launcher y
       // solo respeta el 66% central, así que reusar `icon.png` (el mark llena
