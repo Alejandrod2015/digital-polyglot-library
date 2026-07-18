@@ -58,7 +58,7 @@ export type JourneySummary = {
 /** List journeys for the filter dropdown. */
 export async function listJourneysWithVocab(): Promise<JourneySummary[]> {
   const rows = await prisma.journey.findMany({
-    where: { status: { not: "archived" } },
+    where: { status: { notIn: ["archived", "draft"] } },
     select: {
       id: true,
       name: true,

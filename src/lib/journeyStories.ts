@@ -104,6 +104,8 @@ export async function getJourneyStoryBySlug(
       "cmrdqk484000032r4rt2vw4ej", // Friends ES C1 LATAM (in progress)
       "cmrdbz11t000032asrvo832i9", // Hanseat DE C1 (in progress; un-published 2026-07-09)
       "cmraj8ihq000032a6sghnrim9", // Traveler FR A0 Biarritz (archived; un-published 2026-07-09)
+      "cmroo4w4v0000324ow1o9qlcp", // Friends DE C1 germany (in progress)
+      "cmrpm0tra000032vgxcs33wrb", // Friends ES C1 colombia (in progress)
     ];
     const statusWhere =
       process.env.NODE_ENV !== "production"

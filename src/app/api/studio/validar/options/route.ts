@@ -28,7 +28,7 @@ export async function GET() {
   }
 
   const journeys = await prisma.journey.findMany({
-    where: { status: { not: "archived" } },
+    where: { status: { notIn: ["archived", "draft"] } },
     orderBy: { createdAt: "desc" },
     select: {
       id: true,

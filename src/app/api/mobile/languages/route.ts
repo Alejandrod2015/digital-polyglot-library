@@ -26,7 +26,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       include: { variants: { orderBy: { sortOrder: "asc" } } },
     }),
     prisma.journey.findMany({
-      where: { status: { not: "archived" } },
+      where: { status: { notIn: ["archived", "draft"] } },
       select: { language: true, variant: true },
     }),
   ]);

@@ -14,7 +14,7 @@ export async function GET() {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 
   const journeys = await prisma.journey.findMany({
-    where: { status: { not: "archived" } },
+    where: { status: { notIn: ["archived", "draft"] } },
     orderBy: { createdAt: "desc" },
     include: {
       stories: {

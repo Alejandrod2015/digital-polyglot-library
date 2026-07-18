@@ -497,8 +497,8 @@ function prettifyTopicLabel(slug: string): string {
 const PREVIEW_JOURNEY_ID = "cmqtnagxp0000324lf3u73vg1"; // German A0 (Traveler · Beginner), still archived/draft
 const PREVIEW_DRAFTS = process.env.NODE_ENV !== "production";
 const JOURNEY_STATUS_WHERE: Prisma.JourneyWhereInput = PREVIEW_DRAFTS
-  ? { OR: [{ status: { not: "archived" } }, { id: PREVIEW_JOURNEY_ID }] }
-  : { status: { not: "archived" } };
+  ? { OR: [{ status: { notIn: ["archived", "draft"] } }, { id: PREVIEW_JOURNEY_ID }] }
+  : { status: { notIn: ["archived", "draft"] } };
 const STORY_STATUS_WHERE: Prisma.JourneyStoryWhereInput = PREVIEW_DRAFTS
   ? { OR: [{ status: "published" }, { journeyId: PREVIEW_JOURNEY_ID }] }
   : { status: "published" };

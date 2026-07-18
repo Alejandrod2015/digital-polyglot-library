@@ -227,6 +227,7 @@ model QAReview {
 enum JourneyStatus {
   active
   completed
+  draft
   archived
 }
 
