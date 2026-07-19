@@ -80,6 +80,7 @@ import {
   journeyFlagVariant,
   journeyId,
   languageShortCode,
+  resolveActiveJourneyId,
   synthesizeJourneysFromLegacy,
   targetLanguagesFromJourneys,
 } from "./journeys";
@@ -2486,27 +2487,36 @@ export function MobileLibraryShell(args: {
       const stored = await loadStoredJourneys();
       if (stored && stored.journeys.length > 0) {
         setPreferences((current) => {
-          // The length guard protects the multi-variant `journeys`
-          // list: the server collapses it to one entry per language,
-          // so only let disk REPLACE the list when disk holds more
-          // entries than what we currently have.
-          const restoreList = current.journeys.length < stored.journeys.length;
-          const nextJourneys = restoreList ? stored.journeys : current.journeys;
-          // `activeJourneyId` must be restored REGARDLESS of the list
-          // guard. It's written to disk on every switch (network-
-          // independent), so disk is the last-known local truth for
-          // which journey the user was in. The old code only restored
-          // it alongside a fuller list, so a user who switched journeys
-          // offline (server POST failed) — or any offline cold start,
-          // or any server/disk divergence — landed back on the default
-          // journey instead of their last one. That's the "vuelve a un
-          // estado inicial" bug.
-          const storedActiveValid =
+          // Disk is written together (journeys[] + activeJourneyId) on
+          // every change, network-independent, so it's the last-known
+          // local truth for where the user was. Adopt disk's list when
+          // it's fuller than the server-derived one (multi-variant
+          // protection: the server may collapse it) OR when disk's last
+          // active journey exists on disk but is absent from the current
+          // list (server metadata was wiped/stale) — the disk snapshot
+          // is internally consistent, so we take it wholesale.
+          const storedActiveInStored =
             stored.activeJourneyId != null &&
-            nextJourneys.some((j) => j.id === stored.activeJourneyId);
-          const nextActiveId = storedActiveValid
-            ? stored.activeJourneyId
-            : current.activeJourneyId;
+            stored.journeys.some((j) => j.id === stored.activeJourneyId);
+          const storedActiveInCurrent =
+            stored.activeJourneyId != null &&
+            current.journeys.some((j) => j.id === stored.activeJourneyId);
+          const restoreList =
+            current.journeys.length < stored.journeys.length ||
+            (storedActiveInStored && !storedActiveInCurrent);
+          const nextJourneys = restoreList ? stored.journeys : current.journeys;
+          // Restore the active journey REGARDLESS of the list guard.
+          // The old code only restored it alongside a fuller list, so a
+          // user who switched journeys offline (server POST failed) — or
+          // any offline cold start, or any server/disk divergence —
+          // landed back on the default journey instead of their last
+          // one. That's the "vuelve a un estado inicial" bug. Disk wins
+          // over the current (server-derived) value here.
+          const nextActiveId = resolveActiveJourneyId(
+            stored.activeJourneyId,
+            nextJourneys,
+            current.activeJourneyId
+          );
           if (!restoreList && nextActiveId === current.activeJourneyId) {
             // List already fresh and active journey already matches
             // disk: nothing to do.
@@ -4034,7 +4044,18 @@ export function MobileLibraryShell(args: {
           journeyFocus: resolvedJourneyFocus,
         });
         const journeys = remoteJourneys.length > 0 ? remoteJourneys : synthesized.journeys;
-        const activeJourneyId = remoteActiveId ?? synthesized.activeJourneyId;
+        // Do NOT downgrade a still-valid selection when the server omits
+        // or nulls activeJourneyId (e.g. a re-hydrate after a metadata
+        // wipe). Prefer the server value, else the one we already hold
+        // (via ref, so the async closure isn't stale), else the default.
+        // Without this a re-hydrate could overwrite the disk-restored
+        // journey with journeys[0] and the disk-save effect would then
+        // persist that default — reopening on the wrong journey.
+        const activeJourneyId = resolveActiveJourneyId(
+          remoteActiveId,
+          journeys,
+          preferencesRef.current.activeJourneyId
+        );
         const normalized: MobilePreferences = {
           targetLanguages: normalizedTargetLanguages,
           interests: normalizeInterestSelection(next.interests ?? []),
@@ -4693,10 +4714,18 @@ export function MobileLibraryShell(args: {
     }
     return `Pick one fast mode and keep the loop moving. This setup is tuned for a ${preferredPracticeMinutes}-minute practice pass.`;
   }, [dueFavoritesCount, preferredPracticeMinutes, recommendedPracticeLabel]);
-  const activePracticeCard =
-    PRACTICE_MODE_CARDS.find((card) => card.key === activePracticeMode) ?? null;
   const visiblePracticeCards = PRACTICE_MODE_CARDS;
   const currentPracticeExercise = practiceExercises[practiceIndex] ?? null;
+  // El chrome de la sesión (eyebrow + título del header) refleja el
+  // ejercicio ACTUAL, no el modo global de la sesión. En sesiones mixtas
+  // (checkpoint) o cuando el modo recomendado no coincide con el ejercicio
+  // real, usar el modo global mostraba "Context" encima de un match, un
+  // meaning, etc. Mismo criterio que la webapp (src/app/practice/page.tsx,
+  // activePracticeMode/activeModeTheme por-ejercicio).
+  const activePracticeCard =
+    PRACTICE_MODE_CARDS.find(
+      (card) => card.key === (currentPracticeExercise?.mode ?? activePracticeMode)
+    ) ?? null;
   const currentPracticeFavoriteItem = useMemo<MobileFavoriteItem | null>(() => {
     if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return null;
     return {
@@ -7265,12 +7294,14 @@ export function MobileLibraryShell(args: {
 
   // (1) Reset del timer cuando cambia el ejercicio actual o cuando
   // arranca una sesión nueva. Multiple-choice usa 10 seg (una decisión
-  // rápida con 4 opciones). Match usa 15 seg porque requiere 4 toques
-  // (palabra+definición × 4 pares) y un poco más de lectura.
+  // rápida con 4 opciones). Match usa 20 seg porque son 4 pares
+  // (8 toques: palabra+definición × 4) más lectura; 10 seg era el timer
+  // corto del multiple-choice y quedaba muy justo para un match. Misma
+  // duración que la webapp (timerDurationForExercise).
   useEffect(() => {
     if (!activePracticeMode) return;
     const current = practiceExercises[practiceIndex];
-    const seconds = current?.kind === "match" ? 15 : 10;
+    const seconds = current?.kind === "match" ? 20 : 10;
     setPracticeTimerRemaining(seconds);
   }, [practiceIndex, activePracticeMode, practiceExercises]);
 
@@ -11822,7 +11853,7 @@ export function MobileLibraryShell(args: {
             </View>
             {(() => {
               // Badge "Xs" arriba a la derecha. Visible para
-              // multiple-choice (10 s) y para match (15 s). En match se
+              // multiple-choice (10 s) y para match (20 s). En match se
               // oculta cuando todos los pares ya están matched para no
               // distraer en los últimos 1-2 segundos antes del auto-advance.
               if (practiceCountdownActive || practiceComplete || practiceLaunchLoading) return null;
@@ -11847,7 +11878,7 @@ export function MobileLibraryShell(args: {
           </View>
 
           {/* Barra de timer del ejercicio: multiple-choice = 10 s,
-              match = 15 s. Misma regla de visibilidad que el badge. */}
+              match = 20 s. Misma regla de visibilidad que el badge. */}
           {(() => {
             if (practiceCountdownActive || practiceComplete || practiceLaunchLoading) return null;
             const kind = currentPracticeExercise?.kind;
@@ -11855,7 +11886,7 @@ export function MobileLibraryShell(args: {
             if (kind === "match" && currentPracticeExercise && matchedWords.length >= currentPracticeExercise.pairs.length) {
               return null;
             }
-            const totalSec = kind === "match" ? 15 : 10;
+            const totalSec = kind === "match" ? 20 : 10;
             return (
               <View style={styles.practiceTimerBarTrack}>
                 <View

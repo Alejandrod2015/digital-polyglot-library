@@ -359,6 +359,33 @@ export function findActiveJourney(
 }
 
 /**
+ * Resolve which journey id should be active after a server round-trip,
+ * without ever DOWNGRADING a still-valid selection to the synthesized
+ * default. Preference order:
+ *   1. `remoteActiveId` — the server's value, if it points at a journey
+ *      we actually hold.
+ *   2. `fallbackActiveId` — the value we already had in memory (or on
+ *      disk), if still valid. This is the guard: a hydrate/re-hydrate
+ *      whose response omits or nulls `activeJourneyId` (e.g. the server
+ *      metadata was wiped) must NOT clobber a good in-memory selection,
+ *      because the disk-save effect would then persist the default and
+ *      the next cold start would open the wrong journey.
+ *   3. `journeys[0]` — last-resort synthesized default.
+ * Returns null only when there are no journeys at all.
+ */
+export function resolveActiveJourneyId(
+  remoteActiveId: string | null | undefined,
+  journeys: Journey[],
+  fallbackActiveId: string | null | undefined
+): string | null {
+  const isHeld = (id: string | null | undefined): id is string =>
+    typeof id === "string" && journeys.some((j) => j.id === id);
+  if (isHeld(remoteActiveId)) return remoteActiveId;
+  if (isHeld(fallbackActiveId)) return fallbackActiveId;
+  return journeys[0]?.id ?? null;
+}
+
+/**
  * Stable deep-equality on a journey list; used by
  * `arePreferencesEqual()` so we don't fire spurious re-renders when
  * the server replays the same payload.
