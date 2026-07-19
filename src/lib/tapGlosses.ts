@@ -4,6 +4,7 @@ import germanFriends from "@/data/tapGlosses/german-friends.json";
 import frenchTraveler from "@/data/tapGlosses/french-traveler.json";
 import spanishFriends from "@/data/tapGlosses/spanish-friends.json";
 import spanishTravelerLatam from "@/data/tapGlosses/spanish-traveler-latam.json";
+import spanishFriendsColombia from "@/data/tapGlosses/spanish-friends-colombia.json";
 
 // Piloto "tap any word" (2026-07-06): glosses contextuales autorados por
 // historia/journey, precomputados en el repo. El reader envuelve cada
@@ -29,6 +30,7 @@ const BUNDLES: TapGlossBundle[] = [
   frenchTraveler as TapGlossBundle,
   spanishFriends as TapGlossBundle,
   spanishTravelerLatam as TapGlossBundle,
+  spanishFriendsColombia as TapGlossBundle,
 ];
 
 export function getTapGlossesForSlug(slug: string): Record<string, TapGloss> | null {
