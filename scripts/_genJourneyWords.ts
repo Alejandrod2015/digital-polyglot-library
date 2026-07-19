@@ -21,6 +21,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { getPublicObjectUrl, uploadPublicObject } from "../src/lib/objectStorage";
 import { practiceVoiceId } from "../src/lib/practiceVoice";
+import { assertVoiceApproved } from "../src/lib/approvedVoices";
 
 const prisma = new PrismaClient();
 const CACHE_VERSION = "v3"; // v3: dropped dynaudnorm — must match word-tts route
@@ -49,6 +50,7 @@ function probe(f: string): Promise<number> {
   return new Promise((res) => { const p = spawn("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f]); let o = ""; p.stdout.on("data", (c) => (o += c)); p.on("close", () => res(parseFloat(o.trim()) || 0)); });
 }
 async function tts(text: string, apiKey: string): Promise<Buffer> {
+  assertVoiceApproved(VOICE, "journey-words");
   const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE}`, {
     method: "POST", headers: { "xi-api-key": apiKey, "Content-Type": "application/json" },
     body: JSON.stringify({ text, model_id: MODEL, language_code: LANG, voice_settings: SETTINGS }),

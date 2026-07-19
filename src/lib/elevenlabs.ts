@@ -5,6 +5,7 @@ import { buildAudioSegmentsFromTranscript, type AudioSegment, type TranscriptSeg
 import { analyzeDeliveryQuality, analyzeTranscriptQuality, type AudioQaResult } from "@/lib/audioQa";
 import { alignAudioOnModal } from "@/lib/audioWordTimings";
 import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
+import { assertVoiceApproved } from "@/lib/approvedVoices";
 
 // Default ElevenLabs voice settings used across all journey TTS calls.
 //   stability=0.9        más alta que 0.8 anterior. Bajaba la incidencia
@@ -495,6 +496,8 @@ export async function generateAndUploadAudio(
     );
 
     // 🧠 Llamar a ElevenLabs API
+    // HARD GATE: production audio only with a user-approved voice.
+    assertVoiceApproved(selectedVoice, `narration:${normalizedLang}:${normalizedRegion}`);
     const response = await fetch(
       `https://api.elevenlabs.io/v1/text-to-speech/${selectedVoice}`,
       {
@@ -1037,6 +1040,8 @@ async function ttsSegment(args: {
   // lugar el caller pre-prepends audio tags ("[firm]", "[gentle]") en
   // `text` para dirigir la prosodia explícitamente.
 
+  // HARD GATE: production audio only with a user-approved voice.
+  assertVoiceApproved(args.voiceId, "section-render");
   const response = await fetch(
     `https://api.elevenlabs.io/v1/text-to-speech/${args.voiceId}`,
     {
