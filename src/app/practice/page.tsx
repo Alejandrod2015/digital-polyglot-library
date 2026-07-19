@@ -1836,9 +1836,18 @@ export default function PracticePage() {
   const playWordTts = useCallback(
     async (clipOwnerId: string, word: string, clip: PracticeAudioClip | null | undefined) => {
       if (!word || typeof window === "undefined") return;
-      // RULE: the isolated word is spoken in the STORY'S narrator voice (country
-      // accent), falling back to the shared voice only for non-journey sources.
-      const voiceId = narratorVoiceId ?? WORD_AUDIO_VOICE_ID;
+      // RULE: the isolated word is spoken in the STORY'S practice voice (country
+      // accent), so the R2 cache key matches the pre-generated clip. In JOURNEY
+      // practice a topic pools words from several stories, each with its own
+      // voice, so the per-exercise clip.voiceId is the source of truth; the
+      // page-level narratorVoiceId (story practice) and the shared fixed voice
+      // are only fallbacks. Without clip.voiceId, journey word audio requested
+      // the fixed voice, missed the R2 cache (404) and went silent.
+      const clipVoiceRaw = typeof clip?.voiceId === "string" ? clip.voiceId.trim() : "";
+      const clipVoice = clipVoiceRaw.startsWith("elevenlabs/")
+        ? clipVoiceRaw.slice("elevenlabs/".length)
+        : clipVoiceRaw;
+      const voiceId = clipVoice || narratorVoiceId || WORD_AUDIO_VOICE_ID;
       if (!voiceId) return;
       const audio = wordAudioRef.current ?? new Audio();
       wordAudioRef.current = audio;
@@ -1902,13 +1911,18 @@ export default function PracticePage() {
       if (!url || typeof window === "undefined") return;
       void fetch(url, { cache: "force-cache" }).catch(() => {});
     };
-    // Resolve a word-tts url (cache or endpoint), then warm its mp3.
-    const wordVoiceId = narratorVoiceId ?? WORD_AUDIO_VOICE_ID;
+    // Resolve a word-tts url (cache or endpoint), then warm its mp3. The voice
+    // must match what playWordTts requests at click time, i.e. the exercise's
+    // own clip.voiceId when set (journey practice), else narrator, else fixed.
+    const fallbackWordVoiceId = narratorVoiceId ?? WORD_AUDIO_VOICE_ID;
     const warmLanguage =
       (currentExercise as { audioClip?: { language?: string } | null }).audioClip?.language ??
       (currentExercise as { language?: string }).language ??
       undefined;
-    const warmWord = (word: string) => {
+    const warmWord = (word: string, clipVoiceId?: string | null) => {
+      const raw = typeof clipVoiceId === "string" ? clipVoiceId.trim() : "";
+      const wordVoiceId =
+        (raw.startsWith("elevenlabs/") ? raw.slice("elevenlabs/".length) : raw) || fallbackWordVoiceId;
       const key = `${wordVoiceId}|${word.toLowerCase()}|${warmLanguage ?? "es"}`;
       if (wordUrlByKey[key]) {
         warm(wordUrlByKey[key]);
@@ -1951,7 +1965,7 @@ export default function PracticePage() {
           : null
     );
     // Isolated word audio (meaning only).
-    if (currentExercise.type === "meaning_in_context") warmWord(currentExercise.word);
+    if (currentExercise.type === "meaning_in_context") warmWord(currentExercise.word, clip.voiceId);
     return () => {
       cancelled = true;
     };

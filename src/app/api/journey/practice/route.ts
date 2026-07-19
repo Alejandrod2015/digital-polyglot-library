@@ -17,6 +17,7 @@ import {
 import { createJourneyCheckpointToken } from "@/lib/journeyCheckpointToken";
 import { getCompletedJourneyStoryKeys } from "@/lib/journeyProgress";
 import { normalizeVariant } from "@/lib/languageVariant";
+import { practiceVoiceId } from "@/lib/practiceVoice";
 import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
 
@@ -74,6 +75,34 @@ export async function GET(request: NextRequest) {
     .map((story) => story.progressKey.split(":")[1] ?? "")
     .filter(Boolean);
 
+  // Practice word audio: the isolated-word clips in R2 are content-addressed
+  // by the SOURCE story's PRACTICE voice (see lib/practiceVoice.ts +
+  // _genJourneyWords.ts). A topic pools words from several stories, each with
+  // its own voice, so we resolve and stamp each item with its story's practice
+  // voice here. Without it the practice page has no per-word voice and falls
+  // back to a single fixed voiceId whose clips were never generated -> 404 ->
+  // silent word audio. (Story practice already carries this via narratorVoiceId.)
+  const practiceVoiceBySlug = new Map<string, string>();
+  if (unlockedStorySlugs.length > 0) {
+    const voiceRows = await prisma.journeyStory.findMany({
+      where: { slug: { in: unlockedStorySlugs } },
+      select: { slug: true, voiceId: true, practiceVoiceId: true },
+    });
+    for (const row of voiceRows) {
+      if (!row.slug) continue;
+      try {
+        practiceVoiceBySlug.set(row.slug, practiceVoiceId(row));
+      } catch {
+        // Story has no narrator voiceId; leave unmapped (word audio falls back).
+      }
+    }
+  }
+  const withPracticeVoice = (item: PracticeFavoriteItem): PracticeFavoriteItem => {
+    const slug = (item.storySlug ?? "").trim();
+    const resolved = (slug && practiceVoiceBySlug.get(slug)) || item.voiceId || null;
+    return item.voiceId === resolved ? item : { ...item, voiceId: resolved };
+  };
+
   let savedTopicItems: PracticeFavoriteItem[] = [];
   if (userId && unlockedStorySlugs.length > 0) {
     const favorites = await prisma.favorite.findMany({
@@ -109,7 +138,7 @@ export async function GET(request: NextRequest) {
     if (!checkpoint) {
       return NextResponse.json({ error: "Checkpoint not available" }, { status: 404 });
     }
-    const exercises = buildTopicCheckpointPracticeSession(source.items);
+    const exercises = buildTopicCheckpointPracticeSession(source.items.map(withPracticeVoice));
     const answers = Object.fromEntries(
       exercises
         .filter((exercise) => exercise.type !== "match_meaning")
@@ -129,7 +158,7 @@ export async function GET(request: NextRequest) {
         label: source.topic.label,
         storyCount: source.topic.storyCount,
       },
-      items: source.items,
+      items: source.items.map(withPracticeVoice),
       exercises,
       checkpointToken: createJourneyCheckpointToken({
         variantId: variant,
@@ -158,6 +187,6 @@ export async function GET(request: NextRequest) {
       totalCount: topicPracticeItems.length,
       focusWords: dueTopicItems.slice(0, 3).map((item) => item.word),
     },
-    items: topicPracticeItems,
+    items: topicPracticeItems.map(withPracticeVoice),
   });
 }
