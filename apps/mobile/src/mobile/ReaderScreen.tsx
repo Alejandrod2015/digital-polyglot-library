@@ -762,12 +762,6 @@ function renderKaraokeParagraph(args: {
   return <Text style={baseTextStyle}>{nodes}</Text>;
 }
 
-// GATE de prueba: solo estas historias usan la lógica de tick "confía en el
-// tick real" (arregla los saltos). El resto queda con el guard original, para
-// poder comparar en el device antes de aplicarlo a todo. Vaciar este set (o
-// quitar el branch) = aplicar a todas las historias.
-const KARAOKE_TICK_V2_SLUGS = new Set<string>(["buergeramt-neukoelln-sieben-uhr"]);
-
 function findActiveKaraokeWordIndex(
   words: StoryWordToken[],
   positionSec: number
@@ -1067,9 +1061,6 @@ export function ReaderScreen(args: {
       lastResolvedIndexRef.current = null;
       return;
     }
-    // Solo la(s) historia(s) gateada(s) usan la lógica nueva (confía en el tick
-    // real). El resto conserva el guard original para comparar en el device.
-    const karaokeV2 = KARAOKE_TICK_V2_SLUGS.has(story.slug);
     const interval = setInterval(() => {
       const snap = lastPlaybackRef.current;
       if (!snap) return;
@@ -1095,12 +1086,13 @@ export function ReaderScreen(args: {
         // last index instead of clearing the highlight.
         resolved = lastIdx;
       } else if (rawIdx !== null && lastIdx !== null && rawIdx < lastIdx) {
-        // V2 (gateada): el anti-jitter (retroceso de 1-2 palabras) SOLO aplica
-        // entre ticks; un tick REAL que corrige hacia atrás se respeta.
-        // V1 (resto): guard original, sin distinguir tick real.
-        const suppress = karaokeV2
-          ? !isFreshTick && lastIdx - rawIdx < 3
-          : lastIdx - rawIdx < 3;
+        // El anti-jitter (retroceso de 1-2 palabras) SOLO aplica entre ticks:
+        // suprime el vaivén de la extrapolación de 25 ms sobre el mismo
+        // snapshot. Un tick REAL nuevo que corrige hacia atrás SIEMPRE se
+        // respeta; sin esto, una palabra que la extrapolación se saltó quedaba
+        // sin resaltar para siempre (el tick real la reclamaba y el guard lo
+        // descartaba).
+        const suppress = !isFreshTick && lastIdx - rawIdx < 3;
         if (suppress) resolved = lastIdx;
       }
       lastResolvedIndexRef.current = resolved;
