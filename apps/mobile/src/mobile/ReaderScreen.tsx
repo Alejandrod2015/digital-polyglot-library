@@ -1022,6 +1022,24 @@ export function ReaderScreen(args: {
   );
   const karaokeVocabLookup = useMemo(() => buildVocabLookup(vocab), [vocab]);
 
+  // Span total de los timings (segundo del último token). Los timings de
+  // aeneas (sobre todo ES/DE) se corren TARDE de forma acumulada: el último
+  // endSec cae hasta ~0.7-0.8 s DESPUES del final real del audio (la
+  // corrección de drift ancla al final del silencio). Efecto: el resaltado
+  // empieza sincronizado y se va quedando atrás hacia el final. La webapp ya
+  // compensa esto (HighlightedStoryReader) escalando el tiempo de consulta;
+  // acá lo replicamos para que el karaoke iOS no se atrase. Resolvemos contra
+  // `effectiveWordTimings.words` (mismo array que el resolver) para no incluir
+  // los timestamps espurios de las etiquetas de speaker filtradas.
+  const timingsSpanSec = useMemo(() => {
+    let span = 0;
+    for (const w of effectiveWordTimings.words) {
+      const end = typeof w.endSec === "number" ? w.endSec : w.startSec;
+      if (typeof end === "number" && end > span) span = end;
+    }
+    return span;
+  }, [effectiveWordTimings]);
+
   // 25 ms tick that interpolates the audio position between the
   // 500 ms callbacks from NativeAudioPlayer. Short connector words
   // ("y", "a", "la", "que") can last 60-100 ms in fluent speech, so a
@@ -1067,12 +1085,23 @@ export function ReaderScreen(args: {
       const elapsedMs = snap.isPlaying ? Math.min(Date.now() - snap.wallClockMs, 700) : 0;
       const estimatedSec = (snap.positionMillis + elapsedMs * snap.rate) / 1000;
 
+      // Compensa el atraso acumulado de aeneas escalando el tiempo de consulta
+      // hacia adelante cuando los timings se pasan del final real del audio.
+      // Cap al 6% para no sobrecorregir si algún dato viniera raro; factor = 1
+      // (no-op) cuando los timings ya encajan (span <= duración). Mismo criterio
+      // que la webapp. Sin esto el resaltado se va quedando atrás hacia el final.
+      const durationSec = snap.durationMillis / 1000;
+      const queryTime =
+        durationSec > 0 && timingsSpanSec > durationSec
+          ? estimatedSec * Math.min(timingsSpanSec / durationSec, 1.06)
+          : estimatedSec;
+
       // El index space tiene que ser EL MISMO que usa el renderer.
       // `effectiveWordTimings.words` filtra etiquetas de speaker; si
       // resolviéramos contra `wordTimings.words` sin filtrar, el
       // activeWordIndex apuntaría a un slot que el renderer ya no
       // tiene y el highlight saltaría a la palabra equivocada.
-      const rawIdx = findActiveKaraokeWordIndex(effectiveWordTimings.words, estimatedSec);
+      const rawIdx = findActiveKaraokeWordIndex(effectiveWordTimings.words, queryTime);
       const lastIdx = lastResolvedIndexRef.current;
       // ¿Este cómputo se apoya en un tick REAL nuevo, o es pura extrapolación
       // sobre el snapshot anterior? Al tick real le creemos siempre; el
@@ -1099,7 +1128,7 @@ export function ReaderScreen(args: {
       setActiveWordIndex((prev) => (prev === resolved ? prev : resolved));
     }, 25);
     return () => clearInterval(interval);
-  }, [wordTimings, effectiveWordTimings, story.id]);
+  }, [wordTimings, effectiveWordTimings, timingsSpanSec, story.id]);
 
   // Smart autoscroll para historias con karaoke (wordTimings).
   //
