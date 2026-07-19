@@ -141,6 +141,22 @@ if printf '%s' "$COMMAND" | grep -qE '\bvercel[[:space:]]+env[[:space:]]+rm\b'; 
     is_authorized || block "vercel env rm deletes a production environment variable. Confirm with the user first."
 fi
 
+# 5b. Hard-block: cover generation outside the locked style path.
+#     The user-approved style lives in scripts/cover-style.json and is
+#     enforced ONLY by scripts/generateCover.ts, which ALWAYS prepends
+#     styleBlock (adults 25-55, no elderly/children, zero text/lettering,
+#     flat-vector fine linework). Any other Flux/cover invocation, a
+#     free-form prompt, a raw generateFluxImageBuffer call, or the old
+#     generateStoryCoverFromPrompt, is refused so a cover can NEVER ship
+#     in an unapproved style. No env-var bypass: the whole point is that
+#     the model cannot opt out of the locked style.
+if printf '%s' "$COMMAND" | grep -qE '\b(tsx|ts-node|node|npx)\b' \
+   && printf '%s' "$COMMAND" | grep -qE '(generateStoryCoverFromPrompt|generateFluxImageBuffer|buildCoverPrompt|generateStoryCover\.ts)'; then
+    if ! printf '%s' "$COMMAND" | grep -qE 'generateCover\.ts'; then
+        block "Cover generation must go through scripts/generateCover.ts, which locks the user-approved style (scripts/cover-style.json: flat-vector fine linework, adults 25-55 only, zero text). Free-form cover prompts, generateStoryCoverFromPrompt and raw generateFluxImageBuffer are disabled. Write the SCENE only to a file and run: tsx scripts/generateCover.ts <storyId> <scene-file> --set"
+    fi
+fi
+
 # 6. Hard-block: git push --force / --force-with-lease / -f.
 #    No env-var bypass from inside Claude. If a force push is truly
 #    needed, the user runs it from their own terminal.
@@ -363,6 +379,25 @@ Command refused:
   $COMMAND
 EOF
         exit 2
+    fi
+fi
+
+# 6d. Full-story audio regeneration lock (SAMPLE-FIRST).
+#     Regenerar el audio COMPLETO de una historia (o un lote) SOLO para
+#     PROBAR un cambio (fix de texto/normalización/voz/settings) es un
+#     desperdicio caro y está prohibido. Testear = UNA sola línea de muestra
+#     (la oración afectada) via un curl directo a /v1/text-to-speech.
+#     Este candado bloquea CUALQUIER script de generación de audio (tsx/node
+#     ... generate*Audio*.ts / _gen*Audio.ts / render*Audio*.ts) salvo el
+#     opt-in CONSCIENTE `DPL_AUDIO_FULL_OK=1` en la misma línea. Un sample por
+#     curl directo (no script) no matchea y pasa con el verbo normal (6c).
+#     El flag es para cuando el ENTREGABLE es el audio completo de esa
+#     historia y el usuario lo pidió, NUNCA para un test.
+if printf '%s' "$COMMAND" | grep -qE '\b(tsx|ts-node|node|npx)\b' \
+   && printf '%s' "$COMMAND" | grep -qiE '(generate|render|_gen)[a-z0-9_]*audio[a-z0-9_]*\.ts' \
+   && ! printf '%s' "$COMMAND" | grep -qiE 'timing'; then
+    if ! printf '%s' "$COMMAND" | grep -qE 'DPL_AUDIO_FULL_OK=1'; then
+        block "Full-story audio regeneration is locked (sample-first). Regenerar el audio COMPLETO de una historia para PROBAR un cambio es un desperdicio caro. Testea con UNA sola linea de muestra (la oracion afectada) via un curl directo a api.elevenlabs.io/v1/text-to-speech (eso pasa con el verbo de audio, 6c). Solo si el ENTREGABLE es el audio COMPLETO de esa historia (no un test) y el usuario lo pidio explicitamente, corre con el opt-in consciente: DPL_AUDIO_FULL_OK=1 <comando>."
     fi
 fi
 

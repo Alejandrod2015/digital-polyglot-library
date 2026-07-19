@@ -60,6 +60,29 @@ than once, do NOT defend with the same metrics. Switch the frame of review
 user's concern is addressed or you can articulate what they're asking that
 you haven't measured.
 
+## Story validation gate (BLOCKING — no bypass)
+
+A `JourneyStory`'s content (title/slug/text/vocab/arcType/synopsis) reaches
+the database ONLY through `scripts/saveStory.ts`, which runs the CANONICAL
+validator `validateGeneratedStory` (`src/lib/validateGeneratedStory.ts`)
+IN-PROCESS and writes nothing unless EVERY story returns `ok===true`. A second
+PreToolUse hook `.claude/safety/pre-story-save-guard.sh` BLOCKS any other
+execution that writes journeyStory content (bespoke `_save*.ts`, inline
+`journeyStory.update/create` with `text`/`vocab`). No `CLAUDE_AUTHORIZED`
+escape. Reading/grepping save scripts is fine (only executed writes are gated).
+
+Hard rules (why: on 2026-07-09 a pilot was reported "bien validado" after only
+the Python subset ran; the canonical validator then found 4 fails):
+- The Python pre-validators (`scripts/_val*.py`) are LINTS, never "the
+  validation". They do NOT count as validated.
+- NEVER report a story "validated" / "passes" / "en verde" unless
+  `validateGeneratedStory` returned `ok===true` for it (via `saveStory.ts`,
+  incl. `--dry`). Cite the canonical result, not the Python subset.
+- To save: `npx tsx scripts/saveStory.ts <data.json> --journey <id> --lang ES
+  --level c1 --variant LATAM [--publish]`. Use `--dry` to validate without
+  writing. If it fails, FIX the story; do not weaken the gate (see the
+  gold-standard calibration rule).
+
 ## Safety Guard (BLOCKING — DO NOT BYPASS)
 
 This project has a Bash PreToolUse hook at `.claude/safety/pre-bash-guard.sh`
@@ -128,6 +151,39 @@ that ALWAYS runs before any Bash command. It does two things:
    `DPL_PUSH_AUTHORIZED=1 DPL_PUSH_PARTIAL_OK=1 git push origin HEAD:main`.
    This rule exists because on 2026-06-13 a prod hotfix shipped while a
    ready audio-route fix sat uncommitted, costing a second build.
+
+7. **Sample-first: NUNCA regenerar audio completo para PROBAR (BLOQUEANTE).**
+   Para testear cualquier cambio que afecte el audio (fix de texto,
+   normalización de números, voz, settings), sintetiza **UNA sola línea de
+   muestra** (la oración/palabra afectada) con la voz que toque, via un curl
+   directo a `/v1/text-to-speech`. **JAMÁS** regenerar el audio COMPLETO de
+   una historia (ni un lote) solo para oír un detalle: es un desperdicio caro
+   de créditos. Sugerirlo ("regenera toda la historia para oír X") está
+   prohibido. Regeneración completa SOLO cuando el ENTREGABLE es ese audio
+   completo y el usuario pidió explícitamente el audio de ESA historia; en ese
+   caso, y solo ahí, corre el script con el opt-in consciente
+   `DPL_AUDIO_FULL_OK=1`. El guard 6d bloquea los scripts `*Audio*.ts` sin ese
+   flag; el sample por curl directo pasa con el verbo de audio normal.
+   (Regla puesta el 2026-07-09 tras sugerir regenerar una historia entera
+   para probar el fix de "B244".)
+
+7. **Approved-voices gate (BLOCKING — no bypass)**. Production audio
+   (story narration, practice clips, word audio) may ONLY be rendered
+   with an ElevenLabs voiceId on the allowlist `src/lib/approvedVoices.ts`.
+   Enforced at runtime: `assertVoiceApproved(voiceId)` is called at every
+   production TTS chokepoint (`src/lib/elevenlabs.ts`, `_genPracticeClips.ts`,
+   `_genJourneyWords.ts`) and THROWS if the voice is not approved — no
+   env-var bypass. WHY: on 2026-07-19 a story was narrated with a
+   candidate voice the user never approved. **Claude must NEVER add a
+   voice to the allowlist on its own**: a PreToolUse hook
+   `.claude/safety/pre-voice-approval-guard.sh` (matches Edit/Write/Bash)
+   BLOCKS any edit to `approvedVoices.ts` (or the guard itself) unless the
+   user's MOST RECENT message contains an approval phrase (`aprueba/apruebo
+   la voz`, `voz aprobada`). To audition a candidate: FREE preview URLs or
+   a 1-line throwaway sample that does NOT write to production — NEVER a
+   full-story render, and NEVER pre-add it to the allowlist. Only after the
+   user approves by ear does the user (or Claude, once the user has said the
+   approval phrase) add the voiceId.
 
 If the guard blocks a non-push command, **DO NOT** add
 `CLAUDE_AUTHORIZED=1` on your own to bypass it. That flag is for the
