@@ -2486,12 +2486,45 @@ export function MobileLibraryShell(args: {
       const stored = await loadStoredJourneys();
       if (stored && stored.journeys.length > 0) {
         setPreferences((current) => {
-          if (current.journeys.length >= stored.journeys.length) return current;
+          // The length guard protects the multi-variant `journeys`
+          // list: the server collapses it to one entry per language,
+          // so only let disk REPLACE the list when disk holds more
+          // entries than what we currently have.
+          const restoreList = current.journeys.length < stored.journeys.length;
+          const nextJourneys = restoreList ? stored.journeys : current.journeys;
+          // `activeJourneyId` must be restored REGARDLESS of the list
+          // guard. It's written to disk on every switch (network-
+          // independent), so disk is the last-known local truth for
+          // which journey the user was in. The old code only restored
+          // it alongside a fuller list, so a user who switched journeys
+          // offline (server POST failed) — or any offline cold start,
+          // or any server/disk divergence — landed back on the default
+          // journey instead of their last one. That's the "vuelve a un
+          // estado inicial" bug.
+          const storedActiveValid =
+            stored.activeJourneyId != null &&
+            nextJourneys.some((j) => j.id === stored.activeJourneyId);
+          const nextActiveId = storedActiveValid
+            ? stored.activeJourneyId
+            : current.activeJourneyId;
+          if (!restoreList && nextActiveId === current.activeJourneyId) {
+            // List already fresh and active journey already matches
+            // disk: nothing to do.
+            return current;
+          }
+          // Keep the legacy `targetLanguages[0] === active language`
+          // invariant that handleJourneySwitch maintains, so any call
+          // site still deriving "active" from targetLanguages[0] agrees
+          // with the restored activeJourneyId.
+          const activeJourney = nextJourneys.find((j) => j.id === nextActiveId);
+          const orderedJourneys = activeJourney
+            ? [activeJourney, ...nextJourneys.filter((j) => j.id !== activeJourney.id)]
+            : nextJourneys;
           return {
             ...current,
-            journeys: stored.journeys,
-            activeJourneyId: stored.activeJourneyId ?? current.activeJourneyId,
-            targetLanguages: targetLanguagesFromJourneys(stored.journeys),
+            journeys: nextJourneys,
+            activeJourneyId: nextActiveId,
+            targetLanguages: targetLanguagesFromJourneys(orderedJourneys),
           };
         });
       }
