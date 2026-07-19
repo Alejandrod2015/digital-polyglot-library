@@ -116,6 +116,13 @@ const config = {
     buildNumber: "265",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
+      // Background audio: story playback keeps sounding when the app is
+      // backgrounded or the screen is locked (audiobook-style). Must stay
+      // in sync with ios/DigitalPolyglot/Info.plist (the committed native
+      // project xcodebuild actually reads); this keeps a prebuild/EAS regen
+      // from dropping the entry. Paired with `staysActiveInBackground: true`
+      // in NativeAudioPlayer's setAudioModeAsync.
+      UIBackgroundModes: ["audio"],
     },
   },
   android: {

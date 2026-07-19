@@ -201,7 +201,13 @@ export function NativeAudioPlayer({
           allowsRecordingIOS: false,
           playsInSilentModeIOS: true,
           interruptionModeIOS: InterruptionModeIOS.DoNotMix,
-          staysActiveInBackground: false,
+          // Story playback continues when the app is backgrounded or the
+          // screen is locked (audiobook-style). Requires the `audio`
+          // UIBackgroundMode in Info.plist / app.config.js — without that
+          // entry expo-av throws when this is `true`. Practice clips keep
+          // the default (false) so a short TTS fragment never holds the app
+          // awake in the background.
+          staysActiveInBackground: true,
         });
 
         const { sound } = await Audio.Sound.createAsync(
