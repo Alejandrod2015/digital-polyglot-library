@@ -548,7 +548,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
   const [endIdx, setEndIdx] = useState<number | null>(null);
 
   const [busyAction, setBusyAction] = useState<
-    null | "preview" | "title" | "promote" | "discard" | "realign" | "cut" | "upload"
+    null | "preview" | "title" | "promote" | "discard" | "realign" | "cut" | "upload" | "replace-master"
   >(null);
   const [actionError, setActionError] = useState<string | null>(null);
   // In-app confirm modal (replaces window.confirm so it matches the app's
@@ -573,6 +573,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
   // opening the picker.
   const fragmentInputRef = useRef<HTMLInputElement | null>(null);
   const uploadTargetRef = useRef<{ startSec: number; endSec: number; label: string; fragmentIndex: number | null } | null>(null);
+  const masterInputRef = useRef<HTMLInputElement | null>(null);
 
   // Title state: tracks pending edit between regen and promote.
   const [titleDraft, setTitleDraft] = useState(detail.title);
@@ -986,6 +987,30 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
     }
   };
 
+  /**
+   * FULL-MASTER replacement: the operator downloads the master, edits the
+   * whole file externally, and uploads the corrected FULL mp3. Lands as a
+   * preview; "Guardar" promotes + re-aligns (aeneas), so karaoke stays right.
+   */
+  const doReplaceMaster = async (file: File) => {
+    setBusyAction("replace-master");
+    setActionError(null);
+    try {
+      const fd = new FormData();
+      fd.append("storyId", detail.id);
+      fd.append("audio", file);
+      const res = await fetch("/api/studio/audio-editor/replace-master", { method: "POST", body: fd });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json?.error || `HTTP ${res.status}`);
+      onChanged();
+      clearSelection();
+    } catch (err) {
+      setActionError(err instanceof Error ? err.message : "Error reemplazando el audio completo");
+    } finally {
+      setBusyAction(null);
+    }
+  };
+
   const promote = async () => {
     setBusyAction("promote");
     setActionError(null);
@@ -1180,21 +1205,70 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
                   : ""}
           </div>
         </div>
-        <button
-          type="button"
-          onClick={realignTimings}
-          disabled={busyAction !== null}
-          title="Re-corre aeneas para refrescar los word timings (útil si ves nombres de personajes al final de los bloques)"
-          style={{
-            ...btnStyle("ghost", busyAction !== null),
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 6,
-          }}
-        >
-          <RegenIcon size={12} />
-          <span>{busyAction === "realign" ? "Re-alineando..." : "Re-alinear timings"}</span>
-        </button>
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
+          {/* Download the current master mp3 for external editing. */}
+          <a
+            href={detail.audioUrl}
+            download
+            target="_blank"
+            rel="noreferrer"
+            title="Descarga el MP3 del audio maestro para editarlo por fuera (Audacity, etc.)"
+            style={{
+              ...btnStyle("ghost", false),
+              textDecoration: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+            }}
+          >
+            <span>⬇</span>
+            <span>Descargar audio</span>
+          </a>
+          {/* Replace the ENTIRE master with an externally-edited mp3. Hidden
+              input driven by the button; lands as preview → "Guardar" promotes
+              + re-aligns (aeneas). No regeneration in Studio needed. */}
+          <input
+            ref={masterInputRef}
+            type="file"
+            accept="audio/mpeg,.mp3"
+            style={{ display: "none" }}
+            onChange={(e) => {
+              const f = e.target.files?.[0];
+              e.target.value = ""; // allow re-selecting the same file
+              if (f) void doReplaceMaster(f);
+            }}
+          />
+          <button
+            type="button"
+            onClick={() => masterInputRef.current?.click()}
+            disabled={busyAction !== null}
+            title="Sube un MP3 que reemplace TODO el audio de la historia. Queda como preview hasta que le des Guardar."
+            style={{
+              ...btnStyle("ghost", busyAction !== null),
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+            }}
+          >
+            <span>⬆</span>
+            <span>{busyAction === "replace-master" ? "Subiendo..." : "Reemplazar audio completo"}</span>
+          </button>
+          <button
+            type="button"
+            onClick={realignTimings}
+            disabled={busyAction !== null}
+            title="Re-corre aeneas para refrescar los word timings (útil si ves nombres de personajes al final de los bloques)"
+            style={{
+              ...btnStyle("ghost", busyAction !== null),
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+            }}
+          >
+            <RegenIcon size={12} />
+            <span>{busyAction === "realign" ? "Re-alineando..." : "Re-alinear timings"}</span>
+          </button>
+        </div>
       </div>
 
       {/* ── Operator note / reminder ── */}
