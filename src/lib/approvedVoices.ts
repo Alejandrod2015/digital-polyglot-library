@@ -47,6 +47,12 @@ export const APPROVED_VOICES: Record<string, ApprovedVoice> = {
   WHaUUVTDq47Yqc9aDbkH: { note: "ENNIAH Friendly & Motivating (DE, f) — Wiebke en Hanseat DE C1; ya suena en Expat DE — user-approved 2026-07-20" },
   JDXBO1etYlVlJZRMoYzH: { note: "Marius Young Calm (DE, m) — Ole en Hanseat DE C1; ya suena en Expat DE — user-approved 2026-07-20" },
   MMwckqU477oQxnAk1SgA: { note: "Bench DE - Ben (DE, m) — Carstens en Hanseat DE C1; ya suena en Expat DE — user-approved 2026-07-20" },
+
+  // ── Completan el cast de Hanseat DE C1 (tiene 7 personajes recurrentes,
+  // no 4). Las tres ya suenan en Expat DE. Aprobadas por el usuario 2026-07-20.
+  "9iYBWBbTzTDIt6imiMxp": { note: "Daien (DE, f) — Merle en Hanseat DE C1; ya suena en Expat DE — user-approved 2026-07-20" },
+  vmVmHDKBkkCgbLVIOJRb: { note: "Bench DE - Charlie (DE, m) — Boysen + Fiete (no coinciden) y masculinos puntuales en Hanseat — user-approved 2026-07-20" },
+  NE7AIW5DoJ7lUosXV2KR: { note: "Bench DE - Ela Cheerful (DE, f) — femeninas puntuales (Grit, Sofia, Verkäuferin) en Hanseat — user-approved 2026-07-20" },
 };
 
 export function isVoiceApproved(voiceId: string | null | undefined): boolean {
