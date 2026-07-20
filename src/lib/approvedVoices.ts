@@ -37,6 +37,16 @@ export const APPROVED_VOICES: Record<string, ApprovedVoice> = {
   acHf5gp7AGOY30tJjvD4: { note: "Friends LATAM voice (published)" },
   "57D8YIbQSuE3REDPO6Vm": { note: "Friends LATAM voice (published)" },
   zwsW3KvGYEC2nBc7rlnA: { note: "Traveler LATAM voice (published)" },
+
+  // ── Approved by the user 2026-07-20 (audition by ear), to cast the
+  // remaining draft journeys. Italian + peninsular Spanish + the four
+  // German character voices that already ship in Expat DE.
+  gfKKsLN1k0oYYN9n2dXX: { note: "Violetta (IT, f) — narradora + práctica de Friends IT A0 — user-approved 2026-07-20" },
+  "2EWay75ikIPKrY4w2j69": { note: "Nuria Storyteller & Calm (ES peninsular, f) — narradora + práctica de Friends ES Spain A0 — user-approved 2026-07-20" },
+  SJJe86Va82zRzg6zi2dX: { note: "Ela Empathetic & Warm (DE, f) — Nora en Hanseat DE C1; ya suena en Expat DE — user-approved 2026-07-20" },
+  WHaUUVTDq47Yqc9aDbkH: { note: "ENNIAH Friendly & Motivating (DE, f) — Wiebke en Hanseat DE C1; ya suena en Expat DE — user-approved 2026-07-20" },
+  JDXBO1etYlVlJZRMoYzH: { note: "Marius Young Calm (DE, m) — Ole en Hanseat DE C1; ya suena en Expat DE — user-approved 2026-07-20" },
+  MMwckqU477oQxnAk1SgA: { note: "Bench DE - Ben (DE, m) — Carstens en Hanseat DE C1; ya suena en Expat DE — user-approved 2026-07-20" },
 };
 
 export function isVoiceApproved(voiceId: string | null | undefined): boolean {
