@@ -6,6 +6,7 @@ import { isStudioMember } from "@/lib/studio-access";
 import { DEFAULT_NARRATION_TEMPO, DEFAULT_VOICE_SETTINGS, softenPunctuationForTts } from "@/lib/elevenlabs";
 import { spliceFragmentIntoMaster } from "@/lib/audioEditorSplice";
 import { replaceSectionAndRebuild } from "@/lib/audioEditorSections";
+import { isVoiceApproved } from "@/lib/approvedVoices";
 
 export const maxDuration = 120;
 
@@ -24,6 +25,22 @@ function resolveElevenLabsVoiceId(voiceId: string): string | null {
   if (LOCAL_ENGINE_PREFIXES.some((p) => id.startsWith(p))) return null;
   // Bare id with no known local-engine prefix → treat as ElevenLabs.
   return id;
+}
+
+// The ElevenLabs voiceIds this story already uses (narrator voiceId + any
+// multivoice character voices in dialogueSpec), bare (no "elevenlabs/"
+// prefix). Re-rendering one of these is always allowed by the approved-
+// voices gate below, since it is already shipped in this story.
+function storyOwnsVoice(story: { voiceId: string | null; dialogueSpec: unknown }, elVoiceId: string): boolean {
+  const own = new Set<string>();
+  if (story.voiceId) {
+    const b = story.voiceId.startsWith("elevenlabs/") ? story.voiceId.slice("elevenlabs/".length) : story.voiceId;
+    if (b) own.add(b.trim());
+  }
+  if (story.dialogueSpec) {
+    for (const m of JSON.stringify(story.dialogueSpec).matchAll(/[A-Za-z0-9]{20}/g)) own.add(m[0]);
+  }
+  return own.has(elVoiceId);
 }
 
 /**
@@ -78,14 +95,26 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
-
   const story = await prisma.journeyStory.findUnique({
     where: { id: storyId },
-    select: { id: true, slug: true, audioUrl: true, audioFilename: true, audioEditorRegenCounts: true },
+    select: { id: true, slug: true, audioUrl: true, audioFilename: true, audioEditorRegenCounts: true, voiceId: true, dialogueSpec: true },
   });
   if (!story) return NextResponse.json({ error: "Historia no encontrada" }, { status: 404 });
   if (!story.audioUrl) {
     return NextResponse.json({ error: "La historia no tiene audio maestro todavía" }, { status: 400 });
+  }
+
+  // Approved-voices gate. This route calls ElevenLabs directly (not via
+  // elevenlabs.ts), so it enforces the allowlist itself. Allow the voice if
+  // it is approved OR already one of THIS story's own voices (narrator or a
+  // multivoice character) — re-rendering an already-shipped voice is safe;
+  // the gate exists to stop INTRODUCING a new unapproved voice. No env-var
+  // bypass; the owner approves new voices.
+  if (!isVoiceApproved(elVoiceId) && !storyOwnsVoice(story, elVoiceId)) {
+    return NextResponse.json(
+      { error: `La voz "${elVoiceId}" no está aprobada ni pertenece a esta historia. Solo el dueño aprueba voces nuevas; usa una voz aprobada o "Subir fragmento".` },
+      { status: 403 },
+    );
   }
 
   // Spend cap: each in-app ElevenLabs regenerate costs credits, so a
