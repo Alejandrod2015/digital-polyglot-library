@@ -1221,7 +1221,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
               gap: 6,
             }}
           >
-            <span>⬇</span>
+            <DownloadIcon />
             <span>Descargar audio</span>
           </a>
           {/* Replace the ENTIRE master with an externally-edited mp3. Hidden
@@ -1250,7 +1250,7 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
               gap: 6,
             }}
           >
-            <span>⬆</span>
+            <UploadIcon />
             <span>{busyAction === "replace-master" ? "Subiendo..." : "Reemplazar audio completo"}</span>
           </button>
           <button
@@ -2059,21 +2059,33 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
                             target="_blank"
                             rel="noreferrer"
                             title={`Descargar el audio de este segmento (${block.speakerLabel}) para editarlo y volver a subirlo`}
+                            aria-label={`Descargar segmento ${block.speakerLabel}`}
                             style={{
+                              width: 26,
+                              height: 26,
+                              borderRadius: 6,
+                              background: "transparent",
+                              border: `1px solid ${CARD_BORDER}`,
+                              color: "var(--muted)",
+                              opacity: 0.55,
                               display: "inline-flex",
                               alignItems: "center",
                               justifyContent: "center",
-                              width: 28,
-                              height: 28,
-                              borderRadius: 6,
-                              border: `1px solid ${CARD_BORDER}`,
-                              background: "transparent",
-                              color: "var(--muted)",
                               textDecoration: "none",
-                              fontSize: 13,
+                              transition: "opacity 0.15s, color 0.15s, border-color 0.15s, background 0.15s",
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.opacity = "1";
+                              e.currentTarget.style.color = ACCENT;
+                              e.currentTarget.style.borderColor = `${ACCENT}66`;
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.opacity = "0.55";
+                              e.currentTarget.style.color = "var(--muted)";
+                              e.currentTarget.style.borderColor = CARD_BORDER;
                             }}
                           >
-                            ⬇
+                            <DownloadIcon />
                           </a>
                         )}
                         <IconButton
@@ -2358,6 +2370,15 @@ function UploadIcon({ size = 12 }: { size?: number }) {
     >
       <path d="M8 10.5V2.5" />
       <polyline points="4.8 5.7 8 2.5 11.2 5.7" />
+      <path d="M2.5 11v1.5a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V11" />
+    </svg>
+  );
+}
+function DownloadIcon({ size = 12 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M8 2.5v8" />
+      <polyline points="4.8 7.3 8 10.5 11.2 7.3" />
       <path d="M2.5 11v1.5a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V11" />
     </svg>
   );
