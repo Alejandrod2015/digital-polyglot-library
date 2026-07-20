@@ -2052,6 +2052,30 @@ function EditorPanel({ detail, onChanged }: { detail: StoryDetail; onChanged: ()
                             else if (canPlay) playRangeToggle(blockKey, blockStart as number, blockStopAt(blockEnd as number, nextStart));
                           }}
                         />
+                        {hasSection && (
+                          <a
+                            href={secUrl as string}
+                            download
+                            target="_blank"
+                            rel="noreferrer"
+                            title={`Descargar el audio de este segmento (${block.speakerLabel}) para editarlo y volver a subirlo`}
+                            style={{
+                              display: "inline-flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              width: 28,
+                              height: 28,
+                              borderRadius: 6,
+                              border: `1px solid ${CARD_BORDER}`,
+                              background: "transparent",
+                              color: "var(--muted)",
+                              textDecoration: "none",
+                              fontSize: 13,
+                            }}
+                          >
+                            ⬇
+                          </a>
+                        )}
                         <IconButton
                           icon="upload"
                           title={anyBusy ? "Ocupado…" : `Subir un MP3 que reemplace el bloque de ${block.speakerLabel}`}
