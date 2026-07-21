@@ -157,7 +157,7 @@ export function MobileCreateScreen({
             <Text style={styles.helperText}>{createdStory.helper}</Text>
             <View style={styles.actionsRow}>
               <Pressable onPress={createdStory.onOpenReader} style={[styles.inlineButton, styles.primaryButton]}>
-                <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Open in reader</Text>
+                <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Open story</Text>
               </Pressable>
               <Pressable onPress={createdStory.onPractice} style={styles.inlineButton}>
                 <Text style={styles.inlineButtonText}>Practice this story</Text>
@@ -189,7 +189,7 @@ export function MobileCreateScreen({
                   </View>
                   <View style={styles.historyItemActions}>
                     <Pressable onPress={story.onRead} style={styles.inlineButton}>
-                      <Text style={styles.inlineButtonText}>Read</Text>
+                      <Text style={styles.inlineButtonText}>Open</Text>
                     </Pressable>
                     <Pressable onPress={story.onPractice} style={styles.inlineButton}>
                       <Text style={styles.inlineButtonText}>Practice</Text>

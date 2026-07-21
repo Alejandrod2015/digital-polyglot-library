@@ -11,6 +11,19 @@
           {
             "type": "command",
             "command": ".claude/safety/pre-story-save-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/safety/pre-voice-approval-guard.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/safety/pre-voice-approval-guard.sh"
           }
         ]
       }

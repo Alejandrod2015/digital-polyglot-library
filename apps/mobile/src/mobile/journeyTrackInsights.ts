@@ -144,7 +144,7 @@ export function buildJourneyTrackInsights(
       if (nextMilestone === "Journey cleared") {
         if (!complete) {
           const remaining = Math.max(requiredStoryCount - completedStoryCount, 0);
-          nextMilestone = `Read ${remaining} more ${remaining === 1 ? "story" : "stories"} in ${topic.label}`;
+          nextMilestone = `${remaining} more ${remaining === 1 ? "story" : "stories"} to go in ${topic.label}`;
         } else if (!practiced) {
           nextMilestone = `Practice ${topic.label}`;
         } else if (!checkpointPassed) {

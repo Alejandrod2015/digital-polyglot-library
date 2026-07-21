@@ -1,0 +1,6435 @@
+{
+"slugs": [
+"la-arena-lo-suelta-solita",
+"la-chinampa-de-marisol",
+"para-eso-esta-la-banda",
+"birria-antes-del-mediodia",
+"el-mariachi-y-el-penal",
+"tortas-ahogadas-para-la-cruda",
+"carne-asada-sin-prisas",
+"no-te-rajes-chuy",
+"gorditas-para-la-comadre",
+"a-regina-le-gano-el-mezcal",
+"el-tequio-no-avisa",
+"nayeli-prende-el-comal",
+"el-pib-y-el-celular",
+"el-cenote-esta-helado",
+"marquesitas-a-medianoche",
+"chente-afina-la-jarana",
+"mariscos-para-toda-la-raza",
+"rumbo-a-el-tajin",
+"la-linea-tambien-almuerza",
+"lo-que-esconde-la-revu",
+"anoche-sono-un-corrido"
+],
+"glosses": {
+"de": {
+"g": "of, from",
+"t": "preposition"
+},
+"colorado": {
+"g": "red, reddish",
+"t": "adjective"
+},
+"llevaba": {
+"g": "was carrying, wore",
+"t": "verb"
+},
+"a": {
+"g": "to, at",
+"t": "preposition"
+},
+"su": {
+"g": "his, her, their",
+"t": "pronoun"
+},
+"compa": {
+"g": "buddy, pal",
+"t": "noun"
+},
+"del": {
+"g": "of the",
+"t": "preposition"
+},
+"taller": {
+"g": "a workshop, garage",
+"t": "noun"
+},
+"primera": {
+"g": "first",
+"t": "adjective"
+},
+"en": {
+"g": "in, on",
+"t": "preposition"
+},
+"la": {
+"g": "the; her, it",
+"t": "article"
+},
+"arena": {
+"g": "sand",
+"t": "noun"
+},
+"méxico": {
+"g": "Mexico (country)",
+"t": "noun"
+},
+"ella": {
+"g": "she",
+"t": "pronoun"
+},
+"iba": {
+"g": "was going",
+"t": "verb"
+},
+"guía": {
+"g": "a guide",
+"t": "noun"
+},
+"se": {
+"g": "oneself, himself",
+"t": "pronoun"
+},
+"sabía": {
+"g": "knew",
+"t": "verb"
+},
+"cada": {
+"g": "each, every",
+"t": "adjective"
+},
+"y": {
+"g": "and",
+"t": "conjunction"
+},
+"grito": {
+"g": "shout, scream",
+"t": "noun"
+},
+"aquí": {
+"g": "here",
+"t": "adverb"
+},
+"no": {
+"g": "no, not",
+"t": "adverb"
+},
+"ver": {
+"g": "to see",
+"t": "verb"
+},
+"güey": {
+"g": "dude, man (Mexican)",
+"t": "noun"
+},
+"gritar": {
+"g": "to shout",
+"t": "verb"
+},
+"le": {
+"g": "to him, her, it",
+"t": "pronoun"
+},
+"advirtió": {
+"g": "warned, noticed",
+"t": "verb"
+},
+"entre": {
+"g": "between, among",
+"t": "preposition"
+},
+"el": {
+"g": "the",
+"t": "article"
+},
+"olor": {
+"g": "smell",
+"t": "noun"
+},
+"tacos": {
+"g": "tacos",
+"t": "noun"
+},
+"canasta": {
+"g": "a basket",
+"t": "noun"
+},
+"cerveza": {
+"g": "beer",
+"t": "noun"
+},
+"tibia": {
+"g": "warm",
+"t": "adjective"
+},
+"sentó": {
+"g": "sat down; suited",
+"t": "verb"
+},
+"al": {
+"g": "to the",
+"t": "preposition"
+},
+"puso": {
+"g": "put, placed",
+"t": "verb"
+},
+"una": {
+"g": "a, one (fem.)",
+"t": "article"
+},
+"mano": {
+"g": "hand; bro, dude",
+"t": "noun"
+},
+"señaló": {
+"g": "to point",
+"t": "verb"
+},
+"que": {
+"g": "that",
+"t": "conjunction"
+},
+"salía": {
+"g": "no salía = would not go out",
+"t": "verb"
+},
+"ese": {
+"g": "that (one)",
+"t": "pronoun"
+},
+"es": {
+"g": "is",
+"t": "verb"
+},
+"bueno": {
+"g": "good, well",
+"t": "adjective"
+},
+"cuando": {
+"g": "when",
+"t": "conjunction"
+},
+"lo": {
+"g": "it, him",
+"t": "pronoun"
+},
+"te": {
+"g": "you, yourself",
+"t": "pronoun"
+},
+"va": {
+"g": "he/she goes",
+"t": "verb"
+},
+"asintió": {
+"g": "nodded",
+"t": "verb"
+},
+"sin": {
+"g": "without",
+"t": "preposition"
+},
+"soltar": {
+"g": "to let go, release",
+"t": "verb"
+},
+"lengua": {
+"g": "lengua floja = a loose tongue",
+"t": "noun"
+},
+"todavía": {
+"g": "still, yet",
+"t": "adverb"
+},
+"fue": {
+"g": "was, went",
+"t": "verb"
+},
+"un": {
+"g": "a, one",
+"t": "article"
+},
+"desmadre": {
+"g": "chaos, wild mess",
+"t": "noun"
+},
+"hizo": {
+"g": "did, made",
+"t": "verb"
+},
+"trampa": {
+"g": "a trick, a trap",
+"t": "noun"
+},
+"entera": {
+"g": "whole, entire",
+"t": "adjective"
+},
+"vino": {
+"g": "wine; he/she came",
+"t": "noun"
+},
+"abajo": {
+"g": "down, below",
+"t": "adverb"
+},
+"con": {
+"g": "with",
+"t": "preposition"
+},
+"sola": {
+"g": "alone",
+"t": "adjective"
+},
+"hasta": {
+"g": "until, even",
+"t": "preposition"
+},
+"techo": {
+"g": "roof, ceiling",
+"t": "noun"
+},
+"gritaba": {
+"g": "was shouting",
+"t": "verb"
+},
+"parada": {
+"g": "a stop",
+"t": "noun"
+},
+"señalando": {
+"g": "to point",
+"t": "verb"
+},
+"notó": {
+"g": "noticed",
+"t": "verb"
+},
+"ya": {
+"g": "already, now",
+"t": "adverb"
+},
+"estaba": {
+"g": "was, used to be",
+"t": "verb"
+},
+"tieso": {
+"g": "stiff, rigid",
+"t": "adjective"
+},
+"asiento": {
+"g": "seat",
+"t": "noun"
+},
+"para": {
+"g": "for, to",
+"t": "preposition"
+},
+"todo": {
+"g": "all, everything",
+"t": "pronoun"
+},
+"rojo": {
+"g": "red, blushing",
+"t": "adjective"
+},
+"feliz": {
+"g": "happy",
+"t": "adjective"
+},
+"madre": {
+"g": "the mother",
+"t": "noun"
+},
+"como": {
+"g": "like, as",
+"t": "preposition"
+},
+"si": {
+"g": "if, whether",
+"t": "conjunction"
+},
+"dinero": {
+"g": "money",
+"t": "noun"
+},
+"risa": {
+"g": "laughter",
+"t": "noun"
+},
+"había": {
+"g": "there was; had",
+"t": "verb"
+},
+"nada": {
+"g": "nothing",
+"t": "pronoun"
+},
+"haciendo": {
+"g": "doing",
+"t": "verb"
+},
+"hace": {
+"g": "does, makes; ago",
+"t": "verb"
+},
+"todos": {
+"g": "everyone, all",
+"t": "pronoun"
+},
+"desde": {
+"g": "since, from",
+"t": "preposition"
+},
+"tercera": {
+"g": "third",
+"t": "adjective"
+},
+"abrazó": {
+"g": "hugged",
+"t": "verb"
+},
+"pensarlo": {
+"g": "to think it over",
+"t": "verb"
+},
+"esto": {
+"g": "this",
+"t": "pronoun"
+},
+"está": {
+"g": "is",
+"t": "verb"
+},
+"bien": {
+"g": "well, good",
+"t": "adverb"
+},
+"chido": {
+"g": "cool, great",
+"t": "adjective"
+},
+"dijo": {
+"g": "said",
+"t": "verb"
+},
+"tanto": {
+"g": "so much",
+"t": "adverb"
+},
+"salieron": {
+"g": "came out, rolled out",
+"t": "verb"
+},
+"calle": {
+"g": "street",
+"t": "noun"
+},
+"él": {
+"g": "he, him",
+"t": "pronoun"
+},
+"preguntaba": {
+"g": "was asking",
+"t": "verb"
+},
+"caía": {
+"g": "se le caía el mundo = his world fell apart",
+"t": "verb"
+},
+"próxima": {
+"g": "next",
+"t": "adjective"
+},
+"subió": {
+"g": "subírsele a la cabeza = went to her head",
+"t": "verb"
+},
+"trajinera": {
+"g": "a flat boat",
+"t": "noun"
+},
+"amiga": {
+"g": "a female friend",
+"t": "noun"
+},
+"toda": {
+"g": "all, whole (fem.)",
+"t": "adjective"
+},
+"vida": {
+"g": "life",
+"t": "noun"
+},
+"saber": {
+"g": "to know",
+"t": "verb"
+},
+"qué": {
+"g": "what",
+"t": "pronoun"
+},
+"iban": {
+"g": "were going",
+"t": "verb"
+},
+"era": {
+"g": "was, used to be",
+"t": "verb"
+},
+"paseo": {
+"g": "outing, stroll",
+"t": "noun"
+},
+"fiesta": {
+"g": "party",
+"t": "noun"
+},
+"ni": {
+"g": "not even, nor",
+"t": "conjunction"
+},
+"caguamas": {
+"g": "large sharing bottles of beer",
+"t": "noun"
+},
+"solo": {
+"g": "only, alone",
+"t": "adverb"
+},
+"ellas": {
+"g": "they, them (women)",
+"t": "pronoun"
+},
+"dos": {
+"g": "two",
+"t": "number"
+},
+"hacia": {
+"g": "toward",
+"t": "preposition"
+},
+"más": {
+"g": "more",
+"t": "adverb"
+},
+"callado": {
+"g": "quiet, silent",
+"t": "adjective"
+},
+"xochimilco": {
+"g": "Xochimilco (canals area)",
+"t": "noun"
+},
+"seria": {
+"g": "serious",
+"t": "adjective"
+},
+"cosa": {
+"g": "thing",
+"t": "noun"
+},
+"rara": {
+"g": "strange, odd",
+"t": "adjective"
+},
+"vara": {
+"g": "aguantar vara = to take teasing without cracking",
+"t": "noun"
+},
+"hubiera": {
+"g": "would have, had",
+"t": "verb"
+},
+"nacido": {
+"g": "born",
+"t": "verb"
+},
+"agua": {
+"g": "water",
+"t": "noun"
+},
+"hundía": {
+"g": "was sinking her deeper",
+"t": "verb"
+},
+"esquivaba": {
+"g": "was dodging",
+"t": "verb"
+},
+"basura": {
+"g": "trash, garbage",
+"t": "noun"
+},
+"fin": {
+"g": "end",
+"t": "noun"
+},
+"vayas": {
+"g": "no la vayas a embarrar = do not screw it up",
+"t": "verb"
+},
+"caer": {
+"g": "to fall",
+"t": "verb"
+},
+"caminaron": {
+"g": "they walked",
+"t": "verb"
+},
+"los": {
+"g": "the; them",
+"t": "article"
+},
+"hablaba": {
+"g": "was talking, spoke",
+"t": "verb"
+},
+"tierra": {
+"g": "land, ground, homeland",
+"t": "noun"
+},
+"cariño": {
+"g": "affection, dear",
+"t": "noun"
+},
+"nunca": {
+"g": "never",
+"t": "adverb"
+},
+"visto": {
+"g": "seen",
+"t": "verb"
+},
+"siempre": {
+"g": "always",
+"t": "adverb"
+},
+"juntas": {
+"g": "together",
+"t": "adjective"
+},
+"trajes": {
+"g": "suits",
+"t": "noun"
+},
+"esta": {
+"g": "this (one)",
+"t": "pronoun"
+},
+"embarrada": {
+"g": "screwup, mess",
+"t": "noun"
+},
+"las": {
+"g": "the; them",
+"t": "article"
+},
+"rodillas": {
+"g": "knees",
+"t": "noun"
+},
+"tarde": {
+"g": "afternoon, late",
+"t": "noun"
+},
+"soltó": {
+"g": "he/she let go, blurted",
+"t": "verb"
+},
+"bomba": {
+"g": "soltar la bomba = to drop a bombshell",
+"t": "noun"
+},
+"chamba": {
+"g": "work, job",
+"t": "noun"
+},
+"sueldo": {
+"g": "a salary, wages",
+"t": "noun"
+},
+"oficina": {
+"g": "office",
+"t": "noun"
+},
+"mi": {
+"g": "my",
+"t": "pronoun"
+},
+"yo": {
+"g": "I",
+"t": "pronoun"
+},
+"quedó": {
+"g": "stayed, ended up",
+"t": "verb"
+},
+"muda": {
+"g": "speechless, struck dumb",
+"t": "adjective"
+},
+"boca": {
+"g": "mouth",
+"t": "noun"
+},
+"abierta": {
+"g": "open",
+"t": "adjective"
+},
+"entonces": {
+"g": "then, so",
+"t": "adverb"
+},
+"silencio": {
+"g": "silence",
+"t": "noun"
+},
+"sus": {
+"g": "his, her, their (plural)",
+"t": "pronoun"
+},
+"manos": {
+"g": "hands",
+"t": "noun"
+},
+"mirada": {
+"g": "look, gaze",
+"t": "noun"
+},
+"nueva": {
+"g": "new (fem.)",
+"t": "adjective"
+},
+"apuesta": {
+"g": "a bet",
+"t": "noun"
+},
+"gruesa": {
+"g": "thick",
+"t": "adjective"
+},
+"por": {
+"g": "for, by",
+"t": "preposition"
+},
+"vez": {
+"g": "time, occasion",
+"t": "noun"
+},
+"supo": {
+"g": "knew, found out",
+"t": "verb"
+},
+"decir": {
+"g": "to say, to mean",
+"t": "verb"
+},
+"mejor": {
+"g": "better, best",
+"t": "adjective"
+},
+"amigo": {
+"g": "friend",
+"t": "noun"
+},
+"andaba": {
+"g": "was going around",
+"t": "verb"
+},
+"habían": {
+"g": "there were; had",
+"t": "verb"
+},
+"corrido": {
+"g": "fired, kicked out of a job",
+"t": "verb"
+},
+"días": {
+"g": "days",
+"t": "noun"
+},
+"preguntó": {
+"g": "asked",
+"t": "verb"
+},
+"teléfono": {
+"g": "phone",
+"t": "noun"
+},
+"llegó": {
+"g": "arrived",
+"t": "verb"
+},
+"puerta": {
+"g": "door",
+"t": "noun"
+},
+"sacó": {
+"g": "took out, pulled",
+"t": "verb"
+},
+"casi": {
+"g": "almost",
+"t": "adverb"
+},
+"llevó": {
+"g": "took, led away",
+"t": "verb"
+},
+"pidió": {
+"g": "asked, requested",
+"t": "verb"
+},
+"mismo": {
+"g": "same",
+"t": "adjective"
+},
+"modo": {
+"g": "way, manner",
+"t": "noun"
+},
+"ahí": {
+"g": "there",
+"t": "adverb"
+},
+"sobre": {
+"g": "about, on",
+"t": "preposition"
+},
+"mesa": {
+"g": "table",
+"t": "noun"
+},
+"madera": {
+"g": "wood",
+"t": "noun"
+},
+"vieja": {
+"g": "old woman, girl (slang)",
+"t": "noun"
+},
+"medio": {
+"g": "half; kind of",
+"t": "adverb"
+},
+"sonrió": {
+"g": "he/she smiled",
+"t": "verb"
+},
+"apagado": {
+"g": "turned off",
+"t": "adjective"
+},
+"partida": {
+"g": "split in two",
+"t": "adjective"
+},
+"juntos": {
+"g": "together",
+"t": "adjective"
+},
+"banda": {
+"g": "gang, crew, band",
+"t": "noun"
+},
+"barrio": {
+"g": "neighborhood",
+"t": "noun"
+},
+"veces": {
+"g": "times, occasions",
+"t": "noun"
+},
+"sacado": {
+"g": "gotten, pulled out",
+"t": "verb"
+},
+"empezó": {
+"g": "started",
+"t": "verb"
+},
+"cotorrear": {
+"g": "to chat, joke around",
+"t": "verb"
+},
+"madres": {
+"g": "valer madres = to not matter at all",
+"t": "noun"
+},
+"contra": {
+"g": "against",
+"t": "preposition"
+},
+"noche": {
+"g": "night",
+"t": "noun"
+},
+"unos": {
+"g": "some, a few",
+"t": "article"
+},
+"esquina": {
+"g": "corner",
+"t": "noun"
+},
+"piña": {
+"g": "pineapple; punch",
+"t": "noun"
+},
+"gracias": {
+"g": "thanks",
+"t": "expression"
+},
+"neta": {
+"g": "the truth, for real",
+"t": "expression"
+},
+"llena": {
+"g": "full",
+"t": "adjective"
+},
+"acomodó": {
+"g": "straightened, adjusted",
+"t": "verb"
+},
+"cariñoso": {
+"g": "affectionate",
+"t": "adjective"
+},
+"eso": {
+"g": "that",
+"t": "pronoun"
+},
+"hombros": {
+"g": "shoulders",
+"t": "noun"
+},
+"salsa": {
+"g": "cocky, a hotshot",
+"t": "adjective"
+},
+"verde": {
+"g": "green",
+"t": "adjective"
+},
+"humo": {
+"g": "the smoke",
+"t": "noun"
+},
+"carbón": {
+"g": "charcoal",
+"t": "noun"
+},
+"carcajadas": {
+"g": "bursts of loud laughter",
+"t": "noun"
+},
+"respiró": {
+"g": "breathed, relaxed",
+"t": "verb"
+},
+"hondo": {
+"g": "respirar hondo = to breathe deep",
+"t": "adjective"
+},
+"pero": {
+"g": "but",
+"t": "conjunction"
+},
+"volvía": {
+"g": "was coming back",
+"t": "verb"
+},
+"ser": {
+"g": "to be",
+"t": "verb"
+},
+"cabrón": {
+"g": "dude, bastard",
+"t": "noun"
+},
+"montón": {
+"g": "a ton, a lot",
+"t": "noun"
+},
+"mercado": {
+"g": "the market",
+"t": "noun"
+},
+"san": {
+"g": "Saint",
+"t": "noun"
+},
+"juan": {
+"g": "Juan (name)",
+"t": "noun"
+},
+"dios": {
+"g": "God",
+"t": "noun"
+},
+"hambre": {
+"g": "hunger",
+"t": "noun"
+},
+"teoría": {
+"g": "a theory",
+"t": "noun"
+},
+"muy": {
+"g": "very",
+"t": "adverb"
+},
+"jalaba": {
+"g": "recruited, brought people in",
+"t": "verb"
+},
+"puestos": {
+"g": "stalls",
+"t": "noun"
+},
+"dejar": {
+"g": "to leave, let",
+"t": "verb"
+},
+"burlarse": {
+"g": "to make fun",
+"t": "verb"
+},
+"aire": {
+"g": "air",
+"t": "noun"
+},
+"tortilla": {
+"g": "omelette",
+"t": "noun"
+},
+"recién": {
+"g": "just, recently",
+"t": "adverb"
+},
+"hecha": {
+"g": "made, done",
+"t": "adjective"
+},
+"onda": {
+"g": "vibe, what's up",
+"t": "noun"
+},
+"antes": {
+"g": "before",
+"t": "adverb"
+},
+"primero": {
+"g": "the first one",
+"t": "adjective"
+},
+"taco": {
+"g": "a taco",
+"t": "noun"
+},
+"ojos": {
+"g": "eyes",
+"t": "noun"
+},
+"blanco": {
+"g": "the target of teasing",
+"t": "noun"
+},
+"capital": {
+"g": "the capital",
+"t": "noun"
+},
+"también": {
+"g": "also, too",
+"t": "adverb"
+},
+"sabían": {
+"g": "they knew",
+"t": "verb"
+},
+"órale": {
+"g": "wow, come on (Mex.)",
+"t": "expression"
+},
+"remató": {
+"g": "finished off with a jab",
+"t": "verb"
+},
+"doña": {
+"g": "madam, Mrs.",
+"t": "noun"
+},
+"les": {
+"g": "to them, you all",
+"t": "pronoun"
+},
+"sirvió": {
+"g": "served, poured",
+"t": "verb"
+},
+"humeante": {
+"g": "steaming",
+"t": "adjective"
+},
+"olía": {
+"g": "smelled",
+"t": "verb"
+},
+"muchachos": {
+"g": "guys, folks",
+"t": "noun"
+},
+"lleva": {
+"g": "carries, takes",
+"t": "verb"
+},
+"cinco": {
+"g": "five",
+"t": "number"
+},
+"presumió": {
+"g": "bragged",
+"t": "verb"
+},
+"señora": {
+"g": "lady, madam",
+"t": "noun"
+},
+"dio": {
+"g": "gave",
+"t": "verb"
+},
+"callada": {
+"g": "quiet, silent",
+"t": "adjective"
+},
+"buen": {
+"g": "good",
+"t": "adjective"
+},
+"rato": {
+"g": "a while",
+"t": "noun"
+},
+"chiste": {
+"g": "joke",
+"t": "noun"
+},
+"admitió": {
+"g": "admitted",
+"t": "verb"
+},
+"masticando": {
+"g": "chewing",
+"t": "verb"
+},
+"estiró": {
+"g": "stretched",
+"t": "verb"
+},
+"muerto": {
+"g": "dead",
+"t": "adjective"
+},
+"orgullo": {
+"g": "pride",
+"t": "noun"
+},
+"viste": {
+"g": "you see, right",
+"t": "expression"
+},
+"raza": {
+"g": "the crew, your people",
+"t": "noun"
+},
+"comida": {
+"g": "food",
+"t": "noun"
+},
+"risas": {
+"g": "laughs, laughter",
+"t": "noun"
+},
+"retiro": {
+"g": "the Retiro (park)",
+"t": "noun"
+},
+"chafa": {
+"g": "cheap, crappy",
+"t": "adjective"
+},
+"reconoció": {
+"g": "recognized",
+"t": "verb"
+},
+"cuchara": {
+"g": "spoon",
+"t": "noun"
+},
+"guiñó": {
+"g": "winked",
+"t": "verb"
+},
+"ojo": {
+"g": "eye; watch out",
+"t": "noun"
+},
+"llegan": {
+"g": "they arrive",
+"t": "verb"
+},
+"mija": {
+"g": "dear, honey (girl)",
+"t": "expression"
+},
+"van": {
+"g": "to go",
+"t": "verb"
+},
+"sentenció": {
+"g": "declared with authority",
+"t": "verb"
+},
+"calma": {
+"g": "calm",
+"t": "noun"
+},
+"tanda": {
+"g": "a batch",
+"t": "noun"
+},
+"seguir": {
+"g": "to keep on, to continue",
+"t": "verb"
+},
+"largo": {
+"g": "long; get lost",
+"t": "adjective"
+},
+"quién": {
+"g": "who",
+"t": "pronoun"
+},
+"tenía": {
+"g": "I/he/she had",
+"t": "verb"
+},
+"razón": {
+"g": "reason",
+"t": "noun"
+},
+"plaza": {
+"g": "square, plaza",
+"t": "noun"
+},
+"mariachis": {
+"g": "mariachi players",
+"t": "noun"
+},
+"movía": {
+"g": "was moving",
+"t": "verb"
+},
+"pez": {
+"g": "a fish",
+"t": "noun"
+},
+"venido": {
+"g": "come",
+"t": "verb"
+},
+"guadalajara": {
+"g": "Guadalajara (city)",
+"t": "noun"
+},
+"tantas": {
+"g": "so many",
+"t": "adjective"
+},
+"memoria": {
+"g": "memory",
+"t": "noun"
+},
+"lado": {
+"g": "side",
+"t": "noun"
+},
+"celular": {
+"g": "cellphone",
+"t": "noun"
+},
+"bajo": {
+"g": "low, under",
+"t": "adjective"
+},
+"tranquila": {
+"g": "calm, relax (fem.)",
+"t": "adjective"
+},
+"prima": {
+"g": "cousin (female)",
+"t": "noun"
+},
+"voy": {
+"g": "I go, I'm going",
+"t": "verb"
+},
+"me": {
+"g": "me, myself",
+"t": "pronoun"
+},
+"mariachi": {
+"g": "mariachi music",
+"t": "noun"
+},
+"frente": {
+"g": "front; forehead",
+"t": "noun"
+},
+"arrancó": {
+"g": "started off",
+"t": "verb"
+},
+"cuanto": {
+"g": "as soon as",
+"t": "conjunction"
+},
+"gol": {
+"g": "goal (soccer)",
+"t": "noun"
+},
+"tú": {
+"g": "you",
+"t": "pronoun"
+},
+"mí": {
+"g": "me",
+"t": "pronoun"
+},
+"susurró": {
+"g": "whispered",
+"t": "verb"
+},
+"miró": {
+"g": "looked",
+"t": "verb"
+},
+"incrédula": {
+"g": "incredulous",
+"t": "adjective"
+},
+"vista": {
+"g": "view, sight",
+"t": "noun"
+},
+"clavada": {
+"g": "stuck, fixed",
+"t": "adjective"
+},
+"pantalla": {
+"g": "screen",
+"t": "noun"
+},
+"donde": {
+"g": "where",
+"t": "adverb"
+},
+"árbitro": {
+"g": "the referee",
+"t": "noun"
+},
+"marcaba": {
+"g": "was marking, dialing",
+"t": "verb"
+},
+"último": {
+"g": "last, latest",
+"t": "adjective"
+},
+"minuto": {
+"g": "minute",
+"t": "noun"
+},
+"cómo": {
+"g": "how",
+"t": "adverb"
+},
+"viendo": {
+"g": "looking",
+"t": "verb"
+},
+"partido": {
+"g": "sin un peso partido = penniless",
+"t": "adjective"
+},
+"nota": {
+"g": "note",
+"t": "noun"
+},
+"cuenta": {
+"g": "account; bill",
+"t": "noun"
+},
+"cantaba": {
+"g": "was singing",
+"t": "verb"
+},
+"otra": {
+"g": "another (fem.)",
+"t": "adjective"
+},
+"mitad": {
+"g": "half",
+"t": "noun"
+},
+"corrió": {
+"g": "moved over",
+"t": "verb"
+},
+"red": {
+"g": "a network of people",
+"t": "noun"
+},
+"entero": {
+"g": "whole, entire",
+"t": "adjective"
+},
+"ponerse": {
+"g": "to start to, to get",
+"t": "verb"
+},
+"acuerdo": {
+"g": "agreement",
+"t": "noun"
+},
+"canción": {
+"g": "a song",
+"t": "noun"
+},
+"retumbó": {
+"g": "boomed, rumbled",
+"t": "verb"
+},
+"muerta": {
+"g": "dead; muerta de hambre = starving",
+"t": "adjective"
+},
+"guardó": {
+"g": "put away, kept",
+"t": "verb"
+},
+"creer": {
+"g": "to believe",
+"t": "verb"
+},
+"acababa": {
+"g": "ended up",
+"t": "verb"
+},
+"pasar": {
+"g": "to spend (time)",
+"t": "verb"
+},
+"puede": {
+"g": "can",
+"t": "verb"
+},
+"conozcas": {
+"g": "you know it",
+"t": "verb"
+},
+"ciudad": {
+"g": "city",
+"t": "noun"
+},
+"silla": {
+"g": "chair",
+"t": "noun"
+},
+"saboreando": {
+"g": "savoring",
+"t": "verb"
+},
+"papel": {
+"g": "a piece of paper",
+"t": "noun"
+},
+"mientras": {
+"g": "while, meanwhile",
+"t": "conjunction"
+},
+"trompetas": {
+"g": "trumpets",
+"t": "noun"
+},
+"triunfo": {
+"g": "triumph, victory",
+"t": "noun"
+},
+"mañana": {
+"g": "tomorrow; morning",
+"t": "adverb"
+},
+"siguiente": {
+"g": "next, following",
+"t": "adjective"
+},
+"despertó": {
+"g": "woke up",
+"t": "verb"
+},
+"anterior": {
+"g": "previous",
+"t": "adjective"
+},
+"tlaquepaque": {
+"g": "Tlaquepaque (crafts town)",
+"t": "noun"
+},
+"perder": {
+"g": "to lose",
+"t": "verb"
+},
+"pinche": {
+"g": "damn, bloody",
+"t": "adjective"
+},
+"gruñó": {
+"g": "growled",
+"t": "verb"
+},
+"fresca": {
+"g": "fresh",
+"t": "adjective"
+},
+"tortas": {
+"g": "sandwiches",
+"t": "noun"
+},
+"ahogadas": {
+"g": "drowned (in sauce)",
+"t": "adjective"
+},
+"envueltas": {
+"g": "wrapped up",
+"t": "adjective"
+},
+"hay": {
+"g": "there is, there are",
+"t": "verb"
+},
+"torta": {
+"g": "a sandwich",
+"t": "noun"
+},
+"prometió": {
+"g": "promised",
+"t": "verb"
+},
+"pena": {
+"g": "shame, embarrassment",
+"t": "noun"
+},
+"árbol": {
+"g": "the tree",
+"t": "noun"
+},
+"sudar": {
+"g": "to sweat",
+"t": "verb"
+},
+"instante": {
+"g": "an instant",
+"t": "noun"
+},
+"mames": {
+"g": "no way, you're kidding",
+"t": "expression"
+},
+"sí": {
+"g": "yes",
+"t": "adverb"
+},
+"levanta": {
+"g": "lifts, raises",
+"t": "verb"
+},
+"muertos": {
+"g": "dead; muertos de frío = freezing",
+"t": "adjective"
+},
+"confesó": {
+"g": "confessed",
+"t": "verb"
+},
+"puesto": {
+"g": "puesto las pilas = got his act together",
+"t": "verb"
+},
+"familia": {
+"g": "family",
+"t": "noun"
+},
+"hacía": {
+"g": "was doing, made",
+"t": "verb"
+},
+"tres": {
+"g": "three",
+"t": "number"
+},
+"tan": {
+"g": "so, such",
+"t": "adverb"
+},
+"comentó": {
+"g": "commented",
+"t": "verb"
+},
+"atando": {
+"g": "atar cabos = putting the pieces together",
+"t": "verb"
+},
+"cabos": {
+"g": "loose ends",
+"t": "noun"
+},
+"botella": {
+"g": "bottle",
+"t": "noun"
+},
+"mueca": {
+"g": "a face or grimace",
+"t": "noun"
+},
+"pícara": {
+"g": "sly, mischievous",
+"t": "adjective"
+},
+"verdad": {
+"g": "truth, right?",
+"t": "noun"
+},
+"cara": {
+"g": "face",
+"t": "noun"
+},
+"camino": {
+"g": "path, road",
+"t": "noun"
+},
+"vergüenza": {
+"g": "shame, embarrassment",
+"t": "noun"
+},
+"carcajada": {
+"g": "a burst of loud laughter",
+"t": "noun"
+},
+"o": {
+"g": "or",
+"t": "conjunction"
+},
+"sea": {
+"g": "may be, is",
+"t": "verb"
+},
+"presumiendo": {
+"g": "showing off, boasting",
+"t": "verb"
+},
+"reclamó": {
+"g": "complained",
+"t": "verb"
+},
+"poder": {
+"g": "to be able",
+"t": "verb"
+},
+"enojarse": {
+"g": "to get angry",
+"t": "verb"
+},
+"pasó": {
+"g": "happened, passed",
+"t": "verb"
+},
+"servilleta": {
+"g": "a napkin",
+"t": "noun"
+},
+"brindó": {
+"g": "made a toast",
+"t": "verb"
+},
+"vaso": {
+"g": "a glass",
+"t": "noun"
+},
+"patio": {
+"g": "courtyard, yard",
+"t": "noun"
+},
+"beto": {
+"g": "Beto (name)",
+"t": "noun"
+},
+"ganas": {
+"g": "desire, wanting to",
+"t": "noun"
+},
+"amigos": {
+"g": "friends",
+"t": "noun"
+},
+"asador": {
+"g": "the grill master",
+"t": "noun"
+},
+"listo": {
+"g": "ready; smart",
+"t": "adjective"
+},
+"junto": {
+"g": "together, next to",
+"t": "adverb"
+},
+"chelas": {
+"g": "beers",
+"t": "noun"
+},
+"frías": {
+"g": "cold (plural)",
+"t": "adjective"
+},
+"carne": {
+"g": "meat",
+"t": "noun"
+},
+"acá": {
+"g": "here",
+"t": "adverb"
+},
+"apura": {
+"g": "hurries",
+"t": "verb"
+},
+"prisa": {
+"g": "hurry",
+"t": "noun"
+},
+"mundo": {
+"g": "world",
+"t": "noun"
+},
+"toma": {
+"g": "to drink",
+"t": "verb"
+},
+"deja": {
+"g": "leaves, lets",
+"t": "verb"
+},
+"fuego": {
+"g": "prueba de fuego = a trial by fire",
+"t": "noun"
+},
+"hombre": {
+"g": "man",
+"t": "noun"
+},
+"poco": {
+"g": "poco a poco = little by little",
+"t": "adverb"
+},
+"arte": {
+"g": "art",
+"t": "noun"
+},
+"mueve": {
+"g": "moves",
+"t": "verb"
+},
+"tiempo": {
+"g": "time, weather",
+"t": "noun"
+},
+"echa": {
+"g": "throws, pours",
+"t": "verb"
+},
+"sabe": {
+"g": "knows, tastes",
+"t": "verb"
+},
+"manda": {
+"g": "sends, orders",
+"t": "verb"
+},
+"pues": {
+"g": "well, then",
+"t": "expression"
+},
+"quiero": {
+"g": "I want",
+"t": "verb"
+},
+"ve": {
+"g": "sees, goes",
+"t": "verb"
+},
+"tu": {
+"g": "your",
+"t": "pronoun"
+},
+"lejos": {
+"g": "far",
+"t": "adverb"
+},
+"mirar": {
+"g": "to look",
+"t": "verb"
+},
+"cae": {
+"g": "falls",
+"t": "verb"
+},
+"luego": {
+"g": "later, then",
+"t": "adverb"
+},
+"demás": {
+"g": "the others",
+"t": "pronoun"
+},
+"así": {
+"g": "like this, so",
+"t": "adverb"
+},
+"serio": {
+"g": "serious",
+"t": "adjective"
+},
+"jale": {
+"g": "a job, a gig",
+"t": "noun"
+},
+"seas": {
+"g": "to be",
+"t": "verb"
+},
+"bajó": {
+"g": "went down, lowered",
+"t": "verb"
+},
+"apenas": {
+"g": "barely, just",
+"t": "adverb"
+},
+"pretexto": {
+"g": "excuse, pretext",
+"t": "noun"
+},
+"relajo": {
+"g": "mess, ruckus",
+"t": "noun"
+},
+"larga": {
+"g": "long",
+"t": "adjective"
+},
+"madrugada": {
+"g": "early morning hours",
+"t": "noun"
+},
+"tocó": {
+"g": "touched, had to",
+"t": "verb"
+},
+"punto": {
+"g": "point, dot",
+"t": "noun"
+},
+"salió": {
+"g": "went out, turned out",
+"t": "verb"
+},
+"mal": {
+"g": "badly, bad",
+"t": "adverb"
+},
+"reventón": {
+"g": "big party, blowout",
+"t": "noun"
+},
+"pegado": {
+"g": "dancing close together",
+"t": "adjective"
+},
+"cuerpo": {
+"g": "body",
+"t": "noun"
+},
+"cuate": {
+"g": "buddy, pal",
+"t": "noun"
+},
+"decía": {
+"g": "said",
+"t": "verb"
+},
+"estás": {
+"g": "you are",
+"t": "verb"
+},
+"quieres": {
+"g": "you want",
+"t": "verb"
+},
+"cerro": {
+"g": "a hill",
+"t": "noun"
+},
+"contigo": {
+"g": "with you",
+"t": "pronoun"
+},
+"dormir": {
+"g": "to sleep",
+"t": "verb"
+},
+"salimos": {
+"g": "we go out",
+"t": "verb"
+},
+"temprano": {
+"g": "early",
+"t": "adverb"
+},
+"llegamos": {
+"g": "we arrive",
+"t": "verb"
+},
+"punta": {
+"g": "tip, point",
+"t": "noun"
+},
+"gente": {
+"g": "people",
+"t": "noun"
+},
+"sol": {
+"g": "sun",
+"t": "noun"
+},
+"pesado": {
+"g": "heavy",
+"t": "adjective"
+},
+"son": {
+"g": "they are",
+"t": "verb"
+},
+"horas": {
+"g": "hours",
+"t": "noun"
+},
+"queda": {
+"g": "stays, remains",
+"t": "verb"
+},
+"sale": {
+"g": "goes out; okay",
+"t": "verb"
+},
+"bajar": {
+"g": "bajar la cabeza = to admit defeat",
+"t": "verb"
+},
+"cervezas": {
+"g": "beers",
+"t": "noun"
+},
+"caigo": {
+"g": "caer parado = to land on my feet",
+"t": "verb"
+},
+"allá": {
+"g": "over there",
+"t": "adverb"
+},
+"arriba": {
+"g": "up, above",
+"t": "adverb"
+},
+"vuelta": {
+"g": "turn, stroll",
+"t": "noun"
+},
+"buena": {
+"g": "good",
+"t": "adjective"
+},
+"feria": {
+"g": "fair, festival",
+"t": "noun"
+},
+"ahora": {
+"g": "now",
+"t": "adverb"
+},
+"simple": {
+"g": "simple",
+"t": "adjective"
+},
+"espera": {
+"g": "waits for",
+"t": "verb"
+},
+"nadie": {
+"g": "nobody",
+"t": "pronoun"
+},
+"morra": {
+"g": "girl, chick",
+"t": "noun"
+},
+"mira": {
+"g": "look, hey",
+"t": "verb"
+},
+"cielo": {
+"g": "pegar el grito al cielo = to protest loudly",
+"t": "noun"
+},
+"nos": {
+"g": "us, ourselves",
+"t": "pronoun"
+},
+"jaló": {
+"g": "pulled",
+"t": "verb"
+},
+"rápido": {
+"g": "fast, quick",
+"t": "adjective"
+},
+"cuesta": {
+"g": "a slope",
+"t": "noun"
+},
+"esperar": {
+"g": "to wait",
+"t": "verb"
+},
+"respuesta": {
+"g": "an answer, a response",
+"t": "noun"
+},
+"pila": {
+"g": "a stack",
+"t": "noun"
+},
+"encima": {
+"g": "on top; besides",
+"t": "adverb"
+},
+"marcó": {
+"g": "dialed, marked",
+"t": "verb"
+},
+"número": {
+"g": "number",
+"t": "noun"
+},
+"contó": {
+"g": "told, recounted",
+"t": "verb"
+},
+"entrada": {
+"g": "entrance; ticket",
+"t": "noun"
+},
+"dejó": {
+"g": "let, left",
+"t": "verb"
+},
+"casa": {
+"g": "house, home",
+"t": "noun"
+},
+"justo": {
+"g": "just, exactly; fair",
+"t": "adverb"
+},
+"comadre": {
+"g": "close friend, godmother",
+"t": "noun"
+},
+"quedaba": {
+"g": "was staying, remained",
+"t": "verb"
+},
+"fondo": {
+"g": "the back, background",
+"t": "noun"
+},
+"sala": {
+"g": "living room",
+"t": "noun"
+},
+"jefe": {
+"g": "boss",
+"t": "noun"
+},
+"lomo": {
+"g": "a ridge",
+"t": "noun"
+},
+"día": {
+"g": "day",
+"t": "noun"
+},
+"paga": {
+"g": "pays for",
+"t": "verb"
+},
+"completa": {
+"g": "complete, whole",
+"t": "adjective"
+},
+"piden": {
+"g": "they ask",
+"t": "verb"
+},
+"diga": {
+"g": "say (subjunctive)",
+"t": "verb"
+},
+"nomás": {
+"g": "just, only",
+"t": "adverb"
+},
+"turno": {
+"g": "a work shift",
+"t": "noun"
+},
+"tengo": {
+"g": "I have",
+"t": "verb"
+},
+"poner": {
+"g": "to put",
+"t": "verb"
+},
+"propio": {
+"g": "their own",
+"t": "adjective"
+},
+"aunque": {
+"g": "although",
+"t": "conjunction"
+},
+"loca": {
+"g": "crazy",
+"t": "adjective"
+},
+"mil": {
+"g": "a thousand",
+"t": "number"
+},
+"patrón": {
+"g": "the boss",
+"t": "noun"
+},
+"saluda": {
+"g": "greets",
+"t": "verb"
+},
+"miedo": {
+"g": "fear",
+"t": "noun"
+},
+"clientes": {
+"g": "customers",
+"t": "noun"
+},
+"sazón": {
+"g": "seasoning, flavor touch",
+"t": "noun"
+},
+"billete": {
+"g": "cash, dough",
+"t": "noun"
+},
+"doy": {
+"g": "I give",
+"t": "verb"
+},
+"brindaron": {
+"g": "they toasted",
+"t": "verb"
+},
+"trago": {
+"g": "a swig, a gulp of drink",
+"t": "noun"
+},
+"drama": {
+"g": "fuss, drama",
+"t": "noun"
+},
+"siguió": {
+"g": "he/she followed, kept on",
+"t": "verb"
+},
+"sonando": {
+"g": "ringing, sounding",
+"t": "verb"
+},
+"sonrisa": {
+"g": "smile",
+"t": "noun"
+},
+"meses": {
+"g": "months",
+"t": "noun"
+},
+"quedaron": {
+"g": "they stayed",
+"t": "verb"
+},
+"despacio": {
+"g": "slowly",
+"t": "adverb"
+},
+"barra": {
+"g": "the bar counter",
+"t": "noun"
+},
+"mezcalería": {
+"g": "mezcal bar",
+"t": "noun"
+},
+"parche": {
+"g": "hangout, crew",
+"t": "noun"
+},
+"mezcal": {
+"g": "mezcal, the Oaxacan agave spirit",
+"t": "noun"
+},
+"nayeli": {
+"g": "Nayeli (name)",
+"t": "noun"
+},
+"venía": {
+"g": "he/she was coming",
+"t": "verb"
+},
+"miraron": {
+"g": "looked at each other",
+"t": "verb"
+},
+"tomó": {
+"g": "se tomó = drank down",
+"t": "verb"
+},
+"primer": {
+"g": "first",
+"t": "adjective"
+},
+"probó": {
+"g": "tried, tasted",
+"t": "verb"
+},
+"veredicto": {
+"g": "verdict",
+"t": "noun"
+},
+"este": {
+"g": "this (one); um",
+"t": "pronoun"
+},
+"joven": {
+"g": "young, young person",
+"t": "adjective"
+},
+"corriente": {
+"g": "tacky, low-class",
+"t": "adjective"
+},
+"hicieron": {
+"g": "they did, made",
+"t": "verb"
+},
+"segura": {
+"g": "sure, safe",
+"t": "adjective"
+},
+"levantó": {
+"g": "lifted, raised",
+"t": "verb"
+},
+"otro": {
+"g": "another, other",
+"t": "adjective"
+},
+"semanas": {
+"g": "weeks",
+"t": "noun"
+},
+"gusto": {
+"g": "taste, pleasure",
+"t": "noun"
+},
+"echar": {
+"g": "to throw, put; kick out",
+"t": "verb"
+},
+"choro": {
+"g": "thief; cool, tough",
+"t": "noun"
+},
+"contaba": {
+"g": "was telling",
+"t": "verb"
+},
+"historia": {
+"g": "story, history",
+"t": "noun"
+},
+"distinta": {
+"g": "different",
+"t": "adjective"
+},
+"cambiando": {
+"g": "changing",
+"t": "verb"
+},
+"vio": {
+"g": "he/she saw",
+"t": "verb"
+},
+"enfrente": {
+"g": "across, opposite",
+"t": "adverb"
+},
+"cuatro": {
+"g": "four",
+"t": "number"
+},
+"sintiéndose": {
+"g": "feeling",
+"t": "verb"
+},
+"revés": {
+"g": "backwards, reverse",
+"t": "noun"
+},
+"llamó": {
+"g": "called",
+"t": "verb"
+},
+"juró": {
+"g": "swore, vowed",
+"t": "verb"
+},
+"naco": {
+"g": "tacky, low class",
+"t": "adjective"
+},
+"rió": {
+"g": "laughed",
+"t": "verb"
+},
+"divertida": {
+"g": "fun, amusing",
+"t": "adjective"
+},
+"veras": {
+"g": "de a de veras = for real",
+"t": "adverb"
+},
+"llegado": {
+"g": "arrived",
+"t": "verb"
+},
+"valle": {
+"g": "valley",
+"t": "noun"
+},
+"idea": {
+"g": "idea",
+"t": "noun"
+},
+"finde": {
+"g": "the weekend",
+"t": "slang"
+},
+"tranquilo": {
+"g": "calm, chill",
+"t": "adjective"
+},
+"hamaca": {
+"g": "hammock",
+"t": "noun"
+},
+"aguantó": {
+"g": "held on, endured",
+"t": "verb"
+},
+"carrilla": {
+"g": "teasing, ribbing",
+"t": "noun"
+},
+"avisó": {
+"g": "warned, announced",
+"t": "verb"
+},
+"portón": {
+"g": "large gate",
+"t": "noun"
+},
+"hombro": {
+"g": "shoulder",
+"t": "noun"
+},
+"hoy": {
+"g": "today",
+"t": "adverb"
+},
+"toca": {
+"g": "touches, has to",
+"t": "verb"
+},
+"gritó": {
+"g": "shouted",
+"t": "verb"
+},
+"fueran": {
+"g": "as if they were",
+"t": "verb"
+},
+"entendía": {
+"g": "understood, was understanding",
+"t": "verb"
+},
+"explicó": {
+"g": "explained",
+"t": "verb"
+},
+"pasaba": {
+"g": "was happening",
+"t": "verb"
+},
+"café": {
+"g": "coffee",
+"t": "noun"
+},
+"trabajo": {
+"g": "work, job",
+"t": "noun"
+},
+"pueblo": {
+"g": "a village",
+"t": "noun"
+},
+"porque": {
+"g": "because",
+"t": "conjunction"
+},
+"hacían": {
+"g": "they were doing",
+"t": "verb"
+},
+"cosas": {
+"g": "things",
+"t": "noun"
+},
+"rajarse": {
+"g": "to chicken out",
+"t": "verb"
+},
+"quedar": {
+"g": "to stay, remain",
+"t": "verb"
+},
+"arrastró": {
+"g": "dragged",
+"t": "verb"
+},
+"pies": {
+"g": "feet",
+"t": "noun"
+},
+"convencida": {
+"g": "convinced",
+"t": "adjective"
+},
+"mamada": {
+"g": "bullshit, nonsense",
+"t": "noun"
+},
+"piedras": {
+"g": "stones",
+"t": "noun"
+},
+"cemento": {
+"g": "cement",
+"t": "noun"
+},
+"conocía": {
+"g": "knew, was acquainted with",
+"t": "verb"
+},
+"ritmo": {
+"g": "agarrar el ritmo = to find the groove",
+"t": "noun"
+},
+"media": {
+"g": "half; stocking",
+"t": "adjective"
+},
+"darse": {
+"g": "to give oneself; realize",
+"t": "verb"
+},
+"aventó": {
+"g": "threw; se aventó = went for it",
+"t": "verb"
+},
+"jurado": {
+"g": "sworn, promised",
+"t": "verb"
+},
+"sentía": {
+"g": "felt",
+"t": "verb"
+},
+"distinto": {
+"g": "different",
+"t": "adjective"
+},
+"supiera": {
+"g": "if he knew",
+"t": "verb"
+},
+"terminaron": {
+"g": "they finished, broke up",
+"t": "verb"
+},
+"alguien": {
+"g": "someone",
+"t": "pronoun"
+},
+"repartió": {
+"g": "handed out, distributed",
+"t": "verb"
+},
+"tlayudas": {
+"g": "tlayudas (Oaxacan dish)",
+"t": "noun"
+},
+"suya": {
+"g": "as if the street were his",
+"t": "adjective"
+},
+"piedra": {
+"g": "stone",
+"t": "noun"
+},
+"polvo": {
+"g": "dust",
+"t": "noun"
+},
+"volver": {
+"g": "to return, go back",
+"t": "verb"
+},
+"después": {
+"g": "after, later",
+"t": "adverb"
+},
+"guelaguetza": {
+"g": "the Oaxacan spirit of mutual giving",
+"t": "noun"
+},
+"juntó": {
+"g": "gathered, put together",
+"t": "verb"
+},
+"cerrar": {
+"g": "to close",
+"t": "verb"
+},
+"visita": {
+"g": "visit, visits",
+"t": "noun"
+},
+"cena": {
+"g": "dinner",
+"t": "noun"
+},
+"forma": {
+"g": "en forma = properly, in style",
+"t": "noun"
+},
+"prendió": {
+"g": "prenderse el foco = the lightbulb went on",
+"t": "verb"
+},
+"alebrije": {
+"g": "an alebrije (folk figure)",
+"t": "noun"
+},
+"traía": {
+"g": "was carrying, had",
+"t": "verb"
+},
+"tortillas": {
+"g": "flatbreads",
+"t": "noun"
+},
+"unas": {
+"g": "some (fem.)",
+"t": "article"
+},
+"daban": {
+"g": "gave, considered",
+"t": "verb"
+},
+"ajena": {
+"g": "someone else's",
+"t": "adjective"
+},
+"masa": {
+"g": "dough, mass",
+"t": "noun"
+},
+"mandó": {
+"g": "sent",
+"t": "verb"
+},
+"modos": {
+"g": "manners, ways",
+"t": "noun"
+},
+"perdido": {
+"g": "lost; ya había perdido = had already lost",
+"t": "verb"
+},
+"buscando": {
+"g": "looking for",
+"t": "verb"
+},
+"igual": {
+"g": "same; anyway",
+"t": "adverb"
+},
+"fuera": {
+"g": "outside; were",
+"t": "adverb"
+},
+"echó": {
+"g": "threw, put",
+"t": "verb"
+},
+"agarrando": {
+"g": "agarrar el ritmo = finding the groove",
+"t": "verb"
+},
+"oaxaca": {
+"g": "Oaxaca (place)",
+"t": "noun"
+},
+"falta": {
+"g": "sin falta = without fail",
+"t": "noun"
+},
+"seguía": {
+"g": "kept, was following",
+"t": "verb"
+},
+"olla": {
+"g": "pot",
+"t": "noun"
+},
+"hubo": {
+"g": "there was",
+"t": "verb"
+},
+"despedida": {
+"g": "farewell, goodbye",
+"t": "noun"
+},
+"discurso": {
+"g": "a speech",
+"t": "noun"
+},
+"cursi": {
+"g": "cheesy, corny",
+"t": "adjective"
+},
+"última": {
+"g": "last, final",
+"t": "adjective"
+},
+"ronda": {
+"g": "round, patrol",
+"t": "noun"
+},
+"terminó": {
+"g": "he/she finished, ended",
+"t": "verb"
+},
+"luz": {
+"g": "the light",
+"t": "noun"
+},
+"foco": {
+"g": "prenderse el foco = the lightbulb moment",
+"t": "noun"
+},
+"año": {
+"g": "year",
+"t": "noun"
+},
+"mucho": {
+"g": "a lot, much",
+"t": "adverb"
+},
+"caso": {
+"g": "she obeyed him",
+"t": "expression"
+},
+"promesa": {
+"g": "a promise",
+"t": "noun"
+},
+"esas": {
+"g": "those",
+"t": "pronoun"
+},
+"cabeza": {
+"g": "head",
+"t": "noun"
+},
+"leña": {
+"g": "firewood",
+"t": "noun"
+},
+"grababa": {
+"g": "was recording",
+"t": "verb"
+},
+"alto": {
+"g": "tall",
+"t": "adjective"
+},
+"cochinita": {
+"g": "slow-roasted pork",
+"t": "noun"
+},
+"abuela": {
+"g": "grandmother",
+"t": "noun"
+},
+"recibió": {
+"g": "greeted, received",
+"t": "verb"
+},
+"abierto": {
+"g": "opened, freshly opened",
+"t": "adjective"
+},
+"plena": {
+"g": "en plena mesa = right in the middle of",
+"t": "adjective"
+},
+"baja": {
+"g": "goes down, lowers",
+"t": "verb"
+},
+"cámara": {
+"g": "camera",
+"t": "noun"
+},
+"vale": {
+"g": "okay; it's worth",
+"t": "expression"
+},
+"oro": {
+"g": "gold",
+"t": "noun"
+},
+"contestó": {
+"g": "answered, replied",
+"t": "verb"
+},
+"despegar": {
+"g": "to take off",
+"t": "verb"
+},
+"cocina": {
+"g": "kitchen",
+"t": "noun"
+},
+"destapó": {
+"g": "uncovered, opened",
+"t": "verb"
+},
+"vapor": {
+"g": "steam, vapor",
+"t": "noun"
+},
+"cargado": {
+"g": "loaded up, carrying a lot",
+"t": "adjective"
+},
+"negro": {
+"g": "off the books",
+"t": "expression"
+},
+"plátano": {
+"g": "plantain, banana",
+"t": "noun"
+},
+"horno": {
+"g": "al horno = in deep trouble",
+"t": "noun"
+},
+"batería": {
+"g": "a battery",
+"t": "noun"
+},
+"golpe": {
+"g": "hit, blow",
+"t": "noun"
+},
+"calor": {
+"g": "heat",
+"t": "noun"
+},
+"bravo": {
+"g": "angry, sulking",
+"t": "adjective"
+},
+"mediodía": {
+"g": "noon, midday",
+"t": "noun"
+},
+"negra": {
+"g": "black",
+"t": "adjective"
+},
+"humeando": {
+"g": "steaming",
+"t": "verb"
+},
+"plato": {
+"g": "a plate, a dish",
+"t": "noun"
+},
+"hacer": {
+"g": "to do, make",
+"t": "verb"
+},
+"valió": {
+"g": "it was worth it",
+"t": "verb"
+},
+"murmuró": {
+"g": "murmured",
+"t": "verb"
+},
+"apagó": {
+"g": "went out, faded",
+"t": "verb"
+},
+"fría": {
+"g": "cold",
+"t": "adjective"
+},
+"ningún": {
+"g": "no, not any",
+"t": "adjective"
+},
+"guarda": {
+"g": "keeps, guards",
+"t": "verb"
+},
+"tibio": {
+"g": "lukewarm",
+"t": "adjective"
+},
+"pronto": {
+"g": "soon",
+"t": "adverb"
+},
+"señal": {
+"g": "a sign",
+"t": "noun"
+},
+"quedarse": {
+"g": "to stay",
+"t": "verb"
+},
+"cenote": {
+"g": "a cenote (sinkhole pool)",
+"t": "noun"
+},
+"veía": {
+"g": "looked, seemed",
+"t": "verb"
+},
+"turquesa": {
+"g": "turquoise",
+"t": "adjective"
+},
+"helada": {
+"g": "frozen",
+"t": "adjective"
+},
+"borde": {
+"g": "the brim, edge",
+"t": "noun"
+},
+"honda": {
+"g": "slingshot, deep",
+"t": "noun"
+},
+"escaleras": {
+"g": "stairs",
+"t": "noun"
+},
+"agarró": {
+"g": "caught, got",
+"t": "verb"
+},
+"renata": {
+"g": "Renata (name)",
+"t": "noun"
+},
+"buenísima": {
+"g": "really good",
+"t": "adjective"
+},
+"veo": {
+"g": "I see",
+"t": "verb"
+},
+"suelo": {
+"g": "floor, ground",
+"t": "noun"
+},
+"pegada": {
+"g": "champeta pegada = blasting music",
+"t": "adjective"
+},
+"roca": {
+"g": "the rock",
+"t": "noun"
+},
+"rozó": {
+"g": "brushed against",
+"t": "verb"
+},
+"pie": {
+"g": "foot",
+"t": "noun"
+},
+"pegó": {
+"g": "hit, stuck",
+"t": "verb"
+},
+"algo": {
+"g": "something",
+"t": "pronoun"
+},
+"trepando": {
+"g": "climbing",
+"t": "verb"
+},
+"escalera": {
+"g": "the stairs",
+"t": "noun"
+},
+"moverse": {
+"g": "to move",
+"t": "verb"
+},
+"comer": {
+"g": "to eat",
+"t": "verb"
+},
+"persignó": {
+"g": "crossed himself",
+"t": "verb"
+},
+"aplauso": {
+"g": "applause",
+"t": "noun"
+},
+"limpio": {
+"g": "clean",
+"t": "adjective"
+},
+"ves": {
+"g": "you see",
+"t": "verb"
+},
+"llegar": {
+"g": "to arrive",
+"t": "verb"
+},
+"orilla": {
+"g": "edge, shore",
+"t": "noun"
+},
+"secándose": {
+"g": "drying oneself",
+"t": "verb"
+},
+"oye": {
+"g": "hey, listen",
+"t": "expression"
+},
+"contestar": {
+"g": "to answer",
+"t": "verb"
+},
+"primo": {
+"g": "cousin; buddy",
+"t": "noun"
+},
+"bajito": {
+"g": "softly, short",
+"t": "adverb"
+},
+"viniste": {
+"g": "you came",
+"t": "verb"
+},
+"piel": {
+"g": "skin",
+"t": "noun"
+},
+"frío": {
+"g": "cold",
+"t": "noun"
+},
+"parecía": {
+"g": "seemed, looked like",
+"t": "verb"
+},
+"grande": {
+"g": "big, great",
+"t": "adjective"
+},
+"sonaba": {
+"g": "sounded, rang a bell",
+"t": "verb"
+},
+"fuerte": {
+"g": "loud, strong",
+"t": "adjective"
+},
+"incapaz": {
+"g": "unable",
+"t": "adjective"
+},
+"quieta": {
+"g": "dejar quieta = to leave alone",
+"t": "adjective"
+},
+"música": {
+"g": "music",
+"t": "noun"
+},
+"entró": {
+"g": "entered, went in",
+"t": "verb"
+},
+"pista": {
+"g": "clue; dance floor",
+"t": "noun"
+},
+"tocaba": {
+"g": "it was my/his turn",
+"t": "verb"
+},
+"estar": {
+"g": "to be",
+"t": "verb"
+},
+"pasos": {
+"g": "steps",
+"t": "noun"
+},
+"zapatos": {
+"g": "shoes",
+"t": "noun"
+},
+"momento": {
+"g": "moment",
+"t": "noun"
+},
+"espalda": {
+"g": "back",
+"t": "noun"
+},
+"intentó": {
+"g": "tried",
+"t": "verb"
+},
+"nudo": {
+"g": "knot",
+"t": "noun"
+},
+"propios": {
+"g": "own, one's own",
+"t": "adjective"
+},
+"hamacas": {
+"g": "hammocks",
+"t": "noun"
+},
+"difícil": {
+"g": "hacerse la difícil = to play hard to get",
+"t": "adjective"
+},
+"subir": {
+"g": "to go up",
+"t": "verb"
+},
+"chichén": {
+"g": "Chichén Itzá (ruins)",
+"t": "noun"
+},
+"sudando": {
+"g": "sweating",
+"t": "verb"
+},
+"brazo": {
+"g": "arm",
+"t": "noun"
+},
+"burla": {
+"g": "mockery, teasing",
+"t": "noun"
+},
+"orgulloso": {
+"g": "proud",
+"t": "adjective"
+},
+"alumna": {
+"g": "a female student",
+"t": "noun"
+},
+"apareció": {
+"g": "appeared, showed up",
+"t": "verb"
+},
+"queso": {
+"g": "cheese",
+"t": "noun"
+},
+"bola": {
+"g": "the gang, group of friends",
+"t": "noun"
+},
+"bailando": {
+"g": "dancing",
+"t": "verb"
+},
+"bromeó": {
+"g": "joked",
+"t": "verb"
+},
+"pasándole": {
+"g": "handing him",
+"t": "verb"
+},
+"aprender": {
+"g": "to learn",
+"t": "verb"
+},
+"caliente": {
+"g": "hot",
+"t": "adjective"
+},
+"meciéndose": {
+"g": "swaying, rocking",
+"t": "verb"
+},
+"prestada": {
+"g": "borrowed",
+"t": "adjective"
+},
+"sorpresa": {
+"g": "surprise",
+"t": "noun"
+},
+"lección": {
+"g": "a lesson",
+"t": "noun"
+},
+"esa": {
+"g": "that (one)",
+"t": "pronoun"
+},
+"paz": {
+"g": "peace",
+"t": "noun"
+},
+"movió": {
+"g": "moved",
+"t": "verb"
+},
+"centro": {
+"g": "the town center, downtown",
+"t": "noun"
+},
+"cuerdas": {
+"g": "strings, ropes",
+"t": "noun"
+},
+"rincón": {
+"g": "a corner",
+"t": "noun"
+},
+"entra": {
+"g": "comes in",
+"t": "verb"
+},
+"da": {
+"g": "he turns over",
+"t": "verb"
+},
+"paso": {
+"g": "step; I pass",
+"t": "noun"
+},
+"ríe": {
+"g": "laughs",
+"t": "verb"
+},
+"ti": {
+"g": "you",
+"t": "pronoun"
+},
+"piernas": {
+"g": "legs",
+"t": "noun"
+},
+"flojas": {
+"g": "loose, slack",
+"t": "adjective"
+},
+"compás": {
+"g": "beat, rhythm",
+"t": "noun"
+},
+"detrás": {
+"g": "behind",
+"t": "adverb"
+},
+"sabor": {
+"g": "flavor, taste",
+"t": "noun"
+},
+"decías": {
+"g": "you were saying",
+"t": "verb"
+},
+"creía": {
+"g": "believed",
+"t": "verb"
+},
+"puro": {
+"g": "pure; just, only",
+"t": "adjective"
+},
+"adorno": {
+"g": "ornament",
+"t": "noun"
+},
+"postal": {
+"g": "postcard",
+"t": "noun"
+},
+"arrastra": {
+"g": "drags, carries",
+"t": "verb"
+},
+"limón": {
+"g": "lime, lemon",
+"t": "noun"
+},
+"colaba": {
+"g": "was straining, filtering",
+"t": "verb"
+},
+"corría": {
+"g": "was running",
+"t": "verb"
+},
+"cayó": {
+"g": "fell",
+"t": "verb"
+},
+"ando": {
+"g": "I'm going around",
+"t": "verb"
+},
+"gorro": {
+"g": "a hat",
+"t": "noun"
+},
+"pedido": {
+"g": "asked for",
+"t": "verb"
+},
+"cucharón": {
+"g": "ladle",
+"t": "noun"
+},
+"tras": {
+"g": "uno tras otro = one after another",
+"t": "preposition"
+},
+"volada": {
+"g": "spaced out; whim (Mex.)",
+"t": "adjective"
+},
+"dando": {
+"g": "giving",
+"t": "verb"
+},
+"cambio": {
+"g": "instead, on the other hand",
+"t": "expression"
+},
+"fallar": {
+"g": "to fail, break down",
+"t": "verb"
+},
+"grueso": {
+"g": "thick, coarse",
+"t": "adjective"
+},
+"llega": {
+"g": "arrives",
+"t": "verb"
+},
+"vaivén": {
+"g": "swaying, back-and-forth",
+"t": "noun"
+},
+"viene": {
+"g": "he/she comes",
+"t": "verb"
+},
+"asunto": {
+"g": "matter, issue",
+"t": "noun"
+},
+"voz": {
+"g": "voice",
+"t": "noun"
+},
+"avanzaba": {
+"g": "was advancing",
+"t": "verb"
+},
+"directo": {
+"g": "direct, straight",
+"t": "adjective"
+},
+"repente": {
+"g": "suddenly (de repente)",
+"t": "noun"
+},
+"dueña": {
+"g": "owner (female)",
+"t": "noun"
+},
+"local": {
+"g": "shop, local",
+"t": "noun"
+},
+"anda": {
+"g": "walks, goes",
+"t": "verb"
+},
+"jurando": {
+"g": "swearing, vowing",
+"t": "verb"
+},
+"ahorita": {
+"g": "right now, in a bit",
+"t": "adverb"
+},
+"armar": {
+"g": "to start, kick up",
+"t": "verb"
+},
+"mujer": {
+"g": "woman",
+"t": "noun"
+},
+"cruzó": {
+"g": "cruzar los dedos = crossed fingers",
+"t": "verb"
+},
+"brazos": {
+"g": "arms",
+"t": "noun"
+},
+"palabra": {
+"g": "word",
+"t": "noun"
+},
+"saliera": {
+"g": "would come out",
+"t": "verb"
+},
+"mochila": {
+"g": "the backpack",
+"t": "noun"
+},
+"chanclas": {
+"g": "flip-flops",
+"t": "noun"
+},
+"entender": {
+"g": "to understand",
+"t": "verb"
+},
+"tanta": {
+"g": "so much",
+"t": "adjective"
+},
+"calentaba": {
+"g": "was heating up",
+"t": "verb"
+},
+"motor": {
+"g": "the engine",
+"t": "noun"
+},
+"andan": {
+"g": "they walk, go",
+"t": "verb"
+},
+"agarra": {
+"g": "grabs",
+"t": "verb"
+},
+"carretera": {
+"g": "the road",
+"t": "noun"
+},
+"vas": {
+"g": "you go",
+"t": "verb"
+},
+"aguantar": {
+"g": "to endure, put up with",
+"t": "verb"
+},
+"plan": {
+"g": "plan",
+"t": "noun"
+},
+"camioneta": {
+"g": "a pickup truck",
+"t": "noun"
+},
+"apretaba": {
+"g": "was squeezing",
+"t": "verb"
+},
+"chisme": {
+"g": "gossip",
+"t": "noun"
+},
+"completo": {
+"g": "complete, full",
+"t": "adjective"
+},
+"zona": {
+"g": "the area",
+"t": "noun"
+},
+"estas": {
+"g": "these",
+"t": "pronoun"
+},
+"gentío": {
+"g": "crowd",
+"t": "noun"
+},
+"comprar": {
+"g": "to buy",
+"t": "verb"
+},
+"jefa": {
+"g": "a female boss",
+"t": "noun"
+},
+"llegaron": {
+"g": "arrived",
+"t": "verb"
+},
+"palo": {
+"g": "stick",
+"t": "noun"
+},
+"altísimo": {
+"g": "really high, sky high",
+"t": "adjective"
+},
+"listos": {
+"g": "ready",
+"t": "adjective"
+},
+"espectáculo": {
+"g": "a spectacle, a show",
+"t": "noun"
+},
+"bonito": {
+"g": "pretty, nice",
+"t": "adjective"
+},
+"verlo": {
+"g": "to see him",
+"t": "verb"
+},
+"sueño": {
+"g": "sleepiness",
+"t": "noun"
+},
+"lento": {
+"g": "slow",
+"t": "adjective"
+},
+"delante": {
+"g": "in front",
+"t": "adverb"
+},
+"vamos": {
+"g": "we go",
+"t": "verb"
+},
+"esquivando": {
+"g": "dodging",
+"t": "verb"
+},
+"pedía": {
+"g": "was begging, asking",
+"t": "verb"
+},
+"tostadas": {
+"g": "toasted, toast",
+"t": "adjective"
+},
+"miraba": {
+"g": "was looking at",
+"t": "verb"
+},
+"fila": {
+"g": "line, row",
+"t": "noun"
+},
+"línea": {
+"g": "the fishing line",
+"t": "noun"
+},
+"prueba": {
+"g": "a test",
+"t": "noun"
+},
+"picaba": {
+"g": "took it personally, got annoyed",
+"t": "verb"
+},
+"fresco": {
+"g": "fresh; cheeky",
+"t": "adjective"
+},
+"cortó": {
+"g": "cut; broke up",
+"t": "verb"
+},
+"queja": {
+"g": "a complaint",
+"t": "noun"
+},
+"frase": {
+"g": "a sentence, a phrase",
+"t": "noun"
+},
+"chavo": {
+"g": "guy, kid",
+"t": "noun"
+},
+"pesos": {
+"g": "pesos (money)",
+"t": "noun"
+},
+"según": {
+"g": "according to",
+"t": "preposition"
+},
+"cruzar": {
+"g": "to cross",
+"t": "verb"
+},
+"pelearse": {
+"g": "to fight each other",
+"t": "verb"
+},
+"llegada": {
+"g": "arrival",
+"t": "noun"
+},
+"lugar": {
+"g": "en lugar de = instead of",
+"t": "noun"
+},
+"chambear": {
+"g": "to work",
+"t": "verb"
+},
+"diego": {
+"g": "Diego (name)",
+"t": "noun"
+},
+"uno": {
+"g": "one",
+"t": "number"
+},
+"sino": {
+"g": "but rather",
+"t": "conjunction"
+},
+"aquel": {
+"g": "that",
+"t": "determiner"
+},
+"vendedor": {
+"g": "seller, vendor",
+"t": "noun"
+},
+"país": {
+"g": "the country",
+"t": "noun"
+},
+"sal": {
+"g": "salt",
+"t": "noun"
+},
+"ajenos": {
+"g": "others', foreign",
+"t": "adjective"
+},
+"pintados": {
+"g": "painted",
+"t": "adjective"
+},
+"fresa": {
+"g": "preppy, snobby (Mexican)",
+"t": "adjective"
+},
+"ante": {
+"g": "before, in front of",
+"t": "preposition"
+},
+"turista": {
+"g": "tourist",
+"t": "noun"
+},
+"gringo": {
+"g": "foreigner",
+"t": "slang"
+},
+"gancho": {
+"g": "a hook",
+"t": "noun"
+},
+"incautos": {
+"g": "the gullible",
+"t": "noun"
+},
+"refunfuñó": {
+"g": "grumbled",
+"t": "verb"
+},
+"metió": {
+"g": "put in, stuck in",
+"t": "verb"
+},
+"callejón": {
+"g": "an alley",
+"t": "noun"
+},
+"adentro": {
+"g": "inside",
+"t": "adverb"
+},
+"pequeña": {
+"g": "small, little",
+"t": "adjective"
+},
+"servía": {
+"g": "to pour",
+"t": "verb"
+},
+"mural": {
+"g": "mural",
+"t": "noun"
+},
+"pose": {
+"g": "a pose",
+"t": "noun"
+},
+"pura": {
+"g": "pure; nothing but",
+"t": "adjective"
+},
+"espesa": {
+"g": "thick",
+"t": "adjective"
+},
+"amarga": {
+"g": "bitter",
+"t": "adjective"
+},
+"tumbó": {
+"g": "knocked down",
+"t": "verb"
+},
+"desconfianza": {
+"g": "distrust, suspicion",
+"t": "noun"
+},
+"muchos": {
+"g": "many",
+"t": "adjective"
+},
+"color": {
+"g": "color",
+"t": "noun"
+},
+"rabia": {
+"g": "anger, rage",
+"t": "noun"
+},
+"foto": {
+"g": "photo",
+"t": "noun"
+},
+"pensaba": {
+"g": "no lo pensaba = was not going to",
+"t": "verb"
+},
+"late": {
+"g": "beats",
+"t": "verb"
+},
+"atrás": {
+"g": "behind, back",
+"t": "adverb"
+},
+"ponía": {
+"g": "was getting",
+"t": "verb"
+},
+"paredes": {
+"g": "walls",
+"t": "noun"
+},
+"enorme": {
+"g": "huge, enormous",
+"t": "adjective"
+},
+"sentirse": {
+"g": "to feel",
+"t": "verb"
+},
+"norte": {
+"g": "north",
+"t": "noun"
+},
+"pasada": {
+"g": "past, last (fem.)",
+"t": "adjective"
+},
+"medianoche": {
+"g": "midnight",
+"t": "noun"
+},
+"concierto": {
+"g": "concert",
+"t": "noun"
+},
+"viejo": {
+"g": "old",
+"t": "adjective"
+},
+"flaco": {
+"g": "skinny",
+"t": "adjective"
+},
+"gorra": {
+"g": "de gorra = for free",
+"t": "noun"
+},
+"manejaba": {
+"g": "was driving",
+"t": "verb"
+},
+"saludaba": {
+"g": "to greet",
+"t": "verb"
+},
+"pararon": {
+"g": "stood up",
+"t": "verb"
+},
+"brillante": {
+"g": "shiny, bright",
+"t": "adjective"
+},
+"codo": {
+"g": "stingy, cheap",
+"t": "adjective"
+},
+"cebolla": {
+"g": "onion",
+"t": "noun"
+},
+"billetes": {
+"g": "tickets",
+"t": "noun"
+},
+"bolsa": {
+"g": "bag",
+"t": "noun"
+},
+"misma": {
+"g": "same (fem.)",
+"t": "adjective"
+},
+"levantar": {
+"g": "to lift, raise",
+"t": "verb"
+},
+"darle": {
+"g": "to give him",
+"t": "verb"
+},
+"peso": {
+"g": "a peso, a coin",
+"t": "noun"
+},
+"ruido": {
+"g": "noise",
+"t": "noun"
+},
+"guitarras": {
+"g": "guitars",
+"t": "noun"
+},
+"cantante": {
+"g": "singer",
+"t": "noun"
+},
+"broma": {
+"g": "joke",
+"t": "noun"
+},
+"sintió": {
+"g": "felt",
+"t": "verb"
+},
+"llevado": {
+"g": "carried, led",
+"t": "verb"
+},
+"cualquier": {
+"g": "any",
+"t": "adjective"
+},
+"cerca": {
+"g": "near, close",
+"t": "adverb"
+},
+"frontera": {
+"g": "border",
+"t": "noun"
+},
+"regina": {
+"g": "Regina (name)",
+"t": "noun"
+},
+"chilanga": {
+"g": "woman from Mexico City",
+"t": "noun"
+},
+"hueso": {
+"g": "bone",
+"t": "noun"
+},
+"nacho": {
+"g": "Nacho (name)",
+"t": "noun"
+},
+"función": {
+"g": "a show, performance",
+"t": "noun"
+},
+"lucha": {
+"g": "wrestling, lucha libre",
+"t": "noun"
+},
+"máscara": {
+"g": "a mask",
+"t": "noun"
+},
+"rudo": {
+"g": "a heel (villain wrestler)",
+"t": "noun"
+},
+"graderío": {
+"g": "the stands, bleachers",
+"t": "noun"
+},
+"vienes": {
+"g": "you come",
+"t": "verb"
+},
+"subieron": {
+"g": "they went up",
+"t": "verb"
+},
+"pegadito": {
+"g": "right up close",
+"t": "adjective"
+},
+"ring": {
+"g": "the ring",
+"t": "noun"
+},
+"chela": {
+"g": "a beer",
+"t": "slang"
+},
+"técnico": {
+"g": "a babyface (good-guy wrestler)",
+"t": "noun"
+},
+"reflectores": {
+"g": "the spotlights",
+"t": "noun"
+},
+"tiren": {
+"g": "they knock down",
+"t": "verb"
+},
+"paras": {
+"g": "you stand up",
+"t": "verb"
+},
+"reclamas": {
+"g": "you protest, complain",
+"t": "verb"
+},
+"apenado": {
+"g": "embarrassed",
+"t": "adjective"
+},
+"caída": {
+"g": "a fall (wrestling round)",
+"t": "noun"
+},
+"placer": {
+"g": "pleasure, at will",
+"t": "noun"
+},
+"réferi": {
+"g": "the referee",
+"t": "noun"
+},
+"mentada": {
+"g": "a cussing-out",
+"t": "slang"
+},
+"coreada": {
+"g": "chanted in chorus",
+"t": "adjective"
+},
+"insultando": {
+"g": "insulting",
+"t": "verb"
+},
+"reojo": {
+"g": "out of the corner of the eye",
+"t": "expression"
+},
+"segunda": {
+"g": "second",
+"t": "numeral"
+},
+"berreaba": {
+"g": "was bawling, yelling",
+"t": "verb"
+},
+"mentándole": {
+"g": "cussing him out",
+"t": "verb"
+},
+"debiera": {
+"g": "should, ought to",
+"t": "verb"
+},
+"moría": {
+"g": "was dying (laughing)",
+"t": "verb"
+},
+"enseñado": {
+"g": "taught",
+"t": "verb"
+},
+"solita": {
+"g": "all by itself",
+"t": "adverb"
+},
+"cerraron": {
+"g": "they closed, finished",
+"t": "verb"
+},
+"plancha": {
+"g": "a splash (wrestling move)",
+"t": "noun"
+},
+"cuerda": {
+"g": "the rope",
+"t": "noun"
+},
+"manches": {
+"g": "no way",
+"t": "slang"
+},
+"ronco": {
+"g": "hoarse",
+"t": "adjective"
+},
+"sudados": {
+"g": "sweaty",
+"t": "adjective"
+},
+"cuándo": {
+"g": "when",
+"t": "adverb"
+},
+"marisol": {
+"g": "Marisol (name)",
+"t": "noun"
+},
+"marimba": {
+"g": "a marimba",
+"t": "noun"
+},
+"remando": {
+"g": "rowing, paddling",
+"t": "verb"
+},
+"canal": {
+"g": "the canal",
+"t": "noun"
+},
+"maniobraba": {
+"g": "was maneuvering",
+"t": "verb"
+},
+"verdoso": {
+"g": "greenish",
+"t": "adjective"
+},
+"lirios": {
+"g": "water lilies",
+"t": "noun"
+},
+"amarró": {
+"g": "tied up, moored",
+"t": "verb"
+},
+"chinampa": {
+"g": "a floating garden plot",
+"t": "noun"
+},
+"sembrada": {
+"g": "planted",
+"t": "adjective"
+},
+"lechugas": {
+"g": "lettuces",
+"t": "noun"
+},
+"cempasúchil": {
+"g": "marigold flower",
+"t": "noun"
+},
+"ponte": {
+"g": "get, put yourself",
+"t": "verb"
+},
+"trucha": {
+"g": "sharp, alert",
+"t": "slang"
+},
+"tendiéndole": {
+"g": "holding out to her",
+"t": "verb"
+},
+"callosa": {
+"g": "callused",
+"t": "adjective"
+},
+"surcos": {
+"g": "furrows",
+"t": "noun"
+},
+"arrancaba": {
+"g": "was pulling out",
+"t": "verb"
+},
+"hierbas": {
+"g": "weeds, herbs",
+"t": "noun"
+},
+"revisaba": {
+"g": "was checking",
+"t": "verb"
+},
+"riego": {
+"g": "irrigation",
+"t": "noun"
+},
+"conoció": {
+"g": "knew",
+"t": "verb"
+},
+"fajada": {
+"g": "hard at it, buckled down",
+"t": "slang"
+},
+"sastre": {
+"g": "tailored (suit)",
+"t": "adjective"
+},
+"cuadraba": {
+"g": "didn't add up, fit",
+"t": "verb"
+},
+"descalza": {
+"g": "barefoot",
+"t": "adjective"
+},
+"renunciado": {
+"g": "quit, resigned",
+"t": "verb"
+},
+"bisabuelo": {
+"g": "great-grandfather",
+"t": "noun"
+},
+"rematar": {
+"g": "to auction off, sell cheap",
+"t": "verb"
+},
+"compré": {
+"g": "I bought",
+"t": "verb"
+},
+"mis": {
+"g": "my",
+"t": "determiner"
+},
+"ahorros": {
+"g": "savings",
+"t": "noun"
+},
+"cuadró": {
+"g": "fell into place",
+"t": "verb"
+},
+"turístico": {
+"g": "touristy",
+"t": "adjective"
+},
+"peda": {
+"g": "a drinking binge",
+"t": "slang"
+},
+"enseñando": {
+"g": "teaching, showing",
+"t": "verb"
+},
+"chucho": {
+"g": "Chucho (name)",
+"t": "noun"
+},
+"prepa": {
+"g": "high school",
+"t": "noun"
+},
+"fregada": {
+"g": "in a bad way",
+"t": "slang"
+},
+"encerrado": {
+"g": "shut in, holed up",
+"t": "adjective"
+},
+"depa": {
+"g": "an apartment",
+"t": "slang"
+},
+"roma": {
+"g": "Roma (neighborhood)",
+"t": "noun"
+},
+"rastras": {
+"g": "dragging (against will)",
+"t": "expression"
+},
+"covadonga": {
+"g": "La Covadonga (cantina)",
+"t": "noun"
+},
+"cantina": {
+"g": "the cantina, bar",
+"t": "noun"
+},
+"dominó": {
+"g": "dominoes",
+"t": "noun"
+},
+"botana": {
+"g": "a snack, appetizer",
+"t": "noun"
+},
+"surtida": {
+"g": "assorted",
+"t": "adjective"
+},
+"tequilas": {
+"g": "tequilas",
+"t": "noun"
+},
+"derechos": {
+"g": "straight (neat shots)",
+"t": "adjective"
+},
+"quedes": {
+"g": "you stay",
+"t": "verb"
+},
+"amargándote": {
+"g": "getting bitter",
+"t": "verb"
+},
+"barajando": {
+"g": "shuffling",
+"t": "verb"
+},
+"fichas": {
+"g": "the tiles, chips",
+"t": "noun"
+},
+"picando": {
+"g": "needling, prodding",
+"t": "verb"
+},
+"recuerdos": {
+"g": "memories",
+"t": "noun"
+},
+"reprobaron": {
+"g": "they failed (a class)",
+"t": "verb"
+},
+"pozo": {
+"g": "a hole, low point",
+"t": "noun"
+},
+"soltarse": {
+"g": "to loosen up",
+"t": "verb"
+},
+"mentar": {
+"g": "to cuss out",
+"t": "verb"
+},
+"exjefe": {
+"g": "ex-boss",
+"t": "noun"
+},
+"coraje": {
+"g": "anger, rage",
+"t": "noun"
+},
+"tristeza": {
+"g": "sadness",
+"t": "noun"
+},
+"pastor": {
+"g": "al pastor (taco style)",
+"t": "noun"
+},
+"parados": {
+"g": "standing",
+"t": "adjective"
+},
+"banqueta": {
+"g": "the sidewalk",
+"t": "noun"
+},
+"zape": {
+"g": "a smack on the head",
+"t": "slang"
+},
+"nuca": {
+"g": "the nape, back of neck",
+"t": "noun"
+},
+"respondió": {
+"g": "he replied",
+"t": "verb"
+},
+"encogiéndose": {
+"g": "shrugging",
+"t": "verb"
+},
+"arreglado": {
+"g": "fixed, sorted",
+"t": "adjective"
+},
+"feroz": {
+"g": "fierce",
+"t": "adjective"
+},
+"birria": {
+"g": "birria (stewed meat dish)",
+"t": "noun"
+},
+"barbacoa": {
+"g": "barbacoa (pit-cooked meat)",
+"t": "noun"
+},
+"disfrazada": {
+"g": "disguised",
+"t": "adjective"
+},
+"cuais": {
+"g": "buddy, pal",
+"t": "slang"
+},
+"mauricio": {
+"g": "Mauricio (name)",
+"t": "noun"
+},
+"tapatío": {
+"g": "man from Guadalajara",
+"t": "noun"
+},
+"flotaba": {
+"g": "was floating",
+"t": "verb"
+},
+"consomé": {
+"g": "consommé, broth",
+"t": "noun"
+},
+"opinar": {
+"g": "to give an opinion",
+"t": "verb"
+},
+"entras": {
+"g": "you dig in, take a bite",
+"t": "verb"
+},
+"retintín": {
+"g": "a mocking tone",
+"t": "noun"
+},
+"compara": {
+"g": "compares",
+"t": "verb"
+},
+"marchanta": {
+"g": "the market vendor lady",
+"t": "noun"
+},
+"lupe": {
+"g": "Lupe (name)",
+"t": "noun"
+},
+"dorados": {
+"g": "golden, crispy fried",
+"t": "adjective"
+},
+"caldo": {
+"g": "the broth",
+"t": "noun"
+},
+"pruébenle": {
+"g": "give it a try",
+"t": "verb"
+},
+"lumbre": {
+"g": "the fire, flame",
+"t": "noun"
+},
+"mordida": {
+"g": "a bite",
+"t": "noun"
+},
+"ay": {
+"g": "oh",
+"t": "interjection"
+},
+"caray": {
+"g": "wow, darn",
+"t": "interjection"
+},
+"chocarla": {
+"g": "to high-five, fist-bump",
+"t": "expression"
+},
+"juega": {
+"g": "plays, messes around",
+"t": "verb"
+},
+"dicho": {
+"g": "said",
+"t": "verb"
+},
+"hundiendo": {
+"g": "sinking, dipping",
+"t": "verb"
+},
+"atender": {
+"g": "to serve, tend to",
+"t": "verb"
+},
+"creyendo": {
+"g": "believing",
+"t": "verb"
+},
+"saben": {
+"g": "they know",
+"t": "verb"
+},
+"pidiendo": {
+"g": "asking for",
+"t": "verb"
+},
+"receta": {
+"g": "the recipe",
+"t": "noun"
+},
+"cotorreando": {
+"g": "chatting, hanging out",
+"t": "slang"
+},
+"discutir": {
+"g": "to argue",
+"t": "verb"
+},
+"aquella": {
+"g": "that",
+"t": "determiner"
+},
+"alondra": {
+"g": "Alondra (name)",
+"t": "noun"
+},
+"tapatía": {
+"g": "woman from Guadalajara",
+"t": "noun"
+},
+"escondía": {
+"g": "was hiding",
+"t": "verb"
+},
+"siguiendo": {
+"g": "following",
+"t": "verb"
+},
+"chivas": {
+"g": "Chivas (soccer team)",
+"t": "noun"
+},
+"futbol": {
+"g": "soccer, football",
+"t": "noun"
+},
+"tienes": {
+"g": "you have",
+"t": "verb"
+},
+"ocultar": {
+"g": "to hide",
+"t": "verb"
+},
+"plateados": {
+"g": "silvery",
+"t": "adjective"
+},
+"bolero": {
+"g": "a bolero (love ballad)",
+"t": "noun"
+},
+"lentísimo": {
+"g": "very slow",
+"t": "adjective"
+},
+"suban": {
+"g": "they climb, build up",
+"t": "verb"
+},
+"clímax": {
+"g": "the climax",
+"t": "noun"
+},
+"confía": {
+"g": "trust",
+"t": "verb"
+},
+"guiñando": {
+"g": "winking",
+"t": "verb"
+},
+"penal": {
+"g": "a penalty (kick)",
+"t": "noun"
+},
+"sabías": {
+"g": "you knew",
+"t": "verb"
+},
+"tapándose": {
+"g": "covering (her mouth)",
+"t": "verb"
+},
+"trompetista": {
+"g": "a trumpet player",
+"t": "noun"
+},
+"sostuvo": {
+"g": "held, sustained",
+"t": "verb"
+},
+"público": {
+"g": "the crowd, audience",
+"t": "noun"
+},
+"rezaba": {
+"g": "was praying",
+"t": "verb"
+},
+"arquero": {
+"g": "the goalkeeper",
+"t": "noun"
+},
+"delantero": {
+"g": "the forward",
+"t": "noun"
+},
+"pateó": {
+"g": "kicked",
+"t": "verb"
+},
+"sacudió": {
+"g": "shook",
+"t": "verb"
+},
+"ándale": {
+"g": "come on, there you go",
+"t": "interjection"
+},
+"dije": {
+"g": "I told you",
+"t": "verb"
+},
+"caen": {
+"g": "fall, land",
+"t": "verb"
+},
+"juntitos": {
+"g": "close together",
+"t": "adverb"
+},
+"festejó": {
+"g": "celebrated",
+"t": "verb"
+},
+"coreando": {
+"g": "chanting, singing along",
+"t": "verb"
+},
+"melodía": {
+"g": "the melody",
+"t": "noun"
+},
+"pulmón": {
+"g": "lung",
+"t": "noun"
+},
+"anfitriona": {
+"g": "the hostess",
+"t": "noun"
+},
+"presumían": {
+"g": "were showing off",
+"t": "verb"
+},
+"cruda": {
+"g": "a hangover",
+"t": "slang"
+},
+"campeonato": {
+"g": "championship (huge)",
+"t": "noun"
+},
+"lija": {
+"g": "sandpaper",
+"t": "noun"
+},
+"bere": {
+"g": "Bere (name)",
+"t": "noun"
+},
+"paseado": {
+"g": "taken around",
+"t": "verb"
+},
+"cantinas": {
+"g": "the taverns, bars",
+"t": "noun"
+},
+"probando": {
+"g": "trying, tasting",
+"t": "verb"
+},
+"tequila": {
+"g": "tequila",
+"t": "noun"
+},
+"siento": {
+"g": "I feel",
+"t": "verb"
+},
+"atropelló": {
+"g": "ran over",
+"t": "verb"
+},
+"camión": {
+"g": "a truck",
+"t": "noun"
+},
+"cama": {
+"g": "the bed",
+"t": "noun"
+},
+"lechuga": {
+"g": "lettuce",
+"t": "noun"
+},
+"cargando": {
+"g": "carrying",
+"t": "verb"
+},
+"bañada": {
+"g": "drenched, covered",
+"t": "adjective"
+},
+"quitada": {
+"g": "carefree, nonchalant",
+"t": "adjective"
+},
+"chile": {
+"g": "chili pepper",
+"t": "noun"
+},
+"despabilada": {
+"g": "wide awake, alert",
+"t": "adjective"
+},
+"rio": {
+"g": "laughed",
+"t": "verb"
+},
+"generaciones": {
+"g": "generations",
+"t": "noun"
+},
+"trataban": {
+"g": "they treated",
+"t": "verb"
+},
+"anoche": {
+"g": "last night",
+"t": "adverb"
+},
+"mordidas": {
+"g": "bites",
+"t": "noun"
+},
+"alabó": {
+"g": "praised",
+"t": "verb"
+},
+"añejo": {
+"g": "aged",
+"t": "adjective"
+},
+"gustado": {
+"g": "liked",
+"t": "verb"
+},
+"compró": {
+"g": "bought",
+"t": "verb"
+},
+"fino": {
+"g": "fine, refined",
+"t": "adjective"
+},
+"encantó": {
+"g": "delighted, you loved",
+"t": "verb"
+},
+"destilado": {
+"g": "distilled spirit",
+"t": "noun"
+},
+"casero": {
+"g": "homemade",
+"t": "adjective"
+},
+"tío": {
+"g": "my uncle",
+"t": "noun"
+},
+"reveló": {
+"g": "revealed",
+"t": "verb"
+},
+"aguantándose": {
+"g": "holding back laughter",
+"t": "verb"
+},
+"pasé": {
+"g": "I spent (time)",
+"t": "verb"
+},
+"patito": {
+"g": "fake, low-quality",
+"t": "slang"
+},
+"carnal": {
+"g": "buddy, bro",
+"t": "slang"
+},
+"escuela": {
+"g": "school",
+"t": "noun"
+},
+"cantón": {
+"g": "house, pad",
+"t": "slang"
+},
+"cubeta": {
+"g": "a bucket",
+"t": "noun"
+},
+"rollo": {
+"g": "what's up",
+"t": "slang"
+},
+"aguántame": {
+"g": "hold on for me",
+"t": "verb"
+},
+"tantito": {
+"g": "a little bit",
+"t": "adverb"
+},
+"siéntate": {
+"g": "sit down",
+"t": "verb"
+},
+"sabemos": {
+"g": "we know how",
+"t": "verb"
+},
+"prender": {
+"g": "to light",
+"t": "verb"
+},
+"pongas": {
+"g": "don't get, become",
+"t": "verb"
+},
+"metiche": {
+"g": "a busybody, meddler",
+"t": "slang"
+},
+"calla": {
+"g": "keeps quiet",
+"t": "verb"
+},
+"aprende": {
+"g": "learns",
+"t": "verb"
+},
+"ayudar": {
+"g": "to help",
+"t": "verb"
+},
+"vine": {
+"g": "I came",
+"t": "verb"
+},
+"sentada": {
+"g": "seated, sitting",
+"t": "adjective"
+},
+"une": {
+"g": "unites, brings together",
+"t": "verb"
+},
+"plática": {
+"g": "the conversation, chat",
+"t": "noun"
+},
+"chuy": {
+"g": "Chuy (name)",
+"t": "noun"
+},
+"seis": {
+"g": "six",
+"t": "numeral"
+},
+"mochilas": {
+"g": "backpacks",
+"t": "noun"
+},
+"terquedad": {
+"g": "stubbornness",
+"t": "noun"
+},
+"aceptaba": {
+"g": "accepted, took",
+"t": "verb"
+},
+"pretextos": {
+"g": "excuses",
+"t": "noun"
+},
+"crudo": {
+"g": "hungover",
+"t": "slang"
+},
+"humor": {
+"g": "mood",
+"t": "noun"
+},
+"flojo": {
+"g": "sluggish, limp",
+"t": "adjective"
+},
+"quiúbole": {
+"g": "what's up",
+"t": "slang"
+},
+"zafada": {
+"g": "crazy, nuts",
+"t": "slang"
+},
+"amanece": {
+"g": "dawn breaks",
+"t": "verb"
+},
+"suba": {
+"g": "climb up",
+"t": "verb"
+},
+"déjame": {
+"g": "let me",
+"t": "verb"
+},
+"rajes": {
+"g": "chicken out, back out",
+"t": "slang"
+},
+"prometo": {
+"g": "I promise",
+"t": "verb"
+},
+"invitas": {
+"g": "you treat, buy me",
+"t": "verb"
+},
+"cargas": {
+"g": "you carry",
+"t": "verb"
+},
+"trokota": {
+"g": "big pickup truck",
+"t": "slang"
+},
+"hagas": {
+"g": "don't play dumb",
+"t": "expression"
+},
+"presumes": {
+"g": "you brag about",
+"t": "verb"
+},
+"pesada": {
+"g": "tough, heavy",
+"t": "adjective"
+},
+"achicas": {
+"g": "you back down",
+"t": "verb"
+},
+"muévete": {
+"g": "get moving",
+"t": "verb"
+},
+"aguanta": {
+"g": "hold on",
+"t": "verb"
+},
+"gacho": {
+"g": "bad, ugly",
+"t": "slang"
+},
+"valí": {
+"g": "I'm screwed",
+"t": "slang"
+},
+"cima": {
+"g": "the summit",
+"t": "noun"
+},
+"apretado": {
+"g": "tight, strapped",
+"t": "adjective"
+},
+"fábricas": {
+"g": "factories",
+"t": "noun"
+},
+"acordeón": {
+"g": "an accordion",
+"t": "noun"
+},
+"sabes": {
+"g": "you know",
+"t": "verb"
+},
+"harté": {
+"g": "I got fed up",
+"t": "verb"
+},
+"gritón": {
+"g": "loud-mouthed, shouty",
+"t": "adjective"
+},
+"partirme": {
+"g": "to break my back",
+"t": "expression"
+},
+"quincena": {
+"g": "biweekly pay",
+"t": "noun"
+},
+"ponga": {
+"g": "put on (a face)",
+"t": "verb"
+},
+"plano": {
+"g": "flat-out, for sure",
+"t": "expression"
+},
+"decidiste": {
+"g": "you decided",
+"t": "verb"
+},
+"dices": {
+"g": "you say",
+"t": "verb"
+},
+"encabronada": {
+"g": "pissed off",
+"t": "slang"
+},
+"cochinito": {
+"g": "piggy bank",
+"t": "slang"
+},
+"changarro": {
+"g": "small shop, stall",
+"t": "slang"
+},
+"gorditas": {
+"g": "stuffed corn cakes",
+"t": "noun"
+},
+"tache": {
+"g": "flaw, blemish",
+"t": "noun"
+},
+"prefiero": {
+"g": "I prefer",
+"t": "verb"
+},
+"trabajar": {
+"g": "to work",
+"t": "verb"
+},
+"échale": {
+"g": "go for it",
+"t": "slang"
+},
+"fieles": {
+"g": "loyal",
+"t": "adjective"
+},
+"caiga": {
+"g": "comes in, falls",
+"t": "verb"
+},
+"renta": {
+"g": "rent",
+"t": "noun"
+},
+"despensa": {
+"g": "groceries, pantry",
+"t": "noun"
+},
+"servida": {
+"g": "satisfied, content",
+"t": "adjective"
+},
+"tlacolula": {
+"g": "Tlacolula (town)",
+"t": "noun"
+},
+"única": {
+"g": "the only one",
+"t": "adjective"
+},
+"chorro": {
+"g": "a lot, loads",
+"t": "slang"
+},
+"oaxaqueña": {
+"g": "from Oaxaca",
+"t": "adjective"
+},
+"aldo": {
+"g": "Aldo (name)",
+"t": "noun"
+},
+"palenqueros": {
+"g": "mezcal distillers",
+"t": "noun"
+},
+"caballito": {
+"g": "a shot glass",
+"t": "noun"
+},
+"cdmx": {
+"g": "Mexico City",
+"t": "noun"
+},
+"probaba": {
+"g": "tasted, tried",
+"t": "verb"
+},
+"agave": {
+"g": "agave",
+"t": "noun"
+},
+"caballitos": {
+"g": "shot glasses",
+"t": "noun"
+},
+"confiada": {
+"g": "confident, cocky",
+"t": "adjective"
+},
+"mezcales": {
+"g": "mezcals",
+"t": "noun"
+},
+"ordenarlos": {
+"g": "to rank them",
+"t": "verb"
+},
+"aceptó": {
+"g": "accepted",
+"t": "verb"
+},
+"chida": {
+"g": "cool, a hotshot",
+"t": "slang"
+},
+"ordenó": {
+"g": "ranked, ordered",
+"t": "verb"
+},
+"tobalá": {
+"g": "tobalá (agave mezcal)",
+"t": "noun"
+},
+"costaba": {
+"g": "cost",
+"t": "verb"
+},
+"lujo": {
+"g": "luxury, top-notch",
+"t": "noun"
+},
+"estante": {
+"g": "the shelf",
+"t": "noun"
+},
+"cambiaba": {
+"g": "was swapping",
+"t": "verb"
+},
+"botellas": {
+"g": "bottles",
+"t": "noun"
+},
+"chilango": {
+"g": "Mexico City native",
+"t": "slang"
+},
+"necesita": {
+"g": "needs",
+"t": "verb"
+},
+"explicaran": {
+"g": "to explain to her",
+"t": "verb"
+},
+"enseñó": {
+"g": "taught, showed",
+"t": "verb"
+},
+"teotitlán": {
+"g": "Teotitlán del Valle (town)",
+"t": "noun"
+},
+"mezcalito": {
+"g": "a little mezcal",
+"t": "noun"
+},
+"cero": {
+"g": "zero",
+"t": "determiner"
+},
+"compromisos": {
+"g": "commitments",
+"t": "noun"
+},
+"tocaron": {
+"g": "they knocked",
+"t": "verb"
+},
+"palas": {
+"g": "shovels",
+"t": "noun"
+},
+"tequio": {
+"g": "communal labor",
+"t": "noun"
+},
+"comunitario": {
+"g": "communal",
+"t": "adjective"
+},
+"componer": {
+"g": "to fix",
+"t": "verb"
+},
+"cobrar": {
+"g": "to charge",
+"t": "verb"
+},
+"comunidad": {
+"g": "the community",
+"t": "noun"
+},
+"madrugar": {
+"g": "to get up early",
+"t": "verb"
+},
+"vacaciones": {
+"g": "vacation",
+"t": "noun"
+},
+"cargó": {
+"g": "carried",
+"t": "verb"
+},
+"batió": {
+"g": "mixed",
+"t": "verb"
+},
+"sudó": {
+"g": "sweated",
+"t": "verb"
+},
+"simplemente": {
+"g": "simply",
+"t": "adverb"
+},
+"movían": {
+"g": "moved",
+"t": "verb"
+},
+"mandando": {
+"g": "bossing around",
+"t": "verb"
+},
+"ampollas": {
+"g": "blisters",
+"t": "noun"
+},
+"citadina": {
+"g": "city girl",
+"t": "adjective"
+},
+"guante": {
+"g": "a glove",
+"t": "noun"
+},
+"castigo": {
+"g": "a punishment",
+"t": "noun"
+},
+"nombrarlo": {
+"g": "to name it",
+"t": "verb"
+},
+"parejito": {
+"g": "nice and even",
+"t": "adjective"
+},
+"hincó": {
+"g": "sank teeth into",
+"t": "verb"
+},
+"diente": {
+"g": "tooth",
+"t": "noun"
+},
+"hechas": {
+"g": "worn to dust",
+"t": "adjective"
+},
+"comal": {
+"g": "a griddle",
+"t": "noun"
+},
+"pintar": {
+"g": "to paint",
+"t": "verb"
+},
+"agarraba": {
+"g": "was building up",
+"t": "verb"
+},
+"temperatura": {
+"g": "temperature",
+"t": "noun"
+},
+"echaba": {
+"g": "was making",
+"t": "verb"
+},
+"romper": {
+"g": "to tear",
+"t": "verb"
+},
+"quitándole": {
+"g": "taking from her",
+"t": "verb"
+},
+"goma": {
+"g": "get lost",
+"t": "expression"
+},
+"intentando": {
+"g": "trying",
+"t": "verb"
+},
+"cayeron": {
+"g": "came out",
+"t": "verb"
+},
+"quesillo": {
+"g": "string cheese",
+"t": "noun"
+},
+"chapulín": {
+"g": "edible grasshopper",
+"t": "noun"
+},
+"valientes": {
+"g": "the brave ones",
+"t": "noun"
+},
+"enésima": {
+"g": "umpteenth",
+"t": "adjective"
+},
+"copal": {
+"g": "copal incense",
+"t": "noun"
+},
+"carcajeaban": {
+"g": "burst out laughing",
+"t": "verb"
+},
+"conocer": {
+"g": "to explore",
+"t": "verb"
+},
+"tronando": {
+"g": "crackling",
+"t": "verb"
+},
+"dramática": {
+"g": "dramatic",
+"t": "adjective"
+},
+"pintarle": {
+"g": "to paint on it",
+"t": "verb"
+},
+"alas": {
+"g": "wings",
+"t": "noun"
+},
+"acabara": {
+"g": "would end",
+"t": "verb"
+},
+"cumplen": {
+"g": "are kept",
+"t": "verb"
+},
+"volteó": {
+"g": "flipped",
+"t": "verb"
+},
+"reseñas": {
+"g": "reviews",
+"t": "noun"
+},
+"damián": {
+"g": "Damián (name)",
+"t": "noun"
+},
+"yucateco": {
+"g": "Yucatecan man",
+"t": "adjective"
+},
+"heredó": {
+"g": "inherited",
+"t": "verb"
+},
+"pib": {
+"g": "earth oven",
+"t": "noun"
+},
+"wach": {
+"g": "dude (Yucatecan)",
+"t": "slang"
+},
+"riéndose": {
+"g": "laughing",
+"t": "verb"
+},
+"prisas": {
+"g": "rushing",
+"t": "noun"
+},
+"recado": {
+"g": "spice paste",
+"t": "noun"
+},
+"hojas": {
+"g": "leaves",
+"t": "noun"
+},
+"escapó": {
+"g": "escaped her",
+"t": "verb"
+},
+"honesto": {
+"g": "genuine",
+"t": "adjective"
+},
+"deshebraba": {
+"g": "was shredding",
+"t": "verb"
+},
+"grabando": {
+"g": "recording",
+"t": "verb"
+},
+"murió": {
+"g": "died",
+"t": "verb"
+},
+"vencido": {
+"g": "drained out",
+"t": "adjective"
+},
+"cómetela": {
+"g": "eat it",
+"t": "verb"
+},
+"urgía": {
+"g": "was urgent for her",
+"t": "verb"
+},
+"recuperar": {
+"g": "to recover",
+"t": "verb"
+},
+"pavor": {
+"g": "dread",
+"t": "noun"
+},
+"barandal": {
+"g": "the railing",
+"t": "noun"
+},
+"yucateca": {
+"g": "Yucatecan woman",
+"t": "adjective"
+},
+"citado": {
+"g": "arranged to meet",
+"t": "verb"
+},
+"homún": {
+"g": "Homún (town)",
+"t": "noun"
+},
+"bájale": {
+"g": "tone it down",
+"t": "expression"
+},
+"wey": {
+"g": "dude",
+"t": "slang"
+},
+"chan": {
+"g": "little (Yucatecan)",
+"t": "adjective"
+},
+"rebotó": {
+"g": "echoed",
+"t": "verb"
+},
+"caverna": {
+"g": "the cavern",
+"t": "noun"
+},
+"chilló": {
+"g": "shrieked",
+"t": "verb"
+},
+"mojarra": {
+"g": "a mojarra fish",
+"t": "noun"
+},
+"aviéntate": {
+"g": "jump in",
+"t": "verb"
+},
+"panzazo": {
+"g": "belly flop",
+"t": "noun"
+},
+"flote": {
+"g": "the surface",
+"t": "noun"
+},
+"escupiendo": {
+"g": "spitting",
+"t": "verb"
+},
+"ayudó": {
+"g": "helped",
+"t": "verb"
+},
+"temblaban": {
+"g": "were trembling",
+"t": "verb"
+},
+"extrañada": {
+"g": "puzzled",
+"t": "adjective"
+},
+"tardó": {
+"g": "took a while",
+"t": "verb"
+},
+"metía": {
+"g": "went into",
+"t": "verb"
+},
+"ahogó": {
+"g": "drowned",
+"t": "verb"
+},
+"aventé": {
+"g": "took the plunge",
+"t": "verb"
+},
+"gallina": {
+"g": "goosebumps skin",
+"t": "noun"
+},
+"valiente": {
+"g": "the brave one",
+"t": "adjective"
+},
+"jarana": {
+"g": "Yucatecan dance party",
+"t": "noun"
+},
+"vaquería": {
+"g": "village dance party",
+"t": "noun"
+},
+"arrastrando": {
+"g": "dragging",
+"t": "verb"
+},
+"tarima": {
+"g": "the stage",
+"t": "noun"
+},
+"cabrona": {
+"g": "wild, intense",
+"t": "slang"
+},
+"enséñame": {
+"g": "teach me",
+"t": "verb"
+},
+"pienso": {
+"g": "I intend",
+"t": "verb"
+},
+"quedarme": {
+"g": "to stay",
+"t": "verb"
+},
+"cumbia": {
+"g": "cumbia (dance)",
+"t": "noun"
+},
+"cortito": {
+"g": "short, small",
+"t": "adjective"
+},
+"derechita": {
+"g": "nice and straight",
+"t": "adjective"
+},
+"chistoso": {
+"g": "funny",
+"t": "adjective"
+},
+"doñas": {
+"g": "the older ladies",
+"t": "noun"
+},
+"carcajearon": {
+"g": "burst out laughing",
+"t": "verb"
+},
+"bufó": {
+"g": "huffed",
+"t": "verb"
+},
+"zapateado": {
+"g": "foot-stomping dance",
+"t": "noun"
+},
+"pieza": {
+"g": "a dance number",
+"t": "noun"
+},
+"charola": {
+"g": "a tray",
+"t": "noun"
+},
+"marquesitas": {
+"g": "crispy wafer rolls",
+"t": "noun"
+},
+"crujientes": {
+"g": "crispy",
+"t": "adjective"
+},
+"rellenas": {
+"g": "filled",
+"t": "adjective"
+},
+"dijeron": {
+"g": "they told me",
+"t": "verb"
+},
+"videos": {
+"g": "videos",
+"t": "noun"
+},
+"mordió": {
+"g": "bit into",
+"t": "verb"
+},
+"marquesita": {
+"g": "crispy wafer roll",
+"t": "noun"
+},
+"derritiéndose": {
+"g": "melting",
+"t": "verb"
+},
+"rendida": {
+"g": "worn out",
+"t": "adjective"
+},
+"discutiendo": {
+"g": "arguing",
+"t": "verb"
+},
+"béisbol": {
+"g": "baseball",
+"t": "noun"
+},
+"focos": {
+"g": "the lights",
+"t": "noun"
+},
+"chente": {
+"g": "Chente (name)",
+"t": "noun"
+},
+"banco": {
+"g": "a stool",
+"t": "noun"
+},
+"zapatear": {
+"g": "to stomp-dance",
+"t": "verb"
+},
+"cafés": {
+"g": "coffees",
+"t": "noun"
+},
+"fabiola": {
+"g": "Fabiola (name)",
+"t": "noun"
+},
+"chava": {
+"g": "girl",
+"t": "slang"
+},
+"escondas": {
+"g": "hide",
+"t": "verb"
+},
+"cotorreo": {
+"g": "the hangout",
+"t": "slang"
+},
+"mío": {
+"g": "my thing",
+"t": "pronoun"
+},
+"rogar": {
+"g": "to beg",
+"t": "verb"
+},
+"tablado": {
+"g": "the wooden stage",
+"t": "noun"
+},
+"mirón": {
+"g": "an onlooker",
+"t": "noun"
+},
+"agárrale": {
+"g": "get the hang of it",
+"t": "expression"
+},
+"sencillo": {
+"g": "simple",
+"t": "adjective"
+},
+"picas": {
+"g": "pick up the pace",
+"t": "verb"
+},
+"trabo": {
+"g": "I get stuck",
+"t": "verb"
+},
+"aguantan": {
+"g": "put up with",
+"t": "verb"
+},
+"carrilladas": {
+"g": "the teasing",
+"t": "slang"
+},
+"fandango": {
+"g": "fandango party",
+"t": "noun"
+},
+"goza": {
+"g": "is enjoyed",
+"t": "verb"
+},
+"presume": {
+"g": "is shown off",
+"t": "verb"
+},
+"gracia": {
+"g": "grace",
+"t": "noun"
+},
+"hallaste": {
+"g": "you found",
+"t": "verb"
+},
+"eras": {
+"g": "you were",
+"t": "verb"
+},
+"matada": {
+"g": "hopeless, dramatic",
+"t": "slang"
+},
+"jarocho": {
+"g": "Veracruz style",
+"t": "adjective"
+},
+"vacilón": {
+"g": "a blast",
+"t": "slang"
+},
+"zapatea": {
+"g": "is stomp-danced",
+"t": "verb"
+},
+"duelen": {
+"g": "they hurt",
+"t": "verb"
+},
+"fijas": {
+"g": "you hold steady",
+"t": "verb"
+},
+"hielera": {
+"g": "a cooler",
+"t": "noun"
+},
+"vuelcos": {
+"g": "shrimp tostadas",
+"t": "noun"
+},
+"camarón": {
+"g": "shrimp",
+"t": "noun"
+},
+"amarraba": {
+"g": "was tying on",
+"t": "verb"
+},
+"mandil": {
+"g": "an apron",
+"t": "noun"
+},
+"clientela": {
+"g": "the customers",
+"t": "noun"
+},
+"comandas": {
+"g": "food orders",
+"t": "noun"
+},
+"échame": {
+"g": "give me a hand",
+"t": "expression"
+},
+"pásame": {
+"g": "pass me",
+"t": "verb"
+},
+"sirvo": {
+"g": "do I serve",
+"t": "verb"
+},
+"vuelco": {
+"g": "seafood tostada dish",
+"t": "noun"
+},
+"coctel": {
+"g": "seafood cocktail",
+"t": "noun"
+},
+"campechano": {
+"g": "mixed seafood",
+"t": "adjective"
+},
+"surtido": {
+"g": "well-stocked",
+"t": "adjective"
+},
+"sírveles": {
+"g": "serve them",
+"t": "verb"
+},
+"pidan": {
+"g": "they order",
+"t": "verb"
+},
+"apures": {
+"g": "worry, rush",
+"t": "verb"
+},
+"picosa": {
+"g": "spicy hot",
+"t": "adjective"
+},
+"despachó": {
+"g": "served, dispatched",
+"t": "verb"
+},
+"tostada": {
+"g": "crispy tostada",
+"t": "noun"
+},
+"cobrando": {
+"g": "charging, collecting",
+"t": "verb"
+},
+"creí": {
+"g": "I thought, believed",
+"t": "verb"
+},
+"ibas": {
+"g": "you were going",
+"t": "verb"
+},
+"batallar": {
+"g": "to struggle",
+"t": "verb"
+},
+"mírate": {
+"g": "look at you",
+"t": "expression"
+},
+"hice": {
+"g": "I got used",
+"t": "verb"
+},
+"canijo": {
+"g": "the tricky part",
+"t": "slang"
+},
+"barbilla": {
+"g": "the chin",
+"t": "noun"
+},
+"pusiste": {
+"g": "you turned",
+"t": "verb"
+},
+"pálido": {
+"g": "pale",
+"t": "adjective"
+},
+"lados": {
+"g": "all around",
+"t": "noun"
+},
+"bajé": {
+"g": "I lowered",
+"t": "verb"
+},
+"aderezo": {
+"g": "the dressing",
+"t": "noun"
+},
+"clavó": {
+"g": "fixed, locked",
+"t": "verb"
+},
+"cazuela": {
+"g": "cooking pot",
+"t": "noun"
+},
+"golpeó": {
+"g": "knocked, banged",
+"t": "verb"
+},
+"despeinada": {
+"g": "with messy hair",
+"t": "adjective"
+},
+"sacas": {
+"g": "you drag out",
+"t": "verb"
+},
+"gallos": {
+"g": "roosters",
+"t": "noun"
+},
+"despiertos": {
+"g": "awake",
+"t": "adjective"
+},
+"súbete": {
+"g": "get in, get on",
+"t": "verb"
+},
+"rapidito": {
+"g": "real quick",
+"t": "adverb"
+},
+"déjala": {
+"g": "let her",
+"t": "verb"
+},
+"refunfuñar": {
+"g": "to grumble",
+"t": "verb"
+},
+"traes": {
+"g": "you've got",
+"t": "verb"
+},
+"armado": {
+"g": "put together",
+"t": "adjective"
+},
+"nosotras": {
+"g": "we, us",
+"t": "pronoun"
+},
+"seguimos": {
+"g": "we follow",
+"t": "verb"
+},
+"libre": {
+"g": "the free highway",
+"t": "noun"
+},
+"cañaverales": {
+"g": "sugarcane fields",
+"t": "noun"
+},
+"tropical": {
+"g": "tropical",
+"t": "adjective"
+},
+"arrastraste": {
+"g": "you dragged",
+"t": "verb"
+},
+"cuéntame": {
+"g": "tell me",
+"t": "verb"
+},
+"alcanzar": {
+"g": "to catch, reach",
+"t": "verb"
+},
+"voladores": {
+"g": "pole flyers",
+"t": "noun"
+},
+"vainilla": {
+"g": "vanilla",
+"t": "noun"
+},
+"llevarle": {
+"g": "to bring her",
+"t": "verb"
+},
+"frasco": {
+"g": "a jar",
+"t": "noun"
+},
+"explanada": {
+"g": "the open plaza",
+"t": "noun"
+},
+"trepaban": {
+"g": "were climbing",
+"t": "verb"
+},
+"amarrados": {
+"g": "tied up",
+"t": "adjective"
+},
+"tobillos": {
+"g": "the ankles",
+"t": "noun"
+},
+"girar": {
+"g": "to spin",
+"t": "verb"
+},
+"avientan": {
+"g": "they hurl themselves",
+"t": "verb"
+},
+"chulada": {
+"g": "a beauty",
+"t": "slang"
+},
+"apuraciones": {
+"g": "rushing, worries",
+"t": "noun"
+},
+"ande": {
+"g": "goes around",
+"t": "verb"
+},
+"empujando": {
+"g": "pushing",
+"t": "verb"
+},
+"tenías": {
+"g": "you were right",
+"t": "verb"
+},
+"sacaste": {
+"g": "you dragged out",
+"t": "verb"
+},
+"descenso": {
+"g": "the descent",
+"t": "noun"
+},
+"tragar": {
+"g": "to eat, chow down",
+"t": "verb"
+},
+"pegados": {
+"g": "right next to",
+"t": "adjective"
+},
+"garita": {
+"g": "border checkpoint",
+"t": "noun"
+},
+"cuau": {
+"g": "Cuau (name)",
+"t": "noun"
+},
+"tijuanense": {
+"g": "from Tijuana",
+"t": "adjective"
+},
+"aleta": {
+"g": "fin, ray meat",
+"t": "noun"
+},
+"carrito": {
+"g": "food cart",
+"t": "noun"
+},
+"mariscos": {
+"g": "seafood",
+"t": "noun"
+},
+"carros": {
+"g": "cars",
+"t": "noun"
+},
+"rumbo": {
+"g": "heading toward",
+"t": "noun"
+},
+"fuchi": {
+"g": "yuck, disgust",
+"t": "interjection"
+},
+"cállate": {
+"g": "shut up",
+"t": "expression"
+},
+"encajó": {
+"g": "shoved onto her",
+"t": "verb"
+},
+"rebosante": {
+"g": "overflowing",
+"t": "adjective"
+},
+"probada": {
+"g": "a taste, bite",
+"t": "noun"
+},
+"aguachile": {
+"g": "spicy shrimp dish",
+"t": "noun"
+},
+"parejo": {
+"g": "evenly",
+"t": "adverb"
+},
+"pulpo": {
+"g": "octopus",
+"t": "noun"
+},
+"voceaba": {
+"g": "was calling out",
+"t": "verb"
+},
+"precios": {
+"g": "prices",
+"t": "noun"
+},
+"dólares": {
+"g": "dollars",
+"t": "noun"
+},
+"arrimara": {
+"g": "came near",
+"t": "verb"
+},
+"eterna": {
+"g": "endless",
+"t": "adjective"
+},
+"convivían": {
+"g": "coexisted",
+"t": "verb"
+},
+"berrinche": {
+"g": "the tantrum",
+"t": "noun"
+},
+"molido": {
+"g": "worn out",
+"t": "adjective"
+},
+"acostumbra": {
+"g": "gets used to",
+"t": "verb"
+},
+"herida": {
+"g": "a wound",
+"t": "noun"
+},
+"rutina": {
+"g": "a routine",
+"t": "noun"
+},
+"limpió": {
+"g": "wiped off",
+"t": "verb"
+},
+"cachete": {
+"g": "the cheek",
+"t": "noun"
+},
+"sugirieran": {
+"g": "would suggest",
+"t": "verb"
+},
+"bilingüe": {
+"g": "bilingual",
+"t": "adjective"
+},
+"hervía": {
+"g": "was boiling",
+"t": "verb"
+},
+"seguían": {
+"g": "kept going",
+"t": "verb"
+},
+"brenda": {
+"g": "Brenda (name)",
+"t": "noun"
+},
+"avenida": {
+"g": "the avenue",
+"t": "noun"
+},
+"revolución": {
+"g": "Revolución (avenue)",
+"t": "noun"
+},
+"sombreros": {
+"g": "hats",
+"t": "noun"
+},
+"burros": {
+"g": "donkeys",
+"t": "noun"
+},
+"cebra": {
+"g": "zebra",
+"t": "noun"
+},
+"torció": {
+"g": "twisted, grimaced",
+"t": "verb"
+},
+"jeta": {
+"g": "the face, mug",
+"t": "slang"
+},
+"cháchara": {
+"g": "cheap trinkets, chatter",
+"t": "noun"
+},
+"caminaban": {
+"g": "they walked",
+"t": "verb"
+},
+"lúpulo": {
+"g": "hops",
+"t": "noun"
+},
+"tostado": {
+"g": "roasted",
+"t": "adjective"
+},
+"cervecería": {
+"g": "a brewery",
+"t": "noun"
+},
+"oscuras": {
+"g": "dark",
+"t": "adjective"
+},
+"corona": {
+"g": "a crown",
+"t": "noun"
+},
+"nopales": {
+"g": "cactus pads",
+"t": "noun"
+},
+"pintó": {
+"g": "painted",
+"t": "verb"
+},
+"bardas": {
+"g": "the walls",
+"t": "noun"
+},
+"artistas": {
+"g": "artists",
+"t": "noun"
+},
+"tapado": {
+"g": "covered up",
+"t": "verb"
+},
+"mugre": {
+"g": "the grime",
+"t": "noun"
+},
+"revu": {
+"g": "Revolución avenue",
+"t": "slang"
+},
+"gabacho": {
+"g": "the US, gringo-land",
+"t": "slang"
+},
+"fachada": {
+"g": "the facade",
+"t": "noun"
+},
+"anaranjada": {
+"g": "orange-colored",
+"t": "adjective"
+},
+"brillaban": {
+"g": "were shining",
+"t": "verb"
+},
+"retrató": {
+"g": "photographed",
+"t": "verb"
+},
+"trazo": {
+"g": "a stroke, line",
+"t": "noun"
+},
+"accidente": {
+"g": "by accident",
+"t": "noun"
+},
+"mirado": {
+"g": "looked at",
+"t": "verb"
+},
+"desdén": {
+"g": "disdain",
+"t": "noun"
+},
+"troca": {
+"g": "pickup truck",
+"t": "slang"
+},
+"gasolina": {
+"g": "gasoline",
+"t": "noun"
+},
+"bajaban": {
+"g": "were driving down",
+"t": "verb"
+},
+"sorda": {
+"g": "deafened",
+"t": "adjective"
+},
+"copiloto": {
+"g": "riding shotgun",
+"t": "noun"
+},
+"tarareando": {
+"g": "humming",
+"t": "verb"
+},
+"conocidos": {
+"g": "acquaintances",
+"t": "noun"
+},
+"adobada": {
+"g": "marinated pork",
+"t": "noun"
+},
+"trompo": {
+"g": "the meat spit",
+"t": "noun"
+},
+"giraba": {
+"g": "was spinning",
+"t": "verb"
+},
+"suadero": {
+"g": "suadero beef cut",
+"t": "noun"
+},
+"taquero": {
+"g": "the taco cook",
+"t": "noun"
+},
+"arrugados": {
+"g": "crumpled",
+"t": "adjective"
+},
+"pantalón": {
+"g": "the pants",
+"t": "noun"
+},
+"caído": {
+"g": "had struck",
+"t": "verb"
+},
+"bajista": {
+"g": "the bass player",
+"t": "noun"
+},
+"crecimos": {
+"g": "we grew up",
+"t": "verb"
+},
+"colonia": {
+"g": "the neighborhood",
+"t": "noun"
+},
+"dato": {
+"g": "the detail, fact",
+"t": "noun"
+},
+"morros": {
+"g": "as kids",
+"t": "slang"
+},
+"piratas": {
+"g": "knockoff, pirated",
+"t": "adjective"
+},
+"cochera": {
+"g": "a garage",
+"t": "noun"
+},
+"rajé": {
+"g": "I chickened out",
+"t": "slang"
+},
+"quedé": {
+"g": "I stayed",
+"t": "verb"
+},
+"volante": {
+"g": "the steering wheel",
+"t": "noun"
+},
+"debajo": {
+"g": "beneath",
+"t": "preposition"
+},
+"tocada": {
+"g": "a gig, concert",
+"t": "slang"
+},
+"arrimado": {
+"g": "brought her close",
+"t": "verb"
+},
+"bocina": {
+"g": "the speaker",
+"t": "noun"
+}
+}
+}

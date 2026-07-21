@@ -167,6 +167,24 @@ that ALWAYS runs before any Bash command. It does two things:
    (Regla puesta el 2026-07-09 tras sugerir regenerar una historia entera
    para probar el fix de "B244".)
 
+7. **Approved-voices gate (BLOCKING — no bypass)**. Production audio
+   (story narration, practice clips, word audio) may ONLY be rendered
+   with an ElevenLabs voiceId on the allowlist `src/lib/approvedVoices.ts`.
+   Enforced at runtime: `assertVoiceApproved(voiceId)` is called at every
+   production TTS chokepoint (`src/lib/elevenlabs.ts`, `_genPracticeClips.ts`,
+   `_genJourneyWords.ts`) and THROWS if the voice is not approved — no
+   env-var bypass. WHY: on 2026-07-19 a story was narrated with a
+   candidate voice the user never approved. **Claude must NEVER add a
+   voice to the allowlist on its own**: a PreToolUse hook
+   `.claude/safety/pre-voice-approval-guard.sh` (matches Edit/Write/Bash)
+   BLOCKS any edit to `approvedVoices.ts` (or the guard itself) unless the
+   user's MOST RECENT message contains an approval phrase (`aprueba/apruebo
+   la voz`, `voz aprobada`). To audition a candidate: FREE preview URLs or
+   a 1-line throwaway sample that does NOT write to production — NEVER a
+   full-story render, and NEVER pre-add it to the allowlist. Only after the
+   user approves by ear does the user (or Claude, once the user has said the
+   approval phrase) add the voiceId.
+
 If the guard blocks a non-push command, **DO NOT** add
 `CLAUDE_AUTHORIZED=1` on your own to bypass it. That flag is for the
 user to type, or for you ONLY after the user has said the imperative

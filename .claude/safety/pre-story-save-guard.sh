@@ -22,7 +22,17 @@ AUDIT_LOG="$REPO_ROOT/.claude/safety/audit.log"
 ALLOWED_SAVER="saveStory.ts"          # the only sanctioned content saver
 WRITE_RE='journeyStory[[:space:]]*\.[[:space:]]*(create|createMany|update|updateMany|upsert)'
 CONTENT_RE='(text|vocab)[[:space:]]*:'
+# Type annotations / declarations, NOT content writes. A `text: string` in a TS
+# type, or `text: true` in a prisma select, must NOT trip the gate — only a
+# `text:`/`vocab:` assigned an actual VALUE (content) does. Audio/dialogueSpec/
+# cover field-updates read `story.text` and declare `text: string` types; those
+# are legitimate and stay allowed.
+TYPE_RE='(text|vocab)[[:space:]]*:[[:space:]]*(string|number|boolean|any|unknown|Json|null|Date|object|Seg|true|false)\b'
 EXEC_RE='(^|[^[:alnum:]/])(tsx|ts-node|node|bun|deno)([^[:alnum:]]|$)'
+# True only if there is a text:/vocab: that is a real value assignment (not a
+# type annotation or a `select:{text:true}`).
+content_write_file() { grep -E "$CONTENT_RE" "$1" 2>/dev/null | grep -vqE "$TYPE_RE"; }
+content_write_str()  { printf '%s' "$1" | grep -E "$CONTENT_RE" | grep -vqE "$TYPE_RE"; }
 
 touch "$AUDIT_LOG" 2>/dev/null || true
 
@@ -67,7 +77,7 @@ EOF
 }
 
 # 1) Inline write in the command itself (node -e / tsx -e / heredoc piped in).
-if printf '%s' "$COMMAND" | grep -Eq "$WRITE_RE" && printf '%s' "$COMMAND" | grep -Eq "$CONTENT_RE"; then
+if printf '%s' "$COMMAND" | grep -Eq "$WRITE_RE" && content_write_str "$COMMAND"; then
     block "inline journeyStory content write (text/vocab) outside $ALLOWED_SAVER"
 fi
 
@@ -85,7 +95,7 @@ for tok in $COMMAND; do
             [ -f "$abs" ] || continue
             base="$(basename "$abs")"
             [ "$base" = "$ALLOWED_SAVER" ] && continue
-            if grep -Eq "$WRITE_RE" "$abs" && grep -Eq "$CONTENT_RE" "$abs"; then
+            if grep -Eq "$WRITE_RE" "$abs" && content_write_file "$abs"; then
                 block "script '$f' executes a journeyStory content write (text/vocab) but is not $ALLOWED_SAVER"
             fi
             ;;

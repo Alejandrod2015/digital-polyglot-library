@@ -35,6 +35,7 @@ import { join } from "node:path";
 import { PrismaClient } from "../src/generated/prisma";
 import { getPublicObjectUrl, uploadPublicObject } from "../src/lib/objectStorage";
 import { practiceVoiceId } from "../src/lib/practiceVoice";
+import { assertVoiceApproved } from "../src/lib/approvedVoices";
 
 const prisma = new PrismaClient();
 // Voice is resolved per story (the story's narrator) — see practiceVoice.ts.
@@ -108,6 +109,7 @@ function probe(f: string): Promise<number> {
   return new Promise((res) => { const p = spawn("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f]); let o = ""; p.stdout.on("data", (c) => (o += c)); p.on("close", () => res(parseFloat(o.trim()) || 0)); });
 }
 async function tts(text: string, apiKey: string): Promise<Buffer> {
+  assertVoiceApproved(VOICE, "practice-clip");
   const q = isQuestion(text);
   const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE}`, {
     method: "POST", headers: { "xi-api-key": apiKey, "Content-Type": "application/json" },

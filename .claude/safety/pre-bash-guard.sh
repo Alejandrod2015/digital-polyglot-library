@@ -382,6 +382,25 @@ EOF
     fi
 fi
 
+# 6d. Full-story audio regeneration lock (SAMPLE-FIRST).
+#     Regenerar el audio COMPLETO de una historia (o un lote) SOLO para
+#     PROBAR un cambio (fix de texto/normalización/voz/settings) es un
+#     desperdicio caro y está prohibido. Testear = UNA sola línea de muestra
+#     (la oración afectada) via un curl directo a /v1/text-to-speech.
+#     Este candado bloquea CUALQUIER script de generación de audio (tsx/node
+#     ... generate*Audio*.ts / _gen*Audio.ts / render*Audio*.ts) salvo el
+#     opt-in CONSCIENTE `DPL_AUDIO_FULL_OK=1` en la misma línea. Un sample por
+#     curl directo (no script) no matchea y pasa con el verbo normal (6c).
+#     El flag es para cuando el ENTREGABLE es el audio completo de esa
+#     historia y el usuario lo pidió, NUNCA para un test.
+if printf '%s' "$COMMAND" | grep -qE '\b(tsx|ts-node|node|npx)\b' \
+   && printf '%s' "$COMMAND" | grep -qiE '(generate|render|_gen)[a-z0-9_]*audio[a-z0-9_]*\.ts' \
+   && ! printf '%s' "$COMMAND" | grep -qiE 'timing'; then
+    if ! printf '%s' "$COMMAND" | grep -qE 'DPL_AUDIO_FULL_OK=1'; then
+        block "Full-story audio regeneration is locked (sample-first). Regenerar el audio COMPLETO de una historia para PROBAR un cambio es un desperdicio caro. Testea con UNA sola linea de muestra (la oracion afectada) via un curl directo a api.elevenlabs.io/v1/text-to-speech (eso pasa con el verbo de audio, 6c). Solo si el ENTREGABLE es el audio COMPLETO de esa historia (no un test) y el usuario lo pidio explicitamente, corre con el opt-in consciente: DPL_AUDIO_FULL_OK=1 <comando>."
+    fi
+fi
+
 # 7. Hard-block: rm -rf on paths that look like the repo root or home.
 if printf '%s' "$COMMAND" | grep -qE '\brm[[:space:]]+-[rRfFv]+[[:space:]]+(/Users/[^/[:space:]]+/?[[:space:]]*$|~[[:space:]]*$|\$HOME[[:space:]]*$|\.\.[[:space:]]*$|/[[:space:]]*$|\*[[:space:]]*$)'; then
     block "rm -rf on a path that looks like \$HOME, /, or .. Never do this."

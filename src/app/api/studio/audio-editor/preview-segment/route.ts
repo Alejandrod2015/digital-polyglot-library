@@ -313,6 +313,11 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
+  // No approved-voices gate needed here: the voice is derived from THIS
+  // story's own blocks (blocks[blockIdx].voiceId, from story.voiceId /
+  // dialogueSpec), so preview-segment can only re-render a voice the story
+  // already ships. New/unapproved voices are gated where they're introduced
+  // (set-voice) and at the client-supplied regenerate route.
   const language = story.journey.language;
   const ambientTag = story.ambientTag as AmbientTag | null;
   const ambientFile = resolveAmbientPath(ambientTag, language);

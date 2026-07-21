@@ -1,22 +1,22 @@
 [
  {
   "type": "meaning_in_context",
-  "word": "piba",
-  "sentence": "Estoy re mal, [[piba]], conocí a un tipo horrible.",
+  "word": "re",
+  "sentence": "Estoy [[re]] mal, piba, conocí un pibe soñado.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "girl",
+   "answer": "super, really",
    "options": [
-    "girl",
-    "boss",
-    "guy",
-    "kid"
+    "super, really",
+    "barely, hardly",
+    "almost, nearly",
+    "only, just"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "Estoy re mal, piba, conocí a un tipo horrible.",
-    "targetWord": "piba",
+    "sentence": "Estoy re mal, piba, conocí un pibe soñado.",
+    "targetWord": "re",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -24,22 +24,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "en la misma",
-  "sentence": "Yo estoy [[en la misma]], me pasó exactamente lo mismo.",
+  "word": "embalado",
+  "sentence": "Flor venía [[embalada]] con alguien también.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "in the same boat",
+   "answer": "carried away with excitement",
    "options": [
-    "in the same boat",
-    "far away",
-    "really happy",
-    "all alone"
+    "carried away with excitement",
+    "dragging her feet",
+    "bored out of her mind",
+    "angry and cold"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "Yo estoy en la misma, me pasó exactamente lo mismo.",
-    "targetWord": "en la misma",
+    "sentence": "Flor venía embalada con alguien también.",
+    "targetWord": "embalada",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -47,22 +47,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "chanta",
-  "sentence": "El mío era un [[chanta]] que prometía cualquier cosa.",
+  "word": "canchero",
+  "sentence": "El suyo era alto y [[canchero]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a bullshitter, con artist",
+   "answer": "smooth and confident",
    "options": [
-    "a bullshitter, con artist",
-    "a saint",
-    "a genius",
-    "a boss"
+    "smooth and confident",
+    "clumsy and shy",
+    "mean and rude",
+    "dull and slow"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "El mío era un chanta que prometía cualquier cosa.",
-    "targetWord": "chanta",
+    "sentence": "El suyo era alto y canchero.",
+    "targetWord": "canchero",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -70,22 +70,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "capo",
-  "sentence": "Se cree un [[capo]], pero es un tarado.",
+  "word": "labia",
+  "sentence": "Tenía una [[labia]] impresionante.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a big shot, boss",
+   "answer": "gift of the gab",
    "options": [
-    "a big shot, boss",
-    "a loser",
-    "a stranger",
-    "a coward"
+    "gift of the gab",
+    "fear of talking",
+    "habit of lying",
+    "lack of charm"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "Se cree un capo, pero es un tarado.",
-    "targetWord": "capo",
+    "sentence": "Tenía una labia impresionante.",
+    "targetWord": "labia",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -93,22 +93,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "cheto",
-  "sentence": "El tipo es medio [[cheto]], siempre presumiendo plata.",
+  "word": "bardo",
+  "sentence": "No se daban cuenta del [[bardo]] que se venía.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "posh, snobby",
+   "answer": "the trouble brewing",
    "options": [
-    "posh, snobby",
-    "broke",
-    "shy",
-    "kind"
+    "the trouble brewing",
+    "the good luck coming",
+    "the party starting",
+    "the calm settling"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "El tipo es medio cheto, siempre presumiendo plata.",
-    "targetWord": "cheto",
+    "sentence": "No se daban cuenta del bardo que se venía.",
+    "targetWord": "bardo",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -116,22 +116,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "colgado",
-  "sentence": "Siempre está [[colgado]] con el celular, ni te escucha.",
+  "word": "verso",
+  "sentence": "Las invitó con el mismo [[verso]] trillado.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "spaced out",
+   "answer": "the same worn out line",
    "options": [
-    "spaced out",
-    "focused",
-    "angry",
-    "asleep"
+    "the same worn out line",
+    "a brand new gift",
+    "a fair honest deal",
+    "a kind sweet note"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "Siempre está colgado con el celular, ni te escucha.",
-    "targetWord": "colgado",
+    "sentence": "Las invitó con el mismo verso trillado.",
+    "targetWord": "verso",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -139,22 +139,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "ortiba",
-  "sentence": "El mío es un [[ortiba]] que arruina cualquier plan.",
+  "word": "quedarse duro",
+  "sentence": "Flor [[se quedó dura]], con el vaso a medio camino.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a buzzkill",
+   "answer": "froze stiff in shock",
    "options": [
-    "a buzzkill",
-    "a party animal",
-    "a great guy",
-    "a genius"
+    "froze stiff in shock",
+    "laughed out loud",
+    "jumped up happy",
+    "walked calmly off"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "El mío es un ortiba que arruina cualquier plan.",
-    "targetWord": "ortiba",
+    "sentence": "Flor se quedó dura, con el vaso a medio camino.",
+    "targetWord": "se quedó dura",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -162,22 +162,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "manga de",
-  "sentence": "Somos una [[manga de]] tontas por aguantar esto.",
+  "word": "chamuyero",
+  "sentence": "El pibe soñado era un [[chamuyero]] serial.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a bunch of",
+   "answer": "a smooth talking flirt",
    "options": [
-    "a bunch of",
-    "a lack of",
-    "the pride of",
-    "the best of"
+    "a smooth talking flirt",
+    "a shy quiet loner",
+    "a loyal true friend",
+    "a hard working man"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "Somos una manga de tontas por aguantar esto.",
-    "targetWord": "manga de",
+    "sentence": "El pibe soñado era un chamuyero serial.",
+    "targetWord": "chamuyero",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -185,22 +185,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "cayó la ficha",
-  "sentence": "De golpe nos [[cayó la ficha]] a las dos juntas.",
+  "word": "calentura",
+  "sentence": "La previa se pinchó con la [[calentura]] subiendo.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "the penny dropped, realized",
+   "answer": "hot anger rising",
    "options": [
-    "the penny dropped, realized",
-    "we got bored",
-    "we left early",
-    "we got angry"
+    "hot anger rising",
+    "cool calm settling",
+    "pure joy growing",
+    "deep sleep coming"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "De golpe nos cayó la ficha a las dos juntas.",
-    "targetWord": "cayó la ficha",
+    "sentence": "La previa se pinchó con la calentura subiendo.",
+    "targetWord": "calentura",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -208,69 +208,52 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "saco en limpio",
-  "sentence": "Ahora [[saco en limpio]] por qué siempre desaparecía.",
+  "word": "cachetazo",
+  "sentence": "Después del [[cachetazo]] inicial, se miraron.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "I figure out clearly",
+   "answer": "the sudden shock",
    "options": [
-    "I figure out clearly",
-    "I forget completely",
-    "I make up",
-    "I doubt"
+    "the sudden shock",
+    "the warm welcome",
+    "the long wait",
+    "the good news"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "Ahora saco en limpio por qué siempre desaparecía.",
-    "targetWord": "saco en limpio",
+    "sentence": "Después del cachetazo inicial, se miraron.",
+    "targetWord": "cachetazo",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
   }
  },
  {
-  "type": "meaning_in_context",
-  "word": "pegaba el faltazo",
-  "sentence": "Por eso siempre [[pegaba el faltazo]] los fines de semana.",
+  "type": "fill_blank",
+  "word": "versear",
+  "sentence": "El pibe las _____ a las dos en paralelo.",
   "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "he'd bail, no-show",
+   "prompt": "Complete the sentence.",
+   "answer": "versear",
    "options": [
-    "he'd bail, no-show",
-    "he'd arrive early",
-    "he'd call first",
-    "he'd pay"
+    "versear",
+    "ayudaba",
+    "respetaba",
+    "invitaba"
+   ],
+   "translation": "The guy _____ both of them at the same time.",
+   "optionTranslations": [
+    "fed lies to",
+    "helped",
+    "respected",
+    "invited"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "Por eso siempre pegaba el faltazo los fines de semana.",
-    "targetWord": "pegaba el faltazo",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "pancho",
-  "sentence": "Nos mintió a las dos y se quedó [[pancho]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "totally calm, unbothered",
-   "options": [
-    "totally calm, unbothered",
-    "very nervous",
-    "really sorry",
-    "super angry"
-   ],
-   "audioClip": {
-    "storySlug": "el-mismo-chabon",
-    "storySource": "user",
-    "sentence": "Nos mintió a las dos y se quedó pancho.",
-    "targetWord": "pancho",
+    "sentence": "El pibe las versear a las dos en paralelo.",
+    "targetWord": "versear",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -279,29 +262,29 @@
  },
  {
   "type": "fill_blank",
-  "word": "chabón",
-  "sentence": "Conocí a un _____ que resultó un desastre.",
+  "word": "pincharse",
+  "sentence": "La previa alegre se _____ de golpe.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "chabón",
+   "answer": "pincharse",
    "options": [
-    "chabón",
-    "perro",
-    "lugar",
-    "trabajo"
+    "pincharse",
+    "animó",
+    "llenó",
+    "alargó"
    ],
-   "translation": "I met a _____ who turned out to be a disaster.",
+   "translation": "The cheerful pre party _____ all at once.",
    "optionTranslations": [
-    "a guy, dude",
-    "a dog",
-    "a place",
-    "a job"
+    "deflated",
+    "livened up",
+    "filled up",
+    "stretched out"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "Conocí a un chabón que resultó un desastre.",
-    "targetWord": "chabón",
+    "sentence": "La previa alegre se pincharse de golpe.",
+    "targetWord": "pincharse",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -310,29 +293,29 @@
  },
  {
   "type": "fill_blank",
-  "word": "garca",
-  "sentence": "Ese tipo es un _____ que estafa a todos.",
+  "word": "aliarse",
+  "sentence": "En vez de pelearse, se _____ contra el forro.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "garca",
+   "answer": "aliarse",
    "options": [
-    "garca",
-    "santo",
-    "genio",
-    "amigo"
+    "aliarse",
+    "rindieron",
+    "escondieron",
+    "durmieron"
    ],
-   "translation": "That guy is a _____ who scams everyone.",
+   "translation": "Instead of fighting, they _____ against the jerk.",
    "optionTranslations": [
-    "a scammer, jerk",
-    "a saint",
-    "a genius",
-    "a friend"
+    "teamed up",
+    "gave up",
+    "hid",
+    "slept"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "Ese tipo es un garca que estafa a todos.",
-    "targetWord": "garca",
+    "sentence": "En vez de pelearse, se aliarse contra el forro.",
+    "targetWord": "aliarse",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -341,29 +324,29 @@
  },
  {
   "type": "fill_blank",
-  "word": "forro",
-  "sentence": "Parecía bueno, pero era un _____ enorme.",
+  "word": "cobrarla",
+  "sentence": "Si jugaba con las dos, la iba a _____ doble.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "forro",
+   "answer": "cobrarla",
    "options": [
-    "forro",
-    "amor",
-    "genio",
-    "tesoro"
+    "cobrarla",
+    "ganar",
+    "pagar",
+    "perder"
    ],
-   "translation": "He seemed nice, but he was a huge _____.",
+   "translation": "If he played both, he would _____ double for it.",
    "optionTranslations": [
-    "a jerk, asshole",
-    "a love",
-    "a genius",
-    "a treasure"
+    "have to pay",
+    "win",
+    "tip",
+    "lose"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "Parecía bueno, pero era un forro enorme.",
-    "targetWord": "forro",
+    "sentence": "Si jugaba con las dos, la iba a cobrarla doble.",
+    "targetWord": "cobrarla",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -372,29 +355,29 @@
  },
  {
   "type": "fill_blank",
-  "word": "tipazo",
-  "sentence": "Al principio parecía un _____ increíble.",
+  "word": "venganza",
+  "sentence": "Armaron un plan de _____ ahí mismo.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "tipazo",
+   "answer": "venganza",
    "options": [
-    "tipazo",
-    "desastre",
-    "idiota",
-    "ladrón"
+    "venganza",
+    "vacaciones",
+    "comida",
+    "estudio"
    ],
-   "translation": "At first he seemed like an incredible _____.",
+   "translation": "They put together a _____ plan right there.",
    "optionTranslations": [
-    "a great guy",
-    "a disaster",
-    "an idiot",
-    "a thief"
+    "revenge",
+    "vacation",
+    "meal",
+    "study"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "Al principio parecía un tipazo increíble.",
-    "targetWord": "tipazo",
+    "sentence": "Armaron un plan de venganza ahí mismo.",
+    "targetWord": "venganza",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -403,29 +386,29 @@
  },
  {
   "type": "fill_blank",
-  "word": "bocho",
-  "sentence": "Pensá con el _____, es obvio lo que pasó.",
+  "word": "revancha",
+  "sentence": "La mejor cura es una amiga con sed de _____.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "bocho",
+   "answer": "revancha",
    "options": [
-    "bocho",
-    "pie",
-    "corazón",
-    "estómago"
+    "revancha",
+    "perdón",
+    "descanso",
+    "silencio"
    ],
-   "translation": "Think with your _____, what happened is obvious.",
+   "translation": "The best cure is a friend thirsting for _____.",
    "optionTranslations": [
-    "the head, brain",
-    "the foot",
-    "the heart",
-    "the stomach"
+    "payback",
+    "forgiveness",
+    "rest",
+    "silence"
    ],
    "audioClip": {
     "storySlug": "el-mismo-chabon",
     "storySource": "user",
-    "sentence": "Pensá con el bocho, es obvio lo que pasó.",
-    "targetWord": "bocho",
+    "sentence": "La mejor cura es una amiga con sed de revancha.",
+    "targetWord": "revancha",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -434,49 +417,49 @@
  },
  {
   "type": "match_meaning",
-  "word": "largar todo,por izquierda,hacía el distraído,ataron cabos",
+  "word": "previa,escabio,piba,remera",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
-     "word": "largar todo",
-     "answer": "to spill everything",
+     "word": "previa",
+     "answer": "the pre party warm up",
      "options": [
-      "to spill everything",
-      "under the table, sneakily",
-      "played dumb",
-      "connected the dots"
+      "the pre party warm up",
+      "booze",
+      "a girl (Buenos Aires)",
+      "a T shirt"
      ]
     },
     {
-     "word": "por izquierda",
-     "answer": "under the table, sneakily",
+     "word": "escabio",
+     "answer": "booze",
      "options": [
-      "to spill everything",
-      "under the table, sneakily",
-      "played dumb",
-      "connected the dots"
+      "the pre party warm up",
+      "booze",
+      "a girl (Buenos Aires)",
+      "a T shirt"
      ]
     },
     {
-     "word": "hacía el distraído",
-     "answer": "played dumb",
+     "word": "piba",
+     "answer": "a girl (Buenos Aires)",
      "options": [
-      "to spill everything",
-      "under the table, sneakily",
-      "played dumb",
-      "connected the dots"
+      "the pre party warm up",
+      "booze",
+      "a girl (Buenos Aires)",
+      "a T shirt"
      ]
     },
     {
-     "word": "ataron cabos",
-     "answer": "connected the dots",
+     "word": "remera",
+     "answer": "a T shirt",
      "options": [
-      "to spill everything",
-      "under the table, sneakily",
-      "played dumb",
-      "connected the dots"
+      "the pre party warm up",
+      "booze",
+      "a girl (Buenos Aires)",
+      "a T shirt"
      ]
     }
    ],

@@ -1,21 +1,67 @@
 [
  {
   "type": "meaning_in_context",
-  "word": "careta",
-  "sentence": "Ese chabón es un [[careta]] total, puro verso.",
+  "word": "bajoneado",
+  "sentence": "Flor llegó [[bajoneada]] al bar.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a phony, fake",
+   "answer": "feeling down and gloomy",
    "options": [
-    "a phony, fake",
-    "a saint",
-    "a genius",
-    "a friend"
+    "feeling down and gloomy",
+    "bursting with joy",
+    "calm and content",
+    "angry and loud"
    ],
    "audioClip": {
     "storySlug": "el-psicologo-de-la-barra",
     "storySource": "user",
-    "sentence": "Ese chabón es un careta total, puro verso.",
+    "sentence": "Flor llegó bajoneada al bar.",
+    "targetWord": "bajoneada",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pancho",
+  "sentence": "Tomás se ofreció de psicólogo, muy [[pancho]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "totally relaxed and cool",
+   "options": [
+    "totally relaxed and cool",
+    "tense and nervous",
+    "sad and quiet",
+    "rude and cold"
+   ],
+   "audioClip": {
+    "storySlug": "el-psicologo-de-la-barra",
+    "storySource": "user",
+    "sentence": "Tomás se ofreció de psicólogo, muy pancho.",
+    "targetWord": "pancho",
+    "language": "spanish",
+    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "careta",
+  "sentence": "El chabón que le gustaba era un [[careta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a two faced fake",
+   "options": [
+    "a two faced fake",
+    "an honest straight shooter",
+    "a shy quiet type",
+    "a rich big spender"
+   ],
+   "audioClip": {
+    "storySlug": "el-psicologo-de-la-barra",
+    "storySource": "user",
+    "sentence": "El chabón que le gustaba era un careta.",
     "targetWord": "careta",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
@@ -24,22 +70,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "chamuyo",
-  "sentence": "Todo lo que dice es puro [[chamuyo]], no le creas.",
+  "word": "dejar colgado",
+  "sentence": "La había [[dejado colgada]] dos veces.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "sweet talk, BS",
+   "answer": "left her hanging",
    "options": [
-    "sweet talk, BS",
-    "the truth",
-    "good advice",
-    "bad news"
+    "left her hanging",
+    "picked her up",
+    "paid her back",
+    "cheered her up"
    ],
    "audioClip": {
     "storySlug": "el-psicologo-de-la-barra",
     "storySource": "user",
-    "sentence": "Todo lo que dice es puro chamuyo, no le creas.",
-    "targetWord": "chamuyo",
+    "sentence": "La había dejado colgada dos veces.",
+    "targetWord": "dejado colgada",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -47,22 +93,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "gila",
-  "sentence": "No seas [[gila]], dejá a ese tipo de una vez.",
+  "word": "dar bola",
+  "sentence": "No le [[des bola]] tan fácil, le aconsejaba.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a fool, sucker",
+   "answer": "pay him attention",
    "options": [
-    "a fool, sucker",
-    "a boss",
-    "a hero",
-    "late"
+    "pay him attention",
+    "turn him down",
+    "lend him money",
+    "cook him dinner"
    ],
    "audioClip": {
     "storySlug": "el-psicologo-de-la-barra",
     "storySource": "user",
-    "sentence": "No seas gila, dejá a ese tipo de una vez.",
-    "targetWord": "gila",
+    "sentence": "No le des bola tan fácil, le aconsejaba.",
+    "targetWord": "des bola",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -70,22 +116,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "groso",
-  "sentence": "Tomás tira consejos como un verdadero [[groso]].",
+  "word": "posta",
+  "sentence": "¿De dónde sacás toda esta [[posta]]?",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a great one, awesome",
+   "answer": "this real wisdom",
    "options": [
-    "a great one, awesome",
-    "a beginner",
-    "a coward",
-    "a stranger"
+    "this real wisdom",
+    "this old junk",
+    "this cheap gossip",
+    "this pure luck"
    ],
    "audioClip": {
     "storySlug": "el-psicologo-de-la-barra",
     "storySource": "user",
-    "sentence": "Tomás tira consejos como un verdadero groso.",
-    "targetWord": "groso",
+    "sentence": "¿De dónde sacás toda esta posta?",
+    "targetWord": "posta",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -93,22 +139,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "se va al pasto",
-  "sentence": "Si aparece otro y todo [[se va al pasto]], ¿qué hago?",
+  "word": "lanzado",
+  "sentence": "Camila ya estaba [[lanzada]] y no paró.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "falls apart",
+   "answer": "on a roll, unstoppable",
    "options": [
-    "falls apart",
-    "works out",
-    "stays calm",
-    "gets better"
+    "on a roll, unstoppable",
+    "calm and quiet",
+    "tired and slow",
+    "shy and unsure"
    ],
    "audioClip": {
     "storySlug": "el-psicologo-de-la-barra",
     "storySource": "user",
-    "sentence": "Si aparece otro y todo se va al pasto, ¿qué hago?",
-    "targetWord": "se va al pasto",
+    "sentence": "Camila ya estaba lanzada y no paró.",
+    "targetWord": "lanzada",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -116,22 +162,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "copada",
-  "sentence": "Vos sos [[copada]], seguro va a aparecer alguien bueno.",
+  "word": "soltar la bomba",
+  "sentence": "Camila [[soltó la bomba]] sin piedad.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "cool, awesome",
+   "answer": "dropped a bombshell",
    "options": [
-    "cool, awesome",
-    "boring",
-    "mean",
-    "shy"
+    "dropped a bombshell",
+    "kept the secret",
+    "paid the bill",
+    "left the room"
    ],
    "audioClip": {
     "storySlug": "el-psicologo-de-la-barra",
     "storySource": "user",
-    "sentence": "Vos sos copada, seguro va a aparecer alguien bueno.",
-    "targetWord": "copada",
+    "sentence": "Camila soltó la bomba sin piedad.",
+    "targetWord": "soltó la bomba",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -139,22 +185,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "hago la vista gorda",
-  "sentence": "A veces le [[hago la vista gorda]] a lo falso que es.",
+  "word": "más solo que perro en la calle",
+  "sentence": "Es [[más solo que perro en la calle]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "turn a blind eye",
+   "answer": "utterly alone",
    "options": [
-    "turn a blind eye",
-    "tell everyone",
-    "get angry",
-    "write it down"
+    "utterly alone",
+    "surrounded by friends",
+    "the life of the party",
+    "never left in peace"
    ],
    "audioClip": {
     "storySlug": "el-psicologo-de-la-barra",
     "storySource": "user",
-    "sentence": "A veces le hago la vista gorda a lo falso que es.",
-    "targetWord": "hago la vista gorda",
+    "sentence": "Es más solo que perro en la calle.",
+    "targetWord": "más solo que perro en la calle",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -162,115 +208,52 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "trucho",
-  "sentence": "Si ese chabón es [[trucho]], no va a cambiar nunca.",
+  "word": "sin filtro",
+  "sentence": "Camila lo dijo [[sin filtro]], delante de todos.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "fake, phony",
+   "answer": "with no restraint at all",
    "options": [
-    "fake, phony",
-    "honest",
-    "rich",
-    "funny"
+    "with no restraint at all",
+    "after careful polite thought",
+    "in a soft low whisper",
+    "behind everyone's back"
    ],
    "audioClip": {
     "storySlug": "el-psicologo-de-la-barra",
     "storySource": "user",
-    "sentence": "Si ese chabón es trucho, no va a cambiar nunca.",
-    "targetWord": "trucho",
+    "sentence": "Camila lo dijo sin filtro, delante de todos.",
+    "targetWord": "sin filtro",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
   }
  },
  {
-  "type": "meaning_in_context",
-  "word": "metas la mula",
-  "sentence": "No te [[metas la mula]] a vos misma con excusas.",
+  "type": "fill_blank",
+  "word": "contame",
+  "sentence": "\"_____ todo, flaca, que para eso están los amigos.\"",
   "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "fool yourself, deceive",
+   "prompt": "Complete the sentence.",
+   "answer": "contame",
    "options": [
-    "fool yourself, deceive",
-    "tell the truth",
-    "calm down",
-    "hurry up"
+    "contame",
+    "escondeme",
+    "olvidame",
+    "pagame"
+   ],
+   "translation": "\"_____ everything, mate, that is what friends are for.\"",
+   "optionTranslations": [
+    "tell me",
+    "hide from me",
+    "forget me",
+    "pay me"
    ],
    "audioClip": {
     "storySlug": "el-psicologo-de-la-barra",
     "storySource": "user",
-    "sentence": "No te metas la mula a vos misma con excusas.",
-    "targetWord": "metas la mula",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "quedé pagando",
-  "sentence": "Hace un mes me dejó y [[quedé pagando]] solo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "left stuck, holding the bag",
-   "options": [
-    "left stuck, holding the bag",
-    "felt relieved",
-    "got rich",
-    "moved on"
-   ],
-   "audioClip": {
-    "storySlug": "el-psicologo-de-la-barra",
-    "storySource": "user",
-    "sentence": "Hace un mes me dejó y quedé pagando solo.",
-    "targetWord": "quedé pagando",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "zarpado",
-  "sentence": "Que me des cátedra así es medio [[zarpado]], che.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "over the top, out of line",
-   "options": [
-    "over the top, out of line",
-    "very kind",
-    "totally normal",
-    "really cheap"
-   ],
-   "audioClip": {
-    "storySlug": "el-psicologo-de-la-barra",
-    "storySource": "user",
-    "sentence": "Que me des cátedra así es medio zarpado, che.",
-    "targetWord": "zarpado",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "en pedo",
-  "sentence": "Los dos estábamos [[en pedo]] negando la verdad.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "drunk, crazy",
-   "options": [
-    "drunk, crazy",
-    "sober",
-    "asleep",
-    "honest"
-   ],
-   "audioClip": {
-    "storySlug": "el-psicologo-de-la-barra",
-    "storySource": "user",
-    "sentence": "Los dos estábamos en pedo negando la verdad.",
-    "targetWord": "en pedo",
+    "sentence": "\"contame todo, flaca, que para eso están los amigos.\"",
+    "targetWord": "contame",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -279,29 +262,29 @@
  },
  {
   "type": "fill_blank",
-  "word": "bardo",
-  "sentence": "Con ese chabón todo es un _____ constante.",
+  "word": "flaco",
+  "sentence": "\"Contame todo, _____, que para eso estamos.\"",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "bardo",
+   "answer": "flaco",
    "options": [
-    "bardo",
-    "silencio",
-    "placer",
-    "chiste"
+    "flaco",
+    "doctor",
+    "señor",
+    "jefe"
    ],
-   "translation": "With that guy everything is a constant _____.",
+   "translation": "\"Tell me everything, _____, that is what we are here for.\"",
    "optionTranslations": [
-    "a mess, drama",
-    "silence",
-    "a pleasure",
-    "a joke"
+    "mate, pal",
+    "doctor",
+    "sir",
+    "boss"
    ],
    "audioClip": {
     "storySlug": "el-psicologo-de-la-barra",
     "storySource": "user",
-    "sentence": "Con ese chabón todo es un bardo constante.",
-    "targetWord": "bardo",
+    "sentence": "\"Contame todo, flaco, que para eso estamos.\"",
+    "targetWord": "flaco",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -310,29 +293,29 @@
  },
  {
   "type": "fill_blank",
-  "word": "escabio",
-  "sentence": "Salí un rato y tomate un _____ con amigas.",
+  "word": "chamuyar",
+  "sentence": "El chabón _____ a otras minas al mismo tiempo.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "escabio",
+   "answer": "chamuyar",
    "options": [
-    "escabio",
-    "café",
-    "jugo",
-    "té"
+    "chamuyar",
+    "ignoraba",
+    "ayudaba",
+    "llamaba"
    ],
-   "translation": "Go out for a bit and have a _____ with friends.",
+   "translation": "The guy _____ other girls at the same time.",
    "optionTranslations": [
-    "booze, a drink",
-    "coffee",
-    "juice",
-    "tea"
+    "sweet talked",
+    "ignored",
+    "helped",
+    "called"
    ],
    "audioClip": {
     "storySlug": "el-psicologo-de-la-barra",
     "storySource": "user",
-    "sentence": "Salí un rato y tomate un escabio con amigas.",
-    "targetWord": "escabio",
+    "sentence": "El chabón chamuyar a otras minas al mismo tiempo.",
+    "targetWord": "chamuyar",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -341,29 +324,29 @@
  },
  {
   "type": "fill_blank",
-  "word": "fiaca",
-  "sentence": "Me da _____ conocer gente nueva ahora.",
+  "word": "mandarse",
+  "sentence": "El pibe _____ una teoría larguísima sobre el amor.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "fiaca",
+   "answer": "mandarse",
    "options": [
-    "fiaca",
-    "alegría",
-    "miedo",
-    "hambre"
+    "mandarse",
+    "guardó",
+    "calló",
+    "perdió"
    ],
-   "translation": "Meeting new people makes me feel too _____ now.",
+   "translation": "The guy _____ a very long theory about love.",
    "optionTranslations": [
-    "lazy, can't be bothered",
-    "joy",
-    "fear",
-    "hunger"
+    "launched into",
+    "kept in",
+    "hushed",
+    "lost"
    ],
    "audioClip": {
     "storySlug": "el-psicologo-de-la-barra",
     "storySource": "user",
-    "sentence": "Me da fiaca conocer gente nueva ahora.",
-    "targetWord": "fiaca",
+    "sentence": "El pibe mandarse una teoría larguísima sobre el amor.",
+    "targetWord": "mandarse",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -372,29 +355,29 @@
  },
  {
   "type": "fill_blank",
-  "word": "embole",
-  "sentence": "Lo peor es el _____ de las noches solas.",
+  "word": "laburar",
+  "sentence": "Que _____ para conseguirte, no le regales nada.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "embole",
+   "answer": "laburar",
    "options": [
-    "embole",
-    "placer",
-    "ruido",
-    "apuro"
+    "laburar",
+    "descanse",
+    "duerma",
+    "juegue"
    ],
-   "translation": "The worst is the _____ of lonely nights.",
+   "translation": "Let him _____ to win you, do not hand it over free.",
    "optionTranslations": [
-    "the boredom",
-    "the pleasure",
-    "the noise",
-    "the rush"
+    "work hard",
+    "rest",
+    "sleep",
+    "play"
    ],
    "audioClip": {
     "storySlug": "el-psicologo-de-la-barra",
     "storySource": "user",
-    "sentence": "Lo peor es el embole de las noches solas.",
-    "targetWord": "embole",
+    "sentence": "Que laburar para conseguirte, no le regales nada.",
+    "targetWord": "laburar",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -403,29 +386,29 @@
  },
  {
   "type": "fill_blank",
-  "word": "morfi",
-  "sentence": "Pedí un poco de _____, que tengo hambre.",
+  "word": "tirar",
+  "sentence": "Camila _____ el comentario sin filtro.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "morfi",
+   "answer": "tirar",
    "options": [
-    "morfi",
-    "agua",
-    "vino",
-    "hielo"
+    "tirar",
+    "guardó",
+    "escribió",
+    "tragó"
    ],
-   "translation": "Order some _____, I'm hungry.",
+   "translation": "Camila _____ the comment with no filter.",
    "optionTranslations": [
-    "food, grub",
-    "water",
-    "wine",
-    "ice"
+    "tossed out",
+    "kept in",
+    "wrote",
+    "swallowed"
    ],
    "audioClip": {
     "storySlug": "el-psicologo-de-la-barra",
     "storySource": "user",
-    "sentence": "Pedí un poco de morfi, que tengo hambre.",
-    "targetWord": "morfi",
+    "sentence": "Camila tirar el comentario sin filtro.",
+    "targetWord": "tirar",
     "language": "spanish",
     "voiceId": "JW8DGEuLp9WxIS5IdxMM"
    }
@@ -434,49 +417,49 @@
  },
  {
   "type": "match_meaning",
-  "word": "cortar el rostro,los puntos sobre las íes,trapos al sol,manda fruta",
+  "word": "chabón,mina,pibe,forro",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
-     "word": "cortar el rostro",
-     "answer": "to snub, blow off",
+     "word": "chabón",
+     "answer": "a guy, a dude",
      "options": [
-      "to snub, blow off",
-      "to make things clear",
-      "to air dirty laundry",
-      "to talk nonsense"
+      "a guy, a dude",
+      "a woman, a girl",
+      "a young guy",
+      "a jerk, a scumbag"
      ]
     },
     {
-     "word": "los puntos sobre las íes",
-     "answer": "to make things clear",
+     "word": "mina",
+     "answer": "a woman, a girl",
      "options": [
-      "to snub, blow off",
-      "to make things clear",
-      "to air dirty laundry",
-      "to talk nonsense"
+      "a guy, a dude",
+      "a woman, a girl",
+      "a young guy",
+      "a jerk, a scumbag"
      ]
     },
     {
-     "word": "trapos al sol",
-     "answer": "to air dirty laundry",
+     "word": "pibe",
+     "answer": "a young guy",
      "options": [
-      "to snub, blow off",
-      "to make things clear",
-      "to air dirty laundry",
-      "to talk nonsense"
+      "a guy, a dude",
+      "a woman, a girl",
+      "a young guy",
+      "a jerk, a scumbag"
      ]
     },
     {
-     "word": "manda fruta",
-     "answer": "to talk nonsense",
+     "word": "forro",
+     "answer": "a jerk, a scumbag",
      "options": [
-      "to snub, blow off",
-      "to make things clear",
-      "to air dirty laundry",
-      "to talk nonsense"
+      "a guy, a dude",
+      "a woman, a girl",
+      "a young guy",
+      "a jerk, a scumbag"
      ]
     }
    ],

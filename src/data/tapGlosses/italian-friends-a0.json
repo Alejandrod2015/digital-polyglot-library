@@ -1,0 +1,2995 @@
+{
+"slugs": [
+"elena-arriva-a-roma",
+"elena-e-giulia-a-trastevere",
+"le-pesche-di-campo-de-fiori",
+"elena-sale-sul-duomo",
+"un-tramonto-sul-ponte-vecchio",
+"la-bistecca-e-il-gatto",
+"elena-sale-in-gondola",
+"il-mercato-di-rialto",
+"una-canzone-in-piazza-san-marco",
+"elena-e-il-duomo-di-milano",
+"l-aperitivo-con-luca",
+"un-giro-sui-navigli",
+"elena-e-la-pizza-di-anna",
+"una-giornata-sul-lungomare",
+"elena-cucina-per-anna",
+"i-tortellini-di-paolo",
+"una-passeggiata-sotto-i-portici",
+"sotto-le-due-torri",
+"elena-e-il-mare-di-palermo",
+"un-cannolo-in-piu",
+"il-teatro-e-chiuso-stasera"
+],
+"glosses": {
+"a": {
+"g": "to; at",
+"t": "preposition"
+},
+"abbiamo": {
+"g": "we have",
+"t": "verb"
+},
+"abbraccia": {
+"g": "hugs",
+"t": "verb"
+},
+"abbracciano": {
+"g": "they hug",
+"t": "verb"
+},
+"abita": {
+"g": "lives; resides",
+"t": "verb"
+},
+"accetta": {
+"g": "accepts",
+"t": "verb"
+},
+"acqua": {
+"g": "water",
+"t": "noun"
+},
+"adesso": {
+"g": "now",
+"t": "adverb"
+},
+"affamato": {
+"g": "hungry",
+"t": "adjective"
+},
+"affare": {
+"g": "deal; bargain",
+"t": "noun"
+},
+"affetto": {
+"g": "affection",
+"t": "noun"
+},
+"agli": {
+"g": "to the",
+"t": "preposition"
+},
+"ai": {
+"g": "to the",
+"t": "preposition"
+},
+"al": {
+"g": "to the; at the",
+"t": "preposition"
+},
+"alcune": {
+"g": "some; a few",
+"t": "adjective"
+},
+"alcuni": {
+"g": "some; a few",
+"t": "adjective"
+},
+"all": {
+"g": "to the; at the",
+"t": "preposition"
+},
+"alla": {
+"g": "to the; at the",
+"t": "preposition"
+},
+"alle": {
+"g": "to the; at the",
+"t": "preposition"
+},
+"allegra": {
+"g": "cheerful",
+"t": "adjective"
+},
+"allegro": {
+"g": "cheerful",
+"t": "adjective"
+},
+"allora": {
+"g": "then; so",
+"t": "adverb"
+},
+"alte": {
+"g": "tall; high",
+"t": "adjective"
+},
+"alto": {
+"g": "tall; high",
+"t": "adjective"
+},
+"altra": {
+"g": "other; another",
+"t": "adjective"
+},
+"alza": {
+"g": "raises; lifts",
+"t": "verb"
+},
+"alzano": {
+"g": "they raise; they lift",
+"t": "verb"
+},
+"amica": {
+"g": "friend (female)",
+"t": "noun"
+},
+"amiche": {
+"g": "friends (female)",
+"t": "noun"
+},
+"amici": {
+"g": "friends",
+"t": "noun"
+},
+"amico": {
+"g": "friend (male)",
+"t": "noun"
+},
+"anche": {
+"g": "also; too",
+"t": "adverb"
+},
+"ancora": {
+"g": "still; again",
+"t": "adverb"
+},
+"anello": {
+"g": "ring",
+"t": "noun"
+},
+"angolo": {
+"g": "corner",
+"t": "noun"
+},
+"anna": {
+"g": "Anna",
+"t": "other"
+},
+"anni": {
+"g": "years",
+"t": "noun"
+},
+"annuisce": {
+"g": "nods",
+"t": "verb"
+},
+"antica": {
+"g": "ancient; old",
+"t": "adjective"
+},
+"antiche": {
+"g": "ancient; old",
+"t": "adjective"
+},
+"aperitivo": {
+"g": "aperitif; pre-dinner drink",
+"t": "noun"
+},
+"aperta": {
+"g": "open",
+"t": "adjective"
+},
+"apre": {
+"g": "opens",
+"t": "verb"
+},
+"arance": {
+"g": "oranges",
+"t": "noun"
+},
+"arancia": {
+"g": "orange (fruit)",
+"t": "noun"
+},
+"arancione": {
+"g": "orange (color)",
+"t": "adjective"
+},
+"aria": {
+"g": "air",
+"t": "noun"
+},
+"arno": {
+"g": "Arno (river)",
+"t": "other"
+},
+"arriva": {
+"g": "arrives",
+"t": "verb"
+},
+"arrivano": {
+"g": "they arrive",
+"t": "verb"
+},
+"arrivare": {
+"g": "to arrive",
+"t": "verb"
+},
+"artista": {
+"g": "artist",
+"t": "noun"
+},
+"asciutti": {
+"g": "dry",
+"t": "adjective"
+},
+"ascolta": {
+"g": "listens",
+"t": "verb"
+},
+"ascoltano": {
+"g": "they listen",
+"t": "verb"
+},
+"aspetta": {
+"g": "waits",
+"t": "verb"
+},
+"assaggia": {
+"g": "tastes; samples",
+"t": "verb"
+},
+"attraversa": {
+"g": "crosses",
+"t": "verb"
+},
+"avvicina": {
+"g": "approaches; draws near",
+"t": "verb"
+},
+"azzurro": {
+"g": "blue",
+"t": "adjective"
+},
+"balla": {
+"g": "dances",
+"t": "verb"
+},
+"banchi": {
+"g": "stalls; counters",
+"t": "noun"
+},
+"banco": {
+"g": "stall; counter",
+"t": "noun"
+},
+"barca": {
+"g": "boat",
+"t": "noun"
+},
+"barche": {
+"g": "boats",
+"t": "noun"
+},
+"bassa": {
+"g": "low; short",
+"t": "adjective"
+},
+"basso": {
+"g": "low; short",
+"t": "adjective"
+},
+"batte": {
+"g": "beats",
+"t": "verb"
+},
+"bella": {
+"g": "beautiful",
+"t": "adjective"
+},
+"belle": {
+"g": "beautiful",
+"t": "adjective"
+},
+"bellissima": {
+"g": "very beautiful",
+"t": "adjective"
+},
+"bellissimo": {
+"g": "very beautiful",
+"t": "adjective"
+},
+"bello": {
+"g": "beautiful",
+"t": "adjective"
+},
+"bene": {
+"g": "well; fine",
+"t": "adverb"
+},
+"benvenuta": {
+"g": "welcome",
+"t": "expression"
+},
+"beve": {
+"g": "drinks",
+"t": "verb"
+},
+"bevono": {
+"g": "they drink",
+"t": "verb"
+},
+"bianca": {
+"g": "white",
+"t": "adjective"
+},
+"bianche": {
+"g": "white",
+"t": "adjective"
+},
+"bianco": {
+"g": "white",
+"t": "adjective"
+},
+"bibita": {
+"g": "soft drink",
+"t": "noun"
+},
+"bicchieri": {
+"g": "glasses",
+"t": "noun"
+},
+"biglietti": {
+"g": "tickets",
+"t": "noun"
+},
+"binario": {
+"g": "platform; track",
+"t": "noun"
+},
+"bistecca": {
+"g": "steak",
+"t": "noun"
+},
+"bocca": {
+"g": "mouth",
+"t": "noun"
+},
+"bologna": {
+"g": "Bologna",
+"t": "other"
+},
+"bolognese": {
+"g": "Bolognese",
+"t": "adjective"
+},
+"bordo": {
+"g": "edge; on board",
+"t": "noun"
+},
+"borsa": {
+"g": "bag; purse",
+"t": "noun"
+},
+"brilla": {
+"g": "shines",
+"t": "verb"
+},
+"brodo": {
+"g": "broth",
+"t": "noun"
+},
+"buie": {
+"g": "dark",
+"t": "adjective"
+},
+"buon": {
+"g": "good",
+"t": "adjective"
+},
+"buona": {
+"g": "good",
+"t": "adjective"
+},
+"buone": {
+"g": "good",
+"t": "adjective"
+},
+"buoni": {
+"g": "good",
+"t": "adjective"
+},
+"buonissimi": {
+"g": "very good; delicious",
+"t": "adjective"
+},
+"buono": {
+"g": "good",
+"t": "adjective"
+},
+"butta": {
+"g": "throws",
+"t": "verb"
+},
+"c": {
+"g": "there",
+"t": "adverb"
+},
+"cade": {
+"g": "falls",
+"t": "verb"
+},
+"caffè": {
+"g": "coffee",
+"t": "noun"
+},
+"calda": {
+"g": "warm; hot",
+"t": "adjective"
+},
+"caldo": {
+"g": "warm; hot",
+"t": "adjective"
+},
+"calli": {
+"g": "narrow streets (Venice)",
+"t": "noun"
+},
+"calma": {
+"g": "calm",
+"t": "adjective"
+},
+"calmo": {
+"g": "calm",
+"t": "adjective"
+},
+"cameriere": {
+"g": "waiter",
+"t": "noun"
+},
+"cammina": {
+"g": "walks",
+"t": "verb"
+},
+"camminano": {
+"g": "they walk",
+"t": "verb"
+},
+"campo": {
+"g": "square; field",
+"t": "noun"
+},
+"canale": {
+"g": "canal",
+"t": "noun"
+},
+"canali": {
+"g": "canals",
+"t": "noun"
+},
+"candela": {
+"g": "candle",
+"t": "noun"
+},
+"cannoli": {
+"g": "cannoli",
+"t": "noun"
+},
+"cannolo": {
+"g": "cannolo",
+"t": "noun"
+},
+"canta": {
+"g": "sings",
+"t": "verb"
+},
+"cantano": {
+"g": "they sing",
+"t": "verb"
+},
+"canzone": {
+"g": "song",
+"t": "noun"
+},
+"capogiro": {
+"g": "dizziness",
+"t": "noun"
+},
+"carne": {
+"g": "meat",
+"t": "noun"
+},
+"caro": {
+"g": "dear; expensive",
+"t": "adjective"
+},
+"cartello": {
+"g": "sign",
+"t": "noun"
+},
+"casa": {
+"g": "house, home",
+"t": "noun"
+},
+"case": {
+"g": "houses",
+"t": "noun"
+},
+"cena": {
+"g": "dinner",
+"t": "noun"
+},
+"cenano": {
+"g": "they have dinner",
+"t": "verb"
+},
+"centro": {
+"g": "center, downtown",
+"t": "noun"
+},
+"cerca": {
+"g": "looks for",
+"t": "verb"
+},
+"cercano": {
+"g": "near, nearby",
+"t": "adjective"
+},
+"che": {
+"g": "that, which",
+"t": "conjunction"
+},
+"chi": {
+"g": "who",
+"t": "pronoun"
+},
+"chiara": {
+"g": "Chiara (name)",
+"t": "other"
+},
+"chiede": {
+"g": "asks",
+"t": "verb"
+},
+"chiesa": {
+"g": "church",
+"t": "noun"
+},
+"china": {
+"g": "bent, leaning",
+"t": "adjective"
+},
+"chitarra": {
+"g": "guitar",
+"t": "noun"
+},
+"chiude": {
+"g": "closes",
+"t": "verb"
+},
+"chiusa": {
+"g": "closed",
+"t": "adjective"
+},
+"chiuso": {
+"g": "closed",
+"t": "adjective"
+},
+"ci": {
+"g": "us, there",
+"t": "pronoun"
+},
+"cibo": {
+"g": "food",
+"t": "noun"
+},
+"cielo": {
+"g": "sky",
+"t": "noun"
+},
+"cima": {
+"g": "top, peak",
+"t": "noun"
+},
+"cioccolata": {
+"g": "hot chocolate",
+"t": "noun"
+},
+"cioccolato": {
+"g": "chocolate",
+"t": "noun"
+},
+"città": {
+"g": "city",
+"t": "noun"
+},
+"collina": {
+"g": "hill",
+"t": "noun"
+},
+"colonne": {
+"g": "columns",
+"t": "noun"
+},
+"colorati": {
+"g": "colorful",
+"t": "adjective"
+},
+"colori": {
+"g": "colors",
+"t": "noun"
+},
+"colosseo": {
+"g": "Colosseum",
+"t": "other"
+},
+"comincia": {
+"g": "begins",
+"t": "verb"
+},
+"commossa": {
+"g": "moved, touched",
+"t": "adjective"
+},
+"compleanno": {
+"g": "birthday",
+"t": "noun"
+},
+"compra": {
+"g": "buys",
+"t": "verb"
+},
+"comprano": {
+"g": "they buy",
+"t": "verb"
+},
+"comprare": {
+"g": "to buy",
+"t": "verb"
+},
+"con": {
+"g": "with",
+"t": "preposition"
+},
+"concerto": {
+"g": "concert",
+"t": "noun"
+},
+"conosce": {
+"g": "knows",
+"t": "verb"
+},
+"contano": {
+"g": "they count",
+"t": "verb"
+},
+"contenta": {
+"g": "happy, pleased",
+"t": "adjective"
+},
+"contente": {
+"g": "happy, pleased",
+"t": "adjective"
+},
+"continua": {
+"g": "continues",
+"t": "verb"
+},
+"conto": {
+"g": "bill, check",
+"t": "noun"
+},
+"contrattare": {
+"g": "to bargain, haggle",
+"t": "verb"
+},
+"coppia": {
+"g": "couple, pair",
+"t": "noun"
+},
+"coprono": {
+"g": "they cover",
+"t": "verb"
+},
+"corre": {
+"g": "runs",
+"t": "verb"
+},
+"cose": {
+"g": "things",
+"t": "noun"
+},
+"così": {
+"g": "so, like this",
+"t": "adverb"
+},
+"crema": {
+"g": "cream",
+"t": "noun"
+},
+"cucina": {
+"g": "kitchen",
+"t": "noun"
+},
+"cuociono": {
+"g": "they cook",
+"t": "verb"
+},
+"cuoco": {
+"g": "cook, chef",
+"t": "noun"
+},
+"cuore": {
+"g": "heart",
+"t": "noun"
+},
+"curiosa": {
+"g": "curious",
+"t": "adjective"
+},
+"curiosi": {
+"g": "curious",
+"t": "adjective"
+},
+"curiosità": {
+"g": "curiosity",
+"t": "noun"
+},
+"d": {
+"g": "of, from",
+"t": "preposition"
+},
+"da": {
+"g": "from, by",
+"t": "preposition"
+},
+"dal": {
+"g": "from the",
+"t": "preposition"
+},
+"davanti": {
+"g": "in front",
+"t": "adverb"
+},
+"de": {
+"g": "of",
+"t": "preposition"
+},
+"decidono": {
+"g": "they decide",
+"t": "verb"
+},
+"dei": {
+"g": "of the, some",
+"t": "article"
+},
+"del": {
+"g": "of the, some",
+"t": "preposition"
+},
+"delfino": {
+"g": "dolphin",
+"t": "noun"
+},
+"deliziosa": {
+"g": "delicious",
+"t": "adjective"
+},
+"delizioso": {
+"g": "delicious",
+"t": "adjective"
+},
+"della": {
+"g": "of the",
+"t": "preposition"
+},
+"delle": {
+"g": "of the",
+"t": "preposition"
+},
+"destra": {
+"g": "right (side)",
+"t": "noun"
+},
+"di": {
+"g": "of",
+"t": "preposition"
+},
+"dice": {
+"g": "says",
+"t": "verb"
+},
+"dietro": {
+"g": "behind",
+"t": "adverb"
+},
+"direttore": {
+"g": "director",
+"t": "noun"
+},
+"dita": {
+"g": "fingers",
+"t": "noun"
+},
+"dito": {
+"g": "finger",
+"t": "noun"
+},
+"diventa": {
+"g": "becomes",
+"t": "verb"
+},
+"diventano": {
+"g": "they become",
+"t": "verb"
+},
+"dolce": {
+"g": "sweet",
+"t": "adjective"
+},
+"dolci": {
+"g": "sweets, desserts",
+"t": "noun"
+},
+"domanda": {
+"g": "question",
+"t": "noun"
+},
+"domani": {
+"g": "tomorrow",
+"t": "adverb"
+},
+"dondolano": {
+"g": "they sway, swing",
+"t": "verb"
+},
+"donna": {
+"g": "woman",
+"t": "noun"
+},
+"donne": {
+"g": "women",
+"t": "noun"
+},
+"dopo": {
+"g": "after, afterwards",
+"t": "adverb"
+},
+"dorata": {
+"g": "golden",
+"t": "adjective"
+},
+"dove": {
+"g": "where",
+"t": "adverb"
+},
+"dritta": {
+"g": "straight",
+"t": "adjective"
+},
+"due": {
+"g": "two",
+"t": "number"
+},
+"duomo": {
+"g": "cathedral",
+"t": "noun"
+},
+"dà": {
+"g": "gives",
+"t": "verb"
+},
+"e": {
+"g": "and",
+"t": "conjunction"
+},
+"ed": {
+"g": "and",
+"t": "conjunction"
+},
+"elena": {
+"g": "Elena (name)",
+"t": "other"
+},
+"enorme": {
+"g": "enormous, huge",
+"t": "adjective"
+},
+"entrano": {
+"g": "they enter",
+"t": "verb"
+},
+"esce": {
+"g": "goes out, exits",
+"t": "verb"
+},
+"esclama": {
+"g": "exclaims",
+"t": "verb"
+},
+"escono": {
+"g": "they go out",
+"t": "verb"
+},
+"euro": {
+"g": "euro",
+"t": "noun"
+},
+"fa": {
+"g": "does, makes",
+"t": "verb"
+},
+"facciamo": {
+"g": "we do, make",
+"t": "verb"
+},
+"fame": {
+"g": "hunger",
+"t": "noun"
+},
+"famiglia": {
+"g": "family",
+"t": "noun"
+},
+"fanno": {
+"g": "they do, make",
+"t": "verb"
+},
+"farina": {
+"g": "flour",
+"t": "noun"
+},
+"fatto": {
+"g": "done, made",
+"t": "verb"
+},
+"felice": {
+"g": "happy",
+"t": "adjective"
+},
+"felici": {
+"g": "happy",
+"t": "adjective"
+},
+"ferma": {
+"g": "stops",
+"t": "verb"
+},
+"fermano": {
+"g": "they stop",
+"t": "verb"
+},
+"ferro": {
+"g": "iron",
+"t": "noun"
+},
+"fetta": {
+"g": "slice",
+"t": "noun"
+},
+"fine": {
+"g": "end",
+"t": "noun"
+},
+"finestra": {
+"g": "window",
+"t": "noun"
+},
+"finestrino": {
+"g": "window (car, train)",
+"t": "noun"
+},
+"finire": {
+"g": "to finish",
+"t": "verb"
+},
+"finisce": {
+"g": "finishes",
+"t": "verb"
+},
+"fino": {
+"g": "until, up to",
+"t": "preposition"
+},
+"fiori": {
+"g": "flowers",
+"t": "noun"
+},
+"firenze": {
+"g": "Florence",
+"t": "other"
+},
+"fiume": {
+"g": "river",
+"t": "noun"
+},
+"folla": {
+"g": "crowd",
+"t": "noun"
+},
+"fontana": {
+"g": "fountain",
+"t": "noun"
+},
+"formaggio": {
+"g": "cheese",
+"t": "noun"
+},
+"fornelli": {
+"g": "stove burners",
+"t": "noun"
+},
+"forno": {
+"g": "oven",
+"t": "noun"
+},
+"forse": {
+"g": "maybe, perhaps",
+"t": "adverb"
+},
+"forte": {
+"g": "strong, loud",
+"t": "adjective"
+},
+"foto": {
+"g": "photo",
+"t": "noun"
+},
+"fragola": {
+"g": "strawberry",
+"t": "noun"
+},
+"fratello": {
+"g": "brother",
+"t": "noun"
+},
+"fredda": {
+"g": "cold",
+"t": "adjective"
+},
+"freddi": {
+"g": "cold",
+"t": "adjective"
+},
+"fresca": {
+"g": "fresh, cool",
+"t": "adjective"
+},
+"fresco": {
+"g": "fresh, cool",
+"t": "adjective"
+},
+"fretta": {
+"g": "hurry, haste",
+"t": "noun"
+},
+"frutta": {
+"g": "fruit",
+"t": "noun"
+},
+"frutti": {
+"g": "fruits",
+"t": "noun"
+},
+"fuori": {
+"g": "outside",
+"t": "adverb"
+},
+"fusa": {
+"g": "purring",
+"t": "noun"
+},
+"galleggiano": {
+"g": "they float",
+"t": "verb"
+},
+"gambe": {
+"g": "legs",
+"t": "noun"
+},
+"gatto": {
+"g": "cat",
+"t": "noun"
+},
+"gelati": {
+"g": "ice creams",
+"t": "noun"
+},
+"gelato": {
+"g": "ice cream",
+"t": "noun"
+},
+"gente": {
+"g": "people",
+"t": "noun"
+},
+"gentile": {
+"g": "kind, nice",
+"t": "adjective"
+},
+"gialla": {
+"g": "yellow",
+"t": "adjective"
+},
+"gialle": {
+"g": "yellow",
+"t": "adjective"
+},
+"gialli": {
+"g": "yellow",
+"t": "adjective"
+},
+"giallo": {
+"g": "yellow",
+"t": "adjective"
+},
+"giardino": {
+"g": "garden",
+"t": "noun"
+},
+"gioco": {
+"g": "game",
+"t": "noun"
+},
+"gioia": {
+"g": "joy",
+"t": "noun"
+},
+"giornata": {
+"g": "day",
+"t": "noun"
+},
+"giorno": {
+"g": "day",
+"t": "noun"
+},
+"gira": {
+"g": "turns, spins",
+"t": "verb"
+},
+"girano": {
+"g": "they turn",
+"t": "verb"
+},
+"giro": {
+"g": "tour, walk around",
+"t": "noun"
+},
+"giulia": {
+"g": "Giulia",
+"t": "other"
+},
+"giusta": {
+"g": "right, correct",
+"t": "adjective"
+},
+"già": {
+"g": "already",
+"t": "adverb"
+},
+"gli": {
+"g": "the; to him",
+"t": "article"
+},
+"gondola": {
+"g": "gondola",
+"t": "noun"
+},
+"gondole": {
+"g": "gondolas",
+"t": "noun"
+},
+"gondoliere": {
+"g": "gondolier",
+"t": "noun"
+},
+"gradini": {
+"g": "steps, stairs",
+"t": "noun"
+},
+"gran": {
+"g": "great, big",
+"t": "adjective"
+},
+"grande": {
+"g": "big, large",
+"t": "adjective"
+},
+"granita": {
+"g": "granita (iced drink)",
+"t": "noun"
+},
+"grazie": {
+"g": "thank you",
+"t": "expression"
+},
+"grida": {
+"g": "shouts",
+"t": "verb"
+},
+"grigio": {
+"g": "gray",
+"t": "adjective"
+},
+"griglia": {
+"g": "grill",
+"t": "noun"
+},
+"guarda": {
+"g": "looks, watches",
+"t": "verb"
+},
+"guardano": {
+"g": "they look",
+"t": "verb"
+},
+"guardare": {
+"g": "to look, to watch",
+"t": "verb"
+},
+"guglie": {
+"g": "spires",
+"t": "noun"
+},
+"guida": {
+"g": "guide",
+"t": "noun"
+},
+"gusto": {
+"g": "flavor, taste",
+"t": "noun"
+},
+"ha": {
+"g": "has",
+"t": "verb"
+},
+"hanno": {
+"g": "they have",
+"t": "verb"
+},
+"ho": {
+"g": "I have",
+"t": "verb"
+},
+"i": {
+"g": "the",
+"t": "article"
+},
+"idea": {
+"g": "idea",
+"t": "noun"
+},
+"il": {
+"g": "the",
+"t": "article"
+},
+"importante": {
+"g": "important",
+"t": "adjective"
+},
+"improvviso": {
+"g": "sudden",
+"t": "adjective"
+},
+"in": {
+"g": "in",
+"t": "preposition"
+},
+"indica": {
+"g": "points to, indicates",
+"t": "verb"
+},
+"indovinare": {
+"g": "to guess",
+"t": "verb"
+},
+"insegna": {
+"g": "teaches; sign",
+"t": "verb"
+},
+"insieme": {
+"g": "together",
+"t": "adverb"
+},
+"intelligente": {
+"g": "intelligent, smart",
+"t": "adjective"
+},
+"intorno": {
+"g": "around",
+"t": "adverb"
+},
+"invita": {
+"g": "invites",
+"t": "verb"
+},
+"io": {
+"g": "I",
+"t": "pronoun"
+},
+"l": {
+"g": "the",
+"t": "article"
+},
+"la": {
+"g": "the; her",
+"t": "article"
+},
+"larga": {
+"g": "wide",
+"t": "adjective"
+},
+"lassù": {
+"g": "up there",
+"t": "adverb"
+},
+"lavora": {
+"g": "works",
+"t": "verb"
+},
+"lavorano": {
+"g": "they work",
+"t": "verb"
+},
+"le": {
+"g": "the; them",
+"t": "article"
+},
+"lecca": {
+"g": "licks",
+"t": "verb"
+},
+"leggero": {
+"g": "light",
+"t": "adjective"
+},
+"legno": {
+"g": "wood",
+"t": "noun"
+},
+"lei": {
+"g": "she",
+"t": "pronoun"
+},
+"lenta": {
+"g": "slow",
+"t": "adjective"
+},
+"lentamente": {
+"g": "slowly",
+"t": "adverb"
+},
+"lente": {
+"g": "slow",
+"t": "adjective"
+},
+"li": {
+"g": "them",
+"t": "pronoun"
+},
+"libreria": {
+"g": "bookshop, bookshelf",
+"t": "noun"
+},
+"libri": {
+"g": "books",
+"t": "noun"
+},
+"limone": {
+"g": "lemon",
+"t": "noun"
+},
+"limoni": {
+"g": "lemons",
+"t": "noun"
+},
+"lo": {
+"g": "the; it, him",
+"t": "article"
+},
+"locale": {
+"g": "place, venue",
+"t": "noun"
+},
+"lontana": {
+"g": "far, distant",
+"t": "adjective"
+},
+"lontano": {
+"g": "far, distant",
+"t": "adjective"
+},
+"luca": {
+"g": "Luca",
+"t": "other"
+},
+"luce": {
+"g": "light",
+"t": "noun"
+},
+"luci": {
+"g": "lights",
+"t": "noun"
+},
+"luminoso": {
+"g": "bright",
+"t": "adjective"
+},
+"lunghi": {
+"g": "long",
+"t": "adjective"
+},
+"lungo": {
+"g": "long; along",
+"t": "adjective"
+},
+"lungomare": {
+"g": "seafront promenade",
+"t": "noun"
+},
+"là": {
+"g": "there",
+"t": "adverb"
+},
+"ma": {
+"g": "but",
+"t": "conjunction"
+},
+"magica": {
+"g": "magic, magical",
+"t": "adjective"
+},
+"mai": {
+"g": "never",
+"t": "adverb"
+},
+"mangia": {
+"g": "eats",
+"t": "verb"
+},
+"mangiano": {
+"g": "they eat",
+"t": "verb"
+},
+"mani": {
+"g": "hands",
+"t": "noun"
+},
+"mano": {
+"g": "hand",
+"t": "noun"
+},
+"marco": {
+"g": "Marco",
+"t": "other"
+},
+"mare": {
+"g": "sea",
+"t": "noun"
+},
+"marmo": {
+"g": "marble",
+"t": "noun"
+},
+"marta": {
+"g": "Marta",
+"t": "other"
+},
+"mattina": {
+"g": "morning",
+"t": "noun"
+},
+"mattino": {
+"g": "morning",
+"t": "noun"
+},
+"maturi": {
+"g": "ripe",
+"t": "adjective"
+},
+"mela": {
+"g": "apple",
+"t": "noun"
+},
+"mele": {
+"g": "apples",
+"t": "noun"
+},
+"melodia": {
+"g": "melody",
+"t": "noun"
+},
+"mente": {
+"g": "mind",
+"t": "noun"
+},
+"mentre": {
+"g": "while",
+"t": "conjunction"
+},
+"meraviglia": {
+"g": "wonder, marvel",
+"t": "noun"
+},
+"mercato": {
+"g": "market",
+"t": "noun"
+},
+"mescola": {
+"g": "mixes, stirs",
+"t": "verb"
+},
+"mette": {
+"g": "puts",
+"t": "verb"
+},
+"mia": {
+"g": "my, mine",
+"t": "adjective"
+},
+"migliore": {
+"g": "better, best",
+"t": "adjective"
+},
+"milano": {
+"g": "Milan",
+"t": "other"
+},
+"mille": {
+"g": "thousand",
+"t": "number"
+},
+"molta": {
+"g": "much, a lot of",
+"t": "adjective"
+},
+"molte": {
+"g": "many",
+"t": "adjective"
+},
+"molti": {
+"g": "many",
+"t": "adjective"
+},
+"molto": {
+"g": "very, a lot",
+"t": "adverb"
+},
+"momento": {
+"g": "moment",
+"t": "noun"
+},
+"moneta": {
+"g": "coin",
+"t": "noun"
+},
+"monumenti": {
+"g": "monuments",
+"t": "noun"
+},
+"monumento": {
+"g": "monument",
+"t": "noun"
+},
+"morbida": {
+"g": "soft",
+"t": "adjective"
+},
+"mostra": {
+"g": "shows",
+"t": "verb"
+},
+"mostro": {
+"g": "monster",
+"t": "noun"
+},
+"muove": {
+"g": "moves",
+"t": "verb"
+},
+"muri": {
+"g": "walls",
+"t": "noun"
+},
+"muro": {
+"g": "wall",
+"t": "noun"
+},
+"musica": {
+"g": "music",
+"t": "noun"
+},
+"musicisti": {
+"g": "musicians",
+"t": "noun"
+},
+"napoletana": {
+"g": "Neapolitan",
+"t": "adjective"
+},
+"napoli": {
+"g": "Naples",
+"t": "other"
+},
+"nascosta": {
+"g": "hidden",
+"t": "adjective"
+},
+"nascosto": {
+"g": "hidden",
+"t": "adjective"
+},
+"nata": {
+"g": "born",
+"t": "verb"
+},
+"navigli": {
+"g": "canals",
+"t": "noun"
+},
+"negozi": {
+"g": "shops",
+"t": "noun"
+},
+"negozio": {
+"g": "shop",
+"t": "noun"
+},
+"nel": {
+"g": "in the",
+"t": "preposition"
+},
+"nell": {
+"g": "in the",
+"t": "preposition"
+},
+"nella": {
+"g": "in the",
+"t": "preposition"
+},
+"nera": {
+"g": "black",
+"t": "adjective"
+},
+"nere": {
+"g": "black",
+"t": "adjective"
+},
+"nero": {
+"g": "black",
+"t": "adjective"
+},
+"nessun": {
+"g": "no, not any",
+"t": "adjective"
+},
+"niente": {
+"g": "nothing",
+"t": "pronoun"
+},
+"no": {
+"g": "no",
+"t": "adverb"
+},
+"nomi": {
+"g": "names",
+"t": "noun"
+},
+"non": {
+"g": "not",
+"t": "adverb"
+},
+"nonna": {
+"g": "grandmother",
+"t": "noun"
+},
+"note": {
+"g": "notes",
+"t": "noun"
+},
+"nozze": {
+"g": "wedding",
+"t": "noun"
+},
+"nuota": {
+"g": "swims",
+"t": "verb"
+},
+"nuovo": {
+"g": "new",
+"t": "adjective"
+},
+"occhi": {
+"g": "eyes",
+"t": "noun"
+},
+"odore": {
+"g": "smell",
+"t": "noun"
+},
+"offre": {
+"g": "offers",
+"t": "verb"
+},
+"oggi": {
+"g": "today",
+"t": "adverb"
+},
+"ogni": {
+"g": "every",
+"t": "adjective"
+},
+"olive": {
+"g": "olives",
+"t": "noun"
+},
+"ombrelli": {
+"g": "umbrellas",
+"t": "noun"
+},
+"ombrellone": {
+"g": "beach umbrella",
+"t": "noun"
+},
+"onde": {
+"g": "waves",
+"t": "noun"
+},
+"orchestra": {
+"g": "orchestra",
+"t": "noun"
+},
+"ordina": {
+"g": "orders",
+"t": "verb"
+},
+"oro": {
+"g": "gold",
+"t": "noun"
+},
+"ospite": {
+"g": "guest",
+"t": "noun"
+},
+"osserva": {
+"g": "watches, observes",
+"t": "verb"
+},
+"paga": {
+"g": "pays",
+"t": "verb"
+},
+"pagano": {
+"g": "they pay",
+"t": "verb"
+},
+"pagare": {
+"g": "to pay",
+"t": "verb"
+},
+"palermo": {
+"g": "Palermo",
+"t": "other"
+},
+"panchina": {
+"g": "bench",
+"t": "noun"
+},
+"pane": {
+"g": "bread",
+"t": "noun"
+},
+"panino": {
+"g": "sandwich",
+"t": "noun"
+},
+"paolo": {
+"g": "Paolo",
+"t": "other"
+},
+"parlano": {
+"g": "they talk",
+"t": "verb"
+},
+"parole": {
+"g": "words",
+"t": "noun"
+},
+"parte": {
+"g": "leaves, departs",
+"t": "verb"
+},
+"partire": {
+"g": "to leave",
+"t": "verb"
+},
+"passa": {
+"g": "passes",
+"t": "verb"
+},
+"passano": {
+"g": "they pass",
+"t": "verb"
+},
+"passeggiano": {
+"g": "they stroll",
+"t": "verb"
+},
+"passeggiata": {
+"g": "walk, stroll",
+"t": "noun"
+},
+"passi": {
+"g": "steps",
+"t": "noun"
+},
+"passo": {
+"g": "step",
+"t": "noun"
+},
+"pasta": {
+"g": "pasta",
+"t": "noun"
+},
+"pende": {
+"g": "hangs, leans",
+"t": "verb"
+},
+"pensa": {
+"g": "thinks",
+"t": "verb"
+},
+"per": {
+"g": "for",
+"t": "preposition"
+},
+"perché": {
+"g": "because, why",
+"t": "conjunction"
+},
+"perdono": {
+"g": "they lose",
+"t": "verb"
+},
+"perfetta": {
+"g": "perfect",
+"t": "adjective"
+},
+"pesca": {
+"g": "fishes",
+"t": "verb"
+},
+"pescatore": {
+"g": "fisherman",
+"t": "noun"
+},
+"pesce": {
+"g": "fish",
+"t": "noun"
+},
+"pesche": {
+"g": "peaches",
+"t": "noun"
+},
+"pezzo": {
+"g": "piece",
+"t": "noun"
+},
+"piacere": {
+"g": "pleasure",
+"t": "noun"
+},
+"piano": {
+"g": "slowly, softly",
+"t": "adverb"
+},
+"piatto": {
+"g": "dish, plate",
+"t": "noun"
+},
+"piazza": {
+"g": "square",
+"t": "noun"
+},
+"piccioni": {
+"g": "pigeons",
+"t": "noun"
+},
+"piccola": {
+"g": "small",
+"t": "adjective"
+},
+"piccole": {
+"g": "small",
+"t": "adjective"
+},
+"piccoli": {
+"g": "small",
+"t": "adjective"
+},
+"piccolo": {
+"g": "small",
+"t": "adjective"
+},
+"piedi": {
+"g": "feet",
+"t": "noun"
+},
+"piena": {
+"g": "full",
+"t": "adjective"
+},
+"pieni": {
+"g": "full",
+"t": "adjective"
+},
+"pieno": {
+"g": "full",
+"t": "adjective"
+},
+"pioggia": {
+"g": "rain",
+"t": "noun"
+},
+"piove": {
+"g": "it rains",
+"t": "verb"
+},
+"piovere": {
+"g": "to rain",
+"t": "verb"
+},
+"pizza": {
+"g": "pizza",
+"t": "noun"
+},
+"pizzeria": {
+"g": "pizzeria",
+"t": "noun"
+},
+"più": {
+"g": "more",
+"t": "adverb"
+},
+"po": {
+"g": "a bit",
+"t": "adverb"
+},
+"pochi": {
+"g": "few",
+"t": "adjective"
+},
+"poco": {
+"g": "little, few",
+"t": "adverb"
+},
+"poi": {
+"g": "then",
+"t": "adverb"
+},
+"pomodori": {
+"g": "tomatoes",
+"t": "noun"
+},
+"ponte": {
+"g": "bridge",
+"t": "noun"
+},
+"porta": {
+"g": "door",
+"t": "noun"
+},
+"portare": {
+"g": "to carry, to bring",
+"t": "verb"
+},
+"portici": {
+"g": "arcades, porticoes",
+"t": "noun"
+},
+"porto": {
+"g": "port, harbor",
+"t": "noun"
+},
+"posto": {
+"g": "place, spot",
+"t": "noun"
+},
+"pranzo": {
+"g": "lunch",
+"t": "noun"
+},
+"preferisce": {
+"g": "prefers",
+"t": "verb"
+},
+"preferita": {
+"g": "favorite",
+"t": "adjective"
+},
+"prende": {
+"g": "takes",
+"t": "verb"
+},
+"prendono": {
+"g": "they take",
+"t": "verb"
+},
+"prepara": {
+"g": "prepares",
+"t": "verb"
+},
+"presto": {
+"g": "early, soon",
+"t": "adverb"
+},
+"prima": {
+"g": "before, first",
+"t": "adverb"
+},
+"profuma": {
+"g": "smells nice",
+"t": "verb"
+},
+"profumati": {
+"g": "fragrant",
+"t": "adjective"
+},
+"profumo": {
+"g": "scent, perfume",
+"t": "noun"
+},
+"promette": {
+"g": "promises",
+"t": "verb"
+},
+"propone": {
+"g": "suggests, proposes",
+"t": "verb"
+},
+"prova": {
+"g": "tries",
+"t": "verb"
+},
+"pulito": {
+"g": "clean",
+"t": "adjective"
+},
+"puntuale": {
+"g": "on time",
+"t": "adjective"
+},
+"quadri": {
+"g": "paintings",
+"t": "noun"
+},
+"quadro": {
+"g": "painting",
+"t": "noun"
+},
+"qualche": {
+"g": "some, a few",
+"t": "adjective"
+},
+"qualcosa": {
+"g": "something",
+"t": "pronoun"
+},
+"quartiere": {
+"g": "neighborhood",
+"t": "noun"
+},
+"quattro": {
+"g": "four",
+"t": "number"
+},
+"quel": {
+"g": "that",
+"t": "adjective"
+},
+"questa": {
+"g": "this",
+"t": "adjective"
+},
+"questi": {
+"g": "these",
+"t": "adjective"
+},
+"questo": {
+"g": "this",
+"t": "adjective"
+},
+"qui": {
+"g": "here",
+"t": "adverb"
+},
+"ragazza": {
+"g": "girl",
+"t": "noun"
+},
+"ragazze": {
+"g": "girls",
+"t": "noun"
+},
+"raro": {
+"g": "rare",
+"t": "adjective"
+},
+"regalo": {
+"g": "gift",
+"t": "noun"
+},
+"respira": {
+"g": "breathes",
+"t": "verb"
+},
+"resta": {
+"g": "stays",
+"t": "verb"
+},
+"restano": {
+"g": "they stay",
+"t": "verb"
+},
+"restituire": {
+"g": "to give back",
+"t": "verb"
+},
+"rete": {
+"g": "net, network",
+"t": "noun"
+},
+"rialto": {
+"g": "Rialto (Venice bridge)",
+"t": "other"
+},
+"ricetta": {
+"g": "recipe",
+"t": "noun"
+},
+"riconosce": {
+"g": "recognizes",
+"t": "verb"
+},
+"ricordo": {
+"g": "memory",
+"t": "noun"
+},
+"ride": {
+"g": "laughs",
+"t": "verb"
+},
+"ridendo": {
+"g": "laughing",
+"t": "verb"
+},
+"ridono": {
+"g": "they laugh",
+"t": "verb"
+},
+"riempie": {
+"g": "fills",
+"t": "verb"
+},
+"riescono": {
+"g": "they manage, succeed",
+"t": "verb"
+},
+"ringrazia": {
+"g": "thanks",
+"t": "verb"
+},
+"riposano": {
+"g": "they rest",
+"t": "verb"
+},
+"risponde": {
+"g": "answers, replies",
+"t": "verb"
+},
+"ristorante": {
+"g": "restaurant",
+"t": "noun"
+},
+"ritorni": {
+"g": "you return",
+"t": "verb"
+},
+"riva": {
+"g": "shore, bank",
+"t": "noun"
+},
+"rive": {
+"g": "shores, banks",
+"t": "noun"
+},
+"roma": {
+"g": "Rome",
+"t": "other"
+},
+"romana": {
+"g": "Roman",
+"t": "adjective"
+},
+"rosa": {
+"g": "pink, rose",
+"t": "adjective"
+},
+"rosmarino": {
+"g": "rosemary",
+"t": "noun"
+},
+"rosse": {
+"g": "red",
+"t": "adjective"
+},
+"rossi": {
+"g": "red",
+"t": "adjective"
+},
+"rotonda": {
+"g": "round",
+"t": "adjective"
+},
+"rumore": {
+"g": "noise",
+"t": "noun"
+},
+"sa": {
+"g": "knows",
+"t": "verb"
+},
+"sabbia": {
+"g": "sand",
+"t": "noun"
+},
+"sacchetto": {
+"g": "little bag",
+"t": "noun"
+},
+"sale": {
+"g": "salt",
+"t": "noun"
+},
+"salgono": {
+"g": "they go up",
+"t": "verb"
+},
+"saliamo": {
+"g": "we go up",
+"t": "verb"
+},
+"salta": {
+"g": "jumps",
+"t": "verb"
+},
+"saluta": {
+"g": "greets",
+"t": "verb"
+},
+"salutano": {
+"g": "they greet",
+"t": "verb"
+},
+"san": {
+"g": "Saint",
+"t": "other"
+},
+"sapeva": {
+"g": "knew",
+"t": "verb"
+},
+"sapore": {
+"g": "flavor, taste",
+"t": "noun"
+},
+"sara": {
+"g": "Sara",
+"t": "other"
+},
+"scaffali": {
+"g": "shelves",
+"t": "noun"
+},
+"scarpe": {
+"g": "shoes",
+"t": "noun"
+},
+"scatola": {
+"g": "box",
+"t": "noun"
+},
+"scatta": {
+"g": "takes a photo",
+"t": "verb"
+},
+"sceglie": {
+"g": "chooses",
+"t": "verb"
+},
+"scena": {
+"g": "scene",
+"t": "noun"
+},
+"scende": {
+"g": "goes down",
+"t": "verb"
+},
+"scendere": {
+"g": "to go down",
+"t": "verb"
+},
+"scivola": {
+"g": "slides, slips",
+"t": "verb"
+},
+"scoperta": {
+"g": "discovery",
+"t": "noun"
+},
+"scopre": {
+"g": "discovers",
+"t": "verb"
+},
+"scoprire": {
+"g": "to discover",
+"t": "verb"
+},
+"scorre": {
+"g": "flows",
+"t": "verb"
+},
+"segreto": {
+"g": "secret",
+"t": "noun"
+},
+"segue": {
+"g": "follows",
+"t": "verb"
+},
+"sei": {
+"g": "six",
+"t": "number"
+},
+"semplice": {
+"g": "simple",
+"t": "adjective"
+},
+"sente": {
+"g": "hears, feels",
+"t": "verb"
+},
+"senza": {
+"g": "without",
+"t": "preposition"
+},
+"sera": {
+"g": "evening",
+"t": "noun"
+},
+"serata": {
+"g": "evening",
+"t": "noun"
+},
+"serena": {
+"g": "calm, serene",
+"t": "adjective"
+},
+"servono": {
+"g": "they serve, are needed",
+"t": "verb"
+},
+"sfortuna": {
+"g": "bad luck",
+"t": "noun"
+},
+"si": {
+"g": "oneself, himself",
+"t": "pronoun"
+},
+"siamo": {
+"g": "we are",
+"t": "verb"
+},
+"siedono": {
+"g": "they sit",
+"t": "verb"
+},
+"signore": {
+"g": "gentleman, sir",
+"t": "noun"
+},
+"silenzio": {
+"g": "silence",
+"t": "noun"
+},
+"silenzioso": {
+"g": "silent, quiet",
+"t": "adjective"
+},
+"sinistra": {
+"g": "left",
+"t": "noun"
+},
+"sola": {
+"g": "alone",
+"t": "adjective"
+},
+"soldi": {
+"g": "money",
+"t": "noun"
+},
+"sole": {
+"g": "sun",
+"t": "noun"
+},
+"sono": {
+"g": "am, are",
+"t": "verb"
+},
+"sopra": {
+"g": "above, on top",
+"t": "preposition"
+},
+"sorpresa": {
+"g": "surprise",
+"t": "noun"
+},
+"sorpresi": {
+"g": "surprised",
+"t": "adjective"
+},
+"sorride": {
+"g": "smiles",
+"t": "verb"
+},
+"sorridono": {
+"g": "they smile",
+"t": "verb"
+},
+"sorriso": {
+"g": "smile",
+"t": "noun"
+},
+"sotto": {
+"g": "under, below",
+"t": "preposition"
+},
+"sparisce": {
+"g": "disappears",
+"t": "verb"
+},
+"speciale": {
+"g": "special",
+"t": "adjective"
+},
+"spiega": {
+"g": "explains",
+"t": "verb"
+},
+"splende": {
+"g": "shines",
+"t": "verb"
+},
+"splendida": {
+"g": "gorgeous, splendid",
+"t": "adjective"
+},
+"sposa": {
+"g": "bride",
+"t": "noun"
+},
+"stanca": {
+"g": "tired",
+"t": "adjective"
+},
+"stanche": {
+"g": "tired",
+"t": "adjective"
+},
+"stanza": {
+"g": "room",
+"t": "noun"
+},
+"stasera": {
+"g": "tonight",
+"t": "adverb"
+},
+"stata": {
+"g": "been",
+"t": "verb"
+},
+"statua": {
+"g": "statue",
+"t": "noun"
+},
+"stazione": {
+"g": "station",
+"t": "noun"
+},
+"stelle": {
+"g": "stars",
+"t": "noun"
+},
+"strada": {
+"g": "street, road",
+"t": "noun"
+},
+"strade": {
+"g": "streets, roads",
+"t": "noun"
+},
+"stretta": {
+"g": "narrow",
+"t": "adjective"
+},
+"strette": {
+"g": "narrow (plural)",
+"t": "adjective"
+},
+"stupore": {
+"g": "amazement",
+"t": "noun"
+},
+"stuzzichini": {
+"g": "appetizers, snacks",
+"t": "noun"
+},
+"su": {
+"g": "on, up",
+"t": "preposition"
+},
+"sua": {
+"g": "his, her",
+"t": "adjective"
+},
+"subito": {
+"g": "immediately",
+"t": "adverb"
+},
+"succo": {
+"g": "juice",
+"t": "noun"
+},
+"sue": {
+"g": "his, her (plural)",
+"t": "adjective"
+},
+"sugli": {
+"g": "on the",
+"t": "preposition"
+},
+"sugo": {
+"g": "sauce",
+"t": "noun"
+},
+"sui": {
+"g": "on the",
+"t": "preposition"
+},
+"sul": {
+"g": "on the",
+"t": "preposition"
+},
+"sull": {
+"g": "on the",
+"t": "preposition"
+},
+"sulla": {
+"g": "on the",
+"t": "preposition"
+},
+"suo": {
+"g": "his, her",
+"t": "adjective"
+},
+"suona": {
+"g": "plays, rings",
+"t": "verb"
+},
+"suonare": {
+"g": "to play (music)",
+"t": "verb"
+},
+"sì": {
+"g": "yes",
+"t": "adverb"
+},
+"taglia": {
+"g": "cuts",
+"t": "verb"
+},
+"tagliano": {
+"g": "they cut",
+"t": "verb"
+},
+"tavoli": {
+"g": "tables",
+"t": "noun"
+},
+"tavolo": {
+"g": "table",
+"t": "noun"
+},
+"tazze": {
+"g": "cups",
+"t": "noun"
+},
+"teatro": {
+"g": "theater",
+"t": "noun"
+},
+"tempo": {
+"g": "time, weather",
+"t": "noun"
+},
+"temporale": {
+"g": "thunderstorm",
+"t": "noun"
+},
+"terzo": {
+"g": "third",
+"t": "adjective"
+},
+"testa": {
+"g": "head",
+"t": "noun"
+},
+"tetti": {
+"g": "roofs",
+"t": "noun"
+},
+"tetto": {
+"g": "roof",
+"t": "noun"
+},
+"ti": {
+"g": "you, to you",
+"t": "pronoun"
+},
+"tocca": {
+"g": "touches",
+"t": "verb"
+},
+"toglie": {
+"g": "removes",
+"t": "verb"
+},
+"torna": {
+"g": "returns",
+"t": "verb"
+},
+"tornano": {
+"g": "they return",
+"t": "verb"
+},
+"tornare": {
+"g": "to return",
+"t": "verb"
+},
+"torno": {
+"g": "I return",
+"t": "verb"
+},
+"torre": {
+"g": "tower",
+"t": "noun"
+},
+"torri": {
+"g": "towers",
+"t": "noun"
+},
+"tortellini": {
+"g": "tortellini (pasta)",
+"t": "noun"
+},
+"tra": {
+"g": "between, among",
+"t": "preposition"
+},
+"tradizione": {
+"g": "tradition",
+"t": "noun"
+},
+"tram": {
+"g": "tram",
+"t": "noun"
+},
+"tramonto": {
+"g": "sunset",
+"t": "noun"
+},
+"tranquilla": {
+"g": "calm, quiet",
+"t": "adjective"
+},
+"tranquilli": {
+"g": "calm, quiet (plural)",
+"t": "adjective"
+},
+"tranquillo": {
+"g": "calm, quiet",
+"t": "adjective"
+},
+"trastevere": {
+"g": "Trastevere (Rome neighborhood)",
+"t": "other"
+},
+"tratto": {
+"g": "stretch, section",
+"t": "noun"
+},
+"trattoria": {
+"g": "trattoria (restaurant)",
+"t": "noun"
+},
+"tre": {
+"g": "three",
+"t": "number"
+},
+"treno": {
+"g": "train",
+"t": "noun"
+},
+"trenta": {
+"g": "thirty",
+"t": "number"
+},
+"trevi": {
+"g": "Trevi (fountain)",
+"t": "other"
+},
+"triste": {
+"g": "sad",
+"t": "adjective"
+},
+"tristi": {
+"g": "sad (plural)",
+"t": "adjective"
+},
+"troppo": {
+"g": "too much",
+"t": "adverb"
+},
+"trova": {
+"g": "finds",
+"t": "verb"
+},
+"trovano": {
+"g": "they find",
+"t": "verb"
+},
+"trovare": {
+"g": "to find",
+"t": "verb"
+},
+"tutta": {
+"g": "all, whole",
+"t": "adjective"
+},
+"tutti": {
+"g": "everyone, all",
+"t": "pronoun"
+},
+"tutto": {
+"g": "everything, all",
+"t": "pronoun"
+},
+"uccelli": {
+"g": "birds",
+"t": "noun"
+},
+"ultimo": {
+"g": "last",
+"t": "adjective"
+},
+"un": {
+"g": "a, an",
+"t": "article"
+},
+"una": {
+"g": "a, an",
+"t": "article"
+},
+"unisce": {
+"g": "joins, unites",
+"t": "verb"
+},
+"uomo": {
+"g": "man",
+"t": "noun"
+},
+"uova": {
+"g": "eggs",
+"t": "noun"
+},
+"valigia": {
+"g": "suitcase",
+"t": "noun"
+},
+"vanno": {
+"g": "they go",
+"t": "verb"
+},
+"vecchi": {
+"g": "old (plural)",
+"t": "adjective"
+},
+"vecchia": {
+"g": "old",
+"t": "adjective"
+},
+"vecchie": {
+"g": "old (plural)",
+"t": "adjective"
+},
+"vecchio": {
+"g": "old",
+"t": "adjective"
+},
+"vede": {
+"g": "sees",
+"t": "verb"
+},
+"vederlo": {
+"g": "to see it, see him",
+"t": "verb"
+},
+"veloci": {
+"g": "fast (plural)",
+"t": "adjective"
+},
+"vende": {
+"g": "sells",
+"t": "verb"
+},
+"venditore": {
+"g": "seller, vendor",
+"t": "noun"
+},
+"venezia": {
+"g": "Venice",
+"t": "other"
+},
+"vento": {
+"g": "wind",
+"t": "noun"
+},
+"verde": {
+"g": "green",
+"t": "adjective"
+},
+"verdura": {
+"g": "vegetables",
+"t": "noun"
+},
+"vero": {
+"g": "true, real",
+"t": "adjective"
+},
+"verso": {
+"g": "toward",
+"t": "preposition"
+},
+"vestito": {
+"g": "dress, suit",
+"t": "noun"
+},
+"vetrina": {
+"g": "shop window",
+"t": "noun"
+},
+"vetro": {
+"g": "glass",
+"t": "noun"
+},
+"via": {
+"g": "street, away",
+"t": "noun"
+},
+"viaggio": {
+"g": "trip, journey",
+"t": "noun"
+},
+"vicina": {
+"g": "near, close",
+"t": "adjective"
+},
+"vicino": {
+"g": "near, close",
+"t": "adjective"
+},
+"vicoli": {
+"g": "alleys",
+"t": "noun"
+},
+"vieni": {
+"g": "you come",
+"t": "verb"
+},
+"violinista": {
+"g": "violinist",
+"t": "noun"
+},
+"visita": {
+"g": "visit, visits",
+"t": "noun"
+},
+"visitano": {
+"g": "they visit",
+"t": "verb"
+},
+"vista": {
+"g": "view, sight",
+"t": "noun"
+},
+"vita": {
+"g": "life",
+"t": "noun"
+},
+"viva": {
+"g": "alive, lively",
+"t": "adjective"
+},
+"vivace": {
+"g": "lively",
+"t": "adjective"
+},
+"vive": {
+"g": "lives",
+"t": "verb"
+},
+"vivo": {
+"g": "alive",
+"t": "adjective"
+},
+"voce": {
+"g": "voice",
+"t": "noun"
+},
+"voglio": {
+"g": "I want",
+"t": "verb"
+},
+"volano": {
+"g": "they fly",
+"t": "verb"
+},
+"vuole": {
+"g": "wants",
+"t": "verb"
+},
+"vuote": {
+"g": "empty (plural)",
+"t": "adjective"
+},
+"è": {
+"g": "is",
+"t": "verb"
+},
+"brillano": {
+"g": "they shine",
+"t": "verb"
+},
+"prossimo": {
+"g": "next",
+"t": "adjective"
+},
+"silenziosa": {
+"g": "silent, quiet",
+"t": "adjective"
+}
+}
+}

@@ -1962,7 +1962,7 @@ export function ReaderScreen(args: {
               Practice {vocab.length > 0 ? `${vocab.length} word${vocab.length === 1 ? "" : "s"}` : "what you just learned"}
             </Text>
             <Text style={styles.endOfStoryBody}>
-              You remember 2× more when you practice right after reading.
+              You remember 2× more when you practice right after the story.
             </Text>
             {vocab.length > 0 ? (
               <View style={styles.endOfStoryStatsRow}>

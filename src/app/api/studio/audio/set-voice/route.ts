@@ -3,6 +3,11 @@ import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { findVoice } from "@/lib/voiceCatalog";
+import { isVoiceApproved } from "@/lib/approvedVoices";
+
+// Engines that are NOT ElevenLabs (local TTS / cloned) → not covered by the
+// ElevenLabs approved-voices allowlist, so they skip that check here.
+const NON_ELEVENLABS_PREFIXES = ["f5/", "piper/", "kokoro/", "qwen/", "qwen17/", "chatterbox/", "coqui/", "bark/"];
 
 export async function POST(request: Request) {
   const { userId } = await auth();
@@ -24,6 +29,17 @@ export async function POST(request: Request) {
       if (!exists) return NextResponse.json({ error: `Cloned voice not found: ${id}` }, { status: 400 });
     } else if (!findVoice(voiceId)) {
       return NextResponse.json({ error: `Unknown voiceId: ${voiceId}` }, { status: 400 });
+    }
+    // Fail-fast: an ElevenLabs voice must be on the approved allowlist
+    // (src/lib/approvedVoices.ts) before it can be attached to a story —
+    // otherwise every regenerate/preview with it would be blocked anyway.
+    const isLocalEngine = NON_ELEVENLABS_PREFIXES.some((p) => voiceId.startsWith(p));
+    const elId = voiceId.startsWith("elevenlabs/") ? voiceId.slice("elevenlabs/".length) : voiceId;
+    if (!isLocalEngine && !isVoiceApproved(elId)) {
+      return NextResponse.json(
+        { error: `La voz "${voiceId}" no está en la allowlist de voces aprobadas. Solo el dueño aprueba voces nuevas.` },
+        { status: 403 },
+      );
     }
   }
 

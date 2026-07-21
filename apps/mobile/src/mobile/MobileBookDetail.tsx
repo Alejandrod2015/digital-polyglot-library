@@ -193,7 +193,7 @@ export function MobileBookDetail({
                   testID="qa-book-start-reading"
                   style={[styles.inlineButton, styles.primaryButton]}
                 >
-                  <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Start reading</Text>
+                  <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>Start story</Text>
                 </Pressable>
               ) : null}
               <Pressable onPress={onPressSave} style={[styles.inlineButton, styles.ghostButton]}>

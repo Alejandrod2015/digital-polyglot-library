@@ -1,0 +1,2419 @@
+{
+"slugs": [
+"kolle-alaaf",
+"der-gro-e-zug",
+"nach-dem-karneval",
+"brezel-am-viktualienmarkt",
+"die-wei-wurst",
+"lena-kocht-fur-tobias",
+"eine-katze-im-regen",
+"wem-gehort-die-katze",
+"die-katze-bleibt",
+"die-stadt-der-ratten",
+"die-legende",
+"das-glockenspiel",
+"allein-in-kreuzberg",
+"das-konzert-im-park",
+"neue-freunde",
+"der-wanderweg",
+"der-regen-kommt",
+"der-see",
+"die-falsche-tram",
+"die-altstadt",
+"mit-dem-zug-in-die-berge"
+],
+"glosses": {
+"abend": {
+"g": "evening",
+"t": "noun"
+},
+"aber": {
+"g": "but",
+"t": "conjunction"
+},
+"alaaf": {
+"g": "carnival cheer (Cologne)",
+"t": "expression"
+},
+"alle": {
+"g": "all/everyone",
+"t": "pronoun"
+},
+"allein": {
+"g": "alone",
+"t": "adjective"
+},
+"alles": {
+"g": "everything",
+"t": "pronoun"
+},
+"also": {
+"g": "so/well",
+"t": "adverb"
+},
+"alt": {
+"g": "old",
+"t": "adjective"
+},
+"alte": {
+"g": "old",
+"t": "adjective"
+},
+"alten": {
+"g": "old",
+"t": "adjective"
+},
+"altstadt": {
+"g": "old town",
+"t": "noun"
+},
+"am": {
+"g": "at the/on the",
+"t": "preposition"
+},
+"an": {
+"g": "at/on",
+"t": "preposition"
+},
+"angst": {
+"g": "fear",
+"t": "noun"
+},
+"arbeit": {
+"g": "work",
+"t": "noun"
+},
+"armes": {
+"g": "poor",
+"t": "adjective"
+},
+"atmet": {
+"g": "breathes",
+"t": "verb"
+},
+"auch": {
+"g": "also/too",
+"t": "adverb"
+},
+"auf": {
+"g": "on/onto",
+"t": "preposition"
+},
+"augen": {
+"g": "eyes",
+"t": "noun"
+},
+"aus": {
+"g": "from/out of",
+"t": "preposition"
+},
+"aylin": {
+"g": "Aylin",
+"t": "other"
+},
+"bald": {
+"g": "soon",
+"t": "adverb"
+},
+"ball": {
+"g": "ball",
+"t": "noun"
+},
+"band": {
+"g": "band",
+"t": "noun"
+},
+"bank": {
+"g": "bench/bank",
+"t": "noun"
+},
+"bayern": {
+"g": "Bavaria",
+"t": "other"
+},
+"beginnt": {
+"g": "begins",
+"t": "verb"
+},
+"bei": {
+"g": "at/near/with",
+"t": "preposition"
+},
+"beide": {
+"g": "both",
+"t": "pronoun"
+},
+"bekommt": {
+"g": "gets/receives",
+"t": "verb"
+},
+"ben": {
+"g": "Ben",
+"t": "other"
+},
+"bereit": {
+"g": "ready",
+"t": "adjective"
+},
+"berg": {
+"g": "mountain",
+"t": "noun"
+},
+"berge": {
+"g": "mountains",
+"t": "noun"
+},
+"berlin": {
+"g": "Berlin",
+"t": "other"
+},
+"besitzer": {
+"g": "owner",
+"t": "noun"
+},
+"besser": {
+"g": "better",
+"t": "adjective"
+},
+"besuchen": {
+"g": "to visit",
+"t": "verb"
+},
+"bett": {
+"g": "bed",
+"t": "noun"
+},
+"bewegen": {
+"g": "to move",
+"t": "verb"
+},
+"bewegt": {
+"g": "moves",
+"t": "verb"
+},
+"bezahlen": {
+"g": "to pay",
+"t": "verb"
+},
+"bezahlt": {
+"g": "pays",
+"t": "verb"
+},
+"bis": {
+"g": "until",
+"t": "preposition"
+},
+"bisschen": {
+"g": "a little",
+"t": "adverb"
+},
+"bist": {
+"g": "are (you)",
+"t": "verb"
+},
+"bitte": {
+"g": "please",
+"t": "adverb"
+},
+"blau": {
+"g": "blue",
+"t": "adjective"
+},
+"bleiben": {
+"g": "to stay",
+"t": "verb"
+},
+"bleibt": {
+"g": "stays",
+"t": "verb"
+},
+"blume": {
+"g": "flower",
+"t": "noun"
+},
+"blumen": {
+"g": "flowers",
+"t": "noun"
+},
+"boden": {
+"g": "ground/floor",
+"t": "noun"
+},
+"bonbons": {
+"g": "candies",
+"t": "noun"
+},
+"boote": {
+"g": "boats",
+"t": "noun"
+},
+"brauchst": {
+"g": "need (you)",
+"t": "verb"
+},
+"braucht": {
+"g": "needs",
+"t": "verb"
+},
+"breit": {
+"g": "wide",
+"t": "adjective"
+},
+"brezel": {
+"g": "pretzel",
+"t": "noun"
+},
+"brot": {
+"g": "bread",
+"t": "noun"
+},
+"bruder": {
+"g": "brother",
+"t": "noun"
+},
+"brücke": {
+"g": "bridge",
+"t": "noun"
+},
+"buch": {
+"g": "book",
+"t": "noun"
+},
+"bunt": {
+"g": "colorful",
+"t": "adjective"
+},
+"bunte": {
+"g": "colorful",
+"t": "adjective"
+},
+"bäume": {
+"g": "trees",
+"t": "noun"
+},
+"bäumen": {
+"g": "trees",
+"t": "noun"
+},
+"böse": {
+"g": "angry/evil",
+"t": "adjective"
+},
+"café": {
+"g": "café",
+"t": "noun"
+},
+"da": {
+"g": "there",
+"t": "adverb"
+},
+"dabei": {
+"g": "with it/present",
+"t": "adverb"
+},
+"dank": {
+"g": "thanks",
+"t": "noun"
+},
+"danke": {
+"g": "thank you",
+"t": "expression"
+},
+"dann": {
+"g": "then",
+"t": "adverb"
+},
+"das": {
+"g": "the/that",
+"t": "article"
+},
+"david": {
+"g": "David",
+"t": "other"
+},
+"davor": {
+"g": "before it/in front",
+"t": "adverb"
+},
+"dazu": {
+"g": "in addition",
+"t": "adverb"
+},
+"deine": {
+"g": "your",
+"t": "pronoun"
+},
+"dem": {
+"g": "the",
+"t": "article"
+},
+"den": {
+"g": "the",
+"t": "article"
+},
+"denkt": {
+"g": "thinks",
+"t": "verb"
+},
+"der": {
+"g": "the",
+"t": "article"
+},
+"die": {
+"g": "the",
+"t": "article"
+},
+"diese": {
+"g": "this/these",
+"t": "pronoun"
+},
+"diesmal": {
+"g": "this time",
+"t": "adverb"
+},
+"dir": {
+"g": "to you",
+"t": "pronoun"
+},
+"direkt": {
+"g": "directly",
+"t": "adverb"
+},
+"doch": {
+"g": "yet/after all",
+"t": "adverb"
+},
+"dort": {
+"g": "there",
+"t": "adverb"
+},
+"draußen": {
+"g": "outside",
+"t": "adverb"
+},
+"dreht": {
+"g": "turns",
+"t": "verb"
+},
+"drei": {
+"g": "three",
+"t": "number"
+},
+"dresden": {
+"g": "Dresden",
+"t": "other"
+},
+"drinnen": {
+"g": "inside",
+"t": "adverb"
+},
+"du": {
+"g": "you",
+"t": "pronoun"
+},
+"dunkel": {
+"g": "dark",
+"t": "adjective"
+},
+"durch": {
+"g": "through",
+"t": "preposition"
+},
+"echt": {
+"g": "really/genuine",
+"t": "adverb"
+},
+"egal": {
+"g": "no matter / doesn't matter",
+"t": "adjective"
+},
+"ein": {
+"g": "a / an",
+"t": "article"
+},
+"eine": {
+"g": "a / an",
+"t": "article"
+},
+"einem": {
+"g": "a / an (dative)",
+"t": "article"
+},
+"einen": {
+"g": "a / an (accusative)",
+"t": "article"
+},
+"einer": {
+"g": "a / an",
+"t": "article"
+},
+"einfach": {
+"g": "simple / easy",
+"t": "adjective"
+},
+"einfache": {
+"g": "simple / easy",
+"t": "adjective"
+},
+"eins": {
+"g": "one",
+"t": "number"
+},
+"elbe": {
+"g": "Elbe (river)",
+"t": "other"
+},
+"emma": {
+"g": "Emma (name)",
+"t": "other"
+},
+"endlich": {
+"g": "finally",
+"t": "adverb"
+},
+"eng": {
+"g": "narrow / tight",
+"t": "adjective"
+},
+"enge": {
+"g": "narrow / tight",
+"t": "adjective"
+},
+"entscheidung": {
+"g": "decision",
+"t": "noun"
+},
+"er": {
+"g": "he",
+"t": "pronoun"
+},
+"erdbeeren": {
+"g": "strawberries",
+"t": "noun"
+},
+"erde": {
+"g": "earth / ground",
+"t": "noun"
+},
+"erklärt": {
+"g": "explains",
+"t": "verb"
+},
+"erscheinen": {
+"g": "to appear",
+"t": "verb"
+},
+"erst": {
+"g": "first / only",
+"t": "adverb"
+},
+"erzählen": {
+"g": "to tell",
+"t": "verb"
+},
+"erzählt": {
+"g": "tells",
+"t": "verb"
+},
+"es": {
+"g": "it",
+"t": "pronoun"
+},
+"esse": {
+"g": "eat (I)",
+"t": "verb"
+},
+"essen": {
+"g": "to eat / food",
+"t": "verb"
+},
+"etwas": {
+"g": "something",
+"t": "pronoun"
+},
+"euch": {
+"g": "you (plural)",
+"t": "pronoun"
+},
+"fahren": {
+"g": "to drive / go",
+"t": "verb"
+},
+"falsch": {
+"g": "wrong / false",
+"t": "adjective"
+},
+"falsche": {
+"g": "wrong / false",
+"t": "adjective"
+},
+"familie": {
+"g": "family",
+"t": "noun"
+},
+"farben": {
+"g": "colors",
+"t": "noun"
+},
+"fast": {
+"g": "almost",
+"t": "adverb"
+},
+"felder": {
+"g": "fields",
+"t": "noun"
+},
+"felsen": {
+"g": "rock / cliff",
+"t": "noun"
+},
+"fenster": {
+"g": "window",
+"t": "noun"
+},
+"fest": {
+"g": "firm / tight",
+"t": "adjective"
+},
+"figur": {
+"g": "figure",
+"t": "noun"
+},
+"figuren": {
+"g": "figures",
+"t": "noun"
+},
+"finden": {
+"g": "to find",
+"t": "verb"
+},
+"finn": {
+"g": "Finn (name)",
+"t": "other"
+},
+"fisch": {
+"g": "fish",
+"t": "noun"
+},
+"fische": {
+"g": "fish (plural)",
+"t": "noun"
+},
+"fliegt": {
+"g": "flies",
+"t": "verb"
+},
+"fluss": {
+"g": "river",
+"t": "noun"
+},
+"flöte": {
+"g": "flute",
+"t": "noun"
+},
+"flüstert": {
+"g": "whispers",
+"t": "verb"
+},
+"folgen": {
+"g": "to follow",
+"t": "verb"
+},
+"form": {
+"g": "form / shape",
+"t": "noun"
+},
+"foto": {
+"g": "photo",
+"t": "noun"
+},
+"fotos": {
+"g": "photos",
+"t": "noun"
+},
+"fragt": {
+"g": "asks",
+"t": "verb"
+},
+"frau": {
+"g": "woman / Mrs.",
+"t": "noun"
+},
+"frauenkirche": {
+"g": "Frauenkirche (church)",
+"t": "other"
+},
+"frei": {
+"g": "free",
+"t": "adjective"
+},
+"fremd": {
+"g": "strange / foreign",
+"t": "adjective"
+},
+"freuen": {
+"g": "to be glad",
+"t": "verb"
+},
+"freund": {
+"g": "friend",
+"t": "noun"
+},
+"freunde": {
+"g": "friends",
+"t": "noun"
+},
+"freundlich": {
+"g": "friendly",
+"t": "adjective"
+},
+"freut": {
+"g": "is glad",
+"t": "verb"
+},
+"friedlich": {
+"g": "peaceful",
+"t": "adjective"
+},
+"frisch": {
+"g": "fresh",
+"t": "adjective"
+},
+"frisches": {
+"g": "fresh",
+"t": "adjective"
+},
+"frisst": {
+"g": "eats (animal)",
+"t": "verb"
+},
+"froh": {
+"g": "happy / glad",
+"t": "adjective"
+},
+"fröhlich": {
+"g": "cheerful",
+"t": "adjective"
+},
+"früchte": {
+"g": "fruits",
+"t": "noun"
+},
+"früh": {
+"g": "early",
+"t": "adjective"
+},
+"futter": {
+"g": "animal feed",
+"t": "noun"
+},
+"fährt": {
+"g": "drives / goes",
+"t": "verb"
+},
+"fällt": {
+"g": "falls",
+"t": "verb"
+},
+"fühlt": {
+"g": "feels",
+"t": "verb"
+},
+"für": {
+"g": "for",
+"t": "preposition"
+},
+"ganz": {
+"g": "completely / quite",
+"t": "adverb"
+},
+"ganze": {
+"g": "whole / entire",
+"t": "adjective"
+},
+"gar": {
+"g": "at all",
+"t": "adverb"
+},
+"gefunden": {
+"g": "found",
+"t": "verb"
+},
+"geheimnis": {
+"g": "secret",
+"t": "noun"
+},
+"gehen": {
+"g": "to go",
+"t": "verb"
+},
+"geht": {
+"g": "goes",
+"t": "verb"
+},
+"gehört": {
+"g": "belongs to / hears",
+"t": "verb"
+},
+"gemüse": {
+"g": "vegetables",
+"t": "noun"
+},
+"gemütlich": {
+"g": "cozy",
+"t": "adjective"
+},
+"genau": {
+"g": "exactly",
+"t": "adverb"
+},
+"gern": {
+"g": "gladly",
+"t": "adverb"
+},
+"geschichte": {
+"g": "story / history",
+"t": "noun"
+},
+"gestern": {
+"g": "yesterday",
+"t": "adverb"
+},
+"gibt": {
+"g": "gives / there is",
+"t": "verb"
+},
+"gipfel": {
+"g": "summit / peak",
+"t": "noun"
+},
+"gleich": {
+"g": "same / right away",
+"t": "adverb"
+},
+"glockenspiel": {
+"g": "carillon / chimes",
+"t": "noun"
+},
+"glänzt": {
+"g": "shines",
+"t": "verb"
+},
+"glücklich": {
+"g": "happy",
+"t": "adjective"
+},
+"glückliches": {
+"g": "happy",
+"t": "adjective"
+},
+"golden": {
+"g": "golden",
+"t": "adjective"
+},
+"grau": {
+"g": "gray",
+"t": "adjective"
+},
+"groß": {
+"g": "big / large",
+"t": "adjective"
+},
+"große": {
+"g": "big / large",
+"t": "adjective"
+},
+"großen": {
+"g": "big, large",
+"t": "adjective"
+},
+"großer": {
+"g": "big, large",
+"t": "adjective"
+},
+"großes": {
+"g": "big, large",
+"t": "adjective"
+},
+"gruß": {
+"g": "greeting",
+"t": "noun"
+},
+"grüne": {
+"g": "green",
+"t": "adjective"
+},
+"gut": {
+"g": "good, well",
+"t": "adjective"
+},
+"gute": {
+"g": "good",
+"t": "adjective"
+},
+"gutem": {
+"g": "good",
+"t": "adjective"
+},
+"guten": {
+"g": "good",
+"t": "adjective"
+},
+"habe": {
+"g": "have",
+"t": "verb"
+},
+"hallo": {
+"g": "hello",
+"t": "expression"
+},
+"hameln": {
+"g": "Hamelin (town)",
+"t": "other"
+},
+"hat": {
+"g": "has",
+"t": "verb"
+},
+"haus": {
+"g": "house",
+"t": "noun"
+},
+"hause": {
+"g": "house, home",
+"t": "noun"
+},
+"heißt": {
+"g": "is called",
+"t": "verb"
+},
+"helfe": {
+"g": "help",
+"t": "verb"
+},
+"hell": {
+"g": "bright",
+"t": "adjective"
+},
+"heute": {
+"g": "today",
+"t": "adverb"
+},
+"hier": {
+"g": "here",
+"t": "adverb"
+},
+"hierher": {
+"g": "here, to this place",
+"t": "adverb"
+},
+"hilfe": {
+"g": "help",
+"t": "noun"
+},
+"hilft": {
+"g": "helps",
+"t": "verb"
+},
+"himmel": {
+"g": "sky",
+"t": "noun"
+},
+"hohe": {
+"g": "high, tall",
+"t": "adjective"
+},
+"holz": {
+"g": "wood",
+"t": "noun"
+},
+"huber": {
+"g": "Huber (surname)",
+"t": "other"
+},
+"hunger": {
+"g": "hunger",
+"t": "noun"
+},
+"hält": {
+"g": "holds, stops",
+"t": "verb"
+},
+"hängen": {
+"g": "to hang",
+"t": "verb"
+},
+"hängt": {
+"g": "hangs",
+"t": "verb"
+},
+"häuser": {
+"g": "houses",
+"t": "noun"
+},
+"häusern": {
+"g": "houses",
+"t": "noun"
+},
+"hör": {
+"g": "listen, hear",
+"t": "verb"
+},
+"hören": {
+"g": "to hear, listen",
+"t": "verb"
+},
+"hört": {
+"g": "hears, listens",
+"t": "verb"
+},
+"ich": {
+"g": "I",
+"t": "pronoun"
+},
+"idee": {
+"g": "idea",
+"t": "noun"
+},
+"ihm": {
+"g": "him, to him",
+"t": "pronoun"
+},
+"ihnen": {
+"g": "them, to them",
+"t": "pronoun"
+},
+"ihr": {
+"g": "her, you (pl.)",
+"t": "pronoun"
+},
+"ihre": {
+"g": "her, their",
+"t": "pronoun"
+},
+"ihren": {
+"g": "her, their",
+"t": "pronoun"
+},
+"im": {
+"g": "in the",
+"t": "preposition"
+},
+"immer": {
+"g": "always",
+"t": "adverb"
+},
+"in": {
+"g": "in",
+"t": "preposition"
+},
+"isst": {
+"g": "eats",
+"t": "verb"
+},
+"ist": {
+"g": "is",
+"t": "verb"
+},
+"ja": {
+"g": "yes",
+"t": "expression"
+},
+"jahr": {
+"g": "year",
+"t": "noun"
+},
+"jeden": {
+"g": "every, each",
+"t": "pronoun"
+},
+"jedes": {
+"g": "every, each",
+"t": "pronoun"
+},
+"jetzt": {
+"g": "now",
+"t": "adverb"
+},
+"jonas": {
+"g": "Jonas (name)",
+"t": "other"
+},
+"junge": {
+"g": "boy",
+"t": "noun"
+},
+"junger": {
+"g": "young",
+"t": "adjective"
+},
+"kaffee": {
+"g": "coffee",
+"t": "noun"
+},
+"kalt": {
+"g": "cold",
+"t": "adjective"
+},
+"kann": {
+"g": "can, am able to",
+"t": "verb"
+},
+"karneval": {
+"g": "carnival",
+"t": "noun"
+},
+"karte": {
+"g": "map, ticket, card",
+"t": "noun"
+},
+"katze": {
+"g": "cat",
+"t": "noun"
+},
+"katzen": {
+"g": "cats",
+"t": "noun"
+},
+"kaufen": {
+"g": "to buy",
+"t": "verb"
+},
+"kauft": {
+"g": "buys",
+"t": "verb"
+},
+"kein": {
+"g": "no, not a",
+"t": "article"
+},
+"keine": {
+"g": "no, not any",
+"t": "article"
+},
+"kenne": {
+"g": "know",
+"t": "verb"
+},
+"kennen": {
+"g": "to know",
+"t": "verb"
+},
+"kennt": {
+"g": "knows",
+"t": "verb"
+},
+"kind": {
+"g": "child",
+"t": "noun"
+},
+"kinder": {
+"g": "children",
+"t": "noun"
+},
+"klar": {
+"g": "clear, sure",
+"t": "adjective"
+},
+"klatschen": {
+"g": "to clap",
+"t": "verb"
+},
+"klein": {
+"g": "small",
+"t": "adjective"
+},
+"kleine": {
+"g": "small",
+"t": "adjective"
+},
+"kleinen": {
+"g": "small",
+"t": "adjective"
+},
+"klingt": {
+"g": "sounds",
+"t": "verb"
+},
+"koche": {
+"g": "cook",
+"t": "verb"
+},
+"kochen": {
+"g": "to cook",
+"t": "verb"
+},
+"kochst": {
+"g": "cook",
+"t": "verb"
+},
+"kocht": {
+"g": "cooks",
+"t": "verb"
+},
+"koffer": {
+"g": "suitcase",
+"t": "noun"
+},
+"komisch": {
+"g": "strange, funny",
+"t": "adjective"
+},
+"komm": {
+"g": "come",
+"t": "verb"
+},
+"komme": {
+"g": "come",
+"t": "verb"
+},
+"kommen": {
+"g": "to come",
+"t": "verb"
+},
+"kommst": {
+"g": "come",
+"t": "verb"
+},
+"kommt": {
+"g": "comes",
+"t": "verb"
+},
+"komplett": {
+"g": "complete, completely",
+"t": "adjective"
+},
+"konfetti": {
+"g": "confetti",
+"t": "noun"
+},
+"konzert": {
+"g": "concert",
+"t": "noun"
+},
+"korb": {
+"g": "basket",
+"t": "noun"
+},
+"kostüme": {
+"g": "costumes",
+"t": "noun"
+},
+"kreis": {
+"g": "circle",
+"t": "noun"
+},
+"kreuzberg": {
+"g": "Kreuzberg (district)",
+"t": "other"
+},
+"kurz": {
+"g": "short, briefly",
+"t": "adjective"
+},
+"käse": {
+"g": "cheese",
+"t": "noun"
+},
+"kölle": {
+"g": "Cologne (dialect)",
+"t": "other"
+},
+"köln": {
+"g": "Cologne (city)",
+"t": "other"
+},
+"küche": {
+"g": "kitchen",
+"t": "noun"
+},
+"kühl": {
+"g": "cool",
+"t": "adjective"
+},
+"lachen": {
+"g": "to laugh",
+"t": "verb"
+},
+"lacht": {
+"g": "laughs",
+"t": "verb"
+},
+"landschaft": {
+"g": "landscape",
+"t": "noun"
+},
+"lange": {
+"g": "long, for a long time",
+"t": "adverb"
+},
+"langsam": {
+"g": "slow, slowly",
+"t": "adjective"
+},
+"laut": {
+"g": "loud",
+"t": "adjective"
+},
+"leben": {
+"g": "to live; life",
+"t": "verb"
+},
+"lecker": {
+"g": "tasty, delicious",
+"t": "adjective"
+},
+"leer": {
+"g": "empty",
+"t": "adjective"
+},
+"legende": {
+"g": "legend",
+"t": "noun"
+},
+"leid": {
+"g": "sorrow; sorry",
+"t": "noun"
+},
+"leise": {
+"g": "quiet, softly",
+"t": "adjective"
+},
+"lena": {
+"g": "Lena (name)",
+"t": "other"
+},
+"leon": {
+"g": "Leon (name)",
+"t": "other"
+},
+"leute": {
+"g": "people",
+"t": "noun"
+},
+"lichter": {
+"g": "lights",
+"t": "noun"
+},
+"lieblingsort": {
+"g": "favorite place",
+"t": "noun"
+},
+"liebt": {
+"g": "loves",
+"t": "verb"
+},
+"lieder": {
+"g": "songs",
+"t": "noun"
+},
+"liegen": {
+"g": "to lie, to be located",
+"t": "verb"
+},
+"liegt": {
+"g": "lies, is located",
+"t": "verb"
+},
+"liest": {
+"g": "reads",
+"t": "verb"
+},
+"luft": {
+"g": "air",
+"t": "noun"
+},
+"lächeln": {
+"g": "to smile; smile",
+"t": "verb"
+},
+"lächelt": {
+"g": "smiles",
+"t": "verb"
+},
+"lärm": {
+"g": "noise",
+"t": "noun"
+},
+"läuft": {
+"g": "runs, walks",
+"t": "verb"
+},
+"löwe": {
+"g": "lion",
+"t": "noun"
+},
+"machen": {
+"g": "to do, to make",
+"t": "verb"
+},
+"machst": {
+"g": "you do, you make",
+"t": "verb"
+},
+"macht": {
+"g": "does, makes",
+"t": "verb"
+},
+"mag": {
+"g": "likes",
+"t": "verb"
+},
+"mal": {
+"g": "times; once",
+"t": "adverb"
+},
+"man": {
+"g": "one, you (general)",
+"t": "pronoun"
+},
+"mann": {
+"g": "man",
+"t": "noun"
+},
+"marie": {
+"g": "Marie (name)",
+"t": "other"
+},
+"markt": {
+"g": "market",
+"t": "noun"
+},
+"max": {
+"g": "Max (name)",
+"t": "other"
+},
+"mehr": {
+"g": "more",
+"t": "adverb"
+},
+"mein": {
+"g": "my",
+"t": "pronoun"
+},
+"meinen": {
+"g": "to think, to mean; my",
+"t": "verb"
+},
+"meldet": {
+"g": "reports, gets in touch",
+"t": "verb"
+},
+"menschen": {
+"g": "people, humans",
+"t": "noun"
+},
+"metall": {
+"g": "metal",
+"t": "noun"
+},
+"mia": {
+"g": "Mia (name)",
+"t": "other"
+},
+"mich": {
+"g": "me",
+"t": "pronoun"
+},
+"milch": {
+"g": "milk",
+"t": "noun"
+},
+"mir": {
+"g": "to me, me",
+"t": "pronoun"
+},
+"mit": {
+"g": "with",
+"t": "preposition"
+},
+"mitten": {
+"g": "in the middle",
+"t": "adverb"
+},
+"morgen": {
+"g": "morning; tomorrow",
+"t": "noun"
+},
+"musik": {
+"g": "music",
+"t": "noun"
+},
+"möchte": {
+"g": "would like",
+"t": "verb"
+},
+"müde": {
+"g": "tired",
+"t": "adjective"
+},
+"münchen": {
+"g": "Munich (city)",
+"t": "other"
+},
+"nach": {
+"g": "to, after",
+"t": "preposition"
+},
+"nachbar": {
+"g": "neighbor",
+"t": "noun"
+},
+"nachbarn": {
+"g": "neighbors",
+"t": "noun"
+},
+"nachmittag": {
+"g": "afternoon",
+"t": "noun"
+},
+"nachricht": {
+"g": "message, news",
+"t": "noun"
+},
+"nacht": {
+"g": "night",
+"t": "noun"
+},
+"nah": {
+"g": "near, close",
+"t": "adjective"
+},
+"namen": {
+"g": "name, names",
+"t": "noun"
+},
+"napf": {
+"g": "bowl (for pets)",
+"t": "noun"
+},
+"nass": {
+"g": "wet",
+"t": "adjective"
+},
+"natur": {
+"g": "nature",
+"t": "noun"
+},
+"neben": {
+"g": "next to, beside",
+"t": "preposition"
+},
+"nehmen": {
+"g": "to take",
+"t": "verb"
+},
+"nervös": {
+"g": "nervous",
+"t": "adjective"
+},
+"nett": {
+"g": "nice, kind",
+"t": "adjective"
+},
+"neu": {
+"g": "new",
+"t": "adjective"
+},
+"neue": {
+"g": "new",
+"t": "adjective"
+},
+"neuen": {
+"g": "new",
+"t": "adjective"
+},
+"neugierig": {
+"g": "curious",
+"t": "adjective"
+},
+"nicht": {
+"g": "not",
+"t": "adverb"
+},
+"nichts": {
+"g": "nothing",
+"t": "pronoun"
+},
+"nickt": {
+"g": "nods",
+"t": "verb"
+},
+"nie": {
+"g": "never",
+"t": "adverb"
+},
+"niemand": {
+"g": "nobody",
+"t": "pronoun"
+},
+"niemanden": {
+"g": "nobody (object)",
+"t": "pronoun"
+},
+"nimmt": {
+"g": "takes",
+"t": "verb"
+},
+"noch": {
+"g": "still, yet",
+"t": "adverb"
+},
+"nora": {
+"g": "Nora (name)",
+"t": "other"
+},
+"nummer": {
+"g": "number",
+"t": "noun"
+},
+"nur": {
+"g": "only, just",
+"t": "adverb"
+},
+"nächste": {
+"g": "next",
+"t": "adjective"
+},
+"nächstes": {
+"g": "next",
+"t": "adjective"
+},
+"näher": {
+"g": "closer, nearer",
+"t": "adjective"
+},
+"oben": {
+"g": "up, above",
+"t": "adverb"
+},
+"obst": {
+"g": "fruit",
+"t": "noun"
+},
+"oft": {
+"g": "often",
+"t": "adverb"
+},
+"orte": {
+"g": "places",
+"t": "noun"
+},
+"paar": {
+"g": "a few; pair",
+"t": "noun"
+},
+"park": {
+"g": "park",
+"t": "noun"
+},
+"passt": {
+"g": "fits, suits",
+"t": "verb"
+},
+"plan": {
+"g": "plan",
+"t": "noun"
+},
+"platz": {
+"g": "square, place, spot",
+"t": "noun"
+},
+"plötzlich": {
+"g": "suddenly",
+"t": "adverb"
+},
+"probier": {
+"g": "try",
+"t": "verb"
+},
+"problem": {
+"g": "problem",
+"t": "noun"
+},
+"putzen": {
+"g": "to clean",
+"t": "verb"
+},
+"ratte": {
+"g": "rat",
+"t": "noun"
+},
+"ratten": {
+"g": "rats",
+"t": "noun"
+},
+"rattenfänger": {
+"g": "rat catcher; pied piper",
+"t": "noun"
+},
+"reden": {
+"g": "to talk",
+"t": "verb"
+},
+"regen": {
+"g": "rain",
+"t": "noun"
+},
+"regenbogen": {
+"g": "rainbow",
+"t": "noun"
+},
+"regnet": {
+"g": "rains; is raining",
+"t": "verb"
+},
+"reh": {
+"g": "deer",
+"t": "noun"
+},
+"reise": {
+"g": "trip; journey",
+"t": "noun"
+},
+"richtige": {
+"g": "right; correct",
+"t": "adjective"
+},
+"riecht": {
+"g": "smells",
+"t": "verb"
+},
+"rote": {
+"g": "red",
+"t": "adjective"
+},
+"rucksack": {
+"g": "backpack",
+"t": "noun"
+},
+"rufen": {
+"g": "to call",
+"t": "verb"
+},
+"ruft": {
+"g": "calls",
+"t": "verb"
+},
+"ruhig": {
+"g": "quiet; calm",
+"t": "adjective"
+},
+"ruhige": {
+"g": "quiet; calm",
+"t": "adjective"
+},
+"ruhiger": {
+"g": "quieter; calmer",
+"t": "adjective"
+},
+"sagen": {
+"g": "to say",
+"t": "verb"
+},
+"sagt": {
+"g": "says",
+"t": "verb"
+},
+"salat": {
+"g": "salad",
+"t": "noun"
+},
+"salzig": {
+"g": "salty",
+"t": "adjective"
+},
+"sammeln": {
+"g": "to collect",
+"t": "verb"
+},
+"samstag": {
+"g": "Saturday",
+"t": "noun"
+},
+"schau": {
+"g": "look",
+"t": "verb"
+},
+"schauen": {
+"g": "to look",
+"t": "verb"
+},
+"schaut": {
+"g": "looks",
+"t": "verb"
+},
+"scheint": {
+"g": "shines; seems",
+"t": "verb"
+},
+"schild": {
+"g": "sign",
+"t": "noun"
+},
+"schilder": {
+"g": "signs",
+"t": "noun"
+},
+"schließt": {
+"g": "closes",
+"t": "verb"
+},
+"schläft": {
+"g": "sleeps",
+"t": "verb"
+},
+"schmeckt": {
+"g": "tastes",
+"t": "verb"
+},
+"schneidet": {
+"g": "cuts",
+"t": "verb"
+},
+"schnell": {
+"g": "fast; quick",
+"t": "adjective"
+},
+"schnurrt": {
+"g": "purrs",
+"t": "verb"
+},
+"schreiben": {
+"g": "to write",
+"t": "verb"
+},
+"schreibt": {
+"g": "writes",
+"t": "verb"
+},
+"schritt": {
+"g": "step",
+"t": "noun"
+},
+"schwarzwald": {
+"g": "Black Forest",
+"t": "other"
+},
+"schweiz": {
+"g": "Switzerland",
+"t": "other"
+},
+"schwer": {
+"g": "heavy; difficult",
+"t": "adjective"
+},
+"schweren": {
+"g": "heavy; difficult",
+"t": "adjective"
+},
+"schwimmen": {
+"g": "to swim",
+"t": "verb"
+},
+"schön": {
+"g": "beautiful; nice",
+"t": "adjective"
+},
+"schöne": {
+"g": "beautiful; nice",
+"t": "adjective"
+},
+"schöner": {
+"g": "more beautiful",
+"t": "adjective"
+},
+"schönes": {
+"g": "beautiful; nice",
+"t": "adjective"
+},
+"schüchtern": {
+"g": "shy",
+"t": "adjective"
+},
+"see": {
+"g": "lake",
+"t": "noun"
+},
+"sehen": {
+"g": "to see",
+"t": "verb"
+},
+"sehr": {
+"g": "very",
+"t": "adverb"
+},
+"seinem": {
+"g": "his; its",
+"t": "pronoun"
+},
+"seiner": {
+"g": "his; its",
+"t": "pronoun"
+},
+"seltsame": {
+"g": "strange",
+"t": "adjective"
+},
+"setzt": {
+"g": "sets; puts",
+"t": "verb"
+},
+"sich": {
+"g": "himself; herself; itself",
+"t": "pronoun"
+},
+"sie": {
+"g": "she; they",
+"t": "pronoun"
+},
+"sieht": {
+"g": "sees",
+"t": "verb"
+},
+"sind": {
+"g": "are",
+"t": "verb"
+},
+"singen": {
+"g": "to sing",
+"t": "verb"
+},
+"singt": {
+"g": "sings",
+"t": "verb"
+},
+"sitzen": {
+"g": "to sit",
+"t": "verb"
+},
+"sitzt": {
+"g": "sits",
+"t": "verb"
+},
+"so": {
+"g": "so; such",
+"t": "adverb"
+},
+"sofa": {
+"g": "sofa; couch",
+"t": "noun"
+},
+"sofia": {
+"g": "Sofia",
+"t": "other"
+},
+"sogar": {
+"g": "even",
+"t": "adverb"
+},
+"sonne": {
+"g": "sun",
+"t": "noun"
+},
+"sonst": {
+"g": "otherwise",
+"t": "adverb"
+},
+"spiegel": {
+"g": "mirror",
+"t": "noun"
+},
+"spielen": {
+"g": "to play",
+"t": "verb"
+},
+"spielt": {
+"g": "plays",
+"t": "verb"
+},
+"spät": {
+"g": "late",
+"t": "adjective"
+},
+"stadt": {
+"g": "city; town",
+"t": "noun"
+},
+"stand": {
+"g": "stood; stall",
+"t": "verb"
+},
+"stark": {
+"g": "strong",
+"t": "adjective"
+},
+"stehen": {
+"g": "to stand",
+"t": "verb"
+},
+"steht": {
+"g": "stands",
+"t": "verb"
+},
+"steil": {
+"g": "steep",
+"t": "adjective"
+},
+"stein": {
+"g": "stone",
+"t": "noun"
+},
+"still": {
+"g": "quiet; still",
+"t": "adjective"
+},
+"stimmung": {
+"g": "mood; atmosphere",
+"t": "noun"
+},
+"straße": {
+"g": "street",
+"t": "noun"
+},
+"straßen": {
+"g": "streets",
+"t": "noun"
+},
+"streichelt": {
+"g": "strokes; pets",
+"t": "verb"
+},
+"student": {
+"g": "student",
+"t": "noun"
+},
+"stücke": {
+"g": "pieces",
+"t": "noun"
+},
+"suche": {
+"g": "search; look for",
+"t": "verb"
+},
+"suchen": {
+"g": "to search; to look for",
+"t": "verb"
+},
+"suppe": {
+"g": "soup",
+"t": "noun"
+},
+"sächsische": {
+"g": "Saxon",
+"t": "adjective"
+},
+"süß": {
+"g": "sweet; cute",
+"t": "adjective"
+},
+"tag": {
+"g": "day",
+"t": "noun"
+},
+"tage": {
+"g": "days",
+"t": "noun"
+},
+"tal": {
+"g": "valley",
+"t": "noun"
+},
+"tanze": {
+"g": "dance",
+"t": "verb"
+},
+"tanzen": {
+"g": "to dance",
+"t": "verb"
+},
+"tanzt": {
+"g": "dances",
+"t": "verb"
+},
+"theater": {
+"g": "theater",
+"t": "noun"
+},
+"tief": {
+"g": "deep",
+"t": "adjective"
+},
+"tier": {
+"g": "animal",
+"t": "noun"
+},
+"tisch": {
+"g": "table",
+"t": "noun"
+},
+"tobias": {
+"g": "Tobias (name)",
+"t": "other"
+},
+"touristen": {
+"g": "tourists",
+"t": "noun"
+},
+"touristin": {
+"g": "tourist (female)",
+"t": "noun"
+},
+"tradition": {
+"g": "tradition",
+"t": "noun"
+},
+"tragen": {
+"g": "to carry, to wear",
+"t": "verb"
+},
+"tram": {
+"g": "tram",
+"t": "noun"
+},
+"traurig": {
+"g": "sad",
+"t": "adjective"
+},
+"treffen": {
+"g": "to meet",
+"t": "verb"
+},
+"trinken": {
+"g": "to drink",
+"t": "verb"
+},
+"trinkt": {
+"g": "drinks",
+"t": "verb"
+},
+"trocken": {
+"g": "dry",
+"t": "adjective"
+},
+"trägt": {
+"g": "carries, wears",
+"t": "verb"
+},
+"tut": {
+"g": "does",
+"t": "verb"
+},
+"typisch": {
+"g": "typical",
+"t": "adjective"
+},
+"tür": {
+"g": "door",
+"t": "noun"
+},
+"uhr": {
+"g": "clock, o'clock",
+"t": "noun"
+},
+"um": {
+"g": "at, around",
+"t": "preposition"
+},
+"und": {
+"g": "and",
+"t": "conjunction"
+},
+"unglücklich": {
+"g": "unhappy",
+"t": "adjective"
+},
+"vergesse": {
+"g": "forget",
+"t": "verb"
+},
+"verstehst": {
+"g": "understand",
+"t": "verb"
+},
+"versteht": {
+"g": "understands",
+"t": "verb"
+},
+"viel": {
+"g": "much, a lot",
+"t": "adverb"
+},
+"viele": {
+"g": "many",
+"t": "adjective"
+},
+"vielen": {
+"g": "many",
+"t": "adjective"
+},
+"vielleicht": {
+"g": "maybe, perhaps",
+"t": "adverb"
+},
+"vier": {
+"g": "four",
+"t": "number"
+},
+"viktualienmarkt": {
+"g": "Viktualienmarkt (Munich market)",
+"t": "other"
+},
+"vogel": {
+"g": "bird",
+"t": "noun"
+},
+"voll": {
+"g": "full",
+"t": "adjective"
+},
+"vom": {
+"g": "from the, of the",
+"t": "preposition"
+},
+"von": {
+"g": "from, of",
+"t": "preposition"
+},
+"vor": {
+"g": "before, in front of",
+"t": "preposition"
+},
+"vorbei": {
+"g": "past, over",
+"t": "adverb"
+},
+"vögel": {
+"g": "birds",
+"t": "noun"
+},
+"vögeln": {
+"g": "birds (dative)",
+"t": "noun"
+},
+"wagen": {
+"g": "car, cart",
+"t": "noun"
+},
+"wahrheit": {
+"g": "truth",
+"t": "noun"
+},
+"wald": {
+"g": "forest",
+"t": "noun"
+},
+"wandern": {
+"g": "to hike",
+"t": "verb"
+},
+"wanderweg": {
+"g": "hiking trail",
+"t": "noun"
+},
+"warm": {
+"g": "warm",
+"t": "adjective"
+},
+"warten": {
+"g": "to wait",
+"t": "verb"
+},
+"wartet": {
+"g": "waits",
+"t": "verb"
+},
+"warum": {
+"g": "why",
+"t": "adverb"
+},
+"was": {
+"g": "what",
+"t": "pronoun"
+},
+"wasser": {
+"g": "water",
+"t": "noun"
+},
+"weg": {
+"g": "way, path",
+"t": "noun"
+},
+"weit": {
+"g": "far",
+"t": "adjective"
+},
+"weiter": {
+"g": "further, onward",
+"t": "adverb"
+},
+"weißwurst": {
+"g": "white sausage",
+"t": "noun"
+},
+"wem": {
+"g": "to whom",
+"t": "pronoun"
+},
+"wen": {
+"g": "whom",
+"t": "pronoun"
+},
+"werfen": {
+"g": "to throw",
+"t": "verb"
+},
+"wetter": {
+"g": "weather",
+"t": "noun"
+},
+"wie": {
+"g": "how, like",
+"t": "adverb"
+},
+"wieder": {
+"g": "again",
+"t": "adverb"
+},
+"will": {
+"g": "wants to",
+"t": "verb"
+},
+"willkommen": {
+"g": "welcome",
+"t": "expression"
+},
+"wind": {
+"g": "wind",
+"t": "noun"
+},
+"winkt": {
+"g": "waves",
+"t": "verb"
+},
+"wir": {
+"g": "we",
+"t": "pronoun"
+},
+"wird": {
+"g": "becomes, will",
+"t": "verb"
+},
+"wirklich": {
+"g": "really",
+"t": "adverb"
+},
+"woche": {
+"g": "week",
+"t": "noun"
+},
+"woher": {
+"g": "from where",
+"t": "adverb"
+},
+"wohnung": {
+"g": "apartment",
+"t": "noun"
+},
+"wohnzimmer": {
+"g": "living room",
+"t": "noun"
+},
+"wolken": {
+"g": "clouds",
+"t": "noun"
+},
+"wollen": {
+"g": "to want",
+"t": "verb"
+},
+"wort": {
+"g": "word",
+"t": "noun"
+},
+"wunderbar": {
+"g": "wonderful",
+"t": "adjective"
+},
+"wunderschön": {
+"g": "beautiful",
+"t": "adjective"
+},
+"wälder": {
+"g": "forests",
+"t": "noun"
+},
+"zeige": {
+"g": "show",
+"t": "verb"
+},
+"zeigt": {
+"g": "shows",
+"t": "verb"
+},
+"zeit": {
+"g": "time",
+"t": "noun"
+},
+"zittert": {
+"g": "trembles, shivers",
+"t": "verb"
+},
+"zu": {
+"g": "to, too",
+"t": "preposition"
+},
+"zufrieden": {
+"g": "content, satisfied",
+"t": "adjective"
+},
+"zug": {
+"g": "train",
+"t": "noun"
+},
+"zum": {
+"g": "to the",
+"t": "preposition"
+},
+"zur": {
+"g": "to the",
+"t": "preposition"
+},
+"zusammen": {
+"g": "together",
+"t": "adverb"
+},
+"zwei": {
+"g": "two",
+"t": "number"
+},
+"zwischen": {
+"g": "between",
+"t": "preposition"
+},
+"zwölf": {
+"g": "twelve",
+"t": "number"
+},
+"ändert": {
+"g": "changes",
+"t": "verb"
+},
+"über": {
+"g": "over, about",
+"t": "preposition"
+},
+"überall": {
+"g": "everywhere",
+"t": "adverb"
+},
+"überrascht": {
+"g": "surprised",
+"t": "adjective"
+},
+"übt": {
+"g": "practices",
+"t": "verb"
+}
+}
+}

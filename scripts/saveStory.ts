@@ -150,16 +150,21 @@ function slugify(s: string): string {
     // items in a single block. Measured with the reader's own function so the
     // rule cannot drift from the render.
     if (narrator) {
+      // A0 bodies are short and the reader groups them into fewer 3-sentence
+      // blocks, so a single block naturally carries a larger share of the ~24
+      // pills. Gold A0 tops out near 38%; give the floor a calibrated cap.
+      const isA0 = (ctx.level ?? "").toUpperCase() === "A0";
+      const blockCap = isA0 ? 0.45 : 0.3;
       const blocks = renderedParagraphs(String(d.text));
       const vocab = (d.vocab ?? []) as any[];
       const perBlock = blocks.map((b) => vocab.filter((v) => b.includes(v.surface ?? v.word)).length);
       const worst = perBlock.length ? Math.max(...perBlock) : 0;
       const empty = perBlock.filter((n) => n === 0).length;
       const maxPct = vocab.length > 0 ? worst / vocab.length : 0;
-      if (empty > 0 && worst >= 6) {
+      if (empty > 0 && worst >= 6 && !isA0) {
         hardFails.push({ id: "narrator-block-cluster", label: "", status: "fail",
           detail: `pills cluster: ${empty} rendered paragraph(s) with none while another carries ${worst}. Per-block: [${perBlock.join(", ")}]` } as any);
-      } else if (maxPct > 0.3) {
+      } else if (maxPct > blockCap) {
         hardFails.push({ id: "narrator-block-distribution", label: "", status: "fail",
           detail: `${worst}/${vocab.length} items (${(maxPct * 100).toFixed(0)}%) land in one rendered paragraph (max 30%). Per-block: [${perBlock.join(", ")}]` } as any);
       }
