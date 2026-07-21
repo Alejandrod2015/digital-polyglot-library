@@ -1,10 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DeleteAccountPanel, type DeleteAccountCopy } from "../DeleteAccountPanel";
 
 export const metadata: Metadata = {
   title: "Anweisungen zur Datenlöschung | Digital Polyglot",
   description:
     "So beantragen Sie die Löschung Ihres Kontos und Ihrer personenbezogenen Daten bei Digital Polyglot.",
+};
+
+const DE_COPY: DeleteAccountCopy = {
+  signedOutTitle: "Konto jetzt löschen",
+  signedOutBody:
+    "Melden Sie sich auf diesem Gerät an, um Ihr Konto und Ihre Daten sofort zu löschen. Falls Sie sich nicht anmelden können, nutzen Sie die E-Mail-Methode unten.",
+  signedInTitle: "Konto jetzt löschen",
+  signedInBody:
+    "Dies löscht Ihr Konto und alle zugehörigen Daten dauerhaft: Lernverlauf, Favoriten, gespeicherte Storys, Metriken und Abrechnungsdaten. Dies kann nicht rückgängig gemacht werden.",
+  accountLabel: "Konto",
+  deleteButton: "Mein Konto löschen",
+  confirmButton: "Ja, alles löschen",
+  deletingLabel: "Wird gelöscht…",
+  cancelButton: "Abbrechen",
+  doneBody: "Ihr Konto und Ihre personenbezogenen Daten wurden gelöscht. Sie werden abgemeldet…",
+  genericError: "Löschung fehlgeschlagen. Bitte erneut versuchen oder schreiben Sie uns.",
 };
 
 export default function DataDeletionDePage() {
@@ -19,12 +36,14 @@ export default function DataDeletionDePage() {
       </p>
 
       <p className="mt-8 text-[15px] leading-7">
-        Wenn Sie sich bei Digital Polyglot über Facebook angemeldet haben und Ihr Konto sowie die
-        damit verbundenen personenbezogenen Daten löschen lassen möchten, folgen Sie den
-        nachstehenden Schritten.
+        Sie können Ihr Digital-Polyglot-Konto und alle zugehörigen personenbezogenen Daten jederzeit
+        löschen. Am schnellsten geht es über die Selbstbedienungsoption unten; alternativ steht ein
+        E-Mail-Weg zur Verfügung.
       </p>
 
-      <h2 className="mt-8 text-xl font-semibold">So beantragen Sie eine Löschung</h2>
+      <DeleteAccountPanel copy={DE_COPY} />
+
+      <h2 className="mt-8 text-xl font-semibold">Lieber per E-Mail beantragen?</h2>
       <ol className="mt-3 list-decimal space-y-2 pl-6 text-[15px] leading-7">
         <li>
           Senden Sie eine E-Mail an{" "}

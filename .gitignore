@@ -45,6 +45,10 @@ android-twa/app-release-*.aab
 android-twa/app-release-*.apk
 android-twa/app-release-*.idsig
 
+# google play service account key (eas submit --platform android).
+# Da acceso de escritura a Play Console; nunca commitear.
+.secrets/
+
 # vercel
 .vercel
 

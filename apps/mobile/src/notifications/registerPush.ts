@@ -60,13 +60,15 @@ export async function registerPushNotifications(args: {
     };
   }
 
+  // NO pedimos el permiso aquí. registerPush corre al montar el shell (apenas
+  // hay sesión), así que disparar `requestPermissionsAsync` en ese punto
+  // muestra el prompt del sistema al ARRANQUE, sin contexto: mala práctica y,
+  // peor, un "No" del usuario es casi irreversible (el SO recuerda el rechazo
+  // y ya no se puede re-preguntar). El permiso se solicita SOLO tras opt-in
+  // explícito: onboarding paso 3 (toggle de recordatorios) o el toggle en
+  // Ajustes. Acá solo registramos el token si el permiso YA fue concedido.
   const existingPermissions = await Notifications.getPermissionsAsync();
-  let finalStatus = existingPermissions.status;
-
-  if (finalStatus !== "granted") {
-    const requestedPermissions = await Notifications.requestPermissionsAsync();
-    finalStatus = requestedPermissions.status;
-  }
+  const finalStatus = existingPermissions.status;
 
   if (finalStatus !== "granted") {
     return {

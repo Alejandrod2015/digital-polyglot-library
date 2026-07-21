@@ -2,8 +2,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 import { serializeEntitlement } from "@/lib/billing";
-import { syncClerkPlanFromEntitlement } from "@/lib/billingClerk";
-import { verifyGooglePlaySubscriptionPurchase } from "@/lib/googlePlay";
+import { applyGooglePlayVerifiedPurchase } from "@/lib/googlePlayEntitlement";
 
 export const runtime = "nodejs";
 
@@ -26,22 +25,9 @@ export async function POST() {
       );
     }
 
-    const verified = await verifyGooglePlaySubscriptionPurchase(existing.purchaseToken);
-    const entitlement = await prisma.billingEntitlement.update({
-      where: { userId },
-      data: {
-        plan: verified.plan,
-        status: verified.status,
-        productId: verified.productId,
-        orderId: verified.orderId,
-        willRenew: verified.willRenew,
-        renewedAt: new Date(),
-        expiresAt: verified.expiresAt,
-        rawPayload: verified.rawPayload,
-      },
-    });
-
-    await syncClerkPlanFromEntitlement(userId, entitlement);
+    // Re-verify the stored token against Google and re-apply, sharing the same
+    // verify + upsert + Clerk-sync path as the verify/RTDN routes.
+    const entitlement = await applyGooglePlayVerifiedPurchase(userId, existing.purchaseToken);
 
     return NextResponse.json(serializeEntitlement(entitlement));
   } catch (error) {

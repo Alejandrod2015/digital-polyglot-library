@@ -3,6 +3,7 @@ import germanHamburg from "@/data/tapGlosses/german-hamburg.json";
 import germanFriends from "@/data/tapGlosses/german-friends.json";
 import frenchTraveler from "@/data/tapGlosses/french-traveler.json";
 import spanishFriends from "@/data/tapGlosses/spanish-friends.json";
+import spanishTravelerLatam from "@/data/tapGlosses/spanish-traveler-latam.json";
 import spanishFriendsColombia from "@/data/tapGlosses/spanish-friends-colombia.json";
 import spanishFriendsArgentina from "@/data/tapGlosses/spanish-friends-argentina.json";
 import spanishFriendsSpainA0 from "@/data/tapGlosses/spanish-friends-spain-a0.json";
@@ -34,6 +35,7 @@ const BUNDLES: TapGlossBundle[] = [
   germanFriends as TapGlossBundle,
   frenchTraveler as TapGlossBundle,
   spanishFriends as TapGlossBundle,
+  spanishTravelerLatam as TapGlossBundle,
   spanishFriendsColombia as TapGlossBundle,
   spanishFriendsArgentina as TapGlossBundle,
   spanishFriendsSpainA0 as TapGlossBundle,

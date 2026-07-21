@@ -6,6 +6,10 @@ ios/build
 android
 build
 
+# store-listing artifacts (uploaded by hand to Play/App Store, not bundled)
+play-store-assets
+journey-shots
+
 # monorepo build outputs / caches
 ../../.next
 ../../dist

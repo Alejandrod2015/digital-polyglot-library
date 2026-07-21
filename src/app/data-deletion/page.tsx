@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DeleteAccountPanel } from "./DeleteAccountPanel";
 
 export const metadata: Metadata = {
   title: "Data Deletion Instructions | Digital Polyglot",
@@ -18,11 +19,13 @@ export default function DataDeletionPage() {
       </p>
 
       <p className="mt-8 text-[15px] leading-7">
-        If you signed in to Digital Polyglot using Facebook and want your account and associated
-        personal data deleted, follow the steps below.
+        You can delete your Digital Polyglot account and all associated personal data at any time.
+        The fastest way is the self-service option below; an email route is also available.
       </p>
 
-      <h2 className="mt-8 text-xl font-semibold">How to request deletion</h2>
+      <DeleteAccountPanel />
+
+      <h2 className="mt-8 text-xl font-semibold">Prefer to request it by email?</h2>
       <ol className="mt-3 list-decimal space-y-2 pl-6 text-[15px] leading-7">
         <li>
           Send an email to{" "}
