@@ -678,7 +678,7 @@ function renderKaraokeParagraph(args: {
                       color: "#ffffff",
                       fontWeight: "700",
                     }
-                  : undefined
+                  : { backgroundColor: "transparent", color: "#eef4ff" }
               }
             >
               {spanText}
@@ -698,9 +698,14 @@ function renderKaraokeParagraph(args: {
       // Vocab pill keeps its type color through playback (never swaps to the
       // active amber), mirroring iOS; a non-vocab word only lights up amber
       // while it is the active karaoke word.
-      let spanStyle:
-        | { backgroundColor: string; color: string; fontWeight?: "700" }
-        | undefined;
+      // Every span gets an EXPLICIT backgroundColor + color. Passing undefined
+      // for the resting state does NOT work on Android: RN does not clear a
+      // previously-set backgroundColor on a reused nested <Text> when the new
+      // style drops it, so a word that was once the active (amber) word kept
+      // its amber box as the karaoke cursor moved on and the whole read-so-far
+      // paragraph stayed highlighted. Explicit "transparent" + the light base
+      // color resets each word cleanly every render.
+      let spanStyle: { backgroundColor: string; color: string; fontWeight?: "700" };
       if (isFirstVocabHit && vocabItem) {
         // Match iOS `karaokeWordTextVocabWhite`: white + bold on the saturated
         // type-colored pill. (The dark navy below is only for the active word;
@@ -714,6 +719,9 @@ function renderKaraokeParagraph(args: {
       } else if (isActive) {
         // Active karaoke word: dark navy on amber, matching iOS.
         spanStyle = { backgroundColor: "#f8c15c", color: "#0e1727" };
+      } else {
+        // Resting word: transparent bg + the paragraph's light text color.
+        spanStyle = { backgroundColor: "transparent", color: "#eef4ff" };
       }
 
       // Curated vocab (incl. non-first duplicates) opens the vocab popup; a
