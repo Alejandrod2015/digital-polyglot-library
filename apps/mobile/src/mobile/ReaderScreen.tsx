@@ -681,8 +681,14 @@ function renderKaraokeParagraph(args: {
       let surface = w.text;
       let unitEnd = iA + 1;
       let lastCharEnd = w.charEnd;
-      let pillColor: string | null = null;
-      let pillTextColor = "#eef4ff";
+      // Every word is the SAME <View><Text> structure; only these vary. Plain
+      // and active share padding 0 and identical text metrics, so the karaoke
+      // highlight toggling on/off a word NEVER changes its footprint (no line
+      // reflow while reading). Only the permanent vocab pill is padded.
+      let bg = "transparent";
+      let padH = 0;
+      let padV = 0;
+      let textColor = "#eef4ff";
       let bold = false;
       let onPress: (() => void) | undefined;
 
@@ -699,8 +705,10 @@ function renderKaraokeParagraph(args: {
         const firstHit = !!canon && !alreadyHighlighted.has(canon);
         if (firstHit) {
           alreadyHighlighted.add(canon);
-          pillColor = vocabBackgroundForItem(phrase.item);
-          pillTextColor = "#ffffff";
+          bg = vocabBackgroundForItem(phrase.item);
+          padH = 5;
+          padV = 1;
+          textColor = "#ffffff";
           bold = true;
         }
         onPress = () => onWordPress(phrase.item, paragraph.text);
@@ -711,14 +719,17 @@ function renderKaraokeParagraph(args: {
         const firstVocab = vocabKey !== null && !alreadyHighlighted.has(vocabKey);
         if (firstVocab && vocabKey !== null) alreadyHighlighted.add(vocabKey);
         if (firstVocab && vocabItem) {
-          // Vocab pill: type color + white bold, like iOS.
-          pillColor = vocabBackgroundForItem(vocabItem);
-          pillTextColor = "#ffffff";
+          // Vocab pill: type color + white bold, padded (permanent, like iOS).
+          bg = vocabBackgroundForItem(vocabItem);
+          padH = 5;
+          padV = 1;
+          textColor = "#ffffff";
           bold = true;
         } else if (isActive) {
-          // Active karaoke word: amber + dark navy, like iOS.
-          pillColor = "#f8c15c";
-          pillTextColor = "#0e1727";
+          // Active karaoke word: amber + dark navy, but TIGHT (padding 0) so
+          // toggling the highlight never resizes the word or shifts the line.
+          bg = "#f8c15c";
+          textColor = "#0e1727";
         }
         if (vocabItem) onPress = () => onWordPress(vocabItem, paragraph.text);
         else {
@@ -735,28 +746,29 @@ function renderKaraokeParagraph(args: {
       const punct = (trailGap.match(/^\S+/) || [""])[0];
       const hasSpace = /\s/.test(trailGap);
 
-      const wordNode = pillColor ? (
+      // Uniform structure for every word: <View><Text>. Only bg/padding/color
+      // vary. Plain and active are identical in size (padding 0, lineHeight 26),
+      // so the karaoke highlight is a pure background swap with no reflow.
+      const wordNode = (
         <View
           style={{
             borderRadius: 6,
-            paddingHorizontal: 5,
-            paddingVertical: 1,
-            backgroundColor: pillColor,
+            paddingHorizontal: padH,
+            paddingVertical: padV,
+            backgroundColor: bg,
           }}
         >
           <Text
             style={{
               fontSize: 20,
-              lineHeight: 24,
-              color: pillTextColor,
+              lineHeight: 26,
+              color: textColor,
               fontWeight: bold ? ("700" as const) : ("400" as const),
             }}
           >
             {surface}
           </Text>
         </View>
-      ) : (
-        <Text style={plainStyle}>{surface}</Text>
       );
 
       const rowStyle = {
