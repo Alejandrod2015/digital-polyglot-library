@@ -90,15 +90,22 @@ const config = {
         backgroundColor: "#0c1626",
         image: "./assets/splash-logo-white.png",
         imageWidth: 270,
-        // Android 12+ forces the system splash into a centered
-        // ICON format (a bounded circle) and crops anything wider,
-        // which chopped the horizontal wordmark to "Digital Polyglo".
-        // So Android gets the SQUARE monogram (dP composited onto the
-        // same #0c1626 navy, no white box) which fits the icon slot
-        // without cropping; the full wordmark still appears a beat
-        // later via the React ExtendedSplash.
+        // Android 12+ forces the system splash into a centered ICON slot
+        // (a bounded circle) and crops anything wider, so the horizontal
+        // wordmark can't go here. Use the SQUARE dP monogram in WHITE on a
+        // TRANSPARENT background, padded to sit inside the circular mask; the
+        // navy `backgroundColor` above shows through. White (not the colored
+        // mark) so it reads as one continuous white-on-navy splash with the
+        // React ExtendedSplash wordmark that follows.
+        //
+        // Why transparent + white fixes the "colored logo flash": Android 12
+        // rejects a splash icon that has a solid (non-transparent) background
+        // and falls back to the launcher icon, which is the COLORED dP on
+        // white — that was the flash the user saw. splash-android.png had a
+        // solid navy fill; splash-android-fg.png is the same mark, recolored
+        // white on transparent so Android accepts it as the system splash icon.
         android: {
-          image: "./assets/splash-android.png",
+          image: "./assets/splash-android-fg.png",
           imageWidth: 180,
         },
       },
