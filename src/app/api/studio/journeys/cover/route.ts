@@ -11,6 +11,7 @@ import {
   stripHtmlForCover,
 } from "@/lib/coverGenerator";
 import { getStoryCast } from "@/lib/storyCast";
+import { computeCoverThumbhash } from "@/lib/coverThumbhash";
 
 export const maxDuration = 120;
 
@@ -64,9 +65,10 @@ export async function POST(request: Request) {
 
     if (!uploaded?.url) throw new Error("Failed to upload cover image");
 
+    const coverThumbhash = await computeCoverThumbhash(uploaded.url);
     await prisma.journeyStory.update({
       where: { id: storyId },
-      data: { coverUrl: uploaded.url, coverDone: true },
+      data: { coverUrl: uploaded.url, coverThumbhash, coverDone: true },
     });
 
     return NextResponse.json({ ok: true, url: uploaded.url, provider, filename });

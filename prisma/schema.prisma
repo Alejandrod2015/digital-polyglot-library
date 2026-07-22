@@ -291,6 +291,11 @@ model JourneyStory {
   sanityId             String?
   coverDone            Boolean             @default(false)
   coverUrl             String?
+  /// Base64 thumbhash (~25 bytes) of coverUrl, computed once when the cover is
+  /// set. Shipped in the mobile journey payload so cards render an instant
+  /// blurred preview of the real cover on cold start (no network wait), while
+  /// the full image downloads + disk-caches. See src/lib/coverThumbhash.ts.
+  coverThumbhash       String?
   audioUrl             String?
   audioSegments        Json?
   audioWordTimings     Json?
@@ -933,6 +938,9 @@ model StandaloneStory {
   vocab             Json?
   cover             String?
   coverUrl          String?
+  /// Base64 thumbhash of coverUrl for instant blurred placeholders on mobile.
+  /// See src/lib/coverThumbhash.ts and JourneyStory.coverThumbhash.
+  coverThumbhash    String?
   audio             String?
   audioUrl          String?
   audioQaStatus            String?

@@ -11,6 +11,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
 import { generateAndUploadCover } from "@/lib/dalle";
+import { computeCoverThumbhash } from "@/lib/coverThumbhash";
 
 // Flux polling can take up to ~90s (36 attempts × 2.5s) for cover
 // generation. Without this, the Vercel default kills the function
@@ -77,9 +78,10 @@ export async function POST(_req: NextRequest, { params }: Params) {
     );
   }
 
+  const coverThumbhash = await computeCoverThumbhash(result.url);
   const updated = await prisma.standaloneStory.update({
     where: { id },
-    data: { coverUrl: result.url },
+    data: { coverUrl: result.url, coverThumbhash },
   });
 
   revalidatePath(`/studio/standalone-stories/${id}`);

@@ -211,6 +211,7 @@ export async function GET(req: NextRequest): Promise<Response> {
                   storySlug: story.storySlug,
                   title: story.title,
                   coverUrl: story.coverUrl ?? null,
+                  coverThumbhash: story.coverThumbhash ?? null,
                   progressKey: story.progressKey,
                   language: story.language ?? null,
                   region: story.region ?? null,

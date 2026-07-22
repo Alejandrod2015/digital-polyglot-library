@@ -17,6 +17,7 @@ function toPublicStory(s: {
   topic: string;
   coverDone: boolean;
   coverUrl: string | null;
+  coverThumbhash: string | null;
   audioUrl: string | null;
   voiceId: string | null;
   journey: { language: string; variant: string };
@@ -51,6 +52,7 @@ function toPublicStory(s: {
     journeyTopic: s.topic,
     journeyOrder: null,
     coverUrl: s.coverUrl ?? null,
+    coverThumbhash: s.coverThumbhash ?? null,
     audioUrl: s.audioUrl ?? null,
     voiceId: s.voiceId ?? null,
     createdAt: s.createdAt.toISOString(),

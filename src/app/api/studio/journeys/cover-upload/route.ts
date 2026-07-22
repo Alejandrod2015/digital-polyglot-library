@@ -13,6 +13,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { isStudioMember } from "@/lib/studio-access";
 import { uploadPublicObject, isObjectStorageConfigured } from "@/lib/objectStorage";
+import { computeCoverThumbhash } from "@/lib/coverThumbhash";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -71,9 +72,10 @@ export async function POST(req: NextRequest) {
   const uploaded = await uploadPublicObject({ key, body: buffer, contentType: type });
   if (!uploaded) return NextResponse.json({ error: "Upload failed" }, { status: 502 });
 
+  const coverThumbhash = await computeCoverThumbhash(uploaded.url);
   await prisma.journeyStory.update({
     where: { id: storyId },
-    data: { coverUrl: uploaded.url, coverDone: true },
+    data: { coverUrl: uploaded.url, coverThumbhash, coverDone: true },
   });
 
   return NextResponse.json({ coverUrl: uploaded.url });

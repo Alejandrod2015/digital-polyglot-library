@@ -20,6 +20,7 @@ export type JourneyStoryItem = {
   title: string;
   href: string;
   coverUrl?: string;
+  coverThumbhash?: string;
   language?: string;
   region?: string;
   variant?: string;
@@ -352,6 +353,7 @@ async function buildLevelsForVariant(
       title: story.title,
       href: `/stories/${story.slug}`,
       coverUrl: story.coverUrl ?? undefined,
+      coverThumbhash: story.coverThumbhash ?? undefined,
       language: story.language ?? undefined,
       region: story.region ?? undefined,
       variant: story.variant ?? undefined,
@@ -665,6 +667,7 @@ async function buildJourneyVariantsFromStudio(
         title: story.title,
         href: `/stories/${storySlug}`,
         coverUrl: story.coverUrl ?? undefined,
+        coverThumbhash: story.coverThumbhash ?? undefined,
         language: journey.language,
         region: journey.variant,
         variant: journey.variant,

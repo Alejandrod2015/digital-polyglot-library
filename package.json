@@ -50,6 +50,7 @@
     "stripe": "^19.1.0",
     "styled-components": "^6.1.19",
     "svix": "^1.80.0",
+    "thumbhash": "^0.1.1",
     "unified": "^11.0.5",
     "wavesurfer.js": "^7.12.7"
   },
