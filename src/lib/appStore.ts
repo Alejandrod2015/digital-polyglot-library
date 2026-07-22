@@ -21,6 +21,11 @@ import { resolvePlanFromAppStoreProductId, type PaidPlan } from "@/lib/billing";
 const APPLE_ROOT_CA_G3_FINGERPRINT_SHA256 =
   "63343abfb89a6a03ebb57e9b3f5fa7be7c4f5c756f3017b3a8c488c3653e9179";
 
+// The one bundle id we sell. Apple signs EVERY app's StoreKit transactions with
+// the same certificate chain, so cryptographic verification alone does not prove
+// the transaction belongs to OUR app; we must also match the bundle id.
+const EXPECTED_APP_STORE_BUNDLE_ID = "com.digitalpolyglot.mobile";
+
 type BillingStatusName =
   | "active"
   | "trialing"
@@ -152,10 +157,39 @@ function deriveStatusFromTransaction(tx: AppleTransactionPayload): BillingStatus
   return "active";
 }
 
+/**
+ * Post-crypto payload checks. `verifyAppleJws` proves Apple signed the
+ * transaction, but not that it belongs to OUR app or came from a real
+ * (paid) purchase. Enforce both here, the single normalization chokepoint
+ * reached by both the client verify route and server notifications.
+ *
+ * - bundleId: reject transactions signed for another app.
+ * - environment: a Sandbox transaction is free, so it must never grant real
+ *   premium in production. We reject Sandbox in production UNLESS
+ *   `ALLOW_SANDBOX_IAP=1`. That flag MUST be set while Apple reviews a new
+ *   version (reviewers test purchases in Sandbox); remove it once approved.
+ */
+function assertTransactionAcceptable(tx: AppleTransactionPayload): void {
+  if (tx.bundleId && tx.bundleId !== EXPECTED_APP_STORE_BUNDLE_ID) {
+    throw new Error(
+      `App Store transaction bundleId mismatch: got "${tx.bundleId}", expected "${EXPECTED_APP_STORE_BUNDLE_ID}".`
+    );
+  }
+
+  const serverIsProduction = process.env.NODE_ENV === "production";
+  const sandboxAllowed = process.env.ALLOW_SANDBOX_IAP === "1";
+  if (tx.environment === "Sandbox" && serverIsProduction && !sandboxAllowed) {
+    throw new Error(
+      "App Store Sandbox transaction rejected in production. Set ALLOW_SANDBOX_IAP=1 to allow Sandbox purchases (required only while a new version is under App Review)."
+    );
+  }
+}
+
 function toVerifiedSubscription(
   tx: AppleTransactionPayload,
   opts?: { status?: BillingStatusName; willRenew?: boolean }
 ): VerifiedAppleSubscription {
+  assertTransactionAcceptable(tx);
   const productId = tx.productId ?? "";
   const plan = resolvePlanFromAppStoreProductId(productId);
   if (!plan) {
