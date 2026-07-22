@@ -122,7 +122,7 @@ const config = {
     // `autoIncrement: true` NO funciona aquí porque EAS no muta JS.
     // Bumpear manualmente cada release a (max submitted on App Store
     // Connect) + 1.
-    buildNumber: "266",
+    buildNumber: "267",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
       // Background audio: story playback keeps sounding when the app is
@@ -148,7 +148,7 @@ const config = {
     // para el IPA: Expo descarta app.json, y EAS `autoIncrement` no muta JS.
     // La TWA gastó el 1, así que la app Expo arranca en 2. Bumpear a mano en
     // cada subida a Play; Play rechaza un versionCode repetido o menor.
-    versionCode: 8,
+    versionCode: 9,
     adaptiveIcon: {
       // Android recorta el foreground a un círculo/squircle según el launcher y
       // solo respeta el 66% central, así que reusar `icon.png` (el mark llena
