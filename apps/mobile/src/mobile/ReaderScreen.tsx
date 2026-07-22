@@ -673,7 +673,11 @@ function renderKaraokeParagraph(args: {
               onPress={() => onWordPress(phrase.item, paragraph.text)}
               style={
                 isFirstPhraseHit
-                  ? { backgroundColor: vocabBackgroundForItem(phrase.item), color: "#0e1727" }
+                  ? {
+                      backgroundColor: vocabBackgroundForItem(phrase.item),
+                      color: "#ffffff",
+                      fontWeight: "700",
+                    }
                   : undefined
               }
             >
@@ -694,10 +698,21 @@ function renderKaraokeParagraph(args: {
       // Vocab pill keeps its type color through playback (never swaps to the
       // active amber), mirroring iOS; a non-vocab word only lights up amber
       // while it is the active karaoke word.
-      let spanStyle: { backgroundColor: string; color: string } | undefined;
+      let spanStyle:
+        | { backgroundColor: string; color: string; fontWeight?: "700" }
+        | undefined;
       if (isFirstVocabHit && vocabItem) {
-        spanStyle = { backgroundColor: vocabBackgroundForItem(vocabItem), color: "#0e1727" };
+        // Match iOS `karaokeWordTextVocabWhite`: white + bold on the saturated
+        // type-colored pill. (The dark navy below is only for the active word;
+        // using it here made vocab text unreadable on the darker type colors
+        // and diverged from iOS.)
+        spanStyle = {
+          backgroundColor: vocabBackgroundForItem(vocabItem),
+          color: "#ffffff",
+          fontWeight: "700",
+        };
       } else if (isActive) {
+        // Active karaoke word: dark navy on amber, matching iOS.
         spanStyle = { backgroundColor: "#f8c15c", color: "#0e1727" };
       }
 
