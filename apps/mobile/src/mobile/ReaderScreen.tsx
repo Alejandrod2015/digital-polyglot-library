@@ -633,121 +633,169 @@ function renderKaraokeParagraph(args: {
     return <Text style={baseTextStyle}>{paragraph.text}</Text>;
   }
 
-  // Android: nested <Text> flows correctly where an inline <View> collapses.
-  // The iOS path below wraps every word in a <View> nested inside the
-  // paragraph <Text> (an NSTextAttachment technique). Android's layout of many
-  // inline <View>s that wrap across lines collapses them: word boxes get zero
-  // width and pile at the left or vanish, while the plain-<Text> spaces and
-  // punctuation keep flowing (dense dialogue paragraphs became unreadable).
-  // Fix: on Android, build the whole paragraph as ONE <Text> tree of nested
-  // <Text> spans, so words, spaces and punctuation share a single baseline (no
-  // gap-View trick needed). Pills use a flat backgroundColor (an inline text
-  // background can't be rounded on Android) and stay tappable via onPress.
+  // Android takes a separate render path from the iOS one below. The iOS path
+  // wraps every word in a <View> nested inside the paragraph <Text> (an
+  // NSTextAttachment technique) which Android can't lay out (many inline <View>s
+  // collapse) and can't round (an inline <Text> background has no borderRadius).
+  // So Android renders the paragraph as a flex-wrap row of per-word chips; see
+  // the block for details.
   if (Platform.OS === "android") {
-    const spans: React.ReactNode[] = [];
-    const maxPhraseA = maxPhraseTokenSpan(vocabLookup);
-    let cursorA = paragraph.charStart;
+    // Android can't round an inline <Text> background (iOS/web can), so pills
+    // rendered as 90-degree rectangles. Render the paragraph as a flex-wrap row
+    // of per-word "chips": each word is its own <View>, so a vocab/active pill
+    // carries a real borderRadius like iOS. The inter-word space becomes
+    // marginRight; trailing punctuation attaches to its word so a comma/period
+    // never orphans to a new line.
+    const SPACE = 7;
+    const LINE_GAP = 6;
+    const plainStyle = { fontSize: 20, lineHeight: 26, color: "#eef4ff" } as const;
+    const chips: React.ReactNode[] = [];
     let keyA = 0;
+
+    const pushPlainRun = (text: string) => {
+      for (const part of text.split(/\s+/)) {
+        if (!part) continue;
+        chips.push(
+          <View
+            key={`${paragraphKey}-cg-${keyA++}`}
+            style={{ marginRight: SPACE, marginBottom: LINE_GAP }}
+          >
+            <Text style={plainStyle}>{part}</Text>
+          </View>
+        );
+      }
+    };
+
+    // Leading gap before the first spoken word (e.g. a "Nadia:" speaker label,
+    // whose token is filtered out of words[]). Rendered as inert plain chips.
+    const leadGap = payloadText
+      .slice(paragraph.charStart, words[firstWordIdx].charStart)
+      .replace(/\n/g, " ");
+    if (leadGap.trim()) pushPlainRun(leadGap.trim());
+
+    const maxPhraseA = maxPhraseTokenSpan(vocabLookup);
     let iA = firstWordIdx;
     while (iA <= lastWordIdx) {
       const w = words[iA];
-      if (w.charStart > cursorA) {
-        const gap = payloadText.slice(cursorA, w.charStart).replace(/\n/g, " ");
-        if (gap) spans.push(<Text key={`${paragraphKey}-ag-${keyA++}`}>{gap}</Text>);
-      }
-      // Multi-word vocab span (reflexive verbs, idioms) as one tappable unit.
-      if (maxPhraseA > 1) {
-        const phrase = matchVocabPhrase(vocabLookup, words, iA, lastWordIdx + 1, maxPhraseA);
-        if (phrase) {
-          const canon = (phrase.item.word ?? "").toLowerCase();
-          const firstTok = words[iA];
-          const lastTok = words[phrase.spanEnd - 1];
-          const spanText = payloadText
-            .slice(firstTok.charStart, lastTok.charEnd)
-            .replace(/\n/g, " ");
-          const isFirstPhraseHit = !!canon && !alreadyHighlighted.has(canon);
-          if (isFirstPhraseHit) alreadyHighlighted.add(canon);
-          spans.push(
-            <Text
-              key={`${paragraphKey}-aph-${iA}`}
-              onPress={() => onWordPress(phrase.item, paragraph.text)}
-              style={
-                isFirstPhraseHit
-                  ? {
-                      backgroundColor: vocabBackgroundForItem(phrase.item),
-                      color: "#ffffff",
-                      fontWeight: "700",
-                    }
-                  : { backgroundColor: "transparent", color: "#eef4ff" }
-              }
-            >
-              {spanText}
-            </Text>
-          );
-          cursorA = lastTok.charEnd;
-          iA = phrase.spanEnd;
-          continue;
+
+      let surface = w.text;
+      let unitEnd = iA + 1;
+      let lastCharEnd = w.charEnd;
+      let pillColor: string | null = null;
+      let pillTextColor = "#eef4ff";
+      let bold = false;
+      let onPress: (() => void) | undefined;
+
+      const phrase =
+        maxPhraseA > 1
+          ? matchVocabPhrase(vocabLookup, words, iA, lastWordIdx + 1, maxPhraseA)
+          : null;
+      if (phrase) {
+        const canon = (phrase.item.word ?? "").toLowerCase();
+        const lastTok = words[phrase.spanEnd - 1];
+        surface = payloadText.slice(w.charStart, lastTok.charEnd).replace(/\n/g, " ");
+        unitEnd = phrase.spanEnd;
+        lastCharEnd = lastTok.charEnd;
+        const firstHit = !!canon && !alreadyHighlighted.has(canon);
+        if (firstHit) {
+          alreadyHighlighted.add(canon);
+          pillColor = vocabBackgroundForItem(phrase.item);
+          pillTextColor = "#ffffff";
+          bold = true;
+        }
+        onPress = () => onWordPress(phrase.item, paragraph.text);
+      } else {
+        const isActive = activeWordIndex === iA;
+        const vocabItem = lookupVocabToken(vocabLookup, w.text);
+        const vocabKey = vocabItem ? (vocabItem.word ?? w.text).toLowerCase() : null;
+        const firstVocab = vocabKey !== null && !alreadyHighlighted.has(vocabKey);
+        if (firstVocab && vocabKey !== null) alreadyHighlighted.add(vocabKey);
+        if (firstVocab && vocabItem) {
+          // Vocab pill: type color + white bold, like iOS.
+          pillColor = vocabBackgroundForItem(vocabItem);
+          pillTextColor = "#ffffff";
+          bold = true;
+        } else if (isActive) {
+          // Active karaoke word: amber + dark navy, like iOS.
+          pillColor = "#f8c15c";
+          pillTextColor = "#0e1727";
+        }
+        if (vocabItem) onPress = () => onWordPress(vocabItem, paragraph.text);
+        else {
+          const glossToken = glossTokenFromText(w.text);
+          const gloss = glossToken ? glosses[glossToken] : undefined;
+          if (gloss) onPress = () => onQuickLookup(w.text, gloss, paragraph.text);
         }
       }
-      const isActive = activeWordIndex === iA;
-      const vocabItem = lookupVocabToken(vocabLookup, w.text);
-      const vocabKey = vocabItem ? (vocabItem.word ?? w.text).toLowerCase() : null;
-      const isFirstVocabHit = vocabKey !== null && !alreadyHighlighted.has(vocabKey);
-      if (isFirstVocabHit && vocabKey !== null) alreadyHighlighted.add(vocabKey);
 
-      // Vocab pill keeps its type color through playback (never swaps to the
-      // active amber), mirroring iOS; a non-vocab word only lights up amber
-      // while it is the active karaoke word.
-      // Every span gets an EXPLICIT backgroundColor + color. Passing undefined
-      // for the resting state does NOT work on Android: RN does not clear a
-      // previously-set backgroundColor on a reused nested <Text> when the new
-      // style drops it, so a word that was once the active (amber) word kept
-      // its amber box as the karaoke cursor moved on and the whole read-so-far
-      // paragraph stayed highlighted. Explicit "transparent" + the light base
-      // color resets each word cleanly every render.
-      let spanStyle: { backgroundColor: string; color: string; fontWeight?: "700" };
-      if (isFirstVocabHit && vocabItem) {
-        // Match iOS `karaokeWordTextVocabWhite`: white + bold on the saturated
-        // type-colored pill. (The dark navy below is only for the active word;
-        // using it here made vocab text unreadable on the darker type colors
-        // and diverged from iOS.)
-        spanStyle = {
-          backgroundColor: vocabBackgroundForItem(vocabItem),
-          color: "#ffffff",
-          fontWeight: "700",
-        };
-      } else if (isActive) {
-        // Active karaoke word: dark navy on amber, matching iOS.
-        spanStyle = { backgroundColor: "#f8c15c", color: "#0e1727" };
-      } else {
-        // Resting word: transparent bg + the paragraph's light text color.
-        spanStyle = { backgroundColor: "transparent", color: "#eef4ff" };
-      }
+      // Trailing gap: attach leading punctuation ("," ".") to this word and
+      // turn a trailing space into the chip's right margin.
+      const nextStart = unitEnd <= lastWordIdx ? words[unitEnd].charStart : paragraph.charEnd;
+      const trailGap = payloadText.slice(lastCharEnd, nextStart).replace(/\n/g, " ");
+      const punct = (trailGap.match(/^\S+/) || [""])[0];
+      const hasSpace = /\s/.test(trailGap);
 
-      // Curated vocab (incl. non-first duplicates) opens the vocab popup; a
-      // non-vocab word with a "quick lookup" gloss opens that instead.
-      let onPress: (() => void) | undefined;
-      if (vocabItem) {
-        onPress = () => onWordPress(vocabItem, paragraph.text);
-      } else {
-        const glossToken = glossTokenFromText(w.text);
-        const gloss = glossToken ? glosses[glossToken] : undefined;
-        if (gloss) onPress = () => onQuickLookup(w.text, gloss, paragraph.text);
-      }
-
-      spans.push(
-        <Text key={`${paragraphKey}-aw-${iA}`} onPress={onPress} style={spanStyle}>
-          {w.text}
-        </Text>
+      const wordNode = pillColor ? (
+        <View
+          style={{
+            borderRadius: 6,
+            paddingHorizontal: 5,
+            paddingVertical: 1,
+            backgroundColor: pillColor,
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 20,
+              lineHeight: 24,
+              color: pillTextColor,
+              fontWeight: bold ? ("700" as const) : ("400" as const),
+            }}
+          >
+            {surface}
+          </Text>
+        </View>
+      ) : (
+        <Text style={plainStyle}>{surface}</Text>
       );
-      cursorA = w.charEnd;
-      iA += 1;
+
+      const rowStyle = {
+        flexDirection: "row" as const,
+        alignItems: "baseline" as const,
+        marginRight: hasSpace ? SPACE : 0,
+        marginBottom: LINE_GAP,
+      };
+      const body = (
+        <>
+          {wordNode}
+          {punct ? <Text style={plainStyle}>{punct}</Text> : null}
+        </>
+      );
+      chips.push(
+        onPress ? (
+          <Pressable
+            key={`${paragraphKey}-cw-${iA}`}
+            onPress={onPress}
+            hitSlop={{ top: 4, bottom: 4, left: 2, right: 2 }}
+            style={rowStyle}
+          >
+            {body}
+          </Pressable>
+        ) : (
+          <View key={`${paragraphKey}-cw-${iA}`} style={rowStyle}>
+            {body}
+          </View>
+        )
+      );
+
+      iA = unitEnd;
     }
-    if (cursorA < paragraph.charEnd) {
-      const tail = payloadText.slice(cursorA, paragraph.charEnd).replace(/\n/g, " ");
-      if (tail) spans.push(<Text key={`${paragraphKey}-atail`}>{tail}</Text>);
-    }
-    return <Text style={baseTextStyle}>{spans}</Text>;
+
+    return (
+      <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "baseline" }}>
+        {chips}
+      </View>
+    );
   }
 
   const nodes: React.ReactNode[] = [];
