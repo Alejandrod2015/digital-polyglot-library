@@ -1,5 +1,5 @@
 import { memo, useEffect, useMemo, useRef, useState } from "react";
-import { Animated, Easing, Pressable, StyleSheet, Text, View } from "react-native";
+import { Animated, Easing, Platform, Pressable, StyleSheet, Text, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import Svg, { Circle, G } from "react-native-svg";
 
@@ -644,7 +644,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 10,
     shadowOffset: { width: 0, height: 4 },
-    elevation: 3,
+    // Solo iOS. En Android las props `shadow*` se ignoran y la sombra la
+    // dibuja `elevation`; como el fondo de la tarjeta es translúcido
+    // (SKILL_CARD_BG, 5% de blanco), esa sombra se veía A TRAVÉS del propio
+    // fondo y aparecía como un rectángulo oscuro desplazado dentro de la
+    // tarjeta, por encima de la etiqueta. En iOS la sombra sí queda detrás y
+    // se ve bien, así que ahí no se toca nada.
+    ...Platform.select({ android: { elevation: 0 }, default: { elevation: 3 } }),
   },
   skillCardPressed: {
     opacity: 0.8,
