@@ -20,8 +20,13 @@ if [ "$CHANGED_FILES" = "UNKNOWN" ]; then
   exit 1
 fi
 
-# Directories/patterns that are mobile-only (don't affect the web app)
-MOBILE_ONLY_PATTERNS="^mobile/|^android-twa/|^\.maestro/|^ios/|^\.easignore|^eas\.json|^app\.json|^app\.config\.|^expo-|^metro\.config"
+# Directories/patterns that are mobile-only (don't affect the web app).
+# OJO: este es un monorepo; la app Expo vive en `apps/mobile/` (no en `mobile/`).
+# Los patrones viejos (`^mobile/`, `^ios/`, `^app.json`, `^eas.json`, …) NUNCA
+# matcheaban las rutas reales `apps/mobile/...`, así que TODO push mobile-only
+# disparaba un build de Vercel innecesario. `^apps/mobile/` cubre ios/, app.json,
+# app.config.js, eas.json, metro.config y el resto porque todos cuelgan de ahí.
+MOBILE_ONLY_PATTERNS="^apps/mobile/|^android-twa/|^\.maestro/"
 
 # Check if ANY changed file is outside mobile-only patterns
 WEB_CHANGES=$(echo "$CHANGED_FILES" | grep -vE "$MOBILE_ONLY_PATTERNS" || true)
