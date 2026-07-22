@@ -34,6 +34,7 @@ import * as FileSystem from "expo-file-system/legacy";
 import { NativeAudioPlayer } from "./NativeAudioPlayer";
 import { DownloadProgressRing } from "./DownloadProgressRing";
 import { ProgressiveImage } from "./ProgressiveImage";
+import { useAndroidBottomInset } from "./useAndroidBottomInset";
 import { getCoverUrl } from "./coverUrl";
 import { apiFetch } from "../lib/api";
 import { mobileConfig } from "../config";
@@ -1458,6 +1459,11 @@ export function ReaderScreen(args: {
   // y smart autoscroll necesitan saber cuánto del viewport está
   // tapado). Antes era un padding hardcodeado (118) que se quedó
   // corto cuando el sticky player creció a ~132 px.
+  // Barra inferior de Android (edge-to-edge por defecto en SDK 54): el player
+  // dock está anclado a bottom:0, así que sin este inset los controles quedan
+  // por debajo de la barra de gestos/navegación y se solapan. En iOS devuelve
+  // 0 (el SafeAreaView del core ya aplica el inset).
+  const androidBottomInset = useAndroidBottomInset();
   const [playerDockHeight, setPlayerDockHeight] = useState(132);
   useEffect(() => {
     if (activeWordIndex === null) return;
@@ -2506,7 +2512,7 @@ export function ReaderScreen(args: {
       ) : null}
 
       <View
-        style={styles.playerDock}
+        style={[styles.playerDock, { paddingBottom: 4 + androidBottomInset }]}
         onLayout={(e) => {
           const next = e.nativeEvent.layout.height;
           if (next > 0 && Math.abs(next - playerDockHeight) > 1) {
