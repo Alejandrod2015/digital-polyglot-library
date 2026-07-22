@@ -3,6 +3,7 @@ import {
   Animated,
   AppState,
   Easing,
+  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -630,6 +631,100 @@ function renderKaraokeParagraph(args: {
 
   if (firstWordIdx === -1) {
     return <Text style={baseTextStyle}>{paragraph.text}</Text>;
+  }
+
+  // Android: nested <Text> flows correctly where an inline <View> collapses.
+  // The iOS path below wraps every word in a <View> nested inside the
+  // paragraph <Text> (an NSTextAttachment technique). Android's layout of many
+  // inline <View>s that wrap across lines collapses them: word boxes get zero
+  // width and pile at the left or vanish, while the plain-<Text> spaces and
+  // punctuation keep flowing (dense dialogue paragraphs became unreadable).
+  // Fix: on Android, build the whole paragraph as ONE <Text> tree of nested
+  // <Text> spans, so words, spaces and punctuation share a single baseline (no
+  // gap-View trick needed). Pills use a flat backgroundColor (an inline text
+  // background can't be rounded on Android) and stay tappable via onPress.
+  if (Platform.OS === "android") {
+    const spans: React.ReactNode[] = [];
+    const maxPhraseA = maxPhraseTokenSpan(vocabLookup);
+    let cursorA = paragraph.charStart;
+    let keyA = 0;
+    let iA = firstWordIdx;
+    while (iA <= lastWordIdx) {
+      const w = words[iA];
+      if (w.charStart > cursorA) {
+        const gap = payloadText.slice(cursorA, w.charStart).replace(/\n/g, " ");
+        if (gap) spans.push(<Text key={`${paragraphKey}-ag-${keyA++}`}>{gap}</Text>);
+      }
+      // Multi-word vocab span (reflexive verbs, idioms) as one tappable unit.
+      if (maxPhraseA > 1) {
+        const phrase = matchVocabPhrase(vocabLookup, words, iA, lastWordIdx + 1, maxPhraseA);
+        if (phrase) {
+          const canon = (phrase.item.word ?? "").toLowerCase();
+          const firstTok = words[iA];
+          const lastTok = words[phrase.spanEnd - 1];
+          const spanText = payloadText
+            .slice(firstTok.charStart, lastTok.charEnd)
+            .replace(/\n/g, " ");
+          const isFirstPhraseHit = !!canon && !alreadyHighlighted.has(canon);
+          if (isFirstPhraseHit) alreadyHighlighted.add(canon);
+          spans.push(
+            <Text
+              key={`${paragraphKey}-aph-${iA}`}
+              onPress={() => onWordPress(phrase.item, paragraph.text)}
+              style={
+                isFirstPhraseHit
+                  ? { backgroundColor: vocabBackgroundForItem(phrase.item), color: "#0e1727" }
+                  : undefined
+              }
+            >
+              {spanText}
+            </Text>
+          );
+          cursorA = lastTok.charEnd;
+          iA = phrase.spanEnd;
+          continue;
+        }
+      }
+      const isActive = activeWordIndex === iA;
+      const vocabItem = lookupVocabToken(vocabLookup, w.text);
+      const vocabKey = vocabItem ? (vocabItem.word ?? w.text).toLowerCase() : null;
+      const isFirstVocabHit = vocabKey !== null && !alreadyHighlighted.has(vocabKey);
+      if (isFirstVocabHit && vocabKey !== null) alreadyHighlighted.add(vocabKey);
+
+      // Vocab pill keeps its type color through playback (never swaps to the
+      // active amber), mirroring iOS; a non-vocab word only lights up amber
+      // while it is the active karaoke word.
+      let spanStyle: { backgroundColor: string; color: string } | undefined;
+      if (isFirstVocabHit && vocabItem) {
+        spanStyle = { backgroundColor: vocabBackgroundForItem(vocabItem), color: "#0e1727" };
+      } else if (isActive) {
+        spanStyle = { backgroundColor: "#f8c15c", color: "#0e1727" };
+      }
+
+      // Curated vocab (incl. non-first duplicates) opens the vocab popup; a
+      // non-vocab word with a "quick lookup" gloss opens that instead.
+      let onPress: (() => void) | undefined;
+      if (vocabItem) {
+        onPress = () => onWordPress(vocabItem, paragraph.text);
+      } else {
+        const glossToken = glossTokenFromText(w.text);
+        const gloss = glossToken ? glosses[glossToken] : undefined;
+        if (gloss) onPress = () => onQuickLookup(w.text, gloss, paragraph.text);
+      }
+
+      spans.push(
+        <Text key={`${paragraphKey}-aw-${iA}`} onPress={onPress} style={spanStyle}>
+          {w.text}
+        </Text>
+      );
+      cursorA = w.charEnd;
+      iA += 1;
+    }
+    if (cursorA < paragraph.charEnd) {
+      const tail = payloadText.slice(cursorA, paragraph.charEnd).replace(/\n/g, " ");
+      if (tail) spans.push(<Text key={`${paragraphKey}-atail`}>{tail}</Text>);
+    }
+    return <Text style={baseTextStyle}>{spans}</Text>;
   }
 
   const nodes: React.ReactNode[] = [];
