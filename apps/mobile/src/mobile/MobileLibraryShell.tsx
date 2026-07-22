@@ -111,6 +111,7 @@ import { MobileSettingsScreen } from "./MobileSettingsScreen";
 import { JourneyLanguageHub, type LanguageInsightsSummary } from "./MobileJourneyLanguageHub";
 import { MobileCreateScreen } from "./MobileCreateScreen";
 import { ProgressiveImage } from "./ProgressiveImage";
+import { useAndroidBottomInset } from "./useAndroidBottomInset";
 import { mobileCatalog } from "./catalog";
 import { fullMobileCatalog } from "./fullCatalog";
 import { mobileConfig } from "../config";
@@ -668,6 +669,7 @@ type MobileJourneyTopicSummary = {
     storySlug: string;
     title: string;
     coverUrl: string | null;
+    coverThumbhash: string | null;
     progressKey: string;
     language: string | null;
     region: string | null;
@@ -1859,6 +1861,9 @@ export function MobileLibraryShell(args: {
     onRequestSignIn,
   } = args;
   const isSignedIn = Boolean(sessionToken);
+  // Los `<Modal>` se renderizan en su propia ventana, fuera del SafeAreaView
+  // raíz, así que el inset inferior de Android hay que aplicárselo aquí.
+  const androidBottomInset = useAndroidBottomInset();
   const shellScrollRef = useRef<ScrollView | null>(null);
   const [activeScreen, setActiveScreen] = useState<MobileScreen>("home");
   // Tracks the shell ScrollView's vertical offset, used to decide
@@ -1945,7 +1950,7 @@ export function MobileLibraryShell(args: {
   // al iniciar cada ejercicio y baja 1 cada segundo. Al llegar a 0
   // revela la respuesta correcta, marca como wrong y dispara el
   // auto-advance.
-  const [practiceTimerRemaining, setPracticeTimerRemaining] = useState(10);
+  const [practiceTimerRemaining, setPracticeTimerRemaining] = useState(15);
   // Controls the "Exit without finishing?" confirmation overlay. Back button
   // opens it when the user is mid-session (has started at least one exercise
   // and hasn't completed the round). The Done button after completion skips
@@ -6812,12 +6817,12 @@ export function MobileLibraryShell(args: {
     setWrongMatchWords([]);
     setLastPracticeActivityAt(new Date().toISOString());
     setMenuOpen(false);
-    // Arranca con countdown activo + pausa off + timer en 10 seg.
+    // Arranca con countdown activo + pausa off + timer en 15 seg.
     // Estos states se reinician en cada apertura para que la sesión
     // siempre empiece "limpia".
     setPracticeCountdownActive(true);
     setPracticePaused(false);
-    setPracticeTimerRemaining(10);
+    setPracticeTimerRemaining(15);
     // Reset del ref del autoplay. Sin esto, si la sesión anterior
     // terminó en un ejercicio cuyo id se repite por azar en la nueva
     // (improbable pero posible con palabras compartidas), el autoplay
@@ -6965,7 +6970,7 @@ export function MobileLibraryShell(args: {
     setSpeakingPracticePromptId(null);
     setPracticeCountdownActive(true);
     setPracticePaused(false);
-    setPracticeTimerRemaining(10);
+    setPracticeTimerRemaining(15);
     setContextAudioFinishedFor(null);
     setLoadingPracticeAudioId(null);
     lastAutoplayedExerciseIdRef.current = null;
@@ -7277,7 +7282,7 @@ export function MobileLibraryShell(args: {
   // ─── Practice timer + auto-advance + autoplay del audio ───────────
   //
   // Tres useEffects que cooperan para una sesión "auto-pilot":
-  //   1. Reset del timer a 10 seg en cada ejercicio nuevo.
+  //   1. Reset del timer (15 seg multiple-choice, 20 match) en cada ejercicio nuevo.
   //   2. Tick del timer cada segundo; al llegar a 0 marca como wrong
   //      (timeout) y revela la respuesta correcta.
   //   3. Auto-advance 1.5 seg después de revelar (manual o por
@@ -7293,15 +7298,14 @@ export function MobileLibraryShell(args: {
   // `practiceCountdownActive`).
 
   // (1) Reset del timer cuando cambia el ejercicio actual o cuando
-  // arranca una sesión nueva. Multiple-choice usa 10 seg (una decisión
-  // rápida con 4 opciones). Match usa 20 seg porque son 4 pares
-  // (8 toques: palabra+definición × 4) más lectura; 10 seg era el timer
-  // corto del multiple-choice y quedaba muy justo para un match. Misma
-  // duración que la webapp (timerDurationForExercise).
+  // arranca una sesión nueva. Multiple-choice usa 15 seg. Match usa 20
+  // seg porque son 4 pares (8 toques: palabra+definición × 4) más
+  // lectura, y necesita más aire que el multiple-choice. Misma duración
+  // que la webapp (timerDurationForExercise: match_meaning ? 20 : 15).
   useEffect(() => {
     if (!activePracticeMode) return;
     const current = practiceExercises[practiceIndex];
-    const seconds = current?.kind === "match" ? 20 : 10;
+    const seconds = current?.kind === "match" ? 20 : 15;
     setPracticeTimerRemaining(seconds);
   }, [practiceIndex, activePracticeMode, practiceExercises]);
 
@@ -11886,7 +11890,7 @@ export function MobileLibraryShell(args: {
             if (kind === "match" && currentPracticeExercise && matchedWords.length >= currentPracticeExercise.pairs.length) {
               return null;
             }
-            const totalSec = kind === "match" ? 20 : 10;
+            const totalSec = kind === "match" ? 20 : 15;
             return (
               <View style={styles.practiceTimerBarTrack}>
                 <View
@@ -15068,6 +15072,7 @@ export function MobileLibraryShell(args: {
                   >
                     <ProgressiveImage
                       uri={getCoverUrl(story.coverUrl, 128)}
+                      thumbhash={story.coverThumbhash}
                       style={[
                         styles.journeyNodePillCoverThumb,
                                 // The "next" recommended story shows its cover at
@@ -16286,6 +16291,7 @@ export function MobileLibraryShell(args: {
                                 {story.coverUrl ? (
                                   <ProgressiveImage
                                     uri={getCoverUrl(story.coverUrl, 128)}
+                                    thumbhash={story.coverThumbhash}
                                     style={styles.journeyNodePillCoverThumb}
                                     resizeMode="cover"
                                   />
@@ -16353,6 +16359,7 @@ export function MobileLibraryShell(args: {
                                   <View style={styles.journeyNodePillThumbWrap}>
                                     <ProgressiveImage
                                       uri={getCoverUrl(story.coverUrl, 128)}
+                                      thumbhash={story.coverThumbhash}
                                       style={[
                                         styles.journeyNodePillCoverThumb,
                                         nodeVariant === "completed"
@@ -17761,6 +17768,7 @@ export function MobileLibraryShell(args: {
         <Animated.View
           style={[
             styles.progressSheetContainer,
+            { paddingBottom: 22 + androidBottomInset },
             { transform: [{ translateY: progressSheetDragY }] },
           ]}
         >
@@ -17826,7 +17834,7 @@ export function MobileLibraryShell(args: {
         transparent
         onRequestClose={() => setLevelTestOfferOpen(null)}
       >
-        <View style={styles.levelTestOfferBackdrop}>
+        <View style={[styles.levelTestOfferBackdrop, { paddingBottom: androidBottomInset }]}>
           <Pressable
             style={StyleSheet.absoluteFill}
             onPress={() => setLevelTestOfferOpen(null)}
@@ -17988,7 +17996,7 @@ export function MobileLibraryShell(args: {
       ) : null}
 
       <Modal visible={shouldShowOnboardingSurvey} transparent animationType="fade">
-        <View style={styles.modalBackdrop}>
+        <View style={[styles.modalBackdrop, { paddingBottom: androidBottomInset }]}>
           <View style={styles.onboardingModal} accessibilityLabel="qa-onboarding-survey" testID="qa-onboarding-survey">
             <View style={styles.onboardingProgressRow}>
               {onboardingSurveySteps.map((step, index) => (
@@ -18279,7 +18287,7 @@ export function MobileLibraryShell(args: {
       >
         <KeyboardAvoidingView
           behavior={Platform.OS === "ios" ? "padding" : undefined}
-          style={styles.collectionModalBackdrop}
+          style={[styles.collectionModalBackdrop, { paddingBottom: androidBottomInset }]}
         >
           <Pressable
             style={StyleSheet.absoluteFillObject}
@@ -18421,7 +18429,7 @@ export function MobileLibraryShell(args: {
       <Modal visible={menuOpen} animationType="slide" transparent onRequestClose={() => setMenuOpen(false)}>
         <View style={styles.menuBackdrop}>
           <Pressable style={styles.menuDismissZone} onPress={() => setMenuOpen(false)} />
-          <View style={styles.menuPanel}>
+          <View style={[styles.menuPanel, { paddingBottom: 28 + androidBottomInset }]}>
             <View style={styles.menuPanelHeader}>
               <Text style={styles.menuTitle}>Menu</Text>
               <Pressable onPress={() => setMenuOpen(false)} style={styles.menuClose}>
@@ -21061,7 +21069,7 @@ const styles = StyleSheet.create({
     backgroundColor: tokenBg[1],
     borderWidth: 1,
     borderColor: "rgba(255,255,255,0.08)",
-    paddingBottom: 22,
+    // paddingBottom se aplica inline: 22 + el inset de Android.
     shadowColor: "#000",
     shadowOffset: { width: 0, height: -16 },
     shadowOpacity: 0.55,
@@ -25771,7 +25779,7 @@ const styles = StyleSheet.create({
     borderLeftColor: "#27405f",
     paddingTop: 56,
     paddingHorizontal: 22,
-    paddingBottom: 28,
+    // paddingBottom se aplica inline: 28 + el inset de Android.
     flex: 1,
     flexDirection: "column",
   },

@@ -25,6 +25,7 @@ import {
   View,
   type TextProps,
 } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import {
   Nunito_400Regular,
   Nunito_700Bold,
@@ -67,6 +68,7 @@ import {
   type SessionAnchor,
 } from "./src/auth/sessionAnchor";
 import { MobileLibraryShell } from "./src/mobile/MobileLibraryShell";
+import { useAndroidBottomInset } from "./src/mobile/useAndroidBottomInset";
 import { type PushRegistrationState } from "./src/notifications/registerPush";
 import { parseReminderDestination } from "./src/notifications/dailyReminder";
 import type { ReminderDestination } from "./src/notifications/dailyReminder";
@@ -114,6 +116,10 @@ function getNotificationsModule(): typeof import("expo-notifications") | null {
 }
 
 function MobileAppRoot() {
+  // Inset inferior de Android: sube todo lo anclado a `bottom: 0` dentro del
+  // árbol principal (dock del reproductor, barra de tabs) por encima de la
+  // barra del sistema. Los `<Modal>` van en otra ventana y lo aplican aparte.
+  const androidBottomInset = useAndroidBottomInset();
   const [sessionToken, setSessionToken] = useState<string | null>(null);
   // Parallel "proof of prior sign-in" that survives the exact failure
   // modes that affect SecureStore cold-start. When sessionToken is null
@@ -495,7 +501,7 @@ function MobileAppRoot() {
   // Clerk's auto-sync will mint a fresh token and everything hydrates.
   if (!sessionToken && !sessionAnchor && !previewModeOnly) {
     return (
-      <SafeAreaView style={styles.safeArea}>
+      <SafeAreaView style={[styles.safeArea, { paddingBottom: androidBottomInset }]}>
         <StatusBar barStyle="light-content" />
         <View style={styles.authContainer}>
           <AuthScreen
@@ -509,7 +515,7 @@ function MobileAppRoot() {
   }
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={[styles.safeArea, { paddingBottom: androidBottomInset }]}>
       <StatusBar barStyle="light-content" />
       <MobileLibraryShell
         sessionToken={sessionToken}
@@ -575,9 +581,11 @@ export default function App() {
   }
 
   return (
-    <ClerkProvider publishableKey={mobileConfig.clerkPublishableKey} tokenCache={tokenCache}>
-      <MobileAppRoot />
-    </ClerkProvider>
+    <SafeAreaProvider>
+      <ClerkProvider publishableKey={mobileConfig.clerkPublishableKey} tokenCache={tokenCache}>
+        <MobileAppRoot />
+      </ClerkProvider>
+    </SafeAreaProvider>
   );
 }
 
@@ -586,11 +594,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#0c1626",
     // SafeAreaView de react-native CORE no aplica insets en Android (ahí es
-    // un View normal; solo funciona en iOS), y react-native-safe-area-context
-    // no está instalado. Sin esto, en Android TODO el contenido del shell
-    // (home, journey, practice, settings…) arranca pegado bajo la barra de
-    // estado: el "problema de márgenes". Aplicamos el inset del status bar a
-    // mano en Android; en iOS lo maneja el SafeAreaView, por eso 0 (no duplicar).
+    // un View normal; solo funciona en iOS). Sin esto, en Android TODO el
+    // contenido del shell (home, journey, practice, settings…) arranca pegado
+    // bajo la barra de estado: el "problema de márgenes". Aplicamos el inset
+    // del status bar a mano en Android; en iOS lo maneja el SafeAreaView, por
+    // eso 0 (no duplicar). El inset INFERIOR se aplica en el componente, con
+    // `useSafeAreaInsets` (StatusBar.currentHeight solo cubre el de arriba).
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight ?? 0 : 0,
   },
   authContainer: {

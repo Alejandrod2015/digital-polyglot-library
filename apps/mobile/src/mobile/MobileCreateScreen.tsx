@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Feather } from "@expo/vector-icons";
 import { Modal, Pressable, StyleSheet, Text, View } from "react-native";
+import { useAndroidBottomInset } from "./useAndroidBottomInset";
 
 type SetupRow = {
   id: string;
@@ -80,6 +81,8 @@ export function MobileCreateScreen({
   onClosePicker,
   pickerOptions,
 }: Props) {
+  // Los Modal van en otra ventana: el inset de Android se aplica aquí.
+  const androidBottomInset = useAndroidBottomInset();
   return (
     <>
       <View style={styles.hero}>
@@ -203,7 +206,7 @@ export function MobileCreateScreen({
       </View>
 
       <Modal visible={pickerVisible} transparent animationType="fade" onRequestClose={onClosePicker}>
-        <Pressable style={styles.modalBackdrop} onPress={onClosePicker}>
+        <Pressable style={[styles.modalBackdrop, { paddingBottom: androidBottomInset }]} onPress={onClosePicker}>
           <Pressable style={styles.pickerModal} onPress={() => {}}>
             <View style={styles.pickerHeader}>
               <View>

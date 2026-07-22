@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { Feather } from "@expo/vector-icons";
 import { Linking, Modal, Pressable, ScrollView, StyleSheet, Switch, Text, TextInput, View } from "react-native";
+import { useAndroidBottomInset } from "./useAndroidBottomInset";
 
 type AchievementSummary = {
   totalXp: number;
@@ -164,6 +165,8 @@ export function MobileSettingsScreen({
   onRemoveInterest,
 }: Props) {
   const [activeTab, setActiveTab] = useState<SettingsTab>("account");
+  // Los Modal van en otra ventana: el inset de Android se aplica aquí.
+  const androidBottomInset = useAndroidBottomInset();
   const name = deriveName(displayName, sessionEmail);
   const initial = initialOf(name);
   const activeReminder = reminderOptions.find((option) => option.active) ?? null;
@@ -526,7 +529,7 @@ export function MobileSettingsScreen({
       </View>
 
       <Modal visible={pickerVisible} transparent animationType="fade" onRequestClose={onClosePicker}>
-        <Pressable style={styles.modalBackdrop} onPress={onClosePicker}>
+        <Pressable style={[styles.modalBackdrop, { paddingBottom: androidBottomInset }]} onPress={onClosePicker}>
           <Pressable style={styles.pickerModal} onPress={() => {}}>
             <View style={styles.pickerHeader}>
               <View>

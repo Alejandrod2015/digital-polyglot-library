@@ -10,6 +10,7 @@ import {
   Text,
   View,
 } from "react-native";
+import { useAndroidBottomInset } from "./useAndroidBottomInset";
 import { useIAP } from "expo-iap";
 import type { Purchase } from "expo-iap";
 import { apiFetch } from "../lib/api";
@@ -82,6 +83,8 @@ type Props = {
 };
 
 export function AppStorePaywall({ visible, onClose, apiBaseUrl, sessionToken, onPurchased }: Props) {
+  // El Modal va en otra ventana: el inset de Android se aplica aquí.
+  const androidBottomInset = useAndroidBottomInset();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -222,7 +225,9 @@ export function AppStorePaywall({ visible, onClose, apiBaseUrl, sessionToken, on
       <View style={styles.backdrop}>
         <View style={styles.sheet}>
           <View style={styles.handle} />
-          <ScrollView contentContainerStyle={styles.content}>
+          <ScrollView
+            contentContainerStyle={[styles.content, { paddingBottom: 22 + androidBottomInset }]}
+          >
             <Text style={styles.title}>Go Premium</Text>
             <Text style={styles.subtitle}>
               Unlock every story, offline access, full practice and your saved words.

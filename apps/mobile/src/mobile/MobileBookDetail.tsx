@@ -1,6 +1,7 @@
 import type { RefObject } from "react";
 import { Feather } from "@expo/vector-icons";
 import { Modal, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { useAndroidBottomInset } from "./useAndroidBottomInset";
 import { BookHomeCard, BookWebCard, type BookCardModel } from "./MobileCards";
 import { ProgressiveImage } from "./ProgressiveImage";
 
@@ -116,6 +117,8 @@ export function MobileBookDetail({
   reviewQuotes,
   aboutText,
 }: Props) {
+  // Los Modal van en otra ventana: el inset de Android se aplica aquí.
+  const androidBottomInset = useAndroidBottomInset();
   return (
     <View style={styles.shell}>
       <ScrollView
@@ -276,7 +279,7 @@ export function MobileBookDetail({
             </View>
 
             <Modal transparent visible={pickerSection !== null} animationType="fade" onRequestClose={onClosePicker}>
-              <Pressable style={styles.modalBackdrop} onPress={onClosePicker}>
+              <Pressable style={[styles.modalBackdrop, { paddingBottom: androidBottomInset }]} onPress={onClosePicker}>
                 <Pressable style={styles.pickerModal} onPress={() => {}}>
                   <View style={styles.pickerHeader}>
                     <Text style={styles.sectionTitle}>{pickerSection === "topic" ? "Topic" : "Sort"}</Text>
