@@ -359,10 +359,19 @@ async function loadPersistedExercises(
     // runtime. Modal cold-starts caused intermittent silent plays; the
     // editor pre-generates these audios from Studio so by the time a
     // user reaches the exercise, the mp3 is already on R2.
+    //
+    // Two pre-generation pipelines write the persisted mp3 to different
+    // places: the Modal/Piper script writes the `audioUrl` COLUMN, while the
+    // ElevenLabs narrator pipeline (_genPracticeClips.ts) writes
+    // `payload.audioClip.clipUrl`. The mobile client only plays `cachedUrl`,
+    // so cachedUrl must fall back to clipUrl or every ElevenLabs-rendered
+    // journey (e.g. German) plays silent even though the clip exists.
     const rawClip = (payload.audioClip ?? null) as Record<string, unknown> | null;
+    const rawClipUrl = typeof rawClip?.clipUrl === "string" ? rawClip.clipUrl : null;
+    const persistedClipUrl = row.audioUrl ?? rawClipUrl;
     const audioClip = rawClip
-      ? { ...rawClip, cachedUrl: row.audioUrl ?? null }
-      : (row.audioUrl ? { cachedUrl: row.audioUrl } : null);
+      ? { ...rawClip, cachedUrl: persistedClipUrl }
+      : (persistedClipUrl ? { cachedUrl: persistedClipUrl } : null);
     switch (row.type) {
       case "fill_blank": {
         const rawOptions = Array.isArray(payload.options) ? (payload.options as string[]) : [];
