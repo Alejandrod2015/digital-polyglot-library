@@ -7682,7 +7682,17 @@ export function MobileLibraryShell(args: {
       void (async () => {
         try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
         const voiceSafe = (voice ?? "v").replace(/[^a-z0-9]+/gi, "_");
-        const safeName = `${lang}-${voiceSafe}-${sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+        // FIX (2026-07-22): la fileUri de un clip pre-horneado se llavea por su
+        // HASH DE CONTENIDO (el basename del cachedUrl, .../sentence-clip/<hash>.mp3),
+        // NO por la palabra/oración ASCII-truncada. Antes: "ají" y "Ajá" colapsaban
+        // a "aj_" (misma fileUri → audio cruzado), y un re-render con contenido
+        // nuevo reusaba el mp3 viejo en disco (staleness). El hash es único por
+        // contenido → sin colisión y sin staleness. El path Modal (sin cachedUrl)
+        // conserva el nombre por texto.
+        const clipBasename = cachedUrl ? (cachedUrl.split("?")[0].split("/").pop() ?? "") : "";
+        const safeName = clipBasename
+          ? `clip-${clipBasename}`
+          : `${lang}-${voiceSafe}-${sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
         const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
         const info = await FileSystem.getInfoAsync(fileUri);
         if (info.exists) {
@@ -8726,8 +8736,10 @@ export function MobileLibraryShell(args: {
       try {
         await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true });
       } catch { /* exists */ }
-      const voiceSafe = (voiceId ?? "v").replace(/[^a-z0-9]+/gi, "_");
-      const safeName = `${lang}-${voiceSafe}-cached-${word.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+      // FIX: llavear por hash de contenido del clip (basename del cachedUrl),
+      // no por la palabra ASCII-truncada. Ver nota extensa en queueWarm.
+      const clipBasename = cachedUrl.split("?")[0].split("/").pop() ?? "clip.mp3";
+      const safeName = `clip-${clipBasename}`;
       const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
       const info = await FileSystem.getInfoAsync(fileUri);
       if (!info.exists) {
@@ -8980,8 +8992,10 @@ export function MobileLibraryShell(args: {
       try {
         await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true });
       } catch { /* exists */ }
-      const voiceSafe = (voiceId ?? "v").replace(/[^a-z0-9]+/gi, "_");
-      const safeName = `${lang}-${voiceSafe}-cached-${clip.sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+      // FIX: llavear por hash de contenido del clip (basename del cachedUrl),
+      // no por la oración ASCII-truncada. Ver nota extensa en queueWarm.
+      const clipBasename = cachedUrl.split("?")[0].split("/").pop() ?? "clip.mp3";
+      const safeName = `clip-${clipBasename}`;
       const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
       const info = await FileSystem.getInfoAsync(fileUri);
       if (!info.exists) {
