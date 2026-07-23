@@ -77,67 +77,93 @@ export async function GET(req: NextRequest): Promise<Response> {
     },
   });
 
-  // Enriquecer cada palabra guardada con el clip PRE-HORNEADO de su set de
-  // práctica, cuando exista (match por historia + palabra normalizada). GARANTÍA
-  // (2026-07-22): la oración que se muestra y el audio que suena salen del MISMO
-  // registro (audioClip del ejercicio), así no pueden desincronizarse. Antes la
-  // sección reconstruía la oración desde el favorito y el audio venía aparte de
-  // Modal → mudo o cruzado. Palabras sin ejercicio pre-horneado quedan igual
-  // (fallback on-demand).
-  const slugs = [
-    ...new Set(favorites.map((f) => f.storySlug).filter((s): s is string => !!s)),
-  ];
-  const clipByKey = new Map<
-    string,
-    { clipUrl: string; sentence: string; voiceId: string | null }
-  >();
-  if (slugs.length > 0) {
-    const sets = await prisma.storyPracticeSet.findMany({
-      where: { story: { slug: { in: slugs }, status: "published" } },
-      select: {
-        story: { select: { slug: true } },
-        exercises: { select: { word: true, payload: true } },
-      },
-    });
-    const norm = (w: string) => w.trim().toLowerCase();
-    for (const set of sets) {
-      const slug = set.story?.slug;
-      if (!slug) continue;
-      for (const ex of set.exercises) {
-        const ac = ((ex.payload as Record<string, unknown> | null)?.audioClip ??
-          null) as Record<string, unknown> | null;
-        const clipUrl = typeof ac?.clipUrl === "string" ? ac.clipUrl : null;
-        const sentence = typeof ac?.sentence === "string" ? ac.sentence : null;
-        if (!clipUrl || !sentence || !ex.word) continue;
-        const key = `${slug}::${norm(ex.word)}`;
-        // El primero gana (orderIndex asc no está garantizado aquí, pero un
-        // mismo (historia,palabra) mapea al mismo clip de todos modos).
-        if (!clipByKey.has(key)) {
-          clipByKey.set(key, {
-            clipUrl,
-            sentence,
-            voiceId: typeof ac?.voiceId === "string" ? ac.voiceId : null,
-          });
-        }
-      }
+  // --- Resolver historia de cada favorito, EXCLUIR huérfanos y adjuntar clip
+  // curado (2026-07-22). Un favorito guarda `storySlug` como pseudo-slug
+  // `journey-{id}` (journey stories) o como slug real (journey o standalone).
+  // Un favorito es HUÉRFANO si su historia ya no está VIVA: borrada, no
+  // publicada, o su journey archived/draft. Esos NO deben seguir generando
+  // ejercicios "fantasma" en la sección de práctica → se filtran aquí.
+  // Para los vivos (journey), adjuntamos el clip PRE-HORNEADO de su ejercicio
+  // curado (match por id + palabra); ese es el audio correcto sin runtime.
+  const JOURNEY_PREFIX = "journey-";
+  const pseudoIds: string[] = [];
+  const plainSlugs: string[] = [];
+  for (const f of favorites) {
+    if (!f.storySlug) continue;
+    if (f.storySlug.startsWith(JOURNEY_PREFIX)) {
+      pseudoIds.push(f.storySlug.slice(JOURNEY_PREFIX.length));
+    } else {
+      plainSlugs.push(f.storySlug);
     }
   }
 
-  const enriched = favorites.map((f) => {
-    if (!f.storySlug) return f;
-    const match = clipByKey.get(`${f.storySlug}::${f.word.trim().toLowerCase()}`);
-    if (!match) return f;
-    // Adjuntar el clip PRE-HORNEADO de la palabra (arregla el mudo de la sección:
-    // reproduce el clip correcto sin Modal) + voiceId para que el audio de
-    // palabra use la voz correcta. NO sobrescribimos `exampleSentence`: algunas
-    // audioClip.sentence de meaning_in_context son fragmentos y romperían el
-    // display de la oración en modo contexto. El clip es el audio del mismo
-    // (historia, palabra), así que es el audio que corresponde.
-    return {
-      ...f,
-      clipUrl: match.clipUrl,
-      voiceId: match.voiceId,
-    };
+  const norm = (w: string) => w.trim().toLowerCase();
+  type ClipMap = Map<string, { clipUrl: string; voiceId: string | null }>;
+  const collectClips = (
+    exercises: { word: string | null; payload: unknown }[]
+  ): ClipMap => {
+    const m: ClipMap = new Map();
+    for (const ex of exercises) {
+      const ac = ((ex.payload as Record<string, unknown> | null)?.audioClip ??
+        null) as Record<string, unknown> | null;
+      const clipUrl = typeof ac?.clipUrl === "string" ? ac.clipUrl : null;
+      if (!clipUrl || !ex.word) continue;
+      const k = norm(ex.word);
+      if (!m.has(k)) {
+        m.set(k, {
+          clipUrl,
+          voiceId: typeof ac?.voiceId === "string" ? ac.voiceId : null,
+        });
+      }
+    }
+    return m;
+  };
+
+  // Historia viva = JourneyStory publicada + journey no archived/draft.
+  const LIVE_JOURNEY = { status: { notIn: ["archived", "draft"] } };
+  const liveByKey = new Map<string, ClipMap>(); // key: el storySlug original
+
+  if (pseudoIds.length > 0) {
+    const rows = await prisma.journeyStory.findMany({
+      where: { id: { in: pseudoIds }, status: "published", journey: LIVE_JOURNEY },
+      select: {
+        id: true,
+        practiceSet: { select: { exercises: { select: { word: true, payload: true } } } },
+      },
+    });
+    for (const r of rows) {
+      liveByKey.set(`${JOURNEY_PREFIX}${r.id}`, collectClips(r.practiceSet?.exercises ?? []));
+    }
+  }
+  if (plainSlugs.length > 0) {
+    const jrows = await prisma.journeyStory.findMany({
+      where: { slug: { in: plainSlugs }, status: "published", journey: LIVE_JOURNEY },
+      select: {
+        slug: true,
+        practiceSet: { select: { exercises: { select: { word: true, payload: true } } } },
+      },
+    });
+    for (const r of jrows) {
+      if (r.slug) liveByKey.set(r.slug, collectClips(r.practiceSet?.exercises ?? []));
+    }
+    // Standalone: existencia = viva (no tienen practice set → sin clip curado).
+    const srows = await prisma.standaloneStory.findMany({
+      where: { slug: { in: plainSlugs } },
+      select: { slug: true },
+    });
+    for (const r of srows) {
+      if (r.slug && !liveByKey.has(r.slug)) liveByKey.set(r.slug, new Map());
+    }
+  }
+
+  const enriched = favorites.flatMap((f) => {
+    if (!f.storySlug) return [f]; // sin historia: no se puede validar → conservador, se mantiene
+    const clips = liveByKey.get(f.storySlug);
+    if (!clips) return []; // HUÉRFANO (historia borrada / muerta / archived) → EXCLUIR
+    const clip = clips.get(norm(f.word));
+    // Adjuntar el clip curado de la palabra cuando exista (mismo idioma/voz que
+    // el narrador; audio correcto sin Modal). No tocamos `exampleSentence`.
+    return [clip ? { ...f, clipUrl: clip.clipUrl, voiceId: clip.voiceId } : f];
   });
 
   return NextResponse.json(enriched);
