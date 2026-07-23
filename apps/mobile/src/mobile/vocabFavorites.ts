@@ -15,6 +15,11 @@ export type MobileFavoriteItem = {
   nextReviewAt?: string | null;
   lastReviewedAt?: string | null;
   streak?: number | null;
+  /** Clip de práctica PRE-HORNEADO para esta palabra, adjuntado por
+   *  /api/mobile/favorites cuando la palabra tiene ejercicio en el set de su
+   *  historia. Cuando existe, `exampleSentence` ya viene del mismo registro que
+   *  el clip → la sección reproduce el audio correcto sin Modal. */
+  clipUrl?: string | null;
   /** Voice the source story was narrated with. Populated by the
    *  /api/mobile/practice/due endpoint for Studio journeys; catalog
    *  stories leave this null so the TTS endpoint falls back to the

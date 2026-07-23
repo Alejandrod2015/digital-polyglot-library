@@ -1254,6 +1254,9 @@ function buildPracticeFavorites(items: MobileFavoriteItem[]): PracticeFavoriteIt
       nextReviewAt: item.nextReviewAt ?? null,
       practiceSource: "user_saved" as const,
       voiceId: item.voiceId ?? null,
+      // Clip pre-horneado (server-joined). Cuando existe, buildAudioClip lo pone
+      // en cachedUrl → la sección reproduce el audio correcto sin Modal.
+      clipUrl: item.clipUrl ?? null,
     }));
 }
 

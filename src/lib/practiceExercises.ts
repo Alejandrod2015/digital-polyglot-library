@@ -21,6 +21,11 @@ export type PracticeFavoriteItem = {
   practiceSource?: "curriculum" | "user_saved" | "both" | null;
   /** Voice the source story was narrated with, when known. */
   voiceId?: string | null;
+  /** Pre-baked practice sentence-clip URL for this word, joined server-side from
+   *  the story's practice set (match por historia+palabra). Cuando existe, la
+   *  oración de este favorito ya viene del MISMO registro que el clip, así que
+   *  mostrar `exampleSentence` y reproducir `clipUrl` no pueden desincronizarse. */
+  clipUrl?: string | null;
   /** Pre-computed exact audio ranges from the source story's aeneas
    *  word timings. When non-null, the mobile player skips fuzzy segment
    *  matching and plays the exact range from the story mp3. Null when
@@ -580,6 +585,11 @@ function buildAudioClip(item: PracticeFavoriteItem, sentence: string): PracticeA
     targetWord: normalizeText(item.word) || null,
     segmentId: getSegmentIdFromSourcePath(item.sourcePath),
     voiceId: item.voiceId ?? null,
+    // Clip pre-horneado (server-joined). Cuando existe, el mobile lo reproduce
+    // directo (sin Modal) y siempre corresponde a `sentence`. Ver garantía en
+    // el tipo PracticeFavoriteItem.clipUrl.
+    clipUrl: item.clipUrl ?? null,
+    cachedUrl: item.clipUrl ?? null,
     // Forward server-side pre-computed timings so the mobile player
     // can skip fuzzy segment matching. Null on items where the source
     // story has no aeneas alignment.

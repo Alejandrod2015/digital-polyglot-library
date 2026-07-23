@@ -77,7 +77,70 @@ export async function GET(req: NextRequest): Promise<Response> {
     },
   });
 
-  return NextResponse.json(favorites);
+  // Enriquecer cada palabra guardada con el clip PRE-HORNEADO de su set de
+  // práctica, cuando exista (match por historia + palabra normalizada). GARANTÍA
+  // (2026-07-22): la oración que se muestra y el audio que suena salen del MISMO
+  // registro (audioClip del ejercicio), así no pueden desincronizarse. Antes la
+  // sección reconstruía la oración desde el favorito y el audio venía aparte de
+  // Modal → mudo o cruzado. Palabras sin ejercicio pre-horneado quedan igual
+  // (fallback on-demand).
+  const slugs = [
+    ...new Set(favorites.map((f) => f.storySlug).filter((s): s is string => !!s)),
+  ];
+  const clipByKey = new Map<
+    string,
+    { clipUrl: string; sentence: string; voiceId: string | null }
+  >();
+  if (slugs.length > 0) {
+    const sets = await prisma.storyPracticeSet.findMany({
+      where: { story: { slug: { in: slugs }, status: "published" } },
+      select: {
+        story: { select: { slug: true } },
+        exercises: { select: { word: true, payload: true } },
+      },
+    });
+    const norm = (w: string) => w.trim().toLowerCase();
+    for (const set of sets) {
+      const slug = set.story?.slug;
+      if (!slug) continue;
+      for (const ex of set.exercises) {
+        const ac = ((ex.payload as Record<string, unknown> | null)?.audioClip ??
+          null) as Record<string, unknown> | null;
+        const clipUrl = typeof ac?.clipUrl === "string" ? ac.clipUrl : null;
+        const sentence = typeof ac?.sentence === "string" ? ac.sentence : null;
+        if (!clipUrl || !sentence || !ex.word) continue;
+        const key = `${slug}::${norm(ex.word)}`;
+        // El primero gana (orderIndex asc no está garantizado aquí, pero un
+        // mismo (historia,palabra) mapea al mismo clip de todos modos).
+        if (!clipByKey.has(key)) {
+          clipByKey.set(key, {
+            clipUrl,
+            sentence,
+            voiceId: typeof ac?.voiceId === "string" ? ac.voiceId : null,
+          });
+        }
+      }
+    }
+  }
+
+  const enriched = favorites.map((f) => {
+    if (!f.storySlug) return f;
+    const match = clipByKey.get(`${f.storySlug}::${f.word.trim().toLowerCase()}`);
+    if (!match) return f;
+    // Adjuntar el clip PRE-HORNEADO de la palabra (arregla el mudo de la sección:
+    // reproduce el clip correcto sin Modal) + voiceId para que el audio de
+    // palabra use la voz correcta. NO sobrescribimos `exampleSentence`: algunas
+    // audioClip.sentence de meaning_in_context son fragmentos y romperían el
+    // display de la oración en modo contexto. El clip es el audio del mismo
+    // (historia, palabra), así que es el audio que corresponde.
+    return {
+      ...f,
+      clipUrl: match.clipUrl,
+      voiceId: match.voiceId,
+    };
+  });
+
+  return NextResponse.json(enriched);
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
