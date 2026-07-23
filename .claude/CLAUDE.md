@@ -167,6 +167,19 @@ that ALWAYS runs before any Bash command. It does two things:
    (Regla puesta el 2026-07-09 tras sugerir regenerar una historia entera
    para probar el fix de "B244".)
 
+6e. **QA-gate de entonación (BLOQUEANTE, 2026-07-23).** TODO script que
+   sintetice ElevenLabs TTS de práctica DEBE incluir el gate F0
+   (referencia a `scripts/_f0gate.py` / `_f0gate`), que mide el tono FINAL de
+   cada render y RE-TIRA hasta que la palabra/oración quede como AFIRMACIÓN
+   (no uptalk / "suena a pregunta") con la entonación correcta. El guard 6e en
+   `pre-bash-guard.sh` inspecciona el ARCHIVO `.ts` invocado y BLOQUEA su
+   ejecución si contiene la URL `/v1/text-to-speech` pero NO referencia
+   `_f0gate`. WHY: el 2026-07-23 se desperdició un lote de clips de palabra
+   generados sin gate (salían con uptalk); la solución ya estaba en el proyecto
+   (el F0 gate del pipeline de oraciones) y debí aplicarla ANTES de generar la
+   primera. Los generadores canónicos (`_genPracticeClips.ts`, `_genWordClips.ts`)
+   ya lo incluyen. NUNCA generar audio de práctica sin el gate F0.
+
 7. **Approved-voices gate (BLOCKING — no bypass)**. Production audio
    (story narration, practice clips, word audio) may ONLY be rendered
    with an ElevenLabs voiceId on the allowlist `src/lib/approvedVoices.ts`.

@@ -401,6 +401,24 @@ if printf '%s' "$COMMAND" | grep -qE '\b(tsx|ts-node|node|npx)\b' \
     fi
 fi
 
+# 6e. QA-gate lock for practice-audio generation (2026-07-23). Todo script que
+#     sintetice ElevenLabs TTS (contiene la URL /v1/text-to-speech en su fuente)
+#     DEBE incluir el gate de entonacion F0 (referencia a `_f0gate`): mide el
+#     tono FINAL de cada render y RE-TIRA hasta que quede como AFIRMACION (no
+#     uptalk / "suena a pregunta") y con la entonacion correcta. Sin ese gate se
+#     generan clips mal entonados y se DESPERDICIAN creditos regenerando.
+#     (Regla puesta tras desperdiciar un lote de clips de palabra sin gate.)
+#     Se inspecciona el ARCHIVO .ts invocado, no solo el comando.
+if printf '%s' "$COMMAND" | grep -qE '\b(tsx|ts-node|node|npx)\b'; then
+    for _ts in $(printf '%s' "$COMMAND" | grep -oE '[A-Za-z0-9_./-]+\.ts'); do
+        [ -f "$_ts" ] || continue
+        if grep -qE 'api\.elevenlabs\.io/v1/text-to-speech' "$_ts" \
+           && ! grep -qE '_f0gate' "$_ts"; then
+            block "Generacion de audio SIN gate de QA de entonacion. El script $_ts sintetiza ElevenLabs TTS pero no referencia el gate F0 (_f0gate), que re-tira hasta que quede como afirmacion (no uptalk / 'suena a pregunta'). Sin el se generan clips mal entonados y se desperdician creditos regenerando. Anade el gate F0 al render (como scripts/_genPracticeClips.ts / scripts/_genWordClips.ts) ANTES de generar una sola linea."
+        fi
+    done
+fi
+
 # 7. Hard-block: rm -rf on paths that look like the repo root or home.
 if printf '%s' "$COMMAND" | grep -qE '\brm[[:space:]]+-[rRfFv]+[[:space:]]+(/Users/[^/[:space:]]+/?[[:space:]]*$|~[[:space:]]*$|\$HOME[[:space:]]*$|\.\.[[:space:]]*$|/[[:space:]]*$|\*[[:space:]]*$)'; then
     block "rm -rf on a path that looks like \$HOME, /, or .. Never do this."
