@@ -399,7 +399,14 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
 }
 
   return (
-    <div className="relative max-w-5xl mx-auto pt-1 px-8 pb-[8rem] text-foreground">
+    <div
+      className="relative max-w-5xl mx-auto pt-1 px-8 text-foreground"
+      // El padding inferior reserva el alto REAL del player fijo (que el
+      // Player mide y publica en `--story-content-pb`) + un espacio de lectura,
+      // para que la última línea nunca quede tapada. Fallback 8rem si no hay
+      // player (historia sin audio) o antes de que el Player mida.
+      style={{ paddingBottom: "var(--story-content-pb, 8rem)" }}
+    >
       <ScrollToTopOnPathChange />
       {/* Botón de guardar en la biblioteca.
        *  OCULTO en historias de journey. El journey YA es la

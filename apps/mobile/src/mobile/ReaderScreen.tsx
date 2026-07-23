@@ -2007,7 +2007,16 @@ export function ReaderScreen(args: {
       <ScrollView
         ref={scrollViewRef}
         style={styles.scrollView}
-        contentContainerStyle={[styles.container, styles.containerGrow]}
+        // El paddingBottom debe reservar el alto REAL del player sticky (que se
+        // mide en playerDockHeight) + un espacio de lectura, para que la última
+        // línea de la historia nunca quede tapada por el player. Antes era un
+        // 172 fijo que se quedaba corto cuando el player crece (waveform +
+        // controles + fila de velocidad).
+        contentContainerStyle={[
+          styles.container,
+          styles.containerGrow,
+          { paddingBottom: playerDockHeight + 24 },
+        ]}
         showsVerticalScrollIndicator={false}
         alwaysBounceVertical
         decelerationRate="normal"

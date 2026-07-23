@@ -156,6 +156,29 @@ export default function Player({
   const router = useRouter();
   const searchParams = useSearchParams();
   const audioRef = useRef<HTMLAudioElement>(null);
+  // Publica el alto REAL de este player (fijo al fondo) en una CSS var para que
+  // el contenido de la historia reserve ese espacio + un gap de lectura y su
+  // última línea nunca quede tapada. Se recalcula si el player cambia de alto
+  // (p. ej. al abrir el panel de velocidad o al cambiar el viewport) y se
+  // limpia al desmontar.
+  const dockMeasureRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = dockMeasureRef.current;
+    if (!el || typeof ResizeObserver === "undefined") return;
+    const apply = () => {
+      document.documentElement.style.setProperty(
+        "--story-content-pb",
+        `${Math.round(el.getBoundingClientRect().height) + 24}px`
+      );
+    };
+    apply();
+    const ro = new ResizeObserver(apply);
+    ro.observe(el);
+    return () => {
+      ro.disconnect();
+      document.documentElement.style.removeProperty("--story-content-pb");
+    };
+  }, []);
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
   const [showSpeedMenu, setShowSpeedMenu] = useState(false);
@@ -674,7 +697,10 @@ export default function Player({
   }
 
   return (
-    <div className="relative w-full rounded-t-xl border-t border-[var(--player-border-top)] bg-[var(--bg-player)] px-4 py-3 text-[var(--foreground)] shadow-2xl backdrop-blur md:ml-64 md:w-[calc(100%-16rem)]">
+    <div
+      ref={dockMeasureRef}
+      className="relative w-full rounded-t-xl border-t border-[var(--player-border-top)] bg-[var(--bg-player)] px-4 py-3 text-[var(--foreground)] shadow-2xl backdrop-blur md:ml-64 md:w-[calc(100%-16rem)]"
+    >
       <audio ref={audioRef} src={resolvedSrc} preload="metadata" />
 
       {/* waveform de progreso */}
