@@ -131,6 +131,13 @@ export type PracticeAudioClip = {
    *  Scribe timestamps). When set, the web player plays it directly and
    *  skips fragment matching / master slicing. */
   clipUrl?: string | null;
+  /** Clip PRE-HORNEADO de la PALABRA objetivo (no la oración), en la voz del
+   *  narrador. Se usa en modo `meaning`, donde debe sonar la palabra, no la
+   *  oración (2026-07-23). Generado por scripts/_genWordClips.ts con gate F0.
+   *  Cuando falta, el mobile cae a word-tts (la palabra, en runtime). */
+  wordClipUrl?: string | null;
+  /** Voz con la que se generó `wordClipUrl` (narrador del journey). */
+  wordVoiceId?: string | null;
 };
 
 export type PracticeExercise =

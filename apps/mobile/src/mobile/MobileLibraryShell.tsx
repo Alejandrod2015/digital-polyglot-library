@@ -7748,7 +7748,10 @@ export function MobileLibraryShell(args: {
       const cached = clip?.cachedUrl ?? null;
       if (ex.mode === "meaning") {
         const word = ex.favorite.word?.trim();
-        if (word) queueWarm(word, lang, voice, cached);
+        // P1: en meaning suena la PALABRA → precargar el clip de palabra
+        // pre-horneado (wordClipUrl), NO el cachedUrl (clip de oración). Sin
+        // wordClipUrl, queueWarm cae a word-tts (la palabra).
+        if (word) queueWarm(word, lang, voice, clip?.wordClipUrl ?? null);
         continue;
       }
       if (ex.mode === "context") {
@@ -8734,22 +8737,25 @@ export function MobileLibraryShell(args: {
     // Prefer the editor-prebaked R2 mp3 when available; it eliminates
     // Modal cold-start failures (decisión 2026-05-18). Studio's
     // PracticeSetEditor regenerates these from the editor surface.
-    const cachedUrl = currentPracticeExercise.audioClip?.cachedUrl ?? null;
-    if (!uri && cachedUrl) {
+    // P1 (2026-07-23): en modo meaning suena la PALABRA. Usa el clip de palabra
+    // PRE-HORNEADO (audioClip.wordClipUrl); NUNCA el cachedUrl (que es el clip de
+    // la ORACIÓN — reproducirlo aquí hacía sonar la oración entera en vez de la
+    // palabra). Si no hay wordClipUrl, cae a word-tts (la palabra) más abajo.
+    const wordUrl = currentPracticeExercise.audioClip?.wordClipUrl ?? null;
+    if (!uri && wordUrl) {
       try {
         await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true });
       } catch { /* exists */ }
-      // FIX: llavear por hash de contenido del clip (basename del cachedUrl),
-      // no por la palabra ASCII-truncada. Ver nota extensa en queueWarm.
-      const clipBasename = cachedUrl.split("?")[0].split("/").pop() ?? "clip.mp3";
+      // Llavear por hash de contenido (basename del wordClipUrl).
+      const clipBasename = wordUrl.split("?")[0].split("/").pop() ?? "clip.mp3";
       const safeName = `clip-${clipBasename}`;
       const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
       const info = await FileSystem.getInfoAsync(fileUri);
       if (!info.exists) {
         try {
-          await FileSystem.downloadAsync(cachedUrl, fileUri);
+          await FileSystem.downloadAsync(wordUrl, fileUri);
         } catch (err) {
-          console.warn("[mobile practice] cached download failed, will try Modal fallback", err);
+          console.warn("[mobile practice] word clip download failed, will try word-tts fallback", err);
         }
       }
       const infoAfter = await FileSystem.getInfoAsync(fileUri);
