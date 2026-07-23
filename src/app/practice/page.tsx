@@ -1834,7 +1834,12 @@ export default function PracticePage() {
   // as the cleanest. The sentence button still plays the authentic speaker, so
   // only the isolated word standardises on this voice. Tapping again stops it.
   const playWordTts = useCallback(
-    async (clipOwnerId: string, word: string, clip: PracticeAudioClip | null | undefined) => {
+    async (
+      clipOwnerId: string,
+      word: string,
+      clip: PracticeAudioClip | null | undefined,
+      languageOverride?: string | null
+    ) => {
       if (!word || typeof window === "undefined") return;
       // RULE: the isolated word is spoken in the STORY'S practice voice (country
       // accent), so the R2 cache key matches the pre-generated clip. In JOURNEY
@@ -1856,7 +1861,10 @@ export default function PracticePage() {
         setWordClipId(null);
         return;
       }
-      const wordLanguage = clip?.language ?? undefined;
+      // El idioma viene del clip (ejercicios) o del override (match, que no
+      // pasa clip). Sin él, word-tts asume español y pronuncia palabras
+      // alemanas/italianas con fonética española.
+      const wordLanguage = clip?.language ?? languageOverride ?? undefined;
       const cacheKey = `${voiceId}|${word.toLowerCase()}|${wordLanguage ?? "es"}`;
       let url = wordUrlByKey[cacheKey];
       if (!url) {
@@ -3283,7 +3291,7 @@ export default function PracticePage() {
                                 type="button"
                                 onClick={(e) => {
                                   e.stopPropagation();
-                                  void playWordTts(`${currentExercise.id}:m:${pair.word}`, pair.word, null);
+                                  void playWordTts(`${currentExercise.id}:m:${pair.word}`, pair.word, null, pair.language);
                                 }}
                                 aria-label="Listen to the word"
                                 className="absolute right-1.5 top-1.5 grid h-7 w-7 place-items-center rounded-full border border-current/30 bg-white/10 text-current transition hover:bg-white/20"

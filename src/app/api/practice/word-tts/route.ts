@@ -39,6 +39,19 @@ const WORD_LANGUAGE_CODES: Record<string, string> = {
 };
 const DEFAULT_WORD_LANGUAGE = "es";
 
+// El cliente (mobile + web) manda una voz FALLBACK fija cuando la palabra
+// guardada no trae voz propia: "Narrator CO - Hernando" (español colombiano).
+// Para palabras de OTRO idioma eso es incorrecto (voz española diciendo alemán)
+// y en la práctica ni sonaba. Cuando llega ESA voz genérica y el idioma tiene
+// una voz aprobada propia, la sustituimos por la del idioma. Las voces con voz
+// propia (ejercicios) no se tocan. (2026-07-23)
+const CLIENT_FALLBACK_VOICE = "yHD4CsKkghm19ToGLJEC";
+const WORD_LANGUAGE_DEFAULT_VOICE: Record<string, string> = {
+  de: "Ww7Sq9tx9CCOiNOwWgsx", // narrador Expat/Friends DE (aprobado)
+  it: "gfKKsLN1k0oYYN9n2dXX", // Violetta IT (aprobado)
+  // es se queda con Hernando/otras; fr/pt no tienen voz aprobada aún.
+};
+
 type Body = {
   word?: string;
   voiceId?: string;
@@ -135,7 +148,16 @@ export async function POST(request: NextRequest) {
   }
 
   const langCode = WORD_LANGUAGE_CODES[(body.language ?? "").toLowerCase()] ?? DEFAULT_WORD_LANGUAGE;
-  const key = cacheKey(elVoiceId, word, langCode);
+
+  // Si llega la voz fallback genérica (español CO) para una palabra de otro
+  // idioma con voz aprobada propia, usar la del idioma. Evita "voz española
+  // diciendo alemán" y el silencio que producía en la práctica.
+  const renderVoiceId =
+    elVoiceId === CLIENT_FALLBACK_VOICE && WORD_LANGUAGE_DEFAULT_VOICE[langCode]
+      ? WORD_LANGUAGE_DEFAULT_VOICE[langCode]
+      : elVoiceId;
+
+  const key = cacheKey(renderVoiceId, word, langCode);
   const publicUrl = getPublicObjectUrl(key);
   if (publicUrl) {
     try {
@@ -152,7 +174,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const ttsRes = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${elVoiceId}`, {
+    const ttsRes = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${renderVoiceId}`, {
       method: "POST",
       headers: {
         "xi-api-key": apiKey,
