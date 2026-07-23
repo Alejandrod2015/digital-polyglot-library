@@ -829,11 +829,13 @@ type PracticeMatchExercise = {
   pairs: Array<{
     word: string;
     answer: string;
-    // Metadatos para sintetizar el audio de la palabra (mismo path que
-    // meaning vía /api/practice/sentence-tts). Opcionales: si faltan se
-    // cae al idioma del journey y voz por defecto del endpoint.
+    // Audio de la palabra individual. `wordClipUrl` = clip PRE-HORNEADO
+    // (ElevenLabs, gate F0): cuando existe se reproduce directo, sin runtime.
+    // Sin él cae a /api/practice/word-tts (ElevenLabs), NUNCA Modal.
     language?: string | null;
     voiceId?: string | null;
+    wordClipUrl?: string | null;
+    wordVoiceId?: string | null;
   }>;
 };
 
@@ -1257,6 +1259,9 @@ function buildPracticeFavorites(items: MobileFavoriteItem[]): PracticeFavoriteIt
       // Clip pre-horneado (server-joined). Cuando existe, buildAudioClip lo pone
       // en cachedUrl → la sección reproduce el audio correcto sin Modal.
       clipUrl: item.clipUrl ?? null,
+      // Clip PRE-HORNEADO de la PALABRA (meaning + match): ElevenLabs sin runtime.
+      wordClipUrl: item.wordClipUrl ?? null,
+      wordVoiceId: item.wordVoiceId ?? null,
     }));
 }
 
@@ -1345,6 +1350,8 @@ function mapSharedExerciseToMobile(exercise: ReturnType<typeof buildPracticeSess
           answer: pair.answer,
           language: pair.language ?? null,
           voiceId: pair.voiceId ?? null,
+          wordClipUrl: pair.wordClipUrl ?? null,
+          wordVoiceId: pair.wordVoiceId ?? null,
         })),
       };
   }
@@ -7305,12 +7312,23 @@ export function MobileLibraryShell(args: {
   // seg porque son 4 pares (8 toques: palabra+definición × 4) más
   // lectura, y necesita más aire que el multiple-choice. Misma duración
   // que la webapp (timerDurationForExercise: match_meaning ? 20 : 15).
+  //
+  // OJO (bug 2026-07-23): `startPractice`/restart ponen 15 y arrancan el
+  // countdown 3-2-1. Este effect DEBE re-afirmar la duración correcta en el
+  // instante en que el ejercicio se vuelve visible (countdown termina), o el
+  // 15 inicial se filtra a un primer ejercicio match (se veía 15s en un
+  // match). Por eso: (a) se gatea en `!practiceCountdownActive` y depende de
+  // él, así re-corre al terminar el countdown; (b) depende del `kind` del
+  // ejercicio actual, así re-corre si la lista se reconstruye y cambia el
+  // tipo del slot actual.
   useEffect(() => {
     if (!activePracticeMode) return;
+    if (practiceCountdownActive) return;
     const current = practiceExercises[practiceIndex];
-    const seconds = current?.kind === "match" ? 20 : 15;
+    if (!current) return;
+    const seconds = current.kind === "match" ? 20 : 15;
     setPracticeTimerRemaining(seconds);
-  }, [practiceIndex, activePracticeMode, practiceExercises]);
+  }, [practiceIndex, activePracticeMode, practiceCountdownActive, practiceExercises]);
 
   // (2) Tick del timer. Solo decrementa cuando hay ejercicio activo,
   // no en countdown, no pausado, no revelado, no completo, y el
@@ -7748,10 +7766,13 @@ export function MobileLibraryShell(args: {
       const cached = clip?.cachedUrl ?? null;
       if (ex.mode === "meaning") {
         const word = ex.favorite.word?.trim();
-        // P1: en meaning suena la PALABRA → precargar el clip de palabra
-        // pre-horneado (wordClipUrl), NO el cachedUrl (clip de oración). Sin
-        // wordClipUrl, queueWarm cae a word-tts (la palabra).
-        if (word) queueWarm(word, lang, voice, clip?.wordClipUrl ?? null);
+        const wordClip = clip?.wordClipUrl ?? null;
+        // P1: en meaning suena la PALABRA. Solo pre-cargamos si hay clip de
+        // palabra PRE-HORNEADO (ElevenLabs). Si NO lo hay, NO warmeamos: el
+        // fallback de queueWarm es Modal Piper (motor descartado por calidad),
+        // y warmearlo metía voz Piper en meaning (bug 2026-07-23). Sin warm, el
+        // botón de play cae a /api/practice/word-tts (ElevenLabs) on-demand.
+        if (word && wordClip) queueWarm(word, lang, voice, wordClip);
         continue;
       }
       if (ex.mode === "context") {
@@ -8864,6 +8885,7 @@ export function MobileLibraryShell(args: {
     word: string;
     language?: string | null;
     voiceId?: string | null;
+    wordClipUrl?: string | null;
   }) {
     const word = pair.word?.trim();
     if (!word) return;
@@ -8887,8 +8909,31 @@ export function MobileLibraryShell(args: {
 
     const lang = pair.language ?? activeJourneyLanguage ?? "italian";
     const voiceId = pair.voiceId ?? undefined;
-    const cacheKey = `${lang}::${voiceId ?? ""}::${word}`;
+    // 1) Clip PRE-HORNEADO de la palabra (ElevenLabs, gate F0). Cuando existe se
+    //    reproduce directo: sin runtime, sin depender del endpoint. Es el camino
+    //    correcto (mismo que meaning). Cache key por hash del contenido.
+    const wordClipUrl = pair.wordClipUrl ?? null;
+    const cacheKey = wordClipUrl
+      ? `matchclip::${wordClipUrl}`
+      : `${lang}::${voiceId ?? ""}::${word}`;
     let uri: string | undefined = practiceAudioFilesRef.current.get(cacheKey);
+    if (!uri && wordClipUrl) {
+      setMatchAudioLoadingWord(word);
+      try {
+        try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
+        const base = wordClipUrl.split("/").pop()?.split("?")[0] ?? `${word}.mp3`;
+        const fileUri = `${PRACTICE_AUDIO_DIR}clip-${base}`;
+        const info = await FileSystem.getInfoAsync(fileUri);
+        if (!info.exists) await FileSystem.downloadAsync(wordClipUrl, fileUri);
+        if (!stillCurrent()) { setMatchAudioLoadingWord((curr) => (curr === word ? null : curr)); return; }
+        practiceAudioFilesRef.current.set(cacheKey, fileUri);
+        uri = fileUri;
+      } catch (err) {
+        console.error("[mobile practice] match word pre-baked clip failed, falling back to word-tts", err);
+        // Cae a word-tts abajo.
+      }
+    }
+    // 2) Fallback: word-tts (ElevenLabs en runtime). NUNCA Modal.
     if (!uri) {
       setMatchAudioLoadingWord(word);
       try {

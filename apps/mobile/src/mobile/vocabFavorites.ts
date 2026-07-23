@@ -20,6 +20,11 @@ export type MobileFavoriteItem = {
    *  historia. Cuando existe, `exampleSentence` ya viene del mismo registro que
    *  el clip → la sección reproduce el audio correcto sin Modal. */
   clipUrl?: string | null;
+  /** Clip PRE-HORNEADO de la PALABRA (no la oración), ElevenLabs + gate F0,
+   *  adjuntado por /api/mobile/favorites. Alimenta meaning y match sin runtime
+   *  ni Modal. Null cuando la palabra no tiene ejercicio meaning con clip. */
+  wordClipUrl?: string | null;
+  wordVoiceId?: string | null;
   /** Voice the source story was narrated with. Populated by the
    *  /api/mobile/practice/due endpoint for Studio journeys; catalog
    *  stories leave this null so the TTS endpoint falls back to the

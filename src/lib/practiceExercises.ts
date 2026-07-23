@@ -26,6 +26,11 @@ export type PracticeFavoriteItem = {
    *  oración de este favorito ya viene del MISMO registro que el clip, así que
    *  mostrar `exampleSentence` y reproducir `clipUrl` no pueden desincronizarse. */
   clipUrl?: string | null;
+  /** Clip PRE-HORNEADO de la PALABRA (no la oración), ElevenLabs + gate F0.
+   *  Joined server-side desde el ejercicio meaning de la historia. Cuando
+   *  existe, meaning y match lo reproducen directo (sin runtime, sin Modal). */
+  wordClipUrl?: string | null;
+  wordVoiceId?: string | null;
   /** Pre-computed exact audio ranges from the source story's aeneas
    *  word timings. When non-null, the mobile player skips fuzzy segment
    *  matching and plays the exact range from the story mp3. Null when
@@ -97,10 +102,14 @@ export type MatchMeaningExercise = {
     word: string;
     answer: string;
     options: string[];
-    // Metadatos de audio de la palabra, para reproducir el término
-    // individual (mobile lo sintetiza vía /api/practice/sentence-tts).
+    // Metadatos de audio de la palabra individual. `wordClipUrl` es el clip
+    // PRE-HORNEADO de la palabra (ElevenLabs, gate F0); cuando existe el mobile
+    // lo reproduce directo, sin runtime. Sin él cae a word-tts (ElevenLabs) con
+    // `voiceId`. NUNCA Modal (2026-07-23).
     language?: string | null;
     voiceId?: string | null;
+    wordClipUrl?: string | null;
+    wordVoiceId?: string | null;
   }>;
 };
 
@@ -597,6 +606,10 @@ function buildAudioClip(item: PracticeFavoriteItem, sentence: string): PracticeA
     // el tipo PracticeFavoriteItem.clipUrl.
     clipUrl: item.clipUrl ?? null,
     cachedUrl: item.clipUrl ?? null,
+    // Clip PRE-HORNEADO de la PALABRA (modo meaning): ElevenLabs + gate F0. El
+    // mobile lo reproduce directo; sin él cae a word-tts (ElevenLabs), NUNCA Modal.
+    wordClipUrl: item.wordClipUrl ?? null,
+    wordVoiceId: item.wordVoiceId ?? null,
     // Forward server-side pre-computed timings so the mobile player
     // can skip fuzzy segment matching. Null on items where the source
     // story has no aeneas alignment.
@@ -717,6 +730,8 @@ function createMatchMeaningExercise(items: PracticeFavoriteItem[]): MatchMeaning
     options: meanings,
     language: item.language ?? null,
     voiceId: item.voiceId ?? null,
+    wordClipUrl: item.wordClipUrl ?? null,
+    wordVoiceId: item.wordVoiceId ?? null,
   }));
   return {
     id: `match_meaning:${selected.map((item) => normalizeKey(item.word)).join("|")}`,

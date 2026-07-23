@@ -98,7 +98,15 @@ export async function GET(req: NextRequest): Promise<Response> {
   }
 
   const norm = (w: string) => w.trim().toLowerCase();
-  type ClipMap = Map<string, { clipUrl: string; voiceId: string | null }>;
+  type ClipMap = Map<
+    string,
+    {
+      clipUrl: string | null;
+      voiceId: string | null;
+      wordClipUrl: string | null;
+      wordVoiceId: string | null;
+    }
+  >;
   const collectClips = (
     exercises: { word: string | null; payload: unknown }[]
   ): ClipMap => {
@@ -107,12 +115,17 @@ export async function GET(req: NextRequest): Promise<Response> {
       const ac = ((ex.payload as Record<string, unknown> | null)?.audioClip ??
         null) as Record<string, unknown> | null;
       const clipUrl = typeof ac?.clipUrl === "string" ? ac.clipUrl : null;
-      if (!clipUrl || !ex.word) continue;
+      const wordClipUrl = typeof ac?.wordClipUrl === "string" ? ac.wordClipUrl : null;
+      // Guardar la entrada si hay clip de oración O de palabra: el meaning/match
+      // pre-horneado (wordClipUrl) debe llegar aunque no exista clip de oración.
+      if ((!clipUrl && !wordClipUrl) || !ex.word) continue;
       const k = norm(ex.word);
       if (!m.has(k)) {
         m.set(k, {
           clipUrl,
           voiceId: typeof ac?.voiceId === "string" ? ac.voiceId : null,
+          wordClipUrl,
+          wordVoiceId: typeof ac?.wordVoiceId === "string" ? ac.wordVoiceId : null,
         });
       }
     }
@@ -163,7 +176,17 @@ export async function GET(req: NextRequest): Promise<Response> {
     const clip = clips.get(norm(f.word));
     // Adjuntar el clip curado de la palabra cuando exista (mismo idioma/voz que
     // el narrador; audio correcto sin Modal). No tocamos `exampleSentence`.
-    return [clip ? { ...f, clipUrl: clip.clipUrl, voiceId: clip.voiceId } : f];
+    // `wordClipUrl` (palabra pre-horneada) alimenta meaning y match sin runtime.
+    return [
+      clip
+        ? {
+            ...f,
+            ...(clip.clipUrl ? { clipUrl: clip.clipUrl, voiceId: clip.voiceId } : {}),
+            wordClipUrl: clip.wordClipUrl,
+            wordVoiceId: clip.wordVoiceId,
+          }
+        : f,
+    ];
   });
 
   return NextResponse.json(enriched);
