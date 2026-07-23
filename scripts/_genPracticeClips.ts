@@ -75,12 +75,31 @@ const LANGS: Record<string, { prev: string; next: string; prevQ: string; nextQ: 
     wh: /(\bwer\b|\bwen\b|\bwem\b|\bwessen\b|\bwas\b|\bwie\b|\bwieso\b|\bweshalb\b|\bwarum\b|\bwann\b|\bwo\b|\bwohin\b|\bwoher\b|\bwelch)/i,
   },
 };
+// El idioma del framing (previous_text/next_text), del STT y de los gates se
+// DERIVA de la historia (`journey.language`) en `resolveRenderLang`, NO de un
+// flag suelto. `--lang` queda solo como override explícito y, si contradice el
+// idioma real de la historia, ABORTA. WHY (2026-07-22): varios clips alemanes
+// salieron con acento gringo porque se rendearon sin `--lang=de` → default
+// "es" → previous_text/next_text en español alrededor de una frase alemana, y
+// encima el STT corría en español y "validaba" el audio malo. Derivarlo de la
+// DB hace ese error IMPOSIBLE. tts()/gates leen `LANG` en tiempo de llamada.
 const langArg = process.argv.find((a) => a.startsWith("--lang="));
-const LANG = LANGS[langArg ? langArg.slice(7) : "es"] ?? LANGS.es;
-const PREV_TEXT = LANG.prev;
-const NEXT_TEXT = LANG.next;
-const PREV_TEXT_Q = LANG.prevQ;
-const NEXT_TEXT_Q = LANG.nextQ;
+const JOURNEY_LANG_TO_KEY: Record<string, string> = {
+  spanish: "es", german: "de", italian: "it", french: "fr", portuguese: "pt",
+};
+let LANG = LANGS[langArg ? langArg.slice(7) : "es"] ?? LANGS.es;
+/** Fija LANG desde el idioma de la historia; aborta si no hay framing para ese
+ *  idioma o si un `--lang` explícito lo contradice. Llamar SIEMPRE antes de
+ *  renderizar (lo hace main tras cargar la historia). */
+function resolveRenderLang(journeyLanguage: string | null | undefined): void {
+  const norm = (journeyLanguage ?? "").trim().toLowerCase();
+  const key = JOURNEY_LANG_TO_KEY[norm];
+  if (!key) throw new Error(`[lang-guard] journey.language "${journeyLanguage}" no mapea a idioma soportado (${Object.keys(JOURNEY_LANG_TO_KEY).join(", ")})`);
+  if (!LANGS[key]) throw new Error(`[lang-guard] falta framing/STT para "${key}" en LANGS; agrégalo antes de rendear ${norm}`);
+  const flag = langArg ? langArg.slice(7) : null;
+  if (flag && flag !== key) throw new Error(`[lang-guard] --lang=${flag} contradice el idioma real de la historia (${norm} → ${key}). Quita el flag o corrígelo.`);
+  LANG = LANGS[key];
+}
 // Final intonation is what the F0 gate measures, so what matters is how the
 // sentence ENDS: "Ella dice: ¿Tacos? ¡Son deliciosos!" contains a question
 // but ends exclamative (falling) and must be gated as a statement.
@@ -115,8 +134,8 @@ async function tts(text: string, apiKey: string): Promise<Buffer> {
     method: "POST", headers: { "xi-api-key": apiKey, "Content-Type": "application/json" },
     body: JSON.stringify({
       text, model_id: MODEL,
-      previous_text: q ? PREV_TEXT_Q : PREV_TEXT,
-      next_text: q ? NEXT_TEXT_Q : NEXT_TEXT,
+      previous_text: q ? LANG.prevQ : LANG.prev,
+      next_text: q ? LANG.nextQ : LANG.next,
       voice_settings: SETTINGS,
     }),
   });
@@ -317,8 +336,13 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
 
   // RULE: practice clips use the story's own narrator voice (country-matched),
   // unless the story carries a practiceVoiceId override (practiceVoice.ts).
-  const story = await prisma.journeyStory.findFirst({ where: { slug }, select: { voiceId: true, practiceVoiceId: true } });
+  const story = await prisma.journeyStory.findFirst({
+    where: { slug },
+    select: { voiceId: true, practiceVoiceId: true, journey: { select: { language: true } } },
+  });
   if (!story) throw new Error(`story not found: ${slug}`);
+  // Idioma DERIVADO de la historia (no del flag). Aborta si --lang lo contradice.
+  resolveRenderLang(story.journey?.language);
   VOICE = practiceVoiceId(story);
   if (voiceArg) {
     if (!takesArg) throw new Error("--voice only works with --takes (audition renders are local-only)");
