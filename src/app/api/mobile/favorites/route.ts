@@ -1,6 +1,7 @@
 export const runtime = "nodejs";
 
 import { NextRequest, NextResponse } from "next/server";
+import type { Prisma } from "@/generated/prisma";
 import { normalizeVocabType } from "@/lib/vocabTypes";
 import { getActiveMobileSession } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
@@ -133,7 +134,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   };
 
   // Historia viva = JourneyStory publicada + journey no archived/draft.
-  const LIVE_JOURNEY = { status: { notIn: ["archived", "draft"] } };
+  const LIVE_JOURNEY: Prisma.JourneyWhereInput = { status: { notIn: ["archived", "draft"] } };
   const liveByKey = new Map<string, ClipMap>(); // key: el storySlug original
 
   if (pseudoIds.length > 0) {
