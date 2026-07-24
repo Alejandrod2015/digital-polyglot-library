@@ -23,19 +23,28 @@ export async function POST(request: Request) {
   const { storyId, voiceId } = body;
   if (!storyId) return NextResponse.json({ error: "storyId required" }, { status: 400 });
   if (voiceId) {
-    if (voiceId.startsWith("f5/")) {
-      const id = voiceId.slice(3);
-      const exists = await prisma.clonedVoice.findUnique({ where: { id }, select: { id: true } });
-      if (!exists) return NextResponse.json({ error: `Cloned voice not found: ${id}` }, { status: 400 });
-    } else if (!findVoice(voiceId)) {
+    // POLICY 2026-07-24 (solo ElevenLabs, o silencio): una voz de motor local
+    // (piper/kokoro/f5/qwen/…) no puede fijarse en una historia; antes se
+    // permitía (saltaba el check de aprobación) y luego preview-segment la
+    // renderizaba con Piper. Prohibido → 403.
+    const isLocalEngine = NON_ELEVENLABS_PREFIXES.some((p) => voiceId.startsWith(p));
+    if (isLocalEngine) {
+      return NextResponse.json(
+        {
+          error: `La voz "${voiceId}" es de un motor local (no ElevenLabs). Deshabilitado por política (solo ElevenLabs).`,
+          code: "NON_ELEVENLABS_GENERATION_DISABLED",
+        },
+        { status: 403 },
+      );
+    }
+    if (!findVoice(voiceId)) {
       return NextResponse.json({ error: `Unknown voiceId: ${voiceId}` }, { status: 400 });
     }
     // Fail-fast: an ElevenLabs voice must be on the approved allowlist
     // (src/lib/approvedVoices.ts) before it can be attached to a story —
     // otherwise every regenerate/preview with it would be blocked anyway.
-    const isLocalEngine = NON_ELEVENLABS_PREFIXES.some((p) => voiceId.startsWith(p));
     const elId = voiceId.startsWith("elevenlabs/") ? voiceId.slice("elevenlabs/".length) : voiceId;
-    if (!isLocalEngine && !isVoiceApproved(elId)) {
+    if (!isVoiceApproved(elId)) {
       return NextResponse.json(
         { error: `La voz "${voiceId}" no está en la allowlist de voces aprobadas. Solo el dueño aprueba voces nuevas.` },
         { status: 403 },

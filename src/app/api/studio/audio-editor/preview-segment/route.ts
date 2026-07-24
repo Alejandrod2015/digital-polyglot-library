@@ -313,6 +313,15 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
+  // POLICY 2026-07-24 (solo ElevenLabs, o silencio): las voces no-EL de esta
+  // ruta caían al spawn del TTS local (Piper/Kokoro via generate_audio.py).
+  // Prohibido generar audio no-EL en cualquier parte de la app → bloqueado.
+  if (!isElevenLabs) {
+    return NextResponse.json(
+      { error: "Local/Piper TTS is disabled by policy (ElevenLabs-only).", code: "NON_ELEVENLABS_GENERATION_DISABLED" },
+      { status: 403 },
+    );
+  }
   // No approved-voices gate needed here: the voice is derived from THIS
   // story's own blocks (blocks[blockIdx].voiceId, from story.voiceId /
   // dialogueSpec), so preview-segment can only re-render a voice the story
