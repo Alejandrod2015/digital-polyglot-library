@@ -1136,6 +1136,48 @@ function resolvePracticeWordVoiceId(rawVoiceId: string | null | undefined): stri
   return v && !v.includes("/") ? v : PRACTICE_WORD_FALLBACK_VOICE_ID;
 }
 
+// FIX (2026-07-24, audit practice-audio #1 — el "200 pero device MUDO"):
+// ningún FileSystem.downloadAsync validaba el status HTTP ni el tamaño del
+// archivo. Un 200 con cuerpo vacío/corrupto (o un 404 de la era-Modal) se
+// escribía igual a disco; Audio.Sound.createAsync resolvía sobre un mp3 de
+// 0 bytes y el device quedaba MUDO pese al 200. Peor: como el clip se llavea
+// por HASH de contenido y se hacía short-circuit con getInfoAsync().exists,
+// el archivo envenenado se reusaba PARA SIEMPRE (silencio permanente hasta
+// reinstalar). Estos dos helpers (a) detectan un archivo ya-cacheado usable
+// y (b) validan cada descarga antes de setearla en practiceAudioFilesRef,
+// borrando la basura para que no siembre ni envenene el cache.
+const MIN_PRACTICE_AUDIO_BYTES = 256;
+
+async function practiceAudioFileIsUsable(fileUri: string): Promise<boolean> {
+  try {
+    const info = await FileSystem.getInfoAsync(fileUri);
+    if (!info.exists) return false;
+    const size = (info as { size?: number }).size ?? 0;
+    return size >= MIN_PRACTICE_AUDIO_BYTES;
+  } catch {
+    return false;
+  }
+}
+
+async function downloadPracticeAudioValidated(url: string, fileUri: string): Promise<boolean> {
+  try {
+    const result = await FileSystem.downloadAsync(url, fileUri);
+    const status = (result as { status?: number }).status ?? 0;
+    if (status !== 200) {
+      try { await FileSystem.deleteAsync(fileUri, { idempotent: true }); } catch { /* ignore */ }
+      return false;
+    }
+    if (!(await practiceAudioFileIsUsable(fileUri))) {
+      try { await FileSystem.deleteAsync(fileUri, { idempotent: true }); } catch { /* ignore */ }
+      return false;
+    }
+    return true;
+  } catch {
+    try { await FileSystem.deleteAsync(fileUri, { idempotent: true }); } catch { /* ignore */ }
+    return false;
+  }
+}
+
 function isExpressionLikeFavorite(item: Pick<PracticeFavoriteItem, "word" | "wordType">): boolean {
   const word = typeof item.word === "string" ? item.word.trim() : "";
   const wordType = typeof item.wordType === "string" ? item.wordType.toLowerCase() : "";
@@ -1327,6 +1369,9 @@ function mapSharedExerciseToMobile(exercise: ReturnType<typeof buildPracticeSess
         answer: exercise.answer,
         speechText: exercise.speechText,
         language: exercise.language ?? null,
+        // #3: propagar el audioClip (voiceId/wordClipUrl) para que el botón de
+        // play use word-tts per-language / el clip pre-horneado, no sentence-tts.
+        audioClip: exercise.audioClip ?? null,
         favorite: {
           word: exercise.speechText,
           translation: "",
@@ -7715,8 +7760,10 @@ export function MobileLibraryShell(args: {
           ? `clip-${clipBasename}`
           : `${lang}-${voiceSafe}-${sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
         const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
-        const info = await FileSystem.getInfoAsync(fileUri);
-        if (info.exists) {
+        // #1: solo reusar el archivo en disco si es USABLE (size>0). Un clip
+        // envenenado de 0 bytes de un build viejo se re-descarga en vez de
+        // sembrar silencio permanente.
+        if (await practiceAudioFileIsUsable(fileUri)) {
           practiceAudioFilesRef.current.set(key, fileUri);
           showDebug(`queueWarm: on disk ${JSON.stringify({ key }).slice(0,140)}`);
           return;
@@ -7724,14 +7771,12 @@ export function MobileLibraryShell(args: {
 
         // 1) cached path (Studio-prebaked); no Modal hit
         if (cachedUrl) {
-          try {
-            await FileSystem.downloadAsync(cachedUrl, fileUri);
+          if (await downloadPracticeAudioValidated(cachedUrl, fileUri)) {
             practiceAudioFilesRef.current.set(key, fileUri);
             showDebug(`queueWarm: cached download ok ${JSON.stringify({ key }).slice(0,140)}`);
             return;
-          } catch (err) {
-            showDebug(`queueWarm: cached download failed, will try Modal ${JSON.stringify({ key, err: err instanceof Error ? err.message.slice(0, 80) : "?" }).slice(0,140)}`);
           }
+          showDebug(`queueWarm: cached download invalid, will try Modal ${JSON.stringify({ key }).slice(0,140)}`);
         }
 
         // 2) Modal fallback
@@ -7749,9 +7794,13 @@ export function MobileLibraryShell(args: {
             practicePrefetchSeenRef.current.delete(key);
             return;
           }
-          await FileSystem.downloadAsync(resp.url, fileUri);
-          practiceAudioFilesRef.current.set(key, fileUri);
-          showDebug(`queueWarm: Modal download ok ${JSON.stringify({ key }).slice(0,140)}`);
+          if (await downloadPracticeAudioValidated(resp.url, fileUri)) {
+            practiceAudioFilesRef.current.set(key, fileUri);
+            showDebug(`queueWarm: Modal download ok ${JSON.stringify({ key }).slice(0,140)}`);
+          } else {
+            showDebug(`queueWarm: Modal download invalid ${JSON.stringify({ key }).slice(0,140)}`);
+            practicePrefetchSeenRef.current.delete(key);
+          }
         } catch (err) {
           showDebug(`queueWarm: caught error ${JSON.stringify({ key, err: err instanceof Error ? err.message : String(err) }).slice(0,140)}`);
           practicePrefetchSeenRef.current.delete(key);
@@ -7761,7 +7810,9 @@ export function MobileLibraryShell(args: {
     for (const ex of ahead) {
       if (ex.kind !== "multiple-choice") continue;
       const clip = ex.audioClip;
-      const lang = clip?.language ?? "italian";
+      // #4: derivar del journey en vez de hardcodear un idioma; "italian" queda
+      // solo como último recurso estructural (queueWarm exige string no-nulo).
+      const lang = clip?.language ?? activeJourneyLanguage ?? "italian";
       const voice = clip?.voiceId ?? undefined;
       const cached = clip?.cachedUrl ?? null;
       if (ex.mode === "meaning") {
@@ -7835,7 +7886,7 @@ export function MobileLibraryShell(args: {
       }
       if (cancelled) return;
 
-      const lang = clip.language ?? "italian";
+      const lang = clip.language ?? activeJourneyLanguage ?? "italian";
       const voiceId = clip.voiceId ?? undefined;
       const cacheKey = `${lang}::${voiceId ?? ""}::${clip.sentence}`;
 
@@ -8201,11 +8252,10 @@ export function MobileLibraryShell(args: {
     if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
     if (currentPracticeExercise.mode !== "listening") return;
     const speechText = currentPracticeExercise.speechText?.trim();
-    const language = currentPracticeExercise.language ?? null;
     if (!speechText) return;
 
     // Toggle: tapping the button while it's already playing stops the
-    // current playback (HQ or fallback).
+    // current playback.
     if (playingHqPracticeClipId === currentPracticeExercise.id) {
       await stopPracticeHqClip();
       return;
@@ -8216,60 +8266,124 @@ export function MobileLibraryShell(args: {
       return;
     }
 
-    // Route through the same HQ Piper path as the other practice
-    // modes (meaning, context, match) so the listening mode uses the
-    // same Modal-served voice instead of the iOS system TTS. Falls
-    // back to expo-speech only when HQ truly fails.
+    // #3 (audit 2026-07-24): en listening suena la PALABRA (speechText). DEBE ir
+    // por /api/practice/word-tts (ElevenLabs per-language, igual que meaning/
+    // match), NO por sentence-tts (motor de oración: para es/it/pt daba voz
+    // Piper genérica y uptalk; para fr daba 404 → MUDO). Preferimos el clip
+    // PRE-HORNEADO de la palabra (audioClip.wordClipUrl) cuando el server lo
+    // propaga. #4: el idioma se deriva de una cadena FIABLE y NUNCA se
+    // hardcodea a 'german'. Todo se descarga-validado (#1) antes de reproducir.
+    const clip = currentPracticeExercise.audioClip ?? null;
+    const lang =
+      currentPracticeExercise.language
+      ?? currentPracticeExercise.favorite.language
+      ?? clip?.language
+      ?? activeJourneyLanguage
+      ?? null;
+    const voiceId = clip?.wordVoiceId ?? clip?.voiceId ?? undefined;
+
+    const mySeq = ++practiceAudioSeqRef.current;
+    const stillCurrent = () => practiceAudioSeqRef.current === mySeq;
+
     await stopPracticeContextClip();
     await stopPracticeHqClip();
-    let hqUrl: string | undefined;
-    try {
-      const resp = await apiFetch<{ url?: string }>({
-        baseUrl: mobileConfig.apiBaseUrl,
-        path: "/api/practice/sentence-tts",
-        method: "POST",
-        token: sessionToken ?? undefined,
-        timeoutMs: 45000,
-        body: {
-          sentence: speechText,
-          language: language ?? "german",
-        },
-      });
-      hqUrl = resp?.url;
-    } catch {
-      hqUrl = undefined;
-    }
+    getOptionalSpeechModule()?.stop();
+    setSpeakingPracticePromptId(null);
 
-    if (hqUrl) {
-      try {
-        await Audio.setAudioModeAsync({
-          playsInSilentModeIOS: true,
-          allowsRecordingIOS: false,
-          interruptionModeIOS: InterruptionModeIOS.DoNotMix,
-        });
-        const { sound } = await Audio.Sound.createAsync(
-          { uri: hqUrl },
-          { shouldPlay: true },
-          (status) => {
-            if ("didJustFinish" in status && status.didJustFinish) {
-              void stopPracticeHqClip();
-            }
-          }
-        );
-        practiceHqSoundRef.current = sound;
-        setPlayingHqPracticeClipId(currentPracticeExercise.id);
-        return;
-      } catch {
-        // Fall through to expo-speech fallback below.
+    const wordClipUrl = clip?.wordClipUrl ?? null;
+    const cacheKey = wordClipUrl
+      ? `listenclip::${wordClipUrl}`
+      : `listen::${lang ?? ""}::${voiceId ?? ""}::${speechText}`;
+    let uri: string | undefined = practiceAudioFilesRef.current.get(cacheKey);
+
+    // 1) Clip PRE-HORNEADO de la palabra (cuando el server lo propaga).
+    if (!uri && wordClipUrl) {
+      setLoadingPracticeAudioId(currentPracticeExercise.id);
+      try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
+      const base = wordClipUrl.split("?")[0].split("/").pop() ?? `${speechText}.mp3`;
+      const fileUri = `${PRACTICE_AUDIO_DIR}clip-${base}`;
+      if (!(await practiceAudioFileIsUsable(fileUri))) {
+        await downloadPracticeAudioValidated(wordClipUrl, fileUri);
+      }
+      if (await practiceAudioFileIsUsable(fileUri)) {
+        practiceAudioFilesRef.current.set(cacheKey, fileUri);
+        uri = fileUri;
       }
     }
 
-    // expo-speech fallback removed by policy 2026-05-18: el usuario
-    // reportó la voz device-local como "robótica horrible" y prefiere
-    // silencio cuando el HQ TTS no responde. Mejor un play que no suena
-    // que un play que suena artificial.
-    setSpeakingPracticePromptId(null);
-    return;
+    // 2) Fallback: word-tts (ElevenLabs, per-language). NUNCA sentence-tts/Modal.
+    if (!uri) {
+      setLoadingPracticeAudioId(currentPracticeExercise.id);
+      try {
+        const resp = await apiFetch<{ url?: string }>({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/practice/word-tts",
+          method: "POST",
+          token: sessionToken ?? undefined,
+          timeoutMs: 45000,
+          body: { word: speechText, language: lang ?? undefined, voiceId: resolvePracticeWordVoiceId(voiceId) },
+        });
+        if (!stillCurrent()) return;
+        if (!resp?.url) { setLoadingPracticeAudioId(null); return; }
+        try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
+        const voiceSafe = (voiceId ?? "v").replace(/[^a-z0-9]+/gi, "_");
+        const safeName = `listen-${lang ?? "x"}-${voiceSafe}-${speechText.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
+        const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
+        if (!(await practiceAudioFileIsUsable(fileUri))) {
+          if (!(await downloadPracticeAudioValidated(resp.url, fileUri))) {
+            console.warn("[mobile practice] listen word-tts download invalid");
+            if (stillCurrent()) setLoadingPracticeAudioId(null);
+            return;
+          }
+        }
+        if (!stillCurrent()) {
+          setLoadingPracticeAudioId((curr) => (curr === currentPracticeExercise.id ? null : curr));
+          return;
+        }
+        practiceAudioFilesRef.current.set(cacheKey, fileUri);
+        uri = fileUri;
+      } catch (err) {
+        console.error("[mobile practice] listen word audio fetch failed", err);
+        if (stillCurrent()) setLoadingPracticeAudioId(null);
+        return;
+      }
+    }
+
+    if (!stillCurrent()) {
+      setLoadingPracticeAudioId((curr) => (curr === currentPracticeExercise.id ? null : curr));
+      return;
+    }
+
+    const exIdAtPlay = currentPracticeExercise.id;
+    try {
+      await Audio.setAudioModeAsync({
+        playsInSilentModeIOS: true,
+        allowsRecordingIOS: false,
+        interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+      });
+      if (!stillCurrent()) return;
+      const { sound } = await Audio.Sound.createAsync(
+        { uri },
+        { shouldPlay: false, rate: 1.0, shouldCorrectPitch: false },
+        (status) => {
+          if ("didJustFinish" in status && status.didJustFinish) {
+            void stopPracticeHqClip();
+          }
+        }
+      );
+      if (!stillCurrent()) {
+        try { await sound.unloadAsync(); } catch { /* ignore */ }
+        return;
+      }
+      practiceHqSoundRef.current = sound;
+      setPlayingHqPracticeClipId(exIdAtPlay);
+      setLoadingPracticeAudioId(null);
+      try { await sound.playAsync(); } catch { await stopPracticeHqClip(); }
+    } catch (err) {
+      console.error("[mobile practice] listen word audio playback failed", err);
+      await stopPracticeHqClip();
+      if (stillCurrent()) setLoadingPracticeAudioId(null);
+    }
   }
 
   function resolvePracticeAudioUri(value: string | null | undefined): string | null {
@@ -8535,9 +8649,13 @@ export function MobileLibraryShell(args: {
       // can clear at will.
       const safeName = `${language}-${sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 40)}.mp3`;
       const fileUri = `${FAV_AUDIO_DIR}${safeName}`;
-      const info = await FileSystem.getInfoAsync(fileUri);
-      if (!info.exists) {
-        await FileSystem.downloadAsync(resp.url, fileUri);
+      // #1: validar la descarga; no sembrar un mp3 vacío/corrupto en el cache
+      // de favoritos (mismo bug 200-pero-mudo que los sitios de práctica).
+      if (!(await practiceAudioFileIsUsable(fileUri))) {
+        if (!(await downloadPracticeAudioValidated(resp.url, fileUri))) {
+          prefetchedFavoriteKeysRef.current.delete(key);
+          return;
+        }
       }
       prefetchedFavoriteFilesRef.current.set(key, fileUri);
     } catch {
@@ -8771,16 +8889,13 @@ export function MobileLibraryShell(args: {
       const clipBasename = wordUrl.split("?")[0].split("/").pop() ?? "clip.mp3";
       const safeName = `clip-${clipBasename}`;
       const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
-      const info = await FileSystem.getInfoAsync(fileUri);
-      if (!info.exists) {
-        try {
-          await FileSystem.downloadAsync(wordUrl, fileUri);
-        } catch (err) {
-          console.warn("[mobile practice] word clip download failed, will try word-tts fallback", err);
+      // #1: reusar solo si es usable; validar la descarga antes de cachear.
+      if (!(await practiceAudioFileIsUsable(fileUri))) {
+        if (!(await downloadPracticeAudioValidated(wordUrl, fileUri))) {
+          console.warn("[mobile practice] word clip download invalid, will try word-tts fallback");
         }
       }
-      const infoAfter = await FileSystem.getInfoAsync(fileUri);
-      if (infoAfter.exists) {
+      if (await practiceAudioFileIsUsable(fileUri)) {
         practiceAudioFilesRef.current.set(cacheKey, fileUri);
         uri = fileUri;
       }
@@ -8809,9 +8924,13 @@ export function MobileLibraryShell(args: {
         const voiceSafe = (voiceId ?? "v").replace(/[^a-z0-9]+/gi, "_");
         const safeName = `${lang}-${voiceSafe}-${word.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
         const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
-        const info = await FileSystem.getInfoAsync(fileUri);
-        if (!info.exists) {
-          await FileSystem.downloadAsync(resp.url, fileUri);
+        // #1: validar la descarga; no cachear un mp3 vacío/corrupto.
+        if (!(await practiceAudioFileIsUsable(fileUri))) {
+          if (!(await downloadPracticeAudioValidated(resp.url, fileUri))) {
+            console.warn("[mobile practice] meaning word-tts download invalid");
+            if (stillCurrent()) setLoadingPracticeAudioId(null);
+            return;
+          }
         }
         if (!stillCurrent()) {
           setLoadingPracticeAudioId((curr) => (curr === currentPracticeExercise.id ? null : curr));
@@ -8923,8 +9042,12 @@ export function MobileLibraryShell(args: {
         try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
         const base = wordClipUrl.split("/").pop()?.split("?")[0] ?? `${word}.mp3`;
         const fileUri = `${PRACTICE_AUDIO_DIR}clip-${base}`;
-        const info = await FileSystem.getInfoAsync(fileUri);
-        if (!info.exists) await FileSystem.downloadAsync(wordClipUrl, fileUri);
+        // #1: reusar solo si es usable; validar la descarga antes de cachear.
+        if (!(await practiceAudioFileIsUsable(fileUri))) {
+          if (!(await downloadPracticeAudioValidated(wordClipUrl, fileUri))) {
+            throw new Error("match pre-baked clip download invalid");
+          }
+        }
         if (!stillCurrent()) { setMatchAudioLoadingWord((curr) => (curr === word ? null : curr)); return; }
         practiceAudioFilesRef.current.set(cacheKey, fileUri);
         uri = fileUri;
@@ -8954,9 +9077,13 @@ export function MobileLibraryShell(args: {
         const voiceSafe = (voiceId ?? "v").replace(/[^a-z0-9]+/gi, "_");
         const safeName = `${lang}-${voiceSafe}-${word.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
         const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
-        const info = await FileSystem.getInfoAsync(fileUri);
-        if (!info.exists) {
-          await FileSystem.downloadAsync(resp.url, fileUri);
+        // #1: validar la descarga; no cachear un mp3 vacío/corrupto.
+        if (!(await practiceAudioFileIsUsable(fileUri))) {
+          if (!(await downloadPracticeAudioValidated(resp.url, fileUri))) {
+            console.warn("[mobile practice] match word-tts download invalid");
+            if (stillCurrent()) setMatchAudioLoadingWord(null);
+            return;
+          }
         }
         if (!stillCurrent()) {
           setMatchAudioLoadingWord((curr) => (curr === word ? null : curr));
@@ -9051,17 +9178,14 @@ export function MobileLibraryShell(args: {
       const clipBasename = cachedUrl.split("?")[0].split("/").pop() ?? "clip.mp3";
       const safeName = `clip-${clipBasename}`;
       const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
-      const info = await FileSystem.getInfoAsync(fileUri);
-      if (!info.exists) {
-        try {
-          showDebug(`Hq using cachedUrl ${cachedUrl.slice(-40)}`);
-          await FileSystem.downloadAsync(cachedUrl, fileUri);
-        } catch (err) {
-          showDebug(`Hq cached download failed: ${err instanceof Error ? err.message.slice(0, 80) : "?"}`);
+      // #1: reusar solo si es usable; validar la descarga antes de cachear.
+      if (!(await practiceAudioFileIsUsable(fileUri))) {
+        showDebug(`Hq using cachedUrl ${cachedUrl.slice(-40)}`);
+        if (!(await downloadPracticeAudioValidated(cachedUrl, fileUri))) {
+          showDebug(`Hq cached download invalid, will try sentence-tts`);
         }
       }
-      const infoAfter = await FileSystem.getInfoAsync(fileUri);
-      if (infoAfter.exists) {
+      if (await practiceAudioFileIsUsable(fileUri)) {
         practiceAudioFilesRef.current.set(cacheKey, fileUri);
         uri = fileUri;
       }
@@ -9090,9 +9214,13 @@ export function MobileLibraryShell(args: {
         const voiceSafe = (voiceId ?? "v").replace(/[^a-z0-9]+/gi, "_");
         const safeName = `${lang}-${voiceSafe}-${clip.sentence.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
         const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
-        const info = await FileSystem.getInfoAsync(fileUri);
-        if (!info.exists) {
-          await FileSystem.downloadAsync(resp.url, fileUri);
+        // #1: validar la descarga; no cachear un mp3 vacío/corrupto.
+        if (!(await practiceAudioFileIsUsable(fileUri))) {
+          if (!(await downloadPracticeAudioValidated(resp.url, fileUri))) {
+            showDebug(`Hq sentence-tts download invalid → bail`);
+            if (stillCurrent()) setLoadingPracticeAudioId(null);
+            return;
+          }
         }
         if (!stillCurrent()) {
           setLoadingPracticeAudioId((curr) => (curr === currentPracticeExercise.id ? null : curr));
