@@ -381,7 +381,13 @@ async function loadPersistedExercises(
     // journey (e.g. German) plays silent even though the clip exists.
     const rawClip = (payload.audioClip ?? null) as Record<string, unknown> | null;
     const rawClipUrl = typeof rawClip?.clipUrl === "string" ? rawClip.clipUrl : null;
-    const persistedClipUrl = row.audioUrl ?? rawClipUrl;
+    // POLICY 2026-07-24 (solo ElevenLabs, discriminador A): `row.audioUrl` es la
+    // COLUMNA que llena el pipeline Modal/Piper (motor LOCAL, no ElevenLabs),
+    // mientras `payload.audioClip.clipUrl` es el clip de ElevenLabs. Antes se
+    // prefería `row.audioUrl ?? rawClipUrl` → el cliente reproducía el mp3 de
+    // Piper. Ahora usamos SOLO el clip EL; sin él, el cliente cae a sentence-tts
+    // (ya EL-only) → nunca suena Piper. Muta los ~391 clips Modal pre-horneados.
+    const persistedClipUrl = rawClipUrl;
     const audioClip = rawClip
       ? { ...rawClip, cachedUrl: persistedClipUrl }
       : (persistedClipUrl ? { cachedUrl: persistedClipUrl } : null);
