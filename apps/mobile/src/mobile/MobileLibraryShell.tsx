@@ -1369,8 +1369,9 @@ function mapSharedExerciseToMobile(exercise: ReturnType<typeof buildPracticeSess
         answer: exercise.answer,
         speechText: exercise.speechText,
         language: exercise.language ?? null,
-        // #3: propagar el audioClip (voiceId/wordClipUrl) para que el botón de
-        // play use word-tts per-language / el clip pre-horneado, no sentence-tts.
+        // #3: propagar el audioClip (cachedUrl/voiceId/language) para que el botón
+        // de play prefiera el clip PRE-HORNEADO de la oración y, si no, use
+        // sentence-tts con el idioma/voz correctos (no default 'german').
         audioClip: exercise.audioClip ?? null,
         favorite: {
           word: exercise.speechText,
@@ -2028,6 +2029,11 @@ export function MobileLibraryShell(args: {
   // Muestra spinner en el botón mientras tanto, para que el usuario
   // no tapee 4 veces creyendo que no se registró.
   const [loadingPracticeAudioId, setLoadingPracticeAudioId] = useState<string | null>(null);
+  // #7 (audit 2026-07-24): id del ejercicio cuyo audio NO se pudo resolver
+  // (fetch 404, sin url, o descarga inválida). En vez de dejar el botón mudo y
+  // vivo sin señal (el usuario tocaba play y no pasaba nada), mostramos "Audio
+  // unavailable — tap to retry". Se limpia al reintentar o cambiar de ejercicio.
+  const [practiceAudioFailedId, setPracticeAudioFailedId] = useState<string | null>(null);
   // Match mode audio: qué palabra está cargando / sonando ahora mismo,
   // para el spinner y el icono activo del botón de altavoz por palabra.
   const [matchAudioLoadingWord, setMatchAudioLoadingWord] = useState<string | null>(null);
@@ -8266,13 +8272,14 @@ export function MobileLibraryShell(args: {
       return;
     }
 
-    // #3 (audit 2026-07-24): en listening suena la PALABRA (speechText). DEBE ir
-    // por /api/practice/word-tts (ElevenLabs per-language, igual que meaning/
-    // match), NO por sentence-tts (motor de oración: para es/it/pt daba voz
-    // Piper genérica y uptalk; para fr daba 404 → MUDO). Preferimos el clip
-    // PRE-HORNEADO de la palabra (audioClip.wordClipUrl) cuando el server lo
-    // propaga. #4: el idioma se deriva de una cadena FIABLE y NUNCA se
-    // hardcodea a 'german'. Todo se descarga-validado (#1) antes de reproducir.
+    // #3 CORREGIDO (audit 2026-07-24, verificado contra el dato real de los sets):
+    // listen_choose reproduce la ORACIÓN. `speechText` es la frase (p.ej. "Finn
+    // denkt kurz nach."); `answer` es la palabra objetivo DENTRO de ella. Por eso
+    // el motor correcto es sentence-tts (Modal es/pt/it + ElevenLabs de), NO
+    // word-tts (motor de palabra con límite de 60 chars que 3 oraciones exceden →
+    // habrían quedado mudas). Preferimos el clip PRE-HORNEADO de la oración
+    // (audioClip.cachedUrl): sin runtime, sin cold-start. #4: el idioma sale de
+    // una cadena FIABLE y NUNCA se hardcodea a 'german'. #1: descarga-validado.
     const clip = currentPracticeExercise.audioClip ?? null;
     const lang =
       currentPracticeExercise.language
@@ -8280,7 +8287,7 @@ export function MobileLibraryShell(args: {
       ?? clip?.language
       ?? activeJourneyLanguage
       ?? null;
-    const voiceId = clip?.wordVoiceId ?? clip?.voiceId ?? undefined;
+    const voiceId = clip?.voiceId ?? undefined;
 
     const mySeq = ++practiceAudioSeqRef.current;
     const stillCurrent = () => practiceAudioSeqRef.current === mySeq;
@@ -8289,21 +8296,22 @@ export function MobileLibraryShell(args: {
     await stopPracticeHqClip();
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
+    setPracticeAudioFailedId(null); // #7: limpiar el estado de fallo al reintentar
 
-    const wordClipUrl = clip?.wordClipUrl ?? null;
-    const cacheKey = wordClipUrl
-      ? `listenclip::${wordClipUrl}`
+    const cachedUrl = clip?.cachedUrl ?? null;
+    const cacheKey = cachedUrl
+      ? `listenclip::${cachedUrl}`
       : `listen::${lang ?? ""}::${voiceId ?? ""}::${speechText}`;
     let uri: string | undefined = practiceAudioFilesRef.current.get(cacheKey);
 
-    // 1) Clip PRE-HORNEADO de la palabra (cuando el server lo propaga).
-    if (!uri && wordClipUrl) {
+    // 1) Clip PRE-HORNEADO de la oración (cachedUrl): sin runtime ni cold-start.
+    if (!uri && cachedUrl) {
       setLoadingPracticeAudioId(currentPracticeExercise.id);
       try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
-      const base = wordClipUrl.split("?")[0].split("/").pop() ?? `${speechText}.mp3`;
+      const base = cachedUrl.split("?")[0].split("/").pop() ?? `${speechText}.mp3`;
       const fileUri = `${PRACTICE_AUDIO_DIR}clip-${base}`;
       if (!(await practiceAudioFileIsUsable(fileUri))) {
-        await downloadPracticeAudioValidated(wordClipUrl, fileUri);
+        await downloadPracticeAudioValidated(cachedUrl, fileUri);
       }
       if (await practiceAudioFileIsUsable(fileUri)) {
         practiceAudioFilesRef.current.set(cacheKey, fileUri);
@@ -8311,28 +8319,35 @@ export function MobileLibraryShell(args: {
       }
     }
 
-    // 2) Fallback: word-tts (ElevenLabs, per-language). NUNCA sentence-tts/Modal.
+    // 2) Fallback: sentence-tts (motor de oración: Modal es/pt/it + ElevenLabs de).
     if (!uri) {
       setLoadingPracticeAudioId(currentPracticeExercise.id);
       try {
         const resp = await apiFetch<{ url?: string }>({
           baseUrl: mobileConfig.apiBaseUrl,
-          path: "/api/practice/word-tts",
+          path: "/api/practice/sentence-tts",
           method: "POST",
           token: sessionToken ?? undefined,
           timeoutMs: 45000,
-          body: { word: speechText, language: lang ?? undefined, voiceId: resolvePracticeWordVoiceId(voiceId) },
+          body: { sentence: speechText, ...(lang ? { language: lang } : {}), ...(voiceId ? { voiceId } : {}) },
         });
         if (!stillCurrent()) return;
-        if (!resp?.url) { setLoadingPracticeAudioId(null); return; }
+        if (!resp?.url) {
+          setLoadingPracticeAudioId(null);
+          setPracticeAudioFailedId(currentPracticeExercise.id); // #7: señal visible
+          return;
+        }
         try { await FileSystem.makeDirectoryAsync(PRACTICE_AUDIO_DIR, { intermediates: true }); } catch { /* exists */ }
         const voiceSafe = (voiceId ?? "v").replace(/[^a-z0-9]+/gi, "_");
         const safeName = `listen-${lang ?? "x"}-${voiceSafe}-${speechText.replace(/[^a-z0-9]+/gi, "_").slice(0, 48)}.mp3`;
         const fileUri = `${PRACTICE_AUDIO_DIR}${safeName}`;
         if (!(await practiceAudioFileIsUsable(fileUri))) {
           if (!(await downloadPracticeAudioValidated(resp.url, fileUri))) {
-            console.warn("[mobile practice] listen word-tts download invalid");
-            if (stillCurrent()) setLoadingPracticeAudioId(null);
+            console.warn("[mobile practice] listen sentence-tts download invalid");
+            if (stillCurrent()) {
+              setLoadingPracticeAudioId(null);
+              setPracticeAudioFailedId(currentPracticeExercise.id);
+            }
             return;
           }
         }
@@ -8343,8 +8358,11 @@ export function MobileLibraryShell(args: {
         practiceAudioFilesRef.current.set(cacheKey, fileUri);
         uri = fileUri;
       } catch (err) {
-        console.error("[mobile practice] listen word audio fetch failed", err);
-        if (stillCurrent()) setLoadingPracticeAudioId(null);
+        console.error("[mobile practice] listen sentence audio fetch failed", err);
+        if (stillCurrent()) {
+          setLoadingPracticeAudioId(null);
+          setPracticeAudioFailedId(currentPracticeExercise.id);
+        }
         return;
       }
     }
@@ -12576,7 +12594,9 @@ export function MobileLibraryShell(args: {
                                 ? "Loading…"
                                 : audioActive
                                   ? "Playing"
-                                  : "Tap to listen"}
+                                  : practiceAudioFailedId === currentPracticeExercise.id
+                                    ? "Audio unavailable — tap to retry"
+                                    : "Tap to listen"}
                           </Text>
                           {/* Intentionally NO word reveal under the
                               icon when resolved; showing the answer
