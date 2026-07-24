@@ -618,9 +618,21 @@ export async function normalizeLoudness(buffer: Buffer): Promise<Buffer> {
 // dígito por separado ("B244" → "B 2 4 4" → "be dos cuatro cuatro"). Exigimos
 // >=2 dígitos para no tocar unidades tipo "m2"/"km2".
 function spaceOutAlphanumericCodes(text: string): string {
-  return text.replace(
-    /\b([A-Za-zÀ-ÿ]{1,3}\d{2,4}|\d{2,4}[A-Za-zÀ-ÿ]{1,3})\b/g,
-    (match) => match.split("").join(" ")
+  return (
+    text
+      .replace(
+        /\b([A-Za-zÀ-ÿ]{1,3}\d{2,4}|\d{2,4}[A-Za-zÀ-ÿ]{1,3})\b/g,
+        (match) => match.split("").join(" ")
+      )
+      // "B 244" CON espacio (turnos de Amt/ventanilla). El caso real
+      // zwei-stempel: el TTS garbló "zweihundertsiebenundvierzig" y en otro
+      // bloque leyó el número EQUIVOCADO; dígito a dígito es robusto. Solo
+      // consonante MAYÚSCULA: "A 100" es Autobahn (se lee "A hundert") y
+      // A/Y/O/E/U son palabras en español a inicio de oración.
+      .replace(
+        /\b([B-DF-HJ-NP-TV-XZ])\s+(\d{2,4})\b/g,
+        (_m, letter: string, digits: string) => `${letter} ${digits.split("").join(" ")}`
+      )
   );
 }
 
