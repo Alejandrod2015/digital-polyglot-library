@@ -428,6 +428,16 @@ function getDistractorMeanings(
  * stored in vocab (`preparare`) doesn't make sense as the gap-fill
  * answer when the original sentence had `preparava`.
  */
+// Tope de longitud de la ORACIÓN de un ejercicio basado-en-frase
+// (context/meaning). Medido contra la tarjeta real del móvil: la oración se
+// renderiza a 22pt bold (~30 chars/línea) y el máximo cómodo antes de apretar
+// las opciones es ~3 líneas → ~100 caracteres. Si la oración coherente de la
+// palabra pasa este tope, NO se arma context/meaning (evita oración gigante en
+// pantalla Y audio gigante); esa palabra queda para listening/match (solo
+// necesitan la palabra). A futuro se generarán oraciones cortas propias por
+// palabra para recuperar el balance de modos.
+const MAX_EXERCISE_SENTENCE_CHARS = 100;
+
 function getSentenceWithBlank(
   item: PracticeFavoriteItem
 ): { sentence: string; matchedForm: string } | null {
@@ -642,6 +652,9 @@ function createFillBlankExercise(
   const fullSentence = getContextSentence(item);
   const blanked = getSentenceWithBlank(item);
   if (!blanked || !fullSentence) return null;
+  // Tope de longitud: no armar context si la oración no entra en la tarjeta.
+  // La palabra quedará para listening/match. Ver MAX_EXERCISE_SENTENCE_CHARS.
+  if (fullSentence.length > MAX_EXERCISE_SENTENCE_CHARS) return null;
   // Reject degenerate clozes: when the saved example was essentially
   // just the target word, blanking leaves "_____" (or "_____.") with no
   // surrounding context, so the Context card renders an empty prompt
@@ -683,6 +696,10 @@ function createMeaningContextExercise(
   const fullSentence = isStandaloneSourcePath(item.sourcePath, item.storySlug)
     ? getContextSentence(item)
     : normalizeText(item.exampleSentence);
+  // Tope de longitud: gateamos sobre la oración COHERENTE de la palabra (no
+  // sobre el recorte de shortenSentence, que podría ser un fragmento). Si pasa
+  // el tope, no armamos meaning; la palabra queda para listening/match.
+  if (getContextSentence(item).length > MAX_EXERCISE_SENTENCE_CHARS) return null;
   const sentence = stripOrphanLeadingPunctuation(shortenSentence(fullSentence));
   if (!sentence) return null;
   const options = shuffle([
