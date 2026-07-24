@@ -5,6 +5,7 @@ import type { Prisma } from "@/generated/prisma";
 import { normalizeVocabType } from "@/lib/vocabTypes";
 import { getActiveMobileSession } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
+import { extractExampleSentence } from "@/lib/exampleSentence";
 
 type FavoriteBody = {
   word: string;
@@ -232,6 +233,13 @@ export async function POST(req: NextRequest): Promise<Response> {
     definition: json.translation,
   });
 
+  // #coherencia (audit 2026-07-24): el reader mobile mandaba el PÁRRAFO entero
+  // como exampleSentence (onWordPress pasa paragraph.text) → ~45% de favoritos
+  // quedaban con chunks multi-oración que producían ejercicios incoherentes.
+  // Reducimos a la oración que contiene la palabra ANTES de guardar (server-side
+  // → cubre mobile sin rebuild).
+  const cleanedExample = extractExampleSentence(json.exampleSentence, json.word);
+
   const existing = await prisma.favorite.findFirst({
     where: { userId: session.sub, word: json.word },
     select: { id: true },
@@ -243,7 +251,7 @@ export async function POST(req: NextRequest): Promise<Response> {
         data: {
           translation: json.translation,
           wordType: normalizedWordType,
-          exampleSentence: json.exampleSentence ?? null,
+          exampleSentence: cleanedExample,
           storySlug: json.storySlug ?? null,
           storyTitle: json.storyTitle ?? null,
           sourcePath: json.sourcePath ?? null,
@@ -256,7 +264,7 @@ export async function POST(req: NextRequest): Promise<Response> {
           word: json.word,
           translation: json.translation,
           wordType: normalizedWordType,
-          exampleSentence: json.exampleSentence ?? null,
+          exampleSentence: cleanedExample,
           storySlug: json.storySlug ?? null,
           storyTitle: json.storyTitle ?? null,
           sourcePath: json.sourcePath ?? null,

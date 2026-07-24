@@ -470,12 +470,15 @@ function getSentenceWithBlank(
   // ("preparare"). For the literal match the surface form IS the lemma.
   const matchResult = sentence.match(pattern);
   const matchedForm = isStemFallback && matchResult ? matchResult[0] : word;
-  // Pasamos el anchor `_____` a shortenSentence para que cuando tenga
-  // que recortar por puntuación/comas, conserve siempre el chunk con
-  // el blank. Sin esto, una oración larga con varios commas dejaba al
-  // usuario con la primera cláusula sin blank y opciones sin sentido.
-  const shortened = shortenSentence(sentence.replace(pattern, "_____"), "_____");
-  return { sentence: stripOrphanLeadingPunctuation(shortened), matchedForm };
+  // #coherencia (2026-07-24): NO recortar a la cláusula del hueco. Ese recorte
+  // (a) producía un prompt gramaticalmente ROTO ("Die ihn mäßig _____", una
+  // relativa colgante capitalizada) y (b) divergía del AUDIO, que reproduce la
+  // oración COMPLETA (buildAudioClip usa getContextSentence) → el usuario veía
+  // una cláusula corta y oía la oración entera. `getContextSentence` ya devuelve
+  // UNA sola oración con la palabra, así que mostramos esa oración completa con
+  // el hueco; el audio de context usa exactamente la misma oración.
+  const blankedFull = sentence.replace(pattern, "_____");
+  return { sentence: stripOrphanLeadingPunctuation(blankedFull), matchedForm };
 }
 
 /**

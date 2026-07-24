@@ -9,6 +9,7 @@ import { findBestAudioSegment } from "@/lib/audioSegments";
 import { getStandaloneStoryAudioSegments } from "@/lib/standaloneStoryAudioSegments";
 import { getSegmentIdFromSourcePath, isStandaloneSourcePath } from "@/lib/storySource";
 import { prisma } from "@/lib/prisma";
+import { extractExampleSentence } from "@/lib/exampleSentence";
 
 const bookLanguageBySlug = new Map<string, string>();
 const storyLanguageBySlug = new Map<string, string>();
@@ -238,6 +239,10 @@ export async function POST(req: NextRequest): Promise<Response> {
     definition: translation,
   });
 
+  // #coherencia (audit 2026-07-24): reducir el exampleSentence a la oración que
+  // contiene la palabra (evita chunks multi-oración capturados por el reader).
+  const cleanedExample = extractExampleSentence(exampleSentence, word);
+
   try {
     const existing = await prisma.favorite.findFirst({
       where: { userId, word },
@@ -250,7 +255,7 @@ export async function POST(req: NextRequest): Promise<Response> {
           data: {
             translation,
             wordType: normalizedWordType,
-            exampleSentence: exampleSentence ?? null,
+            exampleSentence: cleanedExample,
             storySlug: storySlug ?? null,
             storyTitle: storyTitle ?? null,
             sourcePath: sourcePath ?? null,
@@ -263,7 +268,7 @@ export async function POST(req: NextRequest): Promise<Response> {
             word,
             translation,
             wordType: normalizedWordType,
-            exampleSentence: exampleSentence ?? null,
+            exampleSentence: cleanedExample,
             storySlug: storySlug ?? null,
             storyTitle: storyTitle ?? null,
             sourcePath: sourcePath ?? null,
