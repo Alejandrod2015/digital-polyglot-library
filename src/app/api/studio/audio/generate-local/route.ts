@@ -167,6 +167,22 @@ async function runPythonTTS(args: {
 }
 
 export async function POST(request: Request) {
+  // POLICY 2026-07-24 (user directive "solo ElevenLabs, o silencio"): this route
+  // synthesizes with LOCAL engines (Kokoro/Piper via Modal or the .venv), which
+  // are NOT ElevenLabs. Generating any non-EL audio is prohibited app-wide, so
+  // the route is DISABLED by default. Story/practice audio is generated only
+  // with ElevenLabs (approved voices). The env override exists solely so the
+  // user can consciously re-enable local TTS from their own environment.
+  if (process.env.STUDIO_ALLOW_LOCAL_TTS !== "1") {
+    return NextResponse.json(
+      {
+        error: "Local/Piper TTS is disabled by policy (ElevenLabs-only).",
+        code: "NON_ELEVENLABS_GENERATION_DISABLED",
+      },
+      { status: 403 }
+    );
+  }
+
   const modalEnabled = !!(process.env.STUDIO_AUDIO_URL && process.env.STUDIO_AUDIO_TOKEN);
   const localEnabled = process.env.LOCAL_TTS_ENABLED === "1";
   if (!modalEnabled && !localEnabled) {
