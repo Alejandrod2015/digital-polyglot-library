@@ -1,0 +1,114 @@
+[
+  {
+    "f": "el-asado-a-la-orilla__guata__t1.mp3",
+    "lang": "spa",
+    "sentence": "Brindó por el weveo aunque estén viejos y con guata.",
+    "tx": "Brindó por el hueveo aunque estén viejos y con guata",
+    "label": "good",
+    "txWhisper": "brindó por el hueveo aunque estén viejos y con guata."
+  },
+  {
+    "f": "el-asado-a-la-orilla__guata__t2.mp3",
+    "lang": "spa",
+    "sentence": "Brindó por el weveo aunque estén viejos y con guata.",
+    "tx": "Brindó por el hueveo aunque estén viejos y con guata",
+    "label": "good",
+    "txWhisper": "brindó por el hueveo aunque estén viejos y con guapa."
+  },
+  {
+    "f": "el-asado-a-la-orilla__dejar-huella__t1.mp3",
+    "lang": "spa",
+    "sentence": "Un buen weveo no necesita durar, solo dejar huella.",
+    "tx": "Un buen hueveo no necesita durar, solo dejar huella",
+    "label": "good",
+    "txWhisper": "Un buen hueveo no necesita durar. Solo dejar huella."
+  },
+  {
+    "f": "el-asado-a-la-orilla__dejar-huella__t2.mp3",
+    "lang": "spa",
+    "sentence": "Un buen weveo no necesita durar, solo dejar huella.",
+    "tx": "Un buen hueveo no necesita durar, solo dejar huella",
+    "label": "good",
+    "txWhisper": "Un buen hueveo no necesita durar, sólo dejar huella."
+  },
+  {
+    "f": "todo-es-weon__cuatico__t1.mp3",
+    "lang": "spa",
+    "sentence": "Nico se reía con el weveo cuático que se armaba.",
+    "tx": "Nico se reía con el hueveo acuático que se armaba",
+    "label": "good",
+    "txWhisper": "Nico se reía con el hueveo cuático que se armaba."
+  },
+  {
+    "f": "todo-es-weon__cuatico__t2.mp3",
+    "lang": "spa",
+    "sentence": "Nico se reía con el weveo cuático que se armaba.",
+    "tx": "Nico se reía con el hueveo cuático que se armaba",
+    "label": "good",
+    "txWhisper": "Nico se reía con el hueveo cuático que se armaba."
+  },
+  {
+    "f": "sparen-wie-ein-schwabe__hajanoi__t1.mp3",
+    "lang": "deu",
+    "sentence": "Hajanoi, gespart ist gespart, sagt Steffi.",
+    "tx": "Haha Noi, gespart ist gespart, sagt Steffi",
+    "label": "good",
+    "txWhisper": "Hachanoi, gespart ist gespart, sagt Steffi."
+  },
+  {
+    "f": "sparen-wie-ein-schwabe__hajanoi__t2.mp3",
+    "lang": "deu",
+    "sentence": "Hajanoi, gespart ist gespart, sagt Steffi.",
+    "tx": "\"Ha Hanoi, gespart ist gespart\", sagt Steffi",
+    "label": "good",
+    "txWhisper": "Haja noi, Hispart ist gespart, sagt Steffi."
+  },
+  {
+    "f": "currywurst-und-viel-gemecker__abwinken__t1.mp3",
+    "lang": "deu",
+    "sentence": "Nadia bedankt sich, doch Ronny winkt nur ab.",
+    "tx": "Nadia bedankt sich, doch Ronnie winkt nur ab",
+    "label": "good",
+    "txWhisper": "Na, die habe dankzig, doch Roni winkt nur ab."
+  },
+  {
+    "f": "currywurst-und-viel-gemecker__abwinken__t2.mp3",
+    "lang": "deu",
+    "sentence": "Nadia bedankt sich, doch Ronny winkt nur ab.",
+    "tx": "Nadia bedankt sich, doch Ronnie winkt nur ab",
+    "label": "good",
+    "txWhisper": "Nadia Bedanzig doch Ronny wingt nur ab."
+  },
+  {
+    "f": "currywurst-und-viel-gemecker__wat-willze__t1.mp3",
+    "lang": "deu",
+    "sentence": "Wat willze, schon gehen?",
+    "tx": "What will say, Shong Khan?",
+    "label": "good",
+    "txWhisper": "Was wir sehen, Sean Kane?"
+  },
+  {
+    "f": "currywurst-und-viel-gemecker__wat-willze__t2.mp3",
+    "lang": "deu",
+    "sentence": "Wat willze, schon gehen?",
+    "tx": "What will say Sanghen?",
+    "label": "good",
+    "txWhisper": "Was wir sagen, Schongen?"
+  },
+  {
+    "f": "klungel-oder-herzblut__strußjer__t1.mp3",
+    "lang": "deu",
+    "sentence": "Er drückt ihr ein kleines Strüßjer in die Arme.",
+    "tx": "Er drückt ihr ein kleines Strüssjer in die Arme",
+    "label": "good",
+    "txWhisper": "Er drückt ihr ein kleines Strysier in die Arme."
+  },
+  {
+    "f": "klungel-oder-herzblut__strußjer__t2.mp3",
+    "lang": "deu",
+    "sentence": "Er drückt ihr ein kleines Strüßjer in die Arme.",
+    "tx": "Er drückt ihr ein kleines Strüsje in die Arme.",
+    "label": "good",
+    "txWhisper": "Er drückt ihr ein kleines Strösier in die Arme."
+  }
+]

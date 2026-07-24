@@ -37,6 +37,7 @@ import { PrismaClient } from "../src/generated/prisma";
 import { getPublicObjectUrl, uploadPublicObject } from "../src/lib/objectStorage";
 import { practiceVoiceId } from "../src/lib/practiceVoice";
 import { assertVoiceApproved } from "../src/lib/approvedVoices";
+import { phoneticCoverage, whisperTranscribe, internalGaps, rateCheck, RATE_MIN, RATE_MAX } from "./_qaEar";
 
 const prisma = new PrismaClient();
 // Voice is resolved per story (the story's narrator); see practiceVoice.ts.
@@ -114,7 +115,8 @@ const langArg = process.argv.find((a) => a.startsWith("--lang="));
 const JOURNEY_LANG_TO_KEY: Record<string, string> = {
   spanish: "es", german: "de", italian: "it", french: "fr", portuguese: "pt",
 };
-let LANG = LANGS[langArg ? langArg.slice(7) : "es"] ?? LANGS.es;
+let LANG_KEY = langArg && LANGS[langArg.slice(7)] ? langArg.slice(7) : "es";
+let LANG = LANGS[LANG_KEY];
 /** Fija LANG desde el idioma de la historia; aborta si no hay framing para ese
  *  idioma o si un `--lang` explícito lo contradice. Llamar SIEMPRE antes de
  *  renderizar (lo hace main tras cargar la historia). */
@@ -125,6 +127,7 @@ function resolveRenderLang(journeyLanguage: string | null | undefined): void {
   if (!LANGS[key]) throw new Error(`[lang-guard] falta framing/STT para "${key}" en LANGS; agrégalo antes de rendear ${norm}`);
   const flag = langArg ? langArg.slice(7) : null;
   if (flag && flag !== key) throw new Error(`[lang-guard] --lang=${flag} contradice el idioma real de la historia (${norm} → ${key}). Quita el flag o corrígelo.`);
+  LANG_KEY = key;
   LANG = LANGS[key];
 }
 // Final intonation is what the F0 gate measures, so what matters is how the
@@ -140,6 +143,7 @@ const isQuestion = (s: string) => s.trim().endsWith("?");
 const SETTINGS = { stability: 0.4, similarity_boost: 0.8, style: 0.3, speed: 0.9, use_speaker_boost: true };
 const CLIP_VERSION = "v4"; // v2: dropped dynaudnorm; v3: multilingual_v2 + stitching + style 0; v4: narration settings (style .3)
 const MAX_TRIES = 4;
+let earGateWarned = false;
 
 const strip = (s: string) =>
   s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[“”„«»".,!?;:()¿¡'`]/g, "").replace(/\s+/g, " ").trim().toLowerCase();
@@ -218,7 +222,7 @@ function spawnCapture(cmd: string, args: string[]): Promise<{ code: number; out:
     p.on("error", rej); p.on("close", (code) => res({ code: code ?? 1, out: o, err: e }));
   });
 }
-async function tailClean(mp3Path: string): Promise<{ ok: boolean; db: number | null }> {
+async function tailClean(mp3Path: string, sentence?: string): Promise<{ ok: boolean; db: number | null; why?: string }> {
   const dir = mkdtempSync(join(tmpdir(), "tail-"));
   try {
     const wav = join(dir, "a.wav");
@@ -234,8 +238,18 @@ async function tailClean(mp3Path: string): Promise<{ ok: boolean; db: number | n
     }
     const toks = (json.transcription || []).flatMap((s: any) => s.tokens || [])
       .filter((t: any) => (t.text || "").trim() && !t.text.startsWith("[_"));
-    if (!toks.length) return { ok: false, db: 0 }; // no speech recognized at all
+    if (!toks.length) return { ok: false, db: 0, why: "whisper no reconoció habla" };
     const lastMs: number = toks[toks.length - 1].offsets.to;
+    const firstMs: number = toks[0].offsets.from;
+    // v1.1 (2026-07-22, test ciego): huecos internos y velocidad, con los
+    // mismos tokens de whisper. Un silencio de 1.5s que partía una palabra y
+    // un clip a 1.35x pasaban todos los gates anteriores.
+    const gaps = await internalGaps(mp3Path, firstMs / 1000, lastMs / 1000);
+    if (gaps.length) return { ok: false, db: null, why: `hueco interno de ${gaps[0].dur.toFixed(2)}s en ${gaps[0].start.toFixed(2)}s` };
+    if (sentence) {
+      const rc = rateCheck(sentence, LANG_KEY, (lastMs - firstMs) / 1000);
+      if (!rc.ok) return { ok: false, db: null, why: `velocidad ${rc.rate} fon/seg (banda ${RATE_MIN}-${RATE_MAX})` };
+    }
     const dur = await probe(mp3Path);
     const start = (lastMs + 60) / 1000;
     if (start >= dur) return { ok: true, db: null };
@@ -364,9 +378,27 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
       const raw = await tts(sentence, apiKey);
       const dur = await normalise(raw, outPath);
       const tx = await sttText(readFileSync(outPath), apiKey);
-      if (!transcriptOk(sentence, tx) || dur < 0.6) continue;
-      const tail = await tailClean(outPath);
-      if (!tail.ok) { console.log(`   tail reject (${tail.db} dB) try ${t}`); continue; }
+      if (dur < 0.6) continue;
+      if (!transcriptOk(sentence, tx)) {
+        // Fallback FONÉTICO (2026-07-22): el check ortográfico falso-rechazaba
+        // dialecto intencional y nombres propios porque los STT los normalizan
+        // ("weveo"→"hueveo", "Ronny"→"Ronnie", berlinés→inglés). El texto de la
+        // historia es la verdad: se comparan SONIDOS (espeak-ng, clases
+        // gruesas) con whisper local como segunda opinión; solo si tampoco hay
+        // cobertura fonética se rechaza el take. Calibrado en _qaEarTest.ts.
+        let ear: { ok: boolean; detail: string };
+        try {
+          const txW = await whisperTranscribe(outPath, LANG.whisper);
+          ear = phoneticCoverage(sentence, tx, txW, LANG_KEY);
+        } catch (err) {
+          if (!earGateWarned) { earGateWarned = true; console.log(`WARN fallback fonético no disponible (espeak-ng?): ${(err as Error).message}`); }
+          ear = { ok: false, detail: "fallback unavailable" };
+        }
+        if (!ear.ok) { console.log(`   stt reject (${ear.detail}) try ${t}`); continue; }
+        console.log(`   stt ortográfico falló pero fonética ok ("${tx.trim()}")`);
+      }
+      const tail = await tailClean(outPath, sentence);
+      if (!tail.ok) { console.log(`   tail/geometría reject (${tail.why ?? `${tail.db} dB`}) try ${t}`); continue; }
       const f0 = await f0Ok(outPath, sentence);
       if (!f0.ok) { console.log(`   f0 reject: ${f0.detail} try ${t}`); continue; }
       return { ok: true, dur, tries: t };
