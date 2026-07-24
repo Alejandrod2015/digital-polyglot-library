@@ -432,11 +432,20 @@ async function loadPersistedExercises(
         const optionTranslations = rawTr ? order.map((i) => rawTr[i]) : null;
         const answer = typeof payload.answer === "string" ? payload.answer : row.word;
         const language = typeof payload.language === "string" ? payload.language : null;
+        // #7a (audit 2026-07-24): 9 sets DE tienen el `sentence` top-level VACÍO
+        // (la oración vive en payload.audioClip.sentence) → speechText vacío →
+        // el cliente hace `if (!speechText) return` = botón MUDO. Caemos a la
+        // oración del audioClip (y a la palabra como último recurso) para que
+        // NUNCA quede vacío. Server-only: des-muta los 9 sin re-seed ni rebuild.
+        const rawSentence = typeof row.sentence === "string" ? row.sentence.trim() : "";
+        const clipSentence =
+          rawClip && typeof rawClip.sentence === "string" ? rawClip.sentence.trim() : "";
+        const speechText = rawSentence || clipSentence || row.word || "";
         out.push({
           id: `listen_choose:${row.id}`,
           type: "listen_choose",
           prompt,
-          speechText: row.sentence,
+          speechText,
           language,
           options,
           optionTranslations,
