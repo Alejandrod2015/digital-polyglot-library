@@ -32,6 +32,13 @@ qa
 .git
 .vercel
 .clerk
+# Claude Code: worktrees (checkouts completos del repo) + snapshots, ~6 GB.
+# NO lo necesita el build; sin esto el archivo pasa de 2.0 GB (límite EAS).
+.claude
+# Scratch de generación de contenido (audio, venv de Python, sets), ~4 GB.
+# El bundle mobile no importa nada de scripts/.
+scripts
+.expo
 
 # misc
 .DS_Store

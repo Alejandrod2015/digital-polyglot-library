@@ -47,3 +47,19 @@ vendor
 
 # generated local files
 ../../src/generated/prisma
+
+# node_modules de la RAÍZ del monorepo (2.7 GB). La línea `node_modules` de
+# arriba (sin `../../`) solo atrapa el de apps/mobile; el de la raíz necesita el
+# prefijo explícito o EAS lo comprime y el archivo pasa de 2.0 GB (límite).
+# EAS reinstala dependencias en la nube desde el lockfile, así que no hace falta.
+../../node_modules
+../../.expo
+
+# Worktrees de Claude Code: cada uno es un checkout COMPLETO del repo (5.9 GB
+# en total) y no aporta nada al build. Sin esta línea EAS los comprimía y
+# subía en cada build: el archivo pesaba 2.0 GB y el upload tardaba ~9 min.
+../../.claude
+
+# Scratch de generación de contenido (audio, covers, venv de Python, sets):
+# 4.2 GB que no entran en la app.
+../../scripts

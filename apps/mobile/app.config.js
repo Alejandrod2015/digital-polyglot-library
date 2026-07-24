@@ -148,7 +148,7 @@ const config = {
     // para el IPA: Expo descarta app.json, y EAS `autoIncrement` no muta JS.
     // La TWA gastó el 1, así que la app Expo arranca en 2. Bumpear a mano en
     // cada subida a Play; Play rechaza un versionCode repetido o menor.
-    versionCode: 11,
+    versionCode: 12,
     adaptiveIcon: {
       // Android recorta el foreground a un círculo/squircle según el launcher y
       // solo respeta el 66% central, así que reusar `icon.png` (el mark llena
