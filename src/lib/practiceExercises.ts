@@ -7,6 +7,7 @@ import {
 } from "@/lib/onboarding";
 import { normalizeVocabType } from "@/lib/vocabTypes";
 import { getSegmentIdFromSourcePath, getStorySource, isStandaloneSourcePath } from "@/lib/storySource";
+import { splitSentences } from "@/lib/exampleSentence";
 
 export type PracticeFavoriteItem = {
   word: string;
@@ -438,6 +439,21 @@ function getDistractorMeanings(
 // palabra para recuperar el balance de modos.
 const MAX_EXERCISE_SENTENCE_CHARS = 100;
 
+// REGLA (usuario, 2026-07-24): context/meaning se arma SOLO si la exampleSentence
+// ya es UNA sola oración completa y limpia dentro del tope, SIN necesidad de
+// cortar/extraer nada (nada de splitting heurístico para rescatar un trozo). Si
+// la exampleSentence es multi-oración (párrafo o diálogo que obligaría a partir)
+// o pasa el tope, devolvemos null → esa palabra va a listening/match (solo
+// necesitan la palabra). El split dialogue-aware se usa únicamente para CONTAR
+// (¿es exactamente 1 oración?), nunca para elegir un pedazo.
+function singleCleanSentence(item: PracticeFavoriteItem): string | null {
+  const raw = normalizeText(item.exampleSentence);
+  if (!raw) return null;
+  if (raw.length > MAX_EXERCISE_SENTENCE_CHARS) return null;
+  if (splitSentences(raw).length !== 1) return null;
+  return raw;
+}
+
 function getSentenceWithBlank(
   item: PracticeFavoriteItem
 ): { sentence: string; matchedForm: string } | null {
@@ -448,7 +464,7 @@ function getSentenceWithBlank(
   // ej.) la segunda oración y después `shortenSentence` se quedaba
   // con la primera; el usuario veía la primera oración intacta sin
   // blank, con la respuesta correcta en un párrafo descartado.
-  const sentence = getContextSentence(item);
+  const sentence = singleCleanSentence(item);
   const word = normalizeText(item.word);
   if (!sentence || !word) return null;
 
@@ -649,12 +665,9 @@ function createFillBlankExercise(
   item: PracticeFavoriteItem,
   pool: PracticeFavoriteItem[]
 ): FillBlankExercise | null {
-  const fullSentence = getContextSentence(item);
+  const fullSentence = singleCleanSentence(item);
   const blanked = getSentenceWithBlank(item);
   if (!blanked || !fullSentence) return null;
-  // Tope de longitud: no armar context si la oración no entra en la tarjeta.
-  // La palabra quedará para listening/match. Ver MAX_EXERCISE_SENTENCE_CHARS.
-  if (fullSentence.length > MAX_EXERCISE_SENTENCE_CHARS) return null;
   // Reject degenerate clozes: when the saved example was essentially
   // just the target word, blanking leaves "_____" (or "_____.") with no
   // surrounding context, so the Context card renders an empty prompt
@@ -693,15 +706,10 @@ function createMeaningContextExercise(
   item: PracticeFavoriteItem,
   pool: PracticeFavoriteItem[]
 ): MeaningContextExercise | null {
-  const fullSentence = isStandaloneSourcePath(item.sourcePath, item.storySlug)
-    ? getContextSentence(item)
-    : normalizeText(item.exampleSentence);
-  // Tope de longitud: gateamos sobre la oración COHERENTE de la palabra (no
-  // sobre el recorte de shortenSentence, que podría ser un fragmento). Si pasa
-  // el tope, no armamos meaning; la palabra queda para listening/match.
-  if (getContextSentence(item).length > MAX_EXERCISE_SENTENCE_CHARS) return null;
-  const sentence = stripOrphanLeadingPunctuation(shortenSentence(fullSentence));
-  if (!sentence) return null;
+  // Regla: solo si la exampleSentence ya es UNA oración completa ≤100, sin cortar.
+  const fullSentence = singleCleanSentence(item);
+  if (!fullSentence) return null;
+  const sentence = fullSentence;
   const options = shuffle([
     item.translation,
     ...getDistractorMeanings(item, getLanguagePool(item.language, pool)),

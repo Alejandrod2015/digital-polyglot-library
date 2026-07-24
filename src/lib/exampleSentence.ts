@@ -24,7 +24,9 @@
 const SENTENCE_BOUNDARY =
   /(?<=[.!?…]["'”’»“)\]]*)\s+(?=[„«"'“¿¡A-ZÄÖÜÑÀÈÉÌÒÙ0-9])/u;
 
-function splitSentences(text: string): string[] {
+// Dialogue-aware sentence splitter. Exported so exercise builders can COUNT
+// sentences (is this exactly one?) without ever extracting a sub-piece.
+export function splitSentences(text: string): string[] {
   return text
     .split(SENTENCE_BOUNDARY)
     .map((s) => s.trim())
