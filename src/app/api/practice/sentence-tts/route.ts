@@ -31,6 +31,8 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { getMobileSessionFromRequest } from "@/lib/mobileSession";
 import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
+import { DEFAULT_VOICE_SETTINGS, softenPunctuationForTts } from "@/lib/elevenlabs";
+import { assertVoiceApproved } from "@/lib/approvedVoices";
 
 // Bark cold-starts on GPU can take ~30-60 s; the rest of the engines
 // respond in 5-10 s. Set the route's max duration high enough to cover
@@ -69,6 +71,17 @@ const PRACTICE_VOICES: Record<string, string> = {
   spanish: "kokoro/ef_dora",
   portuguese: "piper/pt_BR-cadu-medium",
   italian: "piper/it_IT-paola-medium",
+};
+
+// Idiomas que Modal NO cubre (Piper/Kokoro = es/pt/it) → renderizar la ORACIÓN
+// con ElevenLabs usando una voz APROBADA del idioma, en vez de devolver 404 y
+// dejar la oración muda (Modal no tiene alemán; el usuario reportó oraciones
+// alemanas de palabras guardadas sin audio). Server-only: el cliente ya llama a
+// este endpoint; ahora recibe una URL en vez de 404 → arregla iOS/Android/web.
+// (2026-07-24). fr/otros: sin voz aprobada aún → siguen 404.
+const ELEVEN_SENTENCE_MODEL = "eleven_multilingual_v2";
+const ELEVEN_SENTENCE_VOICE: Record<string, string> = {
+  german: "Ww7Sq9tx9CCOiNOwWgsx", // narrador Expat/Friends DE (aprobado)
 };
 
 // Engine prefix → Modal endpoint subdomain segment. Modal renders the
@@ -164,6 +177,84 @@ async function postProcessPracticeAudio(
   }
 }
 
+// Render de una ORACIÓN con ElevenLabs (para idiomas que Modal no cubre, p.ej.
+// alemán). Cache en R2 por (versión|idioma|variante|voz|oración). Devuelve la
+// misma forma {url} que el path de Modal, así el cliente no cambia.
+async function renderSentenceWithElevenLabs(
+  sentence: string,
+  language: string,
+  variant: string,
+  voiceId: string
+): Promise<NextResponse> {
+  const apiKey = process.env.ELEVENLABS_API_KEY;
+  if (!apiKey) {
+    return NextResponse.json({ error: "ELEVENLABS_API_KEY missing" }, { status: 500 });
+  }
+  assertVoiceApproved(voiceId, `sentence-tts:${language}`);
+  const key = `media/practice/tts/el-${crypto
+    .createHash("sha256")
+    .update(`${CACHE_VERSION}|el|${language}|${variant}|${voiceId}|${sentence}`)
+    .digest("hex")
+    .slice(0, 24)}.mp3`;
+  const cachedUrl = getPublicObjectUrl(key);
+  if (cachedUrl) {
+    try {
+      const head = await fetch(cachedUrl, { method: "HEAD" });
+      if (head.ok) return NextResponse.json({ url: cachedUrl, cached: true, voiceId });
+    } catch {
+      // Fall through to generation.
+    }
+  }
+  let raw: Buffer;
+  try {
+    const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
+      method: "POST",
+      headers: { "xi-api-key": apiKey, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        text: softenPunctuationForTts(sentence),
+        model_id: ELEVEN_SENTENCE_MODEL,
+        voice_settings: DEFAULT_VOICE_SETTINGS,
+      }),
+    });
+    if (!res.ok) {
+      const detail = await res.text().catch(() => "");
+      return NextResponse.json(
+        { error: `ElevenLabs ${res.status}: ${detail.slice(0, 200)}` },
+        { status: 502 }
+      );
+    }
+    raw = Buffer.from(await res.arrayBuffer());
+  } catch (err) {
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "eleven sentence failed" },
+      { status: 502 }
+    );
+  }
+  // Normalización de loudness + cola de silencio (mismo trato que word-tts) para
+  // que el último fonema decaiga natural. Si ffmpeg falla, subimos el mp3 crudo.
+  const workDir = mkdtempSync(join(tmpdir(), "el-sent-"));
+  const inPath = join(workDir, "in.mp3");
+  const outPath = join(workDir, "out.mp3");
+  try {
+    writeFileSync(inPath, raw);
+    await runFfmpeg([
+      "-y", "-loglevel", "error", "-i", inPath,
+      "-af", "loudnorm=I=-16:LRA=11:TP=-1.5,apad=pad_dur=0.15",
+      "-codec:a", "libmp3lame", "-b:a", "128k", outPath,
+    ]);
+    const uploaded = await uploadPublicObject({ key, body: readFileSync(outPath), contentType: "audio/mpeg" });
+    if (uploaded?.url) return NextResponse.json({ url: uploaded.url, cached: false, voiceId });
+    return NextResponse.json({ error: "R2 upload failed" }, { status: 500 });
+  } catch {
+    // ffmpeg falló: subir el crudo.
+    const uploaded = await uploadPublicObject({ key, body: raw, contentType: "audio/mpeg" });
+    if (uploaded?.url) return NextResponse.json({ url: uploaded.url, cached: false, voiceId });
+    return NextResponse.json({ error: "R2 upload failed" }, { status: 500 });
+  } finally {
+    rmSync(workDir, { recursive: true, force: true });
+  }
+}
+
 function cacheKey(args: { sentence: string; language: string; variant: string; voiceId: string }): string {
   const payload = `${CACHE_VERSION}|${args.language}|${args.variant}|${args.voiceId}|${args.sentence}`;
   const hash = crypto.createHash("sha256").update(payload).digest("hex").slice(0, 24);
@@ -202,6 +293,13 @@ export async function POST(request: NextRequest) {
     ? hintedVoiceId
     : pickVoice(language);
   if (!voiceId) {
+    // Modal no tiene voz para este idioma (p.ej. alemán). Si hay una voz
+    // aprobada de ElevenLabs para él, renderizar la oración con ElevenLabs en
+    // vez de devolver 404 (que dejaba la oración muda en el device).
+    const elVoice = ELEVEN_SENTENCE_VOICE[language.toLowerCase()];
+    if (elVoice) {
+      return await renderSentenceWithElevenLabs(sentence, language, variant, elVoice);
+    }
     return NextResponse.json(
       { error: "No licence-clean voice for this language", code: "UNSUPPORTED_LANGUAGE" },
       { status: 404 }
