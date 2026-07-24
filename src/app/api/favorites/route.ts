@@ -10,6 +10,7 @@ import { getStandaloneStoryAudioSegments } from "@/lib/standaloneStoryAudioSegme
 import { getSegmentIdFromSourcePath, isStandaloneSourcePath } from "@/lib/storySource";
 import { prisma } from "@/lib/prisma";
 import { extractExampleSentence } from "@/lib/exampleSentence";
+import { getCuratedExampleMap, curatedKey } from "@/lib/curatedExamples";
 
 const bookLanguageBySlug = new Map<string, string>();
 const storyLanguageBySlug = new Map<string, string>();
@@ -206,7 +207,24 @@ export async function GET(req: NextRequest): Promise<Response> {
       revalidateTag("favorites-by-user");
     }
 
-    return NextResponse.json(normalized);
+    // REUSO curado (2026-07-24): si la palabra del favorito ya existe como
+    // ejercicio curado en un journey vivo, usamos su oración limpia + clip EL
+    // (audio == texto) en vez de la prosa cruda + slice del maestro.
+    const curatedMap = await getCuratedExampleMap(
+      normalized.map((f) => ({ word: f.word, language: f.language })),
+    );
+    const enriched = normalized.map((f) => {
+      const c = curatedMap.get(curatedKey(f.language, f.word));
+      if (!c) return f;
+      return {
+        ...f,
+        exampleSentence: c.sentence,
+        ...(c.clipUrl ? { clipUrl: c.clipUrl } : {}),
+        ...(c.voiceId ? { voiceId: c.voiceId } : {}),
+      };
+    });
+
+    return NextResponse.json(enriched);
   } catch (err: unknown) {
     console.error("❌ Error en GET /api/favorites:", err);
     return NextResponse.json({ error: "Database error" }, { status: 500 });
