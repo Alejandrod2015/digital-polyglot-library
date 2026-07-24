@@ -140,22 +140,48 @@ export async function POST(request: NextRequest) {
   const elVoiceId = rawVoiceId.startsWith("elevenlabs/")
     ? rawVoiceId.slice("elevenlabs/".length).trim()
     : rawVoiceId;
-  if (!elVoiceId || elVoiceId.includes("/")) {
-    return NextResponse.json(
-      { error: "voiceId is not an ElevenLabs voice", code: "UNSUPPORTED_VOICE" },
-      { status: 400 }
-    );
-  }
 
   const langCode = WORD_LANGUAGE_CODES[(body.language ?? "").toLowerCase()] ?? DEFAULT_WORD_LANGUAGE;
 
-  // Si llega la voz fallback genérica (español CO) para una palabra de otro
-  // idioma con voz aprobada propia, usar la del idioma. Evita "voz española
-  // diciendo alemán" y el silencio que producía en la práctica.
-  const renderVoiceId =
-    elVoiceId === CLIENT_FALLBACK_VOICE && WORD_LANGUAGE_DEFAULT_VOICE[langCode]
-      ? WORD_LANGUAGE_DEFAULT_VOICE[langCode]
-      : elVoiceId;
+  // Resolución de la voz de render (audit #7b + #2b, 2026-07-24):
+  // - Un id de MOTOR LOCAL ("piper/…" / "kokoro/…") o vacío no lo puede
+  //   sintetizar ElevenLabs. Antes devolvíamos 400 (palabra MUDA); ahora lo
+  //   sustituimos por la voz APROBADA del idioma (igual que la sustitución del
+  //   fallback), de modo que una palabra es/it/de guardada de un journey Piper
+  //   suene en vez de 400.
+  // - Si llega la voz fallback genérica (español CO) para una palabra de otro
+  //   idioma con voz aprobada propia, usar la del idioma (evita "voz española
+  //   diciendo alemán").
+  // - fr/pt no tienen voz aprobada aún: preferimos 400 explícito (sin audio) a
+  //   pronunciar con acento español equivocado. El fix propio espera a que el
+  //   usuario apruebe voces fr/pt por oído (approvedVoices.ts está bajo guard).
+  const approvedLangVoice = WORD_LANGUAGE_DEFAULT_VOICE[langCode];
+  const isEngineLocalOrEmpty = !elVoiceId || elVoiceId.includes("/");
+  const isGenericFallback = elVoiceId === CLIENT_FALLBACK_VOICE;
+
+  let renderVoiceId: string;
+  if (isEngineLocalOrEmpty) {
+    // Motor local / vacío → voz aprobada del idioma; para es cae a Hernando.
+    const substitute = approvedLangVoice ?? (langCode === "es" ? CLIENT_FALLBACK_VOICE : null);
+    if (!substitute) {
+      return NextResponse.json(
+        { error: "voiceId is not an ElevenLabs voice", code: "UNSUPPORTED_VOICE" },
+        { status: 400 }
+      );
+    }
+    renderVoiceId = substitute;
+  } else if (isGenericFallback && approvedLangVoice) {
+    renderVoiceId = approvedLangVoice;
+  } else if (isGenericFallback && langCode !== "es" && langCode !== "en") {
+    // Fallback genérico español para un idioma SIN voz aprobada (fr/pt): no
+    // pronunciar con acento equivocado; degradar a "sin audio" explícito.
+    return NextResponse.json(
+      { error: "No approved voice for this language", code: "UNSUPPORTED_LANGUAGE" },
+      { status: 404 }
+    );
+  } else {
+    renderVoiceId = elVoiceId;
+  }
 
   const key = cacheKey(renderVoiceId, word, langCode);
   const publicUrl = getPublicObjectUrl(key);

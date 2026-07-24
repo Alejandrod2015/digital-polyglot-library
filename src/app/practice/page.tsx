@@ -516,6 +516,11 @@ export default function PracticePage() {
   const clipAudioRef = useRef<HTMLAudioElement | null>(null);
   const clipStopAtRef = useRef<number | null>(null);
   const clipTimeHandlerRef = useRef<(() => void) | null>(null);
+  // #5(c): ref al fallback de síntesis para poder invocarlo desde callbacks
+  // definidos ANTES de playSpeechText (evita el TDZ del dep-array).
+  const playSpeechTextRef = useRef<
+    ((clipOwnerId: string, text: string, language: string | null | undefined) => void) | null
+  >(null);
   const feedbackAudioContextRef = useRef<AudioContext | null>(null);
   const feedbackSoundRefs = useRef<Record<FeedbackTone, HTMLAudioElement | null>>({
     correct: null,
@@ -974,7 +979,12 @@ export default function PracticePage() {
           body: JSON.stringify(
             wasSaved
               ? { word: es }
-              : { word: es, translation: en || es, storySlug: storyPracticeSlug ?? undefined, language: "spanish" },
+              // #4a (audit 2026-07-24): NO hardcodear 'spanish' (guardaba palabras
+              // alemanas/italianas como español → acento equivocado, y bloqueaba
+              // el backfill del server que solo rellena cuando language es null).
+              // Guardamos sin idioma; favorites GET lo rellena desde el journey de
+              // la historia (storySlug).
+              : { word: es, translation: en || es, storySlug: storyPracticeSlug ?? undefined },
           ),
         });
       } catch {
@@ -1478,7 +1488,15 @@ export default function PracticePage() {
         a.currentTime = 0;
         a.onended = () => stopClipPlayback();
         setPlayingClipId(clipOwnerId);
-        try { await a.play(); } catch (err) { console.error("[practice] clip url play failed", err); stopClipPlayback(); }
+        try {
+          await a.play();
+        } catch (err) {
+          // #5(c): un clipUrl pre-horneado stale/404 dejaba la oración MUDA. En
+          // vez de solo parar, caer a la síntesis del navegador de la oración.
+          console.error("[practice] clip url play failed, falling back to speech synth", err);
+          stopClipPlayback();
+          playSpeechTextRef.current?.(clipOwnerId, clip.sentence, clip.language);
+        }
         return;
       }
       const normalizedSlug = normalizeStorySlug(clip.storySlug);
@@ -1737,6 +1755,8 @@ export default function PracticePage() {
       }
     }, 180);
   }, [speakingClipId]);
+  // #5(c): mantener el ref apuntando al último playSpeechText.
+  playSpeechTextRef.current = playSpeechText;
 
   const playListenPrompt = useCallback(() => {
     if (!currentExercise || currentExercise.type !== "listen_choose") return;
@@ -1765,19 +1785,29 @@ export default function PracticePage() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             sentence: clip.sentence,
-            language: clip.language ?? "german",
+            // #4b: no hardcodear 'german'. Si no hay idioma fiable, dejamos que
+            // el endpoint responda (400/404) y caemos a la síntesis del navegador.
+            ...(clip.language ? { language: clip.language } : {}),
           }),
         });
         if (!res.ok) {
-          console.error("[practice] HQ TTS failed", res.status);
+          // #5(b): el fallback que el comentario de arriba promete. Un idioma sin
+          // voz (fr) o sin idioma → 404/400; en vez de quedar MUDO, hablar por
+          // SpeechSynthesis del navegador (mejor algo que silencio).
+          console.error("[practice] HQ TTS failed, falling back to speech synth", res.status);
+          playSpeechText(clipOwnerId, clip.sentence, clip.language);
           return;
         }
         const data = (await res.json()) as { url?: string };
-        if (!data.url) return;
+        if (!data.url) {
+          playSpeechText(clipOwnerId, clip.sentence, clip.language);
+          return;
+        }
         url = data.url;
         setHqUrlBySentence((prev) => ({ ...prev, [cacheKey]: data.url! }));
       } catch (err) {
-        console.error("[practice] HQ TTS error", err);
+        console.error("[practice] HQ TTS error, falling back to speech synth", err);
+        playSpeechText(clipOwnerId, clip.sentence, clip.language);
         return;
       }
     }
@@ -1793,7 +1823,7 @@ export default function PracticePage() {
       console.error("[practice] HQ TTS play error", err);
       setHqClipId(null);
     }
-  }, [hqClipId, hqUrlBySentence]);
+  }, [hqClipId, hqUrlBySentence, playSpeechText]);
 
   // Single audio entry point for context exercises (iPhone parity: one button,
   // not three). Prefer the real story segment when we have it, fall back to
@@ -1865,8 +1895,13 @@ export default function PracticePage() {
       // pasa clip). Sin él, word-tts asume español y pronuncia palabras
       // alemanas/italianas con fonética española.
       const wordLanguage = clip?.language ?? languageOverride ?? undefined;
+      // #5 (audit 2026-07-24): si hay clip PRE-HORNEADO de la palabra
+      // (wordClipUrl), reproducirlo directo — el primer tier de la cadena de
+      // fuentes que la web se saltaba (siempre re-rendeaba via runtime).
+      const preBakedWordUrl =
+        typeof clip?.wordClipUrl === "string" && clip.wordClipUrl.trim() ? clip.wordClipUrl.trim() : null;
       const cacheKey = `${voiceId}|${word.toLowerCase()}|${wordLanguage ?? "es"}`;
-      let url = wordUrlByKey[cacheKey];
+      let url = preBakedWordUrl ?? wordUrlByKey[cacheKey];
       if (!url) {
         try {
           const res = await fetch("/api/practice/word-tts", {
@@ -1875,15 +1910,22 @@ export default function PracticePage() {
             body: JSON.stringify({ word, voiceId, ...(wordLanguage ? { language: wordLanguage } : {}) }),
           });
           if (!res.ok) {
-            console.error("[practice] word TTS failed", res.status);
+            // #5(a): en vez de quedar MUDO ante un word-tts non-2xx (502/500/
+            // 400/404 fr-pt), caer a la síntesis del navegador.
+            console.error("[practice] word TTS failed, falling back to speech synth", res.status);
+            playSpeechText(clipOwnerId, word, wordLanguage ?? null);
             return;
           }
           const data = (await res.json()) as { url?: string };
-          if (!data.url) return;
+          if (!data.url) {
+            playSpeechText(clipOwnerId, word, wordLanguage ?? null);
+            return;
+          }
           url = data.url;
           setWordUrlByKey((prev) => ({ ...prev, [cacheKey]: data.url! }));
         } catch (err) {
-          console.error("[practice] word TTS error", err);
+          console.error("[practice] word TTS error, falling back to speech synth", err);
+          playSpeechText(clipOwnerId, word, wordLanguage ?? null);
           return;
         }
       }
@@ -1894,11 +1936,14 @@ export default function PracticePage() {
       try {
         await audio.play();
       } catch (err) {
-        console.error("[practice] word TTS play error", err);
+        // #5(a): si el mp3 (pre-horneado o de runtime) no reproduce, último
+        // recurso = síntesis del navegador, no silencio.
+        console.error("[practice] word TTS play error, falling back to speech synth", err);
         setWordClipId(null);
+        playSpeechText(clipOwnerId, word, wordLanguage ?? null);
       }
     },
-    [wordClipId, wordUrlByKey, narratorVoiceId]
+    [wordClipId, wordUrlByKey, narratorVoiceId, playSpeechText]
   );
 
   // Preload this exercise's audio the moment it appears, so the play buttons
@@ -1927,11 +1972,16 @@ export default function PracticePage() {
       (currentExercise as { audioClip?: { language?: string } | null }).audioClip?.language ??
       (currentExercise as { language?: string }).language ??
       undefined;
-    const warmWord = (word: string, clipVoiceId?: string | null) => {
+    const warmWord = (word: string, clipVoiceId?: string | null, langOverride?: string | null) => {
       const raw = typeof clipVoiceId === "string" ? clipVoiceId.trim() : "";
       const wordVoiceId =
         (raw.startsWith("elevenlabs/") ? raw.slice("elevenlabs/".length) : raw) || fallbackWordVoiceId;
-      const key = `${wordVoiceId}|${word.toLowerCase()}|${warmLanguage ?? "es"}`;
+      // #6 (audit 2026-07-24): en match el warm usaba warmLanguage ('es' por
+      // defecto) y la voz fallback, mientras el click usa pair.language/pair.voiceId
+      // → distinta cache key: el warm se desperdiciaba y generaba un render con
+      // acento español de una palabra extranjera. Con el override, warm == click.
+      const lang = langOverride ?? warmLanguage;
+      const key = `${wordVoiceId}|${word.toLowerCase()}|${lang ?? "es"}`;
       if (wordUrlByKey[key]) {
         warm(wordUrlByKey[key]);
         return;
@@ -1939,7 +1989,7 @@ export default function PracticePage() {
       void fetch("/api/practice/word-tts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ word, voiceId: wordVoiceId, ...(warmLanguage ? { language: warmLanguage } : {}) }),
+        body: JSON.stringify({ word, voiceId: wordVoiceId, ...(lang ? { language: lang } : {}) }),
       })
         .then((r) => (r.ok ? r.json() : null))
         .then((d: { url?: string } | null) => {
@@ -1950,9 +2000,12 @@ export default function PracticePage() {
         .catch(() => {});
     };
 
-    // Match: warm each target-language word.
+    // Match: warm each target-language word with ITS voice + language (so the
+    // warm cache key matches the click; #6).
     if (currentExercise.type === "match_meaning") {
-      for (const pair of currentExercise.pairs) warmWord(pair.word);
+      for (const pair of currentExercise.pairs) {
+        warmWord(pair.word, pair.voiceId ?? pair.wordVoiceId ?? null, pair.language ?? null);
+      }
       return () => {
         cancelled = true;
       };
@@ -3291,7 +3344,23 @@ export default function PracticePage() {
                                 type="button"
                                 onClick={(e) => {
                                   e.stopPropagation();
-                                  void playWordTts(`${currentExercise.id}:m:${pair.word}`, pair.word, null, pair.language);
+                                  // #6 (audit 2026-07-24): pasar un clip con la voz del par
+                                  // (narrador, ahora estampado server-side) y el wordClipUrl
+                                  // pre-horneado si existe, en vez de clip=null (que caía a la
+                                  // voz fija WORD_AUDIO_VOICE_ID, no la del narrador).
+                                  void playWordTts(
+                                    `${currentExercise.id}:m:${pair.word}`,
+                                    pair.word,
+                                    {
+                                      storySlug: "",
+                                      sentence: pair.word,
+                                      storySource: "user",
+                                      voiceId: pair.voiceId ?? pair.wordVoiceId ?? null,
+                                      language: pair.language ?? null,
+                                      wordClipUrl: pair.wordClipUrl ?? null,
+                                    },
+                                    pair.language,
+                                  );
                                 }}
                                 aria-label="Listen to the word"
                                 className="absolute right-1.5 top-1.5 grid h-7 w-7 place-items-center rounded-full border border-current/30 bg-white/10 text-current transition hover:bg-white/20"

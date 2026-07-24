@@ -350,6 +350,19 @@ async function loadPersistedExercises(
     },
   });
   if (!set || set.exercises.length === 0) return null;
+
+  // #6 (audit 2026-07-24): los pares de match nunca traían voiceId (904/904
+  // vacíos), así que el audio de palabra de match caía a la voz fallback
+  // colombiana (Hernando) en vez del narrador de la historia — acento
+  // equivocado en journeys ES no-colombianos. Estampamos la voz del narrador
+  // (misma resolución que la ruta live: practiceVoiceId gana sobre voiceId) en
+  // cada par para que suene en la voz correcta, sin depender de rebuild mobile.
+  const journeyVoice = await prisma.journeyStory.findFirst({
+    where: { slug: storySlug },
+    select: { voiceId: true, practiceVoiceId: true },
+  }).catch(() => null);
+  const storyVoiceId = journeyVoice?.practiceVoiceId?.trim() || journeyVoice?.voiceId || null;
+
   const out: PracticeExercise[] = [];
   for (const row of set.exercises) {
     const payload = (row.payload ?? {}) as Record<string, unknown>;
@@ -440,7 +453,18 @@ async function loadPersistedExercises(
         // by value downstream, so reordering the displayed meanings is safe.
         const answersInRowOrder = rawPairs.map((p) => p.answer);
         const deranged = derangeMeanings(answersInRowOrder, row.id);
-        const pairs = rawPairs.map((p) => ({ ...p, options: deranged }));
+        // #6: estampar la voz del narrador en cada par (preservando cualquier
+        // voiceId/wordClipUrl ya presente en el payload). Sin esto el audio de
+        // palabra de match sonaba en la voz fallback, no la del narrador.
+        const pairs = rawPairs.map((p) => {
+          const raw = p as Record<string, unknown>;
+          return {
+            ...p,
+            options: deranged,
+            voiceId: (typeof raw.voiceId === "string" && raw.voiceId) || storyVoiceId,
+            wordVoiceId: (typeof raw.wordVoiceId === "string" && raw.wordVoiceId) || storyVoiceId,
+          };
+        });
         out.push({
           id: `match_meaning:${row.id}`,
           type: "match_meaning",

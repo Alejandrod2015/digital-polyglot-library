@@ -136,17 +136,25 @@ export async function GET(req: NextRequest): Promise<Response> {
   // Historia viva = JourneyStory publicada + journey no archived/draft.
   const LIVE_JOURNEY: Prisma.JourneyWhereInput = { status: { notIn: ["archived", "draft"] } };
   const liveByKey = new Map<string, ClipMap>(); // key: el storySlug original
+  // #4/#7c (audit 2026-07-24): idioma de la historia por key, para RELLENAR
+  // favorite.language cuando es null (favoritos guardados sin idioma). Sin esto,
+  // word-tts/sentence-tts defaulteaban a 'es' → acento equivocado en palabras
+  // de/it/etc. El idioma de un JourneyStory vive en su Journey padre.
+  const langByKey = new Map<string, string | null>();
 
   if (pseudoIds.length > 0) {
     const rows = await prisma.journeyStory.findMany({
       where: { id: { in: pseudoIds }, status: "published", journey: LIVE_JOURNEY },
       select: {
         id: true,
+        journey: { select: { language: true } },
         practiceSet: { select: { exercises: { select: { word: true, payload: true } } } },
       },
     });
     for (const r of rows) {
-      liveByKey.set(`${JOURNEY_PREFIX}${r.id}`, collectClips(r.practiceSet?.exercises ?? []));
+      const key = `${JOURNEY_PREFIX}${r.id}`;
+      liveByKey.set(key, collectClips(r.practiceSet?.exercises ?? []));
+      langByKey.set(key, r.journey?.language ?? null);
     }
   }
   if (plainSlugs.length > 0) {
@@ -154,19 +162,26 @@ export async function GET(req: NextRequest): Promise<Response> {
       where: { slug: { in: plainSlugs }, status: "published", journey: LIVE_JOURNEY },
       select: {
         slug: true,
+        journey: { select: { language: true } },
         practiceSet: { select: { exercises: { select: { word: true, payload: true } } } },
       },
     });
     for (const r of jrows) {
-      if (r.slug) liveByKey.set(r.slug, collectClips(r.practiceSet?.exercises ?? []));
+      if (r.slug) {
+        liveByKey.set(r.slug, collectClips(r.practiceSet?.exercises ?? []));
+        langByKey.set(r.slug, r.journey?.language ?? null);
+      }
     }
     // Standalone: existencia = viva (no tienen practice set → sin clip curado).
     const srows = await prisma.standaloneStory.findMany({
       where: { slug: { in: plainSlugs } },
-      select: { slug: true },
+      select: { slug: true, language: true },
     });
     for (const r of srows) {
-      if (r.slug && !liveByKey.has(r.slug)) liveByKey.set(r.slug, new Map());
+      if (r.slug && !liveByKey.has(r.slug)) {
+        liveByKey.set(r.slug, new Map());
+        langByKey.set(r.slug, r.language ?? null);
+      }
     }
   }
 
@@ -175,18 +190,26 @@ export async function GET(req: NextRequest): Promise<Response> {
     const clips = liveByKey.get(f.storySlug);
     if (!clips) return []; // HUÉRFANO (historia borrada / muerta / archived) → EXCLUIR
     const clip = clips.get(norm(f.word));
+    // #4/#7c: rellenar el idioma desde la historia cuando el favorito no lo trae.
+    const language = f.language ?? langByKey.get(f.storySlug) ?? null;
     // Adjuntar el clip curado de la palabra cuando exista (mismo idioma/voz que
     // el narrador; audio correcto sin Modal). No tocamos `exampleSentence`.
     // `wordClipUrl` (palabra pre-horneada) alimenta meaning y match sin runtime.
+    // #7: adjuntar `voiceId` (narración) SIEMPRE que exista, no solo cuando hay
+    // clip de oración (antes desincronizaba la voz para meaning/context).
     return [
-      clip
-        ? {
-            ...f,
-            ...(clip.clipUrl ? { clipUrl: clip.clipUrl, voiceId: clip.voiceId } : {}),
-            wordClipUrl: clip.wordClipUrl,
-            wordVoiceId: clip.wordVoiceId,
-          }
-        : f,
+      {
+        ...f,
+        language,
+        ...(clip
+          ? {
+              ...(clip.clipUrl ? { clipUrl: clip.clipUrl } : {}),
+              ...(clip.voiceId ? { voiceId: clip.voiceId } : {}),
+              wordClipUrl: clip.wordClipUrl,
+              wordVoiceId: clip.wordVoiceId,
+            }
+          : {}),
+      },
     ];
   });
 
