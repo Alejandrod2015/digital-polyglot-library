@@ -6,6 +6,7 @@ import { normalizeVocabType } from "@/lib/vocabTypes";
 import { getActiveMobileSession } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
 import { extractExampleSentence } from "@/lib/exampleSentence";
+import { getCuratedExampleMap, curatedKey } from "@/lib/curatedExamples";
 
 type FavoriteBody = {
   word: string;
@@ -214,7 +215,24 @@ export async function GET(req: NextRequest): Promise<Response> {
     ];
   });
 
-  return NextResponse.json(enriched);
+  // REUSO curado (2026-07-24, igual que /api/favorites web): si la palabra del
+  // favorito existe como ejercicio curado en un journey vivo, usamos su oración
+  // limpia + clip EL (audio == texto) en vez de la prosa cruda de la historia.
+  const curatedMap = await getCuratedExampleMap(
+    enriched.map((f) => ({ word: f.word, language: f.language })),
+  );
+  const final = enriched.map((f) => {
+    const c = curatedMap.get(curatedKey(f.language, f.word));
+    if (!c) return f;
+    return {
+      ...f,
+      exampleSentence: c.sentence,
+      ...(c.clipUrl ? { clipUrl: c.clipUrl } : {}),
+      ...(c.voiceId ? { voiceId: c.voiceId } : {}),
+    };
+  });
+
+  return NextResponse.json(final);
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
