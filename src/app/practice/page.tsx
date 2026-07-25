@@ -38,7 +38,6 @@ import {
   buildPracticeSession,
   getRecommendedPracticeModeFromOnboarding,
   getDuePracticeItems,
-  getSpeechSynthesisLang,
   markTargetWordInSentence,
   sortPracticeItemsByDueness,
   PracticeAudioClip,
@@ -394,41 +393,11 @@ function getComboLabel(streak: number, tier: ComboTier): string {
 }
 
 
-function scoreSpeechVoice(voice: SpeechSynthesisVoice, lang: string) {
-  const voiceLang = (voice.lang ?? "").toLowerCase();
-  const targetLang = lang.toLowerCase();
-  const targetBase = targetLang.split("-")[0];
-  const voiceName = (voice.name ?? "").toLowerCase();
-
-  if (!voiceLang.startsWith(targetBase)) return Number.NEGATIVE_INFINITY;
-
-  let score = 0;
-
-  if (voiceLang === targetLang) score += 140;
-  else if (voiceLang.startsWith(targetLang)) score += 120;
-  else score += 80;
-
-  if (/google/.test(voiceName)) score += 120;
-  if (/microsoft/.test(voiceName)) score += 105;
-  if (/neural|natural|premium|enhanced|wavenet/.test(voiceName)) score += 90;
-  if (!voice.localService) score += 40;
-  if (/desktop/.test(voiceName)) score += 25;
-
-  if (/compact|eloquence|whisper|novelty|bubbles|trinoids|zarvox/i.test(voice.name ?? "")) {
-    score -= 180;
-  }
-
-  return score;
-}
-
-function selectPreferredSpeechVoice(voices: SpeechSynthesisVoice[], lang: string) {
-  const ranked = voices
-    .map((voice) => ({ voice, score: scoreSpeechVoice(voice, lang) }))
-    .filter((entry) => Number.isFinite(entry.score))
-    .sort((a, b) => b.score - a.score);
-
-  return ranked[0]?.voice ?? null;
-}
+// NOTE (2026-07-26): the browser SpeechSynthesis helpers (scoreSpeechVoice /
+// selectPreferredSpeechVoice) were REMOVED. Per the ElevenLabs-only policy
+// nothing may sound unless it is ElevenLabs; when an EL render is unavailable
+// the practice UI now stays SILENT instead of falling back to the device's
+// robotic voice.
 
 export default function PracticePage() {
   const { user, isLoaded } = useUser();
@@ -502,7 +471,6 @@ export default function PracticePage() {
   const [wrongIds, setWrongIds] = useState<string[]>([]);
   const [retryIds, setRetryIds] = useState<string[] | null>(null);
   const [playingClipId, setPlayingClipId] = useState<string | null>(null);
-  const [speakingClipId, setSpeakingClipId] = useState<string | null>(null);
   const [hqClipId, setHqClipId] = useState<string | null>(null);
   const [hqUrlBySentence, setHqUrlBySentence] = useState<Record<string, string>>({});
   // Isolated-word audio (ElevenLabs, same voice as the story line). Separate
@@ -516,11 +484,6 @@ export default function PracticePage() {
   const clipAudioRef = useRef<HTMLAudioElement | null>(null);
   const clipStopAtRef = useRef<number | null>(null);
   const clipTimeHandlerRef = useRef<(() => void) | null>(null);
-  // #5(c): ref al fallback de síntesis para poder invocarlo desde callbacks
-  // definidos ANTES de playSpeechText (evita el TDZ del dep-array).
-  const playSpeechTextRef = useRef<
-    ((clipOwnerId: string, text: string, language: string | null | undefined) => void) | null
-  >(null);
   const feedbackAudioContextRef = useRef<AudioContext | null>(null);
   const feedbackSoundRefs = useRef<Record<FeedbackTone, HTMLAudioElement | null>>({
     correct: null,
@@ -1230,10 +1193,6 @@ export default function PracticePage() {
     setTimerRemaining(timerDurationForExercise(exercises[exerciseIndex] ?? null));
     contextRevealAudioRef.current = null;
     meaningAutoplayedRef.current = null;
-    if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
-    }
-    setSpeakingClipId(null);
   }, [exerciseIndex]);
 
   useEffect(() => {
@@ -1491,11 +1450,11 @@ export default function PracticePage() {
         try {
           await a.play();
         } catch (err) {
-          // #5(c): un clipUrl pre-horneado stale/404 dejaba la oración MUDA. En
-          // vez de solo parar, caer a la síntesis del navegador de la oración.
-          console.error("[practice] clip url play failed, falling back to speech synth", err);
+          // EL-only (2026-07-26): un clipUrl EL pre-horneado stale/404 antes caía
+          // a SpeechSynthesis del navegador. Política: si no hay ElevenLabs, no
+          // suena nada. Solo paramos (silencio), sin voz robótica de fallback.
+          console.error("[practice] clip url play failed; staying silent (EL-only)", err);
           stopClipPlayback();
-          playSpeechTextRef.current?.(clipOwnerId, clip.sentence, clip.language);
         }
         return;
       }
@@ -1698,71 +1657,6 @@ export default function PracticePage() {
     resetRound();
   };
 
-  const playSpeechText = useCallback((clipOwnerId: string, text: string, language: string | null | undefined) => {
-    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-    const synth = window.speechSynthesis;
-    if (speakingClipId === clipOwnerId) {
-      synth.cancel();
-      setSpeakingClipId(null);
-      return;
-    }
-
-    synth.cancel();
-    const lang = getSpeechSynthesisLang(language);
-
-    setSpeakingClipId(clipOwnerId);
-
-    let didSpeak = false;
-    const speak = () => {
-      if (didSpeak) return;
-      didSpeak = true;
-
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = lang;
-      utterance.rate = 0.92;
-
-      const preferredVoice = selectPreferredSpeechVoice(synth.getVoices(), lang);
-      if (preferredVoice) {
-        utterance.voice = preferredVoice;
-      }
-
-      utterance.onend = () => {
-        setSpeakingClipId((current) => (current === clipOwnerId ? null : current));
-      };
-      utterance.onerror = () => {
-        setSpeakingClipId((current) => (current === clipOwnerId ? null : current));
-      };
-
-      synth.cancel();
-      synth.speak(utterance);
-    };
-
-    if (synth.getVoices().length > 0) {
-      speak();
-      return;
-    }
-
-    const handleVoicesChanged = () => {
-      synth.removeEventListener?.("voiceschanged", handleVoicesChanged);
-      speak();
-    };
-
-    synth.addEventListener?.("voiceschanged", handleVoicesChanged);
-    window.setTimeout(() => {
-      synth.removeEventListener?.("voiceschanged", handleVoicesChanged);
-      if (!didSpeak) {
-        speak();
-      }
-    }, 180);
-  }, [speakingClipId]);
-  // #5(c): mantener el ref apuntando al último playSpeechText.
-  playSpeechTextRef.current = playSpeechText;
-
-  const playListenPrompt = useCallback(() => {
-    if (!currentExercise || currentExercise.type !== "listen_choose") return;
-    playSpeechText(currentExercise.id, currentExercise.speechText, currentExercise.language);
-  }, [currentExercise, playSpeechText]);
-
   const playHqContextClip = useCallback(async (clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
     if (!clip || typeof window === "undefined") return;
     const audio = clipAudioRef.current ?? new Audio();
@@ -1785,29 +1679,29 @@ export default function PracticePage() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             sentence: clip.sentence,
-            // #4b: no hardcodear 'german'. Si no hay idioma fiable, dejamos que
-            // el endpoint responda (400/404) y caemos a la síntesis del navegador.
+            // #4b: no hardcodear 'german'. Si no hay idioma fiable, el endpoint
+            // responde (400/404) y NO suena nada (política EL-only).
             ...(clip.language ? { language: clip.language } : {}),
           }),
         });
         if (!res.ok) {
-          // #5(b): el fallback que el comentario de arriba promete. Un idioma sin
-          // voz (fr) o sin idioma → 404/400; en vez de quedar MUDO, hablar por
-          // SpeechSynthesis del navegador (mejor algo que silencio).
-          console.error("[practice] HQ TTS failed, falling back to speech synth", res.status);
-          playSpeechText(clipOwnerId, clip.sentence, clip.language);
+          // EL-only (2026-07-26): un idioma sin voz aprobada (fr/pt) o sin idioma
+          // → 404/400. Política: si no hay ElevenLabs, no suena nada. Antes caía
+          // a SpeechSynthesis del navegador; ahora queda en silencio.
+          console.error("[practice] HQ TTS unavailable; staying silent (EL-only)", res.status);
+          setHqClipId(null);
           return;
         }
         const data = (await res.json()) as { url?: string };
         if (!data.url) {
-          playSpeechText(clipOwnerId, clip.sentence, clip.language);
+          setHqClipId(null);
           return;
         }
         url = data.url;
         setHqUrlBySentence((prev) => ({ ...prev, [cacheKey]: data.url! }));
       } catch (err) {
-        console.error("[practice] HQ TTS error, falling back to speech synth", err);
-        playSpeechText(clipOwnerId, clip.sentence, clip.language);
+        console.error("[practice] HQ TTS error; staying silent (EL-only)", err);
+        setHqClipId(null);
         return;
       }
     }
@@ -1823,11 +1717,11 @@ export default function PracticePage() {
       console.error("[practice] HQ TTS play error", err);
       setHqClipId(null);
     }
-  }, [hqClipId, hqUrlBySentence, playSpeechText]);
+  }, [hqClipId, hqUrlBySentence]);
 
   // Single audio entry point for context exercises (iPhone parity: one button,
-  // not three). Prefer the real story segment when we have it, fall back to
-  // high-quality ElevenLabs TTS, then to the browser speech synth.
+  // not three). Prefer the real story segment when we have it, else the
+  // high-quality ElevenLabs TTS. If EL is unavailable, nothing sounds (EL-only).
   const playContextAudio = useCallback(
     (clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
       if (!clip) return;
@@ -1854,8 +1748,8 @@ export default function PracticePage() {
   // True when any audio source for this context clip is currently playing.
   const isContextAudioActive = useCallback(
     (clipOwnerId: string) =>
-      playingClipId === clipOwnerId || hqClipId === clipOwnerId || speakingClipId === clipOwnerId,
-    [hqClipId, playingClipId, speakingClipId]
+      playingClipId === clipOwnerId || hqClipId === clipOwnerId,
+    [hqClipId, playingClipId]
   );
 
   // Play a SINGLE word (the meaning exercise's "play word" button). Rendered by
@@ -1910,22 +1804,22 @@ export default function PracticePage() {
             body: JSON.stringify({ word, voiceId, ...(wordLanguage ? { language: wordLanguage } : {}) }),
           });
           if (!res.ok) {
-            // #5(a): en vez de quedar MUDO ante un word-tts non-2xx (502/500/
-            // 400/404 fr-pt), caer a la síntesis del navegador.
-            console.error("[practice] word TTS failed, falling back to speech synth", res.status);
-            playSpeechText(clipOwnerId, word, wordLanguage ?? null);
+            // EL-only (2026-07-26): word-tts non-2xx (502/500/400, o 404 fr/pt
+            // sin voz aprobada) → no suena nada. Sin SpeechSynthesis del navegador.
+            console.error("[practice] word TTS unavailable; staying silent (EL-only)", res.status);
+            setWordClipId(null);
             return;
           }
           const data = (await res.json()) as { url?: string };
           if (!data.url) {
-            playSpeechText(clipOwnerId, word, wordLanguage ?? null);
+            setWordClipId(null);
             return;
           }
           url = data.url;
           setWordUrlByKey((prev) => ({ ...prev, [cacheKey]: data.url! }));
         } catch (err) {
-          console.error("[practice] word TTS error, falling back to speech synth", err);
-          playSpeechText(clipOwnerId, word, wordLanguage ?? null);
+          console.error("[practice] word TTS error; staying silent (EL-only)", err);
+          setWordClipId(null);
           return;
         }
       }
@@ -1936,14 +1830,12 @@ export default function PracticePage() {
       try {
         await audio.play();
       } catch (err) {
-        // #5(a): si el mp3 (pre-horneado o de runtime) no reproduce, último
-        // recurso = síntesis del navegador, no silencio.
-        console.error("[practice] word TTS play error, falling back to speech synth", err);
+        // EL-only (2026-07-26): si el mp3 EL no reproduce, silencio (no synth).
+        console.error("[practice] word TTS play error; staying silent (EL-only)", err);
         setWordClipId(null);
-        playSpeechText(clipOwnerId, word, wordLanguage ?? null);
       }
     },
-    [wordClipId, wordUrlByKey, narratorVoiceId, playSpeechText]
+    [wordClipId, wordUrlByKey, narratorVoiceId]
   );
 
   // Preload this exercise's audio the moment it appears, so the play buttons
@@ -3010,12 +2902,7 @@ export default function PracticePage() {
                       const isMeaning = ex.type === "meaning_in_context";
                       const isContext = ex.type === "fill_blank";
                       const isListening = ex.type === "listen_choose";
-                      const audioActive =
-                        isListening
-                          ? // a real story-segment clip plays via playingClipId;
-                            // the TTS fallback uses speakingClipId — cover both.
-                            isContextAudioActive(ex.id)
-                          : isContextAudioActive(ex.id);
+                      const audioActive = isContextAudioActive(ex.id);
                       const accentColors = ["#fbbf24", "#60a5fa", "#a78bfa", "#34d399"];
                       return (
                         <div className="flex min-h-0 flex-1 flex-col gap-4">
@@ -3025,11 +2912,22 @@ export default function PracticePage() {
                               <div className="flex flex-col items-center gap-3 py-3">
                                 <button
                                   type="button"
-                                  onClick={() =>
-                                    ex.type === "listen_choose" && ex.audioClip
-                                      ? playContextAudio(ex.id, ex.audioClip)
-                                      : playListenPrompt()
-                                  }
+                                  onClick={() => {
+                                    if (ex.type !== "listen_choose") return;
+                                    // EL-only: usa el audioClip curado (clipUrl EL o
+                                    // segmento de historia) o, en modo topic sin clip,
+                                    // sintetiza la oración por ElevenLabs (sentence-tts).
+                                    // NUNCA SpeechSynthesis del navegador.
+                                    const listenClip = ex.audioClip
+                                      ? ex.audioClip
+                                      : ({
+                                          storySlug: "",
+                                          sentence: ex.speechText,
+                                          storySource: "user",
+                                          language: ex.language,
+                                        } as PracticeAudioClip);
+                                    playContextAudio(ex.id, listenClip);
+                                  }}
                                   aria-label={audioActive ? "Pause" : "Play"}
                                   className="grid h-24 w-24 place-items-center rounded-full border-2 transition active:scale-95"
                                   style={{

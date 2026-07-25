@@ -1,12 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useAuth, useUser } from '@clerk/nextjs';
 import { ChevronDown, Play, Square } from 'lucide-react';
 import { getLanguageCountry } from '@/lib/languageFlags';
 import Flag from '@/components/Flag';
-import { getSpeechSynthesisLang } from '@/lib/practiceExercises';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { books } from '@/data/books';
 import { formatLanguageCode } from '@domain/displayFormat';
@@ -277,29 +276,54 @@ export default function FavoritesPage() {
   // can flip to a "stop" icon). null when nothing is playing.
   const [playingWordKey, setPlayingWordKey] = useState<string | null>(null);
 
-  // Pronounce a favorite via the Web Speech API. Prefer the example
-  // sentence if present (gives natural prosody); fall back to the word.
-  // Tapping the same word again stops the playback. Tapping a different
-  // word cancels the current utterance and starts the new one.
-  const playWord = (fav: FavoriteItem) => {
-    if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
-    const synth = window.speechSynthesis;
+  // Pronounce a favorite word with ElevenLabs (word-tts). EL-only policy
+  // (2026-07-26): the old Web Speech API path (robotic device voice) was
+  // removed; if EL can't render the word (e.g. a language with no approved
+  // voice), NOTHING sounds. Tapping the same word toggles it off.
+  const wordAudioRef = useRef<HTMLAudioElement | null>(null);
+  // Generic fallback voice: word-tts substitutes the approved per-language
+  // voice for de/it and keeps this (approved) one for es; fr/pt → 404 → silent.
+  const FAVORITE_WORD_VOICE = 'yHD4CsKkghm19ToGLJEC';
+  const playWord = async (fav: FavoriteItem) => {
+    if (typeof window === 'undefined') return;
     const key = `${fav.word}-${fav.language ?? ''}`;
-    // Toggle off if same word
+    const audio = wordAudioRef.current ?? new Audio();
+    wordAudioRef.current = audio;
     if (playingWordKey === key) {
-      synth.cancel();
+      audio.pause();
       setPlayingWordKey(null);
       return;
     }
-    synth.cancel();
-    const text = fav.exampleSentence?.trim() || fav.word;
-    const utt = new SpeechSynthesisUtterance(text);
-    utt.lang = getSpeechSynthesisLang(fav.language);
-    utt.rate = 0.9;
-    utt.onend = () => setPlayingWordKey((cur) => (cur === key ? null : cur));
-    utt.onerror = () => setPlayingWordKey((cur) => (cur === key ? null : cur));
+    audio.pause();
     setPlayingWordKey(key);
-    synth.speak(utt);
+    try {
+      const res = await fetch('/api/practice/word-tts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          word: fav.word,
+          voiceId: FAVORITE_WORD_VOICE,
+          ...(fav.language ? { language: fav.language } : {}),
+        }),
+      });
+      if (!res.ok) {
+        // No approved EL voice for this language (fr/pt) or a transient error:
+        // stay silent (EL-only), never the browser's robotic voice.
+        setPlayingWordKey((cur) => (cur === key ? null : cur));
+        return;
+      }
+      const data = (await res.json()) as { url?: string };
+      if (!data.url) {
+        setPlayingWordKey((cur) => (cur === key ? null : cur));
+        return;
+      }
+      audio.src = data.url;
+      audio.currentTime = 0;
+      audio.onended = () => setPlayingWordKey((cur) => (cur === key ? null : cur));
+      await audio.play();
+    } catch {
+      setPlayingWordKey((cur) => (cur === key ? null : cur));
+    }
   };
   const onboardingPracticePrefs = useMemo<OnboardingPracticePrefs>(() => {
     const metadata = user?.publicMetadata ?? {};
