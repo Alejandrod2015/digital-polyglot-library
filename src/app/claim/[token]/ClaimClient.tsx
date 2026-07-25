@@ -13,6 +13,7 @@ type Book = {
 
 type ClaimState =
   | { status: "loading" }
+  | { status: "needsAuth"; books: Book[]; message: string }
   | { status: "success"; books: Book[]; message: string }
   | { status: "error"; message: string };
 
@@ -36,6 +37,20 @@ export default function ClaimClient({ token }: { token: string }) {
               ? "If you believe this is a mistake, contact us at support@digitalpolyglot.com."
               : data?.error || "An unexpected error has occurred.";
           setState({ status: "error", message: friendly });
+          return;
+        }
+
+        // Signed-out visitor: the API did NOT redeem anything (it must never
+        // mutate the token without a session). Prompt sign-in instead of
+        // showing a misleading "Books added" — after auth they land back here
+        // and the books are granted.
+        if (data?.requiresAuth) {
+          setState({
+            status: "needsAuth",
+            books: data.books || [],
+            message:
+              data.message || "Sign in to add these books to your library.",
+          });
           return;
         }
 
@@ -79,6 +94,42 @@ export default function ClaimClient({ token }: { token: string }) {
           className="px-4 py-2 bg-white text-[#0D1B2A] rounded-xl hover:bg-gray-200 transition"
         >
           Go to homepage
+        </a>
+      </main>
+    );
+  }
+
+  if (state.status === "needsAuth") {
+    return (
+      <main className="min-h-screen flex flex-col items-center justify-center bg-[#0D1B2A] text-white px-8 text-center">
+        <h1 className="text-3xl font-semibold mb-4">Almost there</h1>
+        <p className="text-white/80 mb-8">{state.message}</p>
+
+        {state.books.length > 0 && (
+          <div className="grid gap-6 sm:grid-cols-2 max-w-3xl">
+            {state.books.map((book) => (
+              <div
+                key={book.id}
+                className="bg-white/10 rounded-2xl p-4 flex flex-col items-center"
+              >
+                <Image
+                  src={book.cover || "/covers/default.jpg"}
+                  alt={book.title}
+                  width={128}
+                  height={192}
+                  className="rounded-lg mb-3 object-cover"
+                />
+                <p className="font-medium">{book.title}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <a
+          href={`/sign-in?redirect_url=${encodeURIComponent(`/claim/${token}`)}`}
+          className="mt-10 px-6 py-2 bg-white text-[#0D1B2A] rounded-xl hover:bg-gray-200 transition"
+        >
+          Sign in to add them
         </a>
       </main>
     );

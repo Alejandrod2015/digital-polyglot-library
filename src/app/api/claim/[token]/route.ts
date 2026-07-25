@@ -70,6 +70,29 @@ export async function GET(
       );
     }
 
+    // 🔐 GUARD (2026-07-26): un visitante SIN sesión NO debe mutar el token.
+    // Sin userId no se puede conceder ningún libro (el bloque de concesión ya
+    // está gateado por `if (userId)`), pero el flujo previo igual estampaba
+    // `redeemedAt` en la primera visita deslogueada: dejaba el token
+    // "medio consumido" (redeemedAt set / redeemedBy null) y el cliente
+    // mostraba un "Books added" engañoso ANTES de iniciar sesión. Confirmado
+    // en prod (9/101 tokens en ese estado). Ahora respondemos requiresAuth y
+    // no tocamos nada; el cliente pide login y, al volver autenticado, la
+    // rama de recuperación de más abajo concede los libros normalmente.
+    if (!userId) {
+      const detailedBooks = await Promise.all(
+        claim.books.map(async (slug) => ({
+          id: slug,
+          ...(await getBookMeta(slug)),
+        }))
+      );
+      return NextResponse.json({
+        requiresAuth: true,
+        books: detailedBooks,
+        message: "Sign in to add these books to your library.",
+      });
+    }
+
     // 🔒 Si ya fue usado por otro usuario → bloquear
     if (claim.redeemedBy && claim.redeemedBy !== userId) {
       console.warn(`🚫 Enlace ya usado por otro usuario (${claim.redeemedBy})`);
