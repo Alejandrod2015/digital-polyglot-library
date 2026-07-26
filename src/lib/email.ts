@@ -217,10 +217,15 @@ export async function sendClaimEmail({
   to,
   token,
   books,
+  reminder = false,
 }: {
   to: string;
   token: string;
   books: string[];
+  // When true, this is a follow-up for an UNREDEEMED purchase (claim-reminder
+  // cron). Same branded template + same link, but a reminder subject/intro and
+  // no emoji in the subject (better inbox placement on Hotmail/Outlook).
+  reminder?: boolean;
 }): Promise<"sent" | "skipped" | "failed"> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.EMAIL_FROM;
@@ -235,8 +240,12 @@ export async function sendClaimEmail({
   const titles = await Promise.all(books.map((slug) => getBookTitle(slug)));
   const claimUrl = `${baseUrl}/claim/${token}`;
 
-  const subject = "Your Digital Polyglot books are ready 📚";
-  const preheader = "Access your books and start reading instantly.";
+  const subject = reminder
+    ? "Your Digital Polyglot books are waiting for you"
+    : "Your Digital Polyglot books are ready 📚";
+  const preheader = reminder
+    ? "You haven't opened your books yet. Here is your access link."
+    : "Access your books and start reading instantly.";
 
   const text = [
     "Your Digital Polyglot books are ready to read and listen.",
@@ -275,9 +284,9 @@ export async function sendClaimEmail({
               <td style="padding:24px;">
                 <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#111827;line-height:1.6;">
                   
-                  <h1 style="margin:0 0 12px;font-size:22px;">📚 Your books are ready to read and listen</h1>
+                  <h1 style="margin:0 0 12px;font-size:22px;">${reminder ? "Your books are still waiting for you" : "📚 Your books are ready to read and listen"}</h1>
                   <p style="margin:0 0 8px;color:#374151;">
-                    Tap the button below to open your library. You will sign in or create a free account, and every book (with its narrated audio) appears in <strong>My Library</strong>, on any device.
+                    ${reminder ? "We noticed you haven't opened your purchase yet. " : ""}Tap the button below to open your library. You will sign in or create a free account, and every book (with its narrated audio) appears in <strong>My Library</strong>, on any device.
                   </p>
                   <p style="margin:0 0 20px;color:#6B7280;font-size:14px;">
                     If this was a gift, forward this email to the recipient so they can open the books.

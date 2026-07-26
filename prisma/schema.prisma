@@ -635,6 +635,11 @@ model ClaimToken {
   redeemedAt     DateTime?
   createdAt      DateTime  @default(now())
   expiresAt      DateTime?
+  // Unredeemed-claim reminder cron (src/lib/claimReminders.ts): how many
+  // reminder emails we've resent for this token, and when the last one went
+  // out. Cap enforced in code (max 2). Existing rows default to 0 / null.
+  remindersSent  Int       @default(0)
+  lastReminderAt DateTime?
 
   @@index([buyerEmail])
   @@index([recipientEmail])
