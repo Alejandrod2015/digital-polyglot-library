@@ -1,0 +1,302 @@
+[
+ {
+  "n": 1,
+  "key": "der-spaeti-in-der-weserstrasse__wackligen",
+  "rise": 29.4,
+  "slope": 50.6,
+  "control": false,
+  "text": "Setz dich nicht auf den wackligen Stuhl; ein Bein ist kurz.",
+  "slug": "der-spaeti-in-der-weserstrasse",
+  "lang": "de"
+ },
+ {
+  "n": 2,
+  "key": "duzen-auf-eigene-gefahr__im Hals stecken bleiben",
+  "rise": 7.4,
+  "slope": 39.3,
+  "control": false,
+  "text": "Das lockere Wort bleibt ihr im Hals stecken.",
+  "slug": "duzen-auf-eigene-gefahr",
+  "lang": "de"
+ },
+ {
+  "n": 3,
+  "key": "alguien-toca-el-porton__hierro",
+  "rise": 5.1,
+  "slope": 4.8,
+  "control": false,
+  "text": "Doña Rosa está por apagar las velas cuando alguien golpea el portón de hierro.",
+  "slug": "alguien-toca-el-porton",
+  "lang": "es"
+ },
+ {
+  "n": 4,
+  "key": "tacos-para-todos__valiente",
+  "rise": 14.2,
+  "slope": -4.4,
+  "control": false,
+  "text": "El bombero fue muy valiente al entrar al fuego.",
+  "slug": "tacos-para-todos",
+  "lang": "es"
+ },
+ {
+  "n": 5,
+  "key": "ein-antrag-auf-freizeit__beitreten",
+  "rise": 6.6,
+  "slope": 13.9,
+  "control": false,
+  "text": "In Deutschland muss man einem Verein beitreten.",
+  "slug": "ein-antrag-auf-freizeit",
+  "lang": "de"
+ },
+ {
+  "n": 6,
+  "key": "alguien-toca-el-porton__hombre",
+  "rise": -3.0,
+  "slope": -25.0,
+  "control": true,
+  "text": "Afuera, en la noche, un hombre espera con una maleta.",
+  "slug": "alguien-toca-el-porton",
+  "lang": "es"
+ },
+ {
+  "n": 7,
+  "key": "ein-antrag-auf-freizeit__die Aufnahmegebühr",
+  "rise": 8.6,
+  "slope": 22.1,
+  "control": false,
+  "text": "Vor dem ersten Spiel zahlt sie eine Aufnahmegebühr.",
+  "slug": "ein-antrag-auf-freizeit",
+  "lang": "de"
+ },
+ {
+  "n": 8,
+  "key": "im-keller-wohnt-die-hausordnung__der Sechser im Lotto",
+  "rise": 5.7,
+  "slope": 25.8,
+  "control": false,
+  "text": "Der Preis klingt nach einem Sechser im Lotto.",
+  "slug": "im-keller-wohnt-die-hausordnung",
+  "lang": "de"
+ },
+ {
+  "n": 9,
+  "key": "ein-brief-kuendigt-briefe-an__der Haushalt",
+  "rise": -3.0,
+  "slope": 3.7,
+  "control": true,
+  "text": "Den Beitrag zahlt jeder Haushalt in Deutschland.",
+  "slug": "ein-brief-kuendigt-briefe-an",
+  "lang": "de"
+ },
+ {
+  "n": 10,
+  "key": "ganz-berlin-wartet-auf-einen-mord__neulich",
+  "rise": 8.0,
+  "slope": 18.8,
+  "control": false,
+  "text": "Der Lärm von neulich ist plötzlich vergessen.",
+  "slug": "ganz-berlin-wartet-auf-einen-mord",
+  "lang": "de"
+ },
+ {
+  "n": 11,
+  "key": "gute-besserung-im-oktober__auflegen",
+  "rise": 5.3,
+  "slope": 11.0,
+  "control": false,
+  "text": "Ohne Termin muss Nadia enttäuscht auflegen.",
+  "slug": "gute-besserung-im-oktober",
+  "lang": "de"
+ },
+ {
+  "n": 12,
+  "key": "ganz-berlin-wartet-auf-einen-mord__bemerkenswert",
+  "rise": 24.6,
+  "slope": 71.7,
+  "control": false,
+  "text": "Beim ersten Mal richtig zu tippen ist bemerkenswert.",
+  "slug": "ganz-berlin-wartet-auf-einen-mord",
+  "lang": "de"
+ },
+ {
+  "n": 13,
+  "key": "ein-antrag-auf-freizeit__ausfüllen",
+  "rise": 6.9,
+  "slope": 39.1,
+  "control": false,
+  "text": "Zuerst soll Nadia den Mitgliedsantrag ausfüllen.",
+  "slug": "ein-antrag-auf-freizeit",
+  "lang": "de"
+ },
+ {
+  "n": 14,
+  "key": "feierabend-ist-ein-versprechen__gelten als",
+  "rise": 5.1,
+  "slope": 5.0,
+  "control": false,
+  "text": "Wer lange bleibt, gilt hier nicht als fleißig.",
+  "slug": "feierabend-ist-ein-versprechen",
+  "lang": "de"
+ },
+ {
+  "n": 15,
+  "key": "la-llamada__feliz",
+  "rise": 13.0,
+  "slope": -10.5,
+  "control": false,
+  "text": "Lucía habla y habla, feliz.",
+  "slug": "la-llamada",
+  "lang": "es"
+ },
+ {
+  "n": 16,
+  "key": "el-hombre-de-la-foto__triste",
+  "rise": 6.4,
+  "slope": 7.9,
+  "control": false,
+  "text": "Ella llora; está muy triste.",
+  "slug": "el-hombre-de-la-foto",
+  "lang": "es"
+ },
+ {
+  "n": 17,
+  "key": "ana-es-la-guia__pregunta",
+  "rise": -3.0,
+  "slope": -27.2,
+  "control": true,
+  "text": "Elena no sabe la hora y pregunta a un señor.",
+  "slug": "ana-es-la-guia",
+  "lang": "es"
+ },
+ {
+  "n": 18,
+  "key": "umzug-ohne-aufzug__durchhält",
+  "rise": 8.6,
+  "slope": 29.8,
+  "control": false,
+  "text": "Wer alle Kartons hochträgt, durchhält bis zum Schluss.",
+  "slug": "umzug-ohne-aufzug",
+  "lang": "de"
+ },
+ {
+  "n": 19,
+  "key": "buscando-el-mar__gente",
+  "rise": 5.6,
+  "slope": 0.4,
+  "control": false,
+  "text": "Mira hacia allá, donde está la gente.",
+  "slug": "buscando-el-mar",
+  "lang": "es"
+ },
+ {
+  "n": 20,
+  "key": "el-animal-de-madera-se-mueve__entrar",
+  "rise": -3.0,
+  "slope": -23.7,
+  "control": true,
+  "text": "El aire entra y sale por ese hueco.",
+  "slug": "el-animal-de-madera-se-mueve",
+  "lang": "es"
+ },
+ {
+  "n": 21,
+  "key": "tacos-para-todos__servirse",
+  "rise": 7.7,
+  "slope": 20.8,
+  "control": false,
+  "text": "Los amigos se sirven más tacos y salsa.",
+  "slug": "tacos-para-todos",
+  "lang": "es"
+ },
+ {
+  "n": 22,
+  "key": "bewerbungsgespraech-mit-katze__der Mietvertrag",
+  "rise": 5.2,
+  "slope": 153.6,
+  "control": false,
+  "text": "Am Ende unterschreibt Nadia den ersehnten Mietvertrag.",
+  "slug": "bewerbungsgespraech-mit-katze",
+  "lang": "de"
+ },
+ {
+  "n": 23,
+  "key": "die-mit-der-thermoskanne__das Zuhause",
+  "rise": 24.4,
+  "slope": 58.5,
+  "control": false,
+  "text": "Berlin ist keine Behörde mehr, sondern ein Zuhause.",
+  "slug": "die-mit-der-thermoskanne",
+  "lang": "de"
+ },
+ {
+  "n": 24,
+  "key": "endgegner-auslaenderbehoerde__bestätigt",
+  "rise": 6.7,
+  "slope": 26.1,
+  "control": false,
+  "text": "Die Beamtin bestätigt den Titel mit einem Stempel.",
+  "slug": "endgegner-auslaenderbehoerde",
+  "lang": "de"
+ },
+ {
+  "n": 25,
+  "key": "el-taxi__martes",
+  "rise": 5.0,
+  "slope": 30.9,
+  "control": false,
+  "text": "El martes, toma un taxi.",
+  "slug": "el-taxi",
+  "lang": "es"
+ },
+ {
+  "n": 26,
+  "key": "der-spaeti-in-der-weserstrasse__der Kiez",
+  "rise": 9.0,
+  "slope": -8.3,
+  "control": false,
+  "text": "Wenn in diesem Kiez jemand etwas weiß, dann Katja.",
+  "slug": "der-spaeti-in-der-weserstrasse",
+  "lang": "de"
+ },
+ {
+  "n": 27,
+  "key": "feedback-auf-deutsch__der Rabatt",
+  "rise": 6.0,
+  "slope": 20.3,
+  "control": false,
+  "text": "Timo hofft nur, dass Katja ihnen Rabatt gibt.",
+  "slug": "feedback-auf-deutsch",
+  "lang": "de"
+ },
+ {
+  "n": 28,
+  "key": "despues-del-carnaval__calle",
+  "rise": -3.0,
+  "slope": -9.0,
+  "control": true,
+  "text": "Las calles de Barranquilla están en silencio.",
+  "slug": "despues-del-carnaval",
+  "lang": "es"
+ },
+ {
+  "n": 29,
+  "key": "buscando-el-mar__perdido",
+  "rise": 8.1,
+  "slope": 11.0,
+  "control": false,
+  "text": "Está perdido en una zona nueva de Lima.",
+  "slug": "buscando-el-mar",
+  "lang": "es"
+ },
+ {
+  "n": 30,
+  "key": "colores-en-el-barrio__abuelo",
+  "rise": 5.6,
+  "slope": -19.9,
+  "control": false,
+  "text": "Su abuelo ríe.",
+  "slug": "colores-en-el-barrio",
+  "lang": "es"
+ }
+]

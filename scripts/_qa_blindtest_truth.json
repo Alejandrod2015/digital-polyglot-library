@@ -1,0 +1,10 @@
+{"clip-01":{"lang":"es","truth":"GOOD","sentence":"Brindó por el weveo aunque estén viejos y con guata."},
+"clip-02":{"lang":"es","truth":"DEFECT:truncado (última palabra cortada)","sentence":"Un buen weveo no necesita durar, solo dejar huella."},
+"clip-03":{"lang":"de","truth":"DEFECT:silencio 1.5s insertado al medio","sentence":"Nadia bedankt sich, doch Ronny winkt nur ab."},
+"clip-04":{"lang":"de","truth":"GOOD","sentence":"Wat willze, schon gehen?"},
+"clip-05":{"lang":"es","truth":"GOOD","sentence":"Nico se reía con el weveo cuático que se armaba."},
+"clip-06":{"lang":"es","truth":"DEFECT:tempo 1.35x (acelerado)","sentence":"Brindó por el weveo aunque estén viejos y con guata."},
+"clip-07":{"lang":"de","truth":"GOOD","sentence":"Hajanoi, gespart ist gespart, sagt Steffi."},
+"clip-08":{"lang":"de","truth":"DEFECT:ruido/artefacto pegado en la cola","sentence":"Er drückt ihr ein kleines Strüßjer in die Arme."},
+"clip-09":{"lang":"es","truth":"DEFECT:palabra extra empalmada al final","sentence":"Nico se reía con el weveo cuático que se armaba."},
+"clip-10":{"lang":"de","truth":"GOOD","sentence":"Nadia bedankt sich, doch Ronny winkt nur ab."}}
