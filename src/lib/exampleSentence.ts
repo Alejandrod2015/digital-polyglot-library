@@ -22,7 +22,7 @@
 // A comma or lowercase after the terminator means it continues (dialogue
 // attribution: „…!", sagte er.) → no split.
 const SENTENCE_BOUNDARY =
-  /(?<=[.!?…]["'”’»“)\]]*)\s+(?=[„«"'“¿¡A-ZÄÖÜÑÀÈÉÌÒÙ0-9])/u;
+  /(?<=[.!?…]["'”’»“)\]]*)\s+(?=[„«"'“¿¡\p{Lu}0-9])/u;
 
 // Dialogue-aware sentence splitter. Exported so exercise builders can COUNT
 // sentences (is this exactly one?) without ever extracting a sub-piece.
