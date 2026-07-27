@@ -1,6 +1,9 @@
 export type LanguageVariant =
   | "latam"
   | "spain"
+  | "mexico"
+  | "colombia"
+  | "argentina"
   | "us"
   | "uk"
   | "brazil"
@@ -15,6 +18,9 @@ export type LanguageVariant =
 export const VARIANT_LABELS: Record<LanguageVariant, string> = {
   latam: "LATAM",
   spain: "Spain",
+  mexico: "Mexico",
+  colombia: "Colombia",
+  argentina: "Argentina",
   us: "US",
   uk: "UK",
   brazil: "Brazil",

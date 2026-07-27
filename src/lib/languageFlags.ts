@@ -25,6 +25,9 @@ const DEFAULT_FLAG_BY_LANGUAGE: Record<string, string> = {
 const FLAG_BY_VARIANT: Record<string, string> = {
   latam: "🇨🇴",
   spain: "🇪🇸",
+  mexico: "🇲🇽",
+  colombia: "🇨🇴",
+  argentina: "🇦🇷",
   us: "🇺🇸",
   uk: "🇬🇧",
   brazil: "🇧🇷",
@@ -42,9 +45,21 @@ const FLAG_BY_VARIANT: Record<string, string> = {
  * otherwise we use the canonical flag for the language. Unknown pairs get
  * a globe so the row always renders something.
  */
+// Country sub-variants that carry their OWN flag but are not user-selectable
+// dialect options (so they're intentionally absent from VARIANT_OPTIONS_BY_
+// LANGUAGE, to avoid surfacing them in settings/onboarding pickers). We still
+// honor them for flag rendering.
+const EXTRA_FLAG_VARIANTS: Record<string, Set<string>> = {
+  spanish: new Set(["mexico", "colombia", "argentina"]),
+};
+function variantAllowedForFlag(variant: string, language: string): boolean {
+  if (isVariantValidForLanguage(variant, language)) return true;
+  return EXTRA_FLAG_VARIANTS[language.toLowerCase()]?.has(variant.toLowerCase()) ?? false;
+}
+
 export function getLanguageFlag(language: string, variant?: string | null): string {
   // Variant only wins when it belongs to this language (see getLanguageCountry).
-  if (variant && isVariantValidForLanguage(variant, language)) {
+  if (variant && variantAllowedForFlag(variant, language)) {
     const byVariant = FLAG_BY_VARIANT[variant];
     if (byVariant) return byVariant;
   }
@@ -59,7 +74,8 @@ export function getLanguageFlag(language: string, variant?: string | null): stri
 // Parallel to the emoji maps above, but returns a country code instead of an
 // emoji so flags render on every device (emoji flags break on Windows etc.).
 const COUNTRY_BY_VARIANT: Record<string, string> = {
-  latam: "CO", spain: "ES", us: "US", uk: "GB", brazil: "BR", portugal: "PT",
+  latam: "CO", spain: "ES", mexico: "MX", colombia: "CO", argentina: "AR",
+  us: "US", uk: "GB", brazil: "BR", portugal: "PT",
   germany: "DE", austria: "AT", france: "FR", "canada-fr": "CA", italy: "IT",
   "south-korea": "KR",
 };
@@ -80,7 +96,7 @@ export function getLanguageCountry(language: string, variant?: string | null): s
   // Spanish while the active language is German) must NOT pick the flag -
   // that produced a Colombia flag next to a "DE" code. Fall back to the
   // language's canonical country instead.
-  if (variant && isVariantValidForLanguage(variant, language)) {
+  if (variant && variantAllowedForFlag(variant, language)) {
     const byVariant = COUNTRY_BY_VARIANT[variant];
     if (byVariant) return byVariant;
   }

@@ -589,6 +589,22 @@ export default function JourneyClient({
             );
           })}
         </ul>
+        {/* Add a new language/journey → onboarding add flow in settings. */}
+        <button
+          type="button"
+          onClick={() => {
+            setLanguageSheetOpen(false);
+            router.push("/settings#languages?add=1");
+          }}
+          className="mb-2 flex w-full items-center justify-center gap-2 rounded-2xl border px-4 py-3 text-[15px] font-extrabold transition-colors"
+          style={{
+            background: "var(--card-bg)",
+            borderColor: "var(--card-border)",
+            color: "var(--color-gold)",
+          }}
+        >
+          + Add journey
+        </button>
       </BottomSheet>
 
       {/* Stats sheet (tap on stats group in top bar). Mirrors the mobile
