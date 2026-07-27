@@ -29,6 +29,64 @@ export const DEFAULT_VOICE_SETTINGS = {
   use_speaker_boost: true,
 } as const;
 
+// ── F0 anti-uptalk gate (per-fragment) ─────────────────────────────────
+// For NARRATOR journeys each synthesized fragment is a whole PARAGRAPH, so
+// measuring a fragment's final contour measures the paragraph's closing
+// sentence. The gold-rule stitching (real neighbor context) closes most
+// paragraph endings, but ~1 in 6 still renders with a question-like rise by
+// render chance. This gate re-rolls a STATEMENT fragment whose final rises
+// until it falls, keeping the least-rising take. It does NOT touch intra-
+// paragraph sentence flow (continuation tone mid-paragraph is correct). Opt-in
+// via ttsSegment({antiUptalk}) / generateAndUploadMultiVoiceAudio({antiUptalkGate}).
+// Measurement is scripts/_f0gate.py (praat/parselmouth in the ~/.cache/dpl-qa
+// venv); if it is missing the gate is skipped with a warning (never blocks).
+const F0_GATE_PYTHON = `${process.env.HOME ?? ""}/.cache/dpl-qa/venv/bin/python`;
+// Endpoint (st above clip median) at/above which a statement's final reads as a
+// question. Measured: clean paragraph endings land at −4..−9 st; the offenders
+// at +6.6. +4 cleanly separates them.
+const F0_UPTALK_ST = 4.0;
+const F0_GATE_MAX_TAKES = 3;
+let f0GateWarned = false;
+
+/** A statement (not a yes/no question) is the only thing gated for uptalk.
+ *  softenPunctuationForTts preserves "?". */
+function isStatementForGate(softenedText: string): boolean {
+  return !softenedText.trim().endsWith("?");
+}
+
+/** Final-contour endpoint of an MP3 buffer in semitones above its median
+ *  (scripts/_f0gate.py statement mode). Higher = more rising. Null when the
+ *  venv is unavailable or the tail is unvoiced (caller then skips the gate). */
+async function measureFinalPitchSt(buffer: Buffer): Promise<number | null> {
+  const { writeFile, mkdtemp, rm } = await import("fs/promises");
+  const { tmpdir } = await import("os");
+  const path = await import("path");
+  const { spawn } = await import("child_process");
+  const dir = await mkdtemp(path.join(tmpdir(), "f0-"));
+  const mp3 = path.join(dir, "seg.mp3");
+  try {
+    await writeFile(mp3, buffer);
+    const out = await new Promise<string>((resolve, reject) => {
+      const proc = spawn(F0_GATE_PYTHON, ["scripts/_f0gate.py", mp3, "statement"]);
+      let so = "", se = "";
+      proc.stdout.on("data", (c) => (so += c.toString()));
+      proc.stderr.on("data", (c) => (se += c.toString()));
+      proc.on("error", reject);
+      proc.on("close", (code) => (code === 0 ? resolve(so) : reject(new Error(se.slice(0, 200) || `f0 exit ${code}`))));
+    });
+    const parsed = JSON.parse(out.trim()) as { end?: number | null };
+    return typeof parsed.end === "number" ? parsed.end : null;
+  } catch (err) {
+    if (!f0GateWarned) {
+      f0GateWarned = true;
+      console.log(`[elevenlabs] WARN f0 anti-uptalk gate skipped (venv unavailable): ${err instanceof Error ? err.message : err}`);
+    }
+    return null;
+  } finally {
+    await rm(dir, { recursive: true, force: true }).catch(() => {});
+  }
+}
+
 /** Per-voice settings override shape (mutable, unlike the `as const` defaults).
  *  Lets one render use distinct stability/style per voice; p.ej. subir
  *  stability solo a voces que respiran de más a baja estabilidad. */
@@ -579,24 +637,46 @@ export async function normalizeLoudness(buffer: Buffer): Promise<Buffer> {
       const inPath = path.join(dir, "in.mp3");
       const outPath = path.join(dir, "out.mp3");
       await writeFile(inPath, buffer);
-      await new Promise<void>((resolve, reject) => {
-        const proc = spawn("ffmpeg", [
-          "-y",
-          "-loglevel", "error",
-          "-i", inPath,
-          "-af", "dynaudnorm=g=5:f=250:p=0.9:m=10,loudnorm=I=-16:LRA=11:TP=-1.5",
-          "-codec:a", "libmp3lame",
-          "-b:a", "128k",
-          outPath,
-        ]);
-        let stderr = "";
-        proc.stderr.on("data", (c) => { stderr += c.toString(); });
-        proc.on("error", reject);
-        proc.on("close", (code) => {
-          if (code === 0) resolve();
-          else reject(new Error(`ffmpeg exit ${code}: ${stderr.slice(0, 300)}`));
+
+      // TWO-PASS LINEAR loudnorm. WHY (2026-07-26, usuario lo re-flageó): el
+      // `dynaudnorm` que había antes es un normalizador DINÁMICO — al inicio del
+      // archivo su ventana no está llena y sube el gain gradualmente, dejando el
+      // primer ~segundo con volumen bajo que luego sube. La ralentización a 2.7
+      // (atempo) estiraba esa rampa y la hacía más audible. Two-pass loudnorm
+      // (medir → aplicar con `linear=true`) aplica una ganancia CONSTANTE en todo
+      // el archivo: es time-invariant, así que NO puede haber rampa de arranque.
+      // NO volver a meter dynaudnorm aquí. La consistencia entre-hablantes en
+      // multi-voz se resuelve con normalización POR SEGMENTO (normalizePerSegment),
+      // no con un normalizador dinámico sobre el concat.
+      const I = "-16", LRA = "11", TP = "-1.5";
+      const run = (afArgs: string[], captureStderr = false) =>
+        new Promise<string>((resolve, reject) => {
+          const proc = spawn("ffmpeg", afArgs);
+          let stderr = "";
+          proc.stderr.on("data", (c) => { stderr += c.toString(); });
+          proc.on("error", reject);
+          proc.on("close", (code) =>
+            code === 0 || captureStderr ? resolve(stderr) : reject(new Error(`ffmpeg exit ${code}: ${stderr.slice(0, 300)}`)),
+          );
         });
-      });
+      // Pass 1: measure.
+      const measured = await run(
+        ["-y", "-i", inPath, "-af", `loudnorm=I=${I}:LRA=${LRA}:TP=${TP}:print_format=json`, "-f", "null", "-"],
+        true,
+      );
+      let filter = `loudnorm=I=${I}:LRA=${LRA}:TP=${TP}`;
+      const jsonMatch = measured.match(/\{[\s\S]*?\}/);
+      if (jsonMatch) {
+        try {
+          const j = JSON.parse(jsonMatch[0]) as Record<string, string>;
+          filter =
+            `loudnorm=I=${I}:LRA=${LRA}:TP=${TP}` +
+            `:measured_I=${j.input_i}:measured_TP=${j.input_tp}:measured_LRA=${j.input_lra}` +
+            `:measured_thresh=${j.input_thresh}:offset=${j.target_offset}:linear=true`;
+        } catch { /* fall back to single-pass (still not dynaudnorm) */ }
+      }
+      // Pass 2: apply constant (linear) gain.
+      await run(["-y", "-loglevel", "error", "-i", inPath, "-af", filter, "-codec:a", "libmp3lame", "-b:a", "128k", outPath]);
       return await readFile(outPath);
     } finally {
       await rm(dir, { recursive: true, force: true }).catch(() => {});
@@ -971,19 +1051,21 @@ async function ttsSegment(args: {
    *  multi-voz donde cada turno es otro hablante. Va en el cache key
    *  (`-noprev`). */
   disableStitching?: boolean;
+  /** F0 anti-uptalk gate (opt-in). When true and the text is a STATEMENT, the
+   *  fragment is re-rolled until its final contour falls, keeping the least-
+   *  rising take within F0_GATE_MAX_TAKES. Off by default. */
+  antiUptalk?: boolean;
 }): Promise<Buffer | null> {
   const model = args.model ?? ELEVENLABS_MODEL_V2;
   const softened = softenPunctuationForTts(args.text);
 
-  // Cache lookup: same voice + same model + same text (after softening) +
-  // same voice settings → reuse the previously generated MP3 from R2
-  // instead of paying ElevenLabs again.
-  // Nota: previousText/nextText NO van en la cache key. Cambiarlos
-  // produciría un audio ligeramente distinto pero no significativamente
-  //; y meterlos rompería la propiedad "regenero solo lo que cambió".
+  // Cache: same voice + model + text (post-softening) + settings.
+  // Nota: previousText/nextText NO van en la cache key.
   const cacheKey = multivoiceSegmentCacheKey(args.voiceId, softened, model, args.voiceSettings, args.disableStitching);
-  const cacheUrl = getPublicObjectUrl(cacheKey);
-  if (cacheUrl) {
+
+  const readCache = async (): Promise<Buffer | null> => {
+    const cacheUrl = getPublicObjectUrl(cacheKey);
+    if (!cacheUrl) return null;
     try {
       const head = await fetch(cacheUrl, { method: "HEAD" });
       if (head.ok) {
@@ -996,8 +1078,12 @@ async function ttsSegment(args: {
     } catch {
       // Cache lookup failed (network, etc.). Fall through to fresh generation.
     }
-  }
+    return null;
+  };
 
+  // One fresh ElevenLabs render (bypasses the cache read; still writes cache on
+  // completion). Factored out so the anti-uptalk gate can draw several takes.
+  const renderFresh = async (): Promise<Buffer | null> => {
   const voiceSettings =
     args.voiceSettings ??
     (model === ELEVENLABS_MODEL_V3 ? DEFAULT_VOICE_SETTINGS_V3 : DEFAULT_VOICE_SETTINGS);
@@ -1094,6 +1180,51 @@ async function ttsSegment(args: {
   }
 
   return finalBuffer;
+  }; // end renderFresh
+
+  const writeCacheBuffer = async (body: Buffer): Promise<void> => {
+    try {
+      await uploadPublicObject({ key: cacheKey, body, contentType: "audio/mpeg" });
+    } catch (err) {
+      console.warn(`[elevenlabs] anti-uptalk cache write failed: ${err instanceof Error ? err.message : err}`);
+    }
+  };
+
+  // Fast path: no gate → cache read, else one fresh render (unchanged).
+  const gate = args.antiUptalk === true && isStatementForGate(softened);
+  if (!gate) {
+    const cached = await readCache();
+    return cached ?? (await renderFresh());
+  }
+
+  // Anti-uptalk gate: keep the take whose final contour falls the most. If the
+  // F0 venv is unavailable, measurement returns null and we stop gating.
+  const takes: Array<{ buf: Buffer; pitch: number }> = [];
+  const cached = await readCache();
+  if (cached) {
+    const pitch = await measureFinalPitchSt(cached);
+    if (pitch === null) return cached;
+    if (pitch < F0_UPTALK_ST) return cached;
+    takes.push({ buf: cached, pitch });
+    console.log(`[elevenlabs] anti-uptalk: cached take rises (+${pitch.toFixed(1)} st), re-rolling ${cacheKey}`);
+  }
+  for (let attempt = 0; attempt < F0_GATE_MAX_TAKES; attempt++) {
+    const buf = await renderFresh();
+    if (!buf) break;
+    const pitch = await measureFinalPitchSt(buf);
+    if (pitch === null) return buf;
+    takes.push({ buf, pitch });
+    if (pitch < F0_UPTALK_ST) {
+      await writeCacheBuffer(buf);
+      return buf;
+    }
+    console.log(`[elevenlabs] anti-uptalk: take ${attempt + 1} rises (+${pitch.toFixed(1)} st) ${cacheKey}`);
+  }
+  if (takes.length === 0) return await renderFresh();
+  const best = takes.reduce((m, t) => (t.pitch < m.pitch ? t : m));
+  await writeCacheBuffer(best.buf);
+  console.log(`[elevenlabs] anti-uptalk: kept best of ${takes.length} takes (+${best.pitch.toFixed(1)} st) ${cacheKey}`);
+  return best.buf;
 }
 
 // Each ElevenLabs MP3 starts with a Xing/Info frame announcing the per-segment
@@ -1358,6 +1489,10 @@ export async function generateAndUploadMultiVoiceAudio(args: {
    *  diálogo multi-voz: cada turno es otro hablante, el contexto del vecino
    *  no aplica y la pausa de 0.45 s ya da el boundary. Va en el cache key. */
   disableStitching?: boolean;
+  /** F0 anti-uptalk gate: re-roll any STATEMENT fragment (a whole paragraph in
+   *  narrator journeys) whose final contour rises, until it falls. Opt-in
+   *  (default off). Uses scripts/_f0gate.py. */
+  antiUptalkGate?: boolean;
 }): Promise<{
   url: string;
   filename: string;
@@ -1397,6 +1532,25 @@ export async function generateAndUploadMultiVoiceAudio(args: {
   if (!narratorVoice) {
     console.error("[elevenlabs] voiceMap is missing the required 'narrator' key");
     return null;
+  }
+
+  // ── HARD GUARANTEE against the seam-breath ("aire") ─────────────────────
+  // The breath comes from request stitching (previous_text/next_text with real
+  // neighbor context). For a SINGLE-VOICE NARRATOR render (every segment is the
+  // narrator) stitching buys nothing — the F0 anti-uptalk gate closes the
+  // endings instead — and only introduces the breath the user rejected. So when
+  // the render is all-narrator we FORCE the gold config regardless of what the
+  // caller passed: disableStitching (no breath) + antiUptalkGate (closed
+  // endings). This makes it IMPOSSIBLE for any caller to reintroduce the aire by
+  // forgetting a flag. See feedback_tts_aire_stitching.
+  const isAllNarrator = segments.every((s) => s.speaker.toLowerCase() === "narrator");
+  const effDisableStitching = isAllNarrator ? true : args.disableStitching;
+  const effAntiUptalkGate = isAllNarrator ? true : args.antiUptalkGate;
+  if (isAllNarrator && (args.disableStitching !== true || args.antiUptalkGate !== true)) {
+    console.log(
+      "[elevenlabs] single-voice narrator render → FORCING gold config " +
+        "(disableStitching + antiUptalkGate) to prevent seam breath ('aire').",
+    );
   }
 
   // Title narration first (no speaker label), then each segment.
@@ -1448,12 +1602,13 @@ export async function generateAndUploadMultiVoiceAudio(args: {
       text: textForTts,
       voiceId: frag.voiceId,
       apiKey,
-      previousText: args.disableStitching ? undefined : previousText,
-      nextText: args.disableStitching ? undefined : nextText,
+      previousText: effDisableStitching ? undefined : previousText,
+      nextText: effDisableStitching ? undefined : nextText,
       language: args.language,
       model: fragModel,
       voiceSettings: args.voiceSettingsMap?.[frag.voiceId],
-      disableStitching: args.disableStitching,
+      disableStitching: effDisableStitching,
+      antiUptalk: effAntiUptalkGate,
     });
     if (!buf) return null;
     audioBuffers.push(args.normalizePerSegment ? await normalizeLoudness(buf) : buf);
