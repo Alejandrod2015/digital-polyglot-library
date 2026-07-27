@@ -477,23 +477,56 @@ export default function FavoritesPage() {
   }, [srsMap, userId, isLoaded]);
 
   const now = Date.now();
+  // ── Journeys-first: scope the favorites view to the ACTIVE language,
+  // exactly like the mobile Library (journeyScopedFavoriteCards in
+  // MobileLibraryShell scopes to activeJourney.language). The active language
+  // comes from the user's preference (targetLanguages[0], set by the journey
+  // switcher); with no preference we fall back to the most-common language
+  // across favorites so the pill and the list always agree. ──
+  const metadataLanguage = useMemo(() => {
+    const tl = user?.publicMetadata?.targetLanguages;
+    if (Array.isArray(tl) && typeof tl[0] === 'string') return tl[0] as string;
+    return null;
+  }, [user]);
+  const inferredLanguageFromFavs = useMemo(() => {
+    if (favorites.length === 0) return null;
+    const counts = new Map<string, number>();
+    for (const f of favorites) {
+      if (!f.language) continue;
+      counts.set(f.language, (counts.get(f.language) ?? 0) + 1);
+    }
+    let best: { lang: string; n: number } | null = null;
+    for (const [lang, n] of counts) {
+      if (!best || n > best.n) best = { lang, n };
+    }
+    return best?.lang ?? null;
+  }, [favorites]);
+  const activeLanguageName = metadataLanguage ?? inferredLanguageFromFavs;
+  const activeLanguageLower = (activeLanguageName ?? '').trim().toLowerCase();
+  const scopedFavorites = useMemo(() => {
+    if (!activeLanguageLower) return favorites;
+    return favorites.filter(
+      (f) => (f.language ?? '').trim().toLowerCase() === activeLanguageLower,
+    );
+  }, [favorites, activeLanguageLower]);
+
   const sortedFavorites = useMemo(
-    () => sortPracticeItemsByOnboarding(favorites, onboardingPracticePrefs, true),
-    [favorites, onboardingPracticePrefs]
+    () => sortPracticeItemsByOnboarding(scopedFavorites, onboardingPracticePrefs, true),
+    [scopedFavorites, onboardingPracticePrefs]
   );
   // The displayed list is ordered most-recently-added first (by createdAt).
   // Items without a timestamp (e.g. local-only, not yet synced) sort last.
   const favoritesByRecency = useMemo(
     () =>
-      [...favorites].sort(
+      [...scopedFavorites].sort(
         (a, b) =>
           (b.createdAt ? Date.parse(b.createdAt) : 0) - (a.createdAt ? Date.parse(a.createdAt) : 0),
       ),
-    [favorites]
+    [scopedFavorites]
   );
   const dueFavorites = useMemo(
-    () => sortPracticeItemsByOnboarding(favorites.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now)), onboardingPracticePrefs, true),
-    [favorites, now, onboardingPracticePrefs, srsMap]
+    () => sortPracticeItemsByOnboarding(scopedFavorites.filter((fav) => isDue(srsMap[normalizeWord(fav.word)], now)), onboardingPracticePrefs, true),
+    [scopedFavorites, now, onboardingPracticePrefs, srsMap]
   );
   const currentPractice = practiceQueue[practiceIndex] ?? null;
   const currentPracticeIdentity = currentPractice ? getFavoriteIdentity(currentPractice) : null;
@@ -532,7 +565,7 @@ export default function FavoritesPage() {
 
     return items;
   }, []);
-  const favoriteTypeCounts = favorites.reduce<Record<VocabTypeKey, number>>((acc, fav) => {
+  const favoriteTypeCounts = scopedFavorites.reduce<Record<VocabTypeKey, number>>((acc, fav) => {
     const key = getFavoriteType(fav);
     acc[key] = (acc[key] ?? 0) + 1;
     return acc;
@@ -770,29 +803,8 @@ export default function FavoritesPage() {
     setPracticeIndex((idx) => Math.max(0, idx - 1));
   };
 
-  // Active language for the flag pill. Resolution order:
-  //   1. user.publicMetadata.targetLanguages[0] (explicit preference)
-  //   2. most-common language across the user's actual favorites
-  //   3. nothing → we hide the pill instead of showing a "🌐 ??" stub
-  const metadataLanguage = (() => {
-    const tl = user?.publicMetadata?.targetLanguages;
-    if (Array.isArray(tl) && typeof tl[0] === 'string') return tl[0] as string;
-    return null;
-  })();
-  const inferredLanguageFromFavs = useMemo(() => {
-    if (favorites.length === 0) return null;
-    const counts = new Map<string, number>();
-    for (const f of favorites) {
-      if (!f.language) continue;
-      counts.set(f.language, (counts.get(f.language) ?? 0) + 1);
-    }
-    let best: { lang: string; n: number } | null = null;
-    for (const [lang, n] of counts) {
-      if (!best || n > best.n) best = { lang, n };
-    }
-    return best?.lang ?? null;
-  }, [favorites]);
-  const activeLanguageName = metadataLanguage ?? inferredLanguageFromFavs;
+  // Active language for the flag pill (`activeLanguageName` is computed above,
+  // where it also scopes the favorites list). Pill flag needs the variant too.
   const activeVariantKey =
     typeof user?.publicMetadata?.preferredVariant === 'string'
       ? (user.publicMetadata.preferredVariant as string)
@@ -813,7 +825,7 @@ export default function FavoritesPage() {
   // "9 in journey": favorites that came from journey stories. We use the
   // sourcePath as the marker; anything under /journey or with a storySlug
   // counts as journey-sourced. Falls back to total favorites - dueFavorites.
-  const journeyFavoritesCount = favorites.filter((f) => Boolean(f.storySlug)).length;
+  const journeyFavoritesCount = scopedFavorites.filter((f) => Boolean(f.storySlug)).length;
   const readyNowCount = dueFavorites.length;
 
   return (

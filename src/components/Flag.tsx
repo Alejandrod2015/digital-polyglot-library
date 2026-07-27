@@ -51,6 +51,17 @@ const FLAGS: Record<string, React.ReactNode> = {
       <rect width="1" height="2" x="0" fill="#006847" />
       <rect width="1" height="2" x="1" fill="#FFFFFF" />
       <rect width="1" height="2" x="2" fill="#CE1126" />
+      {/* Real Mexican coat of arms (public-domain govt emblem), centered on
+          the white band. Raster so it renders faithfully — the full arms is
+          too intricate to hand-vector legibly at pill scale. */}
+      <image
+        href="/flags/mx-coat.png"
+        x="1.06"
+        y="0.53"
+        width="0.88"
+        height="0.94"
+        preserveAspectRatio="xMidYMid meet"
+      />
     </>
   ),
   AR: (

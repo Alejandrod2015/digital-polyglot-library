@@ -12,6 +12,9 @@ type Props = {
   color: string;
   /** Greys out the banner and disables press states. */
   locked?: boolean;
+  /** Country label ("Colombia", "Peru", …) for country-specific topics in
+   *  pan-regional (LATAM) journeys. Appended to the level eyebrow. Null = none. */
+  country?: string | null;
   /** Tapped → open the topic detail (e.g. stories list / topic preview sheet). */
   onTap?: () => void;
 };
@@ -29,7 +32,7 @@ type Props = {
  *     the passed color.
  */
 export default function JourneyTopicBanner({
-  levelId, title, color, locked, onTap,
+  levelId, title, color, locked, country, onTap,
 }: Props) {
   const bg = locked ? "#3b4a66" : color;
 
@@ -50,7 +53,7 @@ export default function JourneyTopicBanner({
           className="text-[11px] font-black tracking-[0.16em] uppercase"
           style={{ color: locked ? "rgba(255,255,255,0.45)" : "rgba(255,255,255,0.8)" }}
         >
-          {formatCefrDisplay(levelId)}{locked ? " · Locked" : ""}
+          {formatCefrDisplay(levelId)}{country ? ` · ${country}` : ""}{locked ? " · Locked" : ""}
         </span>
         <span
           className="text-[28px] font-black tracking-[-0.02em] leading-[1.1]"

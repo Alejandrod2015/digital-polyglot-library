@@ -869,9 +869,40 @@ export default function PracticePage() {
     };
   }, [favorites, isStoryPractice, storyPracticeSlug]);
 
+  // ── Journeys-first: scope the GENERAL practice content to the ACTIVE
+  // language, like the mobile Library and the Favorites page. Story / journey /
+  // checkpoint practice uses its own curated set (prefabExercises) and is
+  // unaffected. `activeLanguageName` also drives the flag pill below. ──
+  const metadataLanguage = useMemo(() => {
+    const tl = user?.publicMetadata?.targetLanguages;
+    if (Array.isArray(tl) && typeof tl[0] === "string") return tl[0] as string;
+    return null;
+  }, [user]);
+  const inferredLanguageFromFavs = useMemo(() => {
+    if (favorites.length === 0) return null;
+    const counts = new Map<string, number>();
+    for (const f of favorites) {
+      if (!f.language) continue;
+      counts.set(f.language, (counts.get(f.language) ?? 0) + 1);
+    }
+    let best: { lang: string; n: number } | null = null;
+    for (const [lang, n] of counts) {
+      if (!best || n > best.n) best = { lang, n };
+    }
+    return best?.lang ?? null;
+  }, [favorites]);
+  const activeLanguageName = metadataLanguage ?? inferredLanguageFromFavs;
+  const activeLanguageLower = (activeLanguageName ?? "").trim().toLowerCase();
+  const scopedFavorites = useMemo(() => {
+    if (!activeLanguageLower) return favorites;
+    return favorites.filter(
+      (f) => (f.language ?? "").trim().toLowerCase() === activeLanguageLower,
+    );
+  }, [favorites, activeLanguageLower]);
+
   const orderedFavorites = useMemo(
-    () => sortPracticeItemsByOnboarding(favorites, onboardingPracticePrefs, true),
-    [favorites, onboardingPracticePrefs]
+    () => sortPracticeItemsByOnboarding(scopedFavorites, onboardingPracticePrefs, true),
+    [scopedFavorites, onboardingPracticePrefs]
   );
   const exercises = useMemo(() => {
     // Story practice renders the editorially CURATED set (prefabExercises),
@@ -2037,8 +2068,8 @@ export default function PracticePage() {
     return ranked[0]?.[0] ?? null;
   }, [checkpointMissedItems.length, checkpointResponses, exercises, isJourneyCheckpoint]);
   const dueFavorites = useMemo(
-    () => sortPracticeItemsByOnboarding(getDuePracticeItems(favorites), onboardingPracticePrefs, true),
-    [favorites, onboardingPracticePrefs]
+    () => sortPracticeItemsByOnboarding(getDuePracticeItems(scopedFavorites), onboardingPracticePrefs, true),
+    [scopedFavorites, onboardingPracticePrefs]
   );
   const reviewRecommendedMode = useMemo<PracticeMode>(() => {
     if (checkpointMissedMode) return checkpointMissedMode;
@@ -2186,23 +2217,6 @@ export default function PracticePage() {
     });
     openSession(requestedMode);
   }, [isJourneyCheckpoint, openSession, requestedMode, selectedMode, trackUiMetric]);
-
-  // ⚠️ Reglas de hooks: este useMemo DEBE quedar antes de cualquier early
-  // return (loading, !user, error) - antes vivía hasta el render final del
-  // hero y eso disparaba "change in order of Hooks called by PracticePage".
-  const inferredLanguageFromFavs = useMemo(() => {
-    if (favorites.length === 0) return null;
-    const counts = new Map<string, number>();
-    for (const f of favorites) {
-      if (!f.language) continue;
-      counts.set(f.language, (counts.get(f.language) ?? 0) + 1);
-    }
-    let best: { lang: string; n: number } | null = null;
-    for (const [lang, n] of counts) {
-      if (!best || n > best.n) best = { lang, n };
-    }
-    return best?.lang ?? null;
-  }, [favorites]);
 
   if (!isLoaded || loadState === "loading") {
     return (
@@ -3448,17 +3462,8 @@ export default function PracticePage() {
     );
   }
 
-  // Active language for the flag pill. Resolution order:
-  //   1. user.publicMetadata.targetLanguages[0] (explicit preference)
-  //   2. most-common language across the user's favorites (which is what
-  //      Practice operates on anyway)
-  //   3. nothing → we hide the pill instead of showing a "🌐 ??" stub
-  const metadataLanguage = (() => {
-    const tl = user?.publicMetadata?.targetLanguages;
-    if (Array.isArray(tl) && typeof tl[0] === "string") return tl[0] as string;
-    return null;
-  })();
-  const activeLanguageName = metadataLanguage ?? inferredLanguageFromFavs;
+  // Active language for the flag pill (`activeLanguageName` is computed above,
+  // where it also scopes the general practice content). Pill needs the variant.
   const activeVariantKey =
     typeof user?.publicMetadata?.preferredVariant === "string"
       ? (user.publicMetadata.preferredVariant as string)

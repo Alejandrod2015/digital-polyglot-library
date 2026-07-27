@@ -15,6 +15,10 @@
           {
             "type": "command",
             "command": ".claude/safety/pre-voice-approval-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/safety/pre-cover-style-guard.sh"
           }
         ]
       },
@@ -24,6 +28,10 @@
           {
             "type": "command",
             "command": ".claude/safety/pre-voice-approval-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/safety/pre-cover-style-guard.sh"
           }
         ]
       }

@@ -502,6 +502,14 @@ export function JourneysPanel({
                         <Text style={styles.cardSubText}>
                           {journeyNameLabel}
                           {levelLabel ? ` · ${levelLabel}` : ""}
+                          {(() => {
+                            // Región (Mexico/LATAM/Germany…) para que la fila diga
+                            // de qué variante es, no solo la bandera.
+                            const region = formatVariantLabel(
+                              journeyFlagVariant(journey)
+                            );
+                            return region ? ` · ${region}` : "";
+                          })()}
                         </Text>
                       </View>
                     </View>

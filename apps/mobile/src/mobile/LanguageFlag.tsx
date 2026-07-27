@@ -1,5 +1,9 @@
 import { Feather } from "@expo/vector-icons";
-import { StyleSheet, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
+
+// Real Mexican coat of arms (public-domain govt emblem), overlaid on the
+// tricolor's white band so Mexico reads faithfully at coin scale.
+const MX_COAT = require("../../assets/flags/mx-coat.png");
 
 /**
  * Mini flag rendered with native Views; no SVG, no emoji, no images.
@@ -26,7 +30,8 @@ type FlagSpec =
   | { kind: "korea" }
   | { kind: "us" }
   | { kind: "uk" }
-  | { kind: "brazil" };
+  | { kind: "brazil" }
+  | { kind: "mexico" };
 
 // Colombia flag spec, used as the LATAM variant for Spanish. We use
 // a dedicated weighted hBands kind because the Colombian flag has a
@@ -41,10 +46,10 @@ const COLOMBIA_SPEC: FlagSpec = {
 // Country-specific LATAM flags. Journeys set in one country (Mexico, Colombia,
 // Argentina) show THEIR flag instead of the generic Colombia=LATAM signal, so a
 // "Traveler · Mexico" reads distinct from a pan-regional "Traveler · LATAM".
-const MEXICO_SPEC: FlagSpec = {
-  kind: "vBands",
-  colors: ["#006847", "#FFFFFF", "#CE1126"],
-};
+// Mexico = green/white/red vertical bands PLUS a center emblem, so it doesn't
+// read as Italy (identical tricolor without the emblem). We can't draw the
+// eagle at coin scale, so the emblem is a small dark-red disc in the middle.
+const MEXICO_SPEC: FlagSpec = { kind: "mexico" };
 const ARGENTINA_SPEC: FlagSpec = {
   kind: "hBands",
   colors: ["#74ACDF", "#FFFFFF", "#74ACDF"],
@@ -196,6 +201,35 @@ export function LanguageFlag({
             style={{ flex: spec.weights?.[i] ?? 1, backgroundColor: color }}
           />
         ))}
+      </View>
+    );
+  }
+
+  if (spec.kind === "mexico") {
+    return (
+      <View style={[containerStyle, styles.row]}>
+        <View style={{ flex: 1, backgroundColor: "#006847" }} />
+        <View style={{ flex: 1, backgroundColor: "#FFFFFF" }} />
+        <View style={{ flex: 1, backgroundColor: "#CE1126" }} />
+        {/* Real coat of arms, centered EXACTLY on the white band. Overlay a
+            row of 3 equal cells matching the tricolor and center the emblem in
+            the MIDDLE cell — this tracks the white band precisely at any size,
+            unlike pixel `left` math which the container border pushed ~1.5px
+            right into the red band. */}
+        <View
+          pointerEvents="none"
+          style={{ position: "absolute", left: 0, top: 0, right: 0, bottom: 0, flexDirection: "row" }}
+        >
+          <View style={{ flex: 1 }} />
+          <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+            <Image
+              source={MX_COAT}
+              resizeMode="contain"
+              style={{ width: size * 0.3, height: size * 0.3 }}
+            />
+          </View>
+          <View style={{ flex: 1 }} />
+        </View>
       </View>
     );
   }

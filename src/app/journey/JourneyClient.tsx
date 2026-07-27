@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 // IMPORTANT: NO runtime imports de `./journeyData` acá.
 // journeyData importa `@/lib/prisma` y este file es "use client".
@@ -16,7 +16,7 @@ import {
 import type { JourneyTrackInsights, JourneyVariantTrack } from "./journeyData";
 import { isJourneyStoryComplete } from "@/lib/journeyUnlock";
 import type { JourneyDueReviewItem } from "@/lib/journeyProgress";
-import { formatVariantLabel } from "@/lib/languageVariant";
+import { formatVariantLabel, topicCountryLabel } from "@/lib/languageVariant";
 import Flag from "@/components/Flag";
 import { TopicPreviewSheet } from "@/components/TopicPreviewSheet";
 import JourneyNextActionFab from "@/components/JourneyNextActionFab";
@@ -29,6 +29,9 @@ import { formatCefrDisplay } from "@domain/cefr";
 type JourneyClientProps = {
   tracks: JourneyVariantTrack[];
   initialVariantId: string;
+  /** User's target languages (Clerk publicMetadata). Used by the
+   *  "+ Add journey" picker to prepend a new language when adding. */
+  targetLanguages: string[];
   preferredLevel: string | null;
   learningGoal: string | null;
   journeyFocus: string | null;
@@ -121,6 +124,13 @@ const LANGUAGE_PILL_BY_VARIANT: Record<string, { code: string; country: string }
   chinese: { code: "ZH", country: "CN" },
 };
 
+// Journey.language comes through lowercase ("german", "spanish"); title-case
+// it for display in the add-journey picker.
+function titleCaseLanguage(language: string): string {
+  if (!language) return language;
+  return language.charAt(0).toUpperCase() + language.slice(1);
+}
+
 function pillForTrack(track: JourneyVariantTrack | null): { code: string; country: string } {
   if (!track) return { code: "??", country: "" };
   // 1) Intentar primero por `variant` (latam, spain, br, etc.)
@@ -140,6 +150,7 @@ function pillForTrack(track: JourneyVariantTrack | null): { code: string; countr
 export default function JourneyClient({
   tracks,
   initialVariantId,
+  targetLanguages,
   journeyPlacementLevel: initialJourneyPlacementLevel,
   completedStoryKeys,
   passedCheckpointKeys,
@@ -192,12 +203,153 @@ export default function JourneyClient({
   const [previewTopic, setPreviewTopic] = useState<PreviewState>(null);
   const [languageSheetOpen, setLanguageSheetOpen] = useState(false);
   const [statsSheetOpen, setStatsSheetOpen] = useState(false);
+  // "Link copied" confirmation for the Share button (flips icon to a check).
+  const [shareCopied, setShareCopied] = useState(false);
+
+  // ── "+ Add journey" inline picker (mirrors the mobile JourneysPanel) ──
+  // Two steps inside one sheet: pick a language, then pick a journey of
+  // that language. The catalog (every published journey across all
+  // languages) is fetched lazily the first time the picker opens.
+  type CatalogOption = {
+    slug: string;
+    label: string;
+    language: string | null;
+    variant: string | null;
+  };
+  const [addSheetOpen, setAddSheetOpen] = useState(false);
+  const [addLanguage, setAddLanguage] = useState<string | null>(null);
+  const [catalog, setCatalog] = useState<CatalogOption[] | null>(null);
+  const [catalogLoading, setCatalogLoading] = useState(false);
+  const [addingSlug, setAddingSlug] = useState<string | null>(null);
+
+  const openAddPicker = useCallback(() => {
+    setLanguageSheetOpen(false);
+    setAddLanguage(null);
+    setAddSheetOpen(true);
+    if (catalog === null && !catalogLoading) {
+      setCatalogLoading(true);
+      fetch("/api/journeys/catalog")
+        .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
+        .then((data: { options?: CatalogOption[] }) => {
+          setCatalog(Array.isArray(data.options) ? data.options : []);
+        })
+        .catch((err) => {
+          console.error("[add-journey] catalog fetch failed", err);
+          setCatalog([]);
+        })
+        .finally(() => setCatalogLoading(false));
+    }
+  }, [catalog, catalogLoading]);
+
+  const handleAddTrack = useCallback(
+    async (option: CatalogOption) => {
+      if (addingSlug) return;
+      setAddingSlug(option.slug);
+      try {
+        // Prepend the picked language so the loader makes it the active
+        // (first) target; dedupe so re-picking doesn't grow the list.
+        const nextLanguages = option.language
+          ? [
+              option.language,
+              ...targetLanguages.filter((l) => l !== option.language),
+            ]
+          : targetLanguages;
+        await fetch("/api/user/preferences", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            targetLanguages: nextLanguages,
+            preferredVariant: option.variant ?? null,
+          }),
+        });
+      } catch (err) {
+        console.error("[add-journey] preferences save failed", err);
+      } finally {
+        // Navigate regardless: the slug resolves the journey directly.
+        setAddSheetOpen(false);
+        setAddingSlug(null);
+        router.push(`/journey?variant=${encodeURIComponent(option.slug)}`);
+      }
+    },
+    [addingSlug, router, targetLanguages]
+  );
+
+  // Distinct languages present in the catalog, each with a representative
+  // flag + count, for step 1 of the picker.
+  const catalogLanguages = useMemo(() => {
+    if (!catalog) return [] as Array<{
+      language: string;
+      pill: { code: string; country: string };
+      count: number;
+    }>;
+    const byLang = new Map<string, CatalogOption[]>();
+    for (const opt of catalog) {
+      const lang = opt.language ?? "Other";
+      const list = byLang.get(lang) ?? [];
+      list.push(opt);
+      byLang.set(lang, list);
+    }
+    return [...byLang.entries()].map(([language, opts]) => ({
+      language,
+      pill: pillForTrack({
+        id: "",
+        slug: "",
+        label: "",
+        language,
+        variant: opts[0]?.variant ?? null,
+        levels: [],
+      }),
+      count: opts.length,
+    }));
+  }, [catalog]);
+
+  const catalogForLanguage = useMemo(
+    () => (catalog && addLanguage ? catalog.filter((o) => o.language === addLanguage) : []),
+    [catalog, addLanguage]
+  );
 
   const selectedTrack = useMemo(
     () => tracks.find((track) => track.id === selectedVariantId) ?? tracks[0] ?? null,
     [selectedVariantId, tracks]
   );
   const levels = useMemo(() => selectedTrack?.levels ?? [], [selectedTrack]);
+
+  // Copy this journey's STABLE, global share URL (the slug now resolves to the
+  // same journey for every viewer, cross-language). Flip the icon to a check
+  // for 2s as confirmation.
+  const handleShareJourney = useCallback(() => {
+    const slug = selectedTrack?.slug;
+    if (!slug || typeof window === "undefined") return;
+    const url = `${window.location.origin}/journey?variant=${encodeURIComponent(slug)}`;
+    const flip = () => {
+      setShareCopied(true);
+      window.setTimeout(() => setShareCopied(false), 2000);
+    };
+    // Legacy fallback for contexts where the async Clipboard API is blocked.
+    const legacyCopy = () => {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = url;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      } catch {
+        return false;
+      }
+    };
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(url).then(flip).catch(() => {
+        if (legacyCopy()) flip();
+      });
+    } else if (legacyCopy()) {
+      flip();
+    }
+  }, [selectedTrack]);
+
   const completedStoryKeySet = useMemo(() => new Set(completedStoryKeys), [completedStoryKeys]);
   const passedCheckpointKeySet = useMemo(
     () => new Set(passedCheckpointKeys),
@@ -442,6 +594,8 @@ export default function JourneyClient({
         stats={stats}
         onTapLanguage={() => setLanguageSheetOpen(true)}
         onTapStats={() => setStatsSheetOpen(true)}
+        onShare={handleShareJourney}
+        shareCopied={shareCopied}
       />
 
       {/* JourneyLanguageHub (card "YOUR LANGUAGES" arriba del flow)
@@ -462,6 +616,7 @@ export default function JourneyClient({
                 title={topic.label}
                 color={color}
                 locked={topic.locked}
+                country={topicCountryLabel(selectedTrack.variant, topic.slug)}
                 onTap={() => {
                   if (topic.locked) return;
                   setPreviewTopic({
@@ -589,13 +744,11 @@ export default function JourneyClient({
             );
           })}
         </ul>
-        {/* Add a new language/journey → onboarding add flow in settings. */}
+        {/* Add a new language/journey → inline picker (mirrors the mobile
+            JourneysPanel): pick a language, then a journey. */}
         <button
           type="button"
-          onClick={() => {
-            setLanguageSheetOpen(false);
-            router.push("/settings#languages?add=1");
-          }}
+          onClick={openAddPicker}
           className="mb-2 flex w-full items-center justify-center gap-2 rounded-2xl border px-4 py-3 text-[15px] font-extrabold transition-colors"
           style={{
             background: "var(--card-bg)",
@@ -605,6 +758,152 @@ export default function JourneyClient({
         >
           + Add journey
         </button>
+      </BottomSheet>
+
+      {/* "+ Add journey" picker sheet. Step 1: pick a language. Step 2:
+          pick a journey of that language. Mirrors the mobile JourneysPanel
+          add flow instead of dumping the user in Settings. */}
+      <BottomSheet
+        open={addSheetOpen}
+        onClose={() => setAddSheetOpen(false)}
+        eyebrow={addLanguage ? "Pick a journey" : "Add a journey"}
+        title={addLanguage ? titleCaseLanguage(addLanguage) : "Choose a language"}
+        ariaLabel="Add a journey"
+      >
+        {catalogLoading && catalog === null ? (
+          <p className="py-8 text-center text-sm" style={{ color: "var(--muted)" }}>
+            Loading journeys…
+          </p>
+        ) : addLanguage === null ? (
+          <ul className="flex flex-col gap-2 pb-6">
+            {catalogLanguages.length === 0 ? (
+              <li
+                className="py-8 text-center text-sm"
+                style={{ color: "var(--muted)" }}
+              >
+                No journeys available.
+              </li>
+            ) : (
+              catalogLanguages.map((lang) => (
+                <li key={lang.language}>
+                  <button
+                    type="button"
+                    onClick={() => setAddLanguage(lang.language)}
+                    className="flex w-full items-center gap-4 rounded-2xl border px-4 py-3 text-left transition-colors"
+                    style={{
+                      background: "var(--card-bg)",
+                      borderColor: "var(--card-border)",
+                    }}
+                  >
+                    <span
+                      className="grid h-11 w-11 shrink-0 place-items-center rounded-full"
+                      style={{ background: "var(--card-bg-hover)" }}
+                    >
+                      <Flag code={lang.pill.country} size={26} title={lang.pill.code} />
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span
+                        className="block text-[15px] font-extrabold"
+                        style={{ color: "var(--foreground)" }}
+                      >
+                        {titleCaseLanguage(lang.language)}
+                      </span>
+                      <span className="block text-xs" style={{ color: "var(--muted)" }}>
+                        {lang.count} {lang.count === 1 ? "journey" : "journeys"}
+                      </span>
+                    </span>
+                    <span
+                      className="text-xl leading-none"
+                      style={{ color: "var(--muted)" }}
+                    >
+                      ›
+                    </span>
+                  </button>
+                </li>
+              ))
+            )}
+          </ul>
+        ) : (
+          <div className="flex flex-col gap-2 pb-6">
+            <button
+              type="button"
+              onClick={() => setAddLanguage(null)}
+              className="mb-1 flex items-center gap-1 self-start text-xs font-bold"
+              style={{ color: "var(--color-gold)" }}
+            >
+              ‹ All languages
+            </button>
+            <ul className="flex flex-col gap-2">
+              {catalogForLanguage.map((option) => {
+                const pill = pillForTrack({
+                  id: "",
+                  slug: option.slug,
+                  label: option.label,
+                  language: option.language,
+                  variant: option.variant,
+                  levels: [],
+                });
+                const isActive = tracks.some(
+                  (t) => t.id === selectedTrack?.id && t.slug === option.slug
+                );
+                return (
+                  <li key={option.slug}>
+                    <button
+                      type="button"
+                      disabled={addingSlug !== null}
+                      onClick={() => void handleAddTrack(option)}
+                      className="flex w-full items-center gap-4 rounded-2xl border px-4 py-3 text-left transition-colors disabled:opacity-60"
+                      style={{
+                        background: "var(--card-bg)",
+                        borderColor: "var(--card-border)",
+                      }}
+                    >
+                      <span
+                        className="grid h-11 w-11 shrink-0 place-items-center rounded-full"
+                        style={{ background: "var(--card-bg-hover)" }}
+                      >
+                        <Flag code={pill.country} size={26} title={pill.code} />
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span
+                          className="block text-[15px] font-extrabold"
+                          style={{ color: "var(--foreground)" }}
+                        >
+                          {option.label}
+                        </span>
+                        <span
+                          className="block text-xs"
+                          style={{ color: "var(--muted)" }}
+                        >
+                          {pill.code}
+                          {option.variant
+                            ? ` · ${formatVariantLabel(option.variant) ?? option.variant}`
+                            : ""}
+                        </span>
+                      </span>
+                      {addingSlug === option.slug ? (
+                        <span className="text-xs" style={{ color: "var(--muted)" }}>
+                          …
+                        </span>
+                      ) : isActive ? (
+                        <span className="text-[color:var(--color-gold)] text-xl leading-none">
+                          ✓
+                        </span>
+                      ) : (
+                        <span
+                          className="text-xl leading-none"
+                          style={{ color: "var(--color-gold)" }}
+                        >
+                          +
+                        </span>
+                      )}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
       </BottomSheet>
 
       {/* Stats sheet (tap on stats group in top bar). Mirrors the mobile

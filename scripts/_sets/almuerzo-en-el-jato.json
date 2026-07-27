@@ -1,463 +1,479 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "chochera",
-  "sentence": "Beto invitó a la [[chochera]] a almorzar.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the gang of buddies",
-   "options": [
-    "the gang of buddies",
-    "a single stranger",
-    "the strict boss",
-    "the whole family"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "Beto invitó a la chochera a almorzar.",
-    "targetWord": "chochera",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "jamear",
-  "sentence": "Los invitó a su jato a [[jamear]] algo rico.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to eat and feed",
-   "options": [
-    "to eat and feed",
-    "to sleep and rest",
-    "to work and earn",
-    "to sing and dance"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "Los invitó a su jato a jamear algo rico.",
-    "targetWord": "jamear",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "hacérsele agua la boca",
-  "sentence": "A todos [[se les hizo agua la boca]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "their mouths watered",
-   "options": [
-    "their mouths watered",
-    "their eyes teared up",
-    "their hands trembled",
-    "their heads spun"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "A todos se les hizo agua la boca.",
-    "targetWord": "se les hizo agua la boca",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "misio",
-  "sentence": "Diego llegó [[misio]] como siempre.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "broke, penniless",
-   "options": [
-    "broke, penniless",
-    "rich and loaded",
-    "full and stuffed",
-    "late and rushed"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "Diego llegó misio como siempre.",
-    "targetWord": "misio",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "de la gran flauta",
-  "sentence": "Llegó con un hambre [[de la gran flauta]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "enormous, huge",
-   "options": [
-    "enormous, huge",
-    "tiny, slight",
-    "fake, put on",
-    "quiet, calm"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "Llegó con un hambre de la gran flauta.",
-    "targetWord": "de la gran flauta",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "harto",
-  "sentence": "\"Sírveme [[harto]] que ando sin un sol.\"",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a lot, plenty",
-   "options": [
-    "a lot, plenty",
-    "a tiny bit",
-    "nothing at all",
-    "just enough"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "\"Sírveme harto que ando sin un sol.\"",
-    "targetWord": "harto",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "agarrar calle",
-  "sentence": "La chibola iba [[agarrando calle]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "getting street smarts",
-   "options": [
-    "getting street smarts",
-    "losing her way",
-    "paying her debts",
-    "telling her secrets"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "La chibola iba agarrando calle.",
-    "targetWord": "agarrando calle",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "anticucho",
-  "sentence": "Diego juraba comerse veinte [[anticuchos]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "grilled beef skewers",
-   "options": [
-    "grilled beef skewers",
-    "cold fruit slices",
-    "fried sweet buns",
-    "raw green salads"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "Diego juraba comerse veinte anticuchos.",
-    "targetWord": "anticuchos",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ají",
-  "sentence": "Se los comió con [[ají]] de una sentada.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "hot chili pepper",
-   "options": [
-    "hot chili pepper",
-    "cold sweet cream",
-    "plain white rice",
-    "warm black coffee"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "Se los comió con ají de una sentada.",
-    "targetWord": "ají",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "del montón",
-  "sentence": "Era un almuerzo [[del montón]], sin pretensiones.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "ordinary, nothing special",
-   "options": [
-    "ordinary, nothing special",
-    "fancy and grand",
-    "tense and awkward",
-    "rushed and messy"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "Era un almuerzo del montón, sin pretensiones.",
-    "targetWord": "del montón",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "nada del otro mundo",
-  "sentence": "Nada [[del otro mundo]], sin planes.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "nothing out of this world",
-   "options": [
-    "nothing out of this world",
-    "the best day ever",
-    "a total disaster",
-    "a huge surprise"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "Nada del otro mundo, sin planes.",
-    "targetWord": "del otro mundo",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "florear",
-  "sentence": "No _____ tanto, que a ti te llena medio plato.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "florear",
-   "options": [
-    "florear",
-    "comas",
-    "pagues",
-    "duermas"
-   ],
-   "translation": "Do not _____ so much, half a plate fills you.",
-   "optionTranslations": [
-    "lay it on thick",
-    "eat",
-    "pay",
-    "sleep"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "No florear tanto, que a ti te llena medio plato.",
-    "targetWord": "florear",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "picar",
-  "sentence": "Pilar lo _____ con una respuesta rapidísima.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "picar",
-   "options": [
-    "picar",
-    "ayudó",
-    "abrazó",
-    "felicitó"
-   ],
-   "translation": "Pilar _____ him with a lightning quick reply.",
-   "optionTranslations": [
-    "needled",
-    "helped",
-    "hugged",
-    "congratulated"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "Pilar lo picar con una respuesta rapidísima.",
-    "targetWord": "picar",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "matar el rato",
-  "sentence": "Sin apuro, solo estaban _____ y haciendo hora.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "matar el rato",
-   "options": [
-    "matar el rato",
-    "trabajando",
-    "corriendo",
-    "estudiando"
-   ],
-   "translation": "With no rush, they were just _____ and passing time.",
-   "optionTranslations": [
-    "killing time",
-    "working",
-    "running",
-    "studying"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "Sin apuro, solo estaban matar el rato y haciendo hora.",
-    "targetWord": "matar el rato",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "yapa",
-  "sentence": "Soltó un par de palabras nuevas como _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "yapa",
-   "options": [
-    "yapa",
-    "castigo",
-    "factura",
-    "tarea"
-   ],
-   "translation": "She dropped a couple of new words as a _____.",
-   "optionTranslations": [
-    "little extra",
-    "punishment",
-    "bill",
-    "chore"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "Soltó un par de palabras nuevas como yapa.",
-    "targetWord": "yapa",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "sobremesa",
-  "sentence": "Empezó la _____ con puros cuentos exagerados.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "sobremesa",
-   "options": [
-    "sobremesa",
-    "mudanza",
-    "limpieza",
-    "reunión"
-   ],
-   "translation": "The _____ began with nothing but tall tales.",
-   "optionTranslations": [
-    "after meal chat",
-    "move",
-    "cleanup",
-    "meeting"
-   ],
-   "audioClip": {
-    "storySlug": "almuerzo-en-el-jato",
-    "storySource": "user",
-    "sentence": "Empezó la sobremesa con puros cuentos exagerados.",
-    "targetWord": "sobremesa",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "jato,ceviche,broder,sol",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "jato",
-     "answer": "a house, a home",
-     "options": [
-      "a house, a home",
-      "raw fish cured in lime",
-      "bro, mate",
-      "the Peruvian coin, money"
-     ]
-    },
-    {
-     "word": "ceviche",
-     "answer": "raw fish cured in lime",
-     "options": [
-      "a house, a home",
-      "raw fish cured in lime",
-      "bro, mate",
-      "the Peruvian coin, money"
-     ]
-    },
-    {
-     "word": "broder",
-     "answer": "bro, mate",
-     "options": [
-      "a house, a home",
-      "raw fish cured in lime",
-      "bro, mate",
-      "the Peruvian coin, money"
-     ]
-    },
-    {
-     "word": "sol",
-     "answer": "the Peruvian coin, money",
-     "options": [
-      "a house, a home",
-      "raw fish cured in lime",
-      "bro, mate",
-      "the Peruvian coin, money"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "chochera",
+    "sentence": "Beto invitó a la [[chochera]] a almorzar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the gang of buddies",
+      "options": [
+        "the gang of buddies",
+        "a single stranger",
+        "the strict boss",
+        "the whole family"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "Beto invitó a la chochera a almorzar.",
+        "targetWord": "chochera",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e76b48dd14d9896d.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "jamear",
+    "sentence": "Los invitó a su jato a [[jamear]] algo rico.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to eat and feed",
+      "options": [
+        "to eat and feed",
+        "to sleep and rest",
+        "to work and earn",
+        "to sing and dance"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "Los invitó a su jato a jamear algo rico.",
+        "targetWord": "jamear",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/44cc25e7b3dc82ef.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacérsele agua la boca",
+    "sentence": "A todos [[se les hizo agua la boca]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "their mouths watered",
+      "options": [
+        "their mouths watered",
+        "their eyes teared up",
+        "their hands trembled",
+        "their heads spun"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "A todos se les hizo agua la boca.",
+        "targetWord": "se les hizo agua la boca",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9a41e42b14c73131.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "misio",
+    "sentence": "Diego llegó [[misio]] como siempre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "broke, penniless",
+      "options": [
+        "broke, penniless",
+        "rich and loaded",
+        "full and stuffed",
+        "late and rushed"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "Diego llegó misio como siempre.",
+        "targetWord": "misio",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1f3de756cf96e2f2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de la gran flauta",
+    "sentence": "Llegó con un hambre [[de la gran flauta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "enormous, huge",
+      "options": [
+        "enormous, huge",
+        "tiny, slight",
+        "fake, put on",
+        "quiet, calm"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "Llegó con un hambre de la gran flauta.",
+        "targetWord": "de la gran flauta",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2895ce63dc0e5ae2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "harto",
+    "sentence": "\"Sírveme [[harto]] que ando sin un sol.\"",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lot, plenty",
+      "options": [
+        "a lot, plenty",
+        "a tiny bit",
+        "nothing at all",
+        "just enough"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "\"Sírveme harto que ando sin un sol.\"",
+        "targetWord": "harto",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4589fd6052e10777.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agarrar calle",
+    "sentence": "La chibola iba [[agarrando calle]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "getting street smarts",
+      "options": [
+        "getting street smarts",
+        "losing her way",
+        "paying her debts",
+        "telling her secrets"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "La chibola iba agarrando calle.",
+        "targetWord": "agarrando calle",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d1680435d3af563.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "anticucho",
+    "sentence": "Diego juraba comerse veinte [[anticuchos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "grilled beef skewers",
+      "options": [
+        "grilled beef skewers",
+        "cold fruit slices",
+        "fried sweet buns",
+        "raw green salads"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "Diego juraba comerse veinte anticuchos.",
+        "targetWord": "anticuchos",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdd4f6b25c51ad72.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ají",
+    "sentence": "Se los comió con [[ají]] de una sentada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hot chili pepper",
+      "options": [
+        "hot chili pepper",
+        "cold sweet cream",
+        "plain white rice",
+        "warm black coffee"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "Se los comió con ají de una sentada.",
+        "targetWord": "ají",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a1662a72b4090051.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "del montón",
+    "sentence": "Era un almuerzo [[del montón]], sin pretensiones.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ordinary, nothing special",
+      "options": [
+        "ordinary, nothing special",
+        "fancy and grand",
+        "tense and awkward",
+        "rushed and messy"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "Era un almuerzo del montón, sin pretensiones.",
+        "targetWord": "del montón",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3b6c0c95df77a46b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nada del otro mundo",
+    "sentence": "Nada [[del otro mundo]], sin planes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nothing out of this world",
+      "options": [
+        "nothing out of this world",
+        "the best day ever",
+        "a total disaster",
+        "a huge surprise"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "Nada del otro mundo, sin planes.",
+        "targetWord": "del otro mundo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05cd573562ab245f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "florear",
+    "sentence": "No _____ tanto, que a ti te llena medio plato.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "florear",
+      "options": [
+        "florear",
+        "comas",
+        "pagues",
+        "duermas"
+      ],
+      "translation": "Do not _____ so much, half a plate fills you.",
+      "optionTranslations": [
+        "lay it on thick",
+        "eat",
+        "pay",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "No florear tanto, que a ti te llena medio plato.",
+        "targetWord": "florear",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c126419ee5c801b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "picar",
+    "sentence": "Pilar lo _____ con una respuesta rapidísima.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "picar",
+      "options": [
+        "picar",
+        "ayudó",
+        "abrazó",
+        "felicitó"
+      ],
+      "translation": "Pilar _____ him with a lightning quick reply.",
+      "optionTranslations": [
+        "needled",
+        "helped",
+        "hugged",
+        "congratulated"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "Pilar lo picar con una respuesta rapidísima.",
+        "targetWord": "picar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8274c8b34dfb9356.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "matar el rato",
+    "sentence": "Sin apuro, solo estaban _____ y haciendo hora.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "matar el rato",
+      "options": [
+        "matar el rato",
+        "trabajando",
+        "corriendo",
+        "estudiando"
+      ],
+      "translation": "With no rush, they were just _____ and passing time.",
+      "optionTranslations": [
+        "killing time",
+        "working",
+        "running",
+        "studying"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "Sin apuro, solo estaban matar el rato y haciendo hora.",
+        "targetWord": "matar el rato",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc894c5c133270f4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "yapa",
+    "sentence": "Soltó un par de palabras nuevas como _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "yapa",
+      "options": [
+        "yapa",
+        "castigo",
+        "factura",
+        "tarea"
+      ],
+      "translation": "She dropped a couple of new words as a _____.",
+      "optionTranslations": [
+        "little extra",
+        "punishment",
+        "bill",
+        "chore"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "Soltó un par de palabras nuevas como yapa.",
+        "targetWord": "yapa",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/405eb42468a6e5f0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sobremesa",
+    "sentence": "Empezó la _____ con puros cuentos exagerados.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sobremesa",
+      "options": [
+        "sobremesa",
+        "mudanza",
+        "limpieza",
+        "reunión"
+      ],
+      "translation": "The _____ began with nothing but tall tales.",
+      "optionTranslations": [
+        "after meal chat",
+        "move",
+        "cleanup",
+        "meeting"
+      ],
+      "audioClip": {
+        "storySlug": "almuerzo-en-el-jato",
+        "storySource": "user",
+        "sentence": "Empezó la sobremesa con puros cuentos exagerados.",
+        "targetWord": "sobremesa",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5d4fde16575da8cc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "jato,ceviche,broder,sol",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "jato",
+          "answer": "a house, a home",
+          "options": [
+            "a house, a home",
+            "raw fish cured in lime",
+            "bro, mate",
+            "the Peruvian coin, money"
+          ]
+        },
+        {
+          "word": "ceviche",
+          "answer": "raw fish cured in lime",
+          "options": [
+            "a house, a home",
+            "raw fish cured in lime",
+            "bro, mate",
+            "the Peruvian coin, money"
+          ]
+        },
+        {
+          "word": "broder",
+          "answer": "bro, mate",
+          "options": [
+            "a house, a home",
+            "raw fish cured in lime",
+            "bro, mate",
+            "the Peruvian coin, money"
+          ]
+        },
+        {
+          "word": "sol",
+          "answer": "the Peruvian coin, money",
+          "options": [
+            "a house, a home",
+            "raw fish cured in lime",
+            "bro, mate",
+            "the Peruvian coin, money"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]

@@ -1,5 +1,6 @@
 "use client";
 
+import { Check, Share2 } from "lucide-react";
 import Flag from "@/components/Flag";
 
 type Stats = {
@@ -25,6 +26,10 @@ type Props = {
   onTapLanguage?: () => void;
   /** Called when the stats group is tapped (opens the progress sheet). */
   onTapStats?: () => void;
+  /** Called when the share button is tapped (copies the journey's stable URL). */
+  onShare?: () => void;
+  /** True right after a successful copy — flips the share icon to a check. */
+  shareCopied?: boolean;
 };
 
 /**
@@ -33,7 +38,7 @@ type Props = {
  *
  * iPhone reference: the journey screen header (flag + IT + chevron · ⚡ 8 · 🏆 Lv 7 · ⭐ 1.4k).
  */
-export default function JourneyTopBar({ language, stats, onTapLanguage, onTapStats }: Props) {
+export default function JourneyTopBar({ language, stats, onTapLanguage, onTapStats, onShare, shareCopied }: Props) {
   const fmtNum = (n?: number) => {
     if (n == null) return "0";
     if (n >= 1000) return `${(n / 1000).toFixed(1)}k`;
@@ -54,6 +59,22 @@ export default function JourneyTopBar({ language, stats, onTapLanguage, onTapSta
         <span className="text-[var(--muted)] text-sm">▾</span>
       </button>
 
+      <div className="flex items-center gap-3">
+        {onShare ? (
+          <button
+            type="button"
+            onClick={onShare}
+            aria-label={shareCopied ? "Link copied" : "Share this journey"}
+            title={shareCopied ? "Link copied" : "Copy share link"}
+            className="w-10 h-10 shrink-0 rounded-full grid place-items-center bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--foreground)] hover:bg-[var(--card-bg-hover)] transition-colors"
+          >
+            {shareCopied ? (
+              <Check size={18} className="text-[var(--color-cyan)]" />
+            ) : (
+              <Share2 size={18} />
+            )}
+          </button>
+        ) : null}
       <button
         type="button"
         onClick={onTapStats}
@@ -74,6 +95,7 @@ export default function JourneyTopBar({ language, stats, onTapLanguage, onTapSta
           {fmtNum(stats?.xp ?? 0)}
         </span>
       </button>
+      </div>
     </header>
   );
 }

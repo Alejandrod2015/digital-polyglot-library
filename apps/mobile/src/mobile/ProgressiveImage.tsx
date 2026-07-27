@@ -1,36 +1,40 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import {
-  Animated,
-  Easing,
-  StyleSheet,
-  View,
-  type ImageResizeMode,
-  type ImageStyle,
-  type StyleProp,
-  type ViewStyle,
-} from "react-native";
+import { useMemo } from "react";
+import { StyleSheet, View, type ImageResizeMode, type ImageStyle, type StyleProp, type ViewStyle } from "react-native";
+import { Image, type ImageContentFit } from "expo-image";
 
-// Module-level cache: tracks URIs that have already been loaded this session.
-// When a component remounts with a known URI, we skip the skeleton animation entirely.
-const loadedUriCache = new Set<string>();
+// Backed by expo-image: persistent memory+disk cache (covers survive cold
+// starts and load instantly the second time) plus a ThumbHash placeholder so a
+// card renders an instant blurred preview of the real cover on first paint,
+// with zero network wait. Replaces the previous RN core <Image> + manual
+// skeleton, which had no durable disk cache and re-downloaded every cold start.
 
 type Props = {
   uri: string;
   style: StyleProp<ImageStyle>;
   resizeMode?: ImageResizeMode;
   skeletonStyle?: StyleProp<ViewStyle>;
+  /** Base64 ThumbHash from the API payload. When present, shown as an instant
+   *  blurred placeholder of the real cover while the full image loads. */
+  thumbhash?: string | null;
   // Bubbled up so callers (e.g. the reader) can swap to a fallback URL when
   // a local file:// cached copy turns out to be missing / corrupt.
   onError?: () => void;
 };
 
-export function ProgressiveImage({ uri, style, resizeMode = "cover", skeletonStyle, onError }: Props) {
-  const alreadyLoaded = loadedUriCache.has(uri);
-  const imageOpacity = useRef(new Animated.Value(alreadyLoaded ? 1 : 0)).current;
-  const skeletonOpacity = useRef(new Animated.Value(alreadyLoaded ? 0 : 0.55)).current;
-  const [loaded, setLoaded] = useState(alreadyLoaded);
-  const [showSkeleton, setShowSkeleton] = useState(!alreadyLoaded);
+function toContentFit(resizeMode: ImageResizeMode): ImageContentFit {
+  switch (resizeMode) {
+    case "contain":
+      return "contain";
+    case "stretch":
+      return "fill";
+    case "center":
+      return "none";
+    default:
+      return "cover";
+  }
+}
 
+export function ProgressiveImage({ uri, style, resizeMode = "cover", skeletonStyle, thumbhash, onError }: Props) {
   const flattenedStyle = useMemo(() => StyleSheet.flatten(style) ?? {}, [style]);
   const wrapperStyle = useMemo(
     () => [
@@ -41,103 +45,16 @@ export function ProgressiveImage({ uri, style, resizeMode = "cover", skeletonSty
     [flattenedStyle]
   );
 
-  useEffect(() => {
-    if (loadedUriCache.has(uri)) {
-      setLoaded(true);
-      setShowSkeleton(false);
-      imageOpacity.setValue(1);
-      skeletonOpacity.setValue(0);
-    } else {
-      setLoaded(false);
-      setShowSkeleton(true);
-      imageOpacity.setValue(0);
-      skeletonOpacity.setValue(0.55);
-    }
-  }, [uri, imageOpacity, skeletonOpacity]);
-
-  useEffect(() => {
-    if (!showSkeleton) return undefined;
-
-    const pulse = Animated.loop(
-      Animated.sequence([
-        Animated.timing(skeletonOpacity, {
-          toValue: 0.82,
-          duration: 850,
-          easing: Easing.inOut(Easing.ease),
-          useNativeDriver: true,
-        }),
-        Animated.timing(skeletonOpacity, {
-          toValue: 0.42,
-          duration: 850,
-          easing: Easing.inOut(Easing.ease),
-          useNativeDriver: true,
-        }),
-      ])
-    );
-
-    pulse.start();
-
-    return () => {
-      pulse.stop();
-    };
-  }, [showSkeleton, skeletonOpacity]);
-
-  function finishLoad() {
-    if (loaded) return;
-    loadedUriCache.add(uri);
-    setLoaded(true);
-
-    Animated.parallel([
-      Animated.timing(imageOpacity, {
-        toValue: 1,
-        duration: 220,
-        easing: Easing.out(Easing.ease),
-        useNativeDriver: true,
-      }),
-      Animated.timing(skeletonOpacity, {
-        toValue: 0,
-        duration: 180,
-        easing: Easing.out(Easing.ease),
-        useNativeDriver: true,
-      }),
-    ]).start(({ finished }) => {
-      if (finished) {
-        setShowSkeleton(false);
-      }
-    });
-  }
-
   return (
-    <View style={wrapperStyle}>
-      {showSkeleton ? (
-        <Animated.View
-          pointerEvents="none"
-          style={[
-            StyleSheet.absoluteFillObject,
-            styles.skeleton,
-            skeletonStyle,
-            { opacity: skeletonOpacity },
-          ]}
-        />
-      ) : null}
-      <Animated.Image
-        source={{
-          uri,
-          // `force-cache` tells iOS NSURLCache to serve the cached
-          // bytes when present and only hit the network on a cache
-          // miss. Combined with the long max-age that /_next/image
-          // already sends, the second time you see a cover it loads
-          // immediately. Falls through cleanly on Android (which
-          // ignores the prop and uses its default disk cache).
-          cache: "force-cache",
-        }}
-        resizeMode={resizeMode}
-        onLoad={finishLoad}
-        onError={() => {
-          finishLoad();
-          onError?.();
-        }}
-        style={[StyleSheet.absoluteFillObject, { opacity: imageOpacity }]}
+    <View style={[wrapperStyle, skeletonStyle]}>
+      <Image
+        source={{ uri }}
+        placeholder={thumbhash ? { thumbhash } : undefined}
+        contentFit={toContentFit(resizeMode)}
+        cachePolicy="memory-disk"
+        transition={220}
+        onError={onError}
+        style={StyleSheet.absoluteFillObject}
       />
     </View>
   );
@@ -146,9 +63,7 @@ export function ProgressiveImage({ uri, style, resizeMode = "cover", skeletonSty
 const styles = StyleSheet.create({
   wrapper: {
     overflow: "hidden",
+    // Shown behind the image before the (thumbhash) placeholder / image paint.
     backgroundColor: "#102238",
-  },
-  skeleton: {
-    backgroundColor: "#213753",
   },
 });

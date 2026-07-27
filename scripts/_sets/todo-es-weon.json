@@ -1,456 +1,472 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "weveo",
-  "sentence": "Para entrar al [[weveo]] hay que sentir la talla.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "messing about and banter",
-   "options": [
-    "messing about and banter",
-    "serious formal talk",
-    "a strict written rule",
-    "a quiet lonely walk"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "Para entrar al weveo hay que sentir la talla.",
-    "targetWord": "weveo",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "po",
-  "sentence": "Explícate bien, [[po]], que no se entiende.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a Chilean emphasis filler",
-   "options": [
-    "a Chilean emphasis filler",
-    "a rude big insult",
-    "a formal polite title",
-    "a sad long sigh"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "Explícate bien, po, que no se entiende.",
-    "targetWord": "po",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ni una",
-  "sentence": "No se entiende [[ni una]] cuando hablái así.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "not a single thing",
-   "options": [
-    "not a single thing",
-    "every single word",
-    "almost everything",
-    "the whole story"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "No se entiende ni una cuando hablái así.",
-    "targetWord": "ni una",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "cagarse de la risa",
-  "sentence": "Nico [[se cagaba de la risa]] con el weveo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "was cracking up laughing",
-   "options": [
-    "was cracking up laughing",
-    "was fuming with anger",
-    "was bored to tears",
-    "was fast asleep"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "Nico se cagaba de la risa con el weveo.",
-    "targetWord": "se cagaba de la risa",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "fome",
-  "sentence": "Hablar tan enredado le parecía [[fome]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "boring and lame",
-   "options": [
-    "boring and lame",
-    "fun and lively",
-    "cruel and cold",
-    "clever and sharp"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "Hablar tan enredado le parecía fome.",
-    "targetWord": "fome",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "como las pelotas",
-  "sentence": "Dejaban la conversación [[como las pelotas]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a total mess",
-   "options": [
-    "a total mess",
-    "perfectly clear",
-    "really elegant",
-    "quite funny"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "Dejaban la conversación como las pelotas.",
-    "targetWord": "como las pelotas",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "achuntar",
-  "sentence": "Benjamín no lograba [[achuntarle]] al reclamo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "hit the mark on",
-   "options": [
-    "hit the mark on",
-    "run away from",
-    "pay up for",
-    "laugh about"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "Benjamín no lograba achuntarle al reclamo.",
-    "targetWord": "achuntarle",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "regio",
-  "sentence": "A pesar de todo, los dos se entendían [[regio]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "perfectly well",
-   "options": [
-    "perfectly well",
-    "really badly",
-    "barely at all",
-    "very slowly"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "A pesar de todo, los dos se entendían regio.",
-    "targetWord": "regio",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "al tiro",
-  "sentence": "\"¿Entonces el weón hizo la weá?\", lanzó [[al tiro]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "right away",
-   "options": [
-    "right away",
-    "by mistake",
-    "much later",
-    "one last time"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "\"¿Entonces el weón hizo la weá?\", lanzó al tiro.",
-    "targetWord": "al tiro",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "choro",
-  "sentence": "Benjamín arrancó una historia bien [[choro]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "cool and gutsy",
-   "options": [
-    "cool and gutsy",
-    "dull and flat",
-    "short and dry",
-    "sad and slow"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "Benjamín arrancó una historia bien choro.",
-    "targetWord": "choro",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "cuático",
-  "sentence": "Nico se reía con el weveo [[cuático]] que se armaba.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "intense and over the top",
-   "options": [
-    "intense and over the top",
-    "calm and orderly",
-    "plain and boring",
-    "cold and distant"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "Nico se reía con el weveo cuático que se armaba.",
-    "targetWord": "cuático",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "brígido",
-  "sentence": "Era un idioma secreto medio [[brígido]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "intense and hardcore",
-   "options": [
-    "intense and hardcore",
-    "soft and gentle",
-    "clear and easy",
-    "dull and lame"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "Era un idioma secreto medio brígido.",
-    "targetWord": "brígido",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "hablái",
-  "sentence": "No se te entiende ni una cuando _____ así.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "hablái",
-   "options": [
-    "hablái",
-    "escuchái",
-    "comís",
-    "dormís"
-   ],
-   "translation": "One cannot understand a thing when you _____ like that.",
-   "optionTranslations": [
-    "talk",
-    "listen",
-    "eat",
-    "sleep"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "No se te entiende ni una cuando hablái así.",
-    "targetWord": "hablái",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "latear",
-  "sentence": "Hablaban en clave a propósito para _____ a los de afuera.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "latear",
-   "options": [
-    "latear",
-    "ayudar",
-    "invitar",
-    "saludar"
-   ],
-   "translation": "They spoke in code on purpose to _____ the outsiders.",
-   "optionTranslations": [
-    "bore stiff",
-    "help",
-    "invite",
-    "greet"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "Hablaban en clave a propósito para latear a los de afuera.",
-    "targetWord": "latear",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "pillar",
-  "sentence": "Nadie de afuera _____ ese código secreto.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "pillar",
-   "options": [
-    "pillar",
-    "pagaba",
-    "perdía",
-    "gritaba"
-   ],
-   "translation": "Nobody from outside _____ that secret code.",
-   "optionTranslations": [
-    "caught on to",
-    "paid for",
-    "lost",
-    "shouted"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "Nadie de afuera pillar ese código secreto.",
-    "targetWord": "pillar",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "avivarse",
-  "sentence": "Ahí Javiera se _____ de algo bien raro.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "avivarse",
-   "options": [
-    "avivarse",
-    "olvidó",
-    "cansó",
-    "durmió"
-   ],
-   "translation": "There Javiera _____ to something really strange.",
-   "optionTranslations": [
-    "wised up",
-    "forgot",
-    "tired",
-    "slept"
-   ],
-   "audioClip": {
-    "storySlug": "todo-es-weon",
-    "storySource": "user",
-    "sentence": "Ahí Javiera se avivarse de algo bien raro.",
-    "targetWord": "avivarse",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "weón,weá,mueca,talla",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "weón",
-     "answer": "dude, guy (Chile)",
-     "options": [
-      "dude, guy (Chile)",
-      "a thing, thingy",
-      "a face, a grimace",
-      "a joke, a witty crack"
-     ]
-    },
-    {
-     "word": "weá",
-     "answer": "a thing, thingy",
-     "options": [
-      "dude, guy (Chile)",
-      "a thing, thingy",
-      "a face, a grimace",
-      "a joke, a witty crack"
-     ]
-    },
-    {
-     "word": "mueca",
-     "answer": "a face, a grimace",
-     "options": [
-      "dude, guy (Chile)",
-      "a thing, thingy",
-      "a face, a grimace",
-      "a joke, a witty crack"
-     ]
-    },
-    {
-     "word": "talla",
-     "answer": "a joke, a witty crack",
-     "options": [
-      "dude, guy (Chile)",
-      "a thing, thingy",
-      "a face, a grimace",
-      "a joke, a witty crack"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "weveo",
+    "sentence": "Para entrar al [[weveo]] hay que sentir la talla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "messing about and banter",
+      "options": [
+        "messing about and banter",
+        "serious formal talk",
+        "a strict written rule",
+        "a quiet lonely walk"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "Para entrar al weveo hay que sentir la talla.",
+        "targetWord": "weveo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aab9a4645161525d.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "po",
+    "sentence": "Explícate bien, [[po]], que no se entiende.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a Chilean emphasis filler",
+      "options": [
+        "a Chilean emphasis filler",
+        "a rude big insult",
+        "a formal polite title",
+        "a sad long sigh"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "Explícate bien, po, que no se entiende.",
+        "targetWord": "po",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/91ef8faafe943153.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ni una",
+    "sentence": "No se entiende [[ni una]] cuando hablái así.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "not a single thing",
+      "options": [
+        "not a single thing",
+        "every single word",
+        "almost everything",
+        "the whole story"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "No se entiende ni una cuando hablái así.",
+        "targetWord": "ni una",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d118857797e4415.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cagarse de la risa",
+    "sentence": "Nico [[se cagaba de la risa]] con el weveo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "was cracking up laughing",
+      "options": [
+        "was cracking up laughing",
+        "was fuming with anger",
+        "was bored to tears",
+        "was fast asleep"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "Nico se cagaba de la risa con el weveo.",
+        "targetWord": "se cagaba de la risa",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a86ce55507d42b7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fome",
+    "sentence": "Hablar tan enredado le parecía [[fome]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "boring and lame",
+      "options": [
+        "boring and lame",
+        "fun and lively",
+        "cruel and cold",
+        "clever and sharp"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "Hablar tan enredado le parecía fome.",
+        "targetWord": "fome",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/932381ed18c56444.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "como las pelotas",
+    "sentence": "Dejaban la conversación [[como las pelotas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a total mess",
+      "options": [
+        "a total mess",
+        "perfectly clear",
+        "really elegant",
+        "quite funny"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "Dejaban la conversación como las pelotas.",
+        "targetWord": "como las pelotas",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0fdf1652f2b1762c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "achuntar",
+    "sentence": "Benjamín no lograba [[achuntarle]] al reclamo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hit the mark on",
+      "options": [
+        "hit the mark on",
+        "run away from",
+        "pay up for",
+        "laugh about"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "Benjamín no lograba achuntarle al reclamo.",
+        "targetWord": "achuntarle",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8afc75a0ea28a0f1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "regio",
+    "sentence": "A pesar de todo, los dos se entendían [[regio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "perfectly well",
+      "options": [
+        "perfectly well",
+        "really badly",
+        "barely at all",
+        "very slowly"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "A pesar de todo, los dos se entendían regio.",
+        "targetWord": "regio",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0783fc91a66f0dde.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al tiro",
+    "sentence": "\"¿Entonces el weón hizo la weá?\", lanzó [[al tiro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right away",
+      "options": [
+        "right away",
+        "by mistake",
+        "much later",
+        "one last time"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "\"¿Entonces el weón hizo la weá?\", lanzó al tiro.",
+        "targetWord": "al tiro",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/50e1745beb3ff060.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "choro",
+    "sentence": "Benjamín arrancó una historia bien [[choro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cool and gutsy",
+      "options": [
+        "cool and gutsy",
+        "dull and flat",
+        "short and dry",
+        "sad and slow"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "Benjamín arrancó una historia bien choro.",
+        "targetWord": "choro",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/850e8e140a19cdd1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuático",
+    "sentence": "Nico se reía con el weveo [[cuático]] que se armaba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "intense and over the top",
+      "options": [
+        "intense and over the top",
+        "calm and orderly",
+        "plain and boring",
+        "cold and distant"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "Nico se reía con el weveo cuático que se armaba.",
+        "targetWord": "cuático",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3eb28b5e2efd4e64.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brígido",
+    "sentence": "Era un idioma secreto medio [[brígido]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "intense and hardcore",
+      "options": [
+        "intense and hardcore",
+        "soft and gentle",
+        "clear and easy",
+        "dull and lame"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "Era un idioma secreto medio brígido.",
+        "targetWord": "brígido",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2bad8c2256178404.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "hablái",
+    "sentence": "No se te entiende ni una cuando _____ así.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hablái",
+      "options": [
+        "hablái",
+        "escuchái",
+        "comís",
+        "dormís"
+      ],
+      "translation": "One cannot understand a thing when you _____ like that.",
+      "optionTranslations": [
+        "talk",
+        "listen",
+        "eat",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "No se te entiende ni una cuando hablái así.",
+        "targetWord": "hablái",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/211dd0a2aac37447.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "latear",
+    "sentence": "Hablaban en clave a propósito para _____ a los de afuera.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "latear",
+      "options": [
+        "latear",
+        "ayudar",
+        "invitar",
+        "saludar"
+      ],
+      "translation": "They spoke in code on purpose to _____ the outsiders.",
+      "optionTranslations": [
+        "bore stiff",
+        "help",
+        "invite",
+        "greet"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "Hablaban en clave a propósito para latear a los de afuera.",
+        "targetWord": "latear",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/115c95d0a38c6be3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pillar",
+    "sentence": "Nadie de afuera _____ ese código secreto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pillar",
+      "options": [
+        "pillar",
+        "pagaba",
+        "perdía",
+        "gritaba"
+      ],
+      "translation": "Nobody from outside _____ that secret code.",
+      "optionTranslations": [
+        "caught on to",
+        "paid for",
+        "lost",
+        "shouted"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "Nadie de afuera pillar ese código secreto.",
+        "targetWord": "pillar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/245b0193eb3c1cfc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "avivarse",
+    "sentence": "Ahí Javiera se _____ de algo bien raro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "avivarse",
+      "options": [
+        "avivarse",
+        "olvidó",
+        "cansó",
+        "durmió"
+      ],
+      "translation": "There Javiera _____ to something really strange.",
+      "optionTranslations": [
+        "wised up",
+        "forgot",
+        "tired",
+        "slept"
+      ],
+      "audioClip": {
+        "storySlug": "todo-es-weon",
+        "storySource": "user",
+        "sentence": "Ahí Javiera se avivarse de algo bien raro.",
+        "targetWord": "avivarse",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/427b3aa632cb886c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "weón,weá,mueca,talla",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "weón",
+          "answer": "dude, guy (Chile)",
+          "options": [
+            "dude, guy (Chile)",
+            "a thing, thingy",
+            "a face, a grimace",
+            "a joke, a witty crack"
+          ]
+        },
+        {
+          "word": "weá",
+          "answer": "a thing, thingy",
+          "options": [
+            "dude, guy (Chile)",
+            "a thing, thingy",
+            "a face, a grimace",
+            "a joke, a witty crack"
+          ]
+        },
+        {
+          "word": "mueca",
+          "answer": "a face, a grimace",
+          "options": [
+            "dude, guy (Chile)",
+            "a thing, thingy",
+            "a face, a grimace",
+            "a joke, a witty crack"
+          ]
+        },
+        {
+          "word": "talla",
+          "answer": "a joke, a witty crack",
+          "options": [
+            "dude, guy (Chile)",
+            "a thing, thingy",
+            "a face, a grimace",
+            "a joke, a witty crack"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]

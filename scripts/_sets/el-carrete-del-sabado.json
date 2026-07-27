@@ -1,494 +1,511 @@
 [
- {
-  "type": "meaning_in_context",
-  "word": "filete",
-  "sentence": "Prometió un pituto [[filete]] para el trago.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "great and top quality",
-   "options": [
-    "great and top quality",
-    "cheap and lousy",
-    "fake and useless",
-    "slow and late"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "Prometió un pituto filete para el trago.",
-    "targetWord": "filete",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "andar pato",
-  "sentence": "El problema es que [[andaba pato]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "flat broke",
-   "options": [
-    "flat broke",
-    "filthy rich",
-    "fully stuffed",
-    "wide awake"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "El problema es que andaba pato.",
-    "targetWord": "andaba pato",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "al lote",
-  "sentence": "Nico conocía sus promesas [[al lote]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "careless and sloppy",
-   "options": [
-    "careless and sloppy",
-    "careful and neat",
-    "kind and warm",
-    "firm and sure"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "Nico conocía sus promesas al lote.",
-    "targetWord": "al lote",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "a precio de risa",
-  "sentence": "Un amigo le conseguía el copete [[a precio de risa]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "dirt cheap",
-   "options": [
-    "dirt cheap",
-    "far too pricey",
-    "totally free",
-    "fully sold out"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "Un amigo le conseguía el copete a precio de risa.",
-    "targetWord": "a precio de risa",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "quedar como rey",
-  "sentence": "Pensaba [[quedar como rey]] sin gastar nada.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "come off looking great",
-   "options": [
-    "come off looking great",
-    "end up looking bad",
-    "break totally even",
-    "lose all his money"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "Pensaba quedar como rey sin gastar nada.",
-    "targetWord": "quedar como rey",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "pegado",
-  "sentence": "Se quedó [[pegado]] en otra parte, apostó Nico.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "stuck and held up",
-   "options": [
-    "stuck and held up",
-    "free and clear",
-    "fast and early",
-    "calm and rested"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "Se quedó pegado en otra parte, apostó Nico.",
-    "targetWord": "pegado",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "penca",
-  "sentence": "El ambiente se estaba poniendo [[penca]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "lousy and dull",
-   "options": [
-    "lousy and dull",
-    "lively and fun",
-    "warm and cozy",
-    "loud and wild"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "El ambiente se estaba poniendo penca.",
-    "targetWord": "penca",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "pesao",
-  "sentence": "Puro ambiente [[pesao]] y nada que tomar.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "unpleasant and heavy",
-   "options": [
-    "unpleasant and heavy",
-    "light and breezy",
-    "fresh and cool",
-    "kind and soft"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "Puro ambiente pesao y nada que tomar.",
-    "targetWord": "pesao",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "a un pelo",
-  "sentence": "El carrete estaba [[a un pelo]] del fracaso.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a hair away from",
-   "options": [
-    "a hair away from",
-    "miles away from",
-    "right on top of",
-    "safe and far from"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "El carrete estaba a un pelo del fracaso.",
-    "targetWord": "a un pelo",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "con el alma en un hilo",
-  "sentence": "Miraban la entrada [[con el alma en un hilo]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sick with suspense",
-   "options": [
-    "sick with suspense",
-    "calm and relaxed",
-    "proud and smug",
-    "bored and sleepy"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "Miraban la entrada con el alma en un hilo.",
-    "targetWord": "con el alma en un hilo",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "gil",
-  "sentence": "\"Este [[gil]] nos dejó botados\", reclamó Nico.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a naive fool",
-   "options": [
-    "a naive fool",
-    "a clever expert",
-    "a rich boss",
-    "a loyal friend"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "\"Este gil nos dejó botados\", reclamó Nico.",
-    "targetWord": "gil",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "llegái",
-  "sentence": "Mira que si _____ sin nada, te funamos.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "llegái",
-   "options": [
-    "llegái",
-    "salís",
-    "dormís",
-    "cantás"
-   ],
-   "translation": "Watch out, if you _____ with nothing, we shame you.",
-   "optionTranslations": [
-    "arrive",
-    "leave",
-    "sleep",
-    "sing"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "Mira que si llegái sin nada, te funamos.",
-    "targetWord": "llegái",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "funar",
-  "sentence": "Si llega con las manos vacías, lo _____ delante de todos.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "funar",
-   "options": [
-    "funar",
-    "aplaudimos",
-    "invitamos",
-    "premiamos"
-   ],
-   "translation": "If he comes empty handed, we _____ him in front of everyone.",
-   "optionTranslations": [
-    "call out",
-    "applaud",
-    "invite",
-    "reward"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "Si llega con las manos vacías, lo funar delante de todos.",
-    "targetWord": "funar",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "engrupir",
-  "sentence": "Benjamín los _____ jurando que el trago venía.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "engrupir",
-   "options": [
-    "engrupir",
-    "ayudó",
-    "pagó",
-    "escuchó"
-   ],
-   "translation": "Benjamín _____ them, swearing the drink was coming.",
-   "optionTranslations": [
-    "conned",
-    "helped",
-    "paid",
-    "listened"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "Benjamín los engrupir jurando que el trago venía.",
-    "targetWord": "engrupir",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "lucas",
-  "sentence": "Quería quedar como rey sin gastar ni unas _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "lucas",
-   "options": [
-    "lucas",
-    "sonrisas",
-    "excusas",
-    "promesas"
-   ],
-   "translation": "He wanted to look great without spending a single _____.",
-   "optionTranslations": [
-    "few pesos",
-    "smiles",
-    "excuses",
-    "promises"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "Quería quedar como rey sin gastar ni unas lucas.",
-    "targetWord": "lucas",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "cagar",
-  "sentence": "\"Este gil nos _____\", reclamó Nico furioso.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "cagar",
-   "options": [
-    "cagar",
-    "salvó",
-    "llamó",
-    "felicitó"
-   ],
-   "translation": "\"This fool _____ us over\", complained Nico furiously.",
-   "optionTranslations": [
-    "screwed",
-    "saved",
-    "called",
-    "congratulated"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "\"Este gil nos cagar\", reclamó Nico furioso.",
-    "targetWord": "cagar",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "pintar para",
-  "sentence": "La cosa _____ desastre, y ella ya se imaginaba el ridículo.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "pintar para",
-   "options": [
-    "pintar para",
-    "escapaba de",
-    "volvía del",
-    "hablaba del"
-   ],
-   "translation": "It _____ disaster, and she was already picturing the embarrassment.",
-   "optionTranslations": [
-    "was heading toward",
-    "was escaping",
-    "was returning",
-    "was talking"
-   ],
-   "audioClip": {
-    "storySlug": "el-carrete-del-sabado",
-    "storySource": "user",
-    "sentence": "La cosa pintar para desastre, y ella ya se imaginaba el ridículo.",
-    "targetWord": "pintar para",
-    "language": "spanish",
-    "voiceId": "JW8DGEuLp9WxIS5IdxMM"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "match_meaning",
-  "word": "carrete,copete,pituto,cabro",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "carrete",
-     "answer": "a party, a night out",
-     "options": [
-      "a party, a night out",
-      "booze",
-      "a handy contact",
-      "a guy, young dude"
-     ]
-    },
-    {
-     "word": "copete",
-     "answer": "booze",
-     "options": [
-      "a party, a night out",
-      "booze",
-      "a handy contact",
-      "a guy, young dude"
-     ]
-    },
-    {
-     "word": "pituto",
-     "answer": "a handy contact",
-     "options": [
-      "a party, a night out",
-      "booze",
-      "a handy contact",
-      "a guy, young dude"
-     ]
-    },
-    {
-     "word": "cabro",
-     "answer": "a guy, young dude",
-     "options": [
-      "a party, a night out",
-      "booze",
-      "a handy contact",
-      "a guy, young dude"
-     ]
+  {
+    "type": "meaning_in_context",
+    "word": "filete",
+    "sentence": "Prometió un pituto [[filete]] para el trago.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "great and top quality",
+      "options": [
+        "great and top quality",
+        "cheap and lousy",
+        "fake and useless",
+        "slow and late"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "Prometió un pituto filete para el trago.",
+        "targetWord": "filete",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fbeefd4accb3beac.mp3"
+      }
     }
-   ],
-   "audioClip": null
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "andar pato",
+    "sentence": "El problema es que [[andaba pato]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "flat broke",
+      "options": [
+        "flat broke",
+        "filthy rich",
+        "fully stuffed",
+        "wide awake"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "El problema es que andaba pato.",
+        "targetWord": "andaba pato",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9097ad912c0b063c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al lote",
+    "sentence": "Nico conocía sus promesas [[al lote]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "careless and sloppy",
+      "options": [
+        "careless and sloppy",
+        "careful and neat",
+        "kind and warm",
+        "firm and sure"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "Nico conocía sus promesas al lote.",
+        "targetWord": "al lote",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c9e656f8f1956624.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a precio de risa",
+    "sentence": "Un amigo le conseguía el copete [[a precio de risa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dirt cheap",
+      "options": [
+        "dirt cheap",
+        "far too pricey",
+        "totally free",
+        "fully sold out"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "Un amigo le conseguía el copete a precio de risa.",
+        "targetWord": "a precio de risa",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/13f247c98b8923a2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quedar como rey",
+    "sentence": "Pensaba [[quedar como rey]] sin gastar nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "come off looking great",
+      "options": [
+        "come off looking great",
+        "end up looking bad",
+        "break totally even",
+        "lose all his money"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "Pensaba quedar como rey sin gastar nada.",
+        "targetWord": "quedar como rey",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdad39593830fd59.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pegado",
+    "sentence": "Se quedó [[pegado]] en otra parte, apostó Nico.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stuck and held up",
+      "options": [
+        "stuck and held up",
+        "free and clear",
+        "fast and early",
+        "calm and rested"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "Se quedó pegado en otra parte, apostó Nico.",
+        "targetWord": "pegado",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab220e15f5ef67f3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "penca",
+    "sentence": "El ambiente se estaba poniendo [[penca]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lousy and dull",
+      "options": [
+        "lousy and dull",
+        "lively and fun",
+        "warm and cozy",
+        "loud and wild"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "El ambiente se estaba poniendo penca.",
+        "targetWord": "penca",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c5aaf796de4a639c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pesao",
+    "sentence": "Puro ambiente [[pesao]] y nada que tomar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "unpleasant and heavy",
+      "options": [
+        "unpleasant and heavy",
+        "light and breezy",
+        "fresh and cool",
+        "kind and soft"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "Puro ambiente pesao y nada que tomar.",
+        "targetWord": "pesao",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2386b442a6870312.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a un pelo",
+    "sentence": "El carrete estaba [[a un pelo]] del fracaso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a hair away from",
+      "options": [
+        "a hair away from",
+        "miles away from",
+        "right on top of",
+        "safe and far from"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "El carrete estaba a un pelo del fracaso.",
+        "targetWord": "a un pelo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb2e91269e74a5af.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "con el alma en un hilo",
+    "sentence": "Miraban la entrada [[con el alma en un hilo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sick with suspense",
+      "options": [
+        "sick with suspense",
+        "calm and relaxed",
+        "proud and smug",
+        "bored and sleepy"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "Miraban la entrada con el alma en un hilo.",
+        "targetWord": "con el alma en un hilo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/03c57661824ac29d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gil",
+    "sentence": "\"Este [[gil]] nos dejó botados\", reclamó Nico.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a naive fool",
+      "options": [
+        "a naive fool",
+        "a clever expert",
+        "a rich boss",
+        "a loyal friend"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "\"Este gil nos dejó botados\", reclamó Nico.",
+        "targetWord": "gil",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9696a83df435190.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "llegái",
+    "sentence": "Mira que si _____ sin nada, te funamos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "llegái",
+      "options": [
+        "llegái",
+        "salís",
+        "dormís",
+        "cantás"
+      ],
+      "translation": "Watch out, if you _____ with nothing, we shame you.",
+      "optionTranslations": [
+        "arrive",
+        "leave",
+        "sleep",
+        "sing"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "Mira que si llegái sin nada, te funamos.",
+        "targetWord": "llegái",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3178ae6b2427e9de.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "funar",
+    "sentence": "Si llega con las manos vacías, lo _____ delante de todos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "funar",
+      "options": [
+        "funar",
+        "aplaudimos",
+        "invitamos",
+        "premiamos"
+      ],
+      "translation": "If he comes empty handed, we _____ him in front of everyone.",
+      "optionTranslations": [
+        "call out",
+        "applaud",
+        "invite",
+        "reward"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "Si llega con las manos vacías, lo funar delante de todos.",
+        "targetWord": "funar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bec9cea947e13656.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "engrupir",
+    "sentence": "Benjamín los _____ jurando que el trago venía.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "engrupir",
+      "options": [
+        "engrupir",
+        "ayudó",
+        "pagó",
+        "escuchó"
+      ],
+      "translation": "Benjamín _____ them, swearing the drink was coming.",
+      "optionTranslations": [
+        "conned",
+        "helped",
+        "paid",
+        "listened"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "Benjamín los engrupir jurando que el trago venía.",
+        "targetWord": "engrupir",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f1e1e623e74c33fb.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "lucas",
+    "sentence": "Quería quedar como rey sin gastar ni unas _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lucas",
+      "options": [
+        "lucas",
+        "sonrisas",
+        "excusas",
+        "promesas"
+      ],
+      "translation": "He wanted to look great without spending a single _____.",
+      "optionTranslations": [
+        "few pesos",
+        "smiles",
+        "excuses",
+        "promises"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "Quería quedar como rey sin gastar ni unas lucas.",
+        "targetWord": "lucas",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/199a7c33fb2dad0a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cagar",
+    "sentence": "\"Este gil nos _____\", reclamó Nico furioso.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cagar",
+      "options": [
+        "cagar",
+        "salvó",
+        "llamó",
+        "felicitó"
+      ],
+      "translation": "\"This fool _____ us over\", complained Nico furiously.",
+      "optionTranslations": [
+        "screwed",
+        "saved",
+        "called",
+        "congratulated"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "\"Este gil nos cagar\", reclamó Nico furioso.",
+        "targetWord": "cagar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff68b451f51b9855.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pintar para",
+    "sentence": "La cosa _____ desastre, y ella ya se imaginaba el ridículo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pintar para",
+      "options": [
+        "pintar para",
+        "escapaba de",
+        "volvía del",
+        "hablaba del"
+      ],
+      "translation": "It _____ disaster, and she was already picturing the embarrassment.",
+      "optionTranslations": [
+        "was heading toward",
+        "was escaping",
+        "was returning",
+        "was talking"
+      ],
+      "audioClip": {
+        "storySlug": "el-carrete-del-sabado",
+        "storySource": "user",
+        "sentence": "La cosa pintar para desastre, y ella ya se imaginaba el ridículo.",
+        "targetWord": "pintar para",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6226f91f3108af9c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "carrete,copete,pituto,cabro",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "carrete",
+          "answer": "a party, a night out",
+          "options": [
+            "a party, a night out",
+            "booze",
+            "a handy contact",
+            "a guy, young dude"
+          ]
+        },
+        {
+          "word": "copete",
+          "answer": "booze",
+          "options": [
+            "a party, a night out",
+            "booze",
+            "a handy contact",
+            "a guy, young dude"
+          ]
+        },
+        {
+          "word": "pituto",
+          "answer": "a handy contact",
+          "options": [
+            "a party, a night out",
+            "booze",
+            "a handy contact",
+            "a guy, young dude"
+          ]
+        },
+        {
+          "word": "cabro",
+          "answer": "a guy, young dude",
+          "options": [
+            "a party, a night out",
+            "booze",
+            "a handy contact",
+            "a guy, young dude"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
 ]

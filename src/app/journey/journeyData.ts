@@ -4,6 +4,7 @@ import {
   type VocabItem,
 } from "@/types/books";
 import { CEFR_DISPLAY_LABELS, CEFR_A0_FRAMING_SUBTITLE, cefrDisplayLabel } from "@domain/cefr";
+import { formatLanguageCode } from "@domain/displayFormat";
 import type { PracticeFavoriteItem } from "@/lib/practiceExercises";
 import { formatVariantLabel, resolveContentVariant } from "@/lib/languageVariant";
 import { getPublishedStandaloneStories } from "@/lib/standaloneStories";
@@ -608,9 +609,51 @@ async function buildJourneyVariantsFromStudio(
       : await getStudioJourneysForLanguage(language);
   if (journeys.length === 0) return [];
 
-  // Dedupe map para los slugs de tracks. Si dos journeys colisionan
-  // en slug (mismo nombre normalizado), append "-2", "-3", etc.
-  const slugCounts = new Map<string, number>();
+  // ── Stable, GLOBAL journey slug (makes share links work) ──
+  // Derive the slug from the journey's OWN fields — `name-variant`, then the
+  // level / a short id fragment ONLY when that collides — never from its
+  // position in the result set. The old scheme was `slugify(name)` + an
+  // order-based `-2/-3` counter, so the same slug (e.g. "friends-2") pointed at
+  // different journeys depending on the viewer's language set. Now
+  // "friends-latam", "traveler-mexico", etc. are identical for every viewer and
+  // resolvable across languages. Collisions only ever happen between same-
+  // language journeys (variant is language-specific), so they are always
+  // co-present and the disambiguation is deterministic.
+  const slugByJourneyId = new Map<string, string>();
+  {
+    type J = (typeof journeys)[number];
+    const renderable = journeys.filter((j) => (j.stories?.length ?? 0) > 0);
+    const langCodeOf = (j: J) => slugifyTrackLabel(formatLanguageCode(j.language ?? ""));
+    const nameSlugOf = (j: J) =>
+      slugifyTrackLabel(
+        (j.name ?? "").trim() ||
+          formatVariantLabel((j.variant ?? "").trim().toLowerCase()) ||
+          (j.variant ?? "").trim() ||
+          "journey"
+      );
+    const levelSlugOf = (j: J) => slugifyTrackLabel(((j.levels ?? [])[0] ?? "").toString());
+    // Self-descriptive: language code + name + variant + level, e.g.
+    // "es-friends-latam-c1", "de-traveler-germany-a0". Every part comes from the
+    // journey's own fields, so it is identical for every viewer AND stable over
+    // time — adding a sibling journey never changes an existing slug (the level
+    // is always present, so same name+variant at different levels never collide).
+    const baseOf = (j: J) =>
+      [langCodeOf(j), nameSlugOf(j), slugifyTrackLabel((j.variant ?? "").toString()), levelSlugOf(j)]
+        .filter(Boolean)
+        .join("-") || nameSlugOf(j) || "journey";
+
+    // Guard only against the degenerate case of two journeys sharing
+    // language+name+variant+level: append a short, stable id fragment.
+    const baseCount = new Map<string, number>();
+    for (const j of renderable) baseCount.set(baseOf(j), (baseCount.get(baseOf(j)) ?? 0) + 1);
+    for (const j of renderable) {
+      const base = baseOf(j);
+      slugByJourneyId.set(
+        j.id,
+        (baseCount.get(base) ?? 0) > 1 ? `${base}-${String(j.id).slice(0, 6)}` : base
+      );
+    }
+  }
 
   const topicLabelBySlug = await getTopicLabelBySlug();
   const topicDefaultLevelBySlug = await getTopicDefaultLevelBySlug();
@@ -727,15 +770,13 @@ async function buildJourneyVariantsFromStudio(
       (journey.variant ?? "").trim().toUpperCase() ||
       "Journey";
 
-    // Build slug: prefer trackLabel ("Viajero LATAM"), fallback al
-    // variant ("latam") si el label no produce nada decente.
-    const baseSlug =
+    // Stable global slug computed in the pre-pass above; fall back to the raw
+    // name/variant slug if (unexpectedly) missing.
+    const trackSlug =
+      slugByJourneyId.get(journey.id) ||
       slugifyTrackLabel(trackLabel) ||
       slugifyTrackLabel((journey.variant ?? "").toString()) ||
       "journey";
-    const nextCount = (slugCounts.get(baseSlug) ?? 0) + 1;
-    slugCounts.set(baseSlug, nextCount);
-    const trackSlug = nextCount === 1 ? baseSlug : `${baseSlug}-${nextCount}`;
 
     tracks.push({
       id: journey.id,

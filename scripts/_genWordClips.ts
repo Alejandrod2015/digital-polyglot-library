@@ -12,7 +12,7 @@ import { practiceVoiceId } from "../src/lib/practiceVoice";
 const prisma = new PrismaClient();
 const MODEL = "eleven_multilingual_v2";
 const SETTINGS = { stability: 0.4, similarity_boost: 0.8, style: 0.3, use_speaker_boost: true };
-const WORD_CLIP_VERSION = "w3"; // w3: marco declarativo + gate F0 (final debe BAJAR, no pregunta)
+const WORD_CLIP_VERSION = "w4"; // w4: +90ms lead-in silence (w3 arrancaba en 0ms → primer autoplay en sesión de audio fría cortaba el onset; los clips que funcionan tienen ~60ms de lead-in). marco declarativo + gate F0.
 const F0_PYTHON = join(process.env.HOME || "", ".cache", "dpl-qa", "venv", "bin", "python");
 const MAX_TRIES = 6;
 
@@ -22,7 +22,10 @@ function spawnCap(cmd: string, args: string[]): Promise<{code:number;out:string;
 }
 async function normalize(raw: Buffer, outPath: string): Promise<void> {
   const d=mkdtempSync(join(tmpdir(),"wc-")); const i=join(d,"i.mp3");
-  try{ writeFileSync(i,raw); await ff(["-y","-loglevel","error","-i",i,"-af","loudnorm=I=-16:LRA=11:TP=-1.5,apad=pad_dur=0.15","-codec:a","libmp3lame","-b:a","128k",outPath]); }
+  // adelay=90 = 90ms de silencio al INICIO: el primer autoplay ocurre con la
+  // sesión de audio iOS en frío y recorta el onset; el lead-in lo absorbe (igual
+  // que los clips de los journeys que sí funcionan). apad = cola de 150ms.
+  try{ writeFileSync(i,raw); await ff(["-y","-loglevel","error","-i",i,"-af","loudnorm=I=-16:LRA=11:TP=-1.5,apad=pad_dur=0.15,adelay=90:all=1","-codec:a","libmp3lame","-b:a","128k",outPath]); }
   finally{ rmSync(d,{recursive:true,force:true}); }
 }
 function key(voice: string, word: string): string {

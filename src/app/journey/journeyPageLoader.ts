@@ -58,7 +58,7 @@ export async function loadJourneyPageProps({
         (v): v is string => typeof v === "string" && v.trim().length > 0
       ) ?? undefined
     : undefined;
-  const tracks = await buildJourneyVariants(targetLanguage, journeyFocus ?? "General");
+  let tracks = await buildJourneyVariants(targetLanguage, journeyFocus ?? "General");
   const preferredRegion =
     typeof user?.publicMetadata?.preferredRegion === "string"
       ? user.publicMetadata.preferredRegion
@@ -80,17 +80,34 @@ export async function loadJourneyPageProps({
   // bookmarks y shares queden limpios.
   const incomingVariant =
     typeof variant === "string" && variant.length > 0 ? variant : null;
+  const resolveIn = (pool: typeof tracks) =>
+    pool.find((t) => t.slug === incomingVariant) ??
+    pool.find((t) => t.id === incomingVariant) ??
+    pool.find(
+      (t) =>
+        t.variant === normalizeVariant(incomingVariant) ||
+        t.variant === (incomingVariant ?? "").toLowerCase()
+    ) ??
+    null;
   let resolvedTrack = null;
   if (incomingVariant) {
-    resolvedTrack =
-      tracks.find((t) => t.slug === incomingVariant) ??
-      tracks.find((t) => t.id === incomingVariant) ??
-      tracks.find(
-        (t) =>
-          t.variant === normalizeVariant(incomingVariant) ||
-          t.variant === incomingVariant.toLowerCase()
-      ) ??
-      null;
+    resolvedTrack = resolveIn(tracks);
+    // Cross-language SHARE link: the slug belongs to a journey of a different
+    // language than the viewer's target, so it isn't in `tracks`. Rebuild the
+    // full catalog once, resolve there, and switch `tracks` to that journey's
+    // language so the page renders it (and the switch sheet lists its siblings).
+    // Only paid on the miss, so the common same-language path stays cheap.
+    if (!resolvedTrack) {
+      const allTracks = await buildJourneyVariants(undefined, journeyFocus ?? "General");
+      const matched = resolveIn(allTracks);
+      if (matched) {
+        const lang = (matched.language ?? "").toLowerCase();
+        tracks = lang
+          ? allTracks.filter((t) => (t.language ?? "").toLowerCase() === lang)
+          : allTracks;
+        resolvedTrack = tracks.find((t) => t.id === matched.id) ?? matched;
+      }
+    }
     if (resolvedTrack && resolvedTrack.slug !== incomingVariant) {
       redirect(`${basePath}?variant=${encodeURIComponent(resolvedTrack.slug)}`);
     }
@@ -132,6 +149,14 @@ export async function loadJourneyPageProps({
   return {
     tracks,
     initialVariantId,
+    // The user's chosen target languages (Clerk publicMetadata). Passed so
+    // the "+ Add journey" picker can prepend a newly-picked language and
+    // POST the merged list back without a round-trip to read it first.
+    targetLanguages: hasTargets
+      ? (targetLanguagesRaw as string[]).filter(
+          (v): v is string => typeof v === "string" && v.trim().length > 0
+        )
+      : [],
     preferredLevel:
       typeof user?.publicMetadata?.preferredLevel === "string"
         ? user.publicMetadata.preferredLevel

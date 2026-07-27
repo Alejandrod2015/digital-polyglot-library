@@ -25,6 +25,25 @@ This is a hard constraint for this project.
 - API: Mobile calls reader.digitalpolyglot.com (production)
 - Deployments: Batch commits to avoid multiple Vercel builds
 
+## Journey classification (HARD RULE — always applies, no exceptions)
+
+Journeys have exactly three states (`Journey.status`):
+- **live** = `active` — published, in the app.
+- **draft** = `draft` — work-in-progress with the CURRENT structure
+  (**1 level × 7 topics × 3 stories = 21**), not yet live.
+- **archived** = `archived` — old/legacy/different structure (anything NOT
+  1×7×3, e.g. multi-level, x7 per topic, experimental) OR superseded published
+  versions. Dead content.
+
+**THE RULE:** when the user asks for "journeys" / "all journeys" / any journey
+list, table, or count, include **only live + draft**. **NEVER mention, list,
+count, or take archived journeys into account** — in ANY response — UNLESS the
+user *explicitly* asks for "archived". No other case. This is a hard constraint;
+it always holds even mid-task, in summaries, and in verification tables.
+
+(Classification set 2026-07-25: 5 live, 9 draft, 6 archived. Reclassified the
+draft-vs-archived split by structure via `scripts/_reclassifyDrafts.ts`.)
+
 ## Grill before building (expensive/ambiguous features only)
 
 When the user proposes a NEW feature that is expensive (spends image/audio

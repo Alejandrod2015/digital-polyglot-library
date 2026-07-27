@@ -8,6 +8,7 @@ import {
   Alert,
   Animated,
   AppState,
+  BackHandler,
   Dimensions,
   useWindowDimensions,
   Easing,
@@ -42,6 +43,7 @@ import {
   formatVariant,
   formatVariantLabel,
   resolveCefrLevel,
+  topicCountryLabel,
   VARIANT_LABELS,
   VARIANT_OPTIONS_BY_LANGUAGE,
   type AudioWordTimingsPayload,
@@ -2714,6 +2716,69 @@ export function MobileLibraryShell(args: {
     language: string;
     source: "onboarding" | "locked-story";
   } | null>(null);
+
+  // ── Android hardware / edge-swipe back ─────────────────────────────
+  // Navigation here is custom (activeScreen + overlay booleans), not
+  // react-navigation, so nothing was consuming Android's back gesture — the
+  // Pixel edge-swipe fell straight through to the OS and FINISHED the
+  // activity (i.e. exited the app) instead of going back inside the app.
+  // We intercept `hardwareBackPress` and unwind our OWN stack in priority
+  // order; only a bare Home root with nothing open falls through to the OS
+  // (the one place "exit" is the correct behaviour). A ref holds the freshest
+  // handler so the single subscription never reads stale state.
+  const backPressRef = useRef<() => boolean>(() => false);
+  backPressRef.current = () => {
+    // Focused runner: don't let back exit the app mid level-test.
+    if (levelTestActive) return true;
+    // Mid-session exit confirm → treat back as "keep practicing".
+    if (practiceExitConfirmVisible) {
+      setPracticeExitConfirmVisible(false);
+      setPracticePaused(false);
+      return true;
+    }
+    // Transient overlays / sheets — close whichever is open.
+    if (menuOpen) { setMenuOpen(false); return true; }
+    if (languageSwitchOpen) { setLanguageSwitchOpen(false); return true; }
+    if (journeysPanelOpen) { setJourneysPanelOpen(false); return true; }
+    if (journeyVariantPickerOpen) { setJourneyVariantPickerOpen(false); return true; }
+    if (progressSheetOpen) { setProgressSheetOpen(false); return true; }
+    if (legalSheetOpen) { setLegalSheetOpen(false); return true; }
+    if (timePickerOpen) { setTimePickerOpen(false); return true; }
+    if (speakingPracticeOpen) { setSpeakingPracticeOpen(false); return true; }
+    if (topicPreviewOpen) { setTopicPreviewOpen(null); return true; }
+    if (levelTestOfferOpen) { setLevelTestOfferOpen(null); return true; }
+    // Reader open → back to the story list.
+    if (selection) {
+      setShowOnboardingPlayHint(false);
+      setSelection(null);
+      return true;
+    }
+    // Practice session running → its close flow (exit confirm mid-round).
+    if (activePracticeMode) {
+      requestClosePracticeSession();
+      return true;
+    }
+    // Journey topic detail → back to the journey path.
+    if (journeyDetailTopicId) {
+      setJourneyDetailTopicId(null);
+      return true;
+    }
+    // Any non-Home tab → Home first.
+    if (activeScreen !== "home") {
+      setActiveScreen("home");
+      return true;
+    }
+    // Home root, nothing open → let Android exit / background the app.
+    return false;
+  };
+  useEffect(() => {
+    if (Platform.OS !== "android") return;
+    const sub = BackHandler.addEventListener("hardwareBackPress", () =>
+      backPressRef.current(),
+    );
+    return () => sub.remove();
+  }, []);
+
   // ─── Topic panel sticky (JS-driven floating panel) ─────────────
   // We measure each topic block's Y position inside the ScrollView's
   // content via `measureLayout` against the ScrollView's inner node.
@@ -2860,41 +2925,39 @@ export function MobileLibraryShell(args: {
   // mismo Journey.
   const activeJourneyFlagVariant = (() => {
     if (!activeJourney) return preferences.preferredVariant;
-    // Prefer the live track's SPECIFIC variant (mexico/colombia/argentina) over
-    // the journey's saved `region`, which collapsed to the "latam" family and
-    // hid the country. journeyFlagVariant (region) is tried AFTER the tracks.
-    // GUARD CRÍTICO: solo usar remoteJourney.tracks como fuente de
-    // variant si remoteJourney pertenece al mismo idioma que el
-    // activeJourney. Sin esto, al cold-start offline el remoteJourney
-    // puede ser el último journey cargado online (e.g. alemán) pero
-    // el activeJourney persistido es otro (e.g. español); el resolver
-    // sacaba el variant de los tracks alemanes y pintaba bandera de
-    // Alemania al lado de historias españolas. El usuario veía el
-    // mismatch hasta que cambiaba de journey y volvía (lo que dispara
-    // un fetch fresco del journey correcto).
+    // GUARD CRÍTICO: solo usar tracks del remoteJourney si es del MISMO idioma
+    // que el activeJourney (evita pintar bandera alemana junto a historias
+    // españolas en cold-start offline).
     const remoteMatchesActive =
       remoteJourney?.language?.toLowerCase() === activeJourney.language?.toLowerCase();
-    if (remoteMatchesActive && remoteJourney?.tracks) {
-      if (activeJourney.variant) {
-        const track = remoteJourney.tracks.find((t) => t.id === activeJourney.variant);
-        if (track?.variant) return track.variant;
-      }
-      const firstWithVariant = remoteJourney.tracks.find((t) => t.variant);
-      if (firstWithVariant?.variant) return firstWithVariant.variant;
-    }
-    // Como último fallback, mirar en el journey cache por idioma.
-    const cached = journeyCacheByLanguageRef.current.get(activeJourney.language.toLowerCase());
-    if (cached?.tracks) {
-      if (activeJourney.variant) {
-        const track = cached.tracks.find((t) => t.id === activeJourney.variant);
-        if (track?.variant) return track.variant;
-      }
-      const firstWithVariant = cached.tracks.find((t) => t.variant);
-      if (firstWithVariant?.variant) return firstWithVariant.variant;
-    }
-    // Fallback: the journey's saved region/variant (may be the "latam" family).
+    const cached = journeyCacheByLanguageRef.current.get(
+      activeJourney.language.toLowerCase()
+    );
+    // 1) Variant ESPECÍFICO del track que matchea por id (mexico/colombia/…).
+    //    SOLO el id-match: nunca "el primer track con variant" acá, porque un
+    //    Journey LATAM cuyo id no matchea agarraría el track de México y pintaría
+    //    su bandera en el top-bar (regresión 2026-07-27).
+    const idMatchedVariant = (
+      tracks?: { id: string; variant?: string | null }[]
+    ): string | null => {
+      if (!activeJourney.variant || !tracks) return null;
+      const track = tracks.find((t) => t.id === activeJourney.variant);
+      return track?.variant ?? null;
+    };
+    const specific =
+      (remoteMatchesActive ? idMatchedVariant(remoteJourney?.tracks) : null) ??
+      idMatchedVariant(cached?.tracks);
+    if (specific) return specific;
+    // 2) Región guardada del journey (latam/spain/…): el caso común y confiable.
     const direct = journeyFlagVariant(activeJourney);
     if (direct) return direct;
+    // 3) Último recurso: primer track con variant (mismo idioma).
+    const firstRemote = remoteMatchesActive
+      ? remoteJourney?.tracks?.find((t) => t.variant)
+      : null;
+    if (firstRemote?.variant) return firstRemote.variant;
+    const firstCached = cached?.tracks?.find((t) => t.variant);
+    if (firstCached?.variant) return firstCached.variant;
     return preferences.preferredVariant;
   })();
   // Build the rows the JourneySwitchSheet renders: one row per journey
@@ -2927,7 +2990,17 @@ export function MobileLibraryShell(args: {
     // The web reads the journey record live, so it was always correct there.
     const langKey = journey.language.toLowerCase();
     const cached = journeyCacheByLanguageRef.current.get(langKey);
-    const cachedTrack = cached?.tracks?.find((t) => t.id === journey.id) ?? null;
+    // Match the live track by id OR by `journey.variant`: in the new model the
+    // Studio track id is stored in `journey.variant` (a cuid), NOT `journey.id`,
+    // so matching only on id failed and the Mexico journey fell back to the
+    // "latam" family (wrong flag/label/level). This is the same key the top-bar
+    // (activeJourneyFlagVariant) already matches on.
+    const cachedTrack =
+      cached?.tracks?.find((t) => t.id === journey.id) ??
+      (journey.variant
+        ? cached?.tracks?.find((t) => t.id === journey.variant)
+        : null) ??
+      null;
     // Prefer the live track's SPECIFIC variant (mexico/colombia/argentina) over
     // the journey's saved `region`, which collapsed to the "latam" family and
     // hid the country. journeyFlagVariant (region) stays as the fallback.
@@ -8646,7 +8719,12 @@ export function MobileLibraryShell(args: {
   // critical path.
   const prefetchedFavoriteKeysRef = useRef<Set<string>>(new Set());
   const prefetchedFavoriteFilesRef = useRef<Map<string, string>>(new Map());
-  const FAV_AUDIO_DIR = `${FileSystem.cacheDirectory ?? ""}favorite-audio/`;
+  // `-el` version suffix invalidates the pre-EL-only cache: older builds cached
+  // favorite word audio here under an unversioned name, and if a Modal/Piper mp3
+  // got written (e.g. for a word whose journey was Piper-era), the EL-only build
+  // reused that "usable" file instead of re-downloading the ElevenLabs version.
+  // A new dir forces a fresh EL download for every favorite. Bump on policy change.
+  const FAV_AUDIO_DIR = `${FileSystem.cacheDirectory ?? ""}favorite-audio-el/`;
   // v2 suffix invalidates locally cached MP3s from before the
   // server-side atempo removal (route v7). Old files were rendered at
   // 0.80x and then played at rate 0.65 on the client → 0.52x combined,
@@ -14389,15 +14467,37 @@ export function MobileLibraryShell(args: {
 
   const activeJourneyTrack = useMemo(() => {
     if (!remoteJourney?.tracks?.length) return null;
-    const preferredTrackId =
-      selectedJourneyTrackId ??
+    // Resolve the track for the ACTIVE journey robustly. The value from
+    // getJourneyVariantFromPreferences is a VARIANT CODE ("mexico", "latam",
+    // "spain"), NEVER a track id (cuid) — so matching only on
+    // `track.id === preferredTrackId` missed and fell back to `tracks[0]`
+    // (often a C1 journey). That made a Beginner journey (Mexico A0) render
+    // "Advanced" + C1 topics in the topic panels. Match, in order: explicit
+    // selection → the active journey's own Studio track (its id lives in
+    // `journey.variant`, a cuid; `journey.id` for legacy rows) → the
+    // region/variant code → first track.
+    const preferredVariantKey = String(
       getJourneyVariantFromPreferences(
         remoteJourney.language ?? "Spanish",
         preferences.preferredVariant,
         preferences.preferredRegion
-      );
+      ) ?? ""
+    )
+      .trim()
+      .toLowerCase();
     const baseTrack =
-      remoteJourney.tracks.find((track) => track.id === preferredTrackId) ?? remoteJourney.tracks[0] ?? null;
+      (selectedJourneyTrackId
+        ? remoteJourney.tracks.find((track) => track.id === selectedJourneyTrackId)
+        : null) ??
+      remoteJourney.tracks.find((track) => track.id === activeJourney?.variant) ??
+      remoteJourney.tracks.find((track) => track.id === activeJourney?.id) ??
+      (preferredVariantKey
+        ? remoteJourney.tracks.find(
+            (track) => (track.variant ?? "").trim().toLowerCase() === preferredVariantKey
+          )
+        : null) ??
+      remoteJourney.tracks[0] ??
+      null;
     if (!baseTrack) return null;
 
     // Recalcular `unlocked` por nivel client-side, replicando lo que
@@ -14451,6 +14551,7 @@ export function MobileLibraryShell(args: {
       })),
     };
   }, [
+    activeJourney,
     preferences.preferredRegion,
     preferences.preferredVariant,
     preferences.journeyPlacementLevel,
@@ -16246,6 +16347,9 @@ export function MobileLibraryShell(args: {
                   <View style={styles.journeyTopicPanelTextBlock}>
                     <Text style={styles.journeyTopicPanelEyebrow}>
                       LEVEL {cefrDisplayLabel(level.id) ?? level.title}
+                      {topicCountryLabel(activeJourneyTrack?.variant, topic.slug)
+                        ? ` · ${topicCountryLabel(activeJourneyTrack?.variant, topic.slug)}`
+                        : ""}
                     </Text>
                     <Text style={styles.journeyTopicPanelTitle} numberOfLines={2}>
                       {topic.label}
@@ -16375,7 +16479,8 @@ export function MobileLibraryShell(args: {
                   // floating panel's swap point lines up with where
                   // the in-flow panel would have left the viewport.
                   ref={(node) => {
-                    const levelLabel = `LEVEL ${cefrDisplayLabel(level.id) ?? level.title}`;
+                    const topicCountry = topicCountryLabel(activeJourneyTrack?.variant, topic.slug);
+                    const levelLabel = `LEVEL ${cefrDisplayLabel(level.id) ?? level.title}${topicCountry ? ` · ${topicCountry}` : ""}`;
                     const bgColor = topicPanelColor(topic.slug, level.id);
                     if (node) {
                       topicViewsRef.current.set(topic.slug, node);
@@ -16389,7 +16494,8 @@ export function MobileLibraryShell(args: {
                   }}
                   onLayout={() => {
                     const node = topicViewsRef.current.get(topic.slug);
-                    const levelLabel = `LEVEL ${cefrDisplayLabel(level.id) ?? level.title}`;
+                    const topicCountry = topicCountryLabel(activeJourneyTrack?.variant, topic.slug);
+                    const levelLabel = `LEVEL ${cefrDisplayLabel(level.id) ?? level.title}${topicCountry ? ` · ${topicCountry}` : ""}`;
                     const bgColor = topicPanelColor(topic.slug, level.id);
                     if (node) measureTopicY(topic.slug, topic.label, levelLabel, bgColor, !topic.unlocked, node);
                   }}
@@ -16439,6 +16545,9 @@ export function MobileLibraryShell(args: {
                     <View style={styles.journeyTopicPanelTextBlock}>
                       <Text style={styles.journeyTopicPanelEyebrow}>
                         LEVEL {cefrDisplayLabel(level.id) ?? level.title}
+                        {topicCountryLabel(activeJourneyTrack?.variant, topic.slug)
+                          ? ` · ${topicCountryLabel(activeJourneyTrack?.variant, topic.slug)}`
+                          : ""}
                       </Text>
                       <Text style={styles.journeyTopicPanelTitle} numberOfLines={2}>
                         {topic.label}
@@ -17978,7 +18087,24 @@ export function MobileLibraryShell(args: {
       <JourneysPanel
         open={journeysPanelOpen}
         onClose={() => setJourneysPanelOpen(false)}
-        journeys={preferences.journeys}
+        journeys={preferences.journeys.map((journey) => {
+          // "Your journeys" resolves its flag via journeyFlagVariant(region ??
+          // variant). Inject the SPECIFIC variant (mexico/colombia/…) resolved
+          // from the live track (matched by id OR variant, same as the switch
+          // sheet + top-bar) into `region` so the country flag shows instead of
+          // the collapsed "latam" family.
+          const cached = journeyCacheByLanguageRef.current.get(
+            journey.language.toLowerCase()
+          );
+          const track =
+            cached?.tracks?.find((t) => t.id === journey.id) ??
+            (journey.variant
+              ? cached?.tracks?.find((t) => t.id === journey.variant)
+              : null) ??
+            null;
+          const specific = track?.variant?.trim();
+          return specific ? { ...journey, region: specific } : journey;
+        })}
         activeJourneyId={preferences.activeJourneyId}
         statsByLanguage={MOCK_LANG_STATS}
         comingSoonLanguages={comingSoonLanguages}

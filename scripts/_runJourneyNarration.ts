@@ -23,7 +23,11 @@ import { PrismaClient } from "../src/generated/prisma";
 import { generateAndUploadMultiVoiceAudio } from "../src/lib/elevenlabs";
 import { generateWordTimingsForStory } from "../src/lib/audioWordTimings";
 
-type Cfg = { journeyId: string; voiceId: string; voiceName: string; label: string };
+// targetRate (w/s) = ritmo de habla objetivo. Tras renderizar, el runner
+// AUTO-aplica normalizeAudioPace para que ninguna historia quede a la velocidad
+// cruda de ElevenLabs (para A0 eso sonaba "demasiado rápido"). A0 ≈ 2.7 (= gold
+// A0). Sin targetRate, no se ralentiza. Es parte del ESTÁNDAR de narración.
+type Cfg = { journeyId: string; voiceId: string; voiceName: string; label: string; targetRate?: number };
 
 const CONFIG: Record<string, Cfg> = {
   "ar": {
@@ -47,8 +51,8 @@ const CONFIG: Record<string, Cfg> = {
     voiceName: "Andreti Page (LATAM)", label: "Friends ES Mexico C1",
   },
   "mx-a0": {
-    journeyId: "cmrrqjd2n000032nvnp2tryzg", voiceId: "FXGrCtY3PEyfqczBAlqm",
-    voiceName: "Jhenny (LATAM)", label: "Traveler ES Mexico A0",
+    journeyId: "cmrrqjd2n000032nvnp2tryzg", voiceId: "JW8DGEuLp9WxIS5IdxMM",
+    voiceName: "Andreti Page (LATAM)", label: "Traveler ES Mexico A0", targetRate: 2.7,
   },
 };
 
@@ -85,9 +89,19 @@ async function withRetry<T>(fn: () => Promise<T>, tries = 6): Promise<T> {
     console.log(`\n=== ${s.slug} ===`);
     try {
       await prisma.journeyStory.update({ where: { id: s.id }, data: { audioStatus: "generating" } });
+      // CONFIG DE ORO (2026-07-26): stitching OFF + gate F0 anti-uptalk ON.
+      //   · disableStitching: true  → previous_text off + next_text=" " → SIN
+      //     respiración de costura ("aire"). El aire lo causa el stitching
+      //     (feedback_tts_aire_stitching); era uno de los problemas grandes.
+      //   · antiUptalkGate: true    → el gate F0 por PÁRRAFO cierra los finales
+      //     re-tirando los que floten. Reemplaza el rol del stitching de cerrar
+      //     la prosodia, así que ya NO hace falta el stitching para eso.
+      // Resultado: sin aire Y con finales afirmativos. Verificado por F0
+      // (finales −4..−8.5) y por oído del usuario (sin respiración tras "paseo").
       const result = await generateAndUploadMultiVoiceAudio({
         storyText: s.text, title: s.title, voiceMap: { narrator: cfg.voiceId },
-        language: s.journey.language ?? "spanish", disableStitching: true,
+        language: s.journey.language ?? "spanish",
+        disableStitching: true, antiUptalkGate: true,
       } as any);
       if (!result) throw new Error("multi-voice returned null");
       await withRetry(() => prisma.journeyStory.update({
@@ -113,4 +127,21 @@ async function withRetry<T>(fn: () => Promise<T>, tries = 6): Promise<T> {
   }
   console.log(`\nTOTAL ${cfg.label}: ok=${ok} fail=${fail} (de ${Math.min(pending.length, limit)})`);
   await prisma.$disconnect();
+
+  // ── ESTÁNDAR: auto-ralentizar al ritmo objetivo ────────────────────────
+  // El render sale a la velocidad cruda de ElevenLabs (~3.3 w/s), que para A0
+  // suena "demasiado rápido". Aplicar el tempo NO puede ser un paso manual que
+  // se olvide: el runner lo hace SIEMPRE si el journey define targetRate. Reusa
+  // el tool probado (normalizeAudioPace, ffmpeg, sin créditos). Idempotente:
+  // mide el ritmo actual y aplica target/current; re-correr salta "ya en objetivo".
+  if (cfg.targetRate && ok > 0) {
+    const slugs = pending.map((s) => s.slug).filter(Boolean) as string[];
+    console.log(`\n[pace] ESTÁNDAR: auto-aplicando targetRate=${cfg.targetRate} w/s a ${slugs.length} historias...`);
+    const { spawnSync } = await import("node:child_process");
+    const r = spawnSync("npx", ["tsx", "scripts/normalizeAudioPace.ts", "--apply", String(cfg.targetRate), ...slugs], {
+      stdio: "inherit",
+      env: { ...process.env, NODE_OPTIONS: "--conditions=react-server" },
+    });
+    if (r.status !== 0) console.warn("[pace] AVISO: auto-pace falló; correr a mano: normalizeAudioPace.ts --apply " + cfg.targetRate);
+  }
 })().catch((e) => { console.error(e); process.exit(1); });
