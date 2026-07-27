@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { LanguageFlag, regionFamily } from "./LanguageFlag";
+import { formatVariantLabel } from "@digital-polyglot/domain";
 import {
   type Journey,
   cefrFromCoarseLevel,
@@ -721,10 +722,30 @@ export function JourneysPanel({
                         />
                       </View>
                       <View style={{ flex: 1 }}>
-                        <Text style={styles.focusCardTitle}>{track.label}</Text>
-                        {track.levelLabel ? (
-                          <Text style={styles.focusCardHint}>{track.levelLabel}</Text>
-                        ) : null}
+                        <View style={{ flexDirection: "row", alignItems: "center" }}>
+                          <Text style={styles.focusCardTitle}>{track.label}</Text>
+                          {track.variant ? (
+                            <View style={{ marginLeft: 8 }}>
+                              <LanguageFlag
+                                language={pickedLanguage.name}
+                                variant={track.variant}
+                                size={16}
+                              />
+                            </View>
+                          ) : null}
+                        </View>
+                        {(() => {
+                          // Región junto al nivel para distinguir tracks del mismo
+                          // nombre (Traveler LATAM vs Traveler Mexico). La bandera
+                          // arriba da la señal visual; el texto la nombra.
+                          const region = formatVariantLabel(track.variant);
+                          const hint = [track.levelLabel, region]
+                            .filter(Boolean)
+                            .join("  ·  ");
+                          return hint ? (
+                            <Text style={styles.focusCardHint}>{hint}</Text>
+                          ) : null;
+                        })()}
                       </View>
                       {alreadyExists ? (
                         <Text style={styles.alreadyText}>Already started ›</Text>

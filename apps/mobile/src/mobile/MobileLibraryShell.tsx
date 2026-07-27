@@ -2860,8 +2860,9 @@ export function MobileLibraryShell(args: {
   // mismo Journey.
   const activeJourneyFlagVariant = (() => {
     if (!activeJourney) return preferences.preferredVariant;
-    const direct = journeyFlagVariant(activeJourney);
-    if (direct) return direct;
+    // Prefer the live track's SPECIFIC variant (mexico/colombia/argentina) over
+    // the journey's saved `region`, which collapsed to the "latam" family and
+    // hid the country. journeyFlagVariant (region) is tried AFTER the tracks.
     // GUARD CRÍTICO: solo usar remoteJourney.tracks como fuente de
     // variant si remoteJourney pertenece al mismo idioma que el
     // activeJourney. Sin esto, al cold-start offline el remoteJourney
@@ -2891,6 +2892,9 @@ export function MobileLibraryShell(args: {
       const firstWithVariant = cached.tracks.find((t) => t.variant);
       if (firstWithVariant?.variant) return firstWithVariant.variant;
     }
+    // Fallback: the journey's saved region/variant (may be the "latam" family).
+    const direct = journeyFlagVariant(activeJourney);
+    if (direct) return direct;
     return preferences.preferredVariant;
   })();
   // Build the rows the JourneySwitchSheet renders: one row per journey
@@ -2924,9 +2928,12 @@ export function MobileLibraryShell(args: {
     const langKey = journey.language.toLowerCase();
     const cached = journeyCacheByLanguageRef.current.get(langKey);
     const cachedTrack = cached?.tracks?.find((t) => t.id === journey.id) ?? null;
-    let flagRegion = journeyFlagVariant(journey);
+    // Prefer the live track's SPECIFIC variant (mexico/colombia/argentina) over
+    // the journey's saved `region`, which collapsed to the "latam" family and
+    // hid the country. journeyFlagVariant (region) stays as the fallback.
+    let flagRegion = cachedTrack?.variant?.trim() || journeyFlagVariant(journey);
     if (!flagRegion) {
-      const firstWithVariant = cachedTrack ?? cached?.tracks?.find((t) => t.variant);
+      const firstWithVariant = cached?.tracks?.find((t) => t.variant);
       if (firstWithVariant?.variant) flagRegion = firstWithVariant.variant;
     }
     const rawVariant = (flagRegion ?? "").trim().toLowerCase();

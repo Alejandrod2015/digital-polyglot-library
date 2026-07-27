@@ -38,6 +38,19 @@ const COLOMBIA_SPEC: FlagSpec = {
   weights: [2, 1, 1],
 };
 
+// Country-specific LATAM flags. Journeys set in one country (Mexico, Colombia,
+// Argentina) show THEIR flag instead of the generic Colombia=LATAM signal, so a
+// "Traveler · Mexico" reads distinct from a pan-regional "Traveler · LATAM".
+const MEXICO_SPEC: FlagSpec = {
+  kind: "vBands",
+  colors: ["#006847", "#FFFFFF", "#CE1126"],
+};
+const ARGENTINA_SPEC: FlagSpec = {
+  kind: "hBands",
+  colors: ["#74ACDF", "#FFFFFF", "#74ACDF"],
+  weights: [1, 1, 1],
+};
+
 const SPECS: Record<string, FlagSpec> = {
   Italian: { kind: "vBands", colors: ["#008C45", "#F4F5F0", "#CD212A"] },
   German: { kind: "hBands", colors: ["#000000", "#DD0000", "#FFCE00"] },
@@ -81,6 +94,12 @@ const LATAM_REGION_CODES = new Set<string>([
 const SPAIN_REGION_CODES = new Set<string>(["es", "spain", "españa", "espana"]);
 const UK_REGION_CODES = new Set<string>(["uk", "gb", "england", "britain", "united-kingdom"]);
 const PORTUGAL_REGION_CODES = new Set<string>(["pt", "portugal"]);
+// Country-specific LATAM codes that get their OWN flag in pickSpec. NOTE: these
+// stay inside LATAM_REGION_CODES so `regionFamily` still folds them into the
+// "latam" family for variant MATCHING; only the flag rendering distinguishes them.
+const MEXICO_CODES = new Set<string>(["mexico", "mx"]);
+const COLOMBIA_CODES = new Set<string>(["colombia", "co"]);
+const ARGENTINA_CODES = new Set<string>(["argentina", "ar"]);
 
 /**
  * Canonical region family for a variant/region code, so equivalents like
@@ -117,10 +136,14 @@ function pickSpec(language: string | null | undefined, variant?: string | null):
     return PORTUGAL_REGION_CODES.has(v) ? SPECS.Portuguese : { kind: "brazil" };
   }
   if (lang === "Spanish") {
-    // LATAM matches FIRST (broadest set). Spain wins on explicit "es"/
-    // "spain". Anything unrecognized (e.g., a Studio cuid) falls back
-    // to Spain; that was the previous default and remains the safe
-    // bet when the region is genuinely unknown.
+    // Country-specific journeys get THEIR own flag; checked BEFORE the LATAM
+    // catch-all (which contains these same codes). The pan-regional "latam"
+    // journey keeps the Colombia flag as its LATAM signal. Spain wins on
+    // explicit "es"/"spain". Anything unrecognized (e.g. a Studio cuid) falls
+    // back to Spain, the previous safe default.
+    if (MEXICO_CODES.has(v)) return MEXICO_SPEC;
+    if (COLOMBIA_CODES.has(v)) return COLOMBIA_SPEC;
+    if (ARGENTINA_CODES.has(v)) return ARGENTINA_SPEC;
     if (LATAM_REGION_CODES.has(v)) return COLOMBIA_SPEC;
     if (SPAIN_REGION_CODES.has(v)) return SPECS.Spanish;
     return SPECS.Spanish;
