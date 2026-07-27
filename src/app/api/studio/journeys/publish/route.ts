@@ -58,6 +58,53 @@ export async function POST(request: Request) {
     }
   }
 
+  // Practice-audio completeness gate (2026-07-27): a story must NEVER be
+  // published with its practice set missing audio. Two silent-on-device bugs
+  // traced to this: meaning_in_context exercises whose word audio was never
+  // pre-baked fall back to runtime word-tts (silent on Android), and any
+  // sentence-clip exercise without a clipUrl plays nothing. If a practice set
+  // exists, require: every meaning_in_context has payload.audioClip.wordClipUrl,
+  // and every meaning_in_context + fill_blank has payload.audioClip.clipUrl.
+  // Generate with scripts/_genWordClips.ts (words) + scripts/_genPracticeClips.ts
+  // (sentences) before publishing. No env-var bypass.
+  {
+    const set = await prisma.storyPracticeSet.findUnique({
+      where: { storyId },
+      select: { exercises: { select: { type: true, word: true, payload: true } } },
+    });
+    if (set && set.exercises.length) {
+      const missingWord: string[] = [];
+      const missingClip: string[] = [];
+      for (const ex of set.exercises) {
+        const clip = ((ex.payload as Record<string, unknown> | null)?.audioClip ?? null) as
+          | Record<string, unknown>
+          | null;
+        if (ex.type === "meaning_in_context") {
+          if (!clip?.wordClipUrl) missingWord.push(ex.word);
+          if (!clip?.clipUrl) missingClip.push(ex.word);
+        } else if (ex.type === "fill_blank") {
+          if (!clip?.clipUrl) missingClip.push(ex.word);
+        }
+      }
+      if (missingWord.length || missingClip.length) {
+        const parts: string[] = [];
+        if (missingWord.length)
+          parts.push(`${missingWord.length} meaning exercise(s) missing word audio (wordClipUrl): ${missingWord.slice(0, 8).join(", ")}${missingWord.length > 8 ? "…" : ""}`);
+        if (missingClip.length)
+          parts.push(`${missingClip.length} exercise(s) missing sentence audio (clipUrl): ${missingClip.slice(0, 8).join(", ")}${missingClip.length > 8 ? "…" : ""}`);
+        return NextResponse.json(
+          {
+            error:
+              "Practice-audio gate: this story's practice set is missing audio, which plays silent on device. " +
+              parts.join("; ") +
+              ". Run scripts/_genWordClips.ts <slug> (words) and scripts/_genPracticeClips.ts <slug> (sentences), then publish.",
+          },
+          { status: 422 }
+        );
+      }
+    }
+  }
+
   try {
     await prisma.journeyStory.update({
       where: { id: storyId },

@@ -93,8 +93,12 @@ function topicEmoji(label: string): string {
 // and degraded to the two code letters ("CO"/"ES"). See src/components/Flag.tsx.
 const LANGUAGE_PILL_BY_VARIANT: Record<string, { code: string; country: string }> = {
   // ── ISO short codes ──
-  latam: { code: "ES", country: "CO" },
+  latam: { code: "ES", country: "CO" }, // LATAM → Colombia por defecto
   spain: { code: "ES", country: "ES" },
+  // Country-specific Spanish journeys carry their own country flag.
+  mexico: { code: "ES", country: "MX" },
+  colombia: { code: "ES", country: "CO" },
+  argentina: { code: "ES", country: "AR" },
   br: { code: "PT", country: "BR" },
   pt: { code: "PT", country: "PT" },
   fr: { code: "FR", country: "FR" },

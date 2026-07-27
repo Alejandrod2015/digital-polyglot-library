@@ -53,6 +53,14 @@ const FLAGS: Record<string, React.ReactNode> = {
       <rect width="1" height="2" x="2" fill="#CE1126" />
     </>
   ),
+  AR: (
+    <>
+      <rect width="3" height="0.667" y="0" fill="#74ACDF" />
+      <rect width="3" height="0.666" y="0.667" fill="#FFFFFF" />
+      <rect width="3" height="0.667" y="1.333" fill="#74ACDF" />
+      <circle cx="1.5" cy="1" r="0.22" fill="#F6B40E" />
+    </>
+  ),
   FR: (
     <>
       <rect width="1" height="2" x="0" fill="#0055A4" />
