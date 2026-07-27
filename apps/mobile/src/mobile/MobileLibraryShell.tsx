@@ -225,12 +225,15 @@ import {
   type OnboardingGoal,
 } from "../../../../src/lib/onboarding";
 import { buildJourneyTrackInsights } from "./journeyTrackInsights";
-import { JOURNEY_MILESTONE_CHIME_URI } from "../../../../src/lib/journeyMilestone";
-import {
-  PRACTICE_CORRECT_SOUND_URI,
-  PRACTICE_PERFECT_CHIME_URI,
-  PRACTICE_WRONG_SOUND_URI,
-} from "../lib/practiceSoundUris";
+
+// Practice SFX ship as real bundled mp3 assets (loaded via `require()`), not
+// base64 `data:` URIs. expo-av on Android cannot play inline `data:` audio
+// URIs, so the previous base64 approach was silent on Android; bundled assets
+// play everywhere. See scripts/_extractSfx.mjs for how these were generated.
+const SFX_PRACTICE_CORRECT = require("../../assets/sfx/practice-correct.mp3");
+const SFX_PRACTICE_WRONG = require("../../assets/sfx/practice-wrong.mp3");
+const SFX_PRACTICE_PERFECT = require("../../assets/sfx/practice-perfect.mp3");
+const SFX_JOURNEY_MILESTONE = require("../../assets/sfx/journey-milestone-chime.mp3");
 
 type ReaderSelection = {
   book: Book;
@@ -812,6 +815,11 @@ type PracticeMultipleChoiceExercise = {
   options: string[];
   answer: string;
   audioClip?: PracticeAudioClip | null;
+  // fill_blank only: English gloss of the sentence (with "_____" blank) and a
+  // per-option English gloss parallel to `options`, so the learner sees the
+  // context translation and, on reveal, the English of the answer in the blank.
+  sentenceTranslation?: string | null;
+  optionTranslations?: string[] | null;
   favorite: Pick<
     PracticeFavoriteItem,
     "word" | "translation" | "wordType" | "exampleSentence" | "language" | "storySlug" | "storyTitle" | "sourcePath"
@@ -1346,6 +1354,8 @@ function mapSharedExerciseToMobile(exercise: ReturnType<typeof buildPracticeSess
         options: exercise.options,
         answer: exercise.answer,
         audioClip: exercise.audioClip ?? null,
+        sentenceTranslation: exercise.translation ?? null,
+        optionTranslations: exercise.optionTranslations ?? null,
         favorite: {
           word: exercise.answer,
           translation: "",
@@ -4287,7 +4297,7 @@ export function MobileLibraryShell(args: {
         }
 
         const { sound } = await Audio.Sound.createAsync(
-          { uri: JOURNEY_MILESTONE_CHIME_URI },
+          SFX_JOURNEY_MILESTONE,
           { shouldPlay: true, volume: 0.22 }
         );
         if (cancelled) {
@@ -4295,8 +4305,9 @@ export function MobileLibraryShell(args: {
           return;
         }
         journeyMilestoneSoundRef.current = sound;
-      } catch {
+      } catch (e) {
         // Best-effort payoff only.
+        console.warn("[practice-sfx] journey milestone chime failed to play:", e);
       }
     })();
 
@@ -8060,7 +8071,7 @@ export function MobileLibraryShell(args: {
     try {
       await stopPracticeFeedbackSound();
       const { sound } = await Audio.Sound.createAsync(
-        { uri: correct ? PRACTICE_CORRECT_SOUND_URI : PRACTICE_WRONG_SOUND_URI },
+        correct ? SFX_PRACTICE_CORRECT : SFX_PRACTICE_WRONG,
         { shouldPlay: true, volume: 0.8 }
       );
       practiceFeedbackSoundRef.current = sound;
@@ -8071,8 +8082,9 @@ export function MobileLibraryShell(args: {
           void sound.unloadAsync().catch(() => undefined);
         }
       });
-    } catch {
+    } catch (e) {
       // Sound is best-effort
+      console.warn("[practice-sfx] correct/wrong feedback failed to play:", e);
       settle();
     }
   }
@@ -8186,7 +8198,7 @@ export function MobileLibraryShell(args: {
     try {
       await stopPracticeCelebrationSound();
       const { sound } = await Audio.Sound.createAsync(
-        { uri: PRACTICE_PERFECT_CHIME_URI },
+        SFX_PRACTICE_PERFECT,
         { shouldPlay: true, volume: 0.9 }
       );
       practiceCelebrationSoundRef.current = sound;
@@ -8198,8 +8210,9 @@ export function MobileLibraryShell(args: {
           void sound.unloadAsync().catch(() => undefined);
         }
       });
-    } catch {
+    } catch (e) {
       // Best-effort
+      console.warn("[practice-sfx] perfect chime failed to play:", e);
     }
   }
 
@@ -8207,7 +8220,7 @@ export function MobileLibraryShell(args: {
     try {
       await stopPracticeCelebrationSound();
       const { sound } = await Audio.Sound.createAsync(
-        { uri: PRACTICE_PERFECT_CHIME_URI },
+        SFX_PRACTICE_PERFECT,
         {
           shouldPlay: true,
           volume:
@@ -8223,8 +8236,9 @@ export function MobileLibraryShell(args: {
           void sound.unloadAsync().catch(() => undefined);
         }
       });
-    } catch {
+    } catch (e) {
       // Best-effort only.
+      console.warn("[practice-sfx] combo chime failed to play:", e);
     }
   }
 
@@ -12295,6 +12309,10 @@ export function MobileLibraryShell(args: {
 
                 // Primary card setup
                 let primaryAction: { onPress: () => void; title: string; subtitle: string; icon: React.ComponentProps<typeof Feather>["name"] };
+                // True when the PRIMARY slot itself is the next-story continue
+                // action (no dues, not a checkpoint). In that case the dedicated
+                // Next-story card below is redundant and suppressed.
+                let primaryIsNextStory = false;
                 if (isCheckpoint && !checkpointPassed) {
                   primaryAction = {
                     onPress: () => void openPracticeMode(activePracticeMode, false),
@@ -12312,6 +12330,7 @@ export function MobileLibraryShell(args: {
                   };
                 } else if (nextStory) {
                   const captured = nextStory;
+                  primaryIsNextStory = true;
                   primaryAction = {
                     onPress: () => {
                       closePracticeSession();
@@ -12333,8 +12352,15 @@ export function MobileLibraryShell(args: {
                   };
                 }
 
+                // Dedicated Next-story card: shown whenever a next story exists
+                // and we're not in a checkpoint, EXCEPT when the primary slot is
+                // already that same continue action. This keeps "Next story"
+                // reachable even when the primary is outranked by due reviews.
+                const showNextStoryCard = Boolean(nextStory) && !isCheckpoint && !primaryIsNextStory;
                 const showFix = practiceMissedItems.length > 0 && !isCheckpoint;
-                const showReplay = !isCheckpoint || checkpointPassed;
+                // Cap the flex row at 3 cards: when the dedicated Next-story card
+                // is present, drop the lowest-priority optional card (Replay).
+                const showReplay = (!isCheckpoint || checkpointPassed) && !showNextStoryCard;
 
                 return (
                   <View style={styles.practiceResultWhatsNext}>
@@ -12357,6 +12383,29 @@ export function MobileLibraryShell(args: {
                           {primaryAction.subtitle}
                         </Text>
                       </Pressable>
+
+                      {showNextStoryCard && nextStory ? (
+                        (() => {
+                          const captured = nextStory;
+                          return (
+                            <Pressable
+                              onPress={() => {
+                                closePracticeSession();
+                                void openJourneyStory(captured);
+                              }}
+                              style={styles.practiceWhatsNextCard}
+                            >
+                              <View style={[styles.practiceWhatsNextIconWrap, styles.practiceWhatsNextIconWrapNeutral]}>
+                                <Feather name="arrow-right" size={16} color="#b8c9df" />
+                              </View>
+                              <Text style={styles.practiceWhatsNextTitle}>Next story</Text>
+                              <Text style={styles.practiceWhatsNextSubtitle}>
+                                {(captured.title?.trim() || "next story").slice(0, 22)}
+                              </Text>
+                            </Pressable>
+                          );
+                        })()
+                      ) : null}
 
                       {showFix ? (
                         <Pressable
@@ -12606,6 +12655,7 @@ export function MobileLibraryShell(args: {
                               after the fact). */}
                         </View>
                       ) : isContext ? (
+                        <>
                         <View
                           style={[
                             styles.practiceMeaningHeroTopRow,
@@ -12645,6 +12695,17 @@ export function MobileLibraryShell(args: {
                             </Pressable>
                           ) : null}
                         </View>
+                        {currentPracticeExercise.sentenceTranslation ? (
+                          <Text style={styles.practiceHeroContextTranslation}>
+                            {(() => {
+                              const t = currentPracticeExercise.sentenceTranslation as string;
+                              const ai = currentPracticeExercise.options.indexOf(currentPracticeExercise.answer);
+                              const en = currentPracticeExercise.optionTranslations?.[ai];
+                              return practiceRevealed && en ? t.replace(/_{3,}/g, en) : t;
+                            })()}
+                          </Text>
+                        ) : null}
+                        </>
                       ) : (
                         <>
                           <Text style={styles.practiceMeaningSubtitle}>
@@ -24210,6 +24271,14 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     lineHeight: 30,
     letterSpacing: -0.2,
+    textAlign: "center",
+  },
+  practiceHeroContextTranslation: {
+    marginTop: 8,
+    color: "rgba(255,255,255,0.45)",
+    fontSize: 13,
+    fontStyle: "italic",
+    lineHeight: 18,
     textAlign: "center",
   },
   practiceHeroContextSentenceCompact: {
