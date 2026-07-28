@@ -1,6 +1,6 @@
 import { Feather } from "@expo/vector-icons";
 import { Image, StyleSheet, View } from "react-native";
-import Svg, { Circle, Ellipse, Line } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
 
 // Real Mexican coat of arms (public-domain govt emblem), overlaid on the
 // tricolor's white band so Mexico reads faithfully at coin scale.
@@ -43,6 +43,28 @@ type FlagSpec =
 // banderas, con un globo dibujado para que se lea como una pieza de la misma
 // familia y no como un placeholder.
 export const ALL_LANGUAGES = "__all__";
+
+// Mapamundi en un espacio de diseño 100x100, vista Atlántico: América a la
+// izquierda, Eurasia y África a la derecha. Silueta simplificada a propósito;
+// a 28 pt lo que se lee es la masa, no la costa.
+const OCEAN = "#12508f";
+const LAND = "#9be8b4";
+const WORLD_PATHS = [
+  // Norteamérica
+  "M2,12 q16,-8 32,-4 q10,3 7,10 q-3,7 -12,8 q-3,7 -10,7 q-6,0 -6,-7 q-13,-4 -11,-14 z",
+  // Centroamérica
+  "M27,38 q8,2 10,7 q1,4 -4,3 q-7,-1 -9,-6 q-1,-4 3,-4 z",
+  // Sudamérica
+  "M33,50 q13,-3 16,9 q3,13 -5,24 q-5,7 -9,2 q-4,-6 -3,-17 q0,-9 -5,-12 q-3,-4 6,-6 z",
+  // Eurasia
+  "M55,8 q22,-7 40,2 q6,3 3,9 q-4,7 -16,7 q-9,0 -14,-4 q-8,3 -14,-2 q-5,-5 1,-12 z",
+  // África
+  "M57,30 q15,-5 21,5 q5,10 -2,19 q-6,9 -11,15 q-5,4 -7,-4 q-2,-10 -1,-19 q0,-10 0,-16 z",
+  // India
+  "M82,30 q8,-2 9,5 q1,6 -5,9 q-5,2 -7,-3 q-2,-7 3,-11 z",
+  // Australia
+  "M85,68 q11,-4 14,4 q2,7 -5,10 q-8,3 -12,-3 q-3,-7 3,-11 z",
+];
 
 // Colombia flag spec, used as the LATAM variant for Spanish. We use
 // a dedicated weighted hBands kind because the Colombian flag has a
@@ -206,35 +228,22 @@ export function LanguageFlag({
   }
 
   if (spec.kind === "all") {
-    // Globo dibujado a mano: círculo + meridiano + dos paralelos. Feather
-    // "globe" a este tamaño queda como un glifo fino de UI al lado de las
-    // banderas; este trazo comparte grosor y color con el resto del chip.
-    const stroke = "#dbe9ff";
-    const w = Math.max(1.2, size * 0.055);
-    const r = size * 0.33;
-    const c = size / 2;
+    // La Tierra LLENA el círculo, como una bandera llena su cuadro. Un globo
+    // pequeño dentro del recuadro no sirve: a 28 pt el disco queda tan chico
+    // que los continentes desaparecen y solo se ve un punto azul (probado en
+    // device). Redonda a propósito: es la única pieza no cuadrada del set, así
+    // que se lee de un vistazo como "esto no es un país".
     return (
-      <View style={[containerStyle, styles.center, { backgroundColor: "#123a6b" }]}>
-        <Svg width={size} height={size}>
-          <Circle cx={c} cy={c} r={r} stroke={stroke} strokeWidth={w} fill="none" />
-          <Ellipse cx={c} cy={c} rx={r * 0.48} ry={r} stroke={stroke} strokeWidth={w} fill="none" />
-          <Line x1={c - r} y1={c} x2={c + r} y2={c} stroke={stroke} strokeWidth={w} />
-          <Line
-            x1={c - r * 0.82}
-            y1={c - r * 0.5}
-            x2={c + r * 0.82}
-            y2={c - r * 0.5}
-            stroke={stroke}
-            strokeWidth={w}
-          />
-          <Line
-            x1={c - r * 0.82}
-            y1={c + r * 0.5}
-            x2={c + r * 0.82}
-            y2={c + r * 0.5}
-            stroke={stroke}
-            strokeWidth={w}
-          />
+      <View
+        style={[
+          containerStyle,
+          { borderRadius: size / 2, backgroundColor: OCEAN },
+        ]}
+      >
+        <Svg width={size} height={size} viewBox="0 0 100 100">
+          {WORLD_PATHS.map((d, i) => (
+            <Path key={i} d={d} fill={LAND} />
+          ))}
         </Svg>
       </View>
     );
