@@ -35,17 +35,51 @@ import type { AudioWordTimingsPayload } from "./audioWordTimingsTypes";
 const MIN_WORDS_PER_SEC = 1.2;
 
 /**
- * Stories whose text/audio mismatch was confirmed against the whisper ruler.
- * Regenerate with `scripts/_karaokeFullScore.py`; a story leaves this list by
- * having its text or its audio fixed, not by loosening the gate.
+ * Every story measured below the bar, from scoring ALL 346 payloads against
+ * the whisper ruler on 2026-07-28. The healthy library sits at 0.190 s of
+ * median error (worst healthy story 0.450 s); the approved reference,
+ * kehrwoche-bei-achim, at 0.170 s.
+ *
+ * Regenerate the list with `scripts/_karaokeFullScore.py` +
+ * `scripts/_karaokeGateList.py`. A story leaves this list by having its
+ * content fixed and re-measured, never by loosening the gate.
  */
 export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
-  "la-excursion-a-la-sierra-nevada",
-  "la-leyenda-de-la-llorona",
-  "el-tren-de-la-sabana",
-  "la-feria-de-las-flores",
-  "el-festival-de-la-arepa",
-  "el-secreto-del-cafe",
+  // WRONG AUDIO: barely any of the text is heard in the recording, so the
+  // story is paired with a different narration. Fix the pairing.
+  "el-vendedor-ambulante", //   6% of words match, 55.7 s error
+  "la-tradicion-del-mate", //  23% of words match
+
+  // SHORT TEXT: the words match but the audio narrates far more of them; the
+  // stored text is an abridged version. Restore the text.
+  "la-excursion-a-la-sierra-nevada", // 374 words vs 781 heard, 58.0 s
+  "la-fiesta-en-cartagena", //          40.9 s
+  "la-leyenda-de-la-llorona", //        39.6 s
+  "el-carnaval-de-barranquilla", //     31.2 s
+  "el-tren-de-la-sabana", //             2.8 s
+  "la-feria-de-las-flores", //           1.3 s
+  "el-festival-de-la-arepa", //          0.8 s
+  "la-finca-en-la-montana", //           0.8 s
+  "el-misterio-de-la-catedral-de-sal", //0.7 s
+  "el-viaje-a-villa-de-leyva", //        0.7 s
+  "el-secreto-del-cafe", //              0.5 s
+
+  // WEAK ALIGNMENT: content is fine (93-99% of words match, counts match) but
+  // the aligner placed them ~0.5 s off, which puts the highlight on the wrong
+  // word most of the time. Re-aligning was tried and does not fix it: aeneas
+  // is not deterministic, and a second pass moved these by ±0.05 s in both
+  // directions. Cause unknown; il-libro-dell-abisso at least carries an
+  // ambient bed that hides its pauses.
+  "el-estudiante-universitario", // 0.57 s
+  "el-misterio-del-bosque", //      0.51 s
+  "il-libro-dell-abisso", //        0.48 s
+  "l-ultimo-respiro-del-campanile", // 0.45 s
+
+  // Not user-facing today (deprecated / unpublished journeys), listed so they
+  // cannot start showing a bad highlight if those journeys are ever opened.
+  "una-pizca-de-canela", //        0.76 s, journey "Traveler — Legacy"
+  "el-libro-en-voz-alta", //       0.58 s, marked [DEPRECATED]
+  "trastevere-camera-quattro", //  0.51 s, journey "Traveler — Test"
 ]);
 
 export type KaraokeGateResult = { usable: boolean; reason?: string };
@@ -56,7 +90,9 @@ export function checkKaraokeUsable(
 ): KaraokeGateResult {
   if (!payload) return { usable: false, reason: "no timings" };
   if (slug && KARAOKE_BLOCKED_SLUGS.has(slug)) {
-    return { usable: false, reason: "text does not match the audio" };
+    // The specific cause (wrong audio / abridged text / weak alignment) is
+    // documented next to each slug in the list above.
+    return { usable: false, reason: "measured below the karaoke quality bar" };
   }
   const timed = payload.words.filter((w) => typeof w.startSec === "number").length;
   if (timed === 0) return { usable: false, reason: "no timed words" };
