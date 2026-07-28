@@ -20,6 +20,7 @@ import StoryContent from "@/components/StoryContent";
 import HighlightedStoryReader from "@/components/HighlightedStoryReader";
 import { coerceAudioWordTimings } from "@/lib/audioWordTimingsTypes";
 import { checkKaraokeUsable } from "@/lib/karaokeQualityGate";
+import { extractStoryPlainText } from "@/lib/storyPlainText";
 import TapGlossReader from "@/components/TapGlossReader";
 import TapGlossLayer from "@/components/TapGlossLayer";
 import { getTapGlossesForSlug } from "@/lib/tapGlosses";
@@ -313,7 +314,11 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   const audioWordTimings = journeyStoryRow?.audioWordTimings ?? null;
   // Un karaoke seguro de sí mismo pero equivocado es peor que ninguno: el
   // portón deja fuera las historias cuyo texto no corresponde al audio.
-  const karaokeGate = checkKaraokeUsable(slug, coerceAudioWordTimings(audioWordTimings));
+  const karaokeGate = checkKaraokeUsable(
+    slug,
+    coerceAudioWordTimings(audioWordTimings),
+    story?.text ? extractStoryPlainText(story.text) : null
+  );
   const hasWordTimings = karaokeGate.usable;
 
   const { userId } = await auth();

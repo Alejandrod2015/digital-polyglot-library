@@ -45,10 +45,14 @@ const MIN_WORDS_PER_SEC = 1.2;
  * content fixed and re-measured, never by loosening the gate.
  */
 export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
-  // WRONG AUDIO: barely any of the text is heard in the recording, so the
-  // story is paired with a different narration. Fix the pairing.
-  "el-vendedor-ambulante", //   6% of words match, 55.7 s error
-  "la-tradicion-del-mate", //  23% of words match
+  // Dos que estaban aquí y NO debían estar, comprobadas el 2026-07-28:
+  //   la-tradicion-del-mate: figuraba con language "italian" dentro del libro
+  //     argentino, así que se alineó (y se midió) con el idioma equivocado. Con
+  //     el dato corregido mide 0,160 s y 76% dentro de 300 ms, mejor que la
+  //     referencia aprobada. Estaba sana.
+  //   el-vendedor-ambulante: son DOS historias distintas que comparten slug, una
+  //     por libro, cada una con su audio correcto. Lo resuelve el chequeo de
+  //     pertenencia de arriba, no una lista.
 
   // SHORT TEXT: the words match but the audio narrates far more of them; the
   // stored text is an abridged version. Restore the text.
@@ -84,11 +88,50 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
 
 export type KaraokeGateResult = { usable: boolean; reason?: string };
 
+/** First words of a text, normalised for comparison. */
+function opening(text: string, n = 40): string[] {
+  return text
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, n);
+}
+
+/**
+ * Do these timings actually belong to THIS story?
+ *
+ * `CatalogStoryAudioTimings` is keyed by slug alone, and slugs are not unique
+ * across books: "el-vendedor-ambulante" exists twice, once in the Argentinian
+ * book (Mariana, in Buenos Aires) and once in the Colombian one (Diego selling
+ * arepas in Bogotá). Two perfectly good stories, one row to hold their timings,
+ * so one of the two books would light up words from the other one's script.
+ *
+ * Comparing the payload's own copy of the text against the story being
+ * rendered catches that, and any future collision, without a hardcoded list.
+ */
+function timingsBelongToStory(payloadText: string, storyPlainText: string): boolean {
+  const a = opening(payloadText);
+  const b = opening(storyPlainText);
+  if (a.length < 8 || b.length < 8) return true; // too little to judge
+  const shared = new Set(b);
+  const hits = a.filter((w) => shared.has(w)).length;
+  return hits / a.length >= 0.6;
+}
+
 export function checkKaraokeUsable(
   slug: string | null | undefined,
-  payload: Pick<AudioWordTimingsPayload, "words" | "audioDurationSec"> | null
+  payload: Pick<AudioWordTimingsPayload, "words" | "audioDurationSec" | "storyPlainText"> | null,
+  storyPlainText?: string | null
 ): KaraokeGateResult {
   if (!payload) return { usable: false, reason: "no timings" };
+  if (
+    storyPlainText &&
+    typeof payload.storyPlainText === "string" &&
+    !timingsBelongToStory(payload.storyPlainText, storyPlainText)
+  ) {
+    return { usable: false, reason: "these timings belong to a different story with the same slug" };
+  }
   if (slug && KARAOKE_BLOCKED_SLUGS.has(slug)) {
     // The specific cause (wrong audio / abridged text / weak alignment) is
     // documented next to each slug in the list above.
