@@ -130,7 +130,12 @@ function toBlocks(text: string | null | undefined): StoryBlock[] {
     .map((part) => ({ type: "paragraph" as const, text: part }));
 }
 
-const MAX_HIGHLIGHT_WORDS = 30;
+// MISMO tope que la web (src/components/StoryContent.tsx). Estaba en 30, el
+// valor de la era journeys (~22 entradas por historia); con el catálogo a
+// ~10 entradas por cada 100 palabras una historia llega a 82, así que el
+// móvil se comía más de la mitad de las píldoras sin avisar. El límite que
+// de verdad protege es MAX_REGEX_SOURCE_LENGTH; este es la red de seguridad.
+const MAX_HIGHLIGHT_WORDS = 90;
 const MAX_HIGHLIGHT_WORD_LENGTH = 48;
 const MAX_HIGHLIGHT_WORD_TOKENS = 4;
 const MAX_REGEX_SOURCE_LENGTH = 1400;

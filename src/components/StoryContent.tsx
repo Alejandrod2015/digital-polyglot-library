@@ -58,11 +58,12 @@ export type StoryContentProps = {
 
 // Los libros del catálogo apuntan a la densidad de vocabulario de los
 // journeys (~10 palabras por cada 100 leídas). Como sus historias llegan a
-// las 750 palabras, eso son hasta ~75 entradas, mientras que una historia de
+// las 820 palabras, eso son hasta ~82 entradas, mientras que una historia de
 // journey ronda las 22. Este tope es una red de seguridad, no un objetivo: el
 // límite que de verdad importa es MAX_REGEX_SOURCE_LENGTH, que corta el
-// resaltado si el patrón crece demasiado.
-const MAX_HIGHLIGHT_WORDS = 80;
+// resaltado si el patrón crece demasiado. Debe coincidir con el del móvil
+// (apps/mobile/src/mobile/ReaderScreen.tsx) o las píldoras no son las mismas.
+const MAX_HIGHLIGHT_WORDS = 90;
 const MAX_HIGHLIGHT_WORD_LENGTH = 48;
 const MAX_HIGHLIGHT_WORD_TOKENS = 4;
 const MAX_REGEX_SOURCE_LENGTH = 1400;
