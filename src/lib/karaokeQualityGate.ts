@@ -62,20 +62,41 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
   // error mediano del libro de hasta 58 s a 0,235 s. 19 de las 20 salieron de
   // esta lista; la que queda esta abajo, y ya no por contenido.
 
-  // ALINEACION FLOJA: el contenido esta bien (93-99% de las palabras del texto
-  // se oyen, y en la misma cantidad) pero el alineador las coloca ~0,5 s
-  // corridas, lo que deja el resaltado sobre la palabra equivocada casi todo el
-  // tiempo. Re-alinear NO lo arregla: aeneas no es determinista y una segunda
-  // pasada mueve el resultado unas centesimas en cualquier direccion (probado
-  // en cinco de estas). Causa desconocida.
-  // Probé la hipótesis de que el alineador antepone el título a audios que no
-  // lo leen (medido: la-llorona habla desde 0,20 s y su primera palabra quedó
-  // en 1,56 s). Detectarlo con ffmpeg NO funciona: el mismo síntoma lo produce
-  // un título que SÍ se lee, y al re-alinear sin él empeoré l-ultimo-respiro
-  // (0,45 -> 0,53). Revertido. La causa sigue sin identificar.
-  "la-leyenda-de-la-llorona", //     0,54 s  (texto restaurado; ratio 0,98)
-  "el-estudiante-universitario", //  0,53 s
-  "il-libro-dell-abisso", //         0,48 s  (cama de ambiente: apenas 3 pausas detectables)
+  // AUDIO Y TEXTO NO COINCIDEN (misma familia que el bloque de arriba, pero
+  // parcial: no es que el texto este recortado entero, es que a mitad de la
+  // historia el audio dice cosas que el texto no tiene). Medido el 2026-07-28
+  // con whisper small: 362 palabras de texto contra 437 oidas, ratio 1,21, y
+  // solo el 75% del texto se reconoce en el audio. El error no esta repartido:
+  // se dispara en 191-194 s, hasta 7,6 s de desvio, mientras el resto de la
+  // historia va fina. Ningun alineador arregla esto; hay que arreglar el texto.
+  // Las historias sanas de la misma tanda estan todas en ratio 0,96-0,99.
+  "l-ultimo-respiro-del-campanile", // ratio 1,21; p90 3,45 s
+
+  // DESFASE CONSTANTE: el contenido esta bien (ratio 0,97-0,99, 93-97% del
+  // texto se oye) pero TODAS las palabras van tarde por la misma cantidad, asi
+  // que el resaltado vive medio segundo por detras del narrador. Medido el
+  // 2026-07-28 con whisper small, error CON SIGNO, contra dos historias de
+  // control de la misma tanda (el-mercado-de-medellin -0,13 s,
+  // il-manoscritto-perduto -0,11 s):
+  "la-leyenda-de-la-llorona", //     +0,68 s  (texto restaurado; ratio 0,98)
+  "el-estudiante-universitario", //  +0,49 s
+  "il-libro-dell-abisso", //         +0,43 s  (cama de ambiente: 3 pausas en toda la historia)
+  //
+  // Causa: sin identificar. Lo que YA NO es (descartado con medicion, no con
+  // razonamiento):
+  //  - No es el titulo antepuesto. Se realinearon las tres CON y SIN titulo y
+  //    se midieron las dos versiones: el desfase se mueve 0,01 s. La prueba
+  //    anterior parecia culparlo, pero se hizo sobre l-ultimo-respiro, que
+  //    resulto tener OTRA averia (la de arriba) y nada que ganar.
+  //  - No son datos viejos: realinear hoy desde cero reproduce el mismo
+  //    desfase, asi que no es un residuo del correctAlignmentDrift retirado.
+  //  - No es la cama de ambiente: solo il-libro la tiene; la-llorona es la de
+  //    MAS pausas detectables de todo el lote (17 por cada 100 palabras).
+  // Ojo con la regla al reabrir esto: el medidor de ffmpeg (distancia de cada
+  // arranque de habla a la palabra mas cercana) NO puede ver un desfase
+  // constante, porque con palabras cada 0,3 s siempre encuentra una vecina
+  // cerca; da 0,17 s donde whisper da 0,68 s. Para desfase hay que emparejar
+  // por identidad de palabra.
 
   // Not user-facing today (deprecated / unpublished journeys), listed so they
   // cannot start showing a bad highlight if those journeys are ever opened.

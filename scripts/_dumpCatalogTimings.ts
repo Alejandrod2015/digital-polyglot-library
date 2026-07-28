@@ -27,6 +27,7 @@ async function main() {
   const stories = await prisma.catalogStory.findMany({
     where: { book: { published: true }, ...(slugs ? { slug: { in: slugs } } : {}) },
     select: {
+      id: true,
       slug: true,
       audio: true,
       audioUrl: true,
@@ -38,7 +39,7 @@ async function main() {
 
   for (const story of stories) {
     const row = await prisma.catalogStoryAudioTimings.findUnique({
-      where: { slug: story.slug },
+      where: { storyId: story.id },
       select: { audioWordTimings: true },
     });
     const payload = coerceAudioWordTimings(row?.audioWordTimings);
