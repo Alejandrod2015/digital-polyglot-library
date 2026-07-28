@@ -183,7 +183,17 @@ export async function GET(
             `(concedidos=${resolved.length} sin_resolver=${unresolved.length})`
         );
       } catch (libErr) {
-        console.error("⚠️ Error actualizando My Library:", libErr);
+        // 🚨 El upsert de LibraryBook es LA entrega: si falla, el comprador
+        // paga y no ve el libro, pero la respuesta sigue diciendo "Books
+        // added". Alertamos con el mismo formato que el guard anti-fantasma
+        // para poder repararlo a mano (2026-07-28).
+        const msg = libErr instanceof Error ? libErr.message : String(libErr);
+        console.error(
+          `🚨 CLAIM NO MATERIALIZADO — userId=${userId} buyer=${redeemed.buyerEmail} ` +
+            `token=${token} libros=${JSON.stringify(redeemed.books)} error=${msg} — ` +
+            `el usuario NO tiene los libros en My Library pese a la respuesta OK.`,
+          libErr
+        );
       }
     }
 

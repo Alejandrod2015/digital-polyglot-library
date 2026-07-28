@@ -7,39 +7,11 @@
 import "server-only";
 import { PrismaClient } from "@/generated/prisma";
 
-/**
- * Errores transitorios típicos cuando Neon + pgbouncer cierra una
- * conexión idle mid-query (serverless cold/warm cycle). El engine
- * reporta una "response empty" o termina la conexión. Reintentar la
- * misma query suele resolverlo porque Prisma abre nueva conexión.
- */
-const TRANSIENT_ERROR_PATTERNS: RegExp[] = [
-  /Response from the Engine was empty/i,
-  /Engine is not yet connected/i,
-  /Engine is not yet started/i,
-  /Closed Connection/i,
-  /Connection terminated/i,
-  /Connection refused/i,
-  /Connection reset by peer/i,
-  /ECONNRESET/i,
-  /server has gone away/i,
-];
-
-function isTransientError(err: unknown): boolean {
-  if (!err) return false;
-  // PrismaClientUnknownRequestError = el engine devolvió un error sin
-  // código conocido. En la práctica es casi siempre transitorio: el
-  // pooler de Neon (pgbouncer) corta/recicla conexiones bajo
-  // concurrencia y la query cae con un error opaco. Reintentar suele
-  // aterrizar en una conexión fresca y resolver. Los errores
-  // determinísticos (constraint, validación) son KnownRequestError /
-  // ValidationError, otra clase, así que no entran aquí.
-  const name = err instanceof Error ? err.name : "";
-  if (name === "PrismaClientUnknownRequestError") return true;
-  const message =
-    err instanceof Error ? err.message : typeof err === "string" ? err : String(err);
-  return TRANSIENT_ERROR_PATTERNS.some((re) => re.test(message));
-}
+import {
+  isConnectionInitError,
+  isTransientError,
+  retryDelayMs,
+} from "@/lib/prismaTransient";
 
 async function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -119,7 +91,9 @@ function createPrismaClient() {
           }
         }
 
-        const MAX_ATTEMPTS = 4;
+        // 5 intentos: el 5º cubre el despertar de un compute Neon
+        // suspendido, que puede tardar varios segundos (P1001).
+        const MAX_ATTEMPTS = 5;
         let lastError: unknown;
         for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
           try {
@@ -129,7 +103,7 @@ function createPrismaClient() {
             if (!isTransientError(err) || attempt === MAX_ATTEMPTS - 1) {
               throw err;
             }
-            const delay = 200 * Math.pow(2, attempt);
+            const delay = retryDelayMs(attempt, err);
             if (process.env.NODE_ENV === "development") {
               console.warn(
                 `[prisma-retry] ${model ?? "?"}.${operation} transient error; retry ${attempt + 1}/${MAX_ATTEMPTS - 1} in ${delay}ms`,
@@ -140,8 +114,9 @@ function createPrismaClient() {
             // forzamos un reconnect explícito antes del retry para
             // empujar al engine a inicializarse.
             if (
-              err instanceof Error &&
-              /Engine is not yet connected/i.test(err.message)
+              isConnectionInitError(err) ||
+              (err instanceof Error &&
+                /Engine is not yet connected/i.test(err.message))
             ) {
               try {
                 await base.$connect();

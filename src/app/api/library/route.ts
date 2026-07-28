@@ -5,10 +5,8 @@ export const runtime = "nodejs";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { unstable_cache, revalidateTag } from "next/cache";
-import { getStandaloneStoriesByIds } from "@/lib/standaloneStories";
 import { prisma } from "@/lib/prisma";
-
-type LibraryType = "book" | "story";
+import { loadLibraryRows, type LibraryType } from "@/lib/libraryRows";
 
 type LibraryBody =
   | { type: "book"; bookId: string; title: string; coverUrl: string }
@@ -42,80 +40,7 @@ function isLibraryBody(x: unknown): x is LibraryBody {
 
 // ✅ cache por usuario + tipo
 const getLibraryCached = unstable_cache(
-  async (userId: string, type: LibraryType) => {
-    if (type === "story") {
-      const rows = await prisma.libraryStory.findMany({
-        where: { userId },
-        orderBy: { createdAt: "desc" },
-      });
-
-      const polyglotIds = rows
-        .filter((row) => row.bookId === "polyglot")
-        .map((row) => row.storyId);
-      const standaloneIds = rows
-        .filter((row) => row.bookId === "standalone")
-        .map((row) => row.storyId);
-
-      const [polyglotStories, standaloneStories] = await Promise.all([
-        polyglotIds.length === 0
-          ? Promise.resolve([])
-          : prisma.userStory.findMany({
-              where: { id: { in: polyglotIds } },
-              select: {
-                id: true,
-                slug: true,
-                language: true,
-                region: true,
-                level: true,
-                topic: true,
-                coverUrl: true,
-                audioUrl: true,
-              },
-            }),
-        getStandaloneStoriesByIds(standaloneIds),
-      ]);
-
-      const byId = new Map(polyglotStories.map((s) => [s.id, s]));
-      const standaloneById = new Map(standaloneStories.map((s) => [s.id, s]));
-      return rows.map((row) => {
-        if (row.bookId === "polyglot") {
-          const story = byId.get(row.storyId);
-          if (!story) return row;
-          return {
-            ...row,
-            storySlug: story.slug,
-            language: story.language,
-            region: story.region,
-            level: story.level,
-            topic: story.topic,
-            audioUrl: story.audioUrl,
-            coverUrl: story.coverUrl ?? row.coverUrl,
-          };
-        }
-
-        if (row.bookId === "standalone") {
-          const story = standaloneById.get(row.storyId);
-          if (!story) return row;
-          return {
-            ...row,
-            storySlug: story.slug,
-            language: story.language,
-            region: story.region,
-            level: story.level,
-            topic: story.topic,
-            audioUrl: story.audioUrl,
-            coverUrl: story.coverUrl ?? row.coverUrl,
-          };
-        }
-
-        return row;
-      });
-    }
-    return prisma.libraryBook.findMany({
-      where: { userId },
-      orderBy: { createdAt: "desc" },
-    });
-  },
+  async (userId: string, type: LibraryType) => loadLibraryRows(userId, type),
   ["library-by-user"],
   { revalidate: 60, tags: ["library-by-user"] }
 );

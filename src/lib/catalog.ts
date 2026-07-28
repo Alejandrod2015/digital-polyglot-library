@@ -117,6 +117,18 @@ export async function getPublishedCatalogBooks(): Promise<Book[]> {
   return rows.map((row) => rowToBook(row, row.stories));
 }
 
+// Catalog books by slug, published or not. Used by My Library: a purchased
+// book must resolve its metadata even if it is not visible in /explore/books
+// (the `published` flag gates the storefront, not ownership).
+export async function getCatalogBooksBySlugs(slugs: string[]): Promise<Book[]> {
+  if (slugs.length === 0) return [];
+  const rows = await prisma.catalogBook.findMany({
+    where: { slug: { in: slugs } },
+    include: { stories: { orderBy: { position: "asc" } } },
+  });
+  return rows.map((row) => rowToBook(row, row.stories));
+}
+
 export async function getCatalogStory(
   bookSlug: string,
   storySlug: string

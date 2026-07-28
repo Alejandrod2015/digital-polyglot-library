@@ -7,8 +7,7 @@ import StoryCarousel from "@/components/StoryCarousel";
 import ReleaseCarousel from "@/components/ReleaseCarousel";
 import BookHorizontalCard from "@/components/BookHorizontalCard";
 import StoryVerticalCard from "@/components/StoryVerticalCard";
-import { formatLanguage, formatLevel, formatTopic } from "@domain/displayFormat";
-import { getBookCardMeta } from "@domain/bookCardMeta";
+import { formatTopic } from "@domain/displayFormat";
 import { canUseOfflineAccess, type Plan } from "@domain/access";
 import {
   listOfflineBooks,
@@ -19,60 +18,14 @@ import {
   saveOfflineStory,
 } from "@/lib/offlineLibrary";
 import { warmOfflineUrls } from "@/lib/offlineWarm";
-
-
-type LibraryBook = {
- id: string;
- bookId: string;
- title: string;
- coverUrl: string;
-};
-
-
-type LibraryStory = {
- id: string;
- storyId: string;
- bookId: string;
- title: string;
- coverUrl: string;
- storySlug?: string;
- bookSlug?: string;
- language?: string;
- region?: string;
- level?: string;
- topic?: string;
- audioUrl?: string | null;
-};
-
-
-type BookCarouselItem = {
- slug: string;
- title: string;
- language?: string;
- region?: string;
- level?: string;
- cover?: string;
- description?: string;
- statsLine?: string;
- topicsLine?: string;
- bookId: string;
-};
-
-
-type StoryItem = {
- id: string;
- storyId: string;
- bookSlug: string;
- storySlug: string;
- title: string;
- bookTitle: string;
- language: string;
- region?: string;
- level: string;
- topic?: string;
- coverUrl?: string;
- audioUrl?: string | null;
-};
+import {
+  toBookCarouselItems,
+  toStoryItems,
+  type BookCarouselItem,
+  type LibraryBookRow as LibraryBook,
+  type LibraryStoryRow as LibraryStory,
+  type StoryItem,
+} from "./libraryItems";
 
 
 export default function MyLibraryClient() {
@@ -160,6 +113,9 @@ export default function MyLibraryClient() {
            await Promise.all(
              normalizedBooks.map(async (item) => {
                const bookMeta = allBooks.find((book) => book.id === item.bookId);
+               // Prefer the catalog slug: books absent from the static dump
+               // still have to warm their own routes.
+               const bookSlug = item.meta?.slug ?? bookMeta?.slug;
                await saveOfflineBook(user.id, {
                  bookId: item.bookId,
                  title: item.title,
@@ -167,8 +123,8 @@ export default function MyLibraryClient() {
                  bookData: bookMeta,
                });
                await warmOfflineUrls([
-                 bookMeta?.slug ? `/books/${bookMeta.slug}` : null,
-                 bookMeta?.slug ? `/books/${bookMeta.slug}?from=my-library` : null,
+                 bookSlug ? `/books/${bookSlug}` : null,
+                 bookSlug ? `/books/${bookSlug}?from=my-library` : null,
                  item.coverUrl,
                  ...(bookMeta?.stories.flatMap((story) => [
                    story.slug ? `/books/${bookMeta.slug}/${story.slug}` : null,
@@ -288,123 +244,19 @@ export default function MyLibraryClient() {
  // ------------------------------
  // MAP BOOKS → CAROUSEL ITEMS
  // ------------------------------
- const bookCarouselItems = useMemo<BookCarouselItem[]>(() => {
-   const arr: BookCarouselItem[] = [];
-
-
-   for (const item of booksList) {
-     const meta = allBooks.find((b) => b.id === item.bookId);
-     if (!meta) continue;
-
-
-     arr.push({
-       slug: meta.slug,
-       title: meta.title,
-       language:
-         typeof meta.language === "string" ? formatLanguage(meta.language) : undefined,
-       region: typeof meta.region === "string" ? meta.region : undefined,
-       level:
-         typeof meta.level === "string" ? formatLevel(meta.level) : undefined,
-       cover: meta.cover,
-       description: typeof meta.description === "string" ? meta.description : undefined,
-       statsLine: getBookCardMeta(meta).statsLine,
-       topicsLine: getBookCardMeta(meta).topicsLine,
-       bookId: item.bookId,
-     });
-   }
-
-
-   return arr;
- }, [booksList, allBooks]);
+ const bookCarouselItems = useMemo<BookCarouselItem[]>(
+   () => toBookCarouselItems(booksList, allBooks),
+   [booksList, allBooks]
+ );
 
 
  // ------------------------------
  // MAP STORIES
  // ------------------------------
- const storyItems = useMemo<StoryItem[]>(() => {
-   const arr: StoryItem[] = [];
-
-
-   for (const item of stories) {
-     const bookMeta = allBooks.find((b) => b.id === item.bookId);
-     if (!bookMeta) {
-       if ((item.bookId !== "polyglot" && item.bookId !== "standalone") || !item.storySlug) continue;
-       arr.push({
-         id: item.id,
-         storyId: item.storyId,
-         bookSlug: item.bookId,
-         storySlug: item.storySlug,
-         title: item.title,
-         bookTitle: item.bookId === "standalone" ? "Individual Stories" : "Polyglot Stories",
-         language: formatLanguage(item.language),
-         region: item.region,
-         level: formatLevel(item.level),
-         topic: item.topic,
-         coverUrl:
-           typeof item.coverUrl === "string" && item.coverUrl.trim() !== ""
-             ? item.coverUrl
-             : "/covers/default.jpg",
-         audioUrl: item.audioUrl ?? null,
-       });
-       continue;
-     }
-
-
-     const storyMeta = bookMeta.stories.find((s) => s.id === item.storyId);
-     if (!storyMeta) continue;
-
-
-     const storyCover =
-       typeof storyMeta.cover === "string" && storyMeta.cover.trim() !== ""
-         ? storyMeta.cover
-         : undefined;
-
-
-     const savedCover =
-       typeof item.coverUrl === "string" && item.coverUrl.trim() !== ""
-         ? item.coverUrl
-         : undefined;
-
-
-     const bookCover =
-       typeof bookMeta.cover === "string" && bookMeta.cover.trim() !== ""
-         ? bookMeta.cover
-         : "/covers/default.jpg";
-
-
-     arr.push({
-       id: item.id,
-       storyId: item.storyId,
-       bookSlug: bookMeta.slug,
-       storySlug: storyMeta.slug,
-       title: item.title || storyMeta.title,
-       bookTitle: bookMeta.title,
-       language:
-         typeof storyMeta.language === "string"
-           ? formatLanguage(storyMeta.language)
-           : formatLanguage(bookMeta.language),
-       region:
-         typeof storyMeta.region === "string" && storyMeta.region.trim() !== ""
-           ? storyMeta.region
-           : bookMeta.region,
-       level:
-         typeof storyMeta.level === "string"
-           ? formatLevel(storyMeta.level)
-           : formatLevel(bookMeta.level),
-       topic:
-         typeof storyMeta.topic === "string"
-           ? storyMeta.topic
-           : typeof bookMeta.topic === "string"
-             ? bookMeta.topic
-             : undefined,
-       coverUrl: storyCover ?? savedCover ?? bookCover,
-       audioUrl: typeof storyMeta.audio === "string" ? storyMeta.audio : null,
-     });
-   }
-
-
-   return arr;
- }, [stories, allBooks]);
+ const storyItems = useMemo<StoryItem[]>(
+   () => toStoryItems(stories, allBooks),
+   [stories, allBooks]
+ );
 
  // ------------------------------
  // UI
@@ -547,11 +399,7 @@ export default function MyLibraryClient() {
                items={storyItems}
                renderItem={(story) => (
                  <StoryVerticalCard
-                   href={
-                     story.bookSlug === "polyglot" || story.bookSlug === "standalone"
-                       ? `/stories/${story.storySlug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`
-                       : `/books/${story.bookSlug}/${story.storySlug}?returnTo=/my-library&returnLabel=My%20Library&from=my-library`
-                   }
+                   href={story.href}
                    title={story.title}
                    coverUrl={story.coverUrl || "/covers/default.png"}
                    subtitle={story.bookTitle}
