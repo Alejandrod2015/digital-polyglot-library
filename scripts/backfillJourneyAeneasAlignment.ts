@@ -30,7 +30,10 @@ config({ path: ".env.local" });
 config({ path: ".env" });
 
 import { PrismaClient } from "../src/generated/prisma";
-import { generateWordTimingsForStory } from "../src/lib/audioWordTimings";
+// Import the alignment directly, NOT the `generateWordTimingsForStory`
+// wrapper: that one lives next to `lib/prisma`, whose `server-only` guard
+// aborts the process the moment tsx loads it.
+import { alignStoryAudio } from "../src/lib/alignStoryAudio";
 
 type Args = {
   limit: number | null;
@@ -70,7 +73,15 @@ async function main() {
       text: { not: null },
       ...(args.slug ? { slug: args.slug } : {}),
     },
-    select: { id: true, slug: true, title: true, audioSegments: true },
+    select: {
+      id: true,
+      slug: true,
+      title: true,
+      text: true,
+      audioUrl: true,
+      audioSegments: true,
+      journey: { select: { language: true } },
+    },
     orderBy: { createdAt: "asc" },
   });
 
@@ -104,8 +115,24 @@ async function main() {
       continue;
     }
     try {
-      const result = await generateWordTimingsForStory(story.id);
-      console.log(`  ok ${tag} -> ${result.words.length} tokens, dur=${result.audioDurationSec ?? "?"}s`);
+      if (!story.text || !story.audioUrl) throw new Error("missing text or audioUrl");
+      const { payload, segments } = await alignStoryAudio({
+        text: story.text,
+        title: story.title,
+        audioUrl: story.audioUrl,
+        language: story.journey.language,
+        storyId: story.id,
+      });
+      await prisma.journeyStory.update({
+        where: { id: story.id },
+        data: {
+          audioWordTimings: payload as unknown as object,
+          ...(segments.length > 0 ? { audioSegments: segments as unknown as object } : {}),
+        },
+      });
+      console.log(
+        `  ok ${tag} -> ${payload.words.length} tokens, ${segments.length} segments, dur=${payload.audioDurationSec ?? "?"}s`
+      );
       ok += 1;
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);

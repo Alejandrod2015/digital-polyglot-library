@@ -6,10 +6,12 @@ import HighlightedStoryContent from "@/components/HighlightedStoryContent";
 // IMPORTANT: importar de `audioWordTimingsTypes` (puro) y NO de
 // `audioWordTimings` que arrastra prisma al cliente y peta el build
 // con "PrismaClient is unable to run in this browser environment".
+import { coerceAudioWordTimings } from "@/lib/audioWordTimingsTypes";
 import {
-  coerceAudioWordTimings,
-  type AudioWordTimingsPayload,
-} from "@/lib/audioWordTimingsTypes";
+  buildWordWindows,
+  createHighlightStepper,
+  findActiveWordIndex,
+} from "@/lib/karaokeWordWindows";
 
 type VocabItem = { word: string; surface?: string; definition: string; type?: string };
 
@@ -22,36 +24,6 @@ type HighlightedStoryReaderProps = {
   audioWordTimings: unknown;
 };
 
-function findActiveWordIndex(
-  words: AudioWordTimingsPayload["words"],
-  currentTime: number
-): number | null {
-  // Each token's effective window is [startSec, nextToken.startSec).
-  // Aeneas occasionally emits zero-duration windows for short connector
-  // words; trusting endSec literally lets those words slip past every
-  // sampling tick. Walking startSecs covers them and any inter-word
-  // silence transparently.
-  let last: number | null = null;
-  for (let i = 0; i < words.length; i += 1) {
-    const w = words[i];
-    if (w.startSec === null) continue;
-    if (currentTime < w.startSec) break;
-    let nextStart: number | null = null;
-    for (let j = i + 1; j < words.length; j += 1) {
-      const candidate = words[j].startSec;
-      if (candidate !== null && candidate > w.startSec) {
-        nextStart = candidate;
-        break;
-      }
-    }
-    if (nextStart === null || currentTime < nextStart) {
-      return i;
-    }
-    last = i;
-  }
-  return last;
-}
-
 export default function HighlightedStoryReader({
   story,
   audioWordTimings,
@@ -63,22 +35,23 @@ export default function HighlightedStoryReader({
 
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
 
-  // Los timings de aeneas (sobre todo ES/DE) se corren TARDE de forma
-  // acumulada: el último endSec cae hasta ~0.7-0.8s DESPUÉS del final real del
-  // audio (la corrección de drift ancla al final del silencio). Efecto: el
-  // resaltado empieza sincronizado y se va atrasando hacia el final. Fix de
-  // primer orden: al buscar la palabra activa, escalamos el tiempo de consulta
-  // por `span/duración`, repartiendo el atraso hacia atrás proporcionalmente.
-  // Es no-op cuando los timings ya encajan en el audio (span <= duración).
-  const timingsSpanSec = React.useMemo(() => {
-    if (!payload) return 0;
-    let span = 0;
-    for (const w of payload.words) {
-      const end = typeof w.endSec === "number" ? w.endSec : w.startSec;
-      if (typeof end === "number" && end > span) span = end;
-    }
-    return span;
-  }, [payload]);
+  // Aquí vivía un parche que escalaba el tiempo de consulta por
+  // `span/duración` (tope 6%) porque los timings se pasaban hasta ~0.8s del
+  // final real del audio. Ese desborde lo causaba `correctAlignmentDrift`, ya
+  // eliminado: los timings van crudos de aeneas y encajan solos. Verificado
+  // sobre los 354 payloads guardados el 2026-07-28; el único que aún se pasa
+  // es de una historia sin `audioUrl`, que por tanto nunca reproduce audio.
+  // Si algún día vuelve a haber desborde, el arreglo va en el alineador, no
+  // en un factor de escala aquí.
+
+  // Ventanas de resaltado precalculadas. Aeneas repite el mismo startSec en
+  // palabras contiguas (7.2% de las palabras medidas), y con la búsqueda
+  // anterior sólo ganaba la primera del empate: las demás no se encendían
+  // NUNCA. Aquí cada empate se reparte dentro de su propio tramo.
+  const wordWindows = React.useMemo(
+    () => (payload ? buildWordWindows(payload.words, payload.audioDurationSec) : []),
+    [payload]
+  );
 
   const wordRefs = React.useRef(new Map<number, HTMLSpanElement | null>());
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -92,23 +65,19 @@ export default function HighlightedStoryReader({
   // Listen to the existing player's audio-progress event, then read the
   // <audio> element's currentTime directly so we get word-level resolution.
   React.useEffect(() => {
-    if (!payload || payload.words.length === 0) return;
+    if (wordWindows.length === 0) return;
+
+    // Holds each word on screen long enough to be seen; see
+    // createHighlightStepper for why the raw clock index is not enough.
+    const step = createHighlightStepper();
 
     const tick = () => {
       const audio = document.querySelector("audio");
       if (!audio) return;
       const ct = audio.currentTime;
       if (!Number.isFinite(ct)) return;
-      // Compensa el atraso acumulado escalando el tiempo de consulta hacia
-      // adelante cuando los timings se pasan del final real. Cap al 6% para no
-      // sobrecorregir si algún dato viniera raro; factor=1 (no-op) si encajan.
-      const dur = audio.duration;
-      let queryTime = ct;
-      if (Number.isFinite(dur) && dur > 0 && timingsSpanSec > dur) {
-        queryTime = ct * Math.min(timingsSpanSec / dur, 1.06);
-      }
-      const idx = findActiveWordIndex(payload.words, queryTime);
-      setActiveIndex(idx);
+      const target = findActiveWordIndex(wordWindows, ct);
+      setActiveIndex(step(target, performance.now(), ct));
     };
 
     const onProgress = () => tick();
@@ -126,7 +95,7 @@ export default function HighlightedStoryReader({
       window.removeEventListener("audio-progress", onProgress);
       if (raf !== null) window.cancelAnimationFrame(raf);
     };
-  }, [payload, timingsSpanSec]);
+  }, [wordWindows]);
 
   React.useEffect(() => {
     if (activeIndex === null) return;

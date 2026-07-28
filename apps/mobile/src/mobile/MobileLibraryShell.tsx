@@ -5879,7 +5879,7 @@ export function MobileLibraryShell(args: {
         try {
           const timings = await apiFetch<{ timings?: unknown }>({
             baseUrl: mobileConfig.apiBaseUrl,
-            path: `/api/mobile/audio-word-timings?slug=${encodeURIComponent(story.slug)}`,
+            path: `/api/mobile/audio-word-timings?slug=${encodeURIComponent(story.slug)}&bookSlug=${encodeURIComponent(book.slug)}`,
             method: "GET",
             token: sessionToken,
             timeoutMs: 8000,

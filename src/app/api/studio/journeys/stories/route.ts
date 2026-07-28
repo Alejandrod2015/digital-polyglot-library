@@ -2,6 +2,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
+import { effectiveAudioStatus } from "@/lib/staleAudioLock";
 
 /**
  * GET /api/studio/journeys/stories?journeyId=xxx; get all stories for a journey
@@ -23,14 +24,20 @@ export async function GET(request: NextRequest) {
       id: true, journeyId: true, slug: true, level: true, topic: true, slotIndex: true,
       status: true, title: true, wordCount: true, vocabCount: true,
       sanityId: true, coverDone: true, coverUrl: true,
-      audioUrl: true, audioStatus: true,
+      audioUrl: true, audioStatus: true, updatedAt: true,
       audioQaStatus: true, audioQaScore: true, audioQaNotes: true,
       auditScore: true, auditOffenders: true, auditedAt: true,
       error: true,
     },
   });
 
-  return NextResponse.json(stories);
+  // Un candado de audio caducado no es "generando": es pendiente. Sin esto,
+  // un render que muere sin ejecutar su catch deja el punto del monitor en
+  // curso para siempre (paso el 2026-07-22 con 18 historias, 6 dias).
+  const ahora = Date.now();
+  return NextResponse.json(
+    stories.map((s) => ({ ...s, audioStatus: effectiveAudioStatus(s.audioStatus, s.updatedAt, ahora) }))
+  );
 }
 
 /**

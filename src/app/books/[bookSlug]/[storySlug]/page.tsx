@@ -10,6 +10,9 @@ import StoryClientGate from "./StoryClientGate";
 import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import StoryContent from "@/components/StoryContent";
 import HighlightedStoryReader from "@/components/HighlightedStoryReader";
+import { coerceAudioWordTimings } from "@/lib/audioWordTimingsTypes";
+import { checkKaraokeUsable } from "@/lib/karaokeQualityGate";
+import { extractStoryPlainText } from "@/lib/storyPlainText";
 import { prisma } from "@/lib/prisma";
 import ScrollToTopOnPathChange from "@/components/ScrollToTopOnPathChange";
 import LevelBadge from "@/components/LevelBadge";
@@ -56,15 +59,40 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   // plain StoryContent path. Mirrors the lookup in
   // src/app/stories/[slug]/page.tsx so the books reader matches iOS,
   // which already consumes the same payload via /api/mobile/audio-word-timings.
-  const journeyStoryRow = await prisma.journeyStory
-    .findFirst({
-      where: { slug: story.slug, status: "published" },
-      select: { audioWordTimings: true },
-    })
-    .catch(() => null);
-  const audioWordTimings = journeyStoryRow?.audioWordTimings ?? null;
-  const hasWordTimings =
-    audioWordTimings !== null && typeof audioWordTimings === "object";
+  // Catalog stories are NOT journey stories: not one of the 140 published
+  // catalog slugs has a matching JourneyStory row, so this lookup alone left
+  // the karaoke off everywhere in books. `CatalogStoryAudioTimings` is where
+  // the catalog alignments actually live (and what the mobile endpoint falls
+  // back to), so read it too.
+  const [journeyStoryRow, catalogTimingsRow] = await Promise.all([
+    prisma.journeyStory
+      .findFirst({
+        where: { slug: story.slug, status: "published" },
+        select: { audioWordTimings: true },
+      })
+      .catch(() => null),
+    // Por la historia concreta de ESTE libro, no por slug suelto: el slug se
+    // repite entre libros (`el-vendedor-ambulante` está en el argentino y en
+    // el colombiano) y buscarlo suelto le daba a una historia el karaoke de la
+    // otra. `story.id` no sirve aquí: en la capa de app es el slug (rowToStory
+    // en src/lib/catalog.ts), así que la relación es la vía correcta.
+    prisma.catalogStoryAudioTimings
+      .findFirst({
+        where: { story: { slug: storySlug, book: { slug: bookSlug } } },
+        select: { audioWordTimings: true },
+      })
+      .catch(() => null),
+  ]);
+  const audioWordTimings =
+    journeyStoryRow?.audioWordTimings ?? catalogTimingsRow?.audioWordTimings ?? null;
+  // Mismo portón de calidad que el lector de journeys: las historias del
+  // catálogo cuyo texto no corresponde al audio se quedan sin karaoke.
+  const karaokeGate = checkKaraokeUsable(
+    story.slug,
+    coerceAudioWordTimings(audioWordTimings),
+    extractStoryPlainText(story.text)
+  );
+  const hasWordTimings = karaokeGate.usable;
 
   const { userId } = await auth();
   const [user, featured] = await Promise.all([
