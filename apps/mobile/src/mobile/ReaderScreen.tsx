@@ -122,7 +122,12 @@ function toBlocks(text: string | null | undefined): StoryBlock[] {
     .map((part) => ({ type: "paragraph" as const, text: part }));
 }
 
-const MAX_HIGHLIGHT_WORDS = 30;
+// Espejo de src/components/StoryContent.tsx: los libros del catálogo apuntan a
+// la densidad de vocabulario de los journeys (~10 palabras por cada 100 leídas),
+// así que una historia de 750 palabras trae hasta ~75 entradas. Este tope es una
+// red de seguridad, no un objetivo: el límite que de verdad importa es
+// MAX_REGEX_SOURCE_LENGTH, que apaga el resaltado si el patrón crece demasiado.
+const MAX_HIGHLIGHT_WORDS = 80;
 const MAX_HIGHLIGHT_WORD_LENGTH = 48;
 const MAX_HIGHLIGHT_WORD_TOKENS = 4;
 const MAX_REGEX_SOURCE_LENGTH = 1400;
