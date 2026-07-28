@@ -52,6 +52,13 @@ type HighlightedStoryContentProps = {
 };
 
 type RenderPiece =
+  | {
+      kind: "phrase";
+      startIndex: number;
+      endIndex: number; // exclusivo
+      text: string;
+      vocabKey: string | null;
+    }
   | { kind: "word"; index: number; token: StoryWordToken; vocabKey: string | null }
   | { kind: "gap"; text: string };
 
@@ -74,6 +81,47 @@ function buildVocabLookup(vocab: VocabItem[]): Map<string, string> {
   return map;
 }
 
+// Entrada de vocabulario más larga que empieza en el token `start`, en tokens.
+// El lookup por token no puede casar NUNCA una entrada de varias palabras
+// ("se lleva a cabo", "patio trasero", "no manches"), porque solo ve una
+// palabra a la vez: esas entradas desaparecían en silencio. Aquí unimos
+// tokens consecutivos con espacios y probamos contra el mismo lookup (que ya
+// registra la superficie completa como clave), de más largo a más corto para
+// que gane la frase entera y no un prefijo. Mismo enfoque que el lector móvil
+// (apps/mobile/src/mobile/ReaderScreen.tsx: matchVocabPhrase).
+function matchVocabPhrase(
+  lookup: Map<string, string>,
+  words: StoryWordToken[],
+  start: number,
+  endExclusive: number,
+  maxTokens: number
+): { canonical: string; spanEnd: number } | null {
+  const cap = Math.min(endExclusive, start + maxTokens);
+  for (let end = cap; end >= start + 2; end -= 1) {
+    const joined = words
+      .slice(start, end)
+      .map((w) => w.text)
+      .join(" ")
+      .toLowerCase();
+    const hit = lookup.get(joined);
+    if (hit) return { canonical: hit, spanEnd: end };
+  }
+  return null;
+}
+
+// Cuántos tokens tiene la clave multi-palabra más larga, para saber hasta
+// dónde mirar hacia delante. Sin claves multi-palabra devuelve 1 y el
+// emparejado de frases queda en nada.
+function maxPhraseTokenSpan(lookup: Map<string, string>): number {
+  let max = 1;
+  for (const key of lookup.keys()) {
+    if (!key.includes(" ")) continue;
+    const n = key.split(/\s+/).length;
+    if (n > max) max = n;
+  }
+  return max;
+}
+
 function buildBlocks(
   payload: AudioWordTimingsPayload,
   vocabLookup: Map<string, string>
@@ -81,6 +129,7 @@ function buildBlocks(
   const text = payload.storyPlainText;
   const words = payload.words;
 
+  const maxPhrase = maxPhraseTokenSpan(vocabLookup);
   const blocks: RenderBlock[] = [];
   let cursor = 0;
   let wordCursor = 0;
@@ -122,6 +171,35 @@ function buildBlocks(
       }
       if (cursor < w.charStart) {
         pieces.push({ kind: "gap", text: text.slice(cursor, w.charStart) });
+      }
+      // Frases primero: si la entrada de vocabulario abarca varios tokens, se
+      // pinta como UNA píldora sobre el tramo entero, con su texto verbatim
+      // (espacios y puntuación interna incluidos).
+      const lastWordInChunk = (() => {
+        let n = wordCursor;
+        while (n < words.length && words[n].charEnd <= chunkEnd) n += 1;
+        return n;
+      })();
+      const phrase =
+        maxPhrase > 1
+          ? matchVocabPhrase(vocabLookup, words, wordCursor, lastWordInChunk, maxPhrase)
+          : null;
+      if (phrase) {
+        const first = words[wordCursor];
+        const last = words[phrase.spanEnd - 1];
+        const canon = phrase.canonical.toLowerCase();
+        const repeat = seenVocab.has(canon);
+        if (!repeat) seenVocab.add(canon);
+        pieces.push({
+          kind: "phrase",
+          startIndex: wordCursor,
+          endIndex: phrase.spanEnd,
+          text: text.slice(first.charStart, last.charEnd),
+          vocabKey: repeat ? null : phrase.canonical,
+        });
+        cursor = last.charEnd;
+        wordCursor = phrase.spanEnd;
+        continue;
       }
       const lower = w.text.toLowerCase();
       let vocabKey = vocabLookup.get(lower) ?? null;
@@ -202,6 +280,42 @@ export default function HighlightedStoryContent({
               }
               return (
                 <React.Fragment key={`g-${blockIndex}-${pieceIndex}`}>{piece.text}</React.Fragment>
+              );
+            }
+            if (piece.kind === "phrase") {
+              // El karaoke va por índice de palabra; la frase se ilumina
+              // mientras el cursor esté DENTRO de su tramo.
+              const activeHere =
+                activeWordIndex !== null &&
+                activeWordIndex >= piece.startIndex &&
+                activeWordIndex < piece.endIndex;
+              return (
+                <span
+                  key={`ph-${piece.startIndex}`}
+                  ref={(el) => {
+                    // Registramos el mismo nodo para cada índice del tramo, si
+                    // no el auto-scroll pierde el ancla dentro de la frase.
+                    if (!onWordRef) return;
+                    for (let i = piece.startIndex; i < piece.endIndex; i += 1) onWordRef(i, el);
+                  }}
+                  data-word-index={piece.startIndex}
+                  {...(piece.vocabKey ? { "data-word": piece.vocabKey } : {})}
+                  {...(piece.vocabKey
+                    ? {
+                        "data-vocab-type":
+                          vocabTypeByLower.get(piece.vocabKey.toLowerCase()) ?? "other",
+                      }
+                    : {})}
+                  className={[
+                    "transition-colors duration-150 rounded",
+                    activeHere ? "bg-[#f8c15c] text-black font-medium" : "",
+                    piece.vocabKey ? "vocab-word" : "",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                >
+                  {piece.text}
+                </span>
               );
             }
             const isActive = activeWordIndex === piece.index;
