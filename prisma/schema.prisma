@@ -542,10 +542,24 @@ model LibraryStory {
 // extend. Populated by `scripts/generateCatalogAudioTimings.ts`; served
 // by `/api/mobile/audio-word-timings` when the journey lookup misses.
 model CatalogStoryAudioTimings {
-  slug              String   @id
+  // La clave es la historia, no el slug. El slug NO es unico en el catalogo:
+  // el 2026-07-28 `el-vendedor-ambulante` existia en el libro argentino y en
+  // el colombiano, y con el slug de clave primaria SOLO CABIA UNA FILA, asi
+  // que la segunda historia no podia tener karaoke ni aunque se alineara.
+  // El comentario viejo decia que no habia tabla padre a la que colgarse;
+  // ahora si la hay (CatalogStory), asi que la relacion es real.
+  storyId           String   @id
+  // Se conserva por trazabilidad y para las apps viejas, que solo saben pedir
+  // por slug. NO es unico: al buscar por slug hay que comprobar antes que ese
+  // slug no este en colision.
+  slug              String
   audioWordTimings  Json
   audioDurationSec  Float?
   updatedAt         DateTime @updatedAt
+
+  story CatalogStory @relation(fields: [storyId], references: [id], onDelete: Cascade)
+
+  @@index([slug])
 }
 
 // Beta tester applications. Public form at /beta writes here; admin reviews
@@ -905,7 +919,8 @@ model CatalogStory {
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
 
-  book CatalogBook @relation(fields: [bookId], references: [id], onDelete: Cascade)
+  book       CatalogBook               @relation(fields: [bookId], references: [id], onDelete: Cascade)
+  audioTimings CatalogStoryAudioTimings?
 
   @@unique([bookId, slug])
   @@index([bookId, position])

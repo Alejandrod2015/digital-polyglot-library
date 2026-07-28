@@ -1190,7 +1190,7 @@ export function ReaderScreen(args: {
       try {
         const data = await apiFetch<{ timings?: AudioWordTimingsPayload | null }>({
           baseUrl: mobileConfig.apiBaseUrl,
-          path: `/api/mobile/audio-word-timings?slug=${encodeURIComponent(story.slug)}`,
+          path: `/api/mobile/audio-word-timings?slug=${encodeURIComponent(story.slug)}&bookSlug=${encodeURIComponent(book.slug)}`,
           method: "GET",
           token: sessionToken,
           timeoutMs: 8000,
@@ -1207,7 +1207,7 @@ export function ReaderScreen(args: {
     return () => {
       cancelled = true;
     };
-  }, [story.slug, sessionToken, cachedWordTimingsRaw]);
+  }, [story.slug, book.slug, sessionToken, cachedWordTimingsRaw]);
 
   // Piloto tap-any-word: trae los glosses "quick lookup" de esta historia.
   // Fetch best-effort; si falla o el journey no tiene bundle, `tapGlosses`

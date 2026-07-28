@@ -71,9 +71,14 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
         select: { audioWordTimings: true },
       })
       .catch(() => null),
+    // Por la historia concreta de ESTE libro, no por slug suelto: el slug se
+    // repite entre libros (`el-vendedor-ambulante` está en el argentino y en
+    // el colombiano) y buscarlo suelto le daba a una historia el karaoke de la
+    // otra. `story.id` no sirve aquí: en la capa de app es el slug (rowToStory
+    // en src/lib/catalog.ts), así que la relación es la vía correcta.
     prisma.catalogStoryAudioTimings
-      .findUnique({
-        where: { slug: story.slug },
+      .findFirst({
+        where: { story: { slug: storySlug, book: { slug: bookSlug } } },
         select: { audioWordTimings: true },
       })
       .catch(() => null),

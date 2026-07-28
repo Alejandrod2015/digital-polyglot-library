@@ -64,13 +64,20 @@ async function main() {
   // which is why 59 published catalog stories never got timings. Read the DB
   // and keep the static dump only as a fallback for rows not migrated yet.
   const candidates: Array<{
+    /** Id de CatalogStory. Es la clave de la fila de timings. Sólo falta en
+     *  las historias que aún viven únicamente en el dump estático. */
+    storyId: string | null;
     slug: string;
     title: string;
     text: string;
     audioUrl: string;
     language: string;
   }> = [];
-  const seen = new Set<string>();
+  // Dos conjuntos, no uno: el slug NO es único entre libros
+  // (`el-vendedor-ambulante`), y deduplicar por slug era la razón de que la
+  // segunda historia con ese slug jamás entrara a la cola de alineación.
+  const seenIds = new Set<string>();
+  const seenSlugs = new Set<string>();
 
   const dbRows = await prisma.catalogStory.findMany({
     where: {
@@ -78,6 +85,7 @@ async function main() {
       book: { published: true },
     },
     select: {
+      id: true,
       slug: true,
       title: true,
       text: true,
@@ -91,9 +99,11 @@ async function main() {
   for (const row of dbRows) {
     const audio = row.audioUrl || row.audio;
     if (!audio || !row.text || !row.slug) continue;
-    if (seen.has(row.slug)) continue;
-    seen.add(row.slug);
+    if (seenIds.has(row.id)) continue;
+    seenIds.add(row.id);
+    seenSlugs.add(row.slug);
     candidates.push({
+      storyId: row.id,
       slug: row.slug,
       title: row.title ?? "",
       text: row.text,
@@ -105,10 +115,11 @@ async function main() {
   for (const book of Object.values(books)) {
     for (const story of book.stories) {
       if (!story.audio || !story.text) continue;
-      if (!story.slug || seen.has(story.slug)) continue;
+      if (!story.slug || seenSlugs.has(story.slug)) continue;
       if (args.slug && story.slug !== args.slug) continue;
-      seen.add(story.slug);
+      seenSlugs.add(story.slug);
       candidates.push({
+        storyId: null,
         slug: story.slug,
         title: story.title ?? "",
         text: story.text,
@@ -127,11 +138,12 @@ async function main() {
   let toProcess = candidates;
   if (!args.force) {
     const existing = await prisma.catalogStoryAudioTimings.findMany({
-      where: { slug: { in: candidates.map((c) => c.slug) } },
-      select: { slug: true },
+      where: { storyId: { in: candidates.map((c) => c.storyId).filter((id): id is string => !!id) } },
+      select: { storyId: true },
     });
-    const existingSet = new Set(existing.map((row) => row.slug));
-    toProcess = candidates.filter((c) => !existingSet.has(c.slug));
+    const existingSet = new Set(existing.map((row) => row.storyId));
+    // Sin storyId no hay fila que escribir, así que tampoco hay nada que saltar.
+    toProcess = candidates.filter((c) => c.storyId && !existingSet.has(c.storyId));
   }
 
   if (args.limit !== null) {
@@ -176,9 +188,11 @@ async function main() {
       // the correction is what made the highlight lag (see the note in
       // src/lib/audioWordTimings.ts). Rows written before that date should be
       // regenerated with this script rather than trusted.
+      if (!story.storyId) throw new Error("sin storyId: no existe en CatalogStory");
       await prisma.catalogStoryAudioTimings.upsert({
-        where: { slug: story.slug },
+        where: { storyId: story.storyId },
         create: {
+          storyId: story.storyId,
           slug: story.slug,
           audioWordTimings: payload as unknown as object,
           audioDurationSec: payload.audioDurationSec,

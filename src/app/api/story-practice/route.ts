@@ -27,7 +27,12 @@ async function getAudioWordTimingsForSlug(slug: string): Promise<AudioWordTiming
   });
   const journey = coerceAudioWordTimings(journeyRow?.audioWordTimings ?? null);
   if (journey) return journey;
-  const catalogRow = await prisma.catalogStoryAudioTimings.findUnique({
+  // Sólo por slug único: el slug se repite entre libros del catálogo
+  // (`el-vendedor-ambulante`), y servir los timings de otra historia sería
+  // peor que no servir ninguno.
+  const conEseSlug = await prisma.catalogStory.count({ where: { slug } });
+  if (conEseSlug > 1) return null;
+  const catalogRow = await prisma.catalogStoryAudioTimings.findFirst({
     where: { slug },
     select: { audioWordTimings: true },
   });
