@@ -77,7 +77,7 @@ export default function HighlightedStoryReader({
       const ct = audio.currentTime;
       if (!Number.isFinite(ct)) return;
       const target = findActiveWordIndex(wordWindows, ct);
-      setActiveIndex(step(target, performance.now()));
+      setActiveIndex(step(target, performance.now(), ct));
     };
 
     const onProgress = () => tick();

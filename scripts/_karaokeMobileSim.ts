@@ -19,7 +19,11 @@ import {
   coerceAudioWordTimings,
   type StoryWordToken,
 } from "../src/lib/audioWordTimingsTypes";
-import { buildWordWindows, findActiveWordIndex } from "../src/lib/karaokeWordWindows";
+import {
+  buildWordWindows,
+  createHighlightStepper,
+  findActiveWordIndex,
+} from "../src/lib/karaokeWordWindows";
 
 const prisma = new PrismaClient();
 
@@ -72,15 +76,30 @@ function sweep(
   words: StoryWordToken[],
   durationSec: number,
   stepSec: number,
-  pick: (t: number) => number | null
+  pick: (t: number) => number | null,
+  missingOut?: number[]
 ): number {
   const seen = new Set<number>();
+  // Wall clock advances with playback, so the minimum-dwell stepper is
+  // exercised exactly as it is at runtime.
+  const step = createHighlightStepper();
+  let nowMs = 0;
   for (let t = 0; t <= durationSec + 0.5; t += stepSec) {
-    const idx = pick(t);
+    const idx = step(pick(t), nowMs, t);
+    nowMs += stepSec * 1000;
+    if (idx !== null) seen.add(idx);
+  }
+  // The real reader keeps ticking after the audio stops (currentTime freezes
+  // at the end), so the stepper still has time to finish catching up. Model
+  // that instead of cutting the clock dead at the last sample.
+  for (let k = 0; k < 120; k += 1) {
+    const idx = step(pick(durationSec), nowMs, durationSec);
+    nowMs += stepSec * 1000;
     if (idx !== null) seen.add(idx);
   }
   let missing = 0;
-  for (let i = 0; i < words.length; i += 1) if (!seen.has(i)) missing += 1;
+  for (let i = 0; i < words.length; i += 1)
+    if (!seen.has(i)) { missing += 1; missingOut?.push(i); }
   return missing;
 }
 
@@ -117,7 +136,19 @@ async function main() {
     }
 
     const m = sweep(payload.words, dur, 0.025, (t) => findActiveKaraokeWordIndex(payload.words, t));
-    const w = sweep(payload.words, dur, 0.0167, (t) => findActiveWordIndex(windows, t));
+    const webMissing: number[] = [];
+    const w = sweep(payload.words, dur, 0.0167, (t) => findActiveWordIndex(windows, t), webMissing);
+    if (webMissing.length > 0) {
+      for (const i of webMissing) {
+        const win = windows.find((x) => x.index === i);
+        const prev = windows[windows.findIndex((x) => x.index === i) - 1];
+        const next = windows[windows.findIndex((x) => x.index === i) + 1];
+        console.log(
+          `  WEB salta ${row.slug} [${i}] "${payload.words[i].text}" ` +
+            `win=${win?.startSec.toFixed(3)} prev=${prev?.startSec.toFixed(3)} next=${next?.startSec.toFixed(3)} dur=${dur.toFixed(2)}`
+        );
+      }
+    }
     words += payload.words.length;
     mobileSkipped += m;
     webSkipped += w;

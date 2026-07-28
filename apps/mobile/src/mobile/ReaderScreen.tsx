@@ -1377,7 +1377,7 @@ export function ReaderScreen(args: {
       lastResolvedIndexRef.current = resolved;
       // Permanencia minima: sin esto, una palabra cuya ventana dura menos que
       // el intervalo de 25 ms se salta aunque el lookup si la devuelva.
-      const shown = step(resolved, Date.now());
+      const shown = step(resolved, Date.now(), queryTime);
       setActiveWordIndex((prev) => (prev === shown ? prev : shown));
     }, 25);
     return () => clearInterval(interval);

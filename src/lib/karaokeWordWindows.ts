@@ -95,8 +95,11 @@ export function buildWordWindows(
 
 /** Shortest time a word may hold the highlight, in ms. */
 export const MIN_DWELL_MS = 45;
-/** Being this far behind means a seek or a rate change, not a narrow window. */
-const CATCHUP_JUMP = 3;
+/** A jump this big in the audio clock is a seek, not playback. */
+const SEEK_JUMP_SEC = 0.4;
+/** Falling this far behind means playback outran us (rate change); give up
+ * catching up word by word and jump, rather than crawl for seconds. */
+const MAX_BACKLOG_WORDS = 12;
 
 /**
  * Guarantees every word is actually SEEN.
@@ -107,25 +110,42 @@ const CATCHUP_JUMP = 3;
  * can step straight over a word that does have a window. That showed up as 35
  * words skipped on web and 70 on mobile even after the tie fix.
  *
- * So the highlight advances one word at a time and holds each for at least
- * MIN_DWELL_MS, catching up on the next tick. It only binds on those narrow
- * windows, since narrated words are ~300 ms apart; a real seek (or falling
- * more than CATCHUP_JUMP words behind) snaps straight to the target instead of
- * crawling.
+ * So the highlight advances ONE word at a time, holding each for at least
+ * MIN_DWELL_MS, and catches up on later ticks. It only binds on those narrow
+ * windows, since narrated words are ~300 ms apart, and at 45 ms per word it
+ * catches up roughly ten times faster than narration advances.
+ *
+ * A skip is only ever allowed when the audio clock itself jumped (a seek), or
+ * when we somehow fell MAX_BACKLOG_WORDS behind. Deciding that from the index
+ * distance alone does not work: a first attempt snapped whenever it was three
+ * words behind, which is exactly what happens on a run of narrow windows, and
+ * it skipped MORE words than it saved (web went from 35 skipped to 51).
  */
 export function createHighlightStepper(minDwellMs: number = MIN_DWELL_MS) {
   let display: number | null = null;
   let lastAdvanceMs = -Infinity;
+  let lastAudioSec: number | null = null;
 
-  return function step(target: number | null, nowMs: number): number | null {
+  return function step(
+    target: number | null,
+    nowMs: number,
+    audioTimeSec?: number
+  ): number | null {
+    const seeked =
+      typeof audioTimeSec === "number" &&
+      lastAudioSec !== null &&
+      (audioTimeSec < lastAudioSec || audioTimeSec - lastAudioSec > SEEK_JUMP_SEC);
+    if (typeof audioTimeSec === "number") lastAudioSec = audioTimeSec;
+
     if (target === null) {
       display = null;
       return null;
     }
     if (
       display === null ||
+      seeked ||
       target < display ||
-      target - display >= CATCHUP_JUMP
+      target - display > MAX_BACKLOG_WORDS
     ) {
       display = target;
       lastAdvanceMs = nowMs;
