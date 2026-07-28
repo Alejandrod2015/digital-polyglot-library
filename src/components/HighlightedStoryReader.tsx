@@ -63,22 +63,14 @@ export default function HighlightedStoryReader({
 
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
 
-  // Los timings de aeneas (sobre todo ES/DE) se corren TARDE de forma
-  // acumulada: el último endSec cae hasta ~0.7-0.8s DESPUÉS del final real del
-  // audio (la corrección de drift ancla al final del silencio). Efecto: el
-  // resaltado empieza sincronizado y se va atrasando hacia el final. Fix de
-  // primer orden: al buscar la palabra activa, escalamos el tiempo de consulta
-  // por `span/duración`, repartiendo el atraso hacia atrás proporcionalmente.
-  // Es no-op cuando los timings ya encajan en el audio (span <= duración).
-  const timingsSpanSec = React.useMemo(() => {
-    if (!payload) return 0;
-    let span = 0;
-    for (const w of payload.words) {
-      const end = typeof w.endSec === "number" ? w.endSec : w.startSec;
-      if (typeof end === "number" && end > span) span = end;
-    }
-    return span;
-  }, [payload]);
+  // Aquí vivía un parche que escalaba el tiempo de consulta por
+  // `span/duración` (tope 6%) porque los timings se pasaban hasta ~0.8s del
+  // final real del audio. Ese desborde lo causaba `correctAlignmentDrift`, ya
+  // eliminado: los timings van crudos de aeneas y encajan solos. Verificado
+  // sobre los 354 payloads guardados el 2026-07-28; el único que aún se pasa
+  // es de una historia sin `audioUrl`, que por tanto nunca reproduce audio.
+  // Si algún día vuelve a haber desborde, el arreglo va en el alineador, no
+  // en un factor de escala aquí.
 
   const wordRefs = React.useRef(new Map<number, HTMLSpanElement | null>());
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -99,15 +91,7 @@ export default function HighlightedStoryReader({
       if (!audio) return;
       const ct = audio.currentTime;
       if (!Number.isFinite(ct)) return;
-      // Compensa el atraso acumulado escalando el tiempo de consulta hacia
-      // adelante cuando los timings se pasan del final real. Cap al 6% para no
-      // sobrecorregir si algún dato viniera raro; factor=1 (no-op) si encajan.
-      const dur = audio.duration;
-      let queryTime = ct;
-      if (Number.isFinite(dur) && dur > 0 && timingsSpanSec > dur) {
-        queryTime = ct * Math.min(timingsSpanSec / dur, 1.06);
-      }
-      const idx = findActiveWordIndex(payload.words, queryTime);
+      const idx = findActiveWordIndex(payload.words, ct);
       setActiveIndex(idx);
     };
 
@@ -126,7 +110,7 @@ export default function HighlightedStoryReader({
       window.removeEventListener("audio-progress", onProgress);
       if (raf !== null) window.cancelAnimationFrame(raf);
     };
-  }, [payload, timingsSpanSec]);
+  }, [payload]);
 
   React.useEffect(() => {
     if (activeIndex === null) return;
