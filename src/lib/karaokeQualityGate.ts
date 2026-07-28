@@ -54,8 +54,12 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
   //     por libro, cada una con su audio correcto. Lo resuelve el chequeo de
   //     pertenencia de arriba, no una lista.
 
-  // SHORT TEXT: the words match but the audio narrates far more of them; the
-  // stored text is an abridged version. Restore the text.
+  // TEXTO RECORTADO: las palabras coinciden pero el audio narra bastantes mas.
+  // El texto guardado es una version condensada del manuscrito del libro, que
+  // SI conserva el original (Google Doc enlazado desde la hoja "Biblioteca").
+  // Se arregla reimportando la narracion del manuscrito y re-alineando; hecho
+  // ya en la-finca-en-la-montana, que paso de 0,760 s a 0,190 s de error y
+  // salio de esta lista.
   "la-excursion-a-la-sierra-nevada", // 374 words vs 781 heard, 58.0 s
   "la-fiesta-en-cartagena", //          40.9 s
   "la-leyenda-de-la-llorona", //        39.6 s
@@ -63,7 +67,6 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
   "el-tren-de-la-sabana", //             2.8 s
   "la-feria-de-las-flores", //           1.3 s
   "el-festival-de-la-arepa", //          0.8 s
-  "la-finca-en-la-montana", //           0.8 s
   "el-misterio-de-la-catedral-de-sal", //0.7 s
   "el-viaje-a-villa-de-leyva", //        0.7 s
   "el-secreto-del-cafe", //              0.5 s
