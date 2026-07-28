@@ -54,33 +54,24 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
   //     por libro, cada una con su audio correcto. Lo resuelve el chequeo de
   //     pertenencia de arriba, no una lista.
 
-  // TEXTO RECORTADO: las palabras coinciden pero el audio narra bastantes mas.
-  // El texto guardado es una version condensada del manuscrito del libro, que
-  // SI conserva el original (Google Doc enlazado desde la hoja "Biblioteca").
-  // Se arregla reimportando la narracion del manuscrito y re-alineando; hecho
-  // ya en la-finca-en-la-montana, que paso de 0,760 s a 0,190 s de error y
-  // salio de esta lista.
-  "la-excursion-a-la-sierra-nevada", // 374 words vs 781 heard, 58.0 s
-  "la-fiesta-en-cartagena", //          40.9 s
-  "la-leyenda-de-la-llorona", //        39.6 s
-  "el-carnaval-de-barranquilla", //     31.2 s
-  "el-tren-de-la-sabana", //             2.8 s
-  "la-feria-de-las-flores", //           1.3 s
-  "el-festival-de-la-arepa", //          0.8 s
-  "el-misterio-de-la-catedral-de-sal", //0.7 s
-  "el-viaje-a-villa-de-leyva", //        0.7 s
-  "el-secreto-del-cafe", //              0.5 s
+  // TEXTO RECORTADO: arreglado el 2026-07-28. El texto guardado era una
+  // version condensada del manuscrito del libro (Google Doc enlazado desde la
+  // hoja "Biblioteca"). Reimportadas las 20 historias de
+  // colombian-spanish-stories-for-beginners desde ese manuscrito y
+  // re-alineadas: el ratio de palabras oidas/texto paso de 1,56 a 1,00 y el
+  // error mediano del libro de hasta 58 s a 0,235 s. 19 de las 20 salieron de
+  // esta lista; la que queda esta abajo, y ya no por contenido.
 
-  // WEAK ALIGNMENT: content is fine (93-99% of words match, counts match) but
-  // the aligner placed them ~0.5 s off, which puts the highlight on the wrong
-  // word most of the time. Re-aligning was tried and does not fix it: aeneas
-  // is not deterministic, and a second pass moved these by ±0.05 s in both
-  // directions. Cause unknown; il-libro-dell-abisso at least carries an
-  // ambient bed that hides its pauses.
-  "el-estudiante-universitario", // 0.57 s
-  "el-misterio-del-bosque", //      0.51 s
-  "il-libro-dell-abisso", //        0.48 s
-  "l-ultimo-respiro-del-campanile", // 0.45 s
+  // ALINEACION FLOJA: el contenido esta bien (93-99% de las palabras del texto
+  // se oyen, y en la misma cantidad) pero el alineador las coloca ~0,5 s
+  // corridas, lo que deja el resaltado sobre la palabra equivocada casi todo el
+  // tiempo. Re-alinear NO lo arregla: aeneas no es determinista y una segunda
+  // pasada mueve el resultado unas centesimas en cualquier direccion (probado
+  // en cinco de estas). Causa desconocida.
+  "la-leyenda-de-la-llorona", //     0,54 s  (texto ya restaurado; ratio 0,98)
+  "el-estudiante-universitario", //  0,57 s
+  "il-libro-dell-abisso", //         0,48 s
+  "l-ultimo-respiro-del-campanile", // 0,45 s
 
   // Not user-facing today (deprecated / unpublished journeys), listed so they
   // cannot start showing a bad highlight if those journeys are ever opened.
