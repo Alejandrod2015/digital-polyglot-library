@@ -7,7 +7,11 @@ import HighlightedStoryContent from "@/components/HighlightedStoryContent";
 // `audioWordTimings` que arrastra prisma al cliente y peta el build
 // con "PrismaClient is unable to run in this browser environment".
 import { coerceAudioWordTimings } from "@/lib/audioWordTimingsTypes";
-import { buildWordWindows, findActiveWordIndex } from "@/lib/karaokeWordWindows";
+import {
+  buildWordWindows,
+  createHighlightStepper,
+  findActiveWordIndex,
+} from "@/lib/karaokeWordWindows";
 
 type VocabItem = { word: string; surface?: string; definition: string; type?: string };
 
@@ -63,13 +67,17 @@ export default function HighlightedStoryReader({
   React.useEffect(() => {
     if (wordWindows.length === 0) return;
 
+    // Holds each word on screen long enough to be seen; see
+    // createHighlightStepper for why the raw clock index is not enough.
+    const step = createHighlightStepper();
+
     const tick = () => {
       const audio = document.querySelector("audio");
       if (!audio) return;
       const ct = audio.currentTime;
       if (!Number.isFinite(ct)) return;
-      const idx = findActiveWordIndex(wordWindows, ct);
-      setActiveIndex(idx);
+      const target = findActiveWordIndex(wordWindows, ct);
+      setActiveIndex(step(target, performance.now()));
     };
 
     const onProgress = () => tick();

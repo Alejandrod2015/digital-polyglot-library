@@ -14,6 +14,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { getActiveMobileSession } from "@/lib/mobileSession";
 import { coerceAudioWordTimings } from "@/lib/audioWordTimings";
+import { checkKaraokeUsable } from "@/lib/karaokeQualityGate";
 import { prisma } from "@/lib/prisma";
 
 export async function GET(req: NextRequest): Promise<Response> {
@@ -33,9 +34,13 @@ export async function GET(req: NextRequest): Promise<Response> {
       select: { audioWordTimings: true },
     });
 
+    // Mismo portón de calidad que la web: si el texto guardado no
+    // corresponde al audio, la app recibe `null` y muestra el lector limpio
+    // en vez de un resaltado seguro de sí mismo pero equivocado.
     const journeyTimings = coerceAudioWordTimings(journeyRow?.audioWordTimings ?? null);
     if (journeyTimings) {
-      return NextResponse.json({ timings: journeyTimings });
+      const gate = checkKaraokeUsable(slug, journeyTimings);
+      return NextResponse.json({ timings: gate.usable ? journeyTimings : null });
     }
 
     const catalogRow = await prisma.catalogStoryAudioTimings.findUnique({
@@ -43,7 +48,8 @@ export async function GET(req: NextRequest): Promise<Response> {
       select: { audioWordTimings: true },
     });
     const catalogTimings = coerceAudioWordTimings(catalogRow?.audioWordTimings ?? null);
-    return NextResponse.json({ timings: catalogTimings });
+    const catalogGate = checkKaraokeUsable(slug, catalogTimings);
+    return NextResponse.json({ timings: catalogGate.usable ? catalogTimings : null });
   } catch (error) {
     console.error("[mobile/audio-word-timings] failed", error);
     return NextResponse.json({ timings: null });

@@ -39,6 +39,14 @@ import { getCoverUrl } from "./coverUrl";
 import { apiFetch } from "../lib/api";
 import { mobileConfig } from "../config";
 import { extractStoryPlainText } from "../../../../src/lib/storyPlainText";
+// MISMO codigo que el lector web, para que el karaoke se comporte igual en
+// las dos plataformas: reparto de empates identico y permanencia minima en
+// pantalla para las palabras cuya ventana es mas corta que el muestreo.
+import {
+  buildWordWindows,
+  createHighlightStepper,
+  findActiveWordIndex,
+} from "../../../../src/lib/karaokeWordWindows";
 
 // Piloto tap-any-word: cada palabra FUERA del vocab curado puede tener un
 // "quick lookup" gloss ({ g: traducción EN, t?: tipo, r?: register }), servido
@@ -1034,83 +1042,10 @@ function renderKaraokeParagraph(args: {
   return <Text style={baseTextStyle}>{nodes}</Text>;
 }
 
-function findActiveKaraokeWordIndex(
-  words: StoryWordToken[],
-  positionSec: number
-): number | null {
-  // La ventana efectiva de cada token es [startSec, próximo startSec
-  // estrictamente mayor). Aeneas emite zero-duration windows
-  // (startSec === endSec) para palabras cortas/conectores; por eso
-  // ignoramos endSec y caminamos por startSecs.
-  //
-  // CLUSTER FIX: aeneas también asigna el MISMO startSec a varias
-  // palabras consecutivas cuando se pronuncian fusionadas ("y la",
-  // "de los", "what's the"...). Si solo devolviéramos el primer
-  // índice del cluster, los siguientes nunca se resaltarían. Acá
-  // detectamos el cluster y repartimos su ventana en partes iguales
-  // entre las palabras del cluster; la mejor aproximación cuando
-  // aeneas no midió mejor.
-  let last: number | null = null;
-  let i = 0;
-  while (i < words.length) {
-    const w = words[i];
-    if (w.startSec === null) {
-      i += 1;
-      continue;
-    }
-    if (positionSec < w.startSec) break;
-
-    const clusterStart = w.startSec;
-    const cluster: number[] = [i];
-    let j = i + 1;
-    while (j < words.length) {
-      const c = words[j].startSec;
-      if (c === null) {
-        j += 1;
-        continue;
-      }
-      if (c === clusterStart) {
-        cluster.push(j);
-        j += 1;
-        continue;
-      }
-      break;
-    }
-
-    let nextStart: number | null = null;
-    let k = j;
-    while (k < words.length) {
-      const c = words[k].startSec;
-      if (c !== null && c > clusterStart) {
-        nextStart = c;
-        break;
-      }
-      k += 1;
-    }
-
-    if (nextStart === null || positionSec < nextStart) {
-      if (cluster.length === 1) return cluster[0];
-      // Reparto equitativo. En la cola (sin nextStart definido) usamos
-      // un slot fijo de 150 ms; duración típica de una palabra corta
-      // narrada; así el último cluster del audio también avanza por
-      // sus palabras en vez de quedarse pegado en la primera.
-      const FALLBACK_SLOT_SEC = 0.15;
-      const slot = nextStart !== null
-        ? (nextStart - clusterStart) / cluster.length
-        : FALLBACK_SLOT_SEC;
-      const offset = positionSec - clusterStart;
-      const idxInCluster = Math.min(
-        cluster.length - 1,
-        Math.max(0, Math.floor(offset / slot))
-      );
-      return cluster[idxInCluster];
-    }
-
-    last = cluster[cluster.length - 1];
-    i = j;
-  }
-  return last;
-}
+// El lookup propio de la app (`findActiveKaraokeWordIndex`, con reparto de
+// cluster en partes iguales) se reemplazo por `buildWordWindows` +
+// `findActiveWordIndex` de src/lib/karaokeWordWindows, que es el mismo que
+// usa la web. Antes cada plataforma repartia los empates a su manera.
 
 export function ReaderScreen(args: {
   book: Book;
@@ -1367,6 +1302,19 @@ export function ReaderScreen(args: {
     lastResolvedIndexRef.current = null;
     lastSnapPositionRef.current = null;
   }, [story.id]);
+  // Ventanas de resaltado, en el MISMO index space que usa el renderer
+  // (`effectiveWordTimings.words`, ya sin etiquetas de speaker).
+  const karaokeWindows = useMemo(
+    () =>
+      effectiveWordTimings
+        ? buildWordWindows(
+            effectiveWordTimings.words,
+            effectiveWordTimings.audioDurationSec,
+          )
+        : [],
+    [effectiveWordTimings],
+  );
+
   useEffect(() => {
     // El cursor solo avanza cuando hay wordTimings reales del backend.
     // Para journeys vienen de `JourneyStory.audioWordTimings` (aeneas).
@@ -1380,6 +1328,7 @@ export function ReaderScreen(args: {
       lastResolvedIndexRef.current = null;
       return;
     }
+    const step = createHighlightStepper();
     const interval = setInterval(() => {
       const snap = lastPlaybackRef.current;
       if (!snap) return;
@@ -1402,7 +1351,7 @@ export function ReaderScreen(args: {
       // resolviéramos contra `wordTimings.words` sin filtrar, el
       // activeWordIndex apuntaría a un slot que el renderer ya no
       // tiene y el highlight saltaría a la palabra equivocada.
-      const rawIdx = findActiveKaraokeWordIndex(effectiveWordTimings.words, queryTime);
+      const rawIdx = findActiveWordIndex(karaokeWindows, queryTime);
       const lastIdx = lastResolvedIndexRef.current;
       // ¿Este cómputo se apoya en un tick REAL nuevo, o es pura extrapolación
       // sobre el snapshot anterior? Al tick real le creemos siempre; el
@@ -1426,10 +1375,13 @@ export function ReaderScreen(args: {
         if (suppress) resolved = lastIdx;
       }
       lastResolvedIndexRef.current = resolved;
-      setActiveWordIndex((prev) => (prev === resolved ? prev : resolved));
+      // Permanencia minima: sin esto, una palabra cuya ventana dura menos que
+      // el intervalo de 25 ms se salta aunque el lookup si la devuelva.
+      const shown = step(resolved, Date.now());
+      setActiveWordIndex((prev) => (prev === shown ? prev : shown));
     }, 25);
     return () => clearInterval(interval);
-  }, [wordTimings, effectiveWordTimings, timingsSpanSec, story.id]);
+  }, [wordTimings, effectiveWordTimings, karaokeWindows, timingsSpanSec, story.id]);
 
   // Smart autoscroll para historias con karaoke (wordTimings).
   //

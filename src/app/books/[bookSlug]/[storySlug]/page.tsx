@@ -10,6 +10,8 @@ import StoryClientGate from "./StoryClientGate";
 import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import StoryContent from "@/components/StoryContent";
 import HighlightedStoryReader from "@/components/HighlightedStoryReader";
+import { coerceAudioWordTimings } from "@/lib/audioWordTimingsTypes";
+import { checkKaraokeUsable } from "@/lib/karaokeQualityGate";
 import { prisma } from "@/lib/prisma";
 import ScrollToTopOnPathChange from "@/components/ScrollToTopOnPathChange";
 import LevelBadge from "@/components/LevelBadge";
@@ -77,8 +79,10 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   ]);
   const audioWordTimings =
     journeyStoryRow?.audioWordTimings ?? catalogTimingsRow?.audioWordTimings ?? null;
-  const hasWordTimings =
-    audioWordTimings !== null && typeof audioWordTimings === "object";
+  // Mismo portón de calidad que el lector de journeys: las historias del
+  // catálogo cuyo texto no corresponde al audio se quedan sin karaoke.
+  const karaokeGate = checkKaraokeUsable(story.slug, coerceAudioWordTimings(audioWordTimings));
+  const hasWordTimings = karaokeGate.usable;
 
   const { userId } = await auth();
   const [user, featured] = await Promise.all([

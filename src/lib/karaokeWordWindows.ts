@@ -93,6 +93,52 @@ export function buildWordWindows(
   return out;
 }
 
+/** Shortest time a word may hold the highlight, in ms. */
+export const MIN_DWELL_MS = 45;
+/** Being this far behind means a seek or a rate change, not a narrow window. */
+const CATCHUP_JUMP = 3;
+
+/**
+ * Guarantees every word is actually SEEN.
+ *
+ * Splitting a tie gives each word a window, but some of those windows come out
+ * shorter than the sampling period (measured over 210 stories: 139 windows
+ * under one 60 fps frame, 251 under the app's 25 ms interval), so the clock
+ * can step straight over a word that does have a window. That showed up as 35
+ * words skipped on web and 70 on mobile even after the tie fix.
+ *
+ * So the highlight advances one word at a time and holds each for at least
+ * MIN_DWELL_MS, catching up on the next tick. It only binds on those narrow
+ * windows, since narrated words are ~300 ms apart; a real seek (or falling
+ * more than CATCHUP_JUMP words behind) snaps straight to the target instead of
+ * crawling.
+ */
+export function createHighlightStepper(minDwellMs: number = MIN_DWELL_MS) {
+  let display: number | null = null;
+  let lastAdvanceMs = -Infinity;
+
+  return function step(target: number | null, nowMs: number): number | null {
+    if (target === null) {
+      display = null;
+      return null;
+    }
+    if (
+      display === null ||
+      target < display ||
+      target - display >= CATCHUP_JUMP
+    ) {
+      display = target;
+      lastAdvanceMs = nowMs;
+      return display;
+    }
+    if (target > display && nowMs - lastAdvanceMs >= minDwellMs) {
+      display += 1;
+      lastAdvanceMs = nowMs;
+    }
+    return display;
+  };
+}
+
 /**
  * Index (into the original words array) of the word being spoken at
  * `currentTime`, or null before the first one starts.
