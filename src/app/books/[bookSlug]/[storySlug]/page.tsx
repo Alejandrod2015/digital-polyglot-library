@@ -56,13 +56,27 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   // plain StoryContent path. Mirrors the lookup in
   // src/app/stories/[slug]/page.tsx so the books reader matches iOS,
   // which already consumes the same payload via /api/mobile/audio-word-timings.
-  const journeyStoryRow = await prisma.journeyStory
-    .findFirst({
-      where: { slug: story.slug, status: "published" },
-      select: { audioWordTimings: true },
-    })
-    .catch(() => null);
-  const audioWordTimings = journeyStoryRow?.audioWordTimings ?? null;
+  // Catalog stories are NOT journey stories: not one of the 140 published
+  // catalog slugs has a matching JourneyStory row, so this lookup alone left
+  // the karaoke off everywhere in books. `CatalogStoryAudioTimings` is where
+  // the catalog alignments actually live (and what the mobile endpoint falls
+  // back to), so read it too.
+  const [journeyStoryRow, catalogTimingsRow] = await Promise.all([
+    prisma.journeyStory
+      .findFirst({
+        where: { slug: story.slug, status: "published" },
+        select: { audioWordTimings: true },
+      })
+      .catch(() => null),
+    prisma.catalogStoryAudioTimings
+      .findUnique({
+        where: { slug: story.slug },
+        select: { audioWordTimings: true },
+      })
+      .catch(() => null),
+  ]);
+  const audioWordTimings =
+    journeyStoryRow?.audioWordTimings ?? catalogTimingsRow?.audioWordTimings ?? null;
   const hasWordTimings =
     audioWordTimings !== null && typeof audioWordTimings === "object";
 

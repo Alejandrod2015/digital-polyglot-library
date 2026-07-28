@@ -25,8 +25,9 @@ config({ path: ".env" });
 
 import { PrismaClient } from "../src/generated/prisma";
 import { books } from "../src/data/books";
-import { alignStoryAudio } from "../src/lib/audioWordTimings";
-import { correctAlignmentDrift } from "../src/lib/correctAlignmentDrift";
+// Import the alignment directly: the `audioWordTimings` barrel sits next to
+// lib/prisma, whose `server-only` guard aborts the process under tsx.
+import { alignStoryAudio } from "../src/lib/alignStoryAudio";
 
 type Args = {
   slug: string | null;
@@ -58,8 +59,10 @@ async function main() {
   const args = parseArgs(process.argv.slice(2));
   const prisma = new PrismaClient();
 
-  // Flatten the catalog (5 books × ~16-20 stories) into a single list
-  // of candidates that have both text and audio. Skip the rest silently.
+  // The catalog lives in the DB (`CatalogStory`), not in the static dump:
+  // src/data/books only carries the 4 books that came from the Sanity dump,
+  // which is why 59 published catalog stories never got timings. Read the DB
+  // and keep the static dump only as a fallback for rows not migrated yet.
   const candidates: Array<{
     slug: string;
     title: string;
@@ -67,11 +70,44 @@ async function main() {
     audioUrl: string;
     language: string;
   }> = [];
+  const seen = new Set<string>();
+
+  const dbRows = await prisma.catalogStory.findMany({
+    where: {
+      ...(args.slug ? { slug: args.slug } : {}),
+      book: { published: true },
+    },
+    select: {
+      slug: true,
+      title: true,
+      text: true,
+      audio: true,
+      audioUrl: true,
+      language: true,
+      book: { select: { language: true } },
+    },
+    orderBy: [{ bookId: "asc" }, { position: "asc" }],
+  });
+  for (const row of dbRows) {
+    const audio = row.audioUrl || row.audio;
+    if (!audio || !row.text || !row.slug) continue;
+    if (seen.has(row.slug)) continue;
+    seen.add(row.slug);
+    candidates.push({
+      slug: row.slug,
+      title: row.title ?? "",
+      text: row.text,
+      audioUrl: audio,
+      language: row.language ?? row.book?.language ?? "spanish",
+    });
+  }
+
   for (const book of Object.values(books)) {
     for (const story of book.stories) {
       if (!story.audio || !story.text) continue;
-      if (!story.slug) continue;
+      if (!story.slug || seen.has(story.slug)) continue;
       if (args.slug && story.slug !== args.slug) continue;
+      seen.add(story.slug);
       candidates.push({
         slug: story.slug,
         title: story.title ?? "",
@@ -133,39 +169,28 @@ async function main() {
         storyId: story.slug,
       });
 
-      // Multi-anchor drift correction: aeneas reparte los tokens
-      // linealmente dentro de cada bloque, así que cualquier pausa
-      // larga del narrador (post-título, entre párrafos, entre
-      // frases) introduce drift acumulado. Detectamos todos los
-      // silencios ≥ 0.5 s con ffmpeg y anclamos el primer token
-      // después de cada silencio a `silence.end` si quedó adelantado.
-      // El offset solo crece; nunca empujamos tokens hacia atrás.
-      const { tokens: correctedTokens, anchors, totalOffsetApplied } =
-        await correctAlignmentDrift({
-          audioUrl: story.audioUrl,
-          tokens: payload.words,
-        });
-      const correctedPayload = { ...payload, words: correctedTokens };
-
+      // The word timings are stored exactly as aeneas returns them. This
+      // script used to run `correctAlignmentDrift` on top of the payload --
+      // which alignStoryAudio was ALSO applying internally, so the 80 rows
+      // written on 2026-05-11 carry that shift twice. Measured 2026-07-27:
+      // the correction is what made the highlight lag (see the note in
+      // src/lib/audioWordTimings.ts). Rows written before that date should be
+      // regenerated with this script rather than trusted.
       await prisma.catalogStoryAudioTimings.upsert({
         where: { slug: story.slug },
         create: {
           slug: story.slug,
-          audioWordTimings: correctedPayload as unknown as object,
-          audioDurationSec: correctedPayload.audioDurationSec,
+          audioWordTimings: payload as unknown as object,
+          audioDurationSec: payload.audioDurationSec,
         },
         update: {
-          audioWordTimings: correctedPayload as unknown as object,
-          audioDurationSec: correctedPayload.audioDurationSec,
+          audioWordTimings: payload as unknown as object,
+          audioDurationSec: payload.audioDurationSec,
         },
       });
 
       const elapsed = Math.round((Date.now() - t0) / 1000);
-      const driftNote =
-        anchors.length > 0
-          ? ` anchors=${anchors.length} totalDrift+${totalOffsetApplied.toFixed(2)}s`
-          : "";
-      console.log(`${label} OK (${correctedTokens.length} tokens, ${elapsed}s${driftNote})`);
+      console.log(`${label} OK (${payload.words.length} tokens, ${elapsed}s)`);
       ok += 1;
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
