@@ -1,5 +1,6 @@
 import { Feather } from "@expo/vector-icons";
 import { Image, StyleSheet, View } from "react-native";
+import Svg, { Circle, Ellipse, Line } from "react-native-svg";
 
 // Real Mexican coat of arms (public-domain govt emblem), overlaid on the
 // tricolor's white band so Mexico reads faithfully at coin scale.
@@ -31,7 +32,17 @@ type FlagSpec =
   | { kind: "us" }
   | { kind: "uk" }
   | { kind: "brazil" }
-  | { kind: "mexico" };
+  | { kind: "mexico" }
+  | { kind: "all" };
+
+// "Todos los idiomas" no es un país, así que no tiene bandera. Antes cada
+// superficie improvisaba: el sheet metía un icono de Feather en el aro de
+// banderas y el chip de Explore fingía Spanish + latam (o sea, decía
+// "ES · Colombia" mientras el filtro real era TODOS). Este spec es el token
+// único para ese estado: mismo cuadrado redondeado y mismo borde que las
+// banderas, con un globo dibujado para que se lea como una pieza de la misma
+// familia y no como un placeholder.
+export const ALL_LANGUAGES = "__all__";
 
 // Colombia flag spec, used as the LATAM variant for Spanish. We use
 // a dedicated weighted hBands kind because the Colombian flag has a
@@ -131,6 +142,8 @@ function normLang(language: string | null | undefined): string | undefined {
 }
 
 function pickSpec(language: string | null | undefined, variant?: string | null): FlagSpec | undefined {
+  const raw = (language ?? "").trim().toLowerCase();
+  if (raw === ALL_LANGUAGES || raw === "all") return { kind: "all" };
   const lang = normLang(language);
   if (!lang) return undefined;
   const v = variant?.trim().toLowerCase() ?? "";
@@ -188,6 +201,41 @@ export function LanguageFlag({
     return (
       <View style={[containerStyle, styles.center]}>
         <Feather name="globe" size={Math.max(12, size * 0.55)} color="#cdd9ec" />
+      </View>
+    );
+  }
+
+  if (spec.kind === "all") {
+    // Globo dibujado a mano: círculo + meridiano + dos paralelos. Feather
+    // "globe" a este tamaño queda como un glifo fino de UI al lado de las
+    // banderas; este trazo comparte grosor y color con el resto del chip.
+    const stroke = "#dbe9ff";
+    const w = Math.max(1.2, size * 0.055);
+    const r = size * 0.33;
+    const c = size / 2;
+    return (
+      <View style={[containerStyle, styles.center, { backgroundColor: "#123a6b" }]}>
+        <Svg width={size} height={size}>
+          <Circle cx={c} cy={c} r={r} stroke={stroke} strokeWidth={w} fill="none" />
+          <Ellipse cx={c} cy={c} rx={r * 0.48} ry={r} stroke={stroke} strokeWidth={w} fill="none" />
+          <Line x1={c - r} y1={c} x2={c + r} y2={c} stroke={stroke} strokeWidth={w} />
+          <Line
+            x1={c - r * 0.82}
+            y1={c - r * 0.5}
+            x2={c + r * 0.82}
+            y2={c - r * 0.5}
+            stroke={stroke}
+            strokeWidth={w}
+          />
+          <Line
+            x1={c - r * 0.82}
+            y1={c + r * 0.5}
+            x2={c + r * 0.82}
+            y2={c + r * 0.5}
+            stroke={stroke}
+            strokeWidth={w}
+          />
+        </Svg>
       </View>
     );
   }

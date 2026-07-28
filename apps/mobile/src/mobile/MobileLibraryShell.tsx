@@ -62,7 +62,7 @@ import { PracticeOrbit, type PracticeModeKey as OrbitModeKey } from "./PracticeO
 import { PracticeSpeaking } from "./PracticeSpeaking";
 import { PulseDots } from "./PulseDots";
 import { HomeSkeleton } from "./HomeSkeleton";
-import { LanguageFlag, regionFamily } from "./LanguageFlag";
+import { ALL_LANGUAGES, LanguageFlag, regionFamily } from "./LanguageFlag";
 import { JourneysPanel, type JourneysPanelTrack } from "./JourneysPanel";
 import { JourneyIcon } from "./JourneyIcon";
 import { LegalSheet } from "./LegalSheet";
@@ -11424,22 +11424,20 @@ export function MobileLibraryShell(args: {
               accessibilityRole="button"
               accessibilityLabel="Choose explore language"
             >
+              {/* El chip refleja el filtro REAL. Con "All languages" activo
+                  muestra el globo + ALL; antes fingía Spanish + latam, así que
+                  decía "ES · Colombia" mientras el filtro no filtraba nada. */}
               <LanguageFlag
-                language={selectedExploreLanguage === "All" ? "Spanish" : selectedExploreLanguage}
+                language={selectedExploreLanguage === "All" ? ALL_LANGUAGES : selectedExploreLanguage}
                 variant={
-                  selectedExploreLanguage === "All" || selectedExploreLanguage === "Spanish"
-                    ? "latam"
-                    : activeJourneyFlagVariant
+                  selectedExploreLanguage === "Spanish" ? "latam" : activeJourneyFlagVariant
                 }
                 size={28}
               />
               <Text style={styles.favoritesHeroFlagCode}>
-                {/* Show the language code (ES), not "ALL": the flag is a
-                    specific country, so "ALL" beside it reads as a mismatch.
-                    Mirror the flag's default (Spanish) when the filter is All. */}
-                {formatLanguageCode(
-                  selectedExploreLanguage === "All" ? "Spanish" : selectedExploreLanguage
-                )}
+                {selectedExploreLanguage === "All"
+                  ? "ALL"
+                  : formatLanguageCode(selectedExploreLanguage)}
               </Text>
               <Feather name="chevron-down" size={14} color="rgba(255,255,255,0.55)" />
             </Pressable>

@@ -10,7 +10,7 @@ import {
   View,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { LanguageFlag } from "./LanguageFlag";
+import { ALL_LANGUAGES, LanguageFlag } from "./LanguageFlag";
 import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
 
 /**
@@ -281,7 +281,8 @@ export function LanguageSwitchSheet({
                   },
                 ]}
               >
-                <Feather name="globe" size={22} color="#dbe9ff" />
+                {/* Mismo token que el chip de Explore, no un icono suelto. */}
+                <LanguageFlag language={ALL_LANGUAGES} size={28} />
               </View>
 
               <View style={styles.rowMeta}>
