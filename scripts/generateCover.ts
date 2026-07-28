@@ -10,9 +10,12 @@
  * back to a free-form prompt is refused at the shell.
  *
  * Usage:
- *   tsx scripts/generateCover.ts <storyId> <scene-file> [--dry] [--set]
- *     --dry  print the composed prompt and exit (no Flux call, no cost)
- *     --set  after generating, write coverUrl + coverDone=true to the DB
+ *   tsx scripts/generateCover.ts <storyId> <scene-file> [--dry] [--set] [--catalog]
+ *     --dry      print the composed prompt and exit (no Flux call, no cost)
+ *     --set      after generating, write coverUrl (+ coverDone for journeys) to the DB
+ *     --catalog  the id/slug refers to a CatalogStory (books) instead of a
+ *                JourneyStory. Same locked style; only the lookup and the
+ *                destination row change.
  *
  * Env (script does not auto-load dotenv):
  *   NODE_OPTIONS="--conditions=react-server -r dotenv/config" \
@@ -31,8 +34,11 @@ async function main() {
   const sceneFile = process.argv[3];
   const dry = process.argv.includes("--dry");
   const set = process.argv.includes("--set");
+  const catalog = process.argv.includes("--catalog");
   if (!storyId || !sceneFile) {
-    console.error("Usage: tsx scripts/generateCover.ts <storyId> <scene-file> [--dry] [--set]");
+    console.error(
+      "Usage: tsx scripts/generateCover.ts <storyId> <scene-file> [--dry] [--set] [--catalog]"
+    );
     process.exit(2);
   }
 
@@ -52,10 +58,17 @@ async function main() {
     return;
   }
 
-  const story = await prisma.journeyStory.findUnique({
-    where: { id: storyId },
-    select: { id: true, slug: true, title: true },
-  });
+  // Catalog stories (books) accept either the composite id (`bookId:slug`) or
+  // the plain slug, since the slug is what an operator actually has at hand.
+  const story = catalog
+    ? await prisma.catalogStory.findFirst({
+        where: { OR: [{ id: storyId }, { slug: storyId }] },
+        select: { id: true, slug: true, title: true },
+      })
+    : await prisma.journeyStory.findUnique({
+        where: { id: storyId },
+        select: { id: true, slug: true, title: true },
+      });
   if (!story) throw new Error(`Story not found: ${storyId}`);
 
   const fileBase = sanitizeFileChunk(story.title || "story-cover");
@@ -72,10 +85,18 @@ async function main() {
   console.log(`URL: ${uploaded.url}`);
 
   if (set) {
-    await prisma.journeyStory.update({
-      where: { id: storyId },
-      data: { coverUrl: uploaded.url, coverDone: true },
-    });
+    if (catalog) {
+      // CatalogStory has no `coverDone` flag; `coverUrl` alone drives the reader.
+      await prisma.catalogStory.update({
+        where: { id: story.id },
+        data: { coverUrl: uploaded.url },
+      });
+    } else {
+      await prisma.journeyStory.update({
+        where: { id: story.id },
+        data: { coverUrl: uploaded.url, coverDone: true },
+      });
+    }
     console.log(`live: ${story.slug} coverUrl set`);
   }
 }
