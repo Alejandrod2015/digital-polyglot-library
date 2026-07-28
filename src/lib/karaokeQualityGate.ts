@@ -68,10 +68,14 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
   // tiempo. Re-alinear NO lo arregla: aeneas no es determinista y una segunda
   // pasada mueve el resultado unas centesimas en cualquier direccion (probado
   // en cinco de estas). Causa desconocida.
-  "la-leyenda-de-la-llorona", //     0,54 s  (texto ya restaurado; ratio 0,98)
-  "el-estudiante-universitario", //  0,57 s
-  "il-libro-dell-abisso", //         0,48 s
-  "l-ultimo-respiro-del-campanile", // 0,45 s
+  // Probé la hipótesis de que el alineador antepone el título a audios que no
+  // lo leen (medido: la-llorona habla desde 0,20 s y su primera palabra quedó
+  // en 1,56 s). Detectarlo con ffmpeg NO funciona: el mismo síntoma lo produce
+  // un título que SÍ se lee, y al re-alinear sin él empeoré l-ultimo-respiro
+  // (0,45 -> 0,53). Revertido. La causa sigue sin identificar.
+  "la-leyenda-de-la-llorona", //     0,54 s  (texto restaurado; ratio 0,98)
+  "el-estudiante-universitario", //  0,53 s
+  "il-libro-dell-abisso", //         0,48 s  (cama de ambiente: apenas 3 pausas detectables)
 
   // Not user-facing today (deprecated / unpublished journeys), listed so they
   // cannot start showing a bad highlight if those journeys are ever opened.
