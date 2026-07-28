@@ -72,31 +72,51 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
   // Las historias sanas de la misma tanda estan todas en ratio 0,96-0,99.
   "l-ultimo-respiro-del-campanile", // ratio 1,21; p90 3,45 s
 
-  // DESFASE CONSTANTE: el contenido esta bien (ratio 0,97-0,99, 93-97% del
-  // texto se oye) pero TODAS las palabras van tarde por la misma cantidad, asi
-  // que el resaltado vive medio segundo por detras del narrador. Medido el
-  // 2026-07-28 con whisper small, error CON SIGNO, contra dos historias de
-  // control de la misma tanda (el-mercado-de-medellin -0,13 s,
+  // VAN TARDE, SIN CAUSA IDENTIFICADA: el contenido esta bien (ratio 0,97-0,99,
+  // 93-97% del texto se oye) pero el resaltado vive medio segundo por detras
+  // del narrador. Medido con whisper small, error CON SIGNO, contra historias
+  // de control de la misma tanda (el-mercado-de-medellin -0,13 s,
   // il-manoscritto-perduto -0,11 s):
   "la-leyenda-de-la-llorona", //     +0,68 s  (texto restaurado; ratio 0,98)
   "el-estudiante-universitario", //  +0,49 s
   "il-libro-dell-abisso", //         +0,43 s  (cama de ambiente: 3 pausas en toda la historia)
   //
+  // FORMA del error (scripts/_karaokeShape.py, medianas con signo por octavos
+  // de historia). No es un corrimiento unico, es un sesgo positivo que oscila:
+  //   la-llorona   +2,37 +0,29 +0,71 +0,96 +0,52 +0,18 +0,26 +0,52
+  //   control      -0,04 +0,00 -0,10 -0,04 -0,16 -0,13 -0,16 -0,18
+  // El alineador se retrasa y recupera una y otra vez. El +2,37 del arranque
+  // esta inflado por la regla (whisper colapsa 8 palabras seguidas en 5,00 s),
+  // pero eso NO explica el resto: descartando todas las marcas repetidas
+  // (_karaokeClean.py) la mediana no se mueve, 0,540 -> 0,540, porque solo son
+  // 14 pares de 671.
+  //
   // Causa: sin identificar. Lo que YA NO es (descartado con medicion, no con
   // razonamiento):
-  //  - No es el titulo antepuesto. Se realinearon las tres CON y SIN titulo y
-  //    se midieron las dos versiones: el desfase se mueve 0,01 s. La prueba
-  //    anterior parecia culparlo, pero se hizo sobre l-ultimo-respiro, que
-  //    resulto tener OTRA averia (la de arriba) y nada que ganar.
-  //  - No son datos viejos: realinear hoy desde cero reproduce el mismo
-  //    desfase, asi que no es un residuo del correctAlignmentDrift retirado.
-  //  - No es la cama de ambiente: solo il-libro la tiene; la-llorona es la de
-  //    MAS pausas detectables de todo el lote (17 por cada 100 palabras).
+  //  - No es el titulo antepuesto. Se realinearon las tres CON y SIN titulo:
+  //    el error se mueve 0,01 s. La prueba anterior parecia culparlo, pero se
+  //    hizo sobre l-ultimo-respiro, que tiene OTRA averia (la de arriba).
+  //  - No son las acotaciones que el narrador no lee ("(riendo suavemente)").
+  //    Realineada la-llorona sin ellas: +0,681 -> +0,688. Confirmado ademas que
+  //    NO se leen (el match sube de 0,967 a 0,991 al quitarlas), y aun asi da
+  //    igual.
+  //  - No son datos viejos: realinear hoy desde cero reproduce el error, asi
+  //    que no es un residuo del correctAlignmentDrift retirado.
+  //  - No es la cama de ambiente. Solo il-libro la tiene; la-llorona tiene 15
+  //    pausas en sus primeros 40 s y el mismo suelo de ruido que el control.
+  //  - No son las pausas largas (que aeneas podria estar rellenando de
+  //    palabras). Correlacion entre segundos en pausas >=0,8 s y error mediano
+  //    sobre las 20 del libro: r = 0,19, o sea nada. la-excursion tiene MAS
+  //    pausas largas que la-llorona (9,8% del audio contra 7,9%) y puntua
+  //    0,190 contra 0,540.
+  // El mejor control disponible: las otras 19 historias del MISMO libro, mismo
+  // narrador y mismo pipeline puntuan entre 0,160 y 0,340. Sea lo que sea, es
+  // de la historia, no del libro ni del proceso.
+  //
   // Ojo con la regla al reabrir esto: el medidor de ffmpeg (distancia de cada
-  // arranque de habla a la palabra mas cercana) NO puede ver un desfase
-  // constante, porque con palabras cada 0,3 s siempre encuentra una vecina
-  // cerca; da 0,17 s donde whisper da 0,68 s. Para desfase hay que emparejar
-  // por identidad de palabra.
+  // arranque de habla a la palabra mas cercana) NO puede ver un corrimiento,
+  // porque con palabras cada 0,3 s siempre encuentra una vecina cerca; da
+  // 0,17 s donde whisper da 0,68 s. Hay que emparejar por identidad de palabra.
 
   // Not user-facing today (deprecated / unpublished journeys), listed so they
   // cannot start showing a bad highlight if those journeys are ever opened.
