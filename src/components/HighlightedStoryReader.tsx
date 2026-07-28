@@ -6,10 +6,8 @@ import HighlightedStoryContent from "@/components/HighlightedStoryContent";
 // IMPORTANT: importar de `audioWordTimingsTypes` (puro) y NO de
 // `audioWordTimings` que arrastra prisma al cliente y peta el build
 // con "PrismaClient is unable to run in this browser environment".
-import {
-  coerceAudioWordTimings,
-  type AudioWordTimingsPayload,
-} from "@/lib/audioWordTimingsTypes";
+import { coerceAudioWordTimings } from "@/lib/audioWordTimingsTypes";
+import { buildWordWindows, findActiveWordIndex } from "@/lib/karaokeWordWindows";
 
 type VocabItem = { word: string; surface?: string; definition: string; type?: string };
 
@@ -21,36 +19,6 @@ type HighlightedStoryReaderProps = {
   story: StoryData;
   audioWordTimings: unknown;
 };
-
-function findActiveWordIndex(
-  words: AudioWordTimingsPayload["words"],
-  currentTime: number
-): number | null {
-  // Each token's effective window is [startSec, nextToken.startSec).
-  // Aeneas occasionally emits zero-duration windows for short connector
-  // words; trusting endSec literally lets those words slip past every
-  // sampling tick. Walking startSecs covers them and any inter-word
-  // silence transparently.
-  let last: number | null = null;
-  for (let i = 0; i < words.length; i += 1) {
-    const w = words[i];
-    if (w.startSec === null) continue;
-    if (currentTime < w.startSec) break;
-    let nextStart: number | null = null;
-    for (let j = i + 1; j < words.length; j += 1) {
-      const candidate = words[j].startSec;
-      if (candidate !== null && candidate > w.startSec) {
-        nextStart = candidate;
-        break;
-      }
-    }
-    if (nextStart === null || currentTime < nextStart) {
-      return i;
-    }
-    last = i;
-  }
-  return last;
-}
 
 export default function HighlightedStoryReader({
   story,
@@ -72,6 +40,15 @@ export default function HighlightedStoryReader({
   // Si algún día vuelve a haber desborde, el arreglo va en el alineador, no
   // en un factor de escala aquí.
 
+  // Ventanas de resaltado precalculadas. Aeneas repite el mismo startSec en
+  // palabras contiguas (7.2% de las palabras medidas), y con la búsqueda
+  // anterior sólo ganaba la primera del empate: las demás no se encendían
+  // NUNCA. Aquí cada empate se reparte dentro de su propio tramo.
+  const wordWindows = React.useMemo(
+    () => (payload ? buildWordWindows(payload.words, payload.audioDurationSec) : []),
+    [payload]
+  );
+
   const wordRefs = React.useRef(new Map<number, HTMLSpanElement | null>());
   const containerRef = React.useRef<HTMLDivElement>(null);
   const lastScrolledIndexRef = React.useRef<number | null>(null);
@@ -84,14 +61,14 @@ export default function HighlightedStoryReader({
   // Listen to the existing player's audio-progress event, then read the
   // <audio> element's currentTime directly so we get word-level resolution.
   React.useEffect(() => {
-    if (!payload || payload.words.length === 0) return;
+    if (wordWindows.length === 0) return;
 
     const tick = () => {
       const audio = document.querySelector("audio");
       if (!audio) return;
       const ct = audio.currentTime;
       if (!Number.isFinite(ct)) return;
-      const idx = findActiveWordIndex(payload.words, ct);
+      const idx = findActiveWordIndex(wordWindows, ct);
       setActiveIndex(idx);
     };
 
@@ -110,7 +87,7 @@ export default function HighlightedStoryReader({
       window.removeEventListener("audio-progress", onProgress);
       if (raf !== null) window.cancelAnimationFrame(raf);
     };
-  }, [payload]);
+  }, [wordWindows]);
 
   React.useEffect(() => {
     if (activeIndex === null) return;

@@ -88,3 +88,4 @@ data/vocab-shorten/
 _keys.mts
 /app.json
 .env*.local
+__pycache__/
