@@ -43,8 +43,8 @@ const CONFIG: Record<string, Cfg> = {
     voiceName: "Violetta (italiano)", label: "Friends IT A0",
   },
   "es-spain-a0": {
-    journeyId: "cmrr5hnbl000032k1esry5n8g", voiceId: "2EWay75ikIPKrY4w2j69",
-    voiceName: "Nuria (español peninsular)", label: "Friends ES Spain A0",
+    journeyId: "cmrr5hnbl000032k1esry5n8g", voiceId: "jipeLrCHZ6ByxrU2JP9i",
+    voiceName: "Maia (español peninsular)", label: "Friends ES Spain A0", targetRate: 2.4,
   },
   "mx-c1": {
     journeyId: "cmrrrpru1000032nnzsmraa7h", voiceId: "JW8DGEuLp9WxIS5IdxMM",
