@@ -2893,20 +2893,32 @@ export function MobileLibraryShell(args: {
   // without touching prefs.
   const forceOnboardingProper = onboardingOverride === "proper";
 
-  // MOCK DATA; per-language stats while we don't have a backend
-  // aggregator. Same source as the web handoff; reviewer should grep
-  // "MOCK_LANG_STATS" to find and remove in one diff once stats land.
-  const MOCK_LANG_STATS: Record<string, { streak: number; xpTotal: number; progress: number }> = {
-    German: { streak: 7, xpTotal: 1240, progress: 42 },
-    Spanish: { streak: 21, xpTotal: 8450, progress: 78 },
-    French: { streak: 0, xpTotal: 120, progress: 8 },
-    Japanese: { streak: 3, xpTotal: 560, progress: 18 },
-    Italian: { streak: 0, xpTotal: 0, progress: 0 },
-    Portuguese: { streak: 0, xpTotal: 0, progress: 0 },
-    English: { streak: 0, xpTotal: 0, progress: 0 },
-    Korean: { streak: 0, xpTotal: 0, progress: 0 },
-    Chinese: { streak: 0, xpTotal: 0, progress: 0 },
-  };
+  // Estadisticas por idioma para la hoja de cambio de journey y para el panel.
+  //
+  // Aqui habia una tabla MOCK con numeros inventados (German 7 / 1240,
+  // Spanish 21 / 8450, French 0 / 120…) que llego a produccion: en el Pixel
+  // la hoja anunciaba una racha de 21 dias y 8.4k XP en español que no
+  // existian, mientras Progress y Ajustes decian la verdad (4 y 2472). Una
+  // racha es justo el dato que el usuario NO puede verificar de memoria, asi
+  // que inventarla es peor que no mostrarla.
+  //
+  // No hay agregador por idioma en el backend todavia, asi que usamos los
+  // valores REALES de cuenta (`gamification`) para los idiomas en los que el
+  // usuario tiene journey, y cero para el resto. Se repiten entre journeys
+  // del mismo idioma, igual que antes, pero al menos son ciertos. Cuando
+  // llegue el desglose por idioma, esto es lo unico que hay que cambiar.
+  const LANG_STATS: Record<string, { streak: number; xpTotal: number; progress: number }> = useMemo(() => {
+    const real = {
+      streak: remoteProgress?.gamification?.dailyStreak ?? 0,
+      xpTotal: remoteProgress?.gamification?.totalXp ?? 0,
+      progress: 0,
+    };
+    const byLanguage: Record<string, { streak: number; xpTotal: number; progress: number }> = {};
+    for (const journey of preferences.journeys) {
+      if (journey.language) byLanguage[journey.language] = real;
+    }
+    return byLanguage;
+  }, [remoteProgress, preferences.journeys]);
   // Mapping coarse → CEFR ahora vive en `journeys.ts` como
   // `cefrFromCoarseLevel` para que el card del JourneysPanel y el row
   // de la sheet de switch idiomas usen exactamente la misma fuente.
@@ -2999,7 +3011,7 @@ export function MobileLibraryShell(args: {
   // language-level mocks for now; when per-journey progress lands the
   // lookup key changes to journey.id.
   const journeySwitchEntries: LanguageSwitchEntry[] = preferences.journeys.map((journey) => {
-    const stats = MOCK_LANG_STATS[journey.language] ?? { streak: 0, xpTotal: 0, progress: 0 };
+    const stats = LANG_STATS[journey.language] ?? { streak: 0, xpTotal: 0, progress: 0 };
     const isActive = preferences.activeJourneyId
       ? journey.id === preferences.activeJourneyId
       : journey === preferences.journeys[0];
@@ -11429,7 +11441,10 @@ export function MobileLibraryShell(args: {
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <View>
-              <Text style={styles.sectionEyebrow}>Premium personalization</Text>
+              {/* El eyebrow decia "Premium personalization": nombraba el plan
+                  en vez de la seccion, y a quien ya lo paga no le dice nada.
+                  Que explique POR QUE estas historias estan ahi. */}
+              <Text style={styles.sectionEyebrow}>Based on what you read</Text>
               <Text style={styles.sectionTitle}>Recommended next</Text>
             </View>
           </View>
@@ -18231,7 +18246,7 @@ export function MobileLibraryShell(args: {
           return specific ? { ...journey, region: specific } : journey;
         })}
         activeJourneyId={preferences.activeJourneyId}
-        statsByLanguage={MOCK_LANG_STATS}
+        statsByLanguage={LANG_STATS}
         comingSoonLanguages={comingSoonLanguages}
         unavailableVariants={unavailableVariants}
         onSelect={async (id) => {
