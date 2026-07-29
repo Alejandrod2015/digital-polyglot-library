@@ -109,9 +109,20 @@ export async function registerPushNotifications(args: {
       tokenPreview,
     };
   } catch (error) {
+    // El mensaje crudo acaba PINTADO tal cual en Ajustes: MobileSettingsScreen
+    // renderiza `pushMessage` sin filtrar. En el Pixel eso dejaba en pantalla
+    // "Make sure to complete the guide at https://docs.expo.dev/... : Default
+    // FirebaseApp is not initialized in this process com.digitalpolyglot.app.
+    // Make sure to call FirebaseApp.initializeApp(Context) first."
+    // El detalle tecnico va al log; a la UI va una frase entendible.
+    const raw = error instanceof Error ? error.message : String(error);
+    console.warn("[push] registration failed:", raw);
+    const missingCredentials = /firebaseapp|fcm|credential/i.test(raw);
     return {
       status: "error",
-      message: error instanceof Error ? error.message : "Unable to register notifications.",
+      message: missingCredentials
+        ? "Reminders aren't set up on this device yet."
+        : "Couldn't turn on notifications. Try again later.",
     };
   }
 }
