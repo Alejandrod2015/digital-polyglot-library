@@ -71,16 +71,21 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
   // historia va fina. Ningun alineador arregla esto; hay que arreglar el texto.
   // Las historias sanas de la misma tanda estan todas en ratio 0,96-0,99.
   //
-  // BLOQUEADO POR FALTA DE FUENTE, no por falta de trabajo. La cura es la misma
-  // que funciono con el libro colombiano (reimportar del manuscrito y
-  // re-alinear: 19 de 20 quedaron entre 0,160 y 0,340), pero aquel manuscrito
-  // salio de un Google Doc del usuario enlazado en su hoja "Biblioteca". Del
-  // libro de Venecia no hay manuscrito en disco ni enlace conocido, y el texto
-  // NO se puede reconstruir desde la transcripcion del audio: eso da palabras
-  // sueltas, no la prosa del autor. Hace falta que el usuario aporte el
-  // documento original; las herramientas ya estan (_buildBookTexts.ts,
-  // _compareManuscript.ts, _splitManuscript.py).
-  "l-ultimo-respiro-del-campanile", // ratio 1,21; p90 3,45 s
+  // ARREGLADA el 2026-07-29, ya no esta en la lista. Se restituyo el texto
+  // desde el manuscrito (Doc "Short Stories from Mysterious Venice", carpeta
+  // SS_IT_Mysterious-Venice, enlazado en la hoja "Biblioteca" fila 93) y se
+  // re-alineo. Antes: ratio 1,21, match 0,75, mediana 0,310, p90 3,45 s.
+  // Despues: ratio 0,94, match 0,91, mediana 0,200, p90 0,690 s, o sea mejor
+  // que la peor historia sana del barrido (0,450) y a la altura de la
+  // referencia aprobada (0,170).
+  // El diff texto-viejo contra texto-nuevo reprodujo EXACTAMENTE, punto por
+  // punto, las divergencias que se habian medido contra el audio, asi que el
+  // manuscrito es sin duda la fuente de la grabacion. El 0,94 de ratio no es
+  // deuda: son las 26 palabras de etiquetas de hablante y acotaciones que el
+  // narrador no lee (463 en el texto, 437 oidas).
+  // Convertido con scripts/_buildVeniceText.ts, que existe aparte del
+  // colombiano porque este libro encadena los dialogos sin linea en blanco y
+  // conserva las acotaciones entre parentesis dentro del blockquote.
 
   // VAN TARDE, SIN CAUSA IDENTIFICADA: el contenido esta bien (ratio 0,97-0,99,
   // 93-97% del texto se oye) pero el resaltado vive medio segundo por detras
