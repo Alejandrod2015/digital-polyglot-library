@@ -503,7 +503,7 @@ export function MobileSettingsScreen({
               <Feather name="trash-2" size={16} color="#9cb0c9" />
               <View style={styles.settingsLegalCopy}>
                 <Text style={styles.settingsLegalTitle}>Data deletion</Text>
-                <Text style={styles.settingsLegalText}>Request account or data deletion directly from iPhone.</Text>
+                <Text style={styles.settingsLegalText}>Request account or data deletion directly from this device.</Text>
               </View>
             </View>
             <View style={styles.legalActions}>

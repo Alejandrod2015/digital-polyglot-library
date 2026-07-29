@@ -1638,8 +1638,8 @@ function createSelectionFromGeneratedStory(story: MobileCreatedStory): ReaderSel
   const mobileBook: Book = {
     id: `generated-book-${story.id}`,
     slug: `generated-book-${story.slug}`,
-    title: "Created on iPhone",
-    description: "A story you generated from the iPhone create flow.",
+    title: "Created on this device",
+    description: "A story you generated from the create flow on this device.",
     language,
     region,
     level,
@@ -7006,7 +7006,7 @@ export function MobileLibraryShell(args: {
       setCreateError(null);
     } catch (error) {
       setCreateStatus("error");
-      setCreateError(error instanceof Error ? error.message : "Could not generate the story from iPhone.");
+      setCreateError(error instanceof Error ? error.message : "Could not generate the story on this device.");
       void clearPendingCreate(sessionUserId);
     }
   }
@@ -14330,7 +14330,7 @@ export function MobileLibraryShell(args: {
           ? preferencesHint
           : preferencesStatus === "saved"
             ? "Preferences saved."
-            : "These settings now save directly from iPhone."
+            : "These settings now save directly from this device."
       }
       remindersEnabled={preferences.remindersEnabled}
       onPressRemindersOn={() => toggleNotificationType("daily_reminder", true)}
@@ -14422,7 +14422,8 @@ export function MobileLibraryShell(args: {
             ? "Generating story…"
             : createStatus === "generating_audio"
               ? "Generating audio…"
-              : "Generate on iPhone"
+              : // No "iPhone": el mismo botón se pinta en Android.
+                "Generate on this device"
       }
       primaryCtaDisabled={
         !createResumeChecked || createStatus === "generating_text" || createStatus === "generating_audio"
@@ -14466,7 +14467,7 @@ export function MobileLibraryShell(args: {
             ]
               .filter(Boolean)
               .join(" · ")}`
-          : "Save preferences in Settings to keep Create ready on iPhone."
+          : "Save preferences in Settings to keep Create ready on this device."
       }
       createdStory={
         createdStory

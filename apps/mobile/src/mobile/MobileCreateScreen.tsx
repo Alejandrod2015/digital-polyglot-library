@@ -90,7 +90,11 @@ export function MobileCreateScreen({
           <View style={styles.heroTextBlock}>
             <Text style={styles.eyebrow}>Create</Text>
             <Text style={styles.title}>Create stories</Text>
-            <Text style={styles.subtitle}>Pick the essentials, generate on iPhone, and open the result here.</Text>
+            {/* "this device" y no "iPhone": esta pantalla es la misma en
+                Android, y en un Pixel el copy decia iPhone tres veces. Lo que
+                distingue este flujo del de la web es que genera EN EL MOVIL,
+                no que sea un iPhone. */}
+            <Text style={styles.subtitle}>Pick the essentials, generate on this device, and open the result here.</Text>
           </View>
           {headerAction}
         </View>
@@ -98,7 +102,7 @@ export function MobileCreateScreen({
 
       <View style={[styles.card, styles.accountCard]}>
         <Text style={styles.sectionTitle}>Story setup</Text>
-        <Text style={styles.helperText}>Pick the essentials here, then generate directly on iPhone.</Text>
+        <Text style={styles.helperText}>Pick the essentials here, then generate directly on this device.</Text>
 
         {resumeNotice ? (
           <View style={styles.statusNotice}>
@@ -177,7 +181,7 @@ export function MobileCreateScreen({
             <View style={styles.sectionHeaderRow}>
               <View>
                 <Text style={styles.sectionEyebrow}>Recent</Text>
-                <Text style={styles.sectionTitle}>Created on iPhone</Text>
+                <Text style={styles.sectionTitle}>Created on this device</Text>
               </View>
               <Text style={styles.helperText}>{recentStories.length} stories</Text>
             </View>

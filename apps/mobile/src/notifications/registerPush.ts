@@ -56,7 +56,7 @@ export async function registerPushNotifications(args: {
   if (!Device?.isDevice) {
     return {
       status: "unsupported",
-      message: "Push notifications will be available on a physical iPhone.",
+      message: "Push notifications will be available on a physical device.",
     };
   }
 
