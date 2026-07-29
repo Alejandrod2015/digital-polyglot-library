@@ -41,7 +41,11 @@ export default async function HomePage({
     console.error("[home] currentUser() failed, falling back to free:", err);
   }
 
-  if (plan === "polyglot") {
+  // `owner` es el tier interno: server-side ya vale >= polyglot
+  // (packages/domain/src/access.ts), así que aterriza en el Journey igual que
+  // un Polyglot. Sin esto, marcar una cuenta como owner la mandaba al home
+  // free.
+  if (plan === "polyglot" || plan === "owner") {
     const { variant } = await searchParams;
     const props = await loadJourneyPageProps({ variant, basePath: "/" });
     return <JourneyClient {...props} />;

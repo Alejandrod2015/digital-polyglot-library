@@ -1603,6 +1603,15 @@ function createRelatedFavoriteIdentity(item: Pick<MobileFavoriteItem, "word" | "
 
 function getPlan(plan?: string | null): Plan {
   if (plan === "basic" || plan === "premium" || plan === "polyglot") return plan;
+  // `owner` is the internal top tier. The server already treats it as >=
+  // polyglot everywhere (packages/domain/src/access.ts, /api/mobile/speaking,
+  // /api/mobile/billing/entitlement), so collapsing it to "free" here left an
+  // owner account with a free UI (Upgrade button, no Create, no offline) on top
+  // of full server-side access. Map it to the entitlement it actually has.
+  // The internal-tools gate does NOT read this value; it reads the raw plan
+  // string (see `isOwnerAccount`), so mapping here can't expose Test mode to
+  // paying Polyglot users.
+  if (plan === "owner") return "polyglot";
   return "free";
 }
 
@@ -2376,8 +2385,21 @@ export function MobileLibraryShell(args: {
   const [journeyLanguageLoading, setJourneyLanguageLoading] = useState(false);
   const [journeyVariantPickerOpen, setJourneyVariantPickerOpen] = useState(false);
   const [journeyInsightsByLanguage, setJourneyInsightsByLanguage] = useState<Record<string, LanguageInsightsSummary | null>>({});
-  const effectivePlan = getPlan(remoteEntitlement?.plan ?? sessionPlan);
+  // Single normalized read of the plan. Both the entitlement fetch and the
+  // session JWT carry it verbatim from Clerk publicMetadata, so normalize once
+  // and derive everything from the same value: a mis-cased tag must not grant
+  // one gate and deny the other.
+  const rawPlan = (remoteEntitlement?.plan ?? sessionPlan ?? "").trim().toLowerCase();
+  const effectivePlan = getPlan(rawPlan);
   const canDownloadOffline = effectivePlan === "premium" || effectivePlan === "polyglot";
+  // Internal-only surfaces (Test mode reset, Replay tour) must NEVER hang off a
+  // purchasable tier. `polyglot` is a real paid plan, so gating on it exposed an
+  // account-wiping reset to every Polyglot subscriber. Internal accounts are
+  // tagged `owner` (see /api/mobile/billing/entitlement), which getPlan() maps to
+  // the polyglot entitlement; the gate below reads the raw tag instead, so no
+  // paid tier can ever reach it.
+  const isOwnerAccount = rawPlan === "owner";
+  const showDevTools = __DEV__ || isOwnerAccount;
   const [createPickerSection, setCreatePickerSection] = useState<CreateSection | null>(null);
   const [settingsPickerSection, setSettingsPickerSection] = useState<SettingsSection | null>(null);
   const [createStatus, setCreateStatus] = useState<CreateStatus>("idle");
@@ -2391,7 +2413,7 @@ export function MobileLibraryShell(args: {
   const [onboardingSurveyStep, setOnboardingSurveyStep] = useState(0);
   const [onboardingTourStep, setOnboardingTourStep] = useState<number | null>(null);
   // Force-replay the tour ignoring the server `onboardingTourCompletedAt` gate
-  // (polyglot "Replay tour" menu entry; preview on an established account).
+  // (owner/dev "Replay tour" menu entry; preview on an established account).
   const [forceTourPreview, setForceTourPreview] = useState(false);
   const [onboardingError, setOnboardingError] = useState<string | null>(null);
   const practiceStartTrackedRef = useRef(false);
@@ -2866,7 +2888,7 @@ export function MobileLibraryShell(args: {
   const showJourneyScrollTopRef = useRef(false);
 
   // Two reasons to force the onboarding to show up after the gate:
-  //   - "test"   → polyglot menu entry. Selections are NOT persisted;
+  //   - "test"   → internal (owner/dev) menu entry. Selections are NOT persisted;
   //                cancelling/finishing just clears the flag.
   //   - "proper" → the user landed in the shell with no language
   //                configured (likely completed the legacy survey
@@ -3075,10 +3097,31 @@ export function MobileLibraryShell(args: {
     };
   });
 
-  // Polyglot-only QA reset: wipes the user's preferences on both
-  // client and server so the onboarding gate fires again, letting
-  // you walk through the flow as a brand-new user with the changes
-  // actually persisting. Tied to the "Test mode" menu entry.
+  // Two-step entry point for the "Test mode" row: the reset below is
+  // irreversible (it wipes languages, journeys, level, goals and reminders on
+  // the server too), so a single stray tap must not be able to trigger it.
+  function confirmTestModeReset() {
+    Alert.alert(
+      "Reset your account?",
+      "This erases your languages, journeys, level, goals and reminders on this device and on the server, and starts onboarding from scratch. This can't be undone.",
+      [
+        { text: "Cancel", style: "cancel" },
+        {
+          text: "Reset everything",
+          style: "destructive",
+          onPress: () => {
+            void handleTestModeReset();
+          },
+        },
+      ]
+    );
+  }
+
+  // Internal QA reset: wipes the user's preferences on both client and
+  // server so the onboarding gate fires again, letting you walk through
+  // the flow as a brand-new user with the changes actually persisting.
+  // Tied to the "Test mode" menu entry; always reached through
+  // confirmTestModeReset(), never called straight from a press handler.
   async function handleTestModeReset() {
     const blankPrefs: MobilePreferences = {
       targetLanguages: [],
@@ -3108,6 +3151,9 @@ export function MobileLibraryShell(args: {
     setForceTourPreview(false);
     setOnboardingTourStep(null);
     setActiveScreen("home");
+    // Closed here, not in the press handler: the drawer <Modal> must survive
+    // until the user actually confirms (see the Test mode MenuLink).
+    setMenuOpen(false);
     journeyCacheByLanguageRef.current.clear();
     // Wipe disk-stored journeys too so the test reset truly starts
     // from zero on next launch. Also reset the "restored" flag so
@@ -17645,7 +17691,7 @@ export function MobileLibraryShell(args: {
   }
 
   // Render the dedicated full-screen onboarding when the user hasn't
-  // completed the survey yet; or when an override (polyglot test or
+  // completed the survey yet; or when an override (internal test or
   // a tap on the empty flag chip) asked for it. Replaces the old
   // Modal-based survey.
   const showOnboarding = shouldShowOnboardingSurvey || forceOnboardingProper;
@@ -17654,7 +17700,7 @@ export function MobileLibraryShell(args: {
       <OnboardingFlow
         userName={sessionName ?? null}
         // Always persist now: the previous test-mode "throw away
-        // selections" path is gone; Test mode in the polyglot menu
+        // selections" path is gone; Test mode in the internal menu
         // does a full reset instead and runs onboarding normally.
         testMode={false}
         comingSoonLanguages={comingSoonLanguages}
@@ -17739,10 +17785,10 @@ export function MobileLibraryShell(args: {
               <MenuScreenRow icon="upgrade" label="Upgrade" onPress={() => void openPlans()} accent="#f8c15c" />
             ) : null}
             <MenuScreenRow icon="settings" label="Settings" onPress={() => setActiveScreen("settings")} accent="#9cb0c9" />
-            {effectivePlan === "polyglot" ? (
-              <MenuScreenRow icon="settings" label="Test mode" onPress={() => { void handleTestModeReset(); }} accent="#9cb0c9" />
+            {showDevTools ? (
+              <MenuScreenRow icon="settings" label="Test mode" onPress={() => { confirmTestModeReset(); }} accent="#9cb0c9" />
             ) : null}
-            {effectivePlan === "polyglot" ? (
+            {showDevTools ? (
               <MenuScreenRow
                 icon="settings"
                 label="Replay tour"
@@ -18994,25 +19040,31 @@ export function MobileLibraryShell(args: {
                     <MenuLink label="Upgrade" icon="upgrade" onPress={() => void openPlans()} tone="accent" />
                   ) : null}
 
-                  {/* Polyglot-only; internal QA tool. Wipes the
-                      account's preferences (target languages,
-                      journeys, focus, level, goals, reminders, the
-                      onboarding-completed flag) on both client and
-                      server, which makes the shell fall straight
-                      into the onboarding gate again. The onboarding
-                      runs in normal (persistent) mode so any new
-                      selections REPLACE the old setup; letting you
-                      test the new-user experience end-to-end on a
-                      live account. Gated to `polyglot` because that
-                      tier is for internal use only; this entry is
-                      never visible to real users. */}
-                  {effectivePlan === "polyglot" ? (
+                  {/* Internal QA tool. Wipes the account's preferences
+                      (target languages, journeys, focus, level, goals,
+                      reminders, the onboarding-completed flag) on both
+                      client and server, which makes the shell fall
+                      straight into the onboarding gate again. The
+                      onboarding runs in normal (persistent) mode so any
+                      new selections REPLACE the old setup; letting you
+                      test the new-user experience end-to-end on a live
+                      account. Gated to owner accounts / dev builds, NOT
+                      to `polyglot`: that is a real purchasable tier, so
+                      gating on it put an irreversible account wipe one
+                      tap away for every paying Polyglot subscriber.
+                      Confirmation dialog on top (confirmTestModeReset). */}
+                  {showDevTools ? (
                     <MenuLink
                       label="Test mode"
                       icon="settings"
+                      // The drawer stays open behind the confirm dialog on
+                      // purpose: closing this <Modal> in the same tick can
+                      // swallow the Alert on iOS (it would be presented on a
+                      // view controller that is mid-dismissal). The reset
+                      // closes the drawer itself once confirmed, and cancelling
+                      // leaves the user where they were.
                       onPress={() => {
-                        setMenuOpen(false);
-                        void handleTestModeReset();
+                        confirmTestModeReset();
                       }}
                     />
                   ) : null}

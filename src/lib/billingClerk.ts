@@ -5,11 +5,34 @@ import { getEffectivePlanFromEntitlement } from "@/lib/billing";
 
 const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
 
+// `owner` is the internal tier. It is set by hand in Clerk and never derived
+// from a BillingEntitlement row, so every sync below would silently demote an
+// owner account to whatever Stripe/App Store/Play last reported. The mobile app
+// gates its internal tools (Test mode reset, Replay tour) on plan === "owner",
+// so losing the tag makes those disappear with no visible cause. Keep it sticky:
+// billing may update trial/source fields on an owner, never the plan itself.
+async function keepOwnerPlan<T extends string>(
+  userId: string,
+  nextPlan: T
+): Promise<T | "owner"> {
+  try {
+    const user = await clerkClient.users.getUser(userId);
+    if (user.publicMetadata?.plan === "owner") return "owner";
+  } catch {
+    // A Clerk read failure must not block the billing sync; fall back to the
+    // plan the entitlement says.
+  }
+  return nextPlan;
+}
+
 export async function syncClerkPlanFromEntitlement(
   userId: string,
   entitlement: BillingEntitlement | null
 ) {
-  const effectivePlan = getEffectivePlanFromEntitlement(entitlement);
+  const effectivePlan = await keepOwnerPlan(
+    userId,
+    getEffectivePlanFromEntitlement(entitlement) ?? "free"
+  );
   const trialStartedAt =
     entitlement?.source === "stripe" ? entitlement.startedAt?.toISOString() ?? null : null;
 
@@ -45,10 +68,11 @@ export async function syncClerkStripeSubscription(args: {
   stripeSubscriptionId?: string | null;
 }) {
   const { userId, plan, subscription, stripeCustomerId, stripeSubscriptionId } = args;
+  const nextPlan = await keepOwnerPlan(userId, plan);
 
   await clerkClient.users.updateUserMetadata(userId, {
     publicMetadata: {
-      plan,
+      plan: nextPlan,
       trialStartedAt: new Date(
         (subscription.start_date ?? Math.floor(Date.now() / 1000)) * 1000
       ).toISOString(),
@@ -79,10 +103,11 @@ export async function syncClerkStripeCancellation(args: {
   subscription: Stripe.Subscription;
 }) {
   const { userId, plan, subscription } = args;
+  const nextPlan = await keepOwnerPlan(userId, plan);
 
   await clerkClient.users.updateUserMetadata(userId, {
     publicMetadata: {
-      plan,
+      plan: nextPlan,
       trialStartedAt: new Date(
         (subscription.start_date ?? Math.floor(Date.now() / 1000)) * 1000
       ).toISOString(),

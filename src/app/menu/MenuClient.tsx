@@ -27,7 +27,10 @@ import type { ReactNode } from "react";
 
 type Plan = "free" | "basic" | "premium" | "polyglot";
 
-type Props = { plan: Plan };
+// `isOwner` viaja aparte del plan: el plan ya viene mapeado a la entitlement
+// que corresponde (owner => polyglot), y las filas internas se gatean con este
+// flag para que ningún tier comprable las alcance.
+type Props = { plan: Plan; isOwner: boolean };
 
 type RowProps = {
   icon: LucideIcon;
@@ -114,18 +117,21 @@ function SectionCard({ children }: { children: ReactNode }) {
   );
 }
 
-export default function MenuClient({ plan }: Props) {
+export default function MenuClient({ plan, isOwner }: Props) {
   const { user } = useUser();
   const router = useRouter();
   const [testModeRunning, setTestModeRunning] = useState(false);
   const showUpgrade = plan === "free" || plan === "basic";
   const showStoryOfWeek = plan === "free";
   const showStoryOfDay = plan === "basic";
-  // Test mode (paridad iPhone): solo Polyglot. Resetea preferences
+  // Test mode (paridad iPhone): herramienta interna. Resetea preferences
   // server-side (targetLanguages, level, region, variant, reminders,
   // onboarding flags) y manda al home en blanco. Confirmación previa
   // porque es destructivo.
-  const showTestMode = plan === "polyglot";
+  // Gate = cuenta owner o build de desarrollo, NUNCA `polyglot`: ese es un
+  // tier de pago real, así que gatearlo ahí le ponía un reset destructivo a
+  // un tap de distancia a cada suscriptor Polyglot.
+  const showTestMode = isOwner || process.env.NODE_ENV !== "production";
 
   async function handleTestModeReset() {
     if (testModeRunning) return;

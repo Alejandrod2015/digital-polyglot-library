@@ -19,7 +19,7 @@ export const metadata = {
 
 type Plan = "free" | "basic" | "premium" | "polyglot";
 
-function readPlan(value: unknown): Plan {
+function readPlan(value: string): Plan {
   return value === "basic" || value === "premium" || value === "polyglot" || value === "free"
     ? value
     : "free";
@@ -30,6 +30,15 @@ export default async function MenuPage() {
   if (!user) {
     redirect("/sign-in?redirect_url=/menu");
   }
-  const plan = readPlan(user?.publicMetadata?.plan);
-  return <MenuClient plan={plan} />;
+  // `owner` is the internal tier, not a purchasable one. It grants at least the
+  // polyglot entitlement server-side (packages/domain/src/access.ts), so map it
+  // there for the plan-gated rows, and pass the raw fact separately: the
+  // internal-tools row must never be reachable from a plan someone can buy.
+  const rawPlan =
+    typeof user?.publicMetadata?.plan === "string"
+      ? user.publicMetadata.plan.trim().toLowerCase()
+      : "";
+  const isOwner = rawPlan === "owner";
+  const plan = isOwner ? "polyglot" : readPlan(rawPlan);
+  return <MenuClient plan={plan} isOwner={isOwner} />;
 }
