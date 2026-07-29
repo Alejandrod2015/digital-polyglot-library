@@ -70,13 +70,35 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
   // se dispara en 191-194 s, hasta 7,6 s de desvio, mientras el resto de la
   // historia va fina. Ningun alineador arregla esto; hay que arreglar el texto.
   // Las historias sanas de la misma tanda estan todas en ratio 0,96-0,99.
-  "l-ultimo-respiro-del-campanile", // ratio 1,21; p90 3,45 s
+  //
+  // ARREGLADA el 2026-07-29, ya no esta en la lista. Se restituyo el texto
+  // desde el manuscrito (Doc "Short Stories from Mysterious Venice", carpeta
+  // SS_IT_Mysterious-Venice, enlazado en la hoja "Biblioteca" fila 93) y se
+  // re-alineo. Antes: ratio 1,21, match 0,75, mediana 0,310, p90 3,45 s.
+  // Despues: ratio 0,94, match 0,91, mediana 0,200, p90 0,690 s, o sea mejor
+  // que la peor historia sana del barrido (0,450) y a la altura de la
+  // referencia aprobada (0,170).
+  // El diff texto-viejo contra texto-nuevo reprodujo EXACTAMENTE, punto por
+  // punto, las divergencias que se habian medido contra el audio, asi que el
+  // manuscrito es sin duda la fuente de la grabacion. El 0,94 de ratio no es
+  // deuda: son las 26 palabras de etiquetas de hablante y acotaciones que el
+  // narrador no lee (463 en el texto, 437 oidas).
+  // Convertido con scripts/_buildVeniceText.ts, que existe aparte del
+  // colombiano porque este libro encadena los dialogos sin linea en blanco y
+  // conserva las acotaciones entre parentesis dentro del blockquote.
 
   // VAN TARDE, SIN CAUSA IDENTIFICADA: el contenido esta bien (ratio 0,97-0,99,
   // 93-97% del texto se oye) pero el resaltado vive medio segundo por detras
   // del narrador. Medido con whisper small, error CON SIGNO, contra historias
   // de control de la misma tanda (el-mercado-de-medellin -0,13 s,
   // il-manoscritto-perduto -0,11 s):
+  // CERRADO COMO "NO SE ARREGLA", no como pendiente (2026-07-29). Diez
+  // hipotesis descartadas con medicion, ninguna en pie. Es UNA historia de 371,
+  // y bloqueada no enseña un resaltado equivocado: simplemente no lo enseña.
+  // Reabrirlo solo merece la pena con una idea NUEVA, no repitiendo las de
+  // abajo. Para calibrar cuanto duele: descontando la apertura mide 0,460, y
+  // la peor historia SANA de todo el barrido esta en 0,450. Esta al borde, no
+  // rota de lejos.
   "la-leyenda-de-la-llorona", //     +0,68 s  (texto restaurado; ratio 0,98)
   "el-estudiante-universitario", //  +0,49 s
   "il-libro-dell-abisso", //         +0,43 s  (cama de ambiente: 3 pausas en toda la historia)
@@ -85,11 +107,23 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
   // de historia). No es un corrimiento unico, es un sesgo positivo que oscila:
   //   la-llorona   +2,37 +0,29 +0,71 +0,96 +0,52 +0,18 +0,26 +0,52
   //   control      -0,04 +0,00 -0,10 -0,04 -0,16 -0,13 -0,16 -0,18
-  // El alineador se retrasa y recupera una y otra vez. El +2,37 del arranque
-  // esta inflado por la regla (whisper colapsa 8 palabras seguidas en 5,00 s),
-  // pero eso NO explica el resto: descartando todas las marcas repetidas
-  // (_karaokeClean.py) la mediana no se mueve, 0,540 -> 0,540, porque solo son
-  // 14 pares de 671.
+  // El alineador se retrasa y recupera una y otra vez. Los 14 peores desvios
+  // caen TODOS en los primeros 24 s, en el parrafo de apertura, y ahi el error
+  // CRECE de +1,4 a +3,4 dentro del propio parrafo.
+  //
+  // Ese arranque esta contaminado y hay que descontarlo: el narrador SI lee el
+  // titulo (comprobado transcribiendo los primeros 4 s: "La leyenda de la
+  // llorona, en un pequeño pueblo de Antioquia"), pero el titulo NO esta en el
+  // payload, que es solo el cuerpo. Y whisper, al transcribir el fichero
+  // entero, SE COME el titulo y arranca su linea de tiempo en el: da "En" a los
+  // 0,20 s, que es justo donde el narrador dice "La". Encima colapsa 8 palabras
+  // seguidas en 5,00 s. O sea que en la apertura la regla no vale.
+  //
+  // Pero descontarla NO salva la historia. Midiendo desde el segundo 30
+  // (_karaokeDesde.py) la-llorona pasa de 0,540 a 0,460 y el control se queda
+  // clavado en 0,180: la apertura explica 0,08 del hueco, y en TODO el resto
+  // sigue siendo 2,5 veces peor que su hermana del mismo libro. Por eso se
+  // queda fuera.
   //
   // Causa: sin identificar. Lo que YA NO es (descartado con medicion, no con
   // razonamiento):
@@ -104,6 +138,26 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
   //    que no es un residuo del correctAlignmentDrift retirado.
   //  - No es la cama de ambiente. Solo il-libro la tiene; la-llorona tiene 15
   //    pausas en sus primeros 40 s y el mismo suelo de ruido que el control.
+  //  - No es que el audio haya cambiado despues de alinear. La duracion
+  //    guardada y la del fichero de hoy coinciden dentro de 0,05 s en las
+  //    cuatro comprobadas, asi que los timings se midieron sobre ESTE audio.
+  //  - No es solo la apertura contaminada: ver el parrafo de la FORMA de
+  //    arriba, descontarla deja 0,460 contra 0,180 del control.
+  //  - NO es el texto. Comprobado el 2026-07-29 palabra por palabra contra el
+  //    manuscrito del libro: identico salvo rayas de dialogo. Esto habia que
+  //    mirarlo porque el ratio ~1,00 NO prueba que el texto sea el mismo, solo
+  //    que tiene el mismo numero de palabras (il-custode-della-laguna tenia el
+  //    nombre de la protagonista cambiado con ratio normal), pero aqui sale
+  //    limpio.
+  //  - No es el ritmo ni el silencio. 2,51 palabras/s y 25,9% del audio en
+  //    silencio, en plena media de las 20 del libro; el-tesoro-escondido tiene
+  //    MAS silencio (27,2%) y puntua 0,340.
+  //
+  // Unica pista viva, por si alguien la quiere seguir: desplazando los tiempos
+  // UN token hacia atras el error baja de 0,540 a 0,415 (_karaokeDesplaz.py),
+  // mientras que el control empeora con cualquier desplazamiento (0,180 en 0).
+  // Puede ser un fallo de indice en el remapeo, o simplemente que un token dura
+  // ~0,35 s y el desplazamiento cancela parte del retraso. No se ha distinguido.
   //  - No son las pausas largas (que aeneas podria estar rellenando de
   //    palabras). Correlacion entre segundos en pausas >=0,8 s y error mediano
   //    sobre las 20 del libro: r = 0,19, o sea nada. la-excursion tiene MAS
@@ -113,10 +167,15 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
   // narrador y mismo pipeline puntuan entre 0,160 y 0,340. Sea lo que sea, es
   // de la historia, no del libro ni del proceso.
   //
-  // Ojo con la regla al reabrir esto: el medidor de ffmpeg (distancia de cada
-  // arranque de habla a la palabra mas cercana) NO puede ver un corrimiento,
-  // porque con palabras cada 0,3 s siempre encuentra una vecina cerca; da
-  // 0,17 s donde whisper da 0,68 s. Hay que emparejar por identidad de palabra.
+  // Ojo con la regla al reabrir esto, tiene DOS trampas ya pagadas:
+  //  1. El medidor de ffmpeg (distancia de cada arranque de habla a la palabra
+  //     mas cercana) NO puede ver un corrimiento, porque con palabras cada
+  //     0,3 s siempre encuentra una vecina cerca; da 0,17 s donde whisper da
+  //     0,68 s. Hay que emparejar por identidad de palabra.
+  //  2. Los primeros segundos NO son medibles en ninguna historia cuyo
+  //     narrador lea el titulo: el titulo se oye pero no esta en el payload, y
+  //     whisper ademas se lo salta y corre su linea de tiempo. Medir desde el
+  //     segundo 30 (_karaokeDesde.py) antes de sacar conclusiones del arranque.
 
   // Not user-facing today (deprecated / unpublished journeys), listed so they
   // cannot start showing a bad highlight if those journeys are ever opened.
