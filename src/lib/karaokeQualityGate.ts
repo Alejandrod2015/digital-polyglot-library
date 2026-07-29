@@ -92,6 +92,13 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
   // del narrador. Medido con whisper small, error CON SIGNO, contra historias
   // de control de la misma tanda (el-mercado-de-medellin -0,13 s,
   // il-manoscritto-perduto -0,11 s):
+  // CERRADO COMO "NO SE ARREGLA", no como pendiente (2026-07-29). Diez
+  // hipotesis descartadas con medicion, ninguna en pie. Es UNA historia de 371,
+  // y bloqueada no enseña un resaltado equivocado: simplemente no lo enseña.
+  // Reabrirlo solo merece la pena con una idea NUEVA, no repitiendo las de
+  // abajo. Para calibrar cuanto duele: descontando la apertura mide 0,460, y
+  // la peor historia SANA de todo el barrido esta en 0,450. Esta al borde, no
+  // rota de lejos.
   "la-leyenda-de-la-llorona", //     +0,68 s  (texto restaurado; ratio 0,98)
   "el-estudiante-universitario", //  +0,49 s
   "il-libro-dell-abisso", //         +0,43 s  (cama de ambiente: 3 pausas en toda la historia)
@@ -136,6 +143,21 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
   //    cuatro comprobadas, asi que los timings se midieron sobre ESTE audio.
   //  - No es solo la apertura contaminada: ver el parrafo de la FORMA de
   //    arriba, descontarla deja 0,460 contra 0,180 del control.
+  //  - NO es el texto. Comprobado el 2026-07-29 palabra por palabra contra el
+  //    manuscrito del libro: identico salvo rayas de dialogo. Esto habia que
+  //    mirarlo porque el ratio ~1,00 NO prueba que el texto sea el mismo, solo
+  //    que tiene el mismo numero de palabras (il-custode-della-laguna tenia el
+  //    nombre de la protagonista cambiado con ratio normal), pero aqui sale
+  //    limpio.
+  //  - No es el ritmo ni el silencio. 2,51 palabras/s y 25,9% del audio en
+  //    silencio, en plena media de las 20 del libro; el-tesoro-escondido tiene
+  //    MAS silencio (27,2%) y puntua 0,340.
+  //
+  // Unica pista viva, por si alguien la quiere seguir: desplazando los tiempos
+  // UN token hacia atras el error baja de 0,540 a 0,415 (_karaokeDesplaz.py),
+  // mientras que el control empeora con cualquier desplazamiento (0,180 en 0).
+  // Puede ser un fallo de indice en el remapeo, o simplemente que un token dura
+  // ~0,35 s y el desplazamiento cancela parte del retraso. No se ha distinguido.
   //  - No son las pausas largas (que aeneas podria estar rellenando de
   //    palabras). Correlacion entre segundos en pausas >=0,8 s y error mediano
   //    sobre las 20 del libro: r = 0,19, o sea nada. la-excursion tiene MAS
