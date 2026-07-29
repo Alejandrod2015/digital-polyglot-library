@@ -55,6 +55,10 @@ export const APPROVED_VOICES: Record<string, ApprovedVoice> = {
   "9iYBWBbTzTDIt6imiMxp": { note: "Daien (DE, f) — Merle en Hanseat DE C1; ya suena en Expat DE — user-approved 2026-07-20" },
   vmVmHDKBkkCgbLVIOJRb: { note: "Bench DE - Charlie (DE, m) — Boysen + Fiete (no coinciden) y masculinos puntuales en Hanseat — user-approved 2026-07-20" },
   NE7AIW5DoJ7lUosXV2KR: { note: "Bench DE - Ela Cheerful (DE, f) — femeninas puntuales (Grit, Sofia, Verkäuferin) en Hanseat — user-approved 2026-07-20" },
+
+  // ── Aprobada por el usuario 2026-07-29 tras oír un sample con las líneas
+  // reales del personaje (audición: public/_lea-voces.html).
+  oNs4CSS4LR7hEoEykuS5: { note: "Rebecca Green Calm & Articulate (DE, f) — Lea en Expat DE (Umzug ohne Aufzug) — user-approved 2026-07-29" },
 };
 
 export function isVoiceApproved(voiceId: string | null | undefined): boolean {
