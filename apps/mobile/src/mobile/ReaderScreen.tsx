@@ -1505,7 +1505,6 @@ export function ReaderScreen(args: {
     /^https?:\/\//.test(story.audio)
       ? story.audio
       : preferredAudioUrl;
-  const isOfflineAudio = typeof audioUrl === "string" && audioUrl.startsWith("file://");
   // El popup se reusa para dos fuentes: el vocab curado (definición completa)
   // y el "quick lookup" del piloto tap-any-word (gloss). `quickLookup` marca
   // la segunda para mostrar el chip correcto en la burbuja.
@@ -2228,10 +2227,6 @@ export function ReaderScreen(args: {
             })()}
           </View>
 
-          {isOfflineAudio ? (
-            <Text style={styles.offlineBadge}>Offline audio ready on this device</Text>
-          ) : null}
-
         </View>
       </ScrollView>
 
@@ -2944,11 +2939,6 @@ const styles = StyleSheet.create({
     height: "100%",
     borderRadius: 999,
     backgroundColor: "#f8c15c",
-  },
-  offlineBadge: {
-    color: "#8fc7ff",
-    fontSize: 13,
-    fontWeight: "700",
   },
   textCard: {
     gap: 20,
