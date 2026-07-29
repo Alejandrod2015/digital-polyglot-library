@@ -26,6 +26,13 @@
 # DerivedData de xcodebuild -derivedDataPath build (varios GB de artefactos)
 /apps/mobile/build
 
+# Scratch de auditoria: paginas de audicion, samples y clips sueltos que se
+# generan para escuchar y decidir. Nada de public/_* ni scripts/_covers/ ha
+# estado nunca trackeado. OJO: scripts/_sets/ SI lo esta (126 archivos), por
+# eso no entra aqui.
+/public/_*
+/scripts/_covers
+
 # misc
 .DS_Store
 *.pem
