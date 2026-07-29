@@ -8276,6 +8276,13 @@ export function MobileLibraryShell(args: {
     };
     try {
       await stopPracticeFeedbackSound();
+      // Mismo motivo que en playPracticePerfectChime: en iOS el modo de audio
+      // es global y hay que reafirmarlo antes de reproducir.
+      await Audio.setAudioModeAsync({
+        playsInSilentModeIOS: true,
+        allowsRecordingIOS: false,
+        interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+      });
       const { sound } = await Audio.Sound.createAsync(
         correct ? SFX_PRACTICE_CORRECT : SFX_PRACTICE_WRONG,
         { shouldPlay: true, volume: 0.8 }
@@ -8403,6 +8410,20 @@ export function MobileLibraryShell(args: {
   async function playPracticePerfectChime() {
     try {
       await stopPracticeCelebrationSound();
+      // Fijar el modo ANTES de reproducir, como hacen todas las demas rutas de
+      // sonido de la app. Estas dos (chime perfecto y combo) eran las unicas
+      // que no lo hacian, y en iOS eso significa que suenan con el modo que
+      // dejara el ultimo que lo toco: si venia de un modo con
+      // allowsRecordingIOS true, la salida se enruta al auricular y el sonido
+      // queda inaudible. PracticeSpeaking ya documenta la invariante ("la ruta
+      // normal de playback, que SIEMPRE lo pone en false"). En Android estos
+      // flags son no-ops, que es coherente con que el fallo solo se note en
+      // iPhone.
+      await Audio.setAudioModeAsync({
+        playsInSilentModeIOS: true,
+        allowsRecordingIOS: false,
+        interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+      });
       const { sound } = await Audio.Sound.createAsync(
         SFX_PRACTICE_PERFECT,
         { shouldPlay: true, volume: 0.9 }
@@ -8425,6 +8446,12 @@ export function MobileLibraryShell(args: {
   async function playPracticeComboSound(tier: 0 | 1 | 2 | 3 | 4 | 5) {
     try {
       await stopPracticeCelebrationSound();
+      // Mismo motivo que en playPracticePerfectChime.
+      await Audio.setAudioModeAsync({
+        playsInSilentModeIOS: true,
+        allowsRecordingIOS: false,
+        interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+      });
       const { sound } = await Audio.Sound.createAsync(
         SFX_PRACTICE_PERFECT,
         {
