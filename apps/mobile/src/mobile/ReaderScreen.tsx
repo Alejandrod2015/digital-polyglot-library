@@ -1532,15 +1532,32 @@ export function ReaderScreen(args: {
   // Pulsing halo behind the "Start practice" CTA to draw the eye; same
   // feel as NextActionGlow on the journey map.
   const endOfStoryCtaPulse = useRef(new Animated.Value(0.3)).current;
+  // The sticky audio player is rendered after the prompt in the tree, so it
+  // paints ON TOP of the dimmed backdrop and keeps competing for attention
+  // while the practice card is up. Fade it out with the backdrop (and back in
+  // when the card is dismissed) so the prompt is the only thing on screen.
+  const playerDockOpacity = useRef(new Animated.Value(1)).current;
   useEffect(() => {
     if (!endOfStoryPromptVisible) {
       endOfStoryBackdropOpacity.setValue(0);
       endOfStoryCardOpacity.setValue(0);
       endOfStoryCardTranslate.setValue(40);
       endOfStoryCardScale.setValue(0.92);
+      Animated.timing(playerDockOpacity, {
+        toValue: 1,
+        duration: 180,
+        easing: Easing.out(Easing.quad),
+        useNativeDriver: true,
+      }).start();
       return;
     }
     Animated.parallel([
+      Animated.timing(playerDockOpacity, {
+        toValue: 0,
+        duration: 200,
+        easing: Easing.out(Easing.quad),
+        useNativeDriver: true,
+      }),
       Animated.timing(endOfStoryBackdropOpacity, {
         toValue: 1,
         duration: 200,
@@ -1592,6 +1609,7 @@ export function ReaderScreen(args: {
     endOfStoryCardTranslate,
     endOfStoryCardScale,
     endOfStoryCtaPulse,
+    playerDockOpacity,
   ]);
 
   function runEndOfStoryExitAnimation(onDone: () => void) {
@@ -2477,8 +2495,14 @@ export function ReaderScreen(args: {
         </View>
       ) : null}
 
-      <View
-        style={[styles.playerDock, { paddingBottom: 4 + androidBottomInset }]}
+      <Animated.View
+        // Hidden (and inert) while the end-of-story practice card is up, so the
+        // player doesn't sit lit on top of the dimmed backdrop.
+        pointerEvents={endOfStoryPromptVisible ? "none" : "auto"}
+        style={[
+          styles.playerDock,
+          { paddingBottom: 4 + androidBottomInset, opacity: playerDockOpacity },
+        ]}
         onLayout={(e) => {
           const next = e.nativeEvent.layout.height;
           if (next > 0 && Math.abs(next - playerDockHeight) > 1) {
@@ -2616,7 +2640,7 @@ export function ReaderScreen(args: {
             });
           }}
         />
-      </View>
+      </Animated.View>
     </View>
   );
 }

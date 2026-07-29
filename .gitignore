@@ -23,6 +23,8 @@
 /dist
 /apps/mobile/android
 /apps/mobile/ios
+# DerivedData de xcodebuild -derivedDataPath build (varios GB de artefactos)
+/apps/mobile/build
 
 # misc
 .DS_Store
