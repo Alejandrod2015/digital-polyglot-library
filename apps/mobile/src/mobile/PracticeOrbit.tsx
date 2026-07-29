@@ -441,10 +441,19 @@ export function PracticeOrbit({
           implícita en los skill cards de abajo, mismo color que el
           segmento del anillo). */}
       <Text style={styles.sessionMeta}>
-        {totalDue === 0 && reviewSoonCount > 0 ? (
-          reviewSoonMinutes
-            ? `Next review in ~${reviewSoonMinutes} min`
-            : `${reviewSoonCount} word${reviewSoonCount === 1 ? "" : "s"} coming back soon`
+        {/* Sin nada que practicar NO se cae al ramo de abajo. Antes la
+            condición pedía además `reviewSoonCount > 0`, así que con todo a
+            cero (p.ej. sin red, cuando los favoritos no cargan) la tagline
+            decía "~0 min · 0 skills · +12 XP": prometía XP por una sesión
+            vacía. */}
+        {totalDue === 0 ? (
+          reviewSoonCount > 0 ? (
+            reviewSoonMinutes
+              ? `Next review in ~${reviewSoonMinutes} min`
+              : `${reviewSoonCount} word${reviewSoonCount === 1 ? "" : "s"} coming back soon`
+          ) : (
+            "Nothing due right now"
+          )
         ) : (
           <>
             ~{estimateSessionMinutes(totalDue)} min
