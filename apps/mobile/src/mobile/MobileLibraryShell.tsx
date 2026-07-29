@@ -17331,6 +17331,18 @@ export function MobileLibraryShell(args: {
       (selection.story.slug
         ? offlineStoriesBySlug.get(selection.story.slug)
         : undefined) ?? offlineStoriesById.get(selection.story.id);
+    // ¿La copia descargada corresponde al audio que sirve el servidor AHORA?
+    // El snapshot guarda la url de la que se bajó; si el servidor devuelve
+    // otra, la historia se re-renderizó desde entonces y todo lo local quedó
+    // obsoleto. Sin url del servidor no podemos comparar, así que confiamos
+    // en lo local (mejor eso que quedarse sin audio sin red).
+    const serverAudioUrl = selection.resolvedAudioUrl ?? selection.story.audio ?? null;
+    const offlineAudioIsCurrent =
+      !offlineStory?.localAudioUri ||
+      !offlineStory?.audioUrl ||
+      !serverAudioUrl ||
+      !/^https?:\/\//.test(serverAudioUrl) ||
+      offlineStory.audioUrl === serverAudioUrl;
     const currentStoryIndex = selection.book.stories.findIndex((story) => story.id === selection.story.id);
     const previousStory = currentStoryIndex > 0 ? selection.book.stories[currentStoryIndex - 1] : null;
     const nextStory =
@@ -17342,9 +17354,27 @@ export function MobileLibraryShell(args: {
         <ReaderScreen
           book={selection.book}
           story={selection.story}
-          resolvedAudioUrl={offlineStory?.localAudioUri ?? selection.resolvedAudioUrl ?? selection.story.audio}
-          resolvedCoverUrl={offlineStory?.localCoverUri ?? selection.resolvedCoverUrl ?? null}
-          cachedWordTimingsRaw={offlineStory?.wordTimingsRaw ?? null}
+          // La copia offline solo vale si se bajó de la MISMA url que sirve
+          // el servidor ahora. Al re-renderizar una historia (cambio de voz,
+          // re-pacing) cambia el nombre del mp3 en R2, pero
+          // `hydrateOfflineAssets` —que es quien detecta eso— solo corre
+          // cuando el usuario descarga a mano, nunca al abrir el lector. El
+          // resultado era el peor de los mundos: sonaba el AUDIO VIEJO del
+          // disco mientras los TIMINGS se refrescaban desde la API contra el
+          // audio nuevo, así que el karaoke iba a la deriva y seguía la voz
+          // antigua. Si las urls no coinciden, ignoramos lo local entero
+          // (audio, portada y timings) y tiramos de red.
+          resolvedAudioUrl={
+            offlineAudioIsCurrent
+              ? offlineStory?.localAudioUri ?? selection.resolvedAudioUrl ?? selection.story.audio
+              : selection.resolvedAudioUrl ?? selection.story.audio
+          }
+          resolvedCoverUrl={
+            offlineAudioIsCurrent
+              ? offlineStory?.localCoverUri ?? selection.resolvedCoverUrl ?? null
+              : selection.resolvedCoverUrl ?? null
+          }
+          cachedWordTimingsRaw={offlineAudioIsCurrent ? offlineStory?.wordTimingsRaw ?? null : null}
           sessionToken={sessionToken}
           showOnboardingPlayHint={showOnboardingPlayHint}
           onDismissOnboardingPlayHint={() => setShowOnboardingPlayHint(false)}
