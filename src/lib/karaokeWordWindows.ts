@@ -82,6 +82,38 @@ export function buildWordWindows(
     i = j + 1;
   }
 
+  // Cola que se sale del audio. En algunas historias las ultimas palabras
+  // arrancan DESPUES del final del mp3 (p.ej. triana-y-su-ceramica-azul
+  // empieza "de" en 64.810 y "Sevilla" en 65.010 sobre 64.08 s de audio).
+  // Esas palabras son inalcanzables: `findActiveWordIndex` nunca recibe un
+  // currentTime tan alto, asi que no se encienden NUNCA, y el stepper
+  // tampoco llega porque nunca le dan ese objetivo. Medido con
+  // scripts/_karaokeMobileSim.ts sobre 231 historias y 49.746 palabras: las
+  // 3 unicas palabras que seguian sin resaltarse eran exactamente este caso.
+  //
+  // Las recolocamos repartidas en el tramo audible que queda tras la ultima
+  // palabra valida. Solo toca ventanas que hoy son inalcanzables, asi que no
+  // puede mover ninguna que ya funcionaba.
+  if (typeof audioDurationSec === "number" && audioDurationSec > 0) {
+    let firstOver = out.length;
+    while (firstOver > 0 && out[firstOver - 1].startSec >= audioDurationSec) firstOver -= 1;
+    const overflow = out.length - firstOver;
+    // firstOver === 0 significa que TODAS se salen: ahi no hay ancla audible
+    // de la que colgarlas y no inventamos nada.
+    if (overflow > 0 && firstOver > 0) {
+      const anchor = out[firstOver - 1].startSec;
+      if (anchor < audioDurationSec) {
+        const slot = (audioDurationSec - anchor) / (overflow + 1);
+        for (let k = 0; k < overflow; k += 1) {
+          out[firstOver + k] = {
+            index: out[firstOver + k].index,
+            startSec: anchor + slot * (k + 1),
+          };
+        }
+      }
+    }
+  }
+
   // Ties inside a run are resolved above, but guard the invariant the lookup
   // relies on: strictly increasing starts.
   for (let k = 1; k < out.length; k += 1) {

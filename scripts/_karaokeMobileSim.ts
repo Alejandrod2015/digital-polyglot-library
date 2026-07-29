@@ -135,8 +135,14 @@ async function main() {
       if (w < 0.0167) tightWeb += 1;
     }
 
-    const m = sweep(payload.words, dur, 0.025, (t) => findActiveKaraokeWordIndex(payload.words, t));
+    // El movil YA no usa `findActiveKaraokeWordIndex`: ReaderScreen migro a
+    // buildWordWindows + findActiveWordIndex (el mismo lib que la web), y este
+    // script se habia quedado midiendo el algoritmo viejo. Lo unico que
+    // distingue hoy a las dos plataformas es la CADENCIA de muestreo: 25 ms de
+    // intervalo en el movil contra ~16.7 ms de frame en web.
+    const mobileMissing: number[] = [];
     const webMissing: number[] = [];
+    const m = sweep(payload.words, dur, 0.025, (t) => findActiveWordIndex(windows, t), mobileMissing);
     const w = sweep(payload.words, dur, 0.0167, (t) => findActiveWordIndex(windows, t), webMissing);
     if (webMissing.length > 0) {
       for (const i of webMissing) {
