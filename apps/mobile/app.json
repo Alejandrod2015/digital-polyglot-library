@@ -11,11 +11,12 @@
     ],
     "ios": {
       "supportsTablet": false,
-      "buildNumber": "267",
+      "buildNumber": "272",
       "bundleIdentifier": "com.digitalpolyglot.mobile"
     },
     "android": {
-      "package": "com.digitalpolyglot.mobile"
+      "package": "com.digitalpolyglot.mobile",
+      "versionCode": 15
     }
   }
 }
