@@ -1856,6 +1856,17 @@ function formatReadingProgressLabel(progress?: ReadingProgress | null): string |
   return undefined;
 }
 
+/**
+ * "Idioma · Tema" para la meta de una tarjeta de historia, omitiendo la mitad
+ * del tema cuando no hay tema. `formatTopic` cae al FALLBACK "-" con un valor
+ * vacío, así que las tarjetas mostraban cosas como "Italian · -".
+ */
+function storyCardMeta(language?: string | null, topic?: string | null): string {
+  const lang = formatLanguage(language ?? undefined);
+  const t = topic && topic.trim() ? formatTopic(topic) : null;
+  return t ? `${lang} · ${t}` : lang;
+}
+
 function preferencesEqual(a: MobilePreferences, b: MobilePreferences): boolean {
   if (a.preferredLevel !== b.preferredLevel) return false;
   if (a.preferredRegion !== b.preferredRegion) return false;
@@ -5188,9 +5199,13 @@ export function MobileLibraryShell(args: {
         return {
           key: `continue-${item.story.id}`,
           title: item.story.title,
-          subtitle: progress ? formatReadingProgressLabel(progress) ?? item.book.title : item.book.title,
+          // El subtítulo es SIEMPRE el libro: el progreso ya lo pinta
+          // `progressLabel` en su propia línea (MobileCards), así que
+          // meterlo también aquí repetía "Just getting started" dos veces
+          // en la misma tarjeta.
+          subtitle: item.book.title,
           coverUrl: getCoverUrl(item.story.cover ?? item.story.coverUrl ?? item.book.cover),
-          meta: `${formatLanguage(item.story.language ?? item.book.language)} · ${formatTopic(item.story.topic ?? item.book.topic)}`,
+          meta: storyCardMeta(item.story.language ?? item.book.language, item.story.topic ?? item.book.topic),
           badge: offlineStoriesById.has(item.story.id) ? "Offline ready" : item.story.audio ? "Audio" : "Text",
           progressLabel: formatReadingProgressLabel(progress),
           onPress: () => setSelection(item),
@@ -5206,9 +5221,12 @@ export function MobileLibraryShell(args: {
         return {
           key: `saved-${selection.story.id}`,
           title: selection.story.title,
-          subtitle: progress ? formatReadingProgressLabel(progress) ?? selection.book.title : selection.book.title,
+          subtitle: selection.book.title,
           coverUrl: getCoverUrl(selection.story.cover ?? selection.story.coverUrl ?? selection.book.cover),
-          meta: `${formatLanguage(selection.story.language ?? selection.book.language)} · ${formatTopic(selection.story.topic ?? selection.book.topic)}`,
+          meta: storyCardMeta(
+            selection.story.language ?? selection.book.language,
+            selection.story.topic ?? selection.book.topic
+          ),
           badge: offlineStory ? "Offline ready" : selection.story.audio ? "Audio ready" : "Text",
           progressLabel: formatReadingProgressLabel(progress),
           onPress: () =>
@@ -5229,9 +5247,12 @@ export function MobileLibraryShell(args: {
         return {
           key: `remote-${remote.storyId}`,
           title: remote.title,
-          subtitle: progress ? formatReadingProgressLabel(progress) ?? selection.book.title : selection.book.title,
+          subtitle: selection.book.title,
           coverUrl: getCoverUrl(selection.story.cover || remote.coverUrl || selection.book.cover),
-          meta: `${formatLanguage(remote.language ?? selection.story.language ?? selection.book.language)} · ${formatTopic(remote.topic ?? selection.story.topic ?? selection.book.topic)}`,
+          meta: storyCardMeta(
+            remote.language ?? selection.story.language ?? selection.book.language,
+            remote.topic ?? selection.story.topic ?? selection.book.topic
+          ),
           badge: offlineStory ? "Offline ready" : remote.audioUrl ? "Audio ready" : "Text",
           progressLabel: formatReadingProgressLabel(progress),
           onPress: () =>
@@ -11717,7 +11738,10 @@ export function MobileLibraryShell(args: {
               }}
               style={styles.secondaryButton}
             >
-              <Text style={styles.secondaryButtonText}>← Back to Explore</Text>
+              {/* No dice "Back to Explore" porque la cabecera de la pantalla
+                  SIGUE diciendo "Explore": desde dentro se lee como volver a
+                  donde ya estás. Nombra el destino real, la portada. */}
+              <Text style={styles.secondaryButtonText}>← Explore overview</Text>
             </Pressable>
             <View
               style={[
@@ -11802,7 +11826,7 @@ export function MobileLibraryShell(args: {
       })() : expandedExploreSection ? (
         <View style={styles.section}>
           <Pressable onPress={() => { setExpandedExploreSection(null); shellScrollRef.current?.scrollTo({ y: 0, animated: false }); }} style={styles.secondaryButton}>
-            <Text style={styles.secondaryButtonText}>Back to Explore</Text>
+            <Text style={styles.secondaryButtonText}>← Explore overview</Text>
           </Pressable>
           <View style={styles.sectionHeader}>
             <View>
@@ -12365,13 +12389,21 @@ export function MobileLibraryShell(args: {
                 });
 
                 const firstName = (sessionName ?? "").trim().split(/\s+/)[0] || null;
+                // El saludo escala con la precisión igual que el headline. Antes
+                // era binario (perfecto / todo lo demás), así que una sesión de
+                // 0 de 10 al 0% seguía saludando con "NICE RUN": felicitar un
+                // cero se lee a burla.
                 const greeting = isPerfect
                   ? firstName
                     ? `PERFECT, ${firstName.toUpperCase()}.`
                     : "PERFECT RUN."
-                  : firstName
-                    ? `NICE RUN, ${firstName.toUpperCase()}.`
-                    : "SESSION COMPLETE.";
+                  : accuracyPct >= 40
+                    ? firstName
+                      ? `NICE RUN, ${firstName.toUpperCase()}.`
+                      : "SESSION COMPLETE."
+                    : firstName
+                      ? `TOUGH ROUND, ${firstName.toUpperCase()}.`
+                      : "TOUGH ROUND.";
                 let headline: string;
                 if (isCheckpoint) {
                   headline = checkpointPassed
@@ -12575,8 +12607,18 @@ export function MobileLibraryShell(args: {
                                 <Feather name="arrow-right" size={16} color="#b8c9df" />
                               </View>
                               <Text style={styles.practiceWhatsNextTitle}>Next story</Text>
-                              <Text style={styles.practiceWhatsNextSubtitle}>
-                                {(captured.title?.trim() || "next story").slice(0, 22)}
+                              {/* Antes era .slice(0, 22): cortaba a pelo por
+                                  número de caracteres, sin puntos suspensivos y
+                                  sin saber el ancho real de la tarjeta, así que
+                                  "Duzen auf eigene Gefahr" (23) salía como
+                                  "Duzen auf eigene Gefah". Que lo recorte el
+                                  layout, que sí sabe cuánto cabe. */}
+                              <Text
+                                style={styles.practiceWhatsNextSubtitle}
+                                numberOfLines={2}
+                                ellipsizeMode="tail"
+                              >
+                                {captured.title?.trim() || "next story"}
                               </Text>
                             </Pressable>
                           );
@@ -12596,7 +12638,14 @@ export function MobileLibraryShell(args: {
                           <Text style={styles.practiceWhatsNextTitle}>
                             Fix {practiceMissedItems.length}
                           </Text>
-                          <Text style={styles.practiceWhatsNextSubtitle}>You missed</Text>
+                          {/* La unidad va en el subtítulo: practiceMissedItems
+                              deduplica por palabra (Set), así que cuenta
+                              PALABRAS distintas, no ejercicios. Sin esto, un
+                              "Fix 9" junto a "0 of 10 correct" parece un
+                              error de conteo. */}
+                          <Text style={styles.practiceWhatsNextSubtitle}>
+                            {practiceMissedItems.length === 1 ? "word missed" : "words missed"}
+                          </Text>
                         </Pressable>
                       ) : null}
 
@@ -17744,7 +17793,7 @@ export function MobileLibraryShell(args: {
             ) : null}
             {effectivePlan === "polyglot" ? (
               <MenuScreenRow
-                icon="settings"
+                icon="journey"
                 label="Replay tour"
                 onPress={() => {
                   setMenuOpen(false);
