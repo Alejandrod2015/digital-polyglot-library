@@ -65,7 +65,10 @@ export async function GET(
     if (!claim) {
       console.warn("🚫 Enlace inválido o inexistente");
       return NextResponse.json(
-        { error: "Este enlace de acceso no es válido o ha expirado." },
+        {
+          code: "invalid",
+          error: "This access link is not valid or has expired.",
+        },
         { status: 404 }
       );
     }
@@ -98,8 +101,9 @@ export async function GET(
       console.warn(`🚫 Enlace ya usado por otro usuario (${claim.redeemedBy})`);
       return NextResponse.json(
         {
+          code: "usedByAnother",
           error:
-            "Este enlace de acceso ya fue usado. Si crees que es un error, escríbenos a support@digitalpolyglot.com.",
+            "This access link has already been used by another account. If you think this is a mistake, write to support@digitalpolyglot.com.",
         },
         { status: 410 }
       );
@@ -127,7 +131,20 @@ export async function GET(
       console.log("♻️ Enlace ya redimido previamente por este usuario.");
     }
 
-    // 🧩 Si hay sesión, sincronizar Clerk + My Library
+    // 🧩 Si hay sesión, sincronizar Clerk + My Library.
+    //
+    // 🚨 REGLA (2026-07-29): la respuesta de este endpoint NO puede decir
+    // "libros agregados" salvo que la fila de LibraryBook exista de verdad.
+    // El 2026-07-28 una clienta canjeó su enlace, el upsert falló (compute de
+    // Neon dormido: el reintento P1001 se añadió ese mismo día), el error se
+    // tragó en el catch, y la respuesta igual dijo OK. Vio su biblioteca
+    // vacía, dedujo que el pago no había entrado y COMPRÓ EL MISMO LIBRO
+    // OTRA VEZ. Lo que sigue cuenta entregas reales y las reporta.
+    const grantedBookIds: string[] = [];
+    const failedBookIds: string[] = [];
+    let unresolvedBookIds: string[] = [];
+    let alreadyOwned = false;
+
     if (userId) {
       try {
         // 🛡️ GUARD anti-fantasma: solo concedemos libros que EXISTEN en el
@@ -147,6 +164,7 @@ export async function GET(
           resolved.push({ bookId, title: meta.title, cover: meta.cover });
         }
 
+        unresolvedBookIds = unresolved;
         if (unresolved.length > 0) {
           console.error(
             `🚨 CLAIM SIN CATÁLOGO — userId=${userId} buyer=${redeemed.buyerEmail} ` +
@@ -156,42 +174,83 @@ export async function GET(
         }
 
         if (resolved.length > 0) {
+          // Saber qué tenía ANTES distingue "te lo acabamos de dar" de "ya lo
+          // tenías", que es justo la señal de una compra duplicada.
+          const preexisting = await prisma.libraryBook.findMany({
+            where: { userId, bookId: { in: resolved.map((r) => r.bookId) } },
+            select: { bookId: true },
+          });
+          const ownedBefore = new Set(preexisting.map((row) => row.bookId));
+          alreadyOwned = ownedBefore.size === resolved.length;
+
           await patchUserMetadata(
             userId,
             resolved.map((r) => r.bookId)
           );
 
+          // Un libro que falla no puede impedir la entrega de los demás: cada
+          // upsert va aislado y se contabiliza por separado.
           for (const r of resolved) {
-            await prisma.libraryBook.upsert({
-              where: { userId_bookId: { userId, bookId: r.bookId } },
-              update: {}, // idempotente
-              create: {
-                userId,
-                bookId: r.bookId,
-                title: r.title,
-                coverUrl: r.cover,
-              },
-            });
+            try {
+              await prisma.libraryBook.upsert({
+                where: { userId_bookId: { userId, bookId: r.bookId } },
+                update: {}, // idempotente
+                create: {
+                  userId,
+                  bookId: r.bookId,
+                  title: r.title,
+                  coverUrl: r.cover,
+                },
+              });
+              grantedBookIds.push(r.bookId);
+            } catch (upsertErr) {
+              failedBookIds.push(r.bookId);
+              const msg =
+                upsertErr instanceof Error ? upsertErr.message : String(upsertErr);
+              console.error(
+                `🚨 CLAIM NO MATERIALIZADO — userId=${userId} buyer=${redeemed.buyerEmail} ` +
+                  `token=${token} libro=${r.bookId} error=${msg} — el comprador NO tiene ` +
+                  `este libro en My Library. La respuesta se lo dice y puede reintentar.`,
+                upsertErr
+              );
+            }
           }
 
-          // 🔥 INVALIDAR CACHE DE LA BIBLIOTECA DEL USUARIO
-          revalidateTag("library-by-user");
+          if (grantedBookIds.length > 0) {
+            // 🔥 INVALIDAR CACHE DE LA BIBLIOTECA DEL USUARIO
+            revalidateTag("library-by-user");
+          }
+
+          if (ownedBefore.size > 0) {
+            // Señal para soporte: pagó dos veces por lo mismo. La primera
+            // clienta a la que le pasó (2026-07-28) tuvo que pedir reembolso
+            // por su cuenta porque nada avisó.
+            console.warn(
+              `💸 CLAIM DUPLICADO — userId=${userId} buyer=${redeemed.buyerEmail} ` +
+                `token=${token} ya_tenia=${JSON.stringify([...ownedBefore])} — ` +
+                `posible cobro doble, revisar reembolso.`
+            );
+          }
         }
 
         console.log(
           `📚 My Library sincronizada para: ${userId} ` +
-            `(concedidos=${resolved.length} sin_resolver=${unresolved.length})`
+            `(entregados=${grantedBookIds.length} fallidos=${failedBookIds.length} ` +
+            `sin_resolver=${unresolved.length})`
         );
       } catch (libErr) {
-        // 🚨 El upsert de LibraryBook es LA entrega: si falla, el comprador
-        // paga y no ve el libro, pero la respuesta sigue diciendo "Books
-        // added". Alertamos con el mismo formato que el guard anti-fantasma
-        // para poder repararlo a mano (2026-07-28).
+        // Fallo antes o alrededor del bucle (p.ej. la lectura del catálogo):
+        // nada se entregó, y la respuesta lo va a reflejar.
         const msg = libErr instanceof Error ? libErr.message : String(libErr);
+        for (const bookId of redeemed.books) {
+          if (!grantedBookIds.includes(bookId) && !failedBookIds.includes(bookId)) {
+            failedBookIds.push(bookId);
+          }
+        }
         console.error(
           `🚨 CLAIM NO MATERIALIZADO — userId=${userId} buyer=${redeemed.buyerEmail} ` +
             `token=${token} libros=${JSON.stringify(redeemed.books)} error=${msg} — ` +
-            `el usuario NO tiene los libros en My Library pese a la respuesta OK.`,
+            `el comprador NO tiene los libros en My Library.`,
           libErr
         );
       }
@@ -205,19 +264,42 @@ export async function GET(
       }))
     );
 
+    // La entrega es la fila de LibraryBook, no el marcado del token. Solo
+    // decimos que está en su cuenta cuando TODOS los libros del enlace están.
+    const undelivered = [...failedBookIds, ...unresolvedBookIds];
+    const delivered = undelivered.length === 0 && grantedBookIds.length > 0;
+
+    if (!delivered) {
+      return NextResponse.json(
+        {
+          code: "notDelivered",
+          delivered: false,
+          books: detailedBooks,
+          grantedBooks: grantedBookIds,
+          pendingBooks: undelivered,
+          error:
+            "We could not add these books to your library just now. Your purchase is safe and you have not been charged again.",
+        },
+        { status: 503 }
+      );
+    }
+
     return NextResponse.json({
-      message: claim.redeemedAt
-        ? "Estos libros ya están en tu cuenta."
-        : "Libros agregados correctamente a tu cuenta.",
+      code: alreadyOwned ? "alreadyOwned" : "granted",
+      delivered: true,
+      alreadyOwned,
       books: detailedBooks,
-      redeemedBy: userId ?? null,
+      grantedBooks: grantedBookIds,
+      redeemedBy: userId,
     });
   } catch (err) {
     console.error("💥 Error en el proceso de redención:", err);
     return NextResponse.json(
       {
+        code: "serverError",
+        delivered: false,
         error:
-          "Ocurrió un error interno al procesar tu solicitud. Intenta nuevamente más tarde.",
+          "Something went wrong on our side. Your purchase is safe and you have not been charged again.",
       },
       { status: 500 }
     );

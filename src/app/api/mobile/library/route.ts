@@ -1,12 +1,19 @@
 export const runtime = "nodejs";
 
 import { NextRequest, NextResponse } from "next/server";
-import { getStandaloneStoriesByIds } from "@/lib/standaloneStories";
 import { getActiveMobileSession } from "@/lib/mobileSession";
-import { prisma } from "@/lib/prisma";
+import { loadLibraryRows, type LibraryType } from "@/lib/libraryRows";
 
-type LibraryType = "book" | "story";
-
+// WHY (2026-07-29): this route used to return the raw LibraryBook /
+// LibraryStory rows, leaving the app to match them against the catalog it
+// bundles at build time — the exact lookup that made a paid book vanish from
+// My Library on the web (fixed in 07c898fd). A title published after the last
+// App Store build is absent from that bundle, so the purchase was dropped.
+// Sharing loadLibraryRows with /api/library means the server resolves the
+// metadata against CatalogBook/CatalogStory and ships it in `meta`, so a book
+// the app has never heard of still renders with cover, level and title.
+// The original row fields are untouched, so already-installed builds keep
+// working exactly as before.
 export async function GET(req: NextRequest): Promise<Response> {
   const session = await getActiveMobileSession(req);
   if (!session) {
@@ -14,80 +21,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   }
 
   const { searchParams } = new URL(req.url);
-  const type = (searchParams.get("type") as LibraryType) ?? "book";
+  const type: LibraryType = searchParams.get("type") === "story" ? "story" : "book";
 
-  if (type === "story") {
-    const rows = await prisma.libraryStory.findMany({
-      where: { userId: session.sub },
-      orderBy: { createdAt: "desc" },
-    });
-
-    const polyglotIds = rows.filter((row) => row.bookId === "polyglot").map((row) => row.storyId);
-    const standaloneIds = rows.filter((row) => row.bookId === "standalone").map((row) => row.storyId);
-
-    const [polyglotStories, standaloneStories] = await Promise.all([
-      polyglotIds.length === 0
-        ? Promise.resolve([])
-        : prisma.userStory.findMany({
-            where: { id: { in: polyglotIds } },
-            select: {
-              id: true,
-              slug: true,
-              language: true,
-              region: true,
-              level: true,
-              topic: true,
-              coverUrl: true,
-              audioUrl: true,
-            },
-          }),
-      getStandaloneStoriesByIds(standaloneIds),
-    ]);
-
-    const byId = new Map(polyglotStories.map((story) => [story.id, story]));
-    const standaloneById = new Map(standaloneStories.map((story) => [story.id, story]));
-
-    return NextResponse.json(
-      rows.map((row) => {
-        if (row.bookId === "polyglot") {
-          const story = byId.get(row.storyId);
-          if (!story) return row;
-          return {
-            ...row,
-            storySlug: story.slug,
-            language: story.language,
-            region: story.region,
-            level: story.level,
-            topic: story.topic,
-            audioUrl: story.audioUrl,
-            coverUrl: story.coverUrl ?? row.coverUrl,
-          };
-        }
-
-        if (row.bookId === "standalone") {
-          const story = standaloneById.get(row.storyId);
-          if (!story) return row;
-          return {
-            ...row,
-            storySlug: story.slug,
-            language: story.language,
-            region: story.region,
-            level: story.level,
-            topic: story.topic,
-            audioUrl: story.audioUrl,
-            coverUrl: story.coverUrl ?? row.coverUrl,
-          };
-        }
-
-        return row;
-      })
-    );
-  }
-
-  const books = await prisma.libraryBook.findMany({
-    where: { userId: session.sub },
-    orderBy: { createdAt: "desc" },
-  });
-
-  return NextResponse.json(books);
+  return NextResponse.json(await loadLibraryRows(session.sub, type));
 }

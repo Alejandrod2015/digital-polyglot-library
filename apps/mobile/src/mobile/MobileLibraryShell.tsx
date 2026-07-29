@@ -570,11 +570,28 @@ type MobileProgressPayload = {
   gamification: GamificationSummary;
 };
 
+// `meta` is resolved server-side against the real catalog (see
+// /api/mobile/library). It is optional because an older server, or a catalog
+// read that failed, simply omits it — the row's own title/coverUrl still
+// carry enough to render the card.
+type RemoteLibraryBookMeta = {
+  slug?: string | null;
+  title?: string | null;
+  cover?: string | null;
+  language?: string | null;
+  region?: string | null;
+  level?: string | null;
+  statsLine?: string | null;
+  topicsLine?: string | null;
+  description?: string | null;
+};
+
 type RemoteLibraryBook = {
   id: string;
   bookId: string;
   title: string;
   coverUrl: string;
+  meta?: RemoteLibraryBookMeta | null;
 };
 
 type RemoteLibraryStory = {
@@ -2134,11 +2151,17 @@ export function MobileLibraryShell(args: {
   >("idle");
   const [practiceJourneyReviewMeta, setPracticeJourneyReviewMeta] = useState<JourneyReviewMeta | null>(null);
   const [selectedFavoriteType, setSelectedFavoriteType] = useState<string>("all");
+  // Sample content seeds the SIGNED-OUT preview only. Seeding it for a signed-in
+  // user put two books they never bought on the "Books in your library" shelf
+  // (2026-07-29), which is both a lie and, with the old either/or render, what
+  // hid their real purchases.
   const [savedBookIds, setSavedBookIds] = useState<string[]>(() =>
-    CATALOG_BOOKS.map((book) => book.id).slice(0, 2)
+    isSignedIn ? [] : CATALOG_BOOKS.map((book) => book.id).slice(0, 2)
   );
   const [savedStoryIds, setSavedStoryIds] = useState<string[]>(() =>
-    CATALOG_BOOKS.flatMap((book) => book.stories.slice(0, 1).map((story) => story.id))
+    isSignedIn
+      ? []
+      : CATALOG_BOOKS.flatMap((book) => book.stories.slice(0, 1).map((story) => story.id))
   );
   const [readingProgress, setReadingProgress] = useState<ReadingProgress[]>([]);
   const [favoriteWords, setFavoriteWords] = useState<MobileFavoriteItem[]>([]);
@@ -3497,9 +3520,14 @@ export function MobileLibraryShell(args: {
     let cancelled = false;
 
     async function hydratePreviewState() {
+      // Same rule as the initial state: sample content is for the signed-out
+      // preview. Anything the user actually saved is stored and returned by
+      // loadMobilePreviewState, so this only affects a fresh install.
       const fallback = {
-        savedBookIds: CATALOG_BOOKS.map((book) => book.id).slice(0, 2),
-        savedStoryIds: CATALOG_BOOKS.flatMap((book) => book.stories.slice(0, 1).map((story) => story.id)),
+        savedBookIds: isSignedIn ? [] : CATALOG_BOOKS.map((book) => book.id).slice(0, 2),
+        savedStoryIds: isSignedIn
+          ? []
+          : CATALOG_BOOKS.flatMap((book) => book.stories.slice(0, 1).map((story) => story.id)),
         readingProgress: [],
       };
       const storedState = await loadMobilePreviewState(fallback);
@@ -5333,30 +5361,66 @@ export function MobileLibraryShell(args: {
     [remoteStories]
   );
 
+  // NEVER drop a purchased row. This used to `return null` whenever the book
+  // was missing from the bundled catalog, which is exactly the bug that hid a
+  // paid title on the web (fixed in 07c898fd) and cost a customer a second
+  // purchase. Order of preference: bundled book, then server-resolved meta,
+  // then the fields saved on the row itself.
   const remoteBookCards = useMemo(
     () =>
-      remoteBooks
-        .map((item) => {
-          const book = CATALOG_BOOKS.find((entry) => entry.id === item.bookId);
-          if (!book) return null;
-          return {
-            key: `remote-book-${item.bookId}`,
-            title: item.title,
-            coverUrl: getCoverUrl(item.coverUrl || book.cover),
-            language: formatLanguage(book.language),
-            region: formatRegion(book.region),
-            level: book.level,
-            statsLine: `${book.stories.length} stories`,
-            topicsLine: formatTopic(book.topic),
-            description: book.description ?? book.subtitle ?? undefined,
-            onPress: () => {
-              openBook(book);
-            },
-          };
-        })
-        .filter((item): item is NonNullable<typeof item> => item !== null),
-    [remoteBooks]
+      remoteBooks.map((item) => {
+        const book = CATALOG_BOOKS.find(
+          (entry) => entry.id === item.bookId || entry.slug === item.bookId
+        );
+        const meta = item.meta ?? null;
+        const language = book?.language ?? meta?.language ?? null;
+        const region = book?.region ?? meta?.region ?? null;
+        const level = book?.level ?? meta?.level ?? null;
+        const storiesLine = book
+          ? `${book.stories.length} stories`
+          : meta?.statsLine ?? undefined;
+
+        return {
+          key: `remote-book-${item.bookId}`,
+          title: item.title || meta?.title || book?.title || "Your book",
+          coverUrl: getCoverUrl(item.coverUrl || meta?.cover || book?.cover || ""),
+          language: language ? formatLanguage(language) : undefined,
+          region: region ? formatRegion(region) : undefined,
+          level: level ?? undefined,
+          statsLine: storiesLine,
+          topicsLine: book ? formatTopic(book.topic) : meta?.topicsLine ?? undefined,
+          description: book?.description ?? book?.subtitle ?? meta?.description ?? undefined,
+          onPress: () => {
+            void openLibraryBook(item);
+          },
+        };
+      }),
+    [remoteBooks, sessionToken]
   );
+
+  // The shelf is the UNION of what you bought and what you saved locally, not
+  // one or the other. It used to be `savedBooks.length > 0 ? saved : remote`,
+  // so a single locally saved book hid every purchase behind it — and new
+  // installs seeded two sample books, which meant purchases were hidden by
+  // default. Purchases come first and win on duplicates.
+  const shelfBookCards = useMemo(() => {
+    const purchasedIds = new Set(remoteBooks.map((item) => item.bookId));
+    const savedCards = savedBooks
+      .filter((book) => !purchasedIds.has(book.id) && !purchasedIds.has(book.slug))
+      .map((book) => ({
+        key: `saved-book-${book.id}`,
+        title: book.title,
+        coverUrl: getCoverUrl(book.cover),
+        language: formatLanguage(book.language),
+        region: formatRegion(book.region),
+        level: book.level,
+        statsLine: `${book.stories.length} stories`,
+        topicsLine: formatTopic(book.topic),
+        description: book.description ?? book.subtitle ?? undefined,
+        onPress: () => openBook(book),
+      }));
+    return [...remoteBookCards, ...savedCards];
+  }, [remoteBookCards, remoteBooks, savedBooks]);
 
   const bottomTabs: { key: BottomTab; label: string }[] = isSignedIn
     ? [
@@ -5460,6 +5524,35 @@ export function MobileLibraryShell(args: {
     setSelectedBook(book);
     setSelectedBookTab("stories");
     setMenuOpen(false);
+  }
+
+  // Opens a book the user owns, whether or not this build bundles it.
+  //
+  // WHY (2026-07-29): the catalog ships inside the binary, so a title
+  // published after the last App Store build did not exist for the app and
+  // the purchase was silently dropped from the shelf. Owned books that the
+  // bundle does not know are fetched from the server instead.
+  async function openLibraryBook(item: RemoteLibraryBook) {
+    const bundled = CATALOG_BOOKS.find(
+      (entry) => entry.id === item.bookId || entry.slug === item.bookId
+    );
+    if (bundled) {
+      openBook(bundled);
+      return;
+    }
+
+    if (!sessionToken) return;
+    try {
+      const payload = await apiFetch<{ book?: Book }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: `/api/mobile/book/${encodeURIComponent(item.bookId)}`,
+        token: sessionToken,
+        timeoutMs: 15000,
+      });
+      if (payload.book) openBook(payload.book);
+    } catch (error) {
+      console.error("[mobile library] failed to open purchased book", item.bookId, error);
+    }
   }
 
   useEffect(() => {
@@ -13828,39 +13921,23 @@ export function MobileLibraryShell(args: {
             <Text style={styles.sectionEyebrow}>Books</Text>
             <Text style={styles.sectionTitle}>Books in your library</Text>
           </View>
-          <Text style={styles.helperText}>
-            {(savedBooks.length > 0 ? savedBooks.length : remoteBookCards.length)} books
-          </Text>
+          <Text style={styles.helperText}>{shelfBookCards.length} books</Text>
         </View>
-        {savedBooks.length > 0 ? (
+        {shelfBookCards.length > 0 ? (
           <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-            {savedBooks.map((book) => (
+            {shelfBookCards.map((item) => (
               <BookWebCard
-                key={`library-book-${book.id}`}
-                item={{
-                  key: book.id,
-                  title: book.title,
-                  coverUrl: getCoverUrl(book.cover),
-                  language: formatLanguage(book.language),
-                  region: formatRegion(book.region),
-                  level: book.level,
-                  statsLine: `${book.stories.length} stories`,
-                  topicsLine: formatTopic(book.topic),
-                  description: book.description ?? book.subtitle ?? undefined,
-                  onPress: () => openBook(book),
-                }}
-              />
-            ))}
-          </ScrollView>
-        ) : remoteBookCards.length > 0 ? (
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-            {remoteBookCards.map((item) => (
-              <BookWebCard
-                key={item.key}
+                key={`library-book-${item.key}`}
                 item={{
                   key: item.key,
                   title: item.title,
                   coverUrl: item.coverUrl,
+                  language: item.language,
+                  region: item.region,
+                  level: item.level,
+                  statsLine: item.statsLine,
+                  topicsLine: item.topicsLine,
+                  description: item.description,
                   onPress: item.onPress,
                 }}
               />

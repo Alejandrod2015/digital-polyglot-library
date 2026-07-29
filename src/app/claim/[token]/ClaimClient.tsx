@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useAuth, UserButton } from "@clerk/nextjs";
 
 type Book = {
@@ -11,32 +11,64 @@ type Book = {
   description?: string;
 };
 
+// WHY (2026-07-29): this screen used to render "Books added to your account"
+// off the mere absence of an HTTP error. On 2026-07-28 the API answered OK
+// while the LibraryBook write had failed; the buyer read "added", found an
+// empty library, concluded the payment had not gone through and bought the
+// same book a second time. The success state now requires `delivered: true`
+// from the API, and a failed delivery gets its own retryable state.
 type ClaimState =
   | { status: "loading" }
   | { status: "needsAuth"; books: Book[]; message: string }
-  | { status: "success"; books: Book[]; message: string }
-  | { status: "error"; message: string };
+  | { status: "success"; books: Book[]; alreadyOwned: boolean }
+  | { status: "notDelivered"; books: Book[]; message: string }
+  | { status: "error"; title: string; message: string };
 
 export default function ClaimClient({ token }: { token: string }) {
   const { isSignedIn } = useAuth();
   const [state, setState] = useState<ClaimState>({ status: "loading" });
+  const [attempt, setAttempt] = useState(0);
+
+  const retry = useCallback(() => {
+    setState({ status: "loading" });
+    setAttempt((n) => n + 1);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
 
     async function redeemToken() {
       try {
-        const res = await fetch(`/api/claim/${token}`);
+        const res = await fetch(`/api/claim/${token}`, { cache: "no-store" });
         const data = await res.json();
 
         if (cancelled) return;
 
+        // The delivery failed but the purchase is intact: say so plainly and
+        // offer a retry. Never present this as success, and never as a used
+        // link — both readings push the buyer to pay again.
+        if (res.status === 503 || data?.code === "notDelivered" || data?.code === "serverError") {
+          setState({
+            status: "notDelivered",
+            books: data?.books || [],
+            message:
+              data?.error ||
+              "We could not add these books to your library just now. Nothing was lost and you have not been charged again.",
+          });
+          return;
+        }
+
         if (!res.ok) {
-          const friendly =
-            res.status === 410
-              ? "If you believe this is a mistake, contact us at support@digitalpolyglot.com."
-              : data?.error || "An unexpected error has occurred.";
-          setState({ status: "error", message: friendly });
+          setState({
+            status: "error",
+            title:
+              data?.code === "usedByAnother"
+                ? "This access link has already been used"
+                : "This access link is not valid",
+            message:
+              data?.error ||
+              "If you believe this is a mistake, contact us at support@digitalpolyglot.com.",
+          });
           return;
         }
 
@@ -54,17 +86,30 @@ export default function ClaimClient({ token }: { token: string }) {
           return;
         }
 
+        // A 200 without `delivered` means an older/unknown response shape:
+        // treat it as not delivered rather than claiming success blindly.
+        if (data?.delivered !== true) {
+          setState({
+            status: "notDelivered",
+            books: data?.books || [],
+            message:
+              "We could not confirm these books reached your library. Your purchase is safe and you have not been charged again.",
+          });
+          return;
+        }
+
         setState({
           status: "success",
           books: data.books || [],
-          message: data.message || "Books added to your account",
+          alreadyOwned: data.alreadyOwned === true,
         });
-      } catch (err) {
+      } catch {
         if (!cancelled) {
           setState({
-            status: "error",
+            status: "notDelivered",
+            books: [],
             message:
-              "Could not connect to the server. Please try again in a few minutes.",
+              "Could not reach the server. Your purchase is safe and you have not been charged again.",
           });
         }
       }
@@ -74,7 +119,7 @@ export default function ClaimClient({ token }: { token: string }) {
     return () => {
       cancelled = true;
     };
-  }, [token]);
+  }, [token, attempt]);
 
   if (state.status === "loading") {
     return (
@@ -87,14 +132,63 @@ export default function ClaimClient({ token }: { token: string }) {
   if (state.status === "error") {
     return (
       <main className="min-h-screen flex flex-col items-center justify-center bg-[#0D1B2A] text-white px-6 text-center">
-        <h1 className="text-2xl font-semibold mb-3">This access link has already been used.</h1>
-        <p className="text-white/80 mb-6">{state.message}</p>
+        <h1 className="text-2xl font-semibold mb-3">{state.title}</h1>
+        <p className="text-white/80 mb-6 max-w-xl">{state.message}</p>
         <a
           href="https://reader.digitalpolyglot.com/"
           className="px-4 py-2 bg-white text-[#0D1B2A] rounded-xl hover:bg-gray-200 transition"
         >
           Go to homepage
         </a>
+      </main>
+    );
+  }
+
+  if (state.status === "notDelivered") {
+    return (
+      <main className="min-h-screen flex flex-col items-center justify-center bg-[#0D1B2A] text-white px-6 text-center">
+        <h1 className="text-2xl font-semibold mb-3">We could not add your books yet</h1>
+        <p className="text-white/80 mb-2 max-w-xl">{state.message}</p>
+        <p className="text-white/60 mb-8 max-w-xl text-sm">
+          This link stays valid, so try again in a minute. Please do not buy again: if it
+          keeps failing, write to support@digitalpolyglot.com and we will add them by hand.
+        </p>
+
+        {state.books.length > 0 && (
+          <div className="grid gap-6 sm:grid-cols-2 max-w-3xl mb-8">
+            {state.books.map((book) => (
+              <div
+                key={book.id}
+                className="bg-white/10 rounded-2xl p-4 flex flex-col items-center"
+              >
+                <Image
+                  src={book.cover || "/covers/default.jpg"}
+                  alt={book.title}
+                  width={128}
+                  height={192}
+                  className="rounded-lg mb-3 object-cover"
+                />
+                <p className="font-medium">{book.title}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div className="flex flex-wrap gap-3 justify-center">
+          <button
+            type="button"
+            onClick={retry}
+            className="px-6 py-2 bg-white text-[#0D1B2A] rounded-xl hover:bg-gray-200 transition"
+          >
+            Try again
+          </button>
+          <a
+            href="mailto:support@digitalpolyglot.com"
+            className="px-6 py-2 border border-white/40 rounded-xl hover:bg-white/10 transition"
+          >
+            Contact support
+          </a>
+        </div>
       </main>
     );
   }
@@ -135,17 +229,17 @@ export default function ClaimClient({ token }: { token: string }) {
     );
   }
 
-  const message = state.message.includes("already")
-    ? "📚 You had already added these books."
-    : "✅ Books added to your account";
-
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-[#0D1B2A] text-white px-8 text-center relative">
       <div className="absolute top-4 right-4">
         <UserButton afterSignOutUrl="/" />
       </div>
 
-      <h1 className="text-3xl font-semibold mb-4">{message}</h1>
+      <h1 className="text-3xl font-semibold mb-4">
+        {state.alreadyOwned
+          ? "These books were already in your library"
+          : "Books added to your account"}
+      </h1>
       <p className="text-white/80 mb-8">
         {isSignedIn
           ? "You can now find them in your library."
