@@ -1915,7 +1915,20 @@ export async function validateGeneratedStory(
     // `lana` (noun), `cachar` (verb) and `chido` (adjective) indistinguishable.
     // Register and part of speech are orthogonal: say `type:"noun"` +
     // `register:"slang"` and both the colour and the exemption are correct.
-    const REGISTER_EXEMPT = new Set(["slang", "colloquial", "vulgar", "coloquial", "argot", "jerga"]);
+    // CULTURAL ANCHORS are exempt on the same grounds as slang (2026-07-30).
+    // `socarrat`, `rebujito`, `telefonillo`, `cercanías`, `queimada`, `jata`
+    // are not DIFFICULT, they are LOCAL: corpus frequency measures how often a
+    // word appears, and a regional referent is rare by definition. The product
+    // thesis is authentic language in cultural context, and the anchor is the
+    // one word the learner most needs defined, so it is mandatory in `vocab[]`.
+    // Letting the frequency axis flag it would force authors to choose between
+    // the gate and the product. Like slang, anchors still pass every other
+    // vocab check (surface-literal, definition quality, no-same-root,
+    // distribution, type validity); only the wrong instrument is skipped.
+    const REGISTER_EXEMPT = new Set([
+      "slang", "colloquial", "vulgar", "coloquial", "argot", "jerga",
+      "cultural", "cultural-anchor", "regionalism", "regionalismo",
+    ]);
     const vocabWords = parsed.vocab
       .filter((v) => {
         const type = (v.type ?? "").toLowerCase();
@@ -2115,10 +2128,25 @@ export async function validateGeneratedStory(
   // for German until a language-aware extractor exists.
   if ((context.language ?? "").toUpperCase() !== "DE") {
     const synProperNouns = extractProperNouns(parsed.synopsis);
-    const bodySpeakerSet = new Set(speakerNames.map((n) => n.toLowerCase()));
-    const missingFromBody = synProperNouns.filter(
-      (n) => !bodySpeakerSet.has(n.toLowerCase())
-    );
+    // Compare against the WHOLE BODY, not just the dialogue speaker labels
+    // (fixed 2026-07-30). Matching speakers only was stricter than this
+    // check's own stated intent and produced false failures on 15 of the 21
+    // stories of the ES Spain A2 journey: a place can never be a speaker
+    // (Granada, Atocha, la Boqueria, los Picos de Europa), an honorific never
+    // matches its label ("Don Paco" in prose vs "Paco:" in dialogue), and a
+    // character can be present without speaking (David in "El portero lo sabe
+    // todo"). The Klaus/Sabine defect the spec targets is still caught: a name
+    // the body never mentions at all still fails.
+    const norm = (s: string) =>
+      s.toLowerCase().normalize("NFD").replace(/\p{Mn}/gu, "");
+    const bodyNorm = norm(parsed.text);
+    const speakerSet = new Set(speakerNames.map((n) => norm(n)));
+    const missingFromBody = synProperNouns.filter((n) => {
+      const cand = norm(n);
+      if (speakerSet.has(cand)) return false;
+      // Whole-word match inside the body prose.
+      return !new RegExp(`(?<!\\p{L})${cand.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?!\\p{L})`, "u").test(bodyNorm);
+    });
     if (synProperNouns.length > 0) {
       checks.push({
         id: "names-match",

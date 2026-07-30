@@ -697,6 +697,16 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "querer","poder","tener","hacer","dar","traer","llevar","dejar","tocar",
   "buscar","encontrar","trabajar","jugar","pagar","mandar","recibir","empezar",
   "terminar","cerrar","decidir","cambiar","guardar","abrir",
+
+  // ── Coverage gap found 2026-07-30 (ES Spain A2 journey, Traveler #014) ──
+  // These are core high-frequency words that were in NO list at ANY level
+  // (not A1A2, not B1, not B2, not C1), so the judge defaulted them to C2
+  // and failed the vocab gate. Their absence was missing data, not a level
+  // decision: "parecer" is a top-50 Spanish verb. Deliberately NARROW — only
+  // words absent everywhere were added. Nothing already leveled by the
+  // curated lists was moved down, so the gate is not relaxed anywhere.
+  "parecer","prometer","avisar","plantar","sentar","apetecer",
+  "cualquiera","muchísimo","adónde","monte","niebla",
 ]);
 
 /**
