@@ -173,6 +173,27 @@ export function createHighlightStepper(minDwellMs: number = MIN_DWELL_MS) {
       display = null;
       return null;
     }
+    // Arranque en frio: si el primer objetivo que vemos NO es la primera
+    // palabra, el muestreo llego tarde y las de antes se perderian, porque este
+    // camino salta directo al objetivo sin caminar.
+    //
+    // Pasa cuando una ventana es mas estrecha que la cadencia de muestreo y cae
+    // justo al principio. Medido: la primera palabra de el-asado-a-la-orilla
+    // tiene una ventana de 10 ms (1.960 -> 1.970), asi que un tick a 16.7 ms o a
+    // 25 ms aterriza ya en la segunda y la primera no se encendia NUNCA. No son
+    // empates exactos, asi que buildWordWindows (que reparte por `===`) no los
+    // toca.
+    //
+    // Arrancamos en 0 y dejamos que el paso de a una con MIN_DWELL_MS recupere.
+    // Solo cuando el retraso cabe en MAX_BACKLOG_WORDS: si el usuario abre y
+    // busca a mitad de la historia, el objetivo esta lejisimos y hay que saltar,
+    // no recorrer 500 palabras a 45 ms. Sin esto habria que ensanchar ventanas
+    // en buildWordWindows, que arrastraria los timings de toda la cola.
+    if (display === null && !seeked && target > 0 && target <= MAX_BACKLOG_WORDS) {
+      display = 0;
+      lastAdvanceMs = nowMs;
+      return display;
+    }
     if (
       display === null ||
       seeked ||
