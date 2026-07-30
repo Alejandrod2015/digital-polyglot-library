@@ -11,31 +11,65 @@ if [ "$VERCEL_GIT_COMMIT_REF" != "main" ]; then
   exit 0
 fi
 
-# 2. Check if changes are mobile-only (no web files changed)
+# 2. Determinar la BASE: el commit que esta VIVO en produccion ahora mismo.
 #
-# CUIDADO, LIMITACION CONOCIDA (2026-07-30): esto compara contra HEAD~1, o sea
-# SOLO el ultimo commit, no contra lo ultimo desplegado. El 2026-07-30 un push
-# de 15 commits que TERMINABA en un bump de version movil se salto el build
-# entero: el script vio unicamente "apps/mobile/app.json" y canceló, dejando
-# sin desplegar cambios de `src/` (entre ellos src/lib/karaokeWordWindows.ts).
-# El sintoma es peor que un fallo, porque el deploy aparece como "skipped" y
-# parece exito.
+# Historia: esto comparaba contra HEAD~1, o sea solo el ultimo commit. El
+# 2026-07-30 un push de 15 commits que TERMINABA en un bump de version movil se
+# salto el build entero (el script solo vio "apps/mobile/app.json"), dejando sin
+# desplegar cambios de `src/`, entre ellos src/lib/karaokeWordWindows.ts. El
+# sintoma es peor que un fallo, porque el deploy sale "skipped" y se lee como
+# exito.
 #
-# La base correcta es el commit del ultimo deploy de produccion, y Vercel NO lo
-# expone al Ignored Build Step. Arreglarlo de verdad exige consultar la API de
-# Vercel con un token (como hace turbo-ignore). Mientras no exista ese token
-# aqui, usamos VERCEL_GIT_PREVIOUS_SHA si el entorno lo trae y caemos a HEAD~1
-# si no.
+# Vercel no expone al Ignored Build Step el commit del ultimo deploy, pero la
+# propia app SI lo publica: /api/version devuelve VERCEL_GIT_COMMIT_SHA con
+# Cache-Control no-store. Preguntamos ahi, que es la fuente de verdad exacta de
+# lo que sirve produccion, y no hace falta ningun token.
 #
-# REGLA DE USO hasta entonces: no cierres un batch con un commit mobile-only.
-# Si el push mezcla web y movil, que el ultimo commit toque `src/`, o el build
-# se saltara en silencio.
-BASE="${VERCEL_GIT_PREVIOUS_SHA:-HEAD~1}"
-echo "::> Comparando contra: $BASE"
-CHANGED_FILES=$(git diff "$BASE" --name-only 2>/dev/null || git diff HEAD~1 --name-only 2>/dev/null || echo "UNKNOWN")
+# Ante CUALQUIER duda se construye. Saltarse un build de mas cuesta dinero;
+# saltarse uno necesario deja produccion vieja en silencio, que es peor.
+VERSION_URL="${IGNORE_BUILD_VERSION_URL:-https://reader.digitalpolyglot.com/api/version}"
+BASE=""
 
-if [ "$CHANGED_FILES" = "UNKNOWN" ]; then
-  echo "::> Could not determine changed files. Proceeding with build."
+DEPLOYED_SHA=$(curl -fsS --max-time 15 "$VERSION_URL" 2>/dev/null \
+  | sed -n 's/.*"version"[[:space:]]*:[[:space:]]*"\([0-9a-f]\{7,40\}\)".*/\1/p')
+
+if [ -z "$DEPLOYED_SHA" ]; then
+  echo "::> No pude leer el commit desplegado en $VERSION_URL. Construyo por seguridad."
+  exit 1
+fi
+echo "::> Commit vivo en produccion: $DEPLOYED_SHA"
+
+if [ "$DEPLOYED_SHA" = "$VERCEL_GIT_COMMIT_SHA" ]; then
+  echo "::> Produccion ya sirve este commit. Nada que desplegar."
+  exit 0
+fi
+
+# El clone de Vercel es shallow, asi que el commit desplegado puede no estar en
+# local. Lo traemos; si no se puede, construimos.
+if ! git cat-file -e "${DEPLOYED_SHA}^{commit}" 2>/dev/null; then
+  git fetch --quiet --depth=100 origin main 2>/dev/null || true
+  if ! git cat-file -e "${DEPLOYED_SHA}^{commit}" 2>/dev/null; then
+    git fetch --quiet origin "$DEPLOYED_SHA" 2>/dev/null || true
+  fi
+fi
+if ! git cat-file -e "${DEPLOYED_SHA}^{commit}" 2>/dev/null; then
+  echo "::> El commit desplegado no esta en este clone. Construyo por seguridad."
+  exit 1
+fi
+
+# Si lo desplegado NO es ancestro de HEAD (rollback, force-push, rama divergente)
+# el diff no describe "lo que falta por desplegar". Construimos.
+if ! git merge-base --is-ancestor "$DEPLOYED_SHA" HEAD 2>/dev/null; then
+  echo "::> Lo desplegado no es ancestro de HEAD (rollback o divergencia). Construyo."
+  exit 1
+fi
+
+BASE="$DEPLOYED_SHA"
+echo "::> Comparando $BASE..HEAD"
+CHANGED_FILES=$(git diff "$BASE" HEAD --name-only 2>/dev/null || echo "UNKNOWN")
+
+if [ "$CHANGED_FILES" = "UNKNOWN" ] || [ -z "$CHANGED_FILES" ]; then
+  echo "::> No pude determinar los archivos cambiados. Construyo por seguridad."
   exit 1
 fi
 
