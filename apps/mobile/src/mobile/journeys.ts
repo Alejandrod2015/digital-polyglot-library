@@ -124,7 +124,21 @@ export function journeyId(
 export function focusShortLabel(focus: JourneyFocus): string {
   switch (focus) {
     case "Travel & Local Life":
-      return "Travelers";
+      // SINGULAR a proposito. Esta etiqueta es el FALLBACK de los journeys
+      // legacy sin `label`, y se muestra en la misma lista que los que si lo
+      // tienen, cuyo nombre viene de Studio Journey.name: "Expat", "Friends",
+      // "Traveler", "Hanseat", todos en singular. Con el plural la hoja de
+      // cambio de journey mostraba "Spanish · Traveler" y "Spanish · Travelers"
+      // en filas contiguas, como si fuesen dos cosas distintas, cuando son el
+      // mismo tipo de journey con y sin label.
+      //
+      // El nombre real de un journey legacy NO se puede recuperar: `cachedTrack`
+      // empareja por cuid (journey.id o journey.variant) y los legacy guardan un
+      // codigo regional en `variant`, asi que no matchean. Su identidad guardada
+      // es (idioma, region, focus), y en aleman eso encaja con cuatro journeys
+      // publicados a la vez. Alinear el vocabulario es lo unico honesto que se
+      // puede hacer sin adivinar.
+      return "Traveler";
     case "Work & Career":
       return "Business";
     case "Culture & Belonging":
