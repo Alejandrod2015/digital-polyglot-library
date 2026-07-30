@@ -2,6 +2,7 @@ import { useState, type ReactNode } from "react";
 import { Feather } from "@expo/vector-icons";
 import { Linking, Modal, Pressable, ScrollView, StyleSheet, Switch, Text, TextInput, View } from "react-native";
 import { useAndroidBottomInset } from "./useAndroidBottomInset";
+import BetaFeedbackSheet from "./BetaFeedbackSheet";
 
 type AchievementSummary = {
   totalXp: number;
@@ -90,6 +91,10 @@ type Props = {
   onPressSignIn?: () => void;
   /** Optional handler for the "Support" button at the bottom of Account. */
   onPressSupport?: () => void;
+  /** API host and session, needed by the in-app feedback sheet. When either is
+   *  missing the sheet is not offered and Support stays the only route out. */
+  apiBaseUrl?: string;
+  sessionToken?: string | null;
   pickerVisible: boolean;
   pickerTitle: string;
   onClosePicker: () => void;
@@ -152,6 +157,8 @@ export function MobileSettingsScreen({
   showSignIn,
   onPressSignIn,
   onPressSupport,
+  apiBaseUrl,
+  sessionToken,
   pickerVisible,
   pickerTitle,
   onClosePicker,
@@ -165,6 +172,10 @@ export function MobileSettingsScreen({
   onRemoveInterest,
 }: Props) {
   const [activeTab, setActiveTab] = useState<SettingsTab>("account");
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
+  // Structured feedback needs an API host and a signed-in session. Without
+  // both, the mailto Support route is the only thing that would actually work.
+  const canSendFeedback = Boolean(apiBaseUrl && sessionToken);
   // Los Modal van en otra ventana: el inset de Android se aplica aquí.
   const androidBottomInset = useAndroidBottomInset();
   const name = deriveName(displayName, sessionEmail);
@@ -409,6 +420,15 @@ export function MobileSettingsScreen({
                   <Text style={[styles.footerButtonText, styles.footerButtonTextPrimary]}>Sign in</Text>
                 </Pressable>
               ) : null}
+              {canSendFeedback ? (
+                <Pressable
+                  onPress={() => setFeedbackOpen(true)}
+                  style={[styles.footerButton, styles.footerButtonGhost]}
+                >
+                  <Feather name="message-square" size={16} color="#dbe9ff" />
+                  <Text style={styles.footerButtonText}>Send feedback</Text>
+                </Pressable>
+              ) : null}
               <Pressable
                 onPress={
                   onPressSupport ??
@@ -606,6 +626,16 @@ export function MobileSettingsScreen({
           </Pressable>
         </Pressable>
       </Modal>
+
+      {canSendFeedback ? (
+        <BetaFeedbackSheet
+          visible={feedbackOpen}
+          onClose={() => setFeedbackOpen(false)}
+          baseUrl={apiBaseUrl as string}
+          token={sessionToken ?? null}
+          screen="Settings"
+        />
+      ) : null}
     </>
   );
 }

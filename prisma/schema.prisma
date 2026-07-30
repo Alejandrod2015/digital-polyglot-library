@@ -562,9 +562,10 @@ model CatalogStoryAudioTimings {
   @@index([slug])
 }
 
-// Beta tester applications. Public form at /beta writes here; admin reviews
-// at /studio/beta-signups and triggers TestFlight invites manually in App
-// Store Connect. `status` lifecycle: pending -> invited -> accepted | declined.
+// Beta tester applications. Public form at /beta writes here; the triage
+// engine (src/lib/betaRules.ts) scores each row on arrival and either invites
+// it to TestFlight automatically or parks it for review at /studio/beta.
+// `status` lifecycle: pending -> waitlist | invited -> accepted | declined.
 model BetaSignup {
   id                String    @id @default(cuid())
   email             String    @unique
@@ -591,9 +592,147 @@ model BetaSignup {
   createdAt         DateTime  @default(now())
   updatedAt         DateTime  @updatedAt
 
+  // ── Promoted from `attribution` JSON (2026-07-30). The triage engine and
+  // the App Store Connect invite both read these on every row, which is
+  // past the point where a JSON blob is the right home. Backfilled from
+  // attribution by the migration. ──
+  firstName    String?
+  appleIdEmail String?
+  socialHandle String?
+  // ios | android | both. Rows written before the Android path existed are
+  // iOS by construction: the form demanded an Apple ID.
+  platform     String  @default("ios")
+  googleEmail  String?
+
+  // ── Triage engine output. `decision` is what the rules said; `status` is
+  // what actually happened (an admin can override it). ──
+  score          Int?
+  decision       String? // auto_accept | queue | auto_decline
+  decisionReason String?
+  decidedAt      DateTime?
+
+  // ── App Store Connect. `ascTesterId` is the betaTester resource id, kept
+  // so we can remove the tester when the beta closes. `ascError` holds the
+  // last failure so a retry is a button and not an investigation. ──
+  ascTesterId  String?
+  ascInvitedAt DateTime?
+  ascError     String?
+
+  // ── Tester lifecycle once they are in. `lastActiveAt` comes from our own
+  // mobile session pings, not from Apple: it is the only engagement signal
+  // we control. `planRevokedAt` is stamped when the beta closes and the
+  // temporary premium grant is taken back. ──
+  clerkUserId   String?
+  planGrantedAt DateTime?
+  planRevokedAt DateTime?
+  lastActiveAt  DateTime?
+
+  emails   BetaEmailLog[]
+  feedback BetaFeedback[]
+
   @@index([status])
   @@index([createdAt])
+  @@index([clerkUserId])
   @@map("dp_beta_signups_v1")
+}
+
+// One row per beta email actually delivered to one applicant. This is the
+// idempotency ledger for the beta lifecycle cron: the engine asks "did this
+// person already get `kind`?" before every send. The user-lifecycle engine
+// tracks the same thing via UserMetric rows, but beta applicants often have
+// no Clerk account yet, so they need their own ledger keyed by signup.
+model BetaEmailLog {
+  id       String     @id @default(cuid())
+  signupId String
+  signup   BetaSignup @relation(fields: [signupId], references: [id], onDelete: Cascade)
+  // accepted | waitlist | declined | install_nudge | feedback_ask |
+  // mid_survey | release_note | final_survey | review_ask | review_recover
+  kind     String
+  // Set only for kind = release_note, so one tester can receive one note per
+  // build. Empty string (not NULL) for every other kind: Postgres treats
+  // NULLs as distinct in a unique index, which would defeat the constraint.
+  releaseId String   @default("")
+  sentAt    DateTime @default(now())
+
+  @@unique([signupId, kind, releaseId])
+  @@index([kind])
+  @@map("dp_beta_email_log_v1")
+}
+
+// Structured feedback from inside the app, replacing the `mailto:` link that
+// used to live in mobile Settings. Every row carries the build it came from,
+// which is what makes "your report is fixed in build N" possible.
+model BetaFeedback {
+  id       String      @id @default(cuid())
+  signupId String?
+  signup   BetaSignup? @relation(fields: [signupId], references: [id], onDelete: SetNull)
+  userId   String?
+  email    String
+
+  platform    String // ios | android
+  appVersion  String?
+  buildNumber String?
+  deviceModel String?
+  osVersion   String?
+  // Which screen they were on when they opened the sheet. Filled by the app,
+  // not typed by the tester: the whole point is that reporting costs nothing.
+  screen      String?
+
+  // bug | idea | confusing | praise | mid_survey | final_survey
+  kind    String
+  // 1-5 for feedback, 0-10 (NPS) for the surveys. The final survey score is
+  // what decides whether this tester gets the review ask or the recovery email.
+  rating  Int?
+  message String
+  context Json?
+
+  // new | triaged | in_progress | fixed | wont_fix | duplicate
+  status     String  @default("new")
+  adminNotes String?
+  // The release that fixed this. Set from the release editor; drives the
+  // personalized "you reported this, it's fixed" line in the build note.
+  releaseId  String?
+  release    BetaRelease? @relation(fields: [releaseId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+  @@index([email])
+  @@index([releaseId])
+  @@map("dp_beta_feedback_v1")
+}
+
+// One row per build you ship to testers. Publishing a release is what fires
+// the build note (email + push) to every active tester.
+model BetaRelease {
+  id          String @id @default(cuid())
+  platform    String @default("ios")
+  version     String
+  buildNumber String
+  headline    String
+  // string[]. Kept as JSON because these are display-only bullet lists that
+  // are never queried by element.
+  whatsNew    Json
+  knownIssues Json?
+  // The one thing you want testers to go try in this build. A build note
+  // without an ask gets read and not acted on.
+  askThem     String?
+
+  // draft | published
+  status         String    @default("draft")
+  publishedAt    DateTime?
+  notifiedCount  Int       @default(0)
+  createdByEmail String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  feedback BetaFeedback[]
+
+  @@unique([platform, buildNumber])
+  @@index([status])
+  @@map("dp_beta_releases_v1")
 }
 
 // One row per page view. Server-side, cookie-less, GDPR-friendly:

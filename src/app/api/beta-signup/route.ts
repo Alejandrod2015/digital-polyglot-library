@@ -13,6 +13,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { sendBetaConfirmationEmail } from "@/lib/email";
+import { processApplication } from "@/lib/betaProgram";
 
 const betaSignup = prisma.betaSignup;
 
@@ -267,13 +268,35 @@ export async function POST(req: NextRequest) {
       applicationReason,
       attribution: attribution ?? undefined,
       consentedAt: new Date(),
+      // Also written as first-class columns (2026-07-30): the triage engine
+      // and the TestFlight invite read these on every row. They stay in
+      // `attribution` too so the older Studio view keeps rendering.
+      firstName,
+      appleIdEmail,
+      socialHandle,
     },
   });
 
-  // Fire-and-forget confirmation; don't block on email failure.
-  void sendBetaConfirmationEmail({ to: email, targetLanguage }).catch((err) => {
-    console.error("Beta confirmation email failed for", email, err);
-  });
+  // Triage runs inline, not fire-and-forget: on serverless the function can be
+  // frozen the moment the response is flushed, which would strand the invite.
+  // It costs a couple of seconds behind a spinner the form already shows.
+  //
+  // The response stays deliberately neutral whatever the verdict. The
+  // applicant learns the outcome by email; telling them on screen would both
+  // sting and hand anyone re-submitting a map of the rules.
+  try {
+    const outcome = await processApplication(signup.id);
+    console.log(
+      `🎯 Beta triage for ${email}: ${outcome.decision} (score ${outcome.score}) → ${outcome.status}`,
+    );
+  } catch (err) {
+    console.error("Beta triage failed for", email, err);
+    // Fall back to the old plain confirmation so an applicant is never left
+    // with silence because the engine or Apple had a bad minute.
+    void sendBetaConfirmationEmail({ to: email, targetLanguage }).catch((mailErr) => {
+      console.error("Beta confirmation fallback also failed for", email, mailErr);
+    });
+  }
 
   return NextResponse.json({ ok: true, id: signup.id }, { status: 201 });
 }

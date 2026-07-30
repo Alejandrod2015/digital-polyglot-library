@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { sendWelcomeEmail } from "@/lib/email";
 import { deleteAllUserData } from "@/lib/deleteUserData";
+import { linkClerkUserToBetaSignup } from "@/lib/betaProgram";
 
 type UserDeletedEvent = {
   type: "user.deleted";
@@ -97,9 +98,29 @@ export async function POST(req: Request) {
       });
       console.log(`✅ Signup tracked for ${userId}`);
 
+      // A beta tester who signs up with the address they applied with gets
+      // their temporary plan here, before they reach the first screen. Wrapped
+      // so a Clerk or DB hiccup cannot break signup tracking or the 200.
+      let isBetaTester = false;
+      if (email) {
+        try {
+          const linked = await linkClerkUserToBetaSignup({ email, userId });
+          if (linked) {
+            isBetaTester = true;
+            console.log(`🧪 Beta tester linked: ${email} → ${userId}`);
+          }
+        } catch (betaErr) {
+          console.error("❌ Beta link threw (signup still tracked):", betaErr);
+        }
+      }
+
       // Instant welcome email (lifecycle onboarding). Wrapped so a Resend
       // failure can never break signup tracking or the webhook 200.
-      if (email) {
+      //
+      // Beta testers are skipped: they already got the acceptance email, which
+      // tells them what to do next in beta terms. Two "welcome" emails minutes
+      // apart, giving different instructions, reads as broken.
+      if (email && !isBetaTester) {
         try {
           await sendWelcomeEmail({ to: email });
         } catch (mailErr) {

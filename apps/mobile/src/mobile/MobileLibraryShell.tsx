@@ -14320,6 +14320,8 @@ export function MobileLibraryShell(args: {
         void ((effectivePlan === "free" || effectivePlan === "basic") ? openPlans() : openBillingPortal())
       }
       sessionEmail={sessionEmail}
+      apiBaseUrl={mobileConfig.apiBaseUrl}
+      sessionToken={sessionToken}
       personalizationRows={[
         {
           id: "language",
