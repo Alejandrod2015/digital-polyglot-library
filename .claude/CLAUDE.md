@@ -41,8 +41,36 @@ count, or take archived journeys into account** — in ANY response — UNLESS t
 user *explicitly* asks for "archived". No other case. This is a hard constraint;
 it always holds even mid-task, in summaries, and in verification tables.
 
-(Classification set 2026-07-25: 5 live, 9 draft, 6 archived. Reclassified the
-draft-vs-archived split by structure via `scripts/_reclassifyDrafts.ts`.)
+(Counts verified 2026-07-30: 7 live, 7 draft, 6 archived. Classification set
+2026-07-25, when the draft-vs-archived split was redone by structure via
+`scripts/_reclassifyDrafts.ts`.)
+
+## Journey numbers (shorthand for chat, not a DB field)
+
+Every live/draft journey has a number. The user refers to journeys by it
+("el 014"), so ALWAYS show this number in any journey table or list.
+Numbers are permanent: a journey keeps its number when it goes from draft
+to live, and a new journey takes the next free number (015 onwards). Never
+renumber. Archived journeys get no number, on purpose.
+
+| # | Journey | Language | Country | Level | Status |
+|---|---------|----------|---------|-------|--------|
+| 001 | Expat | German | Germany | C1 | live |
+| 002 | Friends | German | Germany | C1 | live |
+| 003 | Friends | Spanish | LATAM | C1 | live |
+| 004 | Traveler | Spanish | LATAM | A0 | live |
+| 005 | Friends | Spanish | Colombia | C1 | live |
+| 006 | Traveler | Spanish | Mexico | A0 | live |
+| 007 | Friends | Spanish | Spain | A0 | live |
+| 008 | Hanseat | German | Germany | C1 | draft |
+| 009 | Traveler | German | Germany | A1 | draft |
+| 010 | Traveler | German | Germany | A0 | draft |
+| 011 | Friends | Italian | Italy | A0 | draft |
+| 012 | Friends | Spanish | Argentina | C1 | draft |
+| 013 | Friends | Spanish | Mexico | C1 | draft |
+| 014 | Traveler | Spanish | Spain | A2 | draft |
+
+(Assigned 2026-07-30.)
 
 ## Grill before building (expensive/ambiguous features only)
 
