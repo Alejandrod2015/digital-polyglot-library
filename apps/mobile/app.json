@@ -16,7 +16,7 @@
     },
     "android": {
       "package": "com.digitalpolyglot.mobile",
-      "versionCode": 21
+      "versionCode": 23
     }
   }
 }
