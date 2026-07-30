@@ -12182,6 +12182,10 @@ export function MobileLibraryShell(args: {
             modeBreakdown={orbitModeBreakdown}
             streakDays={orbitStreak}
             dailyGoalPercent={orbitDailyGoalPercent}
+            // Misma condición que usa la cabecera del Journey para su bloque de
+            // racha/XP/nivel: sin datos del servidor no se pinta, en vez de
+            // pintar ceros que parecen reales.
+            hasProgressData={Boolean(remoteProgress?.gamification)}
             onStart={() => void openPracticeMode(recommendedPracticeMode ?? "meaning", true)}
             onPickSkill={(mode) => void openPracticeMode(mode, true)}
             emptyState={favoriteWords.length === 0}

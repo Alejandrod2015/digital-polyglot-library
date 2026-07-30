@@ -31,6 +31,9 @@ export type PracticeOrbitProps = {
   modeBreakdown: Record<PracticeModeKey, number>;
   streakDays: number;
   dailyGoalPercent: number;
+  /** false cuando no hay datos de progreso del servidor (sin red): oculta los
+   *  chips de racha y objetivo en vez de mostrar ceros falsos. */
+  hasProgressData?: boolean;
   /**
    * @deprecated Up Next card was removed para que la pantalla entre
    * sin scroll. La prop sigue en el type para no romper call-sites
@@ -151,10 +154,20 @@ function buildRingSegments(
 const HeaderChips = memo(function HeaderChips({
   streakDays,
   dailyGoalPercent,
+  hasProgressData,
 }: {
   streakDays: number;
   dailyGoalPercent: number;
+  hasProgressData: boolean;
 }) {
+  // Sin datos de progreso (típicamente sin red) NO pintamos los chips. Antes
+  // se renderizaban igual y mostraban "0 STREAK" y "0% GOAL": una racha de 0
+  // cuando la real es 4 no es un dato incompleto, es un dato falso, y la racha
+  // es justo lo que el usuario no puede contrastar de memoria. La cabecera del
+  // Journey ya resuelve el mismo caso ocultando su bloque
+  // (`remoteProgress?.gamification ? ... : null` en MobileLibraryShell), asi
+  // que esto solo iguala las dos pantallas.
+  if (!hasProgressData) return null;
   // Cada chip lleva un label microscópico (`STREAK`, `GOAL`) para que
   // el número no quede ambiguo. Sin label el usuario no sabía si "1"
   // era racha de días, sesiones del día o ítems en cola.
@@ -260,6 +273,7 @@ export function PracticeOrbit({
   modeBreakdown,
   streakDays,
   dailyGoalPercent,
+  hasProgressData = true,
   onStart,
   onPickSkill,
   emptyState,
@@ -339,7 +353,11 @@ export function PracticeOrbit({
           flag+title block, so the row is now just the chips. */}
       <View style={styles.headerRow}>
         <View style={{ flex: 1 }} />
-        <HeaderChips streakDays={streakDays} dailyGoalPercent={dailyGoalPercent} />
+        <HeaderChips
+          streakDays={streakDays}
+          dailyGoalPercent={dailyGoalPercent}
+          hasProgressData={hasProgressData}
+        />
       </View>
 
       {topicLabel ? (
