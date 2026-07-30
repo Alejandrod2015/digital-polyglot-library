@@ -12,8 +12,27 @@ if [ "$VERCEL_GIT_COMMIT_REF" != "main" ]; then
 fi
 
 # 2. Check if changes are mobile-only (no web files changed)
-#    Compare against the previous deployment commit
-CHANGED_FILES=$(git diff HEAD~1 --name-only 2>/dev/null || echo "UNKNOWN")
+#
+# CUIDADO, LIMITACION CONOCIDA (2026-07-30): esto compara contra HEAD~1, o sea
+# SOLO el ultimo commit, no contra lo ultimo desplegado. El 2026-07-30 un push
+# de 15 commits que TERMINABA en un bump de version movil se salto el build
+# entero: el script vio unicamente "apps/mobile/app.json" y canceló, dejando
+# sin desplegar cambios de `src/` (entre ellos src/lib/karaokeWordWindows.ts).
+# El sintoma es peor que un fallo, porque el deploy aparece como "skipped" y
+# parece exito.
+#
+# La base correcta es el commit del ultimo deploy de produccion, y Vercel NO lo
+# expone al Ignored Build Step. Arreglarlo de verdad exige consultar la API de
+# Vercel con un token (como hace turbo-ignore). Mientras no exista ese token
+# aqui, usamos VERCEL_GIT_PREVIOUS_SHA si el entorno lo trae y caemos a HEAD~1
+# si no.
+#
+# REGLA DE USO hasta entonces: no cierres un batch con un commit mobile-only.
+# Si el push mezcla web y movil, que el ultimo commit toque `src/`, o el build
+# se saltara en silencio.
+BASE="${VERCEL_GIT_PREVIOUS_SHA:-HEAD~1}"
+echo "::> Comparando contra: $BASE"
+CHANGED_FILES=$(git diff "$BASE" --name-only 2>/dev/null || git diff HEAD~1 --name-only 2>/dev/null || echo "UNKNOWN")
 
 if [ "$CHANGED_FILES" = "UNKNOWN" ]; then
   echo "::> Could not determine changed files. Proceeding with build."
