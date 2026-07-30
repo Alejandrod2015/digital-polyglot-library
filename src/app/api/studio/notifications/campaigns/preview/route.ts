@@ -42,6 +42,14 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const { tokens, userCount } = await resolvePushRecipients({ target, notificationTypeKey });
-  return NextResponse.json({ userCount, deviceCount: tokens.length });
+  const { apnsTokens, fcmTokens, userCount } = await resolvePushRecipients({
+    target,
+    notificationTypeKey,
+  });
+  return NextResponse.json({
+    userCount,
+    deviceCount: apnsTokens.length + fcmTokens.length,
+    iosDeviceCount: apnsTokens.length,
+    androidDeviceCount: fcmTokens.length,
+  });
 }

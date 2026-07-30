@@ -1,6 +1,6 @@
 // Send a test push to ONLY the current admin's own device tokens.
-// This is the safe way to validate the real APNs path end-to-end
-// without sending to any other user. Admin only.
+// This is the safe way to validate the real APNs (iOS) and FCM (Android)
+// paths end-to-end without sending to any other user. Admin only.
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -9,8 +9,8 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { getStudioMember } from "@/lib/studio-access";
 import { isApnsConfigured, sendApnsPush } from "@/lib/apnsPush";
-
-type StoredToken = { token?: unknown; provider?: unknown };
+import { isFcmConfigured, sendFcmPush } from "@/lib/fcmPush";
+import { classifyStoredToken, type StoredToken } from "@/lib/pushRecipients";
 
 export async function POST(req: NextRequest) {
   const { userId } = await auth();
@@ -25,9 +25,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Forbidden: admin only" }, { status: 403 });
   }
 
-  if (!isApnsConfigured()) {
+  const apnsReady = isApnsConfigured();
+  const fcmReady = isFcmConfigured();
+  if (!apnsReady && !fcmReady) {
     return NextResponse.json(
-      { error: "APNs is not configured (missing APNS_* env vars)." },
+      { error: "No push transport is configured (missing APNS_* and FCM_* env vars)." },
       { status: 400 },
     );
   }
@@ -40,33 +42,65 @@ export async function POST(req: NextRequest) {
       : "This is a test notification from Studio.";
 
   // Read THIS admin's own stored device tokens (set when they sign into
-  // the iPhone app with the same account).
+  // the app with the same account, on iPhone or Android).
   const privateMeta = (user.privateMetadata as Record<string, unknown>) ?? {};
   const raw = privateMeta.mobilePushTokens;
-  const tokens = Array.isArray(raw)
-    ? (raw as StoredToken[])
-        .filter((t) => t && typeof t === "object" && t.provider === "apns" && typeof t.token === "string")
-        .map((t) => (t.token as string).trim())
-        .filter(Boolean)
-    : [];
+  const stored = Array.isArray(raw) ? (raw as StoredToken[]) : [];
+  const apnsTokens: string[] = [];
+  const fcmTokens: string[] = [];
+  for (const entry of stored) {
+    const transport = classifyStoredToken(entry);
+    if (!transport) continue;
+    const value = (entry.token as string).trim();
+    if (transport === "apns") apnsTokens.push(value);
+    else fcmTokens.push(value);
+  }
 
-  if (tokens.length === 0) {
+  if (apnsTokens.length + fcmTokens.length === 0) {
     return NextResponse.json(
       {
         error:
-          "No device token found for your account. Sign into the iPhone app with this same account first.",
+          "No device token found for your account. Sign into the mobile app with this same account first.",
       },
       { status: 400 },
     );
   }
 
-  const results = await sendApnsPush(tokens, { title, body: message, data: { test: true } });
+  const payload = { title, body: message, data: { test: true } };
+  const skipped = (tokens: string[], label: string) =>
+    tokens.map((token) => ({
+      token,
+      ok: false as const,
+      status: 0,
+      reason: `${label} not configured`,
+    }));
+
+  const [apnsResults, fcmResults] = await Promise.all([
+    apnsTokens.length > 0 && apnsReady
+      ? sendApnsPush(apnsTokens, payload)
+      : Promise.resolve(skipped(apnsReady ? [] : apnsTokens, "APNs")),
+    fcmTokens.length > 0 && fcmReady
+      ? sendFcmPush(fcmTokens, payload)
+      : Promise.resolve(skipped(fcmReady ? [] : fcmTokens, "FCM")),
+  ]);
+
+  // Etiquetar por transporte: con un iPhone y un Android en la misma cuenta,
+  // "1 delivered, 1 failed" a secas no dice cuál de los dos falló.
+  const results = [
+    ...apnsResults.map((r) => ({ ...r, transport: "apns" as const })),
+    ...fcmResults.map((r) => ({ ...r, transport: "fcm" as const })),
+  ];
   const delivered = results.filter((r) => r.ok).length;
   return NextResponse.json({
     ok: true,
-    deviceCount: tokens.length,
+    deviceCount: results.length,
     delivered,
     failed: results.length - delivered,
-    results: results.map((r) => ({ ok: r.ok, status: r.status, reason: r.reason })),
+    results: results.map((r) => ({
+      transport: r.transport,
+      ok: r.ok,
+      status: r.status,
+      reason: r.reason,
+    })),
   });
 }

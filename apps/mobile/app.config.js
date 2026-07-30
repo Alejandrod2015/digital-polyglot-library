@@ -1,7 +1,27 @@
 const dotenv = require("dotenv");
+const fs = require("fs");
 const path = require("path");
 
 dotenv.config({ path: path.resolve(__dirname, "../../.env.local") });
+
+// FCM: en Android, `getDevicePushTokenAsync()` de expo-notifications habla
+// con Firebase Messaging DENTRO del proceso de la app, así que el APK tiene
+// que llevar `google-services.json` incrustado. Sin él, el registro de push
+// tira "Default FirebaseApp is not initialized in this process
+// com.digitalpolyglot.app" (visto en el Pixel 6a el 2026-07-29, versionCode
+// 15). El archivo sale de Firebase Console y está commiteado aquí mismo, en
+// apps/mobile/google-services.json: proyecto `digital-polyglot-e9c5e`, app
+// Android con package `com.digitalpolyglot.app`. No es un secreto (viaja
+// dentro del APK); el que SÍ lo es, la clave de la service account que usa
+// el servidor para enviar, vive solo en las env vars `FCM_*`.
+//
+// La ruta se declara CONDICIONAL a propósito: Expo aborta el prebuild/build
+// de Android entero si `googleServicesFile` apunta a un archivo que no
+// existe, así que declararla a secas rompería el build de hoy. Mientras el
+// archivo no esté, el build sigue saliendo (sin push remoto); en cuanto el
+// archivo aparece, el siguiente build lo incluye sin tocar nada más.
+const googleServicesPath = path.resolve(__dirname, "google-services.json");
+const hasGoogleServices = fs.existsSync(googleServicesPath);
 
 const DEFAULT_PRODUCTION_APP_URL = "https://reader.digitalpolyglot.com";
 const DEFAULT_PRODUCTION_CLERK_PUBLISHABLE_KEY = "pk_live_Y2xlcmsuZGlnaXRhbHBvbHlnbG90LmNvbSQ";
@@ -144,6 +164,9 @@ const config = {
     // apunta aquí vía GOOGLE_PLAY_PACKAGE_NAME, y el assetlinks.json de
     // producción publica las huellas de este package.
     package: "com.digitalpolyglot.app",
+    // Ver el bloque `hasGoogleServices` arriba: sin este archivo no hay
+    // Firebase en el proceso y el registro de push remoto falla en Android.
+    ...(hasGoogleServices ? { googleServicesFile: "./google-services.json" } : {}),
     // Fuente de verdad del versionCode del AAB, igual que `ios.buildNumber`
     // para el IPA: Expo descarta app.json, y EAS `autoIncrement` no muta JS.
     // La TWA gastó el 1, así que la app Expo arranca en 2. Bumpear a mano en

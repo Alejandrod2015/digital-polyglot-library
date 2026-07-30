@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "818559197891",
+    "project_id": "digital-polyglot-e9c5e",
+    "storage_bucket": "digital-polyglot-e9c5e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818559197891:android:ee8c1d819b95755f023876",
+        "android_client_info": {
+          "package_name": "com.digitalpolyglot.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYx1vu0Pk99opk5a91Oiyv_mRrvL1s-CY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,9 +1,10 @@
 // Orchestrates sending a PushCampaign: resolve recipients, deliver via
-// APNs, tally results, and persist status/counts. Used by the Studio
-// "Send now" action and the scheduled-send cron.
+// APNs (iOS) and FCM (Android), tally results, and persist status/counts.
+// Used by the Studio "Send now" action and the scheduled-send cron.
 
 import { prisma } from "@/lib/prisma";
 import { isApnsConfigured, sendApnsPush } from "@/lib/apnsPush";
+import { isFcmConfigured, sendFcmPush } from "@/lib/fcmPush";
 import { resolvePushRecipients } from "@/lib/pushRecipients";
 
 export type SendCampaignResult =
@@ -16,12 +17,18 @@ export async function sendCampaign(campaignId: string): Promise<SendCampaignResu
   if (campaign.status === "sending") return { ok: false, error: "Campaign is already sending" };
   if (campaign.status === "sent") return { ok: false, error: "Campaign was already sent" };
 
-  if (!isApnsConfigured()) {
+  // Basta con UNA plataforma configurada para enviar: si solo hay APNs, la
+  // campaña sale a iOS y los tokens de Android cuentan como fallidos (con
+  // el motivo en `lastError`), en vez de bloquear la campaña entera.
+  const apnsReady = isApnsConfigured();
+  const fcmReady = isFcmConfigured();
+  if (!apnsReady && !fcmReady) {
+    const error = "No push transport is configured (missing APNS_* and FCM_* env vars).";
     await prisma.pushCampaign.update({
       where: { id: campaignId },
-      data: { status: "draft", lastError: "APNs is not configured (missing APNS_* env vars)." },
+      data: { status: "draft", lastError: error },
     });
-    return { ok: false, error: "APNs is not configured (missing APNS_* env vars)." };
+    return { ok: false, error };
   }
 
   await prisma.pushCampaign.update({
@@ -30,12 +37,12 @@ export async function sendCampaign(campaignId: string): Promise<SendCampaignResu
   });
 
   try {
-    const { tokens, userCount } = await resolvePushRecipients({
+    const { apnsTokens, fcmTokens, userCount } = await resolvePushRecipients({
       target: campaign.target === "all" ? "all" : "type_subscribers",
       notificationTypeKey: campaign.notificationTypeKey,
     });
 
-    if (tokens.length === 0) {
+    if (apnsTokens.length + fcmTokens.length === 0) {
       await prisma.pushCampaign.update({
         where: { id: campaignId },
         data: {
@@ -50,7 +57,7 @@ export async function sendCampaign(campaignId: string): Promise<SendCampaignResu
       return { ok: true, recipientCount: 0, deliveredCount: 0, failedCount: 0 };
     }
 
-    const results = await sendApnsPush(tokens, {
+    const payload: { title: string; body: string; data: Record<string, string> } = {
       title: campaign.title,
       body: campaign.body,
       // `campaignId` lets the device attribute the open back to this campaign
@@ -61,7 +68,38 @@ export async function sendCampaign(campaignId: string): Promise<SendCampaignResu
           ? { notificationType: campaign.notificationTypeKey }
           : {}),
       },
-    });
+    };
+
+    // Un transporte caído no debe tumbar el otro: cada mitad se resuelve por
+    // su cuenta, y tanto "no configurado" como una excepción del sender se
+    // degradan a "esos tokens fallaron, con el motivo" en vez de propagar.
+    type SendResult = { token: string; ok: boolean; status: number; reason?: string };
+    const allFailed = (tokens: string[], reason: string): SendResult[] =>
+      tokens.map((token) => ({ token, ok: false, status: 0, reason }));
+
+    async function deliver(
+      tokens: string[],
+      ready: boolean,
+      label: string,
+      send: (
+        tokens: string[],
+        alert: { title: string; body: string; data: Record<string, string> },
+      ) => Promise<SendResult[]>,
+    ): Promise<SendResult[]> {
+      if (tokens.length === 0) return [];
+      if (!ready) return allFailed(tokens, `${label} is not configured`);
+      try {
+        return await send(tokens, payload);
+      } catch (err) {
+        return allFailed(tokens, err instanceof Error ? err.message : `${label} send failed`);
+      }
+    }
+
+    const [apnsResults, fcmResults] = await Promise.all([
+      deliver(apnsTokens, apnsReady, "APNs", sendApnsPush),
+      deliver(fcmTokens, fcmReady, "FCM", sendFcmPush),
+    ]);
+    const results = [...apnsResults, ...fcmResults];
 
     const delivered = results.filter((r) => r.ok).length;
     const failed = results.length - delivered;

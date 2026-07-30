@@ -94,7 +94,12 @@ export async function registerPushNotifications(args: {
       token: sessionToken,
       method: "POST",
       body: {
-        provider: Platform.OS === "ios" ? "apns" : "native",
+        // El servidor enruta por este campo: "apns" → APNs, "fcm" → FCM
+        // (src/lib/pushRecipients.ts). Antes Android mandaba "native", que
+        // no correspondia a ningun transporte y el token se descartaba
+        // silenciosamente al enviar. Ese valor sigue aceptado del lado
+        // servidor por si quedo alguno guardado.
+        provider: Platform.OS === "ios" ? "apns" : "fcm",
         token,
         platform: Platform.OS,
         deviceName: getDeviceLabel(),
