@@ -63,6 +63,12 @@ export type BetaEmailData = {
   fixedForThem?: string[];
   /** Days the beta still has to run, for the final-stretch sends. */
   daysLeft?: number;
+  /**
+   * Signed token for the footer's manage/unsubscribe links. Without it the
+   * footer renders a link that cannot identify the recipient, which makes the
+   * opt-out unusable for anyone not already logged in on the web.
+   */
+  unsubscribeToken?: string;
 };
 
 function base(data?: BetaEmailData): string {
@@ -169,6 +175,7 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
+      unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
       `Welcome to the beta, ${name}.`,
@@ -233,6 +240,7 @@ export function buildBetaWaitlistEmail(data?: BetaEmailData): BuiltEmail {
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
+      unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
       `Thanks for applying, ${name}.`,
@@ -278,6 +286,7 @@ export function buildBetaDeclinedEmail(data?: BetaEmailData): BuiltEmail {
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
+      unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
       `Thanks for applying, ${name}.`,
@@ -328,6 +337,7 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
+      unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
       `Hi ${name}.`,
@@ -357,7 +367,7 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("One question")}${head(`What ${gold("annoyed")} you<br/>the most?`, 40)}${lead(
-        `${esc(name)}, you have had the app for a week. I do not want a review. I want the one thing that made you frown.`,
+        `A week in, ${esc(name)}. I do not want a review. I want the one thing that made you frown.`,
       )}`,
       "40px 44px 0",
     ),
@@ -384,9 +394,10 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
+      unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `${name}, you have had the app for a week.`,
+      `A week in, ${name}.`,
       "",
       "I do not want a review. I want the one thing that made you frown: a slow screen, a word that would not tap, audio that started late, a button you could not find.",
       "",
@@ -410,7 +421,7 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("Three weeks in")}${head(`Three questions,<br/>${gold("ninety")} seconds.`, 40)}${lead(
-        `${esc(name)}, this is the halfway point. Your answers decide what I build in the second half, so this is the moment they are worth the most.`,
+        `Three weeks down, three to go. What you say now decides what I build in the second half, ${esc(name)}, so this is the moment your answers are worth the most.`,
       )}`,
       "40px 44px 0",
     ),
@@ -436,9 +447,10 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
+      unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `${name}, this is the halfway point of the beta.`,
+      `Three weeks down, three to go, ${name}. This is the halfway point of the beta.`,
       "",
       "Three questions, ninety seconds:",
       "  1. How likely are you to recommend it, nought to ten?",
@@ -500,7 +512,7 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow(`Build ${build}`)}${head(esc(headline), 38)}${lead(
-        `${esc(name)}, TestFlight will offer you the update. ${version ? `Version ${esc(version)}, build ${esc(build)}.` : ""}`,
+        `TestFlight will offer you the update, ${esc(name)}. ${version ? `Version ${esc(version)}, build ${esc(build)}.` : ""}`,
       )}`,
       "40px 44px 0",
     ),
@@ -524,9 +536,10 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
+      unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `${name}, build ${build} is live.`,
+      `Build ${build} is live, ${name}.`,
       "",
       headline,
       "",
@@ -556,7 +569,7 @@ export function buildBetaFinalSurveyEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("The beta is closing")}${head(`Last ask, and the<br/>${gold("biggest")} one.`, 38)}${lead(
-        `${esc(name)}, the app goes to the App Store shortly. What you say here is the last thing that can still change it before everyone else arrives.`,
+        `The app goes to the App Store shortly. What you say here, ${esc(name)}, is the last thing that can still change it before everyone else arrives.`,
       )}`,
       "40px 44px 0",
     ),
@@ -587,9 +600,10 @@ export function buildBetaFinalSurveyEmail(data?: BetaEmailData): BuiltEmail {
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
+      unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `${name}, the beta is closing and the app goes to the App Store shortly.`,
+      `The beta is closing, ${name}, and the app goes to the App Store shortly.`,
       "",
       "Four questions:",
       "  1. Nought to ten, how likely are you to recommend it?",
@@ -618,7 +632,7 @@ export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("It's live")}${head(`It shipped, and<br/>you ${gold("shaped")} it.`, 38)}${lead(
-        `${esc(name)}, Digital Polyglot is on the App Store. You rated it highly a few days ago, and there is one thing that would genuinely help now.`,
+        `It is out, ${esc(name)}. Digital Polyglot is on the App Store. You rated it highly a few days ago, and there is one thing that would genuinely help now.`,
       )}`,
       "40px 44px 0",
     ),
@@ -645,9 +659,10 @@ export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
+      unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `${name}, Digital Polyglot is on the App Store.`,
+      `It is out, ${name}. Digital Polyglot is on the App Store.`,
       "",
       "You rated it highly a few days ago, and there is one thing that would genuinely help: a review.",
       "",
@@ -675,7 +690,7 @@ export function buildBetaReviewRecoverEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("It's live")}${head(`It shipped, but not<br/>${gold("for")} you yet.`, 38)}${lead(
-        `${esc(name)}, Digital Polyglot is on the App Store. You did not rate it highly, and that is the more useful answer of the two.`,
+        `Digital Polyglot is on the App Store. You did not rate it highly, ${esc(name)}, and that is the more useful answer of the two.`,
       )}`,
       "40px 44px 0",
     ),
@@ -699,9 +714,10 @@ export function buildBetaReviewRecoverEmail(data?: BetaEmailData): BuiltEmail {
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
+      unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `${name}, Digital Polyglot is on the App Store.`,
+      `Digital Polyglot is on the App Store, ${name}.`,
       "",
       "You did not rate it highly, and that is the more useful answer of the two.",
       "",

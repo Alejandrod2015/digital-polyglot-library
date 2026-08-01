@@ -11,7 +11,7 @@
 import { Resend } from "resend";
 import { createClerkClient } from "@clerk/backend";
 import { prisma } from "@/lib/prisma";
-import { getEmailPreference } from "@/lib/emailPreferences";
+import { getEmailPreference, createEmailToken } from "@/lib/emailPreferences";
 import { inviteTesterToBetaGroup, removeTester, isAscConfigured } from "@/lib/appStoreConnect";
 import { evaluateApplication, type BetaVerdict } from "@/lib/betaRules";
 import { getBetaRules } from "@/lib/betaRulesConfig";
@@ -106,10 +106,21 @@ export async function sendBetaEmail(args: {
     return "duplicate";
   }
 
+  // Bulk senders must offer a working one-click opt-out (RFC 8058; Gmail and
+  // Yahoo enforce it). The transactional kinds are answers to something the
+  // applicant did and carry no footer, but everything else is lifecycle mail
+  // and needs both the header and a token the footer link can act on.
+  const isLifecycle = !TRANSACTIONAL_KINDS.has(kind);
+  const unsubscribeToken = isLifecycle ? createEmailToken(signup.email) : undefined;
+  const unsubscribeUrl = unsubscribeToken
+    ? `${betaBaseUrl()}/api/email/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}`
+    : null;
+
   const { subject, html, text } = BETA_EMAIL_BUILDERS[kind]({
     baseUrl: betaBaseUrl(),
     firstName: signup.firstName,
     targetLanguage: signup.targetLanguage,
+    unsubscribeToken,
     ...args.data,
   });
 
@@ -122,6 +133,14 @@ export async function sendBetaEmail(args: {
       html,
       text,
       replyTo,
+      ...(unsubscribeUrl
+        ? {
+            headers: {
+              "List-Unsubscribe": `<${unsubscribeUrl}>, <mailto:${replyTo}?subject=unsubscribe>`,
+              "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+            },
+          }
+        : {}),
       tags: [
         { name: "type", value: TRANSACTIONAL_KINDS.has(kind) ? "transactional" : "lifecycle" },
         { name: "category", value: `beta-${kind}` },

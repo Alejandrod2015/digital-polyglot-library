@@ -412,12 +412,12 @@ export function MobileSettingsScreen({
               {showSignOut && onPressSignOut ? (
                 <Pressable onPress={onPressSignOut} style={[styles.footerButton, styles.footerButtonGhost]}>
                   <Feather name="log-out" size={16} color="#dbe9ff" />
-                  <Text style={styles.footerButtonText}>Sign out</Text>
+                  <Text numberOfLines={1} style={styles.footerButtonText}>Sign out</Text>
                 </Pressable>
               ) : null}
               {showSignIn && onPressSignIn ? (
                 <Pressable onPress={onPressSignIn} style={[styles.footerButton, styles.footerButtonPrimary]}>
-                  <Text style={[styles.footerButtonText, styles.footerButtonTextPrimary]}>Sign in</Text>
+                  <Text numberOfLines={1} style={[styles.footerButtonText, styles.footerButtonTextPrimary]}>Sign in</Text>
                 </Pressable>
               ) : null}
               {canSendFeedback ? (
@@ -426,7 +426,7 @@ export function MobileSettingsScreen({
                   style={[styles.footerButton, styles.footerButtonGhost]}
                 >
                   <Feather name="message-square" size={16} color="#dbe9ff" />
-                  <Text style={styles.footerButtonText}>Send feedback</Text>
+                  <Text numberOfLines={1} style={styles.footerButtonText}>Send feedback</Text>
                 </Pressable>
               ) : null}
               <Pressable
@@ -439,7 +439,7 @@ export function MobileSettingsScreen({
                 }
                 style={[styles.footerButton, styles.footerButtonGhost]}
               >
-                <Text style={styles.footerButtonText}>Support</Text>
+                <Text numberOfLines={1} style={styles.footerButtonText}>Support</Text>
               </Pressable>
             </View>
           </>
@@ -979,11 +979,16 @@ const styles = StyleSheet.create({
   /* Footer row */
   footerRow: {
     flexDirection: "row",
+    flexWrap: "wrap",
     gap: 8,
     marginTop: 2,
   },
   footerButton: {
-    flex: 1,
+    // Grow to share the row, but never below a width that fits the label.
+    // Below it the row wraps, which is what keeps the buttons from colliding.
+    flexGrow: 1,
+    flexBasis: 130,
+    minWidth: 130,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",

@@ -7,10 +7,10 @@
 // the build it came from. That link is what lets a build note tell somebody,
 // by name, that the thing they reported is fixed.
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ActivityIndicator,
-  KeyboardAvoidingView,
+  Keyboard,
   Modal,
   Platform,
   Pressable,
@@ -61,6 +61,13 @@ export default function BetaFeedbackSheet({
   const [kind, setKind] = useState<Kind>("bug");
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
+  // The sheet is pinned to the bottom, so the keyboard lands on top of it.
+  // Scrolling the content was not enough (build 279 on an iPhone 12: the Send
+  // button sat behind the keyboard with the sheet only half visible), because
+  // the container itself was still underneath. Reserving the keyboard's height
+  // moves the whole sheet up, which is the only thing that actually works
+  // inside a Modal on iOS.
+  const [keyboardHeight, setKeyboardHeight] = useState(0);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -102,6 +109,19 @@ export default function BetaFeedbackSheet({
       buildNumber: nativeBuild ?? expoConfigBuild ?? null,
       deviceModel: Device.modelName ?? null,
       osVersion: Device.osVersion ? `${Device.osName ?? Platform.OS} ${Device.osVersion}` : null,
+    };
+  }, []);
+
+  useEffect(() => {
+    // `will` events on iOS so the sheet moves with the keyboard animation
+    // rather than jumping after it.
+    const showEvent = Platform.OS === "ios" ? "keyboardWillShow" : "keyboardDidShow";
+    const hideEvent = Platform.OS === "ios" ? "keyboardWillHide" : "keyboardDidHide";
+    const show = Keyboard.addListener(showEvent, (e) => setKeyboardHeight(e.endCoordinates.height));
+    const hide = Keyboard.addListener(hideEvent, () => setKeyboardHeight(0));
+    return () => {
+      show.remove();
+      hide.remove();
     };
   }, []);
 
@@ -149,10 +169,7 @@ export default function BetaFeedbackSheet({
   return (
     <Modal visible={visible} animationType="slide" transparent onRequestClose={close}>
       <View style={styles.backdrop}>
-        <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : undefined}
-          style={styles.sheetWrap}
-        >
+        <View style={[styles.sheetWrap, { paddingBottom: keyboardHeight }]}>
           <View style={styles.sheet}>
             <View style={styles.handle} />
 
@@ -161,15 +178,20 @@ export default function BetaFeedbackSheet({
                 <Feather name="check-circle" size={40} color="#5fd0a3" />
                 <Text style={styles.sentTitle}>Got it. Thank you.</Text>
                 <Text style={styles.sentBody}>
-                  It goes straight to the person building the app. If it turns into a fix, you will get
-                  an email naming it when that build ships.
+                  We really appreciate you taking the time. Every note a tester sends shapes what we
+                  build next, and makes this a better place to learn a language.
                 </Text>
                 <Pressable onPress={close} style={[styles.submit, styles.submitDone]}>
                   <Text style={styles.submitText}>Done</Text>
                 </Pressable>
               </View>
             ) : (
-              <ScrollView keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+              <ScrollView
+                keyboardShouldPersistTaps="handled"
+                keyboardDismissMode="interactive"
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={styles.scrollContent}
+              >
                 <Text style={styles.title}>What happened?</Text>
                 <Text style={styles.lead}>
                   One sentence is a complete answer. The build and your device are attached
@@ -230,7 +252,7 @@ export default function BetaFeedbackSheet({
               </ScrollView>
             )}
           </View>
-        </KeyboardAvoidingView>
+        </View>
       </View>
     </Modal>
   );
@@ -246,10 +268,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 22,
     paddingTop: 10,
     paddingBottom: 30,
-    maxHeight: "88%",
+    maxHeight: "92%",
+    flexShrink: 1,
     borderTopWidth: 1,
     borderColor: "rgba(125,211,252,0.18)",
   },
+  scrollContent: { paddingBottom: 12 },
   handle: {
     alignSelf: "center",
     width: 42,

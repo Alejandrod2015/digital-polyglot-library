@@ -26,6 +26,54 @@ function clerkErrorMessage(error: { message?: string; longMessage?: string } | n
   return error?.longMessage || error?.message || "Something went wrong. Please try again.";
 }
 
+// Clerk's SDK imposes no deadline of its own, so a stalled request leaves the
+// user on a spinner with no error and no way out: on 2026-07-30 a sign-in sat
+// for 2 minutes 47 seconds before iOS, not the app, gave up on the connection.
+// The app's own API layer already bounds every call at 10s (src/lib/api.ts);
+// this brings the auth path in line with it.
+//
+// 20s rather than 10s because these calls can legitimately be slower than a
+// normal request (password verification, sending an email), and a false
+// timeout on a working sign-in is worse than a slightly long wait.
+const AUTH_TIMEOUT_MS = 20_000;
+
+class AuthTimeoutError extends Error {
+  constructor() {
+    super("The connection timed out. Check your internet connection and try again.");
+    this.name = "AuthTimeoutError";
+  }
+}
+
+/**
+ * Stops the UI waiting on a Clerk call that never settles.
+ *
+ * This does NOT abort the underlying request: Clerk's SDK exposes no abort
+ * handle, so the socket may still be open when this rejects. That is fine for
+ * the purpose here, which is to give the user an error and a retry instead of
+ * an endless spinner. A late response is simply ignored.
+ *
+ * OAuth is deliberately NOT wrapped: that flow hands off to a browser where
+ * the user may legitimately take minutes to type a password.
+ */
+function withTimeout<T>(promise: Promise<T>, label: string): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const timer = setTimeout(() => {
+      console.warn(`[auth] ${label} timed out after ${AUTH_TIMEOUT_MS}ms`);
+      reject(new AuthTimeoutError());
+    }, AUTH_TIMEOUT_MS);
+    promise.then(
+      (value) => {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      (err) => {
+        clearTimeout(timer);
+        reject(err);
+      },
+    );
+  });
+}
+
 type ScreenState =
   | { kind: "initial" }
   | { kind: "email-form"; mode: "signIn" | "signUp" }
@@ -78,13 +126,13 @@ export function AuthScreen(args: {
     setError(null);
     setSubmitting("password");
     try {
-      const { error: passwordError } = await signIn.password({
-        identifier: email.trim(),
-        password,
-      });
+      const { error: passwordError } = await withTimeout(
+        signIn.password({ identifier: email.trim(), password }),
+        "password sign-in",
+      );
 
       if (signIn.status === "complete") {
-        const { error: finalizeError } = await signIn.finalize();
+        const { error: finalizeError } = await withTimeout(signIn.finalize(), "finalize sign-in");
         if (finalizeError) {
           setError(clerkErrorMessage(finalizeError));
           return;
@@ -99,7 +147,7 @@ export function AuthScreen(args: {
         (f) => f.strategy === "email_code"
       );
       if (signIn.status === "needs_first_factor" && emailCodeSupported) {
-        const { error: sendError } = await signIn.emailCode.sendCode();
+        const { error: sendError } = await withTimeout(signIn.emailCode.sendCode(), "send email code");
         if (sendError) {
           setError(clerkErrorMessage(sendError));
           return;
@@ -123,10 +171,10 @@ export function AuthScreen(args: {
     setError(null);
     setSubmitting("signup");
     try {
-      const { error: createError } = await signUp.create({
-        emailAddress: email.trim(),
-        password,
-      });
+      const { error: createError } = await withTimeout(
+        signUp.create({ emailAddress: email.trim(), password }),
+        "sign-up",
+      );
       if (createError) {
         // Email already registered → don't dead-end with "try another";
         // flip to sign-in with the email kept so they can recover.
@@ -141,7 +189,7 @@ export function AuthScreen(args: {
         setError(clerkErrorMessage(createError));
         return;
       }
-      const { error: sendError } = await signUp.verifications.sendEmailCode();
+      const { error: sendError } = await withTimeout(signUp.verifications.sendEmailCode(), "send sign-up code");
       if (sendError) {
         setError(clerkErrorMessage(sendError));
         return;
@@ -163,13 +211,13 @@ export function AuthScreen(args: {
       if (screen.kind !== "verify-code") return;
 
       if (screen.mode === "signIn" && signIn) {
-        const { error: verifyError } = await signIn.emailCode.verifyCode({ code: code.trim() });
+        const { error: verifyError } = await withTimeout(signIn.emailCode.verifyCode({ code: code.trim() }), "verify sign-in code");
         if (verifyError) {
           setError(clerkErrorMessage(verifyError));
           return;
         }
         if (signIn.status === "complete") {
-          const { error: finalizeError } = await signIn.finalize();
+          const { error: finalizeError } = await withTimeout(signIn.finalize(), "finalize sign-in");
           if (finalizeError) {
             setError(clerkErrorMessage(finalizeError));
             return;
@@ -179,13 +227,13 @@ export function AuthScreen(args: {
           setError("Verification incomplete.");
         }
       } else if (screen.mode === "signUp" && signUp) {
-        const { error: verifyError } = await signUp.verifications.verifyEmailCode({ code: code.trim() });
+        const { error: verifyError } = await withTimeout(signUp.verifications.verifyEmailCode({ code: code.trim() }), "verify sign-up code");
         if (verifyError) {
           setError(clerkErrorMessage(verifyError));
           return;
         }
         if (signUp.status === "complete") {
-          const { error: finalizeError } = await signUp.finalize();
+          const { error: finalizeError } = await withTimeout(signUp.finalize(), "finalize sign-up");
           if (finalizeError) {
             setError(clerkErrorMessage(finalizeError));
             return;
