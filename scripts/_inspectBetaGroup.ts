@@ -70,7 +70,7 @@ async function main() {
     console.log(`  "${g.name}"`);
     console.log(`    internal:        ${g.internal}`);
     console.log(`    public link:     ${a.publicLinkEnabled === true ? `yes (${a.publicLink ?? "?"})` : "no"}`);
-    console.log(`    auto-notify:     ${a.feedbackEnabled === true ? "feedback on" : "feedback off"}`);
+    console.log(`    TF feedback:     ${a.feedbackEnabled === true ? "on" : "off"}`);
     console.log(`    testers:         ${testers.meta?.paging?.total ?? testers.data.length}`);
     const bl = builds.data.map((b) => `${b.attributes?.version}${b.attributes?.expired ? " (expired)" : ""}`);
     console.log(`    builds attached: ${bl.length > 0 ? bl.join(", ") : "NONE, invited testers would see nothing to install"}`);

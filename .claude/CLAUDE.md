@@ -199,6 +199,23 @@ that ALWAYS runs before any Bash command. It does two things:
    primera. Los generadores canónicos (`_genPracticeClips.ts`, `_genWordClips.ts`)
    ya lo incluyen. NUNCA generar audio de práctica sin el gate F0.
 
+6f. **Outbound email gate (BLOQUEANTE, 2026-07-31).** Ningún correo sale a
+   una persona real sin que el ÚLTIMO mensaje del usuario contenga un verbo
+   que **nombre el correo**: `manda/envía/lanza/dispara` + `el|los`? +
+   `correo|correos|email|emails|mail`. Un `sí`, `dale`, `ok` o `ejecuta`
+   NO autoriza, que es exactamente el caso que falló. `CLAUDE_AUTHORIZED=1`
+   NO lo salta. El guard 6f en `pre-bash-guard.sh` lee el transcript igual
+   que el gate de push, y cubre `processApplication`, `sendBetaEmail`,
+   `publishRelease`, `runBetaLifecycle`, `_runBetaTriage`, los senders de
+   lifecycle, los crons que envían y llamadas directas a `api.resend.com`.
+   Renderizar correos a disco (`_renderBetaEmails.ts`) y el triaje con
+   `--dry` pasan sin gate: previsualizar siempre está permitido.
+   WHY: el 2026-07-31 salieron 5 correos reales (4 de lista de espera y 1
+   de RECHAZO definitivo) tras un "Sí" a la pregunta "¿ejecuto el triaje?".
+   Había autorización formal, pero la palabra "triaje" ocultaba que había
+   cinco personas al otro lado. **Nunca uses jerga para describir una acción
+   irreversible hacia fuera: di "escribir a 5 personas", no "triar".**
+
 7. **Approved-voices gate (BLOCKING — no bypass)**. Production audio
    (story narration, practice clips, word audio) may ONLY be rendered
    with an ElevenLabs voiceId on the allowlist `src/lib/approvedVoices.ts`.

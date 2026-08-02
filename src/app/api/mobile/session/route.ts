@@ -2,6 +2,7 @@ import { createClerkClient, verifyToken } from "@clerk/backend";
 import { NextRequest, NextResponse } from "next/server";
 import { createMobileSessionToken } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
+import { touchTesterActivity } from "@/lib/betaProgram";
 
 const clerkClient = createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY!,
@@ -71,6 +72,14 @@ export async function POST(req: NextRequest) {
         : [],
       booksCount: savedBooksCount,
       storiesCount: savedStoriesCount,
+    });
+
+    // Beta testers: stamp that they opened the app. This is the coarse signal
+    // (a session is minted on launch, not on every tap); the Studio panel
+    // derives real usage from UserMetric. Wrapped so a beta bookkeeping
+    // failure can never cost someone their session.
+    void touchTesterActivity(userId).catch((err) => {
+      console.error("touchTesterActivity failed:", err);
     });
 
     return NextResponse.json({

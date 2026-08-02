@@ -382,6 +382,102 @@ EOF
     fi
 fi
 
+# 6f. OUTBOUND EMAIL LOCK (added 2026-07-31 after five beta emails went out
+#     on an ambiguous "Sí"). Sending mail to real people is irreversible and
+#     outward-facing, exactly like a push or a TTS render, so it gets the same
+#     transcript-based gate. CLAUDE_AUTHORIZED=1 does NOT bypass.
+#
+#     Triggers on anything that can put mail on the wire: the beta program
+#     entry points (processApplication / sendBetaEmail / publishRelease /
+#     runBetaLifecycle / _runBetaTriage), the lifecycle senders, the cron
+#     endpoints that send, and direct calls to the Resend API.
+#
+#     Rendering emails to disk for review (scripts/_renderBetaEmails.ts) does
+#     NOT match and passes through: previewing is always allowed.
+#
+#     Two conditions, not one. The first requires the command to actually RUN
+#     something: matching the bare names alone blocked a `git commit` whose
+#     MESSAGE described this very gate, and a lock that fires on harmless work
+#     is a lock that gets switched off. Reading, grepping and committing code
+#     that mentions these functions is not sending mail.
+if printf '%s' "$COMMAND" | grep -qE '(^|[|;&[:space:]])(npx|node|npm|pnpm|yarn|tsx|curl|bash|sh)[[:space:]]' \
+   && printf '%s' "$COMMAND" | grep -qE 'processApplication|inviteApplicant|declineApplicant|waitlistApplicant|removeTesterAccess|linkClerkUserToBetaSignup|sendBetaEmail|publishRelease|runBetaLifecycle|_runBetaTriage|sendLifecycleEmail|sendWelcomeEmail|sendBetaConfirmationEmail|sendClaimEmail|runLifecycleEmails|api\.resend\.com|resend\.emails\.send|/api/cron/(beta-lifecycle|lifecycle-emails|claim-reminders)'; then
+    MAIL_CHECK="$(printf '%s' "$PAYLOAD" | /usr/bin/python3 -c '
+import json, sys, re, os
+try:
+    payload = json.load(sys.stdin)
+except Exception:
+    print("missing_payload"); sys.exit(0)
+tp = payload.get("transcript_path") or ""
+if not tp or not os.path.exists(tp):
+    print("missing_transcript"); sys.exit(0)
+msgs = []
+try:
+    with open(tp) as f:
+        for line in f:
+            try:
+                obj = json.loads(line)
+            except Exception:
+                continue
+            if obj.get("type") != "user":
+                continue
+            content = obj.get("message", {}).get("content", "")
+            if isinstance(content, str):
+                msgs.append(content)
+            elif isinstance(content, list):
+                for part in content:
+                    if isinstance(part, dict) and part.get("type") == "text":
+                        msgs.append(part.get("text", ""))
+except Exception:
+    print("read_error"); sys.exit(0)
+if not msgs:
+    print("no_user_messages"); sys.exit(0)
+last = msgs[-1] or ""
+last = re.sub(r"<system-reminder>.*?</system-reminder>", "", last, flags=re.DOTALL|re.IGNORECASE)
+last = re.sub(r"<task-notification>.*?</task-notification>", "", last, flags=re.DOTALL|re.IGNORECASE)
+# The verb must name the mail. A bare "si" / "dale" / "ejecuta" never counts:
+# that ambiguity is the whole reason this gate exists.
+verb_pat = re.compile(
+    r"\b(manda|mandalos|mandalo|mándalo|envía|envia|envialos|envíalos|dispara|lanza)\s+"
+    r"(el\s+|los\s+|las\s+|un\s+)?(correo|correos|email|emails|mail|mails)\b",
+    re.IGNORECASE
+)
+for m in verb_pat.finditer(last):
+    start = max(0, m.start() - 12)
+    prefix = last[start:m.start()].lower()
+    if re.search(r"\bno\s*$", prefix) or re.search(r"\bnunca\s*$", prefix):
+        continue
+    print("ok")
+    sys.exit(0)
+print("no_verb")
+' 2>/dev/null || echo "python_error")"
+
+    if [ "$MAIL_CHECK" != "ok" ]; then
+        log_audit "BLOCK_EMAIL_NO_VERB[$MAIL_CHECK]" "$COMMAND"
+        cat >&2 <<EOF
+[safety-guard] BLOCKED: outbound email without an explicit user verb.
+
+This guard reads YOUR ACTUAL LAST MESSAGE from the Claude transcript.
+No env var bypass. Email to real people cannot be unsent.
+
+A bare "si", "dale", "ok" or "ejecuta" does NOT authorize a send. The
+verb must name the mail, e.g.:
+  "manda el correo" / "manda los correos" / "envia los correos" /
+  "lanza los correos" / "dispara el correo"
+
+Previewing is always allowed: scripts/_renderBetaEmails.ts writes the
+HTML to disk and sends nothing. Add --dry to the triage script to see
+verdicts without notifying anyone.
+
+Diagnostic: $MAIL_CHECK
+Command refused:
+  $COMMAND
+EOF
+        exit 2
+    fi
+    log_audit "PASS_EMAIL_VERB_OK" "$COMMAND"
+fi
+
 # 6d. Full-story audio regeneration lock (SAMPLE-FIRST).
 #     Regenerar el audio COMPLETO de una historia (o un lote) SOLO para
 #     PROBAR un cambio (fix de texto/normalización/voz/settings) es un

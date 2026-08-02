@@ -48,8 +48,60 @@ export async function GET(req: NextRequest) {
     wantHealth ? checkAscCredentials() : Promise.resolve(null),
   ]);
 
+  // Real usage per tester, derived from UserMetric rather than kept as its own
+  // column. A duplicated counter drifts the moment one write path forgets to
+  // increment it; the event log is already the truth, and with a tester cap of
+  // 20 this is one grouped query, not N.
+  //
+  // `lastActiveAt` on the applicant row is a coarse "opened the app" stamp from
+  // the session endpoint. `lastEventAt` below is the real one: it moves when
+  // they actually read or listen to something.
+  const testerUserIds = applicants
+    .map((a) => a.clerkUserId)
+    .filter((id): id is string => Boolean(id));
+
+  const usage = new Map<
+    string,
+    { stories: number; audioPlays: number; audioCompletes: number; practice: number; lastEventAt: string | null }
+  >();
+
+  if (testerUserIds.length > 0) {
+    const [grouped, latest] = await Promise.all([
+      prisma.userMetric.groupBy({
+        by: ["userId", "eventType"],
+        where: { userId: { in: testerUserIds } },
+        _count: { _all: true },
+      }),
+      prisma.userMetric.groupBy({
+        by: ["userId"],
+        where: { userId: { in: testerUserIds } },
+        _max: { createdAt: true },
+      }),
+    ]);
+
+    for (const id of testerUserIds) {
+      usage.set(id, { stories: 0, audioPlays: 0, audioCompletes: 0, practice: 0, lastEventAt: null });
+    }
+    for (const g of grouped) {
+      const u = usage.get(g.userId);
+      if (!u) continue;
+      const n = g._count._all;
+      if (g.eventType === "story_opened") u.stories += n;
+      else if (g.eventType === "audio_play") u.audioPlays += n;
+      else if (g.eventType === "audio_complete") u.audioCompletes += n;
+      else if (g.eventType === "practice_session_completed") u.practice += n;
+    }
+    for (const l of latest) {
+      const u = usage.get(l.userId);
+      if (u) u.lastEventAt = l._max.createdAt?.toISOString() ?? null;
+    }
+  }
+
   return NextResponse.json({
-    applicants,
+    applicants: applicants.map((a) => ({
+      ...a,
+      usage: a.clerkUserId ? (usage.get(a.clerkUserId) ?? null) : null,
+    })),
     feedback,
     releases,
     rules,

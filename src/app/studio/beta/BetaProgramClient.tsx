@@ -39,6 +39,14 @@ type Applicant = {
   planGrantedAt: string | null;
   createdAt: string;
   _count?: { feedback: number };
+  /** Real usage from UserMetric. Null until the tester has signed in. */
+  usage?: {
+    stories: number;
+    audioPlays: number;
+    audioCompletes: number;
+    practice: number;
+    lastEventAt: string | null;
+  } | null;
 };
 
 type Feedback = {
@@ -181,6 +189,16 @@ function ago(iso: string | null): string {
   if (days === 1) return "yesterday";
   if (days < 30) return `${days}d ago`;
   return `${Math.floor(days / 30)}mo ago`;
+}
+
+/** One usage number with its label, sized so a row of them scans at a glance. */
+function Metric({ n, label }: { n: number; label: string }) {
+  return (
+    <span style={{ display: "flex", alignItems: "baseline", gap: 4 }}>
+      <b style={{ fontSize: 15, color: n > 0 ? ACCENT : "var(--muted)" }}>{n}</b>
+      <span style={{ fontSize: 11, color: "var(--muted)" }}>{label}</span>
+    </span>
+  );
 }
 
 function labelStyle(): React.CSSProperties {
@@ -465,9 +483,25 @@ function Testers({
                   <span style={{ color: "var(--muted)", fontWeight: 500 }}>{t.email}</span>
                 </div>
                 <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
-                  {t.targetLanguage} · invited {ago(t.invitedAt)} · last active {ago(t.lastActiveAt)} ·{" "}
-                  {t._count?.feedback ?? 0} reports
+                  {t.targetLanguage} · invited {ago(t.invitedAt)} · {t._count?.feedback ?? 0} reports
                 </div>
+                {/* What they actually did, not just that they opened the app.
+                    Absent until they sign in, which is itself the signal. */}
+                {t.usage ? (
+                  <div style={{ display: "flex", gap: 14, marginTop: 8, flexWrap: "wrap" }}>
+                    <Metric n={t.usage.stories} label="stories" />
+                    <Metric n={t.usage.audioPlays} label="plays" />
+                    <Metric n={t.usage.audioCompletes} label="finished" />
+                    <Metric n={t.usage.practice} label="practice" />
+                    <span style={{ fontSize: 12, color: "var(--muted)", alignSelf: "flex-end" }}>
+                      last used {ago(t.usage.lastEventAt)}
+                    </span>
+                  </div>
+                ) : (
+                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 6, fontStyle: "italic" }}>
+                    No usage yet: has not signed in.
+                  </div>
+                )}
                 {stalled && (
                   <div style={{ fontSize: 12, color: "#fbbf24", marginTop: 4 }}>
                     Invited but never signed in. The lifecycle cron will nudge them.
