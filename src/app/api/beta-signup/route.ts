@@ -70,6 +70,7 @@ type Body = {
   socialHandle?: unknown;
   nativeLanguage?: unknown;
   targetLanguage?: unknown;
+  targetVariant?: unknown;
   currentLevel?: unknown;
   hasIPhone?: unknown;
   weeklyHours?: unknown;
@@ -180,6 +181,9 @@ export async function POST(req: NextRequest) {
   const socialHandle = asTrimmedString(body.socialHandle, 200);
   const nativeLanguage = asTrimmedString(body.nativeLanguage, 100);
   const targetLanguage = asTrimmedString(body.targetLanguage, 100);
+  // Optional by design: the form offers "not sure", and a blank is better data
+  // than a forced guess about where the people they want to talk to live.
+  const targetVariant = asTrimmedString(body.targetVariant, 40)?.toLowerCase() ?? null;
   const currentLevel = asTrimmedString(body.currentLevel, 300);
   const hasIPhone = typeof body.hasIPhone === "boolean" ? body.hasIPhone : null;
   const weeklyHours = asTrimmedString(body.weeklyHours, 100);
@@ -274,6 +278,7 @@ export async function POST(req: NextRequest) {
       firstName,
       appleIdEmail,
       socialHandle,
+      targetVariant,
     },
   });
 

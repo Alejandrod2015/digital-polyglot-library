@@ -21,6 +21,41 @@ const NATIVE_LANGUAGES = [
 
 const TARGET_LANGUAGES = ["Spanish", "German", "Italian", "Portuguese", "French"];
 
+// Journeys are variant-scoped, so a Spanish learner aiming at a Mexican
+// grandmother and one moving to Madrid want different content. Only languages
+// with more than one flavour ask the question; the rest would just be noise.
+// "Not sure" is a real option: forcing a guess produces worse data than a blank.
+// The first block is ordered by what people have actually paid for (claim
+// tokens, 2026-08): Colombian titles lead by a wide margin, then general LATAM,
+// then Puerto Rico, Panama, Argentina and Ecuador. The second block is every
+// other major Spanish-speaking country, listed even though none has ever sold a
+// book, because you cannot sell what you never wrote: the countries missing
+// from the sales data are the ones we have never offered anything for, not the
+// ones nobody wants. Someone picking Peru here is the only way we would learn.
+//
+// "Other" keeps a free-text escape so an unexpected answer is captured rather
+// than rounded to the nearest option, and "Not sure yet" stays a real choice:
+// a forced guess is worse data than a blank.
+const TARGET_VARIANTS: Record<string, Array<{ value: string; label: string }>> = {
+  Spanish: [
+    { value: "colombia", label: "Colombia" },
+    { value: "latam", label: "Latin America (general)" },
+    { value: "puerto-rico", label: "Puerto Rico" },
+    { value: "panama", label: "Panama" },
+    { value: "argentina", label: "Argentina" },
+    { value: "mexico", label: "Mexico" },
+    { value: "spain", label: "Spain" },
+    { value: "peru", label: "Peru" },
+    { value: "chile", label: "Chile" },
+    { value: "ecuador", label: "Ecuador" },
+    { value: "dominican-republic", label: "Dominican Republic" },
+    { value: "venezuela", label: "Venezuela" },
+    { value: "cuba", label: "Cuba" },
+    { value: "other", label: "Somewhere else..." },
+    { value: "unsure", label: "Not sure yet" },
+  ],
+};
+
 const LEVELS = [
   { value: "beginner", label: "Beginner" },
   { value: "intermediate", label: "Intermediate" },
@@ -115,6 +150,8 @@ type FormState = {
   nativeLanguageOther: string;
   targetLanguage: string;
   targetLanguageOther: string;
+  targetVariant: string;
+  targetVariantOther: string;
   currentLevel: string;
   hasIPhone: "yes" | "no" | "";
   weeklyHours: string;
@@ -139,6 +176,8 @@ const initialState: FormState = {
   nativeLanguageOther: "",
   targetLanguage: "",
   targetLanguageOther: "",
+  targetVariant: "",
+  targetVariantOther: "",
   currentLevel: "",
   hasIPhone: "",
   weeklyHours: "",
@@ -305,6 +344,10 @@ export default function BetaSignupForm() {
           socialHandle: form.socialHandle.trim() || undefined,
           nativeLanguage,
           targetLanguage,
+          targetVariant:
+            (form.targetVariant === "other"
+              ? form.targetVariantOther.trim()
+              : form.targetVariant) || undefined,
           currentLevel: LEVELS.find((l) => l.value === form.currentLevel)?.label ?? form.currentLevel,
           hasIPhone: form.hasIPhone === "yes",
           weeklyHours: form.weeklyHours,
@@ -526,6 +569,49 @@ export default function BetaSignupForm() {
               placeholder="Which language?"
               maxLength={100}
             />
+          )}
+          {/* Only for languages that actually have more than one flavour of
+              content. Required, but with nothing pre-selected and "Not sure
+              yet" as a real option: forcing a deliberate choice stops people
+              skipping it by inertia, while still letting them say they do not
+              know instead of guessing. A guess would be worse data than a
+              blank, and a blank default is what everyone leaves untouched. */}
+          {TARGET_VARIANTS[form.targetLanguage] && (
+            <div className="mt-3">
+              <label
+                htmlFor="targetVariant"
+                className="mb-1 block text-xs font-bold text-white/55"
+              >
+                Where are the people you want to talk to?
+              </label>
+              <select
+                id="targetVariant"
+                required
+                value={form.targetVariant}
+                onChange={(e) => update("targetVariant", e.target.value)}
+                className={selectStyle}
+              >
+                <option value="" disabled>
+                  Pick one
+                </option>
+                {TARGET_VARIANTS[form.targetLanguage].map((v) => (
+                  <option key={v.label} value={v.value}>
+                    {v.label}
+                  </option>
+                ))}
+              </select>
+              {form.targetVariant === "other" && (
+                <input
+                  type="text"
+                  required
+                  value={form.targetVariantOther}
+                  onChange={(e) => update("targetVariantOther", e.target.value)}
+                  className={`${inputStyle} mt-2`}
+                  placeholder="Which country?"
+                  maxLength={60}
+                />
+              )}
+            </div>
           )}
         </div>
       </div>

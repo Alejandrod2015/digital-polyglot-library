@@ -64,6 +64,12 @@ export type BetaEmailData = {
   /** Days the beta still has to run, for the final-stretch sends. */
   daysLeft?: number;
   /**
+   * One or two hand-written lines for THIS person, rendered above the
+   * instructions in the acceptance email. Optional: without it the email is
+   * exactly what it was before.
+   */
+  personalNote?: string | null;
+  /**
    * Signed token for the footer's manage/unsubscribe links. Without it the
    * footer renders a link that cannot identify the recipient, which makes the
    * opt-out unusable for anyone not already logged in on the web.
@@ -151,6 +157,16 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
     "rgba(125,211,252,0.3)",
   );
 
+  // Set apart from the templated body on purpose: a hand-written line has to
+  // look hand-written, or it reads as one more generated paragraph.
+  const personal = data?.personalNote?.trim()
+    ? `<div style="border-left:3px solid ${DPE.gold};padding:2px 0 2px 16px;text-align:left;">
+        <p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:16px;line-height:1.65;color:${DPE.fg};">${esc(
+          data.personalNote.trim(),
+        )}</p>
+      </div>`
+    : "";
+
   const blocks = [
     block(
       `${eyebrow("You're in")}${head(`Welcome to the<br/>${gold("beta")}, ${esc(name)}.`, 40)}${lead(
@@ -158,6 +174,7 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
       )}`,
       "40px 44px 0",
     ),
+    ...(personal ? [block(personal, "26px 44px 0", false)] : []),
     block(steps, "28px 44px 0", false),
     block(cta("Open TestFlight", tfUrl), "24px 44px 0"),
     block(perks, "24px 44px 0", false),
@@ -180,6 +197,7 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
     text: [
       `Welcome to the beta, ${name}.`,
       "",
+      ...(data?.personalNote?.trim() ? [data.personalNote.trim(), ""] : []),
       `Your TestFlight invite is on its way to your Apple ID. You are testing ${lang}, with everything unlocked.`,
       "",
       "Getting in takes two minutes:",

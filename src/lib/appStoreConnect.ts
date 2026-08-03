@@ -1,7 +1,9 @@
 // Minimal App Store Connect API client, scoped to TestFlight tester
-// management. This is what removes you from the loop: an accepted applicant
-// is added to a beta group here, and Apple sends the TestFlight invite email
-// on its own.
+// management. This is what removes you from the loop: an accepted applicant is
+// added to a beta group here AND sent Apple's invitation, which are two
+// separate calls. Adding to a group alone leaves the tester in NOT_INVITED
+// with no email, which is a silent failure: our own acceptance mail tells them
+// to look for Apple's message, and it never arrives.
 //
 // Zero external deps: an ES256 JWT signed with node:crypto, same shape as the
 // provider token in src/lib/apnsPush.ts. Note the key is NOT the same one:
@@ -350,17 +352,61 @@ export async function listBuildsForGroup(
   }));
 }
 
+/**
+ * Sends (or resends) Apple's TestFlight invitation email to one tester.
+ *
+ * Adding a tester to a beta group does NOT invite them: it creates the record
+ * and leaves them in `NOT_INVITED`. Apple only mails them when this endpoint is
+ * called. Found on 2026-08-02, after an applicant was told by our own email to
+ * look for an Apple invitation that had never been sent.
+ *
+ * A 409 means they have already accepted and are testing, which is a success
+ * from the caller's point of view.
+ */
+export async function sendTesterInvitation(
+  testerId: string,
+): Promise<{ ok: boolean; alreadyTesting?: boolean; error?: string }> {
+  const config = getAscConfig();
+  if (!config) return { ok: false, error: "App Store Connect is not configured" };
+
+  try {
+    await ascFetch<unknown>(config, "/v1/betaTesterInvitations", {
+      method: "POST",
+      body: {
+        data: {
+          type: "betaTesterInvitations",
+          relationships: {
+            app: { data: { type: "apps", id: config.appId } },
+            betaTester: { data: { type: "betaTesters", id: testerId } },
+          },
+        },
+      },
+    });
+    return { ok: true };
+  } catch (err) {
+    if (err instanceof AscError && err.status === 409) {
+      return { ok: true, alreadyTesting: true };
+    }
+    return { ok: false, error: err instanceof AscError ? err.message : String(err) };
+  }
+}
+
 type BetaTesterResponse = { data: { id: string } };
 type BetaTestersListResponse = { data: Array<{ id: string }> };
 
 export type InviteResult =
-  | { ok: true; testerId: string; alreadyExisted: boolean }
+  | { ok: true; testerId: string; alreadyExisted: boolean; invitationSent: boolean; invitationError?: string }
   | { ok: false; error: string; code: string | null; status: number };
 
 /**
- * Adds one applicant to the external beta group. Apple sends the TestFlight
- * invite email itself as a side effect, which is the whole point: no mailbox
- * of ours is in the path.
+ * Adds one applicant to the external beta group AND sends Apple's TestFlight
+ * invitation.
+ *
+ * Both steps are required. Adding to a group only creates the tester record,
+ * leaving them in `NOT_INVITED` with no email sent; the invitation is a
+ * separate call. This comment used to claim Apple invited on its own, and that
+ * wrong assumption is exactly what shipped an applicant an email telling her
+ * to look for a message that did not exist.
  *
  * Never throws. A failed invite has to leave the applicant row intact with the
  * reason recorded, so the Studio can offer a retry button instead of losing
@@ -398,7 +444,14 @@ export async function inviteTesterToBetaGroup(args: {
           },
         },
       });
-      return { ok: true, testerId: created.data.id, alreadyExisted: false };
+      const inv = await sendTesterInvitation(created.data.id);
+      return {
+        ok: true,
+        testerId: created.data.id,
+        alreadyExisted: false,
+        invitationSent: inv.ok,
+        invitationError: inv.error,
+      };
     } catch (err) {
       // A tester who already exists on the team (from an earlier beta, or
       // because they were added by hand) is a 409. That is not a failure:
@@ -414,7 +467,14 @@ export async function inviteTesterToBetaGroup(args: {
           method: "POST",
           body: { data: [{ type: "betaGroups", id: groupId }] },
         });
-        return { ok: true, testerId, alreadyExisted: true };
+        const inv = await sendTesterInvitation(testerId);
+        return {
+          ok: true,
+          testerId,
+          alreadyExisted: true,
+          invitationSent: inv.ok,
+          invitationError: inv.error,
+        };
       }
       throw err;
     }

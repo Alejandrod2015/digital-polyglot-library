@@ -22,8 +22,11 @@ for (const f of [".env.local", ".env"]) {
 }
 
 const email = process.argv[2];
+// Optional hand-written line that goes INSIDE the acceptance email. Stored on
+// the applicant first, so a resend carries the same words.
+const note = process.argv[3]?.trim() || null;
 if (!email) {
-  console.error("usage: tsx scripts/_inviteOne.ts <email>");
+  console.error('usage: tsx scripts/_inviteOne.ts <email> ["personal note"]');
   process.exit(1);
 }
 
@@ -37,6 +40,10 @@ if (!email) {
     console.log(`no applicant with email ${email}`);
     await prisma.$disconnect();
     return;
+  }
+  if (note) {
+    await prisma.betaSignup.update({ where: { id: s.id }, data: { personalNote: note } });
+    console.log(`note      : "${note}"`);
   }
   console.log(`link base : ${process.env.APP_BASE_URL}`);
   console.log(`before    : status=${s.status}  appleId=${s.appleIdEmail}`);

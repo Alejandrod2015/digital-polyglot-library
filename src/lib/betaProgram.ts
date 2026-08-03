@@ -16,6 +16,7 @@ import { inviteTesterToBetaGroup, removeTester, isAscConfigured } from "@/lib/ap
 import { evaluateApplication, type BetaVerdict } from "@/lib/betaRules";
 import { getBetaRules } from "@/lib/betaRulesConfig";
 import { BETA_EMAIL_BUILDERS, type BetaEmailKind, type BetaEmailData } from "@/lib/emails/beta";
+import { buildPersonalEmail } from "@/lib/emails/personal";
 import type { BetaSignup } from "@/generated/prisma";
 
 const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
@@ -269,7 +270,11 @@ export async function inviteApplicant(signupId: string): Promise<InviteOutcome> 
   // Already invited: do not call Apple again, but do make sure the acceptance
   // email went out (the ledger makes the resend a no-op if it did).
   if (signup.status === "invited" || signup.status === "accepted") {
-    const emailed = await sendBetaEmail({ kind: "accepted", signup });
+    const emailed = await sendBetaEmail({
+      kind: "accepted",
+      signup,
+      data: { personalNote: signup.personalNote },
+    });
     return { invited: true, status: signup.status, error: null, emailed };
   }
 
@@ -300,6 +305,11 @@ export async function inviteApplicant(signupId: string): Promise<InviteOutcome> 
     return { invited: false, status: "waitlist", error: result.error, emailed: null };
   }
 
+  // A tester who was added but not invited is worse than a failed invite: our
+  // acceptance email tells them to look for Apple's message. Record it so the
+  // Studio surfaces it instead of showing a clean "invited".
+  const inviteIssue = result.invitationSent ? null : (result.invitationError ?? "Apple did not send the invitation");
+
   await prisma.betaSignup.update({
     where: { id: signupId },
     data: {
@@ -307,11 +317,15 @@ export async function inviteApplicant(signupId: string): Promise<InviteOutcome> 
       invitedAt: signup.invitedAt ?? new Date(),
       ascTesterId: result.testerId,
       ascInvitedAt: new Date(),
-      ascError: null,
+      ascError: inviteIssue,
     },
   });
 
-  const emailed = await sendBetaEmail({ kind: "accepted", signup });
+  const emailed = await sendBetaEmail({
+    kind: "accepted",
+    signup,
+    data: { personalNote: signup.personalNote },
+  });
   return { invited: true, status: "invited", error: null, emailed };
 }
 
@@ -444,6 +458,78 @@ export async function revokeBetaPlan(userId: string): Promise<void> {
       betaRevokedAt: new Date().toISOString(),
     },
   });
+}
+
+/**
+ * Sends a plain personal note to one applicant, outside the design system.
+ *
+ * Uses the same ledger as every other send, keyed by `slug`, so the same note
+ * cannot go out twice and a retry after a failure is safe. `slug` is the
+ * purpose of the note ("variant-question"), not its text, so rewording it and
+ * resending is still blocked: the point is one message per topic per person.
+ *
+ * No unsubscribe footer: this is one-to-one correspondence answering something
+ * they wrote to us, not bulk mail. Replies land in the same inbox as the rest.
+ */
+export async function sendPersonalNote(args: {
+  signup: Pick<BetaSignup, "id" | "email" | "firstName">;
+  slug: string;
+  subject: string;
+  paragraphs: string[];
+}): Promise<BetaSendResult> {
+  const { signup, slug, subject, paragraphs } = args;
+
+  const apiKey = process.env.RESEND_API_KEY;
+  const replyTo = "support@digitalpolyglot.com";
+  // NOT the shared EMAIL_FROM, which is "Digital Polyglot <noreply@...>". A
+  // note whose body asks the reader to reply, sent from an address that says
+  // noreply, contradicts itself on screen: the reply-to header makes it work
+  // technically, but almost nobody replies to a noreply sender. System mail
+  // keeps using EMAIL_FROM; one-to-one correspondence comes from a mailbox
+  // that a human actually reads.
+  const from = process.env.PERSONAL_EMAIL_FROM || "Alejandro from Digital Polyglot <support@digitalpolyglot.com>";
+  if (!apiKey) {
+    console.warn("⚠️ RESEND_API_KEY not set, skipping personal note");
+    return "skipped";
+  }
+
+  try {
+    await prisma.betaEmailLog.create({
+      data: { signupId: signup.id, kind: "personal", releaseId: slug },
+    });
+  } catch {
+    return "duplicate";
+  }
+
+  const { html, text } = buildPersonalEmail({
+    firstName: signup.firstName,
+    subject,
+    paragraphs,
+  });
+
+  try {
+    const resend = new Resend(apiKey);
+    await resend.emails.send({
+      from,
+      to: signup.email,
+      subject,
+      html,
+      text,
+      replyTo,
+      tags: [
+        { name: "type", value: "personal" },
+        { name: "category", value: `beta-personal-${slug}` },
+      ],
+    });
+    console.log(`📧 Personal note (${slug}) sent to ${signup.email}`);
+    return "sent";
+  } catch (err) {
+    console.error(`❌ Personal note (${slug}) failed for ${signup.email}:`, err);
+    await prisma.betaEmailLog
+      .delete({ where: { signupId_kind_releaseId: { signupId: signup.id, kind: "personal", releaseId: slug } } })
+      .catch(() => undefined);
+    return "failed";
+  }
 }
 
 /**

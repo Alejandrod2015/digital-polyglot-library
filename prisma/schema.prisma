@@ -604,12 +604,25 @@ model BetaSignup {
   platform     String  @default("ios")
   googleEmail  String?
 
+  // Which flavour of the language they want, when it has more than one.
+  // Journeys are variant-scoped (spain / latam / mexico / colombia), so
+  // without this we can invite a Spanish learner into content from the wrong
+  // side of the Atlantic. Null means they did not say, which is a valid
+  // answer: the form offers "not sure" on purpose.
+  targetVariant String?
+
   // ── Triage engine output. `decision` is what the rules said; `status` is
   // what actually happened (an admin can override it). ──
   score          Int?
   decision       String? // auto_accept | queue | auto_decline
   decisionReason String?
   decidedAt      DateTime?
+
+  // A hand-written line that goes INTO the acceptance email, above the
+  // instructions. Deliberately separate from `notes`, which is internal: one
+  // field the applicant reads and one they never do must not be the same
+  // field, or a triage scribble ends up in someone's inbox.
+  personalNote String?
 
   // ── App Store Connect. `ascTesterId` is the betaTester resource id, kept
   // so we can remove the tester when the beta closes. `ascError` holds the

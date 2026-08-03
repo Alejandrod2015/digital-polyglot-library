@@ -401,7 +401,7 @@ fi
 #     is a lock that gets switched off. Reading, grepping and committing code
 #     that mentions these functions is not sending mail.
 if printf '%s' "$COMMAND" | grep -qE '(^|[|;&[:space:]])(npx|node|npm|pnpm|yarn|tsx|curl|bash|sh)[[:space:]]' \
-   && printf '%s' "$COMMAND" | grep -qE 'processApplication|inviteApplicant|declineApplicant|waitlistApplicant|removeTesterAccess|linkClerkUserToBetaSignup|sendBetaEmail|publishRelease|runBetaLifecycle|_runBetaTriage|sendLifecycleEmail|sendWelcomeEmail|sendBetaConfirmationEmail|sendClaimEmail|runLifecycleEmails|api\.resend\.com|resend\.emails\.send|/api/cron/(beta-lifecycle|lifecycle-emails|claim-reminders)'; then
+   && printf '%s' "$COMMAND" | grep -qE 'processApplication|inviteApplicant|declineApplicant|waitlistApplicant|removeTesterAccess|linkClerkUserToBetaSignup|sendBetaEmail|sendPersonalNote|_personalNote|publishRelease|runBetaLifecycle|_runBetaTriage|sendLifecycleEmail|sendWelcomeEmail|sendBetaConfirmationEmail|sendClaimEmail|runLifecycleEmails|api\.resend\.com|resend\.emails\.send|/api/cron/(beta-lifecycle|lifecycle-emails|claim-reminders)'; then
     MAIL_CHECK="$(printf '%s' "$PAYLOAD" | /usr/bin/python3 -c '
 import json, sys, re, os
 try:
