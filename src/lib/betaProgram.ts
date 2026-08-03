@@ -12,7 +12,13 @@ import { Resend } from "resend";
 import { createClerkClient } from "@clerk/backend";
 import { prisma } from "@/lib/prisma";
 import { getEmailPreference, createEmailToken } from "@/lib/emailPreferences";
-import { inviteTesterToBetaGroup, removeTester, isAscConfigured } from "@/lib/appStoreConnect";
+import {
+  inviteTesterToBetaGroup,
+  removeTester,
+  isAscConfigured,
+  getTesterState,
+  sendTesterInvitation,
+} from "@/lib/appStoreConnect";
 import { evaluateApplication, type BetaVerdict } from "@/lib/betaRules";
 import { getBetaRules } from "@/lib/betaRulesConfig";
 import { BETA_EMAIL_BUILDERS, type BetaEmailKind, type BetaEmailData } from "@/lib/emails/beta";
@@ -64,6 +70,30 @@ export async function hasSentBetaEmail(
 }
 
 export type BetaSendResult = "sent" | "skipped" | "failed" | "duplicate";
+
+/**
+ * Stores the provider's message id on the ledger row we already claimed.
+ *
+ * Never throws: the email is already out of the door by the time this runs, so
+ * a bookkeeping failure must not turn a successful send into a reported
+ * failure and trigger a duplicate on retry.
+ */
+async function recordProviderId(
+  signupId: string,
+  kind: string,
+  releaseId: string,
+  providerId: string | undefined,
+): Promise<void> {
+  if (!providerId) return;
+  await prisma.betaEmailLog
+    .update({
+      where: { signupId_kind_releaseId: { signupId, kind, releaseId } },
+      data: { providerId },
+    })
+    .catch((err) => {
+      console.error("Could not store provider id (email was still sent):", err);
+    });
+}
 
 /**
  * Sends one beta email and writes the ledger row in the same breath.
@@ -127,7 +157,7 @@ export async function sendBetaEmail(args: {
 
   try {
     const resend = new Resend(apiKey);
-    await resend.emails.send({
+    const sent = await resend.emails.send({
       from,
       to: signup.email,
       subject,
@@ -147,6 +177,10 @@ export async function sendBetaEmail(args: {
         { name: "category", value: `beta-${kind}` },
       ],
     });
+    // Keep the provider's id. "Was it delivered?" is a question worth being
+    // able to answer in one lookup; without this it means listing every email
+    // the account ever sent and filtering by address.
+    await recordProviderId(signup.id, kind, releaseId, sent.data?.id);
     console.log(`📧 Beta email (${kind}) sent to ${signup.email}`);
     return "sent";
   } catch (err) {
@@ -267,15 +301,33 @@ export async function inviteApplicant(signupId: string): Promise<InviteOutcome> 
   const signup = await prisma.betaSignup.findUnique({ where: { id: signupId } });
   if (!signup) throw new Error(`BetaSignup ${signupId} not found`);
 
-  // Already invited: do not call Apple again, but do make sure the acceptance
-  // email went out (the ledger makes the resend a no-op if it did).
+  // Already invited by us. Do not add them to the group twice, but DO make
+  // sure Apple actually invited them: being in the group is not the same as
+  // having been sent the invitation, and this branch used to return success
+  // without checking. On 2026-08-02 that left the first real applicant sitting
+  // at NOT_INVITED while our own email told her to look for Apple's message.
+  //
+  // Re-firing the invitation is safe: Apple treats a second one as a resend,
+  // and answers 409 for someone who is already testing.
   if (signup.status === "invited" || signup.status === "accepted") {
+    let inviteError: string | null = null;
+    if (signup.ascTesterId && isAscConfigured()) {
+      const state = await getTesterState(signup.ascTesterId);
+      if (state === "NOT_INVITED") {
+        const inv = await sendTesterInvitation(signup.ascTesterId);
+        inviteError = inv.ok ? null : (inv.error ?? "Apple did not send the invitation");
+        console.log(`↻ Re-sent Apple invitation for ${signup.email}: ${inv.ok ? "ok" : inviteError}`);
+      }
+    }
+    if (inviteError !== signup.ascError) {
+      await prisma.betaSignup.update({ where: { id: signupId }, data: { ascError: inviteError } });
+    }
     const emailed = await sendBetaEmail({
       kind: "accepted",
       signup,
       data: { personalNote: signup.personalNote },
     });
-    return { invited: true, status: signup.status, error: null, emailed };
+    return { invited: true, status: signup.status, error: inviteError, emailed };
   }
 
   if (!isAscConfigured()) {
@@ -509,7 +561,7 @@ export async function sendPersonalNote(args: {
 
   try {
     const resend = new Resend(apiKey);
-    await resend.emails.send({
+    const sent = await resend.emails.send({
       from,
       to: signup.email,
       subject,
@@ -521,6 +573,7 @@ export async function sendPersonalNote(args: {
         { name: "category", value: `beta-personal-${slug}` },
       ],
     });
+    await recordProviderId(signup.id, "personal", slug, sent.data?.id);
     console.log(`📧 Personal note (${slug}) sent to ${signup.email}`);
     return "sent";
   } catch (err) {

@@ -391,6 +391,40 @@ export async function sendTesterInvitation(
   }
 }
 
+/**
+ * Where one tester stands with Apple: NOT_INVITED, INVITED, ACCEPTED or
+ * INSTALLED.
+ *
+ * The state lives on the tester's row INSIDE a group listing, not on the
+ * tester resource itself: `GET /v1/betaTesters/{id}` returns `state: null`,
+ * which looks like an answer and is not one. Reading it from the wrong place
+ * is how "we invited them" stayed unquestioned for a day.
+ *
+ * Returns null when the state cannot be read, so callers can tell "not
+ * invited" apart from "do not know".
+ */
+export async function getTesterState(testerId: string): Promise<string | null> {
+  const config = getAscConfig();
+  if (!config) return null;
+  try {
+    const groups = await ascFetch<BetaGroupsResponse>(
+      config,
+      `/v1/apps/${config.appId}/betaGroups?limit=200`,
+    );
+    for (const g of groups.data) {
+      const list = await ascFetch<{
+        data: Array<{ id: string; attributes?: { state?: string } }>;
+      }>(config, `/v1/betaGroups/${g.id}/betaTesters?limit=200`);
+      const found = list.data.find((t) => t.id === testerId);
+      if (found) return found.attributes?.state ?? null;
+    }
+    return null;
+  } catch (err) {
+    console.error("Could not read tester state:", err);
+    return null;
+  }
+}
+
 type BetaTesterResponse = { data: { id: string } };
 type BetaTestersListResponse = { data: Array<{ id: string }> };
 

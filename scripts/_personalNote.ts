@@ -47,9 +47,9 @@ const NOTES: Record<
     subject: "One question before you start",
     paragraphs: [
       "I'm Alejandro, the founder of Digital Polyglot. You applied for our iPhone beta back in July, and I'm sorry it took me this long to answer: I read every application myself, and yours has stayed with me since.",
-      "Yours is the reason I hoped people would write. You are not trying to pass a test. You want one particular woman to understand you in her own kitchen, and you want to be funny while you do it. That is exactly what we build for: the words people in one place actually use, not an average of a language nobody speaks.",
-      "So, one thing before you start: where is she from? A Colombian grandmother and a Spanish one do not use the same words, and I would rather start you on hers.",
-      "Just reply with her country and I will point you at the right stories.",
+      "Yours is the reason I hoped people would write. You are not trying to pass a test. You want your own conversations with her, without calling him over to translate, and you want your own jokes to land. That is exactly what we build for: the words people in one place actually use, not an average of a language nobody speaks.",
+      "So, one thing before you start: where is she from? A Colombian grandmother and a Spanish one do not use the same words, and I would rather start you as close to hers as I can.",
+      "Just reply with her country and I will tell you where to start.",
     ],
     signOff: ["Alejandro", "Founder, Digital Polyglot"],
   },

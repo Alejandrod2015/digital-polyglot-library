@@ -1,7 +1,11 @@
 // Polls App Store Connect until build 279 clears Beta App Review.
 //
-// The state lives on the build's betaAppReviewSubmission relationship:
-// WAITING_FOR_REVIEW -> IN_REVIEW -> APPROVED (or REJECTED).
+// Reads BOTH the review state and the build's external state, because they can
+// disagree: the review submission is what Apple grades, the external state is
+// what actually decides whether a tester can install. A build only becomes
+// installable for external testers when the second one says IN_BETA_TESTING.
+//
+//   npx tsx scripts/_watchBetaReview.ts [buildVersion]
 
 import { createPrivateKey, sign } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
@@ -15,11 +19,14 @@ for (const f of [".env.local", ".env"]) {
   }
 }
 
+const VERSION = process.argv[2] ?? "279";
+const API = "https://api.appstoreconnect.apple.com";
+
 const b64 = (v: Buffer | string) =>
   (typeof v === "string" ? Buffer.from(v) : v).toString("base64")
     .replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 
-function jwt(): string {
+function auth(): Record<string, string> {
   const now = Math.floor(Date.now() / 1000);
   const h = b64(JSON.stringify({ alg: "ES256", kid: process.env.ASC_KEY_ID, typ: "JWT" }));
   const p = b64(JSON.stringify({ iss: process.env.ASC_ISSUER_ID, iat: now, exp: now + 600, aud: "appstoreconnect-v1" }));
@@ -28,34 +35,44 @@ function jwt(): string {
     key: createPrivateKey({ key: pem, format: "pem" }),
     dsaEncoding: "ieee-p1363",
   });
-  return `${h}.${p}.${b64(s)}`;
+  return { Authorization: `Bearer ${h}.${p}.${b64(s)}` };
 }
 
-async function state(): Promise<string> {
-  const H = { Authorization: `Bearer ${jwt()}` };
-  const builds = await (await fetch(
-    `https://api.appstoreconnect.apple.com/v1/builds?filter[app]=${process.env.ASC_APP_ID}&filter[version]=279&limit=1`,
-    { headers: H },
+async function look(): Promise<{ external: string; review: string } | null> {
+  const b = await (await fetch(
+    `${API}/v1/builds?filter[app]=${process.env.ASC_APP_ID}&filter[version]=${VERSION}&limit=1`,
+    { headers: auth() },
   )).json();
-  const id = builds.data?.[0]?.id;
-  if (!id) return "NO_BUILD";
-  const sub = await (await fetch(
-    `https://api.appstoreconnect.apple.com/v1/builds/${id}/betaAppReviewSubmission`,
-    { headers: H },
-  )).json();
-  return sub?.data?.attributes?.betaReviewState ?? "NONE";
+  const id = b.data?.[0]?.id;
+  if (!id) return null;
+  const d = await (await fetch(`${API}/v1/builds/${id}/buildBetaDetail`, { headers: auth() })).json();
+  const r = await (await fetch(`${API}/v1/builds/${id}/betaAppReviewSubmission`, { headers: auth() })).json();
+  return {
+    external: d.data?.attributes?.externalBuildState ?? "?",
+    review: r?.data?.attributes?.betaReviewState ?? "NONE",
+  };
 }
 
 (async () => {
-  for (let i = 1; i <= 480; i++) {
-    const s = await state();
+  // Every 5 minutes for up to 48 hours: Apple's own stated window.
+  for (let i = 1; i <= 576; i++) {
+    const s = await look();
     const stamp = new Date().toISOString().slice(11, 16);
-    if (s === "APPROVED" || s === "REJECTED") {
-      console.log(`${stamp}  build 279 -> ${s}`);
+    if (!s) {
+      console.log(`${stamp}  build ${VERSION} no encontrado`);
+      process.exit(1);
+    }
+    if (s.external === "IN_BETA_TESTING") {
+      console.log(`${stamp}  APROBADO. build ${VERSION} external=${s.external} review=${s.review}`);
       process.exit(0);
     }
-    if (i === 1 || i % 12 === 0) console.log(`${stamp}  ${s}`);
+    if (s.review === "REJECTED") {
+      console.log(`${stamp}  RECHAZADO. build ${VERSION} review=${s.review}`);
+      process.exit(0);
+    }
+    // One line per hour, so the log stays readable over two days.
+    if (i === 1 || i % 12 === 0) console.log(`${stamp}  external=${s.external} review=${s.review}`);
     await new Promise((r) => setTimeout(r, 300_000));
   }
-  console.log("TIMEOUT tras 40 h");
+  console.log("TIMEOUT tras 48 h");
 })();

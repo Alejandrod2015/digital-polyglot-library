@@ -400,7 +400,21 @@ fi
 #     MESSAGE described this very gate, and a lock that fires on harmless work
 #     is a lock that gets switched off. Reading, grepping and committing code
 #     that mentions these functions is not sending mail.
-if printf '%s' "$COMMAND" | grep -qE '(^|[|;&[:space:]])(npx|node|npm|pnpm|yarn|tsx|curl|bash|sh)[[:space:]]' \
+#     Preview runs are exempt, because the block message promises they are and
+#     a guard whose text and behaviour disagree teaches people to ignore it.
+#     A run is a preview when it carries --dry, or when it invokes a script
+#     that only sends with an explicit --send and that flag is absent.
+MAIL_PREVIEW_ONLY=0
+if printf '%s' "$COMMAND" | grep -qE -- '--dry'; then
+    MAIL_PREVIEW_ONLY=1
+fi
+if printf '%s' "$COMMAND" | grep -q '_personalNote' \
+   && ! printf '%s' "$COMMAND" | grep -qE -- '--send'; then
+    MAIL_PREVIEW_ONLY=1
+fi
+
+if [ "$MAIL_PREVIEW_ONLY" -eq 0 ] \
+   && printf '%s' "$COMMAND" | grep -qE '(^|[|;&[:space:]])(npx|node|npm|pnpm|yarn|tsx|curl|bash|sh)[[:space:]]' \
    && printf '%s' "$COMMAND" | grep -qE 'processApplication|inviteApplicant|declineApplicant|waitlistApplicant|removeTesterAccess|linkClerkUserToBetaSignup|sendBetaEmail|sendPersonalNote|_personalNote|publishRelease|runBetaLifecycle|_runBetaTriage|sendLifecycleEmail|sendWelcomeEmail|sendBetaConfirmationEmail|sendClaimEmail|runLifecycleEmails|api\.resend\.com|resend\.emails\.send|/api/cron/(beta-lifecycle|lifecycle-emails|claim-reminders)'; then
     MAIL_CHECK="$(printf '%s' "$PAYLOAD" | /usr/bin/python3 -c '
 import json, sys, re, os

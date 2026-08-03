@@ -666,6 +666,10 @@ model BetaEmailLog {
   // NULLs as distinct in a unique index, which would defeat the constraint.
   releaseId String   @default("")
   sentAt    DateTime @default(now())
+  // Resend's id for this send. Without it, answering "did it actually arrive?"
+  // means listing every email the account ever sent and filtering by address,
+  // which is what it took on 2026-08-03. With it, it is one lookup.
+  providerId String?
 
   @@unique([signupId, kind, releaseId])
   @@index([kind])
