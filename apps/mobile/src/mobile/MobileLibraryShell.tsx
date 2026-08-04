@@ -1471,6 +1471,48 @@ function buildPracticeExercisesFromItems(
   return sharedExercises.map(mapSharedExerciseToMobile);
 }
 
+/**
+ * Ejercicios para UNOS POCOS items, acompañados de un pool solo para que haya
+ * distractores.
+ *
+ * `buildPracticeSession` saca los distractores del propio conjunto que le pasas
+ * (más el catálogo interno, que no cubre todos los idiomas). Con una sola
+ * palabra no reúne las 4 opciones que exige y devuelve CERO ejercicios: ese es
+ * el caso "Fix 1", donde el botón se quedaba muerto y en silencio.
+ *
+ * Se genera de una en una, con pocos acompañantes, para no rozar el tope de 10
+ * del generador, que si no podría dejar fuera justo la palabra fallada.
+ */
+function buildExercisesWithDistractors(
+  targets: PracticeFavoriteItem[],
+  pool: PracticeFavoriteItem[],
+  mode: PracticeModeKey,
+  prefs?: { interests: readonly string[]; learningGoal: OnboardingGoal | null; dailyMinutes: number | null }
+): PracticeExercise[] {
+  const targetKeys = new Set(targets.map((item) => normalizePracticeWord(item.word)));
+  const companions = pool.filter(
+    (item) => !targetKeys.has(normalizePracticeWord(item.word)) && (item.translation ?? "").trim()
+  );
+  const out: PracticeExercise[] = [];
+  for (const item of targets) {
+    const key = normalizePracticeWord(item.word);
+    if (!key) continue;
+    const built = buildPracticeExercisesFromItems(
+      [item, ...companions.slice(0, 6)],
+      mode,
+      false,
+      prefs
+    );
+    const mine = built.find(
+      (exercise) =>
+        exercise.kind === "multiple-choice" &&
+        normalizePracticeWord(exercise.favorite.word) === key
+    );
+    if (mine) out.push(mine);
+  }
+  return out;
+}
+
 function getRecommendedPracticeModeFromItems(source: PracticeFavoriteItem[]): PracticeModeKey {
   const dueItems = getDuePracticeItems(source);
   if (dueItems.length === 0) {
@@ -7095,6 +7137,26 @@ export function MobileLibraryShell(args: {
       if (fallback.length > 0) {
         effectiveMode = "meaning";
         exercises = fallback;
+      }
+    }
+    // Último recurso del flujo "Fix N", y el que arregla el caso reportado:
+    // aunque caiga a meaning, con MUY POCOS items fallados el generador no
+    // reúne las 4 opciones (los distractores salen del propio conjunto), así
+    // que devolvía cero y el tap moría en el `return` de abajo sin decir nada.
+    // "Fix 1" era el peor caso posible. Acompañamos los fallados con las
+    // palabras de la ronda solo para que haya distractores.
+    if (exercises.length === 0 && overrideItems && overrideItems.length > 0) {
+      const distractorPool =
+        practiceSeedItems ?? buildPracticeFavorites(journeyScopedFavoriteWords);
+      const withPool = buildExercisesWithDistractors(
+        overrideItems,
+        distractorPool,
+        "meaning",
+        onboardingPracticePrefs
+      );
+      if (withPool.length > 0) {
+        effectiveMode = "meaning";
+        exercises = withPool;
       }
     }
     if (exercises.length === 0) return;
