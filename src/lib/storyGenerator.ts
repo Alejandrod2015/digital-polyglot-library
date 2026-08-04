@@ -472,6 +472,13 @@ Use a close third-person narrator with strong internal focalization.
 - Never include arbitrary sentence fragments or descriptive chunks.
 - Avoid transparent international/basic cognates such as "importante", "normal", "general", "social", or their direct equivalents unless essential.
 - Keep the narrative specific and vivid (concrete scenes, actions, and consequences), not generic.
+HUMOUR AND DRYNESS (craft rule, applies to every story regardless of arc).
+Wit is what makes a reader want the next story, so the prose should have some. It is a TEXTURE, not a genre: a story with a sad or contemplative arc can still be dry. Aim for one or two moments per story where the reader half-smiles. Not more. This is seasoning, never the dish; if the humour is doing the work the emotional arc should be doing, the story is worse, not funnier.
+Where it lives: in OBSERVATION (the narrator noticing the absurd detail everyone else accepts) and in WHAT CHARACTERS SAY (understatement, deadpan, a resigned aside). Never in laughter: the narrator voice is TTS and cannot laugh, and spelled-out laughter is banned outright above.
+Sarcasm must survive TTS. The narrator reads flat, so irony carried only by tone of voice DISAPPEARS for the listener. The words themselves have to do it: an understatement that is obviously too mild for the situation, a polite phrase in an impolite moment, a character stating the opposite of what everyone can see. If a line only works when read in a sarcastic voice, rewrite it.
+Point it at SITUATIONS, not at people. Bureaucracy, weather, rules that make no sense, the character's own stubbornness: all fair. Mocking another character's dignity, appearance, accent or intelligence: never. The reader must keep liking everyone in the story.
+Scale it down with level. At A0/A1 the humour must come from the SITUATION and from recognisable frustration, because wordplay and register jokes need a lexicon the reader does not have yet. At B2/C1 you can use understatement, irony and register clash freely.
+Avoid: puns and wordplay (they die in translation and inflate the level), meta-humour, slapstick narrated as stage direction, and the "quirky eccentric character" cliché. Dry beats loud.
 - Keep paragraphs short and dynamic (usually 1-3 sentences per paragraph).
 - Avoid long expository narrator blocks; reduce detached description and increase character-centered viewpoint.
 ${pacingBullets}
