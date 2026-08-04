@@ -8421,13 +8421,24 @@ export function MobileLibraryShell(args: {
       resolveDone();
     };
     try {
-      // Camino rápido: el sound ya está montado y el audio session ya se fijó
-      // en el preload, así que esto es solo rebobinar. Nada de crear, nada de
-      // reafirmar modo, que es lo que metía el retraso frente al verde/rojo.
+      // Camino rápido: el sound ya está montado, así que esto es solo
+      // rebobinar. Lo caro que evita el preload es el decoder y el parseo, no
+      // la llamada al modo de audio.
       const preloaded = correct
         ? practiceFeedbackPreloadRef.current.correct
         : practiceFeedbackPreloadRef.current.wrong;
       if (preloaded) {
+        // El modo SÍ se reafirma aquí, aunque el preload ya lo fijara una vez.
+        // Quitarlo fue un error mío: c4db80d9 lo añadió a los tres SFX porque
+        // en iOS el modo es GLOBAL y cualquier otra ruta de audio de la app
+        // puede dejarlo con allowsRecordingIOS en true, y entonces la salida se
+        // va al auricular y el sonido queda mudo. Fijarlo una sola vez al abrir
+        // la sesión no sostiene esa invariante durante toda la ronda.
+        await Audio.setAudioModeAsync({
+          playsInSilentModeIOS: true,
+          allowsRecordingIOS: false,
+          interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+        });
         const other = correct
           ? practiceFeedbackPreloadRef.current.wrong
           : practiceFeedbackPreloadRef.current.correct;
