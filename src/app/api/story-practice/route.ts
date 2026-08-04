@@ -9,7 +9,7 @@ import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
 import { getJourneyStoryBySlug } from "@/lib/journeyStories";
 import { getCreateStoryMirrorBySlug } from "@/lib/userStories";
 import { buildPracticeItemsFromStory, parseLooseVocab } from "@/lib/storyPracticeItems";
-import { mergePracticeItemsByWord, type PracticeExercise, type PracticeFavoriteItem } from "@/lib/practiceExercises";
+import { buildPracticeSession, mergePracticeItemsByWord, type PracticeExercise, type PracticeFavoriteItem } from "@/lib/practiceExercises";
 import { coerceAudioWordTimings } from "@/lib/audioWordTimings";
 import type { AudioWordTimingsPayload } from "@domain";
 
@@ -204,17 +204,121 @@ export async function GET(request: NextRequest) {
   } catch {
     poolCount = 0;
   }
+
+  // Palabras guardadas desde el quick lookup que el set curado NO cubre.
+  //
+  // Los clientes prefieren `exercises` en cuanto existe un set curado, y esa
+  // rama SUSTITUYE por completo a la que se construye desde `items`. Resultado:
+  // las palabras que el usuario guarda tocando el texto viajaban en `items`
+  // pero nadie las convertía en ejercicio, así que solo se podían practicar las
+  // del vocabulario curado. Aquí se generan las que faltan y se añaden al POOL
+  // (el "practica el resto"), nunca a los ~10 destacados: esos están calibrados
+  // editorialmente y diluirlos cambiaría la sesión de fin de historia.
+  const savedOnlyExercises = await buildExercisesForUncuratedSavedWords(
+    storySlug,
+    savedItems,
+    storyItems
+  );
+  poolCount += savedOnlyExercises.length;
   const nextStory = await resolveNextStory(storySlug);
 
   // narratorVoiceId: the story's own narrator, so the practice page renders the
   // isolated-word audio in the story's country accent (see lib/practiceVoice.ts).
+  // Solo el pool las sirve. En modo destacado `persistedExercises` sale intacto
+  // y lo único que cambia es `poolCount`, que es lo que hace aparecer el botón
+  // de "practica el resto" aunque la historia no tuviera pool curado.
+  const exercises = poolMode
+    ? [...(persistedExercises ?? []), ...savedOnlyExercises]
+    : persistedExercises;
+
   return NextResponse.json({
     items,
-    exercises: persistedExercises ?? undefined,
+    exercises: exercises && exercises.length > 0 ? exercises : undefined,
     poolCount,
     nextStory,
     narratorVoiceId: storyVoiceId,
   });
+}
+
+/**
+ * Ejercicios para las palabras que el usuario guardó en ESTA historia y que el
+ * set curado no toca (típicamente las del quick lookup).
+ *
+ * Devuelve [] cuando la historia no tiene set curado: ahí los clientes ya caen
+ * a construir desde `items`, que incluye las guardadas, así que no hay nada que
+ * rellenar. La cobertura se mide contra las palabras de los ejercicios
+ * PERSISTIDOS (destacados + pool), no contra el vocab de la historia, porque es
+ * lo que el usuario ve realmente.
+ */
+async function buildExercisesForUncuratedSavedWords(
+  storySlug: string,
+  savedItems: PracticeFavoriteItem[],
+  distractorPool: PracticeFavoriteItem[]
+): Promise<PracticeExercise[]> {
+  if (!storySlug || savedItems.length === 0) return [];
+  try {
+    const curated = await prisma.storyPracticeExercise.findMany({
+      where: { set: { story: { slug: storySlug, status: "published" } } },
+      select: { word: true },
+    });
+    if (curated.length === 0) return [];
+
+    const covered = new Set(
+      curated
+        .map((row) => normalizeWordKey(row.word))
+        .filter((word) => word.length > 0)
+    );
+    const missing = savedItems.filter((item) => !covered.has(normalizeWordKey(item.word)));
+    if (missing.length === 0) return [];
+
+    // Los distractores salen del pool del MISMO idioma. Con la palabra suelta
+    // como única fuente no hay ninguno (el catálogo interno no cubre alemán) y
+    // el generador devuelve null: medido, 0 ejercicios. Se acompaña del vocab
+    // de la historia, y se generan de una en una con pocos acompañantes para
+    // no rozar el tope de 10 que aplica el generador, que si no podría dejar
+    // fuera justo la palabra guardada.
+    const companions = distractorPool.filter((item) => (item.translation ?? "").trim().length > 0);
+
+    const out: PracticeExercise[] = [];
+    for (const item of missing) {
+      const key = normalizeWordKey(item.word);
+      if (!key) continue;
+      const others = companions.filter((c) => normalizeWordKey(c.word) !== key).slice(0, 6);
+      const source = [item, ...others];
+      // meaning primero: es el modo que mejor encaja con una palabra que el
+      // usuario tocó para entenderla. Si no sale (pide una oración de ejemplo
+      // completa, y muchas guardadas no la traen), listening solo necesita
+      // palabras distractoras.
+      const built =
+        findExerciseForWord(buildPracticeSession(source, "meaning"), key) ??
+        findExerciseForWord(buildPracticeSession(source, "listening"), key);
+      // Prefijo para no colisionar nunca con un id de ejercicio persistido.
+      if (built) out.push({ ...built, id: `saved-${built.id}` });
+    }
+    return out;
+  } catch {
+    // El pool extra es un añadido: si falla, la práctica curada sigue igual.
+    return [];
+  }
+}
+
+function normalizeWordKey(value?: string | null): string {
+  return typeof value === "string" ? value.trim().toLowerCase() : "";
+}
+
+function findExerciseForWord(
+  exercises: PracticeExercise[],
+  wordKey: string
+): PracticeExercise | null {
+  for (const exercise of exercises) {
+    if (exercise.type === "meaning_in_context" && normalizeWordKey(exercise.word) === wordKey) {
+      return exercise;
+    }
+    if (exercise.type === "listen_choose" && normalizeWordKey(exercise.answer) === wordKey) {
+      return exercise;
+    }
+  }
+  return null;
 }
 
 // The next story in the journey's curriculum order (level → topic → slotIndex,
