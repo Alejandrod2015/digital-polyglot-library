@@ -705,8 +705,17 @@ function spaceOutAlphanumericCodes(text: string): string {
 }
 
 export function softenPunctuationForTts(text: string): string {
+  // "!" -> "." on purpose: the exclamation makes v2 over-emote.
+  //
+  // Ellipses are NOT collapsed. This model takes no SSML break tags, so an
+  // ellipsis is the ONLY explicit pause the pipeline can ask for (see the
+  // module notes above). Collapsing "..." to "." deleted every authored pause
+  // and left comma/period timing entirely to the model, which is why pauses
+  // read as ignored in stories that lean on them ("duzen auf eigene Gefahr"
+  // has two). Runs are normalised to exactly three dots so a stray ".." still
+  // renders as a pause and a runaway "......" doesn't drag.
   return spaceOutAlphanumericCodes(
-    text.replace(/!+/g, ".").replace(/\.{2,}/g, ".")
+    text.replace(/!+/g, ".").replace(/\.{2,}/g, "...")
   );
 }
 

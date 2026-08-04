@@ -904,7 +904,10 @@ export default function PracticePage() {
     () => sortPracticeItemsByOnboarding(scopedFavorites, onboardingPracticePrefs, true),
     [scopedFavorites, onboardingPracticePrefs]
   );
-  const exercises = useMemo(() => {
+  // The round's full set, BEFORE the "fix the ones you missed" filter. Kept
+  // separate so the retry/replay handlers can seed the countdown synchronously
+  // with the exercise the next round will actually open on (see resetRound).
+  const baseExercises = useMemo(() => {
     // Story practice renders the editorially CURATED set (prefabExercises),
     // the same source the mobile client prefers; the curated listen_choose
     // carries the real story-segment audioClip, and curated fill_blanks carry
@@ -943,14 +946,17 @@ export default function PracticePage() {
         .filter((n) => Number.isInteger(n) && n >= 0 && n < pickPool.length);
       if (picks.length) result = picks.map((i) => pickPool[i]);
     }
-    // "Fix the ones you missed" reruns just the wrong exercises from the set.
+    return result;
+  }, [explicitStoryMode, isJourneyCheckpoint, isStoryPractice, onboardingPracticePrefs, onlyExerciseParam, orderedFavorites, prefabExercises, selectedMode]);
+  // "Fix the ones you missed" reruns just the wrong exercises from the set.
+  const exercises = useMemo(() => {
     if (retryIds && retryIds.length) {
       const wanted = new Set(retryIds);
-      const filtered = result.filter((ex) => wanted.has(ex.id));
+      const filtered = baseExercises.filter((ex) => wanted.has(ex.id));
       if (filtered.length) return filtered;
     }
-    return result;
-  }, [explicitStoryMode, isJourneyCheckpoint, isStoryPractice, onboardingPracticePrefs, onlyExerciseParam, orderedFavorites, prefabExercises, retryIds, selectedMode]);
+    return baseExercises;
+  }, [baseExercises, retryIds]);
   const currentExercise = exercises[exerciseIndex] ?? null;
 
   // Toggle a practiced word in Favorites: first tap saves, second tap removes.
@@ -1657,7 +1663,17 @@ export default function PracticePage() {
     goNext();
   };
 
-  const resetRound = () => {
+  // `nextFirstExercise` is the exercise the round is about to open on. Seeding
+  // the countdown here is NOT optional: the [exerciseIndex] reset effect does
+  // not re-run when the index is already 0 (replay and retry both restart at
+  // 0), so without this the timeout-as-wrong effect keeps reading the previous
+  // round's `timerRemaining === 0` and force-reveals the first exercise as
+  // wrong the instant it mounts. That is the "Fix the N does nothing" bug: on
+  // a round whose last answer timed out it bounces straight back to the result
+  // card, and every press after the first is a no-op. Same hazard goNext
+  // documents, same synchronous fix.
+  const resetRound = (nextFirstExercise: PracticeExercise | null) => {
+    setTimerRemaining(timerDurationForExercise(nextFirstExercise));
     setExerciseIndex(0);
     setSelectedOption(null);
     setMatchAnswers({});
@@ -1675,17 +1691,22 @@ export default function PracticePage() {
     practiceStartTrackedRef.current = false;
     practiceCompletionTrackedRef.current = false;
   };
-  // Full replay: every exercise again.
+  // Full replay: every exercise again. Clearing retryIds means the next round
+  // opens on the UNFILTERED set, so seed from baseExercises, not `exercises`
+  // (which may still be a retry subset from the round just finished).
   const restart = () => {
     setRetryIds(null);
     setWrongIds([]);
-    resetRound();
+    resetRound(baseExercises[0] ?? null);
   };
-  // Rerun ONLY the exercises answered wrong this round.
+  // Rerun ONLY the exercises answered wrong this round. Mirrors the filter in
+  // the `exercises` memo to know which exercise the retry round opens on.
   const restartMissed = () => {
+    const wanted = new Set(wrongIds);
+    const firstRetry = baseExercises.find((ex) => wanted.has(ex.id)) ?? null;
     setRetryIds(wrongIds);
     setWrongIds([]);
-    resetRound();
+    resetRound(firstRetry);
   };
 
   const playHqContextClip = useCallback(async (clipOwnerId: string, clip: PracticeAudioClip | null | undefined) => {
