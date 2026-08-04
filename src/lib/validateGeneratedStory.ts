@@ -41,6 +41,7 @@ const JOURNEY_CITY_TOKENS: Record<string, string[]> = {
 // "@/lib/validateGeneratedStory"`) keep working without a churn refactor.
 export type { StoryPayload, StoryVocabItem } from "./storyPayload";
 export { parseStoryInput } from "./storyPayload";
+import { findLookupOnlyVocab } from "./vocabUtility";
 import type { StoryPayload, StoryVocabItem } from "./storyPayload";
 import { parseStoryInput } from "./storyPayload";
 
@@ -1631,6 +1632,37 @@ export async function validateGeneratedStory(
     label: `Vocab has 20-${vocabCeiling} items (ceiling scales with body length)`,
     status: vocabCount >= 20 && vocabCount <= vocabCeiling ? "pass" : "fail",
     detail: `${vocabCount} items (body ${bodyWords}w → allowed 20-${vocabCeiling})`,
+  });
+
+  // UTILIDAD de cada plaza de vocabulario. El criterio entero vive en
+  // `src/lib/vocabUtility.ts`; en corto: el vocab curado promete "esto
+  // llévatelo puesto", y una etiqueta de trámite solo hay que entenderla
+  // donde aparece, que es justo lo que el quick lookup ya cubre para todo el
+  // mundo. No es cuestión de nivel ni de rareza: las anclas culturales son
+  // igual de raras y se quedan.
+  //
+  // Red de seguridad, no la solución: sobre las 6.544 entradas existentes
+  // marca 9, sin tocar una sola ancla cultural. Lo que evita que se sigan
+  // fabricando casos es el criterio en el prompt de generación; esto solo
+  // atrapa los descarados.
+  const lookupOnlyVocab = findLookupOnlyVocab(
+    parsed.vocab.map((v) => ({
+      word: v.word,
+      definition: v.definition,
+      type: v.type,
+      register: (v as { register?: string | null }).register ?? null,
+    }))
+  );
+  checks.push({
+    id: "vocab-utility",
+    label: "Vocab earns its slot (no pure paperwork labels)",
+    status: lookupOnlyVocab.length === 0 ? "pass" : "fail",
+    detail:
+      lookupOnlyVocab.length === 0
+        ? "no paperwork-label entries"
+        : `${lookupOnlyVocab.map((v) => `${v.word} — ${v.reason}`).join("; ")}. ` +
+          `El lector la entiende con el quick lookup; una plaza de vocab es para lo que se lleva puesto. ` +
+          `Cámbiala por una palabra que el usuario vaya a necesitar otra vez.`,
   });
 
   // Definition rules; see docs/story-quality-spec.md §4. The corrected
