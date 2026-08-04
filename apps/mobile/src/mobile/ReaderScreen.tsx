@@ -1279,6 +1279,13 @@ export function ReaderScreen(args: {
     };
   }, [story.slug, sessionToken]);
 
+  // `onTrackReaderEvent` es una función suelta del shell, así que cambia de
+  // identidad en CADA render del padre. Guardarla en un ref permite que los
+  // handlers memoizados de abajo llamen siempre a la última versión sin tener
+  // que declararla como dependencia, que es lo que arruinaría la memoización.
+  const trackReaderEventRef = useRef(onTrackReaderEvent);
+  trackReaderEventRef.current = onTrackReaderEvent;
+
   // Abre el popup de quick lookup. Extraído de los args de
   // renderKaraokeParagraph porque ahora lo comparten el cuerpo y el TÍTULO.
   const handleQuickLookup = useCallback(
@@ -1294,7 +1301,7 @@ export function ReaderScreen(args: {
         note: contextSentence,
         quickLookup: true,
       });
-      onTrackReaderEvent?.("vocab_clicked", {
+      trackReaderEventRef.current?.("vocab_clicked", {
         storySlug: story.slug ?? story.id,
         bookSlug: book.slug,
         metadata: {
@@ -1306,7 +1313,7 @@ export function ReaderScreen(args: {
         },
       });
     },
-    [book.language, book.slug, book.variant, onTrackReaderEvent, story.id, story.slug]
+    [book.language, book.slug, book.variant, story.id, story.slug]
   );
 
   // wordTimings reales del backend cuando estén disponibles; sino,
@@ -1973,6 +1980,83 @@ export function ReaderScreen(args: {
     });
   }
 
+  // Cuerpo de la historia, memoizado.
+  //
+  // Antes se construía inline en el JSX, así que CUALQUIER render del shell lo
+  // rehacía entero. Marcar una palabra como favorita cambia estado en el shell
+  // (19k líneas) y, en cascada, aquí se reconstruían todos los párrafos: en iOS
+  // eso es un <View> por palabra y en Android un chip por palabra, del orden de
+  // 1.200 elementos para una historia de 600 palabras, todo en el hilo JS antes
+  // de que el pill pudiera repintarse. Ese era el "save word tarda en
+  // reaccionar": no era la red (la web ya responde al instante y el POST son
+  // decenas de ms), era el render.
+  //
+  // Las dependencias son SOLO los datos que el cuerpo dibuja. Ni
+  // `isFavoriteWord` ni `onToggleFavoriteWord` entran: los párrafos no los
+  // consumen. `restoreReadingPosition` y los refs tampoco, porque solo tocan
+  // refs y una copia vieja se comporta igual.
+  const karaokeParagraphNodes = useMemo(() => {
+    // Render unificado: siempre karaoke. Cuando los wordTimings reales no
+    // llegaron todavía, `effectiveWordTimings` cae al payload sintético.
+    // Eliminado el path legacy `renderHighlightedParagraph` que causaba el
+    // flash de medio segundo durante el primer paint.
+    const karaokeAlreadyHighlighted = new Set<string>();
+    return karaokeBlocks.map((paragraph, index) => (
+      <Pressable
+        key={`${story.id}-k-${index}`}
+        // Forma funcional a propósito: leer `selectedVocab` obligaría a
+        // declararlo dependencia y el cuerpo se rehacría al abrir y cerrar
+        // cada popup, que es justo lo que este memo viene a evitar.
+        onPress={() => setSelectedVocab((prev) => (prev ? null : prev))}
+        style={styles.paragraphBlock}
+        onLayout={(event) => {
+          blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
+          restoreReadingPosition();
+        }}
+      >
+        {renderKaraokeParagraph({
+          paragraph,
+          payloadText: effectiveWordTimings.storyPlainText,
+          words: effectiveWordTimings.words,
+          activeWordIndex,
+          vocabLookup: karaokeVocabLookup,
+          paragraphKey: `${story.id}-k-${index}`,
+          onWordPress: (item, contextSentence) => {
+            setSelectedVocab(contextSentence ? { ...item, note: contextSentence } : item);
+            trackReaderEventRef.current?.("vocab_clicked", {
+              storySlug: story.slug ?? story.id,
+              bookSlug: book.slug,
+              metadata: {
+                word: item.word,
+                wordType: item.type,
+                language: book.language ?? null,
+                variant: book.variant ?? null,
+                source: "karaoke",
+              },
+            });
+          },
+          variant: "paragraph",
+          alreadyHighlighted: karaokeAlreadyHighlighted,
+          glosses: tapGlosses,
+          onQuickLookup: handleQuickLookup,
+        })}
+      </Pressable>
+    ));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    karaokeBlocks,
+    effectiveWordTimings,
+    activeWordIndex,
+    karaokeVocabLookup,
+    tapGlosses,
+    handleQuickLookup,
+    story.id,
+    story.slug,
+    book.slug,
+    book.language,
+    book.variant,
+  ]);
+
   async function persistContinueListening(progressSec: number, durationSec: number) {
     if (!sessionToken || !book.slug || !story.slug) return;
 
@@ -2229,56 +2313,7 @@ export function ReaderScreen(args: {
               }
             }}
           >
-            {(() => {
-              // Render unificado: siempre karaoke. Cuando los wordTimings
-              // reales no llegaron todavía, `effectiveWordTimings` cae
-              // al payload sintético. Eliminado el path legacy
-              // `renderHighlightedParagraph` que causaba el flash de
-              // medio segundo durante el primer paint.
-              const karaokeAlreadyHighlighted = new Set<string>();
-              return karaokeBlocks.map((paragraph, index) => (
-                <Pressable
-                  key={`${story.id}-k-${index}`}
-                  onPress={() => {
-                    if (selectedVocab) setSelectedVocab(null);
-                  }}
-                  style={styles.paragraphBlock}
-                  onLayout={(event) => {
-                    blockOffsetsRef.current[index] = event.nativeEvent.layout.y;
-                    restoreReadingPosition();
-                  }}
-                >
-                  {renderKaraokeParagraph({
-                    paragraph,
-                    payloadText: effectiveWordTimings.storyPlainText,
-                    words: effectiveWordTimings.words,
-                    activeWordIndex,
-                    vocabLookup: karaokeVocabLookup,
-                    paragraphKey: `${story.id}-k-${index}`,
-                    onWordPress: (item, contextSentence) => {
-                      setSelectedVocab(
-                        contextSentence ? { ...item, note: contextSentence } : item
-                      );
-                      onTrackReaderEvent?.("vocab_clicked", {
-                        storySlug: story.slug ?? story.id,
-                        bookSlug: book.slug,
-                        metadata: {
-                          word: item.word,
-                          wordType: item.type,
-                          language: book.language ?? null,
-                          variant: book.variant ?? null,
-                          source: "karaoke",
-                        },
-                      });
-                    },
-                    variant: "paragraph",
-                    alreadyHighlighted: karaokeAlreadyHighlighted,
-                    glosses: tapGlosses,
-                    onQuickLookup: handleQuickLookup,
-                  })}
-                </Pressable>
-              ));
-            })()}
+            {karaokeParagraphNodes}
           </View>
 
         </View>
