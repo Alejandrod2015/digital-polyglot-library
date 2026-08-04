@@ -1105,6 +1105,10 @@ export function ReaderScreen(args: {
   isSaved: boolean;
   isSaving: boolean;
   onToggleSaved: () => void;
+  /** Resaltado palabra a palabra durante el audio (ajustes). Con `false` el
+   *  texto se pinta igual pero sin palabra activa, y el autoscroll vuelve al
+   *  lineal por progreso de audio. Ausente = activado. */
+  karaokeEnabled?: boolean;
   initialProgress?: {
     progressRatio?: number;
     currentBlockIndex?: number;
@@ -1155,6 +1159,7 @@ export function ReaderScreen(args: {
     isSaved,
     isSaving,
     onToggleSaved,
+    karaokeEnabled = true,
     initialProgress,
     onTrackProgress,
     isAvailableOffline,
@@ -1183,6 +1188,14 @@ export function ReaderScreen(args: {
   // been aligned via /api/studio/audio/word-timings populate the column.
   // Every other story keeps the existing renderHighlightedParagraph path.
   const [wordTimings, setWordTimings] = useState<AudioWordTimingsPayload | null>(null);
+  // Hasta ahora `wordTimings` hacía de interruptor de facto del karaoke: había
+  // alineación, había resaltado. Con el ajuste de por medio, la condición pasa
+  // a ser "hay alineación Y el usuario lo quiere". El RENDER no mira esto: el
+  // pintador del karaoke es también el pintador del texto plano, así que con
+  // `activeWordIndex` en null dibuja texto normal y pills de vocab, sin cambio
+  // de layout. Lo que sí mira esto es el cursor, los dos autoscrolls y el
+  // muestreo de posición.
+  const karaokeActive = karaokeEnabled && Boolean(wordTimings);
   const [activeWordIndex, setActiveWordIndex] = useState<number | null>(null);
   // Piloto tap-any-word: glosses "quick lookup" de esta historia, fetch por
   // slug desde /api/mobile/tap-glosses. Vacío mientras carga o si el journey
@@ -1390,7 +1403,7 @@ export function ReaderScreen(args: {
     // historia aún no fue alineada, el cursor queda en null (texto sin
     // resaltado pero con vocab pills); ya no hay heurística lineal que
     // produzca desfase o jitter.
-    if (!wordTimings) {
+    if (!karaokeActive) {
       setActiveWordIndex(null);
       lastResolvedIndexRef.current = null;
       return;
@@ -1448,7 +1461,7 @@ export function ReaderScreen(args: {
       setActiveWordIndex((prev) => (prev === shown ? prev : shown));
     }, 25);
     return () => clearInterval(interval);
-  }, [wordTimings, effectiveWordTimings, karaokeWindows, timingsSpanSec, story.id]);
+  }, [karaokeActive, wordTimings, effectiveWordTimings, karaokeWindows, timingsSpanSec, story.id]);
 
   // Smart autoscroll para historias con karaoke (wordTimings).
   //
@@ -1486,7 +1499,7 @@ export function ReaderScreen(args: {
   const [playerDockHeight, setPlayerDockHeight] = useState(132);
   useEffect(() => {
     if (activeWordIndex === null) return;
-    if (!wordTimings) return;
+    if (!karaokeActive) return;
     if (!scrollViewRef.current) return;
     // Misma grace window que el scroll lineal: si el usuario está
     // tocando vocab pills, no movemos el ScrollView durante 1.8 s para
@@ -1555,7 +1568,7 @@ export function ReaderScreen(args: {
     lastSmartScrollYRef.current = targetScroll;
 
     scrollViewRef.current.scrollTo({ y: targetScroll, animated: true });
-  }, [activeWordIndex, wordTimings, effectiveWordTimings, karaokeBlocks, playerDockHeight]);
+  }, [activeWordIndex, karaokeActive, wordTimings, effectiveWordTimings, karaokeBlocks, playerDockHeight]);
 
   const preferredAudioUrl =
     typeof resolvedAudioUrl === "string" && resolvedAudioUrl.trim() ? resolvedAudioUrl : story.audio;
@@ -2572,7 +2585,7 @@ export function ReaderScreen(args: {
             // the 50 ms interpolation interval can extrapolate between
             // these 500 ms ticks. The player's own update cadence is too
             // coarse for word-level highlighting on its own.
-            if (wordTimings && playback.isLoaded) {
+            if (karaokeActive && playback.isLoaded) {
               lastPlaybackRef.current = {
                 positionMillis: playback.positionMillis,
                 durationMillis: playback.durationMillis,
@@ -2660,14 +2673,16 @@ export function ReaderScreen(args: {
             );
             activeBlockIndexRef.current = estimatedBlockIndex;
             trackReadingPosition(nextRatio, estimatedBlockIndex);
-            // Scroll lineal sólo cuando NO hay karaoke. Con karaoke
-            // (wordTimings presente) un useEffect aparte conduce un
-            // scroll inteligente que ancla la palabra activa al 40%
-            // vertical de la pantalla; leer "del medio" mientras el
-            // texto rueda por debajo. Sin wordTimings no tenemos
-            // posición de palabra, así que caemos al mapeo lineal
-            // ratio→Y que ya funcionaba.
-            if (wordTimings) {
+            // Scroll lineal sólo cuando NO hay karaoke activo. Con karaoke un
+            // useEffect aparte conduce un scroll inteligente que ancla la
+            // palabra activa al 40% vertical de la pantalla; leer "del medio"
+            // mientras el texto rueda por debajo. Sin karaoke no tenemos
+            // posición de palabra, así que caemos al mapeo lineal ratio→Y que
+            // ya funcionaba. Ojo: la condición es `karaokeActive`, no
+            // `wordTimings`. Si mirara los timings, apagar el karaoke desde
+            // ajustes dejaría el lector SIN ningún autoscroll (el inteligente
+            // apagado y el lineal inhibido), que se siente roto, no opcional.
+            if (karaokeActive) {
               return;
             }
             scrollViewRef.current.scrollTo({

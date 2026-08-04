@@ -83,6 +83,10 @@ type Props = {
     value: boolean;
     onValueChange: (next: boolean) => void;
   }>;
+  /** Word-by-word highlighting while the audio plays. Lives in Personalize,
+   *  not with the notification toggles, and saves on flip (no Save press). */
+  karaokeEnabled?: boolean;
+  onChangeKaraokeEnabled?: (next: boolean) => void;
   summaryItems: SummaryTile[];
   pushMessage?: string | null;
   showSignOut: boolean;
@@ -150,6 +154,8 @@ export function MobileSettingsScreen({
   reminderPreviewBody,
   reminderHint,
   notificationToggles,
+  karaokeEnabled = true,
+  onChangeKaraokeEnabled,
   summaryItems,
   pushMessage,
   showSignOut,
@@ -482,6 +488,39 @@ export function MobileSettingsScreen({
               <Text style={[styles.helperText, { textAlign: "center" }]} numberOfLines={1}>
                 {preferencesHint}
               </Text>
+            ) : null}
+
+            {/* Tarjeta aparte, debajo del botón de guardar: este toggle se
+                guarda solo al accionarlo, no espera al Save de la rejilla. */}
+            {onChangeKaraokeEnabled ? (
+              <View style={styles.reminderCard}>
+                <View style={styles.reminderHeader}>
+                  <View style={styles.reminderIcon}>
+                    <Feather name="book-open" size={16} color="#dbe9ff" />
+                  </View>
+                  <View style={styles.reminderCopy}>
+                    <Text style={styles.reminderTitle}>Reading</Text>
+                    <Text style={styles.reminderSub} numberOfLines={1}>
+                      How stories look while they play
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.notifToggleRow}>
+                  <View style={styles.notifToggleCopy}>
+                    <Text style={styles.notifToggleLabel}>Karaoke highlighting</Text>
+                    <Text style={styles.notifToggleDesc}>
+                      Highlight each word as the audio reads it
+                    </Text>
+                  </View>
+                  <Switch
+                    value={karaokeEnabled}
+                    onValueChange={onChangeKaraokeEnabled}
+                    trackColor={{ false: "#27405f", true: "#f8c15c" }}
+                    thumbColor={karaokeEnabled ? "#fff7e2" : "#9cb0c9"}
+                    ios_backgroundColor="#27405f"
+                  />
+                </View>
+              </View>
             ) : null}
           </View>
         ) : null}

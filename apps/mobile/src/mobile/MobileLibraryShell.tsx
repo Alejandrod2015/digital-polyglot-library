@@ -202,6 +202,7 @@ import {
   type NotificationTypeKey,
   type ResolvedNotificationType,
 } from "../../../../src/lib/notifications";
+import { normalizeKaraokeEnabled } from "../../../../src/lib/readerPreferences";
 import {
   buildGamificationCelebrations,
   type GamificationCelebration,
@@ -540,6 +541,11 @@ type MobilePreferences = {
   journeyPlacementLevel: string | null;
   onboardingSurveyCompletedAt: string | null;
   onboardingTourCompletedAt: string | null;
+  /** Resaltado palabra a palabra durante el audio. Opcional a propósito:
+   *  ausente = activado, que es el comportamiento de siempre, así que ninguna
+   *  cuenta existente ni ningún literal de preferencias previo cambia de
+   *  significado al aparecer el campo. Solo un `false` explícito lo apaga. */
+  karaokeEnabled?: boolean;
   /** Multi-journey model: a user can have several (language, focus)
    *  journeys at once. The legacy fields above (preferredVariant,
    *  preferredLevel, journeyFocus, targetLanguages[0]) keep working
@@ -4290,6 +4296,9 @@ export function MobileLibraryShell(args: {
             (next as { notificationPrefs?: unknown }).notificationPrefs,
             normalizeRemindersEnabled(next.remindersEnabled)
           ),
+          karaokeEnabled: normalizeKaraokeEnabled(
+            (next as { karaokeEnabled?: unknown }).karaokeEnabled
+          ),
           journeyPlacementLevel:
             typeof next.journeyPlacementLevel === "string" ? next.journeyPlacementLevel : null,
           onboardingSurveyCompletedAt:
@@ -5738,6 +5747,19 @@ export function MobileLibraryShell(args: {
     void savePreferences(next);
   }
 
+  // Ausente = activado (ver normalizeKaraokeEnabled). Se lee derivado para que
+  // ningún consumidor tenga que acordarse de la regla del `false` explícito.
+  const karaokeEnabled = normalizeKaraokeEnabled(preferences.karaokeEnabled);
+
+  // Mismo patrón que toggleNotificationType: estado optimista + guardado
+  // inmediato con `override`, para no esperar al flush de React.
+  function setKaraokeEnabled(value: boolean) {
+    const next: MobilePreferences = { ...preferences, karaokeEnabled: value };
+    setPreferences(next);
+    setPreferencesStatus("idle");
+    void savePreferences(next);
+  }
+
   async function savePreferences(override?: MobilePreferences) {
     if (!sessionToken) {
       setPreferencesStatus("error");
@@ -5792,6 +5814,9 @@ export function MobileLibraryShell(args: {
         notificationPrefs: normalizeNotificationPrefs(
           (next as { notificationPrefs?: unknown }).notificationPrefs,
           normalizeRemindersEnabled(next.remindersEnabled)
+        ),
+        karaokeEnabled: normalizeKaraokeEnabled(
+          (next as { karaokeEnabled?: unknown }).karaokeEnabled
         ),
         journeyPlacementLevel:
           typeof next.journeyPlacementLevel === "string" ? next.journeyPlacementLevel : null,
@@ -5932,6 +5957,9 @@ export function MobileLibraryShell(args: {
         notificationPrefs: normalizeNotificationPrefs(
           (next as { notificationPrefs?: unknown }).notificationPrefs,
           normalizeRemindersEnabled(next.remindersEnabled)
+        ),
+        karaokeEnabled: normalizeKaraokeEnabled(
+          (next as { karaokeEnabled?: unknown }).karaokeEnabled
         ),
         journeyPlacementLevel:
           typeof next.journeyPlacementLevel === "string" ? next.journeyPlacementLevel : null,
@@ -14488,6 +14516,8 @@ export function MobileLibraryShell(args: {
       reminderPreviewBody={preferences.remindersEnabled ? reminderPreview.body : null}
       reminderHint={reminderHint ?? "Enable one short nudge a day."}
       notificationToggles={notificationToggles}
+      karaokeEnabled={karaokeEnabled}
+      onChangeKaraokeEnabled={setKaraokeEnabled}
       summaryItems={remoteSummaryItems}
       pushMessage={
         pushState && "message" in pushState
@@ -17478,6 +17508,7 @@ export function MobileLibraryShell(args: {
           key={selection.story.id}
           book={selection.book}
           story={selection.story}
+          karaokeEnabled={karaokeEnabled}
           // La copia offline solo vale si se bajó de la MISMA url que sirve
           // el servidor ahora. Al re-renderizar una historia (cambio de voz,
           // re-pacing) cambia el nombre del mp3 en R2, pero

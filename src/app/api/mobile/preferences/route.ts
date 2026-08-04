@@ -24,6 +24,7 @@ import {
   normalizeNotificationPrefs,
   sanitizeNotificationPrefsInput,
 } from "@/lib/notifications";
+import { normalizeKaraokeEnabled } from "@/lib/readerPreferences";
 
 const clerkClient = createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY!,
@@ -247,6 +248,9 @@ function serializePreferences(metadata: Record<string, unknown>) {
       metadata.notificationPrefs,
       metadata.remindersEnabled === true,
     ),
+    // Ausente = activado, así que las cuentas que ya existen (todas, hoy)
+    // siguen con karaoke sin tocar nada.
+    karaokeEnabled: normalizeKaraokeEnabled(metadata.karaokeEnabled),
     journeyPlacementLevel:
       typeof metadata.journeyPlacementLevel === "string"
         ? normalizeJourneyPlacementLevel(metadata.journeyPlacementLevel)
@@ -332,6 +336,9 @@ export async function POST(req: NextRequest): Promise<Response> {
     : undefined;
   const notificationPrefs = Object.prototype.hasOwnProperty.call(payload, "notificationPrefs")
     ? sanitizeNotificationPrefsInput(payload.notificationPrefs)
+    : undefined;
+  const karaokeEnabled = Object.prototype.hasOwnProperty.call(payload, "karaokeEnabled")
+    ? normalizeKaraokeEnabled(payload.karaokeEnabled)
     : undefined;
   const journeyPlacementLevel = Object.prototype.hasOwnProperty.call(payload, "journeyPlacementLevel")
     ? normalizeJourneyPlacementLevel(payload.journeyPlacementLevel)
@@ -433,6 +440,14 @@ export async function POST(req: NextRequest): Promise<Response> {
       if (merged.daily_reminder) updatedMetadata.remindersEnabled = true;
       else delete updatedMetadata.remindersEnabled;
     }
+  }
+
+  // Solo se escribe cuando está APAGADO. Encendido es el defecto, así que
+  // guardar `true` sería ruido en la metadata de todo el mundo; borrar la clave
+  // deja la cuenta exactamente como estaba antes de que existiera el ajuste.
+  if (karaokeEnabled !== undefined) {
+    if (karaokeEnabled) delete updatedMetadata.karaokeEnabled;
+    else updatedMetadata.karaokeEnabled = false;
   }
 
   if (journeyPlacementLevel !== undefined) {
