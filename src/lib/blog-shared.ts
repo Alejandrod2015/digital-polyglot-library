@@ -12,6 +12,12 @@ export type BlogPostMeta = {
   // visible H1 or article subtitle.
   seoTitle?: string;
   metaDescription?: string;
+  // Cross-domain canonical override. Set only when this post duplicates a
+  // stronger page elsewhere (in practice, the Shopify blog) and we want the
+  // ranking signals consolidated there instead. When set, the post also drops
+  // out of the sitemap: asking Google to index a URL we canonicalise away is a
+  // contradictory signal.
+  canonicalUrl?: string;
   author?: string;
   tags?: string[];
   categories?: string[];

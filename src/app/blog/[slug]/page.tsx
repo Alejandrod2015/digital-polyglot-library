@@ -24,8 +24,15 @@ function absoluteUrl(pathOrUrl: string | undefined): string | undefined {
 // BlogPosting structured data. The pre-migration blog exposed schema; the MDX
 // rebuild dropped it, removing the rich-result and entity signals Google had.
 // This restores an Article/BlogPosting graph per post.
+// The URL this post declares as its own identity: normally itself, but a post
+// with a cross-domain canonical must name that target everywhere (canonical,
+// OpenGraph, JSON-LD), or the page contradicts its own consolidation signal.
+function canonicalFor(post: BlogPost): string {
+  return post.canonicalUrl ?? `${SITE}/blog/${post.slug}`;
+}
+
 function blogPostingJsonLd(post: BlogPost): Record<string, unknown> {
-  const url = `${SITE}/blog/${post.slug}`;
+  const url = canonicalFor(post);
   const image = absoluteUrl(post.hero);
   const published = post.date || undefined;
   return {
@@ -85,7 +92,7 @@ export async function generateMetadata(
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) return { title: "Not found · Digital Polyglot Blog" };
-  const url = `${SITE}/blog/${post.slug}`;
+  const url = canonicalFor(post);
   const title = `${post.seoTitle ?? post.title} · Digital Polyglot`;
   const description = post.metaDescription ?? post.excerpt;
   const image = absoluteUrl(post.hero);
