@@ -23,6 +23,7 @@ import { checkKaraokeUsable } from "@/lib/karaokeQualityGate";
 import { extractStoryPlainText } from "@/lib/storyPlainText";
 import TapGlossReader from "@/components/TapGlossReader";
 import TapGlossLayer from "@/components/TapGlossLayer";
+import TapGlossText from "@/components/TapGlossText";
 import { getTapGlossesForSlug } from "@/lib/tapGlosses";
 import VocabPanel from "@/components/VocabPanel";
 import EndOfStoryPracticePrompt from "@/components/EndOfStoryPracticePrompt";
@@ -443,7 +444,14 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
       {/* Título */}
       <div className="relative mb-7 pt-2">
         <h1 className="text-4xl font-bold text-[var(--foreground)] text-center">
-          {resolvedStory.title}
+          {/* El título también entra en el diccionario. Se condiciona a que la
+              capa esté montada abajo (glosses + acceso), porque sin ella los
+              spans no tendrían quien los escuche. */}
+          {tapGlosses && hasFullAccess ? (
+            <TapGlossText text={resolvedStory.title} glosses={tapGlosses} />
+          ) : (
+            resolvedStory.title
+          )}
         </h1>
         <div className="mt-3 flex flex-wrap justify-center gap-2">
           <LevelBadge level={resolvedStory.level ?? undefined} />

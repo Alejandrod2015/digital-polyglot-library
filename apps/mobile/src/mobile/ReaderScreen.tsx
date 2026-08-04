@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Animated,
   AppState,
@@ -57,6 +57,38 @@ type TapGloss = { g: string; t?: string; r?: string };
 function glossTokenFromText(text: string): string {
   const m = text.toLowerCase().match(/\p{L}+(?:-\p{L}+)*/u);
   return m ? m[0] : "";
+}
+
+const TITLE_WORD_SPLIT = /(\p{L}+(?:-\p{L}+)*)/u;
+
+// El título también entra en el diccionario. Se renderizaba como un nodo de
+// texto suelto, así que ninguna de sus palabras era tapeable aunque su gloss
+// existiera. Aquí se trocea y las que tienen gloss se vuelven <Text> con
+// onPress, anidados dentro del <Text> del título para no tocar el layout (nada
+// de <View> por palabra: eso rompería el centrado y el salto de línea).
+// Sin marca de color, igual que en el cuerpo, donde el color queda reservado
+// para el vocabulario curado.
+function renderTappableTitle(
+  title: string,
+  glosses: Record<string, TapGloss>,
+  onQuickLookup: (word: string, gloss: TapGloss, contextSentence?: string) => void
+): React.ReactNode {
+  const parts = title.split(TITLE_WORD_SPLIT);
+  if (parts.length === 1) return title;
+  return parts.map((part, i) => {
+    if (i % 2 === 1) {
+      const token = glossTokenFromText(part);
+      const gloss = token ? glosses[token] : undefined;
+      if (gloss) {
+        return (
+          <Text key={`t-${i}`} onPress={() => onQuickLookup(part, gloss, title)}>
+            {part}
+          </Text>
+        );
+      }
+    }
+    return part;
+  });
 }
 
 type StoryBlock = {
@@ -1234,6 +1266,36 @@ export function ReaderScreen(args: {
     };
   }, [story.slug, sessionToken]);
 
+  // Abre el popup de quick lookup. Extraído de los args de
+  // renderKaraokeParagraph porque ahora lo comparten el cuerpo y el TÍTULO.
+  const handleQuickLookup = useCallback(
+    (word: string, gloss: TapGloss, contextSentence?: string) => {
+      // Reusa el mismo popup del vocab curado, marcado como quickLookup para
+      // mostrar el chip "Quick lookup" y NO el de tipo curado. La traducción
+      // vive en gloss.g.
+      setSelectedVocab({
+        word,
+        definition: gloss.g,
+        type: gloss.t,
+        register: gloss.r,
+        note: contextSentence,
+        quickLookup: true,
+      });
+      onTrackReaderEvent?.("vocab_clicked", {
+        storySlug: story.slug ?? story.id,
+        bookSlug: book.slug,
+        metadata: {
+          word,
+          wordType: gloss.t ?? null,
+          language: book.language ?? null,
+          variant: book.variant ?? null,
+          source: "quick_lookup",
+        },
+      });
+    },
+    [book.language, book.slug, book.variant, onTrackReaderEvent, story.id, story.slug]
+  );
+
   // wordTimings reales del backend cuando estén disponibles; sino,
   // un payload sintético tokenizado del texto local. Garantiza que
   // el karaoke render se use SIEMPRE (incluso antes del fetch),
@@ -2099,7 +2161,9 @@ export function ReaderScreen(args: {
         </View>
 
         <View style={styles.headerBlock}>
-          <Text style={styles.storyTitle}>{story.title}</Text>
+          <Text style={styles.storyTitle}>
+            {renderTappableTitle(story.title, tapGlosses, handleQuickLookup)}
+          </Text>
         </View>
 
         {coverUrl ? (
@@ -2197,30 +2261,7 @@ export function ReaderScreen(args: {
                     variant: "paragraph",
                     alreadyHighlighted: karaokeAlreadyHighlighted,
                     glosses: tapGlosses,
-                    onQuickLookup: (word, gloss, contextSentence) => {
-                      // Reusa el mismo popup del vocab curado, marcado como
-                      // quickLookup para mostrar el chip "Quick lookup" y NO
-                      // el de tipo curado. La traducción vive en gloss.g.
-                      setSelectedVocab({
-                        word,
-                        definition: gloss.g,
-                        type: gloss.t,
-                        register: gloss.r,
-                        note: contextSentence,
-                        quickLookup: true,
-                      });
-                      onTrackReaderEvent?.("vocab_clicked", {
-                        storySlug: story.slug ?? story.id,
-                        bookSlug: book.slug,
-                        metadata: {
-                          word,
-                          wordType: gloss.t ?? null,
-                          language: book.language ?? null,
-                          variant: book.variant ?? null,
-                          source: "quick_lookup",
-                        },
-                      });
-                    },
+                    onQuickLookup: handleQuickLookup,
                   })}
                 </Pressable>
               ));
