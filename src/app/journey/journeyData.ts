@@ -499,10 +499,10 @@ function prettifyTopicLabel(slug: string): string {
 // journey" list fills up with old archived content on localhost.
 const PREVIEW_JOURNEY_ID = "cmqtnagxp0000324lf3u73vg1"; // German A0 (Traveler · Beginner), still archived/draft
 const PREVIEW_DRAFTS = process.env.NODE_ENV !== "production";
-const JOURNEY_STATUS_WHERE: Prisma.JourneyWhereInput = PREVIEW_DRAFTS
+export const JOURNEY_STATUS_WHERE: Prisma.JourneyWhereInput = PREVIEW_DRAFTS
   ? { OR: [{ status: { notIn: ["archived", "draft"] } }, { id: PREVIEW_JOURNEY_ID }] }
   : { status: { notIn: ["archived", "draft"] } };
-const STORY_STATUS_WHERE: Prisma.JourneyStoryWhereInput = PREVIEW_DRAFTS
+export const STORY_STATUS_WHERE: Prisma.JourneyStoryWhereInput = PREVIEW_DRAFTS
   ? { OR: [{ status: "published" }, { journeyId: PREVIEW_JOURNEY_ID }] }
   : { status: "published" };
 
@@ -597,6 +597,68 @@ function slugifyTrackLabel(input: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
+// ── Stable, GLOBAL journey slug (makes share links work) ──
+// Derive the slug from the journey's OWN fields — `name-variant`, then the
+// level / a short id fragment ONLY when that collides — never from its
+// position in the result set. The old scheme was `slugify(name)` + an
+// order-based `-2/-3` counter, so the same slug (e.g. "friends-2") pointed at
+// different journeys depending on the viewer's language set. Now
+// "friends-latam", "traveler-mexico", etc. are identical for every viewer and
+// resolvable across languages. Collisions only ever happen between same-
+// language journeys (variant is language-specific), so they are always
+// co-present and the disambiguation is deterministic.
+//
+// Exportado (antes era un bloque suelto dentro del builder) porque la metadata
+// de la página necesita resolver el mismo ?variant= a un journey. Duplicar el
+// algoritmo era garantía de que un día divergieran y el enlace compartido
+// anunciara un journey distinto del que abre.
+export type JourneySlugSource = {
+  id: string;
+  name: string | null;
+  language: string | null;
+  variant: string | null;
+  levels: string[];
+  stories?: unknown[];
+};
+
+export function buildJourneySlugMap(journeys: JourneySlugSource[]): Map<string, string> {
+  const slugByJourneyId = new Map<string, string>();
+  const renderable = journeys.filter((j) => (j.stories?.length ?? 0) > 0);
+  const langCodeOf = (j: JourneySlugSource) =>
+    slugifyTrackLabel(formatLanguageCode(j.language ?? ""));
+  const nameSlugOf = (j: JourneySlugSource) =>
+    slugifyTrackLabel(
+      (j.name ?? "").trim() ||
+        formatVariantLabel((j.variant ?? "").trim().toLowerCase()) ||
+        (j.variant ?? "").trim() ||
+        "journey"
+    );
+  const levelSlugOf = (j: JourneySlugSource) =>
+    slugifyTrackLabel(((j.levels ?? [])[0] ?? "").toString());
+  // Self-descriptive: language code + name + variant + level, e.g.
+  // "es-friends-latam-c1", "de-traveler-germany-a0". Every part comes from the
+  // journey's own fields, so it is identical for every viewer AND stable over
+  // time — adding a sibling journey never changes an existing slug (the level
+  // is always present, so same name+variant at different levels never collide).
+  const baseOf = (j: JourneySlugSource) =>
+    [langCodeOf(j), nameSlugOf(j), slugifyTrackLabel((j.variant ?? "").toString()), levelSlugOf(j)]
+      .filter(Boolean)
+      .join("-") || nameSlugOf(j) || "journey";
+
+  // Guard only against the degenerate case of two journeys sharing
+  // language+name+variant+level: append a short, stable id fragment.
+  const baseCount = new Map<string, number>();
+  for (const j of renderable) baseCount.set(baseOf(j), (baseCount.get(baseOf(j)) ?? 0) + 1);
+  for (const j of renderable) {
+    const base = baseOf(j);
+    slugByJourneyId.set(
+      j.id,
+      (baseCount.get(base) ?? 0) > 1 ? `${base}-${String(j.id).slice(0, 6)}` : base
+    );
+  }
+  return slugByJourneyId;
+}
+
 async function buildJourneyVariantsFromStudio(
   language: string | undefined
 ): Promise<JourneyVariantTrack[]> {
@@ -609,51 +671,7 @@ async function buildJourneyVariantsFromStudio(
       : await getStudioJourneysForLanguage(language);
   if (journeys.length === 0) return [];
 
-  // ── Stable, GLOBAL journey slug (makes share links work) ──
-  // Derive the slug from the journey's OWN fields — `name-variant`, then the
-  // level / a short id fragment ONLY when that collides — never from its
-  // position in the result set. The old scheme was `slugify(name)` + an
-  // order-based `-2/-3` counter, so the same slug (e.g. "friends-2") pointed at
-  // different journeys depending on the viewer's language set. Now
-  // "friends-latam", "traveler-mexico", etc. are identical for every viewer and
-  // resolvable across languages. Collisions only ever happen between same-
-  // language journeys (variant is language-specific), so they are always
-  // co-present and the disambiguation is deterministic.
-  const slugByJourneyId = new Map<string, string>();
-  {
-    type J = (typeof journeys)[number];
-    const renderable = journeys.filter((j) => (j.stories?.length ?? 0) > 0);
-    const langCodeOf = (j: J) => slugifyTrackLabel(formatLanguageCode(j.language ?? ""));
-    const nameSlugOf = (j: J) =>
-      slugifyTrackLabel(
-        (j.name ?? "").trim() ||
-          formatVariantLabel((j.variant ?? "").trim().toLowerCase()) ||
-          (j.variant ?? "").trim() ||
-          "journey"
-      );
-    const levelSlugOf = (j: J) => slugifyTrackLabel(((j.levels ?? [])[0] ?? "").toString());
-    // Self-descriptive: language code + name + variant + level, e.g.
-    // "es-friends-latam-c1", "de-traveler-germany-a0". Every part comes from the
-    // journey's own fields, so it is identical for every viewer AND stable over
-    // time — adding a sibling journey never changes an existing slug (the level
-    // is always present, so same name+variant at different levels never collide).
-    const baseOf = (j: J) =>
-      [langCodeOf(j), nameSlugOf(j), slugifyTrackLabel((j.variant ?? "").toString()), levelSlugOf(j)]
-        .filter(Boolean)
-        .join("-") || nameSlugOf(j) || "journey";
-
-    // Guard only against the degenerate case of two journeys sharing
-    // language+name+variant+level: append a short, stable id fragment.
-    const baseCount = new Map<string, number>();
-    for (const j of renderable) baseCount.set(baseOf(j), (baseCount.get(baseOf(j)) ?? 0) + 1);
-    for (const j of renderable) {
-      const base = baseOf(j);
-      slugByJourneyId.set(
-        j.id,
-        (baseCount.get(base) ?? 0) > 1 ? `${base}-${String(j.id).slice(0, 6)}` : base
-      );
-    }
-  }
+  const slugByJourneyId = buildJourneySlugMap(journeys);
 
   const topicLabelBySlug = await getTopicLabelBySlug();
   const topicDefaultLevelBySlug = await getTopicDefaultLevelBySlug();
