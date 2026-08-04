@@ -412,9 +412,37 @@ if printf '%s' "$COMMAND" | grep -q '_personalNote' \
    && ! printf '%s' "$COMMAND" | grep -qE -- '--send'; then
     MAIL_PREVIEW_ONLY=1
 fi
+#     Reading from the provider is not sending to anyone. Asking Resend "did
+#     this arrive?" was blocked, which left the honest answer to "has she got
+#     my mail?" unreachable and made the guard the reason we could not verify
+#     our own sends. A lock that blocks the receipt as well as the letter
+#     invites someone to disable it.
+#     Narrow on purpose, four conditions:
+#       - every mention of the provider sits inside a `curl` invocation, so a
+#         script that talks to Resend on its own never inherits the exemption;
+#       - that invocation carries no write marker. curl is a GET unless a body
+#         or an explicit method makes it otherwise. The markers are scanned
+#         ONLY within the curl segment, not the whole line: the first version
+#         scanned everything and read the `-d=` of `cut -d= -f2-` as a POST
+#         body, blocking the very read it was written to allow;
+#       - no other mail trigger appears, or a real sender riding along after a
+#         harmless `&&` would be waved through with it;
+#       - no interpreter is invoked. python3 in a pipe only parses the reply,
+#         but npx/node/tsx/bash can send, and by then the URL check above has
+#         already established that nothing else names the provider.
+#     Anything unrecognised keeps falling through to the gate.
+RESEND_MENTIONS="$(printf '%s' "$COMMAND" | grep -oc 'api\.resend\.com' 2>/dev/null || printf '0')"
+RESEND_IN_CURL="$(printf '%s' "$COMMAND" | grep -oE 'curl[^|;&]*' | grep -oc 'api\.resend\.com' 2>/dev/null || printf '0')"
+RESEND_CURL_SEGMENTS="$(printf '%s' "$COMMAND" | grep -oE 'curl[^|;&]*' || true)"
+if [ "$RESEND_MENTIONS" -gt 0 ] && [ "$RESEND_MENTIONS" -eq "$RESEND_IN_CURL" ] \
+   && ! printf '%s' "$RESEND_CURL_SEGMENTS" | grep -qE -- '-X[[:space:]]*"?(POST|PUT|PATCH|DELETE)|--request[[:space:]]*"?(POST|PUT|PATCH|DELETE)|(^|[[:space:]])-d([[:space:]]|=|@|['"'"'"{])|--data|--json|(^|[[:space:]])-F([[:space:]]|=|@)|--form|--upload-file|(^|[[:space:]])-T([[:space:]]|=|@)' \
+   && ! printf '%s' "$COMMAND" | grep -qE '(^|[|;&[:space:]])(npx|node|npm|pnpm|yarn|tsx|bash|sh)[[:space:]]' \
+   && ! printf '%s' "$COMMAND" | grep -qE 'processApplication|inviteApplicant|declineApplicant|waitlistApplicant|removeTesterAccess|linkClerkUserToBetaSignup|sendBetaEmail|sendPersonalNote|_personalNote|publishRelease|runBetaLifecycle|_runBetaTriage|sendLifecycleEmail|sendWelcomeEmail|sendBetaConfirmationEmail|sendClaimEmail|runLifecycleEmails|resend\.emails\.send|/api/cron/(beta-lifecycle|lifecycle-emails|claim-reminders)'; then
+    MAIL_PREVIEW_ONLY=1
+fi
 
 if [ "$MAIL_PREVIEW_ONLY" -eq 0 ] \
-   && printf '%s' "$COMMAND" | grep -qE '(^|[|;&[:space:]])(npx|node|npm|pnpm|yarn|tsx|curl|bash|sh)[[:space:]]' \
+   && printf '%s' "$COMMAND" | grep -qE '(^|[|;&[:space:]])(npx|node|npm|pnpm|yarn|tsx|curl|bash|sh|python3?)[[:space:]]' \
    && printf '%s' "$COMMAND" | grep -qE 'processApplication|inviteApplicant|declineApplicant|waitlistApplicant|removeTesterAccess|linkClerkUserToBetaSignup|sendBetaEmail|sendPersonalNote|_personalNote|publishRelease|runBetaLifecycle|_runBetaTriage|sendLifecycleEmail|sendWelcomeEmail|sendBetaConfirmationEmail|sendClaimEmail|runLifecycleEmails|api\.resend\.com|resend\.emails\.send|/api/cron/(beta-lifecycle|lifecycle-emails|claim-reminders)'; then
     MAIL_CHECK="$(printf '%s' "$PAYLOAD" | /usr/bin/python3 -c '
 import json, sys, re, os
