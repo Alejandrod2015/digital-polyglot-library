@@ -153,10 +153,15 @@ const config = {
       // Android recorta el foreground a un círculo/squircle según el launcher y
       // solo respeta el 66% central, así que reusar `icon.png` (el mark llena
       // el 87% del ancho) le comería los bordes al logo.
-      // `icon-adaptive-foreground.png` es el mismo mark al 62% sobre blanco
-      // opaco: el mask lo recorta a la forma del launcher y queda igual que en
-      // iOS. Al ser opaco, `backgroundColor` no llega a verse; se deja en
-      // blanco por coherencia.
+      // `icon-adaptive-foreground.png` es el mismo mark sobre blanco opaco,
+      // reencuadrado al 49% del lienzo (la misma caja que `splash-android-fg`).
+      // OJO con el cálculo, aquí se documentó mal una vez: el área VISIBLE son
+      // los 72dp centrales de 108, así que un mark al 62% del lienzo ocupaba el
+      // 92% del ancho visible y se veía como una barra pegada a las paredes del
+      // círculo, no "igual que en iOS" (allí es el 87% de una máscara cuadrada).
+      // Al 49% del lienzo son 74% del ancho visible y la tinta cae entera dentro
+      // de la zona segura de 66dp. Al ser opaco, `backgroundColor` no llega a
+      // verse; se deja en blanco por coherencia.
       foregroundImage: "./assets/icon-adaptive-foreground.png",
       backgroundColor: "#ffffff",
     },

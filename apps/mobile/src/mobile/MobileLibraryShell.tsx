@@ -2454,6 +2454,15 @@ export function MobileLibraryShell(args: {
   const practiceAudioSeqRef = useRef(0);
   const practiceClipStopAtMillisRef = useRef<number | null>(null);
   const practiceFeedbackSoundRef = useRef<Audio.Sound | null>(null);
+  // SFX de acierto/error pre-armados una sola vez por sesión. Crearlos en cada
+  // respuesta (parseo + decoder + audio session) costaba 200-500 ms, medidos en
+  // el preload del clip de context (5d), y el verde/rojo ya se había pintado:
+  // ese desfase es el "retraso" que se oye en los ejercicios. Pre-cargados, la
+  // respuesta es un `replayAsync()`.
+  const practiceFeedbackPreloadRef = useRef<{
+    correct: Audio.Sound | null;
+    wrong: Audio.Sound | null;
+  }>({ correct: null, wrong: null });
   // Gate para que el audio de palabra del context arranque JUSTO cuando el
   // SFX de acierto/error termina (en vez de solaparse). Al reproducir el SFX
   // publicamos una promesa que resuelve en su `didJustFinish`; el clip del
@@ -8256,6 +8265,53 @@ export function MobileLibraryShell(args: {
     triggerPracticeComboToast(practiceSessionStreak);
   }, [practiceSessionStreak]);
 
+  // Arma los dos SFX al abrir la sesión de práctica, mismo patrón que el
+  // preload (5d) del clip de context: `createAsync({ shouldPlay: false })`
+  // monta el decoder y fija el audio session una vez, y luego cada respuesta
+  // solo rebobina. Se descargan al cerrar la sesión.
+  const practiceSessionOpen = activePracticeMode !== null;
+  useEffect(() => {
+    if (!practiceSessionOpen) return;
+    let cancelled = false;
+    const slots = practiceFeedbackPreloadRef.current;
+    void (async () => {
+      try {
+        // En iOS el modo de audio es global; reafirmarlo aquí es lo que
+        // permite quitar el `await` de sesión que había delante de CADA SFX.
+        await Audio.setAudioModeAsync({
+          playsInSilentModeIOS: true,
+          allowsRecordingIOS: false,
+          interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+        });
+        for (const slot of ["correct", "wrong"] as const) {
+          if (slots[slot]) continue;
+          const { sound } = await Audio.Sound.createAsync(
+            slot === "correct" ? SFX_PRACTICE_CORRECT : SFX_PRACTICE_WRONG,
+            { shouldPlay: false, volume: 0.8 }
+          );
+          if (cancelled) {
+            void sound.unloadAsync().catch(() => undefined);
+            return;
+          }
+          slots[slot] = sound;
+        }
+      } catch (e) {
+        // Best-effort: si el preload falla, playPracticeFeedbackSound cae al
+        // path lento de siempre.
+        console.warn("[practice-sfx] preload failed:", e);
+      }
+    })();
+    return () => {
+      cancelled = true;
+      const pending = [slots.correct, slots.wrong];
+      slots.correct = null;
+      slots.wrong = null;
+      for (const sound of pending) {
+        if (sound) void sound.unloadAsync().catch(() => undefined);
+      }
+    };
+  }, [practiceSessionOpen]);
+
   async function playPracticeFeedbackSound(correct: boolean) {
     // Publica una promesa que resuelve cuando el SFX termina, para que el
     // audio de palabra del context espere a que el sonido de acierto acabe
@@ -8275,6 +8331,26 @@ export function MobileLibraryShell(args: {
       resolveDone();
     };
     try {
+      // Camino rápido: el sound ya está montado y el audio session ya se fijó
+      // en el preload, así que esto es solo rebobinar. Nada de crear, nada de
+      // reafirmar modo, que es lo que metía el retraso frente al verde/rojo.
+      const preloaded = correct
+        ? practiceFeedbackPreloadRef.current.correct
+        : practiceFeedbackPreloadRef.current.wrong;
+      if (preloaded) {
+        const other = correct
+          ? practiceFeedbackPreloadRef.current.wrong
+          : practiceFeedbackPreloadRef.current.correct;
+        if (other) {
+          try { await other.stopAsync(); } catch { /* ignore */ }
+        }
+        await stopAndUnloadPracticeSound(practiceFeedbackSoundRef);
+        preloaded.setOnPlaybackStatusUpdate((status) => {
+          if ("didJustFinish" in status && status.didJustFinish) settle();
+        });
+        await preloaded.replayAsync();
+        return;
+      }
       await stopPracticeFeedbackSound();
       // Mismo motivo que en playPracticePerfectChime: en iOS el modo de audio
       // es global y hay que reafirmarlo antes de reproducir.
@@ -8944,6 +9020,14 @@ export function MobileLibraryShell(args: {
   }
 
   async function stopPracticeFeedbackSound() {
+    // Los SFX pre-armados se PARAN, nunca se descargan: viven toda la sesión y
+    // los descarga el cleanup del preload. Solo el sound del path lento (el de
+    // fallback, creado al vuelo) se descarga aquí.
+    const preloaded = practiceFeedbackPreloadRef.current;
+    for (const sound of [preloaded.correct, preloaded.wrong]) {
+      if (!sound) continue;
+      try { await sound.stopAsync(); } catch { /* ignore */ }
+    }
     await stopAndUnloadPracticeSound(practiceFeedbackSoundRef);
   }
 
@@ -17385,6 +17469,13 @@ export function MobileLibraryShell(args: {
     return (
       <View style={styles.readerWrapper}>
         <ReaderScreen
+          // Remonta el lector en cada historia. Sin `key`, React reusa la
+          // instancia y su estado: el cuerpo se pinta desde `wordTimings`, que
+          // durante un frame sigue siendo el PAYLOAD DE LA HISTORIA ANTERIOR
+          // (el reset vive en un efecto, que corre después del commit). Eso es
+          // el parpadeo al dar "next". Remontar mata la clase entera de estado
+          // viejo de una vez: timings, glosas, portada y refs de scroll.
+          key={selection.story.id}
           book={selection.book}
           story={selection.story}
           // La copia offline solo vale si se bajó de la MISMA url que sirve
@@ -24554,7 +24645,13 @@ const styles = StyleSheet.create({
     fontSize: 46,
     fontWeight: "900",
     lineHeight: 50,
-    letterSpacing: -1.6,
+    // letterSpacing DELIBERADAMENTE a 0. Con tracking negativo, iOS mide este
+    // Text sin aplicarlo y luego `adjustsFontSizeToFit` recorta el ÚLTIMO
+    // glifo sin puntos suspensivos: "Handgezeichnet" se veía
+    // "Handgezeichne" mientras el audio decía la palabra entera. Los datos
+    // estaban bien; el fallo era de medición. Lo dispara cualquier compuesto
+    // alemán largo, justo lo que el shrink-to-fit venía a resolver.
+    letterSpacing: 0,
     textAlign: "center",
   },
   practiceMeaningTargetWordCompact: {
