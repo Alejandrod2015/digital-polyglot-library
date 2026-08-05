@@ -1495,7 +1495,7 @@ function buildPracticeExercisesFromItems(
 function buildExercisesWithDistractors(
   targets: PracticeFavoriteItem[],
   pool: PracticeFavoriteItem[],
-  mode: PracticeModeKey,
+  modes: PracticeModeKey[],
   prefs?: { interests: readonly string[]; learningGoal: OnboardingGoal | null; dailyMinutes: number | null }
 ): PracticeExercise[] {
   const targetKeys = new Set(targets.map((item) => normalizePracticeWord(item.word)));
@@ -1506,18 +1506,28 @@ function buildExercisesWithDistractors(
   for (const item of targets) {
     const key = normalizePracticeWord(item.word);
     if (!key) continue;
-    const built = buildPracticeExercisesFromItems(
-      [item, ...companions.slice(0, 6)],
-      mode,
-      false,
-      prefs
-    );
-    const mine = built.find(
-      (exercise) =>
-        exercise.kind === "multiple-choice" &&
-        normalizePracticeWord(exercise.favorite.word) === key
-    );
-    if (mine) out.push(mine);
+    // Se prueban VARIOS modos por palabra, no uno. Con solo `meaning` el botón
+    // seguía muerto y lo vi en el dispositivo: meaning exige una oración de
+    // ejemplo completa y utilizable, y una palabra fallada en el modo context
+    // puede no traerla. Sin segundo intento, cero ejercicios y tap muerto.
+    // `listening` solo necesita palabras distractoras, así que rescata ese caso.
+    for (const mode of modes) {
+      const built = buildPracticeExercisesFromItems(
+        [item, ...companions.slice(0, 6)],
+        mode,
+        false,
+        prefs
+      );
+      const mine = built.find(
+        (exercise) =>
+          exercise.kind === "multiple-choice" &&
+          normalizePracticeWord(exercise.favorite.word) === key
+      );
+      if (mine) {
+        out.push(mine);
+        break;
+      }
+    }
   }
   return out;
 }
@@ -7177,7 +7187,7 @@ export function MobileLibraryShell(args: {
       const withPool = buildExercisesWithDistractors(
         overrideItems,
         distractorPool,
-        "meaning",
+        ["meaning", "listening"],
         onboardingPracticePrefs
       );
       if (withPool.length > 0) {
