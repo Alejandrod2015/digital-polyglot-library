@@ -377,52 +377,66 @@ export async function POST(req: NextRequest): Promise<Response> {
   const existing = (user.publicMetadata as Record<string, unknown>) ?? {};
   const updatedMetadata: Record<string, unknown> = { ...existing };
 
+  // ── Para BORRAR una preferencia se asigna `null`, nunca `delete` ──
+  //
+  // `updateUserMetadata` hace MERGE, no reemplazo: omitir una clave no la
+  // borra, la conserva. Con `delete` el usuario podía APAGAR lo que se guarda
+  // como valor, pero nunca QUITAR nada: la petición salía, respondía bien, y el
+  // ajuste volvía como estaba.
+  //
+  // Medido en un Pixel sobre producción, dos casos y en direcciones opuestas,
+  // que es lo que lo confirma: el karaoke no se dejaba ENCENDER (encender
+  // borraba la clave) y el recordatorio diario no se dejaba APAGAR (apagar
+  // borraba la clave). Siempre falla el lado que borra, nunca el que escribe.
+  // Un recordatorio diario que no se puede desactivar son notificaciones que el
+  // usuario no puede parar.
+
   if (targetLanguages !== undefined) updatedMetadata.targetLanguages = targetLanguages;
   if (interests !== undefined) updatedMetadata.interests = interests;
 
   if (preferredLevel !== undefined) {
     if (preferredLevel) updatedMetadata.preferredLevel = preferredLevel;
-    else delete updatedMetadata.preferredLevel;
+    else updatedMetadata.preferredLevel = null;
   }
 
   if (preferredRegion !== undefined) {
     if (preferredRegion) updatedMetadata.preferredRegion = preferredRegion;
-    else delete updatedMetadata.preferredRegion;
+    else updatedMetadata.preferredRegion = null;
   }
 
   if (preferredVariant !== undefined) {
     if (preferredVariant) updatedMetadata.preferredVariant = preferredVariant;
-    else delete updatedMetadata.preferredVariant;
+    else updatedMetadata.preferredVariant = null;
   }
 
   if (learningGoal !== undefined) {
     if (learningGoal) updatedMetadata.learningGoal = learningGoal;
-    else delete updatedMetadata.learningGoal;
+    else updatedMetadata.learningGoal = null;
   }
 
   if (journeyFocus !== undefined) {
     if (journeyFocus) updatedMetadata.journeyFocus = journeyFocus;
-    else delete updatedMetadata.journeyFocus;
+    else updatedMetadata.journeyFocus = null;
   }
 
   if (dailyMinutes !== undefined) {
     if (dailyMinutes) updatedMetadata.dailyMinutes = dailyMinutes;
-    else delete updatedMetadata.dailyMinutes;
+    else updatedMetadata.dailyMinutes = null;
   }
 
   if (remindersEnabled !== undefined) {
     if (remindersEnabled) updatedMetadata.remindersEnabled = true;
-    else delete updatedMetadata.remindersEnabled;
+    else updatedMetadata.remindersEnabled = null;
   }
 
   if (reminderHour !== undefined) {
     if (reminderHour) updatedMetadata.reminderHour = reminderHour;
-    else delete updatedMetadata.reminderHour;
+    else updatedMetadata.reminderHour = null;
   }
 
   if (reminderMinute !== undefined) {
     if (reminderMinute !== null) updatedMetadata.reminderMinute = reminderMinute;
-    else delete updatedMetadata.reminderMinute;
+    else updatedMetadata.reminderMinute = null;
   }
 
   if (notificationPrefs !== undefined && notificationPrefs !== null) {
@@ -438,7 +452,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     // existing reminder scheduler and any old code paths still work.
     if (typeof merged.daily_reminder === "boolean") {
       if (merged.daily_reminder) updatedMetadata.remindersEnabled = true;
-      else delete updatedMetadata.remindersEnabled;
+      else updatedMetadata.remindersEnabled = null;
     }
   }
 
@@ -456,7 +470,7 @@ export async function POST(req: NextRequest): Promise<Response> {
 
   if (journeyPlacementLevel !== undefined) {
     if (journeyPlacementLevel) updatedMetadata.journeyPlacementLevel = journeyPlacementLevel;
-    else delete updatedMetadata.journeyPlacementLevel;
+    else updatedMetadata.journeyPlacementLevel = null;
   }
 
   if (onboardingSurveyCompletedAt !== undefined) {
@@ -473,12 +487,12 @@ export async function POST(req: NextRequest): Promise<Response> {
 
   if (journeys !== undefined) {
     if (journeys.length > 0) updatedMetadata.journeys = journeys;
-    else delete updatedMetadata.journeys;
+    else updatedMetadata.journeys = null;
   }
 
   if (activeJourneyId !== undefined) {
     if (activeJourneyId) updatedMetadata.activeJourneyId = activeJourneyId;
-    else delete updatedMetadata.activeJourneyId;
+    else updatedMetadata.activeJourneyId = null;
   }
 
   await clerkClient.users.updateUserMetadata(session.sub, {
