@@ -1600,6 +1600,30 @@ export function ReaderScreen(args: {
   // outcome.
   const saveButtonScale = useRef(new Animated.Value(1)).current;
   const [endOfStoryPromptVisible, setEndOfStoryPromptVisible] = useState(false);
+  /**
+   * ¿Ya terminó el usuario esta historia? Es lo que abre la puerta a la
+   * práctica, y va SEPARADO del popup a propósito:
+   *
+   *   popup   → del momento. Se dispara una vez al acabar el audio y se cierra.
+   *   tarjeta → permanente. Una vez desbloqueada, se queda.
+   *
+   * Practicar antes de terminar la historia no tiene sentido: serían palabras
+   * que el usuario todavía no ha encontrado. Pero condicionarlo al popup era
+   * el fallo original, porque cerrarlo dejaba la práctica sin puerta.
+   *
+   * NO se siembra desde `initialProgress`. Lo intenté y estaba mal:
+   * `trackReadingPosition` se llama desde el scroll del usuario Y desde el
+   * avance del audio, y ambos escriben el mismo `progressRatio`. Deslizar
+   * hasta el final sin reproducir nada deja el progreso en ~1.0, así que
+   * sembrar de ahí desbloqueaba la práctica sin haber escuchado: el mismo
+   * fallo que esta condición viene a evitar, por la puerta de atrás.
+   *
+   * La señal canónica de "terminó" es `audio_complete` (así lo documenta el
+   * shell), y hoy solo llega aquí como el `didJustFinish` del reproductor.
+   * PENDIENTE: persistirla por historia para que una terminada en otra sesión
+   * siga desbloqueada sin reescucharla.
+   */
+  const [storyCompleted, setStoryCompleted] = useState(false);
   // Animated values for the end-of-story prompt. Entrance is a spring-in
   // (backdrop fades, card slides up with a small overshoot and scales to 1)
   // matching the rest of the app's micro-animations (celebration toast,
@@ -1736,13 +1760,23 @@ export function ReaderScreen(args: {
   const audioCompleteFiredForStoryRef = useRef<string | null>(null);
   useEffect(() => {
     setEndOfStoryPromptVisible(false);
+    setStoryCompleted(false);
     promptShownForStoryRef.current = null;
     audioCompleteFiredForStoryRef.current = null;
+    // A cero: si la tarjeta no se renderiza (historia sin terminar), nadie
+    // vuelve a llamar a su onLayout y una altura vieja desajustaría el mapeo
+    // del progreso de esta historia.
+    afterTextHeightRef.current = 0;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [story.id]);
 
   function maybeFireEndOfStoryPrompt() {
     if (!onOpenPractice) return;
     if (vocab.length === 0) return;
+    // La tarjeta se DESBLOQUEA aquí y ya no se vuelve a esconder, aunque el
+    // popup se cierre. Separar las dos cosas es el punto: el popup es del
+    // momento, la tarjeta es la puerta permanente.
+    setStoryCompleted(true);
     if (promptShownForStoryRef.current === story.id) return;
     promptShownForStoryRef.current = story.id;
     setEndOfStoryPromptVisible(true);
@@ -1786,6 +1820,17 @@ export function ReaderScreen(args: {
   const currentScrollYRef = useRef(0);
   const blockOffsetsRef = useRef<number[]>([]);
   const hasRestoredPositionRef = useRef(false);
+  /**
+   * Altura de todo lo que se renderiza DEBAJO del último párrafo (hoy: la
+   * tarjeta de práctica).
+   *
+   * La regla que esto hace explícita, y que antes vivía implícita en que no
+   * había nada ahí abajo: el progreso y el autoscroll mapean contra la altura
+   * del TEXTO, no contra la altura de lo que hay en el ScrollView. Sin
+   * descontarlo, el narrador iría por el último párrafo mientras la pantalla
+   * ya enseña la tarjeta, y llegar al final del texto no marcaría el 100%.
+   */
+  const afterTextHeightRef = useRef(0);
   const lastTrackedReadingRatioRef = useRef<number | null>(null);
   const lastTrackedBlockIndexRef = useRef<number | null>(null);
   const remoteCoverUrl = story.cover || story.coverUrl || book.cover;
@@ -2099,7 +2144,12 @@ export function ReaderScreen(args: {
     contentHeightRef.current = contentSize.height;
     viewportHeightRef.current = layoutMeasurement.height;
     currentScrollYRef.current = contentOffset.y;
-    const scrollableHeight = Math.max(contentSize.height - layoutMeasurement.height, 1);
+    // Descontando lo que hay DEBAJO del texto (ver textScrollableHeight): sin
+    // esto, llegar al final de la historia ya no daría el 100% de progreso.
+    const scrollableHeight = Math.max(
+      contentSize.height - layoutMeasurement.height - afterTextHeightRef.current,
+      1
+    );
     const ratio = Math.min(1, Math.max(0, contentOffset.y / scrollableHeight));
     lastScrollRatioRef.current = ratio;
     const anchorY = contentOffset.y + Math.max(80, layoutMeasurement.height * 0.22);
@@ -2315,6 +2365,37 @@ export function ReaderScreen(args: {
           >
             {karaokeParagraphNodes}
           </View>
+
+          {/* Puerta permanente a la práctica.
+              Aparece cuando la historia YA está terminada, nunca antes:
+              practicar palabras que aún no has encontrado no enseña nada. Pero
+              a diferencia del popup, que se dispara una vez y al cerrarlo
+              desaparecía, esta se queda. Ese era el fallo: la única forma de
+              recuperar la práctica era arrastrar el audio hasta el final para
+              re-disparar el modal.
+              Su altura se mide para descontarla del mapeo de progreso. */}
+          {onOpenPractice && vocab.length > 0 && storyCompleted ? (
+            <View
+              style={styles.readerPracticeCard}
+              onLayout={(event) => {
+                afterTextHeightRef.current = event.nativeEvent.layout.height;
+              }}
+            >
+              <Text style={styles.readerPracticeCardTitle}>Practice this story</Text>
+              <Text style={styles.readerPracticeCardBody}>
+                {vocab.length} words from this story, ready when you are.
+              </Text>
+              <Pressable
+                onPress={onOpenPractice}
+                style={styles.readerPracticeCardButton}
+                accessibilityLabel="qa-reader-practice-card"
+                testID="qa-reader-practice-card"
+              >
+                <Feather name="zap" size={16} color="#0c1626" />
+                <Text style={styles.readerPracticeCardButtonText}>Start practice</Text>
+              </Pressable>
+            </View>
+          ) : null}
 
         </View>
       </ScrollView>
@@ -2696,7 +2777,10 @@ export function ReaderScreen(args: {
               return;
             }
 
-            const scrollableHeight = Math.max(contentHeightRef.current - viewportHeightRef.current, 0);
+            const scrollableHeight = Math.max(
+              contentHeightRef.current - viewportHeightRef.current - afterTextHeightRef.current,
+              0
+            );
             if (scrollableHeight <= 0 || !scrollViewRef.current) {
               return;
             }
@@ -3038,6 +3122,41 @@ const styles = StyleSheet.create({
   },
   paragraphBlock: {
     gap: 0,
+  },
+  readerPracticeCard: {
+    marginTop: 28,
+    padding: 18,
+    borderRadius: 18,
+    backgroundColor: "rgba(82,160,214,0.10)",
+    borderWidth: 1,
+    borderColor: "rgba(82,160,214,0.28)",
+    gap: 6,
+  },
+  readerPracticeCardTitle: {
+    color: "#eef4ff",
+    fontSize: 18,
+    fontWeight: "800",
+  },
+  readerPracticeCardBody: {
+    color: "#9cb0c9",
+    fontSize: 14,
+    lineHeight: 19,
+  },
+  readerPracticeCardButton: {
+    marginTop: 10,
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 999,
+    backgroundColor: "#f8c15c",
+  },
+  readerPracticeCardButtonText: {
+    color: "#0c1626",
+    fontSize: 15,
+    fontWeight: "800",
   },
   quoteBlock: {
     gap: 4,
