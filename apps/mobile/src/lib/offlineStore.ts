@@ -63,6 +63,10 @@ function getJourneyCachePath(userId: string): string {
   return `${OFFLINE_ROOT}/journey-${userId}.json`;
 }
 
+function getPracticeCachePath(userId: string): string {
+  return `${OFFLINE_ROOT}/practice-${userId}.json`;
+}
+
 async function ensureRootDirectory(): Promise<void> {
   const info = await FileSystem.getInfoAsync(OFFLINE_ROOT);
   if (!info.exists) {
@@ -518,6 +522,48 @@ export async function saveJourneyCache<T>(
 export async function loadJourneyCache<T>(userId: string): Promise<Record<string, T>> {
   await ensureRootDirectory();
   const path = getJourneyCachePath(userId);
+  const info = await FileSystem.getInfoAsync(path);
+  if (!info.exists) return {};
+  try {
+    const raw = await FileSystem.readAsStringAsync(path);
+    const parsed = JSON.parse(raw) as { cache?: Record<string, T> };
+    return parsed && typeof parsed === "object" && parsed.cache ? parsed.cache : {};
+  } catch {
+    return {};
+  }
+}
+
+/**
+ * Cache del set de PRÁCTICA por historia, keyed por slug.
+ *
+ * Existe porque el offline se construyó para leer y la práctica se quedó
+ * fuera: la pantalla siempre pedía /api/story-practice, así que una historia
+ * descargada se abría sin red pero su práctica moría en "Network request
+ * failure". El payload es el mismo que devuelve esa ruta, opaco aquí; quien
+ * lee le pone el tipo.
+ *
+ * Se escribe en el camino normal (cuando el fetch va bien) y solo se lee
+ * cuando el fetch falla, así que la ruta online no cambia en nada.
+ */
+export async function saveStoryPracticeCache<T>(
+  userId: string,
+  cache: Record<string, T>
+): Promise<void> {
+  await ensureRootDirectory();
+  try {
+    await FileSystem.writeAsStringAsync(
+      getPracticeCachePath(userId),
+      JSON.stringify({ cache, savedAt: new Date().toISOString() })
+    );
+  } catch {
+    // Best-effort: perder el cache solo significa que sin red la práctica
+    // vuelve a fallar como antes, nunca que la sesión online se rompa.
+  }
+}
+
+export async function loadStoryPracticeCache<T>(userId: string): Promise<Record<string, T>> {
+  await ensureRootDirectory();
+  const path = getPracticeCachePath(userId);
   const info = await FileSystem.getInfoAsync(path);
   if (!info.exists) return {};
   try {

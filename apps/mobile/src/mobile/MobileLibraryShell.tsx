@@ -135,6 +135,8 @@ import {
 import {
   clearJourneyCache,
   loadJourneyCache,
+  loadStoryPracticeCache,
+  saveStoryPracticeCache,
   loadOfflineSnapshot,
   removeStoryOffline,
   saveJourneyCache,
@@ -7270,6 +7272,10 @@ export function MobileLibraryShell(args: {
         const items = Array.isArray(payload.items) ? payload.items : [];
         const exercises = Array.isArray(payload.exercises) ? payload.exercises : undefined;
         practicePrefetchBySlugRef.current.set(slug, { items, exercises });
+        // Y a disco, para que la práctica de esta historia siga existiendo sin
+        // red. El prefetch corre al abrir el lector, así que toda historia
+        // leída (y por tanto toda historia descargada) queda cubierta.
+        void persistStoryPracticeCache(slug, items, exercises);
       })
       .catch(() => {
         // Swallow; openStoryPractice will retry with a live fetch and
@@ -7359,6 +7365,27 @@ export function MobileLibraryShell(args: {
     void stopPracticeHqClip();
   }
 
+  type StoryPracticePayload = {
+    items: PracticeFavoriteItem[];
+    exercises?: import("../../../../src/lib/practiceExercises").PracticeExercise[];
+  };
+
+  /** Guarda el set de una historia en disco, fusionando con lo ya cacheado. */
+  async function persistStoryPracticeCache(
+    slug: string,
+    items: PracticeFavoriteItem[],
+    exercises?: import("../../../../src/lib/practiceExercises").PracticeExercise[]
+  ) {
+    if (!sessionUserId || !slug) return;
+    try {
+      const current = await loadStoryPracticeCache<StoryPracticePayload>(sessionUserId);
+      current[slug] = { items, exercises };
+      await saveStoryPracticeCache(sessionUserId, current);
+    } catch {
+      // Best-effort, nunca debe afectar a la sesión en curso.
+    }
+  }
+
   async function openStoryPractice(selection: ReaderSelection) {
     if (!sessionToken) {
       onRequestSignIn?.();
@@ -7392,15 +7419,42 @@ export function MobileLibraryShell(args: {
       const items = Array.isArray(payload.items) ? payload.items : [];
       const exercises = Array.isArray(payload.exercises) ? payload.exercises : undefined;
       practicePrefetchBySlugRef.current.set(selection.story.slug, { items, exercises });
+      void persistStoryPracticeCache(selection.story.slug, items, exercises);
       setPracticeLaunchLoading(false);
       commitStoryPracticeItems(selection, items, exercises);
     } catch (error) {
+      // Sin red, el set cacheado la última vez que se abrió esta historia.
+      // Una historia descargada para leer sin conexión llevaba su práctica a
+      // un "Network request failure"; ahora, si hay cache, la sesión arranca
+      // igual. Si no hay, se muestra el error de siempre.
+      const fallback = await loadCachedStoryPractice(selection.story.slug);
+      if (fallback) {
+        setPracticeLaunchLoading(false);
+        commitStoryPracticeItems(selection, fallback.items, fallback.exercises);
+        return;
+      }
       setPracticeLaunchLoading(false);
       setPracticeSeedItems(null);
       setPracticeLoadError(error instanceof Error ? error.message : "Could not load story practice.");
       setActivePracticeMode(null);
       setActiveScreen("practice");
       setSelection(null);
+    }
+  }
+
+  /** Lee el set cacheado de una historia. null si no hay nada usable. */
+  async function loadCachedStoryPractice(slug: string): Promise<StoryPracticePayload | null> {
+    if (!sessionUserId || !slug) return null;
+    try {
+      const cache = await loadStoryPracticeCache<StoryPracticePayload>(sessionUserId);
+      const entry = cache[slug];
+      if (!entry) return null;
+      const items = Array.isArray(entry.items) ? entry.items : [];
+      const exercises = Array.isArray(entry.exercises) ? entry.exercises : undefined;
+      if (items.length === 0 && (!exercises || exercises.length === 0)) return null;
+      return { items, exercises };
+    } catch {
+      return null;
     }
   }
 
