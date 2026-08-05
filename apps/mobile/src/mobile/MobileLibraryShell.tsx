@@ -7404,6 +7404,14 @@ export function MobileLibraryShell(args: {
     // visible while the network request resolves.
     setPracticeLaunchLoading(true);
     setActivePracticeMode("context");
+    // Limpiar los ejercicios ANTES del await de red. Sin esto la sesión queda
+    // marcada como abierta (activePracticeMode truthy) mientras el conteo
+    // todavía no existe, y `practiceExercises` conserva los de la ronda
+    // ANTERIOR: el efecto de autoplay pasa todas sus guardas y suena audio
+    // antes de que el conteo llegue siquiera a aparecer. Con la lista vacía no
+    // hay `currentPracticeExercise` y el efecto sale por su propia guarda.
+    setPracticeExercises([]);
+    setPracticeIndex(0);
     setActiveScreen("practice");
     setSelection(null);
 
