@@ -212,7 +212,12 @@ const BANNED_BODY_TOKENS = [
   // never use em-dashes in copy / story body / prompts. Substitute
   // with `;`, `:`, parentheses, or break the sentence. The new-system
   // worker has internalized this; flag any lingering em-dash as fail.
-  /-/,
+  //
+  // 2026-08-05: esta entrada era U+002D, el GUION NORMAL, no el em-dash que
+  // dice el comentario. O sea: la regla del usuario ("nunca em-dashes") NUNCA
+  // se llego a aplicar, y en cambio tumbaba compuestos alemanes legitimos
+  // ("Katzen-WG", "S-Bahn", "E-Mail"). Ahora es de verdad U+2014.
+  /—/,
   /–/,
 ];
 
@@ -260,9 +265,23 @@ const COGNATES_BY_LANG: Record<string, string[]> = {
 const SEPARABLE_PREFIXES_DE = ["an", "auf", "aus", "ein", "nach", "vor", "zu", "ab", "mit", "bei"];
 const COMMON_PREFIXES_DE = ["ge", "ver", "be", "er", "ent"];
 
+// El vocab aleman se escribe CON articulo ("der Verein"), asi que sin quitarlo
+// la raiz de `vocab-no-same-root` era `slice(0,5)` de "der verein" = "der v":
+// el check agrupaba por ARTICULO + PRIMERA LETRA, no por raiz. Marcaba
+// "die Wartemarke"+"die Wohnungssuche" y "der Verein"+"der Vorsitz" como misma
+// raiz, y en cambio dejaba pasar "der Antrag"+"die Antragstellerin".
+// Quitar el articulo no afloja el gate: lo hace medir lo que dice medir.
+const ARTICLES_DE = ["der ", "die ", "das "];
+
 function stripPrefix(word: string, lang?: string): string {
   if (lang !== "DE") return word;
-  const lower = word.toLowerCase();
+  let lower = word.toLowerCase();
+  for (const a of ARTICLES_DE) {
+    if (lower.startsWith(a)) {
+      lower = lower.slice(a.length);
+      break;
+    }
+  }
   for (const p of [...SEPARABLE_PREFIXES_DE, ...COMMON_PREFIXES_DE]) {
     if (lower.startsWith(p) && lower.length > p.length + 3) {
       return lower.slice(p.length);
@@ -1682,7 +1701,9 @@ export async function validateGeneratedStory(
     else if (c > 120) badDefs.push(`"${v.word}": ${c}ch`);
     else if (BANNED_DEFINITION_OPENERS.some((re) => re.test(v.definition))) {
       badDefs.push(`"${v.word}": banned opener`);
-    } else if (/-/.test(v.definition)) {
+      // Mismo bug que en BANNED_BODY_TOKENS: era U+002D. Prohibia
+      // "Hand-drawn", "Pre-war", "one-off" y dejaba pasar los em-dashes.
+    } else if (/—/.test(v.definition)) {
       badDefs.push(`"${v.word}": em-dash`);
     }
   }
@@ -1752,7 +1773,15 @@ export async function validateGeneratedStory(
   const langForRoot = (context.language ?? "").toUpperCase();
   const rootMap = new Map<string, string[]>();
   for (const v of parsed.vocab) {
-    const root = stripPrefix(v.word, langForRoot).slice(0, 5);
+    // En aleman la cabeza de una locucion va al FINAL ("unter Druck" -> Druck,
+    // "eine halbe Ewigkeit" -> Ewigkeit, "sich entscheiden" -> entscheiden).
+    // Cortando los 5 primeros caracteres de la locucion entera se agrupaba por
+    // la PREPOSICION: "unter Druck" caia junto a "die Unternehmenskultur".
+    // Con la cabeza, en cambio, "dagegen stimmen" sí choca con "die
+    // Abstimmung", que es justo el duplicado que este check existe para ver.
+    const head =
+      langForRoot === "DE" ? v.word.trim().split(/\s+/).pop() ?? v.word : v.word;
+    const root = stripPrefix(head, langForRoot).slice(0, 5);
     if (root.length < 3) continue;
     const arr = rootMap.get(root) ?? [];
     arr.push(v.word);

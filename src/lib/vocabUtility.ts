@@ -68,9 +68,21 @@ const INERT_DEFINITION = [
   // Sin `form` suelto a propósito: "a no delivered in official form" describe
   // el MODO, no un documento, y degradaba `die Absage`, que es palabra útil.
   // Los formularios de verdad los cogen "application/registration form".
-  /\bofficial (document|paper|certificate|letter|record|permit)\b/i,
+  // "official <cosa>" A SECAS describe una CLASE, y la palabra de la clase es
+  // justo la productiva: `die Bescheinigung` ("official certificate confirming
+  // a fact") y `das Schreiben` ("official letter") son alemán corriente que un
+  // expat dice cada semana. Lo inerte es el documento CONCRETO, y para eso ya
+  // están los patrones de abajo ("certificate of good conduct", "proof of
+  // salary", "handover report", "ID badge"): las 7 que quitamos el 2026-08-05
+  // las siguen cogiendo todas. Calibrado contra el juicio del usuario, que
+  // dejó Bescheinigung dentro a proposito.
+  /\bofficial (document|paper|certificate|letter|record) (of|for|from)\b/i,
+  /\bofficial (permit|licence|license)\b/i,
   /\b(id|identity|staff|service|press|student) (card|pass|badge)\b/i,
-  /\b(certificate|attestation|confirmation slip|registration form|application form)\b/i,
+  // Mismo motivo: `certificate` / `attestation` a secas SON la traducción de
+  // `die Bescheinigung`. El documento con nombre propio lo coge el patrón
+  // `certificate of (good conduct|registration|…)` de más abajo.
+  /\b(confirmation slip|registration form|application form)\b/i,
   /\bproof of (address|income|salary|payment|residence|employment|identity)\b/i,
   /\b(issued|stamped|signed|filed|submitted) by the (office|authority|landlord|employer|agency)\b/i,
   /\b(id|identity) card (for|issued|that)\b/i,
