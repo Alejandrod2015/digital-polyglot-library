@@ -23,8 +23,15 @@ def run(command, last_user_message):
     })
     p = subprocess.run([GUARD], input=payload, capture_output=True, text=True, cwd=CWD)
     os.unlink(tp)
-    blocked = p.returncode != 0 or "BLOCKED" in (p.stdout + p.stderr)
-    return "BLOCK" if blocked else "PASS"
+    # Exit 2 is a deliberate block, exit 0 is allow. Anything else is the guard
+    # crashing, and it must NOT be reported as a block: the first version of
+    # this harness folded every non-zero status into "BLOCK", which made a
+    # guard dying on `set -e` look like a guard doing its job.
+    if p.returncode == 2 or "BLOCKED" in (p.stdout + p.stderr):
+        return "BLOCK"
+    if p.returncode != 0:
+        return f"CRASH({p.returncode})"
+    return "PASS"
 
 NO_VERB = "Seguro al 100%? Solo quiero saber."
 VERB = "manda el correo a jaelyn"
@@ -57,6 +64,14 @@ CASES = [
     ("script tsx que nombra el proveedor",'npx tsx scripts/_x.ts # habla con api.resend.com', NO_VERB, "BLOCK"),
     ("interprete que postea",             'python3 -c "requests.post(\'https://api.resend.com/emails\')"', NO_VERB, "BLOCK"),
     ("GET seguido de bash script",        GET + ' && bash /tmp/enviar.sh', NO_VERB, "BLOCK"),
+
+    # Every case above is a single line, which is why they all stayed green
+    # while `grep -oc` was emitting one count PER LINE and handing the
+    # arithmetic test a literal "0\n0".
+    ("multilinea sin el proveedor",       'echo uno\necho dos\ngit status', NO_VERB, "PASS"),
+    ("multilinea con lectura GET",        'echo comprobando\n' + GET + '\necho listo', NO_VERB, "PASS"),
+    ("multilinea con envio real",         'echo preparando\nnpx tsx scripts/_personalNote.ts a@b.com slug --send', NO_VERB, "BLOCK"),
+    ("multilinea, GET arriba y envio abajo", GET + '\nnpx tsx scripts/_runBetaTriage.ts', NO_VERB, "BLOCK"),
 ]
 
 fails = 0

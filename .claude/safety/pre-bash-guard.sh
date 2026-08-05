@@ -431,9 +431,19 @@ fi
 #         but npx/node/tsx/bash can send, and by then the URL check above has
 #         already established that nothing else names the provider.
 #     Anything unrecognised keeps falling through to the gate.
-RESEND_MENTIONS="$(printf '%s' "$COMMAND" | grep -oc 'api\.resend\.com' 2>/dev/null || printf '0')"
-RESEND_IN_CURL="$(printf '%s' "$COMMAND" | grep -oE 'curl[^|;&]*' | grep -oc 'api\.resend\.com' 2>/dev/null || printf '0')"
-RESEND_CURL_SEGMENTS="$(printf '%s' "$COMMAND" | grep -oE 'curl[^|;&]*' || true)"
+#     Counting here is deceptively easy to get wrong under `set -euo pipefail`,
+#     and both wrong versions shipped before this one:
+#       `grep -oc X || printf 0` printed grep's own "0" AND the fallback "0",
+#     so the arithmetic test below received "0\n0" and aborted;
+#       `grep -o X | wc -l` looks clean but grep exits 1 when it finds nothing,
+#     pipefail propagates that, and set -e then killed the guard with status 1
+#     BEFORE it ever reached the gate. A guard that dies quietly on the common
+#     case is worse than one that blocks too much, and only the test caught it.
+#     `{ grep || true; }` keeps the miss benign inside the pipeline: wc counts
+#     zero lines and the whole thing still succeeds.
+RESEND_CURL_SEGMENTS="$(printf '%s' "$COMMAND" | { grep -oE 'curl[^|;&]*' || true; })"
+RESEND_MENTIONS="$(printf '%s' "$COMMAND" | { grep -o 'api\.resend\.com' || true; } | wc -l | tr -d '[:space:]')"
+RESEND_IN_CURL="$(printf '%s' "$RESEND_CURL_SEGMENTS" | { grep -o 'api\.resend\.com' || true; } | wc -l | tr -d '[:space:]')"
 if [ "$RESEND_MENTIONS" -gt 0 ] && [ "$RESEND_MENTIONS" -eq "$RESEND_IN_CURL" ] \
    && ! printf '%s' "$RESEND_CURL_SEGMENTS" | grep -qE -- '-X[[:space:]]*"?(POST|PUT|PATCH|DELETE)|--request[[:space:]]*"?(POST|PUT|PATCH|DELETE)|(^|[[:space:]])-d([[:space:]]|=|@|['"'"'"{])|--data|--json|(^|[[:space:]])-F([[:space:]]|=|@)|--form|--upload-file|(^|[[:space:]])-T([[:space:]]|=|@)' \
    && ! printf '%s' "$COMMAND" | grep -qE '(^|[|;&[:space:]])(npx|node|npm|pnpm|yarn|tsx|bash|sh)[[:space:]]' \

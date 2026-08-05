@@ -34,6 +34,7 @@ type Applicant = {
   notes: string | null;
   invitedAt: string | null;
   ascError: string | null;
+  ascTesterId: string | null;
   clerkUserId: string | null;
   lastActiveAt: string | null;
   planGrantedAt: string | null;
@@ -47,7 +48,34 @@ type Applicant = {
     practice: number;
     lastEventAt: string | null;
   } | null;
+  /**
+   * What Apple holds, which is not the same thing as what we decided. Null
+   * when we never registered them. GONE means Apple does not have the id we
+   * stored; UNREACHABLE means we could not ask.
+   */
+  apple?: { state: string; group: string; isInternal: boolean } | null;
 };
+
+/**
+ * Our status and Apple's state disagree in a way that hurts the tester.
+ *
+ * The case this exists for: we say `invited`, so the panel is green and the
+ * acceptance email has gone out telling them to look for a message from Apple,
+ * while Apple still has them at NOT_INVITED and has sent nothing. That is
+ * silent from every angle except this one.
+ */
+function appleAlarm(a: Applicant): string | null {
+  if (!a.ascTesterId) {
+    return a.status === "invited" || a.status === "accepted"
+      ? "Marked as invited, but never registered with Apple."
+      : null;
+  }
+  const state = a.apple?.state;
+  if (!state || state === "UNREACHABLE") return null;
+  if (state === "GONE") return "Apple does not recognise the tester id we stored.";
+  if (state === "NOT_INVITED") return "Apple has not sent the invitation. They are waiting for an email that does not exist.";
+  return null;
+}
 
 type Feedback = {
   id: string;
@@ -105,6 +133,12 @@ type Payload = {
   releases: Release[];
   rules: Rules;
   stats: { activeTesters: number; byStatus: Record<string, number>; openFeedback: number };
+  /** False when Apple could not be reached, so every `apple` field is a blank
+   *  rather than a fact. The counters say "?" instead of zero on purpose. */
+  appleReachable: boolean;
+  /** Rows hidden because they are our own test artifacts. Shown as a footnote
+   *  so a filtered panel never passes for a complete one. */
+  hiddenTestRows: number;
   health: { ok: true; groups: Array<{ id: string; name: string; internal: boolean }> } | { ok: false; error: string } | null;
 };
 
@@ -170,6 +204,39 @@ const STATUS_COLORS: Record<string, string> = {
 
 function pill(value: string): React.CSSProperties {
   const color = STATUS_COLORS[value] ?? "#9aa7bd";
+  return {
+    display: "inline-block",
+    padding: "2px 10px",
+    borderRadius: 20,
+    fontSize: 11,
+    fontWeight: 600,
+    backgroundColor: `${color}26`,
+    color,
+    whiteSpace: "nowrap",
+  };
+}
+
+// Apple's own vocabulary, kept rather than translated into ours. Reading
+// INSTALLED here and INSTALLED in App Store Connect should be the same act;
+// a friendlier synonym would make the two impossible to reconcile when
+// something looks wrong.
+const APPLE_STATE_COLORS: Record<string, string> = {
+  INSTALLED: "#34d399",
+  ACCEPTED: "#60a5fa",
+  INVITED: "#fbbf24",
+  NOT_INVITED: "#f87171",
+  GONE: "#f87171",
+  UNREACHABLE: "#9aa7bd",
+};
+
+function appleLabel(state: string): string {
+  if (state === "UNREACHABLE") return "Apple unreachable";
+  if (state === "GONE") return "unknown to Apple";
+  return `Apple: ${state.toLowerCase().replace(/_/g, " ")}`;
+}
+
+function applePill(state: string | undefined): React.CSSProperties {
+  const color = state ? (APPLE_STATE_COLORS[state] ?? "#9aa7bd") : "#9aa7bd";
   return {
     display: "inline-block",
     padding: "2px 10px",
@@ -296,7 +363,12 @@ export default function BetaProgramClient() {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-      <StatBar stats={data.stats} rules={data.rules} />
+      <StatBar
+        stats={data.stats}
+        rules={data.rules}
+        applicants={data.applicants}
+        appleReachable={data.appleReachable}
+      />
 
       {flash && (
         <div style={{ ...card, borderColor: ACCENT, color: "var(--foreground)", fontSize: 13 }}>{flash}</div>
@@ -319,6 +391,12 @@ export default function BetaProgramClient() {
           </button>
         ))}
       </div>
+
+      {data.hiddenTestRows > 0 && (
+        <div style={{ fontSize: 11, color: "var(--muted)", marginTop: -4 }}>
+          {data.hiddenTestRows} test row{data.hiddenTestRows === 1 ? "" : "s"} hidden.
+        </div>
+      )}
 
       {tab === "review" && (
         <ReviewQueue
@@ -352,19 +430,41 @@ export default function BetaProgramClient() {
 
 /* ── stat bar ── */
 
-function StatBar({ stats, rules }: { stats: Payload["stats"]; rules: Rules }) {
+function StatBar({
+  stats,
+  rules,
+  applicants,
+  appleReachable,
+}: {
+  stats: Payload["stats"];
+  rules: Rules;
+  applicants: Applicant[];
+  appleReachable: boolean;
+}) {
+  // Surfaced at the top rather than only inside the Testers tab, because the
+  // failure it names is invisible everywhere else: for a tester stuck at
+  // NOT_INVITED every other indicator on this page reads perfectly healthy.
+  const blocked = applicants.filter((a) => appleAlarm(a) !== null).length;
   const items = [
     { label: "Active testers", value: `${stats.activeTesters} / ${rules.maxActiveTesters}` },
     { label: "Needs review", value: String((stats.byStatus.waitlist ?? 0) + (stats.byStatus.pending ?? 0)) },
     { label: "Open feedback", value: String(stats.openFeedback) },
+    { label: "Blocked at Apple", value: appleReachable ? String(blocked) : "?", alarm: blocked > 0 },
     { label: "Auto-invite", value: rules.autoInviteEnabled ? "On" : "Off" },
   ];
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(150px,1fr))", gap: 10 }}>
       {items.map((i) => (
-        <div key={i.label} style={card}>
+        <div
+          key={i.label}
+          style={i.alarm ? { ...card, borderColor: "#f8717155", backgroundColor: "#f8717110" } : card}
+        >
           <div style={labelStyle()}>{i.label}</div>
-          <div style={{ fontSize: 22, fontWeight: 800, marginTop: 4 }}>{i.value}</div>
+          <div
+            style={{ fontSize: 22, fontWeight: 800, marginTop: 4, color: i.alarm ? "#f87171" : undefined }}
+          >
+            {i.value}
+          </div>
         </div>
       ))}
     </div>
@@ -474,8 +574,18 @@ function Testers({
         // An invite that was accepted but never signed in is the single most
         // common silent failure in a beta, so it is called out by name.
         const stalled = t.status === "invited" && !t.clerkUserId;
+        // An outright contradiction with Apple outranks "invited but idle":
+        // one means they cannot get in at all, the other that they have not
+        // bothered yet.
+        const alarm = appleAlarm(t);
         return (
-          <div key={t.id} style={{ ...card, borderColor: stalled ? "#fbbf2455" : "var(--card-border)" }}>
+          <div
+            key={t.id}
+            style={{
+              ...card,
+              borderColor: alarm ? "#f8717155" : stalled ? "#fbbf2455" : "var(--card-border)",
+            }}
+          >
             <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
               <div>
                 <div style={{ fontWeight: 700, fontSize: 14 }}>
@@ -502,14 +612,25 @@ function Testers({
                     No usage yet: has not signed in.
                   </div>
                 )}
-                {stalled && (
+                {alarm && (
+                  <div style={{ fontSize: 12, color: "#f87171", marginTop: 4, fontWeight: 600 }}>
+                    {alarm}
+                  </div>
+                )}
+                {stalled && !alarm && (
                   <div style={{ fontSize: 12, color: "#fbbf24", marginTop: 4 }}>
                     Invited but never signed in. The lifecycle cron will nudge them.
                   </div>
                 )}
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                {/* Two pills, deliberately side by side: ours and Apple's. A
+                    single merged status would have to pick one to believe,
+                    and picking ours is the mistake this is here to expose. */}
                 <span style={pill(t.status)}>{t.status}</span>
+                <span style={applePill(t.apple?.state)}>
+                  {t.apple ? appleLabel(t.apple.state) : "not with Apple"}
+                </span>
                 <button style={dangerBtn} disabled={busy === t.id} onClick={() => onAction(t.id, "remove")}>
                   Remove access
                 </button>

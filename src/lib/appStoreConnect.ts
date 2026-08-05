@@ -425,6 +425,49 @@ export async function getTesterState(testerId: string): Promise<string | null> {
   }
 }
 
+/**
+ * Every tester Apple knows about, keyed by tester id, with the state Apple
+ * actually holds for them.
+ *
+ * The bulk twin of getTesterState, for callers that need the whole roster at
+ * once. One request per group instead of one per tester, which matters because
+ * the Studio page renders every tester on load.
+ *
+ * Returns an EMPTY map when Apple cannot be reached, never a map of guesses.
+ * Callers must show "unknown" rather than invent a state: this exists to catch
+ * the case where our own record says `invited` and Apple says NOT_INVITED, and
+ * a fabricated fallback would hide precisely that.
+ */
+export async function listGroupTesterStates(): Promise<
+  Map<string, { state: string; group: string; isInternal: boolean }>
+> {
+  const out = new Map<string, { state: string; group: string; isInternal: boolean }>();
+  const config = getAscConfig();
+  if (!config) return out;
+  try {
+    const groups = await ascFetch<BetaGroupsResponse>(
+      config,
+      `/v1/apps/${config.appId}/betaGroups?limit=200`,
+    );
+    for (const g of groups.data) {
+      const list = await ascFetch<{
+        data: Array<{ id: string; attributes?: { state?: string } }>;
+      }>(config, `/v1/betaGroups/${g.id}/betaTesters?limit=200`);
+      for (const t of list.data) {
+        out.set(t.id, {
+          state: t.attributes?.state ?? "UNKNOWN",
+          group: g.attributes?.name ?? "(unnamed)",
+          isInternal: Boolean(g.attributes?.isInternalGroup),
+        });
+      }
+    }
+    return out;
+  } catch (err) {
+    console.error("Could not read tester states:", err);
+    return out;
+  }
+}
+
 type BetaTesterResponse = { data: { id: string } };
 type BetaTestersListResponse = { data: Array<{ id: string }> };
 

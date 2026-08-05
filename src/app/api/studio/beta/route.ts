@@ -9,7 +9,7 @@ import { prisma } from "@/lib/prisma";
 import { requireBetaAdmin } from "@/lib/studioBetaAuth";
 import type { BetaRulesConfig } from "@/lib/betaRules";
 import { getBetaRules, saveBetaRules } from "@/lib/betaRulesConfig";
-import { checkAscCredentials, ensureBetaGroup } from "@/lib/appStoreConnect";
+import { checkAscCredentials, ensureBetaGroup, listGroupTesterStates } from "@/lib/appStoreConnect";
 import { countActiveTesters } from "@/lib/betaProgram";
 
 export const dynamic = "force-dynamic";
@@ -18,6 +18,15 @@ export const dynamic = "force-dynamic";
 // spam wave in the applicant table.
 const APPLICANT_LIMIT = 500;
 const FEEDBACK_LIMIT = 500;
+
+// Rows left behind by testing the program on itself. They are hidden rather
+// than deleted, and counted rather than silently dropped.
+//
+// Not cosmetic: one of them sits at `invited` with no Apple record, which is
+// exactly the condition the new "Blocked at Apple" alarm fires on. Left in, the
+// panel would show a permanent count of 1 for a person who does not exist, and
+// an alarm that is always on is an alarm nobody reads.
+const TEST_ROW = /betatest|postmigration|example\.com/i;
 
 export async function GET(req: NextRequest) {
   const check = await requireBetaAdmin();
@@ -29,7 +38,7 @@ export async function GET(req: NextRequest) {
   // when you open the health panel, not on every refresh.
   const wantHealth = req.nextUrl.searchParams.get("health") === "1";
 
-  const [applicants, feedback, releases, rules, activeTesters, health] = await Promise.all([
+  const [allApplicants, feedback, releases, rules, activeTesters, health, appleStates] = await Promise.all([
     prisma.betaSignup.findMany({
       orderBy: { createdAt: "desc" },
       take: APPLICANT_LIMIT,
@@ -46,7 +55,16 @@ export async function GET(req: NextRequest) {
     getBetaRules(),
     countActiveTesters(),
     wantHealth ? checkAscCredentials() : Promise.resolve(null),
+    // What APPLE holds, as opposed to what we decided. Not opt-in like the
+    // credential probe: the mismatch between the two is the whole reason this
+    // panel is worth opening. Our first real applicant sat at NOT_INVITED for
+    // a day while this page showed her as `invited` in green and her email
+    // told her to look for a message Apple had never sent.
+    listGroupTesterStates(),
   ]);
+
+  const applicants = allApplicants.filter((a) => !TEST_ROW.test(a.email));
+  const hiddenTestRows = allApplicants.length - applicants.length;
 
   // Real usage per tester, derived from UserMetric rather than kept as its own
   // column. A duplicated counter drifts the moment one write path forgets to
@@ -97,11 +115,23 @@ export async function GET(req: NextRequest) {
     }
   }
 
+  // An empty map means Apple could not be reached, not that nobody is a
+  // tester. Distinguishing the two matters: "unknown" is a prompt to look,
+  // while a blank state next to `invited` reads as confirmation.
+  const appleReachable = appleStates.size > 0;
+
   return NextResponse.json({
     applicants: applicants.map((a) => ({
       ...a,
       usage: a.clerkUserId ? (usage.get(a.clerkUserId) ?? null) : null,
+      apple: !a.ascTesterId
+        ? null
+        : appleReachable
+          ? (appleStates.get(a.ascTesterId) ?? { state: "GONE", group: "", isInternal: false })
+          : { state: "UNREACHABLE", group: "", isInternal: false },
     })),
+    appleReachable,
+    hiddenTestRows,
     feedback,
     releases,
     rules,

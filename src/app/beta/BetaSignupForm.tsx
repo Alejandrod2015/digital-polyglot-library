@@ -285,7 +285,7 @@ export default function BetaSignupForm() {
       return;
     }
     if (!form.appleIdEmail.trim()) {
-      setError("Please share the email tied to your Apple ID (we send the TestFlight invite there).");
+      setError("Please add the email your iPhone's App Store uses. Your invitation to install is sent there.");
       return;
     }
     if (!form.consent) {
@@ -467,7 +467,7 @@ export default function BetaSignupForm() {
 
       <div>
         <label htmlFor="appleIdEmail" className={labelStyle}>
-          Apple ID email
+          The email your iPhone&rsquo;s App Store uses
         </label>
         <input
           id="appleIdEmail"
@@ -477,10 +477,16 @@ export default function BetaSignupForm() {
           value={form.appleIdEmail}
           onChange={(e) => update("appleIdEmail", e.target.value)}
           className={inputStyle}
-          placeholder="apple-id@icloud.com"
+          placeholder="you@icloud.com"
         />
+        {/* Named by where to find it rather than by what Apple calls it. The
+            first applicant wrote from one address and had her App Store on
+            another, which is the normal case and the one that silently loses
+            an invitation: the invite goes to the App Store address, so asking
+            for "your email" would have got the wrong one. */}
         <p className={helperStyle}>
-          We send the TestFlight invite to your Apple ID. It can be the same as your contact email.
+          Your invitation to install the app is sent here, so it has to be this one. To check:
+          open Settings and tap your name at the top. It is the address underneath it.
         </p>
       </div>
 
@@ -656,7 +662,7 @@ export default function BetaSignupForm() {
       </div>
 
       <div>
-        <span className={labelStyle}>Hours per week you'll dedicate</span>
+        <span className={labelStyle}>Hours per week you&rsquo;ll dedicate</span>
         <div className="grid grid-cols-3 gap-2">
           {WEEKLY_HOURS.map((opt) => (
             <label key={opt.value} className={chipClass(form.weeklyHours === opt.value)}>
