@@ -387,85 +387,95 @@ export async function POST(req: Request) {
       interests: normalizedInterests,
     };
 
+    // ── Para BORRAR una preferencia se asigna `null`, nunca `delete` ──
+    //
+    // `updateUserMetadata` hace MERGE, no reemplazo: omitir una clave no la
+    // borra, la conserva. Con `delete` se podía CAMBIAR una preferencia pero
+    // nunca QUITARLA: la petición respondía 200 y el ajuste volvía como estaba.
+    //
+    // Medido en la app hermana (misma ruta para móvil) sobre un dispositivo
+    // real, en dos direcciones opuestas: el karaoke no se dejaba encender y el
+    // recordatorio diario no se dejaba apagar. Siempre falla el lado que borra.
+
     if (normalizedPreferredLevel) {
       updatedMetadata.preferredLevel = normalizedPreferredLevel;
     } else {
-      delete updatedMetadata.preferredLevel;
+      updatedMetadata.preferredLevel = null;
     }
 
     if (normalizedPreferredRegion) {
       updatedMetadata.preferredRegion = normalizedPreferredRegion;
     } else {
-      delete updatedMetadata.preferredRegion;
+      updatedMetadata.preferredRegion = null;
     }
 
     if (normalizedPreferredVariant) {
       updatedMetadata.preferredVariant = normalizedPreferredVariant;
     } else {
-      delete updatedMetadata.preferredVariant;
+      updatedMetadata.preferredVariant = null;
     }
 
     if (normalizedLearningGoal) {
       updatedMetadata.learningGoal = normalizedLearningGoal;
     } else {
-      delete updatedMetadata.learningGoal;
+      updatedMetadata.learningGoal = null;
     }
 
     if (normalizedJourneyFocus) {
       updatedMetadata.journeyFocus = normalizedJourneyFocus;
     } else {
-      delete updatedMetadata.journeyFocus;
+      updatedMetadata.journeyFocus = null;
     }
 
     if (normalizedDailyMinutes) {
       updatedMetadata.dailyMinutes = normalizedDailyMinutes;
     } else {
-      delete updatedMetadata.dailyMinutes;
+      updatedMetadata.dailyMinutes = null;
     }
 
     if (normalizedRemindersEnabled) {
       updatedMetadata.remindersEnabled = true;
     } else {
-      delete updatedMetadata.remindersEnabled;
+      updatedMetadata.remindersEnabled = null;
     }
 
     if (normalizedReminderHour) {
       updatedMetadata.reminderHour = normalizedReminderHour;
     } else {
-      delete updatedMetadata.reminderHour;
+      updatedMetadata.reminderHour = null;
     }
 
     if (typeof normalizedReminderMinute === "number") {
       updatedMetadata.reminderMinute = normalizedReminderMinute;
     } else {
-      delete updatedMetadata.reminderMinute;
+      updatedMetadata.reminderMinute = null;
     }
 
     if (normalizedJourneyPlacementLevel) {
       updatedMetadata.journeyPlacementLevel = normalizedJourneyPlacementLevel;
     } else {
-      delete updatedMetadata.journeyPlacementLevel;
+      updatedMetadata.journeyPlacementLevel = null;
     }
 
     if (normalizedOnboardingSurveyCompletedAt) {
       updatedMetadata.onboardingSurveyCompletedAt = normalizedOnboardingSurveyCompletedAt;
     } else {
-      delete updatedMetadata.onboardingSurveyCompletedAt;
+      updatedMetadata.onboardingSurveyCompletedAt = null;
     }
 
     if (normalizedOnboardingTourCompletedAt) {
       updatedMetadata.onboardingTourCompletedAt = normalizedOnboardingTourCompletedAt;
     } else {
-      delete updatedMetadata.onboardingTourCompletedAt;
+      updatedMetadata.onboardingTourCompletedAt = null;
     }
 
     if (validatedJourneys !== undefined) {
       if (validatedJourneys.length > 0) updatedMetadata.journeys = validatedJourneys;
-      else delete updatedMetadata.journeys;
+      else updatedMetadata.journeys = null;
     }
     if (validatedActiveJourneyId !== undefined) {
       if (validatedActiveJourneyId) updatedMetadata.activeJourneyId = validatedActiveJourneyId;
-      else delete updatedMetadata.activeJourneyId;
+      else updatedMetadata.activeJourneyId = null;
     }
 
     await clerkClient.users.updateUserMetadata(userId, {
