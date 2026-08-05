@@ -134,6 +134,35 @@ function shortenContext(input?: string, maxLength = 72): string | undefined {
   return `${clean.slice(0, maxLength - 1).trimEnd()}…`;
 }
 
+// Misma etiqueta de hablante que la web (`DIALOGUE_LABEL_REGEX` en
+// src/components/StoryContent.tsx): "Nombre:" al principio de línea, con
+// clases Unicode para que acepte acentos de cualquier idioma latino.
+const SPEAKER_LABEL_RE =
+  /^([\p{Lu}][\p{L}\p{M}.'-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'-]*){0,3}):\s+(.*\S)\s*$/u;
+
+/**
+ * En una historia de diálogo, CADA turno es un párrafo, lo separe el autor con
+ * un salto o con dos.
+ *
+ * La web ya lo hacía (`detectDialogueBlocks` parte por `\r?\n` a secas) y el
+ * móvil no: partía solo por `\n{2,}`, así que un bloque con seis turnos
+ * pegados con salto simple se renderizaba como un muro de texto. Ninguna
+ * historia PUBLICADA lo sufre hoy (0 de 147: todas separan con doble salto),
+ * pero las 21 del journey Hanseat sí, y cualquier historia futura que se
+ * escriba con salto simple caería en lo mismo sin avisar.
+ *
+ * Mismo umbral que la web: si menos del 40% de las líneas parecen turnos, esto
+ * es prosa corrida y no se toca, porque ahí el salto simple sí es un salto
+ * dentro del mismo párrafo.
+ */
+function splitDialogueTurns(part: string): string[] {
+  const lines = part.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+  if (lines.length < 2) return [part];
+  const labelled = lines.filter((l) => SPEAKER_LABEL_RE.test(l)).length;
+  if (labelled / lines.length < 0.4) return [part];
+  return lines;
+}
+
 function toBlocks(text: string | null | undefined): StoryBlock[] {
   // Defensa: aunque el tipado dice `string`, en runtime puede llegar
   // undefined (selection construida desde una story sin `text`
@@ -157,6 +186,7 @@ function toBlocks(text: string | null | undefined): StoryBlock[] {
   return text
     .replace(/<[^>]+>/g, "\n")
     .split(/\n{2,}/)
+    .flatMap((part) => splitDialogueTurns(part))
     .map((part) => stripInlineTags(part))
     .filter(Boolean)
     .map((part) => ({ type: "paragraph" as const, text: part }));
