@@ -42,7 +42,47 @@ function getFavoritesKey(userId?: string | null) {
   return `digital-polyglot/mobile-favorites/${userId ?? "guest"}`;
 }
 
+/**
+ * El caché local de favoritos vive en el SISTEMA DE ARCHIVOS, no en SecureStore.
+ *
+ * Estaba en SecureStore y NUNCA funcionó: en Android el límite es de 2048 bytes
+ * por valor y `setItemAsync` fallaba, con el error tragado por un catch
+ * silencioso. Medido con la cuenta real: 66 favoritos serializan a 29,5 KB,
+ * quince veces el límite. Consecuencia visible: sin red la práctica salía
+ * vacía ("No saved words yet") porque el caché estaba permanentemente vacío.
+ *
+ * Un favorito no es un secreto, es vocabulario: no hay motivo para el
+ * almacenamiento cifrado, y sí para uno que admita el tamaño real. Mismo
+ * patrón y misma raíz que `offlineStore`.
+ */
+const FAVORITES_ROOT = `${FileSystem.documentDirectory ?? ""}digital-polyglot`;
+
+function getFavoritesPath(userId?: string | null): string {
+  return `${FAVORITES_ROOT}/favorites-${userId ?? "guest"}.json`;
+}
+
+async function ensureFavoritesRoot(): Promise<void> {
+  const info = await FileSystem.getInfoAsync(FAVORITES_ROOT);
+  if (!info.exists) {
+    await FileSystem.makeDirectoryAsync(FAVORITES_ROOT, { intermediates: true });
+  }
+}
+
 export async function loadLocalFavorites(userId?: string | null): Promise<MobileFavoriteItem[]> {
+  try {
+    await ensureFavoritesRoot();
+    const path = getFavoritesPath(userId);
+    const info = await FileSystem.getInfoAsync(path);
+    if (info.exists) {
+      const raw = await FileSystem.readAsStringAsync(path);
+      const parsed = JSON.parse(raw) as unknown;
+      if (Array.isArray(parsed)) return parsed as MobileFavoriteItem[];
+    }
+  } catch {
+    // Cae al legacy de abajo.
+  }
+  // Legacy: lo poquísimo que cupo en SecureStore antes del cambio. Se lee una
+  // vez para no estrenar el caché vacío; el primer guardado ya va al archivo.
   try {
     const raw = await SecureStore.getItemAsync(getFavoritesKey(userId));
     if (!raw) return [];
@@ -58,9 +98,10 @@ export async function saveLocalFavorites(
   items: MobileFavoriteItem[]
 ): Promise<void> {
   try {
-    await SecureStore.setItemAsync(getFavoritesKey(userId), JSON.stringify(items));
+    await ensureFavoritesRoot();
+    await FileSystem.writeAsStringAsync(getFavoritesPath(userId), JSON.stringify(items));
   } catch {
-    // Best effort.
+    // Best effort: perder el caché solo degrada el offline, nunca la sesión.
   }
 }
 
