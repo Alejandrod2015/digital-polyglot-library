@@ -442,12 +442,16 @@ export async function POST(req: NextRequest): Promise<Response> {
     }
   }
 
-  // Solo se escribe cuando está APAGADO. Encendido es el defecto, así que
-  // guardar `true` sería ruido en la metadata de todo el mundo; borrar la clave
-  // deja la cuenta exactamente como estaba antes de que existiera el ajuste.
+  // Se escribe SIEMPRE el booleano, también cuando está encendido.
+  //
+  // La primera versión borraba la clave al encender, para no ensuciar la
+  // metadata de quien nunca tocó el ajuste. Bonito y roto: `updateUserMetadata`
+  // hace MERGE, no reemplazo, así que omitir una clave no la borra, la
+  // conserva. Resultado medido en el dispositivo: apagar funcionaba (escribe
+  // false) y encender no hacía nada (omitía la clave y Clerk mantenía el false),
+  // así que el toggle se apagaba y ya no volvía a encenderse nunca.
   if (karaokeEnabled !== undefined) {
-    if (karaokeEnabled) delete updatedMetadata.karaokeEnabled;
-    else updatedMetadata.karaokeEnabled = false;
+    updatedMetadata.karaokeEnabled = karaokeEnabled;
   }
 
   if (journeyPlacementLevel !== undefined) {
