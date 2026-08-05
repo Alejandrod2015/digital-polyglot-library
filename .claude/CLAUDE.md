@@ -54,6 +54,28 @@ decisions so the first attempt lands aligned. Do NOT grill trivial changes
 (copy tweaks, one-liners, clear asks). The user can always trigger it
 manually with `/grill`.
 
+## Recomendación única (BLOQUEANTE — hook `Stop`)
+
+**Nunca cierres un mensaje con un menú.** El usuario no quiere alternativas,
+quiere UNA recomendación sostenida. El cuerpo del mensaje puede exponer
+trade-offs; el CIERRE no.
+
+- Elige la opción que recomiendas y dila como decisión, no como pregunta.
+- Si necesitas confirmación, que sea SÍ/NO sobre esa única opción
+  (`¿Lo hago?`), nunca `¿esta o la otra?` / `¿cuál prefieres?` / `tú decides`.
+- Si el usuario tiene que decidir entre alternativas realmente equivalentes,
+  usa la herramienta `AskUserQuestion` (elección estructurada), no prosa.
+
+Enforced por `.claude/safety/stop-single-rec-guard.sh` (hook `Stop`): lee el
+último mensaje del asistente en el transcript y BLOQUEA el cierre (exit 2) si
+la última pregunta ofrece una elección. Sin variable de escape, a propósito.
+
+WHY: la regla llevaba tiempo en memoria y se rompía siempre igual, el cuerpo
+SÍ tomaba postura ("me inclino por lo primero") y la última línea la disolvía
+en un "¿Cuál?". El fallo no era de criterio sino de cierre, así que se bloquea
+el cierre. (Puesto el 2026-08-03 tras romperla ofreciendo "bajar el umbral del
+gate o re-tirar a mano".)
+
 ## Reporting status — no absolute claims
 
 **Never** declare a multi-item or multi-check task "done", "fully corrected",
