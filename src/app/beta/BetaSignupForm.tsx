@@ -144,7 +144,11 @@ function captureAttribution(): AttributionPayload {
 type FormState = {
   firstName: string;
   email: string;
+  // Which store the tester gets in through. Decides which account address the
+  // form asks for, so it has to be answered before that field is rendered.
+  platform: "ios" | "android" | "both" | "";
   appleIdEmail: string;
+  googleEmail: string;
   socialHandle: string;
   nativeLanguage: string;
   nativeLanguageOther: string;
@@ -153,7 +157,6 @@ type FormState = {
   targetVariant: string;
   targetVariantOther: string;
   currentLevel: string;
-  hasIPhone: "yes" | "no" | "";
   weeklyHours: string;
   motivation: string;
   motivationOther: string;
@@ -170,7 +173,9 @@ type FormState = {
 const initialState: FormState = {
   firstName: "",
   email: "",
+  platform: "",
   appleIdEmail: "",
+  googleEmail: "",
   socialHandle: "",
   nativeLanguage: "",
   nativeLanguageOther: "",
@@ -179,7 +184,6 @@ const initialState: FormState = {
   targetVariant: "",
   targetVariantOther: "",
   currentLevel: "",
-  hasIPhone: "",
   weeklyHours: "",
   motivation: "",
   motivationOther: "",
@@ -284,16 +288,25 @@ export default function BetaSignupForm() {
       setError("Please tell us your first name.");
       return;
     }
-    if (!form.appleIdEmail.trim()) {
+    if (!form.platform) {
+      setError("Please tell us which phone you'll be testing on.");
+      return;
+    }
+    const wantsIos = form.platform === "ios" || form.platform === "both";
+    const wantsAndroid = form.platform === "android" || form.platform === "both";
+    if (wantsIos && !form.appleIdEmail.trim()) {
       setError("Please add the email your iPhone's App Store uses. Your invitation to install is sent there.");
+      return;
+    }
+    // Not the same failure as a missing Apple ID, even though it reads alike.
+    // On Android access comes from a Google Group, so without this address
+    // there is no account to let in and the tester link would never work.
+    if (wantsAndroid && !form.googleEmail.trim()) {
+      setError("Please add the Google account your phone's Play Store uses. That is the one we let into the testers group.");
       return;
     }
     if (!form.consent) {
       setError("Please accept the privacy notice to continue.");
-      return;
-    }
-    if (!form.hasIPhone) {
-      setError("Please let us know whether you have an iPhone.");
       return;
     }
     const nativeLanguage = resolvedNativeLanguage();
@@ -340,7 +353,9 @@ export default function BetaSignupForm() {
         body: JSON.stringify({
           firstName: form.firstName.trim(),
           email: form.email,
-          appleIdEmail: form.appleIdEmail.trim(),
+          platform: form.platform,
+          appleIdEmail: wantsIos ? form.appleIdEmail.trim() : undefined,
+          googleEmail: wantsAndroid ? form.googleEmail.trim() : undefined,
           socialHandle: form.socialHandle.trim() || undefined,
           nativeLanguage,
           targetLanguage,
@@ -349,7 +364,10 @@ export default function BetaSignupForm() {
               ? form.targetVariantOther.trim()
               : form.targetVariant) || undefined,
           currentLevel: LEVELS.find((l) => l.value === form.currentLevel)?.label ?? form.currentLevel,
-          hasIPhone: form.hasIPhone === "yes",
+          // Kept for the rows and rules written before `platform` existed.
+          // Derived now instead of asked: a separate iPhone question next to a
+          // platform question is two ways to answer the same thing.
+          hasIPhone: wantsIos,
           weeklyHours: form.weeklyHours,
           motivation,
           referralSource,
@@ -465,30 +483,88 @@ export default function BetaSignupForm() {
         </div>
       </div>
 
+      {/* Asked here, above the account field, because it decides which account
+          field there is. Before this existed the form only ever asked for an
+          Apple ID, so every Android applicant looked like an iPhone one. */}
       <div>
-        <label htmlFor="appleIdEmail" className={labelStyle}>
-          The email your iPhone&rsquo;s App Store uses
-        </label>
-        <input
-          id="appleIdEmail"
-          type="email"
-          required
-          autoComplete="email"
-          value={form.appleIdEmail}
-          onChange={(e) => update("appleIdEmail", e.target.value)}
-          className={inputStyle}
-          placeholder="you@icloud.com"
-        />
-        {/* Named by where to find it rather than by what Apple calls it. The
-            first applicant wrote from one address and had her App Store on
-            another, which is the normal case and the one that silently loses
-            an invitation: the invite goes to the App Store address, so asking
-            for "your email" would have got the wrong one. */}
+        <span className={labelStyle}>Which phone will you test on?</span>
+        <div className="grid grid-cols-3 gap-2">
+          {(
+            [
+              { value: "ios", label: "iPhone" },
+              { value: "android", label: "Android" },
+              { value: "both", label: "Both" },
+            ] as const
+          ).map((opt) => (
+            <label key={opt.value} className={chipClass(form.platform === opt.value)}>
+              <input
+                type="radio"
+                name="platform"
+                value={opt.value}
+                checked={form.platform === opt.value}
+                onChange={() => update("platform", opt.value)}
+                className="sr-only"
+              />
+              {opt.label}
+            </label>
+          ))}
+        </div>
         <p className={helperStyle}>
-          Your invitation to install the app is sent here, so it has to be this one. To check:
-          open Settings and tap your name at the top. It is the address underneath it.
+          iPhone needs iOS 17 or newer. Android needs 8.0 or newer.
         </p>
       </div>
+
+      {(form.platform === "ios" || form.platform === "both") && (
+        <div>
+          <label htmlFor="appleIdEmail" className={labelStyle}>
+            The email your iPhone&rsquo;s App Store uses
+          </label>
+          <input
+            id="appleIdEmail"
+            type="email"
+            required
+            autoComplete="email"
+            value={form.appleIdEmail}
+            onChange={(e) => update("appleIdEmail", e.target.value)}
+            className={inputStyle}
+            placeholder="you@icloud.com"
+          />
+          {/* Named by where to find it rather than by what Apple calls it. The
+              first applicant wrote from one address and had her App Store on
+              another, which is the normal case and the one that silently loses
+              an invitation: the invite goes to the App Store address, so asking
+              for "your email" would have got the wrong one. */}
+          <p className={helperStyle}>
+            Your invitation to install the app is sent here, so it has to be this one. To check:
+            open Settings and tap your name at the top. It is the address underneath it.
+          </p>
+        </div>
+      )}
+
+      {(form.platform === "android" || form.platform === "both") && (
+        <div>
+          <label htmlFor="googleEmail" className={labelStyle}>
+            The Google account your phone&rsquo;s Play Store uses
+          </label>
+          <input
+            id="googleEmail"
+            type="email"
+            required
+            autoComplete="email"
+            value={form.googleEmail}
+            onChange={(e) => update("googleEmail", e.target.value)}
+            className={inputStyle}
+            placeholder="you@gmail.com"
+          />
+          {/* Same trap as the Apple field, but it fails more quietly: Google
+              never emails the tester, and a wrong account here just makes the
+              tester page say the app is not available, with no clue why. */}
+          <p className={helperStyle}>
+            Access is tied to this exact account, so it has to be the one your phone is signed in
+            with. To check: open the Play Store and tap your picture at the top right.
+          </p>
+        </div>
+      )}
 
       <div>
         <label htmlFor="socialHandle" className={labelStyle}>
@@ -639,26 +715,6 @@ export default function BetaSignupForm() {
             </label>
           ))}
         </div>
-      </div>
-
-      <div>
-        <span className={labelStyle}>Do you have an iPhone with iOS 17 or newer?</span>
-        <div className="grid grid-cols-2 gap-3">
-          {(["yes", "no"] as const).map((value) => (
-            <label key={value} className={chipClass(form.hasIPhone === value)}>
-              <input
-                type="radio"
-                name="hasIPhone"
-                value={value}
-                checked={form.hasIPhone === value}
-                onChange={() => update("hasIPhone", value)}
-                className="sr-only"
-              />
-              {value === "yes" ? "Yes" : "No"}
-            </label>
-          ))}
-        </div>
-        <p className={helperStyle}>The beta is iPhone-only for now.</p>
       </div>
 
       <div>

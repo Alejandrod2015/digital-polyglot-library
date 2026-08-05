@@ -18,6 +18,9 @@ type Applicant = {
   email: string;
   firstName: string | null;
   appleIdEmail: string | null;
+  /** ios | android | both. Rows from before the form asked are "ios". */
+  platform: string | null;
+  googleEmail: string | null;
   socialHandle: string | null;
   nativeLanguage: string;
   targetLanguage: string;
@@ -57,6 +60,31 @@ type Applicant = {
 };
 
 /**
+ * What GOOGLE holds. Per track, not per tester, and that asymmetry with Apple
+ * is real rather than an omission: Play grants access through membership of a
+ * Google Group that no API can read, and it emails the tester nothing. So the
+ * only thing that can be known is whether the track can serve anybody at all.
+ */
+type PlayState = {
+  configured: boolean;
+  packageName: string | null;
+  track: string;
+  groupEmail: string | null;
+  attachedGroups: string[];
+  groupAttached: boolean;
+  release: { status: string; name: string | null; versionCodes: string[] } | null;
+  optInUrl: string | null;
+  groupJoinUrl: string | null;
+  blockers: string[];
+  error: string | null;
+};
+
+function isAndroid(a: Applicant): boolean {
+  const p = (a.platform ?? "ios").toLowerCase();
+  return p === "android" || p === "both";
+}
+
+/**
  * Our status and Apple's state disagree in a way that hurts the tester.
  *
  * The case this exists for: we say `invited`, so the panel is green and the
@@ -75,6 +103,26 @@ function appleAlarm(a: Applicant): string | null {
   if (state === "GONE") return "Apple does not recognise the tester id we stored.";
   if (state === "NOT_INVITED") return "Apple has not sent the invitation. They are waiting for an email that does not exist.";
   return null;
+}
+
+/**
+ * The Android counterpart, and it can only ever fire for the whole cohort at
+ * once. There is no per-tester Google state to contradict us with, so the
+ * failure it catches is the one that actually happened on 2026-08-05: a tester
+ * holding a link to a track that has nothing published on it, seeing an empty
+ * grey card and concluding the app is broken.
+ */
+function playAlarm(a: Applicant, play: PlayState | null): string | null {
+  if (!isAndroid(a) || !play) return null;
+  if (a.status !== "invited" && a.status !== "accepted") return null;
+  if (play.blockers.length === 0) return null;
+  return `Android access is not working: ${play.blockers[0]}`;
+}
+
+function storeAlarm(a: Applicant, play: PlayState | null): string | null {
+  // iOS first: for a `both` tester the TestFlight path is the one we actually
+  // invited them down, so an Apple contradiction is the more direct problem.
+  return appleAlarm(a) ?? playAlarm(a, play);
 }
 
 type Feedback = {
@@ -139,6 +187,7 @@ type Payload = {
   /** Rows hidden because they are our own test artifacts. Shown as a footnote
    *  so a filtered panel never passes for a complete one. */
   hiddenTestRows: number;
+  play: PlayState | null;
   health: { ok: true; groups: Array<{ id: string; name: string; internal: boolean }> } | { ok: false; error: string } | null;
 };
 
@@ -233,6 +282,37 @@ function appleLabel(state: string): string {
   if (state === "UNREACHABLE") return "Apple unreachable";
   if (state === "GONE") return "unknown to Apple";
   return `Apple: ${state.toLowerCase().replace(/_/g, " ")}`;
+}
+
+/**
+ * Deliberately never says a tester is installed, accepted or invited on
+ * Android, because Google does not tell us any of those things. It describes
+ * the track, and the wording says so, so the pill cannot be misread as a
+ * per-person confirmation the way a green "invited" would be.
+ */
+function playLabel(play: PlayState | null): string {
+  if (!play) return "Play unknown";
+  if (!play.configured) return "Play not configured";
+  if (play.error) return "Play unreachable";
+  if (!play.groupEmail) return "Play: no group set";
+  if (!play.groupAttached) return "Play: group not on track";
+  if (!play.release) return `Play: no build on ${play.track}`;
+  return `Play: ${play.track} ready`;
+}
+
+function playPillStyle(play: PlayState | null): React.CSSProperties {
+  const ok = Boolean(play && play.configured && !play.error && play.blockers.length === 0);
+  const color = !play || !play.configured ? "#9aa7bd" : ok ? "#34d399" : "#f87171";
+  return {
+    display: "inline-block",
+    padding: "2px 10px",
+    borderRadius: 20,
+    fontSize: 11,
+    fontWeight: 600,
+    backgroundColor: `${color}26`,
+    color,
+    whiteSpace: "nowrap",
+  };
 }
 
 function applePill(state: string | undefined): React.CSSProperties {
@@ -368,6 +448,7 @@ export default function BetaProgramClient() {
         rules={data.rules}
         applicants={data.applicants}
         appleReachable={data.appleReachable}
+        play={data.play}
       />
 
       {flash && (
@@ -406,7 +487,12 @@ export default function BetaProgramClient() {
         />
       )}
 
-      {tab === "testers" && <Testers testers={testers} busy={busy} onAction={applicantAction} />}
+      {tab === "testers" && (
+        <>
+          <PlayTrackPanel play={data.play} onDone={load} />
+          <Testers testers={testers} busy={busy} onAction={applicantAction} play={data.play} />
+        </>
+      )}
 
       {tab === "feedback" && (
         <FeedbackList
@@ -435,21 +521,33 @@ function StatBar({
   rules,
   applicants,
   appleReachable,
+  play,
 }: {
   stats: Payload["stats"];
   rules: Rules;
   applicants: Applicant[];
   appleReachable: boolean;
+  play: PlayState | null;
 }) {
   // Surfaced at the top rather than only inside the Testers tab, because the
   // failure it names is invisible everywhere else: for a tester stuck at
   // NOT_INVITED every other indicator on this page reads perfectly healthy.
   const blocked = applicants.filter((a) => appleAlarm(a) !== null).length;
+  // Its own tile rather than folded into the Apple count. The two fail for
+  // opposite reasons: Apple blocks one tester at a time, Google blocks the
+  // whole Android cohort at once, and a single merged number would hide which
+  // of those is happening.
+  const blockedAndroid = applicants.filter((a) => playAlarm(a, play) !== null).length;
   const items = [
     { label: "Active testers", value: `${stats.activeTesters} / ${rules.maxActiveTesters}` },
     { label: "Needs review", value: String((stats.byStatus.waitlist ?? 0) + (stats.byStatus.pending ?? 0)) },
     { label: "Open feedback", value: String(stats.openFeedback) },
     { label: "Blocked at Apple", value: appleReachable ? String(blocked) : "?", alarm: blocked > 0 },
+    {
+      label: "Blocked at Google",
+      value: play?.configured ? String(blockedAndroid) : "?",
+      alarm: blockedAndroid > 0,
+    },
     { label: "Auto-invite", value: rules.autoInviteEnabled ? "On" : "Off" },
   ];
   return (
@@ -467,6 +565,112 @@ function StatBar({
           </div>
         </div>
       ))}
+    </div>
+  );
+}
+
+/* ── android track state ── */
+
+/**
+ * The Android third state, shown once above the tester list instead of once
+ * per row, because that is the shape of the truth: there is no per-tester
+ * Google state to show.
+ *
+ * It exists because of a specific failure. On 2026-08-05 a tester was sent a
+ * Play testing link and got an empty grey card, and answering "why" took an
+ * API probe: the link was fine, the track had a build, and she was simply
+ * opening it inside the Play Store app instead of a browser. Every fact needed
+ * to reach that answer in ten seconds is on this card.
+ */
+function PlayTrackPanel({ play, onDone }: { play: PlayState | null; onDone: () => void }) {
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState<string | null>(null);
+
+  if (!play) return null;
+
+  const ok = play.configured && !play.error && play.blockers.length === 0;
+
+  async function attach() {
+    setBusy(true);
+    setMsg(null);
+    try {
+      const res = await fetch("/api/studio/beta?target=play", { method: "POST" });
+      const body = (await res.json().catch(() => ({}))) as { error?: string; changed?: boolean };
+      setMsg(
+        res.ok
+          ? body.changed
+            ? "Group attached to the track."
+            : "The group was already on the track."
+          : `Failed: ${body.error ?? res.status}`,
+      );
+      if (res.ok) onDone();
+    } catch (err) {
+      setMsg(`Failed: ${String(err)}`);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <div style={{ ...card, borderColor: ok ? "var(--card-border)" : "#f8717155" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
+        <div>
+          <div style={{ fontWeight: 700, fontSize: 14 }}>
+            Android access{" "}
+            <span style={playPillStyle(play)}>{playLabel(play)}</span>
+          </div>
+          <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 4 }}>
+            {play.packageName ?? "no package"} · track {play.track} ·{" "}
+            {play.release
+              ? `build ${play.release.versionCodes.join(", ") || "?"} (${play.release.status})`
+              : "no build published"}
+          </div>
+          {/* Stated on the panel, not just in a comment, because the natural
+              reading of a beta panel is that a green row means a given person
+              is in. On Android nobody can know that. */}
+          <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 6, fontStyle: "italic" }}>
+            Google never reports who joined and never emails the tester. This describes the track,
+            not any one person.
+          </div>
+          {play.blockers.length > 0 && (
+            <ul style={{ margin: "8px 0 0", paddingLeft: 18, fontSize: 12, color: "#f87171" }}>
+              {play.blockers.map((b) => (
+                <li key={b} style={{ marginBottom: 3 }}>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          )}
+          {msg && <div style={{ fontSize: 12, marginTop: 8, color: "var(--muted)" }}>{msg}</div>}
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 6, alignItems: "flex-end" }}>
+          {play.groupEmail && !play.groupAttached && (
+            <button style={btn} disabled={busy} onClick={attach}>
+              {busy ? "Attaching..." : "Attach group to track"}
+            </button>
+          )}
+          {play.groupJoinUrl && (
+            <a
+              href={play.groupJoinUrl}
+              target="_blank"
+              rel="noreferrer"
+              style={{ fontSize: 11, color: ACCENT }}
+            >
+              Testers group
+            </a>
+          )}
+          {play.optInUrl && (
+            <a
+              href={play.optInUrl}
+              target="_blank"
+              rel="noreferrer"
+              style={{ fontSize: 11, color: ACCENT }}
+            >
+              Opt-in link
+            </a>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
@@ -559,10 +763,12 @@ function Testers({
   testers,
   busy,
   onAction,
+  play,
 }: {
   testers: Applicant[];
   busy: string | null;
   onAction: (id: string, action: string, extra?: Record<string, unknown>) => Promise<void>;
+  play: PlayState | null;
 }) {
   if (testers.length === 0) {
     return <div style={{ ...card, color: "var(--muted)", fontSize: 13 }}>No testers yet.</div>;
@@ -577,7 +783,7 @@ function Testers({
         // An outright contradiction with Apple outranks "invited but idle":
         // one means they cannot get in at all, the other that they have not
         // bothered yet.
-        const alarm = appleAlarm(t);
+        const alarm = storeAlarm(t, play);
         return (
           <div
             key={t.id}
@@ -628,9 +834,17 @@ function Testers({
                     single merged status would have to pick one to believe,
                     and picking ours is the mistake this is here to expose. */}
                 <span style={pill(t.status)}>{t.status}</span>
-                <span style={applePill(t.apple?.state)}>
-                  {t.apple ? appleLabel(t.apple.state) : "not with Apple"}
-                </span>
+                {/* Whichever store this tester actually goes through. Showing
+                    "not with Apple" against an Android-only tester was the
+                    first version, and it read as a fault when it was just the
+                    wrong question. */}
+                {isAndroid(t) && (t.platform ?? "ios").toLowerCase() === "android" ? (
+                  <span style={playPillStyle(play)}>{playLabel(play)}</span>
+                ) : (
+                  <span style={applePill(t.apple?.state)}>
+                    {t.apple ? appleLabel(t.apple.state) : "not with Apple"}
+                  </span>
+                )}
                 <button style={dangerBtn} disabled={busy === t.id} onClick={() => onAction(t.id, "remove")}>
                   Remove access
                 </button>

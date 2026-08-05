@@ -19,6 +19,12 @@ import {
   getTesterState,
   sendTesterInvitation,
 } from "@/lib/appStoreConnect";
+import {
+  getPlayBetaState,
+  playGroupJoinUrl,
+  playOptInUrl,
+  isPlayBetaConfigured,
+} from "@/lib/googlePlayBeta";
 import { evaluateApplication, type BetaVerdict } from "@/lib/betaRules";
 import { getBetaRules } from "@/lib/betaRulesConfig";
 import { BETA_EMAIL_BUILDERS, type BetaEmailKind, type BetaEmailData } from "@/lib/emails/beta";
@@ -43,6 +49,7 @@ const ACTIVE_STATUSES = ["invited", "accepted"];
  */
 const TRANSACTIONAL_KINDS = new Set<BetaEmailKind>([
   "accepted",
+  "accepted_android",
   "waitlist",
   "declined",
   "install_nudge",
@@ -106,7 +113,7 @@ async function recordProviderId(
  */
 export async function sendBetaEmail(args: {
   kind: BetaEmailKind;
-  signup: Pick<BetaSignup, "id" | "email" | "firstName" | "targetLanguage">;
+  signup: Pick<BetaSignup, "id" | "email" | "firstName" | "targetLanguage" | "platform">;
   data?: BetaEmailData;
   releaseId?: string;
 }): Promise<BetaSendResult> {
@@ -151,6 +158,17 @@ export async function sendBetaEmail(args: {
     baseUrl: betaBaseUrl(),
     firstName: signup.firstName,
     targetLanguage: signup.targetLanguage,
+    // Derived here rather than passed by each caller. The lifecycle emails
+    // name a store ("open TestFlight and tap Update"), and a caller that
+    // forgets this argument does not fail loudly: it silently sends an Android
+    // tester an instruction for an app they do not have. One place to get it
+    // right beats five places to get it wrong.
+    platform: invitePlatform(signup.platform),
+    // Derived from env, not from Play, so this stays free to compute inside a
+    // loop that sends to every tester. The live-state versions passed by
+    // `inviteAndroidApplicant` override these, because `args.data` spreads last.
+    playOptInUrl: playOptInUrl(),
+    playGroupJoinUrl: playGroupJoinUrl(),
     unsubscribeToken,
     ...args.data,
   });
@@ -221,6 +239,7 @@ export async function processApplication(signupId: string): Promise<ApplicationO
     {
       email: signup.email,
       appleIdEmail: signup.appleIdEmail,
+      googleEmail: signup.googleEmail,
       platform: signup.platform,
       hasIPhone: signup.hasIPhone,
       targetLanguage: signup.targetLanguage,
@@ -297,9 +316,93 @@ export type InviteOutcome = {
  * A failed Apple call leaves the row in `waitlist` with the reason recorded,
  * so it shows up in the Studio as something to retry rather than vanishing.
  */
+/** ios | android | both, normalised. Anything unrecognised is iOS by history. */
+export function invitePlatform(platform: string | null | undefined): "ios" | "android" {
+  const p = (platform ?? "ios").toLowerCase();
+  // `both` goes down the iOS path on purpose. Someone with two devices is
+  // better tested on TestFlight: Apple delivers the invite itself, and the
+  // Android flow costs the tester two manual steps for no extra signal.
+  return p === "android" ? "android" : "ios";
+}
+
+/**
+ * The Android half of `inviteApplicant`.
+ *
+ * There is no per-tester call to make. Google has no equivalent of Apple's
+ * betaTesters resource: access comes from being in a Google Group that is
+ * attached to the track, and our consumer group cannot be written to by any
+ * API. So "inviting" is exactly one thing: sending the mail that carries the
+ * join link and the opt-in link.
+ *
+ * Which is why this function refuses to send when the track is not ready. An
+ * acceptance email whose links lead to an empty grey card is worse than no
+ * email: the tester assumes the app is broken and does not come back. That is
+ * not hypothetical, it is what happened to the first Android tester on
+ * 2026-08-05, before any of this existed.
+ */
+async function inviteAndroidApplicant(signup: BetaSignup): Promise<InviteOutcome> {
+  // Held rather than failed, and the applicant is told so. Nothing about them
+  // is wrong; the track is not ready. Silence would be the wrong answer to a
+  // form they just filled in, and until Android has a published build this is
+  // the COMMON path, not the rare one. The Studio shows the real reason as one
+  // banner over the whole Android cohort, so it is not stamped per row.
+  async function hold(error: string): Promise<InviteOutcome> {
+    console.warn(`⏸️ Android invite held for ${signup.email}: ${error}`);
+    const emailed = await waitlistApplicant(signup.id);
+    return { invited: false, status: "waitlist", error, emailed };
+  }
+
+  if (!isPlayBetaConfigured()) {
+    return hold(
+      "Google Play is not configured (GOOGLE_PLAY_SERVICE_ACCOUNT_EMAIL / GOOGLE_PLAY_SERVICE_ACCOUNT_PRIVATE_KEY / GOOGLE_PLAY_PACKAGE_NAME)",
+    );
+  }
+
+  const state = await getPlayBetaState();
+  if (state.blockers.length > 0) {
+    return hold(state.blockers.join(" "));
+  }
+
+  await prisma.betaSignup.update({
+    where: { id: signup.id },
+    data: { status: "invited", invitedAt: signup.invitedAt ?? new Date() },
+  });
+
+  const emailed = await sendBetaEmail({
+    kind: "accepted_android",
+    signup,
+    data: {
+      personalNote: signup.personalNote,
+      playOptInUrl: state.optInUrl,
+      playGroupJoinUrl: state.groupJoinUrl,
+    },
+  });
+  return { invited: true, status: "invited", error: null, emailed };
+}
+
 export async function inviteApplicant(signupId: string): Promise<InviteOutcome> {
   const signup = await prisma.betaSignup.findUnique({ where: { id: signupId } });
   if (!signup) throw new Error(`BetaSignup ${signupId} not found`);
+
+  if (invitePlatform(signup.platform) === "android") {
+    // Re-sending is the whole retry story on Android: there is no group
+    // membership to check and no invitation for Apple to have swallowed. The
+    // ledger keeps the second call from mailing twice.
+    if (signup.status === "invited" || signup.status === "accepted") {
+      const state = await getPlayBetaState();
+      const emailed = await sendBetaEmail({
+        kind: "accepted_android",
+        signup,
+        data: {
+          personalNote: signup.personalNote,
+          playOptInUrl: state.optInUrl ?? playOptInUrl(),
+          playGroupJoinUrl: state.groupJoinUrl ?? playGroupJoinUrl(),
+        },
+      });
+      return { invited: true, status: signup.status, error: null, emailed };
+    }
+    return inviteAndroidApplicant(signup);
+  }
 
   // Already invited by us. Do not add them to the group twice, but DO make
   // sure Apple actually invited them: being in the group is not the same as
@@ -403,6 +506,12 @@ export async function declineApplicant(
 /**
  * Removes a tester from TestFlight and takes back the temporary plan. Used
  * when you kick someone, and by the close-the-beta script for everyone.
+ *
+ * On Android only the plan half runs. Access there is group membership in a
+ * consumer Google Group that no API can write to, so revoking it means either
+ * removing the member by hand in groups.google.com or unpublishing the track
+ * for everyone. Taking the plan back is what actually ends the perk, and it is
+ * the half that matters.
  */
 export async function removeTesterAccess(
   signupId: string,
@@ -453,7 +562,10 @@ export async function linkClerkUserToBetaSignup(args: {
   const email = args.email.trim().toLowerCase();
   const signup = await prisma.betaSignup.findFirst({
     where: {
-      OR: [{ email }, { appleIdEmail: email }],
+      // `googleEmail` belongs here for the same reason `appleIdEmail` does: an
+      // Android tester signs in with the Google account they joined the group
+      // with far more often than with the address they typed on the form.
+      OR: [{ email }, { appleIdEmail: email }, { googleEmail: email }],
       status: { in: ACTIVE_STATUSES },
     },
   });

@@ -116,6 +116,8 @@ const LOW_EFFORT_MARKERS = [
 export type BetaApplication = {
   email: string;
   appleIdEmail?: string | null;
+  /** Google account the Android tester joins the testers group with. */
+  googleEmail?: string | null;
   platform?: string | null;
   hasIPhone: boolean;
   targetLanguage: string;
@@ -256,6 +258,7 @@ export function evaluateApplication(
   // ── Hard gates ──
   const platform = (app.platform ?? "ios").toLowerCase();
   const wantsIos = platform === "ios" || platform === "both";
+  const wantsAndroid = platform === "android" || platform === "both";
 
   if (DISPOSABLE_DOMAINS.has(emailDomain(app.email))) {
     return {
@@ -266,11 +269,14 @@ export function evaluateApplication(
     };
   }
 
-  if (wantsIos && !app.hasIPhone) {
+  // Applied for iOS without an iPhone. Since Android joined the beta this is
+  // no longer "the beta is iOS-only", it is a contradiction inside one
+  // application, so it stays a decline: there is no device to test on.
+  if (wantsIos && !wantsAndroid && !app.hasIPhone) {
     return {
       decision: "auto_decline",
       score: 0,
-      reason: "No iPhone, and the beta is iOS-only right now",
+      reason: "Applied for the iOS beta without an iPhone",
       signals: [{ label: "No iPhone", points: 0 }],
     };
   }
@@ -283,6 +289,19 @@ export function evaluateApplication(
       score: 0,
       reason: "No Apple ID on file, so the invite has nowhere to go",
       signals: [{ label: "Missing Apple ID", points: 0 }],
+    };
+  }
+
+  // The Android mirror of the Apple ID gate, and it bites harder. Play grants
+  // access by Google Group membership, so the tester link is useless unless we
+  // know which Google account is supposed to join. Queue, same as above: a
+  // missing field is a question to ask, not a reason to turn someone away.
+  if (wantsAndroid && !wantsIos && !app.googleEmail?.trim()) {
+    return {
+      decision: "queue",
+      score: 0,
+      reason: "No Google account on file, so there is nobody to let into the testers group",
+      signals: [{ label: "Missing Google account", points: 0 }],
     };
   }
 

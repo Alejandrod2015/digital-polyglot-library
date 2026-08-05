@@ -10,6 +10,7 @@ import { requireBetaAdmin } from "@/lib/studioBetaAuth";
 import type { BetaRulesConfig } from "@/lib/betaRules";
 import { getBetaRules, saveBetaRules } from "@/lib/betaRulesConfig";
 import { checkAscCredentials, ensureBetaGroup, listGroupTesterStates } from "@/lib/appStoreConnect";
+import { attachTesterGroup, getPlayBetaState } from "@/lib/googlePlayBeta";
 import { countActiveTesters } from "@/lib/betaProgram";
 
 export const dynamic = "force-dynamic";
@@ -38,7 +39,7 @@ export async function GET(req: NextRequest) {
   // when you open the health panel, not on every refresh.
   const wantHealth = req.nextUrl.searchParams.get("health") === "1";
 
-  const [allApplicants, feedback, releases, rules, activeTesters, health, appleStates] = await Promise.all([
+  const [allApplicants, feedback, releases, rules, activeTesters, health, appleStates, play] = await Promise.all([
     prisma.betaSignup.findMany({
       orderBy: { createdAt: "desc" },
       take: APPLICANT_LIMIT,
@@ -61,6 +62,23 @@ export async function GET(req: NextRequest) {
     // a day while this page showed her as `invited` in green and her email
     // told her to look for a message Apple had never sent.
     listGroupTesterStates(),
+    // The Android third state. Deliberately NOT per tester: Google exposes no
+    // membership of a consumer group and mails the tester nothing, so the only
+    // honest thing to show is whether the TRACK can serve anybody at all. A
+    // per-row green tick here would be fiction.
+    getPlayBetaState().catch((err) => ({
+      configured: false,
+      packageName: null,
+      track: "beta",
+      groupEmail: null,
+      attachedGroups: [] as string[],
+      groupAttached: false,
+      release: null,
+      optInUrl: null,
+      groupJoinUrl: null,
+      blockers: [`Play could not be read: ${err instanceof Error ? err.message : String(err)}`],
+      error: err instanceof Error ? err.message : String(err),
+    })),
   ]);
 
   const applicants = allApplicants.filter((a) => !TEST_ROW.test(a.email));
@@ -131,6 +149,7 @@ export async function GET(req: NextRequest) {
           : { state: "UNREACHABLE", group: "", isInternal: false },
     })),
     appleReachable,
+    play,
     hiddenTestRows,
     feedback,
     releases,
@@ -151,11 +170,22 @@ export async function GET(req: NextRequest) {
 // only write this route makes against Apple. Kept here rather than made a
 // setup step in a document, because a setup step in a document is one that
 // eventually gets done wrong.
-export async function POST() {
+export async function POST(req: NextRequest) {
   const check = await requireBetaAdmin();
   if ("error" in check) {
     return NextResponse.json({ error: check.error }, { status: check.status });
   }
+
+  // `?target=play` attaches the Google Group to the closed testing track. It
+  // is the single write this codebase ever makes against Play, it is
+  // idempotent, and it is here for the same reason the TestFlight one is: a
+  // setup step that lives in a document is a setup step that eventually gets
+  // done wrong.
+  if (req.nextUrl.searchParams.get("target") === "play") {
+    const result = await attachTesterGroup();
+    return NextResponse.json(result, { status: result.ok ? 200 : 502 });
+  }
+
   const result = await ensureBetaGroup();
   return NextResponse.json(result, { status: result.ok ? 200 : 502 });
 }

@@ -66,7 +66,9 @@ type AttributionInput = {
 type Body = {
   firstName?: unknown;
   email?: unknown;
+  platform?: unknown;
   appleIdEmail?: unknown;
+  googleEmail?: unknown;
   socialHandle?: unknown;
   nativeLanguage?: unknown;
   targetLanguage?: unknown;
@@ -178,6 +180,16 @@ export async function POST(req: NextRequest) {
   const firstName = asTrimmedString(body.firstName, 80);
   const email = asTrimmedString(body.email, 200)?.toLowerCase();
   const appleIdEmail = asTrimmedString(body.appleIdEmail, 200)?.toLowerCase();
+  const googleEmail = asTrimmedString(body.googleEmail, 200)?.toLowerCase();
+  // Rows written before the form asked are iOS by construction: back then the
+  // form demanded an Apple ID and nothing else would have got through.
+  const rawPlatform = asTrimmedString(body.platform, 20)?.toLowerCase();
+  const platform =
+    rawPlatform === "android" || rawPlatform === "both" || rawPlatform === "ios"
+      ? rawPlatform
+      : "ios";
+  const wantsIos = platform === "ios" || platform === "both";
+  const wantsAndroid = platform === "android" || platform === "both";
   const socialHandle = asTrimmedString(body.socialHandle, 200);
   const nativeLanguage = asTrimmedString(body.nativeLanguage, 100);
   const targetLanguage = asTrimmedString(body.targetLanguage, 100);
@@ -206,8 +218,10 @@ export async function POST(req: NextRequest) {
   // porque TS pierde la inferencia tras el chain `?.toLowerCase()`.
   const profileExtras: Record<string, string> = {
     firstName: firstName as string,
-    appleIdEmail: appleIdEmail as string,
+    platform,
   };
+  if (appleIdEmail) profileExtras.appleIdEmail = appleIdEmail;
+  if (googleEmail) profileExtras.googleEmail = googleEmail;
   if (socialHandle) profileExtras.socialHandle = socialHandle;
   const mergedAttribution: Record<string, string> = {
     ...clientAttribution,
@@ -223,9 +237,15 @@ export async function POST(req: NextRequest) {
   if (!email || !EMAIL_REGEX.test(email)) {
     return NextResponse.json({ error: "Valid email is required" }, { status: 400 });
   }
-  if (!appleIdEmail || !EMAIL_REGEX.test(appleIdEmail)) {
+  if (wantsIos && (!appleIdEmail || !EMAIL_REGEX.test(appleIdEmail))) {
     return NextResponse.json(
       { error: "Valid Apple ID email is required (TestFlight invites go there)" },
+      { status: 400 },
+    );
+  }
+  if (wantsAndroid && (!googleEmail || !EMAIL_REGEX.test(googleEmail))) {
+    return NextResponse.json(
+      { error: "Valid Google account is required (it is what gets let into the testers group)" },
       { status: 400 },
     );
   }
@@ -276,7 +296,9 @@ export async function POST(req: NextRequest) {
       // and the TestFlight invite read these on every row. They stay in
       // `attribution` too so the older Studio view keeps rendering.
       firstName,
+      platform,
       appleIdEmail,
+      googleEmail,
       socialHandle,
       targetVariant,
     },

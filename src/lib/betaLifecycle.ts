@@ -129,6 +129,9 @@ export async function runBetaLifecycle(now: Date = new Date()): Promise<BetaLife
       email: true,
       firstName: true,
       targetLanguage: true,
+      // Needed by every send: the lifecycle emails name a store, and naming
+      // the wrong one is worse than saying nothing.
+      platform: true,
       status: true,
       invitedAt: true,
       planGrantedAt: true,

@@ -26,6 +26,12 @@ import type { BuiltEmail } from "./lifecycle";
 
 export type BetaEmailKind =
   | "accepted"
+  // Android gets its own acceptance mail rather than a branch inside the iOS
+  // one. The two flows share no step: Apple emails the tester an invitation
+  // and TestFlight does the rest, while Google emails nothing and the tester
+  // has to join a group and opt in by hand. Merging them produced an email
+  // that hedged on every line.
+  | "accepted_android"
   | "waitlist"
   | "declined"
   | "install_nudge"
@@ -43,6 +49,20 @@ export type BetaEmailData = {
   targetLanguage?: string | null;
   /** Public TestFlight redeem page. Apple sends its own invite too. */
   testflightUrl?: string | null;
+  /**
+   * Android opt-in page for the closed track. Google sends the tester nothing,
+   * so this link IS the invitation: without it the acceptance email is empty.
+   */
+  playOptInUrl?: string | null;
+  /** Google Group the tester has to join before the opt-in page works. */
+  playGroupJoinUrl?: string | null;
+  /**
+   * Which store THIS recipient installs through. Only the lifecycle emails
+   * need it, and they need it badly: "open TestFlight and tap Update" is not
+   * merely unhelpful to an Android tester, it is an instruction they cannot
+   * follow, which reads as the program not knowing who they are.
+   */
+  platform?: "ios" | "android";
   /** Where the in-app feedback / survey form lives for this tester. */
   feedbackUrl?: string | null;
   /** App Store review deep link, used only after a high final rating. */
@@ -218,6 +238,127 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
   };
 }
 
+/* ══════════════════════════════════════════ 1b · ACCEPTED (ANDROID) */
+// Google tells the tester nothing, so this email is the entire invitation.
+// It also has to defuse the two traps that eat Android testers before they
+// ever see the app, both of which cost a real tester on 2026-08-05:
+//   - Tapping the opt-in link from a chat app hands it to the Play Store app,
+//     which cannot render that page and shows an empty grey card.
+//   - The Google account that joined the group has to be the one the phone's
+//     Play Store is signed in with, and people rarely have only one.
+export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail {
+  const b = base(data);
+  const name = firstNameOr(data, "there");
+  const lang = data?.targetLanguage?.trim() || "your language";
+  const joinUrl = data?.playGroupJoinUrl ?? null;
+  const optInUrl = data?.playOptInUrl ?? null;
+
+  const stepList = [
+    ...(joinUrl
+      ? ["Join the testers group with the Google account you use on your phone. One tap, no forms."]
+      : []),
+    "Open the tester link in Chrome. If tapping it opens the Play Store app and you get an empty grey card, copy the link and paste it into Chrome instead.",
+    "Tap Become a tester, then Download it on Google Play. The first time it can take a few minutes to appear.",
+    "Sign in to the app with this email address.",
+  ];
+
+  const steps = card(`${cardTitle("Getting in takes three minutes")}${bullets(stepList)}`);
+
+  // The single most common failure is an account mismatch, and it produces no
+  // error message at all: the page just says the app is not available. Naming
+  // it up front is cheaper than answering the same email five times.
+  const accountWarning = card(
+    `${cardTitle("The one thing that goes wrong", DPE.sky)}
+    <p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
+      If the page says the app is not available, you are almost certainly signed in with a different Google account than the one that joined the group. Check the avatar at the top right of Chrome, switch accounts, and open the link again.
+    </p>`,
+    "rgba(125,211,252,0.3)",
+  );
+
+  const perks = card(
+    `${cardTitle("What you get", DPE.gold)}
+    ${bullets(
+      [
+        "Full premium access for the whole beta. Every journey, every story, every voice.",
+        "Your reports go straight to the person building the app, and you get told when they ship.",
+      ],
+      "gold",
+    )}`,
+    "rgba(252,211,77,0.3)",
+  );
+
+  const ask = card(
+    `${cardTitle("What I need from you", DPE.sky)}
+    <p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
+      Use it the way you would actually use it. When something breaks, confuses you, or feels slow, tap ${hi("Send feedback")} in Settings. It takes one line. I read every single one.
+    </p>`,
+    "rgba(125,211,252,0.3)",
+  );
+
+  const personal = data?.personalNote?.trim()
+    ? `<div style="border-left:3px solid ${DPE.gold};padding:2px 0 2px 16px;text-align:left;">
+        <p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:16px;line-height:1.65;color:${DPE.fg};">${esc(
+          data.personalNote.trim(),
+        )}</p>
+      </div>`
+    : "";
+
+  const blocks = [
+    block(
+      `${eyebrow("You're in")}${head(`Welcome to the<br/>${gold("beta")}, ${esc(name)}.`, 40)}${lead(
+        `You are testing ${esc(lang)}, with everything unlocked. Google does not send an invite of its own, so everything you need is right here.`,
+      )}`,
+      "40px 44px 0",
+    ),
+    ...(personal ? [block(personal, "26px 44px 0", false)] : []),
+    block(steps, "28px 44px 0", false),
+    ...(joinUrl ? [block(cta("Join the testers group", joinUrl), "24px 44px 0")] : []),
+    ...(optInUrl
+      ? [block(joinUrl ? ctaSecondary("Open the tester link", optInUrl) : cta("Open the tester link", optInUrl), "12px 44px 0")]
+      : []),
+    block(accountWarning, "24px 44px 0", false),
+    block(perks, "16px 44px 0", false),
+    block(ask, "16px 44px 0", false),
+    block(
+      note("Stuck at any step, reply to this email and tell me what the screen says. Android's testing flow is genuinely fiddly and it is not your fault."),
+      "8px 44px 0",
+    ),
+  ];
+
+  return {
+    subject: "You're in: here is your Android tester link",
+    html: shell({
+      preheader: "Join the group, open the link in Chrome, install.",
+      blocks,
+      baseUrl: b,
+      assetBase: assetBase(data),
+      unsubscribeToken: data?.unsubscribeToken,
+    }),
+    text: [
+      `Welcome to the beta, ${name}.`,
+      "",
+      ...(data?.personalNote?.trim() ? [data.personalNote.trim(), ""] : []),
+      `You are testing ${lang}, with everything unlocked. Google does not send an invite of its own, so everything you need is in this email.`,
+      "",
+      "Getting in takes three minutes:",
+      ...stepList.map((s, i) => `  ${i + 1}. ${s}`),
+      "",
+      ...(joinUrl ? [`Testers group: ${joinUrl}`] : []),
+      ...(optInUrl ? [`Tester link: ${optInUrl}`] : []),
+      "",
+      "The one thing that goes wrong: if the page says the app is not available, you are signed in with a different Google account than the one that joined the group. Check the avatar at the top right of Chrome and switch.",
+      "",
+      "What you get: full premium access for the whole beta, and a direct line to the person building it.",
+      "",
+      "What I need: use it the way you actually would. When something breaks or confuses you, tap Send feedback in Settings. One line is enough. I read every one.",
+      "",
+      "Stuck at any step, reply and tell me what the screen says.",
+      "",
+      "Digital Polyglot",
+    ].join("\n"),
+  };
+}
+
 /* ══════════════════════════════════════════════ 2 · WAITLIST */
 // Honest about the reason. A waitlist email that pretends to be an acceptance
 // burns the applicant twice.
@@ -324,34 +465,54 @@ export function buildBetaDeclinedEmail(data?: BetaEmailData): BuiltEmail {
 export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
+  const android = data?.platform === "android";
   const tfUrl = data?.testflightUrl ?? "https://apps.apple.com/app/testflight/id899247664";
+  const optInUrl = data?.playOptInUrl ?? null;
+
+  // The two ways each store loses a tester, and they have nothing in common.
+  // On iOS the invitation is an email that landed somewhere they do not read.
+  // On Android there is no email at all, and the loss happens on the opt-in
+  // page: wrong Google account, or the Play Store app swallowing the link.
+  const reasons = android
+    ? [
+        "You are signed in with a different Google account than the one on the testers list. The page just says the app is not available, with no hint that this is why.",
+        "Tapping the link opened the Play Store app instead of a browser, and it showed an empty grey card. Paste the link into Chrome instead.",
+      ]
+    : [
+        "The invite went to your Apple ID address, which is often not the address you are reading this on. Check that inbox and its spam folder.",
+        "TestFlight itself was never installed. It is a free Apple app, and the invite link does nothing without it.",
+      ];
+
+  const ctaUrl = android ? optInUrl : tfUrl;
+  const ctaLabel = android ? "Open the tester link" : "Install TestFlight";
 
   const blocks = [
     block(
       `${eyebrow("Your spot is still open")}${head(`Stuck on the<br/>${gold("install")}?`, 40)}${lead(
-        `Hi ${esc(name)}. Your TestFlight invite went out a few days ago and it looks like the app never opened. That is usually Apple's email, not you.`,
+        android
+          ? `Hi ${esc(name)}. Your tester link went out a few days ago and it looks like the app never opened. Android's testing flow is genuinely fiddly, so it is very likely the flow and not you.`
+          : `Hi ${esc(name)}. Your TestFlight invite went out a few days ago and it looks like the app never opened. That is usually Apple's email, not you.`,
       )}`,
       "40px 44px 0",
     ),
+    block(card(`${cardTitle("The two things that go wrong")}${bullets(reasons)}`), "28px 44px 0", false),
+    ...(ctaUrl ? [block(cta(ctaLabel, ctaUrl), "24px 44px 0")] : []),
     block(
-      card(
-        `${cardTitle("The two things that go wrong")}
-        ${bullets([
-          "The invite went to your Apple ID address, which is often not the address you are reading this on. Check that inbox and its spam folder.",
-          "TestFlight itself was never installed. It is a free Apple app, and the invite link does nothing without it.",
-        ])}`,
+      note(
+        android
+          ? "Still stuck? Reply and tell me exactly what the page says, and which Google account you are signed in with."
+          : "Still stuck? Reply with the Apple ID address you want it sent to and I will fire a fresh invite.",
       ),
-      "28px 44px 0",
-      false,
+      "16px 44px 0",
     ),
-    block(cta("Install TestFlight", tfUrl), "24px 44px 0"),
-    block(note("Still stuck? Reply with the Apple ID address you want it sent to and I will fire a fresh invite."), "16px 44px 0"),
   ];
 
   return {
     subject: "Your beta spot is still open",
     html: shell({
-      preheader: "The invite is usually sitting in your Apple ID inbox.",
+      preheader: android
+        ? "It is almost always the wrong Google account."
+        : "The invite is usually sitting in your Apple ID inbox.",
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
@@ -360,14 +521,17 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
     text: [
       `Hi ${name}.`,
       "",
-      "Your TestFlight invite went out a few days ago and it looks like the app never opened. Two things usually explain it:",
+      android
+        ? "Your tester link went out a few days ago and it looks like the app never opened. Two things usually explain it:"
+        : "Your TestFlight invite went out a few days ago and it looks like the app never opened. Two things usually explain it:",
       "",
-      "  1. The invite went to your Apple ID address, which is often not the one you read email on. Check that inbox and its spam folder.",
-      "  2. TestFlight was never installed. The invite link does nothing without it.",
+      ...reasons.map((r, i) => `  ${i + 1}. ${r}`),
       "",
-      `Install TestFlight: ${tfUrl}`,
+      ...(ctaUrl ? [`${ctaLabel}: ${ctaUrl}`] : []),
       "",
-      "Still stuck? Reply with the Apple ID address you want it sent to and I will fire a fresh invite.",
+      android
+        ? "Still stuck? Reply and tell me what the page says, and which Google account you are signed in with."
+        : "Still stuck? Reply with the Apple ID address you want it sent to and I will fire a fresh invite.",
       "",
       "Digital Polyglot",
     ].join("\n"),
@@ -496,6 +660,15 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
   const knownIssues = r?.knownIssues ?? [];
   const fixedForThem = data?.fixedForThem ?? [];
 
+  // Same build, two different apps to tap Update in. Naming the wrong one is
+  // a small error that reads as a large one: it tells the reader the program
+  // does not know which phone they are on.
+  const android = data?.platform === "android";
+  const updateSource = android ? "Google Play" : "TestFlight";
+  const updateInstruction = android
+    ? "Open Google Play and tap Update."
+    : "Open TestFlight and tap Update.";
+
   const yours =
     fixedForThem.length > 0
       ? card(
@@ -530,7 +703,7 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow(`Build ${build}`)}${head(esc(headline), 38)}${lead(
-        `TestFlight will offer you the update, ${esc(name)}. ${version ? `Version ${esc(version)}, build ${esc(build)}.` : ""}`,
+        `${updateSource} will offer you the update, ${esc(name)}. ${version ? `Version ${esc(version)}, build ${esc(build)}.` : ""}`,
       )}`,
       "40px 44px 0",
     ),
@@ -539,7 +712,7 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
     ...(ask ? [block(ask, "16px 44px 0", false)] : []),
     ...(issues ? [block(issues, "16px 44px 0", false)] : []),
     block(
-      `${badge(`Build ${build}`, "sky")}${note("Open TestFlight and tap Update. If it does not show yet, give it ten minutes.")}`,
+      `${badge(`Build ${build}`, "sky")}${note(`${updateInstruction} If it does not show yet, give it ten minutes.`)}`,
       "24px 44px 0",
     ),
   ];
@@ -550,7 +723,7 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
       preheader:
         fixedForThem.length > 0
           ? "Something you reported is fixed in this one."
-          : "Open TestFlight and tap Update.",
+          : updateInstruction,
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
@@ -571,7 +744,7 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
       ...(knownIssues.length > 0
         ? ["Known and already on my list:", ...knownIssues.map((k) => `  - ${k}`), ""]
         : []),
-      "Open TestFlight and tap Update. If it does not show yet, give it ten minutes.",
+      `${updateInstruction} If it does not show yet, give it ten minutes.`,
       "",
       "Digital Polyglot",
     ].join("\n"),
@@ -752,6 +925,7 @@ export function buildBetaReviewRecoverEmail(data?: BetaEmailData): BuiltEmail {
 
 export const BETA_EMAIL_BUILDERS: Record<BetaEmailKind, (data?: BetaEmailData) => BuiltEmail> = {
   accepted: buildBetaAcceptedEmail,
+  accepted_android: buildBetaAcceptedAndroidEmail,
   waitlist: buildBetaWaitlistEmail,
   declined: buildBetaDeclinedEmail,
   install_nudge: buildBetaInstallNudgeEmail,

@@ -46,7 +46,7 @@ function base64UrlEncode(input: string) {
     .replace(/=+$/g, "");
 }
 
-function getGooglePlayCredentials() {
+export function getGooglePlayCredentials() {
   const clientEmail = process.env.GOOGLE_PLAY_SERVICE_ACCOUNT_EMAIL?.trim();
   const privateKey = process.env.GOOGLE_PLAY_SERVICE_ACCOUNT_PRIVATE_KEY?.replace(/\\n/g, "\n");
   const packageName = process.env.GOOGLE_PLAY_PACKAGE_NAME?.trim();
@@ -60,7 +60,7 @@ function getGooglePlayCredentials() {
   return { clientEmail, privateKey, packageName };
 }
 
-async function getGooglePlayAccessToken() {
+export async function getGooglePlayAccessToken() {
   const { clientEmail, privateKey } = getGooglePlayCredentials();
   const issuedAt = Math.floor(Date.now() / 1000);
   const header = { alg: "RS256", typ: "JWT" };

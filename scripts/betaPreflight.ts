@@ -3,9 +3,12 @@
 //
 //   npx tsx scripts/betaPreflight.ts
 //   npx tsx scripts/betaPreflight.ts --create-group
+//   npx tsx scripts/betaPreflight.ts --attach-play-group
 //
-// Read-only by default. `--create-group` is the single exception and it only
-// ever creates the external TestFlight group when it is missing.
+// Read-only by default. The two exceptions are `--create-group`, which creates
+// the external TestFlight group when it is missing, and `--attach-play-group`,
+// which puts the configured Google Group on the Play closed testing track.
+// Both are idempotent and neither publishes anything.
 //
 // Every failure line says what to do about it. A preflight that reports
 // "something is wrong" without naming the fix just moves the work.
@@ -35,10 +38,16 @@ import {
   listRecentBuilds,
   listBuildsForGroup,
 } from "../src/lib/appStoreConnect";
+import {
+  attachTesterGroup,
+  getPlayBetaState,
+  isPlayBetaConfigured,
+} from "../src/lib/googlePlayBeta";
 import { DEFAULT_BETA_RULES, type BetaRulesConfig } from "../src/lib/betaRules";
 
 const prisma = new PrismaClient();
 const CREATE_GROUP = process.argv.includes("--create-group");
+const ATTACH_PLAY_GROUP = process.argv.includes("--attach-play-group");
 
 type Check = { name: string; ok: boolean; detail: string; fix?: string; blocking: boolean };
 const checks: Check[] = [];
@@ -287,17 +296,102 @@ async function checkAppleConnection() {
   }
 }
 
+/**
+ * Android readiness. Split from the Apple checks rather than interleaved,
+ * because the questions are not the same ones: Apple's failures are per
+ * tester, Google's are per track, and a preflight that mixed them would
+ * suggest an Android tester can be individually stuck when none can.
+ */
+async function checkPlayConnection() {
+  if (!isPlayBetaConfigured()) {
+    add({
+      name: "Play credentials",
+      ok: false,
+      detail: "Not configured, so no Android tester can be invited",
+      fix: "Set GOOGLE_PLAY_SERVICE_ACCOUNT_EMAIL, GOOGLE_PLAY_SERVICE_ACCOUNT_PRIVATE_KEY and GOOGLE_PLAY_PACKAGE_NAME.",
+      // Not blocking: an iOS-only beta is a valid state, and this is exactly
+      // where the program was before Android existed.
+      blocking: false,
+    });
+    return;
+  }
+
+  if (ATTACH_PLAY_GROUP) {
+    const res = await attachTesterGroup();
+    add({
+      name: "Attach tester group",
+      ok: res.ok,
+      detail: res.ok
+        ? res.changed
+          ? "Group attached to the track"
+          : "Group was already on the track"
+        : (res.error ?? "failed"),
+      fix: res.ok ? undefined : "Check that the service account has release permissions in Play Console.",
+      blocking: false,
+    });
+  }
+
+  const state = await getPlayBetaState();
+
+  add({
+    name: "Play connection",
+    ok: state.error === null,
+    detail: state.error ?? `${state.packageName}, track ${state.track}`,
+    fix: state.error
+      ? "The service account may lack release permissions in Play Console, or the package name is wrong."
+      : undefined,
+    blocking: false,
+  });
+
+  add({
+    name: "Android tester group",
+    ok: state.groupAttached,
+    detail: state.groupEmail
+      ? state.groupAttached
+        ? `${state.groupEmail} is on the ${state.track} track`
+        : `${state.groupEmail} is NOT on the track (track has: ${state.attachedGroups.join(", ") || "none"})`
+      : "no group configured",
+    fix: state.groupEmail
+      ? "Run this preflight with --attach-play-group, or press the button in the Testers tab of /studio/beta."
+      : "Create a Google Group whose join setting is 'anyone can join', then set GOOGLE_PLAY_BETA_GROUP_EMAIL to its address.",
+    blocking: false,
+  });
+
+  // The check that would have caught the 2026-08-05 failure in one line: a
+  // tester holding an opt-in link for a track with nothing published on it.
+  add({
+    name: "Build on the Android track",
+    ok: state.release !== null,
+    detail: state.release
+      ? `${state.release.status}, version code ${state.release.versionCodes.join(", ") || "?"}`
+      : `nothing published on ${state.track}, so the opt-in link installs nothing`,
+    fix: state.release
+      ? undefined
+      : `Upload an AAB to the ${state.track} track in Play Console and roll it out.`,
+    blocking: false,
+  });
+
+  add({
+    name: "Android opt-in link",
+    ok: state.optInUrl !== null,
+    detail: state.optInUrl ?? "cannot be derived for this track",
+    fix: state.optInUrl ? undefined : "Closed testing derives it from the package name; internal testing does not.",
+    blocking: false,
+  });
+}
+
 async function main() {
   await checkEnv();
   await checkDatabase();
   await checkRules();
   await checkAppleConnection();
+  await checkPlayConnection();
 
   console.log("\nBETA PROGRAM PREFLIGHT\n");
   for (const c of checks) {
     const mark = c.ok ? "PASS" : c.blocking ? "BLOCK" : "warn ";
-    console.log(`  ${mark}  ${c.name.padEnd(28)} ${c.detail}`);
-    if (!c.ok && c.fix) console.log(`         ${" ".repeat(28)} -> ${c.fix}`);
+    console.log(`  ${mark}  ${c.name.padEnd(30)} ${c.detail}`);
+    if (!c.ok && c.fix) console.log(`         ${" ".repeat(30)} -> ${c.fix}`);
   }
 
   const blocking = checks.filter((c) => !c.ok && c.blocking);

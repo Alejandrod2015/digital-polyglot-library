@@ -74,7 +74,15 @@ export async function publishRelease(
 
   const testers = await prisma.betaSignup.findMany({
     where: { status: { in: NOTIFIABLE_STATUSES }, planRevokedAt: null },
-    select: { id: true, email: true, firstName: true, targetLanguage: true, clerkUserId: true },
+    // `platform` decides whether the build note says TestFlight or Google Play.
+    select: {
+      id: true,
+      email: true,
+      firstName: true,
+      targetLanguage: true,
+      platform: true,
+      clerkUserId: true,
+    },
   });
 
   if (testers.length === 0) {
