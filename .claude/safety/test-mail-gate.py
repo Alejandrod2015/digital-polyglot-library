@@ -72,6 +72,15 @@ CASES = [
     ("multilinea con lectura GET",        'echo comprobando\n' + GET + '\necho listo', NO_VERB, "PASS"),
     ("multilinea con envio real",         'echo preparando\nnpx tsx scripts/_personalNote.ts a@b.com slug --send', NO_VERB, "BLOCK"),
     ("multilinea, GET arriba y envio abajo", GET + '\nnpx tsx scripts/_runBetaTriage.ts', NO_VERB, "BLOCK"),
+
+    # _coldNote writes to people who are not in the database yet, so it gets the
+    # same treatment as _personalNote: previewing free, sending gated.
+    ("_coldNote preview",                 'npx tsx scripts/_coldNote.ts beta-invite', NO_VERB, "PASS"),
+    ("_coldNote --send sin verbo",        'npx tsx scripts/_coldNote.ts beta-invite --send', NO_VERB, "BLOCK"),
+    ("_coldNote --send CON verbo",        'npx tsx scripts/_coldNote.ts beta-invite --send', VERB, "PASS"),
+    # The exact phrasing that prompted this: an unmistakable instruction that
+    # never names the mail. It must NOT open the gate.
+    ("verbo suelto sin nombrar el correo",'npx tsx scripts/_coldNote.ts beta-invite --send', "manda tú", "BLOCK"),
 ]
 
 fails = 0

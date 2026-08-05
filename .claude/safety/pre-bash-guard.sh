@@ -408,7 +408,13 @@ MAIL_PREVIEW_ONLY=0
 if printf '%s' "$COMMAND" | grep -qE -- '--dry'; then
     MAIL_PREVIEW_ONLY=1
 fi
-if printf '%s' "$COMMAND" | grep -q '_personalNote' \
+#     Named one by one rather than by a pattern like "any script without
+#     --send". Both of these are written so that nothing leaves without that
+#     flag, and that guarantee is what earns the exemption; a wildcard would
+#     hand the same trust to a script written later that does not deserve it.
+#     Only the PREVIEW path is exempt. With --send present these fall straight
+#     through to the verb gate like everything else.
+if printf '%s' "$COMMAND" | grep -qE '_personalNote|_coldNote' \
    && ! printf '%s' "$COMMAND" | grep -qE -- '--send'; then
     MAIL_PREVIEW_ONLY=1
 fi
@@ -447,13 +453,13 @@ RESEND_IN_CURL="$(printf '%s' "$RESEND_CURL_SEGMENTS" | { grep -o 'api\.resend\.
 if [ "$RESEND_MENTIONS" -gt 0 ] && [ "$RESEND_MENTIONS" -eq "$RESEND_IN_CURL" ] \
    && ! printf '%s' "$RESEND_CURL_SEGMENTS" | grep -qE -- '-X[[:space:]]*"?(POST|PUT|PATCH|DELETE)|--request[[:space:]]*"?(POST|PUT|PATCH|DELETE)|(^|[[:space:]])-d([[:space:]]|=|@|['"'"'"{])|--data|--json|(^|[[:space:]])-F([[:space:]]|=|@)|--form|--upload-file|(^|[[:space:]])-T([[:space:]]|=|@)' \
    && ! printf '%s' "$COMMAND" | grep -qE '(^|[|;&[:space:]])(npx|node|npm|pnpm|yarn|tsx|bash|sh)[[:space:]]' \
-   && ! printf '%s' "$COMMAND" | grep -qE 'processApplication|inviteApplicant|declineApplicant|waitlistApplicant|removeTesterAccess|linkClerkUserToBetaSignup|sendBetaEmail|sendPersonalNote|_personalNote|publishRelease|runBetaLifecycle|_runBetaTriage|sendLifecycleEmail|sendWelcomeEmail|sendBetaConfirmationEmail|sendClaimEmail|runLifecycleEmails|resend\.emails\.send|/api/cron/(beta-lifecycle|lifecycle-emails|claim-reminders)'; then
+   && ! printf '%s' "$COMMAND" | grep -qE 'processApplication|inviteApplicant|declineApplicant|waitlistApplicant|removeTesterAccess|linkClerkUserToBetaSignup|sendBetaEmail|sendPersonalNote|_personalNote|_coldNote|publishRelease|runBetaLifecycle|_runBetaTriage|sendLifecycleEmail|sendWelcomeEmail|sendBetaConfirmationEmail|sendClaimEmail|runLifecycleEmails|resend\.emails\.send|/api/cron/(beta-lifecycle|lifecycle-emails|claim-reminders)'; then
     MAIL_PREVIEW_ONLY=1
 fi
 
 if [ "$MAIL_PREVIEW_ONLY" -eq 0 ] \
    && printf '%s' "$COMMAND" | grep -qE '(^|[|;&[:space:]])(npx|node|npm|pnpm|yarn|tsx|curl|bash|sh|python3?)[[:space:]]' \
-   && printf '%s' "$COMMAND" | grep -qE 'processApplication|inviteApplicant|declineApplicant|waitlistApplicant|removeTesterAccess|linkClerkUserToBetaSignup|sendBetaEmail|sendPersonalNote|_personalNote|publishRelease|runBetaLifecycle|_runBetaTriage|sendLifecycleEmail|sendWelcomeEmail|sendBetaConfirmationEmail|sendClaimEmail|runLifecycleEmails|api\.resend\.com|resend\.emails\.send|/api/cron/(beta-lifecycle|lifecycle-emails|claim-reminders)'; then
+   && printf '%s' "$COMMAND" | grep -qE 'processApplication|inviteApplicant|declineApplicant|waitlistApplicant|removeTesterAccess|linkClerkUserToBetaSignup|sendBetaEmail|sendPersonalNote|_personalNote|_coldNote|publishRelease|runBetaLifecycle|_runBetaTriage|sendLifecycleEmail|sendWelcomeEmail|sendBetaConfirmationEmail|sendClaimEmail|runLifecycleEmails|api\.resend\.com|resend\.emails\.send|/api/cron/(beta-lifecycle|lifecycle-emails|claim-reminders)'; then
     MAIL_CHECK="$(printf '%s' "$PAYLOAD" | /usr/bin/python3 -c '
 import json, sys, re, os
 try:
