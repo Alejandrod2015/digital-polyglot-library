@@ -59,6 +59,13 @@ export const APPROVED_VOICES: Record<string, ApprovedVoice> = {
   // ── Aprobada por el usuario 2026-07-29 tras oír un sample con las líneas
   // reales del personaje (audición: public/_lea-voces.html).
   oNs4CSS4LR7hEoEykuS5: { note: "Rebecca Green Calm & Articulate (DE, f) — Lea en Expat DE (Umzug ohne Aufzug) — user-approved 2026-07-29" },
+
+  // ── Aprobada por el usuario 2026-07-30 tras audición del shared library
+  // (candelaria-narrador.html, candidata N7). Entra como Jorge en la historia
+  // "El Día de la Candelaria" del catálogo MX, donde el narrador/Rafael es
+  // Andreti (JW8DGEuLp9WxIS5IdxMM, ~108 Hz) y Jorge necesita un masculino
+  // mexicano intermedio (~139 Hz) que no se pise ni con Rafael ni con Jhenny.
+  BALkepjFtWPcKCNjSuK0: { note: "César Barona Cheerful & Friendly (MX, m) — Jorge en El Día de la Candelaria (catálogo Short Stories in Mexican Spanish) — user-approved 2026-07-30" },
 };
 
 export function isVoiceApproved(voiceId: string | null | undefined): boolean {
