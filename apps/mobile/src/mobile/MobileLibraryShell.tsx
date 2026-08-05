@@ -3698,14 +3698,33 @@ export function MobileLibraryShell(args: {
       const stillPending = await drainPendingFavoriteOps(sessionToken, sessionUserId);
       showDebug(`fav drain: still=${stillPending.length}`);
 
-      try {
-        const remote = await syncFavoritesFromServer(sessionToken);
+      // Reintentos con espera creciente, y esto NO es paranoia defensiva.
+      //
+      // `useOfflineStatus` pone isOffline en falso en cuanto la radio dice
+      // "conectado", que llega ANTES de que haya conexión utilizable. Este
+      // efecto se dispara en ese instante y, con un único intento, la
+      // sincronización fallaba, el catch se la tragaba, y como las
+      // dependencias ya no vuelven a cambiar nadie reintentaba nunca: los
+      // favoritos se quedaban vacíos hasta reiniciar la app. Medido en un
+      // Pixel: tras salir de modo avión, Practice se quedaba en 0 due y
+      // "No saved words yet" indefinidamente.
+      const delaysMs = [0, 1500, 4000];
+      for (let attempt = 0; attempt < delaysMs.length; attempt += 1) {
         if (cancelled) return;
-        showDebug(`fav remote: ${remote.length}`);
-        setFavoriteWords(remote);
-        await saveLocalFavorites(sessionUserId, remote);
-      } catch (err) {
-        showDebug(`fav sync err: ${(err as Error).message?.slice(0, 30)}`);
+        if (delaysMs[attempt] > 0) {
+          await new Promise((resolve) => setTimeout(resolve, delaysMs[attempt]));
+          if (cancelled) return;
+        }
+        try {
+          const remote = await syncFavoritesFromServer(sessionToken);
+          if (cancelled) return;
+          showDebug(`fav remote: ${remote.length} (intento ${attempt + 1})`);
+          setFavoriteWords(remote);
+          await saveLocalFavorites(sessionUserId, remote);
+          return;
+        } catch (err) {
+          showDebug(`fav sync err ${attempt + 1}: ${(err as Error).message?.slice(0, 24)}`);
+        }
       }
     }
 
