@@ -137,6 +137,13 @@ import {
   loadJourneyCache,
   loadStoryPracticeCache,
   saveStoryPracticeCache,
+} from "../lib/offlineStore";
+import {
+  enqueuePendingReviews,
+  flushPendingReviews,
+  type PendingReview,
+} from "../lib/pendingReviewQueue";
+import {
   loadOfflineSnapshot,
   removeStoryOffline,
   saveJourneyCache,
@@ -2392,6 +2399,23 @@ export function MobileLibraryShell(args: {
   // "every fetch rejected" which caused false positives during the first
   // second of cold-start.
   const isOffline = useOfflineStatus();
+  // Al RECUPERAR la red, reproducir los repasos que quedaron sin subir, en
+  // orden cronológico. No hay regla de desempate: cada repaso es un evento con
+  // su hora, así que el servidor termina como si nunca hubiera habido corte.
+  const flushingReviewsRef = useRef(false);
+  useEffect(() => {
+    if (isOffline) return;
+    if (!sessionToken || !sessionUserId) return;
+    if (flushingReviewsRef.current) return;
+    flushingReviewsRef.current = true;
+    void flushPendingReviews(sessionUserId, (review) =>
+      updateFavoriteReviewOnServer(sessionToken, review)
+    )
+      .catch(() => undefined)
+      .finally(() => {
+        flushingReviewsRef.current = false;
+      });
+  }, [isOffline, sessionToken, sessionUserId]);
   // Tap the offline banner → increment this to trigger a fresh hydrate
   // without waiting for the next natural refresh cycle.
   const [remoteRefreshCounter, setRemoteRefreshCounter] = useState(0);
@@ -10880,23 +10904,32 @@ export function MobileLibraryShell(args: {
         await saveLocalFavorites(sessionUserId, nextFavorites);
 
         if (sessionToken) {
+          // Los que no suban se ENCOLAN con su hora real en vez de perderse.
+          // Antes este catch se los tragaba con un "keep local SRS state": el
+          // estado local sobrevivía, pero el servidor no se enteraba nunca de
+          // lo practicado sin cobertura.
+          const unsent: PendingReview[] = [];
           await Promise.all(
             reviewableFavorites.map(async (item) => {
               const reviewScore = practiceReviewScores[normalizePracticeWord(item.word)];
               if (!reviewScore) return;
               const next = computeNextReview(reviewScore, item.streak ?? 0);
+              const payload = {
+                word: item.word,
+                nextReviewAt: new Date(next.nextReviewAt).toISOString(),
+                lastReviewedAt: nowIso,
+                streak: next.streak,
+              };
               try {
-                await updateFavoriteReviewOnServer(sessionToken, {
-                  word: item.word,
-                  nextReviewAt: new Date(next.nextReviewAt).toISOString(),
-                  lastReviewedAt: nowIso,
-                  streak: next.streak,
-                });
+                await updateFavoriteReviewOnServer(sessionToken, payload);
               } catch {
-                // Keep local SRS state even if the server update fails.
+                unsent.push(payload);
               }
             })
           );
+          if (unsent.length > 0 && sessionUserId) {
+            await enqueuePendingReviews(sessionUserId, unsent);
+          }
         }
       }
 
