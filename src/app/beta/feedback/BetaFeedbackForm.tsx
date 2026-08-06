@@ -29,7 +29,10 @@ const SURVEY_PROMPTS: Record<string, { title: string; lead: string; placeholder:
   },
   final_survey: {
     title: "Last ask, and the biggest one",
-    lead: "The app goes to the App Store shortly. This is the last thing that can still change it.",
+    // Store-neutral on purpose: this form is opened by Android testers too,
+    // and naming the App Store to someone testing on a Pixel reads as a
+    // program that does not know who it is talking to.
+    lead: "The app ships shortly. This is the last thing that can still change it.",
     placeholder:
       "What finally made it click, if it did?\n\nWhat nearly made you delete it?\n\nWhat is still missing?",
   },

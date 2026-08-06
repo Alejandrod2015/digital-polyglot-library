@@ -13,7 +13,14 @@
 import { prisma } from "@/lib/prisma";
 import type { BetaRulesConfig } from "@/lib/betaRules";
 import { getBetaRules } from "@/lib/betaRulesConfig";
-import { sendBetaEmail, betaBaseUrl, hasSentBetaEmail, type BetaSendResult } from "@/lib/betaProgram";
+import {
+  sendBetaEmail,
+  betaBaseUrl,
+  hasSentBetaEmail,
+  invitePlatform,
+  type BetaSendResult,
+} from "@/lib/betaProgram";
+import { playStoreUrl } from "@/lib/googlePlayBeta";
 import { createEmailToken } from "@/lib/emailPreferences";
 import type { BetaEmailKind } from "@/lib/emails/beta";
 
@@ -201,7 +208,16 @@ export async function runBetaLifecycle(now: Date = new Date()): Promise<BetaLife
       signup: tester,
       data: {
         feedbackUrl: `${base}/beta/feedback?token=${encodeURIComponent(createEmailToken(tester.email))}&kind=${kindParam}`,
-        reviewUrl: decision.reviewUrl ?? null,
+        // The rules hold ONE review URL and it points at Apple. Sending that
+        // to an Android tester gives them a button they cannot act on, so the
+        // store is picked per tester here, where the row is in scope. Falls
+        // back to the configured one when Play is not set up.
+        reviewUrl:
+          decision.reviewUrl == null
+            ? null
+            : invitePlatform(tester.platform) === "android"
+              ? (playStoreUrl() ?? decision.reviewUrl)
+              : decision.reviewUrl,
       },
     });
     sent.push({ email: tester.email, kind: decision.kind, result });

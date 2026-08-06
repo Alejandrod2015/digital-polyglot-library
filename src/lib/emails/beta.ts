@@ -819,11 +819,14 @@ export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
   const reviewUrl = data?.reviewUrl ?? `${b}`;
+  // Third time this bites: an Android tester sent to the App Store cannot act
+  // on the ask at all. Same fix as the install nudge and the build note.
+  const store = data?.platform === "android" ? "Google Play" : "the App Store";
 
   const blocks = [
     block(
       `${eyebrow("It's live")}${head(`It shipped, and<br/>you ${gold("shaped")} it.`, 38)}${lead(
-        `It is out, ${esc(name)}. Digital Polyglot is on the App Store. You rated it highly a few days ago, and there is one thing that would genuinely help now.`,
+        `It is out, ${esc(name)}. Digital Polyglot is on ${esc(store)}. You rated it highly a few days ago, and there is one thing that would genuinely help now.`,
       )}`,
       "40px 44px 0",
     ),
@@ -853,7 +856,7 @@ export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `It is out, ${name}. Digital Polyglot is on the App Store.`,
+      `It is out, ${name}. Digital Polyglot is on ${store}.`,
       "",
       "You rated it highly a few days ago, and there is one thing that would genuinely help: a review.",
       "",
