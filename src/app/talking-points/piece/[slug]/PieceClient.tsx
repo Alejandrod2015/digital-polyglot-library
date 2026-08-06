@@ -15,7 +15,6 @@ import { ExternalLink } from "lucide-react";
 import Player from "@/components/Player";
 import StoryContent from "@/components/StoryContent";
 import StoryReaderShell from "@/components/StoryReaderShell";
-import EndOfStoryPracticePrompt from "@/components/EndOfStoryPracticePrompt";
 import type { TalkingPiece, TalkingTopic } from "@/lib/talkingPoints";
 import { photoCredit } from "@/lib/wikimediaCommons";
 import { markRead } from "@/lib/talkingPointsRun";
@@ -151,11 +150,14 @@ export default function PieceClient({
             onToggle={() => setShowSources((v) => !v)}
           />
           <div ref={endRef} />
-          <EndOfStoryPracticePrompt
-            storySlug={piece.slug}
-            storyTitle={piece.title}
-            vocabCount={vocab.length}
-          />
+          {/* SIN aviso de practica, a proposito.
+              EndOfStoryPracticePrompt construye por defecto
+              `/practice?source=story&storySlug=<slug>` y un enlace de vuelta a
+              `/stories/<slug>`. Ninguna de las dos existe para una pieza de
+              Talking Points: la ruta de historia da 404 y la practica no tiene
+              ejercicios para este slug. Un boton que lleva a ninguna parte es
+              peor que ningun boton. Vuelve cuando la seccion tenga ejercicios,
+              pasandole un practiceHref propio. */}
         </div>
       ) : (
         <div className="max-w-[65ch] mx-auto rounded-2xl border border-dashed border-white/10 p-6 text-center">
