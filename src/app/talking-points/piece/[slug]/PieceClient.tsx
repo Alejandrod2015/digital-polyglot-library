@@ -22,7 +22,7 @@ import TapGlossLayer from "@/components/TapGlossLayer";
 import TapGlossText from "@/components/TapGlossText";
 import { getTapGlossesForSlug } from "@/lib/tapGlosses";
 import StoryReaderShell from "@/components/StoryReaderShell";
-import type { TalkingPiece, TalkingTopic } from "@/lib/talkingPoints";
+import { countryLabel, type TalkingPiece, type TalkingTopic } from "@/lib/talkingPoints";
 import { photoCredit } from "@/lib/wikimediaCommons";
 import { markRead } from "@/lib/talkingPointsRun";
 
@@ -112,7 +112,7 @@ export default function PieceClient({
       }
       level={topic.level}
       language={topic.language}
-      region={topic.country === "ES" ? "Spain" : topic.country}
+      region={countryLabel(topic.country) ?? undefined}
       extraBadges={
         <span className="inline-flex h-5 items-center rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] px-2 text-[11px] font-semibold leading-none text-[var(--chip-text)]">
           {angleLabel(piece.angle)}

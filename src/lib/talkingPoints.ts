@@ -1188,6 +1188,36 @@ export const VOCAB_MIN_VERB_SHARE = 25;
 /** Adjectives, adverbs and set phrases. At least this many per piece. */
 export const VOCAB_MIN_OTHER = 2;
 
+/**
+ * Country name for the ISO code in `country`.
+ *
+ * The reader's region badge expects a NAME, the way journey stories store it
+ * ("Germany", "Spain"), not a code: it runs the value through `formatRegion`,
+ * which title-cases whatever it gets, so a raw "DE" reaches the screen as
+ * "De" — sitting right next to the language badge that already says "DE".
+ *
+ * Returns null for a code that is not on the list, and the caller then draws
+ * no region badge at all. A missing name is better than a mangled one, and
+ * this map is one line per country as the catalogue grows.
+ */
+export function countryLabel(code: string): string | null {
+  const NAMES: Record<string, string> = {
+    ES: "Spain",
+    DE: "Germany",
+    AT: "Austria",
+    MX: "Mexico",
+    CO: "Colombia",
+    AR: "Argentina",
+    PE: "Peru",
+    CL: "Chile",
+    FR: "France",
+    IT: "Italy",
+    PT: "Portugal",
+    BR: "Brazil",
+  };
+  return NAMES[code.trim().toUpperCase()] ?? null;
+}
+
 function isNoun(t: string) {
   return t.includes("noun");
 }
