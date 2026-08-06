@@ -219,6 +219,10 @@ const SaveWordButton = memo(function SaveWordButton({
    */
   const [local, setLocal] = useState<boolean | null>(null);
   useEffect(() => { setLocal(null); }, [word]);
+  // El pop vuelve. Con `useNativeDriver` la animación vive en el hilo de UI, no
+  // en el de JS, así que no compite con nada: medido, quitarla solo movía la
+  // latencia de 400 a 383 ms, o sea nada. Lo que costaba era el toggle.
+  const scale = useRef(new Animated.Value(1)).current;
   // A PROPOSITO idéntico en forma al botón de guardar historia del top bar,
   // que mide 50 ms: Pressable pelado, sin estado local, sin Animated, sin
   // InteractionManager, y el estado visual viene de una prop. El de palabra
@@ -226,9 +230,16 @@ const SaveWordButton = memo(function SaveWordButton({
   // culpa está en el botón o en dónde vive.
   const shown = local ?? saved;
   return (
+    <Animated.View style={{ transform: [{ scale }] }}>
     <Pressable
       onPress={() => {
         setLocal(!shown);
+        if (!shown) {
+          Animated.sequence([
+            Animated.spring(scale, { toValue: 1.12, friction: 4, tension: 180, useNativeDriver: true }),
+            Animated.spring(scale, { toValue: 1, friction: 5, tension: 120, useNativeDriver: true }),
+          ]).start();
+        }
         setTimeout(onToggle, 0);
       }}
       accessibilityLabel={saved ? "Remove from saved words" : "Save word"}
@@ -248,6 +259,7 @@ const SaveWordButton = memo(function SaveWordButton({
         {shown ? "Saved" : "Save word"}
       </Text>
     </Pressable>
+    </Animated.View>
   );
 });
 
