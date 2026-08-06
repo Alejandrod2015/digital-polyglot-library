@@ -146,7 +146,7 @@ type FormState = {
   email: string;
   // Which store the tester gets in through. Decides which account address the
   // form asks for, so it has to be answered before that field is rendered.
-  platform: "ios" | "android" | "both" | "";
+  platform: "ios" | "android" | "";
   appleIdEmail: string;
   googleEmail: string;
   nativeLanguage: string;
@@ -290,8 +290,8 @@ export default function BetaSignupForm() {
       setError("Please tell us which phone you'll be testing on.");
       return;
     }
-    const wantsIos = form.platform === "ios" || form.platform === "both";
-    const wantsAndroid = form.platform === "android" || form.platform === "both";
+    const wantsIos = form.platform === "ios";
+    const wantsAndroid = form.platform === "android";
     if (wantsIos && !form.appleIdEmail.trim()) {
       setError("Please add the email your iPhone's App Store uses. Your invitation to install is sent there.");
       return;
@@ -485,12 +485,17 @@ export default function BetaSignupForm() {
           Apple ID, so every Android applicant looked like an iPhone one. */}
       <div>
         <span className={labelStyle}>Which phone will you test on?</span>
-        <div className="grid grid-cols-3 gap-2">
+        {/* No "Both" chip. It looked harmless and was not: whoever picked it
+            ended up on the iOS path anyway (invitePlatform sends `both` to
+            TestFlight), so it delivered nothing a plain iPhone pick did not,
+            while demanding a second account field AND switching off both hard
+            gates, which only fire when the platform is a single one. The value
+            stays legal in the schema and in the code for older rows. */}
+        <div className="grid grid-cols-2 gap-2">
           {(
             [
               { value: "ios", label: "iPhone" },
               { value: "android", label: "Android" },
-              { value: "both", label: "Both" },
             ] as const
           ).map((opt) => (
             <label key={opt.value} className={chipClass(form.platform === opt.value)}>
@@ -511,7 +516,7 @@ export default function BetaSignupForm() {
         </p>
       </div>
 
-      {(form.platform === "ios" || form.platform === "both") && (
+      {form.platform === "ios" && (
         <div>
           <label htmlFor="appleIdEmail" className={labelStyle}>
             The email your iPhone&rsquo;s App Store uses
@@ -538,7 +543,7 @@ export default function BetaSignupForm() {
         </div>
       )}
 
-      {(form.platform === "android" || form.platform === "both") && (
+      {form.platform === "android" && (
         <div>
           <label htmlFor="googleEmail" className={labelStyle}>
             The Google account your phone&rsquo;s Play Store uses
