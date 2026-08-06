@@ -1,7 +1,5 @@
 // /src/lib/talkingPointsRun.ts
 //
-// PROTOTYPE (worktree `talking-points`, not production).
-//
 // Read state, and nothing else.
 //
 // WHY it is only this now: earlier versions kept a "run" of 7 chosen topics,

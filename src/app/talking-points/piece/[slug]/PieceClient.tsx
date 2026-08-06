@@ -1,7 +1,5 @@
 "use client";
 
-// PROTOTYPE (worktree `talking-points`, not production).
-//
 // THE READER. It no longer rebuilds anything: the chrome comes from
 // `StoryReaderShell`, the same component `src/app/stories/[slug]/page.tsx`
 // uses, and the prose comes from `StoryContent`, the same component the
@@ -76,7 +74,7 @@ export default function PieceClient({
   return (
     <StoryReaderShell
       title={piece.title}
-      level="b2"
+      level={topic.level}
       language={topic.language}
       region={topic.country === "ES" ? "Spain" : topic.country}
       extraBadges={

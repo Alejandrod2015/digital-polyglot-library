@@ -1,7 +1,5 @@
 // /src/app/talking-points/page.tsx
 //
-// PROTOTYPE (worktree `talking-points`, not production).
-//
 // Talking Points browses; it does not walk.
 //
 // WHY (corrected 2026-08-05, third pass): the first two builds rendered this

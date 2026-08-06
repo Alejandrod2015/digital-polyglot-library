@@ -1,22 +1,22 @@
 // /src/lib/talkingPoints.ts
 //
-// PROTOTYPE (worktree `talking-points`, not production).
+// The Talking Points catalogue: short non-fiction in the target language about
+// what people in that country are actually arguing about.
 //
-// TALKING POINTS is not a new section. It is a new `journeyType`: same level,
-// same 7 topics, same 3 stories per topic, same banner / story cards / reader.
-// Two things differ from Friends, Traveler and Expat:
+// Three things this file is the source of truth for, and each exists because
+// getting it wrong is silent:
 //
-//   1. The 7 topics are NOT fixed in `JOURNEY_CURRICULUM`. The user picks them.
-//   2. The stories are non-fiction, so every factual claim carries a source.
+//   1. WHO CAN OPEN IT — `canAccessTalkingPoints`, polyglot and owner only.
+//      Both routes call it; hiding a nav link is not a gate.
+//   2. VOCABULARY DENSITY — ten entries per hundred words, the journey figure.
+//      Below that a piece stops teaching and is just an article.
+//   3. SURFACE FORMS — every entry must occur in the body exactly as the
+//      highlighter will look for it, or it silently highlights nothing.
 //
-// WHY the user picks: a journey works because it is CLOSED (21 and you're
-// done) — that closure is the whole engine behind progress, "next" and
-// completion. Non-fiction is an open, growing catalogue. Dropping an infinite
-// feed into a finite-path UI kills the engine. Letting the user choose 7 is
-// what closes the set: infinite catalogue, finite runs.
+// (2) and (3) are enforced by `scripts/_tpGateTest.ts`, not by good intentions.
 //
-// Content lives here as a typed literal so the prototype runs with no database
-// and no secrets.
+// Content lives here as a typed literal. It belongs in Prisma with a Studio
+// authoring surface; that migration has not happened yet.
 
 import type { Plan } from "@domain/access";
 
@@ -124,6 +124,12 @@ export type TalkingTopic = {
   /** ISO 3166-1 alpha-2, drives the flag and the voice country. */
   country: string;
   language: string;
+  /**
+   * CEFR code, per topic rather than per section: non-fiction difficulty
+   * follows the subject, and the catalogue already spans languages the reader
+   * is at different levels in. The reader used to hardcode "b2".
+   */
+  level: string;
   /** One line under the label in the picker. */
   blurb: string;
   pieces: TalkingPiece[];
@@ -163,6 +169,26 @@ const SRC_AETIB: TalkingSource = {
   checkedAt: CHECKED,
 };
 
+const SRC_BBK_ZAHLUNG: TalkingSource = {
+  id: "bbk-zahlungsverhalten-2023",
+  org: "Deutsche Bundesbank",
+  title: "Zahlungsverhalten in Deutschland 2023",
+  url: "https://www.bundesbank.de/de/presse/pressenotizen/zahlungsverhalten-in-deutschland-2023-934828",
+  supports:
+    "51 % aller Transaktionen bar (2021: 58 %). Debitkarte 27 % der Bezahlvorgänge (+5 Pp). Nach Umsatz: Debitkarte 32 %, Bargeld 26 %. Mobiles Bezahlen 6 %, seit 2021 verdreifacht. Forsa, rund 5.700 Befragte, Zahlungstagebuch über drei Tage, September bis November 2023.",
+  checkedAt: CHECKED,
+};
+
+const SRC_BBK_MEINUNG: TalkingSource = {
+  id: "bbk-bargeld-meinungsbild",
+  org: "Deutsche Bundesbank",
+  title: "Bargeld in der deutschen Gesellschaft – ein aktuelles Meinungsbild",
+  url: "https://publikationen.bundesbank.de/publikationen-de/berichte-studien/monatsberichte/bargeld-in-der-deutschen-gesellschaft-ein-aktuelles-meinungsbild-954600",
+  supports:
+    "69 % halten es für wichtig, selbst bar zahlen zu können; 72 % halten Bargeld für die Gesellschaft für wichtig. Wichtigste Argumente: Ausfallsicherheit bei Stromausfall oder Hackerangriff, Kinder lernen den Umgang mit Geld, Datenschutz und Anonymität, Inklusion. Mehr als die Hälfte sieht in Schwarzarbeit, Steuerhinterziehung und Geldwäsche einen Grund, Bargeld einzuschränken.",
+  checkedAt: CHECKED,
+};
+
 /** Shorthand for a topic whose three pieces are titled but not yet written. */
 function piece(
   slug: string,
@@ -180,6 +206,7 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     categoryId: "city-housing",
     country: "ES",
     language: "Spanish",
+    level: "b2",
     blurb: "The fight over who gets to live in the places you visit.",
     pieces: [
       {
@@ -199,6 +226,21 @@ export const TALKING_TOPICS: TalkingTopic[] = [
           { term: "el alquiler", surface: "alquiler", type: "noun", en: "rent" },
           { term: "apretar", surface: "aprieta", type: "verb", en: "to squeeze, to be tight on someone" },
           { term: "el bando", surface: "bando", type: "noun", en: "side, camp (in a dispute)" },
+          { term: "el piso", surface: "piso", type: "noun", en: "flat, apartment" },
+          { term: "el edificio", surface: "edificio", type: "noun", en: "building" },
+          { term: "la culpa", surface: "culpa", type: "noun", en: "fault, blame" },
+          { term: "aprobar", surface: "aprobó", type: "verb", en: "to pass, to approve" },
+          { term: "la limitación", surface: "limitación", type: "noun", en: "cap, restriction" },
+          { term: "encuestar", surface: "Encuestó", type: "verb", en: "to survey, to poll" },
+          { term: "el residente", surface: "residentes", type: "noun", en: "resident" },
+          { term: "el barrio", surface: "barrio", type: "noun", en: "neighbourhood" },
+          { term: "turístico", surface: "turístico", type: "adjective", en: "tourist (used as adjective)" },
+          { term: "el tercio", surface: "tercio", type: "noun", en: "a third" },
+          { term: "el sueldo", surface: "sueldo", type: "noun", en: "salary, wage" },
+          { term: "la cifra", surface: "cifra", type: "noun", en: "figure, number" },
+          { term: "recoger", surface: "recoge", type: "verb", en: "to cite, to pick up" },
+          { term: "la encuesta", surface: "encuesta", type: "noun", en: "survey" },
+          { term: "la riqueza", surface: "riqueza", type: "noun", en: "wealth" },
         ],
         sources: [SRC_AETIB, SRC_BDE],
       },
@@ -219,6 +261,19 @@ export const TALKING_TOPICS: TalkingTopic[] = [
           { term: "largo", type: "adjective", en: "a bit over (after a number)" },
           { term: "rastrear", surface: "rastreando", type: "verb", en: "to track, to trawl" },
           { term: "la trampa", surface: "trampa", type: "noun", en: "the catch, the trick" },
+          { term: "desaparecer", surface: "desaparecido", type: "verb", en: "to disappear" },
+          { term: "la caída", surface: "caída", type: "noun", en: "drop, fall" },
+          { term: "la explicación", surface: "explicación", type: "noun", en: "explanation" },
+          { term: "repetir", surface: "repite", type: "verb", en: "to repeat" },
+          { term: "bajar", surface: "bajado", type: "verb", en: "to go down" },
+          { term: "la plataforma", surface: "plataformas", type: "noun", en: "platform" },
+          { term: "quedar", surface: "quedaban", type: "verb", en: "to remain, to be left" },
+          { term: "la vivienda", surface: "viviendas", type: "noun", en: "housing, dwelling" },
+          { term: "el país", surface: "país", type: "noun", en: "country" },
+          { term: "sumar", surface: "suma", type: "verb", en: "to add up" },
+          { term: "el extranjero", surface: "extranjeros", type: "noun", en: "foreigner" },
+          { term: "mover", surface: "mueve", type: "verb", en: "to move, to shift" },
+          { term: "notarse", surface: "nota", type: "verb", en: "to be noticeable" },
         ],
         sources: [SRC_INE, SRC_BDE],
       },
@@ -239,6 +294,17 @@ export const TALKING_TOPICS: TalkingTopic[] = [
           { term: "la fachada", surface: "fachada", type: "noun", en: "facade, front of a building" },
           { term: "aguantar", surface: "aguanta", type: "verb", en: "to hold out, to endure" },
           { term: "el tablón", surface: "tablón", type: "noun", en: "noticeboard" },
+          { term: "la llave", surface: "llaves", type: "noun", en: "key" },
+          { term: "el ruido", surface: "ruido", type: "noun", en: "noise" },
+          { term: "la maleta", surface: "maleta", type: "noun", en: "suitcase" },
+          { term: "el comercio", surface: "comercios", type: "noun", en: "shop, business" },
+          { term: "el panadero", surface: "panadero", type: "noun", en: "baker" },
+          { term: "a diario", type: "set phrase", en: "daily, every day" },
+          { term: "el invierno", surface: "invierno", type: "noun", en: "winter" },
+          { term: "dispararse", surface: "dispara", type: "verb", en: "to shoot up, to soar" },
+          { term: "el vecino", surface: "vecinos", type: "noun", en: "neighbour" },
+          { term: "convocar", surface: "Convoca", type: "verb", en: "to call (a meeting)" },
+          { term: "la reunión", surface: "reunión", type: "noun", en: "meeting" },
         ],
         sources: [SRC_BDE],
       },
@@ -250,6 +316,7 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     categoryId: "city-housing",
     country: "ES",
     language: "Spanish",
+    level: "b2",
     blurb: "Leaving home later than any generation before.",
     pieces: [
       piece("compartir-piso-a-los-35", "Compartir piso a los treinta y cinco", "Flatmates are no longer a student thing.", "portrait"),
@@ -263,6 +330,7 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     categoryId: "money-work",
     country: "ES",
     language: "Spanish",
+    level: "b2",
     blurb: "What people earn, and what that actually buys.",
     pieces: [
       piece("el-sueldo-que-no-se-dice", "El sueldo del que nadie habla", "Talking money is still taboo. That's changing.", "portrait"),
@@ -276,6 +344,7 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     categoryId: "money-work",
     country: "ES",
     language: "Spanish",
+    level: "b2",
     blurb: "Spain works odd hours and is arguing about it.",
     pieces: [
       piece("semana-de-cuatro-dias", "¿Cuatro días de trabajo son suficientes?", "The four-day week left the pilot stage.", "debate"),
@@ -289,6 +358,7 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     categoryId: "food-table",
     country: "ES",
     language: "Spanish",
+    level: "b2",
     blurb: "The meal ends. Nobody gets up.",
     pieces: [
       piece("que-es-la-sobremesa", "La hora que no aparece en la agenda", "There is no English word for it. That matters.", "portrait"),
@@ -302,6 +372,7 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     categoryId: "food-table",
     country: "ES",
     language: "Spanish",
+    level: "b2",
     blurb: "The Mediterranean diet, and the gap with the fridge.",
     pieces: [
       piece("dieta-mediterranea", "La dieta mediterránea, según los datos", "The famous diet, minus the marketing.", "explainer"),
@@ -315,6 +386,7 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     categoryId: "language-speech",
     country: "ES",
     language: "Spanish",
+    level: "b2",
     blurb: "Which Spanish sounds 'correct', and who decided.",
     pieces: [
       piece("el-espanol-correcto", "¿Existe un español correcto?", "Ask two Spanish speakers, start a war.", "debate"),
@@ -328,6 +400,7 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     categoryId: "language-speech",
     country: "ES",
     language: "Spanish",
+    level: "b2",
     blurb: "The argument your textbook will never mention.",
     pieces: [
       piece("todes", "¿El lenguaje inclusivo mejora el idioma o lo rompe?", "Both sides think the other is breaking Spanish.", "debate"),
@@ -341,6 +414,7 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     categoryId: "tech-internet",
     country: "ES",
     language: "Spanish",
+    level: "b2",
     blurb: "Screens, sleep, and what schools decided to do.",
     pieces: [
       piece("movil-en-clase", "¿Fuera el móvil de las aulas?", "Several regions already banned it.", "debate"),
@@ -354,6 +428,7 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     categoryId: "tech-internet",
     country: "ES",
     language: "Spanish",
+    level: "b2",
     blurb: "Which jobs change, which disappear, which nobody knows.",
     pieces: [
       piece("que-trabajos-cambian", "Qué trabajos están cambiando ya", "Not the ones anyone predicted.", "explainer"),
@@ -367,6 +442,7 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     categoryId: "body-health",
     country: "ES",
     language: "Spanish",
+    level: "b2",
     blurb: "A country famous for company, talking about being alone.",
     pieces: [
       piece("vivir-solo", "Cada vez más gente vive sola", "Household size keeps shrinking.", "explainer"),
@@ -380,6 +456,7 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     categoryId: "nature-climate",
     country: "ES",
     language: "Spanish",
+    level: "b2",
     blurb: "Who gets the water when there isn't enough.",
     pieces: [
       piece("de-donde-sale-el-agua", "De dónde sale el agua que bebes", "Reservoirs, rivers and a lot of pipes.", "explainer"),
@@ -387,7 +464,96 @@ export const TALKING_TOPICS: TalkingTopic[] = [
       piece("un-pueblo-sin-agua", "El pueblo que se quedó sin grifo", "Water arrived by truck for months.", "portrait"),
     ],
   },
+  {
+    slug: "bargeld-und-karte",
+    label: "Cash & Cards",
+    categoryId: "money-work",
+    country: "DE",
+    language: "German",
+    level: "c1",
+    blurb: "Half the country still pays in coins. Half of them think that is a problem.",
+    pieces: [
+      {
+        slug: "warum-keine-karte",
+        title: "Warum nimmt dieses Café keine Karte?",
+        hook: "Your card is fine. The café just doesn’t want it.",
+        angle: "debate",
+        body: [
+          "Du stehst an der Kasse, hältst die Karte hin, und der Mann hinter dem Tresen zeigt auf ein kleines Schild: nur Bargeld. Kein Automat in der Nähe. Draußen regnet es.",
+          "Das ist kein Einzelfall und kein Zufall. In Deutschland wird immer noch jede zweite Zahlung mit Scheinen und Münzen gemacht, genauer gesagt einundfünfzig Prozent. Die Bundesbank misst das, indem sie mehrere tausend Leute drei Tage lang Buch führen lässt.",
+          "Es bewegt sich allerdings. Zweitausendeinundzwanzig waren es noch achtundfünfzig Prozent. Und wer nicht die Zahl der Zahlungen zählt, sondern das Geld, sieht die Debitkarte längst vorn: zweiunddreißig Prozent des Umsatzes gegen sechsundzwanzig beim Bargeld. Bar wird das Kleine bezahlt, mit Karte das Große.",
+          "Warum halten so viele daran fest? Ganz oben steht nicht Nostalgie, sondern der Stromausfall. Bargeld funktioniert, wenn die Technik nicht funktioniert. Danach kommt, dass Kinder mit Münzen lernen, was Geld überhaupt ist. Und der Datenschutz: Ein Schein verrät niemandem, wo du am Dienstagabend warst.",
+          "Und dann kommt der Widerspruch. Mehr als die Hälfte derselben Befragten sagt, Bargeld erleichtere Schwarzarbeit, Steuerhinterziehung und Geldwäsche, und genau deshalb solle man es einschränken. Neunundsechzig Prozent wollen bar zahlen können. Über die Hälfte findet, dass genau das ein Problem ist.",
+        ],
+        vocab: [
+          { term: "der Tresen", surface: "Tresen", type: "noun", en: "counter, bar" },
+          { term: "der Schein", surface: "Schein", type: "noun", en: "banknote" },
+          { term: "der Stromausfall", surface: "Stromausfall", type: "noun", en: "power cut" },
+          { term: "die Schwarzarbeit", surface: "Schwarzarbeit", type: "noun", en: "undeclared work" },
+          { term: "die Kasse", surface: "Kasse", type: "noun", en: "till, checkout" },
+          { term: "das Schild", surface: "Schild", type: "noun", en: "sign" },
+          { term: "das Bargeld", surface: "Bargeld", type: "noun", en: "cash" },
+          { term: "der Automat", surface: "Automat", type: "noun", en: "cash machine" },
+          { term: "der Zufall", surface: "Zufall", type: "noun", en: "coincidence" },
+          { term: "die Münze", surface: "Münzen", type: "noun", en: "coin" },
+          { term: "messen", surface: "misst", type: "verb", en: "to measure" },
+          { term: "der Umsatz", surface: "Umsatz", type: "noun", en: "turnover, value of sales" },
+          { term: "der Datenschutz", surface: "Datenschutz", type: "noun", en: "data protection" },
+          { term: "verraten", surface: "verrät", type: "verb", en: "to give away, to reveal" },
+          { term: "der Widerspruch", surface: "Widerspruch", type: "noun", en: "contradiction" },
+          { term: "der Befragte", surface: "Befragten", type: "noun", en: "survey respondent" },
+          { term: "erleichtern", surface: "erleichtere", type: "verb", en: "to make easier" },
+          { term: "die Steuerhinterziehung", surface: "Steuerhinterziehung", type: "noun", en: "tax evasion" },
+          { term: "die Geldwäsche", surface: "Geldwäsche", type: "noun", en: "money laundering" },
+          { term: "einschränken", type: "verb", en: "to restrict, to limit" },
+        ],
+        sources: [SRC_BBK_ZAHLUNG, SRC_BBK_MEINUNG],
+      },
+      piece("letzter-geldautomat", "Der letzte Geldautomat im Dorf", "The cash machine left before the bank did.", "portrait"),
+      piece("digitaler-euro", "Was der digitale Euro wäre und was nicht", "Not crypto, not your banking app. Something else.", "explainer"),
+    ],
+  },
 ];
+
+/**
+ * Vocabulary density, in entries per 100 words of body.
+ *
+ * Ten is the journey figure, and it is not a preference: it is what
+ * `StoryContent` documents as the target the whole catalogue aims at
+ * (~10 highlighted words per 100 read; a journey story lands around 22
+ * entries). A non-fiction piece that carries four entries in two hundred
+ * words is an article with some words coloured in, not a language lesson.
+ *
+ * The band is deliberately narrow. Under it the piece stops teaching; over it
+ * the prose disappears under highlights and the reader stops reading.
+ */
+export const VOCAB_PER_100_WORDS = 10;
+export const VOCAB_DENSITY_MIN = 8;
+export const VOCAB_DENSITY_MAX = 12;
+
+export function pieceWordCount(piece: TalkingPiece): number {
+  return piece.body.join(" ").split(/\s+/).filter(Boolean).length;
+}
+
+/** Entries per 100 words. 0 for an unwritten piece. */
+export function vocabDensity(piece: TalkingPiece): number {
+  const words = pieceWordCount(piece);
+  if (words === 0) return 0;
+  return (piece.vocab.length / words) * 100;
+}
+
+/**
+ * Every vocab entry must actually appear in the body, in the exact form the
+ * highlighter will look for. `StoryContent` matches on the surface string, so
+ * an entry whose form never occurs is invisible: it teaches nothing and nobody
+ * finds out. Returns the offending terms.
+ */
+export function missingVocabSurfaces(piece: TalkingPiece): string[] {
+  const body = piece.body.join(" ");
+  return piece.vocab
+    .filter((v) => !body.includes(v.surface ?? v.term))
+    .map((v) => v.term);
+}
 
 /**
  * A piece with its topic attached. The browse UI always needs both: the

@@ -1,6 +1,4 @@
 // /src/app/talking-points/piece/[slug]/page.tsx
-//
-// PROTOTYPE (worktree `talking-points`, not production).
 
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -18,6 +16,13 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  // Metadata runs before the page body, so it needs the same gate: without it
+  // the piece's question leaks to anyone who hits the URL, in the browser tab
+  // and in any link preview, even though the body correctly 404s.
+  const user = await currentUser();
+  const plan = (user?.publicMetadata?.plan as Plan | undefined) ?? "free";
+  if (!canAccessTalkingPoints(plan)) return { title: "Not found" };
+
   const { slug } = await params;
   const found = getPiece(slug);
   if (!found) return { title: "Talking Points" };

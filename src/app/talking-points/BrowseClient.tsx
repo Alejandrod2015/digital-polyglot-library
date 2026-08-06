@@ -1,7 +1,5 @@
 "use client";
 
-// PROTOTYPE (worktree `talking-points`, not production).
-//
 // BROWSE — variant C, "angle-first grid" (chosen 2026-08-05 from the three
 // proposals in public/tp-variants.html).
 //

@@ -1,7 +1,5 @@
 // /src/app/talking-points/piece/[slug]/layout.tsx
 //
-// PROTOTYPE (worktree `talking-points`, not production).
-//
 // Mirrors `src/app/stories/[slug]/layout.tsx`: the back affordance is a
 // FLOATING circular button in the top-left, fixed so it survives scrolling,
 // and it lives in the layout rather than the page so the story owns the full
