@@ -7,6 +7,7 @@
 //   3. Surface forms — every entry occurs in the body as written.
 //   4. Type mix — not a list of nouns with a few verbs bolted on.
 //   5. Spread — entries distributed across paragraphs, not front-loaded.
+//   6. Photos — landscape enough for the reader band, licence usable.
 //
 // Every one of these exists because it failed silently first. The pieces
 // shipped at two entries per hundred words, a fifth of the journey figure;
@@ -30,6 +31,7 @@ import {
   VOCAB_MIN_VERB_SHARE,
   VOCAB_PER_100_WORDS,
 } from "@/lib/talkingPoints";
+import { isAllowedCommonsLicence, isLandscapeEnough, MIN_PHOTO_ASPECT } from "@/lib/wikimediaCommons";
 import type { Plan } from "@domain/access";
 
 let failures = 0;
@@ -120,6 +122,23 @@ for (const { piece } of written) {
       (worst / piece.vocab.length) * 100 <= VOCAB_MAX_PARAGRAPH_SHARE,
     label(piece.title),
     per.join(" / ")
+  );
+}
+
+// ---------- 6. fotos ----------
+console.log(
+  `\n== fotos (apaisadas >=${MIN_PHOTO_ASPECT}:1, licencia usable) ==`
+);
+for (const { piece } of written) {
+  if (!piece.photo) {
+    console.log(`      ${label(piece.title)}  sin foto`);
+    continue;
+  }
+  const ratio = piece.photo.width / piece.photo.height;
+  check(
+    isLandscapeEnough(piece.photo) && isAllowedCommonsLicence(piece.photo.licence),
+    label(piece.title),
+    `${piece.photo.width}x${piece.photo.height} (${ratio.toFixed(2)}:1) ${piece.photo.licence}`
   );
 }
 

@@ -34,7 +34,25 @@ export type TalkingPhoto = {
   licence: string;
   /** Alt text. Written by us, not taken from the file name. */
   alt: string;
+  /** Real pixel size of the file, used to enforce the aspect rule below. */
+  width: number;
+  height: number;
 };
+
+/**
+ * Minimum width-to-height ratio for a piece photo.
+ *
+ * The reader shows the image in a band that is `max-w-3xl` wide and 220-240px
+ * tall, i.e. roughly 3.5:1. A portrait photograph rendered there is contained
+ * to a narrow column with blurred filler either side: it reads as a mistake,
+ * because it is one. 1.3 admits normal 3:2 and 16:9 photographs and rejects
+ * squares and anything taller than wide.
+ */
+export const MIN_PHOTO_ASPECT = 1.3;
+
+export function isLandscapeEnough(photo: TalkingPhoto): boolean {
+  return photo.height > 0 && photo.width / photo.height >= MIN_PHOTO_ASPECT;
+}
 
 /**
  * True when the licence string is one we accept. Commons reports plenty of
