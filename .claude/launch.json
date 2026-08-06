@@ -4,16 +4,59 @@
     {
       "name": "next-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev:web"],
+      "runtimeArgs": [
+        "run",
+        "dev:web"
+      ],
       "port": 3000,
       "autoPort": false
     },
     {
       "name": "next-dev-3001",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev:web", "--", "--port", "3001"],
+      "runtimeArgs": [
+        "run",
+        "dev:web",
+        "--",
+        "--port",
+        "3001"
+      ],
       "port": 3001,
       "autoPort": false
+    },
+    {
+      "_comment": "Prototype worktree `talking-points`. Remove with the worktree.",
+      "name": "talking-points-3002",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "./.claude/worktrees/talking-points",
+        "run",
+        "dev:web",
+        "--",
+        "--port",
+        "3002"
+      ],
+      "port": 3002,
+      "autoPort": false
+    },
+    {
+      "_comment": "Talking Points sin clave Clerk: dispara el escape de desarrollo de canAccessTalkingPoints para poder verificar el lector sin sesion.",
+      "name": "talking-points-nokey-3004",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev:web",
+        "--",
+        "--port",
+        "3004"
+      ],
+      "port": 3004,
+      "autoPort": false,
+      "env": {
+        "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY": "",
+        "CLERK_SECRET_KEY": ""
+      }
     }
   ]
 }

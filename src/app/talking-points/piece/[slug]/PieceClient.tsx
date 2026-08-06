@@ -14,6 +14,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ExternalLink } from "lucide-react";
 import Player from "@/components/Player";
 import StoryContent from "@/components/StoryContent";
+import HighlightedStoryReader from "@/components/HighlightedStoryReader";
+import { coerceAudioWordTimings } from "@/lib/audioWordTimingsTypes";
+import { checkKaraokeUsable } from "@/lib/karaokeQualityGate";
+import TapGlossReader from "@/components/TapGlossReader";
+import TapGlossLayer from "@/components/TapGlossLayer";
+import TapGlossText from "@/components/TapGlossText";
+import { getTapGlossesForSlug } from "@/lib/tapGlosses";
 import StoryReaderShell from "@/components/StoryReaderShell";
 import type { TalkingPiece, TalkingTopic } from "@/lib/talkingPoints";
 import { photoCredit } from "@/lib/wikimediaCommons";
@@ -50,9 +57,35 @@ export default function PieceClient({
         word: v.term,
         surface: v.surface,
         type: v.type,
+        // "neutral" normalises to null downstream, so no badge is shown for it;
+        // only colloquial / slang / regional / vulgar earn the gold pill.
+        register: v.register,
         definition: v.en,
       })),
     [piece.vocab]
+  );
+
+  // KARAOKE. Same path as a journey story, same gate: the timings come from
+  // aeneas forced alignment (scripts/_tpAlign.ts), and `checkKaraokeUsable`
+  // still refuses them if they do not match this text or run slower than the
+  // audio. Without timings the reader falls back to plain prose, as before.
+  const karaoke = useMemo(() => {
+    if (!piece.audioWordTimings) return false;
+    return checkKaraokeUsable(
+      piece.slug,
+      coerceAudioWordTimings(piece.audioWordTimings),
+      text
+    ).usable;
+  }, [piece.audioWordTimings, piece.slug, text]);
+
+  // TAP-ANY-WORD. Every word in the body has a gloss, authored per language in
+  // src/data/tapGlosses/talking-points-*.json and covering 100% of the tokens
+  // these four pieces actually use. Two bundles rather than one because the key
+  // is the bare surface form and Spanish and German collide on it ("bar").
+  const glosses = useMemo(() => getTapGlossesForSlug(piece.slug), [piece.slug]);
+  const glossStory = useMemo(
+    () => ({ slug: piece.slug, title: piece.title, language: topic.language }),
+    [piece.slug, piece.title, topic.language]
   );
 
   // Stands in for JourneyStoryReadTracker: reaching the end marks it read.
@@ -74,7 +107,9 @@ export default function PieceClient({
 
   return (
     <StoryReaderShell
-      title={piece.title}
+      title={
+        glosses ? <TapGlossText text={piece.title} glosses={glosses} /> : piece.title
+      }
       level={topic.level}
       language={topic.language}
       region={topic.country === "ES" ? "Spain" : topic.country}
@@ -143,7 +178,29 @@ export default function PieceClient({
     >
       {written ? (
         <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
-          <StoryContent text={text} sentencesPerParagraph={3} vocab={vocab} />
+          {karaoke ? (
+            <>
+              <HighlightedStoryReader
+                story={{ vocab }}
+                audioWordTimings={piece.audioWordTimings}
+              />
+              {/* En modo karaoke los spans [data-word-index] ya existen: la
+                  capa solo añade el listener y la burbuja. Mismo patrón que
+                  /stories/[slug]. */}
+              {glosses ? (
+                <TapGlossLayer glosses={glosses} story={glossStory} />
+              ) : null}
+            </>
+          ) : glosses ? (
+            <TapGlossReader
+              text={text}
+              vocab={vocab}
+              glosses={glosses}
+              story={glossStory}
+            />
+          ) : (
+            <StoryContent text={text} sentencesPerParagraph={3} vocab={vocab} />
+          )}
           <SourcesPanel
             sources={piece.sources}
             open={showSources}

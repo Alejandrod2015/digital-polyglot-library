@@ -1,0 +1,1578 @@
+{
+ "payload": {
+  "version": 1,
+  "audioDurationSec": 104.616,
+  "storyPlainText": "Du stehst an der Kasse, hältst die Karte hin, und der Mann hinter dem Tresen zeigt auf ein kleines Schild: nur Bargeld. Kein Automat in der Nähe. Draußen regnet es.\n\nEr ist weder altmodisch noch stur. Für ihn ist dein Schein schlicht billiger. Die Bundesbank hat nachgerechnet, was den Handel jede Zahlung kostet: bar rund vierundzwanzig Cent, mit Kreditkarte fast einen Euro. Bei einem Kaffee für drei Euro ist das kein Rundungsfehler.\n\nEs geht auch schneller. Eine Barzahlung dauert an der Kasse gut zwanzig Sekunden, eine Kartenzahlung mit Unterschrift fast vierzig. Und er ist damit nicht allein: In Deutschland wird immer noch jede zweite Zahlung bar gemacht.\n\nBei den Kunden steht ganz oben nicht die Nostalgie, sondern der Stromausfall. Bargeld funktioniert, wenn die Technik nicht funktioniert. Danach kommt, dass Kinder mit Münzen lernen, was Geld überhaupt ist. Und der Datenschutz: Ein Schein verrät niemandem, wo du am Dienstagabend warst.\n\nUnd dann kommt der Widerspruch. Mehr als die Hälfte derselben Befragten sagt, Bargeld erleichtere Schwarzarbeit und Steuerhinterziehung, und genau deshalb solle man es einschränken. Neunundsechzig Prozent wollen bar zahlen können. Über die Hälfte findet, dass genau das ein Problem ist. Der Mann hinter dem Tresen wartet immer noch. Draußen regnet es weiter.",
+  "words": [
+   {
+    "text": "Du",
+    "charStart": 0,
+    "charEnd": 2,
+    "startSec": 2.6,
+    "endSec": 3.36
+   },
+   {
+    "text": "stehst",
+    "charStart": 3,
+    "charEnd": 9,
+    "startSec": 3.36,
+    "endSec": 3.72
+   },
+   {
+    "text": "an",
+    "charStart": 10,
+    "charEnd": 12,
+    "startSec": 3.72,
+    "endSec": 3.92
+   },
+   {
+    "text": "der",
+    "charStart": 13,
+    "charEnd": 16,
+    "startSec": 3.92,
+    "endSec": 3.96
+   },
+   {
+    "text": "Kasse",
+    "charStart": 17,
+    "charEnd": 22,
+    "startSec": 3.96,
+    "endSec": 4.64
+   },
+   {
+    "text": "hältst",
+    "charStart": 24,
+    "charEnd": 30,
+    "startSec": 4.64,
+    "endSec": 5.08
+   },
+   {
+    "text": "die",
+    "charStart": 31,
+    "charEnd": 34,
+    "startSec": 5.08,
+    "endSec": 5.2
+   },
+   {
+    "text": "Karte",
+    "charStart": 35,
+    "charEnd": 40,
+    "startSec": 5.2,
+    "endSec": 5.44
+   },
+   {
+    "text": "hin",
+    "charStart": 41,
+    "charEnd": 44,
+    "startSec": 5.44,
+    "endSec": 5.8
+   },
+   {
+    "text": "und",
+    "charStart": 46,
+    "charEnd": 49,
+    "startSec": 5.8,
+    "endSec": 6.36
+   },
+   {
+    "text": "der",
+    "charStart": 50,
+    "charEnd": 53,
+    "startSec": 6.36,
+    "endSec": 6.44
+   },
+   {
+    "text": "Mann",
+    "charStart": 54,
+    "charEnd": 58,
+    "startSec": 6.44,
+    "endSec": 6.72
+   },
+   {
+    "text": "hinter",
+    "charStart": 59,
+    "charEnd": 65,
+    "startSec": 6.72,
+    "endSec": 6.96
+   },
+   {
+    "text": "dem",
+    "charStart": 66,
+    "charEnd": 69,
+    "startSec": 6.96,
+    "endSec": 7.12
+   },
+   {
+    "text": "Tresen",
+    "charStart": 70,
+    "charEnd": 76,
+    "startSec": 7.12,
+    "endSec": 7.72
+   },
+   {
+    "text": "zeigt",
+    "charStart": 77,
+    "charEnd": 82,
+    "startSec": 7.72,
+    "endSec": 8.44
+   },
+   {
+    "text": "auf",
+    "charStart": 83,
+    "charEnd": 86,
+    "startSec": 8.44,
+    "endSec": 8.52
+   },
+   {
+    "text": "ein",
+    "charStart": 87,
+    "charEnd": 90,
+    "startSec": 8.52,
+    "endSec": 8.72
+   },
+   {
+    "text": "kleines",
+    "charStart": 91,
+    "charEnd": 98,
+    "startSec": 8.72,
+    "endSec": 9.12
+   },
+   {
+    "text": "Schild",
+    "charStart": 99,
+    "charEnd": 105,
+    "startSec": 9.12,
+    "endSec": 10.44
+   },
+   {
+    "text": "nur",
+    "charStart": 107,
+    "charEnd": 110,
+    "startSec": 10.44,
+    "endSec": 11
+   },
+   {
+    "text": "Bargeld",
+    "charStart": 111,
+    "charEnd": 118,
+    "startSec": 11,
+    "endSec": 11.68
+   },
+   {
+    "text": "Kein",
+    "charStart": 120,
+    "charEnd": 124,
+    "startSec": 11.68,
+    "endSec": 12.52
+   },
+   {
+    "text": "Automat",
+    "charStart": 125,
+    "charEnd": 132,
+    "startSec": 12.52,
+    "endSec": 13.16
+   },
+   {
+    "text": "in",
+    "charStart": 133,
+    "charEnd": 135,
+    "startSec": 13.16,
+    "endSec": 13.2
+   },
+   {
+    "text": "der",
+    "charStart": 136,
+    "charEnd": 139,
+    "startSec": 13.2,
+    "endSec": 13.28
+   },
+   {
+    "text": "Nähe",
+    "charStart": 140,
+    "charEnd": 144,
+    "startSec": 13.28,
+    "endSec": 14.32
+   },
+   {
+    "text": "Draußen",
+    "charStart": 146,
+    "charEnd": 153,
+    "startSec": 14.32,
+    "endSec": 14.68
+   },
+   {
+    "text": "regnet",
+    "charStart": 154,
+    "charEnd": 160,
+    "startSec": 14.68,
+    "endSec": 15.08
+   },
+   {
+    "text": "es",
+    "charStart": 161,
+    "charEnd": 163,
+    "startSec": 15.08,
+    "endSec": 15.4
+   },
+   {
+    "text": "Er",
+    "charStart": 166,
+    "charEnd": 168,
+    "startSec": 15.4,
+    "endSec": 15.8
+   },
+   {
+    "text": "ist",
+    "charStart": 169,
+    "charEnd": 172,
+    "startSec": 15.8,
+    "endSec": 16.08
+   },
+   {
+    "text": "weder",
+    "charStart": 173,
+    "charEnd": 178,
+    "startSec": 16.08,
+    "endSec": 16.56
+   },
+   {
+    "text": "altmodisch",
+    "charStart": 179,
+    "charEnd": 189,
+    "startSec": 16.56,
+    "endSec": 17.2
+   },
+   {
+    "text": "noch",
+    "charStart": 190,
+    "charEnd": 194,
+    "startSec": 17.2,
+    "endSec": 17.56
+   },
+   {
+    "text": "stur",
+    "charStart": 195,
+    "charEnd": 199,
+    "startSec": 17.56,
+    "endSec": 18.48
+   },
+   {
+    "text": "Für",
+    "charStart": 201,
+    "charEnd": 204,
+    "startSec": 18.48,
+    "endSec": 18.72
+   },
+   {
+    "text": "ihn",
+    "charStart": 205,
+    "charEnd": 208,
+    "startSec": 18.72,
+    "endSec": 19.2
+   },
+   {
+    "text": "ist",
+    "charStart": 209,
+    "charEnd": 212,
+    "startSec": 19.2,
+    "endSec": 19.32
+   },
+   {
+    "text": "dein",
+    "charStart": 213,
+    "charEnd": 217,
+    "startSec": 19.32,
+    "endSec": 19.52
+   },
+   {
+    "text": "Schein",
+    "charStart": 218,
+    "charEnd": 224,
+    "startSec": 19.52,
+    "endSec": 20.08
+   },
+   {
+    "text": "schlicht",
+    "charStart": 225,
+    "charEnd": 233,
+    "startSec": 20.08,
+    "endSec": 20.68
+   },
+   {
+    "text": "billiger",
+    "charStart": 234,
+    "charEnd": 242,
+    "startSec": 20.68,
+    "endSec": 21.92
+   },
+   {
+    "text": "Die",
+    "charStart": 244,
+    "charEnd": 247,
+    "startSec": 21.92,
+    "endSec": 22
+   },
+   {
+    "text": "Bundesbank",
+    "charStart": 248,
+    "charEnd": 258,
+    "startSec": 22,
+    "endSec": 22.84
+   },
+   {
+    "text": "hat",
+    "charStart": 259,
+    "charEnd": 262,
+    "startSec": 22.84,
+    "endSec": 23
+   },
+   {
+    "text": "nachgerechnet",
+    "charStart": 263,
+    "charEnd": 276,
+    "startSec": 23,
+    "endSec": 24.16
+   },
+   {
+    "text": "was",
+    "charStart": 278,
+    "charEnd": 281,
+    "startSec": 24.16,
+    "endSec": 24.44
+   },
+   {
+    "text": "den",
+    "charStart": 282,
+    "charEnd": 285,
+    "startSec": 24.44,
+    "endSec": 24.64
+   },
+   {
+    "text": "Handel",
+    "charStart": 286,
+    "charEnd": 292,
+    "startSec": 24.64,
+    "endSec": 25.24
+   },
+   {
+    "text": "jede",
+    "charStart": 293,
+    "charEnd": 297,
+    "startSec": 25.24,
+    "endSec": 25.56
+   },
+   {
+    "text": "Zahlung",
+    "charStart": 298,
+    "charEnd": 305,
+    "startSec": 25.56,
+    "endSec": 26.08
+   },
+   {
+    "text": "kostet",
+    "charStart": 306,
+    "charEnd": 312,
+    "startSec": 26.08,
+    "endSec": 27
+   },
+   {
+    "text": "bar",
+    "charStart": 314,
+    "charEnd": 317,
+    "startSec": 27,
+    "endSec": 27.52
+   },
+   {
+    "text": "rund",
+    "charStart": 318,
+    "charEnd": 322,
+    "startSec": 27.52,
+    "endSec": 28.08
+   },
+   {
+    "text": "vierundzwanzig",
+    "charStart": 323,
+    "charEnd": 337,
+    "startSec": 28.08,
+    "endSec": 29.32
+   },
+   {
+    "text": "Cent",
+    "charStart": 338,
+    "charEnd": 342,
+    "startSec": 29.32,
+    "endSec": 29.8
+   },
+   {
+    "text": "mit",
+    "charStart": 344,
+    "charEnd": 347,
+    "startSec": 29.8,
+    "endSec": 29.96
+   },
+   {
+    "text": "Kreditkarte",
+    "charStart": 348,
+    "charEnd": 359,
+    "startSec": 29.96,
+    "endSec": 31.04
+   },
+   {
+    "text": "fast",
+    "charStart": 360,
+    "charEnd": 364,
+    "startSec": 31.04,
+    "endSec": 31.52
+   },
+   {
+    "text": "einen",
+    "charStart": 365,
+    "charEnd": 370,
+    "startSec": 31.52,
+    "endSec": 31.8
+   },
+   {
+    "text": "Euro",
+    "charStart": 371,
+    "charEnd": 375,
+    "startSec": 31.8,
+    "endSec": 32.28
+   },
+   {
+    "text": "Bei",
+    "charStart": 377,
+    "charEnd": 380,
+    "startSec": 32.28,
+    "endSec": 33.04
+   },
+   {
+    "text": "einem",
+    "charStart": 381,
+    "charEnd": 386,
+    "startSec": 33.04,
+    "endSec": 33.4
+   },
+   {
+    "text": "Kaffee",
+    "charStart": 387,
+    "charEnd": 393,
+    "startSec": 33.4,
+    "endSec": 34.08
+   },
+   {
+    "text": "für",
+    "charStart": 394,
+    "charEnd": 397,
+    "startSec": 34.08,
+    "endSec": 34.2
+   },
+   {
+    "text": "drei",
+    "charStart": 398,
+    "charEnd": 402,
+    "startSec": 34.2,
+    "endSec": 34.8
+   },
+   {
+    "text": "Euro",
+    "charStart": 403,
+    "charEnd": 407,
+    "startSec": 34.8,
+    "endSec": 35.08
+   },
+   {
+    "text": "ist",
+    "charStart": 408,
+    "charEnd": 411,
+    "startSec": 35.08,
+    "endSec": 35.32
+   },
+   {
+    "text": "das",
+    "charStart": 412,
+    "charEnd": 415,
+    "startSec": 35.32,
+    "endSec": 35.64
+   },
+   {
+    "text": "kein",
+    "charStart": 416,
+    "charEnd": 420,
+    "startSec": 35.64,
+    "endSec": 35.92
+   },
+   {
+    "text": "Rundungsfehler",
+    "charStart": 421,
+    "charEnd": 435,
+    "startSec": 35.92,
+    "endSec": 37.2
+   },
+   {
+    "text": "Es",
+    "charStart": 438,
+    "charEnd": 440,
+    "startSec": 37.2,
+    "endSec": 37.32
+   },
+   {
+    "text": "geht",
+    "charStart": 441,
+    "charEnd": 445,
+    "startSec": 37.32,
+    "endSec": 37.52
+   },
+   {
+    "text": "auch",
+    "charStart": 446,
+    "charEnd": 450,
+    "startSec": 37.52,
+    "endSec": 38
+   },
+   {
+    "text": "schneller",
+    "charStart": 451,
+    "charEnd": 460,
+    "startSec": 38,
+    "endSec": 38.84
+   },
+   {
+    "text": "Eine",
+    "charStart": 462,
+    "charEnd": 466,
+    "startSec": 38.84,
+    "endSec": 39
+   },
+   {
+    "text": "Barzahlung",
+    "charStart": 467,
+    "charEnd": 477,
+    "startSec": 39,
+    "endSec": 39.88
+   },
+   {
+    "text": "dauert",
+    "charStart": 478,
+    "charEnd": 484,
+    "startSec": 39.88,
+    "endSec": 40.48
+   },
+   {
+    "text": "an",
+    "charStart": 485,
+    "charEnd": 487,
+    "startSec": 40.48,
+    "endSec": 40.6
+   },
+   {
+    "text": "der",
+    "charStart": 488,
+    "charEnd": 491,
+    "startSec": 40.6,
+    "endSec": 40.76
+   },
+   {
+    "text": "Kasse",
+    "charStart": 492,
+    "charEnd": 497,
+    "startSec": 40.76,
+    "endSec": 41.2
+   },
+   {
+    "text": "gut",
+    "charStart": 498,
+    "charEnd": 501,
+    "startSec": 41.2,
+    "endSec": 41.56
+   },
+   {
+    "text": "zwanzig",
+    "charStart": 502,
+    "charEnd": 509,
+    "startSec": 41.56,
+    "endSec": 42.4
+   },
+   {
+    "text": "Sekunden",
+    "charStart": 510,
+    "charEnd": 518,
+    "startSec": 42.4,
+    "endSec": 43.04
+   },
+   {
+    "text": "eine",
+    "charStart": 520,
+    "charEnd": 524,
+    "startSec": 43.04,
+    "endSec": 43.6
+   },
+   {
+    "text": "Kartenzahlung",
+    "charStart": 525,
+    "charEnd": 538,
+    "startSec": 43.6,
+    "endSec": 44.64
+   },
+   {
+    "text": "mit",
+    "charStart": 539,
+    "charEnd": 542,
+    "startSec": 44.64,
+    "endSec": 44.8
+   },
+   {
+    "text": "Unterschrift",
+    "charStart": 543,
+    "charEnd": 555,
+    "startSec": 44.8,
+    "endSec": 45.52
+   },
+   {
+    "text": "fast",
+    "charStart": 556,
+    "charEnd": 560,
+    "startSec": 45.52,
+    "endSec": 45.92
+   },
+   {
+    "text": "vierzig",
+    "charStart": 561,
+    "charEnd": 568,
+    "startSec": 45.92,
+    "endSec": 47.36
+   },
+   {
+    "text": "Und",
+    "charStart": 570,
+    "charEnd": 573,
+    "startSec": 47.36,
+    "endSec": 47.76
+   },
+   {
+    "text": "er",
+    "charStart": 574,
+    "charEnd": 576,
+    "startSec": 47.76,
+    "endSec": 48.04
+   },
+   {
+    "text": "ist",
+    "charStart": 577,
+    "charEnd": 580,
+    "startSec": 48.04,
+    "endSec": 48.36
+   },
+   {
+    "text": "damit",
+    "charStart": 581,
+    "charEnd": 586,
+    "startSec": 48.36,
+    "endSec": 48.68
+   },
+   {
+    "text": "nicht",
+    "charStart": 587,
+    "charEnd": 592,
+    "startSec": 48.68,
+    "endSec": 48.96
+   },
+   {
+    "text": "allein",
+    "charStart": 593,
+    "charEnd": 599,
+    "startSec": 48.96,
+    "endSec": 49.56
+   },
+   {
+    "text": "In",
+    "charStart": 601,
+    "charEnd": 603,
+    "startSec": 49.56,
+    "endSec": 50.32
+   },
+   {
+    "text": "Deutschland",
+    "charStart": 604,
+    "charEnd": 615,
+    "startSec": 50.32,
+    "endSec": 51.12
+   },
+   {
+    "text": "wird",
+    "charStart": 616,
+    "charEnd": 620,
+    "startSec": 51.12,
+    "endSec": 51.56
+   },
+   {
+    "text": "immer",
+    "charStart": 621,
+    "charEnd": 626,
+    "startSec": 51.56,
+    "endSec": 51.96
+   },
+   {
+    "text": "noch",
+    "charStart": 627,
+    "charEnd": 631,
+    "startSec": 51.96,
+    "endSec": 52.36
+   },
+   {
+    "text": "jede",
+    "charStart": 632,
+    "charEnd": 636,
+    "startSec": 52.36,
+    "endSec": 52.88
+   },
+   {
+    "text": "zweite",
+    "charStart": 637,
+    "charEnd": 643,
+    "startSec": 52.88,
+    "endSec": 53.52
+   },
+   {
+    "text": "Zahlung",
+    "charStart": 644,
+    "charEnd": 651,
+    "startSec": 53.52,
+    "endSec": 54.04
+   },
+   {
+    "text": "bar",
+    "charStart": 652,
+    "charEnd": 655,
+    "startSec": 54.04,
+    "endSec": 54.4
+   },
+   {
+    "text": "gemacht",
+    "charStart": 656,
+    "charEnd": 663,
+    "startSec": 54.4,
+    "endSec": 54.8
+   },
+   {
+    "text": "Bei",
+    "charStart": 666,
+    "charEnd": 669,
+    "startSec": 54.8,
+    "endSec": 55.76
+   },
+   {
+    "text": "den",
+    "charStart": 670,
+    "charEnd": 673,
+    "startSec": 55.76,
+    "endSec": 55.96
+   },
+   {
+    "text": "Kunden",
+    "charStart": 674,
+    "charEnd": 680,
+    "startSec": 55.96,
+    "endSec": 56.28
+   },
+   {
+    "text": "steht",
+    "charStart": 681,
+    "charEnd": 686,
+    "startSec": 56.28,
+    "endSec": 56.88
+   },
+   {
+    "text": "ganz",
+    "charStart": 687,
+    "charEnd": 691,
+    "startSec": 56.88,
+    "endSec": 57.2
+   },
+   {
+    "text": "oben",
+    "charStart": 692,
+    "charEnd": 696,
+    "startSec": 57.2,
+    "endSec": 57.72
+   },
+   {
+    "text": "nicht",
+    "charStart": 697,
+    "charEnd": 702,
+    "startSec": 57.72,
+    "endSec": 58.2
+   },
+   {
+    "text": "die",
+    "charStart": 703,
+    "charEnd": 706,
+    "startSec": 58.2,
+    "endSec": 58.36
+   },
+   {
+    "text": "Nostalgie",
+    "charStart": 707,
+    "charEnd": 716,
+    "startSec": 58.36,
+    "endSec": 59.32
+   },
+   {
+    "text": "sondern",
+    "charStart": 718,
+    "charEnd": 725,
+    "startSec": 59.32,
+    "endSec": 59.84
+   },
+   {
+    "text": "der",
+    "charStart": 726,
+    "charEnd": 729,
+    "startSec": 59.84,
+    "endSec": 59.92
+   },
+   {
+    "text": "Stromausfall",
+    "charStart": 730,
+    "charEnd": 742,
+    "startSec": 59.92,
+    "endSec": 61.24
+   },
+   {
+    "text": "Bargeld",
+    "charStart": 744,
+    "charEnd": 751,
+    "startSec": 61.24,
+    "endSec": 62.52
+   },
+   {
+    "text": "funktioniert",
+    "charStart": 752,
+    "charEnd": 764,
+    "startSec": 62.52,
+    "endSec": 63.48
+   },
+   {
+    "text": "wenn",
+    "charStart": 766,
+    "charEnd": 770,
+    "startSec": 63.48,
+    "endSec": 63.76
+   },
+   {
+    "text": "die",
+    "charStart": 771,
+    "charEnd": 774,
+    "startSec": 63.76,
+    "endSec": 63.8
+   },
+   {
+    "text": "Technik",
+    "charStart": 775,
+    "charEnd": 782,
+    "startSec": 63.8,
+    "endSec": 64.28
+   },
+   {
+    "text": "nicht",
+    "charStart": 783,
+    "charEnd": 788,
+    "startSec": 64.28,
+    "endSec": 64.4
+   },
+   {
+    "text": "funktioniert",
+    "charStart": 789,
+    "charEnd": 801,
+    "startSec": 64.4,
+    "endSec": 65.52
+   },
+   {
+    "text": "Danach",
+    "charStart": 803,
+    "charEnd": 809,
+    "startSec": 65.52,
+    "endSec": 66.4
+   },
+   {
+    "text": "kommt",
+    "charStart": 810,
+    "charEnd": 815,
+    "startSec": 66.4,
+    "endSec": 66.8
+   },
+   {
+    "text": "dass",
+    "charStart": 817,
+    "charEnd": 821,
+    "startSec": 66.8,
+    "endSec": 67.28
+   },
+   {
+    "text": "Kinder",
+    "charStart": 822,
+    "charEnd": 828,
+    "startSec": 67.28,
+    "endSec": 67.64
+   },
+   {
+    "text": "mit",
+    "charStart": 829,
+    "charEnd": 832,
+    "startSec": 67.64,
+    "endSec": 67.72
+   },
+   {
+    "text": "Münzen",
+    "charStart": 833,
+    "charEnd": 839,
+    "startSec": 67.72,
+    "endSec": 68.28
+   },
+   {
+    "text": "lernen",
+    "charStart": 840,
+    "charEnd": 846,
+    "startSec": 68.28,
+    "endSec": 68.76
+   },
+   {
+    "text": "was",
+    "charStart": 848,
+    "charEnd": 851,
+    "startSec": 68.76,
+    "endSec": 69.08
+   },
+   {
+    "text": "Geld",
+    "charStart": 852,
+    "charEnd": 856,
+    "startSec": 69.08,
+    "endSec": 69.52
+   },
+   {
+    "text": "überhaupt",
+    "charStart": 857,
+    "charEnd": 866,
+    "startSec": 69.52,
+    "endSec": 70.16
+   },
+   {
+    "text": "ist",
+    "charStart": 867,
+    "charEnd": 870,
+    "startSec": 70.16,
+    "endSec": 70.44
+   },
+   {
+    "text": "Und",
+    "charStart": 872,
+    "charEnd": 875,
+    "startSec": 70.44,
+    "endSec": 71.08
+   },
+   {
+    "text": "der",
+    "charStart": 876,
+    "charEnd": 879,
+    "startSec": 71.08,
+    "endSec": 71.2
+   },
+   {
+    "text": "Datenschutz",
+    "charStart": 880,
+    "charEnd": 891,
+    "startSec": 71.2,
+    "endSec": 72
+   },
+   {
+    "text": "Ein",
+    "charStart": 893,
+    "charEnd": 896,
+    "startSec": 72,
+    "endSec": 72.52
+   },
+   {
+    "text": "Schein",
+    "charStart": 897,
+    "charEnd": 903,
+    "startSec": 72.52,
+    "endSec": 73.16
+   },
+   {
+    "text": "verrät",
+    "charStart": 904,
+    "charEnd": 910,
+    "startSec": 73.16,
+    "endSec": 73.96
+   },
+   {
+    "text": "niemandem",
+    "charStart": 911,
+    "charEnd": 920,
+    "startSec": 73.96,
+    "endSec": 74.92
+   },
+   {
+    "text": "wo",
+    "charStart": 922,
+    "charEnd": 924,
+    "startSec": 74.92,
+    "endSec": 75.48
+   },
+   {
+    "text": "du",
+    "charStart": 925,
+    "charEnd": 927,
+    "startSec": 75.48,
+    "endSec": 75.48
+   },
+   {
+    "text": "am",
+    "charStart": 928,
+    "charEnd": 930,
+    "startSec": 75.48,
+    "endSec": 75.68
+   },
+   {
+    "text": "Dienstagabend",
+    "charStart": 931,
+    "charEnd": 944,
+    "startSec": 75.68,
+    "endSec": 76.28
+   },
+   {
+    "text": "warst",
+    "charStart": 945,
+    "charEnd": 950,
+    "startSec": 76.28,
+    "endSec": 76.76
+   },
+   {
+    "text": "Und",
+    "charStart": 953,
+    "charEnd": 956,
+    "startSec": 76.76,
+    "endSec": 77.4
+   },
+   {
+    "text": "dann",
+    "charStart": 957,
+    "charEnd": 961,
+    "startSec": 77.4,
+    "endSec": 77.8
+   },
+   {
+    "text": "kommt",
+    "charStart": 962,
+    "charEnd": 967,
+    "startSec": 77.8,
+    "endSec": 78.48
+   },
+   {
+    "text": "der",
+    "charStart": 968,
+    "charEnd": 971,
+    "startSec": 78.48,
+    "endSec": 78.6
+   },
+   {
+    "text": "Widerspruch",
+    "charStart": 972,
+    "charEnd": 983,
+    "startSec": 78.6,
+    "endSec": 79.4
+   },
+   {
+    "text": "Mehr",
+    "charStart": 985,
+    "charEnd": 989,
+    "startSec": 79.4,
+    "endSec": 80.64
+   },
+   {
+    "text": "als",
+    "charStart": 990,
+    "charEnd": 993,
+    "startSec": 80.64,
+    "endSec": 80.84
+   },
+   {
+    "text": "die",
+    "charStart": 994,
+    "charEnd": 997,
+    "startSec": 80.84,
+    "endSec": 80.84
+   },
+   {
+    "text": "Hälfte",
+    "charStart": 998,
+    "charEnd": 1004,
+    "startSec": 80.84,
+    "endSec": 81.32
+   },
+   {
+    "text": "derselben",
+    "charStart": 1005,
+    "charEnd": 1014,
+    "startSec": 81.32,
+    "endSec": 81.96
+   },
+   {
+    "text": "Befragten",
+    "charStart": 1015,
+    "charEnd": 1024,
+    "startSec": 81.96,
+    "endSec": 82.52
+   },
+   {
+    "text": "sagt",
+    "charStart": 1025,
+    "charEnd": 1029,
+    "startSec": 82.52,
+    "endSec": 83.28
+   },
+   {
+    "text": "Bargeld",
+    "charStart": 1031,
+    "charEnd": 1038,
+    "startSec": 83.28,
+    "endSec": 84.4
+   },
+   {
+    "text": "erleichtere",
+    "charStart": 1039,
+    "charEnd": 1050,
+    "startSec": 84.4,
+    "endSec": 85.04
+   },
+   {
+    "text": "Schwarzarbeit",
+    "charStart": 1051,
+    "charEnd": 1064,
+    "startSec": 85.04,
+    "endSec": 86.08
+   },
+   {
+    "text": "und",
+    "charStart": 1065,
+    "charEnd": 1068,
+    "startSec": 86.08,
+    "endSec": 86.44
+   },
+   {
+    "text": "Steuerhinterziehung",
+    "charStart": 1069,
+    "charEnd": 1088,
+    "startSec": 86.44,
+    "endSec": 87.56
+   },
+   {
+    "text": "und",
+    "charStart": 1090,
+    "charEnd": 1093,
+    "startSec": 87.56,
+    "endSec": 88.08
+   },
+   {
+    "text": "genau",
+    "charStart": 1094,
+    "charEnd": 1099,
+    "startSec": 88.08,
+    "endSec": 88.48
+   },
+   {
+    "text": "deshalb",
+    "charStart": 1100,
+    "charEnd": 1107,
+    "startSec": 88.48,
+    "endSec": 88.92
+   },
+   {
+    "text": "solle",
+    "charStart": 1108,
+    "charEnd": 1113,
+    "startSec": 88.92,
+    "endSec": 89.28
+   },
+   {
+    "text": "man",
+    "charStart": 1114,
+    "charEnd": 1117,
+    "startSec": 89.28,
+    "endSec": 89.4
+   },
+   {
+    "text": "es",
+    "charStart": 1118,
+    "charEnd": 1120,
+    "startSec": 89.4,
+    "endSec": 89.6
+   },
+   {
+    "text": "einschränken",
+    "charStart": 1121,
+    "charEnd": 1133,
+    "startSec": 89.6,
+    "endSec": 90.44
+   },
+   {
+    "text": "Neunundsechzig",
+    "charStart": 1135,
+    "charEnd": 1149,
+    "startSec": 90.44,
+    "endSec": 92.4
+   },
+   {
+    "text": "Prozent",
+    "charStart": 1150,
+    "charEnd": 1157,
+    "startSec": 92.4,
+    "endSec": 93.08
+   },
+   {
+    "text": "wollen",
+    "charStart": 1158,
+    "charEnd": 1164,
+    "startSec": 93.08,
+    "endSec": 93.44
+   },
+   {
+    "text": "bar",
+    "charStart": 1165,
+    "charEnd": 1168,
+    "startSec": 93.44,
+    "endSec": 93.72
+   },
+   {
+    "text": "zahlen",
+    "charStart": 1169,
+    "charEnd": 1175,
+    "startSec": 93.72,
+    "endSec": 94.2
+   },
+   {
+    "text": "können",
+    "charStart": 1176,
+    "charEnd": 1182,
+    "startSec": 94.2,
+    "endSec": 94.6
+   },
+   {
+    "text": "Über",
+    "charStart": 1184,
+    "charEnd": 1188,
+    "startSec": 94.6,
+    "endSec": 95.04
+   },
+   {
+    "text": "die",
+    "charStart": 1189,
+    "charEnd": 1192,
+    "startSec": 95.04,
+    "endSec": 95.16
+   },
+   {
+    "text": "Hälfte",
+    "charStart": 1193,
+    "charEnd": 1199,
+    "startSec": 95.16,
+    "endSec": 95.6
+   },
+   {
+    "text": "findet",
+    "charStart": 1200,
+    "charEnd": 1206,
+    "startSec": 95.6,
+    "endSec": 96.48
+   },
+   {
+    "text": "dass",
+    "charStart": 1208,
+    "charEnd": 1212,
+    "startSec": 96.48,
+    "endSec": 96.72
+   },
+   {
+    "text": "genau",
+    "charStart": 1213,
+    "charEnd": 1218,
+    "startSec": 96.72,
+    "endSec": 97.24
+   },
+   {
+    "text": "das",
+    "charStart": 1219,
+    "charEnd": 1222,
+    "startSec": 97.24,
+    "endSec": 97.56
+   },
+   {
+    "text": "ein",
+    "charStart": 1223,
+    "charEnd": 1226,
+    "startSec": 97.56,
+    "endSec": 97.76
+   },
+   {
+    "text": "Problem",
+    "charStart": 1227,
+    "charEnd": 1234,
+    "startSec": 97.76,
+    "endSec": 98.28
+   },
+   {
+    "text": "ist",
+    "charStart": 1235,
+    "charEnd": 1238,
+    "startSec": 98.28,
+    "endSec": 98.64
+   },
+   {
+    "text": "Der",
+    "charStart": 1240,
+    "charEnd": 1243,
+    "startSec": 98.64,
+    "endSec": 99.12
+   },
+   {
+    "text": "Mann",
+    "charStart": 1244,
+    "charEnd": 1248,
+    "startSec": 99.12,
+    "endSec": 99.48
+   },
+   {
+    "text": "hinter",
+    "charStart": 1249,
+    "charEnd": 1255,
+    "startSec": 99.48,
+    "endSec": 99.84
+   },
+   {
+    "text": "dem",
+    "charStart": 1256,
+    "charEnd": 1259,
+    "startSec": 99.84,
+    "endSec": 100.04
+   },
+   {
+    "text": "Tresen",
+    "charStart": 1260,
+    "charEnd": 1266,
+    "startSec": 100.04,
+    "endSec": 100.68
+   },
+   {
+    "text": "wartet",
+    "charStart": 1267,
+    "charEnd": 1273,
+    "startSec": 100.68,
+    "endSec": 101.28
+   },
+   {
+    "text": "immer",
+    "charStart": 1274,
+    "charEnd": 1279,
+    "startSec": 101.28,
+    "endSec": 101.6
+   },
+   {
+    "text": "noch",
+    "charStart": 1280,
+    "charEnd": 1284,
+    "startSec": 101.6,
+    "endSec": 101.96
+   },
+   {
+    "text": "Draußen",
+    "charStart": 1286,
+    "charEnd": 1293,
+    "startSec": 101.96,
+    "endSec": 103
+   },
+   {
+    "text": "regnet",
+    "charStart": 1294,
+    "charEnd": 1300,
+    "startSec": 103,
+    "endSec": 103.44
+   },
+   {
+    "text": "es",
+    "charStart": 1301,
+    "charEnd": 1303,
+    "startSec": 103.44,
+    "endSec": 103.68
+   },
+   {
+    "text": "weiter",
+    "charStart": 1304,
+    "charEnd": 1310,
+    "startSec": 103.68,
+    "endSec": 104.56
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "sentence-1",
+   "text": "Du stehst an der Kasse, hältst die Karte hin, und der Mann hinter dem Tresen zeigt auf ein kleines Schild: nur Bargeld.",
+   "normalizedText": "du stehst an der kasse hältst die karte hin und der mann hinter dem tresen zeigt auf ein kleines schild nur bargeld",
+   "startSec": 2.6,
+   "endSec": 11.623333,
+   "index": 0
+  },
+  {
+   "id": "sentence-2",
+   "text": "Kein Automat in der Nähe.",
+   "normalizedText": "kein automat in der nähe",
+   "startSec": 11.68,
+   "endSec": 14.3,
+   "index": 1
+  },
+  {
+   "id": "sentence-3",
+   "text": "Draußen regnet es.",
+   "normalizedText": "draußen regnet es",
+   "startSec": 14.32,
+   "endSec": 15.359312,
+   "index": 2
+  },
+  {
+   "id": "sentence-4",
+   "text": "Er ist weder altmodisch noch stur.",
+   "normalizedText": "er ist weder altmodisch noch stur",
+   "startSec": 15.4,
+   "endSec": 18.46,
+   "index": 3
+  },
+  {
+   "id": "sentence-5",
+   "text": "Für ihn ist dein Schein schlicht billiger.",
+   "normalizedText": "für ihn ist dein schein schlicht billiger",
+   "startSec": 18.48,
+   "endSec": 21.900000000000002,
+   "index": 4
+  },
+  {
+   "id": "sentence-6",
+   "text": "Die Bundesbank hat nachgerechnet, was den Handel jede Zahlung kostet: bar rund vierundzwanzig Cent, mit Kreditkarte fast einen Euro.",
+   "normalizedText": "die bundesbank hat nachgerechnet was den handel jede zahlung kostet bar rund vierundzwanzig cent mit kreditkarte fast einen euro",
+   "startSec": 21.92,
+   "endSec": 32.26,
+   "index": 5
+  },
+  {
+   "id": "sentence-7",
+   "text": "Bei einem Kaffee für drei Euro ist das kein Rundungsfehler.",
+   "normalizedText": "bei einem kaffee für drei euro ist das kein rundungsfehler",
+   "startSec": 32.28,
+   "endSec": 37.18,
+   "index": 6
+  },
+  {
+   "id": "sentence-8",
+   "text": "Es geht auch schneller.",
+   "normalizedText": "es geht auch schneller",
+   "startSec": 37.2,
+   "endSec": 38.82,
+   "index": 7
+  },
+  {
+   "id": "sentence-9",
+   "text": "Eine Barzahlung dauert an der Kasse gut zwanzig Sekunden, eine Kartenzahlung mit Unterschrift fast vierzig.",
+   "normalizedText": "eine barzahlung dauert an der kasse gut zwanzig sekunden eine kartenzahlung mit unterschrift fast vierzig",
+   "startSec": 38.84,
+   "endSec": 47.339999999999996,
+   "index": 8
+  },
+  {
+   "id": "sentence-10",
+   "text": "Und er ist damit nicht allein: In Deutschland wird immer noch jede zweite Zahlung bar gemacht.",
+   "normalizedText": "und er ist damit nicht allein in deutschland wird immer noch jede zweite zahlung bar gemacht",
+   "startSec": 47.36,
+   "endSec": 54.779999999999994,
+   "index": 9
+  },
+  {
+   "id": "sentence-11",
+   "text": "Bei den Kunden steht ganz oben nicht die Nostalgie, sondern der Stromausfall.",
+   "normalizedText": "bei den kunden steht ganz oben nicht die nostalgie sondern der stromausfall",
+   "startSec": 54.8,
+   "endSec": 61.22,
+   "index": 10
+  },
+  {
+   "id": "sentence-12",
+   "text": "Bargeld funktioniert, wenn die Technik nicht funktioniert.",
+   "normalizedText": "bargeld funktioniert wenn die technik nicht funktioniert",
+   "startSec": 61.24,
+   "endSec": 65.486562,
+   "index": 11
+  },
+  {
+   "id": "sentence-13",
+   "text": "Danach kommt, dass Kinder mit Münzen lernen, was Geld überhaupt ist.",
+   "normalizedText": "danach kommt dass kinder mit münzen lernen was geld überhaupt ist",
+   "startSec": 65.52,
+   "endSec": 70.42,
+   "index": 12
+  },
+  {
+   "id": "sentence-14",
+   "text": "Und der Datenschutz: Ein Schein verrät niemandem, wo du am Dienstagabend warst.",
+   "normalizedText": "und der datenschutz ein schein verrät niemandem wo du am dienstagabend warst",
+   "startSec": 70.44,
+   "endSec": 76.74000000000001,
+   "index": 13
+  },
+  {
+   "id": "sentence-15",
+   "text": "Und dann kommt der Widerspruch.",
+   "normalizedText": "und dann kommt der widerspruch",
+   "startSec": 76.76,
+   "endSec": 79.38000000000001,
+   "index": 14
+  },
+  {
+   "id": "sentence-16",
+   "text": "Mehr als die Hälfte derselben Befragten sagt, Bargeld erleichtere Schwarzarbeit und Steuerhinterziehung, und genau deshalb solle man es einschränken.",
+   "normalizedText": "mehr als die hälfte derselben befragten sagt bargeld erleichtere schwarzarbeit und steuerhinterziehung und genau deshalb solle man es einschränken",
+   "startSec": 79.4,
+   "endSec": 90.42,
+   "index": 15
+  },
+  {
+   "id": "sentence-17",
+   "text": "Neunundsechzig Prozent wollen bar zahlen können.",
+   "normalizedText": "neunundsechzig prozent wollen bar zahlen können",
+   "startSec": 90.44,
+   "endSec": 94.58,
+   "index": 16
+  },
+  {
+   "id": "sentence-18",
+   "text": "Über die Hälfte findet, dass genau das ein Problem ist.",
+   "normalizedText": "über die hälfte findet dass genau das ein problem ist",
+   "startSec": 94.6,
+   "endSec": 98.62,
+   "index": 17
+  },
+  {
+   "id": "sentence-19",
+   "text": "Der Mann hinter dem Tresen wartet immer noch.",
+   "normalizedText": "der mann hinter dem tresen wartet immer noch",
+   "startSec": 98.64,
+   "endSec": 101.94,
+   "index": 18
+  },
+  {
+   "id": "sentence-20",
+   "text": "Draußen regnet es weiter.",
+   "normalizedText": "draußen regnet es weiter",
+   "startSec": 101.96,
+   "endSec": 104.56,
+   "index": 19
+  }
+ ]
+}

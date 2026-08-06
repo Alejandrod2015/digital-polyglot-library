@@ -20,6 +20,7 @@
 
 import type { Plan } from "@domain/access";
 import type { TalkingPhoto } from "@/lib/wikimediaCommons";
+import warumKeineKarteTimings from "@/data/talkingPoints/warum-keine-karte.timings.json";
 
 /**
  * Who can open Talking Points.
@@ -94,7 +95,19 @@ export type TalkingVocab = {
    */
   surface?: string;
   type: string;
-  /** Definition in English: the audience is anglophone. */
+  /**
+   * Register, when the entry is not plain neutral prose. Same vocabulary the
+   * journey stories use — `colloquial`, `slang`, `regional`, `vulgar` — and
+   * the reason it matters is that a learner who cannot tell "el Kiez" from
+   * "la vivienda" will use one of them in the wrong room.
+   */
+  register?: "neutral" | "colloquial" | "slang" | "regional" | "vulgar";
+  /**
+   * A DEFINITION in English, not a translation. "to rent" tells a reader who
+   * already knows the word that they were right; "to pay to live in a home you
+   * do not own" teaches the one who did not. Journey stories set this bar and
+   * this section is held to it.
+   */
   en: string;
 };
 
@@ -115,6 +128,12 @@ export type TalkingPiece = {
   body: string[];
   vocab: TalkingVocab[];
   sources: TalkingSource[];
+  /**
+   * Word-level timings from aeneas forced alignment, for karaoke. Absent until
+   * a piece has been aligned. Note this needs no transcription API: aeneas
+   * aligns the text we already have against the audio.
+   */
+  audioWordTimings?: unknown;
   /**
    * Rendered narration, uploaded to media storage. Absent until a piece has
    * been through the audio pipeline; the reader falls back to a notice.
@@ -162,7 +181,8 @@ const SRC_BDE: TalkingSource = {
 const SRC_INE: TalkingSource = {
   id: "ine-viv-turistica",
   org: "Instituto Nacional de Estadística (INE)",
-  title: "Medición del número de viviendas turísticas en España (estadística experimental)",
+  title:
+    "Medición del número de viviendas turísticas en España (estadística experimental)",
   url: "https://www.ine.es/experimental/viv_turistica/experimental_viv_turistica.htm",
   supports:
     "329.764 viviendas turísticas en noviembre de 2025, un 1,24% del parque censado, con una caída interanual del 12,4%.",
@@ -216,7 +236,7 @@ function piece(
   slug: string,
   title: string,
   hook: string,
-  angle: PieceAngle
+  angle: PieceAngle,
 ): TalkingPiece {
   return { slug, title, hook, angle, body: [], vocab: [], sources: [] };
 }
@@ -244,25 +264,121 @@ export const TALKING_TOPICS: TalkingTopic[] = [
           "Así que no hay un bando que quiera turistas y otro que no los quiera. Hay dos mil personas que quieren las dos cosas.",
         ],
         vocab: [
-          { term: "alquilar", surface: "alquilado", type: "verb", en: "to rent" },
-          { term: "el piso", surface: "piso", type: "noun", en: "flat, apartment" },
-          { term: "por tu culpa", type: "set phrase", en: "because of you" },
-          { term: "dormir", surface: "dormiste", type: "verb", en: "to sleep" },
-          { term: "aprobar", surface: "aprobó", type: "verb", en: "to pass, to approve" },
-          { term: "encuestar", surface: "Encuestó", type: "verb", en: "to survey, to poll" },
-          { term: "poner un tope", type: "verb phrase", en: "to set a cap" },
-          { term: "el residente", surface: "residentes", type: "noun", en: "resident" },
-          { term: "turístico", surface: "turístico", type: "adjective", en: "tourist (used as adjective)" },
-          { term: "costar", surface: "cuesta", type: "verb", en: "to cost" },
-          { term: "el sueldo", surface: "sueldo", type: "noun", en: "salary, wage" },
-          { term: "recoger", surface: "recoge", type: "verb", en: "to cite, to pick up" },
-          { term: "vivir de", surface: "vives de", type: "verb phrase", en: "to make a living from" },
-          { term: "la riqueza", surface: "riqueza", type: "noun", en: "wealth" },
-          { term: "apretar", surface: "aprieta", type: "verb", en: "to squeeze, to be tight on someone" },
-          { term: "la encuesta", surface: "encuesta", type: "noun", en: "survey" },
-          { term: "el bando", surface: "bando", type: "noun", en: "side, camp (in a dispute)" },
-          { term: "las dos cosas", type: "set phrase", en: "both things at once" },
-          { term: "así que", surface: "Así que", type: "set phrase", en: "so, therefore" },
+          {
+            term: "alquilar",
+            surface: "alquilado",
+            type: "verb",
+            en: "To rent; to pay to live in a home you do not own.",
+          },
+          {
+            term: "el piso",
+            surface: "piso",
+            type: "noun",
+            register: "regional",
+            en: "A flat; the Spanish word for an apartment, where Latin America says 'departamento'.",
+          },
+          {
+            term: "por tu culpa",
+            type: "expression",
+            register: "colloquial",
+            en: "Because of you; puts the blame on someone directly, and it stings.",
+          },
+          {
+            term: "dormir",
+            surface: "dormiste",
+            type: "verb",
+            en: "To sleep; here, simply to spend the night somewhere.",
+          },
+          {
+            term: "aprobar",
+            surface: "aprobó",
+            type: "verb",
+            en: "To approve; to pass a law or a measure officially.",
+          },
+          {
+            term: "encuestar",
+            surface: "Encuestó",
+            type: "verb",
+            en: "To poll; to ask a sample of people what they think.",
+          },
+          {
+            term: "poner un tope",
+            type: "expression",
+            en: "To set a cap; to fix a maximum that cannot be crossed.",
+          },
+          {
+            term: "el residente",
+            surface: "residentes",
+            type: "noun",
+            en: "A resident; someone who lives in a place rather than visits it.",
+          },
+          {
+            term: "turístico",
+            surface: "turístico",
+            type: "adjective",
+            en: "Tourist-; describes what exists for visitors rather than for the people who live there.",
+          },
+          {
+            term: "costar",
+            surface: "cuesta",
+            type: "verb",
+            en: "To cost; to carry a given price.",
+          },
+          {
+            term: "el sueldo",
+            surface: "sueldo",
+            type: "noun",
+            en: "A salary; the money your job pays you each month.",
+          },
+          {
+            term: "recoger",
+            surface: "recoge",
+            type: "verb",
+            en: "To pick up; here, what one institution does when it cites another's figure.",
+          },
+          {
+            term: "vivir de",
+            surface: "vives de",
+            type: "expression",
+            en: "To live off; to make your living from something.",
+          },
+          {
+            term: "la riqueza",
+            surface: "riqueza",
+            type: "noun",
+            en: "Wealth; the prosperity a place generates, not one person's money.",
+          },
+          {
+            term: "apretar",
+            surface: "aprieta",
+            type: "verb",
+            register: "colloquial",
+            en: "To squeeze; said of something that presses on you, here the cost of the thing you depend on.",
+          },
+          {
+            term: "la encuesta",
+            surface: "encuesta",
+            type: "noun",
+            en: "A survey; the poll itself and the answers it produced.",
+          },
+          {
+            term: "el bando",
+            surface: "bando",
+            type: "noun",
+            en: "A side; one of the two camps people line up in during an argument.",
+          },
+          {
+            term: "las dos cosas",
+            type: "expression",
+            register: "colloquial",
+            en: "Both things; wanting two things that look like they cancel each other out.",
+          },
+          {
+            term: "así que",
+            surface: "Así que",
+            type: "conjunction",
+            en: "So; introduces the conclusion that follows from what was just said.",
+          },
         ],
         sources: [SRC_AETIB, SRC_BDE],
         photo: {
@@ -289,23 +405,110 @@ export const TALKING_TOPICS: TalkingTopic[] = [
           "Por eso el mismo dato sirve para decir cosas contrarias. En Málaga el turismo mueve el precio de barrios enteros. En casi todo el resto del país no se nota. Y el precio del país no lo decide quién duerme en un piso, lo decide cuántos pisos hay.",
         ],
         vocab: [
-          { term: "desaparecer", surface: "desaparecido", type: "verb", en: "to disappear" },
-          { term: "la caída", surface: "caída", type: "noun", en: "drop, fall" },
-          { term: "de cada cien", surface: "De cada cien", type: "set phrase", en: "out of every hundred" },
-          { term: "la explicación", surface: "explicación", type: "noun", en: "explanation" },
-          { term: "repetir", surface: "repite", type: "verb", en: "to repeat" },
-          { term: "todo el mundo", type: "set phrase", en: "everybody" },
-          { term: "rastrear", surface: "rastreando", type: "verb", en: "to track, to trawl" },
-          { term: "quedar", surface: "quedaban", type: "verb", en: "to remain, to be left" },
-          { term: "la vivienda", surface: "viviendas", type: "noun", en: "housing, dwelling" },
-          { term: "largo", type: "adjective", en: "a bit over (after a number)" },
-          { term: "la trampa", surface: "trampa", type: "noun", en: "the catch, the trick" },
-          { term: "la media", surface: "medias", type: "noun", en: "the average" },
-          { term: "sumar", surface: "suma", type: "verb", en: "to add up" },
-          { term: "el extranjero", surface: "extranjeros", type: "noun", en: "foreigner" },
-          { term: "servir para", surface: "sirve para", type: "verb phrase", en: "to be good for, to serve to" },
-          { term: "mover", surface: "mueve", type: "verb", en: "to move, to shift" },
-          { term: "notarse", surface: "nota", type: "verb", en: "to be noticeable" },
+          {
+            term: "desaparecer",
+            surface: "desaparecido",
+            type: "verb",
+            en: "To disappear; to stop existing, here to drop off the register altogether.",
+          },
+          {
+            term: "la caída",
+            surface: "caída",
+            type: "noun",
+            en: "A fall; a drop in a figure from one measurement to the next.",
+          },
+          {
+            term: "de cada cien",
+            surface: "De cada cien",
+            type: "expression",
+            en: "Out of every hundred; the everyday way to say a percentage out loud.",
+          },
+          {
+            term: "la explicación",
+            surface: "explicación",
+            type: "noun",
+            en: "The explanation; the reason people give for why something happens.",
+          },
+          {
+            term: "repetir",
+            surface: "repite",
+            type: "verb",
+            en: "To repeat; here, to keep saying the same thing until it sounds true.",
+          },
+          {
+            term: "todo el mundo",
+            type: "expression",
+            register: "colloquial",
+            en: "Everybody; literally 'the whole world', and far more common than 'todos'.",
+          },
+          {
+            term: "rastrear",
+            surface: "rastreando",
+            type: "verb",
+            en: "To trawl; to comb through a source systematically looking for data.",
+          },
+          {
+            term: "quedar",
+            surface: "quedaban",
+            type: "verb",
+            en: "To be left; what remains after some of the total has gone.",
+          },
+          {
+            term: "la vivienda",
+            surface: "viviendas",
+            type: "noun",
+            en: "Housing; the formal word used in statistics and policy, not for your own home.",
+          },
+          {
+            term: "largo",
+            type: "adjective",
+            register: "colloquial",
+            en: "And a bit; placed after a number, it means slightly more than that ('el uno por ciento largo').",
+          },
+          {
+            term: "la trampa",
+            surface: "trampa",
+            type: "noun",
+            register: "colloquial",
+            en: "The catch; the hidden trick that makes a true figure mislead you.",
+          },
+          {
+            term: "la media",
+            surface: "medias",
+            type: "noun",
+            en: "The average; the single number that hides how uneven the parts are.",
+          },
+          {
+            term: "sumar",
+            surface: "suma",
+            type: "verb",
+            en: "To add together; to put two figures into one total.",
+          },
+          {
+            term: "el extranjero",
+            surface: "extranjeros",
+            type: "noun",
+            en: "A foreigner; here, a buyer who owns a home in a country they do not live in.",
+          },
+          {
+            term: "servir para",
+            surface: "sirve para",
+            type: "expression",
+            en: "To be good for; what a thing can be used to do.",
+          },
+          {
+            term: "mover",
+            surface: "mueve",
+            type: "verb",
+            en: "To move; here, what pushes a price up or down.",
+          },
+          {
+            term: "notarse",
+            surface: "nota",
+            type: "verb",
+            register: "colloquial",
+            en: "To be noticeable; to show enough that people feel it.",
+          },
         ],
         sources: [SRC_INE, SRC_BDE],
         photo: {
@@ -332,26 +535,105 @@ export const TALKING_TOPICS: TalkingTopic[] = [
           "Lo último que se va es la asociación de vecinos. Convoca una reunión, pone la fecha en el tablón del portal, y no baja nadie.",
         ],
         vocab: [
-          { term: "aparecer", surface: "aparece", type: "verb", en: "to appear, to show up" },
-          { term: "el portal", surface: "portal", type: "noun", en: "building entrance, lobby" },
-          { term: "la fachada", surface: "fachada", type: "noun", en: "facade, front of a building" },
-          { term: "el ruido", surface: "ruido", type: "noun", en: "noise" },
-          { term: "cambiar", surface: "cambia", type: "verb", en: "to change" },
-          { term: "oírse", surface: "se oyen", type: "verb", en: "to be heard" },
-          { term: "el comercio", surface: "comercios", type: "noun", en: "shop, business" },
-          { term: "a diario", type: "set phrase", en: "daily, every day" },
-          { term: "aguantar", surface: "aguanta", type: "verb", en: "to hold out, to endure" },
-          { term: "dispararse", surface: "dispara", type: "verb", en: "to shoot up, to soar" },
-          { term: "el vecino", surface: "vecinos", type: "noun", en: "neighbour" },
-          { term: "pasado cierto punto", surface: "Pasado cierto punto", type: "set phrase", en: "past a certain point" },
-          { term: "convocar", surface: "Convoca", type: "verb", en: "to call (a meeting)" },
-          { term: "el tablón", surface: "tablón", type: "noun", en: "noticeboard" },
-          { term: "lo último", surface: "Lo último", type: "set phrase", en: "the last thing" },
+          {
+            term: "aparecer",
+            surface: "aparece",
+            type: "verb",
+            en: "To appear; to show up somewhere it was not before.",
+          },
+          {
+            term: "el portal",
+            surface: "portal",
+            type: "noun",
+            register: "regional",
+            en: "The entrance hall of a block of flats in Spain; the shared space between the street door and the stairs.",
+          },
+          {
+            term: "la fachada",
+            surface: "fachada",
+            type: "noun",
+            en: "The facade; the front wall of a building, the face it shows the street.",
+          },
+          {
+            term: "el ruido",
+            surface: "ruido",
+            type: "noun",
+            en: "Noise; unwanted sound, here the sound of a neighbourhood changing hands.",
+          },
+          {
+            term: "cambiar",
+            surface: "cambia",
+            type: "verb",
+            en: "To change; to become something different.",
+          },
+          {
+            term: "oírse",
+            surface: "se oyen",
+            type: "verb",
+            en: "To be heard; used when nobody in particular is doing the hearing.",
+          },
+          {
+            term: "el comercio",
+            surface: "comercios",
+            type: "noun",
+            en: "A shop; the small local business, seen as part of the street's life.",
+          },
+          {
+            term: "a diario",
+            type: "expression",
+            en: "Daily; every single day, said of a habit rather than a schedule.",
+          },
+          {
+            term: "aguantar",
+            surface: "aguanta",
+            type: "verb",
+            register: "colloquial",
+            en: "To hold out; to survive pressure a while longer without giving in.",
+          },
+          {
+            term: "dispararse",
+            surface: "dispara",
+            type: "verb",
+            register: "colloquial",
+            en: "To shoot up; said of a price that rises suddenly and steeply.",
+          },
+          {
+            term: "el vecino",
+            surface: "vecinos",
+            type: "noun",
+            en: "A neighbour; here, the people who actually live in the building all year.",
+          },
+          {
+            term: "pasado cierto punto",
+            surface: "Pasado cierto punto",
+            type: "expression",
+            en: "Past a certain point; beyond a threshold where behaviour changes.",
+          },
+          {
+            term: "convocar",
+            surface: "Convoca",
+            type: "verb",
+            en: "To call; to summon people to a meeting on a set date.",
+          },
+          {
+            term: "el tablón",
+            surface: "tablón",
+            type: "noun",
+            register: "regional",
+            en: "The noticeboard in the entrance of a Spanish block of flats, where neighbours pin announcements.",
+          },
+          {
+            term: "lo último",
+            surface: "Lo último",
+            type: "expression",
+            en: "The last thing; what survives after everything else has gone.",
+          },
         ],
         sources: [SRC_BDE],
         photo: {
           url: "https://upload.wikimedia.org/wikipedia/commons/d/d0/C%C3%A1diz_%287077356971%29.jpg",
-          filePage: "https://commons.wikimedia.org/wiki/File:C%C3%A1diz_(7077356971).jpg",
+          filePage:
+            "https://commons.wikimedia.org/wiki/File:C%C3%A1diz_(7077356971).jpg",
           author: "Michal Osmenda",
           licence: "CC BY 2.0",
           alt: "Calle estrecha del casco antiguo de Cádiz, con balcones a ambos lados y casi nadie a la vista.",
@@ -370,9 +652,24 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     level: "b2",
     blurb: "Leaving home later than any generation before.",
     pieces: [
-      piece("compartir-piso-a-los-35", "Compartir piso a los treinta y cinco", "Flatmates are no longer a student thing.", "portrait"),
-      piece("irse-de-casa", "¿Por qué cuesta tanto irse de casa?", "The age of leaving home keeps climbing.", "explainer"),
-      piece("limitar-precios", "¿Funciona limitar el precio del alquiler?", "Every country tries it. Nobody agrees on the result.", "debate"),
+      piece(
+        "compartir-piso-a-los-35",
+        "Compartir piso a los treinta y cinco",
+        "Flatmates are no longer a student thing.",
+        "portrait",
+      ),
+      piece(
+        "irse-de-casa",
+        "¿Por qué cuesta tanto irse de casa?",
+        "The age of leaving home keeps climbing.",
+        "explainer",
+      ),
+      piece(
+        "limitar-precios",
+        "¿Funciona limitar el precio del alquiler?",
+        "Every country tries it. Nobody agrees on the result.",
+        "debate",
+      ),
     ],
   },
   {
@@ -384,9 +681,24 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     level: "b2",
     blurb: "What people earn, and what that actually buys.",
     pieces: [
-      piece("el-sueldo-que-no-se-dice", "El sueldo del que nadie habla", "Talking money is still taboo. That's changing.", "portrait"),
-      piece("salario-minimo", "¿Sube el paro cuando sube el salario mínimo?", "The oldest argument in economics, live.", "debate"),
-      piece("por-que-no-cunde", "Por qué el sueldo ya no cunde igual", "Same salary, smaller life.", "explainer"),
+      piece(
+        "el-sueldo-que-no-se-dice",
+        "El sueldo del que nadie habla",
+        "Talking money is still taboo. That's changing.",
+        "portrait",
+      ),
+      piece(
+        "salario-minimo",
+        "¿Sube el paro cuando sube el salario mínimo?",
+        "The oldest argument in economics, live.",
+        "debate",
+      ),
+      piece(
+        "por-que-no-cunde",
+        "Por qué el sueldo ya no cunde igual",
+        "Same salary, smaller life.",
+        "explainer",
+      ),
     ],
   },
   {
@@ -398,9 +710,24 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     level: "b2",
     blurb: "Spain works odd hours and is arguing about it.",
     pieces: [
-      piece("semana-de-cuatro-dias", "¿Cuatro días de trabajo son suficientes?", "The four-day week left the pilot stage.", "debate"),
-      piece("de-donde-viene-el-horario", "De dónde salió el horario español", "Blame a decision made in 1940.", "explainer"),
-      piece("comer-a-las-tres", "Comer a las tres y cenar a las diez", "A whole country running on a different clock.", "portrait"),
+      piece(
+        "semana-de-cuatro-dias",
+        "¿Cuatro días de trabajo son suficientes?",
+        "The four-day week left the pilot stage.",
+        "debate",
+      ),
+      piece(
+        "de-donde-viene-el-horario",
+        "De dónde salió el horario español",
+        "Blame a decision made in 1940.",
+        "explainer",
+      ),
+      piece(
+        "comer-a-las-tres",
+        "Comer a las tres y cenar a las diez",
+        "A whole country running on a different clock.",
+        "portrait",
+      ),
     ],
   },
   {
@@ -412,9 +739,24 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     level: "b2",
     blurb: "The meal ends. Nobody gets up.",
     pieces: [
-      piece("que-es-la-sobremesa", "La hora que no aparece en la agenda", "There is no English word for it. That matters.", "portrait"),
-      piece("se-pierde-la-sobremesa", "¿Se está perdiendo la sobremesa?", "Lunch breaks are shrinking everywhere.", "debate"),
-      piece("comer-en-el-trabajo", "Qué se come de verdad en la oficina", "The tupper generation.", "explainer"),
+      piece(
+        "que-es-la-sobremesa",
+        "La hora que no aparece en la agenda",
+        "There is no English word for it. That matters.",
+        "portrait",
+      ),
+      piece(
+        "se-pierde-la-sobremesa",
+        "¿Se está perdiendo la sobremesa?",
+        "Lunch breaks are shrinking everywhere.",
+        "debate",
+      ),
+      piece(
+        "comer-en-el-trabajo",
+        "Qué se come de verdad en la oficina",
+        "The tupper generation.",
+        "explainer",
+      ),
     ],
   },
   {
@@ -426,9 +768,24 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     level: "b2",
     blurb: "The Mediterranean diet, and the gap with the fridge.",
     pieces: [
-      piece("dieta-mediterranea", "La dieta mediterránea, según los datos", "The famous diet, minus the marketing.", "explainer"),
-      piece("carne-o-no", "¿Comemos demasiada carne?", "A fight about health, money and identity.", "debate"),
-      piece("el-menu-del-dia", "El menú del día es una institución", "Three courses, bread, wine, one price.", "portrait"),
+      piece(
+        "dieta-mediterranea",
+        "La dieta mediterránea, según los datos",
+        "The famous diet, minus the marketing.",
+        "explainer",
+      ),
+      piece(
+        "carne-o-no",
+        "¿Comemos demasiada carne?",
+        "A fight about health, money and identity.",
+        "debate",
+      ),
+      piece(
+        "el-menu-del-dia",
+        "El menú del día es una institución",
+        "Three courses, bread, wine, one price.",
+        "portrait",
+      ),
     ],
   },
   {
@@ -440,9 +797,24 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     level: "b2",
     blurb: "Which Spanish sounds 'correct', and who decided.",
     pieces: [
-      piece("el-espanol-correcto", "¿Existe un español correcto?", "Ask two Spanish speakers, start a war.", "debate"),
-      piece("acento-y-trabajo", "El acento en una entrevista de trabajo", "People soften their vowels to get hired.", "portrait"),
-      piece("por-que-suena-distinto", "Por qué el sur suena distinto", "One consonant explains half of it.", "explainer"),
+      piece(
+        "el-espanol-correcto",
+        "¿Existe un español correcto?",
+        "Ask two Spanish speakers, start a war.",
+        "debate",
+      ),
+      piece(
+        "acento-y-trabajo",
+        "El acento en una entrevista de trabajo",
+        "People soften their vowels to get hired.",
+        "portrait",
+      ),
+      piece(
+        "por-que-suena-distinto",
+        "Por qué el sur suena distinto",
+        "One consonant explains half of it.",
+        "explainer",
+      ),
     ],
   },
   {
@@ -454,9 +826,24 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     level: "b2",
     blurb: "The argument your textbook will never mention.",
     pieces: [
-      piece("todes", "¿El lenguaje inclusivo mejora el idioma o lo rompe?", "Both sides think the other is breaking Spanish.", "debate"),
-      piece("que-dice-la-rae", "Qué dice exactamente la RAE", "Less than either side claims.", "explainer"),
-      piece("como-se-habla-de-verdad", "Cómo se habla de verdad en clase", "Teachers had to decide before anyone agreed.", "portrait"),
+      piece(
+        "todes",
+        "¿El lenguaje inclusivo mejora el idioma o lo rompe?",
+        "Both sides think the other is breaking Spanish.",
+        "debate",
+      ),
+      piece(
+        "que-dice-la-rae",
+        "Qué dice exactamente la RAE",
+        "Less than either side claims.",
+        "explainer",
+      ),
+      piece(
+        "como-se-habla-de-verdad",
+        "Cómo se habla de verdad en clase",
+        "Teachers had to decide before anyone agreed.",
+        "portrait",
+      ),
     ],
   },
   {
@@ -468,9 +855,24 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     level: "b2",
     blurb: "Screens, sleep, and what schools decided to do.",
     pieces: [
-      piece("movil-en-clase", "¿Fuera el móvil de las aulas?", "Several regions already banned it.", "debate"),
-      piece("dormir-con-el-movil", "Dormir con el móvil en la mesilla", "The last thing you see, the first thing you touch.", "portrait"),
-      piece("por-que-enganchan", "Por qué enganchan tanto", "Designed to be hard to put down.", "explainer"),
+      piece(
+        "movil-en-clase",
+        "¿Fuera el móvil de las aulas?",
+        "Several regions already banned it.",
+        "debate",
+      ),
+      piece(
+        "dormir-con-el-movil",
+        "Dormir con el móvil en la mesilla",
+        "The last thing you see, the first thing you touch.",
+        "portrait",
+      ),
+      piece(
+        "por-que-enganchan",
+        "Por qué enganchan tanto",
+        "Designed to be hard to put down.",
+        "explainer",
+      ),
     ],
   },
   {
@@ -482,9 +884,24 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     level: "b2",
     blurb: "Which jobs change, which disappear, which nobody knows.",
     pieces: [
-      piece("que-trabajos-cambian", "Qué trabajos están cambiando ya", "Not the ones anyone predicted.", "explainer"),
-      piece("hay-que-regularla", "¿Hay que frenar la inteligencia artificial?", "Slow it down, or fall behind. Pick one.", "debate"),
-      piece("el-traductor", "Un traductor cuenta cómo cambió su trabajo", "First it helped. Then it competed.", "portrait"),
+      piece(
+        "que-trabajos-cambian",
+        "Qué trabajos están cambiando ya",
+        "Not the ones anyone predicted.",
+        "explainer",
+      ),
+      piece(
+        "hay-que-regularla",
+        "¿Hay que frenar la inteligencia artificial?",
+        "Slow it down, or fall behind. Pick one.",
+        "debate",
+      ),
+      piece(
+        "el-traductor",
+        "Un traductor cuenta cómo cambió su trabajo",
+        "First it helped. Then it competed.",
+        "portrait",
+      ),
     ],
   },
   {
@@ -496,9 +913,24 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     level: "b2",
     blurb: "A country famous for company, talking about being alone.",
     pieces: [
-      piece("vivir-solo", "Cada vez más gente vive sola", "Household size keeps shrinking.", "explainer"),
-      piece("soledad-no-deseada", "La soledad no deseada tiene nombre propio", "It got a name, and then a policy.", "portrait"),
-      piece("es-problema-publico", "¿Es la soledad un problema de salud pública?", "Some governments say yes. Others resist.", "debate"),
+      piece(
+        "vivir-solo",
+        "Cada vez más gente vive sola",
+        "Household size keeps shrinking.",
+        "explainer",
+      ),
+      piece(
+        "soledad-no-deseada",
+        "La soledad no deseada tiene nombre propio",
+        "It got a name, and then a policy.",
+        "portrait",
+      ),
+      piece(
+        "es-problema-publico",
+        "¿Es la soledad un problema de salud pública?",
+        "Some governments say yes. Others resist.",
+        "debate",
+      ),
     ],
   },
   {
@@ -510,9 +942,24 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     level: "b2",
     blurb: "Who gets the water when there isn't enough.",
     pieces: [
-      piece("de-donde-sale-el-agua", "De dónde sale el agua que bebes", "Reservoirs, rivers and a lot of pipes.", "explainer"),
-      piece("campos-de-golf", "¿Golf y piscinas en zona de sequía?", "Tourism, farming and taps, same reservoir.", "debate"),
-      piece("un-pueblo-sin-agua", "El pueblo que se quedó sin grifo", "Water arrived by truck for months.", "portrait"),
+      piece(
+        "de-donde-sale-el-agua",
+        "De dónde sale el agua que bebes",
+        "Reservoirs, rivers and a lot of pipes.",
+        "explainer",
+      ),
+      piece(
+        "campos-de-golf",
+        "¿Golf y piscinas en zona de sequía?",
+        "Tourism, farming and taps, same reservoir.",
+        "debate",
+      ),
+      piece(
+        "un-pueblo-sin-agua",
+        "El pueblo que se quedó sin grifo",
+        "Water arrived by truck for months.",
+        "portrait",
+      ),
     ],
   },
   {
@@ -522,7 +969,8 @@ export const TALKING_TOPICS: TalkingTopic[] = [
     country: "DE",
     language: "German",
     level: "c1",
-    blurb: "Half the country still pays in coins. Half of them think that is a problem.",
+    blurb:
+      "Half the country still pays in coins. Half of them think that is a problem.",
     pieces: [
       {
         slug: "warum-keine-karte",
@@ -534,33 +982,132 @@ export const TALKING_TOPICS: TalkingTopic[] = [
           "Er ist weder altmodisch noch stur. Für ihn ist dein Schein schlicht billiger. Die Bundesbank hat nachgerechnet, was den Handel jede Zahlung kostet: bar rund vierundzwanzig Cent, mit Kreditkarte fast einen Euro. Bei einem Kaffee für drei Euro ist das kein Rundungsfehler.",
           "Es geht auch schneller. Eine Barzahlung dauert an der Kasse gut zwanzig Sekunden, eine Kartenzahlung mit Unterschrift fast vierzig. Und er ist damit nicht allein: In Deutschland wird immer noch jede zweite Zahlung bar gemacht.",
           "Bei den Kunden steht ganz oben nicht die Nostalgie, sondern der Stromausfall. Bargeld funktioniert, wenn die Technik nicht funktioniert. Danach kommt, dass Kinder mit Münzen lernen, was Geld überhaupt ist. Und der Datenschutz: Ein Schein verrät niemandem, wo du am Dienstagabend warst.",
-          "Und dann kommt der Widerspruch. Mehr als die Hälfte derselben Befragten sagt, Bargeld erleichtere Schwarzarbeit und Steuerhinterziehung, und genau deshalb solle man es einschränken. Neunundsechzig Prozent wollen bar zahlen können. Über die Hälfte findet, dass genau das ein Problem ist. Der Mann hinter dem Tresen wartet immer noch. Draußen regnet es weiter."
+          "Und dann kommt der Widerspruch. Mehr als die Hälfte derselben Befragten sagt, Bargeld erleichtere Schwarzarbeit und Steuerhinterziehung, und genau deshalb solle man es einschränken. Neunundsechzig Prozent wollen bar zahlen können. Über die Hälfte findet, dass genau das ein Problem ist. Der Mann hinter dem Tresen wartet immer noch. Draußen regnet es weiter.",
         ],
         vocab: [
-          { term: "die Kasse", surface: "Kasse", type: "noun", en: "till, checkout" },
-          { term: "hinhalten", surface: "hältst", type: "verb", en: "to hold out (something)" },
-          { term: "der Tresen", surface: "Tresen", type: "noun", en: "counter, bar" },
-          { term: "in der Nähe", type: "set phrase", en: "nearby" },
-          { term: "stur", type: "adjective", en: "stubborn" },
-          { term: "der Schein", surface: "Schein", type: "noun", en: "banknote" },
-          { term: "nachrechnen", surface: "nachgerechnet", type: "verb", en: "to work out, to do the maths" },
-          { term: "kosten", surface: "kostet", type: "verb", en: "to cost" },
-          { term: "die Barzahlung", surface: "Barzahlung", type: "noun", en: "cash payment" },
-          { term: "dauern", surface: "dauert", type: "verb", en: "to take (time)" },
-          { term: "die Unterschrift", surface: "Unterschrift", type: "noun", en: "signature" },
-          { term: "immer noch", type: "set phrase", en: "still" },
-          { term: "der Stromausfall", surface: "Stromausfall", type: "noun", en: "power cut" },
-          { term: "die Münze", surface: "Münzen", type: "noun", en: "coin" },
-          { term: "verraten", surface: "verrät", type: "verb", en: "to give away, to reveal" },
-          { term: "überhaupt", type: "adverb", en: "at all, actually" },
-          { term: "der Widerspruch", surface: "Widerspruch", type: "noun", en: "contradiction" },
-          { term: "erleichtern", surface: "erleichtere", type: "verb", en: "to make easier" },
-          { term: "einschränken", type: "verb", en: "to restrict, to limit" },
-          { term: "die Schwarzarbeit", surface: "Schwarzarbeit", type: "noun", en: "undeclared work" },
+          {
+            term: "die Kasse",
+            surface: "Kasse",
+            type: "noun",
+            en: "The till; the counter in a shop where you pay.",
+          },
+          {
+            term: "hinhalten",
+            surface: "hältst",
+            type: "verb",
+            en: "To hold out; to extend something towards someone, here your card.",
+          },
+          {
+            term: "der Tresen",
+            surface: "Tresen",
+            type: "noun",
+            register: "colloquial",
+            en: "The counter of a bar or café, the flat surface you stand at to order.",
+          },
+          {
+            term: "in der Nähe",
+            type: "expression",
+            en: "Nearby; within easy walking distance.",
+          },
+          {
+            term: "stur",
+            type: "adjective",
+            register: "colloquial",
+            en: "Stubborn; refusing to budge, said with mild irritation.",
+          },
+          {
+            term: "der Schein",
+            surface: "Schein",
+            type: "noun",
+            en: "A banknote; the paper money, as opposed to coins.",
+          },
+          {
+            term: "nachrechnen",
+            surface: "nachgerechnet",
+            type: "verb",
+            en: "To work out; to redo the arithmetic to check what something really costs.",
+          },
+          {
+            term: "kosten",
+            surface: "kostet",
+            type: "verb",
+            en: "To cost; to carry a given price.",
+          },
+          {
+            term: "die Barzahlung",
+            surface: "Barzahlung",
+            type: "noun",
+            en: "Payment in cash; the formal term used in banking reports.",
+          },
+          {
+            term: "dauern",
+            surface: "dauert",
+            type: "verb",
+            en: "To take; to last a given amount of time.",
+          },
+          {
+            term: "die Unterschrift",
+            surface: "Unterschrift",
+            type: "noun",
+            en: "A signature; the name you sign, here on a card receipt.",
+          },
+          {
+            term: "immer noch",
+            type: "expression",
+            en: "Still; emphasises that something has not stopped yet.",
+          },
+          {
+            term: "der Stromausfall",
+            surface: "Stromausfall",
+            type: "noun",
+            en: "A power cut; when the electricity fails and card terminals die with it.",
+          },
+          {
+            term: "die Münze",
+            surface: "Münzen",
+            type: "noun",
+            en: "A coin; the metal money children learn to count with.",
+          },
+          {
+            term: "verraten",
+            surface: "verrät",
+            type: "verb",
+            en: "To give away; to reveal something that was meant to stay private.",
+          },
+          {
+            term: "überhaupt",
+            type: "adverb",
+            register: "colloquial",
+            en: "At all; a small word that widens a question to what something even is.",
+          },
+          {
+            term: "der Widerspruch",
+            surface: "Widerspruch",
+            type: "noun",
+            en: "A contradiction; holding two positions that cannot both hold.",
+          },
+          {
+            term: "erleichtern",
+            surface: "erleichtere",
+            type: "verb",
+            en: "To make easier; here, to remove the friction from something you would rather stop.",
+          },
+          {
+            term: "einschränken",
+            type: "verb",
+            en: "To restrict; to allow something only within limits.",
+          },
+          {
+            term: "die Schwarzarbeit",
+            surface: "Schwarzarbeit",
+            type: "noun",
+            en: "Undeclared work; work paid in cash and hidden from the tax office.",
+          },
         ],
         sources: [SRC_BBK_KOSTEN, SRC_BBK_ZAHLUNG, SRC_BBK_MEINUNG],
         audioUrl:
           "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Warum_nimmt_dieses_Caf_keine_Karte_1786020915847.mp3",
+        audioWordTimings: warumKeineKarteTimings.payload,
         photo: {
           url: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Baristas_serve_espresso_and_cappuccino_at_a_busy_cafe.jpg",
           filePage:
@@ -572,8 +1119,18 @@ export const TALKING_TOPICS: TalkingTopic[] = [
           height: 3369,
         },
       },
-      piece("letzter-geldautomat", "Der letzte Geldautomat im Dorf", "The cash machine left before the bank did.", "portrait"),
-      piece("digitaler-euro", "Was der digitale Euro wäre und was nicht", "Not crypto, not your banking app. Something else.", "explainer"),
+      piece(
+        "letzter-geldautomat",
+        "Der letzte Geldautomat im Dorf",
+        "The cash machine left before the bank did.",
+        "portrait",
+      ),
+      piece(
+        "digitaler-euro",
+        "Was der digitale Euro wäre und was nicht",
+        "Not crypto, not your banking app. Something else.",
+        "explainer",
+      ),
     ],
   },
 ];
@@ -687,7 +1244,7 @@ export function getTopics(): TalkingTopic[] {
 /** Every piece in the catalogue, flattened. There is no order to preserve. */
 export function getEntries(): TalkingEntry[] {
   return TALKING_TOPICS.flatMap((topic) =>
-    topic.pieces.map((piece) => ({ topic, piece }))
+    topic.pieces.map((piece) => ({ topic, piece })),
   );
 }
 
@@ -703,7 +1260,10 @@ export function getEntriesByCategory(): Array<{
     category,
     entries: getEntries()
       .filter((e) => e.topic.categoryId === category.id)
-      .sort((a, b) => Number(b.piece.body.length > 0) - Number(a.piece.body.length > 0)),
+      .sort(
+        (a, b) =>
+          Number(b.piece.body.length > 0) - Number(a.piece.body.length > 0),
+      ),
   })).filter((row) => row.entries.length > 0);
 }
 
@@ -726,7 +1286,7 @@ export function getTopic(slug: string): TalkingTopic | undefined {
 }
 
 export function getPiece(
-  slug: string
+  slug: string,
 ): { topic: TalkingTopic; piece: TalkingPiece } | undefined {
   for (const topic of TALKING_TOPICS) {
     const found = topic.pieces.find((p) => p.slug === slug);

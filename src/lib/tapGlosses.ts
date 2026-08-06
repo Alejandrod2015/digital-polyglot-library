@@ -11,6 +11,11 @@ import spanishTravelerMexicoA0 from "@/data/tapGlosses/spanish-traveler-mexico-a
 import spanishFriendsMexico from "@/data/tapGlosses/spanish-friends-mexico.json";
 import italianFriendsA0 from "@/data/tapGlosses/italian-friends-a0.json";
 import germanTravelerA0 from "@/data/tapGlosses/german-traveler-a0.json";
+// Talking Points. Same contract as a journey bundle, split by language because
+// the key is the bare surface form and the two languages collide on it: "bar"
+// is a Spanish noun and a German adverb, "in" and "man" likewise.
+import talkingPointsEs from "@/data/tapGlosses/talking-points-es.json";
+import talkingPointsDe from "@/data/tapGlosses/talking-points-de.json";
 
 // Piloto "tap any word" (2026-07-06): glosses contextuales autorados por
 // historia/journey, precomputados en el repo. El reader envuelve cada
@@ -43,6 +48,8 @@ const BUNDLES: TapGlossBundle[] = [
   spanishFriendsMexico as TapGlossBundle,
   italianFriendsA0 as TapGlossBundle,
   germanTravelerA0 as TapGlossBundle,
+  talkingPointsEs as TapGlossBundle,
+  talkingPointsDe as TapGlossBundle,
 ];
 
 export function getTapGlossesForSlug(slug: string): Record<string, TapGloss> | null {
