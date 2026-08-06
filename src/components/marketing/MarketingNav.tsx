@@ -16,7 +16,7 @@ import styles from "./LandingPage.module.css";
 
 const LINKS: Array<{ href: string; label: string; external?: boolean }> = [
   { href: "/blog", label: "Blog" },
-  { href: "/beta", label: "iPhone beta" },
+  { href: "/beta", label: "Beta" },
   { href: "https://shop.digitalpolyglot.com", label: "Shop", external: true },
 ];
 

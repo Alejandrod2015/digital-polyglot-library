@@ -6,7 +6,7 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 
 export const metadata: Metadata = {
   title: "Join the beta · Digital Polyglot",
-  description: "Apply for early access to the Digital Polyglot iPhone app.",
+  description: "Apply for early access to the Digital Polyglot app on iPhone and Android.",
   robots: { index: true, follow: true },
 };
 
@@ -30,7 +30,10 @@ export default function BetaPage() {
           <header className="mb-10 flex flex-col items-center text-center">
             <span className={landing.kicker}>
               <span className={landing.kickerDot} />
-              iPhone beta · invite only
+              {/* Not "iPhone beta" any more: the form below asks which phone
+                  you are on, and a page that says iPhone loses every Android
+                  applicant before they ever reach the question. */}
+              Beta · invite only
             </span>
             <h1
               className="mt-5 max-w-2xl text-3xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl"
@@ -40,8 +43,8 @@ export default function BetaPage() {
               <span className={landing.lime}>into a new language.</span>
             </h1>
             <p className="mt-5 max-w-xl text-base font-bold leading-relaxed text-white/65 sm:text-lg">
-              We&apos;re inviting a small group to test the iPhone app before
-              launch. Apply in under a minute.
+              We&apos;re inviting a small group to test the app before launch,
+              on iPhone and on Android. Apply in under a minute.
             </p>
           </header>
 

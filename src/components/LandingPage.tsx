@@ -40,7 +40,7 @@ export default function LandingPage() {
             <div className={styles.heroCopy}>
               <span className={styles.kicker}>
                 <span className={styles.kickerDot} />
-                iPhone beta · invite only
+                Beta · invite only
               </span>
               <h1>
                 Learn the language{" "}
@@ -67,7 +67,7 @@ export default function LandingPage() {
                   onClick={() => track("hero_ios_beta")}
                   className={`${styles.btn} ${styles.btnSky}`}
                 >
-                  ⚡ Join the iPhone beta
+                  ⚡ Join the beta
                 </Link>
               </div>
             </div>
@@ -250,7 +250,7 @@ export default function LandingPage() {
               onClick={() => track("cta_final_ios_beta")}
               className={`${styles.btn} ${styles.btnSky}`}
             >
-              ⚡ Join the iPhone beta
+              ⚡ Join the beta
             </Link>
           </div>
         </div>
