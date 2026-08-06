@@ -69,6 +69,8 @@ type PlayState = {
   configured: boolean;
   packageName: string | null;
   track: string;
+  /** Console-facing name, e.g. "Closed testing (alpha)". Comes from the API. */
+  trackName: string;
   groupEmail: string | null;
   attachedGroups: string[];
   groupAttached: boolean;
@@ -620,7 +622,7 @@ function PlayTrackPanel({ play, onDone }: { play: PlayState | null; onDone: () =
             <span style={playPillStyle(play)}>{playLabel(play)}</span>
           </div>
           <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 4 }}>
-            {play.packageName ?? "no package"} · track {play.track} ·{" "}
+            {play.packageName ?? "no package"} · {play.trackName ?? play.track} ·{" "}
             {play.release
               ? `build ${play.release.versionCodes.join(", ") || "?"} (${play.release.status})`
               : "no build published"}

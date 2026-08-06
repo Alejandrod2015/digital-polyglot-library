@@ -336,11 +336,19 @@ export function evaluateApplication(
     extras += 5;
     signals.push({ label: "Left a social handle", points: 5 });
   }
-  if (app.appleIdEmail?.trim() && app.appleIdEmail.trim().toLowerCase() !== app.email.trim().toLowerCase()) {
-    // Two different addresses means they read the field instead of pasting
-    // the same value twice.
+  // Two different addresses mean they read the field instead of pasting the
+  // same value twice. Asked of WHICHEVER store account they gave: when this
+  // only looked at the Apple ID, an Android applicant could never earn the
+  // three points, so identical answers scored three lower on Android and were
+  // likelier to fall into the review band. A scoring bias nobody would have
+  // chosen, arrived at by extending the form and forgetting the scorer.
+  const contact = app.email.trim().toLowerCase();
+  const storeAccounts = [app.appleIdEmail, app.googleEmail]
+    .map((a) => a?.trim().toLowerCase())
+    .filter((a): a is string => Boolean(a));
+  if (storeAccounts.some((a) => a !== contact)) {
     extras += 3;
-    signals.push({ label: "Apple ID differs from contact email", points: 3 });
+    signals.push({ label: "Store account differs from contact email", points: 3 });
   }
 
   const score = Math.max(

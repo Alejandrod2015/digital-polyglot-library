@@ -225,6 +225,13 @@ export type PlayBetaState = {
   configured: boolean;
   packageName: string | null;
   track: string;
+  /**
+   * The console's name for the track, resolved server-side. The Studio card is
+   * a client component and cannot import this module (it reaches `fs` through
+   * the shared credential reader), so the label travels in the payload rather
+   * than being recomputed from a duplicated map that would drift.
+   */
+  trackName: string;
   /** The group we expect on the track, from config. */
   groupEmail: string | null;
   /** The groups Play actually has on the track. */
@@ -247,6 +254,7 @@ function emptyState(track: string): PlayBetaState {
     configured: false,
     packageName: null,
     track,
+    trackName: trackLabel(track),
     groupEmail: null,
     attachedGroups: [],
     groupAttached: false,
@@ -274,6 +282,7 @@ export async function getPlayBetaState(): Promise<PlayBetaState> {
     configured: true,
     packageName: config.packageName,
     track: config.track,
+    trackName: trackLabel(config.track),
     groupEmail: config.groupEmail,
     attachedGroups: [],
     groupAttached: false,

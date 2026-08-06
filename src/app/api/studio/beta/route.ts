@@ -69,7 +69,8 @@ export async function GET(req: NextRequest) {
     getPlayBetaState().catch((err) => ({
       configured: false,
       packageName: null,
-      track: "beta",
+      track: "alpha",
+      trackName: "Closed testing (alpha)",
       groupEmail: null,
       attachedGroups: [] as string[],
       groupAttached: false,
