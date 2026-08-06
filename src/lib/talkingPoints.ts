@@ -309,14 +309,14 @@ export const TALKING_TOPICS: TalkingTopic[] = [
         ],
         sources: [SRC_INE, SRC_BDE],
         photo: {
-          url: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Santander%2C_balcones.jpg",
+          url: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Madrid_-_Demonstration_-_Housing_Is_costing_us_our_lives_-_260524_121127.jpg",
           filePage:
-            "https://commons.wikimedia.org/wiki/File:Santander,_balcones.jpg",
-          author: "LBM1948",
+            "https://commons.wikimedia.org/wiki/File:Madrid_-_Demonstration_-_Housing_Is_costing_us_our_lives_-_260524_121127.jpg",
+          author: "Barcex",
           licence: "CC BY-SA 4.0",
-          alt: "Fachada de un edificio de viviendas en Santander, con balcones corridos.",
-          width: 4144,
-          height: 2764,
+          alt: "Manifestación por la vivienda en Madrid, con gente y pancartas llenando la calle.",
+          width: 4582,
+          height: 3055,
         },
       },
       {
@@ -562,14 +562,14 @@ export const TALKING_TOPICS: TalkingTopic[] = [
         audioUrl:
           "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Warum_nimmt_dieses_Caf_keine_Karte_1786020915847.mp3",
         photo: {
-          url: "https://upload.wikimedia.org/wikipedia/commons/4/46/Euro-Geld_auf_Scheinen_und_Banknoten_-_1_Euro_Fokus_mit_Stapel.jpg",
+          url: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Baristas_serve_espresso_and_cappuccino_at_a_busy_cafe.jpg",
           filePage:
-            "https://commons.wikimedia.org/wiki/File:Euro-Geld_auf_Scheinen_und_Banknoten_-_1_Euro_Fokus_mit_Stapel.jpg",
-          author: "Christoph Scholz",
-          licence: "CC BY-SA 2.0",
-          alt: "Euromünzen und Geldscheine auf einem Tisch, eine Ein-Euro-Münze im Vordergrund.",
-          width: 1920,
-          height: 1153,
+            "https://commons.wikimedia.org/wiki/File:Baristas_serve_espresso_and_cappuccino_at_a_busy_cafe.jpg",
+          author: "Shixart1985",
+          licence: "CC BY 2.0",
+          alt: "Dos baristas sirviendo cafes detras del mostrador de una cafeteria llena.",
+          width: 5063,
+          height: 3369,
         },
       },
       piece("letzter-geldautomat", "Der letzte Geldautomat im Dorf", "The cash machine left before the bank did.", "portrait"),
