@@ -43,8 +43,14 @@ export default function GA4Tracker({
     Boolean(user?.publicMetadata?.isInternal) ||
     Boolean(user?.publicMetadata?.analyticsExcluded);
 
+  // `?auth=` is our own post-login marker, not part of the page identity, so
+  // it is stripped before the path reaches GA. See the auth event effect below.
+  const authEvent = searchParams?.get("auth") ?? null;
+
   const pagePath = useMemo(() => {
-    const query = searchParams?.toString();
+    const params = new URLSearchParams(searchParams?.toString() ?? "");
+    params.delete("auth");
+    const query = params.toString();
     return query ? `${pathname}?${query}` : pathname;
   }, [pathname, searchParams]);
 
@@ -95,6 +101,34 @@ export default function GA4Tracker({
       page_title: document.title,
     });
   }, [hasAnalyticsConsent, isLoaded, isInternalUser, pagePath]);
+
+  // Login / sign-up event, handed over by /auth/post-login as `?auth=`.
+  //
+  // It lives here rather than on that route because the route now redirects on
+  // the server, before any JavaScript runs — which is the whole point: a login
+  // must not depend on hydration. The marker is removed from the URL as soon
+  // as it is read, so a refresh or a back-navigation cannot double-count it,
+  // and a shared link never carries it.
+  useEffect(() => {
+    if (!authEvent) return;
+    if (typeof window === "undefined") return;
+
+    const url = new URL(window.location.href);
+    url.searchParams.delete("auth");
+    window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+
+    if (!isLoaded) return;
+    if (!GA4_MEASUREMENT_ID) return;
+    if (!hasAnalyticsConsent) return;
+    if (isInternalUser) return;
+    if (typeof window.gtag !== "function") return;
+
+    if (authEvent === "signup") {
+      window.gtag("event", "sign_up", { method: "clerk" });
+    } else if (authEvent === "login") {
+      window.gtag("event", "login", { method: "clerk" });
+    }
+  }, [authEvent, hasAnalyticsConsent, isInternalUser, isLoaded]);
 
   if (!GA4_MEASUREMENT_ID || !isLoaded || isInternalUser || !hasAnalyticsConsent) return null;
 
