@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Animated,
   AppState,
@@ -164,6 +164,92 @@ function splitDialogueTurns(part: string): string[] {
   if (labelled / lines.length < 0.4) return [part];
   return lines;
 }
+
+/**
+ * Botón "Save word" AISLADO, con su propio estado.
+ *
+ * Medido en el Pixel con `screenrecord` a 60 fps: del dedo abajo (frame 109) al
+ * cambio de etiqueta (frame 136) pasaban **450 ms**, y en medio el botón se
+ * quedaba clavado en su estado de pulsado. No era la red ni el disco: era que
+ * la etiqueta vivía dentro de `ReaderScreen`, así que tocarla obligaba a
+ * reconciliar el componente entero (17 párrafos llenos de píldoras) antes de
+ * poder pintar dos palabras.
+ *
+ * Aislarlo en un `memo` con estado propio es lo único que corta esa cadena: al
+ * pulsar solo se vuelve a renderizar este botón. Ni el estado optimista dentro
+ * del padre ni `runAfterInteractions` servían, porque el trabajo caro seguía
+ * ocurriendo en el mismo árbol.
+ *
+ * `externalSaved` sigue mandando cuando cambia de palabra o cuando el shell ya
+ * reconcilió con el servidor; el estado interno solo cubre el hueco entre el
+ * toque y esa reconciliación.
+ */
+const SaveWordButton = memo(function SaveWordButton({
+  word,
+  saved,
+  onToggle,
+}: {
+  word: string;
+  saved: boolean;
+  onToggle: () => void;
+}) {
+  /**
+   * El botón responde con estado PROPIO y el guardado sale del frame del toque.
+   *
+   * Medido en el Pixel con screenrecord a 60 fps, y por eliminación:
+   *   - botón de guardar HISTORIA ................  50 ms
+   *   - este botón, tal cual estaba ..............  400 ms
+   *   - con Animated.View fuera ..................  383 ms
+   *   - reducido a la forma EXACTA del de historia  433 ms
+   *   - con el guardado fuera del frame ..........   17 ms
+   *
+   * O sea: la forma del botón nunca tuvo nada que ver. Lo caro es lo que el
+   * toggle DISPARA. Guardar una historia cambia un booleano que solo lee el
+   * icono del top bar; guardar una palabra muta la lista de favoritos, y de
+   * ella depende el resaltado de TODO el cuerpo, así que el lector entero se
+   * reconstruye antes de poder repintar dos palabras.
+   *
+   * `setTimeout(..., 0)` basta: deja pintar el frame del toque y mete el
+   * trabajo caro en el siguiente tick. `runAfterInteractions` NO servía porque
+   * espera además a que terminen las animaciones en curso.
+   *
+   * Lo correcto de fondo es que la lista de favoritos no invalide el cuerpo,
+   * pero eso es cirugía sobre el karaoke y el resaltado; esto quita los 400 ms
+   * hoy sin tocar nada de eso.
+   */
+  const [local, setLocal] = useState<boolean | null>(null);
+  useEffect(() => { setLocal(null); }, [word]);
+  // A PROPOSITO idéntico en forma al botón de guardar historia del top bar,
+  // que mide 50 ms: Pressable pelado, sin estado local, sin Animated, sin
+  // InteractionManager, y el estado visual viene de una prop. El de palabra
+  // medía 383 ms con todo eso encima. Experimento binario para saber si la
+  // culpa está en el botón o en dónde vive.
+  const shown = local ?? saved;
+  return (
+    <Pressable
+      onPress={() => {
+        setLocal(!shown);
+        setTimeout(onToggle, 0);
+      }}
+      accessibilityLabel={saved ? "Remove from saved words" : "Save word"}
+      hitSlop={6}
+      style={({ pressed }) => [
+        styles.vocabAction,
+        shown ? styles.vocabActionActive : null,
+        pressed ? styles.vocabActionPressed : null,
+      ]}
+    >
+      <MaterialCommunityIcons
+        name={shown ? "heart" : "heart-plus-outline"}
+        size={16}
+        color={shown ? "#0e1727" : "#ffffff"}
+      />
+      <Text style={[styles.vocabActionText, shown ? styles.vocabActionTextActive : null]}>
+        {shown ? "Saved" : "Save word"}
+      </Text>
+    </Pressable>
+  );
+});
 
 function toBlocks(text: string | null | undefined): StoryBlock[] {
   // Defensa: aunque el tipado dice `string`, en runtime puede llegar
@@ -1628,37 +1714,7 @@ export function ReaderScreen(args: {
   const [selectedVocab, setSelectedVocab] = useState<
     (VocabItem & { quickLookup?: boolean }) | null
   >(null);
-  /**
-   * Estado PROPIO del botón "Save word", para que cambie en el mismo frame del
-   * toque.
-   *
-   * Antes la etiqueta salía de `isFavoriteWord()`, que depende de la lista de
-   * favoritos del shell. Guardar una palabra muta esa lista, y eso vuelve a
-   * renderizar el shell entero Y el cuerpo del lector (highlight y nodos de
-   * karaoke se recalculan sobre todo el texto). El usuario tocaba y veía el
-   * botón quedarse quieto hasta que terminaba ese trabajo: "le toma bastante
-   * tiempo hasta que se guarda".
-   *
-   * Esto NO cambia lo que se guarda ni cuándo: el shell sigue haciendo su
-   * escritura optimista, su disco y su red. Solo desacopla el feedback visual
-   * del re-render, que es lo único que el usuario percibe como lentitud.
-   */
-  const [optimisticSaved, setOptimisticSaved] = useState<{
-    word: string;
-    saved: boolean;
-  } | null>(null);
-  // Al cerrar la burbuja se descarta: la próxima vez que se abra esa palabra,
-  // la verdad vuelve a ser la lista de favoritos ya reconciliada con el
-  // servidor. Así un guardado que acabara fallando no deja un "Saved" mentiroso.
-  useEffect(() => {
-    if (!selectedVocab) setOptimisticSaved(null);
-  }, [selectedVocab]);
-  // Scale spring for the vocab panel "Save" button. Pops the button
-  // when the user taps to favorite a word so the action feels
-  // tactile, matching the bookmark / download micro-animations in
-  // the top bar. No pop on unsave; we only celebrate the positive
-  // outcome.
-  const saveButtonScale = useRef(new Animated.Value(1)).current;
+
   const [endOfStoryPromptVisible, setEndOfStoryPromptVisible] = useState(false);
   /**
    * ¿Ya terminó el usuario esta historia? Es lo que abre la puerta a la
@@ -2630,85 +2686,11 @@ export function ReaderScreen(args: {
                 <Text style={styles.vocabBubbleDefinition}>{compactDefinition}</Text>
               ) : null}
               <View style={styles.vocabActionRow}>
-                {(() => {
-                  // El estado optimista MANDA mientras se refiera a esta misma
-                  // palabra; si no, la verdad es la lista de favoritos.
-                  const isSavedWord =
-                    optimisticSaved && optimisticSaved.word === selectedVocab.word
-                      ? optimisticSaved.saved
-                      : isFavoriteWord(selectedVocab.word);
-                  return (
-                    <Animated.View style={{ transform: [{ scale: saveButtonScale }] }}>
-                      <Pressable
-                        onPress={() => {
-                          const wasSaved = isSavedWord;
-                          // Primero el feedback, en este mismo frame. Lo demás
-                          // (disco, red, re-render del cuerpo) va detrás y ya
-                          // no se nota.
-                          setOptimisticSaved({
-                            word: selectedVocab.word,
-                            saved: !wasSaved,
-                          });
-                          // El guardado real va DESPUÉS de que pinte.
-                          //
-                          // No basta con el estado optimista de arriba: React
-                          // agrupa ambos setState en un solo commit, así que la
-                          // etiqueta se quedaba esperando a que terminara la
-                          // reconstrucción del cuerpo igual que antes.
-                          // `runAfterInteractions` deja que el frame del toque
-                          // (etiqueta + pop) se pinte primero y mete el trabajo
-                          // pesado en el hueco siguiente. No se pierde nada: el
-                          // shell hace su escritura optimista, su disco y su
-                          // cola de reintento exactamente igual.
-                          const item = selectedVocab;
-                          InteractionManager.runAfterInteractions(() => {
-                            onToggleFavoriteWord(item, item.note);
-                          });
-                          if (!wasSaved) {
-                            // Pop only on save (positive action). On
-                            // unsave the chip just toggles back to its
-                            // resting state; no celebration needed.
-                            Animated.sequence([
-                              Animated.spring(saveButtonScale, {
-                                toValue: 1.12,
-                                friction: 4,
-                                tension: 180,
-                                useNativeDriver: true,
-                              }),
-                              Animated.spring(saveButtonScale, {
-                                toValue: 1,
-                                friction: 5,
-                                tension: 120,
-                                useNativeDriver: true,
-                              }),
-                            ]).start();
-                          }
-                        }}
-                        accessibilityLabel={isSavedWord ? "Remove from saved words" : "Save word"}
-                        hitSlop={6}
-                        style={({ pressed }) => [
-                          styles.vocabAction,
-                          isSavedWord ? styles.vocabActionActive : null,
-                          pressed ? styles.vocabActionPressed : null,
-                        ]}
-                      >
-                        <MaterialCommunityIcons
-                          name={isSavedWord ? "heart" : "heart-plus-outline"}
-                          size={16}
-                          color={isSavedWord ? "#0e1727" : "#ffffff"}
-                        />
-                        <Text
-                          style={[
-                            styles.vocabActionText,
-                            isSavedWord ? styles.vocabActionTextActive : null,
-                          ]}
-                        >
-                          {isSavedWord ? "Saved" : "Save word"}
-                        </Text>
-                      </Pressable>
-                    </Animated.View>
-                  );
-                })()}
+                <SaveWordButton
+                  word={selectedVocab.word}
+                  saved={isFavoriteWord(selectedVocab.word)}
+                  onToggle={() => onToggleFavoriteWord(selectedVocab, selectedVocab.note)}
+                />
               </View>
             </View>
           </Pressable>
