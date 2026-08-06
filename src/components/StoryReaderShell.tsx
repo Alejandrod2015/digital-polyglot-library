@@ -47,6 +47,12 @@ export type StoryReaderShellProps = {
     alt?: string;
     unoptimized?: boolean;
     unoptimizedBlur?: boolean;
+    /**
+     * Credit line under the image. Required by some licences (Wikimedia
+     * Commons CC BY / CC BY-SA), so it renders with the photo rather than
+     * being left to each caller to remember.
+     */
+    credit?: React.ReactNode;
   } | null;
   /** Anything between the header and the body (e.g. a save button). */
   headerSlot?: React.ReactNode;
@@ -149,6 +155,11 @@ export default function StoryReaderShell({
               />
             </div>
           </div>
+          {cover.credit ? (
+            <p className="mx-auto mt-2 max-w-3xl text-[11px] font-semibold text-[var(--muted)]">
+              {cover.credit}
+            </p>
+          ) : null}
         </div>
       ) : null}
 

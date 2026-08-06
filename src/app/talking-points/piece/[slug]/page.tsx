@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { currentUser } from "@clerk/nextjs/server";
 import type { Plan } from "@domain/access";
-import { canAccessTalkingPoints, getPiece, getTopics } from "@/lib/talkingPoints";
+import { canAccessTalkingPoints, getPiece } from "@/lib/talkingPoints";
 import PieceClient from "./PieceClient";
 
 // Plan-gated, so it reads the session and cannot be prerendered. Same stance

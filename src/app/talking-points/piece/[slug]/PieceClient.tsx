@@ -11,11 +11,13 @@
 // never matched and would have drifted the next time the story page changed.
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ExternalLink, Pause, RotateCcw, RotateCw } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import Player from "@/components/Player";
 import StoryContent from "@/components/StoryContent";
 import StoryReaderShell from "@/components/StoryReaderShell";
 import EndOfStoryPracticePrompt from "@/components/EndOfStoryPracticePrompt";
 import type { TalkingPiece, TalkingTopic } from "@/lib/talkingPoints";
+import { photoCredit } from "@/lib/wikimediaCommons";
 import { markRead } from "@/lib/talkingPointsRun";
 
 // Function declaration rather than a module-scope const: hoisted, so it can
@@ -82,8 +84,32 @@ export default function PieceClient({
           {angleLabel(piece.angle)}
         </span>
       }
-      // No cover, on purpose: in this section the question is the artwork.
-      cover={null}
+      // A real photograph, credited. Stories carry an illustrated cover; this
+      // section carries something that happened, which is the point of it.
+      cover={
+        piece.photo
+          ? {
+              url: piece.photo.url,
+              alt: piece.photo.alt,
+              // Commons files are already optimised and sit off-domain; let
+              // them through untouched rather than re-encoding on our side.
+              unoptimized: true,
+              credit: (
+                <>
+                  Foto:{" "}
+                  <a
+                    href={piece.photo.filePage}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-[var(--foreground)]"
+                  >
+                    {photoCredit(piece.photo)}
+                  </a>
+                </>
+              ),
+            }
+          : null
+      }
       vocabPanel={
         written
           ? {
@@ -95,7 +121,26 @@ export default function PieceClient({
             }
           : null
       }
-      dock={<PrototypeDock />}
+      dock={
+        piece.audioUrl ? (
+          // El Player real, montado igual que en /stories/[slug]: mismo id de
+          // dock (publica --story-content-pb, que reserva el alto del player
+          // para que la ultima linea no quede tapada) y mismo z-index.
+          <div
+            id="story-player-dock"
+            className="fixed bottom-0 left-0 right-0 z-50 bg-transparent"
+          >
+            <Player
+              src={piece.audioUrl}
+              bookSlug="talking-points"
+              storySlug={piece.slug}
+              canPlay
+            />
+          </div>
+        ) : (
+          <PendingAudioDock />
+        )
+      }
     >
       {written ? (
         <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
@@ -187,41 +232,21 @@ function SourcesPanel({
   );
 }
 
-/** Holds the dock slot at the real Player's height, visibly inert. */
-function PrototypeDock() {
+/**
+ * Shown only while a piece has no rendered narration. It holds the same slot at
+ * roughly the player's height so the layout does not jump when audio lands, and
+ * it says plainly that there is nothing to play rather than faking controls.
+ */
+function PendingAudioDock() {
   return (
     <div
       id="story-player-dock"
       className="fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 bg-[rgba(7,16,30,0.94)] backdrop-blur"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
-      <div className="mx-auto max-w-3xl px-5 pt-3 pb-4">
-        <div className="flex items-center gap-3 opacity-40">
-          <span className="text-[12px] font-semibold text-[var(--muted)] tabular-nums">
-            0:00
-          </span>
-          <div className="flex h-8 flex-1 items-center gap-[2px] overflow-hidden">
-            {Array.from({ length: 64 }).map((_, i) => (
-              <span
-                key={i}
-                className="w-[3px] shrink-0 rounded-full bg-white/25"
-                style={{ height: `${18 + ((i * 37) % 60)}%` }}
-              />
-            ))}
-          </div>
-          <span className="text-[12px] font-semibold text-[var(--muted)] tabular-nums">
-            --:--
-          </span>
-        </div>
-        <div className="mt-2 flex items-center justify-center gap-6 opacity-30">
-          <RotateCcw size={20} className="text-[var(--muted)]" aria-hidden />
-          <span className="grid h-11 w-11 place-items-center rounded-full bg-white/10">
-            <Pause size={20} className="text-[var(--muted)]" aria-hidden />
-          </span>
-          <RotateCw size={20} className="text-[var(--muted)]" aria-hidden />
-        </div>
-        <p className="mt-2 mb-0 text-center text-[11px] font-bold text-[var(--muted)]">
-          No audio rendered in this prototype
+      <div className="mx-auto max-w-3xl px-5 py-5 text-center">
+        <p className="m-0 text-[12px] font-bold text-[var(--muted)]">
+          Esta pieza todavia no tiene narracion.
         </p>
       </div>
     </div>

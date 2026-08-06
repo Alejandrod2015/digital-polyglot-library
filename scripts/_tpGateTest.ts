@@ -2,14 +2,17 @@
 //
 // Checks for Talking Points. Run: npx tsx scripts/_tpGateTest.ts
 //
-//   1. The plan gate: who can open the section.
-//   2. Vocabulary density: every written piece must sit in the journey band.
-//   3. Surface forms: every vocab entry must actually occur in the body.
+//   1. Plan gate — who can open the section.
+//   2. Vocabulary density — entries per 100 words, the journey figure.
+//   3. Surface forms — every entry occurs in the body as written.
+//   4. Type mix — not a list of nouns with a few verbs bolted on.
+//   5. Spread — entries distributed across paragraphs, not front-loaded.
 //
-// (2) and (3) exist because both failed silently once. The pieces shipped at
-// two entries per hundred words, a fifth of the journey figure, and an entry
-// written as an infinitive ("apretar") never matched the conjugated form in
-// the prose ("te aprieta"), so it highlighted nothing at all.
+// Every one of these exists because it failed silently first. The pieces
+// shipped at two entries per hundred words, a fifth of the journey figure;
+// an entry written as an infinitive ("apretar") never matched the conjugated
+// form in the prose ("te aprieta") and so highlighted nothing; and two thirds
+// of the list were nouns, which teaches labels rather than language.
 
 import {
   canAccessTalkingPoints,
@@ -17,8 +20,14 @@ import {
   missingVocabSurfaces,
   pieceWordCount,
   vocabDensity,
+  vocabPerParagraph,
+  vocabTypeMix,
   VOCAB_DENSITY_MAX,
   VOCAB_DENSITY_MIN,
+  VOCAB_MAX_NOUN_SHARE,
+  VOCAB_MAX_PARAGRAPH_SHARE,
+  VOCAB_MIN_OTHER,
+  VOCAB_MIN_VERB_SHARE,
   VOCAB_PER_100_WORDS,
 } from "@/lib/talkingPoints";
 import type { Plan } from "@domain/access";
@@ -30,7 +39,9 @@ function check(ok: boolean, label: string, detail = "") {
   console.log(`${ok ? "PASS" : "FAIL"}  ${label}${detail ? "  " + detail : ""}`);
 }
 
-// ---------- 1. plan gate ----------
+const label = (s: string) => s.slice(0, 42).padEnd(44);
+
+// ---------- 1. gate de plan ----------
 console.log("\n== gate de plan ==");
 const gateCases: Array<{
   plan: Plan;
@@ -56,18 +67,18 @@ for (const c of gateCases) {
   check(canAccessTalkingPoints(c.plan) === c.expect, c.why);
 }
 
+const written = getEntries().filter((e) => e.piece.body.length > 0);
+
 // ---------- 2. densidad ----------
 console.log(
-  `\n== densidad de vocabulario (objetivo ${VOCAB_PER_100_WORDS} por 100, banda ${VOCAB_DENSITY_MIN}-${VOCAB_DENSITY_MAX}) ==`
+  `\n== densidad (objetivo ${VOCAB_PER_100_WORDS}/100, banda ${VOCAB_DENSITY_MIN}-${VOCAB_DENSITY_MAX}) ==`
 );
-const written = getEntries().filter((e) => e.piece.body.length > 0);
 for (const { piece } of written) {
   const d = vocabDensity(piece);
-  const words = pieceWordCount(piece);
   check(
     d >= VOCAB_DENSITY_MIN && d <= VOCAB_DENSITY_MAX,
-    piece.title.slice(0, 42).padEnd(44),
-    `${words} palabras, ${piece.vocab.length} entradas, ${d.toFixed(1)}/100`
+    label(piece.title),
+    `${pieceWordCount(piece)} palabras, ${piece.vocab.length} entradas, ${d.toFixed(1)}/100`
   );
 }
 
@@ -77,8 +88,38 @@ for (const { piece } of written) {
   const missing = missingVocabSurfaces(piece);
   check(
     missing.length === 0,
-    piece.title.slice(0, 42).padEnd(44),
+    label(piece.title),
     missing.length ? `no aparecen: ${missing.join(", ")}` : "todas aparecen"
+  );
+}
+
+// ---------- 4. mezcla de tipos ----------
+console.log(
+  `\n== tipos (sustantivos <=${VOCAB_MAX_NOUN_SHARE}%, verbos >=${VOCAB_MIN_VERB_SHARE}%, otros >=${VOCAB_MIN_OTHER}) ==`
+);
+for (const { piece } of written) {
+  const mix = vocabTypeMix(piece);
+  check(
+    mix.nounShare <= VOCAB_MAX_NOUN_SHARE &&
+      mix.verbShare >= VOCAB_MIN_VERB_SHARE &&
+      mix.other >= VOCAB_MIN_OTHER,
+    label(piece.title),
+    `${mix.nounShare.toFixed(0)}% sust, ${mix.verbShare.toFixed(0)}% verbos, ${mix.other} otros`
+  );
+}
+
+// ---------- 5. reparto por parrafo ----------
+console.log(
+  `\n== reparto (3-5 por parrafo, ninguno >${VOCAB_MAX_PARAGRAPH_SHARE}% del total) ==`
+);
+for (const { piece } of written) {
+  const per = vocabPerParagraph(piece);
+  const worst = Math.max(...per);
+  check(
+    per.every((n) => n >= 3 && n <= 5) &&
+      (worst / piece.vocab.length) * 100 <= VOCAB_MAX_PARAGRAPH_SHARE,
+    label(piece.title),
+    per.join(" / ")
   );
 }
 

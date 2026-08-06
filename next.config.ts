@@ -28,6 +28,13 @@ const nextConfig: NextConfig = {
         hostname: "pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev",
         pathname: "/**",
       },
+      // 🖼️ Wikimedia Commons — photos for Talking Points. Freely licensed and
+      // credited in the UI; see src/lib/wikimediaCommons.ts.
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        pathname: "/wikipedia/commons/**",
+      },
     ],
   },
   async redirects() {

@@ -19,6 +19,7 @@
 // authoring surface; that migration has not happened yet.
 
 import type { Plan } from "@domain/access";
+import type { TalkingPhoto } from "@/lib/wikimediaCommons";
 
 /**
  * Who can open Talking Points.
@@ -114,6 +115,17 @@ export type TalkingPiece = {
   body: string[];
   vocab: TalkingVocab[];
   sources: TalkingSource[];
+  /**
+   * Rendered narration, uploaded to media storage. Absent until a piece has
+   * been through the audio pipeline; the reader falls back to a notice.
+   */
+  audioUrl?: string;
+  /**
+   * Optional photo from Wikimedia Commons. Optional because a piece publishes
+   * on its prose and its sources; a picture it cannot credit is a picture it
+   * does not get.
+   */
+  photo?: TalkingPhoto;
 };
 
 export type TalkingTopic = {
@@ -179,6 +191,16 @@ const SRC_BBK_ZAHLUNG: TalkingSource = {
   checkedAt: CHECKED,
 };
 
+const SRC_BBK_KOSTEN: TalkingSource = {
+  id: "bbk-kosten-einzelhandel",
+  org: "Deutsche Bundesbank",
+  title: "Kosten der Bargeldzahlung im Einzelhandel",
+  url: "https://www.bundesbank.de/de/publikationen/berichte/studien/kosten-der-bargeldzahlung-im-einzelhandel-776464",
+  supports:
+    "Kosten je Transaktion f\u00fcr den H\u00e4ndler: Bargeld rund 24 Cent, girocard 33 Cent, Lastschrift 34 Cent, Kreditkarte mit PIN 97 Cent und mit Unterschrift 1,04 Euro. Dauer an der Kasse: bar gut 22 Sekunden, Karte mit PIN rund 29, mit Unterschrift rund 38.",
+  checkedAt: CHECKED,
+};
+
 const SRC_BBK_MEINUNG: TalkingSource = {
   id: "bbk-bargeld-meinungsbild",
   org: "Deutsche Bundesbank",
@@ -222,25 +244,25 @@ export const TALKING_TOPICS: TalkingTopic[] = [
           "Así que no hay un bando que quiera turistas y otro que no los quiera. Hay dos mil personas que quieren las dos cosas.",
         ],
         vocab: [
-          { term: "poner un tope", type: "verb phrase", en: "to set a cap" },
-          { term: "el alquiler", surface: "alquiler", type: "noun", en: "rent" },
-          { term: "apretar", surface: "aprieta", type: "verb", en: "to squeeze, to be tight on someone" },
-          { term: "el bando", surface: "bando", type: "noun", en: "side, camp (in a dispute)" },
+          { term: "alquilar", surface: "alquilado", type: "verb", en: "to rent" },
           { term: "el piso", surface: "piso", type: "noun", en: "flat, apartment" },
-          { term: "el edificio", surface: "edificio", type: "noun", en: "building" },
-          { term: "la culpa", surface: "culpa", type: "noun", en: "fault, blame" },
+          { term: "por tu culpa", type: "set phrase", en: "because of you" },
+          { term: "dormir", surface: "dormiste", type: "verb", en: "to sleep" },
           { term: "aprobar", surface: "aprobó", type: "verb", en: "to pass, to approve" },
-          { term: "la limitación", surface: "limitación", type: "noun", en: "cap, restriction" },
           { term: "encuestar", surface: "Encuestó", type: "verb", en: "to survey, to poll" },
+          { term: "poner un tope", type: "verb phrase", en: "to set a cap" },
           { term: "el residente", surface: "residentes", type: "noun", en: "resident" },
-          { term: "el barrio", surface: "barrio", type: "noun", en: "neighbourhood" },
           { term: "turístico", surface: "turístico", type: "adjective", en: "tourist (used as adjective)" },
-          { term: "el tercio", surface: "tercio", type: "noun", en: "a third" },
+          { term: "costar", surface: "cuesta", type: "verb", en: "to cost" },
           { term: "el sueldo", surface: "sueldo", type: "noun", en: "salary, wage" },
-          { term: "la cifra", surface: "cifra", type: "noun", en: "figure, number" },
           { term: "recoger", surface: "recoge", type: "verb", en: "to cite, to pick up" },
-          { term: "la encuesta", surface: "encuesta", type: "noun", en: "survey" },
+          { term: "vivir de", surface: "vives de", type: "verb phrase", en: "to make a living from" },
           { term: "la riqueza", surface: "riqueza", type: "noun", en: "wealth" },
+          { term: "apretar", surface: "aprieta", type: "verb", en: "to squeeze, to be tight on someone" },
+          { term: "la encuesta", surface: "encuesta", type: "noun", en: "survey" },
+          { term: "el bando", surface: "bando", type: "noun", en: "side, camp (in a dispute)" },
+          { term: "las dos cosas", type: "set phrase", en: "both things at once" },
+          { term: "así que", surface: "Así que", type: "set phrase", en: "so, therefore" },
         ],
         sources: [SRC_AETIB, SRC_BDE],
       },
@@ -257,21 +279,21 @@ export const TALKING_TOPICS: TalkingTopic[] = [
           "Por eso el mismo dato sirve para decir cosas contrarias. En Málaga el turismo mueve el precio de barrios enteros. En casi todo el resto del país no se nota. Y el precio del país no lo decide quién duerme en un piso, lo decide cuántos pisos hay.",
         ],
         vocab: [
-          { term: "la media", surface: "medias", type: "noun", en: "the average" },
-          { term: "largo", type: "adjective", en: "a bit over (after a number)" },
-          { term: "rastrear", surface: "rastreando", type: "verb", en: "to track, to trawl" },
-          { term: "la trampa", surface: "trampa", type: "noun", en: "the catch, the trick" },
           { term: "desaparecer", surface: "desaparecido", type: "verb", en: "to disappear" },
           { term: "la caída", surface: "caída", type: "noun", en: "drop, fall" },
+          { term: "de cada cien", surface: "De cada cien", type: "set phrase", en: "out of every hundred" },
           { term: "la explicación", surface: "explicación", type: "noun", en: "explanation" },
           { term: "repetir", surface: "repite", type: "verb", en: "to repeat" },
-          { term: "bajar", surface: "bajado", type: "verb", en: "to go down" },
-          { term: "la plataforma", surface: "plataformas", type: "noun", en: "platform" },
+          { term: "todo el mundo", type: "set phrase", en: "everybody" },
+          { term: "rastrear", surface: "rastreando", type: "verb", en: "to track, to trawl" },
           { term: "quedar", surface: "quedaban", type: "verb", en: "to remain, to be left" },
           { term: "la vivienda", surface: "viviendas", type: "noun", en: "housing, dwelling" },
-          { term: "el país", surface: "país", type: "noun", en: "country" },
+          { term: "largo", type: "adjective", en: "a bit over (after a number)" },
+          { term: "la trampa", surface: "trampa", type: "noun", en: "the catch, the trick" },
+          { term: "la media", surface: "medias", type: "noun", en: "the average" },
           { term: "sumar", surface: "suma", type: "verb", en: "to add up" },
           { term: "el extranjero", surface: "extranjeros", type: "noun", en: "foreigner" },
+          { term: "servir para", surface: "sirve para", type: "verb phrase", en: "to be good for, to serve to" },
           { term: "mover", surface: "mueve", type: "verb", en: "to move, to shift" },
           { term: "notarse", surface: "nota", type: "verb", en: "to be noticeable" },
         ],
@@ -290,21 +312,21 @@ export const TALKING_TOPICS: TalkingTopic[] = [
           "Lo último que se va es la asociación de vecinos. Convoca una reunión, pone la fecha en el tablón del portal, y no baja nadie.",
         ],
         vocab: [
+          { term: "aparecer", surface: "aparece", type: "verb", en: "to appear, to show up" },
           { term: "el portal", surface: "portal", type: "noun", en: "building entrance, lobby" },
           { term: "la fachada", surface: "fachada", type: "noun", en: "facade, front of a building" },
-          { term: "aguantar", surface: "aguanta", type: "verb", en: "to hold out, to endure" },
-          { term: "el tablón", surface: "tablón", type: "noun", en: "noticeboard" },
-          { term: "la llave", surface: "llaves", type: "noun", en: "key" },
           { term: "el ruido", surface: "ruido", type: "noun", en: "noise" },
-          { term: "la maleta", surface: "maleta", type: "noun", en: "suitcase" },
+          { term: "cambiar", surface: "cambia", type: "verb", en: "to change" },
+          { term: "oírse", surface: "se oyen", type: "verb", en: "to be heard" },
           { term: "el comercio", surface: "comercios", type: "noun", en: "shop, business" },
-          { term: "el panadero", surface: "panadero", type: "noun", en: "baker" },
           { term: "a diario", type: "set phrase", en: "daily, every day" },
-          { term: "el invierno", surface: "invierno", type: "noun", en: "winter" },
+          { term: "aguantar", surface: "aguanta", type: "verb", en: "to hold out, to endure" },
           { term: "dispararse", surface: "dispara", type: "verb", en: "to shoot up, to soar" },
           { term: "el vecino", surface: "vecinos", type: "noun", en: "neighbour" },
+          { term: "pasado cierto punto", surface: "Pasado cierto punto", type: "set phrase", en: "past a certain point" },
           { term: "convocar", surface: "Convoca", type: "verb", en: "to call (a meeting)" },
-          { term: "la reunión", surface: "reunión", type: "noun", en: "meeting" },
+          { term: "el tablón", surface: "tablón", type: "noun", en: "noticeboard" },
+          { term: "lo último", surface: "Lo último", type: "set phrase", en: "the last thing" },
         ],
         sources: [SRC_BDE],
       },
@@ -480,34 +502,44 @@ export const TALKING_TOPICS: TalkingTopic[] = [
         angle: "debate",
         body: [
           "Du stehst an der Kasse, hältst die Karte hin, und der Mann hinter dem Tresen zeigt auf ein kleines Schild: nur Bargeld. Kein Automat in der Nähe. Draußen regnet es.",
-          "Das ist kein Einzelfall und kein Zufall. In Deutschland wird immer noch jede zweite Zahlung mit Scheinen und Münzen gemacht, genauer gesagt einundfünfzig Prozent. Die Bundesbank misst das, indem sie mehrere tausend Leute drei Tage lang Buch führen lässt.",
-          "Es bewegt sich allerdings. Zweitausendeinundzwanzig waren es noch achtundfünfzig Prozent. Und wer nicht die Zahl der Zahlungen zählt, sondern das Geld, sieht die Debitkarte längst vorn: zweiunddreißig Prozent des Umsatzes gegen sechsundzwanzig beim Bargeld. Bar wird das Kleine bezahlt, mit Karte das Große.",
-          "Warum halten so viele daran fest? Ganz oben steht nicht Nostalgie, sondern der Stromausfall. Bargeld funktioniert, wenn die Technik nicht funktioniert. Danach kommt, dass Kinder mit Münzen lernen, was Geld überhaupt ist. Und der Datenschutz: Ein Schein verrät niemandem, wo du am Dienstagabend warst.",
-          "Und dann kommt der Widerspruch. Mehr als die Hälfte derselben Befragten sagt, Bargeld erleichtere Schwarzarbeit, Steuerhinterziehung und Geldwäsche, und genau deshalb solle man es einschränken. Neunundsechzig Prozent wollen bar zahlen können. Über die Hälfte findet, dass genau das ein Problem ist.",
+          "Er ist weder altmodisch noch stur. Für ihn ist dein Schein schlicht billiger. Die Bundesbank hat nachgerechnet, was den Handel jede Zahlung kostet: bar rund vierundzwanzig Cent, mit Kreditkarte fast einen Euro. Bei einem Kaffee für drei Euro ist das kein Rundungsfehler.",
+          "Es geht auch schneller. Eine Barzahlung dauert an der Kasse gut zwanzig Sekunden, eine Kartenzahlung mit Unterschrift fast vierzig. Und er ist damit nicht allein: In Deutschland wird immer noch jede zweite Zahlung bar gemacht.",
+          "Bei den Kunden steht ganz oben nicht die Nostalgie, sondern der Stromausfall. Bargeld funktioniert, wenn die Technik nicht funktioniert. Danach kommt, dass Kinder mit Münzen lernen, was Geld überhaupt ist. Und der Datenschutz: Ein Schein verrät niemandem, wo du am Dienstagabend warst.",
+          "Und dann kommt der Widerspruch. Mehr als die Hälfte derselben Befragten sagt, Bargeld erleichtere Schwarzarbeit und Steuerhinterziehung, und genau deshalb solle man es einschränken. Neunundsechzig Prozent wollen bar zahlen können. Über die Hälfte findet, dass genau das ein Problem ist. Der Mann hinter dem Tresen wartet immer noch. Draußen regnet es weiter."
         ],
         vocab: [
-          { term: "der Tresen", surface: "Tresen", type: "noun", en: "counter, bar" },
-          { term: "der Schein", surface: "Schein", type: "noun", en: "banknote" },
-          { term: "der Stromausfall", surface: "Stromausfall", type: "noun", en: "power cut" },
-          { term: "die Schwarzarbeit", surface: "Schwarzarbeit", type: "noun", en: "undeclared work" },
           { term: "die Kasse", surface: "Kasse", type: "noun", en: "till, checkout" },
-          { term: "das Schild", surface: "Schild", type: "noun", en: "sign" },
-          { term: "das Bargeld", surface: "Bargeld", type: "noun", en: "cash" },
-          { term: "der Automat", surface: "Automat", type: "noun", en: "cash machine" },
-          { term: "der Zufall", surface: "Zufall", type: "noun", en: "coincidence" },
+          { term: "hinhalten", surface: "hältst", type: "verb", en: "to hold out (something)" },
+          { term: "der Tresen", surface: "Tresen", type: "noun", en: "counter, bar" },
+          { term: "in der Nähe", type: "set phrase", en: "nearby" },
+          { term: "stur", type: "adjective", en: "stubborn" },
+          { term: "der Schein", surface: "Schein", type: "noun", en: "banknote" },
+          { term: "nachrechnen", surface: "nachgerechnet", type: "verb", en: "to work out, to do the maths" },
+          { term: "kosten", surface: "kostet", type: "verb", en: "to cost" },
+          { term: "die Barzahlung", surface: "Barzahlung", type: "noun", en: "cash payment" },
+          { term: "dauern", surface: "dauert", type: "verb", en: "to take (time)" },
+          { term: "die Unterschrift", surface: "Unterschrift", type: "noun", en: "signature" },
+          { term: "immer noch", type: "set phrase", en: "still" },
+          { term: "der Stromausfall", surface: "Stromausfall", type: "noun", en: "power cut" },
           { term: "die Münze", surface: "Münzen", type: "noun", en: "coin" },
-          { term: "messen", surface: "misst", type: "verb", en: "to measure" },
-          { term: "der Umsatz", surface: "Umsatz", type: "noun", en: "turnover, value of sales" },
-          { term: "der Datenschutz", surface: "Datenschutz", type: "noun", en: "data protection" },
           { term: "verraten", surface: "verrät", type: "verb", en: "to give away, to reveal" },
+          { term: "überhaupt", type: "adverb", en: "at all, actually" },
           { term: "der Widerspruch", surface: "Widerspruch", type: "noun", en: "contradiction" },
-          { term: "der Befragte", surface: "Befragten", type: "noun", en: "survey respondent" },
           { term: "erleichtern", surface: "erleichtere", type: "verb", en: "to make easier" },
-          { term: "die Steuerhinterziehung", surface: "Steuerhinterziehung", type: "noun", en: "tax evasion" },
-          { term: "die Geldwäsche", surface: "Geldwäsche", type: "noun", en: "money laundering" },
           { term: "einschränken", type: "verb", en: "to restrict, to limit" },
+          { term: "die Schwarzarbeit", surface: "Schwarzarbeit", type: "noun", en: "undeclared work" },
         ],
-        sources: [SRC_BBK_ZAHLUNG, SRC_BBK_MEINUNG],
+        sources: [SRC_BBK_KOSTEN, SRC_BBK_ZAHLUNG, SRC_BBK_MEINUNG],
+        audioUrl:
+          "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/Warum_nimmt_dieses_Caf_keine_Karte_1786020915847.mp3",
+        photo: {
+          url: "https://upload.wikimedia.org/wikipedia/commons/4/46/Euro-Geld_auf_Scheinen_und_Banknoten_-_1_Euro_Fokus_mit_Stapel.jpg",
+          filePage:
+            "https://commons.wikimedia.org/wiki/File:Euro-Geld_auf_Scheinen_und_Banknoten_-_1_Euro_Fokus_mit_Stapel.jpg",
+          author: "Christoph Scholz",
+          licence: "CC BY-SA 2.0",
+          alt: "Euromünzen und Geldscheine auf einem Tisch, eine Ein-Euro-Münze im Vordergrund.",
+        },
       },
       piece("letzter-geldautomat", "Der letzte Geldautomat im Dorf", "The cash machine left before the bank did.", "portrait"),
       piece("digitaler-euro", "Was der digitale Euro wäre und was nicht", "Not crypto, not your banking app. Something else.", "explainer"),
@@ -554,6 +586,62 @@ export function missingVocabSurfaces(piece: TalkingPiece): string[] {
     .filter((v) => !body.includes(v.surface ?? v.term))
     .map((v) => v.term);
 }
+
+/**
+ * Type balance. A list that is two thirds nouns teaches labels, not language:
+ * the learner can already point at a counter, what they cannot do is say what
+ * happens at it. Verbs and fixed expressions are what transfer.
+ *
+ * Nouns are capped rather than banned because non-fiction genuinely brings
+ * them: institutions, instruments, quantities.
+ */
+export const VOCAB_MAX_NOUN_SHARE = 50;
+export const VOCAB_MIN_VERB_SHARE = 25;
+/** Adjectives, adverbs and set phrases. At least this many per piece. */
+export const VOCAB_MIN_OTHER = 2;
+
+function isNoun(t: string) {
+  return t.includes("noun");
+}
+function isVerb(t: string) {
+  return t.startsWith("verb");
+}
+
+export function vocabTypeMix(piece: TalkingPiece): {
+  nounShare: number;
+  verbShare: number;
+  other: number;
+} {
+  const n = piece.vocab.length;
+  if (n === 0) return { nounShare: 0, verbShare: 0, other: 0 };
+  const nouns = piece.vocab.filter((v) => isNoun(v.type)).length;
+  const verbs = piece.vocab.filter((v) => isVerb(v.type)).length;
+  return {
+    nounShare: (nouns / n) * 100,
+    verbShare: (verbs / n) * 100,
+    other: n - nouns - verbs,
+  };
+}
+
+/**
+ * Vocab entries per paragraph. The rule the journey stories already follow:
+ * three to five per paragraph, and no single paragraph holding more than about
+ * a third of the list. Otherwise every highlight lands in the first thirty
+ * seconds and the rest of the audio teaches nothing.
+ */
+export function vocabPerParagraph(piece: TalkingPiece): number[] {
+  // Each entry counts ONCE, in the first paragraph where it appears. Counting
+  // it in every paragraph inflated the totals past the list length and made a
+  // front-loaded piece look evenly spread.
+  const counts = piece.body.map(() => 0);
+  for (const v of piece.vocab) {
+    const needle = v.surface ?? v.term;
+    const i = piece.body.findIndex((para) => para.includes(needle));
+    if (i >= 0) counts[i] += 1;
+  }
+  return counts;
+}
+export const VOCAB_MAX_PARAGRAPH_SHARE = 33;
 
 /**
  * A piece with its topic attached. The browse UI always needs both: the
