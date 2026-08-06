@@ -149,7 +149,6 @@ type FormState = {
   platform: "ios" | "android" | "both" | "";
   appleIdEmail: string;
   googleEmail: string;
-  socialHandle: string;
   nativeLanguage: string;
   nativeLanguageOther: string;
   targetLanguage: string;
@@ -176,7 +175,6 @@ const initialState: FormState = {
   platform: "",
   appleIdEmail: "",
   googleEmail: "",
-  socialHandle: "",
   nativeLanguage: "",
   nativeLanguageOther: "",
   targetLanguage: "",
@@ -356,7 +354,6 @@ export default function BetaSignupForm() {
           platform: form.platform,
           appleIdEmail: wantsIos ? form.appleIdEmail.trim() : undefined,
           googleEmail: wantsAndroid ? form.googleEmail.trim() : undefined,
-          socialHandle: form.socialHandle.trim() || undefined,
           nativeLanguage,
           targetLanguage,
           targetVariant:
@@ -566,24 +563,6 @@ export default function BetaSignupForm() {
         </div>
       )}
 
-      <div>
-        <label htmlFor="socialHandle" className={labelStyle}>
-          LinkedIn or X handle <span className="font-bold text-white/40">(optional)</span>
-        </label>
-        <input
-          id="socialHandle"
-          type="text"
-          autoComplete="off"
-          value={form.socialHandle}
-          onChange={(e) => update("socialHandle", e.target.value)}
-          className={inputStyle}
-          placeholder="linkedin.com/in/you or @yourhandle"
-          maxLength={200}
-        />
-        <p className={helperStyle}>
-          Helps us review faster. We don&apos;t share or contact you there.
-        </p>
-      </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>

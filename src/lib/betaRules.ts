@@ -127,7 +127,6 @@ export type BetaApplication = {
   motivation?: string | null;
   referralSource?: string | null;
   applicationReason?: string | null;
-  socialHandle?: string | null;
 };
 
 export type BetaDecision = "auto_accept" | "queue" | "auto_decline";
@@ -329,13 +328,15 @@ export function evaluateApplication(
   const referral = scoreReferral(app.referralSource);
   signals.push({ label: `Heard via: ${app.referralSource ?? "unknown"}`, points: referral });
 
-  // Small trust signals. Someone who gave a social handle, or who took the
-  // trouble to give the right Apple ID, is a person and not a form-filler.
+  // Small trust signal: someone who took the trouble to give the right store
+  // account is a person and not a form-filler.
+  //
+  // The social handle used to be worth 5 points here and the form asked for
+  // it. Both are gone: an optional field whose own helper text had to promise
+  // "we don't share or contact you there" is a field that is not earning its
+  // place, and what actually shows a real applicant is the paragraph they
+  // write about why they are applying. Old rows keep the column.
   let extras = 0;
-  if (app.socialHandle?.trim()) {
-    extras += 5;
-    signals.push({ label: "Left a social handle", points: 5 });
-  }
   // Two different addresses mean they read the field instead of pasting the
   // same value twice. Asked of WHICHEVER store account they gave: when this
   // only looked at the Apple ID, an Android applicant could never earn the

@@ -249,7 +249,6 @@ export async function processApplication(signupId: string): Promise<ApplicationO
       motivation: signup.motivation,
       referralSource: signup.referralSource,
       applicationReason: signup.applicationReason,
-      socialHandle: signup.socialHandle,
     },
     rules,
     { activeTesterCount },

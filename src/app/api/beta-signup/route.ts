@@ -69,7 +69,6 @@ type Body = {
   platform?: unknown;
   appleIdEmail?: unknown;
   googleEmail?: unknown;
-  socialHandle?: unknown;
   nativeLanguage?: unknown;
   targetLanguage?: unknown;
   targetVariant?: unknown;
@@ -190,7 +189,6 @@ export async function POST(req: NextRequest) {
       : "ios";
   const wantsIos = platform === "ios" || platform === "both";
   const wantsAndroid = platform === "android" || platform === "both";
-  const socialHandle = asTrimmedString(body.socialHandle, 200);
   const nativeLanguage = asTrimmedString(body.nativeLanguage, 100);
   const targetLanguage = asTrimmedString(body.targetLanguage, 100);
   // Optional by design: the form offers "not sure", and a blank is better data
@@ -207,7 +205,7 @@ export async function POST(req: NextRequest) {
   // server-side attribution (geo from Vercel + accept-language + user-agent).
   // Server side is the trustier source, so it overrides if both are present.
   //
-  // Los campos nuevos (firstName, appleIdEmail, socialHandle) van acá
+  // Los campos nuevos (firstName, appleIdEmail, googleEmail) van acá
   // en attribution JSON en vez de columnas first-class para evitar
   // schema migration. Si después se queryean mucho, se promueven a
   // columnas con una migration controlada.
@@ -222,7 +220,6 @@ export async function POST(req: NextRequest) {
   };
   if (appleIdEmail) profileExtras.appleIdEmail = appleIdEmail;
   if (googleEmail) profileExtras.googleEmail = googleEmail;
-  if (socialHandle) profileExtras.socialHandle = socialHandle;
   const mergedAttribution: Record<string, string> = {
     ...clientAttribution,
     ...serverAttribution,
@@ -299,7 +296,6 @@ export async function POST(req: NextRequest) {
       platform,
       appleIdEmail,
       googleEmail,
-      socialHandle,
       targetVariant,
     },
   });
