@@ -42,6 +42,7 @@ import {
   attachTesterGroup,
   getPlayBetaState,
   isPlayBetaConfigured,
+  trackLabel,
 } from "../src/lib/googlePlayBeta";
 import { DEFAULT_BETA_RULES, type BetaRulesConfig } from "../src/lib/betaRules";
 
@@ -336,7 +337,7 @@ async function checkPlayConnection() {
   add({
     name: "Play connection",
     ok: state.error === null,
-    detail: state.error ?? `${state.packageName}, track ${state.track}`,
+    detail: state.error ?? `${state.packageName}, ${trackLabel(state.track)}`,
     fix: state.error
       ? "The service account may lack release permissions in Play Console, or the package name is wrong."
       : undefined,
@@ -348,11 +349,11 @@ async function checkPlayConnection() {
     ok: state.groupAttached,
     detail: state.groupEmail
       ? state.groupAttached
-        ? `${state.groupEmail} is on the ${state.track} track`
+        ? `${state.groupEmail} is on ${trackLabel(state.track)}`
         : `${state.groupEmail} is NOT on the track (track has: ${state.attachedGroups.join(", ") || "none"})`
       : "no group configured",
     fix: state.groupEmail
-      ? "Run this preflight with --attach-play-group, or press the button in the Testers tab of /studio/beta."
+      ? "Run this preflight with --attach-play-group, or press the button in the Testers tab of /studio/beta. Both need the service account to hold release permissions in Play Console; without them Play answers 403 on the commit."
       : "Create a Google Group whose join setting is 'anyone can join', then set GOOGLE_PLAY_BETA_GROUP_EMAIL to its address.",
     blocking: false,
   });
@@ -364,10 +365,10 @@ async function checkPlayConnection() {
     ok: state.release !== null,
     detail: state.release
       ? `${state.release.status}, version code ${state.release.versionCodes.join(", ") || "?"}`
-      : `nothing published on ${state.track}, so the opt-in link installs nothing`,
+      : `nothing published on ${trackLabel(state.track)}, so the opt-in link installs nothing`,
     fix: state.release
       ? undefined
-      : `Upload an AAB to the ${state.track} track in Play Console and roll it out.`,
+      : `Upload an AAB to ${trackLabel(state.track)} in Play Console and roll it out.`,
     blocking: false,
   });
 

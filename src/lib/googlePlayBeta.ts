@@ -31,14 +31,24 @@ import { getGooglePlayAccessToken, getGooglePlayCredentials } from "@/lib/google
 const API_BASE = "https://androidpublisher.googleapis.com/androidpublisher/v3/applications";
 
 /**
- * Closed testing. NOT `internal`: the internal track caps at 100 testers added
- * by hand as an email list in Play Console (no group support that the API can
- * manage), and its opt-in link is an opaque per-app id that cannot be derived
+ * Closed testing.
+ *
+ * The track ids do NOT mean what they look like, and getting this wrong costs a
+ * confusing 403 rather than a clear error. In the Play Console of today:
+ * `internal` is Internal testing, **`alpha` is Closed testing**, `beta` is
+ * **Open** testing, `production` is production. Attaching a tester group to
+ * `beta` answers "The beta track has been upgraded to use open or closed
+ * testing; switch back to communities-based testing before using the API for
+ * this track", which is Play's way of saying that track is public now.
+ *
+ * Closed and not `internal`, because the internal track caps at 100 testers
+ * added by hand as an email list in Play Console, with no group the API can
+ * manage, and its opt-in link is an opaque per-app id that cannot be derived
  * from the package name. The closed track takes a Google Group and its opt-in
- * URL is always `play.google.com/apps/testing/<package>`, which means the whole
- * flow is computable from config instead of copied out of a console by hand.
+ * URL is always `play.google.com/apps/testing/<package>`, which makes the whole
+ * flow computable from config instead of copied out of a console by hand.
  */
-const DEFAULT_TRACK = "beta";
+const DEFAULT_TRACK = "alpha";
 
 export type PlayBetaConfig = {
   packageName: string;
@@ -49,9 +59,16 @@ export type PlayBetaConfig = {
 
 export function getPlayBetaConfig(): PlayBetaConfig | null {
   const packageName = process.env.GOOGLE_PLAY_PACKAGE_NAME?.trim();
-  const clientEmail = process.env.GOOGLE_PLAY_SERVICE_ACCOUNT_EMAIL?.trim();
-  const privateKey = process.env.GOOGLE_PLAY_SERVICE_ACCOUNT_PRIVATE_KEY?.trim();
-  if (!packageName || !clientEmail || !privateKey) return null;
+  // Asked of the shared credential reader rather than re-derived from env, so
+  // the key-file fallback works here too. Before this, the preflight reported
+  // "not configured" on a machine where the key was sitting right there.
+  let hasCredentials = false;
+  try {
+    hasCredentials = Boolean(getGooglePlayCredentials().privateKey);
+  } catch {
+    hasCredentials = false;
+  }
+  if (!packageName || !hasCredentials) return null;
 
   return {
     packageName,
@@ -62,6 +79,22 @@ export function getPlayBetaConfig(): PlayBetaConfig | null {
 
 export function isPlayBetaConfigured(): boolean {
   return getPlayBetaConfig() !== null;
+}
+
+/**
+ * What Play Console calls the track, next to what the API calls it. Every
+ * message a human reads goes through this, because "the alpha track" sends you
+ * looking for a section of the console that is labelled Closed testing.
+ */
+export function trackLabel(track: string): string {
+  const names: Record<string, string> = {
+    internal: "Internal testing",
+    alpha: "Closed testing",
+    beta: "Open testing",
+    production: "Production",
+  };
+  const name = names[track];
+  return name ? `${name} (${track})` : track;
 }
 
 /**
@@ -316,16 +349,16 @@ export function derivePlayBlockers(state: PlayBetaState): string[] {
     );
   } else if (!state.groupAttached) {
     blockers.push(
-      `The group ${state.groupEmail} is not attached to the ${state.track} track, so joining it grants nothing.`,
+      `The group ${state.groupEmail} is not attached to ${trackLabel(state.track)}, so joining it grants nothing.`,
     );
   }
   if (!state.release) {
     blockers.push(
-      `The ${state.track} track has no published release, so the opt-in link exists but has nothing to install.`,
+      `${trackLabel(state.track)} has no published release, so the opt-in link exists but has nothing to install.`,
     );
   }
   if (!state.optInUrl) {
-    blockers.push(`No opt-in URL can be derived for the ${state.track} track.`);
+    blockers.push(`No opt-in URL can be derived for ${trackLabel(state.track)}.`);
   }
   return blockers;
 }

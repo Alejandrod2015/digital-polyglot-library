@@ -46,14 +46,41 @@ function base64UrlEncode(input: string) {
     .replace(/=+$/g, "");
 }
 
+/**
+ * Reads the service-account JSON off disk. Local-only convenience, mirroring
+ * `ASC_PRIVATE_KEY_PATH` on the Apple side: it means a private key does not
+ * have to be pasted into `.env.local` just so a script can run. Vercel keeps
+ * using the inline vars, and both service-account vars are stored there as
+ * sensitive, which is why `vercel env pull` brings them back empty.
+ */
+function readGooglePlayKeyFile(): { clientEmail: string; privateKey: string } | null {
+  const path = process.env.GOOGLE_PLAY_SERVICE_ACCOUNT_KEY_FILE?.trim();
+  if (!path) return null;
+  try {
+    // Required lazily so the bundler never pulls `fs` into an edge or client
+    // bundle for a path that only ever exists on a developer's machine.
+    const { readFileSync } = require("fs") as typeof import("fs");
+    const parsed = JSON.parse(readFileSync(path, "utf8")) as {
+      client_email?: string;
+      private_key?: string;
+    };
+    if (!parsed.client_email || !parsed.private_key) return null;
+    return { clientEmail: parsed.client_email, privateKey: parsed.private_key };
+  } catch {
+    return null;
+  }
+}
+
 export function getGooglePlayCredentials() {
-  const clientEmail = process.env.GOOGLE_PLAY_SERVICE_ACCOUNT_EMAIL?.trim();
-  const privateKey = process.env.GOOGLE_PLAY_SERVICE_ACCOUNT_PRIVATE_KEY?.replace(/\\n/g, "\n");
+  const fromFile = readGooglePlayKeyFile();
+  const clientEmail = process.env.GOOGLE_PLAY_SERVICE_ACCOUNT_EMAIL?.trim() || fromFile?.clientEmail;
+  const privateKey =
+    process.env.GOOGLE_PLAY_SERVICE_ACCOUNT_PRIVATE_KEY?.replace(/\\n/g, "\n") || fromFile?.privateKey;
   const packageName = process.env.GOOGLE_PLAY_PACKAGE_NAME?.trim();
 
   if (!clientEmail || !privateKey || !packageName) {
     throw new Error(
-      "Missing Google Play credentials. Set GOOGLE_PLAY_SERVICE_ACCOUNT_EMAIL, GOOGLE_PLAY_SERVICE_ACCOUNT_PRIVATE_KEY, and GOOGLE_PLAY_PACKAGE_NAME."
+      "Missing Google Play credentials. Set GOOGLE_PLAY_SERVICE_ACCOUNT_EMAIL, GOOGLE_PLAY_SERVICE_ACCOUNT_PRIVATE_KEY (or GOOGLE_PLAY_SERVICE_ACCOUNT_KEY_FILE), and GOOGLE_PLAY_PACKAGE_NAME."
     );
   }
 
