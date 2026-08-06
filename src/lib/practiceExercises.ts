@@ -745,9 +745,45 @@ function createListenChooseExercise(
   };
 }
 
+/**
+ * Una traduccion que CONTIENE la propia palabra convierte el match en un
+ * regalo: la tarjeta de significado lleva escrita la respuesta.
+ *
+ * El caso que lo destapo (2026-08-06): el usuario vio en Match la pareja
+ * `stapeln` / "sich stapeln = to pile up". La HISTORIA tenia la definicion
+ * correcta ("To pile things on top of each other"); lo que fallaba era el
+ * texto guardado al usar el QUICK LOOKUP, cuyo glosario usa otro formato,
+ * "lema = traduccion". Medido sobre los 16.518 glosses de los bundles: 621
+ * llevan "=" y 1.906 (11,5%) contienen su propia palabra.
+ *
+ * En el lector ese formato es BUENO: de un vistazo tienes lema y traduccion.
+ * El fallo es reutilizar el mismo texto en un ejercicio cuya regla es la
+ * contraria. Por eso esto EXCLUYE del match en vez de reescribir: la palabra
+ * sigue sirviendo para meaning y para listening, que es donde el gloss encaja.
+ *
+ * Tambien caza el caso legitimo pero igual de revelador de los prestamos, donde
+ * el ingles repite la palabra ("horchata" -> "Horchata; a sweet drink...",
+ * "jaguar" -> "Jaguar; a big wild cat"). Ahi no hay nada que arreglar en el
+ * texto, y aun asi no puede ser un match.
+ */
+const MATCH_LEAD_WORDS = /^(der|die|das|sich|el|la|los|las|un|una|il|le|lo|gli|les|the|to)\s+/;
+
+function translationRevealsWord(item: PracticeFavoriteItem): boolean {
+  const word = normalizeKey(item.word);
+  const translation = normalizeKey(item.translation);
+  if (!word || !translation) return false;
+  const base = word.replace(MATCH_LEAD_WORDS, "").trim();
+  // Menos de 4 caracteres da falsos positivos por subcadena ("art" en "start").
+  if (base.length < 4) return false;
+  return translation.includes(base);
+}
+
 function createMatchMeaningExercise(items: PracticeFavoriteItem[]): MatchMeaningExercise | null {
   const candidates = uniqueByWord(items).filter(
-    (item) => normalizeText(item.word) && normalizeText(item.translation)
+    (item) =>
+      normalizeText(item.word) &&
+      normalizeText(item.translation) &&
+      !translationRevealsWord(item)
   );
   if (candidates.length < 4) return null;
   const selected = shuffle(candidates).slice(0, 4);

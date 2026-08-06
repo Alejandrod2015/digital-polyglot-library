@@ -8543,17 +8543,25 @@ export function MobileLibraryShell(args: {
         ? practiceFeedbackPreloadRef.current.correct
         : practiceFeedbackPreloadRef.current.wrong;
       if (preloaded) {
-        // El modo SÍ se reafirma aquí, aunque el preload ya lo fijara una vez.
-        // Quitarlo fue un error mío: c4db80d9 lo añadió a los tres SFX porque
-        // en iOS el modo es GLOBAL y cualquier otra ruta de audio de la app
-        // puede dejarlo con allowsRecordingIOS en true, y entonces la salida se
-        // va al auricular y el sonido queda mudo. Fijarlo una sola vez al abrir
-        // la sesión no sostiene esa invariante durante toda la ronda.
-        await Audio.setAudioModeAsync({
-          playsInSilentModeIOS: true,
-          allowsRecordingIOS: false,
-          interruptionModeIOS: InterruptionModeIOS.DoNotMix,
-        });
+        // NO se reconfigura la sesion de audio aqui, y esto es un retroceso
+        // DELIBERADO sobre lo que puse antes en esta misma sesion.
+        //
+        // Historia: c4db80d9 (30-jul) anadio setAudioModeAsync a los tres SFX,
+        // en un codigo donde cada sonido se CREABA en el momento: una llamada
+        // por creacion. Luego yo meti el preload y, al restaurar la llamada,
+        // la deje en el camino de REPRODUCCION, o sea una reconfiguracion de
+        // AVAudioSession POR CADA RESPUESTA. Eso no existia antes.
+        //
+        // El chime de 10/10 nace justo despues del SFX de la ultima respuesta,
+        // con los dos sonidos del preload todavia cargados y una reconfiguracion
+        // de sesion recien lanzada. En iOS eso es exactamente lo que se traga un
+        // one-shot corto. El usuario reporta que el chime "siempre funciono
+        // antes" y ha dejado de sonar, y esta es la UNICA diferencia funcional
+        // que introduje en el audio de practica.
+        //
+        // La invariante de c4db80d9 se mantiene igual: el modo se fija al abrir
+        // la sesion de practica (efecto del preload) y el chime lo refija por su
+        // cuenta antes de sonar. Lo que se quita es la churn intermedia.
         const other = correct
           ? practiceFeedbackPreloadRef.current.wrong
           : practiceFeedbackPreloadRef.current.correct;
@@ -8702,6 +8710,30 @@ export function MobileLibraryShell(args: {
   async function playPracticePerfectChime() {
     try {
       await stopPracticeCelebrationSound();
+      // Y SILENCIAR LOS SFX PRECARGADOS antes de tocar la sesion de audio.
+      //
+      // Esto no hacia falta antes de que yo metiera el preload (misma sesion,
+      // 2026-08-06): el sonido de acierto se creaba al vuelo y se DESCARGABA
+      // solo en su didJustFinish, asi que cuando llegaba el chime no quedaba
+      // nada sonando. Con el preload los dos SFX siguen montados toda la ronda,
+      // y el chime nace justo despues del acierto de la ultima respuesta:
+      // reconfigurar la AVAudioSession (el setAudioModeAsync de abajo) mientras
+      // uno de nuestros propios sonidos sigue vivo es lo que se traga el
+      // one-shot en iOS. El usuario lo reporta como "sonaba hace dias y ya no",
+      // y el preload es de hace unas horas.
+      // Se DESCARGAN, no solo se paran: antes del preload no habia ningun sound
+      // montado en este instante, y el objetivo es dejar la sesion de audio
+      // exactamente como estaba el 30 de julio, cuando el chime sonaba. La
+      // ronda ya termino, asi que no hace falta volver a montarlos.
+      for (const slot of ["correct", "wrong"] as const) {
+        const s = practiceFeedbackPreloadRef.current[slot];
+        if (s) {
+          try { await s.stopAsync(); } catch { /* ignore */ }
+          try { await s.unloadAsync(); } catch { /* ignore */ }
+          practiceFeedbackPreloadRef.current[slot] = null;
+        }
+      }
+      await stopAndUnloadPracticeSound(practiceFeedbackSoundRef);
       // Fijar el modo ANTES de reproducir, como hacen todas las demas rutas de
       // sonido de la app. Estas dos (chime perfecto y combo) eran las unicas
       // que no lo hacian, y en iOS eso significa que suenan con el modo que
@@ -13605,9 +13637,19 @@ export function MobileLibraryShell(args: {
                                 ]}
                               />
                               <Text
+                                // UNA sola linea a proposito. Con
+                                // numberOfLines={2}, React Native daba por
+                                // buena la palabra PARTIDA a la mitad
+                                // ("unbehag / lich", "gelasse / n") porque
+                                // cabia en dos lineas, y por eso
+                                // adjustsFontSizeToFit ya no la encogia mas.
+                                // Con una linea no hay corte posible: se
+                                // reduce el tamano hasta que la palabra entra
+                                // entera. Los compuestos alemanes son largos,
+                                // asi que el suelo baja a 0.45.
                                 adjustsFontSizeToFit
-                                numberOfLines={2}
-                                minimumFontScale={0.5}
+                                numberOfLines={1}
+                                minimumFontScale={0.45}
                                 style={[
                                   styles.practiceMatchRowWordText,
                                   isWordMatched ? { color: pairColor } : null,
@@ -25088,7 +25130,10 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   practiceMatchRowWord: {
-    flex: 1,
+    // 1 -> 1.15 y la acepcion 1.4 -> 1.3: la palabra pasa de ~42% a ~47% del
+    // ancho. Es lo que evita que un compuesto aleman tenga que encogerse hasta
+    // ser ilegible para caber en una linea.
+    flex: 1.15,
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
@@ -25119,7 +25164,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   practiceMatchRowMeaning: {
-    flex: 1.4,
+    flex: 1.3,
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
