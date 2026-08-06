@@ -8708,9 +8708,20 @@ export function MobileLibraryShell(args: {
       // dejara el ultimo que lo toco: si venia de un modo con
       // allowsRecordingIOS true, la salida se enruta al auricular y el sonido
       // queda inaudible. PracticeSpeaking ya documenta la invariante ("la ruta
-      // normal de playback, que SIEMPRE lo pone en false"). En Android estos
-      // flags son no-ops, que es coherente con que el fallo solo se note en
-      // iPhone.
+      // normal de playback, que SIEMPRE lo pone en false").
+      //
+      // CORRECCION 2026-08-06: aqui decia "en Android estos flags son no-ops,
+      // el fallo solo se nota en iPhone". Es FALSO, y era deduccion mia a
+      // partir de los nombres, no una medida. `setAudioModeAsync` no manda lo
+      // que le pasas: `_populateMissingKeys` (expo-av 16.0.8, build/Audio.js)
+      // completa el objeto y cruza al nativo el modo ENTERO, con las claves de
+      // Android dentro. Como en toda la app no especificamos ninguna, cada
+      // llamada aplica los defaults: interruptionModeAndroid=DuckOthers y
+      // shouldDuckAndroid=true. En Android esto RE-APLICA modo y foco de
+      // audio en cada invocacion, y un chime corto lanzado con ducking activo
+      // es justo el candidato a quedarse inaudible. El usuario reporto el
+      // fallo EN ANDROID. No se toca el comportamiento aqui: las claves de
+      // Android se decidiran con el chime sonando en un device, no deduciendo.
       await Audio.setAudioModeAsync({
         playsInSilentModeIOS: true,
         allowsRecordingIOS: false,
