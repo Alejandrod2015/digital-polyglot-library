@@ -265,6 +265,14 @@ export const TALKING_TOPICS: TalkingTopic[] = [
           { term: "así que", surface: "Así que", type: "set phrase", en: "so, therefore" },
         ],
         sources: [SRC_AETIB, SRC_BDE],
+        photo: {
+          url: "https://upload.wikimedia.org/wikipedia/commons/c/c4/2014-_MV_Arcadia_Cruise_Ship%2C_Port_of_Barcelona%2C_Spain_%28_Ank_Kumar_%29_01.jpg",
+          filePage:
+            "https://commons.wikimedia.org/wiki/File:2014-_MV_Arcadia_Cruise_Ship,_Port_of_Barcelona,_Spain_(_Ank_Kumar_)_01.jpg",
+          author: "Ank Kumar",
+          licence: "CC BY-SA 4.0",
+          alt: "Un crucero atracado en el puerto de Barcelona, visto desde el muelle.",
+        },
       },
       {
         slug: "por-que-no-baja-el-alquiler",
@@ -298,6 +306,14 @@ export const TALKING_TOPICS: TalkingTopic[] = [
           { term: "notarse", surface: "nota", type: "verb", en: "to be noticeable" },
         ],
         sources: [SRC_INE, SRC_BDE],
+        photo: {
+          url: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Santander%2C_balcones.jpg",
+          filePage:
+            "https://commons.wikimedia.org/wiki/File:Santander,_balcones.jpg",
+          author: "LBM1948",
+          licence: "CC BY-SA 4.0",
+          alt: "Fachada de un edificio de viviendas en Santander, con balcones corridos.",
+        },
       },
       {
         slug: "el-barrio-sin-vecinos",
@@ -329,6 +345,14 @@ export const TALKING_TOPICS: TalkingTopic[] = [
           { term: "lo último", surface: "Lo último", type: "set phrase", en: "the last thing" },
         ],
         sources: [SRC_BDE],
+        photo: {
+          url: "https://upload.wikimedia.org/wikipedia/commons/9/92/Key_in_lockbox.jpg",
+          filePage:
+            "https://commons.wikimedia.org/wiki/File:Key_in_lockbox.jpg",
+          author: "Brainy J",
+          licence: "CC0",
+          alt: "Una caja de llaves abierta colgada junto a una puerta, con una llave dentro.",
+        },
       },
     ],
   },

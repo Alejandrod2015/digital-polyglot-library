@@ -35,7 +35,10 @@ async function search(term: string, limit = 12): Promise<Candidate[]> {
   const params = new URLSearchParams({
     action: "query",
     generator: "search",
-    gsrsearch: term,
+    // `filemime` es el filtro que de verdad restringe a fotos. Sin el, Commons
+    // busca tambien en el TEXTO de los PDF y DJVU y devuelve escaneos de libros
+    // y actas del Congreso de EE. UU. en vez de imagenes.
+    gsrsearch: `filemime:image/jpeg ${term}`,
     gsrnamespace: "6", // File:
     gsrlimit: String(limit),
     prop: "imageinfo",
