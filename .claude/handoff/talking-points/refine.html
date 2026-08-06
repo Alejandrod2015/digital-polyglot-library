@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Talking Points — refinamiento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-0:#051834; --bg-1:#08264d; --bg-2:#0a2b56;
+    --fg:#e6eaf2; --muted:#9aa7bd; --gold:#fcd34d;
+    --card:rgba(255,255,255,.06); --border:rgba(255,255,255,.14);
+    --exp:#5aa9f8; --deb:#ffab3d; --por:#bd8bf0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0b1220;color:var(--fg);font-family:Nunito,system-ui,sans-serif;padding:40px}
+  h1{font-size:22px;font-weight:900;letter-spacing:-.02em}
+  .sub{color:var(--muted);font-weight:700;font-size:13px;margin-top:6px;max-width:80ch}
+  h2.grp{margin-top:38px;font-size:13px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+  .rack{display:flex;gap:40px;margin-top:18px;flex-wrap:wrap}
+  .slot{width:390px}
+  .slot h3{font-size:13px;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+  .slot h3.bad{color:#ff8080}
+  .slot h3.good{color:#7ee0a0}
+  .slot p.note{color:var(--muted);font-size:12.5px;font-weight:700;margin:6px 0 12px;min-height:56px;line-height:1.45}
+  .phone{width:390px;height:844px;overflow:hidden;position:relative;border-radius:38px;
+    border:1px solid var(--border);background:var(--bg-0);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+  .screen{padding:22px 26px}
+  .body p{font-size:19px;line-height:1.62;font-weight:600;margin-bottom:18px}
+  .vocab{border-radius:5px;padding:1px 5px}
+  .v1{background:rgba(244,114,182,.55)} .v2{background:rgba(90,169,248,.5)}
+
+  /* ---- AHORA: muro de fuentes ---- */
+  .srcHead{font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:26px 0 12px}
+  .srcItem{border-left:2px solid rgba(255,255,255,.12);padding-left:16px;margin-bottom:16px}
+  .srcOrg{font-size:13px;font-weight:900}
+  .srcTitle{font-size:13px;font-weight:800;color:var(--gold);line-height:1.35;margin-top:2px;display:block}
+  .srcSupp{font-size:12px;font-weight:700;color:var(--muted);line-height:1.5;margin-top:5px}
+  .srcDate{font-size:11px;font-weight:800;color:var(--muted);margin-top:3px}
+  .badgeUnc{display:inline-flex;align-items:center;gap:4px;border:1px solid rgba(251,191,36,.42);
+    background:rgba(245,158,11,.2);color:#ffd68a;border-radius:999px;padding:2px 8px;
+    font-size:10px;font-weight:900;letter-spacing:.06em;margin-left:6px}
+
+  /* ---- PROPUESTA: marcas en línea ---- */
+  .cite{display:inline-block;vertical-align:super;font-size:11px;font-weight:900;
+    color:#0b1220;background:var(--gold);border-radius:999px;
+    min-width:16px;height:16px;line-height:16px;text-align:center;padding:0 4px;margin-left:3px}
+  .srcLine{margin-top:30px;padding-top:14px;border-top:1px solid rgba(255,255,255,.10);
+    font-size:12.5px;font-weight:800;color:var(--muted);line-height:1.6}
+  .srcLine b{color:var(--fg);font-weight:900}
+
+  /* ---- Sheet de fuente ---- */
+  .scrim{position:absolute;inset:0;background:rgba(3,10,22,.62)}
+  .sheet{position:absolute;left:0;right:0;bottom:0;background:var(--bg-1);
+    border-top:1px solid var(--border);border-radius:26px 26px 0 0;padding:20px 24px 30px}
+  .grab{width:42px;height:4px;border-radius:999px;background:rgba(255,255,255,.22);margin:0 auto 16px}
+  .sheetClaim{font-size:14px;font-weight:800;color:var(--muted);line-height:1.5;
+    border-left:3px solid var(--gold);padding-left:12px;margin-bottom:16px}
+
+  /* ---- Browse ---- */
+  .eyebrow{font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .title{font-size:29px;font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-top:6px}
+  .lede{font-size:13.5px;font-weight:700;color:var(--muted);margin-top:9px;line-height:1.45}
+  .chips{display:flex;gap:7px;margin:16px 0 6px}
+  .chip{font-size:11.5px;font-weight:900;padding:7px 13px;border-radius:999px;border:1px solid var(--border);color:var(--muted);white-space:nowrap}
+  .chip.on{background:var(--gold);color:#0b1220;border-color:var(--gold)}
+  .tabs{display:flex;gap:15px;font-size:12px;font-weight:800;color:var(--muted);margin-top:8px}
+  .tabs .on{color:var(--fg);border-bottom:2px solid var(--fg);padding-bottom:3px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+  .c{border-radius:16px;padding:13px;background:var(--bg-1);border-left:4px solid var(--exp);min-height:150px;display:flex;flex-direction:column}
+  .c.deb{border-left-color:var(--deb)} .c.por{border-left-color:var(--por)}
+  .c.ghost{background:transparent;border:1px dashed var(--border);border-left:4px dashed var(--border)}
+  .c .q{font-size:14.5px;font-weight:900;line-height:1.3;margin:9px 0 6px}
+  .c.ghost .q{color:var(--muted)}
+  .c .hk{font-size:11px;font-weight:700;color:var(--muted);line-height:1.35}
+  .c .tp{margin-top:auto;padding-top:10px;font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .pill{display:inline-block;padding:4px 9px;border-radius:999px;font-size:9.5px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}
+  .p-exp{background:rgba(90,169,248,.16);color:var(--exp)}
+  .p-deb{background:rgba(255,171,61,.16);color:var(--deb)}
+  .p-por{background:rgba(189,139,240,.16);color:var(--por)}
+  /* piloto: tarjetas grandes, una columna */
+  .big{border-radius:20px;padding:18px;background:var(--bg-1);border-left:4px solid var(--deb);margin-bottom:12px}
+  .big.exp{border-left-color:var(--exp)} .big.por{border-left-color:var(--por)}
+  .big .q{font-size:19px;font-weight:900;line-height:1.28;margin:11px 0 7px}
+  .big .hk{font-size:13px;font-weight:700;color:var(--muted);line-height:1.4}
+  .big .meta{margin-top:12px;font-size:10.5px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<h1>Talking Points &mdash; qué cambiaría</h1>
+<p class="sub">Marcos reales de 390&times;844, recortados en el pliegue. Izquierda lo que hay hoy, derecha la propuesta.</p>
+
+<h2 class="grp">1 &middot; La historia: las fuentes</h2>
+<div class="rack">
+
+  <div class="slot">
+    <h3 class="bad">Ahora</h3>
+    <p class="note">Una bibliografía al final. Cuatro líneas por fuente, y ninguna forma de saber qué frase sostiene cada una. Aparece cuando el lector ya terminó.</p>
+    <div class="phone"><div class="screen">
+      <div class="body">
+        <p>Los que dicen que sí hablan de <span class="vocab v2">alquiler</span>. En un barrio donde uno de cada diez pisos es turístico, alquilar cuesta un tercio más. No un poco más.</p>
+        <p>Un tercio. Si pagabas novecientos euros, pagas mil doscientos, y tu sueldo sigue donde estaba.</p>
+      </div>
+      <div class="srcHead">Sources (2)</div>
+      <div class="srcItem">
+        <span class="srcOrg">AETIB, Govern de les Illes Balears</span>
+        <span class="srcTitle">El 69,1% de los residentes baleares coincide con la limitación turística que aprobó el Govern</span>
+        <p class="srcSupp">69,1% de 2.008 encuestados está de acuerdo o muy de acuerdo con limitar el número de visitantes. 49,8% cree que el turismo tiene un efecto positivo importante.</p>
+        <p class="srcDate">Checked 2026-08-05</p>
+      </div>
+      <div class="srcItem">
+        <span class="srcOrg">Banco de España<span class="badgeUnc">FIGURE UNCONFIRMED</span></span>
+        <span class="srcTitle">El mercado del alquiler de vivienda residencial en España</span>
+        <p class="srcSupp">Vivienda turística y de no residentes = 3,3% del parque nacional, cerca del 14% en Alicante y Málaga.</p>
+        <p class="srcDate">Checked 2026-08-05</p>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="slot">
+    <h3 class="good">Propuesta</h3>
+    <p class="note">La cita va pegada al dato. Abajo queda una línea, no un muro. El aviso de dato sin confirmar desaparece del lector: es un estado editorial, vive en el Studio.</p>
+    <div class="phone"><div class="screen">
+      <div class="body">
+        <p>En Baleares el Govern aprobó una limitación de visitantes y después preguntó. Encuestó a dos mil residentes. Siete de cada diez dijeron que sí, que había que <span class="vocab v1">poner un tope</span>.<span class="cite">1</span></p>
+        <p>Los que dicen que sí hablan de <span class="vocab v2">alquiler</span>. En un barrio donde uno de cada diez pisos es turístico, alquilar cuesta un tercio más.<span class="cite">2</span> No un poco más.</p>
+        <p>Un tercio. Si pagabas novecientos euros, pagas mil doscientos, y tu sueldo sigue donde estaba.</p>
+      </div>
+      <div class="srcLine">
+        <b>Fuentes</b> &middot; AETIB, Govern de les Illes Balears &middot; Banco de España
+      </div>
+    </div></div>
+  </div>
+
+  <div class="slot">
+    <h3 class="good">Propuesta &middot; al tocar una cita</h3>
+    <p class="note">Se abre solo esa fuente, y arriba repite la frase que sostiene. El lector ve exactamente qué respalda qué, sin salir del texto.</p>
+    <div class="phone">
+      <div class="screen">
+        <div class="body">
+          <p>En Baleares el Govern aprobó una limitación de visitantes y después preguntó. Encuestó a dos mil residentes. Siete de cada diez dijeron que sí, que había que <span class="vocab v1">poner un tope</span>.<span class="cite">1</span></p>
+          <p>Los que dicen que sí hablan de <span class="vocab v2">alquiler</span>. En un barrio donde uno de cada diez pisos es turístico, alquilar cuesta un tercio más.<span class="cite">2</span></p>
+        </div>
+      </div>
+      <div class="scrim"></div>
+      <div class="sheet">
+        <div class="grab"></div>
+        <p class="sheetClaim">&ldquo;Siete de cada diez dijeron que sí, que había que poner un tope.&rdquo;</p>
+        <span class="srcOrg">AETIB, Govern de les Illes Balears</span>
+        <span class="srcTitle">El 69,1% de los residentes baleares coincide con la limitación turística que aprobó el Govern &nearr;</span>
+        <p class="srcSupp">69,1% de 2.008 encuestados está de acuerdo o muy de acuerdo con limitar el número de visitantes.</p>
+        <p class="srcDate">Comprobado el 5 de agosto de 2026</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<h2 class="grp">2 &middot; La sección, a escala de piloto</h2>
+<div class="rack">
+
+  <div class="slot">
+    <h3 class="bad">Ahora</h3>
+    <p class="note">Tres piezas escritas contra treinta y tres punteadas, y dos filas de filtros para separarlas. No parece una sección nueva, parece una rota.</p>
+    <div class="phone"><div class="screen">
+      <div class="eyebrow">Talking Points</div>
+      <div class="title">What Spain is arguing about</div>
+      <div class="lede">Short non-fiction in Spanish. Two to three minutes each. Read whatever you like, in any order.</div>
+      <div class="chips"><span class="chip on">All</span><span class="chip">Explainer</span><span class="chip">Both sides</span><span class="chip">Portrait</span></div>
+      <div class="tabs"><span class="on">All topics</span><span>City &amp; Housing</span><span>Money &amp; Work</span></div>
+      <div class="grid">
+        <div class="c deb"><span class="pill p-deb">Both sides</span><div class="q">&iquest;Deber&iacute;a Espa&ntilde;a limitar el n&uacute;mero de turistas?</div><div class="hk">Spain is arguing about you.</div><div class="tp">Tourism &amp; Housing</div></div>
+        <div class="c"><span class="pill p-exp">Explainer</span><div class="q">Bajan los pisos tur&iacute;sticos y el alquiler no baja</div><div class="hk">The obvious fix isn&rsquo;t working.</div><div class="tp">Tourism &amp; Housing</div></div>
+        <div class="c por"><span class="pill p-por">Portrait</span><div class="q">El barrio donde ya no vive nadie</div><div class="hk">Key boxes on every door.</div><div class="tp">Tourism &amp; Housing</div></div>
+        <div class="c ghost"><span class="pill p-por">Portrait</span><div class="q">Compartir piso a los treinta y cinco</div><div class="hk">Flatmates are no longer a student thing.</div><div class="tp">Not written yet</div></div>
+        <div class="c ghost"><span class="pill p-exp">Explainer</span><div class="q">&iquest;Por qu&eacute; cuesta tanto irse de casa?</div><div class="hk">The age of leaving home keeps climbing.</div><div class="tp">Not written yet</div></div>
+        <div class="c ghost"><span class="pill p-deb">Both sides</span><div class="q">&iquest;Funciona limitar el precio del alquiler?</div><div class="hk">Every country tries it.</div><div class="tp">Not written yet</div></div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="slot">
+    <h3 class="good">Propuesta</h3>
+    <p class="note">Solo lo que existe. Sin filtros, porque con tres piezas no hay nada que filtrar. Tarjetas grandes a una columna: tres piezas cuidadas, no un catálogo vacío.</p>
+    <div class="phone"><div class="screen">
+      <div class="eyebrow">Talking Points</div>
+      <div class="title">What Spain is arguing about</div>
+      <div class="lede">Tres piezas sobre turismo y vivienda. Cada dato lleva su fuente.</div>
+
+      <div style="margin-top:22px">
+        <div class="big"><span class="pill p-deb">Both sides</span>
+          <div class="q">&iquest;Deber&iacute;a Espa&ntilde;a limitar el n&uacute;mero de turistas?</div>
+          <div class="hk">You are the tourist. Spain is arguing about you.</div>
+          <div class="meta">3 min &middot; Tourism &amp; Housing</div>
+        </div>
+        <div class="big exp"><span class="pill p-exp">Explainer</span>
+          <div class="q">Bajan los pisos tur&iacute;sticos y el alquiler no baja</div>
+          <div class="hk">The obvious fix isn&rsquo;t working. Here&rsquo;s why.</div>
+          <div class="meta">3 min &middot; Tourism &amp; Housing</div>
+        </div>
+        <div class="big por"><span class="pill p-por">Portrait</span>
+          <div class="q">El barrio donde ya no vive nadie</div>
+          <div class="hk">Key boxes on every door, suitcases at six in the morning.</div>
+          <div class="meta">2 min &middot; Tourism &amp; Housing</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+</div>
+</body>
+</html>

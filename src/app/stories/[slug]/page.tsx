@@ -7,16 +7,12 @@ import {
 } from "@/lib/userStories";
 import Player from "@/components/Player";
 import { notFound, redirect } from "next/navigation";
-import Image from "next/image";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
 import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import AddStoryToLibraryButton from "@/components/AddStoryToLibraryButton";
-import ScrollToTopOnPathChange from "@/components/ScrollToTopOnPathChange";
-import LevelBadge from "@/components/LevelBadge";
-import LanguageBadge from "@/components/LanguageBadge";
-import RegionBadge from "@/components/RegionBadge";
 import StoryContent from "@/components/StoryContent";
+import StoryReaderShell from "@/components/StoryReaderShell";
 import HighlightedStoryReader from "@/components/HighlightedStoryReader";
 import { coerceAudioWordTimings } from "@/lib/audioWordTimingsTypes";
 import { checkKaraokeUsable } from "@/lib/karaokeQualityGate";
@@ -25,7 +21,6 @@ import TapGlossReader from "@/components/TapGlossReader";
 import TapGlossLayer from "@/components/TapGlossLayer";
 import TapGlossText from "@/components/TapGlossText";
 import { getTapGlossesForSlug } from "@/lib/tapGlosses";
-import VocabPanel from "@/components/VocabPanel";
 import EndOfStoryPracticePrompt from "@/components/EndOfStoryPracticePrompt";
 import JourneyStoryReadTracker from "@/components/JourneyStoryReadTracker";
 import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
@@ -408,107 +403,102 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   console.warn(`[story-page] Missing coverUrl for ${resolvedStory.slug}`);
 }
 
+  // El chrome del lector (contenedor, título, badges, portada, dock y
+  // VocabPanel) vive en StoryReaderShell, compartido con Talking Points, para
+  // que exista UN solo lector. Lo que sigue aquí es lo que de verdad cambia
+  // por ruta: el gate de acceso y el cuerpo.
   return (
-    <div
-      className="relative max-w-5xl mx-auto pt-1 px-8 text-foreground"
-      // El padding inferior reserva el alto REAL del player fijo (que el
-      // Player mide y publica en `--story-content-pb`) + un espacio de lectura,
-      // para que la última línea nunca quede tapada. Fallback 8rem si no hay
-      // player (historia sin audio) o antes de que el Player mida.
-      style={{ paddingBottom: "var(--story-content-pb, 8rem)" }}
-    >
-      <ScrollToTopOnPathChange />
-      {/* Botón de guardar en la biblioteca.
-       *  OCULTO en historias de journey. El journey YA es la
-       *  biblioteca curada del usuario; "save" no aplica. Sigue
-       *  visible en standalone (Sanity) y create-story (polyglot). */}
-      {!resolvedStory.isJourney && (
-        <div className="absolute top-[-2.75rem] right-6 z-30 sm:right-8">
-          <AddStoryToLibraryButton
-            storyId={resolvedStory.id}
-            bookId={resolvedStory.source}
-            title={resolvedStory.title}
-            coverUrl={coverUrl}
-            storySlug={resolvedStory.slug}
-            bookSlug={resolvedStory.source}
-            language={resolvedStory.language ?? undefined}
-            region={resolvedStory.region ?? undefined}
-            level={resolvedStory.level ?? undefined}
-            audioUrl={resolvedStory.audioUrl ?? null}
-            redirectHref={`/stories/${resolvedStory.slug}`}
-            variant="icon"
-          />
-        </div>
-      )}
-
-      {/* Título */}
-      <div className="relative mb-7 pt-2">
-        <h1 className="text-4xl font-bold text-[var(--foreground)] text-center">
-          {/* El título también entra en el diccionario. Se condiciona a que la
-              capa esté montada abajo (glosses + acceso), porque sin ella los
-              spans no tendrían quien los escuche. */}
-          {tapGlosses && hasFullAccess ? (
-            <TapGlossText text={resolvedStory.title} glosses={tapGlosses} />
-          ) : (
-            resolvedStory.title
-          )}
-        </h1>
-        <div className="mt-3 flex flex-wrap justify-center gap-2">
-          <LevelBadge level={resolvedStory.level ?? undefined} />
-          <LanguageBadge language={resolvedStory.language ?? undefined} />
-          <RegionBadge region={resolvedStory.region ?? undefined} />
-        </div>
-      </div>
-
-      {/* Cover de historia (solo si existe) */}
-      {storyCoverUrl ? (
-        <div className="mb-7">
-          <div className="relative mx-auto w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-[#102746] md:h-[220px] lg:h-[240px]">
-            <div className="relative w-full md:hidden aspect-[16/10]">
-              <Image
-                src={storyCoverUrl}
-                alt={resolvedStory.title}
-                fill
-                priority
-                unoptimized={unoptimizedStoryCover}
-                sizes="(max-width: 768px) 100vw, 0px"
-                className="object-contain"
-              />
-            </div>
-            <div className="absolute inset-0 hidden md:block">
-              <Image
-                src={storyCoverBlurUrl ?? storyCoverUrl}
-                alt=""
-                aria-hidden="true"
-                fill
-                priority
-                unoptimized={unoptimizedStoryCoverBlur}
-                sizes="(max-width: 1024px) 896px, 960px"
-                className="object-cover scale-110 blur-2xl opacity-65"
-              />
-            </div>
-            <div
-              className="absolute inset-0 hidden md:block"
-              style={{
-                background:
-                  "linear-gradient(180deg, color-mix(in srgb, var(--bg-content) 16%, transparent) 0%, color-mix(in srgb, var(--bg-content) 54%, transparent) 100%)",
-              }}
+    <StoryReaderShell
+      title={
+        /* El título también entra en el diccionario. Se condiciona a que la
+           capa esté montada abajo (glosses + acceso), porque sin ella los
+           spans no tendrían quien los escuche. */
+        tapGlosses && hasFullAccess ? (
+          <TapGlossText text={resolvedStory.title} glosses={tapGlosses} />
+        ) : (
+          resolvedStory.title
+        )
+      }
+      level={resolvedStory.level ?? undefined}
+      language={resolvedStory.language ?? undefined}
+      region={resolvedStory.region ?? undefined}
+      cover={
+        storyCoverUrl
+          ? {
+              url: storyCoverUrl,
+              blurUrl: storyCoverBlurUrl,
+              alt: resolvedStory.title,
+              unoptimized: unoptimizedStoryCover,
+              unoptimizedBlur: unoptimizedStoryCoverBlur,
+            }
+          : null
+      }
+      headerSlot={
+        /* Botón de guardar en la biblioteca.
+         *  OCULTO en historias de journey. El journey YA es la
+         *  biblioteca curada del usuario; "save" no aplica. Sigue
+         *  visible en standalone (Sanity) y create-story (polyglot). */
+        !resolvedStory.isJourney ? (
+          <div className="absolute top-[-2.75rem] right-6 z-30 sm:right-8">
+            <AddStoryToLibraryButton
+              storyId={resolvedStory.id}
+              bookId={resolvedStory.source}
+              title={resolvedStory.title}
+              coverUrl={coverUrl}
+              storySlug={resolvedStory.slug}
+              bookSlug={resolvedStory.source}
+              language={resolvedStory.language ?? undefined}
+              region={resolvedStory.region ?? undefined}
+              level={resolvedStory.level ?? undefined}
+              audioUrl={resolvedStory.audioUrl ?? null}
+              redirectHref={`/stories/${resolvedStory.slug}`}
+              variant="icon"
             />
-            <div className="relative z-10 hidden h-full w-full md:block">
-              <Image
-                src={storyCoverUrl}
-                alt={resolvedStory.title}
-                fill
-                priority
-                unoptimized={unoptimizedStoryCover}
-                sizes="(max-width: 1024px) 896px, 960px"
-                className="object-contain"
+          </div>
+        ) : null
+      }
+      dock={
+        <>
+          {/* Player fijo al fondo */}
+          {resolvedStory.audioUrl ? (
+            <div
+              id="story-player-dock"
+              className="fixed bottom-0 left-0 right-0 z-50 bg-transparent"
+            >
+              <Player
+                src={resolvedStory.audioUrl}
+                bookSlug={resolvedStory.source}
+                storySlug={resolvedStory.slug}
+                canPlay={hasFullAccess}
               />
             </div>
-          </div>
-        </div>
-      ) : null}
+          ) : null}
 
+          {!resolvedStory.audioUrl &&
+          resolvedStory.source === "polyglot" &&
+          resolvedStory.audioStatus !== "failed" ? (
+            <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 bg-[#081a31] px-4 py-3 text-center text-sm text-blue-100/85 backdrop-blur">
+              Audio is still being prepared. You can start reading now.
+            </div>
+          ) : null}
+
+          {!resolvedStory.audioUrl &&
+          resolvedStory.source === "polyglot" &&
+          resolvedStory.audioStatus === "failed" ? (
+            <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-amber-400/20 bg-[#2b1d10] px-4 py-3 text-center text-sm text-amber-100 backdrop-blur">
+              This story is ready to read, but audio is currently unavailable.
+            </div>
+          ) : null}
+        </>
+      }
+      vocabPanel={{
+        id: resolvedStory.id,
+        slug: resolvedStory.slug,
+        title: resolvedStory.title,
+        language: resolvedStory.language ?? undefined,
+        vocab: safeVocab,
+      }}
+    >
       {/* Texto principal */}
       <StoryClientGate
         plan={plan}
@@ -603,41 +593,6 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
           />
         )}
       </StoryClientGate>
-
-      {/* Player fijo al fondo */}
-      {resolvedStory.audioUrl && (
-  <div id="story-player-dock" className="fixed bottom-0 left-0 right-0 z-50 bg-transparent">
-    <Player
-      src={resolvedStory.audioUrl}
-      bookSlug={resolvedStory.source}
-      storySlug={resolvedStory.slug}
-      canPlay={hasFullAccess}
-    />
-  </div>
-)}
-
-      {!resolvedStory.audioUrl && resolvedStory.source === "polyglot" && resolvedStory.audioStatus !== "failed" ? (
-        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 bg-[#081a31] px-4 py-3 text-center text-sm text-blue-100/85 backdrop-blur">
-          Audio is still being prepared. You can start reading now.
-        </div>
-      ) : null}
-
-      {!resolvedStory.audioUrl && resolvedStory.source === "polyglot" && resolvedStory.audioStatus === "failed" ? (
-        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-amber-400/20 bg-[#2b1d10] px-4 py-3 text-center text-sm text-amber-100 backdrop-blur">
-          This story is ready to read, but audio is currently unavailable.
-        </div>
-      ) : null}
-
-      <VocabPanel
-        story={{
-          id: resolvedStory.id,
-          slug: resolvedStory.slug,
-          title: resolvedStory.title,
-          language: resolvedStory.language ?? undefined,
-          vocab: safeVocab,
-        }}
-      />
-
-    </div>
+    </StoryReaderShell>
   );
 }

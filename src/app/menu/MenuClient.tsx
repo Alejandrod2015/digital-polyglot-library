@@ -19,6 +19,7 @@ import {
   RefreshCw,
   Settings as SettingsIcon,
   Sparkles,
+  MessagesSquare,
   Star,
   Zap,
   type LucideIcon,
@@ -195,6 +196,15 @@ export default function MenuClient({ plan }: Props) {
       <SectionTitle>Create</SectionTitle>
       <SectionCard>
         <MenuRow icon={Sparkles} label="Create story" href="/create" accent="#a892ff" />
+        {/* Polyglot plan only, same as Create. Route-gated too. */}
+        {plan === "polyglot" ? (
+          <MenuRow
+            icon={MessagesSquare}
+            label="Talking Points"
+            href="/talking-points"
+            accent="#ffab3d"
+          />
+        ) : null}
         {showStoryOfWeek ? (
           <MenuRow
             icon={Star}

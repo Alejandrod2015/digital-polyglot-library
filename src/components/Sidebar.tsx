@@ -16,6 +16,7 @@ import {
   Sparkles,
   Crown,
   Map,
+  MessagesSquare,
 } from "lucide-react";
 import {
   SignedIn,
@@ -299,6 +300,17 @@ export default function Sidebar({ onClose }: SidebarProps) {
             className={linkClass("/create")}
           >
             <Sparkles size={20} /> Create
+          </Link>
+        )}
+
+        {/* Polyglot plan only. Route-gated too (canAccessTalkingPoints). */}
+        {plan === "polyglot" && (
+          <Link
+            href="/talking-points"
+            onClick={handleNavClick}
+            className={linkClass("/talking-points")}
+          >
+            <MessagesSquare size={20} /> Talking Points
           </Link>
         )}
 

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Talking Points — browse variants</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* Design-proposal sheet, same idea as .claude/handoff/screenshot-variant-b.png:
+     three directions for ONE screen, rendered at real phone size so what falls
+     below the fold genuinely falls below the fold. */
+  :root{
+    --bg-0:#051834; --bg-1:#08264d; --bg-2:#0a2b56;
+    --fg:#e6eaf2; --muted:#9aa7bd;
+    --gold:#fcd34d;
+    --card:rgba(255,255,255,.06); --card-2:rgba(255,255,255,.10);
+    --border:rgba(255,255,255,.14);
+    --explainer:#5aa9f8; --debate:#ffab3d; --portrait:#bd8bf0; --read:#5dd9e8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:#0b1220;color:var(--fg);
+    font-family:Nunito,system-ui,-apple-system,"Segoe UI",sans-serif;
+    padding:40px;
+  }
+  h1{font-size:22px;font-weight:900;letter-spacing:-.02em}
+  .sub{color:var(--muted);font-weight:700;font-size:13px;margin-top:6px;max-width:70ch}
+  .rack{display:flex;gap:44px;margin-top:36px;flex-wrap:wrap}
+  .slot{width:390px}
+  .slot h2{font-size:14px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:var(--gold)}
+  .slot p.note{color:var(--muted);font-size:12.5px;font-weight:700;margin:6px 0 14px;min-height:52px;line-height:1.45}
+  /* The frame is the point: 390x844, clipped. No infinite scroll strip. */
+  .phone{
+    width:390px;height:844px;overflow:hidden;position:relative;
+    border-radius:38px;border:1px solid var(--border);
+    background:var(--bg-0);box-shadow:0 24px 60px rgba(0,0,0,.5);
+  }
+  .status{height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:12px;font-weight:800;color:var(--muted)}
+  .screen{padding:0 18px}
+  .eyebrow{font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .title{font-size:27px;font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-top:6px}
+  .lede{font-size:13px;font-weight:700;color:var(--muted);margin-top:8px;line-height:1.45}
+  .pill{display:inline-block;padding:4px 9px;border-radius:999px;font-size:9.5px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}
+  .p-exp{background:rgba(90,169,248,.16);color:var(--explainer)}
+  .p-deb{background:rgba(255,171,61,.16);color:var(--debate)}
+  .p-por{background:rgba(189,139,240,.16);color:var(--portrait)}
+  .rowhead{display:flex;align-items:baseline;justify-content:space-between;margin:20px 0 10px}
+  .rowhead b{font-size:17px;font-weight:900;letter-spacing:-.01em}
+  .rowhead span{font-size:11.5px;font-weight:800;color:var(--gold)}
+  .flag{width:15px;height:10px;border-radius:2px;background:linear-gradient(#AA151B 0 25%,#F1BF00 25% 75%,#AA151B 75% 100%);display:inline-block;vertical-align:middle}
+  .check{width:18px;height:18px;border-radius:999px;background:var(--read);color:#06283d;font-size:11px;font-weight:900;display:grid;place-items:center}
+  .topic{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .hook{font-size:12px;font-weight:700;color:var(--muted);line-height:1.4}
+
+  /* ---------- A: carousel rows ---------- */
+  .a-strip{display:flex;gap:12px;overflow:hidden}
+  .a-card{flex:0 0 78%;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:16px;display:flex;flex-direction:column;min-height:196px}
+  .a-card .q{font-size:18px;font-weight:900;line-height:1.28;letter-spacing:-.01em;margin:12px 0 8px}
+  .a-card .topic{margin-top:auto;padding-top:12px}
+  .a-card.ghost{background:transparent;border-style:dashed}
+  .a-card.ghost .q{color:var(--muted)}
+
+  /* ---------- B: editorial list ---------- */
+  .b-sect{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+          border-bottom:1px solid var(--border);padding-bottom:8px;margin:22px 0 4px}
+  .b-item{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+  .b-item .q{font-size:21px;font-weight:900;line-height:1.22;letter-spacing:-.02em;margin:9px 0 7px}
+  .b-meta{display:flex;align-items:center;gap:8px}
+  .b-foot{display:flex;align-items:center;gap:8px;margin-top:9px}
+
+  /* ---------- C: angle-first grid ---------- */
+  .c-chips{display:flex;gap:7px;margin:16px 0 4px}
+  .c-chip{font-size:11px;font-weight:900;padding:7px 12px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
+  .c-chip.on{background:var(--gold);color:#0b1220;border-color:var(--gold)}
+  .c-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+  .c-card{border-radius:16px;padding:13px;background:var(--bg-1);border-left:4px solid var(--explainer);min-height:150px;display:flex;flex-direction:column}
+  .c-card.deb{border-left-color:var(--debate)}
+  .c-card.por{border-left-color:var(--portrait)}
+  .c-card .q{font-size:14.5px;font-weight:900;line-height:1.3;margin:9px 0 6px}
+  .c-card .topic{margin-top:auto;padding-top:10px;font-size:9px}
+  .c-card .hook{font-size:11px}
+</style>
+</head>
+<body>
+
+<h1>Talking Points &mdash; browse screen, three directions</h1>
+<p class="sub">Same content in all three so they are comparable. Each frame is a real 390&times;844 phone screen, clipped at the fold: what you cannot see here is what the user cannot see without scrolling. Dark theme only for now.</p>
+
+<div class="rack">
+
+  <!-- ============ A ============ -->
+  <div class="slot">
+    <h2>A &middot; Carousel rows</h2>
+    <p class="note">What the app already does on Home. Category per row, swipe sideways. Safest, and the section will feel native on day one.</p>
+    <div class="phone">
+      <div class="status"><span>9:41</span><span>&#9679;&#9679;&#9679;</span></div>
+      <div class="screen">
+        <div class="eyebrow">Talking Points</div>
+        <div class="title">What Spain is<br>arguing about</div>
+        <div class="lede">Short non-fiction in Spanish. Two to three minutes each. Read whatever you like, in any order.</div>
+
+        <div class="rowhead"><b>Ready to read</b><span>See all</span></div>
+        <div class="a-strip">
+          <div class="a-card">
+            <div style="display:flex;align-items:center;gap:7px"><span class="pill p-deb">Both sides</span><span class="flag"></span></div>
+            <div class="q">&iquest;Deber&iacute;a Espa&ntilde;a limitar el n&uacute;mero de turistas?</div>
+            <div class="hook">You are the tourist. Spain is arguing about you.</div>
+            <div class="topic">Tourism &amp; Housing</div>
+          </div>
+          <div class="a-card">
+            <div style="display:flex;align-items:center;gap:7px"><span class="pill p-exp">Explainer</span><span class="flag"></span></div>
+            <div class="q">Bajan los pisos tur&iacute;sticos y el alquiler no baja</div>
+            <div class="hook">The obvious fix isn&rsquo;t working.</div>
+            <div class="topic">Tourism &amp; Housing</div>
+          </div>
+        </div>
+
+        <div class="rowhead"><b>City &amp; Housing</b><span>See all</span></div>
+        <div class="a-strip">
+          <div class="a-card">
+            <div style="display:flex;align-items:center;gap:7px"><span class="pill p-por">Portrait</span><span class="flag"></span><span style="margin-left:auto" class="check">&#10003;</span></div>
+            <div class="q">El barrio donde ya no vive nadie</div>
+            <div class="hook">Key boxes on every door.</div>
+            <div class="topic">Tourism &amp; Housing</div>
+          </div>
+          <div class="a-card ghost">
+            <div style="display:flex;align-items:center;gap:7px"><span class="pill p-por">Portrait</span><span class="flag"></span></div>
+            <div class="q">Compartir piso a los treinta y cinco</div>
+            <div class="hook">Flatmates are no longer a student thing.</div>
+            <div class="topic">Not written yet</div>
+          </div>
+        </div>
+
+        <div class="rowhead"><b>Money &amp; Work</b><span>See all</span></div>
+        <div class="a-strip">
+          <div class="a-card">
+            <div style="display:flex;align-items:center;gap:7px"><span class="pill p-deb">Both sides</span><span class="flag"></span></div>
+            <div class="q">&iquest;Cuatro d&iacute;as de trabajo son suficientes?</div>
+            <div class="hook">The four-day week left the pilot stage.</div>
+            <div class="topic">The Working Day</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ B ============ -->
+  <div class="slot">
+    <h2>B &middot; Editorial list</h2>
+    <p class="note">One column, no sideways swipe. The question gets the whole width and the biggest type in the app. Reads like a publication, not a shelf.</p>
+    <div class="phone">
+      <div class="status"><span>9:41</span><span>&#9679;&#9679;&#9679;</span></div>
+      <div class="screen">
+        <div class="eyebrow">Talking Points</div>
+        <div class="title">What Spain is<br>arguing about</div>
+        <div class="lede">Short non-fiction in Spanish. Read in any order.</div>
+
+        <div class="b-sect">Ready to read</div>
+        <div class="b-item">
+          <div class="b-meta"><span class="pill p-deb">Both sides</span><span class="flag"></span></div>
+          <div class="q">&iquest;Deber&iacute;a Espa&ntilde;a limitar el n&uacute;mero de turistas?</div>
+          <div class="hook">You are the tourist. Spain is arguing about you.</div>
+          <div class="b-foot"><span class="topic">Tourism &amp; Housing</span><span class="topic">&middot; 3 min</span></div>
+        </div>
+        <div class="b-item">
+          <div class="b-meta"><span class="pill p-exp">Explainer</span><span class="flag"></span></div>
+          <div class="q">Bajan los pisos tur&iacute;sticos y el alquiler no baja</div>
+          <div class="hook">The obvious fix isn&rsquo;t working. Here&rsquo;s why.</div>
+          <div class="b-foot"><span class="topic">Tourism &amp; Housing</span><span class="topic">&middot; 3 min</span></div>
+        </div>
+        <div class="b-item">
+          <div class="b-meta"><span class="pill p-por">Portrait</span><span class="flag"></span><span style="margin-left:auto" class="check">&#10003;</span></div>
+          <div class="q">El barrio donde ya no vive nadie</div>
+          <div class="hook">Key boxes on every door, suitcases at six in the morning.</div>
+          <div class="b-foot"><span class="topic">Tourism &amp; Housing</span><span class="topic">&middot; 2 min</span></div>
+        </div>
+
+        <div class="b-sect">City &amp; Housing</div>
+        <div class="b-item">
+          <div class="b-meta"><span class="pill p-por">Portrait</span><span class="flag"></span></div>
+          <div class="q">Compartir piso a los treinta y cinco</div>
+          <div class="hook">Flatmates are no longer a student thing.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ C ============ -->
+  <div class="slot">
+    <h2>C &middot; Angle-first grid</h2>
+    <p class="note">Filter by kind of piece, not by category. Two dense columns, the angle colour is the only chrome. Most items visible at once, most scannable.</p>
+    <div class="phone">
+      <div class="status"><span>9:41</span><span>&#9679;&#9679;&#9679;</span></div>
+      <div class="screen">
+        <div class="eyebrow">Talking Points</div>
+        <div class="title">What Spain is<br>arguing about</div>
+
+        <div class="c-chips">
+          <span class="c-chip on">All</span>
+          <span class="c-chip">Explainer</span>
+          <span class="c-chip">Both sides</span>
+          <span class="c-chip">Portrait</span>
+        </div>
+
+        <div class="c-grid">
+          <div class="c-card deb">
+            <div style="display:flex;align-items:center;gap:6px"><span class="pill p-deb">Both sides</span></div>
+            <div class="q">&iquest;Deber&iacute;a Espa&ntilde;a limitar el n&uacute;mero de turistas?</div>
+            <div class="hook">Spain is arguing about you.</div>
+            <div class="topic">Tourism &amp; Housing</div>
+          </div>
+          <div class="c-card">
+            <div style="display:flex;align-items:center;gap:6px"><span class="pill p-exp">Explainer</span></div>
+            <div class="q">Bajan los pisos tur&iacute;sticos y el alquiler no baja</div>
+            <div class="hook">The obvious fix isn&rsquo;t working.</div>
+            <div class="topic">Tourism &amp; Housing</div>
+          </div>
+          <div class="c-card por">
+            <div style="display:flex;align-items:center;gap:6px"><span class="pill p-por">Portrait</span><span style="margin-left:auto" class="check">&#10003;</span></div>
+            <div class="q">El barrio donde ya no vive nadie</div>
+            <div class="hook">Key boxes on every door.</div>
+            <div class="topic">Tourism &amp; Housing</div>
+          </div>
+          <div class="c-card deb">
+            <div style="display:flex;align-items:center;gap:6px"><span class="pill p-deb">Both sides</span></div>
+            <div class="q">&iquest;Cuatro d&iacute;as de trabajo son suficientes?</div>
+            <div class="hook">The four-day week left the pilot stage.</div>
+            <div class="topic">The Working Day</div>
+          </div>
+          <div class="c-card por">
+            <div style="display:flex;align-items:center;gap:6px"><span class="pill p-por">Portrait</span></div>
+            <div class="q">La hora que no aparece en la agenda</div>
+            <div class="hook">No English word for it.</div>
+            <div class="topic">Eating Together</div>
+          </div>
+          <div class="c-card">
+            <div style="display:flex;align-items:center;gap:6px"><span class="pill p-exp">Explainer</span></div>
+            <div class="q">De d&oacute;nde sali&oacute; el horario espa&ntilde;ol</div>
+            <div class="hook">Blame a decision made in 1940.</div>
+            <div class="topic">The Working Day</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
