@@ -17739,6 +17739,7 @@ export function MobileLibraryShell(args: {
           }
           cachedWordTimingsRaw={offlineAudioIsCurrent ? offlineStory?.wordTimingsRaw ?? null : null}
           sessionToken={sessionToken}
+          sessionUserId={sessionUserId}
           showOnboardingPlayHint={showOnboardingPlayHint}
           onDismissOnboardingPlayHint={() => setShowOnboardingPlayHint(false)}
           onBack={() => {

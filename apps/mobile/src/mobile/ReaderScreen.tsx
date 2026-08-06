@@ -37,6 +37,7 @@ import { ProgressiveImage } from "./ProgressiveImage";
 import { useAndroidBottomInset } from "./useAndroidBottomInset";
 import { getCoverUrl } from "./coverUrl";
 import { apiFetch } from "../lib/api";
+import { loadCompletedStories, markStoryCompleted } from "../lib/completedStories";
 import { mobileConfig } from "../config";
 import { extractStoryPlainText } from "../../../../src/lib/storyPlainText";
 // MISMO codigo que el lector web, para que el karaoke se comporte igual en
@@ -1127,6 +1128,8 @@ export function ReaderScreen(args: {
   // `/api/mobile/audio-word-timings` so karaoke keeps working offline.
   cachedWordTimingsRaw?: string | null;
   sessionToken?: string | null;
+  /** Solo para separar por cuenta el registro de historias terminadas. */
+  sessionUserId?: string | null;
   onBack: () => void;
   canGoPrevious?: boolean;
   canGoNext?: boolean;
@@ -1181,6 +1184,7 @@ export function ReaderScreen(args: {
     resolvedCoverUrl,
     cachedWordTimingsRaw,
     sessionToken,
+    sessionUserId,
     onBack,
     canGoPrevious = false,
     canGoNext = false,
@@ -1649,9 +1653,16 @@ export function ReaderScreen(args: {
    * fallo que esta condición viene a evitar, por la puerta de atrás.
    *
    * La señal canónica de "terminó" es `audio_complete` (así lo documenta el
-   * shell), y hoy solo llega aquí como el `didJustFinish` del reproductor.
-   * PENDIENTE: persistirla por historia para que una terminada en otra sesión
-   * siga desbloqueada sin reescucharla.
+   * shell), y llega aquí como el `didJustFinish` del reproductor.
+   *
+   * RESUELTO 2026-08-06 (era el PENDIENTE de este comentario): ese
+   * `didJustFinish` ahora se PERSISTE en disco (`completedStories`) y se
+   * siembra al abrir la historia. Antes vivía solo en este `useState`, así que
+   * salir de la historia lo borraba y una escuchada AYER no ofrecía práctica
+   * hasta reescucharla entera. Comprobado en el Pixel: "Duzen auf eigene
+   * Gefahr", marcada como completada, llegaba al final del scroll SIN tarjeta.
+   * Se sigue persistiendo SOLO el fin de audio, nunca `progressRatio`, por el
+   * motivo de arriba.
    */
   const [storyCompleted, setStoryCompleted] = useState(false);
   // Animated values for the end-of-story prompt. Entrance is a spring-in
@@ -1797,8 +1808,20 @@ export function ReaderScreen(args: {
     // vuelve a llamar a su onLayout y una altura vieja desajustaría el mapeo
     // del progreso de esta historia.
     afterTextHeightRef.current = 0;
+
+    // Siembra desde disco: si esta historia ya se terminó alguna vez, la
+    // tarjeta aparece sin reescuchar. El popup NO se dispara, porque solo lo
+    // llama `maybeFireEndOfStoryPrompt` al terminar el audio de verdad.
+    let cancelled = false;
+    void (async () => {
+      const done = await loadCompletedStories(sessionUserId);
+      if (!cancelled && done.has(story.id)) setStoryCompleted(true);
+    })();
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [story.id]);
+  }, [story.id, sessionUserId]);
 
   function maybeFireEndOfStoryPrompt() {
     if (!onOpenPractice) return;
@@ -1807,6 +1830,8 @@ export function ReaderScreen(args: {
     // popup se cierre. Separar las dos cosas es el punto: el popup es del
     // momento, la tarjeta es la puerta permanente.
     setStoryCompleted(true);
+    // Y se deja escrito, para que la puerta siga abierta mañana.
+    void markStoryCompleted(sessionUserId, story.id);
     if (promptShownForStoryRef.current === story.id) return;
     promptShownForStoryRef.current = story.id;
     setEndOfStoryPromptVisible(true);
