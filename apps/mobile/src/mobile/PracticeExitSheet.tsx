@@ -32,6 +32,8 @@ export type PracticeExitSheetProps = {
    * up" en lugar de un copy genérico.
    */
   exercisesCorrect: number;
+  /** `match` retoma la ronda al volver; el resto no. Cambia el aviso de salida. */
+  resumesOnReturn?: boolean;
   /**
    * "Continue practicing": cierra el sheet y reanuda la sesión donde
    * estaba. PRIMARY action; el sheet empuja al usuario a quedarse.
@@ -60,6 +62,7 @@ export function PracticeExitSheet({
   exercisesCorrect,
   onContinuePracticing,
   onExitAnyway,
+  resumesOnReturn,
 }: PracticeExitSheetProps) {
   const backdropOpacity = useRef(new Animated.Value(0)).current;
   const cardOpacity = useRef(new Animated.Value(0)).current;
@@ -132,10 +135,14 @@ export function PracticeExitSheet({
   // Copy amigable sobre lo que pasa si sale. Antes era una advertencia
   // tipo "Exit now and..." que sonaba amenazadora; ahora simplemente
   // informa que el progreso de la ronda no se guarda, sin reproches.
+  //
+  // 2026-08-06: y cuando la ronda SÍ se guarda (match), decirle que la pierde
+  // era mentira y le asustaba para nada. El aviso sigue la realidad del modo.
   const lossWarning = useMemo(() => {
     if (phase === "empty") return null;
+    if (resumesOnReturn) return "This round will be waiting where you left it.";
     return "This round's progress won't carry over.";
-  }, [phase]);
+  }, [phase, resumesOnReturn]);
 
   return (
     <View

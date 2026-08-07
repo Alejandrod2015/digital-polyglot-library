@@ -244,11 +244,10 @@ const SaveWordButton = memo(function SaveWordButton({
       }}
       accessibilityLabel={saved ? "Remove from saved words" : "Save word"}
       hitSlop={6}
-      style={({ pressed }) => [
-        styles.vocabAction,
-        shown ? styles.vocabActionActive : null,
-        pressed ? styles.vocabActionPressed : null,
-      ]}
+      // Sin estilo de "pulsado": el usuario no quiere que el fondo cambie de
+      // tono mientras el dedo esta encima (opacity 0.85). El feedback ya lo dan
+      // el pop y el cambio de color guardado/no guardado, que es lo que pidio.
+      style={[styles.vocabAction, shown ? styles.vocabActionActive : null]}
     >
       <MaterialCommunityIcons
         name={shown ? "heart" : "heart-plus-outline"}
@@ -3539,9 +3538,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.45,
     shadowRadius: 12,
     shadowOffset: { width: 0, height: 4 },
-  },
-  vocabActionPressed: {
-    opacity: 0.85,
   },
   vocabActionRow: {
     flexDirection: "row",

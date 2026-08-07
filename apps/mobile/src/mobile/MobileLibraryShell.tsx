@@ -190,6 +190,19 @@ import {
   type PracticeAudioClip,
   type PracticeFavoriteItem,
 } from "../../../../src/lib/practiceExercises";
+import { TalkingPointsBrowse } from "./TalkingPointsBrowse";
+import {
+  fetchTalkingIndex,
+  fetchTalkingPiece,
+  talkingPieceToReader,
+  TalkingPointsPlanError,
+  type TalkingCategoryRow,
+} from "../lib/talkingPoints";
+import {
+  loadPendingMatchSession,
+  savePendingMatchSession,
+  clearPendingMatchSession,
+} from "../lib/pendingMatchSession";
 import {
   coerceAudioSegments,
   findBestAudioSegment,
@@ -244,7 +257,25 @@ import { buildJourneyTrackInsights } from "./journeyTrackInsights";
 // play everywhere. See scripts/_extractSfx.mjs for how these were generated.
 const SFX_PRACTICE_CORRECT = require("../../assets/sfx/practice-correct.mp3");
 const SFX_PRACTICE_WRONG = require("../../assets/sfx/practice-wrong.mp3");
-const SFX_PRACTICE_PERFECT = require("../../assets/sfx/practice-perfect.mp3");
+// OJO CON LA CARPETA: este sale de `assets/sounds/`, no de `assets/sfx/` como
+// los otros tres. No es un descuido, es el arreglo.
+//
+// Cronologia (2026-08-06, reconstruida del historial):
+//   8 may  entran los sonidos Kenney en assets/sounds/
+//  14 may  d5035ce1 los cambia al set Mixkit
+//  22 may  el de VICTORIA se vuelve a cambiar (133.621 bytes) y la WEB lo toma
+//  27 jul  836f9acc pasa el movil de base64 a archivos, extrayendo de
+//          practiceSoundUris.ts... que se habia quedado congelado en la version
+//          de mayo. La extraccion fue fiel, pero de un archivo obsoleto.
+//
+// Verificado: el base64 de 836f9acc~1 da 62.322 bytes sha1 a564eb58b5, byte por
+// byte igual al sfx/ actual. Y public/sounds/practice-perfect.mp3 (la web) es
+// identico a assets/sounds/ (133.621, sha1 52e600d632). O sea que la web lleva
+// la campana de logro de ~2,4 s desde mayo y el movil se quedo con el bip corto.
+// El usuario lo reporto CUATRO veces; mis tres intentos anteriores movieron
+// sesiones de audio y preloads, todo correcto y todo irrelevante, porque el
+// archivo era otro. Confirmado de oido por el usuario en la pagina de audicion.
+const SFX_PRACTICE_PERFECT = require("../../assets/sounds/practice-perfect.mp3");
 const SFX_JOURNEY_MILESTONE = require("../../assets/sfx/journey-milestone-chime.mp3");
 
 type ReaderSelection = {
@@ -267,6 +298,7 @@ type MobileScreen =
   | "progress"
   | "menu"
   | "settings"
+  | "talking"
   | "create";
 
 type BottomTab = "home" | "explore" | "progress" | "practice" | "favorites" | "menu" | "signin";
@@ -2604,6 +2636,58 @@ export function MobileLibraryShell(args: {
   // a tab change felt like a navigation, the badges read more like
   // "show me a quick summary".
   const [progressSheetOpen, setProgressSheetOpen] = useState(false);
+
+  // ── Talking Points ────────────────────────────────────────────────────────
+  // Seccion SIN secuencia: solo indice + pieza abierta. No hay indice de paso
+  // ni "continuar", porque no se recorre, se navega.
+  const [talkingCategories, setTalkingCategories] = useState<TalkingCategoryRow[]>([]);
+  const [talkingLoading, setTalkingLoading] = useState(false);
+  const [talkingError, setTalkingError] = useState<string | null>(null);
+  const [talkingPlanLocked, setTalkingPlanLocked] = useState(false);
+  const [talkingReader, setTalkingReader] = useState<
+    { book: Book; story: Story; cachedWordTimingsRaw: string | null } | null
+  >(null);
+
+  // Símbolos de progreso (racha, nivel, XP) del encabezado del Journey,
+  // extraídos para que TODAS las pantallas con cabecera los lleven igual.
+  //
+  // Antes solo estaban en Journey. Practice tenía en su lugar dos chips
+  // propios, "0 STREAK" y "0% GOAL", centrados a ojo debajo del título: lo
+  // primero que leías antes de pulsar START eran dos ceros. El de GOAL además
+  // duplicaba el anillo grande, que YA es el progreso del día.
+  //
+  // Se quedan fuera Progress (esa pantalla ES el detalle, repetirlo sobra) y
+  // Menu (no es una superficie de práctica).
+  const headerProgressChips = remoteProgress?.gamification ? (
+    <Pressable
+      onPress={() => setProgressSheetOpen(true)}
+      accessibilityRole="button"
+      accessibilityLabel="Open progress sheet"
+      style={styles.journeyHeaderStatsRow}
+    >
+      <View style={styles.journeyHeaderStat}>
+        <Feather name="zap" size={13} color={tokenColor.streak} />
+        <Text style={[styles.journeyHeaderStatText, { color: tokenColor.streak }]}>
+          {remoteProgress.gamification.dailyStreak}
+        </Text>
+      </View>
+      <View style={styles.journeyHeaderStat}>
+        <Feather name="award" size={13} color={tokenColor.gold} />
+        <Text style={[styles.journeyHeaderStatText, { color: tokenColor.gold }]}>
+          Lv {remoteProgress.gamification.currentLevel}
+        </Text>
+      </View>
+      <View style={styles.journeyHeaderStat}>
+        <Feather name="star" size={13} color={tokenColor.cyan} />
+        <Text style={[styles.journeyHeaderStatText, { color: tokenColor.cyan }]}>
+          {remoteProgress.gamification.totalXp >= 1000
+            ? `${(remoteProgress.gamification.totalXp / 1000).toFixed(1)}k`
+            : remoteProgress.gamification.totalXp}
+        </Text>
+      </View>
+    </Pressable>
+  ) : null;
+
   // Drag-to-dismiss for the Progress sheet. Mirrors the gesture used in
   // LanguageSwitchSheet; only downward drag is responsive; release > 80pt
   // or velocity > 0.8 closes the sheet, otherwise it springs back to 0.
@@ -2875,7 +2959,8 @@ export function MobileLibraryShell(args: {
     if (topicPreviewOpen) { setTopicPreviewOpen(null); return true; }
     if (levelTestOfferOpen) { setLevelTestOfferOpen(null); return true; }
     // Reader open → back to the story list.
-    if (selection) {
+
+  if (selection) {
       setShowOnboardingPlayHint(false);
       setSelection(null);
       return true;
@@ -5039,6 +5124,30 @@ export function MobileLibraryShell(args: {
   }, [dueFavoritesCount, preferredPracticeMinutes, recommendedPracticeLabel]);
   const visiblePracticeCards = PRACTICE_MODE_CARDS;
   const currentPracticeExercise = practiceExercises[practiceIndex] ?? null;
+
+  // Persiste la ronda de MATCH a medida que avanza (ejercicio en curso, parejas
+  // ya resueltas y marcador), para que salir y volver la devuelva tal cual.
+  // Solo match: `meaning` ya era estable y no se guarda. Al completar la ronda
+  // se borra en el sitio donde se marca `practiceComplete`.
+  useEffect(() => {
+    if (activePracticeMode !== "match") return;
+    if (practiceComplete) return;
+    if (practiceExercises.length === 0) return;
+    void savePendingMatchSession(sessionUserId, {
+      exercises: practiceExercises,
+      index: practiceIndex,
+      matchedWords,
+      score: practiceScore,
+    });
+  }, [
+    activePracticeMode,
+    practiceComplete,
+    practiceExercises,
+    practiceIndex,
+    matchedWords,
+    practiceScore,
+    sessionUserId,
+  ]);
   // El chrome de la sesión (eyebrow + título del header) refleja el
   // ejercicio ACTUAL, no el modo global de la sesión. En sesiones mixtas
   // (checkpoint) o cuando el modo recomendado no coincide con el ejercicio
@@ -7215,6 +7324,31 @@ export function MobileLibraryShell(args: {
       }
     }
     if (exercises.length === 0) return;
+    // MATCH retoma la ronda a medias en vez de repartir una mano nueva.
+    //
+    // `buildPracticeSession` baraja en cada entrada, asi que fallar un
+    // ejercicio, salir y volver te daba OTRO ejercicio. El usuario espera
+    // reintentar EL MISMO, que es lo razonable. `meaning` ya era estable y no
+    // se toca. La ronda guardada caduca a las 24 h (pendingMatchSession).
+    let matchResume: { index: number; matchedWords: string[]; score: number } | null = null;
+    if (effectiveMode === "match") {
+      const pendiente = await loadPendingMatchSession<PracticeExercise>(sessionUserId);
+      if (pendiente && pendiente.exercises.length > 0) {
+        exercises = pendiente.exercises;
+        matchResume = {
+          index: Math.min(pendiente.index, pendiente.exercises.length - 1),
+          matchedWords: pendiente.matchedWords,
+          score: pendiente.score,
+        };
+      } else {
+        void savePendingMatchSession(sessionUserId, {
+          exercises,
+          index: 0,
+          matchedWords: [],
+          score: 0,
+        });
+      }
+    }
     setPracticeSeedItems(sourceItems);
     setPracticeLaunchContext((current) => ({
       source: "favorites",
@@ -7226,8 +7360,11 @@ export function MobileLibraryShell(args: {
     setActivePracticeMode(effectiveMode);
     setPracticeLoadError(null);
     setPracticeExercises(exercises);
-    setPracticeIndex(0);
-    setPracticeScore(0);
+    // Si venimos de una ronda a medias, se retoma donde estaba: mismo ejercicio,
+    // parejas ya resueltas y marcador. Si no, empieza a cero como siempre.
+    setPracticeIndex(matchResume?.index ?? 0);
+    setPracticeScore(matchResume?.score ?? 0);
+    setMatchedWords(matchResume?.matchedWords ?? []);
     setPracticeSelectedOption(null);
     setPracticeRevealed(false);
     setPracticeTimedOut(false);
@@ -7744,6 +7881,9 @@ export function MobileLibraryShell(args: {
     setContextAudioFinishedFor(null);
     setLoadingPracticeAudioId(null);
     if (practiceIndex >= practiceExercises.length - 1) {
+      // Ronda terminada: se descarta la guardada para que la proxima entrada
+      // reparta de nuevo. Sin esto te quedarias atrapado en la misma mano.
+      void clearPendingMatchSession(sessionUserId);
       setPracticeComplete(true);
       setPracticeRevealed(false);
       setPracticeSelectedOption(null);
@@ -8452,7 +8592,15 @@ export function MobileLibraryShell(args: {
     } else {
       setPracticeComboBurstActive(false);
     }
-    void playPracticeComboSound(tier);
+    // SIN SONIDO en el combo. El mp3 de victoria estaba enganchado aqui ademas
+    // de en el final de sesion, asi que sonaba en cada racha y para cuando
+    // llegabas al marcador perfecto ya lo habias oido tres veces. Con el
+    // archivo correcto (campana de ~2,4 s) seria insufrible. El combo conserva
+    // su toast y su haptic; el sonido queda reservado al final perfecto.
+    // Si algun dia se quiere sonido de combo, el candidato es
+    // assets/sounds/practice-ring-fill-good.mp3, que lleva sin usarse desde
+    // que entro el 20 de mayo.
+    void tier;
     void playPracticeComboHaptic(tier);
   }
 
@@ -8476,6 +8624,12 @@ export function MobileLibraryShell(args: {
   // solo rebobina. Se descargan al cerrar la sesión.
   const practiceSessionOpen = activePracticeMode !== null;
   useEffect(() => {
+    // DESACTIVADO junto con el camino rapido (ver el comentario de
+    // playPracticeFeedbackSound). Mientras el preload estaba activo, los dos
+    // SFX quedaban MONTADOS toda la ronda y el chime de 10/10 nacia encima de
+    // ellos; el usuario lo reporto cuatro veces. Sin montar nada, la sesion de
+    // audio en el instante del chime es la misma que el 30 de julio.
+    if (true) return;
     if (!practiceSessionOpen) return;
     let cancelled = false;
     const slots = practiceFeedbackPreloadRef.current;
@@ -8539,42 +8693,18 @@ export function MobileLibraryShell(args: {
       // Camino rápido: el sound ya está montado, así que esto es solo
       // rebobinar. Lo caro que evita el preload es el decoder y el parseo, no
       // la llamada al modo de audio.
-      const preloaded = correct
-        ? practiceFeedbackPreloadRef.current.correct
-        : practiceFeedbackPreloadRef.current.wrong;
-      if (preloaded) {
-        // NO se reconfigura la sesion de audio aqui, y esto es un retroceso
-        // DELIBERADO sobre lo que puse antes en esta misma sesion.
-        //
-        // Historia: c4db80d9 (30-jul) anadio setAudioModeAsync a los tres SFX,
-        // en un codigo donde cada sonido se CREABA en el momento: una llamada
-        // por creacion. Luego yo meti el preload y, al restaurar la llamada,
-        // la deje en el camino de REPRODUCCION, o sea una reconfiguracion de
-        // AVAudioSession POR CADA RESPUESTA. Eso no existia antes.
-        //
-        // El chime de 10/10 nace justo despues del SFX de la ultima respuesta,
-        // con los dos sonidos del preload todavia cargados y una reconfiguracion
-        // de sesion recien lanzada. En iOS eso es exactamente lo que se traga un
-        // one-shot corto. El usuario reporta que el chime "siempre funciono
-        // antes" y ha dejado de sonar, y esta es la UNICA diferencia funcional
-        // que introduje en el audio de practica.
-        //
-        // La invariante de c4db80d9 se mantiene igual: el modo se fija al abrir
-        // la sesion de practica (efecto del preload) y el chime lo refija por su
-        // cuenta antes de sonar. Lo que se quita es la churn intermedia.
-        const other = correct
-          ? practiceFeedbackPreloadRef.current.wrong
-          : practiceFeedbackPreloadRef.current.correct;
-        if (other) {
-          try { await other.stopAsync(); } catch { /* ignore */ }
-        }
-        await stopAndUnloadPracticeSound(practiceFeedbackSoundRef);
-        preloaded.setOnPlaybackStatusUpdate((status) => {
-          if ("didJustFinish" in status && status.didJustFinish) settle();
-        });
-        await preloaded.replayAsync();
-        return;
-      }
+      // PRELOAD DESACTIVADO (2026-08-06). Lo meti hoy para quitarle latencia al
+      // SFX de acierto/error (#9) y rompio el chime de 10/10: el usuario lo
+      // reporto CUATRO veces. Dos intentos dirigidos encima (builds 287 y 288)
+      // no lo devolvieron, y no puedo oir el resultado para iterar. Asi que se
+      // vuelve al camino del 30 de julio, que funcionaba: cada SFX se CREA al
+      // vuelo y se DESCARGA solo al terminar, de modo que cuando nace el chime
+      // no queda ningun sound montado ni ninguna reconfiguracion de sesion en
+      // vuelo. Se paga con el retraso del SFX que #9 venia a quitar; sonar
+      // importa mas que sonar rapido.
+      //
+      // Para reactivarlo hace falta antes una forma de VERIFICAR el chime en
+      // device; sin eso volveria a ser lo mismo a ciegas.
       await stopPracticeFeedbackSound();
       // Mismo motivo que en playPracticePerfectChime: en iOS el modo de audio
       // es global y hay que reafirmarlo antes de reproducir.
@@ -11949,9 +12079,7 @@ export function MobileLibraryShell(args: {
               </Text>
               <Feather name="chevron-down" size={14} color="rgba(255,255,255,0.55)" />
             </Pressable>
-            <View style={styles.favoritesHeroTextBlock}>
-              <Text style={styles.favoritesHeroTitle}>Explore</Text>
-            </View>
+
           </View>
         </View>
       </View>
@@ -12516,10 +12644,8 @@ export function MobileLibraryShell(args: {
                   })()}
                   <Feather name="chevron-down" size={14} color="rgba(255,255,255,0.55)" />
                 </Pressable>
-                <View style={styles.favoritesHeroTextBlock}>
-                  <Text style={styles.favoritesHeroTitle}>Practice</Text>
-                </View>
               </View>
+              {headerProgressChips}
             </View>
           </View>
           {practiceLoadError ? (
@@ -13637,19 +13763,40 @@ export function MobileLibraryShell(args: {
                                 ]}
                               />
                               <Text
-                                // UNA sola linea a proposito. Con
-                                // numberOfLines={2}, React Native daba por
-                                // buena la palabra PARTIDA a la mitad
-                                // ("unbehag / lich", "gelasse / n") porque
-                                // cabia en dos lineas, y por eso
-                                // adjustsFontSizeToFit ya no la encogia mas.
-                                // Con una linea no hay corte posible: se
-                                // reduce el tamano hasta que la palabra entra
-                                // entera. Los compuestos alemanes son largos,
-                                // asi que el suelo baja a 0.45.
+                                // El tratamiento depende de si es UNA palabra o
+                                // una locucion, porque el problema es distinto.
+                                //
+                                // Locucion ("keinen Kopf machen"): puede partir
+                                // en dos lineas, pero SIEMPRE por los espacios,
+                                // asi que no hace falta encogerla casi nada.
+                                // Forzarla a una linea la dejaba diminuta al
+                                // lado de las demas, que es lo que el usuario
+                                // llamo tonto, con razon.
+                                //
+                                // Palabra unica ("unbehaglich"): con dos lineas
+                                // React Native daba por buena la PARTIDA a la
+                                // mitad ("unbehag / lich") porque cabia, y por
+                                // eso dejaba de encogerla. Con una sola linea no
+                                // hay corte posible y solo se reduce lo justo.
+                                // UNA LINEA POR TOKEN, y encoger hasta que el
+                                // token mas largo quepa. Es la unica forma de
+                                // que React Native no parta una palabra.
+                                //
+                                // Los tres intentos anteriores fallaron por no
+                                // entender la causa: el corte NO depende de si
+                                // es palabra o locucion, depende de si ALGUN
+                                // token es mas ancho que la columna. Con 2
+                                // lineas partia "unbehag/lich"; sin limite de
+                                // lineas partia "Nachdruc/k" igual, porque
+                                // "Nachdruck" solo ya no cabia; y con 1 linea
+                                // truncaba "im Hals stecken b...".
+                                //
+                                // Dando una linea por palabra, envolver por los
+                                // espacios siempre es posible, y el encogido
+                                // solo entra si un token suelto sigue sin caber.
                                 adjustsFontSizeToFit
-                                numberOfLines={1}
-                                minimumFontScale={0.45}
+                                numberOfLines={pair.word.trim().split(/\s+/).length}
+                                minimumFontScale={0.6}
                                 style={[
                                   styles.practiceMatchRowWordText,
                                   isWordMatched ? { color: pairColor } : null,
@@ -13808,6 +13955,7 @@ export function MobileLibraryShell(args: {
         {practiceExitConfirmVisible ? (
           <PracticeExitSheet
             accent={activePracticeCard?.accent ?? tokenColor.xp}
+            resumesOnReturn={activePracticeMode === "match"}
             exercisesDone={practiceIndex}
             exercisesTotal={practiceExercises.length}
             // `practiceScore` cuenta sólo aciertos. Si los 4 ejercicios
@@ -13889,10 +14037,8 @@ export function MobileLibraryShell(args: {
               })()}
               <Feather name="chevron-down" size={14} color="rgba(255,255,255,0.55)" />
             </Pressable>
-            <View style={styles.favoritesHeroTextBlock}>
-              <Text style={styles.favoritesHeroTitle}>Favorites</Text>
             </View>
-          </View>
+            {headerProgressChips}
         </View>
         {favoriteCards.length > 0 ? (
           <View style={styles.favoritesHeroStats}>
@@ -16463,6 +16609,47 @@ export function MobileLibraryShell(args: {
   // user reported "tampoco queda sticky la primera línea" because
   // of that. Rendered conditionally in the shell render below when
   // `activeScreen === "home" && !journeyDetailTopicId`.
+  // Carga el indice al entrar en la seccion. Se recarga solo si esta vacio:
+  // el catalogo es estatico, no hay razon para volver a pedirlo en cada visita.
+  useEffect(() => {
+    if (activeScreen !== "talking") return;
+    if (!sessionToken) return;
+    if (talkingCategories.length > 0 || talkingLoading || talkingPlanLocked) return;
+    let cancelled = false;
+    setTalkingLoading(true);
+    setTalkingError(null);
+    void (async () => {
+      try {
+        const rows = await fetchTalkingIndex(mobileConfig.apiBaseUrl, sessionToken);
+        if (!cancelled) setTalkingCategories(rows);
+      } catch (err) {
+        if (cancelled) return;
+        if (err instanceof TalkingPointsPlanError) setTalkingPlanLocked(true);
+        else setTalkingError(err instanceof Error ? err.message : "Network error");
+      } finally {
+        if (!cancelled) setTalkingLoading(false);
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [activeScreen, sessionToken, talkingCategories.length, talkingLoading, talkingPlanLocked]);
+
+  // Abrir una pieza = pedir su cuerpo y adaptarlo a la forma del lector. No se
+  // navega a otra pantalla: se monta ReaderScreen encima, igual que una historia.
+  const openTalkingPiece = useCallback(async (slug: string) => {
+    if (!sessionToken) return;
+    setTalkingError(null);
+    setTalkingLoading(true);
+    try {
+      const { topic, piece } = await fetchTalkingPiece(mobileConfig.apiBaseUrl, sessionToken, slug);
+      setTalkingReader(talkingPieceToReader(topic, piece));
+    } catch (err) {
+      if (err instanceof TalkingPointsPlanError) setTalkingPlanLocked(true);
+      else setTalkingError(err instanceof Error ? err.message : "Network error");
+    } finally {
+      setTalkingLoading(false);
+    }
+  }, [sessionToken]);
+
   const journeyPathTopBar = (
     <View style={styles.journeyTopStripFixed}>
       <Pressable
@@ -16494,35 +16681,7 @@ export function MobileLibraryShell(args: {
         <Feather name="chevron-down" size={14} color="rgba(255,255,255,0.55)" />
       </Pressable>
 
-      {remoteProgress?.gamification ? (
-        <Pressable
-          onPress={() => setProgressSheetOpen(true)}
-          accessibilityRole="button"
-          accessibilityLabel="Open progress sheet"
-          style={styles.journeyHeaderStatsRow}
-        >
-          <View style={styles.journeyHeaderStat}>
-            <Feather name="zap" size={13} color={tokenColor.streak} />
-            <Text style={[styles.journeyHeaderStatText, { color: tokenColor.streak }]}>
-              {remoteProgress.gamification.dailyStreak}
-            </Text>
-          </View>
-          <View style={styles.journeyHeaderStat}>
-            <Feather name="award" size={13} color={tokenColor.gold} />
-            <Text style={[styles.journeyHeaderStatText, { color: tokenColor.gold }]}>
-              Lv {remoteProgress.gamification.currentLevel}
-            </Text>
-          </View>
-          <View style={styles.journeyHeaderStat}>
-            <Feather name="star" size={13} color={tokenColor.cyan} />
-            <Text style={[styles.journeyHeaderStatText, { color: tokenColor.cyan }]}>
-              {remoteProgress.gamification.totalXp >= 1000
-                ? `${(remoteProgress.gamification.totalXp / 1000).toFixed(1)}k`
-                : remoteProgress.gamification.totalXp}
-            </Text>
-          </View>
-        </Pressable>
-      ) : null}
+      {headerProgressChips}
     </View>
   );
 
@@ -17719,6 +17878,38 @@ export function MobileLibraryShell(args: {
     [recordProgress, selection]
   );
 
+  // Pieza de Talking Points abierta: se monta el MISMO lector que las historias,
+  // antes del `selection` para que tenga prioridad. Sin secuencia: no se pasan
+  // `canGoPrevious/Next`, asi que el lector no ofrece anterior ni siguiente, que
+  // es exactamente lo que la seccion pide.
+  if (talkingReader) {
+  return (
+    <View style={styles.readerWrapper}>
+      <ReaderScreen
+        key={talkingReader.story.id}
+        book={talkingReader.book}
+        story={talkingReader.story}
+        resolvedAudioUrl={talkingReader.story.audio || null}
+        cachedWordTimingsRaw={talkingReader.cachedWordTimingsRaw}
+        sessionToken={sessionToken}
+        sessionUserId={sessionUserId}
+        onBack={() => setTalkingReader(null)}
+        isSaved={false}
+        isSaving={false}
+        onToggleSaved={() => undefined}
+        karaokeEnabled={karaokeEnabled}
+        onTrackProgress={() => undefined}
+        isAvailableOffline={false}
+        isDownloadingOffline={false}
+        onDownloadOffline={() => undefined}
+        onRemoveOffline={() => undefined}
+        isFavoriteWord={isFavoriteWord}
+        onToggleFavoriteWord={toggleFavoriteWord}
+      />
+    </View>
+  );
+  }
+
   if (selection) {
     // Buscar primero por slug (estable entre journey API y standalone API)
     // y caer al lookup por id como fallback. Sin el slug-first, las
@@ -18203,6 +18394,11 @@ export function MobileLibraryShell(args: {
             <MenuScreenRow icon="explore" label="Explore" onPress={() => setActiveScreen("explore")} accent="#7dd3fc" />
             <MenuScreenRow icon="library" label="Library" onPress={() => setActiveScreen("journey")} accent="#7dd3fc" />
             <MenuScreenRow icon="saved" label="Saved" onPress={() => setActiveScreen("library")} accent="#7dd3fc" />
+            {/* Talking Points: gateado a polyglot igual que Create. La fila no
+                se esconde para otros planes a proposito; el endpoint responde
+                403 y la pantalla explica que entra en el plan, que vende mejor
+                que un hueco donde no hay nada. */}
+            <MenuScreenRow icon="explore" label="Talking Points" onPress={() => setActiveScreen("talking")} accent="#f8c15c" />
           </View>
 
           <Text style={styles.menuScreenSectionTitle}>Create</Text>
@@ -18274,6 +18470,36 @@ export function MobileLibraryShell(args: {
     </>
   );
 
+  const talkingView = (
+    <>
+      <View style={styles.favoritesHero}>
+        <View style={styles.heroHeaderRow}>
+          <View style={styles.favoritesHeroLead}>
+            <Pressable
+              onPress={() => setActiveScreen("menu")}
+              hitSlop={12}
+              accessibilityRole="button"
+              accessibilityLabel="Back to menu"
+              style={styles.journeyHeaderFlagBadge}
+            >
+              <Feather name="chevron-left" size={18} color="#e2e8f4" />
+              <Text style={styles.favoritesHeroFlagCode}>Talking Points</Text>
+            </Pressable>
+          </View>
+          {headerProgressChips}
+        </View>
+      </View>
+      <TalkingPointsBrowse
+        categories={talkingCategories}
+        loading={talkingLoading}
+        error={talkingError}
+        planLocked={talkingPlanLocked}
+        onOpenPiece={(slug) => { void openTalkingPiece(slug); }}
+        onRetry={() => setTalkingCategories([])}
+      />
+    </>
+  );
+
   let content: React.ReactNode = journeyView;
   if (activeScreen === "explore") content = exploreView;
   if (activeScreen === "practice") content = practiceView;
@@ -18284,6 +18510,7 @@ export function MobileLibraryShell(args: {
   if (activeScreen === "menu") content = menuView;
   if (activeScreen === "settings") content = settingsView;
   if (activeScreen === "create" && effectivePlan === "polyglot") content = createView;
+  if (activeScreen === "talking") content = talkingView;
   // Cuando usamos sticky nativo iOS, los hijos del ScrollView deben
   // ser un array PLANO (no un fragment con conditional-null siblings),
   // si no `stickyHeaderIndices` no resuelve correctamente las
@@ -25133,7 +25360,7 @@ const styles = StyleSheet.create({
     // 1 -> 1.15 y la acepcion 1.4 -> 1.3: la palabra pasa de ~42% a ~47% del
     // ancho. Es lo que evita que un compuesto aleman tenga que encogerse hasta
     // ser ilegible para caber en una linea.
-    flex: 1.15,
+    flex: 1.35,
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
@@ -25164,7 +25391,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   practiceMatchRowMeaning: {
-    flex: 1.3,
+    flex: 1.0,
     flexDirection: "row",
     alignItems: "center",
     gap: 10,

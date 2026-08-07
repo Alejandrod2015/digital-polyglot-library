@@ -167,24 +167,18 @@ const HeaderChips = memo(function HeaderChips({
   // Journey ya resuelve el mismo caso ocultando su bloque
   // (`remoteProgress?.gamification ? ... : null` en MobileLibraryShell), asi
   // que esto solo iguala las dos pantallas.
-  if (!hasProgressData) return null;
-  // Cada chip lleva un label microscópico (`STREAK`, `GOAL`) para que
-  // el número no quede ambiguo. Sin label el usuario no sabía si "1"
-  // era racha de días, sesiones del día o ítems en cola.
-  return (
-    <View style={styles.headerChipsRow}>
-      <View style={styles.headerChip}>
-        <Feather name="zap" size={12} color="#fb923c" />
-        <Text style={styles.headerChipText}>{streakDays}</Text>
-        <Text style={styles.headerChipLabel}>STREAK</Text>
-      </View>
-      <View style={styles.headerChip}>
-        <Feather name="trending-up" size={12} color="#7dd3fc" />
-        <Text style={styles.headerChipText}>{Math.min(100, Math.round(dailyGoalPercent))}%</Text>
-        <Text style={styles.headerChipLabel}>GOAL</Text>
-      </View>
-    </View>
-  );
+  // RETIRADOS (2026-08-06). Aqui vivian dos chips, "0 STREAK" y "0% GOAL",
+  // centrados a ojo justo encima del boton START. Problemas, por orden:
+  //   - Lo primero que leia el usuario antes de empezar eran dos ceros.
+  //   - El de GOAL duplicaba el anillo grande, que YA es el progreso del dia,
+  //     y le robaba la mirada al numero que importa (el DUE del centro).
+  //   - `headerChipsRow` no tenia `justifyContent`, asi que ni siquiera
+  //     estaban centrados: caian donde los dejara el padre.
+  // La racha pasa a la barra superior, en un solo sitio y visible en todas las
+  // pantallas, como hace Duolingo. Ver `headerProgressChips` en
+  // MobileLibraryShell.
+  void hasProgressData; void streakDays; void dailyGoalPercent;
+  return null;
 });
 
 /**
