@@ -489,10 +489,16 @@ export default function PracticePage() {
     correct: null,
     wrong: null,
   });
-  // Celebratory chime reused for both combo toasts (tiered volume) and the
-  // end-of-session perfect run - same asset the iPhone uses (practice-perfect).
+  // Un asset por momento, sin reutilizar ninguno. Reutilizar el de victoria
+  // para los combos era el bug: sonaba en cada racha y llegabas al final
+  // habiendolo oido tres veces. Asignacion fijada de oido por el usuario el
+  // 2026-08-07; misma que en la app (ver el bloque de requires de
+  // `MobileLibraryShell.tsx`).
   const comboSoundRef = useRef<HTMLAudioElement | null>(null);
+  const ringFillSoundRef = useRef<HTMLAudioElement | null>(null);
+  const perfectSoundRef = useRef<HTMLAudioElement | null>(null);
   const perfectChimePlayedRef = useRef(false);
+  const completionSoundPlayedRef = useRef(false);
   const practiceSource = searchParams.get("source");
   const storyPracticeSlug = searchParams.get("storySlug");
   const storyPracticeBookSlug = searchParams.get("bookSlug");
@@ -1159,6 +1165,7 @@ export default function PracticePage() {
     setComboToast(null);
     setComboBurst(false);
     perfectChimePlayedRef.current = false;
+    completionSoundPlayedRef.current = false;
     sessionStartRef.current = Date.now();
     setCheckpointSaveState("idle");
     setCheckpointResponses({});
@@ -1247,19 +1254,24 @@ export default function PracticePage() {
       // paridad de experiencia.
       const correct = new Audio("/sounds/practice-correct.mp3");
       const wrong = new Audio("/sounds/practice-wrong.mp3");
-      const combo = new Audio("/sounds/practice-perfect.mp3");
-      correct.preload = "auto";
-      wrong.preload = "auto";
-      combo.preload = "auto";
-      correct.volume = 0.8;
-      wrong.volume = 0.8;
+      const combo = new Audio("/sounds/practice-combo.mp3");
+      const ringFill = new Audio("/sounds/practice-ring-fill.mp3");
+      const perfect = new Audio("/sounds/practice-perfect.mp3");
+      for (const a of [correct, wrong, combo, ringFill, perfect]) {
+        a.preload = "auto";
+        a.volume = 0.8;
+      }
       feedbackSoundRefs.current.correct = correct;
       feedbackSoundRefs.current.wrong = wrong;
       comboSoundRef.current = combo;
+      ringFillSoundRef.current = ringFill;
+      perfectSoundRef.current = perfect;
     }
 
     const feedbackSounds = feedbackSoundRefs.current;
     const comboSound = comboSoundRef.current;
+    const ringFillSound = ringFillSoundRef.current;
+    const perfectSound = perfectSoundRef.current;
 
     return () => {
       const audio = clipAudioRef.current;
@@ -1270,20 +1282,29 @@ export default function PracticePage() {
       feedbackSounds.correct?.pause();
       feedbackSounds.wrong?.pause();
       comboSound?.pause();
+      ringFillSound?.pause();
+      perfectSound?.pause();
       feedbackAudioContextRef.current?.close().catch(() => {});
     };
   }, []);
 
-  // Celebratory chime, reused for combos (tiered volume) and the perfect-run
-  // finale (full volume) - same asset + escalation curve as the iPhone.
-  const playComboChime = useCallback((volume: number) => {
-    if (typeof window === "undefined") return;
-    const sound = comboSoundRef.current;
-    if (!sound) return;
-    sound.volume = Math.max(0, Math.min(1, volume));
-    sound.currentTime = 0;
-    void sound.play().catch(() => {});
-  }, []);
+  /** Dispara uno de los assets de celebracion. Nunca dos a la vez. */
+  const playCelebrationSound = useCallback(
+    (which: "combo" | "ringFill" | "perfect", volume: number) => {
+      if (typeof window === "undefined") return;
+      const sound =
+        which === "combo"
+          ? comboSoundRef.current
+          : which === "ringFill"
+            ? ringFillSoundRef.current
+            : perfectSoundRef.current;
+      if (!sound) return;
+      sound.volume = Math.max(0, Math.min(1, volume));
+      sound.currentTime = 0;
+      void sound.play().catch(() => {});
+    },
+    []
+  );
 
   const playGeneratedFeedbackTone = useCallback((tone: FeedbackTone) => {
     if (typeof window === "undefined") return;
@@ -1352,9 +1373,8 @@ export default function PracticePage() {
   }, [playGeneratedFeedbackTone]);
 
   // Combo celebration: every time the streak climbs, surface the tiered toast
-  // pill (iPhone parity). Visual ONLY; the celebration chime is reserved for
-  // the end-of-session perfect run, so it never plays mid-session. Each answer
-  // still gets its own correct/wrong sound.
+  // pill (iPhone parity). El SONIDO de la racha no se dispara aqui sino en el
+  // handler de la respuesta, sustituyendo al de acierto; aqui solo el visual.
   useEffect(() => {
     if (streak <= 0) return;
     setMaxStreak((max) => (streak > max ? streak : max));
@@ -1372,16 +1392,24 @@ export default function PracticePage() {
     return () => {
       if (comboDismissRef.current) clearTimeout(comboDismissRef.current);
     };
-  }, [streak, playComboChime]);
+  }, [streak]);
 
-  // Perfect-run finale chime, fired once when a flawless session completes.
+  // Cierre de sesion. Un solo sonido, y excluyentes entre si:
+  //   marcador perfecto  -> practice-perfect (4,13 s)
+  //   acierto >= 50%     -> practice-ring-fill (1,40 s), acompana la rueda
+  //   por debajo del 50% -> silencio
   useEffect(() => {
     if (!sessionComplete) return;
-    if (exercises.length === 0 || score !== exercises.length) return;
-    if (perfectChimePlayedRef.current) return;
-    perfectChimePlayedRef.current = true;
-    playComboChime(0.95);
-  }, [sessionComplete, score, exercises.length, playComboChime]);
+    if (exercises.length === 0) return;
+    if (completionSoundPlayedRef.current) return;
+    completionSoundPlayedRef.current = true;
+    if (score === exercises.length) {
+      perfectChimePlayedRef.current = true;
+      playCelebrationSound("perfect", 0.95);
+    } else if (score / exercises.length >= 0.5) {
+      playCelebrationSound("ringFill", 0.85);
+    }
+  }, [sessionComplete, score, exercises.length, playCelebrationSound]);
 
   const revealCurrent = useCallback(() => {
     if (!currentExercise) return;
@@ -1399,7 +1427,13 @@ export default function PracticePage() {
       // updater) so StrictMode's double-invoke can't inflate it.
       setStreak((prev) => prev + 1);
       setLastResult("correct");
-      playFeedbackSound("correct");
+      // A partir de 2 seguidos, el sonido de racha SUSTITUYE al de acierto:
+      // uno solo por respuesta. Mismo umbral y misma funcion que el toast.
+      if (getComboTier(streak + 1) >= 1) {
+        playCelebrationSound("combo", 0.8);
+      } else {
+        playFeedbackSound("correct");
+      }
     } else {
       setStreak(0);
       setLastResult("wrong");
@@ -1685,6 +1719,7 @@ export default function PracticePage() {
     setComboToast(null);
     setComboBurst(false);
     perfectChimePlayedRef.current = false;
+    completionSoundPlayedRef.current = false;
     setCheckpointSaveState("idle");
     setCheckpointResponses({});
     setMissedWords([]);

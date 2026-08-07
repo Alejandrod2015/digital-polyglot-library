@@ -45,6 +45,17 @@
           }
         ]
       }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/safety/post-audio-contract.sh"
+          }
+        ]
+      }
     ]
   }
 }

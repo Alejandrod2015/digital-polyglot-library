@@ -251,32 +251,33 @@ import {
 } from "../../../../src/lib/onboarding";
 import { buildJourneyTrackInsights } from "./journeyTrackInsights";
 
-// Practice SFX ship as real bundled mp3 assets (loaded via `require()`), not
-// base64 `data:` URIs. expo-av on Android cannot play inline `data:` audio
-// URIs, so the previous base64 approach was silent on Android; bundled assets
-// play everywhere. See scripts/_extractSfx.mjs for how these were generated.
-const SFX_PRACTICE_CORRECT = require("../../assets/sfx/practice-correct.mp3");
-const SFX_PRACTICE_WRONG = require("../../assets/sfx/practice-wrong.mp3");
-// OJO CON LA CARPETA: este sale de `assets/sounds/`, no de `assets/sfx/` como
-// los otros tres. No es un descuido, es el arreglo.
-//
-// Cronologia (2026-08-06, reconstruida del historial):
-//   8 may  entran los sonidos Kenney en assets/sounds/
-//  14 may  d5035ce1 los cambia al set Mixkit
-//  22 may  el de VICTORIA se vuelve a cambiar (133.621 bytes) y la WEB lo toma
-//  27 jul  836f9acc pasa el movil de base64 a archivos, extrayendo de
-//          practiceSoundUris.ts... que se habia quedado congelado en la version
-//          de mayo. La extraccion fue fiel, pero de un archivo obsoleto.
-//
-// Verificado: el base64 de 836f9acc~1 da 62.322 bytes sha1 a564eb58b5, byte por
-// byte igual al sfx/ actual. Y public/sounds/practice-perfect.mp3 (la web) es
-// identico a assets/sounds/ (133.621, sha1 52e600d632). O sea que la web lleva
-// la campana de logro de ~2,4 s desde mayo y el movil se quedo con el bip corto.
-// El usuario lo reporto CUATRO veces; mis tres intentos anteriores movieron
-// sesiones de audio y preloads, todo correcto y todo irrelevante, porque el
-// archivo era otro. Confirmado de oido por el usuario en la pagina de audicion.
+/**
+ * LOS CINCO SONIDOS DE PRÁCTICA. Asignación fijada por el usuario de oído el
+ * 2026-08-07, escuchando los nueve que existían en una página de audición.
+ * NO reasignar ninguno sin que él lo apruebe otra vez.
+ *
+ *   correct    1,40 s  cada acierto
+ *   wrong      1,25 s  cada fallo
+ *   combo      2,40 s  2+ aciertos SEGUIDOS (sustituye a correct, no se suma)
+ *   ring-fill  1,40 s  final de sesión, acompaña la carga de la rueda, si ≥50%
+ *   perfect    4,13 s  final de sesión con marcador perfecto
+ *
+ * Todos salen de `assets/sounds/`. Antes había DOS carpetas, `sfx/` y
+ * `sounds/`, con ficheros de nombre casi igual y contenido distinto: eso fue
+ * literalmente la causa del bug que costó una noche entera (la app cargaba
+ * `sfx/practice-perfect.mp3`, 2,4 s, mientras la web usaba
+ * `sounds/practice-perfect.mp3`, 4,13 s, y el usuario reportó CUATRO veces que
+ * "no suena el de siempre"). `sfx/` ya no existe y los nombres dicen la
+ * FUNCIÓN, no el origen, para que no pueda repetirse.
+ *
+ * Son mp3 empaquetados vía `require()`, nunca `data:` URIs: expo-av en Android
+ * no reproduce audio inline, así que el enfoque base64 era mudo en Android.
+ */
+const SFX_PRACTICE_CORRECT = require("../../assets/sounds/practice-correct.mp3");
+const SFX_PRACTICE_WRONG = require("../../assets/sounds/practice-wrong.mp3");
+const SFX_PRACTICE_COMBO = require("../../assets/sounds/practice-combo.mp3");
+const SFX_PRACTICE_RING_FILL = require("../../assets/sounds/practice-ring-fill.mp3");
 const SFX_PRACTICE_PERFECT = require("../../assets/sounds/practice-perfect.mp3");
-const SFX_JOURNEY_MILESTONE = require("../../assets/sfx/journey-milestone-chime.mp3");
 
 type ReaderSelection = {
   book: Book;
@@ -2227,6 +2228,21 @@ export function MobileLibraryShell(args: {
   const [matchedWords, setMatchedWords] = useState<string[]>([]);
   const [pendingPairings, setPendingPairings] = useState<Record<string, string>>({});
   const [wrongMatchWords, setWrongMatchWords] = useState<string[]>([]);
+  /**
+   * ¿Este match ha tenido ALGÚN fallo? Decide si suma punto.
+   *
+   * El ejercicio bloquea los aciertos y borra los fallos a los 900 ms, así que
+   * se puede reintentar: bien pedagógicamente, mal para el marcador, porque
+   * `setPracticeScore(+1)` se disparaba en la validación limpia FINAL sin mirar
+   * lo anterior. Se podía fallar seis veces y llevarse el punto, y con cuatro
+   * pares acertar tres fuerza la cuarta. Un 10/10 dejaba de significar nada, y
+   * con él el sonido de victoria.
+   *
+   * No se penaliza el reintento ni se rompe el bloqueo de aciertos: solo deja
+   * de contar como acierto lo que no se acertó a la primera. El repaso
+   * espaciado ya era honesto (una palabra marcada `again` se queda en `again`).
+   */
+  const matchHadErrorRef = useRef(false);
   const [practiceLaunchContext, setPracticeLaunchContext] = useState<PracticeLaunchContext>({
     source: "favorites",
   });
@@ -2475,7 +2491,6 @@ export function MobileLibraryShell(args: {
   const [dismissedCelebrationIds, setDismissedCelebrationIds] = useState<Set<string>>(new Set());
   const celebrationAnim = useRef(new Animated.Value(0)).current;
   const journeyMilestoneAnim = useRef(new Animated.Value(0)).current;
-  const journeyMilestoneSoundRef = useRef<Audio.Sound | null>(null);
   const [remoteBooksLoading, setRemoteBooksLoading] = useState(false);
   const [remoteStoriesLoading, setRemoteStoriesLoading] = useState(false);
   const [remoteEntitlementLoading, setRemoteEntitlementLoading] = useState(false);
@@ -2578,7 +2593,8 @@ export function MobileLibraryShell(args: {
   const practiceFeedbackPreloadRef = useRef<{
     correct: Audio.Sound | null;
     wrong: Audio.Sound | null;
-  }>({ correct: null, wrong: null });
+    combo: Audio.Sound | null;
+  }>({ correct: null, wrong: null, combo: null });
   // Gate para que el audio de palabra del context arranque JUSTO cuando el
   // SFX de acierto/error termina (en vez de solaparse). Al reproducir el SFX
   // publicamos una promesa que resuelve en su `didJustFinish`; el clip del
@@ -4619,32 +4635,16 @@ export function MobileLibraryShell(args: {
       });
     }, 5000);
 
-    let cancelled = false;
-    void (async () => {
-      try {
-        if (journeyMilestoneSoundRef.current) {
-          await journeyMilestoneSoundRef.current.unloadAsync();
-          journeyMilestoneSoundRef.current = null;
-        }
-
-        const { sound } = await Audio.Sound.createAsync(
-          SFX_JOURNEY_MILESTONE,
-          { shouldPlay: true, volume: 0.22 }
-        );
-        if (cancelled) {
-          await sound.unloadAsync();
-          return;
-        }
-        journeyMilestoneSoundRef.current = sound;
-      } catch (e) {
-        // Best-effort payoff only.
-        console.warn("[practice-sfx] journey milestone chime failed to play:", e);
-      }
-    })();
-
+    // SIN SONIDO, a proposito (2026-08-07). El hito tenia un chime propio y
+    // resulto ser un fantasma: solo se disparaba al superar un checkpoint de
+    // journey por primera vez (nunca desde la practica de palabras guardadas,
+    // que es el camino normal), sonaba a volumen 0,22 con un asset que picaba
+    // a -15,8 dB (el resto pica a -1,3 dB y suena a 0,8), y ni siquiera era un
+    // sonido curado: estaba sintetizado con ondas seno en un
+    // `src/lib/journeyMilestone.ts` que no importaba nadie. El usuario nunca
+    // llego a oirlo. Se quedan la animacion y el haptico.
     return () => {
       clearTimeout(autoDismiss);
-      cancelled = true;
     };
   }, [journeyMilestone, journeyMilestoneAnim]);
 
@@ -5124,6 +5124,14 @@ export function MobileLibraryShell(args: {
   }, [dueFavoritesCount, preferredPracticeMinutes, recommendedPracticeLabel]);
   const visiblePracticeCards = PRACTICE_MODE_CARDS;
   const currentPracticeExercise = practiceExercises[practiceIndex] ?? null;
+
+  // La bandera de "este match tuvo fallos" se limpia al cambiar de ejercicio, y
+  // AQUI y no en cada sitio que resetea el match: hay seis (arranque, reinicio,
+  // avance, checkpoint, journey, retry) y parchearlos uno a uno es pedir que el
+  // septimo se olvide. Atado al id del ejercicio, cualquier camino lo cubre.
+  useEffect(() => {
+    matchHadErrorRef.current = false;
+  }, [currentPracticeExercise?.id]);
 
   // Persiste la ronda de MATCH a medida que avanza (ejercicio en curso, parejas
   // ya resueltas y marcador), para que salir y volver la devuelva tal cual.
@@ -8568,7 +8576,12 @@ export function MobileLibraryShell(args: {
       setPracticeLastResult("wrong");
       setPracticeSessionStreak(0);
     }
-    void playPracticeFeedbackSound(isCorrect);
+    // Mismo umbral que el toast (tier >= 1 = 2 seguidos), sacado de la misma
+    // función para que sonido y cartel no puedan desincronizarse.
+    void playPracticeFeedbackSound(
+      isCorrect,
+      isCorrect && getPracticeComboTier(practiceSessionStreak + 1) >= 1
+    );
   }
 
   function triggerPracticeComboToast(nextStreak: number) {
@@ -8592,15 +8605,21 @@ export function MobileLibraryShell(args: {
     } else {
       setPracticeComboBurstActive(false);
     }
-    // SIN SONIDO en el combo. El mp3 de victoria estaba enganchado aqui ademas
-    // de en el final de sesion, asi que sonaba en cada racha y para cuando
-    // llegabas al marcador perfecto ya lo habias oido tres veces. Con el
-    // archivo correcto (campana de ~2,4 s) seria insufrible. El combo conserva
-    // su toast y su haptic; el sonido queda reservado al final perfecto.
-    // Si algun dia se quiere sonido de combo, el candidato es
-    // assets/sounds/practice-ring-fill-good.mp3, que lleva sin usarse desde
-    // que entro el 20 de mayo.
-    void tier;
+    // PENDIENTE: el combo no tiene sonido. Aqui solo viven el toast y el haptic.
+    //
+    // HISTORIA, para no repetirla dos veces mas:
+    //  1. Este sitio disparaba el mp3 de VICTORIA, el mismo del final de sesion,
+    //     asi que sonaba en cada racha y para cuando llegabas al marcador
+    //     perfecto ya lo habias oido tres veces.
+    //  2. Al quitarlo me pase y lo deje MUDO en vez de darle sonido propio.
+    //  3. Elegi `practice-ring-fill-good` por mi cuenta y era el equivocado; el
+    //     usuario lo descarto de oido. El asset lo ELIGE EL, no yo.
+    //
+    // Cuando haya asset: NO encadenarlo detras del sonido de acierto (lo dejaria
+    // ~1,4 s por detras de la animacion). Va en `playPracticeFeedbackSound`
+    // SUSTITUYENDO al de acierto, un unico sonido por respuesta, con el umbral
+    // sacado de `getPracticeComboTier` para que sonido y cartel no se
+    // desincronicen.
     void playPracticeComboHaptic(tier);
   }
 
@@ -8624,12 +8643,6 @@ export function MobileLibraryShell(args: {
   // solo rebobina. Se descargan al cerrar la sesión.
   const practiceSessionOpen = activePracticeMode !== null;
   useEffect(() => {
-    // DESACTIVADO junto con el camino rapido (ver el comentario de
-    // playPracticeFeedbackSound). Mientras el preload estaba activo, los dos
-    // SFX quedaban MONTADOS toda la ronda y el chime de 10/10 nacia encima de
-    // ellos; el usuario lo reporto cuatro veces. Sin montar nada, la sesion de
-    // audio en el instante del chime es la misma que el 30 de julio.
-    if (true) return;
     if (!practiceSessionOpen) return;
     let cancelled = false;
     const slots = practiceFeedbackPreloadRef.current;
@@ -8642,10 +8655,14 @@ export function MobileLibraryShell(args: {
           allowsRecordingIOS: false,
           interruptionModeIOS: InterruptionModeIOS.DoNotMix,
         });
-        for (const slot of ["correct", "wrong"] as const) {
+        for (const slot of ["correct", "wrong", "combo"] as const) {
           if (slots[slot]) continue;
           const { sound } = await Audio.Sound.createAsync(
-            slot === "correct" ? SFX_PRACTICE_CORRECT : SFX_PRACTICE_WRONG,
+            slot === "correct"
+              ? SFX_PRACTICE_CORRECT
+              : slot === "wrong"
+                ? SFX_PRACTICE_WRONG
+                : SFX_PRACTICE_COMBO,
             { shouldPlay: false, volume: 0.8 }
           );
           if (cancelled) {
@@ -8662,16 +8679,17 @@ export function MobileLibraryShell(args: {
     })();
     return () => {
       cancelled = true;
-      const pending = [slots.correct, slots.wrong];
+      const pending = [slots.correct, slots.wrong, slots.combo];
       slots.correct = null;
       slots.wrong = null;
+      slots.combo = null;
       for (const sound of pending) {
         if (sound) void sound.unloadAsync().catch(() => undefined);
       }
     };
   }, [practiceSessionOpen]);
 
-  async function playPracticeFeedbackSound(correct: boolean) {
+  async function playPracticeFeedbackSound(correct: boolean, combo = false) {
     // Publica una promesa que resuelve cuando el SFX termina, para que el
     // audio de palabra del context espere a que el sonido de acierto acabe
     // y no se solapen. Se resuelve también ante cualquier fallo para que el
@@ -8689,22 +8707,46 @@ export function MobileLibraryShell(args: {
       }
       resolveDone();
     };
+    const t0 = Date.now();
     try {
-      // Camino rápido: el sound ya está montado, así que esto es solo
-      // rebobinar. Lo caro que evita el preload es el decoder y el parseo, no
-      // la llamada al modo de audio.
-      // PRELOAD DESACTIVADO (2026-08-06). Lo meti hoy para quitarle latencia al
-      // SFX de acierto/error (#9) y rompio el chime de 10/10: el usuario lo
-      // reporto CUATRO veces. Dos intentos dirigidos encima (builds 287 y 288)
-      // no lo devolvieron, y no puedo oir el resultado para iterar. Asi que se
-      // vuelve al camino del 30 de julio, que funcionaba: cada SFX se CREA al
-      // vuelo y se DESCARGA solo al terminar, de modo que cuando nace el chime
-      // no queda ningun sound montado ni ninguna reconfiguracion de sesion en
-      // vuelo. Se paga con el retraso del SFX que #9 venia a quitar; sonar
-      // importa mas que sonar rapido.
+      // El combo SUSTITUYE al acierto, no se suma: un solo sonido por
+      // respuesta. Encadenarlo detrás dejaría la racha 1,4 s por detrás de su
+      // propia animación, y superponerlos convierte dos sonidos de más de un
+      // segundo en ruido.
+      const slot: "correct" | "wrong" | "combo" = correct
+        ? combo
+          ? "combo"
+          : "correct"
+        : "wrong";
+
+      // CAMINO RÁPIDO: el sound ya está montado, así que sonar es solo
+      // rebobinar. Es lo que hace que el sonido caiga sobre la animación en
+      // vez de por detrás.
       //
-      // Para reactivarlo hace falta antes una forma de VERIFICAR el chime en
-      // device; sin eso volveria a ser lo mismo a ciegas.
+      // PRELOAD REACTIVADO (2026-08-07) tras comprobar que lo apagué por nada.
+      // Lo desactivé el 06-08 creyendo que se comía el chime de 10/10, pero el
+      // historial dice otra cosa: el fichero equivocado del chime entró el
+      // 27-07 (836f9acc) y el preload el 04-08 (5fd99717, titulado justamente
+      // "retraso de los SFX"). Ocho días de diferencia: el chime ya sonaba mal
+      // antes de que el preload existiera, y lo que el usuario oía era el mp3
+      // de 2,4 s en vez del suyo de 4,13 s, confirmado luego de oído. Apagar el
+      // preload no arregló nada y reintrodujo este retraso.
+      //
+      // La higiene que SÍ hacía falta se queda: `playPracticePerfectChime`
+      // descarga estos sounds antes de nacer, para que el one-shot no compita
+      // con nada montado.
+      const preloaded = practiceFeedbackPreloadRef.current[slot];
+      if (preloaded) {
+        await preloaded.replayAsync();
+        console.log(`[practice-sfx] ${slot} via preload en ${Date.now() - t0}ms`);
+        preloaded.setOnPlaybackStatusUpdate((status) => {
+          if ("didJustFinish" in status && status.didJustFinish) settle();
+        });
+        return;
+      }
+
+      // Camino lento (primera respuesta de la sesión, o si el preload falló):
+      // crear el sound al vuelo. Se mide para poder comparar los dos.
       await stopPracticeFeedbackSound();
       // Mismo motivo que en playPracticePerfectChime: en iOS el modo de audio
       // es global y hay que reafirmarlo antes de reproducir.
@@ -8713,11 +8755,18 @@ export function MobileLibraryShell(args: {
         allowsRecordingIOS: false,
         interruptionModeIOS: InterruptionModeIOS.DoNotMix,
       });
-      const { sound } = await Audio.Sound.createAsync(
-        correct ? SFX_PRACTICE_CORRECT : SFX_PRACTICE_WRONG,
-        { shouldPlay: true, volume: 0.8 }
-      );
+      const asset =
+        slot === "combo"
+          ? SFX_PRACTICE_COMBO
+          : slot === "correct"
+            ? SFX_PRACTICE_CORRECT
+            : SFX_PRACTICE_WRONG;
+      const { sound } = await Audio.Sound.createAsync(asset, {
+        shouldPlay: true,
+        volume: 0.8,
+      });
       practiceFeedbackSoundRef.current = sound;
+      console.log(`[practice-sfx] ${slot} al vuelo en ${Date.now() - t0}ms`);
       sound.setOnPlaybackStatusUpdate((status) => {
         if ("didJustFinish" in status && status.didJustFinish) {
           practiceFeedbackSoundRef.current = null;
@@ -8810,14 +8859,28 @@ export function MobileLibraryShell(args: {
       })
     );
     shineLoop.start();
-    // Perfect score → confetti + a louder chime overlay + success haptic.
-    if (
-      practiceExercises.length > 0 &&
-      practiceScore === practiceExercises.length
-    ) {
+    // SONIDO DE CIERRE. Uno solo, nunca dos a la vez:
+    //
+    //   marcador perfecto  -> `practice-perfect` (4,13 s)
+    //   acierto >= 50%     -> `practice-ring-fill` (1,40 s)
+    //   por debajo del 50% -> silencio
+    //
+    // El de la rueda dura 1,40 s y la rueda tarda 1,20 s en llenarse
+    // (`PracticeResultRing`): el asset estaba hecho para esto, de ahi el
+    // nombre. Se dispara aqui, en el mismo commit que monta la pantalla, para
+    // que arranque con la animacion y no por detras.
+    //
+    // Perfecto y rueda son EXCLUYENTES aunque un 100% tambien pase del 50%: el
+    // chime de victoria se rompio cuatro veces por tener otro sonido montado a
+    // la vez, y no voy a volver a ponerle uno encima. Perfecto = solo perfecto.
+    const total = practiceExercises.length;
+    const perfect = total > 0 && practiceScore === total;
+    if (perfect) {
       setPracticePerfectActive(true);
       void playPracticePerfectChime();
       void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => undefined);
+    } else if (total > 0 && practiceScore / total >= 0.5) {
+      void playPracticeRingFillSound();
     }
     return () => {
       shineLoop.stop();
@@ -8855,7 +8918,7 @@ export function MobileLibraryShell(args: {
       // montado en este instante, y el objetivo es dejar la sesion de audio
       // exactamente como estaba el 30 de julio, cuando el chime sonaba. La
       // ronda ya termino, asi que no hace falta volver a montarlos.
-      for (const slot of ["correct", "wrong"] as const) {
+      for (const slot of ["correct", "wrong", "combo"] as const) {
         const s = practiceFeedbackPreloadRef.current[slot];
         if (s) {
           try { await s.stopAsync(); } catch { /* ignore */ }
@@ -8908,23 +8971,28 @@ export function MobileLibraryShell(args: {
     }
   }
 
-  async function playPracticeComboSound(tier: 0 | 1 | 2 | 3 | 4 | 5) {
+  /**
+   * Barrido que acompaña la carga de la rueda de resultados. Cierra la sesión
+   * cuando se acertó al menos la mitad y NO fue perfecta (ver el effect que lo
+   * llama: los dos cierres son excluyentes).
+   *
+   * Misma higiene de sesión de audio que el chime perfecto, y por el mismo
+   * motivo: nace justo después del SFX de la última respuesta, que es el
+   * instante exacto en el que un one-shot se pierde si queda algo montado.
+   */
+  async function playPracticeRingFillSound() {
     try {
       await stopPracticeCelebrationSound();
-      // Mismo motivo que en playPracticePerfectChime.
+      await stopAndUnloadPracticeSound(practiceFeedbackSoundRef);
       await Audio.setAudioModeAsync({
         playsInSilentModeIOS: true,
         allowsRecordingIOS: false,
         interruptionModeIOS: InterruptionModeIOS.DoNotMix,
       });
-      const { sound } = await Audio.Sound.createAsync(
-        SFX_PRACTICE_PERFECT,
-        {
-          shouldPlay: true,
-          volume:
-            tier >= 5 ? 0.88 : tier >= 4 ? 0.76 : tier >= 3 ? 0.64 : tier >= 2 ? 0.54 : 0.42,
-        }
-      );
+      const { sound } = await Audio.Sound.createAsync(SFX_PRACTICE_RING_FILL, {
+        shouldPlay: true,
+        volume: 0.85,
+      });
       practiceCelebrationSoundRef.current = sound;
       sound.setOnPlaybackStatusUpdate((status) => {
         if ("didJustFinish" in status && status.didJustFinish) {
@@ -8935,8 +9003,8 @@ export function MobileLibraryShell(args: {
         }
       });
     } catch (e) {
-      // Best-effort only.
-      console.warn("[practice-sfx] combo chime failed to play:", e);
+      // Best-effort
+      console.warn("[practice-sfx] ring fill failed to play:", e);
     }
   }
 
@@ -9413,7 +9481,7 @@ export function MobileLibraryShell(args: {
     // los descarga el cleanup del preload. Solo el sound del path lento (el de
     // fallback, creado al vuelo) se descarga aquí.
     const preloaded = practiceFeedbackPreloadRef.current;
-    for (const sound of [preloaded.correct, preloaded.wrong]) {
+    for (const sound of [preloaded.correct, preloaded.wrong, preloaded.combo]) {
       if (!sound) continue;
       try { await sound.stopAsync(); } catch { /* ignore */ }
     }
@@ -10372,15 +10440,28 @@ export function MobileLibraryShell(args: {
       setPendingPairings({});
       setActiveMatchWord(null);
       setActiveMatchMeaning(null);
-      setPracticeScore((value) => value + 1);
+      // Solo puntúa si se resolvió a la primera. Ver `matchHadErrorRef`.
+      if (!matchHadErrorRef.current) {
+        setPracticeScore((value) => value + 1);
+      }
       setPracticeRevealed(true);
-      setPracticeLastResult("correct");
+      setPracticeLastResult(matchHadErrorRef.current ? "wrong" : "correct");
       // maxStreak + combo toast se derivan del cambio en sessionStreak
       // vía useEffect (mismo path que multiple-choice). Antes lo
       // hacíamos dentro del updater, lo cual fallaba en sesiones de
       // puro match porque el side-effect anidado podía perderse y la
       // result card mostraba combo=0.
-      setPracticeSessionStreak((value) => value + 1);
+      //
+      // La racha sigue al mismo criterio que el marcador: un match resuelto
+      // DESPUÉS de fallar no encadena. Antes subía igual, así que bastaba con
+      // fallar y reintentar para llegar al combo, que es la misma trampa que
+      // ya cerramos en la puntuación.
+      const cleanSolve = !matchHadErrorRef.current;
+      if (cleanSolve) {
+        setPracticeSessionStreak((value) => value + 1);
+      } else {
+        setPracticeSessionStreak(0);
+      }
       setPracticeReviewScores((currentScores) => {
         const nextScores = { ...currentScores };
         for (const pair of current.pairs) {
@@ -10391,13 +10472,17 @@ export function MobileLibraryShell(args: {
         }
         return nextScores;
       });
-      void playPracticeFeedbackSound(true);
+      void playPracticeFeedbackSound(
+        true,
+        cleanSolve && getPracticeComboTier(practiceSessionStreak + 1) >= 1
+      );
       return;
     }
 
     // Partial: lock the correct ones, flash the wrong ones red,
     // then break those pending pairings so the user can retry.
     setMatchedWords((curr) => [...curr, ...newlyCorrect]);
+    matchHadErrorRef.current = true;
     setWrongMatchWords(newlyWrong);
     // Promote-then-prune in the same render: pull the correct entries
     // out of pendingPairings immediately so the counter doesn't
@@ -11010,7 +11095,6 @@ export function MobileLibraryShell(args: {
     return () => {
       void stopPracticeContextClip();
       getOptionalSpeechModule()?.stop();
-      void journeyMilestoneSoundRef.current?.unloadAsync();
     };
   }, []);
 
