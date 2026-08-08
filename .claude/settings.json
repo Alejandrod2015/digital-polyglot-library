@@ -55,6 +55,15 @@
             "command": ".claude/safety/post-audio-contract.sh"
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/safety/post-story-save-glosses.sh"
+          }
+        ]
       }
     ]
   }

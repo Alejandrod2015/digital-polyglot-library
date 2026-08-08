@@ -114,9 +114,16 @@ function loadBundle(name: string) {
 
 async function main() {
   const argv = process.argv.slice(2);
-  const dry = argv.includes("--dry");
+  // --check: NO escribe y falla si a CUALQUIER bundle le falta una sola glosa,
+  // aunque se pudiera copiar de un hermano. Es el modo del guard, y el umbral
+  // es distinto a propósito: "se podría rellenar" no es lo mismo que "está
+  // relleno". Mientras no se haya corrido el rebuild, esa palabra está muerta
+  // en el móvil del usuario.
+  const check = argv.includes("--check");
+  const dry = check || argv.includes("--dry");
   const onlyIdx = argv.indexOf("--only");
   const only = onlyIdx >= 0 ? argv[onlyIdx + 1] : null;
+  const stale: string[] = [];
 
   const manual: Record<string, Record<string, { g: string; t?: string }>> = fs.existsSync(MANUAL)
     ? JSON.parse(fs.readFileSync(MANUAL, "utf8"))
@@ -188,6 +195,7 @@ async function main() {
       }
     }
 
+    stale.push(`${name} (${needed.size})`);
     console.log(
       `${name.padEnd(30)} faltan ${needed.size}: ${fromSibling.length} copiadas, ` +
         `${fromManual.length} escritas a mano, ${uncovered.length} SIN CUBRIR`
@@ -213,6 +221,23 @@ async function main() {
     );
   }
 
+  if (check) {
+    if (stale.length === 0) {
+      console.log("\nlookup al día: cada palabra tocable tiene su glosa");
+      return;
+    }
+    console.error(
+      `\nLOOKUP DESFASADO en ${stale.length} bundle(s): ${stale.join(", ")}\n\n` +
+        "Se ha editado una historia y sus glosas se quedaron atrás. Cada palabra\n" +
+        "que falta es un toque muerto en el móvil: el usuario la toca y no sale\n" +
+        "nada, sin ningún aviso. Asi se perdió una noche entera el 2026-08-07,\n" +
+        "con un journey en producción con una de cada ocho palabras muerta.\n\n" +
+        "Arreglo:  npx tsx scripts/rebuildTapGlosses.ts\n" +
+        "Si pide glosas nuevas, se escriben en scripts/_newGlosses.json.\n"
+    );
+    process.exitCode = 1;
+    return;
+  }
   console.log(
     `\n${dry ? "[dry] " : ""}${totalAdded} glosas añadidas` +
       (blocked.length ? `; NO escritos por huecos: ${blocked.join(", ")}` : "")
