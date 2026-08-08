@@ -1223,6 +1223,8 @@ function resolvePracticeWordVoiceId(rawVoiceId: string | null | undefined): stri
 // borrando la basura para que no siembre ni envenene el cache.
 const MIN_PRACTICE_AUDIO_BYTES = 256;
 
+const PRACTICE_AUDIO_PART_SUFFIX = ".part-";
+
 async function practiceAudioFileIsUsable(fileUri: string): Promise<boolean> {
   try {
     const info = await FileSystem.getInfoAsync(fileUri);
@@ -1234,22 +1236,67 @@ async function practiceAudioFileIsUsable(fileUri: string): Promise<boolean> {
   }
 }
 
+/** Contador para que dos descargas simultáneas nunca compartan temporal. */
+let practiceDownloadSeq = 0;
+
+/**
+ * Descarga ATÓMICA: a un temporal propio, y solo al final pasa a su sitio.
+ *
+ * Antes escribía DIRECTAMENTE sobre `fileUri`, y eso abría dos agujeros que
+ * el usuario notó el 2026-08-07 como "la palabra se escuchó hasta la mitad":
+ *
+ *  1. CARRERA. El precargador y el reproductor descargan el mismo clip a la
+ *     vez cuando su URL es nueva. Uno escribía mientras el otro comprobaba el
+ *     tamaño, encontraba el fichero a medio escribir, lo daba por bueno (solo
+ *     se miraba que superara un mínimo de bytes) y reproducía media palabra.
+ *  2. TRUNCADO PERMANENTE. Si una descarga se cortaba a la mitad (red, app al
+ *     fondo), ese trozo se quedaba en disco por encima del mínimo y se
+ *     reutilizaba SIEMPRE. Esa palabra sonaba cortada para siempre, sin forma
+ *     de recuperarse salvo borrando datos de la app.
+ *
+ * Con el temporal, en `fileUri` solo aparece un fichero COMPLETO. Un lector
+ * que llegue a medias no ve nada y se baja el suyo, que es lo correcto; una
+ * descarga interrumpida deja basura que nadie lee y que el barrido limpia.
+ */
 async function downloadPracticeAudioValidated(url: string, fileUri: string): Promise<boolean> {
+  practiceDownloadSeq += 1;
+  const tmpUri = `${fileUri}${PRACTICE_AUDIO_PART_SUFFIX}${practiceDownloadSeq}`;
+  const dropTmp = async () => {
+    try { await FileSystem.deleteAsync(tmpUri, { idempotent: true }); } catch { /* ignore */ }
+  };
   try {
-    const result = await FileSystem.downloadAsync(url, fileUri);
+    const result = await FileSystem.downloadAsync(url, tmpUri);
     const status = (result as { status?: number }).status ?? 0;
-    if (status !== 200) {
-      try { await FileSystem.deleteAsync(fileUri, { idempotent: true }); } catch { /* ignore */ }
+    if (status !== 200 || !(await practiceAudioFileIsUsable(tmpUri))) {
+      await dropTmp();
       return false;
     }
-    if (!(await practiceAudioFileIsUsable(fileUri))) {
-      try { await FileSystem.deleteAsync(fileUri, { idempotent: true }); } catch { /* ignore */ }
-      return false;
-    }
+    // El destino se llavea por hash de contenido, así que si otro ya lo dejó
+    // puesto es byte a byte el mismo fichero: pisarlo es inocuo.
+    try { await FileSystem.deleteAsync(fileUri, { idempotent: true }); } catch { /* ignore */ }
+    await FileSystem.moveAsync({ from: tmpUri, to: fileUri });
     return true;
   } catch {
-    try { await FileSystem.deleteAsync(fileUri, { idempotent: true }); } catch { /* ignore */ }
+    await dropTmp();
     return false;
+  }
+}
+
+/** Barre temporales huérfanos de descargas que se cortaron. */
+async function sweepPracticeAudioParts(dir: string): Promise<void> {
+  try {
+    const names = await FileSystem.readDirectoryAsync(dir);
+    await Promise.all(
+      names
+        .filter((n) => n.includes(PRACTICE_AUDIO_PART_SUFFIX))
+        .map((n) =>
+          FileSystem.deleteAsync(`${dir}${n}`, { idempotent: true }).catch(
+            () => undefined
+          )
+        )
+    );
+  } catch {
+    // El directorio puede no existir aún; no es un error.
   }
 }
 
@@ -2590,6 +2637,10 @@ export function MobileLibraryShell(args: {
   // el preload del clip de context (5d), y el verde/rojo ya se había pintado:
   // ese desfase es el "retraso" que se oye en los ejercicios. Pre-cargados, la
   // respuesta es un `replayAsync()`.
+  // Instante en que el usuario confirma una respuesta. Sirve para cronometrar
+  // por separado CUÁNDO se pinta el verde/rojo y CUÁNDO empieza a oírse el
+  // sonido, que es la única forma de saber cuál de los dos va tarde.
+  const practiceAnswerT0Ref = useRef(0);
   const practiceFeedbackPreloadRef = useRef<{
     correct: Audio.Sound | null;
     wrong: Audio.Sound | null;
@@ -7425,7 +7476,7 @@ export function MobileLibraryShell(args: {
     // continuar reproduciéndose en background y enmascarar el
     // autoplay del primer ejercicio.
     void stopPracticeContextClip();
-    void stopPracticeHqClip();
+    void stopPracticeHqClip("L7432");
     getOptionalSpeechModule()?.stop();
   }
 
@@ -7560,7 +7611,7 @@ export function MobileLibraryShell(args: {
     practicePrefetchSeenRef.current.clear();
     practiceAudioFilesRef.current.clear();
     void stopPracticeContextClip();
-    void stopPracticeHqClip();
+    void stopPracticeHqClip("L7567");
   }
 
   type StoryPracticePayload = {
@@ -7878,7 +7929,7 @@ export function MobileLibraryShell(args: {
     // ejercicio anterior. Sin esto, en context mode el audio del
     // reveal podía seguir reproduciéndose mientras el usuario ya
     // veía el siguiente ejercicio.
-    void stopPracticeHqClip();
+    void stopPracticeHqClip("L7885");
     // Cancelamos cualquier fetch de audio practice en curso del
     // ejercicio anterior. Si hay una request lenta de Modal aún
     // pendiente, cuando resuelva se va a descartar en silencio.
@@ -8220,6 +8271,9 @@ export function MobileLibraryShell(args: {
     }
     if (lastAutoplayedExerciseIdRef.current === exId) return;
     lastAutoplayedExerciseIdRef.current = exId;
+    console.log(
+      `[practice-word] autoplay ex=${exId.slice(0, 8)} countdown=${practiceCountdownActive ? "SI" : "no"} modo=${currentPracticeExercise?.kind === "multiple-choice" ? currentPracticeExercise.mode : currentPracticeExercise?.kind}`
+    );
     // Meaning: SOLO la palabra (no la oración). Otros modos
     // (listening/match) usan playPracticeContextClipBest que es
     // no-op cuando no hay audioClip; su propio play button se
@@ -8506,7 +8560,7 @@ export function MobileLibraryShell(args: {
           (status) => {
             if ("didJustFinish" in status && status.didJustFinish) {
               showDebug(`sound didJustFinish ${JSON.stringify({ exId }).slice(0,140)}`);
-              void stopPracticeHqClip();
+              void stopPracticeHqClip("L8516");
               setContextAudioFinishedFor(exId);
             }
           }
@@ -8543,12 +8597,13 @@ export function MobileLibraryShell(args: {
     // HQ clip, context clip, and on-device speech. Without this the TTS
     // keeps reading the sentence after the user has already chosen,
     // which feels noisy and clashes with the correct/wrong feedback SFX.
-    void stopPracticeHqClip();
+    void stopPracticeHqClip("L8553");
     void stopPracticeContextClip();
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
 
     const isCorrect = option === current.answer;
+    practiceAnswerT0Ref.current = Date.now();
     revealedSlotIdRef.current = current.id;
     setPracticeRevealed(true);
     setPracticeTimedOut(timedOut);
@@ -8644,6 +8699,8 @@ export function MobileLibraryShell(args: {
   const practiceSessionOpen = activePracticeMode !== null;
   useEffect(() => {
     if (!practiceSessionOpen) return;
+    // Limpia temporales de descargas cortadas antes de empezar la ronda.
+    void sweepPracticeAudioParts(PRACTICE_AUDIO_DIR);
     let cancelled = false;
     const slots = practiceFeedbackPreloadRef.current;
     void (async () => {
@@ -8663,7 +8720,15 @@ export function MobileLibraryShell(args: {
               : slot === "wrong"
                 ? SFX_PRACTICE_WRONG
                 : SFX_PRACTICE_COMBO,
-            { shouldPlay: false, volume: 0.8 }
+            {
+              shouldPlay: false,
+              volume: 0.8,
+              // 30 ms en vez de los ~500 por defecto: sin esto, el primer
+              // status llega hasta medio segundo tarde y MIDES EL SONDEO, no
+              // la latencia. Es la diferencia entre saber cuándo suena y
+              // creer que lo sabes.
+              progressUpdateIntervalMillis: 30,
+            }
           );
           if (cancelled) {
             void sound.unloadAsync().catch(() => undefined);
@@ -8689,6 +8754,14 @@ export function MobileLibraryShell(args: {
     };
   }, [practiceSessionOpen]);
 
+  // Cuándo quedó PINTADO el verde/rojo, contado desde la respuesta. El effect
+  // corre justo tras el commit, así que es el fotograma en que se ve.
+  useEffect(() => {
+    if (!practiceRevealed) return;
+    if (!practiceAnswerT0Ref.current) return;
+    console.log(`[practice-sfx] animacion PINTADA a los ${Date.now() - practiceAnswerT0Ref.current}ms`);
+  }, [practiceRevealed]);
+
   async function playPracticeFeedbackSound(correct: boolean, combo = false) {
     // Publica una promesa que resuelve cuando el SFX termina, para que el
     // audio de palabra del context espere a que el sonido de acierto acabe
@@ -8707,7 +8780,7 @@ export function MobileLibraryShell(args: {
       }
       resolveDone();
     };
-    const t0 = Date.now();
+    const t0 = practiceAnswerT0Ref.current || Date.now();
     try {
       // El combo SUSTITUYE al acierto, no se suma: un solo sonido por
       // respuesta. Encadenarlo detrás dejaría la racha 1,4 s por detrás de su
@@ -8737,11 +8810,22 @@ export function MobileLibraryShell(args: {
       // con nada montado.
       const preloaded = practiceFeedbackPreloadRef.current[slot];
       if (preloaded) {
-        await preloaded.replayAsync();
-        console.log(`[practice-sfx] ${slot} via preload en ${Date.now() - t0}ms`);
+        // Se miden DOS cosas distintas, y confundirlas fue el error de antes:
+        //   `llamada`  = lo que tarda replayAsync en resolver (trabajo de JS)
+        //   `SONANDO`  = primer status con posición > 0, o sea el audio ya
+        //                saliendo de verdad. ESTE es el que se compara con la
+        //                animación; el otro no dice nada de lo que se oye.
+        let announced = false;
         preloaded.setOnPlaybackStatusUpdate((status) => {
-          if ("didJustFinish" in status && status.didJustFinish) settle();
+          if (!("isLoaded" in status) || !status.isLoaded) return;
+          if (!announced && status.isPlaying && (status.positionMillis ?? 0) > 0) {
+            announced = true;
+            console.log(`[practice-sfx] ${slot} SONANDO a los ${Date.now() - t0}ms`);
+          }
+          if (status.didJustFinish) settle();
         });
+        await preloaded.replayAsync();
+        console.log(`[practice-sfx] ${slot} llamada ${Date.now() - t0}ms`);
         return;
       }
 
@@ -9043,7 +9127,7 @@ export function MobileLibraryShell(args: {
     // Toggle: tapping the button while it's already playing stops the
     // current playback.
     if (playingHqPracticeClipId === currentPracticeExercise.id) {
-      await stopPracticeHqClip();
+      await stopPracticeHqClip("L9081");
       return;
     }
     if (speakingPracticePromptId === currentPracticeExercise.id) {
@@ -9073,7 +9157,7 @@ export function MobileLibraryShell(args: {
     const stillCurrent = () => practiceAudioSeqRef.current === mySeq;
 
     await stopPracticeContextClip();
-    await stopPracticeHqClip();
+    await stopPracticeHqClip("L9111");
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
     setPracticeAudioFailedId(null); // #7: limpiar el estado de fallo al reintentar
@@ -9165,7 +9249,7 @@ export function MobileLibraryShell(args: {
         { shouldPlay: false, rate: 1.0, shouldCorrectPitch: false },
         (status) => {
           if ("didJustFinish" in status && status.didJustFinish) {
-            void stopPracticeHqClip();
+            void stopPracticeHqClip("L9203");
           }
         }
       );
@@ -9176,10 +9260,10 @@ export function MobileLibraryShell(args: {
       practiceHqSoundRef.current = sound;
       setPlayingHqPracticeClipId(exIdAtPlay);
       setLoadingPracticeAudioId(null);
-      try { await sound.playAsync(); } catch { await stopPracticeHqClip(); }
+      try { await sound.playAsync(); } catch { await stopPracticeHqClip("L9214"); }
     } catch (err) {
       console.error("[mobile practice] listen word audio playback failed", err);
-      await stopPracticeHqClip();
+      await stopPracticeHqClip("L9217");
       if (stillCurrent()) setLoadingPracticeAudioId(null);
     }
   }
@@ -9260,10 +9344,13 @@ export function MobileLibraryShell(args: {
     }
   }
 
-  async function stopPracticeHqClip() {
+  async function stopPracticeHqClip(reason = "?") {
     const sound = practiceHqSoundRef.current;
     setPlayingHqPracticeClipId(null);
     if (!sound) return;
+    // Diagnóstico: la palabra se oía a medias y hacía falta saber QUIÉN la
+    // callaba, no suponerlo.
+    console.log(`[practice-word] STOP por ${reason}`);
     practiceHqSoundRef.current = null;
     try { await sound.stopAsync(); } catch { /* ignore */ }
     try { await sound.unloadAsync(); } catch { /* ignore */ }
@@ -9494,7 +9581,7 @@ export function MobileLibraryShell(args: {
 
   async function stopAllPracticeAudio() {
     await stopPracticeContextClip();
-    await stopPracticeHqClip();
+    await stopPracticeHqClip("L9535");
     await stopPracticeFeedbackSound();
     await stopPracticeCelebrationSound();
     getOptionalSpeechModule()?.stop();
@@ -9569,7 +9656,7 @@ export function MobileLibraryShell(args: {
     if (!audioUrl) return;
 
     await stopPracticeContextClip();
-    await stopPracticeHqClip();
+    await stopPracticeHqClip("L9610");
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
 
@@ -9664,7 +9751,7 @@ export function MobileLibraryShell(args: {
     if (!word) return;
 
     if (playingHqPracticeClipId === currentPracticeExercise.id) {
-      await stopPracticeHqClip();
+      await stopPracticeHqClip("L9705");
       return;
     }
 
@@ -9672,7 +9759,7 @@ export function MobileLibraryShell(args: {
     const stillCurrent = () => practiceAudioSeqRef.current === mySeq;
 
     await stopPracticeContextClip();
-    await stopPracticeHqClip();
+    await stopPracticeHqClip("L9713");
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
 
@@ -9786,7 +9873,7 @@ export function MobileLibraryShell(args: {
         { shouldPlay: false, rate: 1.0, shouldCorrectPitch: false },
         (status) => {
           if ("didJustFinish" in status && status.didJustFinish) {
-            void stopPracticeHqClip();
+            void stopPracticeHqClip("L9827");
           }
         }
       );
@@ -9797,10 +9884,10 @@ export function MobileLibraryShell(args: {
       practiceHqSoundRef.current = sound;
       setPlayingHqPracticeClipId(exIdAtPlay);
       setLoadingPracticeAudioId(null);
-      try { await sound.playAsync(); } catch { await stopPracticeHqClip(); }
+      try { await sound.playAsync(); } catch { await stopPracticeHqClip("L9838"); }
     } catch (err) {
       console.error("[mobile practice] meaning word audio playback failed", err);
-      await stopPracticeHqClip();
+      await stopPracticeHqClip("L9841");
       if (stillCurrent()) setLoadingPracticeAudioId(null);
     }
   }
@@ -9823,7 +9910,7 @@ export function MobileLibraryShell(args: {
     if (!current || current.kind !== "match") return;
 
     if (matchAudioPlayingWord === word) {
-      await stopPracticeHqClip();
+      await stopPracticeHqClip("L9864");
       setMatchAudioPlayingWord(null);
       return;
     }
@@ -9832,7 +9919,7 @@ export function MobileLibraryShell(args: {
     const stillCurrent = () => practiceAudioSeqRef.current === mySeq;
 
     await stopPracticeContextClip();
-    await stopPracticeHqClip();
+    await stopPracticeHqClip("L9873");
     setMatchAudioPlayingWord(null);
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
@@ -9926,7 +10013,7 @@ export function MobileLibraryShell(args: {
         { shouldPlay: false, rate: 1.0, shouldCorrectPitch: false },
         (status) => {
           if ("didJustFinish" in status && status.didJustFinish) {
-            void stopPracticeHqClip();
+            void stopPracticeHqClip("L9967");
             setMatchAudioPlayingWord((curr) => (curr === word ? null : curr));
           }
         }
@@ -9938,10 +10025,10 @@ export function MobileLibraryShell(args: {
       practiceHqSoundRef.current = sound;
       setMatchAudioLoadingWord(null);
       setMatchAudioPlayingWord(word);
-      try { await sound.playAsync(); } catch { await stopPracticeHqClip(); setMatchAudioPlayingWord(null); }
+      try { await sound.playAsync(); } catch { await stopPracticeHqClip("L9979"); setMatchAudioPlayingWord(null); }
     } catch (err) {
       console.error("[mobile practice] match word audio playback failed", err);
-      await stopPracticeHqClip();
+      await stopPracticeHqClip("L9982");
       if (stillCurrent()) {
         setMatchAudioLoadingWord(null);
         setMatchAudioPlayingWord(null);
@@ -9956,7 +10043,7 @@ export function MobileLibraryShell(args: {
     if (!clip?.sentence) { showDebug("playHqOnly skip: no clip.sentence"); return; }
     if (playingHqPracticeClipId === currentPracticeExercise.id) {
       showDebug("playHqOnly toggle stop");
-      await stopPracticeHqClip();
+      await stopPracticeHqClip("L9997");
       return;
     }
 
@@ -9964,7 +10051,7 @@ export function MobileLibraryShell(args: {
     const stillCurrent = () => practiceAudioSeqRef.current === mySeq;
 
     await stopPracticeContextClip();
-    await stopPracticeHqClip();
+    await stopPracticeHqClip("L10005");
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);
 
@@ -10074,7 +10161,7 @@ export function MobileLibraryShell(args: {
         { shouldPlay: false, rate: 1.0, shouldCorrectPitch: false },
         (status) => {
           if ("didJustFinish" in status && status.didJustFinish) {
-            void stopPracticeHqClip();
+            void stopPracticeHqClip("L10115");
             if (isContextAtPlay) {
               setContextAudioFinishedFor(exIdAtPlay);
             }
@@ -10128,12 +10215,12 @@ export function MobileLibraryShell(args: {
         }, 600);
       } catch (e) {
         showDebug(`Hq playAsync FAIL ${(e as Error)?.message?.slice(0,40)}`);
-        await stopPracticeHqClip();
+        await stopPracticeHqClip("L10169");
       }
     } catch (err) {
       showDebug(`Hq outer catch ${(err as Error)?.message?.slice(0,40)}`);
       console.error("[mobile practice] HQ playback failed", err);
-      await stopPracticeHqClip();
+      await stopPracticeHqClip("L10174");
       if (stillCurrent()) setLoadingPracticeAudioId(null);
       if (isContextAtPlay) {
         setContextAudioFinishedFor(exIdAtPlay);
@@ -10420,7 +10507,7 @@ export function MobileLibraryShell(args: {
     if (filled < current.pairs.length) return;
 
     // Stop any in-flight prompt audio the moment the user taps Check.
-    void stopPracticeHqClip();
+    void stopPracticeHqClip("L10461");
     void stopPracticeContextClip();
     getOptionalSpeechModule()?.stop();
     setSpeakingPracticePromptId(null);

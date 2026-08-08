@@ -6408,6 +6408,18 @@
   "deinem": {
    "g": "your (dative, dein)",
    "t": "pronoun"
+  },
+  "bewerbungsgespräch": {
+   "g": "job interview",
+   "t": "noun"
+  },
+  "existenz": {
+   "g": "existence; here, having a legal life in Germany",
+   "t": "noun"
+  },
+  "kündigt": {
+   "g": "announces (ankündigen), with its 'an' at the end of the sentence",
+   "t": "verb"
   }
  }
 }

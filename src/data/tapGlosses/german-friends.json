@@ -6802,6 +6802,42 @@
   "ständchen": {
    "g": "a serenade, a little song for someone",
    "t": "noun"
+  },
+  "achims": {
+   "g": "Achim's (Achim, a man's name)",
+   "t": "noun"
+  },
+  "biergarten": {
+   "g": "beer garden",
+   "t": "noun"
+  },
+  "gemecker": {
+   "g": "grumbling, constant complaining",
+   "t": "noun"
+  },
+  "grüße": {
+   "g": "greetings, regards (Gruß)",
+   "t": "noun"
+  },
+  "herzblut": {
+   "g": "heart and soul, passion",
+   "t": "noun"
+  },
+  "kehren": {
+   "g": "to sweep",
+   "t": "verb"
+  },
+  "nieselregen": {
+   "g": "drizzle, fine steady rain",
+   "t": "noun"
+  },
+  "schwarzgelb": {
+   "g": "black and yellow, the colours of Borussia Dortmund",
+   "t": "adjective"
+  },
+  "sparen": {
+   "g": "to save money",
+   "t": "verb"
   }
  }
 }

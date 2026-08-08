@@ -6032,6 +6032,190 @@
   "dauert": {
    "g": "takes, lasts (dauern)",
    "t": "verb"
+  },
+  "ablegt": {
+   "g": "casts off, leaves the dock (ablegen)",
+   "t": "verb"
+  },
+  "anbieten": {
+   "g": "to offer",
+   "t": "verb"
+  },
+  "andersherum": {
+   "g": "the other way round",
+   "t": "adverb"
+  },
+  "anstellen": {
+   "g": "to queue up, to join the line (sich anstellen)",
+   "t": "verb"
+  },
+  "backstein": {
+   "g": "red brick, the classic building material in Hamburg",
+   "t": "noun"
+  },
+  "dahin": {
+   "g": "until then (bis dahin)",
+   "t": "adverb"
+  },
+  "fenster": {
+   "g": "window; here: assigned time slot (das Fenster)",
+   "t": "noun"
+  },
+  "fließend": {
+   "g": "fluently",
+   "t": "adverb"
+  },
+  "fähre": {
+   "g": "ferry",
+   "t": "noun"
+  },
+  "gekämpft": {
+   "g": "fought (kämpfen)",
+   "t": "verb"
+  },
+  "geschrien": {
+   "g": "shouted (schreien)",
+   "t": "verb"
+  },
+  "grundriss": {
+   "g": "floor plan of a flat",
+   "t": "noun"
+  },
+  "grün": {
+   "g": "green",
+   "t": "adjective"
+  },
+  "hamburgisch": {
+   "g": "the Hamburg way of speaking",
+   "t": "noun"
+  },
+  "handel": {
+   "g": "the deal, the bargain",
+   "t": "noun"
+  },
+  "hinweis": {
+   "g": "a heads-up, a word of warning",
+   "t": "noun"
+  },
+  "hoffen": {
+   "g": "to hope",
+   "t": "verb"
+  },
+  "irgendwo": {
+   "g": "somewhere",
+   "t": "adverb"
+  },
+  "kündigt": {
+   "g": "gives notice, ends a contract (kündigen)",
+   "t": "verb"
+  },
+  "kündigung": {
+   "g": "formal cancellation of a contract (die Kündigung)",
+   "t": "noun"
+  },
+  "nachricht": {
+   "g": "message, news (die Nachricht)",
+   "t": "noun"
+  },
+  "neuland": {
+   "g": "new territory, unfamiliar ground",
+   "t": "noun"
+  },
+  "probetörn": {
+   "g": "a trial sail, a taster trip on a boat",
+   "t": "noun"
+  },
+  "rechnet": {
+   "g": "calculates (rechnen)",
+   "t": "verb"
+  },
+  "riecht": {
+   "g": "smells (riechen)",
+   "t": "verb"
+  },
+  "schlechte": {
+   "g": "bad (schlecht)",
+   "t": "adjective"
+  },
+  "schreit": {
+   "g": "shouts (schreien)",
+   "t": "verb"
+  },
+  "sieben": {
+   "g": "seven",
+   "t": "number"
+  },
+  "stand": {
+   "g": "stood; was written (stehen, past)",
+   "t": "verb"
+  },
+  "stillen": {
+   "g": "quiet; still (stillen)",
+   "t": "adjective"
+  },
+  "südbalkon": {
+   "g": "south-facing balcony, the one everyone wants",
+   "t": "noun"
+  },
+  "trägt": {
+   "g": "carries, wears",
+   "t": "verb"
+  },
+  "umzüge": {
+   "g": "house moves (Umzug)",
+   "t": "noun"
+  },
+  "vergisst": {
+   "g": "forgets (vergessen)",
+   "t": "verb"
+  },
+  "verkauft": {
+   "g": "sells (verkaufen)",
+   "t": "verb"
+  },
+  "verlieben": {
+   "g": "to fall in love (sich verlieben)",
+   "t": "verb"
+  },
+  "vier": {
+   "g": "four",
+   "t": "number"
+  },
+  "völlig": {
+   "g": "completely, totally",
+   "t": "adverb"
+  },
+  "wohnungen": {
+   "g": "flats, apartments (Wohnung)",
+   "t": "noun"
+  },
+  "wortspiel": {
+   "g": "a play on words, a pun",
+   "t": "noun"
+  },
+  "zeiten": {
+   "g": "times, eras",
+   "t": "noun"
+  },
+  "zeitplan": {
+   "g": "schedule, timetable",
+   "t": "noun"
+  },
+  "zweiter": {
+   "g": "second (zweite)",
+   "t": "adjective"
+  },
+  "überfall": {
+   "g": "a raid; used jokingly for turning up unannounced",
+   "t": "noun"
+  },
+  "überholen": {
+   "g": "to overtake, to jump ahead of someone",
+   "t": "verb"
+  },
+  "überholt": {
+   "g": "overtakes, gets ahead of (überholen)",
+   "t": "verb"
   }
  }
 }

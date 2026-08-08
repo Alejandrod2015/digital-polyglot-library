@@ -1,0 +1,586 @@
+{
+  "spanish-traveler-mexico-a0": {
+    "vivió": {
+      "g": "lived (vivir)",
+      "t": "verb"
+    },
+    "kahlo": {
+      "g": "Frida Kahlo, Mexico's most famous painter",
+      "t": "noun"
+    },
+    "llorar": {
+      "g": "to cry",
+      "t": "verb"
+    },
+    "desconocida": {
+      "g": "a stranger (a woman you don't know)",
+      "t": "noun"
+    },
+    "calladas": {
+      "g": "quiet, silent (callado)",
+      "t": "adjective"
+    },
+    "despide": {
+      "g": "says goodbye (despedirse)",
+      "t": "verb"
+    },
+    "molestar": {
+      "g": "to bother, to trouble someone",
+      "t": "verb"
+    },
+    "brillantes": {
+      "g": "bright, vivid (brillante)",
+      "t": "adjective"
+    },
+    "pintura": {
+      "g": "paint; also a painting",
+      "t": "noun"
+    },
+    "llevársela": {
+      "g": "to take it home with her (llevarse)",
+      "t": "verb"
+    },
+    "romperlo": {
+      "g": "to break it (romper)",
+      "t": "verb"
+    },
+    "verlos": {
+      "g": "to see them (ver)",
+      "t": "verb"
+    },
+    "espere": {
+      "g": "wait (esperar), said politely",
+      "t": "verb"
+    },
+    "cubriendo": {
+      "g": "covering (cubrir)",
+      "t": "verb"
+    },
+    "cubierta": {
+      "g": "covered in (cubrir)",
+      "t": "adjective"
+    },
+    "llorosos": {
+      "g": "watery, teary (lloroso)",
+      "t": "adjective"
+    },
+    "reír": {
+      "g": "to laugh",
+      "t": "verb"
+    },
+    "rinde": {
+      "g": "gives up (rendirse); no se rinde, she doesn't give up",
+      "t": "verb"
+    },
+    "calmar": {
+      "g": "to soothe, to cool down",
+      "t": "verb"
+    },
+    "lleve": {
+      "g": "has in it (llevar), used for ingredients",
+      "t": "verb"
+    },
+    "quede": {
+      "g": "works, turns out well (quedar)",
+      "t": "verb"
+    },
+    "salada": {
+      "g": "savoury, salty (salado)",
+      "t": "adjective"
+    },
+    "distintas": {
+      "g": "different from each other (distinto)",
+      "t": "adjective"
+    },
+    "mezclarse": {
+      "g": "to blend together (mezclar)",
+      "t": "verb"
+    },
+    "mirándola": {
+      "g": "looking at her (mirar)",
+      "t": "verb"
+    },
+    "capturar": {
+      "g": "to capture, to catch on camera",
+      "t": "verb"
+    },
+    "frustrada": {
+      "g": "frustrated (frustrado)",
+      "t": "adjective"
+    },
+    "rincones": {
+      "g": "corners, little spots (rincón)",
+      "t": "noun"
+    },
+    "sorprende": {
+      "g": "is surprised (sorprenderse)",
+      "t": "verb"
+    },
+    "tenga": {
+      "g": "has (tener), after doubt or surprise",
+      "t": "verb"
+    },
+    "besaban": {
+      "g": "used to kiss each other (besarse)",
+      "t": "verb"
+    },
+    "besa": {
+      "g": "kisses (besar)",
+      "t": "verb"
+    },
+    "agradecerle": {
+      "g": "to thank her (agradecer)",
+      "t": "verb"
+    },
+    "asegura": {
+      "g": "assures her, promises (asegurar)",
+      "t": "verb"
+    },
+    "abuelos": {
+      "g": "grandparents",
+      "t": "noun"
+    },
+    "venían": {
+      "g": "came from (venir)",
+      "t": "verb"
+    },
+    "templos": {
+      "g": "temples (templo)",
+      "t": "noun"
+    },
+    "silenciosos": {
+      "g": "silent (silencioso)",
+      "t": "adjective"
+    },
+    "inmenso": {
+      "g": "immense, huge",
+      "t": "adjective"
+    },
+    "chapuzón": {
+      "g": "a quick dip in the water",
+      "t": "noun"
+    },
+    "dudarlo": {
+      "g": "to hesitate (dudar); sin dudarlo, without a second thought",
+      "t": "verb"
+    },
+    "crecen": {
+      "g": "grow (crecer)",
+      "t": "verb"
+    },
+    "recordarlo": {
+      "g": "to remember it (recordar)",
+      "t": "verb"
+    },
+    "empinadas": {
+      "g": "steep (empinado)",
+      "t": "adjective"
+    },
+    "vagón": {
+      "g": "carriage, the car of a train",
+      "t": "noun"
+    },
+    "pintan": {
+      "g": "are painted (pintarse)",
+      "t": "verb"
+    },
+    "amarillo": {
+      "g": "yellow",
+      "t": "adjective"
+    },
+    "quedando": {
+      "g": "being left behind (quedarse)",
+      "t": "verb"
+    },
+    "vestidos": {
+      "g": "dressed in (vestido)",
+      "t": "adjective"
+    },
+    "cante": {
+      "g": "sing (cantar), as a request",
+      "t": "verb"
+    },
+    "haberse": {
+      "g": "having (haber); haberse quedado, having stayed",
+      "t": "verb"
+    },
+    "quedado": {
+      "g": "stayed (quedarse)",
+      "t": "verb"
+    },
+    "desconocidos": {
+      "g": "strangers, people you don't know",
+      "t": "noun"
+    },
+    "dudas": {
+      "g": "doubts, second thoughts",
+      "t": "noun"
+    },
+    "león": {
+      "g": "León, a man's name; the word also means lion",
+      "t": "noun"
+    },
+    "mueven": {
+      "g": "sway, move (moverse)",
+      "t": "verb"
+    },
+    "cansancio": {
+      "g": "tiredness",
+      "t": "noun"
+    },
+    "refugiarse": {
+      "g": "to take shelter",
+      "t": "verb"
+    },
+    "mirándolo": {
+      "g": "looking at it (mirar)",
+      "t": "verb"
+    },
+    "acordarse": {
+      "g": "to remember, to think back on",
+      "t": "verb"
+    },
+    "memo": {
+      "g": "Memo, the everyday nickname for Guillermo",
+      "t": "noun"
+    },
+    "pueda": {
+      "g": "can (poder), after doubt or surprise",
+      "t": "verb"
+    },
+    "complicada": {
+      "g": "complex, intricate (complicado)",
+      "t": "adjective"
+    },
+    "postre": {
+      "g": "dessert; de postre, for dessert",
+      "t": "noun"
+    },
+    "saborea": {
+      "g": "is savoured slowly (saborear)",
+      "t": "verb"
+    },
+    "estantes": {
+      "g": "shelves (estante)",
+      "t": "noun"
+    },
+    "cuál": {
+      "g": "which one",
+      "t": "pronoun"
+    },
+    "elegir": {
+      "g": "to choose",
+      "t": "verb"
+    },
+    "bordes": {
+      "g": "edges, rims (borde)",
+      "t": "noun"
+    },
+    "diferencias": {
+      "g": "differences",
+      "t": "noun"
+    },
+    "meter": {
+      "g": "to put in; meter la cara, to put your face under",
+      "t": "verb"
+    },
+    "usado": {
+      "g": "used before (usar)",
+      "t": "verb"
+    },
+    "respirar": {
+      "g": "to breathe",
+      "t": "verb"
+    },
+    "tubo": {
+      "g": "tube, the snorkel you breathe through",
+      "t": "noun"
+    },
+    "descubre": {
+      "g": "discovers (descubrir)",
+      "t": "verb"
+    },
+    "sonreír": {
+      "g": "to smile",
+      "t": "verb"
+    },
+    "venció": {
+      "g": "overcame, beat (vencer)",
+      "t": "verb"
+    },
+    "trompeta": {
+      "g": "trumpet",
+      "t": "noun"
+    },
+    "dedica": {
+      "g": "dedicates it to her (dedicar)",
+      "t": "verb"
+    }
+  },
+  "german-hamburg": {
+    "backstein": {
+      "g": "red brick, the classic building material in Hamburg",
+      "t": "noun"
+    },
+    "verlieben": {
+      "g": "to fall in love (sich verlieben)",
+      "t": "verb"
+    },
+    "hinweis": {
+      "g": "a heads-up, a word of warning",
+      "t": "noun"
+    },
+    "wohnungen": {
+      "g": "flats, apartments (Wohnung)",
+      "t": "noun"
+    },
+    "wortspiel": {
+      "g": "a play on words, a pun",
+      "t": "noun"
+    },
+    "irgendwo": {
+      "g": "somewhere",
+      "t": "adverb"
+    },
+    "grundriss": {
+      "g": "floor plan of a flat",
+      "t": "noun"
+    },
+    "südbalkon": {
+      "g": "south-facing balcony, the one everyone wants",
+      "t": "noun"
+    },
+    "fließend": {
+      "g": "fluently",
+      "t": "adverb"
+    },
+    "hamburgisch": {
+      "g": "the Hamburg way of speaking",
+      "t": "noun"
+    },
+    "umzüge": {
+      "g": "house moves (Umzug)",
+      "t": "noun"
+    },
+    "fähre": {
+      "g": "ferry",
+      "t": "noun"
+    },
+    "ablegt": {
+      "g": "casts off, leaves the dock (ablegen)",
+      "t": "verb"
+    },
+    "andersherum": {
+      "g": "the other way round",
+      "t": "adverb"
+    },
+    "schlechte": {
+      "g": "bad (schlecht)",
+      "t": "adjective"
+    },
+    "kündigt": {
+      "g": "gives notice, ends a contract (kündigen)",
+      "t": "verb"
+    },
+    "handel": {
+      "g": "the deal, the bargain",
+      "t": "noun"
+    },
+    "anstellen": {
+      "g": "to queue up, to join the line (sich anstellen)",
+      "t": "verb"
+    },
+    "hoffen": {
+      "g": "to hope",
+      "t": "verb"
+    },
+    "überholt": {
+      "g": "overtakes, gets ahead of (überholen)",
+      "t": "verb"
+    },
+    "überholen": {
+      "g": "to overtake, to jump ahead of someone",
+      "t": "verb"
+    },
+    "grün": {
+      "g": "green",
+      "t": "adjective"
+    },
+    "zeitplan": {
+      "g": "schedule, timetable",
+      "t": "noun"
+    },
+    "gekämpft": {
+      "g": "fought (kämpfen)",
+      "t": "verb"
+    },
+    "geschrien": {
+      "g": "shouted (schreien)",
+      "t": "verb"
+    },
+    "schreit": {
+      "g": "shouts (schreien)",
+      "t": "verb"
+    },
+    "zweiter": {
+      "g": "second (zweite)",
+      "t": "adjective"
+    },
+    "neuland": {
+      "g": "new territory, unfamiliar ground",
+      "t": "noun"
+    },
+    "überfall": {
+      "g": "a raid; used jokingly for turning up unannounced",
+      "t": "noun"
+    },
+    "probetörn": {
+      "g": "a trial sail, a taster trip on a boat",
+      "t": "noun"
+    },
+    "anbieten": {
+      "g": "to offer",
+      "t": "verb"
+    }
+  },
+  "spanish-friends-spain-a0": {
+    "amparo": {
+      "g": "Amparo, a woman's first name",
+      "t": "noun"
+    },
+    "besos": {
+      "g": "kisses (beso); dos besos is the normal Spanish greeting",
+      "t": "noun"
+    }
+  },
+  "german-expat": {
+    "kündigt": {
+      "g": "announces (ankündigen), with its 'an' at the end of the sentence",
+      "t": "verb"
+    },
+    "bewerbungsgespräch": {
+      "g": "job interview",
+      "t": "noun"
+    },
+    "existenz": {
+      "g": "existence; here, having a legal life in Germany",
+      "t": "noun"
+    }
+  },
+  "german-friends": {
+    "sparen": {
+      "g": "to save money",
+      "t": "verb"
+    },
+    "kehren": {
+      "g": "to sweep",
+      "t": "verb"
+    },
+    "schwarzgelb": {
+      "g": "black and yellow, the colours of Borussia Dortmund",
+      "t": "adjective"
+    },
+    "biergarten": {
+      "g": "beer garden",
+      "t": "noun"
+    },
+    "grüße": {
+      "g": "greetings, regards (Gruß)",
+      "t": "noun"
+    },
+    "achims": {
+      "g": "Achim's (Achim, a man's name)",
+      "t": "noun"
+    },
+    "nieselregen": {
+      "g": "drizzle, fine steady rain",
+      "t": "noun"
+    },
+    "gemecker": {
+      "g": "grumbling, constant complaining",
+      "t": "noun"
+    }
+  },
+  "spanish-friends-argentina": {
+    "encierra": {
+      "g": "shuts us in (encerrar)",
+      "t": "verb"
+    },
+    "bombonera": {
+      "g": "La Bombonera, Boca Juniors' stadium in Buenos Aires",
+      "t": "noun"
+    },
+    "alimenta": {
+      "g": "feeds (alimentar)",
+      "t": "verb"
+    }
+  },
+  "spanish-friends-colombia": {
+    "arenosa": {
+      "g": "La Arenosa, the nickname for Barranquilla",
+      "t": "noun"
+    },
+    "perdona": {
+      "g": "forgives (perdonar); no perdona, it shows no mercy",
+      "t": "verb"
+    },
+    "apagaron": {
+      "g": "they switched it off (apagar)",
+      "t": "verb"
+    },
+    "videollamada": {
+      "g": "video call",
+      "t": "noun"
+    },
+    "pola": {
+      "g": "beer, in Colombian slang",
+      "t": "noun"
+    },
+    "reto": {
+      "g": "a challenge, a dare",
+      "t": "noun"
+    }
+  },
+  "spanish-friends-mexico": {
+    "asada": {
+      "g": "grilled (asado); carne asada is a barbecue with friends",
+      "t": "adjective"
+    },
+    "tajín": {
+      "g": "El Tajín, an ancient city in Veracruz",
+      "t": "noun"
+    },
+    "almuerza": {
+      "g": "has lunch (almorzar)",
+      "t": "verb"
+    }
+  },
+  "spanish-friends": {
+    "arregla": {
+      "g": "sorts itself out (arreglarse)",
+      "t": "verb"
+    },
+    "superó": {
+      "g": "got the better of us (superar)",
+      "t": "verb"
+    }
+  },
+  "spanish-traveler-latam": {
+    "vigilancia": {
+      "g": "surveillance, keeping watch",
+      "t": "noun"
+    },
+    "equivocada": {
+      "g": "wrong, the wrong one (equivocado)",
+      "t": "adjective"
+    },
+    "rescate": {
+      "g": "a rescue",
+      "t": "noun"
+    },
+    "convencer": {
+      "g": "to convince, to talk someone round",
+      "t": "verb"
+    }
+  }
+}

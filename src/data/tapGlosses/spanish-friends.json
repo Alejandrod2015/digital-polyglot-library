@@ -6946,6 +6946,38 @@
   "huella": {
    "g": "dejar huella = to leave a mark",
    "t": "noun"
+  },
+  "arregla": {
+   "g": "sorts itself out (arreglarse)",
+   "t": "verb"
+  },
+  "buscó": {
+   "g": "looked for",
+   "t": "verb"
+  },
+  "da": {
+   "g": "he turns over",
+   "t": "verb"
+  },
+  "llega": {
+   "g": "arrives",
+   "t": "verb"
+  },
+  "nuevo": {
+   "g": "new",
+   "t": "adjective"
+  },
+  "sabe": {
+   "g": "knows, tastes",
+   "t": "verb"
+  },
+  "superó": {
+   "g": "got the better of us (superar)",
+   "t": "verb"
+  },
+  "toca": {
+   "g": "touches, has to",
+   "t": "verb"
   }
  }
 }

@@ -7968,6 +7968,42 @@
   "único": {
    "g": "unique",
    "t": "adjective"
+  },
+  "confiesa": {
+   "g": "confesses, admits",
+   "t": "verb"
+  },
+  "convencer": {
+   "g": "to convince, to talk someone round",
+   "t": "verb"
+  },
+  "dormir": {
+   "g": "to sleep",
+   "t": "verb"
+  },
+  "equivocada": {
+   "g": "wrong, the wrong one (equivocado)",
+   "t": "adjective"
+  },
+  "guía": {
+   "g": "a guide",
+   "t": "noun"
+  },
+  "promesa": {
+   "g": "a promise",
+   "t": "noun"
+  },
+  "rescate": {
+   "g": "a rescue",
+   "t": "noun"
+  },
+  "tras": {
+   "g": "uno tras otro = one after another",
+   "t": "preposition"
+  },
+  "vigilancia": {
+   "g": "surveillance, keeping watch",
+   "t": "noun"
   }
  }
 }
