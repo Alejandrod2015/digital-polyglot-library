@@ -1,6 +1,6 @@
 // Public endpoint for the /beta page form. Anyone can submit; no auth.
 // Validates shape, enforces consent, dedupes by email, fires a Resend
-// confirmation. Admin reviews submissions at /studio/beta-signups.
+// confirmation. Admin reviews submissions at /studio/beta.
 //
 // Antibot stack (added 2026-05-22):
 //   1. Honeypot field `website` (hidden in client form). Llega lleno = bot.

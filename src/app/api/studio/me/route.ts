@@ -27,7 +27,7 @@ const NAV_HREFS = [
   "/studio/progreso",
   "/studio/metrics",
   "/studio/config",
-  "/studio/beta-signups",
+  "/studio/beta",
   "/studio/settings",
 ];
 

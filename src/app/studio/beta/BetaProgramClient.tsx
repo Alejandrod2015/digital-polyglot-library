@@ -13,6 +13,27 @@ const ACCENT = "#14b8a6";
 
 type Tab = "review" | "testers" | "feedback" | "releases" | "rules";
 
+/**
+ * Silent capture from the browser at form mount: where they came from and
+ * where they were. Never asked, so it is the only unbiased answer we get to
+ * "what is actually bringing testers in".
+ */
+type Attribution = {
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmContent?: string;
+  utmTerm?: string;
+  referrer?: string;
+  landingUrl?: string;
+  timezone?: string;
+  country?: string;
+  region?: string;
+  city?: string;
+  browserLanguage?: string;
+  userAgent?: string;
+};
+
 type Applicant = {
   id: string;
   email: string;
@@ -30,6 +51,8 @@ type Applicant = {
   motivation: string | null;
   referralSource: string | null;
   applicationReason: string | null;
+  attribution: Attribution | null;
+  currentApps: string | null;
   status: string;
   score: number | null;
   decision: string | null;
@@ -354,6 +377,128 @@ function labelStyle(): React.CSSProperties {
   return { fontSize: 11, fontWeight: 700, color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.06em" };
 }
 
+/* ── attribution: where they came from, never asked ── */
+
+/** ISO 3166-1 alpha-2 to flag emoji, each letter offset to its indicator. */
+function countryFlag(code?: string): string {
+  if (!code || code.length !== 2) return "";
+  const A = 0x1f1e6;
+  const baseA = "A".charCodeAt(0);
+  const a = code.toUpperCase().charCodeAt(0);
+  const b = code.toUpperCase().charCodeAt(1);
+  if (a < baseA || a > baseA + 25 || b < baseA || b > baseA + 25) return "";
+  return String.fromCodePoint(A + (a - baseA)) + String.fromCodePoint(A + (b - baseA));
+}
+
+function formatLocation(attr: Attribution | null): string | null {
+  if (!attr) return null;
+  const parts = [attr.city, attr.region, attr.country].filter(Boolean);
+  if (parts.length === 0) return null;
+  return [countryFlag(attr.country), parts.join(", ")].filter(Boolean).join(" ");
+}
+
+function shortHost(url: string): string {
+  try {
+    return new URL(url).host.replace(/^www\./, "");
+  } catch {
+    return url.length > 40 ? `${url.slice(0, 40)}...` : url;
+  }
+}
+
+/** The campaign if there was one, the referring host otherwise, nothing if direct. */
+function formatSource(attr: Attribution | null): string | null {
+  if (!attr) return null;
+  if (attr.utmSource) {
+    return [attr.utmSource, attr.utmMedium, attr.utmCampaign].filter(Boolean).join("/");
+  }
+  return attr.referrer ? shortHost(attr.referrer) : null;
+}
+
+/** Location and source on one muted line. Absent rather than blank when unknown. */
+function AttributionLine({ attr }: { attr: Attribution | null }) {
+  const location = formatLocation(attr);
+  const source = formatSource(attr);
+  if (!location && !source) return null;
+  return (
+    <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
+      {location}
+      {location && source && " · "}
+      {source && (
+        <span style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace", fontSize: 11 }}>
+          via {source}
+        </span>
+      )}
+    </div>
+  );
+}
+
+/**
+ * Admin notes, one line until you click it. Writes through the same `note`
+ * action the automation uses, so there is no second path to this column.
+ */
+function NotesField({
+  applicant,
+  busy,
+  onAction,
+}: {
+  applicant: Applicant;
+  busy: string | null;
+  onAction: (id: string, action: string, extra?: Record<string, unknown>) => Promise<void>;
+}) {
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState("");
+
+  if (!editing) {
+    return (
+      <div
+        style={{
+          fontSize: 12,
+          marginTop: 8,
+          cursor: "pointer",
+          whiteSpace: "pre-wrap",
+          color: applicant.notes ? "var(--foreground)" : "var(--muted)",
+        }}
+        onClick={() => {
+          setDraft(applicant.notes ?? "");
+          setEditing(true);
+        }}
+      >
+        <span style={{ fontWeight: 700, color: "var(--muted)" }}>Notes: </span>
+        {applicant.notes || "click to add"}
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ display: "flex", gap: 6, marginTop: 8 }}>
+      <textarea
+        style={{ ...areaStyle, height: 56, flex: 1, fontSize: 12 }}
+        value={draft}
+        onChange={(e) => setDraft(e.target.value)}
+        autoFocus
+      />
+      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+        <button
+          style={{ ...btn, height: 26, fontSize: 11 }}
+          disabled={busy === applicant.id}
+          onClick={async () => {
+            await onAction(applicant.id, "note", { notes: draft });
+            setEditing(false);
+          }}
+        >
+          Save
+        </button>
+        <button
+          style={{ ...ghostBtn, height: 26, fontSize: 11, padding: "0 8px" }}
+          onClick={() => setEditing(false)}
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  );
+}
+
 /* ── component ── */
 
 export default function BetaProgramClient() {
@@ -408,6 +553,34 @@ export default function BetaProgramClient() {
     [load, say],
   );
 
+  /**
+   * Spam cleanup, and the only destructive control on this screen. Separate
+   * from `decline`, which is a decision about a real person and sends them an
+   * email: this one is for rows that were never an application.
+   */
+  const applicantDelete = useCallback(
+    async (id: string, email: string) => {
+      if (!confirm(`Delete the application from ${email}? This cannot be undone.`)) return;
+      setBusy(id);
+      try {
+        const res = await fetch("/api/studio/beta/applicants", {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id }),
+        });
+        const json = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(json.error ?? `HTTP ${res.status}`);
+        say(`Deleted ${email}`);
+        await load();
+      } catch (err) {
+        say(`Failed: ${String(err)}`);
+      } finally {
+        setBusy(null);
+      }
+    },
+    [load, say],
+  );
+
   const feedbackPatch = useCallback(
     async (id: string, patch: Record<string, unknown>) => {
       setBusy(id);
@@ -427,6 +600,78 @@ export default function BetaProgramClient() {
     },
     [load, say],
   );
+
+  // Every applicant, flat, for reading outside this screen. Attribution columns
+  // included: they are the reason anyone exports this rather than screenshotting
+  // the queue.
+  function exportCsv(applicants: Applicant[]) {
+    const header = [
+      "email",
+      "firstName",
+      "platform",
+      "nativeLanguage",
+      "targetLanguage",
+      "currentLevel",
+      "weeklyHours",
+      "motivation",
+      "referralSource",
+      "applicationReason",
+      "score",
+      "status",
+      "decision",
+      "notes",
+      "country",
+      "city",
+      "utmSource",
+      "utmMedium",
+      "utmCampaign",
+      "referrer",
+      "landingUrl",
+      "invitedAt",
+      "createdAt",
+    ];
+    const escape = (v: unknown) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+    const lines = [header.join(",")];
+    for (const a of applicants) {
+      const attr = a.attribution ?? {};
+      lines.push(
+        [
+          a.email,
+          a.firstName,
+          a.platform ?? "ios",
+          a.nativeLanguage,
+          a.targetLanguage,
+          a.currentLevel,
+          a.weeklyHours,
+          a.motivation,
+          a.referralSource,
+          a.applicationReason,
+          a.score,
+          a.status,
+          a.decision,
+          a.notes,
+          attr.country,
+          attr.city,
+          attr.utmSource,
+          attr.utmMedium,
+          attr.utmCampaign,
+          attr.referrer,
+          attr.landingUrl,
+          a.invitedAt,
+          a.createdAt,
+        ]
+          .map(escape)
+          .join(","),
+      );
+    }
+    const blob = new Blob([lines.join("\n")], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `beta-applicants-${new Date().toISOString().slice(0, 10)}.csv`;
+    link.click();
+    URL.revokeObjectURL(url);
+  }
 
   if (loading) return <div style={{ color: "var(--muted)", padding: 24 }}>Loading the beta program...</div>;
   if (error) return <div style={{ color: "#f87171", padding: 24 }}>{error}</div>;
@@ -457,7 +702,7 @@ export default function BetaProgramClient() {
         <div style={{ ...card, borderColor: ACCENT, color: "var(--foreground)", fontSize: 13 }}>{flash}</div>
       )}
 
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
         {tabs.map((t) => (
           <button
             key={t.key}
@@ -473,6 +718,13 @@ export default function BetaProgramClient() {
             {t.count !== undefined && ` (${t.count})`}
           </button>
         ))}
+        <button
+          style={{ ...ghostBtn, marginLeft: "auto" }}
+          disabled={data.applicants.length === 0}
+          onClick={() => exportCsv(data.applicants)}
+        >
+          Export CSV
+        </button>
       </div>
 
       {data.hiddenTestRows > 0 && (
@@ -486,6 +738,7 @@ export default function BetaProgramClient() {
           applicants={needsReview}
           busy={busy}
           onAction={applicantAction}
+          onDelete={applicantDelete}
         />
       )}
 
@@ -683,10 +936,12 @@ function ReviewQueue({
   applicants,
   busy,
   onAction,
+  onDelete,
 }: {
   applicants: Applicant[];
   busy: string | null;
   onAction: (id: string, action: string, extra?: Record<string, unknown>) => Promise<void>;
+  onDelete: (id: string, email: string) => Promise<void>;
 }) {
   if (applicants.length === 0) {
     return (
@@ -708,6 +963,7 @@ function ReviewQueue({
               <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
                 {a.targetLanguage} · {a.currentLevel} · {a.weeklyHours ?? "?"} hrs/wk · {a.motivation ?? "?"} · via {a.referralSource ?? "?"}
               </div>
+              <AttributionLine attr={a.attribution} />
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <span style={pill(a.status)}>{a.status}</span>
@@ -742,7 +998,18 @@ function ReviewQueue({
             </div>
           )}
 
-          <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
+          {/* Legacy free-text field from the old form. Kept because the rows
+              that have it are our earliest applicants. */}
+          {a.currentApps && (
+            <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 8 }}>
+              <span style={{ fontWeight: 700 }}>Apps: </span>
+              {a.currentApps}
+            </div>
+          )}
+
+          <NotesField applicant={a} busy={busy} onAction={onAction} />
+
+          <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap", alignItems: "center" }}>
             <button style={btn} disabled={busy === a.id} onClick={() => onAction(a.id, "invite")}>
               {busy === a.id ? "Working..." : "Invite to TestFlight"}
             </button>
@@ -751,6 +1018,16 @@ function ReviewQueue({
             </button>
             <button style={dangerBtn} disabled={busy === a.id} onClick={() => onAction(a.id, "decline")}>
               Decline
+            </button>
+            {/* Deliberately last and unstyled as an action: declining writes to
+                a person, deleting says there was never a person here. */}
+            <button
+              style={{ ...ghostBtn, marginLeft: "auto", fontSize: 11 }}
+              disabled={busy === a.id}
+              onClick={() => onDelete(a.id, a.email)}
+              title="Spam only. Removes the row without emailing anyone."
+            >
+              Delete (spam)
             </button>
           </div>
         </div>
@@ -803,6 +1080,7 @@ function Testers({
                 <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
                   {t.targetLanguage} · invited {ago(t.invitedAt)} · {t._count?.feedback ?? 0} reports
                 </div>
+                <AttributionLine attr={t.attribution} />
                 {/* What they actually did, not just that they opened the app.
                     Absent until they sign in, which is itself the signal. */}
                 {t.usage ? (
@@ -852,6 +1130,8 @@ function Testers({
                 </button>
               </div>
             </div>
+
+            <NotesField applicant={t} busy={busy} onAction={onAction} />
           </div>
         );
       })}
