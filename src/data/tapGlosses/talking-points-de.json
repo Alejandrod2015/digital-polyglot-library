@@ -1,140 +1,550 @@
 {
-  "slugs": ["warum-keine-karte"],
-  "glosses": {
-    "allein": { "g": "alone; 'nicht allein' = not the only one doing it", "t": "adverb" },
-    "als": { "g": "as, than", "t": "conjunction" },
-    "altmodisch": { "g": "old-fashioned", "t": "adjective" },
-    "am": { "g": "at the; contraction of an + dem", "t": "preposition" },
-    "an": { "g": "at, on; here, standing at the till", "t": "preposition" },
-    "auch": { "g": "also, too", "t": "adverb" },
-    "auf": { "g": "on, onto; 'zeigt auf' = points at", "t": "preposition" },
-    "automat": { "g": "short for Geldautomat, a cash machine", "t": "noun" },
-    "bar": { "g": "in cash; 'bar zahlen' = to pay with notes and coins", "t": "adverb" },
-    "bargeld": { "g": "cash; literally 'ready money', notes and coins", "t": "noun" },
-    "barzahlung": { "g": "a cash payment; the term banking reports use", "t": "noun" },
-    "befragten": { "g": "the respondents; the people a survey asked", "t": "noun" },
-    "bei": { "g": "at, with; 'bei einem Kaffee' = in the case of a coffee", "t": "preposition" },
-    "billiger": { "g": "cheaper", "t": "adjective" },
-    "bundesbank": { "g": "the Bundesbank, Germany's central bank", "t": "noun" },
-    "cent": { "g": "cent", "t": "noun" },
-    "damit": { "g": "with that; here, 'in that respect'", "t": "adverb" },
-    "danach": { "g": "after that; next in the ranking", "t": "adverb" },
-    "dann": { "g": "then", "t": "adverb" },
-    "das": { "g": "the (neuter); also 'that'", "t": "article" },
-    "dass": { "g": "that; introduces a clause", "t": "conjunction" },
-    "datenschutz": { "g": "data protection; privacy as a legal principle, a German preoccupation", "t": "noun" },
-    "dauert": { "g": "takes (dauern); lasts a given amount of time", "t": "verb" },
-    "dein": { "g": "your", "t": "adjective" },
-    "dem": { "g": "the (dative)", "t": "article" },
-    "den": { "g": "the (accusative masculine, or dative plural)", "t": "article" },
-    "der": { "g": "the (masculine)", "t": "article" },
-    "derselben": { "g": "of the same; 'derselben Befragten' = of those very respondents", "t": "pronoun" },
-    "deshalb": { "g": "therefore, for that reason", "t": "adverb" },
-    "deutschland": { "g": "Germany", "t": "noun" },
-    "die": { "g": "the (feminine, or plural)", "t": "article" },
-    "dienstagabend": { "g": "Tuesday evening", "t": "noun" },
-    "draußen": { "g": "outside", "t": "adverb" },
-    "drei": { "g": "three", "t": "number" },
-    "du": { "g": "you (informal singular)", "t": "pronoun" },
-    "ein": { "g": "a, an", "t": "article" },
-    "eine": { "g": "a, an (feminine)", "t": "article" },
-    "einem": { "g": "a (dative)", "t": "article" },
-    "einen": { "g": "a (accusative masculine)", "t": "article" },
-    "einschränken": { "g": "to restrict; to allow something only within limits", "t": "verb" },
-    "er": { "g": "he", "t": "pronoun" },
-    "erleichtere": { "g": "makes easier (erleichtern); the subjunctive form marks reported speech", "t": "verb" },
-    "es": { "g": "it", "t": "pronoun" },
-    "euro": { "g": "euro", "t": "noun" },
-    "fast": { "g": "almost", "t": "adverb" },
-    "findet": { "g": "finds (finden); here, thinks or holds an opinion", "t": "verb" },
-    "funktioniert": { "g": "works (funktionieren); does what it should", "t": "verb" },
-    "für": { "g": "for", "t": "preposition" },
-    "ganz": { "g": "quite, entirely; 'ganz oben' = right at the top", "t": "adverb" },
-    "geht": { "g": "goes (gehen); 'es geht schneller' = it is quicker", "t": "verb" },
-    "geld": { "g": "money", "t": "noun" },
-    "gemacht": { "g": "made, done (machen); here forms the passive with wird", "t": "verb" },
-    "genau": { "g": "exactly", "t": "adverb" },
-    "gut": { "g": "well; before a number, 'a good', slightly more than", "t": "adverb" },
-    "handel": { "g": "trade, retail; here, shops taken as a sector", "t": "noun" },
-    "hat": { "g": "has (haben)", "t": "verb" },
-    "hälfte": { "g": "half", "t": "noun" },
-    "hältst": { "g": "you hold (halten)", "t": "verb" },
-    "hin": { "g": "towards; splits off from hinhalten, to hold out to someone", "t": "adverb" },
-    "hinter": { "g": "behind", "t": "preposition" },
-    "ihn": { "g": "him, it (accusative)", "t": "pronoun" },
-    "immer": { "g": "always; 'immer noch' = still", "t": "adverb" },
-    "in": { "g": "in", "t": "preposition" },
-    "ist": { "g": "is (sein)", "t": "verb" },
-    "jede": { "g": "every, each; 'jede zweite' = every other one", "t": "pronoun" },
-    "kaffee": { "g": "coffee", "t": "noun" },
-    "karte": { "g": "card; here a bank card", "t": "noun" },
-    "kartenzahlung": { "g": "a card payment", "t": "noun" },
-    "kasse": { "g": "the till; the counter where you pay", "t": "noun" },
-    "kein": { "g": "no, not a; negates a noun", "t": "pronoun" },
-    "kinder": { "g": "children", "t": "noun" },
-    "kleines": { "g": "small (neuter)", "t": "adjective" },
-    "kommt": { "g": "comes (kommen); here, comes next in the list", "t": "verb" },
-    "kostet": { "g": "costs (kosten)", "t": "verb" },
-    "kreditkarte": { "g": "credit card", "t": "noun" },
-    "kunden": { "g": "customers", "t": "noun" },
-    "können": { "g": "to be able to, can", "t": "verb" },
-    "lernen": { "g": "to learn", "t": "verb" },
-    "man": { "g": "one, people in general; the impersonal subject", "t": "pronoun" },
-    "mann": { "g": "man", "t": "noun" },
-    "mehr": { "g": "more", "t": "adverb" },
-    "mit": { "g": "with", "t": "preposition" },
-    "münzen": { "g": "coins", "t": "noun" },
-    "nachgerechnet": { "g": "worked out (nachrechnen); redid the arithmetic to check", "t": "verb" },
-    "neunundsechzig": { "g": "sixty-nine", "t": "number" },
-    "nicht": { "g": "not", "t": "adverb" },
-    "niemandem": { "g": "to nobody (dative of niemand)", "t": "pronoun" },
-    "noch": { "g": "still, yet", "t": "adverb" },
-    "nostalgie": { "g": "nostalgia", "t": "noun" },
-    "nur": { "g": "only", "t": "adverb" },
-    "nähe": { "g": "nearness; 'in der Nähe' = nearby", "t": "noun" },
-    "oben": { "g": "at the top; 'steht ganz oben' = ranks first", "t": "adverb" },
-    "problem": { "g": "problem", "t": "noun" },
-    "prozent": { "g": "per cent", "t": "noun" },
-    "regnet": { "g": "rains (regnen); 'es regnet' = it is raining", "t": "verb" },
-    "rund": { "g": "roughly, about", "t": "adverb" },
-    "rundungsfehler": { "g": "a rounding error; something too small to be worth noticing", "t": "noun" },
-    "sagt": { "g": "says (sagen)", "t": "verb" },
-    "schein": { "g": "a banknote; paper money as opposed to coins", "t": "noun" },
-    "schild": { "g": "a sign", "t": "noun" },
-    "schlicht": { "g": "simply, plainly; no more complicated than that", "t": "adverb" },
-    "schneller": { "g": "faster", "t": "adjective" },
-    "schwarzarbeit": { "g": "undeclared work, paid in cash and hidden from the tax office", "t": "noun" },
-    "sekunden": { "g": "seconds", "t": "noun" },
-    "solle": { "g": "should (sollen); the subjunctive form marks reported speech", "t": "verb" },
-    "sondern": { "g": "but rather; corrects the negative just stated", "t": "conjunction" },
-    "stehst": { "g": "you stand (stehen)", "t": "verb" },
-    "steht": { "g": "stands (stehen); 'steht oben' = ranks at the top", "t": "verb" },
-    "steuerhinterziehung": { "g": "tax evasion", "t": "noun" },
-    "stromausfall": { "g": "a power cut; when the electricity fails and card terminals die with it", "t": "noun" },
-    "stur": { "g": "stubborn; refusing to budge, said with mild irritation", "t": "adjective", "r": "colloquial" },
-    "technik": { "g": "technology; the machines and systems themselves", "t": "noun" },
-    "tresen": { "g": "the counter of a bar or café, the surface you stand at to order", "t": "noun", "r": "colloquial" },
-    "und": { "g": "and", "t": "conjunction" },
-    "unterschrift": { "g": "signature; here, the one on a card receipt", "t": "noun" },
-    "verrät": { "g": "gives away (verraten); reveals what was meant to stay private", "t": "verb" },
-    "vierundzwanzig": { "g": "twenty-four", "t": "number" },
-    "vierzig": { "g": "forty", "t": "number" },
-    "warst": { "g": "you were (sein)", "t": "verb" },
-    "wartet": { "g": "waits (warten)", "t": "verb" },
-    "was": { "g": "what", "t": "pronoun" },
-    "weder": { "g": "'weder ... noch' = neither ... nor", "t": "conjunction" },
-    "weiter": { "g": "on, further; 'regnet weiter' = keeps raining", "t": "adverb" },
-    "wenn": { "g": "when, if", "t": "conjunction" },
-    "widerspruch": { "g": "a contradiction; holding two positions that cannot both stand", "t": "noun" },
-    "wird": { "g": "becomes, is (werden); here it builds the passive", "t": "verb" },
-    "wo": { "g": "where", "t": "conjunction" },
-    "wollen": { "g": "to want", "t": "verb" },
-    "zahlen": { "g": "to pay", "t": "verb" },
-    "zahlung": { "g": "a payment", "t": "noun" },
-    "zeigt": { "g": "points, shows (zeigen)", "t": "verb" },
-    "zwanzig": { "g": "twenty", "t": "number" },
-    "zweite": { "g": "second; 'jede zweite Zahlung' = every other payment", "t": "adjective" },
-    "über": { "g": "over, more than", "t": "preposition" },
-    "überhaupt": { "g": "at all; widens a question to what a thing even is", "t": "adverb", "r": "colloquial" }
+ "slugs": [
+  "warum-keine-karte"
+ ],
+ "glosses": {
+  "allein": {
+   "g": "alone; not the only one doing it ('nicht allein')",
+   "t": "adverb"
+  },
+  "als": {
+   "g": "as, than",
+   "t": "conjunction"
+  },
+  "altmodisch": {
+   "g": "old-fashioned",
+   "t": "adjective"
+  },
+  "am": {
+   "g": "at the; contraction of an + dem",
+   "t": "preposition"
+  },
+  "an": {
+   "g": "at, on; here, standing at the till",
+   "t": "preposition"
+  },
+  "auch": {
+   "g": "also, too",
+   "t": "adverb"
+  },
+  "auf": {
+   "g": "on, onto; points at ('zeigt auf')",
+   "t": "preposition"
+  },
+  "automat": {
+   "g": "short for Geldautomat, a cash machine",
+   "t": "noun"
+  },
+  "bar": {
+   "g": "in cash; to pay with notes and coins ('bar zahlen')",
+   "t": "adverb"
+  },
+  "bargeld": {
+   "g": "cash; literally 'ready money', notes and coins",
+   "t": "noun"
+  },
+  "barzahlung": {
+   "g": "a cash payment; the term banking reports use",
+   "t": "noun"
+  },
+  "befragten": {
+   "g": "the respondents; the people a survey asked",
+   "t": "noun"
+  },
+  "bei": {
+   "g": "at, with; in the case of a coffee ('bei einem Kaffee')",
+   "t": "preposition"
+  },
+  "billiger": {
+   "g": "cheaper",
+   "t": "adjective"
+  },
+  "bundesbank": {
+   "g": "the Bundesbank, Germany's central bank",
+   "t": "noun"
+  },
+  "cent": {
+   "g": "cent",
+   "t": "noun"
+  },
+  "damit": {
+   "g": "with that; here, 'in that respect'",
+   "t": "adverb"
+  },
+  "danach": {
+   "g": "after that; next in the ranking",
+   "t": "adverb"
+  },
+  "dann": {
+   "g": "then",
+   "t": "adverb"
+  },
+  "das": {
+   "g": "the (neuter); also 'that'",
+   "t": "article"
+  },
+  "dass": {
+   "g": "that; introduces a clause",
+   "t": "conjunction"
+  },
+  "datenschutz": {
+   "g": "data protection; privacy as a legal principle, a German preoccupation",
+   "t": "noun"
+  },
+  "dauert": {
+   "g": "takes (dauern); lasts a given amount of time",
+   "t": "verb"
+  },
+  "dein": {
+   "g": "your",
+   "t": "adjective"
+  },
+  "dem": {
+   "g": "the (dative)",
+   "t": "article"
+  },
+  "den": {
+   "g": "the (accusative masculine, or dative plural)",
+   "t": "article"
+  },
+  "der": {
+   "g": "the (masculine)",
+   "t": "article"
+  },
+  "derselben": {
+   "g": "of the same; of those very respondents ('derselben Befragten')",
+   "t": "pronoun"
+  },
+  "deshalb": {
+   "g": "therefore, for that reason",
+   "t": "adverb"
+  },
+  "deutschland": {
+   "g": "Germany",
+   "t": "noun"
+  },
+  "die": {
+   "g": "the (feminine, or plural)",
+   "t": "article"
+  },
+  "dienstagabend": {
+   "g": "Tuesday evening",
+   "t": "noun"
+  },
+  "draußen": {
+   "g": "outside",
+   "t": "adverb"
+  },
+  "drei": {
+   "g": "three",
+   "t": "number"
+  },
+  "du": {
+   "g": "you (informal singular)",
+   "t": "pronoun"
+  },
+  "ein": {
+   "g": "a, an",
+   "t": "article"
+  },
+  "eine": {
+   "g": "a, an (feminine)",
+   "t": "article"
+  },
+  "einem": {
+   "g": "a (dative)",
+   "t": "article"
+  },
+  "einen": {
+   "g": "a (accusative masculine)",
+   "t": "article"
+  },
+  "einschränken": {
+   "g": "to restrict; to allow something only within limits",
+   "t": "verb"
+  },
+  "er": {
+   "g": "he",
+   "t": "pronoun"
+  },
+  "erleichtere": {
+   "g": "makes easier (erleichtern); the subjunctive form marks reported speech",
+   "t": "verb"
+  },
+  "es": {
+   "g": "it",
+   "t": "pronoun"
+  },
+  "euro": {
+   "g": "euro",
+   "t": "noun"
+  },
+  "fast": {
+   "g": "almost",
+   "t": "adverb"
+  },
+  "findet": {
+   "g": "finds (finden); here, thinks or holds an opinion",
+   "t": "verb"
+  },
+  "funktioniert": {
+   "g": "works (funktionieren); does what it should",
+   "t": "verb"
+  },
+  "für": {
+   "g": "for",
+   "t": "preposition"
+  },
+  "ganz": {
+   "g": "quite, entirely; right at the top ('ganz oben')",
+   "t": "adverb"
+  },
+  "geht": {
+   "g": "goes (gehen); it is quicker ('es geht schneller')",
+   "t": "verb"
+  },
+  "geld": {
+   "g": "money",
+   "t": "noun"
+  },
+  "gemacht": {
+   "g": "made, done (machen); here forms the passive with wird",
+   "t": "verb"
+  },
+  "genau": {
+   "g": "exactly",
+   "t": "adverb"
+  },
+  "gut": {
+   "g": "well; before a number, 'a good', slightly more than",
+   "t": "adverb"
+  },
+  "handel": {
+   "g": "trade, retail; here, shops taken as a sector",
+   "t": "noun"
+  },
+  "hat": {
+   "g": "has (haben)",
+   "t": "verb"
+  },
+  "hälfte": {
+   "g": "half",
+   "t": "noun"
+  },
+  "hältst": {
+   "g": "you hold (halten)",
+   "t": "verb"
+  },
+  "hin": {
+   "g": "towards; splits off from hinhalten, to hold out to someone",
+   "t": "adverb"
+  },
+  "hinter": {
+   "g": "behind",
+   "t": "preposition"
+  },
+  "ihn": {
+   "g": "him, it (accusative)",
+   "t": "pronoun"
+  },
+  "immer": {
+   "g": "always; still ('immer noch')",
+   "t": "adverb"
+  },
+  "in": {
+   "g": "in",
+   "t": "preposition"
+  },
+  "ist": {
+   "g": "is (sein)",
+   "t": "verb"
+  },
+  "jede": {
+   "g": "every, each; every other one ('jede zweite')",
+   "t": "pronoun"
+  },
+  "kaffee": {
+   "g": "coffee",
+   "t": "noun"
+  },
+  "karte": {
+   "g": "card; here a bank card",
+   "t": "noun"
+  },
+  "kartenzahlung": {
+   "g": "a card payment",
+   "t": "noun"
+  },
+  "kasse": {
+   "g": "the till; the counter where you pay",
+   "t": "noun"
+  },
+  "kein": {
+   "g": "no, not a; negates a noun",
+   "t": "pronoun"
+  },
+  "kinder": {
+   "g": "children",
+   "t": "noun"
+  },
+  "kleines": {
+   "g": "small (neuter)",
+   "t": "adjective"
+  },
+  "kommt": {
+   "g": "comes (kommen); here, comes next in the list",
+   "t": "verb"
+  },
+  "kostet": {
+   "g": "costs (kosten)",
+   "t": "verb"
+  },
+  "kreditkarte": {
+   "g": "credit card",
+   "t": "noun"
+  },
+  "kunden": {
+   "g": "customers",
+   "t": "noun"
+  },
+  "können": {
+   "g": "to be able to, can",
+   "t": "verb"
+  },
+  "lernen": {
+   "g": "to learn",
+   "t": "verb"
+  },
+  "man": {
+   "g": "one, people in general; the impersonal subject",
+   "t": "pronoun"
+  },
+  "mann": {
+   "g": "man",
+   "t": "noun"
+  },
+  "mehr": {
+   "g": "more",
+   "t": "adverb"
+  },
+  "mit": {
+   "g": "with",
+   "t": "preposition"
+  },
+  "münzen": {
+   "g": "coins",
+   "t": "noun"
+  },
+  "nachgerechnet": {
+   "g": "worked out (nachrechnen); redid the arithmetic to check",
+   "t": "verb"
+  },
+  "neunundsechzig": {
+   "g": "sixty-nine",
+   "t": "number"
+  },
+  "nicht": {
+   "g": "not",
+   "t": "adverb"
+  },
+  "niemandem": {
+   "g": "to nobody (dative of niemand)",
+   "t": "pronoun"
+  },
+  "noch": {
+   "g": "still, yet",
+   "t": "adverb"
+  },
+  "nostalgie": {
+   "g": "nostalgia",
+   "t": "noun"
+  },
+  "nur": {
+   "g": "only",
+   "t": "adverb"
+  },
+  "nähe": {
+   "g": "nearness; nearby ('in der Nähe')",
+   "t": "noun"
+  },
+  "oben": {
+   "g": "at the top; ranks first ('steht ganz oben')",
+   "t": "adverb"
+  },
+  "problem": {
+   "g": "problem",
+   "t": "noun"
+  },
+  "prozent": {
+   "g": "per cent",
+   "t": "noun"
+  },
+  "regnet": {
+   "g": "rains (regnen); it is raining ('es regnet')",
+   "t": "verb"
+  },
+  "rund": {
+   "g": "roughly, about",
+   "t": "adverb"
+  },
+  "rundungsfehler": {
+   "g": "a rounding error; something too small to be worth noticing",
+   "t": "noun"
+  },
+  "sagt": {
+   "g": "says (sagen)",
+   "t": "verb"
+  },
+  "schein": {
+   "g": "a banknote; paper money as opposed to coins",
+   "t": "noun"
+  },
+  "schild": {
+   "g": "a sign",
+   "t": "noun"
+  },
+  "schlicht": {
+   "g": "simply, plainly; no more complicated than that",
+   "t": "adverb"
+  },
+  "schneller": {
+   "g": "faster",
+   "t": "adjective"
+  },
+  "schwarzarbeit": {
+   "g": "undeclared work, paid in cash and hidden from the tax office",
+   "t": "noun"
+  },
+  "sekunden": {
+   "g": "seconds",
+   "t": "noun"
+  },
+  "solle": {
+   "g": "should (sollen); the subjunctive form marks reported speech",
+   "t": "verb"
+  },
+  "sondern": {
+   "g": "but rather; corrects the negative just stated",
+   "t": "conjunction"
+  },
+  "stehst": {
+   "g": "you stand (stehen)",
+   "t": "verb"
+  },
+  "steht": {
+   "g": "stands (stehen); ranks at the top ('steht oben')",
+   "t": "verb"
+  },
+  "steuerhinterziehung": {
+   "g": "tax evasion",
+   "t": "noun"
+  },
+  "stromausfall": {
+   "g": "a power cut; when the electricity fails and card terminals die with it",
+   "t": "noun"
+  },
+  "stur": {
+   "g": "stubborn; refusing to budge, said with mild irritation",
+   "t": "adjective",
+   "r": "colloquial"
+  },
+  "technik": {
+   "g": "technology; the machines and systems themselves",
+   "t": "noun"
+  },
+  "tresen": {
+   "g": "the counter of a bar or café, the surface you stand at to order",
+   "t": "noun",
+   "r": "colloquial"
+  },
+  "und": {
+   "g": "and",
+   "t": "conjunction"
+  },
+  "unterschrift": {
+   "g": "signature; here, the one on a card receipt",
+   "t": "noun"
+  },
+  "verrät": {
+   "g": "gives away (verraten); reveals what was meant to stay private",
+   "t": "verb"
+  },
+  "vierundzwanzig": {
+   "g": "twenty-four",
+   "t": "number"
+  },
+  "vierzig": {
+   "g": "forty",
+   "t": "number"
+  },
+  "warst": {
+   "g": "you were (sein)",
+   "t": "verb"
+  },
+  "wartet": {
+   "g": "waits (warten)",
+   "t": "verb"
+  },
+  "was": {
+   "g": "what",
+   "t": "pronoun"
+  },
+  "weder": {
+   "g": "neither ... nor ('weder ... noch')",
+   "t": "conjunction"
+  },
+  "weiter": {
+   "g": "on, further; keeps raining ('regnet weiter')",
+   "t": "adverb"
+  },
+  "wenn": {
+   "g": "when, if",
+   "t": "conjunction"
+  },
+  "widerspruch": {
+   "g": "a contradiction; holding two positions that cannot both stand",
+   "t": "noun"
+  },
+  "wird": {
+   "g": "becomes, is (werden); here it builds the passive",
+   "t": "verb"
+  },
+  "wo": {
+   "g": "where",
+   "t": "conjunction"
+  },
+  "wollen": {
+   "g": "to want",
+   "t": "verb"
+  },
+  "zahlen": {
+   "g": "to pay",
+   "t": "verb"
+  },
+  "zahlung": {
+   "g": "a payment",
+   "t": "noun"
+  },
+  "zeigt": {
+   "g": "points, shows (zeigen)",
+   "t": "verb"
+  },
+  "zwanzig": {
+   "g": "twenty",
+   "t": "number"
+  },
+  "zweite": {
+   "g": "second; every other payment ('jede zweite Zahlung')",
+   "t": "adjective"
+  },
+  "über": {
+   "g": "over, more than",
+   "t": "preposition"
+  },
+  "überhaupt": {
+   "g": "at all; widens a question to what a thing even is",
+   "t": "adverb",
+   "r": "colloquial"
   }
+ }
 }

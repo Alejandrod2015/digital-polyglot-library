@@ -1,249 +1,995 @@
 {
-  "slugs": ["limitar-turistas", "por-que-no-baja-el-alquiler", "el-barrio-sin-vecinos"],
-  "glosses": {
-    "a": { "g": "to, at; the all-purpose preposition of direction and time", "t": "preposition" },
-    "abierta": { "g": "open; here an argument out in the open, not hidden", "t": "adjective" },
-    "además": { "g": "besides, on top of that", "t": "adverb" },
-    "aguanta": { "g": "holds out (aguantar); survives the pressure a while longer", "t": "verb" },
-    "ahí": { "g": "there; 'y ahí está' = and that is where it lies", "t": "adverb" },
-    "al": { "g": "to the; contraction of a + el", "t": "preposition" },
-    "algo": { "g": "something", "t": "pronoun" },
-    "alguna": { "g": "some, any; 'alguna vez' = ever, at some point", "t": "adjective" },
-    "alicante": { "g": "Alicante, a province on Spain's southeastern coast", "t": "noun" },
-    "alquilado": { "g": "rented (alquilar); paid to live somewhere you do not own", "t": "verb" },
-    "alquilar": { "g": "to rent", "t": "verb" },
-    "alquiler": { "g": "rent; the monthly price of housing", "t": "noun" },
-    "antes": { "g": "before, earlier", "t": "adverb" },
-    "aparece": { "g": "appears (aparecer); shows up", "t": "verb" },
-    "aprieta": { "g": "squeezes (apretar); presses on you financially", "t": "verb", "r": "colloquial" },
-    "aprobó": { "g": "approved (aprobar); passed it officially", "t": "verb" },
-    "aquí": { "g": "here", "t": "adverb" },
-    "asociación": { "g": "association; 'asociación de vecinos' = residents' association", "t": "noun" },
-    "así": { "g": "like this; 'así que' = so, therefore", "t": "adverb" },
-    "año": { "g": "year", "t": "noun" },
-    "baja": { "g": "goes down (bajar); of prices, and of people coming downstairs", "t": "verb" },
-    "bajado": { "g": "fallen (bajar)", "t": "verb" },
-    "bajó": { "g": "fell (bajar)", "t": "verb" },
-    "baleares": { "g": "the Balearic Islands: Mallorca, Menorca, Ibiza, Formentera", "t": "noun" },
-    "banco": { "g": "bank; 'Banco de España' is the Spanish central bank", "t": "noun" },
-    "bando": { "g": "side, camp in a dispute", "t": "noun" },
-    "bar": { "g": "the neighbourhood café-bar, open all day and central to street life", "t": "noun" },
-    "barrio": { "g": "neighbourhood", "t": "noun" },
-    "barrios": { "g": "neighbourhoods", "t": "noun" },
-    "cada": { "g": "each, every; 'de cada cien' = out of every hundred", "t": "adjective" },
-    "caen": { "g": "fall (caer); here, close down one after another", "t": "verb" },
-    "caja": { "g": "box; 'caja de llaves' is the key lockbox short-lets fix by the door", "t": "noun" },
-    "cambia": { "g": "changes (cambiar)", "t": "verb" },
-    "casi": { "g": "almost", "t": "adverb" },
-    "catorce": { "g": "fourteen", "t": "number" },
-    "caída": { "g": "a fall; a drop from one measurement to the next", "t": "noun" },
-    "cien": { "g": "a hundred", "t": "number" },
-    "ciento": { "g": "hundred; 'por ciento' = per cent", "t": "number" },
-    "cierra": { "g": "closes (cerrar); here, shuts down for good", "t": "verb" },
-    "cierto": { "g": "certain; 'pasado cierto punto' = past a certain threshold", "t": "adjective" },
-    "cifra": { "g": "figure, number", "t": "noun" },
-    "comercios": { "g": "shops; the small local businesses of a street", "t": "noun" },
-    "compra": { "g": "buys (comprar)", "t": "verb" },
-    "compran": { "g": "buy (comprar)", "t": "verb" },
-    "compre": { "g": "buys (comprar, subjunctive); 'no hay quien lo compre' = nobody to buy it", "t": "verb" },
-    "con": { "g": "with", "t": "preposition" },
-    "contigo": { "g": "with you", "t": "pronoun" },
-    "contradicción": { "g": "contradiction", "t": "noun" },
-    "contrarias": { "g": "opposite, contradictory", "t": "adjective" },
-    "convoca": { "g": "calls (convocar); summons people to a meeting", "t": "verb" },
-    "cosas": { "g": "things", "t": "noun" },
-    "cuando": { "g": "when", "t": "conjunction" },
-    "cuatro": { "g": "four", "t": "number" },
-    "cuenta": { "g": "counts (contar)", "t": "verb" },
-    "cuentan": { "g": "count (contar); 'desde que se cuentan' = since records began", "t": "verb" },
-    "cuesta": { "g": "costs (costar)", "t": "verb" },
-    "culpa": { "g": "fault, blame; 'por tu culpa' = because of you", "t": "noun" },
-    "cuántos": { "g": "how many", "t": "pronoun" },
-    "dato": { "g": "a figure, a piece of data", "t": "noun" },
-    "de": { "g": "of, from", "t": "preposition" },
-    "decide": { "g": "decides (decidir)", "t": "verb" },
-    "decir": { "g": "to say", "t": "verb" },
-    "del": { "g": "of the; contraction of de + el", "t": "preposition" },
-    "dentro": { "g": "inside, within", "t": "adverb" },
-    "desaparecido": { "g": "disappeared (desaparecer)", "t": "verb" },
-    "desde": { "g": "since, from", "t": "preposition" },
-    "después": { "g": "afterwards, then", "t": "adverb" },
-    "diario": { "g": "'a diario' = daily, every single day", "t": "adverb" },
-    "dice": { "g": "says (decir)", "t": "verb" },
-    "dicen": { "g": "say (decir)", "t": "verb" },
-    "diez": { "g": "ten", "t": "number" },
-    "dijeron": { "g": "said (decir, past)", "t": "verb" },
-    "discusión": { "g": "an argument, a dispute", "t": "noun" },
-    "dispara": { "g": "'se dispara' = shoots up (dispararse); rises steeply", "t": "verb", "r": "colloquial" },
-    "doce": { "g": "twelve", "t": "number" },
-    "donde": { "g": "where", "t": "conjunction" },
-    "dormiste": { "g": "you slept (dormir)", "t": "verb" },
-    "dos": { "g": "two", "t": "number" },
-    "doscientos": { "g": "two hundred", "t": "number" },
-    "duerme": { "g": "sleeps (dormir)", "t": "verb" },
-    "edificio": { "g": "building", "t": "noun" },
-    "efecto": { "g": "effect", "t": "noun" },
-    "el": { "g": "the (masculine)", "t": "article" },
-    "ellos": { "g": "them, they", "t": "pronoun" },
-    "en": { "g": "in, on, at", "t": "preposition" },
-    "encuesta": { "g": "a survey; the poll and the answers it produced", "t": "noun" },
-    "encuestó": { "g": "polled (encuestar); asked a sample what they thought", "t": "verb" },
-    "enero": { "g": "January", "t": "noun" },
-    "enteros": { "g": "whole, entire", "t": "adjective" },
-    "entre": { "g": "between, among", "t": "preposition" },
-    "es": { "g": "is (ser); of identity, not of place", "t": "verb" },
-    "esa": { "g": "that (feminine)", "t": "pronoun" },
-    "esas": { "g": "those (feminine)", "t": "pronoun" },
-    "eso": { "g": "that", "t": "pronoun" },
-    "españa": { "g": "Spain", "t": "noun" },
-    "estaba": { "g": "was (estar); of place or state, and it stayed there", "t": "verb" },
-    "este": { "g": "this (masculine)", "t": "adjective" },
-    "esto": { "g": "this", "t": "pronoun" },
-    "está": { "g": "is (estar); of place or state", "t": "verb" },
-    "están": { "g": "are (estar)", "t": "verb" },
-    "euros": { "g": "euros", "t": "noun" },
-    "explicación": { "g": "explanation; the reason people give", "t": "noun" },
-    "extranjeros": { "g": "foreigners; here, buyers who do not live in the country", "t": "noun" },
-    "fachada": { "g": "facade; the front wall a building shows the street", "t": "noun" },
-    "farmacia": { "g": "pharmacy", "t": "noun" },
-    "fecha": { "g": "date", "t": "noun" },
-    "fuera": { "g": "were (ser, subjunctive); 'si fuera' = if it were", "t": "verb" },
-    "govern": { "g": "the Govern, the Balearic regional government, in Catalan", "t": "noun", "r": "regional" },
-    "haber": { "g": "to have (auxiliary); 'tendría que haber bajado' = should have fallen", "t": "verb" },
-    "hablan": { "g": "talk (hablar); 'hablan de' = they talk about", "t": "verb" },
-    "había": { "g": "there was, there were (haber)", "t": "verb" },
-    "han": { "g": "have (haber, auxiliary)", "t": "verb" },
-    "has": { "g": "you have (haber, auxiliary)", "t": "verb" },
-    "hay": { "g": "there is, there are", "t": "verb" },
-    "importante": { "g": "important, significant", "t": "adjective" },
-    "ine": { "g": "the INE, Spain's National Statistics Institute", "t": "noun" },
-    "invierno": { "g": "winter", "t": "noun" },
-    "julio": { "g": "July", "t": "noun" },
-    "la": { "g": "the (feminine)", "t": "article" },
-    "largo": { "g": "long; placed after a number it means 'and a bit'", "t": "adjective", "r": "colloquial" },
-    "las": { "g": "the (feminine plural)", "t": "article" },
-    "limitación": { "g": "a limit; a cap set by rule", "t": "noun" },
-    "llaves": { "g": "keys", "t": "noun" },
-    "llena": { "g": "full", "t": "adjective" },
-    "lo": { "g": "it; also builds 'lo último' = the last thing", "t": "pronoun" },
-    "los": { "g": "the (masculine plural)", "t": "article" },
-    "mañana": { "g": "morning; 'a las seis de la mañana' = at six in the morning", "t": "noun" },
-    "maleta": { "g": "suitcase", "t": "noun" },
-    "mayor": { "g": "biggest, greatest", "t": "adjective" },
-    "medias": { "g": "averages; the single numbers that hide uneven parts", "t": "noun" },
-    "menos": { "g": "fewer, less", "t": "adverb" },
-    "mil": { "g": "a thousand", "t": "number" },
-    "mirando": { "g": "looking at (mirar)", "t": "verb" },
-    "misma": { "g": "same (feminine)", "t": "adjective" },
-    "mismo": { "g": "same (masculine)", "t": "adjective" },
-    "mitad": { "g": "half", "t": "noun" },
-    "muchísimo": { "g": "a huge amount; the intensified form of mucho", "t": "adverb" },
-    "mueve": { "g": "moves (mover); here, shifts prices", "t": "verb" },
-    "mundo": { "g": "world; 'todo el mundo' = everybody", "t": "noun" },
-    "málaga": { "g": "Málaga, a province on Spain's southern coast", "t": "noun" },
-    "más": { "g": "more", "t": "adverb" },
-    "nada": { "g": "nothing", "t": "pronoun" },
-    "nadie": { "g": "nobody", "t": "pronoun" },
-    "negra": { "g": "black (feminine)", "t": "adjective" },
-    "no": { "g": "no, not", "t": "adverb" },
-    "nota": { "g": "'se nota' = it shows, it is noticeable (notarse)", "t": "verb" },
-    "novecientos": { "g": "nine hundred", "t": "number" },
-    "noviembre": { "g": "November", "t": "noun" },
-    "número": { "g": "number", "t": "noun" },
-    "orden": { "g": "order; 'por orden' = in sequence, one after another", "t": "noun" },
-    "otro": { "g": "another, the other one", "t": "pronoun" },
-    "oye": { "g": "'se oye' = is heard (oírse), with nobody named as hearing it", "t": "verb" },
-    "oyen": { "g": "'se oyen' = are heard (oírse)", "t": "verb" },
-    "pagabas": { "g": "you used to pay (pagar)", "t": "verb" },
-    "pagas": { "g": "you pay (pagar)", "t": "verb" },
-    "pan": { "g": "bread", "t": "noun" },
-    "panadero": { "g": "baker; here, the bakery as a business", "t": "noun" },
-    "para": { "g": "for, in order to", "t": "preposition" },
-    "pasa": { "g": "happens (pasar)", "t": "verb" },
-    "pasado": { "g": "past, beyond (pasar); 'pasado cierto punto'", "t": "verb" },
-    "país": { "g": "country", "t": "noun" },
-    "pequeña": { "g": "small (feminine)", "t": "adjective" },
-    "personas": { "g": "people", "t": "noun" },
-    "piso": { "g": "a flat; the Spanish word where Latin America says 'departamento'", "t": "noun", "r": "regional" },
-    "pisos": { "g": "flats, apartments (Spain)", "t": "noun", "r": "regional" },
-    "plataformas": { "g": "platforms; the booking sites short-lets are listed on", "t": "noun" },
-    "poco": { "g": "a little", "t": "adverb" },
-    "pone": { "g": "puts (poner)", "t": "verb" },
-    "poner": { "g": "to put, to set; 'poner un tope' = to set a cap", "t": "verb" },
-    "por": { "g": "for, by, because of", "t": "preposition" },
-    "porque": { "g": "because", "t": "conjunction" },
-    "portal": { "g": "the entrance hall of a Spanish block of flats, between street door and stairs", "t": "noun", "r": "regional" },
-    "portales": { "g": "entrance halls of blocks of flats", "t": "noun", "r": "regional" },
-    "precio": { "g": "price", "t": "noun" },
-    "preguntó": { "g": "asked (preguntar)", "t": "verb" },
-    "primero": { "g": "first, before the others", "t": "adverb" },
-    "punto": { "g": "point; here, a threshold past which behaviour changes", "t": "noun" },
-    "que": { "g": "that, which", "t": "conjunction" },
-    "quedaban": { "g": "were left (quedar); remained after the rest had gone", "t": "verb" },
-    "quien": { "g": "who; 'no hay quien' = there is nobody who", "t": "pronoun" },
-    "quiera": { "g": "wants (querer, subjunctive)", "t": "verb" },
-    "quieren": { "g": "want (querer)", "t": "verb" },
-    "quién": { "g": "who (as a question word)", "t": "pronoun" },
-    "rastreando": { "g": "trawling (rastrear); combing a source systematically for data", "t": "verb" },
-    "recoge": { "g": "picks up (recoger); here, cites another study's figure", "t": "verb" },
-    "repite": { "g": "repeats (repetir); keeps saying until it sounds true", "t": "verb" },
-    "residentes": { "g": "residents; the people who live there rather than visit", "t": "noun" },
-    "resto": { "g": "the rest, the remainder", "t": "noun" },
-    "reunión": { "g": "a meeting", "t": "noun" },
-    "riqueza": { "g": "wealth; the prosperity a place generates", "t": "noun" },
-    "ruedas": { "g": "wheels; here, suitcase wheels on pavement", "t": "noun" },
-    "ruido": { "g": "noise", "t": "noun" },
-    "sabían": { "g": "knew (saber)", "t": "verb" },
-    "se": { "g": "reflexive and impersonal marker; turns a verb into 'is done' with no named doer", "t": "pronoun" },
-    "seis": { "g": "six", "t": "number" },
-    "si": { "g": "if", "t": "conjunction" },
-    "siete": { "g": "seven", "t": "number" },
-    "sigue": { "g": "stays, carries on (seguir)", "t": "verb" },
-    "sirve": { "g": "'servir para' = to be good for (servir)", "t": "verb" },
-    "sitio": { "g": "place", "t": "noun" },
-    "sobre": { "g": "on, about; here, out of a total", "t": "preposition" },
-    "sueldo": { "g": "salary; what the job pays you each month", "t": "noun" },
-    "suena": { "g": "sounds (sonar); 'suena a' = it sounds like", "t": "verb" },
-    "suma": { "g": "adds together (sumar); puts two figures into one total", "t": "verb" },
-    "sí": { "g": "yes", "t": "adverb" },
-    "tablón": { "g": "the noticeboard in a Spanish building's entrance, where neighbours pin things", "t": "noun", "r": "regional" },
-    "también": { "g": "also, too", "t": "adverb" },
-    "te": { "g": "you (object form)", "t": "pronoun" },
-    "teclas": { "g": "keys, the buttons on a keypad", "t": "noun" },
-    "tendría": { "g": "would have (tener); 'tendría que' = ought to", "t": "verb" },
-    "tercio": { "g": "a third", "t": "noun" },
-    "tiene": { "g": "has (tener)", "t": "verb" },
-    "toda": { "g": "all, the whole (feminine)", "t": "adjective" },
-    "todo": { "g": "all, the whole", "t": "adjective" },
-    "tope": { "g": "a cap; a maximum that cannot be crossed", "t": "noun" },
-    "total": { "g": "total", "t": "noun" },
-    "trampa": { "g": "the catch; the hidden trick that makes a true figure mislead", "t": "noun", "r": "colloquial" },
-    "treinta": { "g": "thirty", "t": "number" },
-    "tres": { "g": "three", "t": "number" },
-    "trescientos": { "g": "three hundred", "t": "number" },
-    "tu": { "g": "your", "t": "adjective" },
-    "turismo": { "g": "tourism", "t": "noun" },
-    "turistas": { "g": "tourists", "t": "noun" },
-    "turística": { "g": "tourist-, for visitors (feminine)", "t": "adjective" },
-    "turístico": { "g": "tourist-, for visitors rather than for locals", "t": "adjective" },
-    "turísticos": { "g": "tourist-, for visitors (plural)", "t": "adjective" },
-    "un": { "g": "a, an", "t": "article" },
-    "una": { "g": "a, an (feminine)", "t": "article" },
-    "universidad": { "g": "university", "t": "noun" },
-    "uno": { "g": "one", "t": "number" },
-    "unos": { "g": "some; before a number, 'about'", "t": "adjective" },
-    "va": { "g": "goes (ir); 'lo último que se va' = the last thing to leave", "t": "verb" },
-    "veces": { "g": "times; 'dos veces al año' = twice a year", "t": "noun" },
-    "vecinos": { "g": "neighbours; the people who actually live there all year", "t": "noun" },
-    "verano": { "g": "summer", "t": "noun" },
-    "vez": { "g": "time, occasion; 'alguna vez' = ever", "t": "noun" },
-    "visitantes": { "g": "visitors", "t": "noun" },
-    "vive": { "g": "lives (vivir); 'vive del verano' = lives off the summer", "t": "verb" },
-    "viven": { "g": "live (vivir)", "t": "verb" },
-    "vives": { "g": "you live (vivir); 'vives de algo' = you make your living from it", "t": "verb" },
-    "vivienda": { "g": "housing; the formal term used in statistics and policy", "t": "noun" },
-    "viviendas": { "g": "homes, dwellings", "t": "noun" },
-    "y": { "g": "and", "t": "conjunction" },
-    "último": { "g": "last; 'lo último' = the last thing of all", "t": "adjective" }
+ "slugs": [
+  "limitar-turistas",
+  "por-que-no-baja-el-alquiler",
+  "el-barrio-sin-vecinos"
+ ],
+ "glosses": {
+  "a": {
+   "g": "to, at; the all-purpose preposition of direction and time",
+   "t": "preposition"
+  },
+  "abierta": {
+   "g": "open; here an argument out in the open, not hidden",
+   "t": "adjective"
+  },
+  "además": {
+   "g": "besides, on top of that",
+   "t": "adverb"
+  },
+  "aguanta": {
+   "g": "holds out (aguantar); survives the pressure a while longer",
+   "t": "verb"
+  },
+  "ahí": {
+   "g": "there; and that is where it lies ('y ahí está')",
+   "t": "adverb"
+  },
+  "al": {
+   "g": "to the; contraction of a + el",
+   "t": "preposition"
+  },
+  "algo": {
+   "g": "something",
+   "t": "pronoun"
+  },
+  "alguna": {
+   "g": "some, any; ever, at some point ('alguna vez')",
+   "t": "adjective"
+  },
+  "alicante": {
+   "g": "Alicante, a province on Spain's southeastern coast",
+   "t": "noun"
+  },
+  "alquilado": {
+   "g": "rented (alquilar); paid to live somewhere you do not own",
+   "t": "verb"
+  },
+  "alquilar": {
+   "g": "to rent",
+   "t": "verb"
+  },
+  "alquiler": {
+   "g": "rent; the monthly price of housing",
+   "t": "noun"
+  },
+  "antes": {
+   "g": "before, earlier",
+   "t": "adverb"
+  },
+  "aparece": {
+   "g": "appears (aparecer); shows up",
+   "t": "verb"
+  },
+  "aprieta": {
+   "g": "squeezes (apretar); presses on you financially",
+   "t": "verb",
+   "r": "colloquial"
+  },
+  "aprobó": {
+   "g": "approved (aprobar); passed it officially",
+   "t": "verb"
+  },
+  "aquí": {
+   "g": "here",
+   "t": "adverb"
+  },
+  "asociación": {
+   "g": "association; residents' association ('asociación de vecinos')",
+   "t": "noun"
+  },
+  "así": {
+   "g": "like this; so, therefore ('así que')",
+   "t": "adverb"
+  },
+  "año": {
+   "g": "year",
+   "t": "noun"
+  },
+  "baja": {
+   "g": "goes down (bajar); of prices, and of people coming downstairs",
+   "t": "verb"
+  },
+  "bajado": {
+   "g": "fallen (bajar)",
+   "t": "verb"
+  },
+  "bajó": {
+   "g": "fell (bajar)",
+   "t": "verb"
+  },
+  "baleares": {
+   "g": "the Balearic Islands: Mallorca, Menorca, Ibiza, Formentera",
+   "t": "noun"
+  },
+  "banco": {
+   "g": "bank; 'Banco de España' is the Spanish central bank",
+   "t": "noun"
+  },
+  "bando": {
+   "g": "side, camp in a dispute",
+   "t": "noun"
+  },
+  "bar": {
+   "g": "the neighbourhood café-bar, open all day and central to street life",
+   "t": "noun"
+  },
+  "barrio": {
+   "g": "neighbourhood",
+   "t": "noun"
+  },
+  "barrios": {
+   "g": "neighbourhoods",
+   "t": "noun"
+  },
+  "cada": {
+   "g": "each, every; out of every hundred ('de cada cien')",
+   "t": "adjective"
+  },
+  "caen": {
+   "g": "fall (caer); here, close down one after another",
+   "t": "verb"
+  },
+  "caja": {
+   "g": "box; 'caja de llaves' is the key lockbox short-lets fix by the door",
+   "t": "noun"
+  },
+  "cambia": {
+   "g": "changes (cambiar)",
+   "t": "verb"
+  },
+  "casi": {
+   "g": "almost",
+   "t": "adverb"
+  },
+  "catorce": {
+   "g": "fourteen",
+   "t": "number"
+  },
+  "caída": {
+   "g": "a fall; a drop from one measurement to the next",
+   "t": "noun"
+  },
+  "cien": {
+   "g": "a hundred",
+   "t": "number"
+  },
+  "ciento": {
+   "g": "hundred; per cent ('por ciento')",
+   "t": "number"
+  },
+  "cierra": {
+   "g": "closes (cerrar); here, shuts down for good",
+   "t": "verb"
+  },
+  "cierto": {
+   "g": "certain; past a certain threshold ('pasado cierto punto')",
+   "t": "adjective"
+  },
+  "cifra": {
+   "g": "figure, number",
+   "t": "noun"
+  },
+  "comercios": {
+   "g": "shops; the small local businesses of a street",
+   "t": "noun"
+  },
+  "compra": {
+   "g": "buys (comprar)",
+   "t": "verb"
+  },
+  "compran": {
+   "g": "buy (comprar)",
+   "t": "verb"
+  },
+  "compre": {
+   "g": "buys (comprar, subjunctive); nobody to buy it ('no hay quien lo compre')",
+   "t": "verb"
+  },
+  "con": {
+   "g": "with",
+   "t": "preposition"
+  },
+  "contigo": {
+   "g": "with you",
+   "t": "pronoun"
+  },
+  "contradicción": {
+   "g": "contradiction",
+   "t": "noun"
+  },
+  "contrarias": {
+   "g": "opposite, contradictory",
+   "t": "adjective"
+  },
+  "convoca": {
+   "g": "calls (convocar); summons people to a meeting",
+   "t": "verb"
+  },
+  "cosas": {
+   "g": "things",
+   "t": "noun"
+  },
+  "cuando": {
+   "g": "when",
+   "t": "conjunction"
+  },
+  "cuatro": {
+   "g": "four",
+   "t": "number"
+  },
+  "cuenta": {
+   "g": "counts (contar)",
+   "t": "verb"
+  },
+  "cuentan": {
+   "g": "count (contar); since records began ('desde que se cuentan')",
+   "t": "verb"
+  },
+  "cuesta": {
+   "g": "costs (costar)",
+   "t": "verb"
+  },
+  "culpa": {
+   "g": "fault, blame; because of you ('por tu culpa')",
+   "t": "noun"
+  },
+  "cuántos": {
+   "g": "how many",
+   "t": "pronoun"
+  },
+  "dato": {
+   "g": "a figure, a piece of data",
+   "t": "noun"
+  },
+  "de": {
+   "g": "of, from",
+   "t": "preposition"
+  },
+  "decide": {
+   "g": "decides (decidir)",
+   "t": "verb"
+  },
+  "decir": {
+   "g": "to say",
+   "t": "verb"
+  },
+  "del": {
+   "g": "of the; contraction of de + el",
+   "t": "preposition"
+  },
+  "dentro": {
+   "g": "inside, within",
+   "t": "adverb"
+  },
+  "desaparecido": {
+   "g": "disappeared (desaparecer)",
+   "t": "verb"
+  },
+  "desde": {
+   "g": "since, from",
+   "t": "preposition"
+  },
+  "después": {
+   "g": "afterwards, then",
+   "t": "adverb"
+  },
+  "diario": {
+   "g": "daily, every single day ('a diario')",
+   "t": "adverb"
+  },
+  "dice": {
+   "g": "says (decir)",
+   "t": "verb"
+  },
+  "dicen": {
+   "g": "say (decir)",
+   "t": "verb"
+  },
+  "diez": {
+   "g": "ten",
+   "t": "number"
+  },
+  "dijeron": {
+   "g": "said (decir, past)",
+   "t": "verb"
+  },
+  "discusión": {
+   "g": "an argument, a dispute",
+   "t": "noun"
+  },
+  "dispara": {
+   "g": "rises steeply; shoots up (se dispara, from dispararse)",
+   "t": "verb",
+   "r": "colloquial"
+  },
+  "doce": {
+   "g": "twelve",
+   "t": "number"
+  },
+  "donde": {
+   "g": "where",
+   "t": "conjunction"
+  },
+  "dormiste": {
+   "g": "you slept (dormir)",
+   "t": "verb"
+  },
+  "dos": {
+   "g": "two",
+   "t": "number"
+  },
+  "doscientos": {
+   "g": "two hundred",
+   "t": "number"
+  },
+  "duerme": {
+   "g": "sleeps (dormir)",
+   "t": "verb"
+  },
+  "edificio": {
+   "g": "building",
+   "t": "noun"
+  },
+  "efecto": {
+   "g": "effect",
+   "t": "noun"
+  },
+  "el": {
+   "g": "the (masculine)",
+   "t": "article"
+  },
+  "ellos": {
+   "g": "them, they",
+   "t": "pronoun"
+  },
+  "en": {
+   "g": "in, on, at",
+   "t": "preposition"
+  },
+  "encuesta": {
+   "g": "a survey; the poll and the answers it produced",
+   "t": "noun"
+  },
+  "encuestó": {
+   "g": "polled (encuestar); asked a sample what they thought",
+   "t": "verb"
+  },
+  "enero": {
+   "g": "January",
+   "t": "noun"
+  },
+  "enteros": {
+   "g": "whole, entire",
+   "t": "adjective"
+  },
+  "entre": {
+   "g": "between, among",
+   "t": "preposition"
+  },
+  "es": {
+   "g": "is (ser); of identity, not of place",
+   "t": "verb"
+  },
+  "esa": {
+   "g": "that (feminine)",
+   "t": "pronoun"
+  },
+  "esas": {
+   "g": "those (feminine)",
+   "t": "pronoun"
+  },
+  "eso": {
+   "g": "that",
+   "t": "pronoun"
+  },
+  "españa": {
+   "g": "Spain",
+   "t": "noun"
+  },
+  "estaba": {
+   "g": "was (estar); of place or state, and it stayed there",
+   "t": "verb"
+  },
+  "este": {
+   "g": "this (masculine)",
+   "t": "adjective"
+  },
+  "esto": {
+   "g": "this",
+   "t": "pronoun"
+  },
+  "está": {
+   "g": "is (estar); of place or state",
+   "t": "verb"
+  },
+  "están": {
+   "g": "are (estar)",
+   "t": "verb"
+  },
+  "euros": {
+   "g": "euros",
+   "t": "noun"
+  },
+  "explicación": {
+   "g": "explanation; the reason people give",
+   "t": "noun"
+  },
+  "extranjeros": {
+   "g": "foreigners; here, buyers who do not live in the country",
+   "t": "noun"
+  },
+  "fachada": {
+   "g": "facade; the front wall a building shows the street",
+   "t": "noun"
+  },
+  "farmacia": {
+   "g": "pharmacy",
+   "t": "noun"
+  },
+  "fecha": {
+   "g": "date",
+   "t": "noun"
+  },
+  "fuera": {
+   "g": "were (ser, subjunctive); if it were ('si fuera')",
+   "t": "verb"
+  },
+  "govern": {
+   "g": "the Govern, the Balearic regional government, in Catalan",
+   "t": "noun",
+   "r": "regional"
+  },
+  "haber": {
+   "g": "to have (auxiliary); should have fallen ('tendría que haber bajado')",
+   "t": "verb"
+  },
+  "hablan": {
+   "g": "talk (hablar); they talk about ('hablan de')",
+   "t": "verb"
+  },
+  "había": {
+   "g": "there was, there were (haber)",
+   "t": "verb"
+  },
+  "han": {
+   "g": "have (haber, auxiliary)",
+   "t": "verb"
+  },
+  "has": {
+   "g": "you have (haber, auxiliary)",
+   "t": "verb"
+  },
+  "hay": {
+   "g": "there is, there are",
+   "t": "verb"
+  },
+  "importante": {
+   "g": "important, significant",
+   "t": "adjective"
+  },
+  "ine": {
+   "g": "the INE, Spain's National Statistics Institute",
+   "t": "noun"
+  },
+  "invierno": {
+   "g": "winter",
+   "t": "noun"
+  },
+  "julio": {
+   "g": "July",
+   "t": "noun"
+  },
+  "la": {
+   "g": "the (feminine)",
+   "t": "article"
+  },
+  "largo": {
+   "g": "long; placed after a number it means 'and a bit'",
+   "t": "adjective",
+   "r": "colloquial"
+  },
+  "las": {
+   "g": "the (feminine plural)",
+   "t": "article"
+  },
+  "limitación": {
+   "g": "a limit; a cap set by rule",
+   "t": "noun"
+  },
+  "llaves": {
+   "g": "keys",
+   "t": "noun"
+  },
+  "llena": {
+   "g": "full",
+   "t": "adjective"
+  },
+  "lo": {
+   "g": "it; the last thing (also builds 'lo último')",
+   "t": "pronoun"
+  },
+  "los": {
+   "g": "the (masculine plural)",
+   "t": "article"
+  },
+  "mañana": {
+   "g": "morning; at six in the morning ('a las seis de la mañana')",
+   "t": "noun"
+  },
+  "maleta": {
+   "g": "suitcase",
+   "t": "noun"
+  },
+  "mayor": {
+   "g": "biggest, greatest",
+   "t": "adjective"
+  },
+  "medias": {
+   "g": "averages; the single numbers that hide uneven parts",
+   "t": "noun"
+  },
+  "menos": {
+   "g": "fewer, less",
+   "t": "adverb"
+  },
+  "mil": {
+   "g": "a thousand",
+   "t": "number"
+  },
+  "mirando": {
+   "g": "looking at (mirar)",
+   "t": "verb"
+  },
+  "misma": {
+   "g": "same (feminine)",
+   "t": "adjective"
+  },
+  "mismo": {
+   "g": "same (masculine)",
+   "t": "adjective"
+  },
+  "mitad": {
+   "g": "half",
+   "t": "noun"
+  },
+  "muchísimo": {
+   "g": "a huge amount; the intensified form of mucho",
+   "t": "adverb"
+  },
+  "mueve": {
+   "g": "moves (mover); here, shifts prices",
+   "t": "verb"
+  },
+  "mundo": {
+   "g": "world; everybody ('todo el mundo')",
+   "t": "noun"
+  },
+  "málaga": {
+   "g": "Málaga, a province on Spain's southern coast",
+   "t": "noun"
+  },
+  "más": {
+   "g": "more",
+   "t": "adverb"
+  },
+  "nada": {
+   "g": "nothing",
+   "t": "pronoun"
+  },
+  "nadie": {
+   "g": "nobody",
+   "t": "pronoun"
+  },
+  "negra": {
+   "g": "black (feminine)",
+   "t": "adjective"
+  },
+  "no": {
+   "g": "no, not",
+   "t": "adverb"
+  },
+  "nota": {
+   "g": "it shows, it is noticeable ('se nota', from notarse)",
+   "t": "verb"
+  },
+  "novecientos": {
+   "g": "nine hundred",
+   "t": "number"
+  },
+  "noviembre": {
+   "g": "November",
+   "t": "noun"
+  },
+  "número": {
+   "g": "number",
+   "t": "noun"
+  },
+  "orden": {
+   "g": "order; in sequence, one after another ('por orden')",
+   "t": "noun"
+  },
+  "otro": {
+   "g": "another, the other one",
+   "t": "pronoun"
+  },
+  "oye": {
+   "g": "is heard (oírse), with nobody named as hearing it ('se oye')",
+   "t": "verb"
+  },
+  "oyen": {
+   "g": "are heard ('se oyen', from oírse)",
+   "t": "verb"
+  },
+  "pagabas": {
+   "g": "you used to pay (pagar)",
+   "t": "verb"
+  },
+  "pagas": {
+   "g": "you pay (pagar)",
+   "t": "verb"
+  },
+  "pan": {
+   "g": "bread",
+   "t": "noun"
+  },
+  "panadero": {
+   "g": "baker; here, the bakery as a business",
+   "t": "noun"
+  },
+  "para": {
+   "g": "for, in order to",
+   "t": "preposition"
+  },
+  "pasa": {
+   "g": "happens (pasar)",
+   "t": "verb"
+  },
+  "pasado": {
+   "g": "past, beyond (pasar); 'pasado cierto punto'",
+   "t": "verb"
+  },
+  "país": {
+   "g": "country",
+   "t": "noun"
+  },
+  "pequeña": {
+   "g": "small (feminine)",
+   "t": "adjective"
+  },
+  "personas": {
+   "g": "people",
+   "t": "noun"
+  },
+  "piso": {
+   "g": "a flat; the Spanish word where Latin America says 'departamento'",
+   "t": "noun",
+   "r": "regional"
+  },
+  "pisos": {
+   "g": "flats, apartments (Spain)",
+   "t": "noun",
+   "r": "regional"
+  },
+  "plataformas": {
+   "g": "platforms; the booking sites short-lets are listed on",
+   "t": "noun"
+  },
+  "poco": {
+   "g": "a little",
+   "t": "adverb"
+  },
+  "pone": {
+   "g": "puts (poner)",
+   "t": "verb"
+  },
+  "poner": {
+   "g": "to put, to set; to set a cap ('poner un tope')",
+   "t": "verb"
+  },
+  "por": {
+   "g": "for, by, because of",
+   "t": "preposition"
+  },
+  "porque": {
+   "g": "because",
+   "t": "conjunction"
+  },
+  "portal": {
+   "g": "the entrance hall of a Spanish block of flats, between street door and stairs",
+   "t": "noun",
+   "r": "regional"
+  },
+  "portales": {
+   "g": "entrance halls of blocks of flats",
+   "t": "noun",
+   "r": "regional"
+  },
+  "precio": {
+   "g": "price",
+   "t": "noun"
+  },
+  "preguntó": {
+   "g": "asked (preguntar)",
+   "t": "verb"
+  },
+  "primero": {
+   "g": "first, before the others",
+   "t": "adverb"
+  },
+  "punto": {
+   "g": "point; here, a threshold past which behaviour changes",
+   "t": "noun"
+  },
+  "que": {
+   "g": "that, which",
+   "t": "conjunction"
+  },
+  "quedaban": {
+   "g": "were left (quedar); remained after the rest had gone",
+   "t": "verb"
+  },
+  "quien": {
+   "g": "who; there is nobody who ('no hay quien')",
+   "t": "pronoun"
+  },
+  "quiera": {
+   "g": "wants (querer, subjunctive)",
+   "t": "verb"
+  },
+  "quieren": {
+   "g": "want (querer)",
+   "t": "verb"
+  },
+  "quién": {
+   "g": "who (as a question word)",
+   "t": "pronoun"
+  },
+  "rastreando": {
+   "g": "trawling (rastrear); combing a source systematically for data",
+   "t": "verb"
+  },
+  "recoge": {
+   "g": "picks up (recoger); here, cites another study's figure",
+   "t": "verb"
+  },
+  "repite": {
+   "g": "repeats (repetir); keeps saying until it sounds true",
+   "t": "verb"
+  },
+  "residentes": {
+   "g": "residents; the people who live there rather than visit",
+   "t": "noun"
+  },
+  "resto": {
+   "g": "the rest, the remainder",
+   "t": "noun"
+  },
+  "reunión": {
+   "g": "a meeting",
+   "t": "noun"
+  },
+  "riqueza": {
+   "g": "wealth; the prosperity a place generates",
+   "t": "noun"
+  },
+  "ruedas": {
+   "g": "wheels; here, suitcase wheels on pavement",
+   "t": "noun"
+  },
+  "ruido": {
+   "g": "noise",
+   "t": "noun"
+  },
+  "sabían": {
+   "g": "knew (saber)",
+   "t": "verb"
+  },
+  "se": {
+   "g": "reflexive and impersonal marker; turns a verb into 'is done' with no named doer",
+   "t": "pronoun"
+  },
+  "seis": {
+   "g": "six",
+   "t": "number"
+  },
+  "si": {
+   "g": "if",
+   "t": "conjunction"
+  },
+  "siete": {
+   "g": "seven",
+   "t": "number"
+  },
+  "sigue": {
+   "g": "stays, carries on (seguir)",
+   "t": "verb"
+  },
+  "sirve": {
+   "g": "to be good for ('servir para', from servir)",
+   "t": "verb"
+  },
+  "sitio": {
+   "g": "place",
+   "t": "noun"
+  },
+  "sobre": {
+   "g": "on, about; here, out of a total",
+   "t": "preposition"
+  },
+  "sueldo": {
+   "g": "salary; what the job pays you each month",
+   "t": "noun"
+  },
+  "suena": {
+   "g": "sounds (sonar); it sounds like ('suena a')",
+   "t": "verb"
+  },
+  "suma": {
+   "g": "adds together (sumar); puts two figures into one total",
+   "t": "verb"
+  },
+  "sí": {
+   "g": "yes",
+   "t": "adverb"
+  },
+  "tablón": {
+   "g": "the noticeboard in a Spanish building's entrance, where neighbours pin things",
+   "t": "noun",
+   "r": "regional"
+  },
+  "también": {
+   "g": "also, too",
+   "t": "adverb"
+  },
+  "te": {
+   "g": "you (object form)",
+   "t": "pronoun"
+  },
+  "teclas": {
+   "g": "keys, the buttons on a keypad",
+   "t": "noun"
+  },
+  "tendría": {
+   "g": "would have (tener); ought to ('tendría que')",
+   "t": "verb"
+  },
+  "tercio": {
+   "g": "a third",
+   "t": "noun"
+  },
+  "tiene": {
+   "g": "has (tener)",
+   "t": "verb"
+  },
+  "toda": {
+   "g": "all, the whole (feminine)",
+   "t": "adjective"
+  },
+  "todo": {
+   "g": "all, the whole",
+   "t": "adjective"
+  },
+  "tope": {
+   "g": "a cap; a maximum that cannot be crossed",
+   "t": "noun"
+  },
+  "total": {
+   "g": "total",
+   "t": "noun"
+  },
+  "trampa": {
+   "g": "the catch; the hidden trick that makes a true figure mislead",
+   "t": "noun",
+   "r": "colloquial"
+  },
+  "treinta": {
+   "g": "thirty",
+   "t": "number"
+  },
+  "tres": {
+   "g": "three",
+   "t": "number"
+  },
+  "trescientos": {
+   "g": "three hundred",
+   "t": "number"
+  },
+  "tu": {
+   "g": "your",
+   "t": "adjective"
+  },
+  "turismo": {
+   "g": "tourism",
+   "t": "noun"
+  },
+  "turistas": {
+   "g": "tourists",
+   "t": "noun"
+  },
+  "turística": {
+   "g": "tourist-, for visitors (feminine)",
+   "t": "adjective"
+  },
+  "turístico": {
+   "g": "tourist-, for visitors rather than for locals",
+   "t": "adjective"
+  },
+  "turísticos": {
+   "g": "tourist-, for visitors (plural)",
+   "t": "adjective"
+  },
+  "un": {
+   "g": "a, an",
+   "t": "article"
+  },
+  "una": {
+   "g": "a, an (feminine)",
+   "t": "article"
+  },
+  "universidad": {
+   "g": "university",
+   "t": "noun"
+  },
+  "uno": {
+   "g": "one",
+   "t": "number"
+  },
+  "unos": {
+   "g": "some; before a number, 'about'",
+   "t": "adjective"
+  },
+  "va": {
+   "g": "goes (ir); the last thing to leave ('lo último que se va')",
+   "t": "verb"
+  },
+  "veces": {
+   "g": "times; twice a year ('dos veces al año')",
+   "t": "noun"
+  },
+  "vecinos": {
+   "g": "neighbours; the people who actually live there all year",
+   "t": "noun"
+  },
+  "verano": {
+   "g": "summer",
+   "t": "noun"
+  },
+  "vez": {
+   "g": "time, occasion; ever ('alguna vez')",
+   "t": "noun"
+  },
+  "visitantes": {
+   "g": "visitors",
+   "t": "noun"
+  },
+  "vive": {
+   "g": "lives (vivir); lives off the summer ('vive del verano')",
+   "t": "verb"
+  },
+  "viven": {
+   "g": "live (vivir)",
+   "t": "verb"
+  },
+  "vives": {
+   "g": "you live (vivir); you make your living from it ('vives de algo')",
+   "t": "verb"
+  },
+  "vivienda": {
+   "g": "housing; the formal term used in statistics and policy",
+   "t": "noun"
+  },
+  "viviendas": {
+   "g": "homes, dwellings",
+   "t": "noun"
+  },
+  "y": {
+   "g": "and",
+   "t": "conjunction"
+  },
+  "último": {
+   "g": "last; the last thing of all ('lo último')",
+   "t": "adjective"
   }
+ }
 }

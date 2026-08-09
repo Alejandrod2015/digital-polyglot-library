@@ -6,15 +6,15 @@
  ],
  "glosses": {
   "a": {
-   "g": "has (avoir); il y a = there is",
+   "g": "has (avoir); there is (il y a)",
    "t": "verb"
   },
   "abord": {
-   "g": "d'abord = first, before anything else",
+   "g": "first, before anything else (d'abord)",
    "t": "adverb"
   },
   "ai": {
-   "g": "have (avoir); j'ai = I have",
+   "g": "have (avoir); I have (j'ai)",
    "t": "verb"
   },
   "amie": {
@@ -22,7 +22,7 @@
    "t": "noun"
   },
   "amour": {
-   "g": "love (l'amour); histoire d'amour = love story",
+   "g": "love (l'amour); love story (histoire d'amour)",
    "t": "noun"
   },
   "applaudit": {
@@ -58,7 +58,7 @@
    "t": "preposition"
   },
   "aujourd": {
-   "g": "aujourd'hui = today",
+   "g": "today (aujourd'hui)",
    "t": "adverb"
   },
   "autre": {
@@ -70,11 +70,11 @@
    "t": "preposition"
   },
   "basque": {
-   "g": "Basque; gâteau basque = the famous local cake",
+   "g": "Basque; the famous local cake (gâteau basque)",
    "t": "adjective"
   },
   "basques": {
-   "g": "la Côte des Basques = Biarritz's famous surf beach",
+   "g": "Biarritz's famous surf beach (la Côte des Basques)",
    "t": "noun"
   },
   "bat": {
@@ -102,7 +102,7 @@
    "t": "verb"
   },
   "bonne": {
-   "g": "good (bon); la bonne vague = the right wave",
+   "g": "good (bon); the right wave (la bonne vague)",
    "t": "adjective"
   },
   "bras": {
@@ -118,7 +118,7 @@
    "t": "verb"
   },
   "c": {
-   "g": "c'est = it is, this is",
+   "g": "it is, this is (c'est)",
    "t": "pronoun"
   },
   "café": {
@@ -142,7 +142,7 @@
    "t": "adjective"
   },
   "chocolat": {
-   "g": "chocolate (le chocolat); chocolat chaud = hot chocolate",
+   "g": "chocolate (le chocolat); hot chocolate (chocolat chaud)",
    "t": "noun"
   },
   "ciel": {
@@ -178,7 +178,7 @@
    "t": "adjective"
   },
   "côte": {
-   "g": "coast (la côte); Côte des Basques = Biarritz surf beach",
+   "g": "coast (la côte); Biarritz surf beach (Côte des Basques)",
    "t": "noun"
   },
   "cœur": {
@@ -186,7 +186,7 @@
    "t": "noun"
   },
   "d": {
-   "g": "d' = of, from (de before a vowel)",
+   "g": "of, from (d', from de before a vowel)",
    "t": "preposition"
   },
   "dans": {
@@ -282,7 +282,7 @@
    "t": "noun"
   },
   "fois": {
-   "g": "time, occasion (la fois); cette fois = this time",
+   "g": "time, occasion (la fois); this time (cette fois)",
    "t": "noun"
   },
   "froide": {
@@ -302,7 +302,7 @@
    "t": "adjective"
   },
   "gâteau": {
-   "g": "cake (le gâteau); gâteau basque = famous local cake",
+   "g": "cake (le gâteau); famous local cake (gâteau basque)",
    "t": "noun"
   },
   "haute": {
@@ -310,7 +310,7 @@
    "t": "adjective"
   },
   "histoire": {
-   "g": "story (l'histoire); histoire d'amour = love story",
+   "g": "story (l'histoire); love story (histoire d'amour)",
    "t": "noun"
   },
   "hugo": {
@@ -318,7 +318,7 @@
    "t": "noun"
   },
   "hui": {
-   "g": "aujourd'hui = today",
+   "g": "today (aujourd'hui)",
    "t": "adverb"
   },
   "ici": {
@@ -326,7 +326,7 @@
    "t": "adverb"
   },
   "il": {
-   "g": "he; it; il y a = there is",
+   "g": "he; there is (it; il y a)",
    "t": "pronoun"
   },
   "ils": {
@@ -334,7 +334,7 @@
    "t": "pronoun"
   },
   "j": {
-   "g": "j' = I (je before a vowel)",
+   "g": "I (j', from je before a vowel)",
    "t": "pronoun"
   },
   "je": {
@@ -342,7 +342,7 @@
    "t": "pronoun"
   },
   "l": {
-   "g": "l' = the (le/la before a vowel)",
+   "g": "the (l', from le/la before a vowel)",
    "t": "article"
   },
   "la": {
@@ -374,7 +374,7 @@
    "t": "adverb"
   },
   "lève": {
-   "g": "raises, lifts (lever); lève le pouce = gives a thumbs-up",
+   "g": "raises, lifts (lever); gives a thumbs-up (lève le pouce)",
    "t": "verb"
   },
   "léa": {
@@ -422,7 +422,7 @@
    "t": "pronoun"
   },
   "monde": {
-   "g": "world (le monde); tout le monde = everybody",
+   "g": "world (le monde); everybody (tout le monde)",
    "t": "noun"
   },
   "monte": {
@@ -494,11 +494,11 @@
    "t": "adjective"
   },
   "peu": {
-   "g": "little; un peu = a little",
+   "g": "little; a little (un peu)",
    "t": "adverb"
   },
   "peur": {
-   "g": "fear (la peur); j'ai peur = I am afraid",
+   "g": "fear (la peur); I am afraid (j'ai peur)",
    "t": "noun"
   },
   "peut-être": {
@@ -518,7 +518,7 @@
    "t": "noun"
   },
   "plus": {
-   "g": "more; plus douce = softer",
+   "g": "more; softer (plus douce)",
    "t": "adverb"
   },
   "porte": {
@@ -526,7 +526,7 @@
    "t": "verb"
   },
   "pouce": {
-   "g": "thumb (le pouce); lever le pouce = thumbs-up",
+   "g": "thumb (le pouce); thumbs-up (lever le pouce)",
    "t": "noun"
   },
   "pour": {
@@ -626,7 +626,7 @@
    "t": "adverb"
   },
   "tout": {
-   "g": "all; tout le monde = everybody",
+   "g": "all; everybody (tout le monde)",
    "t": "pronoun"
   },
   "trois": {
@@ -678,7 +678,7 @@
    "t": "adjective"
   },
   "y": {
-   "g": "il y a = there is, there are",
+   "g": "there is, there are (il y a)",
    "t": "pronoun"
   },
   "yeux": {
@@ -698,11 +698,11 @@
    "t": "verb"
   },
   "bouge": {
-   "g": "moves (bouger); ne bouge pas = does not move",
+   "g": "moves (bouger); does not move (ne bouge pas)",
    "t": "verb"
   },
   "gagne": {
-   "g": "wins (gagner); la peur gagne = fear wins",
+   "g": "wins (gagner); fear wins (la peur gagne)",
    "t": "verb"
   },
   "passe": {
@@ -710,15 +710,15 @@
    "t": "verb"
   },
   "ne": {
-   "g": "ne ... pas = not (negation)",
+   "g": "not (ne ... pas, from negation)",
    "t": "adverb"
   },
   "pas": {
-   "g": "ne ... pas = not (negation)",
+   "g": "not (ne ... pas, from negation)",
    "t": "adverb"
   },
   "rien": {
-   "g": "nothing; ne dit rien = says nothing",
+   "g": "nothing; says nothing (ne dit rien)",
    "t": "pronoun"
   },
   "sans": {
@@ -726,7 +726,7 @@
    "t": "preposition"
   },
   "sienne": {
-   "g": "hers (la sienne = the one that is hers)",
+   "g": "the one that is hers) (hers (la sienne)",
    "t": "pronoun"
   },
   "deuxième": {

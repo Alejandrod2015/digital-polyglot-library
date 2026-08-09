@@ -24,7 +24,7 @@
  ],
  "glosses": {
   "ab": {
-   "g": "from (a point in time); ab 6:58 = from 6:58 on",
+   "g": "from (a point in time); from 6:58 on (ab 6:58)",
    "t": "preposition"
   },
   "aber": {
@@ -140,7 +140,7 @@
    "t": "verb"
   },
   "aus": {
-   "g": "out, out of; here part of: spuckt ... aus (ausspucken = to spit out)",
+   "g": "out, out of; to spit out) (here part of: spuckt ... aus (ausspucken)",
    "t": "preposition"
   },
   "ausgefülltes": {
@@ -228,7 +228,7 @@
    "t": "verb"
   },
   "bitte": {
-   "g": "please; was bitte = what on earth",
+   "g": "please; what on earth (was bitte)",
    "t": "adverb"
   },
   "blatt": {
@@ -260,11 +260,11 @@
    "t": "noun"
   },
   "da": {
-   "g": "there; da ist einer = there's one",
+   "g": "there; there's one (da ist einer)",
    "t": "adverb"
   },
   "dabei": {
-   "g": "on me, with me (habe ich dabei = I have it on me)",
+   "g": "I have it on me) (on me, with me (habe ich dabei)",
    "t": "adverb"
   },
   "dabeihaben": {
@@ -296,7 +296,7 @@
    "t": "adverb"
   },
   "daran": {
-   "g": "at that; genau daran = at precisely that point",
+   "g": "at that; at precisely that point (genau daran)",
    "t": "adverb"
   },
   "daraus": {
@@ -388,7 +388,7 @@
    "t": "adverb"
   },
   "dritte": {
-   "g": "third; die Dritte = the third one",
+   "g": "third; the third one (die Dritte)",
    "t": "adjective"
   },
   "dritten": {
@@ -400,7 +400,7 @@
    "t": "verb"
   },
   "drücker": {
-   "g": "auf den letzten Drücker = at the very last moment",
+   "g": "at the very last moment (auf den letzten Drücker)",
    "t": "expression",
    "r": "colloquial"
   },
@@ -417,7 +417,7 @@
    "t": "verb"
   },
   "eher": {
-   "g": "sooner, rather; eher X als Y = sooner X than Y",
+   "g": "sooner, rather; sooner X than Y (eher X als Y)",
    "t": "adverb"
   },
   "ein": {
@@ -461,7 +461,7 @@
    "t": "pronoun"
   },
   "erdboden": {
-   "g": "wie vom Erdboden verschluckt = vanished into thin air",
+   "g": "vanished into thin air (wie vom Erdboden verschluckt)",
    "t": "expression"
   },
   "erfährt": {
@@ -485,7 +485,7 @@
    "t": "verb"
   },
   "erst": {
-   "g": "only, not until; erst mal = for now",
+   "g": "only, not until; for now (erst mal)",
    "t": "adverb"
   },
   "ersten": {
@@ -529,7 +529,7 @@
    "t": "noun"
   },
   "fehlen": {
-   "g": "to be missing; dir fehlen = you still need",
+   "g": "to be missing; you still need (dir fehlen)",
    "t": "verb"
   },
   "findet": {
@@ -585,7 +585,7 @@
    "t": "preposition"
   },
   "gar": {
-   "g": "gar nichts = nothing at all",
+   "g": "nothing at all (gar nichts)",
    "t": "adverb"
   },
   "gebäude": {
@@ -657,7 +657,7 @@
    "t": "verb"
   },
   "gut": {
-   "g": "good; na gut = alright then",
+   "g": "good; alright then (na gut)",
    "t": "adverb"
   },
   "habe": {
@@ -693,7 +693,7 @@
    "t": "verb"
   },
   "hause": {
-   "g": "nach Hause = home(ward)",
+   "g": "home (nach Hause, from ward)",
    "t": "expression"
   },
   "hausverwaltung": {
@@ -890,7 +890,7 @@
    "t": "noun"
   },
   "kopf": {
-   "g": "head (der Kopf); im Kopf = in her head",
+   "g": "head (der Kopf); in her head (im Kopf)",
    "t": "noun"
   },
   "kriecht": {
@@ -911,11 +911,11 @@
    "t": "noun"
   },
   "laden": {
-   "g": "shop (der Laden); Seite laden = load the page",
+   "g": "shop (der Laden); load the page (Seite laden)",
    "t": "verb"
   },
   "lass": {
-   "g": "let (lassen); lass mich raten = let me guess",
+   "g": "let (lassen); let me guess (lass mich raten)",
    "t": "verb"
   },
   "laube": {
@@ -939,7 +939,7 @@
    "t": "noun"
   },
   "ließe": {
-   "g": "als ließe sich = as if one could (lassen, Konjunktiv II)",
+   "g": "as if one could (als ließe sich, from lassen, Konjunktiv II)",
    "t": "verb"
   },
   "lindner": {
@@ -955,11 +955,11 @@
    "t": "verb"
   },
   "mahlt": {
-   "g": "grinds (mahlen); wer zuerst kommt, mahlt zuerst = first come, first served",
+   "g": "grinds (mahlen); first come, first served (wer zuerst kommt, mahlt zuerst)",
    "t": "verb"
   },
   "mal": {
-   "g": "time(s); erst mal = for now",
+   "g": "time(s); for now (erst mal)",
    "t": "adverb"
   },
   "man": {
@@ -967,7 +967,7 @@
    "t": "pronoun"
   },
   "mehr": {
-   "g": "more; nicht mehr = no longer",
+   "g": "more; no longer (nicht mehr)",
    "t": "adverb"
   },
   "mein": {
@@ -979,7 +979,7 @@
    "t": "pronoun"
   },
   "meisten": {
-   "g": "die meisten = most people",
+   "g": "most people (die meisten)",
    "t": "pronoun"
   },
   "meistens": {
@@ -1027,7 +1027,7 @@
    "t": "noun"
   },
   "morgen": {
-   "g": "morning; heute Morgen = this morning",
+   "g": "morning; this morning (heute Morgen)",
    "t": "adverb"
   },
   "musst": {
@@ -1039,12 +1039,12 @@
    "t": "adverb"
   },
   "na": {
-   "g": "well; na gut = alright then",
+   "g": "well; alright then (na gut)",
    "t": "adverb",
    "r": "colloquial"
   },
   "nach": {
-   "g": "after; to; nach Hause = home",
+   "g": "after; home (to; nach Hause)",
    "t": "preposition"
   },
   "nadia": {
@@ -1056,11 +1056,11 @@
    "t": "adjective"
   },
   "nehme": {
-   "g": "take (nehmen); nehme ich an = I assume",
+   "g": "take (nehmen); I assume (nehme ich an)",
    "t": "verb"
   },
   "nenne": {
-   "g": "call (nennen); das nenne ich = that's what I call",
+   "g": "call (nennen); that's what I call (das nenne ich)",
    "t": "verb"
   },
   "neukölln": {
@@ -1084,7 +1084,7 @@
    "t": "adverb"
   },
   "noch": {
-   "g": "still, yet; noch vierzehn = fourteen more",
+   "g": "still, yet; fourteen more (noch vierzehn)",
    "t": "adverb"
   },
   "nummer": {
@@ -1140,7 +1140,7 @@
    "t": "noun"
   },
   "pflege": {
-   "g": "ich pflege = I keep up, maintain (pflegen)",
+   "g": "I keep up, maintain (ich pflege, from pflegen)",
    "t": "verb"
   },
   "planbarste": {
@@ -1169,7 +1169,7 @@
    "t": "noun"
   },
   "punkt": {
-   "g": "Punkt sieben = at seven sharp",
+   "g": "at seven sharp (Punkt sieben)",
    "t": "expression"
   },
   "quasi": {
@@ -1181,7 +1181,7 @@
    "t": "verb"
   },
   "raus": {
-   "g": "out; Handy raus = phone out",
+   "g": "out; phone out (Handy raus)",
    "t": "adverb",
    "r": "colloquial"
   },
@@ -1286,11 +1286,11 @@
    "t": "preposition"
   },
   "seite": {
-   "g": "page (die Seite); Seite laden = load the page",
+   "g": "page (die Seite); load the page (Seite laden)",
    "t": "noun"
   },
   "sekundentakt": {
-   "g": "im Sekundentakt = once every second",
+   "g": "once every second (im Sekundentakt)",
    "t": "expression"
   },
   "sich": {
@@ -1306,7 +1306,7 @@
    "t": "number"
   },
   "siehst": {
-   "g": "du siehst nicht aus = you don't look like (aussehen)",
+   "g": "you don't look like (du siehst nicht aus, from aussehen)",
    "t": "verb"
   },
   "sind": {
@@ -1342,7 +1342,7 @@
    "t": "noun"
   },
   "spuckt": {
-   "g": "spuckt ... aus = spits out (ausspucken)",
+   "g": "spits out (spuckt ... aus, from ausspucken)",
    "t": "verb"
   },
   "spurlos": {
@@ -1376,7 +1376,7 @@
    "t": "noun"
   },
   "stil": {
-   "g": "style; mit Stil = in style",
+   "g": "style; in style (mit Stil)",
    "t": "noun"
   },
   "stolpern": {
@@ -1396,11 +1396,11 @@
    "t": "noun"
   },
   "suchen": {
-   "g": "to look for; wir suchen Sie = we've been looking for you",
+   "g": "to look for; we've been looking for you (wir suchen Sie)",
    "t": "verb"
   },
   "system": {
-   "g": "system; im System = in the system",
+   "g": "system; in the system (im System)",
    "t": "noun"
   },
   "tafel": {
@@ -1460,7 +1460,7 @@
    "t": "noun"
   },
   "türmen": {
-   "g": "towers (der Turm); zu Türmen = into towers",
+   "g": "towers (der Turm); into towers (zu Türmen)",
    "t": "noun"
   },
   "u": {
@@ -1520,7 +1520,7 @@
    "t": "noun"
   },
   "vergnügen": {
-   "g": "pleasure (das Vergnügen); zum Vergnügen = for fun",
+   "g": "pleasure (das Vergnügen); for fun (zum Vergnügen)",
    "t": "noun"
   },
   "verkrümelt": {
@@ -1541,7 +1541,7 @@
    "t": "noun"
   },
   "verschluckt": {
-   "g": "wie vom Erdboden verschluckt = vanished into thin air",
+   "g": "vanished into thin air (wie vom Erdboden verschluckt)",
    "t": "verb"
   },
   "verschwindet": {
@@ -1569,7 +1569,7 @@
    "t": "number"
   },
   "viertel": {
-   "g": "quarter; Viertel vor sieben = quarter to seven",
+   "g": "quarter; quarter to seven (Viertel vor sieben)",
    "t": "expression"
   },
   "vierzehn": {
@@ -1597,7 +1597,7 @@
    "t": "noun"
   },
   "vorrat": {
-   "g": "auf Vorrat = in stock, ready in advance",
+   "g": "in stock, ready in advance (auf Vorrat)",
    "t": "expression"
   },
   "wackligen": {
@@ -1629,7 +1629,7 @@
    "t": "noun"
   },
   "weiter": {
-   "g": "further, on; rechne du weiter = you keep counting",
+   "g": "further, on; you keep counting (rechne du weiter)",
    "t": "adverb"
   },
   "weiteren": {
@@ -1725,11 +1725,11 @@
    "t": "noun"
   },
   "ziehen": {
-   "g": "to pull, draw; eine Marke ziehen = take a ticket",
+   "g": "to pull, draw; take a ticket (eine Marke ziehen)",
    "t": "verb"
   },
   "zu": {
-   "g": "to; too; zu Türmen = into towers",
+   "g": "to; into towers (too; zu Türmen)",
    "t": "preposition"
   },
   "zuerst": {
@@ -1749,7 +1749,7 @@
    "t": "preposition"
   },
   "zurück": {
-   "g": "back; kehrt ... zurück = returns",
+   "g": "back; returns (kehrt ... zurück)",
    "t": "adverb"
   },
   "zurückgezogen": {
@@ -1797,7 +1797,7 @@
    "t": "noun"
   },
   "achten": {
-   "g": "eighth (acht-); beim achten Karton = at the eighth box",
+   "g": "eighth (acht-); at the eighth box (beim achten Karton)",
    "t": "adjective"
   },
   "aktenlage": {
@@ -1934,7 +1934,7 @@
    "t": "adverb"
   },
   "eiltempo": {
-   "g": "im Eiltempo = at top speed (das Eiltempo)",
+   "g": "at top speed (im Eiltempo, from das Eiltempo)",
    "t": "noun"
   },
   "eingerieben": {
@@ -1942,7 +1942,7 @@
    "t": "verb"
   },
   "einliest": {
-   "g": "sich einlesen = to read up on something",
+   "g": "to read up on something (sich einlesen)",
    "t": "verb"
   },
   "einzeln": {
@@ -1986,7 +1986,7 @@
    "t": "noun"
   },
   "fest": {
-   "g": "halt dich fest = brace yourself; firm, tight",
+   "g": "firm, tight; brace yourself (halt dich fest)",
    "t": "adjective"
   },
   "finde": {
@@ -2026,11 +2026,11 @@
    "t": "noun"
   },
   "fällt": {
-   "g": "falls; die Entscheidung fällt = the decision is made",
+   "g": "falls; the decision is made (die Entscheidung fällt)",
    "t": "verb"
   },
   "fühlt": {
-   "g": "feels (fühlen); fühlt sich an = feels like",
+   "g": "feels (fühlen); feels like (fühlt sich an)",
    "t": "verb"
   },
   "führt": {
@@ -2086,7 +2086,7 @@
    "t": "verb"
   },
   "genommen": {
-   "g": "taken (nehmen); hätte mich genommen = would have taken me",
+   "g": "taken (nehmen); would have taken me (hätte mich genommen)",
    "t": "verb"
   },
   "gerade": {
@@ -2135,11 +2135,11 @@
    "r": "colloquial"
   },
   "halb": {
-   "g": "half; halb neun = half past EIGHT",
+   "g": "half; half past EIGHT (halb neun)",
    "t": "adjective"
   },
   "halt": {
-   "g": "halt dich fest = hold on tight (halten)",
+   "g": "hold on tight (halt dich fest, from halten)",
    "t": "verb"
   },
   "hast": {
@@ -2163,7 +2163,7 @@
    "t": "noun"
   },
   "herzlich": {
-   "g": "warm, cordial; herzlich willkommen = welcome",
+   "g": "warm, cordial; welcome (herzlich willkommen)",
    "t": "adjective"
   },
   "hängt": {
@@ -2239,7 +2239,7 @@
    "t": "verb"
   },
   "kommen": {
-   "g": "to come; Kommen Sie = come along",
+   "g": "to come; come along (Kommen Sie)",
    "t": "verb"
   },
   "kommt": {
@@ -2324,7 +2324,7 @@
    "t": "adverb"
   },
   "lotto": {
-   "g": "lottery (das Lotto); Sechser im Lotto = jackpot",
+   "g": "lottery (das Lotto); jackpot (Sechser im Lotto)",
    "t": "noun"
   },
   "lärm": {
@@ -2348,7 +2348,7 @@
    "t": "pronoun"
   },
   "melden": {
-   "g": "wir melden uns = we'll get back to you (sich melden)",
+   "g": "we'll get back to you (wir melden uns, from sich melden)",
    "t": "verb"
   },
   "miete": {
@@ -2452,7 +2452,7 @@
    "t": "adjective"
   },
   "reiflicher": {
-   "g": "nach reiflicher Überlegung = after careful consideration",
+   "g": "after careful consideration (nach reiflicher Überlegung)",
    "t": "adjective"
   },
   "ruhezeiten": {
@@ -2500,7 +2500,7 @@
    "t": "adjective"
   },
   "schritt": {
-   "g": "step (der Schritt); Schritt für Schritt = step by step",
+   "g": "step (der Schritt); step by step (Schritt für Schritt)",
    "t": "noun"
   },
   "schufa": {
@@ -2516,7 +2516,7 @@
    "t": "verb"
   },
   "sechser": {
-   "g": "Sechser im Lotto = jackpot (der Sechser)",
+   "g": "jackpot (Sechser im Lotto, from der Sechser)",
    "t": "noun"
   },
   "segen": {
@@ -2556,7 +2556,7 @@
    "t": "verb"
   },
   "spät": {
-   "g": "late; zu spät = too late",
+   "g": "late; too late (zu spät)",
    "t": "adjective"
   },
   "stammbaum": {
@@ -2568,15 +2568,15 @@
    "t": "verb"
   },
   "stapeln": {
-   "g": "sich stapeln = to pile up",
+   "g": "to pile up (sich stapeln)",
    "t": "verb"
   },
   "steht": {
-   "g": "stands; steht in = is written in (stehen)",
+   "g": "stands; is written in (steht in, from stehen)",
    "t": "verb"
   },
   "stellt": {
-   "g": "puts (stellen); stellt ab = puts down",
+   "g": "puts (stellen); puts down (stellt ab)",
    "t": "verb"
   },
   "still": {
@@ -2652,7 +2652,7 @@
    "t": "noun"
   },
   "umweg": {
-   "g": "detour (der Umweg); ohne Umweg = directly",
+   "g": "detour (der Umweg); directly (ohne Umweg)",
    "t": "noun"
   },
   "umzug": {
@@ -2756,7 +2756,7 @@
    "t": "verb"
   },
   "zieht": {
-   "g": "pulls; zieht nach Leipzig = moves; der Herd zieht = drifts (ziehen)",
+   "g": "pulls (ziehen); moves (zieht nach Leipzig); drifts (der Herd zieht)",
    "t": "verb"
   },
   "zimmer": {
@@ -2768,7 +2768,7 @@
    "t": "noun"
   },
   "zweifel": {
-   "g": "doubt (der Zweifel); im Zweifel = when in doubt",
+   "g": "doubt (der Zweifel); when in doubt (im Zweifel)",
    "t": "noun"
   },
   "zweimal": {
@@ -2825,7 +2825,7 @@
    "t": "noun"
   },
   "atmet": {
-   "g": "breathes (atmen); atmet durch = takes a deep breath",
+   "g": "breathes (atmen); takes a deep breath (atmet durch)",
    "t": "verb"
   },
   "ausgeschlafen": {
@@ -2869,7 +2869,7 @@
    "t": "verb"
   },
   "bringen": {
-   "g": "to bring; Bringen Sie = bring (formal)",
+   "g": "to bring; bring (Bringen Sie, from formal)",
    "t": "verb"
   },
   "büro": {
@@ -2893,7 +2893,7 @@
    "t": "verb"
   },
   "dein": {
-   "g": "your; Dein Ernst? = are you serious?",
+   "g": "your; are you serious? (Dein Ernst?)",
    "t": "pronoun"
   },
   "deshalb": {
@@ -2901,7 +2901,7 @@
    "t": "adverb"
   },
   "deutsch": {
-   "g": "German; auf Deutsch = in German",
+   "g": "German; in German (auf Deutsch)",
    "t": "adjective"
   },
   "dienstag": {
@@ -2921,7 +2921,7 @@
    "t": "noun"
   },
   "dreht": {
-   "g": "turns (drehen); dreht sich um = turns around",
+   "g": "turns (drehen); turns around (dreht sich um)",
    "t": "verb"
   },
   "drittens": {
@@ -2929,7 +2929,7 @@
    "t": "adverb"
   },
   "druck": {
-   "g": "pressure (der Druck); unter Druck = under pressure",
+   "g": "pressure (der Druck); under pressure (unter Druck)",
    "t": "noun"
   },
   "drucker": {
@@ -2957,7 +2957,7 @@
    "t": "adverb"
   },
   "ernst": {
-   "g": "serious (der Ernst); Dein Ernst? = seriously?",
+   "g": "serious (der Ernst); seriously? (Dein Ernst?)",
    "t": "noun"
   },
   "erstens": {
@@ -2997,7 +2997,7 @@
    "t": "noun"
   },
   "freue": {
-   "g": "ich freue mich = I am glad (sich freuen)",
+   "g": "I am glad (ich freue mich, from sich freuen)",
    "t": "verb"
   },
   "förmlicher": {
@@ -3009,11 +3009,11 @@
    "t": "verb"
   },
   "gefahr": {
-   "g": "danger (die Gefahr); auf eigene Gefahr = at own risk",
+   "g": "danger (die Gefahr); at own risk (auf eigene Gefahr)",
    "t": "noun"
   },
   "gefasst": {
-   "g": "auf etwas gefasst = braced for something (sich gefasst machen)",
+   "g": "braced for something (auf etwas gefasst, from sich gefasst machen)",
    "t": "adjective"
   },
   "gehen": {
@@ -3021,7 +3021,7 @@
    "t": "verb"
   },
   "geht": {
-   "g": "goes; Geht vor = go ahead (gehen)",
+   "g": "goes; go ahead (Geht vor, from gehen)",
    "t": "verb"
   },
   "gehören": {
@@ -3041,11 +3041,11 @@
    "t": "verb"
   },
   "gibt": {
-   "g": "gives (geben); es gibt = there is",
+   "g": "gives (geben); there is (es gibt)",
    "t": "verb"
   },
   "gilt": {
-   "g": "gilt als = is considered as (gelten)",
+   "g": "is considered as (gilt als, from gelten)",
    "t": "verb"
   },
   "gründlich": {
@@ -3057,11 +3057,11 @@
    "t": "adjective"
   },
   "gutes": {
-   "g": "something good; Man hört Gutes = one hears good things",
+   "g": "something good; one hears good things (Man hört Gutes)",
    "t": "adjective"
   },
   "hals": {
-   "g": "throat, neck (der Hals); im Hals stecken = stuck in the throat",
+   "g": "throat, neck (der Hals); stuck in the throat (im Hals stecken)",
    "t": "noun"
   },
   "handgezeichnete": {
@@ -3085,15 +3085,15 @@
    "t": "noun"
   },
   "herkomme": {
-   "g": "wo ich herkomme = where I come from (herkommen)",
+   "g": "where I come from (wo ich herkomme, from herkommen)",
    "t": "verb"
   },
   "hören": {
-   "g": "to listen; Hören Sie = listen (formal)",
+   "g": "to listen; listen (Hören Sie, from formal)",
    "t": "verb"
   },
   "hört": {
-   "g": "hears (hören); man hört = one hears",
+   "g": "hears (hören); one hears (man hört)",
    "t": "verb"
   },
   "ihrem": {
@@ -3134,7 +3134,7 @@
    "t": "noun"
   },
   "kenne": {
-   "g": "know (kennen); Kenne ich = I know it",
+   "g": "know (kennen); I know it (Kenne ich)",
    "t": "verb"
   },
   "kickoff": {
@@ -3150,7 +3150,7 @@
    "t": "noun"
   },
   "kommst": {
-   "g": "come (kommen, du form); Kommst du? = coming?",
+   "g": "come (kommen, du form); coming? (Kommst du?)",
    "t": "verb"
   },
   "komplimente": {
@@ -3182,7 +3182,7 @@
    "t": "noun"
   },
   "lang": {
-   "g": "long; eine Woche lang = for a whole week",
+   "g": "long; for a whole week (eine Woche lang)",
    "t": "adjective"
   },
   "lange": {
@@ -3198,7 +3198,7 @@
    "t": "verb"
   },
   "leite": {
-   "g": "lead (leiten); ich leite = I lead",
+   "g": "lead (leiten); I lead (ich leite)",
    "t": "verb"
   },
   "leiten": {
@@ -3210,7 +3210,7 @@
    "t": "verb"
   },
   "liegen": {
-   "g": "to lie; das wird Ihnen liegen = it will suit you",
+   "g": "to lie; it will suit you (das wird Ihnen liegen)",
    "t": "verb"
   },
   "loyalität": {
@@ -3222,7 +3222,7 @@
    "t": "verb"
   },
   "machen": {
-   "g": "to make, do; fertig machen = to finish",
+   "g": "to make, do; to finish (fertig machen)",
    "t": "verb"
   },
   "macht": {
@@ -3246,7 +3246,7 @@
    "t": "pronoun"
   },
   "meint": {
-   "g": "means (meinen); meint es ernst = is serious about it",
+   "g": "means (meinen); is serious about it (meint es ernst)",
    "t": "verb"
   },
   "mittags": {
@@ -3282,7 +3282,7 @@
    "t": "preposition"
   },
   "nehmen": {
-   "g": "to take; sich Zeit nehmen = to take time",
+   "g": "to take; to take time (sich Zeit nehmen)",
    "t": "verb"
   },
   "nerven": {
@@ -3294,7 +3294,7 @@
    "t": "adjective"
   },
   "neue": {
-   "g": "die Neue = the new one, newcomer (female)",
+   "g": "the new one, newcomer (die Neue, from female)",
    "t": "noun"
   },
   "nimmt": {
@@ -3398,7 +3398,7 @@
    "t": "noun"
   },
   "schlag": {
-   "g": "Schlag fünf = on the stroke of five (der Schlag)",
+   "g": "on the stroke of five (Schlag fünf, from der Schlag)",
    "t": "noun"
   },
   "schlecht": {
@@ -3442,7 +3442,7 @@
    "t": "noun"
   },
   "setzen": {
-   "g": "Setzen Sie sich = sit down, formal (sich setzen)",
+   "g": "sit down, formal (Setzen Sie sich, from sich setzen)",
    "t": "verb"
   },
   "sieht": {
@@ -3574,7 +3574,7 @@
    "t": "verb"
   },
   "zeige": {
-   "g": "show (zeigen); ich zeige dir = I'll show you",
+   "g": "show (zeigen); I'll show you (ich zeige dir)",
    "t": "verb"
   },
   "zeigt": {
@@ -3622,7 +3622,7 @@
    "t": "verb"
   },
   "ruft": {
-   "g": "calls (rufen); ruft an = phones",
+   "g": "calls (rufen); phones (ruft an)",
    "t": "verb"
   },
   "beamtin": {
@@ -3646,7 +3646,7 @@
    "t": "noun"
   },
   "lässt": {
-   "g": "lets (lassen); lässt sich = can be done",
+   "g": "lets (lassen); can be done (lässt sich)",
    "t": "verb"
   },
   "nordufer": {
@@ -3802,7 +3802,7 @@
    "t": "verb"
   },
   "lauter": {
-   "g": "vor lauter = because of so much",
+   "g": "because of so much (vor lauter)",
    "t": "adverb"
   },
   "magen": {
@@ -3982,7 +3982,7 @@
    "t": "noun"
   },
   "ahnung": {
-   "g": "idea, clue (die Ahnung); Keine Ahnung = no idea",
+   "g": "idea, clue (die Ahnung); no idea (Keine Ahnung)",
    "t": "noun"
   },
   "anderthalb": {
@@ -4046,11 +4046,11 @@
    "t": "noun"
   },
   "deutsche": {
-   "g": "German (declined); die Deutsche = German woman",
+   "g": "German (declined); German woman (die Deutsche)",
    "t": "adjective"
   },
   "deutschen": {
-   "g": "German (declined); Deutsche = Germans",
+   "g": "German (declined); Germans (Deutsche)",
    "t": "adjective"
   },
   "diesen": {
@@ -4087,7 +4087,7 @@
    "t": "noun"
   },
   "fange": {
-   "g": "start (anfangen); ich fange an = I begin",
+   "g": "start (anfangen); I begin (ich fange an)",
    "t": "verb"
   },
   "farbig": {
@@ -4107,7 +4107,7 @@
    "t": "noun"
   },
   "gebe": {
-   "g": "give (geben); ich gebe auf = I give up",
+   "g": "give (geben); I give up (ich gebe auf)",
    "t": "verb"
   },
   "geduld": {
@@ -4119,7 +4119,7 @@
    "t": "noun"
   },
   "gern": {
-   "g": "gladly; hätte gern = would like",
+   "g": "gladly; would like (hätte gern)",
    "t": "adverb"
   },
   "gute": {
@@ -4143,7 +4143,7 @@
    "t": "adverb"
   },
   "hängen": {
-   "g": "to hang; hängt an = depends on",
+   "g": "to hang; depends on (hängt an)",
    "t": "verb"
   },
   "jahre": {
@@ -4167,7 +4167,7 @@
    "t": "verb"
   },
   "kündigen": {
-   "g": "kündigen an = announce (ankündigen); to cancel",
+   "g": "to cancel, to give notice; to announce (kündigen an, from ankündigen)",
    "t": "verb"
   },
   "land": {
@@ -4175,7 +4175,7 @@
    "t": "noun"
   },
   "legt": {
-   "g": "lays, puts (legen); legt vor = presents",
+   "g": "lays, puts (legen); presents (legt vor)",
    "t": "verb"
   },
   "lehrreiche": {
@@ -4183,7 +4183,7 @@
    "t": "adjective"
   },
   "luft": {
-   "g": "air (die Luft); in der Luft = in the air",
+   "g": "air (die Luft); in the air (in der Luft)",
    "t": "noun"
   },
   "lächeln": {
@@ -4236,7 +4236,7 @@
    "r": "colloquial"
   },
   "paar": {
-   "g": "ein paar = a few, a couple of",
+   "g": "a few, a couple of (ein paar)",
    "t": "pronoun"
   },
   "papiere": {
@@ -4244,7 +4244,7 @@
    "t": "noun"
   },
   "platz": {
-   "g": "seat, place (der Platz); Platz nehmen = sit down",
+   "g": "seat, place (der Platz); sit down (Platz nehmen)",
    "t": "noun"
   },
   "reine": {
@@ -4336,7 +4336,7 @@
    "t": "adjective"
   },
   "warte": {
-   "g": "wait (warten); warte = hang on",
+   "g": "wait (warten); hang on (warte)",
    "t": "verb"
   },
   "werden": {
@@ -4360,7 +4360,7 @@
    "t": "adjective"
   },
   "fand": {
-   "g": "found (finden, past); fand gut = liked",
+   "g": "found (finden, past); liked (fand gut)",
    "t": "verb"
   },
   "abspann": {
@@ -4392,7 +4392,7 @@
    "t": "noun"
   },
   "anfang": {
-   "g": "beginning (der Anfang); von Anfang an = from the start",
+   "g": "beginning (der Anfang); from the start (von Anfang an)",
    "t": "noun"
   },
   "anonymer": {
@@ -4436,7 +4436,7 @@
    "t": "verb"
   },
   "bedingung": {
-   "g": "condition (die Bedingung); unter einer Bedingung = on one condition",
+   "g": "condition (die Bedingung); on one condition (unter einer Bedingung)",
    "t": "noun"
   },
   "bekommt": {
@@ -4464,11 +4464,11 @@
    "t": "noun"
   },
   "bittet": {
-   "g": "asks, requests (bitten); bittet um Entschuldigung = apologizes",
+   "g": "asks, requests (bitten); apologizes (bittet um Entschuldigung)",
    "t": "verb"
   },
   "bloß": {
-   "g": "bloß nicht! = definitely not, no way",
+   "g": "definitely not, no way (bloß nicht!)",
    "t": "adverb",
    "r": "colloquial"
   },
@@ -4513,7 +4513,7 @@
    "t": "noun"
   },
   "drehen": {
-   "g": "to turn; drehen sich = turn around",
+   "g": "to turn; turn around (drehen sich)",
    "t": "verb"
   },
   "dreimal": {
@@ -4521,7 +4521,7 @@
    "t": "adverb"
   },
   "dritter": {
-   "g": "third (dritt, declined); dritter Stock = third floor",
+   "g": "third (dritt, declined); third floor (dritter Stock)",
    "t": "number"
   },
   "eingeladen": {
@@ -4565,7 +4565,7 @@
    "t": "adjective"
   },
   "farben": {
-   "g": "colors (die Farbe); nach Farben = by color",
+   "g": "colors (die Farbe); by color (nach Farben)",
    "t": "noun"
   },
   "fettflecken": {
@@ -4581,7 +4581,7 @@
    "t": "noun"
   },
   "folgen": {
-   "g": "to follow; Weitere Schritte folgen = further steps will follow",
+   "g": "to follow; further steps will follow (Weitere Schritte folgen)",
    "t": "verb"
   },
   "frage": {
@@ -4593,11 +4593,11 @@
    "t": "adjective"
   },
   "freundlichen": {
-   "g": "friendly (freundlich, declined); Mit freundlichen Grüßen = letter closing",
+   "g": "friendly (freundlich, declined); letter closing (Mit freundlichen Grüßen)",
    "t": "adjective"
   },
   "früh": {
-   "g": "early; zu früh = too early",
+   "g": "early; too early (zu früh)",
    "t": "adverb"
   },
   "förmlich": {
@@ -4609,7 +4609,7 @@
    "t": "noun"
   },
   "gehabt": {
-   "g": "had (haben, participle); Pech gehabt = tough luck",
+   "g": "had (haben, participle); tough luck (Pech gehabt)",
    "t": "verb"
   },
   "geschlossen": {
@@ -4669,7 +4669,7 @@
    "t": "verb"
   },
   "hin": {
-   "g": "there (direction); allein hin = there alone",
+   "g": "there (direction); there alone (allein hin)",
    "t": "adverb"
   },
   "hinsetzen": {
@@ -4677,7 +4677,7 @@
    "t": "verb"
   },
   "hör": {
-   "g": "listen (hören, imperative); Hör zu = listen up",
+   "g": "listen (hören, imperative); listen up (Hör zu)",
    "t": "verb"
   },
   "immer": {
@@ -4717,7 +4717,7 @@
    "t": "verb"
   },
   "klopft": {
-   "g": "knocks (klopfen); es klopft = someone knocks",
+   "g": "knocks (klopfen); someone knocks (es klopft)",
    "t": "verb"
   },
   "kommissar": {
@@ -4745,7 +4745,7 @@
    "t": "noun"
   },
   "lasst": {
-   "g": "let (lassen, ihr imperative); Lasst mich raten = let me guess",
+   "g": "let (lassen, ihr imperative); let me guess (Lasst mich raten)",
    "t": "verb"
   },
   "lesebrille": {
@@ -4753,7 +4753,7 @@
    "t": "noun"
   },
   "liege": {
-   "g": "lie (liegen); richtig liegen = to be right",
+   "g": "lie (liegen); to be right (richtig liegen)",
    "t": "verb"
   },
   "lies": {
@@ -4801,7 +4801,7 @@
    "t": "noun"
   },
   "muss": {
-   "g": "must (müssen); niemand muss = nobody has to",
+   "g": "must (müssen); nobody has to (niemand muss)",
    "t": "verb"
   },
   "mutig": {
@@ -4845,7 +4845,7 @@
    "t": "adverb"
   },
   "offene": {
-   "g": "open (offen, declined); offene Frage = open question",
+   "g": "open (offen, declined); open question (offene Frage)",
    "t": "adjective"
   },
   "ordentlich": {
@@ -4905,7 +4905,7 @@
    "t": "noun"
   },
   "recht": {
-   "g": "recht geben = to prove someone right (das Recht)",
+   "g": "to prove someone right (recht geben, from das Recht)",
    "t": "noun"
   },
   "redet": {
@@ -5042,7 +5042,7 @@
    "t": "noun"
   },
   "tippe": {
-   "g": "bet, guess (tippen auf); ich tippe auf = my guess is",
+   "g": "bet, guess (tippen auf); my guess is (ich tippe auf)",
    "t": "verb"
   },
   "titelmelodie": {
@@ -5054,7 +5054,7 @@
    "t": "noun"
   },
   "trenne": {
-   "g": "separate (trennen, ich form); Müll trennen = sort waste",
+   "g": "separate (trennen, ich form); sort waste (Müll trennen)",
    "t": "verb"
   },
   "täter": {
@@ -5106,7 +5106,7 @@
    "t": "noun"
   },
   "warst": {
-   "g": "were (sein, du past); Das warst du = that was you",
+   "g": "were (sein, du past); that was you (Das warst du)",
    "t": "verb"
   },
   "wegen": {
@@ -5178,7 +5178,7 @@
    "t": "number"
   },
   "zählt": {
-   "g": "counts (zählen); zählt nicht = does not count",
+   "g": "counts (zählen); does not count (zählt nicht)",
    "t": "verb"
   },
   "überlebensmittel": {
@@ -6386,7 +6386,7 @@
    "t": "verb"
   },
   "näher": {
-   "g": "nearer, closer (näher kommen = approach)",
+   "g": "approach) (nearer, closer (näher kommen)",
    "t": "adverb"
   },
   "anfingen": {

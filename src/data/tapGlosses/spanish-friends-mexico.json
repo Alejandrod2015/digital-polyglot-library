@@ -192,7 +192,7 @@
    "t": "conjunction"
   },
   "salía": {
-   "g": "no salía = would not go out",
+   "g": "would not go out (no salía)",
    "t": "verb"
   },
   "ese": {
@@ -236,7 +236,7 @@
    "t": "verb"
   },
   "lengua": {
-   "g": "lengua floja = a loose tongue",
+   "g": "a loose tongue (lengua floja)",
    "t": "noun"
   },
   "todavía": {
@@ -436,7 +436,7 @@
    "t": "verb"
   },
   "caía": {
-   "g": "se le caía el mundo = his world fell apart",
+   "g": "his world fell apart (se le caía el mundo)",
    "t": "verb"
   },
   "próxima": {
@@ -444,7 +444,7 @@
    "t": "adjective"
   },
   "subió": {
-   "g": "subírsele a la cabeza = went to her head",
+   "g": "went to her head (subírsele a la cabeza)",
    "t": "verb"
   },
   "trajinera": {
@@ -536,7 +536,7 @@
    "t": "adjective"
   },
   "vara": {
-   "g": "aguantar vara = to take teasing without cracking",
+   "g": "to take teasing without cracking (aguantar vara)",
    "t": "noun"
   },
   "hubiera": {
@@ -568,7 +568,7 @@
    "t": "noun"
   },
   "vayas": {
-   "g": "no la vayas a embarrar = do not screw it up",
+   "g": "do not screw it up (no la vayas a embarrar)",
    "t": "verb"
   },
   "caer": {
@@ -640,7 +640,7 @@
    "t": "verb"
   },
   "bomba": {
-   "g": "soltar la bomba = to drop a bombshell",
+   "g": "to drop a bombshell (soltar la bomba)",
    "t": "noun"
   },
   "chamba": {
@@ -856,7 +856,7 @@
    "t": "verb"
   },
   "madres": {
-   "g": "valer madres = to not matter at all",
+   "g": "to not matter at all (valer madres)",
    "t": "noun"
   },
   "contra": {
@@ -932,7 +932,7 @@
    "t": "verb"
   },
   "hondo": {
-   "g": "respirar hondo = to breathe deep",
+   "g": "to breathe deep (respirar hondo)",
    "t": "adjective"
   },
   "pero": {
@@ -1364,7 +1364,7 @@
    "t": "verb"
   },
   "partido": {
-   "g": "sin un peso partido = penniless",
+   "g": "penniless (sin un peso partido)",
    "t": "adjective"
   },
   "nota": {
@@ -1416,7 +1416,7 @@
    "t": "verb"
   },
   "muerta": {
-   "g": "dead; muerta de hambre = starving",
+   "g": "dead; starving (muerta de hambre)",
    "t": "adjective"
   },
   "guardó": {
@@ -1560,7 +1560,7 @@
    "t": "verb"
   },
   "muertos": {
-   "g": "dead; muertos de frío = freezing",
+   "g": "dead; freezing (muertos de frío)",
    "t": "adjective"
   },
   "confesó": {
@@ -1568,7 +1568,7 @@
    "t": "verb"
   },
   "puesto": {
-   "g": "puesto las pilas = got his act together",
+   "g": "got his act together (puesto las pilas)",
    "t": "verb"
   },
   "familia": {
@@ -1592,7 +1592,7 @@
    "t": "verb"
   },
   "atando": {
-   "g": "atar cabos = putting the pieces together",
+   "g": "putting the pieces together (atar cabos)",
    "t": "verb"
   },
   "cabos": {
@@ -1736,7 +1736,7 @@
    "t": "verb"
   },
   "fuego": {
-   "g": "prueba de fuego = a trial by fire",
+   "g": "a trial by fire (prueba de fuego)",
    "t": "noun"
   },
   "hombre": {
@@ -1744,7 +1744,7 @@
    "t": "noun"
   },
   "poco": {
-   "g": "poco a poco = little by little",
+   "g": "little by little (poco a poco)",
    "t": "adverb"
   },
   "arte": {
@@ -1948,7 +1948,7 @@
    "t": "verb"
   },
   "bajar": {
-   "g": "bajar la cabeza = to admit defeat",
+   "g": "to admit defeat (bajar la cabeza)",
    "t": "verb"
   },
   "cervezas": {
@@ -1956,7 +1956,7 @@
    "t": "noun"
   },
   "caigo": {
-   "g": "caer parado = to land on my feet",
+   "g": "to land on my feet (caer parado)",
    "t": "verb"
   },
   "allá": {
@@ -2004,7 +2004,7 @@
    "t": "verb"
   },
   "cielo": {
-   "g": "pegar el grito al cielo = to protest loudly",
+   "g": "to protest loudly (pegar el grito al cielo)",
    "t": "noun"
   },
   "nos": {
@@ -2236,7 +2236,7 @@
    "t": "verb"
   },
   "tomó": {
-   "g": "se tomó = drank down",
+   "g": "drank down (se tomó)",
    "t": "verb"
   },
   "primer": {
@@ -2352,7 +2352,7 @@
    "t": "adjective"
   },
   "veras": {
-   "g": "de a de veras = for real",
+   "g": "for real (de a de veras)",
    "t": "adverb"
   },
   "llegado": {
@@ -2488,7 +2488,7 @@
    "t": "verb"
   },
   "ritmo": {
-   "g": "agarrar el ritmo = to find the groove",
+   "g": "to find the groove (agarrar el ritmo)",
    "t": "noun"
   },
   "media": {
@@ -2500,7 +2500,7 @@
    "t": "verb"
   },
   "aventó": {
-   "g": "threw; se aventó = went for it",
+   "g": "threw; went for it (se aventó)",
    "t": "verb"
   },
   "jurado": {
@@ -2576,11 +2576,11 @@
    "t": "noun"
   },
   "forma": {
-   "g": "en forma = properly, in style",
+   "g": "properly, in style (en forma)",
    "t": "noun"
   },
   "prendió": {
-   "g": "prenderse el foco = the lightbulb went on",
+   "g": "the lightbulb went on (prenderse el foco)",
    "t": "verb"
   },
   "alebrije": {
@@ -2620,7 +2620,7 @@
    "t": "noun"
   },
   "perdido": {
-   "g": "lost; ya había perdido = had already lost",
+   "g": "lost; had already lost (ya había perdido)",
    "t": "verb"
   },
   "buscando": {
@@ -2640,7 +2640,7 @@
    "t": "verb"
   },
   "agarrando": {
-   "g": "agarrar el ritmo = finding the groove",
+   "g": "finding the groove (agarrar el ritmo)",
    "t": "verb"
   },
   "oaxaca": {
@@ -2648,7 +2648,7 @@
    "t": "noun"
   },
   "falta": {
-   "g": "sin falta = without fail",
+   "g": "without fail (sin falta)",
    "t": "noun"
   },
   "seguía": {
@@ -2692,7 +2692,7 @@
    "t": "noun"
   },
   "foco": {
-   "g": "prenderse el foco = the lightbulb moment",
+   "g": "the lightbulb moment (prenderse el foco)",
    "t": "noun"
   },
   "año": {
@@ -2748,7 +2748,7 @@
    "t": "adjective"
   },
   "plena": {
-   "g": "en plena mesa = right in the middle of",
+   "g": "right in the middle of (en plena mesa)",
    "t": "adjective"
   },
   "baja": {
@@ -2800,7 +2800,7 @@
    "t": "noun"
   },
   "horno": {
-   "g": "al horno = in deep trouble",
+   "g": "in deep trouble (al horno)",
    "t": "noun"
   },
   "batería": {
@@ -2928,7 +2928,7 @@
    "t": "noun"
   },
   "pegada": {
-   "g": "champeta pegada = blasting music",
+   "g": "blasting music (champeta pegada)",
    "t": "adjective"
   },
   "roca": {
@@ -3044,7 +3044,7 @@
    "t": "adjective"
   },
   "quieta": {
-   "g": "dejar quieta = to leave alone",
+   "g": "to leave alone (dejar quieta)",
    "t": "adjective"
   },
   "música": {
@@ -3100,7 +3100,7 @@
    "t": "noun"
   },
   "difícil": {
-   "g": "hacerse la difícil = to play hard to get",
+   "g": "to play hard to get (hacerse la difícil)",
    "t": "adjective"
   },
   "subir": {
@@ -3300,7 +3300,7 @@
    "t": "noun"
   },
   "tras": {
-   "g": "uno tras otro = one after another",
+   "g": "one after another (uno tras otro)",
    "t": "preposition"
   },
   "volada": {
@@ -3384,7 +3384,7 @@
    "t": "noun"
   },
   "cruzó": {
-   "g": "cruzar los dedos = crossed fingers",
+   "g": "crossed fingers (cruzar los dedos)",
    "t": "verb"
   },
   "brazos": {
@@ -3600,7 +3600,7 @@
    "t": "noun"
   },
   "lugar": {
-   "g": "en lugar de = instead of",
+   "g": "instead of (en lugar de)",
    "t": "noun"
   },
   "chambear": {
@@ -3736,7 +3736,7 @@
    "t": "noun"
   },
   "pensaba": {
-   "g": "no lo pensaba = was not going to",
+   "g": "was not going to (no lo pensaba)",
    "t": "verb"
   },
   "late": {
@@ -3788,7 +3788,7 @@
    "t": "adjective"
   },
   "gorra": {
-   "g": "de gorra = for free",
+   "g": "for free (de gorra)",
    "t": "noun"
   },
   "manejaba": {
