@@ -813,10 +813,23 @@ async function buildJourneyVariantsFromStudio(
   return tracks;
 }
 
-export async function buildJourneyVariants(
-  language?: string,
-  _journeyFocus: JourneyFocus = "General"
-): Promise<JourneyVariantTrack[]> {
+/**
+ * OJO: NO filtra por foco, y el parámetro ya no existe a propósito.
+ *
+ * Antes aceptaba `_journeyFocus` y lo descartaba (el guion bajo lo delataba).
+ * El resultado era una ilusión cara: el endpoint móvil leía el foco del usuario
+ * de Clerk, lo pasaba hasta aquí, y devolvía exactamente la misma lista para
+ * todos. Elegir "Traveler" o "Expat" daba byte por byte la misma respuesta, y
+ * como el cliente cae a `tracks[0]` cuando no encuentra el suyo, el usuario
+ * veía Expat con etiqueta de Traveler (reportado 2026-08-07).
+ *
+ * Filtrar por foco de verdad no es posible con los datos actuales: los cuatro
+ * focos ("General", "Travel & Local Life", "Work & Career",
+ * "Culture & Belonging") no tienen ninguna correspondencia guardada con los
+ * nombres de journey ("Expat", "Traveler", "Friends", "Hanseat"). Inventarla
+ * aquí sería adivinar. Quien elige el track es el CLIENTE, por id.
+ */
+export async function buildJourneyVariants(language?: string): Promise<JourneyVariantTrack[]> {
   // Studio (Prisma Journey records) is the only source for the Journey tab.
   // Sanity stories are reader-only legacy content and must never appear here.
   // language=undefined activa el modo "No preference": el helper trae
@@ -946,7 +959,7 @@ export async function buildJourneyLevels(
   journeyFocus: JourneyFocus = "General",
   levelHint?: string
 ): Promise<JourneyLevel[]> {
-  const tracks = await buildJourneyVariants(language, journeyFocus);
+  const tracks = await buildJourneyVariants(language);
   if (tracks.length === 0) return [];
 
   // Resuelve por slug, id, o variant code. El URL ahora usa slug

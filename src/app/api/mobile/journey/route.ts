@@ -63,7 +63,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       : null;
   const [rawTracks, completedStoryKeys, passedCheckpointKeys, practicedTopicKeys, dueReviewItems] =
     await Promise.all([
-      buildJourneyVariants(language, journeyFocus ?? "General"),
+      buildJourneyVariants(language),
       getCompletedJourneyStoryKeys(session.sub),
       getPassedJourneyCheckpointKeys(session.sub),
       getPracticedJourneyTopicKeys(session.sub),

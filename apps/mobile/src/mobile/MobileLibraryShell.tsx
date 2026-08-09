@@ -3291,6 +3291,21 @@ export function MobileLibraryShell(args: {
       (journey.variant
         ? cached?.tracks?.find((t) => t.id === journey.variant)
         : null) ??
+      // ÚLTIMO RECURSO: el MISMO track al que cae la pantalla de journey
+      // (`activeJourneyTrack`, que termina en `tracks[0]`). Sin esto, nombre y
+      // contenido se resolvían por caminos distintos y podían discrepar: un
+      // journey legacy guarda su identidad como (idioma, región, foco) y no
+      // empareja por cuid, así que aquí quedaba `null`, el nombre caía al
+      // `focusShortLabel` del foco ("Traveler") y la pantalla pintaba el
+      // contenido de `tracks[0]` (en alemán, "Expat", primero por orden
+      // alfabético). Resultado: dos entradas con nombres distintos enseñando
+      // el mismo journey, que es como lo reportó el usuario el 2026-08-07.
+      //
+      // No inventa nada: hace que la etiqueta DIGA lo que de verdad se está
+      // mostrando. Si el journey guardado no está disponible (p. ej. sigue en
+      // draft, como el Traveler alemán), verás el nombre del que estás leyendo
+      // en vez de un nombre fantasma.
+      cached?.tracks?.[0] ??
       null;
     // Prefer the live track's SPECIFIC variant (mexico/colombia/argentina) over
     // the journey's saved `region`, which collapsed to the "latam" family and

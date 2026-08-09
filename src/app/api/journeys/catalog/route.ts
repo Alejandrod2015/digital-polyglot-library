@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    const tracks = await buildJourneyVariants(undefined, "General");
+    const tracks = await buildJourneyVariants(undefined);
     const options = tracks.map((t) => ({
       slug: t.slug,
       label: t.label,

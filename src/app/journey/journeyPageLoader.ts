@@ -58,7 +58,7 @@ export async function loadJourneyPageProps({
         (v): v is string => typeof v === "string" && v.trim().length > 0
       ) ?? undefined
     : undefined;
-  let tracks = await buildJourneyVariants(targetLanguage, journeyFocus ?? "General");
+  let tracks = await buildJourneyVariants(targetLanguage);
   const preferredRegion =
     typeof user?.publicMetadata?.preferredRegion === "string"
       ? user.publicMetadata.preferredRegion
@@ -98,7 +98,7 @@ export async function loadJourneyPageProps({
     // language so the page renders it (and the switch sheet lists its siblings).
     // Only paid on the miss, so the common same-language path stays cheap.
     if (!resolvedTrack) {
-      const allTracks = await buildJourneyVariants(undefined, journeyFocus ?? "General");
+      const allTracks = await buildJourneyVariants(undefined);
       const matched = resolveIn(allTracks);
       if (matched) {
         const lang = (matched.language ?? "").toLowerCase();
