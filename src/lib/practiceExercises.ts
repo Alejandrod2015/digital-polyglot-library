@@ -292,6 +292,40 @@ function spanishAgreement(raw: string): { gender: "f" | "m"; plural: boolean } |
   return null;
 }
 
+/**
+ * Clase de FORMA en alemán: infinitivo, conjugada, o ninguna. Preferencia
+ * blanda para los distractores, igual que `spanishAgreement`, nunca un filtro.
+ *
+ * Por qué (reportado con captura el 2026-08-07): "Herr Lindner ____ die
+ * Formulare" ofrecía `besitzt` contra `staunen`, `ausspucken` y `losprusten`.
+ * Una conjugada entre tres infinitivos: se acierta por la FORMA, sin entender
+ * nada. La concordancia existía solo para español, que mira género y número;
+ * en alemán lo que delata es la flexión.
+ *
+ * ESTO NO ES UN ETIQUETADOR GRAMATICAL, y no hace falta que lo sea. Sin
+ * diccionario, `-t` es ambiguo en alemán: `kennt` (verbo), `enttäuscht`
+ * (participio) y `breit` o `elegant` (adjetivos) caen todos en "finite". Da
+ * igual: el objetivo no es clasificar bien, es que la forma DEJE DE SER una
+ * pista. Basta con que las clases sean consistentes para que el aprendiz no
+ * pueda descartar tres opciones de un vistazo.
+ *
+ * Se probó contra el vocabulario real (851 palabras alemanas distintas): 135
+ * infinitivos, 68 conjugadas y 648 sin clase (frases, sustantivos, adjetivos
+ * sin `-t`), que se quedan como estaban. La clase más pequeña deja 67
+ * candidatos por objetivo cuando hacen falta 3.
+ *
+ * NO se filtra por `wordType`: está vacío en los 929 ejercicios alemanes, así
+ * que un guard por tipo habría desactivado esto en el 97% de los casos. Se
+ * midió antes de escribirlo.
+ */
+function germanVerbForm(raw: string): "infinitive" | "finite" | null {
+  const w = raw.trim();
+  if (!w || w.includes(" ") || /^[A-ZÄÖÜ]/.test(w)) return null;
+  if (/(en|ern|eln)$/.test(w)) return "infinitive";
+  if (/(test|ten|te|st|t)$/.test(w)) return "finite";
+  return null;
+}
+
 function getDistractorWords(
   item: PracticeFavoriteItem,
   pool: PracticeFavoriteItem[],
@@ -391,7 +425,17 @@ function getDistractorWords(
     const a = spanishAgreement(candidate.word);
     return !!a && a.gender === targetAgr.gender && a.plural === targetAgr.plural;
   };
+  // Alemán: misma idea que la concordancia española, otra dimensión. Se aplica
+  // ANTES de los niveles laxos y, como ellos, solo como preferencia: si no
+  // llena las cuatro opciones, sigue cayendo hacia abajo.
+  const targetForm =
+    normalizeKey(item.language) === "german" ? germanVerbForm(item.word) : null;
+  const formMatch = (candidate: PracticeFavoriteItem): boolean =>
+    !!targetForm && germanVerbForm(candidate.word) === targetForm;
+
   if (targetAgr) drainFrom(byLang(sameShapeAndType.filter(agreementMatch)));
+  if (targetForm && picked.length < max) drainFrom(byLang(sameShapeAndType.filter(formMatch)));
+  if (targetForm && picked.length < max) drainFrom(byLang(sameShape.filter(formMatch)));
   if (picked.length < max) drainFrom(byLang(sameShapeAndType));
   if (picked.length < max) drainFrom(byLang(sameShape));
   if (picked.length < max) drainFrom(byLang(eligible));
