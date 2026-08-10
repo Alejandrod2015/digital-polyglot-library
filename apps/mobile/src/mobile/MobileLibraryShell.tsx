@@ -3255,7 +3255,7 @@ export function MobileLibraryShell(args: {
   // (= one row per (language, variant, focus) tuple). Stats are still
   // language-level mocks for now; when per-journey progress lands the
   // lookup key changes to journey.id.
-  const journeySwitchEntries: LanguageSwitchEntry[] = preferences.journeys.map((journey) => {
+  const journeySwitchEntriesRaw = preferences.journeys.map((journey) => {
     const stats = LANG_STATS[journey.language] ?? { streak: 0, xpTotal: 0, progress: 0 };
     const isActive = preferences.activeJourneyId
       ? journey.id === preferences.activeJourneyId
@@ -3286,11 +3286,15 @@ export function MobileLibraryShell(args: {
     // so matching only on id failed and the Mexico journey fell back to the
     // "latam" family (wrong flag/label/level). This is the same key the top-bar
     // (activeJourneyFlagVariant) already matches on.
-    const cachedTrack =
+    const identityTrack =
       cached?.tracks?.find((t) => t.id === journey.id) ??
       (journey.variant
         ? cached?.tracks?.find((t) => t.id === journey.variant)
         : null) ??
+      null;
+    const identityMatched = identityTrack !== null;
+    const cachedTrack =
+      identityTrack ??
       // ÚLTIMO RECURSO: el MISMO track al que cae la pantalla de journey
       // (`activeJourneyTrack`, que termina en `tracks[0]`). Sin esto, nombre y
       // contenido se resolvían por caminos distintos y podían discrepar: un
@@ -3355,8 +3359,81 @@ export function MobileLibraryShell(args: {
       streak: stats.streak,
       xpTotal: stats.xpTotal,
       progress: stats.progress,
+      // Diagnóstico interno para deduplicar abajo. No se pinta.
+      resolvedTrackId: cachedTrack?.id ?? null,
+      matchedByIdentity: identityMatched,
+      resolvedLabel: cachedTrack?.label?.trim() || null,
     };
   });
+  const journeySwitchEntriesDeduped = journeySwitchEntriesRaw
+    // DEDUPE: dos journeys guardados pueden ABRIR EL MISMO track, y entonces
+    // sobran filas. Pasa con los legacy, cuya identidad es (idioma, región,
+    // foco) y no empareja por cuid: caen al mismo track que otro.
+    //
+    // Se queda UNA fila por track, elegida en este orden: la que empareja por
+    // identidad, si no la activa, si no la primera. Y la fila superviviente
+    // hereda el "activa" del grupo, para que el usuario no pierda de vista
+    // dónde está.
+    //
+    // SEGUNDO INTENTO. El primero filtraba "escóndela si OTRA empareja por
+    // identidad", y eso no cubría los dos casos reales: si NINGUNA empareja no
+    // escondía ninguna, y la activa estaba exenta siempre, así que bastaba con
+    // que la duplicada fuese la activa para seguir viendo las dos. El usuario
+    // siguió viendo dos "Expat" después de instalarlo.
+    .reduce((kept, entry) => {
+      // Clave de duplicado. Con caché, el track resuelto es la verdad.
+      //
+      // Sin caché hace falta MÁS que el nombre, y esto casi me cuesta caro: en
+      // español hay CINCO journeys activos con solo DOS nombres visibles
+      // ("Spanish · Friends" es latam, Colombia Y España; "Spanish · Traveler"
+      // es latam y México). Agrupar por nombre habría fundido los tres Friends
+      // en uno y hecho desaparecer el de España, que está publicado y completo.
+      // Lo que de verdad los distingue es lo que el usuario ve en la fila:
+      // región y nivel. Si coinciden idioma, nombre, región y nivel, entonces
+      // sí son indistinguibles hasta para él.
+      const dupKey = (e: (typeof journeySwitchEntriesRaw)[number]) =>
+        e.resolvedTrackId
+          ? `track:${e.resolvedTrackId}`
+          : `name:${e.language}::${e.displayName}::${e.variant ?? ""}::${e.level ?? ""}`;
+      const key = dupKey(entry);
+      const twin = kept.find((k) => dupKey(k) === key);
+      if (!twin) {
+        kept.push(entry);
+        return kept;
+      }
+      // Ya hay una fila para este track: nos quedamos con la mejor de las dos.
+      const entryWins = entry.matchedByIdentity && !twin.matchedByIdentity;
+      const winner = entryWins ? entry : twin;
+      const merged = { ...winner, active: twin.active || entry.active };
+      kept[kept.indexOf(twin)] = merged;
+      return kept;
+    }, [] as Array<(typeof journeySwitchEntriesRaw)[number]>);
+  const journeySwitchEntries: LanguageSwitchEntry[] = journeySwitchEntriesDeduped.map(
+    ({ resolvedTrackId: _r, matchedByIdentity: _m, resolvedLabel: _l, ...entry }) => entry
+  );
+  /**
+   * UNA SOLA RESOLUCIÓN para las dos listas de journeys.
+   *
+   * "Your journeys" y "Switch journey" salen de los mismos datos guardados,
+   * pero cada una los resolvía a su manera: la hoja contra el track vivo, y el
+   * panel con lo que había en preferencias. Resultado, con capturas del
+   * usuario el 2026-08-07: 7 filas contra 5, niveles distintos para el mismo
+   * journey ("Intermediate" contra "Advanced") y, lo peor, **cada lista decía
+   * que el activo era otro**. Dos pantallas del mismo sitio contradiciéndose.
+   *
+   * Aquí se derivan del MISMO array ya deduplicado: mismas filas, misma
+   * etiqueta, mismo nivel y el mismo activo en las dos.
+   */
+  const journeysForPanel = journeySwitchEntriesDeduped.map((entry) => {
+    const stored = preferences.journeys.find((j) => j.id === entry.id);
+    if (!stored) return null;
+    return {
+      ...stored,
+      label: entry.resolvedLabel ?? stored.label ?? null,
+      region: entry.variant || stored.region,
+      level: entry.level ?? stored.level,
+    };
+  }).filter((j): j is NonNullable<typeof j> => j !== null);
 
   // Polyglot-only QA reset: wipes the user's preferences on both
   // client and server so the onboarding gate fires again, letting
@@ -19076,7 +19153,7 @@ export function MobileLibraryShell(args: {
       <JourneysPanel
         open={journeysPanelOpen}
         onClose={() => setJourneysPanelOpen(false)}
-        journeys={preferences.journeys.map((journey) => {
+        journeys={journeysForPanel.map((journey) => {
           // "Your journeys" resolves its flag via journeyFlagVariant(region ??
           // variant). Inject the SPECIFIC variant (mexico/colombia/…) resolved
           // from the live track (matched by id OR variant, same as the switch
