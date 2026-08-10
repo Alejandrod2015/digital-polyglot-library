@@ -61,6 +61,34 @@ function glossTokenFromText(text: string): string {
   return m ? m[0] : "";
 }
 
+/**
+ * Busca la glosa de un token, resolviendo las ELISIONES.
+ *
+ * `glossTokenFromText` corta en el apóstrofo, así que en italiano `l'acqua`
+ * buscaba la clave `l` y devolvía "the": tocabas la palabra y te salía el
+ * artículo, con `acqua` ("water") inalcanzable aunque esté en el bundle. Los
+ * bundles guardan las dos mitades por separado y NINGUNA clave lleva apóstrofo
+ * (comprobado: 0 de 1.100 en italiano), así que la elisión dependía entera de
+ * la glosa de una letra suelta.
+ *
+ * Ahora gana la palabra de CONTENIDO, la de después del apóstrofo, y solo si
+ * no tiene glosa se cae a la de antes. `l'acqua` da "water"; `un'idea`, "idea".
+ */
+function lookupGloss(
+  glosses: Record<string, TapGloss>,
+  text: string
+): { token: string; gloss: TapGloss } | null {
+  const raw = text.toLowerCase();
+  const apostrophe = raw.search(/['’]/);
+  if (apostrophe > -1) {
+    const tail = glossTokenFromText(raw.slice(apostrophe + 1));
+    if (tail && glosses[tail]) return { token: tail, gloss: glosses[tail] };
+  }
+  const head = glossTokenFromText(text);
+  if (head && glosses[head]) return { token: head, gloss: glosses[head] };
+  return null;
+}
+
 const TITLE_WORD_SPLIT = /(\p{L}+(?:-\p{L}+)*)/u;
 
 // El título también entra en el diccionario. Se renderizaba como un nodo de
@@ -79,8 +107,9 @@ function renderTappableTitle(
   if (parts.length === 1) return title;
   return parts.map((part, i) => {
     if (i % 2 === 1) {
-      const token = glossTokenFromText(part);
-      const gloss = token ? glosses[token] : undefined;
+      const hit = lookupGloss(glosses, part);
+      const token = hit?.token ?? "";
+      const gloss = hit?.gloss;
       if (gloss) {
         return (
           <Text key={`t-${i}`} onPress={() => onQuickLookup(part, gloss, title)}>
@@ -908,8 +937,9 @@ function renderKaraokeParagraph(args: {
         }
         if (vocabItem) onPress = () => onWordPress(vocabItem, paragraph.text);
         else {
-          const glossToken = glossTokenFromText(w.text);
-          const gloss = glossToken ? glosses[glossToken] : undefined;
+          const hit = lookupGloss(glosses, w.text);
+          const glossToken = hit?.token ?? "";
+          const gloss = hit?.gloss;
           if (gloss) onPress = () => onQuickLookup(w.text, gloss, paragraph.text);
         }
       }
@@ -1164,8 +1194,9 @@ function renderKaraokeParagraph(args: {
       // de <View> que el resto para no alterar la línea) sin pill de color:
       // el color se reserva para el story-vocab. Sin gloss, queda como texto
       // no interactivo, igual que antes.
-      const glossToken = glossTokenFromText(w.text);
-      const gloss = glossToken ? glosses[glossToken] : undefined;
+      const hit = lookupGloss(glosses, w.text);
+      const glossToken = hit?.token ?? "";
+      const gloss = hit?.gloss;
       if (gloss) {
         nodes.push(
           <Pressable

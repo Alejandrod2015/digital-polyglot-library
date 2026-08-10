@@ -13733,7 +13733,18 @@ export function MobileLibraryShell(args: {
                               // Palabras largas (compuestos alemanes) se
                               // encogen para caber en vez de desbordarse.
                               adjustsFontSizeToFit
-                              numberOfLines={2}
+                              // UNA LÍNEA POR PALABRA, no dos fijas. Con un
+                              // tope de 2, "die Bescheinigung" se partía a
+                              // mitad de palabra ("die Bescheinig / ung"):
+                              // React Native corta DENTRO del token cuando no
+                              // le caben en las líneas disponibles. Dándole
+                              // tantas líneas como palabras, la fuente se
+                              // encoge hasta que la más larga cabe entera en
+                              // la suya, y no hay nada que partir. Mismo
+                              // criterio que en el ejercicio Match.
+                              numberOfLines={
+                                currentPracticeExercise.favorite.word?.trim().split(/\s+/).length || 1
+                              }
                               minimumFontScale={0.4}
                               style={[
                                 styles.practiceMeaningTargetWord,
