@@ -139,30 +139,56 @@ function note(text: string): string {
   return `<div style="margin-top:13px;font-family:${DPE.font};font-weight:700;font-size:12.5px;color:${DPE.muted};">${esc(text)}</div>`;
 }
 
+/**
+ * Every email in this family is written in the first person: "I read every
+ * one", "reply and I will resend it". Until 2026-08-11 none of them said who
+ * "I" was, and the plain-text half signed off as the brand, so a personal
+ * sentence arrived signed by a company. Same name `personal.ts` already uses.
+ */
+const SIGN_OFF = "Alejandro";
+
+// Just the name, matching the plain-text half exactly. The brand is already
+// on the footer logo directly underneath; repeating it here would put the
+// company back in the signature slot, which is the thing being fixed.
+function signature(): string {
+  return `<div style="text-align:left;">
+    <p style="margin:0;font-family:${DPE.font};font-weight:700;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">${esc(SIGN_OFF)}</p>
+  </div>`;
+}
+
+/**
+ * `shell` with the sign-off appended. Wrapped rather than added to the shell
+ * itself: `kit.ts` is shared with the lifecycle emails, which are not written
+ * in anyone's voice and must not grow a personal signature by side effect.
+ */
+function betaShell(opts: Parameters<typeof shell>[0]): string {
+  return shell({ ...opts, blocks: [...opts.blocks, block(signature(), "26px 44px 0", false)] });
+}
+
 /* ══════════════════════════════════════════════ 1 · ACCEPTED */
 // The one email that must not be vague. It has to answer, in order: am I in,
 // what do I press, what do I get, and what do you want from me.
 export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
-  const lang = data?.targetLanguage?.trim() || "your language";
   const tfUrl = data?.testflightUrl ?? "https://apps.apple.com/app/testflight/id899247664";
 
   const steps = card(
-    `${cardTitle("Getting in takes two minutes")}
+    `${cardTitle("Getting in takes about two minutes")}
     ${bullets([
-      "Install TestFlight from the App Store if you do not have it yet. It is Apple's own app for testing.",
-      "Open the invite email Apple just sent to your Apple ID and tap Accept.",
-      "Install Digital Polyglot from inside TestFlight and sign in with this email address.",
+      "Install TestFlight if you do not have it yet. It is Apple's app for testing apps.",
+      "Open the invite Apple just sent to your Apple ID and tap Accept.",
+      "Install Digital Polyglot from there, and sign in with this email address.",
     ])}`,
   );
 
   const perks = card(
-    `${cardTitle("What you get", DPE.gold)}
+    `${cardTitle("While the beta runs", DPE.gold)}
     ${bullets(
       [
-        "Full premium access for the whole beta. Every journey, every story, every voice.",
-        "Your reports go straight to the person building the app, and you get told when they ship.",
+        "Every language, every story and the audio are open to you.",
+        "Pick a language when you open the app. You can change it whenever you want.",
+        "Tell me something is broken and you will hear from me when it is fixed.",
       ],
       "gold",
     )}`,
@@ -170,9 +196,9 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
   );
 
   const ask = card(
-    `${cardTitle("What I need from you", DPE.sky)}
+    `${cardTitle("Then just use it", DPE.sky)}
     <p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
-      Use it the way you would actually use it. When something breaks, confuses you, or feels slow, tap ${hi("Send feedback")} in Settings. It takes one line. I read every single one.
+      When something breaks or annoys you, tap ${hi("Send feedback")} in Settings and tell me in one line. I read all of them.
     </p>`,
     "rgba(125,211,252,0.3)",
   );
@@ -189,9 +215,9 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
 
   const blocks = [
     block(
-      `${eyebrow("You're in")}${head(`Welcome to the<br/>${gold("beta")}, ${esc(name)}.`, 40)}${lead(
-        `Your TestFlight invite is on its way to your Apple ID. You are testing ${esc(lang)}, with everything unlocked.`,
-      )}`,
+      `${eyebrow("Beta access")}${head(`You're ${gold("in")}, ${esc(name)}.`, 40)}${lead(
+        `Thank you for signing up. As a beta tester you help shape the app that many more people will later use to learn and improve their languages.`,
+      )}${lead(`Apple is sending your TestFlight invite to your Apple ID right now.`)}`,
       "40px 44px 0",
     ),
     ...(personal ? [block(personal, "26px 44px 0", false)] : []),
@@ -200,14 +226,15 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
     block(perks, "24px 44px 0", false),
     block(ask, "16px 44px 0", false),
     block(
-      note("If Apple's invite has not landed in 15 minutes, check the spam folder of your Apple ID address, then reply to this email and I will resend it."),
+      note("If Apple's invite has not shown up in fifteen minutes, check the spam folder of your Apple ID address, then reply here and I will send it again."),
       "8px 44px 0",
     ),
+    block(lead("Thanks for being one of the first."), "18px 44px 0"),
   ];
 
   return {
     subject: "You're in: your TestFlight invite is on the way",
-    html: shell({
+    html: betaShell({
       preheader: "Two minutes to install, then everything is unlocked.",
       blocks,
       baseUrl: b,
@@ -215,25 +242,29 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `Welcome to the beta, ${name}.`,
+      `You are in, ${name}.`,
       "",
       ...(data?.personalNote?.trim() ? [data.personalNote.trim(), ""] : []),
-      `Your TestFlight invite is on its way to your Apple ID. You are testing ${lang}, with everything unlocked.`,
+      `Thank you for signing up. As a beta tester you help shape the app that many more people will later use to learn and improve their languages.`,
       "",
-      "Getting in takes two minutes:",
-      "  1. Install TestFlight from the App Store if you do not have it yet.",
-      "  2. Open Apple's invite email and tap Accept.",
-      "  3. Install Digital Polyglot from TestFlight and sign in with this email address.",
+      "Apple is sending your TestFlight invite to your Apple ID right now.",
+      "",
+      "Getting in takes about two minutes:",
+      "  1. Install TestFlight if you do not have it yet. It is Apple's app for testing apps.",
+      "  2. Open the invite Apple just sent and tap Accept.",
+      "  3. Install Digital Polyglot from there, and sign in with this email address.",
       "",
       `TestFlight: ${tfUrl}`,
       "",
-      "What you get: full premium access for the whole beta, and a direct line to the person building it.",
+      "Every language, every story and the audio are open to you. Pick a language when you open the app. You can change it whenever you want.",
       "",
-      "What I need: use it the way you actually would. When something breaks or confuses you, tap Send feedback in Settings. One line is enough. I read every one.",
+      "Then just use it. When something breaks or annoys you, tap Send feedback in Settings and tell me in one line. I read all of them.",
       "",
-      "If Apple's invite has not landed in 15 minutes, check the spam folder of your Apple ID address and reply here.",
+      "If Apple's invite has not shown up in fifteen minutes, check the spam folder of your Apple ID address, then reply here and I will send it again.",
       "",
-      "Digital Polyglot",
+      "Thanks for being one of the first.",
+      "",
+      SIGN_OFF,
     ].join("\n"),
   };
 }
@@ -249,7 +280,6 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
 export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
-  const lang = data?.targetLanguage?.trim() || "your language";
   const joinUrl = data?.playGroupJoinUrl ?? null;
   const optInUrl = data?.playOptInUrl ?? null;
 
@@ -276,11 +306,12 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
   );
 
   const perks = card(
-    `${cardTitle("What you get", DPE.gold)}
+    `${cardTitle("While the beta runs", DPE.gold)}
     ${bullets(
       [
-        "Full premium access for the whole beta. Every journey, every story, every voice.",
-        "Your reports go straight to the person building the app, and you get told when they ship.",
+        "Every language, every story and the audio are open to you.",
+        "Pick a language when you open the app. You can change it whenever you want.",
+        "Tell me something is broken and you will hear from me when it is fixed.",
       ],
       "gold",
     )}`,
@@ -288,9 +319,9 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
   );
 
   const ask = card(
-    `${cardTitle("What I need from you", DPE.sky)}
+    `${cardTitle("Then just use it", DPE.sky)}
     <p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
-      Use it the way you would actually use it. When something breaks, confuses you, or feels slow, tap ${hi("Send feedback")} in Settings. It takes one line. I read every single one.
+      When something breaks or annoys you, tap ${hi("Send feedback")} in Settings and tell me in one line. I read all of them.
     </p>`,
     "rgba(125,211,252,0.3)",
   );
@@ -305,8 +336,9 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
 
   const blocks = [
     block(
-      `${eyebrow("You're in")}${head(`Welcome to the<br/>${gold("beta")}, ${esc(name)}.`, 40)}${lead(
-        `You are testing ${esc(lang)}, with everything unlocked. Google does not send an invite of its own, so everything you need is right here.`,
+      `${eyebrow("Beta access")}${head(`You're ${gold("in")}, ${esc(name)}.`, 40)}${lead(
+        `Thank you for signing up. As a beta tester you help shape the app that many more people will later use to learn and improve their languages.`,
+      )}${lead(`Google does not send an invite of its own, so everything you need is right here.`,
       )}`,
       "40px 44px 0",
     ),
@@ -320,14 +352,15 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
     block(perks, "16px 44px 0", false),
     block(ask, "16px 44px 0", false),
     block(
-      note("Stuck at any step, reply to this email and tell me what the screen says. Android's testing flow is genuinely fiddly and it is not your fault."),
+      note("Stuck at any step, reply and tell me what the screen says. Android's way of doing this is genuinely fiddly, and it is not your fault."),
       "8px 44px 0",
     ),
+    block(lead("Thanks for being one of the first."), "18px 44px 0"),
   ];
 
   return {
     subject: "You're in: here is your Android tester link",
-    html: shell({
+    html: betaShell({
       preheader: "Join the group, open the link in Chrome, install.",
       blocks,
       baseUrl: b,
@@ -335,10 +368,12 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `Welcome to the beta, ${name}.`,
+      `You are in, ${name}.`,
       "",
       ...(data?.personalNote?.trim() ? [data.personalNote.trim(), ""] : []),
-      `You are testing ${lang}, with everything unlocked. Google does not send an invite of its own, so everything you need is in this email.`,
+      `Thank you for signing up. As a beta tester you help shape the app that many more people will later use to learn and improve their languages.`,
+      "",
+      "Google does not send an invite of its own, so everything you need is in this email.",
       "",
       "Getting in takes three minutes:",
       ...stepList.map((s, i) => `  ${i + 1}. ${s}`),
@@ -348,13 +383,15 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
       "",
       "The one thing that goes wrong: if the page says the app is not available, you are signed in with a different Google account than the one that joined the group. Check the avatar at the top right of Chrome and switch.",
       "",
-      "What you get: full premium access for the whole beta, and a direct line to the person building it.",
+      "Every language, every story and the audio are open to you. Pick a language when you open the app. You can change it whenever you want.",
       "",
-      "What I need: use it the way you actually would. When something breaks or confuses you, tap Send feedback in Settings. One line is enough. I read every one.",
+      "Then just use it. When something breaks or annoys you, tap Send feedback in Settings and tell me in one line. I read all of them.",
       "",
       "Stuck at any step, reply and tell me what the screen says.",
       "",
-      "Digital Polyglot",
+      "Thanks for being one of the first.",
+      "",
+      SIGN_OFF,
     ].join("\n"),
   };
 }
@@ -365,12 +402,11 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
 export function buildBetaWaitlistEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
-  const lang = data?.targetLanguage?.trim() || "your language";
 
   const blocks = [
     block(
       `${eyebrow("Application received")}${head(`You're on the<br/>${gold("shortlist")}.`, 40)}${lead(
-        `Thanks for applying, ${esc(name)}. I run the beta in small groups so I can actually read every report, which means ${esc(lang)} testers go out in waves.`,
+        `Thanks for applying, ${esc(name)}. I run the beta in small groups so every report gets read properly, which means invites go out in waves.`,
       )}`,
       "40px 44px 0",
     ),
@@ -394,7 +430,7 @@ export function buildBetaWaitlistEmail(data?: BetaEmailData): BuiltEmail {
 
   return {
     subject: "You're on the shortlist for the beta",
-    html: shell({
+    html: betaShell({
       preheader: "Invites go out in waves. You keep your place.",
       blocks,
       baseUrl: b,
@@ -404,11 +440,11 @@ export function buildBetaWaitlistEmail(data?: BetaEmailData): BuiltEmail {
     text: [
       `Thanks for applying, ${name}.`,
       "",
-      `I run the beta in small groups so I can actually read every report, which means ${lang} testers go out in waves.`,
+      `I run the beta in small groups so every report gets read properly, which means invites go out in waves.`,
       "",
       "You keep your place, there is nothing to reapply for, and invites go out oldest first when the next wave opens. You will hear from me either way.",
       "",
-      "Digital Polyglot",
+      SIGN_OFF,
     ].join("\n"),
   };
 }
@@ -422,7 +458,7 @@ export function buildBetaDeclinedEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("About your application")}${head(`Not this ${gold("round")}.`, 40)}${lead(
-        `Thanks for applying, ${esc(name)}. The current beta is a small iPhone-only group aimed at a narrow set of languages, and your application is not a fit for it.`,
+        `Thanks for applying, ${esc(name)}. The current beta is a small group, and your application is not a fit for this round.`,
       )}`,
       "40px 44px 0",
     ),
@@ -440,7 +476,7 @@ export function buildBetaDeclinedEmail(data?: BetaEmailData): BuiltEmail {
 
   return {
     subject: "About your beta application",
-    html: shell({
+    html: betaShell({
       preheader: "Not a fit for this round. Here is what you can do today.",
       blocks,
       baseUrl: b,
@@ -450,11 +486,11 @@ export function buildBetaDeclinedEmail(data?: BetaEmailData): BuiltEmail {
     text: [
       `Thanks for applying, ${name}.`,
       "",
-      "The current beta is a small iPhone-only group aimed at a narrow set of languages, and your application is not a fit for this round.",
+      "The current beta is a small group, and your application is not a fit for this round.",
       "",
       `You can read on the web today at no cost: ${b}/stories`,
       "",
-      "Digital Polyglot",
+      SIGN_OFF,
     ].join("\n"),
   };
 }
@@ -509,7 +545,7 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
 
   return {
     subject: "Your beta spot is still open",
-    html: shell({
+    html: betaShell({
       preheader: android
         ? "It is almost always the wrong Google account."
         : "The invite is usually sitting in your Apple ID inbox.",
@@ -533,7 +569,7 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
         ? "Still stuck? Reply and tell me what the page says, and which Google account you are signed in with."
         : "Still stuck? Reply with the Apple ID address you want it sent to and I will fire a fresh invite.",
       "",
-      "Digital Polyglot",
+      SIGN_OFF,
     ].join("\n"),
   };
 }
@@ -571,7 +607,7 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
 
   return {
     subject: "What annoyed you most this week?",
-    html: shell({
+    html: betaShell({
       preheader: "One sentence is a complete answer.",
       blocks,
       baseUrl: b,
@@ -589,7 +625,7 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
       "",
       "Or just hit reply. Both land in the same place.",
       "",
-      "Digital Polyglot",
+      SIGN_OFF,
     ].join("\n"),
   };
 }
@@ -603,7 +639,7 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("Three weeks in")}${head(`Three questions,<br/>${gold("ninety")} seconds.`, 40)}${lead(
-        `Three weeks down, three to go. What you say now decides what I build in the second half, ${esc(name)}, so this is the moment your answers are worth the most.`,
+        `Three weeks down, three to go. What you say now decides what gets built in the second half, ${esc(name)}, so this is the moment your answers are worth the most.`,
       )}`,
       "40px 44px 0",
     ),
@@ -624,7 +660,7 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
 
   return {
     subject: "Three questions, ninety seconds",
-    html: shell({
+    html: betaShell({
       preheader: "Halfway through the beta. Your answers set the second half.",
       blocks,
       baseUrl: b,
@@ -641,7 +677,7 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
       "",
       `Answer here: ${url}`,
       "",
-      "Digital Polyglot",
+      SIGN_OFF,
     ].join("\n"),
   };
 }
@@ -653,9 +689,8 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
   const r = data?.release;
-  const version = r?.version ?? "";
   const build = r?.buildNumber ?? "";
-  const headline = r?.headline ?? "A new build is ready";
+  const headline = r?.headline ?? "A new version is ready";
   const whatsNew = r?.whatsNew ?? [];
   const knownIssues = r?.knownIssues ?? [];
   const fixedForThem = data?.fixedForThem ?? [];
@@ -679,14 +714,14 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
       : "";
 
   const changes = card(
-    `${cardTitle(`What changed in build ${build}`)}
+    `${cardTitle("What changed in this one")}
     ${bullets(whatsNew)}`,
   );
 
   const issues =
     knownIssues.length > 0
       ? card(
-          `${cardTitle("Known and already on my list", DPE.gold)}
+          `${cardTitle("Known and already on the list", DPE.gold)}
           ${bullets(knownIssues, "gold")}`,
           "rgba(252,211,77,0.26)",
         )
@@ -702,8 +737,8 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
 
   const blocks = [
     block(
-      `${eyebrow(`Build ${build}`)}${head(esc(headline), 38)}${lead(
-        `${updateSource} will offer you the update, ${esc(name)}. ${version ? `Version ${esc(version)}, build ${esc(build)}.` : ""}`,
+      `${eyebrow("New version")}${head(esc(headline), 38)}${lead(
+        `${updateSource} will offer you the update, ${esc(name)}.`,
       )}`,
       "40px 44px 0",
     ),
@@ -718,8 +753,8 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
   ];
 
   return {
-    subject: `Build ${build} is live: ${headline}`,
-    html: shell({
+    subject: `New version: ${headline}`,
+    html: betaShell({
       preheader:
         fixedForThem.length > 0
           ? "Something you reported is fixed in this one."
@@ -730,23 +765,23 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `Build ${build} is live, ${name}.`,
+      `There is a new version, ${name}.`,
       "",
       headline,
       "",
       ...(fixedForThem.length > 0
         ? ["You reported this, and it is fixed:", ...fixedForThem.map((f) => `  - ${f}`), ""]
         : []),
-      `What changed in build ${build}:`,
+      "What changed in this one:",
       ...whatsNew.map((w) => `  - ${w}`),
       "",
       ...(r?.askThem ? [`If you only do one thing: ${r.askThem}`, ""] : []),
       ...(knownIssues.length > 0
-        ? ["Known and already on my list:", ...knownIssues.map((k) => `  - ${k}`), ""]
+        ? ["Known and already on the list:", ...knownIssues.map((k) => `  - ${k}`), ""]
         : []),
       `${updateInstruction} If it does not show yet, give it ten minutes.`,
       "",
-      "Digital Polyglot",
+      SIGN_OFF,
     ].join("\n"),
   };
 }
@@ -786,7 +821,7 @@ export function buildBetaFinalSurveyEmail(data?: BetaEmailData): BuiltEmail {
 
   return {
     subject: "Last ask before the app goes live",
-    html: shell({
+    html: betaShell({
       preheader: "Four questions. The last chance to change it before launch.",
       blocks,
       baseUrl: b,
@@ -806,7 +841,7 @@ export function buildBetaFinalSurveyEmail(data?: BetaEmailData): BuiltEmail {
       "",
       "Thank you for the last few weeks.",
       "",
-      "Digital Polyglot",
+      SIGN_OFF,
     ].join("\n"),
   };
 }
@@ -848,7 +883,7 @@ export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
 
   return {
     subject: "It shipped, and you shaped it",
-    html: shell({
+    html: betaShell({
       preheader: "One review from you is worth more than any ad I could buy.",
       blocks,
       baseUrl: b,
@@ -868,7 +903,7 @@ export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
       "",
       "And if you would rather not, that is genuinely fine.",
       "",
-      "Digital Polyglot",
+      SIGN_OFF,
     ].join("\n"),
   };
 }
@@ -903,7 +938,7 @@ export function buildBetaReviewRecoverEmail(data?: BetaEmailData): BuiltEmail {
 
   return {
     subject: "It shipped. What would have made it work for you?",
-    html: shell({
+    html: betaShell({
       preheader: "No review ask. Just the sentence that starts with 'it would have worked if'.",
       blocks,
       baseUrl: b,
@@ -921,7 +956,7 @@ export function buildBetaReviewRecoverEmail(data?: BetaEmailData): BuiltEmail {
       "",
       "Your access stays on either way.",
       "",
-      "Digital Polyglot",
+      SIGN_OFF,
     ].join("\n"),
   };
 }
