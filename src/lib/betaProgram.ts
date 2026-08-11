@@ -42,6 +42,10 @@ export const BETA_PLAN = "premium";
  */
 const ACTIVE_STATUSES = ["invited", "accepted"];
 
+/** Throttle for backfillBetaTesterLinks; see the note there. */
+const BACKFILL_COOLDOWN_MS = 60_000;
+let lastBackfillAt = 0;
+
 /**
  * Kinds that must reach the applicant no matter what. These are answers to an
  * action they took, so an opt-out for marketing does not apply. Everything
@@ -586,6 +590,107 @@ export async function linkClerkUserToBetaSignup(args: {
   });
 }
 
+/**
+ * Same link as `linkClerkUserToBetaSignup`, but keyed off a live session
+ * instead of a `user.created` event.
+ *
+ * WHY THIS EXISTS: the webhook is a single point of failure that fails
+ * silently. On 2026-08-11 all 22 rows in `BetaSignup` had `clerkUserId` null
+ * and not one `signup_completed` row carried `source: "clerk"`, so the webhook
+ * had never landed a single delivery in production. The visible damage was a
+ * Studio that told us every tester "has not signed in" while they were reading
+ * stories, and a lifecycle cron that emailed one of them to install an app she
+ * already had.
+ *
+ * A webhook that has to fire exactly once, at the one moment we are not
+ * watching, should not be the only way a tester gets linked. This runs on
+ * every session instead: the tester opens the app once, on either platform,
+ * and the row heals itself.
+ *
+ * Cheap by design. The common case is a user who never applied to the beta,
+ * and that costs one indexed lookup. `email` is passed in by the caller (both
+ * call sites already hold the Clerk user) so this never fetches from Clerk.
+ */
+export async function reconcileBetaTesterLink(args: {
+  userId: string;
+  email: string | null | undefined;
+}): Promise<void> {
+  const email = args.email?.trim().toLowerCase();
+  if (!email) return;
+
+  // Already linked: nothing to do. Indexed on clerkUserId.
+  const linked = await prisma.betaSignup.findFirst({
+    where: { clerkUserId: args.userId },
+    select: { id: true },
+  });
+  if (linked) return;
+
+  // Not a tester (the overwhelmingly common case): one lookup and out.
+  const signup = await prisma.betaSignup.findFirst({
+    where: {
+      OR: [{ email }, { appleIdEmail: email }, { googleEmail: email }],
+      status: { in: ACTIVE_STATUSES },
+      clerkUserId: null,
+    },
+    select: { id: true },
+  });
+  if (!signup) return;
+
+  await linkClerkUserToBetaSignup({ email, userId: args.userId });
+}
+
+/**
+ * Repairs the Clerk link for applications that never got one, by asking Clerk
+ * for the account behind each address. Called when the Studio beta panel
+ * loads, so the backlog left by the dead webhook heals without waiting for
+ * every tester to open the app again.
+ *
+ * Bounded and self-limiting: only rows that occupy a tester slot, only rows
+ * still missing a link, and each row is looked up once (a hit writes the link,
+ * a miss means that person never created an account and there is nothing to
+ * find). Returns how many rows it repaired so the caller can log it.
+ */
+export async function backfillBetaTesterLinks(
+  opts: { force?: boolean } = {},
+): Promise<number> {
+  // Rows that never resolve (a person who was invited and never created an
+  // account) would otherwise be re-queried against Clerk on every Studio
+  // refresh, and the panel refetches after each button press.
+  //
+  // `force` exists for the lifecycle cron: it decides who gets mail from this
+  // link state, so it must never read a table the cooldown left unrepaired.
+  if (!opts.force && Date.now() - lastBackfillAt < BACKFILL_COOLDOWN_MS) return 0;
+  lastBackfillAt = Date.now();
+
+  const orphans = await prisma.betaSignup.findMany({
+    where: { clerkUserId: null, status: { in: ACTIVE_STATUSES } },
+    select: { id: true, email: true, appleIdEmail: true, googleEmail: true },
+    take: 100,
+  });
+  if (orphans.length === 0) return 0;
+
+  let repaired = 0;
+  for (const row of orphans) {
+    const candidates = [row.email, row.appleIdEmail, row.googleEmail]
+      .map((e) => e?.trim().toLowerCase())
+      .filter((e): e is string => Boolean(e));
+    for (const email of Array.from(new Set(candidates))) {
+      try {
+        const found = await clerkClient.users.getUserList({ emailAddress: [email], limit: 1 });
+        const user = found.data[0];
+        if (!user) continue;
+        await linkClerkUserToBetaSignup({ email, userId: user.id });
+        repaired += 1;
+        break;
+      } catch (err) {
+        // One unreachable address must not stop the rest of the backfill.
+        console.error(`backfillBetaTesterLinks failed for ${email}:`, err);
+      }
+    }
+  }
+  return repaired;
+}
+
 export async function grantBetaPlan(userId: string): Promise<void> {
   const user = await clerkClient.users.getUser(userId);
   const current = user.publicMetadata ?? {};
@@ -698,10 +803,22 @@ export async function sendPersonalNote(args: {
 
 /**
  * Records that a tester used the app today. Called from the mobile session
- * endpoint, and it is the only engagement signal in the program that does not
- * depend on Apple telling us anything.
+ * endpoint and the web platform ping, and it is the only engagement signal in
+ * the program that does not depend on Apple telling us anything.
+ *
+ * Reconciles the Clerk link first when an email is supplied: the update below
+ * matches on `clerkUserId`, so before the link exists it silently touches zero
+ * rows, which is exactly how every tester stayed at "has not signed in".
  */
-export async function touchTesterActivity(userId: string): Promise<void> {
+export async function touchTesterActivity(
+  userId: string,
+  email?: string | null,
+): Promise<void> {
+  if (email) {
+    await reconcileBetaTesterLink({ userId, email }).catch((err) => {
+      console.error("reconcileBetaTesterLink failed:", err);
+    });
+  }
   await prisma.betaSignup
     .updateMany({ where: { clerkUserId: userId }, data: { lastActiveAt: new Date() } })
     .catch(() => undefined);

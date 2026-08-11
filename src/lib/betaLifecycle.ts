@@ -14,6 +14,7 @@ import { prisma } from "@/lib/prisma";
 import type { BetaRulesConfig } from "@/lib/betaRules";
 import { getBetaRules } from "@/lib/betaRulesConfig";
 import {
+  backfillBetaTesterLinks,
   sendBetaEmail,
   betaBaseUrl,
   hasSentBetaEmail,
@@ -128,6 +129,16 @@ export type BetaLifecycleResult = {
 export async function runBetaLifecycle(now: Date = new Date()): Promise<BetaLifecycleResult> {
   const rules = await getBetaRules();
   const base = betaBaseUrl();
+
+  // Repair missing Clerk links BEFORE deciding who gets mail. The install
+  // nudge below fires on `status === "invited" && !clerkUserId`, so a stale
+  // link does not just misreport a number, it sends a real person a real
+  // email telling them to install an app they are already using. That
+  // happened on 2026-08-06, to a tester whose only fault was that the
+  // `user.created` webhook never fired.
+  await backfillBetaTesterLinks({ force: true }).catch((err) => {
+    console.error("backfillBetaTesterLinks failed before lifecycle run:", err);
+  });
 
   const testers = await prisma.betaSignup.findMany({
     where: { status: { in: ["invited", "accepted"] }, planRevokedAt: null },
