@@ -373,6 +373,81 @@ function Metric({ n, label }: { n: number; label: string }) {
   );
 }
 
+/** Absolute date, for when "8d ago" is not the question being asked. */
+function onDate(iso: string | null): string {
+  if (!iso) return "-";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "-";
+  return d.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+}
+
+/**
+ * The answers they actually gave, rendered the same way wherever an applicant
+ * appears. It used to exist only inside the review queue, so the moment you
+ * invited someone their whole application vanished from the panel: the tester
+ * card showed a language and nothing else, and the one field that predicts
+ * whether they will test anything (what they wrote about why they applied)
+ * was only ever visible in the seconds before you clicked Invite.
+ */
+function ApplicationSummary({ a, showReason }: { a: Applicant; showReason: boolean }) {
+  return (
+    <>
+      <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
+        {a.targetLanguage} · {a.currentLevel} · {a.weeklyHours ?? "?"} hrs/wk ·{" "}
+        {a.motivation ?? "?"} · via {a.referralSource ?? "?"}
+      </div>
+      <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
+        applied {onDate(a.createdAt)} ({ago(a.createdAt)})
+        {a.invitedAt ? ` · invited ${onDate(a.invitedAt)} (${ago(a.invitedAt)})` : ""}
+      </div>
+      {showReason && a.applicationReason && (
+        <div
+          style={{
+            marginTop: 10,
+            padding: "10px 12px",
+            borderRadius: 8,
+            backgroundColor: "var(--background)",
+            fontSize: 13,
+            lineHeight: 1.55,
+          }}
+        >
+          {a.applicationReason}
+        </div>
+      )}
+    </>
+  );
+}
+
+/**
+ * The triage score with its scale attached. A bare "51" in the corner of a
+ * card is a number nobody can act on: it needs the denominator to be read as
+ * a proportion, and the band it landed in to explain why the row is sitting
+ * in the queue rather than invited or declined.
+ */
+function ScoreBadge({ score, rules }: { score: number | null; rules: Rules | null }) {
+  if (score === null) {
+    return <span style={{ fontSize: 20, fontWeight: 800, color: "var(--muted)" }}>-</span>;
+  }
+  const band =
+    rules && score >= rules.autoAcceptAt
+      ? "clears the auto-invite bar"
+      : rules && score < rules.autoDeclineBelow
+        ? "below the decline floor"
+        : "in the review band";
+  return (
+    <span
+      style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", lineHeight: 1.1 }}
+      title={`Triage score ${score} of 100: ${band}. Built from the application text, weekly hours, target language, motivation and referral source.`}
+    >
+      <span style={{ fontSize: 20, fontWeight: 800, color: ACCENT }}>
+        {score}
+        <span style={{ fontSize: 12, fontWeight: 600, color: "var(--muted)" }}>/100</span>
+      </span>
+      <span style={{ ...labelStyle(), fontSize: 9 }}>score</span>
+    </span>
+  );
+}
+
 function labelStyle(): React.CSSProperties {
   return { fontSize: 11, fontWeight: 700, color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.06em" };
 }
@@ -736,6 +811,7 @@ export default function BetaProgramClient() {
       {tab === "review" && (
         <ReviewQueue
           applicants={needsReview}
+          rules={data.rules}
           busy={busy}
           onAction={applicantAction}
           onDelete={applicantDelete}
@@ -934,11 +1010,13 @@ function PlayTrackPanel({ play, onDone }: { play: PlayState | null; onDone: () =
 
 function ReviewQueue({
   applicants,
+  rules,
   busy,
   onAction,
   onDelete,
 }: {
   applicants: Applicant[];
+  rules: Rules;
   busy: string | null;
   onAction: (id: string, action: string, extra?: Record<string, unknown>) => Promise<void>;
   onDelete: (id: string, email: string) => Promise<void>;
@@ -960,14 +1038,12 @@ function ReviewQueue({
               <div style={{ fontWeight: 700, fontSize: 14 }}>
                 {a.firstName ?? "(no name)"} <span style={{ color: "var(--muted)", fontWeight: 500 }}>{a.email}</span>
               </div>
-              <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
-                {a.targetLanguage} · {a.currentLevel} · {a.weeklyHours ?? "?"} hrs/wk · {a.motivation ?? "?"} · via {a.referralSource ?? "?"}
-              </div>
+              <ApplicationSummary a={a} showReason={false} />
               <AttributionLine attr={a.attribution} />
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <span style={pill(a.status)}>{a.status}</span>
-              <span style={{ fontSize: 20, fontWeight: 800, color: ACCENT }}>{a.score ?? "-"}</span>
+              <ScoreBadge score={a.score} rules={rules} />
             </div>
           </div>
 
@@ -1058,6 +1134,11 @@ function Testers({
       {testers.map((t) => {
         // An invite that was accepted but never signed in is the single most
         // common silent failure in a beta, so it is called out by name.
+        //
+        // Trustworthy only because the API repairs missing Clerk links before
+        // it answers (backfillBetaTesterLinks). While that link depended on a
+        // webhook that never fired, this flag was on for every tester in the
+        // program, including the ones reading stories that afternoon.
         const stalled = t.status === "invited" && !t.clerkUserId;
         // An outright contradiction with Apple outranks "invited but idle":
         // one means they cannot get in at all, the other that they have not
@@ -1077,8 +1158,9 @@ function Testers({
                   {t.firstName ?? "(no name)"}{" "}
                   <span style={{ color: "var(--muted)", fontWeight: 500 }}>{t.email}</span>
                 </div>
+                <ApplicationSummary a={t} showReason />
                 <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
-                  {t.targetLanguage} · invited {ago(t.invitedAt)} · {t._count?.feedback ?? 0} reports
+                  {t._count?.feedback ?? 0} reports
                 </div>
                 <AttributionLine attr={t.attribution} />
                 {/* What they actually did, not just that they opened the app.
@@ -1095,7 +1177,8 @@ function Testers({
                   </div>
                 ) : (
                   <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 6, fontStyle: "italic" }}>
-                    No usage yet: has not signed in.
+                    No account found for this address, so there is nothing to
+                    measure yet.
                   </div>
                 )}
                 {alarm && (
@@ -1105,7 +1188,8 @@ function Testers({
                 )}
                 {stalled && !alarm && (
                   <div style={{ fontSize: 12, color: "#fbbf24", marginTop: 4 }}>
-                    Invited but never signed in. The lifecycle cron will nudge them.
+                    Invited but never created an account. The lifecycle cron
+                    will nudge them.
                   </div>
                 )}
               </div>
