@@ -740,6 +740,39 @@ export function buildWinSunsetEmail(data?: LifecycleData): BuiltEmail {
   };
 }
 
+/**
+ * Which emails assert something about this specific person, and the piece of
+ * real data each one needs before it may be sent.
+ *
+ * The SAMPLE_STORIES and demo figures above exist so these templates can be
+ * previewed without a user, and that is the only place they belong. Rendered
+ * for a real recipient they assert things that never happened: "The story you
+ * started is still there · 38% read" to somebody who never opened one, or
+ * "A month ago this was just noise" over a sentence they never saw.
+ *
+ * Gating at the send site rather than inside the templates keeps previews
+ * working and keeps the fiction out of real inboxes. Lives here, next to the
+ * templates it describes, rather than in lifecycleEngine.ts, so it stays pure
+ * and testable: the engine pulls in prisma and cannot be loaded from a script.
+ *
+ * `welcome` and `next` are absent on purpose. Neither claims anything about
+ * past activity; they recommend something to read.
+ */
+const REQUIRED_DATA: Record<string, "firstStory" | "stats"> = {
+  nudge: "firstStory", // claims a story in progress, and a % read
+  celebration: "firstStory", // claims the story they just finished
+  winReminder: "firstStory", // claims a half-read story and where they stopped
+  winValue: "firstStory", // quotes a sentence "they already read"
+  recap: "stats", // a week of numbers, or nothing
+};
+
+/** False when this email would have to invent its own subject matter. */
+export function hasRealDataFor(kind: string, data: LifecycleData): boolean {
+  const need = REQUIRED_DATA[kind];
+  if (!need) return true;
+  return need === "firstStory" ? !!data.firstStory : !!data.stats;
+}
+
 export type LifecycleKind =
   | "welcome"
   | "nudge"
