@@ -827,6 +827,8 @@ type AcquisitionPayload = {
     email: string | null;
     createdAt: string;
     targetLanguages: string[];
+    /** Deducido de lo que abrió, para quien no terminó el onboarding. */
+    inferredLanguages?: string[];
     level: string | null;
     onboarded: boolean;
     openedStory: boolean;
@@ -1023,8 +1025,24 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                       <span style={{ opacity: 0.5 }}> · {r.email ?? "-"}</span>
                     </td>
                     <td style={{ padding: "4px 6px" }}>
-                      {r.targetLanguages.length ? r.targetLanguages.join("/") : "-"}
-                      {r.level ? ` · ${r.level}` : ""}
+                      {r.targetLanguages.length ? (
+                        <>
+                          {r.targetLanguages.join("/")}
+                          {r.level ? ` · ${r.level}` : ""}
+                        </>
+                      ) : r.inferredLanguages?.length ? (
+                        // Deducido, no declarado, y se distingue a simple vista:
+                        // esta persona nunca contestó qué idioma quería, lo
+                        // sabemos porque abrió historias en ese idioma.
+                        <span
+                          style={{ fontStyle: "italic", opacity: 0.65 }}
+                          title="Deducido de las historias que abrió. No completó el onboarding, así que nunca declaró un idioma."
+                        >
+                          {r.inferredLanguages.join("/")} <span style={{ opacity: 0.7 }}>(por lo que leyó)</span>
+                        </span>
+                      ) : (
+                        "-"
+                      )}
                     </td>
                     <td style={{ padding: "4px 6px" }}>
                       {r.platform === "ios" ? (

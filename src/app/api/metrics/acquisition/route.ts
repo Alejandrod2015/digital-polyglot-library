@@ -4,6 +4,7 @@ import { createClerkClient } from "@clerk/backend";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess";
+import { resolveStoryLanguages } from "@/lib/storyLanguages";
 
 const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
 
@@ -21,6 +22,8 @@ type RecentSignup = {
   createdAt: string;
   lastSignInAt: string | null;
   targetLanguages: string[];
+  /** Deducido de las historias que abrió, cuando no completó el onboarding. */
+  inferredLanguages: string[];
   level: string | null;
   onboarded: boolean;
   openedStory: boolean;
@@ -92,7 +95,8 @@ export async function GET(req: NextRequest): Promise<Response> {
       ids.length
         ? prisma.userMetric.findMany({
             where: { userId: { in: ids }, eventType: { in: ["story_opened", "audio_play", "audio_complete", "audio_pause", "continue_listening"] } },
-            select: { userId: true, eventType: true, value: true, metadata: true },
+            // storySlug is here for the inferred-language fallback below.
+            select: { userId: true, eventType: true, storySlug: true, value: true, metadata: true },
           })
         : Promise.resolve([]),
       ids.length
@@ -104,7 +108,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       ids.length
         ? prisma.continueListeningEntry.findMany({
             where: { userId: { in: ids } },
-            select: { userId: true, progressSec: true },
+            select: { userId: true, storySlug: true, progressSec: true },
           })
         : Promise.resolve([]),
       ids.length
@@ -184,6 +188,38 @@ export async function GET(req: NextRequest): Promise<Response> {
       return null;
     };
 
+    // ── Idioma deducido ──
+    // `targetLanguages` sólo existe si terminaron el onboarding, así que quien
+    // se saltó ese paso y se fue directo a leer aparecía sin idioma, aunque
+    // hubiera escuchado veinte segundos de una historia cuyo idioma conocemos
+    // perfectamente. No es un dato perdido, es una pregunta sin responder que
+    // su propia actividad ya contesta. Se devuelve aparte de `targetLanguages`
+    // para que la tabla pueda marcarlo como deducido y no como declarado.
+    const slugsByUser = new Map<string, Set<string>>();
+    const addSlug = (userId: string, slug: string | null | undefined) => {
+      if (!slug) return;
+      const set = slugsByUser.get(userId) ?? new Set<string>();
+      set.add(slug);
+      slugsByUser.set(userId, set);
+    };
+    for (const e of audioEvents) addSlug(e.userId, e.storySlug);
+    for (const c of continueRows) addSlug(c.userId, c.storySlug);
+
+    const languageBySlug = await resolveStoryLanguages(
+      Array.from(new Set(Array.from(slugsByUser.values()).flatMap((s) => Array.from(s))))
+    );
+
+    const inferredFor = (userId: string): string[] => {
+      const slugs = slugsByUser.get(userId);
+      if (!slugs) return [];
+      const langs = new Set<string>();
+      for (const slug of slugs) {
+        const lang = languageBySlug.get(slug);
+        if (lang) langs.add(lang);
+      }
+      return Array.from(langs).sort();
+    };
+
     const recent: RecentSignup[] = cohort
       .sort((a, b) => b.createdAt - a.createdAt)
       .map((u) => {
@@ -197,6 +233,7 @@ export async function GET(req: NextRequest): Promise<Response> {
           createdAt: new Date(u.createdAt).toISOString(),
           lastSignInAt: u.lastSignInAt ? new Date(u.lastSignInAt).toISOString() : null,
           targetLanguages: tls,
+          inferredLanguages: tls.length ? [] : inferredFor(u.id),
           level: typeof md.preferredLevel === "string" ? (md.preferredLevel as string) : null,
           onboarded: tls.length > 0,
           openedStory: openedBy.has(u.id),
