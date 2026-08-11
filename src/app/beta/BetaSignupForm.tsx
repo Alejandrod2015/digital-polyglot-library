@@ -54,6 +54,40 @@ const TARGET_VARIANTS: Record<string, Array<{ value: string; label: string }>> =
     { value: "other", label: "Somewhere else..." },
     { value: "unsure", label: "Not sure yet" },
   ],
+  // Every other language we offer needs the question just as much as Spanish
+  // does, and for a while none of them asked it: the map held a single key, so
+  // Portuguese and French applicants were never shown the field and every one
+  // of their rows landed null. Brazil and Portugal are not the same product,
+  // and neither are Paris and Montreal. Ordered by where the learners are, not
+  // by where the language started.
+  Portuguese: [
+    { value: "brazil", label: "Brazil" },
+    { value: "portugal", label: "Portugal" },
+    { value: "other", label: "Somewhere else..." },
+    { value: "unsure", label: "Not sure yet" },
+  ],
+  French: [
+    { value: "france", label: "France" },
+    { value: "quebec", label: "Canada (Quebec)" },
+    { value: "belgium", label: "Belgium" },
+    { value: "switzerland", label: "Switzerland" },
+    { value: "west-africa", label: "West Africa" },
+    { value: "other", label: "Somewhere else..." },
+    { value: "unsure", label: "Not sure yet" },
+  ],
+  German: [
+    { value: "germany", label: "Germany" },
+    { value: "austria", label: "Austria" },
+    { value: "switzerland", label: "Switzerland" },
+    { value: "other", label: "Somewhere else..." },
+    { value: "unsure", label: "Not sure yet" },
+  ],
+  Italian: [
+    { value: "italy", label: "Italy" },
+    { value: "switzerland", label: "Switzerland" },
+    { value: "other", label: "Somewhere else..." },
+    { value: "unsure", label: "Not sure yet" },
+  ],
 };
 
 const LEVELS = [
@@ -315,6 +349,19 @@ export default function BetaSignupForm() {
     }
     if (!targetLanguage) {
       setError("Please pick or type the language you want to learn.");
+      return;
+    }
+    // The `required` on the variant select is decorative: the form carries
+    // `noValidate`, so nothing in the browser enforces it and two Spanish
+    // applicants submitted a blank variant after the field shipped. Every
+    // other answer is checked here by hand; this one was simply missed.
+    // "Not sure yet" satisfies it, a silent blank does not.
+    if (TARGET_VARIANTS[form.targetLanguage] && !form.targetVariant) {
+      setError("Please tell us which country's version you want to learn.");
+      return;
+    }
+    if (form.targetVariant === "other" && !form.targetVariantOther.trim()) {
+      setError("Please type which country you have in mind.");
       return;
     }
     if (!form.currentLevel) {
@@ -623,7 +670,17 @@ export default function BetaSignupForm() {
             id="targetLanguage"
             required
             value={form.targetLanguage}
-            onChange={(e) => update("targetLanguage", e.target.value)}
+            // Changing the language has to drop the variant with it. The field
+            // only hides, it does not clear, so someone who picked Colombia and
+            // then switched to Portuguese used to submit Portuguese/colombia.
+            onChange={(e) =>
+              setForm((prev) => ({
+                ...prev,
+                targetLanguage: e.target.value,
+                targetVariant: "",
+                targetVariantOther: "",
+              }))
+            }
             className={selectStyle}
           >
             <option value="" disabled>
