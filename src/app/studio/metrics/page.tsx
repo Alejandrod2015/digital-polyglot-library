@@ -12,6 +12,7 @@ import {
   fmt,
   KpiCard,
 } from "@/components/studio/metrics/MetricsPrimitives";
+import UserDetailDrawer from "@/components/studio/metrics/UserDetailDrawer";
 import type {
   DashboardData,
   MetricsSection,
@@ -882,6 +883,9 @@ function AcquisitionView({ data }: { data: DashboardData }) {
   const [acq, setAcq] = useState<AcquisitionPayload | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  // Usuario cuya ficha está abierta. Cada fila de "Altas recientes" abre el
+  // panel lateral con todas sus métricas.
+  const [openUserId, setOpenUserId] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -978,6 +982,9 @@ function AcquisitionView({ data }: { data: DashboardData }) {
               </div>
             )}
           </div>
+          <p style={{ margin: "0 0 10px", fontSize: 11.5, color: "var(--mx-muted)" }}>
+            Haz clic en cualquier fila para abrir la ficha completa del usuario.
+          </p>
           <div style={{ overflowX: "auto" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
               <thead>
@@ -995,7 +1002,21 @@ function AcquisitionView({ data }: { data: DashboardData }) {
               </thead>
               <tbody>
                 {acq.recent.map((r) => (
-                  <tr key={r.userId} style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                  <tr
+                    key={r.userId}
+                    className="mx-rowlink"
+                    style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+                    onClick={() => setOpenUserId(r.userId)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setOpenUserId(r.userId);
+                      }
+                    }}
+                    tabIndex={0}
+                    role="button"
+                    title="Ver todas las métricas de este usuario"
+                  >
                     <td style={{ padding: "4px 6px" }}>{r.createdAt.slice(0, 10)}</td>
                     <td style={{ padding: "4px 6px" }}>
                       {r.name ?? "-"}
@@ -1057,6 +1078,10 @@ function AcquisitionView({ data }: { data: DashboardData }) {
           <KpiCard label="Checkout failed" value={cf.checkoutFailed} accent="accent" />
         </div>
       </div>
+
+      {openUserId && (
+        <UserDetailDrawer userId={openUserId} onClose={() => setOpenUserId(null)} />
+      )}
     </div>
   );
 }
