@@ -11,7 +11,7 @@ import type { BetaRulesConfig } from "@/lib/betaRules";
 import { getBetaRules, saveBetaRules } from "@/lib/betaRulesConfig";
 import { checkAscCredentials, ensureBetaGroup, listGroupTesterStates } from "@/lib/appStoreConnect";
 import { attachTesterGroup, getPlayBetaState } from "@/lib/googlePlayBeta";
-import { countActiveTesters } from "@/lib/betaProgram";
+import { backfillBetaTesterLinks, countActiveTesters } from "@/lib/betaProgram";
 
 export const dynamic = "force-dynamic";
 
@@ -38,6 +38,20 @@ export async function GET(req: NextRequest) {
   // The credential probe hits Apple, so it is opt-in: the page asks for it
   // when you open the health panel, not on every refresh.
   const wantHealth = req.nextUrl.searchParams.get("health") === "1";
+
+  // Repair any application still missing its Clerk link before we read the
+  // table, so the usage numbers below are computed against the truth. This is
+  // a write on a GET, which is normally wrong; it earns its place because the
+  // alternative is a panel that confidently reports "has not signed in" for
+  // people who are using the app daily, and did so for every tester in the
+  // program until 2026-08-11. Once a row is linked it is never revisited.
+  const repaired = await backfillBetaTesterLinks().catch((err) => {
+    console.error("backfillBetaTesterLinks failed:", err);
+    return 0;
+  });
+  if (repaired > 0) {
+    console.log(`🔗 Beta: repaired ${repaired} Clerk link(s) the webhook missed`);
+  }
 
   const [allApplicants, feedback, releases, rules, activeTesters, health, appleStates, play] = await Promise.all([
     prisma.betaSignup.findMany({

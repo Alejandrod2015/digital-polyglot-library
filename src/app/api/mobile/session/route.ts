@@ -78,7 +78,13 @@ export async function POST(req: NextRequest) {
     // (a session is minted on launch, not on every tap); the Studio panel
     // derives real usage from UserMetric. Wrapped so a beta bookkeeping
     // failure can never cost someone their session.
-    void touchTesterActivity(userId).catch((err) => {
+    //
+    // The email is passed so this also repairs the Clerk link when the
+    // `user.created` webhook never fired. See reconcileBetaTesterLink.
+    void touchTesterActivity(
+      userId,
+      user.primaryEmailAddress?.emailAddress ?? user.emailAddresses?.[0]?.emailAddress ?? null,
+    ).catch((err) => {
       console.error("touchTesterActivity failed:", err);
     });
 
