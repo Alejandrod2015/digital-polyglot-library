@@ -511,8 +511,19 @@ export default function BetaSignupForm() {
             </label>
           ))}
         </div>
+        {/* Aqui ponia "iPhone needs iOS 17 or newer. Android needs 8.0 or newer",
+            y ese numero no salia de ninguna parte: la app es Expo SDK 54 con
+            React Native 0.81 y no declara deploymentTarget propio ni en
+            app.config.js ni en eas.json, asi que hereda un minimo bastante mas
+            bajo que iOS 17. Pedir 17 dejaba fuera a quien tiene un iPhone en
+            iOS 16 que instalaria la app sin problema. No se sustituye por otro
+            numero porque no hay forma de verificarlo desde aqui (la app aun no
+            tiene ficha publica en App Store ni en Play); quien de verdad
+            decide es la tienda, que le dira al tester si su telefono no puede
+            instalarla. Si algun dia se fija un minimo real, ponerlo aqui. */}
         <p className={helperStyle}>
-          iPhone needs iOS 17 or newer. Android needs 8.0 or newer.
+          TestFlight on iPhone, Google Play on Android. If your phone cannot run
+          it, the store will tell you before you install.
         </p>
       </div>
 
