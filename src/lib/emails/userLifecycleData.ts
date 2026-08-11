@@ -218,6 +218,38 @@ async function resolveCurrentStory(
  * Assemble a real LifecycleData for a user. Fields left undefined fall back to
  * the builder's own defaults, so a partially-known user still gets a sane email.
  */
+/**
+ * Which days of the last week the user was actually active, Monday-first to
+ * match the "MTWTFSS" labels in the recap template.
+ *
+ * This never existed. `weekDays` was declared on LifecycleData and read by the
+ * recap email, but nothing in the codebase ever assigned it, so every recap
+ * ever built fell through to the hardcoded `[true,true,false,true,true,true,
+ * false]`: the same invented week, for every user, every time. Unlike the
+ * other stats this was not an edge case, it was 100% of the sends.
+ *
+ * Returns undefined on failure so the email drops the panel rather than
+ * showing a week that is not theirs.
+ */
+async function resolveWeekDays(userId: string): Promise<boolean[] | undefined> {
+  try {
+    const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+    const rows = await prisma.userMetric.findMany({
+      where: { userId, createdAt: { gte: since } },
+      select: { createdAt: true },
+      take: 5000,
+    });
+    const week = [false, false, false, false, false, false, false];
+    for (const row of rows) {
+      // getUTCDay is 0=Sunday; shift so index 0 is Monday.
+      week[(row.createdAt.getUTCDay() + 6) % 7] = true;
+    }
+    return week;
+  } catch {
+    return undefined;
+  }
+}
+
 export async function buildLifecycleData(userId: string): Promise<LifecycleData> {
   const weekStart = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
 
@@ -267,13 +299,19 @@ export async function buildLifecycleData(userId: string): Promise<LifecycleData>
   if (nextStories.length) data.nextStories = nextStories;
 
   if (progress) {
+    // `|| undefined` here was a data-integrity bug, not a style choice: it
+    // turned a real zero into "no data", and the builders answer "no data"
+    // with a demo number. A user who had learned 0 words was told they were
+    // "128 words richer in a week". Zeros now travel as zeros, and the
+    // builders drop the block instead of inventing a figure.
     data.stats = {
       wordsSeen: firstStory?.vocab?.length
         ? Math.max(firstStory.vocab.length, progress.wordsLearned)
-        : progress.wordsLearned || undefined,
-      storiesCount: progress.storiesFinished || undefined,
-      wordsCount: progress.wordsLearned || undefined,
-      daysActive: progress.streakDays || undefined,
+        : progress.wordsLearned,
+      storiesCount: progress.storiesFinished,
+      wordsCount: progress.wordsLearned,
+      daysActive: progress.streakDays,
+      weekDays: await resolveWeekDays(userId),
       weekWords: vocab.weekWords.length ? vocab.weekWords.slice(0, 12) : undefined,
     };
   }

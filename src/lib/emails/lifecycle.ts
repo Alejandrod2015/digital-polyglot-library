@@ -280,7 +280,10 @@ export function buildCelebrationEmail(data?: LifecycleData): BuiltEmail {
   // Practice the words from the story they just finished.
   const storySlug = (s as { id?: string }).id ?? SAMPLE_STORIES.mole.id;
   const practiceHref = `${b}/practice?source=story&storySlug=${encodeURIComponent(storySlug)}&storyTitle=${encodeURIComponent(s.title)}`;
-  const wordsSeen = data?.stats?.wordsSeen ?? 47;
+  // No default: "47 words you didn't know yesterday" to someone whose real
+  // count is zero is a fabricated compliment. Unknown means the tile and the
+  // number in the subject are dropped.
+  const wordsSeen = data?.stats?.wordsSeen;
   const vocab = (s as { vocab?: VocabItem[] }).vocab ?? [];
   // Word→meaning pairs in English: clear proof of what the learner picked up.
   const glossary = vocab.slice(0, 3).map((v) => ({ word: v.word, meaning: v.definition }));
@@ -300,7 +303,7 @@ export function buildCelebrationEmail(data?: LifecycleData): BuiltEmail {
   </table>`;
 
   // Words learned: clean word→meaning glossary (proof of learning, all in English)
-  const moreCount = Math.max(0, wordsSeen - glossary.length);
+  const moreCount = wordsSeen !== undefined ? Math.max(0, wordsSeen - glossary.length) : 0;
   const vocabBlock = glossary.length
     ? `<div style="font-family:${DPE.font};font-weight:800;font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:${DPE.muted};margin-bottom:12px;text-align:left;">Real, everyday words you picked up</div>
        ${vocabGlossary({ glossary, more: moreCount })}`
@@ -310,9 +313,11 @@ export function buildCelebrationEmail(data?: LifecycleData): BuiltEmail {
     block(`${head(`You finished. That ${gold("matters.")}`, 38)}`, "40px 44px 0"),
     block(storyContext, "26px 44px 0", false),
     block(
-      `<table role="presentation" align="center" cellpadding="0" cellspacing="0" style="margin:0 auto;"><tr><td width="260" style="width:260px;">${statTile(
-        { n: String(wordsSeen), label: "new words learned", tone: "gold" }
-      )}</td></tr></table>`,
+      wordsSeen !== undefined && wordsSeen > 0
+        ? `<table role="presentation" align="center" cellpadding="0" cellspacing="0" style="margin:0 auto;"><tr><td width="260" style="width:260px;">${statTile(
+            { n: String(wordsSeen), label: "new words learned", tone: "gold" }
+          )}</td></tr></table>`
+        : "",
       "20px 44px 0"
     ),
     block(vocabBlock, "26px 44px 0", false),
@@ -341,7 +346,10 @@ export function buildCelebrationEmail(data?: LifecycleData): BuiltEmail {
   ];
 
   return {
-    subject: `${wordsSeen} words you didn't know yesterday`,
+    subject:
+      wordsSeen !== undefined && wordsSeen > 0
+        ? `${wordsSeen} words you didn't know yesterday`
+        : "You finished your first story",
     html: shell({
       preheader: "Real words that stuck, and what's next.",
       blocks,
@@ -352,7 +360,9 @@ export function buildCelebrationEmail(data?: LifecycleData): BuiltEmail {
     text: [
       "You finished.",
       "",
-      `${s.title}: ${wordsSeen} new words learned.`,
+      wordsSeen !== undefined && wordsSeen > 0
+        ? `${s.title}: ${wordsSeen} new words learned.`
+        : s.title,
       glossary.length
         ? `\nWords you picked up:\n${glossary.map((g) => `  ${g.word}: ${g.meaning}`).join("\n")}`
         : "",
@@ -371,19 +381,19 @@ export function buildRecapEmail(data?: LifecycleData): BuiltEmail {
   const ab = assetBase(data);
   const nextStory = data?.nextStories?.[0] ?? SAMPLE_STORIES.canela;
   const href = nextStory.id ? `${b}/stories/${nextStory.id}` : `${b}/stories/${SAMPLE_STORIES.canela.id}`;
-  const storiesCount = data?.stats?.storiesCount ?? 3;
-  const wordsCount = data?.stats?.wordsCount ?? 128;
-  const daysActive = data?.stats?.daysActive ?? 5;
-  const week = data?.stats?.weekDays ?? [true, true, false, true, true, true, false];
+  // No fallbacks here on purpose. Every one of these is a claim about what
+  // THIS person did last week; a default is a lie with a number on it. When a
+  // figure is unknown the block that would state it is dropped instead.
+  const storiesCount = data?.stats?.storiesCount;
+  const wordsCount = data?.stats?.wordsCount;
+  const daysActive = data?.stats?.daysActive;
+  const week = data?.stats?.weekDays;
   const labels = "MTWTFSS";
   // A sample of real words from the week's stories: gives the "words learned"
   // number a tangible face (volume, not teaching).
-  const weekWords = data?.stats?.weekWords ?? [
-    "fonda", "mole", "olla", "cansada", "receta", "guajolote",
-    "despacio", "cocina", "antigua", "sonríe", "compartir", "jueves",
-  ];
+  const weekWords = data?.stats?.weekWords ?? [];
 
-  const dayCells = week
+  const dayCells = (week ?? [])
     .map((on, i) => {
       const barBg = on
         ? "linear-gradient(180deg,#fcd34d,#f4c430);background-color:#fcd34d;box-shadow:0 6px 14px -8px rgba(252,211,77,0.7);"
@@ -395,29 +405,44 @@ export function buildRecapEmail(data?: LifecycleData): BuiltEmail {
     })
     .join("");
 
-  const weekPanel = `<div style="background:${DPE.screen};border:1px solid ${DPE.cardLine};border-radius:14px;padding:16px 18px;">
+  // The week chart only renders when we actually know their week.
+  const weekPanel = week
+    ? `<div style="background:${DPE.screen};border:1px solid ${DPE.cardLine};border-radius:14px;padding:16px 18px;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width:100%;margin-bottom:12px;"><tr>
       <td style="font-family:${DPE.font};font-weight:800;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:${DPE.muted};">This week</td>
-      <td align="right" style="text-align:right;font-family:${DPE.font};font-weight:800;font-size:12px;color:${DPE.gold};">${daysActive} of 7 days active</td>
+      ${
+        daysActive !== undefined
+          ? `<td align="right" style="text-align:right;font-family:${DPE.font};font-weight:800;font-size:12px;color:${DPE.gold};">${daysActive} of 7 days active</td>`
+          : ""
+      }
     </tr></table>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width:100%;"><tr>${dayCells}</tr></table>
-  </div>`;
+  </div>`
+    : "";
 
-  const tiles = cols(
-    [
-      statTile({ n: String(storiesCount), label: "stories finished", tone: "gold" }),
-      statTile({ n: String(wordsCount), label: "words learned", tone: "sky" }),
-      statTile({ n: String(daysActive), label: "days active", tone: "green" }),
-    ],
-    12
-  );
+  // Only the tiles whose number we actually have.
+  const tileList = [
+    storiesCount !== undefined
+      ? statTile({ n: String(storiesCount), label: "stories finished", tone: "gold" as const })
+      : null,
+    wordsCount !== undefined
+      ? statTile({ n: String(wordsCount), label: "words learned", tone: "sky" as const })
+      : null,
+    daysActive !== undefined
+      ? statTile({ n: String(daysActive), label: "days active", tone: "green" as const })
+      : null,
+  ].filter((t): t is string => t !== null);
+  const tiles = tileList.length ? cols(tileList, 12) : "";
 
-  const moreWords = Math.max(0, wordsCount - weekWords.length);
-  const wordsPanel = `<div style="background:${DPE.screen};border:1px solid ${DPE.cardLine};border-radius:14px;padding:18px 18px 12px;">
+  const moreWords =
+    wordsCount !== undefined ? Math.max(0, wordsCount - weekWords.length) : 0;
+  const wordsPanel = weekWords.length
+    ? `<div style="background:${DPE.screen};border:1px solid ${DPE.cardLine};border-radius:14px;padding:18px 18px 12px;">
     <div style="font-family:${DPE.font};font-weight:800;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:${DPE.muted};margin-bottom:14px;text-align:left;">Real words you can use now</div>
     ${vocabChips(weekWords)}
     ${moreWords > 0 ? `<div style="margin-top:4px;font-family:${DPE.font};font-weight:700;font-size:12.5px;color:${DPE.muted};text-align:left;">+${moreWords} more in your library.</div>` : ""}
-  </div>`;
+  </div>`
+    : "";
 
   const blocks = [
     block(`${head(`${gold("One week.")}<br/>Look what you built.`, 40)}`, "40px 44px 0"),
@@ -431,7 +456,12 @@ export function buildRecapEmail(data?: LifecycleData): BuiltEmail {
   ];
 
   return {
-    subject: `${wordsCount} words richer in a week`,
+    // A subject line is a claim too. Without a real number it says nothing
+    // numeric rather than borrowing one.
+    subject:
+      wordsCount !== undefined && wordsCount > 0
+        ? `${wordsCount} words richer in a week`
+        : "Your week in Spanish, in one look",
     html: shell({
       preheader: "A week of real language, in one look.",
       blocks,
@@ -442,13 +472,15 @@ export function buildRecapEmail(data?: LifecycleData): BuiltEmail {
     text: [
       "You built this in one week.",
       "",
-      `${storiesCount} stories finished.`,
-      `${wordsCount} words learned.`,
-      `${daysActive} of 7 days active.`,
+      storiesCount !== undefined ? `${storiesCount} stories finished.` : "",
+      wordsCount !== undefined ? `${wordsCount} words learned.` : "",
+      daysActive !== undefined ? `${daysActive} of 7 days active.` : "",
       "",
       `Continue: ${href}`,
       "Digital Polyglot",
-    ].join("\n"),
+    ]
+      .filter((line, i, all) => line !== "" || all[i - 1] !== "")
+      .join("\n"),
   };
 }
 
@@ -536,7 +568,9 @@ export function buildWinReminderEmail(data?: LifecycleData): BuiltEmail {
   const pct = s.percentRead ?? 38;
   const vocab = (s as { vocab?: VocabItem[] }).vocab ?? [];
   const glossary = vocab.slice(0, 3).map((v) => ({ word: v.word, meaning: v.definition }));
-  const savedWords = data?.stats?.wordsSeen ?? 47;
+  // Told a dormant user "your 47 words are still saved" whether or not they
+  // had saved a single one. Unknown now drops the count, not the sentence.
+  const savedWords = data?.stats?.wordsSeen;
 
   // The half-read story itself (real cover), with progress: the unfinished tension.
   const storyCard = `<table role="presentation" align="center" width="100%" cellpadding="0" cellspacing="0" style="width:100%;background:${DPE.screen};border:1px solid ${DPE.cardLine};border-radius:16px;">
@@ -553,9 +587,14 @@ export function buildWinReminderEmail(data?: LifecycleData): BuiltEmail {
     </tr>
   </table>`;
 
+  const hasSaved = savedWords !== undefined && savedWords > 0;
   const wordsBlock = glossary.length
-    ? `<div style="font-family:${DPE.font};font-weight:800;font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:${DPE.muted};margin-bottom:12px;text-align:left;">The ${savedWords} real words you learned are still saved</div>
-       ${vocabGlossary({ glossary, more: Math.max(0, savedWords - glossary.length) })}`
+    ? `<div style="font-family:${DPE.font};font-weight:800;font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:${DPE.muted};margin-bottom:12px;text-align:left;">${
+        hasSaved
+          ? `The ${savedWords} real words you learned are still saved`
+          : "The words you learned are still saved"
+      }</div>
+       ${vocabGlossary({ glossary, more: hasSaved ? Math.max(0, savedWords - glossary.length) : 0 })}`
     : "";
 
   const blocks = [
@@ -572,7 +611,9 @@ export function buildWinReminderEmail(data?: LifecycleData): BuiltEmail {
   return {
     subject: "Your half-finished story is still open",
     html: shell({
-      preheader: `${pct}% read, and your ${savedWords} words are still saved.`,
+      preheader: hasSaved
+        ? `${pct}% read, and your ${savedWords} words are still saved.`
+        : `${pct}% read, and your words are still saved.`,
       blocks,
       baseUrl: b,
       assetBase: ab,
@@ -583,7 +624,9 @@ export function buildWinReminderEmail(data?: LifecycleData): BuiltEmail {
       "You stopped halfway.",
       "",
       `It's been a while, but nothing is lost. "${s.title}" is ${pct}% read, with ${s.minutesLeft ?? 2} minutes left.`,
-      `The ${savedWords} words you learned are still saved.`,
+      hasSaved
+        ? `The ${savedWords} words you learned are still saved.`
+        : "The words you learned are still saved.",
       "",
       `Finish your story: ${href}`,
       "Digital Polyglot",
