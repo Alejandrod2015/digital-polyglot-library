@@ -11,6 +11,7 @@ import { clerkAppearance } from "@/lib/clerkAppearance";
 import { isConsentOptInCountry } from "@/lib/geo";
 import AppShell from "@/components/AppShell";
 import VisitLogger from "@/components/VisitLogger";
+import PlatformStamp from "@/components/PlatformStamp";
 
 // Nunito as the primary UI font. `variable` exposes it as a CSS custom
 // property (consumed in globals.css via `var(--font-nunito)`), and
@@ -122,6 +123,9 @@ export default async function RootLayout({
           <Suspense fallback={null}>
             <VisitLogger />
           </Suspense>
+          {/* Stamps the platform on the first page that renders with a
+              session, not just on the home page. See PlatformStamp. */}
+          <PlatformStamp />
         </body>
       </html>
     </ClerkProvider>
