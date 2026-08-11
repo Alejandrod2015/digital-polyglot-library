@@ -869,33 +869,93 @@ function StatBar({
   // whole Android cohort at once, and a single merged number would hide which
   // of those is happening.
   const blockedAndroid = applicants.filter((a) => playAlarm(a, play) !== null).length;
-  const items = [
-    { label: "Active testers", value: `${stats.activeTesters} / ${rules.maxActiveTesters}` },
-    { label: "Needs review", value: String((stats.byStatus.waitlist ?? 0) + (stats.byStatus.pending ?? 0)) },
-    { label: "Open feedback", value: String(stats.openFeedback) },
-    { label: "Blocked at Apple", value: appleReachable ? String(blocked) : "?", alarm: blocked > 0 },
-    {
-      label: "Blocked at Google",
-      value: play?.configured ? String(blockedAndroid) : "?",
-      alarm: blockedAndroid > 0,
-    },
-    { label: "Auto-invite", value: rules.autoInviteEnabled ? "On" : "Off" },
+
+  const waiting = (stats.byStatus.waitlist ?? 0) + (stats.byStatus.pending ?? 0);
+
+  // "Holding an invite" and "actually opening the app" are different numbers,
+  // and only the second one answers whether the beta is working. The old tile
+  // showed `7 / 20`, which was the first number over a ceiling that does not
+  // apply: the cap is only consulted by auto-invite, and the manual Invite
+  // button never looks at it. So it read as a limit while nothing was limited.
+  const using = applicants.filter((a) => (a.usage?.lastEventAt ?? null) !== null).length;
+
+  const items: Array<{ label: string; value: string; alarm?: boolean; primary?: boolean }> = [
+    { label: "Needs review", value: String(waiting), primary: waiting > 0 },
+    { label: "Testers", value: `${using} using · ${stats.activeTesters} invited` },
+    { label: "Open feedback", value: String(stats.openFeedback), primary: stats.openFeedback > 0 },
   ];
+
+  // The cap is a ceiling on the automation. While the automation is off it
+  // bounds nothing, so showing it is noise dressed as a constraint.
+  if (rules.autoInviteEnabled) {
+    items.push({ label: "Tester cap", value: `${stats.activeTesters} / ${rules.maxActiveTesters}` });
+  }
+
+  // Only ever shown when there is something to act on. These used to render
+  // "?" for two different non-answers: Apple's map is empty when nobody is
+  // registered with Apple at all, and Google's is unset simply because Play is
+  // not configured. A permanent "?" in an alarm slot trains you to ignore it.
+  if (blocked > 0) items.push({ label: "Blocked at Apple", value: String(blocked), alarm: true });
+  if (blockedAndroid > 0) {
+    items.push({ label: "Blocked at Google", value: String(blockedAndroid), alarm: true });
+  }
+  if (!appleReachable && applicants.some((a) => a.ascTesterId)) {
+    items.push({ label: "Apple", value: "unreachable", alarm: true });
+  }
+
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(150px,1fr))", gap: 10 }}>
-      {items.map((i) => (
-        <div
-          key={i.label}
-          style={i.alarm ? { ...card, borderColor: "#f8717155", backgroundColor: "#f8717110" } : card}
+    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+      {/* The state of the program in one line. Auto-invite used to be the last
+          and quietest tile while being the reason nobody moves off the
+          waitlist; it belongs in the sentence that explains the page. */}
+      <div
+        style={{
+          ...card,
+          display: "flex",
+          alignItems: "center",
+          gap: 10,
+          flexWrap: "wrap",
+          fontSize: 13,
+          color: "var(--foreground)",
+        }}
+      >
+        <span
+          style={{
+            fontWeight: 800,
+            color: rules.autoInviteEnabled ? ACCENT : "#fbbf24",
+          }}
         >
-          <div style={labelStyle()}>{i.label}</div>
+          Auto-invite {rules.autoInviteEnabled ? "on" : "off"}
+        </span>
+        <span style={{ color: "var(--muted)" }}>·</span>
+        <span>
+          {waiting} waiting
+          {rules.autoInviteEnabled
+            ? ""
+            : " · nobody gets in until you invite them by hand"}
+        </span>
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(150px,1fr))", gap: 10 }}>
+        {items.map((i) => (
           <div
-            style={{ fontSize: 22, fontWeight: 800, marginTop: 4, color: i.alarm ? "#f87171" : undefined }}
+            key={i.label}
+            style={i.alarm ? { ...card, borderColor: "#f8717155", backgroundColor: "#f8717110" } : card}
           >
-            {i.value}
+            <div style={labelStyle()}>{i.label}</div>
+            <div
+              style={{
+                fontSize: i.primary ? 28 : 22,
+                fontWeight: 800,
+                marginTop: 4,
+                color: i.alarm ? "#f87171" : i.primary ? ACCENT : undefined,
+              }}
+            >
+              {i.value}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
