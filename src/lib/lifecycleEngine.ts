@@ -9,7 +9,7 @@ import { getInternalUserIds } from "@/lib/metricsAccess";
 import { getProgressPayloadCached } from "@/lib/progressPayload";
 import { sendLifecycleEmail } from "@/lib/email";
 import { buildLifecycleData } from "@/lib/emails/userLifecycleData";
-import type { LifecycleKind } from "@/lib/emails/lifecycle";
+import { hasRealDataFor, type LifecycleKind } from "@/lib/emails/lifecycle";
 
 const DAY = 24 * 60 * 60 * 1000;
 const LOOKBACK_DAYS = 60;
@@ -160,6 +160,12 @@ export async function runLifecycleEmails(now: Date): Promise<LifecycleRunResult>
     }
 
     const data = await buildLifecycleData(userId);
+
+    if (!hasRealDataFor(kind, data)) {
+      result.skipped++;
+      continue;
+    }
+
     const res = await sendLifecycleEmail({ kind, to: email, data });
     if (res === "sent") {
       await recordSent(userId, kind, email);
