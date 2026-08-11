@@ -305,6 +305,34 @@ type BuildsResponse = {
  * to answer the question that actually decides whether a tester has a good
  * first minute: is there anything for them to install once they accept.
  */
+/**
+ * Asigna un build a un grupo de beta. Con un grupo EXTERNO esto es lo que
+ * dispara la Beta App Review de Apple: hasta que esa revisión pasa, un tester
+ * externo no puede instalar aunque ya figure en el grupo.
+ *
+ * Existe porque la ruta de alta de testers NO lo comprueba: da de alta y sigue
+ * adelante sin mirar si el grupo tiene un build instalable. En Android el
+ * equivalente sí se autobloquea (ver `googlePlayBeta.getPlayBetaState`, que
+ * retiene al solicitante cuando la pista no tiene release publicada); en iOS
+ * no hay nada parecido, así que este paso es manual y deliberado.
+ */
+export async function addBuildToBetaGroup(
+  buildId: string,
+  groupId: string,
+): Promise<{ ok: boolean; error?: string }> {
+  const config = getAscConfig();
+  if (!config) return { ok: false, error: "App Store Connect is not configured" };
+  try {
+    await ascFetch<void>(config, `/v1/builds/${buildId}/relationships/betaGroups`, {
+      method: "POST",
+      body: { data: [{ type: "betaGroups", id: groupId }] },
+    });
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, error: err instanceof Error ? err.message : String(err) };
+  }
+}
+
 export async function listRecentBuilds(limit = 5): Promise<
   Array<{ id: string; version: string; expired: boolean; processingState: string }>
 > {
