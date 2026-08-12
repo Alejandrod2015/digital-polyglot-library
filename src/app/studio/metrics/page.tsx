@@ -827,7 +827,9 @@ type AcquisitionPayload = {
     email: string | null;
     createdAt: string;
     targetLanguages: string[];
-    /** Deducido de lo que abrió, para quien no terminó el onboarding. */
+    /** Declarado en el formulario de beta, para quien aún no onboardeó. */
+    betaLanguages?: string[];
+    /** Deducido de lo que abrió, cuando no hay nada declarado. */
     inferredLanguages?: string[];
     level: string | null;
     onboarded: boolean;
@@ -1030,6 +1032,16 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                           {r.targetLanguages.join("/")}
                           {r.level ? ` · ${r.level}` : ""}
                         </>
+                      ) : r.betaLanguages?.length ? (
+                        // Declarado por la persona, sólo que en el formulario de
+                        // beta y no en el onboarding de la app. Es un dato suyo,
+                        // no una suposición nuestra, así que se muestra normal y
+                        // sólo se marca de dónde salió.
+                        <span title="Declarado en su solicitud de beta. Todavía no ha completado el onboarding de la app.">
+                          {r.betaLanguages.join("/")}
+                          {r.level ? ` · ${r.level}` : ""}
+                          <span style={{ opacity: 0.55 }}> (beta)</span>
+                        </span>
                       ) : r.inferredLanguages?.length ? (
                         // Deducido, no declarado, y se distingue a simple vista:
                         // esta persona nunca contestó qué idioma quería, lo

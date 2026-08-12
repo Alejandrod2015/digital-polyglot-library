@@ -22,7 +22,9 @@ type RecentSignup = {
   createdAt: string;
   lastSignInAt: string | null;
   targetLanguages: string[];
-  /** Deducido de las historias que abrió, cuando no completó el onboarding. */
+  /** Declarado por la persona en el formulario de beta, si aplicó. */
+  betaLanguages: string[];
+  /** Deducido de las historias que abrió, cuando no hay nada declarado. */
   inferredLanguages: string[];
   level: string | null;
   onboarded: boolean;
@@ -220,21 +222,42 @@ export async function GET(req: NextRequest): Promise<Response> {
       return Array.from(langs).sort();
     };
 
+    // ── Idioma declarado en el formulario de beta ──
+    // Un beta tester ya nos dijo qué idioma quiere y con qué nivel, en el
+    // formulario, antes incluso de tener cuenta. Que la tabla mostrara "-"
+    // para alguien de quien teníamos "Spanish · Beginner" guardado no era falta
+    // de dato, era no ir a buscarlo. Va por delante de la deducción por
+    // historias: esto lo declaró la persona, aquello lo suponemos nosotros.
+    const emailsCohorte = cohort
+      .map((u) => (u.primaryEmailAddress?.emailAddress ?? u.emailAddresses?.[0]?.emailAddress ?? "").toLowerCase())
+      .filter(Boolean);
+    const betaRows = emailsCohorte.length
+      ? await prisma.betaSignup.findMany({
+          where: { email: { in: emailsCohorte } },
+          select: { email: true, targetLanguage: true, currentLevel: true },
+        })
+      : [];
+    const betaByEmail = new Map(betaRows.map((r) => [r.email.toLowerCase(), r]));
+
     const recent: RecentSignup[] = cohort
       .sort((a, b) => b.createdAt - a.createdAt)
       .map((u) => {
         const md = (u.publicMetadata ?? {}) as Record<string, unknown>;
         const tls = Array.isArray(md.targetLanguages) ? (md.targetLanguages as string[]) : [];
         const secs = listenedSecondsBy.get(u.id) ?? 0;
+        const email = u.primaryEmailAddress?.emailAddress ?? u.emailAddresses?.[0]?.emailAddress ?? null;
+        const beta = email ? betaByEmail.get(email.toLowerCase()) : undefined;
+        const declaredLevel = typeof md.preferredLevel === "string" ? (md.preferredLevel as string) : null;
         return {
           userId: u.id,
           name: [u.firstName, u.lastName].filter(Boolean).join(" ") || null,
-          email: u.primaryEmailAddress?.emailAddress ?? u.emailAddresses?.[0]?.emailAddress ?? null,
+          email,
           createdAt: new Date(u.createdAt).toISOString(),
           lastSignInAt: u.lastSignInAt ? new Date(u.lastSignInAt).toISOString() : null,
           targetLanguages: tls,
-          inferredLanguages: tls.length ? [] : inferredFor(u.id),
-          level: typeof md.preferredLevel === "string" ? (md.preferredLevel as string) : null,
+          betaLanguages: tls.length || !beta?.targetLanguage ? [] : [beta.targetLanguage],
+          inferredLanguages: tls.length || beta?.targetLanguage ? [] : inferredFor(u.id),
+          level: declaredLevel ?? (tls.length ? null : beta?.currentLevel ?? null),
           onboarded: tls.length > 0,
           openedStory: openedBy.has(u.id),
           listenedSeconds: secs,
