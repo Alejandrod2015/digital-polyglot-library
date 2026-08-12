@@ -331,6 +331,35 @@ type Plan = "free" | "basic" | "premium" | "polyglot";
 const PREVIEW_OFFLINE_USER_ID = "preview-ios";
 const CATALOG_BOOKS = fullMobileCatalog.length > 0 ? fullMobileCatalog : mobileCatalog;
 
+/**
+ * Firma de la vieja semilla de muestra: la PRIMERA historia de cada libro del
+ * catálogo. Es lo que se sembraba sin sesión y acababa persistido como si el
+ * usuario lo hubiera guardado (ver el comentario de `savedStoryIds`).
+ */
+const SAMPLE_SEED_STORY_IDS = new Set(
+  CATALOG_BOOKS.flatMap((book) => book.stories.slice(0, 1).map((story) => story.id))
+);
+
+/**
+ * Limpieza de una sola pasada para las instalaciones que ya tienen la semilla
+ * escrita en disco. Solo se cae un id que cumpla LAS DOS cosas: estar en la
+ * firma de la semilla y no tener progreso de lectura. Si el usuario abrió la
+ * historia, se queda: prefiero dejar de más a borrarle un marcador suyo.
+ * No toca `savedBookIds`; ahí no hay una firma en la que confíe (el orden del
+ * catálogo ha cambiado con el tiempo) y borrar un libro marcado sí sería
+ * decidir por él.
+ */
+function stripPersistedSampleSeed<T extends { savedStoryIds: string[]; readingProgress: ReadingProgress[] }>(
+  state: T
+): T {
+  const startedStoryIds = new Set(state.readingProgress.map((entry) => entry.storyId));
+  const savedStoryIds = state.savedStoryIds.filter(
+    (id) => !SAMPLE_SEED_STORY_IDS.has(id) || startedStoryIds.has(id)
+  );
+  if (savedStoryIds.length === state.savedStoryIds.length) return state;
+  return { ...state, savedStoryIds };
+}
+
 type OptionalSpeechModule = {
   stop: () => void;
   speak: (
@@ -2323,18 +2352,16 @@ export function MobileLibraryShell(args: {
   >("idle");
   const [practiceJourneyReviewMeta, setPracticeJourneyReviewMeta] = useState<JourneyReviewMeta | null>(null);
   const [selectedFavoriteType, setSelectedFavoriteType] = useState<string>("all");
-  // Sample content seeds the SIGNED-OUT preview only. Seeding it for a signed-in
-  // user put two books they never bought on the "Books in your library" shelf
-  // (2026-07-29), which is both a lie and, with the old either/or render, what
-  // hid their real purchases.
-  const [savedBookIds, setSavedBookIds] = useState<string[]>(() =>
-    isSignedIn ? [] : CATALOG_BOOKS.map((book) => book.id).slice(0, 2)
-  );
-  const [savedStoryIds, setSavedStoryIds] = useState<string[]>(() =>
-    isSignedIn
-      ? []
-      : CATALOG_BOOKS.flatMap((book) => book.stories.slice(0, 1).map((story) => story.id))
-  );
+  // La muestra ya NO siembra estos arrays. Sembrarlos los ESCRIBÍA en disco:
+  // el efecto de persistencia corre en cuanto el estado hidrata, así que
+  // contenido de demostración quedaba guardado para siempre y, tras iniciar
+  // sesión, era indistinguible de lo que el usuario guardó de verdad. Medido
+  // el 2026-08-12: el iPhone enseñaba 4 "guardadas" que eran, las cuatro, la
+  // primera historia de un libro del catálogo, la firma exacta de la semilla.
+  // Ya había mordido con los libros el 2026-07-29 (dos que nunca compró).
+  // Sin sesión no hay nada guardado, que es la verdad; el estado vacío lo dice.
+  const [savedBookIds, setSavedBookIds] = useState<string[]>([]);
+  const [savedStoryIds, setSavedStoryIds] = useState<string[]>([]);
   const [readingProgress, setReadingProgress] = useState<ReadingProgress[]>([]);
   const [favoriteWords, setFavoriteWords] = useState<MobileFavoriteItem[]>([]);
   const [collections, setCollections] = useState<FavoriteCollection[]>([]);
@@ -3878,17 +3905,15 @@ export function MobileLibraryShell(args: {
     let cancelled = false;
 
     async function hydratePreviewState() {
-      // Same rule as the initial state: sample content is for the signed-out
-      // preview. Anything the user actually saved is stored and returned by
-      // loadMobilePreviewState, so this only affects a fresh install.
+      // Misma regla que el estado inicial: instalación nueva es lista vacía,
+      // no contenido de muestra. Y a lo que ya venía del disco se le quita la
+      // semilla vieja antes de enseñarla.
       const fallback = {
-        savedBookIds: isSignedIn ? [] : CATALOG_BOOKS.map((book) => book.id).slice(0, 2),
-        savedStoryIds: isSignedIn
-          ? []
-          : CATALOG_BOOKS.flatMap((book) => book.stories.slice(0, 1).map((story) => story.id)),
-        readingProgress: [],
+        savedBookIds: [] as string[],
+        savedStoryIds: [] as string[],
+        readingProgress: [] as ReadingProgress[],
       };
-      const storedState = await loadMobilePreviewState(fallback);
+      const storedState = stripPersistedSampleSeed(await loadMobilePreviewState(fallback));
       if (cancelled) return;
 
       setSavedBookIds(storedState.savedBookIds);
@@ -14684,7 +14709,11 @@ export function MobileLibraryShell(args: {
           <View style={styles.heroTextBlock}>
             <Text style={styles.eyebrow}>Saved</Text>
             <Text style={styles.title}>Your saved stories</Text>
-            <Text style={styles.subtitle}>Saved, synced and ready to resume.</Text>
+            {/* Decía "Saved, synced and ready to resume" y lo de "synced" era
+                falso: el marcador solo escribe un fichero local de este
+                teléfono, no hay nada que sincronice con el servidor ni con la
+                web. El texto ahora dice lo que de verdad pasa. */}
+            <Text style={styles.subtitle}>Bookmarked on this phone, ready to resume.</Text>
           </View>
         </View>
       </View>
@@ -14751,24 +14780,11 @@ export function MobileLibraryShell(args: {
               />
             ))}
           </ScrollView>
-        ) : latestStoryCards.length > 0 ? (
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-            {latestStoryCards.map((item) => (
-              <BookHomeCard
-                key={`suggested-story-${item.key}`}
-                item={{
-                  key: item.key,
-                  title: item.title,
-                  coverUrl: item.coverUrl,
-                  subtitle: item.subtitle,
-                  meta: item.meta,
-                  progressLabel: item.progressLabel,
-                  onPress: item.onPress ?? (() => {}),
-                }}
-              />
-            ))}
-          </ScrollView>
         ) : (
+          /* Sin nada guardado va el estado vacío y ya. Antes caía a
+             `latestStoryCards`, o sea el catálogo reciente: la estantería se
+             llenaba de historias que el usuario NUNCA guardó, justo debajo de
+             un texto que le pedía guardar alguna. Sugerir es tarea del Home. */
           <View style={styles.emptyCard}>
             <Text style={styles.emptyTitle}>No saved stories yet</Text>
             <Text style={styles.metaLine}>Open a story and save it to build your shelf.</Text>
