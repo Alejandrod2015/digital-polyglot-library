@@ -173,8 +173,38 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
   const name = firstNameOr(data, "there");
   const tfUrl = data?.testflightUrl ?? "https://apps.apple.com/app/testflight/id899247664";
 
+  // The one email in the program that has to tell someone how to install, and
+  // the only one of the four store-aware emails that did not look at
+  // `platform`. Every Android tester accepted before this read "open the
+  // invite Apple just sent you" about an invite that does not exist and never
+  // will: Google mails the tester nothing at all. The type has said so since
+  // the field was added ("this link IS the invitation"), the sender has always
+  // passed it, and only the copy never asked.
+  const android = data?.platform === "android";
+  const optInUrl = data?.playOptInUrl ?? null;
+  const groupUrl = data?.playGroupJoinUrl ?? null;
+  // With no opt-in link there is nothing to instruct an Android tester to do,
+  // so say the honest thing rather than a confident wrong thing.
+  const androidReady = android && !!optInUrl;
+
   const steps = card(
-    `${cardTitle("Getting in takes about two minutes")}
+    androidReady
+      ? `${cardTitle("Getting in takes about two minutes")}
+    ${bullets(
+      [
+        ...(groupUrl
+          ? ["Join the testers group first. The install link only works for accounts in it."]
+          : []),
+        "Open the opt-in page in a browser, not inside the Play Store app, and tap Become a tester.",
+        "Install Digital Polyglot from Google Play, and sign in with this email address.",
+      ],
+    )}`
+      : android
+        ? `${cardTitle("Getting in")}
+    <p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
+      Your Android access is being set up. Reply to this email and I will send your install link straight away.
+    </p>`
+        : `${cardTitle("Getting in takes about two minutes")}
     ${bullets([
       "Install TestFlight if you do not have it yet. It is Apple's app for testing apps.",
       "Open the invite Apple just sent to your Apple ID and tap Accept.",
@@ -217,25 +247,54 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
     block(
       `${eyebrow("Beta access")}${head(`You're ${gold("in")}, ${esc(name)}.`, 40)}${lead(
         `Thank you for signing up. As a beta tester you help shape the app that many more people will later use to learn and improve their languages.`,
-      )}${lead(`Apple is sending your TestFlight invite to your Apple ID right now.`)}`,
+      )}${lead(
+        androidReady
+          ? `Your install link is below. Google does not send one, so this email is the invitation.`
+          : android
+            ? `One step left on my side before you can install.`
+            : `Apple is sending your TestFlight invite to your Apple ID right now.`,
+      )}`,
       "40px 44px 0",
     ),
     ...(personal ? [block(personal, "26px 44px 0", false)] : []),
     block(steps, "28px 44px 0", false),
-    block(cta("Open TestFlight", tfUrl), "24px 44px 0"),
+    ...(androidReady
+      ? [
+          ...(groupUrl
+            ? [block(ctaSecondary("Join the testers group", groupUrl), "24px 44px 0")]
+            : []),
+          block(cta("Become a tester", optInUrl!), groupUrl ? "12px 44px 0" : "24px 44px 0"),
+        ]
+      : android
+        ? []
+        : [block(cta("Open TestFlight", tfUrl), "24px 44px 0")]),
     block(perks, "24px 44px 0", false),
     block(ask, "16px 44px 0", false),
     block(
-      note("If Apple's invite has not shown up in fifteen minutes, check the spam folder of your Apple ID address, then reply here and I will send it again."),
+      note(
+        androidReady
+          ? "If the opt-in page says you are not a tester, it is almost always the Google account: open the link in a browser while signed in as the address you gave me. Reply here and I will sort it."
+          : android
+            ? "Reply to this email and I will send your install link."
+            : "If Apple's invite has not shown up in fifteen minutes, check the spam folder of your Apple ID address, then reply here and I will send it again.",
+      ),
       "8px 44px 0",
     ),
     block(lead("Thanks for being one of the first."), "18px 44px 0"),
   ];
 
   return {
-    subject: "You're in: your TestFlight invite is on the way",
+    subject: androidReady
+      ? "You're in: your install link is inside"
+      : android
+        ? "You're in"
+        : "You're in: your TestFlight invite is on the way",
     html: betaShell({
-      preheader: "Two minutes to install, then everything is unlocked.",
+      // The preheader is the line they read in the inbox, so it cannot promise
+      // two minutes to someone who has to wait for a reply first.
+      preheader: android && !androidReady
+        ? "You're in. One step left on my side."
+        : "Two minutes to install, then everything is unlocked.",
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
@@ -247,20 +306,45 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
       ...(data?.personalNote?.trim() ? [data.personalNote.trim(), ""] : []),
       `Thank you for signing up. As a beta tester you help shape the app that many more people will later use to learn and improve their languages.`,
       "",
-      "Apple is sending your TestFlight invite to your Apple ID right now.",
-      "",
-      "Getting in takes about two minutes:",
-      "  1. Install TestFlight if you do not have it yet. It is Apple's app for testing apps.",
-      "  2. Open the invite Apple just sent and tap Accept.",
-      "  3. Install Digital Polyglot from there, and sign in with this email address.",
-      "",
-      `TestFlight: ${tfUrl}`,
-      "",
+      ...(androidReady
+        ? [
+            "Your install link is below. Google does not send one, so this email is the invitation.",
+            "",
+            "Getting in takes about two minutes:",
+            ...(groupUrl
+              ? [`  1. Join the testers group: ${groupUrl}`, "     The install link only works for accounts in it."]
+              : []),
+            `  ${groupUrl ? 2 : 1}. Open the opt-in page in a browser, not inside the Play Store app, and tap Become a tester.`,
+            `  ${groupUrl ? 3 : 2}. Install Digital Polyglot from Google Play, and sign in with this email address.`,
+            "",
+            `Opt-in page: ${optInUrl}`,
+            "",
+          ]
+        : android
+          ? [
+              "One step left on my side before you can install. Reply to this email and I will send your install link straight away.",
+              "",
+            ]
+          : [
+              "Apple is sending your TestFlight invite to your Apple ID right now.",
+              "",
+              "Getting in takes about two minutes:",
+              "  1. Install TestFlight if you do not have it yet. It is Apple's app for testing apps.",
+              "  2. Open the invite Apple just sent and tap Accept.",
+              "  3. Install Digital Polyglot from there, and sign in with this email address.",
+              "",
+              `TestFlight: ${tfUrl}`,
+              "",
+            ]),
       "Every language, every story and the audio are open to you. Pick a language when you open the app. You can change it whenever you want.",
       "",
       "Then just use it. When something breaks or annoys you, tap Send feedback in Settings and tell me in one line. I read all of them.",
       "",
-      "If Apple's invite has not shown up in fifteen minutes, check the spam folder of your Apple ID address, then reply here and I will send it again.",
+      androidReady
+        ? "If the opt-in page says you are not a tester, it is almost always the Google account: open the link in a browser while signed in as the address you gave me. Reply here and I will sort it."
+        : android
+          ? ""
+          : "If Apple's invite has not shown up in fifteen minutes, check the spam folder of your Apple ID address, then reply here and I will send it again.",
       "",
       "Thanks for being one of the first.",
       "",
