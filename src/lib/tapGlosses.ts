@@ -11,6 +11,7 @@ import spanishTravelerMexicoA0 from "@/data/tapGlosses/spanish-traveler-mexico-a
 import spanishFriendsMexico from "@/data/tapGlosses/spanish-friends-mexico.json";
 import italianFriendsA0 from "@/data/tapGlosses/italian-friends-a0.json";
 import germanTravelerA0 from "@/data/tapGlosses/german-traveler-a0.json";
+import portugueseTravelerBrazilA0 from "@/data/tapGlosses/portuguese-traveler-brazil-a0.json";
 // Talking Points. Same contract as a journey bundle, split by language because
 // the key is the bare surface form and the two languages collide on it: "bar"
 // is a Spanish noun and a German adverb, "in" and "man" likewise.
@@ -48,6 +49,7 @@ const BUNDLES: TapGlossBundle[] = [
   spanishFriendsMexico as TapGlossBundle,
   italianFriendsA0 as TapGlossBundle,
   germanTravelerA0 as TapGlossBundle,
+  portugueseTravelerBrazilA0 as TapGlossBundle,
   talkingPointsEs as TapGlossBundle,
   talkingPointsDe as TapGlossBundle,
 ];

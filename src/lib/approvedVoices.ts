@@ -66,6 +66,16 @@ export const APPROVED_VOICES: Record<string, ApprovedVoice> = {
   // Andreti (JW8DGEuLp9WxIS5IdxMM, ~108 Hz) y Jorge necesita un masculino
   // mexicano intermedio (~139 Hz) que no se pise ni con Rafael ni con Jhenny.
   BALkepjFtWPcKCNjSuK0: { note: "César Barona Cheerful & Friendly (MX, m) — Jorge en El Día de la Candelaria (catálogo Short Stories in Mexican Spanish) — user-approved 2026-07-30" },
+
+  // ── Primeras voces de portugués del proyecto. Aprobadas por el usuario el
+  // 2026-08-12 tras oír las previews del shared library (public/_voces-pt-br.html),
+  // para narrar y practicar Traveler PT-BR A0. Journey de narrador único: solo
+  // dos hacen falta, las otras tres quedan de reserva.
+  RGymW84CSmfVugnA5tvA: { note: "Roberta Smooth and Confident (BR, f) — narradora de Traveler PT-BR A0 — user-approved 2026-08-12" },
+  "7iqXtOF3wl3pomwXFY7G": { note: "Fernanda Formal, Polite and Direct (BR, f) — práctica de Traveler PT-BR A0 — user-approved 2026-08-12" },
+  GDzHdQOi6jjf8zaXhCYD: { note: "Raquel Expressive and Energetic (BR, f) — reserva PT-BR — user-approved 2026-08-12" },
+  qPfM2laM0pRL4rrZtBGl: { note: "Sandro Dutra Articulated and Clear (BR, m) — reserva PT-BR — user-approved 2026-08-12" },
+  czvzJwIVS2asEKnthV40: { note: "Daniel Brazilian Conversational Voice (BR, m) — reserva PT-BR — user-approved 2026-08-12" },
 };
 
 export function isVoiceApproved(voiceId: string | null | undefined): boolean {

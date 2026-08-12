@@ -54,6 +54,13 @@ const CONFIG: Record<string, Cfg> = {
     journeyId: "cmrrqjd2n000032nvnp2tryzg", voiceId: "JW8DGEuLp9WxIS5IdxMM",
     voiceName: "Andreti Page (LATAM)", label: "Traveler ES Mexico A0", targetRate: 2.7,
   },
+  // 2.85 y no 2.7 como México: elegido de oído el 2026-08-12 sobre el primer
+  // párrafo de Copacabana. A 2.7 el estirón ya se oye; a 2.85 el factor es
+  // 0.945 y no se nota. El texto largo sale de EL a 3.02, no a 3.59.
+  "ptbr-a0": {
+    journeyId: "cmsou2uk0000732mqa4oatcmn", voiceId: "RGymW84CSmfVugnA5tvA",
+    voiceName: "Roberta (brasileño)", label: "Traveler PT Brazil A0", targetRate: 2.85,
+  },
 };
 
 const key = process.argv.find((a) => a.startsWith("--journey="))?.split("=")[1];
@@ -75,8 +82,15 @@ async function withRetry<T>(fn: () => Promise<T>, tries = 6): Promise<T> {
   }
   const cfg = CONFIG[key];
   const prisma = new PrismaClient();
+  // --slug=<slug> re-renderiza UNA historia aunque ya tenga audio. Existe
+  // porque re-tirar un segmento borrado de la caché exige volver a pasar por
+  // esa historia concreta, y `--limit=1` significa "la primera PENDIENTE",
+  // que es otra distinta.
+  const slugArg = process.argv.find((a) => a.startsWith("--slug="))?.split("=")[1];
   const pending = await prisma.journeyStory.findMany({
-    where: { journeyId: cfg.journeyId, audioUrl: null },
+    where: slugArg
+      ? { journeyId: cfg.journeyId, slug: slugArg }
+      : { journeyId: cfg.journeyId, audioUrl: null },
     select: { id: true, slug: true, text: true, title: true, journey: { select: { language: true } } },
     orderBy: [{ topic: "asc" }, { slotIndex: "asc" }],
   });

@@ -66,6 +66,7 @@ const FAMILIES: Record<string, string[]> = {
   german: ["german-expat", "german-friends", "german-hamburg", "german-traveler-a0"],
   french: ["french-traveler"],
   italian: ["italian-friends-a0"],
+  portuguese: ["portuguese-traveler-brazil-a0"],
 };
 
 /**
@@ -74,7 +75,7 @@ const FAMILIES: Record<string, string[]> = {
  * Kahlo) sí se glosan, y viven en el fichero manual como cualquier otra.
  */
 const CHARACTER_NAMES =
-  /^(iv[áa]n|lupe|javier|rafa|marta|elena|kanek|to[ñn]o|sof[íi]a|luc[íi]a|chela|timo|nadia|pablo|carmen|rosa|mateo|nico|ana|marina|nerea|greve|ole|nora|merle)$/i;
+  /^(iv[áa]n|lupe|javier|rafa|marta|elena|kanek|to[ñn]o|sof[íi]a|luc[íi]a|chela|timo|nadia|pablo|carmen|rosa|mateo|nico|ana|marina|nerea|greve|ole|nora|merle|bia|tiago|caio|lia|nara|vitor|dani)$/i;
 
 /**
  * COPIA EXACTA de lo que hace el lector, en dos pasos. Inventarme el corte
