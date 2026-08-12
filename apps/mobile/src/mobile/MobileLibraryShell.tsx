@@ -2130,7 +2130,6 @@ export function MobileLibraryShell(args: {
     shellScrollRef.current?.scrollTo({ y: 0, animated: false });
     setShellScrollY(0);
   }, [activeScreen]);
-  const [menuOpen, setMenuOpen] = useState(false);
   // Hint shown when the user taps Practice exercises or Favorites placeholders
   // before saving any words. Points at the Journey tab (open a story first).
   const [saveWordsHintVisible, setSaveWordsHintVisible] = useState(false);
@@ -3015,7 +3014,6 @@ export function MobileLibraryShell(args: {
       return true;
     }
     // Transient overlays / sheets — close whichever is open.
-    if (menuOpen) { setMenuOpen(false); return true; }
     if (languageSwitchOpen) { setLanguageSwitchOpen(false); return true; }
     if (journeysPanelOpen) { setJourneysPanelOpen(false); return true; }
     if (journeyVariantPickerOpen) { setJourneyVariantPickerOpen(false); return true; }
@@ -5627,6 +5625,67 @@ export function MobileLibraryShell(args: {
     [savedStories, readingProgress]
   );
 
+  /**
+   * Historias de JOURNEY guardadas con el marcador.
+   *
+   * `savedStories` recorre solo `CATALOG_BOOKS`, así que una historia de
+   * journey se guardaba bien (su id entra en `savedStoryIds`) pero no
+   * encontraba dónde renderizarse y DESAPARECÍA: el marcador se ponía
+   * amarillo, parecía que había funcionado, y en Saved no había nada. Ni un
+   * error ni un aviso. También faltaba en el contador de "Saved stories",
+   * que sale de la misma lista.
+   *
+   * Los resúmenes viven en la caché de journeys por idioma, así que se
+   * resuelven desde ahí y se abren por el mismo camino que en la pantalla de
+   * journey (`openJourneyStory`, que busca por slug), no con `setSelection`:
+   * el resumen no trae ni texto ni audio.
+   */
+  const savedJourneyStoryCards = useMemo<StoryCardModel[]>(() => {
+    if (savedStoryIds.length === 0) return [];
+    /**
+     * La MISMA historia tiene DOS ids según por dónde entre:
+     *   journey:<cuid>   lo emite el endpoint de journey (journeyData.ts)
+     *   journey-<cuid>   lo devuelve el de historias sueltas (journeyStories.ts)
+     * Dos puntos contra guion. El marcador guarda el segundo (el lector abre
+     * por ahí) y esta lista recorre el primero, así que comparar en crudo NO
+     * casa nunca: es la razón por la que la historia guardada seguía sin
+     * aparecer después del primer intento de arreglo.
+     */
+    const bare = (id: string) => id.replace(/^journey[:-]/, "");
+    const savedBare = new Set(savedStoryIds.map(bare));
+    const catalogIds = new Set(savedStories.map((entry) => bare(entry.selection.story.id)));
+    const cards: StoryCardModel[] = [];
+    const seen = new Set<string>();
+    for (const cached of journeyCacheByLanguageRef.current.values()) {
+      for (const track of cached?.tracks ?? []) {
+        for (const level of track.levels ?? []) {
+          for (const topic of level.topics ?? []) {
+            for (const story of topic.stories ?? []) {
+              const key = bare(story.id);
+              if (!savedBare.has(key)) continue;
+              if (catalogIds.has(key) || seen.has(key)) continue;
+              seen.add(key);
+              const captured = story;
+              cards.push({
+                key: `saved-journey-${story.id}`,
+                title: story.title,
+                subtitle: track.label ?? topic.label ?? "Journey",
+                coverUrl: getCoverUrl(story.coverUrl),
+                meta: storyCardMeta(story.language ?? null, topic.label ?? null),
+                badge: story.audioFinished ? "Listened" : "Journey story",
+                progressLabel: formatReadingProgressLabel(
+                  readingProgress.find((entry) => entry.storyId === story.id) ?? null
+                ),
+                onPress: () => void openJourneyStory(captured),
+              });
+            }
+          }
+        }
+      }
+    }
+    return cards;
+  }, [savedStoryIds, savedStories, readingProgress, remoteJourney]);
+
   const remoteStoryCards = useMemo<StoryCardModel[]>(
     () =>
       remoteOpenableStories.map(({ remote, selection, offlineStory }) => {
@@ -5920,7 +5979,6 @@ export function MobileLibraryShell(args: {
 
   function openSelection(selection: ReaderSelection) {
     setSelection(selection);
-    setMenuOpen(false);
     storyOpenedAtRef.current = Date.now();
     // Warm up the practice items in the background so that hitting
     // "Start practice" at the end of the story is instant. The fetch
@@ -5931,7 +5989,6 @@ export function MobileLibraryShell(args: {
   function openBook(book: Book) {
     setSelectedBook(book);
     setSelectedBookTab("stories");
-    setMenuOpen(false);
   }
 
   // Opens a book the user owns, whether or not this build bundles it.
@@ -6764,7 +6821,6 @@ export function MobileLibraryShell(args: {
   async function openWebPath(path: string) {
     const url = new URL(path, mobileConfig.apiBaseUrl);
     await WebBrowser.openBrowserAsync(url.toString());
-    setMenuOpen(false);
   }
 
   // Plans entry point. On iOS we MUST use the native paywall (Apple IAP); the
@@ -6772,7 +6828,6 @@ export function MobileLibraryShell(args: {
   // else (Android/web) keep the web /plans page.
   function openPlans(): Promise<void> {
     if (Platform.OS === "ios") {
-      setMenuOpen(false);
       setPaywallVisible(true);
       return Promise.resolve();
     }
@@ -7084,7 +7139,6 @@ export function MobileLibraryShell(args: {
 
       if (payload.url) {
         await WebBrowser.openBrowserAsync(payload.url);
-        setMenuOpen(false);
         return;
       }
 
@@ -7114,7 +7168,6 @@ export function MobileLibraryShell(args: {
     if (focus) url.searchParams.set("focus", focus);
 
     await WebBrowser.openBrowserAsync(url.toString());
-    setMenuOpen(false);
   }
 
   function syncCreatedStoryState(
@@ -7536,7 +7589,6 @@ export function MobileLibraryShell(args: {
     setPendingPairings({});
     setWrongMatchWords([]);
     setLastPracticeActivityAt(new Date().toISOString());
-    setMenuOpen(false);
     // Arranca con countdown activo + pausa off + timer en 15 seg.
     // Estos states se reinician en cada apertura para que la sesión
     // siempre empiece "limpia".
@@ -8363,6 +8415,19 @@ export function MobileLibraryShell(args: {
     }
     if (lastAutoplayedExerciseIdRef.current === exId) return;
     lastAutoplayedExerciseIdRef.current = exId;
+    // Diagnóstico del audio que suena DURANTE la cuenta atrás y luego otra vez.
+    // Los dos disparadores conocidos están bloqueados mientras corre, así que
+    // el orden de los estados es la única explicación que queda; esto lo mide
+    // en vez de deducirlo.
+    console.log(
+      `[practice-word] autoplay ex=${exId.slice(0, 8)} countdown=${
+        practiceCountdownActive ? "SI" : "no"
+      } modo=${
+        currentPracticeExercise?.kind === "multiple-choice"
+          ? currentPracticeExercise.mode
+          : currentPracticeExercise?.kind
+      } pausado=${practicePaused ? "SI" : "no"}`
+    );
     console.log(
       `[practice-word] autoplay ex=${exId.slice(0, 8)} countdown=${practiceCountdownActive ? "SI" : "no"} modo=${currentPracticeExercise?.kind === "multiple-choice" ? currentPracticeExercise.mode : currentPracticeExercise?.kind}`
     );
@@ -9837,6 +9902,11 @@ export function MobileLibraryShell(args: {
    *   acá si HQ falla, mostramos un hint amable en vez de duplicar.
    */
   async function playPracticeMeaningAudio() {
+    console.log(
+      `[practice-word] REPRODUCE palabra countdown=${practiceCountdownActive ? "SI" : "no"} ex=${
+        currentPracticeExercise?.id?.slice(0, 8) ?? "-"
+      }`
+    );
     if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return;
     if (currentPracticeExercise.mode !== "meaning") return;
     const word = currentPracticeExercise.favorite.word?.trim();
@@ -10697,7 +10767,6 @@ export function MobileLibraryShell(args: {
   }
 
   async function openFeedback() {
-    setMenuOpen(false);
     await Linking.openURL(
       "mailto:support@digitalpolyglot.com?subject=Digital%20Polyglot%20iOS%20Feedback"
     );
@@ -10754,7 +10823,10 @@ export function MobileLibraryShell(args: {
   const syncedOnlyStoryCards = remoteStoryCards.filter(
     (item) => !savedStoryIds.includes(item.key.replace(/^remote-/, ""))
   );
-  const savedLibraryCards = savedStoryCards.length > 0 ? savedStoryCards : remoteStoryCards;
+  // Las de journey van DELANTE de las del catálogo: son las que el usuario
+  // acaba de guardar mientras lee su journey, y son las que faltaban.
+  const savedAllCards = [...savedJourneyStoryCards, ...savedStoryCards];
+  const savedLibraryCards = savedAllCards.length > 0 ? savedAllCards : remoteStoryCards;
 
   const featuredHomeStory = useMemo(() => {
     const spotlight = getSpotlightSelection();
@@ -12859,7 +12931,6 @@ export function MobileLibraryShell(args: {
                 <Text style={styles.eyebrow}>Get started</Text>
                 <Text style={styles.title}>Practice</Text>
               </View>
-              <MenuTrigger onPress={() => setMenuOpen(true)} />
             </View>
           </View>
           <View style={[styles.card, styles.accountCard]}>
@@ -13729,6 +13800,17 @@ export function MobileLibraryShell(args: {
                               isCompactMeaningViewport ? styles.practiceMeaningHeroTopRowCompact : null,
                             ]}
                           >
+                            {/* La palabra Y su subrayado, juntos en la misma
+                                caja. El subrayado estaba FUERA de esta fila,
+                                con `alignSelf: center`, así que se centraba
+                                respecto a la tarjeta entera mientras la
+                                palabra se centra en el hueco que deja el botón
+                                de audio (42 px + 12 de separación). Resultado:
+                                27 px descuadrado a la derecha, que es lo que
+                                se veía torcido. Dentro de la misma caja, los
+                                dos centros son el mismo por construcción y no
+                                dependen del tamaño del botón. */}
+                            <View style={styles.practiceMeaningWordColumn}>
                             <Text
                               // Palabras largas (compuestos alemanes) se
                               // encogen para caber en vez de desbordarse.
@@ -13753,6 +13835,8 @@ export function MobileLibraryShell(args: {
                             >
                               {currentPracticeExercise.favorite.word}
                             </Text>
+                              <View style={styles.practiceMeaningWordUnderline} />
+                            </View>
                             <Pressable
                               // Siempre habilitado: playPracticeMeaningAudio
                               // sintetiza desde la palabra vía sentence-tts aun
@@ -13777,7 +13861,6 @@ export function MobileLibraryShell(args: {
                               )}
                             </Pressable>
                           </View>
-                          <View style={styles.practiceMeaningWordUnderline} />
                           {currentPracticeExercise.sentence ? (
                             <View
                               style={[
@@ -14597,7 +14680,6 @@ export function MobileLibraryShell(args: {
             <Text style={styles.title}>Your saved stories</Text>
             <Text style={styles.subtitle}>Saved, synced and ready to resume.</Text>
           </View>
-          <MenuTrigger onPress={() => setMenuOpen(true)} />
         </View>
       </View>
 
@@ -14671,7 +14753,7 @@ export function MobileLibraryShell(args: {
             <Text style={styles.summaryLabel}>Saved books</Text>
           </View>
           <View style={styles.summaryTile}>
-            <Text style={styles.summaryValue}>{savedStoryCards.length}</Text>
+            <Text style={styles.summaryValue}>{savedAllCards.length}</Text>
             <Text style={styles.summaryLabel}>Saved stories</Text>
           </View>
           <View style={styles.summaryTile}>
@@ -15219,7 +15301,6 @@ export function MobileLibraryShell(args: {
 
   const createView = (
     <MobileCreateScreen
-      headerAction={<MenuTrigger onPress={() => setMenuOpen(true)} />}
       resumeNotice={createResumeNotice}
       setupRows={[
         {
@@ -18718,7 +18799,6 @@ export function MobileLibraryShell(args: {
                 icon="journey"
                 label="Replay tour"
                 onPress={() => {
-                  setMenuOpen(false);
                   setActiveScreen("home");
                   setForceTourPreview(true);
                   setOnboardingTourStep(0);
@@ -19913,173 +19993,13 @@ export function MobileLibraryShell(args: {
         </KeyboardAvoidingView>
       </Modal>
 
-      <Modal visible={menuOpen} animationType="slide" transparent onRequestClose={() => setMenuOpen(false)}>
-        <View style={styles.menuBackdrop}>
-          <Pressable style={styles.menuDismissZone} onPress={() => setMenuOpen(false)} />
-          <View style={[styles.menuPanel, { paddingBottom: 28 + androidBottomInset }]}>
-            <View style={styles.menuPanelHeader}>
-              <Text style={styles.menuTitle}>Menu</Text>
-              <Pressable onPress={() => setMenuOpen(false)} style={styles.menuClose}>
-                <Feather name="x" size={18} color="#dbe9ff" />
-              </Pressable>
-            </View>
-
-            <ScrollView contentContainerStyle={styles.menuContent}>
-              {isSignedIn ? (
-                <>
-                  <MenuLink
-                    label="Progress"
-                    icon="progress"
-                    onPress={() => {
-                      setActiveScreen("progress");
-                      setMenuOpen(false);
-                    }}
-                  />
-                  <MenuLink
-                    label="Settings"
-                    icon="settings"
-                    onPress={() => {
-                      setActiveScreen("settings");
-                      setMenuOpen(false);
-                    }}
-                  />
-                  <MenuLink
-                    label="Library"
-                    icon="library"
-                    onPress={() => {
-                      setActiveScreen("journey");
-                      setMenuOpen(false);
-                    }}
-                  />
-                  <MenuLink
-                    label="Saved"
-                    icon="saved"
-                    onPress={() => {
-                      setActiveScreen("library");
-                      setMenuOpen(false);
-                    }}
-                  />
-                  {effectivePlan === "polyglot" ? (
-                    <MenuLink
-                      label="Create"
-                      icon="create"
-                      onPress={() => {
-                        setActiveScreen("create");
-                        setMenuOpen(false);
-                      }}
-                    />
-                  ) : null}
-
-                  {effectivePlan === "free" ? (
-                    <MenuLink
-                      label="Story of the Week"
-                      icon="story"
-                      onPress={() => {
-                        const spotlight = getSpotlightSelection();
-                        if (spotlight) openSelection(spotlight);
-                      }}
-                    />
-                  ) : null}
-
-                  {effectivePlan === "basic" ? (
-                    <MenuLink
-                      label="Story of the Day"
-                      icon="story"
-                      onPress={() => {
-                        const spotlight = getSpotlightSelection();
-                        if (spotlight) openSelection(spotlight);
-                      }}
-                    />
-                  ) : null}
-
-                  {(effectivePlan === "free" || effectivePlan === "basic") ? (
-                    <MenuLink label="Upgrade" icon="upgrade" onPress={() => void openPlans()} tone="accent" />
-                  ) : null}
-
-                  {/* Polyglot-only; internal QA tool. Wipes the
-                      account's preferences (target languages,
-                      journeys, focus, level, goals, reminders, the
-                      onboarding-completed flag) on both client and
-                      server, which makes the shell fall straight
-                      into the onboarding gate again. The onboarding
-                      runs in normal (persistent) mode so any new
-                      selections REPLACE the old setup; letting you
-                      test the new-user experience end-to-end on a
-                      live account. Gated to `polyglot` because that
-                      tier is for internal use only; this entry is
-                      never visible to real users. */}
-                  {effectivePlan === "polyglot" ? (
-                    <MenuLink
-                      label="Test mode"
-                      icon="settings"
-                      onPress={() => {
-                        setMenuOpen(false);
-                        void handleTestModeReset();
-                      }}
-                    />
-                  ) : null}
-
-                  <MenuLink
-                    label="Sign out"
-                    icon="signout"
-                    onPress={() => {
-                      setMenuOpen(false);
-                      onSignOut?.();
-                    }}
-                  />
-                </>
-              ) : (
-                <MenuLink
-                  label="Sign in"
-                  icon="signin"
-                  onPress={() => {
-                    setMenuOpen(false);
-                    onRequestSignIn?.();
-                  }}
-                />
-              )}
-
-              {/* Legal links collapsed into a single MenuLink in
-                  build 68; tapping it opens a bottom sheet with the
-                  5 individual links (Impressum, Privacy, Cookies,
-                  Terms, Data deletion). The inline list was eating
-                  ~5 rows in the side menu; the sheet keeps them
-                  one-tap-away while reclaiming that vertical space. */}
-              <MenuLink
-                label="Legal"
-                icon="legal"
-                onPress={() => {
-                  setMenuOpen(false);
-                  setLegalSheetOpen(true);
-                }}
-              />
-
-              <Pressable onPress={() => void openFeedback()} style={styles.feedbackButton}>
-                <Feather name="message-square" size={18} color="#dbe9ff" />
-                <Text style={styles.feedbackButtonText}>Feedback</Text>
-              </Pressable>
-            </ScrollView>
-
-            <View style={styles.menuFooter}>
-              <Image
-                source={require("../../assets/splash-logo-white.png")}
-                style={styles.menuFooterLogo}
-                resizeMode="contain"
-                accessibilityLabel="Digital Polyglot"
-              />
-            </View>
-          </View>
-        </View>
-      </Modal>
+      {/* CAJÓN LATERAL LEGACY ELIMINADO (2026-08-11).
+          Una hamburguesa a la IZQUIERDA abría un panel por la DERECHA con
+          Progress, Settings, Library y Create: las cuatro están ya en las
+          pestañas de abajo y en la pantalla Menu, así que era navegación
+          duplicada, y encima el lado del icono no coincidía con el lado del
+          panel. Lo reportó el usuario viéndolo en Saved. */}
     </View>
-  );
-}
-
-function MenuTrigger({ onPress }: { onPress: () => void }) {
-  return (
-    <Pressable onPress={onPress} style={styles.menuIconButton}>
-      <Feather name="menu" size={20} color="#f5f7fb" />
-    </Pressable>
   );
 }
 
@@ -25422,8 +25342,11 @@ const styles = StyleSheet.create({
   practiceMeaningHeroTopRowCompact: {
     gap: 8,
   },
-  practiceMeaningTargetWord: {
+  practiceMeaningWordColumn: {
     flex: 1,
+    alignItems: "stretch",
+  },
+  practiceMeaningTargetWord: {
     color: "#ffffff",
     fontSize: 46,
     fontWeight: "900",
