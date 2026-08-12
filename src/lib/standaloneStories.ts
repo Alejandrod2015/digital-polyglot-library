@@ -136,8 +136,23 @@ export async function getStandaloneStoriesByIds(
   ids: string[]
 ): Promise<PublicStandaloneStory[]> {
   if (ids.length === 0) return [];
-  const rows = await getStudioStandaloneStoriesByIds(ids);
-  return rows.map(normalizeStandaloneStory);
+  const stories = (await getStudioStandaloneStoriesByIds(ids)).map(normalizeStandaloneStory);
+
+  // Lo que la app guarda con el marcador desde un journey no está en el catálogo
+  // standalone: vive en `JourneyStory`, y además puede venir por slug o por
+  // `journey-<cuid>`. Sin este rescate la fila existe en la biblioteca del
+  // usuario pero se queda sin slug ni idioma, o sea sin enlace que abrir, que es
+  // exactamente el fallo silencioso que ya tuvimos en la pantalla de Saved.
+  const resolvedIds = new Set(stories.map((story) => story.id));
+  const missing = ids.filter((id) => !resolvedIds.has(id));
+  if (missing.length === 0) return stories;
+
+  const { getJourneyStoryByIdOrSlug } = await import("@/lib/journeyStories");
+  const rescued = (await Promise.all(missing.map((id) => getJourneyStoryByIdOrSlug(id)))).filter(
+    (story): story is PublicStandaloneStory => Boolean(story)
+  );
+
+  return [...stories, ...rescued];
 }
 
 export async function getStandaloneStoriesBySlugs(

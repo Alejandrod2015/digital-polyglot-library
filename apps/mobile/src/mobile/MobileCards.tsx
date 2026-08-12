@@ -18,6 +18,11 @@ function isSingleVariantLanguage(language?: string): boolean {
 
 export type StoryCardModel = {
   key: string;
+  /** Id de la historia SIN el prefijo de la lista que la construyó
+   *  (`saved-`, `saved-journey-`, `remote-`). Sirve para cruzar la misma
+   *  historia entre listas que la nombran distinto, p.ej. al unir lo guardado
+   *  en el teléfono con lo guardado en la cuenta sin enseñarla dos veces. */
+  storyKey?: string;
   title: string;
   subtitle: string;
   coverUrl: string;

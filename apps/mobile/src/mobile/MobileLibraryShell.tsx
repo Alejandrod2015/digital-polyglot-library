@@ -332,6 +332,26 @@ const PREVIEW_OFFLINE_USER_ID = "preview-ios";
 const CATALOG_BOOKS = fullMobileCatalog.length > 0 ? fullMobileCatalog : mobileCatalog;
 
 /**
+ * La misma historia se nombra de tres formas según de dónde venga: `journey:<cuid>`
+ * (payload de journey), `journey-<cuid>` (endpoint de historias sueltas) y el
+ * SLUG (lo que guarda el marcador). Para cruzarla entre listas hay que quitar el
+ * prefijo y comparar en minúsculas; comparar en crudo no casa nunca.
+ */
+function normalizeStoryKey(value: string | null | undefined): string {
+  return (value ?? "").trim().replace(/^journey[:-]/, "").toLowerCase();
+}
+
+/**
+ * `bookId` en la biblioteca del servidor hace de discriminador, no siempre es un
+ * libro: "polyglot" para lo que genera el usuario y "standalone" para las
+ * historias sueltas y las de journey (que la app abre con un libro sintético
+ * llamado `standalone-book`).
+ */
+function libraryBookIdForSelection(book: Book): string {
+  return book.id === "standalone-book" ? "standalone" : book.id;
+}
+
+/**
  * Firma de la vieja semilla de muestra: la PRIMERA historia de cada libro del
  * catálogo. Es lo que se sembraba sin sesión y acababa persistido como si el
  * usuario lo hubiera guardado (ver el comentario de `savedStoryIds`).
@@ -3929,6 +3949,32 @@ export function MobileLibraryShell(args: {
     };
   }, []);
 
+  /**
+   * Fusión con lo guardado en la CUENTA (2026-08-12).
+   *
+   * `remoteStories` son las filas de la biblioteca del usuario en el servidor,
+   * o sea lo que guardó desde la web o desde el otro teléfono. Entran en la
+   * lista local para que el marcador salga relleno al abrir esa historia aquí,
+   * que es lo que uno espera de algo guardado "en su cuenta". Solo se AÑADE:
+   * nada de borrar por ausencia, porque un fallo de red dejaría al usuario sin
+   * sus marcadores locales.
+   */
+  useEffect(() => {
+    if (!didHydrateState || remoteStories.length === 0) return;
+    setSavedStoryIds((current) => {
+      const seen = new Set(current.map((id) => normalizeStoryKey(id)));
+      const additions: string[] = [];
+      for (const row of remoteStories) {
+        const id = row.storySlug || row.storyId;
+        const key = normalizeStoryKey(id);
+        if (!key || seen.has(key)) continue;
+        seen.add(key);
+        additions.push(id);
+      }
+      return additions.length > 0 ? [...current, ...additions] : current;
+    });
+  }, [didHydrateState, remoteStories]);
+
   useEffect(() => {
     return () => {
       if (exploreSearchBlurTimeoutRef.current) {
@@ -5630,6 +5676,7 @@ export function MobileLibraryShell(args: {
         const progress = readingProgress.find((entry) => entry.storyId === selection.story.id) ?? null;
         return {
           key: `saved-${selection.story.id}`,
+          storyKey: normalizeStoryKey(selection.story.slug ?? selection.story.id),
           title: selection.story.title,
           subtitle: selection.book.title,
           coverUrl: getCoverUrl(selection.story.cover ?? selection.story.coverUrl ?? selection.book.cover),
@@ -5703,6 +5750,7 @@ export function MobileLibraryShell(args: {
               const captured = story;
               cards.push({
                 key: `saved-journey-${story.id}`,
+                storyKey: normalizeStoryKey(slug || story.id),
                 title: story.title,
                 subtitle: track.label ?? topic.label ?? "Journey",
                 coverUrl: getCoverUrl(story.coverUrl),
@@ -5727,6 +5775,9 @@ export function MobileLibraryShell(args: {
         const progress = readingProgress.find((entry) => entry.storyId === selection.story.id) ?? null;
         return {
           key: `remote-${remote.storyId}`,
+          storyKey: normalizeStoryKey(
+            remote.storySlug || selection.story.slug || remote.storyId
+          ),
           title: remote.title,
           subtitle: selection.book.title,
           coverUrl: getCoverUrl(selection.story.cover || remote.coverUrl || selection.book.cover),
@@ -6100,9 +6151,47 @@ export function MobileLibraryShell(args: {
     setSavedBookIds((current) => (isSaved ? current.filter((id) => id !== book.id) : [...current, book.id]));
   }
 
-  function toggleStorySaved(_book: Book, story: Story) {
+  /**
+   * El marcador escribe en la CUENTA, no solo en el teléfono (2026-08-12).
+   *
+   * Antes esto solo tocaba estado local, que se persiste en un fichero dentro
+   * de la app. Resultado: guardabas en un móvil y el otro no se enteraba nunca,
+   * la web llevaba una tercera lista, y al reinstalar se perdía todo. Se manda
+   * al servidor sin bloquear la UI: el marcador ya se pintó, y si la red falla
+   * el estado local queda bien y el próximo toque reintenta.
+   */
+  const syncSavedStoryToAccount = useCallback(
+    async (book: Book, story: Story, saved: boolean) => {
+      if (!sessionToken) return;
+      try {
+        await apiFetch({
+          baseUrl: mobileConfig.apiBaseUrl,
+          path: "/api/mobile/library",
+          method: saved ? "POST" : "DELETE",
+          token: sessionToken,
+          body: saved
+            ? {
+                type: "story",
+                storyId: story.id,
+                bookId: libraryBookIdForSelection(book),
+                title: story.title,
+                coverUrl: story.cover ?? story.coverUrl ?? book.cover ?? "",
+              }
+            : { type: "story", storyId: story.id },
+          timeoutMs: 10000,
+        });
+      } catch {
+        // Silencioso a propósito: el marcador local ya está puesto y no quiero
+        // un aviso de red encima de la lectura.
+      }
+    },
+    [sessionToken]
+  );
+
+  function toggleStorySaved(book: Book, story: Story) {
     const isSaved = savedStoryIds.includes(story.id);
     setSavedStoryIds((current) => (isSaved ? current.filter((id) => id !== story.id) : [...current, story.id]));
+    void syncSavedStoryToAccount(book, story, !isSaved);
   }
 
   // Throttle state updates from the reader scroll to at most one per
@@ -10855,9 +10944,28 @@ export function MobileLibraryShell(args: {
   const offlineReadyStoryCards = savedStoryCards.filter((item) =>
     offlineSnapshot?.stories.some((story) => story.storyId === item.key.replace(/^saved-/, ""))
   );
-  // Las de journey van DELANTE de las del catálogo: son las que el usuario
-  // acaba de guardar mientras lee su journey, y son las que faltaban.
-  const savedAllCards = [...savedJourneyStoryCards, ...savedStoryCards];
+  /**
+   * TODO lo guardado, venga de donde venga, en una sola estantería.
+   *
+   * Las de journey van DELANTE de las del catálogo: son las que el usuario
+   * acaba de guardar mientras lee su journey. Detrás van las de la CUENTA
+   * (`remoteStoryCards`), que hasta ahora solo servían de reserva cuando no
+   * había nada local: son las que guardó desde la web o desde el otro teléfono.
+   * Se deduplica por `storyKey` porque la misma historia se llama distinto en
+   * cada lista (slug aquí, `journey-<cuid>` allí) y sin normalizar salía dos
+   * veces.
+   */
+  const savedAllCards = useMemo<StoryCardModel[]>(() => {
+    const seen = new Set<string>();
+    const merged: StoryCardModel[] = [];
+    for (const card of [...savedJourneyStoryCards, ...savedStoryCards, ...remoteStoryCards]) {
+      const key = card.storyKey || normalizeStoryKey(card.key);
+      if (key && seen.has(key)) continue;
+      if (key) seen.add(key);
+      merged.push(card);
+    }
+    return merged;
+  }, [savedJourneyStoryCards, savedStoryCards, remoteStoryCards]);
 
   const featuredHomeStory = useMemo(() => {
     const spotlight = getSpotlightSelection();

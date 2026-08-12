@@ -85,23 +85,22 @@ export const getPublishedJourneyStories = unstable_cache(
 );
 
 /**
- * Get a single published journey story by slug.
+ * Filtro de estado del lector. Se comparte entre las búsquedas por slug y por
+ * id para que una historia en borrador NO se cuele en producción por haber
+ * entrado por la otra puerta.
  */
-export async function getJourneyStoryBySlug(
-  slug: string
-): Promise<PublicStandaloneStory | null> {
-  try {
-    // Local preview only (NODE_ENV !== production): also resolve draft stories
-    // that belong to an in-progress journey, so it can be read in the REAL story
-    // reader before publishing. Production stays published-only.
-    //
-    // A list, not a single id, so several journeys can be in progress at once
-    // (2026-07-09: added Friends ES C1 LATAM alongside the German A0).
-    // NOTE: the reader does NOT filter by Journey.status — a story with
-    // status:"published" is reachable by direct URL in production even when its
-    // journey is "archived". Keep in-progress journeys' stories in "draft" and
-    // preview them via this list instead of publishing them.
-    const PREVIEW_JOURNEY_IDS = [
+function readerStatusWhere() {
+  // Local preview only (NODE_ENV !== production): also resolve draft stories
+  // that belong to an in-progress journey, so it can be read in the REAL story
+  // reader before publishing. Production stays published-only.
+  //
+  // A list, not a single id, so several journeys can be in progress at once
+  // (2026-07-09: added Friends ES C1 LATAM alongside the German A0).
+  // NOTE: the reader does NOT filter by Journey.status — a story with
+  // status:"published" is reachable by direct URL in production even when its
+  // journey is "archived". Keep in-progress journeys' stories in "draft" and
+  // preview them via this list instead of publishing them.
+  const PREVIEW_JOURNEY_IDS = [
       "cmqtnagxp0000324lf3u73vg1", // German A0 (in progress)
       "cmrdqk484000032r4rt2vw4ej", // Friends ES C1 LATAM (in progress)
       "cmrdbz11t000032asrvo832i9", // Hanseat DE C1 (in progress; un-published 2026-07-09)
@@ -113,14 +112,51 @@ export async function getJourneyStoryBySlug(
       "cmrrqjd2n000032nvnp2tryzg", // Traveler ES A0 mexico (in progress)
       "cmrrrpru1000032nnzsmraa7h", // Friends ES C1 mexico (in progress)
       "cmrsiz1n40000320d6h8p8f5g", // Friends IT A0 italy (in progress)
-      "cmsou2uk0000732mqa4oatcmn", // Traveler PT A0 brazil (in progress)
-    ];
-    const statusWhere =
-      process.env.NODE_ENV !== "production"
-        ? { OR: [{ status: "published" as const }, { journeyId: { in: PREVIEW_JOURNEY_IDS } }] }
-        : { status: "published" as const };
+    "cmsou2uk0000732mqa4oatcmn", // Traveler PT A0 brazil (in progress)
+  ];
+  return process.env.NODE_ENV !== "production"
+    ? { OR: [{ status: "published" as const }, { journeyId: { in: PREVIEW_JOURNEY_IDS } }] }
+    : { status: "published" as const };
+}
+
+/**
+ * Get a single published journey story by slug.
+ */
+export async function getJourneyStoryBySlug(
+  slug: string
+): Promise<PublicStandaloneStory | null> {
+  try {
     const story = await prisma.journeyStory.findFirst({
-      where: { slug, ...statusWhere },
+      where: { slug, ...readerStatusWhere() },
+      include: { journey: { select: { language: true, variant: true } } },
+    });
+    if (!story || !story.text || !story.title) return null;
+    return toPublicStory(story);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Igual que `getJourneyStoryBySlug` pero aceptando CUALQUIERA de las formas con
+ * las que esta historia circula, porque no hay una sola: el endpoint de journey
+ * emite `journey:<cuid>`, el de historias sueltas `journey-<cuid>`, y lo que la
+ * app guarda con el marcador es el SLUG. Un `LibraryStory` puede traer
+ * cualquiera de las tres, así que se buscan todas en vez de exigir la correcta.
+ */
+export async function getJourneyStoryByIdOrSlug(
+  value: string
+): Promise<PublicStandaloneStory | null> {
+  const trimmed = value.trim();
+  if (!trimmed) return null;
+  const bySlug = await getJourneyStoryBySlug(trimmed);
+  if (bySlug) return bySlug;
+
+  const bareId = trimmed.replace(/^journey[:-]/, "");
+  if (bareId === trimmed) return null;
+  try {
+    const story = await prisma.journeyStory.findFirst({
+      where: { id: bareId, ...readerStatusWhere() },
       include: { journey: { select: { language: true, variant: true } } },
     });
     if (!story || !story.text || !story.title) return null;

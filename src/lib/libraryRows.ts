@@ -50,7 +50,15 @@ export async function loadLibraryStoryRows(userId: string) {
   ]);
 
   const byId = new Map(polyglotStories.map((s) => [s.id, s]));
-  const standaloneById = new Map(standaloneStories.map((s) => [s.id, s]));
+  // Indexado por id Y por slug: una historia de journey guardada desde la app
+  // llega con el slug en `storyId`, mientras que la historia resuelta se
+  // identifica con `journey-<cuid>`. Buscar solo por id dejaba esas filas sin
+  // metadatos, o sea sin enlace, aunque la historia sí se hubiera encontrado.
+  const standaloneById = new Map<string, (typeof standaloneStories)[number]>();
+  for (const story of standaloneStories) {
+    standaloneById.set(story.id, story);
+    if (story.slug) standaloneById.set(story.slug, story);
+  }
   // Book-backed rows resolve their book/story metadata against the real
   // catalog, not the build-time static dump, so a purchased title missing
   // from the dump still renders with cover, level and working links.
