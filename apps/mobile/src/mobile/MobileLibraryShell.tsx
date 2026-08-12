@@ -5652,7 +5652,16 @@ export function MobileLibraryShell(args: {
      * aparecer después del primer intento de arreglo.
      */
     const bare = (id: string) => id.replace(/^journey[:-]/, "");
+    /**
+     * Y hay una TERCERA forma, que es la que de verdad se guarda. Medido en el
+     * Pixel el 2026-08-12: `savedStoryIds` contiene SLUGS
+     * ("el-mercado-de-medellin"), no cuids. Quitar el prefijo `journey:` deja
+     * un cuid, que nunca iguala a un slug, así que comparar solo por id seguía
+     * sin casar. El resumen del journey trae `storySlug`, que es justo eso.
+     * Se aceptan las dos vías.
+     */
     const savedBare = new Set(savedStoryIds.map(bare));
+    const savedSlugs = new Set(savedStoryIds);
     const catalogIds = new Set(savedStories.map((entry) => bare(entry.selection.story.id)));
     const cards: StoryCardModel[] = [];
     const seen = new Set<string>();
@@ -5662,7 +5671,8 @@ export function MobileLibraryShell(args: {
           for (const topic of level.topics ?? []) {
             for (const story of topic.stories ?? []) {
               const key = bare(story.id);
-              if (!savedBare.has(key)) continue;
+              const slug = story.storySlug ?? "";
+              if (!savedBare.has(key) && !(slug && savedSlugs.has(slug))) continue;
               if (catalogIds.has(key) || seen.has(key)) continue;
               seen.add(key);
               const captured = story;
@@ -10820,13 +10830,9 @@ export function MobileLibraryShell(args: {
   const offlineReadyStoryCards = savedStoryCards.filter((item) =>
     offlineSnapshot?.stories.some((story) => story.storyId === item.key.replace(/^saved-/, ""))
   );
-  const syncedOnlyStoryCards = remoteStoryCards.filter(
-    (item) => !savedStoryIds.includes(item.key.replace(/^remote-/, ""))
-  );
   // Las de journey van DELANTE de las del catálogo: son las que el usuario
   // acaba de guardar mientras lee su journey, y son las que faltaban.
   const savedAllCards = [...savedJourneyStoryCards, ...savedStoryCards];
-  const savedLibraryCards = savedAllCards.length > 0 ? savedAllCards : remoteStoryCards;
 
   const featuredHomeStory = useMemo(() => {
     const spotlight = getSpotlightSelection();
@@ -14683,116 +14689,12 @@ export function MobileLibraryShell(args: {
         </View>
       </View>
 
-      {continueReadingCards.length > 0 ? (
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <View>
-              <Text style={styles.sectionEyebrow}>Continue</Text>
-              <Text style={styles.sectionTitle}>Continue</Text>
-            </View>
-          </View>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-            {continueReadingCards.map((item) => (
-              <BookHomeCard
-                key={item.key}
-                item={{
-                  key: item.key,
-                  title: item.title,
-                  coverUrl: item.coverUrl,
-                  subtitle: item.subtitle,
-                  meta: item.meta,
-                  progressLabel: item.progressLabel,
-                  onPress: item.onPress ?? (() => {}),
-                }}
-              />
-            ))}
-          </ScrollView>
-        </View>
-      ) : null}
-
-      <View style={[styles.card, styles.accountCard, styles.librarySnapshotCard]}>
-        <View style={styles.librarySnapshotHeader}>
-          <Text style={styles.sectionTitle}>Library snapshot</Text>
-          <View style={styles.libraryMiniActions}>
-            <Pressable
-              onPress={() => {
-                if (continueReadingCards[0]?.onPress) {
-                  continueReadingCards[0].onPress();
-                  return;
-                }
-                if (remoteStoryCards[0]?.onPress) {
-                  remoteStoryCards[0].onPress();
-                  return;
-                }
-                if (savedStoryCards[0]?.onPress) {
-                  savedStoryCards[0].onPress();
-                  return;
-                }
-                setActiveScreen("explore");
-              }}
-              style={[styles.inlineButton, styles.primaryButton, styles.libraryMiniActionPrimary]}
-            >
-              <Text style={[styles.inlineButtonText, styles.primaryButtonText]}>
-                {continueReadingCards.length > 0
-                  ? "Resume"
-                  : remoteStoryCards.length > 0
-                    ? "Open synced"
-                    : savedStoryCards.length > 0
-                      ? "Open saved"
-                      : "Browse"}
-              </Text>
-            </Pressable>
-            <Pressable onPress={() => setActiveScreen("explore")} style={[styles.inlineButton, styles.libraryMiniActionGhost]}>
-              <Text style={styles.inlineButtonText}>Add more</Text>
-            </Pressable>
-          </View>
-        </View>
-        <View style={styles.summaryGrid}>
-          <View style={styles.summaryTile}>
-            <Text style={styles.summaryValue}>{savedBooks.length}</Text>
-            <Text style={styles.summaryLabel}>Saved books</Text>
-          </View>
-          <View style={styles.summaryTile}>
-            <Text style={styles.summaryValue}>{savedAllCards.length}</Text>
-            <Text style={styles.summaryLabel}>Saved stories</Text>
-          </View>
-          <View style={styles.summaryTile}>
-            <Text style={styles.summaryValue}>{remoteStoryCards.length}</Text>
-            <Text style={styles.summaryLabel}>Synced stories</Text>
-          </View>
-          <View style={styles.summaryTile}>
-            <Text style={styles.summaryValue}>{offlineSnapshot?.stories.length ?? 0}</Text>
-            <Text style={styles.summaryLabel}>Offline ready</Text>
-          </View>
-        </View>
-        {remoteProgress ? (
-          <Text style={styles.helperText}>
-            {remoteProgress.weeklyStoriesFinished} story{remoteProgress.weeklyStoriesFinished === 1 ? "" : "ies"} finished this week · {remoteProgress.weeklyMinutesListened} min listened
-          </Text>
-        ) : null}
-        <View style={styles.libraryMicroStats}>
-          <View style={styles.libraryMicroStat}>
-            <Text style={styles.libraryMicroStatValue}>{continueReadingCards.length}</Text>
-            <Text style={styles.libraryMicroStatLabel}>In motion</Text>
-          </View>
-          <View style={styles.libraryMicroStat}>
-            <Text style={styles.libraryMicroStatValue}>{remoteProgress?.weeklyPracticeSessions ?? 0}</Text>
-            <Text style={styles.libraryMicroStatLabel}>This week</Text>
-          </View>
-          <View style={styles.libraryMicroStat}>
-            <Text style={styles.libraryMicroStatValue}>{savedStoryCards.length}</Text>
-            <Text style={styles.libraryMicroStatLabel}>Local</Text>
-          </View>
-          <View style={styles.libraryMicroStat}>
-            <Text style={styles.libraryMicroStatValue}>{remoteStoryCards.length}</Text>
-            <Text style={styles.libraryMicroStatLabel}>Synced</Text>
-          </View>
-        </View>
-        <Pressable onPress={() => setActiveScreen("favorites")} style={styles.libraryInlineLink}>
-          <Text style={styles.libraryInlineLinkText}>Open favorites</Text>
-          <Feather name="arrow-right" size={15} color="#dbe9ff" />
-        </Pressable>
-      </View>
+      {/* FUERA "Continue" y "Library snapshot" (2026-08-12).
+          Esta pantalla se llama Saved y solo debe enseñar lo guardado. Lo
+          que había: una fila de "seguir leyendo" (eso es progreso, no algo
+          guardado), un panel de contadores, y un "Synced stories" que medía
+          sincronización, no marcadores. Tres cosas que respondían a otra
+          pregunta y enterraban la estantería de verdad. */}
 
       {offlineReadyStoryCards.length > 0 ? (
         <View style={styles.section}>
@@ -14829,12 +14731,12 @@ export function MobileLibraryShell(args: {
             <Text style={styles.sectionTitle}>Your story shelf</Text>
           </View>
           <Text style={styles.helperText}>
-            {savedStoryCards.length > 0 ? `${savedStoryCards.length} stories` : "Save stories to build your shelf"}
+            {savedAllCards.length > 0 ? `${savedAllCards.length} stories` : "Save stories to build your shelf"}
           </Text>
         </View>
-        {savedStoryCards.length > 0 ? (
+        {savedAllCards.length > 0 ? (
           <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-            {savedStoryCards.map((item) => (
+            {savedAllCards.map((item) => (
               <BookHomeCard
                 key={`library-${item.key}`}
                 item={{
@@ -14924,33 +14826,8 @@ export function MobileLibraryShell(args: {
         )}
       </View>
 
-      {syncedOnlyStoryCards.length > 0 ? (
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <View>
-              <Text style={styles.sectionEyebrow}>From your account</Text>
-              <Text style={styles.sectionTitle}>Synced stories</Text>
-            </View>
-            <Text style={styles.helperText}>{syncedOnlyStoryCards.length} stories</Text>
-          </View>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="normal" contentContainerStyle={styles.carousel}>
-            {syncedOnlyStoryCards.map((item) => (
-              <BookHomeCard
-                key={`library-remote-${item.key}`}
-                item={{
-                  key: item.key,
-                  title: item.title,
-                  coverUrl: item.coverUrl,
-                  subtitle: item.subtitle,
-                  meta: item.meta,
-                  progressLabel: item.progressLabel,
-                  onPress: item.onPress ?? (() => {}),
-                }}
-              />
-            ))}
-          </ScrollView>
-        </View>
-      ) : null}
+      {/* "Synced stories" fuera por el mismo motivo: medía sincronización,
+          no lo que el usuario guardó. */}
     </>
   );
 
@@ -26565,28 +26442,6 @@ const styles = StyleSheet.create({
     gap: 8,
     paddingBottom: 2,
   },
-  librarySnapshotCard: {
-    gap: 8,
-  },
-  librarySnapshotHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 10,
-  },
-  libraryMiniActions: {
-    flexDirection: "row",
-    gap: 6,
-    alignItems: "center",
-  },
-  libraryMiniActionPrimary: {
-    paddingHorizontal: 10,
-    paddingVertical: 7,
-  },
-  libraryMiniActionGhost: {
-    paddingHorizontal: 10,
-    paddingVertical: 7,
-  },
   librarySwitcherRow: {
     flexDirection: "row",
     gap: 8,
@@ -26638,18 +26493,6 @@ const styles = StyleSheet.create({
     color: "#c3d0e2",
     fontSize: 12,
     lineHeight: 17,
-  },
-  libraryInlineLink: {
-    marginTop: 2,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 6,
-    alignSelf: "flex-start",
-  },
-  libraryInlineLinkText: {
-    color: "#dbe9ff",
-    fontSize: 13,
-    fontWeight: "700",
   },
   progressStatsGrid: {
     flexDirection: "row",
