@@ -8,10 +8,14 @@
 // that address, which is exactly the level of proof this needs.
 
 import { NextRequest, NextResponse } from "next/server";
+import { getAuth } from "@clerk/nextjs/server";
+import { createClerkClient } from "@clerk/backend";
 import { prisma } from "@/lib/prisma";
 import { readEmailToken } from "@/lib/emailPreferences";
 
 export const dynamic = "force-dynamic";
+
+const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
 
 const VALID_KINDS = ["bug", "idea", "confusing", "praise", "mid_survey", "final_survey"] as const;
 type Kind = (typeof VALID_KINDS)[number];
@@ -40,10 +44,32 @@ export async function POST(req: NextRequest) {
   const body = (await req.json().catch(() => null)) as Record<string, unknown> | null;
   if (!body) return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
 
+  // Two ways in, one table. The token proves you hold a link we mailed to that
+  // address; the session proves you are signed in right now. The second exists
+  // because the web's own feedback button was a `mailto:` that wrote nowhere:
+  // whatever anyone typed there landed in an inbox, never in BetaFeedback, and
+  // the Studio's "open feedback" counter could not move no matter how much
+  // people wrote. Adding a session path here rather than a second endpoint
+  // keeps one contract and one place where feedback is stored.
   const token = typeof body.token === "string" ? body.token : "";
-  const email = readEmailToken(token);
+  let email = token ? readEmailToken(token) : null;
+  let fromSession = false;
   if (!email) {
-    return NextResponse.json({ error: "This link is not valid. Open it from the email again." }, { status: 401 });
+    const { userId } = getAuth(req);
+    if (userId) {
+      const user = await clerkClient.users.getUser(userId).catch(() => null);
+      email =
+        user?.primaryEmailAddress?.emailAddress ??
+        user?.emailAddresses?.[0]?.emailAddress ??
+        null;
+      fromSession = !!email;
+    }
+  }
+  if (!email) {
+    return NextResponse.json(
+      { error: "Sign in, or open the link from the email again." },
+      { status: 401 },
+    );
   }
 
   if (!rateLimit(email)) {
@@ -83,7 +109,9 @@ export async function POST(req: NextRequest) {
       kind,
       rating,
       message,
-      screen: "email form",
+      // Where it actually came from, so triage can tell an answer typed inside
+      // the app from one typed on a form opened from an email.
+      screen: fromSession ? (typeof body.screen === "string" ? body.screen.slice(0, 80) : "web app") : "email form",
     },
   });
 
