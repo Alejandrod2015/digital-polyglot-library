@@ -29,7 +29,21 @@ type RecentSignup = {
   level: string | null;
   onboarded: boolean;
   openedStory: boolean;
+  /**
+   * Total escuchado: suma, por historia, del punto más lejano alcanzado en
+   * ella (las terminadas cuentan su duración completa). Antes era el máximo
+   * de UNA sola historia, así que quien había recorrido veinticinco aparecía
+   * igual que quien recorrió una.
+   */
   listenedSeconds: number;
+  /**
+   * El progreso se graba a saltos (~20s), así que un valor que sale de un
+   * checkpoint y no de una pausa o de un final es un suelo, no una medición.
+   * true = al menos una historia aportó un valor de ese tipo.
+   */
+  listenedApprox: boolean;
+  /** Cuántas historias aportan a `listenedSeconds`. */
+  listenedStories: number;
   listened: boolean;
   completedStory: boolean;
   viewedPlans: boolean;
@@ -141,24 +155,77 @@ export async function GET(req: NextRequest): Promise<Response> {
       ...continueRows.map((c) => c.userId),
       ...audioBy,
     ]);
-    // Furthest second reached per user. Decoupled from the resume row: take the
-    // max across resume rows AND audio events (audio_pause carries the exact
-    // position in `value`/metadata, continue_listening carries it in metadata),
-    // so exact seconds show even for short (<10s, sub-resume-floor) listens.
-    const listenedSecondsBy = new Map<string, number>();
-    const bump = (userId: string, seconds: number) => {
-      if (!Number.isFinite(seconds) || seconds <= 0) return;
-      const prev = listenedSecondsBy.get(userId) ?? 0;
-      listenedSecondsBy.set(userId, Math.max(prev, Math.round(seconds)));
+    // ── Total escuchado ──
+    // Por historia nos quedamos con el punto más lejano alcanzado en ella, y
+    // luego SUMAMOS esos puntos. El máximo global de antes decía lo mismo de
+    // quien había recorrido veinticinco historias que de quien recorrió una.
+    // Sigue siendo posición, no tiempo de reloj: quien arrastra la barra hasta
+    // el final cuenta el final. Es lo único que la instrumentación permite
+    // afirmar, así que la tabla lo nombra como lo que es.
+    //
+    // `exact` distingue de dónde salió el número: una pausa (posición literal)
+    // o el final de la historia son exactos; un checkpoint del reproductor no,
+    // porque se graba a saltos de ~20s y por debajo del suelo no se graba nada.
+    // El primer checkpoint cae siempre en 20s clavados, y ese 20 no significa
+    // "escuchó veinte segundos" sino "al menos veinte".
+    const MAX_PLAUSIBLE_SEC = 4 * 3600;
+    type Reached = { sec: number; exact: boolean };
+    const reachedBy = new Map<string, Map<string, Reached>>();
+    const bumpStory = (
+      userId: string,
+      slug: string | null | undefined,
+      seconds: number,
+      exact: boolean
+    ) => {
+      if (!Number.isFinite(seconds) || seconds <= 0 || seconds > MAX_PLAUSIBLE_SEC) return;
+      const perStory = reachedBy.get(userId) ?? new Map<string, Reached>();
+      // Los eventos sin slug van todos al mismo cajón a propósito: sumarlos
+      // como si fueran historias distintas inflaría el total con repeticiones
+      // de la misma escucha.
+      const key = slug ?? "(sin historia)";
+      const prev = perStory.get(key);
+      const rounded = Math.round(seconds);
+      // En empate gana el exacto: la fila de "seguir escuchando" y el
+      // `audio_pause` de la misma pausa traen el mismo segundo, y si el
+      // checkpoint llega primero se quedaba con el asterisco una medición
+      // que era literal.
+      const wins = !prev || rounded > prev.sec || (rounded === prev.sec && exact && !prev.exact);
+      if (wins) perStory.set(key, { sec: rounded, exact });
+      reachedBy.set(userId, perStory);
     };
-    for (const c of continueRows) bump(c.userId, c.progressSec ?? 0);
+    for (const c of continueRows) bumpStory(c.userId, c.storySlug, c.progressSec ?? 0, false);
     for (const e of audioEvents) {
-      if (e.eventType !== "audio_pause" && e.eventType !== "continue_listening") continue;
       const m = e.metadata && typeof e.metadata === "object" ? (e.metadata as Record<string, unknown>) : null;
       const fromMeta = typeof m?.progressSec === "number" ? m.progressSec : null;
       const fromValue = typeof e.value === "number" ? e.value : null;
-      bump(e.userId, fromMeta ?? fromValue ?? 0);
+      if (e.eventType === "audio_complete") {
+        // `value` es la duración del audio, que es exactamente hasta dónde
+        // llegó: terminar es el único caso en que la posición no se queda
+        // corta. Los `audio_complete` duplicados de una misma historia no
+        // suman dos veces porque el mapa es por slug.
+        const durationSec = typeof m?.audioDurationSec === "number" ? m.audioDurationSec : fromValue;
+        bumpStory(e.userId, e.storySlug, durationSec ?? 0, true);
+        continue;
+      }
+      if (e.eventType === "audio_pause") {
+        bumpStory(e.userId, e.storySlug, fromValue ?? fromMeta ?? 0, true);
+        continue;
+      }
+      if (e.eventType === "continue_listening") {
+        bumpStory(e.userId, e.storySlug, fromMeta ?? fromValue ?? 0, false);
+      }
     }
+    const listenedTotalFor = (userId: string): { seconds: number; approx: boolean; stories: number } => {
+      const perStory = reachedBy.get(userId);
+      if (!perStory || perStory.size === 0) return { seconds: 0, approx: false, stories: 0 };
+      let seconds = 0;
+      let approx = false;
+      for (const r of perStory.values()) {
+        seconds += r.sec;
+        if (!r.exact) approx = true;
+      }
+      return { seconds, approx, stories: perStory.size };
+    };
     const paidBy = new Set(
       entitlements.filter((e) => !(e.plan ?? "").toLowerCase().includes("free")).map((e) => e.userId)
     );
@@ -244,7 +311,7 @@ export async function GET(req: NextRequest): Promise<Response> {
       .map((u) => {
         const md = (u.publicMetadata ?? {}) as Record<string, unknown>;
         const tls = Array.isArray(md.targetLanguages) ? (md.targetLanguages as string[]) : [];
-        const secs = listenedSecondsBy.get(u.id) ?? 0;
+        const heard = listenedTotalFor(u.id);
         const email = u.primaryEmailAddress?.emailAddress ?? u.emailAddresses?.[0]?.emailAddress ?? null;
         const beta = email ? betaByEmail.get(email.toLowerCase()) : undefined;
         const declaredLevel = typeof md.preferredLevel === "string" ? (md.preferredLevel as string) : null;
@@ -260,8 +327,10 @@ export async function GET(req: NextRequest): Promise<Response> {
           level: declaredLevel ?? (tls.length ? null : beta?.currentLevel ?? null),
           onboarded: tls.length > 0,
           openedStory: openedBy.has(u.id),
-          listenedSeconds: secs,
-          listened: audioBy.has(u.id) || secs > 0,
+          listenedSeconds: heard.seconds,
+          listenedApprox: heard.approx,
+          listenedStories: heard.stories,
+          listened: audioBy.has(u.id) || heard.seconds > 0,
           completedStory: completedBy.has(u.id),
           viewedPlans: plansBy.has(u.id),
           paid: paidBy.has(u.id),

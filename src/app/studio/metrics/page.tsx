@@ -835,7 +835,12 @@ type AcquisitionPayload = {
     onboarded: boolean;
     openedStory: boolean;
     listened: boolean;
+    /** Suma, por historia, del punto más lejano alcanzado en ella. */
     listenedSeconds: number;
+    /** El total incluye algún valor que sale de un checkpoint: es un suelo. */
+    listenedApprox?: boolean;
+    /** Cuántas historias suman en `listenedSeconds`. */
+    listenedStories?: number;
     completedStory: boolean;
     viewedPlans: boolean;
     paid: boolean;
@@ -843,6 +848,14 @@ type AcquisitionPayload = {
   }>;
   clerkInstance: string;
 };
+
+/** 45 → "45s", 150 → "2m 30s", 120 → "2m". */
+function formatListened(seconds: number): string {
+  if (seconds < 60) return `${seconds}s`;
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return s === 0 ? `${m}m` : `${m}m ${s}s`;
+}
 
 function FunnelBar({
   label,
@@ -1068,10 +1081,30 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                     <td style={{ padding: "4px 6px" }}>{r.onboarded ? "✓" : "-"}</td>
                     <td style={{ padding: "4px 6px" }}>{r.openedStory ? "✓" : "-"}</td>
                     <td style={{ padding: "4px 6px" }}>
-                      {r.completedStory ? (
-                        "✓"
-                      ) : r.listenedSeconds > 0 ? (
-                        `${r.listenedSeconds}s`
+                      {/* El check ya no tapa el número: terminar una historia
+                          es una escucha más, y esconder cuánto llevaba quien
+                          había recorrido veinticinco era perder justo al
+                          usuario que más nos interesa ver. */}
+                      {r.listenedSeconds > 0 ? (
+                        <span
+                          style={{ cursor: "help" }}
+                          title={[
+                            `Total: suma del punto más lejano alcanzado en cada historia (${r.listenedStories ?? 1}).`,
+                            r.completedStory ? "Terminó al menos una." : null,
+                            r.listenedApprox
+                              ? "* El progreso se graba a saltos de ~20s, así que el total es un suelo, no una medición exacta."
+                              : null,
+                            "Es posición dentro del audio, no tiempo de reloj: quien arrastra la barra cuenta hasta donde la soltó.",
+                          ]
+                            .filter(Boolean)
+                            .join(" ")}
+                        >
+                          {r.completedStory && <span style={{ color: "#5ad19a" }}>✓ </span>}
+                          {formatListened(r.listenedSeconds)}
+                          {r.listenedApprox && <span style={{ opacity: 0.5 }}>*</span>}
+                        </span>
+                      ) : r.completedStory ? (
+                        <span style={{ color: "#5ad19a" }}>✓</span>
                       ) : r.listened ? (
                         <span
                           title="Tocó play pero no se pudo medir cuánto escuchó (cerró sin pausar y antes de 10s). No es 0s real."
@@ -1090,6 +1123,13 @@ function AcquisitionView({ data }: { data: DashboardData }) {
               </tbody>
             </table>
           </div>
+          <p style={{ margin: "10px 0 0", fontSize: 11, color: "var(--mx-muted)", lineHeight: 1.5 }}>
+            <strong style={{ fontWeight: 600 }}>Escuchó</strong>: suma del punto más lejano alcanzado
+            en cada historia, no tiempo de reloj. <span style={{ color: "#5ad19a" }}>✓</span> = terminó
+            al menos una. <span>*</span> = el valor incluye algún checkpoint, que se graba a saltos de
+            ~20s, así que es un suelo. <span>▶?</span> = dio play pero se fue antes del primer
+            checkpoint, así que no hay nada medido.
+          </p>
         </div>
       )}
 
