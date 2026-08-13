@@ -30,7 +30,24 @@ export type MobilePreviewState = {
   savedBookIds: string[];
   savedStoryIds: string[];
   readingProgress: ReadingProgress[];
+  /** Cuándo se guardó cada historia (ISO), por id. `savedStoryIds` es un array
+   *  al que se añade al final, así que su orden es el de guardado MÁS ANTIGUO
+   *  primero, justo al revés de lo que la estantería quiere enseñar. Lo que
+   *  llega de la cuenta trae su propia fecha del servidor; esto cubre lo que se
+   *  guarda en el teléfono. Sin entrada = desconocido, va al final. */
+  savedStoryAt: Record<string, string>;
 };
+
+function sanitizeStringMap(value: unknown): Record<string, string> {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    return {};
+  }
+  const out: Record<string, string> = {};
+  for (const [key, entry] of Object.entries(value as Record<string, unknown>)) {
+    if (typeof entry === "string" && entry) out[key] = entry;
+  }
+  return out;
+}
 
 function sanitizeStringArray(value: unknown): string[] {
   if (!Array.isArray(value)) {
@@ -81,6 +98,7 @@ function parseState(raw: string, fallback: MobilePreviewState): MobilePreviewSta
       savedBookIds: sanitizeStringArray(parsed.savedBookIds),
       savedStoryIds: sanitizeStringArray(parsed.savedStoryIds),
       readingProgress: sanitizeReadingProgress(parsed.readingProgress),
+      savedStoryAt: sanitizeStringMap(parsed.savedStoryAt),
     };
   } catch {
     return fallback;

@@ -341,6 +341,17 @@ function normalizeStoryKey(value: string | null | undefined): string {
   return (value ?? "").trim().replace(/^journey[:-]/, "").toLowerCase();
 }
 
+/** Lo que hace falta para subir a la cuenta una historia que solo estaba
+ *  guardada en este teléfono. `storyKey` es el id normalizado, solo para
+ *  comparar con lo que la cuenta ya tiene. */
+type AccountSavePayload = {
+  storyKey: string;
+  storyId: string;
+  bookId: string;
+  title: string;
+  coverUrl: string;
+};
+
 /**
  * `bookId` en la biblioteca del servidor hace de discriminador, no siempre es un
  * libro: "polyglot" para lo que genera el usuario y "standalone" para las
@@ -694,6 +705,10 @@ type RemoteLibraryBook = {
 type RemoteLibraryStory = {
   id: string;
   storyId: string;
+  /** Cuándo entró la fila en la biblioteca del usuario. Es la única fecha
+   *  fiable de "cuándo guardé esto", porque vale para los dos teléfonos y para
+   *  la web; la del teléfono solo existe si se guardó ahí. */
+  createdAt?: string;
   title: string;
   coverUrl: string;
   bookId: string;
@@ -2382,6 +2397,7 @@ export function MobileLibraryShell(args: {
   // Sin sesión no hay nada guardado, que es la verdad; el estado vacío lo dice.
   const [savedBookIds, setSavedBookIds] = useState<string[]>([]);
   const [savedStoryIds, setSavedStoryIds] = useState<string[]>([]);
+  const [savedStoryAt, setSavedStoryAt] = useState<Record<string, string>>({});
   const [readingProgress, setReadingProgress] = useState<ReadingProgress[]>([]);
   const [favoriteWords, setFavoriteWords] = useState<MobileFavoriteItem[]>([]);
   const [collections, setCollections] = useState<FavoriteCollection[]>([]);
@@ -3932,12 +3948,14 @@ export function MobileLibraryShell(args: {
         savedBookIds: [] as string[],
         savedStoryIds: [] as string[],
         readingProgress: [] as ReadingProgress[],
+        savedStoryAt: {} as Record<string, string>,
       };
       const storedState = stripPersistedSampleSeed(await loadMobilePreviewState(fallback));
       if (cancelled) return;
 
       setSavedBookIds(storedState.savedBookIds);
       setSavedStoryIds(storedState.savedStoryIds);
+      setSavedStoryAt(storedState.savedStoryAt);
       setReadingProgress(storedState.readingProgress);
       setDidHydrateState(true);
     }
@@ -3972,6 +3990,20 @@ export function MobileLibraryShell(args: {
         additions.push(id);
       }
       return additions.length > 0 ? [...current, ...additions] : current;
+    });
+    // La fecha de la cuenta manda sobre la local: es la de cuando se guardó de
+    // verdad, mientras que la local solo existe si se guardó en ESTE teléfono.
+    setSavedStoryAt((current) => {
+      let changed = false;
+      const next = { ...current };
+      for (const row of remoteStories) {
+        if (!row.createdAt) continue;
+        const key = normalizeStoryKey(row.storySlug || row.storyId);
+        if (!key || next[key] === row.createdAt) continue;
+        next[key] = row.createdAt;
+        changed = true;
+      }
+      return changed ? next : current;
     });
   }, [didHydrateState, remoteStories]);
 
@@ -4079,8 +4111,9 @@ export function MobileLibraryShell(args: {
       savedBookIds,
       savedStoryIds,
       readingProgress,
+      savedStoryAt,
     });
-  }, [didHydrateState, readingProgress, savedBookIds, savedStoryIds]);
+  }, [didHydrateState, readingProgress, savedBookIds, savedStoryIds, savedStoryAt]);
 
   const handleUnauthorizedSession = useCallback(
     (message = "Your session expired. Please sign in again.") => {
@@ -5712,8 +5745,11 @@ export function MobileLibraryShell(args: {
    * journey (`openJourneyStory`, que busca por slug), no con `setSelection`:
    * el resumen no trae ni texto ni audio.
    */
-  const savedJourneyStoryCards = useMemo<StoryCardModel[]>(() => {
-    if (savedStoryIds.length === 0) return [];
+  const savedJourneyStories = useMemo<{
+    cards: StoryCardModel[];
+    payloads: AccountSavePayload[];
+  }>(() => {
+    if (savedStoryIds.length === 0) return { cards: [], payloads: [] };
     /**
      * La MISMA historia tiene DOS ids según por dónde entre:
      *   journey:<cuid>   lo emite el endpoint de journey (journeyData.ts)
@@ -5736,6 +5772,7 @@ export function MobileLibraryShell(args: {
     const savedSlugs = new Set(savedStoryIds);
     const catalogIds = new Set(savedStories.map((entry) => bare(entry.selection.story.id)));
     const cards: StoryCardModel[] = [];
+    const payloads: AccountSavePayload[] = [];
     const seen = new Set<string>();
     for (const cached of journeyCacheByLanguageRef.current.values()) {
       for (const track of cached?.tracks ?? []) {
@@ -5748,6 +5785,16 @@ export function MobileLibraryShell(args: {
               if (catalogIds.has(key) || seen.has(key)) continue;
               seen.add(key);
               const captured = story;
+              // Payload para subirla a la cuenta si aún no está: una historia de
+              // journey no tiene libro, así que va con el discriminador
+              // "standalone", igual que las que guarda la web.
+              payloads.push({
+                storyKey: normalizeStoryKey(slug || story.id),
+                storyId: slug || story.id,
+                bookId: "standalone",
+                title: story.title,
+                coverUrl: story.coverUrl ?? "",
+              });
               cards.push({
                 key: `saved-journey-${story.id}`,
                 storyKey: normalizeStoryKey(slug || story.id),
@@ -5766,8 +5813,68 @@ export function MobileLibraryShell(args: {
         }
       }
     }
-    return cards;
+    return { cards, payloads };
   }, [savedStoryIds, savedStories, readingProgress, remoteJourney]);
+
+  const savedJourneyStoryCards = savedJourneyStories.cards;
+
+  /**
+   * Subida de lo que solo está en el teléfono (2026-08-12).
+   *
+   * La fusión de más arriba solo trae de la cuenta hacia aquí. Lo que se guardó
+   * en este móvil ANTES de que existiera la sincronización no sube solo, así
+   * que los dos aparatos seguirían enseñando listas distintas: medido, 21 en el
+   * iPhone y 24 en el Pixel, que es justo la queja. Se sube una vez por
+   * arranque, y en serie: son pocas y no quiero una ráfaga de peticiones.
+   */
+  const localSavePayloads = useMemo<AccountSavePayload[]>(() => {
+    const catalog = savedStories.map(({ selection }) => ({
+      storyKey: normalizeStoryKey(selection.story.slug ?? selection.story.id),
+      storyId: selection.story.id,
+      bookId: libraryBookIdForSelection(selection.book),
+      title: selection.story.title,
+      coverUrl: selection.story.cover ?? selection.story.coverUrl ?? selection.book.cover ?? "",
+    }));
+    return [...savedJourneyStories.payloads, ...catalog];
+  }, [savedJourneyStories, savedStories]);
+
+  const uploadedLocalSavesRef = useRef(false);
+  useEffect(() => {
+    if (!didHydrateState || !didFirstHydrate || !sessionToken) return;
+    if (uploadedLocalSavesRef.current) return;
+
+    const accountKeys = new Set(
+      remoteStories.map((row) => normalizeStoryKey(row.storySlug || row.storyId))
+    );
+    const pending = localSavePayloads.filter(
+      (item) => item.storyKey && !accountKeys.has(item.storyKey)
+    );
+    uploadedLocalSavesRef.current = true;
+    if (pending.length === 0) return;
+
+    void (async () => {
+      for (const item of pending) {
+        try {
+          await apiFetch({
+            baseUrl: mobileConfig.apiBaseUrl,
+            path: "/api/mobile/library",
+            method: "POST",
+            token: sessionToken,
+            body: {
+              type: "story",
+              storyId: item.storyId,
+              bookId: item.bookId,
+              title: item.title,
+              coverUrl: item.coverUrl,
+            },
+            timeoutMs: 10000,
+          });
+        } catch {
+          // Si falla, se reintenta en el próximo arranque. Nada que avisar.
+        }
+      }
+    })();
+  }, [didHydrateState, didFirstHydrate, sessionToken, remoteStories, localSavePayloads]);
 
   const remoteStoryCards = useMemo<StoryCardModel[]>(
     () =>
@@ -5796,6 +5903,63 @@ export function MobileLibraryShell(args: {
         };
       }),
     [remoteOpenableStories, readingProgress]
+  );
+
+  /**
+   * Lo guardado en la CUENTA, pintado con lo que manda el SERVIDOR.
+   *
+   * `remoteStoryCards` (arriba) exige que la historia exista en el catálogo que
+   * la app trae empaquetado, y descarta la fila si no la encuentra. Medido el
+   * 2026-08-12: de 24 historias guardadas en la cuenta, el iPhone enseñaba 5 y
+   * el Pixel 10, porque cada aparato resolvía las que sus cachés conocían. El
+   * resto desaparecía sin decir nada, que es el mismo fallo silencioso de
+   * siempre. El servidor ya resuelve título, portada, slug, idioma y tema en
+   * `loadLibraryStoryRows`, así que la tarjeta se pinta con eso y solo se usa
+   * el catálogo cuando lo tiene, para poder abrirla sin red.
+   */
+  const accountStoryCards = useMemo<StoryCardModel[]>(
+    () =>
+      remoteStories
+        .map((row): StoryCardModel | null => {
+          const selection = resolveStorySelection(row.storyId);
+          // Sin catálogo y sin slug no hay forma de abrirla; una tarjeta que no
+          // abre nada es peor que no enseñarla.
+          if (!selection && !row.storySlug) return null;
+          const offlineStory =
+            (row.storySlug ? offlineStoriesBySlug.get(row.storySlug) : undefined) ??
+            offlineStoriesById.get(row.storyId);
+          const storyKey = normalizeStoryKey(row.storySlug || row.storyId);
+          const progress =
+            readingProgress.find((entry) => normalizeStoryKey(entry.storyId) === storyKey) ?? null;
+          return {
+            key: `account-${row.storyId}`,
+            storyKey,
+            title: row.title || selection?.story.title || "Saved story",
+            subtitle: selection?.book.title ?? "Saved to your account",
+            coverUrl: getCoverUrl(selection?.story.cover ?? row.coverUrl),
+            meta: storyCardMeta(
+              row.language ?? selection?.story.language ?? selection?.book.language,
+              row.topic ?? selection?.story.topic ?? selection?.book.topic
+            ),
+            badge: offlineStory
+              ? "Offline ready"
+              : row.audioUrl || selection?.story.audio
+                ? "Audio ready"
+                : "Text",
+            progressLabel: formatReadingProgressLabel(progress),
+            onPress: selection
+              ? () =>
+                  setSelection({
+                    book: selection.book,
+                    story: selection.story,
+                    resolvedAudioUrl:
+                      offlineStory?.localAudioUri ?? row.audioUrl ?? selection.story.audio,
+                  })
+              : () => void openStandaloneStory(row),
+          };
+        })
+        .filter((card): card is StoryCardModel => card !== null),
+    [remoteStories, offlineStoriesById, offlineStoriesBySlug, readingProgress]
   );
 
   const filteredRemoteStoryCards = useMemo<StoryCardModel[]>(() => {
@@ -6191,6 +6355,16 @@ export function MobileLibraryShell(args: {
   function toggleStorySaved(book: Book, story: Story) {
     const isSaved = savedStoryIds.includes(story.id);
     setSavedStoryIds((current) => (isSaved ? current.filter((id) => id !== story.id) : [...current, story.id]));
+    setSavedStoryAt((current) => {
+      const key = normalizeStoryKey(story.slug ?? story.id);
+      if (!key) return current;
+      if (isSaved) {
+        const next = { ...current };
+        delete next[key];
+        return next;
+      }
+      return { ...current, [key]: new Date().toISOString() };
+    });
     void syncSavedStoryToAccount(book, story, !isSaved);
   }
 
@@ -10958,14 +11132,26 @@ export function MobileLibraryShell(args: {
   const savedAllCards = useMemo<StoryCardModel[]>(() => {
     const seen = new Set<string>();
     const merged: StoryCardModel[] = [];
-    for (const card of [...savedJourneyStoryCards, ...savedStoryCards, ...remoteStoryCards]) {
+    for (const card of [...savedJourneyStoryCards, ...savedStoryCards, ...accountStoryCards]) {
       const key = card.storyKey || normalizeStoryKey(card.key);
       if (key && seen.has(key)) continue;
       if (key) seen.add(key);
       merged.push(card);
     }
-    return merged;
-  }, [savedJourneyStoryCards, savedStoryCards, remoteStoryCards]);
+    // Lo último guardado primero. Las fechas son ISO, así que ordenan como
+    // texto. Lo que no tiene fecha (guardado antes de que se registrara) va al
+    // final conservando su orden, en vez de colarse arriba con una fecha
+    // inventada.
+    const savedAtOf = (card: StoryCardModel) => savedStoryAt[card.storyKey ?? ""] ?? "";
+    return merged.sort((a, b) => {
+      const left = savedAtOf(a);
+      const right = savedAtOf(b);
+      if (left && right) return right.localeCompare(left);
+      if (left) return -1;
+      if (right) return 1;
+      return 0;
+    });
+  }, [savedJourneyStoryCards, savedStoryCards, accountStoryCards, savedStoryAt]);
 
   const featuredHomeStory = useMemo(() => {
     const spotlight = getSpotlightSelection();
