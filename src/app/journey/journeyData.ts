@@ -497,13 +497,19 @@ function prettifyTopicLabel(slug: string): string {
 // Scope the local preview to ONE specific in-progress journey (by id) instead
 // of surfacing every archived/legacy journey — otherwise the reader's "Switch
 // journey" list fills up with old archived content on localhost.
-const PREVIEW_JOURNEY_ID = "cmqtnagxp0000324lf3u73vg1"; // German A0 (Traveler · Beginner), still archived/draft
+// Una LISTA, no un id: puede haber más de un journey en obra a la vez, y con
+// un solo hueco el segundo quedaba invisible en el lector aunque sus historias
+// sí se abrieran por URL directa (`journeyStories.ts` ya llevaba lista).
+const PREVIEW_JOURNEY_IDS = [
+  "cmqtnagxp0000324lf3u73vg1", // German A0 (Traveler · Beginner), archived/draft
+  "cmsou2uk0000732mqa4oatcmn", // Traveler PT Brazil A0 (en obra, 2026-08)
+];
 const PREVIEW_DRAFTS = process.env.NODE_ENV !== "production";
 export const JOURNEY_STATUS_WHERE: Prisma.JourneyWhereInput = PREVIEW_DRAFTS
-  ? { OR: [{ status: { notIn: ["archived", "draft"] } }, { id: PREVIEW_JOURNEY_ID }] }
+  ? { OR: [{ status: { notIn: ["archived", "draft"] } }, { id: { in: PREVIEW_JOURNEY_IDS } }] }
   : { status: { notIn: ["archived", "draft"] } };
 export const STORY_STATUS_WHERE: Prisma.JourneyStoryWhereInput = PREVIEW_DRAFTS
-  ? { OR: [{ status: "published" }, { journeyId: PREVIEW_JOURNEY_ID }] }
+  ? { OR: [{ status: "published" }, { journeyId: { in: PREVIEW_JOURNEY_IDS } }] }
   : { status: "published" };
 
 const getStudioJourneysForLanguage = unstable_cache(
