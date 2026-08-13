@@ -57,9 +57,13 @@ const CONFIG: Record<string, Cfg> = {
   // 2.85 y no 2.7 como México: elegido de oído el 2026-08-12 sobre el primer
   // párrafo de Copacabana. A 2.7 el estirón ya se oye; a 2.85 el factor es
   // 0.945 y no se nota. El texto largo sale de EL a 3.02, no a 3.59.
+  // Narradora: Fernanda, elegida de oído el 2026-08-12 sobre "Duas moedas para
+  // Copacabana". Sustituye a Roberta, con la que se rindieron las tres primeras
+  // y que quedan descartadas. Fernanda sale de fábrica a 2.49 w/s, o sea que
+  // aquí el pacing ACELERA hasta 2.85 en vez de frenar.
   "ptbr-a0": {
-    journeyId: "cmsou2uk0000732mqa4oatcmn", voiceId: "RGymW84CSmfVugnA5tvA",
-    voiceName: "Roberta (brasileño)", label: "Traveler PT Brazil A0", targetRate: 2.85,
+    journeyId: "cmsou2uk0000732mqa4oatcmn", voiceId: "7iqXtOF3wl3pomwXFY7G",
+    voiceName: "Fernanda (brasileño)", label: "Traveler PT Brazil A0", targetRate: 2.85,
   },
 };
 
@@ -87,6 +91,10 @@ async function withRetry<T>(fn: () => Promise<T>, tries = 6): Promise<T> {
   // esa historia concreta, y `--limit=1` significa "la primera PENDIENTE",
   // que es otra distinta.
   const slugArg = process.argv.find((a) => a.startsWith("--slug="))?.split("=")[1];
+  // --voice=<id> prueba OTRA voz aprobada sin tocar el perfil del journey.
+  // assertVoiceApproved sigue mandando: si no está en la allowlist, lanza.
+  const voiceArg = process.argv.find((a) => a.startsWith("--voice="))?.split("=")[1];
+  if (voiceArg) cfg.voiceId = voiceArg;
   const pending = await prisma.journeyStory.findMany({
     where: slugArg
       ? { journeyId: cfg.journeyId, slug: slugArg }
