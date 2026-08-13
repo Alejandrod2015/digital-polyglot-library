@@ -112,7 +112,6 @@ function readerStatusWhere() {
       "cmrrqjd2n000032nvnp2tryzg", // Traveler ES A0 mexico (in progress)
       "cmrrrpru1000032nnzsmraa7h", // Friends ES C1 mexico (in progress)
       "cmrsiz1n40000320d6h8p8f5g", // Friends IT A0 italy (in progress)
-    "cmsou2uk0000732mqa4oatcmn", // Traveler PT A0 brazil (in progress)
   ];
   return process.env.NODE_ENV !== "production"
     ? { OR: [{ status: "published" as const }, { journeyId: { in: PREVIEW_JOURNEY_IDS } }] }

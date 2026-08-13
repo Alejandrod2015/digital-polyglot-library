@@ -502,7 +502,6 @@ function prettifyTopicLabel(slug: string): string {
 // sí se abrieran por URL directa (`journeyStories.ts` ya llevaba lista).
 const PREVIEW_JOURNEY_IDS = [
   "cmqtnagxp0000324lf3u73vg1", // German A0 (Traveler · Beginner), archived/draft
-  "cmsou2uk0000732mqa4oatcmn", // Traveler PT Brazil A0 (en obra, 2026-08)
 ];
 const PREVIEW_DRAFTS = process.env.NODE_ENV !== "production";
 export const JOURNEY_STATUS_WHERE: Prisma.JourneyWhereInput = PREVIEW_DRAFTS
