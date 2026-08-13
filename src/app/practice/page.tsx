@@ -58,6 +58,7 @@ import {
   type OnboardingPracticePrefs,
 } from "@/lib/onboarding";
 import { isStandaloneSourcePath } from "@/lib/storySource";
+import { PRACTICE_FROM_APP_KEY } from "@/lib/practiceNavigation";
 import { PracticeExitConfirm } from "@/components/PracticeExitConfirm";
 import { PracticeCountdown } from "@/components/PracticeCountdown";
 import { Confetti } from "@/components/Confetti";
@@ -1033,21 +1034,69 @@ export default function PracticePage() {
       : Boolean(selectedOption)
     : false;
 
-  const openSession = useCallback((mode: PracticeMode) => {
-    if (typeof window !== "undefined") {
+  // `pushHistory: false` para las sesiones que se abren SOLAS al aterrizar
+  // aquí (deep link de historia o de journey). Ahí la entrada extra sobra: no
+  // hay selector de modo al que volver, y encima descuadraba la cuenta de la
+  // salida, que es lo que montaba el bucle de más abajo.
+  const openSession = useCallback((mode: PracticeMode, opts?: { pushHistory?: boolean }) => {
+    if (typeof window !== "undefined" && opts?.pushHistory !== false) {
       window.history.pushState({ practiceSession: true }, "", window.location.href);
     }
     setSelectedMode(mode);
   }, []);
 
+  // ¿La entrada anterior del historial es una pantalla NUESTRA, o es lo que
+  // hubiera antes en esa pestaña? No se puede leer el historial, así que quien
+  // navega hasta aquí deja una marca al hacerlo (PRACTICE_FROM_APP_KEY) y aquí
+  // se lee UNA vez al montar y se borra. `history.length > 1` no vale como
+  // prueba: también es cierto abriendo un enlace compartido en una pestaña que
+  // ya había visitado otras webs, y ahí retroceder saca al usuario del sitio.
+  const arrivedFromAppRef = useRef(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      arrivedFromAppRef.current =
+        window.sessionStorage.getItem(PRACTICE_FROM_APP_KEY) === "1" &&
+        window.history.length > 1;
+      window.sessionStorage.removeItem(PRACTICE_FROM_APP_KEY);
+    } catch {
+      arrivedFromAppRef.current = false;
+    }
+  }, []);
+
+  /**
+   * Salir de una sesión que se abrió desde otra pantalla (historia o journey).
+   *
+   * RETROCEDE; no navega hacia delante. Antes hacía `location.href = origen`,
+   * que APILA la historia otra vez encima de la práctica, y entonces la flecha
+   * de atrás de la historia (StoryBackLink, sin `returnTo`, cae en
+   * `router.back()`) devolvía a la práctica, que volvía a auto-abrirse y a
+   * apilar la historia: atrás, atrás, atrás y nunca se sale. Retroceder
+   * consume la entrada que creó la propia entrada a práctica, así que el
+   * usuario queda donde estaba de verdad.
+   *
+   * Si no consta que se llegara desde dentro de la app (pestaña nueva, enlace
+   * compartido) no hay nada que consumir: entonces sí se navega, pero con
+   * `replace`, que SUSTITUYE la práctica en vez de apilarla. Eso basta para
+   * que el bucle no pueda existir por ninguna de las dos ramas.
+   */
+  const leaveSessionTo = useCallback((href: string) => {
+    if (typeof window === "undefined") return;
+    if (arrivedFromAppRef.current) {
+      window.history.back();
+      return;
+    }
+    window.location.replace(href);
+  }, []);
+
   const closeSession = useCallback(() => {
     setShowExitConfirm(false);
     if (isJourneyPractice && journeyReturnHref) {
-      window.location.href = journeyReturnHref;
+      leaveSessionTo(journeyReturnHref);
       return;
     }
     if (isStoryPractice && storyReturnHref) {
-      window.location.href = storyReturnHref;
+      leaveSessionTo(storyReturnHref);
       return;
     }
     if (typeof window !== "undefined" && window.history.state?.practiceSession) {
@@ -1065,7 +1114,7 @@ export default function PracticePage() {
       return;
     }
     setSelectedMode(null);
-  }, [isJourneyCheckpoint, isJourneyPractice, isStoryPractice, journeyReturnHref, storyReturnHref]);
+  }, [isJourneyCheckpoint, isJourneyPractice, isStoryPractice, journeyReturnHref, leaveSessionTo, storyReturnHref]);
   const hasSessionProgress = revealedIds.length > 0;
   const attemptCloseSession = useCallback(() => {
     if (!sessionComplete && hasSessionProgress) {
@@ -2167,12 +2216,12 @@ export default function PracticePage() {
     // `?ex=` review/preview links open specific exercises directly — skip the
     // 3-2-1 get-ready countdown (it's only for a real "start practicing" run).
     if (onlyExerciseParam) {
-      openSession(reviewRecommendedMode);
+      openSession(reviewRecommendedMode, { pushHistory: false });
     } else {
       // Abre la sesión YA (el primer ejercicio se renderiza de fondo) y muestra
       // el 3-2-1 como overlay translúcido encima. Así nunca se ve el hub de
       // práctica al venir de una historia; el countdown queda sobre el ejercicio.
-      openSession(reviewRecommendedMode);
+      openSession(reviewRecommendedMode, { pushHistory: false });
       setPendingCountdownMode(reviewRecommendedMode);
     }
   }, [

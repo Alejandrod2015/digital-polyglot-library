@@ -580,10 +580,14 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
             {/* iPhone parity: "Lock it in" prompt rises into view once
                 the user scrolls past the end of the body. Vocab count
                 feeds the headline ("Practice 12 words"). */}
+            {/* practiceHref, no el que arma el propio aviso: éste lleva el
+                `returnTo` de dónde venía el lector, y sin él la historia a la
+                que se vuelve desde práctica no sabe adónde ir hacia atrás. */}
             <EndOfStoryPracticePrompt
               storySlug={resolvedStory.slug}
               storyTitle={resolvedStory.title}
               vocabCount={safeVocab.length}
+              practiceHref={practiceHref}
             />
           </div>
         ) : (

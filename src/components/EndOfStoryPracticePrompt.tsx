@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { BookOpen, Clock, X, Zap } from "lucide-react";
+import { markPracticeEntryFromApp } from "@/lib/practiceNavigation";
 
 type Props = {
   storySlug: string;
@@ -189,7 +190,12 @@ export default function EndOfStoryPracticePrompt({
 
             <Link
               href={href}
-              onClick={() => setVisible(false)}
+              onClick={() => {
+                // La práctica necesita saber que la entrada anterior del
+                // historial es esta historia, para salir retrocediendo.
+                markPracticeEntryFromApp();
+                setVisible(false);
+              }}
               className="dp-eos-cta mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--color-gold)] px-4 py-3 text-[15px] font-extrabold text-[#0e1727] shadow-[0_8px_24px_-8px_rgba(248,193,92,0.55)] transition hover:brightness-105 active:translate-y-[2px]"
             >
               <Zap className="h-4 w-4" strokeWidth={2.6} />

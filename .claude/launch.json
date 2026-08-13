@@ -57,6 +57,20 @@
         "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY": "",
         "CLERK_SECRET_KEY": ""
       }
+    },
+    {
+      "_comment": "Puerto propio para verificar en paralelo cuando otro chat ocupa 3000/3001.",
+      "name": "next-dev-3005",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev:web",
+        "--",
+        "--port",
+        "3005"
+      ],
+      "port": 3005,
+      "autoPort": false
     }
   ]
 }
