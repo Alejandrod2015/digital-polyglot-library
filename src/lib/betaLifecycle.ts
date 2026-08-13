@@ -70,9 +70,14 @@ export function decideBetaEmail(args: {
   rules: BetaRulesConfig;
   /** Their final-survey rating, if they have answered it. */
   finalRating: number | null;
+  /**
+   * Stories this tester has actually finished. Gates the two emails that ask
+   * for an opinion: see the note where they are decided.
+   */
+  storiesFinished: number;
   alreadySent: Set<string>;
 }): BetaLifecycleDecision {
-  const { tester, now, rules, finalRating, alreadySent } = args;
+  const { tester, now, rules, finalRating, storiesFinished, alreadySent } = args;
   const not = (k: BetaEmailKind) => !alreadySent.has(k);
 
   // ── Post-launch: the review branch. Runs first because once the app is
@@ -114,8 +119,25 @@ export function decideBetaEmail(args: {
   const tenure = daysSince(tester.planGrantedAt ?? tester.invitedAt, now);
   if (tenure === null) return null;
 
-  if (tenure >= rules.midSurveyAfterDays && not("mid_survey")) return { kind: "mid_survey" };
-  if (tenure >= rules.feedbackAskAfterDays && not("feedback_ask")) return { kind: "feedback_ask" };
+  // Estos dos piden una OPINIÓN, y sólo puede opinar quien ha usado esto. El
+  // resto del calendario va por antigüedad porque son avisos; estos no.
+  //
+  // Antes bastaba con la antigüedad, y eso los mandaba a quien había abierto la
+  // app una vez y nada más. El daño no es que moleste: es que la petición es de
+  // un solo disparo (`not()` la marca como enviada y no vuelve a salir jamás),
+  // así que gastarla en alguien sin nada que decir le quita el turno para
+  // siempre. Cuando dos semanas después ya tenga opinión, ya no se le preguntará.
+  //
+  // No enviar aquí no pierde nada: la petición sigue disponible y sale el día
+  // que terminen su primera historia, que es cuando por fin tienen algo que
+  // contar.
+  const canOpine = storiesFinished > 0;
+  if (canOpine && tenure >= rules.midSurveyAfterDays && not("mid_survey")) {
+    return { kind: "mid_survey" };
+  }
+  if (canOpine && tenure >= rules.feedbackAskAfterDays && not("feedback_ask")) {
+    return { kind: "feedback_ask" };
+  }
 
   return null;
 }
@@ -160,6 +182,24 @@ export async function runBetaLifecycle(now: Date = new Date()): Promise<BetaLife
     take: MAX_TESTERS_PER_RUN,
   });
 
+  // Historias terminadas por tester, en una sola consulta agrupada. Es lo que
+  // separa "lleva cinco días" de "tiene algo que contar", y sin ella los dos
+  // correos que piden opinión salían por calendario a gente que no había usado
+  // la app. Sólo cuenta a quien tiene enlace con Clerk; sin él no hay eventos
+  // que mirar, y esa persona todavía no ha entrado.
+  const testerUserIds = testers
+    .map((t) => t.clerkUserId)
+    .filter((id): id is string => Boolean(id));
+  const finishedByUser = new Map<string, number>();
+  if (testerUserIds.length > 0) {
+    const grouped = await prisma.userMetric.groupBy({
+      by: ["userId"],
+      where: { userId: { in: testerUserIds }, eventType: "audio_complete" },
+      _count: { _all: true },
+    });
+    for (const g of grouped) finishedByUser.set(g.userId, g._count._all);
+  }
+
   // Final-survey ratings for everyone in one query. The review branch needs
   // them, and pulling them per tester would be a round trip each.
   const finalAnswers = await prisma.betaFeedback.findMany({
@@ -194,6 +234,7 @@ export async function runBetaLifecycle(now: Date = new Date()): Promise<BetaLife
       now,
       rules,
       finalRating: finalBySignup.get(tester.id) ?? null,
+      storiesFinished: tester.clerkUserId ? (finishedByUser.get(tester.clerkUserId) ?? 0) : 0,
       alreadySent: sentBySignup.get(tester.id) ?? new Set(),
     });
 

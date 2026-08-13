@@ -94,6 +94,7 @@ import {
 import { LanguageSwitchSheet, type LanguageSwitchEntry } from "./LanguageSwitchSheet";
 import { OnboardingFlow, type OnboardingPayload } from "./OnboardingFlow";
 import { PracticeCelebration } from "./PracticeCelebration";
+import BetaFeedbackSheet from "./BetaFeedbackSheet";
 import { PracticeExitSheet } from "./PracticeExitSheet";
 import { PracticeCountdown } from "./PracticeCountdown";
 import { ReaderSkeleton } from "./ReaderSkeleton";
@@ -2262,6 +2263,15 @@ export function MobileLibraryShell(args: {
   // and hasn't completed the round). The Done button after completion skips
   // straight past it; no confirmation needed then.
   const [practiceExitConfirmVisible, setPracticeExitConfirmVisible] = useState(false);
+  // Feedback pedido en el momento, no en un buzón. Reutiliza el mismo sheet que
+  // Ajustes, que ya adjunta build, sistema y dispositivo por su cuenta: el
+  // trabajo del tester se reduce a escribir una frase.
+  //
+  // El estado guarda DE DÓNDE se abrió, no un booleano: ese texto viaja como
+  // `screen` y es lo que después permite separar "esto falla al leer" de
+  // "esto falla al practicar" sin preguntarle nada a nadie.
+  const [feedbackScreen, setFeedbackScreen] = useState<string | null>(null);
+  const canSendPracticeFeedback = Boolean(mobileConfig.apiBaseUrl && sessionToken);
   // Story ID that should wear the "next up" glow on the topic / book list
   // after a story-based practice session completes. Cleared after a few
   // seconds so the glow is attention-grabbing but not permanent.
@@ -13246,6 +13256,20 @@ export function MobileLibraryShell(args: {
 
   const orbitStreak = remoteProgress?.gamification?.dailyStreak ?? maxFavoriteStreak ?? 0;
 
+  // El panel se declara UNA vez y se monta en las dos ramas que pueden
+  // abrirlo (práctica y lector). El lector sale por un `return` propio más
+  // arriba, así que un único montaje dentro de `practiceView` dejaba el
+  // enlace del fin de historia pulsando un sheet que no existía.
+  const feedbackSheet = canSendPracticeFeedback ? (
+    <BetaFeedbackSheet
+      visible={feedbackScreen !== null}
+      onClose={() => setFeedbackScreen(null)}
+      baseUrl={mobileConfig.apiBaseUrl}
+      token={sessionToken ?? null}
+      screen={feedbackScreen}
+    />
+  ) : null;
+
   const practiceView = (
     <>
       {!isSignedIn ? (
@@ -13522,9 +13546,15 @@ export function MobileLibraryShell(args: {
               <PulseDots label="Preparing your practice…" />
             </View>
           ) : practiceComplete ? (
-            <Animated.View
+            // ScrollView y no View: el panel es flex:1 con space-between y
+            // el contenido (anillo + saludo + stats + WHAT'S NEXT + el
+            // enlace de feedback) desborda por abajo en las pantallas más
+            // justas, dejando la última fila cortada por el filo. Con
+            // flexGrow:1 el reparto es idéntico cuando cabe, y cuando no,
+            // se alcanza rodando en vez de perderse.
+            <Animated.ScrollView
               style={[
-                styles.practiceResultCard,
+                styles.practiceResultScroll,
                 {
                   opacity: practiceCompleteOpacity,
                   transform: [
@@ -13533,6 +13563,8 @@ export function MobileLibraryShell(args: {
                   ],
                 },
               ]}
+              contentContainerStyle={styles.practiceResultCard}
+              showsVerticalScrollIndicator={false}
             >
               {/* Layout nuevo basado en mockup: chips en esquinas +
                   anillo segmentado con score al centro + saludo
@@ -13874,10 +13906,35 @@ export function MobileLibraryShell(args: {
                             : "Checkpoint passed but not saved yet"}
                       </Text>
                     ) : null}
+
+                    {/* El único momento en que alguien ha vivido el bucle
+                        entero: leyó, escuchó y acaba de practicar lo leído.
+                        Preguntar aquí cuesta un toque; el camino que existía
+                        era Ajustes → pie → botón fantasma, que sólo recorre
+                        quien está enfadado, así que el feedback tibio (el
+                        útil) no llegaba nunca.
+
+                        Deliberadamente NO es una cuarta tarjeta en la fila de
+                        arriba: esa fila empuja a seguir, y el paso de historia
+                        a práctica ya pierde gente. Un texto discreto debajo
+                        pregunta sin disputarle el sitio al "Next story". */}
+                    {canSendPracticeFeedback ? (
+                      <Pressable
+                        onPress={() => setFeedbackScreen("practice complete")}
+                        style={styles.practiceResultFeedbackLink}
+                        accessibilityLabel="qa-practice-feedback"
+                        testID="qa-practice-feedback"
+                      >
+                        <Feather name="message-square" size={13} color="#8aa0bd" />
+                        <Text style={styles.practiceResultFeedbackLinkText}>
+                          How was that? Tell me in one line
+                        </Text>
+                      </Pressable>
+                    ) : null}
                   </View>
                 );
               })()}
-            </Animated.View>
+            </Animated.ScrollView>
           ) : currentPracticeExercise ? (
             <>
               {/* Top meta strip (progress dots + topic + XP). Shared
@@ -14634,6 +14691,7 @@ export function MobileLibraryShell(args: {
             </>
           ) : null}
         </View>
+        {feedbackSheet}
         {practiceExitConfirmVisible ? (
           <PracticeExitSheet
             accent={activePracticeCard?.accent ?? tokenColor.xp}
@@ -18552,10 +18610,14 @@ export function MobileLibraryShell(args: {
           onDownloadOffline={() => void downloadStoryOffline(selection.book, selection.story)}
           onRemoveOffline={() => void removeStoryFromOffline(selection.story)}
           onOpenPractice={() => void openStoryPractice(selection)}
+          onOpenFeedback={
+            canSendPracticeFeedback ? () => setFeedbackScreen("story complete") : undefined
+          }
           isFavoriteWord={isFavoriteWord}
           onToggleFavoriteWord={(item, contextSentence) => void toggleFavoriteWord(item, contextSentence)}
           onTrackReaderEvent={trackReaderEvent}
         />
+        {feedbackSheet}
       </View>
     );
   }
@@ -25969,8 +26031,14 @@ const styles = StyleSheet.create({
     letterSpacing: 0.8,
     textTransform: "uppercase",
   },
-  practiceResultCard: {
+  // El ScrollView en sí: ocupa el hueco. El reparto vive en el
+  // contentContainerStyle (practiceResultCard), que usa flexGrow para
+  // conservar el space-between cuando el contenido cabe.
+  practiceResultScroll: {
     flex: 1,
+  },
+  practiceResultCard: {
+    flexGrow: 1,
     // space-between distribuye el contenido en bandas (chips arriba,
     // ring + greeting al medio, stats, actions abajo) en vez de
     // colapsar todo al centro y dejar la mitad superior e inferior
@@ -26207,6 +26275,21 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: "center",
     marginTop: 4,
+  },
+  // Discreto a propósito: pregunta sin robarle el sitio a las acciones de
+  // arriba, que son las que empujan a seguir.
+  practiceResultFeedbackLink: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
+    marginTop: 6,
+    paddingVertical: 8,
+  },
+  practiceResultFeedbackLinkText: {
+    color: "#8aa0bd",
+    fontSize: 12.5,
+    fontWeight: "600",
   },
   practiceLaunchLoaderCard: {
     flex: 1,

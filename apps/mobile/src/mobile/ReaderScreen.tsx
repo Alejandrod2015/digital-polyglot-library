@@ -1287,6 +1287,13 @@ export function ReaderScreen(args: {
   onDownloadOffline: () => void;
   onRemoveOffline: () => void;
   onOpenPractice?: () => void;
+  /**
+   * Abre el panel de feedback beta. Se ofrece al pie de una historia YA
+   * terminada: es el otro momento (además del final de una práctica) en el
+   * que la persona acaba de vivir algo y todavía lo tiene fresco. Ausente
+   * para quien no puede enviar (sin sesión o sin API).
+   */
+  onOpenFeedback?: () => void;
   isFavoriteWord: (word: string) => boolean;
   onToggleFavoriteWord: (item: VocabItem, contextSentence?: string) => void;
   onTrackReaderEvent?: (
@@ -1331,6 +1338,7 @@ export function ReaderScreen(args: {
     onDownloadOffline,
     onRemoveOffline,
     onOpenPractice,
+    onOpenFeedback,
     isFavoriteWord,
     onToggleFavoriteWord,
     onTrackReaderEvent,
@@ -2576,6 +2584,28 @@ export function ReaderScreen(args: {
             </View>
           ) : null}
 
+          {/* El otro momento en que preguntar sale barato: acaba de terminar
+              una historia. Va atado a `storyCompleted`, no al scroll, para no
+              preguntarle nada a quien solo hojeó hasta el final.
+              Deliberadamente NO depende de la tarjeta de práctica: quien lee y
+              no practica es justo el que hoy no tenía dónde opinar salvo
+              Ajustes, que es el camino que casi nadie recorre. Discreto y
+              debajo, para no disputarle el sitio a "Start practice". */}
+          {onOpenFeedback && storyCompleted ? (
+            <Pressable
+              onPress={onOpenFeedback}
+              style={styles.readerFeedbackLink}
+              accessibilityRole="button"
+              accessibilityLabel="qa-reader-feedback"
+              testID="qa-reader-feedback"
+            >
+              <Feather name="message-square" size={13} color="#8aa0bd" />
+              <Text style={styles.readerFeedbackLinkText}>
+                How was this story? Tell me in one line
+              </Text>
+            </Pressable>
+          ) : null}
+
         </View>
       </ScrollView>
 
@@ -3288,6 +3318,19 @@ const styles = StyleSheet.create({
     color: "#0c1626",
     fontSize: 15,
     fontWeight: "800",
+  },
+  readerFeedbackLink: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
+    marginTop: 14,
+    paddingVertical: 8,
+  },
+  readerFeedbackLinkText: {
+    color: "#8aa0bd",
+    fontSize: 12.5,
+    fontWeight: "600",
   },
   quoteBlock: {
     gap: 4,

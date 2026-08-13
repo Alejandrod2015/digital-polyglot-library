@@ -4,6 +4,8 @@ import { useCallback, useEffect, useState } from "react";
 
 const ACCENT = "#fcd34d";
 const ACCENT_SOFT = "rgba(252, 211, 77, 0.14)";
+// Verde solo para la subsección de beta: marca lo que NO es el recorrido.
+const FB_ACCENT = "#34d399";
 const CARD_BORDER = "rgba(255, 255, 255, 0.08)";
 const TEXT_MUTED = "var(--muted)";
 const BEZEL = "#05080d";
@@ -78,7 +80,82 @@ const ACTS: Act[] = [
   },
 ];
 
-const FLAT: Phase[] = ACTS.flatMap((a) => a.phases.map((p) => ({ ...p, act: a.title })));
+// ── Subsección: pedir feedback ──────────────────────────────────────────
+// No es un acto más del recorrido: es una capa que se monta ENCIMA de él,
+// solo para beta testers, y por eso va aparte y con su propio acento.
+//
+// La regla que la ordena: el feedback se pide en el momento en que la
+// persona ACABA de vivir algo, no en una pantalla a la que hay que ir a
+// buscar. Un buzón en Ajustes solo lo recorre quien está enfadado, así que
+// lo tibio (que es lo accionable) no llegaba nunca.
+const FEEDBACK_ACT = "Pedir feedback";
+const FEEDBACK_MOMENTS: Array<Omit<Phase, "act"> & { when: string; strength: "momento" | "buzón" }> = [
+  {
+    n: "F1",
+    img: "f01",
+    label: "Ajustes",
+    title: "El buzón, para cuando busques dónde quejarte",
+    when: "Cuando la persona VA a buscarlo",
+    strength: "buzón",
+    body:
+      "Donde antes había un botón fantasma que abría el cliente de correo (y por tanto no lo usaba nadie) hay ahora una tarjeta que dice para qué sirve. Sigue siendo el camino débil: exige que la persona decida ir a Ajustes, o sea que ya venga con una queja formada. Está para no perder a quien la tiene, no para recoger la mayoría.",
+  },
+  {
+    n: "F2",
+    img: "f02",
+    label: "El panel",
+    title: "Una frase basta, y el contexto se adjunta solo",
+    when: "El mismo panel desde cualquier entrada",
+    strength: "buzón",
+    body:
+      "Cuatro categorías (Broke / Confusing / Idea / Liked it), un campo libre y nada más. Debajo, en gris: build, dispositivo y la pantalla desde la que se abrió. Nadie tiene que describir su versión ni adivinar qué información necesitas: llega sola.",
+  },
+  {
+    n: "F3",
+    img: "f03",
+    label: "Fin de práctica",
+    title: "El único momento en que ha vivido el bucle entero",
+    when: "Justo después de leer, escuchar y practicar",
+    strength: "momento",
+    body:
+      "Leyó, escuchó y acaba de practicar lo leído: aquí sabe de verdad si funcionó. El enlace va debajo de WHAT'S NEXT, deliberadamente discreto y NO como cuarta tarjeta: esa fila empuja a seguir, y el paso de historia a práctica ya pierde gente. Preguntar aquí cuesta un toque.",
+  },
+  {
+    n: "F4",
+    img: "f04",
+    label: "El panel, en contexto",
+    title: "Sabrás si la queja viene de leer o de practicar",
+    when: "Abierto desde el final de la ronda",
+    strength: "momento",
+    body:
+      "Mismo panel, distinto rastro: el contexto pasa de 'Settings' a 'practice complete'. Sin preguntar nada extra, cada mensaje llega ya clasificado por el punto del recorrido donde se generó.",
+  },
+  {
+    n: "F5",
+    img: "f05",
+    label: "Fin de historia",
+    title: "Para quien lee y no practica",
+    when: "Al terminar una historia, antes de practicar",
+    strength: "momento",
+    body:
+      "Debajo de la puerta a la práctica, y solo cuando la historia está TERMINADA de verdad: a quien únicamente hojeó hasta el final no se le pregunta nada. Este es el momento que faltaba, porque el paso de historia a práctica pierde gente, y quien se queda por el camino no tenía dónde opinar salvo Ajustes.",
+  },
+  {
+    n: "F6",
+    img: "f06",
+    label: "El panel, desde la historia",
+    title: "El tercer rastro: 'story complete'",
+    when: "Abierto desde el final de la historia",
+    strength: "momento",
+    body:
+      "Tres entradas, un solo panel, tres contextos distintos. Un problema del lector (audio, resaltado, toque en una palabra) llega marcado como historia; uno de los ejercicios llega marcado como práctica. La clasificación sale gratis.",
+  },
+];
+
+const FLAT: Phase[] = [
+  ...ACTS.flatMap((a) => a.phases.map((p) => ({ ...p, act: a.title }))),
+  ...FEEDBACK_MOMENTS.map((p) => ({ ...p, act: FEEDBACK_ACT })),
+];
 
 function Thumb({ phase, onOpen }: { phase: Phase; onOpen: () => void }) {
   return (
@@ -200,6 +277,94 @@ export default function JourneyGallery() {
             </section>
           );
         })}
+
+        {/* Subsección aparte: no es una etapa del recorrido, es la capa de
+            beta que se monta encima. Va en su propio recuadro para que no
+            se lea como "lo que hace un usuario nuevo". */}
+        <section
+          style={{
+            marginTop: 8,
+            paddingTop: 20,
+            borderTop: `1px solid ${CARD_BORDER}`,
+          }}
+        >
+          <header style={{ display: "flex", alignItems: "baseline", gap: 10, flexWrap: "wrap", marginBottom: 6 }}>
+            <span
+              style={{
+                fontSize: 10,
+                fontWeight: 800,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: FB_ACCENT,
+              }}
+            >
+              Beta
+            </span>
+            <h2 style={{ fontSize: 17, fontWeight: 800, margin: 0, letterSpacing: "-0.01em" }}>Pedir feedback</h2>
+            <span style={{ fontSize: 12.5, color: TEXT_MUTED }}>
+              Dónde se pregunta, y por qué ahí.
+            </span>
+          </header>
+          <p
+            style={{
+              margin: "0 0 14px",
+              fontSize: 13,
+              lineHeight: 1.6,
+              color: "var(--fg)",
+              opacity: 0.82,
+              maxWidth: "78ch",
+            }}
+          >
+            La regla: se pregunta en el momento en que la persona <strong>acaba de vivir algo</strong>, no en una
+            pantalla a la que hay que ir a buscar. Pedirle que entre a Ajustes es pedirle demasiado: ese camino solo
+            lo recorre quien ya viene enfadado, y el feedback tibio, que es el accionable, no llegaba nunca.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 18 }}>
+            {FEEDBACK_MOMENTS.map((p, pi) => (
+              <div key={p.n} style={{ display: "flex", flexDirection: "column", gap: 7, width: 150 }}>
+                <Thumb
+                  phase={{ ...p, act: FEEDBACK_ACT }}
+                  onOpen={() => setSelected(FLAT.length - FEEDBACK_MOMENTS.length + pi)}
+                />
+                <span
+                  style={{
+                    fontSize: 10,
+                    fontWeight: 700,
+                    letterSpacing: "0.04em",
+                    lineHeight: 1.35,
+                    color: p.strength === "momento" ? FB_ACCENT : TEXT_MUTED,
+                    border: `1px solid ${p.strength === "momento" ? "rgba(52,211,153,0.35)" : CARD_BORDER}`,
+                    background: p.strength === "momento" ? "rgba(52,211,153,0.10)" : "transparent",
+                    borderRadius: 8,
+                    padding: "5px 8px",
+                  }}
+                >
+                  {p.when}
+                </span>
+              </div>
+            ))}
+          </div>
+          <p
+            style={{
+              margin: "16px 0 0",
+              padding: "12px 14px",
+              border: `1px dashed ${CARD_BORDER}`,
+              borderRadius: 12,
+              fontSize: 12.5,
+              lineHeight: 1.6,
+              color: TEXT_MUTED,
+              maxWidth: "82ch",
+            }}
+          >
+            <strong style={{ color: "var(--fg)", opacity: 0.85 }}>Momentos cubiertos:</strong> el final de una ronda de
+            práctica (F3), donde ha vivido el bucle entero, y el final de una historia (F5), que alcanza además a quien
+            lee y no practica. Ajustes (F1) se queda como red, no como camino principal.{" "}
+            <strong style={{ color: "var(--fg)", opacity: 0.85 }}>Lo que sigue sin cubrirse:</strong> el abandono. Quien
+            deja una historia a medias o sale de la práctica sin terminar no ve ninguna de las dos puertas, y es
+            justamente de quien más se aprendería. Preguntar ahí es delicado: interrumpir a alguien que ya se está
+            yendo puede empujarlo del todo.
+          </p>
+        </section>
       </div>
 
       {current && (

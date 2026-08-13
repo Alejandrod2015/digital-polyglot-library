@@ -169,6 +169,15 @@ export default function BetaFeedbackSheet({
   return (
     <Modal visible={visible} animationType="slide" transparent onRequestClose={close}>
       <View style={styles.backdrop}>
+        {/* Tocar fuera cierra. Sin esto la única salida era "Not now", que en
+            una pantalla justa queda por debajo del borde: el panel se leía
+            como una trampa, y quien abre esto por curiosidad y no encuentra
+            cómo salir no vuelve a abrirlo. */}
+        <Pressable
+          style={StyleSheet.absoluteFill}
+          onPress={close}
+          accessibilityLabel="qa-feedback-dismiss"
+        />
         <View style={[styles.sheetWrap, { paddingBottom: keyboardHeight }]}>
           <View style={styles.sheet}>
             <View style={styles.handle} />

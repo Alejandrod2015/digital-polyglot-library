@@ -413,6 +413,32 @@ export function MobileSettingsScreen({
               </View>
             ) : null}
 
+            {/* Invitación a escribir, ANTES del pie y con cuerpo propio.
+                Vivía como un botón fantasma más en la fila de abajo, entre
+                "Sign out" y "Support", con el estilo menos llamativo de los
+                tres. Ese camino sólo lo recorre quien está enfadado, así que
+                el feedback tibio (que es el útil) no llegaba nunca: cero
+                reportes en todo el programa. Aquí pide, en vez de esperar. */}
+            {canSendFeedback ? (
+              <Pressable
+                onPress={() => setFeedbackOpen(true)}
+                style={styles.feedbackInvite}
+                accessibilityLabel="qa-settings-feedback"
+                testID="qa-settings-feedback"
+              >
+                <View style={styles.feedbackInviteIcon}>
+                  <Feather name="message-square" size={16} color="#0a1424" />
+                </View>
+                <View style={styles.feedbackInviteCopy}>
+                  <Text style={styles.feedbackInviteTitle}>Tell me what to fix</Text>
+                  <Text style={styles.feedbackInviteBody}>
+                    One line is enough. I read all of them.
+                  </Text>
+                </View>
+                <Feather name="chevron-right" size={18} color="#8aa0bd" />
+              </Pressable>
+            ) : null}
+
             {/* Footer actions */}
             <View style={styles.footerRow}>
               {showSignOut && onPressSignOut ? (
@@ -424,15 +450,6 @@ export function MobileSettingsScreen({
               {showSignIn && onPressSignIn ? (
                 <Pressable onPress={onPressSignIn} style={[styles.footerButton, styles.footerButtonPrimary]}>
                   <Text numberOfLines={1} style={[styles.footerButtonText, styles.footerButtonTextPrimary]}>Sign in</Text>
-                </Pressable>
-              ) : null}
-              {canSendFeedback ? (
-                <Pressable
-                  onPress={() => setFeedbackOpen(true)}
-                  style={[styles.footerButton, styles.footerButtonGhost]}
-                >
-                  <Feather name="message-square" size={16} color="#dbe9ff" />
-                  <Text numberOfLines={1} style={styles.footerButtonText}>Send feedback</Text>
                 </Pressable>
               ) : null}
               <Pressable
@@ -1020,6 +1037,37 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     gap: 8,
+    marginTop: 2,
+  },
+  feedbackInvite: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    paddingVertical: 14,
+    paddingHorizontal: 14,
+    borderRadius: 16,
+    backgroundColor: "rgba(248,193,92,0.10)",
+    borderWidth: 1,
+    borderColor: "rgba(248,193,92,0.34)",
+    marginBottom: 14,
+  },
+  feedbackInviteIcon: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#f8c15c",
+  },
+  feedbackInviteCopy: { flex: 1 },
+  feedbackInviteTitle: {
+    color: "#fdf3dd",
+    fontSize: 15,
+    fontWeight: "800",
+  },
+  feedbackInviteBody: {
+    color: "rgba(226,232,244,0.62)",
+    fontSize: 12.5,
     marginTop: 2,
   },
   footerButton: {
