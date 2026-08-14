@@ -533,7 +533,10 @@ const getStudioJourneysForLanguage = unstable_cache(
       },
     });
   },
-  ["studio-journeys-by-language-v7"],
+  // v8 (2026-08-13): subir el número invalida la entrada de forma
+  // determinista en el deploy. `revalidateTag` no bastó para desatascar el
+  // portugués, y una clave nueva no depende de que la invalidación se propague.
+  ["studio-journeys-by-language-v8"],
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
@@ -553,7 +556,7 @@ const getAllStudioJourneys = unstable_cache(
       },
     });
   },
-  ["studio-journeys-all-v4"],
+  ["studio-journeys-all-v5"],
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 

@@ -4,6 +4,7 @@ import { useClerk, useSignIn, useSignUp, useSSO } from "@clerk/expo";
 import { useCallback, useState } from "react";
 import {
   ActivityIndicator,
+  Image,
   KeyboardAvoidingView,
   Platform,
   Pressable,
@@ -422,11 +423,19 @@ export function AuthScreen(args: {
 // ── Shared Components ──────────────────────────────────────────────────
 
 function Header() {
+  // El logotipo de verdad, centrado, en lugar del rombo con el nombre en
+  // versalitas. Es la versión blanca, la misma del splash: así la marca que
+  // ves al abrir la app es la que sigue ahí al entrar, y sobre el fondo
+  // oscuro de esta tarjeta se lee, cosa que la versión a color no haría.
   return (
-    <View style={styles.brand}>
-      <Text style={styles.brandMark}>◆</Text>
-      <Text style={styles.brandName}>Digital Polyglot</Text>
-    </View>
+    <Image
+      source={require("../../assets/splash-logo-white.png")}
+      style={styles.brandLogo}
+      resizeMode="contain"
+      accessible
+      accessibilityRole="image"
+      accessibilityLabel="Digital Polyglot"
+    />
   );
 }
 
@@ -458,9 +467,9 @@ function GhostButton(props: { label: string; onPress: () => void }) {
 
 const styles = StyleSheet.create({
   card: { borderRadius: 28, padding: 28, backgroundColor: "#0f1e33", borderWidth: 1, borderColor: "#1e3450", shadowColor: "#000", shadowOpacity: 0.3, shadowRadius: 32, shadowOffset: { width: 0, height: 16 } },
-  brand: { flexDirection: "row", alignItems: "center", gap: 8, marginBottom: 24 },
-  brandMark: { color: "#f8c15c", fontSize: 11 },
-  brandName: { color: "#f8c15c", fontSize: 11, fontWeight: "800", letterSpacing: 2, textTransform: "uppercase" },
+  // 904×437 en origen: con 196 de ancho el alto sale ~95, y `contain` respeta
+  // la proporción aunque se cambie una de las dos.
+  brandLogo: { width: 196, height: 95, alignSelf: "center", marginBottom: 24 },
   headline: { color: "#f5f7fb", fontSize: 36, fontWeight: "800", lineHeight: 42, marginBottom: 12 },
   subtext: { color: "#7a95b3", fontSize: 15, lineHeight: 22, marginBottom: 28 },
   actions: { gap: 10 },

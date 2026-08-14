@@ -29,6 +29,7 @@ import { NextResponse } from "next/server";
 import { revalidateTag } from "next/cache";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
+import { buildJourneyVariants } from "@/app/journey/journeyData";
 
 export const dynamic = "force-dynamic";
 
@@ -113,6 +114,26 @@ export async function POST(request: Request) {
     orderBy: [{ language: "asc" }, { variant: "asc" }],
   });
 
+  // `live` sale de la base a pelo. `served` sale del MISMO constructor que
+  // alimenta /api/mobile/journey, o sea PASANDO POR LA CACHÉ. Cuando los dos
+  // no coinciden, el problema es la caché y no los datos: esa distinción es
+  // justo la que costó una tarde de diagnóstico a ciegas.
+  const idiomas = Array.from(new Set(live.map((j) => j.language)));
+  const served: Array<{ language: string; label: string; variant: string | null; stories: number }> = [];
+  for (const idioma of idiomas) {
+    for (const track of await buildJourneyVariants(idioma)) {
+      served.push({
+        language: idioma,
+        label: track.label,
+        variant: track.variant ?? null,
+        stories: track.levels.reduce(
+          (n, level) => n + level.topics.reduce((m, topic) => m + topic.stories.length, 0),
+          0
+        ),
+      });
+    }
+  }
+
   return NextResponse.json({
     ok: true,
     changed,
@@ -124,5 +145,10 @@ export async function POST(request: Request) {
       variant: j.variant,
       publishedStories: j._count.stories,
     })),
+    served,
+    // Si algo está en `live` y no en `served`, la caché va por detrás.
+    missingFromReader: live
+      .filter((j) => !served.some((s) => s.variant === j.variant && s.language.toLowerCase() === j.language.toLowerCase()))
+      .map((j) => `${j.language}/${j.variant} (${j.name})`),
   });
 }
