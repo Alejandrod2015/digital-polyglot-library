@@ -11,7 +11,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 const ACCENT = "#14b8a6";
 
-type Tab = "review" | "testers" | "feedback" | "releases" | "rules";
+type Tab = "review" | "demand" | "testers" | "feedback" | "releases" | "rules";
 
 /**
  * Silent capture from the browser at form mount: where they came from and
@@ -45,6 +45,13 @@ type Applicant = {
   socialHandle: string | null;
   nativeLanguage: string;
   targetLanguage: string;
+  /**
+   * País/región del idioma pedido. El formulario NO lo preguntaba hasta el
+   * 2026-08-11, así que todo lo anterior es null: eso no es "les da igual",
+   * es que nunca se les preguntó, y la subsección de demanda lo dice en vez
+   * de contarlo como una preferencia.
+   */
+  targetVariant: string | null;
   currentLevel: string;
   hasIPhone: boolean;
   weeklyHours: string | null;
@@ -357,10 +364,233 @@ function applePill(state: string | undefined): React.CSSProperties {
 function ago(iso: string | null): string {
   if (!iso) return "never";
   const days = Math.floor((Date.now() - new Date(iso).getTime()) / 86_400_000);
-  if (days <= 0) return "today";
+  // Para lo de hoy, la hora exacta: la fecha ya está escrita al lado, así que
+  // "today" no añadía nada, y cuando entran varias solicitudes seguidas lo
+  // único que importa es a qué hora llegó cada una.
+  if (days <= 0) {
+    return new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
+  }
   if (days === 1) return "yesterday";
   if (days < 30) return `${days}d ago`;
   return `${Math.floor(days / 30)}mo ago`;
+}
+
+// ── Demanda ────────────────────────────────────────────────────────────
+// Quién quiere qué, contado sobre TODAS las solicitudes, no solo sobre la
+// cola. La pregunta que contesta no es "a quién invito hoy" sino "qué merece
+// la pena construir": un idioma con veinte personas esperando y sin contenido
+// es una decisión de producto, y hasta ahora ese número no estaba en ninguna
+// pantalla. Nada aquí es accionable por sí solo, a propósito.
+
+/** Cuenta ocurrencias y las devuelve de mayor a menor. */
+function tally<T>(rows: T[], pick: (row: T) => string | null | undefined): Array<[string, number]> {
+  const counts = new Map<string, number>();
+  for (const row of rows) {
+    const raw = pick(row);
+    const key = (raw ?? "").trim();
+    if (!key) continue;
+    counts.set(key, (counts.get(key) ?? 0) + 1);
+  }
+  return Array.from(counts.entries()).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}
+
+const FLAG_BY_COUNTRY: Record<string, string> = {
+  US: "🇺🇸", GB: "🇬🇧", DE: "🇩🇪", ES: "🇪🇸", FR: "🇫🇷", IT: "🇮🇹", PT: "🇵🇹", BR: "🇧🇷",
+  NL: "🇳🇱", BE: "🇧🇪", IE: "🇮🇪", CA: "🇨🇦", AU: "🇦🇺", NZ: "🇳🇿", MX: "🇲🇽", AR: "🇦🇷",
+  CO: "🇨🇴", CL: "🇨🇱", PE: "🇵🇪", CH: "🇨🇭", AT: "🇦🇹", SE: "🇸🇪", NO: "🇳🇴", DK: "🇩🇰",
+  FI: "🇫🇮", PL: "🇵🇱", CZ: "🇨🇿", GR: "🇬🇷", JP: "🇯🇵", KR: "🇰🇷", IN: "🇮🇳", ZA: "🇿🇦",
+};
+
+/** Una barra por fila: la proporción se lee antes que el número. */
+function DemandBars({
+  rows,
+  total,
+  empty,
+  renderLabel,
+}: {
+  rows: Array<[string, number]>;
+  total: number;
+  empty: string;
+  renderLabel?: (key: string) => React.ReactNode;
+}) {
+  if (rows.length === 0) {
+    return <div style={{ fontSize: 12, color: "var(--muted)" }}>{empty}</div>;
+  }
+  const top = rows[0][1];
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+      {rows.map(([key, n]) => (
+        <div key={key} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <span style={{ fontSize: 12, width: 132, flexShrink: 0, color: "var(--foreground)" }}>
+            {renderLabel ? renderLabel(key) : key}
+          </span>
+          <span
+            style={{
+              flex: 1,
+              height: 7,
+              borderRadius: 999,
+              backgroundColor: "var(--card-border)",
+              overflow: "hidden",
+              minWidth: 40,
+            }}
+          >
+            <span
+              style={{
+                display: "block",
+                width: `${Math.max(4, (n / top) * 100)}%`,
+                height: "100%",
+                backgroundColor: ACCENT,
+              }}
+            />
+          </span>
+          <span style={{ fontSize: 12, color: "var(--muted)", width: 62, textAlign: "right", flexShrink: 0 }}>
+            {n} · {Math.round((n / total) * 100)}%
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function DemandBlock({ title, hint, children }: { title: string; hint?: string; children: React.ReactNode }) {
+  return (
+    <section style={card}>
+      <h3 style={{ margin: "0 0 2px", fontSize: 13, fontWeight: 700 }}>{title}</h3>
+      {hint && <p style={{ margin: "0 0 10px", fontSize: 11.5, color: "var(--muted)" }}>{hint}</p>}
+      {children}
+    </section>
+  );
+}
+
+function DemandPanel({ applicants, servedLanguages }: { applicants: Applicant[]; servedLanguages: string[] }) {
+  const total = applicants.length;
+  if (total === 0) {
+    return <div style={{ ...card, fontSize: 13, color: "var(--muted)" }}>Todavía no hay solicitudes.</div>;
+  }
+
+  const served = new Set(servedLanguages.map((l) => l.trim().toLowerCase()));
+  const byLanguage = tally(applicants, (a) => a.targetLanguage);
+  // La región solo tiene sentido dentro de su idioma: "brazil" no significa
+  // nada suelto. Y se cuenta aparte cuántos no la eligieron NUNCA, porque a
+  // esos no se les preguntó y contarlos como "sin preferencia" sería mentir.
+  const variantsByLanguage = new Map<string, { rows: Array<[string, number]>; unasked: number }>();
+  for (const [language] of byLanguage) {
+    const rows = applicants.filter((a) => a.targetLanguage === language);
+    variantsByLanguage.set(language, {
+      rows: tally(rows, (a) => a.targetVariant),
+      unasked: rows.filter((a) => !a.targetVariant).length,
+    });
+  }
+
+  const waiting = applicants.filter((a) => a.status === "waitlist" || a.status === "pending");
+  const unservedWaiting = tally(
+    waiting.filter((a) => !served.has(a.targetLanguage.trim().toLowerCase())),
+    (a) => a.targetLanguage
+  );
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+      <div style={{ ...card, fontSize: 12.5, color: "var(--muted)" }}>
+        {total} solicitudes en total · {waiting.length} todavía esperando. Los porcentajes son sobre el total,
+        no sobre los que quedan.
+      </div>
+
+      <DemandBlock
+        title="Qué idioma quieren"
+        hint="En verde los idiomas que las reglas aceptan hoy. Los demás van a la lista de espera aunque tengan contenido publicado, que es el caso del portugués."
+      >
+        <DemandBars
+          rows={byLanguage}
+          total={total}
+          empty="—"
+          renderLabel={(key) => (
+            <span style={{ color: served.has(key.toLowerCase()) ? ACCENT : "var(--foreground)" }}>
+              {key}
+              {!served.has(key.toLowerCase()) && (
+                <span style={{ color: "var(--muted)", fontSize: 10.5 }}> · no lo aceptan las reglas</span>
+              )}
+            </span>
+          )}
+        />
+      </DemandBlock>
+
+      <DemandBlock
+        title="Y de qué país, cuando lo dijeron"
+        hint="El formulario no preguntaba el país del idioma hasta el 11 ago 2026; lo anterior no es indiferencia, es que nadie se lo preguntó."
+      >
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          {byLanguage.map(([language, n]) => {
+            const v = variantsByLanguage.get(language);
+            if (!v) return null;
+            return (
+              <div key={language}>
+                <div style={{ fontSize: 12, fontWeight: 600, marginBottom: 5 }}>
+                  {language}{" "}
+                  <span style={{ color: "var(--muted)", fontWeight: 400 }}>
+                    · {n} {n === 1 ? "persona" : "personas"}
+                    {v.unasked > 0 && ` · ${v.unasked} sin preguntar`}
+                  </span>
+                </div>
+                <DemandBars
+                  rows={v.rows}
+                  total={n}
+                  empty="a nadie de este idioma se le llegó a preguntar el país"
+                />
+              </div>
+            );
+          })}
+        </div>
+      </DemandBlock>
+
+      {unservedWaiting.length > 0 && (
+        <DemandBlock
+          title="Esperando un idioma que las reglas no aceptan"
+          hint="Gente en la cola cuyo idioma queda fuera antes incluso de puntuarse. Aquí es donde se ve si una regla está reteniendo a alguien que ya podrías atender."
+        >
+          <DemandBars rows={unservedWaiting} total={waiting.length} empty="—" />
+        </DemandBlock>
+      )}
+
+      <div style={{ display: "grid", gap: 12, gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+        <DemandBlock title="De dónde son">
+          <DemandBars
+            rows={tally(applicants, (a) => a.attribution?.country)}
+            total={total}
+            empty="sin datos de país"
+            renderLabel={(key) => `${FLAG_BY_COUNTRY[key.toUpperCase()] ?? "🏳"} ${key}`}
+          />
+        </DemandBlock>
+
+        <DemandBlock title="Con qué teléfono">
+          <DemandBars rows={tally(applicants, (a) => a.platform ?? "ios")} total={total} empty="—" />
+        </DemandBlock>
+
+        <DemandBlock title="Desde qué nivel empiezan">
+          <DemandBars rows={tally(applicants, (a) => a.currentLevel)} total={total} empty="—" />
+        </DemandBlock>
+
+        <DemandBlock title="Cuánto tiempo dicen tener" hint="A la semana.">
+          <DemandBars rows={tally(applicants, (a) => a.weeklyHours)} total={total} empty="sin respuesta" />
+        </DemandBlock>
+
+        <DemandBlock title="Para qué lo quieren">
+          <DemandBars rows={tally(applicants, (a) => a.motivation)} total={total} empty="sin respuesta" />
+        </DemandBlock>
+
+        <DemandBlock title="Por dónde llegaron">
+          <DemandBars rows={tally(applicants, (a) => a.referralSource)} total={total} empty="sin respuesta" />
+        </DemandBlock>
+
+        <DemandBlock title="Qué idioma hablan ya">
+          <DemandBars rows={tally(applicants, (a) => a.nativeLanguage)} total={total} empty="—" />
+        </DemandBlock>
+
+        <DemandBlock title="En qué huso horario están" hint="Para saber a qué hora escribirles.">
+          <DemandBars rows={tally(applicants, (a) => a.attribution?.timezone)} total={total} empty="sin datos" />
+        </DemandBlock>
+      </div>
+    </div>
+  );
 }
 
 /** One usage number with its label, sized so a row of them scans at a glance. */
@@ -757,6 +987,7 @@ export default function BetaProgramClient() {
 
   const tabs: Array<{ key: Tab; label: string; count?: number }> = [
     { key: "review", label: "Review queue", count: needsReview.length },
+    { key: "demand", label: "Demand", count: data.applicants.length },
     { key: "testers", label: "Testers", count: testers.length },
     { key: "feedback", label: "Feedback", count: data.stats.openFeedback },
     { key: "releases", label: "Build notes", count: data.releases.length },
@@ -816,6 +1047,13 @@ export default function BetaProgramClient() {
           onAction={applicantAction}
           onDelete={applicantDelete}
         />
+      )}
+
+      {tab === "demand" && (
+        // "Servido" = idioma que las reglas aceptan hoy. No es lo mismo que
+        // "tiene contenido", pero es la línea que decide quién entra, y por
+        // eso es la que se pinta.
+        <DemandPanel applicants={data.applicants} servedLanguages={data.rules.acceptedTargetLanguages} />
       )}
 
       {tab === "testers" && (
