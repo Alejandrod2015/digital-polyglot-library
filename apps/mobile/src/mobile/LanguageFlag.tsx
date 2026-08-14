@@ -132,6 +132,12 @@ const LATAM_REGION_CODES = new Set<string>([
 const SPAIN_REGION_CODES = new Set<string>(["es", "spain", "españa", "espana"]);
 const UK_REGION_CODES = new Set<string>(["uk", "gb", "england", "britain", "united-kingdom"]);
 const PORTUGAL_REGION_CODES = new Set<string>(["pt", "portugal"]);
+// Brasil faltaba, y era el único hueco: el selector ofrece la variante como
+// "br" y Studio la persiste como "brazil". Sin familia que los pliegue, el
+// filtro por variante descartaba el journey y el paso 2 decía "No journeys
+// available for Portuguese (BRAZIL) yet." con el journey publicado y servido.
+// Portugal no lo sufría porque su familia ya casaba "pt" con "portugal".
+const BRAZIL_REGION_CODES = new Set<string>(["br", "brazil", "brasil"]);
 // Country-specific LATAM codes that get their OWN flag in pickSpec. NOTE: these
 // stay inside LATAM_REGION_CODES so `regionFamily` still folds them into the
 // "latam" family for variant MATCHING; only the flag rendering distinguishes them.
@@ -144,7 +150,12 @@ const ARGENTINA_CODES = new Set<string>(["argentina", "ar"]);
  * "es"/"spain" or "mx"/"latam" compare equal. Used to match a picked
  * language variant against a journey's stored variant (a Spain pick must not
  * surface LATAM journeys). Returns the lowercased input when it doesn't
- * belong to a known family (e.g. "br", "us" match themselves).
+ * belong to a known family (e.g. "us" matches itself).
+ *
+ * Toda variante que el selector ofrezca con un código corto tiene que tener
+ * aquí su familia: el selector usa códigos de dos letras y Studio persiste el
+ * nombre del país, así que sin familia NUNCA casan y el journey desaparece en
+ * silencio, sin error ni aviso. Es lo que le pasó a Brasil.
  */
 export function regionFamily(code: string | null | undefined): string {
   const v = (code ?? "").trim().toLowerCase();
@@ -153,6 +164,7 @@ export function regionFamily(code: string | null | undefined): string {
   if (SPAIN_REGION_CODES.has(v)) return "spain";
   if (UK_REGION_CODES.has(v)) return "uk";
   if (PORTUGAL_REGION_CODES.has(v)) return "pt";
+  if (BRAZIL_REGION_CODES.has(v)) return "brazil";
   return v;
 }
 
