@@ -26,6 +26,7 @@ import { config } from "dotenv";
 config({ path: ".env.local", quiet: true });
 config({ path: ".env", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
+import { checkSelectorFindsVariant } from "./selectorVariants";
 
 const prisma = new PrismaClient();
 const APP_URL = (process.env.DPL_APP_URL ?? "https://reader.digitalpolyglot.com").replace(/\/$/, "");
@@ -106,6 +107,24 @@ async function main() {
   // que no existe. Decirlo aquí ahorra el siguiente rato de diagnóstico.
   if (status === "active" && publicadas === 0) {
     console.log("  ⚠  activo con 0 historias publicadas: en la app se verá vacío igual.");
+  }
+
+  // GUARD DE VARIANTE. Publicar un journey cuya variante el selector no sabe
+  // encontrar equivale a no publicarlo, pero SIN decirlo: la app muestra "No
+  // journeys available" igual que si no hubiera contenido. Es exactamente lo
+  // que pasó con el portugués de Brasil el 2026-08-13. Se bloquea antes de
+  // escribir, porque después el síntoma es indistinguible de un problema de
+  // datos y cuesta una tarde localizarlo.
+  if (status === "active") {
+    const check = checkSelectorFindsVariant(j.language, j.variant);
+    if (!check.ok) {
+      console.error("\n✗ EL SELECTOR DE LA APP NO ENCONTRARÍA ESTE JOURNEY");
+      console.error(`  ${check.reason}`);
+      console.error("\n  No se ha cambiado nada. Arregla el emparejamiento y vuelve a intentarlo.");
+      console.error("  Para ver el mapa completo: npx tsx scripts/_variantMatchAudit.ts");
+      process.exit(1);
+    }
+    console.log(`  selector: lo encuentra (${check.reason}).`);
   }
 
   if (j.status === status) {
