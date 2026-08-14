@@ -27,7 +27,7 @@ const NAV_SECTIONS = [
     label: "CONTENIDO",
     items: [
       { href: "/studio/journey-manager", label: "Journey Manager", icon: "pen", exact: false },
-      { href: "/studio/catalog-books", label: "Catálogo de libros", icon: "database", exact: false },
+      { href: "/studio/catalog-books", label: "Catálogo de libros", icon: "library", exact: false },
       { href: "/studio/vocabulary", label: "Vocabulario", icon: "book", exact: false },
     ],
   },
@@ -36,18 +36,18 @@ const NAV_SECTIONS = [
     // pero viven en su propio surface (gallery / batch generation).
     label: "MULTIMEDIA",
     items: [
-      { href: "/studio/covers", label: "Portadas", icon: "layers", exact: false },
-      { href: "/studio/audio", label: "Voces y audios", icon: "globe", exact: false },
+      { href: "/studio/covers", label: "Portadas", icon: "image", exact: false },
+      { href: "/studio/audio", label: "Voces y audios", icon: "mic", exact: false },
       { href: "/studio/audio-editor", label: "Audio Editor BETA", icon: "sliders", exact: false },
     ],
   },
   {
     label: "PLANIFICACIÓN",
     items: [
-      { href: "/studio/planning", label: "Temas, Idiomas y Niveles", icon: "grid", exact: false },
+      { href: "/studio/planning", label: "Temas, Idiomas y Niveles", icon: "hierarchy", exact: false },
       { href: "/studio/onboarding", label: "Onboarding", icon: "compass", exact: false },
       { href: "/studio/user-journey", label: "User Journey", icon: "map", exact: false },
-      { href: "/studio/validar", label: "Validar historia", icon: "file-text", exact: false },
+      { href: "/studio/validar", label: "Validar historia", icon: "check-circle", exact: false },
     ],
   },
   {
@@ -67,15 +67,15 @@ const NAV_SECTIONS = [
     // colisionaba con el nombre de la app entera ("Studio").
     label: "DATOS",
     items: [
-      { href: "/studio/progreso", label: "Progreso del proyecto", icon: "chart", exact: false },
+      { href: "/studio/progreso", label: "Progreso del proyecto", icon: "trending-up", exact: false },
       { href: "/studio/metrics", label: "Métricas", icon: "chart", exact: false },
-      { href: "/studio/visits", label: "Page visits", icon: "globe", exact: false },
+      { href: "/studio/visits", label: "Page visits", icon: "eye", exact: false },
     ],
   },
   {
     label: "ADMIN",
     items: [
-      { href: "/studio/config", label: "Reglas pedagógicas", icon: "sliders", exact: false },
+      { href: "/studio/config", label: "Reglas pedagógicas", icon: "scale", exact: false },
       { href: "/studio/beta", label: "Beta Program", icon: "users", exact: false },
       { href: "/studio/settings", label: "Settings", icon: "settings", exact: false },
     ],
@@ -87,7 +87,7 @@ const NAV_SECTIONS = [
     label: "DEPRECATED",
     items: [
       { href: "/studio/standalone-stories", label: "Historias sueltas", icon: "file-text", exact: false },
-      { href: "/studio/journey-stories", label: "Todas las historias", icon: "book", exact: false },
+      { href: "/studio/journey-stories", label: "Todas las historias", icon: "list", exact: false },
     ],
   },
 ];
@@ -110,6 +110,11 @@ const ACCENT_SOFT = "rgba(252, 211, 77, 0.14)";
 const SIDEBAR_BG = "#060d1c";
 const SIDEBAR_BORDER = "rgba(255, 255, 255, 0.07)";
 
+/* ── Nav icons ──
+  REGLA: un icono = un item del sidebar. Ningún glifo se repite entre
+  secciones (dos items con el mismo dibujo hacen ilegible el menú
+  colapsado, donde el icono es lo ÚNICO que se ve). El polígono de
+  capas queda reservado al logo de marca, no se usa en el nav. */
 function NavIcon({ name, size = 16 }: { name: string; size?: number }) {
   const props = { width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
 
@@ -118,14 +123,26 @@ function NavIcon({ name, size = 16 }: { name: string; size?: number }) {
       return <svg {...props}><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /></svg>;
     case "chart":
       return <svg {...props}><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>;
-    case "shield":
-      return <svg {...props}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>;
+    case "trending-up":
+      return <svg {...props}><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></svg>;
+    case "eye":
+      return <svg {...props}><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>;
     case "book":
       return <svg {...props}><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /></svg>;
-    case "layers":
-      return <svg {...props}><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg>;
-    case "database":
-      return <svg {...props}><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" /><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" /></svg>;
+    case "library":
+      return <svg {...props}><line x1="4" y1="4" x2="4" y2="20" /><line x1="9" y1="6" x2="9" y2="20" /><line x1="14" y1="4" x2="14" y2="20" /><path d="M18 5l3.5 14" /></svg>;
+    case "list":
+      return <svg {...props}><line x1="9" y1="6" x2="21" y2="6" /><line x1="9" y1="12" x2="21" y2="12" /><line x1="9" y1="18" x2="21" y2="18" /><line x1="4" y1="6" x2="4.01" y2="6" /><line x1="4" y1="12" x2="4.01" y2="12" /><line x1="4" y1="18" x2="4.01" y2="18" /></svg>;
+    case "image":
+      return <svg {...props}><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>;
+    case "mic":
+      return <svg {...props}><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z" /><path d="M19 10v1a7 7 0 0 1-14 0v-1" /><line x1="12" y1="18" x2="12" y2="22" /><line x1="8" y1="22" x2="16" y2="22" /></svg>;
+    case "hierarchy":
+      return <svg {...props}><rect x="9" y="2" width="6" height="6" rx="1" /><rect x="2" y="16" width="6" height="6" rx="1" /><rect x="16" y="16" width="6" height="6" rx="1" /><path d="M12 8v4" /><path d="M5 16v-4h14v4" /></svg>;
+    case "check-circle":
+      return <svg {...props}><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1" /><polyline points="22 4 12 14 9 11" /></svg>;
+    case "scale":
+      return <svg {...props}><line x1="12" y1="3" x2="12" y2="21" /><line x1="7" y1="21" x2="17" y2="21" /><path d="M3 7h4c2 0 4-.7 5-1.5C13 6.3 15 7 17 7h4" /><path d="M2.5 14 6 7l3.5 7a4 4 0 0 1-7 0z" /><path d="M14.5 14 18 7l3.5 7a4 4 0 0 1-7 0z" /></svg>;
     case "users":
       return <svg {...props}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>;
     case "compass":
@@ -134,8 +151,6 @@ function NavIcon({ name, size = 16 }: { name: string; size?: number }) {
       return <svg {...props}><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" /><line x1="8" y1="2" x2="8" y2="18" /><line x1="16" y1="6" x2="16" y2="22" /></svg>;
     case "pen":
       return <svg {...props}><path d="M12 19l7-7 3 3-7 7-3-3z" /><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" /><path d="M2 2l7.586 7.586" /><circle cx="11" cy="11" r="2" /></svg>;
-    case "globe":
-      return <svg {...props}><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>;
     case "file-text":
       return <svg {...props}><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" /><polyline points="13 2 13 9 20 9" /><line x1="9" y1="13" x2="15" y2="13" /><line x1="9" y1="17" x2="15" y2="17" /></svg>;
     case "tag":

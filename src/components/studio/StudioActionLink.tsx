@@ -25,19 +25,43 @@ export default function StudioActionLink({
     router.prefetch(href);
   }, [href, router]);
 
+  // Se renderiza como <a href> real (no <button>) para que el navegador dé
+  // gratis "abrir en pestaña nueva": cmd/ctrl+click, click central y el menú
+  // contextual. El click normal se sigue interceptando para navegar con el
+  // router (transición cliente + spinner); los clicks con modificador se
+  // dejan pasar al navegador.
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (
+      e.defaultPrevented ||
+      e.button !== 0 ||
+      e.metaKey ||
+      e.ctrlKey ||
+      e.shiftKey ||
+      e.altKey
+    ) {
+      return; // deja que el navegador abra pestaña/ventana nueva
+    }
+    e.preventDefault();
+    if (isPending) return;
+    startTransition(() => {
+      router.push(href);
+    });
+  };
+
   return (
-    <button
-      type="button"
+    <a
+      href={href}
       onMouseEnter={() => router.prefetch(href)}
       onFocus={() => router.prefetch(href)}
-      onClick={() =>
-        startTransition(() => {
-          router.push(href);
-        })
-      }
-      disabled={isPending}
+      onClick={handleClick}
+      aria-busy={isPending || undefined}
       className={className}
       style={{
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textDecoration: "none",
+        color: "inherit",
         cursor: isPending ? "progress" : "pointer",
         opacity: isPending ? 0.7 : 1,
         transition: "opacity 0.15s",
@@ -62,6 +86,6 @@ export default function StudioActionLink({
       ) : (
         children
       )}
-    </button>
+    </a>
   );
 }
