@@ -75,10 +75,15 @@ function atempo(buf: Buffer, ratio: number, dir: string, name: string): Buffer {
   return readFileSync(o);
 }
 
-async function apply(slug: string, target: number) {
+async function apply(slug: string, target: number, curOverride?: number) {
   const s = await fragmentsFor(slug);
   if (!s) { console.log(`[${slug}] sin audio`); return; }
-  const cur = rate(s.frags).artic;
+  // El ritmo actual se mide sobre los TIEMPOS guardados, no sobre el mp3. Si el
+  // audioUrl se ha cambiado a mano (p.ej. volver al render original para no
+  // encadenar dos atempo), esos tiempos describen OTRO fichero y el ratio sale
+  // mal: pasó el 2026-08-13 y dejó una historia a 1.98 w/s queriendo 2.5.
+  // --current=<w/s> permite decirle el ritmo real del fichero que hay puesto.
+  const cur = curOverride ?? rate(s.frags).artic;
   const ratio = +(target / cur).toFixed(3);
   if (Math.abs(ratio - 1) < 0.01) { console.log(`[${slug}] ya en objetivo (${cur} w/s)`); return; }
   // Load the word-timings module BEFORE mutating anything (2026-07-09). It used
@@ -125,7 +130,11 @@ async function apply(slug: string, target: number) {
   } else if (args[0] === "--apply") {
     const target = parseFloat(args[1]);
     if (!Number.isFinite(target)) { console.log("uso: --apply <targetRate> <slug...>"); process.exit(1); }
-    for (const slug of args.slice(2)) { try { await apply(slug, target); } catch (e: any) { console.log(`[${slug}] ERR ${e.message}`); } }
+    const curArg = args.find((a) => a.startsWith("--current="));
+    const curOverride = curArg ? parseFloat(curArg.split("=")[1]) : undefined;
+    for (const slug of args.slice(2).filter((a) => !a.startsWith("--"))) {
+      try { await apply(slug, target, curOverride); } catch (e: any) { console.log(`[${slug}] ERR ${e.message}`); }
+    }
   } else {
     console.log("uso: --measure <slug...>  |  --apply <targetRate> <slug...>");
   }

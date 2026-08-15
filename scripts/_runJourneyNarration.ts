@@ -61,6 +61,16 @@ const CONFIG: Record<string, Cfg> = {
   // Copacabana". Sustituye a Roberta, con la que se rindieron las tres primeras
   // y que quedan descartadas. Fernanda sale de fábrica a 2.49 w/s, o sea que
   // aquí el pacing ACELERA hasta 2.85 en vez de frenar.
+  // Violetta narra los DOS journeys italianos: es la única voz italiana
+  // aprobada, y el usuario la eligió para este también (2026-08-13).
+  // 2.5 y no 2.7: Violetta sale de fábrica a 2.25 w/s, la más lenta de todas
+  // las narradoras, así que 2.7 exigía acelerarla un 20% y el usuario lo oyó
+  // ("suena un poco acelerada") sobre la primera historia. A 2.5 el factor es
+  // 1.11, parecido al que ya funciona en portugués.
+  "it-traveler-a0": {
+    journeyId: "cmss0fkc40007j8dub1zpa1kc", voiceId: "gfKKsLN1k0oYYN9n2dXX",
+    voiceName: "Violetta (italiano)", label: "Traveler IT Italy A0", targetRate: 2.5,
+  },
   "ptbr-a0": {
     journeyId: "cmsou2uk0000732mqa4oatcmn", voiceId: "7iqXtOF3wl3pomwXFY7G",
     voiceName: "Fernanda (brasileño)", label: "Traveler PT Brazil A0", targetRate: 2.85,

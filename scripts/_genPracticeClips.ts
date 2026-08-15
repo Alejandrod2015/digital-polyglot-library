@@ -74,6 +74,32 @@ const LANGS: Record<string, { prev: string; next: string; prevQ: string; nextQ: 
     // solo las ja/nein-Fragen exigen subida final.
     wh: /(\bwer\b|\bwen\b|\bwem\b|\bwessen\b|\bwas\b|\bwie\b|\bwieso\b|\bweshalb\b|\bwarum\b|\bwann\b|\bwo\b|\bwohin\b|\bwoher\b|\bwelch)/i,
   },
+  // Portugués de Brasil (2026-08-12, journey Traveler PT-BR A0). El framing va
+  // en el idioma de la historia a propósito: es lo que le da a ElevenLabs el
+  // contexto prosódico, y una frase de arranque en otro idioma le cambia el
+  // acento a la línea que importa.
+  pt: {
+    prev: "Agora escute esta frase.",
+    next: "Muito bem. Vamos para a próxima.",
+    prevQ: "Ele tem uma dúvida e pergunta:",
+    nextQ: "Ela responde na hora.",
+    whisper: "pt", scribe: "por",
+    // Como en español y alemán, las interrogativas con partícula caen solas;
+    // solo las de sí/no exigen subida final.
+    wh: /(\bo que\b|\bque\b|\bquem\b|\bcomo\b|\bquando\b|\bonde\b|\baonde\b|\bqual\b|\bquais\b|\bquanto\b|\bquanta\b|\bquantos\b|\bquantas\b|\bpor que\b)/i,
+  },
+  // Italiano (2026-08-13, journey Traveler IT A0). Mismo criterio que arriba:
+  // el framing va en italiano para que ElevenLabs no arrastre el acento de
+  // otra lengua a la frase que importa.
+  it: {
+    prev: "Adesso ascolta questa frase.",
+    next: "Molto bene. Passiamo alla prossima.",
+    prevQ: "Lui ha un dubbio e domanda:",
+    nextQ: "Lei risponde subito.",
+    whisper: "it", scribe: "ita",
+    // Las interrogativas con partícula caen solas; solo las de sí/no suben.
+    wh: /(\bche cosa\b|\bche\b|\bchi\b|\bcome\b|\bquando\b|\bdove\b|\bquale\b|\bquali\b|\bquanto\b|\bquanta\b|\bquanti\b|\bquante\b|\bperché\b)/i,
+  },
 };
 // El idioma del framing (previous_text/next_text), del STT y de los gates se
 // DERIVA de la historia (`journey.language`) en `resolveRenderLang`, NO de un
