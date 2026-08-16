@@ -1,0 +1,620 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Obst,Brot,Karte,Essen",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Obst",
+     "answer": "fruit",
+     "options": [
+      "fruit",
+      "bread",
+      "menu",
+      "food"
+     ]
+    },
+    {
+     "word": "Brot",
+     "answer": "bread",
+     "options": [
+      "fruit",
+      "bread",
+      "menu",
+      "food"
+     ]
+    },
+    {
+     "word": "Karte",
+     "answer": "menu",
+     "options": [
+      "fruit",
+      "bread",
+      "menu",
+      "food"
+     ]
+    },
+    {
+     "word": "Essen",
+     "answer": "food",
+     "options": [
+      "fruit",
+      "bread",
+      "menu",
+      "food"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "Brezel",
+  "sentence": "Lena kauft eine [[Brezel]] am Stand.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pretzel",
+   "options": [
+    "pretzel",
+    "sausage",
+    "bread roll",
+    "cake"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Lena kauft eine Brezel am Stand.",
+    "targetWord": "Brezel",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "Nachbar",
+  "sentence": "Er ist ihr [[Nachbar]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "neighbor",
+   "options": [
+    "neighbor",
+    "brother",
+    "teacher",
+    "friend"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Er ist ihr Nachbar.",
+    "targetWord": "Nachbar",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "Hilfe",
+  "sentence": "Brauchst du [[Hilfe]], Lena?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "help",
+   "options": [
+    "help",
+    "food",
+    "money",
+    "time"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Brauchst du Hilfe, Lena?",
+    "targetWord": "Hilfe",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "kenne",
+  "sentence": "Ich [[kenne]] das Essen hier nicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "know",
+   "options": [
+    "know",
+    "like",
+    "want",
+    "cook"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Ich kenne das Essen hier nicht.",
+    "targetWord": "kenne",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "Leute",
+  "sentence": "Viele [[Leute]] kaufen hier Obst.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "people",
+   "options": [
+    "people",
+    "prices",
+    "stalls",
+    "baskets"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Viele Leute kaufen hier Obst.",
+    "targetWord": "Leute",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "versteht",
+  "sentence": "Aber sie [[versteht]] die Karte nicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "understands",
+   "options": [
+    "understands",
+    "reads",
+    "writes",
+    "buys"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Aber sie versteht die Karte nicht.",
+    "targetWord": "versteht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "zeigt",
+  "sentence": "Tobias [[zeigt]] einen Stand.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "points at",
+   "options": [
+    "points at",
+    "opens",
+    "closes",
+    "cleans"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Tobias zeigt einen Stand.",
+    "targetWord": "zeigt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "sieht",
+  "sentence": "Sie [[sieht]] Fisch, Blumen und Gemüse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sees",
+   "options": [
+    "sees",
+    "buys",
+    "smells",
+    "sells"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Sie sieht Fisch, Blumen und Gemüse.",
+    "targetWord": "sieht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "lecker",
+  "sentence": "Die Brezel ist wirklich [[lecker]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tasty",
+   "options": [
+    "tasty",
+    "salty",
+    "cold",
+    "hard"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Die Brezel ist wirklich lecker.",
+    "targetWord": "lecker",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "neu",
+  "sentence": "Lena ist _____ in München.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "neu",
+   "options": [
+    "neu",
+    "groß",
+    "voll",
+    "frisch"
+   ],
+   "translation": "Lena is _____ in Munich.",
+   "optionTranslations": [
+    "new",
+    "big",
+    "full",
+    "fresh"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Lena ist neu in München.",
+    "targetWord": "neu",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "kaufen",
+  "sentence": "Viele Leute _____ hier Obst und Brot.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kaufen",
+   "options": [
+    "kaufen",
+    "zeigen",
+    "riechen",
+    "kennen"
+   ],
+   "translation": "Many people _____ fruit and bread here.",
+   "optionTranslations": [
+    "to buy",
+    "to show",
+    "to smell",
+    "to know"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Viele Leute kaufen hier Obst und Brot.",
+    "targetWord": "kaufen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "frisch",
+  "sentence": "Alles ist _____ und riecht gut.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "frisch",
+   "options": [
+    "frisch",
+    "warm",
+    "salzig",
+    "süß"
+   ],
+   "translation": "Everything is _____ and smells good.",
+   "optionTranslations": [
+    "fresh",
+    "warm",
+    "salty",
+    "sweet"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Alles ist frisch und riecht gut.",
+    "targetWord": "frisch",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "warm",
+  "sentence": "Die Brezel ist _____ und salzig.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "warm",
+   "options": [
+    "warm",
+    "frisch",
+    "süß",
+    "voll"
+   ],
+   "translation": "The pretzel is _____ and salty.",
+   "optionTranslations": [
+    "warm",
+    "fresh",
+    "sweet",
+    "full"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Die Brezel ist warm und salzig.",
+    "targetWord": "warm",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "glücklich",
+  "sentence": "Sie ist _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "glücklich",
+   "options": [
+    "glücklich",
+    "neu",
+    "warm",
+    "voll"
+   ],
+   "translation": "She is _____.",
+   "optionTranslations": [
+    "happy",
+    "new",
+    "warm",
+    "full"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Sie ist glücklich.",
+    "targetWord": "glücklich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "groß",
+  "sentence": "Der Markt ist _____ und voll.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "groß",
+   "options": [
+    "groß",
+    "warm",
+    "salzig",
+    "süß"
+   ],
+   "translation": "The market is _____ and full.",
+   "optionTranslations": [
+    "big",
+    "warm",
+    "salty",
+    "sweet"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Der Markt ist groß und voll.",
+    "targetWord": "groß",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "voll",
+  "sentence": "Der Markt ist groß und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "voll",
+   "options": [
+    "voll",
+    "neu",
+    "frisch",
+    "rot"
+   ],
+   "translation": "The market is big and _____.",
+   "optionTranslations": [
+    "full",
+    "new",
+    "fresh",
+    "red"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Der Markt ist groß und voll.",
+    "targetWord": "voll",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "riecht",
+  "sentence": "Alles ist frisch und _____ gut.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "riecht",
+   "options": [
+    "riecht",
+    "kauft",
+    "zeigt",
+    "sieht"
+   ],
+   "translation": "Everything is fresh and _____ good.",
+   "optionTranslations": [
+    "smells",
+    "buys",
+    "shows",
+    "sees"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Alles ist frisch und riecht gut.",
+    "targetWord": "riecht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "salzig",
+  "sentence": "Die Brezel ist warm und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "salzig",
+   "options": [
+    "salzig",
+    "süß",
+    "frisch",
+    "rot"
+   ],
+   "translation": "The pretzel is warm and _____.",
+   "optionTranslations": [
+    "salty",
+    "sweet",
+    "fresh",
+    "red"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Die Brezel ist warm und salzig.",
+    "targetWord": "salzig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Erdbeeren",
+  "sentence": "Lena kauft auch _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Erdbeeren",
+   "options": [
+    "Erdbeeren",
+    "Obst",
+    "Brot",
+    "Gemüse"
+   ],
+   "translation": "Lena also buys _____.",
+   "optionTranslations": [
+    "strawberries",
+    "fruit",
+    "bread",
+    "vegetables"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Lena kauft auch Erdbeeren.",
+    "targetWord": "Erdbeeren",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "süß",
+  "sentence": "Sie sind frisch und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "süß",
+   "options": [
+    "süß",
+    "salzig",
+    "warm",
+    "groß"
+   ],
+   "translation": "They are fresh and _____.",
+   "optionTranslations": [
+    "sweet",
+    "salty",
+    "warm",
+    "big"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Sie sind frisch und süß.",
+    "targetWord": "süß",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "rote",
+  "sentence": "Sie zeigt auf _____ Früchte.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rote",
+   "options": [
+    "rote",
+    "frische",
+    "süße",
+    "warme"
+   ],
+   "translation": "She points at _____ fruits.",
+   "optionTranslations": [
+    "red",
+    "fresh",
+    "sweet",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "brezel-am-viktualienmarkt",
+    "storySource": "user",
+    "sentence": "Sie zeigt auf rote Früchte.",
+    "targetWord": "rote",
+    "language": "german"
+   }
+  }
+ }
+]

@@ -1,0 +1,618 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Glockenspiel,Haus,Kreis,Uhr",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Glockenspiel",
+     "answer": "carillon clock",
+     "options": [
+      "carillon clock",
+      "house",
+      "circle",
+      "clock"
+     ]
+    },
+    {
+     "word": "Haus",
+     "answer": "house",
+     "options": [
+      "carillon clock",
+      "house",
+      "circle",
+      "clock"
+     ]
+    },
+    {
+     "word": "Kreis",
+     "answer": "circle",
+     "options": [
+      "carillon clock",
+      "house",
+      "circle",
+      "clock"
+     ]
+    },
+    {
+     "word": "Uhr",
+     "answer": "clock",
+     "options": [
+      "carillon clock",
+      "house",
+      "circle",
+      "clock"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "alt",
+  "sentence": "An einem [[alten]] Haus dreht sich ein Glockenspiel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "old",
+   "options": [
+    "old",
+    "new",
+    "big",
+    "far"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "An einem alten Haus dreht sich ein Glockenspiel.",
+    "targetWord": "alten",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "langsam",
+  "sentence": "Sie bewegen sich [[langsam]] im Kreis.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slowly",
+   "options": [
+    "slowly",
+    "quickly",
+    "loudly",
+    "sadly"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Sie bewegen sich langsam im Kreis.",
+    "targetWord": "langsam",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "seltsam",
+  "sentence": "Die Stadt ist [[seltsam]], aber schön.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "strange",
+   "options": [
+    "strange",
+    "boring",
+    "small",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Die Stadt ist seltsam, aber schön.",
+    "targetWord": "seltsam",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "gehen",
+  "sentence": "Mia und Ben _____ durch die Stadt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gehen",
+   "options": [
+    "gehen",
+    "hören",
+    "fahren",
+    "machen"
+   ],
+   "translation": "Mia and Ben _____ through the city.",
+   "optionTranslations": [
+    "to walk",
+    "to hear",
+    "to drive",
+    "to make"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Mia und Ben gehen durch die Stadt.",
+    "targetWord": "gehen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Stadt",
+  "sentence": "Mia und Ben gehen durch die _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Stadt",
+   "options": [
+    "Stadt",
+    "Uhr",
+    "Figur",
+    "Kreis"
+   ],
+   "translation": "Mia and Ben walk through the _____.",
+   "optionTranslations": [
+    "city",
+    "clock",
+    "figure",
+    "circle"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Mia und Ben gehen durch die Stadt.",
+    "targetWord": "Stadt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "hören",
+  "sentence": "Sie _____ schöne Musik.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hören",
+   "options": [
+    "hören",
+    "gehen",
+    "machen",
+    "fahren"
+   ],
+   "translation": "They _____ nice music.",
+   "optionTranslations": [
+    "to hear",
+    "to go",
+    "to make",
+    "to drive"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Sie hören schöne Musik.",
+    "targetWord": "hören",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "dreht",
+  "sentence": "An einem Haus _____ sich ein Glockenspiel.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dreht",
+   "options": [
+    "dreht",
+    "hört",
+    "geht",
+    "macht"
+   ],
+   "translation": "On a house a carillon clock _____.",
+   "optionTranslations": [
+    "turns",
+    "hears",
+    "goes",
+    "makes"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "An einem Haus dreht sich ein Glockenspiel.",
+    "targetWord": "dreht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Touristen",
+  "sentence": "Viele _____ stehen davor.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Touristen",
+   "options": [
+    "Touristen",
+    "Figuren",
+    "Kinder",
+    "Uhren"
+   ],
+   "translation": "Many _____ stand in front of it.",
+   "optionTranslations": [
+    "tourists",
+    "figures",
+    "children",
+    "clocks"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Viele Touristen stehen davor.",
+    "targetWord": "Touristen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "fahren",
+  "sentence": "Mia und Ben _____ nach Hause.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fahren",
+   "options": [
+    "fahren",
+    "gehen",
+    "hören",
+    "machen"
+   ],
+   "translation": "Mia and Ben _____ home.",
+   "optionTranslations": [
+    "to travel",
+    "to walk",
+    "to hear",
+    "to make"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Mia und Ben fahren nach Hause.",
+    "targetWord": "fahren",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "ganz",
+  "sentence": "Die [[ganze]] Legende, jeden Tag um zwölf.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "whole",
+   "options": [
+    "whole",
+    "small",
+    "old",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Die ganze Legende, jeden Tag um zwölf.",
+    "targetWord": "ganze",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "echt",
+  "sentence": "Ist das wirklich [[echt]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "real",
+   "options": [
+    "real",
+    "fake",
+    "old",
+    "strange"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Ist das wirklich echt?",
+    "targetWord": "echt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Figuren",
+  "sentence": "Kleine _____ erscheinen langsam.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Figuren",
+   "options": [
+    "Figuren",
+    "Touristen",
+    "Kinder",
+    "Uhren"
+   ],
+   "translation": "Small _____ appear slowly.",
+   "optionTranslations": [
+    "figures",
+    "tourists",
+    "children",
+    "clocks"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Kleine Figuren erscheinen langsam.",
+    "targetWord": "Figuren",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "erscheinen",
+  "sentence": "Kleine Figuren _____ langsam.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "erscheinen",
+   "options": [
+    "erscheinen",
+    "bewegen",
+    "machen",
+    "fahren"
+   ],
+   "translation": "Small figures _____ slowly.",
+   "optionTranslations": [
+    "to appear",
+    "to move",
+    "to make",
+    "to drive"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Kleine Figuren erscheinen langsam.",
+    "targetWord": "erscheinen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "bewegen",
+  "sentence": "Sie _____ sich im Kreis.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bewegen",
+   "options": [
+    "bewegen",
+    "erscheinen",
+    "hören",
+    "fragen"
+   ],
+   "translation": "They _____ in a circle.",
+   "optionTranslations": [
+    "to move",
+    "to appear",
+    "to hear",
+    "to ask"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Sie bewegen sich im Kreis.",
+    "targetWord": "bewegen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "machen",
+  "sentence": "Sie klatschen und _____ Fotos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "machen",
+   "options": [
+    "machen",
+    "hören",
+    "gehen",
+    "fahren"
+   ],
+   "translation": "They clap and _____ photos.",
+   "optionTranslations": [
+    "to make",
+    "to hear",
+    "to go",
+    "to drive"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Sie klatschen und machen Fotos.",
+    "targetWord": "machen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Kind",
+  "sentence": "Ein _____ fragt etwas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Kind",
+   "options": [
+    "Kind",
+    "Tourist",
+    "Figur",
+    "Uhr"
+   ],
+   "translation": "A _____ asks something.",
+   "optionTranslations": [
+    "child",
+    "tourist",
+    "figure",
+    "clock"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Ein Kind fragt etwas.",
+    "targetWord": "Kind",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "fragt",
+  "sentence": "Ein Kind _____ etwas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fragt",
+   "options": [
+    "fragt",
+    "macht",
+    "hört",
+    "geht"
+   ],
+   "translation": "A child _____ something.",
+   "optionTranslations": [
+    "asks",
+    "makes",
+    "hears",
+    "goes"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Ein Kind fragt etwas.",
+    "targetWord": "fragt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "lächelt",
+  "sentence": "Mia _____ freundlich.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lächelt",
+   "options": [
+    "lächelt",
+    "fragt",
+    "hört",
+    "macht"
+   ],
+   "translation": "Mia _____ warmly.",
+   "optionTranslations": [
+    "smiles",
+    "asks",
+    "hears",
+    "makes"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Mia lächelt freundlich.",
+    "targetWord": "lächelt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "vergesse",
+  "sentence": "Ich _____ Hameln nie.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vergesse",
+   "options": [
+    "vergesse",
+    "höre",
+    "mache",
+    "frage"
+   ],
+   "translation": "I never _____ Hameln.",
+   "optionTranslations": [
+    "forget",
+    "hear",
+    "make",
+    "ask"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Ich vergesse Hameln nie.",
+    "targetWord": "vergesse",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "denkt",
+  "sentence": "Sie _____ an die kleine Stadt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "denkt",
+   "options": [
+    "denkt",
+    "fährt",
+    "hört",
+    "macht"
+   ],
+   "translation": "She _____ of the little town.",
+   "optionTranslations": [
+    "thinks",
+    "drives",
+    "hears",
+    "makes"
+   ],
+   "audioClip": {
+    "storySlug": "das-glockenspiel",
+    "storySource": "user",
+    "sentence": "Sie denkt an die kleine Stadt.",
+    "targetWord": "denkt",
+    "language": "german"
+   }
+  }
+ }
+]

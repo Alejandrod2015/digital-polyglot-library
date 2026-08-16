@@ -1,0 +1,610 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "caminar",
+    "sentence": "Ella [[camina]] en la arena con calma.",
+    "payload": {
+      "answer": "to walk",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to walk",
+        "to run",
+        "to jump",
+        "to swim"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella camina en la arena con calma.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "camina",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9ddaeb81a2ce74b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amigo",
+    "sentence": "Camina por la playa con su [[amigo]].",
+    "payload": {
+      "answer": "a friend",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a friend",
+        "a brother",
+        "a neighbor",
+        "a teacher"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Camina por la playa con su amigo.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "amigo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/41e6724c3772bf8a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agua",
+    "sentence": "Él lleva el [[agua]] y la comida.",
+    "payload": {
+      "answer": "water",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "water",
+        "milk",
+        "juice",
+        "ice"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él lleva el agua y la comida.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "agua",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b0e7686cf6e92ecc.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fruta",
+    "sentence": "Los amigos comen la [[fruta]] en la arena.",
+    "payload": {
+      "answer": "fruit",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "fruit",
+        "bread",
+        "meat",
+        "candy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los amigos comen la fruta en la arena.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "fruta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f6d3222f5fe89bb.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tranquilo",
+    "sentence": "El mar está muy [[tranquilo]] hoy.",
+    "payload": {
+      "answer": "calm",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "calm",
+        "cold",
+        "empty",
+        "clean"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El mar está muy tranquilo hoy.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "tranquilo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/63279a248437d4c0.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "miedo",
+    "sentence": "Ella tiene un poco de [[miedo]] del frío.",
+    "payload": {
+      "answer": "fear",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "fear",
+        "hunger",
+        "sleep",
+        "pain"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella tiene un poco de miedo del frío.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "miedo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/efc86203bb7fdac7.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "sentence": "Ella mira el mar y [[sonríe]].",
+    "payload": {
+      "answer": "to smile",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to smile",
+        "to cry",
+        "to shout",
+        "to yawn"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira el mar y sonríe.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "sonríe",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9f4c0ec3190720a5.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ola",
+    "sentence": "Una [[ola]] pequeña llega al mar.",
+    "payload": {
+      "answer": "a wave",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a wave",
+        "a rock",
+        "a boat",
+        "a fish"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Una ola pequeña llega al mar.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "ola",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d1c96ed395d016d6.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "sube",
+    "sentence": "Por la mañana el sol _____ en el cielo.",
+    "payload": {
+      "answer": "sube",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "sube",
+        "baja",
+        "cae",
+        "para"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Por la mañana el sol sube en el cielo.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "sube",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c986ada1cd1f920d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "In the morning the sun _____ in the sky.",
+      "optionTranslations": [
+        "rises",
+        "goes down",
+        "falls",
+        "stops"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "nada",
+    "sentence": "Ella _____ en el mar con calma.",
+    "payload": {
+      "answer": "nada",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "nada",
+        "corre",
+        "salta",
+        "duerme"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella nada en el mar con calma.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "nada",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bcab1b44c794591b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She _____ in the sea calmly.",
+      "optionTranslations": [
+        "swims",
+        "runs",
+        "jumps",
+        "sleeps"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "toalla",
+    "sentence": "Ella lleva una [[toalla]] azul.",
+    "payload": {
+      "answer": "a towel",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a towel",
+        "a blanket",
+        "a shirt",
+        "a sheet"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella lleva una toalla azul.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "toalla",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81d1d20d1ec32005.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llamar",
+    "sentence": "Él salta al agua y [[llama]] a su amiga.",
+    "payload": {
+      "answer": "to call",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to call",
+        "to greet",
+        "to answer",
+        "to follow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él salta al agua y llama a su amiga.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "llama",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/123a7c0686c61465.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "orilla",
+    "sentence": "Los amigos nadan cerca de la [[orilla]].",
+    "payload": {
+      "answer": "the shore",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the shore",
+        "the bottom",
+        "the corner",
+        "the sand"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los amigos nadan cerca de la orilla.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "orilla",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e1c34b03a906c0e5.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "concha",
+    "sentence": "Él busca una [[concha]] blanca en el mar.",
+    "payload": {
+      "answer": "a seashell",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a seashell",
+        "a stone",
+        "a fish",
+        "a bone"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él busca una concha blanca en el mar.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "concha",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34ea13a61cc7a777.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "caliente",
+    "sentence": "No toques la sopa, está muy _____.",
+    "payload": {
+      "answer": "caliente",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "caliente",
+        "fría",
+        "dura",
+        "rica"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "No toques la sopa, está muy caliente.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "caliente",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a2c75d145669a921.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Do not touch the soup, it is very _____.",
+      "optionTranslations": [
+        "hot",
+        "cold",
+        "hard",
+        "tasty"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "despacio",
+    "sentence": "El carro va _____, no rápido.",
+    "payload": {
+      "answer": "despacio",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "despacio",
+        "rápido",
+        "lejos",
+        "temprano"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El carro va despacio, no rápido.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "despacio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8c4923992ed07224.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The car goes _____, not fast.",
+      "optionTranslations": [
+        "slowly",
+        "fast",
+        "far",
+        "early"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "salta",
+    "sentence": "El gato _____ muy alto.",
+    "payload": {
+      "answer": "salta",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "salta",
+        "come",
+        "duerme",
+        "mira"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El gato salta muy alto.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "salta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7cb2753a050db61.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The cat _____ very high.",
+      "optionTranslations": [
+        "jumps",
+        "eats",
+        "sleeps",
+        "looks"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "moja",
+    "sentence": "La lluvia _____ toda la ropa.",
+    "payload": {
+      "answer": "moja",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "moja",
+        "seca",
+        "rompe",
+        "limpia"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La lluvia moja toda la ropa.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "moja",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8a7a5726a8972573.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The rain _____ all the clothes.",
+      "optionTranslations": [
+        "wets",
+        "dries",
+        "breaks",
+        "cleans"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "toca",
+    "sentence": "Ella _____ la mesa con la mano.",
+    "payload": {
+      "answer": "toca",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "toca",
+        "mira",
+        "lava",
+        "rompe"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella toca la mesa con la mano.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "toca",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/54ea311f814f866e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She _____ the table with her hand.",
+      "optionTranslations": [
+        "touches",
+        "looks at",
+        "washes",
+        "breaks"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "entra",
+    "sentence": "Abre la puerta y _____ en la casa.",
+    "payload": {
+      "answer": "entra",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "entra",
+        "sale",
+        "sube",
+        "corre"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Abre la puerta y entra en la casa.",
+        "storySlug": "la-barceloneta-despierta",
+        "targetWord": "entra",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/187da82d203b7c80.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She opens the door and _____ the house.",
+      "optionTranslations": [
+        "enters",
+        "leaves",
+        "goes up",
+        "runs"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "sol,playa,arena,mar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "sol",
+          "answer": "the sun",
+          "options": [
+            "the sun",
+            "the beach",
+            "the sand",
+            "the sea"
+          ]
+        },
+        {
+          "word": "playa",
+          "answer": "the beach",
+          "options": [
+            "the sun",
+            "the beach",
+            "the sand",
+            "the sea"
+          ]
+        },
+        {
+          "word": "arena",
+          "answer": "the sand",
+          "options": [
+            "the sun",
+            "the beach",
+            "the sand",
+            "the sea"
+          ]
+        },
+        {
+          "word": "mar",
+          "answer": "the sea",
+          "options": [
+            "the sun",
+            "the beach",
+            "the sand",
+            "the sea"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

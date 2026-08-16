@@ -1,0 +1,458 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "asu",
+    "sentence": "\"[[Asu]], habla causa, ¿todo piña?\"",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wow, whoa",
+      "options": [
+        "wow, whoa",
+        "yes, sure",
+        "too bad",
+        "not yet"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "\"Asu, habla causa, ¿todo piña?\"",
+        "targetWord": "Asu",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3182d0164c5a58d4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "habla causa",
+    "sentence": "Diego lo saludó con un \"[[habla causa]]\".",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hey buddy",
+      "options": [
+        "hey buddy",
+        "goodbye friend",
+        "thank you",
+        "sorry mate"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "Diego lo saludó con un \"habla causa\".",
+        "targetWord": "habla causa",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2c48543242022750.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "piña",
+    "sentence": "¿Todo [[piña]] o qué?, le preguntó.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bad luck, going wrong",
+      "options": [
+        "bad luck, going wrong",
+        "great luck, going well",
+        "calm and quiet",
+        "loud and busy"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "¿Todo piña o qué?, le preguntó.",
+        "targetWord": "piña",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/044355f502e3d496.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cachear",
+    "sentence": "Pilar no lograba [[cachear]] ni la mitad.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "understand and catch on",
+      "options": [
+        "understand and catch on",
+        "hear the noise",
+        "see the street",
+        "reach the bus"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "Pilar no lograba cachear ni la mitad.",
+        "targetWord": "cachear",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a7353a057d6451f0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al toque",
+    "sentence": "Beto se sumó [[al toque]] con más jerga.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right away",
+      "options": [
+        "right away",
+        "by mistake",
+        "little by little",
+        "one last time"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "Beto se sumó al toque con más jerga.",
+        "targetWord": "al toque",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b35770126076e21e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paltearse",
+    "sentence": "No te [[paltees]] por la firme, le dijo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "get flustered",
+      "options": [
+        "get flustered",
+        "get excited",
+        "get sleepy",
+        "get angry"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "No te paltees por la firme, le dijo.",
+        "targetWord": "paltees",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/47e8fb3fcf477c54.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "roche",
+    "sentence": "Cada palabra la hundía más en el [[roche]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "embarrassment",
+      "options": [
+        "embarrassment",
+        "excitement",
+        "boredom",
+        "comfort"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "Cada palabra la hundía más en el roche.",
+        "targetWord": "roche",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c19912cdf30ac28a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lorna",
+    "sentence": "Diego notó su cara de [[lorna]] perdida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clueless fool",
+      "options": [
+        "clueless fool",
+        "smug show off",
+        "calm expert",
+        "angry rival"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "Diego notó su cara de lorna perdida.",
+        "targetWord": "lorna",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3722b18af942431e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "monse",
+    "sentence": "Se sentía la más [[monse]] del paradero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dull and clueless",
+      "options": [
+        "dull and clueless",
+        "sharp and quick",
+        "proud and smug",
+        "calm and cool"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "Se sentía la más monse del paradero.",
+        "targetWord": "monse",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6a11325e9648e119.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prenderse el foco",
+    "sentence": "De pronto [[se le prendió el foco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bright idea struck",
+      "options": [
+        "a bright idea struck",
+        "her mind went blank",
+        "she lost all hope",
+        "she fell asleep"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "De pronto se le prendió el foco.",
+        "targetWord": "se le prendió el foco",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d4b2216c72c25adb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chibola",
+    "sentence": "La [[chibola]] les ganó en su propio juego.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the young girl",
+      "options": [
+        "the young girl",
+        "the old man",
+        "the tough boss",
+        "the total stranger"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "La chibola les ganó en su propio juego.",
+        "targetWord": "chibola",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3cc411920d151086.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "germa",
+    "sentence": "\"Esta [[germa]] es una mostra\", soltó Beto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "girl, young woman",
+      "options": [
+        "girl, young woman",
+        "old grandma",
+        "little boy",
+        "big man"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "\"Esta germa es una mostra\", soltó Beto.",
+        "targetWord": "germa",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0747b415738c1e1f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "yunta",
+    "sentence": "La mejor forma de entrar a una [[yunta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tight crew of friends",
+      "options": [
+        "a tight crew of friends",
+        "a paid contract",
+        "a single stranger",
+        "a strict teacher"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "La mejor forma de entrar a una yunta.",
+        "targetWord": "yunta",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/70feee74b7cea7a6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cachado",
+    "sentence": "Había [[cachado]] que la jerga voltea las palabras.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "figured out and grasped",
+      "options": [
+        "figured out and grasped",
+        "completely forgotten",
+        "stubbornly ignored",
+        "wildly invented"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "Había cachado que la jerga voltea las palabras.",
+        "targetWord": "cachado",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/01346813e79e8072.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "por la firme",
+    "sentence": "No te paltees _____, es floro nomás.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "por la firme",
+      "options": [
+        "por la firme",
+        "de casualidad",
+        "de milagro",
+        "de paso"
+      ],
+      "translation": "Do not get flustered, it is just banter, _____.",
+      "optionTranslations": [
+        "for real",
+        "by chance",
+        "by miracle",
+        "in passing"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "No te paltees por la firme, es floro nomás.",
+        "targetWord": "por la firme",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/080f8c9e6791e7b0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mostro",
+    "sentence": "La devolvió con un truco tan _____ que aplaudieron.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mostro",
+      "options": [
+        "mostro",
+        "aburrido",
+        "lento",
+        "feo"
+      ],
+      "translation": "She came back with such a _____ trick they applauded.",
+      "optionTranslations": [
+        "awesome",
+        "boring",
+        "slow",
+        "ugly"
+      ],
+      "audioClip": {
+        "storySlug": "pilar-no-entiende-nada",
+        "storySource": "user",
+        "sentence": "La devolvió con un truco tan mostro que aplaudieron.",
+        "targetWord": "mostro",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/55116f1cf7737821.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "combi,paradero,pata,floro",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "combi",
+          "answer": "a Lima minibus",
+          "options": [
+            "a Lima minibus",
+            "a bus stop",
+            "a friend, a buddy",
+            "smooth talk, nonsense"
+          ]
+        },
+        {
+          "word": "paradero",
+          "answer": "a bus stop",
+          "options": [
+            "a Lima minibus",
+            "a bus stop",
+            "a friend, a buddy",
+            "smooth talk, nonsense"
+          ]
+        },
+        {
+          "word": "pata",
+          "answer": "a friend, a buddy",
+          "options": [
+            "a Lima minibus",
+            "a bus stop",
+            "a friend, a buddy",
+            "smooth talk, nonsense"
+          ]
+        },
+        {
+          "word": "floro",
+          "answer": "smooth talk, nonsense",
+          "options": [
+            "a Lima minibus",
+            "a bus stop",
+            "a friend, a buddy",
+            "smooth talk, nonsense"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

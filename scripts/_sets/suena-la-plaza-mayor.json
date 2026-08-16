@@ -1,0 +1,621 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "llegar",
+    "sentence": "Las amigas [[llegan]] por la tarde.",
+    "payload": {
+      "answer": "to arrive",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to arrive",
+        "to leave",
+        "to pay",
+        "to sing"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las amigas llegan por la tarde.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "llegan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/24c1b976ae494333.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonar",
+    "sentence": "Una guitarra [[suena]] en la plaza.",
+    "payload": {
+      "answer": "to sound",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to sound",
+        "to break",
+        "to fall",
+        "to shine"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Una guitarra suena en la plaza.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "suena",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/643e0001563638cc.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hombre",
+    "sentence": "Un [[hombre]] toca música con la guitarra.",
+    "payload": {
+      "answer": "a man",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a man",
+        "a woman",
+        "a friend",
+        "a neighbor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Un hombre toca música con la guitarra.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "hombre",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64462fe18488667c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mover",
+    "sentence": "Ella sonríe y [[mueve]] los pies.",
+    "payload": {
+      "answer": "to move",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to move",
+        "to wash",
+        "to hide",
+        "to count"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella sonríe y mueve los pies.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "mueve",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/897857d44626246c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alegre",
+    "sentence": "Un hombre toca música [[alegre]].",
+    "payload": {
+      "answer": "cheerful",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "cheerful",
+        "sad",
+        "slow",
+        "quiet"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Un hombre toca música alegre.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "alegre",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1873256cb71f435d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aplaudir",
+    "sentence": "La gente baila y [[aplaude]].",
+    "payload": {
+      "answer": "to clap",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to clap",
+        "to shout",
+        "to jump",
+        "to sing"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La gente baila y aplaude.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "aplaude",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/715bacdb3d718116.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cielo",
+    "sentence": "El [[cielo]] se pone naranja sobre la plaza.",
+    "payload": {
+      "answer": "the sky",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the sky",
+        "the sea",
+        "the sun",
+        "the moon"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El cielo se pone naranja sobre la plaza.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "cielo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8ca3f2dcc60af80.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bar",
+    "sentence": "Los amigos comen en un [[bar]].",
+    "payload": {
+      "answer": "a bar",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a bar",
+        "a park",
+        "a train",
+        "a shop"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los amigos comen en un bar.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "bar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c7e51123336d206.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "compra",
+    "sentence": "En la tienda, ella _____ pan y leche.",
+    "payload": {
+      "answer": "compra",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "compra",
+        "rompe",
+        "lava",
+        "pierde"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la tienda, ella compra pan y leche.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "compra",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85c571ef9e4dad21.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "At the shop, she _____ bread and milk.",
+      "optionTranslations": [
+        "buys",
+        "breaks",
+        "washes",
+        "loses"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "comen",
+    "sentence": "Con mucha hambre, los amigos _____ rápido.",
+    "payload": {
+      "answer": "comen",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "comen",
+        "duermen",
+        "cantan",
+        "caminan"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Con mucha hambre, los amigos comen rápido.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "comen",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b38636ef6671252d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Very hungry, the friends _____ quickly.",
+      "optionTranslations": [
+        "eat",
+        "sleep",
+        "sing",
+        "walk"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tarde",
+    "sentence": "Llegan a la plaza por la [[tarde]].",
+    "payload": {
+      "answer": "afternoon",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "afternoon",
+        "morning",
+        "night",
+        "week"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Llegan a la plaza por la tarde.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "tarde",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb56879960356a07.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "regalo",
+    "sentence": "Ella busca un [[regalo]] para su amiga.",
+    "payload": {
+      "answer": "a gift",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a gift",
+        "a photo",
+        "a letter",
+        "a game"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella busca un regalo para su amiga.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "regalo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7fd6c58029ed6f4e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "madre",
+    "sentence": "Manda una foto a su [[madre]].",
+    "payload": {
+      "answer": "a mother",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a mother",
+        "a sister",
+        "a daughter",
+        "a neighbor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Manda una foto a su madre.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "madre",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e369a5a62388092e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bonito",
+    "sentence": "Encuentra un abanico rojo muy [[bonito]].",
+    "payload": {
+      "answer": "pretty",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "pretty",
+        "ugly",
+        "dirty",
+        "broken"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Encuentra un abanico rojo muy bonito.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "bonito",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7fa025d949c6d6e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "postal",
+    "sentence": "Él compra [[postales]] de la ciudad.",
+    "payload": {
+      "answer": "a postcard",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a postcard",
+        "a ticket",
+        "a map",
+        "a book"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él compra postales de la ciudad.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "postales",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c7f504866827a32.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guardar",
+    "sentence": "Ella [[guarda]] el abanico en su bolso.",
+    "payload": {
+      "answer": "to put away",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to put away",
+        "to take out",
+        "to lose",
+        "to show"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella guarda el abanico en su bolso.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "guarda",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c46df071a3067506.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "naranja",
+    "sentence": "El cielo se pone [[naranja]] al final del día.",
+    "payload": {
+      "answer": "orange",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "orange",
+        "green",
+        "purple",
+        "grey"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El cielo se pone naranja al final del día.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "naranja",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9ddd7a0f3620274d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "paga",
+    "sentence": "Antes de salir, ella _____ la cuenta.",
+    "payload": {
+      "answer": "paga",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "paga",
+        "rompe",
+        "mira",
+        "abre"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Antes de salir, ella paga la cuenta.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "paga",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1fd9bd63979413a6.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Before leaving, she _____ the bill.",
+      "optionTranslations": [
+        "pays",
+        "breaks",
+        "looks at",
+        "opens"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "baila",
+    "sentence": "Cuando hay música, ella _____ toda la noche.",
+    "payload": {
+      "answer": "baila",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "baila",
+        "duerme",
+        "lee",
+        "cocina"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cuando hay música, ella baila toda la noche.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "baila",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/212c7a37fb0e6def.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "When there is music, she _____ all night.",
+      "optionTranslations": [
+        "dances",
+        "sleeps",
+        "reads",
+        "cooks"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "busca",
+    "sentence": "Ella no encuentra las llaves y las _____.",
+    "payload": {
+      "answer": "busca",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "busca",
+        "come",
+        "canta",
+        "lava"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella no encuentra las llaves y las busca.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "busca",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d0da9e1034e3f5a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She can't find the keys and _____ for them.",
+      "optionTranslations": [
+        "looks",
+        "eats",
+        "sings",
+        "washes"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "turistas",
+    "sentence": "Muchos _____ visitan la ciudad con cámaras.",
+    "payload": {
+      "answer": "turistas",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "turistas",
+        "cocineros",
+        "médicos",
+        "vecinos"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Muchos turistas visitan la ciudad con cámaras.",
+        "storySlug": "suena-la-plaza-mayor",
+        "targetWord": "turistas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0c78ea390ec3a344.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Many _____ visit the city with cameras.",
+      "optionTranslations": [
+        "tourists",
+        "cooks",
+        "doctors",
+        "neighbors"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "estatua,abanico,bolso,corazón",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "estatua",
+          "answer": "a statue",
+          "options": [
+            "a statue",
+            "a fan",
+            "a bag",
+            "a heart"
+          ]
+        },
+        {
+          "word": "abanico",
+          "answer": "a fan",
+          "options": [
+            "a statue",
+            "a fan",
+            "a bag",
+            "a heart"
+          ]
+        },
+        {
+          "word": "bolso",
+          "answer": "a bag",
+          "options": [
+            "a statue",
+            "a fan",
+            "a bag",
+            "a heart"
+          ]
+        },
+        {
+          "word": "corazón",
+          "answer": "a heart",
+          "options": [
+            "a statue",
+            "a fan",
+            "a bag",
+            "a heart"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

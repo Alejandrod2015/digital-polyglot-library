@@ -1,0 +1,635 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "mercado",
+    "sentence": "Ella camina por el [[mercado]] con calma.",
+    "payload": {
+      "answer": "a market",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a market",
+        "a school",
+        "a park",
+        "a farm"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella camina por el mercado con calma.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "mercado",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/858fc42815cf0e37.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "probar",
+    "sentence": "Ella [[prueba]] la fruta dulce.",
+    "payload": {
+      "answer": "to taste",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to taste",
+        "to cook",
+        "to sell",
+        "to wash"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella prueba la fruta dulce.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "prueba",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b305beb0975456d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pan",
+    "sentence": "Hay [[pan]] fresco en la parada.",
+    "payload": {
+      "answer": "bread",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "bread",
+        "cheese",
+        "meat",
+        "rice"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hay pan fresco en la parada.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "pan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0474951194950a0.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "color",
+    "sentence": "Hay fruta de muchos [[colores]].",
+    "payload": {
+      "answer": "a color",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a color",
+        "a shape",
+        "a size",
+        "a smell"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hay fruta de muchos colores.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "colores",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ed536da7ae4ef2f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "señora",
+    "sentence": "Una [[señora]] vende fresas rojas.",
+    "payload": {
+      "answer": "a lady",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a lady",
+        "a girl",
+        "a daughter",
+        "a nurse"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Una señora vende fresas rojas.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "señora",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c29ee79ebad3396b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "mira",
+    "sentence": "Ella _____ la tele por la noche.",
+    "payload": {
+      "answer": "mira",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "mira",
+        "come",
+        "lava",
+        "abre"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira la tele por la noche.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "mira",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dd8a3f472f5d2386.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She _____ TV at night.",
+      "optionTranslations": [
+        "watches",
+        "eats",
+        "washes",
+        "opens"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "huele",
+    "sentence": "La comida _____ muy bien en la cocina.",
+    "payload": {
+      "answer": "huele",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "huele",
+        "suena",
+        "corre",
+        "cae"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La comida huele muy bien en la cocina.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "huele",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1129f932921d455e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The food _____ very good in the kitchen.",
+      "optionTranslations": [
+        "smells",
+        "sounds",
+        "runs",
+        "falls"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "compra",
+    "sentence": "Ella _____ pan con su dinero.",
+    "payload": {
+      "answer": "compra",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "compra",
+        "guarda",
+        "tira",
+        "lava"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella compra pan con su dinero.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "compra",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8752dc4399994277.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She _____ bread with her money.",
+      "optionTranslations": [
+        "buys",
+        "keeps",
+        "throws away",
+        "washes"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "vende",
+    "sentence": "El señor _____ fruta y gana dinero.",
+    "payload": {
+      "answer": "vende",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "vende",
+        "compra",
+        "come",
+        "corta"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El señor vende fruta y gana dinero.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "vende",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/423d68bc64df594c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The man _____ fruit and earns money.",
+      "optionTranslations": [
+        "sells",
+        "buys",
+        "eats",
+        "cuts"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "dulce",
+    "sentence": "El azúcar es muy _____.",
+    "payload": {
+      "answer": "dulce",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "dulce",
+        "amargo",
+        "salado",
+        "duro"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El azúcar es muy dulce.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "dulce",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c1512b07109bd0ce.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Sugar is very _____.",
+      "optionTranslations": [
+        "sweet",
+        "bitter",
+        "salty",
+        "hard"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bolsa",
+    "sentence": "Él llena una [[bolsa]] de naranjas.",
+    "payload": {
+      "answer": "a bag",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a bag",
+        "a box",
+        "a plate",
+        "a cup"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él llena una bolsa de naranjas.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "bolsa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb0a762a5bccee7a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parada",
+    "sentence": "Ella mira las [[paradas]] del mercado.",
+    "payload": {
+      "answer": "a market stall",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a market stall",
+        "a garden",
+        "a street",
+        "a window"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira las paradas del mercado.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "paradas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a3b494cac6a1057.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trozo",
+    "sentence": "Él corta un [[trozo]] de pan.",
+    "payload": {
+      "answer": "a piece",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a piece",
+        "a bag",
+        "a box",
+        "a plate"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él corta un trozo de pan.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "trozo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d344937d6232bf7e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sabor",
+    "sentence": "El [[sabor]] es nuevo para ella.",
+    "payload": {
+      "answer": "the taste",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the taste",
+        "the smell",
+        "the color",
+        "the price"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El sabor es nuevo para ella.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "sabor",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/923d43ec0d205405.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "flor",
+    "sentence": "Ella mira las [[flores]] bonitas.",
+    "payload": {
+      "answer": "a flower",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a flower",
+        "a leaf",
+        "a tree",
+        "a fruit"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira las flores bonitas.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "flores",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee6ef7444d6c2adf.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hombre",
+    "sentence": "Un [[hombre]] vende flores de colores.",
+    "payload": {
+      "answer": "a man",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a man",
+        "a boy",
+        "a king",
+        "a friend"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Un hombre vende flores de colores.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "hombre",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/39f76d19fa5fae77.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pescado",
+    "sentence": "El señor vende [[pescado]] y queso.",
+    "payload": {
+      "answer": "fish",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "fish",
+        "meat",
+        "bread",
+        "cheese"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El señor vende pescado y queso.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "pescado",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6fe6065679553df1.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "llena",
+    "sentence": "Ella _____ el vaso de agua.",
+    "payload": {
+      "answer": "llena",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "llena",
+        "vacía",
+        "rompe",
+        "lava"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella llena el vaso de agua.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "llena",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fc023794dec1fb24.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She _____ the glass with water.",
+      "optionTranslations": [
+        "fills",
+        "empties",
+        "breaks",
+        "washes"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "corta",
+    "sentence": "Con el cuchillo ella _____ el pan.",
+    "payload": {
+      "answer": "corta",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "corta",
+        "bebe",
+        "mira",
+        "abre"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Con el cuchillo ella corta el pan.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "corta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f0ca3d6e613e3b5c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "With the knife she _____ the bread.",
+      "optionTranslations": [
+        "cuts",
+        "drinks",
+        "looks at",
+        "opens"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "paga",
+    "sentence": "En la caja ella _____ con dinero.",
+    "payload": {
+      "answer": "paga",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "paga",
+        "corre",
+        "duerme",
+        "canta"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la caja ella paga con dinero.",
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "targetWord": "paga",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8094e5b7100a690.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "At the register she _____ with money.",
+      "optionTranslations": [
+        "pays",
+        "runs",
+        "sleeps",
+        "sings"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "naranja,fresa,jamón,queso",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "naranja",
+          "answer": "an orange",
+          "options": [
+            "an orange",
+            "a strawberry",
+            "ham",
+            "cheese"
+          ]
+        },
+        {
+          "word": "fresa",
+          "answer": "a strawberry",
+          "options": [
+            "an orange",
+            "a strawberry",
+            "ham",
+            "cheese"
+          ]
+        },
+        {
+          "word": "jamón",
+          "answer": "ham",
+          "options": [
+            "an orange",
+            "a strawberry",
+            "ham",
+            "cheese"
+          ]
+        },
+        {
+          "word": "queso",
+          "answer": "cheese",
+          "options": [
+            "an orange",
+            "a strawberry",
+            "ham",
+            "cheese"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fresas",
+    "sentence": "La señora vende [[fresas]] rojas y dulces.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strawberries",
+      "options": [
+        "strawberries",
+        "potatoes",
+        "onions",
+        "lemons"
+      ],
+      "audioClip": {
+        "storySlug": "la-boqueria-huele-a-fruta",
+        "storySource": "user",
+        "sentence": "La señora vende fresas rojas y dulces.",
+        "targetWord": "fresas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a28b71322e275ea5.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

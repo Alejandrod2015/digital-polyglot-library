@@ -1,0 +1,463 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "cara,silencio,risas,palmas",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "cara",
+     "answer": "a face",
+     "options": [
+      "a face",
+      "silence",
+      "laughter",
+      "hand claps"
+     ]
+    },
+    {
+     "word": "silencio",
+     "answer": "silence",
+     "options": [
+      "a face",
+      "silence",
+      "laughter",
+      "hand claps"
+     ]
+    },
+    {
+     "word": "risas",
+     "answer": "laughter",
+     "options": [
+      "a face",
+      "silence",
+      "laughter",
+      "hand claps"
+     ]
+    },
+    {
+     "word": "palmas",
+     "answer": "hand claps",
+     "options": [
+      "a face",
+      "silence",
+      "laughter",
+      "hand claps"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "equivocado",
+  "sentence": "Rocío dice que se han [[equivocado]] de caseta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mistaken",
+   "options": [
+    "mistaken",
+    "delayed",
+    "invited",
+    "surprised"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "Rocío dice que se han equivocado de caseta.",
+    "targetWord": "equivocado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "perdido",
+  "sentence": "Curro dice que llevaban media hora [[perdidos]] por la Feria.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lost",
+   "options": [
+    "lost",
+    "tired",
+    "hungry",
+    "bored"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "Curro dice que llevaban media hora perdidos por la Feria.",
+    "targetWord": "perdidos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "retraso",
+  "sentence": "El sobrino pide perdón por el [[retraso]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the delay",
+   "options": [
+    "the delay",
+    "the noise",
+    "the mess",
+    "the mistake"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "El sobrino pide perdón por el retraso.",
+    "targetWord": "retraso",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "redondo",
+  "sentence": "Curro dice que ha sido una noche [[redonda]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "perfect",
+   "options": [
+    "perfect",
+    "strange",
+    "quiet",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "Curro dice que ha sido una noche redonda.",
+    "targetWord": "redonda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abrazar",
+  "sentence": "El chico entra por la puerta y [[abraza]] a Reme.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hug",
+   "options": [
+    "to hug",
+    "to call",
+    "to push",
+    "to follow"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "El chico entra por la puerta y abraza a Reme.",
+    "targetWord": "abraza",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sentir",
+  "sentence": "Rocío dice que lo [[sentimos]] muchísimo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be sorry",
+   "options": [
+    "to be sorry",
+    "to understand",
+    "to remember",
+    "to agree"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "Rocío dice que lo sentimos muchísimo.",
+    "targetWord": "sentimos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reír",
+  "sentence": "Reme los mira y se echa a [[reír]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to laugh",
+   "options": [
+    "to laugh",
+    "to shout",
+    "to cry",
+    "to whisper"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "Reme los mira y se echa a reír.",
+    "targetWord": "reír",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "amigo",
+  "sentence": "Rocío dice que han hecho [[amigos]] en la caseta de al lado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a friend",
+   "options": [
+    "a friend",
+    "a guest",
+    "a relative",
+    "a customer"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "Rocío dice que han hecho amigos en la caseta de al lado.",
+    "targetWord": "amigos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "aparcar",
+  "sentence": "No encuentro sitio para _____ el coche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aparcar",
+   "options": [
+    "aparcar",
+    "lavar",
+    "vender",
+    "abrir"
+   ],
+   "translation": "I cannot find a space to _____ the car.",
+   "optionTranslations": [
+    "park",
+    "wash",
+    "sell",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "No encuentro sitio para aparcar el coche.",
+    "targetWord": "aparcar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "padre",
+  "featured": false,
+  "sentence": "Más tarde encuentran la caseta de los [[padres]] de Rocío.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a parent",
+   "options": [
+    "a parent",
+    "a teacher",
+    "a neighbour",
+    "a boss"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "Más tarde encuentran la caseta de los padres de Rocío.",
+    "targetWord": "padres",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "papá",
+  "featured": false,
+  "sentence": "Rocío llega y llama a su [[papá]] desde la puerta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dad",
+   "options": [
+    "dad",
+    "uncle",
+    "grandad",
+    "godfather"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "Rocío llega y llama a su papá desde la puerta.",
+    "targetWord": "papá",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "encuentran",
+  "featured": false,
+  "sentence": "Más tarde [[encuentran]] la caseta que buscaban.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to find",
+   "options": [
+    "to find",
+    "to build",
+    "to paint",
+    "to rent"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "Más tarde encuentran la caseta que buscaban.",
+    "targetWord": "encuentran",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salir",
+  "featured": false,
+  "sentence": "El sobrino dice que así [[sale]] mejor la sevillana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to turn out",
+   "options": [
+    "to turn out",
+    "to begin",
+    "to finish",
+    "to sound"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "El sobrino dice que así sale mejor la sevillana.",
+    "targetWord": "sale",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seamos",
+  "featured": false,
+  "sentence": "El sobrino dice que cuantos más [[seamos]], mejor.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be",
+   "options": [
+    "to be",
+    "to arrive",
+    "to sing",
+    "to wait"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "El sobrino dice que cuantos más seamos, mejor.",
+    "targetWord": "seamos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "justo",
+  "featured": false,
+  "sentence": "Llegué _____ cuando salía el tren.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "justo",
+   "options": [
+    "justo",
+    "casi",
+    "nunca",
+    "quizás"
+   ],
+   "translation": "I arrived _____ as the train was leaving.",
+   "optionTranslations": [
+    "exactly then",
+    "almost",
+    "never",
+    "maybe"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "Llegué justo cuando salía el tren.",
+    "targetWord": "justo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "entra",
+  "featured": false,
+  "sentence": "Mi hermana _____ en casa y deja las llaves.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "entra",
+   "options": [
+    "entra",
+    "sube",
+    "corre",
+    "duerme"
+   ],
+   "translation": "My sister _____ the house and leaves the keys.",
+   "optionTranslations": [
+    "comes into",
+    "goes up",
+    "runs",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "Mi hermana entra en casa y deja las llaves.",
+    "targetWord": "entra",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "corto",
+  "featured": false,
+  "sentence": "El silencio fue muy _____, solo unos segundos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "corto",
+   "options": [
+    "corto",
+    "largo",
+    "alto",
+    "caro"
+   ],
+   "translation": "The silence was very _____, only a few seconds.",
+   "optionTranslations": [
+    "short",
+    "long",
+    "loud",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "una-caseta-mas-o-menos",
+    "storySource": "user",
+    "sentence": "El silencio fue muy corto, solo unos segundos.",
+    "targetWord": "corto",
+    "language": "spanish"
+   }
+  }
+ }
+]

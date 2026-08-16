@@ -1,0 +1,466 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "fita,pulso,nó,terceiro",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "fita",
+          "answer": "a ribbon",
+          "options": [
+            "a ribbon",
+            "a wrist",
+            "a knot",
+            "third"
+          ]
+        },
+        {
+          "word": "pulso",
+          "answer": "a wrist",
+          "options": [
+            "a ribbon",
+            "a wrist",
+            "a knot",
+            "third"
+          ]
+        },
+        {
+          "word": "nó",
+          "answer": "a knot",
+          "options": [
+            "a ribbon",
+            "a wrist",
+            "a knot",
+            "third"
+          ]
+        },
+        {
+          "word": "terceiro",
+          "answer": "third",
+          "options": [
+            "a ribbon",
+            "a wrist",
+            "a knot",
+            "third"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "regra",
+    "sentence": "A mulher explica a [[regra]] dos pedidos com calma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rule",
+      "options": [
+        "a rule",
+        "a price",
+        "a song",
+        "a story"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "A mulher explica a regra dos pedidos com calma.",
+        "targetWord": "regra",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/348262a675b23fb4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "travar",
+    "sentence": "Ela [[trava]] e não sabe o que pedir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "freezes up",
+      "options": [
+        "freezes up",
+        "laughs",
+        "runs",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "Ela trava e não sabe o que pedir.",
+        "targetWord": "trava",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/86f435182dbef087.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bobo",
+    "sentence": "Ela inventa um pedido [[bobo]] e sente vergonha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "silly",
+      "options": [
+        "silly",
+        "serious",
+        "expensive",
+        "secret"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "Ela inventa um pedido bobo e sente vergonha.",
+        "targetWord": "bobo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa87bc3ca3eba2c7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tesoura",
+    "sentence": "Ninguém pode cortar essa fita com [[tesoura]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "scissors",
+      "options": [
+        "scissors",
+        "a spoon",
+        "a comb",
+        "a key"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "Ninguém pode cortar essa fita com tesoura.",
+        "targetWord": "tesoura",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/92e965cd8cf7ba49.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sozinho",
+    "sentence": "A fita cai [[sozinha]] no dia certo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on its own",
+      "options": [
+        "on its own",
+        "with help",
+        "in water",
+        "at night"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "A fita cai sozinha no dia certo.",
+        "targetWord": "sozinha",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d2db429a90dd80d7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mexer",
+    "sentence": "Ela [[mexe]] no nó com o dedo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fiddles with",
+      "options": [
+        "fiddles with",
+        "cuts",
+        "washes",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "Ela mexe no nó com o dedo.",
+        "targetWord": "mexe",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5a7ea2cbfa237153.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "branco",
+    "sentence": "O último pedido dela continua em [[branco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "blank",
+      "options": [
+        "blank",
+        "full",
+        "written",
+        "ready"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "O último pedido dela continua em branco.",
+        "targetWord": "branco",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a52bee36375e805f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "amarra",
+    "sentence": "A mulher _____ a fita colorida no pulso dela.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "amarra",
+      "options": [
+        "amarra",
+        "corta",
+        "lava",
+        "compra"
+      ],
+      "translation": "The woman _____ the colourful ribbon on her wrist.",
+      "optionTranslations": [
+        "ties",
+        "cuts",
+        "washes",
+        "buys"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "A mulher amarra a fita colorida no pulso dela.",
+        "targetWord": "amarra",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0e7ef49797363665.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cortar",
+    "sentence": "Ninguém pode _____ essa fita com tesoura.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cortar",
+      "options": [
+        "cortar",
+        "lavar",
+        "pintar",
+        "guardar"
+      ],
+      "translation": "Nobody can _____ this ribbon with scissors.",
+      "optionTranslations": [
+        "cut",
+        "wash",
+        "paint",
+        "keep"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "Ninguém pode cortar essa fita com tesoura.",
+        "targetWord": "cortar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/92e965cd8cf7ba49.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vestido",
+    "sentence": "A mulher de [[vestido]] branco amarra a fita no pulso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a dress",
+      "options": [
+        "a dress",
+        "a hat",
+        "a bag",
+        "a shoe"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "A mulher de vestido branco amarra a fita no pulso.",
+        "targetWord": "vestido",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85682d3eba3486b0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "letra",
+    "sentence": "A fita tem [[letras]] douradas de uma igreja antiga.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a letter",
+      "options": [
+        "a letter",
+        "a colour",
+        "a flower",
+        "a picture"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "A fita tem letras douradas de uma igreja antiga.",
+        "targetWord": "letras",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e04cf15a6da74629.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "igreja",
+    "sentence": "A fita cheira às [[igrejas]] do centro velho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a church",
+      "options": [
+        "a church",
+        "a market",
+        "a beach",
+        "a school"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "A fita cheira às igrejas do centro velho.",
+        "targetWord": "igrejas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc4fc7a318429b1f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saúde",
+    "sentence": "Ela pede [[saúde]] antes de qualquer outra coisa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "health",
+      "options": [
+        "health",
+        "money",
+        "rain",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "Ela pede saúde antes de qualquer outra coisa.",
+        "targetWord": "saúde",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cfa0cc6d7543f92b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trabalho",
+    "sentence": "Ela pede [[trabalho]] no nó do meio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a job",
+      "options": [
+        "a job",
+        "a house",
+        "a trip",
+        "a friend"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "Ela pede trabalho no nó do meio.",
+        "targetWord": "trabalho",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f1dbfe0669ab8ccd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "faca",
+    "sentence": "Ninguém corta a fita com tesoura nem com [[faca]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a knife",
+      "options": [
+        "a knife",
+        "a fork",
+        "a plate",
+        "a cup"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "Ninguém corta a fita com tesoura nem com faca.",
+        "targetWord": "faca",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f8fd7343d831277.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acontecer",
+    "sentence": "A fita cai quando os pedidos [[acontecem]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "happen",
+      "options": [
+        "happen",
+        "are written",
+        "are paid",
+        "are sold"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "A fita cai quando os pedidos acontecem.",
+        "targetWord": "acontecem",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0ef894cf39f283b7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "faltar",
+    "sentence": "Ela não sabe quanto tempo [[falta]] para isso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "is left",
+      "options": [
+        "is left",
+        "has passed",
+        "has cost",
+        "has changed"
+      ],
+      "audioClip": {
+        "storySlug": "tres-nos-na-fita",
+        "storySource": "user",
+        "sentence": "Ela não sabe quanto tempo falta para isso.",
+        "targetWord": "falta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05bfc1fe8b1c106b.mp3"
+      }
+    },
+    "featured": false
+  }
+]

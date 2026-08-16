@@ -1,0 +1,611 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "mela,pesca,fiore,occhio",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "mela",
+     "answer": "apple",
+     "options": [
+      "apple",
+      "peach",
+      "flower",
+      "eye"
+     ]
+    },
+    {
+     "word": "pesca",
+     "answer": "peach",
+     "options": [
+      "apple",
+      "peach",
+      "flower",
+      "eye"
+     ]
+    },
+    {
+     "word": "fiore",
+     "answer": "flower",
+     "options": [
+      "apple",
+      "peach",
+      "flower",
+      "eye"
+     ]
+    },
+    {
+     "word": "occhio",
+     "answer": "eye",
+     "options": [
+      "apple",
+      "peach",
+      "flower",
+      "eye"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "caro",
+  "sentence": "«È troppo [[caro]]!», dice Giulia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "expensive",
+   "options": [
+    "expensive",
+    "cheap",
+    "fresh",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "È troppo caro, dice Giulia.",
+    "targetWord": "caro",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "presto",
+  "sentence": "È mattina [[presto]] al mercato di Roma.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "early",
+   "options": [
+    "early",
+    "late",
+    "loudly",
+    "badly"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "È mattina presto al mercato di Roma.",
+    "targetWord": "presto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "contento",
+  "sentence": "Le due amiche sono molto [[contente]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "happy",
+   "options": [
+    "happy",
+    "tired",
+    "angry",
+    "hungry"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Le due amiche sono molto contente.",
+    "targetWord": "contente",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "volere",
+  "sentence": "Giulia [[vuole]] comprare le pesche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wants",
+   "options": [
+    "wants",
+    "buys",
+    "sells",
+    "eats"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Giulia vuole comprare le pesche.",
+    "targetWord": "vuole",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "pensare",
+  "sentence": "L'uomo [[pensa]] un momento e poi accetta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thinks",
+   "options": [
+    "thinks",
+    "pays",
+    "laughs",
+    "walks"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "L'uomo pensa un momento e poi accetta.",
+    "targetWord": "pensa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "provare",
+  "sentence": "Lei [[prova]] a contrattare per i fiori.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tries",
+   "options": [
+    "tries",
+    "refuses",
+    "forgets",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Lei prova a contrattare per i fiori.",
+    "targetWord": "prova",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "mattina",
+  "sentence": "È _____ presto al mercato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mattina",
+   "options": [
+    "mattina",
+    "sera",
+    "notte",
+    "pranzo"
+   ],
+   "translation": "It is early ____ at the market.",
+   "optionTranslations": [
+    "morning",
+    "evening",
+    "night",
+    "lunch"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "È mattina presto al mercato.",
+    "targetWord": "mattina",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "gente",
+  "sentence": "Il mercato è già pieno di _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gente",
+   "options": [
+    "gente",
+    "fiori",
+    "mele",
+    "soldi"
+   ],
+   "translation": "The market is already full of ____.",
+   "optionTranslations": [
+    "people",
+    "flowers",
+    "apples",
+    "money"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Il mercato è già pieno di gente.",
+    "targetWord": "gente",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "banchi",
+  "sentence": "Elena cammina tra i _____ del mercato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "banchi",
+   "options": [
+    "banchi",
+    "tavoli",
+    "fiori",
+    "occhi"
+   ],
+   "translation": "Elena walks among the ____ of the market.",
+   "optionTranslations": [
+    "stalls",
+    "tables",
+    "flowers",
+    "eyes"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Elena cammina tra i banchi del mercato.",
+    "targetWord": "banchi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "tavoli",
+  "sentence": "Sui _____ ci sono mele e pesche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tavoli",
+   "options": [
+    "tavoli",
+    "banchi",
+    "muri",
+    "negozi"
+   ],
+   "translation": "On the ____ there are apples and peaches.",
+   "optionTranslations": [
+    "tables",
+    "stalls",
+    "walls",
+    "shops"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Sui tavoli ci sono mele e pesche.",
+    "targetWord": "tavoli",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "rosse",
+  "sentence": "Sui tavoli ci sono mele _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rosse",
+   "options": [
+    "rosse",
+    "gialle",
+    "dolci",
+    "care"
+   ],
+   "translation": "On the tables there are ____ apples.",
+   "optionTranslations": [
+    "red",
+    "yellow",
+    "sweet",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Sui tavoli ci sono mele rosse.",
+    "targetWord": "rosse",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "venditore",
+  "sentence": "Il _____ chiede sei euro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "venditore",
+   "options": [
+    "venditore",
+    "amica",
+    "ragazza",
+    "gente"
+   ],
+   "translation": "The ____ asks for six euros.",
+   "optionTranslations": [
+    "seller",
+    "friend",
+    "girl",
+    "people"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Il venditore chiede sei euro.",
+    "targetWord": "venditore",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "troppo",
+  "sentence": "«È _____ caro!», dice Giulia.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "troppo",
+   "options": [
+    "troppo",
+    "poco",
+    "molto",
+    "presto"
+   ],
+   "translation": "\"It is ____ expensive!\", says Giulia.",
+   "optionTranslations": [
+    "too",
+    "little",
+    "very",
+    "early"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "È troppo caro, dice Giulia.",
+    "targetWord": "troppo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "offre",
+  "sentence": "Lei sorride e _____ quattro euro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "offre",
+   "options": [
+    "offre",
+    "paga",
+    "pensa",
+    "prova"
+   ],
+   "translation": "She smiles and _____ four euros.",
+   "optionTranslations": [
+    "offers",
+    "pays",
+    "thinks",
+    "tries"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Lei sorride e offre quattro euro.",
+    "targetWord": "offre",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "domanda",
+  "sentence": "«Tre euro?», _____ piano Elena.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "domanda",
+   "options": [
+    "domanda",
+    "offre",
+    "paga",
+    "ride"
+   ],
+   "translation": "\"Three euros?\", Elena _____ quietly.",
+   "optionTranslations": [
+    "asks",
+    "offers",
+    "pays",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Tre euro? domanda piano Elena.",
+    "targetWord": "domanda",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "pagano",
+  "sentence": "Le due amiche _____ e sono contente.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pagano",
+   "options": [
+    "pagano",
+    "offrono",
+    "provano",
+    "pensano"
+   ],
+   "translation": "The two friends _____ and are happy.",
+   "optionTranslations": [
+    "pay",
+    "offer",
+    "try",
+    "think"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Le due amiche pagano e sono contente.",
+    "targetWord": "pagano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "soldi",
+  "sentence": "Le amiche pagano pochi _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "soldi",
+   "options": [
+    "soldi",
+    "fiori",
+    "mele",
+    "occhi"
+   ],
+   "translation": "The friends pay little ____.",
+   "optionTranslations": [
+    "money",
+    "flowers",
+    "apples",
+    "eyes"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Le amiche pagano pochi soldi.",
+    "targetWord": "soldi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "affare",
+  "sentence": "«Abbiamo fatto un buon _____!», dice Giulia.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "affare",
+   "options": [
+    "affare",
+    "mercato",
+    "euro",
+    "gelato"
+   ],
+   "translation": "\"We made a good ____!\", says Giulia.",
+   "optionTranslations": [
+    "deal",
+    "market",
+    "euro",
+    "ice cream"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Abbiamo fatto un buon affare, dice Giulia.",
+    "targetWord": "affare",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "molti",
+  "sentence": "Ci sono anche _____ fiori colorati.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "molti",
+   "options": [
+    "molti",
+    "pochi",
+    "rossi",
+    "cari"
+   ],
+   "translation": "There are also ____ colorful flowers.",
+   "optionTranslations": [
+    "many",
+    "few",
+    "red",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Ci sono anche molti fiori colorati.",
+    "targetWord": "molti",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "pochi",
+  "sentence": "Le amiche pagano _____ soldi al mercato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pochi",
+   "options": [
+    "pochi",
+    "molti",
+    "troppi",
+    "cari"
+   ],
+   "translation": "The friends pay ____ money at the market.",
+   "optionTranslations": [
+    "few",
+    "many",
+    "too many",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "le-pesche-di-campo-de-fiori",
+    "storySource": "user",
+    "sentence": "Le amiche pagano pochi soldi al mercato.",
+    "targetWord": "pochi",
+    "language": "italian"
+   }
+  }
+ }
+]

@@ -1,0 +1,520 @@
+[
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "picó,champeta,butifarra,arepa de huevo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "picó",
+          "answer": "a huge street sound system",
+          "options": [
+            "a huge street sound system",
+            "Afro-Caribbean music and dance",
+            "a coastal seasoned sausage",
+            "a fried corn cake with egg"
+          ]
+        },
+        {
+          "word": "champeta",
+          "answer": "Afro-Caribbean music and dance",
+          "options": [
+            "a huge street sound system",
+            "Afro-Caribbean music and dance",
+            "a coastal seasoned sausage",
+            "a fried corn cake with egg"
+          ]
+        },
+        {
+          "word": "butifarra",
+          "answer": "a coastal seasoned sausage",
+          "options": [
+            "a huge street sound system",
+            "Afro-Caribbean music and dance",
+            "a coastal seasoned sausage",
+            "a fried corn cake with egg"
+          ]
+        },
+        {
+          "word": "arepa de huevo",
+          "answer": "a fried corn cake with egg",
+          "options": [
+            "a huge street sound system",
+            "Afro-Caribbean music and dance",
+            "a coastal seasoned sausage",
+            "a fried corn cake with egg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "qué más",
+    "sentence": "[[Qué más]], mija, ¿cómo va todo por aquí?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "how are you",
+      "options": [
+        "how are you",
+        "what else is there",
+        "how much more",
+        "what a mess"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "Qué más, mija, ¿cómo va todo por aquí?",
+        "targetWord": "Qué más",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/86f1383b5929d04e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "ajá",
+    "sentence": "[[Ajá]], y entonces, ¿qué vas a hacer hoy?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "so, go on",
+      "options": [
+        "so, go on",
+        "goodbye for now",
+        "of course not",
+        "right away"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "Ajá, y entonces, ¿qué vas a hacer hoy?",
+        "targetWord": "Ajá",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/72c5aef15aca8e19.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "rola",
+    "sentence": "Ronny le dice [[rola]] a Manu porque es de Bogotá.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "woman from Bogotá",
+      "options": [
+        "woman from Bogotá",
+        "woman from the coast",
+        "a small sausage",
+        "a rolling pin"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "Ronny le dice rola a Manu porque es de Bogotá.",
+        "targetWord": "rola",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f543159830e91d86.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "no joda",
+    "sentence": "[[No joda]], Manu, relaja y disfruta la tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "come on, no way",
+      "options": [
+        "come on, no way",
+        "thank you kindly",
+        "let's get going",
+        "what a shame"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "No joda, Manu, relaja y disfruta la tarde.",
+        "targetWord": "No joda",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/220f2ca25783b1f5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "eche",
+    "sentence": "[[Eche]], qué arepa tan rica, no lo creo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wow, no way",
+      "options": [
+        "wow, no way",
+        "hurry up now",
+        "get out of here",
+        "see you later"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "Eche, qué arepa tan rica, no lo creo.",
+        "targetWord": "Eche",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26b3cf9a725d15bd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "a todo lo que daba",
+    "sentence": "El ventilador giraba [[a todo lo que daba]] por el calor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at full power",
+      "options": [
+        "at full power",
+        "almost breaking down",
+        "for a short while",
+        "without any noise"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "El ventilador giraba a todo lo que daba por el calor.",
+        "targetWord": "a todo lo que daba",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/018a670c644603de.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "tirado",
+    "sentence": "Ronny estaba [[tirado]] en la hamaca sin hacer nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sprawled out lazily",
+      "options": [
+        "sprawled out lazily",
+        "thrown in the trash",
+        "standing up straight",
+        "very cheap"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "Ronny estaba tirado en la hamaca sin hacer nada.",
+        "targetWord": "tirado",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a609fc54a051b74f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "doradito",
+    "sentence": "Las arepas salieron [[doraditas]] y calientes del fogón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "golden and crispy",
+      "options": [
+        "golden and crispy",
+        "slightly burnt",
+        "freshly frozen",
+        "a little salty"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "Las arepas salieron doraditas y calientes del fogón.",
+        "targetWord": "doraditas",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ffd6ce6298ea3c7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "apurarse",
+    "sentence": "La butifarra no se [[apura]] por nadie, dijo él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to rush",
+      "options": [
+        "to rush",
+        "to cool down",
+        "to burn slowly",
+        "to complain"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "La butifarra no se apura por nadie, dijo él.",
+        "targetWord": "apura",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9482e5b642558c7b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "mecerse",
+    "sentence": "Manu terminó [[meciéndose]] tranquila en la hamaca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rocking gently",
+      "options": [
+        "rocking gently",
+        "falling asleep",
+        "getting dizzy",
+        "standing firmly"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "Manu terminó meciéndose tranquila en la hamaca.",
+        "targetWord": "meciéndose",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/04d243773721dacd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "chisme",
+    "sentence": "En el barrio siempre hay algún [[chisme]] nuevo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gossip",
+      "options": [
+        "gossip",
+        "a small party",
+        "a fried snack",
+        "a loud song"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "En el barrio siempre hay algún chisme nuevo.",
+        "targetWord": "chisme",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/870fa28ba6a66d1f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "afán",
+    "sentence": "Manu llegó con el ____ bogotano de siempre.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "afán",
+      "options": [
+        "afán",
+        "relajo",
+        "calor",
+        "chisme"
+      ],
+      "translation": "Manu arrived with her usual Bogotá ____.",
+      "optionTranslations": [
+        "hurry",
+        "chill",
+        "heat",
+        "gossip"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "Manu llegó con el afán bogotano de siempre.",
+        "targetWord": "afán",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd27b3922996f03f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "relajo",
+    "sentence": "El ____ se armó solito entre risas y música.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "relajo",
+      "options": [
+        "relajo",
+        "afán",
+        "silencio",
+        "reguero"
+      ],
+      "translation": "The ____ started on its own with laughter and music.",
+      "optionTranslations": [
+        "fun chaos",
+        "hurry",
+        "silence",
+        "mess"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "El relajo se armó solito entre risas y música.",
+        "targetWord": "relajo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d7ed6ebe64a3bec3.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "vaina",
+    "sentence": "Hablaron de una que otra ____ sin importancia.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vaina",
+      "options": [
+        "vaina",
+        "birra",
+        "canción",
+        "hamaca"
+      ],
+      "translation": "They talked about some unimportant ____ or another.",
+      "optionTranslations": [
+        "thing",
+        "beer",
+        "song",
+        "hammock"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "Hablaron de una que otra vaina sin importancia.",
+        "targetWord": "vaina",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dfeb4a4d4dee2ad9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "sabroso",
+    "sentence": "El plato de butifarra estaba demasiado ____ hoy.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sabroso",
+      "options": [
+        "sabroso",
+        "caro",
+        "frío",
+        "salado"
+      ],
+      "translation": "The plate of butifarra was way too ____ today.",
+      "optionTranslations": [
+        "tasty",
+        "expensive",
+        "cold",
+        "salty"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "El plato de butifarra estaba demasiado sabroso hoy.",
+        "targetWord": "sabroso",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e457c7a8c0c56b11.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "bacano",
+    "sentence": "El picó sonaba bien ____ esa tarde de calor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bacano",
+      "options": [
+        "bacano",
+        "lento",
+        "flojo",
+        "raro"
+      ],
+      "translation": "The sound system sounded really ____ that hot afternoon.",
+      "optionTranslations": [
+        "cool",
+        "slow",
+        "weak",
+        "weird"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "El picó sonaba bien bacano esa tarde de calor.",
+        "targetWord": "bacano",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc889c25b5123e04.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "fresco",
+    "sentence": "Aquí todo se hace bien ____, sin correr.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fresco",
+      "options": [
+        "fresco",
+        "rápido",
+        "tarde",
+        "serio"
+      ],
+      "translation": "Here everything is done real ____, without rushing.",
+      "optionTranslations": [
+        "chill",
+        "fast",
+        "late",
+        "serious"
+      ],
+      "audioClip": {
+        "storySlug": "arepa-de-huevo-sin-afan",
+        "storySource": "user",
+        "sentence": "Aquí todo se hace bien fresco, sin correr.",
+        "targetWord": "fresco",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4d3d15048d3d42b9.mp3"
+      }
+    }
+  }
+]

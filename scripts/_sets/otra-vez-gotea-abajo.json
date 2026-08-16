@@ -1,0 +1,562 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "tierra,escaleras,camisas,patio",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "tierra",
+     "answer": "soil",
+     "options": [
+      "soil",
+      "stairs",
+      "shirts",
+      "a yard"
+     ]
+    },
+    {
+     "word": "escaleras",
+     "answer": "stairs",
+     "options": [
+      "soil",
+      "stairs",
+      "shirts",
+      "a yard"
+     ]
+    },
+    {
+     "word": "camisas",
+     "answer": "shirts",
+     "options": [
+      "soil",
+      "stairs",
+      "shirts",
+      "a yard"
+     ]
+    },
+    {
+     "word": "patio",
+     "answer": "a yard",
+     "options": [
+      "soil",
+      "stairs",
+      "shirts",
+      "a yard"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "terraza",
+  "sentence": "Rosario ha llenado la [[terraza]] de macetas con flores.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a flat roof space",
+   "options": [
+    "a flat roof space",
+    "a front doorway",
+    "a narrow hallway",
+    "a back staircase"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Rosario ha llenado la terraza de macetas con flores.",
+    "targetWord": "terraza",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ropa tendida",
+  "sentence": "Marta dice que el agua cae en la [[ropa tendida]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "washing hung out to dry",
+   "options": [
+    "washing hung out to dry",
+    "a pile of old boxes",
+    "a table set for lunch",
+    "a row of parked bikes"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Marta dice que el agua cae en la ropa tendida.",
+    "targetWord": "ropa tendida",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cara de pocos amigos",
+  "sentence": "Don Andrés aparece con [[cara de pocos amigos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an annoyed look",
+   "options": [
+    "an annoyed look",
+    "a wide smile",
+    "a tired face",
+    "a puzzled look"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Don Andrés aparece con cara de pocos amigos.",
+    "targetWord": "cara de pocos amigos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "junta de vecinos",
+  "sentence": "Don Andrés lo quiere hablar en la [[junta de vecinos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a residents meeting",
+   "options": [
+    "a residents meeting",
+    "a street market",
+    "a family dinner",
+    "a town council"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Don Andrés lo quiere hablar en la junta de vecinos.",
+    "targetWord": "junta de vecinos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "levantar la voz",
+  "sentence": "Rosario se queda tranquila, sin [[levantar la voz]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to raise your voice",
+   "options": [
+    "to raise your voice",
+    "to leave the room",
+    "to change the subject",
+    "to ask for help"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Rosario se queda tranquila, sin levantar la voz.",
+    "targetWord": "levantar la voz",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "me ocupo de",
+  "sentence": "Rosario zanja el tema: yo [[me ocupo de]] la junta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I take care of it",
+   "options": [
+    "I take care of it",
+    "I know nothing about it",
+    "I am worried about it",
+    "I will pay for it"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Rosario zanja el tema: yo me ocupo de la junta.",
+    "targetWord": "me ocupo de",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "secretos",
+  "sentence": "Hugo pregunta por los [[secretos]] de Rosario.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "secrets",
+   "options": [
+    "secrets",
+    "excuses",
+    "promises",
+    "complaints"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Hugo pregunta por los secretos de Rosario.",
+    "targetWord": "secretos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hilo",
+  "sentence": "Del borde cae un [[hilo]] de agua al patio de abajo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a thin trickle",
+   "options": [
+    "a thin trickle",
+    "a heavy shower",
+    "a wide puddle",
+    "a small cloud"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Del borde cae un hilo de agua al patio de abajo.",
+    "targetWord": "hilo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "preocupado",
+  "sentence": "Hugo mira hacia abajo, [[preocupado]] por el vecino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "worried",
+   "options": [
+    "worried",
+    "amused",
+    "sleepy",
+    "proud"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Hugo mira hacia abajo, preocupado por el vecino.",
+    "targetWord": "preocupado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "suelo",
+  "featured": false,
+  "sentence": "Rosario ha llenado el [[suelo]] de la terraza de macetas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the floor",
+   "options": [
+    "the floor",
+    "the wall",
+    "the ceiling",
+    "the railing"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Rosario ha llenado el suelo de la terraza de macetas.",
+    "targetWord": "suelo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "enfadar",
+  "featured": false,
+  "sentence": "Hugo dice que el vecino se va a [[enfadar]] otra vez.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get angry",
+   "options": [
+    "to get angry",
+    "to move house",
+    "to fall ill",
+    "to give up"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Hugo dice que el vecino se va a enfadar otra vez.",
+    "targetWord": "enfadar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abrir",
+  "featured": false,
+  "sentence": "Marta [[abre]] la puerta y aparece don Andrés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to open",
+   "options": [
+    "to open",
+    "to lock",
+    "to knock",
+    "to paint"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Marta abre la puerta y aparece don Andrés.",
+    "targetWord": "abre",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "marchar",
+  "featured": false,
+  "sentence": "El vecino se [[marcha]] escaleras abajo sin decir más.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to leave",
+   "options": [
+    "to leave",
+    "to shout",
+    "to wait",
+    "to fall"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "El vecino se marcha escaleras abajo sin decir más.",
+    "targetWord": "marcha",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aparecer",
+  "featured": false,
+  "sentence": "Don Andrés [[aparece]] de pronto en la puerta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to turn up",
+   "options": [
+    "to turn up",
+    "to hide",
+    "to knock",
+    "to answer"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Don Andrés aparece de pronto en la puerta.",
+    "targetWord": "aparece",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mirar",
+  "featured": false,
+  "sentence": "Rosario se queda [[mirando]] las flores de la terraza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to look at",
+   "options": [
+    "to look at",
+    "to water",
+    "to cut",
+    "to count"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Rosario se queda mirando las flores de la terraza.",
+    "targetWord": "mirando",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hijo",
+  "featured": false,
+  "sentence": "Rosario le contesta a Hugo: las plantas necesitan agua, [[hijo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a warm word for a young person",
+   "options": [
+    "a warm word for a young person",
+    "a formal way to say sir",
+    "a word used to say sorry",
+    "a way to call a stranger"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Rosario le contesta a Hugo: las plantas necesitan agua, hijo.",
+    "targetWord": "hijo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "mojada",
+  "featured": false,
+  "sentence": "La toalla está _____, tiéndela en la terraza.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mojada",
+   "options": [
+    "mojada",
+    "seca",
+    "rota",
+    "nueva"
+   ],
+   "translation": "The towel is _____, hang it out on the terrace.",
+   "optionTranslations": [
+    "wet",
+    "dry",
+    "torn",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "La toalla está mojada, tiéndela en la terraza.",
+    "targetWord": "mojada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "lavar",
+  "featured": false,
+  "sentence": "Tengo que _____ los platos, están llenos de aceite.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lavar",
+   "options": [
+    "lavar",
+    "comprar",
+    "guardar",
+    "romper"
+   ],
+   "translation": "I have to _____ the dishes, they are covered in oil.",
+   "optionTranslations": [
+    "wash",
+    "buy",
+    "put away",
+    "break"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Tengo que lavar los platos, están llenos de aceite.",
+    "targetWord": "lavar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "domingo",
+  "featured": false,
+  "sentence": "El _____ no trabajo, me quedo en casa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "domingo",
+   "options": [
+    "domingo",
+    "invierno",
+    "verano",
+    "minuto"
+   ],
+   "translation": "On _____ I do not work, I stay at home.",
+   "optionTranslations": [
+    "Sunday",
+    "winter",
+    "summer",
+    "minute"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "El domingo no trabajo, me quedo en casa.",
+    "targetWord": "domingo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "fuerte",
+  "featured": false,
+  "sentence": "La música está muy _____, tengo que gritar para hablar.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fuerte",
+   "options": [
+    "fuerte",
+    "baja",
+    "lenta",
+    "triste"
+   ],
+   "translation": "The music is very _____, I have to shout to talk.",
+   "optionTranslations": [
+    "loud",
+    "quiet",
+    "slow",
+    "sad"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "La música está muy fuerte, tengo que gritar para hablar.",
+    "targetWord": "fuerte",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "tranquila",
+  "featured": false,
+  "sentence": "Estaba nerviosa, pero al hablar con él se quedó _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tranquila",
+   "options": [
+    "tranquila",
+    "nerviosa",
+    "ocupada",
+    "sorprendida"
+   ],
+   "translation": "She was nervous, but after talking to him she felt _____.",
+   "optionTranslations": [
+    "calm",
+    "nervous",
+    "busy",
+    "surprised"
+   ],
+   "audioClip": {
+    "storySlug": "otra-vez-gotea-abajo",
+    "storySource": "user",
+    "sentence": "Estaba nerviosa, pero al hablar con él se quedó tranquila.",
+    "targetWord": "tranquila",
+    "language": "spanish"
+   }
+  }
+ }
+]

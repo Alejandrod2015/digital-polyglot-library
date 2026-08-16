@@ -1,0 +1,621 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "hamaca",
+    "sentence": "Toca una [[hamaca]] de muchos colores.",
+    "payload": {
+      "answer": "a hammock",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a hammock",
+        "a blanket",
+        "a pillow",
+        "a chair"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Toca una hamaca de muchos colores.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "hamaca",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16c83b3812409000.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mercado",
+    "sentence": "Vende hamacas en el [[mercado]] grande.",
+    "payload": {
+      "answer": "a market",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a market",
+        "a garden",
+        "a station",
+        "a school"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Vende hamacas en el mercado grande.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "mercado",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9ca779486200583b.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "taco",
+    "sentence": "Prueba un [[taco]] muy rico.",
+    "payload": {
+      "answer": "a taco",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a taco",
+        "a soup",
+        "a cake",
+        "a salad"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Prueba un taco muy rico.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "taco",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/39efe65a2e7d983c.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gente",
+    "sentence": "Aquí la [[gente]] duerme muy feliz.",
+    "payload": {
+      "answer": "people",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "people",
+        "food",
+        "music",
+        "water"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Aquí la gente duerme muy feliz.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "gente",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec4b47ffc79e9408.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oler",
+    "sentence": "La carne [[huele]] a naranja fresca.",
+    "payload": {
+      "answer": "to smell",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to smell",
+        "to taste",
+        "to cook",
+        "to cut"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La carne huele a naranja fresca.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "huele",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/369269543dad1fa3.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suave",
+    "sentence": "Esta hamaca es muy [[suave]].",
+    "payload": {
+      "answer": "soft",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "soft",
+        "hard",
+        "heavy",
+        "dirty"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Esta hamaca es muy suave.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "suave",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/09bac8dc343d7bd4.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "vende",
+    "sentence": "El vendedor _____ frutas en el mercado.",
+    "payload": {
+      "answer": "vende",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "vende",
+        "compra",
+        "prueba",
+        "guarda"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El vendedor vende frutas en el mercado.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "vende",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bfc8f1f6deb65942.mp3"
+      },
+      "translation": "The seller _____ fruit at the market.",
+      "optionTranslations": [
+        "sells",
+        "buys",
+        "tastes",
+        "keeps"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "compra",
+    "sentence": "Ella va a la tienda y _____ zapatos.",
+    "payload": {
+      "answer": "compra",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "compra",
+        "vende",
+        "pierde",
+        "guarda"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella va a la tienda y compra zapatos.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "compra",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/92bd451a0dd5fa65.mp3"
+      },
+      "translation": "She goes to the store and _____ shoes.",
+      "optionTranslations": [
+        "buys",
+        "sells",
+        "loses",
+        "keeps"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "abre",
+    "sentence": "Con la llave él _____ la puerta grande.",
+    "payload": {
+      "answer": "abre",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "abre",
+        "cierra",
+        "pinta",
+        "limpia"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Con la llave él abre la puerta grande.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "abre",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8ad091fb309a6ac5.mp3"
+      },
+      "translation": "With the key he _____ the big door.",
+      "optionTranslations": [
+        "opens",
+        "closes",
+        "paints",
+        "cleans"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "duerme",
+    "sentence": "De noche el bebé _____ en la cama.",
+    "payload": {
+      "answer": "duerme",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "duerme",
+        "juega",
+        "come",
+        "canta"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "De noche el bebé duerme en la cama.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "duerme",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/06efa5c9494994f0.mp3"
+      },
+      "translation": "At night the baby _____ in the bed.",
+      "optionTranslations": [
+        "sleeps",
+        "plays",
+        "eats",
+        "sings"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "anochecer",
+    "sentence": "Camina por la plaza al [[anochecer]].",
+    "payload": {
+      "answer": "nightfall",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "nightfall",
+        "midday",
+        "midnight",
+        "morning"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Camina por la plaza al anochecer.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "anochecer",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/426290cf415fe9fa.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fonda",
+    "sentence": "Cerca del mercado hay una [[fonda]] pequeña.",
+    "payload": {
+      "answer": "a small eatery",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a small eatery",
+        "a big hotel",
+        "a new store",
+        "a train stop"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cerca del mercado hay una fonda pequeña.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "fonda",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c5b018f7f7e734e7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cochinita pibil",
+    "sentence": "Una señora sirve [[cochinita pibil]] caliente.",
+    "payload": {
+      "answer": "a slow-cooked pork dish",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a slow-cooked pork dish",
+        "a cold fruit drink",
+        "a sweet corn cake",
+        "a green bean soup"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Una señora sirve cochinita pibil caliente.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "cochinita pibil",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9ccd7dbf2bc9f401.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tortilla",
+    "sentence": "La señora sirve la carne en [[tortillas]].",
+    "payload": {
+      "answer": "a thin corn flatbread",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a thin corn flatbread",
+        "a small clay pot",
+        "a green leaf",
+        "a paper bag"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La señora sirve la carne en tortillas.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "tortillas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb8ff06949ac9353.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "típico",
+    "sentence": "Come unos dulces [[típicos]] de la región.",
+    "payload": {
+      "answer": "typical",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "typical",
+        "modern",
+        "foreign",
+        "expensive"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Come unos dulces típicos de la región.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "típicos",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5cad9ab7e3f28b09.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dulce",
+    "sentence": "Come un [[dulce]] y mira las estrellas.",
+    "payload": {
+      "answer": "a sweet",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a sweet",
+        "a fruit",
+        "a bread",
+        "a drink"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Come un dulce y mira las estrellas.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "dulce",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1de6993f43e4bb80.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colgar",
+    "sentence": "[[Cuelga]] la hamaca por la noche.",
+    "payload": {
+      "answer": "to hang",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to hang",
+        "to fold",
+        "to wash",
+        "to sell"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cuelga la hamaca por la noche.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "cuelga",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b1be5e09b985dd83.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mover",
+    "sentence": "La hamaca se [[mueve]] despacio con el viento.",
+    "payload": {
+      "answer": "to move",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to move",
+        "to fall",
+        "to break",
+        "to shine"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La hamaca se mueve despacio con el viento.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "mueve",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f1ad1594827350d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fresco",
+    "sentence": "La noche es [[fresca]] y tranquila.",
+    "payload": {
+      "answer": "cool",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "cool",
+        "hot",
+        "dry",
+        "loud"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La noche es fresca y tranquila.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "fresca",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/593d3ac4133eb63f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "toca",
+    "sentence": "Con la mano ella _____ la tela suave.",
+    "payload": {
+      "answer": "toca",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "toca",
+        "mira",
+        "huele",
+        "corta"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Con la mano ella toca la tela suave.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "toca",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7428ef777499d196.mp3"
+      },
+      "translation": "With her hand she _____ the soft cloth.",
+      "optionTranslations": [
+        "touches",
+        "looks at",
+        "smells",
+        "cuts"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "baja",
+    "sentence": "En invierno la temperatura _____ mucho.",
+    "payload": {
+      "answer": "baja",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "baja",
+        "sube",
+        "llega",
+        "entra"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En invierno la temperatura baja mucho.",
+        "storySlug": "diego-vende-hamacas",
+        "targetWord": "baja",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6885a258f29d050d.mp3"
+      },
+      "translation": "In winter the temperature _____ a lot.",
+      "optionTranslations": [
+        "goes down",
+        "goes up",
+        "arrives",
+        "enters"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "plaza,mochila,viento,estrella",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "plaza",
+          "answer": "a town square",
+          "options": [
+            "a town square",
+            "a backpack",
+            "the wind",
+            "a star"
+          ]
+        },
+        {
+          "word": "mochila",
+          "answer": "a backpack",
+          "options": [
+            "a town square",
+            "a backpack",
+            "the wind",
+            "a star"
+          ]
+        },
+        {
+          "word": "viento",
+          "answer": "the wind",
+          "options": [
+            "a town square",
+            "a backpack",
+            "the wind",
+            "a star"
+          ]
+        },
+        {
+          "word": "estrella",
+          "answer": "a star",
+          "options": [
+            "a town square",
+            "a backpack",
+            "the wind",
+            "a star"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

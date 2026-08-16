@@ -1,0 +1,646 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "vender",
+    "sentence": "Ella [[vende]] comida en el mercado.",
+    "payload": {
+      "answer": "to sell",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to sell",
+        "to buy",
+        "to cook",
+        "to give"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella vende comida en el mercado.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "vende",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4fd84feaad8edcfd.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preparar",
+    "sentence": "Ella [[prepara]] la comida para los clientes.",
+    "payload": {
+      "answer": "to prepare",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to prepare",
+        "to eat",
+        "to order",
+        "to clean"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella prepara la comida para los clientes.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "prepara",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/78c4dc28a541c542.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "probar",
+    "sentence": "Ella quiere [[probar]] la comida nueva.",
+    "payload": {
+      "answer": "to taste",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to taste",
+        "to sell",
+        "to pay",
+        "to cook"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella quiere probar la comida nueva.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "probar",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5be73eb34ab69e8b.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salsa",
+    "sentence": "La torta tiene una [[salsa]] roja y rica.",
+    "payload": {
+      "answer": "sauce",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "sauce",
+        "soup",
+        "bread",
+        "cheese"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La torta tiene una salsa roja y rica.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "salsa",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0ab59a1797c5ad4a.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fruta",
+    "sentence": "En el mercado hay muchas [[frutas]] frescas.",
+    "payload": {
+      "answer": "fruit",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "fruit",
+        "meat",
+        "bread",
+        "fish"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En el mercado hay muchas frutas frescas.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "frutas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b2cb3a5a71ed4fc3.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "terminar",
+    "sentence": "Ella [[termina]] toda la comida contenta.",
+    "payload": {
+      "answer": "to finish",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to finish",
+        "to start",
+        "to buy",
+        "to serve"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella termina toda la comida contenta.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "termina",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40f1137b78482a4f.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "picante",
+    "sentence": "La comida con mucho chile está muy _____.",
+    "payload": {
+      "answer": "picante",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "picante",
+        "salada",
+        "fría",
+        "dura"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La comida con mucho chile está muy picante.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "picante",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3edee5f2bb9b3489.mp3"
+      },
+      "translation": "The food with a lot of chili is very _____.",
+      "optionTranslations": [
+        "spicy",
+        "salty",
+        "cold",
+        "hard"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "dulce",
+    "sentence": "El pastel de chocolate es muy _____.",
+    "payload": {
+      "answer": "dulce",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "dulce",
+        "salado",
+        "amargo",
+        "ácido"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El pastel de chocolate es muy dulce.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "dulce",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1bd54338372c2f0e.mp3"
+      },
+      "translation": "The chocolate cake is very _____.",
+      "optionTranslations": [
+        "sweet",
+        "salty",
+        "bitter",
+        "sour"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "agua",
+    "sentence": "Cuando tengo sed bebo un vaso de _____.",
+    "payload": {
+      "answer": "agua",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "agua",
+        "pan",
+        "sal",
+        "papel"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cuando tengo sed bebo un vaso de agua.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "agua",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f7f74b100160dee.mp3"
+      },
+      "translation": "When I am thirsty I drink a glass of _____.",
+      "optionTranslations": [
+        "water",
+        "bread",
+        "salt",
+        "paper"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "hambre",
+    "sentence": "No como desde ayer y tengo mucha _____.",
+    "payload": {
+      "answer": "hambre",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "hambre",
+        "sed",
+        "sueño",
+        "prisa"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "No como desde ayer y tengo mucha hambre.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "hambre",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/31bb703d6936b482.mp3"
+      },
+      "translation": "I have not eaten since yesterday and I am very _____.",
+      "optionTranslations": [
+        "hungry",
+        "thirsty",
+        "sleepy",
+        "in a hurry"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "temprano",
+    "sentence": "El mercado abre muy [[temprano]] por la mañana.",
+    "payload": {
+      "answer": "early",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "early",
+        "late",
+        "slowly",
+        "always"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El mercado abre muy temprano por la mañana.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "temprano",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5889145f48cf2b9e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "puesto",
+    "sentence": "Ella vende comida en un [[puesto]] pequeño.",
+    "payload": {
+      "answer": "a stall",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a stall",
+        "a kitchen",
+        "a table",
+        "a door"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella vende comida en un puesto pequeño.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "puesto",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d4d62e5a21feb122.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "color",
+    "sentence": "El mercado tiene muchos [[colores]] bonitos.",
+    "payload": {
+      "answer": "color",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "color",
+        "sound",
+        "smell",
+        "taste"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El mercado tiene muchos colores bonitos.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "colores",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4edcac6de240d574.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Ella observa todo [[despacio]] y con calma.",
+    "payload": {
+      "answer": "slowly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "slowly",
+        "quickly",
+        "loudly",
+        "early"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella observa todo despacio y con calma.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "despacio",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c24ad357b540d5e7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bocado",
+    "sentence": "Ella come un [[bocado]] con calma.",
+    "payload": {
+      "answer": "a bite",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a bite",
+        "a plate",
+        "a drink",
+        "a spoon"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella come un bocado con calma.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "bocado",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/265d14f6ac469069.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuidado",
+    "sentence": "Ella come la salsa con mucho [[cuidado]].",
+    "payload": {
+      "answer": "care",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "care",
+        "hunger",
+        "hurry",
+        "fear"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella come la salsa con mucho cuidado.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "cuidado",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4901c0713b8ee68c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cariño",
+    "sentence": "Ella lo mira con mucho [[cariño]].",
+    "payload": {
+      "answer": "affection",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "affection",
+        "anger",
+        "boredom",
+        "envy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella lo mira con mucho cariño.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "cariño",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a9368172712752ae.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delicioso",
+    "sentence": "La comida del puesto está muy [[deliciosa]].",
+    "payload": {
+      "answer": "delicious",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "delicious",
+        "awful",
+        "salty",
+        "cold"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La comida del puesto está muy deliciosa.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "deliciosa",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/99849aa2755f3a53.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "fresco",
+    "sentence": "El pan recién hecho está muy _____.",
+    "payload": {
+      "answer": "fresco",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "fresco",
+        "viejo",
+        "seco",
+        "duro"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El pan recién hecho está muy fresco.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "fresco",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/350a5c6e95e6da41.mp3"
+      },
+      "translation": "The freshly made bread is very _____.",
+      "optionTranslations": [
+        "fresh",
+        "old",
+        "dry",
+        "hard"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "grande",
+    "sentence": "El elefante es un animal muy _____.",
+    "payload": {
+      "answer": "grande",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "grande",
+        "pequeño",
+        "corto",
+        "bajo"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El elefante es un animal muy grande.",
+        "storySlug": "la-salsa-quema",
+        "targetWord": "grande",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea8cc727bff01e3c.mp3"
+      },
+      "translation": "The elephant is a very _____ animal.",
+      "optionTranslations": [
+        "big",
+        "small",
+        "short",
+        "low"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "mercado,zapato,servilleta,sonrisa",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "mercado",
+          "answer": "a market",
+          "options": [
+            "a market",
+            "a shoe",
+            "a napkin",
+            "a smile"
+          ]
+        },
+        {
+          "word": "zapato",
+          "answer": "a shoe",
+          "options": [
+            "a market",
+            "a shoe",
+            "a napkin",
+            "a smile"
+          ]
+        },
+        {
+          "word": "servilleta",
+          "answer": "a napkin",
+          "options": [
+            "a market",
+            "a shoe",
+            "a napkin",
+            "a smile"
+          ]
+        },
+        {
+          "word": "sonrisa",
+          "answer": "a smile",
+          "options": [
+            "a market",
+            "a shoe",
+            "a napkin",
+            "a smile"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "orgulloso",
+    "sentence": "Tú terminas la torta entera y te sientes muy [[orgullosa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "proud",
+      "options": [
+        "proud",
+        "tired",
+        "hungry",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-quema",
+        "storySource": "user",
+        "sentence": "Tú terminas la torta entera y te sientes muy orgullosa.",
+        "targetWord": "orgullosa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f7d698188d4daaed.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "respirar",
+    "sentence": "Cuando la comida pica, [[respira]] hondo y bebe agua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "breathes",
+      "options": [
+        "breathes",
+        "jumps",
+        "sings",
+        "washes"
+      ],
+      "audioClip": {
+        "storySlug": "la-salsa-quema",
+        "storySource": "user",
+        "sentence": "Cuando la comida pica, respira hondo y bebe agua.",
+        "targetWord": "respira",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ad63a146acee52f.mp3"
+      }
+    },
+    "featured": false
+  }
+]

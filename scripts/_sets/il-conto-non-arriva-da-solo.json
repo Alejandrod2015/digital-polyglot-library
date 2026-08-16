@@ -1,0 +1,555 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "orologio,contanti,piazza,ginocchio",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "orologio",
+          "answer": "a watch",
+          "options": [
+            "a watch",
+            "cash",
+            "a square",
+            "a knee"
+          ]
+        },
+        {
+          "word": "contanti",
+          "answer": "cash",
+          "options": [
+            "a watch",
+            "cash",
+            "a square",
+            "a knee"
+          ]
+        },
+        {
+          "word": "piazza",
+          "answer": "a square",
+          "options": [
+            "a watch",
+            "cash",
+            "a square",
+            "a knee"
+          ]
+        },
+        {
+          "word": "ginocchio",
+          "answer": "a knee",
+          "options": [
+            "a watch",
+            "cash",
+            "a square",
+            "a knee"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "finire",
+    "sentence": "Lei [[finisce]] il secondo e aspetta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "finishes",
+      "options": [
+        "finishes",
+        "starts",
+        "pays",
+        "orders"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Lei finisce il secondo e aspetta.",
+        "targetWord": "finisce",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a9d8270b26f8a38f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "spingere",
+    "sentence": "Qui nessuno [[spinge]] fuori chi ha finito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pushes",
+      "options": [
+        "pushes",
+        "calls",
+        "serves",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Qui nessuno spinge fuori chi ha finito.",
+        "targetWord": "spinge",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5d0ae0264ea49c23.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "decidere",
+    "sentence": "Lei [[decide]] quando andare via.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "decides",
+      "options": [
+        "decides",
+        "forgets",
+        "asks",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Lei decide quando andare via.",
+        "targetWord": "decide",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/03d643dc3c2c7355.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "per favore",
+    "sentence": "Lei dice il conto, [[per favore]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "please",
+      "options": [
+        "please",
+        "thank you",
+        "good night",
+        "excuse me"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Lei dice il conto, per favore.",
+        "targetWord": "per favore",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/45820ddfffd08995.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contento",
+    "sentence": "Il cameriere sembra [[contento]] di quel segnale.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "happy",
+      "options": [
+        "happy",
+        "angry",
+        "tired",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Il cameriere sembra contento di quel segnale.",
+        "targetWord": "contento",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed7ed1a26ff6e9bf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conoscere",
+    "sentence": "Adesso lui [[conosce]] la sua risposta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "knows",
+      "options": [
+        "knows",
+        "hides",
+        "asks",
+        "writes"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Adesso lui conosce la sua risposta.",
+        "targetWord": "conosce",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b5d776c9e19e274d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fretta",
+    "sentence": "Nessuno qui sembra avere [[fretta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hurry",
+      "options": [
+        "hurry",
+        "hunger",
+        "fear",
+        "money"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Nessuno qui sembra avere fretta.",
+        "targetWord": "fretta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5397aedabd15939f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gratis",
+    "sentence": "Il tempo al tavolo è [[gratis]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "free of charge",
+      "options": [
+        "free of charge",
+        "very expensive",
+        "already paid",
+        "almost over"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Il tempo al tavolo è gratis.",
+        "targetWord": "gratis",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7973e28756798ba.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "riempie",
+    "sentence": "Il cameriere _____ i bicchieri un'altra volta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "riempie",
+      "options": [
+        "riempie",
+        "rompe",
+        "vende",
+        "conta"
+      ],
+      "translation": "The waiter _____ the glasses one more time.",
+      "optionTranslations": [
+        "fills",
+        "breaks",
+        "sells",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Il cameriere riempie i bicchieri un'altra volta.",
+        "targetWord": "riempie",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f809b813d8df9d6a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "secondo",
+    "sentence": "Il [[secondo]] arriva dopo il primo piatto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the main course",
+      "options": [
+        "the main course",
+        "the first drink",
+        "the small bill",
+        "the last coin"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Il secondo arriva dopo il primo piatto.",
+        "targetWord": "secondo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/991159ae69a9ebf2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "volta",
+    "sentence": "Il cameriere passa varie [[volte]] senza fermarsi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "times",
+      "options": [
+        "times",
+        "doors",
+        "plates",
+        "hours"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Il cameriere passa varie volte senza fermarsi.",
+        "targetWord": "volte",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/103a8a5a8c876b78.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cliente",
+    "sentence": "I [[clienti]] accanto parlano da un'ora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the customers",
+      "options": [
+        "the customers",
+        "the waiters",
+        "the cooks",
+        "the owners"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "I clienti accanto parlano da un'ora.",
+        "targetWord": "clienti",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a948ce9a9386c711.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parlare",
+    "sentence": "Loro [[parlano]] davanti a due bicchieri vuoti.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "talk",
+      "options": [
+        "talk",
+        "eat",
+        "pay",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Loro parlano davanti a due bicchieri vuoti.",
+        "targetWord": "parlano",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34d208356eb1d724.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vuoto",
+    "sentence": "I bicchieri sono [[vuoti]] da molto tempo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "empty",
+      "options": [
+        "empty",
+        "full",
+        "broken",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "I bicchieri sono vuoti da molto tempo.",
+        "targetWord": "vuoti",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f643a0bcb0192b6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mangiare",
+    "sentence": "Nessuno spinge fuori chi finisce di [[mangiare]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "eating",
+      "options": [
+        "eating",
+        "paying",
+        "talking",
+        "sleeping"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Nessuno spinge fuori chi finisce di mangiare.",
+        "targetWord": "mangiare",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6a9b2d3bd4f84381.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "persona",
+    "sentence": "Il tavolo resta della stessa [[persona]] fino alla fine.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "person",
+      "options": [
+        "person",
+        "hour",
+        "price",
+        "street"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Il tavolo resta della stessa persona fino alla fine.",
+        "targetWord": "persona",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8402fd63fbe7b65.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mano",
+    "sentence": "Lei alza la [[mano]] verso il cameriere.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the hand",
+      "options": [
+        "the hand",
+        "the foot",
+        "the head",
+        "the bag"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Lei alza la mano verso il cameriere.",
+        "targetWord": "mano",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/21c274aebb18d8aa.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "risposta",
+    "sentence": "La [[risposta]] arriva in un minuto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the answer",
+      "options": [
+        "the answer",
+        "the bill",
+        "the door",
+        "the coin"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "La risposta arriva in un minuto.",
+        "targetWord": "risposta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5eaf72fa4b8de9c4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gente",
+    "sentence": "Fuori la piazza è piena di [[gente]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "people",
+      "options": [
+        "people",
+        "cars",
+        "trees",
+        "shops"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Fuori la piazza è piena di gente.",
+        "targetWord": "gente",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/676492c7e0d46cc8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camminare",
+    "sentence": "La gente [[cammina]] piano, senza fretta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "walks",
+      "options": [
+        "walks",
+        "runs",
+        "sleeps",
+        "shouts"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "La gente cammina piano, senza fretta.",
+        "targetWord": "cammina",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7aff1c6d4fb24621.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acqua",
+    "sentence": "Il cameriere riempie l'[[acqua]] e non porta altro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "water",
+      "options": [
+        "water",
+        "wine",
+        "coffee",
+        "bread"
+      ],
+      "audioClip": {
+        "storySlug": "il-conto-non-arriva-da-solo",
+        "storySource": "user",
+        "sentence": "Il cameriere riempie l'acqua e non porta altro.",
+        "targetWord": "acqua",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/97094889bb3a0a45.mp3"
+      }
+    },
+    "featured": false
+  }
+]

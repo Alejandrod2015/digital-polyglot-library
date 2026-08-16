@@ -1,0 +1,611 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "donna,amica,posto,città",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "donna",
+     "answer": "woman",
+     "options": [
+      "woman",
+      "female friend",
+      "place",
+      "city"
+     ]
+    },
+    {
+     "word": "amica",
+     "answer": "female friend",
+     "options": [
+      "woman",
+      "female friend",
+      "place",
+      "city"
+     ]
+    },
+    {
+     "word": "posto",
+     "answer": "place",
+     "options": [
+      "woman",
+      "female friend",
+      "place",
+      "city"
+     ]
+    },
+    {
+     "word": "città",
+     "answer": "city",
+     "options": [
+      "woman",
+      "female friend",
+      "place",
+      "city"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "sorridere",
+  "sentence": "Elena guarda il monumento e [[sorride]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "smiles",
+   "options": [
+    "smiles",
+    "cries",
+    "sleeps",
+    "shouts"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Elena guarda il monumento e sorride.",
+    "targetWord": "sorride",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "guardare",
+  "sentence": "Elena [[guarda]] il grande monumento.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "looks at",
+   "options": [
+    "looks at",
+    "listens to",
+    "runs from",
+    "pays for"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Elena guarda il grande monumento.",
+    "targetWord": "guarda",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "ridere",
+  "sentence": "Elena butta la moneta e [[ride]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "laughs",
+   "options": [
+    "laughs",
+    "cries",
+    "sings",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Elena butta la moneta e ride.",
+    "targetWord": "ride",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "felice",
+  "sentence": "La pizza è buona ed Elena è [[felice]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "happy",
+   "options": [
+    "happy",
+    "tired",
+    "angry",
+    "hungry"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "La pizza è buona ed Elena è felice.",
+    "targetWord": "felice",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "forte",
+  "sentence": "Le due amiche prendono un caffè [[forte]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "strong",
+   "options": [
+    "strong",
+    "sweet",
+    "cold",
+    "cheap"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Le due amiche prendono un caffè forte.",
+    "targetWord": "forte",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "vicino",
+  "sentence": "Le due amiche camminano [[vicino]] al Colosseo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "near",
+   "options": [
+    "near",
+    "far",
+    "behind",
+    "above"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Le due amiche camminano vicino al Colosseo.",
+    "targetWord": "vicino",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "anni",
+  "sentence": "Elena è una donna di trenta _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "anni",
+   "options": [
+    "anni",
+    "giorni",
+    "ore",
+    "posti"
+   ],
+   "translation": "Elena is a woman of thirty ____.",
+   "optionTranslations": [
+    "years",
+    "days",
+    "hours",
+    "places"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Elena è una donna di trenta anni.",
+    "targetWord": "anni",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "abita",
+  "sentence": "Elena _____ a Firenze, ma oggi visita Roma.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "abita",
+   "options": [
+    "abita",
+    "mangia",
+    "ride",
+    "beve"
+   ],
+   "translation": "Elena _____ in Florence, but today she visits Rome.",
+   "optionTranslations": [
+    "lives",
+    "eats",
+    "laughs",
+    "drinks"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Elena abita a Firenze, ma oggi visita Roma.",
+    "targetWord": "abita",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "visita",
+  "sentence": "Oggi Elena _____ la città di Roma.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "visita",
+   "options": [
+    "visita",
+    "abita",
+    "cammina",
+    "ritorna"
+   ],
+   "translation": "Today Elena _____ the city of Rome.",
+   "optionTranslations": [
+    "visits",
+    "lives",
+    "walks",
+    "returns"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Oggi Elena visita la città di Roma.",
+    "targetWord": "visita",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "camminano",
+  "sentence": "Le due amiche _____ vicino al Colosseo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "camminano",
+   "options": [
+    "camminano",
+    "mangiano",
+    "guardano",
+    "ridono"
+   ],
+   "translation": "The two friends _____ near the Colosseum.",
+   "optionTranslations": [
+    "walk",
+    "eat",
+    "look",
+    "laugh"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Le due amiche camminano vicino al Colosseo.",
+    "targetWord": "camminano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "caldo",
+  "sentence": "Il sole di Roma è molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "caldo",
+   "options": [
+    "caldo",
+    "alto",
+    "piccolo",
+    "lento"
+   ],
+   "translation": "The sun of Rome is very ____.",
+   "optionTranslations": [
+    "hot",
+    "tall",
+    "small",
+    "slow"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Il sole di Roma è molto caldo.",
+    "targetWord": "caldo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "mangiano",
+  "sentence": "Le amiche _____ una pizza buona.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mangiano",
+   "options": [
+    "mangiano",
+    "bevono",
+    "camminano",
+    "guardano"
+   ],
+   "translation": "The friends _____ a good pizza.",
+   "optionTranslations": [
+    "eat",
+    "drink",
+    "walk",
+    "look"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Le amiche mangiano una pizza buona.",
+    "targetWord": "mangiano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "bevono",
+  "sentence": "Le amiche _____ acqua fresca e buona.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bevono",
+   "options": [
+    "bevono",
+    "mangiano",
+    "comprano",
+    "prendono"
+   ],
+   "translation": "The friends _____ fresh, good water.",
+   "optionTranslations": [
+    "drink",
+    "eat",
+    "buy",
+    "take"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Le amiche bevono acqua fresca e buona.",
+    "targetWord": "bevono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "fresca",
+  "sentence": "Le amiche bevono acqua _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fresca",
+   "options": [
+    "fresca",
+    "calda",
+    "dolce",
+    "cara"
+   ],
+   "translation": "The friends drink ____ water.",
+   "optionTranslations": [
+    "cool",
+    "hot",
+    "sweet",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Le amiche bevono acqua fresca.",
+    "targetWord": "fresca",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "pranzo",
+  "sentence": "Dopo il _____, Giulia ha una sorpresa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pranzo",
+   "options": [
+    "pranzo",
+    "caffè",
+    "posto",
+    "giorno"
+   ],
+   "translation": "After ____, Giulia has a surprise.",
+   "optionTranslations": [
+    "lunch",
+    "coffee",
+    "place",
+    "day"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Dopo il pranzo, Giulia ha una sorpresa.",
+    "targetWord": "pranzo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sorpresa",
+  "sentence": "Dopo il pranzo, Giulia ha una _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sorpresa",
+   "options": [
+    "sorpresa",
+    "moneta",
+    "amica",
+    "pizza"
+   ],
+   "translation": "After lunch, Giulia has a ____.",
+   "optionTranslations": [
+    "surprise",
+    "coin",
+    "friend",
+    "pizza"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Dopo il pranzo, Giulia ha una sorpresa.",
+    "targetWord": "sorpresa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "grande",
+  "sentence": "La fontana di Trevi è molto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "grande",
+   "options": [
+    "grande",
+    "piccola",
+    "fredda",
+    "cara"
+   ],
+   "translation": "The Trevi fountain is very ____.",
+   "optionTranslations": [
+    "big",
+    "small",
+    "cold",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "La fontana di Trevi è molto grande.",
+    "targetWord": "grande",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "moneta",
+  "sentence": "Giulia dà una _____ a Elena.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "moneta",
+   "options": [
+    "moneta",
+    "pizza",
+    "amica",
+    "città"
+   ],
+   "translation": "Giulia gives a ____ to Elena.",
+   "optionTranslations": [
+    "coin",
+    "pizza",
+    "friend",
+    "city"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Giulia dà una moneta a Elena.",
+    "targetWord": "moneta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "butta",
+  "sentence": "Elena _____ la moneta nella fontana.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "butta",
+   "options": [
+    "butta",
+    "prende",
+    "guarda",
+    "beve"
+   ],
+   "translation": "Elena _____ the coin into the fountain.",
+   "optionTranslations": [
+    "throws",
+    "takes",
+    "looks",
+    "drinks"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Elena butta la moneta nella fontana.",
+    "targetWord": "butta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "ritorni",
+  "sentence": "Così tu _____ a Roma un giorno.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ritorni",
+   "options": [
+    "ritorni",
+    "cammini",
+    "mangi",
+    "guardi"
+   ],
+   "translation": "So you _____ to Rome one day.",
+   "optionTranslations": [
+    "return",
+    "walk",
+    "eat",
+    "look"
+   ],
+   "audioClip": {
+    "storySlug": "elena-arriva-a-roma",
+    "storySource": "user",
+    "sentence": "Così tu ritorni a Roma un giorno.",
+    "targetWord": "ritorni",
+    "language": "italian"
+   }
+  }
+ }
+]

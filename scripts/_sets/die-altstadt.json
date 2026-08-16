@@ -1,0 +1,571 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Stadt,Straße,Haus,Fluss",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Stadt",
+     "answer": "city",
+     "options": [
+      "city",
+      "street",
+      "house",
+      "river"
+     ]
+    },
+    {
+     "word": "Straße",
+     "answer": "street",
+     "options": [
+      "city",
+      "street",
+      "house",
+      "river"
+     ]
+    },
+    {
+     "word": "Haus",
+     "answer": "house",
+     "options": [
+      "city",
+      "street",
+      "house",
+      "river"
+     ]
+    },
+    {
+     "word": "Fluss",
+     "answer": "river",
+     "options": [
+      "city",
+      "street",
+      "house",
+      "river"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "treffen",
+  "sentence": "Sofia und Max _____ sich am Morgen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "treffen",
+   "options": [
+    "treffen",
+    "sitzen",
+    "machen",
+    "zeigen"
+   ],
+   "translation": "Sofia and Max _____ in the morning.",
+   "optionTranslations": [
+    "meet",
+    "sit",
+    "make",
+    "show"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Sofia und Max treffen sich am Morgen.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "treffen"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "macht",
+  "sentence": "Sofia _____ viele Fotos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "macht",
+   "options": [
+    "macht",
+    "zeigt",
+    "sitzt",
+    "trifft"
+   ],
+   "translation": "Sofia _____ many photos.",
+   "optionTranslations": [
+    "makes",
+    "shows",
+    "sits",
+    "meets"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Sofia macht viele Fotos.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "macht"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "zeige",
+  "sentence": "Ich _____ dir die Stadt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zeige",
+   "options": [
+    "zeige",
+    "mache",
+    "treffe",
+    "sitze"
+   ],
+   "translation": "I _____ you the city.",
+   "optionTranslations": [
+    "show",
+    "make",
+    "meet",
+    "sit"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Ich zeige dir die Stadt.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "zeige"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "sitzen",
+  "sentence": "Sofia und Max _____ auf einer Bank.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sitzen",
+   "options": [
+    "sitzen",
+    "treffen",
+    "machen",
+    "zeigen"
+   ],
+   "translation": "Sofia and Max _____ on a bench.",
+   "optionTranslations": [
+    "sit",
+    "meet",
+    "make",
+    "show"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Sofia und Max sitzen auf einer Bank.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "sitzen"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "fahren",
+  "sentence": "Die Boote _____ vorbei.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fahren",
+   "options": [
+    "fahren",
+    "sitzen",
+    "machen",
+    "treffen"
+   ],
+   "translation": "The boats _____ past.",
+   "optionTranslations": [
+    "travel",
+    "sit",
+    "make",
+    "meet"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Die Boote fahren vorbei.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "fahren"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "eng",
+  "sentence": "Sie gehen durch [[enge]] Straßen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "narrow",
+   "options": [
+    "narrow",
+    "wide",
+    "old",
+    "calm"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Sie gehen durch enge Straßen.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "enge"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "wunderschön",
+  "sentence": "Dresden ist wirklich [[wunderschön]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "very beautiful",
+   "options": [
+    "very beautiful",
+    "very old",
+    "very calm",
+    "very wide"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Dresden ist wirklich wunderschön.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "wunderschön"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "ruhig",
+  "sentence": "Die Elbe ist breit und [[ruhig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calm",
+   "options": [
+    "calm",
+    "narrow",
+    "golden",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Die Elbe ist breit und ruhig.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "ruhig"
+   }
+  }
+ },
+ {
+  "type": "listen_choose",
+  "featured": true,
+  "word": "langsam",
+  "sentence": "",
+  "payload": {
+   "prompt": "Listen and choose the word you hear.",
+   "answer": "langsam",
+   "options": [
+    "langsam",
+    "breit",
+    "ruhig",
+    "alt"
+   ],
+   "optionTranslations": [
+    "slowly",
+    "wide",
+    "calm",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Sie gehen langsam zum Fluss.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "langsam"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "alt",
+  "sentence": "Die Häuser sind [[alt]] und schön.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "old",
+   "options": [
+    "old",
+    "new",
+    "narrow",
+    "calm"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Die Häuser sind alt und schön.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "alt"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "schön",
+  "sentence": "Der Abend ist ruhig und [[schön]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "beautiful",
+   "options": [
+    "beautiful",
+    "narrow",
+    "cold",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Der Abend ist ruhig und schön.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "schön"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "breit",
+  "sentence": "Die Elbe ist [[breit]] und ruhig.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wide",
+   "options": [
+    "wide",
+    "narrow",
+    "old",
+    "calm"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Die Elbe ist breit und ruhig.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "breit"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Boote",
+  "sentence": "_____ fahren auf dem Fluss vorbei.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Boote",
+   "options": [
+    "Boote",
+    "Häuser",
+    "Straßen",
+    "Banken"
+   ],
+   "translation": "_____ travel past on the river.",
+   "optionTranslations": [
+    "boats",
+    "houses",
+    "streets",
+    "benches"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Boote fahren auf dem Fluss vorbei.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "Boote"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "vorbei",
+  "sentence": "Die Boote fahren am Ufer [[vorbei]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "past",
+   "options": [
+    "past",
+    "back",
+    "together",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Die Boote fahren am Ufer vorbei.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "vorbei"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Bank",
+  "sentence": "Sofia sitzt auf einer _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Bank",
+   "options": [
+    "Bank",
+    "Straße",
+    "Brücke",
+    "Sonne"
+   ],
+   "translation": "Sofia sits on a _____.",
+   "optionTranslations": [
+    "bench",
+    "street",
+    "bridge",
+    "sun"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Sofia sitzt auf einer Bank.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "Bank"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Sonne",
+  "sentence": "Das Wasser glänzt in der _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Sonne",
+   "options": [
+    "Sonne",
+    "Stadt",
+    "Straße",
+    "Bank"
+   ],
+   "translation": "The water shines in the _____.",
+   "optionTranslations": [
+    "sun",
+    "city",
+    "street",
+    "bench"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Das Wasser glänzt in der Sonne.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "Sonne"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "golden",
+  "sentence": "Die Sonne ist [[golden]] und warm.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "golden",
+   "options": [
+    "golden",
+    "calm",
+    "narrow",
+    "wide"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Die Sonne ist golden und warm.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "golden"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "gestern",
+  "sentence": "[[Gestern]] die falsche Tram, heute ein schöner Tag.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "yesterday",
+   "options": [
+    "yesterday",
+    "today",
+    "tomorrow",
+    "now"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Gestern die falsche Tram, heute ein schöner Tag.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "Gestern"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "genau",
+  "sentence": "Sofia lacht und sagt [[genau]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "exactly",
+   "options": [
+    "exactly",
+    "maybe",
+    "never",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "die-altstadt",
+    "storySource": "user",
+    "sentence": "Sofia lacht und sagt genau.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "genau"
+   }
+  }
+ }
+]

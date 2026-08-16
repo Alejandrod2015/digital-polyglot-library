@@ -1,0 +1,632 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "finestrino,negozio,quadro,ponte",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "finestrino",
+     "answer": "window",
+     "options": [
+      "window",
+      "shop",
+      "painting",
+      "bridge"
+     ]
+    },
+    {
+     "word": "negozio",
+     "answer": "shop",
+     "options": [
+      "window",
+      "shop",
+      "painting",
+      "bridge"
+     ]
+    },
+    {
+     "word": "quadro",
+     "answer": "painting",
+     "options": [
+      "window",
+      "shop",
+      "painting",
+      "bridge"
+     ]
+    },
+    {
+     "word": "ponte",
+     "answer": "bridge",
+     "options": [
+      "window",
+      "shop",
+      "painting",
+      "bridge"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "giallo",
+  "sentence": "Il tram è [[giallo]] e grande.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "yellow",
+   "options": [
+    "yellow",
+    "red",
+    "old",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Il tram è giallo e grande.",
+    "targetWord": "giallo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "vecchio",
+  "sentence": "I Navigli sono canali [[vecchi]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "old",
+   "options": [
+    "old",
+    "new",
+    "yellow",
+    "golden"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "I Navigli sono canali vecchi.",
+    "targetWord": "vecchi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "dorato",
+  "sentence": "La luce [[dorata]] brilla sull'acqua.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "golden",
+   "options": [
+    "golden",
+    "dark",
+    "cold",
+    "grey"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "La luce dorata brilla sull'acqua.",
+    "targetWord": "dorata",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "scoprire",
+  "sentence": "Luca porta Elena a _____ i Navigli.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "scoprire",
+   "options": [
+    "scoprire",
+    "vendere",
+    "tornare",
+    "partire"
+   ],
+   "translation": "Luca takes Elena to _____ the Navigli.",
+   "optionTranslations": [
+    "to discover",
+    "to sell",
+    "to return",
+    "to leave"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Luca porta Elena a scoprire i Navigli.",
+    "targetWord": "scoprire",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "attraversa",
+  "sentence": "Il tram _____ tutta la città.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "attraversa",
+   "options": [
+    "attraversa",
+    "vende",
+    "passa",
+    "torna"
+   ],
+   "translation": "The tram _____ the whole city.",
+   "optionTranslations": [
+    "crosses",
+    "sells",
+    "passes",
+    "returns"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Il tram attraversa tutta la città.",
+    "targetWord": "attraversa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "vende",
+  "sentence": "Un artista _____ quadri colorati.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vende",
+   "options": [
+    "vende",
+    "compra",
+    "scopre",
+    "passa"
+   ],
+   "translation": "An artist _____ colorful paintings.",
+   "optionTranslations": [
+    "sells",
+    "buys",
+    "discovers",
+    "passes"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Un artista vende quadri colorati.",
+    "targetWord": "vende",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "abbraccia",
+  "sentence": "Elena _____ forte Luca.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "abbraccia",
+   "options": [
+    "abbraccia",
+    "saluta",
+    "vende",
+    "passa"
+   ],
+   "translation": "Elena _____ Luca tightly.",
+   "optionTranslations": [
+    "hugs",
+    "greets",
+    "sells",
+    "passes"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Elena abbraccia forte Luca.",
+    "targetWord": "abbraccia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "passano",
+  "sentence": "Alcune barche _____ piano.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "passano",
+   "options": [
+    "passano",
+    "tornano",
+    "partono",
+    "vendono"
+   ],
+   "translation": "Some boats _____ slowly.",
+   "optionTranslations": [
+    "pass",
+    "return",
+    "leave",
+    "sell"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Alcune barche passano piano.",
+    "targetWord": "passano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "brilla",
+  "sentence": "La luce dorata _____ sull'acqua.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "brilla",
+   "options": [
+    "brilla",
+    "passa",
+    "torna",
+    "vende"
+   ],
+   "translation": "The golden light _____ on the water.",
+   "optionTranslations": [
+    "shines",
+    "passes",
+    "returns",
+    "sells"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "La luce dorata brilla sull'acqua.",
+    "targetWord": "brilla",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "giorno",
+  "sentence": "Elena e Luca hanno un _____ insieme.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "giorno",
+   "options": [
+    "giorno",
+    "mattina",
+    "ponte",
+    "ricordo"
+   ],
+   "translation": "Elena and Luca have one _____ together.",
+   "optionTranslations": [
+    "day",
+    "morning",
+    "bridge",
+    "memory"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Elena e Luca hanno un giorno insieme.",
+    "targetWord": "giorno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "mattina",
+  "sentence": "Questa _____ Luca porta Elena ai Navigli.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mattina",
+   "options": [
+    "mattina",
+    "giorno",
+    "luce",
+    "barca"
+   ],
+   "translation": "This _____ Luca takes Elena to the Navigli.",
+   "optionTranslations": [
+    "morning",
+    "day",
+    "light",
+    "boat"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Questa mattina Luca porta Elena ai Navigli.",
+    "targetWord": "mattina",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "fuori",
+  "sentence": "Elena guarda _____ dal finestrino.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fuori",
+   "options": [
+    "fuori",
+    "forte",
+    "presto",
+    "subito"
+   ],
+   "translation": "Elena looks _____ the window.",
+   "optionTranslations": [
+    "outside",
+    "tightly",
+    "early",
+    "immediately"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Elena guarda fuori dal finestrino.",
+    "targetWord": "fuori",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "ricordo",
+  "sentence": "Elena compra un _____ per la famiglia.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ricordo",
+   "options": [
+    "ricordo",
+    "quadro",
+    "ponte",
+    "negozio"
+   ],
+   "translation": "Elena buys a _____ for the family.",
+   "optionTranslations": [
+    "keepsake",
+    "painting",
+    "bridge",
+    "shop"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Elena compra un ricordo per la famiglia.",
+    "targetWord": "ricordo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "tornare",
+  "sentence": "Elena promette di _____ presto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tornare",
+   "options": [
+    "tornare",
+    "partire",
+    "scoprire",
+    "vendere"
+   ],
+   "translation": "Elena promises to _____ soon.",
+   "optionTranslations": [
+    "to return",
+    "to leave",
+    "to discover",
+    "to sell"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Elena promette di tornare presto.",
+    "targetWord": "tornare",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "partire",
+  "sentence": "Prima di _____, Elena abbraccia Luca.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "partire",
+   "options": [
+    "partire",
+    "tornare",
+    "scoprire",
+    "passare"
+   ],
+   "translation": "Before _____, Elena hugs Luca.",
+   "optionTranslations": [
+    "to leave",
+    "to return",
+    "to discover",
+    "to pass"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Prima di partire, Elena abbraccia Luca.",
+    "targetWord": "partire",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Grazie",
+  "sentence": "«_____ di tutto», dice Elena.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Grazie",
+   "options": [
+    "Grazie",
+    "Ciao",
+    "Bene",
+    "Forte"
+   ],
+   "translation": "'_____ for everything,' Elena says.",
+   "optionTranslations": [
+    "thanks",
+    "hello",
+    "well",
+    "tightly"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "«Grazie di tutto», dice Elena.",
+    "targetWord": "Grazie",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "forte",
+  "sentence": "Elena abbraccia _____ il suo amico.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "forte",
+   "options": [
+    "forte",
+    "fuori",
+    "presto",
+    "piano"
+   ],
+   "translation": "Elena hugs her friend _____.",
+   "optionTranslations": [
+    "tightly",
+    "outside",
+    "early",
+    "softly"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Elena abbraccia forte il suo amico.",
+    "targetWord": "forte",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "barche",
+  "sentence": "Alcune _____ passano sull'acqua.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "barche",
+   "options": [
+    "barche",
+    "luci",
+    "negozi",
+    "quadri"
+   ],
+   "translation": "Some _____ pass on the water.",
+   "optionTranslations": [
+    "boats",
+    "lights",
+    "shops",
+    "paintings"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Alcune barche passano sull'acqua.",
+    "targetWord": "barche",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "ferro",
+  "sentence": "Un vecchio ponte di _____ unisce le rive.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ferro",
+   "options": [
+    "ferro",
+    "marmo",
+    "luce",
+    "ricordo"
+   ],
+   "translation": "An old bridge of _____ joins the banks.",
+   "optionTranslations": [
+    "iron",
+    "marble",
+    "light",
+    "memory"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "Un vecchio ponte di ferro unisce le rive.",
+    "targetWord": "ferro",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "luce",
+  "sentence": "La _____ dorata brilla forte.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "luce",
+   "options": [
+    "luce",
+    "barca",
+    "mattina",
+    "ricordo"
+   ],
+   "translation": "The golden _____ shines brightly.",
+   "optionTranslations": [
+    "light",
+    "boat",
+    "morning",
+    "memory"
+   ],
+   "audioClip": {
+    "storySlug": "un-giro-sui-navigli",
+    "storySource": "user",
+    "sentence": "La luce dorata brilla forte.",
+    "targetWord": "luce",
+    "language": "italian"
+   }
+  }
+ }
+]

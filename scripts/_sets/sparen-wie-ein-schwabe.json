@@ -1,0 +1,494 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "der Wohlstand",
+    "sentence": "Nadia malt sich teure Boutiquen und großen [[Wohlstand]] aus.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "prosperity, wealth",
+      "options": [
+        "prosperity, wealth",
+        "traffic noise",
+        "bad weather",
+        "hard work"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Nadia malt sich teure Boutiquen und großen Wohlstand aus.",
+        "targetWord": "Wohlstand",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee7c546851103573.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Sparsamkeit",
+    "sentence": "Überall zeigt sich Steffis eiserne [[Sparsamkeit]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thriftiness, saving",
+      "options": [
+        "thriftiness, saving",
+        "generous spending",
+        "quiet sadness",
+        "hard work"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Überall zeigt sich Steffis eiserne Sparsamkeit.",
+        "targetWord": "Sparsamkeit",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0565ee5c5e09962.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Vermögen",
+    "sentence": "Ihr sitzt doch auf einem [[Vermögen]], sagt Nadia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fortune",
+      "options": [
+        "a fortune",
+        "a secret",
+        "a problem",
+        "a bargain"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Ihr sitzt doch auf einem Vermögen, sagt Nadia.",
+        "targetWord": "Vermögen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8a3a8594a0c4f160.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "knausrig",
+    "sentence": "Wie kann eine reiche Frau so [[knausrig]] leben?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stingy, tight-fisted",
+      "options": [
+        "stingy, tight-fisted",
+        "cheerful",
+        "generous",
+        "messy"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Wie kann eine reiche Frau so knausrig leben?",
+        "targetWord": "knausrig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5a3a9fac1665cd5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Häuschen",
+    "sentence": "Bald ist ihr kleines [[Häuschen]] ganz abbezahlt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a little house",
+      "options": [
+        "a little house",
+        "a small garden",
+        "an old car",
+        "a new phone"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Bald ist ihr kleines Häuschen ganz abbezahlt.",
+        "targetWord": "Häuschen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ed00bfa5233c0bf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Schnäppchen",
+    "sentence": "Der Reichtum steckt nicht im [[Schnäppchen]] von heute.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bargain",
+      "options": [
+        "a bargain",
+        "a mistake",
+        "a habit",
+        "a wallet"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Der Reichtum steckt nicht im Schnäppchen von heute.",
+        "targetWord": "Schnäppchen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee62c13defb3d4e9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "spart",
+    "sentence": "Jeden Monat _____ er etwas Geld für später.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "spart",
+      "options": [
+        "spart",
+        "verliert",
+        "singt",
+        "malt"
+      ],
+      "translation": "Every month he _____ some money for later.",
+      "optionTranslations": [
+        "saves",
+        "loses",
+        "sings",
+        "paints"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Jeden Monat spart er etwas Geld für später.",
+        "targetWord": "spart",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab690ef2422b1fea.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "feilscht",
+    "sentence": "Auf dem Markt _____ sie lange um den Preis.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "feilscht",
+      "options": [
+        "feilscht",
+        "tanzt",
+        "schläft",
+        "kocht"
+      ],
+      "translation": "At the market she _____ for a long time over the price.",
+      "optionTranslations": [
+        "haggles",
+        "dances",
+        "sleeps",
+        "cooks"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Auf dem Markt feilscht sie lange um den Preis.",
+        "targetWord": "feilscht",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6aeebce615a60fc5.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "abbezahlt",
+    "sentence": "Nach zehn Jahren ist das Haus endlich ganz _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "abbezahlt",
+      "options": [
+        "abbezahlt",
+        "gestrichen",
+        "verkauft",
+        "gebaut"
+      ],
+      "translation": "After ten years the house is finally fully _____.",
+      "optionTranslations": [
+        "paid off",
+        "painted",
+        "sold",
+        "built"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Nach zehn Jahren ist das Haus endlich ganz abbezahlt.",
+        "targetWord": "abbezahlt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/419eaa9bc240f993.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "gebrauchten",
+    "sentence": "Sie kauft lieber einen _____ Wagen als einen neuen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gebrauchten",
+      "options": [
+        "gebrauchten",
+        "schnellen",
+        "roten",
+        "teuren"
+      ],
+      "translation": "She would rather buy a _____ car than a new one.",
+      "optionTranslations": [
+        "used",
+        "fast",
+        "red",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Sie kauft lieber einen gebrauchten Wagen als einen neuen.",
+        "targetWord": "gebrauchten",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9b516e2c2dac0e1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jeden Cent zweimal umdrehen",
+    "sentence": "Steffi dreht jeden Cent [[zweimal]] um.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to watch every penny",
+      "options": [
+        "to watch every penny",
+        "to spend freely",
+        "to earn a lot",
+        "to lose money"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Steffi dreht jeden Cent zweimal um.",
+        "targetWord": "zweimal",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c46d55f5c183340.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "auf den Pfennig genau",
+    "sentence": "Steffi rechnet alles auf den [[Pfennig]] genau.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "exact to the last penny",
+      "options": [
+        "exact to the last penny",
+        "roughly and quickly",
+        "far too high",
+        "with a calculator"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Steffi rechnet alles auf den Pfennig genau.",
+        "targetWord": "Pfennig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0311f464b9387898.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "für einen Apfel und ein Ei",
+    "sentence": "Sie kauft alles für einen [[Apfel]] und ein Ei.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for next to nothing",
+      "options": [
+        "for next to nothing",
+        "for a fair price",
+        "for a fortune",
+        "for the family"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Sie kauft alles für einen Apfel und ein Ei.",
+        "targetWord": "Apfel",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3bfb0dd8e518ee5d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vermögend",
+    "sentence": "Die [[vermögendsten]] Leute sind hier oft die unauffälligsten.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wealthy, well-off",
+      "options": [
+        "wealthy, well-off",
+        "loud",
+        "young",
+        "friendly"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Die vermögendsten Leute sind hier oft die unauffälligsten.",
+        "targetWord": "vermögendsten",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d58ae859b0d72e5d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hajanoi",
+    "sentence": "[[Hajanoi]], gespart ist gespart, sagt Steffi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "well, oh well",
+      "options": [
+        "well, oh well",
+        "no way",
+        "thank you",
+        "good luck"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Hajanoi, gespart ist gespart, sagt Steffi.",
+        "targetWord": "Hajanoi",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f37fcc5282a89c37.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gelohnt",
+    "sentence": "Die viele Mühe hat sich am Ende wirklich _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gelohnt",
+      "options": [
+        "gelohnt",
+        "geärgert",
+        "verspätet",
+        "gewundert"
+      ],
+      "translation": "All the effort in the end really _____.",
+      "optionTranslations": [
+        "paid off",
+        "got annoyed",
+        "was late",
+        "was a surprise"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Die viele Mühe hat sich am Ende wirklich gelohnt.",
+        "targetWord": "gelohnt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e452356cc8b550fe.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "abgestaubt",
+    "sentence": "Auf dem Flohmarkt hat er die Gitarre günstig _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "abgestaubt",
+      "options": [
+        "abgestaubt",
+        "zerbrochen",
+        "gestimmt",
+        "verloren"
+      ],
+      "translation": "At the flea market he _____ the guitar cheaply.",
+      "optionTranslations": [
+        "snapped up",
+        "broke",
+        "tuned",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "sparen-wie-ein-schwabe",
+        "storySource": "user",
+        "sentence": "Auf dem Flohmarkt hat er die Gitarre günstig abgestaubt.",
+        "targetWord": "abgestaubt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e28fd46f1c3fdb48.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Autobauer,die Grombiera,das Sparbuch,der Geldbeutel",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Autobauer",
+          "answer": "a car maker",
+          "options": [
+            "a car maker",
+            "potatoes",
+            "a savings book",
+            "a wallet, purse"
+          ]
+        },
+        {
+          "word": "die Grombiera",
+          "answer": "potatoes",
+          "options": [
+            "a car maker",
+            "potatoes",
+            "a savings book",
+            "a wallet, purse"
+          ]
+        },
+        {
+          "word": "das Sparbuch",
+          "answer": "a savings book",
+          "options": [
+            "a car maker",
+            "potatoes",
+            "a savings book",
+            "a wallet, purse"
+          ]
+        },
+        {
+          "word": "der Geldbeutel",
+          "answer": "a wallet, purse",
+          "options": [
+            "a car maker",
+            "potatoes",
+            "a savings book",
+            "a wallet, purse"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

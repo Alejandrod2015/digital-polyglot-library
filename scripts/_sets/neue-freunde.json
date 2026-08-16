@@ -1,0 +1,592 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Brot,Obst,Suppe,Küche",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Brot",
+     "answer": "bread",
+     "options": [
+      "bread",
+      "fruit",
+      "soup",
+      "kitchen"
+     ]
+    },
+    {
+     "word": "Obst",
+     "answer": "fruit",
+     "options": [
+      "bread",
+      "fruit",
+      "soup",
+      "kitchen"
+     ]
+    },
+    {
+     "word": "Suppe",
+     "answer": "soup",
+     "options": [
+      "bread",
+      "fruit",
+      "soup",
+      "kitchen"
+     ]
+    },
+    {
+     "word": "Küche",
+     "answer": "kitchen",
+     "options": [
+      "bread",
+      "fruit",
+      "soup",
+      "kitchen"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "bekommt",
+  "sentence": "Finn _____ eine Nachricht.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bekommt",
+   "options": [
+    "bekommt",
+    "kauft",
+    "schreibt",
+    "kocht"
+   ],
+   "translation": "Finn _____ a message.",
+   "optionTranslations": [
+    "gets",
+    "buys",
+    "writes",
+    "cooks"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Finn bekommt eine Nachricht.",
+    "targetWord": "bekommt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Nachricht",
+  "sentence": "Finn bekommt eine _____ von Aylin.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Nachricht",
+   "options": [
+    "Nachricht",
+    "Arbeit",
+    "Woche",
+    "Suppe"
+   ],
+   "translation": "Finn gets a _____ from Aylin.",
+   "optionTranslations": [
+    "message",
+    "work",
+    "week",
+    "soup"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Finn bekommt eine Nachricht von Aylin.",
+    "targetWord": "Nachricht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "essen",
+  "sentence": "Wir _____ heute bei mir.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "essen",
+   "options": [
+    "essen",
+    "kochen",
+    "kaufen",
+    "helfen"
+   ],
+   "translation": "We _____ at my place today.",
+   "optionTranslations": [
+    "eat",
+    "cook",
+    "buy",
+    "help"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Wir essen heute bei mir.",
+    "targetWord": "essen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "schreibt",
+  "sentence": "Kommst du?, _____ sie.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schreibt",
+   "options": [
+    "schreibt",
+    "kauft",
+    "kocht",
+    "hilft"
+   ],
+   "translation": "Are you coming?, she _____.",
+   "optionTranslations": [
+    "writes",
+    "buys",
+    "cooks",
+    "helps"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Kommst du?, schreibt sie.",
+    "targetWord": "schreibt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "kauft",
+  "sentence": "Er _____ Brot und Obst.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kauft",
+   "options": [
+    "kauft",
+    "kocht",
+    "schreibt",
+    "bekommt"
+   ],
+   "translation": "He _____ bread and fruit.",
+   "optionTranslations": [
+    "buys",
+    "cooks",
+    "writes",
+    "gets"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Er kauft Brot und Obst.",
+    "targetWord": "kauft",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "kochen",
+  "sentence": "Sie _____ zusammen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kochen",
+   "options": [
+    "kochen",
+    "essen",
+    "helfen",
+    "kaufen"
+   ],
+   "translation": "They _____ together.",
+   "optionTranslations": [
+    "cook",
+    "eat",
+    "help",
+    "buy"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Sie kochen zusammen.",
+    "targetWord": "kochen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "hilft",
+  "sentence": "Finn _____ in der Küche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hilft",
+   "options": [
+    "hilft",
+    "kocht",
+    "isst",
+    "kauft"
+   ],
+   "translation": "Finn _____ in the kitchen.",
+   "optionTranslations": [
+    "helps",
+    "cooks",
+    "eats",
+    "buys"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Finn hilft in der Küche.",
+    "targetWord": "hilft",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "erzählt",
+  "sentence": "Finn _____ von seiner Arbeit.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "erzählt",
+   "options": [
+    "erzählt",
+    "schreibt",
+    "kauft",
+    "hilft"
+   ],
+   "translation": "Finn _____ about his work.",
+   "optionTranslations": [
+    "tells",
+    "writes",
+    "buys",
+    "helps"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Finn erzählt von seiner Arbeit.",
+    "targetWord": "erzählt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Arbeit",
+  "sentence": "Finn erzählt von seiner _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Arbeit",
+   "options": [
+    "Arbeit",
+    "Küche",
+    "Woche",
+    "Nachricht"
+   ],
+   "translation": "Finn tells about his _____.",
+   "optionTranslations": [
+    "work",
+    "kitchen",
+    "week",
+    "message"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Finn erzählt von seiner Arbeit.",
+    "targetWord": "Arbeit",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Woche",
+  "sentence": "Kommst du nächste _____ wieder?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Woche",
+   "options": [
+    "Woche",
+    "Arbeit",
+    "Suppe",
+    "Küche"
+   ],
+   "translation": "Are you coming again next _____?",
+   "optionTranslations": [
+    "week",
+    "work",
+    "soup",
+    "kitchen"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Kommst du nächste Woche wieder?",
+    "targetWord": "Woche",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "glücklich",
+  "sentence": "Finn ist sehr _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "glücklich",
+   "options": [
+    "glücklich",
+    "fremd",
+    "gemütlich",
+    "klein"
+   ],
+   "translation": "Finn is very _____.",
+   "optionTranslations": [
+    "happy",
+    "strange",
+    "cozy",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Finn ist sehr glücklich.",
+    "targetWord": "glücklich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "freut",
+  "sentence": "Finn [[freut]] sich sehr.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "is glad",
+   "options": [
+    "is glad",
+    "is sad",
+    "is tired",
+    "is angry"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Finn freut sich sehr.",
+    "targetWord": "freut",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "zusammen",
+  "sentence": "Sie kochen [[zusammen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "together",
+   "options": [
+    "together",
+    "alone",
+    "quietly",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Sie kochen zusammen.",
+    "targetWord": "zusammen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "oft",
+  "sentence": "Ich koche [[oft]] zu Hause.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "often",
+   "options": [
+    "often",
+    "never",
+    "late",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Ich koche oft zu Hause.",
+    "targetWord": "oft",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "fremd",
+  "sentence": "Niemand ist hier [[fremd]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a stranger",
+   "options": [
+    "a stranger",
+    "a friend",
+    "at home",
+    "alone"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Niemand ist hier fremd.",
+    "targetWord": "fremd",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "nächste",
+  "sentence": "Kommst du [[nächste]] Woche wieder?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "next",
+   "options": [
+    "next",
+    "last",
+    "this",
+    "every"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Kommst du nächste Woche wieder?",
+    "targetWord": "nächste",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "wieder",
+  "sentence": "Ja, klar, ich komme [[wieder]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "again",
+   "options": [
+    "again",
+    "never",
+    "alone",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Ja, klar, ich komme wieder.",
+    "targetWord": "wieder",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "spät",
+  "sentence": "Er geht [[spät]] nach Hause.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "late",
+   "options": [
+    "late",
+    "early",
+    "alone",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Er geht spät nach Hause.",
+    "targetWord": "spät",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "listen_choose",
+  "featured": true,
+  "word": "Freund",
+  "sentence": "",
+  "payload": {
+   "prompt": "Listen and choose the word you hear.",
+   "answer": "Freunde",
+   "options": [
+    "Freunde",
+    "Suppe",
+    "Küche",
+    "Arbeit"
+   ],
+   "optionTranslations": [
+    "friends",
+    "soup",
+    "kitchen",
+    "work"
+   ],
+   "audioClip": {
+    "storySlug": "neue-freunde",
+    "storySource": "user",
+    "sentence": "Die Freunde vom Park sind auch da.",
+    "targetWord": "Freunde",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ }
+]

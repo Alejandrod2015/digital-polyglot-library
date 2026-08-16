@@ -1,0 +1,653 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "amigo",
+    "sentence": "Él es mi [[amigo]] de la ciudad.",
+    "payload": {
+      "answer": "a friend",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a friend",
+        "a teacher",
+        "a brother",
+        "a neighbor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él es mi amigo de la ciudad.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "amigo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dff6bdec782ebb08.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "llegar",
+    "sentence": "El tren va a _____ a la estación pronto.",
+    "payload": {
+      "answer": "llegar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "llegar",
+        "cantar",
+        "comer",
+        "dormir"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El tren va a llegar a la estación pronto.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "llegar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/519d4055ee8f4e21.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The train is going to _____ at the station soon.",
+      "optionTranslations": [
+        "to arrive",
+        "to sing",
+        "to eat",
+        "to sleep"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esperar",
+    "sentence": "Él me [[espera]] en la estación.",
+    "payload": {
+      "answer": "to wait for",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to wait for",
+        "to greet",
+        "to follow",
+        "to call"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él me espera en la estación.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "espera",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6b2c8436fd52bd23.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "playa",
+    "sentence": "La [[playa]] está muy cerca de aquí.",
+    "payload": {
+      "answer": "a beach",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a beach",
+        "a forest",
+        "a street",
+        "a market"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La playa está muy cerca de aquí.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "playa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e491011b9cb7bd73.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mar",
+    "sentence": "El [[mar]] está muy tranquilo hoy.",
+    "payload": {
+      "answer": "the sea",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the sea",
+        "the sky",
+        "the sand",
+        "the rain"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El mar está muy tranquilo hoy.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "mar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/63279a248437d4c0.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "nadar",
+    "sentence": "Me gusta _____ en el mar en verano.",
+    "payload": {
+      "answer": "nadar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "nadar",
+        "cantar",
+        "dormir",
+        "comer"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Me gusta nadar en el mar en verano.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "nadar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/74b33195f06cd0c1.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I like to _____ in the sea in summer.",
+      "optionTranslations": [
+        "to swim",
+        "to sing",
+        "to sleep",
+        "to eat"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "agua",
+    "sentence": "Tengo sed y quiero un vaso de _____.",
+    "payload": {
+      "answer": "agua",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "agua",
+        "pan",
+        "sal",
+        "sol"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Tengo sed y quiero un vaso de agua.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "agua",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a80cdc9c572b8b23.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I am thirsty and I want a glass of _____.",
+      "optionTranslations": [
+        "water",
+        "bread",
+        "salt",
+        "sun"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "comer",
+    "sentence": "Tengo mucha hambre y quiero _____ ya.",
+    "payload": {
+      "answer": "comer",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "comer",
+        "dormir",
+        "correr",
+        "hablar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Tengo mucha hambre y quiero comer ya.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "comer",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3afdcb4dba294dba.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I am very hungry and I want to _____ now.",
+      "optionTranslations": [
+        "to eat",
+        "to sleep",
+        "to run",
+        "to talk"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gustar",
+    "sentence": "La ciudad me [[gusta]] mucho.",
+    "payload": {
+      "answer": "to like",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to like",
+        "to hate",
+        "to need",
+        "to lose"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La ciudad me gusta mucho.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "gusta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c9ec3533e96c657.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "feliz",
+    "sentence": "Ella también está muy [[feliz]].",
+    "payload": {
+      "answer": "happy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "happy",
+        "tired",
+        "angry",
+        "hungry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella también está muy feliz.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "feliz",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d2f8fdf3abd5961.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "sentence": "Él [[sonríe]] y toma la maleta.",
+    "payload": {
+      "answer": "to smile",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to smile",
+        "to cry",
+        "to sleep",
+        "to speak"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él sonríe y toma la maleta.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "sonríe",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2becd399f7c04a8d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "juntos",
+    "sentence": "Nosotros caminamos [[juntos]] por la calle.",
+    "payload": {
+      "answer": "together",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "together",
+        "alone",
+        "quietly",
+        "quickly"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Nosotros caminamos juntos por la calle.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "juntos",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f05fa5e39a838fdd.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Él habla [[despacio]] y muy claro.",
+    "payload": {
+      "answer": "slowly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "slowly",
+        "loudly",
+        "quickly",
+        "badly"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él habla despacio y muy claro.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "despacio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/399e92fdcf1924fa.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entender",
+    "sentence": "Yo [[entiendo]] casi todo hoy.",
+    "payload": {
+      "answer": "to understand",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to understand",
+        "to forget",
+        "to ask",
+        "to answer"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Yo entiendo casi todo hoy.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "entiendo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c35258b4d2ebeab3.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ciudad",
+    "sentence": "La [[ciudad]] es muy bonita y limpia.",
+    "payload": {
+      "answer": "a city",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a city",
+        "a beach",
+        "a river",
+        "a farm"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La ciudad es muy bonita y limpia.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "ciudad",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/59b9f5719deea5b2.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suave",
+    "sentence": "La arena es [[suave]] y clara.",
+    "payload": {
+      "answer": "soft",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "soft",
+        "hard",
+        "dry",
+        "dark"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La arena es suave y clara.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "suave",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dc2c8701f4acdcaa.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tranquilo",
+    "sentence": "Todo está muy [[tranquilo]] aquí.",
+    "payload": {
+      "answer": "calm",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "calm",
+        "loud",
+        "busy",
+        "cold"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Todo está muy tranquilo aquí.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "tranquilo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/990849c8dfefd2f9.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mañana",
+    "sentence": "Yo quiero volver [[mañana]] otra vez.",
+    "payload": {
+      "answer": "tomorrow",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "tomorrow",
+        "yesterday",
+        "today",
+        "soon"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Yo quiero volver mañana otra vez.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "mañana",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/932024ff34b6b9c8.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "volver",
+    "sentence": "Mañana quiero _____ a mi casa otra vez.",
+    "payload": {
+      "answer": "volver",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "volver",
+        "comprar",
+        "vender",
+        "limpiar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Mañana quiero volver a mi casa otra vez.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "volver",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9cf9d4df7732d262.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Tomorrow I want to _____ to my house again.",
+      "optionTranslations": [
+        "to come back",
+        "to buy",
+        "to sell",
+        "to clean"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "helado",
+    "sentence": "Hace calor y quiero un _____ de vainilla.",
+    "payload": {
+      "answer": "helado",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "helado",
+        "pan",
+        "jugo",
+        "plato"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hace calor y quiero un helado de vainilla.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "helado",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a3247a25b3d9040f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "It is hot and I want a _____ of vanilla.",
+      "optionTranslations": [
+        "ice cream",
+        "bread",
+        "juice",
+        "plate"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "arena",
+    "sentence": "En la playa camino sobre la _____ suave.",
+    "payload": {
+      "answer": "arena",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "arena",
+        "nieve",
+        "agua",
+        "hierba"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la playa camino sobre la arena suave.",
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "targetWord": "arena",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb57d89b94d5d11c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "On the beach I walk on the soft _____.",
+      "optionTranslations": [
+        "sand",
+        "snow",
+        "water",
+        "grass"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "tren,maleta,cielo,estación",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "tren",
+          "answer": "a train",
+          "options": [
+            "a train",
+            "a suitcase",
+            "the sky",
+            "a station"
+          ]
+        },
+        {
+          "word": "maleta",
+          "answer": "a suitcase",
+          "options": [
+            "a train",
+            "a suitcase",
+            "the sky",
+            "a station"
+          ]
+        },
+        {
+          "word": "cielo",
+          "answer": "the sky",
+          "options": [
+            "a train",
+            "a suitcase",
+            "the sky",
+            "a station"
+          ]
+        },
+        {
+          "word": "estación",
+          "answer": "a station",
+          "options": [
+            "a train",
+            "a suitcase",
+            "the sky",
+            "a station"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entiende",
+    "sentence": "Ella [[entiende]] todo lo que él dice.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "understands",
+      "options": [
+        "understands",
+        "forgets",
+        "asks",
+        "reads"
+      ],
+      "audioClip": {
+        "storySlug": "lucia-llega-a-san-sebastian",
+        "storySource": "user",
+        "sentence": "Ella entiende todo lo que él dice.",
+        "targetWord": "entiende",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1cc9c476cbed1dea.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

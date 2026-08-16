@@ -1,0 +1,746 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "vender",
+    "sentence": "Ella [[vende]] fruta en un mercado.",
+    "payload": {
+      "answer": "to sell",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to sell",
+        "to buy",
+        "to give",
+        "to carry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella vende fruta en un mercado.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "vende",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea201d31492e975c.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fruta",
+    "sentence": "Las mesas están llenas de [[fruta]].",
+    "payload": {
+      "answer": "fruit",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "fruit",
+        "bread",
+        "meat",
+        "candy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las mesas están llenas de fruta.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "fruta",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/92b1bb927b7bb887.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "sentence": "Ella le [[sonríe]] al cliente.",
+    "payload": {
+      "answer": "to smile",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to smile",
+        "to cry",
+        "to shout",
+        "to yawn"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella le sonríe al cliente.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "sonríe",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9cc2e3627c04cf26.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mango",
+    "sentence": "En la mesa hay [[mangos]] y papayas.",
+    "payload": {
+      "answer": "a mango",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a mango",
+        "a potato",
+        "an onion",
+        "a carrot"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la mesa hay mangos y papayas.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "mangos",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e155f4d7f7ecb0e6.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conocer",
+    "sentence": "Ella no [[conoce]] una fruta roja.",
+    "payload": {
+      "answer": "to know",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to know",
+        "to eat",
+        "to buy",
+        "to grow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella no conoce una fruta roja.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "conoce",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/11776c30edde8177.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cortar",
+    "sentence": "Ella [[corta]] un mango con cuidado.",
+    "payload": {
+      "answer": "to cut",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to cut",
+        "to peel",
+        "to wash",
+        "to cook"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella corta un mango con cuidado.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "corta",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/98340bc923c4cc25.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dulce",
+    "sentence": "La fruta es [[dulce]] y jugosa.",
+    "payload": {
+      "answer": "sweet",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "sweet",
+        "sour",
+        "salty",
+        "bitter"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La fruta es dulce y jugosa.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "dulce",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cea629e42817a37c.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "mercado",
+    "sentence": "Compro verduras frescas en el _____ cada mañana.",
+    "payload": {
+      "answer": "mercado",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "mercado",
+        "museo",
+        "hospital",
+        "parque"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Compro verduras frescas en el mercado cada mañana.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "mercado",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ea6c969207061b9.mp3"
+      },
+      "translation": "I buy fresh vegetables at the _____ every morning.",
+      "optionTranslations": [
+        "market",
+        "museum",
+        "hospital",
+        "park"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "hambre",
+    "sentence": "No comí nada hoy y tengo mucha _____.",
+    "payload": {
+      "answer": "hambre",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "hambre",
+        "sed",
+        "prisa",
+        "suerte"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "No comí nada hoy y tengo mucha hambre.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "hambre",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7f01457912ebbc6.mp3"
+      },
+      "translation": "I ate nothing today and have a lot of _____.",
+      "optionTranslations": [
+        "hunger",
+        "thirst",
+        "hurry",
+        "luck"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "dinero",
+    "sentence": "Para comprar pan necesito un poco de _____.",
+    "payload": {
+      "answer": "dinero",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "dinero",
+        "agua",
+        "papel",
+        "humo"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Para comprar pan necesito un poco de dinero.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "dinero",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/75e5c38310dc9699.mp3"
+      },
+      "translation": "To buy bread I need a little _____.",
+      "optionTranslations": [
+        "money",
+        "water",
+        "paper",
+        "smoke"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lleno",
+    "sentence": "Ella mira las mesas [[llenas]] de fruta.",
+    "payload": {
+      "answer": "full",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "full",
+        "empty",
+        "dirty",
+        "broken"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira las mesas llenas de fruta.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "llenas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02172fdbb2f0b29e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "papaya",
+    "sentence": "En la mesa hay mangos y [[papayas]].",
+    "payload": {
+      "answer": "a papaya",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a papaya",
+        "a cabbage",
+        "a pepper",
+        "a bean"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la mesa hay mangos y papayas.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "papayas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e155f4d7f7ecb0e6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "limón",
+    "sentence": "También hay [[limones]] verdes.",
+    "payload": {
+      "answer": "a lime",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a lime",
+        "a grape",
+        "a cherry",
+        "a plum"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "También hay limones verdes.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "limones",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/56c423295f39a084.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verde",
+    "sentence": "También hay limones [[verdes]].",
+    "payload": {
+      "answer": "green",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "green",
+        "yellow",
+        "blue",
+        "gray"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "También hay limones verdes.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "verdes",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/56c423295f39a084.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preguntar",
+    "sentence": "Ella [[pregunta]] el nombre.",
+    "payload": {
+      "answer": "to ask",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to ask",
+        "to answer",
+        "to shout",
+        "to listen"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella pregunta el nombre.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "pregunta",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e1422d74590a2655.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuidado",
+    "sentence": "Ella corta el mango con [[cuidado]].",
+    "payload": {
+      "answer": "care",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "care",
+        "fear",
+        "hurry",
+        "anger"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella corta el mango con cuidado.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "cuidado",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/47317ac7809ff866.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sabor",
+    "sentence": "El [[sabor]] es nuevo y rico.",
+    "payload": {
+      "answer": "a flavor",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a flavor",
+        "a smell",
+        "a sound",
+        "a color"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El sabor es nuevo y rico.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "sabor",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36ccc9592b3dfa15.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fresco",
+    "sentence": "El centro huele a fruta [[fresca]].",
+    "payload": {
+      "answer": "fresh",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "fresh",
+        "rotten",
+        "frozen",
+        "dry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El centro huele a fruta fresca.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "fresca",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ff0cd3895007079.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "centro",
+    "sentence": "Las tiendas grandes están en el _____ de la ciudad.",
+    "payload": {
+      "answer": "centro",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "centro",
+        "cielo",
+        "mar",
+        "campo"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las tiendas grandes están en el centro de la ciudad.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "centro",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7d18d7ef453ef09a.mp3"
+      },
+      "translation": "The big stores are in the _____ of the city.",
+      "optionTranslations": [
+        "center",
+        "sky",
+        "sea",
+        "countryside"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "billete",
+    "sentence": "Pagué la fruta con un _____ de papel.",
+    "payload": {
+      "answer": "billete",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "billete",
+        "plato",
+        "vaso",
+        "sombrero"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Pagué la fruta con un billete de papel.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "billete",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b74a0a84505d135.mp3"
+      },
+      "translation": "I paid for the fruit with a paper _____.",
+      "optionTranslations": [
+        "bill",
+        "plate",
+        "glass",
+        "hat"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pedazo",
+    "sentence": "Corté la manzana en un _____ pequeño.",
+    "payload": {
+      "answer": "pedazo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "pedazo",
+        "número",
+        "sonido",
+        "minuto"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Corté la manzana en un pedazo pequeño.",
+        "storySlug": "el-mercado-del-zocalo",
+        "targetWord": "pedazo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/66e7484620f01028.mp3"
+      },
+      "translation": "I cut the apple into a small _____.",
+      "optionTranslations": [
+        "piece",
+        "number",
+        "sound",
+        "minute"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "mesa,bolsa,regalo,nombre",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "mesa",
+          "answer": "a table",
+          "options": [
+            "a table",
+            "a bag",
+            "a gift",
+            "a name"
+          ]
+        },
+        {
+          "word": "bolsa",
+          "answer": "a bag",
+          "options": [
+            "a table",
+            "a bag",
+            "a gift",
+            "a name"
+          ]
+        },
+        {
+          "word": "regalo",
+          "answer": "a gift",
+          "options": [
+            "a table",
+            "a bag",
+            "a gift",
+            "a name"
+          ]
+        },
+        {
+          "word": "nombre",
+          "answer": "a name",
+          "options": [
+            "a table",
+            "a bag",
+            "a gift",
+            "a name"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comprar",
+    "sentence": "Sofía quiere [[comprar]] una fruta roja en el puesto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to buy",
+      "options": [
+        "to buy",
+        "to run",
+        "to read",
+        "to cook"
+      ],
+      "audioClip": {
+        "storySlug": "el-mercado-del-zocalo",
+        "storySource": "user",
+        "sentence": "Sofía quiere comprar una fruta roja en el puesto.",
+        "targetWord": "comprar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1bc3acd7fb2e99cd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calle",
+    "sentence": "Sofía camina por la [[calle]] con su fruta nueva.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the street",
+      "options": [
+        "the street",
+        "the kitchen",
+        "the river",
+        "the roof"
+      ],
+      "audioClip": {
+        "storySlug": "el-mercado-del-zocalo",
+        "storySource": "user",
+        "sentence": "Sofía camina por la calle con su fruta nueva.",
+        "targetWord": "calle",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/06e56111e550cc5c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reír",
+    "sentence": "Carmen [[ríe]] porque la situación le parece muy divertida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "laughs",
+      "options": [
+        "laughs",
+        "cries",
+        "sleeps",
+        "runs"
+      ],
+      "audioClip": {
+        "storySlug": "el-mercado-del-zocalo",
+        "storySource": "user",
+        "sentence": "Carmen ríe porque la situación le parece muy divertida.",
+        "targetWord": "ríe",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/864b4439978bcab7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gracias",
+    "sentence": "Sofía le da las [[gracias]] a Carmen muchas veces.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thank you",
+      "options": [
+        "thank you",
+        "good morning",
+        "excuse me",
+        "good night"
+      ],
+      "audioClip": {
+        "storySlug": "el-mercado-del-zocalo",
+        "storySource": "user",
+        "sentence": "Sofía le da las gracias a Carmen muchas veces.",
+        "targetWord": "gracias",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e35ae15602ab8f2a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guardar",
+    "sentence": "Sofía [[guarda]] un poco de fruta para otro día.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "keeps",
+      "options": [
+        "keeps",
+        "throws",
+        "breaks",
+        "opens"
+      ],
+      "audioClip": {
+        "storySlug": "el-mercado-del-zocalo",
+        "storySource": "user",
+        "sentence": "Sofía guarda un poco de fruta para otro día.",
+        "targetWord": "guarda",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/da7b2d1fdc8eab75.mp3"
+      }
+    },
+    "featured": false
+  }
+]

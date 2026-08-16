@@ -1,0 +1,577 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "sol,areia,chinelo,pássaro",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "sol",
+          "answer": "the sun",
+          "options": [
+            "the sun",
+            "sand",
+            "a flip-flop",
+            "a bird"
+          ]
+        },
+        {
+          "word": "areia",
+          "answer": "sand",
+          "options": [
+            "the sun",
+            "sand",
+            "a flip-flop",
+            "a bird"
+          ]
+        },
+        {
+          "word": "chinelo",
+          "answer": "a flip-flop",
+          "options": [
+            "the sun",
+            "sand",
+            "a flip-flop",
+            "a bird"
+          ]
+        },
+        {
+          "word": "pássaro",
+          "answer": "a bird",
+          "options": [
+            "the sun",
+            "sand",
+            "a flip-flop",
+            "a bird"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quente",
+    "sentence": "O sol de meio-dia deixa a areia branca [[quente]] demais para os pés.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hot",
+      "options": [
+        "hot",
+        "cold",
+        "wet",
+        "soft"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "O sol de meio-dia deixa a areia branca quente demais para os pés.",
+        "targetWord": "quente",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46137260910f8fab.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pé",
+    "sentence": "A areia fica quente demais para os [[pés]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a foot",
+      "options": [
+        "a foot",
+        "a hand",
+        "an arm",
+        "a shoulder"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "A areia fica quente demais para os pés.",
+        "targetWord": "pés",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e8b97cb27ee1559.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parar",
+    "sentence": "Ele [[para]] e levanta um pé, depois o outro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stop",
+      "options": [
+        "to stop",
+        "to run",
+        "to fall",
+        "to shout"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "Ele para e levanta um pé, depois o outro.",
+        "targetWord": "para",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b32274e3c5a5f481.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sombra",
+    "sentence": "Ele corre até a primeira [[sombra]] da praia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shade",
+      "options": [
+        "shade",
+        "sunlight",
+        "water",
+        "sand"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "Ele corre até a primeira sombra da praia.",
+        "targetWord": "sombra",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee240cdf9ff1c3e3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casal",
+    "sentence": "O [[casal]] mostra o caminho molhado perto da água.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a couple",
+      "options": [
+        "a couple",
+        "a child",
+        "a driver",
+        "a seller"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "O casal mostra o caminho molhado perto da água.",
+        "targetWord": "casal",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/912923b10c8d53b3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calor",
+    "sentence": "A água fria tira o [[calor]] dos pés dele.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "heat",
+      "options": [
+        "heat",
+        "noise",
+        "weight",
+        "smell"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "A água fria tira o calor dos pés dele.",
+        "targetWord": "calor",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f3d0e59dfea29fd0.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "queima",
+    "sentence": "A areia branca _____ os pés de quem anda sem chinelo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "queima",
+      "options": [
+        "queima",
+        "molha",
+        "limpa",
+        "esfria"
+      ],
+      "translation": "The white sand _____ the feet of anyone who walks without flip-flops.",
+      "optionTranslations": [
+        "burns",
+        "gets wet",
+        "cleans",
+        "cools"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "A areia branca queima os pés de quem anda sem chinelo.",
+        "targetWord": "queima",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6150877ff1174e29.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "fria",
+    "sentence": "A água do mar está _____ e tira o calor dos pés.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fria",
+      "options": [
+        "fria",
+        "quente",
+        "doce",
+        "funda"
+      ],
+      "translation": "The sea water is _____ and takes the heat out of your feet.",
+      "optionTranslations": [
+        "cold",
+        "hot",
+        "sweet",
+        "deep"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "A água do mar está fria e tira o calor dos pés.",
+        "targetWord": "fria",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b994b51b065a5552.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ardem",
+    "sentence": "Depois de andar na areia quente, os pés _____ um pouco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ardem",
+      "options": [
+        "ardem",
+        "dormem",
+        "secam",
+        "voltam"
+      ],
+      "translation": "After walking on the hot sand, your feet _____ a little.",
+      "optionTranslations": [
+        "sting",
+        "sleep",
+        "dry",
+        "come back"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "Depois de andar na areia quente, os pés ardem um pouco.",
+        "targetWord": "ardem",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6941e99a2e279357.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "passo",
+    "sentence": "Ele dá os primeiros [[passos]] na praia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a step",
+      "options": [
+        "a step",
+        "a jump",
+        "a road",
+        "a shoe"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "Ele dá os primeiros passos na praia.",
+        "targetWord": "passos",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5b961c99102eaad.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chão",
+    "sentence": "Dois rapazes passam correndo e nem olham para o [[chão]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the ground",
+      "options": [
+        "the ground",
+        "the sky",
+        "the sea",
+        "the wall"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "Dois rapazes passam correndo e nem olham para o chão.",
+        "targetWord": "chão",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/df9a2d222c10ca99.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tentar",
+    "sentence": "Ele [[tenta]] andar igual, mas a areia queima mais.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to try",
+      "options": [
+        "to try",
+        "to sleep",
+        "to answer",
+        "to pay"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "Ele tenta andar igual, mas a areia queima mais.",
+        "targetWord": "tenta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9748de8381b52bd7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guarda-sol",
+    "sentence": "Ele para no [[guarda-sol]] de um casal.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a beach umbrella",
+      "options": [
+        "a beach umbrella",
+        "a towel",
+        "a chair",
+        "a bucket"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "Ele para no guarda-sol de um casal.",
+        "targetWord": "guarda-sol",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5bf7a9ddfb27c952.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rir",
+    "sentence": "O casal [[ri]] e mostra o caminho para ele.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to laugh",
+      "options": [
+        "to laugh",
+        "to cry",
+        "to sing",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "O casal ri e mostra o caminho para ele.",
+        "targetWord": "ri",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f4db5705722e7b1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apagar",
+    "sentence": "A água fria [[apaga]] o calor de uma vez.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to put out",
+      "options": [
+        "to put out",
+        "to open",
+        "to carry",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "A água fria apaga o calor de uma vez.",
+        "targetWord": "apaga",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/69729b65ed487e7d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "beira",
+    "sentence": "Ele fica na [[beira]] do mar sem entrar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the edge",
+      "options": [
+        "the edge",
+        "the middle",
+        "the top",
+        "the end"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "Ele fica na beira do mar sem entrar.",
+        "targetWord": "beira",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/733a35957f83edf8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tornozelo",
+    "sentence": "A água chega até os [[tornozelos]] dele.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an ankle",
+      "options": [
+        "an ankle",
+        "a knee",
+        "an elbow",
+        "a finger"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "A água chega até os tornozelos dele.",
+        "targetWord": "tornozelos",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ba715b0550dca68.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "onda",
+    "sentence": "As [[ondas]] pequenas batem nas pernas dele.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a wave",
+      "options": [
+        "a wave",
+        "a stone",
+        "a cloud",
+        "a boat"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "As ondas pequenas batem nas pernas dele.",
+        "targetWord": "ondas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6ce09ada540012a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perna",
+    "sentence": "As ondas batem nas [[pernas]] e voltam.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a leg",
+      "options": [
+        "a leg",
+        "an arm",
+        "a back",
+        "a head"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "As ondas batem nas pernas e voltam.",
+        "targetWord": "pernas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f0d5f533639358e9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fundo",
+    "sentence": "As ondas voltam para o [[fundo]] do mar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "deep water",
+      "options": [
+        "deep water",
+        "the shore",
+        "the sky",
+        "the sand"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "As ondas voltam para o fundo do mar.",
+        "targetWord": "fundo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef9ba7156a21e409.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "molhado",
+    "sentence": "Depois da chuva, o chão fica _____ por muitas horas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "molhado",
+      "options": [
+        "molhado",
+        "quente",
+        "limpo",
+        "fundo"
+      ],
+      "translation": "After the rain, the ground stays _____ for many hours.",
+      "optionTranslations": [
+        "wet",
+        "hot",
+        "clean",
+        "deep"
+      ],
+      "audioClip": {
+        "storySlug": "a-areia-queima-os-pes",
+        "storySource": "user",
+        "sentence": "Depois da chuva, o chão fica molhado por muitas horas.",
+        "targetWord": "molhado",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9cd8cce048a46d7a.mp3"
+      }
+    },
+    "featured": false
+  }
+]

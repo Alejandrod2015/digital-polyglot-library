@@ -1,0 +1,458 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "a millón",
+    "sentence": "La parranda estaba [[a millón]] con champeta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at full blast",
+      "options": [
+        "at full blast",
+        "dead and quiet",
+        "half empty",
+        "almost over"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "La parranda estaba a millón con champeta.",
+        "targetWord": "a millón",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/52db95e95a3d09fa.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bailar sabroso",
+    "sentence": "Una traga [[bailaba sabroso]] en la pista.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dancing with real flavor",
+      "options": [
+        "dancing with real flavor",
+        "standing totally still",
+        "tripping over herself",
+        "sitting off to the side"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "Una traga bailaba sabroso en la pista.",
+        "targetWord": "bailaba sabroso",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/311b89414d6a9b44.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "embarrarla",
+    "sentence": "Ahí está tu momento, no la vayas a [[embarrar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "screw it up",
+      "options": [
+        "screw it up",
+        "pull it off",
+        "think it over",
+        "hand it over"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "Ahí está tu momento, no la vayas a embarrar.",
+        "targetWord": "embarrar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b0d0c1f70bf3291a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vale",
+    "sentence": "Esto lo tengo que ver, [[vale]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "buddy, mate",
+      "options": [
+        "buddy, mate",
+        "boss, chief",
+        "kid, child",
+        "sir, mister"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "Esto lo tengo que ver, vale.",
+        "targetWord": "vale",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4886ef5a23f0d2cd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "show",
+    "sentence": "Va a ser un [[show]], le comentó a Yuly.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a spectacle to watch",
+      "options": [
+        "a spectacle to watch",
+        "a quiet chat",
+        "a long wait",
+        "a fair deal"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "Va a ser un show, le comentó a Yuly.",
+        "targetWord": "show",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95c88369cf6d1fad.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "descoordinado",
+    "sentence": "Se movía de una forma bien [[descoordinada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clumsy and out of sync",
+      "options": [
+        "clumsy and out of sync",
+        "smooth and in time",
+        "slow and careful",
+        "proud and stiff"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "Se movía de una forma bien descoordinada.",
+        "targetWord": "descoordinada",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/be21d0cdfb6a7972.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ridiculez",
+    "sentence": "El parche se dobló al verlo hacer esa [[ridiculez]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an absurd silly thing",
+      "options": [
+        "an absurd silly thing",
+        "a clever smart move",
+        "a kind sweet gesture",
+        "a bold brave act"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "El parche se dobló al verlo hacer esa ridiculez.",
+        "targetWord": "ridiculez",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/078090cf31017df5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dejar en ridículo",
+    "sentence": "Por un segundo pareció que lo iba a [[dejar en ridículo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "publicly humiliate him",
+      "options": [
+        "publicly humiliate him",
+        "warmly welcome him",
+        "quietly ignore him",
+        "secretly help him"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "Por un segundo pareció que lo iba a dejar en ridículo.",
+        "targetWord": "dejar en ridículo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f3b5cb96a045cd35.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marcar el paso",
+    "sentence": "La china le empezó a [[marcar el paso]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "guide the dance steps",
+      "options": [
+        "guide the dance steps",
+        "block the exit door",
+        "pay the whole bill",
+        "tell the sad news"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "La china le empezó a marcar el paso.",
+        "targetWord": "marcar el paso",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/227cb649485f34c6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "congelado",
+    "sentence": "Por poco se queda [[congelado]] de la dicha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "frozen stiff",
+      "options": [
+        "frozen stiff",
+        "warmed right up",
+        "fast asleep",
+        "calmly seated"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "Por poco se queda congelado de la dicha.",
+        "targetWord": "congelado",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9f248a4469a12c00.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agarrar el ritmo",
+    "sentence": "Poco a poco fue [[agarrando el ritmo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "finding his groove",
+      "options": [
+        "finding his groove",
+        "losing his nerve",
+        "paying his debt",
+        "telling his story"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "Poco a poco fue agarrando el ritmo.",
+        "targetWord": "agarrando el ritmo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b24abd2c49e3e510.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "buenona",
+    "sentence": "Bailaba con la traga más [[buenona]] de la fiesta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "most attractive",
+      "options": [
+        "most attractive",
+        "most boring",
+        "most tired",
+        "most angry"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "Bailaba con la traga más buenona de la fiesta.",
+        "targetWord": "buenona",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/320452ed3aa992bd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en las nubes",
+    "sentence": "Andrés volvió al parche [[en las nubes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "walking on air",
+      "options": [
+        "walking on air",
+        "dragging his feet",
+        "hanging his head",
+        "biting his nails"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "Andrés volvió al parche en las nubes.",
+        "targetWord": "en las nubes",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/15f73f8b816be7f9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quedarse con la boca abierta",
+    "sentence": "Las amigas [[se quedaron con la boca abierta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "astonished, jaw dropped",
+      "options": [
+        "astonished, jaw dropped",
+        "calm and quite bored",
+        "angry and red faced",
+        "sleepy and very slow"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "Las amigas se quedaron con la boca abierta.",
+        "targetWord": "se quedaron con la boca abierta",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5bdd572e06cc8f93.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "no joda",
+    "sentence": "_____, el milagro sí existe, murmuró Yuly.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "no joda",
+      "options": [
+        "no joda",
+        "de malas",
+        "de gratis",
+        "de sobra"
+      ],
+      "translation": "_____, the miracle really does exist, Yuly murmured.",
+      "optionTranslations": [
+        "no way",
+        "unlucky",
+        "for free",
+        "to spare"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "no joda, el milagro sí existe, murmuró Yuly.",
+        "targetWord": "no joda",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/014ee4eb1ba583c8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "insoportable",
+    "sentence": "Puso una cara de triunfo bien _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "insoportable",
+      "options": [
+        "insoportable",
+        "callada",
+        "cansada",
+        "limpia"
+      ],
+      "translation": "He put on a really _____ look of triumph.",
+      "optionTranslations": [
+        "unbearable",
+        "quiet",
+        "tired",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "andres-en-la-pista",
+        "storySource": "user",
+        "sentence": "Puso una cara de triunfo bien insoportable.",
+        "targetWord": "insoportable",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c9461185c97b1273.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "champeta,traga,papelón,codazo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "champeta",
+          "answer": "coastal music and dance",
+          "options": [
+            "coastal music and dance",
+            "a crush",
+            "an embarrassing spectacle",
+            "a nudge with the elbow"
+          ]
+        },
+        {
+          "word": "traga",
+          "answer": "a crush",
+          "options": [
+            "coastal music and dance",
+            "a crush",
+            "an embarrassing spectacle",
+            "a nudge with the elbow"
+          ]
+        },
+        {
+          "word": "papelón",
+          "answer": "an embarrassing spectacle",
+          "options": [
+            "coastal music and dance",
+            "a crush",
+            "an embarrassing spectacle",
+            "a nudge with the elbow"
+          ]
+        },
+        {
+          "word": "codazo",
+          "answer": "a nudge with the elbow",
+          "options": [
+            "coastal music and dance",
+            "a crush",
+            "an embarrassing spectacle",
+            "a nudge with the elbow"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

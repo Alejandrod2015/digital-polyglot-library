@@ -1,0 +1,490 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "rio,cintura,pedrinha,lambari",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "rio",
+          "answer": "a river",
+          "options": [
+            "a river",
+            "the waist",
+            "a pebble",
+            "a small silver river fish"
+          ]
+        },
+        {
+          "word": "cintura",
+          "answer": "the waist",
+          "options": [
+            "a river",
+            "the waist",
+            "a pebble",
+            "a small silver river fish"
+          ]
+        },
+        {
+          "word": "pedrinha",
+          "answer": "a pebble",
+          "options": [
+            "a river",
+            "the waist",
+            "a pebble",
+            "a small silver river fish"
+          ]
+        },
+        {
+          "word": "lambari",
+          "answer": "a small silver river fish",
+          "options": [
+            "a river",
+            "the waist",
+            "a pebble",
+            "a small silver river fish"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parado",
+    "sentence": "Eles ficam [[parados]] na correnteza, virados para cima.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still",
+      "options": [
+        "still",
+        "fast",
+        "noisy",
+        "hidden"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "Eles ficam parados na correnteza, virados para cima.",
+        "targetWord": "parados",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3951aaf466c65649.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "correnteza",
+    "sentence": "Eles ficam parados na [[correnteza]] do rio frio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the current",
+      "options": [
+        "the current",
+        "the sand",
+        "the shade",
+        "the wave"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "Eles ficam parados na correnteza do rio frio.",
+        "targetWord": "correnteza",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/648730729b1e7fe7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encostar",
+    "sentence": "Um deles [[encosta]] na pele dela e volta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "touches",
+      "options": [
+        "touches",
+        "bites",
+        "follows",
+        "leaves"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "Um deles encosta na pele dela e volta.",
+        "targetWord": "encosta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/101cbb431fd214a3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pele",
+    "sentence": "Um peixe encosta na [[pele]] dela e some.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the skin",
+      "options": [
+        "the skin",
+        "the shoe",
+        "the hand",
+        "the hair"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "Um peixe encosta na pele dela e some.",
+        "targetWord": "pele",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fcf961974cc17b2e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prender",
+    "sentence": "Ela [[prende]] o ar e abaixa a cabeça na água.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "holds in",
+      "options": [
+        "holds in",
+        "lets out",
+        "warms up",
+        "gives away"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "Ela prende o ar e abaixa a cabeça na água.",
+        "targetWord": "prende",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d728761a717de07d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "respirar",
+    "sentence": "Ela levanta a cabeça e [[respira]] com a boca aberta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "breathes",
+      "options": [
+        "breathes",
+        "shouts",
+        "laughs",
+        "drinks"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "Ela levanta a cabeça e respira com a boca aberta.",
+        "targetWord": "respira",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c8517c3a94cc234a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fundo",
+    "sentence": "O [[fundo]] do rio é de areia clara.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the bottom",
+      "options": [
+        "the bottom",
+        "the top",
+        "the edge",
+        "the middle"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "O fundo do rio é de areia clara.",
+        "targetWord": "fundo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/760995526a2ab7cf.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "abaixa",
+    "sentence": "Ela prende o ar e _____ a cabeça na água.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "abaixa",
+      "options": [
+        "abaixa",
+        "levanta",
+        "lava",
+        "vira"
+      ],
+      "translation": "She holds her breath and _____ her head into the water.",
+      "optionTranslations": [
+        "lowers",
+        "lifts",
+        "washes",
+        "turns"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "Ela prende o ar e abaixa a cabeça na água.",
+        "targetWord": "abaixa",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d728761a717de07d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "levanta",
+    "sentence": "Ela _____ a cabeça e respira fundo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "levanta",
+      "options": [
+        "levanta",
+        "abaixa",
+        "fecha",
+        "perde"
+      ],
+      "translation": "She _____ her head and breathes deeply.",
+      "optionTranslations": [
+        "lifts",
+        "lowers",
+        "closes",
+        "loses"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "Ela levanta a cabeça e respira fundo.",
+        "targetWord": "levanta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b5c950f05246a84c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "claro",
+    "sentence": "O fundo é de areia [[clara]] e limpa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pale",
+      "options": [
+        "pale",
+        "dark",
+        "red",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "O fundo é de areia clara e limpa.",
+        "targetWord": "clara",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6487d4bc986c15fa.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "peixe",
+    "sentence": "Os [[peixes]] param entre as pernas dela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fish",
+      "options": [
+        "a fish",
+        "a bird",
+        "a crab",
+        "a frog"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "Os peixes param entre as pernas dela.",
+        "targetWord": "peixes",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/47c9d821ba35a4d0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fino",
+    "sentence": "Os lambaris [[finos]] param na água parada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thin",
+      "options": [
+        "thin",
+        "fat",
+        "long",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "Os lambaris finos param na água parada.",
+        "targetWord": "finos",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/db5db5fdd16966f7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mexer",
+    "sentence": "Ela [[mexe]] o pé e eles nem saem do lugar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "moves",
+      "options": [
+        "moves",
+        "washes",
+        "breaks",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "Ela mexe o pé e eles nem saem do lugar.",
+        "targetWord": "mexe",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f45939b5a8206f4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mata",
+    "sentence": "O barulho da [[mata]] some debaixo da água.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the forest",
+      "options": [
+        "the forest",
+        "the road",
+        "the market",
+        "the beach"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "O barulho da mata some debaixo da água.",
+        "targetWord": "mata",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/654a762c7f99c09f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aberto",
+    "sentence": "Ela respira com a boca [[aberta]] e sorri.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "open",
+      "options": [
+        "open",
+        "closed",
+        "dry",
+        "full"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "Ela respira com a boca aberta e sorri.",
+        "targetWord": "aberta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0e4f83a33471ef56.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "corpo",
+    "sentence": "Ela sai do rio quando o [[corpo]] dela pede sol.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the body",
+      "options": [
+        "the body",
+        "the watch",
+        "the towel",
+        "the shoe"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "Ela sai do rio quando o corpo dela pede sol.",
+        "targetWord": "corpo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/48a1621b055c79b8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "som",
+    "sentence": "O barulho da mata vira um [[som]] só, grave.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sound",
+      "options": [
+        "a sound",
+        "a light",
+        "a smell",
+        "a taste"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "O barulho da mata vira um som só, grave.",
+        "targetWord": "som",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02de3cfa20d5bcb1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "boca",
+    "sentence": "O peixe abre a [[boca]] e volta para o fundo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the mouth",
+      "options": [
+        "the mouth",
+        "the eye",
+        "the tail",
+        "the fin"
+      ],
+      "audioClip": {
+        "storySlug": "os-peixes-nao-tem-medo",
+        "storySource": "user",
+        "sentence": "O peixe abre a boca e volta para o fundo.",
+        "targetWord": "boca",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a24d83c89c3f63c7.mp3"
+      }
+    },
+    "featured": false
+  }
+]

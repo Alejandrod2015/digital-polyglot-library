@@ -1,0 +1,555 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "birra,libro,sedia,cappello",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "birra",
+          "answer": "beer",
+          "options": [
+            "beer",
+            "a book",
+            "a chair",
+            "a hat"
+          ]
+        },
+        {
+          "word": "libro",
+          "answer": "a book",
+          "options": [
+            "beer",
+            "a book",
+            "a chair",
+            "a hat"
+          ]
+        },
+        {
+          "word": "sedia",
+          "answer": "a chair",
+          "options": [
+            "beer",
+            "a book",
+            "a chair",
+            "a hat"
+          ]
+        },
+        {
+          "word": "cappello",
+          "answer": "a hat",
+          "options": [
+            "beer",
+            "a book",
+            "a chair",
+            "a hat"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "venire",
+    "sentence": "L'uomo domanda da dove [[viene]] lui.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "comes",
+      "options": [
+        "comes",
+        "pays",
+        "eats",
+        "works"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "L'uomo domanda da dove viene lui.",
+        "targetWord": "viene",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/74dc6585d2047a3b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "segnalibro",
+    "sentence": "Il [[segnalibro]] resta dentro le pagine.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the bookmark",
+      "options": [
+        "the bookmark",
+        "the receipt",
+        "the ticket",
+        "the coin"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Il segnalibro resta dentro le pagine.",
+        "targetWord": "segnalibro",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1969ca891d57580e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raccontare",
+    "sentence": "Lui [[racconta]] il suo lavoro e il viaggio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tells about",
+      "options": [
+        "tells about",
+        "asks about",
+        "pays for",
+        "writes down"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Lui racconta il suo lavoro e il viaggio.",
+        "targetWord": "racconta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f555cb46425e770b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ascoltare",
+    "sentence": "L'uomo [[ascolta]] senza interrompere.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "listens",
+      "options": [
+        "listens",
+        "speaks",
+        "writes",
+        "leaves"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "L'uomo ascolta senza interrompere.",
+        "targetWord": "ascolta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d75b2906834bfd8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avvisare",
+    "sentence": "Lui offre la birra senza [[avvisare]] nessuno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "telling beforehand",
+      "options": [
+        "telling beforehand",
+        "paying first",
+        "asking twice",
+        "looking up"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Lui offre la birra senza avvisare nessuno.",
+        "targetWord": "avvisare",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad2dc043566b21d8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "scambiare",
+    "sentence": "Loro non si [[scambiano]] il numero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "exchange",
+      "options": [
+        "exchange",
+        "forget",
+        "write",
+        "repeat"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Loro non si scambiano il numero.",
+        "targetWord": "scambiano",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c8aaac8a5fe8d37.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "forse",
+    "sentence": "[[Forse]] non si incontrano mai più.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "maybe",
+      "options": [
+        "maybe",
+        "surely",
+        "never",
+        "already"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Forse non si incontrano mai più.",
+        "targetWord": "forse",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7474a11a32862b45.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "compagnia",
+    "sentence": "Lui cerca soltanto un po' di [[compagnia]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "company",
+      "options": [
+        "company",
+        "money",
+        "silence",
+        "food"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Lui cerca soltanto un po' di compagnia.",
+        "targetWord": "compagnia",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a45516a300b7b9a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ordina",
+    "sentence": "Lui _____ una birra al banco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ordina",
+      "options": [
+        "ordina",
+        "rompe",
+        "lava",
+        "dorme"
+      ],
+      "translation": "He _____ a beer at the counter.",
+      "optionTranslations": [
+        "orders",
+        "breaks",
+        "washes",
+        "sleeps"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Lui ordina una birra al banco.",
+        "targetWord": "ordina",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8029f81da67d53f6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "domanda",
+    "sentence": "Ogni [[domanda]] porta un'altra domanda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "question",
+      "options": [
+        "question",
+        "answer",
+        "price",
+        "hour"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Ogni domanda porta un'altra domanda.",
+        "targetWord": "domanda",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eff67bf1cf72e43c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "continuare",
+    "sentence": "L'uomo [[continua]] a parlare tranquillo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "continues",
+      "options": [
+        "continues",
+        "stops",
+        "leaves",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "L'uomo continua a parlare tranquillo.",
+        "targetWord": "continua",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5e834ab521211f8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tranquillo",
+    "sentence": "Lui parla [[tranquillo]], senza fretta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calm",
+      "options": [
+        "calm",
+        "angry",
+        "afraid",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Lui parla tranquillo, senza fretta.",
+        "targetWord": "tranquillo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3676721fa1dd2e3c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tirare",
+    "sentence": "Una domanda [[tira]] l'altra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pulls, brings",
+      "options": [
+        "pulls, brings",
+        "pays",
+        "closes",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Una domanda tira l'altra.",
+        "targetWord": "tira",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d912a42463c6acf.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chiuso",
+    "sentence": "Poco dopo il libro resta [[chiuso]] sul tavolo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "closed",
+      "options": [
+        "closed",
+        "open",
+        "wet",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Poco dopo il libro resta chiuso sul tavolo.",
+        "targetWord": "chiuso",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/24eb64f099aa2c89.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lavoro",
+    "sentence": "Il suo [[lavoro]] è lontano da qui.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "job",
+      "options": [
+        "job",
+        "house",
+        "city",
+        "name"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Il suo lavoro è lontano da qui.",
+        "targetWord": "lavoro",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d926804e08d6712c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "viaggio",
+    "sentence": "Lui parla del [[viaggio]] in treno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the journey",
+      "options": [
+        "the journey",
+        "the dinner",
+        "the office",
+        "the hotel"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Lui parla del viaggio in treno.",
+        "targetWord": "viaggio",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d2324e4c8992a1a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alzarsi",
+    "sentence": "Quando lui [[si alza]], l'altro gli stringe la mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stands up",
+      "options": [
+        "stands up",
+        "sits down",
+        "turns round",
+        "falls down"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Quando lui si alza, l'altro gli stringe la mano.",
+        "targetWord": "si alza",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/80139a7ac8084a1a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "finalmente",
+    "sentence": "L'uomo dice [[finalmente]] il suo nome.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at last",
+      "options": [
+        "at last",
+        "never",
+        "almost",
+        "quickly"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "L'uomo dice finalmente il suo nome.",
+        "targetWord": "finalmente",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/abf97cac4da461b2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "numero",
+    "sentence": "Nessuno chiede il [[numero]] di telefono.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "number",
+      "options": [
+        "number",
+        "name",
+        "price",
+        "address"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Nessuno chiede il numero di telefono.",
+        "targetWord": "numero",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/979a76feda8733fe.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "incontrare",
+    "sentence": "Loro non si [[incontrano]] mai più.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "meet",
+      "options": [
+        "meet",
+        "pay",
+        "call",
+        "greet"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Loro non si incontrano mai più.",
+        "targetWord": "incontrano",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/df4906840b665ef9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ora",
+    "sentence": "Lui resta seduto un'altra [[ora]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hour",
+      "options": [
+        "hour",
+        "minute",
+        "week",
+        "day"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-mangia-da-solo-qui",
+        "storySource": "user",
+        "sentence": "Lui resta seduto un'altra ora.",
+        "targetWord": "ora",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a675ebb21a1c419c.mp3"
+      }
+    },
+    "featured": false
+  }
+]

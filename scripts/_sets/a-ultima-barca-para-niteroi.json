@@ -1,0 +1,538 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "bilhete,banco,céu,luz",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "bilhete",
+          "answer": "a ticket",
+          "options": [
+            "a ticket",
+            "a bench",
+            "the sky",
+            "a light"
+          ]
+        },
+        {
+          "word": "banco",
+          "answer": "a bench",
+          "options": [
+            "a ticket",
+            "a bench",
+            "the sky",
+            "a light"
+          ]
+        },
+        {
+          "word": "céu",
+          "answer": "the sky",
+          "options": [
+            "a ticket",
+            "a bench",
+            "the sky",
+            "a light"
+          ]
+        },
+        {
+          "word": "luz",
+          "answer": "a light",
+          "options": [
+            "a ticket",
+            "a bench",
+            "the sky",
+            "a light"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "correr",
+    "sentence": "Ela [[corre]] pelo corredor da estação.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to run",
+      "options": [
+        "to run",
+        "to walk",
+        "to sit",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "Ela corre pelo corredor da estação.",
+        "targetWord": "corre",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3632a1e7197145b3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barca",
+    "sentence": "O portão da [[barca]] fecha em dois minutos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a ferry",
+      "options": [
+        "a ferry",
+        "a train",
+        "a plane",
+        "a car"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "O portão da barca fecha em dois minutos.",
+        "targetWord": "barca",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/39c45860ea68f7eb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gritar",
+    "sentence": "Um funcionário [[grita]] o nome de Niterói.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to shout",
+      "options": [
+        "to shout",
+        "to whisper",
+        "to write",
+        "to point"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "Um funcionário grita o nome de Niterói.",
+        "targetWord": "grita",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab45fc9da55c644d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "roleta",
+    "sentence": "Ela passa pela [[roleta]] no último segundo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a turnstile",
+      "options": [
+        "a turnstile",
+        "a door",
+        "a stair",
+        "a seat"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "Ela passa pela roleta no último segundo.",
+        "targetWord": "roleta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/652b8151c3db3a35.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "soltar",
+    "sentence": "Ela [[solta]] os ombros pela primeira vez.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to let go",
+      "options": [
+        "to let go",
+        "to hold",
+        "to lift",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "Ela solta os ombros pela primeira vez.",
+        "targetWord": "solta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad9cb002fde5238a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "crescer",
+    "sentence": "O Pão de Açúcar [[cresce]] do lado direito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to grow bigger",
+      "options": [
+        "to grow bigger",
+        "to fall",
+        "to move away",
+        "to shrink"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "O Pão de Açúcar cresce do lado direito.",
+        "targetWord": "cresce",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5de751adf6190fe6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acender",
+    "sentence": "As luzes da outra margem [[acendem]] uma por uma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to light up",
+      "options": [
+        "to light up",
+        "to go out",
+        "to break",
+        "to fall"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "As luzes da outra margem acendem uma por uma.",
+        "targetWord": "acendem",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05c3782f3feb8be1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sem ar",
+    "sentence": "Ela entra no barco [[sem ar]] depois de correr.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "out of breath",
+      "options": [
+        "out of breath",
+        "in a hurry",
+        "by mistake",
+        "for free"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "Ela entra no barco sem ar depois de correr.",
+        "targetWord": "sem ar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b9698cd7a72f88e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "viagem",
+    "sentence": "A [[viagem]] de barca é curta e tranquila.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a trip",
+      "options": [
+        "a trip",
+        "a queue",
+        "a price",
+        "a seat"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "A viagem de barca é curta e tranquila.",
+        "targetWord": "viagem",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8c97eb64e023576f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "portão",
+    "sentence": "O [[portão]] da barca fecha em dois minutos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a gate",
+      "options": [
+        "a gate",
+        "a window",
+        "a wall",
+        "a floor"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "O portão da barca fecha em dois minutos.",
+        "targetWord": "portão",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/39c45860ea68f7eb.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fila",
+    "sentence": "A [[fila]] quase não anda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a queue",
+      "options": [
+        "a queue",
+        "a road",
+        "a shop",
+        "a bridge"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "A fila quase não anda.",
+        "targetWord": "fila",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8c4c07178a8d6185.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acenar",
+    "sentence": "Um funcionário [[acena]] para os últimos passageiros.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wave",
+      "options": [
+        "to wave",
+        "to push",
+        "to count",
+        "to close"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "Um funcionário acena para os últimos passageiros.",
+        "targetWord": "acena",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/58f6fc57de5dcecd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tremer",
+    "sentence": "O motor [[treme]] embaixo do piso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to shake",
+      "options": [
+        "to shake",
+        "to stop",
+        "to burn",
+        "to float"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "O motor treme embaixo do piso.",
+        "targetWord": "treme",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae3bd53ff0c7354d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "piso",
+    "sentence": "O motor treme embaixo do [[piso]] do barco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the floor",
+      "options": [
+        "the floor",
+        "the roof",
+        "the wall",
+        "the sea"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "O motor treme embaixo do piso do barco.",
+        "targetWord": "piso",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b03c121c33b7cfae.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vazio",
+    "sentence": "Ninguém está sentado ali, o banco está _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vazio",
+      "options": [
+        "vazio",
+        "cheio",
+        "quente",
+        "novo"
+      ],
+      "translation": "Nobody is sitting there, the bench is _____.",
+      "optionTranslations": [
+        "empty",
+        "full",
+        "hot",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "Ninguém está sentado ali, o banco está vazio.",
+        "targetWord": "vazio",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64a98c67fde1336e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vento",
+    "sentence": "Lá em cima o [[vento]] bate forte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the wind",
+      "options": [
+        "the wind",
+        "the rain",
+        "the sun",
+        "the noise"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "Lá em cima o vento bate forte.",
+        "targetWord": "vento",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf1dbc8ea1219116.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barulho",
+    "sentence": "O [[barulho]] da cidade fica para trás.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the noise",
+      "options": [
+        "the noise",
+        "the smell",
+        "the light",
+        "the heat"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "O barulho da cidade fica para trás.",
+        "targetWord": "barulho",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d96c2f9d4e3acf0e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "escura",
+    "sentence": "À noite a água do mar fica _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escura",
+      "options": [
+        "escura",
+        "clara",
+        "doce",
+        "quente"
+      ],
+      "translation": "At night the sea water gets _____.",
+      "optionTranslations": [
+        "dark",
+        "clear",
+        "sweet",
+        "hot"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "À noite a água do mar fica escura.",
+        "targetWord": "escura",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b76d316c5a2c0f7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ombro",
+    "sentence": "Ela solta os [[ombros]] pela primeira vez.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a shoulder",
+      "options": [
+        "a shoulder",
+        "a knee",
+        "an ankle",
+        "a wrist"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "Ela solta os ombros pela primeira vez.",
+        "targetWord": "ombros",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad9cb002fde5238a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "subir",
+    "sentence": "Ela [[sobe]] a escada do barco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go up",
+      "options": [
+        "to go up",
+        "to go down",
+        "to sit",
+        "to stop"
+      ],
+      "audioClip": {
+        "storySlug": "a-ultima-barca-para-niteroi",
+        "storySource": "user",
+        "sentence": "Ela sobe a escada do barco.",
+        "targetWord": "sobe",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/18e26d28525a20ab.mp3"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,964 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "viajera",
+    "sentence": "Una _____ conoce muchos países del mundo.",
+    "payload": {
+      "answer": "viajera",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "viajera",
+        "doctora",
+        "cocinera",
+        "maestra"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Una viajera conoce muchos países del mundo.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "viajera",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c09db54cb2f2e475.mp3"
+      },
+      "translation": "A _____ knows many countries in the world.",
+      "optionTranslations": [
+        "traveler",
+        "doctor",
+        "cook",
+        "teacher"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "visitar",
+    "sentence": "Ella [[visita]] la ciudad antigua hoy.",
+    "payload": {
+      "answer": "to visit",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to visit",
+        "to leave",
+        "to call",
+        "to wait"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella visita la ciudad antigua hoy.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "visita",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5732ffd6b90c2792.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "talavera",
+    "sentence": "Este plato es de [[talavera]] azul.",
+    "payload": {
+      "answer": "painted pottery",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "painted pottery",
+        "woven cloth",
+        "carved wood",
+        "blown glass"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Este plato es de talavera azul.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "talavera",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ac65294572373c7.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerámica",
+    "sentence": "La [[cerámica]] típica es muy bonita.",
+    "payload": {
+      "answer": "pottery",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "pottery",
+        "painting",
+        "jewelry",
+        "furniture"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La cerámica típica es muy bonita.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "cerámica",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e3c0acf50a8ea0d6.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "sentence": "Ella [[mira]] muchos platos de colores.",
+    "payload": {
+      "answer": "to look at",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to look at",
+        "to touch",
+        "to hear",
+        "to buy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira muchos platos de colores.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "mira",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f1f6d77ca1fb588.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tocar",
+    "sentence": "Ella [[toca]] el plato con mucho cuidado.",
+    "payload": {
+      "answer": "to touch",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to touch",
+        "to lift",
+        "to clean",
+        "to break"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella toca el plato con mucho cuidado.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "toca",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/90945fc1f731d26a.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "comprar",
+    "sentence": "Necesito dinero para _____ el pan.",
+    "payload": {
+      "answer": "comprar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "comprar",
+        "vender",
+        "tirar",
+        "lavar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Necesito dinero para comprar el pan.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "comprar",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f19490bb07eb7a22.mp3"
+      },
+      "translation": "I need money to _____ the bread.",
+      "optionTranslations": [
+        "buy",
+        "sell",
+        "throw away",
+        "wash"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "querer",
+    "sentence": "Ella [[quiere]] comprar el plato azul.",
+    "payload": {
+      "answer": "to want",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to want",
+        "to need",
+        "to have",
+        "to give"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella quiere comprar el plato azul.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "quiere",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a72f062c39a29d8e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "miedo",
+    "sentence": "Cuando veo una araña grande, siento _____.",
+    "payload": {
+      "answer": "miedo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "miedo",
+        "sueño",
+        "hambre",
+        "frío"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cuando veo una araña grande, siento miedo.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "miedo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/da84fd5920e21404.mp3"
+      },
+      "translation": "When I see a big spider, I feel _____.",
+      "optionTranslations": [
+        "fear",
+        "sleepiness",
+        "hunger",
+        "cold"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "típico",
+    "sentence": "Es una comida [[típica]] de la región.",
+    "payload": {
+      "answer": "typical",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "typical",
+        "modern",
+        "strange",
+        "foreign"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Es una comida típica de la región.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "típica",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eba3d0fe85599d62.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "trabaja",
+    "sentence": "Ella _____ en una oficina y gana dinero.",
+    "payload": {
+      "answer": "trabaja",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "trabaja",
+        "cocina",
+        "duerme",
+        "juega"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella trabaja en una oficina y gana dinero.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "trabaja",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4d463ed93919a0e6.mp3"
+      },
+      "translation": "She _____ in an office and earns money.",
+      "optionTranslations": [
+        "works",
+        "cooks",
+        "sleeps",
+        "plays"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saludar",
+    "sentence": "Ella [[saluda]] a la mujer con una sonrisa.",
+    "payload": {
+      "answer": "to greet",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to greet",
+        "to thank",
+        "to call",
+        "to help"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella saluda a la mujer con una sonrisa.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "saluda",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2fe9856b3f87d072.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pequeño",
+    "sentence": "La tienda es [[pequeña]] y limpia.",
+    "payload": {
+      "answer": "small",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "small",
+        "tall",
+        "heavy",
+        "wide"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La tienda es pequeña y limpia.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "pequeña",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/af189d77b30dcc7d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bonito",
+    "sentence": "La tienda es [[bonita]] y tranquila.",
+    "payload": {
+      "answer": "pretty",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "pretty",
+        "dirty",
+        "empty",
+        "dark"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La tienda es bonita y tranquila.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "bonita",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/93a947b3710d4366.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "con cuidado",
+    "sentence": "Ella toma el plato [[con cuidado]].",
+    "payload": {
+      "answer": "carefully",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "carefully",
+        "quickly",
+        "loudly",
+        "happily"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella toma el plato con cuidado.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "con cuidado",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/585f607808d14b9f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escuchar",
+    "sentence": "Ella [[escucha]] a la mujer con atención.",
+    "payload": {
+      "answer": "to listen",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to listen",
+        "to answer",
+        "to speak",
+        "to read"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella escucha a la mujer con atención.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "escucha",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e74b12e9530d9aee.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "resbala",
+    "sentence": "El piso está mojado y el vaso _____.",
+    "payload": {
+      "answer": "resbala",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "resbala",
+        "brilla",
+        "suena",
+        "pesa"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El piso está mojado y el vaso resbala.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "resbala",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f9e88d353eb28c3.mp3"
+      },
+      "translation": "The floor is wet and the glass _____.",
+      "optionTranslations": [
+        "slips",
+        "shines",
+        "rings",
+        "weighs"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agarrar",
+    "sentence": "Ella [[agarra]] el plato con la mano.",
+    "payload": {
+      "answer": "to grab",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to grab",
+        "to drop",
+        "to push",
+        "to wash"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella agarra el plato con la mano.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "agarra",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8d29f40969dafe0c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "respirar",
+    "sentence": "Ella [[respira]] tranquila y sonríe.",
+    "payload": {
+      "answer": "to breathe",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to breathe",
+        "to sleep",
+        "to cry",
+        "to run"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella respira tranquila y sonríe.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "respira",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc65806ca5da3042.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "sentence": "La mujer [[sonríe]] con mucho cariño.",
+    "payload": {
+      "answer": "to smile",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to smile",
+        "to shout",
+        "to cry",
+        "to nod"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La mujer sonríe con mucho cariño.",
+        "storySlug": "la-talavera-azul",
+        "targetWord": "sonríe",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0bff57f8d419e440.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "tienda,plato,recuerdo,color",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "tienda",
+          "answer": "a shop",
+          "options": [
+            "a shop",
+            "a plate",
+            "a souvenir",
+            "a color"
+          ]
+        },
+        {
+          "word": "plato",
+          "answer": "a plate",
+          "options": [
+            "a shop",
+            "a plate",
+            "a souvenir",
+            "a color"
+          ]
+        },
+        {
+          "word": "recuerdo",
+          "answer": "a souvenir",
+          "options": [
+            "a shop",
+            "a plate",
+            "a souvenir",
+            "a color"
+          ]
+        },
+        {
+          "word": "color",
+          "answer": "a color",
+          "options": [
+            "a shop",
+            "a plate",
+            "a souvenir",
+            "a color"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guardar",
+    "sentence": "Sofía [[guarda]] el plato para recordar el viaje.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "keeps",
+      "options": [
+        "keeps",
+        "eats",
+        "sells",
+        "washes"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "Sofía guarda el plato para recordar el viaje.",
+        "targetWord": "guarda",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/079ebf58c173ecdc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calle",
+    "sentence": "La tienda está en una [[calle]] tranquila.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a street",
+      "options": [
+        "a street",
+        "a river",
+        "a kitchen",
+        "a shoe"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "La tienda está en una calle tranquila.",
+        "targetWord": "calle",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c7bbfeace730d40.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "azul",
+    "sentence": "Tú tienes dos platos [[azules]] en casa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "blue",
+      "options": [
+        "blue",
+        "tall",
+        "cold",
+        "soft"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "Tú tienes dos platos azules en casa.",
+        "targetWord": "azules",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/35fad4f4c3970d02.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "atención",
+    "sentence": "Ese plato bonito llama tu [[atención]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "attention",
+      "options": [
+        "attention",
+        "a corner",
+        "a smell",
+        "a coin"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "Ese plato bonito llama tu atención.",
+        "targetWord": "atención",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/06673a20e0c7797b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mesa",
+    "sentence": "En la tienda hay muchas [[mesas]] con platos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tables",
+      "options": [
+        "tables",
+        "doors",
+        "clouds",
+        "shoes"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "En la tienda hay muchas mesas con platos.",
+        "targetWord": "mesas",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6faf4c31262215d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lleno",
+    "sentence": "Tú ves cajas [[llenas]] de platos bonitos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "full",
+      "options": [
+        "full",
+        "dirty",
+        "new",
+        "soft"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "Tú ves cajas llenas de platos bonitos.",
+        "targetWord": "llenas",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7228007db2194197.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuidado",
+    "sentence": "Tú tocas la cerámica con mucho [[cuidado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "care",
+      "options": [
+        "care",
+        "noise",
+        "money",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "Tú tocas la cerámica con mucho cuidado.",
+        "targetWord": "cuidado",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20f2654153c8e8fd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bolsa",
+    "sentence": "Tú llevas el recuerdo en una [[bolsa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bag",
+      "options": [
+        "a bag",
+        "a spoon",
+        "a chair",
+        "a cloud"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "Tú llevas el recuerdo en una bolsa.",
+        "targetWord": "bolsa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/97f3acbcc6f35774.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ciudad",
+    "sentence": "Puebla es una [[ciudad]] muy bonita.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a city",
+      "options": [
+        "a city",
+        "a garden",
+        "a chair",
+        "a river"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "Puebla es una ciudad muy bonita.",
+        "targetWord": "ciudad",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cffeca4044f37eca.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "flor",
+    "sentence": "Tú ves una [[flor]] blanca en el plato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a flower",
+      "options": [
+        "a flower",
+        "a shoe",
+        "a cloud",
+        "a spoon"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "Tú ves una flor blanca en el plato.",
+        "targetWord": "flor",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a6d596cf1ef6a18c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "explicar",
+    "sentence": "Marina te [[explica]] el trabajo de la cerámica.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "explains",
+      "options": [
+        "explains",
+        "cooks",
+        "runs",
+        "sleeps"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "Marina te explica el trabajo de la cerámica.",
+        "targetWord": "explica",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f0923502861f0c91.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "línea",
+    "sentence": "El plato tiene [[líneas]] finas y bonitas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lines",
+      "options": [
+        "lines",
+        "cups",
+        "birds",
+        "doors"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "El plato tiene líneas finas y bonitas.",
+        "targetWord": "líneas",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8626d2316adbea7b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pieza",
+    "sentence": "Cada [[pieza]] de talavera es única.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a piece",
+      "options": [
+        "a piece",
+        "a cloud",
+        "a song",
+        "a garden"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "Cada pieza de talavera es única.",
+        "targetWord": "pieza",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f1491766dbe0acfe.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pintar",
+    "sentence": "Marina [[pinta]] cada plato con colores bonitos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "paints",
+      "options": [
+        "paints",
+        "reads",
+        "jumps",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "Marina pinta cada plato con colores bonitos.",
+        "targetWord": "pinta",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/12c35d8dfca629ce.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mano",
+    "sentence": "Tú tocas el plato con la [[mano]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a hand",
+      "options": [
+        "a hand",
+        "a chair",
+        "a cloud",
+        "a spoon"
+      ],
+      "audioClip": {
+        "storySlug": "la-talavera-azul",
+        "storySource": "user",
+        "sentence": "Tú tocas el plato con la mano.",
+        "targetWord": "mano",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fd953d1ebe3e8c01.mp3"
+      }
+    },
+    "featured": false
+  }
+]

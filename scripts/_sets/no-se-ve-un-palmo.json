@@ -1,0 +1,546 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "piedra,roca,cuerda,cuello",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "piedra",
+     "answer": "a stone",
+     "options": [
+      "a stone",
+      "rock",
+      "a rope",
+      "a neck"
+     ]
+    },
+    {
+     "word": "roca",
+     "answer": "rock",
+     "options": [
+      "a stone",
+      "rock",
+      "a rope",
+      "a neck"
+     ]
+    },
+    {
+     "word": "cuerda",
+     "answer": "a rope",
+     "options": [
+      "a stone",
+      "rock",
+      "a rope",
+      "a neck"
+     ]
+    },
+    {
+     "word": "cuello",
+     "answer": "a neck",
+     "options": [
+      "a stone",
+      "rock",
+      "a rope",
+      "a neck"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jata",
+  "sentence": "Álvaro dice que ese sonido es una [[jata]] perdida.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a young cow",
+   "options": [
+    "a young cow",
+    "a mountain goat",
+    "a stray dog",
+    "a wild bird"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Álvaro dice que ese sonido es una jata perdida.",
+    "targetWord": "jata",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "majada",
+  "sentence": "Las jatas bajan solas a la [[majada]] al anochecer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the mountain hut and its field",
+   "options": [
+    "the mountain hut and its field",
+    "the village square at dusk",
+    "the road down to the town",
+    "the shop where they sell milk"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Las jatas bajan solas a la majada al anochecer.",
+    "targetWord": "majada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pared de roca",
+  "sentence": "El sendero iba pegado a la [[pared de roca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a tall face of stone",
+   "options": [
+    "a tall face of stone",
+    "a low garden wall",
+    "a wooden fence",
+    "a row of trees"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "El sendero iba pegado a la pared de roca.",
+    "targetWord": "pared de roca",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de memoria",
+  "sentence": "Álvaro dijo que se sabía el sendero [[de memoria]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "by heart",
+   "options": [
+    "by heart",
+    "by luck",
+    "by map",
+    "by phone"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Álvaro dijo que se sabía el sendero de memoria.",
+    "targetWord": "de memoria",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "muerta de miedo",
+  "sentence": "Nuria dice que la jata está [[muerta de miedo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "terrified",
+   "options": [
+    "terrified",
+    "badly hurt",
+    "very hungry",
+    "sound asleep"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Nuria dice que la jata está muerta de miedo.",
+    "targetWord": "muerta de miedo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "más o menos",
+  "sentence": "Álvaro dice que sabe por dónde van, [[más o menos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "more or less",
+   "options": [
+    "more or less",
+    "exactly",
+    "not at all",
+    "for certain"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Álvaro dice que sabe por dónde van, más o menos.",
+    "targetWord": "más o menos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cubre",
+  "sentence": "La niebla lo [[cubre]] todo y no se ve nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to cover",
+   "options": [
+    "to cover",
+    "to freeze",
+    "to soak",
+    "to warm"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "La niebla lo cubre todo y no se ve nada.",
+    "targetWord": "cubre",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "asustado",
+  "sentence": "Entre la niebla llega un sonido bajo y [[asustado]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "frightened",
+   "options": [
+    "frightened",
+    "cheerful",
+    "angry",
+    "sleepy"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Entre la niebla llega un sonido bajo y asustado.",
+    "targetWord": "asustado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bajada",
+  "sentence": "Álvaro dice que les queda un buen rato de [[bajada]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the walk down",
+   "options": [
+    "the walk down",
+    "the climb up",
+    "the wait here",
+    "the drive home"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Álvaro dice que les queda un buen rato de bajada.",
+    "targetWord": "bajada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pasos",
+  "featured": false,
+  "sentence": "Avanzan despacio, sin ver más allá de unos [[pasos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a step",
+   "options": [
+    "a step",
+    "a metre",
+    "a minute",
+    "a turn"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Avanzan despacio, sin ver más allá de unos pasos.",
+    "targetWord": "pasos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "blanco",
+  "featured": false,
+  "sentence": "Las piedras del sendero han desaparecido en el [[blanco]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the white wall of fog",
+   "options": [
+    "the white wall of fog",
+    "the deep green grass",
+    "the grey stone path",
+    "the dark night sky"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Las piedras del sendero han desaparecido en el blanco.",
+    "targetWord": "blanco",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sonido",
+  "featured": false,
+  "sentence": "Avanzan hacia el [[sonido]] y encuentran al animal.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sound",
+   "options": [
+    "a sound",
+    "a light",
+    "a smell",
+    "a shadow"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Avanzan hacia el sonido y encuentran al animal.",
+    "targetWord": "sonido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "separada",
+  "featured": false,
+  "sentence": "La jata está [[separada]] del rebaño, junto a una roca.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "apart from the group",
+   "options": [
+    "apart from the group",
+    "ahead of the group",
+    "asleep in the grass",
+    "tied to a post"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "La jata está separada del rebaño, junto a una roca.",
+    "targetWord": "separada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "animal",
+  "featured": false,
+  "sentence": "El [[animal]] se calma y empieza a tirar hacia abajo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an animal",
+   "options": [
+    "an animal",
+    "a person",
+    "a machine",
+    "a plant"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "El animal se calma y empieza a tirar hacia abajo.",
+    "targetWord": "animal",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "quietos",
+  "featured": false,
+  "sentence": "Nos quedamos _____, sin mover ni un pie.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "quietos",
+   "options": [
+    "quietos",
+    "sentados",
+    "juntos",
+    "cansados"
+   ],
+   "translation": "We stayed _____, without moving a single foot.",
+   "optionTranslations": [
+    "still",
+    "seated",
+    "together",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Nos quedamos quietos, sin mover ni un pie.",
+    "targetWord": "quietos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "derecha",
+  "featured": false,
+  "sentence": "La farmacia está a la _____, después del banco.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "derecha",
+   "options": [
+    "derecha",
+    "izquierda",
+    "esquina",
+    "entrada"
+   ],
+   "translation": "The chemist is on the _____, after the bank.",
+   "optionTranslations": [
+    "right",
+    "left",
+    "corner",
+    "entrance"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "La farmacia está a la derecha, después del banco.",
+    "targetWord": "derecha",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "junto",
+  "featured": false,
+  "sentence": "Deja la maleta _____ a la puerta, por favor.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "junto",
+   "options": [
+    "junto",
+    "lejos",
+    "encima",
+    "delante"
+   ],
+   "translation": "Leave the suitcase _____ to the door, please.",
+   "optionTranslations": [
+    "next",
+    "far",
+    "on top",
+    "in front"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Deja la maleta junto a la puerta, por favor.",
+    "targetWord": "junto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pobre",
+  "featured": false,
+  "sentence": "Ese perro está mojado, _____ animal, lleva horas fuera.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pobre",
+   "options": [
+    "pobre",
+    "buen",
+    "mal",
+    "otro"
+   ],
+   "translation": "That dog is wet, _____ thing, he has been out for hours.",
+   "optionTranslations": [
+    "poor",
+    "good",
+    "bad",
+    "another"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Ese perro está mojado, pobre animal, lleva horas fuera.",
+    "targetWord": "pobre",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "seguro",
+  "featured": false,
+  "sentence": "Va muy _____ por el camino, no duda nada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "seguro",
+   "options": [
+    "seguro",
+    "perdido",
+    "lento",
+    "callado"
+   ],
+   "translation": "He goes very _____ along the path, he does not hesitate.",
+   "optionTranslations": [
+    "sure",
+    "lost",
+    "slow",
+    "quiet"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Va muy seguro por el camino, no duda nada.",
+    "targetWord": "seguro",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "oficina",
+  "featured": false,
+  "sentence": "Trabajo en una _____ con cinco mesas y cinco ordenadores.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "oficina",
+   "options": [
+    "oficina",
+    "cocina",
+    "tienda",
+    "fábrica"
+   ],
+   "translation": "I work in an _____ with five desks and five computers.",
+   "optionTranslations": [
+    "office",
+    "kitchen",
+    "shop",
+    "factory"
+   ],
+   "audioClip": {
+    "storySlug": "no-se-ve-un-palmo",
+    "storySource": "user",
+    "sentence": "Trabajo en una oficina con cinco mesas y cinco ordenadores.",
+    "targetWord": "oficina",
+    "language": "spanish"
+   }
+  }
+ }
+]

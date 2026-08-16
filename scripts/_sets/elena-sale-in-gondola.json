@@ -1,0 +1,590 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "barca,ponte,canzone,bocca",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "barca",
+     "answer": "boat",
+     "options": [
+      "boat",
+      "bridge",
+      "song",
+      "mouth"
+     ]
+    },
+    {
+     "word": "ponte",
+     "answer": "bridge",
+     "options": [
+      "boat",
+      "bridge",
+      "song",
+      "mouth"
+     ]
+    },
+    {
+     "word": "canzone",
+     "answer": "song",
+     "options": [
+      "boat",
+      "bridge",
+      "song",
+      "mouth"
+     ]
+    },
+    {
+     "word": "bocca",
+     "answer": "mouth",
+     "options": [
+      "boat",
+      "bridge",
+      "song",
+      "mouth"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "vicino",
+  "sentence": "Elena arriva [[vicino]] al ponte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "near",
+   "options": [
+    "near",
+    "far away",
+    "inside",
+    "above"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "Elena arriva vicino al ponte.",
+    "targetWord": "vicino",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "stretta",
+  "sentence": "Le amiche salgono su una gondola [[stretta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "narrow",
+   "options": [
+    "narrow",
+    "wide",
+    "heavy",
+    "tall"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "Le amiche salgono su una gondola stretta.",
+    "targetWord": "stretta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "verde",
+  "sentence": "L'acqua del canale è calma e [[verde]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "green",
+   "options": [
+    "green",
+    "blue",
+    "black",
+    "clear"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "L'acqua del canale è calma e verde.",
+    "targetWord": "verde",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "lenta",
+  "sentence": "Il gondoliere canta una canzone [[lenta]] e triste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slow",
+   "options": [
+    "slow",
+    "fast",
+    "loud",
+    "happy"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "Il gondoliere canta una canzone lenta e triste.",
+    "targetWord": "lenta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "salgono",
+  "sentence": "Le due amiche _____ su una gondola.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "salgono",
+   "options": [
+    "salgono",
+    "passano",
+    "aprono",
+    "ascoltano"
+   ],
+   "optionTranslations": [
+    "get on",
+    "pass",
+    "open",
+    "listen"
+   ],
+   "translation": "The two friends _____ onto a gondola.",
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "Le due amiche salgono su una gondola.",
+    "targetWord": "salgono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "passa",
+  "sentence": "La gondola _____ sotto un ponte piccolo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "passa",
+   "options": [
+    "passa",
+    "canta",
+    "apre",
+    "vive"
+   ],
+   "optionTranslations": [
+    "passes",
+    "sings",
+    "opens",
+    "lives"
+   ],
+   "translation": "The gondola _____ under a small bridge.",
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "La gondola passa sotto un ponte piccolo.",
+    "targetWord": "passa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "canta",
+  "sentence": "Il gondoliere _____ una canzone lenta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "canta",
+   "options": [
+    "canta",
+    "ascolta",
+    "passa",
+    "apre"
+   ],
+   "optionTranslations": [
+    "sings",
+    "listens",
+    "passes",
+    "opens"
+   ],
+   "translation": "The gondolier _____ a slow song.",
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "Il gondoliere canta una canzone lenta.",
+    "targetWord": "canta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "voce",
+  "sentence": "La sua _____ è calda e dolce.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "voce",
+   "options": [
+    "voce",
+    "barca",
+    "bocca",
+    "mattina"
+   ],
+   "optionTranslations": [
+    "voice",
+    "boat",
+    "mouth",
+    "morning"
+   ],
+   "translation": "His _____ is warm and sweet.",
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "La sua voce è calda e dolce.",
+    "targetWord": "voce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "mattina",
+  "sentence": "È _____ sui canali di Venezia.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mattina",
+   "options": [
+    "mattina",
+    "sera",
+    "voce",
+    "barca"
+   ],
+   "optionTranslations": [
+    "morning",
+    "evening",
+    "voice",
+    "boat"
+   ],
+   "translation": "It is _____ on the canals of Venice.",
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "È mattina sui canali di Venezia.",
+    "targetWord": "mattina",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "calma",
+  "sentence": "L'acqua del canale è [[calma]] e verde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calm",
+   "options": [
+    "calm",
+    "dirty",
+    "deep",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "L'acqua del canale è calma e verde.",
+    "targetWord": "calma",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "piccolo",
+  "sentence": "La gondola passa sotto un ponte [[piccolo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small",
+   "options": [
+    "small",
+    "big",
+    "new",
+    "high"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "La gondola passa sotto un ponte piccolo.",
+    "targetWord": "piccolo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "antiche",
+  "sentence": "Elena guarda le vecchie case [[antiche]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ancient",
+   "options": [
+    "ancient",
+    "modern",
+    "empty",
+    "tall"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "Elena guarda le vecchie case antiche.",
+    "targetWord": "antiche",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "dolce",
+  "sentence": "La sua voce è calda e [[dolce]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gentle",
+   "options": [
+    "gentle",
+    "loud",
+    "bitter",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "La sua voce è calda e dolce.",
+    "targetWord": "dolce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "acqua",
+  "sentence": "L'[[acqua]] del canale è calma.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "water",
+   "options": [
+    "water",
+    "boat",
+    "voice",
+    "bridge"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "L'acqua del canale è calma.",
+    "targetWord": "acqua",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "vive",
+  "sentence": "La sua amica Sara _____ qui a Venezia.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vive",
+   "options": [
+    "vive",
+    "canta",
+    "apre",
+    "ascolta"
+   ],
+   "optionTranslations": [
+    "lives",
+    "sings",
+    "opens",
+    "listens"
+   ],
+   "translation": "Her friend Sara _____ here in Venice.",
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "La sua amica Sara vive qui a Venezia.",
+    "targetWord": "vive",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "case",
+  "sentence": "Elena guarda le _____ antiche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "case",
+   "options": [
+    "case",
+    "barche",
+    "voci",
+    "canzoni"
+   ],
+   "optionTranslations": [
+    "houses",
+    "boats",
+    "voices",
+    "songs"
+   ],
+   "translation": "Elena looks at the ancient _____.",
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "Elena guarda le case antiche.",
+    "targetWord": "case",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "apre",
+  "sentence": "Poi Elena _____ la bocca per la meraviglia.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "apre",
+   "options": [
+    "apre",
+    "canta",
+    "passa",
+    "vive"
+   ],
+   "optionTranslations": [
+    "opens",
+    "sings",
+    "passes",
+    "lives"
+   ],
+   "translation": "Then Elena _____ her mouth in wonder.",
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "Poi Elena apre la bocca per la meraviglia.",
+    "targetWord": "apre",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "ascolta",
+  "sentence": "Elena _____ bene e chiude gli occhi.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ascolta",
+   "options": [
+    "ascolta",
+    "canta",
+    "apre",
+    "passa"
+   ],
+   "optionTranslations": [
+    "listens",
+    "sings",
+    "opens",
+    "passes"
+   ],
+   "translation": "Elena _____ well and closes her eyes.",
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "Elena ascolta bene e chiude gli occhi.",
+    "targetWord": "ascolta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "occhi",
+  "sentence": "Elena chiude gli _____ e ascolta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "occhi",
+   "options": [
+    "occhi",
+    "case",
+    "gondole",
+    "mani"
+   ],
+   "optionTranslations": [
+    "eyes",
+    "houses",
+    "gondolas",
+    "hands"
+   ],
+   "translation": "Elena closes her _____ and listens.",
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "Elena chiude gli occhi e ascolta.",
+    "targetWord": "occhi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "giro",
+  "sentence": "Oggi Sara le fa un _____ speciale.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "giro",
+   "options": [
+    "giro",
+    "ponte",
+    "canto",
+    "segreto"
+   ],
+   "optionTranslations": [
+    "tour",
+    "bridge",
+    "song",
+    "secret"
+   ],
+   "translation": "Today Sara gives her a special _____.",
+   "audioClip": {
+    "storySlug": "elena-sale-in-gondola",
+    "storySource": "user",
+    "sentence": "Oggi Sara le fa un giro speciale.",
+    "targetWord": "giro",
+    "language": "italian"
+   }
+  }
+ }
+]

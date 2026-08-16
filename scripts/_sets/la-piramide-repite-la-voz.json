@@ -1,0 +1,621 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "pirámide",
+    "sentence": "La [[pirámide]] sube muy alto al cielo.",
+    "payload": {
+      "answer": "a pyramid",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a pyramid",
+        "a church",
+        "a tower",
+        "a bridge"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La pirámide sube muy alto al cielo.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "pirámide",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/13ca80b488de3716.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonido",
+    "sentence": "La pirámide repite el [[sonido]] fuerte.",
+    "payload": {
+      "answer": "a sound",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a sound",
+        "a color",
+        "a smell",
+        "a light"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La pirámide repite el sonido fuerte.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "sonido",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/769d797aed71a11d.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "eco",
+    "sentence": "La pirámide contesta con un [[eco]] claro.",
+    "payload": {
+      "answer": "an echo",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "an echo",
+        "a song",
+        "a voice",
+        "a word"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La pirámide contesta con un eco claro.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "eco",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f72961ee3bd89a2.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "palmada",
+    "sentence": "Junta las manos y da una [[palmada]].",
+    "payload": {
+      "answer": "a clap",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a clap",
+        "a jump",
+        "a shout",
+        "a song"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Junta las manos y da una palmada.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "palmada",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2177b7d92a37599a.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "regalo",
+    "sentence": "Es un [[regalo]] pequeño para ti.",
+    "payload": {
+      "answer": "a gift",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a gift",
+        "a toy",
+        "a bag",
+        "a card"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Es un regalo pequeño para ti.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "regalo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/433c233f7418ffbe.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grupo",
+    "sentence": "Camina con un [[grupo]] de turistas.",
+    "payload": {
+      "answer": "a group",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a group",
+        "a line",
+        "a family",
+        "a team"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Camina con un grupo de turistas.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "grupo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e25cc5fc80beb28f.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "sol",
+    "sentence": "De día el _____ da mucha luz.",
+    "payload": {
+      "answer": "sol",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "sol",
+        "luna",
+        "viento",
+        "agua"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "De día el sol da mucha luz.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "sol",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/78f1a38d21a982f5.mp3"
+      },
+      "translation": "During the day the _____ gives a lot of light.",
+      "optionTranslations": [
+        "sun",
+        "moon",
+        "wind",
+        "water"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "fuerte",
+    "sentence": "Ese señor levanta cajas porque es muy _____.",
+    "payload": {
+      "answer": "fuerte",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "fuerte",
+        "débil",
+        "alto",
+        "joven"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ese señor levanta cajas porque es muy fuerte.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "fuerte",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c00de201ef551f9.mp3"
+      },
+      "translation": "That man lifts boxes because he is very _____.",
+      "optionTranslations": [
+        "strong",
+        "weak",
+        "tall",
+        "young"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "aplaudir",
+    "sentence": "El público empieza a _____ al final.",
+    "payload": {
+      "answer": "aplaudir",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "aplaudir",
+        "cantar",
+        "gritar",
+        "salir"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El público empieza a aplaudir al final.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "aplaudir",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a7fdc553159e20d6.mp3"
+      },
+      "translation": "The audience starts to _____ at the end.",
+      "optionTranslations": [
+        "to clap",
+        "to sing",
+        "to shout",
+        "to leave"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "guarda",
+    "sentence": "Ella _____ el dinero en el bolsillo.",
+    "payload": {
+      "answer": "guarda",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "guarda",
+        "gasta",
+        "pierde",
+        "busca"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella guarda el dinero en el bolsillo.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "guarda",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee82a161a1b27362.mp3"
+      },
+      "translation": "She _____ the money in her pocket.",
+      "optionTranslations": [
+        "keeps",
+        "spends",
+        "loses",
+        "looks for"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "temprano",
+    "sentence": "Llega [[temprano]] con un grupo de turistas.",
+    "payload": {
+      "answer": "early",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "early",
+        "late",
+        "slowly",
+        "soon"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Llega temprano con un grupo de turistas.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "temprano",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f11614c70fa79ebd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "maya",
+    "sentence": "Escuchamos la historia de los [[mayas]].",
+    "payload": {
+      "answer": "an old Mexican people",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "an old Mexican people",
+        "a modern city",
+        "a big river",
+        "a tall mountain"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Escuchamos la historia de los mayas.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "mayas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5cbe8feb05e63cee.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tímido",
+    "sentence": "Da una palmada un poco [[tímida]].",
+    "payload": {
+      "answer": "shy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "shy",
+        "brave",
+        "happy",
+        "tired"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Da una palmada un poco tímida.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "tímida",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/83436ffcfe6ac9c8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mágico",
+    "sentence": "Está feliz por el sonido [[mágico]].",
+    "payload": {
+      "answer": "magical",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "magical",
+        "boring",
+        "normal",
+        "loud"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Está feliz por el sonido mágico.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "mágico",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2a65bd0805afd56f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dibujo",
+    "sentence": "La piedra tiene un [[dibujo]] antiguo.",
+    "payload": {
+      "answer": "a drawing",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a drawing",
+        "a photo",
+        "a word",
+        "a color"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La piedra tiene un dibujo antiguo.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "dibujo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0de77e61b8ad0511.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuidado",
+    "sentence": "Guarda la piedra con mucho [[cuidado]].",
+    "payload": {
+      "answer": "care",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "care",
+        "fear",
+        "hurry",
+        "noise"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Guarda la piedra con mucho cuidado.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "cuidado",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/597543f926394997.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salida",
+    "sentence": "El grupo camina hacia la [[salida]].",
+    "payload": {
+      "answer": "the exit",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the exit",
+        "the corner",
+        "the wall",
+        "the roof"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El grupo camina hacia la salida.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "salida",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e548297af443b028.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tarde",
+    "sentence": "El calor sube más en la [[tarde]].",
+    "payload": {
+      "answer": "the afternoon",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the afternoon",
+        "the morning",
+        "the night",
+        "the week"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El calor sube más en la tarde.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "tarde",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ea8fd32566ad164.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Sale del grupo y camina muy [[despacio]].",
+    "payload": {
+      "answer": "slowly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "slowly",
+        "quickly",
+        "early",
+        "loudly"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Sale del grupo y camina muy despacio.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "despacio",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5fe5d07e7129dc38.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "claro",
+    "sentence": "Sin nubes, el día está muy _____.",
+    "payload": {
+      "answer": "claro",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "claro",
+        "oscuro",
+        "frío",
+        "largo"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Sin nubes, el día está muy claro.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "claro",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d34012383acc9f20.mp3"
+      },
+      "translation": "With no clouds, the day is very _____.",
+      "optionTranslations": [
+        "clear",
+        "dark",
+        "cold",
+        "long"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "contesta",
+    "sentence": "Cuando suena el teléfono, ella _____ rápido.",
+    "payload": {
+      "answer": "contesta",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "contesta",
+        "pregunta",
+        "escribe",
+        "camina"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cuando suena el teléfono, ella contesta rápido.",
+        "storySlug": "la-piramide-repite-la-voz",
+        "targetWord": "contesta",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/41e0cbf0a312e753.mp3"
+      },
+      "translation": "When the phone rings, she _____ quickly.",
+      "optionTranslations": [
+        "answers",
+        "asks",
+        "writes",
+        "walks"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "cielo,pájaro,piedra,bolsa",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cielo",
+          "answer": "the sky",
+          "options": [
+            "the sky",
+            "a bird",
+            "a stone",
+            "a bag"
+          ]
+        },
+        {
+          "word": "pájaro",
+          "answer": "a bird",
+          "options": [
+            "the sky",
+            "a bird",
+            "a stone",
+            "a bag"
+          ]
+        },
+        {
+          "word": "piedra",
+          "answer": "a stone",
+          "options": [
+            "the sky",
+            "a bird",
+            "a stone",
+            "a bag"
+          ]
+        },
+        {
+          "word": "bolsa",
+          "answer": "a bag",
+          "options": [
+            "the sky",
+            "a bird",
+            "a stone",
+            "a bag"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

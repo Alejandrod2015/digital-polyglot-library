@@ -1,0 +1,584 @@
+[
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "rumba,guaro,guayabo,tregua",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "rumba",
+          "answer": "a big lively party",
+          "options": [
+            "a big lively party",
+            "a strong liquor",
+            "a bad hangover",
+            "a short break"
+          ]
+        },
+        {
+          "word": "guaro",
+          "answer": "a strong liquor",
+          "options": [
+            "a big lively party",
+            "a strong liquor",
+            "a bad hangover",
+            "a short break"
+          ]
+        },
+        {
+          "word": "guayabo",
+          "answer": "a bad hangover",
+          "options": [
+            "a big lively party",
+            "a strong liquor",
+            "a bad hangover",
+            "a short break"
+          ]
+        },
+        {
+          "word": "tregua",
+          "answer": "a short break",
+          "options": [
+            "a big lively party",
+            "a strong liquor",
+            "a bad hangover",
+            "a short break"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "barrer",
+    "sentence": "Las luces rojas [[barrían]] la pista atestada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sweep across",
+      "options": [
+        "to sweep across",
+        "to switch off",
+        "to flash brightly",
+        "to burn out"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "Las luces rojas barrían la pista atestada.",
+        "targetWord": "barrían",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ac540381f9a012da.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "pegado",
+    "sentence": "Manuela bailaba [[pegada]] a su prima Vale.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pressed close",
+      "options": [
+        "pressed close",
+        "far away",
+        "fast asleep",
+        "turned around"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "Manuela bailaba pegada a su prima Vale.",
+        "targetWord": "pegada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ce4465af2e541a49.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "parrandera",
+    "sentence": "Vale era su prima [[parrandera]] de siempre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "party-loving",
+      "options": [
+        "party-loving",
+        "hard-working",
+        "shy and quiet",
+        "strict and serious"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "Vale era su prima parrandera de siempre.",
+        "targetWord": "parrandera",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/af1eaa47a756c761.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "importar un pepino",
+    "sentence": "El guayabo asomaba, pero le [[importó un pepino]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "she didn't care at all",
+      "options": [
+        "she didn't care at all",
+        "she panicked completely",
+        "she loved it deeply",
+        "she forgot it fast"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "El guayabo asomaba, pero le importó un pepino.",
+        "targetWord": "importó un pepino",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/288b35de6bd9110b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "en serio",
+    "sentence": "Necesito hablar contigo, [[es en serio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I really mean it",
+      "options": [
+        "I really mean it",
+        "it's just a joke",
+        "I'm not sure",
+        "forget about it"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "Necesito hablar contigo, es en serio.",
+        "targetWord": "es en serio",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b0427d68312b1bd0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "helársele la sangre",
+    "sentence": "Al leerlo [[se le heló la sangre]] de golpe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "she froze in fear",
+      "options": [
+        "she froze in fear",
+        "she burst out laughing",
+        "she fell asleep",
+        "she cheered up"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "Al leerlo se le heló la sangre de golpe.",
+        "targetWord": "se le heló la sangre",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d9b4bb97a5696013.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "atinar",
+    "sentence": "Manu no [[atinó]] a responderle nada a Vale.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to manage to react",
+      "options": [
+        "to manage to react",
+        "to refuse firmly",
+        "to laugh loudly",
+        "to run away"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "Manu no atinó a responderle nada a Vale.",
+        "targetWord": "atinó",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/39139e5f0f603819.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "ajeno",
+    "sentence": "La música seguía [[ajena]] a su angustia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "detached and unaware",
+      "options": [
+        "detached and unaware",
+        "loud and close",
+        "warm and kind",
+        "slow and sad"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "La música seguía ajena a su angustia.",
+        "targetWord": "ajena",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/acdf87b5779bffe3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "abrirse paso",
+    "sentence": "Manu [[se abrió paso]] entre el gentío sudoroso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to push forward",
+      "options": [
+        "to push forward",
+        "to step back",
+        "to stand still",
+        "to sit down"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "Manu se abrió paso entre el gentío sudoroso.",
+        "targetWord": "se abrió paso",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3909ae2caf23d8d0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "a codazos",
+    "sentence": "Cruzó [[a codazos]] entre la multitud apretada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "by elbowing through",
+      "options": [
+        "by elbowing through",
+        "on tiptoe quietly",
+        "hand in hand",
+        "little by little"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "Cruzó a codazos entre la multitud apretada.",
+        "targetWord": "a codazos",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/647eedac95b7161a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "de una",
+    "sentence": "La rumba se tragó sus palabras [[de una]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right away",
+      "options": [
+        "right away",
+        "by mistake",
+        "little by little",
+        "in the end"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "La rumba se tragó sus palabras de una.",
+        "targetWord": "de una",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f2a17310d205e72.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "atestada",
+    "sentence": "Las luces barrían la pista ____ de gente.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "atestada",
+      "options": [
+        "atestada",
+        "parrandera",
+        "pegada",
+        "ajena"
+      ],
+      "translation": "The lights swept the ____ dance floor.",
+      "optionTranslations": [
+        "packed",
+        "party-loving",
+        "pressed close",
+        "detached"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "Las luces barrían la pista atestada de gente.",
+        "targetWord": "atestada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/88c94fbb29e05ad5.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "aguardiente",
+    "sentence": "Camilo repartió el ____ entre risas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aguardiente",
+      "options": [
+        "aguardiente",
+        "guayabo",
+        "tregua",
+        "angustia"
+      ],
+      "translation": "Camilo passed out the ____ amid laughter.",
+      "optionTranslations": [
+        "anise liquor",
+        "hangover",
+        "break",
+        "anguish"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "Camilo repartió el aguardiente entre risas.",
+        "targetWord": "aguardiente",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/538a317283440c2f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "asomarse",
+    "sentence": "Manu sentía el guayabo ____ temprano.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "asomarse",
+      "options": [
+        "asomarse",
+        "vibrar",
+        "barrer",
+        "atinar"
+      ],
+      "translation": "Manu felt the hangover start to ____ early.",
+      "optionTranslations": [
+        "appear",
+        "buzz",
+        "sweep",
+        "react"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "Manu sentía el guayabo asomarse temprano.",
+        "targetWord": "asomarse",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37721b0af4096c29.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "copita",
+    "sentence": "El mesero trajo una ____ helada de guaro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "copita",
+      "options": [
+        "copita",
+        "tregua",
+        "rumba",
+        "mecha"
+      ],
+      "translation": "The waiter brought a cold ____ of guaro.",
+      "optionTranslations": [
+        "shot glass",
+        "break",
+        "party",
+        "fuse"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "El mesero trajo una copita helada de guaro.",
+        "targetWord": "copita",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/13dda4d412814dc9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "desconocido",
+    "sentence": "Era un mensaje de un número ____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "desconocido",
+      "options": [
+        "desconocido",
+        "conocido",
+        "cercano",
+        "famoso"
+      ],
+      "translation": "It was a message from an ____ number.",
+      "optionTranslations": [
+        "unknown",
+        "known",
+        "close",
+        "famous"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "Era un mensaje de un número desconocido.",
+        "targetWord": "desconocido",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5748503860a25ec0.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "vibrar",
+    "sentence": "El celular empezó a ____ en el bolsillo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vibrar",
+      "options": [
+        "vibrar",
+        "asomarse",
+        "barrer",
+        "atinar"
+      ],
+      "translation": "The phone started to ____ in her pocket.",
+      "optionTranslations": [
+        "buzz",
+        "appear",
+        "sweep",
+        "react"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "El celular empezó a vibrar en el bolsillo.",
+        "targetWord": "vibrar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/68e595f2ef420d28.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "angustia",
+    "sentence": "La música seguía ajena a su ____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "angustia",
+      "options": [
+        "angustia",
+        "tregua",
+        "rumba",
+        "copita"
+      ],
+      "translation": "The music stayed detached from her ____.",
+      "optionTranslations": [
+        "anguish",
+        "break",
+        "party",
+        "shot glass"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "La música seguía ajena a su angustia.",
+        "targetWord": "angustia",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/acdf87b5779bffe3.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "tragó saliva",
+    "sentence": "Manu ____ y salió a la noche fría.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tragó saliva",
+      "options": [
+        "tragó saliva",
+        "tomó aliento",
+        "perdió calma",
+        "alzó voz"
+      ],
+      "translation": "Manu ____ and walked out into the cold night.",
+      "optionTranslations": [
+        "swallowed hard",
+        "caught her breath",
+        "lost her calm",
+        "raised her voice"
+      ],
+      "audioClip": {
+        "storySlug": "la-ultima-pola",
+        "storySource": "user",
+        "sentence": "Manu tragó saliva y salió a la noche fría.",
+        "targetWord": "tragó saliva",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b2185d389921e0ea.mp3"
+      }
+    }
+  }
+]

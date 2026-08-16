@@ -1,0 +1,618 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Stand,Weißwurst,Morgen,Käse",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Stand",
+     "answer": "market stall",
+     "options": [
+      "market stall",
+      "white sausage",
+      "morning",
+      "cheese"
+     ]
+    },
+    {
+     "word": "Weißwurst",
+     "answer": "white sausage",
+     "options": [
+      "market stall",
+      "white sausage",
+      "morning",
+      "cheese"
+     ]
+    },
+    {
+     "word": "Morgen",
+     "answer": "morning",
+     "options": [
+      "market stall",
+      "white sausage",
+      "morning",
+      "cheese"
+     ]
+    },
+    {
+     "word": "Käse",
+     "answer": "cheese",
+     "options": [
+      "market stall",
+      "white sausage",
+      "morning",
+      "cheese"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "möchte",
+  "sentence": "Lena [[möchte]] eine Weißwurst essen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "would like",
+   "options": [
+    "would like",
+    "must",
+    "can",
+    "may"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Lena möchte eine Weißwurst essen.",
+    "targetWord": "möchte",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "leid",
+  "sentence": "Tut mir [[leid]], sagt Frau Huber.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sorry",
+   "options": [
+    "sorry",
+    "happy",
+    "ready",
+    "sure"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Tut mir leid, sagt Frau Huber.",
+    "targetWord": "leid",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "Warum",
+  "sentence": "Zu spät? [[Warum]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "why",
+   "options": [
+    "why",
+    "when",
+    "where",
+    "how"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Zu spät? Warum?",
+    "targetWord": "Warum",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "versteht",
+  "sentence": "Lena [[versteht]] nicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "understands",
+   "options": [
+    "understands",
+    "hears",
+    "believes",
+    "answers"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Lena versteht nicht.",
+    "targetWord": "versteht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "Wirklich",
+  "sentence": "[[Wirklich]]? fragt Lena.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "really",
+   "options": [
+    "really",
+    "maybe",
+    "never",
+    "always"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Wirklich? fragt Lena.",
+    "targetWord": "Wirklich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "spät",
+  "sentence": "Es ist zu _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "spät",
+   "options": [
+    "spät",
+    "früh",
+    "gut",
+    "komisch"
+   ],
+   "translation": "It is too _____.",
+   "optionTranslations": [
+    "late",
+    "early",
+    "good",
+    "strange"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Es ist zu spät.",
+    "targetWord": "spät",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "früh",
+  "sentence": "Ich komme morgen _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "früh",
+   "options": [
+    "früh",
+    "spät",
+    "wieder",
+    "endlich"
+   ],
+   "translation": "I come tomorrow _____.",
+   "optionTranslations": [
+    "early",
+    "late",
+    "again",
+    "finally"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Ich komme morgen früh.",
+    "targetWord": "früh",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "gut",
+  "sentence": "Sie schmeckt sehr _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gut",
+   "options": [
+    "gut",
+    "spät",
+    "früh",
+    "komisch"
+   ],
+   "translation": "It tastes very _____.",
+   "optionTranslations": [
+    "good",
+    "late",
+    "early",
+    "strange"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Sie schmeckt sehr gut.",
+    "targetWord": "gut",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "komisch",
+  "sentence": "Das ist _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "komisch",
+   "options": [
+    "komisch",
+    "spät",
+    "gut",
+    "früh"
+   ],
+   "translation": "That is _____.",
+   "optionTranslations": [
+    "strange",
+    "late",
+    "good",
+    "early"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Das ist komisch.",
+    "targetWord": "komisch",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "essen",
+  "sentence": "Lena möchte heute eine Weißwurst _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "essen",
+   "options": [
+    "essen",
+    "nehmen",
+    "fragen",
+    "lachen"
+   ],
+   "translation": "Lena would like to _____ a Weißwurst today.",
+   "optionTranslations": [
+    "to eat",
+    "to take",
+    "to ask",
+    "to laugh"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Lena möchte heute eine Weißwurst essen.",
+    "targetWord": "essen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "wieder",
+  "sentence": "Sie geht _____ zum Markt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "wieder",
+   "options": [
+    "wieder",
+    "endlich",
+    "spät",
+    "früh"
+   ],
+   "translation": "She goes _____ to the market.",
+   "optionTranslations": [
+    "again",
+    "finally",
+    "late",
+    "early"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Sie geht wieder zum Markt.",
+    "targetWord": "wieder",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "endlich",
+  "sentence": "Dann esse ich _____ eine Weißwurst.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "endlich",
+   "options": [
+    "endlich",
+    "wieder",
+    "früh",
+    "spät"
+   ],
+   "translation": "Then I _____ eat a Weißwurst.",
+   "optionTranslations": [
+    "finally",
+    "again",
+    "early",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Dann esse ich endlich eine Weißwurst.",
+    "targetWord": "endlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Tradition",
+  "sentence": "Das ist die _____ in Bayern.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Tradition",
+   "options": [
+    "Tradition",
+    "Stand",
+    "Morgen",
+    "Käse"
+   ],
+   "translation": "That is the _____ in Bavaria.",
+   "optionTranslations": [
+    "tradition",
+    "stall",
+    "morning",
+    "cheese"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Das ist die Tradition in Bayern.",
+    "targetWord": "Tradition",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "bitte",
+  "sentence": "Eine Weißwurst, _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bitte",
+   "options": [
+    "bitte",
+    "gut",
+    "wieder",
+    "spät"
+   ],
+   "translation": "One Weißwurst, _____.",
+   "optionTranslations": [
+    "please",
+    "good",
+    "again",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Eine Weißwurst, bitte.",
+    "targetWord": "bitte",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "nimmt",
+  "sentence": "Lena _____ die Brezel mit Käse.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nimmt",
+   "options": [
+    "nimmt",
+    "kommt",
+    "fragt",
+    "lacht"
+   ],
+   "translation": "Lena _____ the pretzel with cheese.",
+   "optionTranslations": [
+    "takes",
+    "comes",
+    "asks",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Lena nimmt die Brezel mit Käse.",
+    "targetWord": "nimmt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "schmeckt",
+  "sentence": "Sie _____ sehr gut.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schmeckt",
+   "options": [
+    "schmeckt",
+    "kommt",
+    "lächelt",
+    "fragt"
+   ],
+   "translation": "It _____ very good.",
+   "optionTranslations": [
+    "tastes",
+    "comes",
+    "smiles",
+    "asks"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Sie schmeckt sehr gut.",
+    "targetWord": "schmeckt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "fragt",
+  "sentence": "Wirklich? _____ Lena.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fragt",
+   "options": [
+    "fragt",
+    "lacht",
+    "kommt",
+    "nimmt"
+   ],
+   "translation": "Really? Lena _____.",
+   "optionTranslations": [
+    "asks",
+    "laughs",
+    "comes",
+    "takes"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Wirklich? fragt Lena.",
+    "targetWord": "fragt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "komme",
+  "sentence": "Ich _____ morgen früh.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "komme",
+   "options": [
+    "komme",
+    "esse",
+    "nehme",
+    "frage"
+   ],
+   "translation": "I _____ early tomorrow.",
+   "optionTranslations": [
+    "come",
+    "eat",
+    "take",
+    "ask"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Ich komme morgen früh.",
+    "targetWord": "komme",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "lächelt",
+  "sentence": "Frau Huber _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lächelt",
+   "options": [
+    "lächelt",
+    "lacht",
+    "kommt",
+    "fragt"
+   ],
+   "translation": "Ms. Huber _____.",
+   "optionTranslations": [
+    "smiles",
+    "laughs",
+    "comes",
+    "asks"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Frau Huber lächelt.",
+    "targetWord": "lächelt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "lachen",
+  "sentence": "Frau Huber und Tobias _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lachen",
+   "options": [
+    "lachen",
+    "kommen",
+    "essen",
+    "fragen"
+   ],
+   "translation": "Ms. Huber and Tobias _____.",
+   "optionTranslations": [
+    "laugh",
+    "come",
+    "eat",
+    "ask"
+   ],
+   "audioClip": {
+    "storySlug": "die-wei-wurst",
+    "storySource": "user",
+    "sentence": "Frau Huber und Tobias lachen.",
+    "targetWord": "lachen",
+    "language": "german"
+   }
+  }
+ }
+]

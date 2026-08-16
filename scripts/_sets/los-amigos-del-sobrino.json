@@ -1,0 +1,232 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "vaso,grupo,hijo,vecino",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    { "word": "vaso", "answer": "a glass", "options": ["a glass", "a group", "a child", "a neighbour"] },
+    { "word": "grupo", "answer": "a group", "options": ["a glass", "a group", "a child", "a neighbour"] },
+    { "word": "hijo", "answer": "a child", "options": ["a glass", "a group", "a child", "a neighbour"] },
+    { "word": "vecino", "answer": "a neighbour", "options": ["a glass", "a group", "a child", "a neighbour"] }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rebujito",
+  "sentence": "Reme dice que ya casi no queda [[rebujito]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sherry and lemon drink",
+   "options": ["a sherry and lemon drink", "a slice of cake", "a cup of coffee", "a bowl of soup"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Reme dice que ya casi no queda rebujito.", "targetWord": "rebujito", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sevillana",
+  "sentence": "Reme dice que ahora hay que bailar una [[sevillana]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a traditional Sevillian dance",
+   "options": ["a traditional Sevillian dance", "a card game", "a long speech", "a street parade"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Reme dice que ahora hay que bailar una sevillana.", "targetWord": "sevillana", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "con los brazos abiertos",
+  "sentence": "Reme los recibe [[con los brazos abiertos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "very warmly",
+   "options": ["very warmly", "in a hurry", "without a word", "rather coldly"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Reme los recibe con los brazos abiertos.", "targetWord": "con los brazos abiertos", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sobrino",
+  "sentence": "Reme pregunta si son los amigos de su [[sobrino]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a nephew",
+   "options": ["a nephew", "a cousin", "a godson", "a brother-in-law"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Reme pregunta si son los amigos de su sobrino.", "targetWord": "sobrino", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a gusto",
+  "sentence": "Rocío dice que la gente está muy [[a gusto]] aquí.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at ease",
+   "options": ["at ease", "in a rush", "half asleep", "out of place"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Rocío dice que la gente está muy a gusto aquí.", "targetWord": "a gusto", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se nos va de las manos",
+  "sentence": "Curro dice que esto [[se nos va de las manos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it is getting out of control",
+   "options": ["it is getting out of control", "it is going very slowly", "it is almost finished", "it is going as planned"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Curro dice que esto se nos va de las manos.", "targetWord": "se nos va de las manos", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dado cuenta",
+  "sentence": "Rocío ya se ha [[dado cuenta]] del error.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "realised",
+   "options": ["realised", "forgotten", "explained", "complained"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Rocío ya se ha dado cuenta del error.", "targetWord": "dado cuenta", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bailar",
+  "sentence": "Reme dice que ahora hay que [[bailar]] con todos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to dance",
+   "options": ["to dance", "to sing", "to cook", "to leave"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Reme dice que ahora hay que bailar con todos.", "targetWord": "bailar", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "amable",
+  "sentence": "Rocío da las gracias y dice que Reme es muy [[amable]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kind",
+   "options": ["kind", "funny", "quiet", "busy"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Rocío da las gracias y dice que Reme es muy amable.", "targetWord": "amable", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "recibir",
+  "featured": false,
+  "sentence": "Reme [[recibe]] a los invitados en la puerta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to welcome",
+   "options": ["to welcome", "to count", "to photograph", "to interrupt"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Reme recibe a los invitados en la puerta.", "targetWord": "recibe", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gracias",
+  "featured": false,
+  "sentence": "Rocío dice muchas [[gracias]] y sonríe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thanks",
+   "options": ["thanks", "goodbye", "sorry", "please"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Rocío dice muchas gracias y sonríe.", "targetWord": "gracias", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "llenar",
+  "featured": false,
+  "sentence": "Reme [[llena]] dos vasos para los invitados.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to fill",
+   "options": ["to fill", "to break", "to wash", "to carry"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Reme llena dos vasos para los invitados.", "targetWord": "llena", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "saludar",
+  "featured": false,
+  "sentence": "Un grupo se acerca a [[saludar]] a los recién llegados.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to greet",
+   "options": ["to greet", "to complain", "to serve", "to interrupt"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Un grupo se acerca a saludar a los recién llegados.", "targetWord": "saludar", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tocar",
+  "featured": false,
+  "sentence": "Reme dice que ahora les [[toca]] a ellos dos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be somebody's turn",
+   "options": ["to be somebody's turn", "to be forbidden", "to be too late", "to be a surprise"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Reme dice que ahora les toca a ellos dos.", "targetWord": "toca", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "bajito",
+  "featured": false,
+  "sentence": "Habla _____, que el niño está durmiendo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bajito",
+   "options": ["bajito", "alto", "deprisa", "luego"],
+   "translation": "Speak _____, the baby is sleeping.",
+   "optionTranslations": ["quietly", "loudly", "quickly", "later"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Habla bajito, que el niño está durmiendo.", "targetWord": "bajito", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "rato",
+  "featured": false,
+  "sentence": "Espera un _____, ahora mismo salgo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rato",
+   "options": ["rato", "año", "día", "mes"],
+   "translation": "Wait a _____, I am coming out right now.",
+   "optionTranslations": ["moment", "year", "day", "month"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Espera un rato, ahora mismo salgo.", "targetWord": "rato", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "peor",
+  "featured": false,
+  "sentence": "Hoy el tiempo está _____ que ayer, llueve más.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "peor",
+   "options": ["peor", "mejor", "igual", "seco"],
+   "translation": "Today the weather is _____ than yesterday, it rains more.",
+   "optionTranslations": ["worse", "better", "the same", "dry"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "Hoy el tiempo está peor que ayer, llueve más.", "targetWord": "peor", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "detrás",
+  "featured": false,
+  "sentence": "El perro corre _____ de la bicicleta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "detrás",
+   "options": ["detrás", "encima", "dentro", "lejos"],
+   "translation": "The dog runs _____ the bicycle.",
+   "optionTranslations": ["behind", "on top of", "inside", "far from"],
+   "audioClip": { "storySlug": "los-amigos-del-sobrino", "storySource": "user", "sentence": "El perro corre detrás de la bicicleta.", "targetWord": "detrás", "language": "spanish" }
+  }
+ }
+]

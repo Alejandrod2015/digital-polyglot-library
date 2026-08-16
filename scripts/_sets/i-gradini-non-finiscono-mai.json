@@ -1,0 +1,555 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "cupola,scala,gradino,ascensore",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cupola",
+          "answer": "a dome",
+          "options": [
+            "a dome",
+            "stairs",
+            "a step",
+            "a lift"
+          ]
+        },
+        {
+          "word": "scala",
+          "answer": "stairs",
+          "options": [
+            "a dome",
+            "stairs",
+            "a step",
+            "a lift"
+          ]
+        },
+        {
+          "word": "gradino",
+          "answer": "a step",
+          "options": [
+            "a dome",
+            "stairs",
+            "a step",
+            "a lift"
+          ]
+        },
+        {
+          "word": "ascensore",
+          "answer": "a lift",
+          "options": [
+            "a dome",
+            "stairs",
+            "a step",
+            "a lift"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muoversi",
+    "sentence": "La fila non sembra [[muoversi]] mai.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to move",
+      "options": [
+        "to move",
+        "to grow",
+        "to pay",
+        "to open"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "La fila non sembra muoversi mai.",
+        "targetWord": "muoversi",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d9e3239cec85181.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "telefono",
+    "sentence": "Lei compra il biglietto sul [[telefono]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the phone",
+      "options": [
+        "the phone",
+        "the counter",
+        "the machine",
+        "the window"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "Lei compra il biglietto sul telefono.",
+        "targetWord": "telefono",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2cf34c07a74e3fb2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "turno",
+    "sentence": "Lei aspetta il suo [[turno]] al sole.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "turn",
+      "options": [
+        "turn",
+        "ticket",
+        "seat",
+        "change"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "Lei aspetta il suo turno al sole.",
+        "targetWord": "turno",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/258dbfe51c498744.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bloccare",
+    "sentence": "Chi si ferma [[blocca]] tutta la coda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "blocks",
+      "options": [
+        "blocks",
+        "helps",
+        "counts",
+        "opens"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "Chi si ferma blocca tutta la coda.",
+        "targetWord": "blocca",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f3f2d56b553a986d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cima",
+    "sentence": "In [[cima]] il vento arriva molto forte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the top",
+      "options": [
+        "at the top",
+        "at the bottom",
+        "outside",
+        "inside"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "In cima il vento arriva molto forte.",
+        "targetWord": "cima",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/237a1ba867152b15.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muretto",
+    "sentence": "Lei appoggia le mani sul [[muretto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the low wall",
+      "options": [
+        "the low wall",
+        "the wooden bench",
+        "the metal door",
+        "the glass window"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "Lei appoggia le mani sul muretto.",
+        "targetWord": "muretto",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/965ca094bdc919b2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "discesa",
+    "sentence": "La [[discesa]] è peggio della salita.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the way down",
+      "options": [
+        "the way down",
+        "the way up",
+        "the queue",
+        "the ticket"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "La discesa è peggio della salita.",
+        "targetWord": "discesa",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf35dcddc06449f9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salita",
+    "sentence": "La [[salita]] dura più di quello che pensava.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the climb",
+      "options": [
+        "the climb",
+        "the meal",
+        "the price",
+        "the rest"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "La salita dura più di quello che pensava.",
+        "targetWord": "salita",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/400c04be2d7f2dcf.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tremano",
+    "sentence": "Le gambe le _____ dopo la discesa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tremano",
+      "options": [
+        "tremano",
+        "parlano",
+        "dormono",
+        "pagano"
+      ],
+      "translation": "Her legs _____ after coming down.",
+      "optionTranslations": [
+        "shake",
+        "speak",
+        "sleep",
+        "pay"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "Le gambe le tremano dopo la discesa.",
+        "targetWord": "tremano",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d35805df5093effa.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avviso",
+    "sentence": "Un [[avviso]] all'entrata parla dell'ascensore.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a notice",
+      "options": [
+        "a notice",
+        "a queue",
+        "a price",
+        "a door"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "Un avviso all'entrata parla dell'ascensore.",
+        "targetWord": "avviso",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a29413fbc34c4ae5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ricordare",
+    "sentence": "Il cartello [[ricorda]] che non c'è ascensore.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "reminds",
+      "options": [
+        "reminds",
+        "hides",
+        "asks",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "Il cartello ricorda che non c'è ascensore.",
+        "targetWord": "ricorda",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/412e76f30dd760a1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "qualcuno",
+    "sentence": "Ogni tanto [[qualcuno]] si ferma per respirare.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "someone",
+      "options": [
+        "someone",
+        "nobody",
+        "everybody",
+        "she"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "Ogni tanto qualcuno si ferma per respirare.",
+        "targetWord": "qualcuno",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/62859633fb3bc9a6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "respirare",
+    "sentence": "La gente si ferma per [[respirare]] un momento.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to breathe",
+      "options": [
+        "to breathe",
+        "to pay",
+        "to talk",
+        "to sleep"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "La gente si ferma per respirare un momento.",
+        "targetWord": "respirare",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dd5679450ba47bc5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vento",
+    "sentence": "Il [[vento]] soffia forte sopra la città.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the wind",
+      "options": [
+        "the wind",
+        "the rain",
+        "the sun",
+        "the noise"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "Il vento soffia forte sopra la città.",
+        "targetWord": "vento",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a875a4bf8dc422fe.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "città",
+    "sentence": "La [[città]] da lassù diventa piccola e rossa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the city",
+      "options": [
+        "the city",
+        "the sea",
+        "the field",
+        "the church"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "La città da lassù diventa piccola e rossa.",
+        "targetWord": "città",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/701ab3b7f073e759.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "diventare",
+    "sentence": "Tutto [[diventa]] piccolo da quell'altezza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "becomes",
+      "options": [
+        "becomes",
+        "stays",
+        "looks",
+        "costs"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "Tutto diventa piccolo da quell'altezza.",
+        "targetWord": "diventa",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e867564fabbfd89e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rosso",
+    "sentence": "La città sembra [[rossa]] per via dei tetti.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "red",
+      "options": [
+        "red",
+        "green",
+        "white",
+        "grey"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "La città sembra rossa per via dei tetti.",
+        "targetWord": "rossa",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa8f6e4621455d0b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tetto",
+    "sentence": "I [[tetti]] stanno tutti vicini fra loro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the roofs",
+      "options": [
+        "the roofs",
+        "the doors",
+        "the streets",
+        "the trees"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "I tetti stanno tutti vicini fra loro.",
+        "targetWord": "tetti",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/241f7bf186bc181c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "panno",
+    "sentence": "Sui tetti ci sono [[panni]] stesi al sole.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "washing, clothes",
+      "options": [
+        "washing, clothes",
+        "flowers",
+        "birds",
+        "chairs"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "Sui tetti ci sono panni stesi al sole.",
+        "targetWord": "panni",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cb79a3ddf11c6ef4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bocca",
+    "sentence": "Lei respira con la [[bocca]] aperta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the mouth",
+      "options": [
+        "the mouth",
+        "the nose",
+        "the hand",
+        "the eye"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "Lei respira con la bocca aperta.",
+        "targetWord": "bocca",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5742ed14d60a1f2c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "basso",
+    "sentence": "Da sotto la cupola sembra più [[bassa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "low",
+      "options": [
+        "low",
+        "high",
+        "wide",
+        "far"
+      ],
+      "audioClip": {
+        "storySlug": "i-gradini-non-finiscono-mai",
+        "storySource": "user",
+        "sentence": "Da sotto la cupola sembra più bassa.",
+        "targetWord": "bassa",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6aecade539735b62.mp3"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,646 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "grande",
+    "sentence": "El museo es muy [[grande]] y moderno.",
+    "payload": {
+      "answer": "big, large",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "big, large",
+        "small, tiny",
+        "old, aged",
+        "clean, tidy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El museo es muy grande y moderno.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "grande",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/667aafaf089190df.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ojo",
+    "sentence": "Ella abre mucho los [[ojos]] hoy.",
+    "payload": {
+      "answer": "an eye",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "an eye",
+        "a hand",
+        "a foot",
+        "an ear"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella abre mucho los ojos hoy.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "ojos",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f815d6904e045a79.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tocar",
+    "sentence": "Ella [[toca]] una flor con cuidado.",
+    "payload": {
+      "answer": "to touch",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to touch",
+        "to smell",
+        "to cut",
+        "to throw"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella toca una flor con cuidado.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "toca",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3617bd2e4788b379.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raro",
+    "sentence": "Dentro, el arte es [[raro]] y bonito.",
+    "payload": {
+      "answer": "strange, odd",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "strange, odd",
+        "normal, plain",
+        "cheap, low",
+        "heavy, dense"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Dentro, el arte es raro y bonito.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "raro",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8279e77a4bb4c48.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reír",
+    "sentence": "Él se [[ríe]] con ganas ahora.",
+    "payload": {
+      "answer": "to laugh",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to laugh",
+        "to cry",
+        "to shout",
+        "to yawn"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él se ríe con ganas ahora.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "ríe",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/accd8b497f927af4.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "turista",
+    "sentence": "Los [[turistas]] sacan muchas fotos aquí.",
+    "payload": {
+      "answer": "a tourist",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a tourist",
+        "a teacher",
+        "a doctor",
+        "a farmer"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los turistas sacan muchas fotos aquí.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "turistas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/784a0198d6d77faa.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "compra",
+    "sentence": "Ella da dinero y _____ una postal.",
+    "payload": {
+      "answer": "compra",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "compra",
+        "vende",
+        "pierde",
+        "guarda"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella da dinero y compra una postal.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "compra",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ef11c162c6adb3a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She gives money and _____ a postcard.",
+      "optionTranslations": [
+        "buys",
+        "sells",
+        "loses",
+        "keeps"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "alta",
+    "sentence": "La torre sube mucho y es muy _____.",
+    "payload": {
+      "answer": "alta",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "alta",
+        "corta",
+        "ancha",
+        "lenta"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La torre sube mucho y es muy alta.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "alta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1dfacff7cdb090f3.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The tower goes up a lot and is very _____.",
+      "optionTranslations": [
+        "tall",
+        "short",
+        "wide",
+        "slow"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "miedo",
+    "sentence": "Ella ve una araña y siente _____.",
+    "payload": {
+      "answer": "miedo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "miedo",
+        "sueño",
+        "hambre",
+        "frío"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella ve una araña y siente miedo.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "miedo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3cef468f05f3e7b4.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She sees a spider and feels _____.",
+      "optionTranslations": [
+        "fear",
+        "sleepiness",
+        "hunger",
+        "cold"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "moderno",
+    "sentence": "El edificio no es viejo, es nuevo y _____.",
+    "payload": {
+      "answer": "moderno",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "moderno",
+        "lento",
+        "sucio",
+        "corto"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El edificio no es viejo, es nuevo y moderno.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "moderno",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1251fe24261ae68d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The building is not old, it is new and _____.",
+      "optionTranslations": [
+        "modern",
+        "slow",
+        "dirty",
+        "short"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pared",
+    "sentence": "Las [[paredes]] brillan como plata.",
+    "payload": {
+      "answer": "a wall",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a wall",
+        "a floor",
+        "a window",
+        "a door"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las paredes brillan como plata.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "paredes",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5314ebf32a75dc9d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enorme",
+    "sentence": "Fuera hay un perro [[enorme]] de flores.",
+    "payload": {
+      "answer": "very big, huge",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "very big, huge",
+        "very small, tiny",
+        "very old, ancient",
+        "very new, fresh"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Fuera hay un perro enorme de flores.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "enorme",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6db0ebabc1dfa888.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "forma",
+    "sentence": "Hay muchas [[formas]] por todas partes.",
+    "payload": {
+      "answer": "a shape",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a shape",
+        "a color",
+        "a sound",
+        "a smell"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hay muchas formas por todas partes.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "formas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/204abbc4acbab00f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Ella anda muy [[despacio]] por la sala.",
+    "payload": {
+      "answer": "slowly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "slowly",
+        "quickly",
+        "loudly",
+        "softly"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella anda muy despacio por la sala.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "despacio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1137e876c8f7b7f1.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cartel",
+    "sentence": "Él lee los [[carteles]] del museo.",
+    "payload": {
+      "answer": "a sign",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a sign",
+        "a book",
+        "a ticket",
+        "a map"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él lee los carteles del museo.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "carteles",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9f8f2c613af39b50.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "andar",
+    "sentence": "Ella [[anda]] despacio entre las salas.",
+    "payload": {
+      "answer": "to walk",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to walk",
+        "to sit",
+        "to stand",
+        "to fall"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella anda despacio entre las salas.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "anda",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d0a2783f7d2fd73d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "real",
+    "sentence": "La araña no es [[real]], es de metal.",
+    "payload": {
+      "answer": "real, true",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "real, true",
+        "fake, false",
+        "soft, gentle",
+        "dark, dim"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La araña no es real, es de metal.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "real",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7748a33de573ebf7.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mensaje",
+    "sentence": "Ella escribe un [[mensaje]] corto.",
+    "payload": {
+      "answer": "a message",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a message",
+        "a story",
+        "a poem",
+        "a list"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella escribe un mensaje corto.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "mensaje",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7a5a7765fb69bfcf.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plan",
+    "sentence": "El [[plan]] de mañana ya existe.",
+    "payload": {
+      "answer": "a plan",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a plan",
+        "a game",
+        "a rule",
+        "a prize"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El plan de mañana ya existe.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "plan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/abb5f33a5c031d69.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "corto",
+    "sentence": "El palo no es largo, es _____.",
+    "payload": {
+      "answer": "corto",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "corto",
+        "caro",
+        "sucio",
+        "lleno"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El palo no es largo, es corto.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "corto",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3bdc2837616343b7.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The stick is not long, it is _____.",
+      "optionTranslations": [
+        "short",
+        "expensive",
+        "dirty",
+        "full"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "temprano",
+    "sentence": "No llega tarde, siempre llega _____.",
+    "payload": {
+      "answer": "temprano",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "temprano",
+        "lejos",
+        "despacio",
+        "juntos"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "No llega tarde, siempre llega temprano.",
+        "storySlug": "el-museo-guggenheim",
+        "targetWord": "temprano",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/58627b81257234a6.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "He does not arrive late, he always arrives _____.",
+      "optionTranslations": [
+        "early",
+        "far",
+        "slowly",
+        "together"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "perro,flor,araña,postal",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "perro",
+          "answer": "a dog",
+          "options": [
+            "a dog",
+            "a flower",
+            "a spider",
+            "a postcard"
+          ]
+        },
+        {
+          "word": "flor",
+          "answer": "a flower",
+          "options": [
+            "a dog",
+            "a flower",
+            "a spider",
+            "a postcard"
+          ]
+        },
+        {
+          "word": "araña",
+          "answer": "a spider",
+          "options": [
+            "a dog",
+            "a flower",
+            "a spider",
+            "a postcard"
+          ]
+        },
+        {
+          "word": "postal",
+          "answer": "a postcard",
+          "options": [
+            "a dog",
+            "a flower",
+            "a spider",
+            "a postcard"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "flores",
+    "sentence": "El perro tiene muchas [[flores]] de colores.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "flowers",
+      "options": [
+        "flowers",
+        "leaves",
+        "roots",
+        "seeds"
+      ],
+      "audioClip": {
+        "storySlug": "el-museo-guggenheim",
+        "storySource": "user",
+        "sentence": "El perro tiene muchas flores de colores.",
+        "targetWord": "flores",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/25c27417a47fac89.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,496 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "die Kehrwoche",
+    "sentence": "Diese Woche ist bei uns die [[Kehrwoche]] dran.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shared cleaning rota",
+      "options": [
+        "shared cleaning rota",
+        "public holiday",
+        "street market",
+        "house party"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Diese Woche ist bei uns die Kehrwoche dran.",
+        "targetWord": "Kehrwoche",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2a1c412f2ff1fb39.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "flachsen",
+    "sentence": "Timo grinst und [[flachst]] über seinen Kumpel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to joke around",
+      "options": [
+        "to joke around",
+        "to praise",
+        "to scold",
+        "to copy"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Timo grinst und flachst über seinen Kumpel.",
+        "targetWord": "flachst",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/697643d13af3fbee.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Bruddler",
+    "sentence": "So ein [[Bruddler]] macht jeden Besuch anstrengend.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a constant grumbler",
+      "options": [
+        "a constant grumbler",
+        "a cheerful host",
+        "a messy roommate",
+        "a nosy neighbour"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "So ein Bruddler macht jeden Besuch anstrengend.",
+        "targetWord": "Bruddler",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/94cad63ba815b6d1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Besen",
+    "sentence": "Achim drückt ihr den [[Besen]] in die Hand.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a broom",
+      "options": [
+        "a broom",
+        "a bucket",
+        "a ladder",
+        "a towel"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Achim drückt ihr den Besen in die Hand.",
+        "targetWord": "Besen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2541008486aed0e0.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "wischt",
+    "sentence": "Mit einem nassen Tuch _____ er den Tisch sauber.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "wischt",
+      "options": [
+        "wischt",
+        "kocht",
+        "malt",
+        "kauft"
+      ],
+      "translation": "With a wet cloth he _____ the table clean.",
+      "optionTranslations": [
+        "wipes",
+        "cooks",
+        "paints",
+        "buys"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Mit einem nassen Tuch wischt er den Tisch sauber.",
+        "targetWord": "wischt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c6f8b2a10a70b9f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "kehrt",
+    "sentence": "Mit dem Besen _____ sie den Hof vor dem Haus.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "kehrt",
+      "options": [
+        "kehrt",
+        "öffnet",
+        "verkauft",
+        "findet"
+      ],
+      "translation": "With the broom she _____ the yard in front of the house.",
+      "optionTranslations": [
+        "sweeps",
+        "opens",
+        "sells",
+        "finds"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Mit dem Besen kehrt sie den Hof vor dem Haus.",
+        "targetWord": "kehrt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/710523a2e6747e3b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sparsam",
+    "sentence": "Er kauft nie zu viel und lebt sehr _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sparsam",
+      "options": [
+        "sparsam",
+        "laut",
+        "müde",
+        "nass"
+      ],
+      "translation": "He never buys too much and lives very _____.",
+      "optionTranslations": [
+        "thrifty",
+        "loud",
+        "tired",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Er kauft nie zu viel und lebt sehr sparsam.",
+        "targetWord": "sparsam",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2ee319ce5edf03b5.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "geizig",
+    "sentence": "Er teilt sein Geld mit niemandem und ist richtig _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "geizig",
+      "options": [
+        "geizig",
+        "fröhlich",
+        "krank",
+        "jung"
+      ],
+      "translation": "He shares his money with nobody and is really _____.",
+      "optionTranslations": [
+        "stingy",
+        "cheerful",
+        "sick",
+        "young"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Er teilt sein Geld mit niemandem und ist richtig geizig.",
+        "targetWord": "geizig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/58255b5b8eb80685.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "schafft",
+    "sentence": "Von früh bis spät _____ er auf dem Bau.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schafft",
+      "options": [
+        "schafft",
+        "schläft",
+        "singt",
+        "isst"
+      ],
+      "translation": "From early until late he _____ on the construction site.",
+      "optionTranslations": [
+        "works",
+        "sleeps",
+        "sings",
+        "eats"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Von früh bis spät schafft er auf dem Bau.",
+        "targetWord": "schafft",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/42ca9f87fa38d9b8.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sorgen",
+    "sentence": "Gute Eltern _____ immer für ihre kleinen Kinder.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sorgen",
+      "options": [
+        "sorgen",
+        "lachen",
+        "warten",
+        "reisen"
+      ],
+      "translation": "Good parents always _____ for their little children.",
+      "optionTranslations": [
+        "care",
+        "laugh",
+        "wait",
+        "travel"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Gute Eltern sorgen immer für ihre kleinen Kinder.",
+        "targetWord": "sorgen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7cf04537142e90c3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Grüß Gott",
+    "sentence": "[[Grüß]] Gott, sagt Achim zur Begrüßung.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hello (in the south)",
+      "options": [
+        "hello (in the south)",
+        "see you soon",
+        "good luck",
+        "many thanks"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Grüß Gott, sagt Achim zur Begrüßung.",
+        "targetWord": "Grüß",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5507e36c48399692.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gschwind",
+    "sentence": "So ein Bruddler, denkt sie [[gschwind]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "quickly",
+      "options": [
+        "quickly",
+        "quietly",
+        "later",
+        "loudly"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "So ein Bruddler, denkt sie gschwind.",
+        "targetWord": "gschwind",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96ef02d8b30868bc.mp3",
+        "rev": 1
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sein Häusle bauen",
+    "sentence": "Bei uns schafft man und baut sein [[Häusle]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to build one's own house",
+      "options": [
+        "to build one's own house",
+        "to rent a flat",
+        "to sell the farm",
+        "to leave the village"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Bei uns schafft man und baut sein Häusle.",
+        "targetWord": "Häusle",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4468c4358e06cb4b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "blitzsauber",
+    "sentence": "Das [[blitzsaubere]] Treppenhaus hält Achim für die Nachbarn sauber.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "spotlessly clean",
+      "options": [
+        "spotlessly clean",
+        "freshly painted",
+        "brightly lit",
+        "newly built"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Das blitzsaubere Treppenhaus hält Achim für die Nachbarn sauber.",
+        "targetWord": "blitzsaubere",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/38764aba609338f4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sell",
+    "sentence": "[[Sell]] mach ich gern, die gehören dazu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that, that one",
+      "options": [
+        "that, that one",
+        "not now",
+        "of course",
+        "me too"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Sell mach ich gern, die gehören dazu.",
+        "targetWord": "Sell",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d212901f06f5c9d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Knauserei",
+    "sentence": "Was wie pure [[Knauserei]] aussah, war in Wahrheit Fürsorge.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stinginess",
+      "options": [
+        "stinginess",
+        "generosity",
+        "laziness",
+        "shyness"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Was wie pure Knauserei aussah, war in Wahrheit Fürsorge.",
+        "targetWord": "Knauserei",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/abdba17a3959cf46.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "des goht",
+    "sentence": "Des [[goht]], sagt Achim und lächelt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that works, that's fine",
+      "options": [
+        "that works, that's fine",
+        "not today",
+        "too late",
+        "who knows"
+      ],
+      "audioClip": {
+        "storySlug": "kehrwoche-bei-achim",
+        "storySource": "user",
+        "sentence": "Des goht, sagt Achim und lächelt.",
+        "targetWord": "goht",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6cca41ccae971f9e.mp3",
+        "rev": 1
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Muggeseggele,Spätzle,das Fleischküchle,der Zettel",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Muggeseggele",
+          "answer": "a tiny amount",
+          "options": [
+            "a tiny amount",
+            "Swabian egg noodles",
+            "small fried meat patty",
+            "a note on paper"
+          ]
+        },
+        {
+          "word": "Spätzle",
+          "answer": "Swabian egg noodles",
+          "options": [
+            "a tiny amount",
+            "Swabian egg noodles",
+            "small fried meat patty",
+            "a note on paper"
+          ]
+        },
+        {
+          "word": "das Fleischküchle",
+          "answer": "small fried meat patty",
+          "options": [
+            "a tiny amount",
+            "Swabian egg noodles",
+            "small fried meat patty",
+            "a note on paper"
+          ]
+        },
+        {
+          "word": "der Zettel",
+          "answer": "a note on paper",
+          "options": [
+            "a tiny amount",
+            "Swabian egg noodles",
+            "small fried meat patty",
+            "a note on paper"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

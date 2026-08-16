@@ -1,0 +1,246 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "reloj,hermana,sonrisa,plato",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    { "word": "reloj", "answer": "a clock", "options": ["a clock", "a sister", "a smile", "a plate"] },
+    { "word": "hermana", "answer": "a sister", "options": ["a clock", "a sister", "a smile", "a plate"] },
+    { "word": "sonrisa", "answer": "a smile", "options": ["a clock", "a sister", "a smile", "a plate"] },
+    { "word": "plato", "answer": "a plate", "options": ["a clock", "a sister", "a smile", "a plate"] }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "paella",
+  "sentence": "Vicente prepara el fuego para la [[paella]] del domingo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a Valencian rice dish",
+   "options": ["a Valencian rice dish", "a fish stew", "a potato omelette", "a vegetable soup"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Vicente prepara el fuego para la paella del domingo.", "targetWord": "paella", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "huerta",
+  "sentence": "Vicente vive en una casa de la [[huerta]], cerca de Valencia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the green farmland",
+   "options": ["the green farmland", "the old harbour", "the city centre", "the high mountains"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Vicente vive en una casa de la huerta, cerca de Valencia.", "targetWord": "huerta", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arroz",
+  "sentence": "Sergio dice que ha traído [[arroz]] especial para la paella.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rice",
+   "options": ["rice", "flour", "salt", "sugar"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Sergio dice que ha traído arroz especial para la paella.", "targetWord": "arroz", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caldo",
+  "sentence": "Vicente dice que el [[caldo]] se hace aquí, con verduras.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "broth",
+   "options": ["broth", "sauce", "oil", "wine"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Vicente dice que el caldo se hace aquí, con verduras.", "targetWord": "caldo", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fuego",
+  "sentence": "Vicente prepara el [[fuego]] antes de empezar a cocinar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the fire",
+   "options": ["the fire", "the table", "the pan", "the water"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Vicente prepara el fuego antes de empezar a cocinar.", "targetWord": "fuego", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verdura",
+  "sentence": "El caldo se hace en casa con sus [[verduras]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "vegetables",
+   "options": ["vegetables", "spices", "nuts", "beans"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "El caldo se hace en casa con sus verduras.", "targetWord": "verduras", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prueba",
+  "sentence": "Sergio pregunta si lo del domingo es una [[prueba]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a test",
+   "options": ["a test", "a party", "a joke", "a favour"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Sergio pregunta si lo del domingo es una prueba.", "targetWord": "prueba", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hecho",
+  "sentence": "Vicente acepta el trato y responde: [[hecho]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "agreed",
+   "options": ["agreed", "later", "maybe", "never"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Vicente acepta el trato y responde: hecho.", "targetWord": "hecho", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "prisa",
+  "sentence": "Tengo mucha _____, el autobús sale en cinco minutos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "prisa",
+   "options": ["prisa", "hambre", "suerte", "razón"],
+   "translation": "I am in a great _____, the bus leaves in five minutes.",
+   "optionTranslations": ["hurry", "hunger", "luck", "right"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Tengo mucha prisa, el autobús sale en cinco minutos.", "targetWord": "prisa", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "traer",
+  "featured": false,
+  "sentence": "Sergio ha [[traído]] una bolsa del supermercado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to bring",
+   "options": ["to bring", "to lose", "to hide", "to order"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Sergio ha traído una bolsa del supermercado.", "targetWord": "traído", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sacar",
+  "featured": false,
+  "sentence": "Sergio [[saca]] el móvil del bolsillo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take out",
+   "options": ["to take out", "to switch off", "to drop", "to charge"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Sergio saca el móvil del bolsillo.", "targetWord": "saca", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "buscar",
+  "featured": false,
+  "sentence": "Sergio [[busca]] un vídeo de un cocinero famoso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to look for",
+   "options": ["to look for", "to record", "to delete", "to pay for"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Sergio busca un vídeo de un cocinero famoso.", "targetWord": "busca", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ganar",
+  "featured": false,
+  "sentence": "Lucía dice que [[gane]] la mejor de las dos paellas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to win",
+   "options": ["to win", "to cost", "to burn", "to wait"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Lucía dice que gane la mejor de las dos paellas.", "targetWord": "gane", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dejar",
+  "featured": false,
+  "sentence": "Lucía [[deja]] los platos en la mesa del patio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put down",
+   "options": ["to put down", "to wash up", "to count", "to break"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Lucía deja los platos en la mesa del patio.", "targetWord": "deja", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mirar",
+  "featured": false,
+  "sentence": "Lucía los [[mira]] a los dos con una sonrisa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to look at",
+   "options": ["to look at", "to call", "to push", "to answer"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Lucía los mira a los dos con una sonrisa.", "targetWord": "mira", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "afueras",
+  "featured": false,
+  "sentence": "Mis tíos viven en las _____, lejos del centro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "afueras",
+   "options": ["afueras", "tiendas", "escaleras", "montañas"],
+   "translation": "My aunt and uncle live on the _____, far from the centre.",
+   "optionTranslations": ["outskirts", "shops", "stairs", "mountains"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Mis tíos viven en las afueras, lejos del centro.", "targetWord": "afueras", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "comprado",
+  "featured": false,
+  "sentence": "Este pan no es casero, es _____ en la tienda.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "comprado",
+   "options": ["comprado", "cocinado", "guardado", "cortado"],
+   "translation": "This bread is not homemade, it is _____ in the shop.",
+   "optionTranslations": ["bought", "cooked", "kept", "cut"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Este pan no es casero, es comprado en la tienda.", "targetWord": "comprado", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "supermercado",
+  "featured": false,
+  "sentence": "Voy al _____ a por leche y huevos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "supermercado",
+   "options": ["supermercado", "hospital", "colegio", "aeropuerto"],
+   "translation": "I am going to the _____ for milk and eggs.",
+   "optionTranslations": ["supermarket", "hospital", "school", "airport"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Voy al supermercado a por leche y huevos.", "targetWord": "supermercado", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "encantado",
+  "featured": false,
+  "sentence": "Estoy _____ con mi trabajo nuevo, me gusta mucho.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "encantado",
+   "options": ["encantado", "cansado", "enfadado", "perdido"],
+   "translation": "I am _____ with my new job, I like it a lot.",
+   "optionTranslations": ["delighted", "tired", "angry", "lost"],
+   "audioClip": { "storySlug": "el-arroz-manda", "storySource": "user", "sentence": "Estoy encantado con mi trabajo nuevo, me gusta mucho.", "targetWord": "encantado", "language": "spanish" }
+  }
+ }
+]

@@ -1,0 +1,597 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "fiume,ponte,anello,vestito",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "fiume",
+     "answer": "river",
+     "options": [
+      "river",
+      "bridge",
+      "ring",
+      "dress"
+     ]
+    },
+    {
+     "word": "ponte",
+     "answer": "bridge",
+     "options": [
+      "river",
+      "bridge",
+      "ring",
+      "dress"
+     ]
+    },
+    {
+     "word": "anello",
+     "answer": "ring",
+     "options": [
+      "river",
+      "bridge",
+      "ring",
+      "dress"
+     ]
+    },
+    {
+     "word": "vestito",
+     "answer": "dress",
+     "options": [
+      "river",
+      "bridge",
+      "ring",
+      "dress"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "conosce",
+  "sentence": "Marco [[conosce]] bene la città.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "knows",
+   "options": [
+    "knows",
+    "listens to",
+    "buys",
+    "thanks"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Marco conosce bene la città.",
+    "targetWord": "conosce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "ascolta",
+  "sentence": "Elena [[ascolta]] e guarda l'acqua.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "listens",
+   "options": [
+    "listens",
+    "arrives",
+    "shines",
+    "thanks"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Elena ascolta e guarda l'acqua.",
+    "targetWord": "ascolta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "scorre",
+  "sentence": "Elena guarda l'acqua che [[scorre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "flows",
+   "options": [
+    "flows",
+    "shines",
+    "goes down",
+    "plays"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Elena guarda l'acqua che scorre.",
+    "targetWord": "scorre",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "scende",
+  "sentence": "Il sole [[scende]] piano dietro il ponte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "goes down",
+   "options": [
+    "goes down",
+    "goes up",
+    "arrives",
+    "flows"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Il sole scende piano dietro il ponte.",
+    "targetWord": "scende",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "piano",
+  "sentence": "Il sole scende [[piano]] verso il fiume.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slowly",
+   "options": [
+    "slowly",
+    "quickly",
+    "loudly",
+    "sweetly"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Il sole scende piano verso il fiume.",
+    "targetWord": "piano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "arancione",
+  "sentence": "Il sole diventa [[arancione]] sopra il fiume.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "orange",
+   "options": [
+    "orange",
+    "white",
+    "red",
+    "black"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Il sole diventa arancione sopra il fiume.",
+    "targetWord": "arancione",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "dolce",
+  "sentence": "La musica è [[dolce]] e lenta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sweet",
+   "options": [
+    "sweet",
+    "loud",
+    "fast",
+    "sad"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "La musica è dolce e lenta.",
+    "targetWord": "dolce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "ringrazia",
+  "sentence": "Elena [[ringrazia]] Marco con un sorriso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thanks",
+   "options": [
+    "thanks",
+    "greets",
+    "knows",
+    "listens to"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Elena ringrazia Marco con un sorriso.",
+    "targetWord": "ringrazia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "passeggiano",
+  "sentence": "Elena e Marco _____ lungo il fiume.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "passeggiano",
+   "options": [
+    "passeggiano",
+    "arrivano",
+    "ascoltano",
+    "guardano"
+   ],
+   "translation": "Elena and Marco _____ along the river.",
+   "optionTranslations": [
+    "stroll",
+    "arrive",
+    "listen",
+    "look"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Elena e Marco passeggiano lungo il fiume.",
+    "targetWord": "passeggiano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sole",
+  "sentence": "Il _____ scende piano e diventa arancione.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sole",
+   "options": [
+    "sole",
+    "ponte",
+    "fiume",
+    "anello"
+   ],
+   "translation": "The _____ goes down slowly and turns orange.",
+   "optionTranslations": [
+    "sun",
+    "bridge",
+    "river",
+    "ring"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Il sole scende piano e diventa arancione.",
+    "targetWord": "sole",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "negozi",
+  "sentence": "Sul ponte ci sono molti piccoli _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "negozi",
+   "options": [
+    "negozi",
+    "anelli",
+    "fiumi",
+    "ponti"
+   ],
+   "translation": "On the bridge there are many small _____.",
+   "optionTranslations": [
+    "shops",
+    "rings",
+    "rivers",
+    "bridges"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Sul ponte ci sono molti piccoli negozi.",
+    "targetWord": "negozi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "vetrina",
+  "sentence": "Elena si ferma davanti a una _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vetrina",
+   "options": [
+    "vetrina",
+    "coppia",
+    "voce",
+    "sposa"
+   ],
+   "translation": "Elena stops in front of a _____.",
+   "optionTranslations": [
+    "shop window",
+    "couple",
+    "voice",
+    "bride"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Elena si ferma davanti a una vetrina.",
+    "targetWord": "vetrina",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "voce",
+  "sentence": "Elena parla a _____ bassa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "voce",
+   "options": [
+    "voce",
+    "luce",
+    "sposa",
+    "coppia"
+   ],
+   "translation": "Elena speaks in a low _____.",
+   "optionTranslations": [
+    "voice",
+    "light",
+    "bride",
+    "couple"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Elena parla a voce bassa.",
+    "targetWord": "voce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "luce",
+  "sentence": "La _____ dorata cade sul fiume.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "luce",
+   "options": [
+    "luce",
+    "voce",
+    "sposa",
+    "vetrina"
+   ],
+   "translation": "The golden _____ falls on the river.",
+   "optionTranslations": [
+    "light",
+    "voice",
+    "bride",
+    "shop window"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "La luce dorata cade sul fiume.",
+    "targetWord": "luce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "coppia",
+  "sentence": "Vicino al ponte una _____ scatta foto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "coppia",
+   "options": [
+    "coppia",
+    "sposa",
+    "voce",
+    "luce"
+   ],
+   "translation": "Near the bridge a _____ takes photos.",
+   "optionTranslations": [
+    "couple",
+    "bride",
+    "voice",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Vicino al ponte una coppia scatta foto.",
+    "targetWord": "coppia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sposa",
+  "sentence": "La _____ sorride nel vestito bianco.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sposa",
+   "options": [
+    "sposa",
+    "coppia",
+    "voce",
+    "luce"
+   ],
+   "translation": "The _____ smiles in the white dress.",
+   "optionTranslations": [
+    "bride",
+    "couple",
+    "voice",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "La sposa sorride nel vestito bianco.",
+    "targetWord": "sposa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "arrivano",
+  "sentence": "I due _____ al Ponte Vecchio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "arrivano",
+   "options": [
+    "arrivano",
+    "passeggiano",
+    "scendono",
+    "suonano"
+   ],
+   "translation": "The two _____ at the Ponte Vecchio.",
+   "optionTranslations": [
+    "arrive",
+    "stroll",
+    "go down",
+    "play"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "I due arrivano al Ponte Vecchio.",
+    "targetWord": "arrivano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "suona",
+  "sentence": "Un violinista _____ una melodia lenta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "suona",
+   "options": [
+    "suona",
+    "guarda",
+    "ascolta",
+    "brilla"
+   ],
+   "translation": "A violinist _____ a slow melody.",
+   "optionTranslations": [
+    "plays",
+    "looks",
+    "listens",
+    "shines"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Un violinista suona una melodia lenta.",
+    "targetWord": "suona",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "brilla",
+  "sentence": "Un anello _____ dietro il vetro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "brilla",
+   "options": [
+    "brilla",
+    "scende",
+    "arriva",
+    "suona"
+   ],
+   "translation": "A ring _____ behind the glass.",
+   "optionTranslations": [
+    "shines",
+    "goes down",
+    "arrives",
+    "plays"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Un anello brilla dietro il vetro.",
+    "targetWord": "brilla",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "guarda",
+  "sentence": "Elena _____ l'acqua del fiume.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guarda",
+   "options": [
+    "guarda",
+    "ascolta",
+    "conosce",
+    "suona"
+   ],
+   "translation": "Elena _____ the water of the river.",
+   "optionTranslations": [
+    "looks at",
+    "listens to",
+    "knows",
+    "plays"
+   ],
+   "audioClip": {
+    "storySlug": "un-tramonto-sul-ponte-vecchio",
+    "storySource": "user",
+    "sentence": "Elena guarda l'acqua del fiume.",
+    "targetWord": "guarda",
+    "language": "italian"
+   }
+  }
+ }
+]

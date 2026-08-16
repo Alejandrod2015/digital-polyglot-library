@@ -1,0 +1,597 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "mercato,pane,cibo,soldi",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "mercato",
+     "answer": "market",
+     "options": [
+      "market",
+      "bread",
+      "food",
+      "money"
+     ]
+    },
+    {
+     "word": "pane",
+     "answer": "bread",
+     "options": [
+      "market",
+      "bread",
+      "food",
+      "money"
+     ]
+    },
+    {
+     "word": "cibo",
+     "answer": "food",
+     "options": [
+      "market",
+      "bread",
+      "food",
+      "money"
+     ]
+    },
+    {
+     "word": "soldi",
+     "answer": "money",
+     "options": [
+      "market",
+      "bread",
+      "food",
+      "money"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "ultimo",
+  "sentence": "Oggi è l'[[ultimo]] giorno a Napoli.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "last",
+   "options": [
+    "last",
+    "first",
+    "next",
+    "only"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Oggi è l'ultimo giorno a Napoli.",
+    "targetWord": "ultimo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "gialli",
+  "sentence": "Elena guarda i limoni [[gialli]] e profumati.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "yellow",
+   "options": [
+    "yellow",
+    "red",
+    "green",
+    "blue"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Elena guarda i limoni gialli e profumati.",
+    "targetWord": "gialli",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "maturi",
+  "sentence": "Elena compra alcuni frutti [[maturi]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ripe",
+   "options": [
+    "ripe",
+    "sour",
+    "raw",
+    "rotten"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Elena compra alcuni frutti maturi.",
+    "targetWord": "maturi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "stretta",
+  "sentence": "La strada è [[stretta]] e viva.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "narrow",
+   "options": [
+    "narrow",
+    "wide",
+    "long",
+    "empty"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "La strada è stretta e viva.",
+    "targetWord": "stretta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "gentile",
+  "sentence": "Elena sorride [[gentile]] al venditore.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kind",
+   "options": [
+    "kind",
+    "rude",
+    "sad",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Elena sorride gentile al venditore.",
+    "targetWord": "gentile",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "mostra",
+  "sentence": "Anna [[mostra]] i pomodori rossi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shows",
+   "options": [
+    "shows",
+    "hides",
+    "buys",
+    "eats"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Anna mostra i pomodori rossi.",
+    "targetWord": "mostra",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "tocca",
+  "sentence": "Elena [[tocca]] una mela e sorride.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "touches",
+   "options": [
+    "touches",
+    "throws",
+    "breaks",
+    "drops"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Elena tocca una mela e sorride.",
+    "targetWord": "tocca",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "siedono",
+  "sentence": "Le due amiche si [[siedono]] felici.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "they sit down",
+   "options": [
+    "they sit down",
+    "they stand up",
+    "they run",
+    "they sleep"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Le due amiche si siedono felici.",
+    "targetWord": "siedono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "quartiere",
+  "sentence": "Elena visita il mercato del _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "quartiere",
+   "options": [
+    "quartiere",
+    "mercato",
+    "banco",
+    "porto"
+   ],
+   "translation": "Elena visits the market of the _____.",
+   "optionTranslations": [
+    "neighborhood",
+    "market",
+    "stall",
+    "port"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Elena visita il mercato del quartiere.",
+    "targetWord": "quartiere",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "banchi",
+  "sentence": "C'è gente tra i _____ colorati.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "banchi",
+   "options": [
+    "banchi",
+    "limoni",
+    "soldi",
+    "cibi"
+   ],
+   "translation": "There are people among the colorful _____.",
+   "optionTranslations": [
+    "stalls",
+    "lemons",
+    "coins",
+    "foods"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "C'è gente tra i banchi colorati.",
+    "targetWord": "banchi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "frutta",
+  "sentence": "Il banco è pieno di _____ fresca.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "frutta",
+   "options": [
+    "frutta",
+    "verdura",
+    "pane",
+    "carne"
+   ],
+   "translation": "The stall is full of fresh _____.",
+   "optionTranslations": [
+    "fruit",
+    "vegetables",
+    "bread",
+    "meat"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Il banco è pieno di frutta fresca.",
+    "targetWord": "frutta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "verdura",
+  "sentence": "Il banco ha frutta e _____ fresca.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "verdura",
+   "options": [
+    "verdura",
+    "frutta",
+    "pane",
+    "cibo"
+   ],
+   "translation": "The stall has fruit and fresh _____.",
+   "optionTranslations": [
+    "vegetables",
+    "fruit",
+    "bread",
+    "food"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Il banco ha frutta e verdura fresca.",
+    "targetWord": "verdura",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "venditore",
+  "sentence": "Un _____ saluta le due amiche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "venditore",
+   "options": [
+    "venditore",
+    "cuoco",
+    "pescatore",
+    "amico"
+   ],
+   "translation": "A _____ greets the two friends.",
+   "optionTranslations": [
+    "seller",
+    "cook",
+    "fisherman",
+    "friend"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Un venditore saluta le due amiche.",
+    "targetWord": "venditore",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "limoni",
+  "sentence": "Elena guarda i _____ gialli e profumati.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "limoni",
+   "options": [
+    "limoni",
+    "pomodori",
+    "mele",
+    "banchi"
+   ],
+   "translation": "Elena looks at the yellow, fragrant _____.",
+   "optionTranslations": [
+    "lemons",
+    "tomatoes",
+    "apples",
+    "stalls"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Elena guarda i limoni gialli e profumati.",
+    "targetWord": "limoni",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "compra",
+  "sentence": "Elena _____ del pane caldo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "compra",
+   "options": [
+    "compra",
+    "paga",
+    "mostra",
+    "tocca"
+   ],
+   "translation": "Elena _____ some warm bread.",
+   "optionTranslations": [
+    "buys",
+    "pays",
+    "shows",
+    "touches"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Elena compra del pane caldo.",
+    "targetWord": "compra",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "profumo",
+  "sentence": "Il _____ del cibo riempie l'aria.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "profumo",
+   "options": [
+    "profumo",
+    "cibo",
+    "pane",
+    "aria"
+   ],
+   "translation": "The _____ of the food fills the air.",
+   "optionTranslations": [
+    "smell",
+    "food",
+    "bread",
+    "air"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Il profumo del cibo riempie l'aria.",
+    "targetWord": "profumo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "pagare",
+  "sentence": "Elena cerca i soldi per _____ tutto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pagare",
+   "options": [
+    "pagare",
+    "comprare",
+    "mostrare",
+    "toccare"
+   ],
+   "translation": "Elena looks for money to _____ everything.",
+   "optionTranslations": [
+    "to pay",
+    "to buy",
+    "to show",
+    "to touch"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Elena cerca i soldi per pagare tutto.",
+    "targetWord": "pagare",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "parlano",
+  "sentence": "Le due amiche _____ felici.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "parlano",
+   "options": [
+    "parlano",
+    "siedono",
+    "ridono",
+    "mangiano"
+   ],
+   "translation": "The two friends _____ happily.",
+   "optionTranslations": [
+    "they talk",
+    "they sit",
+    "they laugh",
+    "they eat"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Le due amiche parlano felici.",
+    "targetWord": "parlano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "cucina",
+  "sentence": "Stasera Elena _____ la cena.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cucina",
+   "options": [
+    "cucina",
+    "mangia",
+    "compra",
+    "paga"
+   ],
+   "translation": "Tonight Elena _____ dinner.",
+   "optionTranslations": [
+    "cooks",
+    "eats",
+    "buys",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Stasera Elena cucina la cena.",
+    "targetWord": "cucina",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "cena",
+  "sentence": "Stasera Elena cucina la _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cena",
+   "options": [
+    "cena",
+    "pane",
+    "cibo",
+    "frutta"
+   ],
+   "translation": "Tonight Elena cooks _____.",
+   "optionTranslations": [
+    "dinner",
+    "bread",
+    "food",
+    "fruit"
+   ],
+   "audioClip": {
+    "storySlug": "elena-cucina-per-anna",
+    "storySource": "user",
+    "sentence": "Stasera Elena cucina la cena.",
+    "targetWord": "cena",
+    "language": "italian"
+   }
+  }
+ }
+]

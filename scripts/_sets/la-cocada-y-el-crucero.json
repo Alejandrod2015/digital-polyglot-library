@@ -1,0 +1,591 @@
+[
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "palenquera",
+    "sentence": "La [[palenquera]] vende cocadas junto a la torre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an Afro descendant woman who sells street sweets",
+      "options": [
+        "an Afro descendant woman who sells street sweets",
+        "a foreign woman on a cruise ship",
+        "a waiter at a rooftop bar",
+        "a young tourist taking photos"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "La palenquera vende cocadas junto a la torre.",
+        "targetWord": "palenquera",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/635a99e679a61204.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "pregón",
+    "sentence": "Yiría lanza su [[pregón]] hacia el crucero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a street vendor's singsong sales shout",
+      "options": [
+        "a street vendor's singsong sales shout",
+        "a printed restaurant menu",
+        "a quiet private whisper",
+        "an official police order"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "Yiría lanza su pregón hacia el crucero.",
+        "targetWord": "pregón",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa7cf72fd3f70b2b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "crucero",
+    "sentence": "A las nueve atraca un [[crucero]] enorme.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a giant tourist ship that docks for the day",
+      "options": [
+        "a giant tourist ship that docks for the day",
+        "a small wooden fishing canoe",
+        "a public city bus",
+        "a private beach house"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "A las nueve atraca un crucero enorme.",
+        "targetWord": "crucero",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b7ff55d0276510d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "descaro",
+    "sentence": "El [[descaro]] es gratis, dice Yiría molesta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shameless nerve without embarrassment",
+      "options": [
+        "shameless nerve without embarrassment",
+        "deep honest gratitude",
+        "careful polite manners",
+        "quiet painful shyness"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "El descaro es gratis, dice Yiría molesta.",
+        "targetWord": "descaro",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8c9d4f60b7ca3ed2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "muchedumbre",
+    "sentence": "El barco suelta una [[muchedumbre]] de turistas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a large dense crowd of people",
+      "options": [
+        "a large dense crowd of people",
+        "a single lonely traveler",
+        "a small quiet family",
+        "a line of parked cars"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "El barco suelta una muchedumbre de turistas.",
+        "targetWord": "muchedumbre",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c37da2a6d5e2eecc.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "carpa",
+    "sentence": "Yiría planta la ____ antes del amanecer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "carpa",
+      "options": [
+        "carpa",
+        "mesa",
+        "silla",
+        "olla"
+      ],
+      "translation": "Yiría sets up the ____ before dawn.",
+      "optionTranslations": [
+        "tent",
+        "table",
+        "chair",
+        "pot"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "Yiría planta la carpa antes del amanecer.",
+        "targetWord": "carpa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b0aaba46520b58f4.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "regatea",
+    "sentence": "El muchacho ____ el precio de una cocada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "regatea",
+      "options": [
+        "regatea",
+        "paga",
+        "acepta",
+        "sube"
+      ],
+      "translation": "The boy ____ the price of one cocada.",
+      "optionTranslations": [
+        "haggles over",
+        "pays",
+        "accepts",
+        "raises"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "El muchacho regatea el precio de una cocada.",
+        "targetWord": "regatea",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/86549571551142e9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "vuelto",
+    "sentence": "Guarda el ____ en el bolsillo del delantal.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vuelto",
+      "options": [
+        "vuelto",
+        "billete",
+        "recibo",
+        "reloj"
+      ],
+      "translation": "She keeps the ____ in her apron pocket.",
+      "optionTranslations": [
+        "change",
+        "banknote",
+        "receipt",
+        "watch"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "Guarda el vuelto en el bolsillo del delantal.",
+        "targetWord": "vuelto",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2ca4ec32c8210d07.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "enfocan",
+    "sentence": "Muchos turistas la ____ con la cámara.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "enfocan",
+      "options": [
+        "enfocan",
+        "saludan",
+        "empujan",
+        "ignoran"
+      ],
+      "translation": "Many tourists ____ her with the camera.",
+      "optionTranslations": [
+        "aim at",
+        "greet",
+        "push",
+        "ignore"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "Muchos turistas la enfocan con la cámara.",
+        "targetWord": "enfocan",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b94a46edc75535f.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "corozo,zapote,níspero,cocada",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "corozo",
+          "answer": "a small dark red palm fruit",
+          "options": [
+            "a small dark red palm fruit",
+            "a soft sweet orange tropical fruit",
+            "a small brown very sweet fruit",
+            "a chewy grated coconut sweet"
+          ]
+        },
+        {
+          "word": "zapote",
+          "answer": "a soft sweet orange tropical fruit",
+          "options": [
+            "a small dark red palm fruit",
+            "a soft sweet orange tropical fruit",
+            "a small brown very sweet fruit",
+            "a chewy grated coconut sweet"
+          ]
+        },
+        {
+          "word": "níspero",
+          "answer": "a small brown very sweet fruit",
+          "options": [
+            "a small dark red palm fruit",
+            "a soft sweet orange tropical fruit",
+            "a small brown very sweet fruit",
+            "a chewy grated coconut sweet"
+          ]
+        },
+        {
+          "word": "cocada",
+          "answer": "a chewy grated coconut sweet",
+          "options": [
+            "a small dark red palm fruit",
+            "a soft sweet orange tropical fruit",
+            "a small brown very sweet fruit",
+            "a chewy grated coconut sweet"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "terraza",
+    "sentence": "Arriba, en la [[terraza]], preparan un trago carísimo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rooftop or open deck of a bar",
+      "options": [
+        "a rooftop or open deck of a bar",
+        "a dark basement kitchen",
+        "a crowded street market",
+        "a narrow back alley"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "Arriba, en la terraza, preparan un trago carísimo.",
+        "targetWord": "terraza",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/468dea50731cff60.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "ganancia",
+    "sentence": "El vuelto es la verdadera [[ganancia]] del día.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the money you earn and keep",
+      "options": [
+        "the money you earn and keep",
+        "the cost of the goods",
+        "a gift given for free",
+        "a debt you still owe"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "El vuelto es la verdadera ganancia del día.",
+        "targetWord": "ganancia",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a467692b6593b06b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "ni de vaina",
+    "sentence": "Estos no sueltan un billete, [[ni de vaina]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "no way, not a chance",
+      "options": [
+        "no way, not a chance",
+        "of course, gladly",
+        "maybe later on",
+        "only if you pay"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "Estos no sueltan un billete, ni de vaina.",
+        "targetWord": "ni de vaina",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc975899a6545330.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "jornada",
+    "sentence": "Manu acompaña a Yiría toda la [[jornada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a full day of hard work",
+      "options": [
+        "a full day of hard work",
+        "a short coffee break",
+        "a long night of sleep",
+        "a quick beach vacation"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "Manu acompaña a Yiría toda la jornada.",
+        "targetWord": "jornada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/90f54a17bde49249.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "gringos",
+    "sentence": "Los [[gringos]] del crucero le piden fotos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "foreign tourists, usually from the United States",
+      "options": [
+        "foreign tourists, usually from the United States",
+        "local Afro Caribbean vendors",
+        "children from the barrio",
+        "waiters at the hotel"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "Los gringos del crucero le piden fotos.",
+        "targetWord": "gringos",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/51994ee68049a5c9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "pesa",
+    "sentence": "Acomoda la ____ sobre un cajón de madera.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pesa",
+      "options": [
+        "pesa",
+        "carpa",
+        "batea",
+        "moneda"
+      ],
+      "translation": "She sets the ____ on a wooden crate.",
+      "optionTranslations": [
+        "scale",
+        "tent",
+        "tray",
+        "coin"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "Acomoda la pesa sobre un cajón de madera.",
+        "targetWord": "pesa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/114707ec87927352.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "billete",
+    "sentence": "El turista no suelta ni un ____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "billete",
+      "options": [
+        "billete",
+        "peso",
+        "favor",
+        "abrazo"
+      ],
+      "translation": "The tourist won't hand over a single ____.",
+      "optionTranslations": [
+        "banknote",
+        "penny",
+        "favor",
+        "hug"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "El turista no suelta ni un billete.",
+        "targetWord": "billete",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3959fcdec593e9c6.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "trago",
+    "sentence": "El mesero prepara un ____ carísimo arriba.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "trago",
+      "options": [
+        "trago",
+        "postre",
+        "café",
+        "jugo"
+      ],
+      "translation": "The waiter makes a very expensive ____ upstairs.",
+      "optionTranslations": [
+        "cocktail",
+        "dessert",
+        "coffee",
+        "juice"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "El mesero prepara un trago carísimo arriba.",
+        "targetWord": "trago",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae941518af4c0f6d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "rodaja",
+    "sentence": "Lo adorna con una ____ de coco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rodaja",
+      "options": [
+        "rodaja",
+        "gota",
+        "hoja",
+        "pizca"
+      ],
+      "translation": "He decorates it with a ____ of coconut.",
+      "optionTranslations": [
+        "slice",
+        "drop",
+        "leaf",
+        "pinch"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "Lo adorna con una rodaja de coco.",
+        "targetWord": "rodaja",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6459051ce80d8566.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "adorna",
+    "sentence": "El mesero ____ el trago con fruta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "adorna",
+      "options": [
+        "adorna",
+        "sirve",
+        "paga",
+        "rompe"
+      ],
+      "translation": "The waiter ____ the drink with fruit.",
+      "optionTranslations": [
+        "decorates",
+        "serves",
+        "pays for",
+        "breaks"
+      ],
+      "audioClip": {
+        "storySlug": "la-cocada-y-el-crucero",
+        "storySource": "user",
+        "sentence": "El mesero adorna el trago con fruta.",
+        "targetWord": "adorna",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed71a2593f73aec5.mp3"
+      }
+    }
+  }
+]

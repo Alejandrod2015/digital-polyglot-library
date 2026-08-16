@@ -1,0 +1,586 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "hueva",
+    "sentence": "A todos les daba [[hueva]] soltar la lana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the reluctance to do something",
+      "options": [
+        "the reluctance to do something",
+        "a sudden hurry",
+        "a bad temper",
+        "a good excuse"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "A todos les daba hueva soltar la lana.",
+        "targetWord": "hueva",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f14f8dbb0440613.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vivales",
+    "sentence": "El muy [[vivales]] llevaba días anunciando que andaba corto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a slick operator",
+      "options": [
+        "a slick operator",
+        "a hard worker",
+        "a quiet type",
+        "a rich cousin"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "El muy vivales llevaba días anunciando que andaba corto.",
+        "targetWord": "vivales",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0cd3ccf9fb622ab.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "no mames",
+    "sentence": "[[No mames]], ni que fueras a quebrar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "no way, come on",
+      "options": [
+        "no way, come on",
+        "of course, sure",
+        "too bad, sorry",
+        "well done, nice"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "No mames, ni que fueras a quebrar.",
+        "targetWord": "No mames",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0db7519233624b3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chotear",
+    "sentence": "Siguió [[choteándolo]] y Pablo levantó la vista para sumarse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to mock, to tease",
+      "options": [
+        "to mock, to tease",
+        "to defend someone",
+        "to pay for someone",
+        "to ignore someone"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "Siguió choteándolo y Pablo levantó la vista para sumarse.",
+        "targetWord": "choteándolo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e8d2c0b9d134b2e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "echar choro",
+    "sentence": "Mateo se puso a [[echar choro]] sobre que ya había pagado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to spin a long line",
+      "options": [
+        "to spin a long line",
+        "to pay up fast",
+        "to keep quiet",
+        "to tell the truth"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "Mateo se puso a echar choro sobre que ya había pagado.",
+        "targetWord": "echar choro",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/99ef7d2395f21185.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mamada",
+    "sentence": "Pura [[mamada]], y nadie le creyó una palabra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nonsense, bullshit",
+      "options": [
+        "nonsense, bullshit",
+        "a fair point",
+        "a good joke",
+        "an old story"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "Pura mamada, y nadie le creyó una palabra.",
+        "targetWord": "mamada",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6cac5971c4e6697e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sacar la sopa",
+    "sentence": "Le [[sacó la sopa]] sin levantar la voz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get the truth out",
+      "options": [
+        "to get the truth out",
+        "to serve him dinner",
+        "to end the argument",
+        "to lend him money"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "Le sacó la sopa sin levantar la voz.",
+        "targetWord": "sacó la sopa",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/084a1cda971dfed1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cabrón",
+    "sentence": "Eres un [[cabrón]], se rió Renata.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cheeky rascal",
+      "options": [
+        "a cheeky rascal",
+        "a coward",
+        "a stranger",
+        "a genius"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "Eres un cabrón, se rió Renata.",
+        "targetWord": "cabrón",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/97f19a1e079b1efb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "carrilla",
+    "sentence": "La mesa se le vino encima con pura [[carrilla]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "relentless teasing",
+      "options": [
+        "relentless teasing",
+        "loud music",
+        "real anger",
+        "quiet pity"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "La mesa se le vino encima con pura carrilla.",
+        "targetWord": "carrilla",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/092628f5d514413f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pinche",
+    "sentence": "Al [[pinche]] Mateo no le quedó de otra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "damn, bloody",
+      "options": [
+        "damn, bloody",
+        "poor, unlucky",
+        "tall, large",
+        "kind, sweet"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "Al pinche Mateo no le quedó de otra.",
+        "targetWord": "pinche",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bdd6afa45bb23f9b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacerse pato",
+    "sentence": "El que se [[hacía pato]] terminaba pagando.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to play dumb",
+      "options": [
+        "to play dumb",
+        "to arrive early",
+        "to speak up",
+        "to pay first"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "El que se hacía pato terminaba pagando.",
+        "targetWord": "hacía pato",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/54382fd886c38b94.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "andar corto",
+    "sentence": "Llevaba días diciendo que [[andaba corto]] de dinero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "short on cash",
+      "options": [
+        "short on cash",
+        "full of energy",
+        "running late",
+        "feeling sick"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "Llevaba días diciendo que andaba corto de dinero.",
+        "targetWord": "andaba corto",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9f4ab55f1394aa0a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "no quedar de otra",
+    "sentence": "Al final [[no le quedó de otra]] que pagar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "he had no choice",
+      "options": [
+        "he had no choice",
+        "he refused flatly",
+        "he left early",
+        "he won easily"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "Al final no le quedó de otra que pagar.",
+        "targetWord": "no le quedó de otra",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8c9dceb195dbac4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de sobra",
+    "sentence": "El sábado traía dinero [[de sobra]] en la cartera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "more than enough",
+      "options": [
+        "more than enough",
+        "barely any left",
+        "none at all",
+        "exactly the right"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "El sábado traía dinero de sobra en la cartera.",
+        "targetWord": "de sobra",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/355bb4df17be8e18.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cachó",
+    "sentence": "Su mamá lo _____ comiendo pastel antes de la cena.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cachó",
+      "options": [
+        "cachó",
+        "perdió",
+        "llamó",
+        "esperó"
+      ],
+      "translation": "His mum _____ him eating cake before dinner.",
+      "optionTranslations": [
+        "caught out",
+        "lost",
+        "called",
+        "waited for"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "Su mamá lo cachó comiendo pastel antes de la cena.",
+        "targetWord": "cachó",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a62233910ebbb616.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vaquita",
+    "sentence": "Entre todos hicieron una _____ para el regalo de Ana.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vaquita",
+      "options": [
+        "vaquita",
+        "fila",
+        "broma",
+        "lista"
+      ],
+      "translation": "Between them they had a _____ for Ana's present.",
+      "optionTranslations": [
+        "whip round",
+        "queue",
+        "joke",
+        "list"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "Entre todos hicieron una vaquita para el regalo de Ana.",
+        "targetWord": "vaquita",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f6e8a53309085133.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "tranzado",
+    "sentence": "El mecánico nos había _____ con el precio del motor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tranzado",
+      "options": [
+        "tranzado",
+        "ayudado",
+        "llamado",
+        "esperado"
+      ],
+      "translation": "The mechanic had _____ us on the engine price.",
+      "optionTranslations": [
+        "swindled",
+        "helped",
+        "called",
+        "waited for"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "El mecánico nos había tranzado con el precio del motor.",
+        "targetWord": "tranzado",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/da6ef0408cc41b73.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "zafarse",
+    "sentence": "Buscaba una excusa para _____ de la reunión del lunes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "zafarse",
+      "options": [
+        "zafarse",
+        "quejarse",
+        "reírse",
+        "acordarse"
+      ],
+      "translation": "He was looking for an excuse to _____ Monday's meeting.",
+      "optionTranslations": [
+        "wriggle out of",
+        "complain about",
+        "laugh about",
+        "remember"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "Buscaba una excusa para zafarse de la reunión del lunes.",
+        "targetWord": "zafarse",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e5c7ce1e7351c4b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cotorreando",
+    "sentence": "Se quedaron _____ en la cocina hasta las tres.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cotorreando",
+      "options": [
+        "cotorreando",
+        "discutiendo",
+        "cocinando",
+        "limpiando"
+      ],
+      "translation": "They stayed _____ in the kitchen until three.",
+      "optionTranslations": [
+        "chatting and joking",
+        "arguing",
+        "cooking",
+        "cleaning"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "Se quedaron cotorreando en la cocina hasta las tres.",
+        "targetWord": "cotorreando",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d265bd9beeed421.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aflojar",
+    "sentence": "Al final tuvo que _____ el dinero de la multa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aflojar",
+      "options": [
+        "aflojar",
+        "pedir",
+        "contar",
+        "guardar"
+      ],
+      "translation": "In the end he had to _____ the fine money.",
+      "optionTranslations": [
+        "cough up",
+        "ask for",
+        "count",
+        "keep"
+      ],
+      "audioClip": {
+        "storySlug": "le-toca-a-mateo",
+        "storySource": "user",
+        "sentence": "Al final tuvo que aflojar el dinero de la multa.",
+        "targetWord": "aflojar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec3bc41203f9ade7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "lana,chela,güey,codo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "lana",
+          "answer": "money, cash",
+          "options": [
+            "money, cash",
+            "a beer",
+            "dude, guy",
+            "stingy, tight with money"
+          ]
+        },
+        {
+          "word": "chela",
+          "answer": "a beer",
+          "options": [
+            "money, cash",
+            "a beer",
+            "dude, guy",
+            "stingy, tight with money"
+          ]
+        },
+        {
+          "word": "güey",
+          "answer": "dude, guy",
+          "options": [
+            "money, cash",
+            "a beer",
+            "dude, guy",
+            "stingy, tight with money"
+          ]
+        },
+        {
+          "word": "codo",
+          "answer": "stingy, tight with money",
+          "options": [
+            "money, cash",
+            "a beer",
+            "dude, guy",
+            "stingy, tight with money"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

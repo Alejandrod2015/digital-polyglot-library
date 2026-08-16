@@ -1,0 +1,466 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "hora,porta,calçada,carro",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "hora",
+          "answer": "an hour",
+          "options": [
+            "an hour",
+            "a door",
+            "the pavement",
+            "a car"
+          ]
+        },
+        {
+          "word": "porta",
+          "answer": "a door",
+          "options": [
+            "an hour",
+            "a door",
+            "the pavement",
+            "a car"
+          ]
+        },
+        {
+          "word": "calçada",
+          "answer": "the pavement",
+          "options": [
+            "an hour",
+            "a door",
+            "the pavement",
+            "a car"
+          ]
+        },
+        {
+          "word": "carro",
+          "answer": "a car",
+          "options": [
+            "an hour",
+            "a door",
+            "the pavement",
+            "a car"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esquina",
+    "sentence": "A fila da porta dobra a [[esquina]] do quarteirão.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a corner",
+      "options": [
+        "a corner",
+        "a bridge",
+        "a hill",
+        "a gate"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "A fila da porta dobra a esquina do quarteirão.",
+        "targetWord": "esquina",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/19533e768059337d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conta",
+    "sentence": "Ele paga a [[conta]] e sai para a rua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the bill",
+      "options": [
+        "the bill",
+        "the ticket",
+        "the key",
+        "the change"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "Ele paga a conta e sai para a rua.",
+        "targetWord": "conta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e13fbd98fa546864.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frio",
+    "sentence": "Ele sai para o ar [[frio]] da rua escura.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cold",
+      "options": [
+        "cold",
+        "warm",
+        "wet",
+        "dry"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "Ele sai para o ar frio da rua escura.",
+        "targetWord": "frio",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4753297811c7e39.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fumar",
+    "sentence": "Três pessoas [[fumam]] na calçada e cantam junto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "smoke",
+      "options": [
+        "smoke",
+        "dance",
+        "run",
+        "read"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "Três pessoas fumam na calçada e cantam junto.",
+        "targetWord": "fumam",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb2f854a0d65c5a4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "refrão",
+    "sentence": "O [[refrão]] some quando ele vira na avenida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the chorus",
+      "options": [
+        "the chorus",
+        "the price",
+        "the door",
+        "the queue"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "O refrão some quando ele vira na avenida.",
+        "targetWord": "refrão",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d9629585eab8551.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cobrir",
+    "sentence": "Os carros fazem barulho e [[cobrem]] o resto da noite.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cover up",
+      "options": [
+        "cover up",
+        "open up",
+        "clean up",
+        "light up"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "Os carros fazem barulho e cobrem o resto da noite.",
+        "targetWord": "cobrem",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/914093a0116cb400.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "baixinho",
+    "sentence": "Ele continua cantando [[baixinho]] até o ponto de táxi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "quietly",
+      "options": [
+        "quietly",
+        "loudly",
+        "quickly",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "Ele continua cantando baixinho até o ponto de táxi.",
+        "targetWord": "baixinho",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/21c8df1880d71a7b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "soltar",
+    "sentence": "Cada porta [[solta]] uma música diferente para a rua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lets out",
+      "options": [
+        "lets out",
+        "holds in",
+        "pays for",
+        "asks for"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "Cada porta solta uma música diferente para a rua.",
+        "targetWord": "solta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/214957d73e509543.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "vira",
+    "sentence": "O refrão some quando ele _____ na avenida grande.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vira",
+      "options": [
+        "vira",
+        "paga",
+        "dorme",
+        "volta"
+      ],
+      "translation": "The chorus fades when he _____ onto the big avenue.",
+      "optionTranslations": [
+        "turns",
+        "pays",
+        "sleeps",
+        "comes back"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "O refrão some quando ele vira na avenida grande.",
+        "targetWord": "vira",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37e4c325371ba23b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ar",
+    "sentence": "Ele sai para o [[ar]] frio da rua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "air",
+      "options": [
+        "air",
+        "water",
+        "light",
+        "noise"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "Ele sai para o ar frio da rua.",
+        "targetWord": "ar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2586e6b178e6126f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aberto",
+    "sentence": "A rua desce cheia de bar [[aberto]] e música.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "open",
+      "options": [
+        "open",
+        "closed",
+        "empty",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "A rua desce cheia de bar aberto e música.",
+        "targetWord": "aberto",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8f417a50b386c02.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fila",
+    "sentence": "A [[fila]] da porta dobra a esquina do bar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a queue",
+      "options": [
+        "a queue",
+        "a wall",
+        "a shelf",
+        "a table"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "A fila da porta dobra a esquina do bar.",
+        "targetWord": "fila",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9d99b283f5d17e5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "próximo",
+    "sentence": "A rua desce até a [[próxima]] esquina cheia de gente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next",
+      "options": [
+        "next",
+        "last",
+        "same",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "A rua desce até a próxima esquina cheia de gente.",
+        "targetWord": "próxima",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ce19a6233fe9b65f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "inteiro",
+    "sentence": "As seis palavras servem para o caminho [[inteiro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "whole",
+      "options": [
+        "whole",
+        "short",
+        "narrow",
+        "wrong"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "As seis palavras servem para o caminho inteiro.",
+        "targetWord": "inteiro",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ccb5f156273e99c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "servir",
+    "sentence": "As seis palavras [[servem]] para o caminho até casa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "are enough for",
+      "options": [
+        "are enough for",
+        "are paid for",
+        "are sold for",
+        "are asked for"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "As seis palavras servem para o caminho até casa.",
+        "targetWord": "servem",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dea38e14bed00f38.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caminho",
+    "sentence": "As palavras dele servem para o [[caminho]] até casa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the way",
+      "options": [
+        "the way",
+        "the price",
+        "the door",
+        "the room"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "As palavras dele servem para o caminho até casa.",
+        "targetWord": "caminho",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6a849ea4ec38303.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "andar",
+    "sentence": "Ele canta junto sem parar de _____ pela rua.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "andar",
+      "options": [
+        "andar",
+        "pagar",
+        "dormir",
+        "abrir"
+      ],
+      "translation": "He sings along without stopping _____ down the street.",
+      "optionTranslations": [
+        "walking",
+        "paying",
+        "sleeping",
+        "opening"
+      ],
+      "audioClip": {
+        "storySlug": "o-refrao-sai-na-rua",
+        "storySource": "user",
+        "sentence": "Ele canta junto sem parar de andar pela rua.",
+        "targetWord": "andar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7eb092460e149ffb.mp3"
+      }
+    },
+    "featured": false
+  }
+]

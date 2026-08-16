@@ -1,0 +1,590 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "piccioni,mani,tazze,folla",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "piccioni",
+     "answer": "pigeons",
+     "options": [
+      "pigeons",
+      "hands",
+      "cups",
+      "crowd"
+     ]
+    },
+    {
+     "word": "mani",
+     "answer": "hands",
+     "options": [
+      "pigeons",
+      "hands",
+      "cups",
+      "crowd"
+     ]
+    },
+    {
+     "word": "tazze",
+     "answer": "cups",
+     "options": [
+      "pigeons",
+      "hands",
+      "cups",
+      "crowd"
+     ]
+    },
+    {
+     "word": "folla",
+     "answer": "crowd",
+     "options": [
+      "pigeons",
+      "hands",
+      "cups",
+      "crowd"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "allegra",
+  "sentence": "Un'orchestra suona una musica [[allegra]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cheerful",
+   "options": [
+    "cheerful",
+    "sad",
+    "slow",
+    "quiet"
+   ],
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Un'orchestra suona una musica allegra.",
+    "targetWord": "allegra",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "leggero",
+  "sentence": "Fa qualche passo [[leggero]] tra le colonne.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "light",
+   "options": [
+    "light",
+    "heavy",
+    "fast",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Fa qualche passo leggero tra le colonne.",
+    "targetWord": "leggero",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "sorpresi",
+  "sentence": "Molti uccelli restano [[sorpresi]] vicino a Elena.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "surprised",
+   "options": [
+    "surprised",
+    "tired",
+    "afraid",
+    "bored"
+   ],
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Molti uccelli restano sorpresi vicino a Elena.",
+    "targetWord": "sorpresi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "intorno",
+  "sentence": "Molti piccioni volano [[intorno]] alle due donne.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "around",
+   "options": [
+    "around",
+    "above",
+    "under",
+    "behind"
+   ],
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Molti piccioni volano intorno alle due donne.",
+    "targetWord": "intorno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "volano",
+  "sentence": "Molti piccioni _____ intorno alle due donne.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "volano",
+   "options": [
+    "volano",
+    "suonano",
+    "ballano",
+    "girano"
+   ],
+   "optionTranslations": [
+    "fly",
+    "play",
+    "dance",
+    "turn"
+   ],
+   "translation": "Many pigeons _____ around the two women.",
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Molti piccioni volano intorno alle due donne.",
+    "targetWord": "volano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "suona",
+  "sentence": "Un'orchestra _____ una musica allegra.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "suona",
+   "options": [
+    "suona",
+    "balla",
+    "gira",
+    "guarda"
+   ],
+   "optionTranslations": [
+    "plays",
+    "dances",
+    "turns",
+    "looks"
+   ],
+   "translation": "An orchestra _____ cheerful music.",
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Un'orchestra suona una musica allegra.",
+    "targetWord": "suona",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "batte",
+  "sentence": "Elena _____ le mani a tempo con la musica.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "batte",
+   "options": [
+    "batte",
+    "ordina",
+    "chiede",
+    "guarda"
+   ],
+   "optionTranslations": [
+    "claps",
+    "orders",
+    "asks",
+    "looks"
+   ],
+   "translation": "Elena _____ her hands in time with the music.",
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Elena batte le mani a tempo con la musica.",
+    "targetWord": "batte",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "ordina",
+  "sentence": "Sara _____ due tazze di cioccolata calda.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ordina",
+   "options": [
+    "ordina",
+    "chiede",
+    "compra",
+    "batte"
+   ],
+   "optionTranslations": [
+    "orders",
+    "asks",
+    "buys",
+    "claps"
+   ],
+   "translation": "Sara _____ two cups of hot chocolate.",
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Sara ordina due tazze di cioccolata calda.",
+    "targetWord": "ordina",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "balla",
+  "sentence": "Poi Elena _____ piano vicino al caffè.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "balla",
+   "options": [
+    "balla",
+    "suona",
+    "gira",
+    "guarda"
+   ],
+   "optionTranslations": [
+    "dances",
+    "plays",
+    "turns",
+    "looks"
+   ],
+   "translation": "Then Elena _____ softly near the café.",
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Poi Elena balla piano vicino al caffè.",
+    "targetWord": "balla",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "commossa",
+  "sentence": "Elena è [[commossa]] e serena.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "deeply moved",
+   "options": [
+    "deeply moved",
+    "very angry",
+    "very hungry",
+    "very tired"
+   ],
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Elena è commossa e serena.",
+    "targetWord": "commossa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "gioia",
+  "sentence": "La folla guarda la scena con [[gioia]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "joy",
+   "options": [
+    "joy",
+    "fear",
+    "anger",
+    "boredom"
+   ],
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "La folla guarda la scena con gioia.",
+    "targetWord": "gioia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "passo",
+  "sentence": "Fa qualche [[passo]] leggero e gira.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "step",
+   "options": [
+    "step",
+    "song",
+    "cup",
+    "hand"
+   ],
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Fa qualche passo leggero e gira.",
+    "targetWord": "passo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "annuisce",
+  "sentence": "Il vecchio direttore [[annuisce]] e comincia a suonare.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nods",
+   "options": [
+    "nods",
+    "shouts",
+    "sleeps",
+    "leaves"
+   ],
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Il vecchio direttore annuisce e comincia a suonare.",
+    "targetWord": "annuisce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "avvicina",
+  "sentence": "Poi Sara si [[avvicina]] all'orchestra con un sorriso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "comes closer",
+   "options": [
+    "comes closer",
+    "runs away",
+    "falls down",
+    "looks away"
+   ],
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Poi Sara si avvicina all'orchestra con un sorriso.",
+    "targetWord": "avvicina",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "comincia",
+  "sentence": "Il direttore _____ a suonare piano.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "comincia",
+   "options": [
+    "comincia",
+    "balla",
+    "gira",
+    "guarda"
+   ],
+   "optionTranslations": [
+    "begins",
+    "dances",
+    "turns",
+    "looks"
+   ],
+   "translation": "The conductor _____ to play softly.",
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Il direttore comincia a suonare piano.",
+    "targetWord": "comincia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "abbraccia",
+  "sentence": "Poi Sara _____ Elena e dice piano.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "abbraccia",
+   "options": [
+    "abbraccia",
+    "guarda",
+    "chiede",
+    "ordina"
+   ],
+   "optionTranslations": [
+    "hugs",
+    "looks at",
+    "asks",
+    "orders"
+   ],
+   "translation": "Then Sara _____ Elena and says quietly.",
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Poi Sara abbraccia Elena e dice piano.",
+    "targetWord": "abbraccia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "chiede",
+  "sentence": "Sara _____ ai musicisti la canzone preferita.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chiede",
+   "options": [
+    "chiede",
+    "ordina",
+    "guarda",
+    "batte"
+   ],
+   "optionTranslations": [
+    "asks",
+    "orders",
+    "looks",
+    "claps"
+   ],
+   "translation": "Sara _____ the musicians for the favorite song.",
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Sara chiede ai musicisti la canzone preferita.",
+    "targetWord": "chiede",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "guarda",
+  "sentence": "La folla _____ la scena con gioia.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guarda",
+   "options": [
+    "guarda",
+    "balla",
+    "suona",
+    "gira"
+   ],
+   "optionTranslations": [
+    "watches",
+    "dances",
+    "plays",
+    "turns"
+   ],
+   "translation": "The crowd _____ the scene with joy.",
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "La folla guarda la scena con gioia.",
+    "targetWord": "guarda",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sorride",
+  "sentence": "Elena riconosce le note e _____ felice.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sorride",
+   "options": [
+    "sorride",
+    "balla",
+    "guarda",
+    "gira"
+   ],
+   "optionTranslations": [
+    "smiles",
+    "dances",
+    "looks",
+    "turns"
+   ],
+   "translation": "Elena knows the notes and _____ happily.",
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Elena riconosce le note e sorride felice.",
+    "targetWord": "sorride",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "gira",
+  "sentence": "Poi Elena _____ tra le colonne.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gira",
+   "options": [
+    "gira",
+    "balla",
+    "suona",
+    "guarda"
+   ],
+   "optionTranslations": [
+    "turns",
+    "dances",
+    "plays",
+    "looks"
+   ],
+   "translation": "Then Elena _____ among the columns.",
+   "audioClip": {
+    "storySlug": "una-canzone-in-piazza-san-marco",
+    "storySource": "user",
+    "sentence": "Poi Elena gira tra le colonne.",
+    "targetWord": "gira",
+    "language": "italian"
+   }
+  }
+ }
+]

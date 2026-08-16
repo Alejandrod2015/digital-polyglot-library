@@ -1,0 +1,623 @@
+[
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "el cholado,el guarapo,la guaracha,la cadera",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "el cholado",
+          "answer": "a Cali shaved ice dessert",
+          "options": [
+            "a Cali shaved ice dessert",
+            "a fermented sugarcane drink",
+            "a fast, festive salsa rhythm",
+            "the hip you sway when dancing"
+          ]
+        },
+        {
+          "word": "el guarapo",
+          "answer": "a fermented sugarcane drink",
+          "options": [
+            "a Cali shaved ice dessert",
+            "a fermented sugarcane drink",
+            "a fast, festive salsa rhythm",
+            "the hip you sway when dancing"
+          ]
+        },
+        {
+          "word": "la guaracha",
+          "answer": "a fast, festive salsa rhythm",
+          "options": [
+            "a Cali shaved ice dessert",
+            "a fermented sugarcane drink",
+            "a fast, festive salsa rhythm",
+            "the hip you sway when dancing"
+          ]
+        },
+        {
+          "word": "la cadera",
+          "answer": "the hip you sway when dancing",
+          "options": [
+            "a Cali shaved ice dessert",
+            "a fermented sugarcane drink",
+            "a fast, festive salsa rhythm",
+            "the hip you sway when dancing"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "cuadrar las cuentas",
+    "sentence": "Manuela quería [[cuadrar las cuentas]] antes de bailar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to settle the accounts",
+      "options": [
+        "to settle the accounts",
+        "to cook the dinner",
+        "to pay the rent",
+        "to close the shop"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Manuela quería cuadrar las cuentas antes de bailar.",
+        "targetWord": "cuadrar las cuentas",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8158e752b2afb38f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "escupir",
+    "sentence": "El ventilador viejo [[escupía]] puro calor caliente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to blow out forcefully",
+      "options": [
+        "to blow out forcefully",
+        "to soak up water",
+        "to cool the room",
+        "to shut itself down"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "El ventilador viejo escupía puro calor caliente.",
+        "targetWord": "escupía",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba65168b356efca7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "sin pedir permiso",
+    "sentence": "Andrés le quitó el portátil [[sin pedir permiso]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without asking permission",
+      "options": [
+        "without asking permission",
+        "without saying goodbye",
+        "without making a sound",
+        "without any good reason"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Andrés le quitó el portátil sin pedir permiso.",
+        "targetWord": "sin pedir permiso",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/53168bf0ad04a65e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "un pato mareado",
+    "sentence": "Al principio Manuela bailaba como [[un pato mareado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a clumsy, disoriented person",
+      "options": [
+        "a clumsy, disoriented person",
+        "a graceful young swan",
+        "a tired old man",
+        "a very angry duck"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Al principio Manuela bailaba como un pato mareado.",
+        "targetWord": "un pato mareado",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/58afe1be6e8d8ac0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "qué chimba",
+    "sentence": "¡[[Qué chimba]] de rumba, ve, no paro!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "how awesome",
+      "options": [
+        "how awesome",
+        "what a mess",
+        "how boring",
+        "what a shame"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Qué chimba de rumba, ve, no paro.",
+        "targetWord": "Qué chimba",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cf84668dc940201b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "el portátil",
+    "sentence": "Manuela abrió ____ sobre la mesa pegajosa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el portátil",
+      "options": [
+        "el portátil",
+        "el cuaderno",
+        "el paraguas",
+        "el abanico"
+      ],
+      "translation": "Manuela opened ____ on the sticky table.",
+      "optionTranslations": [
+        "the laptop",
+        "the notebook",
+        "the umbrella",
+        "the fan"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Manuela abrió el portátil sobre la mesa pegajosa.",
+        "targetWord": "el portátil",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6fea9857f3cdada4.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "mija",
+    "sentence": "Ve, ____, aquí las cuentas se bailan.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mija",
+      "options": [
+        "mija",
+        "niña",
+        "reina",
+        "vecina"
+      ],
+      "translation": "Look, ____, here the accounts get danced.",
+      "optionTranslations": [
+        "dear",
+        "girl",
+        "queen",
+        "neighbor"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Ve, mija, aquí las cuentas se bailan.",
+        "targetWord": "mija",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed1465ae66441d69.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "terca",
+    "sentence": "Ella insistía, ____ como buena rola.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "terca",
+      "options": [
+        "terca",
+        "brava",
+        "floja",
+        "sorda"
+      ],
+      "translation": "She insisted, ____ like a good rola.",
+      "optionTranslations": [
+        "stubborn",
+        "angry",
+        "lazy",
+        "deaf"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Ella insistía, terca como buena rola.",
+        "targetWord": "terca",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/298a1bad275d0fbb.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "la clave",
+    "sentence": "Andrés marcó ____ con dos dedos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la clave",
+      "options": [
+        "la clave",
+        "la salsa",
+        "la letra",
+        "la puerta"
+      ],
+      "translation": "Andrés marked ____ with two fingers.",
+      "optionTranslations": [
+        "the clave beat",
+        "the salsa",
+        "the lyrics",
+        "the door"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Andrés marcó la clave con dos dedos.",
+        "targetWord": "la clave",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e62f20edae0443d4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "sos",
+    "sentence": "Mirá que ya [[sos]] medio caleña, Manuela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "you are",
+      "options": [
+        "you are",
+        "you were",
+        "we are",
+        "they are"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Mirá que ya sos medio caleña, Manuela.",
+        "targetWord": "sos",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6baf8dc097ce6a84.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "mirá vé",
+    "sentence": "[[Mirá vé]], aquí el sabor se baila.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hey, look here",
+      "options": [
+        "hey, look here",
+        "wait a moment",
+        "leave me alone",
+        "goodbye for now"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Mirá vé, aquí el sabor se baila.",
+        "targetWord": "Mirá vé",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/72544d8e5c4dfb46.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "sin rechistar",
+    "sentence": "Manuela guardó el portátil apagado [[sin rechistar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without protesting",
+      "options": [
+        "without protesting",
+        "without paying",
+        "without looking back",
+        "without stopping once"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Manuela guardó el portátil apagado sin rechistar.",
+        "targetWord": "sin rechistar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6b9ee036d815d75e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "pillar",
+    "sentence": "De repente Manuela [[pilló]] el secreto del sabor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to suddenly realize",
+      "options": [
+        "to suddenly realize",
+        "to slowly forget",
+        "to firmly deny",
+        "to loudly complain"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "De repente Manuela pilló el secreto del sabor.",
+        "targetWord": "pilló",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34bfa28c614b6b4e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "enredarse",
+    "sentence": "Al bailar se le [[enredaban]] los pies solos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get tangled up",
+      "options": [
+        "to get tangled up",
+        "to move gracefully",
+        "to grow very tired",
+        "to step firmly down"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Al bailar se le enredaban los pies solos.",
+        "targetWord": "enredaban",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba03484fc933e71b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "la rola",
+    "sentence": "Andrés se burló de ____ que vino a auditar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la rola",
+      "options": [
+        "la rola",
+        "la paisa",
+        "la jefa",
+        "la turista"
+      ],
+      "translation": "Andrés teased ____ who came to audit.",
+      "optionTranslations": [
+        "the Bogotá woman",
+        "the paisa woman",
+        "the boss",
+        "the tourist"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Andrés se burló de la rola que vino a auditar.",
+        "targetWord": "la rola",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ebd6065e1624a208.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "golpe",
+    "sentence": "Oís ese ____ seco que ninguna máquina suma.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "golpe",
+      "options": [
+        "golpe",
+        "ritmo",
+        "paso",
+        "grito"
+      ],
+      "translation": "You hear that dry ____ no machine adds up.",
+      "optionTranslations": [
+        "beat",
+        "rhythm",
+        "step",
+        "shout"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Oís ese golpe seco que ninguna máquina suma.",
+        "targetWord": "golpe",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2326a565a12b7193.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "facturas",
+    "sentence": "Contaba los pasos como si fueran ____ pendientes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "facturas",
+      "options": [
+        "facturas",
+        "deudas",
+        "monedas",
+        "recibos"
+      ],
+      "translation": "She counted steps as if they were pending ____.",
+      "optionTranslations": [
+        "invoices",
+        "debts",
+        "coins",
+        "receipts"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Contaba los pasos como si fueran facturas pendientes.",
+        "targetWord": "facturas",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2471616665a4cecd.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "compás",
+    "sentence": "El calor y el vinilo formaron un ____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "compás",
+      "options": [
+        "compás",
+        "olor",
+        "ruido",
+        "frío"
+      ],
+      "translation": "The heat and the vinyl formed one single ____.",
+      "optionTranslations": [
+        "beat",
+        "smell",
+        "noise",
+        "chill"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "El calor y el vinilo formaron un compás.",
+        "targetWord": "compás",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad9a0c476814d696.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "la rumba",
+    "sentence": "La contadora vino a auditar ____ caleña.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la rumba",
+      "options": [
+        "la rumba",
+        "la salsa",
+        "la casa",
+        "la fiesta"
+      ],
+      "translation": "The accountant came to audit the Cali ____.",
+      "optionTranslations": [
+        "party",
+        "salsa",
+        "house",
+        "celebration"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "La contadora vino a auditar la rumba caleña.",
+        "targetWord": "la rumba",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/97ef58bf99f80f63.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "menear",
+    "sentence": "Andrés empezó a ____ los hombros lento.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "menear",
+      "options": [
+        "menear",
+        "cruzar",
+        "subir",
+        "frotar"
+      ],
+      "translation": "Andrés began to ____ his shoulders slowly.",
+      "optionTranslations": [
+        "sway",
+        "cross",
+        "raise",
+        "rub"
+      ],
+      "audioClip": {
+        "storySlug": "la-clave-del-sabor-caleno",
+        "storySource": "user",
+        "sentence": "Andrés empezó a menear los hombros lento.",
+        "targetWord": "menear",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f6109d8e6ed98f6e.mp3"
+      }
+    }
+  }
+]

@@ -1,0 +1,479 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "hecho pelota",
+    "sentence": "Camila entró [[hecha pelota]] y largó todo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "totally wrecked and worn out",
+      "options": [
+        "totally wrecked and worn out",
+        "fresh and full of energy",
+        "calm and nicely rested",
+        "proud and standing tall"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "Camila entró hecha pelota y largó todo.",
+        "targetWord": "hecha pelota",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/363772843ccb2b78.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "no dar más",
+    "sentence": "Che, [[no doy más]] con este laburo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I am completely done",
+      "options": [
+        "I am completely done",
+        "I am doing great",
+        "I want much more",
+        "I just got started"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "Che, no doy más con este laburo.",
+        "targetWord": "no doy más",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5959bc3e407f20a6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quilombo",
+    "sentence": "El jefe le mandaba un [[quilombo]] tras otro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a chaotic mess",
+      "options": [
+        "a chaotic mess",
+        "a fair reward",
+        "a quiet break",
+        "a small favor"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "El jefe le mandaba un quilombo tras otro.",
+        "targetWord": "quilombo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e5d6c9e3f0118d6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reventado",
+    "sentence": "Se quedaba hasta tarde, [[reventada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "utterly exhausted",
+      "options": [
+        "utterly exhausted",
+        "wide awake",
+        "calmly rested",
+        "full of joy"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "Se quedaba hasta tarde, reventada.",
+        "targetWord": "reventada",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0aad5c4474e72c02.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bajón",
+    "sentence": "Tomás la dejó descargar todo el [[bajón]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a gloomy low mood",
+      "options": [
+        "a gloomy low mood",
+        "a burst of joy",
+        "a fit of anger",
+        "a wave of calm"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "Tomás la dejó descargar todo el bajón.",
+        "targetWord": "bajón",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cb2be79a0e4b7a89.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al horno",
+    "sentence": "Se pasó tres semanas [[al horno]], sin dormir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in deep trouble",
+      "options": [
+        "in deep trouble",
+        "on a nice break",
+        "at a big party",
+        "in good spirits"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "Se pasó tres semanas al horno, sin dormir.",
+        "targetWord": "al horno",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/79baffd0d1a94247.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frenar en seco",
+    "sentence": "Flor la [[frenó en seco]] con una pregunta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stopped her dead",
+      "options": [
+        "stopped her dead",
+        "cheered her on",
+        "joined right in",
+        "walked away"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "Flor la frenó en seco con una pregunta.",
+        "targetWord": "frenó en seco",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/90a58adf86863d27.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pará",
+    "sentence": "\"[[Pará]], ¿por qué te daría el mejor cliente?\"",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hold on a second",
+      "options": [
+        "hold on a second",
+        "carry on talking",
+        "never you mind",
+        "off you go"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "\"Pará, ¿por qué te daría el mejor cliente?\"",
+        "targetWord": "Pará",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8d7d709a03e2b69e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "viejo",
+    "sentence": "El [[viejo]] la felicitaba y la ascendía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the boss, affectionately",
+      "options": [
+        "the boss, affectionately",
+        "the young intern",
+        "the total stranger",
+        "the angry client"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "El viejo la felicitaba y la ascendía.",
+        "targetWord": "viejo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/406fea5daff4ed1a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prueba de fuego",
+    "sentence": "Era una [[prueba de fuego]] que había pasado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a hard trial by fire",
+      "options": [
+        "a hard trial by fire",
+        "an easy free pass",
+        "a cruel mean joke",
+        "a lucky quick win"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "Era una prueba de fuego que había pasado.",
+        "targetWord": "prueba de fuego",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/587586c2ff86617f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dar vuelta",
+    "sentence": "El bajón [[se le dio vuelta]] de golpe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "flipped around completely",
+      "options": [
+        "flipped around completely",
+        "stayed exactly the same",
+        "faded slowly away",
+        "got much worse"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "El bajón se le dio vuelta de golpe.",
+        "targetWord": "se le dio vuelta",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8742942d37ea72a3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "largar",
+    "sentence": "Se tiró en la silla y _____ todo de una.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "largar",
+      "options": [
+        "largar",
+        "guardó",
+        "escondió",
+        "calló"
+      ],
+      "translation": "She flopped on the chair and _____ everything at once.",
+      "optionTranslations": [
+        "blurted out",
+        "kept in",
+        "hid",
+        "hushed"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "Se tiró en la silla y largar todo de una.",
+        "targetWord": "largar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf8dca4599dfd47d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "renegar",
+    "sentence": "Se quedaba _____ hasta tarde en la oficina.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "renegar",
+      "options": [
+        "renegar",
+        "durmiendo",
+        "riendo",
+        "cantando"
+      ],
+      "translation": "She kept _____ late at the office.",
+      "optionTranslations": [
+        "grumbling away",
+        "sleeping",
+        "laughing",
+        "singing"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "Se quedaba renegar hasta tarde en la oficina.",
+        "targetWord": "renegar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ddaf99de79f4e49c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bancar",
+    "sentence": "Los amigos siempre te _____ en los malos momentos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bancar",
+      "options": [
+        "bancar",
+        "abandonan",
+        "cobran",
+        "critican"
+      ],
+      "translation": "Friends always _____ you in the bad moments.",
+      "optionTranslations": [
+        "back up",
+        "abandon",
+        "charge",
+        "criticize"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "Los amigos siempre te bancar en los malos momentos.",
+        "targetWord": "bancar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5dd56f10369277e9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "despacharse",
+    "sentence": "Le dijo que _____ con toda confianza.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "despacharse",
+      "options": [
+        "despacharse",
+        "se callara",
+        "se fuera",
+        "se durmiera"
+      ],
+      "translation": "She told her to _____ with total confidence.",
+      "optionTranslations": [
+        "let it all out",
+        "stay quiet",
+        "leave",
+        "fall asleep"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "Le dijo que despacharse con toda confianza.",
+        "targetWord": "despacharse",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eed28b4fb9aa3a76.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "borrarse",
+    "sentence": "Está tan harta que se quiere _____ de ese laburo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "borrarse",
+      "options": [
+        "borrarse",
+        "quedar",
+        "volver",
+        "reír"
+      ],
+      "translation": "She is so fed up she wants to _____ from that job.",
+      "optionTranslations": [
+        "slip away",
+        "stay",
+        "return",
+        "laugh"
+      ],
+      "audioClip": {
+        "storySlug": "camila-no-da-mas",
+        "storySource": "user",
+        "sentence": "Está tan harta que se quiere borrarse de ese laburo.",
+        "targetWord": "borrarse",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7925b08946b1f2ba.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "laburo,boludo,mango,garrón",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "laburo",
+          "answer": "a job, work (Buenos Aires)",
+          "options": [
+            "a job, work (Buenos Aires)",
+            "dude, mate",
+            "a peso, money",
+            "a raw deal, a bummer"
+          ]
+        },
+        {
+          "word": "boludo",
+          "answer": "dude, mate",
+          "options": [
+            "a job, work (Buenos Aires)",
+            "dude, mate",
+            "a peso, money",
+            "a raw deal, a bummer"
+          ]
+        },
+        {
+          "word": "mango",
+          "answer": "a peso, money",
+          "options": [
+            "a job, work (Buenos Aires)",
+            "dude, mate",
+            "a peso, money",
+            "a raw deal, a bummer"
+          ]
+        },
+        {
+          "word": "garrón",
+          "answer": "a raw deal, a bummer",
+          "options": [
+            "a job, work (Buenos Aires)",
+            "dude, mate",
+            "a peso, money",
+            "a raw deal, a bummer"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

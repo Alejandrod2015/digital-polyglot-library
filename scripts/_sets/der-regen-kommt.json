@@ -1,0 +1,604 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Himmel,Felsen,Regenbogen,Wolke",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Himmel",
+     "answer": "sky",
+     "options": [
+      "sky",
+      "rock",
+      "rainbow",
+      "cloud"
+     ]
+    },
+    {
+     "word": "Felsen",
+     "answer": "rock",
+     "options": [
+      "sky",
+      "rock",
+      "rainbow",
+      "cloud"
+     ]
+    },
+    {
+     "word": "Regenbogen",
+     "answer": "rainbow",
+     "options": [
+      "sky",
+      "rock",
+      "rainbow",
+      "cloud"
+     ]
+    },
+    {
+     "word": "Wolke",
+     "answer": "cloud",
+     "options": [
+      "sky",
+      "rock",
+      "rainbow",
+      "cloud"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "stark",
+  "sentence": "Der Wind ist sehr [[stark]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "strong",
+   "options": [
+    "strong",
+    "weak",
+    "quiet",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Der Wind ist sehr stark.",
+    "targetWord": "stark",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "Angst",
+  "sentence": "Emma hat [[Angst]] vor dem Regen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fear",
+   "options": [
+    "fear",
+    "joy",
+    "hunger",
+    "hope"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Emma hat Angst vor dem Regen.",
+    "targetWord": "Angst",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "ruhig",
+  "sentence": "Leon bleibt ganz [[ruhig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calm",
+   "options": [
+    "calm",
+    "loud",
+    "afraid",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Leon bleibt ganz ruhig.",
+    "targetWord": "ruhig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Wetter",
+  "sentence": "Das _____ ändert sich schnell.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Wetter",
+   "options": [
+    "Wetter",
+    "Wasser",
+    "Wind",
+    "Himmel"
+   ],
+   "translation": "The _____ changes fast.",
+   "optionTranslations": [
+    "weather",
+    "water",
+    "wind",
+    "sky"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Das Wetter ändert sich schnell.",
+    "targetWord": "Wetter",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "ändert",
+  "sentence": "Das Wetter _____ sich schnell.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ändert",
+   "options": [
+    "ändert",
+    "wartet",
+    "fällt",
+    "regnet"
+   ],
+   "translation": "The weather _____ fast.",
+   "optionTranslations": [
+    "changes",
+    "waits",
+    "falls",
+    "rains"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Das Wetter ändert sich schnell.",
+    "targetWord": "ändert",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "grau",
+  "sentence": "Der Himmel wird _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "grau",
+   "options": [
+    "grau",
+    "hell",
+    "klar",
+    "nass"
+   ],
+   "translation": "The sky turns _____.",
+   "optionTranslations": [
+    "gray",
+    "bright",
+    "clear",
+    "wet"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Der Himmel wird grau.",
+    "targetWord": "grau",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Wind",
+  "sentence": "Der _____ ist sehr stark.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Wind",
+   "options": [
+    "Wind",
+    "Regen",
+    "Himmel",
+    "Felsen"
+   ],
+   "translation": "The _____ is very strong.",
+   "optionTranslations": [
+    "wind",
+    "rain",
+    "sky",
+    "rock"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Der Wind ist sehr stark.",
+    "targetWord": "Wind",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "regnet",
+  "sentence": "Es _____ stark.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "regnet",
+   "options": [
+    "regnet",
+    "wartet",
+    "fällt",
+    "schaut"
+   ],
+   "translation": "It _____ hard.",
+   "optionTranslations": [
+    "rains",
+    "waits",
+    "falls",
+    "looks"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Es regnet stark.",
+    "targetWord": "regnet",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Farben",
+  "sentence": "Die _____ sind klar und schön.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Farben",
+   "options": [
+    "Farben",
+    "Wolken",
+    "Berge",
+    "Vögel"
+   ],
+   "translation": "The _____ are clear and beautiful.",
+   "optionTranslations": [
+    "colors",
+    "clouds",
+    "mountains",
+    "birds"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Die Farben sind klar und schön.",
+    "targetWord": "Farben",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "laut",
+  "sentence": "Der Regen fällt sehr [[laut]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "loud",
+   "options": [
+    "loud",
+    "soft",
+    "warm",
+    "dry"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Der Regen fällt sehr laut.",
+    "targetWord": "laut",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "erzählt",
+  "sentence": "Leon [[erzählt]] eine schöne Geschichte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to tell",
+   "options": [
+    "to tell",
+    "to ask",
+    "to sing",
+    "to read"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Leon erzählt eine schöne Geschichte.",
+    "targetWord": "erzählt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "klar",
+  "sentence": "Die Farben sind [[klar]] und schön.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clear",
+   "options": [
+    "clear",
+    "dark",
+    "wet",
+    "gray"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Die Farben sind klar und schön.",
+    "targetWord": "klar",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "froh",
+  "sentence": "Sie sind nass, aber [[froh]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "glad",
+   "options": [
+    "glad",
+    "sad",
+    "tired",
+    "afraid"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Sie sind nass, aber froh.",
+    "targetWord": "froh",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "warten",
+  "sentence": "Sie _____ dort und bleiben trocken.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "warten",
+   "options": [
+    "warten",
+    "gehen",
+    "schauen",
+    "fallen"
+   ],
+   "translation": "They _____ there and stay dry.",
+   "optionTranslations": [
+    "wait",
+    "go",
+    "look",
+    "fall"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Sie warten dort und bleiben trocken.",
+    "targetWord": "warten",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "fällt",
+  "sentence": "Der Regen _____ laut.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fällt",
+   "options": [
+    "fällt",
+    "wird",
+    "ist",
+    "regnet"
+   ],
+   "translation": "The rain _____ loudly.",
+   "optionTranslations": [
+    "falls",
+    "becomes",
+    "is",
+    "rains"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Der Regen fällt laut.",
+    "targetWord": "fällt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Geschichte",
+  "sentence": "Leon erzählt eine _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Geschichte",
+   "options": [
+    "Geschichte",
+    "Zeit",
+    "Farbe",
+    "Wolke"
+   ],
+   "translation": "Leon tells a _____.",
+   "optionTranslations": [
+    "story",
+    "time",
+    "color",
+    "cloud"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Leon erzählt eine Geschichte.",
+    "targetWord": "Geschichte",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Zeit",
+  "sentence": "Die _____ geht schnell.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Zeit",
+   "options": [
+    "Zeit",
+    "Sonne",
+    "Wolke",
+    "Farbe"
+   ],
+   "translation": "The _____ passes fast.",
+   "optionTranslations": [
+    "time",
+    "sun",
+    "cloud",
+    "color"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Die Zeit geht schnell.",
+    "targetWord": "Zeit",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "hell",
+  "sentence": "Der Himmel wird wieder _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hell",
+   "options": [
+    "hell",
+    "grau",
+    "nass",
+    "kalt"
+   ],
+   "translation": "The sky turns _____ again.",
+   "optionTranslations": [
+    "bright",
+    "gray",
+    "wet",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Der Himmel wird wieder hell.",
+    "targetWord": "hell",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "schaut",
+  "sentence": "Emma _____ nach oben.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schaut",
+   "options": [
+    "schaut",
+    "geht",
+    "wartet",
+    "fällt"
+   ],
+   "translation": "Emma _____ up.",
+   "optionTranslations": [
+    "looks",
+    "goes",
+    "waits",
+    "falls"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Emma schaut nach oben.",
+    "targetWord": "schaut",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "nass",
+  "sentence": "Sie sind _____, aber froh.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nass",
+   "options": [
+    "nass",
+    "froh",
+    "müde",
+    "kalt"
+   ],
+   "translation": "They are _____, but glad.",
+   "optionTranslations": [
+    "wet",
+    "glad",
+    "tired",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "der-regen-kommt",
+    "storySource": "user",
+    "sentence": "Sie sind nass, aber froh.",
+    "targetWord": "nass",
+    "language": "german"
+   }
+  }
+ }
+]

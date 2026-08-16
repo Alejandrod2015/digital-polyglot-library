@@ -1,0 +1,493 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "color,piel,hierro,fondo",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "color",
+     "answer": "a colour",
+     "options": [
+      "a colour",
+      "a skin",
+      "iron",
+      "the bottom"
+     ]
+    },
+    {
+     "word": "piel",
+     "answer": "a skin",
+     "options": [
+      "a colour",
+      "a skin",
+      "iron",
+      "the bottom"
+     ]
+    },
+    {
+     "word": "hierro",
+     "answer": "iron",
+     "options": [
+      "a colour",
+      "a skin",
+      "iron",
+      "the bottom"
+     ]
+    },
+    {
+     "word": "fondo",
+     "answer": "the bottom",
+     "options": [
+      "a colour",
+      "a skin",
+      "iron",
+      "the bottom"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "socarrat",
+  "sentence": "Lucía dice que ese arroz no tiene nada de [[socarrat]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the crunchy layer at the bottom",
+   "options": [
+    "the crunchy layer at the bottom",
+    "a green herb on top",
+    "a spoon of hot sauce",
+    "a ring of sliced lemon"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "Lucía dice que ese arroz no tiene nada de socarrat.",
+    "targetWord": "socarrat",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bombona de gas",
+  "sentence": "Sergio cocina sobre una [[bombona de gas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a metal gas cylinder",
+   "options": [
+    "a metal gas cylinder",
+    "a bag of charcoal",
+    "an electric oven",
+    "a stone chimney"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "Sergio cocina sobre una bombona de gas.",
+    "targetWord": "bombona de gas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "agarrado",
+  "sentence": "Vicente dice que ese arroz [[agarrado]] no es un error.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stuck to the pan",
+   "options": [
+    "stuck to the pan",
+    "left half raw",
+    "served too cold",
+    "cut in pieces"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "Vicente dice que ese arroz agarrado no es un error.",
+    "targetWord": "agarrado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dorado",
+  "sentence": "Debajo aparece una piel [[dorada]] y muy fina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "golden",
+   "options": [
+    "golden",
+    "grey",
+    "pale",
+    "spotted"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "Debajo aparece una piel dorada y muy fina.",
+    "targetWord": "dorada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "crujiente",
+  "sentence": "La piel de abajo está [[crujiente]] y se separa sola.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "crunchy",
+   "options": [
+    "crunchy",
+    "sticky",
+    "creamy",
+    "watery"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "La piel de abajo está crujiente y se separa sola.",
+    "targetWord": "crujiente",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "escuchar",
+  "sentence": "Vicente dice que hay que [[escuchar]] cómo cruje el arroz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to listen",
+   "options": [
+    "to listen",
+    "to smell",
+    "to stir",
+    "to cover"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "Vicente dice que hay que escuchar cómo cruje el arroz.",
+    "targetWord": "escuchar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "oído",
+  "sentence": "Vicente lo hace con fuego fuerte y con [[oído]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a good ear",
+   "options": [
+    "a good ear",
+    "a sharp knife",
+    "a steady hand",
+    "a long spoon"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "Vicente lo hace con fuego fuerte y con oído.",
+    "targetWord": "oído",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "media hora",
+  "sentence": "Lucía dice que la gente llega en [[media hora]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "half an hour",
+   "options": [
+    "half an hour",
+    "a whole day",
+    "two minutes",
+    "three hours"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "Lucía dice que la gente llega en media hora.",
+    "targetWord": "media hora",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "leña",
+  "sentence": "En invierno echamos _____ a la chimenea.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "leña",
+   "options": [
+    "leña",
+    "agua",
+    "harina",
+    "arena"
+   ],
+   "translation": "In winter we put _____ on the fireplace.",
+   "optionTranslations": [
+    "firewood",
+    "water",
+    "flour",
+    "sand"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "En invierno echamos leña a la chimenea.",
+    "targetWord": "leña",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuento",
+  "featured": false,
+  "sentence": "Sergio dice que eso es un [[cuento]] chino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a made up story",
+   "options": [
+    "a made up story",
+    "an old recipe",
+    "a good idea",
+    "a hard job"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "Sergio dice que eso es un cuento chino.",
+    "targetWord": "cuento",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "golpe",
+  "featured": false,
+  "sentence": "Sergio oye unos [[golpes]] pequeños dentro de la paella.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a tap",
+   "options": [
+    "a tap",
+    "a whistle",
+    "a bubble",
+    "a crack"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "Sergio oye unos golpes pequeños dentro de la paella.",
+    "targetWord": "golpes",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "servir",
+  "featured": false,
+  "sentence": "Lucía pregunta si [[servimos]] las dos paellas o solo una.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to serve",
+   "options": [
+    "to serve",
+    "to order",
+    "to weigh",
+    "to freeze"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "Lucía pregunta si servimos las dos paellas o solo una.",
+    "targetWord": "servimos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dirá",
+  "featured": false,
+  "sentence": "Vicente dice que ya [[dirá]] cada arroz lo suyo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "will show the answer",
+   "options": [
+    "will show the answer",
+    "will cool down",
+    "will cost more",
+    "will take longer"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "Vicente dice que ya dirá cada arroz lo suyo.",
+    "targetWord": "dirá",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "primero",
+  "featured": false,
+  "sentence": "Por [[primera]] vez en todo el día, Sergio se calla.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "first",
+   "options": [
+    "first",
+    "last",
+    "next",
+    "second"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "Por primera vez en todo el día, Sergio se calla.",
+    "targetWord": "primera",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "justos",
+  "featured": false,
+  "sentence": "El tren tarda veinte minutos _____, ni uno más.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "justos",
+   "options": [
+    "justos",
+    "largos",
+    "libres",
+    "seguros"
+   ],
+   "translation": "The train takes twenty minutes _____, not one more.",
+   "optionTranslations": [
+    "exactly",
+    "long",
+    "free",
+    "safe"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "El tren tarda veinte minutos justos, ni uno más.",
+    "targetWord": "justos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "blando",
+  "featured": false,
+  "sentence": "El pan de ayer ya no está _____, hay que mojarlo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "blando",
+   "options": [
+    "blando",
+    "caro",
+    "limpio",
+    "frío"
+   ],
+   "translation": "Yesterday's bread is not _____ any more, you have to dip it.",
+   "optionTranslations": [
+    "soft",
+    "expensive",
+    "clean",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "El pan de ayer ya no está blando, hay que mojarlo.",
+    "targetWord": "blando",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "entero",
+  "featured": false,
+  "sentence": "Se comió el bocadillo _____, no dejó nada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "entero",
+   "options": [
+    "entero",
+    "medio",
+    "roto",
+    "abierto"
+   ],
+   "translation": "He ate the sandwich _____, he left nothing.",
+   "optionTranslations": [
+    "whole",
+    "half",
+    "broken",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "Se comió el bocadillo entero, no dejó nada.",
+    "targetWord": "entero",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pequeños",
+  "featured": false,
+  "sentence": "Los zapatos me quedan _____, me aprietan los dedos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pequeños",
+   "options": [
+    "pequeños",
+    "grandes",
+    "nuevos",
+    "sucios"
+   ],
+   "translation": "The shoes are too _____ for me, they squeeze my toes.",
+   "optionTranslations": [
+    "small",
+    "big",
+    "new",
+    "dirty"
+   ],
+   "audioClip": {
+    "storySlug": "levanta-el-arroz",
+    "storySource": "user",
+    "sentence": "Los zapatos me quedan pequeños, me aprietan los dedos.",
+    "targetWord": "pequeños",
+    "language": "spanish"
+   }
+  }
+ }
+]

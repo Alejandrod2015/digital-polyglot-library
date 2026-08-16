@@ -1,0 +1,646 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "pintar",
+    "sentence": "Él [[pinta]] el gato con mucho color.",
+    "payload": {
+      "answer": "to paint",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to paint",
+        "to draw",
+        "to break",
+        "to sell"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él pinta el gato con mucho color.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "pinta",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/822d95b682bbca17.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guardar",
+    "sentence": "Ella [[guarda]] el regalo en su bolsa.",
+    "payload": {
+      "answer": "to keep",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to keep",
+        "to lose",
+        "to buy",
+        "to open"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella guarda el regalo en su bolsa.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "guarda",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1aa8216399698d83.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "limpiar",
+    "sentence": "Él [[limpia]] la figura con un trapo.",
+    "payload": {
+      "answer": "to clean",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to clean",
+        "to break",
+        "to paint",
+        "to hide"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él limpia la figura con un trapo.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "limpia",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37f63bc08766d74a.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "regalo",
+    "sentence": "Ella busca un [[regalo]] para su familia.",
+    "payload": {
+      "answer": "a gift",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a gift",
+        "a price",
+        "a box",
+        "a letter"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella busca un regalo para su familia.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "regalo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e68d30a69cda038.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agradecer",
+    "sentence": "Ella [[agradece]] el detalle con emoción.",
+    "payload": {
+      "answer": "to thank",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to thank",
+        "to pay",
+        "to ask",
+        "to greet"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella agradece el detalle con emoción.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "agradece",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4afd466556f5b93d.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tomar",
+    "sentence": "Los dos [[toman]] un jugo por la tarde.",
+    "payload": {
+      "answer": "to drink",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to drink",
+        "to cook",
+        "to buy",
+        "to spill"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los dos toman un jugo por la tarde.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "toman",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/10e822f0d8b6d9f4.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "barro",
+    "sentence": "Las figuras de tierra cocida son de _____.",
+    "payload": {
+      "answer": "barro",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "barro",
+        "vidrio",
+        "papel",
+        "hielo"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las figuras de tierra cocida son de barro.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "barro",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aedb2376cc544bcf.mp3"
+      },
+      "translation": "The figures of baked earth are made of _____.",
+      "optionTranslations": [
+        "clay",
+        "glass",
+        "paper",
+        "ice"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "suelo",
+    "sentence": "El plato cae y se rompe en el _____.",
+    "payload": {
+      "answer": "suelo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "suelo",
+        "techo",
+        "cielo",
+        "muro"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El plato cae y se rompe en el suelo.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "suelo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8c2471f65458d731.mp3"
+      },
+      "translation": "The plate falls and breaks on the _____.",
+      "optionTranslations": [
+        "floor",
+        "ceiling",
+        "sky",
+        "wall"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "miedo",
+    "sentence": "Cuando veo una araña grande siento _____.",
+    "payload": {
+      "answer": "miedo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "miedo",
+        "sueño",
+        "hambre",
+        "calor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cuando veo una araña grande siento miedo.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "miedo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3347410e4377b165.mp3"
+      },
+      "translation": "When I see a big spider I feel _____.",
+      "optionTranslations": [
+        "fear",
+        "sleepiness",
+        "hunger",
+        "heat"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "tienda",
+    "sentence": "Ella compra ropa nueva en una _____.",
+    "payload": {
+      "answer": "tienda",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "tienda",
+        "cocina",
+        "escuela",
+        "iglesia"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella compra ropa nueva en una tienda.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "tienda",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4fafea3fcd5123e5.mp3"
+      },
+      "translation": "She buys new clothes in a _____.",
+      "optionTranslations": [
+        "shop",
+        "kitchen",
+        "school",
+        "church"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "artesano",
+    "sentence": "El [[artesano]] hace figuras con las manos.",
+    "payload": {
+      "answer": "an artisan",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "an artisan",
+        "a farmer",
+        "a driver",
+        "a teacher"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El artesano hace figuras con las manos.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "artesano",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d04037208b2d30a9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calle",
+    "sentence": "Las [[calles]] del pueblo son bonitas.",
+    "payload": {
+      "answer": "street",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "street",
+        "house",
+        "garden",
+        "river"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las calles del pueblo son bonitas.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "calles",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16610c558b19321b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tranquilo",
+    "sentence": "Las plazas del centro están muy [[tranquilas]].",
+    "payload": {
+      "answer": "calm",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "calm",
+        "noisy",
+        "dirty",
+        "dark"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las plazas del centro están muy tranquilas.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "tranquilas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3cc2d49f5381a6c6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delicado",
+    "sentence": "La figura de barro es muy [[delicada]].",
+    "payload": {
+      "answer": "delicate",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "delicate",
+        "strong",
+        "heavy",
+        "thick"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La figura de barro es muy delicada.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "delicada",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/19458c5d7a8d7e9e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paciencia",
+    "sentence": "Él pinta la figura con mucha [[paciencia]].",
+    "payload": {
+      "answer": "patience",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "patience",
+        "hunger",
+        "anger",
+        "hurry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él pinta la figura con mucha paciencia.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "paciencia",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e40fdde1e111ef2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trapo",
+    "sentence": "Él limpia el polvo con un [[trapo]] suave.",
+    "payload": {
+      "answer": "a cloth",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a cloth",
+        "a broom",
+        "a bucket",
+        "a brush"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él limpia el polvo con un trapo suave.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "trapo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/de1b9de24daab2b5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "detalle",
+    "sentence": "Ella agradece el [[detalle]] con una sonrisa.",
+    "payload": {
+      "answer": "a kind gesture",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a kind gesture",
+        "a big problem",
+        "a long trip",
+        "a hard job"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella agradece el detalle con una sonrisa.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "detalle",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8cffe592ed98e07.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "emoción",
+    "sentence": "Ella abre el regalo con mucha [[emoción]].",
+    "payload": {
+      "answer": "emotion",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "emotion",
+        "boredom",
+        "fear",
+        "doubt"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella abre el regalo con mucha emoción.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "emoción",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0c25b84a887ace1b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "moneda",
+    "sentence": "Ella paga el pan con una _____.",
+    "payload": {
+      "answer": "moneda",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "moneda",
+        "llave",
+        "piedra",
+        "hoja"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella paga el pan con una moneda.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "moneda",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f46ef2856a7c6b6e.mp3"
+      },
+      "translation": "She pays for the bread with a _____.",
+      "optionTranslations": [
+        "coin",
+        "key",
+        "stone",
+        "leaf"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "entero",
+    "sentence": "El vaso no se rompe y sigue _____.",
+    "payload": {
+      "answer": "entero",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "entero",
+        "roto",
+        "sucio",
+        "vacío"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El vaso no se rompe y sigue entero.",
+        "storySlug": "pablo-pinta-un-gato",
+        "targetWord": "entero",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c502320dda057a5d.mp3"
+      },
+      "translation": "The glass does not break and stays _____.",
+      "optionTranslations": [
+        "whole",
+        "broken",
+        "dirty",
+        "empty"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "autobús,taller,jarro,collar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "autobús",
+          "answer": "a bus",
+          "options": [
+            "a bus",
+            "a workshop",
+            "a jug",
+            "a necklace"
+          ]
+        },
+        {
+          "word": "taller",
+          "answer": "a workshop",
+          "options": [
+            "a bus",
+            "a workshop",
+            "a jug",
+            "a necklace"
+          ]
+        },
+        {
+          "word": "jarro",
+          "answer": "a jug",
+          "options": [
+            "a bus",
+            "a workshop",
+            "a jug",
+            "a necklace"
+          ]
+        },
+        {
+          "word": "collar",
+          "answer": "a necklace",
+          "options": [
+            "a bus",
+            "a workshop",
+            "a jug",
+            "a necklace"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gato",
+    "sentence": "Sofía compra un [[gato]] de barro en el taller.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cat",
+      "options": [
+        "a cat",
+        "a dog",
+        "a bird",
+        "a fish"
+      ],
+      "audioClip": {
+        "storySlug": "pablo-pinta-un-gato",
+        "storySource": "user",
+        "sentence": "Sofía compra un gato de barro en el taller.",
+        "targetWord": "gato",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/62962fadb5c0f53c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tarde",
+    "sentence": "Por la [[tarde]], los dos toman un jugo juntos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "afternoon",
+      "options": [
+        "afternoon",
+        "morning",
+        "night",
+        "kitchen"
+      ],
+      "audioClip": {
+        "storySlug": "pablo-pinta-un-gato",
+        "storySource": "user",
+        "sentence": "Por la tarde, los dos toman un jugo juntos.",
+        "targetWord": "tarde",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1611d77db3ab4bd7.mp3"
+      }
+    },
+    "featured": false
+  }
+]

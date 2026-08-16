@@ -1,0 +1,946 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "viajera",
+    "sentence": "Ella es una [[viajera]] de otro país.",
+    "payload": {
+      "answer": "a woman traveler",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a woman traveler",
+        "a tour guide",
+        "a neighbor",
+        "a cook"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella es una viajera de otro país.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "viajera",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e869fcedda9f0569.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saludar",
+    "sentence": "Te [[saluda]] con una sonrisa grande.",
+    "payload": {
+      "answer": "to greet",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to greet",
+        "to thank",
+        "to hug",
+        "to call"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Te saluda con una sonrisa grande.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "saluda",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/54fe44262c40e988.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonrisa",
+    "sentence": "Te saluda con una [[sonrisa]] grande.",
+    "payload": {
+      "answer": "a smile",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a smile",
+        "a laugh",
+        "a word",
+        "a gift"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Te saluda con una sonrisa grande.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "sonrisa",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/54fe44262c40e988.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "turquesa",
+    "sentence": "El mar de la playa es [[turquesa]].",
+    "payload": {
+      "answer": "blue green",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "blue green",
+        "dark gray",
+        "bright red",
+        "pale pink"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El mar de la playa es turquesa.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "turquesa",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b59211731df77c45.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "arena",
+    "sentence": "En la playa los niños juegan en la _____.",
+    "payload": {
+      "answer": "arena",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "arena",
+        "agua",
+        "roca",
+        "nube"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la playa los niños juegan en la arena.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "arena",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34d062495171793d.mp3"
+      },
+      "translation": "At the beach the children play in the _____.",
+      "optionTranslations": [
+        "sand",
+        "water",
+        "rock",
+        "cloud"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suave",
+    "sentence": "La arena es blanca y muy [[suave]].",
+    "payload": {
+      "answer": "soft",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "soft",
+        "rough",
+        "hard",
+        "wet"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La arena es blanca y muy suave.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "suave",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b18c402abefb8c9.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "lluvia",
+    "sentence": "Las nubes grises traen mucha _____ hoy.",
+    "payload": {
+      "answer": "lluvia",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "lluvia",
+        "sol",
+        "viento",
+        "calor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las nubes grises traen mucha lluvia hoy.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "lluvia",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dffac2478b5e1ed1.mp3"
+      },
+      "translation": "The gray clouds bring a lot of _____ today.",
+      "optionTranslations": [
+        "rain",
+        "sun",
+        "wind",
+        "heat"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arcoíris",
+    "sentence": "Sale un [[arcoíris]] sobre el mar.",
+    "payload": {
+      "answer": "a rainbow",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a rainbow",
+        "a sunset",
+        "a shadow",
+        "a storm"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Sale un arcoíris sobre el mar.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "arcoíris",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb5d3b279fb6e131.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "color",
+    "sentence": "Los [[colores]] del cielo son hermosos.",
+    "payload": {
+      "answer": "a color",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a color",
+        "a sound",
+        "a smell",
+        "a shape"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los colores del cielo son hermosos.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "colores",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/515c4f73829c5d11.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "largo",
+    "sentence": "Caminas por horas porque el camino es muy _____.",
+    "payload": {
+      "answer": "largo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "largo",
+        "corto",
+        "limpio",
+        "nuevo"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Caminas por horas porque el camino es muy largo.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "largo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f481750f62e93424.mp3"
+      },
+      "translation": "You walk for hours because the road is very _____.",
+      "optionTranslations": [
+        "long",
+        "short",
+        "clean",
+        "new"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "respirar",
+    "sentence": "Ella [[respira]] despacio y descansa.",
+    "payload": {
+      "answer": "to breathe",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to breathe",
+        "to swim",
+        "to jump",
+        "to sing"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella respira despacio y descansa.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "respira",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a79400962cf81b9d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cansado",
+    "sentence": "Después del viaje, ella está muy [[cansada]].",
+    "payload": {
+      "answer": "tired",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "tired",
+        "happy",
+        "hungry",
+        "angry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Después del viaje, ella está muy cansada.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "cansada",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/202017ea8541aab3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "natural",
+    "sentence": "El agua del coco es [[natural]] y dulce.",
+    "payload": {
+      "answer": "from nature",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "from nature",
+        "from a machine",
+        "from a store",
+        "from a can"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El agua del coco es natural y dulce.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "natural",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/179493c66e473d67.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por la tarde",
+    "sentence": "[[Por la tarde]], ella llega a la playa.",
+    "payload": {
+      "answer": "in the afternoon",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "in the afternoon",
+        "at midnight",
+        "early morning",
+        "late at night"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Por la tarde, ella llega a la playa.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "Por la tarde",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc5672f7841ebf0f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de repente",
+    "sentence": "[[De repente]], el cielo se llena de nubes.",
+    "payload": {
+      "answer": "suddenly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "suddenly",
+        "slowly",
+        "finally",
+        "quietly"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "De repente, el cielo se llena de nubes.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "De repente",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4b5f4235e8d58cb3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nube",
+    "sentence": "El cielo se llena de [[nubes]] grises.",
+    "payload": {
+      "answer": "a cloud",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a cloud",
+        "a star",
+        "a bird",
+        "a wave"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El cielo se llena de nubes grises.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "nubes",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/efa638b6e75b2911.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hermoso",
+    "sentence": "Los colores del cielo son [[hermosos]].",
+    "payload": {
+      "answer": "beautiful",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "beautiful",
+        "ugly",
+        "boring",
+        "scary"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los colores del cielo son hermosos.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "hermosos",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/515c4f73829c5d11.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dulce",
+    "sentence": "El agua del coco es rica y muy _____.",
+    "payload": {
+      "answer": "dulce",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "dulce",
+        "amarga",
+        "salada",
+        "fría"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El agua del coco es rica y muy dulce.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "dulce",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/12fcfc921c61255f.mp3"
+      },
+      "translation": "The coconut water is tasty and very _____.",
+      "optionTranslations": [
+        "sweet",
+        "bitter",
+        "salty",
+        "cold"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "descansar",
+    "sentence": "Estás muy cansado y necesitas _____ un rato.",
+    "payload": {
+      "answer": "descansar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "descansar",
+        "correr",
+        "trabajar",
+        "caminar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Estás muy cansado y necesitas descansar un rato.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "descansar",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7955388a0548ef1a.mp3"
+      },
+      "translation": "You are very tired and need to _____ for a while.",
+      "optionTranslations": [
+        "to rest",
+        "to run",
+        "to work",
+        "to walk"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "tibia",
+    "sentence": "El agua no está fría ni caliente, está _____.",
+    "payload": {
+      "answer": "tibia",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "tibia",
+        "helada",
+        "hirviendo",
+        "seca"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El agua no está fría ni caliente, está tibia.",
+        "storySlug": "el-mar-es-turquesa",
+        "targetWord": "tibia",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/899ca4cdd6c277e9.mp3"
+      },
+      "translation": "The water is not cold nor hot, it is _____.",
+      "optionTranslations": [
+        "lukewarm",
+        "freezing",
+        "boiling",
+        "dry"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "playa,palmera,coco,palapa",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "playa",
+          "answer": "a beach",
+          "options": [
+            "a beach",
+            "a palm tree",
+            "a coconut",
+            "a palm shelter"
+          ]
+        },
+        {
+          "word": "palmera",
+          "answer": "a palm tree",
+          "options": [
+            "a beach",
+            "a palm tree",
+            "a coconut",
+            "a palm shelter"
+          ]
+        },
+        {
+          "word": "coco",
+          "answer": "a coconut",
+          "options": [
+            "a beach",
+            "a palm tree",
+            "a coconut",
+            "a palm shelter"
+          ]
+        },
+        {
+          "word": "palapa",
+          "answer": "a palm shelter",
+          "options": [
+            "a beach",
+            "a palm tree",
+            "a coconut",
+            "a palm shelter"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llegar",
+    "sentence": "El autobús [[llega]] a la playa por la mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "arrives",
+      "options": [
+        "arrives",
+        "sleeps",
+        "sings",
+        "buys"
+      ],
+      "audioClip": {
+        "storySlug": "el-mar-es-turquesa",
+        "storySource": "user",
+        "sentence": "El autobús llega a la playa por la mañana.",
+        "targetWord": "llega",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c1b73fa49652c9bc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mover",
+    "sentence": "El viento [[mueve]] las hojas de la palmera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "moves",
+      "options": [
+        "moves",
+        "washes",
+        "reads",
+        "opens"
+      ],
+      "audioClip": {
+        "storySlug": "el-mar-es-turquesa",
+        "storySource": "user",
+        "sentence": "El viento mueve las hojas de la palmera.",
+        "targetWord": "mueve",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ba3c0e5f5633dc8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lejos",
+    "sentence": "La playa está muy [[lejos]] de tu casa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "far away",
+      "options": [
+        "far away",
+        "quickly",
+        "loudly",
+        "early"
+      ],
+      "audioClip": {
+        "storySlug": "el-mar-es-turquesa",
+        "storySource": "user",
+        "sentence": "La playa está muy lejos de tu casa.",
+        "targetWord": "lejos",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/93dd83619533e69f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerca",
+    "sentence": "Las palmeras están [[cerca]] del agua azul.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "near",
+      "options": [
+        "near",
+        "loudly",
+        "late",
+        "together"
+      ],
+      "audioClip": {
+        "storySlug": "el-mar-es-turquesa",
+        "storySource": "user",
+        "sentence": "Las palmeras están cerca del agua azul.",
+        "targetWord": "cerca",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9981907d415ca139.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vida",
+    "sentence": "Tu [[vida]] en la playa es muy tranquila.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "life",
+      "options": [
+        "life",
+        "music",
+        "money",
+        "weather"
+      ],
+      "audioClip": {
+        "storySlug": "el-mar-es-turquesa",
+        "storySource": "user",
+        "sentence": "Tu vida en la playa es muy tranquila.",
+        "targetWord": "vida",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/596f5196496fc8ee.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cortar",
+    "sentence": "León [[corta]] el coco con un cuchillo grande.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cuts",
+      "options": [
+        "cuts",
+        "paints",
+        "carries",
+        "hears"
+      ],
+      "audioClip": {
+        "storySlug": "el-mar-es-turquesa",
+        "storySource": "user",
+        "sentence": "León corta el coco con un cuchillo grande.",
+        "targetWord": "corta",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbcc052f642d884b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tarde",
+    "sentence": "En la [[tarde]], tú caminas por la playa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "afternoon",
+      "options": [
+        "afternoon",
+        "morning",
+        "night",
+        "kitchen"
+      ],
+      "audioClip": {
+        "storySlug": "el-mar-es-turquesa",
+        "storySource": "user",
+        "sentence": "En la tarde, tú caminas por la playa.",
+        "targetWord": "tarde",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a61a86dd6cb65988.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Tú caminas [[despacio]] sobre la arena blanca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slowly",
+      "options": [
+        "slowly",
+        "quickly",
+        "loudly",
+        "always"
+      ],
+      "audioClip": {
+        "storySlug": "el-mar-es-turquesa",
+        "storySource": "user",
+        "sentence": "Tú caminas despacio sobre la arena blanca.",
+        "targetWord": "despacio",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6ebce4422206439.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "río",
+    "sentence": "El [[río]] lleva agua fría hacia el mar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a river",
+      "options": [
+        "a river",
+        "a mountain",
+        "a table",
+        "a window"
+      ],
+      "audioClip": {
+        "storySlug": "el-mar-es-turquesa",
+        "storySource": "user",
+        "sentence": "El río lleva agua fría hacia el mar.",
+        "targetWord": "río",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f44b6b4d300c6d9e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brillar",
+    "sentence": "El mar turquesa [[brilla]] bajo el arcoíris.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shines",
+      "options": [
+        "shines",
+        "falls",
+        "opens",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "el-mar-es-turquesa",
+        "storySource": "user",
+        "sentence": "El mar turquesa brilla bajo el arcoíris.",
+        "targetWord": "brilla",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fcf2f3c0d5344d91.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cielo",
+    "sentence": "El [[cielo]] se llena de nubes grises.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sky",
+      "options": [
+        "the sky",
+        "the floor",
+        "the door",
+        "the chair"
+      ],
+      "audioClip": {
+        "storySlug": "el-mar-es-turquesa",
+        "storySource": "user",
+        "sentence": "El cielo se llena de nubes grises.",
+        "targetWord": "cielo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/efa638b6e75b2911.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sol",
+    "sentence": "El [[sol]] da luz y calor a la playa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sun",
+      "options": [
+        "the sun",
+        "the moon",
+        "the road",
+        "the cup"
+      ],
+      "audioClip": {
+        "storySlug": "el-mar-es-turquesa",
+        "storySource": "user",
+        "sentence": "El sol da luz y calor a la playa.",
+        "targetWord": "sol",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fea5a42dfafe2fac.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enorme",
+    "sentence": "Un arcoíris [[enorme]] aparece sobre el mar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "huge",
+      "options": [
+        "huge",
+        "tiny",
+        "cold",
+        "dirty"
+      ],
+      "audioClip": {
+        "storySlug": "el-mar-es-turquesa",
+        "storySource": "user",
+        "sentence": "Un arcoíris enorme aparece sobre el mar.",
+        "targetWord": "enorme",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c10954b8f688ef49.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "olor",
+    "sentence": "Te gusta el [[olor]] dulce del coco fresco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a smell",
+      "options": [
+        "a smell",
+        "a sound",
+        "a price",
+        "a stone"
+      ],
+      "audioClip": {
+        "storySlug": "el-mar-es-turquesa",
+        "storySource": "user",
+        "sentence": "Te gusta el olor dulce del coco fresco.",
+        "targetWord": "olor",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/76c576113ffbde33.mp3"
+      }
+    },
+    "featured": false
+  }
+]

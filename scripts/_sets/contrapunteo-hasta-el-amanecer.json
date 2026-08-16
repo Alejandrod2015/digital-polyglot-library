@@ -1,0 +1,623 @@
+[
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "acoger",
+    "sentence": "Reinaldo la [[acogió]] en su casa como a una hija.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take someone warmly into your home",
+      "options": [
+        "to take someone warmly into your home",
+        "to say goodbye to a guest",
+        "to argue with a stranger",
+        "to ignore a visitor"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "Reinaldo la acogió en su casa como a una hija.",
+        "targetWord": "acogió",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28fa4f2914329944.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "sin apuro",
+    "sentence": "Reinaldo templaba el arpa [[sin apuro]] ninguno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calmly, with no hurry",
+      "options": [
+        "calmly, with no hurry",
+        "in a great rush",
+        "with much fear",
+        "without any money"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "Reinaldo templaba el arpa sin apuro ninguno.",
+        "targetWord": "sin apuro",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e6ba934bf98505f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "mecerse",
+    "sentence": "Ella hablaba [[meciéndose]] despacio en la silla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sway gently back and forth",
+      "options": [
+        "to sway gently back and forth",
+        "to stand up quickly",
+        "to fall asleep",
+        "to walk in circles"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "Ella hablaba meciéndose despacio en la silla.",
+        "targetWord": "meciéndose",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/701461fdecab6c2c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "el contrapunteo",
+    "sentence": "El viejo arrancó un [[contrapunteo]] antiguo del llano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sung duel of improvised verses",
+      "options": [
+        "a sung duel of improvised verses",
+        "a quiet lullaby",
+        "a slow sad waltz",
+        "a short prayer"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "El viejo arrancó un contrapunteo antiguo del llano.",
+        "targetWord": "contrapunteo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/237c5f5a5fe578d0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "improvisar",
+    "sentence": "El cantante [[improvisaba]] versos sobre el llano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to make up words on the spot",
+      "options": [
+        "to make up words on the spot",
+        "to read from a book",
+        "to repeat an old song",
+        "to forget the lyrics"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "El cantante improvisaba versos sobre el llano.",
+        "targetWord": "improvisaba",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f5e699f6a905807.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "al revés",
+    "sentence": "Manu sintió que había leído todo [[al revés]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the opposite way around",
+      "options": [
+        "the opposite way around",
+        "very slowly",
+        "out loud",
+        "by heart"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "Manu sintió que había leído todo al revés.",
+        "targetWord": "al revés",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/51b145c99480ee12.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "juzgar",
+    "sentence": "Ella solía [[juzgar]] la calma del llano como pereza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to judge someone quickly without knowing them",
+      "options": [
+        "to judge someone quickly without knowing them",
+        "to praise something warmly",
+        "to describe a place",
+        "to ask a question"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "Ella solía juzgar la calma del llano como pereza.",
+        "targetWord": "juzgar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cf9d765bbcf902d2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "sin prisa",
+    "sentence": "Ella le tradujo cada verso [[sin prisa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "taking your time, with no hurry",
+      "options": [
+        "taking your time, with no hurry",
+        "in a loud voice",
+        "full of anger",
+        "from far away"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "Ella le tradujo cada verso sin prisa.",
+        "targetWord": "sin prisa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ce3af71dfe8d799.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "arrancar",
+    "sentence": "El arpista [[arrancó]] un pasaje que la dejó quieta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to suddenly start playing music",
+      "options": [
+        "to suddenly start playing music",
+        "to stop the music",
+        "to tune the strings",
+        "to sell the harp"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "El arpista arrancó un pasaje que la dejó quieta.",
+        "targetWord": "arrancó",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/671abba0e2161886.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "quieta",
+    "sentence": "Manu se quedó [[quieta]], pegada al asiento.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still and motionless",
+      "options": [
+        "still and motionless",
+        "loud and cheerful",
+        "cold and wet",
+        "tired and sleepy"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "Manu se quedó quieta, pegada al asiento.",
+        "targetWord": "quieta",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a739bde61225f30.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "featured": false,
+    "word": "el trancón,el afán,la pereza,el amanecer",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "el trancón",
+          "answer": "a heavy traffic jam",
+          "options": [
+            "a heavy traffic jam",
+            "the constant rush to hurry",
+            "laziness, the wish to do nothing",
+            "daybreak, the first light"
+          ]
+        },
+        {
+          "word": "el afán",
+          "answer": "the constant rush to hurry",
+          "options": [
+            "a heavy traffic jam",
+            "the constant rush to hurry",
+            "laziness, the wish to do nothing",
+            "daybreak, the first light"
+          ]
+        },
+        {
+          "word": "la pereza",
+          "answer": "laziness, the wish to do nothing",
+          "options": [
+            "a heavy traffic jam",
+            "the constant rush to hurry",
+            "laziness, the wish to do nothing",
+            "daybreak, the first light"
+          ]
+        },
+        {
+          "word": "el amanecer",
+          "answer": "daybreak, the first light",
+          "options": [
+            "a heavy traffic jam",
+            "the constant rush to hurry",
+            "laziness, the wish to do nothing",
+            "daybreak, the first light"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el arpa",
+    "sentence": "En el llano ____ manda en la música.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el arpa",
+      "options": [
+        "el arpa",
+        "el cuatro",
+        "la bandola",
+        "la maraca"
+      ],
+      "translation": "On the plains ____ rules the music.",
+      "optionTranslations": [
+        "the harp",
+        "the cuatro",
+        "the bandola",
+        "the maraca"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "En el llano el arpa manda en la música.",
+        "targetWord": "el arpa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/495299b03d79172f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el chinchorro",
+    "sentence": "La maleta estaba lista sobre ____ tejido.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el chinchorro",
+      "options": [
+        "el chinchorro",
+        "el catre",
+        "el colchón",
+        "el banco"
+      ],
+      "translation": "The suitcase lay ready on the woven ____.",
+      "optionTranslations": [
+        "hanging bed",
+        "cot",
+        "mattress",
+        "bench"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "La maleta estaba lista sobre el chinchorro tejido.",
+        "targetWord": "el chinchorro",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/434d344651f23251.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "templar",
+    "sentence": "El viejo se puso a ____ las cuerdas del arpa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "templar",
+      "options": [
+        "templar",
+        "rasgar",
+        "pulsar",
+        "romper"
+      ],
+      "translation": "The old man began to ____ the harp strings.",
+      "optionTranslations": [
+        "tune",
+        "strum",
+        "pluck",
+        "break"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "El viejo se puso a templar las cuerdas del arpa.",
+        "targetWord": "templar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/337261c4c7e625cf.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el grillo",
+    "sentence": "Afuera cantaba ____ en la noche caliente.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el grillo",
+      "options": [
+        "el grillo",
+        "el sapo",
+        "el búho",
+        "el gallo"
+      ],
+      "translation": "Outside ____ sang in the warm night.",
+      "optionTranslations": [
+        "the cricket",
+        "the toad",
+        "the owl",
+        "the rooster"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "Afuera cantaba el grillo en la noche caliente.",
+        "targetWord": "el grillo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad6996a51d2d3be4.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el mugido",
+    "sentence": "Solo ____ del ganado rompía la quietud.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el mugido",
+      "options": [
+        "el mugido",
+        "el relincho",
+        "el aullido",
+        "el trueno"
+      ],
+      "translation": "Only ____ of the cattle broke the stillness.",
+      "optionTranslations": [
+        "the moo",
+        "the neigh",
+        "the howl",
+        "the thunder"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "Solo el mugido del ganado rompía la quietud.",
+        "targetWord": "el mugido",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4315c54a918a757c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el ganado",
+    "sentence": "A lo lejos se oía ____ en el potrero.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el ganado",
+      "options": [
+        "el ganado",
+        "el caballo",
+        "el perro",
+        "el tractor"
+      ],
+      "translation": "In the distance ____ could be heard in the field.",
+      "optionTranslations": [
+        "the cattle",
+        "the horse",
+        "the dog",
+        "the tractor"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "A lo lejos se oía el ganado en el potrero.",
+        "targetWord": "el ganado",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f0b2a9281da8a476.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el pasaje",
+    "sentence": "El arpista tocó ____ lento y melódico.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el pasaje",
+      "options": [
+        "el pasaje",
+        "el joropo",
+        "el corrido",
+        "el vals"
+      ],
+      "translation": "The harpist played a slow, melodic ____.",
+      "optionTranslations": [
+        "passage",
+        "joropo",
+        "corrido",
+        "waltz"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "El arpista tocó el pasaje lento y melódico.",
+        "targetWord": "el pasaje",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5641f358ae31cf05.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el verso",
+    "sentence": "Ella tradujo cada ____ con calma y cariño.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el verso",
+      "options": [
+        "el verso",
+        "el coro",
+        "el canto",
+        "el ritmo"
+      ],
+      "translation": "Yaneth translated ____ with calm and care.",
+      "optionTranslations": [
+        "the verse",
+        "the chorus",
+        "the song",
+        "the rhythm"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "Ella tradujo cada el verso con calma y cariño.",
+        "targetWord": "el verso",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/22efa5a87a03ae0d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "bajito",
+    "sentence": "Ella le hablaba ____ para no molestar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bajito",
+      "options": [
+        "bajito",
+        "fuerte",
+        "rápido",
+        "claro"
+      ],
+      "translation": "Yaneth spoke to her ____ so as not to disturb.",
+      "optionTranslations": [
+        "softly",
+        "loudly",
+        "quickly",
+        "clearly"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "Ella le hablaba bajito para no molestar.",
+        "targetWord": "bajito",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/939cf3d2caf5d76e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "la hamaca",
+    "sentence": "Manu se quedó tendida en ____ hasta el amanecer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la hamaca",
+      "options": [
+        "la hamaca",
+        "la cama",
+        "la silla",
+        "la manta"
+      ],
+      "translation": "Manu lay in ____ until dawn.",
+      "optionTranslations": [
+        "the hammock",
+        "the bed",
+        "the chair",
+        "the blanket"
+      ],
+      "audioClip": {
+        "storySlug": "contrapunteo-hasta-el-amanecer",
+        "storySource": "user",
+        "sentence": "Manu se quedó tendida en la hamaca hasta el amanecer.",
+        "targetWord": "la hamaca",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2798e474f2d1db93.mp3"
+      }
+    }
+  }
+]

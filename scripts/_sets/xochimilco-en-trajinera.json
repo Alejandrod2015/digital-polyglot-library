@@ -1,0 +1,996 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "subir",
+    "sentence": "Ella [[sube]] a una trajinera.",
+    "payload": {
+      "answer": "to get on",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to get on",
+        "to jump off",
+        "to sit down",
+        "to look at"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella sube a una trajinera.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "sube",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0c7957da3190dac7.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "señor",
+    "sentence": "Él es el [[señor]] del bote.",
+    "payload": {
+      "answer": "a grown man",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a grown man",
+        "a young boy",
+        "a small child",
+        "an old friend"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él es el señor del bote.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "señor",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba8d21faf580ed04.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saludar",
+    "sentence": "Ella sonríe y [[saluda]].",
+    "payload": {
+      "answer": "to greet",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to greet",
+        "to say goodbye",
+        "to shout",
+        "to answer"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella sonríe y saluda.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "saluda",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37039d2c31e7f70f.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escuchar",
+    "sentence": "Ella [[escucha]] la música.",
+    "payload": {
+      "answer": "to listen",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to listen",
+        "to speak",
+        "to watch",
+        "to read"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella escucha la música.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "escucha",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0c9f7eb873e24c59.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "sentence": "Él [[sonríe]] al final.",
+    "payload": {
+      "answer": "to smile",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to smile",
+        "to cry",
+        "to sleep",
+        "to shout"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él sonríe al final.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "sonríe",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bd65086dad7fd748.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gracias",
+    "sentence": "Al final, ella da las [[gracias]].",
+    "payload": {
+      "answer": "thank you",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "thank you",
+        "hello",
+        "goodbye",
+        "please"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Al final, ella da las gracias.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "gracias",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/150998040760c10a.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "bote",
+    "sentence": "El pescador navega el río en un _____ pequeño.",
+    "payload": {
+      "answer": "bote",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "bote",
+        "tren",
+        "avión",
+        "carro"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El pescador navega el río en un bote pequeño.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "bote",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3512cdd745414920.mp3"
+      },
+      "translation": "The fisherman sails the river in a small _____.",
+      "optionTranslations": [
+        "boat",
+        "train",
+        "plane",
+        "car"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "agua",
+    "sentence": "Tengo mucha sed y quiero un vaso de _____.",
+    "payload": {
+      "answer": "agua",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "agua",
+        "pan",
+        "arroz",
+        "papel"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Tengo mucha sed y quiero un vaso de agua.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "agua",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7dc397fd16261da8.mp3"
+      },
+      "translation": "I am very thirsty and want a glass of _____.",
+      "optionTranslations": [
+        "water",
+        "bread",
+        "rice",
+        "paper"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "sol",
+    "sentence": "Hace calor y el _____ brilla en el cielo.",
+    "payload": {
+      "answer": "sol",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "sol",
+        "mar",
+        "viento",
+        "árbol"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hace calor y el sol brilla en el cielo.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "sol",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/934a87393351e923.mp3"
+      },
+      "translation": "It is hot and the _____ shines in the sky.",
+      "optionTranslations": [
+        "sun",
+        "sea",
+        "wind",
+        "tree"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "comida",
+    "sentence": "Tengo hambre y busco algo de _____ caliente.",
+    "payload": {
+      "answer": "comida",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "comida",
+        "ropa",
+        "papel",
+        "jabón"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Tengo hambre y busco algo de comida caliente.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "comida",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1b3de3558a33b0e7.mp3"
+      },
+      "translation": "I am hungry and look for some hot _____.",
+      "optionTranslations": [
+        "food",
+        "clothing",
+        "paper",
+        "soap"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "El bote va [[despacio]] por el agua.",
+    "payload": {
+      "answer": "slowly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "slowly",
+        "quickly",
+        "loudly",
+        "early"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El bote va despacio por el agua.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "despacio",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b2428664e9bff203.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amarillo",
+    "sentence": "Hay flores rojas y [[amarillas]].",
+    "payload": {
+      "answer": "yellow",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "yellow",
+        "green",
+        "purple",
+        "brown"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hay flores rojas y amarillas.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "amarillas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4d99ff5014317198.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerca",
+    "sentence": "Otra trajinera pasa [[cerca]].",
+    "payload": {
+      "answer": "nearby",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "nearby",
+        "far away",
+        "outside",
+        "behind"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Otra trajinera pasa cerca.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "cerca",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fd15be66bd8f9934.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cantar",
+    "sentence": "Una familia come y [[canta]].",
+    "payload": {
+      "answer": "to sing",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to sing",
+        "to dance",
+        "to laugh",
+        "to talk"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Una familia come y canta.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "canta",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a80db0fbd1e995ab.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mover",
+    "sentence": "Él [[mueve]] el bote con un palo.",
+    "payload": {
+      "answer": "to move",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to move",
+        "to break",
+        "to lift",
+        "to wash"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él mueve el bote con un palo.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "mueve",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64990d560ed9ce1b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "planta",
+    "sentence": "Él habla de las [[plantas]].",
+    "payload": {
+      "answer": "a plant",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a plant",
+        "a tree",
+        "a rock",
+        "a leaf"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él habla de las plantas.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "plantas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/14ab770a3464ccda.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calma",
+    "sentence": "Ella mira todo con [[calma]].",
+    "payload": {
+      "answer": "calm",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "calm",
+        "fear",
+        "hurry",
+        "noise"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira todo con calma.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "calma",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9ee0e1b727d55ff.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brillar",
+    "sentence": "El sol [[brilla]] en el agua.",
+    "payload": {
+      "answer": "to shine",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to shine",
+        "to burn",
+        "to fall",
+        "to float"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El sol brilla en el agua.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "brilla",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ebaa36ce3b3db9a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "invitar",
+    "sentence": "Ellos [[invitan]] a comer.",
+    "payload": {
+      "answer": "to invite",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to invite",
+        "to visit",
+        "to help",
+        "to follow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ellos invitan a comer.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "invitan",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a6f95e5e85248261.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "color",
+    "sentence": "Me gusta el rojo, es mi _____ favorito.",
+    "payload": {
+      "answer": "color",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "color",
+        "número",
+        "día",
+        "libro"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Me gusta el rojo, es mi color favorito.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "color",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/17f282a729d46f76.mp3"
+      },
+      "translation": "I like red, it is my favorite _____.",
+      "optionTranslations": [
+        "color",
+        "number",
+        "day",
+        "book"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "flor",
+    "sentence": "En el jardín crece una _____ roja muy bonita.",
+    "payload": {
+      "answer": "flor",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "flor",
+        "piedra",
+        "mesa",
+        "silla"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En el jardín crece una flor roja muy bonita.",
+        "storySlug": "xochimilco-en-trajinera",
+        "targetWord": "flor",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ce449086e206c8b.mp3"
+      },
+      "translation": "In the garden grows a very pretty red _____.",
+      "optionTranslations": [
+        "flower",
+        "stone",
+        "table",
+        "chair"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "trajinera,sombrero,palo,plato",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "trajinera",
+          "answer": "a flat canal boat",
+          "options": [
+            "a flat canal boat",
+            "a wide sun hat",
+            "a long wooden stick",
+            "a plate of food"
+          ]
+        },
+        {
+          "word": "sombrero",
+          "answer": "a wide sun hat",
+          "options": [
+            "a flat canal boat",
+            "a wide sun hat",
+            "a long wooden stick",
+            "a plate of food"
+          ]
+        },
+        {
+          "word": "palo",
+          "answer": "a long wooden stick",
+          "options": [
+            "a flat canal boat",
+            "a wide sun hat",
+            "a long wooden stick",
+            "a plate of food"
+          ]
+        },
+        {
+          "word": "plato",
+          "answer": "a plate of food",
+          "options": [
+            "a flat canal boat",
+            "a wide sun hat",
+            "a long wooden stick",
+            "a plate of food"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llegar",
+    "sentence": "Sofía [[llega]] a la fiesta y busca a sus amigos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "arrives",
+      "options": [
+        "arrives",
+        "sleeps",
+        "sings",
+        "buys"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "Sofía llega a la fiesta y busca a sus amigos.",
+        "targetWord": "llega",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/efe5a4d5a7cae01b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conocer",
+    "sentence": "Sofía no [[conoce]] a nadie en la ciudad nueva.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "knows",
+      "options": [
+        "knows",
+        "eats",
+        "paints",
+        "runs"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "Sofía no conoce a nadie en la ciudad nueva.",
+        "targetWord": "conoce",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/440d00862c443d21.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preguntar",
+    "sentence": "El señor le [[pregunta]] a Sofía de dónde viene.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "asks",
+      "options": [
+        "asks",
+        "pays",
+        "washes",
+        "opens"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "El señor le pregunta a Sofía de dónde viene.",
+        "targetWord": "pregunta",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/88c9b84a2e053896.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lejos",
+    "sentence": "Sofía viene de muy [[lejos]], de otro país grande.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "far away",
+      "options": [
+        "far away",
+        "slowly",
+        "loudly",
+        "yesterday"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "Sofía viene de muy lejos, de otro país grande.",
+        "targetWord": "lejos",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ce329f4ef3d6e11.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poco a poco",
+    "sentence": "[[Poco a poco]], Sofía se siente mejor en el bote.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "little by little",
+      "options": [
+        "little by little",
+        "all at once",
+        "out loud",
+        "on time"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "Poco a poco, Sofía se siente mejor en el bote.",
+        "targetWord": "Poco a poco",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3dc9bf1696abd1c8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pasar",
+    "sentence": "Otra trajinera [[pasa]] cerca de Sofía en el agua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "goes by",
+      "options": [
+        "goes by",
+        "cooks",
+        "sleeps",
+        "reads"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "Otra trajinera pasa cerca de Sofía en el agua.",
+        "targetWord": "pasa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9875ca036839b000.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "niña",
+    "sentence": "Una [[niña]] pequeña le sonríe a Sofía desde el bote.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a girl",
+      "options": [
+        "a girl",
+        "a chair",
+        "a river",
+        "a hat"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "Una niña pequeña le sonríe a Sofía desde el bote.",
+        "targetWord": "niña",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7495ad5cd740bc87.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acercar",
+    "sentence": "La familia [[acerca]] su bote a Sofía con cuidado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "brings closer",
+      "options": [
+        "brings closer",
+        "washes",
+        "counts",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "La familia acerca su bote a Sofía con cuidado.",
+        "targetWord": "acerca",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a787a9de5588db0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "probar",
+    "sentence": "Sofía [[prueba]] la comida y le gusta mucho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tastes",
+      "options": [
+        "tastes",
+        "throws",
+        "sells",
+        "opens"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "Sofía prueba la comida y le gusta mucho.",
+        "targetWord": "prueba",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8b3a6fc9114353f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reír",
+    "sentence": "Todos [[ríen]] juntos en el bote con mucha alegría.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "laugh",
+      "options": [
+        "laugh",
+        "cry",
+        "sleep",
+        "cook"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "Todos ríen juntos en el bote con mucha alegría.",
+        "targetWord": "ríen",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/472f2182a125f2b6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paseo",
+    "sentence": "El [[paseo]] en el bote es muy tranquilo hoy.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a ride",
+      "options": [
+        "a ride",
+        "a book",
+        "a spoon",
+        "a window"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "El paseo en el bote es muy tranquilo hoy.",
+        "targetWord": "paseo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b66950ca982ff266.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "terminar",
+    "sentence": "La fiesta [[termina]] y todos van a casa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ends",
+      "options": [
+        "ends",
+        "sings",
+        "cooks",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "La fiesta termina y todos van a casa.",
+        "targetWord": "termina",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9310804223bd3ad3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guardar",
+    "sentence": "Sofía [[guarda]] una foto del día para recordarlo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "keeps",
+      "options": [
+        "keeps",
+        "breaks",
+        "buys",
+        "reads"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "Sofía guarda una foto del día para recordarlo.",
+        "targetWord": "guarda",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cc856353800c4e23.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bajar",
+    "sentence": "Sofía no quiere [[bajar]] del bote todavía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get off",
+      "options": [
+        "to get off",
+        "to sing",
+        "to cook",
+        "to sleep"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "Sofía no quiere bajar del bote todavía.",
+        "targetWord": "bajar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/852753d0dcadefe7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "volver",
+    "sentence": "Sofía quiere [[volver]] a Xochimilco muy pronto otra vez.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come back",
+      "options": [
+        "to come back",
+        "to eat",
+        "to sleep",
+        "to pay"
+      ],
+      "audioClip": {
+        "storySlug": "xochimilco-en-trajinera",
+        "storySource": "user",
+        "sentence": "Sofía quiere volver a Xochimilco muy pronto otra vez.",
+        "targetWord": "volver",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c0e76575ca3f8b8.mp3"
+      }
+    },
+    "featured": false
+  }
+]

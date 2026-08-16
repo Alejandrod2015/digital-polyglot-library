@@ -1,0 +1,639 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "noche",
+    "sentence": "Es de [[noche]] y camino sola.",
+    "payload": {
+      "answer": "night",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "night",
+        "day",
+        "morning",
+        "week"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Es de noche y camino sola.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "noche",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4da5d3159417737d.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cansada",
+    "sentence": "Después de correr mucho, estoy muy _____.",
+    "payload": {
+      "answer": "cansada",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "cansada",
+        "contenta",
+        "lista",
+        "llena"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Después de correr mucho, estoy muy cansada.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "cansada",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f8ce00356cd14ca.mp3"
+      },
+      "translation": "After running a lot, I am very _____.",
+      "optionTranslations": [
+        "tired",
+        "happy",
+        "ready",
+        "full"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estudiar",
+    "sentence": "El chico [[estudia]] mucho por la noche.",
+    "payload": {
+      "answer": "to study",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to study",
+        "to work",
+        "to sleep",
+        "to travel"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El chico estudia mucho por la noche.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "estudia",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae8eec4f8a8ad191.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "venir",
+    "sentence": "¿Quieres [[venir]] con nosotros?",
+    "payload": {
+      "answer": "to come",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to come",
+        "to leave",
+        "to stay",
+        "to fall"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "¿Quieres venir con nosotros?",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "venir",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/82ce703748105e74.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "músico",
+    "sentence": "Muchos [[músicos]] llevan ropa antigua.",
+    "payload": {
+      "answer": "a musician",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a musician",
+        "a painter",
+        "a doctor",
+        "a farmer"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Muchos músicos llevan ropa antigua.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "músicos",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3900259a02041a1f.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cantan",
+    "sentence": "En el concierto, ellos _____ muy bien.",
+    "payload": {
+      "answer": "cantan",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "cantan",
+        "corren",
+        "duermen",
+        "comen"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En el concierto, ellos cantan muy bien.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "cantan",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ce267bcf3f1609ba.mp3"
+      },
+      "translation": "At the concert, they _____ very well.",
+      "optionTranslations": [
+        "sing",
+        "run",
+        "sleep",
+        "eat"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "canción",
+    "sentence": "La gente canta [[canciones]] alegres.",
+    "payload": {
+      "answer": "a song",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a song",
+        "a story",
+        "a game",
+        "a photo"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La gente canta canciones alegres.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "canciones",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba2b62bb204c960a.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vergüenza",
+    "sentence": "Tengo [[vergüenza]], pero canto fuerte.",
+    "payload": {
+      "answer": "shyness",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "shyness",
+        "anger",
+        "hunger",
+        "sleepiness"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Tengo vergüenza, pero canto fuerte.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "vergüenza",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/78fe0e4d84afe864.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "baila",
+    "sentence": "Ella mueve el cuerpo y _____ feliz.",
+    "payload": {
+      "answer": "baila",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "baila",
+        "habla",
+        "duerme",
+        "come"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mueve el cuerpo y baila feliz.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "baila",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30cc343253b0e559.mp3"
+      },
+      "translation": "She moves her body and _____ happily.",
+      "optionTranslations": [
+        "dances",
+        "speaks",
+        "sleeps",
+        "eats"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "amor",
+    "sentence": "Dos personas que se quieren sienten _____.",
+    "payload": {
+      "answer": "amor",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "amor",
+        "miedo",
+        "frío",
+        "sueño"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Dos personas que se quieren sienten amor.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "amor",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c5b4892f169f7d9.mp3"
+      },
+      "translation": "Two people who love each other feel _____.",
+      "optionTranslations": [
+        "love",
+        "fear",
+        "cold",
+        "sleepiness"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "solo",
+    "sentence": "Camino [[sola]] por la calle.",
+    "payload": {
+      "answer": "alone",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "alone",
+        "tired",
+        "happy",
+        "busy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Camino sola por la calle.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "sola",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/39d36a1514df94ed.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "universidad",
+    "sentence": "Él estudia en la [[universidad]].",
+    "payload": {
+      "answer": "a university",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a university",
+        "a hospital",
+        "a market",
+        "a hotel"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él estudia en la universidad.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "universidad",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/444aee8a75d46001.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ropa",
+    "sentence": "Ellos llevan [[ropa]] antigua y negra.",
+    "payload": {
+      "answer": "clothes",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "clothes",
+        "shoes",
+        "food",
+        "money"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ellos llevan ropa antigua y negra.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "ropa",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8d0423b31a6a07d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "antiguo",
+    "sentence": "La casa es muy [[antigua]].",
+    "payload": {
+      "answer": "old",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "old",
+        "new",
+        "clean",
+        "cheap"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La casa es muy antigua.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "antigua",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee17e7787e6fe3ee.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alegre",
+    "sentence": "La música es muy [[alegre]] hoy.",
+    "payload": {
+      "answer": "cheerful",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "cheerful",
+        "sad",
+        "quiet",
+        "slow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La música es muy alegre hoy.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "alegre",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6bc5a8cf62aa9e0e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "abre",
+    "sentence": "Para ver la calle, ella _____ la ventana.",
+    "payload": {
+      "answer": "abre",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "abre",
+        "cierra",
+        "limpia",
+        "pinta"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Para ver la calle, ella abre la ventana.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "abre",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ef1f4738d376a7e.mp3"
+      },
+      "translation": "To see the street, she _____ the window.",
+      "optionTranslations": [
+        "opens",
+        "closes",
+        "cleans",
+        "paints"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "papel",
+    "sentence": "La flor está hecha de [[papel]].",
+    "payload": {
+      "answer": "paper",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "paper",
+        "wood",
+        "glass",
+        "metal"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La flor está hecha de papel.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "papel",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/77da3080a835bc00.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fuerte",
+    "sentence": "Ella canta muy [[fuerte]].",
+    "payload": {
+      "answer": "loud",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "loud",
+        "soft",
+        "low",
+        "shy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella canta muy fuerte.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "fuerte",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/77046e91daff9b92.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reír",
+    "sentence": "Toda la gente [[ríe]] contenta.",
+    "payload": {
+      "answer": "to laugh",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to laugh",
+        "to cry",
+        "to shout",
+        "to run"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Toda la gente ríe contenta.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "ríe",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f2afc333b65a2697.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brillar",
+    "sentence": "La luna [[brilla]] en el cielo negro.",
+    "payload": {
+      "answer": "to shine",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to shine",
+        "to fall",
+        "to grow",
+        "to burn"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La luna brilla en el cielo negro.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "brilla",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d07a31ce21655bd3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "último",
+    "sentence": "Él toca la [[última]] canción de amor.",
+    "payload": {
+      "answer": "last",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "last",
+        "first",
+        "next",
+        "best"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él toca la última canción de amor.",
+        "storySlug": "una-noche-de-callejoneada",
+        "targetWord": "última",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8a9814f28584fdcf.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "flor,luna,calle,señora",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "flor",
+          "answer": "a flower",
+          "options": [
+            "a flower",
+            "the moon",
+            "a street",
+            "a lady"
+          ]
+        },
+        {
+          "word": "luna",
+          "answer": "the moon",
+          "options": [
+            "a flower",
+            "the moon",
+            "a street",
+            "a lady"
+          ]
+        },
+        {
+          "word": "calle",
+          "answer": "a street",
+          "options": [
+            "a flower",
+            "the moon",
+            "a street",
+            "a lady"
+          ]
+        },
+        {
+          "word": "señora",
+          "answer": "a lady",
+          "options": [
+            "a flower",
+            "the moon",
+            "a street",
+            "a lady"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grupo",
+    "sentence": "Sofía sigue al [[grupo]] por el callejón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a group",
+      "options": [
+        "a group",
+        "a window",
+        "a spoon",
+        "a river"
+      ],
+      "audioClip": {
+        "storySlug": "una-noche-de-callejoneada",
+        "storySource": "user",
+        "sentence": "Sofía sigue al grupo por el callejón.",
+        "targetWord": "grupo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/09ea0b248fd097c1.mp3"
+      }
+    },
+    "featured": false
+  }
+]

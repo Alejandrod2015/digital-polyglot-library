@@ -1,0 +1,463 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "Grantler",
+    "sentence": "ein grauhaariger [[Grantler]], dem die Schürze eng spannt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a grump",
+      "options": [
+        "a grump",
+        "a jokester",
+        "a stranger",
+        "a regular"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "ein grauhaariger Grantler, dem die Schürze eng spannt.",
+        "targetWord": "Grantler",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6db71bac904a98f1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "zwinkern",
+    "sentence": "Seine Tochter Vroni kassiert nebenan und [[zwinkert]] freundlich zu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wink",
+      "options": [
+        "to wink",
+        "to frown",
+        "to shout",
+        "to yawn"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "Seine Tochter Vroni kassiert nebenan und zwinkert freundlich zu.",
+        "targetWord": "zwinkert",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c741298621303beb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "knurren",
+    "sentence": "\"Was mögt ihr denn\", [[knurrt]] Sepp, ohne aufzuschauen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to growl",
+      "options": [
+        "to growl",
+        "to smile",
+        "to sing",
+        "to whisper"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "\"Was mögt ihr denn\", knurrt Sepp, ohne aufzuschauen.",
+        "targetWord": "knurrt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/064d0f161649c345.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "zerren",
+    "sentence": "Nadia [[zerrt]] aus lauter Nervosität schnell ihr Handy hervor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to yank out",
+      "options": [
+        "to yank out",
+        "to drop",
+        "to hide",
+        "to recharge"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "Nadia zerrt aus lauter Nervosität schnell ihr Handy hervor.",
+        "targetWord": "zerrt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e786e4712b101219.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "schnauben",
+    "sentence": "Sepp hebt eine buschige Augenbraue und [[schnaubt]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to snort",
+      "options": [
+        "to snort",
+        "to nod",
+        "to giggle",
+        "to sneeze"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "Sepp hebt eine buschige Augenbraue und schnaubt.",
+        "targetWord": "schnaubt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/786e45f8c32950ef.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prallen",
+    "sentence": "Da [[prallen]] auf dem Markt zwei Welten aufeinander.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to collide",
+      "options": [
+        "to collide",
+        "to blend",
+        "to vanish",
+        "to float"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "Da prallen auf dem Markt zwei Welten aufeinander.",
+        "targetWord": "prallen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32e3db0611537934.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "auf einmal",
+    "sentence": "Auf [[einmal]] begreift Nadia, dass sein Granteln keine Abfuhr ist.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "all of a sudden",
+      "options": [
+        "all of a sudden",
+        "step by step",
+        "as usual",
+        "in the end"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "Auf einmal begreift Nadia, dass sein Granteln keine Abfuhr ist.",
+        "targetWord": "einmal",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/634a3dfd7fd9575a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "geh weiter",
+    "sentence": "\"Geh [[weiter]], des passt scho\", brummt er verlegen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "oh come on",
+      "options": [
+        "oh come on",
+        "stay here",
+        "hurry up",
+        "look out"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "\"Geh weiter, des passt scho\", brummt er verlegen.",
+        "targetWord": "weiter",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/91a109cab4b3ae01.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Madl",
+    "sentence": "\"Schmarrn\", brummt er, \"red halt normal, [[Madl]].\"",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lass",
+      "options": [
+        "a lass",
+        "a lad",
+        "a granny",
+        "a gent"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "\"Schmarrn\", brummt er, \"red halt normal, Madl.\"",
+        "targetWord": "Madl",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b104da26c3550286.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "klapprig",
+    "sentence": "Vroni schiebt Nadia eine Portion über den [[klapprigen]] Tresen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rickety",
+      "options": [
+        "rickety",
+        "brand new",
+        "spotless",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "Vroni schiebt Nadia eine Portion über den klapprigen Tresen.",
+        "targetWord": "klapprigen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/67f3b879e06bb50b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "leise",
+    "sentence": "Timo grinst breit und sagt [[leise]], der Depp habe sie gern.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "quietly",
+      "options": [
+        "quietly",
+        "loudly",
+        "angrily",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "Timo grinst breit und sagt leise, der Depp habe sie gern.",
+        "targetWord": "leise",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/624c55931b746d15.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Schmarrn",
+    "sentence": "_____! So einen Unsinn habe ich noch nie gehört.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Schmarrn",
+      "options": [
+        "Schmarrn",
+        "Genau",
+        "Sicher",
+        "Danke"
+      ],
+      "translation": "_____! I have never heard such nonsense.",
+      "optionTranslations": [
+        "Nonsense",
+        "Exactly",
+        "Sure",
+        "Thanks"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "Schmarrn! So einen Unsinn habe ich noch nie gehört.",
+        "targetWord": "Schmarrn",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/868f2ef1075347d2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Depp",
+    "sentence": "So ein _____! Er hat die Suppe versalzen und alles verbrannt.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Depp",
+      "options": [
+        "Depp",
+        "Nachbar",
+        "Gast",
+        "Held"
+      ],
+      "translation": "Such a _____! He oversalted the soup and burned everything.",
+      "optionTranslations": [
+        "fool",
+        "neighbor",
+        "guest",
+        "hero"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "So ein Depp! Er hat die Suppe versalzen und alles verbrannt.",
+        "targetWord": "Depp",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36ef2a6958cb9e1b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "knuspriges",
+    "sentence": "Ich mag ein _____ Schnitzel, das beim Reinbeißen laut knackt.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "knuspriges",
+      "options": [
+        "knuspriges",
+        "weiches",
+        "altes",
+        "warmes"
+      ],
+      "translation": "I like a _____ schnitzel that crunches loudly when you bite in.",
+      "optionTranslations": [
+        "crispy",
+        "soft",
+        "old",
+        "warm"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "Ich mag ein knuspriges Schnitzel, das beim Reinbeißen laut knackt.",
+        "targetWord": "knuspriges",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1b06b2ad14c38a15.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "steifem",
+    "sentence": "Sie antwortete in _____ und kühlem Deutsch.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "steifem",
+      "options": [
+        "steifem",
+        "lockerem",
+        "warmem",
+        "frohem"
+      ],
+      "translation": "She answered in _____ and cool German.",
+      "optionTranslations": [
+        "stiff, formal",
+        "relaxed",
+        "warm",
+        "cheerful"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "Sie antwortete in steifem und kühlem Deutsch.",
+        "targetWord": "steifem",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c187048700e6e84b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gern",
+    "sentence": "Ich habe meine Oma sehr _____ und besuche sie oft.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gern",
+      "options": [
+        "gern",
+        "satt",
+        "müde",
+        "los"
+      ],
+      "translation": "I am very _____ of my grandma and visit her often.",
+      "optionTranslations": [
+        "fond",
+        "fed up",
+        "tired",
+        "rid"
+      ],
+      "audioClip": {
+        "storySlug": "sepp-und-das-hendl",
+        "storySource": "user",
+        "sentence": "Ich habe meine Oma sehr gern und besuche sie oft.",
+        "targetWord": "gern",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/77aa38130d8063cd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "Hendl,Standl,Schürze,Fettdampf",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "Hendl",
+          "answer": "roast chicken",
+          "options": [
+            "roast chicken",
+            "a market stall",
+            "an apron",
+            "greasy cooking steam"
+          ]
+        },
+        {
+          "word": "Standl",
+          "answer": "a market stall",
+          "options": [
+            "roast chicken",
+            "a market stall",
+            "an apron",
+            "greasy cooking steam"
+          ]
+        },
+        {
+          "word": "Schürze",
+          "answer": "an apron",
+          "options": [
+            "roast chicken",
+            "a market stall",
+            "an apron",
+            "greasy cooking steam"
+          ]
+        },
+        {
+          "word": "Fettdampf",
+          "answer": "greasy cooking steam",
+          "options": [
+            "roast chicken",
+            "a market stall",
+            "an apron",
+            "greasy cooking steam"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

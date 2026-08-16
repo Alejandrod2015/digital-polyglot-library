@@ -1,0 +1,606 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Korb,Napf,Futter,Leben",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Korb",
+     "answer": "basket",
+     "options": [
+      "basket",
+      "bowl",
+      "animal food",
+      "life"
+     ]
+    },
+    {
+     "word": "Napf",
+     "answer": "bowl",
+     "options": [
+      "basket",
+      "bowl",
+      "animal food",
+      "life"
+     ]
+    },
+    {
+     "word": "Futter",
+     "answer": "animal food",
+     "options": [
+      "basket",
+      "bowl",
+      "animal food",
+      "life"
+     ]
+    },
+    {
+     "word": "Leben",
+     "answer": "life",
+     "options": [
+      "basket",
+      "bowl",
+      "animal food",
+      "life"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "Entscheidung",
+  "sentence": "Marie und Jonas treffen eine [[Entscheidung]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "decision",
+   "options": [
+    "decision",
+    "question",
+    "problem",
+    "promise"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Marie und Jonas treffen eine Entscheidung.",
+    "targetWord": "Entscheidung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "zwischen",
+  "sentence": "Regen liegt [[zwischen]] ihnen auf dem Sofa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "between",
+   "options": [
+    "between",
+    "under",
+    "behind",
+    "near"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Regen liegt zwischen ihnen auf dem Sofa.",
+    "targetWord": "zwischen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "komplett",
+  "sentence": "Die kleine Familie ist jetzt [[komplett]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "complete",
+   "options": [
+    "complete",
+    "empty",
+    "tired",
+    "quiet"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Die kleine Familie ist jetzt komplett.",
+    "targetWord": "komplett",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "bleibt",
+  "sentence": "Die Katze _____ für immer.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bleibt",
+   "options": [
+    "bleibt",
+    "läuft",
+    "schläft",
+    "wartet"
+   ],
+   "translation": "The cat _____ forever.",
+   "optionTranslations": [
+    "stays",
+    "runs",
+    "sleeps",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Die Katze bleibt für immer.",
+    "targetWord": "bleibt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "kaufen",
+  "sentence": "Sie _____ einen Korb und Futter.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kaufen",
+   "options": [
+    "kaufen",
+    "suchen",
+    "finden",
+    "fragen"
+   ],
+   "translation": "They _____ a basket and food.",
+   "optionTranslations": [
+    "buy",
+    "look for",
+    "find",
+    "ask"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Sie kaufen einen Korb und Futter.",
+    "targetWord": "kaufen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "braucht",
+  "sentence": "Die Katze _____ einen Namen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "braucht",
+   "options": [
+    "braucht",
+    "hat",
+    "sieht",
+    "mag"
+   ],
+   "translation": "The cat _____ a name.",
+   "optionTranslations": [
+    "needs",
+    "has",
+    "sees",
+    "likes"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Die Katze braucht einen Namen.",
+    "targetWord": "braucht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "heißt",
+  "sentence": "Also _____ sie jetzt Regen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "heißt",
+   "options": [
+    "heißt",
+    "bleibt",
+    "sitzt",
+    "kauft"
+   ],
+   "translation": "So she _____ Regen now.",
+   "optionTranslations": [
+    "is called",
+    "stays",
+    "sits",
+    "buys"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Also heißt sie jetzt Regen.",
+    "targetWord": "heißt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "frisst",
+  "sentence": "Regen _____ ihr Futter im Korb.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "frisst",
+   "options": [
+    "frisst",
+    "trinkt",
+    "kauft",
+    "sucht"
+   ],
+   "translation": "Regen _____ her food in the basket.",
+   "optionTranslations": [
+    "eats",
+    "drinks",
+    "buys",
+    "looks for"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Regen frisst ihr Futter im Korb.",
+    "targetWord": "frisst",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "listen_choose",
+  "featured": true,
+  "word": "regnet",
+  "sentence": "",
+  "payload": {
+   "prompt": "Listen and choose the word you hear.",
+   "answer": "regnet",
+   "options": [
+    "regnet",
+    "bleibt",
+    "kauft",
+    "denkt"
+   ],
+   "optionTranslations": [
+    "is raining",
+    "stays",
+    "buys",
+    "thinks"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Draußen regnet es wieder stark.",
+    "targetWord": "regnet",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Regen",
+  "sentence": "Die Katze heißt jetzt _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Regen",
+   "options": [
+    "Regen",
+    "Korb",
+    "Napf",
+    "Futter"
+   ],
+   "translation": "The cat is now called _____.",
+   "optionTranslations": [
+    "rain",
+    "basket",
+    "bowl",
+    "food"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Die Katze heißt jetzt Regen.",
+    "targetWord": "Regen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "denkt",
+  "sentence": "Marie _____ an einen guten Namen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "denkt",
+   "options": [
+    "denkt",
+    "kauft",
+    "sucht",
+    "fragt"
+   ],
+   "translation": "Marie _____ of a good name.",
+   "optionTranslations": [
+    "thinks",
+    "buys",
+    "looks for",
+    "asks"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Marie denkt an einen guten Namen.",
+    "targetWord": "denkt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "passt",
+  "sentence": "Der Name _____ sehr gut.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "passt",
+   "options": [
+    "passt",
+    "bleibt",
+    "heißt",
+    "sitzt"
+   ],
+   "translation": "The name _____ very well.",
+   "optionTranslations": [
+    "fits",
+    "stays",
+    "is called",
+    "sits"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Der Name passt sehr gut.",
+    "targetWord": "passt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "neuen",
+  "sentence": "Regen sitzt im _____ Korb.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "neuen",
+   "options": [
+    "neuen",
+    "kleinen",
+    "warmen",
+    "vollen"
+   ],
+   "translation": "Regen sits in the _____ basket.",
+   "optionTranslations": [
+    "new",
+    "small",
+    "warm",
+    "full"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Regen sitzt im neuen Korb.",
+    "targetWord": "neuen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "zufrieden",
+  "sentence": "Regen frisst und schnurrt _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zufrieden",
+   "options": [
+    "zufrieden",
+    "traurig",
+    "laut",
+    "müde"
+   ],
+   "translation": "Regen eats and purrs _____.",
+   "optionTranslations": [
+    "contentedly",
+    "sadly",
+    "loudly",
+    "tiredly"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Regen frisst und schnurrt zufrieden.",
+    "targetWord": "zufrieden",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "schnurrt",
+  "sentence": "Die Katze _____ leise im Korb.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schnurrt",
+   "options": [
+    "schnurrt",
+    "schläft",
+    "frisst",
+    "läuft"
+   ],
+   "translation": "The cat _____ softly in the basket.",
+   "optionTranslations": [
+    "purrs",
+    "sleeps",
+    "eats",
+    "runs"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Die Katze schnurrt leise im Korb.",
+    "targetWord": "schnurrt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "essen",
+  "sentence": "Marie und Jonas _____ am Abend.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "essen",
+   "options": [
+    "essen",
+    "warten",
+    "kaufen",
+    "suchen"
+   ],
+   "translation": "Marie and Jonas _____ in the evening.",
+   "optionTranslations": [
+    "eat",
+    "wait",
+    "buy",
+    "look for"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Marie und Jonas essen am Abend.",
+    "targetWord": "essen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "nickt",
+  "sentence": "Jonas _____ und lacht laut.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nickt",
+   "options": [
+    "nickt",
+    "sitzt",
+    "läuft",
+    "wartet"
+   ],
+   "translation": "Jonas _____ and laughs loudly.",
+   "optionTranslations": [
+    "nods",
+    "sits",
+    "runs",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Jonas nickt und lacht laut.",
+    "targetWord": "nickt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "warm",
+  "sentence": "Aber drinnen ist es [[warm]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm",
+   "options": [
+    "warm",
+    "cold",
+    "dark",
+    "wet"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Aber drinnen ist es warm.",
+    "targetWord": "warm",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "wieder",
+  "sentence": "Draußen regnet es jetzt [[wieder]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "again",
+   "options": [
+    "again",
+    "never",
+    "soon",
+    "still"
+   ],
+   "audioClip": {
+    "storySlug": "die-katze-bleibt",
+    "storySource": "user",
+    "sentence": "Draußen regnet es jetzt wieder.",
+    "targetWord": "wieder",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ }
+]

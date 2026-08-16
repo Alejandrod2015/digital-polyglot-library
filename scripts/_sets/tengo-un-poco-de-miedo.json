@@ -1,0 +1,846 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "cenote",
+    "sentence": "El [[cenote]] es una cueva con agua dulce.",
+    "payload": {
+      "answer": "a natural water hole",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a natural water hole",
+        "a tall mountain",
+        "a busy market",
+        "a wide street"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El cenote es una cueva con agua dulce.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "cenote",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/84759e3f02daab9a.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guía",
+    "sentence": "Ella es mi [[guía]] local.",
+    "payload": {
+      "answer": "a guide",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a guide",
+        "a doctor",
+        "a driver",
+        "a cook"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella es mi guía local.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "guía",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a1b33f9779e2d33c.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "explicar",
+    "sentence": "Ella me [[explica]] todo con paciencia.",
+    "payload": {
+      "answer": "to explain",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to explain",
+        "to hide",
+        "to ask",
+        "to forget"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella me explica todo con paciencia.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "explica",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8c42cdc10d3600e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paciencia",
+    "sentence": "Ella me explica todo con [[paciencia]].",
+    "payload": {
+      "answer": "patience",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "patience",
+        "hunger",
+        "fear",
+        "hurry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella me explica todo con paciencia.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "paciencia",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8c42cdc10d3600e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "fría",
+    "sentence": "Metes la mano en el hielo y está _____.",
+    "payload": {
+      "answer": "fría",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "fría",
+        "caliente",
+        "seca",
+        "dura"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Metes la mano en el hielo y está fría.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "fría",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/01f17680661be8bb.mp3"
+      },
+      "translation": "You put your hand in the ice and it is _____.",
+      "optionTranslations": [
+        "cold",
+        "hot",
+        "dry",
+        "hard"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pequeño",
+    "sentence": "Los peces son [[pequeños]] y de colores.",
+    "payload": {
+      "answer": "small",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "small",
+        "large",
+        "fast",
+        "loud"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los peces son pequeños y de colores.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "pequeños",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ce5b55ced976e28.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "nadan",
+    "sentence": "Los peces _____ en el agua clara.",
+    "payload": {
+      "answer": "nadan",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "nadan",
+        "vuelan",
+        "corren",
+        "duermen"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los peces nadan en el agua clara.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "nadan",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1be0c1f4f5fb6b91.mp3"
+      },
+      "translation": "The fish _____ in the clear water.",
+      "optionTranslations": [
+        "swim",
+        "fly",
+        "run",
+        "sleep"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorprendido",
+    "sentence": "Ella está muy [[sorprendida]] con los peces.",
+    "payload": {
+      "answer": "surprised",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "surprised",
+        "bored",
+        "angry",
+        "sleepy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella está muy sorprendida con los peces.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "sorprendida",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fc9bc11a453a849e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mágico",
+    "sentence": "Este momento es [[mágico]] y especial.",
+    "payload": {
+      "answer": "magical",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "magical",
+        "normal",
+        "boring",
+        "ugly"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Este momento es mágico y especial.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "mágico",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1f437d788f8277a6.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "orilla",
+    "sentence": "Ella descansa en la _____ del lago.",
+    "payload": {
+      "answer": "orilla",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "orilla",
+        "cima",
+        "torre",
+        "nube"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella descansa en la orilla del lago.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "orilla",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/949c9f197663def4.mp3"
+      },
+      "translation": "She rests on the _____ of the lake.",
+      "optionTranslations": [
+        "shore",
+        "peak",
+        "tower",
+        "cloud"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "visitar",
+    "sentence": "Yo [[visito]] un cenote muy bonito.",
+    "payload": {
+      "answer": "to visit",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to visit",
+        "to leave",
+        "to build",
+        "to buy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Yo visito un cenote muy bonito.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "visito",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ca15711d40e4d08c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerca",
+    "sentence": "El cenote está [[cerca]] de aquí.",
+    "payload": {
+      "answer": "near",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "near",
+        "far",
+        "inside",
+        "above"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El cenote está cerca de aquí.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "cerca",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/45c4798e30a00b44.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seguro",
+    "sentence": "El agua del cenote es [[segura]].",
+    "payload": {
+      "answer": "safe",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "safe",
+        "deep",
+        "dirty",
+        "cold"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El agua del cenote es segura.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "segura",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/346e028bccedbf98.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poco a poco",
+    "sentence": "[[Poco a poco]], ella entra al agua.",
+    "payload": {
+      "answer": "little by little",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "little by little",
+        "all at once",
+        "right away",
+        "never again"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Poco a poco, ella entra al agua.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "Poco a poco",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f9bac3789f93a8c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entrar",
+    "sentence": "Yo [[entro]] al agua con calma.",
+    "payload": {
+      "answer": "to go in",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to go in",
+        "to leave",
+        "to float",
+        "to fall"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Yo entro al agua con calma.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "entro",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d26d653b4b578d0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de pronto",
+    "sentence": "[[De pronto]], ella ve muchos peces.",
+    "payload": {
+      "answer": "suddenly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "suddenly",
+        "slowly",
+        "finally",
+        "always"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "De pronto, ella ve muchos peces.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "De pronto",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7279e70d2f2ba795.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "flotar",
+    "sentence": "Yo [[floto]] en el agua tranquila.",
+    "payload": {
+      "answer": "to float",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to float",
+        "to sink",
+        "to swim",
+        "to jump"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Yo floto en el agua tranquila.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "floto",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a7ac34f08d8b885c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "hondo",
+    "sentence": "Antes de nadar, respiras _____ y con calma.",
+    "payload": {
+      "answer": "hondo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "hondo",
+        "fuerte",
+        "bajo",
+        "lento"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Antes de nadar, respiras hondo y con calma.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "hondo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/01e06afff3d21d88.mp3"
+      },
+      "translation": "Before swimming, you breathe _____ and calmly.",
+      "optionTranslations": [
+        "deeply",
+        "loudly",
+        "softly",
+        "slowly"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "clara",
+    "sentence": "El agua es tan _____ que ves el fondo.",
+    "payload": {
+      "answer": "clara",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "clara",
+        "sucia",
+        "oscura",
+        "fría"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El agua es tan clara que ves el fondo.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "clara",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95558c5edcaf47ee.mp3"
+      },
+      "translation": "The water is so _____ that you see the bottom.",
+      "optionTranslations": [
+        "clear",
+        "dirty",
+        "dark",
+        "cold"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "peces",
+    "sentence": "En el agua nadan muchos _____ de colores.",
+    "payload": {
+      "answer": "peces",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "peces",
+        "pájaros",
+        "gatos",
+        "árboles"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En el agua nadan muchos peces de colores.",
+        "storySlug": "tengo-un-poco-de-miedo",
+        "targetWord": "peces",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c14ec8247651d25.mp3"
+      },
+      "translation": "In the water swim many colorful _____.",
+      "optionTranslations": [
+        "fish",
+        "birds",
+        "cats",
+        "trees"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "cueva,gafas,planta,pared",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cueva",
+          "answer": "a cave",
+          "options": [
+            "a cave",
+            "glasses",
+            "a plant",
+            "a wall"
+          ]
+        },
+        {
+          "word": "gafas",
+          "answer": "glasses",
+          "options": [
+            "a cave",
+            "glasses",
+            "a plant",
+            "a wall"
+          ]
+        },
+        {
+          "word": "planta",
+          "answer": "a plant",
+          "options": [
+            "a cave",
+            "glasses",
+            "a plant",
+            "a wall"
+          ]
+        },
+        {
+          "word": "pared",
+          "answer": "a wall",
+          "options": [
+            "a cave",
+            "glasses",
+            "a plant",
+            "a wall"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reír",
+    "sentence": "Cuando ves algo cómico, te gusta [[reír]] con tus amigos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to laugh",
+      "options": [
+        "to laugh",
+        "to sleep",
+        "to cook",
+        "to run"
+      ],
+      "audioClip": {
+        "storySlug": "tengo-un-poco-de-miedo",
+        "storySource": "user",
+        "sentence": "Cuando ves algo cómico, te gusta reír con tus amigos.",
+        "targetWord": "reír",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa9a06659a7ab370.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vida",
+    "sentence": "Bajo el agua ves mucha [[vida]] y muchos peces.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "life",
+      "options": [
+        "life",
+        "a house",
+        "a book",
+        "a table"
+      ],
+      "audioClip": {
+        "storySlug": "tengo-un-poco-de-miedo",
+        "storySource": "user",
+        "sentence": "Bajo el agua ves mucha vida y muchos peces.",
+        "targetWord": "vida",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d2ac800c50620cab.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "sentence": "Estás feliz y no puedes parar de [[sonreír]] hoy.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smile",
+      "options": [
+        "to smile",
+        "to jump",
+        "to read",
+        "to cry"
+      ],
+      "audioClip": {
+        "storySlug": "tengo-un-poco-de-miedo",
+        "storySource": "user",
+        "sentence": "Estás feliz y no puedes parar de sonreír hoy.",
+        "targetWord": "sonreír",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/caabfce57180a7ff.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grande",
+    "sentence": "El agua del mar es muy [[grande]] y azul.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "big",
+      "options": [
+        "big",
+        "cold",
+        "clean",
+        "round"
+      ],
+      "audioClip": {
+        "storySlug": "tengo-un-poco-de-miedo",
+        "storySource": "user",
+        "sentence": "El agua del mar es muy grande y azul.",
+        "targetWord": "grande",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c659550f34111baa.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "color",
+    "sentence": "Los peces del agua tienen muchos [[colores]] bonitos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "colors",
+      "options": [
+        "colors",
+        "names",
+        "sounds",
+        "doors"
+      ],
+      "audioClip": {
+        "storySlug": "tengo-un-poco-de-miedo",
+        "storySource": "user",
+        "sentence": "Los peces del agua tienen muchos colores bonitos.",
+        "targetWord": "colores",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f7cdfa82cbd0b39e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Tú caminas [[despacio]] por la orilla del agua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slowly",
+      "options": [
+        "slowly",
+        "quickly",
+        "loudly",
+        "together"
+      ],
+      "audioClip": {
+        "storySlug": "tengo-un-poco-de-miedo",
+        "storySource": "user",
+        "sentence": "Tú caminas despacio por la orilla del agua.",
+        "targetWord": "despacio",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/186576d2f80d974e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cubrir",
+    "sentence": "El agua fría [[cubre]] toda la cueva escondida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "covers",
+      "options": [
+        "covers",
+        "opens",
+        "sells",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "tengo-un-poco-de-miedo",
+        "storySource": "user",
+        "sentence": "El agua fría cubre toda la cueva escondida.",
+        "targetWord": "cubre",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4cbeb43028fd3637.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "superficie",
+    "sentence": "Los peces nadan cerca de la [[superficie]] del agua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the surface",
+      "options": [
+        "the surface",
+        "the door",
+        "the chair",
+        "the box"
+      ],
+      "audioClip": {
+        "storySlug": "tengo-un-poco-de-miedo",
+        "storySource": "user",
+        "sentence": "Los peces nadan cerca de la superficie del agua.",
+        "targetWord": "superficie",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0cdb09a9d50e5635.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "respirar",
+    "sentence": "Ella [[respira]] con calma bajo el agua fría.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "breathes",
+      "options": [
+        "breathes",
+        "eats",
+        "writes",
+        "drives"
+      ],
+      "audioClip": {
+        "storySlug": "tengo-un-poco-de-miedo",
+        "storySource": "user",
+        "sentence": "Ella respira con calma bajo el agua fría.",
+        "targetWord": "respira",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/279a9f7ba8d5d176.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "miedo",
+    "sentence": "Antes de nadar, Sofía siente un poco de [[miedo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fear",
+      "options": [
+        "fear",
+        "hunger",
+        "music",
+        "rain"
+      ],
+      "audioClip": {
+        "storySlug": "tengo-un-poco-de-miedo",
+        "storySource": "user",
+        "sentence": "Antes de nadar, Sofía siente un poco de miedo.",
+        "targetWord": "miedo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e7a0928883816f7.mp3"
+      }
+    },
+    "featured": false
+  }
+]

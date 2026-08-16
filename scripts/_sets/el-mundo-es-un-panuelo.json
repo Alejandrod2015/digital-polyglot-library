@@ -1,0 +1,463 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "calle,correo,oficina,móvil",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "calle",
+     "answer": "a street",
+     "options": [
+      "a street",
+      "the post",
+      "an office",
+      "a mobile phone"
+     ]
+    },
+    {
+     "word": "correo",
+     "answer": "the post",
+     "options": [
+      "a street",
+      "the post",
+      "an office",
+      "a mobile phone"
+     ]
+    },
+    {
+     "word": "oficina",
+     "answer": "an office",
+     "options": [
+      "a street",
+      "the post",
+      "an office",
+      "a mobile phone"
+     ]
+    },
+    {
+     "word": "móvil",
+     "answer": "a mobile phone",
+     "options": [
+      "a street",
+      "the post",
+      "an office",
+      "a mobile phone"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "el mundo es un pañuelo",
+  "sentence": "Paco se ríe y dice que [[el mundo es un pañuelo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it is a small world",
+   "options": [
+    "it is a small world",
+    "the city never changes",
+    "life is full of work",
+    "nobody knows anybody"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Paco se ríe y dice que el mundo es un pañuelo.",
+    "targetWord": "el mundo es un pañuelo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "portería",
+  "sentence": "Paco sigue en la [[portería]], colocando el correo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the caretaker's little office",
+   "options": [
+    "the caretaker's little office",
+    "the flat on the top floor",
+    "the shop across the road",
+    "the room where bins are kept"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Paco sigue en la portería, colocando el correo.",
+    "targetWord": "portería",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "conserje",
+  "sentence": "Paco fue [[conserje]] en un edificio de oficinas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a building caretaker",
+   "options": [
+    "a building caretaker",
+    "a taxi driver",
+    "a night guard",
+    "a post worker"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Paco fue conserje en un edificio de oficinas.",
+    "targetWord": "conserje",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nos echamos una mano",
+  "sentence": "Paco dice que en este edificio [[nos echamos una mano]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "we help each other out",
+   "options": [
+    "we help each other out",
+    "we keep to ourselves",
+    "we argue quite often",
+    "we share the costs"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Paco dice que en este edificio nos echamos una mano.",
+    "targetWord": "nos echamos una mano",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "es lo que hay",
+  "sentence": "Paco lo explica y añade: [[es lo que hay]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "that is how it is",
+   "options": [
+    "that is how it is",
+    "that is not fair",
+    "that is very odd",
+    "that is up to you"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Paco lo explica y añade: es lo que hay.",
+    "targetWord": "es lo que hay",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "con oficio",
+  "sentence": "Paco dice que un portero [[con oficio]] se lo sabe todo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with real skill from years of work",
+   "options": [
+    "with real skill from years of work",
+    "with a lot of free time",
+    "with the right paperwork",
+    "with a good salary"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Paco dice que un portero con oficio se lo sabe todo.",
+    "targetWord": "con oficio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de los grandes",
+  "sentence": "Paco pide que el café sea [[de los grandes]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a big one",
+   "options": [
+    "a big one",
+    "a cheap one",
+    "a quick one",
+    "a cold one"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Paco pide que el café sea de los grandes.",
+    "targetWord": "de los grandes",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ruta",
+  "sentence": "Clara dice que mañana le toca otra vez y ya sabe la [[ruta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the route",
+   "options": [
+    "the route",
+    "the price",
+    "the timetable",
+    "the reason"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Clara dice que mañana le toca otra vez y ya sabe la ruta.",
+    "targetWord": "ruta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ayudó",
+  "sentence": "Clara cuenta que la [[ayudó]] David, el del cuarto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to help",
+   "options": [
+    "to help",
+    "to warn",
+    "to follow",
+    "to meet"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Clara cuenta que la ayudó David, el del cuarto.",
+    "targetWord": "ayudó",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "colocando",
+  "featured": false,
+  "sentence": "Paco está [[colocando]] el correo de los vecinos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sort into place",
+   "options": [
+    "to sort into place",
+    "to open up",
+    "to throw away",
+    "to deliver"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Paco está colocando el correo de los vecinos.",
+    "targetWord": "colocando",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "llegaste",
+  "featured": false,
+  "sentence": "Paco le pregunta si [[llegaste]] a tiempo a la reunión.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to arrive",
+   "options": [
+    "to arrive",
+    "to leave",
+    "to phone",
+    "to walk"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Paco le pregunta si llegaste a tiempo a la reunión.",
+    "targetWord": "llegaste",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "llegué",
+  "featured": false,
+  "sentence": "Clara responde que [[llegué]] con dos minutos de margen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to arrive",
+   "options": [
+    "to arrive",
+    "to wait",
+    "to run",
+    "to give up"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Clara responde que llegué con dos minutos de margen.",
+    "targetWord": "llegué",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sienta",
+  "featured": false,
+  "sentence": "Clara se [[sienta]] un momento en la portería.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sit down",
+   "options": [
+    "to sit down",
+    "to stand up",
+    "to lean out",
+    "to walk in"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Clara se sienta un momento en la portería.",
+    "targetWord": "sienta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "oficinas",
+  "featured": false,
+  "sentence": "Ese edificio es de _____, no vive nadie ahí.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "oficinas",
+   "options": [
+    "oficinas",
+    "viviendas",
+    "tiendas",
+    "garajes"
+   ],
+   "translation": "That building is full of _____, nobody lives there.",
+   "optionTranslations": [
+    "offices",
+    "flats",
+    "shops",
+    "garages"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Ese edificio es de oficinas, no vive nadie ahí.",
+    "targetWord": "oficinas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "fuera",
+  "featured": false,
+  "sentence": "Los niños juegan _____, en el patio del colegio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fuera",
+   "options": [
+    "fuera",
+    "dentro",
+    "arriba",
+    "debajo"
+   ],
+   "translation": "The children play _____, in the school yard.",
+   "optionTranslations": [
+    "outside",
+    "inside",
+    "upstairs",
+    "underneath"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Los niños juegan fuera, en el patio del colegio.",
+    "targetWord": "fuera",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "nueva",
+  "featured": false,
+  "sentence": "Esta panadería es _____, abrió la semana pasada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nueva",
+   "options": [
+    "nueva",
+    "vieja",
+    "cara",
+    "cerrada"
+   ],
+   "translation": "This bakery is _____, it opened last week.",
+   "optionTranslations": [
+    "new",
+    "old",
+    "expensive",
+    "closed"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Esta panadería es nueva, abrió la semana pasada.",
+    "targetWord": "nueva",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "mañana",
+  "featured": false,
+  "sentence": "Te lo cuento _____, que hoy no tengo tiempo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mañana",
+   "options": [
+    "mañana",
+    "ayer",
+    "antes",
+    "nunca"
+   ],
+   "translation": "I will tell you _____, I have no time today.",
+   "optionTranslations": [
+    "tomorrow",
+    "yesterday",
+    "before",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "el-mundo-es-un-panuelo",
+    "storySource": "user",
+    "sentence": "Te lo cuento mañana, que hoy no tengo tiempo.",
+    "targetWord": "mañana",
+    "language": "spanish"
+   }
+  }
+ }
+]

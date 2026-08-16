@@ -1,0 +1,614 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "camina",
+    "sentence": "No hay coche, por eso ella _____.",
+    "payload": {
+      "answer": "camina",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "camina",
+        "vuela",
+        "nada",
+        "canta"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "No hay coche, por eso ella camina.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "camina",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/416d0b43b8061002.mp3"
+      },
+      "translation": "There is no car, so she _____.",
+      "optionTranslations": [
+        "walks",
+        "flies",
+        "swims",
+        "sings"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vender",
+    "sentence": "Ella [[vende]] dulces cerca de la escalera.",
+    "payload": {
+      "answer": "to sell",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to sell",
+        "to eat",
+        "to hide",
+        "to count"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella vende dulces cerca de la escalera.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "vende",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/39c85010fb364e19.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "querer",
+    "sentence": "Sí, [[quiero]] ver el lugar.",
+    "payload": {
+      "answer": "to want",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to want",
+        "to have",
+        "to give",
+        "to open"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Sí, quiero ver el lugar.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "quiero",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/57ddfae59134eade.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "besar",
+    "sentence": "Los novios se [[besan]] en el balcón.",
+    "payload": {
+      "answer": "to kiss",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to kiss",
+        "to see",
+        "to call",
+        "to leave"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los novios se besan en el balcón.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "besan",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0c23bd51c646857b.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "escucha",
+    "sentence": "Para oír bien, ella _____ con calma.",
+    "payload": {
+      "answer": "escucha",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "escucha",
+        "habla",
+        "corre",
+        "duerme"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Para oír bien, ella escucha con calma.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "escucha",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5aa30509e014af4a.mp3"
+      },
+      "translation": "To hear well, she _____ calmly.",
+      "optionTranslations": [
+        "listens",
+        "speaks",
+        "runs",
+        "sleeps"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "historia",
+    "sentence": "La [[historia]] es triste y bonita.",
+    "payload": {
+      "answer": "a story",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a story",
+        "a game",
+        "a photo",
+        "a gift"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La historia es triste y bonita.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "historia",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e2eef6d98997d1fd.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pareja",
+    "sentence": "Una [[pareja]] sube la escalera.",
+    "payload": {
+      "answer": "a couple",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a couple",
+        "a friend",
+        "a child",
+        "a crowd"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Una pareja sube la escalera.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "pareja",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/88ad5a81e8a0aebf.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "novio",
+    "sentence": "Los dos [[novios]] se besan felices.",
+    "payload": {
+      "answer": "a boyfriend",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a boyfriend",
+        "a brother",
+        "a teacher",
+        "a neighbor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los dos novios se besan felices.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "novios",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40a1ca6fce73a2bb.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "compra",
+    "sentence": "Con su dinero, ella _____ un pan.",
+    "payload": {
+      "answer": "compra",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "compra",
+        "tira",
+        "pierde",
+        "olvida"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Con su dinero, ella compra un pan.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "compra",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7493a71d36504bbc.mp3"
+      },
+      "translation": "With her money, she _____ some bread.",
+      "optionTranslations": [
+        "buys",
+        "throws",
+        "loses",
+        "forgets"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "rica",
+    "sentence": "Esta comida sabe muy bien y está _____.",
+    "payload": {
+      "answer": "rica",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "rica",
+        "fría",
+        "dura",
+        "salada"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Esta comida sabe muy bien y está rica.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "rica",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c950aa9159bad12d.mp3"
+      },
+      "translation": "This food tastes very good and is _____.",
+      "optionTranslations": [
+        "tasty",
+        "cold",
+        "hard",
+        "salty"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estrecho",
+    "sentence": "El callejón es muy [[estrecho]].",
+    "payload": {
+      "answer": "narrow",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "narrow",
+        "wide",
+        "tall",
+        "clean"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El callejón es muy estrecho.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "estrecho",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a2233cb81bf1ff1f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pequeño",
+    "sentence": "Ella mira un lugar muy [[pequeño]].",
+    "payload": {
+      "answer": "small",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "small",
+        "big",
+        "long",
+        "heavy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira un lugar muy pequeño.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "pequeño",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c42167669795f09a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tocar",
+    "sentence": "Los balcones casi se [[tocan]] arriba.",
+    "payload": {
+      "answer": "to touch",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to touch",
+        "to break",
+        "to open",
+        "to paint"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los balcones casi se tocan arriba.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "tocan",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29e539a513eef9d5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arriba",
+    "sentence": "Los balcones están juntos [[arriba]].",
+    "payload": {
+      "answer": "up above",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "up above",
+        "down below",
+        "nearby",
+        "far away"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los balcones están juntos arriba.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "arriba",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/77b24e17d37573b5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorprendido",
+    "sentence": "Ella mira el lugar muy [[sorprendida]].",
+    "payload": {
+      "answer": "surprised",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "surprised",
+        "bored",
+        "angry",
+        "tired"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira el lugar muy sorprendida.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "sorprendida",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f0a2463a09ed8d5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "leyenda",
+    "sentence": "Aquí hay una vieja [[leyenda]].",
+    "payload": {
+      "answer": "a legend",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a legend",
+        "a song",
+        "a game",
+        "a map"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Aquí hay una vieja leyenda.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "leyenda",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1005d5f208765478.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chico",
+    "sentence": "Una chica y un [[chico]] se besan.",
+    "payload": {
+      "answer": "a boy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a boy",
+        "a man",
+        "a king",
+        "a doctor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Una chica y un chico se besan.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "chico",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/66411438bc815e07.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "triste",
+    "sentence": "Cuando algo malo pasa, estoy muy _____.",
+    "payload": {
+      "answer": "triste",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "triste",
+        "feliz",
+        "listo",
+        "lleno"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cuando algo malo pasa, estoy muy triste.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "triste",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/90c8078fac3181ad.mp3"
+      },
+      "translation": "When something bad happens, I am very _____.",
+      "optionTranslations": [
+        "sad",
+        "happy",
+        "ready",
+        "full"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aplaudir",
+    "sentence": "La gente [[aplaude]] y toma fotos.",
+    "payload": {
+      "answer": "to clap",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to clap",
+        "to cry",
+        "to leave",
+        "to fall"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La gente aplaude y toma fotos.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "aplaude",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/525bc2527535dd51.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gente",
+    "sentence": "Mucha [[gente]] mira y toma fotos.",
+    "payload": {
+      "answer": "people",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "people",
+        "a child",
+        "a house",
+        "a street"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Mucha gente mira y toma fotos.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "gente",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa9248389058df9b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "regalar",
+    "sentence": "Ella le [[regala]] otro dulce contenta.",
+    "payload": {
+      "answer": "to give as a gift",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to give as a gift",
+        "to sell",
+        "to buy",
+        "to hide"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella le regala otro dulce contenta.",
+        "storySlug": "el-callejon-del-beso",
+        "targetWord": "regala",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/601ccc21e5b4645e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "escalera,canasta,balcón,charamusca",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "escalera",
+          "answer": "the stairs",
+          "options": [
+            "the stairs",
+            "a basket",
+            "a balcony",
+            "a candy"
+          ]
+        },
+        {
+          "word": "canasta",
+          "answer": "a basket",
+          "options": [
+            "the stairs",
+            "a basket",
+            "a balcony",
+            "a candy"
+          ]
+        },
+        {
+          "word": "balcón",
+          "answer": "a balcony",
+          "options": [
+            "the stairs",
+            "a basket",
+            "a balcony",
+            "a candy"
+          ]
+        },
+        {
+          "word": "charamusca",
+          "answer": "a candy",
+          "options": [
+            "the stairs",
+            "a basket",
+            "a balcony",
+            "a candy"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

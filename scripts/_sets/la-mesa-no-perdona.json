@@ -1,0 +1,588 @@
+[
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "el precipicio,la vela,las correas,el valle",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "el precipicio",
+          "answer": "a steep cliff edge dropping into space",
+          "options": [
+            "a steep cliff edge dropping into space",
+            "the fabric wing of a paraglider",
+            "the straps that fasten the gear",
+            "low land lying between mountains"
+          ]
+        },
+        {
+          "word": "la vela",
+          "answer": "the fabric wing of a paraglider",
+          "options": [
+            "a steep cliff edge dropping into space",
+            "the fabric wing of a paraglider",
+            "the straps that fasten the gear",
+            "low land lying between mountains"
+          ]
+        },
+        {
+          "word": "las correas",
+          "answer": "the straps that fasten the gear",
+          "options": [
+            "a steep cliff edge dropping into space",
+            "the fabric wing of a paraglider",
+            "the straps that fasten the gear",
+            "low land lying between mountains"
+          ]
+        },
+        {
+          "word": "el valle",
+          "answer": "low land lying between mountains",
+          "options": [
+            "a steep cliff edge dropping into space",
+            "the fabric wing of a paraglider",
+            "the straps that fasten the gear",
+            "low land lying between mountains"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "amarrar",
+    "sentence": "El guía va a ____ el arnés fuerte.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "amarrar",
+      "options": [
+        "amarrar",
+        "soltar",
+        "cortar",
+        "esconder"
+      ],
+      "translation": "The guide is going to ____ the harness tight.",
+      "optionTranslations": [
+        "to tie",
+        "to untie",
+        "to cut",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "El guía va a amarrar el arnés fuerte.",
+        "targetWord": "amarrar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d2debd05da63de21.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "lanzarse",
+    "sentence": "Manu tuvo que ____ desde el precipicio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lanzarse",
+      "options": [
+        "lanzarse",
+        "quedarse",
+        "sentarse",
+        "esconderse"
+      ],
+      "translation": "Manu had to ____ off the cliff.",
+      "optionTranslations": [
+        "to throw herself",
+        "to stay",
+        "to sit down",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "Manu tuvo que lanzarse desde el precipicio.",
+        "targetWord": "lanzarse",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f28a61a8e9e0c560.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "empujar",
+    "sentence": "El instructor la tuvo que ____ un poco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "empujar",
+      "options": [
+        "empujar",
+        "cargar",
+        "halar",
+        "abrazar"
+      ],
+      "translation": "The instructor had to ____ her a little.",
+      "optionTranslations": [
+        "to push",
+        "to carry",
+        "to pull",
+        "to hug"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "El instructor la tuvo que empujar un poco.",
+        "targetWord": "empujar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5edb0fe113d28b3e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "pedalear",
+    "sentence": "En el aire empezó a ____ sin querer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pedalear",
+      "options": [
+        "pedalear",
+        "nadar",
+        "correr",
+        "saltar"
+      ],
+      "translation": "In the air she started to ____ without meaning to.",
+      "optionTranslations": [
+        "to pedal",
+        "to swim",
+        "to run",
+        "to jump"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "En el aire empezó a pedalear sin querer.",
+        "targetWord": "pedalear",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c20b37f2c340ca1.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "apurar",
+    "sentence": "El guía le pidió ____ un poco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "apurar",
+      "options": [
+        "apurar",
+        "descansar",
+        "esperar",
+        "frenar"
+      ],
+      "translation": "The guide asked her to ____ a bit.",
+      "optionTranslations": [
+        "to hurry",
+        "to rest",
+        "to wait",
+        "to brake"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "El guía le pidió apurar un poco.",
+        "targetWord": "apurar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d9de9b7c194196ff.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "las tripas apretadas",
+    "sentence": "Manu sintió las [[tripas apretadas]] al ver el vacío.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a knotted stomach from nerves",
+      "options": [
+        "a knotted stomach from nerves",
+        "a sudden burst of energy",
+        "a painful cramp from hunger",
+        "a warm feeling of joy"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "Manu sintió las tripas apretadas al ver el vacío.",
+        "targetWord": "tripas apretadas",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/42fdd604c10a2e80.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "juemadre",
+    "sentence": "¡[[Juemadre]], esto está altísimo!, gritó Manu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a soft curse of surprise",
+      "options": [
+        "a soft curse of surprise",
+        "a cheerful greeting",
+        "a request for help",
+        "a word for the valley"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "¡Juemadre, esto está altísimo!, gritó Manu.",
+        "targetWord": "juemadre",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/607fc8acdeed7df3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "muerto de la risa",
+    "sentence": "Vale quedó [[muerta de la risa]] con el grito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "laughing uncontrollably hard",
+      "options": [
+        "laughing uncontrollably hard",
+        "frozen stiff with fear",
+        "bored out of her mind",
+        "furious and yelling"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "Vale quedó muerta de la risa con el grito.",
+        "targetWord": "muerta de la risa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f914ce0b28a2720.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "la grosería",
+    "sentence": "Ese empujón parecía una [[grosería]], pero la salvó.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rude offensive act",
+      "options": [
+        "a rude offensive act",
+        "a kind gentle gesture",
+        "a clever safety trick",
+        "a funny little joke"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "Ese empujón parecía una grosería, pero la salvó.",
+        "targetWord": "grosería",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e74e4c665d0cd57.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "la ceremonia",
+    "sentence": "No hagas tanta [[ceremonia]] y lánzate ya.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fuss made around something simple",
+      "options": [
+        "fuss made around something simple",
+        "a solemn religious wedding rite",
+        "a careful safety check",
+        "a loud angry protest"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "No hagas tanta ceremonia y lánzate ya.",
+        "targetWord": "ceremonia",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0200398f599bbeb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "los tejados",
+    "sentence": "Desde arriba se veían los [[tejados]] rojos del pueblo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the tiled roofs of houses",
+      "options": [
+        "the tiled roofs of houses",
+        "the green farm fields",
+        "the winding mountain roads",
+        "the flowing river banks"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "Desde arriba se veían los tejados rojos del pueblo.",
+        "targetWord": "tejados",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/44dd1bc71e94fd2a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "el vértigo",
+    "sentence": "El [[vértigo]] la mareó al mirar hacia abajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a dizzy fear of heights",
+      "options": [
+        "a dizzy fear of heights",
+        "a burst of excitement",
+        "a sharp stomach pain",
+        "a cold gust of wind"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "El vértigo la mareó al mirar hacia abajo.",
+        "targetWord": "vértigo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c89d691da8b2377.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "la confianza",
+    "sentence": "Le tocó tenerle [[confianza]] al instructor experto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "trust that someone won't fail you",
+      "options": [
+        "trust that someone won't fail you",
+        "a strong fear of someone",
+        "a debt owed to someone",
+        "a secret kept from someone"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "Le tocó tenerle confianza al instructor experto.",
+        "targetWord": "confianza",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08bfce0c0fdfe26d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "sana y salva",
+    "sentence": "Manu aterrizó [[sana y salva]] en el valle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "safe and sound, unharmed",
+      "options": [
+        "safe and sound, unharmed",
+        "tired but very happy",
+        "late and out of breath",
+        "scared and still shaking"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "Manu aterrizó sana y salva en el valle.",
+        "targetWord": "sana y salva",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/00018382ad2cd4ef.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "berraca",
+    "sentence": "¡Qué mujer tan [[berraca]], se lanzó sin dudar!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gutsy, tough and brave",
+      "options": [
+        "gutsy, tough and brave",
+        "calm and very patient",
+        "clumsy and forgetful",
+        "proud and boastful"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "¡Qué mujer tan berraca, se lanzó sin dudar!",
+        "targetWord": "berraca",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0f4d3872e61de7bf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "una palmada en la espalda",
+    "sentence": "El guía le dio [[una palmada en la espalda]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a friendly pat on the back",
+      "options": [
+        "a friendly pat on the back",
+        "a hard shove toward the edge",
+        "a firm handshake of respect",
+        "a tight rope around the waist"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "El guía le dio una palmada en la espalda.",
+        "targetWord": "una palmada en la espalda",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/18adc3cf80a59c1c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "el abrazo",
+    "sentence": "Al aterrizar, Vale corrió a darle un [[abrazo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a warm hug",
+      "options": [
+        "a warm hug",
+        "a loud scolding",
+        "a cold handshake",
+        "a small wrapped gift"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "Al aterrizar, Vale corrió a darle un abrazo.",
+        "targetWord": "abrazo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/13d7671ae4e2386b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "querer a medias",
+    "sentence": "Manu no sabe [[querer a medias]] a nadie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to love someone only halfway",
+      "options": [
+        "to love someone only halfway",
+        "to forget an old friend",
+        "to trust a stranger fast",
+        "to share food with others"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "Manu no sabe querer a medias a nadie.",
+        "targetWord": "querer a medias",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9791c02de03f5f52.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "el susto",
+    "sentence": "Después del [[susto]], a Manu le dio risa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sudden scare or fright",
+      "options": [
+        "a sudden scare or fright",
+        "a long peaceful nap",
+        "a delicious warm meal",
+        "a happy surprise gift"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "Después del susto, a Manu le dio risa.",
+        "targetWord": "susto",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb8d4aa8616a4c09.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "de frente",
+    "sentence": "Manu dice las cosas [[de frente]], sin rodeos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "openly and directly",
+      "options": [
+        "openly and directly",
+        "in a shy whisper",
+        "behind someone's back",
+        "with many polite lies"
+      ],
+      "audioClip": {
+        "storySlug": "la-mesa-no-perdona",
+        "storySource": "user",
+        "sentence": "Manu dice las cosas de frente, sin rodeos.",
+        "targetWord": "de frente",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a68eb67d402ee2f0.mp3"
+      }
+    }
+  }
+]

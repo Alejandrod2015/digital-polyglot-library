@@ -1,0 +1,486 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "habitación,techo,colchón,pie",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "habitación",
+     "answer": "a bedroom",
+     "options": [
+      "a bedroom",
+      "a ceiling",
+      "a mattress",
+      "a foot"
+     ]
+    },
+    {
+     "word": "techo",
+     "answer": "a ceiling",
+     "options": [
+      "a bedroom",
+      "a ceiling",
+      "a mattress",
+      "a foot"
+     ]
+    },
+    {
+     "word": "colchón",
+     "answer": "a mattress",
+     "options": [
+      "a bedroom",
+      "a ceiling",
+      "a mattress",
+      "a foot"
+     ]
+    },
+    {
+     "word": "pie",
+     "answer": "a foot",
+     "options": [
+      "a bedroom",
+      "a ceiling",
+      "a mattress",
+      "a foot"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piso compartido",
+  "sentence": "Elena vive en un [[piso compartido]] desde hace tres semanas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a flat shared with others",
+   "options": [
+    "a flat shared with others",
+    "a room in a hotel",
+    "a house of her own",
+    "a bed in a hostel"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Elena vive en un piso compartido desde hace tres semanas.",
+    "targetWord": "piso compartido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "por algo se empieza",
+  "sentence": "Marc le contesta que [[por algo se empieza]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "you have to start somewhere",
+   "options": [
+    "you have to start somewhere",
+    "it is far too late now",
+    "there is no point trying",
+    "it happens to everybody"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Marc le contesta que por algo se empieza.",
+    "targetWord": "por algo se empieza",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "me hacía falta",
+  "sentence": "Elena le da las gracias y dice que [[me hacía falta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I really needed it",
+   "options": [
+    "I really needed it",
+    "I had forgotten it",
+    "I did not expect it",
+    "I will think about it"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Elena le da las gracias y dice que me hacía falta.",
+    "targetWord": "me hacía falta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "me pierdo",
+  "sentence": "Elena dice que todavía [[me pierdo]] por toda la ciudad.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I get lost",
+   "options": [
+    "I get lost",
+    "I get bored",
+    "I get tired",
+    "I get around"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Elena dice que todavía me pierdo por toda la ciudad.",
+    "targetWord": "me pierdo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "anuncio",
+  "sentence": "Elena escribe un [[anuncio]] para un intercambio de idiomas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an advert",
+   "options": [
+    "an advert",
+    "a diary",
+    "a letter",
+    "a report"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Elena escribe un anuncio para un intercambio de idiomas.",
+    "targetWord": "anuncio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quedamos",
+  "sentence": "Marc propone que [[quedamos]] el sábado por la mañana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to meet up",
+   "options": [
+    "to meet up",
+    "to call again",
+    "to write back",
+    "to think it over"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Marc propone que quedamos el sábado por la mañana.",
+    "targetWord": "quedamos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bufanda",
+  "sentence": "Marc dice que lleva una [[bufanda]] roja para que lo vea.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a scarf",
+   "options": [
+    "a scarf",
+    "a hat",
+    "a jacket",
+    "a backpack"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Marc dice que lleva una bufanda roja para que lo vea.",
+    "targetWord": "bufanda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "conocer",
+  "sentence": "Elena dice que lo que busca es [[conocer]] gente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to meet people",
+   "options": [
+    "to meet people",
+    "to avoid people",
+    "to help people",
+    "to teach people"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Elena dice que lo que busca es conocer gente.",
+    "targetWord": "conocer",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "idiomas",
+  "sentence": "Elena publica un anuncio de intercambio de [[idiomas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "languages",
+   "options": [
+    "languages",
+    "flats",
+    "books",
+    "jobs"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Elena publica un anuncio de intercambio de idiomas.",
+    "targetWord": "idiomas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "desconocido",
+  "featured": false,
+  "sentence": "Suena el móvil y es un número [[desconocido]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "unknown",
+   "options": [
+    "unknown",
+    "wrong",
+    "busy",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Suena el móvil y es un número desconocido.",
+    "targetWord": "desconocido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "respuesta",
+  "featured": false,
+  "sentence": "Elena no esperaba una [[respuesta]] tan rápida.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an answer",
+   "options": [
+    "an answer",
+    "a favour",
+    "a mistake",
+    "a visit"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Elena no esperaba una respuesta tan rápida.",
+    "targetWord": "respuesta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nadie",
+  "featured": false,
+  "sentence": "Elena lleva tres semanas sin hablar con [[nadie]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nobody",
+   "options": [
+    "nobody",
+    "anybody",
+    "everybody",
+    "somebody"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Elena lleva tres semanas sin hablar con nadie.",
+    "targetWord": "nadie",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuenta",
+  "featured": false,
+  "sentence": "Elena dice que por teléfono no [[cuenta]] del todo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to count as real",
+   "options": [
+    "to count as real",
+    "to cost money",
+    "to take long",
+    "to sound clear"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Elena dice que por teléfono no cuenta del todo.",
+    "targetWord": "cuenta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vive",
+  "featured": false,
+  "sentence": "Elena [[vive]] en Barcelona desde hace tres semanas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to live",
+   "options": [
+    "to live",
+    "to work",
+    "to study",
+    "to travel"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Elena vive en Barcelona desde hace tres semanas.",
+    "targetWord": "vive",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "semanas",
+  "featured": false,
+  "sentence": "Estuve de vacaciones dos _____ en agosto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "semanas",
+   "options": [
+    "semanas",
+    "minutos",
+    "años",
+    "veces"
+   ],
+   "translation": "I was on holiday for two _____ in August.",
+   "optionTranslations": [
+    "weeks",
+    "minutes",
+    "years",
+    "times"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Estuve de vacaciones dos semanas en agosto.",
+    "targetWord": "semanas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "rápida",
+  "featured": false,
+  "sentence": "La moto es muy _____, llega antes que el coche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rápida",
+   "options": [
+    "rápida",
+    "lenta",
+    "cara",
+    "vieja"
+   ],
+   "translation": "The motorbike is very _____, it arrives before the car.",
+   "optionTranslations": [
+    "fast",
+    "slow",
+    "expensive",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "La moto es muy rápida, llega antes que el coche.",
+    "targetWord": "rápida",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "roja",
+  "featured": false,
+  "sentence": "Marc lleva una bufanda _____, del color de un tomate.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "roja",
+   "options": [
+    "roja",
+    "azul",
+    "blanca",
+    "gris"
+   ],
+   "translation": "Marc wears a _____ scarf, the colour of a tomato.",
+   "optionTranslations": [
+    "red",
+    "blue",
+    "white",
+    "grey"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Marc lleva una bufanda roja, del color de un tomate.",
+    "targetWord": "roja",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pocos",
+  "featured": false,
+  "sentence": "Quedan _____ días, casi no hay tiempo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pocos",
+   "options": [
+    "pocos",
+    "muchos",
+    "todos",
+    "otros"
+   ],
+   "translation": "There are _____ days left, there is hardly any time.",
+   "optionTranslations": [
+    "few",
+    "many",
+    "all",
+    "other"
+   ],
+   "audioClip": {
+    "storySlug": "por-algo-se-empieza",
+    "storySource": "user",
+    "sentence": "Quedan pocos días, casi no hay tiempo.",
+    "targetWord": "pocos",
+    "language": "spanish"
+   }
+  }
+ }
+]

@@ -1,0 +1,463 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "das Plaste",
+    "sentence": "Sie schleppen die Getränke in einer alten [[Plaste]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a plastic bag",
+      "options": [
+        "a plastic bag",
+        "a glass jar",
+        "a wooden box",
+        "a paper cup"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Sie schleppen die Getränke in einer alten Plaste.",
+        "targetWord": "Plaste",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4dbeb0fe450c57c9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Bank",
+    "sentence": "Die vier lassen sich auf eine alte [[Bank]] am Wasser fallen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bench",
+      "options": [
+        "a bench",
+        "a bridge",
+        "a boat",
+        "a tower"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Die vier lassen sich auf eine alte Bank am Wasser fallen.",
+        "targetWord": "Bank",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5424097ecb7f5381.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Gegend",
+    "sentence": "Die ganze [[Gegend]] am Kanal fühlt sich vertraut an.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the area",
+      "options": [
+        "the area",
+        "the answer",
+        "the season",
+        "the meeting"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Die ganze Gegend am Kanal fühlt sich vertraut an.",
+        "targetWord": "Gegend",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/439a3822a522effa.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Abendsonne",
+    "sentence": "Die letzte [[Abendsonne]] legt sich golden über das Wasser.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the evening sun",
+      "options": [
+        "the evening sun",
+        "the morning fog",
+        "the night sky",
+        "the cold rain"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Die letzte Abendsonne legt sich golden über das Wasser.",
+        "targetWord": "Abendsonne",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7cbc4c72d970a961.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "anstoßen",
+    "sentence": "Alle heben ihre Flaschen zum [[Anstoßen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to clink glasses",
+      "options": [
+        "to clink glasses",
+        "to pour drinks",
+        "to wash dishes",
+        "to open bottles"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Alle heben ihre Flaschen zum Anstoßen.",
+        "targetWord": "Anstoßen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e96f61e6de24bac7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gewohnt",
+    "sentence": "Die ganze Gegend fühlt sich vollkommen [[gewohnt]] an.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "familiar",
+      "options": [
+        "familiar",
+        "totally strange",
+        "far too loud",
+        "cold and empty"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Die ganze Gegend fühlt sich vollkommen gewohnt an.",
+        "targetWord": "gewohnt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ce7880e80db3ff9c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sinkt",
+    "sentence": "Am Abend _____ die Sonne langsam hinter die Berge.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sinkt",
+      "options": [
+        "sinkt",
+        "steigt",
+        "tanzt",
+        "wartet"
+      ],
+      "translation": "In the evening the sun slowly _____ behind the mountains.",
+      "optionTranslations": [
+        "sinks",
+        "rises",
+        "dances",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Am Abend sinkt die Sonne langsam hinter die Berge.",
+        "targetWord": "sinkt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c0c4aa74d8e1b34.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "anzünden",
+    "sentence": "Es ist kalt, wir sollten das Feuer _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "anzünden",
+      "options": [
+        "anzünden",
+        "löschen",
+        "tragen",
+        "kaufen"
+      ],
+      "translation": "It is cold, we should _____ the fire.",
+      "optionTranslations": [
+        "light",
+        "put out",
+        "carry",
+        "buy"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Es ist kalt, wir sollten das Feuer anzünden.",
+        "targetWord": "anzünden",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3dfb0081af0ccce1.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "quatschen",
+    "sentence": "Die zwei Nachbarinnen _____ gern über den Gartenzaun.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "quatschen",
+      "options": [
+        "quatschen",
+        "streiten",
+        "schweigen",
+        "rennen"
+      ],
+      "translation": "The two neighbors like to _____ over the garden fence.",
+      "optionTranslations": [
+        "natter",
+        "argue",
+        "stay silent",
+        "run"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Die zwei Nachbarinnen quatschen gern über den Gartenzaun.",
+        "targetWord": "quatschen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5d07eec20366def.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "eingelebt",
+    "sentence": "Nach Jahren hat sie sich hier voll _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "eingelebt",
+      "options": [
+        "eingelebt",
+        "verlaufen",
+        "verirrt",
+        "erkältet"
+      ],
+      "translation": "After years she has fully _____ here.",
+      "optionTranslations": [
+        "settled in",
+        "got lost",
+        "gone astray",
+        "caught a cold"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Nach Jahren hat sie sich hier voll eingelebt.",
+        "targetWord": "eingelebt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dc3c95059a6ae397.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "freilich",
+    "sentence": "Das ist nach dem langen Tag genau richtig, [[freilich]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "of course",
+      "options": [
+        "of course",
+        "not really",
+        "too late",
+        "by chance"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Das ist nach dem langen Tag genau richtig, freilich.",
+        "targetWord": "freilich",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4996ea6decca8541.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nu klar",
+    "sentence": "Das Bier vom Kiosk schmeckt am besten, nu [[klar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sure thing",
+      "options": [
+        "sure thing",
+        "no idea",
+        "not yet",
+        "who knows"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Das Bier vom Kiosk schmeckt am besten, nu klar.",
+        "targetWord": "klar",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a6a4c7bb66b02d06.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Seele baumeln lassen",
+    "sentence": "Am Wasser lassen alle einfach die Seele [[baumeln]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fully relax",
+      "options": [
+        "to fully relax",
+        "to work hard",
+        "to rush off",
+        "to worry more"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Am Wasser lassen alle einfach die Seele baumeln.",
+        "targetWord": "baumeln",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8b9674f3994c451.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "zur Ruhe kommen",
+    "sentence": "Nach dem langen Tag kommen alle endlich zur [[Ruhe]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come to rest",
+      "options": [
+        "to come to rest",
+        "to start again",
+        "to speak up",
+        "to break down"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Nach dem langen Tag kommen alle endlich zur Ruhe.",
+        "targetWord": "Ruhe",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9eebd428b53448d3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mit dabei sein",
+    "sentence": "Schön, dass du bei sowas immer mit [[dabei]] bist.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be part of it",
+      "options": [
+        "to be part of it",
+        "to stay away",
+        "to give up",
+        "to fall behind"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Schön, dass du bei sowas immer mit dabei bist.",
+        "targetWord": "dabei",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4cf79c1237c31c1e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "lauschig",
+    "sentence": "Mit Kerzen und Decken wird die Ecke richtig gemütlich und _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lauschig",
+      "options": [
+        "lauschig",
+        "zugig",
+        "laut",
+        "leer"
+      ],
+      "translation": "With candles and blankets the corner becomes really snug and _____.",
+      "optionTranslations": [
+        "cosy",
+        "draughty",
+        "loud",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "feierabend-am-kanal",
+        "storySource": "user",
+        "sentence": "Mit Kerzen und Decken wird die Ecke richtig gemütlich und lauschig.",
+        "targetWord": "lauschig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f6ec43277aad62c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "Feierabendbier,Kaufhalle,Steg,Feuerschale",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "Feierabendbier",
+          "answer": "an after-work beer",
+          "options": [
+            "an after-work beer",
+            "a supermarket",
+            "a small jetty",
+            "a fire bowl"
+          ]
+        },
+        {
+          "word": "Kaufhalle",
+          "answer": "a supermarket",
+          "options": [
+            "an after-work beer",
+            "a supermarket",
+            "a small jetty",
+            "a fire bowl"
+          ]
+        },
+        {
+          "word": "Steg",
+          "answer": "a small jetty",
+          "options": [
+            "an after-work beer",
+            "a supermarket",
+            "a small jetty",
+            "a fire bowl"
+          ]
+        },
+        {
+          "word": "Feuerschale",
+          "answer": "a fire bowl",
+          "options": [
+            "an after-work beer",
+            "a supermarket",
+            "a small jetty",
+            "a fire bowl"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

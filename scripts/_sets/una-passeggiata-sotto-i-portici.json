@@ -1,0 +1,569 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "cielo,pioggia,sole,collina",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "cielo",
+     "answer": "sky",
+     "options": [
+      "sky",
+      "rain",
+      "sun",
+      "hill"
+     ]
+    },
+    {
+     "word": "pioggia",
+     "answer": "rain",
+     "options": [
+      "sky",
+      "rain",
+      "sun",
+      "hill"
+     ]
+    },
+    {
+     "word": "sole",
+     "answer": "sun",
+     "options": [
+      "sky",
+      "rain",
+      "sun",
+      "hill"
+     ]
+    },
+    {
+     "word": "collina",
+     "answer": "hill",
+     "options": [
+      "sky",
+      "rain",
+      "sun",
+      "hill"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "camminano",
+  "sentence": "I due amici [[camminano]] sotto i portici.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "walk",
+   "options": [
+    "walk",
+    "run",
+    "rest",
+    "dance"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "I due amici camminano sotto i portici.",
+    "targetWord": "camminano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "cade",
+  "sentence": "La pioggia [[cade]] forte sulla città.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "falls",
+   "options": [
+    "falls",
+    "stops",
+    "rises",
+    "shines"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "La pioggia cade forte sulla città.",
+    "targetWord": "cade",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "salgono",
+  "sentence": "I due amici [[salgono]] una collina piano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "climb",
+   "options": [
+    "climb",
+    "cross",
+    "leave",
+    "count"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "I due amici salgono una collina piano.",
+    "targetWord": "salgono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "trovano",
+  "sentence": "In cima [[trovano]] una chiesa antica.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "find",
+   "options": [
+    "find",
+    "build",
+    "paint",
+    "lose"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "In cima trovano una chiesa antica.",
+    "targetWord": "trovano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "escono",
+  "sentence": "Elena e Paolo [[escono]] presto di casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "go out",
+   "options": [
+    "go out",
+    "come back",
+    "wake up",
+    "sit down"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "Elena e Paolo escono presto di casa.",
+    "targetWord": "escono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "coprono",
+  "sentence": "I portici [[coprono]] tutta la strada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cover",
+   "options": [
+    "cover",
+    "cross",
+    "open",
+    "close"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "I portici coprono tutta la strada.",
+    "targetWord": "coprono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "restano",
+  "sentence": "Elena e Paolo [[restano]] asciutti e tranquilli.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stay",
+   "options": [
+    "stay",
+    "arrive",
+    "sing",
+    "fall"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "Elena e Paolo restano asciutti e tranquilli.",
+    "targetWord": "restano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "asciutti",
+  "sentence": "Sotto i portici restano [[asciutti]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dry",
+   "options": [
+    "dry",
+    "wet",
+    "cold",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "Sotto i portici restano asciutti.",
+    "targetWord": "asciutti",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "stanche",
+  "sentence": "Le gambe di Elena sono [[stanche]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tired",
+   "options": [
+    "tired",
+    "strong",
+    "dry",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "Le gambe di Elena sono stanche.",
+    "targetWord": "stanche",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "finisce",
+  "sentence": "Poi il temporale [[finisce]] e torna il sole.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ends",
+   "options": [
+    "ends",
+    "begins",
+    "grows",
+    "returns"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "Poi il temporale finisce e torna il sole.",
+    "targetWord": "finisce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "presto",
+  "sentence": "Elena e Paolo escono [[presto]] la mattina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "early",
+   "options": [
+    "early",
+    "late",
+    "alone",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "Elena e Paolo escono presto la mattina.",
+    "targetWord": "presto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "sotto",
+  "sentence": "Camminano [[sotto]] i lunghi portici.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "under",
+   "options": [
+    "under",
+    "over",
+    "near",
+    "behind"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "Camminano sotto i lunghi portici.",
+    "targetWord": "sotto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "mattina",
+  "sentence": "La ____ è fresca e grigia.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mattina",
+   "options": [
+    "mattina",
+    "collina",
+    "chiesa",
+    "strada"
+   ],
+   "translation": "The ____ is cool and grey.",
+   "optionTranslations": [
+    "morning",
+    "hill",
+    "church",
+    "street"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "La mattina è fresca e grigia.",
+    "targetWord": "mattina",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "strada",
+  "sentence": "I portici coprono tutta la ____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "strada",
+   "options": [
+    "strada",
+    "cima",
+    "gamba",
+    "chiesa"
+   ],
+   "translation": "The arcades cover the whole ____.",
+   "optionTranslations": [
+    "street",
+    "top",
+    "leg",
+    "church"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "I portici coprono tutta la strada.",
+    "targetWord": "strada",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "chiesa",
+  "sentence": "In cima trovano una ____ antica.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chiesa",
+   "options": [
+    "chiesa",
+    "collina",
+    "strada",
+    "cima"
+   ],
+   "translation": "At the top they find an old ____.",
+   "optionTranslations": [
+    "church",
+    "hill",
+    "street",
+    "top"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "In cima trovano una chiesa antica.",
+    "targetWord": "chiesa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "ombrelli",
+  "sentence": "Il signore offre due ____ agli amici.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ombrelli",
+   "options": [
+    "ombrelli",
+    "tetti",
+    "gambe",
+    "colline"
+   ],
+   "translation": "The gentleman offers two ____ to the friends.",
+   "optionTranslations": [
+    "umbrellas",
+    "roofs",
+    "legs",
+    "hills"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "Il signore offre due ombrelli agli amici.",
+    "targetWord": "ombrelli",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "tetti",
+  "sentence": "Paolo indica i ____ rossi in basso.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tetti",
+   "options": [
+    "tetti",
+    "ombrelli",
+    "gambe",
+    "colline"
+   ],
+   "translation": "Paolo points at the red ____ below.",
+   "optionTranslations": [
+    "roofs",
+    "umbrellas",
+    "legs",
+    "hills"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "Paolo indica i tetti rossi in basso.",
+    "targetWord": "tetti",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "gambe",
+  "sentence": "Le ____ di Elena sono stanche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gambe",
+   "options": [
+    "gambe",
+    "tetti",
+    "ombrelli",
+    "chiese"
+   ],
+   "translation": "Elena's ____ are tired.",
+   "optionTranslations": [
+    "legs",
+    "roofs",
+    "umbrellas",
+    "churches"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "Le gambe di Elena sono stanche.",
+    "targetWord": "gambe",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "cima",
+  "sentence": "In ____ la vista è aperta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cima",
+   "options": [
+    "cima",
+    "strada",
+    "chiesa",
+    "collina"
+   ],
+   "translation": "At the ____ the view is open.",
+   "optionTranslations": [
+    "top",
+    "street",
+    "church",
+    "hill"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "In cima la vista è aperta.",
+    "targetWord": "cima",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "signore",
+  "sentence": "Un ____ gentile offre due ombrelli.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "signore",
+   "options": [
+    "signore",
+    "tetto",
+    "sole",
+    "cielo"
+   ],
+   "translation": "A kind ____ offers two umbrellas.",
+   "optionTranslations": [
+    "gentleman",
+    "roof",
+    "sun",
+    "sky"
+   ],
+   "audioClip": {
+    "storySlug": "una-passeggiata-sotto-i-portici",
+    "storySource": "user",
+    "sentence": "Un signore gentile offre due ombrelli.",
+    "targetWord": "signore",
+    "language": "italian"
+   }
+  }
+ }
+]

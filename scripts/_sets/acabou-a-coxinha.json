@@ -1,0 +1,538 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "bandeja,pano,ficha,forno",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "bandeja",
+          "answer": "a tray",
+          "options": [
+            "a tray",
+            "a cloth",
+            "a token",
+            "an oven"
+          ]
+        },
+        {
+          "word": "pano",
+          "answer": "a cloth",
+          "options": [
+            "a tray",
+            "a cloth",
+            "a token",
+            "an oven"
+          ]
+        },
+        {
+          "word": "ficha",
+          "answer": "a token",
+          "options": [
+            "a tray",
+            "a cloth",
+            "a token",
+            "an oven"
+          ]
+        },
+        {
+          "word": "forno",
+          "answer": "an oven",
+          "options": [
+            "a tray",
+            "a cloth",
+            "a token",
+            "an oven"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fila",
+    "sentence": "A [[fila]] da padaria dobra a esquina na hora do almoço.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a queue",
+      "options": [
+        "a queue",
+        "a road",
+        "a shop",
+        "a bus"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "A fila da padaria dobra a esquina na hora do almoço.",
+        "targetWord": "fila",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/207a7c76e7fa0cbe.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cheiro",
+    "sentence": "O [[cheiro]] de fritura sai da bandeja de vidro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a smell",
+      "options": [
+        "a smell",
+        "a noise",
+        "a colour",
+        "a taste"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "O cheiro de fritura sai da bandeja de vidro.",
+        "targetWord": "cheiro",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/060118d7744e23d1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pedido",
+    "sentence": "Ele decide o [[pedido]] enquanto espera na fila.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an order",
+      "options": [
+        "an order",
+        "a price",
+        "a name",
+        "a seat"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "Ele decide o pedido enquanto espera na fila.",
+        "targetWord": "pedido",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/559c4ad603663d46.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "repetir",
+    "sentence": "Ele [[repete]] as palavras baixinho antes de pedir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to repeat",
+      "options": [
+        "to repeat",
+        "to forget",
+        "to write",
+        "to shout"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "Ele repete as palavras baixinho antes de pedir.",
+        "targetWord": "repete",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a3018a343442246.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oferecer",
+    "sentence": "Ela [[oferece]] um pão de batata que sai do forno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to offer",
+      "options": [
+        "to offer",
+        "to refuse",
+        "to hide",
+        "to break"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "Ela oferece um pão de batata que sai do forno.",
+        "targetWord": "oferece",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/edf96ab66f258702.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "coxinha",
+    "sentence": "A [[coxinha]] fica para amanhã.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fried chicken snack",
+      "options": [
+        "a fried chicken snack",
+        "a sweet cake",
+        "a cold drink",
+        "a bread roll"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "A coxinha fica para amanhã.",
+        "targetWord": "coxinha",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d595a218a970710.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "limpa",
+    "sentence": "A moça _____ o vidro do balcão com um pano.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "limpa",
+      "options": [
+        "limpa",
+        "suja",
+        "abre",
+        "paga"
+      ],
+      "translation": "The young woman _____ the counter glass with a cloth.",
+      "optionTranslations": [
+        "cleans",
+        "dirties",
+        "opens",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "A moça limpa o vidro do balcão com um pano.",
+        "targetWord": "limpa",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/293f7758a3a688bb.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "baixinho",
+    "sentence": "Ele não quer que ninguém escute, então fala _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "baixinho",
+      "options": [
+        "baixinho",
+        "alto",
+        "rápido",
+        "longe"
+      ],
+      "translation": "He does not want anyone to hear, so he speaks _____.",
+      "optionTranslations": [
+        "softly",
+        "loudly",
+        "fast",
+        "far"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "Ele não quer que ninguém escute, então fala baixinho.",
+        "targetWord": "baixinho",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ead071b536d10d4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pagar",
+    "sentence": "Ele [[paga]] na caixa e volta com a ficha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pay",
+      "options": [
+        "to pay",
+        "to sell",
+        "to count",
+        "to owe"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "Ele paga na caixa e volta com a ficha.",
+        "targetWord": "paga",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4bea2dc4ab61ef60.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "padaria",
+    "sentence": "A fila da [[padaria]] dobra a esquina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bakery",
+      "options": [
+        "a bakery",
+        "a bank",
+        "a market",
+        "a pharmacy"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "A fila da padaria dobra a esquina.",
+        "targetWord": "padaria",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c84b9a8af9901708.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "almoço",
+    "sentence": "A fila dobra a esquina na hora do [[almoço]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lunch",
+      "options": [
+        "lunch",
+        "breakfast",
+        "dinner",
+        "a break"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "A fila dobra a esquina na hora do almoço.",
+        "targetWord": "almoço",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8aa50d79e4d0ad3a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fritura",
+    "sentence": "O cheiro de [[fritura]] sai do balcão.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fried food",
+      "options": [
+        "fried food",
+        "fresh bread",
+        "hot coffee",
+        "cold milk"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "O cheiro de fritura sai do balcão.",
+        "targetWord": "fritura",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4188fec8a6a82bcd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "balcão",
+    "sentence": "O cheiro sai da bandeja de vidro do [[balcão]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a counter",
+      "options": [
+        "a counter",
+        "a table",
+        "a shelf",
+        "a door"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "O cheiro sai da bandeja de vidro do balcão.",
+        "targetWord": "balcão",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c858f7cf1b16fccf.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "moça",
+    "sentence": "A [[moça]] do balcão limpa o vidro vazio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a young woman",
+      "options": [
+        "a young woman",
+        "an older man",
+        "a child",
+        "a driver"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "A moça do balcão limpa o vidro vazio.",
+        "targetWord": "moça",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3683d5bf098e8abf.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caixa",
+    "sentence": "Ele paga na [[caixa]] e volta com a ficha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the till",
+      "options": [
+        "the till",
+        "the kitchen",
+        "the door",
+        "the street"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "Ele paga na caixa e volta com a ficha.",
+        "targetWord": "caixa",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4bea2dc4ab61ef60.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gosto",
+    "sentence": "O pão de batata não tem [[gosto]] de frango.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a taste",
+      "options": [
+        "a taste",
+        "a smell",
+        "a shape",
+        "a price"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "O pão de batata não tem gosto de frango.",
+        "targetWord": "gosto",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/11fa92fccdd6fa5e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frango",
+    "sentence": "O pão de batata não tem gosto de [[frango]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "chicken",
+      "options": [
+        "chicken",
+        "fish",
+        "cheese",
+        "beef"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "O pão de batata não tem gosto de frango.",
+        "targetWord": "frango",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/11fa92fccdd6fa5e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "batata",
+    "sentence": "Ela oferece um pão de [[batata]] quentinho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "potato",
+      "options": [
+        "potato",
+        "tomato",
+        "onion",
+        "carrot"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "Ela oferece um pão de batata quentinho.",
+        "targetWord": "batata",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a96fc2cba9baebd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comer",
+    "sentence": "Ele [[come]] tudo mesmo assim.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to eat",
+      "options": [
+        "to eat",
+        "to drink",
+        "to pay",
+        "to leave"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "Ele come tudo mesmo assim.",
+        "targetWord": "come",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c2d83e904b074ad.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amanhã",
+    "sentence": "A coxinha fica para [[amanhã]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tomorrow",
+      "options": [
+        "tomorrow",
+        "yesterday",
+        "tonight",
+        "always"
+      ],
+      "audioClip": {
+        "storySlug": "acabou-a-coxinha",
+        "storySource": "user",
+        "sentence": "A coxinha fica para amanhã.",
+        "targetWord": "amanhã",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d595a218a970710.mp3"
+      }
+    },
+    "featured": false
+  }
+]

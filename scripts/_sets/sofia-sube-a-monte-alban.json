@@ -1,0 +1,785 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "ruina",
+    "sentence": "El sol brilla sobre las [[ruinas]] antiguas.",
+    "payload": {
+      "answer": "old ruins",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "old ruins",
+        "tall towers",
+        "green fields",
+        "stone roads"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El sol brilla sobre las ruinas antiguas.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "ruinas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c2f9882d324d810e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brillar",
+    "sentence": "El sol [[brilla]] sobre las piedras.",
+    "payload": {
+      "answer": "to shine",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to shine",
+        "to burn",
+        "to fall",
+        "to grow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El sol brilla sobre las piedras.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "brilla",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a1a2eea2bcc6d1e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "subir",
+    "sentence": "Ella [[sube]] por el camino de piedra.",
+    "payload": {
+      "answer": "to climb up",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to climb up",
+        "to run",
+        "to rest",
+        "to return"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella sube por el camino de piedra.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "sube",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4444004dd366aa79.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guía",
+    "sentence": "Un [[guía]] joven muestra el lugar.",
+    "payload": {
+      "answer": "guide",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "guide",
+        "cook",
+        "driver",
+        "farmer"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Un guía joven muestra el lugar.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "guía",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f3605cf3f57eafe.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "antiguo",
+    "sentence": "Es una ciudad muy [[antigua]].",
+    "payload": {
+      "answer": "ancient",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "ancient",
+        "modern",
+        "empty",
+        "noisy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Es una ciudad muy antigua.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "antigua",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/56985223e1002570.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pirámide",
+    "sentence": "Las [[pirámides]] son grandes y altas.",
+    "payload": {
+      "answer": "pyramid",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "pyramid",
+        "bridge",
+        "market",
+        "garden"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las pirámides son grandes y altas.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "pirámides",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9606bc0b4cdc38dd.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "explicar",
+    "sentence": "El guía [[explica]] la historia del lugar.",
+    "payload": {
+      "answer": "to explain",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to explain",
+        "to hide",
+        "to sell",
+        "to open"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El guía explica la historia del lugar.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "explica",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0735732648459013.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escuchar",
+    "sentence": "Ella [[escucha]] con mucha atención.",
+    "payload": {
+      "answer": "to listen",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to listen",
+        "to speak",
+        "to sleep",
+        "to walk"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella escucha con mucha atención.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "escucha",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a1fb9343be012472.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "templo",
+    "sentence": "La gente reza dentro del _____ antiguo.",
+    "payload": {
+      "answer": "templo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "templo",
+        "río",
+        "árbol",
+        "barco"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La gente reza dentro del templo antiguo.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "templo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/31e33cca31d04d96.mp3"
+      },
+      "translation": "People pray inside the ancient _____.",
+      "optionTranslations": [
+        "temple",
+        "river",
+        "tree",
+        "boat"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "montaña",
+    "sentence": "Subimos a la _____ más alta para ver el cielo.",
+    "payload": {
+      "answer": "montaña",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "montaña",
+        "silla",
+        "mesa",
+        "puerta"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Subimos a la montaña más alta para ver el cielo.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "montaña",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7da5b18727f2cf28.mp3"
+      },
+      "translation": "We climb the highest _____ to see the sky.",
+      "optionTranslations": [
+        "mountain",
+        "chair",
+        "table",
+        "door"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saludar",
+    "sentence": "Él [[saluda]] a la gente con la mano.",
+    "payload": {
+      "answer": "to greet",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to greet",
+        "to push",
+        "to call",
+        "to follow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él saluda a la gente con la mano.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "saluda",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1b4d52abb96c7063.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "silencioso",
+    "sentence": "Las pirámides son grandes y [[silenciosas]].",
+    "payload": {
+      "answer": "silent",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "silent",
+        "bright",
+        "dirty",
+        "heavy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las pirámides son grandes y silenciosas.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "silenciosas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/91704e09fd45d7aa.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "historia",
+    "sentence": "Aprendemos la [[historia]] de la ciudad.",
+    "payload": {
+      "answer": "history",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "history",
+        "picture",
+        "song",
+        "map"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Aprendemos la historia de la ciudad.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "historia",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8bdafb741370b81a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "orgullo",
+    "sentence": "El guía habla con mucho [[orgullo]].",
+    "payload": {
+      "answer": "pride",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "pride",
+        "fear",
+        "hunger",
+        "sleep"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El guía habla con mucho orgullo.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "orgullo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1bdaff7a51fb085e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enorme",
+    "sentence": "Ese templo es [[enorme]] y alto.",
+    "payload": {
+      "answer": "huge",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "huge",
+        "tiny",
+        "empty",
+        "cheap"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ese templo es enorme y alto.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "enorme",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/48a18fbf4426a4bb.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "viento",
+    "sentence": "Hoy hace mucho _____ y vuelan las hojas.",
+    "payload": {
+      "answer": "viento",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "viento",
+        "sol",
+        "polvo",
+        "calor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hoy hace mucho viento y vuelan las hojas.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "viento",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c25ec1cf34797790.mp3"
+      },
+      "translation": "Today there is a lot of _____ and the leaves fly.",
+      "optionTranslations": [
+        "wind",
+        "sun",
+        "dust",
+        "heat"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sopla",
+    "sentence": "El aire frío _____ fuerte en la montaña.",
+    "payload": {
+      "answer": "sopla",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "sopla",
+        "corre",
+        "brilla",
+        "cae"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El aire frío sopla fuerte en la montaña.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "sopla",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8bb083faf0994875.mp3"
+      },
+      "translation": "The cold air _____ hard on the mountain.",
+      "optionTranslations": [
+        "blows",
+        "runs",
+        "shines",
+        "falls"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "miedo",
+    "sentence": "Ella grita de _____ cuando ve la araña.",
+    "payload": {
+      "answer": "miedo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "miedo",
+        "alegría",
+        "hambre",
+        "sueño"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella grita de miedo cuando ve la araña.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "miedo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32125d996c9b861e.mp3"
+      },
+      "translation": "She screams with _____ when she sees the spider.",
+      "optionTranslations": [
+        "fear",
+        "joy",
+        "hunger",
+        "sleepiness"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "altura",
+    "sentence": "Desde esta _____ se ve todo el valle.",
+    "payload": {
+      "answer": "altura",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "altura",
+        "esquina",
+        "cocina",
+        "tienda"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Desde esta altura se ve todo el valle.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "altura",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef7fd0e295f2b0a2.mp3"
+      },
+      "translation": "From this _____ you can see the whole valley.",
+      "optionTranslations": [
+        "height",
+        "corner",
+        "kitchen",
+        "shop"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "valle",
+    "sentence": "El río corre por el _____ entre las montañas.",
+    "payload": {
+      "answer": "valle",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "valle",
+        "techo",
+        "muro",
+        "barco"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El río corre por el valle entre las montañas.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "valle",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/78426524c71a7148.mp3"
+      },
+      "translation": "The river runs through the _____ between the mountains.",
+      "optionTranslations": [
+        "valley",
+        "roof",
+        "wall",
+        "boat"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "descansar",
+    "sentence": "Estoy muy cansada y quiero _____ un rato.",
+    "payload": {
+      "answer": "descansar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "descansar",
+        "correr",
+        "subir",
+        "gritar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Estoy muy cansada y quiero descansar un rato.",
+        "storySlug": "sofia-sube-a-monte-alban",
+        "targetWord": "descansar",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c13ae9345297b6a2.mp3"
+      },
+      "translation": "I am very tired and want to _____ for a while.",
+      "optionTranslations": [
+        "rest",
+        "run",
+        "climb",
+        "shout"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "sol,piedra,mano,mapa",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "sol",
+          "answer": "sun",
+          "options": [
+            "sun",
+            "stone",
+            "hand",
+            "map"
+          ]
+        },
+        {
+          "word": "piedra",
+          "answer": "stone",
+          "options": [
+            "sun",
+            "stone",
+            "hand",
+            "map"
+          ]
+        },
+        {
+          "word": "mano",
+          "answer": "hand",
+          "options": [
+            "sun",
+            "stone",
+            "hand",
+            "map"
+          ]
+        },
+        {
+          "word": "mapa",
+          "answer": "map",
+          "options": [
+            "sun",
+            "stone",
+            "hand",
+            "map"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Toño y Sofía caminan [[despacio]] entre los templos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slowly",
+      "options": [
+        "slowly",
+        "quickly",
+        "loudly",
+        "again"
+      ],
+      "audioClip": {
+        "storySlug": "sofia-sube-a-monte-alban",
+        "storySource": "user",
+        "sentence": "Toño y Sofía caminan despacio entre los templos.",
+        "targetWord": "despacio",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aabb8bcdddf31f3b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "roca",
+    "sentence": "Sofía se sienta sobre una [[roca]] caliente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rock",
+      "options": [
+        "a rock",
+        "a cloud",
+        "a lamp",
+        "a song"
+      ],
+      "audioClip": {
+        "storySlug": "sofia-sube-a-monte-alban",
+        "storySource": "user",
+        "sentence": "Sofía se sienta sobre una roca caliente.",
+        "targetWord": "roca",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b4ee7a2370d5a1a1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abuelo",
+    "sentence": "Los [[abuelos]] de Toño viven cerca de aquí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "grandparents",
+      "options": [
+        "grandparents",
+        "windows",
+        "gardens",
+        "letters"
+      ],
+      "audioClip": {
+        "storySlug": "sofia-sube-a-monte-alban",
+        "storySource": "user",
+        "sentence": "Los abuelos de Toño viven cerca de aquí.",
+        "targetWord": "abuelos",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa4dbc669ce2d141.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agradecer",
+    "sentence": "Sofía le [[agradece]] a Toño por todo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to thank",
+      "options": [
+        "to thank",
+        "to close",
+        "to wash",
+        "to jump"
+      ],
+      "audioClip": {
+        "storySlug": "sofia-sube-a-monte-alban",
+        "storySource": "user",
+        "sentence": "Sofía le agradece a Toño por todo.",
+        "targetWord": "agradece",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/433e8a94077ab659.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "joven",
+    "sentence": "Toño es un guía muy [[joven]] y amable.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "young",
+      "options": [
+        "young",
+        "cold",
+        "empty",
+        "round"
+      ],
+      "audioClip": {
+        "storySlug": "sofia-sube-a-monte-alban",
+        "storySource": "user",
+        "sentence": "Toño es un guía muy joven y amable.",
+        "targetWord": "joven",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a21c972e78fc7cc5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paseo",
+    "sentence": "A Sofía le gusta el [[paseo]] por Monte Albán.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a walk",
+      "options": [
+        "a walk",
+        "a spoon",
+        "a cloud",
+        "a key"
+      ],
+      "audioClip": {
+        "storySlug": "sofia-sube-a-monte-alban",
+        "storySource": "user",
+        "sentence": "A Sofía le gusta el paseo por Monte Albán.",
+        "targetWord": "paseo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/776e8a08a91120c0.mp3"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,486 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "banco,plaza,puerta,libro",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "banco",
+     "answer": "a bench",
+     "options": [
+      "a bench",
+      "a square",
+      "a door",
+      "a book"
+     ]
+    },
+    {
+     "word": "plaza",
+     "answer": "a square",
+     "options": [
+      "a bench",
+      "a square",
+      "a door",
+      "a book"
+     ]
+    },
+    {
+     "word": "puerta",
+     "answer": "a door",
+     "options": [
+      "a bench",
+      "a square",
+      "a door",
+      "a book"
+     ]
+    },
+    {
+     "word": "libro",
+     "answer": "a book",
+     "options": [
+      "a bench",
+      "a square",
+      "a door",
+      "a book"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "media mañana",
+  "sentence": "La plaza está llena de gente a [[media mañana]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mid morning",
+   "options": [
+    "mid morning",
+    "late at night",
+    "just after lunch",
+    "before sunrise"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "La plaza está llena de gente a media mañana.",
+    "targetWord": "media mañana",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "con leche",
+  "sentence": "Marc ha pedido dos cafés [[con leche]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with milk",
+   "options": [
+    "with milk",
+    "with sugar",
+    "with ice",
+    "with lemon"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "Marc ha pedido dos cafés con leche.",
+    "targetWord": "con leche",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "detalle",
+  "sentence": "Elena le agradece los cafés y le dice: qué [[detalle]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a kind gesture",
+   "options": [
+    "a kind gesture",
+    "a small mistake",
+    "a good excuse",
+    "a long wait"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "Elena le agradece los cafés y le dice: qué detalle.",
+    "targetWord": "detalle",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aplicación",
+  "sentence": "Marc aprendió casi todo el inglés con una [[aplicación]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a phone app",
+   "options": [
+    "a phone app",
+    "a night class",
+    "an old textbook",
+    "a private teacher"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "Marc aprendió casi todo el inglés con una aplicación.",
+    "targetWord": "aplicación",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "empresa",
+  "sentence": "Elena vino a trabajar a una [[empresa]] de libros.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a company",
+   "options": [
+    "a company",
+    "a library",
+    "a school",
+    "a bookshop"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "Elena vino a trabajar a una empresa de libros.",
+    "targetWord": "empresa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "callados",
+  "sentence": "Los dos se quedan [[callados]] un momento.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "silent",
+   "options": [
+    "silent",
+    "seated",
+    "standing",
+    "asleep"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "Los dos se quedan callados un momento.",
+    "targetWord": "callados",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "desaparece",
+  "sentence": "La vergüenza de los primeros minutos [[desaparece]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to disappear",
+   "options": [
+    "to disappear",
+    "to grow",
+    "to return",
+    "to spread"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "La vergüenza de los primeros minutos desaparece.",
+    "targetWord": "desaparece",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "enseñe",
+  "sentence": "Marc le propone que le [[enseñe]] su Barcelona mañana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to show around",
+   "options": [
+    "to show around",
+    "to write about",
+    "to ask about",
+    "to pay for"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "Marc le propone que le enseñe su Barcelona mañana.",
+    "targetWord": "enseñe",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pueblo",
+  "sentence": "Hablan del [[pueblo]] de Elena y de por qué vino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a small town",
+   "options": [
+    "a small town",
+    "a big city",
+    "a whole country",
+    "a wide region"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "Hablan del pueblo de Elena y de por qué vino.",
+    "targetWord": "pueblo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guste",
+  "featured": false,
+  "sentence": "Marc espera que a Elena le [[guste]] el café con leche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to like",
+   "options": [
+    "to like",
+    "to finish",
+    "to order",
+    "to share"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "Marc espera que a Elena le guste el café con leche.",
+    "targetWord": "guste",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aprendí",
+  "featured": false,
+  "sentence": "Marc dice que [[aprendí]] casi todo con el móvil.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to learn",
+   "options": [
+    "to learn",
+    "to teach",
+    "to copy",
+    "to forget"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "Marc dice que aprendí casi todo con el móvil.",
+    "targetWord": "aprendí",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "escribías",
+  "featured": false,
+  "sentence": "Elena dice que [[escribías]] genial en inglés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to write",
+   "options": [
+    "to write",
+    "to speak",
+    "to read",
+    "to sing"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "Elena dice que escribías genial en inglés.",
+    "targetWord": "escribías",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vine",
+  "featured": false,
+  "sentence": "Elena dice que [[vine]] por trabajo a Barcelona.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come",
+   "options": [
+    "to come",
+    "to stay",
+    "to return",
+    "to move away"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "Elena dice que vine por trabajo a Barcelona.",
+    "targetWord": "vine",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verás",
+  "featured": false,
+  "sentence": "Marc le dice que mañana lo [[verás]] por ti misma.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "you will see",
+   "options": [
+    "you will see",
+    "you will hear",
+    "you will decide",
+    "you will remember"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "Marc le dice que mañana lo verás por ti misma.",
+    "targetWord": "verás",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "bastante",
+  "featured": false,
+  "sentence": "El examen fue _____ difícil, pero lo aprobé.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bastante",
+   "options": [
+    "bastante",
+    "nada",
+    "casi",
+    "siempre"
+   ],
+   "translation": "The exam was _____ hard, but I passed it.",
+   "optionTranslations": [
+    "quite",
+    "not at all",
+    "almost",
+    "always"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "El examen fue bastante difícil, pero lo aprobé.",
+    "targetWord": "bastante",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "primeros",
+  "featured": false,
+  "sentence": "Los _____ días en un trabajo nuevo son raros.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "primeros",
+   "options": [
+    "primeros",
+    "últimos",
+    "peores",
+    "largos"
+   ],
+   "translation": "The _____ days in a new job feel strange.",
+   "optionTranslations": [
+    "first",
+    "last",
+    "worst",
+    "long"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "Los primeros días en un trabajo nuevo son raros.",
+    "targetWord": "primeros",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "misma",
+  "featured": false,
+  "sentence": "Tú en el doce y yo en el catorce: la _____ calle.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "misma",
+   "options": [
+    "misma",
+    "otra",
+    "última",
+    "próxima"
+   ],
+   "translation": "You at number twelve and me at fourteen: the _____ street.",
+   "optionTranslations": [
+    "same",
+    "other",
+    "last",
+    "next"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "Tú en el doce y yo en el catorce: la misma calle.",
+    "targetWord": "misma",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cerca",
+  "featured": false,
+  "sentence": "La panadería está muy _____, a dos minutos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cerca",
+   "options": [
+    "cerca",
+    "lejos",
+    "abierta",
+    "llena"
+   ],
+   "translation": "The bakery is very _____, two minutes away.",
+   "optionTranslations": [
+    "near",
+    "far",
+    "open",
+    "full"
+   ],
+   "audioClip": {
+    "storySlug": "la-bufanda-nunca-falla",
+    "storySource": "user",
+    "sentence": "La panadería está muy cerca, a dos minutos.",
+    "targetWord": "cerca",
+    "language": "spanish"
+   }
+  }
+ }
+]

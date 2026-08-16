@@ -1,0 +1,555 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "quaderno,segno,penna,soldi",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "quaderno",
+          "answer": "a notebook",
+          "options": [
+            "a notebook",
+            "a mark",
+            "a pen",
+            "money"
+          ]
+        },
+        {
+          "word": "segno",
+          "answer": "a mark",
+          "options": [
+            "a notebook",
+            "a mark",
+            "a pen",
+            "money"
+          ]
+        },
+        {
+          "word": "penna",
+          "answer": "a pen",
+          "options": [
+            "a notebook",
+            "a mark",
+            "a pen",
+            "money"
+          ]
+        },
+        {
+          "word": "soldi",
+          "answer": "money",
+          "options": [
+            "a notebook",
+            "a mark",
+            "a pen",
+            "money"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "significare",
+    "sentence": "Lui domanda che cosa [[significa]] quel cartello.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "means",
+      "options": [
+        "means",
+        "costs",
+        "opens",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Lui domanda che cosa significa quel cartello.",
+        "targetWord": "significa",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bdcaf1fafab44936.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cartello",
+    "sentence": "Il [[cartello]] sta appeso dietro il banco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sign",
+      "options": [
+        "a sign",
+        "a mirror",
+        "a chair",
+        "a plate"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Il cartello sta appeso dietro il banco.",
+        "targetWord": "cartello",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e3a7047d83d4c3fc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "in fretta",
+    "sentence": "Lui esce [[in fretta]], senza guardare indietro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in a hurry",
+      "options": [
+        "in a hurry",
+        "very slowly",
+        "with a friend",
+        "by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Lui esce in fretta, senza guardare indietro.",
+        "targetWord": "in fretta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/45a3ac6c4af3979a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "data",
+    "sentence": "Lui conta sette segni sotto la [[data]] di oggi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the date",
+      "options": [
+        "the date",
+        "the price",
+        "the name",
+        "the door"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Lui conta sette segni sotto la data di oggi.",
+        "targetWord": "data",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d0be113a2351eb4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lasciare",
+    "sentence": "Lui [[lascia]] due monete in più sul piattino.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "leaves",
+      "options": [
+        "leaves",
+        "takes",
+        "counts",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Lui lascia due monete in più sul piattino.",
+        "targetWord": "lascia",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/db9bb593b8305fe1.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "offre",
+    "sentence": "A Napoli il caffè si _____ anche agli sconosciuti.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "offre",
+      "options": [
+        "offre",
+        "vende",
+        "beve",
+        "conta"
+      ],
+      "translation": "In Naples coffee is _____ even to strangers.",
+      "optionTranslations": [
+        "offered",
+        "sold",
+        "drunk",
+        "counted"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "A Napoli il caffè si offre anche agli sconosciuti.",
+        "targetWord": "offre",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5408f662e21db58b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alzare",
+    "sentence": "Il barista [[alza]] le spalle e continua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lifts",
+      "options": [
+        "lifts",
+        "closes",
+        "pays",
+        "writes"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Il barista alza le spalle e continua.",
+        "targetWord": "alza",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f7e01d4f214c936.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pulire",
+    "sentence": "Il barista continua a [[pulire]] la macchina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clean",
+      "options": [
+        "clean",
+        "break",
+        "sell",
+        "open"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Il barista continua a pulire la macchina.",
+        "targetWord": "pulire",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02ba41188a1a1d1e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "uscire",
+    "sentence": "L'uomo [[esce]] senza salutare nessuno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "goes out",
+      "options": [
+        "goes out",
+        "sits down",
+        "pays",
+        "laughs"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "L'uomo esce senza salutare nessuno.",
+        "targetWord": "esce",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ada5989188a35c2e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "giallo",
+    "sentence": "Sul muro c'è un cartello [[giallo]] e vecchio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "yellow",
+      "options": [
+        "yellow",
+        "green",
+        "black",
+        "blue"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Sul muro c'è un cartello giallo e vecchio.",
+        "targetWord": "giallo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a7ac97e09f198a8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parola",
+    "sentence": "Il cartello ha soltanto due [[parole]] scritte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "words",
+      "options": [
+        "words",
+        "doors",
+        "cups",
+        "hours"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Il cartello ha soltanto due parole scritte.",
+        "targetWord": "parole",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/13c7e721c2c63f03.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vecchio",
+    "sentence": "Il foglio è [[vecchio]] e un po' sporco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "old",
+      "options": [
+        "old",
+        "new",
+        "clean",
+        "big"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Il foglio è vecchio e un po' sporco.",
+        "targetWord": "vecchio",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/efcb70041070bb41.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "spalla",
+    "sentence": "Lui alza le [[spalle]] e non risponde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shoulders",
+      "options": [
+        "shoulders",
+        "hands",
+        "eyes",
+        "feet"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Lui alza le spalle e non risponde.",
+        "targetWord": "spalle",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/41e6d8cf2a6622c9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cappotto",
+    "sentence": "Un uomo con il [[cappotto]] blu paga due caffè.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a coat",
+      "options": [
+        "a coat",
+        "a hat",
+        "a bag",
+        "a shoe"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Un uomo con il cappotto blu paga due caffè.",
+        "targetWord": "cappotto",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b25aa5a236000e9f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "blu",
+    "sentence": "Il suo cappotto è lungo e [[blu]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "blue",
+      "options": [
+        "blue",
+        "red",
+        "white",
+        "green"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Il suo cappotto è lungo e blu.",
+        "targetWord": "blu",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e79b66830e3d0679.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salutare",
+    "sentence": "L'uomo esce senza [[salutare]] il barista.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "greeting",
+      "options": [
+        "greeting",
+        "paying",
+        "drinking",
+        "hearing"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "L'uomo esce senza salutare il barista.",
+        "targetWord": "salutare",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a4aa0dee9a4304e3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aperto",
+    "sentence": "Il quaderno resta [[aperto]] accanto alla cassa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "open",
+      "options": [
+        "open",
+        "closed",
+        "empty",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Il quaderno resta aperto accanto alla cassa.",
+        "targetWord": "aperto",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ca53798f18cb8e1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "scrivere",
+    "sentence": "Nessuno [[scrive]] il nome di chi paga.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "writes",
+      "options": [
+        "writes",
+        "reads",
+        "pays",
+        "sees"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Nessuno scrive il nome di chi paga.",
+        "targetWord": "scrive",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0407e3cb63c424f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nome",
+    "sentence": "Nel quaderno non c'è nessun [[nome]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "name",
+      "options": [
+        "name",
+        "price",
+        "hour",
+        "street"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Nel quaderno non c'è nessun nome.",
+        "targetWord": "nome",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dd63006e3273d70e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grazie",
+    "sentence": "Il barista non dice nemmeno [[grazie]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thank you",
+      "options": [
+        "thank you",
+        "goodbye",
+        "good morning",
+        "please"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Il barista non dice nemmeno grazie.",
+        "targetWord": "grazie",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/421ac89501d8d43e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ancora",
+    "sentence": "Il caffè aspetta chi non è [[ancora]] arrivato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "yet",
+      "options": [
+        "yet",
+        "never",
+        "already",
+        "always"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-sospeso",
+        "storySource": "user",
+        "sentence": "Il caffè aspetta chi non è ancora arrivato.",
+        "targetWord": "ancora",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/843cd4bd531ea293.mp3"
+      }
+    },
+    "featured": false
+  }
+]

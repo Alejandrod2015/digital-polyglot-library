@@ -1,0 +1,463 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "Servus",
+    "sentence": "[[Servus]], sagt Korbinian und schiebt ihr eine Breze hin.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hi there",
+      "options": [
+        "hi there",
+        "see you later",
+        "thank you",
+        "excuse me"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Servus, sagt Korbinian und schiebt ihr eine Breze hin.",
+        "targetWord": "Servus",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b081cb3a08ea97d9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Schelm",
+    "sentence": "ein breiter Münchner und ein rechter [[Schelm]] mit einem Lachen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a playful rascal",
+      "options": [
+        "a playful rascal",
+        "a strict boss",
+        "a shy stranger",
+        "a tired waiter"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "ein breiter Münchner und ein rechter Schelm mit einem Lachen.",
+        "targetWord": "Schelm",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2c54841292d8cf66.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "beäugen",
+    "sentence": "Reserl wischt den Nebentisch ab und [[beäugt]] die Fremde kurz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to eye warily",
+      "options": [
+        "to eye warily",
+        "to greet",
+        "to ignore",
+        "to serve"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Reserl wischt den Nebentisch ab und beäugt die Fremde kurz.",
+        "targetWord": "beäugt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6a20e3f859dc507a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "erraten",
+    "sentence": "Nadia nickt, obwohl sie den halben Satz nur [[errät]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to guess",
+      "options": [
+        "to guess",
+        "to repeat",
+        "to translate",
+        "to hear"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Nadia nickt, obwohl sie den halben Satz nur errät.",
+        "targetWord": "errät",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05488754385bf1d3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "murmeln",
+    "sentence": "Er steht auf, [[murmelt]] etwas und geht zum Ausschank.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to mumble",
+      "options": [
+        "to mumble",
+        "to shout",
+        "to laugh",
+        "to whistle"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Er steht auf, murmelt etwas und geht zum Ausschank.",
+        "targetWord": "murmelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dc5bdf00c0880ae4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "anerkennend",
+    "sentence": "Er klopft ihr [[anerkennend]] auf die Schulter.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "approvingly",
+      "options": [
+        "approvingly",
+        "angrily",
+        "nervously",
+        "carelessly"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Er klopft ihr anerkennend auf die Schulter.",
+        "targetWord": "anerkennend",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdc63c6c1a3d4ecc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Gaudi",
+    "sentence": "Es wird ein lauer Abend voller [[Gaudi]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "good fun",
+      "options": [
+        "good fun",
+        "hard work",
+        "cold silence",
+        "deep sleep"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Es wird ein lauer Abend voller Gaudi.",
+        "targetWord": "Gaudi",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/445ef3837f041ce1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Spezl",
+    "sentence": "Die [[Spezln]] erzählen alte Geschichten und keiner nimmt sich wichtig.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a close buddy",
+      "options": [
+        "a close buddy",
+        "a stranger",
+        "a rival",
+        "a boss"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Die Spezln erzählen alte Geschichten und keiner nimmt sich wichtig.",
+        "targetWord": "Spezln",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9f34d17b945d5132.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "passt scho",
+    "sentence": "Alle paar Minuten fällt dieses kleine Wort, [[passt]] scho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it's all fine",
+      "options": [
+        "it's all fine",
+        "no way",
+        "watch out",
+        "hurry up"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Alle paar Minuten fällt dieses kleine Wort, passt scho.",
+        "targetWord": "passt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/305873c175de2e64.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "von wegen",
+    "sentence": "Korbinian brummt etwas von [[wegen]] Anfänger.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "as if, no way",
+      "options": [
+        "as if, no way",
+        "for sure",
+        "by the way",
+        "of course"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Korbinian brummt etwas von wegen Anfänger.",
+        "targetWord": "wegen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbced2a581500f0d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mei",
+    "sentence": "[[Mei]], die stellt sich ja gar net so bled an.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "oh, well",
+      "options": [
+        "oh, well",
+        "watch out",
+        "no way",
+        "let's go"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Mei, die stellt sich ja gar net so bled an.",
+        "targetWord": "Mei",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/db8fc263f2e12fac.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bled",
+    "sentence": "Der Witz war so _____, dass niemand lachte.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bled",
+      "options": [
+        "bled",
+        "klug",
+        "teuer",
+        "laut"
+      ],
+      "translation": "The joke was so _____ that nobody laughed.",
+      "optionTranslations": [
+        "silly",
+        "clever",
+        "expensive",
+        "loud"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Der Witz war so bled, dass niemand lachte.",
+        "targetWord": "bled",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a83e63c11f916bca.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "lauer",
+    "sentence": "Es war ein _____ Sommerabend ohne kalten Wind.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lauer",
+      "options": [
+        "lauer",
+        "kalter",
+        "lauter",
+        "kurzer"
+      ],
+      "translation": "It was a _____ summer evening without cold wind.",
+      "optionTranslations": [
+        "balmy, mild",
+        "cold",
+        "loud",
+        "short"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Es war ein lauer Sommerabend ohne kalten Wind.",
+        "targetWord": "lauer",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5875564c08c347bb.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "unvermittelt",
+    "sentence": "Mitten im Gespräch stand er _____ auf und ging.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "unvermittelt",
+      "options": [
+        "unvermittelt",
+        "langsam",
+        "höflich",
+        "vorsichtig"
+      ],
+      "translation": "In the middle of the talk he stood up _____ and left.",
+      "optionTranslations": [
+        "abruptly",
+        "slowly",
+        "politely",
+        "carefully"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Mitten im Gespräch stand er unvermittelt auf und ging.",
+        "targetWord": "unvermittelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b77bec56190f374.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "grummelt",
+    "sentence": "Der Opa _____ verärgert etwas in seinen Bart.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "grummelt",
+      "options": [
+        "grummelt",
+        "singt",
+        "ruft",
+        "lächelt"
+      ],
+      "translation": "Grandpa _____ something annoyed into his beard.",
+      "optionTranslations": [
+        "grumbles",
+        "sings",
+        "shouts",
+        "smiles"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Der Opa grummelt verärgert etwas in seinen Bart.",
+        "targetWord": "grummelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e777d1bfe980bad.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "schwappt",
+    "sentence": "Das Glas ist zu voll, die Limo _____ über den Rand.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schwappt",
+      "options": [
+        "schwappt",
+        "steht",
+        "riecht",
+        "kostet"
+      ],
+      "translation": "The glass is too full, the soda _____ over the edge.",
+      "optionTranslations": [
+        "sloshes over",
+        "stands",
+        "smells",
+        "costs"
+      ],
+      "audioClip": {
+        "storySlug": "servus-im-biergarten",
+        "storySource": "user",
+        "sentence": "Das Glas ist zu voll, die Limo schwappt über den Rand.",
+        "targetWord": "schwappt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c71cbfd23859b3a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "Breze,Maß,Brotzeit,Wirtin",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "Breze",
+          "answer": "a soft pretzel",
+          "options": [
+            "a soft pretzel",
+            "a litre of beer",
+            "a cold Bavarian snack",
+            "the pub landlady"
+          ]
+        },
+        {
+          "word": "Maß",
+          "answer": "a litre of beer",
+          "options": [
+            "a soft pretzel",
+            "a litre of beer",
+            "a cold Bavarian snack",
+            "the pub landlady"
+          ]
+        },
+        {
+          "word": "Brotzeit",
+          "answer": "a cold Bavarian snack",
+          "options": [
+            "a soft pretzel",
+            "a litre of beer",
+            "a cold Bavarian snack",
+            "the pub landlady"
+          ]
+        },
+        {
+          "word": "Wirtin",
+          "answer": "the pub landlady",
+          "options": [
+            "a soft pretzel",
+            "a litre of beer",
+            "a cold Bavarian snack",
+            "the pub landlady"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

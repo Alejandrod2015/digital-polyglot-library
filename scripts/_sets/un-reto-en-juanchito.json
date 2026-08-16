@@ -1,0 +1,623 @@
+[
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "la caseta,el giro,la Feria,el bajo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "la caseta",
+          "answer": "an open air salsa dance hall",
+          "options": [
+            "an open air salsa dance hall",
+            "a turn or spin while dancing",
+            "Cali's big December salsa festival",
+            "the bass instrument driving the groove"
+          ]
+        },
+        {
+          "word": "el giro",
+          "answer": "a turn or spin while dancing",
+          "options": [
+            "an open air salsa dance hall",
+            "a turn or spin while dancing",
+            "Cali's big December salsa festival",
+            "the bass instrument driving the groove"
+          ]
+        },
+        {
+          "word": "la Feria",
+          "answer": "Cali's big December salsa festival",
+          "options": [
+            "an open air salsa dance hall",
+            "a turn or spin while dancing",
+            "Cali's big December salsa festival",
+            "the bass instrument driving the groove"
+          ]
+        },
+        {
+          "word": "el bajo",
+          "answer": "the bass instrument driving the groove",
+          "options": [
+            "an open air salsa dance hall",
+            "a turn or spin while dancing",
+            "Cali's big December salsa festival",
+            "the bass instrument driving the groove"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "por encima de",
+    "sentence": "Ella le gritó [[por encima de]] los trombones.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "louder than, over the top of",
+      "options": [
+        "louder than, over the top of",
+        "right underneath the stage",
+        "far away from the band",
+        "in the middle of dancing"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Ella le gritó por encima de los trombones.",
+        "targetWord": "por encima de",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/92d0b45d12394425.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "de maravilla",
+    "sentence": "Todo iba [[de maravilla]] hasta ese giro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wonderfully well",
+      "options": [
+        "wonderfully well",
+        "terribly wrong",
+        "slowly and calmly",
+        "in a very strange way"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Todo iba de maravilla hasta ese giro.",
+        "targetWord": "de maravilla",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/84e3796bd98ebd33.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "a mitad de",
+    "sentence": "Su cara se congeló [[a mitad de]] un giro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the middle of",
+      "options": [
+        "in the middle of",
+        "right before starting",
+        "just after finishing",
+        "far away from"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Su cara se congeló a mitad de un giro.",
+        "targetWord": "a mitad de",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e17833f3576fdf69.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "la mirada clavada",
+    "sentence": "Andrés tenía [[la mirada clavada]] en el fondo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "eyes locked intensely on one point",
+      "options": [
+        "eyes locked intensely on one point",
+        "a soft and sleepy expression",
+        "a quick, distracted glance",
+        "tears running down his cheeks"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Andrés tenía la mirada clavada en el fondo.",
+        "targetWord": "la mirada clavada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/030e98aab7ea8954.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "entre dientes",
+    "sentence": "Ella masculló algo [[entre dientes]], bien tensa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "muttering quietly under your breath",
+      "options": [
+        "muttering quietly under your breath",
+        "shouting loudly across the room",
+        "laughing hard with her friends",
+        "singing along to the song"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Ella masculló algo entre dientes, bien tensa.",
+        "targetWord": "entre dientes",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c95582673449735d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "la bailadora",
+    "sentence": "Su amiga es ____ del barrio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la bailadora",
+      "options": [
+        "la bailadora",
+        "cantante",
+        "vecina",
+        "cocinera"
+      ],
+      "translation": "Yésica, the neighborhood ____, pulled Manuela.",
+      "optionTranslations": [
+        "dancer",
+        "singer",
+        "neighbor",
+        "cook"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Su amiga es la bailadora del barrio.",
+        "targetWord": "la bailadora",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c8c13ad752a27863.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "aguardientes",
+    "sentence": "Andrés llegó con dos ____ bien fríos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aguardientes",
+      "options": [
+        "aguardientes",
+        "cervezas",
+        "jugos",
+        "tintos"
+      ],
+      "translation": "Andrés arrived with two cold ____.",
+      "optionTranslations": [
+        "shots of aguardiente",
+        "beers",
+        "juices",
+        "black coffees"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Andrés llegó con dos aguardientes bien fríos.",
+        "targetWord": "aguardientes",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0d67b942fd9c0d1.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "jaló",
+    "sentence": "Ella la ____ hacia la pista de baile.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "jaló",
+      "options": [
+        "jaló",
+        "empujó",
+        "cargó",
+        "soltó"
+      ],
+      "translation": "Yésica ____ Manuela toward the dance floor.",
+      "optionTranslations": [
+        "pulled",
+        "pushed",
+        "carried",
+        "let go of"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Ella la jaló hacia la pista de baile.",
+        "targetWord": "jaló",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5ff70a3dbfe92cc.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "bravo",
+    "sentence": "La orquesta arrancó un son ____ y duro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bravo",
+      "options": [
+        "bravo",
+        "suave",
+        "triste",
+        "lento"
+      ],
+      "translation": "The orchestra struck up a ____, hard son.",
+      "optionTranslations": [
+        "fierce",
+        "soft",
+        "sad",
+        "slow"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "La orquesta arrancó un son bravo y duro.",
+        "targetWord": "bravo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e07ac2e70bc85d8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "partir el alma",
+    "sentence": "Esa mujer le había [[partido el alma]] antes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to break someone's heart deeply",
+      "options": [
+        "to break someone's heart deeply",
+        "to lift someone's spirits high",
+        "to save someone from danger",
+        "to teach someone a lesson"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Esa mujer le había partido el alma antes.",
+        "targetWord": "partido el alma",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4fe79d42f1cdb7da.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "abrirse paso",
+    "sentence": "La mujer empezó a [[abrirse paso]] entre todos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to push forward through a crowd",
+      "options": [
+        "to push forward through a crowd",
+        "to stand still and wait",
+        "to run out the back door",
+        "to dance with a partner"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "La mujer empezó a abrirse paso entre todos.",
+        "targetWord": "abrirse paso",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5d0fc2c88dbdec6c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "gozar",
+    "sentence": "Aquí nadie pide permiso para [[gozar]], mija.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fully enjoy yourself",
+      "options": [
+        "to fully enjoy yourself",
+        "to ask for money",
+        "to sit down quietly",
+        "to leave in a hurry"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Aquí nadie pide permiso para gozar, mija.",
+        "targetWord": "gozar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5354ee630f1193dc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "congelarse",
+    "sentence": "La cara de Andrés [[se congeló]] de golpe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to freeze in place from shock",
+      "options": [
+        "to freeze in place from shock",
+        "to light up with joy",
+        "to turn away in anger",
+        "to melt into a smile"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "La cara de Andrés se congeló de golpe.",
+        "targetWord": "se congeló",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ce3bed4e03f8e3a5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "erizar",
+    "sentence": "Su calma fría [[erizaba]] la piel de todos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to make the skin bristle",
+      "options": [
+        "to make the skin bristle",
+        "to warm the whole body",
+        "to calm the nerves down",
+        "to burn like hot fire"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Su calma fría erizaba la piel de todos.",
+        "targetWord": "erizaba",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9ff9abc50e36b5aa.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "pisteros",
+    "sentence": "La mujer cruzó entre los ____ sudorosos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pisteros",
+      "options": [
+        "pisteros",
+        "meseros",
+        "músicos",
+        "turistas"
+      ],
+      "translation": "The woman crossed among the sweaty ____.",
+      "optionTranslations": [
+        "die-hard dancers",
+        "waiters",
+        "musicians",
+        "tourists"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "La mujer cruzó entre los pisteros sudorosos.",
+        "targetWord": "pisteros",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff3288182bb5fbfd.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "apretó",
+    "sentence": "Ella solo le ____ el brazo, muy tensa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "apretó",
+      "options": [
+        "apretó",
+        "soltó",
+        "besó",
+        "levantó"
+      ],
+      "translation": "Yésica just ____ her arm, tense.",
+      "optionTranslations": [
+        "squeezed",
+        "let go of",
+        "kissed",
+        "lifted"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Ella solo le apretó el brazo, muy tensa.",
+        "targetWord": "apretó",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eaf9994d97682eaf.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "se plantó",
+    "sentence": "La mujer ____ justo frente a Andrés.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "se plantó",
+      "options": [
+        "se plantó",
+        "se escondió",
+        "se sentó",
+        "se alejó"
+      ],
+      "translation": "The woman ____ right in front of Andrés.",
+      "optionTranslations": [
+        "planted herself",
+        "hid herself",
+        "sat down",
+        "moved away"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "La mujer se plantó justo frente a Andrés.",
+        "targetWord": "se plantó",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/53723e8e9a0e2733.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "largarse",
+    "sentence": "Nadie supo si era para ____ o bailar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "largarse",
+      "options": [
+        "largarse",
+        "quedarse",
+        "gritar",
+        "llorar"
+      ],
+      "translation": "Nobody knew if it was to ____ or dance.",
+      "optionTranslations": [
+        "leave",
+        "stay",
+        "shout",
+        "cry"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Nadie supo si era para largarse o bailar.",
+        "targetWord": "largarse",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9cfa3377288eeb8d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "tensa",
+    "sentence": "Le apretó el brazo, ____ y muda del susto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tensa",
+      "options": [
+        "tensa",
+        "feliz",
+        "floja",
+        "fría"
+      ],
+      "translation": "Yésica squeezed her arm, ____ and silent.",
+      "optionTranslations": [
+        "tense",
+        "happy",
+        "limp",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Le apretó el brazo, tensa y muda del susto.",
+        "targetWord": "tensa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/50bf5935fe2b2a52.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "raro",
+    "sentence": "Entre los tres se abrió un silencio ____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "raro",
+      "options": [
+        "raro",
+        "alegre",
+        "corto",
+        "fuerte"
+      ],
+      "translation": "Between the three of them a ____ silence opened.",
+      "optionTranslations": [
+        "strange",
+        "cheerful",
+        "short",
+        "loud"
+      ],
+      "audioClip": {
+        "storySlug": "un-reto-en-juanchito",
+        "storySource": "user",
+        "sentence": "Entre los tres se abrió un silencio raro.",
+        "targetWord": "raro",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dd181899da70e96b.mp3"
+      }
+    }
+  }
+]

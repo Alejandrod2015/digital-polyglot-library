@@ -1,0 +1,501 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "das Vesper",
+    "sentence": "Danach gibt es ein zünftiges [[Vesper]] mit Brot und Wurst.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cold snack meal",
+      "options": [
+        "a cold snack meal",
+        "a hot lunch",
+        "a birthday cake",
+        "a short nap"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Danach gibt es ein zünftiges Vesper mit Brot und Wurst.",
+        "targetWord": "Vesper",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bcb92017b354b247.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Maultasche",
+    "sentence": "Bene stellt eine große Schüssel mit [[Maultaschen]] in die Mitte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Swabian filled pasta",
+      "options": [
+        "Swabian filled pasta",
+        "fresh salad",
+        "warm soup",
+        "sweet cake"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Bene stellt eine große Schüssel mit Maultaschen in die Mitte.",
+        "targetWord": "Maultaschen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/54d3703a1bb6d359.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Most",
+    "sentence": "Zum Vesper trinken alle einen kühlen [[Most]] aus Äpfeln.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cloudy apple cider",
+      "options": [
+        "a cloudy apple cider",
+        "a strong black coffee",
+        "a glass of milk",
+        "a sweet lemonade"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Zum Vesper trinken alle einen kühlen Most aus Äpfeln.",
+        "targetWord": "Most",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46d7c7138dacbb4b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Nachschlag",
+    "sentence": "Nadia strahlt und bittet gleich um einen zweiten [[Nachschlag]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a second helping",
+      "options": [
+        "a second helping",
+        "a warm blanket",
+        "a quiet corner",
+        "a small tip"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Nadia strahlt und bittet gleich um einen zweiten Nachschlag.",
+        "targetWord": "Nachschlag",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/67f3de0e187b5111.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Beisammensein",
+    "sentence": "Das warme [[Beisammensein]] hält alle lange am Tisch.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cosy togetherness",
+      "options": [
+        "cosy togetherness",
+        "a boring meeting",
+        "a loud party",
+        "a long goodbye"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Das warme Beisammensein hält alle lange am Tisch.",
+        "targetWord": "Beisammensein",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30e48044860f0b37.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Ständchen",
+    "sentence": "Der Abend endet in einem völlig misslungenen [[Ständchen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a little serenade",
+      "options": [
+        "a little serenade",
+        "a silent prayer",
+        "a short speech",
+        "a card game"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Der Abend endet in einem völlig misslungenen Ständchen.",
+        "targetWord": "Ständchen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4574fd35a17a323a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "schlemmen",
+    "sentence": "Nach der Arbeit wollen alle richtig _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schlemmen",
+      "options": [
+        "schlemmen",
+        "putzen",
+        "schlafen",
+        "zahlen"
+      ],
+      "translation": "After the work everyone wants to really _____.",
+      "optionTranslations": [
+        "feast",
+        "clean",
+        "sleep",
+        "pay"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Nach der Arbeit wollen alle richtig schlemmen.",
+        "targetWord": "schlemmen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6335ae3441d56ac5.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "reicht",
+    "sentence": "Bene _____ die volle Platte einmal um den Tisch.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reicht",
+      "options": [
+        "reicht",
+        "schließt",
+        "kauft",
+        "liest"
+      ],
+      "translation": "Bene _____ the full plate once around the table.",
+      "optionTranslations": [
+        "passes",
+        "closes",
+        "buys",
+        "reads"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Bene reicht die volle Platte einmal um den Tisch.",
+        "targetWord": "reicht",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a9c1c6a1cf06ca2.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "lobt",
+    "sentence": "Timo _____ jede einzelne Maultasche in den Himmel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lobt",
+      "options": [
+        "lobt",
+        "wäscht",
+        "zählt",
+        "sucht"
+      ],
+      "translation": "Timo _____ every single Maultasche to the sky.",
+      "optionTranslations": [
+        "praises",
+        "washes",
+        "counts",
+        "searches"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Timo lobt jede einzelne Maultasche in den Himmel.",
+        "targetWord": "lobt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f46e8c486d51b8ea.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Aufschnitt,der Käse,der Laib,die Schüssel",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Aufschnitt",
+          "answer": "sliced cold cuts",
+          "options": [
+            "sliced cold cuts",
+            "cheese",
+            "a loaf of bread",
+            "a bowl"
+          ]
+        },
+        {
+          "word": "der Käse",
+          "answer": "cheese",
+          "options": [
+            "sliced cold cuts",
+            "cheese",
+            "a loaf of bread",
+            "a bowl"
+          ]
+        },
+        {
+          "word": "der Laib",
+          "answer": "a loaf of bread",
+          "options": [
+            "sliced cold cuts",
+            "cheese",
+            "a loaf of bread",
+            "a bowl"
+          ]
+        },
+        {
+          "word": "die Schüssel",
+          "answer": "a bowl",
+          "options": [
+            "sliced cold cuts",
+            "cheese",
+            "a loaf of bread",
+            "a bowl"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Ziehharmonika",
+    "sentence": "Grinsend holt Bene seine alte [[Ziehharmonika]] hervor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an accordion",
+      "options": [
+        "an accordion",
+        "a guitar",
+        "a drum",
+        "a flute"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Grinsend holt Bene seine alte Ziehharmonika hervor.",
+        "targetWord": "Ziehharmonika",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf8c86dc89346b8f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "des passt",
+    "sentence": "\"Des [[passt]]\", nickt Bene zufrieden und lächelt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that's just fine",
+      "options": [
+        "that's just fine",
+        "not enough yet",
+        "try once more",
+        "much too salty"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Des passt, nickt Bene zufrieden und lächelt.",
+        "targetWord": "passt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c442546c4f49aba5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arg",
+    "sentence": "Nadia findet diesen Vesperabend [[arg]] gemütlich und schön.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "very, really (southern)",
+      "options": [
+        "very, really (southern)",
+        "hardly at all",
+        "far too little",
+        "only sometimes"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Nadia findet diesen Vesperabend arg gemütlich und schön.",
+        "targetWord": "arg",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49caa32e18702bbb.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "zaghaft",
+    "sentence": "Zuerst probiert Nadia noch [[zaghaft]] von den Maultaschen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shyly, hesitantly",
+      "options": [
+        "shyly, hesitantly",
+        "boldly, loudly",
+        "angrily, fast",
+        "proudly, slowly"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Zuerst probiert Nadia noch zaghaft von den Maultaschen.",
+        "targetWord": "zaghaft",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9b205ba0d4be783.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "geschwätzt",
+    "sentence": "Am Tisch wird gelacht und viel _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "geschwätzt",
+      "options": [
+        "geschwätzt",
+        "geputzt",
+        "geschlafen",
+        "bezahlt"
+      ],
+      "translation": "At the table there is laughing and lots of _____.",
+      "optionTranslations": [
+        "chatting",
+        "cleaning",
+        "sleeping",
+        "paying"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Am Tisch wird gelacht und viel geschwätzt.",
+        "targetWord": "geschwätzt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/395803a0efd8c2a5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "zünftiges",
+    "sentence": "Daneben steht ein _____ Vesper für die Runde.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "zünftiges",
+      "options": [
+        "zünftiges",
+        "müdes",
+        "leeres",
+        "kaltes"
+      ],
+      "translation": "Next to it is a _____ Vesper for the group.",
+      "optionTranslations": [
+        "hearty",
+        "tired",
+        "empty",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Daneben steht ein zünftiges Vesper für die Runde.",
+        "targetWord": "zünftiges",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ada6c8b570d956f1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "würzig",
+    "sentence": "Der Käse schmeckt kräftig und richtig _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "würzig",
+      "options": [
+        "würzig",
+        "müde",
+        "leise",
+        "teuer"
+      ],
+      "translation": "The cheese tastes strong and really _____.",
+      "optionTranslations": [
+        "savoury",
+        "tired",
+        "quiet",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Der Käse schmeckt kräftig und richtig würzig.",
+        "targetWord": "würzig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/654b1ee1dcd0a640.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gesellig",
+    "sentence": "Die satte Runde sitzt _____ und lange beisammen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gesellig",
+      "options": [
+        "gesellig",
+        "müde",
+        "allein",
+        "schnell"
+      ],
+      "translation": "The full group sits _____ and long together.",
+      "optionTranslations": [
+        "sociably",
+        "tired",
+        "alone",
+        "fast"
+      ],
+      "audioClip": {
+        "storySlug": "maultaschen-nach-dem-kehren",
+        "storySource": "user",
+        "sentence": "Die satte Runde sitzt gesellig und lange beisammen.",
+        "targetWord": "gesellig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/04ebb48d9daa4762.mp3"
+      }
+    },
+    "featured": false
+  }
+]

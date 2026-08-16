@@ -1,0 +1,646 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "viajar",
+    "sentence": "Ella [[viaja]] por el país en autobús.",
+    "payload": {
+      "answer": "to travel",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to travel",
+        "to arrive",
+        "to walk",
+        "to return"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella viaja por el país en autobús.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "viaja",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9324fdb8b4cda780.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llegar",
+    "sentence": "Hoy [[llega]] a la ciudad muy temprano.",
+    "payload": {
+      "answer": "to arrive",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to arrive",
+        "to leave",
+        "to travel",
+        "to wait"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hoy llega a la ciudad muy temprano.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "llega",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d1b860537524b4a9.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cenote",
+    "sentence": "Vamos a nadar a un [[cenote]] cerca.",
+    "payload": {
+      "answer": "a natural water hole",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a natural water hole",
+        "a tall mountain",
+        "a sandy beach",
+        "a busy market"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Vamos a nadar a un cenote cerca.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "cenote",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/368746e30aca4fb0.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nadar",
+    "sentence": "Las dos amigas [[nadan]] juntas en el agua.",
+    "payload": {
+      "answer": "to swim",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to swim",
+        "to walk",
+        "to rest",
+        "to run"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las dos amigas nadan juntas en el agua.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "nadan",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e4af1a2c72324839.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "miedo",
+    "sentence": "Mira el agua con mucho [[miedo]].",
+    "payload": {
+      "answer": "fear",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "fear",
+        "joy",
+        "hunger",
+        "sleep"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Mira el agua con mucho miedo.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "miedo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/099f081be2750682.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuerpo",
+    "sentence": "El agua fría cubre todo su [[cuerpo]].",
+    "payload": {
+      "answer": "body",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "body",
+        "face",
+        "hand",
+        "hair"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El agua fría cubre todo su cuerpo.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "cuerpo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bd9b33ad4c84edc6.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "calor",
+    "sentence": "En el desierto hace mucho _____ de día.",
+    "payload": {
+      "answer": "calor",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "calor",
+        "frío",
+        "viento",
+        "hielo"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En el desierto hace mucho calor de día.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "calor",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0aab4e78633b1d04.mp3"
+      },
+      "translation": "In the desert there is a lot of _____ during the day.",
+      "optionTranslations": [
+        "heat",
+        "cold",
+        "wind",
+        "ice"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "salta",
+    "sentence": "El gato _____ muy alto para subir.",
+    "payload": {
+      "answer": "salta",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "salta",
+        "corre",
+        "camina",
+        "duerme"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El gato salta muy alto para subir.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "salta",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1eb824eba888aed4.mp3"
+      },
+      "translation": "The cat _____ very high to climb up.",
+      "optionTranslations": [
+        "jumps",
+        "runs",
+        "walks",
+        "sleeps"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "grita",
+    "sentence": "Ella _____ muy fuerte cuando tiene miedo.",
+    "payload": {
+      "answer": "grita",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "grita",
+        "habla",
+        "canta",
+        "susurra"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella grita muy fuerte cuando tiene miedo.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "grita",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/626e3b5f0aa569c6.mp3"
+      },
+      "translation": "She _____ very loudly when she is afraid.",
+      "optionTranslations": [
+        "shouts",
+        "talks",
+        "sings",
+        "whispers"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "fría",
+    "sentence": "En invierno el agua del mar está _____.",
+    "payload": {
+      "answer": "fría",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "fría",
+        "caliente",
+        "sucia",
+        "clara"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En invierno el agua del mar está fría.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "fría",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bec499efcf512578.mp3"
+      },
+      "translation": "In winter the sea water is _____.",
+      "optionTranslations": [
+        "cold",
+        "hot",
+        "dirty",
+        "clear"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guía",
+    "sentence": "Ella es una [[guía]] de la ciudad.",
+    "payload": {
+      "answer": "a guide",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a guide",
+        "a nurse",
+        "a driver",
+        "a cook"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella es una guía de la ciudad.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "guía",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b1d7b916ca2a7c01.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonrisa",
+    "sentence": "Te recibe con una [[sonrisa]] muy grande.",
+    "payload": {
+      "answer": "a smile",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a smile",
+        "a hug",
+        "a gift",
+        "a wave"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Te recibe con una sonrisa muy grande.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "sonrisa",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/09ff6bac4c5a1819.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "joven",
+    "sentence": "Es una guía muy [[joven]] y amable.",
+    "payload": {
+      "answer": "young",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "young",
+        "old",
+        "tall",
+        "tired"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Es una guía muy joven y amable.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "joven",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4c4cac2711b0f6d1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hondo",
+    "sentence": "El agua del cenote está muy [[honda]].",
+    "payload": {
+      "answer": "deep",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "deep",
+        "cold",
+        "clean",
+        "calm"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El agua del cenote está muy honda.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "honda",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dd07e0e0f6f90fd0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reír",
+    "sentence": "Salta primero y [[ríe]] muy contenta.",
+    "payload": {
+      "answer": "to laugh",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to laugh",
+        "to cry",
+        "to shout",
+        "to sing"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Salta primero y ríe muy contenta.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "ríe",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdb254af44d761af.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rico",
+    "sentence": "Después de nadar, el agua está muy [[rica]].",
+    "payload": {
+      "answer": "pleasant",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "pleasant",
+        "salty",
+        "deep",
+        "dirty"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Después de nadar, el agua está muy rica.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "rica",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4bdafaade4044e59.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "respirar",
+    "sentence": "[[Respira]] hondo antes de saltar al agua.",
+    "payload": {
+      "answer": "to breathe",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to breathe",
+        "to jump",
+        "to rest",
+        "to swim"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Respira hondo antes de saltar al agua.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "respira",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b3d845364c74833.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cubrir",
+    "sentence": "El agua [[cubre]] todo el cuerpo despacio.",
+    "payload": {
+      "answer": "to cover",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to cover",
+        "to touch",
+        "to move",
+        "to fill"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El agua cubre todo el cuerpo despacio.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "cubre",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e36dab19f1231696.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "superficie",
+    "sentence": "Sube despacio a la [[superficie]] del agua.",
+    "payload": {
+      "answer": "the surface",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the surface",
+        "the bottom",
+        "the middle",
+        "the edge"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Sube despacio a la superficie del agua.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "superficie",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdc366321aca0b2f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "oscura",
+    "sentence": "De noche la casa está muy _____.",
+    "payload": {
+      "answer": "oscura",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "oscura",
+        "clara",
+        "sucia",
+        "seca"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "De noche la casa está muy oscura.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "oscura",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d881e10832462db.mp3"
+      },
+      "translation": "At night the house is very _____.",
+      "optionTranslations": [
+        "dark",
+        "bright",
+        "dirty",
+        "dry"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "húmeda",
+    "sentence": "Después de la lluvia la tierra está _____.",
+    "payload": {
+      "answer": "húmeda",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "húmeda",
+        "seca",
+        "dura",
+        "limpia"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Después de la lluvia la tierra está húmeda.",
+        "storySlug": "rosa-nada-primero",
+        "targetWord": "húmeda",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85229e4cf48b2a64.mp3"
+      },
+      "translation": "After the rain the ground is _____.",
+      "optionTranslations": [
+        "wet",
+        "dry",
+        "hard",
+        "clean"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "cueva,roca,piscina,tierra",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cueva",
+          "answer": "a cave",
+          "options": [
+            "a cave",
+            "a rock",
+            "a pool",
+            "the ground"
+          ]
+        },
+        {
+          "word": "roca",
+          "answer": "a rock",
+          "options": [
+            "a cave",
+            "a rock",
+            "a pool",
+            "the ground"
+          ]
+        },
+        {
+          "word": "piscina",
+          "answer": "a pool",
+          "options": [
+            "a cave",
+            "a rock",
+            "a pool",
+            "the ground"
+          ]
+        },
+        {
+          "word": "tierra",
+          "answer": "the ground",
+          "options": [
+            "a cave",
+            "a rock",
+            "a pool",
+            "the ground"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "descansar",
+    "sentence": "Las dos amigas [[descansan]] al sol después de nadar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rest",
+      "options": [
+        "rest",
+        "run",
+        "shout",
+        "cook"
+      ],
+      "audioClip": {
+        "storySlug": "rosa-nada-primero",
+        "storySource": "user",
+        "sentence": "Las dos amigas descansan al sol después de nadar.",
+        "targetWord": "descansan",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dfad9533db4b4261.mp3"
+      }
+    },
+    "featured": false
+  }
+]

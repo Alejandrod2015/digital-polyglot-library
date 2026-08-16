@@ -1,0 +1,481 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "Stammtisch",
+    "sentence": "Nadia sitzt am Sonntag als Erste am [[Stammtisch]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the regulars' table",
+      "options": [
+        "the regulars' table",
+        "the exit door",
+        "the wine list",
+        "the front garden"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Nadia sitzt am Sonntag als Erste am Stammtisch.",
+        "targetWord": "Stammtisch",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6793cfe02517240c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Wiesn",
+    "sentence": "Es ist keine große [[Wiesn]], nur ein stiller Nachmittag.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the Oktoberfest",
+      "options": [
+        "the Oktoberfest",
+        "a wedding",
+        "a market",
+        "a parade"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Es ist keine große Wiesn, nur ein stiller Nachmittag.",
+        "targetWord": "Wiesn",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/68eabb32fa0e9d22.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Habedere",
+    "sentence": "\"[[Habedere]]\", ruft Korbinian zur Begrüßung.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hello there",
+      "options": [
+        "hello there",
+        "good night",
+        "well done",
+        "take care"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "\"Habedere\", ruft Korbinian zur Begrüßung.",
+        "targetWord": "Habedere",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fc3fa87f75ec1c13.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dahoam",
+    "sentence": "Für Nadia fühlt es sich endlich richtig [[dahoam]] an.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at home",
+      "options": [
+        "at home",
+        "far away",
+        "too late",
+        "all alone"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Für Nadia fühlt es sich endlich richtig dahoam an.",
+        "targetWord": "dahoam",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f5d9d26d14203940.mp3",
+        "rev": 1
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Gschaftlhuber",
+    "sentence": "Ein [[Gschaftlhuber]] gibt jedem ungefragt Ratschläge.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a busybody",
+      "options": [
+        "a busybody",
+        "a quiet guest",
+        "a shy waiter",
+        "a kind helper"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Ein Gschaftlhuber gibt jedem ungefragt Ratschläge.",
+        "targetWord": "Gschaftlhuber",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee77ff465cb8e723.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "granteln",
+    "sentence": "Sepp [[grantelt]] über das Wetter und die Preise.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to grumble",
+      "options": [
+        "to grumble",
+        "to boast",
+        "to joke",
+        "to sing"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Sepp grantelt über das Wetter und die Preise.",
+        "targetWord": "grantelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/94fcc45198221c13.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "da schau her",
+    "sentence": "Korbinian lacht: da [[schau]] her, unser Madl redt wie eine Münchnerin.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "would you look at that",
+      "options": [
+        "would you look at that",
+        "off we go",
+        "never mind",
+        "here we are"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Korbinian lacht: da schau her, unser Madl redt wie eine Münchnerin.",
+        "targetWord": "schau",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/97e365395e8f4521.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "zum ersten Mal",
+    "sentence": "Nadia fühlt sich zum [[ersten]] Mal richtig dahoam.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for the first time",
+      "options": [
+        "for the first time",
+        "once again",
+        "as always",
+        "in the end"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Nadia fühlt sich zum ersten Mal richtig dahoam.",
+        "targetWord": "ersten",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8b2485e631ed4d5d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Stichelei",
+    "sentence": "Sie hört den vertrauten [[Sticheleien]] entspannt zu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a teasing jab",
+      "options": [
+        "a teasing jab",
+        "a warm hug",
+        "a long speech",
+        "a loud song"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Sie hört den vertrauten Sticheleien entspannt zu.",
+        "targetWord": "Sticheleien",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a758693552907162.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mühelos",
+    "sentence": "Jetzt trägt sie es ganz [[mühelos]] in sich.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with no effort",
+      "options": [
+        "with no effort",
+        "with great effort",
+        "by pure luck",
+        "against her will"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Jetzt trägt sie es ganz mühelos in sich.",
+        "targetWord": "mühelos",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eaf45e67490e5669.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "zurechtrücken",
+    "sentence": "Nadia sitzt am Tisch, während sie die schweren Krüge [[zurechtrückt]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to set straight",
+      "options": [
+        "to set straight",
+        "to knock over",
+        "to count up",
+        "to hide away"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Nadia sitzt am Tisch, während sie die schweren Krüge zurechtrückt.",
+        "targetWord": "zurechtrückt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/88a80ef3f7faab10.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ruhig",
+    "sentence": "\"Reg di net auf\", sagt Nadia ganz [[ruhig]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calmly",
+      "options": [
+        "calmly",
+        "loudly",
+        "angrily",
+        "quickly"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "\"Reg di net auf\", sagt Nadia ganz ruhig.",
+        "targetWord": "ruhig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4332871a86bed177.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "wohlig",
+    "sentence": "Sepp murmelt [[wohlig]] und hebt langsam seinen Krug.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cosily",
+      "options": [
+        "cosily",
+        "nervously",
+        "sadly",
+        "angrily"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Sepp murmelt wohlig und hebt langsam seinen Krug.",
+        "targetWord": "wohlig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/554ffa423127968b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vertrauten",
+    "sentence": "Er hörte die _____ Stimmen seiner alten Freunde.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vertrauten",
+      "options": [
+        "vertrauten",
+        "fremden",
+        "lauten",
+        "neuen"
+      ],
+      "translation": "He heard the _____ voices of his old friends.",
+      "optionTranslations": [
+        "familiar",
+        "strange",
+        "loud",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Er hörte die vertrauten Stimmen seiner alten Freunde.",
+        "targetWord": "vertrauten",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/594b019cc96f43d3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "haut",
+    "sentence": "Vor Wut _____ er mit der Faust auf den Tisch.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "haut",
+      "options": [
+        "haut",
+        "flüstert",
+        "schläft",
+        "wartet"
+      ],
+      "translation": "Out of anger he _____ his fist on the table.",
+      "optionTranslations": [
+        "bangs",
+        "whispers",
+        "sleeps",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Vor Wut haut er mit der Faust auf den Tisch.",
+        "targetWord": "haut",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a833d22201c9128d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "trudeln",
+    "sentence": "Die Gäste _____ nach und nach gemütlich herein.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "trudeln",
+      "options": [
+        "trudeln",
+        "rennen",
+        "schlafen",
+        "kochen"
+      ],
+      "translation": "The guests _____ in slowly one after another.",
+      "optionTranslations": [
+        "trickle in",
+        "run",
+        "sleep",
+        "cook"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Die Gäste trudeln nach und nach gemütlich herein.",
+        "targetWord": "trudeln",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/15e08823c77ff27a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "verteilt",
+    "sentence": "Die Lehrerin _____ die Hefte an alle Kinder.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "verteilt",
+      "options": [
+        "verteilt",
+        "sammelt",
+        "zählt",
+        "versteckt"
+      ],
+      "translation": "The teacher _____ the notebooks to all the children.",
+      "optionTranslations": [
+        "hands out",
+        "collects",
+        "counts",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "dahoam-auf-der-wiesn",
+        "storySource": "user",
+        "sentence": "Die Lehrerin verteilt die Hefte an alle Kinder.",
+        "targetWord": "verteilt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1baf7f000e2a6d4c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "Krug,Radi,Radler,Bussi",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "Krug",
+          "answer": "a beer mug",
+          "options": [
+            "a beer mug",
+            "a sliced radish",
+            "beer with lemonade",
+            "a kiss on the cheek"
+          ]
+        },
+        {
+          "word": "Radi",
+          "answer": "a sliced radish",
+          "options": [
+            "a beer mug",
+            "a sliced radish",
+            "beer with lemonade",
+            "a kiss on the cheek"
+          ]
+        },
+        {
+          "word": "Radler",
+          "answer": "beer with lemonade",
+          "options": [
+            "a beer mug",
+            "a sliced radish",
+            "beer with lemonade",
+            "a kiss on the cheek"
+          ]
+        },
+        {
+          "word": "Bussi",
+          "answer": "a kiss on the cheek",
+          "options": [
+            "a beer mug",
+            "a sliced radish",
+            "beer with lemonade",
+            "a kiss on the cheek"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

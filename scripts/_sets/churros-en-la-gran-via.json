@@ -1,0 +1,621 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "tienda",
+    "sentence": "Miran las [[tiendas]] grandes de la calle.",
+    "payload": {
+      "answer": "a shop",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a shop",
+        "a school",
+        "a park",
+        "a church"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Miran las tiendas grandes de la calle.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "tiendas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c866578ce7ee1825.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calle",
+    "sentence": "Hay muchas tiendas en la [[calle]].",
+    "payload": {
+      "answer": "a street",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a street",
+        "a river",
+        "a beach",
+        "a forest"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hay muchas tiendas en la calle.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "calle",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bd646cd17893ad54.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esquina",
+    "sentence": "Hay un café pequeño en la [[esquina]].",
+    "payload": {
+      "answer": "a corner",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a corner",
+        "a garden",
+        "a kitchen",
+        "a window"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hay un café pequeño en la esquina.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "esquina",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/67e459eee26ae17c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entrar",
+    "sentence": "Los amigos [[entran]] rápido al café.",
+    "payload": {
+      "answer": "to go in",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to go in",
+        "to go out",
+        "to look",
+        "to wait"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los amigos entran rápido al café.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "entran",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b49fdccb8144372d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oler",
+    "sentence": "Dentro [[huele]] muy bien.",
+    "payload": {
+      "answer": "to smell",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to smell",
+        "to run",
+        "to speak",
+        "to sleep"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Dentro huele muy bien.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "huele",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f495c9c66723dc6f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delicioso",
+    "sentence": "El churro está [[delicioso]].",
+    "payload": {
+      "answer": "delicious",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "delicious",
+        "ugly",
+        "heavy",
+        "empty"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El churro está delicioso.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "delicioso",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/855f8490941e2f3a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "risa",
+    "sentence": "Dentro del café hay [[risas]].",
+    "payload": {
+      "answer": "laughter",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "laughter",
+        "music",
+        "noise",
+        "silence"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Dentro del café hay risas.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "risas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c36c3182162f4e0.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "caminan",
+    "sentence": "El coche no anda, por eso ellas _____.",
+    "payload": {
+      "answer": "caminan",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "caminan",
+        "vuelan",
+        "nadan",
+        "duermen"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El coche no anda, por eso ellas caminan.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "caminan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7020ea0d948f1537.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The car doesn't work, so they _____.",
+      "optionTranslations": [
+        "walk",
+        "fly",
+        "swim",
+        "sleep"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "saluda",
+    "sentence": "Cuando llega un amigo, ella lo _____.",
+    "payload": {
+      "answer": "saluda",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "saluda",
+        "esconde",
+        "rompe",
+        "lava"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cuando llega un amigo, ella lo saluda.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "saluda",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3eb2ad54eeef9b2e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "When a friend arrives, she _____ him.",
+      "optionTranslations": [
+        "greets",
+        "hides",
+        "breaks",
+        "washes"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "pide",
+    "sentence": "En el café, ella _____ un chocolate caliente.",
+    "payload": {
+      "answer": "pide",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "pide",
+        "lava",
+        "rompe",
+        "pierde"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En el café, ella pide un chocolate caliente.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "pide",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5524e3e3de7daf1a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "At the café, she _____ a hot chocolate.",
+      "optionTranslations": [
+        "orders",
+        "washes",
+        "breaks",
+        "loses"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gris",
+    "sentence": "Las nubes [[grises]] cubren el cielo.",
+    "payload": {
+      "answer": "grey",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "grey",
+        "blue",
+        "green",
+        "pink"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las nubes grises cubren el cielo.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "grises",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ecb0406ae67d528e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "famoso",
+    "sentence": "Es la calle más [[famosa]] de la ciudad.",
+    "payload": {
+      "answer": "famous",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "famous",
+        "quiet",
+        "narrow",
+        "dark"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Es la calle más famosa de la ciudad.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "famosa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16041433b34a6e0c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fuerte",
+    "sentence": "La lluvia cae [[fuerte]] sobre la calle.",
+    "payload": {
+      "answer": "strong",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "strong",
+        "weak",
+        "soft",
+        "light"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La lluvia cae fuerte sobre la calle.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "fuerte",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/97ed9756a0cd0306.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "triste",
+    "sentence": "«Qué frío», dice ella [[triste]].",
+    "payload": {
+      "answer": "sad",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "sad",
+        "happy",
+        "angry",
+        "tired"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "«Qué frío», dice ella triste.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "triste",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95e7f0f19c75fee2.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "probar",
+    "sentence": "Ella [[prueba]] un churro caliente.",
+    "payload": {
+      "answer": "to taste",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to taste",
+        "to buy",
+        "to break",
+        "to carry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella prueba un churro caliente.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "prueba",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5cb20b2434ea4d9.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seguir",
+    "sentence": "Fuera [[sigue]] la lluvia.",
+    "payload": {
+      "answer": "to continue",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to continue",
+        "to stop",
+        "to fall",
+        "to dry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Fuera sigue la lluvia.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "sigue",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/59d0e49ba9c9e19e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dentro",
+    "sentence": "Fuera llueve, pero [[dentro]] hay risas.",
+    "payload": {
+      "answer": "inside",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "inside",
+        "outside",
+        "above",
+        "below"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Fuera llueve, pero dentro hay risas.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "dentro",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/960bf68ed324a347.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "lluvia",
+    "sentence": "Necesito un paraguas porque hay mucha _____.",
+    "payload": {
+      "answer": "lluvia",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "lluvia",
+        "viento",
+        "sol",
+        "polvo"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Necesito un paraguas porque hay mucha lluvia.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "lluvia",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6a920af5e77bbc89.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I need an umbrella because there is a lot of _____.",
+      "optionTranslations": [
+        "rain",
+        "wind",
+        "sun",
+        "dust"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "calor",
+    "sentence": "Con este sol tan fuerte hace mucho _____.",
+    "payload": {
+      "answer": "calor",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "calor",
+        "frío",
+        "viento",
+        "ruido"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Con este sol tan fuerte hace mucho calor.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "calor",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/497ab3d279e156ab.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "With this strong sun, there is a lot of _____.",
+      "optionTranslations": [
+        "heat",
+        "cold",
+        "wind",
+        "noise"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dulce",
+    "sentence": "El azúcar es blanco y muy _____.",
+    "payload": {
+      "answer": "dulce",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "dulce",
+        "amargo",
+        "salado",
+        "duro"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El azúcar es blanco y muy dulce.",
+        "storySlug": "churros-en-la-gran-via",
+        "targetWord": "dulce",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0f38e8ece3e2c59.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Sugar is white and very _____.",
+      "optionTranslations": [
+        "sweet",
+        "bitter",
+        "salty",
+        "hard"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "nube,paraguas,churro,móvil",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "nube",
+          "answer": "a cloud",
+          "options": [
+            "a cloud",
+            "an umbrella",
+            "a churro",
+            "a mobile phone"
+          ]
+        },
+        {
+          "word": "paraguas",
+          "answer": "an umbrella",
+          "options": [
+            "a cloud",
+            "an umbrella",
+            "a churro",
+            "a mobile phone"
+          ]
+        },
+        {
+          "word": "churro",
+          "answer": "a churro",
+          "options": [
+            "a cloud",
+            "an umbrella",
+            "a churro",
+            "a mobile phone"
+          ]
+        },
+        {
+          "word": "móvil",
+          "answer": "a mobile phone",
+          "options": [
+            "a cloud",
+            "an umbrella",
+            "a churro",
+            "a mobile phone"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "churros",
+    "sentence": "Comemos [[churros]] con chocolate caliente y dulce.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fried dough sticks",
+      "options": [
+        "fried dough sticks",
+        "boiled potatoes",
+        "grilled fish",
+        "fresh salad"
+      ],
+      "audioClip": {
+        "storySlug": "churros-en-la-gran-via",
+        "storySource": "user",
+        "sentence": "Comemos churros con chocolate caliente y dulce.",
+        "targetWord": "churros",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/518e375efc696789.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

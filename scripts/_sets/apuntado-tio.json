@@ -1,0 +1,523 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "cuchara,centro,lado,postre",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "cuchara",
+     "answer": "a spoon",
+     "options": [
+      "a spoon",
+      "the centre",
+      "the side",
+      "dessert"
+     ]
+    },
+    {
+     "word": "centro",
+     "answer": "the centre",
+     "options": [
+      "a spoon",
+      "the centre",
+      "the side",
+      "dessert"
+     ]
+    },
+    {
+     "word": "lado",
+     "answer": "the side",
+     "options": [
+      "a spoon",
+      "the centre",
+      "the side",
+      "dessert"
+     ]
+    },
+    {
+     "word": "postre",
+     "answer": "dessert",
+     "options": [
+      "a spoon",
+      "the centre",
+      "the side",
+      "dessert"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tira mucho",
+  "sentence": "Pilar dice que el arroz de abajo [[tira mucho]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it really makes you want more",
+   "options": [
+    "it really makes you want more",
+    "it is far too salty",
+    "it needs a few more minutes",
+    "it is hard to chew"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "Pilar dice que el arroz de abajo tira mucho.",
+    "targetWord": "tira mucho",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apuntado",
+  "sentence": "Sergio acepta la clase y responde: [[apuntado]], tío.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "noted, I will remember",
+   "options": [
+    "noted, I will remember",
+    "sorry, I forgot",
+    "wait, not yet",
+    "no, thank you"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "Sergio acepta la clase y responde: apuntado, tío.",
+    "targetWord": "apuntado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aprendido",
+  "sentence": "Vicente le dice que no ha perdido, que ha [[aprendido]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to learn",
+   "options": [
+    "to learn",
+    "to cheat",
+    "to forget",
+    "to complain"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "Vicente le dice que no ha perdido, que ha aprendido.",
+    "targetWord": "aprendido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "calma",
+  "sentence": "Vicente dice que es la leña y un poco de [[calma]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "patience",
+   "options": [
+    "patience",
+    "luck",
+    "practice",
+    "money"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "Vicente dice que es la leña y un poco de calma.",
+    "targetWord": "calma",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "distinto",
+  "sentence": "Vicente dice que perder y aprender es muy [[distinto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "different",
+   "options": [
+    "different",
+    "similar",
+    "difficult",
+    "useful"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "Vicente dice que perder y aprender es muy distinto.",
+    "targetWord": "distinto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "enseñas",
+  "sentence": "Sergio pregunta si le [[enseñas]] el domingo que viene.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to teach somebody",
+   "options": [
+    "to teach somebody",
+    "to pay somebody",
+    "to invite somebody",
+    "to phone somebody"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "Sergio pregunta si le enseñas el domingo que viene.",
+    "targetWord": "enseñas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "próxima",
+  "sentence": "Vicente dice que la [[próxima]] paella la hacen juntos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "next",
+   "options": [
+    "next",
+    "last",
+    "same",
+    "only"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "Vicente dice que la próxima paella la hacen juntos.",
+    "targetWord": "próxima",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "juntos",
+  "sentence": "Vicente y Sergio hacen la paella [[juntos]], con leña.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "together",
+   "options": [
+    "together",
+    "in turns",
+    "in silence",
+    "far apart"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "Vicente y Sergio hacen la paella juntos, con leña.",
+    "targetWord": "juntos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "prisas",
+  "sentence": "No me gustan las _____, prefiero hacer las cosas con calma.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "prisas",
+   "options": [
+    "prisas",
+    "esperas",
+    "mentiras",
+    "preguntas"
+   ],
+   "translation": "I do not like _____, I prefer to do things calmly.",
+   "optionTranslations": [
+    "rushing",
+    "waiting",
+    "lies",
+    "questions"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "No me gustan las prisas, prefiero hacer las cosas con calma.",
+    "targetWord": "prisas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quedan",
+  "featured": false,
+  "sentence": "Las dos paellas se [[quedan]] vacías por la tarde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to end up",
+   "options": [
+    "to end up",
+    "to arrive",
+    "to smell",
+    "to cool"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "Las dos paellas se quedan vacías por la tarde.",
+    "targetWord": "quedan",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vuelve",
+  "featured": false,
+  "sentence": "Lucía dice que todo el mundo [[vuelve]] a la del tío.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go back for more",
+   "options": [
+    "to go back for more",
+    "to say no",
+    "to stand up",
+    "to sit down"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "Lucía dice que todo el mundo vuelve a la del tío.",
+    "targetWord": "vuelve",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "comen",
+  "featured": false,
+  "sentence": "Todos [[comen]] despacio durante toda la tarde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to eat",
+   "options": [
+    "to eat",
+    "to talk",
+    "to rest",
+    "to work"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "Todos comen despacio durante toda la tarde.",
+    "targetWord": "comen",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "primero",
+  "featured": false,
+  "sentence": "La paella de Vicente se acaba [[primero]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "first",
+   "options": [
+    "first",
+    "later",
+    "slowly",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "La paella de Vicente se acaba primero.",
+    "targetWord": "primero",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bajo",
+  "featured": false,
+  "sentence": "La familia se sienta [[bajo]] la parra del patio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "under",
+   "options": [
+    "under",
+    "beside",
+    "against",
+    "around"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "La familia se sienta bajo la parra del patio.",
+    "targetWord": "bajo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "larga",
+  "featured": false,
+  "sentence": "La mesa es muy _____, caben doce personas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "larga",
+   "options": [
+    "larga",
+    "corta",
+    "baja",
+    "vieja"
+   ],
+   "translation": "The table is very _____, twelve people fit.",
+   "optionTranslations": [
+    "long",
+    "short",
+    "low",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "La mesa es muy larga, caben doce personas.",
+    "targetWord": "larga",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "seco",
+  "featured": false,
+  "sentence": "El campo está muy _____, no llueve desde junio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "seco",
+   "options": [
+    "seco",
+    "verde",
+    "lleno",
+    "caro"
+   ],
+   "translation": "The countryside is very _____, it has not rained since June.",
+   "optionTranslations": [
+    "dry",
+    "green",
+    "full",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "El campo está muy seco, no llueve desde junio.",
+    "targetWord": "seco",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "despacio",
+  "featured": false,
+  "sentence": "Come más _____, que te va a sentar mal.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "despacio",
+   "options": [
+    "despacio",
+    "deprisa",
+    "tarde",
+    "fuera"
+   ],
+   "translation": "Eat more _____, it is going to upset your stomach.",
+   "optionTranslations": [
+    "slowly",
+    "quickly",
+    "late",
+    "outside"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "Come más despacio, que te va a sentar mal.",
+    "targetWord": "despacio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "sola",
+  "featured": false,
+  "sentence": "Solo queda una _____ silla libre en la mesa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sola",
+   "options": [
+    "sola",
+    "doble",
+    "ancha",
+    "nueva"
+   ],
+   "translation": "There is only a _____ free chair left at the table.",
+   "optionTranslations": [
+    "single",
+    "double",
+    "wide",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "Solo queda una sola silla libre en la mesa.",
+    "targetWord": "sola",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "buena",
+  "featured": false,
+  "sentence": "Esta harina es muy _____, el pan sale perfecto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "buena",
+   "options": [
+    "buena",
+    "mala",
+    "cara",
+    "poca"
+   ],
+   "translation": "This flour is very _____, the bread turns out perfect.",
+   "optionTranslations": [
+    "good",
+    "bad",
+    "expensive",
+    "scarce"
+   ],
+   "audioClip": {
+    "storySlug": "apuntado-tio",
+    "storySource": "user",
+    "sentence": "Esta harina es muy buena, el pan sale perfecto.",
+    "targetWord": "buena",
+    "language": "spanish"
+   }
+  }
+ }
+]

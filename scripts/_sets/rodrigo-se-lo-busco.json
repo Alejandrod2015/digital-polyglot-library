@@ -1,0 +1,561 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "palomilla",
+    "sentence": "Los sábados la [[palomilla]] se juntaba en el zócalo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tight friend group",
+      "options": [
+        "a tight friend group",
+        "a single friend",
+        "a stranger",
+        "a family member"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Los sábados la palomilla se juntaba en el zócalo.",
+        "targetWord": "palomilla",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf11915a2980483c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "relajo",
+    "sentence": "Se juntaban a echar [[relajo]] hasta que dolía la panza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rowdy fun and joking",
+      "options": [
+        "rowdy fun and joking",
+        "a serious meeting",
+        "a long nap",
+        "a quiet dinner"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Se juntaban a echar relajo hasta que dolía la panza.",
+        "targetWord": "relajo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9df2077fb5e48125.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fresa",
+    "sentence": "Llegó estrenando unos tenis bien [[fresas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "posh and snobby",
+      "options": [
+        "posh and snobby",
+        "cheap and old",
+        "dirty and worn",
+        "plain and simple"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Llegó estrenando unos tenis bien fresas.",
+        "targetWord": "fresas",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/062c6e5582956ff5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fifí",
+    "sentence": "Con esos tenis ya se sentía muy [[fifí]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "snooty, high society",
+      "options": [
+        "snooty, high society",
+        "broke and humble",
+        "tired and lazy",
+        "kind and warm"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Con esos tenis ya se sentía muy fifí.",
+        "targetWord": "fifí",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d83c9ac608160bf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aguantar vara",
+    "sentence": "El vato [[aguantó vara]] sin enojarse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "took the teasing well",
+      "options": [
+        "took the teasing well",
+        "paid the whole bill",
+        "left the table",
+        "started a fight"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "El vato aguantó vara sin enojarse.",
+        "targetWord": "aguantó vara",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a32495a987a5923.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seguir la corriente",
+    "sentence": "Les [[siguió la corriente]] e inventó que eran de oro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "played along with them",
+      "options": [
+        "played along with them",
+        "argued back hard",
+        "ignored them fully",
+        "walked away mad"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Les siguió la corriente e inventó que eran de oro.",
+        "targetWord": "siguió la corriente",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/01464c0f11db4c45.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salsa",
+    "sentence": "Nayeli le preguntó si ya se sentía muy [[salsa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cocky, a hotshot",
+      "options": [
+        "cocky, a hotshot",
+        "shy and quiet",
+        "sad and low",
+        "sick and weak"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Nayeli le preguntó si ya se sentía muy salsa.",
+        "targetWord": "salsa",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b047e4a22eb60977.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quitado de la pena",
+    "sentence": "Contestó bien [[quitado de la pena]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "totally carefree",
+      "options": [
+        "totally carefree",
+        "deeply worried",
+        "truly ashamed",
+        "clearly angry"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Contestó bien quitado de la pena.",
+        "targetWord": "quitado de la pena",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/68c68cfdb6c73902.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacerse el occiso",
+    "sentence": "Rodrigo [[se hizo el occiso]] un buen rato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "played dumb",
+      "options": [
+        "played dumb",
+        "told the truth",
+        "paid up fast",
+        "left early"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Rodrigo se hizo el occiso un buen rato.",
+        "targetWord": "se hizo el occiso",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c982de550042f4a7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ponerse las pilas",
+    "sentence": "Se había [[puesto las pilas]] para ahorrar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "got his act together",
+      "options": [
+        "got his act together",
+        "gave up quickly",
+        "wasted his time",
+        "fell asleep"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Se había puesto las pilas para ahorrar.",
+        "targetWord": "puesto las pilas",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f3aca671284f827.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "armarla",
+    "sentence": "Entonces ya [[la armaste]], mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pulled it off",
+      "options": [
+        "pulled it off",
+        "messed it up",
+        "gave it away",
+        "turned it down"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Entonces ya la armaste, mano.",
+        "targetWord": "la armaste",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2edf4335a75c5c28.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de gorra",
+    "sentence": "Prometió llevarlos a todos [[de gorra]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for free",
+      "options": [
+        "for free",
+        "in a hurry",
+        "by mistake",
+        "one by one"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Prometió llevarlos a todos de gorra.",
+        "targetWord": "de gorra",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b55c71e78e8ecf56.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apapacho",
+    "sentence": "La mejor carrilla acababa en puro [[apapacho]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a warm affectionate hug",
+      "options": [
+        "a warm affectionate hug",
+        "a loud argument",
+        "a quick goodbye",
+        "a cold silence"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "La mejor carrilla acababa en puro apapacho.",
+        "targetWord": "apapacho",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02b6ca0a3e5f2496.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "picarse",
+    "sentence": "No te _____ por una simple broma entre amigos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "picarse",
+      "options": [
+        "picarse",
+        "reírse",
+        "dormirse",
+        "irse"
+      ],
+      "translation": "Do not _____ over a simple joke between friends.",
+      "optionTranslations": [
+        "take it personally",
+        "laugh",
+        "fall asleep",
+        "leave"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "No te picarse por una simple broma entre amigos.",
+        "targetWord": "picarse",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/386f13fb9e85a8dd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "luego luego",
+    "sentence": "Llegó y _____ empezó a molestar a todos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "luego luego",
+      "options": [
+        "luego luego",
+        "apenas",
+        "nunca",
+        "despacio"
+      ],
+      "translation": "He arrived and _____ started teasing everyone.",
+      "optionTranslations": [
+        "right away",
+        "barely",
+        "never",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Llegó y luego luego empezó a molestar a todos.",
+        "targetWord": "luego luego",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/535e73a37b56c0e5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rajarse",
+    "sentence": "No quiso _____ y aceptó el reto de inmediato.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rajarse",
+      "options": [
+        "rajarse",
+        "quejarse",
+        "reírse",
+        "tardarse"
+      ],
+      "translation": "He would not _____ and took the dare at once.",
+      "optionTranslations": [
+        "chicken out",
+        "complain",
+        "laugh",
+        "take long"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "No quiso rajarse y aceptó el reto de inmediato.",
+        "targetWord": "rajarse",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/defb46b0992b8ebc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "jale",
+    "sentence": "Consiguió un buen _____ de guía en el centro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "jale",
+      "options": [
+        "jale",
+        "castigo",
+        "susto",
+        "paseo"
+      ],
+      "translation": "He landed a good _____ as a guide downtown.",
+      "optionTranslations": [
+        "gig",
+        "punishment",
+        "scare",
+        "stroll"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Consiguió un buen jale de guía en el centro.",
+        "targetWord": "jale",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/199bb3987c88b021.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "de volada",
+    "sentence": "Itzel preguntó _____ si había descuento.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "de volada",
+      "options": [
+        "de volada",
+        "apenas",
+        "jamás",
+        "quizá"
+      ],
+      "translation": "Itzel asked _____ if there was a discount.",
+      "optionTranslations": [
+        "in a flash",
+        "hardly",
+        "never",
+        "maybe"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Itzel preguntó de volada si había descuento.",
+        "targetWord": "de volada",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b834c57018828c2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "raza",
+    "sentence": "Preguntó si había descuento para la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "raza",
+      "options": [
+        "raza",
+        "cuenta",
+        "fila",
+        "cocina"
+      ],
+      "translation": "She asked if there was a discount for the _____.",
+      "optionTranslations": [
+        "crew",
+        "bill",
+        "queue",
+        "kitchen"
+      ],
+      "audioClip": {
+        "storySlug": "rodrigo-se-lo-busco",
+        "storySource": "user",
+        "sentence": "Preguntó si había descuento para la raza.",
+        "targetWord": "raza",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/60f391cb46c3c0f1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "billete,vato,mano,caguama",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "billete",
+          "answer": "money, cash",
+          "options": [
+            "money, cash",
+            "dude, guy",
+            "buddy, bro",
+            "a big sharing beer"
+          ]
+        },
+        {
+          "word": "vato",
+          "answer": "dude, guy",
+          "options": [
+            "money, cash",
+            "dude, guy",
+            "buddy, bro",
+            "a big sharing beer"
+          ]
+        },
+        {
+          "word": "mano",
+          "answer": "buddy, bro",
+          "options": [
+            "money, cash",
+            "dude, guy",
+            "buddy, bro",
+            "a big sharing beer"
+          ]
+        },
+        {
+          "word": "caguama",
+          "answer": "a big sharing beer",
+          "options": [
+            "money, cash",
+            "dude, guy",
+            "buddy, bro",
+            "a big sharing beer"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

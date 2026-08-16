@@ -1,0 +1,597 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "scatola,fragola,gatto,cuore",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "scatola",
+     "answer": "box",
+     "options": [
+      "box",
+      "strawberry",
+      "cat",
+      "heart"
+     ]
+    },
+    {
+     "word": "fragola",
+     "answer": "strawberry",
+     "options": [
+      "box",
+      "strawberry",
+      "cat",
+      "heart"
+     ]
+    },
+    {
+     "word": "gatto",
+     "answer": "cat",
+     "options": [
+      "box",
+      "strawberry",
+      "cat",
+      "heart"
+     ]
+    },
+    {
+     "word": "cuore",
+     "answer": "heart",
+     "options": [
+      "box",
+      "strawberry",
+      "cat",
+      "heart"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "affamato",
+  "sentence": "Marco è molto [[affamato]] stasera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "very hungry",
+   "options": [
+    "very hungry",
+    "very tired",
+    "very happy",
+    "very light"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Marco è molto affamato stasera.",
+    "targetWord": "affamato",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "calda",
+  "sentence": "La carne è [[calda]] e profuma bene.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hot",
+   "options": [
+    "hot",
+    "cold",
+    "black",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "La carne è calda e profuma bene.",
+    "targetWord": "calda",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "profuma",
+  "sentence": "La carne [[profuma]] di rosmarino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "smells nice",
+   "options": [
+    "smells nice",
+    "tastes bad",
+    "looks old",
+    "feels cold"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "La carne profuma di rosmarino.",
+    "targetWord": "profuma",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "troppo",
+  "sentence": "Questa bistecca è [[troppo]] grande.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "too",
+   "options": [
+    "too",
+    "a little",
+    "never",
+    "always"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Questa bistecca è troppo grande.",
+    "targetWord": "troppo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "nero",
+  "sentence": "Un gatto [[nero]] li segue piano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "black",
+   "options": [
+    "black",
+    "white",
+    "red",
+    "hot"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Un gatto nero li segue piano.",
+    "targetWord": "nero",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "sente",
+  "sentence": "Elena [[sente]] il cuore leggero.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "feels",
+   "options": [
+    "feels",
+    "cuts",
+    "brings",
+    "offers"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Elena sente il cuore leggero.",
+    "targetWord": "sente",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "leggero",
+  "sentence": "Elena sente il cuore [[leggero]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "light",
+   "options": [
+    "light",
+    "heavy",
+    "hot",
+    "black"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Elena sente il cuore leggero.",
+    "targetWord": "leggero",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "ride",
+  "sentence": "Elena [[ride]] e accarezza il gatto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "laughs",
+   "options": [
+    "laughs",
+    "cries",
+    "cuts",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Elena ride e accarezza il gatto.",
+    "targetWord": "ride",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "sera",
+  "sentence": "Di _____ la trattoria è già piena.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sera",
+   "options": [
+    "sera",
+    "fame",
+    "dito",
+    "fragola"
+   ],
+   "translation": "In the _____ the trattoria is already full.",
+   "optionTranslations": [
+    "evening",
+    "hunger",
+    "finger",
+    "strawberry"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Di sera la trattoria è già piena.",
+    "targetWord": "sera",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "fame",
+  "sentence": "Anche Elena ha _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fame",
+   "options": [
+    "fame",
+    "sera",
+    "dito",
+    "gatto"
+   ],
+   "translation": "Elena also has _____.",
+   "optionTranslations": [
+    "hunger",
+    "evening",
+    "finger",
+    "cat"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Anche Elena ha fame.",
+    "targetWord": "fame",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "porta",
+  "sentence": "Il cameriere _____ una grande bistecca.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "porta",
+   "options": [
+    "porta",
+    "taglia",
+    "chiede",
+    "offre"
+   ],
+   "translation": "The waiter _____ a big steak.",
+   "optionTranslations": [
+    "brings",
+    "cuts",
+    "asks",
+    "offers"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Il cameriere porta una grande bistecca.",
+    "targetWord": "porta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "tagliano",
+  "sentence": "I due amici _____ la carne.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tagliano",
+   "options": [
+    "tagliano",
+    "portano",
+    "cercano",
+    "escono"
+   ],
+   "translation": "The two friends _____ the meat.",
+   "optionTranslations": [
+    "cut",
+    "bring",
+    "look for",
+    "go out"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "I due amici tagliano la carne.",
+    "targetWord": "tagliano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "finire",
+  "sentence": "I due non riescono a _____ tutto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "finire",
+   "options": [
+    "finire",
+    "cenare",
+    "uscire",
+    "portare"
+   ],
+   "translation": "The two cannot _____ everything.",
+   "optionTranslations": [
+    "finish",
+    "have dinner",
+    "go out",
+    "bring"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "I due non riescono a finire tutto.",
+    "targetWord": "finire",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "chiede",
+  "sentence": "Marco _____ una scatola al cameriere.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chiede",
+   "options": [
+    "chiede",
+    "porta",
+    "taglia",
+    "offre"
+   ],
+   "translation": "Marco _____ the waiter for a box.",
+   "optionTranslations": [
+    "asks",
+    "brings",
+    "cuts",
+    "offers"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Marco chiede una scatola al cameriere.",
+    "targetWord": "chiede",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "escono",
+  "sentence": "Dopo cena i due amici _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "escono",
+   "options": [
+    "escono",
+    "cercano",
+    "cenano",
+    "ridono"
+   ],
+   "translation": "After dinner the two friends _____.",
+   "optionTranslations": [
+    "go out",
+    "look for",
+    "have dinner",
+    "laugh"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Dopo cena i due amici escono.",
+    "targetWord": "escono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "cercano",
+  "sentence": "I due amici _____ un gelato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cercano",
+   "options": [
+    "cercano",
+    "escono",
+    "portano",
+    "tagliano"
+   ],
+   "translation": "The two friends _____ an ice cream.",
+   "optionTranslations": [
+    "look for",
+    "go out",
+    "bring",
+    "cut"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "I due amici cercano un gelato.",
+    "targetWord": "cercano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sceglie",
+  "sentence": "Elena _____ il gusto al cioccolato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sceglie",
+   "options": [
+    "sceglie",
+    "cerca",
+    "porta",
+    "offre"
+   ],
+   "translation": "Elena _____ the chocolate flavor.",
+   "optionTranslations": [
+    "chooses",
+    "looks for",
+    "brings",
+    "offers"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Elena sceglie il gusto al cioccolato.",
+    "targetWord": "sceglie",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "offre",
+  "sentence": "Elena _____ un poco di gelato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "offre",
+   "options": [
+    "offre",
+    "taglia",
+    "porta",
+    "chiede"
+   ],
+   "translation": "Elena _____ a little ice cream.",
+   "optionTranslations": [
+    "offers",
+    "cuts",
+    "brings",
+    "asks"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Elena offre un poco di gelato.",
+    "targetWord": "offre",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "dito",
+  "sentence": "Il gatto lecca il _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dito",
+   "options": [
+    "dito",
+    "cuore",
+    "gelato",
+    "cameriere"
+   ],
+   "translation": "The cat licks the _____.",
+   "optionTranslations": [
+    "finger",
+    "heart",
+    "ice cream",
+    "waiter"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Il gatto lecca il dito.",
+    "targetWord": "dito",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "cenano",
+  "sentence": "Elena e Marco _____ vicino alla finestra.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cenano",
+   "options": [
+    "cenano",
+    "escono",
+    "cercano",
+    "ridono"
+   ],
+   "translation": "Elena and Marco _____ by the window.",
+   "optionTranslations": [
+    "have dinner",
+    "go out",
+    "look for",
+    "laugh"
+   ],
+   "audioClip": {
+    "storySlug": "la-bistecca-e-il-gatto",
+    "storySource": "user",
+    "sentence": "Elena e Marco cenano vicino alla finestra.",
+    "targetWord": "cenano",
+    "language": "italian"
+   }
+  }
+ }
+]

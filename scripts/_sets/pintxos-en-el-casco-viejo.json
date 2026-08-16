@@ -1,0 +1,621 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "noche",
+    "sentence": "Por la [[noche]], salen a un bar.",
+    "payload": {
+      "answer": "night",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "night",
+        "morning",
+        "noon",
+        "week"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Por la noche, salen a un bar.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "noche",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f66b30912e5148e3.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pintxo",
+    "sentence": "Los [[pintxos]] son pequeños y ricos.",
+    "payload": {
+      "answer": "a small snack",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a small snack",
+        "a big meal",
+        "a cold drink",
+        "a sweet cake"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los pintxos son pequeños y ricos.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "pintxos",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b1a876ff5ef7d81a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rico",
+    "sentence": "Los pintxos son pequeños y [[ricos]].",
+    "payload": {
+      "answer": "tasty, good",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "tasty, good",
+        "sour, bitter",
+        "salty, savory",
+        "spicy, hot"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los pintxos son pequeños y ricos.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "ricos",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b1a876ff5ef7d81a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sabor",
+    "sentence": "El [[sabor]] del pescado es muy fuerte.",
+    "payload": {
+      "answer": "the taste, flavor",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the taste, flavor",
+        "the smell, odor",
+        "the color, shade",
+        "the price, cost"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El sabor del pescado es muy fuerte.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "sabor",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/314e34616edafe35.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delicioso",
+    "sentence": "Ella dice que está [[delicioso]].",
+    "payload": {
+      "answer": "very tasty",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "very tasty",
+        "very ugly",
+        "very salty",
+        "very cold"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella dice que está delicioso.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "delicioso",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02b0901fdb84fe30.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "charlar",
+    "sentence": "Los amigos [[charlan]] un buen rato.",
+    "payload": {
+      "answer": "to chat",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to chat",
+        "to argue",
+        "to whisper",
+        "to sing"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los amigos charlan un buen rato.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "charlan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c2c7b9b5192f5e0d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "huele",
+    "sentence": "La comida rica _____ muy bien.",
+    "payload": {
+      "answer": "huele",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "huele",
+        "suena",
+        "brilla",
+        "pesa"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La comida rica huele muy bien.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "huele",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49acab4486742d49.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The tasty food _____ very good.",
+      "optionTranslations": [
+        "smells",
+        "sounds",
+        "shines",
+        "weighs"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "hambre",
+    "sentence": "Quiero comer porque tengo mucha _____.",
+    "payload": {
+      "answer": "hambre",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "hambre",
+        "sed",
+        "prisa",
+        "tos"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Quiero comer porque tengo mucha hambre.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "hambre",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a184f30d71e7f80a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I want to eat because I have a lot of _____.",
+      "optionTranslations": [
+        "hunger",
+        "thirst",
+        "hurry",
+        "cough"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "prueba",
+    "sentence": "Ella _____ un poco de comida nueva.",
+    "payload": {
+      "answer": "prueba",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "prueba",
+        "pinta",
+        "cuenta",
+        "rompe"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella prueba un poco de comida nueva.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "prueba",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff64c4c9fdba9f76.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She _____ a little bit of new food.",
+      "optionTranslations": [
+        "tastes",
+        "paints",
+        "counts",
+        "breaks"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "volver",
+    "sentence": "Este lugar me gusta y quiero _____ pronto.",
+    "payload": {
+      "answer": "volver",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "volver",
+        "correr",
+        "dormir",
+        "pagar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Este lugar me gusta y quiero volver pronto.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "volver",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8a5c851dd7f2f9aa.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I like this place and I want to _____ soon.",
+      "optionTranslations": [
+        "come back",
+        "run",
+        "sleep",
+        "pay"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "juntos",
+    "sentence": "Los tres entran [[juntos]] al bar.",
+    "payload": {
+      "answer": "together",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "together",
+        "alone",
+        "far",
+        "slowly"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los tres entran juntos al bar.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "juntos",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f184ce39caad39b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barra",
+    "sentence": "En la [[barra]] hay muchos pintxos.",
+    "payload": {
+      "answer": "a bar counter",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a bar counter",
+        "a kitchen",
+        "a bedroom",
+        "a garden"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la barra hay muchos pintxos.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "barra",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e030ffd368226938.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encima",
+    "sentence": "Cada pintxo tiene pan y algo [[encima]].",
+    "payload": {
+      "answer": "on top",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "on top",
+        "under",
+        "beside",
+        "behind"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cada pintxo tiene pan y algo encima.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "encima",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1bc804b23db58a51.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al principio",
+    "sentence": "[[Al principio]], ella duda un poco.",
+    "payload": {
+      "answer": "at first",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "at first",
+        "at last",
+        "again",
+        "never"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Al principio, ella duda un poco.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "al principio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a6c1d2fd0c1221a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dudar",
+    "sentence": "Ella [[duda]] antes de probar el plato.",
+    "payload": {
+      "answer": "to hesitate",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to hesitate",
+        "to decide",
+        "to hurry",
+        "to agree"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella duda antes de probar el plato.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "duda",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5320521aa79ee84.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "igual",
+    "sentence": "Él pide otro pintxo [[igual]].",
+    "payload": {
+      "answer": "the same",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the same",
+        "the next",
+        "the last",
+        "the best"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él pide otro pintxo igual.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "igual",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1171f9db7656455d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rato",
+    "sentence": "Los amigos comen un buen [[rato]].",
+    "payload": {
+      "answer": "a while",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a while",
+        "a meal",
+        "a party",
+        "a walk"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los amigos comen un buen rato.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "rato",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08a4bec08b00e80b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rápido",
+    "sentence": "La noche pasa muy [[rápido]] hoy.",
+    "payload": {
+      "answer": "quickly, fast",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "quickly, fast",
+        "slowly, late",
+        "quietly, low",
+        "early, soon"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La noche pasa muy rápido hoy.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "rápido",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c6a8a6dd650949ca.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recuerdo",
+    "sentence": "Ella guarda un bonito [[recuerdo]].",
+    "payload": {
+      "answer": "a memory",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a memory",
+        "a photo",
+        "a gift",
+        "a secret"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella guarda un bonito recuerdo.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "recuerdo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e8aa24f427a960e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "fuerte",
+    "sentence": "El sabor del ajo es muy _____.",
+    "payload": {
+      "answer": "fuerte",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "fuerte",
+        "corto",
+        "limpio",
+        "lento"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El sabor del ajo es muy fuerte.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "fuerte",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/084351142e1de586.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The taste of garlic is very _____.",
+      "optionTranslations": [
+        "strong",
+        "short",
+        "clean",
+        "slow"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aplaude",
+    "sentence": "Al final del baile, la gente _____.",
+    "payload": {
+      "answer": "aplaude",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "aplaude",
+        "corre",
+        "duerme",
+        "llora"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Al final del baile, la gente aplaude.",
+        "storySlug": "pintxos-en-el-casco-viejo",
+        "targetWord": "aplaude",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2a19943e47fd9371.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "At the end of the dance, the people _____.",
+      "optionTranslations": [
+        "clap",
+        "run",
+        "sleep",
+        "cry"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "bar,puerta,bebida,pescado",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "bar",
+          "answer": "a bar",
+          "options": [
+            "a bar",
+            "a door",
+            "a drink",
+            "fish (food)"
+          ]
+        },
+        {
+          "word": "puerta",
+          "answer": "a door",
+          "options": [
+            "a bar",
+            "a door",
+            "a drink",
+            "fish (food)"
+          ]
+        },
+        {
+          "word": "bebida",
+          "answer": "a drink",
+          "options": [
+            "a bar",
+            "a door",
+            "a drink",
+            "fish (food)"
+          ]
+        },
+        {
+          "word": "pescado",
+          "answer": "fish (food)",
+          "options": [
+            "a bar",
+            "a door",
+            "a drink",
+            "fish (food)"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

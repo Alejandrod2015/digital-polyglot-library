@@ -1,0 +1,607 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "visitar",
+    "sentence": "Ellos [[visitan]] un lugar nuevo.",
+    "payload": {
+      "answer": "to visit",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to visit",
+        "to build",
+        "to clean",
+        "to sell"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ellos visitan un lugar nuevo.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "visitan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b21c8643b9069f05.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "sentence": "Ella [[mira]] el agua azul.",
+    "payload": {
+      "answer": "to look at",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to look at",
+        "to touch",
+        "to close",
+        "to throw"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira el agua azul.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "mira",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff94c5566df0cbb3.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "blanco",
+    "sentence": "Los edificios son altos y [[blancos]].",
+    "payload": {
+      "answer": "white",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "white",
+        "black",
+        "green",
+        "brown"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los edificios son altos y blancos.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "blancos",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/674314c3902fe863.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "alto",
+    "sentence": "Ese edificio llega hasta las nubes; es muy _____.",
+    "payload": {
+      "answer": "alto",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "alto",
+        "limpio",
+        "nuevo",
+        "oscuro"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ese edificio llega hasta las nubes; es muy alto.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "alto",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d5ce9caf593e358.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "That building reaches the clouds; it is very _____.",
+      "optionTranslations": [
+        "tall",
+        "clean",
+        "new",
+        "dark"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "luz",
+    "sentence": "La [[luz]] del sol es bonita.",
+    "payload": {
+      "answer": "light",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "light",
+        "water",
+        "air",
+        "sound"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La luz del sol es bonita.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "luz",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6fe6fffec1445328.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hermana",
+    "sentence": "Ella es la [[hermana]] de él.",
+    "payload": {
+      "answer": "a sister",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a sister",
+        "a mother",
+        "a friend",
+        "a teacher"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella es la hermana de él.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "hermana",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a10ff7f823e4ed7a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "llega",
+    "sentence": "El tren _____ a la estación tarde.",
+    "payload": {
+      "answer": "llega",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "llega",
+        "canta",
+        "duerme",
+        "come"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El tren llega a la estación tarde.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "llega",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/395bd431c2289b70.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The train _____ at the station late.",
+      "optionTranslations": [
+        "arrives",
+        "sings",
+        "sleeps",
+        "eats"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "moderno",
+    "sentence": "Los edificios son nuevos y [[modernos]].",
+    "payload": {
+      "answer": "modern",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "modern",
+        "old",
+        "dirty",
+        "empty"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los edificios son nuevos y modernos.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "modernos",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/549c1fae297d9d83.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oscuro",
+    "sentence": "Una parte del cielo queda un poco [[oscura]].",
+    "payload": {
+      "answer": "dark",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "dark",
+        "bright",
+        "clean",
+        "sweet"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Una parte del cielo queda un poco oscura.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "oscura",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0bf3696031ab1ad2.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "volver",
+    "sentence": "Es tarde y ellos quieren _____ a casa.",
+    "payload": {
+      "answer": "volver",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "volver",
+        "correr",
+        "comer",
+        "cantar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Es tarde y ellos quieren volver a casa.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "volver",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e4120be2e8bd7c5b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "It is late and they want to _____ home.",
+      "optionTranslations": [
+        "go back",
+        "run",
+        "eat",
+        "sing"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lugar",
+    "sentence": "Este [[lugar]] es muy especial.",
+    "payload": {
+      "answer": "a place",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a place",
+        "a city",
+        "a road",
+        "a shop"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Este lugar es muy especial.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "lugar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0228960bd942dd8c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "limpio",
+    "sentence": "Después de lavar el suelo, todo está muy _____.",
+    "payload": {
+      "answer": "limpio",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "limpio",
+        "alto",
+        "lento",
+        "dulce"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Después de lavar el suelo, todo está muy limpio.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "limpio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f48eb4ab7b3923a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "After washing the floor, everything is very _____.",
+      "optionTranslations": [
+        "clean",
+        "tall",
+        "slow",
+        "sweet"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fuente",
+    "sentence": "En la plaza hay muchas [[fuentes]].",
+    "payload": {
+      "answer": "a fountain",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a fountain",
+        "a tree",
+        "a bench",
+        "a window"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la plaza hay muchas fuentes.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "fuentes",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/201b5aaec506e91d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "claro",
+    "sentence": "El cielo está muy [[claro]] hoy.",
+    "payload": {
+      "answer": "bright",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "bright",
+        "dark",
+        "cloudy",
+        "gray"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El cielo está muy claro hoy.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "claro",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee66904b16b5bd0a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorprendido",
+    "sentence": "Ella está muy [[sorprendida]].",
+    "payload": {
+      "answer": "surprised",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "surprised",
+        "tired",
+        "angry",
+        "bored"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella está muy sorprendida.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "sorprendida",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e64b56f4d876e42.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonrisa",
+    "sentence": "Ella llega con una gran [[sonrisa]].",
+    "payload": {
+      "answer": "a smile",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a smile",
+        "a gift",
+        "a word",
+        "a hand"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella llega con una gran sonrisa.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "sonrisa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/82561b1ba139997d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "juntos",
+    "sentence": "Los tres caminan [[juntos]].",
+    "payload": {
+      "answer": "together",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "together",
+        "alone",
+        "slowly",
+        "again"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los tres caminan juntos.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "juntos",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c1781aece73b2e37.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conocer",
+    "sentence": "Ella [[conoce]] bien la ciudad.",
+    "payload": {
+      "answer": "to know",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to know",
+        "to forget",
+        "to leave",
+        "to buy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella conoce bien la ciudad.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "conoce",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/41ba9f86baf9145c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dentro",
+    "sentence": "[[Dentro]] hay peces de colores.",
+    "payload": {
+      "answer": "inside",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "inside",
+        "outside",
+        "above",
+        "near"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Dentro hay peces de colores.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "Dentro",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa6fb488f7fe496c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cristal",
+    "sentence": "Ella toca el [[cristal]] con el dedo.",
+    "payload": {
+      "answer": "glass",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "glass",
+        "water",
+        "wood",
+        "stone"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella toca el cristal con el dedo.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "cristal",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6120a923a55be7cf.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encenderse",
+    "sentence": "Por la noche las luces [[se encienden]].",
+    "payload": {
+      "answer": "to turn on",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to turn on",
+        "to turn off",
+        "to fall",
+        "to break"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Por la noche las luces se encienden.",
+        "storySlug": "la-ciudad-de-las-artes",
+        "targetWord": "se encienden",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e4a9d89c00d2b60f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "edificio,cielo,pez,dedo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "edificio",
+          "answer": "a building",
+          "options": [
+            "a building",
+            "the sky",
+            "a fish",
+            "a finger"
+          ]
+        },
+        {
+          "word": "cielo",
+          "answer": "the sky",
+          "options": [
+            "a building",
+            "the sky",
+            "a fish",
+            "a finger"
+          ]
+        },
+        {
+          "word": "pez",
+          "answer": "a fish",
+          "options": [
+            "a building",
+            "the sky",
+            "a fish",
+            "a finger"
+          ]
+        },
+        {
+          "word": "dedo",
+          "answer": "a finger",
+          "options": [
+            "a building",
+            "the sky",
+            "a fish",
+            "a finger"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

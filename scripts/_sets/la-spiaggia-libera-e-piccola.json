@@ -1,0 +1,555 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "spiaggia,sabbia,asciugamano,ombrellone",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "spiaggia",
+          "answer": "a beach",
+          "options": [
+            "a beach",
+            "sand",
+            "a towel",
+            "a beach umbrella"
+          ]
+        },
+        {
+          "word": "sabbia",
+          "answer": "sand",
+          "options": [
+            "a beach",
+            "sand",
+            "a towel",
+            "a beach umbrella"
+          ]
+        },
+        {
+          "word": "asciugamano",
+          "answer": "a towel",
+          "options": [
+            "a beach",
+            "sand",
+            "a towel",
+            "a beach umbrella"
+          ]
+        },
+        {
+          "word": "ombrellone",
+          "answer": "a beach umbrella",
+          "options": [
+            "a beach",
+            "sand",
+            "a towel",
+            "a beach umbrella"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arancione",
+    "sentence": "Gli ombrelloni sono tutti [[arancioni]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "orange",
+      "options": [
+        "orange",
+        "green",
+        "white",
+        "blue"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Gli ombrelloni sono tutti arancioni.",
+        "targetWord": "arancioni",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/729d778bbe608711.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "stabilimento",
+    "sentence": "Fra due [[stabilimenti]] resta una striscia libera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "beach clubs",
+      "options": [
+        "beach clubs",
+        "train stations",
+        "food shops",
+        "car parks"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Fra due stabilimenti resta una striscia libera.",
+        "targetWord": "stabilimenti",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b9490e5204c8377.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "striscia",
+    "sentence": "La [[striscia]] di sabbia è molto stretta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the strip",
+      "options": [
+        "the strip",
+        "the wall",
+        "the road",
+        "the boat"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "La striscia di sabbia è molto stretta.",
+        "targetWord": "striscia",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/564964a094eb66b2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bagnino",
+    "sentence": "Il [[bagnino]] spiega quanto costa il lettino.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the lifeguard",
+      "options": [
+        "the lifeguard",
+        "the waiter",
+        "the driver",
+        "the cook"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Il bagnino spiega quanto costa il lettino.",
+        "targetWord": "bagnino",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7830f681035c5db5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lettino",
+    "sentence": "Il [[lettino]] costa caro per tutta la giornata.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sunbed",
+      "options": [
+        "the sunbed",
+        "the ticket",
+        "the towel",
+        "the drink"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Il lettino costa caro per tutta la giornata.",
+        "targetWord": "lettino",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5557d4dd61473a8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "libero",
+    "sentence": "Sulla spiaggia [[libera]] non si paga niente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "free, open to all",
+      "options": [
+        "free, open to all",
+        "closed",
+        "private",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Sulla spiaggia libera non si paga niente.",
+        "targetWord": "libera",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/def73dc4362154f1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dolce",
+    "sentence": "L'acqua [[dolce]] serve per la faccia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fresh, not salty",
+      "options": [
+        "fresh, not salty",
+        "very sweet",
+        "very cold",
+        "dirty"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "L'acqua dolce serve per la faccia.",
+        "targetWord": "dolce",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/787c67762b63fd0a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "scottare",
+    "sentence": "Alle due la sabbia [[scotta]] troppo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "burns",
+      "options": [
+        "burns",
+        "cools",
+        "moves",
+        "shines"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Alle due la sabbia scotta troppo.",
+        "targetWord": "scotta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ef49f773045f134.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ombra",
+    "sentence": "Quel prezzo compra l'[[ombra]], non il mare.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the shade",
+      "options": [
+        "the shade",
+        "the sand",
+        "the water",
+        "the seat"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Quel prezzo compra l'ombra, non il mare.",
+        "targetWord": "ombra",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/43cd8a0ee5f1d56c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "baia",
+    "sentence": "La [[baia]] è piena di ombrelloni.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the bay",
+      "options": [
+        "the bay",
+        "the street",
+        "the square",
+        "the port"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "La baia è piena di ombrelloni.",
+        "targetWord": "baia",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2e62ef2731063850.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "stendere",
+    "sentence": "Lei [[stende]] l'asciugamano sulla sabbia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "spreads out",
+      "options": [
+        "spreads out",
+        "folds up",
+        "sells",
+        "washes"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Lei stende l'asciugamano sulla sabbia.",
+        "targetWord": "stende",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c9f0eb168e9b6c8c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "spazio",
+    "sentence": "Sulla striscia lo [[spazio]] è poco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the space",
+      "options": [
+        "the space",
+        "the price",
+        "the shade",
+        "the water"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Sulla striscia lo spazio è poco.",
+        "targetWord": "spazio",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49c1256176786321.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "uguale",
+    "sentence": "Il mare qui è [[uguale]] a quello a pagamento.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the same",
+      "options": [
+        "the same",
+        "different",
+        "colder",
+        "further"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Il mare qui è uguale a quello a pagamento.",
+        "targetWord": "uguale",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/74c5ecad08100303.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colore",
+    "sentence": "L'acqua ha lo stesso [[colore]] dappertutto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "colour",
+      "options": [
+        "colour",
+        "price",
+        "noise",
+        "smell"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "L'acqua ha lo stesso colore dappertutto.",
+        "targetWord": "colore",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b1f6bba08a4d96b8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nuotare",
+    "sentence": "Lei [[nuota]] fino allo scoglio e torna.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "swims",
+      "options": [
+        "swims",
+        "walks",
+        "runs",
+        "sits"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Lei nuota fino allo scoglio e torna.",
+        "targetWord": "nuota",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb87a5c24e1e212a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "capello",
+    "sentence": "Lei torna con i [[capelli]] pieni di sale.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hair",
+      "options": [
+        "hair",
+        "hands",
+        "shoes",
+        "eyes"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Lei torna con i capelli pieni di sale.",
+        "targetWord": "capelli",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8b592f5773ef578f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sale",
+    "sentence": "Il [[sale]] del mare resta sulla pelle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "salt",
+      "options": [
+        "salt",
+        "sand",
+        "sun",
+        "water"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Il sale del mare resta sulla pelle.",
+        "targetWord": "sale",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fff0c87236544e20.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prestare",
+    "sentence": "Un ragazzo le [[presta]] una bottiglia d'acqua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lends",
+      "options": [
+        "lends",
+        "sells",
+        "throws",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Un ragazzo le presta una bottiglia d'acqua.",
+        "targetWord": "presta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb2b08dfd5c11378.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "faccia",
+    "sentence": "Lei si lava la [[faccia]] con quell'acqua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the face",
+      "options": [
+        "the face",
+        "the hand",
+        "the foot",
+        "the back"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Lei si lava la faccia con quell'acqua.",
+        "targetWord": "faccia",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/19ea948ff23b7c7f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raccogliere",
+    "sentence": "Lei [[raccoglie]] l'asciugamano e va via.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "picks up",
+      "options": [
+        "picks up",
+        "spreads out",
+        "buys",
+        "loses"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Lei raccoglie l'asciugamano e va via.",
+        "targetWord": "raccoglie",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0f2324f01e66171a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "peso",
+    "sentence": "Nessuno sembra darci _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "peso",
+      "options": [
+        "peso",
+        "fretta",
+        "fame",
+        "freddo"
+      ],
+      "translation": "Nobody seems to give it any _____.",
+      "optionTranslations": [
+        "importance",
+        "hurry",
+        "hunger",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "la-spiaggia-libera-e-piccola",
+        "storySource": "user",
+        "sentence": "Nessuno sembra darci peso.",
+        "targetWord": "peso",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b13290868e871dd.mp3"
+      }
+    },
+    "featured": false
+  }
+]

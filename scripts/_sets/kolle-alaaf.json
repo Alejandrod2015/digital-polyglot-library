@@ -1,0 +1,610 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Löwe,Blume,Kostüm,Gruß",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Löwe",
+     "answer": "lion",
+     "options": [
+      "lion",
+      "flower",
+      "costume",
+      "greeting"
+     ]
+    },
+    {
+     "word": "Blume",
+     "answer": "flower",
+     "options": [
+      "lion",
+      "flower",
+      "costume",
+      "greeting"
+     ]
+    },
+    {
+     "word": "Kostüm",
+     "answer": "costume",
+     "options": [
+      "lion",
+      "flower",
+      "costume",
+      "greeting"
+     ]
+    },
+    {
+     "word": "Gruß",
+     "answer": "greeting",
+     "options": [
+      "lion",
+      "flower",
+      "costume",
+      "greeting"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "fröhlich",
+  "sentence": "Alle sind [[fröhlich]] und tanzen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cheerful",
+   "options": [
+    "cheerful",
+    "tired",
+    "angry",
+    "nervous"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Alle sind fröhlich und tanzen.",
+    "targetWord": "fröhlich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "Leute",
+  "sentence": "Die [[Leute]] rufen laut auf der Straße.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "people",
+   "options": [
+    "people",
+    "songs",
+    "costumes",
+    "streets"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Die Leute rufen laut auf der Straße.",
+    "targetWord": "Leute",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "bereit",
+  "sentence": "Bist du [[bereit]] für den Zug?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ready",
+   "options": [
+    "ready",
+    "tired",
+    "sad",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Bist du bereit für den Zug?",
+    "targetWord": "bereit",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "neugierig",
+  "sentence": "Aber sie ist auch sehr [[neugierig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "curious",
+   "options": [
+    "curious",
+    "tired",
+    "angry",
+    "bored"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Aber sie ist auch sehr neugierig.",
+    "targetWord": "neugierig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "hört",
+  "sentence": "Man [[hört]] überall Musik in Köln.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hears",
+   "options": [
+    "hears",
+    "sees",
+    "sings",
+    "brings"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Man hört überall Musik in Köln.",
+    "targetWord": "hört",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "kenne",
+  "sentence": "Ich [[kenne]] die Lieder nicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "know",
+   "options": [
+    "know",
+    "hear",
+    "like",
+    "sing"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Ich kenne die Lieder nicht.",
+    "targetWord": "kenne",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "egal",
+  "sentence": "Das ist [[egal]], sagt David.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "does not matter",
+   "options": [
+    "does not matter",
+    "is important",
+    "is funny",
+    "is difficult"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Das ist egal, sagt David.",
+    "targetWord": "egal",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "lacht",
+  "sentence": "David [[lacht]] über das Kostüm.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "laughs",
+   "options": [
+    "laughs",
+    "cries",
+    "sings",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "David lacht über das Kostüm.",
+    "targetWord": "lacht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "nervös",
+  "sentence": "Nora ist ein bisschen [[nervös]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nervous",
+   "options": [
+    "nervous",
+    "cheerful",
+    "loud",
+    "ready"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Nora ist ein bisschen nervös.",
+    "targetWord": "nervös",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "beginnt",
+  "sentence": "Der Karneval _____ in Köln.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "beginnt",
+   "options": [
+    "beginnt",
+    "hört",
+    "tanzt",
+    "ruft"
+   ],
+   "translation": "The Karneval _____ in Cologne.",
+   "optionTranslations": [
+    "begins",
+    "hears",
+    "dances",
+    "calls out"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Der Karneval beginnt in Köln.",
+    "targetWord": "beginnt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "tragen",
+  "sentence": "Viele Menschen _____ bunte Kostüme.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tragen",
+   "options": [
+    "tragen",
+    "hören",
+    "üben",
+    "rufen"
+   ],
+   "translation": "Many people _____ colorful costumes.",
+   "optionTranslations": [
+    "wear",
+    "hear",
+    "practice",
+    "call out"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Viele Menschen tragen bunte Kostüme.",
+    "targetWord": "tragen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "kann",
+  "sentence": "Und ich _____ nicht tanzen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kann",
+   "options": [
+    "kann",
+    "will",
+    "muss",
+    "mag"
+   ],
+   "translation": "And I _____ not dance.",
+   "optionTranslations": [
+    "can",
+    "want to",
+    "must",
+    "like to"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Und ich kann nicht tanzen.",
+    "targetWord": "kann",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "tanzen",
+  "sentence": "Alle _____ im Karneval.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tanzen",
+   "options": [
+    "tanzen",
+    "singen",
+    "rufen",
+    "üben"
+   ],
+   "translation": "Everyone _____ in the Karneval.",
+   "optionTranslations": [
+    "dance",
+    "sing",
+    "call out",
+    "practice"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Alle tanzen im Karneval.",
+    "targetWord": "tanzen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Zug",
+  "sentence": "Alle freuen sich auf den _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Zug",
+   "options": [
+    "Zug",
+    "Gruß",
+    "Löwe",
+    "Spiegel"
+   ],
+   "translation": "Everyone looks forward to the _____.",
+   "optionTranslations": [
+    "parade",
+    "greeting",
+    "lion",
+    "mirror"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Alle freuen sich auf den Zug.",
+    "targetWord": "Zug",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "bunte",
+  "sentence": "Sie tragen _____ Kostüme im Karneval.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bunte",
+   "options": [
+    "bunte",
+    "laute",
+    "große",
+    "kleine"
+   ],
+   "translation": "They wear _____ costumes in the Karneval.",
+   "optionTranslations": [
+    "colorful",
+    "loud",
+    "big",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Sie tragen bunte Kostüme im Karneval.",
+    "targetWord": "bunte",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Lieder",
+  "sentence": "Ich kenne die _____ nicht.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Lieder",
+   "options": [
+    "Lieder",
+    "Leute",
+    "Kostüme",
+    "Grüße"
+   ],
+   "translation": "I do not know the _____.",
+   "optionTranslations": [
+    "songs",
+    "people",
+    "costumes",
+    "greetings"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Ich kenne die Lieder nicht.",
+    "targetWord": "Lieder",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "rufen",
+  "sentence": "Die Leute _____ laut auf der Straße.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rufen",
+   "options": [
+    "rufen",
+    "tragen",
+    "üben",
+    "hören"
+   ],
+   "translation": "The people _____ loudly on the street.",
+   "optionTranslations": [
+    "call out",
+    "wear",
+    "practice",
+    "hear"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Die Leute rufen laut auf der Straße.",
+    "targetWord": "rufen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "übt",
+  "sentence": "Nora _____ den Gruß vor dem Spiegel.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "übt",
+   "options": [
+    "übt",
+    "ruft",
+    "trägt",
+    "kennt"
+   ],
+   "translation": "Nora _____ the greeting in front of the mirror.",
+   "optionTranslations": [
+    "practices",
+    "calls out",
+    "wears",
+    "knows"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Nora übt den Gruß vor dem Spiegel.",
+    "targetWord": "übt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Stimmung",
+  "sentence": "Die _____ ist heute gut.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Stimmung",
+   "options": [
+    "Stimmung",
+    "Sonne",
+    "Straße",
+    "Musik"
+   ],
+   "translation": "The _____ is good today.",
+   "optionTranslations": [
+    "mood",
+    "sun",
+    "street",
+    "music"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Die Stimmung ist heute gut.",
+    "targetWord": "Stimmung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "laut",
+  "sentence": "Die Leute rufen sehr _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "laut",
+   "options": [
+    "laut",
+    "fröhlich",
+    "bereit",
+    "müde"
+   ],
+   "translation": "The people call out very _____.",
+   "optionTranslations": [
+    "loudly",
+    "cheerfully",
+    "ready",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "kolle-alaaf",
+    "storySource": "user",
+    "sentence": "Die Leute rufen sehr laut.",
+    "targetWord": "laut",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ }
+]

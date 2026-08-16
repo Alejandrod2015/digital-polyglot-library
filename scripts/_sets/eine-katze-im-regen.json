@@ -1,0 +1,630 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Katze,Tür,Tier,Milch",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Katze",
+     "answer": "cat",
+     "options": [
+      "cat",
+      "door",
+      "animal",
+      "milk"
+     ]
+    },
+    {
+     "word": "Tür",
+     "answer": "door",
+     "options": [
+      "cat",
+      "door",
+      "animal",
+      "milk"
+     ]
+    },
+    {
+     "word": "Tier",
+     "answer": "animal",
+     "options": [
+      "cat",
+      "door",
+      "animal",
+      "milk"
+     ]
+    },
+    {
+     "word": "Milch",
+     "answer": "milk",
+     "options": [
+      "cat",
+      "door",
+      "animal",
+      "milk"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "niemand",
+  "sentence": "Aber [[niemand]] kennt die kleine Katze.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nobody",
+   "options": [
+    "nobody",
+    "everybody",
+    "someone",
+    "a neighbor"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Aber niemand kennt die kleine Katze.",
+    "targetWord": "niemand",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "stark",
+  "sentence": "Es regnet [[stark]] in der Nacht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hard",
+   "options": [
+    "hard",
+    "gently",
+    "rarely",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Es regnet stark in der Nacht.",
+    "targetWord": "stark",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "ruhig",
+  "sentence": "Die Katze ist jetzt warm und [[ruhig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calm",
+   "options": [
+    "calm",
+    "loud",
+    "hungry",
+    "afraid"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Die Katze ist jetzt warm und ruhig.",
+    "targetWord": "ruhig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "regnet",
+  "sentence": "Es _____ stark und die Nacht ist kalt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "regnet",
+   "options": [
+    "regnet",
+    "sitzt",
+    "wartet",
+    "schläft"
+   ],
+   "translation": "It is _____ hard and the night is cold.",
+   "optionTranslations": [
+    "is raining",
+    "is sitting",
+    "is waiting",
+    "is sleeping"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Es regnet stark und die Nacht ist kalt.",
+    "targetWord": "regnet",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "nimmt",
+  "sentence": "Marie _____ die kleine Katze.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nimmt",
+   "options": [
+    "nimmt",
+    "sieht",
+    "sucht",
+    "ruft"
+   ],
+   "translation": "Marie _____ the little cat.",
+   "optionTranslations": [
+    "takes",
+    "sees",
+    "looks for",
+    "calls"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Marie nimmt die kleine Katze.",
+    "targetWord": "nimmt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "trinkt",
+  "sentence": "Die Katze _____ etwas Milch.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "trinkt",
+   "options": [
+    "trinkt",
+    "schläft",
+    "sitzt",
+    "spielt"
+   ],
+   "translation": "The cat _____ some milk.",
+   "optionTranslations": [
+    "drinks",
+    "sleeps",
+    "sits",
+    "plays"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Die Katze trinkt etwas Milch.",
+    "targetWord": "trinkt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "schläft",
+  "sentence": "Die Katze _____ auf dem Sofa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schläft",
+   "options": [
+    "schläft",
+    "trinkt",
+    "wartet",
+    "zittert"
+   ],
+   "translation": "The cat _____ on the sofa.",
+   "optionTranslations": [
+    "sleeps",
+    "drinks",
+    "waits",
+    "shivers"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Die Katze schläft auf dem Sofa.",
+    "targetWord": "schläft",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "suchen",
+  "sentence": "Wir _____ morgen den Besitzer.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "suchen",
+   "options": [
+    "suchen",
+    "sehen",
+    "nehmen",
+    "warten"
+   ],
+   "translation": "Tomorrow we _____ for the owner.",
+   "optionTranslations": [
+    "look for",
+    "see",
+    "take",
+    "wait"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Wir suchen morgen den Besitzer.",
+    "targetWord": "suchen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "listen_choose",
+  "featured": true,
+  "word": "Nacht",
+  "sentence": "",
+  "payload": {
+   "prompt": "Listen and choose the word you hear.",
+   "answer": "Nacht",
+   "options": [
+    "Nacht",
+    "Tier",
+    "Tür",
+    "Milch"
+   ],
+   "optionTranslations": [
+    "night",
+    "animal",
+    "door",
+    "milk"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Die Nacht ist dunkel und kalt.",
+    "targetWord": "Nacht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "zittert",
+  "sentence": "Die kleine Katze _____ vor Kälte.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zittert",
+   "options": [
+    "zittert",
+    "schläft",
+    "trinkt",
+    "spielt"
+   ],
+   "translation": "The little cat _____ from the cold.",
+   "optionTranslations": [
+    "shivers",
+    "sleeps",
+    "drinks",
+    "plays"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Die kleine Katze zittert vor Kälte.",
+    "targetWord": "zittert",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "wartet",
+  "sentence": "Jonas _____ drinnen im Haus.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "wartet",
+   "options": [
+    "wartet",
+    "sitzt",
+    "schläft",
+    "sucht"
+   ],
+   "translation": "Jonas _____ inside the house.",
+   "optionTranslations": [
+    "waits",
+    "sits",
+    "sleeps",
+    "looks for"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Jonas wartet drinnen im Haus.",
+    "targetWord": "wartet",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sieht",
+  "sentence": "Jonas _____ die kleine Katze.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sieht",
+   "options": [
+    "sieht",
+    "nimmt",
+    "sucht",
+    "ruft"
+   ],
+   "translation": "Jonas _____ the little cat.",
+   "optionTranslations": [
+    "sees",
+    "takes",
+    "looks for",
+    "calls"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Jonas sieht die kleine Katze.",
+    "targetWord": "sieht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Besitzer",
+  "sentence": "Wir suchen morgen den _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Besitzer",
+   "options": [
+    "Besitzer",
+    "Katze",
+    "Tür",
+    "Milch"
+   ],
+   "translation": "Tomorrow we look for the _____.",
+   "optionTranslations": [
+    "owner",
+    "cat",
+    "door",
+    "milk"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Wir suchen morgen den Besitzer.",
+    "targetWord": "Besitzer",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "klein",
+  "sentence": "Die Katze ist _____ und süß.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "klein",
+   "options": [
+    "klein",
+    "groß",
+    "kalt",
+    "laut"
+   ],
+   "translation": "The cat is _____ and cute.",
+   "optionTranslations": [
+    "small",
+    "big",
+    "cold",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Die Katze ist klein und süß.",
+    "targetWord": "klein",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "nass",
+  "sentence": "Die Katze ist klein und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nass",
+   "options": [
+    "nass",
+    "süß",
+    "grün",
+    "ruhig"
+   ],
+   "translation": "The cat is small and _____.",
+   "optionTranslations": [
+    "wet",
+    "sweet",
+    "green",
+    "calm"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Die Katze ist klein und nass.",
+    "targetWord": "nass",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "kalt",
+  "sentence": "Die Nacht ist dunkel und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kalt",
+   "options": [
+    "kalt",
+    "warm",
+    "nass",
+    "klein"
+   ],
+   "translation": "The night is dark and _____.",
+   "optionTranslations": [
+    "cold",
+    "warm",
+    "wet",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Die Nacht ist dunkel und kalt.",
+    "targetWord": "kalt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "grüne",
+  "sentence": "Sie hat große _____ Augen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "grüne",
+   "options": [
+    "grüne",
+    "kleine",
+    "nasse",
+    "warme"
+   ],
+   "translation": "She has big _____ eyes.",
+   "optionTranslations": [
+    "green",
+    "small",
+    "wet",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Sie hat große grüne Augen.",
+    "targetWord": "grüne",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "leise",
+  "sentence": "Marie sagt es ganz [[leise]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quietly",
+   "options": [
+    "quietly",
+    "loudly",
+    "quickly",
+    "sadly"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Marie sagt es ganz leise.",
+    "targetWord": "leise",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "süß",
+  "sentence": "Die kleine Katze ist sehr [[süß]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cute",
+   "options": [
+    "cute",
+    "ugly",
+    "angry",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Die kleine Katze ist sehr süß.",
+    "targetWord": "süß",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "drinnen",
+  "sentence": "Jonas wartet [[drinnen]] im warmen Haus.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "inside",
+   "options": [
+    "inside",
+    "outside",
+    "upstairs",
+    "nearby"
+   ],
+   "audioClip": {
+    "storySlug": "eine-katze-im-regen",
+    "storySource": "user",
+    "sentence": "Jonas wartet drinnen im warmen Haus.",
+    "targetWord": "drinnen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ }
+]

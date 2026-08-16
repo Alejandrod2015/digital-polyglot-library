@@ -1,0 +1,632 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "bicchiere,tavolo,formaggio,conto",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "bicchiere",
+     "answer": "glass",
+     "options": [
+      "glass",
+      "table",
+      "cheese",
+      "bill"
+     ]
+    },
+    {
+     "word": "tavolo",
+     "answer": "table",
+     "options": [
+      "glass",
+      "table",
+      "cheese",
+      "bill"
+     ]
+    },
+    {
+     "word": "formaggio",
+     "answer": "cheese",
+     "options": [
+      "glass",
+      "table",
+      "cheese",
+      "bill"
+     ]
+    },
+    {
+     "word": "conto",
+     "answer": "bill",
+     "options": [
+      "glass",
+      "table",
+      "cheese",
+      "bill"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "buono",
+  "sentence": "Il formaggio è molto [[buono]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "good",
+   "options": [
+    "good",
+    "bad",
+    "cold",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Il formaggio è molto buono.",
+    "targetWord": "buono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "pieno",
+  "sentence": "Il locale è [[pieno]] di gente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "full",
+   "options": [
+    "full",
+    "empty",
+    "quiet",
+    "dark"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Il locale è pieno di gente.",
+    "targetWord": "pieno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "presto",
+  "sentence": "Domani Luca lavora [[presto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "early",
+   "options": [
+    "early",
+    "late",
+    "slowly",
+    "alone"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Domani Luca lavora presto.",
+    "targetWord": "presto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "porta",
+  "sentence": "Il cameriere _____ due bicchieri.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "porta",
+   "options": [
+    "porta",
+    "paga",
+    "beve",
+    "assaggia"
+   ],
+   "translation": "The waiter _____ two glasses.",
+   "optionTranslations": [
+    "brings",
+    "pays",
+    "drinks",
+    "tastes"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Il cameriere porta due bicchieri.",
+    "targetWord": "porta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "assaggia",
+  "sentence": "Elena _____ le olive e il formaggio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "assaggia",
+   "options": [
+    "assaggia",
+    "porta",
+    "paga",
+    "beve"
+   ],
+   "translation": "Elena _____ the olives and the cheese.",
+   "optionTranslations": [
+    "tastes",
+    "brings",
+    "pays",
+    "drinks"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Elena assaggia le olive e il formaggio.",
+    "targetWord": "assaggia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "beve",
+  "sentence": "Luca _____ un succo d'arancia.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "beve",
+   "options": [
+    "beve",
+    "assaggia",
+    "porta",
+    "paga"
+   ],
+   "translation": "Luca _____ an orange juice.",
+   "optionTranslations": [
+    "drinks",
+    "tastes",
+    "brings",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Luca beve un succo d'arancia.",
+    "targetWord": "beve",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "lavora",
+  "sentence": "Domani Luca _____ presto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lavora",
+   "options": [
+    "lavora",
+    "beve",
+    "paga",
+    "ride"
+   ],
+   "translation": "Tomorrow Luca _____ early.",
+   "optionTranslations": [
+    "works",
+    "drinks",
+    "pays",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Domani Luca lavora presto.",
+    "targetWord": "lavora",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "paga",
+  "sentence": "Alla fine Luca _____ il conto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "paga",
+   "options": [
+    "paga",
+    "porta",
+    "beve",
+    "assaggia"
+   ],
+   "translation": "In the end Luca _____ the bill.",
+   "optionTranslations": [
+    "pays",
+    "brings",
+    "drinks",
+    "tastes"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Alla fine Luca paga il conto.",
+    "targetWord": "paga",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "vuole",
+  "sentence": "Elena _____ restituire i soldi.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vuole",
+   "options": [
+    "vuole",
+    "paga",
+    "porta",
+    "beve"
+   ],
+   "translation": "Elena _____ to give back the money.",
+   "optionTranslations": [
+    "wants",
+    "pays",
+    "brings",
+    "drinks"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Elena vuole restituire i soldi.",
+    "targetWord": "vuole",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sera",
+  "sentence": "Questa _____ Luca invita Elena.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sera",
+   "options": [
+    "sera",
+    "gente",
+    "vita",
+    "conto"
+   ],
+   "translation": "This _____ Luca invites Elena.",
+   "optionTranslations": [
+    "evening",
+    "people",
+    "life",
+    "bill"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Questa sera Luca invita Elena.",
+    "targetWord": "sera",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "amici",
+  "sentence": "Elena e Luca sono buoni _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "amici",
+   "options": [
+    "amici",
+    "soldi",
+    "bicchieri",
+    "conti"
+   ],
+   "translation": "Elena and Luca are good _____.",
+   "optionTranslations": [
+    "friends",
+    "money",
+    "glasses",
+    "bills"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Elena e Luca sono buoni amici.",
+    "targetWord": "amici",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "gente",
+  "sentence": "Il posto è pieno di _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gente",
+   "options": [
+    "gente",
+    "soldi",
+    "vita",
+    "sera"
+   ],
+   "translation": "The place is full of _____.",
+   "optionTranslations": [
+    "people",
+    "money",
+    "life",
+    "evening"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Il posto è pieno di gente.",
+    "targetWord": "gente",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "domani",
+  "sentence": "Luca lavora presto _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "domani",
+   "options": [
+    "domani",
+    "subito",
+    "presto",
+    "insieme"
+   ],
+   "translation": "Luca works early _____.",
+   "optionTranslations": [
+    "tomorrow",
+    "immediately",
+    "early",
+    "together"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Luca lavora presto domani.",
+    "targetWord": "domani",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "conosce",
+  "sentence": "Elena non _____ Marta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "conosce",
+   "options": [
+    "conosce",
+    "porta",
+    "paga",
+    "beve"
+   ],
+   "translation": "Elena does not _____ Marta.",
+   "optionTranslations": [
+    "knows",
+    "brings",
+    "pays",
+    "drinks"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Elena non conosce Marta.",
+    "targetWord": "conosce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "subito",
+  "sentence": "Le due donne ridono _____ insieme.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "subito",
+   "options": [
+    "subito",
+    "domani",
+    "presto",
+    "forte"
+   ],
+   "translation": "The two women laugh _____ together.",
+   "optionTranslations": [
+    "immediately",
+    "tomorrow",
+    "early",
+    "loudly"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Le due donne ridono subito insieme.",
+    "targetWord": "subito",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "ridono",
+  "sentence": "Le due donne _____ insieme.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ridono",
+   "options": [
+    "ridono",
+    "parlano",
+    "lavorano",
+    "pagano"
+   ],
+   "translation": "The two women _____ together.",
+   "optionTranslations": [
+    "laugh",
+    "speak",
+    "work",
+    "pay"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Le due donne ridono insieme.",
+    "targetWord": "ridono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "insieme",
+  "sentence": "Le tre amiche parlano _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "insieme",
+   "options": [
+    "insieme",
+    "subito",
+    "presto",
+    "domani"
+   ],
+   "translation": "The three friends speak _____.",
+   "optionTranslations": [
+    "together",
+    "immediately",
+    "early",
+    "tomorrow"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Le tre amiche parlano insieme.",
+    "targetWord": "insieme",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "parlano",
+  "sentence": "Le tre donne _____ a lungo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "parlano",
+   "options": [
+    "parlano",
+    "ridono",
+    "bevono",
+    "pagano"
+   ],
+   "translation": "The three women _____ for a long time.",
+   "optionTranslations": [
+    "speak",
+    "laugh",
+    "drink",
+    "pay"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Le tre donne parlano a lungo.",
+    "targetWord": "parlano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "vita",
+  "sentence": "Le amiche parlano della _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vita",
+   "options": [
+    "vita",
+    "gente",
+    "sera",
+    "conto"
+   ],
+   "translation": "The friends talk about _____.",
+   "optionTranslations": [
+    "life",
+    "people",
+    "evening",
+    "bill"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Le amiche parlano della vita.",
+    "targetWord": "vita",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "soldi",
+  "sentence": "Luca non vuole i _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "soldi",
+   "options": [
+    "soldi",
+    "bicchieri",
+    "amici",
+    "conti"
+   ],
+   "translation": "Luca does not want the _____.",
+   "optionTranslations": [
+    "money",
+    "glasses",
+    "friends",
+    "bills"
+   ],
+   "audioClip": {
+    "storySlug": "l-aperitivo-con-luca",
+    "storySource": "user",
+    "sentence": "Luca non vuole i soldi.",
+    "targetWord": "soldi",
+    "language": "italian"
+   }
+  }
+ }
+]

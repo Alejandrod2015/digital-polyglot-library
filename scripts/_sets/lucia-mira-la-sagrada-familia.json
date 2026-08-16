@@ -1,0 +1,635 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "iglesia",
+    "sentence": "La [[iglesia]] es muy alta.",
+    "payload": {
+      "answer": "a church",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a church",
+        "a school",
+        "a house",
+        "a store"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La iglesia es muy alta.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "iglesia",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/38d833725c540b1e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "torre",
+    "sentence": "Sus [[torres]] suben hasta el cielo.",
+    "payload": {
+      "answer": "a tower",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a tower",
+        "a wall",
+        "a roof",
+        "a door"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Sus torres suben hasta el cielo.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "torres",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb7d53689ef412fb.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "luz",
+    "sentence": "La [[luz]] de colores entra por las ventanas.",
+    "payload": {
+      "answer": "light",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "light",
+        "air",
+        "fire",
+        "rain"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La luz de colores entra por las ventanas.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "luz",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8443ddf94acf30f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gente",
+    "sentence": "La calle sigue llena de [[gente]].",
+    "payload": {
+      "answer": "people",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "people",
+        "a family",
+        "a house",
+        "a friend"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La calle sigue llena de gente.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "gente",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7133f0d9449a1d1.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorpresa",
+    "sentence": "Ella abre la boca por la [[sorpresa]].",
+    "payload": {
+      "answer": "surprise",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "surprise",
+        "fear",
+        "anger",
+        "hunger"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella abre la boca por la sorpresa.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "sorpresa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3053b037f010753f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "sale",
+    "sentence": "Cada mañana ella _____ de su casa.",
+    "payload": {
+      "answer": "sale",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "sale",
+        "entra",
+        "sube",
+        "corre"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cada mañana ella sale de su casa.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "sale",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c3eea8c0ebf22fb.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Every morning she _____ her house.",
+      "optionTranslations": [
+        "leave",
+        "enter",
+        "go up",
+        "run"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "ve",
+    "sentence": "Sin sus gafas no _____ bien.",
+    "payload": {
+      "answer": "ve",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "ve",
+        "come",
+        "habla",
+        "corre"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Sin sus gafas no ve bien.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "ve",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f725c1347e0d082f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Without her glasses she can't _____ well.",
+      "optionTranslations": [
+        "see",
+        "eat",
+        "speak",
+        "run"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "levanta",
+    "sentence": "Ella _____ la mano para preguntar.",
+    "payload": {
+      "answer": "levanta",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "levanta",
+        "baja",
+        "lava",
+        "mira"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella levanta la mano para preguntar.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "levanta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4bcbb572415b16fc.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She _____ her hand to ask.",
+      "optionTranslations": [
+        "raise",
+        "lower",
+        "wash",
+        "look at"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "empieza",
+    "sentence": "La película _____ y todos se sientan.",
+    "payload": {
+      "answer": "empieza",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "empieza",
+        "termina",
+        "para",
+        "cae"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La película empieza y todos se sientan.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "empieza",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/df2eff04eeb07ad7.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The movie _____ and everyone sits down.",
+      "optionTranslations": [
+        "starts",
+        "ends",
+        "stops",
+        "falls"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "señala",
+    "sentence": "Con el dedo ella _____ la puerta.",
+    "payload": {
+      "answer": "señala",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "señala",
+        "abre",
+        "cierra",
+        "lava"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Con el dedo ella señala la puerta.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "señala",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a61daf4d776142ed.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "With her finger she _____ the door.",
+      "optionTranslations": [
+        "points at",
+        "opens",
+        "closes",
+        "washes"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contar",
+    "sentence": "Él me [[cuenta]] la historia.",
+    "payload": {
+      "answer": "to tell",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to tell",
+        "to ask",
+        "to read",
+        "to sing"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él me cuenta la historia.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "cuenta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3064e3d98828e9c8.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "obrero",
+    "sentence": "Cada día llegan más [[obreros]] al lugar.",
+    "payload": {
+      "answer": "a worker",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a worker",
+        "a singer",
+        "a driver",
+        "a cook"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cada día llegan más obreros al lugar.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "obreros",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9f3c412b2d83beb.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dentro",
+    "sentence": "[[Dentro]] hay mucha luz de colores.",
+    "payload": {
+      "answer": "inside",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "inside",
+        "outside",
+        "above",
+        "near"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Dentro hay mucha luz de colores.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "Dentro",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/18557128e5362dff.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ventana",
+    "sentence": "Las [[ventanas]] parecen flores grandes.",
+    "payload": {
+      "answer": "a window",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a window",
+        "a door",
+        "a wall",
+        "a floor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las ventanas parecen flores grandes.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "ventanas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd588079b59963a8.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "columna",
+    "sentence": "Él señala las [[columnas]] del centro.",
+    "payload": {
+      "answer": "a column",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a column",
+        "a bridge",
+        "a garden",
+        "a street"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él señala las columnas del centro.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "columnas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1105ae202972d34a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "árbol",
+    "sentence": "Las columnas parecen [[árboles]] de piedra.",
+    "payload": {
+      "answer": "a tree",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a tree",
+        "a flower",
+        "a leaf",
+        "a rock"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las columnas parecen árboles de piedra.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "árboles",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f7e4b6a7a42352f9.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "voz",
+    "sentence": "La gente habla en [[voz]] baja.",
+    "payload": {
+      "answer": "a voice",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a voice",
+        "a sound",
+        "a face",
+        "a name"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La gente habla en voz baja.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "voz",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5060644ecc9a5c8d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "alta",
+    "sentence": "La montaña es muy _____.",
+    "payload": {
+      "answer": "alta",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "alta",
+        "baja",
+        "corta",
+        "ancha"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La montaña es muy alta.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "alta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d4c9b771844a24eb.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The mountain is very _____.",
+      "optionTranslations": [
+        "tall",
+        "low",
+        "short",
+        "wide"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "termina",
+    "sentence": "Ella lee el libro y lo _____.",
+    "payload": {
+      "answer": "termina",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "termina",
+        "empieza",
+        "abre",
+        "compra"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella lee el libro y lo termina.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "termina",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d1bb0abe01ce557.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She reads the book and _____ it.",
+      "optionTranslations": [
+        "finishes",
+        "starts",
+        "opens",
+        "buys"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "arriba",
+    "sentence": "El gato subió y ahora está _____.",
+    "payload": {
+      "answer": "arriba",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "arriba",
+        "abajo",
+        "cerca",
+        "afuera"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El gato subió y ahora está arriba.",
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "targetWord": "arriba",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/968e70c9f53ee184.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The cat went up and now it is _____.",
+      "optionTranslations": [
+        "up",
+        "down",
+        "near",
+        "outside"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "cabeza,cielo,piedra,escalera",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cabeza",
+          "answer": "the head",
+          "options": [
+            "the head",
+            "the sky",
+            "a stone",
+            "the stairs"
+          ]
+        },
+        {
+          "word": "cielo",
+          "answer": "the sky",
+          "options": [
+            "the head",
+            "the sky",
+            "a stone",
+            "the stairs"
+          ]
+        },
+        {
+          "word": "piedra",
+          "answer": "a stone",
+          "options": [
+            "the head",
+            "the sky",
+            "a stone",
+            "the stairs"
+          ]
+        },
+        {
+          "word": "escalera",
+          "answer": "the stairs",
+          "options": [
+            "the head",
+            "the sky",
+            "a stone",
+            "the stairs"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escaleras",
+    "sentence": "Los amigos bajan las [[escaleras]] poco a poco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the stairs",
+      "options": [
+        "the stairs",
+        "the doors",
+        "the windows",
+        "the walls"
+      ],
+      "audioClip": {
+        "storySlug": "lucia-mira-la-sagrada-familia",
+        "storySource": "user",
+        "sentence": "Los amigos bajan las escaleras poco a poco.",
+        "targetWord": "escaleras",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34dd7abb47d399c4.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

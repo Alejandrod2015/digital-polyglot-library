@@ -1,0 +1,466 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "arame,relógio,praça,cabeça",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "arame",
+          "answer": "wire",
+          "options": [
+            "wire",
+            "a watch",
+            "a square",
+            "the head"
+          ]
+        },
+        {
+          "word": "relógio",
+          "answer": "a watch",
+          "options": [
+            "wire",
+            "a watch",
+            "a square",
+            "the head"
+          ]
+        },
+        {
+          "word": "praça",
+          "answer": "a square",
+          "options": [
+            "wire",
+            "a watch",
+            "a square",
+            "the head"
+          ]
+        },
+        {
+          "word": "cabeça",
+          "answer": "the head",
+          "options": [
+            "wire",
+            "a watch",
+            "a square",
+            "the head"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "som",
+    "sentence": "Um [[som]] fino de arame corta a praça.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sound",
+      "options": [
+        "a sound",
+        "a smell",
+        "a light",
+        "a smoke"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "Um som fino de arame corta a praça.",
+        "targetWord": "som",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/60bc739c12074b5c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "roda",
+    "sentence": "As pessoas formam uma [[roda]] no meio da praça.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a circle",
+      "options": [
+        "a circle",
+        "a line",
+        "a table",
+        "a door"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "As pessoas formam uma roda no meio da praça.",
+        "targetWord": "roda",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/429d69534fd79a7d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "berimbau",
+    "sentence": "Um homem toca o [[berimbau]] e marca o tempo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a one-string bow",
+      "options": [
+        "a one-string bow",
+        "a drum",
+        "a flute",
+        "a guitar"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "Um homem toca o berimbau e marca o tempo.",
+        "targetWord": "berimbau",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b3a0d4899cc2621.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "girar",
+    "sentence": "Os dois entram no meio e começam a [[girar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to turn round",
+      "options": [
+        "to turn round",
+        "to sit down",
+        "to shout",
+        "to sleep"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "Os dois entram no meio e começam a girar.",
+        "targetWord": "girar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8633297304ee3a3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lento",
+    "sentence": "Eles giram bem [[lento]] no começo do jogo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slow",
+      "options": [
+        "slow",
+        "fast",
+        "loud",
+        "high"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "Eles giram bem lento no começo do jogo.",
+        "targetWord": "lento",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/335669139d1be76d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jogo",
+    "sentence": "O [[jogo]] parece briga e dança ao mesmo tempo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a game",
+      "options": [
+        "a game",
+        "a song",
+        "a class",
+        "a party"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "O jogo parece briga e dança ao mesmo tempo.",
+        "targetWord": "jogo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb7a6eb153eb9af1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ganhador",
+    "sentence": "O jogo termina sem [[ganhador]] e todos batem palmas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a winner",
+      "options": [
+        "a winner",
+        "a price",
+        "a name",
+        "a break"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "O jogo termina sem ganhador e todos batem palmas.",
+        "targetWord": "ganhador",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e9de07aed4a3b514.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seguinte",
+    "sentence": "O berimbau continua tocando para a roda [[seguinte]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next",
+      "options": [
+        "next",
+        "last",
+        "empty",
+        "same"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "O berimbau continua tocando para a roda seguinte.",
+        "targetWord": "seguinte",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2293f22196a71f3e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "encosta",
+    "sentence": "Os pés passam perto e ninguém _____ em ninguém.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "encosta",
+      "options": [
+        "encosta",
+        "olha",
+        "fala",
+        "cai"
+      ],
+      "translation": "The feet pass close and nobody _____ anybody.",
+      "optionTranslations": [
+        "touches",
+        "looks at",
+        "speaks to",
+        "falls on"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "Os pés passam perto e ninguém encosta em ninguém.",
+        "targetWord": "encosta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1532b02e54fee4c2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "corpo",
+    "sentence": "Ele marca o tempo com o [[corpo]] inteiro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the body",
+      "options": [
+        "the body",
+        "the hand",
+        "the voice",
+        "the foot"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "Ele marca o tempo com o corpo inteiro.",
+        "targetWord": "corpo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b8e4620cad66475.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rosto",
+    "sentence": "Os pés passam perto do [[rosto]] e não encostam.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the face",
+      "options": [
+        "the face",
+        "the wall",
+        "the floor",
+        "the arm"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "Os pés passam perto do rosto e não encostam.",
+        "targetWord": "rosto",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed71880b6e96cc1e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "briga",
+    "sentence": "O jogo parece [[briga]], mas ninguém se machuca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fight",
+      "options": [
+        "a fight",
+        "a joke",
+        "a race",
+        "a prayer"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "O jogo parece briga, mas ninguém se machuca.",
+        "targetWord": "briga",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef8193c2f645b20b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dança",
+    "sentence": "O jogo parece [[dança]] e todo mundo olha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a dance",
+      "options": [
+        "a dance",
+        "a market",
+        "a story",
+        "a meal"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "O jogo parece dança e todo mundo olha.",
+        "targetWord": "dança",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0e18577f456c0614.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jogador",
+    "sentence": "Um [[jogador]] tira o relógio e entrega para ela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a player",
+      "options": [
+        "a player",
+        "a seller",
+        "a driver",
+        "a singer"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "Um jogador tira o relógio e entrega para ela.",
+        "targetWord": "jogador",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f502bccc7366c087.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hora",
+    "sentence": "Ele volta para a roda na [[hora]], sem explicar nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the moment",
+      "options": [
+        "the moment",
+        "the corner",
+        "the shade",
+        "the queue"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "Ele volta para a roda na hora, sem explicar nada.",
+        "targetWord": "hora",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ce5b7146909c7117.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fino",
+    "sentence": "O arame faz um som [[fino]] e alto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thin and high",
+      "options": [
+        "thin and high",
+        "deep",
+        "soft",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "O arame faz um som fino e alto.",
+        "targetWord": "fino",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46c912f5b75d760a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "termina",
+    "sentence": "O jogo _____ sem ganhador nenhum.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "termina",
+      "options": [
+        "termina",
+        "começa",
+        "paga",
+        "dorme"
+      ],
+      "translation": "The game _____ with no winner at all.",
+      "optionTranslations": [
+        "ends",
+        "starts",
+        "pays",
+        "sleeps"
+      ],
+      "audioClip": {
+        "storySlug": "um-berimbau-abre-a-roda",
+        "storySource": "user",
+        "sentence": "O jogo termina sem ganhador nenhum.",
+        "targetWord": "termina",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5283ab9b2b7514d.mp3"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,466 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "die Currywurst",
+    "sentence": "Ronny knallt zwei [[Currywürste]] auf die Pappteller.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "curried sausage",
+      "options": [
+        "curried sausage",
+        "bread roll",
+        "potato salad",
+        "grilled onion"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Ronny knallt zwei Currywürste auf die Pappteller.",
+        "targetWord": "Currywürste",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28245118b2c55cab.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Schicht",
+    "sentence": "Mal geht es um die [[Schicht]], mal um das Wetter.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "work shift",
+      "options": [
+        "work shift",
+        "lunch break",
+        "night bus",
+        "pay slip"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Mal geht es um die Schicht, mal um das Wetter.",
+        "targetWord": "Schicht",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5c7130a15987860.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Pott",
+    "sentence": "Mit einem Schlag versteht Nadia den [[Pott]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the Ruhr area",
+      "options": [
+        "the Ruhr area",
+        "the old town",
+        "the coal mine",
+        "the market square"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Mit einem Schlag versteht Nadia den Pott.",
+        "targetWord": "Pott",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5bd6d3c46fe07366.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "wuppen",
+    "sentence": "Neben ihm steht Bea, die den Laden [[wuppt]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to run, to manage",
+      "options": [
+        "to run, to manage",
+        "to clean up",
+        "to close down",
+        "to rent out"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Neben ihm steht Bea, die den Laden wuppt.",
+        "targetWord": "wuppt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4b85394a304a6818.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abwinken",
+    "sentence": "Nadia bedankt sich, doch Ronny [[winkt]] nur ab.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wave it off",
+      "options": [
+        "to wave it off",
+        "to thank politely",
+        "to nod along",
+        "to walk away"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Nadia bedankt sich, doch Ronny winkt nur ab.",
+        "targetWord": "winkt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7447cc303705a0d2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "schnoddrig",
+    "sentence": "Bea redet noch [[schnoddriger]] als Ronny selbst.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "brash, cheeky",
+      "options": [
+        "brash, cheeky",
+        "shy, quiet",
+        "polite",
+        "cheerful"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Bea redet noch schnoddriger als Ronny selbst.",
+        "targetWord": "schnoddriger",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8cec658403464038.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "beleidigt",
+    "sentence": "Als Nadia gehen will, guckt Ronny echt [[beleidigt]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "offended, hurt",
+      "options": [
+        "offended, hurt",
+        "relieved",
+        "amused",
+        "bored"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Als Nadia gehen will, guckt Ronny echt beleidigt.",
+        "targetWord": "beleidigt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29f2c43dc35ae5fe.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "meckern",
+    "sentence": "Über den ganzen Nachmittag [[meckert]] er ununterbrochen weiter.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to grumble, to complain",
+      "options": [
+        "to grumble, to complain",
+        "to praise warmly",
+        "to whisper softly",
+        "to laugh out loud"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Über den ganzen Nachmittag meckert er ununterbrochen weiter.",
+        "targetWord": "meckert",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a2283053d8f08af8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "malochen",
+    "sentence": "Ronny [[malocht]] seit Jahren auf Spätschicht.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to toil, to slog",
+      "options": [
+        "to toil, to slog",
+        "to relax",
+        "to travel",
+        "to celebrate"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Ronny malocht seit Jahren auf Spätschicht.",
+        "targetWord": "malocht",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0bbf11caa1b9df6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abhauen",
+    "sentence": "Nadia wird es unangenehm; sie würde am liebsten [[abhauen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to clear off, to bolt",
+      "options": [
+        "to clear off, to bolt",
+        "to sit down",
+        "to help out",
+        "to speak up"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Nadia wird es unangenehm; sie würde am liebsten abhauen.",
+        "targetWord": "abhauen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/73ccfa4c4f7b8bec.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Platte",
+    "sentence": "Er schiebt Nadia eine Portion von der [[Platte]] rüber.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the hot grill top",
+      "options": [
+        "the hot grill top",
+        "a wooden shelf",
+        "a paper plate",
+        "a kitchen sink"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Er schiebt Nadia eine Portion von der Platte rüber.",
+        "targetWord": "Platte",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba5c85e25684408d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "blaffen",
+    "sentence": "Schon gehen?, [[blafft]] er beleidigt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to snap, to bark",
+      "options": [
+        "to snap, to bark",
+        "to wave at",
+        "to laugh with",
+        "to call over"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Schon gehen?, blafft er beleidigt.",
+        "targetWord": "blafft",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/10ce66f5cae1fbff.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Pillepalle",
+    "sentence": "Das sei doch [[Pillepalle]], brummt er.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "trivial little stuff",
+      "options": [
+        "trivial little stuff",
+        "hard work",
+        "a big deal",
+        "serious trouble"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Das sei doch Pillepalle, brummt er.",
+        "targetWord": "Pillepalle",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbd3755097421b9b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "wat willze",
+    "sentence": "Wat [[willze]], schon gehen?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "what do you want",
+      "options": [
+        "what do you want",
+        "where are you",
+        "who is there",
+        "why so loud"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Wat willze, schon gehen?",
+        "targetWord": "willze",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/700ba3c51879fb41.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nicht der Rede wert",
+    "sentence": "Ach was, das ist nich der [[Rede]] wert.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "not worth mentioning",
+      "options": [
+        "not worth mentioning",
+        "worth every cent",
+        "far too much",
+        "a long story"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Ach was, das ist nich der Rede wert.",
+        "targetWord": "Rede",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/547dd5e861f28c68.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "labberig",
+    "sentence": "Die Pommes lagen zu lange und wurden ganz _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "labberig",
+      "options": [
+        "labberig",
+        "knusprig",
+        "teuer",
+        "warm"
+      ],
+      "translation": "The fries sat too long and got all _____.",
+      "optionTranslations": [
+        "soggy",
+        "crispy",
+        "expensive",
+        "warm"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Die Pommes lagen zu lange und wurden ganz labberig.",
+        "targetWord": "labberig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/111dc1bc44e7beec.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dichtgemacht",
+    "sentence": "Der Kiosk hat wegen Urlaub für zwei Wochen _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dichtgemacht",
+      "options": [
+        "dichtgemacht",
+        "aufgemacht",
+        "angerufen",
+        "eingekauft"
+      ],
+      "translation": "The kiosk _____ for two weeks due to holidays.",
+      "optionTranslations": [
+        "closed up",
+        "opened up",
+        "called",
+        "gone shopping"
+      ],
+      "audioClip": {
+        "storySlug": "currywurst-und-viel-gemecker",
+        "storySource": "user",
+        "sentence": "Der Kiosk hat wegen Urlaub für zwei Wochen dichtgemacht.",
+        "targetWord": "dichtgemacht",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fd2932764fe012df.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Senf,der Bulli,die Bude,der Kumpel",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Senf",
+          "answer": "mustard",
+          "options": [
+            "mustard",
+            "VW camper van",
+            "snack stand",
+            "buddy, mate"
+          ]
+        },
+        {
+          "word": "der Bulli",
+          "answer": "VW camper van",
+          "options": [
+            "mustard",
+            "VW camper van",
+            "snack stand",
+            "buddy, mate"
+          ]
+        },
+        {
+          "word": "die Bude",
+          "answer": "snack stand",
+          "options": [
+            "mustard",
+            "VW camper van",
+            "snack stand",
+            "buddy, mate"
+          ]
+        },
+        {
+          "word": "der Kumpel",
+          "answer": "buddy, mate",
+          "options": [
+            "mustard",
+            "VW camper van",
+            "snack stand",
+            "buddy, mate"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,545 @@
+[
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "fritanga,totuma,sancocho,corozo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "fritanga",
+          "answer": "a spread of fried food",
+          "options": [
+            "a spread of fried food",
+            "a bowl made from a dried gourd",
+            "a hearty meat and plantain stew",
+            "juice from a small palm fruit"
+          ]
+        },
+        {
+          "word": "totuma",
+          "answer": "a bowl made from a dried gourd",
+          "options": [
+            "a spread of fried food",
+            "a bowl made from a dried gourd",
+            "a hearty meat and plantain stew",
+            "juice from a small palm fruit"
+          ]
+        },
+        {
+          "word": "sancocho",
+          "answer": "a hearty meat and plantain stew",
+          "options": [
+            "a spread of fried food",
+            "a bowl made from a dried gourd",
+            "a hearty meat and plantain stew",
+            "juice from a small palm fruit"
+          ]
+        },
+        {
+          "word": "corozo",
+          "answer": "juice from a small palm fruit",
+          "options": [
+            "a spread of fried food",
+            "a bowl made from a dried gourd",
+            "a hearty meat and plantain stew",
+            "juice from a small palm fruit"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "picar",
+    "sentence": "Yina [[picaba]] plátano y carne para el sancocho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to chop",
+      "options": [
+        "to chop",
+        "to fry",
+        "to peel",
+        "to stir"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Yina picaba plátano y carne para el sancocho.",
+        "targetWord": "picaba",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16f596826fa2df63.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "sazonar",
+    "sentence": "Ella [[sazonaba]] la carne con calma y cariño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to season",
+      "options": [
+        "to season",
+        "to boil",
+        "to serve",
+        "to burn"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Ella sazonaba la carne con calma y cariño.",
+        "targetWord": "sazonaba",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9a5d77174b6e1b2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "prestado",
+    "sentence": "Él cargaba unas sillas [[prestadas]] del vecino.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "borrowed",
+      "options": [
+        "borrowed",
+        "broken",
+        "brand new",
+        "stolen"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Él cargaba unas sillas prestadas del vecino.",
+        "targetWord": "prestadas",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8d2ceeb4b249d123.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "esquivar",
+    "sentence": "Él entraba y salía [[esquivando]] cada pregunta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dodging",
+      "options": [
+        "dodging",
+        "answering",
+        "repeating",
+        "shouting"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Él entraba y salía esquivando cada pregunta.",
+        "targetWord": "esquivando",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/072e075021e67d8f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "meterse",
+    "sentence": "Le dieron la orden de no [[meterse]] en la cocina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to butt in",
+      "options": [
+        "to butt in",
+        "to sit down",
+        "to clean up",
+        "to walk out"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Le dieron la orden de no meterse en la cocina.",
+        "targetWord": "meterse",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c2c01b94cd9bf05a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "aguantarse",
+    "sentence": "Manu se [[aguantó]] las ganas de organizar el reguero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hold back",
+      "options": [
+        "to hold back",
+        "to give up",
+        "to enjoy fully",
+        "to complain loudly"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Manu se aguantó las ganas de organizar el reguero.",
+        "targetWord": "aguantó",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea66e205a70f15d0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "tapado",
+    "sentence": "Los vecinos llegaron con platos [[tapados]] y bebidas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "covered",
+      "options": [
+        "covered",
+        "empty",
+        "broken",
+        "frozen"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Los vecinos llegaron con platos tapados y bebidas.",
+        "targetWord": "tapados",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f6d25ce619b17ef.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "resignarse",
+    "sentence": "La rola se [[resignó]] a acompañar sin entender nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to give in",
+      "options": [
+        "to give in",
+        "to refuse",
+        "to escape",
+        "to celebrate"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "La rola se resignó a acompañar sin entender nada.",
+        "targetWord": "resignó",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/733e3325695952de.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "acomodarse",
+    "sentence": "Todos se [[acomodaron]] alrededor de Manu, sonriendo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to settle in",
+      "options": [
+        "to settle in",
+        "to stand up",
+        "to walk away",
+        "to argue"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Todos se acomodaron alrededor de Manu, sonriendo.",
+        "targetWord": "acomodaron",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f7978dd93b68c40d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "disimular",
+    "sentence": "Se acomodaron sin [[disimular]] las sonrisas cómplices.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hide feelings",
+      "options": [
+        "to hide feelings",
+        "to show off",
+        "to laugh loudly",
+        "to look away"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Se acomodaron sin disimular las sonrisas cómplices.",
+        "targetWord": "disimular",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba1fd138a8031509.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "caer en cuenta",
+    "sentence": "Ahí Manu [[cayó en cuenta]] de todo el plan.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to suddenly realize",
+      "options": [
+        "to suddenly realize",
+        "to forget quickly",
+        "to fall down",
+        "to make a plan"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Ahí Manu cayó en cuenta de todo el plan.",
+        "targetWord": "cayó en cuenta",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0d1604650410e98.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "aguado",
+    "sentence": "Manu quedó con los ojos [[aguados]] de la emoción.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "watery",
+      "options": [
+        "watery",
+        "closed",
+        "bright",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Manu quedó con los ojos aguados de la emoción.",
+        "targetWord": "aguados",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5a46850c2f9f4a17.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "reguero",
+    "sentence": "Manu no quiso organizar semejante ____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reguero",
+      "options": [
+        "reguero",
+        "fritanga",
+        "chiflido",
+        "corozo"
+      ],
+      "translation": "Manu didn't want to organize such a ____.",
+      "optionTranslations": [
+        "mess",
+        "fried spread",
+        "whistle",
+        "palm fruit"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Manu no quiso organizar semejante reguero.",
+        "targetWord": "reguero",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d7c05af56d8f28ae.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "chiflido",
+    "sentence": "Él pidió silencio con un ____ corto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "chiflido",
+      "options": [
+        "chiflido",
+        "grito",
+        "chisme",
+        "reguero"
+      ],
+      "translation": "Ronny asked for silence with a short ____.",
+      "optionTranslations": [
+        "whistle",
+        "shout",
+        "gossip",
+        "mess"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Él pidió silencio con un chiflido corto.",
+        "targetWord": "chiflido",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29740d5331d6f9c0.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "despedida",
+    "sentence": "La fiesta era su ____ antes del vuelo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "despedida",
+      "options": [
+        "despedida",
+        "llegada",
+        "fritanga",
+        "totuma"
+      ],
+      "translation": "The party was her ____ before the flight.",
+      "optionTranslations": [
+        "farewell",
+        "arrival",
+        "fried spread",
+        "gourd bowl"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "La fiesta era su despedida antes del vuelo.",
+        "targetWord": "despedida",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6706c346d02779b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "bajito",
+    "sentence": "La champeta sonaba bien ____ en el patio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bajito",
+      "options": [
+        "bajito",
+        "duro",
+        "lejos",
+        "raro"
+      ],
+      "translation": "The champeta played real ____ in the courtyard.",
+      "optionTranslations": [
+        "softly",
+        "loud",
+        "far",
+        "weird"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "La champeta sonaba bien bajito en el patio.",
+        "targetWord": "bajito",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/be62f54d18104e29.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "pa'",
+    "sentence": "Y todo esto ____ qué, preguntaba Manu.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pa'",
+      "options": [
+        "pa'",
+        "por",
+        "con",
+        "sin"
+      ],
+      "translation": "And all this ____ what, Manu kept asking.",
+      "optionTranslations": [
+        "for",
+        "because of",
+        "with",
+        "without"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Y todo esto pa' qué, preguntaba Manu.",
+        "targetWord": "pa'",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6cea460f34f7618b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "montar",
+    "sentence": "Alguien decidió ____ el picó en el patio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "montar",
+      "options": [
+        "montar",
+        "bajar",
+        "apagar",
+        "cargar"
+      ],
+      "translation": "Someone decided to ____ the sound system in the yard.",
+      "optionTranslations": [
+        "set up",
+        "take down",
+        "turn off",
+        "carry"
+      ],
+      "audioClip": {
+        "storySlug": "madrugada-en-la-arenosa",
+        "storySource": "user",
+        "sentence": "Alguien decidió montar el picó en el patio.",
+        "targetWord": "montar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e679c2bf1ebfe077.mp3"
+      }
+    }
+  }
+]

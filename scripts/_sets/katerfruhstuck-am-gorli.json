@@ -1,0 +1,463 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "das Katerfrühstück,die Bulette,die Kippe,das Schweigen",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "das Katerfrühstück",
+          "answer": "a hangover breakfast",
+          "options": [
+            "a hangover breakfast",
+            "a meatball patty",
+            "a cigarette",
+            "comfortable silence"
+          ]
+        },
+        {
+          "word": "die Bulette",
+          "answer": "a meatball patty",
+          "options": [
+            "a hangover breakfast",
+            "a meatball patty",
+            "a cigarette",
+            "comfortable silence"
+          ]
+        },
+        {
+          "word": "die Kippe",
+          "answer": "a cigarette",
+          "options": [
+            "a hangover breakfast",
+            "a meatball patty",
+            "a cigarette",
+            "comfortable silence"
+          ]
+        },
+        {
+          "word": "das Schweigen",
+          "answer": "comfortable silence",
+          "options": [
+            "a hangover breakfast",
+            "a meatball patty",
+            "a cigarette",
+            "comfortable silence"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verkatert",
+    "sentence": "ist die ganze Truppe [[verkatert]], redet wenig.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "badly hungover",
+      "options": [
+        "badly hungover",
+        "wide awake",
+        "well rested",
+        "fully sober"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "ist die ganze Truppe verkatert, redet wenig.",
+        "targetWord": "verkatert",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/79ef0580b92e2d60.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gemütlich",
+    "sentence": "es wird einfach nur [[gemütlich]] vor sich hin gegammelt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cosy, easygoing",
+      "options": [
+        "cosy, easygoing",
+        "cold, unfriendly",
+        "loud, chaotic",
+        "strict, formal"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "es wird einfach nur gemütlich vor sich hin gegammelt.",
+        "targetWord": "gemütlich",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/53ad1b7f418bdf4a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dazugehören",
+    "sentence": "Nadia gehört jetzt einfach [[dazu]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to belong, fit in",
+      "options": [
+        "to belong, fit in",
+        "to stand out",
+        "to give up",
+        "to move away"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "Nadia gehört jetzt einfach dazu.",
+        "targetWord": "dazu",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/03a065ef198d286b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sich beweisen",
+    "sentence": "die sich ständig [[beweisen]] muss.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to prove oneself",
+      "options": [
+        "to prove oneself",
+        "to enjoy oneself",
+        "to help oneself",
+        "to hurt oneself"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "die sich ständig beweisen muss.",
+        "targetWord": "beweisen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cac29979a1bb63c4.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "blinzeln",
+    "sentence": "In der hellen Morgensonne muss ich ständig _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "blinzeln",
+      "options": [
+        "blinzeln",
+        "niesen",
+        "gähnen",
+        "husten"
+      ],
+      "translation": "In the bright morning sun I constantly have to _____.",
+      "optionTranslations": [
+        "squint",
+        "sneeze",
+        "yawn",
+        "cough"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "In der hellen Morgensonne muss ich ständig blinzeln.",
+        "targetWord": "blinzeln",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/553ae1809a13d548.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "schnorrt",
+    "sentence": "Er hat kein Geld und _____ sich überall Zigaretten.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schnorrt",
+      "options": [
+        "schnorrt",
+        "kauft",
+        "verkauft",
+        "versteckt"
+      ],
+      "translation": "He has no money and _____ cigarettes off everyone.",
+      "optionTranslations": [
+        "bums, cadges",
+        "buys",
+        "sells",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "Er hat kein Geld und schnorrt sich überall Zigaretten.",
+        "targetWord": "schnorrt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/72540f719d9351b6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "wegdösen",
+    "sentence": "Nadia hört zu, [[döst]] zwischendurch weg.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to doze off",
+      "options": [
+        "to doze off",
+        "to jump up",
+        "to speak up",
+        "to storm off"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "Nadia hört zu, döst zwischendurch weg.",
+        "targetWord": "döst",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/31a3cc9a18215648.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "einen Spruch reißen",
+    "sentence": "wer die dümmsten [[Sprüche]] gerissen hat.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to crack cheeky one-liners",
+      "options": [
+        "to crack cheeky one-liners",
+        "to keep a straight face",
+        "to pay the whole bill",
+        "to fall fast asleep"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "wer die dümmsten Sprüche gerissen hat.",
+        "targetWord": "Sprüche",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a5a091daf946816.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "prahlt",
+    "sentence": "Er _____ ständig mit seinem teuren neuen Auto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "prahlt",
+      "options": [
+        "prahlt",
+        "spielt",
+        "fährt",
+        "träumt"
+      ],
+      "translation": "He constantly _____ about his expensive new car.",
+      "optionTranslations": [
+        "brags",
+        "plays",
+        "drives",
+        "dreams"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "Er prahlt ständig mit seinem teuren neuen Auto.",
+        "targetWord": "prahlt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a39bf326232c3766.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "trocken",
+    "sentence": "sagt Jule [[trocken]], und alle grinsen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "deadpan, dryly",
+      "options": [
+        "deadpan, dryly",
+        "loudly, brashly",
+        "warmly, kindly",
+        "angrily, sharply"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "sagt Jule trocken, und alle grinsen.",
+        "targetWord": "trocken",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/219b71084429b837.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "faul",
+    "sentence": "und alle grinsen [[faul]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lazy, sluggish",
+      "options": [
+        "lazy, sluggish",
+        "eager, keen",
+        "tense, nervous",
+        "proud, smug"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "und alle grinsen faul.",
+        "targetWord": "faul",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/15726ffb25e28083.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "schlappmachen",
+    "sentence": "Wer wann [[schlappgemacht]] hat.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to give out, flake",
+      "options": [
+        "to give out, flake",
+        "to speed up",
+        "to show off",
+        "to wake up"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "Wer wann schlappgemacht hat.",
+        "targetWord": "schlappgemacht",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d930efc58e93c51.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "locker",
+    "sentence": "Es ist dieses [[lockere]] Schweigen zwischen Freunden.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "easy, relaxed",
+      "options": [
+        "easy, relaxed",
+        "tense, awkward",
+        "loud, wild",
+        "formal, stiff"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "Es ist dieses lockere Schweigen zwischen Freunden.",
+        "targetWord": "lockere",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9865430aa1a37d8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "träge",
+    "sentence": "alle spüren es an diesem [[trägen]] Morgen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sluggish, slow",
+      "options": [
+        "sluggish, slow",
+        "bright, lively",
+        "cold, rainy",
+        "busy, hectic"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "alle spüren es an diesem trägen Morgen.",
+        "targetWord": "trägen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9a346670d02151a0.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "rekonstruieren",
+    "sentence": "Die Polizei will den Unfall genau _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rekonstruieren",
+      "options": [
+        "rekonstruieren",
+        "vergessen",
+        "bezahlen",
+        "fotografieren"
+      ],
+      "translation": "The police want to _____ the accident exactly.",
+      "optionTranslations": [
+        "reconstruct",
+        "forget",
+        "pay for",
+        "photograph"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "Die Polizei will den Unfall genau rekonstruieren.",
+        "targetWord": "rekonstruieren",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4e2e6f6c9f6e6813.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "gegammelt",
+    "sentence": "Am Sonntag habe ich nur den ganzen Tag _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gegammelt",
+      "options": [
+        "gegammelt",
+        "gearbeitet",
+        "gekocht",
+        "trainiert"
+      ],
+      "translation": "On Sunday I just _____ around all day long.",
+      "optionTranslations": [
+        "lazed",
+        "worked",
+        "cooked",
+        "trained"
+      ],
+      "audioClip": {
+        "storySlug": "katerfruhstuck-am-gorli",
+        "storySource": "user",
+        "sentence": "Am Sonntag habe ich nur den ganzen Tag gegammelt.",
+        "targetWord": "gegammelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/505ccc27e9c5927f.mp3"
+      }
+    }
+  }
+]

@@ -1,0 +1,483 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "feira,barraca,copo,manga",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "feira",
+          "answer": "a street market",
+          "options": [
+            "a street market",
+            "a market stall",
+            "a cup",
+            "a mango"
+          ]
+        },
+        {
+          "word": "barraca",
+          "answer": "a market stall",
+          "options": [
+            "a street market",
+            "a market stall",
+            "a cup",
+            "a mango"
+          ]
+        },
+        {
+          "word": "copo",
+          "answer": "a cup",
+          "options": [
+            "a street market",
+            "a market stall",
+            "a cup",
+            "a mango"
+          ]
+        },
+        {
+          "word": "manga",
+          "answer": "a mango",
+          "options": [
+            "a street market",
+            "a market stall",
+            "a cup",
+            "a mango"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cana",
+    "sentence": "A máquina tritura talos longos de [[cana]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sugar cane",
+      "options": [
+        "sugar cane",
+        "corn",
+        "rice",
+        "wheat"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "A máquina tritura talos longos de cana.",
+        "targetWord": "cana",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c10623b41656a952.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caldo",
+    "sentence": "O [[caldo]] cai num balde de metal.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "juice",
+      "options": [
+        "juice",
+        "smoke",
+        "sand",
+        "oil"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "O caldo cai num balde de metal.",
+        "targetWord": "caldo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5a9e7696b8056b06.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "espuma",
+    "sentence": "O caldo cai no balde cheio de [[espuma]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "foam",
+      "options": [
+        "foam",
+        "dust",
+        "ice",
+        "smoke"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "O caldo cai no balde cheio de espuma.",
+        "targetWord": "espuma",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96fb27f4797d8889.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "moço",
+    "sentence": "O [[moço]] da barraca enche um copo pequeno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a young man",
+      "options": [
+        "a young man",
+        "an older lady",
+        "a child",
+        "a doctor"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "O moço da barraca enche um copo pequeno.",
+        "targetWord": "moço",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f76aef810481d131.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trocado",
+    "sentence": "Ele explica que não tem dinheiro [[trocado]] hoje.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "small change",
+      "options": [
+        "small change",
+        "a big note",
+        "a card",
+        "a receipt"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "Ele explica que não tem dinheiro trocado hoje.",
+        "targetWord": "trocado",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3f5f20a4052d804d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "devolver",
+    "sentence": "Ele [[devolve]] o copo vazio e agradece.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to give back",
+      "options": [
+        "to give back",
+        "to keep",
+        "to fill",
+        "to break"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "Ele devolve o copo vazio e agradece.",
+        "targetWord": "devolve",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8fa9f3766437cdf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agradecer",
+    "sentence": "Ele devolve o copo e [[agradece]] duas vezes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to say thank you",
+      "options": [
+        "to say thank you",
+        "to complain",
+        "to ask again",
+        "to say goodbye"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "Ele devolve o copo e agradece duas vezes.",
+        "targetWord": "agradece",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4c52bdab1a56b26.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "gelado",
+    "sentence": "No calor, um suco bem _____ é o melhor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gelado",
+      "options": [
+        "gelado",
+        "quente",
+        "doce",
+        "forte"
+      ],
+      "translation": "In the heat, a really _____ juice is the best.",
+      "optionTranslations": [
+        "ice cold",
+        "hot",
+        "sweet",
+        "strong"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "No calor, um suco bem gelado é o melhor.",
+        "targetWord": "gelado",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5edb230e81999aba.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preço",
+    "sentence": "Um homem grita o [[preço]] da manga.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the price",
+      "options": [
+        "the price",
+        "the name",
+        "the weight",
+        "the colour"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "Um homem grita o preço da manga.",
+        "targetWord": "preço",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d900d995368f257.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quarteirão",
+    "sentence": "A feira ocupa quatro [[quarteirões]] de Pinheiros.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a city block",
+      "options": [
+        "a city block",
+        "a bridge",
+        "a park",
+        "a floor"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "A feira ocupa quatro quarteirões de Pinheiros.",
+        "targetWord": "quarteirões",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8da92494327c9353.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "manhã",
+    "sentence": "A feira ocupa quatro quarteirões na [[manhã]] de sábado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the morning",
+      "options": [
+        "the morning",
+        "the evening",
+        "the night",
+        "the week"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "A feira ocupa quatro quarteirões na manhã de sábado.",
+        "targetWord": "manhã",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/62971e77500b1584.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fruta",
+    "sentence": "Ele anda entre as barracas de [[fruta]] sem comprar nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fruit",
+      "options": [
+        "fruit",
+        "bread",
+        "fish",
+        "cheese"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "Ele anda entre as barracas de fruta sem comprar nada.",
+        "targetWord": "fruta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/103d1300cdd3d64a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comprar",
+    "sentence": "Ele anda entre as barracas sem [[comprar]] nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to buy",
+      "options": [
+        "to buy",
+        "to sell",
+        "to carry",
+        "to break"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "Ele anda entre as barracas sem comprar nada.",
+        "targetWord": "comprar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/43ff89307ec579ed.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verde",
+    "sentence": "Uma máquina [[verde]] tritura talos longos de cana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "green",
+      "options": [
+        "green",
+        "red",
+        "blue",
+        "yellow"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "Uma máquina verde tritura talos longos de cana.",
+        "targetWord": "verde",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cfa0e05b69ba85d0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "talo",
+    "sentence": "A máquina tritura [[talos]] longos de cana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a stalk",
+      "options": [
+        "a stalk",
+        "a leaf",
+        "a root",
+        "a seed"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "A máquina tritura talos longos de cana.",
+        "targetWord": "talos",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c10623b41656a952.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "doce",
+    "sentence": "O caldo cai no balde, [[doce]] e cheio de espuma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sweet",
+      "options": [
+        "sweet",
+        "salty",
+        "sour",
+        "bitter"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "O caldo cai no balde, doce e cheio de espuma.",
+        "targetWord": "doce",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e4a79fb6c20df89.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mato",
+    "sentence": "O caldo tem gosto forte de [[mato]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wild grass",
+      "options": [
+        "wild grass",
+        "fresh milk",
+        "burnt bread",
+        "salty fish"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "O caldo tem gosto forte de mato.",
+        "targetWord": "mato",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cf2ab8ce823ff37d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nome",
+    "sentence": "Ele nem chega a perguntar o [[nome]] do moço.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a name",
+      "options": [
+        "a name",
+        "an age",
+        "a price",
+        "a street"
+      ],
+      "audioClip": {
+        "storySlug": "a-cana-vira-caldo-doce",
+        "storySource": "user",
+        "sentence": "Ele nem chega a perguntar o nome do moço.",
+        "targetWord": "nome",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6441c25f76acf845.mp3"
+      }
+    },
+    "featured": false
+  }
+]

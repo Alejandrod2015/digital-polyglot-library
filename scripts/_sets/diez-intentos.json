@@ -1,0 +1,561 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "cursi",
+    "sentence": "A Sofía se le ocurrió una idea medio [[cursi]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cheesy, corny",
+      "options": [
+        "cheesy, corny",
+        "very clever",
+        "quite risky",
+        "rather rude"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "A Sofía se le ocurrió una idea medio cursi.",
+        "targetWord": "cursi",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ec7f9fc3b0c4204.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desmadre",
+    "sentence": "Algo tan simple se iba a volver semejante [[desmadre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a total mess, chaos",
+      "options": [
+        "a total mess, chaos",
+        "a quiet evening",
+        "a small favour",
+        "a good deal"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "Algo tan simple se iba a volver semejante desmadre.",
+        "targetWord": "desmadre",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4eaa28a033cb3fa2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mamón",
+    "sentence": "Se puso hasta adelante, con una cara de [[mamón]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stuck up, smug",
+      "options": [
+        "stuck up, smug",
+        "scared, nervous",
+        "sad, gloomy",
+        "tired, bored"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "Se puso hasta adelante, con una cara de mamón.",
+        "targetWord": "mamón",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4167795a41c437b6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "el mero mero",
+    "sentence": "Ahí estaba, parado como [[el mero mero]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the big shot",
+      "options": [
+        "the big shot",
+        "the last one",
+        "the lost one",
+        "the new guy"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "Ahí estaba, parado como el mero mero.",
+        "targetWord": "el mero mero",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/feaaa9567a8fb624.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chafa",
+    "sentence": "En realidad se veía bastante [[chafa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tacky, cheap",
+      "options": [
+        "tacky, cheap",
+        "quite elegant",
+        "very funny",
+        "rather shy"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "En realidad se veía bastante chafa.",
+        "targetWord": "chafa",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f2600743b90732c6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "naco",
+    "sentence": "Te ves bien [[naco]], le dijo Pablo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tacky, low class",
+      "options": [
+        "tacky, low class",
+        "very smart",
+        "really strong",
+        "quite calm"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "Te ves bien naco, le dijo Pablo.",
+        "targetWord": "naco",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9fb75c4e32e2f21d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cagada",
+    "sentence": "La [[cagada]] llegó cuando nadie sabía usar el temporizador.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the screw up",
+      "options": [
+        "the screw up",
+        "the best part",
+        "the last try",
+        "the good news"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "La cagada llegó cuando nadie sabía usar el temporizador.",
+        "targetWord": "cagada",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fe2474fadf5c566d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "qué oso",
+    "sentence": "Nadie sabía usar el temporizador. [[Qué oso]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "how embarrassing",
+      "options": [
+        "how embarrassing",
+        "how lucky",
+        "how strange",
+        "how boring"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "Nadie sabía usar el temporizador. Qué oso.",
+        "targetWord": "Qué oso",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ebb2af22fc7a6509.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "órale",
+    "sentence": "[[Órale]], ahora sí, todos quietos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "come on, alright",
+      "options": [
+        "come on, alright",
+        "not yet",
+        "never mind",
+        "too late"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "Órale, ahora sí, todos quietos.",
+        "targetWord": "Órale",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8914f48c1265f7fd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de perdis",
+    "sentence": "[[De perdis]], esa sí los agarró viendo a la cámara.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at least, if nothing else",
+      "options": [
+        "at least, if nothing else",
+        "by pure luck",
+        "for the last time",
+        "fully on purpose"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "De perdis, esa sí los agarró viendo a la cámara.",
+        "targetWord": "De perdis",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/41e1c89352033ff8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "valer madres",
+    "sentence": "A esas alturas ya les [[valía madres]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to not care at all",
+      "options": [
+        "to not care at all",
+        "to feel real regret",
+        "to want more tries",
+        "to get truly angry"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "A esas alturas ya les valía madres.",
+        "targetWord": "valía madres",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b0fc1331ef096d17.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muerto de hambre",
+    "sentence": "Renata apuraba desde atrás, [[muerta de hambre]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "starving",
+      "options": [
+        "starving",
+        "stuffed full",
+        "wide awake",
+        "fast asleep"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "Renata apuraba desde atrás, muerta de hambre.",
+        "targetWord": "muerta de hambre",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a5478095334ad11.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hasta adelante",
+    "sentence": "Se plantó [[hasta adelante]] para salir en la foto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right at the front",
+      "options": [
+        "right at the front",
+        "far in the back",
+        "off to one side",
+        "behind everyone else"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "Se plantó hasta adelante para salir en la foto.",
+        "targetWord": "hasta adelante",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1fe842f3588fa747.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aventó",
+    "sentence": "Se _____ un discurso larguísimo sin que nadie se lo pidiera.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aventó",
+      "options": [
+        "aventó",
+        "perdió",
+        "aprendió",
+        "escribió"
+      ],
+      "translation": "He _____ a very long speech nobody asked for.",
+      "optionTranslations": [
+        "threw out",
+        "lost",
+        "learned",
+        "wrote"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "Se aventó un discurso larguísimo sin que nadie se lo pidiera.",
+        "targetWord": "aventó",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/803ef607bbf84722.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "clavando",
+    "sentence": "Se estaban _____ demasiado con los detalles.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "clavando",
+      "options": [
+        "clavando",
+        "quejando",
+        "riendo",
+        "durmiendo"
+      ],
+      "translation": "They were getting _____ too much on the details.",
+      "optionTranslations": [
+        "obsessed",
+        "complaining",
+        "laughing",
+        "sleeping"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "Se estaban clavando demasiado con los detalles.",
+        "targetWord": "clavando",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f7017ca03840da63.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "chutaron",
+    "sentence": "Se _____ tres horas de discursos sin quejarse.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "chutaron",
+      "options": [
+        "chutaron",
+        "perdieron",
+        "contaron",
+        "olvidaron"
+      ],
+      "translation": "They _____ three hours of speeches without complaining.",
+      "optionTranslations": [
+        "sat through",
+        "missed",
+        "counted",
+        "forgot"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "Se chutaron tres horas de discursos sin quejarse.",
+        "targetWord": "chutaron",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5a7a8de7fdc042fa.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "chueca",
+    "sentence": "La foto quedó toda _____ y nadie quiso repetirla.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "chueca",
+      "options": [
+        "chueca",
+        "limpia",
+        "nueva",
+        "cara"
+      ],
+      "translation": "The photo came out all _____ and nobody wanted to redo it.",
+      "optionTranslations": [
+        "crooked",
+        "clean",
+        "new",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "La foto quedó toda chueca y nadie quiso repetirla.",
+        "targetWord": "chueca",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0ecebb31db4ab60.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "la riega",
+    "sentence": "Siempre _____ cuando intenta contar un chiste.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la riega",
+      "options": [
+        "la riega",
+        "la cuenta",
+        "la escribe",
+        "la olvida"
+      ],
+      "translation": "He always _____ when he tries to tell a joke.",
+      "optionTranslations": [
+        "messes it up",
+        "tells it",
+        "writes it",
+        "forgets it"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "Siempre la riega cuando intenta contar un chiste.",
+        "targetWord": "la riega",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95c1aaad36a5aabe.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pendejadas",
+    "sentence": "Se pasan la tarde diciendo puras _____ y riéndose.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pendejadas",
+      "options": [
+        "pendejadas",
+        "verdades",
+        "noticias",
+        "preguntas"
+      ],
+      "translation": "They spend the afternoon saying pure _____ and laughing.",
+      "optionTranslations": [
+        "stupid stuff",
+        "truths",
+        "news",
+        "questions"
+      ],
+      "audioClip": {
+        "storySlug": "diez-intentos",
+        "storySource": "user",
+        "sentence": "Se pasan la tarde diciendo puras pendejadas y riéndose.",
+        "targetWord": "pendejadas",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5bd7301a5098cb28.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "refri,compa,cuate,galán",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "refri",
+          "answer": "the fridge",
+          "options": [
+            "the fridge",
+            "buddy, mate",
+            "a close friend",
+            "a heartthrob"
+          ]
+        },
+        {
+          "word": "compa",
+          "answer": "buddy, mate",
+          "options": [
+            "the fridge",
+            "buddy, mate",
+            "a close friend",
+            "a heartthrob"
+          ]
+        },
+        {
+          "word": "cuate",
+          "answer": "a close friend",
+          "options": [
+            "the fridge",
+            "buddy, mate",
+            "a close friend",
+            "a heartthrob"
+          ]
+        },
+        {
+          "word": "galán",
+          "answer": "a heartthrob",
+          "options": [
+            "the fridge",
+            "buddy, mate",
+            "a close friend",
+            "a heartthrob"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

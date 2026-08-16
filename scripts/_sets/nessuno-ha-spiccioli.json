@@ -1,0 +1,555 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "banconota,spiccioli,resto,pugno",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "banconota",
+          "answer": "a banknote",
+          "options": [
+            "a banknote",
+            "small change",
+            "the change",
+            "a fist"
+          ]
+        },
+        {
+          "word": "spiccioli",
+          "answer": "small change",
+          "options": [
+            "a banknote",
+            "small change",
+            "the change",
+            "a fist"
+          ]
+        },
+        {
+          "word": "resto",
+          "answer": "the change",
+          "options": [
+            "a banknote",
+            "small change",
+            "the change",
+            "a fist"
+          ]
+        },
+        {
+          "word": "pugno",
+          "answer": "a fist",
+          "options": [
+            "a banknote",
+            "small change",
+            "the change",
+            "a fist"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "limone",
+    "sentence": "Lui compra tre [[limoni]] alla bancarella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lemons",
+      "options": [
+        "lemons",
+        "oranges",
+        "apples",
+        "onions"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Lui compra tre limoni alla bancarella.",
+        "targetWord": "limoni",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4bade9635818c1a6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bancarella",
+    "sentence": "La [[bancarella]] vende frutta e verdura.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a market stall",
+      "options": [
+        "a market stall",
+        "a big shop",
+        "a train seat",
+        "a paper bag"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "La bancarella vende frutta e verdura.",
+        "targetWord": "bancarella",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a9f43e99e36bd2d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "venditore",
+    "sentence": "Il [[venditore]] guarda il foglio e poi il cielo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the seller",
+      "options": [
+        "the seller",
+        "the buyer",
+        "the driver",
+        "the cook"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Il venditore guarda il foglio e poi il cielo.",
+        "targetWord": "venditore",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9de462d6bd7ad4e4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chiunque",
+    "sentence": "Una banconota così è troppo per [[chiunque]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "anyone",
+      "options": [
+        "anyone",
+        "nobody",
+        "someone else",
+        "a friend"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Una banconota così è troppo per chiunque.",
+        "targetWord": "chiunque",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c2c8ba2e4c4799c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barattolo",
+    "sentence": "Il vicino apre un [[barattolo]] di latta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tin jar",
+      "options": [
+        "a tin jar",
+        "a paper bag",
+        "a wooden box",
+        "a glass bottle"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Il vicino apre un barattolo di latta.",
+        "targetWord": "barattolo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/79413d1fa6dcccc9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tenere",
+    "sentence": "Nessuno [[tiene]] il resto per una banconota così.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "keeps, has",
+      "options": [
+        "keeps, has",
+        "sells",
+        "counts",
+        "asks"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Nessuno tiene il resto per una banconota così.",
+        "targetWord": "tiene",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/69fabf71ccf7b4c8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "intatto",
+    "sentence": "La banconota resta [[intatta]] nel portafoglio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "untouched",
+      "options": [
+        "untouched",
+        "broken",
+        "wet",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "La banconota resta intatta nel portafoglio.",
+        "targetWord": "intatta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cf405361898a62f3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fiducia",
+    "sentence": "Al mercato la [[fiducia]] costa poco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "trust",
+      "options": [
+        "trust",
+        "money",
+        "hurry",
+        "fear"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Al mercato la fiducia costa poco.",
+        "targetWord": "fiducia",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e63123d7e62386f2.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "costa",
+    "sentence": "La fiducia _____ meno di un caffè.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "costa",
+      "options": [
+        "costa",
+        "pesa",
+        "dura",
+        "parla"
+      ],
+      "translation": "Trust _____ less than a coffee.",
+      "optionTranslations": [
+        "costs",
+        "weighs",
+        "lasts",
+        "speaks"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "La fiducia costa meno di un caffè.",
+        "targetWord": "costa",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0006ce04d4ebc92b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cielo",
+    "sentence": "Lui alza gli occhi verso il [[cielo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sky",
+      "options": [
+        "the sky",
+        "the wall",
+        "the floor",
+        "the sea"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Lui alza gli occhi verso il cielo.",
+        "targetWord": "cielo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/48de39378b66ee03.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vicino",
+    "sentence": "Il venditore chiama il [[vicino]] di banco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the neighbour",
+      "options": [
+        "the neighbour",
+        "the customer",
+        "the boss",
+        "the guard"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Il venditore chiama il vicino di banco.",
+        "targetWord": "vicino",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2366c3751f665438.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "latta",
+    "sentence": "Il barattolo è di [[latta]] vecchia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tin",
+      "options": [
+        "tin",
+        "wood",
+        "glass",
+        "cloth"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Il barattolo è di latta vecchia.",
+        "targetWord": "latta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7328b5eca110251f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poco",
+    "sentence": "Dentro ci sono [[poche]] monete piccole.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "few",
+      "options": [
+        "few",
+        "many",
+        "new",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Dentro ci sono poche monete piccole.",
+        "targetWord": "poche",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f413b4304522de9a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "spalla",
+    "sentence": "Il venditore alza le [[spalle]] e sorride.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shoulders",
+      "options": [
+        "shoulders",
+        "hands",
+        "eyes",
+        "knees"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Il venditore alza le spalle e sorride.",
+        "targetWord": "spalle",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/edb232b8568147b8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avere",
+    "sentence": "Lui dice di pagare quando [[hai]] spiccioli.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "you have",
+      "options": [
+        "you have",
+        "you want",
+        "you see",
+        "you leave"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Lui dice di pagare quando hai spiccioli.",
+        "targetWord": "hai",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6532e8236f39f5b1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fermo",
+    "sentence": "Lui resta [[fermo]] con i limoni in mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still",
+      "options": [
+        "still",
+        "late",
+        "tired",
+        "happy"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Lui resta fermo con i limoni in mano.",
+        "targetWord": "fermo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e7f36e4a13db0e39.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "giorno",
+    "sentence": "Il [[giorno]] dopo lui torna al banco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the day",
+      "options": [
+        "the day",
+        "the hour",
+        "the week",
+        "the month"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Il giorno dopo lui torna al banco.",
+        "targetWord": "giorno",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0dc55c56be9eb0d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tornare",
+    "sentence": "Lui [[torna]] con le monete contate.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "comes back",
+      "options": [
+        "comes back",
+        "goes away",
+        "pays late",
+        "forgets"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Lui torna con le monete contate.",
+        "targetWord": "torna",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b460efed0401c9d6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lontano",
+    "sentence": "Il venditore lo riconosce da [[lontano]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "from far away",
+      "options": [
+        "from far away",
+        "from behind",
+        "by mistake",
+        "by name"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Il venditore lo riconosce da lontano.",
+        "targetWord": "lontano",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/74015e5995eb264e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ridere",
+    "sentence": "Lui [[ride]] prima ancora di parlare.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "laughs",
+      "options": [
+        "laughs",
+        "shouts",
+        "cries",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Lui ride prima ancora di parlare.",
+        "targetWord": "ride",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/58455f8a99a95bbd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comprare",
+    "sentence": "Lui [[compra]] tre limoni e niente altro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "buys",
+      "options": [
+        "buys",
+        "sells",
+        "cooks",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "nessuno-ha-spiccioli",
+        "storySource": "user",
+        "sentence": "Lui compra tre limoni e niente altro.",
+        "targetWord": "compra",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46c1f80c21699e72.mp3"
+      }
+    },
+    "featured": false
+  }
+]

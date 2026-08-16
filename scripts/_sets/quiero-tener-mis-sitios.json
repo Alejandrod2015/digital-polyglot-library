@@ -1,0 +1,523 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "barrio,cuesta,balcón,tejado",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "barrio",
+     "answer": "a neighbourhood",
+     "options": [
+      "a neighbourhood",
+      "a slope",
+      "a balcony",
+      "a roof"
+     ]
+    },
+    {
+     "word": "cuesta",
+     "answer": "a slope",
+     "options": [
+      "a neighbourhood",
+      "a slope",
+      "a balcony",
+      "a roof"
+     ]
+    },
+    {
+     "word": "balcón",
+     "answer": "a balcony",
+     "options": [
+      "a neighbourhood",
+      "a slope",
+      "a balcony",
+      "a roof"
+     ]
+    },
+    {
+     "word": "tejado",
+     "answer": "a roof",
+     "options": [
+      "a neighbourhood",
+      "a slope",
+      "a balcony",
+      "a roof"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "no tenía ni idea",
+  "sentence": "Elena dice que [[no tenía ni idea]] de que esa plaza existía.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I had no idea at all",
+   "options": [
+    "I had no idea at all",
+    "I knew it very well",
+    "I heard about it once",
+    "I saw it last week"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Elena dice que no tenía ni idea de que esa plaza existía.",
+    "targetWord": "no tenía ni idea",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se me pasa",
+  "sentence": "Marc dice que se sienta en el banco y [[se me pasa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it goes away",
+   "options": [
+    "it goes away",
+    "it gets worse",
+    "it comes back",
+    "it takes over"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Marc dice que se sienta en el banco y se me pasa.",
+    "targetWord": "se me pasa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a punto de",
+  "sentence": "Elena estaba [[a punto de]] volverse a su pueblo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "about to",
+   "options": [
+    "about to",
+    "afraid of",
+    "tired of",
+    "far from"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Elena estaba a punto de volverse a su pueblo.",
+    "targetWord": "a punto de",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "escondida",
+  "sentence": "Llegan a una plaza [[escondida]], sin nombre en las guías.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hidden away",
+   "options": [
+    "hidden away",
+    "newly built",
+    "very crowded",
+    "under repair"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Llegan a una plaza escondida, sin nombre en las guías.",
+    "targetWord": "escondida",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guías",
+  "sentence": "La plaza no tiene nombre en las [[guías]] de la ciudad.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "guidebooks",
+   "options": [
+    "guidebooks",
+    "street signs",
+    "bus maps",
+    "shop windows"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "La plaza no tiene nombre en las guías de la ciudad.",
+    "targetWord": "guías",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "turistas",
+  "sentence": "Marc la lleva lejos de las Ramblas y de los [[turistas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tourists",
+   "options": [
+    "tourists",
+    "students",
+    "workers",
+    "children"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Marc la lleva lejos de las Ramblas y de los turistas.",
+    "targetWord": "turistas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "preciosa",
+  "sentence": "Elena dice que la plaza escondida es [[preciosa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lovely",
+   "options": [
+    "lovely",
+    "noisy",
+    "empty",
+    "modern"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Elena dice que la plaza escondida es preciosa.",
+    "targetWord": "preciosa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sitios",
+  "sentence": "Elena dice que quiere tener sus [[sitios]] en la ciudad.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "places of your own",
+   "options": [
+    "places of your own",
+    "friends of your own",
+    "habits of your own",
+    "plans of your own"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Elena dice que quiere tener sus sitios en la ciudad.",
+    "targetWord": "sitios",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "encontrando",
+  "sentence": "Marc dice que todavía sigue [[encontrando]] calles nuevas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to find",
+   "options": [
+    "to find",
+    "to lose",
+    "to cross",
+    "to name"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Marc dice que todavía sigue encontrando calles nuevas.",
+    "targetWord": "encontrando",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quería",
+  "featured": false,
+  "sentence": "Marc dice que por eso se la [[quería]] enseñar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to want",
+   "options": [
+    "to want",
+    "to forget",
+    "to promise",
+    "to refuse"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Marc dice que por eso se la quería enseñar.",
+    "targetWord": "quería",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sientan",
+  "featured": false,
+  "sentence": "Se [[sientan]] los dos en el banco de la plaza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sit down",
+   "options": [
+    "to sit down",
+    "to stand up",
+    "to lie down",
+    "to walk on"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Se sientan los dos en el banco de la plaza.",
+    "targetWord": "sientan",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "enseñar",
+  "featured": false,
+  "sentence": "Marc quiere [[enseñar]] a Elena una plaza escondida.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to show",
+   "options": [
+    "to show",
+    "to sell",
+    "to describe",
+    "to draw"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Marc quiere enseñar a Elena una plaza escondida.",
+    "targetWord": "enseñar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "acepto",
+  "featured": false,
+  "sentence": "Elena responde que [[acepto]] la condición de Marc.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to accept",
+   "options": [
+    "to accept",
+    "to refuse",
+    "to doubt",
+    "to repeat"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Elena responde que acepto la condición de Marc.",
+    "targetWord": "acepto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "lejos",
+  "featured": false,
+  "sentence": "Mi oficina está _____, tardo una hora en llegar.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lejos",
+   "options": [
+    "lejos",
+    "cerca",
+    "arriba",
+    "fuera"
+   ],
+   "translation": "My office is _____, it takes me an hour to get there.",
+   "optionTranslations": [
+    "far",
+    "near",
+    "upstairs",
+    "outside"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Mi oficina está lejos, tardo una hora en llegar.",
+    "targetWord": "lejos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "encima",
+  "featured": false,
+  "sentence": "Los libros están _____ de la mesa, no debajo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "encima",
+   "options": [
+    "encima",
+    "debajo",
+    "detrás",
+    "dentro"
+   ],
+   "translation": "The books are _____ the table, not underneath.",
+   "optionTranslations": [
+    "on top of",
+    "under",
+    "behind",
+    "inside"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Los libros están encima de la mesa, no debajo.",
+    "targetWord": "encima",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "veces",
+  "featured": false,
+  "sentence": "He visto esa película tres _____ y me sigue gustando.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "veces",
+   "options": [
+    "veces",
+    "horas",
+    "meses",
+    "calles"
+   ],
+   "translation": "I have seen that film three _____ and I still like it.",
+   "optionTranslations": [
+    "times",
+    "hours",
+    "months",
+    "streets"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "He visto esa película tres veces y me sigue gustando.",
+    "targetWord": "veces",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "mucho",
+  "featured": false,
+  "sentence": "Este verano ha llovido _____ en el norte.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mucho",
+   "options": [
+    "mucho",
+    "poco",
+    "apenas",
+    "nunca"
+   ],
+   "translation": "This summer it has rained _____ in the north.",
+   "optionTranslations": [
+    "a lot",
+    "a little",
+    "hardly",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Este verano ha llovido mucho en el norte.",
+    "targetWord": "mucho",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "próximo",
+  "featured": false,
+  "sentence": "El _____ tren sale dentro de diez minutos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "próximo",
+   "options": [
+    "próximo",
+    "último",
+    "mismo",
+    "único"
+   ],
+   "translation": "The _____ train leaves in ten minutes.",
+   "optionTranslations": [
+    "next",
+    "last",
+    "same",
+    "only"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "El próximo tren sale dentro de diez minutos.",
+    "targetWord": "próximo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "nuevo",
+  "featured": false,
+  "sentence": "Han abierto un bar _____ en la esquina.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nuevo",
+   "options": [
+    "nuevo",
+    "viejo",
+    "caro",
+    "pequeño"
+   ],
+   "translation": "They have opened a _____ bar on the corner.",
+   "optionTranslations": [
+    "new",
+    "old",
+    "expensive",
+    "small"
+   ],
+   "audioClip": {
+    "storySlug": "quiero-tener-mis-sitios",
+    "storySource": "user",
+    "sentence": "Han abierto un bar nuevo en la esquina.",
+    "targetWord": "nuevo",
+    "language": "spanish"
+   }
+  }
+ }
+]

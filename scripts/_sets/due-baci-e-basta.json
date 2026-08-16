@@ -1,0 +1,555 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "bacio,guancia,vino,ufficio",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "bacio",
+     "answer": "a kiss",
+     "options": [
+      "a kiss",
+      "a cheek",
+      "wine",
+      "an office"
+     ]
+    },
+    {
+     "word": "guancia",
+     "answer": "a cheek",
+     "options": [
+      "a kiss",
+      "a cheek",
+      "wine",
+      "an office"
+     ]
+    },
+    {
+     "word": "vino",
+     "answer": "wine",
+     "options": [
+      "a kiss",
+      "a cheek",
+      "wine",
+      "an office"
+     ]
+    },
+    {
+     "word": "ufficio",
+     "answer": "an office",
+     "options": [
+      "a kiss",
+      "a cheek",
+      "wine",
+      "an office"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "casa",
+  "sentence": "Lui entra nella [[casa]] di un amico.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the house",
+   "options": [
+    "the house",
+    "the shop",
+    "the church",
+    "the office"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Lui entra nella casa di un amico.",
+    "targetWord": "casa",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1aa9ed68d02f7486.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "amico",
+  "sentence": "Il suo [[amico]] abita vicino al centro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "friend",
+   "options": [
+    "friend",
+    "brother",
+    "boss",
+    "neighbour"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Il suo amico abita vicino al centro.",
+    "targetWord": "amico",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5e47d36c2df8809.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "permesso",
+  "sentence": "Nessuno chiede il [[permesso]] prima di salutare.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "permission",
+   "options": [
+    "permission",
+    "address",
+    "name",
+    "price"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Nessuno chiede il permesso prima di salutare.",
+    "targetWord": "permesso",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/976239b3b7423fe2.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stringere",
+  "sentence": "In ufficio si usa [[stringere]] la mano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to shake",
+   "options": [
+    "to shake",
+    "to kiss",
+    "to wave",
+    "to hide"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "In ufficio si usa stringere la mano.",
+    "targetWord": "stringere",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/53bb4457530cfb1e.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ritmo",
+  "sentence": "Il [[ritmo]] dei due baci è veloce.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the rhythm",
+   "options": [
+    "the rhythm",
+    "the price",
+    "the name",
+    "the rule"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Il ritmo dei due baci è veloce.",
+    "targetWord": "ritmo",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8007b3654831c5e2.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "destro",
+  "sentence": "Prima la guancia [[destra]], poi l'altra.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right",
+   "options": [
+    "right",
+    "left",
+    "cold",
+    "soft"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Prima la guancia destra, poi l'altra.",
+    "targetWord": "destra",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f467ec397965bd1e.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sinistro",
+  "sentence": "Dopo arriva la guancia [[sinistra]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "left",
+   "options": [
+    "left",
+    "right",
+    "warm",
+    "dry"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Dopo arriva la guancia sinistra.",
+    "targetWord": "sinistra",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/121fbd54d719855d.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "di nuovo",
+  "sentence": "Lui saluta tutti [[di nuovo]], uno per uno.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "again",
+   "options": [
+    "again",
+    "later",
+    "quickly",
+    "by mistake"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Lui saluta tutti di nuovo, uno per uno.",
+    "targetWord": "di nuovo",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee336eb2fa3e4b0a.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "serata",
+  "sentence": "Tanti baci in una sola _____ sono troppi.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "serata",
+   "options": [
+    "serata",
+    "mattina",
+    "settimana",
+    "stagione"
+   ],
+   "translation": "Sixteen kisses in one _____ are a lot.",
+   "optionTranslations": [
+    "evening",
+    "morning",
+    "week",
+    "season"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Tanti baci in una sola serata sono troppi.",
+    "targetWord": "serata",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7164720d2d253a64.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "romano",
+  "sentence": "Il suo amico è [[romano]] di nascita.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "from Rome",
+   "options": [
+    "from Rome",
+    "from Milan",
+    "from abroad",
+    "from the south"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Il suo amico è romano di nascita.",
+    "targetWord": "romano",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/01becdb89645eb06.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "donna",
+  "sentence": "Una [[donna]] gli prende le braccia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a woman",
+   "options": [
+    "a woman",
+    "a man",
+    "a child",
+    "a dog"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Una donna gli prende le braccia.",
+    "targetWord": "donna",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/599c2b2f68f66866.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dare",
+  "sentence": "Lei gli [[dà]] un bacio su ogni guancia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gives",
+   "options": [
+    "gives",
+    "sells",
+    "shows",
+    "asks"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Lei gli dà un bacio su ogni guancia.",
+    "targetWord": "dà",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a6f0f5e2b9760257.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "modo",
+  "sentence": "Tutti lo salutano allo stesso [[modo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "way",
+   "options": [
+    "way",
+    "hour",
+    "price",
+    "place"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Tutti lo salutano allo stesso modo.",
+    "targetWord": "modo",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf05676fc60ebd34.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "provare",
+  "sentence": "Lui [[prova]] a stringere la mano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tries",
+   "options": [
+    "tries",
+    "refuses",
+    "forgets",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Lui prova a stringere la mano.",
+    "targetWord": "prova",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e610de58c7d7bb3d.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sbagliare",
+  "sentence": "Lui [[sbaglia]] il ritmo del saluto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gets wrong",
+   "options": [
+    "gets wrong",
+    "repeats",
+    "teaches",
+    "likes"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Lui sbaglia il ritmo del saluto.",
+    "targetWord": "sbaglia",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/55aa34921d3fb2fe.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "usare",
+  "sentence": "La mano si [[usa]] soltanto al lavoro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "is used",
+   "options": [
+    "is used",
+    "is paid",
+    "is washed",
+    "is hidden"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "La mano si usa soltanto al lavoro.",
+    "targetWord": "usa",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/296cc9c640460398.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ripetere",
+  "sentence": "Lui [[ripete]] il movimento con la persona dopo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "repeats",
+   "options": [
+    "repeats",
+    "refuses",
+    "counts",
+    "teaches"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Lui ripete il movimento con la persona dopo.",
+    "targetWord": "ripete",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dfad01429bfac559.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "movimento",
+  "sentence": "Il [[movimento]] è semplice ma va imparato.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the movement",
+   "options": [
+    "the movement",
+    "the price",
+    "the word",
+    "the rule"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Il movimento è semplice ma va imparato.",
+    "targetWord": "movimento",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e46a927e5a5304f0.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sentire",
+  "sentence": "Tutti [[sentono]] quando i baci sono finiti.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "feel",
+   "options": [
+    "feel",
+    "count",
+    "write",
+    "see"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Tutti sentono quando i baci sono finiti.",
+    "targetWord": "sentono",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4eae822d0dc2a0f0.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sera",
+  "sentence": "Alla fine della [[sera]] lui saluta di nuovo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the evening",
+   "options": [
+    "the evening",
+    "the morning",
+    "the week",
+    "the meal"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "Alla fine della sera lui saluta di nuovo.",
+    "targetWord": "sera",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/25073f047b4baf11.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ciao",
+  "sentence": "La donna gli dice [[ciao]] e lo bacia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bye",
+   "options": [
+    "bye",
+    "please",
+    "sorry",
+    "thanks"
+   ],
+   "audioClip": {
+    "storySlug": "due-baci-e-basta",
+    "storySource": "user",
+    "sentence": "La donna gli dice ciao e lo bacia.",
+    "targetWord": "ciao",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2e7b556b8e45632c.mp3"
+   }
+  },
+  "featured": false
+ }
+]

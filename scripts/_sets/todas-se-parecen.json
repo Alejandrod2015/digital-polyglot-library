@@ -1,0 +1,210 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "flor,cartel,brazo,zapato",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    { "word": "flor", "answer": "a flower", "options": ["a flower", "a sign", "an arm", "a shoe"] },
+    { "word": "cartel", "answer": "a sign", "options": ["a flower", "a sign", "an arm", "a shoe"] },
+    { "word": "brazo", "answer": "an arm", "options": ["a flower", "a sign", "an arm", "a shoe"] },
+    { "word": "zapato", "answer": "a shoe", "options": ["a flower", "a sign", "an arm", "a shoe"] }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caseta",
+  "sentence": "Pasan por delante de una [[caseta]] llena de gente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a family tent at the fair",
+   "options": ["a family tent at the fair", "a food truck", "a ticket booth", "a small bandstand"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "Pasan por delante de una caseta llena de gente.", "targetWord": "caseta", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "farolillo",
+  "sentence": "La nuestra tiene un [[farolillo]] verde y un cartel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a paper lantern",
+   "options": ["a paper lantern", "a metal gate", "a wooden bench", "a flower pot"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "La nuestra tiene un farolillo verde y un cartel.", "targetWord": "farolillo", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "real",
+  "sentence": "Los farolillos iluminan las calles del [[real]] de la Feria.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the fairground",
+   "options": ["the fairground", "the town hall", "the cathedral", "the riverbank"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "Los farolillos iluminan las calles del real de la Feria.", "targetWord": "real", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "portada",
+  "sentence": "Rocío dice que la caseta está cerca de la [[portada]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the big entrance arch",
+   "options": ["the big entrance arch", "the bus stop", "the ticket office", "the car park"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "Rocío dice que la caseta está cerca de la portada.", "targetWord": "portada", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dando vueltas",
+  "sentence": "Curro dice que llevan media hora [[dando vueltas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "going round in circles",
+   "options": ["going round in circles", "waiting in a queue", "asking for directions", "sitting on a bench"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "Curro dice que llevan media hora dando vueltas.", "targetWord": "dando vueltas", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "traje de flamenca",
+  "sentence": "Rocío busca la caseta con su [[traje de flamenca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a long ruffled dress",
+   "options": ["a long ruffled dress", "a wide straw hat", "a silk hair ribbon", "a warm velvet coat"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "Rocío busca la caseta con su traje de flamenca.", "targetWord": "traje de flamenca", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "apellido",
+  "sentence": "Mi _____ es el mismo que el de mi padre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "apellido",
+   "options": ["apellido", "nombre", "número", "trabajo"],
+   "translation": "My _____ is the same as my father's.",
+   "optionTranslations": ["surname", "first name", "number", "job"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "Mi apellido es el mismo que el de mi padre.", "targetWord": "apellido", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "verde",
+  "sentence": "La puerta de mi casa es _____, como las hojas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "verde",
+   "options": ["verde", "azul", "roja", "negra"],
+   "translation": "The door of my house is _____, like the leaves.",
+   "optionTranslations": ["green", "blue", "red", "black"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "La puerta de mi casa es verde, como las hojas.", "targetWord": "verde", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entrar",
+  "sentence": "Rocío coge a Curro y los dos [[entran]] juntos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go in",
+   "options": ["to go in", "to sit down", "to look back", "to walk away"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "Rocío coge a Curro y los dos entran juntos.", "targetWord": "entran", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cientos",
+  "featured": false,
+  "sentence": "[[Cientos]] de farolillos iluminan las calles de la Feria.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hundreds",
+   "options": ["hundreds", "a dozen", "a handful", "a pair"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "Cientos de farolillos iluminan las calles de la Feria.", "targetWord": "Cientos", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "calle",
+  "featured": false,
+  "sentence": "Los farolillos iluminan las [[calles]] del real.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a street",
+   "options": ["a street", "a bridge", "a garden", "a rooftop"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "Los farolillos iluminan las calles del real.", "targetWord": "calles", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abierto",
+  "featured": false,
+  "sentence": "Pasan por delante de una caseta con la puerta [[abierta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "open",
+   "options": ["open", "locked", "broken", "freshly painted"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "Pasan por delante de una caseta con la puerta abierta.", "targetWord": "abierta", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "conocer",
+  "featured": false,
+  "sentence": "Rocío dice que a esa mujer la [[conozco]] de antes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to know somebody",
+   "options": ["to know somebody", "to greet somebody", "to call somebody", "to follow somebody"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "Rocío dice que a esa mujer la conozco de antes.", "targetWord": "conozco", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "delante",
+  "featured": false,
+  "sentence": "El niño va _____ y su madre camina detrás.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "delante",
+   "options": ["delante", "dentro", "encima", "lejos"],
+   "translation": "The boy walks _____ and his mother walks behind.",
+   "optionTranslations": ["in front", "inside", "on top", "far away"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "El niño va delante y su madre camina detrás.", "targetWord": "delante", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "muchísimo",
+  "featured": false,
+  "sentence": "Me gusta _____ este pueblo, vengo todos los años.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "muchísimo",
+   "options": ["muchísimo", "poco", "apenas", "nada"],
+   "translation": "I like this town _____, I come every year.",
+   "optionTranslations": ["very much", "a little", "hardly", "not at all"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "Me gusta muchísimo este pueblo, vengo todos los años.", "targetWord": "muchísimo", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "gente",
+  "featured": false,
+  "sentence": "Hay mucha _____ en la plaza y no puedo pasar.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gente",
+   "options": ["gente", "agua", "comida", "música"],
+   "translation": "There is a lot of _____ in the square and I cannot get through.",
+   "optionTranslations": ["people", "water", "food", "music"],
+   "audioClip": { "storySlug": "todas-se-parecen", "storySource": "user", "sentence": "Hay mucha gente en la plaza y no puedo pasar.", "targetWord": "gente", "language": "spanish" }
+  }
+ }
+]

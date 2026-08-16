@@ -1,0 +1,696 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "caminar",
+    "sentence": "Ella [[camina]] por las calles.",
+    "payload": {
+      "answer": "to walk",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to walk",
+        "to run",
+        "to swim",
+        "to drive"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella camina por las calles.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "camina",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b41cb524503861dc.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "azul",
+    "sentence": "Las casas son [[azules]] y rosas.",
+    "payload": {
+      "answer": "blue",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "blue",
+        "red",
+        "black",
+        "gray"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las casas son azules y rosas.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "azules",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/349c103ec7c4e6c1.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guía",
+    "sentence": "Ella es la [[guía]] del museo.",
+    "payload": {
+      "answer": "a guide",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a guide",
+        "a teacher",
+        "a doctor",
+        "a driver"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella es la guía del museo.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "guía",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8057601e58c81db0.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pintor",
+    "sentence": "Ella es una [[pintora]] famosa.",
+    "payload": {
+      "answer": "a painter",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a painter",
+        "a writer",
+        "a singer",
+        "a dancer"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella es una pintora famosa.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "pintora",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a3dbd6b9d8443a96.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuadro",
+    "sentence": "En las paredes hay muchos [[cuadros]].",
+    "payload": {
+      "answer": "a painting",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a painting",
+        "a photo",
+        "a mirror",
+        "a window"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En las paredes hay muchos cuadros.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "cuadros",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd0d3caf8e858533.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dormir",
+    "sentence": "Un gato [[duerme]] al sol.",
+    "payload": {
+      "answer": "to sleep",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to sleep",
+        "to eat",
+        "to play",
+        "to run"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Un gato duerme al sol.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "duerme",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/78adaac756c4241c.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comprar",
+    "sentence": "Antes de salir, ella [[compra]] una postal.",
+    "payload": {
+      "answer": "to buy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to buy",
+        "to sell",
+        "to lose",
+        "to find"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Antes de salir, ella compra una postal.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "compra",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/13717e66f95a7783.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "casa",
+    "sentence": "Vivo con mi familia en una _____ grande.",
+    "payload": {
+      "answer": "casa",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "casa",
+        "tienda",
+        "escuela",
+        "oficina"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Vivo con mi familia en una casa grande.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "casa",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c1f370d8d78167ae.mp3"
+      },
+      "translation": "I live with my family in a big _____.",
+      "optionTranslations": [
+        "house",
+        "store",
+        "school",
+        "office"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "jardín",
+    "sentence": "Las flores crecen en el _____ de la casa.",
+    "payload": {
+      "answer": "jardín",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "jardín",
+        "baño",
+        "techo",
+        "garaje"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las flores crecen en el jardín de la casa.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "jardín",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c713a6e9a645801.mp3"
+      },
+      "translation": "The flowers grow in the _____ of the house.",
+      "optionTranslations": [
+        "garden",
+        "bathroom",
+        "roof",
+        "garage"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "postal",
+    "sentence": "Escribo un saludo y mando una _____ por correo.",
+    "payload": {
+      "answer": "postal",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "postal",
+        "maleta",
+        "moneda",
+        "llave"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Escribo un saludo y mando una postal por correo.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "postal",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7d506d9290fae8f.mp3"
+      },
+      "translation": "I write a greeting and send a _____ by mail.",
+      "optionTranslations": [
+        "postcard",
+        "suitcase",
+        "coin",
+        "key"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rosa",
+    "sentence": "Las casas son azules y [[rosas]].",
+    "payload": {
+      "answer": "pink",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "pink",
+        "orange",
+        "white",
+        "brown"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las casas son azules y rosas.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "rosas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/349c103ec7c4e6c1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "famoso",
+    "sentence": "Ella es una pintora [[famosa]].",
+    "payload": {
+      "answer": "famous",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "famous",
+        "unknown",
+        "quiet",
+        "kind"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella es una pintora famosa.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "famosa",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a3dbd6b9d8443a96.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fuerte",
+    "sentence": "El color es muy [[fuerte]].",
+    "payload": {
+      "answer": "strong",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "strong",
+        "weak",
+        "soft",
+        "pale"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El color es muy fuerte.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "fuerte",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0948b56593d723c4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vida",
+    "sentence": "Ella habla de la [[vida]] de la pintora.",
+    "payload": {
+      "answer": "life",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "life",
+        "death",
+        "family",
+        "story"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella habla de la vida de la pintora.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "vida",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a39764c7098abe4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "atención",
+    "sentence": "Ella escucha con [[atención]].",
+    "payload": {
+      "answer": "attention",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "attention",
+        "patience",
+        "fear",
+        "doubt"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella escucha con atención.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "atención",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3dd76fbba0d89dd9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barrio",
+    "sentence": "Ella quiere volver a este [[barrio]] azul.",
+    "payload": {
+      "answer": "a neighborhood",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a neighborhood",
+        "a country",
+        "a market",
+        "a river"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella quiere volver a este barrio azul.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "barrio",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b25d8435e74dfb94.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lágrima",
+    "sentence": "Sus ojos tienen [[lágrimas]].",
+    "payload": {
+      "answer": "a tear",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a tear",
+        "a smile",
+        "a scar",
+        "a shadow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Sus ojos tienen lágrimas.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "lágrimas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/02dc9a724dc3fc57.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "calle",
+    "sentence": "Los carros pasan rápido por la _____.",
+    "payload": {
+      "answer": "calle",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "calle",
+        "pared",
+        "mesa",
+        "silla"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los carros pasan rápido por la calle.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "calle",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5a3984b4fe07ffcc.mp3"
+      },
+      "translation": "The cars drive fast down the _____.",
+      "optionTranslations": [
+        "street",
+        "wall",
+        "table",
+        "chair"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pared",
+    "sentence": "El cuadro está colgado en la _____.",
+    "payload": {
+      "answer": "pared",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "pared",
+        "silla",
+        "ventana",
+        "escalera"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El cuadro está colgado en la pared.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "pared",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f3b444834afb60b.mp3"
+      },
+      "translation": "The painting hangs on the _____.",
+      "optionTranslations": [
+        "wall",
+        "chair",
+        "window",
+        "staircase"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pañuelo",
+    "sentence": "Ella llora y usa un _____ para secar la cara.",
+    "payload": {
+      "answer": "pañuelo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "pañuelo",
+        "sombrero",
+        "zapato",
+        "reloj"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella llora y usa un pañuelo para secar la cara.",
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "targetWord": "pañuelo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f1be44ccd4690776.mp3"
+      },
+      "translation": "She cries and uses a _____ to dry her face.",
+      "optionTranslations": [
+        "handkerchief",
+        "hat",
+        "shoe",
+        "watch"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "museo,puerta,árbol,gato",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "museo",
+          "answer": "an art museum",
+          "options": [
+            "an art museum",
+            "a door to enter",
+            "a tall tree",
+            "a small pet cat"
+          ]
+        },
+        {
+          "word": "puerta",
+          "answer": "a door to enter",
+          "options": [
+            "an art museum",
+            "a door to enter",
+            "a tall tree",
+            "a small pet cat"
+          ]
+        },
+        {
+          "word": "árbol",
+          "answer": "a tall tree",
+          "options": [
+            "an art museum",
+            "a door to enter",
+            "a tall tree",
+            "a small pet cat"
+          ]
+        },
+        {
+          "word": "gato",
+          "answer": "a small pet cat",
+          "options": [
+            "an art museum",
+            "a door to enter",
+            "a tall tree",
+            "a small pet cat"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "sentence": "Lucía [[sonríe]] cuando ve a los niños.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "smiles",
+      "options": [
+        "smiles",
+        "cries",
+        "sleeps",
+        "runs"
+      ],
+      "audioClip": {
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "storySource": "user",
+        "sentence": "Lucía sonríe cuando ve a los niños.",
+        "targetWord": "sonríe",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30decf178dd60266.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desconocido",
+    "sentence": "Una mujer [[desconocida]] toca a la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a stranger",
+      "options": [
+        "a stranger",
+        "a friend",
+        "a doctor",
+        "a neighbor"
+      ],
+      "audioClip": {
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "storySource": "user",
+        "sentence": "Una mujer desconocida toca a la puerta.",
+        "targetWord": "desconocida",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef9fbbcc6ef27c7f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despedirse",
+    "sentence": "Sofía se [[despide]] de su amiga con cariño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "says goodbye",
+      "options": [
+        "says goodbye",
+        "sings",
+        "sleeps",
+        "cooks"
+      ],
+      "audioClip": {
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "storySource": "user",
+        "sentence": "Sofía se despide de su amiga con cariño.",
+        "targetWord": "despide",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3918eda264cce300.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abrazo",
+    "sentence": "Sofía le da un [[abrazo]] a su madre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a hug",
+      "options": [
+        "a hug",
+        "a book",
+        "a plate",
+        "a coin"
+      ],
+      "audioClip": {
+        "storySlug": "la-casa-azul-de-coyoacan",
+        "storySource": "user",
+        "sentence": "Sofía le da un abrazo a su madre.",
+        "targetWord": "abrazo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/559175b2711b59b5.mp3"
+      }
+    },
+    "featured": false
+  }
+]

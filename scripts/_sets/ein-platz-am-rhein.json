@@ -1,0 +1,477 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "Rhein,Ufer,Feierabend,Runde",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "Rhein",
+          "answer": "the Rhine river",
+          "options": [
+            "the Rhine river",
+            "a riverbank",
+            "time off after work",
+            "a round of drinks"
+          ]
+        },
+        {
+          "word": "Ufer",
+          "answer": "a riverbank",
+          "options": [
+            "the Rhine river",
+            "a riverbank",
+            "time off after work",
+            "a round of drinks"
+          ]
+        },
+        {
+          "word": "Feierabend",
+          "answer": "time off after work",
+          "options": [
+            "the Rhine river",
+            "a riverbank",
+            "time off after work",
+            "a round of drinks"
+          ]
+        },
+        {
+          "word": "Runde",
+          "answer": "a round of drinks",
+          "options": [
+            "the Rhine river",
+            "a riverbank",
+            "time off after work",
+            "a round of drinks"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Kölle",
+    "sentence": "während über [[Kölle]] eine heimelige Ruhe liegt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Cologne",
+      "options": [
+        "Cologne",
+        "the harbour",
+        "the market",
+        "the river"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "während über Kölle eine heimelige Ruhe liegt.",
+        "targetWord": "Kölle",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e329c64ba6ed70c9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Prost",
+    "sentence": "\"[[Prost]]\", sagt Basti, und alle stoßen die Gläser.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cheers",
+      "options": [
+        "cheers",
+        "goodbye",
+        "sorry",
+        "welcome"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "\"Prost\", sagt Basti, und alle stoßen die Gläser.",
+        "targetWord": "Prost",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9ff6eec59891b7c6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gut aufgehoben",
+    "sentence": "\"Bei uns bist du [[gut aufgehoben]], Nadia\", sagt Jana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in good hands",
+      "options": [
+        "in good hands",
+        "on your own",
+        "far from home",
+        "out of luck"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "\"Bei uns bist du gut aufgehoben, Nadia\", sagt Jana.",
+        "targetWord": "aufgehoben",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/09949a52cbdd291f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verwurzelt",
+    "sentence": "\"Du bist ja richtig [[verwurzelt]] hier\", sagt er.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "deeply rooted",
+      "options": [
+        "deeply rooted",
+        "totally lost",
+        "brand new",
+        "far away"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "\"Du bist ja richtig verwurzelt hier\", sagt er.",
+        "targetWord": "verwurzelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/71461f6a0d033e98.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Trubel",
+    "sentence": "Der laute [[Trubel]] des Karnevals ist endlich vorbei.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hustle and bustle",
+      "options": [
+        "hustle and bustle",
+        "quiet calm",
+        "hard work",
+        "empty silence"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "Der laute Trubel des Karnevals ist endlich vorbei.",
+        "targetWord": "Trubel",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8c49d2fcbff6f3d2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "kölsche",
+    "sentence": "Diese [[kölsche]] Lebensfreude hat sie aufgesogen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "typical of Cologne",
+      "options": [
+        "typical of Cologne",
+        "cold and grey",
+        "far and foreign",
+        "dark and sad"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "Diese kölsche Lebensfreude hat sie aufgesogen.",
+        "targetWord": "kölsche",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dcd9156ea0fa3363.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Heimat",
+    "sentence": "dieser stille Frohsinn am Rhein wiegt schwerer als jede [[Heimat]] auf einer Landkarte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a true home",
+      "options": [
+        "a true home",
+        "a short trip",
+        "a new job",
+        "a big house"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "dieser stille Frohsinn am Rhein wiegt schwerer als jede Heimat auf einer Landkarte.",
+        "targetWord": "Heimat",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d556ae0870983c6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "einen heben",
+    "sentence": "Später will Basti noch [[einen heben]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to have a drink",
+      "options": [
+        "to have a drink",
+        "to go home",
+        "to take a nap",
+        "to make a call"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "Später will Basti noch einen heben.",
+        "targetWord": "heben",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c33878cc2820732a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "herzhaft",
+    "sentence": "und genau das fühlt sich [[herzhaft]] richtig an.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "warm and hearty",
+      "options": [
+        "warm and hearty",
+        "cold and empty",
+        "strange and wrong",
+        "loud and busy"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "und genau das fühlt sich herzhaft richtig an.",
+        "targetWord": "herzhaft",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f4c4a56a04ed2bf.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "heimelige",
+    "sentence": "Sie mag die warme, _____ Stimmung im Café.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "heimelige",
+      "options": [
+        "heimelige",
+        "kalte",
+        "laute",
+        "fremde"
+      ],
+      "translation": "She likes the warm, _____ atmosphere in the café.",
+      "optionTranslations": [
+        "cosy",
+        "cold",
+        "loud",
+        "strange"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "Sie mag die warme, heimelige Stimmung im Café.",
+        "targetWord": "heimelige",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/92307fc6d1c3a2dd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Lebensfreude",
+    "sentence": "Ihre ansteckende _____ macht jede Feier schöner.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Lebensfreude",
+      "options": [
+        "Lebensfreude",
+        "Müdigkeit",
+        "Angst",
+        "Langeweile"
+      ],
+      "translation": "Her infectious _____ makes every party nicer.",
+      "optionTranslations": [
+        "joy of life",
+        "tiredness",
+        "fear",
+        "boredom"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "Ihre ansteckende Lebensfreude macht jede Feier schöner.",
+        "targetWord": "Lebensfreude",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/493d7e8879105874.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "schunkeln",
+    "sentence": "Zur Blasmusik _____ alle Gäste eng umschlungen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schunkeln",
+      "options": [
+        "schunkeln",
+        "schweigen",
+        "schlafen",
+        "streiten"
+      ],
+      "translation": "To the brass music all guests _____ closely linked.",
+      "optionTranslations": [
+        "sway arm in arm",
+        "keep silent",
+        "sleep",
+        "argue"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "Zur Blasmusik schunkeln alle Gäste eng umschlungen.",
+        "targetWord": "schunkeln",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/df4a93f76e7c6c2e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "plaudern",
+    "sentence": "Die Nachbarinnen _____ entspannt über den Gartenzaun.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "plaudern",
+      "options": [
+        "plaudern",
+        "schreien",
+        "schweigen",
+        "rennen"
+      ],
+      "translation": "The neighbours _____ relaxed over the garden fence.",
+      "optionTranslations": [
+        "chat",
+        "shout",
+        "keep silent",
+        "run"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "Die Nachbarinnen plaudern entspannt über den Gartenzaun.",
+        "targetWord": "plaudern",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/275f17442412eeb2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "selbstverständlich",
+    "sentence": "Er hilft seinen Freunden ganz _____, ohne zu fragen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "selbstverständlich",
+      "options": [
+        "selbstverständlich",
+        "widerwillig",
+        "selten",
+        "heimlich"
+      ],
+      "translation": "He helps his friends quite _____, without asking.",
+      "optionTranslations": [
+        "as a matter of course",
+        "reluctantly",
+        "rarely",
+        "secretly"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "Er hilft seinen Freunden ganz selbstverständlich, ohne zu fragen.",
+        "targetWord": "selbstverständlich",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4dcbf4bcde6a299b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "angepackt",
+    "sentence": "Beim Umzug haben alle tatkräftig mit _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "angepackt",
+      "options": [
+        "angepackt",
+        "geschlafen",
+        "gelacht",
+        "gewartet"
+      ],
+      "translation": "During the move everyone _____ energetically.",
+      "optionTranslations": [
+        "pitched in",
+        "slept",
+        "laughed",
+        "waited"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "Beim Umzug haben alle tatkräftig mit angepackt.",
+        "targetWord": "angepackt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cb05cc5fdfb4f5cb.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Frohsinn",
+    "sentence": "Trotz des Regens ist die Feier voller _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Frohsinn",
+      "options": [
+        "Frohsinn",
+        "Ärger",
+        "Streit",
+        "Lärm"
+      ],
+      "translation": "Despite the rain the party is full of _____.",
+      "optionTranslations": [
+        "cheerfulness",
+        "anger",
+        "quarrel",
+        "noise"
+      ],
+      "audioClip": {
+        "storySlug": "ein-platz-am-rhein",
+        "storySource": "user",
+        "sentence": "Trotz des Regens ist die Feier voller Frohsinn.",
+        "targetWord": "Frohsinn",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3fa95ac49df1b379.mp3"
+      }
+    },
+    "featured": false
+  }
+]

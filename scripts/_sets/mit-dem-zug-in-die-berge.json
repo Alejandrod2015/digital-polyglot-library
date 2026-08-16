@@ -1,0 +1,530 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Zug,Wald,Berg,Himmel",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Zug",
+     "answer": "train",
+     "options": [
+      "train",
+      "forest",
+      "mountain",
+      "sky"
+     ]
+    },
+    {
+     "word": "Wald",
+     "answer": "forest",
+     "options": [
+      "train",
+      "forest",
+      "mountain",
+      "sky"
+     ]
+    },
+    {
+     "word": "Berg",
+     "answer": "mountain",
+     "options": [
+      "train",
+      "forest",
+      "mountain",
+      "sky"
+     ]
+    },
+    {
+     "word": "Himmel",
+     "answer": "sky",
+     "options": [
+      "train",
+      "forest",
+      "mountain",
+      "sky"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "nehmen",
+  "sentence": "Sie _____ den Zug.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nehmen",
+   "options": [
+    "nehmen",
+    "sehen",
+    "halten",
+    "nicken"
+   ],
+   "translation": "They _____ the train.",
+   "optionTranslations": [
+    "take",
+    "see",
+    "stop",
+    "nod"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Sie nehmen den Zug.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "nehmen"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "sieht",
+  "sentence": "Sofia _____ Felder aus dem Fenster.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sieht",
+   "options": [
+    "sieht",
+    "nimmt",
+    "hält",
+    "nickt"
+   ],
+   "translation": "Sofia _____ fields from the window.",
+   "optionTranslations": [
+    "sees",
+    "takes",
+    "stops",
+    "nods"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Sofia sieht Felder aus dem Fenster.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "sieht"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "hält",
+  "sentence": "Der Zug _____ hier.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hält",
+   "options": [
+    "hält",
+    "sieht",
+    "nimmt",
+    "nickt"
+   ],
+   "translation": "The train _____ here.",
+   "optionTranslations": [
+    "stops",
+    "sees",
+    "takes",
+    "nods"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Der Zug hält hier.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "hält"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Idee",
+  "sentence": "Max hat eine gute _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Idee",
+   "options": [
+    "Idee",
+    "Zug",
+    "Weg",
+    "Wald"
+   ],
+   "translation": "Max has a good _____.",
+   "optionTranslations": [
+    "idea",
+    "train",
+    "path",
+    "forest"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Max hat eine gute Idee.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "Idee"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "verstehst",
+  "sentence": "Jetzt _____ du alles.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "verstehst",
+   "options": [
+    "verstehst",
+    "siehst",
+    "nimmst",
+    "hältst"
+   ],
+   "translation": "Now you _____ everything.",
+   "optionTranslations": [
+    "understand",
+    "see",
+    "take",
+    "stop"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Jetzt verstehst du alles.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "verstehst"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "steil",
+  "sentence": "Der Weg ist sehr [[steil]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "steep",
+   "options": [
+    "steep",
+    "wide",
+    "high",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Der Weg ist sehr steil.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "steil"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "müde",
+  "sentence": "Sofia wird [[müde]], aber sie geht weiter.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tired",
+   "options": [
+    "tired",
+    "high",
+    "steep",
+    "far"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Sofia wird müde, aber sie geht weiter.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "müde"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "weit",
+  "sentence": "Das Tal ist groß und [[weit]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wide",
+   "options": [
+    "wide",
+    "high",
+    "steep",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Das Tal ist groß und weit.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "weit"
+   }
+  }
+ },
+ {
+  "type": "listen_choose",
+  "featured": true,
+  "word": "langsam",
+  "sentence": "",
+  "payload": {
+   "prompt": "Listen and choose the word you hear.",
+   "answer": "langsam",
+   "options": [
+    "langsam",
+    "steil",
+    "weit",
+    "hoch"
+   ],
+   "optionTranslations": [
+    "slowly",
+    "steep",
+    "far",
+    "high"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Sie gehen langsam nach oben.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "langsam"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "schön",
+  "sentence": "Ich zeige dir etwas [[Schönes]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "beautiful",
+   "options": [
+    "beautiful",
+    "high",
+    "steep",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Ich zeige dir etwas Schönes.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "Schönes"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Felder",
+  "sentence": "Draußen sind viele grüne _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Felder",
+   "options": [
+    "Felder",
+    "Berge",
+    "Wälder",
+    "Wege"
+   ],
+   "translation": "Outside there are many green _____.",
+   "optionTranslations": [
+    "fields",
+    "mountains",
+    "forests",
+    "paths"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Draußen sind viele grüne Felder.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "Felder"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "hoch",
+  "sentence": "[[Hohe]] Felsen stehen hier.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "high",
+   "options": [
+    "high",
+    "steep",
+    "wide",
+    "far"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Hohe Felsen stehen hier.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "Hohe"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Felsen",
+  "sentence": "Hohe _____ und viel Wald sind hier.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Felsen",
+   "options": [
+    "Felsen",
+    "Felder",
+    "Wege",
+    "Berge"
+   ],
+   "translation": "High _____ and much forest are here.",
+   "optionTranslations": [
+    "rocks",
+    "fields",
+    "paths",
+    "mountains"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Hohe Felsen und viel Wald sind hier.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "Felsen"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "oben",
+  "sentence": "Sie gehen langsam nach [[oben]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "up",
+   "options": [
+    "up",
+    "down",
+    "past",
+    "back"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Sie gehen langsam nach oben.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "oben"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Weg",
+  "sentence": "Der _____ ist steil.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Weg",
+   "options": [
+    "Weg",
+    "Zug",
+    "Berg",
+    "Wald"
+   ],
+   "translation": "The _____ is steep.",
+   "optionTranslations": [
+    "path",
+    "train",
+    "mountain",
+    "forest"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Der Weg ist steil.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "Weg"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "Tal",
+  "sentence": "Das [[Tal]] ist groß und weit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "valley",
+   "options": [
+    "valley",
+    "mountain",
+    "forest",
+    "field"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Das Tal ist groß und weit.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "Tal"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "nickt",
+  "sentence": "Sofia _____ langsam.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nickt",
+   "options": [
+    "nickt",
+    "sieht",
+    "hält",
+    "nimmt"
+   ],
+   "translation": "Sofia _____ slowly.",
+   "optionTranslations": [
+    "nods",
+    "sees",
+    "stops",
+    "takes"
+   ],
+   "audioClip": {
+    "storySlug": "mit-dem-zug-in-die-berge",
+    "storySource": "user",
+    "sentence": "Sofia nickt langsam.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "nickt"
+   }
+  }
+ }
+]

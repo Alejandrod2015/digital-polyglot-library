@@ -1,0 +1,555 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "mattino,piattaforma,boa,cuffia",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "mattino",
+          "answer": "the morning",
+          "options": [
+            "the morning",
+            "a platform",
+            "a buoy",
+            "a swimming cap"
+          ]
+        },
+        {
+          "word": "piattaforma",
+          "answer": "a platform",
+          "options": [
+            "the morning",
+            "a platform",
+            "a buoy",
+            "a swimming cap"
+          ]
+        },
+        {
+          "word": "boa",
+          "answer": "a buoy",
+          "options": [
+            "the morning",
+            "a platform",
+            "a buoy",
+            "a swimming cap"
+          ]
+        },
+        {
+          "word": "cuffia",
+          "answer": "a swimming cap",
+          "options": [
+            "the morning",
+            "a platform",
+            "a buoy",
+            "a swimming cap"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "scendere",
+    "sentence": "Lei [[scende]] gli scalini di pietra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "goes down",
+      "options": [
+        "goes down",
+        "goes up",
+        "runs along",
+        "jumps over"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Lei scende gli scalini di pietra.",
+        "targetWord": "scende",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/98aa7a30bab0f7bd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "scalino",
+    "sentence": "Gli [[scalini]] portano fino all'acqua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the steps",
+      "options": [
+        "the steps",
+        "the ropes",
+        "the doors",
+        "the boats"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Gli scalini portano fino all'acqua.",
+        "targetWord": "scalini",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/47ab07ca96895cc9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "legno",
+    "sentence": "La piattaforma è di [[legno]] vecchio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wood",
+      "options": [
+        "wood",
+        "stone",
+        "metal",
+        "glass"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "La piattaforma è di legno vecchio.",
+        "targetWord": "legno",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29f10dc6ac913980.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "liscio",
+    "sentence": "Il mare è [[liscio]] come un vetro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "smooth",
+      "options": [
+        "smooth",
+        "rough",
+        "dark",
+        "warm"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Il mare è liscio come un vetro.",
+        "targetWord": "liscio",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0df6628d36f22ae.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vetro",
+    "sentence": "L'acqua sembra un [[vetro]] fermo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "glass",
+      "options": [
+        "glass",
+        "cloth",
+        "stone",
+        "paper"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "L'acqua sembra un vetro fermo.",
+        "targetWord": "vetro",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b14cb8df7b3d854.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gelato",
+    "sentence": "L'acqua è [[gelata]] a quest'ora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "freezing",
+      "options": [
+        "freezing",
+        "warm",
+        "dirty",
+        "deep"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "L'acqua è gelata a quest'ora.",
+        "targetWord": "gelata",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d927bd3030139eb2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abituarsi",
+    "sentence": "Il corpo [[si abitua]] dopo poco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gets used to it",
+      "options": [
+        "gets used to it",
+        "gives up",
+        "warms up",
+        "dries off"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Il corpo si abitua dopo poco.",
+        "targetWord": "si abitua",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/636dd00f29848471.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fondo",
+    "sentence": "Il [[fondo]] si vede benissimo da sopra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the bottom",
+      "options": [
+        "the bottom",
+        "the shore",
+        "the sky",
+        "the boat"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Il fondo si vede benissimo da sopra.",
+        "targetWord": "fondo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/de5f683f782c5d24.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "asciugarsi",
+    "sentence": "Lei [[si asciuga]] sopra la pietra calda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dries off",
+      "options": [
+        "dries off",
+        "warms up",
+        "lies down",
+        "goes back"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Lei si asciuga sopra la pietra calda.",
+        "targetWord": "si asciuga",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fcc742197f3dd425.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "piede",
+    "sentence": "Lei mette un [[piede]] dentro e lo toglie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a foot",
+      "options": [
+        "a foot",
+        "a hand",
+        "an arm",
+        "a knee"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Lei mette un piede dentro e lo toglie.",
+        "targetWord": "piede",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/179a002f22368fd7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colorato",
+    "sentence": "Le cuffie sono [[colorate]] e strette.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "colourful",
+      "options": [
+        "colourful",
+        "grey",
+        "broken",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Le cuffie sono colorate e strette.",
+        "targetWord": "colorate",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ac71e354504abff0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "testa",
+    "sentence": "Le donne portano la cuffia in [[testa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on the head",
+      "options": [
+        "on the head",
+        "in the hand",
+        "on the foot",
+        "in the bag"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Le donne portano la cuffia in testa.",
+        "targetWord": "testa",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a3570e51c02d440f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pezzo",
+    "sentence": "Lei entra un [[pezzo]] alla volta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a piece, a bit",
+      "options": [
+        "a piece, a bit",
+        "a minute",
+        "a step",
+        "a metre"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Lei entra un pezzo alla volta.",
+        "targetWord": "pezzo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0294426c08806b52.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tremare",
+    "sentence": "Lei [[trema]] per un minuto intero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shivers",
+      "options": [
+        "shivers",
+        "laughs",
+        "shouts",
+        "swims"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Lei trema per un minuto intero.",
+        "targetWord": "trema",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37c1991efcfcd485.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "corpo",
+    "sentence": "Poi il [[corpo]] si abitua al freddo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the body",
+      "options": [
+        "the body",
+        "the water",
+        "the wind",
+        "the sun"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Poi il corpo si abitua al freddo.",
+        "targetWord": "corpo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/788b3dea9a75ea2d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "freddo",
+    "sentence": "Il [[freddo]] diventa una cosa normale.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the cold",
+      "options": [
+        "the cold",
+        "the noise",
+        "the salt",
+        "the wind"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Il freddo diventa una cosa normale.",
+        "targetWord": "freddo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61b117d04ee52546.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "benissimo",
+    "sentence": "Si vede [[benissimo]] ogni sasso bianco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "very well",
+      "options": [
+        "very well",
+        "almost never",
+        "a little",
+        "too late"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Si vede benissimo ogni sasso bianco.",
+        "targetWord": "benissimo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fc6dae5b1e60330f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sasso",
+    "sentence": "I [[sassi]] bianchi stanno sotto l'acqua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "small stones",
+      "options": [
+        "small stones",
+        "little fish",
+        "green plants",
+        "sea shells"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "I sassi bianchi stanno sotto l'acqua.",
+        "targetWord": "sassi",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c6e679ff192f6720.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perdere",
+    "sentence": "Alle nove l'acqua [[perde]] il vetro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "loses",
+      "options": [
+        "loses",
+        "gains",
+        "breaks",
+        "keeps"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Alle nove l'acqua perde il vetro.",
+        "targetWord": "perde",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5de3747fbdc48c34.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pietra",
+    "sentence": "La [[pietra]] è già calda di sole.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the stone",
+      "options": [
+        "the stone",
+        "the sand",
+        "the wood",
+        "the water"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "La pietra è già calda di sole.",
+        "targetWord": "pietra",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/917e634517a69500.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "ancora",
+    "sentence": "Alle sette il sole non arriva _____ sull'acqua.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ancora",
+      "options": [
+        "ancora",
+        "mai",
+        "presto",
+        "tardi"
+      ],
+      "translation": "At seven the sun does not reach the water _____.",
+      "optionTranslations": [
+        "yet",
+        "never",
+        "early",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "alle-sette-il-mare-e-gelato",
+        "storySource": "user",
+        "sentence": "Alle sette il sole non arriva ancora sull'acqua.",
+        "targetWord": "ancora",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/69595ce48e243b58.mp3"
+      }
+    },
+    "featured": false
+  }
+]

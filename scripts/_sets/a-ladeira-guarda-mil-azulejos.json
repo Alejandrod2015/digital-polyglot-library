@@ -1,0 +1,562 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "bonde,degrau,escada,placa",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "bonde",
+          "answer": "a tram",
+          "options": [
+            "a tram",
+            "a step",
+            "stairs",
+            "a street sign"
+          ]
+        },
+        {
+          "word": "degrau",
+          "answer": "a step",
+          "options": [
+            "a tram",
+            "a step",
+            "stairs",
+            "a street sign"
+          ]
+        },
+        {
+          "word": "escada",
+          "answer": "stairs",
+          "options": [
+            "a tram",
+            "a step",
+            "stairs",
+            "a street sign"
+          ]
+        },
+        {
+          "word": "placa",
+          "answer": "a street sign",
+          "options": [
+            "a tram",
+            "a step",
+            "stairs",
+            "a street sign"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "segurar",
+    "sentence": "Ela [[segura]] bem a barra de ferro do bonde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hold",
+      "options": [
+        "to hold",
+        "to drop",
+        "to push",
+        "to clean"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Ela segura bem a barra de ferro do bonde.",
+        "targetWord": "segura",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/997ca78260b80124.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sumir",
+    "sentence": "O bonde [[some]] na subida da ladeira.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to disappear",
+      "options": [
+        "to disappear",
+        "to arrive",
+        "to stop",
+        "to turn"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "O bonde some na subida da ladeira.",
+        "targetWord": "some",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a8d3e6a1a5d3b52f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "quieta",
+    "sentence": "Depois que o bonde passa, a rua fica muito _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "quieta",
+      "options": [
+        "quieta",
+        "cheia",
+        "escura",
+        "larga"
+      ],
+      "translation": "After the tram goes by, the street becomes very _____.",
+      "optionTranslations": [
+        "quiet",
+        "full",
+        "dark",
+        "wide"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Depois que o bonde passa, a rua fica muito quieta.",
+        "targetWord": "quieta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/25cccb1f6b51e5c2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de repente",
+    "sentence": "A rua fica [[de repente]] muito quieta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "suddenly",
+      "options": [
+        "suddenly",
+        "slowly",
+        "every day",
+        "later on"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "A rua fica de repente muito quieta.",
+        "targetWord": "de repente",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e81ec08e3de5d221.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ladeira",
+    "sentence": "Ela desce a [[ladeira]] procurando alguém.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a steep street",
+      "options": [
+        "a steep street",
+        "a flat road",
+        "a tunnel",
+        "a park"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Ela desce a ladeira procurando alguém.",
+        "targetWord": "ladeira",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29c5fc90896da3d3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "procurar",
+    "sentence": "Ela [[procura]] alguém para perguntar o caminho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look for",
+      "options": [
+        "to look for",
+        "to answer",
+        "to follow",
+        "to pay"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Ela procura alguém para perguntar o caminho.",
+        "targetWord": "procura",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0bcf248646e50556.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "azulejo",
+    "sentence": "A escada aparece cheia de [[azulejos]] coloridos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a wall tile",
+      "options": [
+        "a wall tile",
+        "a flower",
+        "a lamp",
+        "a window"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "A escada aparece cheia de azulejos coloridos.",
+        "targetWord": "azulejos",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37e3c71a88317885.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "errado",
+    "sentence": "A parada [[errada]] vira o melhor lugar do dia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wrong",
+      "options": [
+        "wrong",
+        "right",
+        "last",
+        "first"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "A parada errada vira o melhor lugar do dia.",
+        "targetWord": "errada",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/39e028fbbe510479.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "virar",
+    "sentence": "A parada errada [[vira]] o melhor lugar do dia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to turn into",
+      "options": [
+        "to turn into",
+        "to break",
+        "to leave",
+        "to close"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "A parada errada vira o melhor lugar do dia.",
+        "targetWord": "vira",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/39e028fbbe510479.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barra",
+    "sentence": "Ela segura bem a [[barra]] de ferro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bar",
+      "options": [
+        "a bar",
+        "a door",
+        "a chair",
+        "a rope"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Ela segura bem a barra de ferro.",
+        "targetWord": "barra",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6388c422d817109a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parada",
+    "sentence": "Ela conta as [[paradas]] com o dedo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a stop",
+      "options": [
+        "a stop",
+        "a street",
+        "a house",
+        "a ticket"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Ela conta as paradas com o dedo.",
+        "targetWord": "paradas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab9651785ecfa424.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dedo",
+    "sentence": "Ela conta as paradas com o [[dedo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a finger",
+      "options": [
+        "a finger",
+        "an eye",
+        "an ear",
+        "a knee"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Ela conta as paradas com o dedo.",
+        "targetWord": "dedo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab9651785ecfa424.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rapaz",
+    "sentence": "Um [[rapaz]] sentado na frente dela dorme.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a young man",
+      "options": [
+        "a young man",
+        "an older man",
+        "a woman",
+        "a driver"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Um rapaz sentado na frente dela dorme.",
+        "targetWord": "rapaz",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0ba1aa6f7c22f646.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dormir",
+    "sentence": "Um rapaz sentado na frente dela [[dorme]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sleep",
+      "options": [
+        "to sleep",
+        "to sing",
+        "to read",
+        "to eat"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Um rapaz sentado na frente dela dorme.",
+        "targetWord": "dorme",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0ba1aa6f7c22f646.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "antigo",
+    "sentence": "Ela olha as casas [[antigas]] da subida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "old",
+      "options": [
+        "old",
+        "new",
+        "tall",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Ela olha as casas antigas da subida.",
+        "targetWord": "antigas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8a3a027a9344abf0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cedo",
+    "sentence": "Ela desceu numa parada _____ demais e teve que andar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cedo",
+      "options": [
+        "cedo",
+        "tarde",
+        "longe",
+        "alto"
+      ],
+      "translation": "She got off at a stop that was too _____ and had to walk.",
+      "optionTranslations": [
+        "early",
+        "late",
+        "far",
+        "loud"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Ela desceu numa parada cedo demais e teve que andar.",
+        "targetWord": "cedo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2bbebb784633dc2f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "subida",
+    "sentence": "O bonde some na [[subida]] da rua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the climb",
+      "options": [
+        "the climb",
+        "the corner",
+        "the bridge",
+        "the square"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "O bonde some na subida da rua.",
+        "targetWord": "subida",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/87cc4cbf76a86fdf.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caminho",
+    "sentence": "Ela procura alguém para perguntar o [[caminho]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the way",
+      "options": [
+        "the way",
+        "the price",
+        "the name",
+        "the time"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Ela procura alguém para perguntar o caminho.",
+        "targetWord": "caminho",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0bcf248646e50556.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "varrer",
+    "sentence": "Um homem [[varre]] os degraus da escada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sweep",
+      "options": [
+        "to sweep",
+        "to paint",
+        "to climb",
+        "to build"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Um homem varre os degraus da escada.",
+        "targetWord": "varre",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16eb7fa1771c58f2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sentar",
+    "sentence": "Ela [[senta]] num degrau azul e fica ali.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sit down",
+      "options": [
+        "to sit down",
+        "to stand up",
+        "to run",
+        "to jump"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Ela senta num degrau azul e fica ali.",
+        "targetWord": "senta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7cc73042d38d2b94.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pressa",
+    "sentence": "Ela fica ali um tempo, sem [[pressa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hurry",
+      "options": [
+        "hurry",
+        "fear",
+        "money",
+        "noise"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-guarda-mil-azulejos",
+        "storySource": "user",
+        "sentence": "Ela fica ali um tempo, sem pressa.",
+        "targetWord": "pressa",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4c820d1053eb346d.mp3"
+      }
+    },
+    "featured": false
+  }
+]

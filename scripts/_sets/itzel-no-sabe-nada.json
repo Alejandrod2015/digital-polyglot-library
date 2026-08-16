@@ -1,0 +1,500 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "entre manos",
+    "sentence": "Traía un plan [[entre manos]] y no aguantaba las ganas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "secretly scheming something",
+      "options": [
+        "secretly scheming something",
+        "openly announced",
+        "already finished",
+        "totally forgotten"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "Traía un plan entre manos y no aguantaba las ganas.",
+        "targetWord": "entre manos",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8035ce358495554e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "echar los perros",
+    "sentence": "Le [[eché los perros]] a mi cuate para que salga con Itzel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "made a romantic move",
+      "options": [
+        "made a romantic move",
+        "paid a big debt",
+        "told a long story",
+        "cooked a meal"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "Le eché los perros a mi cuate para que salga con Itzel.",
+        "targetWord": "eché los perros",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d3f42addcd6fd98c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lavarse las manos",
+    "sentence": "Rodrigo [[se lavó las manos]] diciendo que era el mensajero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dodged all blame",
+      "options": [
+        "dodged all blame",
+        "took full blame",
+        "fixed the problem",
+        "paid for it"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "Rodrigo se lavó las manos diciendo que era el mensajero.",
+        "targetWord": "se lavó las manos",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d3481c04642712e4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "andar de buenas",
+    "sentence": "Itzel [[andaba de buenas]], sin sospechar nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in a good mood",
+      "options": [
+        "in a good mood",
+        "in a foul mood",
+        "half asleep",
+        "running late"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "Itzel andaba de buenas, sin sospechar nada.",
+        "targetWord": "andaba de buenas",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c5c082091f3a6919.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arrugarse",
+    "sentence": "Temió que su amigo [[se hubiera arrugado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "had chickened out",
+      "options": [
+        "had chickened out",
+        "had arrived early",
+        "had paid up",
+        "had called first"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "Temió que su amigo se hubiera arrugado.",
+        "targetWord": "se hubiera arrugado",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3800a935da885213.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estar cañón",
+    "sentence": "La cosa se estaba [[poniendo bien cañón]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "getting really tough",
+      "options": [
+        "getting really tough",
+        "getting quite boring",
+        "getting very cheap",
+        "getting too easy"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "La cosa se estaba poniendo bien cañón.",
+        "targetWord": "poniendo bien cañón",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff28794e4d7f73ff.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cantar la retirada",
+    "sentence": "Justo cuando iba a [[cantar la retirada]], se abrió la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "give up and call it off",
+      "options": [
+        "give up and call it off",
+        "order more drinks",
+        "tell the whole truth",
+        "pay the tab"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "Justo cuando iba a cantar la retirada, se abrió la puerta.",
+        "targetWord": "cantar la retirada",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7a476ec019bc3b20.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quedarse tieso",
+    "sentence": "Itzel [[se quedó tiesa]] al verlo entrar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "froze stiff in shock",
+      "options": [
+        "froze stiff in shock",
+        "laughed out loud",
+        "ran to the door",
+        "clapped with joy"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "Itzel se quedó tiesa al verlo entrar.",
+        "targetWord": "se quedó tiesa",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a5eb81bc24d916a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "presumir",
+    "sentence": "No aguantaba las ganas de _____ su nuevo plan.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "presumir",
+      "options": [
+        "presumir",
+        "esconder",
+        "olvidar",
+        "cancelar"
+      ],
+      "translation": "He could not wait to _____ his new plan.",
+      "optionTranslations": [
+        "show off",
+        "hide",
+        "forget",
+        "cancel"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "No aguantaba las ganas de presumir su nuevo plan.",
+        "targetWord": "presumir",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e287939e9db2d1f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pescar",
+    "sentence": "Le hizo una seña sin que Itzel lo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pescar",
+      "options": [
+        "pescar",
+        "pagara",
+        "perdiera",
+        "llamara"
+      ],
+      "translation": "He signaled without Itzel _____ it.",
+      "optionTranslations": [
+        "catching on to",
+        "paying for",
+        "losing",
+        "calling"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "Le hizo una seña sin que Itzel lo pescar.",
+        "targetWord": "pescar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b79eef5b81444b64.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "apalabrar",
+    "sentence": "Ya había _____ todo para el viernes en la noche.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "apalabrar",
+      "options": [
+        "apalabrar",
+        "olvidado",
+        "perdido",
+        "pagado"
+      ],
+      "translation": "He had already _____ everything for Friday night.",
+      "optionTranslations": [
+        "arranged",
+        "forgotten",
+        "lost",
+        "paid"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "Ya había apalabrar todo para el viernes en la noche.",
+        "targetWord": "apalabrar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9083acbdfa567d83.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "caer",
+    "sentence": "El chavo prometió _____ al bar sin falta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "caer",
+      "options": [
+        "caer",
+        "cerrar",
+        "cocinar",
+        "llamar"
+      ],
+      "translation": "The guy promised to _____ by the bar without fail.",
+      "optionTranslations": [
+        "drop by",
+        "close",
+        "cook",
+        "call"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "El chavo prometió caer al bar sin falta.",
+        "targetWord": "caer",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/03aa528e93e655e2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pelar",
+    "sentence": "No sabían si Itzel iba a querer _____ al chavo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pelar",
+      "options": [
+        "pelar",
+        "invitar",
+        "pagar",
+        "perseguir"
+      ],
+      "translation": "They did not know if Itzel would even _____ the guy.",
+      "optionTranslations": [
+        "pay attention to",
+        "invite",
+        "pay",
+        "chase"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "No sabían si Itzel iba a querer pelar al chavo.",
+        "targetWord": "pelar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7e17430f03a390a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "checar",
+    "sentence": "Rodrigo _____ la puerta cada dos minutos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "checar",
+      "options": [
+        "checar",
+        "abría",
+        "cerraba",
+        "tocaba"
+      ],
+      "translation": "Rodrigo _____ the door every two minutes.",
+      "optionTranslations": [
+        "kept checking",
+        "opened",
+        "closed",
+        "knocked on"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "Rodrigo checar la puerta cada dos minutos.",
+        "targetWord": "checar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dd2f6d4b9c7890eb.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "necio",
+    "sentence": "El muy _____ ya lo había arreglado todo solo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "necio",
+      "options": [
+        "necio",
+        "callado",
+        "cansado",
+        "tranquilo"
+      ],
+      "translation": "The really _____ guy had arranged it all alone.",
+      "optionTranslations": [
+        "stubborn",
+        "quiet",
+        "tired",
+        "calm"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "El muy necio ya lo había arreglado todo solo.",
+        "targetWord": "necio",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb4fd453151126c6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "seña",
+    "sentence": "Le hizo una _____ para que se acercara.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "seña",
+      "options": [
+        "seña",
+        "llamada",
+        "comida",
+        "fila"
+      ],
+      "translation": "He made a _____ for her to come closer.",
+      "optionTranslations": [
+        "hand signal",
+        "phone call",
+        "meal",
+        "queue"
+      ],
+      "audioClip": {
+        "storySlug": "itzel-no-sabe-nada",
+        "storySource": "user",
+        "sentence": "Le hizo una seña para que se acercara.",
+        "targetWord": "seña",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9dd3f4d0f0955da3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "borlote,madriza,chavo,encerrona",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "borlote",
+          "answer": "a big fuss, commotion",
+          "options": [
+            "a big fuss, commotion",
+            "a beating",
+            "a young guy",
+            "a set up, an ambush"
+          ]
+        },
+        {
+          "word": "madriza",
+          "answer": "a beating",
+          "options": [
+            "a big fuss, commotion",
+            "a beating",
+            "a young guy",
+            "a set up, an ambush"
+          ]
+        },
+        {
+          "word": "chavo",
+          "answer": "a young guy",
+          "options": [
+            "a big fuss, commotion",
+            "a beating",
+            "a young guy",
+            "a set up, an ambush"
+          ]
+        },
+        {
+          "word": "encerrona",
+          "answer": "a set up, an ambush",
+          "options": [
+            "a big fuss, commotion",
+            "a beating",
+            "a young guy",
+            "a set up, an ambush"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,610 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Morgen,Fenster,Jahr,Sonne",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Morgen",
+     "answer": "morning",
+     "options": [
+      "morning",
+      "window",
+      "year",
+      "sun"
+     ]
+    },
+    {
+     "word": "Fenster",
+     "answer": "window",
+     "options": [
+      "morning",
+      "window",
+      "year",
+      "sun"
+     ]
+    },
+    {
+     "word": "Jahr",
+     "answer": "year",
+     "options": [
+      "morning",
+      "window",
+      "year",
+      "sun"
+     ]
+    },
+    {
+     "word": "Sonne",
+     "answer": "sun",
+     "options": [
+      "morning",
+      "window",
+      "year",
+      "sun"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "müde",
+  "sentence": "Nora und David sind [[müde]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tired",
+   "options": [
+    "tired",
+    "happy",
+    "nervous",
+    "calm"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Nora und David sind müde.",
+    "targetWord": "müde",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "glücklich",
+  "sentence": "Sie sind müde, aber sehr [[glücklich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "happy",
+   "options": [
+    "happy",
+    "tired",
+    "sad",
+    "angry"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Sie sind müde, aber sehr glücklich.",
+    "targetWord": "glücklich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "wunderbar",
+  "sentence": "Der Karneval ist [[wunderbar]], sagt Nora.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wonderful",
+   "options": [
+    "wonderful",
+    "boring",
+    "loud",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Der Karneval ist wunderbar, sagt Nora.",
+    "targetWord": "wunderbar",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "lächelt",
+  "sentence": "Nora nimmt eins und [[lächelt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "smiles",
+   "options": [
+    "smiles",
+    "cries",
+    "sleeps",
+    "shouts"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Nora nimmt eins und lächelt.",
+    "targetWord": "lächelt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "still",
+  "sentence": "Köln ist am Morgen ganz [[still]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quiet",
+   "options": [
+    "quiet",
+    "loud",
+    "full",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Köln ist am Morgen ganz still.",
+    "targetWord": "still",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "wirklich",
+  "sentence": "Du tanzt [[wirklich]] gut!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "really",
+   "options": [
+    "really",
+    "hardly",
+    "never",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Du tanzt wirklich gut!",
+    "targetWord": "wirklich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "ruhig",
+  "sentence": "Die Straßen sind leer und [[ruhig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calm",
+   "options": [
+    "calm",
+    "loud",
+    "full",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Die Straßen sind leer und ruhig.",
+    "targetWord": "ruhig",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "nächstes",
+  "sentence": "Wir kommen [[nächstes]] Jahr wieder.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "next",
+   "options": [
+    "next",
+    "last",
+    "every",
+    "this"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Wir kommen nächstes Jahr wieder.",
+    "targetWord": "nächstes",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "Stücke",
+  "sentence": "Zwei kleine [[Stücke]] Konfetti liegen dort.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pieces",
+   "options": [
+    "pieces",
+    "songs",
+    "streets",
+    "windows"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Zwei kleine Stücke Konfetti liegen dort.",
+    "targetWord": "Stücke",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "liegt",
+  "sentence": "Viel Konfetti _____ auf der Straße.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "liegt",
+   "options": [
+    "liegt",
+    "scheint",
+    "tanzt",
+    "sitzt"
+   ],
+   "translation": "A lot of confetti _____ on the street.",
+   "optionTranslations": [
+    "lies",
+    "shines",
+    "dances",
+    "sits"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Viel Konfetti liegt auf der Straße.",
+    "targetWord": "liegt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "sitzen",
+  "sentence": "Sie _____ in einem Café.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sitzen",
+   "options": [
+    "sitzen",
+    "stehen",
+    "tanzen",
+    "schauen"
+   ],
+   "translation": "They _____ in a café.",
+   "optionTranslations": [
+    "sit",
+    "stand",
+    "dance",
+    "look"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Sie sitzen in einem Café.",
+    "targetWord": "sitzen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "schauen",
+  "sentence": "Sie _____ aus dem Fenster.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schauen",
+   "options": [
+    "schauen",
+    "putzen",
+    "sitzen",
+    "nicken"
+   ],
+   "translation": "They _____ out of the window.",
+   "optionTranslations": [
+    "look",
+    "clean",
+    "sit",
+    "nod"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Sie schauen aus dem Fenster.",
+    "targetWord": "schauen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "scheint",
+  "sentence": "Die Sonne _____ warm.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "scheint",
+   "options": [
+    "scheint",
+    "liegt",
+    "tanzt",
+    "ruht"
+   ],
+   "translation": "The sun _____ warm.",
+   "optionTranslations": [
+    "shines",
+    "lies",
+    "dances",
+    "rests"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Die Sonne scheint warm.",
+    "targetWord": "scheint",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "nimmt",
+  "sentence": "Nora _____ ein Stück Konfetti.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nimmt",
+   "options": [
+    "nimmt",
+    "putzt",
+    "wirft",
+    "sammelt"
+   ],
+   "translation": "Nora _____ a piece of confetti.",
+   "optionTranslations": [
+    "takes",
+    "cleans",
+    "throws",
+    "collects"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Nora nimmt ein Stück Konfetti.",
+    "targetWord": "nimmt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Straße",
+  "sentence": "Konfetti liegt auf der _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Straße",
+   "options": [
+    "Straße",
+    "Sonne",
+    "Stadt",
+    "Tisch"
+   ],
+   "translation": "Confetti lies on the _____.",
+   "optionTranslations": [
+    "street",
+    "sun",
+    "city",
+    "table"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Konfetti liegt auf der Straße.",
+    "targetWord": "Straße",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "tanze",
+  "sentence": "Ich _____ jetzt gut!",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tanze",
+   "options": [
+    "tanze",
+    "lache",
+    "sitze",
+    "putze"
+   ],
+   "translation": "I _____ well now!",
+   "optionTranslations": [
+    "dance",
+    "laugh",
+    "sit",
+    "clean"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Ich tanze jetzt gut!",
+    "targetWord": "tanze",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "lacht",
+  "sentence": "David _____ und ist froh.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lacht",
+   "options": [
+    "lacht",
+    "nickt",
+    "putzt",
+    "schaut"
+   ],
+   "translation": "David _____ and is glad.",
+   "optionTranslations": [
+    "laughs",
+    "nods",
+    "cleans",
+    "looks"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "David lacht und ist froh.",
+    "targetWord": "lacht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "putzen",
+  "sentence": "Ein paar Leute _____ die Straße.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "putzen",
+   "options": [
+    "putzen",
+    "schauen",
+    "tragen",
+    "sammeln"
+   ],
+   "translation": "A few people _____ the street.",
+   "optionTranslations": [
+    "clean",
+    "look",
+    "wear",
+    "collect"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Ein paar Leute putzen die Straße.",
+    "targetWord": "putzen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "nickt",
+  "sentence": "David _____ und sagt ja.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nickt",
+   "options": [
+    "nickt",
+    "lacht",
+    "schaut",
+    "sitzt"
+   ],
+   "translation": "David _____ and says yes.",
+   "optionTranslations": [
+    "nods",
+    "laughs",
+    "looks",
+    "sits"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "David nickt und sagt ja.",
+    "targetWord": "nickt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "warm",
+  "sentence": "Die Sonne scheint _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "warm",
+   "options": [
+    "warm",
+    "still",
+    "müde",
+    "ruhig"
+   ],
+   "translation": "The sun shines _____.",
+   "optionTranslations": [
+    "warm",
+    "quiet",
+    "tired",
+    "calm"
+   ],
+   "audioClip": {
+    "storySlug": "nach-dem-karneval",
+    "storySource": "user",
+    "sentence": "Die Sonne scheint warm.",
+    "targetWord": "warm",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ }
+]

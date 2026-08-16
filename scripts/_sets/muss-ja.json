@@ -1,0 +1,463 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "knapp",
+    "sentence": "Er empfängt sie mit einem [[knappen]] Moin und einem Nicken.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "terse, curt",
+      "options": [
+        "terse, curt",
+        "warm, chatty",
+        "loud, showy",
+        "slow, careful"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Er empfängt sie mit einem knappen Moin und einem Nicken.",
+        "targetWord": "knappen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/23cbeed5069a765f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "wortkarg",
+    "sentence": "Den ganzen Tag bleibt Hauke [[wortkarg]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sparing with words",
+      "options": [
+        "sparing with words",
+        "chatty and open",
+        "rude and sharp",
+        "cheerful and loud"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Den ganzen Tag bleibt Hauke wortkarg.",
+        "targetWord": "wortkarg",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6354533d32bdeeea.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Muss ja",
+    "sentence": "Alles, was zurückkommt, ist ein [[Muss]] ja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "well, it has to be",
+      "options": [
+        "well, it has to be",
+        "no way, never",
+        "sounds great",
+        "who knows"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Alles, was zurückkommt, ist ein Muss ja.",
+        "targetWord": "Muss",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5bdb67b9b24fe7ae.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Kann man machen",
+    "sentence": "Er sagt nur: Kann man [[machen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "not bad, I guess",
+      "options": [
+        "not bad, I guess",
+        "that is awful",
+        "let us hurry",
+        "count me out"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Er sagt nur: Kann man machen.",
+        "targetWord": "machen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0cfff84eea664546.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "grübeln",
+    "sentence": "Du sollst nicht die ganze Nacht über deine Fehler _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "grübeln",
+      "options": [
+        "grübeln",
+        "lachen",
+        "tanzen",
+        "schlafen"
+      ],
+      "translation": "You should not _____ over your mistakes all night long.",
+      "optionTranslations": [
+        "brood",
+        "laugh",
+        "dance",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Du sollst nicht die ganze Nacht über deine Fehler grübeln.",
+        "targetWord": "grübeln",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/772f8e4f825dfe9e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "schnacken",
+    "sentence": "Die alten Nachbarn stehen am Zaun und _____ stundenlang.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schnacken",
+      "options": [
+        "schnacken",
+        "schweigen",
+        "rennen",
+        "schlafen"
+      ],
+      "translation": "The old neighbours stand at the fence and _____ for hours.",
+      "optionTranslations": [
+        "chat away",
+        "stay silent",
+        "run",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Die alten Nachbarn stehen am Zaun und schnacken stundenlang.",
+        "targetWord": "schnacken",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6552039f2b20480.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "klönen",
+    "sentence": "Dann [[klönt]] die Runde langsam auf.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to natter cosily",
+      "options": [
+        "to natter cosily",
+        "to argue loudly",
+        "to leave early",
+        "to stay silent"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Dann klönt die Runde langsam auf.",
+        "targetWord": "klönt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d5598d981f1d638.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "den Ton falsch lesen",
+    "sentence": "Sie hat den [[Ton]] hier gründlich falsch gelesen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to misread the mood",
+      "options": [
+        "to misread the mood",
+        "to set the rules",
+        "to raise your voice",
+        "to break the ice"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Sie hat den Ton hier gründlich falsch gelesen.",
+        "targetWord": "Ton",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/061e5cc85dc532e6.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "umgebucht",
+    "sentence": "Weil der Zug ausfiel, habe ich meine Reise _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "umgebucht",
+      "options": [
+        "umgebucht",
+        "verschlafen",
+        "bezahlt",
+        "vergessen"
+      ],
+      "translation": "Because the train was cancelled, I _____ my trip.",
+      "optionTranslations": [
+        "rebooked",
+        "overslept",
+        "paid for",
+        "forgot"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Weil der Zug ausfiel, habe ich meine Reise umgebucht.",
+        "targetWord": "umgebucht",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ceef10adc684843a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Herzlichkeit",
+    "sentence": "Darin steckt mehr [[Herzlichkeit]] als in lauten Sprüchen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "genuine warmth",
+      "options": [
+        "genuine warmth",
+        "cold distance",
+        "loud pride",
+        "quiet fear"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Darin steckt mehr Herzlichkeit als in lauten Sprüchen.",
+        "targetWord": "Herzlichkeit",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bda5abdec99ade0d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "büschen",
+    "sentence": "Nadia fühlt sich erst mal ein [[büschen]] vor den Kopf gestoßen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a little bit",
+      "options": [
+        "a little bit",
+        "far too much",
+        "not at all",
+        "again and again"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Nadia fühlt sich erst mal ein büschen vor den Kopf gestoßen.",
+        "targetWord": "büschen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b4effe1f2828b02f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vor den Kopf stoßen",
+    "sentence": "Sie fühlt sich von der Begrüßung vor den [[Kopf]] gestoßen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to rebuff, to snub",
+      "options": [
+        "to rebuff, to snub",
+        "to welcome warmly",
+        "to cheer up",
+        "to calm down"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Sie fühlt sich von der Begrüßung vor den Kopf gestoßen.",
+        "targetWord": "Kopf",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85c574994a652921.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "großes Aufheben machen",
+    "sentence": "Keiner macht großes [[Aufheben]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to make a big fuss",
+      "options": [
+        "to make a big fuss",
+        "to stay completely calm",
+        "to tell a long story",
+        "to give a gift"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Keiner macht großes Aufheben.",
+        "targetWord": "Aufheben",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb37e8d3e50132b3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verlegen",
+    "sentence": "Er brummt nur und schaut [[verlegen]] weg.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sheepish, embarrassed",
+      "options": [
+        "sheepish, embarrassed",
+        "proud and bold",
+        "bored and tired",
+        "angry and cold"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Er brummt nur und schaut verlegen weg.",
+        "targetWord": "verlegen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d64dad0a740c9a9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "brummt",
+    "sentence": "Der Chef _____ nur kurz etwas in seinen Bart.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "brummt",
+      "options": [
+        "brummt",
+        "singt",
+        "lacht",
+        "ruft"
+      ],
+      "translation": "The boss just _____ something quietly into his beard.",
+      "optionTranslations": [
+        "mutters",
+        "sings",
+        "laughs",
+        "shouts"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Der Chef brummt nur kurz etwas in seinen Bart.",
+        "targetWord": "brummt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/93698aee1887da87.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gesabbelt",
+    "sentence": "Im Meeting hat er nur wirres Zeug _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gesabbelt",
+      "options": [
+        "gesabbelt",
+        "geschwiegen",
+        "geschlafen",
+        "gegessen"
+      ],
+      "translation": "In the meeting he just _____ confused nonsense.",
+      "optionTranslations": [
+        "blabbed",
+        "kept silent",
+        "slept",
+        "ate"
+      ],
+      "audioClip": {
+        "storySlug": "muss-ja",
+        "storySource": "user",
+        "sentence": "Im Meeting hat er nur wirres Zeug gesabbelt.",
+        "targetWord": "gesabbelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d23f4e87f32febc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "Moin,Jo,Schietwetter,Deern",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "Moin",
+          "answer": "a northern hello",
+          "options": [
+            "a northern hello",
+            "a laconic yeah",
+            "lousy grey weather",
+            "a lass, a girl"
+          ]
+        },
+        {
+          "word": "Jo",
+          "answer": "a laconic yeah",
+          "options": [
+            "a northern hello",
+            "a laconic yeah",
+            "lousy grey weather",
+            "a lass, a girl"
+          ]
+        },
+        {
+          "word": "Schietwetter",
+          "answer": "lousy grey weather",
+          "options": [
+            "a northern hello",
+            "a laconic yeah",
+            "lousy grey weather",
+            "a lass, a girl"
+          ]
+        },
+        {
+          "word": "Deern",
+          "answer": "a lass, a girl",
+          "options": [
+            "a northern hello",
+            "a laconic yeah",
+            "lousy grey weather",
+            "a lass, a girl"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,483 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "pedra,gente,mão,dia",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "pedra",
+          "answer": "a rock",
+          "options": [
+            "a rock",
+            "people",
+            "a hand",
+            "a day"
+          ]
+        },
+        {
+          "word": "gente",
+          "answer": "people",
+          "options": [
+            "a rock",
+            "people",
+            "a hand",
+            "a day"
+          ]
+        },
+        {
+          "word": "mão",
+          "answer": "a hand",
+          "options": [
+            "a rock",
+            "people",
+            "a hand",
+            "a day"
+          ]
+        },
+        {
+          "word": "dia",
+          "answer": "a day",
+          "options": [
+            "a rock",
+            "people",
+            "a hand",
+            "a day"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "beirada",
+    "sentence": "Ele acha um lugar na [[beirada]] da pedra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the outer edge",
+      "options": [
+        "the outer edge",
+        "the middle",
+        "the bottom",
+        "the roof"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "Ele acha um lugar na beirada da pedra.",
+        "targetWord": "beirada",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/572628f8f6424ead.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entender",
+    "sentence": "Ele não [[entende]] por que a pedra fica em silêncio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to understand",
+      "options": [
+        "to understand",
+        "to forget",
+        "to answer",
+        "to arrive"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "Ele não entende por que a pedra fica em silêncio.",
+        "targetWord": "entende",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2346bdb2e69e1e73.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "palma",
+    "sentence": "A pedra inteira bate [[palmas]] durante muitos segundos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a clap",
+      "options": [
+        "a clap",
+        "a shout",
+        "a song",
+        "a whistle"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "A pedra inteira bate palmas durante muitos segundos.",
+        "targetWord": "palmas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b6957ace1bab0d25.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bater",
+    "sentence": "A pedra inteira [[bate]] palmas com força.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hit",
+      "options": [
+        "to hit",
+        "to hold",
+        "to throw",
+        "to open"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "A pedra inteira bate palmas com força.",
+        "targetWord": "bate",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e13eb7a134b67457.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "último",
+    "sentence": "O [[último]] pedaço de sol some no mar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "last",
+      "options": [
+        "last",
+        "first",
+        "next",
+        "only"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "O último pedaço de sol some no mar.",
+        "targetWord": "último",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/484c0bb8548ae4d5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perguntar",
+    "sentence": "Ele não [[pergunta]] nada a ninguém.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to ask",
+      "options": [
+        "to ask",
+        "to sing",
+        "to pay",
+        "to run"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "Ele não pergunta nada a ninguém.",
+        "targetWord": "pergunta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e09855eab79eaf1c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "olhar",
+    "sentence": "Todo mundo [[olha]] para o mesmo lado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look",
+      "options": [
+        "to look",
+        "to speak",
+        "to sleep",
+        "to walk"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "Todo mundo olha para o mesmo lado.",
+        "targetWord": "olha",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/75d1a35dbfa568a3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "subir",
+    "sentence": "Ele [[sobe]] a pedra devagar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go up",
+      "options": [
+        "to go up",
+        "to go down",
+        "to sit",
+        "to stop"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "Ele sobe a pedra devagar.",
+        "targetWord": "sobe",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e9e4be40467f3968.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "baixo",
+    "sentence": "Aqui em cima ninguém grita, todo mundo fala _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "baixo",
+      "options": [
+        "baixo",
+        "alto",
+        "rápido",
+        "longe"
+      ],
+      "translation": "Up here nobody shouts, everybody speaks _____.",
+      "optionTranslations": [
+        "softly",
+        "loudly",
+        "fast",
+        "far"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "Aqui em cima ninguém grita, todo mundo fala baixo.",
+        "targetWord": "baixo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aefd5639bb259052.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "linha",
+    "sentence": "O sol desce até tocar a [[linha]] escura da água.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a line",
+      "options": [
+        "a line",
+        "a cloud",
+        "a boat",
+        "a wave"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "O sol desce até tocar a linha escura da água.",
+        "targetWord": "linha",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d9577e2852f2b886.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "todo mundo",
+    "sentence": "[[Todo mundo]] olha para o mesmo lado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "everybody",
+      "options": [
+        "everybody",
+        "nobody",
+        "somebody",
+        "anybody"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "Todo mundo olha para o mesmo lado.",
+        "targetWord": "Todo mundo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/75d1a35dbfa568a3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lado",
+    "sentence": "Todo mundo olha para o mesmo [[lado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a side",
+      "options": [
+        "a side",
+        "a floor",
+        "a corner",
+        "a door"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "Todo mundo olha para o mesmo lado.",
+        "targetWord": "lado",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/75d1a35dbfa568a3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "começar",
+    "sentence": "Ele bate palmas também, mas [[começa]] tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to start",
+      "options": [
+        "to start",
+        "to finish",
+        "to wait",
+        "to leave"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "Ele bate palmas também, mas começa tarde.",
+        "targetWord": "começa",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb12f8a0bda39ee8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mulher",
+    "sentence": "Uma [[mulher]] ao lado dele continua batendo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a woman",
+      "options": [
+        "a woman",
+        "a man",
+        "a boy",
+        "a girl"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "Uma mulher ao lado dele continua batendo.",
+        "targetWord": "mulher",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/62f1b4dd400dd93e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lugar",
+    "sentence": "Ele acha um [[lugar]] perto da beirada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a place",
+      "options": [
+        "a place",
+        "a price",
+        "a name",
+        "a hour"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "Ele acha um lugar perto da beirada.",
+        "targetWord": "lugar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ded99a9f5cc81334.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "achar",
+    "sentence": "Ele [[acha]] um lugar perto da beirada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to find",
+      "options": [
+        "to find",
+        "to lose",
+        "to buy",
+        "to break"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "Ele acha um lugar perto da beirada.",
+        "targetWord": "acha",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ded99a9f5cc81334.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fim",
+    "sentence": "A pedra fica cheia de gente no [[fim]] da tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the end",
+      "options": [
+        "the end",
+        "the start",
+        "the top",
+        "the side"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "A pedra fica cheia de gente no fim da tarde.",
+        "targetWord": "fim",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/99c70d7307f7b035.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "atrás de",
+    "sentence": "Ele sobe [[atrás de]] um grupo de pessoas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "behind",
+      "options": [
+        "behind",
+        "in front of",
+        "next to",
+        "far from"
+      ],
+      "audioClip": {
+        "storySlug": "palmas-no-arpoador",
+        "storySource": "user",
+        "sentence": "Ele sobe atrás de um grupo de pessoas.",
+        "targetWord": "atrás de",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/70804c3bfc6ca938.mp3"
+      }
+    },
+    "featured": false
+  }
+]

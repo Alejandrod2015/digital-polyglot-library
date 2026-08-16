@@ -1,0 +1,630 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "el fogón,el tinto,la manteca,el veredicto",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "el fogón",
+     "answer": "the cooking stove",
+     "options": [
+      "the cooking stove",
+      "black coffee",
+      "cooking lard",
+      "the final verdict"
+     ]
+    },
+    {
+     "word": "el tinto",
+     "answer": "black coffee",
+     "options": [
+      "the cooking stove",
+      "black coffee",
+      "cooking lard",
+      "the final verdict"
+     ]
+    },
+    {
+     "word": "la manteca",
+     "answer": "cooking lard",
+     "options": [
+      "the cooking stove",
+      "black coffee",
+      "cooking lard",
+      "the final verdict"
+     ]
+    },
+    {
+     "word": "el veredicto",
+     "answer": "the final verdict",
+     "options": [
+      "the cooking stove",
+      "black coffee",
+      "cooking lard",
+      "the final verdict"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "berraco",
+  "sentence": "Tato jura que para la cocina él es un [[berraco]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "really good at it",
+   "options": [
+    "really good at it",
+    "a coward",
+    "a stranger",
+    "a liar"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Tato jura que para la cocina él es un berraco.",
+    "targetWord": "berraco",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/683d9741a608110a.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "hablador",
+  "sentence": "Vos sos mucho [[hablador]] y nunca cumples nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a big talker",
+   "options": [
+    "a big talker",
+    "a quiet person",
+    "a hard worker",
+    "a good cook"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Vos sos mucho hablador y nunca cumples nada.",
+    "targetWord": "hablador",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef4ae00fd212c40e.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "cumplidor",
+  "sentence": "Al final el chancero resultó más [[cumplidor]] de lo esperado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "reliable and true to his word",
+   "options": [
+    "reliable and true to his word",
+    "lazy and forgetful",
+    "rude and cold",
+    "shy and quiet"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Al final el chancero resultó más cumplidor de lo esperado.",
+    "targetWord": "cumplidor",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d1d5360b53d14df.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "la calidez",
+  "sentence": "Doña Fanny la abraza con esa [[calidez]] paisa que abruma.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warmth",
+   "options": [
+    "warmth",
+    "coldness",
+    "distance",
+    "anger"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Doña Fanny la abraza con esa calidez paisa que abruma.",
+    "targetWord": "calidez",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/42265634f5b548d8.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "mija",
+  "sentence": "[[Mija]], en esta casa nadie se va con hambre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dear",
+   "options": [
+    "dear",
+    "boss",
+    "stranger",
+    "boy"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Mija, en esta casa nadie se va con hambre.",
+    "targetWord": "Mija",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9f68942c6e9b5b22.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "a escondidas",
+  "sentence": "Tato apuntaba cada paso [[a escondidas]] en su cuaderno.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "secretly",
+   "options": [
+    "secretly",
+    "out loud",
+    "in a hurry",
+    "by mistake"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Tato apuntaba cada paso a escondidas en su cuaderno.",
+    "targetWord": "a escondidas",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdcf288ce33dbbce.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "guiñar el ojo",
+  "sentence": "Doña Fanny le [[guiña el ojo]] a la rola.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wink",
+   "options": [
+    "to wink",
+    "to shout",
+    "to frown",
+    "to cry"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Doña Fanny le guiña el ojo a la rola.",
+    "targetWord": "guiña el ojo",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea01d4a07dc1a47d.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "sin piedad",
+  "sentence": "Manu lo chancea [[sin piedad]] por sus promesas rotas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "without mercy",
+   "options": [
+    "without mercy",
+    "with great fear",
+    "in silence",
+    "very politely"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Manu lo chancea sin piedad por sus promesas rotas.",
+    "targetWord": "sin piedad",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ca830b1ce0a2a82.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "pura boca",
+  "sentence": "Sus promesas siempre fueron [[pura boca]] y nada más.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all talk and no action",
+   "options": [
+    "all talk and no action",
+    "sweet and kind words",
+    "a hard promise",
+    "a funny joke"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Sus promesas siempre fueron pura boca y nada más.",
+    "targetWord": "pura boca",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d4f46a486c8408c4.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "parce",
+  "sentence": "Esta vez sí le cumplo, ____, ¿oíste?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "parce",
+   "options": [
+    "parce",
+    "mija",
+    "rola",
+    "paisa"
+   ],
+   "translation": "This time I really will keep my word, ____, you hear?",
+   "optionTranslations": [
+    "buddy",
+    "dear",
+    "Bogotá woman",
+    "paisa"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Esta vez sí le cumplo, parce, ¿oíste?",
+    "targetWord": "parce",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/52bd32f0ebc67d0d.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "rola",
+  "sentence": "La ____ llega donde su amigo Tato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rola",
+   "options": [
+    "rola",
+    "paisa",
+    "china",
+    "gomela"
+   ],
+   "translation": "The ____ arrives at her friend Tato's place.",
+   "optionTranslations": [
+    "Bogotá woman",
+    "paisa woman",
+    "girl",
+    "posh girl"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "La rola llega donde su amigo Tato.",
+    "targetWord": "rola",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed2544726d585934.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "paisa",
+  "sentence": "Él es un emprendedor ____ de treinta años.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "paisa",
+   "options": [
+    "paisa",
+    "rolo",
+    "costeño",
+    "caleño"
+   ],
+   "translation": "Tato is a thirty year old ____ entrepreneur.",
+   "optionTranslations": [
+    "from Medellín",
+    "from Bogotá",
+    "from the coast",
+    "from Cali"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Él es un emprendedor paisa de treinta años.",
+    "targetWord": "paisa",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20898ba0ac5fea79.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "el bobito",
+  "sentence": "____ lleva un mes ensayando la arepa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "el bobito",
+   "options": [
+    "el bobito",
+    "el hablador",
+    "el chancero",
+    "el berraco"
+   ],
+   "translation": "____ has spent a month practicing the arepa.",
+   "optionTranslations": [
+    "the silly guy",
+    "the big talker",
+    "the teaser",
+    "the tough guy"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "El bobito lleva un mes ensayando la arepa.",
+    "targetWord": "el bobito",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2670405c101c27ac.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "amasar",
+  "sentence": "Doña Fanny se pone a ____ el maíz.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "amasar",
+   "options": [
+    "amasar",
+    "freír",
+    "hornear",
+    "picar"
+   ],
+   "translation": "Doña Fanny starts to ____ the corn.",
+   "optionTranslations": [
+    "to knead",
+    "to fry",
+    "to bake",
+    "to chop"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Doña Fanny se pone a amasar el maíz.",
+    "targetWord": "amasar",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8921ace6a874db39.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "chancear",
+  "sentence": "A Manu le gusta ____ a su amigo Tato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chancear",
+   "options": [
+    "chancear",
+    "abrazar",
+    "regañar",
+    "ignorar"
+   ],
+   "translation": "Manu likes to ____ her friend Tato.",
+   "optionTranslations": [
+    "to tease",
+    "to hug",
+    "to scold",
+    "to ignore"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "A Manu le gusta chancear a su amigo Tato.",
+    "targetWord": "chancear",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e21b5e269194f7d9.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "ensayar",
+  "sentence": "Tato lleva semanas sin parar de ____ la receta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ensayar",
+   "options": [
+    "ensayar",
+    "cocinar",
+    "medir",
+    "probar"
+   ],
+   "translation": "Tato has spent weeks without stopping to ____ the recipe.",
+   "optionTranslations": [
+    "to rehearse",
+    "to cook",
+    "to measure",
+    "to taste"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Tato lleva semanas sin parar de ensayar la receta.",
+    "targetWord": "ensayar",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/84a5e85a13050263.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "aguardar",
+  "sentence": "Tato prefiere ____ el veredicto en silencio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aguardar",
+   "options": [
+    "aguardar",
+    "gritar",
+    "huir",
+    "reír"
+   ],
+   "translation": "Tato prefers to ____ the verdict in silence.",
+   "optionTranslations": [
+    "to wait",
+    "to shout",
+    "to flee",
+    "to laugh"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Tato prefiere aguardar el veredicto en silencio.",
+    "targetWord": "aguardar",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8b48af2f822b0288.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "abrumar",
+  "sentence": "Esa calidez paisa te puede ____ al llegar.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "abrumar",
+   "options": [
+    "abrumar",
+    "aburrir",
+    "asustar",
+    "calmar"
+   ],
+   "translation": "That paisa warmth can ____ you when you arrive.",
+   "optionTranslations": [
+    "to overwhelm",
+    "to bore",
+    "to scare",
+    "to calm"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Esa calidez paisa te puede abrumar al llegar.",
+    "targetWord": "abrumar",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4896fb4ca3021d91.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "colorado",
+  "sentence": "Tato se puso ____ de la pena frente a Manu.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "colorado",
+   "options": [
+    "colorado",
+    "pálido",
+    "furioso",
+    "tranquilo"
+   ],
+   "translation": "Tato turned ____ with embarrassment in front of Manu.",
+   "optionTranslations": [
+    "red faced",
+    "pale",
+    "furious",
+    "calm"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "Tato se puso colorado de la pena frente a Manu.",
+    "targetWord": "colorado",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9ac9a21a5f9c9fe.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "empinado",
+  "sentence": "El barrio de Medellín es muy ____ y cansa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "empinado",
+   "options": [
+    "empinado",
+    "plano",
+    "ancho",
+    "corto"
+   ],
+   "translation": "The Medellín neighborhood is very ____ and tiring.",
+   "optionTranslations": [
+    "steep",
+    "flat",
+    "wide",
+    "short"
+   ],
+   "audioClip": {
+    "storySlug": "arepas-donde-dona-fanny",
+    "storySource": "user",
+    "sentence": "El barrio de Medellín es muy empinado y cansa.",
+    "targetWord": "empinado",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb865b3b025a1794.mp3"
+   }
+  }
+ }
+]

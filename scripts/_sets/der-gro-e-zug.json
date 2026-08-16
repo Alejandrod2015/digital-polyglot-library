@@ -1,0 +1,555 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Wagen,Bonbon,Kind,Auge",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Wagen",
+     "answer": "float",
+     "options": [
+      "float",
+      "candy",
+      "child",
+      "eye"
+     ]
+    },
+    {
+     "word": "Bonbon",
+     "answer": "candy",
+     "options": [
+      "float",
+      "candy",
+      "child",
+      "eye"
+     ]
+    },
+    {
+     "word": "Kind",
+     "answer": "child",
+     "options": [
+      "float",
+      "candy",
+      "child",
+      "eye"
+     ]
+    },
+    {
+     "word": "Auge",
+     "answer": "eye",
+     "options": [
+      "float",
+      "candy",
+      "child",
+      "eye"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "Angst",
+  "sentence": "Nora hat [[Angst]] vor dem Zug.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fear",
+   "options": [
+    "fear",
+    "joy",
+    "hunger",
+    "sleep"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Nora hat Angst vor dem Zug.",
+    "targetWord": "Angst",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "schließt",
+  "sentence": "Nora [[schließt]] kurz die Augen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "closes",
+   "options": [
+    "closes",
+    "opens",
+    "rubs",
+    "washes"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Nora schließt kurz die Augen.",
+    "targetWord": "schließt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "frei",
+  "sentence": "Sie tanzt ganz [[frei]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "free",
+   "options": [
+    "free",
+    "tired",
+    "sad",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Sie tanzt ganz frei.",
+    "targetWord": "frei",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "glücklich",
+  "sentence": "Sie lacht und ist [[glücklich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "happy",
+   "options": [
+    "happy",
+    "tired",
+    "nervous",
+    "bored"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Sie lacht und ist glücklich.",
+    "targetWord": "glücklich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "winkt",
+  "sentence": "David [[winkt]] und ruft laut.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "waves",
+   "options": [
+    "waves",
+    "sits",
+    "sleeps",
+    "cries"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "David winkt und ruft laut.",
+    "targetWord": "winkt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "einfach",
+  "sentence": "Hör [[einfach]] die Musik!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "just",
+   "options": [
+    "just",
+    "loudly",
+    "never",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Hör einfach die Musik!",
+    "targetWord": "einfach",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "kurz",
+  "sentence": "Sie schließt [[kurz]] die Augen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "briefly",
+   "options": [
+    "briefly",
+    "loudly",
+    "slowly",
+    "happily"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Sie schließt kurz die Augen.",
+    "targetWord": "kurz",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "klatschen",
+  "sentence": "Die Leute [[klatschen]] laut.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clap",
+   "options": [
+    "clap",
+    "dance",
+    "shout",
+    "sing"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Die Leute klatschen laut.",
+    "targetWord": "klatschen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "voll",
+  "sentence": "Die Stadt ist _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "voll",
+   "options": [
+    "voll",
+    "laut",
+    "frei",
+    "leer"
+   ],
+   "translation": "The city is _____.",
+   "optionTranslations": [
+    "full",
+    "loud",
+    "free",
+    "empty"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Die Stadt ist voll.",
+    "targetWord": "voll",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Menschen",
+  "sentence": "Viele _____ stehen an der Straße.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Menschen",
+   "options": [
+    "Menschen",
+    "Wagen",
+    "Kinder",
+    "Straßen"
+   ],
+   "translation": "Many _____ stand along the street.",
+   "optionTranslations": [
+    "people",
+    "floats",
+    "children",
+    "streets"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Viele Menschen stehen an der Straße.",
+    "targetWord": "Menschen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Zug",
+  "sentence": "Der große _____ beginnt jetzt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Zug",
+   "options": [
+    "Zug",
+    "Wagen",
+    "Tag",
+    "Gruß"
+   ],
+   "translation": "The big _____ begins now.",
+   "optionTranslations": [
+    "parade",
+    "float",
+    "day",
+    "greeting"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Der große Zug beginnt jetzt.",
+    "targetWord": "Zug",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "werfen",
+  "sentence": "Die Leute _____ Bonbons.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "werfen",
+   "options": [
+    "werfen",
+    "sammeln",
+    "tragen",
+    "hören"
+   ],
+   "translation": "The people _____ candy.",
+   "optionTranslations": [
+    "throw",
+    "collect",
+    "wear",
+    "hear"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Die Leute werfen Bonbons.",
+    "targetWord": "werfen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "tanzt",
+  "sentence": "Nora _____ mitten im Zug.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tanzt",
+   "options": [
+    "tanzt",
+    "winkt",
+    "steht",
+    "lacht"
+   ],
+   "translation": "Nora _____ in the middle of the parade.",
+   "optionTranslations": [
+    "dances",
+    "waves",
+    "stands",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Nora tanzt mitten im Zug.",
+    "targetWord": "tanzt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "stehen",
+  "sentence": "Viele Menschen _____ an der Straße.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "stehen",
+   "options": [
+    "stehen",
+    "tanzen",
+    "sitzen",
+    "gehen"
+   ],
+   "translation": "Many people _____ along the street.",
+   "optionTranslations": [
+    "stand",
+    "dance",
+    "sit",
+    "go"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Viele Menschen stehen an der Straße.",
+    "targetWord": "stehen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Straße",
+  "sentence": "Die Menschen stehen an der _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Straße",
+   "options": [
+    "Straße",
+    "Stadt",
+    "Musik",
+    "Sonne"
+   ],
+   "translation": "The people stand along the _____.",
+   "optionTranslations": [
+    "street",
+    "city",
+    "music",
+    "sun"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Die Menschen stehen an der Straße.",
+    "targetWord": "Straße",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Bunte",
+  "sentence": "_____ Wagen fahren langsam vorbei.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Bunte",
+   "options": [
+    "Bunte",
+    "Laute",
+    "Große",
+    "Leere"
+   ],
+   "translation": "_____ floats drive slowly past.",
+   "optionTranslations": [
+    "Colorful",
+    "Loud",
+    "Big",
+    "Empty"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Bunte Wagen fahren langsam vorbei.",
+    "targetWord": "Bunte",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sammeln",
+  "sentence": "Die Kinder _____ die Bonbons.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sammeln",
+   "options": [
+    "sammeln",
+    "werfen",
+    "winken",
+    "klatschen"
+   ],
+   "translation": "The children _____ the candy.",
+   "optionTranslations": [
+    "collect",
+    "throw",
+    "wave",
+    "clap"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Die Kinder sammeln die Bonbons.",
+    "targetWord": "sammeln",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "laut",
+  "sentence": "Die Musik ist _____ und fröhlich.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "laut",
+   "options": [
+    "laut",
+    "voll",
+    "frei",
+    "kurz"
+   ],
+   "translation": "The music is _____ and cheerful.",
+   "optionTranslations": [
+    "loud",
+    "full",
+    "free",
+    "brief"
+   ],
+   "audioClip": {
+    "storySlug": "der-gro-e-zug",
+    "storySource": "user",
+    "sentence": "Die Musik ist laut und fröhlich.",
+    "targetWord": "laut",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ }
+]

@@ -1,0 +1,465 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "bravo",
+    "sentence": "Nadie quería seguir [[bravo]] por la pelea.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "angry and sulking",
+      "options": [
+        "angry and sulking",
+        "calm and happy",
+        "tired and sleepy",
+        "proud and smug"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "Nadie quería seguir bravo por la pelea.",
+        "targetWord": "bravo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ebd4e6c8c06e8a6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mamera",
+    "sentence": "La [[mamera]] de andar peleados ya cansaba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tiresome drag",
+      "options": [
+        "a tiresome drag",
+        "a good laugh",
+        "a fair deal",
+        "a quick fix"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "La mamera de andar peleados ya cansaba.",
+        "targetWord": "mamera",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2c5e478b488ba16f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin rodeos",
+    "sentence": "Hablemos [[sin rodeos]] y arreglemos esto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "straight to the point",
+      "options": [
+        "straight to the point",
+        "around the subject",
+        "behind their backs",
+        "in total silence"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "Hablemos sin rodeos y arreglemos esto.",
+        "targetWord": "sin rodeos",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a344cb59ac905dad.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dar la cara",
+    "sentence": "Julián fue el primero en [[dar la cara]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "own up and face it",
+      "options": [
+        "own up and face it",
+        "hide and run off",
+        "blame the others",
+        "laugh it away"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "Julián fue el primero en dar la cara.",
+        "targetWord": "dar la cara",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbfd578eb07f0bec.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chévere",
+    "sentence": "La prueba tampoco había estado muy [[chévere]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cool and nice",
+      "options": [
+        "cool and nice",
+        "cruel and cold",
+        "dull and gray",
+        "rude and loud"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "La prueba tampoco había estado muy chévere.",
+        "targetWord": "chévere",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b5c2c4020e1f785d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pasarse de listo",
+    "sentence": "Nadie se [[pasara de listo]] en la charla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "act like a smart aleck",
+      "options": [
+        "act like a smart aleck",
+        "tell the plain truth",
+        "stay quiet and calm",
+        "help without asking"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "Nadie se pasara de listo en la charla.",
+        "targetWord": "pasara de listo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb530a68a253a4c1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quitarse un bulto de encima",
+    "sentence": "El parche respiró, como [[quitado un bulto de encima]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "relieved of a heavy weight",
+      "options": [
+        "relieved of a heavy weight",
+        "loaded with new worries",
+        "stuck in the same mess",
+        "lost without a clue"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "El parche respiró, como quitado un bulto de encima.",
+        "targetWord": "quitado un bulto de encima",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/756db28b1042cc68.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sellar el trato",
+    "sentence": "[[Sellaron el trato]] con un brindis.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sealed the deal",
+      "options": [
+        "sealed the deal",
+        "broke the promise",
+        "started the fight",
+        "dropped the plan"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "Sellaron el trato con un brindis.",
+        "targetWord": "Sellaron el trato",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/35005c3257c4b2a0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "liviano",
+    "sentence": "Se despidieron con el corazón [[liviano]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "light and unburdened",
+      "options": [
+        "light and unburdened",
+        "heavy and worried",
+        "cold and distant",
+        "sore and tired"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "Se despidieron con el corazón liviano.",
+        "targetWord": "liviano",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6fc40028ec7400c3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "medio en serio",
+    "sentence": "Acordaron la regla [[medio en serio]] y medio en chiste.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half seriously",
+      "options": [
+        "half seriously",
+        "fully seriously",
+        "totally by force",
+        "strictly in secret"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "Acordaron la regla medio en serio y medio en chiste.",
+        "targetWord": "medio en serio",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1cefa38c6c7c412b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "risa floja",
+    "sentence": "La bravura se volvió recocha y [[risa floja]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "helpless giggles",
+      "options": [
+        "helpless giggles",
+        "cold hard anger",
+        "deep sad silence",
+        "loud proud boasting"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "La bravura se volvió recocha y risa floja.",
+        "targetWord": "risa floja",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e866832b0d7434a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "soltar prenda",
+    "sentence": "Lo del parche se quedaba sin [[soltar prenda]] por fuera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "giving the secret away",
+      "options": [
+        "giving the secret away",
+        "paying the whole bill",
+        "cooking for everyone",
+        "arriving very late"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "Lo del parche se quedaba sin soltar prenda por fuera.",
+        "targetWord": "soltar prenda",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d14fdecaed5d7714.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacer las paces",
+    "sentence": "Marina se la apretó e [[hicieron las paces]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "made up after the fight",
+      "options": [
+        "made up after the fight",
+        "started a new quarrel",
+        "paid off the old debt",
+        "left without a word"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "Marina se la apretó e hicieron las paces.",
+        "targetWord": "hicieron las paces",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a728c5798882f9ba.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bobada",
+    "sentence": "Ya, dejemos esta _____ quieta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bobada",
+      "options": [
+        "bobada",
+        "victoria",
+        "comida",
+        "llave"
+      ],
+      "translation": "Come on, let us leave this _____ alone.",
+      "optionTranslations": [
+        "silly little thing",
+        "victory",
+        "meal",
+        "key"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "Ya, dejemos esta bobada quieta.",
+        "targetWord": "bobada",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e3e868589d019ae1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pleito",
+    "sentence": "Valeria odiaba los _____ entre amigos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pleito",
+      "options": [
+        "pleito",
+        "regalos",
+        "paseos",
+        "abrazos"
+      ],
+      "translation": "Valeria hated _____ between friends.",
+      "optionTranslations": [
+        "quarrels",
+        "gifts",
+        "trips",
+        "hugs"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "Valeria odiaba los pleito entre amigos.",
+        "targetWord": "pleito",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d7e1643b82068174.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cuadrar",
+    "sentence": "Hablemos claro y _____ esta vaina de una vez.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cuadrar",
+      "options": [
+        "cuadrar",
+        "romper",
+        "perder",
+        "olvidar"
+      ],
+      "translation": "Let us talk straight and _____ this thing once and for all.",
+      "optionTranslations": [
+        "sort out",
+        "break",
+        "lose",
+        "forget"
+      ],
+      "audioClip": {
+        "storySlug": "el-domingo-se-arregla",
+        "storySource": "user",
+        "sentence": "Hablemos claro y cuadrar esta vaina de una vez.",
+        "targetWord": "cuadrar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8cdbedeb1952cf90.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "vaina,arepa,recocha,marica",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "vaina",
+          "answer": "a thing, a matter",
+          "options": [
+            "a thing, a matter",
+            "a grilled corn cake",
+            "rowdy joking around",
+            "dude, mate (rough but everyday)"
+          ]
+        },
+        {
+          "word": "arepa",
+          "answer": "a grilled corn cake",
+          "options": [
+            "a thing, a matter",
+            "a grilled corn cake",
+            "rowdy joking around",
+            "dude, mate (rough but everyday)"
+          ]
+        },
+        {
+          "word": "recocha",
+          "answer": "rowdy joking around",
+          "options": [
+            "a thing, a matter",
+            "a grilled corn cake",
+            "rowdy joking around",
+            "dude, mate (rough but everyday)"
+          ]
+        },
+        {
+          "word": "marica",
+          "answer": "dude, mate (rough but everyday)",
+          "options": [
+            "a thing, a matter",
+            "a grilled corn cake",
+            "rowdy joking around",
+            "dude, mate (rough but everyday)"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

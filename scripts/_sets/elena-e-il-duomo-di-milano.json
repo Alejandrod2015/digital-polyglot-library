@@ -1,0 +1,632 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "chiesa,tetto,biglietto,marmo",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "chiesa",
+     "answer": "church",
+     "options": [
+      "church",
+      "roof",
+      "ticket",
+      "marble"
+     ]
+    },
+    {
+     "word": "tetto",
+     "answer": "roof",
+     "options": [
+      "church",
+      "roof",
+      "ticket",
+      "marble"
+     ]
+    },
+    {
+     "word": "biglietto",
+     "answer": "ticket",
+     "options": [
+      "church",
+      "roof",
+      "ticket",
+      "marble"
+     ]
+    },
+    {
+     "word": "marmo",
+     "answer": "marble",
+     "options": [
+      "church",
+      "roof",
+      "ticket",
+      "marble"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "bianco",
+  "sentence": "La chiesa è enorme e [[bianca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "white",
+   "options": [
+    "white",
+    "black",
+    "tall",
+    "round"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "La chiesa è enorme e bianca.",
+    "targetWord": "bianca",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "piano",
+  "sentence": "«Che meraviglia», dice [[piano]] Elena.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "softly",
+   "options": [
+    "softly",
+    "loudly",
+    "quickly",
+    "sadly"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "«Che meraviglia», dice piano Elena.",
+    "targetWord": "piano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "felice",
+  "sentence": "I due amici si salutano [[felici]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "happy",
+   "options": [
+    "happy",
+    "tired",
+    "angry",
+    "hungry"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "I due amici si salutano felici.",
+    "targetWord": "felici",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "aspetta",
+  "sentence": "Luca _____ Elena alla stazione.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aspetta",
+   "options": [
+    "aspetta",
+    "saluta",
+    "vede",
+    "compra"
+   ],
+   "translation": "Luca _____ Elena at the station.",
+   "optionTranslations": [
+    "waits for",
+    "greets",
+    "sees",
+    "buys"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "Luca aspetta Elena alla stazione.",
+    "targetWord": "aspetta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "vede",
+  "sentence": "Poco dopo, Elena _____ il Duomo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vede",
+   "options": [
+    "vede",
+    "compra",
+    "trova",
+    "guarda"
+   ],
+   "translation": "A little later, Elena _____ the Duomo.",
+   "optionTranslations": [
+    "sees",
+    "buys",
+    "finds",
+    "looks at"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "Poco dopo, Elena vede il Duomo.",
+    "targetWord": "vede",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "compra",
+  "sentence": "Luca _____ due biglietti.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "compra",
+   "options": [
+    "compra",
+    "vende",
+    "guarda",
+    "aspetta"
+   ],
+   "translation": "Luca _____ two tickets.",
+   "optionTranslations": [
+    "buys",
+    "sells",
+    "looks at",
+    "waits for"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "Luca compra due biglietti.",
+    "targetWord": "compra",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "salgono",
+  "sentence": "I due amici _____ sul tetto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "salgono",
+   "options": [
+    "salgono",
+    "camminano",
+    "restano",
+    "aspettano"
+   ],
+   "translation": "The two friends _____ onto the roof.",
+   "optionTranslations": [
+    "go up",
+    "walk",
+    "stay",
+    "wait"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "I due amici salgono sul tetto.",
+    "targetWord": "salgono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "guarda",
+  "sentence": "Elena _____ la città dall'alto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guarda",
+   "options": [
+    "guarda",
+    "saluta",
+    "aspetta",
+    "compra"
+   ],
+   "translation": "Elena _____ the city from above.",
+   "optionTranslations": [
+    "looks at",
+    "greets",
+    "waits for",
+    "buys"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "Elena guarda la città dall'alto.",
+    "targetWord": "guarda",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "camminano",
+  "sentence": "Insieme _____ verso il centro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "camminano",
+   "options": [
+    "camminano",
+    "salgono",
+    "restano",
+    "guardano"
+   ],
+   "translation": "Together they _____ toward the center.",
+   "optionTranslations": [
+    "walk",
+    "go up",
+    "stay",
+    "look"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "Insieme camminano verso il centro.",
+    "targetWord": "camminano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "vive",
+  "sentence": "Luca _____ in questa grande città.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vive",
+   "options": [
+    "vive",
+    "aspetta",
+    "guarda",
+    "compra"
+   ],
+   "translation": "Luca _____ in this big city.",
+   "optionTranslations": [
+    "lives",
+    "waits",
+    "looks",
+    "buys"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "Luca vive in questa grande città.",
+    "targetWord": "vive",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "alza",
+  "sentence": "Elena _____ gli occhi al Duomo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "alza",
+   "options": [
+    "alza",
+    "guarda",
+    "chiude",
+    "apre"
+   ],
+   "translation": "Elena _____ her eyes to the Duomo.",
+   "optionTranslations": [
+    "raises",
+    "looks at",
+    "closes",
+    "opens"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "Elena alza gli occhi al Duomo.",
+    "targetWord": "alza",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "occhi",
+  "sentence": "Elena alza gli _____ e resta senza parole.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "occhi",
+   "options": [
+    "occhi",
+    "parole",
+    "biglietti",
+    "guglie"
+   ],
+   "translation": "Elena raises her _____ and is speechless.",
+   "optionTranslations": [
+    "eyes",
+    "words",
+    "tickets",
+    "spires"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "Elena alza gli occhi e resta senza parole.",
+    "targetWord": "occhi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "resta",
+  "sentence": "Elena _____ senza parole davanti al Duomo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "resta",
+   "options": [
+    "resta",
+    "cammina",
+    "sale",
+    "compra"
+   ],
+   "translation": "Elena _____ speechless before the Duomo.",
+   "optionTranslations": [
+    "stays",
+    "walks",
+    "goes up",
+    "buys"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "Elena resta senza parole davanti al Duomo.",
+    "targetWord": "resta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "parole",
+  "sentence": "Elena resta senza _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "parole",
+   "options": [
+    "parole",
+    "occhi",
+    "biglietti",
+    "giochi"
+   ],
+   "translation": "Elena is left without _____.",
+   "optionTranslations": [
+    "words",
+    "eyes",
+    "tickets",
+    "games"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "Elena resta senza parole.",
+    "targetWord": "parole",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "dice",
+  "sentence": "«Che meraviglia», _____ Elena piano.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dice",
+   "options": [
+    "dice",
+    "guarda",
+    "aspetta",
+    "compra"
+   ],
+   "translation": "'How wonderful,' Elena _____ softly.",
+   "optionTranslations": [
+    "says",
+    "looks",
+    "waits",
+    "buys"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "«Che meraviglia», dice Elena piano.",
+    "targetWord": "dice",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "trova",
+  "sentence": "Chi _____ più cose belle?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "trova",
+   "options": [
+    "trova",
+    "compra",
+    "guarda",
+    "vede"
+   ],
+   "translation": "Who _____ more beautiful things?",
+   "optionTranslations": [
+    "finds",
+    "buys",
+    "looks at",
+    "sees"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "Chi trova più cose belle?",
+    "targetWord": "trova",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "guida",
+  "sentence": "Oggi Luca fa da _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guida",
+   "options": [
+    "guida",
+    "chiesa",
+    "tetto",
+    "gioco"
+   ],
+   "translation": "Today Luca acts as a _____.",
+   "optionTranslations": [
+    "guide",
+    "church",
+    "roof",
+    "game"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "Oggi Luca fa da guida.",
+    "targetWord": "guida",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "guglie",
+  "sentence": "Tra le _____ c'è una statua di marmo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guglie",
+   "options": [
+    "guglie",
+    "chiese",
+    "biglietti",
+    "occhi"
+   ],
+   "translation": "Among the _____ there is a marble statue.",
+   "optionTranslations": [
+    "spires",
+    "churches",
+    "tickets",
+    "eyes"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "Tra le guglie c'è una statua di marmo.",
+    "targetWord": "guglie",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "vista",
+  "sentence": "Da lassù la _____ è splendida.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vista",
+   "options": [
+    "vista",
+    "guida",
+    "chiesa",
+    "parola"
+   ],
+   "translation": "From up there the _____ is splendid.",
+   "optionTranslations": [
+    "view",
+    "guide",
+    "church",
+    "word"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "Da lassù la vista è splendida.",
+    "targetWord": "vista",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "gioco",
+  "sentence": "«Facciamo un _____», propone Luca.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gioco",
+   "options": [
+    "gioco",
+    "biglietto",
+    "tetto",
+    "marmo"
+   ],
+   "translation": "'Let's play a _____,' Luca suggests.",
+   "optionTranslations": [
+    "game",
+    "ticket",
+    "roof",
+    "marble"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-duomo-di-milano",
+    "storySource": "user",
+    "sentence": "«Facciamo un gioco», propone Luca.",
+    "targetWord": "gioco",
+    "language": "italian"
+   }
+  }
+ }
+]

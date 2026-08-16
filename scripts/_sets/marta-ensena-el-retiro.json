@@ -1,0 +1,621 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "amiga",
+    "sentence": "Su [[amiga]] la espera en la estación.",
+    "payload": {
+      "answer": "a female friend",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a female friend",
+        "a sister",
+        "a teacher",
+        "a neighbor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Su amiga la espera en la estación.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "amiga",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/84fef09f9e5b797c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esperar",
+    "sentence": "La [[espera]] en la estación del tren.",
+    "payload": {
+      "answer": "to wait for",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to wait for",
+        "to greet",
+        "to call",
+        "to follow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La espera en la estación del tren.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "espera",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61139d54ea536537.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "flor",
+    "sentence": "Lleva [[flores]] en la mano.",
+    "payload": {
+      "answer": "a flower",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a flower",
+        "a leaf",
+        "a stone",
+        "a key"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Lleva flores en la mano.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "flores",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2ee849a99e976ffe.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parque",
+    "sentence": "Caminan juntas por el [[parque]].",
+    "payload": {
+      "answer": "a park",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a park",
+        "a beach",
+        "a market",
+        "a museum"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Caminan juntas por el parque.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "parque",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/07810dba2ac09caf.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "árbol",
+    "sentence": "Hay [[árboles]] altos en el parque.",
+    "payload": {
+      "answer": "a tree",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a tree",
+        "a flower",
+        "a rock",
+        "a river"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hay árboles altos en el parque.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "árboles",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3baf6897ffedbf53.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gente",
+    "sentence": "En el parque hay mucha [[gente]].",
+    "payload": {
+      "answer": "people",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "people",
+        "water",
+        "music",
+        "food"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En el parque hay mucha gente.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "gente",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0df7218aba8f009.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "español",
+    "sentence": "Mi [[español]] es malo.",
+    "payload": {
+      "answer": "Spanish",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "Spanish",
+        "English",
+        "French",
+        "German"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Mi español es malo.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "español",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d702f958d563604.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barca",
+    "sentence": "Suben a una [[barca]] pequeña.",
+    "payload": {
+      "answer": "a boat",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a boat",
+        "a bus",
+        "a car",
+        "a bike"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Suben a una barca pequeña.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "barca",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9484fc2a6647fecc.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "brillan",
+    "sentence": "De noche, las estrellas _____ mucho.",
+    "payload": {
+      "answer": "brillan",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "brillan",
+        "lloran",
+        "corren",
+        "comen"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "De noche, las estrellas brillan mucho.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "brillan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/195edf9640e223d8.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "At night, the stars _____ a lot.",
+      "optionTranslations": [
+        "shine",
+        "cry",
+        "run",
+        "eat"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "remar",
+    "sentence": "Para mover la barca, hay que _____.",
+    "payload": {
+      "answer": "remar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "remar",
+        "cantar",
+        "dormir",
+        "cocinar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Para mover la barca, hay que remar.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "remar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6365e2f4436d9812.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "To move the boat, you have to _____.",
+      "optionTranslations": [
+        "row",
+        "sing",
+        "sleep",
+        "cook"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contento",
+    "sentence": "Las dos amigas se abrazan muy [[contentas]].",
+    "payload": {
+      "answer": "happy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "happy",
+        "tired",
+        "angry",
+        "bored"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las dos amigas se abrazan muy contentas.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "contentas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/158aeb119e878af7.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Ella habla [[despacio]] y con miedo.",
+    "payload": {
+      "answer": "slowly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "slowly",
+        "quickly",
+        "loudly",
+        "early"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella habla despacio y con miedo.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "despacio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ed09587a63a7a8a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bueno",
+    "sentence": "Tu español es [[bueno]].",
+    "payload": {
+      "answer": "good",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "good",
+        "bad",
+        "new",
+        "long"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Tu español es bueno.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "bueno",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61610a7c3cc012fb.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "responder",
+    "sentence": "«Tranquila», [[responde]] la amiga.",
+    "payload": {
+      "answer": "to answer",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to answer",
+        "to ask",
+        "to shout",
+        "to whisper"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "«Tranquila», responde la amiga.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "responde",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/65709250eb36ed3a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frío",
+    "sentence": "El agua está [[fría]] y muy limpia.",
+    "payload": {
+      "answer": "cold",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "cold",
+        "warm",
+        "dirty",
+        "deep"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El agua está fría y muy limpia.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "fría",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/79867b42f4bb4609.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "otra vez",
+    "sentence": "Abraza a su amiga [[otra vez]].",
+    "payload": {
+      "answer": "again",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "again",
+        "never",
+        "almost",
+        "together"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Abraza a su amiga otra vez.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "otra vez",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0c73f3f8e712e674.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "saca",
+    "sentence": "Ella _____ el pan del horno caliente.",
+    "payload": {
+      "answer": "saca",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "saca",
+        "mete",
+        "lava",
+        "rompe"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella saca el pan del horno caliente.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "saca",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/04f6bfe0e2189546.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She _____ the bread from the hot oven.",
+      "optionTranslations": [
+        "takes out",
+        "puts in",
+        "washes",
+        "breaks"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "canción",
+    "sentence": "Ella canta una _____ muy bonita.",
+    "payload": {
+      "answer": "canción",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "canción",
+        "camisa",
+        "cuchara",
+        "ventana"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella canta una canción muy bonita.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "canción",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/936453b6c8b52446.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She sings a very pretty _____.",
+      "optionTranslations": [
+        "song",
+        "shirt",
+        "spoon",
+        "window"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "helado",
+    "sentence": "En verano como un _____ muy frío.",
+    "payload": {
+      "answer": "helado",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "helado",
+        "abrigo",
+        "zapato",
+        "cuaderno"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En verano como un helado muy frío.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "helado",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1310acf4a3b5343c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "In summer I eat a very cold _____.",
+      "optionTranslations": [
+        "ice cream",
+        "coat",
+        "shoe",
+        "notebook"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "miedo",
+    "sentence": "Ella tiene _____ de la oscuridad.",
+    "payload": {
+      "answer": "miedo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "miedo",
+        "hambre",
+        "sueño",
+        "sed"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella tiene miedo de la oscuridad.",
+        "storySlug": "marta-ensena-el-retiro",
+        "targetWord": "miedo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d08cef519dc4504.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She has _____ of the dark.",
+      "optionTranslations": [
+        "fear",
+        "hunger",
+        "sleepiness",
+        "thirst"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "tren,pato,lago,fresa",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "tren",
+          "answer": "a train",
+          "options": [
+            "a train",
+            "a duck",
+            "a lake",
+            "a strawberry"
+          ]
+        },
+        {
+          "word": "pato",
+          "answer": "a duck",
+          "options": [
+            "a train",
+            "a duck",
+            "a lake",
+            "a strawberry"
+          ]
+        },
+        {
+          "word": "lago",
+          "answer": "a lake",
+          "options": [
+            "a train",
+            "a duck",
+            "a lake",
+            "a strawberry"
+          ]
+        },
+        {
+          "word": "fresa",
+          "answer": "a strawberry",
+          "options": [
+            "a train",
+            "a duck",
+            "a lake",
+            "a strawberry"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brilla",
+    "sentence": "El sol [[brilla]] mucho sobre el lago.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shines",
+      "options": [
+        "shines",
+        "falls",
+        "opens",
+        "grows"
+      ],
+      "audioClip": {
+        "storySlug": "marta-ensena-el-retiro",
+        "storySource": "user",
+        "sentence": "El sol brilla mucho sobre el lago.",
+        "targetWord": "brilla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c13c4abd01fb2a1e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

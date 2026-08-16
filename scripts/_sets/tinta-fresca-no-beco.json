@@ -1,0 +1,466 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "tinta,parede,mochila,telhado",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "tinta",
+          "answer": "paint",
+          "options": [
+            "paint",
+            "a wall",
+            "a backpack",
+            "a roof"
+          ]
+        },
+        {
+          "word": "parede",
+          "answer": "a wall",
+          "options": [
+            "paint",
+            "a wall",
+            "a backpack",
+            "a roof"
+          ]
+        },
+        {
+          "word": "mochila",
+          "answer": "a backpack",
+          "options": [
+            "paint",
+            "a wall",
+            "a backpack",
+            "a roof"
+          ]
+        },
+        {
+          "word": "telhado",
+          "answer": "a roof",
+          "options": [
+            "paint",
+            "a wall",
+            "a backpack",
+            "a roof"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "beco",
+    "sentence": "Ele entra num [[beco]] estreito entre dois prédios.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an alley",
+      "options": [
+        "an alley",
+        "an avenue",
+        "a bridge",
+        "a park"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "Ele entra num beco estreito entre dois prédios.",
+        "targetWord": "beco",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dc1ac4f3816127cf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "coberto",
+    "sentence": "As paredes estão [[cobertas]] de desenho até o telhado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "covered",
+      "options": [
+        "covered",
+        "empty",
+        "clean",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "As paredes estão cobertas de desenho até o telhado.",
+        "targetWord": "cobertas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c951b7d7819041dd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fresco",
+    "sentence": "Um cheiro forte de tinta [[fresca]] sai da parede.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fresh",
+      "options": [
+        "fresh",
+        "old",
+        "dry",
+        "sweet"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "Um cheiro forte de tinta fresca sai da parede.",
+        "targetWord": "fresca",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30dcb8480cdd7000.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "metade",
+    "sentence": "Ele apaga [[metade]] de um rosto sem pedir licença.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half",
+      "options": [
+        "half",
+        "all",
+        "the top",
+        "the edge"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "Ele apaga metade de um rosto sem pedir licença.",
+        "targetWord": "metade",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c4a1b610d69b258f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "licença",
+    "sentence": "Ele apaga o rosto sem pedir [[licença]] a ninguém.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "permission",
+      "options": [
+        "permission",
+        "money",
+        "help",
+        "time"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "Ele apaga o rosto sem pedir licença a ninguém.",
+        "targetWord": "licença",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fcfdae3f5e555911.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mudar",
+    "sentence": "O rapaz diz que o beco [[muda]] toda semana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "changes",
+      "options": [
+        "changes",
+        "closes",
+        "cleans",
+        "grows"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "O rapaz diz que o beco muda toda semana.",
+        "targetWord": "muda",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d8da80a27944c3d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reparar",
+    "sentence": "A tinta seca atrás deles e ninguém [[repara]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "notices",
+      "options": [
+        "notices",
+        "pays",
+        "cleans",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "A tinta seca atrás deles e ninguém repara.",
+        "targetWord": "repara",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/73d25c4cad411142.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pinta",
+    "sentence": "Um rapaz de mochila _____ um peixe azul.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pinta",
+      "options": [
+        "pinta",
+        "lava",
+        "quebra",
+        "vende"
+      ],
+      "translation": "A young man with a backpack _____ a blue fish.",
+      "optionTranslations": [
+        "paints",
+        "washes",
+        "breaks",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "Um rapaz de mochila pinta um peixe azul.",
+        "targetWord": "pinta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a661cca63677fdd.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "seca",
+    "sentence": "A tinta _____ atrás deles, escura e dura.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "seca",
+      "options": [
+        "seca",
+        "cai",
+        "brilha",
+        "cheira"
+      ],
+      "translation": "The paint _____ behind them, dark and hard.",
+      "optionTranslations": [
+        "dries",
+        "falls",
+        "shines",
+        "smells"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "A tinta seca atrás deles, escura e dura.",
+        "targetWord": "seca",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/59f4fb904d772963.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "noite",
+    "sentence": "Ele entra no beco no começo da [[noite]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the night",
+      "options": [
+        "the night",
+        "the morning",
+        "the winter",
+        "the week"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "Ele entra no beco no começo da noite.",
+        "targetWord": "noite",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bdb6d1610901d0d2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desenho",
+    "sentence": "As paredes estão cobertas de [[desenho]] colorido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a drawing",
+      "options": [
+        "a drawing",
+        "a window",
+        "a door",
+        "a shadow"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "As paredes estão cobertas de desenho colorido.",
+        "targetWord": "desenho",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9aaeb02ab53db867.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "peixe",
+    "sentence": "Um rapaz pinta um [[peixe]] azul na parede.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fish",
+      "options": [
+        "a fish",
+        "a bird",
+        "a horse",
+        "a tree"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "Um rapaz pinta um peixe azul na parede.",
+        "targetWord": "peixe",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/03777d7ac6f87d96.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "semana",
+    "sentence": "Nada ali fica no mesmo lugar por uma [[semana]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a week",
+      "options": [
+        "a week",
+        "an hour",
+        "a year",
+        "a season"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "Nada ali fica no mesmo lugar por uma semana.",
+        "targetWord": "semana",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c812fccc041bdc39.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "violão",
+    "sentence": "Um [[violão]] começa a tocar no fim do beco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a guitar",
+      "options": [
+        "a guitar",
+        "a drum",
+        "a horn",
+        "a bell"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "Um violão começa a tocar no fim do beco.",
+        "targetWord": "violão",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4e9ec2c497cfe09f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "palco",
+    "sentence": "O músico toca no meio da rua, sem [[palco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a stage",
+      "options": [
+        "a stage",
+        "a chair",
+        "a roof",
+        "a light"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "O músico toca no meio da rua, sem palco.",
+        "targetWord": "palco",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7dafe9903cc5625.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerveja",
+    "sentence": "O beco inteiro cheira a tinta e a [[cerveja]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "beer",
+      "options": [
+        "beer",
+        "coffee",
+        "soup",
+        "milk"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "O beco inteiro cheira a tinta e a cerveja.",
+        "targetWord": "cerveja",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d5c5e314c0248a64.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "durar",
+    "sentence": "Ele tira uma foto e sabe que ela [[dura]] pouco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lasts",
+      "options": [
+        "lasts",
+        "costs",
+        "weighs",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "tinta-fresca-no-beco",
+        "storySource": "user",
+        "sentence": "Ele tira uma foto e sabe que ela dura pouco.",
+        "targetWord": "dura",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3666b1014f23bf25.mp3"
+      }
+    },
+    "featured": false
+  }
+]

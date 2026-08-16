@@ -1,0 +1,465 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "fresco",
+    "sentence": "Andrés apareció caminando bien [[fresco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cool and relaxed",
+      "options": [
+        "cool and relaxed",
+        "tense and nervous",
+        "sad and slow",
+        "rude and loud"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "Andrés apareció caminando bien fresco.",
+        "targetWord": "fresco",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/73aa5730e5f152c1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ombe",
+    "sentence": "[[Ombe]], ¿y ese peinado tan tieso?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hey man, come on",
+      "options": [
+        "hey man, come on",
+        "yes of course",
+        "too bad for you",
+        "not right now"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "Ombe, ¿y ese peinado tan tieso?",
+        "targetWord": "Ombe",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4b4a5927018de648.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tieso",
+    "sentence": "¿Y ese peinado tan [[tieso]], mane?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stiff and rigid",
+      "options": [
+        "stiff and rigid",
+        "soft and loose",
+        "clean and fresh",
+        "dark and long"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "¿Y ese peinado tan tieso, mane?",
+        "targetWord": "tieso",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/50bc0fddcbd95fd2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mane",
+    "sentence": "¿Y ese peinado tan tieso, [[mane]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dude, guy",
+      "options": [
+        "dude, guy",
+        "boss, chief",
+        "kid, child",
+        "sir, mister"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "¿Y ese peinado tan tieso, mane?",
+        "targetWord": "mane",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/50bc0fddcbd95fd2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "montar chercha",
+    "sentence": "Yuly le siguió [[montando chercha]] sin piedad.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "relentlessly teasing",
+      "options": [
+        "relentlessly teasing",
+        "kindly helping",
+        "calmly ignoring",
+        "quietly praising"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "Yuly le siguió montando chercha sin piedad.",
+        "targetWord": "montando chercha",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/88ffb50a17632318.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "eche",
+    "sentence": "[[Eche]], ese corte te lo hizo el barbero dormido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wow, no way",
+      "options": [
+        "wow, no way",
+        "yes, exactly",
+        "fine, okay",
+        "stop, enough"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "Eche, ese corte te lo hizo el barbero dormido.",
+        "targetWord": "Eche",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36dd7b4184be4ed4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ajá",
+    "sentence": "[[Ajá]], ríanse, que hoy sí caigo con alguna.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "so go on then",
+      "options": [
+        "so go on then",
+        "never again",
+        "not at all",
+        "right this second"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "Ajá, ríanse, que hoy sí caigo con alguna.",
+        "targetWord": "Ajá",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f0031387a3edd28f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caer parado",
+    "sentence": "Hoy sí [[caigo parado]] con alguna china.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "land on my feet lucky",
+      "options": [
+        "land on my feet lucky",
+        "fall flat on my face",
+        "stay home alone",
+        "give up early"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "Hoy sí caigo parado con alguna china.",
+        "targetWord": "caigo parado",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f244f304f01801a2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tirarse los peros",
+    "sentence": "Llevaba meses [[tirándose los peros]] sin éxito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "flirting hard",
+      "options": [
+        "flirting hard",
+        "working overtime",
+        "saving up money",
+        "hiding away"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "Llevaba meses tirándose los peros sin éxito.",
+        "targetWord": "tirándose los peros",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1376a19980bd56a0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quedar en calabaza",
+    "sentence": "Cada intento suyo [[terminaba en calabaza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ending in nothing",
+      "options": [
+        "ending in nothing",
+        "ending in triumph",
+        "ending in a fight",
+        "ending in tears"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "Cada intento suyo terminaba en calabaza.",
+        "targetWord": "terminaba en calabaza",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/573a1055c9045730.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arrecharse",
+    "sentence": "Andrés, lejos de [[arrecharse]], se rió.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "getting angry",
+      "options": [
+        "getting angry",
+        "getting scared",
+        "getting bored",
+        "getting sleepy"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "Andrés, lejos de arrecharse, se rió.",
+        "targetWord": "arrecharse",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/680ad1ce6a9ce271.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sacar de casillas",
+    "sentence": "Le montó chercha para [[sacarlo de casillas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wind him up",
+      "options": [
+        "wind him up",
+        "calm him down",
+        "cheer him up",
+        "pay him back"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "Le montó chercha para sacarlo de casillas.",
+        "targetWord": "sacarlo de casillas",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/640f7b95cd55521e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "picaflor",
+    "sentence": "\"Bueno, [[picaflor]], muéstranos cómo se hace.\"",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a flirt, a womanizer",
+      "options": [
+        "a flirt, a womanizer",
+        "a hard worker",
+        "a quiet loner",
+        "a rich boss"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "\"Bueno, picaflor, muéstranos cómo se hace.\"",
+        "targetWord": "picaflor",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/72dbd385b545f100.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "enredarse",
+    "sentence": "A ver si no te vas a _____ en el intento.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "enredarse",
+      "options": [
+        "enredarse",
+        "dormir",
+        "reír",
+        "tardar"
+      ],
+      "translation": "Let us see if you do not _____ in the attempt.",
+      "optionTranslations": [
+        "get tangled up",
+        "sleep",
+        "laugh",
+        "take long"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "A ver si no te vas a enredarse en el intento.",
+        "targetWord": "enredarse",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d637be2be9b711b1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "acomodarse",
+    "sentence": "Se _____ el cuello de la camisa antes de hablar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acomodarse",
+      "options": [
+        "acomodarse",
+        "quitó",
+        "rompió",
+        "manchó"
+      ],
+      "translation": "He _____ his shirt collar before speaking.",
+      "optionTranslations": [
+        "straightened",
+        "took off",
+        "tore",
+        "stained"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "Se acomodarse el cuello de la camisa antes de hablar.",
+        "targetWord": "acomodarse",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30d60118a7d20728.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "conquistador",
+    "sentence": "Le lanzó su mejor sonrisa de _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "conquistador",
+      "options": [
+        "conquistador",
+        "vendedor",
+        "cocinero",
+        "cartero"
+      ],
+      "translation": "He flashed his best _____ smile.",
+      "optionTranslations": [
+        "charmer",
+        "salesman",
+        "cook",
+        "postman"
+      ],
+      "audioClip": {
+        "storySlug": "el-corte-nuevo-de-andres",
+        "storySource": "user",
+        "sentence": "Le lanzó su mejor sonrisa de conquistador.",
+        "targetWord": "conquistador",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/789d703d45beb4f1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "picó,birra,china,pelao",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "picó",
+          "answer": "a big coastal sound system",
+          "options": [
+            "a big coastal sound system",
+            "a beer",
+            "a girl (coast)",
+            "a young guy (coast)"
+          ]
+        },
+        {
+          "word": "birra",
+          "answer": "a beer",
+          "options": [
+            "a big coastal sound system",
+            "a beer",
+            "a girl (coast)",
+            "a young guy (coast)"
+          ]
+        },
+        {
+          "word": "china",
+          "answer": "a girl (coast)",
+          "options": [
+            "a big coastal sound system",
+            "a beer",
+            "a girl (coast)",
+            "a young guy (coast)"
+          ]
+        },
+        {
+          "word": "pelao",
+          "answer": "a young guy (coast)",
+          "options": [
+            "a big coastal sound system",
+            "a beer",
+            "a girl (coast)",
+            "a young guy (coast)"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

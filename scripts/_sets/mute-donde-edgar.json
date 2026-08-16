@@ -1,0 +1,563 @@
+[
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "el mute,el maíz pelao,las presas,el cabrito",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "el mute",
+          "answer": "a hearty Santander corn and meat stew",
+          "options": [
+            "a hearty Santander corn and meat stew",
+            "hominy corn with the hull removed",
+            "cut pieces of meat for cooking",
+            "young goat meat"
+          ]
+        },
+        {
+          "word": "el maíz pelao",
+          "answer": "hominy corn with the hull removed",
+          "options": [
+            "a hearty Santander corn and meat stew",
+            "hominy corn with the hull removed",
+            "cut pieces of meat for cooking",
+            "young goat meat"
+          ]
+        },
+        {
+          "word": "las presas",
+          "answer": "cut pieces of meat for cooking",
+          "options": [
+            "a hearty Santander corn and meat stew",
+            "hominy corn with the hull removed",
+            "cut pieces of meat for cooking",
+            "young goat meat"
+          ]
+        },
+        {
+          "word": "el cabrito",
+          "answer": "young goat meat",
+          "options": [
+            "a hearty Santander corn and meat stew",
+            "hominy corn with the hull removed",
+            "cut pieces of meat for cooking",
+            "young goat meat"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "destapar",
+    "sentence": "Édgar acaba de ____ la olla del mute.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "destapar",
+      "options": [
+        "destapar",
+        "tapar",
+        "lavar",
+        "romper"
+      ],
+      "translation": "Édgar just ____ the pot of mute.",
+      "optionTranslations": [
+        "to uncover",
+        "to cover",
+        "to wash",
+        "to break"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Édgar acaba de destapar la olla del mute.",
+        "targetWord": "destapar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95e17ffbf1a4d7cc.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "soltar",
+    "sentence": "Manu no quiso ____ la verdad de una.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "soltar",
+      "options": [
+        "soltar",
+        "guardar",
+        "tragar",
+        "gritar"
+      ],
+      "translation": "Manu didn't want to ____ the truth all at once.",
+      "optionTranslations": [
+        "to blurt out",
+        "to keep",
+        "to swallow",
+        "to shout"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Manu no quiso soltar la verdad de una.",
+        "targetWord": "soltar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36caeccfc908d1ee.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "rematar",
+    "sentence": "Édgar quiso ____ la broma con risa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rematar",
+      "options": [
+        "rematar",
+        "empezar",
+        "olvidar",
+        "repetir"
+      ],
+      "translation": "Édgar wanted to ____ the joke with a laugh.",
+      "optionTranslations": [
+        "to finish off",
+        "to start",
+        "to forget",
+        "to repeat"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Édgar quiso rematar la broma con risa.",
+        "targetWord": "rematar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cfdbd16405c6f5fc.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "sin afán",
+    "sentence": "Édgar cocina el mute ____, con calma.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sin afán",
+      "options": [
+        "sin afán",
+        "con rabia",
+        "a las carreras",
+        "de mala gana"
+      ],
+      "translation": "Édgar cooks the mute ____, calmly.",
+      "optionTranslations": [
+        "unhurriedly",
+        "angrily",
+        "in a rush",
+        "reluctantly"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Édgar cocina el mute sin afán, con calma.",
+        "targetWord": "sin afán",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d2b095e0ec39420d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "sin tanta bulla",
+    "sentence": "Aquí se come rico ____, sin alardes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sin tanta bulla",
+      "options": [
+        "sin tanta bulla",
+        "con mucho ruido",
+        "a los gritos",
+        "entre peleas"
+      ],
+      "translation": "Here you eat well ____, without showing off.",
+      "optionTranslations": [
+        "without much fuss",
+        "with lots of noise",
+        "shouting",
+        "amid fights"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Aquí se come rico sin tanta bulla, sin alardes.",
+        "targetWord": "sin tanta bulla",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9fd5aba20910fa13.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "la fonda",
+    "sentence": "Édgar atiende su [[fonda]] con caldos calientes y precios baratos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a small informal family eatery",
+      "options": [
+        "a small informal family eatery",
+        "a fancy rooftop restaurant",
+        "a busy hospital cafeteria",
+        "an outdoor food market"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Édgar atiende su fonda con caldos calientes y precios baratos.",
+        "targetWord": "fonda",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/838bc22317f04332.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "de visita",
+    "sentence": "Manu llegó [[de visita]] por unos pocos días.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "visiting for a short stay",
+      "options": [
+        "visiting for a short stay",
+        "living there permanently",
+        "away on a work trip",
+        "lost and far from home"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Manu llegó de visita por unos pocos días.",
+        "targetWord": "de visita",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/67c3560b54d1e898.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "no morderse la lengua",
+    "sentence": "Édgar [[no se muerde la lengua]] al opinar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to speak bluntly without holding back",
+      "options": [
+        "to speak bluntly without holding back",
+        "to stay silent to avoid trouble",
+        "to chew food very slowly",
+        "to forget what one meant to say"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Édgar no se muerde la lengua al opinar.",
+        "targetWord": "no se muerde la lengua",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/456b30abacc38ade.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "por lo bajo",
+    "sentence": "Vale se rió [[por lo bajo]] de la pulla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "quietly under one's breath",
+      "options": [
+        "quietly under one's breath",
+        "loudly for everyone to hear",
+        "in a rude angry tone",
+        "while pointing at someone"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Vale se rió por lo bajo de la pulla.",
+        "targetWord": "por lo bajo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f40ff4bbc1957a68.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "la franqueza",
+    "sentence": "La [[franqueza]] de Édgar a veces incomoda a Manu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the habit of speaking openly and directly",
+      "options": [
+        "the habit of speaking openly and directly",
+        "a shy and quiet nature",
+        "a talent for telling jokes",
+        "a habit of flattering people"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "La franqueza de Édgar a veces incomoda a Manu.",
+        "targetWord": "franqueza",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ad99b7de58b1170.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "el regaño",
+    "sentence": "El [[regaño]] de Édgar sonó más a cariño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a scolding meant to correct someone",
+      "options": [
+        "a scolding meant to correct someone",
+        "a warm word of praise",
+        "a long boring speech",
+        "a friendly invitation to eat"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "El regaño de Édgar sonó más a cariño.",
+        "targetWord": "regaño",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d1555f011b7c3e4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "hágame el favor",
+    "sentence": "¡[[Hágame el favor]], eso no se dice así!",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "honestly, come on now",
+      "options": [
+        "honestly, come on now",
+        "please help me cook this",
+        "thanks for the kind gesture",
+        "let me do it myself"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "¡Hágame el favor, eso no se dice así!",
+        "targetWord": "hágame el favor",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/82f6275abcd1dff4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "a fuego manso",
+    "sentence": "El mute se cocina [[a fuego manso]] toda la mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slowly over a low gentle flame",
+      "options": [
+        "slowly over a low gentle flame",
+        "quickly over a roaring fire",
+        "inside a cold clay pot",
+        "with lots of hot spices"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "El mute se cocina a fuego manso toda la mañana.",
+        "targetWord": "a fuego manso",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dd5060cf2dfdeb19.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "relamidos",
+    "sentence": "Esos primos [[relamidos]] critican hasta la sopa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "overly prim and fussy",
+      "options": [
+        "overly prim and fussy",
+        "greedy and always hungry",
+        "loud and cheerful",
+        "dirty and unkempt"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Esos primos relamidos critican hasta la sopa.",
+        "targetWord": "relamidos",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f3f9479c3a1e10de.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "alzados",
+    "sentence": "Los muchachos [[alzados]] le contestan a cualquiera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cheeky and quick to answer back",
+      "options": [
+        "cheeky and quick to answer back",
+        "tall and very strong",
+        "shy and obedient",
+        "tired and sleepy"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Los muchachos alzados le contestan a cualquiera.",
+        "targetWord": "alzados",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1978f1c9ccf24e6d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "la carrilla",
+    "sentence": "Le montaron una [[carrilla]] tremenda por el acento.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "relentless playful teasing",
+      "options": [
+        "relentless playful teasing",
+        "a serious formal warning",
+        "a small paid favor",
+        "a plate of leftovers"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Le montaron una carrilla tremenda por el acento.",
+        "targetWord": "carrilla",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/01a96ec182233732.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "la pulla",
+    "sentence": "Édgar soltó una [[pulla]] y siguió sirviendo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sharp cutting remark",
+      "options": [
+        "a sharp cutting remark",
+        "a generous helping of food",
+        "a warm heartfelt compliment",
+        "a quiet secret whisper"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Édgar soltó una pulla y siguió sirviendo.",
+        "targetWord": "pulla",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a19ea1a08feac8f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "la ronda",
+    "sentence": "Édgar sirvió otra [[ronda]] de caldo humeante.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a round served to everyone at once",
+      "options": [
+        "a round served to everyone at once",
+        "a single small portion",
+        "a long kitchen shift",
+        "a strong black coffee"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Édgar sirvió otra ronda de caldo humeante.",
+        "targetWord": "ronda",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/da047afe141d6157.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "guiñar un ojo",
+    "sentence": "Édgar remató [[guiñándole un ojo]] a Manu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "winking as a knowing sign",
+      "options": [
+        "winking as a knowing sign",
+        "slamming the door shut",
+        "raising his voice at her",
+        "turning his back on her"
+      ],
+      "audioClip": {
+        "storySlug": "mute-donde-edgar",
+        "storySource": "user",
+        "sentence": "Édgar remató guiñándole un ojo a Manu.",
+        "targetWord": "guiñándole un ojo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/72a465f6001563d5.mp3"
+      }
+    }
+  }
+]

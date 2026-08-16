@@ -1,0 +1,479 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "pan de yema",
+    "sentence": "Se juntaron con café y [[pan de yema]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rich Oaxacan egg bread",
+      "options": [
+        "a rich Oaxacan egg bread",
+        "a spicy hot soup",
+        "a cold fruit salad",
+        "a plain white rice"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "Se juntaron con café y pan de yema.",
+        "targetWord": "pan de yema",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8e767fa967ca547.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ánimo por los suelos",
+    "sentence": "Itzel andaba con el [[ánimo por los suelos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "spirits totally down",
+      "options": [
+        "spirits totally down",
+        "energy full of joy",
+        "head full of plans",
+        "heart free of worry"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "Itzel andaba con el ánimo por los suelos.",
+        "targetWord": "ánimo por los suelos",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7615dc695ef9822b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guelaguetza",
+    "sentence": "Así funcionaba, como una [[guelaguetza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "spirit of mutual giving",
+      "options": [
+        "spirit of mutual giving",
+        "a paid contract",
+        "a strict rule",
+        "a lucky accident"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "Así funcionaba, como una guelaguetza.",
+        "targetWord": "guelaguetza",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e669400c1ef0cfb7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacer el paro",
+    "sentence": "Los demás le [[hacían el paro]] sin que lo pidiera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "did her a favor",
+      "options": [
+        "did her a favor",
+        "charged her money",
+        "made fun of her",
+        "left her alone"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "Los demás le hacían el paro sin que lo pidiera.",
+        "targetWord": "hacían el paro",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0f98980fc040161d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cariño del bueno",
+    "sentence": "No era lástima, era puro [[cariño del bueno]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "genuine real affection",
+      "options": [
+        "genuine real affection",
+        "fake polite pity",
+        "cold hard duty",
+        "quiet deep envy"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "No era lástima, era puro cariño del bueno.",
+        "targetWord": "cariño del bueno",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4aedd765d68b4be1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "híjole",
+    "sentence": "[[Híjole]], ni te disculpes, para eso estamos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "oh wow, no worries",
+      "options": [
+        "oh wow, no worries",
+        "yes, of course not",
+        "too bad for you",
+        "that is enough"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "Híjole, ni te disculpes, para eso estamos.",
+        "targetWord": "Híjole",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f9170d7ebf26d71.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ni modo",
+    "sentence": "[[Ni modo]] que te dejáramos sola.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "no way, out of the question",
+      "options": [
+        "no way, out of the question",
+        "maybe some other time",
+        "only if you insist",
+        "just this once then"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "Ni modo que te dejáramos sola.",
+        "targetWord": "Ni modo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9af2407ef4031382.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "buena onda",
+    "sentence": "La casa olía a pan, a café y a [[buena onda]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "good warm vibes",
+      "options": [
+        "good warm vibes",
+        "fresh cold air",
+        "loud old music",
+        "cheap new paint"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "La casa olía a pan, a café y a buena onda.",
+        "targetWord": "buena onda",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8df753160b8c4adc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de a de veras",
+    "sentence": "Un amigo [[de a de veras]] llega con tlayudas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a genuine real one",
+      "options": [
+        "a genuine real one",
+        "a brand new one",
+        "a far away one",
+        "a very rich one"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "Un amigo de a de veras llega con tlayudas.",
+        "targetWord": "de a de veras",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2bbc21d5353ec431.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "panza llena",
+    "sentence": "Nadie llora con la [[panza llena]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a full belly",
+      "options": [
+        "a full belly",
+        "an empty plate",
+        "a broken heart",
+        "a tired mind"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "Nadie llora con la panza llena.",
+        "targetWord": "panza llena",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7359a7a088da7a94.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "así nomás",
+    "sentence": "La corrieron del trabajo [[así nomás]], sin avisar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "just like that",
+      "options": [
+        "just like that",
+        "after a warning",
+        "for good reason",
+        "with a big party"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "La corrieron del trabajo así nomás, sin avisar.",
+        "targetWord": "así nomás",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7be846869ac31067.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "correr",
+    "sentence": "La habían _____ del trabajo el jueves sin avisar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "correr",
+      "options": [
+        "correr",
+        "ascendido",
+        "llamado",
+        "pagado"
+      ],
+      "translation": "They had _____ her from the job on Thursday without warning.",
+      "optionTranslations": [
+        "fired",
+        "promoted",
+        "called",
+        "paid"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "La habían correr del trabajo el jueves sin avisar.",
+        "targetWord": "correr",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba5972d578a23544.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aguar",
+    "sentence": "Intentó disculparse por _____ el domingo con sus penas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aguar",
+      "options": [
+        "aguar",
+        "alegrar",
+        "pagar",
+        "cocinar"
+      ],
+      "translation": "She tried to apologize for _____ the Sunday with her troubles.",
+      "optionTranslations": [
+        "spoiling",
+        "cheering up",
+        "paying for",
+        "cooking"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "Intentó disculparse por aguar el domingo con sus penas.",
+        "targetWord": "aguar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/75ef90d5078102db.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "jalar",
+    "sentence": "Uno conocía a alguien que _____ gente para trabajar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "jalar",
+      "options": [
+        "jalar",
+        "despedía",
+        "llamaba",
+        "vendía"
+      ],
+      "translation": "One knew someone who _____ people in to work.",
+      "optionTranslations": [
+        "recruited",
+        "fired",
+        "called",
+        "sold"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "Uno conocía a alguien que jalar gente para trabajar.",
+        "targetWord": "jalar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/845cd29394c2684f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "puntada",
+    "sentence": "Itzel ya se reía otra vez con las _____ de Rodrigo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "puntada",
+      "options": [
+        "puntada",
+        "quejas",
+        "deudas",
+        "tareas"
+      ],
+      "translation": "Itzel was laughing again at Rodrigo's _____.",
+      "optionTranslations": [
+        "witty remarks",
+        "complaints",
+        "debts",
+        "chores"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "Itzel ya se reía otra vez con las puntada de Rodrigo.",
+        "targetWord": "puntada",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4d3418858fe7353e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cargado",
+    "sentence": "Rodrigo llegó _____ de tlayudas para todos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cargado",
+      "options": [
+        "cargado",
+        "vacío",
+        "tarde",
+        "solo"
+      ],
+      "translation": "Rodrigo arrived _____ with tlayudas for everyone.",
+      "optionTranslations": [
+        "loaded up",
+        "empty handed",
+        "late",
+        "alone"
+      ],
+      "audioClip": {
+        "storySlug": "cafe-y-pan-de-yema",
+        "storySource": "user",
+        "sentence": "Rodrigo llegó cargado de tlayudas para todos.",
+        "targetWord": "cargado",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e503cd0fd3fcc597.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "bola,tejate,tlayuda,conecte",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "bola",
+          "answer": "the gang, group",
+          "options": [
+            "the gang, group",
+            "a cold Oaxacan maize drink",
+            "a big crispy Oaxacan tortilla",
+            "a useful contact"
+          ]
+        },
+        {
+          "word": "tejate",
+          "answer": "a cold Oaxacan maize drink",
+          "options": [
+            "the gang, group",
+            "a cold Oaxacan maize drink",
+            "a big crispy Oaxacan tortilla",
+            "a useful contact"
+          ]
+        },
+        {
+          "word": "tlayuda",
+          "answer": "a big crispy Oaxacan tortilla",
+          "options": [
+            "the gang, group",
+            "a cold Oaxacan maize drink",
+            "a big crispy Oaxacan tortilla",
+            "a useful contact"
+          ]
+        },
+        {
+          "word": "conecte",
+          "answer": "a useful contact",
+          "options": [
+            "the gang, group",
+            "a cold Oaxacan maize drink",
+            "a big crispy Oaxacan tortilla",
+            "a useful contact"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,810 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "calle",
+    "sentence": "Camino por las [[calles]] de la ciudad.",
+    "payload": {
+      "answer": "street",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "street",
+        "river",
+        "door",
+        "field"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Camino por las calles de la ciudad.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "calles",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ad276e5a0c7bed1.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pasear",
+    "sentence": "Ella [[pasea]] entre casas rosas y azules.",
+    "payload": {
+      "answer": "to stroll",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to stroll",
+        "to cook",
+        "to sell",
+        "to sleep"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella pasea entre casas rosas y azules.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "pasea",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/48517b766cd88c81.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "artesano",
+    "sentence": "Un [[artesano]] trabaja en su taller.",
+    "payload": {
+      "answer": "craftsman",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "craftsman",
+        "teacher",
+        "doctor",
+        "farmer"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Un artesano trabaja en su taller.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "artesano",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/138e21e872b43980.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "taller",
+    "sentence": "Él trabaja en un [[taller]] pequeño.",
+    "payload": {
+      "answer": "workshop",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "workshop",
+        "kitchen",
+        "church",
+        "school"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él trabaja en un taller pequeño.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "taller",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f5995bb6efcc81a6.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pintar",
+    "sentence": "Él [[pinta]] figuras de madera.",
+    "payload": {
+      "answer": "to paint",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to paint",
+        "to break",
+        "to buy",
+        "to wash"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él pinta figuras de madera.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "pinta",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1f7cd343cc83c39e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alebrije",
+    "sentence": "Los [[alebrijes]] son animales de fantasía.",
+    "payload": {
+      "answer": "carved fantasy animal",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "carved fantasy animal",
+        "small clay cup",
+        "woven cotton bag",
+        "painted paper kite"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los alebrijes son animales de fantasía.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "alebrijes",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a32cc22cdb795b40.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "madera",
+    "sentence": "Ella toca la [[madera]] suave con cuidado.",
+    "payload": {
+      "answer": "wood",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "wood",
+        "glass",
+        "metal",
+        "cloth"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella toca la madera suave con cuidado.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "madera",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4306b508a0e1c7c3.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jaguar",
+    "sentence": "¿Te gusta este [[jaguar]] pintado?",
+    "payload": {
+      "answer": "spotted wild cat",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "spotted wild cat",
+        "small house dog",
+        "large green bird",
+        "slow river fish"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "¿Te gusta este jaguar pintado?",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "jaguar",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/72b930f7bd0d3c65.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "luz",
+    "sentence": "Enciende la _____ porque el cuarto está oscuro.",
+    "payload": {
+      "answer": "luz",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "luz",
+        "puerta",
+        "radio",
+        "estufa"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Enciende la luz porque el cuarto está oscuro.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "luz",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/156b0ccc728d3371.mp3"
+      },
+      "translation": "Turn on the _____ because the room is dark.",
+      "optionTranslations": [
+        "light",
+        "door",
+        "radio",
+        "stove"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "tocar",
+    "sentence": "Me gusta _____ la tela suave con los dedos.",
+    "payload": {
+      "answer": "tocar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "tocar",
+        "cortar",
+        "lavar",
+        "secar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Me gusta tocar la tela suave con los dedos.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "tocar",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/35a6e67e5b4c2fa1.mp3"
+      },
+      "translation": "I like to _____ the soft cloth with my fingers.",
+      "optionTranslations": [
+        "touch",
+        "cut",
+        "wash",
+        "dry"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "color",
+    "sentence": "Las paredes tienen muchos [[colores]] alegres.",
+    "payload": {
+      "answer": "color",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "color",
+        "sound",
+        "smell",
+        "shape"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las paredes tienen muchos colores alegres.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "colores",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dc9dce1b044a312a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fantasía",
+    "sentence": "Estos animales vienen de la [[fantasía]].",
+    "payload": {
+      "answer": "fantasy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "fantasy",
+        "market",
+        "history",
+        "garden"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Estos animales vienen de la fantasía.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "fantasía",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/908b9a1b3e4a5dbc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dragón",
+    "sentence": "En la mesa hay un [[dragón]] de colores.",
+    "payload": {
+      "answer": "dragon",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "dragon",
+        "horse",
+        "fish",
+        "frog"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la mesa hay un dragón de colores.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "dragón",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/04db893049cb0a69.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "figura",
+    "sentence": "Cada [[figura]] tiene puntos y líneas finas.",
+    "payload": {
+      "answer": "figure",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "figure",
+        "bottle",
+        "basket",
+        "candle"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cada figura tiene puntos y líneas finas.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "figura",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5a097feed4eb643e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "precioso",
+    "sentence": "Este animal de madera es [[precioso]].",
+    "payload": {
+      "answer": "beautiful",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "beautiful",
+        "broken",
+        "empty",
+        "cheap"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Este animal de madera es precioso.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "precioso",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3263602d73611a1c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "línea",
+    "sentence": "El niño dibuja una _____ recta con el lápiz.",
+    "payload": {
+      "answer": "línea",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "línea",
+        "puerta",
+        "silla",
+        "taza"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El niño dibuja una línea recta con el lápiz.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "línea",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0edf1b676db5ab2.mp3"
+      },
+      "translation": "The boy draws a straight _____ with the pencil.",
+      "optionTranslations": [
+        "line",
+        "door",
+        "chair",
+        "cup"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "suave",
+    "sentence": "El gato tiene el pelo muy _____ y limpio.",
+    "payload": {
+      "answer": "suave",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "suave",
+        "duro",
+        "sucio",
+        "frío"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El gato tiene el pelo muy suave y limpio.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "suave",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ce9c3b78a0c4e8d3.mp3"
+      },
+      "translation": "The cat has very _____ and clean fur.",
+      "optionTranslations": [
+        "soft",
+        "hard",
+        "dirty",
+        "cold"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "caer",
+    "sentence": "Ten cuidado, el vaso se puede _____ de la mesa.",
+    "payload": {
+      "answer": "caer",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "caer",
+        "subir",
+        "volar",
+        "nadar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ten cuidado, el vaso se puede caer de la mesa.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "caer",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5acedc06f8158269.mp3"
+      },
+      "translation": "Be careful, the glass can _____ off the table.",
+      "optionTranslations": [
+        "fall",
+        "go up",
+        "fly",
+        "swim"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "romper",
+    "sentence": "Si tiras el plato al suelo, se va a _____.",
+    "payload": {
+      "answer": "romper",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "romper",
+        "crecer",
+        "volar",
+        "nadar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Si tiras el plato al suelo, se va a romper.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "romper",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f886d328e6db9b7e.mp3"
+      },
+      "translation": "If you drop the plate on the floor, it will _____.",
+      "optionTranslations": [
+        "break",
+        "grow",
+        "fly",
+        "swim"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "recoger",
+    "sentence": "El juguete está en el piso y lo quiero _____.",
+    "payload": {
+      "answer": "recoger",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "recoger",
+        "pintar",
+        "vender",
+        "mojar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El juguete está en el piso y lo quiero recoger.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "recoger",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/48d3679f10ba402c.mp3"
+      },
+      "translation": "The toy is on the floor and I want to _____ it.",
+      "optionTranslations": [
+        "pick up",
+        "paint",
+        "sell",
+        "wet"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pagar",
+    "sentence": "En la tienda tienes que _____ antes de salir.",
+    "payload": {
+      "answer": "pagar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "pagar",
+        "dormir",
+        "cantar",
+        "correr"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la tienda tienes que pagar antes de salir.",
+        "storySlug": "diego-pinta-alebrijes",
+        "targetWord": "pagar",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f922814f5108971b.mp3"
+      },
+      "translation": "In the shop you have to _____ before leaving.",
+      "optionTranslations": [
+        "pay",
+        "sleep",
+        "sing",
+        "run"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "casa,gato,pájaro,papel",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "casa",
+          "answer": "house",
+          "options": [
+            "house",
+            "cat",
+            "bird",
+            "paper"
+          ]
+        },
+        {
+          "word": "gato",
+          "answer": "cat",
+          "options": [
+            "house",
+            "cat",
+            "bird",
+            "paper"
+          ]
+        },
+        {
+          "word": "pájaro",
+          "answer": "bird",
+          "options": [
+            "house",
+            "cat",
+            "bird",
+            "paper"
+          ]
+        },
+        {
+          "word": "papel",
+          "answer": "paper",
+          "options": [
+            "house",
+            "cat",
+            "bird",
+            "paper"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "valor",
+    "sentence": "El jaguar da [[valor]] a la persona que lo lleva.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "courage",
+      "options": [
+        "courage",
+        "hunger",
+        "money",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "diego-pinta-alebrijes",
+        "storySource": "user",
+        "sentence": "El jaguar da valor a la persona que lo lleva.",
+        "targetWord": "valor",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0cdf16d488ba7e9e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuidado",
+    "sentence": "Con [[cuidado]], tú tocas la madera suave y fresca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "care",
+      "options": [
+        "care",
+        "noise",
+        "speed",
+        "luck"
+      ],
+      "audioClip": {
+        "storySlug": "diego-pinta-alebrijes",
+        "storySource": "user",
+        "sentence": "Con cuidado, tú tocas la madera suave y fresca.",
+        "targetWord": "cuidado",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7d9754b00857dc9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "viaje",
+    "sentence": "Sofía piensa en su largo [[viaje]] sola por México.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a trip",
+      "options": [
+        "a trip",
+        "a song",
+        "a meal",
+        "a game"
+      ],
+      "audioClip": {
+        "storySlug": "diego-pinta-alebrijes",
+        "storySource": "user",
+        "sentence": "Sofía piensa en su largo viaje sola por México.",
+        "targetWord": "viaje",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/619ed230d35144d7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cariño",
+    "sentence": "Rafa envuelve el jaguar en papel con mucho [[cariño]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "affection",
+      "options": [
+        "affection",
+        "anger",
+        "dust",
+        "hurry"
+      ],
+      "audioClip": {
+        "storySlug": "diego-pinta-alebrijes",
+        "storySource": "user",
+        "sentence": "Rafa envuelve el jaguar en papel con mucho cariño.",
+        "targetWord": "cariño",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3603cc86020cf78b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "miedo",
+    "sentence": "A veces sientes [[miedo]] cuando viajas solo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fear",
+      "options": [
+        "fear",
+        "hunger",
+        "music",
+        "rain"
+      ],
+      "audioClip": {
+        "storySlug": "diego-pinta-alebrijes",
+        "storySource": "user",
+        "sentence": "A veces sientes miedo cuando viajas solo.",
+        "targetWord": "miedo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/763bda53ea27089b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sol",
+    "sentence": "Ella sale a la calle llena de [[sol]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sun",
+      "options": [
+        "the sun",
+        "the rain",
+        "the wind",
+        "the snow"
+      ],
+      "audioClip": {
+        "storySlug": "diego-pinta-alebrijes",
+        "storySource": "user",
+        "sentence": "Ella sale a la calle llena de sol.",
+        "targetWord": "sol",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aec00986dd6f7e3c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fuerza",
+    "sentence": "Cada alebrije tiene su propia [[fuerza]] especial.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strength",
+      "options": [
+        "strength",
+        "color",
+        "noise",
+        "price"
+      ],
+      "audioClip": {
+        "storySlug": "diego-pinta-alebrijes",
+        "storySource": "user",
+        "sentence": "Cada alebrije tiene su propia fuerza especial.",
+        "targetWord": "fuerza",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f05f52cf959a518b.mp3"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,632 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "sera,strade,luci,porta",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "sera",
+     "answer": "evening",
+     "options": [
+      "evening",
+      "streets",
+      "lights",
+      "a door"
+     ]
+    },
+    {
+     "word": "strade",
+     "answer": "streets",
+     "options": [
+      "evening",
+      "streets",
+      "lights",
+      "a door"
+     ]
+    },
+    {
+     "word": "luci",
+     "answer": "lights",
+     "options": [
+      "evening",
+      "streets",
+      "lights",
+      "a door"
+     ]
+    },
+    {
+     "word": "porta",
+     "answer": "a door",
+     "options": [
+      "evening",
+      "streets",
+      "lights",
+      "a door"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "tranquillo",
+  "sentence": "Elena e Chiara camminano nel centro [[tranquillo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quiet",
+   "options": [
+    "quiet",
+    "noisy",
+    "dark",
+    "wide"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Elena e Chiara camminano nel centro tranquillo.",
+    "targetWord": "tranquillo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "chiusa",
+  "sentence": "Ma la porta del teatro è [[chiusa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "closed",
+   "options": [
+    "closed",
+    "open",
+    "broken",
+    "ready"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Ma la porta del teatro è chiusa.",
+    "targetWord": "chiusa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "tristi",
+  "sentence": "Le due amiche sono un po' [[tristi]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sad",
+   "options": [
+    "sad",
+    "happy",
+    "tired",
+    "calm"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Le due amiche sono un po' tristi.",
+    "targetWord": "tristi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "vuole",
+  "sentence": "Chiara _____ portare Elena davanti al teatro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vuole",
+   "options": [
+    "vuole",
+    "sa",
+    "apre",
+    "alza"
+   ],
+   "translation": "Chiara _____ to take Elena in front of the theater.",
+   "optionTranslations": [
+    "wants",
+    "knows",
+    "opens",
+    "raises"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Chiara vuole portare Elena davanti al teatro.",
+    "targetWord": "vuole",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "alza",
+  "sentence": "Elena _____ gli occhi e apre la bocca.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "alza",
+   "options": [
+    "alza",
+    "chiude",
+    "guarda",
+    "tocca"
+   ],
+   "translation": "Elena _____ her eyes and opens her mouth.",
+   "optionTranslations": [
+    "raises",
+    "closes",
+    "watches",
+    "touches"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Elena alza gli occhi e apre la bocca.",
+    "targetWord": "alza",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "apre",
+  "sentence": "Elena alza gli occhi e _____ la bocca.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "apre",
+   "options": [
+    "apre",
+    "chiude",
+    "alza",
+    "tocca"
+   ],
+   "translation": "Elena raises her eyes and _____ her mouth.",
+   "optionTranslations": [
+    "opens",
+    "closes",
+    "raises",
+    "touches"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Elena alza gli occhi e apre la bocca.",
+    "targetWord": "apre",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "biglietti",
+  "sentence": "Nella borsa ci sono due _____ per stasera.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "biglietti",
+   "options": [
+    "biglietti",
+    "luci",
+    "stelle",
+    "porte"
+   ],
+   "translation": "In the bag there are two _____ for tonight.",
+   "optionTranslations": [
+    "tickets",
+    "lights",
+    "stars",
+    "doors"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Nella borsa ci sono due biglietti per stasera.",
+    "targetWord": "biglietti",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "grida",
+  "sentence": "«Grazie mille!», _____ Elena felice.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "grida",
+   "options": [
+    "grida",
+    "dice",
+    "canta",
+    "balla"
+   ],
+   "translation": "\"Thank you so much!\", Elena _____ happily.",
+   "optionTranslations": [
+    "shouts",
+    "says",
+    "sings",
+    "dances"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "«Grazie mille!», grida Elena felice.",
+    "targetWord": "grida",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "suona",
+  "sentence": "Nella piazza un uomo _____ la chitarra.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "suona",
+   "options": [
+    "suona",
+    "ascolta",
+    "canta",
+    "balla"
+   ],
+   "translation": "In the square a man _____ the guitar.",
+   "optionTranslations": [
+    "plays",
+    "listens",
+    "sings",
+    "dances"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Nella piazza un uomo suona la chitarra.",
+    "targetWord": "suona",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "occhi",
+  "sentence": "Elena alza gli _____ verso il teatro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "occhi",
+   "options": [
+    "occhi",
+    "piedi",
+    "luci",
+    "stelle"
+   ],
+   "translation": "Elena raises her _____ toward the theater.",
+   "optionTranslations": [
+    "eyes",
+    "feet",
+    "lights",
+    "stars"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Elena alza gli occhi verso il teatro.",
+    "targetWord": "occhi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "bocca",
+  "sentence": "Elena apre la _____ per la sorpresa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bocca",
+   "options": [
+    "bocca",
+    "porta",
+    "borsa",
+    "mano"
+   ],
+   "translation": "Elena opens her _____ in surprise.",
+   "optionTranslations": [
+    "mouth",
+    "door",
+    "bag",
+    "hand"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Elena apre la bocca per la sorpresa.",
+    "targetWord": "bocca",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "stasera",
+  "sentence": "I biglietti sono per il concerto di _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "stasera",
+   "options": [
+    "stasera",
+    "domani",
+    "oggi",
+    "sera"
+   ],
+   "translation": "The tickets are for the concert _____.",
+   "optionTranslations": [
+    "tonight",
+    "tomorrow",
+    "today",
+    "evening"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "I biglietti sono per il concerto di stasera.",
+    "targetWord": "stasera",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sa",
+  "sentence": "Elena non _____ niente e diventa felice.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sa",
+   "options": [
+    "sa",
+    "vuole",
+    "apre",
+    "grida"
+   ],
+   "translation": "Elena _____ nothing and becomes happy.",
+   "optionTranslations": [
+    "knows",
+    "wants",
+    "opens",
+    "shouts"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Elena non sa niente e diventa felice.",
+    "targetWord": "sa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "diventa",
+  "sentence": "Elena non sa niente e _____ felice.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "diventa",
+   "options": [
+    "diventa",
+    "resta",
+    "sembra",
+    "guarda"
+   ],
+   "translation": "Elena knows nothing and _____ happy.",
+   "optionTranslations": [
+    "becomes",
+    "stays",
+    "seems",
+    "watches"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Elena non sa niente e diventa felice.",
+    "targetWord": "diventa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "domani",
+  "sentence": "Il cartello dice che il concerto è _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "domani",
+   "options": [
+    "domani",
+    "stasera",
+    "oggi",
+    "sera"
+   ],
+   "translation": "The sign says the concert is _____.",
+   "optionTranslations": [
+    "tomorrow",
+    "tonight",
+    "today",
+    "evening"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Il cartello dice che il concerto è domani.",
+    "targetWord": "domani",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sfortuna",
+  "sentence": "Le amiche sono tristi per la _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sfortuna",
+   "options": [
+    "sfortuna",
+    "sera",
+    "porta",
+    "luce"
+   ],
+   "translation": "The friends are sad about the _____.",
+   "optionTranslations": [
+    "bad luck",
+    "evening",
+    "door",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Le amiche sono tristi per la sfortuna.",
+    "targetWord": "sfortuna",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "ascoltano",
+  "sentence": "Le amiche _____ la musica sotto le stelle.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ascoltano",
+   "options": [
+    "ascoltano",
+    "suonano",
+    "cantano",
+    "ballano"
+   ],
+   "translation": "The friends _____ the music under the stars.",
+   "optionTranslations": [
+    "listen to",
+    "play",
+    "sing",
+    "dance"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Le amiche ascoltano la musica sotto le stelle.",
+    "targetWord": "ascoltano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "stelle",
+  "sentence": "Le amiche ascoltano la musica sotto le _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "stelle",
+   "options": [
+    "stelle",
+    "luci",
+    "onde",
+    "strade"
+   ],
+   "translation": "The friends listen to the music under the _____.",
+   "optionTranslations": [
+    "stars",
+    "lights",
+    "waves",
+    "streets"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Le amiche ascoltano la musica sotto le stelle.",
+    "targetWord": "stelle",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "balla",
+  "sentence": "Elena _____ e canta con Chiara.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "balla",
+   "options": [
+    "balla",
+    "canta",
+    "ride",
+    "grida"
+   ],
+   "translation": "Elena _____ and sings with Chiara.",
+   "optionTranslations": [
+    "dances",
+    "sings",
+    "laughs",
+    "shouts"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Elena balla e canta con Chiara.",
+    "targetWord": "balla",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "canta",
+  "sentence": "Elena balla e _____ con Chiara.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "canta",
+   "options": [
+    "canta",
+    "balla",
+    "suona",
+    "ascolta"
+   ],
+   "translation": "Elena dances and _____ with Chiara.",
+   "optionTranslations": [
+    "sings",
+    "dances",
+    "plays",
+    "listens"
+   ],
+   "audioClip": {
+    "storySlug": "il-teatro-e-chiuso-stasera",
+    "storySource": "user",
+    "sentence": "Elena balla e canta con Chiara.",
+    "targetWord": "canta",
+    "language": "italian"
+   }
+  }
+ }
+]

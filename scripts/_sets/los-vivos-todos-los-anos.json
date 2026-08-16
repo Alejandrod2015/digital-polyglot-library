@@ -1,0 +1,516 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "farol,vela,taza,boca",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "farol",
+     "answer": "a lantern",
+     "options": [
+      "a lantern",
+      "a candle",
+      "a cup",
+      "a mouth"
+     ]
+    },
+    {
+     "word": "vela",
+     "answer": "a candle",
+     "options": [
+      "a lantern",
+      "a candle",
+      "a cup",
+      "a mouth"
+     ]
+    },
+    {
+     "word": "taza",
+     "answer": "a cup",
+     "options": [
+      "a lantern",
+      "a candle",
+      "a cup",
+      "a mouth"
+     ]
+    },
+    {
+     "word": "boca",
+     "answer": "a mouth",
+     "options": [
+      "a lantern",
+      "a candle",
+      "a cup",
+      "a mouth"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "noche de difuntos",
+  "sentence": "Los vecinos suben cada [[noche de difuntos]] a la casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "All Souls Night",
+   "options": [
+    "All Souls Night",
+    "New Year's Eve",
+    "the first day of spring",
+    "the village patron day"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "Los vecinos suben cada noche de difuntos a la casa.",
+    "targetWord": "noche de difuntos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "alivio",
+  "sentence": "Sabela se ríe entre el [[alivio]] y la vergüenza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "relief",
+   "options": [
+    "relief",
+    "anger",
+    "boredom",
+    "envy"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "Sabela se ríe entre el alivio y la vergüenza.",
+    "targetWord": "alivio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vergüenza",
+  "sentence": "Sabela siente [[vergüenza]] por haberse asustado tanto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "embarrassment",
+   "options": [
+    "embarrassment",
+    "hunger",
+    "sadness",
+    "pride"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "Sabela siente vergüenza por haberse asustado tanto.",
+    "targetWord": "vergüenza",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vecina",
+  "sentence": "Carmiña abre y es una [[vecina]] con un farol.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a neighbour",
+   "options": [
+    "a neighbour",
+    "a stranger",
+    "a cousin",
+    "a shopkeeper"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "Carmiña abre y es una vecina con un farol.",
+    "targetWord": "vecina",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "encender",
+  "sentence": "Carmiña vuelve a [[encender]] la queimada, tranquila.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to light",
+   "options": [
+    "to light",
+    "to put out",
+    "to stir",
+    "to pour"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "Carmiña vuelve a encender la queimada, tranquila.",
+    "targetWord": "encender",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "oyen",
+  "sentence": "Se [[oyen]] voces y unos golpes en la puerta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be heard",
+   "options": [
+    "to be heard",
+    "to be seen",
+    "to be smelled",
+    "to be counted"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "Se oyen voces y unos golpes en la puerta.",
+    "targetWord": "oyen",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "subir",
+  "sentence": "Los vecinos [[suben]] a la casa cada año con sus faroles.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come up",
+   "options": [
+    "to come up",
+    "to run off",
+    "to look in",
+    "to knock"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "Los vecinos suben a la casa cada año con sus faroles.",
+    "targetWord": "suben",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "creer",
+  "sentence": "Carmiña le pregunta qué se [[creías]], que bebía sola.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to think",
+   "options": [
+    "to think",
+    "to say",
+    "to hope",
+    "to see"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "Carmiña le pregunta qué se creías, que bebía sola.",
+    "targetWord": "creías",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "palabra",
+  "sentence": "Sabela repite el final [[palabra]] por palabra.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a word",
+   "options": [
+    "a word",
+    "a line",
+    "a page",
+    "a verse"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "Sabela repite el final palabra por palabra.",
+    "targetWord": "palabra",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "moverse",
+  "featured": false,
+  "sentence": "Sabela y Brais miran por la ventana sin [[moverse]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to move",
+   "options": [
+    "to move",
+    "to speak",
+    "to breathe",
+    "to blink"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "Sabela y Brais miran por la ventana sin moverse.",
+    "targetWord": "moverse",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abrir",
+  "featured": false,
+  "sentence": "Carmiña sonríe y va a [[abrir]] la puerta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to open",
+   "options": [
+    "to open",
+    "to lock",
+    "to paint",
+    "to knock"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "Carmiña sonríe y va a abrir la puerta.",
+    "targetWord": "abrir",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "venir",
+  "featured": false,
+  "sentence": "La vecina dice que [[venimos]] a por nuestra queimada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come",
+   "options": [
+    "to come",
+    "to leave",
+    "to pay",
+    "to ask"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "La vecina dice que venimos a por nuestra queimada.",
+    "targetWord": "venimos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pensar",
+  "featured": false,
+  "sentence": "Sabela dice que [[pensaba]] que venían los muertos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to think",
+   "options": [
+    "to think",
+    "to shout",
+    "to dream",
+    "to promise"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "Sabela dice que pensaba que venían los muertos.",
+    "targetWord": "pensaba",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mano",
+  "featured": false,
+  "sentence": "La vecina llega con un farol en la [[mano]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a hand",
+   "options": [
+    "a hand",
+    "a pocket",
+    "a basket",
+    "a shoulder"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "La vecina llega con un farol en la mano.",
+    "targetWord": "mano",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "derecho",
+  "featured": false,
+  "sentence": "Sigue todo _____ y llegas a la plaza.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "derecho",
+   "options": [
+    "derecho",
+    "atrás",
+    "abajo",
+    "despacio"
+   ],
+   "translation": "Keep going straight _____ and you reach the square.",
+   "optionTranslations": [
+    "ahead",
+    "back",
+    "down",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "Sigue todo derecho y llegas a la plaza.",
+    "targetWord": "derecho",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "muro",
+  "featured": false,
+  "sentence": "El jardín tiene un _____ de piedra muy alto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "muro",
+   "options": [
+    "muro",
+    "techo",
+    "suelo",
+    "puente"
+   ],
+   "translation": "The garden has a very high stone _____.",
+   "optionTranslations": [
+    "wall",
+    "roof",
+    "floor",
+    "bridge"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "El jardín tiene un muro de piedra muy alto.",
+    "targetWord": "muro",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "todavía",
+  "featured": false,
+  "sentence": "El café está _____ caliente, espera un poco.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "todavía",
+   "options": [
+    "todavía",
+    "nunca",
+    "casi",
+    "pronto"
+   ],
+   "translation": "The coffee is _____ hot, wait a little.",
+   "optionTranslations": [
+    "still",
+    "never",
+    "almost",
+    "soon"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "El café está todavía caliente, espera un poco.",
+    "targetWord": "todavía",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "nueve",
+  "featured": false,
+  "sentence": "El tren de las _____ llega siempre puntual.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nueve",
+   "options": [
+    "nueve",
+    "veinte",
+    "cien",
+    "mil"
+   ],
+   "translation": "The _____ o'clock train always arrives on time.",
+   "optionTranslations": [
+    "nine",
+    "twenty",
+    "a hundred",
+    "a thousand"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "El tren de las nueve llega siempre puntual.",
+    "targetWord": "nueve",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "guardado",
+  "featured": false,
+  "sentence": "Te hemos _____ un trozo de tarta en la nevera.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guardado",
+   "options": [
+    "guardado",
+    "comido",
+    "vendido",
+    "tirado"
+   ],
+   "translation": "We have _____ a piece of cake for you in the fridge.",
+   "optionTranslations": [
+    "kept",
+    "eaten",
+    "sold",
+    "thrown away"
+   ],
+   "audioClip": {
+    "storySlug": "los-vivos-todos-los-anos",
+    "storySource": "user",
+    "sentence": "Te hemos guardado un trozo de tarta en la nevera.",
+    "targetWord": "guardado",
+    "language": "spanish"
+   }
+  }
+ }
+]

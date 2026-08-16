@@ -1,0 +1,244 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "hierba,lago,vaca,campana",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    { "word": "hierba", "answer": "grass", "options": ["grass", "a lake", "a cow", "a bell"] },
+    { "word": "lago", "answer": "a lake", "options": ["grass", "a lake", "a cow", "a bell"] },
+    { "word": "vaca", "answer": "a cow", "options": ["grass", "a lake", "a cow", "a bell"] },
+    { "word": "campana", "answer": "a bell", "options": ["grass", "a lake", "a cow", "a bell"] }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "un sol que pela",
+  "sentence": "Nuria dice que hace [[un sol que pela]] en el valle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a burning hot sun",
+   "options": ["a burning hot sun", "a cold sharp wind", "a soft grey light", "a heavy black cloud"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Nuria dice que hace un sol que pela en el valle.", "targetWord": "un sol que pela", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "no tiene pérdida",
+  "sentence": "Álvaro dice que ese sendero [[no tiene pérdida]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "you cannot get it wrong",
+   "options": ["you cannot get it wrong", "it takes many hours", "it is closed in winter", "it is very steep"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Álvaro dice que ese sendero no tiene pérdida.", "targetWord": "no tiene pérdida", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "merece la pena",
+  "sentence": "Nuria reconoce que la subida [[merece la pena]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it is worth it",
+   "options": ["it is worth it", "it is far too long", "it is very cheap", "it is quite easy"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Nuria reconoce que la subida merece la pena.", "targetWord": "merece la pena", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "damos la vuelta",
+  "sentence": "Álvaro dice que o siguen al lago o [[damos la vuelta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "we turn back",
+   "options": ["we turn back", "we set up camp", "we wait for help", "we run downhill"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Álvaro dice que o siguen al lago o damos la vuelta.", "targetWord": "damos la vuelta", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "collado",
+  "sentence": "Al cruzar un [[collado]], Álvaro se para en seco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a low gap between two peaks",
+   "options": ["a low gap between two peaks", "a wooden bridge over a stream", "a hut used by shepherds", "a fence around a field"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Al cruzar un collado, Álvaro se para en seco.", "targetWord": "collado", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cumbres",
+  "sentence": "La niebla se va tragando las [[cumbres]] una a una.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the mountain tops",
+   "options": ["the mountain tops", "the deep valleys", "the small villages", "the wide meadows"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "La niebla se va tragando las cumbres una a una.", "targetWord": "cumbres", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sendero",
+  "sentence": "Álvaro ha subido ese [[sendero]] mil veces.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a narrow path",
+   "options": ["a narrow path", "a wide road", "a stone staircase", "a mountain tunnel"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Álvaro ha subido ese sendero mil veces.", "targetWord": "sendero", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bocadillo",
+  "sentence": "Álvaro dice que suben, comen un [[bocadillo]] y bajan.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a filled bread roll",
+   "options": ["a filled bread roll", "a bowl of hot stew", "a piece of fruit", "a slice of cake"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Álvaro dice que suben, comen un bocadillo y bajan.", "targetWord": "bocadillo", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abrigo",
+  "sentence": "Begoña les dice que lleven agua y algo de [[abrigo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm clothing",
+   "options": ["warm clothing", "spare money", "a folding chair", "a swimming towel"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Begoña les dice que lleven agua y algo de abrigo.", "targetWord": "abrigo", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mochilas",
+  "featured": false,
+  "sentence": "Nuria y Álvaro llenan las [[mochilas]] para subir al lago.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a backpack",
+   "options": ["a backpack", "a suitcase", "a basket", "a pocket"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Nuria y Álvaro llenan las mochilas para subir al lago.", "targetWord": "mochilas", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "paseo",
+  "featured": false,
+  "sentence": "Álvaro dice que la subida es un [[paseo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an easy walk",
+   "options": ["an easy walk", "a hard climb", "a long drive", "a short run"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Álvaro dice que la subida es un paseo.", "targetWord": "paseo", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "valle",
+  "featured": false,
+  "sentence": "Por el [[valle]] de enfrente sube una niebla blanca.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a valley",
+   "options": ["a valley", "a beach", "a forest", "a lake"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Por el valle de enfrente sube una niebla blanca.", "targetWord": "valle", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vaya",
+  "featured": false,
+  "sentence": "Álvaro ve la niebla y dice: [[vaya]], qué pronto ha venido.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "well now",
+   "options": ["well now", "of course", "no way", "at last"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Álvaro ve la niebla y dice: vaya, qué pronto ha venido.", "targetWord": "vaya", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "venido",
+  "featured": false,
+  "sentence": "La niebla ha [[venido]] antes de lo que Álvaro pensaba.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to arrive",
+   "options": ["to arrive", "to clear", "to rise", "to fall"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "La niebla ha venido antes de lo que Álvaro pensaba.", "targetWord": "venido", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuentas",
+  "featured": false,
+  "sentence": "Álvaro le dice que llegue arriba y luego me [[cuentas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to tell somebody",
+   "options": ["to tell somebody", "to pay somebody", "to follow somebody", "to wait for somebody"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Álvaro le dice que llegue arriba y luego me cuentas.", "targetWord": "cuentas", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "húmeda",
+  "featured": false,
+  "sentence": "La tierra está _____ después de la lluvia de anoche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "húmeda",
+   "options": ["húmeda", "seca", "dura", "blanca"],
+   "translation": "The ground is _____ after last night's rain.",
+   "optionTranslations": ["damp", "dry", "hard", "white"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "La tierra está húmeda después de la lluvia de anoche.", "targetWord": "húmeda", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pequeña",
+  "featured": false,
+  "sentence": "Desde arriba la casa se ve muy _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pequeña",
+   "options": ["pequeña", "grande", "alta", "nueva"],
+   "translation": "From up there the house looks very _____.",
+   "optionTranslations": ["small", "big", "tall", "new"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Desde arriba la casa se ve muy pequeña.", "targetWord": "pequeña", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "arriba",
+  "featured": false,
+  "sentence": "Te espero _____, en la última planta del edificio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "arriba",
+   "options": ["arriba", "abajo", "fuera", "cerca"],
+   "translation": "I will wait for you _____, on the top floor of the building.",
+   "optionTranslations": ["upstairs", "downstairs", "outside", "nearby"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "Te espero arriba, en la última planta del edificio.", "targetWord": "arriba", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "espesa",
+  "featured": false,
+  "sentence": "La sopa está muy _____, échale un poco de agua.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "espesa",
+   "options": ["espesa", "clara", "fría", "salada"],
+   "translation": "The soup is very _____, add a little water.",
+   "optionTranslations": ["thick", "thin", "cold", "salty"],
+   "audioClip": { "storySlug": "hace-un-sol-que-pela", "storySource": "user", "sentence": "La sopa está muy espesa, échale un poco de agua.", "targetWord": "espesa", "language": "spanish" }
+  }
+ }
+]

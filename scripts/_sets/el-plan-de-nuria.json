@@ -1,0 +1,621 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "sorpresa",
+    "sentence": "Ella tiene una [[sorpresa]] para su amiga.",
+    "payload": {
+      "answer": "a surprise",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a surprise",
+        "a mistake",
+        "a question",
+        "a promise"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella tiene una sorpresa para su amiga.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "sorpresa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/45731756faf8d5c6.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "querer",
+    "sentence": "Las dos amigas [[quieren]] ver el palacio.",
+    "payload": {
+      "answer": "to want",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to want",
+        "to hate",
+        "to forget",
+        "to lose"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las dos amigas quieren ver el palacio.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "quieren",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f5d418a5d381454.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "invitado",
+    "sentence": "En la fiesta, ella es la [[invitada]] especial.",
+    "payload": {
+      "answer": "a guest",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a guest",
+        "a cook",
+        "a singer",
+        "a driver"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la fiesta, ella es la invitada especial.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "invitada",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa3f78221effd397.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entrada",
+    "sentence": "En el cine venden las [[entradas]] aquí.",
+    "payload": {
+      "answer": "a ticket",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a ticket",
+        "a drink",
+        "a seat",
+        "a map"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En el cine venden las entradas aquí.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "entradas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7dc63b5d030754c9.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "agotadas",
+    "sentence": "No quedan entradas; ya están _____.",
+    "payload": {
+      "answer": "agotadas",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "agotadas",
+        "baratas",
+        "nuevas",
+        "grandes"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "No quedan entradas; ya están agotadas.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "agotadas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/158dd1c130859893.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "There are no tickets left; they are already _____.",
+      "optionTranslations": [
+        "sold out",
+        "cheap",
+        "new",
+        "big"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "triste",
+    "sentence": "Ella está [[triste]] porque llueve.",
+    "payload": {
+      "answer": "sad",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "sad",
+        "angry",
+        "hungry",
+        "scared"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella está triste porque llueve.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "triste",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/07cf230808300f51.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vista",
+    "sentence": "Desde aquí, la [[vista]] es muy bonita.",
+    "payload": {
+      "answer": "a view",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a view",
+        "a wall",
+        "a door",
+        "a floor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Desde aquí, la vista es muy bonita.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "vista",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26ccbfe7091327a5.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brillar",
+    "sentence": "El sol [[brilla]] sobre el palacio.",
+    "payload": {
+      "answer": "to shine",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to shine",
+        "to fall",
+        "to burn",
+        "to break"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El sol brilla sobre el palacio.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "brilla",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7cb8f858b0ff6c52.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "feliz",
+    "sentence": "Al final, ella está muy [[feliz]].",
+    "payload": {
+      "answer": "happy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "happy",
+        "tired",
+        "sick",
+        "busy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Al final, ella está muy feliz.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "feliz",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a577f3b6fd4ccad5.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mejor",
+    "sentence": "Mañana vuelven con un plan [[mejor]].",
+    "payload": {
+      "answer": "better",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "better",
+        "bigger",
+        "older",
+        "longer"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Mañana vuelven con un plan mejor.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "mejor",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/12a39e31e16a6c15.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conocer",
+    "sentence": "Ella [[conoce]] bien la ciudad.",
+    "payload": {
+      "answer": "to know well",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to know well",
+        "to buy",
+        "to break",
+        "to carry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella conoce bien la ciudad.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "conoce",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/41ba9f86baf9145c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuesta",
+    "sentence": "Ellas caminan por una [[cuesta]] muy larga.",
+    "payload": {
+      "answer": "a slope",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a slope",
+        "a river",
+        "a bridge",
+        "a roof"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ellas caminan por una cuesta muy larga.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "cuesta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/52bc1fab5bfb2c8a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "noticia",
+    "sentence": "El hombre dice una mala [[noticia]].",
+    "payload": {
+      "answer": "news",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "news",
+        "a joke",
+        "a song",
+        "a lie"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El hombre dice una mala noticia.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "noticia",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e1ee7ce5da3f2e52.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sacar",
+    "sentence": "Ella [[saca]] una foto del lugar.",
+    "payload": {
+      "answer": "to take (a photo)",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to take (a photo)",
+        "to hide",
+        "to send",
+        "to buy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella saca una foto del lugar.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "saca",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ef5b660dd1d99ed.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lugar",
+    "sentence": "Este [[lugar]] es realmente mágico.",
+    "payload": {
+      "answer": "a place",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a place",
+        "a moment",
+        "a sound",
+        "a smell"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Este lugar es realmente mágico.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "lugar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4918230d11be832b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "temprano",
+    "sentence": "Me levanto muy _____, con el primer sol.",
+    "payload": {
+      "answer": "temprano",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "temprano",
+        "lejos",
+        "despacio",
+        "juntos"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Me levanto muy temprano, con el primer sol.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "temprano",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8fb92a95cf8d4d1.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I get up very _____, with the first sun.",
+      "optionTranslations": [
+        "early",
+        "far",
+        "slowly",
+        "together"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "soleado",
+    "sentence": "No hay nubes hoy; el cielo está _____.",
+    "payload": {
+      "answer": "soleado",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "soleado",
+        "mojado",
+        "cerrado",
+        "roto"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "No hay nubes hoy; el cielo está soleado.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "soleado",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3bffb81c5792910b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "There are no clouds today; the sky is _____.",
+      "optionTranslations": [
+        "sunny",
+        "wet",
+        "closed",
+        "broken"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cansada",
+    "sentence": "Camino todo el día y estoy muy _____.",
+    "payload": {
+      "answer": "cansada",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "cansada",
+        "contenta",
+        "alta",
+        "limpia"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Camino todo el día y estoy muy cansada.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "cansada",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7eafda89a084c54a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I walk all day and I am very _____.",
+      "optionTranslations": [
+        "tired",
+        "happy",
+        "tall",
+        "clean"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dorado",
+    "sentence": "El anillo es de oro y tiene color _____.",
+    "payload": {
+      "answer": "dorado",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "dorado",
+        "verde",
+        "negro",
+        "azul"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El anillo es de oro y tiene color dorado.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "dorado",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9537b1edf67fedb9.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The ring is made of gold and has a _____ color.",
+      "optionTranslations": [
+        "golden",
+        "green",
+        "black",
+        "blue"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "billete",
+    "sentence": "Para subir al tren necesito un _____.",
+    "payload": {
+      "answer": "billete",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "billete",
+        "plato",
+        "gorro",
+        "libro"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Para subir al tren necesito un billete.",
+        "storySlug": "el-plan-de-nuria",
+        "targetWord": "billete",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eef7ed18b73f9436.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "To get on the train I need a _____.",
+      "optionTranslations": [
+        "ticket",
+        "plate",
+        "hat",
+        "book"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "puerta,fila,torre,mirador",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "puerta",
+          "answer": "a door",
+          "options": [
+            "a door",
+            "a queue",
+            "a tower",
+            "a viewpoint"
+          ]
+        },
+        {
+          "word": "fila",
+          "answer": "a queue",
+          "options": [
+            "a door",
+            "a queue",
+            "a tower",
+            "a viewpoint"
+          ]
+        },
+        {
+          "word": "torre",
+          "answer": "a tower",
+          "options": [
+            "a door",
+            "a queue",
+            "a tower",
+            "a viewpoint"
+          ]
+        },
+        {
+          "word": "mirador",
+          "answer": "a viewpoint",
+          "options": [
+            "a door",
+            "a queue",
+            "a tower",
+            "a viewpoint"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "torres",
+    "sentence": "Las [[torres]] del palacio son doradas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "towers",
+      "options": [
+        "towers",
+        "doors",
+        "windows",
+        "walls"
+      ],
+      "audioClip": {
+        "storySlug": "el-plan-de-nuria",
+        "storySource": "user",
+        "sentence": "Las torres del palacio son doradas.",
+        "targetWord": "torres",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ededa641a84a25bd.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,487 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "die Fresse,der Vollpfosten,der Ehrenmann,die Pöbelei",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "die Fresse",
+          "answer": "a gob, a loud mouth",
+          "options": [
+            "a gob, a loud mouth",
+            "a total idiot",
+            "a stand-up guy",
+            "loud trash talk"
+          ]
+        },
+        {
+          "word": "der Vollpfosten",
+          "answer": "a total idiot",
+          "options": [
+            "a gob, a loud mouth",
+            "a total idiot",
+            "a stand-up guy",
+            "loud trash talk"
+          ]
+        },
+        {
+          "word": "der Ehrenmann",
+          "answer": "a stand-up guy",
+          "options": [
+            "a gob, a loud mouth",
+            "a total idiot",
+            "a stand-up guy",
+            "loud trash talk"
+          ]
+        },
+        {
+          "word": "die Pöbelei",
+          "answer": "loud trash talk",
+          "options": [
+            "a gob, a loud mouth",
+            "a total idiot",
+            "a stand-up guy",
+            "loud trash talk"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Berliner Schnauze",
+    "sentence": "Wen die Berliner [[Schnauze]] in Ruhe lässt, den lässt sie draußen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "blunt Berlin banter",
+      "options": [
+        "blunt Berlin banter",
+        "polite small talk",
+        "official paperwork",
+        "a quiet corner"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "Wen die Berliner Schnauze in Ruhe lässt, den lässt sie draußen.",
+        "targetWord": "Schnauze",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5845de34214974c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "anranzen",
+    "sentence": "[[ranzt]] Micha den Timo an.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to snap at",
+      "options": [
+        "to snap at",
+        "to wave at",
+        "to smile at",
+        "to point at"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "ranzt Micha den Timo an.",
+        "targetWord": "ranzt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc8824c5e39fadbb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pöbeln",
+    "sentence": "Keiner [[pöbelt]], keiner zieht ihn auf.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to mouth off",
+      "options": [
+        "to mouth off",
+        "to chill out",
+        "to move in",
+        "to give up"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "Keiner pöbelt, keiner zieht ihn auf.",
+        "targetWord": "pöbelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf86f95a2eeaef8a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sein Fett wegbekommen",
+    "sentence": "Auch Nadia bekommt ihr [[Fett]] weg.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get roasted",
+      "options": [
+        "to get roasted",
+        "to get promoted",
+        "to get paid",
+        "to get lost"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "Auch Nadia bekommt ihr Fett weg.",
+        "targetWord": "Fett",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c762faabaeb2628e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "assi",
+    "sentence": "Die alte Couch auf der Straße sieht echt _____ aus.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "assi",
+      "options": [
+        "assi",
+        "sauber",
+        "teuer",
+        "neu"
+      ],
+      "translation": "The old couch on the street really looks _____.",
+      "optionTranslations": [
+        "trashy",
+        "clean",
+        "expensive",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "Die alte Couch auf der Straße sieht echt assi aus.",
+        "targetWord": "assi",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6590e0caf4892f30.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "Späti",
+    "sentence": "Kurz vor Mitternacht holen wir noch Bier vom _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Späti",
+      "options": [
+        "Späti",
+        "Bäcker",
+        "Friseur",
+        "Zahnarzt"
+      ],
+      "translation": "Just before midnight we grab beer from the _____.",
+      "optionTranslations": [
+        "late-night shop",
+        "baker",
+        "hairdresser",
+        "dentist"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "Kurz vor Mitternacht holen wir noch Bier vom Späti.",
+        "targetWord": "Späti",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bdc24076f36a66fe.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "Molle",
+    "sentence": "Am Späti kaufen wir uns jeder eine kalte _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Molle",
+      "options": [
+        "Molle",
+        "Pizza",
+        "Zeitung",
+        "Jacke"
+      ],
+      "translation": "At the Späti we each buy a cold _____.",
+      "optionTranslations": [
+        "a beer",
+        "a pizza",
+        "a newspaper",
+        "a jacket"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "Am Späti kaufen wir uns jeder eine kalte Molle.",
+        "targetWord": "Molle",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b2eefcb6cd7a6622.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abhängen",
+    "sentence": "wo seine Leute jeden Abend [[abhängen]]",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hang out",
+      "options": [
+        "to hang out",
+        "to show up",
+        "to move away",
+        "to clean up"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "wo seine Leute jeden Abend abhängen",
+        "targetWord": "abhängen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab579d7e59341ea3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sich schlapp lachen",
+    "sentence": "und alle lachen sich [[schlapp]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to crack up laughing",
+      "options": [
+        "to crack up laughing",
+        "to storm off angrily",
+        "to calm right down",
+        "to speak up loudly"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "und alle lachen sich schlapp.",
+        "targetWord": "schlapp",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1fb3f421bbf0ae83.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "schlagfertig",
+    "sentence": "Jule, die noch [[schlagfertiger]] ist.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "quick-witted",
+      "options": [
+        "quick-witted",
+        "short-tempered",
+        "clumsy",
+        "shy"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "Jule, die noch schlagfertiger ist.",
+        "targetWord": "schlagfertiger",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8a920d129c819147.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "keinen Kopf machen",
+    "sentence": "sie solle sich keinen [[Kopf]] machen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to not worry",
+      "options": [
+        "to not worry",
+        "to not care",
+        "to not move",
+        "to not listen"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "sie solle sich keinen Kopf machen.",
+        "targetWord": "Kopf",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c64d3bdc2e614717.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "losprusten",
+    "sentence": "und Micha [[prustet]] los.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to burst out laughing",
+      "options": [
+        "to burst out laughing",
+        "to calm down",
+        "to speak up",
+        "to walk off"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "und Micha prustet los.",
+        "targetWord": "prustet",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/04a7588856790f20.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "ranzig",
+    "sentence": "Untereinander sind die drei noch viel [[ranziger]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "crude and nasty",
+      "options": [
+        "crude and nasty",
+        "posh and refined",
+        "calm and gentle",
+        "neat and tidy"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "Untereinander sind die drei noch viel ranziger.",
+        "targetWord": "ranziger",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4d742dcb9c61b6e8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "verpeilt",
+    "sentence": "Micha nennt Timo einen [[verpeilten]] Vollpfosten.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "scatterbrained",
+      "options": [
+        "scatterbrained",
+        "big-headed",
+        "bad-tempered",
+        "tight-fisted"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "Micha nennt Timo einen verpeilten Vollpfosten.",
+        "targetWord": "verpeilten",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0fe592543a14c483.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "Diggi",
+    "sentence": "Willkommen im Kiez, [[Diggi]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mate, bro",
+      "options": [
+        "mate, bro",
+        "boss",
+        "stranger",
+        "neighbour"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "Willkommen im Kiez, Diggi.",
+        "targetWord": "Diggi",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6a96b8c698c2059b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "Kiez",
+    "sentence": "In meinem _____ kenne ich jeden Laden und jede Ecke.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Kiez",
+      "options": [
+        "Kiez",
+        "Garten",
+        "Wagen",
+        "Bahnhof"
+      ],
+      "translation": "In my _____ I know every shop and every corner.",
+      "optionTranslations": [
+        "neighbourhood",
+        "garden",
+        "car",
+        "train station"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "In meinem Kiez kenne ich jeden Laden und jede Ecke.",
+        "targetWord": "Kiez",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/008433f33d44d963.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "Ruhe",
+    "sentence": "Lass mich endlich in _____, ich will jetzt schlafen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Ruhe",
+      "options": [
+        "Ruhe",
+        "Eile",
+        "Gefahr",
+        "Ordnung"
+      ],
+      "translation": "Leave me in _____ at last, I want to sleep now.",
+      "optionTranslations": [
+        "peace",
+        "a hurry",
+        "danger",
+        "order"
+      ],
+      "audioClip": {
+        "storySlug": "nadia-kriegt-eine-schnauze",
+        "storySource": "user",
+        "sentence": "Lass mich endlich in Ruhe, ich will jetzt schlafen.",
+        "targetWord": "Ruhe",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4c28dcda28c7b8c6.mp3"
+      }
+    }
+  }
+]

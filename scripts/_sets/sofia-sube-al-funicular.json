@@ -1,0 +1,589 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "llegar",
+    "sentence": "Ella [[llega]] a la ciudad en autobús.",
+    "payload": {
+      "answer": "to arrive",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to arrive",
+        "to leave",
+        "to wait",
+        "to return"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella llega a la ciudad en autobús.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "llega",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2ab23f2d057547d1.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "viaje",
+    "sentence": "Para ir a otro país hago un _____.",
+    "payload": {
+      "answer": "viaje",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "viaje",
+        "plato",
+        "libro",
+        "juego"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Para ir a otro país hago un viaje.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "viaje",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/508b9fc39184d1fd.mp3"
+      },
+      "translation": "To go to another country I take a _____.",
+      "optionTranslations": [
+        "a trip",
+        "a plate",
+        "a book",
+        "a game"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "funicular",
+    "sentence": "El [[funicular]] sube por la montaña.",
+    "payload": {
+      "answer": "a funicular",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a funicular",
+        "a taxi",
+        "a truck",
+        "a subway"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El funicular sube por la montaña.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "funicular",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d7a6d8699c699f8.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saludar",
+    "sentence": "Él la [[saluda]] con una gran sonrisa.",
+    "payload": {
+      "answer": "to greet",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to greet",
+        "to ignore",
+        "to push",
+        "to follow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él la saluda con una gran sonrisa.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "saluda",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9bf7e40cd6e74050.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "sonrisa",
+    "sentence": "Está muy feliz y tiene una gran _____.",
+    "payload": {
+      "answer": "sonrisa",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "sonrisa",
+        "pregunta",
+        "palabra",
+        "tarea"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Está muy feliz y tiene una gran sonrisa.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "sonrisa",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37c28ec052f5030e.mp3"
+      },
+      "translation": "She is very happy and has a big _____.",
+      "optionTranslations": [
+        "smile",
+        "question",
+        "word",
+        "task"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "miedo",
+    "sentence": "Cuando hay una araña, siento mucho _____.",
+    "payload": {
+      "answer": "miedo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "miedo",
+        "sueño",
+        "hambre",
+        "calor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cuando hay una araña, siento mucho miedo.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "miedo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2cb9000ebc0a55bf.mp3"
+      },
+      "translation": "When there is a spider, I feel a lot of _____.",
+      "optionTranslations": [
+        "fear",
+        "sleepiness",
+        "hunger",
+        "heat"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seguro",
+    "sentence": "El funicular es muy [[seguro]].",
+    "payload": {
+      "answer": "safe",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "safe",
+        "slow",
+        "old",
+        "empty"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El funicular es muy seguro.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "seguro",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32f44ac5ca27b213.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bonito",
+    "sentence": "La ciudad es muy [[bonita]].",
+    "payload": {
+      "answer": "pretty",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "pretty",
+        "ugly",
+        "dirty",
+        "dark"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La ciudad es muy bonita.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "bonita",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0551eb45e6e1a26f.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirador",
+    "sentence": "Arriba está el [[mirador]] de la ciudad.",
+    "payload": {
+      "answer": "a lookout",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a lookout",
+        "a kitchen",
+        "a garden",
+        "a station"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Arriba está el mirador de la ciudad.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "mirador",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4799c7315addd380.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "color",
+    "sentence": "El rojo es un _____ muy bonito.",
+    "payload": {
+      "answer": "color",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "color",
+        "sonido",
+        "olor",
+        "número"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El rojo es un color muy bonito.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "color",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/694e4e651c9127d2.mp3"
+      },
+      "translation": "Red is a very pretty _____.",
+      "optionTranslations": [
+        "color",
+        "sound",
+        "smell",
+        "number"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trabajar",
+    "sentence": "Él [[trabaja]] en el funicular de la ciudad.",
+    "payload": {
+      "answer": "to work",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to work",
+        "to rest",
+        "to play",
+        "to travel"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él trabaja en el funicular de la ciudad.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "trabaja",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2490628a9f77288e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "respirar",
+    "sentence": "Ella [[respira]] despacio y sonríe.",
+    "payload": {
+      "answer": "to breathe",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to breathe",
+        "to shout",
+        "to jump",
+        "to sing"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella respira despacio y sonríe.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "respira",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3800c2f3d999491a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Sube muy [[despacio]] por la montaña.",
+    "payload": {
+      "answer": "slowly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "slowly",
+        "loudly",
+        "badly",
+        "early"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Sube muy despacio por la montaña.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "despacio",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d3c8429b16e79fbc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poco a poco",
+    "sentence": "[[Poco a poco]], el miedo se va.",
+    "payload": {
+      "answer": "little by little",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "little by little",
+        "all at once",
+        "again and again",
+        "here and there"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Poco a poco, el miedo se va.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "Poco a poco",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cf9adbd8182bf73b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "callejón",
+    "sentence": "Los [[callejones]] bajan como ríos de color.",
+    "payload": {
+      "answer": "an alley",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "an alley",
+        "a tower",
+        "a bridge",
+        "a market"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los callejones bajan como ríos de color.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "callejones",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ad2fad67f83bcb8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "río",
+    "sentence": "Hay [[ríos]] de color en la ciudad.",
+    "payload": {
+      "answer": "a river",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a river",
+        "a mountain",
+        "a cloud",
+        "a stone"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hay ríos de color en la ciudad.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "ríos",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae5257e87cbd4728.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorpresa",
+    "sentence": "Ella abre los ojos con [[sorpresa]].",
+    "payload": {
+      "answer": "surprise",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "surprise",
+        "sadness",
+        "anger",
+        "boredom"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella abre los ojos con sorpresa.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "sorpresa",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/026d36c3301da316.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "señalar",
+    "sentence": "Él [[señala]] una iglesia amarilla muy alta.",
+    "payload": {
+      "answer": "to point at",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to point at",
+        "to hide",
+        "to paint",
+        "to close"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él señala una iglesia amarilla muy alta.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "señala",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f2ffed53a6f18a25.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casa",
+    "sentence": "Las [[casas]] tienen muchos colores.",
+    "payload": {
+      "answer": "a house",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a house",
+        "a shop",
+        "a park",
+        "a tree"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las casas tienen muchos colores.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "casas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/27de331eb64eede6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "viento",
+    "sentence": "Las hojas vuelan con el _____ fuerte.",
+    "payload": {
+      "answer": "viento",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "viento",
+        "agua",
+        "fuego",
+        "hielo"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las hojas vuelan con el viento fuerte.",
+        "storySlug": "sofia-sube-al-funicular",
+        "targetWord": "viento",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0abf37ef30c64d61.mp3"
+      },
+      "translation": "The leaves fly with the strong _____.",
+      "optionTranslations": [
+        "wind",
+        "water",
+        "fire",
+        "ice"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "autobús,montaña,ventana,iglesia",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "autobús",
+          "answer": "a bus",
+          "options": [
+            "a bus",
+            "a mountain",
+            "a window",
+            "a church"
+          ]
+        },
+        {
+          "word": "montaña",
+          "answer": "a mountain",
+          "options": [
+            "a bus",
+            "a mountain",
+            "a window",
+            "a church"
+          ]
+        },
+        {
+          "word": "ventana",
+          "answer": "a window",
+          "options": [
+            "a bus",
+            "a mountain",
+            "a window",
+            "a church"
+          ]
+        },
+        {
+          "word": "iglesia",
+          "answer": "a church",
+          "options": [
+            "a bus",
+            "a mountain",
+            "a window",
+            "a church"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

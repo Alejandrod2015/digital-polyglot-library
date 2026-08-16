@@ -1,0 +1,623 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Menschen,Freunde,Stadt,Wort",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Menschen",
+     "answer": "people",
+     "options": [
+      "people",
+      "friends",
+      "city",
+      "word"
+     ]
+    },
+    {
+     "word": "Freunde",
+     "answer": "friends",
+     "options": [
+      "people",
+      "friends",
+      "city",
+      "word"
+     ]
+    },
+    {
+     "word": "Stadt",
+     "answer": "city",
+     "options": [
+      "people",
+      "friends",
+      "city",
+      "word"
+     ]
+    },
+    {
+     "word": "Wort",
+     "answer": "word",
+     "options": [
+      "people",
+      "friends",
+      "city",
+      "word"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "geht",
+  "sentence": "Finn _____ in den Park.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "geht",
+   "options": [
+    "geht",
+    "tanzt",
+    "lacht",
+    "winkt"
+   ],
+   "translation": "Finn _____ to the park.",
+   "optionTranslations": [
+    "goes",
+    "dances",
+    "laughs",
+    "waves"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Finn geht in den Park.",
+    "targetWord": "geht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "voll",
+  "sentence": "Der Park ist _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "voll",
+   "options": [
+    "voll",
+    "warm",
+    "laut",
+    "schön"
+   ],
+   "translation": "The park is _____.",
+   "optionTranslations": [
+    "full",
+    "warm",
+    "loud",
+    "beautiful"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Der Park ist voll.",
+    "targetWord": "voll",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "tanzen",
+  "sentence": "Viele Menschen _____ und lachen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tanzen",
+   "options": [
+    "tanzen",
+    "gehen",
+    "fragen",
+    "spielen"
+   ],
+   "translation": "Many people _____ and laugh.",
+   "optionTranslations": [
+    "dance",
+    "go",
+    "ask",
+    "play"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Viele Menschen tanzen und lachen.",
+    "targetWord": "tanzen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "lachen",
+  "sentence": "Viele Menschen tanzen und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lachen",
+   "options": [
+    "lachen",
+    "gehen",
+    "winken",
+    "spielen"
+   ],
+   "translation": "Many people dance and _____.",
+   "optionTranslations": [
+    "laugh",
+    "go",
+    "wave",
+    "play"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Viele Menschen tanzen und lachen.",
+    "targetWord": "lachen",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "warm",
+  "sentence": "Die Luft ist _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "warm",
+   "options": [
+    "warm",
+    "voll",
+    "laut",
+    "schwer"
+   ],
+   "translation": "The air is _____.",
+   "optionTranslations": [
+    "warm",
+    "full",
+    "loud",
+    "hard"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Die Luft ist warm.",
+    "targetWord": "warm",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "schön",
+  "sentence": "Die Lichter sind bunt und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schön",
+   "options": [
+    "schön",
+    "warm",
+    "voll",
+    "laut"
+   ],
+   "translation": "The lights are colorful and _____.",
+   "optionTranslations": [
+    "beautiful",
+    "warm",
+    "full",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Die Lichter sind bunt und schön.",
+    "targetWord": "schön",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "winkt",
+  "sentence": "Aylin _____ und ruft ihn.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "winkt",
+   "options": [
+    "winkt",
+    "geht",
+    "lacht",
+    "tanzt"
+   ],
+   "translation": "Aylin _____ and calls him.",
+   "optionTranslations": [
+    "waves",
+    "goes",
+    "laughs",
+    "dances"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Aylin winkt und ruft ihn.",
+    "targetWord": "winkt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "fühlt",
+  "sentence": "Finn _____ sich gleich besser.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fühlt",
+   "options": [
+    "fühlt",
+    "kennt",
+    "fragt",
+    "geht"
+   ],
+   "translation": "Finn _____ better right away.",
+   "optionTranslations": [
+    "feels",
+    "knows",
+    "asks",
+    "goes"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Finn fühlt sich gleich besser.",
+    "targetWord": "fühlt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "fragt",
+  "sentence": "Ein Freund _____ etwas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fragt",
+   "options": [
+    "fragt",
+    "erzählt",
+    "kennt",
+    "lacht"
+   ],
+   "translation": "A friend _____ something.",
+   "optionTranslations": [
+    "asks",
+    "tells",
+    "knows",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Ein Freund fragt etwas.",
+    "targetWord": "fragt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "erzählt",
+  "sentence": "Finn _____ von seiner Stadt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "erzählt",
+   "options": [
+    "erzählt",
+    "fragt",
+    "kennt",
+    "geht"
+   ],
+   "translation": "Finn _____ about his city.",
+   "optionTranslations": [
+    "tells",
+    "asks",
+    "knows",
+    "goes"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Finn erzählt von seiner Stadt.",
+    "targetWord": "erzählt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "spielt",
+  "sentence": "Die Band _____ laut.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "spielt",
+   "options": [
+    "spielt",
+    "tanzt",
+    "lacht",
+    "geht"
+   ],
+   "translation": "The band _____ loudly.",
+   "optionTranslations": [
+    "plays",
+    "dances",
+    "laughs",
+    "goes"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Die Band spielt laut.",
+    "targetWord": "spielt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "versteht",
+  "sentence": "Finn _____ nicht jedes Wort.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "versteht",
+   "options": [
+    "versteht",
+    "kennt",
+    "fragt",
+    "erzählt"
+   ],
+   "translation": "Finn does not _____ every word.",
+   "optionTranslations": [
+    "understand",
+    "know",
+    "ask",
+    "tell"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Finn versteht nicht jedes Wort.",
+    "targetWord": "versteht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "kennt",
+  "sentence": "Finn [[kennt]] nur Aylin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "knows",
+   "options": [
+    "knows",
+    "sees",
+    "asks",
+    "meets"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Finn kennt nur Aylin.",
+    "targetWord": "kennt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "fremd",
+  "sentence": "Er fühlt sich ein bisschen [[fremd]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "like a stranger",
+   "options": [
+    "like a stranger",
+    "at home",
+    "very happy",
+    "very calm"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Er fühlt sich ein bisschen fremd.",
+    "targetWord": "fremd",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "nett",
+  "sentence": "Alle sind [[nett]] zu ihm.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nice",
+   "options": [
+    "nice",
+    "mean",
+    "cold",
+    "rude"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Alle sind nett zu ihm.",
+    "targetWord": "nett",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "schwer",
+  "sentence": "Es ist gar nicht [[schwer]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "difficult",
+   "options": [
+    "difficult",
+    "easy",
+    "funny",
+    "boring"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Es ist gar nicht schwer.",
+    "targetWord": "schwer",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "laut",
+  "sentence": "Die Musik ist [[laut]] und gut.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "loud",
+   "options": [
+    "loud",
+    "soft",
+    "slow",
+    "bad"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Die Musik ist laut und gut.",
+    "targetWord": "laut",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "egal",
+  "sentence": "Aber das ist [[egal]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it doesn't matter",
+   "options": [
+    "it doesn't matter",
+    "it is important",
+    "it is sad",
+    "it is hard"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Aber das ist egal.",
+    "targetWord": "egal",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "mehr",
+  "sentence": "Erst ein bisschen, dann [[mehr]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "more",
+   "options": [
+    "more",
+    "less",
+    "nothing",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Erst ein bisschen, dann mehr.",
+    "targetWord": "mehr",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "listen_choose",
+  "featured": true,
+  "word": "schüchtern",
+  "sentence": "",
+  "payload": {
+   "prompt": "Listen and choose the word you hear.",
+   "answer": "schüchtern",
+   "options": [
+    "schüchtern",
+    "laut",
+    "warm",
+    "voll"
+   ],
+   "optionTranslations": [
+    "shy",
+    "loud",
+    "warm",
+    "full"
+   ],
+   "audioClip": {
+    "storySlug": "das-konzert-im-park",
+    "storySource": "user",
+    "sentence": "Du bist gar nicht schüchtern!",
+    "targetWord": "schüchtern",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ }
+]

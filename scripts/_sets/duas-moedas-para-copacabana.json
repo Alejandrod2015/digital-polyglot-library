@@ -1,0 +1,562 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "moeda,bolsa,sacola,prédio",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "moeda",
+          "answer": "a coin",
+          "options": [
+            "a coin",
+            "a handbag",
+            "a shopping bag",
+            "a building"
+          ]
+        },
+        {
+          "word": "bolsa",
+          "answer": "a handbag",
+          "options": [
+            "a coin",
+            "a handbag",
+            "a shopping bag",
+            "a building"
+          ]
+        },
+        {
+          "word": "sacola",
+          "answer": "a shopping bag",
+          "options": [
+            "a coin",
+            "a handbag",
+            "a shopping bag",
+            "a building"
+          ]
+        },
+        {
+          "word": "prédio",
+          "answer": "a building",
+          "options": [
+            "a coin",
+            "a handbag",
+            "a shopping bag",
+            "a building"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "descer",
+    "sentence": "Ela [[desce]] do ônibus do aeroporto com a mala pesada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get off",
+      "options": [
+        "to get off",
+        "to get on",
+        "to drive",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "Ela desce do ônibus do aeroporto com a mala pesada.",
+        "targetWord": "desce",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4cac9a82a2ba2832.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cheia",
+    "sentence": "De tarde a rua fica _____ de carros.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cheia",
+      "options": [
+        "cheia",
+        "vazia",
+        "limpa",
+        "larga"
+      ],
+      "translation": "In the afternoon the street gets _____ of cars.",
+      "optionTranslations": [
+        "full",
+        "empty",
+        "clean",
+        "wide"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "De tarde a rua fica cheia de carros.",
+        "targetWord": "cheia",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29c856d92aeb7981.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pegar",
+    "sentence": "O papel não diz qual ônibus ela precisa [[pegar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to catch",
+      "options": [
+        "to catch",
+        "to sell",
+        "to open",
+        "to lose"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "O papel não diz qual ônibus ela precisa pegar.",
+        "targetWord": "pegar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7dfe543c4139bc23.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "devagar",
+    "sentence": "Ela pergunta bem [[devagar]], para que entendam.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slowly",
+      "options": [
+        "slowly",
+        "loudly",
+        "angrily",
+        "quickly"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "Ela pergunta bem devagar, para que entendam.",
+        "targetWord": "devagar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dec5eb23346a02fa.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cobrador",
+    "sentence": "O [[cobrador]] pede o dinheiro da passagem.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fare collector",
+      "options": [
+        "a fare collector",
+        "a doctor",
+        "a baker",
+        "a cleaner"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "O cobrador pede o dinheiro da passagem.",
+        "targetWord": "cobrador",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa13351662ded534.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "passagem",
+    "sentence": "O cobrador pede o dinheiro da [[passagem]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the fare",
+      "options": [
+        "the fare",
+        "the change",
+        "the ticket office",
+        "the seat"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "O cobrador pede o dinheiro da passagem.",
+        "targetWord": "passagem",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa13351662ded534.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entregar",
+    "sentence": "Ela [[entrega]] as duas moedas com vergonha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hand over",
+      "options": [
+        "to hand over",
+        "to keep",
+        "to drop",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "Ela entrega as duas moedas com vergonha.",
+        "targetWord": "entrega",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/276c18e30bde63ea.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vergonha",
+    "sentence": "Ela entrega as duas moedas com [[vergonha]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "embarrassment",
+      "options": [
+        "embarrassment",
+        "anger",
+        "hunger",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "Ela entrega as duas moedas com vergonha.",
+        "targetWord": "vergonha",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/276c18e30bde63ea.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "leve",
+    "sentence": "A mala está quase vazia, por isso ela é bem _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "leve",
+      "options": [
+        "leve",
+        "pesada",
+        "suja",
+        "larga"
+      ],
+      "translation": "The suitcase is almost empty, so it is very _____.",
+      "optionTranslations": [
+        "light",
+        "heavy",
+        "dirty",
+        "wide"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "A mala está quase vazia, por isso ela é bem leve.",
+        "targetWord": "leve",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20b51f34ec972516.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bairro",
+    "sentence": "A irmã escreve só o nome de um [[bairro]] do Rio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a neighbourhood",
+      "options": [
+        "a neighbourhood",
+        "a country",
+        "a river",
+        "a shop"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "A irmã escreve só o nome de um bairro do Rio.",
+        "targetWord": "bairro",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4941c648a03f4fb0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rua",
+    "sentence": "Ela olha a [[rua]] cheia de carros.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a street",
+      "options": [
+        "a street",
+        "a room",
+        "a field",
+        "a beach"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "Ela olha a rua cheia de carros.",
+        "targetWord": "rua",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9750ee7d00537549.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "irmã",
+    "sentence": "A [[irmã]] dela escreve o nome no papel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sister",
+      "options": [
+        "a sister",
+        "a mother",
+        "a friend",
+        "a teacher"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "A irmã dela escreve o nome no papel.",
+        "targetWord": "irmã",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4de5048a1d6d08d5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "senhora",
+    "sentence": "Uma [[senhora]] espera no ponto com uma sacola.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an older lady",
+      "options": [
+        "an older lady",
+        "a young girl",
+        "a driver",
+        "a waiter"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "Uma senhora espera no ponto com uma sacola.",
+        "targetWord": "senhora",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e3c97f217ddeb7fb.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ponto",
+    "sentence": "Uma senhora espera no [[ponto]] de ônibus.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bus stop",
+      "options": [
+        "a bus stop",
+        "a market",
+        "a bank",
+        "a park"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "Uma senhora espera no ponto de ônibus.",
+        "targetWord": "ponto",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d2a79d47124d2d2d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colo",
+    "sentence": "Ela tem uma sacola de frutas no [[colo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lap",
+      "options": [
+        "a lap",
+        "a hand",
+        "a head",
+        "a back"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "Ela tem uma sacola de frutas no colo.",
+        "targetWord": "colo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ca27c0278ac91d2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mostrar",
+    "sentence": "Ela [[mostra]] o papel e pergunta qual é o ônibus certo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to show",
+      "options": [
+        "to show",
+        "to hide",
+        "to tear",
+        "to buy"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "Ela mostra o papel e pergunta qual é o ônibus certo.",
+        "targetWord": "mostra",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/589a774db05f7ba5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorrir",
+    "sentence": "A senhora [[sorri]] e aponta para um ônibus azul.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smile",
+      "options": [
+        "to smile",
+        "to shout",
+        "to cry",
+        "to sleep"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "A senhora sorri e aponta para um ônibus azul.",
+        "targetWord": "sorri",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3688aff82a11e0de.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apontar",
+    "sentence": "A senhora [[aponta]] para um ônibus azul.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to point",
+      "options": [
+        "to point",
+        "to push",
+        "to count",
+        "to carry"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "A senhora aponta para um ônibus azul.",
+        "targetWord": "aponta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae33e3c317796581.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "largo",
+    "sentence": "O ônibus passa por uma avenida [[larga]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wide",
+      "options": [
+        "wide",
+        "narrow",
+        "short",
+        "dark"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "O ônibus passa por uma avenida larga.",
+        "targetWord": "larga",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5967973993462200.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tocar",
+    "sentence": "A senhora [[toca]] no braço dela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to touch",
+      "options": [
+        "to touch",
+        "to hit",
+        "to pull",
+        "to wash"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "A senhora toca no braço dela.",
+        "targetWord": "toca",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/435b0bf9cc60548f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calçada",
+    "sentence": "Ela desce e fica parada na [[calçada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the pavement",
+      "options": [
+        "the pavement",
+        "the road",
+        "the roof",
+        "the bridge"
+      ],
+      "audioClip": {
+        "storySlug": "duas-moedas-para-copacabana",
+        "storySource": "user",
+        "sentence": "Ela desce e fica parada na calçada.",
+        "targetWord": "calçada",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/346f8d455a40982c.mp3"
+      }
+    },
+    "featured": false
+  }
+]

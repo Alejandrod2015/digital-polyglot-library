@@ -1,0 +1,551 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Idee,Salat,Suppe,Küche",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Idee",
+     "answer": "idea",
+     "options": [
+      "idea",
+      "salad",
+      "soup",
+      "kitchen"
+     ]
+    },
+    {
+     "word": "Salat",
+     "answer": "salad",
+     "options": [
+      "idea",
+      "salad",
+      "soup",
+      "kitchen"
+     ]
+    },
+    {
+     "word": "Suppe",
+     "answer": "soup",
+     "options": [
+      "idea",
+      "salad",
+      "soup",
+      "kitchen"
+     ]
+    },
+    {
+     "word": "Küche",
+     "answer": "kitchen",
+     "options": [
+      "idea",
+      "salad",
+      "soup",
+      "kitchen"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "Nachbarn",
+  "sentence": "Für meinen [[Nachbarn]], sagt Lena.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "neighbor",
+   "options": [
+    "neighbor",
+    "brother",
+    "guest",
+    "friend"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Für meinen Nachbarn, sagt Lena.",
+    "targetWord": "Nachbarn",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "Abend",
+  "sentence": "Tobias kommt am [[Abend]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "evening",
+   "options": [
+    "evening",
+    "morning",
+    "market",
+    "weekend"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Tobias kommt am Abend.",
+    "targetWord": "Abend",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "überrascht",
+  "sentence": "Er ist [[überrascht]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "surprised",
+   "options": [
+    "surprised",
+    "tired",
+    "angry",
+    "hungry"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Er ist überrascht.",
+    "targetWord": "überrascht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "Danke",
+  "sentence": "[[Danke]] für deine Hilfe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thank you",
+   "options": [
+    "thank you",
+    "sorry",
+    "please",
+    "hello"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Danke für deine Hilfe.",
+    "targetWord": "Danke",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "Draußen",
+  "sentence": "[[Draußen]] ist es dunkel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "outside",
+   "options": [
+    "outside",
+    "inside",
+    "upstairs",
+    "nearby"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Draußen ist es dunkel.",
+    "targetWord": "Draußen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "reden",
+  "sentence": "Die zwei Nachbarn [[reden]] lange.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "talk",
+   "options": [
+    "talk",
+    "laugh",
+    "cook",
+    "walk"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Die zwei Nachbarn reden lange.",
+    "targetWord": "reden",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "wunderbar",
+  "sentence": "Sie schmeckt _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "wunderbar",
+   "options": [
+    "wunderbar",
+    "nett",
+    "dunkel",
+    "glücklich"
+   ],
+   "translation": "It tastes _____.",
+   "optionTranslations": [
+    "wonderful",
+    "nice",
+    "dark",
+    "happy"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Sie schmeckt wunderbar.",
+    "targetWord": "wunderbar",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "glücklich",
+  "sentence": "Lena ist sehr _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "glücklich",
+   "options": [
+    "glücklich",
+    "nett",
+    "überrascht",
+    "wunderbar"
+   ],
+   "translation": "Lena is very _____.",
+   "optionTranslations": [
+    "happy",
+    "nice",
+    "surprised",
+    "wonderful"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Lena ist sehr glücklich.",
+    "targetWord": "glücklich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "nett",
+  "sentence": "Er ist sehr _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nett",
+   "options": [
+    "nett",
+    "glücklich",
+    "dunkel",
+    "wunderbar"
+   ],
+   "translation": "He is very _____.",
+   "optionTranslations": [
+    "nice",
+    "happy",
+    "dark",
+    "wonderful"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Er ist sehr nett.",
+    "targetWord": "nett",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "immer",
+  "sentence": "Er hilft ihr _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "immer",
+   "options": [
+    "immer",
+    "jetzt",
+    "zusammen",
+    "endlich"
+   ],
+   "translation": "He _____ helps her.",
+   "optionTranslations": [
+    "always",
+    "now",
+    "together",
+    "finally"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Er hilft ihr immer.",
+    "targetWord": "immer",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "kocht",
+  "sentence": "Sie _____ eine einfache Suppe.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kocht",
+   "options": [
+    "kocht",
+    "hilft",
+    "fragt",
+    "redet"
+   ],
+   "translation": "She _____ a simple soup.",
+   "optionTranslations": [
+    "cooks",
+    "helps",
+    "asks",
+    "talks"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Sie kocht eine einfache Suppe.",
+    "targetWord": "kocht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "dunkel",
+  "sentence": "Draußen ist es _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dunkel",
+   "options": [
+    "dunkel",
+    "nett",
+    "glücklich",
+    "wunderbar"
+   ],
+   "translation": "Outside it is _____.",
+   "optionTranslations": [
+    "dark",
+    "nice",
+    "happy",
+    "wonderful"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Draußen ist es dunkel.",
+    "targetWord": "dunkel",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "jetzt",
+  "sentence": "Ich kenne _____ den Markt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "jetzt",
+   "options": [
+    "jetzt",
+    "immer",
+    "endlich",
+    "zusammen"
+   ],
+   "translation": "I know the market _____.",
+   "optionTranslations": [
+    "now",
+    "always",
+    "finally",
+    "together"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Ich kenne jetzt den Markt.",
+    "targetWord": "jetzt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "zusammen",
+  "sentence": "Sie essen _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zusammen",
+   "options": [
+    "zusammen",
+    "jetzt",
+    "immer",
+    "draußen"
+   ],
+   "translation": "They eat _____.",
+   "optionTranslations": [
+    "together",
+    "now",
+    "always",
+    "outside"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Sie essen zusammen.",
+    "targetWord": "zusammen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "endlich",
+  "sentence": "Lena isst _____ ihre Weißwurst.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "endlich",
+   "options": [
+    "endlich",
+    "immer",
+    "jetzt",
+    "zusammen"
+   ],
+   "translation": "Lena _____ eats her Weißwurst.",
+   "optionTranslations": [
+    "finally",
+    "always",
+    "now",
+    "together"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Lena isst endlich ihre Weißwurst.",
+    "targetWord": "endlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "hilft",
+  "sentence": "Frau Huber _____ ihr auch.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hilft",
+   "options": [
+    "hilft",
+    "kocht",
+    "fragt",
+    "redet"
+   ],
+   "translation": "Ms. Huber _____ her too.",
+   "optionTranslations": [
+    "helps",
+    "cooks",
+    "asks",
+    "talks"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Frau Huber hilft ihr auch.",
+    "targetWord": "hilft",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "fragt",
+  "sentence": "Für wen kochst du? _____ sie.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fragt",
+   "options": [
+    "fragt",
+    "kocht",
+    "hilft",
+    "redet"
+   ],
+   "translation": "For whom do you cook? she _____.",
+   "optionTranslations": [
+    "asks",
+    "cooks",
+    "helps",
+    "talks"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Für wen kochst du? fragt sie.",
+    "targetWord": "fragt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "essen",
+  "sentence": "Sie _____ zusammen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "essen",
+   "options": [
+    "essen",
+    "reden",
+    "kochen",
+    "lachen"
+   ],
+   "translation": "They _____ together.",
+   "optionTranslations": [
+    "eat",
+    "talk",
+    "cook",
+    "laugh"
+   ],
+   "audioClip": {
+    "storySlug": "lena-kocht-fur-tobias",
+    "storySource": "user",
+    "sentence": "Sie essen zusammen.",
+    "targetWord": "essen",
+    "language": "german"
+   }
+  }
+ }
+]

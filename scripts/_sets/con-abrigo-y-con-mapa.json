@@ -1,0 +1,244 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "linterna,bota,mapa,paso",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    { "word": "linterna", "answer": "a torch", "options": ["a torch", "a boot", "a map", "a step"] },
+    { "word": "bota", "answer": "a boot", "options": ["a torch", "a boot", "a map", "a step"] },
+    { "word": "mapa", "answer": "a map", "options": ["a torch", "a boot", "a map", "a step"] },
+    { "word": "paso", "answer": "a step", "options": ["a torch", "a boot", "a map", "a step"] }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "queso de Cabrales",
+  "sentence": "Begoña corta unos trozos de [[queso de Cabrales]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a strong blue mountain cheese",
+   "options": ["a strong blue mountain cheese", "a mild fresh goat cheese", "a slice of cured ham", "a loaf of village bread"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Begoña corta unos trozos de queso de Cabrales.", "targetWord": "queso de Cabrales", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ya era hora",
+  "sentence": "Begoña los recibe en la puerta con un [[ya era hora]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "about time too",
+   "options": ["about time too", "you are early", "welcome back home", "what a surprise"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Begoña los recibe en la puerta con un ya era hora.", "targetWord": "ya era hora", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "me dejé llevar",
+  "sentence": "Nuria dice que le puso la cuerda y [[me dejé llevar]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I let her lead the way",
+   "options": ["I let her lead the way", "I pulled her along", "I stayed where I was", "I went on ahead"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Nuria dice que le puso la cuerda y me dejé llevar.", "targetWord": "me dejé llevar", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tenías toda la razón",
+  "sentence": "Nuria le dice a Begoña que [[tenías toda la razón]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "you were completely right",
+   "options": ["you were completely right", "you were a bit unfair", "you were joking then", "you were worried too"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Nuria le dice a Begoña que tenías toda la razón.", "targetWord": "tenías toda la razón", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entra en calor",
+  "sentence": "Nuria por fin [[entra en calor]] junto al fuego.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to warm up again",
+   "options": ["to warm up again", "to fall asleep", "to calm down", "to dry off"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Nuria por fin entra en calor junto al fuego.", "targetWord": "entra en calor", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "el año que viene",
+  "sentence": "Nuria dice que [[el año que viene]] vuelve a subir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "next year",
+   "options": ["next year", "last year", "this weekend", "every summer"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Nuria dice que el año que viene vuelve a subir.", "targetWord": "el año que viene", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "escapó",
+  "sentence": "Begoña dice que la jata se le [[escapó]] al vecino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to run off",
+   "options": ["to run off", "to fall ill", "to be sold", "to be born"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Begoña dice que la jata se le escapó al vecino.", "targetWord": "escapó", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "turista",
+  "sentence": "Nuria dice que subió en camiseta, como una [[turista]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a tourist",
+   "options": ["a tourist", "a farmer", "a guide", "a runner"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Nuria dice que subió en camiseta, como una turista.", "targetWord": "turista", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "enseña",
+  "sentence": "Begoña dice que el monte te [[enseña]] rápido.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to teach",
+   "options": ["to teach", "to frighten", "to tire", "to welcome"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Begoña dice que el monte te enseña rápido.", "targetWord": "enseña", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aparecen",
+  "featured": false,
+  "sentence": "Abajo [[aparecen]] las luces de la majada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come into sight",
+   "options": ["to come into sight", "to go out", "to move away", "to grow dim"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Abajo aparecen las luces de la majada.", "targetWord": "aparecen", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "metido",
+  "featured": false,
+  "sentence": "Begoña pregunta dónde se habían [[metido]] los dos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get to",
+   "options": ["to get to", "to look for", "to agree on", "to give up"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Begoña pregunta dónde se habían metido los dos.", "targetWord": "metido", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vecino",
+  "featured": false,
+  "sentence": "La jata es del [[vecino]] y hay que devolvérsela.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a neighbour",
+   "options": ["a neighbour", "a vet", "a butcher", "a cousin"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "La jata es del vecino y hay que devolvérsela.", "targetWord": "vecino", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trozos",
+  "featured": false,
+  "sentence": "Begoña corta unos [[trozos]] de queso para todos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a piece",
+   "options": ["a piece", "a plate", "a box", "a kilo"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Begoña corta unos trozos de queso para todos.", "targetWord": "trozos", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cubriendo",
+  "featured": false,
+  "sentence": "Fuera, la niebla sigue [[cubriendo]] las cumbres.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to cover",
+   "options": ["to cover", "to leave", "to cross", "to climb"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Fuera, la niebla sigue cubriendo las cumbres.", "targetWord": "cubriendo", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vuelvo",
+  "featured": false,
+  "sentence": "Nuria dice que el año que viene [[vuelvo]] al lago.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come back",
+   "options": ["to come back", "to give up", "to move house", "to write"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Nuria dice que el año que viene vuelvo al lago.", "targetWord": "vuelvo", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "corta",
+  "featured": false,
+  "sentence": "Mi madre _____ el pan en rebanadas finas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "corta",
+   "options": ["corta", "compra", "guarda", "calienta"],
+   "translation": "My mother _____ the bread into thin slices.",
+   "optionTranslations": ["cuts", "buys", "keeps", "heats"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Mi madre corta el pan en rebanadas finas.", "targetWord": "corta", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "medio",
+  "featured": false,
+  "sentence": "Ya habla español, es _____ español y medio inglés.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "medio",
+   "options": ["medio", "todo", "nada", "poco"],
+   "translation": "He already speaks Spanish, he is _____ Spanish and half English.",
+   "optionTranslations": ["half", "all", "nothing", "little"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Ya habla español, es medio español y medio inglés.", "targetWord": "medio", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "rápido",
+  "featured": false,
+  "sentence": "Aprende muy _____, en dos meses ya conducía.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rápido",
+   "options": ["rápido", "despacio", "tarde", "solo"],
+   "translation": "He learns very _____, in two months he was already driving.",
+   "optionTranslations": ["fast", "slowly", "late", "alone"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Aprende muy rápido, en dos meses ya conducía.", "targetWord": "rápido", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "dentro",
+  "featured": false,
+  "sentence": "Hace frío fuera, mejor esperamos _____ del bar.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dentro",
+   "options": ["dentro", "fuera", "arriba", "lejos"],
+   "translation": "It is cold outside, we had better wait _____ the bar.",
+   "optionTranslations": ["inside", "outside", "upstairs", "far away"],
+   "audioClip": { "storySlug": "con-abrigo-y-con-mapa", "storySource": "user", "sentence": "Hace frío fuera, mejor esperamos dentro del bar.", "targetWord": "dentro", "language": "spanish" }
+  }
+ }
+]

@@ -1,0 +1,516 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "cocina,olla,barro,viento",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "cocina",
+     "answer": "a kitchen",
+     "options": [
+      "a kitchen",
+      "a pot",
+      "clay",
+      "the wind"
+     ]
+    },
+    {
+     "word": "olla",
+     "answer": "a pot",
+     "options": [
+      "a kitchen",
+      "a pot",
+      "clay",
+      "the wind"
+     ]
+    },
+    {
+     "word": "barro",
+     "answer": "clay",
+     "options": [
+      "a kitchen",
+      "a pot",
+      "clay",
+      "the wind"
+     ]
+    },
+    {
+     "word": "viento",
+     "answer": "the wind",
+     "options": [
+      "a kitchen",
+      "a pot",
+      "clay",
+      "the wind"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "conxuro",
+  "sentence": "Carmiña dice que va a decir el [[conxuro]] entero.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the Galician spell said over the drink",
+   "options": [
+    "the Galician spell said over the drink",
+    "the name of the old recipe",
+    "a song sung at the door",
+    "a toast made before eating"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Carmiña dice que va a decir el conxuro entero.",
+    "targetWord": "conxuro",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "meigas",
+  "sentence": "Carmiña recita palabras antiguas contra las [[meigas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "witches of Galician folklore",
+   "options": [
+    "witches of Galician folklore",
+    "wolves that come down in winter",
+    "storms that break the roof",
+    "strangers who pass at night"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Carmiña recita palabras antiguas contra las meigas.",
+    "targetWord": "meigas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "llama",
+  "sentence": "Una [[llama]] azul sube de la olla y les ilumina la cara.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a flame",
+   "options": [
+    "a flame",
+    "a cloud",
+    "a bubble",
+    "a spark"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Una llama azul sube de la olla y les ilumina la cara.",
+    "targetWord": "llama",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "habrá sido",
+  "sentence": "Sabela dice que [[habrá sido]] el viento.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "it must have been",
+   "options": [
+    "it must have been",
+    "it will never be",
+    "it cannot be",
+    "it always is"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Sabela dice que habrá sido el viento.",
+    "targetWord": "habrá sido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ladera",
+  "sentence": "En la [[ladera]] oscura baja una fila de luces.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the slope of a hill",
+   "options": [
+    "the slope of a hill",
+    "the bank of a river",
+    "the edge of a wood",
+    "the roof of a barn"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "En la ladera oscura baja una fila de luces.",
+    "targetWord": "ladera",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fila",
+  "sentence": "Las luces bajan en [[fila]], una detrás de otra.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a line",
+   "options": [
+    "a line",
+    "a circle",
+    "a pile",
+    "a group"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Las luces bajan en fila, una detrás de otra.",
+    "targetWord": "fila",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "memoria",
+  "sentence": "Carmiña se sabe el conxuro de [[memoria]] desde los quince.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "by heart",
+   "options": [
+    "by heart",
+    "in writing",
+    "by halves",
+    "in Galician"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Carmiña se sabe el conxuro de memoria desde los quince.",
+    "targetWord": "memoria",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "olor",
+  "sentence": "Sabela dice que no ha cambiado ni el [[olor]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the smell",
+   "options": [
+    "the smell",
+    "the taste",
+    "the noise",
+    "the light"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Sabela dice que no ha cambiado ni el olor.",
+    "targetWord": "olor",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "golpe",
+  "sentence": "Un [[golpe]] de viento abre la ventana de pronto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sudden gust",
+   "options": [
+    "a sudden gust",
+    "a soft breeze",
+    "a long silence",
+    "a bright flash"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Un golpe de viento abre la ventana de pronto.",
+    "targetWord": "golpe",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cambiado",
+  "featured": false,
+  "sentence": "Sabela dice que nada ha [[cambiado]] desde entonces.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "changed",
+   "options": [
+    "changed",
+    "improved",
+    "grown",
+    "closed"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Sabela dice que nada ha cambiado desde entonces.",
+    "targetWord": "cambiado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "palabra",
+  "featured": false,
+  "sentence": "Carmiña recita [[palabras]] antiguas junto al fuego.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a word",
+   "options": [
+    "a word",
+    "a number",
+    "a name",
+    "a letter"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Carmiña recita palabras antiguas junto al fuego.",
+    "targetWord": "palabras",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "olvidar",
+  "featured": false,
+  "sentence": "Carmiña dice que esto no se [[olvida]], se hereda.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to forget",
+   "options": [
+    "to forget",
+    "to learn",
+    "to teach",
+    "to repeat"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Carmiña dice que esto no se olvida, se hereda.",
+    "targetWord": "olvida",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bajar",
+  "featured": false,
+  "sentence": "Una fila de luces [[baja]] despacio hacia la casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come down",
+   "options": [
+    "to come down",
+    "to go up",
+    "to stop",
+    "to turn"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Una fila de luces baja despacio hacia la casa.",
+    "targetWord": "baja",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "decir",
+  "featured": false,
+  "sentence": "Brais recuerda el camino que [[decía]] Carmiña.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to say",
+   "options": [
+    "to say",
+    "to build",
+    "to find",
+    "to climb"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Brais recuerda el camino que decía Carmiña.",
+    "targetWord": "decía",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "apagada",
+  "featured": false,
+  "sentence": "La luz está _____, no se ve nada aquí.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "apagada",
+   "options": [
+    "apagada",
+    "encendida",
+    "rota",
+    "nueva"
+   ],
+   "translation": "The light is _____, you cannot see anything here.",
+   "optionTranslations": [
+    "switched off",
+    "switched on",
+    "broken",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "La luz está apagada, no se ve nada aquí.",
+    "targetWord": "apagada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "azul",
+  "featured": false,
+  "sentence": "El cielo está _____ y no hay ni una nube.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "azul",
+   "options": [
+    "azul",
+    "gris",
+    "verde",
+    "negro"
+   ],
+   "translation": "The sky is _____ and there is not a single cloud.",
+   "optionTranslations": [
+    "blue",
+    "grey",
+    "green",
+    "black"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "El cielo está azul y no hay ni una nube.",
+    "targetWord": "azul",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "quince",
+  "featured": false,
+  "sentence": "Tiene _____ años: ya no es niña, pero aún no vota.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "quince",
+   "options": [
+    "quince",
+    "cuatro",
+    "treinta",
+    "cien"
+   ],
+   "translation": "She is _____: not a child any more, but she cannot vote yet.",
+   "optionTranslations": [
+    "fifteen",
+    "four",
+    "thirty",
+    "a hundred"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Tiene quince años: ya no es niña, pero aún no vota.",
+    "targetWord": "quince",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "frase",
+  "featured": false,
+  "sentence": "Repite esa _____ otra vez, no la he oído bien.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "frase",
+   "options": [
+    "frase",
+    "canción",
+    "pregunta",
+    "carta"
+   ],
+   "translation": "Say that _____ again, I did not hear it well.",
+   "optionTranslations": [
+    "sentence",
+    "song",
+    "question",
+    "letter"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Repite esa frase otra vez, no la he oído bien.",
+    "targetWord": "frase",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "antes",
+  "featured": false,
+  "sentence": "Llama _____ de venir, que igual no estoy.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "antes",
+   "options": [
+    "antes",
+    "después",
+    "lejos",
+    "dentro"
+   ],
+   "translation": "Call _____ you come, I might not be here.",
+   "optionTranslations": [
+    "before",
+    "after",
+    "far",
+    "inside"
+   ],
+   "audioClip": {
+    "storySlug": "se-apaga-la-llama",
+    "storySource": "user",
+    "sentence": "Llama antes de venir, que igual no estoy.",
+    "targetWord": "antes",
+    "language": "spanish"
+   }
+  }
+ }
+]

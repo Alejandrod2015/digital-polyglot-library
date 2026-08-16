@@ -1,0 +1,579 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "ci vediamo,vicolo,scarpa,orologio",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "ci vediamo",
+          "answer": "see you",
+          "options": [
+            "see you",
+            "an alley",
+            "a shoe",
+            "a watch"
+          ]
+        },
+        {
+          "word": "vicolo",
+          "answer": "an alley",
+          "options": [
+            "see you",
+            "an alley",
+            "a shoe",
+            "a watch"
+          ]
+        },
+        {
+          "word": "scarpa",
+          "answer": "a shoe",
+          "options": [
+            "see you",
+            "an alley",
+            "a shoe",
+            "a watch"
+          ]
+        },
+        {
+          "word": "orologio",
+          "answer": "a watch",
+          "options": [
+            "see you",
+            "an alley",
+            "a shoe",
+            "a watch"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verso",
+    "sentence": "Lei dice [[verso]] le nove, non alle nove.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "around",
+      "options": [
+        "around",
+        "exactly at",
+        "before",
+        "after"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Lei dice verso le nove, non alle nove.",
+        "targetWord": "verso",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f6e8aa50d243c444.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esatto",
+    "sentence": "Lui arriva alle nove [[esatte]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "exact",
+      "options": [
+        "exact",
+        "late",
+        "early",
+        "wrong"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Lui arriva alle nove esatte.",
+        "targetWord": "esatte",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5a2718a458efe272.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arrivare",
+    "sentence": "Lei [[arriva]] con parecchio ritardo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "arrives",
+      "options": [
+        "arrives",
+        "leaves",
+        "calls",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Lei arriva con parecchio ritardo.",
+        "targetWord": "arriva",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d33a332d7678162a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "somigliarsi",
+    "sentence": "Le piazze intorno [[si somigliano]] tutte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "look alike",
+      "options": [
+        "look alike",
+        "are empty",
+        "are closed",
+        "are far"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Le piazze intorno si somigliano tutte.",
+        "targetWord": "si somigliano",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6353966ff4eec134.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frase",
+    "sentence": "Quella [[frase]] non è una promessa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sentence",
+      "options": [
+        "sentence",
+        "song",
+        "name",
+        "rule"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Quella frase non è una promessa.",
+        "targetWord": "frase",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8889c1401992a29e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "promessa",
+    "sentence": "Ci vediamo non è una [[promessa]] esatta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a promise",
+      "options": [
+        "a promise",
+        "a question",
+        "a price",
+        "a joke"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Ci vediamo non è una promessa esatta.",
+        "targetWord": "promessa",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eedff12ce749400b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gentile",
+    "sentence": "È un modo [[gentile]] di lasciare la porta aperta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "kind",
+      "options": [
+        "kind",
+        "rude",
+        "strange",
+        "quick"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "È un modo gentile di lasciare la porta aperta.",
+        "targetWord": "gentile",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0dee576cbf1d8aa5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fermarsi",
+    "sentence": "Lei [[si ferma]] a ogni saluto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stops",
+      "options": [
+        "stops",
+        "runs",
+        "pays",
+        "shouts"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Lei si ferma a ogni saluto.",
+        "targetWord": "si ferma",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a2d524e372f45de7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "indicare",
+    "sentence": "Lei dice ci vediamo senza [[indicare]] un giorno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "naming, pointing to",
+      "options": [
+        "naming, pointing to",
+        "paying for",
+        "writing down",
+        "asking for"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Lei dice ci vediamo senza indicare un giorno.",
+        "targetWord": "indicare",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdc3c07099ea8942.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorriso",
+    "sentence": "Lei arriva con un [[sorriso]] largo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a smile",
+      "options": [
+        "a smile",
+        "a bag",
+        "a coat",
+        "a hat"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Lei arriva con un sorriso largo.",
+        "targetWord": "sorriso",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6cc4a203d62f5cca.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "significare",
+    "sentence": "Verso le nove [[significa]] più tardi, non prima.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "means",
+      "options": [
+        "means",
+        "costs",
+        "sounds",
+        "asks"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Verso le nove significa più tardi, non prima.",
+        "targetWord": "significa",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/76d796f7aa4cf4a4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "steso",
+    "sentence": "Sopra i vicoli ci sono panni [[stesi]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hung out to dry",
+      "options": [
+        "hung out to dry",
+        "folded away",
+        "newly bought",
+        "thrown out"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Sopra i vicoli ci sono panni stesi.",
+        "targetWord": "stesi",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4efb670ac3aded8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saluto",
+    "sentence": "Ogni [[saluto]] dura pochissimo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "greeting",
+      "options": [
+        "greeting",
+        "meal",
+        "street",
+        "price"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Ogni saluto dura pochissimo.",
+        "targetWord": "saluto",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7aaacb7591e9d25a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "porta",
+    "sentence": "Lui immagina una [[porta]] che resta aperta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a door",
+      "options": [
+        "a door",
+        "a window",
+        "a wall",
+        "a street"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Lui immagina una porta che resta aperta.",
+        "targetWord": "porta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed98245ff01baee7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "minuto",
+    "sentence": "Lei saluta tre persone in pochi [[minuti]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "minutes",
+      "options": [
+        "minutes",
+        "hours",
+        "days",
+        "streets"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Lei saluta tre persone in pochi minuti.",
+        "targetWord": "minuti",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d60f794825f5dc7d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "largo",
+    "sentence": "Il suo sorriso è [[largo]] e vero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wide",
+      "options": [
+        "wide",
+        "narrow",
+        "short",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Il suo sorriso è largo e vero.",
+        "targetWord": "largo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/023d14ede2ead8b9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fine",
+    "sentence": "Alla [[fine]] della serata nessuno fissa una data.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the end",
+      "options": [
+        "the end",
+        "the start",
+        "the middle",
+        "the price"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Alla fine della serata nessuno fissa una data.",
+        "targetWord": "fine",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7acde6ef76d62ce3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "decidere",
+    "sentence": "Lui [[decide]] di non dire niente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "decides",
+      "options": [
+        "decides",
+        "forgets",
+        "asks",
+        "promises"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Lui decide di non dire niente.",
+        "targetWord": "decide",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0762608dc9f19329.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "intorno",
+    "sentence": "Le piazze [[intorno]] sono piene di gente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "around",
+      "options": [
+        "around",
+        "above",
+        "under",
+        "behind"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Le piazze intorno sono piene di gente.",
+        "targetWord": "intorno",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fda8278ccff20a9e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "telefono",
+    "sentence": "Lei glielo dice al [[telefono]], di sfuggita.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on the phone",
+      "options": [
+        "on the phone",
+        "in the shop",
+        "at the door",
+        "on the bus"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Lei glielo dice al telefono, di sfuggita.",
+        "targetWord": "telefono",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a12c0ab29f721659.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "piene",
+    "sentence": "Le piazze sono _____ di gente a quest'ora.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "piene",
+      "options": [
+        "piene",
+        "vuote",
+        "chiuse",
+        "strette"
+      ],
+      "translation": "The squares are _____ of people at this hour.",
+      "optionTranslations": [
+        "full",
+        "empty",
+        "closed",
+        "narrow"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Le piazze sono piene di gente a quest'ora.",
+        "targetWord": "piene",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d09735b3b39e356c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fontana",
+    "sentence": "Lui aspetta davanti alla [[fontana]] della piazza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the fountain",
+      "options": [
+        "the fountain",
+        "the station",
+        "the church",
+        "the bridge"
+      ],
+      "audioClip": {
+        "storySlug": "ci-vediamo-a-trastevere",
+        "storySource": "user",
+        "sentence": "Lui aspetta davanti alla fontana della piazza.",
+        "targetWord": "fontana",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bfce6bf3484f772d.mp3"
+      }
+    },
+    "featured": false
+  }
+]

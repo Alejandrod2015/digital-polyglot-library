@@ -1,0 +1,507 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "el tinto,la ruana,obleas,almojábana",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "el tinto",
+     "answer": "black coffee",
+     "options": [
+      "black coffee",
+      "wool poncho",
+      "sweet wafers",
+      "cheese bread"
+     ]
+    },
+    {
+     "word": "la ruana",
+     "answer": "wool poncho",
+     "options": [
+      "black coffee",
+      "wool poncho",
+      "sweet wafers",
+      "cheese bread"
+     ]
+    },
+    {
+     "word": "obleas",
+     "answer": "sweet wafers",
+     "options": [
+      "black coffee",
+      "wool poncho",
+      "sweet wafers",
+      "cheese bread"
+     ]
+    },
+    {
+     "word": "almojábana",
+     "answer": "cheese bread",
+     "options": [
+      "black coffee",
+      "wool poncho",
+      "sweet wafers",
+      "cheese bread"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "qué pereza",
+  "sentence": "[[Qué pereza]] este aguacero de la tarde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what a drag",
+   "options": [
+    "what a drag",
+    "what a relief",
+    "what a surprise",
+    "what a shame"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "Qué pereza este aguacero de la tarde.",
+    "targetWord": "Qué pereza",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/efb25208a3423b37.mp3",
+    "rev": 1
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "refunfuñar",
+  "sentence": "Manuela [[refunfuñó]] mientras sacudía el paraguas mojado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to grumble",
+   "options": [
+    "to grumble",
+    "to whisper",
+    "to giggle",
+    "to sigh"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "Manuela refunfuñó mientras sacudía el paraguas mojado.",
+    "targetWord": "refunfuñó",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/786e0a3e4d020bfe.mp3",
+    "rev": 1
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "por el piso",
+  "sentence": "Vale llegó con el ánimo [[por el piso]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "completely down",
+   "options": [
+    "completely down",
+    "full of energy",
+    "over the moon",
+    "up in arms"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "Vale llegó con el ánimo por el piso.",
+    "targetWord": "por el piso",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/67315cb920aafec7.mp3",
+    "rev": 1
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "mamada",
+  "sentence": "Ella se ve muy [[mamada]] hoy.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "worn out",
+   "options": [
+    "worn out",
+    "fed up",
+    "tipsy",
+    "spoiled"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "Ella se ve muy mamada hoy.",
+    "targetWord": "mamada",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cc8ff1ef70b82af3.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "las onces",
+  "sentence": "A las cuatro empezaban [[las onces]] con tinto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the afternoon snack",
+   "options": [
+    "the afternoon snack",
+    "the late dinner",
+    "the morning break",
+    "the night shift"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "A las cuatro empezaban las onces con tinto.",
+    "targetWord": "las onces",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/21e96901b96d4fc8.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "amargarse",
+  "sentence": "Esa china no se [[amarga]] por nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get bitter",
+   "options": [
+    "to get bitter",
+    "to cheer up",
+    "to give up",
+    "to speak up"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "Esa china no se amarga por nada.",
+    "targetWord": "amarga",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9340593ea57d242f.mp3",
+    "rev": 1
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "caer en la cuenta",
+  "sentence": "De repente Manu [[cayó en la cuenta]] de algo importante.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to realize",
+   "options": [
+    "to realize",
+    "to forget",
+    "to complain",
+    "to doubt"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "De repente Manu cayó en la cuenta de algo importante.",
+    "targetWord": "cayó en la cuenta",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7bd3d5cb7b8fffca.mp3",
+    "rev": 1
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "renegar",
+  "sentence": "Llevaba años [[renegando]] del frío de Bogotá.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to complain bitterly",
+   "options": [
+    "to complain bitterly",
+    "to boast proudly",
+    "to laugh loudly",
+    "to worry quietly"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "Llevaba años renegando del frío de Bogotá.",
+    "targetWord": "renegando",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5867b7983948682.mp3",
+    "rev": 1
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "bacano",
+  "sentence": "[[Bacano]] parar aquí con ustedes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cool",
+   "options": [
+    "cool",
+    "boring",
+    "expensive",
+    "strange"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "Bacano parar aquí con ustedes.",
+    "targetWord": "Bacano",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7341716a8592366c.mp3",
+    "rev": 1
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "páramo",
+  "sentence": "Adentro el [[páramo]] se sentía tibio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "high moorland",
+   "options": [
+    "high moorland",
+    "warm valley",
+    "busy market",
+    "open sea"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "Adentro el páramo se sentía tibio.",
+    "targetWord": "páramo",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e9d71050aa892147.mp3",
+    "rev": 1
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "aguacero",
+  "sentence": "Qué pereza este ____ de la tarde.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aguacero",
+   "options": [
+    "aguacero",
+    "tinto",
+    "páramo",
+    "calorcito"
+   ],
+   "translation": "What a drag, this afternoon ____.",
+   "optionTranslations": [
+    "downpour",
+    "coffee",
+    "moorland",
+    "warmth"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "Qué pereza este aguacero de la tarde.",
+    "targetWord": "aguacero",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/efb25208a3423b37.mp3",
+    "rev": 1
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sumercé",
+  "sentence": "____ se ve cansada, descanse un poco.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sumercé",
+   "options": [
+    "sumercé",
+    "china",
+    "parcero",
+    "conversa"
+   ],
+   "translation": "____ looks very tired today.",
+   "optionTranslations": [
+    "you (polite)",
+    "girl",
+    "buddy",
+    "chat"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "Sumercé se ve cansada, descanse un poco.",
+    "targetWord": "sumercé",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8594dff11ec97b0.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "china",
+  "sentence": "Esa ____ silbaba bajo la llovizna fría.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "china",
+   "options": [
+    "china",
+    "conversa",
+    "cobija",
+    "oblea"
+   ],
+   "translation": "That ____ whistled under the cold drizzle.",
+   "optionTranslations": [
+    "girl",
+    "chat",
+    "blanket",
+    "wafer"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "Esa china silbaba bajo la llovizna fría.",
+    "targetWord": "china",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a0e404e72a4b645.mp3",
+    "rev": 1
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "conversa",
+  "sentence": "Camilo armó una ____ sobre el partido.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "conversa",
+   "options": [
+    "conversa",
+    "cobija",
+    "ruana",
+    "oblea"
+   ],
+   "translation": "Camilo struck up a ____ about the match.",
+   "optionTranslations": [
+    "chat",
+    "blanket",
+    "poncho",
+    "wafer"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "Camilo armó una conversa sobre el partido.",
+    "targetWord": "conversa",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/90dcc786265d78d8.mp3",
+    "rev": 1
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "calorcito",
+  "sentence": "Sentían ese ____ de estar juntos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "calorcito",
+   "options": [
+    "calorcito",
+    "aguacero",
+    "páramo",
+    "guayabo"
+   ],
+   "translation": "They felt that ____ of being together.",
+   "optionTranslations": [
+    "cozy warmth",
+    "downpour",
+    "moorland",
+    "hangover"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "Sentían ese calorcito de estar juntos.",
+    "targetWord": "calorcito",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bce3bdbbe900eca9.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "la cobija",
+  "sentence": "Camilo le pasó ____ para el frío.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "la cobija",
+   "options": [
+    "la cobija",
+    "el tinto",
+    "la ruana",
+    "la oblea"
+   ],
+   "translation": "Camilo passed her ____ for the cold.",
+   "optionTranslations": [
+    "the blanket",
+    "the coffee",
+    "the poncho",
+    "the wafer"
+   ],
+   "audioClip": {
+    "storySlug": "onces-con-ruana",
+    "storySource": "user",
+    "sentence": "Camilo le pasó la cobija para el frío.",
+    "targetWord": "la cobija",
+    "language": "spanish",
+    "voiceId": "FXGrCtY3PEyfqczBAlqm",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a92d361a46fe7a4f.mp3",
+    "rev": 1
+   }
+  }
+ }
+]

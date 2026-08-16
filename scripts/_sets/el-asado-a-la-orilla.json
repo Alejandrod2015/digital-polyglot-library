@@ -1,0 +1,472 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "quedar la escoba",
+    "sentence": "Hicieron un asado y [[quedó la escoba]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it turned out wild",
+      "options": [
+        "it turned out wild",
+        "it stayed totally calm",
+        "it fell completely flat",
+        "it ended really early"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "Hicieron un asado y quedó la escoba.",
+        "targetWord": "quedó la escoba",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdd882dc98c641fe.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seco",
+    "sentence": "Benjamín juraba que la carne le salía [[seca]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "really skilled at it",
+      "options": [
+        "really skilled at it",
+        "totally clueless at it",
+        "far too slow at it",
+        "much too shy for it"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "Benjamín juraba que la carne le salía seca.",
+        "targetWord": "seca",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20d7ee3628962e9d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apodo",
+    "sentence": "De seco no tenía ni el [[apodo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the nickname",
+      "options": [
+        "the nickname",
+        "the paycheck",
+        "the address",
+        "the appetite"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "De seco no tenía ni el apodo.",
+        "targetWord": "apodo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d31318c62922cb9e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "weviar",
+    "sentence": "Nico y Javiera lo [[weviaban]] sin parar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "teased and messed with",
+      "options": [
+        "teased and messed with",
+        "praised and admired",
+        "fed and served",
+        "paid and thanked"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "Nico y Javiera lo weviaban sin parar.",
+        "targetWord": "weviaban",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa04a6c372ff1b7d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en su punto",
+    "sentence": "La carne salió [[en su punto]] y quedó rica.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cooked just right",
+      "options": [
+        "cooked just right",
+        "badly overcooked",
+        "still totally raw",
+        "burnt to a crisp"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "La carne salió en su punto y quedó rica.",
+        "targetWord": "en su punto",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f6c1220567eeccac.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "terremoto",
+    "sentence": "Se instalaron con un [[terremoto]] a disfrutar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sweet strong Chilean drink",
+      "options": [
+        "a sweet strong Chilean drink",
+        "a plain black coffee",
+        "a cold fruit juice",
+        "a warm herbal tea"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "Se instalaron con un terremoto a disfrutar.",
+        "targetWord": "terremoto",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b85e61cada0059a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuea",
+    "sentence": "Por pura [[cuea]] la carne salió perfecta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sheer dumb luck",
+      "options": [
+        "sheer dumb luck",
+        "careful hard work",
+        "a costly mistake",
+        "a clever plan"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "Por pura cuea la carne salió perfecta.",
+        "targetWord": "cuea",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/052dcfdf2b49be8b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "curao",
+    "sentence": "Todos se rieron ya medio [[curados]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tipsy, drunk",
+      "options": [
+        "tipsy, drunk",
+        "dead sober",
+        "wide awake",
+        "fast asleep"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "Todos se rieron ya medio curados.",
+        "targetWord": "curados",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cc011d21d0b24d65.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dejo",
+    "sentence": "Cada anécdota traía un [[dejo]] de nostalgia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a faint trace",
+      "options": [
+        "a faint trace",
+        "a loud burst",
+        "a heavy weight",
+        "a bright flash"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "Cada anécdota traía un dejo de nostalgia.",
+        "targetWord": "dejo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/482db735f6bd3de8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agarrar para su lado",
+    "sentence": "Pronto cada uno [[agarraría para su lado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "go their separate ways",
+      "options": [
+        "go their separate ways",
+        "stay together forever",
+        "meet in one place",
+        "turn back around"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "Pronto cada uno agarraría para su lado.",
+        "targetWord": "agarraría para su lado",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e3510c9f0ac3b5a6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apretar el pecho",
+    "sentence": "La idea de separarse les [[apretó el pecho]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tightened their chests with feeling",
+      "options": [
+        "tightened their chests with feeling",
+        "lifted their spirits high",
+        "bored them half to death",
+        "made them laugh out loud"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "La idea de separarse les apretó el pecho.",
+        "targetWord": "apretó el pecho",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ca4594ec9e05fc5a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la firme",
+    "sentence": "Sabían que ese deseo era [[la firme]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the honest truth",
+      "options": [
+        "the honest truth",
+        "a total lie",
+        "an old joke",
+        "a wild guess"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "Sabían que ese deseo era la firme.",
+        "targetWord": "la firme",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7a9226d20b4c27c3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pisco",
+    "sentence": "Se instalaron a disfrutar con un _____ la tarde.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pisco",
+      "options": [
+        "pisco",
+        "cuaderno",
+        "martillo",
+        "paraguas"
+      ],
+      "translation": "They settled in to enjoy the afternoon with a _____.",
+      "optionTranslations": [
+        "grape brandy",
+        "notebook",
+        "hammer",
+        "umbrella"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "Se instalaron a disfrutar con un pisco la tarde.",
+        "targetWord": "pisco",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b1eed7e8c61a831.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cachái",
+    "sentence": "\"Ustedes son mi gente, _____\", dijo Nico.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cachái",
+      "options": [
+        "cachái",
+        "olvidái",
+        "perdís",
+        "gritái"
+      ],
+      "translation": "\"You are my people, _____\", said Nico.",
+      "optionTranslations": [
+        "you get it",
+        "you forget",
+        "you lose",
+        "you shout"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "\"Ustedes son mi gente, cachái\", dijo Nico.",
+        "targetWord": "cachái",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/275e73fe7b1caed6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "guata",
+    "sentence": "Brindó por el weveo aunque estén viejos y con _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "guata",
+      "options": [
+        "guata",
+        "sonrisa",
+        "corbata",
+        "llave"
+      ],
+      "translation": "He toasted to the banter even when old and with a _____.",
+      "optionTranslations": [
+        "belly",
+        "smile",
+        "tie",
+        "key"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "Brindó por el weveo aunque estén viejos y con guata.",
+        "targetWord": "guata",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5643cc6ffdecd85f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dejar huella",
+    "sentence": "Un buen weveo no necesita durar, solo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dejar huella",
+      "options": [
+        "dejar huella",
+        "terminar rápido",
+        "costar caro",
+        "pasar solo"
+      ],
+      "translation": "A good time does not need to last, only to _____.",
+      "optionTranslations": [
+        "leave a mark",
+        "end fast",
+        "cost a lot",
+        "pass alone"
+      ],
+      "audioClip": {
+        "storySlug": "el-asado-a-la-orilla",
+        "storySource": "user",
+        "sentence": "Un buen weveo no necesita durar, solo dejar huella.",
+        "targetWord": "dejar huella",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5a4952431b11a53a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "asado,parrilla,choripán,pega",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "asado",
+          "answer": "a barbecue",
+          "options": [
+            "a barbecue",
+            "the grill",
+            "grilled sausage in bread",
+            "a job, work"
+          ]
+        },
+        {
+          "word": "parrilla",
+          "answer": "the grill",
+          "options": [
+            "a barbecue",
+            "the grill",
+            "grilled sausage in bread",
+            "a job, work"
+          ]
+        },
+        {
+          "word": "choripán",
+          "answer": "grilled sausage in bread",
+          "options": [
+            "a barbecue",
+            "the grill",
+            "grilled sausage in bread",
+            "a job, work"
+          ]
+        },
+        {
+          "word": "pega",
+          "answer": "a job, work",
+          "options": [
+            "a barbecue",
+            "the grill",
+            "grilled sausage in bread",
+            "a job, work"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

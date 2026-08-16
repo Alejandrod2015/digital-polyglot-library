@@ -1,0 +1,497 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "cascado",
+    "sentence": "Julián llegó del camello bien [[cascado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "worn out and beat",
+      "options": [
+        "worn out and beat",
+        "fresh and rested",
+        "calm and happy",
+        "rich and proud"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "Julián llegó del camello bien cascado.",
+        "targetWord": "cascado",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad9a4c2cc2dfff61.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guayabo",
+    "sentence": "Cargaba un [[guayabo]] del sábado que no lo dejaba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rough hangover",
+      "options": [
+        "a rough hangover",
+        "a great mood",
+        "a heavy bag",
+        "a bad cold"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "Cargaba un guayabo del sábado que no lo dejaba.",
+        "targetWord": "guayabo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9b3b0f729edd77f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amarrado",
+    "sentence": "Juró que no salía ni [[amarrado]] esa noche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "not even by force",
+      "options": [
+        "not even by force",
+        "not for money",
+        "not for love",
+        "not by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "Juró que no salía ni amarrado esa noche.",
+        "targetWord": "amarrado",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/abe1d5a90a55761f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rumbear",
+    "sentence": "No me manden a [[rumbear]], que vengo muerto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go out partying",
+      "options": [
+        "to go out partying",
+        "to stay home resting",
+        "to cook a big meal",
+        "to work all night"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "No me manden a rumbear, que vengo muerto.",
+        "targetWord": "rumbear",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d815a0a159519d4a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prendido",
+    "sentence": "A las dos polas ya estaba [[prendido]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tipsy and lively",
+      "options": [
+        "tipsy and lively",
+        "stone cold sober",
+        "fast asleep",
+        "deeply bored"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "A las dos polas ya estaba prendido.",
+        "targetWord": "prendido",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/444f920f53d1e4b5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hablar hasta por los codos",
+    "sentence": "Estaba [[hablando hasta por los codos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "talking nonstop",
+      "options": [
+        "talking nonstop",
+        "staying totally silent",
+        "listening in quiet",
+        "whispering softly"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "Estaba hablando hasta por los codos.",
+        "targetWord": "hablando hasta por los codos",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/23a1ddd604032d12.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "más de la cuenta",
+    "sentence": "La lengua se le fue soltando [[más de la cuenta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "more than he should",
+      "options": [
+        "more than he should",
+        "less than needed",
+        "right on target",
+        "just in time"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "La lengua se le fue soltando más de la cuenta.",
+        "targetWord": "más de la cuenta",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ece2ff424f185274.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "servido en bandeja",
+    "sentence": "Ya el chisme estaba [[servido en bandeja]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "handed over ready and easy",
+      "options": [
+        "handed over ready and easy",
+        "locked away in secret",
+        "lost somewhere far",
+        "buried for good"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "Ya el chisme estaba servido en bandeja.",
+        "targetWord": "servido en bandeja",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/77150d5b3761bc29.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "relamerse",
+    "sentence": "Uno del parche [[se relamió]] con la primicia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "licked his lips with relish",
+      "options": [
+        "licked his lips with relish",
+        "turned away in disgust",
+        "yawned with boredom",
+        "shook with fear"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "Uno del parche se relamió con la primicia.",
+        "targetWord": "se relamió",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96839d915aa5753e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "primicia",
+    "sentence": "Se relamió con la [[primicia]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fresh scoop",
+      "options": [
+        "a fresh scoop",
+        "an old rumor",
+        "a boring fact",
+        "a plain lie"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "Se relamió con la primicia.",
+        "targetWord": "primicia",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8ececb3d0df88975.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "meter las patas",
+    "sentence": "Sabía que había [[metido las patas]] hasta el fondo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "blundered badly",
+      "options": [
+        "blundered badly",
+        "done it right",
+        "paid it all",
+        "kept it quiet"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "Sabía que había metido las patas hasta el fondo.",
+        "targetWord": "metido las patas",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d392215022fdc223.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "con el corazón en la mano",
+    "sentence": "Llamó a Marina [[con el corazón en la mano]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "speaking openly and sincerely",
+      "options": [
+        "speaking openly and sincerely",
+        "hiding all his feelings",
+        "joking without a care",
+        "lying without shame"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "Llamó a Marina con el corazón en la mano.",
+        "targetWord": "con el corazón en la mano",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fdaee562d58f138b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lengua floja",
+    "sentence": "Al que tiene la [[lengua floja]], lo cazan.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tongue that spills secrets",
+      "options": [
+        "a tongue that spills secrets",
+        "a mind that forgets fast",
+        "a heart that loves deep",
+        "a hand that gives freely"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "Al que tiene la lengua floja, lo cazan.",
+        "targetWord": "lengua floja",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a76bbe278fcb1c4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "embarrada",
+    "sentence": "Cuando lo notó, sintió el frío de la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "embarrada",
+      "options": [
+        "embarrada",
+        "victoria",
+        "llegada",
+        "comida"
+      ],
+      "translation": "When he noticed, he felt the chill of the _____.",
+      "optionTranslations": [
+        "screw up",
+        "victory",
+        "arrival",
+        "meal"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "Cuando lo notó, sintió el frío de la embarrada.",
+        "targetWord": "embarrada",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9bbc2005007a5e9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "descolocar",
+    "sentence": "Su respuesta lo _____ por completo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "descolocar",
+      "options": [
+        "descolocar",
+        "ayudó",
+        "llamó",
+        "siguió"
+      ],
+      "translation": "Her answer _____ him completely.",
+      "optionTranslations": [
+        "threw off",
+        "helped",
+        "called",
+        "followed"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "Su respuesta lo descolocar por completo.",
+        "targetWord": "descolocar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7cb425368b26caf.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "güevón",
+    "sentence": "Tranquilo, _____, no pasó nada grave.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "güevón",
+      "options": [
+        "güevón",
+        "señor",
+        "doctor",
+        "vecino"
+      ],
+      "translation": "Relax, _____, nothing serious happened.",
+      "optionTranslations": [
+        "dude",
+        "sir",
+        "doctor",
+        "neighbor"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "Tranquilo, güevón, no pasó nada grave.",
+        "targetWord": "güevón",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/056f9b3426fdce41.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cazar",
+    "sentence": "Al mentiroso tarde o temprano lo _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cazar",
+      "options": [
+        "cazar",
+        "premian",
+        "saludan",
+        "invitan"
+      ],
+      "translation": "Sooner or later they _____ the liar.",
+      "optionTranslations": [
+        "catch out",
+        "reward",
+        "greet",
+        "invite"
+      ],
+      "audioClip": {
+        "storySlug": "la-lengua-de-julian",
+        "storySource": "user",
+        "sentence": "Al mentiroso tarde o temprano lo cazar.",
+        "targetWord": "cazar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/edfdb6a4bb072ab9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "camello,guaro,pola,sapo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "camello",
+          "answer": "a job, work",
+          "options": [
+            "a job, work",
+            "aguardiente liquor",
+            "a beer",
+            "a snitch, a tattletale"
+          ]
+        },
+        {
+          "word": "guaro",
+          "answer": "aguardiente liquor",
+          "options": [
+            "a job, work",
+            "aguardiente liquor",
+            "a beer",
+            "a snitch, a tattletale"
+          ]
+        },
+        {
+          "word": "pola",
+          "answer": "a beer",
+          "options": [
+            "a job, work",
+            "aguardiente liquor",
+            "a beer",
+            "a snitch, a tattletale"
+          ]
+        },
+        {
+          "word": "sapo",
+          "answer": "a snitch, a tattletale",
+          "options": [
+            "a job, work",
+            "aguardiente liquor",
+            "a beer",
+            "a snitch, a tattletale"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

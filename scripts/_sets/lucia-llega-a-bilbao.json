@@ -1,0 +1,646 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "llegar",
+    "sentence": "Ella [[llega]] a la ciudad por la tarde.",
+    "payload": {
+      "answer": "to arrive",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to arrive",
+        "to leave",
+        "to wait",
+        "to return"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella llega a la ciudad por la tarde.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "llega",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8ff1c8d32741f1c6.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abrazar",
+    "sentence": "Los dos amigos se [[abrazan]] con cariño.",
+    "payload": {
+      "answer": "to hug",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to hug",
+        "to greet",
+        "to push",
+        "to carry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los dos amigos se abrazan con cariño.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "abrazan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e3126cc7ddde07bd.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contento",
+    "sentence": "Ella está muy [[contenta]] hoy.",
+    "payload": {
+      "answer": "glad, pleased",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "glad, pleased",
+        "tired, sleepy",
+        "angry, cross",
+        "scared, afraid"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella está muy contenta hoy.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "contenta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/648b8a8a0dca762b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caminar",
+    "sentence": "Los dos [[caminan]] cerca del agua.",
+    "payload": {
+      "answer": "to walk",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to walk",
+        "to run",
+        "to swim",
+        "to jump"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los dos caminan cerca del agua.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "caminan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c2e4dc8025c486af.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "sentence": "Él [[sonríe]] otra vez con alegría.",
+    "payload": {
+      "answer": "to smile",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to smile",
+        "to cry",
+        "to shout",
+        "to sleep"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él sonríe otra vez con alegría.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "sonríe",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7639748812abd28d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gustar",
+    "sentence": "A ella le [[gusta]] mucho esta ciudad.",
+    "payload": {
+      "answer": "to like",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to like",
+        "to hate",
+        "to need",
+        "to find"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "A ella le gusta mucho esta ciudad.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "gusta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34ab72b72f89223e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "feliz",
+    "sentence": "Al final del día ella está [[feliz]].",
+    "payload": {
+      "answer": "happy, joyful",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "happy, joyful",
+        "sad, gloomy",
+        "sick, ill",
+        "hungry, empty"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Al final del día ella está feliz.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "feliz",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b6722443b0d1ea48.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "llueve",
+    "sentence": "Las gotas de agua caen cuando _____.",
+    "payload": {
+      "answer": "llueve",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "llueve",
+        "nieva",
+        "truena",
+        "sopla"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las gotas de agua caen cuando llueve.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "llueve",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c33f2f355938350.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Drops of water fall when it _____.",
+      "optionTranslations": [
+        "rains",
+        "snows",
+        "thunders",
+        "blows"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "sol",
+    "sentence": "La luz caliente viene del _____.",
+    "payload": {
+      "answer": "sol",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "sol",
+        "mar",
+        "árbol",
+        "muro"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La luz caliente viene del sol.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "sol",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c75e77fd1c0673d6.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The warm light comes from the _____.",
+      "optionTranslations": [
+        "sun",
+        "sea",
+        "tree",
+        "wall"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cansada",
+    "sentence": "Trabaja todo el día y termina muy _____.",
+    "payload": {
+      "answer": "cansada",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "cansada",
+        "limpia",
+        "alta",
+        "corta"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Trabaja todo el día y termina muy cansada.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "cansada",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f250f06575188193.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She works all day and ends up very _____.",
+      "optionTranslations": [
+        "tired",
+        "clean",
+        "tall",
+        "short"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tarde",
+    "sentence": "Ella descansa un poco por la [[tarde]].",
+    "payload": {
+      "answer": "afternoon",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "afternoon",
+        "morning",
+        "night",
+        "week"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella descansa un poco por la tarde.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "tarde",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/06dc938e5c5a6843.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ría",
+    "sentence": "El agua de la [[ría]] está tranquila.",
+    "payload": {
+      "answer": "a river to the sea",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a river to the sea",
+        "a tall mountain",
+        "a city square",
+        "a sandy beach"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El agua de la ría está tranquila.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "ría",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b5f3146d79117465.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casco viejo",
+    "sentence": "Caminan juntos por el [[casco viejo]] de la ciudad.",
+    "payload": {
+      "answer": "the old town",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the old town",
+        "the new mall",
+        "the train yard",
+        "the city park"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Caminan juntos por el casco viejo de la ciudad.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "casco viejo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f59c6a680f26174.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sacar",
+    "sentence": "Ella [[saca]] una foto con el teléfono.",
+    "payload": {
+      "answer": "to take (a photo)",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to take (a photo)",
+        "to draw (a picture)",
+        "to send (a photo)",
+        "to delete (a photo)"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella saca una foto con el teléfono.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "saca",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85a3c3f10f51c523.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cielo",
+    "sentence": "Las nubes cubren el [[cielo]] gris.",
+    "payload": {
+      "answer": "the sky",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the sky",
+        "the sea",
+        "the ground",
+        "the forest"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las nubes cubren el cielo gris.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "cielo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0edc938db937d329.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brillar",
+    "sentence": "La ciudad [[brilla]] con luz suave.",
+    "payload": {
+      "answer": "to shine",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to shine",
+        "to burn",
+        "to break",
+        "to melt"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La ciudad brilla con luz suave.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "brilla",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2648133932d40f23.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aire",
+    "sentence": "Ella respira el [[aire]] limpio y fresco.",
+    "payload": {
+      "answer": "the air",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the air",
+        "the water",
+        "the fire",
+        "the sand"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella respira el aire limpio y fresco.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "aire",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1f28bfb12a17788d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "visitar",
+    "sentence": "Mañana los dos [[visitan]] el museo famoso.",
+    "payload": {
+      "answer": "to visit",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to visit",
+        "to build",
+        "to close",
+        "to clean"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Mañana los dos visitan el museo famoso.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "visitan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0f058d5facd962f9.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "limpio",
+    "sentence": "El aire del campo es fresco y _____.",
+    "payload": {
+      "answer": "limpio",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "limpio",
+        "corto",
+        "lento",
+        "alto"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El aire del campo es fresco y limpio.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "limpio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/afeced8a763d686c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The country air is fresh and _____.",
+      "optionTranslations": [
+        "clean",
+        "short",
+        "slow",
+        "tall"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "estrechas",
+    "sentence": "Dos personas no caben juntas en calles _____.",
+    "payload": {
+      "answer": "estrechas",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "estrechas",
+        "limpias",
+        "altas",
+        "nuevas"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Dos personas no caben juntas en calles estrechas.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "estrechas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/04ffc120296ceab1.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Two people do not fit together in _____ streets.",
+      "optionTranslations": [
+        "narrow",
+        "clean",
+        "tall",
+        "new"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "puente",
+    "sentence": "Camino sobre el _____ para cruzar el río.",
+    "payload": {
+      "answer": "puente",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "puente",
+        "muro",
+        "techo",
+        "banco"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Camino sobre el puente para cruzar el río.",
+        "storySlug": "lucia-llega-a-bilbao",
+        "targetWord": "puente",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/99ea76b494114389.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I walk over the _____ to cross the river.",
+      "optionTranslations": [
+        "bridge",
+        "wall",
+        "roof",
+        "bench"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "estación,paraguas,tienda,museo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "estación",
+          "answer": "a train station",
+          "options": [
+            "a train station",
+            "an umbrella",
+            "a shop",
+            "a museum"
+          ]
+        },
+        {
+          "word": "paraguas",
+          "answer": "an umbrella",
+          "options": [
+            "a train station",
+            "an umbrella",
+            "a shop",
+            "a museum"
+          ]
+        },
+        {
+          "word": "tienda",
+          "answer": "a shop",
+          "options": [
+            "a train station",
+            "an umbrella",
+            "a shop",
+            "a museum"
+          ]
+        },
+        {
+          "word": "museo",
+          "answer": "a museum",
+          "options": [
+            "a train station",
+            "an umbrella",
+            "a shop",
+            "a museum"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tiendas",
+    "sentence": "Hay muchas [[tiendas]] pequeñas en la calle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shops",
+      "options": [
+        "shops",
+        "schools",
+        "parks",
+        "rivers"
+      ],
+      "audioClip": {
+        "storySlug": "lucia-llega-a-bilbao",
+        "storySource": "user",
+        "sentence": "Hay muchas tiendas pequeñas en la calle.",
+        "targetWord": "tiendas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cf1ae61a3642aadb.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

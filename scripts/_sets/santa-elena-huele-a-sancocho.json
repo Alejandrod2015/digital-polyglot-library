@@ -1,0 +1,534 @@
+[
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "la chiva,el sancocho,la finca,la carpeta",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "la chiva",
+          "answer": "a country bus",
+          "options": [
+            "a country bus",
+            "a hearty soup",
+            "a country house",
+            "a folder"
+          ]
+        },
+        {
+          "word": "el sancocho",
+          "answer": "a hearty soup",
+          "options": [
+            "a country bus",
+            "a hearty soup",
+            "a country house",
+            "a folder"
+          ]
+        },
+        {
+          "word": "la finca",
+          "answer": "a country house",
+          "options": [
+            "a country bus",
+            "a hearty soup",
+            "a country house",
+            "a folder"
+          ]
+        },
+        {
+          "word": "la carpeta",
+          "answer": "a folder",
+          "options": [
+            "a country bus",
+            "a hearty soup",
+            "a country house",
+            "a folder"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "mor",
+    "sentence": "Ya casi, [[mor]], tranquila, no comas ansias.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dear",
+      "options": [
+        "dear",
+        "boss",
+        "stranger",
+        "enemy"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "Ya casi, mor, tranquila, no comas ansias.",
+        "targetWord": "mor",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4ee4ee2f405e6fe.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "el paseo de olla",
+    "sentence": "Tato y Salo llevan a Manu a un [[paseo de olla]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an outdoor cookout day trip",
+      "options": [
+        "an outdoor cookout day trip",
+        "a fancy restaurant dinner",
+        "a long city walk",
+        "a quiet museum tour"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "Tato y Salo llevan a Manu a un paseo de olla.",
+        "targetWord": "paseo de olla",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b61fa4a25fbaa281.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "respirar hondo",
+    "sentence": "Tato [[respira hondo]] antes de soltar la noticia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "takes a deep breath",
+      "options": [
+        "takes a deep breath",
+        "runs away fast",
+        "laughs out loud",
+        "looks away shyly"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "Tato respira hondo antes de soltar la noticia.",
+        "targetWord": "respira hondo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4849bded96bfde03.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "cómplice",
+    "sentence": "Salo le manda una mirada [[cómplice]] a Manu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "knowing and sharing a secret",
+      "options": [
+        "knowing and sharing a secret",
+        "cold and distant",
+        "angry and hard",
+        "tired and bored"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "Salo le manda una mirada cómplice a Manu.",
+        "targetWord": "cómplice",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/88229489c5514a0d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "enredado",
+    "sentence": "Buscaron una manera [[enredada]] de pedirle que se quedara.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tangled and complicated",
+      "options": [
+        "tangled and complicated",
+        "quick and simple",
+        "clear and honest",
+        "rude and cold"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "Buscaron una manera enredada de pedirle que se quedara.",
+        "targetWord": "enredada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cc49522cfda60be0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "la arriería",
+    "sentence": "La tarde se va entre cuentos de [[arriería]] antigua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the old mule driving trade",
+      "options": [
+        "the old mule driving trade",
+        "the modern coffee business",
+        "the flower growing craft",
+        "the mountain climbing sport"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "La tarde se va entre cuentos de arriería antigua.",
+        "targetWord": "arriería",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc75c8848a95bd66.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "la evasiva",
+    "sentence": "Tato contesta con una [[evasiva]] y cambia de tema.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a dodgy answer",
+      "options": [
+        "a dodgy answer",
+        "a clear reply",
+        "a loud shout",
+        "a kind favor"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "Tato contesta con una evasiva y cambia de tema.",
+        "targetWord": "evasiva",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d31d64492c496db.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "la silleta",
+    "sentence": "En Santa Elena cargan [[silletas]] de flores enormes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "flower frames carried on the back",
+      "options": [
+        "flower frames carried on the back",
+        "small wooden stools",
+        "heavy iron pots",
+        "woven straw hats"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "En Santa Elena cargan silletas de flores enormes.",
+        "targetWord": "silletas",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c50383e6929263fe.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "la socia",
+    "sentence": "La escritura tenía a Manu como tercera [[socia]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "business partner",
+      "options": [
+        "business partner",
+        "close cousin",
+        "hired cook",
+        "old neighbor"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "La escritura tenía a Manu como tercera socia.",
+        "targetWord": "socia",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/db4ac6a1bdcfc70b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el aguardiente",
+    "sentence": "____ pasaba de mano en mano en la finca.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el aguardiente",
+      "options": [
+        "el aguardiente",
+        "el guarapo",
+        "el tinto",
+        "el sancocho"
+      ],
+      "translation": "____ passed from hand to hand at the farm.",
+      "optionTranslations": [
+        "anise liquor",
+        "cane juice",
+        "black coffee",
+        "meat soup"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "El aguardiente pasaba de mano en mano en la finca.",
+        "targetWord": "el aguardiente",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b4d2d732e5e34b42.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el sembrado",
+    "sentence": "La neblina cubría todo ____ de la montaña.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el sembrado",
+      "options": [
+        "el sembrado",
+        "el mesón",
+        "el fogón",
+        "el andén"
+      ],
+      "translation": "The mist covered the whole ____ on the mountain.",
+      "optionTranslations": [
+        "the planted field",
+        "the counter",
+        "the stove",
+        "the platform"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "La neblina cubría todo el sembrado de la montaña.",
+        "targetWord": "el sembrado",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/07e3a1cbd5bfbd75.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "la posada",
+    "sentence": "Los dos quieren abrir ____ en la montaña.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la posada",
+      "options": [
+        "la posada",
+        "la finca",
+        "la cocina",
+        "la vereda"
+      ],
+      "translation": "The two want to open ____ up in the mountains.",
+      "optionTranslations": [
+        "a small inn",
+        "a country house",
+        "a kitchen",
+        "a hamlet"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "Los dos quieren abrir la posada en la montaña.",
+        "targetWord": "la posada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c86e8af51c23fbeb.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "la risita",
+    "sentence": "Salo suelta ____ cómplice y no explica nada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la risita",
+      "options": [
+        "la risita",
+        "la evasiva",
+        "la carpeta",
+        "la silleta"
+      ],
+      "translation": "Salo lets out ____ and explains nothing.",
+      "optionTranslations": [
+        "a little laugh",
+        "a dodgy answer",
+        "a folder",
+        "a flower frame"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "Salo suelta la risita cómplice y no explica nada.",
+        "targetWord": "la risita",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/587f98b5d1a43520.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "cuchichear",
+    "sentence": "Los dos amigos no paran de ____ aparte.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cuchichear",
+      "options": [
+        "cuchichear",
+        "gritar",
+        "cantar",
+        "discutir"
+      ],
+      "translation": "The two friends won't stop ____ off to the side.",
+      "optionTranslations": [
+        "to whisper",
+        "to shout",
+        "to sing",
+        "to argue"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "Los dos amigos no paran de cuchichear aparte.",
+        "targetWord": "cuchichear",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/357c668ec1a40e93.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "borbotear",
+    "sentence": "El sancocho empieza a ____ sobre la leña.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "borbotear",
+      "options": [
+        "borbotear",
+        "enfriar",
+        "secar",
+        "quemar"
+      ],
+      "translation": "The sancocho starts to ____ over the firewood.",
+      "optionTranslations": [
+        "to bubble",
+        "to cool",
+        "to dry",
+        "to burn"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "El sancocho empieza a borbotear sobre la leña.",
+        "targetWord": "borbotear",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/51a3037495ba4bb9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "descifrar",
+    "sentence": "Manu no logra ____ esa mirada cómplice.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "descifrar",
+      "options": [
+        "descifrar",
+        "esconder",
+        "romper",
+        "dibujar"
+      ],
+      "translation": "Manu cannot ____ that knowing look.",
+      "optionTranslations": [
+        "to figure out",
+        "to hide",
+        "to break",
+        "to draw"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "Manu no logra descifrar esa mirada cómplice.",
+        "targetWord": "descifrar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/24e9492371f1e37f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "carcomer",
+    "sentence": "La curiosidad la empieza a ____ por dentro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "carcomer",
+      "options": [
+        "carcomer",
+        "calmar",
+        "alegrar",
+        "dormir"
+      ],
+      "translation": "Curiosity begins to ____ her from within.",
+      "optionTranslations": [
+        "to eat away at",
+        "to calm",
+        "to cheer",
+        "to sleep"
+      ],
+      "audioClip": {
+        "storySlug": "santa-elena-huele-a-sancocho",
+        "storySource": "user",
+        "sentence": "La curiosidad la empieza a carcomer por dentro.",
+        "targetWord": "carcomer",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1947e4a6dd141184.mp3"
+      }
+    }
+  }
+]

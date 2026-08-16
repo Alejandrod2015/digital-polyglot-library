@@ -1,0 +1,459 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "cem,vinte,cinquenta,centavo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cem",
+          "answer": "a hundred",
+          "options": [
+            "a hundred",
+            "twenty",
+            "fifty",
+            "a cent"
+          ]
+        },
+        {
+          "word": "vinte",
+          "answer": "twenty",
+          "options": [
+            "a hundred",
+            "twenty",
+            "fifty",
+            "a cent"
+          ]
+        },
+        {
+          "word": "cinquenta",
+          "answer": "fifty",
+          "options": [
+            "a hundred",
+            "twenty",
+            "fifty",
+            "a cent"
+          ]
+        },
+        {
+          "word": "centavo",
+          "answer": "a cent",
+          "options": [
+            "a hundred",
+            "twenty",
+            "fifty",
+            "a cent"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escolher",
+    "sentence": "Ela [[escolhe]] meio quilo de castanha na banca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to choose",
+      "options": [
+        "to choose",
+        "to refuse",
+        "to weigh",
+        "to pay"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "Ela escolhe meio quilo de castanha na banca.",
+        "targetWord": "escolhe",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5af2310b184d8d27.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "troco",
+    "sentence": "A moça abre a gaveta e mostra que não tem [[troco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "change",
+      "options": [
+        "change",
+        "a receipt",
+        "a bag",
+        "a price"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "A moça abre a gaveta e mostra que não tem troco.",
+        "targetWord": "troco",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/48598cc32897823e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "quebra",
+    "sentence": "Ela _____ a nota grande na banca de queijos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "quebra",
+      "options": [
+        "quebra",
+        "guarda",
+        "perde",
+        "conta"
+      ],
+      "translation": "She _____ the big note at the cheese stand.",
+      "optionTranslations": [
+        "breaks",
+        "keeps",
+        "loses",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "Ela quebra a nota grande na banca de queijos.",
+        "targetWord": "quebra",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29bd0f25d4a5257d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contar",
+    "sentence": "A moça [[conta]] o troco moeda por moeda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to count",
+      "options": [
+        "to count",
+        "to keep",
+        "to give away",
+        "to ask"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "A moça conta o troco moeda por moeda.",
+        "targetWord": "conta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3aad5e2c3e8548f1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seguir",
+    "sentence": "Ela [[segue]] os números e entende todos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to follow along",
+      "options": [
+        "to follow along",
+        "to lose track",
+        "to write down",
+        "to repeat"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "Ela segue os números e entende todos.",
+        "targetWord": "segue",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/53714fdacc97fc54.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "certo",
+    "sentence": "Ela guarda as castanhas e sai com o troco [[certo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "correct",
+      "options": [
+        "correct",
+        "wrong",
+        "missing",
+        "extra"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "Ela guarda as castanhas e sai com o troco certo.",
+        "targetWord": "certo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/71bde19754fb9343.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "castanha",
+    "sentence": "Ela escolhe meio quilo de [[castanha]] na banca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a nut",
+      "options": [
+        "a nut",
+        "a fruit",
+        "a cheese",
+        "a bread"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "Ela escolhe meio quilo de castanha na banca.",
+        "targetWord": "castanha",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5af2310b184d8d27.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gaveta",
+    "sentence": "A moça abre a [[gaveta]] e mostra que não tem troco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a drawer",
+      "options": [
+        "a drawer",
+        "a door",
+        "a window",
+        "a box"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "A moça abre a gaveta e mostra que não tem troco.",
+        "targetWord": "gaveta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/48598cc32897823e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "moeda",
+    "sentence": "A moça conta o troco [[moeda]] por moeda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a coin",
+      "options": [
+        "a coin",
+        "a note",
+        "a card",
+        "a bill"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "A moça conta o troco moeda por moeda.",
+        "targetWord": "moeda",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3aad5e2c3e8548f1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "voz",
+    "sentence": "A moça conta o troco em [[voz]] alta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a voice",
+      "options": [
+        "a voice",
+        "a hand",
+        "a book",
+        "a light"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "A moça conta o troco em voz alta.",
+        "targetWord": "voz",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7980e146cf212385.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pedaço",
+    "sentence": "Ela compra um [[pedaço]] pequeno de queijo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a piece",
+      "options": [
+        "a piece",
+        "a box",
+        "a bottle",
+        "a bag"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "Ela compra um pedaço pequeno de queijo.",
+        "targetWord": "pedaço",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c73c7a1a91097580.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fechar",
+    "sentence": "A moça [[fecha]] a gaveta e passa para o cliente seguinte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to close",
+      "options": [
+        "to close",
+        "to open",
+        "to fill",
+        "to move"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "A moça fecha a gaveta e passa para o cliente seguinte.",
+        "targetWord": "fecha",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed7e9580116636c6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entregar",
+    "sentence": "Ela [[entrega]] a nota para a moça da banca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hand over",
+      "options": [
+        "to hand over",
+        "to keep",
+        "to hide",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "Ela entrega a nota para a moça da banca.",
+        "targetWord": "entrega",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/763169ec9e6e45ae.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ouvir",
+    "sentence": "Ela repete o último número só para [[ouvir]] a própria voz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hear",
+      "options": [
+        "to hear",
+        "to write",
+        "to see",
+        "to touch"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "Ela repete o último número só para ouvir a própria voz.",
+        "targetWord": "ouvir",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a3ebded517dedada.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "próprio",
+    "sentence": "Ela repete o número para ouvir a [[própria]] voz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "her own",
+      "options": [
+        "her own",
+        "another",
+        "a loud",
+        "a soft"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "Ela repete o número para ouvir a própria voz.",
+        "targetWord": "própria",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e7b7b82b8dc4422.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "meio",
+    "sentence": "Ela escolhe [[meio]] quilo de castanha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half",
+      "options": [
+        "half",
+        "double",
+        "one",
+        "three"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "Ela escolhe meio quilo de castanha.",
+        "targetWord": "meio",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d191215e7bcc5a8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "queijo",
+    "sentence": "Ela compra um pedaço pequeno de [[queijo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cheese",
+      "options": [
+        "cheese",
+        "meat",
+        "fish",
+        "bread"
+      ],
+      "audioClip": {
+        "storySlug": "sem-troco-na-banca",
+        "storySource": "user",
+        "sentence": "Ela compra um pedaço pequeno de queijo.",
+        "targetWord": "queijo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c73c7a1a91097580.mp3"
+      }
+    },
+    "featured": false
+  }
+]

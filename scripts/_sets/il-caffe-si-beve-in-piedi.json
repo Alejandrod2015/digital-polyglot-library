@@ -1,0 +1,555 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "banco,piattino,gomito,marmo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "banco",
+          "answer": "a bar counter",
+          "options": [
+            "a bar counter",
+            "a saucer",
+            "an elbow",
+            "marble"
+          ]
+        },
+        {
+          "word": "piattino",
+          "answer": "a saucer",
+          "options": [
+            "a bar counter",
+            "a saucer",
+            "an elbow",
+            "marble"
+          ]
+        },
+        {
+          "word": "gomito",
+          "answer": "an elbow",
+          "options": [
+            "a bar counter",
+            "a saucer",
+            "an elbow",
+            "marble"
+          ]
+        },
+        {
+          "word": "marmo",
+          "answer": "marble",
+          "options": [
+            "a bar counter",
+            "a saucer",
+            "an elbow",
+            "marble"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "in piedi",
+    "sentence": "Loro restano [[in piedi]] per due minuti.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "standing up",
+      "options": [
+        "standing up",
+        "sitting down",
+        "asleep",
+        "outside"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Loro restano in piedi per due minuti.",
+        "targetWord": "in piedi",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5d1997250b43667.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "listino",
+    "sentence": "Sul muro c'è un [[listino]] con due prezzi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a price list",
+      "options": [
+        "a price list",
+        "a mirror",
+        "a window",
+        "a photo"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Sul muro c'è un listino con due prezzi.",
+        "targetWord": "listino",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/98203ba7e29d5fdb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prezzo",
+    "sentence": "I due [[prezzi]] non sono uguali.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "prices",
+      "options": [
+        "prices",
+        "doors",
+        "cups",
+        "tables"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "I due prezzi non sono uguali.",
+        "targetWord": "prezzi",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2ecdbe0d002eb9a3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "diverso",
+    "sentence": "Al tavolo e al banco i prezzi sono [[diversi]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "different",
+      "options": [
+        "different",
+        "equal",
+        "free",
+        "wrong"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Al tavolo e al banco i prezzi sono diversi.",
+        "targetWord": "diversi",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/579b26bb40721cf2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "servizio",
+    "sentence": "Al tavolino si paga anche il [[servizio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the service",
+      "options": [
+        "the service",
+        "the coffee",
+        "the bread",
+        "the water"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Al tavolino si paga anche il servizio.",
+        "targetWord": "servizio",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46b1bdae92b97411.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorso",
+    "sentence": "Lui beve il caffè in due [[sorsi]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sips",
+      "options": [
+        "sips",
+        "hours",
+        "hands",
+        "words"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Lui beve il caffè in due sorsi.",
+        "targetWord": "sorsi",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/657b34cb4e924f6a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sapore",
+    "sentence": "Il caffè al banco ha lo stesso [[sapore]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "taste",
+      "options": [
+        "taste",
+        "price",
+        "colour",
+        "name"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Il caffè al banco ha lo stesso sapore.",
+        "targetWord": "sapore",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20f63a3d223ee728.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "dritto",
+    "sentence": "Il giorno dopo lui va _____ al banco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dritto",
+      "options": [
+        "dritto",
+        "fuori",
+        "sotto",
+        "indietro"
+      ],
+      "translation": "The next day he goes _____ to the counter.",
+      "optionTranslations": [
+        "straight",
+        "outside",
+        "under",
+        "backwards"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Il giorno dopo lui va dritto al banco.",
+        "targetWord": "dritto",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2dd0d1a281fbe626.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "spiegare",
+    "sentence": "Il cameriere [[spiega]] la differenza con calma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "explains",
+      "options": [
+        "explains",
+        "hides",
+        "shouts",
+        "forgets"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Il cameriere spiega la differenza con calma.",
+        "targetWord": "spiega",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/de51e7f2df8c2339.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bar",
+    "sentence": "Lui entra in un [[bar]] piccolo e pieno di gente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a café",
+      "options": [
+        "a café",
+        "a bank",
+        "a bus",
+        "a park"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Lui entra in un bar piccolo e pieno di gente.",
+        "targetWord": "bar",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/90da93848c56bfe2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sedersi",
+    "sentence": "Lui [[si siede]] a un tavolino vicino alla porta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sits down",
+      "options": [
+        "sits down",
+        "stands up",
+        "goes out",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Lui si siede a un tavolino vicino alla porta.",
+        "targetWord": "si siede",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dd6f54a6cf15f3b2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tavolino",
+    "sentence": "Il [[tavolino]] ha due sedie e nient'altro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a small table",
+      "options": [
+        "a small table",
+        "a large bed",
+        "a shop window",
+        "a wooden box"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Il tavolino ha due sedie e nient'altro.",
+        "targetWord": "tavolino",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c8084965ed71b51.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cameriere",
+    "sentence": "Il [[cameriere]] arriva subito con il caffè.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the waiter",
+      "options": [
+        "the waiter",
+        "the cook",
+        "the driver",
+        "the guest"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Il cameriere arriva subito con il caffè.",
+        "targetWord": "cameriere",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6dba7f8ae9221400.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "portare",
+    "sentence": "Lui [[porta]] anche un bicchiere d'acqua fredda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "brings",
+      "options": [
+        "brings",
+        "drinks",
+        "sells",
+        "cleans"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Lui porta anche un bicchiere d'acqua fredda.",
+        "targetWord": "porta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/11e46a4c73484756.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bicchiere",
+    "sentence": "L'acqua arriva dentro un [[bicchiere]] piccolo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a glass",
+      "options": [
+        "a glass",
+        "a plate",
+        "a spoon",
+        "a bag"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "L'acqua arriva dentro un bicchiere piccolo.",
+        "targetWord": "bicchiere",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7d43fa6782ac451b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "freddo",
+    "sentence": "L'acqua del bar è sempre molto [[fredda]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cold",
+      "options": [
+        "cold",
+        "hot",
+        "sweet",
+        "dirty"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "L'acqua del bar è sempre molto fredda.",
+        "targetWord": "fredda",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/93e804aa66a233c6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conto",
+    "sentence": "Il [[conto]] sul piattino sorprende il turista.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the bill",
+      "options": [
+        "the bill",
+        "the menu",
+        "the ticket",
+        "the key"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Il conto sul piattino sorprende il turista.",
+        "targetWord": "conto",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c1fd7eb1418e194.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bere",
+    "sentence": "Tre uomini [[bevono]] il caffè al banco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "drink",
+      "options": [
+        "drink",
+        "cook",
+        "pay",
+        "wait"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Tre uomini bevono il caffè al banco.",
+        "targetWord": "bevono",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a11a761e7748b11d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pagare",
+    "sentence": "Loro [[pagano]] molto meno al banco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pay",
+      "options": [
+        "pay",
+        "order",
+        "count",
+        "hide"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Loro pagano molto meno al banco.",
+        "targetWord": "pagano",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f1292052b105656.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "restare",
+    "sentence": "Loro [[restano]] dentro il bar pochissimo tempo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stay",
+      "options": [
+        "stay",
+        "leave",
+        "sleep",
+        "shout"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Loro restano dentro il bar pochissimo tempo.",
+        "targetWord": "restano",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/01e1a98b00e8cc4a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "discutere",
+    "sentence": "Lui paga senza [[discutere]] con il cameriere.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "arguing",
+      "options": [
+        "arguing",
+        "laughing",
+        "running",
+        "reading"
+      ],
+      "audioClip": {
+        "storySlug": "il-caffe-si-beve-in-piedi",
+        "storySource": "user",
+        "sentence": "Lui paga senza discutere con il cameriere.",
+        "targetWord": "discutere",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c80f4b37fe76572.mp3"
+      }
+    },
+    "featured": false
+  }
+]

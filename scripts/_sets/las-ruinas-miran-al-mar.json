@@ -1,0 +1,896 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "ofrecer",
+    "sentence": "Ella le [[ofrece]] una piña fresca.",
+    "payload": {
+      "answer": "to offer",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to offer",
+        "to sell",
+        "to hide",
+        "to throw"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella le ofrece una piña fresca.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "ofrece",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/19e5358d91db0573.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "antiguo",
+    "sentence": "Las ruinas son muy [[antiguas]].",
+    "payload": {
+      "answer": "very old",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "very old",
+        "brand new",
+        "very tall",
+        "very clean"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las ruinas son muy antiguas.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "antiguas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/15af84b09ef3f333.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aparecer",
+    "sentence": "Una iguana [[aparece]] entre las rocas.",
+    "payload": {
+      "answer": "to appear",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to appear",
+        "to hide",
+        "to sleep",
+        "to fall"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Una iguana aparece entre las rocas.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "aparece",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26bd3a9b033fa827.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quieto",
+    "sentence": "La iguana es grande y muy [[quieta]].",
+    "payload": {
+      "answer": "still",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "still",
+        "fast",
+        "loud",
+        "angry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La iguana es grande y muy quieta.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "quieta",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c8db4307492554e4.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "entrada",
+    "sentence": "Compras el boleto en la _____ del museo.",
+    "payload": {
+      "answer": "entrada",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "entrada",
+        "cocina",
+        "ventana",
+        "escalera"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Compras el boleto en la entrada del museo.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "entrada",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e243bdc47b3d2d65.mp3"
+      },
+      "translation": "You buy the ticket at the _____ of the museum.",
+      "optionTranslations": [
+        "entrance",
+        "kitchen",
+        "window",
+        "stairway"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "curiosidad",
+    "sentence": "Ella la mira con [[curiosidad]].",
+    "payload": {
+      "answer": "curiosity",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "curiosity",
+        "fear",
+        "anger",
+        "hunger"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella la mira con curiosidad.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "curiosidad",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c25085adcdbe87be.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "viento",
+    "sentence": "Las hojas se mueven por el _____ fuerte.",
+    "payload": {
+      "answer": "viento",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "viento",
+        "sol",
+        "ruido",
+        "color"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las hojas se mueven por el viento fuerte.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "viento",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0978ff5bdc312b8.mp3"
+      },
+      "translation": "The leaves move because of the strong _____.",
+      "optionTranslations": [
+        "wind",
+        "sun",
+        "noise",
+        "color"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "batería",
+    "sentence": "La cámara no funciona porque no tiene _____.",
+    "payload": {
+      "answer": "batería",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "batería",
+        "ventana",
+        "música",
+        "comida"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La cámara no funciona porque no tiene batería.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "batería",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/76096e5f440394d0.mp3"
+      },
+      "translation": "The camera does not work because it has no _____.",
+      "optionTranslations": [
+        "battery",
+        "window",
+        "music",
+        "food"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "ruinas",
+    "sentence": "Las _____ mayas son muy viejas y de piedra.",
+    "payload": {
+      "answer": "ruinas",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "ruinas",
+        "casas",
+        "tiendas",
+        "flores"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las ruinas mayas son muy viejas y de piedra.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "ruinas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08e83c06f117ec33.mp3"
+      },
+      "translation": "The Mayan _____ are very old and made of stone.",
+      "optionTranslations": [
+        "ruins",
+        "houses",
+        "shops",
+        "flowers"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recuerdo",
+    "sentence": "Este [[recuerdo]] es muy especial.",
+    "payload": {
+      "answer": "a memory",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a memory",
+        "a photo",
+        "a ticket",
+        "a map"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Este recuerdo es muy especial.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "recuerdo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a0da30a030793e6.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacia",
+    "sentence": "Ella camina [[hacia]] las ruinas antiguas.",
+    "payload": {
+      "answer": "toward",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "toward",
+        "away from",
+        "around",
+        "behind"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella camina hacia las ruinas antiguas.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "hacia",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/db17919b5a87dafc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vender",
+    "sentence": "Ella [[vende]] frutas cerca de la entrada.",
+    "payload": {
+      "answer": "to sell",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to sell",
+        "to buy",
+        "to grow",
+        "to eat"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella vende frutas cerca de la entrada.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "vende",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ca09edbb1fe917d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brillar",
+    "sentence": "El mar azul [[brilla]] con el sol.",
+    "payload": {
+      "answer": "to shine",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to shine",
+        "to fall",
+        "to break",
+        "to grow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El mar azul brilla con el sol.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "brilla",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96b0d9410c732a80.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "con calma",
+    "sentence": "Ella observa el paisaje [[con calma]].",
+    "payload": {
+      "answer": "calmly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "calmly",
+        "quickly",
+        "loudly",
+        "sadly"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella observa el paisaje con calma.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "con calma",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/18fcdbc4fdd2415b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suspirar",
+    "sentence": "Ella [[suspira]] un poco y sonríe.",
+    "payload": {
+      "answer": "to sigh",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to sigh",
+        "to shout",
+        "to laugh",
+        "to cry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella suspira un poco y sonríe.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "suspira",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e32301549cfe198.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un poco",
+    "sentence": "Ella descansa [[un poco]] antes de seguir.",
+    "payload": {
+      "answer": "a little",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a little",
+        "a lot",
+        "never",
+        "always"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella descansa un poco antes de seguir.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "un poco",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e4a9535d190c9fb4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mejor",
+    "sentence": "La memoria es [[mejor]] que una foto.",
+    "payload": {
+      "answer": "better",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "better",
+        "worse",
+        "equal",
+        "smaller"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La memoria es mejor que una foto.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "mejor",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/56b7bb24aad99cb6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cálido",
+    "sentence": "El viento del mar es [[cálido]].",
+    "payload": {
+      "answer": "warm",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "warm",
+        "cold",
+        "wet",
+        "dry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El viento del mar es cálido.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "cálido",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/811fb6b4f1bea91a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "memoria",
+    "sentence": "La _____ te ayuda a recordar los momentos felices.",
+    "payload": {
+      "answer": "memoria",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "memoria",
+        "pereza",
+        "tristeza",
+        "prisa"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La memoria te ayuda a recordar los momentos felices.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "memoria",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0f1fe52d4274998d.mp3"
+      },
+      "translation": "_____ helps you remember happy moments.",
+      "optionTranslations": [
+        "memory",
+        "laziness",
+        "sadness",
+        "hurry"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "guarda",
+    "sentence": "Ella _____ el dinero en su bolsa.",
+    "payload": {
+      "answer": "guarda",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "guarda",
+        "rompe",
+        "pierde",
+        "gasta"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella guarda el dinero en su bolsa.",
+        "storySlug": "las-ruinas-miran-al-mar",
+        "targetWord": "guarda",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/91969950b9465dae.mp3"
+      },
+      "translation": "She _____ the money in her bag.",
+      "optionTranslations": [
+        "puts away",
+        "breaks",
+        "loses",
+        "spends"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "sombrero,iguana,cámara,colina",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "sombrero",
+          "answer": "a hat",
+          "options": [
+            "a hat",
+            "a large lizard",
+            "a camera",
+            "a hill"
+          ]
+        },
+        {
+          "word": "iguana",
+          "answer": "a large lizard",
+          "options": [
+            "a hat",
+            "a large lizard",
+            "a camera",
+            "a hill"
+          ]
+        },
+        {
+          "word": "cámara",
+          "answer": "a camera",
+          "options": [
+            "a hat",
+            "a large lizard",
+            "a camera",
+            "a hill"
+          ]
+        },
+        {
+          "word": "colina",
+          "answer": "a hill",
+          "options": [
+            "a hat",
+            "a large lizard",
+            "a camera",
+            "a hill"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "subir",
+    "sentence": "Sofía [[sube]] al autobús cada mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "climbs onto",
+      "options": [
+        "climbs onto",
+        "eats",
+        "sleeps",
+        "washes"
+      ],
+      "audioClip": {
+        "storySlug": "las-ruinas-miran-al-mar",
+        "storySource": "user",
+        "sentence": "Sofía sube al autobús cada mañana.",
+        "targetWord": "sube",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/90d314ffdea6ca27.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "azul",
+    "sentence": "El mar es muy [[azul]] hoy.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "blue",
+      "options": [
+        "blue",
+        "round",
+        "heavy",
+        "loud"
+      ],
+      "audioClip": {
+        "storySlug": "las-ruinas-miran-al-mar",
+        "storySource": "user",
+        "sentence": "El mar es muy azul hoy.",
+        "targetWord": "azul",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/45b77e084271a1a3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fruta",
+    "sentence": "Elena come [[fruta]] en el mercado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fruit",
+      "options": [
+        "fruit",
+        "a chair",
+        "a river",
+        "a shoe"
+      ],
+      "audioClip": {
+        "storySlug": "las-ruinas-miran-al-mar",
+        "storySource": "user",
+        "sentence": "Elena come fruta en el mercado.",
+        "targetWord": "fruta",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/76a830f8584d35fc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verde",
+    "sentence": "La colina es muy [[verde]] en abril.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "green",
+      "options": [
+        "green",
+        "warm",
+        "small",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "las-ruinas-miran-al-mar",
+        "storySource": "user",
+        "sentence": "La colina es muy verde en abril.",
+        "targetWord": "verde",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d2b3adada19247e8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fresco",
+    "sentence": "La piña está [[fresca]] y muy rica.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fresh",
+      "options": [
+        "fresh",
+        "loud",
+        "dark",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "las-ruinas-miran-al-mar",
+        "storySource": "user",
+        "sentence": "La piña está fresca y muy rica.",
+        "targetWord": "fresca",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0557e71da7163562.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grande",
+    "sentence": "La iguana es muy [[grande]] y lenta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "big",
+      "options": [
+        "big",
+        "soft",
+        "cold",
+        "fast"
+      ],
+      "audioClip": {
+        "storySlug": "las-ruinas-miran-al-mar",
+        "storySource": "user",
+        "sentence": "La iguana es muy grande y lenta.",
+        "targetWord": "grande",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b46bb7fcd13aca01.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agua",
+    "sentence": "Sofía bebe [[agua]] fría bajo el sol.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "water",
+      "options": [
+        "water",
+        "bread",
+        "a book",
+        "a door"
+      ],
+      "audioClip": {
+        "storySlug": "las-ruinas-miran-al-mar",
+        "storySource": "user",
+        "sentence": "Sofía bebe agua fría bajo el sol.",
+        "targetWord": "agua",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/532de0b134346cf4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "roca",
+    "sentence": "La iguana descansa sobre una [[roca]] gris.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rock",
+      "options": [
+        "a rock",
+        "a cloud",
+        "a song",
+        "a table"
+      ],
+      "audioClip": {
+        "storySlug": "las-ruinas-miran-al-mar",
+        "storySource": "user",
+        "sentence": "La iguana descansa sobre una roca gris.",
+        "targetWord": "roca",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/db0f4dd091fdc36b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "sentence": "Sofía [[mira]] el mar con mucha calma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "looks at",
+      "options": [
+        "looks at",
+        "cooks",
+        "runs",
+        "buys"
+      ],
+      "audioClip": {
+        "storySlug": "las-ruinas-miran-al-mar",
+        "storySource": "user",
+        "sentence": "Sofía mira el mar con mucha calma.",
+        "targetWord": "mira",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f0ac668d712ba8c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "observar",
+    "sentence": "Sofía [[observa]] la iguana durante un rato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "watches",
+      "options": [
+        "watches",
+        "opens",
+        "washes",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "las-ruinas-miran-al-mar",
+        "storySource": "user",
+        "sentence": "Sofía observa la iguana durante un rato.",
+        "targetWord": "observa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/efae048e28f2d7de.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "largo",
+    "sentence": "El camino hacia las ruinas es muy [[largo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "long",
+      "options": [
+        "long",
+        "empty",
+        "warm",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "las-ruinas-miran-al-mar",
+        "storySource": "user",
+        "sentence": "El camino hacia las ruinas es muy largo.",
+        "targetWord": "largo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05d3e1dc63678472.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de pronto",
+    "sentence": "[[De pronto]], una iguana aparece entre las piedras.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "suddenly",
+      "options": [
+        "suddenly",
+        "very slowly",
+        "at night",
+        "every day"
+      ],
+      "audioClip": {
+        "storySlug": "las-ruinas-miran-al-mar",
+        "storySource": "user",
+        "sentence": "De pronto, una iguana aparece entre las piedras.",
+        "targetWord": "De pronto",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b178da275ffe81c8.mp3"
+      }
+    },
+    "featured": false
+  }
+]

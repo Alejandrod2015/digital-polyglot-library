@@ -1,0 +1,632 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "gente,uomo,arance,negozio",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "gente",
+     "answer": "people",
+     "options": [
+      "people",
+      "a man",
+      "oranges",
+      "a shop"
+     ]
+    },
+    {
+     "word": "uomo",
+     "answer": "a man",
+     "options": [
+      "people",
+      "a man",
+      "oranges",
+      "a shop"
+     ]
+    },
+    {
+     "word": "arance",
+     "answer": "oranges",
+     "options": [
+      "people",
+      "a man",
+      "oranges",
+      "a shop"
+     ]
+    },
+    {
+     "word": "negozio",
+     "answer": "a shop",
+     "options": [
+      "people",
+      "a man",
+      "oranges",
+      "a shop"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "oggi",
+  "sentence": "[[Oggi]] Elena e Chiara vanno al mercato.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "today",
+   "options": [
+    "today",
+    "yesterday",
+    "tomorrow",
+    "tonight"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Oggi Elena e Chiara vanno al mercato.",
+    "targetWord": "oggi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "pieno",
+  "sentence": "Il mercato è [[pieno]] di gente e colori.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "full",
+   "options": [
+    "full",
+    "empty",
+    "near",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Il mercato è pieno di gente e colori.",
+    "targetWord": "pieno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "terzo",
+  "sentence": "Il signore mette un [[terzo]] cannolo nel sacchetto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "third",
+   "options": [
+    "third",
+    "second",
+    "first",
+    "fourth"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Il signore mette un terzo cannolo nel sacchetto.",
+    "targetWord": "terzo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "conosce",
+  "sentence": "Elena non _____ questo posto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "conosce",
+   "options": [
+    "conosce",
+    "compra",
+    "vende",
+    "cerca"
+   ],
+   "translation": "Elena does not _____ this place.",
+   "optionTranslations": [
+    "knows",
+    "buys",
+    "sells",
+    "looks for"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Elena non conosce questo posto.",
+    "targetWord": "conosce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "vende",
+  "sentence": "Un uomo _____ frutta fresca.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vende",
+   "options": [
+    "vende",
+    "compra",
+    "paga",
+    "riempie"
+   ],
+   "translation": "A man _____ fresh fruit.",
+   "optionTranslations": [
+    "sells",
+    "buys",
+    "pays",
+    "fills"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Un uomo vende frutta fresca.",
+    "targetWord": "vende",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "compra",
+  "sentence": "Chiara _____ arance dolci e limoni.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "compra",
+   "options": [
+    "compra",
+    "vende",
+    "cerca",
+    "trova"
+   ],
+   "translation": "Chiara _____ sweet oranges and lemons.",
+   "optionTranslations": [
+    "buys",
+    "sells",
+    "looks for",
+    "finds"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Chiara compra arance dolci e limoni.",
+    "targetWord": "compra",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "limoni",
+  "sentence": "Chiara compra arance dolci e _____ gialli.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "limoni",
+   "options": [
+    "limoni",
+    "arance",
+    "cannoli",
+    "colori"
+   ],
+   "translation": "Chiara buys sweet oranges and yellow _____.",
+   "optionTranslations": [
+    "lemons",
+    "oranges",
+    "cannoli",
+    "colors"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Chiara compra arance dolci e limoni gialli.",
+    "targetWord": "limoni",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "riempie",
+  "sentence": "Il signore _____ i cannoli con la crema.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "riempie",
+   "options": [
+    "riempie",
+    "compra",
+    "paga",
+    "mangia"
+   ],
+   "translation": "The gentleman _____ the cannoli with cream.",
+   "optionTranslations": [
+    "fills",
+    "buys",
+    "pays",
+    "eats"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Il signore riempie i cannoli con la crema.",
+    "targetWord": "riempie",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "paga",
+  "sentence": "Chiara _____ due cannoli al signore.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "paga",
+   "options": [
+    "paga",
+    "compra",
+    "vende",
+    "cerca"
+   ],
+   "translation": "Chiara _____ for two cannoli to the gentleman.",
+   "optionTranslations": [
+    "pays",
+    "buys",
+    "sells",
+    "looks for"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Chiara paga due cannoli al signore.",
+    "targetWord": "paga",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "posto",
+  "sentence": "Elena non conosce questo _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "posto",
+   "options": [
+    "posto",
+    "negozio",
+    "mercato",
+    "mare"
+   ],
+   "translation": "Elena does not know this _____.",
+   "optionTranslations": [
+    "place",
+    "shop",
+    "market",
+    "sea"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Elena non conosce questo posto.",
+    "targetWord": "posto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "cercano",
+  "sentence": "Poi le amiche _____ qualcosa di dolce.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cercano",
+   "options": [
+    "cercano",
+    "trovano",
+    "comprano",
+    "pagano"
+   ],
+   "translation": "Then the friends _____ something sweet.",
+   "optionTranslations": [
+    "look for",
+    "find",
+    "buy",
+    "pay"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Poi le amiche cercano qualcosa di dolce.",
+    "targetWord": "cercano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "signore",
+  "sentence": "Il _____ riempie i cannoli di crema.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "signore",
+   "options": [
+    "signore",
+    "uomo",
+    "gente",
+    "ragazza"
+   ],
+   "translation": "The _____ fills the cannoli with cream.",
+   "optionTranslations": [
+    "gentleman",
+    "man",
+    "people",
+    "girl"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Il signore riempie i cannoli di crema.",
+    "targetWord": "signore",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "odore",
+  "sentence": "Nell'aria c'è un _____ delizioso.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "odore",
+   "options": [
+    "odore",
+    "sacchetto",
+    "cannolo",
+    "cielo"
+   ],
+   "translation": "In the air there is a delicious _____.",
+   "optionTranslations": [
+    "smell",
+    "little bag",
+    "cannolo",
+    "sky"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Nell'aria c'è un odore delizioso.",
+    "targetWord": "odore",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sacchetto",
+  "sentence": "Il signore mette il cannolo nel _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sacchetto",
+   "options": [
+    "sacchetto",
+    "negozio",
+    "posto",
+    "panchina"
+   ],
+   "translation": "The gentleman puts the cannolo in the _____.",
+   "optionTranslations": [
+    "little bag",
+    "shop",
+    "place",
+    "bench"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Il signore mette il cannolo nel sacchetto.",
+    "targetWord": "sacchetto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "resta",
+  "sentence": "Elena _____ sorpresa e ringrazia.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "resta",
+   "options": [
+    "resta",
+    "diventa",
+    "guarda",
+    "pensa"
+   ],
+   "translation": "Elena _____ surprised and says thank you.",
+   "optionTranslations": [
+    "stays",
+    "becomes",
+    "watches",
+    "thinks"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Elena resta sorpresa e ringrazia.",
+    "targetWord": "resta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "ringrazia",
+  "sentence": "Elena resta sorpresa e _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ringrazia",
+   "options": [
+    "ringrazia",
+    "ride",
+    "grida",
+    "canta"
+   ],
+   "translation": "Elena stays surprised and _____.",
+   "optionTranslations": [
+    "thanks",
+    "laughs",
+    "shouts",
+    "sings"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Elena resta sorpresa e ringrazia.",
+    "targetWord": "ringrazia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "escono",
+  "sentence": "Le amiche _____ dal mercato contente.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "escono",
+   "options": [
+    "escono",
+    "entrano",
+    "cercano",
+    "tornano"
+   ],
+   "translation": "The friends _____ of the market happy.",
+   "optionTranslations": [
+    "go out",
+    "enter",
+    "look for",
+    "return"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Le amiche escono dal mercato contente.",
+    "targetWord": "escono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "trovano",
+  "sentence": "Le amiche escono e _____ una panchina.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "trovano",
+   "options": [
+    "trovano",
+    "cercano",
+    "comprano",
+    "vendono"
+   ],
+   "translation": "The friends go out and _____ a bench.",
+   "optionTranslations": [
+    "find",
+    "look for",
+    "buy",
+    "sell"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Le amiche escono e trovano una panchina.",
+    "targetWord": "trovano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "panchina",
+  "sentence": "Le due amiche trovano una _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "panchina",
+   "options": [
+    "panchina",
+    "negozio",
+    "sacchetto",
+    "strada"
+   ],
+   "translation": "The two friends find a _____.",
+   "optionTranslations": [
+    "bench",
+    "shop",
+    "bag",
+    "street"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Le due amiche trovano una panchina.",
+    "targetWord": "panchina",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "pensa",
+  "sentence": "Elena _____ che Palermo è deliziosa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pensa",
+   "options": [
+    "pensa",
+    "sa",
+    "dice",
+    "crede"
+   ],
+   "translation": "Elena _____ that Palermo is delicious.",
+   "optionTranslations": [
+    "thinks",
+    "knows",
+    "says",
+    "believes"
+   ],
+   "audioClip": {
+    "storySlug": "un-cannolo-in-piu",
+    "storySource": "user",
+    "sentence": "Elena pensa che Palermo è deliziosa.",
+    "targetWord": "pensa",
+    "language": "italian"
+   }
+  }
+ }
+]

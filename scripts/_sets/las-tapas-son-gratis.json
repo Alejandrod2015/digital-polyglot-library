@@ -1,0 +1,621 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "tapa",
+    "sentence": "Aquí sirven unas [[tapas]] muy buenas.",
+    "payload": {
+      "answer": "a small snack",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a small snack",
+        "a bill",
+        "a menu",
+        "a cup"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Aquí sirven unas tapas muy buenas.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "tapas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d241afb6144ed558.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "gratis",
+    "sentence": "La comida no cuesta dinero; es _____.",
+    "payload": {
+      "answer": "gratis",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "gratis",
+        "cara",
+        "rica",
+        "fría"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La comida no cuesta dinero; es gratis.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "gratis",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/be7e34169ca81055.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The food does not cost money; it is _____.",
+      "optionTranslations": [
+        "free",
+        "expensive",
+        "tasty",
+        "cold"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jamón",
+    "sentence": "Ella prueba el [[jamón]] salado.",
+    "payload": {
+      "answer": "ham",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "ham",
+        "cheese",
+        "bread",
+        "fish"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella prueba el jamón salado.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "jamón",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b1e2323b4ba49ba.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pedir",
+    "sentence": "En el bar, ella [[pide]] dos refrescos.",
+    "payload": {
+      "answer": "to ask for",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to ask for",
+        "to bring",
+        "to pay",
+        "to cook"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En el bar, ella pide dos refrescos.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "pide",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/416db1feec0d965d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comer",
+    "sentence": "Las amigas [[comen]] con calma.",
+    "payload": {
+      "answer": "to eat",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to eat",
+        "to drink",
+        "to walk",
+        "to talk"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las amigas comen con calma.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "comen",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f745aca5a4683ebe.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tener hambre",
+    "sentence": "Después de caminar, ella [[tiene hambre]].",
+    "payload": {
+      "answer": "to be hungry",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to be hungry",
+        "to be sleepy",
+        "to be afraid",
+        "to be bored"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Después de caminar, ella tiene hambre.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "tiene hambre",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/63dc7d73283cd9d2.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorprendido",
+    "sentence": "Al ver la comida, ella está [[sorprendida]].",
+    "payload": {
+      "answer": "surprised",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "surprised",
+        "bored",
+        "angry",
+        "tired"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Al ver la comida, ella está sorprendida.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "sorprendida",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8aa7c5627689355b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "contento",
+    "sentence": "Todo va muy bien y estoy muy _____.",
+    "payload": {
+      "answer": "contento",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "contento",
+        "cansado",
+        "enfermo",
+        "nervioso"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Todo va muy bien y estoy muy contento.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "contento",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c38c5163eefd9f7.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Everything is going well and I am very _____.",
+      "optionTranslations": [
+        "happy",
+        "tired",
+        "sick",
+        "nervous"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barrio",
+    "sentence": "Las dos amigas caminan por el [[barrio]] antiguo.",
+    "payload": {
+      "answer": "a neighborhood",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a neighborhood",
+        "a beach",
+        "a forest",
+        "a bridge"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las dos amigas caminan por el barrio antiguo.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "barrio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/77b9489331eb9b9f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "refresco",
+    "sentence": "Tengo sed y quiero un _____ frío.",
+    "payload": {
+      "answer": "refresco",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "refresco",
+        "zapato",
+        "cuaderno",
+        "sombrero"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Tengo sed y quiero un refresco frío.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "refresco",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad8e783b5aa86a6f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I am thirsty and I want a cold _____.",
+      "optionTranslations": [
+        "soft drink",
+        "shoe",
+        "notebook",
+        "hat"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "visitar",
+    "sentence": "Ella [[visita]] la ciudad este mes.",
+    "payload": {
+      "answer": "to visit",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to visit",
+        "to sell",
+        "to clean",
+        "to open"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella visita la ciudad este mes.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "visita",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b2d3b2f6c5ecc2b5.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vivir",
+    "sentence": "Mi amiga [[vive]] aquí desde hace años.",
+    "payload": {
+      "answer": "to live",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to live",
+        "to work",
+        "to arrive",
+        "to leave"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Mi amiga vive aquí desde hace años.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "vive",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bcb9849abe7e5c06.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trabajar",
+    "sentence": "Ella [[trabaja]] en una tienda pequeña.",
+    "payload": {
+      "answer": "to work",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to work",
+        "to rest",
+        "to play",
+        "to study"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella trabaja en una tienda pequeña.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "trabaja",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/70324d1b2221b431.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calle",
+    "sentence": "Las [[calles]] del centro son muy estrechas.",
+    "payload": {
+      "answer": "a street",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a street",
+        "a roof",
+        "a garden",
+        "a boat"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las calles del centro son muy estrechas.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "calles",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ec33864e5620495.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "estrecha",
+    "sentence": "La calle es tan _____ que un coche no pasa.",
+    "payload": {
+      "answer": "estrecha",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "estrecha",
+        "limpia",
+        "moderna",
+        "blanca"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La calle es tan estrecha que un coche no pasa.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "estrecha",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bdb817b664c2178c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The street is so _____ that a car cannot pass.",
+      "optionTranslations": [
+        "narrow",
+        "clean",
+        "modern",
+        "white"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "casa",
+    "sentence": "Duermo y como en mi _____.",
+    "payload": {
+      "answer": "casa",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "casa",
+        "silla",
+        "calle",
+        "mesa"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Duermo y como en mi casa.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "casa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f191f701082a9d6.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I sleep and eat in my _____.",
+      "optionTranslations": [
+        "house",
+        "chair",
+        "street",
+        "table"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "sentence": "Ella [[mira]] las casas blancas.",
+    "payload": {
+      "answer": "to look at",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to look at",
+        "to eat",
+        "to buy",
+        "to hear"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira las casas blancas.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "mira",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/19b1c2cdc3ab180f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "sentence": "Ella [[sonríe]] con la boca feliz.",
+    "payload": {
+      "answer": "to smile",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to smile",
+        "to cry",
+        "to shout",
+        "to sneeze"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella sonríe con la boca feliz.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "sonríe",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f316dcdf8f9f4f13.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Ella camina muy [[despacio]] por la calle.",
+    "payload": {
+      "answer": "slowly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "slowly",
+        "loudly",
+        "badly",
+        "early"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella camina muy despacio por la calle.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "despacio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b4e955419c7ed2ad.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "tranquilo",
+    "sentence": "No hay ruido aquí; el parque está muy _____.",
+    "payload": {
+      "answer": "tranquilo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "tranquilo",
+        "sucio",
+        "lleno",
+        "caro"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "No hay ruido aquí; el parque está muy tranquilo.",
+        "storySlug": "las-tapas-son-gratis",
+        "targetWord": "tranquilo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0ccb4b4dfff5a60.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "There is no noise here; the park is very _____.",
+      "optionTranslations": [
+        "calm",
+        "dirty",
+        "full",
+        "expensive"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "tienda,palacio,plato,camarero",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "tienda",
+          "answer": "a shop",
+          "options": [
+            "a shop",
+            "a palace",
+            "a plate",
+            "a waiter"
+          ]
+        },
+        {
+          "word": "palacio",
+          "answer": "a palace",
+          "options": [
+            "a shop",
+            "a palace",
+            "a plate",
+            "a waiter"
+          ]
+        },
+        {
+          "word": "plato",
+          "answer": "a plate",
+          "options": [
+            "a shop",
+            "a palace",
+            "a plate",
+            "a waiter"
+          ]
+        },
+        {
+          "word": "camarero",
+          "answer": "a waiter",
+          "options": [
+            "a shop",
+            "a palace",
+            "a plate",
+            "a waiter"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estrechas",
+    "sentence": "Las calles del barrio son muy [[estrechas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "narrow",
+      "options": [
+        "narrow",
+        "wide",
+        "tall",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "las-tapas-son-gratis",
+        "storySource": "user",
+        "sentence": "Las calles del barrio son muy estrechas.",
+        "targetWord": "estrechas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9e6a73794b7c521a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

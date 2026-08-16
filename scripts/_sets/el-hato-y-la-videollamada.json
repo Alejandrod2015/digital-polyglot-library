@@ -1,0 +1,623 @@
+[
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "epa",
+    "sentence": "[[Epa]], prima, deje ese teléfono y venga.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hey there",
+      "options": [
+        "hey there",
+        "goodbye",
+        "thank you",
+        "watch out"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "Epa, prima, deje ese teléfono y venga.",
+        "targetWord": "Epa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/74decb15516f9d78.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "prima",
+    "sentence": "Wílmer llamó a Manu [[prima]] con mucho cariño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cousin, said to a close female friend",
+      "options": [
+        "cousin, said to a close female friend",
+        "aunt",
+        "neighbor",
+        "boss"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "Wílmer llamó a Manu prima con mucho cariño.",
+        "targetWord": "prima",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2247a567de6a377c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "de pura cepa",
+    "sentence": "Manuela es rola [[de pura cepa]], bogotana total.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "through and through, to the core",
+      "options": [
+        "through and through, to the core",
+        "by pure chance",
+        "from far away",
+        "only in part"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "Manuela es rola de pura cepa, bogotana total.",
+        "targetWord": "de pura cepa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f108d5cb3914278.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "trabajo de llano",
+    "sentence": "Wílmer dirige el [[trabajo de llano]] en el hato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the daily cattle work on the plains",
+      "options": [
+        "the daily cattle work on the plains",
+        "office paperwork",
+        "fishing at sea",
+        "selling at the market"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "Wílmer dirige el trabajo de llano en el hato.",
+        "targetWord": "trabajo de llano",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ddf43eb2e30fa409.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "atarantarse",
+    "sentence": "Aquí el que se [[ataranta]] con el ganado, pierde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get flustered and confused",
+      "options": [
+        "to get flustered and confused",
+        "to fall asleep",
+        "to get angry",
+        "to run fast"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "Aquí el que se ataranta con el ganado, pierde.",
+        "targetWord": "ataranta",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad4ccaf709b766f1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "atravesarse",
+    "sentence": "Un becerro se le [[atravesó]] al vaquero de repente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to cross suddenly in front and block the way",
+      "options": [
+        "to cross suddenly in front and block the way",
+        "to jump over a fence",
+        "to run away scared",
+        "to lie down calmly"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "Un becerro se le atravesó al vaquero de repente.",
+        "targetWord": "atravesó",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef23560914fd3264.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "guasón",
+    "sentence": "Wílmer es muy [[guasón]] y vive haciendo bromas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "joking and fond of teasing",
+      "options": [
+        "joking and fond of teasing",
+        "quiet and shy",
+        "strict and serious",
+        "sad and tired"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "Wílmer es muy guasón y vive haciendo bromas.",
+        "targetWord": "guasón",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81948a2a853ec75b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "palabra cumplida",
+    "sentence": "En el hato todo se basa en [[palabra cumplida]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "keeping your word and doing what you promised",
+      "options": [
+        "keeping your word and doing what you promised",
+        "a long spoken speech",
+        "a written contract",
+        "a loud argument"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "En el hato todo se basa en palabra cumplida.",
+        "targetWord": "palabra cumplida",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3b1dd4c5d51986df.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "remangarse",
+    "sentence": "Manu se [[remangó]] la camisa y agarró el lazo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to roll up your sleeves to work",
+      "options": [
+        "to roll up your sleeves to work",
+        "to take off your shirt",
+        "to wipe your hands",
+        "to sit down to rest"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "Manu se remangó la camisa y agarró el lazo.",
+        "targetWord": "remangó",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9794760135f263d8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "el aguante",
+    "sentence": "El llano exige [[aguante]] para no rendirse nunca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "endurance, the strength to keep going",
+      "options": [
+        "endurance, the strength to keep going",
+        "sudden luck",
+        "good manners",
+        "quick money"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "El llano exige aguante para no rendirse nunca.",
+        "targetWord": "aguante",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dae5deb5e8e46f25.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "featured": false,
+    "word": "el tinto,el fogón,el saco,la sabana",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "el tinto",
+          "answer": "a small cup of black coffee",
+          "options": [
+            "a small cup of black coffee",
+            "an open wood cooking fire",
+            "a formal suit jacket",
+            "the wide flat grassy plains"
+          ]
+        },
+        {
+          "word": "el fogón",
+          "answer": "an open wood cooking fire",
+          "options": [
+            "a small cup of black coffee",
+            "an open wood cooking fire",
+            "a formal suit jacket",
+            "the wide flat grassy plains"
+          ]
+        },
+        {
+          "word": "el saco",
+          "answer": "a formal suit jacket",
+          "options": [
+            "a small cup of black coffee",
+            "an open wood cooking fire",
+            "a formal suit jacket",
+            "the wide flat grassy plains"
+          ]
+        },
+        {
+          "word": "la sabana",
+          "answer": "the wide flat grassy plains",
+          "options": [
+            "a small cup of black coffee",
+            "an open wood cooking fire",
+            "a formal suit jacket",
+            "the wide flat grassy plains"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el hato",
+    "sentence": "En ____ había cientos de vacas bravas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el hato",
+      "options": [
+        "el hato",
+        "el corral",
+        "la finca",
+        "el establo"
+      ],
+      "translation": "On ____ there were hundreds of wild cows.",
+      "optionTranslations": [
+        "the cattle ranch",
+        "the corral",
+        "the farm",
+        "the stable"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "En el hato había cientos de vacas bravas.",
+        "targetWord": "el hato",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/44d84a6638accb43.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "la catira",
+    "sentence": "Todos miraban a ____ bogotana con curiosidad.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la catira",
+      "options": [
+        "la catira",
+        "la vaquera",
+        "la cocinera",
+        "la vecina"
+      ],
+      "translation": "Everyone looked at ____ from Bogotá with curiosity.",
+      "optionTranslations": [
+        "the fair-haired woman",
+        "the cowgirl",
+        "the cook",
+        "the neighbor"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "Todos miraban a la catira bogotana con curiosidad.",
+        "targetWord": "la catira",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e53bf14256a30ea4.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "herrar",
+    "sentence": "Los vaqueros empezaron a ____ la ternera nueva.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "herrar",
+      "options": [
+        "herrar",
+        "arrear",
+        "ordeñar",
+        "amarrar"
+      ],
+      "translation": "The cowboys began to ____ the new calf.",
+      "optionTranslations": [
+        "brand",
+        "herd",
+        "milk",
+        "tie"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "Los vaqueros empezaron a herrar la ternera nueva.",
+        "targetWord": "herrar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/682edf856ec8a09b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el bramido",
+    "sentence": "Se oía ____ de una vaca a lo lejos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el bramido",
+      "options": [
+        "el bramido",
+        "el relincho",
+        "el ladrido",
+        "el silbido"
+      ],
+      "translation": "You could hear ____ of a cow far away.",
+      "optionTranslations": [
+        "the bellow",
+        "the neigh",
+        "the bark",
+        "the whistle"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "Se oía el bramido de una vaca a lo lejos.",
+        "targetWord": "el bramido",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6b1b96614d951144.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el capacho",
+    "sentence": "Al fondo sonaba ____ marcando el joropo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el capacho",
+      "options": [
+        "el capacho",
+        "el arpa",
+        "el cuatro",
+        "el tambor"
+      ],
+      "translation": "In the back ____ played, marking the joropo.",
+      "optionTranslations": [
+        "the maraca shaker",
+        "the harp",
+        "the cuatro",
+        "the drum"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "Al fondo sonaba el capacho marcando el joropo.",
+        "targetWord": "el capacho",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/de91c7d9a3ab2ccd.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el galope",
+    "sentence": "Manu oía ____ de los caballos en la sabana.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el galope",
+      "options": [
+        "el galope",
+        "el trote",
+        "el salto",
+        "el paso"
+      ],
+      "translation": "Manu heard ____ of the horses on the plains.",
+      "optionTranslations": [
+        "the gallop",
+        "the trot",
+        "the jump",
+        "the walk"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "Manu oía el galope de los caballos en la sabana.",
+        "targetWord": "el galope",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e9c7b563cfe888e8.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el becerro",
+    "sentence": "De pronto ____ se atravesó en el camino.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el becerro",
+      "options": [
+        "el becerro",
+        "el potro",
+        "el cerdo",
+        "el perro"
+      ],
+      "translation": "Suddenly ____ crossed into the path.",
+      "optionTranslations": [
+        "the calf",
+        "the colt",
+        "the pig",
+        "the dog"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "De pronto el becerro se atravesó en el camino.",
+        "targetWord": "el becerro",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f06cf053ac177827.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "la risotada",
+    "sentence": "En el corral estalló ____ de Wílmer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la risotada",
+      "options": [
+        "la risotada",
+        "la sonrisa",
+        "la mueca",
+        "la queja"
+      ],
+      "translation": "In the corral ____ of Wílmer burst out.",
+      "optionTranslations": [
+        "the loud laugh",
+        "the smile",
+        "the grimace",
+        "the complaint"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "En el corral estalló la risotada de Wílmer.",
+        "targetWord": "la risotada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/191170a5c9a6afed.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el atardecer",
+    "sentence": "____ pintó la llanura de color naranja.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el atardecer",
+      "options": [
+        "el atardecer",
+        "el amanecer",
+        "el aguacero",
+        "el relámpago"
+      ],
+      "translation": "____ painted the plain orange.",
+      "optionTranslations": [
+        "the sunset",
+        "the sunrise",
+        "the downpour",
+        "the lightning"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "El atardecer pintó la llanura de color naranja.",
+        "targetWord": "el atardecer",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9ed6096ee9db90c7.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "la llanura",
+    "sentence": "El sol se hundía sobre ____ sin fin.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la llanura",
+      "options": [
+        "la llanura",
+        "la montaña",
+        "la selva",
+        "la playa"
+      ],
+      "translation": "The sun sank over the endless ____.",
+      "optionTranslations": [
+        "plain",
+        "mountain",
+        "jungle",
+        "beach"
+      ],
+      "audioClip": {
+        "storySlug": "el-hato-y-la-videollamada",
+        "storySource": "user",
+        "sentence": "El sol se hundía sobre la llanura sin fin.",
+        "targetWord": "la llanura",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dacaaaa913106706.mp3"
+      }
+    }
+  }
+]

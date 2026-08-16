@@ -1,0 +1,548 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "formaggio,verdura,mela,uomo",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "formaggio",
+     "answer": "cheese",
+     "options": [
+      "cheese",
+      "vegetables",
+      "apple",
+      "man"
+     ]
+    },
+    {
+     "word": "verdura",
+     "answer": "vegetables",
+     "options": [
+      "cheese",
+      "vegetables",
+      "apple",
+      "man"
+     ]
+    },
+    {
+     "word": "mela",
+     "answer": "apple",
+     "options": [
+      "cheese",
+      "vegetables",
+      "apple",
+      "man"
+     ]
+    },
+    {
+     "word": "uomo",
+     "answer": "man",
+     "options": [
+      "cheese",
+      "vegetables",
+      "apple",
+      "man"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "conosce",
+  "sentence": "Paolo [[conosce]] ogni angolo di Bologna.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "knows",
+   "options": [
+    "knows",
+    "hates",
+    "leaves",
+    "forgets"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Paolo conosce ogni angolo di Bologna.",
+    "targetWord": "conosce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "mostra",
+  "sentence": "Paolo [[mostra]] la città con gioia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shows",
+   "options": [
+    "shows",
+    "hides",
+    "sells",
+    "buys"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Paolo mostra la città con gioia.",
+    "targetWord": "mostra",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "alzano",
+  "sentence": "I due amici [[alzano]] gli occhi in alto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "raise",
+   "options": [
+    "raise",
+    "close",
+    "rub",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "I due amici alzano gli occhi in alto.",
+    "targetWord": "alzano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "pende",
+  "sentence": "Una torre [[pende]] un poco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "leans",
+   "options": [
+    "leans",
+    "falls",
+    "grows",
+    "shines"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Una torre pende un poco.",
+    "targetWord": "pende",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "sceglie",
+  "sentence": "Elena [[sceglie]] le mele più belle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "chooses",
+   "options": [
+    "chooses",
+    "sells",
+    "counts",
+    "washes"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Elena sceglie le mele più belle.",
+    "targetWord": "sceglie",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "passano",
+  "sentence": "I due amici [[passano]] l'ultimo giorno a Bologna.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "spend",
+   "options": [
+    "spend",
+    "lose",
+    "start",
+    "plan"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "I due amici passano l'ultimo giorno a Bologna.",
+    "targetWord": "passano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "dritta",
+  "sentence": "Una torre è [[dritta]], l'altra pende.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "straight",
+   "options": [
+    "straight",
+    "broken",
+    "tall",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Una torre è dritta, l'altra pende.",
+    "targetWord": "dritta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "poco",
+  "sentence": "L'altra torre pende un [[poco]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a little",
+   "options": [
+    "a little",
+    "a lot",
+    "again",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "L'altra torre pende un poco.",
+    "targetWord": "poco",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "vende",
+  "sentence": "Un uomo [[vende]] formaggio e verdura.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sells",
+   "options": [
+    "sells",
+    "buys",
+    "eats",
+    "cooks"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Un uomo vende formaggio e verdura.",
+    "targetWord": "vende",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "compra",
+  "sentence": "Elena [[compra]] delle mele rosse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "buys",
+   "options": [
+    "buys",
+    "sells",
+    "drops",
+    "hides"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Elena compra delle mele rosse.",
+    "targetWord": "compra",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "partire",
+  "sentence": "Prima di [[partire]], vanno alla stazione.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "leaving",
+   "options": [
+    "leaving",
+    "arriving",
+    "eating",
+    "sleeping"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Prima di partire, vanno alla stazione.",
+    "targetWord": "partire",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "saluta",
+  "sentence": "Elena [[saluta]] Paolo alla stazione.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "greets",
+   "options": [
+    "greets",
+    "follows",
+    "calls",
+    "pushes"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Elena saluta Paolo alla stazione.",
+    "targetWord": "saluta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "ridono",
+  "sentence": "Poi i due amici [[ridono]] forte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "laugh",
+   "options": [
+    "laugh",
+    "cry",
+    "sleep",
+    "run"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Poi i due amici ridono forte.",
+    "targetWord": "ridono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "sparisce",
+  "sentence": "Bologna [[sparisce]] dietro il finestrino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "disappears",
+   "options": [
+    "disappears",
+    "appears",
+    "grows",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Bologna sparisce dietro il finestrino.",
+    "targetWord": "sparisce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "vero",
+  "sentence": "Paolo è un [[vero]] bolognese.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "real",
+   "options": [
+    "real",
+    "fake",
+    "tired",
+    "sad"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Paolo è un vero bolognese.",
+    "targetWord": "vero",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "giorno",
+  "sentence": "Passano l'ultimo ____ a Bologna.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "giorno",
+   "options": [
+    "giorno",
+    "odore",
+    "uomo",
+    "mano"
+   ],
+   "translation": "They spend the last ____ in Bologna.",
+   "optionTranslations": [
+    "day",
+    "smell",
+    "man",
+    "hand"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Passano l'ultimo giorno a Bologna.",
+    "targetWord": "giorno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "occhi",
+  "sentence": "I due amici alzano gli ____ in alto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "occhi",
+   "options": [
+    "occhi",
+    "mele",
+    "mani",
+    "denti"
+   ],
+   "translation": "The two friends raise their ____ up high.",
+   "optionTranslations": [
+    "eyes",
+    "apples",
+    "hands",
+    "teeth"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "I due amici alzano gli occhi in alto.",
+    "targetWord": "occhi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "capogiro",
+  "sentence": "Elena guarda in alto e sente un ____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "capogiro",
+   "options": [
+    "capogiro",
+    "odore",
+    "giorno",
+    "uomo"
+   ],
+   "translation": "Elena looks up and feels ____.",
+   "optionTranslations": [
+    "dizziness",
+    "a smell",
+    "a day",
+    "a man"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Elena guarda in alto e sente un capogiro.",
+    "targetWord": "capogiro",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "mano",
+  "sentence": "Elena muove la ____ nell'aria.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mano",
+   "options": [
+    "mano",
+    "mela",
+    "occhio",
+    "uomo"
+   ],
+   "translation": "Elena moves her ____ in the air.",
+   "optionTranslations": [
+    "hand",
+    "apple",
+    "eye",
+    "man"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Elena muove la mano nell'aria.",
+    "targetWord": "mano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "odore",
+  "sentence": "Un buon ____ di pane riempie l'aria.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "odore",
+   "options": [
+    "odore",
+    "giorno",
+    "uomo",
+    "capogiro"
+   ],
+   "translation": "A good ____ of bread fills the air.",
+   "optionTranslations": [
+    "smell",
+    "day",
+    "man",
+    "dizziness"
+   ],
+   "audioClip": {
+    "storySlug": "sotto-le-due-torri",
+    "storySource": "user",
+    "sentence": "Un buon odore di pane riempie l'aria.",
+    "targetWord": "odore",
+    "language": "italian"
+   }
+  }
+ }
+]

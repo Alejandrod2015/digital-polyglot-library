@@ -1,0 +1,488 @@
+[
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "las hormigas culonas,el mango biche,un tarro,los venteros",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "las hormigas culonas",
+          "answer": "big roasted ants eaten in Santander",
+          "options": [
+            "big roasted ants eaten in Santander",
+            "unripe green mango eaten with salt",
+            "a jar or tin for storing food",
+            "street vendors selling food or goods"
+          ]
+        },
+        {
+          "word": "el mango biche",
+          "answer": "unripe green mango eaten with salt",
+          "options": [
+            "big roasted ants eaten in Santander",
+            "unripe green mango eaten with salt",
+            "a jar or tin for storing food",
+            "street vendors selling food or goods"
+          ]
+        },
+        {
+          "word": "un tarro",
+          "answer": "a jar or tin for storing food",
+          "options": [
+            "big roasted ants eaten in Santander",
+            "unripe green mango eaten with salt",
+            "a jar or tin for storing food",
+            "street vendors selling food or goods"
+          ]
+        },
+        {
+          "word": "los venteros",
+          "answer": "street vendors selling food or goods",
+          "options": [
+            "big roasted ants eaten in Santander",
+            "unripe green mango eaten with salt",
+            "a jar or tin for storing food",
+            "street vendors selling food or goods"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "pregonar",
+    "sentence": "El vendedor empezó a ____ su mercancía.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pregonar",
+      "options": [
+        "pregonar",
+        "esconder",
+        "regalar",
+        "botar"
+      ],
+      "translation": "The vendor began to ____ his goods.",
+      "optionTranslations": [
+        "to hawk aloud",
+        "to hide",
+        "to give away",
+        "to throw out"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "El vendedor empezó a pregonar su mercancía.",
+        "targetWord": "pregonar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/442e228b1aa3d626.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "masticar",
+    "sentence": "A Manu le tocó ____ el bicho crocante.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "masticar",
+      "options": [
+        "masticar",
+        "escupir",
+        "tragar",
+        "oler"
+      ],
+      "translation": "Manu had to ____ the crunchy critter.",
+      "optionTranslations": [
+        "to chew",
+        "to spit out",
+        "to swallow whole",
+        "to smell"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "A Manu le tocó masticar el bicho crocante.",
+        "targetWord": "masticar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95b19519f7868e4b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "esquivar",
+    "sentence": "Tuvo que ____ a los venteros del andén.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esquivar",
+      "options": [
+        "esquivar",
+        "saludar",
+        "empujar",
+        "seguir"
+      ],
+      "translation": "She had to ____ the vendors on the sidewalk.",
+      "optionTranslations": [
+        "to dodge",
+        "to greet",
+        "to push",
+        "to follow"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "Tuvo que esquivar a los venteros del andén.",
+        "targetWord": "esquivar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c04a713dee8a59d4.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "empacar",
+    "sentence": "Manu quiso ____ un tarro de hormigas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "empacar",
+      "options": [
+        "empacar",
+        "abrir",
+        "vender",
+        "romper"
+      ],
+      "translation": "Manu wanted to ____ a jar of ants.",
+      "optionTranslations": [
+        "to pack",
+        "to open",
+        "to sell",
+        "to break"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "Manu quiso empacar un tarro de hormigas.",
+        "targetWord": "empacar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0254482d96afd553.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "gruñir",
+    "sentence": "Édgar solo atinó a ____ una despedida.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gruñir",
+      "options": [
+        "gruñir",
+        "cantar",
+        "gritar",
+        "susurrar"
+      ],
+      "translation": "Édgar only managed to ____ a goodbye.",
+      "optionTranslations": [
+        "to grumble",
+        "to sing",
+        "to shout",
+        "to whisper"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "Édgar solo atinó a gruñir una despedida.",
+        "targetWord": "gruñir",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d5310f265f69fcc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "el atardecer",
+    "sentence": "El [[atardecer]] pintó de naranja la plaza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the time near dusk",
+      "options": [
+        "the time near dusk",
+        "the dark of midnight",
+        "the first light of dawn",
+        "a heavy afternoon rain"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "El atardecer pintó de naranja la plaza.",
+        "targetWord": "atardecer",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/044da9b9660c4f4b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "los bichos",
+    "sentence": "Manu miró los [[bichos]] tostados con desconfianza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "small critters or bugs",
+      "options": [
+        "small critters or bugs",
+        "fresh ripe fruits",
+        "tiny clay pots",
+        "warm bread rolls"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "Manu miró los bichos tostados con desconfianza.",
+        "targetWord": "bichos",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/518026025b82425f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "crocantes",
+    "sentence": "Las hormigas quedaron [[crocantes]] y saladas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "crunchy and crisp",
+      "options": [
+        "crunchy and crisp",
+        "soft and mushy",
+        "sweet and sticky",
+        "cold and watery"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "Las hormigas quedaron crocantes y saladas.",
+        "targetWord": "crocantes",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/53e1d3d52ce5fe9c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "no sea delicada",
+    "sentence": "¡[[No sea delicada]] y pruebe una!, la retó.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "don't be so squeamish",
+      "options": [
+        "don't be so squeamish",
+        "don't be so greedy",
+        "don't be in a hurry",
+        "don't be so loud"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "¡No sea delicada y pruebe una!, la retó.",
+        "targetWord": "no sea delicada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7dc6bad817f49c5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "puro monte",
+    "sentence": "Esto es [[puro monte]], comida de campo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pure wild rustic country stuff",
+      "options": [
+        "pure wild rustic country stuff",
+        "expensive imported luxury food",
+        "a strict city diet",
+        "a fancy restaurant dish"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "Esto es puro monte, comida de campo.",
+        "targetWord": "puro monte",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab4c1fb90006ff8a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "un manjar",
+    "sentence": "Para Édgar, esas hormigas son [[un manjar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a special delicacy",
+      "options": [
+        "a special delicacy",
+        "a cheap boring snack",
+        "a strange bitter medicine",
+        "a heavy burden"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "Para Édgar, esas hormigas son un manjar.",
+        "targetWord": "manjar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9239387f084d67e7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "la hazaña",
+    "sentence": "Comerse el bicho fue toda una [[hazaña]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an impressive brave feat",
+      "options": [
+        "an impressive brave feat",
+        "a silly little mistake",
+        "a boring daily chore",
+        "a quiet gentle nap"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "Comerse el bicho fue toda una hazaña.",
+        "targetWord": "hazaña",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0fc91fd3355be3d9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "sin prisa",
+    "sentence": "Caminaron [[sin prisa]] entre los puestos del mercado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "unhurriedly, with no rush",
+      "options": [
+        "unhurriedly, with no rush",
+        "in a great hurry",
+        "holding hands tightly",
+        "arguing the whole time"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "Caminaron sin prisa entre los puestos del mercado.",
+        "targetWord": "sin prisa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9ddb97495e08d359.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "la nostalgia",
+    "sentence": "A Manu le pegó la [[nostalgia]] de irse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a wistful longing",
+      "options": [
+        "a wistful longing",
+        "a sudden burst of joy",
+        "a sharp pang of hunger",
+        "a wave of cold anger"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "A Manu le pegó la nostalgia de irse.",
+        "targetWord": "nostalgia",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/307c365e0469df1d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "con las manos vacías",
+    "sentence": "Manu no quería irse [[con las manos vacías]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "empty-handed, bringing nothing",
+      "options": [
+        "empty-handed, bringing nothing",
+        "in a very bad mood",
+        "without saying goodbye",
+        "late for the bus"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "Manu no quería irse con las manos vacías.",
+        "targetWord": "con las manos vacías",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/df615b1f86f550dd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "la comedera",
+    "sentence": "Le dio una [[comedera]] de hormigas tremenda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a strong craving to eat",
+      "options": [
+        "a strong craving to eat",
+        "a deep fear of bugs",
+        "a long lazy nap",
+        "a sudden loss of appetite"
+      ],
+      "audioClip": {
+        "storySlug": "el-tarro-de-culonas",
+        "storySource": "user",
+        "sentence": "Le dio una comedera de hormigas tremenda.",
+        "targetWord": "comedera",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/60cc474c081dbf87.mp3"
+      }
+    }
+  }
+]

@@ -1,0 +1,521 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Wald,Rucksack,Reh,Gipfel",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Wald",
+     "answer": "forest",
+     "options": [
+      "forest",
+      "backpack",
+      "deer",
+      "summit"
+     ]
+    },
+    {
+     "word": "Rucksack",
+     "answer": "backpack",
+     "options": [
+      "forest",
+      "backpack",
+      "deer",
+      "summit"
+     ]
+    },
+    {
+     "word": "Reh",
+     "answer": "deer",
+     "options": [
+      "forest",
+      "backpack",
+      "deer",
+      "summit"
+     ]
+    },
+    {
+     "word": "Gipfel",
+     "answer": "summit",
+     "options": [
+      "forest",
+      "backpack",
+      "deer",
+      "summit"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "dunkel",
+  "sentence": "Der Wald ist [[dunkel]] und ruhig.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dark",
+   "options": [
+    "dark",
+    "bright",
+    "warm",
+    "wide"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Der Wald ist dunkel und ruhig.",
+    "targetWord": "dunkel",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "ruhig",
+  "sentence": "Der Wald ist dunkel und [[ruhig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calm",
+   "options": [
+    "calm",
+    "loud",
+    "busy",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Der Wald ist dunkel und ruhig.",
+    "targetWord": "ruhig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "still",
+  "sentence": "Der Weg ist [[still]] und schön.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quiet",
+   "options": [
+    "quiet",
+    "steep",
+    "dark",
+    "long"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Der Weg ist still und schön.",
+    "targetWord": "still",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "wandern",
+  "sentence": "Emma und Leon _____ im Schwarzwald.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "wandern",
+   "options": [
+    "wandern",
+    "gehen",
+    "warten",
+    "sehen"
+   ],
+   "translation": "Emma and Leon _____ in the Black Forest.",
+   "optionTranslations": [
+    "to hike",
+    "to go",
+    "to wait",
+    "to see"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Emma und Leon wandern im Schwarzwald.",
+    "targetWord": "wandern",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Berg",
+  "sentence": "Sie wollen auf den _____ gehen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Berg",
+   "options": [
+    "Berg",
+    "Wald",
+    "Weg",
+    "Gipfel"
+   ],
+   "translation": "They want to go up the _____.",
+   "optionTranslations": [
+    "mountain",
+    "forest",
+    "path",
+    "summit"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Sie wollen auf den Berg gehen.",
+    "targetWord": "Berg",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Bäume",
+  "sentence": "Hohe _____ stehen überall.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Bäume",
+   "options": [
+    "Bäume",
+    "Vögel",
+    "Berge",
+    "Wege"
+   ],
+   "translation": "Tall _____ stand everywhere.",
+   "optionTranslations": [
+    "trees",
+    "birds",
+    "mountains",
+    "paths"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Hohe Bäume stehen überall.",
+    "targetWord": "Bäume",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "riecht",
+  "sentence": "Es _____ nach Holz und Erde.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "riecht",
+   "options": [
+    "riecht",
+    "singt",
+    "geht",
+    "trägt"
+   ],
+   "translation": "It _____ of wood and earth.",
+   "optionTranslations": [
+    "smells",
+    "sings",
+    "goes",
+    "carries"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Es riecht nach Holz und Erde.",
+    "targetWord": "riecht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "trägt",
+  "sentence": "Emma _____ einen schweren Rucksack.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "trägt",
+   "options": [
+    "trägt",
+    "sieht",
+    "riecht",
+    "atmet"
+   ],
+   "translation": "Emma _____ a heavy backpack.",
+   "optionTranslations": [
+    "carries",
+    "sees",
+    "smells",
+    "breathes"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Emma trägt einen schweren Rucksack.",
+    "targetWord": "trägt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Weg",
+  "sentence": "Der _____ ist eng und steil.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Weg",
+   "options": [
+    "Weg",
+    "Berg",
+    "Wald",
+    "Gipfel"
+   ],
+   "translation": "The _____ is narrow and steep.",
+   "optionTranslations": [
+    "path",
+    "mountain",
+    "forest",
+    "summit"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Der Weg ist eng und steil.",
+    "targetWord": "Weg",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "steil",
+  "sentence": "Der Weg ist eng und [[steil]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "steep",
+   "options": [
+    "steep",
+    "flat",
+    "wet",
+    "short"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Der Weg ist eng und steil.",
+    "targetWord": "steil",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "müde",
+  "sentence": "Emma atmet schwer und wird [[müde]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tired",
+   "options": [
+    "tired",
+    "happy",
+    "angry",
+    "hungry"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Emma atmet schwer und wird müde.",
+    "targetWord": "müde",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "flüstert",
+  "sentence": "„Wunderschön\", [[flüstert]] Emma leise.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to whisper",
+   "options": [
+    "to whisper",
+    "to shout",
+    "to laugh",
+    "to sing"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "„Wunderschön\", flüstert Emma leise.",
+    "targetWord": "flüstert",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "hoch",
+  "sentence": "Die Bäume sind sehr _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hoch",
+   "options": [
+    "hoch",
+    "dunkel",
+    "müde",
+    "kalt"
+   ],
+   "translation": "The trees are very _____.",
+   "optionTranslations": [
+    "tall",
+    "dark",
+    "tired",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Die Bäume sind sehr hoch.",
+    "targetWord": "hoch",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Holz",
+  "sentence": "Es riecht nach _____ und Erde.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Holz",
+   "options": [
+    "Holz",
+    "Wasser",
+    "Gras",
+    "Stein"
+   ],
+   "translation": "It smells of _____ and earth.",
+   "optionTranslations": [
+    "wood",
+    "water",
+    "grass",
+    "stone"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Es riecht nach Holz und Erde.",
+    "targetWord": "Holz",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Erde",
+  "sentence": "Der Weg riecht nach Holz und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Erde",
+   "options": [
+    "Erde",
+    "Holz",
+    "Luft",
+    "Sonne"
+   ],
+   "translation": "The path smells of wood and _____.",
+   "optionTranslations": [
+    "earth",
+    "wood",
+    "air",
+    "sun"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Der Weg riecht nach Holz und Erde.",
+    "targetWord": "Erde",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Schritt",
+  "sentence": "„_____ für Schritt\", sagt Leon.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Schritt",
+   "options": [
+    "Schritt",
+    "Weg",
+    "Berg",
+    "Baum"
+   ],
+   "translation": "„_____ by step\", says Leon.",
+   "optionTranslations": [
+    "step",
+    "path",
+    "mountain",
+    "tree"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "„Schritt für Schritt\", sagt Leon.",
+    "targetWord": "Schritt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sehen",
+  "sentence": "Emma kann das Reh gut _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sehen",
+   "options": [
+    "sehen",
+    "hören",
+    "tragen",
+    "riechen"
+   ],
+   "translation": "Emma can _____ the deer well.",
+   "optionTranslations": [
+    "to see",
+    "to hear",
+    "to carry",
+    "to smell"
+   ],
+   "audioClip": {
+    "storySlug": "der-wanderweg",
+    "storySource": "user",
+    "sentence": "Emma kann das Reh gut sehen.",
+    "targetWord": "sehen",
+    "language": "german"
+   }
+  }
+ }
+]

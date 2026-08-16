@@ -1,0 +1,653 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "subir",
+    "sentence": "Para llegar al techo tienes que _____ mucho.",
+    "payload": {
+      "answer": "subir",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "subir",
+        "correr",
+        "dormir",
+        "cantar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Para llegar al techo tienes que subir mucho.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "subir",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/38a36b551ddf65ba.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "To reach the roof you have to _____ a lot.",
+      "optionTranslations": [
+        "to go up",
+        "to run",
+        "to sleep",
+        "to sing"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "bajar",
+    "sentence": "El pájaro va a _____ del árbol al suelo.",
+    "payload": {
+      "answer": "bajar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "bajar",
+        "cantar",
+        "comer",
+        "dormir"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El pájaro va a bajar del árbol al suelo.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "bajar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7fee59cf63b6e4bd.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The bird is going to _____ from the tree to the ground.",
+      "optionTranslations": [
+        "to go down",
+        "to sing",
+        "to eat",
+        "to sleep"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "monte",
+    "sentence": "Vamos a caminar por el _____ muy alto.",
+    "payload": {
+      "answer": "monte",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "monte",
+        "río",
+        "mar",
+        "cielo"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Vamos a caminar por el monte muy alto.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "monte",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0bb5e85f6b751b2.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "We are going to walk on the very high _____.",
+      "optionTranslations": [
+        "hill",
+        "river",
+        "sea",
+        "sky"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "funicular",
+    "sentence": "El [[funicular]] pequeño los lleva arriba.",
+    "payload": {
+      "answer": "a hill train",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a hill train",
+        "a big boat",
+        "a fast car",
+        "a city bus"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El funicular pequeño los lleva arriba.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "funicular",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/413835eec87dfbb4.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bahía",
+    "sentence": "La [[bahía]] es muy enorme hoy.",
+    "payload": {
+      "answer": "a bay",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a bay",
+        "a hill",
+        "a bridge",
+        "a tower"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La bahía es muy enorme hoy.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "bahía",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/239c59e17dadc832.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "reír",
+    "sentence": "El chiste es muy bueno y me hace _____.",
+    "payload": {
+      "answer": "reír",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "reír",
+        "llorar",
+        "dormir",
+        "correr"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El chiste es muy bueno y me hace reír.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "reír",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f5a55f29dc941c94.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The joke is very good and makes me _____.",
+      "optionTranslations": [
+        "to laugh",
+        "to cry",
+        "to sleep",
+        "to run"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "viento",
+    "sentence": "Hoy hace mucho _____ y mi pelo vuela.",
+    "payload": {
+      "answer": "viento",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "viento",
+        "sol",
+        "ruido",
+        "agua"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hoy hace mucho viento y mi pelo vuela.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "viento",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fc502236c18aef37.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Today there is a lot of _____ and my hair flies.",
+      "optionTranslations": [
+        "wind",
+        "sun",
+        "noise",
+        "water"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nervioso",
+    "sentence": "Ella se siente un poco [[nerviosa]].",
+    "payload": {
+      "answer": "nervous",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "nervous",
+        "calm",
+        "happy",
+        "tired"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella se siente un poco nerviosa.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "nerviosa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1b0559da4a27d7cf.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "naranja",
+    "sentence": "El cielo se vuelve [[naranja]].",
+    "payload": {
+      "answer": "orange",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "orange",
+        "purple",
+        "yellow",
+        "green"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El cielo se vuelve naranja.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "naranja",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2a1a2c0b231c9dc9.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parecer",
+    "sentence": "La playa [[parece]] muy pequeña.",
+    "payload": {
+      "answer": "to seem",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to seem",
+        "to touch",
+        "to build",
+        "to break"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La playa parece muy pequeña.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "parece",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a1c726ffc32f9397.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "plan",
+    "sentence": "Tengo un buen _____ para el sábado.",
+    "payload": {
+      "answer": "plan",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "plan",
+        "libro",
+        "vaso",
+        "zapato"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Tengo un buen plan para el sábado.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "plan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/17788ce8823c4d59.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I have a good _____ for Saturday.",
+      "optionTranslations": [
+        "plan",
+        "book",
+        "glass",
+        "shoe"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "señalar",
+    "sentence": "Con el dedo puedo _____ la puerta.",
+    "payload": {
+      "answer": "señalar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "señalar",
+        "comer",
+        "beber",
+        "saltar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Con el dedo puedo señalar la puerta.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "señalar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a089e89ff9fb3d80.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "With my finger I can _____ the door.",
+      "optionTranslations": [
+        "to point at",
+        "to eat",
+        "to drink",
+        "to jump"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nuevo",
+    "sentence": "Él tiene un plan [[nuevo]].",
+    "payload": {
+      "answer": "new",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "new",
+        "old",
+        "easy",
+        "free"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él tiene un plan nuevo.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "nuevo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/71364f2a84680cc6.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arriba",
+    "sentence": "La playa parece pequeña desde [[arriba]].",
+    "payload": {
+      "answer": "up high",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "up high",
+        "down low",
+        "far away",
+        "close by"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La playa parece pequeña desde arriba.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "arriba",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/485a633d091701c1.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enorme",
+    "sentence": "El barco es muy [[enorme]] y alto.",
+    "payload": {
+      "answer": "huge",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "huge",
+        "tiny",
+        "short",
+        "light"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El barco es muy enorme y alto.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "enorme",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec5af13f1288d54c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "antiguo",
+    "sentence": "Aquí hay un parque muy [[antiguo]].",
+    "payload": {
+      "answer": "very old",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "very old",
+        "brand new",
+        "very small",
+        "very clean"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Aquí hay un parque muy antiguo.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "antiguo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f0443f8f6c06410.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "atracción",
+    "sentence": "Hay muchas [[atracciones]] en el parque.",
+    "payload": {
+      "answer": "a fun ride",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a fun ride",
+        "a long line",
+        "a food stand",
+        "a park bench"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hay muchas atracciones en el parque.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "atracciones",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1fed1f39f8929a7d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "luz",
+    "sentence": "Hay muchas [[luces]] de colores aquí.",
+    "payload": {
+      "answer": "a light",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a light",
+        "a sound",
+        "a smell",
+        "a shadow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hay muchas luces de colores aquí.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "luces",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/18de263eed814e79.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "color",
+    "sentence": "Las luces tienen muchos [[colores]] bonitos.",
+    "payload": {
+      "answer": "a color",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a color",
+        "a shape",
+        "a sound",
+        "a shadow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las luces tienen muchos colores bonitos.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "colores",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/69c01c9a4237a12f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fuerte",
+    "sentence": "El viento es muy [[fuerte]] hoy.",
+    "payload": {
+      "answer": "strong",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "strong",
+        "weak",
+        "warm",
+        "quiet"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El viento es muy fuerte hoy.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "fuerte",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/853af77bc0180399.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de acuerdo",
+    "sentence": "Ella está [[de acuerdo]] con todo.",
+    "payload": {
+      "answer": "in agreement",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "in agreement",
+        "in a hurry",
+        "in danger",
+        "in trouble"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella está de acuerdo con todo.",
+        "storySlug": "un-funicular-hasta-igueldo",
+        "targetWord": "de acuerdo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/483c0d925f10d9d7.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "ventana,ojo,sol,cámara",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "ventana",
+          "answer": "a window",
+          "options": [
+            "a window",
+            "an eye",
+            "the sun",
+            "a camera"
+          ]
+        },
+        {
+          "word": "ojo",
+          "answer": "an eye",
+          "options": [
+            "a window",
+            "an eye",
+            "the sun",
+            "a camera"
+          ]
+        },
+        {
+          "word": "sol",
+          "answer": "the sun",
+          "options": [
+            "a window",
+            "an eye",
+            "the sun",
+            "a camera"
+          ]
+        },
+        {
+          "word": "cámara",
+          "answer": "a camera",
+          "options": [
+            "a window",
+            "an eye",
+            "the sun",
+            "a camera"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ojos",
+    "sentence": "Ella abre mucho los [[ojos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "eyes",
+      "options": [
+        "eyes",
+        "ears",
+        "hands",
+        "feet"
+      ],
+      "audioClip": {
+        "storySlug": "un-funicular-hasta-igueldo",
+        "storySource": "user",
+        "sentence": "Ella abre mucho los ojos.",
+        "targetWord": "ojos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/33403666443d78ba.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

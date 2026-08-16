@@ -1,0 +1,555 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "traghetto,isola,molo,corda",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "traghetto",
+     "answer": "a ferry",
+     "options": [
+      "a ferry",
+      "an island",
+      "a pier",
+      "a rope"
+     ]
+    },
+    {
+     "word": "isola",
+     "answer": "an island",
+     "options": [
+      "a ferry",
+      "an island",
+      "a pier",
+      "a rope"
+     ]
+    },
+    {
+     "word": "molo",
+     "answer": "a pier",
+     "options": [
+      "a ferry",
+      "an island",
+      "a pier",
+      "a rope"
+     ]
+    },
+    {
+     "word": "corda",
+     "answer": "a rope",
+     "options": [
+      "a ferry",
+      "an island",
+      "a pier",
+      "a rope"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "marinaio",
+  "sentence": "Un [[marinaio]] tira già la corda.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sailor",
+   "options": [
+    "a sailor",
+    "a driver",
+    "a seller",
+    "a guard"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Un marinaio tira già la corda.",
+    "targetWord": "marinaio",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/17dd409b15772ca0.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "banchina",
+  "sentence": "Lui lavora sulla [[banchina]] del porto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the quay",
+   "options": [
+    "the quay",
+    "the beach",
+    "the street",
+    "the bridge"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Lui lavora sulla banchina del porto.",
+    "targetWord": "banchina",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/428532495f7c24d3.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "saltare",
+  "sentence": "Lei [[salta]] a bordo all'ultimo momento.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "jumps",
+   "options": [
+    "jumps",
+    "pays",
+    "walks",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Lei salta a bordo all'ultimo momento.",
+    "targetWord": "salta",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d68b35ae3544bee1.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a bordo",
+  "sentence": "Lei sale [[a bordo]] con lo zaino aperto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on board",
+   "options": [
+    "on board",
+    "on foot",
+    "on time",
+    "on land"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Lei sale a bordo con lo zaino aperto.",
+    "targetWord": "a bordo",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0c40e98c16d15373.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "motore",
+  "sentence": "Il [[motore]] comincia a spingere l'acqua.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the engine",
+   "options": [
+    "the engine",
+    "the door",
+    "the rope",
+    "the seat"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Il motore comincia a spingere l'acqua.",
+    "targetWord": "motore",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81eec40253c68cd1.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "onda",
+  "sentence": "Le [[onde]] battono contro il fianco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the waves",
+   "options": [
+    "the waves",
+    "the winds",
+    "the birds",
+    "the stones"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Le onde battono contro il fianco.",
+    "targetWord": "onde",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/72cdb1ee0056e65d.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "scoglio",
+  "sentence": "Lo [[scoglio]] esce dall'acqua vicino alla riva.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sea rock",
+   "options": [
+    "a sea rock",
+    "a sand bank",
+    "a wooden pier",
+    "a small boat"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Lo scoglio esce dall'acqua vicino alla riva.",
+    "targetWord": "scoglio",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e54a56b3e553e3d4.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sirena",
+  "sentence": "La [[sirena]] avvisa il porto piccolo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the horn",
+   "options": [
+    "the horn",
+    "the wave",
+    "the wind",
+    "the bell"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "La sirena avvisa il porto piccolo.",
+    "targetWord": "sirena",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/07835a7adff4c33d.mp3"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "giornata",
+  "sentence": "Un piccolo ritardo cambia tutta la _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "giornata",
+   "options": [
+    "giornata",
+    "barca",
+    "corda",
+    "sirena"
+   ],
+   "translation": "Two minutes late change the whole _____.",
+   "optionTranslations": [
+    "day",
+    "boat",
+    "rope",
+    "horn"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Un piccolo ritardo cambia tutta la giornata.",
+    "targetWord": "giornata",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/741bd844ca586401.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "porto",
+  "sentence": "Il [[porto]] diventa piccolo molto in fretta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the harbour",
+   "options": [
+    "the harbour",
+    "the market",
+    "the station",
+    "the church"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Il porto diventa piccolo molto in fretta.",
+    "targetWord": "porto",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/77135c7eb5cab792.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rosa",
+  "sentence": "Le case del porto sono gialle e [[rosa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pink",
+   "options": [
+    "pink",
+    "black",
+    "grey",
+    "brown"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Le case del porto sono gialle e rosa.",
+    "targetWord": "rosa",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d4a477370d585b70.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bicchierino",
+  "sentence": "Un uomo vende caffè in [[bicchierini]] di plastica.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tiny cups",
+   "options": [
+    "tiny cups",
+    "large plates",
+    "paper bags",
+    "glass bottles"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Un uomo vende caffè in bicchierini di plastica.",
+    "targetWord": "bicchierini",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c45ce5a271b9c1c9.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plastica",
+  "sentence": "I bicchierini sono di [[plastica]] leggera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "plastic",
+   "options": [
+    "plastic",
+    "glass",
+    "metal",
+    "wood"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "I bicchierini sono di plastica leggera.",
+    "targetWord": "plastica",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/93c2f63feda92470.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sedile",
+  "sentence": "Lui cammina fra i [[sedili]] della barca.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the seats",
+   "options": [
+    "the seats",
+    "the ropes",
+    "the doors",
+    "the windows"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Lui cammina fra i sedili della barca.",
+    "targetWord": "sedili",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d360da12f2d52ae4.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fianco",
+  "sentence": "L'acqua bagna il [[fianco]] della barca.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the side",
+   "options": [
+    "the side",
+    "the roof",
+    "the floor",
+    "the front"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "L'acqua bagna il fianco della barca.",
+    "targetWord": "fianco",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36d9eb88cb598226.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "barca",
+  "sentence": "La [[barca]] si muove piano con le onde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the boat",
+   "options": [
+    "the boat",
+    "the bus",
+    "the car",
+    "the train"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "La barca si muove piano con le onde.",
+    "targetWord": "barca",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5380a2c881eac869.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bagnare",
+  "sentence": "Le onde [[bagnano]] i primi posti.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wet",
+   "options": [
+    "wet",
+    "dry",
+    "cover",
+    "break"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Le onde bagnano i primi posti.",
+    "targetWord": "bagnano",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8062d325ef5a19a9.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "spostare",
+  "sentence": "Lei [[sposta]] lo zaino più lontano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "moves",
+   "options": [
+    "moves",
+    "opens",
+    "loses",
+    "sells"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Lei sposta lo zaino più lontano.",
+    "targetWord": "sposta",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/24fbd5da6d8d6ab8.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "passeggero",
+  "sentence": "Gli altri [[passeggeri]] ridono con lei.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the passengers",
+   "options": [
+    "the passengers",
+    "the sailors",
+    "the sellers",
+    "the drivers"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "Gli altri passeggeri ridono con lei.",
+    "targetWord": "passeggeri",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/927a7f94fcb92c0b.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apparire",
+  "sentence": "L'isola [[appare]] dietro uno scoglio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "appears",
+   "options": [
+    "appears",
+    "disappears",
+    "sinks",
+    "closes"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "L'isola appare dietro uno scoglio.",
+    "targetWord": "appare",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7cf01652a4a0e5ea.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mare",
+  "sentence": "L'isola è verde sopra il [[mare]] blu.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the sea",
+   "options": [
+    "the sea",
+    "the sky",
+    "the field",
+    "the hill"
+   ],
+   "audioClip": {
+    "storySlug": "il-traghetto-non-aspetta-nessuno",
+    "storySource": "user",
+    "sentence": "L'isola è verde sopra il mare blu.",
+    "targetWord": "mare",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/552f7df0f9e22d36.mp3"
+   }
+  },
+  "featured": false
+ }
+]

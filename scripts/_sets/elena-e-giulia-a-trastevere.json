@@ -1,0 +1,611 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "ragazza,casa,muro,vita",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "ragazza",
+     "answer": "girl",
+     "options": [
+      "girl",
+      "house",
+      "wall",
+      "life"
+     ]
+    },
+    {
+     "word": "casa",
+     "answer": "house",
+     "options": [
+      "girl",
+      "house",
+      "wall",
+      "life"
+     ]
+    },
+    {
+     "word": "muro",
+     "answer": "wall",
+     "options": [
+      "girl",
+      "house",
+      "wall",
+      "life"
+     ]
+    },
+    {
+     "word": "vita",
+     "answer": "life",
+     "options": [
+      "girl",
+      "house",
+      "wall",
+      "life"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "vecchio",
+  "sentence": "Trastevere è un quartiere [[vecchio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "old",
+   "options": [
+    "old",
+    "new",
+    "big",
+    "clean"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Trastevere è un quartiere vecchio.",
+    "targetWord": "vecchio",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "pieno",
+  "sentence": "Trastevere è un quartiere [[pieno]] di vita.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "full",
+   "options": [
+    "full",
+    "empty",
+    "quiet",
+    "dark"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Trastevere è un quartiere pieno di vita.",
+    "targetWord": "pieno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "stretto",
+  "sentence": "Le strade di Trastevere sono [[strette]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "narrow",
+   "options": [
+    "narrow",
+    "wide",
+    "long",
+    "short"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Le strade di Trastevere sono strette.",
+    "targetWord": "strette",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "dolce",
+  "sentence": "I gelati sono freddi e [[dolci]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sweet",
+   "options": [
+    "sweet",
+    "sour",
+    "salty",
+    "bitter"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "I gelati sono freddi e dolci.",
+    "targetWord": "dolci",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "conoscere",
+  "sentence": "Giulia [[conosce]] bene questo quartiere.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "knows",
+   "options": [
+    "knows",
+    "forgets",
+    "buys",
+    "sells"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Giulia conosce bene questo quartiere.",
+    "targetWord": "conosce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "ascoltare",
+  "sentence": "Elena guarda le case e [[ascolta]] la musica.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "listens to",
+   "options": [
+    "listens to",
+    "looks at",
+    "runs from",
+    "pays for"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Elena guarda le case e ascolta la musica.",
+    "targetWord": "ascolta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "buone",
+  "sentence": "Elena e Giulia sono _____ amiche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "buone",
+   "options": [
+    "buone",
+    "vecchie",
+    "felici",
+    "romane"
+   ],
+   "translation": "Elena and Giulia are ____ friends.",
+   "optionTranslations": [
+    "good",
+    "old",
+    "happy",
+    "Roman"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Elena e Giulia sono buone amiche.",
+    "targetWord": "buone",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "quartiere",
+  "sentence": "Trastevere è un _____ pieno di vita.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "quartiere",
+   "options": [
+    "quartiere",
+    "negozio",
+    "gelato",
+    "muro"
+   ],
+   "translation": "Trastevere is a ____ full of life.",
+   "optionTranslations": [
+    "neighborhood",
+    "shop",
+    "ice cream",
+    "wall"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Trastevere è un quartiere pieno di vita.",
+    "targetWord": "quartiere",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "strade",
+  "sentence": "Le _____ di Trastevere sono strette.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "strade",
+   "options": [
+    "strade",
+    "case",
+    "porte",
+    "piazze"
+   ],
+   "translation": "The ____ of Trastevere are narrow.",
+   "optionTranslations": [
+    "streets",
+    "houses",
+    "doors",
+    "squares"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Le strade di Trastevere sono strette.",
+    "targetWord": "strade",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "gialli",
+  "sentence": "I muri delle case sono _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gialli",
+   "options": [
+    "gialli",
+    "rossi",
+    "freddi",
+    "dolci"
+   ],
+   "translation": "The walls of the houses are ____.",
+   "optionTranslations": [
+    "yellow",
+    "red",
+    "cold",
+    "sweet"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "I muri delle case sono gialli.",
+    "targetWord": "gialli",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "entrano",
+  "sentence": "Le amiche _____ in un piccolo negozio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "entrano",
+   "options": [
+    "entrano",
+    "girano",
+    "comprano",
+    "guardano"
+   ],
+   "translation": "The friends _____ a small shop.",
+   "optionTranslations": [
+    "enter",
+    "turn",
+    "buy",
+    "look"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Le amiche entrano in un piccolo negozio.",
+    "targetWord": "entrano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "negozio",
+  "sentence": "Le amiche entrano in un piccolo _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "negozio",
+   "options": [
+    "negozio",
+    "quartiere",
+    "gelato",
+    "vicolo"
+   ],
+   "translation": "The friends enter a small ____.",
+   "optionTranslations": [
+    "shop",
+    "neighborhood",
+    "ice cream",
+    "alley"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Le amiche entrano in un piccolo negozio.",
+    "targetWord": "negozio",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "compra",
+  "sentence": "Giulia _____ un gelato al limone.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "compra",
+   "options": [
+    "compra",
+    "prende",
+    "mangia",
+    "guarda"
+   ],
+   "translation": "Giulia _____ a lemon ice cream.",
+   "optionTranslations": [
+    "buys",
+    "takes",
+    "eats",
+    "looks"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Giulia compra un gelato al limone.",
+    "targetWord": "compra",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "prende",
+  "sentence": "Elena _____ un gelato al cioccolato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "prende",
+   "options": [
+    "prende",
+    "compra",
+    "beve",
+    "trova"
+   ],
+   "translation": "Elena _____ a chocolate ice cream.",
+   "optionTranslations": [
+    "takes",
+    "buys",
+    "drinks",
+    "finds"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Elena prende un gelato al cioccolato.",
+    "targetWord": "prende",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "freddi",
+  "sentence": "I gelati sono _____ e dolci.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "freddi",
+   "options": [
+    "freddi",
+    "caldi",
+    "gialli",
+    "vecchi"
+   ],
+   "translation": "The ice creams are ____ and sweet.",
+   "optionTranslations": [
+    "cold",
+    "hot",
+    "yellow",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "I gelati sono freddi e dolci.",
+    "targetWord": "freddi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "girano",
+  "sentence": "Poi le ragazze _____ tra i vicoli.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "girano",
+   "options": [
+    "girano",
+    "entrano",
+    "comprano",
+    "ascoltano"
+   ],
+   "translation": "Then the girls _____ among the alleys.",
+   "optionTranslations": [
+    "turn",
+    "enter",
+    "buy",
+    "listen"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Poi le ragazze girano tra i vicoli.",
+    "targetWord": "girano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "vicoli",
+  "sentence": "Le ragazze girano tra i _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vicoli",
+   "options": [
+    "vicoli",
+    "muri",
+    "negozi",
+    "gelati"
+   ],
+   "translation": "The girls turn among the ____.",
+   "optionTranslations": [
+    "alleys",
+    "walls",
+    "shops",
+    "ice creams"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Le ragazze girano tra i vicoli.",
+    "targetWord": "vicoli",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "trovano",
+  "sentence": "Le amiche non _____ più la strada.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "trovano",
+   "options": [
+    "trovano",
+    "guardano",
+    "comprano",
+    "entrano"
+   ],
+   "translation": "The friends no longer _____ the street.",
+   "optionTranslations": [
+    "find",
+    "look",
+    "buy",
+    "enter"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "Le amiche non trovano più la strada.",
+    "targetWord": "trovano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "chiede",
+  "sentence": "«Dove siamo?», _____ Elena.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chiede",
+   "options": [
+    "chiede",
+    "ride",
+    "ascolta",
+    "conosce"
+   ],
+   "translation": "\"Where are we?\", Elena _____.",
+   "optionTranslations": [
+    "asks",
+    "laughs",
+    "listens",
+    "knows"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "«Dove siamo?», chiede Elena.",
+    "targetWord": "chiede",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "scende",
+  "sentence": "L'acqua della fontana _____ piano.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "scende",
+   "options": [
+    "scende",
+    "gira",
+    "entra",
+    "trova"
+   ],
+   "translation": "The water of the fountain _____ slowly.",
+   "optionTranslations": [
+    "goes down",
+    "turns",
+    "enters",
+    "finds"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-giulia-a-trastevere",
+    "storySource": "user",
+    "sentence": "L'acqua della fontana scende piano.",
+    "targetWord": "scende",
+    "language": "italian"
+   }
+  }
+ }
+]

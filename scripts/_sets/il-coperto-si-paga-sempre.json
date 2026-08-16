@@ -1,0 +1,555 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "riga,pane,mancia,cestino",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "riga",
+          "answer": "a line of writing",
+          "options": [
+            "a line of writing",
+            "bread",
+            "a tip",
+            "a small basket"
+          ]
+        },
+        {
+          "word": "pane",
+          "answer": "bread",
+          "options": [
+            "a line of writing",
+            "bread",
+            "a tip",
+            "a small basket"
+          ]
+        },
+        {
+          "word": "mancia",
+          "answer": "a tip",
+          "options": [
+            "a line of writing",
+            "bread",
+            "a tip",
+            "a small basket"
+          ]
+        },
+        {
+          "word": "cestino",
+          "answer": "a small basket",
+          "options": [
+            "a line of writing",
+            "bread",
+            "a tip",
+            "a small basket"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pagina",
+    "sentence": "In fondo alla [[pagina]] c'è un numero piccolo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the page",
+      "options": [
+        "the page",
+        "the door",
+        "the plate",
+        "the coat"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "In fondo alla pagina c'è un numero piccolo.",
+        "targetWord": "pagina",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/472b3afab25be16d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "coprire",
+    "sentence": "Lei domanda che cosa [[copre]] quel prezzo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "covers",
+      "options": [
+        "covers",
+        "costs",
+        "opens",
+        "breaks"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Lei domanda che cosa copre quel prezzo.",
+        "targetWord": "copre",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dfe39ea2a0b3d9d6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esattamente",
+    "sentence": "Lei vuole sapere [[esattamente]] che cosa paga.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "exactly",
+      "options": [
+        "exactly",
+        "almost",
+        "never",
+        "later"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Lei vuole sapere esattamente che cosa paga.",
+        "targetWord": "esattamente",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4aaffdba02d2a18c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rispondere",
+    "sentence": "Il cameriere [[risponde]] con molta calma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "answers",
+      "options": [
+        "answers",
+        "shouts",
+        "leaves",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Il cameriere risponde con molta calma.",
+        "targetWord": "risponde",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9e39469246cee2e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mostrare",
+    "sentence": "Il conto [[mostra]] una riga per il coperto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shows",
+      "options": [
+        "shows",
+        "hides",
+        "pays",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Il conto mostra una riga per il coperto.",
+        "targetWord": "mostra",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0b5f351694e647d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abitudine",
+    "sentence": "Lei lascia due monete per [[abitudine]] straniera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "habit",
+      "options": [
+        "habit",
+        "mistake",
+        "hunger",
+        "fear"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Lei lascia due monete per abitudine straniera.",
+        "targetWord": "abitudine",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f72f9201cf6c4a50.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "obbligo",
+    "sentence": "In Italia la mancia non è un [[obbligo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a duty",
+      "options": [
+        "a duty",
+        "a price",
+        "a habit",
+        "a gift"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "In Italia la mancia non è un obbligo.",
+        "targetWord": "obbligo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/27dff052411347a6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "orgoglio",
+    "sentence": "Loro scrivono quel numero con [[orgoglio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pride",
+      "options": [
+        "pride",
+        "fear",
+        "shame",
+        "hurry"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Loro scrivono quel numero con orgoglio.",
+        "targetWord": "orgoglio",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/21b2536f0b593f5b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "a parte",
+    "sentence": "In quel posto il pane si paga _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "a parte",
+      "options": [
+        "a parte",
+        "gratis",
+        "sempre",
+        "dopo"
+      ],
+      "translation": "In that place the bread is paid for _____.",
+      "optionTranslations": [
+        "separately",
+        "free",
+        "always",
+        "later"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "In quel posto il pane si paga a parte.",
+        "targetWord": "a parte",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46222d88f2dee110.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calma",
+    "sentence": "Lui parla con [[calma]] e senza fretta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calm",
+      "options": [
+        "calm",
+        "anger",
+        "fear",
+        "hurry"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Lui parla con calma e senza fretta.",
+        "targetWord": "calma",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cce15a30cf10b1ae.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pieno",
+    "sentence": "Il cestino arriva [[pieno]] di pane fresco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "full",
+      "options": [
+        "full",
+        "empty",
+        "broken",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Il cestino arriva pieno di pane fresco.",
+        "targetWord": "pieno",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d15beded797aebe.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tipo",
+    "sentence": "Sul tavolo ci sono due [[tipi]] di pane.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "kinds",
+      "options": [
+        "kinds",
+        "prices",
+        "doors",
+        "hours"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Sul tavolo ci sono due tipi di pane.",
+        "targetWord": "tipi",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/673535801293f364.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grissino",
+    "sentence": "Accanto al pane c'è un [[grissino]] lungo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a thin breadstick",
+      "options": [
+        "a thin breadstick",
+        "a glass of water",
+        "a paper napkin",
+        "a small spoon"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Accanto al pane c'è un grissino lungo.",
+        "targetWord": "grissino",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e4fb4f38bb9436c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lungo",
+    "sentence": "Il grissino è sottile e molto [[lungo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "long",
+      "options": [
+        "long",
+        "short",
+        "wide",
+        "round"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Il grissino è sottile e molto lungo.",
+        "targetWord": "lungo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2afc5876103bcf44.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "errore",
+    "sentence": "Nessuno considera il pane un [[errore]] della cucina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a mistake",
+      "options": [
+        "a mistake",
+        "a gift",
+        "a price",
+        "a rule"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Nessuno considera il pane un errore della cucina.",
+        "targetWord": "errore",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9f168699fdf7cdb2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cucina",
+    "sentence": "Il pane arriva dalla [[cucina]] senza ordine.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the kitchen",
+      "options": [
+        "the kitchen",
+        "the street",
+        "the market",
+        "the office"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Il pane arriva dalla cucina senza ordine.",
+        "targetWord": "cucina",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9bfe5b21c6c9349c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "straniero",
+    "sentence": "La sua abitudine è [[straniera]] in questo paese.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "foreign",
+      "options": [
+        "foreign",
+        "local",
+        "modern",
+        "old"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "La sua abitudine è straniera in questo paese.",
+        "targetWord": "straniera",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d0117e87b9e0009.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ringraziare",
+    "sentence": "Il cameriere [[ringrazia]] e sembra sorpreso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thanks",
+      "options": [
+        "thanks",
+        "pays",
+        "laughs",
+        "leaves"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Il cameriere ringrazia e sembra sorpreso.",
+        "targetWord": "ringrazia",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b53d38ca96ce9a9b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorpreso",
+    "sentence": "Il cameriere resta [[sorpreso]] davanti alle monete.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "surprised",
+      "options": [
+        "surprised",
+        "angry",
+        "tired",
+        "bored"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Il cameriere resta sorpreso davanti alle monete.",
+        "targetWord": "sorpreso",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/542e0db1764f1c09.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ristorante",
+    "sentence": "Un altro [[ristorante]] scrive coperto zero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a restaurant",
+      "options": [
+        "a restaurant",
+        "a museum",
+        "a station",
+        "a beach"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Un altro ristorante scrive coperto zero.",
+        "targetWord": "ristorante",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/93173cd876e99e32.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lettera",
+    "sentence": "Il cartello ha [[lettere]] molto grandi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "letters",
+      "options": [
+        "letters",
+        "coins",
+        "doors",
+        "plates"
+      ],
+      "audioClip": {
+        "storySlug": "il-coperto-si-paga-sempre",
+        "storySource": "user",
+        "sentence": "Il cartello ha lettere molto grandi.",
+        "targetWord": "lettere",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e41e704c859dc34b.mp3"
+      }
+    },
+    "featured": false
+  }
+]

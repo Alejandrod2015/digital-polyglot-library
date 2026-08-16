@@ -1,0 +1,487 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "der Gesang",
+    "sentence": "Die [[Gesänge]] kennt Nadia inzwischen auswendig.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "chant, crowd song",
+      "options": [
+        "chant, crowd song",
+        "team jersey",
+        "final whistle",
+        "ticket line"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Die Gesänge kennt Nadia inzwischen auswendig.",
+        "targetWord": "Gesänge",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/364658dcfac96436.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Heimspiel",
+    "sentence": "Deniz singt bei jedem [[Heimspiel]] laut mit.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "home game",
+      "options": [
+        "home game",
+        "away trip",
+        "team bus",
+        "cup final"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Deniz singt bei jedem Heimspiel laut mit.",
+        "targetWord": "Heimspiel",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a02f721b3e438cb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Tor",
+    "sentence": "Dann fällt endlich das [[Tor]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a goal (score)",
+      "options": [
+        "a goal (score)",
+        "a foul",
+        "a penalty",
+        "a corner"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Dann fällt endlich das Tor.",
+        "targetWord": "Tor",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0ba32ecb6e12816c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Frittenbude",
+    "sentence": "Halb Dortmund drängt sich in Ronnys enge [[Frittenbude]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "chip stand, snack bar",
+      "options": [
+        "chip stand, snack bar",
+        "big stadium",
+        "corner shop",
+        "beer garden"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Halb Dortmund drängt sich in Ronnys enge Frittenbude.",
+        "targetWord": "Frittenbude",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/295e5f716e0497b2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "johlen",
+    "sentence": "Und die ganze Bude [[johlt]] los.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to whoop, to cheer",
+      "options": [
+        "to whoop, to cheer",
+        "to whisper",
+        "to yawn",
+        "to leave"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Und die ganze Bude johlt los.",
+        "targetWord": "johlt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b47694c0cfdf867e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grölen",
+    "sentence": "Der ganze Laden [[grölt]] vor Freude.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to roar, to bawl",
+      "options": [
+        "to roar, to bawl",
+        "to mumble",
+        "to sigh",
+        "to nod"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Der ganze Laden grölt vor Freude.",
+        "targetWord": "grölt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/737dde8786717000.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "schwarzgelb",
+    "sentence": "Nadia steht mittendrin im [[schwarzgelben]] Schal.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "black and yellow",
+      "options": [
+        "black and yellow",
+        "bright red",
+        "dark blue",
+        "plain white"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Nadia steht mittendrin im schwarzgelben Schal.",
+        "targetWord": "schwarzgelben",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e15cb0905bd0fa75.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "heimisch",
+    "sentence": "Die Zugereiste aus Berlin ist hier längst [[heimisch]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at home, settled in",
+      "options": [
+        "at home, settled in",
+        "far away",
+        "brand new",
+        "left out"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Die Zugereiste aus Berlin ist hier längst heimisch.",
+        "targetWord": "heimisch",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4378e77b06c0702c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "dröhnt",
+    "sentence": "Die laute Musik _____ aus den großen Boxen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dröhnt",
+      "options": [
+        "dröhnt",
+        "flüstert",
+        "tropft",
+        "leuchtet"
+      ],
+      "translation": "The loud music _____ out of the big speakers.",
+      "optionTranslations": [
+        "booms",
+        "whispers",
+        "drips",
+        "glows"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Die laute Musik dröhnt aus den großen Boxen.",
+        "targetWord": "dröhnt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dc42bb1cbc51310e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "kontert",
+    "sentence": "Auf jede freche Frage _____ sie mit einem Witz.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "kontert",
+      "options": [
+        "kontert",
+        "weint",
+        "schläft",
+        "zahlt"
+      ],
+      "translation": "To every cheeky question she _____ with a joke.",
+      "optionTranslations": [
+        "counters",
+        "cries",
+        "sleeps",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Auf jede freche Frage kontert sie mit einem Witz.",
+        "targetWord": "kontert",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b0b7c9246d1a811e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "wildfremd",
+    "sentence": "Plötzlich umarmen sich [[wildfremde]] Leute.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "total stranger, unknown",
+      "options": [
+        "total stranger, unknown",
+        "well known",
+        "very old",
+        "quite shy"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Plötzlich umarmen sich wildfremde Leute.",
+        "targetWord": "wildfremde",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/df1cb16634cd2521.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aufs Haus",
+    "sentence": "Heute Abend geht hier alles aufs [[Haus]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on the house, free",
+      "options": [
+        "on the house, free",
+        "on the list",
+        "in the fridge",
+        "at the door"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Heute Abend geht hier alles aufs Haus.",
+        "targetWord": "Haus",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e17a6252c60f7182.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Läuft bei dir",
+    "sentence": "[[Läuft]] bei dir, brummt Ronny nur.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nice one, going well",
+      "options": [
+        "nice one, going well",
+        "too bad for you",
+        "hold on there",
+        "no way now"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Läuft bei dir, brummt Ronny nur.",
+        "targetWord": "Läuft",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/076fe4894b1fd16e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "um den Hals fallen",
+    "sentence": "Wildfremde Leute fallen sich um den [[Hals]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hug with joy",
+      "options": [
+        "to hug with joy",
+        "to shake hands",
+        "to wave goodbye",
+        "to turn away"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Wildfremde Leute fallen sich um den Hals.",
+        "targetWord": "Hals",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ede641a54319ad56.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aufgezogen",
+    "sentence": "Die Kollegen haben ihn wegen seiner Frisur nett _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aufgezogen",
+      "options": [
+        "aufgezogen",
+        "gelobt",
+        "bezahlt",
+        "gesucht"
+      ],
+      "translation": "The colleagues nicely _____ him about his haircut.",
+      "optionTranslations": [
+        "teased",
+        "praised",
+        "paid",
+        "searched for"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Die Kollegen haben ihn wegen seiner Frisur nett aufgezogen.",
+        "targetWord": "aufgezogen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb6623562f42c94b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "fettige",
+    "sentence": "Nach den Pommes hatte er ganz _____ Finger.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fettige",
+      "options": [
+        "fettige",
+        "saubere",
+        "kalte",
+        "lange"
+      ],
+      "translation": "After the fries he had really _____ fingers.",
+      "optionTranslations": [
+        "greasy",
+        "clean",
+        "cold",
+        "long"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Nach den Pommes hatte er ganz fettige Finger.",
+        "targetWord": "fettige",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb2c5c77681ce3c3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "auswendig",
+    "sentence": "Das Gedicht kann sie schon ganz _____ aufsagen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "auswendig",
+      "options": [
+        "auswendig",
+        "langsam",
+        "heimlich",
+        "falsch"
+      ],
+      "translation": "She can already recite the poem completely _____.",
+      "optionTranslations": [
+        "by heart",
+        "slowly",
+        "secretly",
+        "wrongly"
+      ],
+      "audioClip": {
+        "storySlug": "schwarzgelb-in-ronnys-imbiss",
+        "storySource": "user",
+        "sentence": "Das Gedicht kann sie schon ganz auswendig aufsagen.",
+        "targetWord": "auswendig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b029db52564ca3bf.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Anpfiff,die Dauerkarte,der Schal,der Bildschirm",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Anpfiff",
+          "answer": "the kickoff whistle",
+          "options": [
+            "the kickoff whistle",
+            "a season ticket",
+            "a scarf",
+            "a screen"
+          ]
+        },
+        {
+          "word": "die Dauerkarte",
+          "answer": "a season ticket",
+          "options": [
+            "the kickoff whistle",
+            "a season ticket",
+            "a scarf",
+            "a screen"
+          ]
+        },
+        {
+          "word": "der Schal",
+          "answer": "a scarf",
+          "options": [
+            "the kickoff whistle",
+            "a season ticket",
+            "a scarf",
+            "a screen"
+          ]
+        },
+        {
+          "word": "der Bildschirm",
+          "answer": "a screen",
+          "options": [
+            "the kickoff whistle",
+            "a season ticket",
+            "a scarf",
+            "a screen"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,621 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "llegar",
+    "sentence": "El tren [[llega]] a la ciudad por la mañana.",
+    "payload": {
+      "answer": "to arrive",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to arrive",
+        "to leave",
+        "to sleep",
+        "to pay"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El tren llega a la ciudad por la mañana.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "llega",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3fb264ccebf3b494.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amiga",
+    "sentence": "Mis dos [[amigas]] toman café juntas.",
+    "payload": {
+      "answer": "a friend",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a friend",
+        "a teacher",
+        "a sister",
+        "a cousin"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Mis dos amigas toman café juntas.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "amigas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8fab6cd1e27e36d9.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abrazar",
+    "sentence": "Los niños se [[abrazan]] con mucho cariño.",
+    "payload": {
+      "answer": "to hug",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to hug",
+        "to greet",
+        "to call",
+        "to leave"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los niños se abrazan con mucho cariño.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "abrazan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f800d9e57ac69cb.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por fin",
+    "sentence": "[[Por fin]] llegas; te esperé mucho tiempo.",
+    "payload": {
+      "answer": "at last",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "at last",
+        "for now",
+        "once more",
+        "by chance"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Por fin llegas; te esperé mucho tiempo.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "Por fin",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3420a980be56b83f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "zumo",
+    "sentence": "Exprimo naranjas para hacer un _____ dulce.",
+    "payload": {
+      "answer": "zumo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "zumo",
+        "pan",
+        "queso",
+        "arroz"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Exprimo naranjas para hacer un zumo dulce.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "zumo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d4514658cfc233c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I squeeze oranges to make a sweet _____.",
+      "optionTranslations": [
+        "juice",
+        "bread",
+        "cheese",
+        "rice"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "camarero",
+    "sentence": "El _____ trae la comida a la mesa.",
+    "payload": {
+      "answer": "camarero",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "camarero",
+        "cartero",
+        "doctor",
+        "piloto"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El camarero trae la comida a la mesa.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "camarero",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c1ea40ae876bc2e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The _____ brings the food to the table.",
+      "optionTranslations": [
+        "waiter",
+        "mailman",
+        "doctor",
+        "pilot"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "terraza",
+    "sentence": "En verano comemos fuera, en la _____ del café.",
+    "payload": {
+      "answer": "terraza",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "terraza",
+        "cocina",
+        "oficina",
+        "farmacia"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En verano comemos fuera, en la terraza del café.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "terraza",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5aa0bf749bb47636.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "In summer we eat outside, on the café _____.",
+      "optionTranslations": [
+        "terrace",
+        "kitchen",
+        "office",
+        "pharmacy"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "naranja",
+    "sentence": "El árbol tiene muchas [[naranjas]] maduras.",
+    "payload": {
+      "answer": "an orange",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "an orange",
+        "an apple",
+        "a lemon",
+        "a grape"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El árbol tiene muchas naranjas maduras.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "naranjas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e59894d02a590a1a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "sentence": "El bebé [[sonríe]] cuando ve a su madre.",
+    "payload": {
+      "answer": "to smile",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to smile",
+        "to cry",
+        "to sleep",
+        "to run"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El bebé sonríe cuando ve a su madre.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "sonríe",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9531f96a7947885e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "feliz",
+    "sentence": "Todos están muy [[felices]] en la fiesta.",
+    "payload": {
+      "answer": "happy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "happy",
+        "sad",
+        "sick",
+        "tired"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Todos están muy felices en la fiesta.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "felices",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d08b3cfae6337683.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mañana",
+    "sentence": "Me levanto temprano por la [[mañana]].",
+    "payload": {
+      "answer": "the morning",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the morning",
+        "the night",
+        "the week",
+        "the year"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Me levanto temprano por la mañana.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "mañana",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d5195688eb52a816.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pequeño",
+    "sentence": "Vivo en una casa [[pequeña]] y bonita.",
+    "payload": {
+      "answer": "small",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "small",
+        "tall",
+        "old",
+        "clean"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Vivo en una casa pequeña y bonita.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "pequeña",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0ac8d58f403831b0.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "patio",
+    "sentence": "Los niños juegan en el [[patio]] de la casa.",
+    "payload": {
+      "answer": "an inner yard",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "an inner yard",
+        "a kitchen",
+        "a garage",
+        "a bedroom"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los niños juegan en el patio de la casa.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "patio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0ec3fa9792efad9d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tomar",
+    "sentence": "Ella [[toma]] el libro de la mesa.",
+    "payload": {
+      "answer": "to take",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to take",
+        "to break",
+        "to open",
+        "to sell"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella toma el libro de la mesa.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "toma",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7269331a64521985.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "beber",
+    "sentence": "El niño [[bebe]] leche cada mañana.",
+    "payload": {
+      "answer": "to drink",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to drink",
+        "to cook",
+        "to buy",
+        "to carry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El niño bebe leche cada mañana.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "bebe",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36fa466493f56615.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contento",
+    "sentence": "Ella está [[contenta]] con su regalo nuevo.",
+    "payload": {
+      "answer": "pleased",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "pleased",
+        "bored",
+        "angry",
+        "nervous"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella está contenta con su regalo nuevo.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "contenta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9cab36ee09d7ced9.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aire",
+    "sentence": "Abro la ventana para respirar [[aire]] fresco.",
+    "payload": {
+      "answer": "air",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "air",
+        "water",
+        "fire",
+        "smoke"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Abro la ventana para respirar aire fresco.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "aire",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/12c38f017e4b57ef.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "árbol",
+    "sentence": "Los pájaros hacen su nido en el _____.",
+    "payload": {
+      "answer": "árbol",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "árbol",
+        "río",
+        "muro",
+        "coche"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los pájaros hacen su nido en el árbol.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "árbol",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/040dd67ed9d48a3b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The birds make their nest in the _____.",
+      "optionTranslations": [
+        "tree",
+        "river",
+        "wall",
+        "car"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dulce",
+    "sentence": "El azúcar hace que el café esté muy _____.",
+    "payload": {
+      "answer": "dulce",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "dulce",
+        "salado",
+        "amargo",
+        "picante"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El azúcar hace que el café esté muy dulce.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "dulce",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/af878995d30b59c3.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Sugar makes the coffee very _____.",
+      "optionTranslations": [
+        "sweet",
+        "salty",
+        "bitter",
+        "spicy"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "espera",
+    "sentence": "En la parada, ella _____ el autobús con paciencia.",
+    "payload": {
+      "answer": "espera",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "espera",
+        "empuja",
+        "pinta",
+        "rompe"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la parada, ella espera el autobús con paciencia.",
+        "storySlug": "naranjas-para-dos-amigas",
+        "targetWord": "espera",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8792f2daab353bc.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "At the bus stop, she _____ the bus patiently.",
+      "optionTranslations": [
+        "waits for",
+        "pushes",
+        "paints",
+        "breaks"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "sol,mesa,vaso,pan",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "sol",
+          "answer": "the sun",
+          "options": [
+            "the sun",
+            "a table",
+            "a glass",
+            "bread"
+          ]
+        },
+        {
+          "word": "mesa",
+          "answer": "a table",
+          "options": [
+            "the sun",
+            "a table",
+            "a glass",
+            "bread"
+          ]
+        },
+        {
+          "word": "vaso",
+          "answer": "a glass",
+          "options": [
+            "the sun",
+            "a table",
+            "a glass",
+            "bread"
+          ]
+        },
+        {
+          "word": "pan",
+          "answer": "bread",
+          "options": [
+            "the sun",
+            "a table",
+            "a glass",
+            "bread"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vasos",
+    "sentence": "En la mesa hay dos [[vasos]] de zumo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "glasses",
+      "options": [
+        "glasses",
+        "plates",
+        "spoons",
+        "bowls"
+      ],
+      "audioClip": {
+        "storySlug": "naranjas-para-dos-amigas",
+        "storySource": "user",
+        "sentence": "En la mesa hay dos vasos de zumo.",
+        "targetWord": "vasos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5957d5f820f2cdfa.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,623 @@
+[
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "atardecer",
+    "sentence": "Manu quería retratar el [[atardecer]] sobre la muralla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the fading light before dark",
+      "options": [
+        "the fading light before dark",
+        "the first light of dawn",
+        "the darkest part of night",
+        "a bright sunny noon"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "Manu quería retratar el atardecer sobre la muralla.",
+        "targetWord": "atardecer",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/672ee8f986a43b3a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "muralla",
+    "sentence": "Los turistas fotografían la vieja [[muralla]] de piedra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the old defensive stone wall",
+      "options": [
+        "the old defensive stone wall",
+        "a narrow cobbled alley",
+        "a tall bell tower",
+        "a wide open plaza"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "Los turistas fotografían la vieja muralla de piedra.",
+        "targetWord": "muralla",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aba4f90e9fbcab3d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "rola",
+    "sentence": "A Manu le dicen [[rola]] por ser bogotana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a woman from Bogotá",
+      "options": [
+        "a woman from Bogotá",
+        "a woman from the coast",
+        "a foreign visitor",
+        "a street vendor"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "A Manu le dicen rola por ser bogotana.",
+        "targetWord": "rola",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f7e448d04d354f18.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "casco histórico",
+    "sentence": "El [[casco histórico]] se llena de turistas al mediodía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the old walled colonial center",
+      "options": [
+        "the old walled colonial center",
+        "a modern shopping mall",
+        "a poor outer suburb",
+        "a busy fishing dock"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "El casco histórico se llena de turistas al mediodía.",
+        "targetWord": "casco histórico",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/68b3e6bc68b40a31.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "ciudad amurallada",
+    "sentence": "La [[ciudad amurallada]] guarda calles coloniales muy fotografiadas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the old town enclosed by walls",
+      "options": [
+        "the old town enclosed by walls",
+        "a beach lined with hotels",
+        "a green mountain valley",
+        "a crowded bus terminal"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "La ciudad amurallada guarda calles coloniales muy fotografiadas.",
+        "targetWord": "ciudad amurallada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/43f60cf9077da4a1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "champeta",
+    "sentence": "El picó suena [[champeta]] toda la tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fast Afro Caribbean dance music",
+      "options": [
+        "fast Afro Caribbean dance music",
+        "slow romantic love ballads",
+        "calm classical piano music",
+        "quiet religious hymns"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "El picó suena champeta toda la tarde.",
+        "targetWord": "champeta",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c98431dd970ea5cf.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "arranca",
+    "sentence": "Él le ____ el celular de las manos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "arranca",
+      "options": [
+        "arranca",
+        "guarda",
+        "presta",
+        "limpia"
+      ],
+      "translation": "Deivis ____ the phone from Manu.",
+      "optionTranslations": [
+        "snatches",
+        "keeps",
+        "lends",
+        "cleans"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "Él le arranca el celular de las manos.",
+        "targetWord": "arranca",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/589304dc48a3927e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "picó",
+    "sentence": "En la esquina retumba el ____ sin descanso.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "picó",
+      "options": [
+        "picó",
+        "radio",
+        "tambor",
+        "timbre"
+      ],
+      "translation": "On the corner the ____ blasts nonstop.",
+      "optionTranslations": [
+        "sound system",
+        "radio",
+        "drum",
+        "doorbell"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "En la esquina retumba el picó sin descanso.",
+        "targetWord": "picó",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7fe12b56fcaa151c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "mamado",
+    "sentence": "Él está ____ de tanto turista con cámara.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mamado",
+      "options": [
+        "mamado",
+        "contento",
+        "asustado",
+        "curioso"
+      ],
+      "translation": "Deivis is ____ of so many tourists with cameras.",
+      "optionTranslations": [
+        "fed up",
+        "happy",
+        "scared",
+        "curious"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "Él está mamado de tanto turista con cámara.",
+        "targetWord": "mamado",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/de2bc3c67ff28ba1.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "mote de queso,arroz de coco,fritanga,platón",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "mote de queso",
+          "answer": "a Caribbean soup of yam and cheese",
+          "options": [
+            "a Caribbean soup of yam and cheese",
+            "sweet and salty coconut rice",
+            "a plate of assorted fried street foods",
+            "a wide bowl carried on the head"
+          ]
+        },
+        {
+          "word": "arroz de coco",
+          "answer": "sweet and salty coconut rice",
+          "options": [
+            "a Caribbean soup of yam and cheese",
+            "sweet and salty coconut rice",
+            "a plate of assorted fried street foods",
+            "a wide bowl carried on the head"
+          ]
+        },
+        {
+          "word": "fritanga",
+          "answer": "a plate of assorted fried street foods",
+          "options": [
+            "a Caribbean soup of yam and cheese",
+            "sweet and salty coconut rice",
+            "a plate of assorted fried street foods",
+            "a wide bowl carried on the head"
+          ]
+        },
+        {
+          "word": "platón",
+          "answer": "a wide bowl carried on the head",
+          "options": [
+            "a Caribbean soup of yam and cheese",
+            "sweet and salty coconut rice",
+            "a plate of assorted fried street foods",
+            "a wide bowl carried on the head"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "vaina",
+    "sentence": "Esta [[vaina]] sí está buena, dice doña Nubia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a thing or situation (slang)",
+      "options": [
+        "a thing or situation (slang)",
+        "a serious money problem",
+        "a kind of coastal fruit",
+        "a loud musical style"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "Esta vaina sí está buena, dice doña Nubia.",
+        "targetWord": "vaina",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/41bc964668bebcc9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "ombe",
+    "sentence": "Esto sí es lo bueno, [[ombe]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an interjection like man or dude",
+      "options": [
+        "an interjection like man or dude",
+        "a polite way to say goodbye",
+        "a request for more food",
+        "a name for a neighbor"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "Esto sí es lo bueno, ombe.",
+        "targetWord": "ombe",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/668f2ab5396f912b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "Ajá",
+    "sentence": "[[Ajá]], ¿y viniste a fotografiar piedra vieja?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "casual filler like so or well",
+      "options": [
+        "casual filler like so or well",
+        "a firm and angry no",
+        "a cry of sudden pain",
+        "a formal work greeting"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "Ajá, ¿y viniste a fotografiar piedra vieja?",
+        "targetWord": "Ajá",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b867f926a18e4f71.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "olla comunitaria",
+    "sentence": "En la esquina arman una [[olla comunitaria]] entre todos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a big pot cooked and shared by neighbors",
+      "options": [
+        "a big pot cooked and shared by neighbors",
+        "a private family dinner inside",
+        "an empty abandoned cooking pot",
+        "a single small takeaway portion"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "En la esquina arman una olla comunitaria entre todos.",
+        "targetWord": "olla comunitaria",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8e26397151e39278.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "postal",
+    "sentence": "Manu busca la ____ perfecta de la muralla.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "postal",
+      "options": [
+        "postal",
+        "foto",
+        "pintura",
+        "revista"
+      ],
+      "translation": "Manu looks for the perfect ____ of the wall.",
+      "optionTranslations": [
+        "postcard",
+        "photo",
+        "painting",
+        "magazine"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "Manu busca la postal perfecta de la muralla.",
+        "targetWord": "postal",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/db7cbbd897b22073.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "retratar",
+    "sentence": "Ella solo quería ____ el atardecer marino.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "retratar",
+      "options": [
+        "retratar",
+        "pintar",
+        "borrar",
+        "vender"
+      ],
+      "translation": "She only wanted to ____ the sea sunset.",
+      "optionTranslations": [
+        "to photograph",
+        "to paint",
+        "to erase",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "Ella solo quería retratar el atardecer marino.",
+        "targetWord": "retratar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/860dfc6e0a770775.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "brisa",
+    "sentence": "Al doblar la esquina lo recibe la ____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "brisa",
+      "options": [
+        "brisa",
+        "lluvia",
+        "niebla",
+        "tormenta"
+      ],
+      "translation": "Turning the corner, the ____ greets him.",
+      "optionTranslations": [
+        "breeze",
+        "rain",
+        "fog",
+        "storm"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "Al doblar la esquina lo recibe la brisa.",
+        "targetWord": "brisa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0e98f7bcd7e091f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "bochorno",
+    "sentence": "En el barrio el ____ pega muy fuerte.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bochorno",
+      "options": [
+        "bochorno",
+        "frío",
+        "viento",
+        "aguacero"
+      ],
+      "translation": "In the barrio the ____ hits very hard.",
+      "optionTranslations": [
+        "sticky heat",
+        "cold",
+        "wind",
+        "downpour"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "En el barrio el bochorno pega muy fuerte.",
+        "targetWord": "bochorno",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/197927b2405de20e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "acera",
+    "sentence": "Los vecinos arrastran las sillas hasta la ____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acera",
+      "options": [
+        "acera",
+        "cocina",
+        "playa",
+        "azotea"
+      ],
+      "translation": "The neighbors drag the chairs to the ____.",
+      "optionTranslations": [
+        "sidewalk",
+        "kitchen",
+        "beach",
+        "rooftop"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "Los vecinos arrastran las sillas hasta la acera.",
+        "targetWord": "acera",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2a7c6c5ef31f3850.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "relajo",
+    "sentence": "En la esquina hay puro ____ de barrio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "relajo",
+      "options": [
+        "relajo",
+        "silencio",
+        "orden",
+        "trabajo"
+      ],
+      "translation": "On the corner there is pure barrio ____.",
+      "optionTranslations": [
+        "cheerful chaos",
+        "silence",
+        "order",
+        "work"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "En la esquina hay puro relajo de barrio.",
+        "targetWord": "relajo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e3f99d2820e726cc.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "pelaos",
+    "sentence": "Los ____ del andén la mojan con la manguera.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pelaos",
+      "options": [
+        "pelaos",
+        "viejos",
+        "turistas",
+        "meseros"
+      ],
+      "translation": "The ____ on the sidewalk splash her with the hose.",
+      "optionTranslations": [
+        "kids",
+        "old folks",
+        "tourists",
+        "waiters"
+      ],
+      "audioClip": {
+        "storySlug": "champeta-despues-de-la-muralla",
+        "storySource": "user",
+        "sentence": "Los pelaos del andén la mojan con la manguera.",
+        "targetWord": "pelaos",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8686e4d2975e92dc.mp3"
+      }
+    }
+  }
+]

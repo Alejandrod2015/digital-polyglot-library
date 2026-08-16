@@ -1,0 +1,623 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Wasser,Tisch,Frau,Nummer",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Wasser",
+     "answer": "water",
+     "options": [
+      "water",
+      "table",
+      "woman",
+      "number"
+     ]
+    },
+    {
+     "word": "Tisch",
+     "answer": "table",
+     "options": [
+      "water",
+      "table",
+      "woman",
+      "number"
+     ]
+    },
+    {
+     "word": "Frau",
+     "answer": "woman",
+     "options": [
+      "water",
+      "table",
+      "woman",
+      "number"
+     ]
+    },
+    {
+     "word": "Nummer",
+     "answer": "number",
+     "options": [
+      "water",
+      "table",
+      "woman",
+      "number"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "neu",
+  "sentence": "Finn ist _____ in Berlin.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "neu",
+   "options": [
+    "neu",
+    "allein",
+    "jung",
+    "nett"
+   ],
+   "translation": "Finn is _____ in Berlin.",
+   "optionTranslations": [
+    "new",
+    "alone",
+    "young",
+    "nice"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Finn ist neu in Berlin.",
+    "targetWord": "neu",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Stadt",
+  "sentence": "Er kennt niemanden in der _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Stadt",
+   "options": [
+    "Stadt",
+    "Frau",
+    "Band",
+    "Nummer"
+   ],
+   "translation": "He knows nobody in the _____.",
+   "optionTranslations": [
+    "city",
+    "woman",
+    "band",
+    "number"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Er kennt niemanden in der Stadt.",
+    "targetWord": "Stadt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "allein",
+  "sentence": "Er sitzt heute _____ in einem Café.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "allein",
+   "options": [
+    "allein",
+    "leise",
+    "gern",
+    "neu"
+   ],
+   "translation": "Today he sits _____ in a café.",
+   "optionTranslations": [
+    "alone",
+    "quietly",
+    "gladly",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Er sitzt heute allein in einem Café.",
+    "targetWord": "allein",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "liest",
+  "sentence": "Finn _____ ein Buch.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "liest",
+   "options": [
+    "liest",
+    "trinkt",
+    "heißt",
+    "denkt"
+   ],
+   "translation": "Finn _____ a book.",
+   "optionTranslations": [
+    "reads",
+    "drinks",
+    "is called",
+    "thinks"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Finn liest ein Buch.",
+    "targetWord": "liest",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "trinkt",
+  "sentence": "Finn _____ Wasser.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "trinkt",
+   "options": [
+    "trinkt",
+    "liest",
+    "lächelt",
+    "denkt"
+   ],
+   "translation": "Finn _____ water.",
+   "optionTranslations": [
+    "drinks",
+    "reads",
+    "smiles",
+    "thinks"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Finn trinkt Wasser.",
+    "targetWord": "trinkt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "junge",
+  "sentence": "Eine _____ Frau sitzt am Tisch.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "junge",
+   "options": [
+    "junge",
+    "nette",
+    "neue",
+    "leise"
+   ],
+   "translation": "A _____ woman sits at the table.",
+   "optionTranslations": [
+    "young",
+    "nice",
+    "new",
+    "quiet"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Eine junge Frau sitzt am Tisch.",
+    "targetWord": "junge",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "heißt",
+  "sentence": "Sie _____ Aylin.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "heißt",
+   "options": [
+    "heißt",
+    "mag",
+    "liest",
+    "trinkt"
+   ],
+   "translation": "She _____ Aylin.",
+   "optionTranslations": [
+    "is called",
+    "likes",
+    "reads",
+    "drinks"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Sie heißt Aylin.",
+    "targetWord": "heißt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "lächelt",
+  "sentence": "Sie _____ freundlich.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lächelt",
+   "options": [
+    "lächelt",
+    "trinkt",
+    "liest",
+    "heißt"
+   ],
+   "translation": "She _____ in a friendly way.",
+   "optionTranslations": [
+    "smiles",
+    "drinks",
+    "reads",
+    "is called"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Sie lächelt freundlich.",
+    "targetWord": "lächelt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Leute",
+  "sentence": "Aber die _____ sind nett.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Leute",
+   "options": [
+    "Leute",
+    "Frau",
+    "Stadt",
+    "Band"
+   ],
+   "translation": "But the _____ are nice.",
+   "optionTranslations": [
+    "people",
+    "woman",
+    "city",
+    "band"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Aber die Leute sind nett.",
+    "targetWord": "Leute",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Samstag",
+  "sentence": "Eine Band spielt am _____ im Park.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Samstag",
+   "options": [
+    "Samstag",
+    "Tisch",
+    "Wasser",
+    "Nummer"
+   ],
+   "translation": "A band plays in the park on _____.",
+   "optionTranslations": [
+    "Saturday",
+    "table",
+    "water",
+    "number"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Eine Band spielt am Samstag im Park.",
+    "targetWord": "Samstag",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Band",
+  "sentence": "Eine _____ spielt am Samstag.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Band",
+   "options": [
+    "Band",
+    "Frau",
+    "Stadt",
+    "Nummer"
+   ],
+   "translation": "A _____ plays on Saturday.",
+   "optionTranslations": [
+    "band",
+    "woman",
+    "city",
+    "number"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Eine Band spielt am Samstag.",
+    "targetWord": "Band",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "gern",
+  "sentence": "Finn hört ihr _____ zu.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gern",
+   "options": [
+    "gern",
+    "leise",
+    "allein",
+    "neu"
+   ],
+   "translation": "Finn _____ listens to her.",
+   "optionTranslations": [
+    "gladly",
+    "quietly",
+    "alone",
+    "newly"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Finn hört ihr gern zu.",
+    "targetWord": "gern",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "niemanden",
+  "sentence": "Ich kenne hier [[niemanden]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nobody",
+   "options": [
+    "nobody",
+    "everybody",
+    "a friend",
+    "the woman"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Ich kenne hier niemanden.",
+    "targetWord": "niemanden",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "freundlich",
+  "sentence": "Sie lächelt [[freundlich]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in a friendly way",
+   "options": [
+    "in a friendly way",
+    "angrily",
+    "sadly",
+    "loudly"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Sie lächelt freundlich.",
+    "targetWord": "freundlich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "schüchtern",
+  "sentence": "Finn ist ein bisschen [[schüchtern]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shy",
+   "options": [
+    "shy",
+    "brave",
+    "tired",
+    "angry"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Finn ist ein bisschen schüchtern.",
+    "targetWord": "schüchtern",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "leise",
+  "sentence": "\"Ja\", sagt er [[leise]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quietly",
+   "options": [
+    "quietly",
+    "loudly",
+    "slowly",
+    "quickly"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "\"Ja\", sagt er leise.",
+    "targetWord": "leise",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "nett",
+  "sentence": "Aber die Leute sind [[nett]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nice",
+   "options": [
+    "nice",
+    "mean",
+    "boring",
+    "strange"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Aber die Leute sind nett.",
+    "targetWord": "nett",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "mag",
+  "sentence": "Ich [[mag]] Musik.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "like",
+   "options": [
+    "like",
+    "hate",
+    "need",
+    "lose"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Ich mag Musik.",
+    "targetWord": "mag",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "freut",
+  "sentence": "Aylin [[freut]] sich sehr.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "is glad",
+   "options": [
+    "is glad",
+    "is angry",
+    "is tired",
+    "is bored"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Aylin freut sich sehr.",
+    "targetWord": "freut",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "listen_choose",
+  "featured": true,
+  "word": "denken",
+  "sentence": "",
+  "payload": {
+   "prompt": "Listen and choose the word you hear.",
+   "answer": "denkt",
+   "options": [
+    "denkt",
+    "liest",
+    "trinkt",
+    "lächelt"
+   ],
+   "optionTranslations": [
+    "thinks",
+    "reads",
+    "drinks",
+    "smiles"
+   ],
+   "audioClip": {
+    "storySlug": "allein-in-kreuzberg",
+    "storySource": "user",
+    "sentence": "Finn denkt kurz nach.",
+    "targetWord": "denkt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ }
+]

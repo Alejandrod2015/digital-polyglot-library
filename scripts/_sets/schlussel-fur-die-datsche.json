@@ -1,0 +1,463 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "das Gelumpe",
+    "sentence": "Hinten liegt das ganze [[Gelumpe]] für die Grillerei.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "junk and clutter",
+      "options": [
+        "junk and clutter",
+        "fresh fruit",
+        "clean plates",
+        "warm blankets"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Hinten liegt das ganze Gelumpe für die Grillerei.",
+        "targetWord": "Gelumpe",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3237cf9a6a68593e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Feldweg",
+    "sentence": "Der Wagen holpert über einen schmalen [[Feldweg]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a dirt track",
+      "options": [
+        "a dirt track",
+        "a wide road",
+        "a train station",
+        "a busy bridge"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Der Wagen holpert über einen schmalen Feldweg.",
+        "targetWord": "Feldweg",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f5ef03c3e5c61585.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Schreck",
+    "sentence": "Alle erstarren vor [[Schreck]] und trauen sich nicht näher.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sudden fright",
+      "options": [
+        "a sudden fright",
+        "a warm welcome",
+        "a long wait",
+        "a loud song"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Alle erstarren vor Schreck und trauen sich nicht näher.",
+        "targetWord": "Schreck",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d4554b0522354f3b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Kabache",
+    "sentence": "Ein warmes Licht brennt in der leeren [[Kabache]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a run down shack",
+      "options": [
+        "a run down shack",
+        "a grand villa",
+        "an open field",
+        "a fast car"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Ein warmes Licht brennt in der leeren Kabache.",
+        "targetWord": "Kabache",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40cece016dc7f4f9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verwunschen",
+    "sentence": "In der Dämmerung wirkt der Garten fast [[verwunschen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "spookily enchanted",
+      "options": [
+        "spookily enchanted",
+        "freshly painted",
+        "neatly trimmed",
+        "brightly lit"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "In der Dämmerung wirkt der Garten fast verwunschen.",
+        "targetWord": "verwunschen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36fe7a0f68c52e50.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "windschief",
+    "sentence": "Die kleine Laube steht [[windschief]] und ganz überwuchert.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "leaning crooked",
+      "options": [
+        "leaning crooked",
+        "perfectly straight",
+        "freshly built",
+        "widely open"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Die kleine Laube steht windschief und ganz überwuchert.",
+        "targetWord": "windschief",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/824b4ceb513ac4ca.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "anschieben",
+    "sentence": "Der Motor ist tot, wir müssen den Wagen _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "anschieben",
+      "options": [
+        "anschieben",
+        "waschen",
+        "tanken",
+        "parken"
+      ],
+      "translation": "The engine is dead, we have to _____ the car.",
+      "optionTranslations": [
+        "push-start",
+        "wash",
+        "refuel",
+        "park"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Der Motor ist tot, wir müssen den Wagen anschieben.",
+        "targetWord": "anschieben",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7eab9fdbe1420c31.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ruckelt",
+    "sentence": "Der alte Bus _____ stark über das holprige Kopfsteinpflaster.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ruckelt",
+      "options": [
+        "ruckelt",
+        "gleitet",
+        "fliegt",
+        "schwimmt"
+      ],
+      "translation": "The old bus _____ hard over the bumpy cobblestones.",
+      "optionTranslations": [
+        "jolts",
+        "glides",
+        "flies",
+        "swims"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Der alte Bus ruckelt stark über das holprige Kopfsteinpflaster.",
+        "targetWord": "ruckelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f72279c3018419bc.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "kramt",
+    "sentence": "Sie _____ lange in der Tasche nach dem Schlüssel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "kramt",
+      "options": [
+        "kramt",
+        "singt",
+        "schläft",
+        "lacht"
+      ],
+      "translation": "She _____ around in the bag for the key for a long time.",
+      "optionTranslations": [
+        "rummages",
+        "sings",
+        "sleeps",
+        "laughs"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Sie kramt lange in der Tasche nach dem Schlüssel.",
+        "targetWord": "kramt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/368d0f33c6a0ec4b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "motzt",
+    "sentence": "Weil das Schloss klemmt, _____ er leise vor sich hin.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "motzt",
+      "options": [
+        "motzt",
+        "lächelt",
+        "gähnt",
+        "winkt"
+      ],
+      "translation": "Because the lock is stuck, he _____ quietly to himself.",
+      "optionTranslations": [
+        "grumbles",
+        "smiles",
+        "yawns",
+        "waves"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Weil das Schloss klemmt, motzt er leise vor sich hin.",
+        "targetWord": "motzt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a6b66c3453746617.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bissl",
+    "sentence": "Alle weichen [[bissl]] zurück und erstarren.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a little bit",
+      "options": [
+        "a little bit",
+        "far too much",
+        "not at all",
+        "once again"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Alle weichen bissl zurück und erstarren.",
+        "targetWord": "bissl",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/150975bebf10e3e0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guckste",
+    "sentence": "[[Guckste]], hinten liegt alles für die Grillerei.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "look here",
+      "options": [
+        "look here",
+        "go away",
+        "wait now",
+        "come back"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Guckste, hinten liegt alles für die Grillerei.",
+        "targetWord": "guckste",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d31b17e786577446.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ins Grüne",
+    "sentence": "Wir fahren am Wochenende weit hinaus ins [[Grüne]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "out into nature",
+      "options": [
+        "out into nature",
+        "into the city",
+        "down the stairs",
+        "across the sea"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Wir fahren am Wochenende weit hinaus ins Grüne.",
+        "targetWord": "Grüne",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab9192896f46e8fa.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "auf gut Glück",
+    "sentence": "Wir versuchen es einfach auf gut [[Glück]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on the off chance",
+      "options": [
+        "on the off chance",
+        "right on time",
+        "by the book",
+        "against all odds"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Wir versuchen es einfach auf gut Glück.",
+        "targetWord": "Glück",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ca2e33b8c753d5e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "auf dem Schlauch stehen",
+    "sentence": "Steffi steht sichtlich auf dem [[Schlauch]] und grübelt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be stumped",
+      "options": [
+        "to be stumped",
+        "to be thrilled",
+        "to be certain",
+        "to be early"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Steffi steht sichtlich auf dem Schlauch und grübelt.",
+        "targetWord": "Schlauch",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05200ada5e10ee81.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "klemmt",
+    "sentence": "Die alte Schublade _____ und lässt sich nicht öffnen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "klemmt",
+      "options": [
+        "klemmt",
+        "glänzt",
+        "riecht",
+        "wackelt"
+      ],
+      "translation": "The old drawer _____ and won't open.",
+      "optionTranslations": [
+        "is jammed",
+        "shines",
+        "smells",
+        "wobbles"
+      ],
+      "audioClip": {
+        "storySlug": "schlussel-fur-die-datsche",
+        "storySource": "user",
+        "sentence": "Die alte Schublade klemmt und lässt sich nicht öffnen.",
+        "targetWord": "klemmt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f152cb149ce8afd4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "Datsche,Broiler,Kofferraum,Laube",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "Datsche",
+          "answer": "a weekend cottage",
+          "options": [
+            "a weekend cottage",
+            "roast chicken",
+            "the car trunk",
+            "a garden hut"
+          ]
+        },
+        {
+          "word": "Broiler",
+          "answer": "roast chicken",
+          "options": [
+            "a weekend cottage",
+            "roast chicken",
+            "the car trunk",
+            "a garden hut"
+          ]
+        },
+        {
+          "word": "Kofferraum",
+          "answer": "the car trunk",
+          "options": [
+            "a weekend cottage",
+            "roast chicken",
+            "the car trunk",
+            "a garden hut"
+          ]
+        },
+        {
+          "word": "Laube",
+          "answer": "a garden hut",
+          "options": [
+            "a weekend cottage",
+            "roast chicken",
+            "the car trunk",
+            "a garden hut"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

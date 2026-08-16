@@ -1,0 +1,465 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "manejar",
+    "sentence": "Pilar ya [[manejaba]] la jerga mejor que nadie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "handled it skillfully",
+      "options": [
+        "handled it skillfully",
+        "forgot it completely",
+        "hated it deeply",
+        "feared it greatly"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "Pilar ya manejaba la jerga mejor que nadie.",
+        "targetWord": "manejaba",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fabb4e5672f768f4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dejar botado",
+    "sentence": "Soltó una frase que los [[dejó botados]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "left them stumped",
+      "options": [
+        "left them stumped",
+        "cheered them up",
+        "paid them back",
+        "showed them off"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "Soltó una frase que los dejó botados.",
+        "targetWord": "dejó botados",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/823db391d8d41d19.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muletilla",
+    "sentence": "Mezcló palabras y [[muletillas]] nunca oídas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "filler words",
+      "options": [
+        "filler words",
+        "hard cash",
+        "cooking spices",
+        "dance moves"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "Mezcló palabras y muletillas nunca oídas.",
+        "targetWord": "muletillas",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/366796e6bab7053a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oe",
+    "sentence": "\"[[Oe]], ¿de dónde sacaste esa?\", admitió Diego.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hey, listen",
+      "options": [
+        "hey, listen",
+        "goodbye now",
+        "thank you",
+        "excuse me"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "\"Oe, ¿de dónde sacaste esa?\", admitió Diego.",
+        "targetWord": "Oe",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/03f5c00ee57f9bfc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ni michi",
+    "sentence": "\"No cacheé [[ni michi]]\", admitió Diego.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nothing at all",
+      "options": [
+        "nothing at all",
+        "almost everything",
+        "a fair amount",
+        "the whole thing"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "\"No cacheé ni michi\", admitió Diego.",
+        "targetWord": "ni michi",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36a9d24033b9ecea.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "con la misma moneda",
+    "sentence": "Beto respondió [[con la misma moneda]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "paying back in kind",
+      "options": [
+        "paying back in kind",
+        "turning the other cheek",
+        "giving up right away",
+        "changing the subject"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "Beto respondió con la misma moneda.",
+        "targetWord": "con la misma moneda",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d6a0845709a00ff.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enredado",
+    "sentence": "Le devolvió otra frase más [[enredada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tangled and complex",
+      "options": [
+        "tangled and complex",
+        "clear and simple",
+        "short and sweet",
+        "soft and kind"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "Le devolvió otra frase más enredada.",
+        "targetWord": "enredada",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed0b14b69164e09f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "maestro",
+    "sentence": "El [[maestro]] terminó rascándose la cabeza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the master, the expert",
+      "options": [
+        "the master, the expert",
+        "the young rookie",
+        "the total stranger",
+        "the strict referee"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "El maestro terminó rascándose la cabeza.",
+        "targetWord": "maestro",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bae2c822e6444de2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "novato",
+    "sentence": "Quedó como el peor [[novato]] del grupo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the rookie, beginner",
+      "options": [
+        "the rookie, beginner",
+        "the seasoned pro",
+        "the head teacher",
+        "the lucky winner"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "Quedó como el peor novato del grupo.",
+        "targetWord": "novato",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0e3a474a48d63695.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pro",
+    "sentence": "Diego, que se creía el más [[pro]], se rindió.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the most skilled",
+      "options": [
+        "the most skilled",
+        "the least able",
+        "the most tired",
+        "the least sure"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "Diego, que se creía el más pro, se rindió.",
+        "targetWord": "pro",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6512f4df65725c2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bajar la cabeza",
+    "sentence": "Diego tuvo que [[bajar la cabeza]] y rendirse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "admit defeat",
+      "options": [
+        "admit defeat",
+        "raise his voice",
+        "pick a fight",
+        "walk away proud"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "Diego tuvo que bajar la cabeza y rendirse.",
+        "targetWord": "bajar la cabeza",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/24138097cbe5ab1c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "indiscutible",
+    "sentence": "La chibola era ya la reina [[indiscutible]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "undisputed, beyond doubt",
+      "options": [
+        "undisputed, beyond doubt",
+        "doubtful and shaky",
+        "quiet and modest",
+        "new and unknown"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "La chibola era ya la reina indiscutible.",
+        "targetWord": "indiscutible",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ac23f09fb1fde292.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "subírsele a la cabeza",
+    "sentence": "No dejó que se le [[subiera a la cabeza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "let it go to her head",
+      "options": [
+        "let it go to her head",
+        "kept her feet grounded",
+        "shared it with friends",
+        "forgot it right away"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "No dejó que se le subiera a la cabeza.",
+        "targetWord": "subiera a la cabeza",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e8210a1d39e921a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "disparar",
+    "sentence": "Cada uno _____ palabras más raras que el otro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "disparar",
+      "options": [
+        "disparar",
+        "guardaba",
+        "escondía",
+        "tragaba"
+      ],
+      "translation": "Each one _____ stranger words than the other.",
+      "optionTranslations": [
+        "fired off",
+        "kept in",
+        "hid",
+        "swallowed"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "Cada uno disparar palabras más raras que el otro.",
+        "targetWord": "disparar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b02168d50ca227d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "campeona",
+    "sentence": "Beto levantó su mano como a una _____ de box.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "campeona",
+      "options": [
+        "campeona",
+        "perdedora",
+        "novata",
+        "aprendiz"
+      ],
+      "translation": "Beto raised her hand like a boxing _____.",
+      "optionTranslations": [
+        "champion",
+        "loser",
+        "rookie",
+        "apprentice"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "Beto levantó su mano como a una campeona de box.",
+        "targetWord": "campeona",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef499b8803e574c7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "achorarse",
+    "sentence": "Ganó, pero no se _____ ni un poquito.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "achorarse",
+      "options": [
+        "achorarse",
+        "alegró",
+        "cansó",
+        "durmió"
+      ],
+      "translation": "She won, but she did not _____ even a little.",
+      "optionTranslations": [
+        "get cocky",
+        "cheer up",
+        "get tired",
+        "fall asleep"
+      ],
+      "audioClip": {
+        "storySlug": "la-chibola-nos-supero",
+        "storySource": "user",
+        "sentence": "Ganó, pero no se achorarse ni un poquito.",
+        "targetWord": "achorarse",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b72d5e23818019a6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "cancha,duelo,crack,chato",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cancha",
+          "answer": "home turf, where you are in command",
+          "options": [
+            "home turf, where you are in command",
+            "a duel, a showdown",
+            "an ace, top notch person",
+            "shorty, a fond nickname"
+          ]
+        },
+        {
+          "word": "duelo",
+          "answer": "a duel, a showdown",
+          "options": [
+            "home turf, where you are in command",
+            "a duel, a showdown",
+            "an ace, top notch person",
+            "shorty, a fond nickname"
+          ]
+        },
+        {
+          "word": "crack",
+          "answer": "an ace, top notch person",
+          "options": [
+            "home turf, where you are in command",
+            "a duel, a showdown",
+            "an ace, top notch person",
+            "shorty, a fond nickname"
+          ]
+        },
+        {
+          "word": "chato",
+          "answer": "shorty, a fond nickname",
+          "options": [
+            "home turf, where you are in command",
+            "a duel, a showdown",
+            "an ace, top notch person",
+            "shorty, a fond nickname"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

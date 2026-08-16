@@ -1,0 +1,584 @@
+[
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "el delantal,el mesón,la panela,el lulo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "el delantal",
+          "answer": "an apron worn to cook",
+          "options": [
+            "an apron worn to cook",
+            "the long kitchen counter",
+            "a block of unrefined cane sugar",
+            "a sour green Andean fruit"
+          ]
+        },
+        {
+          "word": "el mesón",
+          "answer": "the long kitchen counter",
+          "options": [
+            "an apron worn to cook",
+            "the long kitchen counter",
+            "a block of unrefined cane sugar",
+            "a sour green Andean fruit"
+          ]
+        },
+        {
+          "word": "la panela",
+          "answer": "a block of unrefined cane sugar",
+          "options": [
+            "an apron worn to cook",
+            "the long kitchen counter",
+            "a block of unrefined cane sugar",
+            "a sour green Andean fruit"
+          ]
+        },
+        {
+          "word": "el lulo",
+          "answer": "a sour green Andean fruit",
+          "options": [
+            "an apron worn to cook",
+            "the long kitchen counter",
+            "a block of unrefined cane sugar",
+            "a sour green Andean fruit"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "a punta de",
+    "sentence": "Persiguió el sabor [[a punta de]] pura guaracha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "by relying only on",
+      "options": [
+        "by relying only on",
+        "far away from",
+        "in spite of",
+        "instead of"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Persiguió el sabor a punta de pura guaracha.",
+        "targetWord": "a punta de",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f3b8cae8b13feaf9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "a fuego lento",
+    "sentence": "El sabor caleño se cocina [[a fuego lento]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slowly over a low flame",
+      "options": [
+        "slowly over a low flame",
+        "quickly on high heat",
+        "cold without any fire",
+        "raw and never cooked"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "El sabor caleño se cocina a fuego lento.",
+        "targetWord": "a fuego lento",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9924c89d68a8d3c4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "por dentro",
+    "sentence": "Por fuera sonaba salsa, pero [[por dentro]] cambiaba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on the inside",
+      "options": [
+        "on the inside",
+        "far outside",
+        "up above",
+        "long ago"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Por fuera sonaba salsa, pero por dentro cambiaba.",
+        "targetWord": "por dentro",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30d86ade71ace4b9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "presumir",
+    "sentence": "Grababa postales para [[presumir]] después en Bogotá.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to show off",
+      "options": [
+        "to show off",
+        "to give away",
+        "to slowly forget",
+        "to pay for"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Grababa postales para presumir después en Bogotá.",
+        "targetWord": "presumir",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f179166ff42becd8.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "raspada",
+    "sentence": "Sobre el mesón había panela ____ y hielo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "raspada",
+      "options": [
+        "raspada",
+        "molida",
+        "quemada",
+        "mojada"
+      ],
+      "translation": "On the counter was ____ cane sugar and ice.",
+      "optionTranslations": [
+        "scraped",
+        "ground",
+        "burnt",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Sobre el mesón había panela raspada y hielo.",
+        "targetWord": "raspada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cf07b29255fcd3c3.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "la cáscara",
+    "sentence": "La fiesta era apenas ____ de la ciudad.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la cáscara",
+      "options": [
+        "la cáscara",
+        "la reina",
+        "la puerta",
+        "la sombra"
+      ],
+      "translation": "The party was just the ____ of the city.",
+      "optionTranslations": [
+        "outer shell",
+        "queen",
+        "door",
+        "shadow"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "La fiesta era apenas la cáscara de la ciudad.",
+        "targetWord": "la cáscara",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08423679f39b28f8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "apurar",
+    "sentence": "Manuela quiso [[apurar]] la mezcla del champús.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to rush it along",
+      "options": [
+        "to rush it along",
+        "to taste it slowly",
+        "to throw it out",
+        "to keep it cold"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Manuela quiso apurar la mezcla del champús.",
+        "targetWord": "apurar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d6adaade048fffac.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "heredar",
+    "sentence": "El sabor [[se heredaba]] y se compartía en familia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pass down through the family",
+      "options": [
+        "to pass down through the family",
+        "to sell to strangers",
+        "to hide from everyone",
+        "to buy at the market"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "El sabor se heredaba y se compartía en familia.",
+        "targetWord": "se heredaba",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e4b2bf2138ccf931.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "servirse",
+    "sentence": "Encontró a la rola [[sirviéndose]] un segundo vaso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "helping herself to a drink",
+      "options": [
+        "helping herself to a drink",
+        "washing the dirty dishes",
+        "leaving the warm kitchen",
+        "hiding the last glass"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Encontró a la rola sirviéndose un segundo vaso.",
+        "targetWord": "sirviéndose",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0422eeffb384261d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "revolver",
+    "sentence": "Mientras [[revolvían]] la olla, ella contaba historias.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stir the pot",
+      "options": [
+        "to stir the pot",
+        "to cover the pot",
+        "to break the pot",
+        "to wash the pot"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Mientras revolvían la olla, ella contaba historias.",
+        "targetWord": "revolvían",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6aafe17fd8b32fa6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "halar",
+    "sentence": "Ella la [[haló]] hacia adentro de la cocina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pull her gently",
+      "options": [
+        "to pull her gently",
+        "to push her away",
+        "to scare her off",
+        "to call her over"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Ella la haló hacia adentro de la cocina.",
+        "targetWord": "haló",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/821bf884182a6cf2.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "manotazo",
+    "sentence": "Por apurar la mezcla se ganó un ____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "manotazo",
+      "options": [
+        "manotazo",
+        "abrazo",
+        "premio",
+        "beso"
+      ],
+      "translation": "For rushing the mix she earned a ____.",
+      "optionTranslations": [
+        "little slap",
+        "hug",
+        "prize",
+        "kiss"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Por apurar la mezcla se ganó un manotazo.",
+        "targetWord": "manotazo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c4bf84ee18cff0be.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "veredas",
+    "sentence": "El maíz venía de las ____ del campo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "veredas",
+      "options": [
+        "veredas",
+        "ciudades",
+        "tiendas",
+        "fábricas"
+      ],
+      "translation": "The corn came from the country ____.",
+      "optionTranslations": [
+        "rural hamlets",
+        "cities",
+        "shops",
+        "factories"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "El maíz venía de las veredas del campo.",
+        "targetWord": "veredas",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ca665747b4021916.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "la lulada",
+    "sentence": "Le habló de ____ de las esquinas caleñas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la lulada",
+      "options": [
+        "la lulada",
+        "la arepa",
+        "la cerveza",
+        "la sopa"
+      ],
+      "translation": "She told her about the corner ____ of Cali.",
+      "optionTranslations": [
+        "lulo slush drink",
+        "corn cake",
+        "beer",
+        "soup"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Le habló de la lulada de las esquinas caleñas.",
+        "targetWord": "la lulada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c8b486a2a9a4544d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "sus mayores",
+    "sentence": "Ese aroma lo trajeron ____ desde Buenaventura.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sus mayores",
+      "options": [
+        "sus mayores",
+        "sus vecinos",
+        "sus amigos",
+        "sus jefes"
+      ],
+      "translation": "That aroma was brought by her ____ from Buenaventura.",
+      "optionTranslations": [
+        "elders",
+        "neighbors",
+        "friends",
+        "bosses"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Ese aroma lo trajeron sus mayores desde Buenaventura.",
+        "targetWord": "sus mayores",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9bf3bb4b0a1a9ae5.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "sorbo",
+    "sentence": "Cuando probó el primer ____, entendió todo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sorbo",
+      "options": [
+        "sorbo",
+        "plato",
+        "paso",
+        "grito"
+      ],
+      "translation": "When she tasted the first ____, she understood everything.",
+      "optionTranslations": [
+        "sip",
+        "plate",
+        "step",
+        "shout"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Cuando probó el primer sorbo, entendió todo.",
+        "targetWord": "sorbo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef6c5516af6321c9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "honda",
+    "sentence": "Cali era una ciudad mucho más ____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "honda",
+      "options": [
+        "honda",
+        "alegre",
+        "ruidosa",
+        "cara"
+      ],
+      "translation": "Cali was a much more ____ city.",
+      "optionTranslations": [
+        "deep",
+        "cheerful",
+        "noisy",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Cali era una ciudad mucho más honda.",
+        "targetWord": "honda",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/265f342014662c97.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la caseta",
+    "sentence": "Presumía de las [[casetas]] de salsa de Cali.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "open-air salsa dance hall",
+      "options": [
+        "open-air salsa dance hall",
+        "a small food stall",
+        "a beach cabin",
+        "a record shop"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Presumía de las casetas de salsa de Cali.",
+        "targetWord": "casetas",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7dc62412940f926d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la bulla",
+    "sentence": "Le pidió bajarle a esa [[bulla]] de discoteca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "loud noise, racket",
+      "options": [
+        "loud noise, racket",
+        "a slow sad song",
+        "a bad smell",
+        "an empty street"
+      ],
+      "audioClip": {
+        "storySlug": "champus-en-la-cocina",
+        "storySource": "user",
+        "sentence": "Le pidió bajarle a esa bulla de discoteca.",
+        "targetWord": "bulla",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16f38dbde10c73ea.mp3"
+      }
+    },
+    "featured": false
+  }
+]

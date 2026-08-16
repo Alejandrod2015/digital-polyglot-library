@@ -1,0 +1,597 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "chiesa,biglietti,torre,giardino",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "chiesa",
+     "answer": "church",
+     "options": [
+      "church",
+      "ticket",
+      "tower",
+      "garden"
+     ]
+    },
+    {
+     "word": "biglietti",
+     "answer": "ticket",
+     "options": [
+      "church",
+      "ticket",
+      "tower",
+      "garden"
+     ]
+    },
+    {
+     "word": "torre",
+     "answer": "tower",
+     "options": [
+      "church",
+      "ticket",
+      "tower",
+      "garden"
+     ]
+    },
+    {
+     "word": "giardino",
+     "answer": "garden",
+     "options": [
+      "church",
+      "ticket",
+      "tower",
+      "garden"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "aspetta",
+  "sentence": "Marco [[aspetta]] Elena alla stazione.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "waits for",
+   "options": [
+    "waits for",
+    "greets",
+    "sees",
+    "buys"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Marco aspetta Elena alla stazione.",
+    "targetWord": "aspetta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "insieme",
+  "sentence": "I due amici camminano [[insieme]] verso il Duomo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "together",
+   "options": [
+    "together",
+    "alone",
+    "quickly",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "I due amici camminano insieme verso il Duomo.",
+    "targetWord": "insieme",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "bianca",
+  "sentence": "La chiesa è enorme e [[bianca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "white",
+   "options": [
+    "white",
+    "red",
+    "black",
+    "orange"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "La chiesa è enorme e bianca.",
+    "targetWord": "bianca",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "stanca",
+  "sentence": "Elena è un poco [[stanca]], ma continua.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tired",
+   "options": [
+    "tired",
+    "happy",
+    "hungry",
+    "hidden"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Elena è un poco stanca, ma continua.",
+    "targetWord": "stanca",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "rossi",
+  "sentence": "Elena vede tutti i tetti [[rossi]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "red",
+   "options": [
+    "red",
+    "white",
+    "black",
+    "green"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Elena vede tutti i tetti rossi.",
+    "targetWord": "rossi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "indovinare",
+  "sentence": "Il gioco è [[indovinare]] i nomi dei monumenti.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to guess",
+   "options": [
+    "to guess",
+    "to buy",
+    "to climb",
+    "to greet"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Il gioco è indovinare i nomi dei monumenti.",
+    "targetWord": "indovinare",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "scopre",
+  "sentence": "Elena [[scopre]] un piccolo giardino verde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "discovers",
+   "options": [
+    "discovers",
+    "buys",
+    "waits for",
+    "greets"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Elena scopre un piccolo giardino verde.",
+    "targetWord": "scopre",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "nascosto",
+  "sentence": "Il giardino è [[nascosto]] tra le case.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hidden",
+   "options": [
+    "hidden",
+    "white",
+    "tired",
+    "red"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Il giardino è nascosto tra le case.",
+    "targetWord": "nascosto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "amico",
+  "sentence": "Il suo _____ Marco vive a Firenze.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "amico",
+   "options": [
+    "amico",
+    "gatto",
+    "sole",
+    "treno"
+   ],
+   "translation": "His _____ Marco lives in Florence.",
+   "optionTranslations": [
+    "friend",
+    "cat",
+    "sun",
+    "train"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Il suo amico Marco vive a Firenze.",
+    "targetWord": "amico",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "vive",
+  "sentence": "Marco _____ a Firenze da molti anni.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vive",
+   "options": [
+    "vive",
+    "arriva",
+    "aspetta",
+    "ride"
+   ],
+   "translation": "Marco _____ in Florence for many years.",
+   "optionTranslations": [
+    "lives",
+    "arrives",
+    "waits",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Marco vive a Firenze da molti anni.",
+    "targetWord": "vive",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "saluta",
+  "sentence": "Marco _____ Elena con un sorriso.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "saluta",
+   "options": [
+    "saluta",
+    "aspetta",
+    "compra",
+    "vede"
+   ],
+   "translation": "Marco _____ Elena with a smile.",
+   "optionTranslations": [
+    "greets",
+    "waits for",
+    "buys",
+    "sees"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Marco saluta Elena con un sorriso.",
+    "targetWord": "saluta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "compra",
+  "sentence": "Marco _____ due biglietti.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "compra",
+   "options": [
+    "compra",
+    "vede",
+    "sale",
+    "ride"
+   ],
+   "translation": "Marco _____ two tickets.",
+   "optionTranslations": [
+    "buys",
+    "sees",
+    "goes up",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Marco compra due biglietti.",
+    "targetWord": "compra",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "salgono",
+  "sentence": "I due amici _____ molti gradini.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "salgono",
+   "options": [
+    "salgono",
+    "comprano",
+    "aspettano",
+    "vedono"
+   ],
+   "translation": "The two friends _____ many steps.",
+   "optionTranslations": [
+    "go up",
+    "buy",
+    "wait",
+    "see"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "I due amici salgono molti gradini.",
+    "targetWord": "salgono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "gradini",
+  "sentence": "I due amici salgono molti _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gradini",
+   "options": [
+    "gradini",
+    "biglietti",
+    "tetti",
+    "sorrisi"
+   ],
+   "translation": "The two friends go up many _____.",
+   "optionTranslations": [
+    "steps",
+    "tickets",
+    "roofs",
+    "smiles"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "I due amici salgono molti gradini.",
+    "targetWord": "gradini",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "tetti",
+  "sentence": "Elena vede tutti i _____ rossi.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tetti",
+   "options": [
+    "tetti",
+    "gradini",
+    "giardini",
+    "amici"
+   ],
+   "translation": "Elena sees all the red _____.",
+   "optionTranslations": [
+    "roofs",
+    "steps",
+    "gardens",
+    "friends"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Elena vede tutti i tetti rossi.",
+    "targetWord": "tetti",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "vede",
+  "sentence": "Dalla cima Elena _____ tutta la città.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vede",
+   "options": [
+    "vede",
+    "sale",
+    "compra",
+    "aspetta"
+   ],
+   "translation": "From the top Elena _____ the whole city.",
+   "optionTranslations": [
+    "sees",
+    "goes up",
+    "buys",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Dalla cima Elena vede tutta la città.",
+    "targetWord": "vede",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sorriso",
+  "sentence": "Marco saluta Elena con un _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sorriso",
+   "options": [
+    "sorriso",
+    "biglietto",
+    "gradino",
+    "tetto"
+   ],
+   "translation": "Marco greets Elena with a _____.",
+   "optionTranslations": [
+    "smile",
+    "ticket",
+    "step",
+    "roof"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Marco saluta Elena con un sorriso.",
+    "targetWord": "sorriso",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "testa",
+  "sentence": "Elena alza la _____ e guarda in alto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "testa",
+   "options": [
+    "testa",
+    "torre",
+    "chiesa",
+    "parola"
+   ],
+   "translation": "Elena raises her _____ and looks up.",
+   "optionTranslations": [
+    "head",
+    "tower",
+    "church",
+    "word"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Elena alza la testa e guarda in alto.",
+    "targetWord": "testa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "parole",
+  "sentence": "Elena resta senza _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "parole",
+   "options": [
+    "parole",
+    "biglietti",
+    "gradini",
+    "amici"
+   ],
+   "translation": "Elena is left without _____.",
+   "optionTranslations": [
+    "words",
+    "tickets",
+    "steps",
+    "friends"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Elena resta senza parole.",
+    "targetWord": "parole",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "gioco",
+  "sentence": "Marco propone un _____ divertente.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gioco",
+   "options": [
+    "gioco",
+    "sorriso",
+    "giardino",
+    "tetto"
+   ],
+   "translation": "Marco suggests a fun _____.",
+   "optionTranslations": [
+    "game",
+    "smile",
+    "garden",
+    "roof"
+   ],
+   "audioClip": {
+    "storySlug": "elena-sale-sul-duomo",
+    "storySource": "user",
+    "sentence": "Marco propone un gioco divertente.",
+    "targetWord": "gioco",
+    "language": "italian"
+   }
+  }
+ }
+]

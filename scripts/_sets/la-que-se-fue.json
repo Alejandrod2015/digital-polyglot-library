@@ -1,0 +1,244 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "lluvia,camino,árbol,ciudad",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    { "word": "lluvia", "answer": "rain", "options": ["rain", "a path", "a tree", "a city"] },
+    { "word": "camino", "answer": "a path", "options": ["rain", "a path", "a tree", "a city"] },
+    { "word": "árbol", "answer": "a tree", "options": ["rain", "a path", "a tree", "a city"] },
+    { "word": "ciudad", "answer": "a city", "options": ["rain", "a path", "a tree", "a city"] }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "queimada",
+  "sentence": "Carmiña dice que esta noche hacen la [[queimada]], como cada año.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a Galician fire ritual with spirits",
+   "options": ["a Galician fire ritual with spirits", "a village dance in the square", "a long walk to the church", "a supper of roast chestnuts"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Carmiña dice que esta noche hacen la queimada, como cada año.", "targetWord": "queimada", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aguardiente",
+  "sentence": "Sabela se queda, aunque sea por el [[aguardiente]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a strong clear spirit",
+   "options": ["a strong clear spirit", "a sweet white wine", "a cup of hot milk", "a jug of cold cider"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Sabela se queda, aunque sea por el aguardiente.", "targetWord": "aguardiente", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aldea",
+  "sentence": "La [[aldea]] está perdida entre montes y castaños.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a tiny village",
+   "options": ["a tiny village", "a large port", "a busy suburb", "a market town"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "La aldea está perdida entre montes y castaños.", "targetWord": "aldea", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "brasa",
+  "sentence": "Carmiña remueve las [[brasas]] con un palo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "glowing embers",
+   "options": ["glowing embers", "dry leaves", "cold ashes", "wet logs"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Carmiña remueve las brasas con un palo.", "targetWord": "brasas", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "monte",
+  "sentence": "Carmiña vio luces en el [[monte]] una noche de difuntos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the hills",
+   "options": ["the hills", "the beach", "the harbour", "the plain"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Carmiña vio luces en el monte una noche de difuntos.", "targetWord": "monte", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "niebla",
+  "sentence": "Fuera, la [[niebla]] empieza a tapar los árboles.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fog",
+   "options": ["fog", "snow", "smoke", "dust"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Fuera, la niebla empieza a tapar los árboles.", "targetWord": "niebla", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "historia",
+  "sentence": "Sabela se sabía la [[historia]] entera con doce años.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a story",
+   "options": ["a story", "a song", "a prayer", "a recipe"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Sabela se sabía la historia entera con doce años.", "targetWord": "historia", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "luces",
+  "sentence": "Carmiña vio unas [[luces]] en el monte y no quiso mirar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lights",
+   "options": ["lights", "shadows", "birds", "footprints"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Carmiña vio unas luces en el monte y no quiso mirar.", "targetWord": "luces", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quedarse",
+  "sentence": "Sabela dice que se [[queda]] esta noche en la aldea.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stay",
+   "options": ["to stay", "to leave", "to hide", "to sleep"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Sabela dice que se queda esta noche en la aldea.", "targetWord": "queda", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "amiga",
+  "featured": false,
+  "sentence": "Carmiña fue [[amiga]] de la madre de Sabela.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a friend",
+   "options": ["a friend", "a sister", "a teacher", "a boss"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Carmiña fue amiga de la madre de Sabela.", "targetWord": "amiga", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "contar",
+  "featured": false,
+  "sentence": "La madre de Sabela [[contaba]] esa misma historia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to tell",
+   "options": ["to tell", "to write", "to read", "to sing"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "La madre de Sabela contaba esa misma historia.", "targetWord": "contaba", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entender",
+  "featured": false,
+  "sentence": "Carmiña dice que hay cosas que es mejor no [[entender]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to understand",
+   "options": ["to understand", "to repeat", "to believe", "to explain"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Carmiña dice que hay cosas que es mejor no entender.", "targetWord": "entender", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "preguntar",
+  "featured": false,
+  "sentence": "Sabela dice que nunca se lo [[pregunté]] de pequeña.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ask",
+   "options": ["to ask", "to answer", "to promise", "to doubt"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Sabela dice que nunca se lo pregunté de pequeña.", "targetWord": "pregunté", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mirar",
+  "featured": false,
+  "sentence": "Brais pregunta si Carmiña no fue a [[mirar]] las luces.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to look",
+   "options": ["to look", "to shout", "to run", "to wait"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Brais pregunta si Carmiña no fue a mirar las luces.", "targetWord": "mirar", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tapar",
+  "featured": false,
+  "sentence": "La niebla empieza a [[tapar]] los árboles del monte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to cover up",
+   "options": ["to cover up", "to shake", "to burn", "to cut down"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "La niebla empieza a tapar los árboles del monte.", "targetWord": "tapar", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "fina",
+  "featured": false,
+  "sentence": "Cae una lluvia _____, casi no hace falta paraguas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fina",
+   "options": ["fina", "fuerte", "fría", "corta"],
+   "translation": "A _____ rain is falling, you hardly need an umbrella.",
+   "optionTranslations": ["light", "heavy", "cold", "short"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Cae una lluvia fina, casi no hace falta paraguas.", "targetWord": "fina", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "miedo",
+  "featured": false,
+  "sentence": "Le da _____ bajar solo al sótano de noche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "miedo",
+   "options": ["miedo", "sueño", "hambre", "calor"],
+   "translation": "He is _____ of going down to the cellar alone at night.",
+   "optionTranslations": ["afraid", "sleepy", "hungry", "hot"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Le da miedo bajar solo al sótano de noche.", "targetWord": "miedo", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "quietas",
+  "featured": false,
+  "sentence": "Las vacas están _____, no se mueven del prado.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "quietas",
+   "options": ["quietas", "sueltas", "perdidas", "cansadas"],
+   "translation": "The cows are _____, they do not move from the field.",
+   "optionTranslations": ["still", "loose", "lost", "tired"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Las vacas están quietas, no se mueven del prado.", "targetWord": "quietas", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "corriendo",
+  "featured": false,
+  "sentence": "Salió _____ porque llegaba tarde al trabajo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "corriendo",
+   "options": ["corriendo", "andando", "cantando", "durmiendo"],
+   "translation": "He left _____ because he was late for work.",
+   "optionTranslations": ["running", "walking", "singing", "sleeping"],
+   "audioClip": { "storySlug": "la-que-se-fue", "storySource": "user", "sentence": "Salió corriendo porque llegaba tarde al trabajo.", "targetWord": "corriendo", "language": "spanish" }
+  }
+ }
+]

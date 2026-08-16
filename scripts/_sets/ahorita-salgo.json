@@ -1,0 +1,561 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "ahorita",
+    "sentence": "Cuando decía \"[[ahorita]] salgo\", había que sumarle una hora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in a minute, but never",
+      "options": [
+        "in a minute, but never",
+        "right this second",
+        "tomorrow morning",
+        "late last night"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Cuando decía \"ahorita salgo\", había que sumarle una hora.",
+        "targetWord": "ahorita",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c9c14b56bdc5084.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "echar raíces",
+    "sentence": "Los demás llevaban rato [[echando raíces]] en la esquina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wait around forever",
+      "options": [
+        "to wait around forever",
+        "to plant a garden",
+        "to leave quickly",
+        "to head home"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Los demás llevaban rato echando raíces en la esquina.",
+        "targetWord": "echando raíces",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0505c4ac88cfee6f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "neta",
+    "sentence": "[[Neta]], era la reina de llegar tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "seriously, for real",
+      "options": [
+        "seriously, for real",
+        "maybe, perhaps",
+        "never, not once",
+        "almost, nearly"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Neta, era la reina de llegar tarde.",
+        "targetWord": "Neta",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e83b4605a8648d85.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "qué pedo",
+    "sentence": "¿[[Qué pedo]], ya te acordaste de nosotros?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "what's up",
+      "options": [
+        "what's up",
+        "how much",
+        "where to",
+        "who else"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "¿Qué pedo, ya te acordaste de nosotros?",
+        "targetWord": "Qué pedo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81610a632e1d3411.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gacho",
+    "sentence": "Los demás se sumaron igual de [[gachos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nasty, mean",
+      "options": [
+        "nasty, mean",
+        "kind, warm",
+        "tired, sleepy",
+        "rich, posh"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Los demás se sumaron igual de gachos.",
+        "targetWord": "gachos",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/65fcb5837ab2808d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "culero",
+    "sentence": "Pablo estuvo especialmente [[culero]], contando la vez que los dejó afuera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nasty, a real jerk",
+      "options": [
+        "nasty, a real jerk",
+        "generous, giving",
+        "shy, quiet",
+        "funny, witty"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Pablo estuvo especialmente culero, contando la vez que los dejó afuera.",
+        "targetWord": "culero",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f9a8f549ddbba9b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin despeinarse",
+    "sentence": "Renata, [[sin despeinarse]], sacó su pretexto de siempre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without breaking a sweat",
+      "options": [
+        "without breaking a sweat",
+        "after a long fight",
+        "with real regret",
+        "in a great hurry"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Renata, sin despeinarse, sacó su pretexto de siempre.",
+        "targetWord": "sin despeinarse",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c4b93a59c60e6f2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bronca",
+    "sentence": "Esta vez no se defendió ni armó [[bronca]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fight, a fuss",
+      "options": [
+        "a fight, a fuss",
+        "a good excuse",
+        "a long speech",
+        "a quick exit"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Esta vez no se defendió ni armó bronca.",
+        "targetWord": "bronca",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ab5113a320f0efa.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "movida",
+    "sentence": "Traía una [[movida]] preparada desde el lunes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a clever move",
+      "options": [
+        "a clever move",
+        "a heavy bag",
+        "a bad mood",
+        "a long trip"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Traía una movida preparada desde el lunes.",
+        "targetWord": "movida",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4865572f0b710548.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chingón",
+    "sentence": "Los apantalló con un movimiento bien [[chingón]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "awesome, badass",
+      "options": [
+        "awesome, badass",
+        "clumsy, awkward",
+        "boring, dull",
+        "cheap, tacky"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Los apantalló con un movimiento bien chingón.",
+        "targetWord": "chingón",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/707722f42f7b1e8f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "crudo",
+    "sentence": "El viernes amanecieron [[crudos]], arrepentidos y felices.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hungover",
+      "options": [
+        "hungover",
+        "well rested",
+        "still drunk",
+        "wide awake"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "El viernes amanecieron crudos, arrepentidos y felices.",
+        "targetWord": "crudos",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c32df2892daf9790.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muerto de frío",
+    "sentence": "Esperaban en la esquina, [[muertos de frío]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "freezing cold",
+      "options": [
+        "freezing cold",
+        "soaking wet",
+        "half asleep",
+        "bored stiff"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Esperaban en la esquina, muertos de frío.",
+        "targetWord": "muertos de frío",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d01d969f8fc774d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llevar rato",
+    "sentence": "Los demás [[llevaban rato]] esperando en la banqueta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "had been a while",
+      "options": [
+        "had been a while",
+        "had just arrived",
+        "were about to leave",
+        "had already left"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Los demás llevaban rato esperando en la banqueta.",
+        "targetWord": "llevaban rato",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16c72b9349faaa15.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vacilar",
+    "sentence": "A mi hermano le encanta _____ a sus amigos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vacilar",
+      "options": [
+        "vacilar",
+        "ayudar",
+        "llamar",
+        "esperar"
+      ],
+      "translation": "My brother loves to _____ his friends.",
+      "optionTranslations": [
+        "tease",
+        "help",
+        "call",
+        "wait for"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "A mi hermano le encanta vacilar a sus amigos.",
+        "targetWord": "vacilar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3b398a355817c154.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "chambear",
+    "sentence": "Le toca _____ hasta tarde todos los jueves.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "chambear",
+      "options": [
+        "chambear",
+        "descansar",
+        "cocinar",
+        "estudiar"
+      ],
+      "translation": "She has to _____ late every Thursday.",
+      "optionTranslations": [
+        "work",
+        "rest",
+        "cook",
+        "study"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Le toca chambear hasta tarde todos los jueves.",
+        "targetWord": "chambear",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8707695770f5f2de.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "plantado",
+    "sentence": "Nos había _____ dos veces sin avisar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "plantado",
+      "options": [
+        "plantado",
+        "llamado",
+        "ayudado",
+        "esperado"
+      ],
+      "translation": "She had _____ us twice without warning.",
+      "optionTranslations": [
+        "stood up",
+        "called",
+        "helped",
+        "waited for"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Nos había plantado dos veces sin avisar.",
+        "targetWord": "plantado",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c407347395e41f09.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "agandallando",
+    "sentence": "Los demás la siguieron _____ un rato más.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "agandallando",
+      "options": [
+        "agandallando",
+        "ayudando",
+        "llamando",
+        "esperando"
+      ],
+      "translation": "The others kept _____ her a while longer.",
+      "optionTranslations": [
+        "ganging up on",
+        "helping",
+        "calling",
+        "waiting for"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Los demás la siguieron agandallando un rato más.",
+        "targetWord": "agandallando",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/947e371ce91adf29.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "apantalló",
+    "sentence": "Con ese regalo los _____ a todos de una vez.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "apantalló",
+      "options": [
+        "apantalló",
+        "aburrió",
+        "llamó",
+        "esperó"
+      ],
+      "translation": "With that present he _____ everyone at once.",
+      "optionTranslations": [
+        "dazzled",
+        "bored",
+        "called",
+        "waited for"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Con ese regalo los apantalló a todos de una vez.",
+        "targetWord": "apantalló",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fafb32f7b2c89080.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rifarse",
+    "sentence": "Ese cuate sabe _____ cuando alguien necesita ayuda.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rifarse",
+      "options": [
+        "rifarse",
+        "quejarse",
+        "reírse",
+        "dormirse"
+      ],
+      "translation": "That guy knows how to _____ when someone needs help.",
+      "optionTranslations": [
+        "come through",
+        "complain",
+        "laugh",
+        "fall asleep"
+      ],
+      "audioClip": {
+        "storySlug": "ahorita-salgo",
+        "storySource": "user",
+        "sentence": "Ese cuate sabe rifarse cuando alguien necesita ayuda.",
+        "targetWord": "rifarse",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/70c45e5ae0908276.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "banda,morra,reventón,chido",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "banda",
+          "answer": "your group of friends",
+          "options": [
+            "your group of friends",
+            "a girl, a young woman",
+            "a big late party",
+            "cool, great"
+          ]
+        },
+        {
+          "word": "morra",
+          "answer": "a girl, a young woman",
+          "options": [
+            "your group of friends",
+            "a girl, a young woman",
+            "a big late party",
+            "cool, great"
+          ]
+        },
+        {
+          "word": "reventón",
+          "answer": "a big late party",
+          "options": [
+            "your group of friends",
+            "a girl, a young woman",
+            "a big late party",
+            "cool, great"
+          ]
+        },
+        {
+          "word": "chido",
+          "answer": "cool, great",
+          "options": [
+            "your group of friends",
+            "a girl, a young woman",
+            "a big late party",
+            "cool, great"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

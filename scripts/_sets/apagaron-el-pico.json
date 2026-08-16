@@ -1,0 +1,591 @@
+[
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "guaro",
+    "sentence": "Él reparte [[guaro]] en todo el patio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cheap sugarcane liquor",
+      "options": [
+        "cheap sugarcane liquor",
+        "cold fruit juice",
+        "strong black coffee",
+        "sweet coconut water"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "Él reparte guaro en todo el patio.",
+        "targetWord": "guaro",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3fb76746c88ddc9d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "prendido",
+    "sentence": "Para la medianoche medio barrio está [[prendido]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pleasantly drunk and lively",
+      "options": [
+        "pleasantly drunk and lively",
+        "fast asleep in bed",
+        "completely stone sober",
+        "sick and exhausted"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "Para la medianoche medio barrio está prendido.",
+        "targetWord": "prendido",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36f024073cd9c4ac.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "man",
+    "sentence": "El [[man]] está en su salsa, feliz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the guy, a casual word for a man",
+      "options": [
+        "the guy, a casual word for a man",
+        "an old grandmother",
+        "a police officer",
+        "a small child"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "El man está en su salsa, feliz.",
+        "targetWord": "man",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/edfe1093c028fca8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "mamando gallo",
+    "sentence": "El man anda [[mamando gallo]] con cada invitado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "joking around and teasing people",
+      "options": [
+        "joking around and teasing people",
+        "working hard in silence",
+        "fighting with everyone",
+        "crying in a corner"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "El man anda mamando gallo con cada invitado.",
+        "targetWord": "mamando gallo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85ac588678315b3a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "berraco",
+    "sentence": "Esto está [[berraco]], le grita Manu a Wilfrido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "awesome and impressive",
+      "options": [
+        "awesome and impressive",
+        "boring and dull",
+        "dangerous and scary",
+        "sad and quiet"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "Esto está berraco, le grita Manu a Wilfrido.",
+        "targetWord": "berraco",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c32a5d8de7ac7180.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "rumbea",
+    "sentence": "Manu ____ con Deivis, empapada de sudor.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rumbea",
+      "options": [
+        "rumbea",
+        "descansa",
+        "cocina",
+        "trabaja"
+      ],
+      "translation": "Manu ____ with Deivis, soaked in sweat.",
+      "optionTranslations": [
+        "parties",
+        "rests",
+        "cooks",
+        "works"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "Manu rumbea con Deivis, empapada de sudor.",
+        "targetWord": "rumbea",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3fa30099dbd4efab.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "revienta",
+    "sentence": "La parranda está que ____ sin parar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "revienta",
+      "options": [
+        "revienta",
+        "termina",
+        "calma",
+        "duerme"
+      ],
+      "translation": "The party is ____ nonstop.",
+      "optionTranslations": [
+        "exploding",
+        "ending",
+        "calming",
+        "sleeping"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "La parranda está que revienta sin parar.",
+        "targetWord": "revienta",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e52d343ee53780e4.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "aguacero",
+    "sentence": "Un ____ caliente cae de golpe sobre el patio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aguacero",
+      "options": [
+        "aguacero",
+        "viento",
+        "sol",
+        "frío"
+      ],
+      "translation": "A hot ____ suddenly falls on the patio.",
+      "optionTranslations": [
+        "downpour",
+        "wind",
+        "sun",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "Un aguacero caliente cae de golpe sobre el patio.",
+        "targetWord": "aguacero",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ef95c284ea44d35.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": true,
+    "word": "reclamar",
+    "sentence": "Un vecino nuevo llega a ____ por el ruido.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reclamar",
+      "options": [
+        "reclamar",
+        "bailar",
+        "aplaudir",
+        "dormir"
+      ],
+      "translation": "A new neighbor comes to ____ about the noise.",
+      "optionTranslations": [
+        "complain",
+        "dance",
+        "applaud",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "Un vecino nuevo llega a reclamar por el ruido.",
+        "targetWord": "reclamar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16bd32d40592677c.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "bafle,corneta,corrinche,parranda",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "bafle",
+          "answer": "a large loudspeaker box",
+          "options": [
+            "a large loudspeaker box",
+            "the horn shaped speaker on top",
+            "a big noisy uproar of people",
+            "a long loud party with drinking"
+          ]
+        },
+        {
+          "word": "corneta",
+          "answer": "the horn shaped speaker on top",
+          "options": [
+            "a large loudspeaker box",
+            "the horn shaped speaker on top",
+            "a big noisy uproar of people",
+            "a long loud party with drinking"
+          ]
+        },
+        {
+          "word": "corrinche",
+          "answer": "a big noisy uproar of people",
+          "options": [
+            "a large loudspeaker box",
+            "the horn shaped speaker on top",
+            "a big noisy uproar of people",
+            "a long loud party with drinking"
+          ]
+        },
+        {
+          "word": "parranda",
+          "answer": "a long loud party with drinking",
+          "options": [
+            "a large loudspeaker box",
+            "the horn shaped speaker on top",
+            "a big noisy uproar of people",
+            "a long loud party with drinking"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "operativo",
+    "sentence": "Detrás del vecino llega un [[operativo]] de policía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an organized police action",
+      "options": [
+        "an organized police action",
+        "a friendly street party",
+        "a food delivery service",
+        "a music competition"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "Detrás del vecino llega un operativo de policía.",
+        "targetWord": "operativo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/381c48e2dfb60b8f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "vuelta",
+    "sentence": "Voy a arreglar una [[vuelta]], dice Wilfrido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an errand or shady bit of business",
+      "options": [
+        "an errand or shady bit of business",
+        "a long peaceful nap",
+        "a fancy dinner party",
+        "a written love letter"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "Voy a arreglar una vuelta, dice Wilfrido.",
+        "targetWord": "vuelta",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7355bfb52b8bb240.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "reguero",
+    "sentence": "El patio, regado de vasos, es un [[reguero]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a scattered mess spread everywhere",
+      "options": [
+        "a scattered mess spread everywhere",
+        "a neat and tidy row",
+        "a locked empty room",
+        "a clean shiny floor"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "El patio, regado de vasos, es un reguero.",
+        "targetWord": "reguero",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d0e80897b37e7e6b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "madrugada",
+    "sentence": "La [[madrugada]] avanza sin señales de él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the dark early hours after midnight",
+      "options": [
+        "the dark early hours after midnight",
+        "the bright hours around noon",
+        "the warm end of afternoon",
+        "the first meal of the day"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "La madrugada avanza sin señales de él.",
+        "targetWord": "madrugada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e76c9ee8ec237e9f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "bulla",
+    "sentence": "La [[bulla]] se apaga en seco con la patrulla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "loud noise from a rowdy crowd",
+      "options": [
+        "loud noise from a rowdy crowd",
+        "a deep total silence",
+        "a soft gentle whisper",
+        "a slow sad song"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "La bulla se apaga en seco con la patrulla.",
+        "targetWord": "bulla",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0dc6e476185261da.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "sudor",
+    "sentence": "Manu rumbea empapada de ____ caliente.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sudor",
+      "options": [
+        "sudor",
+        "agua",
+        "lluvia",
+        "aceite"
+      ],
+      "translation": "Manu dances soaked in hot ____.",
+      "optionTranslations": [
+        "sweat",
+        "water",
+        "rain",
+        "oil"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "Manu rumbea empapada de sudor caliente.",
+        "targetWord": "sudor",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d5c7c36cfc854e50.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "multitud",
+    "sentence": "La ____ se corre hacia el portón.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "multitud",
+      "options": [
+        "multitud",
+        "patrulla",
+        "orquesta",
+        "pareja"
+      ],
+      "translation": "The ____ rushes toward the gate.",
+      "optionTranslations": [
+        "crowd",
+        "police car",
+        "orchestra",
+        "couple"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "La multitud se corre hacia el portón.",
+        "targetWord": "multitud",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/68fcd22a58ddcb45.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "portón",
+    "sentence": "Todos empujan el ____ pesado del patio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "portón",
+      "options": [
+        "portón",
+        "techo",
+        "piso",
+        "muro"
+      ],
+      "translation": "Everyone pushes the heavy patio ____.",
+      "optionTranslations": [
+        "gate",
+        "roof",
+        "floor",
+        "wall"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "Todos empujan el portón pesado del patio.",
+        "targetWord": "portón",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2bb01aebb3cc260d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "trasnochar",
+    "sentence": "Los pelaos quieren ____ hasta el amanecer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "trasnochar",
+      "options": [
+        "trasnochar",
+        "madrugar",
+        "descansar",
+        "comer"
+      ],
+      "translation": "The kids want to ____ until dawn.",
+      "optionTranslations": [
+        "stay up all night",
+        "wake early",
+        "rest",
+        "eat"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "Los pelaos quieren trasnochar hasta el amanecer.",
+        "targetWord": "trasnochar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7aa2b6e34e04d63c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "amanecer",
+    "sentence": "Nadie quiere dormir; van a ____ juntos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "amanecer",
+      "options": [
+        "amanecer",
+        "anochecer",
+        "almorzar",
+        "descansar"
+      ],
+      "translation": "Nobody wants to sleep; they will ____ together.",
+      "optionTranslations": [
+        "greet the dawn awake",
+        "fall at nightfall",
+        "have lunch",
+        "rest"
+      ],
+      "audioClip": {
+        "storySlug": "apagaron-el-pico",
+        "storySource": "user",
+        "sentence": "Nadie quiere dormir; van a amanecer juntos.",
+        "targetWord": "amanecer",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2917d971eb1cfe2b.mp3"
+      }
+    }
+  }
+]

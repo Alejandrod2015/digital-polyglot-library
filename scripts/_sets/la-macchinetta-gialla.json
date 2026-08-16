@@ -1,0 +1,576 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "biglietto,binario,tasca,muro",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "biglietto",
+          "answer": "a ticket",
+          "options": [
+            "a ticket",
+            "a platform",
+            "a pocket",
+            "a wall"
+          ]
+        },
+        {
+          "word": "binario",
+          "answer": "a platform",
+          "options": [
+            "a ticket",
+            "a platform",
+            "a pocket",
+            "a wall"
+          ]
+        },
+        {
+          "word": "tasca",
+          "answer": "a pocket",
+          "options": [
+            "a ticket",
+            "a platform",
+            "a pocket",
+            "a wall"
+          ]
+        },
+        {
+          "word": "muro",
+          "answer": "a wall",
+          "options": [
+            "a ticket",
+            "a platform",
+            "a pocket",
+            "a wall"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fermare",
+    "sentence": "Un uomo la [[ferma]] davanti alla porta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stops her",
+      "options": [
+        "stops her",
+        "greets her",
+        "pays her",
+        "follows her"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Un uomo la ferma davanti alla porta.",
+        "targetWord": "ferma",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0fc6b34778e0eedb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "capire",
+    "sentence": "Lei non [[capisce]] che cosa deve fare.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "understands",
+      "options": [
+        "understands",
+        "hears",
+        "writes",
+        "carries"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Lei non capisce che cosa deve fare.",
+        "targetWord": "capisce",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d9cc1ad6be9a091.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mancare",
+    "sentence": "Al biglietto [[manca]] soltanto una cosa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "is missing",
+      "options": [
+        "is missing",
+        "is heavy",
+        "is broken",
+        "is free"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Al biglietto manca soltanto una cosa.",
+        "targetWord": "manca",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae64fd087ae0f9aa.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "macchinetta",
+    "sentence": "La [[macchinetta]] gialla sta vicino alla porta del treno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a small stamping machine",
+      "options": [
+        "a small stamping machine",
+        "a coffee cup",
+        "a wall clock",
+        "a ticket office"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "La macchinetta gialla sta vicino alla porta del treno.",
+        "targetWord": "macchinetta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/be9f69fcee894d06.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rumore",
+    "sentence": "La macchina fa un [[rumore]] corto e si ferma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a noise",
+      "options": [
+        "a noise",
+        "a light",
+        "a smell",
+        "a word"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "La macchina fa un rumore corto e si ferma.",
+        "targetWord": "rumore",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c6c4e5ce53b3b482.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "restituire",
+    "sentence": "L'uomo le [[restituisce]] il biglietto stampato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gives back",
+      "options": [
+        "gives back",
+        "throws away",
+        "buys",
+        "keeps"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "L'uomo le restituisce il biglietto stampato.",
+        "targetWord": "restituisce",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3441e9a714ed8089.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "valido",
+    "sentence": "Adesso il biglietto è [[valido]] per questo treno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "valid",
+      "options": [
+        "valid",
+        "broken",
+        "free",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Adesso il biglietto è valido per questo treno.",
+        "targetWord": "valido",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5713a8f01c94ce5f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "controllore",
+    "sentence": "Il [[controllore]] guarda l'ora sul biglietto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the ticket inspector",
+      "options": [
+        "the ticket inspector",
+        "the driver",
+        "the cook",
+        "the seller"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Il controllore guarda l'ora sul biglietto.",
+        "targetWord": "controllore",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa05239f9058e520.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "stampa",
+    "sentence": "La macchinetta _____ l'ora sopra il numero.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "stampa",
+      "options": [
+        "stampa",
+        "rompe",
+        "lava",
+        "perde"
+      ],
+      "translation": "The machine _____ the time above the number.",
+      "optionTranslations": [
+        "prints",
+        "breaks",
+        "washes",
+        "loses"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "La macchinetta stampa l'ora sopra il numero.",
+        "targetWord": "stampa",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64a43ad0dc28cb5b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "foglio",
+    "sentence": "Lei mette il [[foglio]] stampato nella borsa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sheet of paper",
+      "options": [
+        "a sheet of paper",
+        "a coin",
+        "a bag",
+        "a key"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Lei mette il foglio stampato nella borsa.",
+        "targetWord": "foglio",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae9705eeb43006c1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "stazione",
+    "sentence": "Il treno per Firenze parte da questa [[stazione]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a station",
+      "options": [
+        "a station",
+        "a shop",
+        "a school",
+        "a beach"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Il treno per Firenze parte da questa stazione.",
+        "targetWord": "stazione",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d18619597641756.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "partire",
+    "sentence": "Il treno [[parte]] fra dieci minuti.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "leaves",
+      "options": [
+        "leaves",
+        "arrives",
+        "stops",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Il treno parte fra dieci minuti.",
+        "targetWord": "parte",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/904b819713dbf528.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "valigia",
+    "sentence": "Lei porta una [[valigia]] grande e nera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a suitcase",
+      "options": [
+        "a suitcase",
+        "a coat",
+        "a chair",
+        "a book"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Lei porta una valigia grande e nera.",
+        "targetWord": "valigia",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d78230c0fa520a0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pesante",
+    "sentence": "La valigia è troppo [[pesante]] per una mano sola.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "heavy",
+      "options": [
+        "heavy",
+        "light",
+        "empty",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "La valigia è troppo pesante per una mano sola.",
+        "targetWord": "pesante",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/443ca7222572fcd1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cercare",
+    "sentence": "Lei [[cerca]] la sua carrozza lungo il treno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "looks for",
+      "options": [
+        "looks for",
+        "pays for",
+        "cleans",
+        "opens"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Lei cerca la sua carrozza lungo il treno.",
+        "targetWord": "cerca",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a3a6c16831af71fd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "carrozza",
+    "sentence": "Il suo posto sta nella [[carrozza]] numero sei.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a train carriage",
+      "options": [
+        "a train carriage",
+        "a kitchen",
+        "a garden",
+        "an office"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Il suo posto sta nella carrozza numero sei.",
+        "targetWord": "carrozza",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1dccf72b36341993.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "giubbotto",
+    "sentence": "L'uomo del treno porta un [[giubbotto]] arancione.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a jacket",
+      "options": [
+        "a jacket",
+        "a hat",
+        "a shoe",
+        "a bag"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "L'uomo del treno porta un giubbotto arancione.",
+        "targetWord": "giubbotto",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7c0ec2a8f44f6a8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "indicare",
+    "sentence": "Lui [[indica]] la macchina vicino al muro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "points at",
+      "options": [
+        "points at",
+        "cleans",
+        "buys",
+        "closes"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Lui indica la macchina vicino al muro.",
+        "targetWord": "indica",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a35f23ac62812d7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mette",
+    "sentence": "Lui _____ il biglietto dentro la macchinetta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mette",
+      "options": [
+        "mette",
+        "beve",
+        "legge",
+        "vende"
+      ],
+      "translation": "He _____ the ticket inside the machine.",
+      "optionTranslations": [
+        "puts",
+        "drinks",
+        "reads",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Lui mette il biglietto dentro la macchinetta.",
+        "targetWord": "mette",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f30a4d0362419b6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aspetta",
+    "sentence": "Lei _____ due minuti davanti alla porta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aspetta",
+      "options": [
+        "aspetta",
+        "paga",
+        "dorme",
+        "corre"
+      ],
+      "translation": "She _____ two minutes in front of the door.",
+      "optionTranslations": [
+        "waits",
+        "pays",
+        "sleeps",
+        "runs"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Lei aspetta due minuti davanti alla porta.",
+        "targetWord": "aspetta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8488ed59505d8ef.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sale",
+    "sentence": "Lei _____ sul treno con il biglietto in mano.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sale",
+      "options": [
+        "sale",
+        "scende",
+        "paga",
+        "dorme"
+      ],
+      "translation": "She _____ the train with the ticket in her hand.",
+      "optionTranslations": [
+        "gets on",
+        "gets off",
+        "pays",
+        "sleeps"
+      ],
+      "audioClip": {
+        "storySlug": "la-macchinetta-gialla",
+        "storySource": "user",
+        "sentence": "Lei sale sul treno con il biglietto in mano.",
+        "targetWord": "sale",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb49b247db7a5833.mp3"
+      }
+    },
+    "featured": false
+  }
+]

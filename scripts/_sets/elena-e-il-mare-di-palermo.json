@@ -1,0 +1,632 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "mare,cielo,sabbia,bibita",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "mare",
+     "answer": "sea",
+     "options": [
+      "sea",
+      "sky",
+      "sand",
+      "a cold drink"
+     ]
+    },
+    {
+     "word": "cielo",
+     "answer": "sky",
+     "options": [
+      "sea",
+      "sky",
+      "sand",
+      "a cold drink"
+     ]
+    },
+    {
+     "word": "sabbia",
+     "answer": "sand",
+     "options": [
+      "sea",
+      "sky",
+      "sand",
+      "a cold drink"
+     ]
+    },
+    {
+     "word": "bibita",
+     "answer": "a cold drink",
+     "options": [
+      "sea",
+      "sky",
+      "sand",
+      "a cold drink"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "calda",
+  "sentence": "Il cielo è azzurro e l'aria è [[calda]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm",
+   "options": [
+    "warm",
+    "empty",
+    "narrow",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Il cielo è azzurro e l'aria è calda.",
+    "targetWord": "calda",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "morbida",
+  "sentence": "Le amiche camminano sulla sabbia [[morbida]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "soft",
+   "options": [
+    "soft",
+    "hard",
+    "wet",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Le amiche camminano sulla sabbia morbida.",
+    "targetWord": "morbida",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "forte",
+  "sentence": "Elena ride [[forte]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "loudly",
+   "options": [
+    "loudly",
+    "slowly",
+    "quietly",
+    "sadly"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Elena ride forte.",
+    "targetWord": "forte",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "aspetta",
+  "sentence": "Chiara _____ la sua amica Elena.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aspetta",
+   "options": [
+    "aspetta",
+    "cammina",
+    "ride",
+    "corre"
+   ],
+   "translation": "Chiara _____ for her friend Elena.",
+   "optionTranslations": [
+    "waits",
+    "walks",
+    "laughs",
+    "runs"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Chiara aspetta la sua amica Elena.",
+    "targetWord": "aspetta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "sorriso",
+  "sentence": "Le amiche si abbracciano con un grande _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sorriso",
+   "options": [
+    "sorriso",
+    "mare",
+    "piede",
+    "cielo"
+   ],
+   "translation": "The friends hug with a big _____.",
+   "optionTranslations": [
+    "smile",
+    "sea",
+    "foot",
+    "sky"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Le amiche si abbracciano con un grande sorriso.",
+    "targetWord": "sorriso",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "camminano",
+  "sentence": "Le amiche _____ sulla sabbia morbida.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "camminano",
+   "options": [
+    "camminano",
+    "bevono",
+    "siedono",
+    "guardano"
+   ],
+   "translation": "The friends _____ on the soft sand.",
+   "optionTranslations": [
+    "walk",
+    "drink",
+    "sit down",
+    "watch"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Le amiche camminano sulla sabbia morbida.",
+    "targetWord": "camminano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "onde",
+  "sentence": "Elena guarda le _____ e respira piano.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "onde",
+   "options": [
+    "onde",
+    "scarpe",
+    "piedi",
+    "luci"
+   ],
+   "translation": "Elena watches the _____ and breathes softly.",
+   "optionTranslations": [
+    "waves",
+    "shoes",
+    "feet",
+    "lights"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Elena guarda le onde e respira piano.",
+    "targetWord": "onde",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "toglie",
+  "sentence": "Chiara _____ le scarpe e corre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "toglie",
+   "options": [
+    "toglie",
+    "mette",
+    "apre",
+    "alza"
+   ],
+   "translation": "Chiara _____ her shoes and runs.",
+   "optionTranslations": [
+    "takes off",
+    "puts on",
+    "opens",
+    "raises"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Chiara toglie le scarpe e corre.",
+    "targetWord": "toglie",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "bevono",
+  "sentence": "Mangiano un panino e _____ una bibita.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bevono",
+   "options": [
+    "bevono",
+    "mangiano",
+    "comprano",
+    "pagano"
+   ],
+   "translation": "They eat a sandwich and _____ a drink.",
+   "optionTranslations": [
+    "drink",
+    "eat",
+    "buy",
+    "pay"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Mangiano un panino e bevono una bibita.",
+    "targetWord": "bevono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "respira",
+  "sentence": "Elena guarda le onde e _____ piano.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "respira",
+   "options": [
+    "respira",
+    "cammina",
+    "corre",
+    "ride"
+   ],
+   "translation": "Elena watches the waves and _____ softly.",
+   "optionTranslations": [
+    "breathes",
+    "walks",
+    "runs",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Elena guarda le onde e respira piano.",
+    "targetWord": "respira",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "scarpe",
+  "sentence": "Chiara toglie le _____ e corre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "scarpe",
+   "options": [
+    "scarpe",
+    "onde",
+    "stelle",
+    "luci"
+   ],
+   "translation": "Chiara takes off her _____ and runs.",
+   "optionTranslations": [
+    "shoes",
+    "waves",
+    "stars",
+    "lights"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Chiara toglie le scarpe e corre.",
+    "targetWord": "scarpe",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "corre",
+  "sentence": "Chiara toglie le scarpe e _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "corre",
+   "options": [
+    "corre",
+    "cammina",
+    "balla",
+    "siede"
+   ],
+   "translation": "Chiara takes off her shoes and _____.",
+   "optionTranslations": [
+    "runs",
+    "walks",
+    "dances",
+    "sits"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Chiara toglie le scarpe e corre.",
+    "targetWord": "corre",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "acqua",
+  "sentence": "Elena mette i piedi nell'_____ fredda.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "acqua",
+   "options": [
+    "acqua",
+    "sabbia",
+    "bibita",
+    "luce"
+   ],
+   "translation": "Elena puts her feet in the cold _____.",
+   "optionTranslations": [
+    "water",
+    "sand",
+    "drink",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Elena mette i piedi nell'acqua fredda.",
+    "targetWord": "acqua",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "piedi",
+  "sentence": "Elena mette i _____ nell'acqua fredda.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "piedi",
+   "options": [
+    "piedi",
+    "occhi",
+    "scarpe",
+    "onde"
+   ],
+   "translation": "Elena puts her _____ in the cold water.",
+   "optionTranslations": [
+    "feet",
+    "eyes",
+    "shoes",
+    "waves"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Elena mette i piedi nell'acqua fredda.",
+    "targetWord": "piedi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "fredda",
+  "sentence": "Elena mette i piedi nell'acqua _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fredda",
+   "options": [
+    "fredda",
+    "calda",
+    "morbida",
+    "bianca"
+   ],
+   "translation": "Elena puts her feet in the _____ water.",
+   "optionTranslations": [
+    "cold",
+    "warm",
+    "soft",
+    "white"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Elena mette i piedi nell'acqua fredda.",
+    "targetWord": "fredda",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "ride",
+  "sentence": "Elena _____ forte vicino all'acqua.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ride",
+   "options": [
+    "ride",
+    "canta",
+    "balla",
+    "grida"
+   ],
+   "translation": "Elena _____ loudly near the water.",
+   "optionTranslations": [
+    "laughs",
+    "sings",
+    "dances",
+    "shouts"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Elena ride forte vicino all'acqua.",
+    "targetWord": "ride",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "siedono",
+  "sentence": "Poi le amiche si _____ sotto l'ombrellone.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "siedono",
+   "options": [
+    "siedono",
+    "abbracciano",
+    "guardano",
+    "camminano"
+   ],
+   "translation": "Then the friends _____ under the umbrella.",
+   "optionTranslations": [
+    "sit down",
+    "hug",
+    "watch",
+    "walk"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Poi le amiche si siedono sotto l'ombrellone.",
+    "targetWord": "siedono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "sotto",
+  "sentence": "Le amiche si siedono _____ un ombrellone.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sotto",
+   "options": [
+    "sotto",
+    "sopra",
+    "vicino",
+    "dentro"
+   ],
+   "translation": "The friends sit down _____ an umbrella.",
+   "optionTranslations": [
+    "under",
+    "over",
+    "near",
+    "inside"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Le amiche si siedono sotto un ombrellone.",
+    "targetWord": "sotto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "bianco",
+  "sentence": "Le amiche si siedono sotto un ombrellone _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bianco",
+   "options": [
+    "bianco",
+    "rosa",
+    "azzurro",
+    "giallo"
+   ],
+   "translation": "The friends sit down under a _____ umbrella.",
+   "optionTranslations": [
+    "white",
+    "pink",
+    "blue",
+    "yellow"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Le amiche si siedono sotto un ombrellone bianco.",
+    "targetWord": "bianco",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "scende",
+  "sentence": "Il sole _____ lentamente verso il mare.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "scende",
+   "options": [
+    "scende",
+    "diventa",
+    "guarda",
+    "aspetta"
+   ],
+   "translation": "The sun _____ slowly toward the sea.",
+   "optionTranslations": [
+    "goes down",
+    "becomes",
+    "watches",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-il-mare-di-palermo",
+    "storySource": "user",
+    "sentence": "Il sole scende lentamente verso il mare.",
+    "targetWord": "scende",
+    "language": "italian"
+   }
+  }
+ }
+]

@@ -1,0 +1,555 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "mercato,formaggio,carta,arancia",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "mercato",
+          "answer": "a market",
+          "options": [
+            "a market",
+            "cheese",
+            "paper",
+            "an orange"
+          ]
+        },
+        {
+          "word": "formaggio",
+          "answer": "cheese",
+          "options": [
+            "a market",
+            "cheese",
+            "paper",
+            "an orange"
+          ]
+        },
+        {
+          "word": "carta",
+          "answer": "paper",
+          "options": [
+            "a market",
+            "cheese",
+            "paper",
+            "an orange"
+          ]
+        },
+        {
+          "word": "arancia",
+          "answer": "an orange",
+          "options": [
+            "a market",
+            "cheese",
+            "paper",
+            "an orange"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "friggitoria",
+    "sentence": "La [[friggitoria]] sta all'angolo del mercato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fried-food shop",
+      "options": [
+        "a fried-food shop",
+        "a book shop",
+        "a train station",
+        "a flower stall"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "La friggitoria sta all'angolo del mercato.",
+        "targetWord": "friggitoria",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2283e16dcac34702.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dorato",
+    "sentence": "La palla fritta è [[dorata]] fuori.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "golden",
+      "options": [
+        "golden",
+        "white",
+        "green",
+        "grey"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "La palla fritta è dorata fuori.",
+        "targetWord": "dorata",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cb3ca956348bd9f2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "correggere",
+    "sentence": "La signora lo [[corregge]] subito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "corrects him",
+      "options": [
+        "corrects him",
+        "pays him",
+        "follows him",
+        "thanks him"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "La signora lo corregge subito.",
+        "targetWord": "corregge",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/412c8518925262a3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cattiveria",
+    "sentence": "Lei parla senza [[cattiveria]] e sorride.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "unkindness",
+      "options": [
+        "unkindness",
+        "hunger",
+        "hurry",
+        "fear"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Lei parla senza cattiveria e sorride.",
+        "targetWord": "cattiveria",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3f6d84daa880acef.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "femminile",
+    "sentence": "A Palermo la parola è [[femminile]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "feminine",
+      "options": [
+        "feminine",
+        "masculine",
+        "plural",
+        "foreign"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "A Palermo la parola è femminile.",
+        "targetWord": "femminile",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e4f028036dc09c82.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "litigare",
+    "sentence": "Loro sono capaci di [[litigare]] per una lettera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to argue",
+      "options": [
+        "to argue",
+        "to pay",
+        "to sing",
+        "to sleep"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Loro sono capaci di litigare per una lettera.",
+        "targetWord": "litigare",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c71d834f5949a504.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vocale",
+    "sentence": "La differenza è soltanto una [[vocale]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a vowel",
+      "options": [
+        "a vowel",
+        "a price",
+        "a shop",
+        "a plate"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "La differenza è soltanto una vocale.",
+        "targetWord": "vocale",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/18b88ae72a39bbbd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuore",
+    "sentence": "Nel mezzo c'è un [[cuore]] di formaggio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a heart, the soft middle",
+      "options": [
+        "a heart, the soft middle",
+        "a small bone",
+        "a paper wrap",
+        "a metal stick"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Nel mezzo c'è un cuore di formaggio.",
+        "targetWord": "cuore",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f70a6d0fcbf9e45a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mordere",
+    "sentence": "Lui [[morde]] piano la palla calda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bites",
+      "options": [
+        "bites",
+        "throws",
+        "washes",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Lui morde piano la palla calda.",
+        "targetWord": "morde",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d99edd33f40cf269.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "angolo",
+    "sentence": "Il banco sta all'[[angolo]] fra due strade.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the corner",
+      "options": [
+        "the corner",
+        "the roof",
+        "the middle",
+        "the door"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Il banco sta all'angolo fra due strade.",
+        "targetWord": "angolo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec1b02af091e22a9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tendone",
+    "sentence": "Sopra il banco c'è un [[tendone]] verde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a big awning",
+      "options": [
+        "a big awning",
+        "a glass door",
+        "a stone wall",
+        "a metal box"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Sopra il banco c'è un tendone verde.",
+        "targetWord": "tendone",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4af587ecfcd274d4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verde",
+    "sentence": "Il tendone del banco è [[verde]] e vecchio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "green",
+      "options": [
+        "green",
+        "blue",
+        "white",
+        "black"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Il tendone del banco è verde e vecchio.",
+        "targetWord": "verde",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d282ccdf4c6b0db5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "palla",
+    "sentence": "Lui indica una [[palla]] di riso dorata.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a ball",
+      "options": [
+        "a ball",
+        "a bottle",
+        "a plate",
+        "a bag"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Lui indica una palla di riso dorata.",
+        "targetWord": "palla",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7de6d6691c3b2633.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "riso",
+    "sentence": "Dentro c'è [[riso]] giallo e caldo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rice",
+      "options": [
+        "rice",
+        "bread",
+        "fish",
+        "cheese"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Dentro c'è riso giallo e caldo.",
+        "targetWord": "riso",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/442ced2d3af5b21e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chiamare",
+    "sentence": "Lui la [[chiama]] arancino, come a Catania.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calls it",
+      "options": [
+        "calls it",
+        "buys it",
+        "eats it",
+        "hides it"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Lui la chiama arancino, come a Catania.",
+        "targetWord": "chiama",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96f4ced70c5d6915.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "difendere",
+    "sentence": "Un uomo in fila [[difende]] l'altra parola.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "defends",
+      "options": [
+        "defends",
+        "sells",
+        "writes",
+        "forgets"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Un uomo in fila difende l'altra parola.",
+        "targetWord": "difende",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5ee5a8abf1fdcd0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "intero",
+    "sentence": "Il mercato [[intero]] sembra pronto a litigare.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "whole",
+      "options": [
+        "whole",
+        "empty",
+        "closed",
+        "quiet"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Il mercato intero sembra pronto a litigare.",
+        "targetWord": "intero",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4fa2bb19e8653a43.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pronto",
+    "sentence": "Tutti sono [[pronti]] a discutere di una vocale.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ready",
+      "options": [
+        "ready",
+        "tired",
+        "late",
+        "afraid"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Tutti sono pronti a discutere di una vocale.",
+        "targetWord": "pronto",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/741f139c0b4019bf.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pisello",
+    "sentence": "Dentro ci sono ragù e [[piselli]] verdi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "peas",
+      "options": [
+        "peas",
+        "lemons",
+        "olives",
+        "nuts"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Dentro ci sono ragù e piselli verdi.",
+        "targetWord": "piselli",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/03548cd02ffae23e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "domani",
+    "sentence": "La signora gli dice di tornare [[domani]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tomorrow",
+      "options": [
+        "tomorrow",
+        "yesterday",
+        "tonight",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "La signora gli dice di tornare domani.",
+        "targetWord": "domani",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ae80f68cf0435f2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "ordine",
+    "sentence": "Lei lo dice quasi come un _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ordine",
+      "options": [
+        "ordine",
+        "regalo",
+        "errore",
+        "gioco"
+      ],
+      "translation": "She says it almost like an _____.",
+      "optionTranslations": [
+        "order",
+        "gift",
+        "mistake",
+        "game"
+      ],
+      "audioClip": {
+        "storySlug": "a-palermo-si-dice-arancina",
+        "storySource": "user",
+        "sentence": "Lei lo dice quasi come un ordine.",
+        "targetWord": "ordine",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3cff3681a8936f8e.mp3"
+      }
+    },
+    "featured": false
+  }
+]

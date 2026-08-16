@@ -1,0 +1,507 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "fatia,balança,guardanapo,jaca",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "fatia",
+          "answer": "a slice",
+          "options": [
+            "a slice",
+            "scales",
+            "a napkin",
+            "jackfruit"
+          ]
+        },
+        {
+          "word": "balança",
+          "answer": "scales",
+          "options": [
+            "a slice",
+            "scales",
+            "a napkin",
+            "jackfruit"
+          ]
+        },
+        {
+          "word": "guardanapo",
+          "answer": "a napkin",
+          "options": [
+            "a slice",
+            "scales",
+            "a napkin",
+            "jackfruit"
+          ]
+        },
+        {
+          "word": "jaca",
+          "answer": "jackfruit",
+          "options": [
+            "a slice",
+            "scales",
+            "a napkin",
+            "jackfruit"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vendedor",
+    "sentence": "Um [[vendedor]] estende uma fatia de jaca para cada pessoa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a seller",
+      "options": [
+        "a seller",
+        "a client",
+        "a cook",
+        "a driver"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "Um vendedor estende uma fatia de jaca para cada pessoa.",
+        "targetWord": "vendedor",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0bb8e542b44c721.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estender",
+    "sentence": "Um vendedor [[estende]] uma fatia de jaca amarela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hold out",
+      "options": [
+        "to hold out",
+        "to take back",
+        "to throw",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "Um vendedor estende uma fatia de jaca amarela.",
+        "targetWord": "estende",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4d020d1e603be449.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marcar",
+    "sentence": "A balança [[marca]] um quilo e meio de jaca cara.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to show a number",
+      "options": [
+        "to show a number",
+        "to weigh nothing",
+        "to break down",
+        "to make noise"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "A balança marca um quilo e meio de jaca cara.",
+        "targetWord": "marca",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/13183187280ade11.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quilo",
+    "sentence": "A balança marca um [[quilo]] e meio de fruta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a kilo",
+      "options": [
+        "a kilo",
+        "a litre",
+        "a metre",
+        "an hour"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "A balança marca um quilo e meio de fruta.",
+        "targetWord": "quilo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cc92772105df894c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cara",
+    "sentence": "A fruta importada é muito _____ neste mercado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cara",
+      "options": [
+        "cara",
+        "barata",
+        "doce",
+        "verde"
+      ],
+      "translation": "Imported fruit is very _____ in this market.",
+      "optionTranslations": [
+        "expensive",
+        "cheap",
+        "sweet",
+        "green"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "A fruta importada é muito cara neste mercado.",
+        "targetWord": "cara",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fcb5bc699d573e97.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "querer",
+    "sentence": "Ela devolve as frutas e diz que não [[quer]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to want",
+      "options": [
+        "to want",
+        "to know",
+        "to pay",
+        "to leave"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "Ela devolve as frutas e diz que não quer.",
+        "targetWord": "quer",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3108d2e9612dd622.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cheirar",
+    "sentence": "O corredor inteiro [[cheira]] a fruta cortada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to smell",
+      "options": [
+        "to smell",
+        "to sound",
+        "to shine",
+        "to burn"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "O corredor inteiro cheira a fruta cortada.",
+        "targetWord": "cheira",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/745670d62812d6b9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mel",
+    "sentence": "A fruta é doce e tem gosto de [[mel]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "honey",
+      "options": [
+        "honey",
+        "salt",
+        "milk",
+        "oil"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "A fruta é doce e tem gosto de mel.",
+        "targetWord": "mel",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1fa7a6a615a26ce9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "corredor",
+    "sentence": "Ela sai do [[corredor]] com as mãos cheirando a fruta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an aisle",
+      "options": [
+        "an aisle",
+        "a garden",
+        "a kitchen",
+        "a street"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "Ela sai do corredor com as mãos cheirando a fruta.",
+        "targetWord": "corredor",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/111db1086e73b9db.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amarelo",
+    "sentence": "Ele estende uma fatia de jaca [[amarela]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "yellow",
+      "options": [
+        "yellow",
+        "green",
+        "red",
+        "brown"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "Ele estende uma fatia de jaca amarela.",
+        "targetWord": "amarela",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b395e0ceb5df2066.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colocar",
+    "sentence": "O vendedor [[coloca]] quatro fatias iguais numa balança.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to put",
+      "options": [
+        "to put",
+        "to remove",
+        "to break",
+        "to wash"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "O vendedor coloca quatro fatias iguais numa balança.",
+        "targetWord": "coloca",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d2e02d093a4ba604.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "igual",
+    "sentence": "O vendedor coloca quatro fatias [[iguais]] numa balança.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the same",
+      "options": [
+        "the same",
+        "different",
+        "broken",
+        "small"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "O vendedor coloca quatro fatias iguais numa balança.",
+        "targetWord": "iguais",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d2e02d093a4ba604.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rápido",
+    "sentence": "Ele diz o preço [[rápido]], alto, sem parar de sorrir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fast",
+      "options": [
+        "fast",
+        "slowly",
+        "softly",
+        "later"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "Ele diz o preço rápido, alto, sem parar de sorrir.",
+        "targetWord": "rápido",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eeb3f4155df90c21.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grande",
+    "sentence": "Ela entende só o primeiro número, e ele é [[grande]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "big",
+      "options": [
+        "big",
+        "small",
+        "round",
+        "short"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "Ela entende só o primeiro número, e ele é grande.",
+        "targetWord": "grande",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34ddba21b6430a1f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "próximo",
+    "sentence": "Ela anda até a [[próxima]] banca do corredor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next",
+      "options": [
+        "next",
+        "last",
+        "same",
+        "far"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "Ela anda até a próxima banca do corredor.",
+        "targetWord": "próxima",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64141903e1bb485f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cortado",
+    "sentence": "O corredor cheira a fruta [[cortada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cut open",
+      "options": [
+        "cut open",
+        "whole",
+        "frozen",
+        "cooked"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "O corredor cheira a fruta cortada.",
+        "targetWord": "cortada",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4e7dacf3918e4797.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "boca",
+    "sentence": "A fruta continua doce na [[boca]] dela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the mouth",
+      "options": [
+        "the mouth",
+        "the hand",
+        "the eye",
+        "the arm"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "A fruta continua doce na boca dela.",
+        "targetWord": "boca",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef15f1ec4df94851.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aceitar",
+    "sentence": "Ela [[aceita]] a fatia e agradece antes de morder.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take",
+      "options": [
+        "to take",
+        "to refuse",
+        "to buy",
+        "to drop"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "Ela aceita a fatia e agradece antes de morder.",
+        "targetWord": "aceita",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5598304b50dd5bdf.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pessoa",
+    "sentence": "O vendedor estende uma fatia para cada [[pessoa]] que passa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a person",
+      "options": [
+        "a person",
+        "an animal",
+        "a car",
+        "a shop"
+      ],
+      "audioClip": {
+        "storySlug": "uma-fatia-gratis",
+        "storySource": "user",
+        "sentence": "O vendedor estende uma fatia para cada pessoa que passa.",
+        "targetWord": "pessoa",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/00c633b304e1abf9.mp3"
+      }
+    },
+    "featured": false
+  }
+]

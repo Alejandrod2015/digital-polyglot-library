@@ -1,0 +1,472 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "guachimán",
+    "sentence": "Apareció el [[guachimán]] del edificio de repente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a security guard",
+      "options": [
+        "a security guard",
+        "a party host",
+        "a dance partner",
+        "a next door neighbor"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "Apareció el guachimán del edificio de repente.",
+        "targetWord": "guachimán",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7cb05a2442b3a8d2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seguir el juego",
+    "sentence": "La china le [[seguía el juego]] con gusto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "played along with him",
+      "options": [
+        "played along with him",
+        "argued back at him",
+        "walked away from him",
+        "laughed only at him"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "La china le seguía el juego con gusto.",
+        "targetWord": "seguía el juego",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d6ef61b39eee42ab.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bobo",
+    "sentence": "Míralo, el [[bobo]] por fin la está haciendo bien.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the fool, said fondly",
+      "options": [
+        "the fool, said fondly",
+        "the boss, in charge",
+        "the stranger, unknown",
+        "the expert, skilled"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "Míralo, el bobo por fin la está haciendo bien.",
+        "targetWord": "bobo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fe201cfba7d550e6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cruzar los dedos",
+    "sentence": "Yuly [[cruzó los dedos]], rogando que no fallara.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hoped hard for luck",
+      "options": [
+        "hoped hard for luck",
+        "gave up all hope",
+        "paid a big debt",
+        "told a white lie"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "Yuly cruzó los dedos, rogando que no fallara.",
+        "targetWord": "cruzó los dedos",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/42072bda1913cab5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "armarse de valor",
+    "sentence": "Andrés [[se armó de valor]] para la pregunta clave.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "worked up the courage",
+      "options": [
+        "worked up the courage",
+        "lost all his nerve",
+        "made a bad joke",
+        "paid the whole tab"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "Andrés se armó de valor para la pregunta clave.",
+        "targetWord": "se armó de valor",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f3e6e7930fa8d828.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a mil",
+    "sentence": "Estaba a nada de lograrlo, con el corazón [[a mil]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "racing fast",
+      "options": [
+        "racing fast",
+        "totally calm",
+        "dead slow",
+        "half asleep"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "Estaba a nada de lograrlo, con el corazón a mil.",
+        "targetWord": "a mil",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d37fd0b899c5e0b2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cara de pocos amigos",
+    "sentence": "El guachimán llegó con [[cara de pocos amigos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sour unfriendly face",
+      "options": [
+        "a sour unfriendly face",
+        "a warm kind smile",
+        "a blank tired look",
+        "a proud smug grin"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "El guachimán llegó con cara de pocos amigos.",
+        "targetWord": "cara de pocos amigos",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e237fd6404fac225.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mal genio",
+    "sentence": "\"A bajarle al ruido\", ladró de [[mal genio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in a bad temper",
+      "options": [
+        "in a bad temper",
+        "in a good mood",
+        "in a great hurry",
+        "in deep thought"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "\"A bajarle al ruido\", ladró de mal genio.",
+        "targetWord": "mal genio",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/240048cff60df856.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pegar el grito al cielo",
+    "sentence": "Todo el mundo [[pegó el grito al cielo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cried out in protest",
+      "options": [
+        "cried out in protest",
+        "fell totally silent",
+        "clapped with joy",
+        "left without a word"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "Todo el mundo pegó el grito al cielo.",
+        "targetWord": "pegó el grito al cielo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8e04da5d4cb941f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plantarse",
+    "sentence": "El guachimán [[se plantó]] entre los dos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "planted himself firmly",
+      "options": [
+        "planted himself firmly",
+        "stepped politely aside",
+        "sat down quietly",
+        "ran quickly off"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "El guachimán se plantó entre los dos.",
+        "targetWord": "se plantó",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b49726692aba1e06.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "espantar",
+    "sentence": "Empezó a [[espantar a la gente]] sin piedad.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shoo people away",
+      "options": [
+        "shoo people away",
+        "invite people in",
+        "serve people drinks",
+        "thank people kindly"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "Empezó a espantar a la gente sin piedad.",
+        "targetWord": "espantar a la gente",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c21c4d40e5459c8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a medio dar",
+    "sentence": "Se quedó con el número [[a medio dar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half given, unfinished",
+      "options": [
+        "half given, unfinished",
+        "fully paid, complete",
+        "freshly bought, new",
+        "long lost, gone"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "Se quedó con el número a medio dar.",
+        "targetWord": "a medio dar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/695f5c504f06fb1f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bajarle",
+    "sentence": "El guachimán les pidió _____ al ruido ya mismo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bajarle",
+      "options": [
+        "bajarle",
+        "subirle",
+        "cerrarle",
+        "abrirle"
+      ],
+      "translation": "The guard asked them to _____ the noise right away.",
+      "optionTranslations": [
+        "turn it down",
+        "turn it up",
+        "close it",
+        "open it"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "El guachimán les pidió bajarle al ruido ya mismo.",
+        "targetWord": "bajarle",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e11b1b01a422cee7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rogar",
+    "sentence": "Andrés le _____ con la mirada un minuto más.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rogar",
+      "options": [
+        "rogar",
+        "gritó",
+        "pagó",
+        "llamó"
+      ],
+      "translation": "Andrés _____ him with his eyes for one more minute.",
+      "optionTranslations": [
+        "begged",
+        "shouted at",
+        "paid",
+        "called"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "Andrés le rogar con la mirada un minuto más.",
+        "targetWord": "rogar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7bd7dc20c6a67bed.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "alcanzar",
+    "sentence": "No supo si _____ a agarrar el número a tiempo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "alcanzar",
+      "options": [
+        "alcanzar",
+        "olvidó",
+        "perdió",
+        "rompió"
+      ],
+      "translation": "He did not know if he _____ to grab the number in time.",
+      "optionTranslations": [
+        "managed",
+        "forgot",
+        "lost",
+        "tore"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "No supo si alcanzar a agarrar el número a tiempo.",
+        "targetWord": "alcanzar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d1d16991a0a405f0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dañar",
+    "sentence": "El guachimán llegó a _____ toda la nota de una vez.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dañar",
+      "options": [
+        "dañar",
+        "alegrar",
+        "pagar",
+        "limpiar"
+      ],
+      "translation": "The guard came to _____ the whole vibe at once.",
+      "optionTranslations": [
+        "ruin",
+        "brighten",
+        "pay for",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "llega-el-guachiman",
+        "storySource": "user",
+        "sentence": "El guachimán llegó a dañar toda la nota de una vez.",
+        "targetWord": "dañar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/51bb5feeaf035948.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "jincho,cuadre,rumba,muro",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "jincho",
+          "answer": "drunk, wasted",
+          "options": [
+            "drunk, wasted",
+            "a romantic connection",
+            "a party",
+            "a wall, an obstacle"
+          ]
+        },
+        {
+          "word": "cuadre",
+          "answer": "a romantic connection",
+          "options": [
+            "drunk, wasted",
+            "a romantic connection",
+            "a party",
+            "a wall, an obstacle"
+          ]
+        },
+        {
+          "word": "rumba",
+          "answer": "a party",
+          "options": [
+            "drunk, wasted",
+            "a romantic connection",
+            "a party",
+            "a wall, an obstacle"
+          ]
+        },
+        {
+          "word": "muro",
+          "answer": "a wall, an obstacle",
+          "options": [
+            "drunk, wasted",
+            "a romantic connection",
+            "a party",
+            "a wall, an obstacle"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

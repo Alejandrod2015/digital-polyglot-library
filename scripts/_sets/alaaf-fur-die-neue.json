@@ -1,0 +1,477 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "Kamelle,Kostüm,Nachbar,Kölsch",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "Kamelle",
+          "answer": "carnival sweets",
+          "options": [
+            "carnival sweets",
+            "a costume",
+            "a neighbour",
+            "Cologne beer"
+          ]
+        },
+        {
+          "word": "Kostüm",
+          "answer": "a costume",
+          "options": [
+            "carnival sweets",
+            "a costume",
+            "a neighbour",
+            "Cologne beer"
+          ]
+        },
+        {
+          "word": "Nachbar",
+          "answer": "a neighbour",
+          "options": [
+            "carnival sweets",
+            "a costume",
+            "a neighbour",
+            "Cologne beer"
+          ]
+        },
+        {
+          "word": "Kölsch",
+          "answer": "Cologne beer",
+          "options": [
+            "carnival sweets",
+            "a costume",
+            "a neighbour",
+            "Cologne beer"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Alaaf",
+    "sentence": "\"[[Alaaf]]!\", ruft eine wildfremde Frau.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a carnival cheer",
+      "options": [
+        "a carnival cheer",
+        "a sad farewell",
+        "a quiet whisper",
+        "a rude insult"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "\"Alaaf!\", ruft eine wildfremde Frau.",
+        "targetWord": "Alaaf",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96b12180face8d95.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Bützchen",
+    "sentence": "drückt Nadia ein [[Bützchen]] auf die Wange.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a kiss on the cheek",
+      "options": [
+        "a kiss on the cheek",
+        "a warm hug",
+        "a firm handshake",
+        "a friendly wave"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "drückt Nadia ein Bützchen auf die Wange.",
+        "targetWord": "Bützchen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ae173558e7ded2d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Veedel",
+    "sentence": "die ein kleines Café im [[Veedel]] führt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the local neighbourhood",
+      "options": [
+        "the local neighbourhood",
+        "the town hall",
+        "the train station",
+        "the market square"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "die ein kleines Café im Veedel führt.",
+        "targetWord": "Veedel",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a8b25638f85f019e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Jung",
+    "sentence": "ihr Nachbar Bruno, ein echter kölscher [[Jung]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a local Cologne man",
+      "options": [
+        "a local Cologne man",
+        "a foreign tourist",
+        "a strict boss",
+        "a quiet farmer"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "ihr Nachbar Bruno, ein echter kölscher Jung.",
+        "targetWord": "Jung",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d79eaf4cb3eab542.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Fründ",
+    "sentence": "Timo, Nadias bester [[Fründ]] aus Berlin.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a close friend",
+      "options": [
+        "a close friend",
+        "a distant cousin",
+        "a new boss",
+        "an old teacher"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "Timo, Nadias bester Fründ aus Berlin.",
+        "targetWord": "Fründ",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a51322ae2d58d3b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "drink doch eene met",
+    "sentence": "\"[[Drink doch eene met]]\", raunt er ihr zu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "have a drink with us",
+      "options": [
+        "have a drink with us",
+        "leave right now",
+        "sit down please",
+        "pay the bill"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "\"Drink doch eene met\", raunt er ihr zu.",
+        "targetWord": "eene",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/489d3d71ad12d95e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Jeck",
+    "sentence": "Draußen ziehen die ersten [[Jecke]] in bunten Kostümen vorbei.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a carnival reveler",
+      "options": [
+        "a carnival reveler",
+        "a street cleaner",
+        "a market seller",
+        "a train driver"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "Draußen ziehen die ersten Jecke in bunten Kostümen vorbei.",
+        "targetWord": "Jecke",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4eef5d49848491cc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "et kütt wie et kütt",
+    "sentence": "\"[[Et kütt wie et kütt]]\", winkt Meike ab.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "what will be, will be",
+      "options": [
+        "what will be, will be",
+        "better late than never",
+        "take it or leave it",
+        "easy come, easy go"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "\"Et kütt wie et kütt\", winkt Meike ab.",
+        "targetWord": "kütt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81eb2c937b79b14c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grinsen",
+    "sentence": "Neben ihr [[grinst]] ihr Nachbar Bruno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to grin",
+      "options": [
+        "to grin",
+        "to frown",
+        "to shout",
+        "to weep"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "Neben ihr grinst ihr Nachbar Bruno.",
+        "targetWord": "grinst",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9e901e1707546cb6.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "herzlich",
+    "sentence": "Sie begrüßt die Gäste _____ und mit einem Lächeln.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "herzlich",
+      "options": [
+        "herzlich",
+        "kühl",
+        "streng",
+        "leise"
+      ],
+      "translation": "She greets the guests _____ and with a smile.",
+      "optionTranslations": [
+        "warmly",
+        "coldly",
+        "strictly",
+        "quietly"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "Sie begrüßt die Gäste herzlich und mit einem Lächeln.",
+        "targetWord": "herzlich",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6cde95f3058acda1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "überrollt",
+    "sentence": "Die große Welle _____ das kleine Boot sofort.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "überrollt",
+      "options": [
+        "überrollt",
+        "umkreist",
+        "verfehlt",
+        "beobachtet"
+      ],
+      "translation": "The big wave _____ the small boat at once.",
+      "optionTranslations": [
+        "overwhelms",
+        "circles",
+        "misses",
+        "watches"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "Die große Welle überrollt das kleine Boot sofort.",
+        "targetWord": "überrollt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b871235faba153f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Mädche",
+    "sentence": "Das kleine _____ spielt fröhlich im Garten.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Mädche",
+      "options": [
+        "Mädche",
+        "Auto",
+        "Fenster",
+        "Brot"
+      ],
+      "translation": "The little _____ plays happily in the garden.",
+      "optionTranslations": [
+        "girl",
+        "car",
+        "window",
+        "bread"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "Das kleine Mädche spielt fröhlich im Garten.",
+        "targetWord": "Mädche",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/58fabcf6cdaf0d6e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "schwärmt",
+    "sentence": "Er _____ schon seit Tagen von dem neuen Café.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schwärmt",
+      "options": [
+        "schwärmt",
+        "schläft",
+        "kauft",
+        "vergisst"
+      ],
+      "translation": "For days he _____ about the new café.",
+      "optionTranslations": [
+        "raves",
+        "sleeps",
+        "buys",
+        "forgets"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "Er schwärmt schon seit Tagen von dem neuen Café.",
+        "targetWord": "schwärmt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ccedf93f4bc249db.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gluckst",
+    "sentence": "Über den guten Witz _____ die ganze Runde vergnügt.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gluckst",
+      "options": [
+        "gluckst",
+        "weint",
+        "schreit",
+        "schweigt"
+      ],
+      "translation": "The whole group _____ merrily at the good joke.",
+      "optionTranslations": [
+        "chuckles",
+        "cries",
+        "shouts",
+        "stays silent"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "Über den guten Witz gluckst die ganze Runde vergnügt.",
+        "targetWord": "gluckst",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ca4bb312a9710ffc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dröhnend",
+    "sentence": "Die Musik ist so _____, dass die Wände zittern.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dröhnend",
+      "options": [
+        "dröhnend",
+        "leise",
+        "sanft",
+        "still"
+      ],
+      "translation": "The music is so _____ that the walls shake.",
+      "optionTranslations": [
+        "booming",
+        "quiet",
+        "gentle",
+        "silent"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "Die Musik ist so dröhnend, dass die Wände zittern.",
+        "targetWord": "dröhnend",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f78941406996eb79.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "verschlossenen",
+    "sentence": "Mit den _____ Nachbarn spricht man kaum.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "verschlossenen",
+      "options": [
+        "verschlossenen",
+        "freundlichen",
+        "lauten",
+        "offenen"
+      ],
+      "translation": "One hardly talks with the _____ neighbours.",
+      "optionTranslations": [
+        "reserved",
+        "friendly",
+        "loud",
+        "open"
+      ],
+      "audioClip": {
+        "storySlug": "alaaf-fur-die-neue",
+        "storySource": "user",
+        "sentence": "Mit den verschlossenen Nachbarn spricht man kaum.",
+        "targetWord": "verschlossenen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d1036172a1462104.mp3"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,487 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "die Kneipe,der Absacker,die Schlange,der Türsteher",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "die Kneipe",
+          "answer": "a pub, a dive bar",
+          "options": [
+            "a pub, a dive bar",
+            "one last nightcap",
+            "the queue outside",
+            "the door bouncer"
+          ]
+        },
+        {
+          "word": "der Absacker",
+          "answer": "one last nightcap",
+          "options": [
+            "a pub, a dive bar",
+            "one last nightcap",
+            "the queue outside",
+            "the door bouncer"
+          ]
+        },
+        {
+          "word": "die Schlange",
+          "answer": "the queue outside",
+          "options": [
+            "a pub, a dive bar",
+            "one last nightcap",
+            "the queue outside",
+            "the door bouncer"
+          ]
+        },
+        {
+          "word": "der Türsteher",
+          "answer": "the door bouncer",
+          "options": [
+            "a pub, a dive bar",
+            "one last nightcap",
+            "the queue outside",
+            "the door bouncer"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "den Dreh raushaben",
+    "sentence": "hat Nadia den [[Dreh]] raus und gehört fest zur Truppe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get the hang of it",
+      "options": [
+        "to get the hang of it",
+        "to lose track of it",
+        "to make fun of it",
+        "to take care of it"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "hat Nadia den Dreh raus und gehört fest zur Truppe.",
+        "targetWord": "Dreh",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e1373be5e01671f3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "durchmachen",
+    "sentence": "Wenn ihr [[durchmachen]] wollt, esst vorher was Ordentliches.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pull an all-nighter",
+      "options": [
+        "to pull an all-nighter",
+        "to sleep in late",
+        "to leave early",
+        "to eat well"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "Wenn ihr durchmachen wollt, esst vorher was Ordentliches.",
+        "targetWord": "durchmachen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d523ad028bd1c457.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Bock haben",
+    "sentence": "denn sie hat [[Bock]], es ihm zu zeigen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be up for it",
+      "options": [
+        "to be up for it",
+        "to be scared of it",
+        "to be tired of it",
+        "to be proud of it"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "denn sie hat Bock, es ihm zu zeigen.",
+        "targetWord": "Bock",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6fbf3a030d8ef3af.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Truppe",
+    "sentence": "Die [[Truppe]] zieht von Kneipe zu Kneipe, immer weiter.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the crew, the gang",
+      "options": [
+        "the crew, the gang",
+        "the stranger",
+        "the referee",
+        "the neighbour"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "Die Truppe zieht von Kneipe zu Kneipe, immer weiter.",
+        "targetWord": "Truppe",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6570ce23be205014.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mustert",
+    "sentence": "Der Verkäufer _____ mich misstrauisch von oben bis unten.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mustert",
+      "options": [
+        "mustert",
+        "grüßt",
+        "bezahlt",
+        "ruft"
+      ],
+      "translation": "The salesman _____ me suspiciously from head to toe.",
+      "optionTranslations": [
+        "sizes up",
+        "greets",
+        "pays",
+        "calls"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "Der Verkäufer mustert mich misstrauisch von oben bis unten.",
+        "targetWord": "mustert",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9046d53df053df5a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "nuschelt",
+    "sentence": "Er _____ so leise, dass ich kein Wort verstehe.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "nuschelt",
+      "options": [
+        "nuschelt",
+        "singt",
+        "brüllt",
+        "tippt"
+      ],
+      "translation": "He _____ so quietly that I don't understand a word.",
+      "optionTranslations": [
+        "mumbles",
+        "sings",
+        "shouts",
+        "types"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "Er nuschelt so leise, dass ich kein Wort verstehe.",
+        "targetWord": "nuschelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a20556139eb3d79c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abweisen",
+    "sentence": "Sein Blick hat schon halb Berlin [[abgewiesen]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to turn away, refuse entry",
+      "options": [
+        "to turn away, refuse entry",
+        "to welcome in warmly",
+        "to wave hello",
+        "to guide inside"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "Sein Blick hat schon halb Berlin abgewiesen.",
+        "targetWord": "abgewiesen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c27bb93b1e0e9051.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "kleinlaut",
+    "sentence": "Micha wird auf einmal ganz [[kleinlaut]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "suddenly meek",
+      "options": [
+        "suddenly meek",
+        "suddenly loud",
+        "suddenly angry",
+        "suddenly cheerful"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "Micha wird auf einmal ganz kleinlaut.",
+        "targetWord": "kleinlaut",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b39ef939caa32a7c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "schleifen",
+    "sentence": "Meine Freunde _____ mich jeden Samstag in denselben Club.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schleifen",
+      "options": [
+        "schleifen",
+        "tragen",
+        "werfen",
+        "laden"
+      ],
+      "translation": "My friends _____ me to the same club every Saturday.",
+      "optionTranslations": [
+        "drag",
+        "carry",
+        "throw",
+        "load"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "Meine Freunde schleifen mich jeden Samstag in denselben Club.",
+        "targetWord": "schleifen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/09c67b20a38b1ad9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "wegpennen",
+    "sentence": "Alter, du [[pennst]] doch um zwei weg.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to konk out, fall asleep",
+      "options": [
+        "to konk out, fall asleep",
+        "to wake up early",
+        "to head home",
+        "to sober up"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "Alter, du pennst doch um zwei weg.",
+        "targetWord": "pennst",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2e45d2caee1e6d23.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "sticheln",
+    "sentence": "[[stichelt]] er, halb im Spaß.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tease with digs",
+      "options": [
+        "to tease with digs",
+        "to shout in anger",
+        "to whisper softly",
+        "to agree politely"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "stichelt er, halb im Spaß.",
+        "targetWord": "stichelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7afc8f64619eb888.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "im Eimer",
+    "sentence": "sonst seid ihr früh im [[Eimer]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wrecked, exhausted",
+      "options": [
+        "wrecked, exhausted",
+        "wide awake",
+        "in a hurry",
+        "in a good mood"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "sonst seid ihr früh im Eimer.",
+        "targetWord": "Eimer",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7a9cd1711120c21c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "Keule",
+    "sentence": "Nee, [[Keule]], jetzt gehen wir tanzen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mate, pal",
+      "options": [
+        "mate, pal",
+        "boss",
+        "stranger",
+        "cousin"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "Nee, Keule, jetzt gehen wir tanzen.",
+        "targetWord": "Keule",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fda52b912fb31070.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "breit wie ein Schrank",
+    "sentence": "der Türsteher, breit wie ein [[Schrank]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "built like a tank",
+      "options": [
+        "built like a tank",
+        "quick as a flash",
+        "light as a feather",
+        "sharp as a knife"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "der Türsteher, breit wie ein Schrank.",
+        "targetWord": "Schrank",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/60004106965aab53.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "cool bleiben",
+    "sentence": "man solle bloß [[cool]] bleiben und nichts Dummes labern.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to keep your cool",
+      "options": [
+        "to keep your cool",
+        "to speak your mind",
+        "to give up fast",
+        "to run away"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "man solle bloß cool bleiben und nichts Dummes labern.",
+        "targetWord": "cool",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa3c67e12a40beeb.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "labern",
+    "sentence": "Hör auf, so viel dummes Zeug zu _____!",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "labern",
+      "options": [
+        "labern",
+        "essen",
+        "malen",
+        "zählen"
+      ],
+      "translation": "Stop _____ so much stupid nonsense!",
+      "optionTranslations": [
+        "blabbering",
+        "eating",
+        "painting",
+        "counting"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "Hör auf, so viel dummes Zeug zu labern!",
+        "targetWord": "labern",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f5d064467b049f63.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "eskaliert",
+    "sentence": "Die Party ist total _____ und ging bis zum Morgen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "eskaliert",
+      "options": [
+        "eskaliert",
+        "verschoben",
+        "abgesagt",
+        "verschlafen"
+      ],
+      "translation": "The party totally _____ and went until morning.",
+      "optionTranslations": [
+        "got out of hand",
+        "got postponed",
+        "got cancelled",
+        "got slept through"
+      ],
+      "audioClip": {
+        "storySlug": "einmal-durchmachen-mit-micha",
+        "storySource": "user",
+        "sentence": "Die Party ist total eskaliert und ging bis zum Morgen.",
+        "targetWord": "eskaliert",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ef81ddf54967ddc.mp3"
+      }
+    }
+  }
+]

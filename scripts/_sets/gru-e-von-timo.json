@@ -1,0 +1,463 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "der Atze",
+    "sentence": "Ihr alter [[Atze]] hat es selbst nicht geschafft.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a close buddy",
+      "options": [
+        "a close buddy",
+        "a stranger",
+        "a boss",
+        "a neighbor"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Ihr alter Atze hat es selbst nicht geschafft.",
+        "targetWord": "Atze",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08e7338e3fb14c90.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Witz",
+    "sentence": "Konrad reißt einen [[Witz]] über die Hauptstadt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a joke",
+      "options": [
+        "a joke",
+        "a promise",
+        "a question",
+        "a complaint"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Konrad reißt einen Witz über die Hauptstadt.",
+        "targetWord": "Witz",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c5c605ee9337910.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Ecke",
+    "sentence": "Seine [[Ecke]] hier in Leipzig hält immer einen Platz frei.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a local spot",
+      "options": [
+        "a local spot",
+        "a long trip",
+        "a loud party",
+        "a full glass"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Seine Ecke hier in Leipzig hält immer einen Platz frei.",
+        "targetWord": "Ecke",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b50ce1fc0e6a913d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "veräppeln",
+    "sentence": "Der wollte mich sicher wieder [[veräppeln]], gell.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tease",
+      "options": [
+        "to tease",
+        "to greet",
+        "to pay",
+        "to help"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Der wollte mich sicher wieder veräppeln, gell.",
+        "targetWord": "veräppeln",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9152e95b05b5083a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ruppig",
+    "sentence": "Das sagt Konrad ganz [[ruppig]] und bleibt gelassen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gruff and brusque",
+      "options": [
+        "gruff and brusque",
+        "warmly polite",
+        "openly nervous",
+        "stiff and formal"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Das sagt Konrad ganz ruppig und bleibt gelassen.",
+        "targetWord": "ruppig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/76b1aab5b2146597.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verschmitzt",
+    "sentence": "Konrad drückt ihr [[verschmitzt]] einen kleinen Zettel zu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with a sly smile",
+      "options": [
+        "with a sly smile",
+        "with a loud shout",
+        "with a cold stare",
+        "with a sad face"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Konrad drückt ihr verschmitzt einen kleinen Zettel zu.",
+        "targetWord": "verschmitzt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9696af02474514bc.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "plappert",
+    "sentence": "Meine Nachbarin _____ pausenlos am Telefon.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "plappert",
+      "options": [
+        "plappert",
+        "schweigt",
+        "schläft",
+        "kocht"
+      ],
+      "translation": "My neighbor _____ non-stop on the phone.",
+      "optionTranslations": [
+        "chatters away",
+        "stays silent",
+        "sleeps",
+        "cooks"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Meine Nachbarin plappert pausenlos am Telefon.",
+        "targetWord": "plappert",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c60502cd563fac5.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "stemmt",
+    "sentence": "Ganz allein _____ er seit Jahren die kleine Kneipe.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "stemmt",
+      "options": [
+        "stemmt",
+        "schließt",
+        "kritisiert",
+        "meidet"
+      ],
+      "translation": "All by himself he _____ the little pub for years.",
+      "optionTranslations": [
+        "manages",
+        "closes",
+        "criticizes",
+        "avoids"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Ganz allein stemmt er seit Jahren die kleine Kneipe.",
+        "targetWord": "stemmt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05f56b3177682477.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "feixt",
+    "sentence": "Über den frechen Witz _____ er breit und zufrieden.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "feixt",
+      "options": [
+        "feixt",
+        "weint",
+        "gähnt",
+        "flüstert"
+      ],
+      "translation": "At the cheeky joke he _____ broadly and pleased.",
+      "optionTranslations": [
+        "smirks",
+        "cries",
+        "yawns",
+        "whispers"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Über den frechen Witz feixt er breit und zufrieden.",
+        "targetWord": "feixt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/da9d6b90c13037c1.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "nickt",
+    "sentence": "Sie _____ langsam mit dem Kopf und sagt ja.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "nickt",
+      "options": [
+        "nickt",
+        "winkt",
+        "klatscht",
+        "zeigt"
+      ],
+      "translation": "She _____ slowly with her head and says yes.",
+      "optionTranslations": [
+        "nods",
+        "waves",
+        "claps",
+        "points"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Sie nickt langsam mit dem Kopf und sagt ja.",
+        "targetWord": "nickt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d6eb2f4c4fac4bc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Runde",
+    "sentence": "Er sagt es freundlich in die [[Runde]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the group",
+      "options": [
+        "the group",
+        "the corner",
+        "the counter",
+        "the street"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Er sagt es freundlich in die Runde.",
+        "targetWord": "Runde",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cfd54a7235eb81eb.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nu",
+    "sentence": "Und [[nu]], jeder bekommt bei uns erst mal was.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "well, yes",
+      "options": [
+        "well, yes",
+        "no way",
+        "not yet",
+        "too bad"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Und nu, jeder bekommt bei uns erst mal was.",
+        "targetWord": "nu",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/470ce2077c0b3248.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gell",
+    "sentence": "Du bist also die aus Berlin, [[gell]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right?",
+      "options": [
+        "right?",
+        "why not?",
+        "how come?",
+        "so what?"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Du bist also die aus Berlin, gell?",
+        "targetWord": "gell",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0e1b2a0c05859780.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fei",
+    "sentence": "Konrad nickt ihr [[fei]] freundlich zu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mind you",
+      "options": [
+        "mind you",
+        "for free",
+        "back then",
+        "over there"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Konrad nickt ihr fei freundlich zu.",
+        "targetWord": "fei",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bd7aad2fe15910ce.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der letzte Schrei",
+    "sentence": "In Berlin ist jede Woche ein Laden der letzte [[Schrei]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the latest craze",
+      "options": [
+        "the latest craze",
+        "the oldest shop",
+        "the worst idea",
+        "the final scream"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "In Berlin ist jede Woche ein Laden der letzte Schrei.",
+        "targetWord": "Schrei",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/22640660a67272ca.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bodenständig",
+    "sentence": "Trotz seines Erfolgs bleibt der Bäcker ganz _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bodenständig",
+      "options": [
+        "bodenständig",
+        "nervös",
+        "müde",
+        "berühmt"
+      ],
+      "translation": "Despite his success, the baker stays completely _____.",
+      "optionTranslations": [
+        "down-to-earth",
+        "nervous",
+        "tired",
+        "famous"
+      ],
+      "audioClip": {
+        "storySlug": "gru-e-von-timo",
+        "storySource": "user",
+        "sentence": "Trotz seines Erfolgs bleibt der Bäcker ganz bodenständig.",
+        "targetWord": "bodenständig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/956e003efcc2e4e7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "Tresen,Stammgast,Bemme,Nischel",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "Tresen",
+          "answer": "the bar counter",
+          "options": [
+            "the bar counter",
+            "a regular guest",
+            "a slice of bread",
+            "the head"
+          ]
+        },
+        {
+          "word": "Stammgast",
+          "answer": "a regular guest",
+          "options": [
+            "the bar counter",
+            "a regular guest",
+            "a slice of bread",
+            "the head"
+          ]
+        },
+        {
+          "word": "Bemme",
+          "answer": "a slice of bread",
+          "options": [
+            "the bar counter",
+            "a regular guest",
+            "a slice of bread",
+            "the head"
+          ]
+        },
+        {
+          "word": "Nischel",
+          "answer": "the head",
+          "options": [
+            "the bar counter",
+            "a regular guest",
+            "a slice of bread",
+            "the head"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

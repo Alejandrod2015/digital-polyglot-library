@@ -1,0 +1,466 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "garrafa,mochila,pedra,zíper",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "garrafa",
+          "answer": "a bottle",
+          "options": [
+            "a bottle",
+            "a backpack",
+            "a stone",
+            "a zip"
+          ]
+        },
+        {
+          "word": "mochila",
+          "answer": "a backpack",
+          "options": [
+            "a bottle",
+            "a backpack",
+            "a stone",
+            "a zip"
+          ]
+        },
+        {
+          "word": "pedra",
+          "answer": "a stone",
+          "options": [
+            "a bottle",
+            "a backpack",
+            "a stone",
+            "a zip"
+          ]
+        },
+        {
+          "word": "zíper",
+          "answer": "a zip",
+          "options": [
+            "a bottle",
+            "a backpack",
+            "a stone",
+            "a zip"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "macaco",
+    "sentence": "Três [[macacos]] pequenos aparecem no galho da árvore.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a monkey",
+      "options": [
+        "a monkey",
+        "a bird",
+        "a cat",
+        "a snake"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "Três macacos pequenos aparecem no galho da árvore.",
+        "targetWord": "macacos",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e4756112c7b866d7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tronco",
+    "sentence": "Eles descem juntos pelo [[tronco]] da árvore.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the trunk",
+      "options": [
+        "the trunk",
+        "the leaf",
+        "the fruit",
+        "the shade"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "Eles descem juntos pelo tronco da árvore.",
+        "targetWord": "tronco",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cc08641dbdb4693a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "medo",
+    "sentence": "Eles descem devagar, sem pressa e sem [[medo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fear",
+      "options": [
+        "fear",
+        "hunger",
+        "noise",
+        "hurry"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "Eles descem devagar, sem pressa e sem medo.",
+        "targetWord": "medo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/630d44397918754c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calma",
+    "sentence": "O segundo olha dentro da mochila com muita [[calma]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calm",
+      "options": [
+        "calm",
+        "anger",
+        "fear",
+        "hurry"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "O segundo olha dentro da mochila com muita calma.",
+        "targetWord": "calma",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8c4761fbb42d45a6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casca",
+    "sentence": "O macaco abre a [[casca]] com os dentes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the skin of a fruit",
+      "options": [
+        "the skin of a fruit",
+        "the seed",
+        "the juice",
+        "the bag"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "O macaco abre a casca com os dentes.",
+        "targetWord": "casca",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/065e48c6abf6c6c4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "costas",
+    "sentence": "Ele come de [[costas]], virado para o mato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the back",
+      "options": [
+        "the back",
+        "the front",
+        "the side",
+        "the head"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "Ele come de costas, virado para o mato.",
+        "targetWord": "costas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e78feefbe8f8ebb8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "direito",
+    "sentence": "Ela guarda a garrafa e fecha o zíper [[direito]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "properly",
+      "options": [
+        "properly",
+        "badly",
+        "slowly",
+        "later"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "Ela guarda a garrafa e fecha o zíper direito.",
+        "targetWord": "direito",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c4933e0683c228a1.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "joga",
+    "sentence": "O macaco _____ a casca no chão e sai.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "joga",
+      "options": [
+        "joga",
+        "guarda",
+        "lava",
+        "come"
+      ],
+      "translation": "The monkey _____ the peel on the ground and leaves.",
+      "optionTranslations": [
+        "throws",
+        "puts away",
+        "washes",
+        "eats"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "O macaco joga a casca no chão e sai.",
+        "targetWord": "joga",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/552d9be246e2c88a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "guarda",
+    "sentence": "Ela _____ a garrafa e fecha a mochila.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "guarda",
+      "options": [
+        "guarda",
+        "quebra",
+        "vende",
+        "perde"
+      ],
+      "translation": "She _____ the bottle and closes the backpack.",
+      "optionTranslations": [
+        "puts away",
+        "breaks",
+        "sells",
+        "loses"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "Ela guarda a garrafa e fecha a mochila.",
+        "targetWord": "guarda",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e53f1f18f762da83.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "galho",
+    "sentence": "Os macacos aparecem no [[galho]] da árvore alta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a branch",
+      "options": [
+        "a branch",
+        "a root",
+        "a hole",
+        "a nest"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "Os macacos aparecem no galho da árvore alta.",
+        "targetWord": "galho",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f88d6ab607726d1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "árvore",
+    "sentence": "Os macacos descem da [[árvore]] sem pressa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tree",
+      "options": [
+        "a tree",
+        "a wall",
+        "a hill",
+        "a house"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "Os macacos descem da árvore sem pressa.",
+        "targetWord": "árvore",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e23f68798593e876.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "banana",
+    "sentence": "Ela fecha o zíper tarde demais e perde a [[banana]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a banana",
+      "options": [
+        "a banana",
+        "a bottle",
+        "a shoe",
+        "a book"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "Ela fecha o zíper tarde demais e perde a banana.",
+        "targetWord": "banana",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96656ee559b58491.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dente",
+    "sentence": "O macaco abre a casca com os [[dentes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tooth",
+      "options": [
+        "a tooth",
+        "a hand",
+        "a foot",
+        "an eye"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "O macaco abre a casca com os dentes.",
+        "targetWord": "dentes",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/065e48c6abf6c6c4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chão",
+    "sentence": "Ele joga a casca no [[chão]], entre os pés dela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the ground",
+      "options": [
+        "the ground",
+        "the tree",
+        "the water",
+        "the roof"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "Ele joga a casca no chão, entre os pés dela.",
+        "targetWord": "chão",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9987a0ad9cbc7f3c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trilha",
+    "sentence": "Ela ri sozinha na [[trilha]] vazia da mata.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a trail",
+      "options": [
+        "a trail",
+        "a beach",
+        "a street",
+        "a bridge"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "Ela ri sozinha na trilha vazia da mata.",
+        "targetWord": "trilha",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8ddb4ba835ccdcfd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mato",
+    "sentence": "Os três somem no [[mato]] em poucos segundos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the bush",
+      "options": [
+        "the bush",
+        "the river",
+        "the town",
+        "the sand"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "Os três somem no mato em poucos segundos.",
+        "targetWord": "mato",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6869d37e70db9db0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "volta",
+    "sentence": "Ela fica sem almoço até a [[volta]] para a cidade.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the way back",
+      "options": [
+        "the way back",
+        "the meal",
+        "the night",
+        "the price"
+      ],
+      "audioClip": {
+        "storySlug": "macacos-na-trilha",
+        "storySource": "user",
+        "sentence": "Ela fica sem almoço até a volta para a cidade.",
+        "targetWord": "volta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0e3443bdd0fee46.mp3"
+      }
+    },
+    "featured": false
+  }
+]

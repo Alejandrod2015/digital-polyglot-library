@@ -1,0 +1,653 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "pintxo",
+    "sentence": "Los [[pintxos]] son pequeños y ricos.",
+    "payload": {
+      "answer": "a small snack",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a small snack",
+        "a big meal",
+        "a cold drink",
+        "a sweet cake"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los pintxos son pequeños y ricos.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "pintxos",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b1a876ff5ef7d81a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pasear",
+    "sentence": "Ellos [[pasean]] juntos y tranquilos.",
+    "payload": {
+      "answer": "to stroll",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to stroll",
+        "to run",
+        "to drive",
+        "to climb"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ellos pasean juntos y tranquilos.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "pasean",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f24fbbd76dc40671.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calle",
+    "sentence": "Las [[calles]] son estrechas y bonitas.",
+    "payload": {
+      "answer": "a street",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a street",
+        "a bridge",
+        "a garden",
+        "a beach"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las calles son estrechas y bonitas.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "calles",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/22b2cb94efd49cd9.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bar",
+    "sentence": "Hay muchos [[bares]] en la calle.",
+    "payload": {
+      "answer": "a bar",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a bar",
+        "a shop",
+        "a school",
+        "a church"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hay muchos bares en la calle.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "bares",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5e21c4c1755d9d0.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gente",
+    "sentence": "La [[gente]] habla y ríe aquí.",
+    "payload": {
+      "answer": "people",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "people",
+        "food",
+        "music",
+        "noise"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La gente habla y ríe aquí.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "gente",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0c587f13ca8bf07.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "probar",
+    "sentence": "Quiero _____ un poco de esa sopa.",
+    "payload": {
+      "answer": "probar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "probar",
+        "cerrar",
+        "vender",
+        "pintar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Quiero probar un poco de esa sopa.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "probar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d3c580af7854e068.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I want to _____ a little of that soup.",
+      "optionTranslations": [
+        "to taste",
+        "to close",
+        "to sell",
+        "to paint"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "beber",
+    "sentence": "Cuando tengo sed me gusta _____ agua.",
+    "payload": {
+      "answer": "beber",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "beber",
+        "cortar",
+        "lavar",
+        "correr"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Cuando tengo sed me gusta beber agua.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "beber",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c77283859cfa6a4.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "When I am thirsty I like to _____ water.",
+      "optionTranslations": [
+        "to drink",
+        "to cut",
+        "to wash",
+        "to run"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "pagar",
+    "sentence": "En la tienda tienes que _____ con dinero.",
+    "payload": {
+      "answer": "pagar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "pagar",
+        "cantar",
+        "dormir",
+        "saltar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la tienda tienes que pagar con dinero.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "pagar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cc85afa9d4e4124a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "In the shop you have to _____ with money.",
+      "optionTranslations": [
+        "to pay",
+        "to sing",
+        "to sleep",
+        "to jump"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tortilla",
+    "sentence": "Ella prueba un poco de [[tortilla]].",
+    "payload": {
+      "answer": "an omelette",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "an omelette",
+        "a soup",
+        "a salad",
+        "a cake"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella prueba un poco de tortilla.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "tortilla",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dfe210839bbb3f41.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rico",
+    "sentence": "Este pan está muy [[rico]].",
+    "payload": {
+      "answer": "tasty",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "tasty",
+        "salty",
+        "bitter",
+        "cold"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Este pan está muy rico.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "rico",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5054ac3d982eca65.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casco viejo",
+    "sentence": "Ellos caminan por el [[casco viejo]].",
+    "payload": {
+      "answer": "the old town",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the old town",
+        "the new mall",
+        "the train station",
+        "the city park"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ellos caminan por el casco viejo.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "casco viejo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8f2a88d3d64c090.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estrecho",
+    "sentence": "Las calles aquí son [[estrechas]].",
+    "payload": {
+      "answer": "narrow",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "narrow",
+        "wide",
+        "dirty",
+        "empty"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las calles aquí son estrechas.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "estrechas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8e917519df2ceaf1.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pequeño",
+    "sentence": "Los vasos son muy [[pequeños]].",
+    "payload": {
+      "answer": "small",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "small",
+        "big",
+        "tall",
+        "heavy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los vasos son muy pequeños.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "pequeños",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c19cce69cafed37f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amiga",
+    "sentence": "Una [[amiga]] llega al bar.",
+    "payload": {
+      "answer": "a female friend",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a female friend",
+        "a female cousin",
+        "a female teacher",
+        "a female doctor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Una amiga llega al bar.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "amiga",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f900339de69a65f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plato",
+    "sentence": "Ella trae los [[platos]] a la mesa.",
+    "payload": {
+      "answer": "a plate",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a plate",
+        "a spoon",
+        "a cup",
+        "a knife"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella trae los platos a la mesa.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "platos",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/14873f3cd41d8589.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lleno",
+    "sentence": "El bar está [[lleno]] de gente.",
+    "payload": {
+      "answer": "full",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "full",
+        "empty",
+        "clean",
+        "dark"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El bar está lleno de gente.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "lleno",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7a0e3713aa1a00ea.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuenta",
+    "sentence": "Ella paga la [[cuenta]] del bar.",
+    "payload": {
+      "answer": "the bill",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the bill",
+        "the menu",
+        "the door",
+        "the table"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella paga la cuenta del bar.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "cuenta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ccead6ebd2e9a255.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "trabajar",
+    "sentence": "Ella va a la oficina cada día para _____.",
+    "payload": {
+      "answer": "trabajar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "trabajar",
+        "dormir",
+        "jugar",
+        "comer"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella va a la oficina cada día para trabajar.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "trabajar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32c90527b5752d37.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She goes to the office every day to _____.",
+      "optionTranslations": [
+        "to work",
+        "to sleep",
+        "to play",
+        "to eat"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "traer",
+    "sentence": "¿Puedes _____ el pan a la mesa?",
+    "payload": {
+      "answer": "traer",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "traer",
+        "beber",
+        "abrir",
+        "pagar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "¿Puedes traer el pan a la mesa?",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "traer",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9cf1368b3f2b7045.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Can you _____ the bread to the table?",
+      "optionTranslations": [
+        "to bring",
+        "to drink",
+        "to open",
+        "to pay"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sidra",
+    "sentence": "Esta bebida de manzana se llama _____.",
+    "payload": {
+      "answer": "sidra",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "sidra",
+        "leche",
+        "jugo",
+        "sopa"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Esta bebida de manzana se llama sidra.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "sidra",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a2546a3bc9463a74.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "This apple drink is called _____.",
+      "optionTranslations": [
+        "cider",
+        "milk",
+        "juice",
+        "soup"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "ruido",
+    "sentence": "En la fiesta hay mucho _____ y música.",
+    "payload": {
+      "answer": "ruido",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "ruido",
+        "silencio",
+        "frío",
+        "calor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la fiesta hay mucho ruido y música.",
+        "storySlug": "ane-trae-mas-pintxos",
+        "targetWord": "ruido",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bee52e883c3ccda1.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "At the party there is a lot of _____ and music.",
+      "optionTranslations": [
+        "noise",
+        "silence",
+        "cold",
+        "heat"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "jamón,queso,gamba,pan",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "jamón",
+          "answer": "ham",
+          "options": [
+            "ham",
+            "cheese",
+            "a prawn",
+            "bread"
+          ]
+        },
+        {
+          "word": "queso",
+          "answer": "cheese",
+          "options": [
+            "ham",
+            "cheese",
+            "a prawn",
+            "bread"
+          ]
+        },
+        {
+          "word": "gamba",
+          "answer": "a prawn",
+          "options": [
+            "ham",
+            "cheese",
+            "a prawn",
+            "bread"
+          ]
+        },
+        {
+          "word": "pan",
+          "answer": "bread",
+          "options": [
+            "ham",
+            "cheese",
+            "a prawn",
+            "bread"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gambas",
+    "sentence": "Lucía prueba unas [[gambas]] del mar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shrimp",
+      "options": [
+        "shrimp",
+        "crabs",
+        "fish",
+        "clams"
+      ],
+      "audioClip": {
+        "storySlug": "ane-trae-mas-pintxos",
+        "storySource": "user",
+        "sentence": "Lucía prueba unas gambas del mar.",
+        "targetWord": "gambas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ea06cbd4229f57e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

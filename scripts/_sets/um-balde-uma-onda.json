@@ -1,0 +1,507 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "balde,torre,janela,parede",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "balde",
+          "answer": "a bucket",
+          "options": [
+            "a bucket",
+            "a tower",
+            "a window",
+            "a wall"
+          ]
+        },
+        {
+          "word": "torre",
+          "answer": "a tower",
+          "options": [
+            "a bucket",
+            "a tower",
+            "a window",
+            "a wall"
+          ]
+        },
+        {
+          "word": "janela",
+          "answer": "a window",
+          "options": [
+            "a bucket",
+            "a tower",
+            "a window",
+            "a wall"
+          ]
+        },
+        {
+          "word": "parede",
+          "answer": "a wall",
+          "options": [
+            "a bucket",
+            "a tower",
+            "a window",
+            "a wall"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "buraco",
+    "sentence": "Ela cava um [[buraco]] fundo na areia molhada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a hole",
+      "options": [
+        "a hole",
+        "a hill",
+        "a road",
+        "a house"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "Ela cava um buraco fundo na areia molhada.",
+        "targetWord": "buraco",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0456511516a48ba.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encher",
+    "sentence": "Ele ajuda a [[encher]] o balde de areia molhada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fill",
+      "options": [
+        "to fill",
+        "to empty",
+        "to wash",
+        "to carry"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "Ele ajuda a encher o balde de areia molhada.",
+        "targetWord": "encher",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e978614eb8666e22.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "firme",
+    "sentence": "O castelo fica alto e [[firme]] na areia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "firm",
+      "options": [
+        "firm",
+        "soft",
+        "wet",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "O castelo fica alto e firme na areia.",
+        "targetWord": "firme",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/21bb2538c648d06a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "maré",
+    "sentence": "A [[maré]] sobe pouco a pouco atrás deles.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the tide",
+      "options": [
+        "the tide",
+        "the wind",
+        "the sky",
+        "the sand"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "A maré sobe pouco a pouco atrás deles.",
+        "targetWord": "maré",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea86d5eb19582dad.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cair",
+    "sentence": "A parede [[cai]] e a água entra no buraco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fall",
+      "options": [
+        "to fall",
+        "to grow",
+        "to float",
+        "to dry"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "A parede cai e a água entra no buraco.",
+        "targetWord": "cai",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8e55bc1e9e5b7922.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "liso",
+    "sentence": "Ele olha a areia [[lisa]] no lugar do castelo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "smooth",
+      "options": [
+        "smooth",
+        "rough",
+        "dark",
+        "deep"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "Ele olha a areia lisa no lugar do castelo.",
+        "targetWord": "lisa",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a4ee2a0742fa2d66.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guardar",
+    "sentence": "Ele [[guarda]] o balde vermelho embaixo do braço.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to keep",
+      "options": [
+        "to keep",
+        "to sell",
+        "to lose",
+        "to lend"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "Ele guarda o balde vermelho embaixo do braço.",
+        "targetWord": "guarda",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d992727794f2a44d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rir",
+    "sentence": "A mulher [[ri]] alto e limpa as mãos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to laugh",
+      "options": [
+        "to laugh",
+        "to cry",
+        "to shout",
+        "to whisper"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "A mulher ri alto e limpa as mãos.",
+        "targetWord": "ri",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b9a9a679c5fd9f4.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "limpa",
+    "sentence": "Depois de brincar na areia, ela _____ as mãos na roupa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "limpa",
+      "options": [
+        "limpa",
+        "molha",
+        "quebra",
+        "guarda"
+      ],
+      "translation": "After playing in the sand, she _____ her hands on her clothes.",
+      "optionTranslations": [
+        "cleans",
+        "gets wet",
+        "breaks",
+        "keeps"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "Depois de brincar na areia, ela limpa as mãos na roupa.",
+        "targetWord": "limpa",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/049f65398af26c80.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mulher",
+    "sentence": "Uma [[mulher]] cava um buraco perto da água.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a woman",
+      "options": [
+        "a woman",
+        "a man",
+        "a boy",
+        "a girl"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "Uma mulher cava um buraco perto da água.",
+        "targetWord": "mulher",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/195090315ded889c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuidado",
+    "sentence": "Ele abre as janelas com o dedo, uma por uma, com [[cuidado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "care",
+      "options": [
+        "care",
+        "hurry",
+        "fear",
+        "noise"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "Ele abre as janelas com o dedo, uma por uma, com cuidado.",
+        "targetWord": "cuidado",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6bde49746ee55a40.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "longe",
+    "sentence": "Uma onda chega mais [[longe]] que as outras.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "far",
+      "options": [
+        "far",
+        "near",
+        "early",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "Uma onda chega mais longe que as outras.",
+        "targetWord": "longe",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/317eb95f22f8f661.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entrar",
+    "sentence": "A água [[entra]] no buraco do castelo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go in",
+      "options": [
+        "to go in",
+        "to go out",
+        "to stay",
+        "to turn"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "A água entra no buraco do castelo.",
+        "targetWord": "entra",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3d7715e42623c001.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "junto",
+    "sentence": "As torres caem [[juntas]], em silêncio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "together",
+      "options": [
+        "together",
+        "apart",
+        "slowly",
+        "again"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "As torres caem juntas, em silêncio.",
+        "targetWord": "juntas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/988550c685eef8d9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vermelho",
+    "sentence": "Ele guarda o balde [[vermelho]] embaixo do braço.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "red",
+      "options": [
+        "red",
+        "green",
+        "black",
+        "white"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "Ele guarda o balde vermelho embaixo do braço.",
+        "targetWord": "vermelho",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d992727794f2a44d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pouco a pouco",
+    "sentence": "A maré sobe [[pouco a pouco]] atrás deles.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "little by little",
+      "options": [
+        "little by little",
+        "all at once",
+        "never again",
+        "right away"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "A maré sobe pouco a pouco atrás deles.",
+        "targetWord": "pouco a pouco",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea86d5eb19582dad.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "linha",
+    "sentence": "As torres caem e deixam uma [[linha]] de areia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a line",
+      "options": [
+        "a line",
+        "a hole",
+        "a wall",
+        "a door"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "As torres caem e deixam uma linha de areia.",
+        "targetWord": "linha",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46c4fbf11d015970.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mão",
+    "sentence": "A mulher limpa as [[mãos]] na camiseta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a hand",
+      "options": [
+        "a hand",
+        "a foot",
+        "a knee",
+        "an ear"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "A mulher limpa as mãos na camiseta.",
+        "targetWord": "mãos",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/213576f33ab4bc4f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quiosque",
+    "sentence": "Ele passa no [[quiosque]] antes de sentar na areia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a beach kiosk",
+      "options": [
+        "a beach kiosk",
+        "a bus stop",
+        "a bank",
+        "a school"
+      ],
+      "audioClip": {
+        "storySlug": "um-balde-uma-onda",
+        "storySource": "user",
+        "sentence": "Ele passa no quiosque antes de sentar na areia.",
+        "targetWord": "quiosque",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fe6a9a9d24e80380.mp3"
+      }
+    },
+    "featured": false
+  }
+]

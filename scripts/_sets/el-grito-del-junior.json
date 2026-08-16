@@ -1,0 +1,545 @@
+[
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "hincha,tiburona,raspao,birra",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "hincha",
+          "answer": "a devoted football fan",
+          "options": [
+            "a devoted football fan",
+            "a female Junior fan",
+            "shaved ice with fruit syrup",
+            "a beer"
+          ]
+        },
+        {
+          "word": "tiburona",
+          "answer": "a female Junior fan",
+          "options": [
+            "a devoted football fan",
+            "a female Junior fan",
+            "shaved ice with fruit syrup",
+            "a beer"
+          ]
+        },
+        {
+          "word": "raspao",
+          "answer": "shaved ice with fruit syrup",
+          "options": [
+            "a devoted football fan",
+            "a female Junior fan",
+            "shaved ice with fruit syrup",
+            "a beer"
+          ]
+        },
+        {
+          "word": "birra",
+          "answer": "a beer",
+          "options": [
+            "a devoted football fan",
+            "a female Junior fan",
+            "shaved ice with fruit syrup",
+            "a beer"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "poner los ojos en blanco",
+    "sentence": "Ella puso [[los ojos en blanco]] al oírlo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to roll your eyes",
+      "options": [
+        "to roll your eyes",
+        "to close your eyes",
+        "to open them wide",
+        "to fall asleep"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "Ella puso los ojos en blanco al oírlo.",
+        "targetWord": "los ojos en blanco",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/48431b45e883fd35.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "manojo de nervios",
+    "sentence": "Ronny estaba hecho [[un manojo de nervios]] antes del gol.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bundle of nerves",
+      "options": [
+        "a bundle of nerves",
+        "full of energy",
+        "a bunch of keys",
+        "calm and relaxed"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "Ronny estaba hecho un manojo de nervios antes del gol.",
+        "targetWord": "un manojo de nervios",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/429ae12fb2b065a6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "pelada",
+    "sentence": "Ronny le explicaba todo como a una [[pelada]] del barrio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a young girl",
+      "options": [
+        "a young girl",
+        "an old lady",
+        "a bald man",
+        "a peeled fruit"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "Ronny le explicaba todo como a una pelada del barrio.",
+        "targetWord": "pelada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fd8bd95b52bf2454.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "tieso",
+    "sentence": "No te quedes ahí [[tiesa]], grita con nosotros.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stiff",
+      "options": [
+        "stiff",
+        "warm",
+        "funny",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "No te quedes ahí tiesa, grita con nosotros.",
+        "targetWord": "tiesa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d9c2730806b4119.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "parche",
+    "sentence": "Todo el [[parche]] estaba pendiente del televisor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "group of friends",
+      "options": [
+        "group of friends",
+        "a small patch",
+        "a loud song",
+        "a cold drink"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "Todo el parche estaba pendiente del televisor.",
+        "targetWord": "parche",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f08dcda1d83dfcc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "venirse abajo",
+    "sentence": "La esquina [[se venía abajo]] con cada jugada buena.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to erupt in a frenzy",
+      "options": [
+        "to erupt in a frenzy",
+        "to fall silent",
+        "to collapse in ruins",
+        "to slowly empty out"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "La esquina se venía abajo con cada jugada buena.",
+        "targetWord": "se venía abajo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/10e6b813fa2bcb30.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "contagiarse",
+    "sentence": "Manu quedó [[contagiada]] por el bullicio de la esquina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to catch the mood",
+      "options": [
+        "to catch the mood",
+        "to get sick",
+        "to stay calm",
+        "to get bored"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "Manu quedó contagiada por el bullicio de la esquina.",
+        "targetWord": "contagiada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30a776aac38d1486.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "rozar",
+    "sentence": "La pelota [[rozó]] el palo y salió afuera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to graze",
+      "options": [
+        "to graze",
+        "to smash",
+        "to catch",
+        "to kick hard"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "La pelota rozó el palo y salió afuera.",
+        "targetWord": "rozó",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/361020881732034f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "quejido",
+    "sentence": "La esquina soltó un [[quejido]] cuando falló el gol.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a groan",
+      "options": [
+        "a groan",
+        "a cheer",
+        "a whistle",
+        "a laugh"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "La esquina soltó un quejido cuando falló el gol.",
+        "targetWord": "quejido",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ed7c5d8880e7227.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "irse encima",
+    "sentence": "Manu [[se le fue encima]] a Yina para abrazarla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to throw yourself onto someone",
+      "options": [
+        "to throw yourself onto someone",
+        "to run away from someone",
+        "to fall on the floor",
+        "to shout at someone"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "Manu se le fue encima a Yina para abrazarla.",
+        "targetWord": "se le fue encima",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2dfdca1961f3b1e0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "brincar",
+    "sentence": "Manu celebró el gol [[brincando]] como una loca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "jumping",
+      "options": [
+        "jumping",
+        "crying",
+        "running",
+        "dancing"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "Manu celebró el gol brincando como una loca.",
+        "targetWord": "brincando",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b35d4bedd1de4c0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "cobrar",
+    "sentence": "Él le [[cobró]] la promesa que le hizo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to claim what is owed",
+      "options": [
+        "to claim what is owed",
+        "to forgive a debt",
+        "to pay a bill",
+        "to break a promise"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "Él le cobró la promesa que le hizo.",
+        "targetWord": "cobró",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d14f024b367b54c9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "comadre",
+    "sentence": "Yina es la ____ de toda la vida de Manu.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "comadre",
+      "options": [
+        "comadre",
+        "pelada",
+        "hincha",
+        "vecina"
+      ],
+      "translation": "Yina is Manu's lifelong ____.",
+      "optionTranslations": [
+        "close friend",
+        "young girl",
+        "fan",
+        "neighbor"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "Yina es la comadre de toda la vida de Manu.",
+        "targetWord": "comadre",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/726713e2b23d9f82.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "jugada",
+    "sentence": "Manu se perdió la mejor ____ del partido.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "jugada",
+      "options": [
+        "jugada",
+        "birra",
+        "esquina",
+        "camiseta"
+      ],
+      "translation": "Manu missed the best ____ of the match.",
+      "optionTranslations": [
+        "play",
+        "beer",
+        "corner",
+        "jersey"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "Manu se perdió la mejor jugada del partido.",
+        "targetWord": "jugada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b2e7795cae69897c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "arco",
+    "sentence": "El Junior se acercó al ____ del rival.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "arco",
+      "options": [
+        "arco",
+        "palo",
+        "balón",
+        "parche"
+      ],
+      "translation": "Junior got close to the rival's ____.",
+      "optionTranslations": [
+        "goal",
+        "goalpost",
+        "ball",
+        "crew"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "El Junior se acercó al arco del rival.",
+        "targetWord": "arco",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f24f47c87f415fb9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "palo",
+    "sentence": "La pelota pegó en el ____ y rebotó.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "palo",
+      "options": [
+        "palo",
+        "arco",
+        "suelo",
+        "red"
+      ],
+      "translation": "The ball hit the ____ and bounced back.",
+      "optionTranslations": [
+        "goalpost",
+        "goal",
+        "ground",
+        "net"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "La pelota pegó en el palo y rebotó.",
+        "targetWord": "palo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e1035c530d2c14c7.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "bullicio",
+    "sentence": "El ____ de la esquina se oía de lejos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bullicio",
+      "options": [
+        "bullicio",
+        "silencio",
+        "partido",
+        "chisme"
+      ],
+      "translation": "The ____ from the corner could be heard far away.",
+      "optionTranslations": [
+        "din",
+        "silence",
+        "match",
+        "gossip"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "El bullicio de la esquina se oía de lejos.",
+        "targetWord": "bullicio",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad83099d02e168f3.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "contragolpe",
+    "sentence": "El tiburón armó un ____ al último minuto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "contragolpe",
+      "options": [
+        "contragolpe",
+        "quejido",
+        "raspao",
+        "balón"
+      ],
+      "translation": "The team put together a ____ at the last minute.",
+      "optionTranslations": [
+        "counterattack",
+        "groan",
+        "shaved ice",
+        "ball"
+      ],
+      "audioClip": {
+        "storySlug": "el-grito-del-junior",
+        "storySource": "user",
+        "sentence": "El tiburón armó un contragolpe al último minuto.",
+        "targetWord": "contragolpe",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7797628900fbfb28.mp3"
+      }
+    }
+  }
+]

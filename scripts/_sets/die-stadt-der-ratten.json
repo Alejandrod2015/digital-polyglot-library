@@ -1,0 +1,595 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Brot,Theater,Legende,Rattenfänger",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Brot",
+     "answer": "bread",
+     "options": [
+      "bread",
+      "theater",
+      "legend",
+      "Pied Piper"
+     ]
+    },
+    {
+     "word": "Theater",
+     "answer": "theater",
+     "options": [
+      "bread",
+      "theater",
+      "legend",
+      "Pied Piper"
+     ]
+    },
+    {
+     "word": "Legende",
+     "answer": "legend",
+     "options": [
+      "bread",
+      "theater",
+      "legend",
+      "Pied Piper"
+     ]
+    },
+    {
+     "word": "Rattenfänger",
+     "answer": "Pied Piper",
+     "options": [
+      "bread",
+      "theater",
+      "legend",
+      "Pied Piper"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "alt",
+  "sentence": "Die Stadt ist klein und [[alt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "old",
+   "options": [
+    "old",
+    "new",
+    "big",
+    "far"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Die Stadt ist klein und alt.",
+    "targetWord": "alt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "sogar",
+  "sentence": "Die Ratten sind aus Metall und [[sogar]] aus Brot.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "even",
+   "options": [
+    "even",
+    "only",
+    "never",
+    "almost"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Die Ratten sind aus Metall und sogar aus Brot.",
+    "targetWord": "sogar",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "süß",
+  "sentence": "Das Brot schmeckt [[süß]] und gut.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sweet",
+   "options": [
+    "sweet",
+    "sour",
+    "salty",
+    "bitter"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Das Brot schmeckt süß und gut.",
+    "targetWord": "süß",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "besuchen",
+  "sentence": "Mia und Ben _____ Hameln.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "besuchen",
+   "options": [
+    "besuchen",
+    "kaufen",
+    "kennen",
+    "zeigen"
+   ],
+   "translation": "Mia and Ben _____ Hameln.",
+   "optionTranslations": [
+    "to visit",
+    "to buy",
+    "to know",
+    "to show"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Mia und Ben besuchen Hameln.",
+    "targetWord": "besuchen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Stadt",
+  "sentence": "Die _____ ist klein und alt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Stadt",
+   "options": [
+    "Stadt",
+    "Form",
+    "Figur",
+    "Legende"
+   ],
+   "translation": "The _____ is small and old.",
+   "optionTranslations": [
+    "city",
+    "shape",
+    "figure",
+    "legend"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Die Stadt ist klein und alt.",
+    "targetWord": "Stadt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "zeigt",
+  "sentence": "Ben _____ auf eine Figur.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zeigt",
+   "options": [
+    "zeigt",
+    "kauft",
+    "kennt",
+    "hängt"
+   ],
+   "translation": "Ben _____ at a figure.",
+   "optionTranslations": [
+    "points",
+    "buys",
+    "knows",
+    "hangs"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Ben zeigt auf eine Figur.",
+    "targetWord": "zeigt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Straßen",
+  "sentence": "Sie gehen durch enge _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Straßen",
+   "options": [
+    "Straßen",
+    "Häuser",
+    "Schilder",
+    "Figuren"
+   ],
+   "translation": "They walk through narrow _____.",
+   "optionTranslations": [
+    "streets",
+    "houses",
+    "signs",
+    "figures"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Sie gehen durch enge Straßen.",
+    "targetWord": "Straßen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "kaufen",
+  "sentence": "Sie _____ ein Brot in Form einer Ratte.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kaufen",
+   "options": [
+    "kaufen",
+    "besuchen",
+    "hängen",
+    "erzählen"
+   ],
+   "translation": "They _____ a bread shaped like a rat.",
+   "optionTranslations": [
+    "to buy",
+    "to visit",
+    "to hang",
+    "to tell"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Sie kaufen ein Brot in Form einer Ratte.",
+    "targetWord": "kaufen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Geheimnis",
+  "sentence": "Wir kennen bald das _____ von Hameln.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Geheimnis",
+   "options": [
+    "Geheimnis",
+    "Theater",
+    "Brot",
+    "Schild"
+   ],
+   "translation": "We will soon know the _____ of Hameln.",
+   "optionTranslations": [
+    "secret",
+    "theater",
+    "bread",
+    "sign"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Wir kennen bald das Geheimnis von Hameln.",
+    "targetWord": "Geheimnis",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "eng",
+  "sentence": "Sie gehen langsam durch [[enge]] Straßen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "narrow",
+   "options": [
+    "narrow",
+    "wide",
+    "long",
+    "dark"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Sie gehen langsam durch enge Straßen.",
+    "targetWord": "enge",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Figur",
+  "sentence": "Ben zeigt auf eine _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Figur",
+   "options": [
+    "Figur",
+    "Stadt",
+    "Straße",
+    "Uhr"
+   ],
+   "translation": "Ben points at a _____.",
+   "optionTranslations": [
+    "figure",
+    "city",
+    "street",
+    "clock"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Ben zeigt auf eine Figur.",
+    "targetWord": "Figur",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "hängen",
+  "sentence": "An den Häusern _____ kleine Schilder.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hängen",
+   "options": [
+    "hängen",
+    "kaufen",
+    "zeigen",
+    "kennen"
+   ],
+   "translation": "On the houses small signs _____.",
+   "optionTranslations": [
+    "to hang",
+    "to buy",
+    "to show",
+    "to know"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "An den Häusern hängen kleine Schilder.",
+    "targetWord": "hängen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Schilder",
+  "sentence": "An den Häusern hängen kleine _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Schilder",
+   "options": [
+    "Schilder",
+    "Häuser",
+    "Straßen",
+    "Formen"
+   ],
+   "translation": "On the houses hang small _____.",
+   "optionTranslations": [
+    "signs",
+    "houses",
+    "streets",
+    "shapes"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "An den Häusern hängen kleine Schilder.",
+    "targetWord": "Schilder",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Häusern",
+  "sentence": "An den _____ hängen kleine Schilder.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Häusern",
+   "options": [
+    "Häusern",
+    "Straßen",
+    "Schildern",
+    "Figuren"
+   ],
+   "translation": "On the _____ hang small signs.",
+   "optionTranslations": [
+    "houses",
+    "streets",
+    "signs",
+    "figures"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "An den Häusern hängen kleine Schilder.",
+    "targetWord": "Häusern",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Form",
+  "sentence": "Sie kaufen ein Brot in _____ einer Ratte.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Form",
+   "options": [
+    "Form",
+    "Stadt",
+    "Figur",
+    "Legende"
+   ],
+   "translation": "They buy a bread in the _____ of a rat.",
+   "optionTranslations": [
+    "shape",
+    "city",
+    "figure",
+    "legend"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Sie kaufen ein Brot in Form einer Ratte.",
+    "targetWord": "Form",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "schmeckt",
+  "sentence": "Das Brot _____ süß und gut.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schmeckt",
+   "options": [
+    "schmeckt",
+    "hängt",
+    "zeigt",
+    "kennt"
+   ],
+   "translation": "The bread _____ sweet and good.",
+   "optionTranslations": [
+    "tastes",
+    "hangs",
+    "shows",
+    "knows"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Das Brot schmeckt süß und gut.",
+    "targetWord": "schmeckt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "erzählen",
+  "sentence": "Dort _____ sie die Legende.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "erzählen",
+   "options": [
+    "erzählen",
+    "kaufen",
+    "besuchen",
+    "hängen"
+   ],
+   "translation": "There they _____ the legend.",
+   "optionTranslations": [
+    "to tell",
+    "to buy",
+    "to visit",
+    "to hang"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Dort erzählen sie die Legende.",
+    "targetWord": "erzählen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "freut",
+  "sentence": "Mia _____ sich sehr.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "freut",
+   "options": [
+    "freut",
+    "zeigt",
+    "kauft",
+    "kennt"
+   ],
+   "translation": "Mia _____ very much.",
+   "optionTranslations": [
+    "is glad",
+    "shows",
+    "buys",
+    "knows"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Mia freut sich sehr.",
+    "targetWord": "freut",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "kennen",
+  "sentence": "Wir _____ bald das Geheimnis.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kennen",
+   "options": [
+    "kennen",
+    "kaufen",
+    "zeigen",
+    "hängen"
+   ],
+   "translation": "We will soon _____ the secret.",
+   "optionTranslations": [
+    "to know",
+    "to buy",
+    "to show",
+    "to hang"
+   ],
+   "audioClip": {
+    "storySlug": "die-stadt-der-ratten",
+    "storySource": "user",
+    "sentence": "Wir kennen bald das Geheimnis.",
+    "targetWord": "kennen",
+    "language": "german"
+   }
+  }
+ }
+]

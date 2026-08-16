@@ -1,0 +1,545 @@
+[
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "el reguetón,el pañuelo,la garganta,el bullicio",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "el reguetón",
+          "answer": "reggaeton music",
+          "options": [
+            "reggaeton music",
+            "a handkerchief",
+            "the throat",
+            "a noisy buzz"
+          ]
+        },
+        {
+          "word": "el pañuelo",
+          "answer": "a handkerchief",
+          "options": [
+            "reggaeton music",
+            "a handkerchief",
+            "the throat",
+            "a noisy buzz"
+          ]
+        },
+        {
+          "word": "la garganta",
+          "answer": "the throat",
+          "options": [
+            "reggaeton music",
+            "a handkerchief",
+            "the throat",
+            "a noisy buzz"
+          ]
+        },
+        {
+          "word": "el bullicio",
+          "answer": "a noisy buzz",
+          "options": [
+            "reggaeton music",
+            "a handkerchief",
+            "the throat",
+            "a noisy buzz"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "el montaje",
+    "sentence": "Todo le sabe a puro [[montaje]] para turistas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fake staged setup",
+      "options": [
+        "a fake staged setup",
+        "a real tragedy",
+        "a cheap ticket",
+        "a loud concert"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "Todo le sabe a puro montaje para turistas.",
+        "targetWord": "montaje",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/58ce033361bd8358.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "el cinismo",
+    "sentence": "A Manu le pesa su [[cinismo]] de rola desconfiada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cynicism",
+      "options": [
+        "cynicism",
+        "kindness",
+        "patience",
+        "courage"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "A Manu le pesa su cinismo de rola desconfiada.",
+        "targetWord": "cinismo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4d4457e6cc097f73.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "mordaz",
+    "sentence": "Manu suelta un comentario [[mordaz]] sobre el montaje.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sharp and biting",
+      "options": [
+        "sharp and biting",
+        "kind and warm",
+        "long and boring",
+        "soft and shy"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "Manu suelta un comentario mordaz sobre el montaje.",
+        "targetWord": "mordaz",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef4ecb3b0f95d462.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "maquillado",
+    "sentence": "Cree que le venden una postal [[maquillada]] y falsa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dressed up to look prettier",
+      "options": [
+        "dressed up to look prettier",
+        "torn and dirty",
+        "old and cheap",
+        "dark and sad"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "Cree que le venden una postal maquillada y falsa.",
+        "targetWord": "maquillada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8453a1604662f57f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "vistoso",
+    "sentence": "En la Comuna hay grafitis [[vistosos]] por todas partes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bright and eye catching",
+      "options": [
+        "bright and eye catching",
+        "gray and dull",
+        "tiny and hidden",
+        "wet and ruined"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "En la Comuna hay grafitis vistosos por todas partes.",
+        "targetWord": "vistosos",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f2ffda162deee1b6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "avergonzado",
+    "sentence": "Manu se queda [[avergonzada]] de su propio cinismo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ashamed",
+      "options": [
+        "ashamed",
+        "proud",
+        "excited",
+        "bored"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "Manu se queda avergonzada de su propio cinismo.",
+        "targetWord": "avergonzada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/50f725bbf03b2cdf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "sin afán",
+    "sentence": "Salo la lleva despacio, [[sin afán]], saludando vecinos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without hurry",
+      "options": [
+        "without hurry",
+        "in a rush",
+        "with great fear",
+        "full of anger"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "Salo la lleva despacio, sin afán, saludando vecinos.",
+        "targetWord": "sin afán",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/72ffe132a07b6ce4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "de una",
+    "sentence": "Salo le suelta la verdad [[de una]], sin rodeos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right away",
+      "options": [
+        "right away",
+        "little by little",
+        "never at all",
+        "by accident"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "Salo le suelta la verdad de una, sin rodeos.",
+        "targetWord": "de una",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/947e088f292c7339.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "mango biche",
+    "sentence": "Una señora vende [[mango biche]] con sal y limón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "green unripe mango",
+      "options": [
+        "green unripe mango",
+        "ripe sweet banana",
+        "fried green plantain",
+        "cold fruit juice"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "Una señora vende mango biche con sal y limón.",
+        "targetWord": "mango biche",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/72d4ac708a427998.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "la puesta en escena",
+    "sentence": "Manu critica lo bien montada que está la [[puesta en escena]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the staging",
+      "options": [
+        "the staging",
+        "the ticket price",
+        "the loud music",
+        "the tour guide"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "Manu critica lo bien montada que está la puesta en escena.",
+        "targetWord": "puesta en escena",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/381deb126b2c80dc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "ganar el pulso",
+    "sentence": "Así el barrio le [[ganó el pulso]] al miedo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "won the hard standoff",
+      "options": [
+        "won the hard standoff",
+        "lost the old fight",
+        "measured the heartbeat",
+        "paid the debt"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "Así el barrio le ganó el pulso al miedo.",
+        "targetWord": "ganó el pulso",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/315477d60c3c55ca.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "recién llegada",
+    "sentence": "A Manu le da pena su cinismo de [[recién llegada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "newcomer",
+      "options": [
+        "newcomer",
+        "old resident",
+        "tour guide",
+        "local vendor"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "A Manu le da pena su cinismo de recién llegada.",
+        "targetWord": "recién llegada",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8247bdd3dc9770ad.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "las escaleras eléctricas",
+    "sentence": "____ suben a la gente por la Comuna.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "las escaleras eléctricas",
+      "options": [
+        "las escaleras eléctricas",
+        "los murales pintados",
+        "las canchas viejas",
+        "los buses rojos"
+      ],
+      "translation": "____ carry people up the Comuna.",
+      "optionTranslations": [
+        "the moving stairs",
+        "the painted murals",
+        "the old courts",
+        "the red buses"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "Las escaleras eléctricas suben a la gente por la Comuna.",
+        "targetWord": "las escaleras eléctricas",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37771c375e563ecd.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "la loma",
+    "sentence": "El barrio trepa por ____ hasta la cima.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la loma",
+      "options": [
+        "la loma",
+        "la cancha",
+        "la esquina",
+        "la pared"
+      ],
+      "translation": "The neighborhood climbs up ____ to the top.",
+      "optionTranslations": [
+        "the hill",
+        "the court",
+        "the corner",
+        "the wall"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "El barrio trepa por la loma hasta la cima.",
+        "targetWord": "la loma",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/11dbf3f269e5279a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el combo",
+    "sentence": "____ de turistas tomaba muchas fotos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el combo",
+      "options": [
+        "el combo",
+        "el mural",
+        "el bus",
+        "el barrio"
+      ],
+      "translation": "____ of tourists kept taking photos.",
+      "optionTranslations": [
+        "the crew",
+        "the mural",
+        "the bus",
+        "the neighborhood"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "El combo de turistas tomaba muchas fotos.",
+        "targetWord": "el combo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/655edb9d5e3158c2.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el decorado",
+    "sentence": "____ del barrio parecía hecho para turistas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el decorado",
+      "options": [
+        "el decorado",
+        "el paisaje",
+        "el mercado",
+        "el andén"
+      ],
+      "translation": "____ of the neighborhood seemed made for tourists.",
+      "optionTranslations": [
+        "the stage set",
+        "the landscape",
+        "the market",
+        "the sidewalk"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "El decorado del barrio parecía hecho para turistas.",
+        "targetWord": "el decorado",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c9f2d6042788fe9c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "asentir",
+    "sentence": "Manu solo atina a ____ por cortesía.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "asentir",
+      "options": [
+        "asentir",
+        "gritar",
+        "llorar",
+        "huir"
+      ],
+      "translation": "Manu only manages to ____ out of politeness.",
+      "optionTranslations": [
+        "to nod",
+        "to shout",
+        "to cry",
+        "to flee"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "Manu solo atina a asentir por cortesía.",
+        "targetWord": "asentir",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3bc57efc9e3dce7d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "señalar",
+    "sentence": "Salo se detiene para ____ un mural pintado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "señalar",
+      "options": [
+        "señalar",
+        "tapar",
+        "borrar",
+        "pintar"
+      ],
+      "translation": "Salo stops to ____ a painted mural.",
+      "optionTranslations": [
+        "to point at",
+        "to cover",
+        "to erase",
+        "to paint"
+      ],
+      "audioClip": {
+        "storySlug": "la-comuna-13-no-es-museo",
+        "storySource": "user",
+        "sentence": "Salo se detiene para señalar un mural pintado.",
+        "targetWord": "señalar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea501efe023eb537.mp3"
+      }
+    }
+  }
+]

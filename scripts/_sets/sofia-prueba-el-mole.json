@@ -1,0 +1,760 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "viajera",
+    "sentence": "La [[viajera]] come un poco de tortilla con salsa.",
+    "payload": {
+      "answer": "female traveler",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "female traveler",
+        "tour guide",
+        "shopkeeper",
+        "neighbor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La viajera come un poco de tortilla con salsa.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "viajera",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9af400768ac1cfa7.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amable",
+    "sentence": "Una mujer muy [[amable]] vende comida aquí.",
+    "payload": {
+      "answer": "kind",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "kind",
+        "funny",
+        "famous",
+        "rich"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Una mujer muy amable vende comida aquí.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "amable",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a7debf0849c4acd6.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mole",
+    "sentence": "El [[mole]] tiene chocolate y muchos chiles.",
+    "payload": {
+      "answer": "thick chili sauce",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "thick chili sauce",
+        "warm corn bread",
+        "sweet fruit cake",
+        "clear meat soup"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El mole tiene chocolate y muchos chiles.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "mole",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/44efe28a3326883f.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tlayuda",
+    "sentence": "Ella prepara mole negro y [[tlayudas]].",
+    "payload": {
+      "answer": "large crisp tortilla",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "large crisp tortilla",
+        "small soft bun",
+        "sweet corn cake",
+        "hot meat soup"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella prepara mole negro y tlayudas.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "tlayudas",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/34504eb017a88884.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salsa",
+    "sentence": "La [[salsa]] es oscura y espesa.",
+    "payload": {
+      "answer": "sauce poured over food",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "sauce poured over food",
+        "cold sweet drink",
+        "dry white flour",
+        "small green leaf"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La salsa es oscura y espesa.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "salsa",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e4bf5b7bab99d45f.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "probar",
+    "sentence": "¿Quieres [[probar]] el mole ahora?",
+    "payload": {
+      "answer": "to taste",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to taste",
+        "to cook",
+        "to buy",
+        "to smell"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "¿Quieres probar el mole ahora?",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "probar",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4def9151b55c72b3.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonrisa",
+    "sentence": "Ella responde con una [[sonrisa]].",
+    "payload": {
+      "answer": "smile",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "smile",
+        "shout",
+        "whisper",
+        "yawn"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella responde con una sonrisa.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "sonrisa",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b76e0de960d969c.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "picante",
+    "sentence": "El mole es rico pero muy [[picante]].",
+    "payload": {
+      "answer": "spicy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "spicy",
+        "salty",
+        "sour",
+        "cold"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El mole es rico pero muy picante.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "picante",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0cf1e532afeaf2a1.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "comprar",
+    "sentence": "No tengo dinero para _____ ese libro.",
+    "payload": {
+      "answer": "comprar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "comprar",
+        "vender",
+        "tirar",
+        "abrir"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "No tengo dinero para comprar ese libro.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "comprar",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/120795584dc1b8d6.mp3"
+      },
+      "translation": "I have no money to _____ that book.",
+      "optionTranslations": [
+        "buy",
+        "sell",
+        "throw away",
+        "open"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "chiles",
+    "sentence": "El plato pica mucho porque tiene _____ rojos.",
+    "payload": {
+      "answer": "chiles",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "chiles",
+        "tomates",
+        "limones",
+        "huevos"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El plato pica mucho porque tiene chiles rojos.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "chiles",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a50e6eeeed68a19b.mp3"
+      },
+      "translation": "The dish is very spicy because it has red _____.",
+      "optionTranslations": [
+        "chili peppers",
+        "tomatoes",
+        "lemons",
+        "eggs"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "curioso",
+    "sentence": "Ella es una viajera muy [[curiosa]].",
+    "payload": {
+      "answer": "curious",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "curious",
+        "tired",
+        "serious",
+        "quiet"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella es una viajera muy curiosa.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "curiosa",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf84d2b5a475df0b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "puesto",
+    "sentence": "Ella vende comida en su [[puesto]].",
+    "payload": {
+      "answer": "market stall",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "market stall",
+        "small kitchen",
+        "back garden",
+        "narrow street"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella vende comida en su puesto.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "puesto",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5a556242bd7a7f36.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fruta",
+    "sentence": "Ella le da una [[fruta]] dulce.",
+    "payload": {
+      "answer": "fruit",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "fruit",
+        "bread",
+        "candy",
+        "cheese"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella le da una fruta dulce.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "fruta",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1b0753027af0aeef.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "maíz",
+    "sentence": "El mercado huele a [[maíz]] y a café.",
+    "payload": {
+      "answer": "corn",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "corn",
+        "rice",
+        "wheat",
+        "sugar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El mercado huele a maíz y a café.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "maíz",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/52f5ecee01df0117.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recuerdo",
+    "sentence": "Ella guarda un buen [[recuerdo]] de la ciudad.",
+    "payload": {
+      "answer": "memory",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "memory",
+        "promise",
+        "secret",
+        "message"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella guarda un buen recuerdo de la ciudad.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "recuerdo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a37323867899b31c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vende",
+    "sentence": "En su tienda, ella _____ pan y da el cambio.",
+    "payload": {
+      "answer": "vende",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "vende",
+        "compra",
+        "come",
+        "guarda"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En su tienda, ella vende pan y da el cambio.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "vende",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e251477f6d2bc5b.mp3"
+      },
+      "translation": "In her shop, she _____ bread and gives change.",
+      "optionTranslations": [
+        "sells",
+        "buys",
+        "eats",
+        "keeps"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "prepara",
+    "sentence": "El cocinero _____ la sopa con mucho cuidado.",
+    "payload": {
+      "answer": "prepara",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "prepara",
+        "derrama",
+        "enfría",
+        "tira"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El cocinero prepara la sopa con mucho cuidado.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "prepara",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cbd5187d9999f19e.mp3"
+      },
+      "translation": "The cook _____ the soup very carefully.",
+      "optionTranslations": [
+        "prepares",
+        "spills",
+        "cools",
+        "throws away"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "arde",
+    "sentence": "Comí algo muy picante y ahora me _____ la boca.",
+    "payload": {
+      "answer": "arde",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "arde",
+        "suena",
+        "crece",
+        "cae"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Comí algo muy picante y ahora me arde la boca.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "arde",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f83bee00b44338d6.mp3"
+      },
+      "translation": "I ate something very spicy and now my mouth _____.",
+      "optionTranslations": [
+        "burns",
+        "sounds",
+        "grows",
+        "falls"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "calmar",
+    "sentence": "El té caliente ayuda a _____ los nervios.",
+    "payload": {
+      "answer": "calmar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "calmar",
+        "subir",
+        "romper",
+        "llenar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El té caliente ayuda a calmar los nervios.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "calmar",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9685ac709f0c283b.mp3"
+      },
+      "translation": "Hot tea helps to _____ the nerves.",
+      "optionTranslations": [
+        "calm",
+        "raise",
+        "break",
+        "fill"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "respirar",
+    "sentence": "Abre la ventana para _____ aire fresco.",
+    "payload": {
+      "answer": "respirar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "respirar",
+        "cerrar",
+        "comer",
+        "dormir"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Abre la ventana para respirar aire fresco.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "respirar",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4e9fd1428c45bf8.mp3"
+      },
+      "translation": "Open the window to _____ fresh air.",
+      "optionTranslations": [
+        "breathe",
+        "close",
+        "eat",
+        "sleep"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dulce",
+    "sentence": "Me gusta el café con azúcar porque es _____.",
+    "payload": {
+      "answer": "dulce",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "dulce",
+        "amargo",
+        "salado",
+        "frío"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Me gusta el café con azúcar porque es dulce.",
+        "storySlug": "sofia-prueba-el-mole",
+        "targetWord": "dulce",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37742a2c6e454422.mp3"
+      },
+      "translation": "I like coffee with sugar because it is _____.",
+      "optionTranslations": [
+        "sweet",
+        "bitter",
+        "salty",
+        "cold"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "mercado,tortilla,boca,camino",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "mercado",
+          "answer": "market",
+          "options": [
+            "market",
+            "corn flatbread",
+            "mouth",
+            "path"
+          ]
+        },
+        {
+          "word": "tortilla",
+          "answer": "corn flatbread",
+          "options": [
+            "market",
+            "corn flatbread",
+            "mouth",
+            "path"
+          ]
+        },
+        {
+          "word": "boca",
+          "answer": "mouth",
+          "options": [
+            "market",
+            "corn flatbread",
+            "mouth",
+            "path"
+          ]
+        },
+        {
+          "word": "camino",
+          "answer": "path",
+          "options": [
+            "market",
+            "corn flatbread",
+            "mouth",
+            "path"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ingrediente",
+    "sentence": "El mole lleva muchos [[ingredientes]] distintos en una salsa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ingredients",
+      "options": [
+        "ingredients",
+        "the chairs",
+        "the windows",
+        "the shoes"
+      ],
+      "audioClip": {
+        "storySlug": "sofia-prueba-el-mole",
+        "storySource": "user",
+        "sentence": "El mole lleva muchos ingredientes distintos en una salsa.",
+        "targetWord": "ingredientes",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f0e17f4ab8bae199.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sabor",
+    "sentence": "El [[sabor]] del mole es profundo y muy rico.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the taste",
+      "options": [
+        "the taste",
+        "the color",
+        "the price",
+        "the noise"
+      ],
+      "audioClip": {
+        "storySlug": "sofia-prueba-el-mole",
+        "storySource": "user",
+        "sentence": "El sabor del mole es profundo y muy rico.",
+        "targetWord": "sabor",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a3f8535504f11816.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "miedo",
+    "sentence": "Sofía tiene un poco de [[miedo]] antes de probar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fear",
+      "options": [
+        "fear",
+        "hunger",
+        "money",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "sofia-prueba-el-mole",
+        "storySource": "user",
+        "sentence": "Sofía tiene un poco de miedo antes de probar.",
+        "targetWord": "miedo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/171dbba0c03d968e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delicioso",
+    "sentence": "El mole negro es muy [[delicioso]] con una tortilla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "delicious",
+      "options": [
+        "delicious",
+        "expensive",
+        "cold",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "sofia-prueba-el-mole",
+        "storySource": "user",
+        "sentence": "El mole negro es muy delicioso con una tortilla.",
+        "targetWord": "delicioso",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ca501673f4604042.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mezclar",
+    "sentence": "Muchas cosas pueden [[mezclarse]] bien en una sola salsa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to mix",
+      "options": [
+        "to mix",
+        "to jump",
+        "to sleep",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "sofia-prueba-el-mole",
+        "storySource": "user",
+        "sentence": "Muchas cosas pueden mezclarse bien en una sola salsa.",
+        "targetWord": "mezclarse",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1d752fc76be20e57.mp3"
+      }
+    },
+    "featured": false
+  }
+]

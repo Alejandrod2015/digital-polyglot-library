@@ -1,0 +1,555 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "bilancia,ghiaccio,sconto,bancone",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "bilancia",
+          "answer": "scales",
+          "options": [
+            "scales",
+            "ice",
+            "a discount",
+            "a long counter"
+          ]
+        },
+        {
+          "word": "ghiaccio",
+          "answer": "ice",
+          "options": [
+            "scales",
+            "ice",
+            "a discount",
+            "a long counter"
+          ]
+        },
+        {
+          "word": "sconto",
+          "answer": "a discount",
+          "options": [
+            "scales",
+            "ice",
+            "a discount",
+            "a long counter"
+          ]
+        },
+        {
+          "word": "bancone",
+          "answer": "a long counter",
+          "options": [
+            "scales",
+            "ice",
+            "a discount",
+            "a long counter"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cassetta",
+    "sentence": "Il pesce sta dentro [[cassette]] di legno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "crates",
+      "options": [
+        "crates",
+        "bottles",
+        "bags",
+        "boxes of paper"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Il pesce sta dentro cassette di legno.",
+        "targetWord": "cassette",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30ff18f14304f544.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pesce",
+    "sentence": "Il [[pesce]] arriva ogni mattina dal porto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fish",
+      "options": [
+        "fish",
+        "meat",
+        "fruit",
+        "bread"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Il pesce arriva ogni mattina dal porto.",
+        "targetWord": "pesce",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05fda4e810df4514.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pescivendolo",
+    "sentence": "Il [[pescivendolo]] urla il prezzo per la strada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the fishmonger",
+      "options": [
+        "the fishmonger",
+        "the baker",
+        "the waiter",
+        "the farmer"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Il pescivendolo urla il prezzo per la strada.",
+        "targetWord": "pescivendolo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/313dba7cb49ddeb7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "urlare",
+    "sentence": "Lui [[urla]] i numeri ogni pochi secondi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shouts",
+      "options": [
+        "shouts",
+        "writes",
+        "hides",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Lui urla i numeri ogni pochi secondi.",
+        "targetWord": "urla",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/774df6613920c577.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pesare",
+    "sentence": "Il pescivendolo [[pesa]] il pesce davanti a lui.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "weighs",
+      "options": [
+        "weighs",
+        "cleans",
+        "cooks",
+        "wraps"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Il pescivendolo pesa il pesce davanti a lui.",
+        "targetWord": "pesa",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4da808b61abc3020.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cifra",
+    "sentence": "Lui dice una [[cifra]] tonda e semplice.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a figure",
+      "options": [
+        "a figure",
+        "a name",
+        "a word",
+        "a rule"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Lui dice una cifra tonda e semplice.",
+        "targetWord": "cifra",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e7501d749b2994c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tondo",
+    "sentence": "La cifra è [[tonda]], senza centesimi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "round",
+      "options": [
+        "round",
+        "wrong",
+        "high",
+        "secret"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "La cifra è tonda, senza centesimi.",
+        "targetWord": "tonda",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9395aac66a58092e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prezzemolo",
+    "sentence": "Lui aggiunge il [[prezzemolo]] senza far pagare.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "parsley",
+      "options": [
+        "parsley",
+        "salt",
+        "ice",
+        "bread"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Lui aggiunge il prezzemolo senza far pagare.",
+        "targetWord": "prezzemolo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c4934748aded1344.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trattare",
+    "sentence": "Una signora [[tratta]] con calma e ottiene lo stesso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bargains",
+      "options": [
+        "bargains",
+        "shouts",
+        "pays more",
+        "leaves"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Una signora tratta con calma e ottiene lo stesso.",
+        "targetWord": "tratta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b4f62c23211f0313.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sarda",
+    "sentence": "Le [[sarde]] sono piccole e argentate.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sardines",
+      "options": [
+        "sardines",
+        "oranges",
+        "onions",
+        "eggs"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Le sarde sono piccole e argentate.",
+        "targetWord": "sarde",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4eaae63cf1a74f0b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sapere",
+    "sentence": "Lui non [[sa]] quanto costano le sarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "knows",
+      "options": [
+        "knows",
+        "asks",
+        "pays",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Lui non sa quanto costano le sarde.",
+        "targetWord": "sa",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40a3f31822588268.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "secondo",
+    "sentence": "Lui ripete il prezzo ogni pochi [[secondi]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "seconds",
+      "options": [
+        "seconds",
+        "hours",
+        "days",
+        "weeks"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Lui ripete il prezzo ogni pochi secondi.",
+        "targetWord": "secondi",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0bf0dfe93c19a40e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mezzo",
+    "sentence": "Lui domanda [[mezzo]] chilo di sarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half",
+      "options": [
+        "half",
+        "double",
+        "one",
+        "three"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Lui domanda mezzo chilo di sarde.",
+        "targetWord": "mezzo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3afa1cca533a3945.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chilo",
+    "sentence": "Mezzo [[chilo]] basta per la cena.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "kilo",
+      "options": [
+        "kilo",
+        "litre",
+        "metre",
+        "hour"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Mezzo chilo basta per la cena.",
+        "targetWord": "chilo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/812eee33dd7a444a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fresco",
+    "sentence": "Le sarde sono [[fresche]] di stamattina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fresh",
+      "options": [
+        "fresh",
+        "frozen",
+        "cooked",
+        "old"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Le sarde sono fresche di stamattina.",
+        "targetWord": "fresche",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eab651981c359593.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "togliere",
+    "sentence": "Poi lui [[toglie]] un euro dal totale.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "takes off",
+      "options": [
+        "takes off",
+        "adds",
+        "counts",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Poi lui toglie un euro dal totale.",
+        "targetWord": "toglie",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/12d6c3545811cb43.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ottenere",
+    "sentence": "Lei [[ottiene]] lo stesso sconto senza discutere.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gets",
+      "options": [
+        "gets",
+        "loses",
+        "asks",
+        "refuses"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Lei ottiene lo stesso sconto senza discutere.",
+        "targetWord": "ottiene",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cb314a3ddce47b9e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "totale",
+    "sentence": "Lui scrive il [[totale]] sul bordo del bancone.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the total",
+      "options": [
+        "the total",
+        "the name",
+        "the date",
+        "the weight"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Lui scrive il totale sul bordo del bancone.",
+        "targetWord": "totale",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee0647b46ffa767c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bordo",
+    "sentence": "Il numero sta sul [[bordo]] di legno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the edge",
+      "options": [
+        "the edge",
+        "the middle",
+        "the floor",
+        "the roof"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Il numero sta sul bordo di legno.",
+        "targetWord": "bordo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6b87c9549dd8cbe.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pennarello",
+    "sentence": "Lui scrive con un [[pennarello]] nero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a marker pen",
+      "options": [
+        "a marker pen",
+        "a small knife",
+        "a paper bag",
+        "a metal spoon"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Lui scrive con un pennarello nero.",
+        "targetWord": "pennarello",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ffb1a9f1c0575681.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pacchetto",
+    "sentence": "Lui porta via il _____ freddo sotto il braccio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pacchetto",
+      "options": [
+        "pacchetto",
+        "biglietto",
+        "quaderno",
+        "cappello"
+      ],
+      "translation": "He carries away the cold _____ under his arm.",
+      "optionTranslations": [
+        "parcel",
+        "ticket",
+        "notebook",
+        "hat"
+      ],
+      "audioClip": {
+        "storySlug": "il-prezzo-lo-dice-il-pescivendolo",
+        "storySource": "user",
+        "sentence": "Lui porta via il pacchetto freddo sotto il braccio.",
+        "targetWord": "pacchetto",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fbcd00fce9916662.mp3"
+      }
+    },
+    "featured": false
+  }
+]

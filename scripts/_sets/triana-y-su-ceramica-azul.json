@@ -1,0 +1,671 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "conocer",
+    "sentence": "Ella [[conoce]] muy bien esta ciudad.",
+    "payload": {
+      "answer": "to know",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to know",
+        "to buy",
+        "to lose",
+        "to build"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella conoce muy bien esta ciudad.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "conoce",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e60a3e9179f8be68.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barrio",
+    "sentence": "Vivo en un [[barrio]] tranquilo y bonito.",
+    "payload": {
+      "answer": "a neighborhood",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a neighborhood",
+        "a country",
+        "a beach",
+        "a forest"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Vivo en un barrio tranquilo y bonito.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "barrio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/022b3ae66726f375.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "agua",
+    "sentence": "El río lleva mucha _____ hacia el mar.",
+    "payload": {
+      "answer": "agua",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "agua",
+        "arena",
+        "tierra",
+        "hierba"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El río lleva mucha agua hacia el mar.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "agua",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fe35099331f2dd6f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The river carries a lot of _____ to the sea.",
+      "optionTranslations": [
+        "water",
+        "sand",
+        "soil",
+        "grass"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "tienda",
+    "sentence": "Compro pan y leche en la _____ pequeña.",
+    "payload": {
+      "answer": "tienda",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "tienda",
+        "escuela",
+        "iglesia",
+        "oficina"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Compro pan y leche en la tienda pequeña.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "tienda",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9612929b7413d7ee.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I buy bread and milk at the small _____.",
+      "optionTranslations": [
+        "shop",
+        "school",
+        "church",
+        "office"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comprar",
+    "sentence": "Quiero [[comprar]] un plato azul para casa.",
+    "payload": {
+      "answer": "to buy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to buy",
+        "to sell",
+        "to break",
+        "to clean"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Quiero comprar un plato azul para casa.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "comprar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/102a76cce610449c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "azul",
+    "sentence": "El mar y el cielo son de color _____.",
+    "payload": {
+      "answer": "azul",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "azul",
+        "rojo",
+        "verde",
+        "negro"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El mar y el cielo son de color azul.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "azul",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e15c123ee6203408.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The sea and the sky are _____ in color.",
+      "optionTranslations": [
+        "blue",
+        "red",
+        "green",
+        "black"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gente",
+    "sentence": "Mucha [[gente]] camina por la plaza.",
+    "payload": {
+      "answer": "people",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "people",
+        "animals",
+        "cars",
+        "houses"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Mucha gente camina por la plaza.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "gente",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1b8b2c4604041ab7.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pasear",
+    "sentence": "Ella [[pasea]] por el parque cada tarde.",
+    "payload": {
+      "answer": "to stroll",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to stroll",
+        "to run",
+        "to drive",
+        "to sleep"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella pasea por el parque cada tarde.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "pasea",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2df74e215be94f3b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "vende",
+    "sentence": "En el mercado, ella _____ frutas y verduras.",
+    "payload": {
+      "answer": "vende",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "vende",
+        "lava",
+        "rompe",
+        "pinta"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En el mercado, ella vende frutas y verduras.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "vende",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16ca8cc13172095e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "At the market, she _____ fruits and vegetables.",
+      "optionTranslations": [
+        "sells",
+        "washes",
+        "breaks",
+        "paints"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerámica",
+    "sentence": "La tienda vende platos de [[cerámica]] azul.",
+    "payload": {
+      "answer": "ceramics",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "ceramics",
+        "glass",
+        "paper",
+        "wood"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La tienda vende platos de cerámica azul.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "cerámica",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/232a59dc5f0fbc02.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tarde",
+    "sentence": "Por la [[tarde]] tomamos café juntos.",
+    "payload": {
+      "answer": "the afternoon",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the afternoon",
+        "the morning",
+        "the night",
+        "the week"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Por la tarde tomamos café juntos.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "tarde",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/684e64f39a731d9a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calle",
+    "sentence": "Los coches pasan por la [[calle]] principal.",
+    "payload": {
+      "answer": "a street",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a street",
+        "a river",
+        "a bridge",
+        "a garden"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los coches pasan por la calle principal.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "calle",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c3c5f1a68e5a8cf4.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tranquilo",
+    "sentence": "El río está muy [[tranquilo]] esta tarde.",
+    "payload": {
+      "answer": "calm",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "calm",
+        "loud",
+        "dirty",
+        "cold"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El río está muy tranquilo esta tarde.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "tranquilo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cab3656a7f31c0c1.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pasar",
+    "sentence": "Un barco pequeño [[pasa]] por el río.",
+    "payload": {
+      "answer": "to go by",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to go by",
+        "to stop",
+        "to sink",
+        "to wait"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Un barco pequeño pasa por el río.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "pasa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d3d206d2bd07384b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "color",
+    "sentence": "Los platos tienen muchos [[colores]] bonitos.",
+    "payload": {
+      "answer": "a color",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a color",
+        "a shape",
+        "a price",
+        "a word"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los platos tienen muchos colores bonitos.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "colores",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/592305d21656aa68.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "madre",
+    "sentence": "Compro un regalo para mi [[madre]].",
+    "payload": {
+      "answer": "a mother",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a mother",
+        "a sister",
+        "a daughter",
+        "a friend"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Compro un regalo para mi madre.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "madre",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1f3756277a4b734f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sentarse",
+    "sentence": "Nos [[sentamos]] cerca del río a descansar.",
+    "payload": {
+      "answer": "to sit down",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to sit down",
+        "to stand up",
+        "to lie down",
+        "to walk"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Nos sentamos cerca del río a descansar.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "sentamos",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8064fc9bb7ee482a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuidado",
+    "sentence": "Guardo el plato con mucho [[cuidado]].",
+    "payload": {
+      "answer": "care",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "care",
+        "hurry",
+        "noise",
+        "fear"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Guardo el plato con mucho cuidado.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "cuidado",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/44ccc24e6b13552b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cielo",
+    "sentence": "Las estrellas brillan en el _____ de noche.",
+    "payload": {
+      "answer": "cielo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "cielo",
+        "suelo",
+        "muro",
+        "piso"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las estrellas brillan en el cielo de noche.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "cielo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e9f14c6a2640ff3e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The stars shine in the _____ at night.",
+      "optionTranslations": [
+        "sky",
+        "floor",
+        "wall",
+        "ground"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cruzar",
+    "sentence": "Miro los dos lados antes de _____ la calle.",
+    "payload": {
+      "answer": "cruzar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "cruzar",
+        "pintar",
+        "abrir",
+        "subir"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Miro los dos lados antes de cruzar la calle.",
+        "storySlug": "triana-y-su-ceramica-azul",
+        "targetWord": "cruzar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8fe861b87c87a1aa.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I look both ways before I _____ the street.",
+      "optionTranslations": [
+        "to cross",
+        "to paint",
+        "to open",
+        "to go up"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "barco,plato,taza,flor",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "barco",
+          "answer": "a boat",
+          "options": [
+            "a boat",
+            "a plate",
+            "a cup",
+            "a flower"
+          ]
+        },
+        {
+          "word": "plato",
+          "answer": "a plate",
+          "options": [
+            "a boat",
+            "a plate",
+            "a cup",
+            "a flower"
+          ]
+        },
+        {
+          "word": "taza",
+          "answer": "a cup",
+          "options": [
+            "a boat",
+            "a plate",
+            "a cup",
+            "a flower"
+          ]
+        },
+        {
+          "word": "flor",
+          "answer": "a flower",
+          "options": [
+            "a boat",
+            "a plate",
+            "a cup",
+            "a flower"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "platos",
+    "sentence": "La tienda vende [[platos]] de cerámica azul.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "plates",
+      "options": [
+        "plates",
+        "spoons",
+        "cups",
+        "knives"
+      ],
+      "audioClip": {
+        "storySlug": "triana-y-su-ceramica-azul",
+        "storySource": "user",
+        "sentence": "La tienda vende platos de cerámica azul.",
+        "targetWord": "platos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/232a59dc5f0fbc02.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "flores",
+    "sentence": "Una señora vende [[flores]] de muchos colores.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "flowers",
+      "options": [
+        "flowers",
+        "fruits",
+        "trees",
+        "stones"
+      ],
+      "audioClip": {
+        "storySlug": "triana-y-su-ceramica-azul",
+        "storySource": "user",
+        "sentence": "Una señora vende flores de muchos colores.",
+        "targetWord": "flores",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4c2b5a27b66365af.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sientan",
+    "sentence": "Carmen y Lucía se [[sientan]] cerca del río.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sit down",
+      "options": [
+        "sit down",
+        "stand up",
+        "walk away",
+        "lie down"
+      ],
+      "audioClip": {
+        "storySlug": "triana-y-su-ceramica-azul",
+        "storySource": "user",
+        "sentence": "Carmen y Lucía se sientan cerca del río.",
+        "targetWord": "sientan",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8cad11b11368ab24.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

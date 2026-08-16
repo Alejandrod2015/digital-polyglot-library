@@ -1,0 +1,590 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "pesce,verdura,cena,negozio",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "pesce",
+     "answer": "fish",
+     "options": [
+      "fish",
+      "vegetables",
+      "dinner",
+      "shop"
+     ]
+    },
+    {
+     "word": "verdura",
+     "answer": "vegetables",
+     "options": [
+      "fish",
+      "vegetables",
+      "dinner",
+      "shop"
+     ]
+    },
+    {
+     "word": "cena",
+     "answer": "dinner",
+     "options": [
+      "fish",
+      "vegetables",
+      "dinner",
+      "shop"
+     ]
+    },
+    {
+     "word": "negozio",
+     "answer": "shop",
+     "options": [
+      "fish",
+      "vegetables",
+      "dinner",
+      "shop"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "migliore",
+  "sentence": "Sara è la [[migliore]] amica di Elena.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "best",
+   "options": [
+    "best",
+    "worst",
+    "newest",
+    "kindest"
+   ],
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Sara è la migliore amica di Elena.",
+    "targetWord": "migliore",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "pieno",
+  "sentence": "Il mercato è [[pieno]] di gente e di colori.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "full",
+   "options": [
+    "full",
+    "empty",
+    "dark",
+    "quiet"
+   ],
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Il mercato è pieno di gente e di colori.",
+    "targetWord": "pieno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "fresco",
+  "sentence": "Sara compra del pesce [[fresco]] al mercato.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fresh",
+   "options": [
+    "fresh",
+    "old",
+    "sweet",
+    "dry"
+   ],
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Sara compra del pesce fresco al mercato.",
+    "targetWord": "fresco",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "nascosta",
+  "sentence": "Elena trova una libreria [[nascosta]] in un campo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hidden",
+   "options": [
+    "hidden",
+    "famous",
+    "open",
+    "big"
+   ],
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Elena trova una libreria nascosta in un campo.",
+    "targetWord": "nascosta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "vanno",
+  "sentence": "Oggi le due donne _____ al mercato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vanno",
+   "options": [
+    "vanno",
+    "tornano",
+    "entrano",
+    "perdono"
+   ],
+   "optionTranslations": [
+    "go",
+    "go back",
+    "enter",
+    "get lost"
+   ],
+   "translation": "Today the two women _____ to the market.",
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Oggi le due donne vanno al mercato.",
+    "targetWord": "vanno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "compra",
+  "sentence": "Sara _____ del pesce fresco.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "compra",
+   "options": [
+    "compra",
+    "sceglie",
+    "trova",
+    "entra"
+   ],
+   "optionTranslations": [
+    "buys",
+    "chooses",
+    "finds",
+    "enters"
+   ],
+   "translation": "Sara _____ some fresh fish.",
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Sara compra del pesce fresco.",
+    "targetWord": "compra",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "sceglie",
+  "sentence": "Elena _____ alcuni limoni gialli.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sceglie",
+   "options": [
+    "sceglie",
+    "compra",
+    "trova",
+    "apre"
+   ],
+   "optionTranslations": [
+    "chooses",
+    "buys",
+    "finds",
+    "opens"
+   ],
+   "translation": "Elena _____ some yellow lemons.",
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Elena sceglie alcuni limoni gialli.",
+    "targetWord": "sceglie",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "trova",
+  "sentence": "Elena _____ una piccola libreria nascosta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "trova",
+   "options": [
+    "trova",
+    "compra",
+    "sceglie",
+    "entra"
+   ],
+   "optionTranslations": [
+    "finds",
+    "buys",
+    "chooses",
+    "enters"
+   ],
+   "translation": "Elena _____ a small hidden bookshop.",
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Elena trova una piccola libreria nascosta.",
+    "targetWord": "trova",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "libri",
+  "sentence": "Elena guarda i vecchi _____ sugli scaffali.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "libri",
+   "options": [
+    "libri",
+    "limoni",
+    "pesci",
+    "banchi"
+   ],
+   "optionTranslations": [
+    "books",
+    "lemons",
+    "fish",
+    "stalls"
+   ],
+   "translation": "Elena looks at the old _____ on the shelves.",
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Elena guarda i vecchi libri sugli scaffali.",
+    "targetWord": "libri",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "buie",
+  "sentence": "Le strade diventano [[buie]] e vuote.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dark",
+   "options": [
+    "dark",
+    "bright",
+    "wide",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Le strade diventano buie e vuote.",
+    "targetWord": "buie",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "vuote",
+  "sentence": "Le strade sono buie e [[vuote]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "empty",
+   "options": [
+    "empty",
+    "full",
+    "clean",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Le strade sono buie e vuote.",
+    "targetWord": "vuote",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "gente",
+  "sentence": "Il mercato è pieno di [[gente]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "people",
+   "options": [
+    "people",
+    "fish",
+    "water",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Il mercato è pieno di gente.",
+    "targetWord": "gente",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "campo",
+  "sentence": "La libreria è in un [[campo]] tranquillo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small square",
+   "options": [
+    "small square",
+    "narrow street",
+    "big bridge",
+    "open sea"
+   ],
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "La libreria è in un campo tranquillo.",
+    "targetWord": "campo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "calli",
+  "sentence": "Le amiche si perdono tra le [[calli]] strette.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "narrow streets",
+   "options": [
+    "narrow streets",
+    "tall houses",
+    "old boats",
+    "green fields"
+   ],
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Le amiche si perdono tra le calli strette.",
+    "targetWord": "calli",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "limoni",
+  "sentence": "Elena sceglie alcuni _____ gialli per la cena.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "limoni",
+   "options": [
+    "limoni",
+    "pesci",
+    "libri",
+    "banchi"
+   ],
+   "optionTranslations": [
+    "lemons",
+    "fish",
+    "books",
+    "stalls"
+   ],
+   "translation": "Elena chooses some yellow _____ for dinner.",
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Elena sceglie alcuni limoni gialli per la cena.",
+    "targetWord": "limoni",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "banchi",
+  "sentence": "I _____ del pesce sono colorati.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "banchi",
+   "options": [
+    "banchi",
+    "limoni",
+    "libri",
+    "calli"
+   ],
+   "optionTranslations": [
+    "stalls",
+    "lemons",
+    "books",
+    "alleys"
+   ],
+   "translation": "The fish _____ are colorful.",
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "I banchi del pesce sono colorati.",
+    "targetWord": "banchi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "entrano",
+  "sentence": "Le due amiche _____ nel negozio silenzioso.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "entrano",
+   "options": [
+    "entrano",
+    "tornano",
+    "vanno",
+    "perdono"
+   ],
+   "optionTranslations": [
+    "enter",
+    "go back",
+    "go",
+    "get lost"
+   ],
+   "translation": "The two friends _____ the quiet shop.",
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Le due amiche entrano nel negozio silenzioso.",
+    "targetWord": "entrano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "tornano",
+  "sentence": "Poi le due amiche _____ a casa contente.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tornano",
+   "options": [
+    "tornano",
+    "entrano",
+    "vanno",
+    "comprano"
+   ],
+   "optionTranslations": [
+    "go back",
+    "enter",
+    "go",
+    "buy"
+   ],
+   "translation": "Then the two friends _____ home happy.",
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Poi le due amiche tornano a casa contente.",
+    "targetWord": "tornano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "perdono",
+  "sentence": "Le amiche si _____ tra le calli strette.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "perdono",
+   "options": [
+    "perdono",
+    "tornano",
+    "entrano",
+    "trovano"
+   ],
+   "optionTranslations": [
+    "get lost",
+    "go back",
+    "enter",
+    "find"
+   ],
+   "translation": "The friends _____ among the narrow alleys.",
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Le amiche si perdono tra le calli strette.",
+    "targetWord": "perdono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "strade",
+  "sentence": "Le _____ diventano buie e vuote.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "strade",
+   "options": [
+    "strade",
+    "calli",
+    "case",
+    "banchi"
+   ],
+   "optionTranslations": [
+    "streets",
+    "alleys",
+    "houses",
+    "stalls"
+   ],
+   "translation": "The _____ become dark and empty.",
+   "audioClip": {
+    "storySlug": "il-mercato-di-rialto",
+    "storySource": "user",
+    "sentence": "Le strade diventano buie e vuote.",
+    "targetWord": "strade",
+    "language": "italian"
+   }
+  }
+ }
+]

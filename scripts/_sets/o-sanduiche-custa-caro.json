@@ -1,0 +1,507 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "cartaz,carteira,prato,bolso",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cartaz",
+          "answer": "a sign",
+          "options": [
+            "a sign",
+            "a wallet",
+            "a plate",
+            "a pocket"
+          ]
+        },
+        {
+          "word": "carteira",
+          "answer": "a wallet",
+          "options": [
+            "a sign",
+            "a wallet",
+            "a plate",
+            "a pocket"
+          ]
+        },
+        {
+          "word": "prato",
+          "answer": "a plate",
+          "options": [
+            "a sign",
+            "a wallet",
+            "a plate",
+            "a pocket"
+          ]
+        },
+        {
+          "word": "bolso",
+          "answer": "a pocket",
+          "options": [
+            "a sign",
+            "a wallet",
+            "a plate",
+            "a pocket"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mortadela",
+    "sentence": "Ela pede um sanduíche de [[mortadela]] no balcão do mercado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cold pink meat",
+      "options": [
+        "cold pink meat",
+        "white cheese",
+        "fried fish",
+        "sweet cream"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "Ela pede um sanduíche de mortadela no balcão do mercado.",
+        "targetWord": "mortadela",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c5a36eadd0b49165.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "somar",
+    "sentence": "Ela [[soma]] os números na cabeça e o total não muda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to add up",
+      "options": [
+        "to add up",
+        "to divide",
+        "to forget",
+        "to write"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "Ela soma os números na cabeça e o total não muda.",
+        "targetWord": "soma",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8dfb5381914127a8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "térreo",
+    "sentence": "A padaria fica no [[térreo]], embaixo da escada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the ground floor",
+      "options": [
+        "the ground floor",
+        "the roof",
+        "the basement",
+        "the balcony"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "A padaria fica no térreo, embaixo da escada.",
+        "targetWord": "térreo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b88ac563562f0b5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pastel",
+    "sentence": "Uma banca vende [[pastel]] de bacalhau por nove reais.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fried pastry",
+      "options": [
+        "a fried pastry",
+        "a cold soup",
+        "a green salad",
+        "a sweet cake"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "Uma banca vende pastel de bacalhau por nove reais.",
+        "targetWord": "pastel",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/484e9295135a8790.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bacalhau",
+    "sentence": "Uma banca vende pastel de [[bacalhau]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "salt cod",
+      "options": [
+        "salt cod",
+        "chicken",
+        "beef",
+        "cheese"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "Uma banca vende pastel de bacalhau.",
+        "targetWord": "bacalhau",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ecb2cf8395fe7708.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "salgado",
+    "sentence": "O pastel de bacalhau é bem _____, não doce.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "salgado",
+      "options": [
+        "salgado",
+        "doce",
+        "frio",
+        "leve"
+      ],
+      "translation": "The salt cod pastry is very _____, not sweet.",
+      "optionTranslations": [
+        "salty",
+        "sweet",
+        "cold",
+        "light"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "O pastel de bacalhau é bem salgado, não doce.",
+        "targetWord": "salgado",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e60690c45f0f1199.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "levantar",
+    "sentence": "Ela [[levanta]] os olhos e vê o homem do sanduíche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lift",
+      "options": [
+        "to lift",
+        "to lower",
+        "to close",
+        "to turn"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "Ela levanta os olhos e vê o homem do sanduíche.",
+        "targetWord": "levanta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f2d9f1971210ddf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vitral",
+    "sentence": "A luz dos [[vitrais]] cai colorida sobre o prato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a stained-glass window",
+      "options": [
+        "a stained-glass window",
+        "a mirror",
+        "a lamp",
+        "a curtain"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "A luz dos vitrais cai colorida sobre o prato.",
+        "targetWord": "vitrais",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/550129bda3561a3e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saída",
+    "sentence": "Ela coloca o troco no bolso e caminha para a [[saída]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the exit",
+      "options": [
+        "the exit",
+        "the kitchen",
+        "the queue",
+        "the till"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "Ela coloca o troco no bolso e caminha para a saída.",
+        "targetWord": "saída",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30c71ddac7aad386.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "número",
+    "sentence": "Ela soma os [[números]] na cabeça.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a number",
+      "options": [
+        "a number",
+        "a letter",
+        "a name",
+        "a word"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "Ela soma os números na cabeça.",
+        "targetWord": "números",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/334a852670bacdab.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nota",
+    "sentence": "Ela abre a carteira e conta duas [[notas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a banknote",
+      "options": [
+        "a banknote",
+        "a coin",
+        "a card",
+        "a receipt"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "Ela abre a carteira e conta duas notas.",
+        "targetWord": "notas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cbcc35807dd45295.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escada",
+    "sentence": "Ela desce a [[escada]] para o andar de baixo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stairs",
+      "options": [
+        "stairs",
+        "a door",
+        "a bridge",
+        "a window"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "Ela desce a escada para o andar de baixo.",
+        "targetWord": "escada",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e312fc9800360149.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "andar",
+    "sentence": "Ela desce a escada para o [[andar]] de baixo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a floor",
+      "options": [
+        "a floor",
+        "a street",
+        "a room",
+        "a corner"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "Ela desce a escada para o andar de baixo.",
+        "targetWord": "andar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e312fc9800360149.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "banca",
+    "sentence": "No térreo uma [[banca]] vende pastel de bacalhau.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a market stand",
+      "options": [
+        "a market stand",
+        "a school",
+        "a bank",
+        "a garden"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "No térreo uma banca vende pastel de bacalhau.",
+        "targetWord": "banca",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b65d0e61a27d546a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "coluna",
+    "sentence": "Ela come de pé, encostada numa [[coluna]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a pillar",
+      "options": [
+        "a pillar",
+        "a table",
+        "a chair",
+        "a wall"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "Ela come de pé, encostada numa coluna.",
+        "targetWord": "coluna",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a90eab241d231d02.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mesa",
+    "sentence": "Ela vê o homem do sanduíche numa [[mesa]] alta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a table",
+      "options": [
+        "a table",
+        "a bed",
+        "a shelf",
+        "a box"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "Ela vê o homem do sanduíche numa mesa alta.",
+        "targetWord": "mesa",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4426a0c979d3f7c9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "luz",
+    "sentence": "A [[luz]] entra pela janela alta e cai no prato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "light",
+      "options": [
+        "light",
+        "smoke",
+        "water",
+        "dust"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "A luz entra pela janela alta e cai no prato.",
+        "targetWord": "luz",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0bbc7278504aa20e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colorido",
+    "sentence": "As janelas antigas deixam o chão [[colorido]] de manhã.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "colourful",
+      "options": [
+        "colourful",
+        "grey",
+        "dark",
+        "pale"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "As janelas antigas deixam o chão colorido de manhã.",
+        "targetWord": "colorido",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb66d9a1811b475e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "boca",
+    "sentence": "Ela sai na rua com o gosto de bacalhau na [[boca]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the mouth",
+      "options": [
+        "the mouth",
+        "the hand",
+        "the nose",
+        "the ear"
+      ],
+      "audioClip": {
+        "storySlug": "o-sanduiche-custa-caro",
+        "storySource": "user",
+        "sentence": "Ela sai na rua com o gosto de bacalhau na boca.",
+        "targetWord": "boca",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d31a31c0f42e4821.mp3"
+      }
+    },
+    "featured": false
+  }
+]

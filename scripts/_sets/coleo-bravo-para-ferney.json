@@ -1,0 +1,623 @@
+[
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "manga de coleo",
+    "sentence": "El polvo cubría la [[manga de coleo]] llena de jinetes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the fenced track where riders chase the bull",
+      "options": [
+        "the fenced track where riders chase the bull",
+        "a bullring for matadors",
+        "a horse stable",
+        "a market square"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "El polvo cubría la manga de coleo llena de jinetes.",
+        "targetWord": "manga de coleo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1583476f6e4b9901.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "arriesgado",
+    "sentence": "Ferney era un coleador joven y muy [[arriesgado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "willing to take big risks",
+      "options": [
+        "willing to take big risks",
+        "calm and careful",
+        "lazy and slow",
+        "shy and quiet"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "Ferney era un coleador joven y muy arriesgado.",
+        "targetWord": "arriesgado",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/27019d3098e2749c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "bravo",
+    "sentence": "El coleo es un deporte [[bravo]] y peligroso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fierce and wild",
+      "options": [
+        "fierce and wild",
+        "gentle and calm",
+        "cheap and easy",
+        "cold and wet"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "El coleo es un deporte bravo y peligroso.",
+        "targetWord": "bravo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/678c6b271d1e5a96.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "coronar",
+    "sentence": "El jinete que [[coronó]] tumbó el toro antes de la raya.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to complete the winning move",
+      "options": [
+        "to complete the winning move",
+        "to lose the match",
+        "to fall off the horse",
+        "to feed the bull"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "El jinete que coronó tumbó el toro antes de la raya.",
+        "targetWord": "coronó",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/637718d38ae11073.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "recio",
+    "sentence": "En el altavoz sonaba un joropo [[recio]] y fuerte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strong with a powerful beat",
+      "options": [
+        "strong with a powerful beat",
+        "soft and slow",
+        "sad and quiet",
+        "short and simple"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "En el altavoz sonaba un joropo recio y fuerte.",
+        "targetWord": "recio",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/38568608babd4d6a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "marrajo",
+    "sentence": "Ese toro es [[marrajo]] y busca cómo herirte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sly and dangerous",
+      "options": [
+        "sly and dangerous",
+        "old and tired",
+        "tame and friendly",
+        "small and weak"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "Ese toro es marrajo y busca cómo herirte.",
+        "targetWord": "marrajo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ca9a14c8d38d194d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "tener güevos",
+    "sentence": "Para coronar ese toro hay que [[tener güevos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to have the guts to face danger",
+      "options": [
+        "to have the guts to face danger",
+        "to know the rules well",
+        "to own a good horse",
+        "to be very lucky"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "Para coronar ese toro hay que tener güevos.",
+        "targetWord": "tener güevos",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8dfe78cb6c54356.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "nudo en la garganta",
+    "sentence": "Manu sintió un [[nudo en la garganta]] por el miedo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tight lump in your throat from fear",
+      "options": [
+        "a tight lump in your throat from fear",
+        "a sudden sharp headache",
+        "a burst of happiness",
+        "a loud angry shout"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "Manu sintió un nudo en la garganta por el miedo.",
+        "targetWord": "nudo en la garganta",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a296002b17d57afa.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "jugarse el pellejo",
+    "sentence": "Ferney iba a [[jugarse el pellejo]] por puro orgullo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to risk your own skin",
+      "options": [
+        "to risk your own skin",
+        "to waste your money",
+        "to lose your temper",
+        "to change your mind"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "Ferney iba a jugarse el pellejo por puro orgullo.",
+        "targetWord": "jugarse el pellejo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/503241a6c8e65e86.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "la afición",
+    "sentence": "La [[afición]] entera gritaba el nombre de Ferney.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the crowd of loyal fans",
+      "options": [
+        "the crowd of loyal fans",
+        "the team of players",
+        "the group of judges",
+        "the line of vendors"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "La afición entera gritaba el nombre de Ferney.",
+        "targetWord": "afición",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/541e71bc8de8c55f.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "featured": false,
+    "word": "la mamona,la hallaca,la baranda,el orgullo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "la mamona",
+          "answer": "roasted young veal, a llanero dish",
+          "options": [
+            "roasted young veal, a llanero dish",
+            "a corn parcel wrapped in leaves",
+            "the fence keeping the crowd back",
+            "pride in your people and land"
+          ]
+        },
+        {
+          "word": "la hallaca",
+          "answer": "a corn parcel wrapped in leaves",
+          "options": [
+            "roasted young veal, a llanero dish",
+            "a corn parcel wrapped in leaves",
+            "the fence keeping the crowd back",
+            "pride in your people and land"
+          ]
+        },
+        {
+          "word": "la baranda",
+          "answer": "the fence keeping the crowd back",
+          "options": [
+            "roasted young veal, a llanero dish",
+            "a corn parcel wrapped in leaves",
+            "the fence keeping the crowd back",
+            "pride in your people and land"
+          ]
+        },
+        {
+          "word": "el orgullo",
+          "answer": "pride in your people and land",
+          "options": [
+            "roasted young veal, a llanero dish",
+            "a corn parcel wrapped in leaves",
+            "the fence keeping the crowd back",
+            "pride in your people and land"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el jinete",
+    "sentence": "El primer ____ salió disparado tras el toro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el jinete",
+      "options": [
+        "el jinete",
+        "el vaquero",
+        "el torero",
+        "el árbitro"
+      ],
+      "translation": "The first ____ shot out after the bull.",
+      "optionTranslations": [
+        "horseman",
+        "cowhand",
+        "bullfighter",
+        "referee"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "El primer jinete salió disparado tras el toro.",
+        "targetWord": "el jinete",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a521cc6e728e8703.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el coleador",
+    "sentence": "____ persiguió al toro para tumbarlo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el coleador",
+      "options": [
+        "el coleador",
+        "el ganadero",
+        "el peón",
+        "el juez"
+      ],
+      "translation": "____ chased the bull to bring it down.",
+      "optionTranslations": [
+        "the bull-tailer",
+        "the rancher",
+        "the farmhand",
+        "the judge"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "El coleador persiguió al toro para tumbarlo.",
+        "targetWord": "el coleador",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b508d8e21257e10c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "la raya",
+    "sentence": "Hay que tumbar el toro antes de ____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "la raya",
+      "options": [
+        "la raya",
+        "la puerta",
+        "la baranda",
+        "la esquina"
+      ],
+      "translation": "You must topple the bull before ____.",
+      "optionTranslations": [
+        "the line",
+        "the gate",
+        "the railing",
+        "the corner"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "Hay que tumbar el toro antes de la raya.",
+        "targetWord": "la raya",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/887c0335eba48205.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "piafar",
+    "sentence": "Los caballos empezaron a ____ impacientes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "piafar",
+      "options": [
+        "piafar",
+        "relinchar",
+        "galopar",
+        "cocear"
+      ],
+      "translation": "The horses began to ____ impatiently.",
+      "optionTranslations": [
+        "paw the ground",
+        "neigh",
+        "gallop",
+        "kick"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "Los caballos empezaron a piafar impacientes.",
+        "targetWord": "piafar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/819b68618ccaa74a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "persignarse",
+    "sentence": "Ferney solía ____ antes de cada carrera.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "persignarse",
+      "options": [
+        "persignarse",
+        "arrodillarse",
+        "descansar",
+        "rezar"
+      ],
+      "translation": "Ferney used to ____ before every race.",
+      "optionTranslations": [
+        "cross himself",
+        "kneel down",
+        "rest",
+        "pray"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "Ferney solía persignarse antes de cada carrera.",
+        "targetWord": "persignarse",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/278d817be932a777.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "bufar",
+    "sentence": "El toro empezó a ____ con mucha rabia.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bufar",
+      "options": [
+        "bufar",
+        "mugir",
+        "gruñir",
+        "resoplar"
+      ],
+      "translation": "The bull began to ____ with great fury.",
+      "optionTranslations": [
+        "snort",
+        "moo",
+        "growl",
+        "huff"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "El toro empezó a bufar con mucha rabia.",
+        "targetWord": "bufar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/94a031906763492e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "escarbar",
+    "sentence": "El animal se puso a ____ la tierra con furia.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escarbar",
+      "options": [
+        "escarbar",
+        "pisotear",
+        "olfatear",
+        "lamer"
+      ],
+      "translation": "The animal started to ____ the ground with fury.",
+      "optionTranslations": [
+        "dig at",
+        "trample",
+        "sniff",
+        "lick"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "El animal se puso a escarbar la tierra con furia.",
+        "targetWord": "escarbar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/87f1ad8e87588215.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "el frenazo",
+    "sentence": "De repente llegó ____ seco del toro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "el frenazo",
+      "options": [
+        "el frenazo",
+        "el empujón",
+        "el salto",
+        "el tropiezo"
+      ],
+      "translation": "Suddenly came ____ of the bull.",
+      "optionTranslations": [
+        "the sharp stop",
+        "the shove",
+        "the jump",
+        "the stumble"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "De repente llegó el frenazo seco del toro.",
+        "targetWord": "el frenazo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/59af01f78054fca7.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "trastabillar",
+    "sentence": "El caballo empezó a ____ y casi se cae.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "trastabillar",
+      "options": [
+        "trastabillar",
+        "galopar",
+        "relinchar",
+        "descansar"
+      ],
+      "translation": "The horse began to ____ and almost fell.",
+      "optionTranslations": [
+        "stumble",
+        "gallop",
+        "neigh",
+        "rest"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "El caballo empezó a trastabillar y casi se cae.",
+        "targetWord": "trastabillar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3be06040f5a81ca9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "montar",
+    "sentence": "El coleador debe ____ el caballo con firmeza.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "montar",
+      "options": [
+        "montar",
+        "amarrar",
+        "arrear",
+        "cepillar"
+      ],
+      "translation": "The rider must ____ the horse firmly.",
+      "optionTranslations": [
+        "ride",
+        "tie",
+        "herd",
+        "brush"
+      ],
+      "audioClip": {
+        "storySlug": "coleo-bravo-para-ferney",
+        "storySource": "user",
+        "sentence": "El coleador debe montar el caballo con firmeza.",
+        "targetWord": "montar",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a67ba64516fde0d9.mp3"
+      }
+    }
+  }
+]

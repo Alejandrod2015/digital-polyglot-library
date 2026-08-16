@@ -1,0 +1,555 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "chiesa,sciarpa,scatola,candela",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "chiesa",
+          "answer": "a church",
+          "options": [
+            "a church",
+            "a scarf",
+            "a box",
+            "a candle"
+          ]
+        },
+        {
+          "word": "sciarpa",
+          "answer": "a scarf",
+          "options": [
+            "a church",
+            "a scarf",
+            "a box",
+            "a candle"
+          ]
+        },
+        {
+          "word": "scatola",
+          "answer": "a box",
+          "options": [
+            "a church",
+            "a scarf",
+            "a box",
+            "a candle"
+          ]
+        },
+        {
+          "word": "candela",
+          "answer": "a candle",
+          "options": [
+            "a church",
+            "a scarf",
+            "a box",
+            "a candle"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vestito",
+    "sentence": "Lei porta un [[vestito]] senza maniche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a dress",
+      "options": [
+        "a dress",
+        "a coat",
+        "a hat",
+        "a bag"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Lei porta un vestito senza maniche.",
+        "targetWord": "vestito",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3596fe7d8a2d0ed6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "manica",
+    "sentence": "Il vestito non ha [[maniche]] sulle braccia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sleeves",
+      "options": [
+        "sleeves",
+        "pockets",
+        "buttons",
+        "shoes"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Il vestito non ha maniche sulle braccia.",
+        "targetWord": "maniche",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/54d487d798d93001.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ingresso",
+    "sentence": "Un uomo all'[[ingresso]] la ferma un momento.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the entrance",
+      "options": [
+        "the entrance",
+        "the kitchen",
+        "the roof",
+        "the garden"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Un uomo all'ingresso la ferma un momento.",
+        "targetWord": "ingresso",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4c544c281764628c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "disegno",
+    "sentence": "Il cartello ha due [[disegni]] e nessuna parola.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "drawings",
+      "options": [
+        "drawings",
+        "prices",
+        "names",
+        "doors"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Il cartello ha due disegni e nessuna parola.",
+        "targetWord": "disegni",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32637e85efbbee95.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "addosso",
+    "sentence": "Lei se la mette [[addosso]] e passa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on her body",
+      "options": [
+        "on her body",
+        "under the seat",
+        "inside the bag",
+        "behind the door"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Lei se la mette addosso e passa.",
+        "targetWord": "addosso",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b5a5c467a9781e1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "silenzio",
+    "sentence": "Il [[silenzio]] arriva prima degli occhi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the silence",
+      "options": [
+        "the silence",
+        "the smell",
+        "the cold",
+        "the crowd"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Il silenzio arriva prima degli occhi.",
+        "targetWord": "silenzio",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/607ea043de6cdbdf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "affresco",
+    "sentence": "L'[[affresco]] è scuro e molto antico.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a wall painting",
+      "options": [
+        "a wall painting",
+        "a stone floor",
+        "a glass window",
+        "a wooden door"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "L'affresco è scuro e molto antico.",
+        "targetWord": "affresco",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8763df36a7aaed70.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "piegare",
+    "sentence": "L'uomo la [[piega]] e la lascia pronta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "folds it",
+      "options": [
+        "folds it",
+        "tears it",
+        "sells it",
+        "washes it"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "L'uomo la piega e la lascia pronta.",
+        "targetWord": "piega",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/65226865ce596829.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "regola",
+    "sentence": "La _____ non parla di rispetto, però tutti la seguono.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "regola",
+      "options": [
+        "regola",
+        "fila",
+        "porta",
+        "chiave"
+      ],
+      "translation": "The _____ says nothing about respect, yet everybody follows it.",
+      "optionTranslations": [
+        "rule",
+        "queue",
+        "door",
+        "key"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "La regola non parla di rispetto, però tutti la seguono.",
+        "targetWord": "regola",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/225294647bcac325.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "braccio",
+    "sentence": "Dentro la chiesa le [[braccia]] stanno coperte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "arms",
+      "options": [
+        "arms",
+        "legs",
+        "eyes",
+        "ears"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Dentro la chiesa le braccia stanno coperte.",
+        "targetWord": "braccia",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d82ae985ac330f05.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aprire",
+    "sentence": "Lei [[apre]] lo zaino e cerca qualcosa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "opens",
+      "options": [
+        "opens",
+        "closes",
+        "sells",
+        "breaks"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Lei apre lo zaino e cerca qualcosa.",
+        "targetWord": "apre",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3d407d0034844f67.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trovare",
+    "sentence": "Dentro lei [[trova]] solo un ombrello.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "finds",
+      "options": [
+        "finds",
+        "loses",
+        "buys",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Dentro lei trova solo un ombrello.",
+        "targetWord": "trova",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d0957d25990cf60.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ombrello",
+    "sentence": "L'[[ombrello]] non serve per le spalle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the umbrella",
+      "options": [
+        "the umbrella",
+        "the towel",
+        "the bottle",
+        "the ticket"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "L'ombrello non serve per le spalle.",
+        "targetWord": "ombrello",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e4b34de2b246721a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bottiglia",
+    "sentence": "Nello zaino c'è anche una [[bottiglia]] d'acqua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bottle",
+      "options": [
+        "a bottle",
+        "a book",
+        "a plate",
+        "a shoe"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Nello zaino c'è anche una bottiglia d'acqua.",
+        "targetWord": "bottiglia",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8d538a6940be378f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "azzurro",
+    "sentence": "La sciarpa di carta è [[azzurra]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "light blue",
+      "options": [
+        "light blue",
+        "dark red",
+        "bright green",
+        "pale yellow"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "La sciarpa di carta è azzurra.",
+        "targetWord": "azzurra",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/acb5ba27d17e89af.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aria",
+    "sentence": "Dentro la chiesa l'[[aria]] è fresca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the air",
+      "options": [
+        "the air",
+        "the light",
+        "the floor",
+        "the noise"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Dentro la chiesa l'aria è fresca.",
+        "targetWord": "aria",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5397a0b244db4d46.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "occhio",
+    "sentence": "Gli [[occhi]] si abituano al buio dopo un minuto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the eyes",
+      "options": [
+        "the eyes",
+        "the hands",
+        "the feet",
+        "the ears"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Gli occhi si abituano al buio dopo un minuto.",
+        "targetWord": "occhi",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5786ad3e9748cd84.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bruciare",
+    "sentence": "Le candele [[bruciano]] davanti all'affresco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "burn",
+      "options": [
+        "burn",
+        "fall",
+        "shine",
+        "melt"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Le candele bruciano davanti all'affresco.",
+        "targetWord": "bruciano",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85128648c7dd7e8d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "antico",
+    "sentence": "Il dipinto è [[antico]] e un po' rovinato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ancient",
+      "options": [
+        "ancient",
+        "modern",
+        "cheap",
+        "bright"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Il dipinto è antico e un po' rovinato.",
+        "targetWord": "antico",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e9d811edeecf67bf.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pavimento",
+    "sentence": "Il [[pavimento]] manda un suono lungo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the floor",
+      "options": [
+        "the floor",
+        "the roof",
+        "the wall",
+        "the bench"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "Il pavimento manda un suono lungo.",
+        "targetWord": "pavimento",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cea24fd721fee55c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "uscita",
+    "sentence": "All'[[uscita]] lei restituisce la sciarpa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the exit",
+      "options": [
+        "the exit",
+        "the entrance",
+        "the corner",
+        "the queue"
+      ],
+      "audioClip": {
+        "storySlug": "niente-spalle-scoperte",
+        "storySource": "user",
+        "sentence": "All'uscita lei restituisce la sciarpa.",
+        "targetWord": "uscita",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d0b74e8cd605f2ba.mp3"
+      }
+    },
+    "featured": false
+  }
+]

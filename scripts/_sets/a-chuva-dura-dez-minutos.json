@@ -1,0 +1,466 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "nuvem,palha,telhado,minuto",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "nuvem",
+          "answer": "a cloud",
+          "options": [
+            "a cloud",
+            "straw",
+            "a roof",
+            "a minute"
+          ]
+        },
+        {
+          "word": "palha",
+          "answer": "straw",
+          "options": [
+            "a cloud",
+            "straw",
+            "a roof",
+            "a minute"
+          ]
+        },
+        {
+          "word": "telhado",
+          "answer": "a roof",
+          "options": [
+            "a cloud",
+            "straw",
+            "a roof",
+            "a minute"
+          ]
+        },
+        {
+          "word": "minuto",
+          "answer": "a minute",
+          "options": [
+            "a cloud",
+            "straw",
+            "a roof",
+            "a minute"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chuva",
+    "sentence": "A [[chuva]] chega de uma vez, sem aviso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rain",
+      "options": [
+        "rain",
+        "wind",
+        "snow",
+        "dust"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "A chuva chega de uma vez, sem aviso.",
+        "targetWord": "chuva",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/725cfb0ae9e3fb2b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pingo",
+    "sentence": "A chuva chega de uma vez, sem [[pingo]] antes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a drop",
+      "options": [
+        "a drop",
+        "a sound",
+        "a cloud",
+        "a light"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "A chuva chega de uma vez, sem pingo antes.",
+        "targetWord": "pingo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f2f7938ab352f837.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "embaixo",
+    "sentence": "Quatro pessoas já estão [[embaixo]] do telhado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "underneath",
+      "options": [
+        "underneath",
+        "above",
+        "beside",
+        "behind"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "Quatro pessoas já estão embaixo do telhado.",
+        "targetWord": "embaixo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c18f41d57662ce9d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "molhado",
+    "sentence": "As pessoas do telhado estão todas [[molhadas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wet",
+      "options": [
+        "wet",
+        "dry",
+        "warm",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "As pessoas do telhado estão todas molhadas.",
+        "targetWord": "molhadas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/91bb45b6056db1a1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apertar",
+    "sentence": "Um homem [[aperta]] a mochila contra o peito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "presses",
+      "options": [
+        "presses",
+        "opens",
+        "lifts",
+        "drops"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "Um homem aperta a mochila contra o peito.",
+        "targetWord": "aperta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa0591246e22465d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gota",
+    "sentence": "As folhas mexem com o peso de cada [[gota]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a drop",
+      "options": [
+        "a drop",
+        "a leaf",
+        "a branch",
+        "a shadow"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "As folhas mexem com o peso de cada gota.",
+        "targetWord": "gota",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8fed2f06740ad98.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jeito",
+    "sentence": "A chuva para do mesmo [[jeito]] que começa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the way",
+      "options": [
+        "the way",
+        "the hour",
+        "the side",
+        "the price"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "A chuva para do mesmo jeito que começa.",
+        "targetWord": "jeito",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30341f29a9300c04.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vapor",
+    "sentence": "O sol volta e o [[vapor]] sobe do chão quente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "steam",
+      "options": [
+        "steam",
+        "smoke",
+        "dust",
+        "sand"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "O sol volta e o vapor sobe do chão quente.",
+        "targetWord": "vapor",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdf110d295623abc.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sobe",
+    "sentence": "O sol volta e o vapor _____ do chão quente.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sobe",
+      "options": [
+        "sobe",
+        "cai",
+        "seca",
+        "para"
+      ],
+      "translation": "The sun comes back and the steam _____ off the hot ground.",
+      "optionTranslations": [
+        "rises",
+        "falls",
+        "dries",
+        "stops"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "O sol volta e o vapor sobe do chão quente.",
+        "targetWord": "sobe",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdf110d295623abc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "subida",
+    "sentence": "Ela corre até um telhado no fim da [[subida]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the climb",
+      "options": [
+        "the climb",
+        "the beach",
+        "the bridge",
+        "the street"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "Ela corre até um telhado no fim da subida.",
+        "targetWord": "subida",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0bb4bc40ac36447c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "peito",
+    "sentence": "Um homem aperta a mochila contra o [[peito]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the chest",
+      "options": [
+        "the chest",
+        "the leg",
+        "the back",
+        "the head"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "Um homem aperta a mochila contra o peito.",
+        "targetWord": "peito",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa0591246e22465d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marrom",
+    "sentence": "A água desce a trilha e vira um rio [[marrom]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "brown",
+      "options": [
+        "brown",
+        "blue",
+        "white",
+        "green"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "A água desce a trilha e vira um rio marrom.",
+        "targetWord": "marrom",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbd3e7c0aa85f9f0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "folha",
+    "sentence": "As [[folhas]] grandes mexem com o peso da água.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a leaf",
+      "options": [
+        "a leaf",
+        "a stone",
+        "a bird",
+        "a rope"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "As folhas grandes mexem com o peso da água.",
+        "targetWord": "folhas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f84741b1a7742fae.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "peso",
+    "sentence": "As folhas mexem com o [[peso]] de cada gota.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the weight",
+      "options": [
+        "the weight",
+        "the colour",
+        "the smell",
+        "the price"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "As folhas mexem com o peso de cada gota.",
+        "targetWord": "peso",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8fed2f06740ad98.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frio",
+    "sentence": "Ela sente [[frio]] pela primeira vez no dia inteiro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cold",
+      "options": [
+        "cold",
+        "heat",
+        "hunger",
+        "fear"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "Ela sente frio pela primeira vez no dia inteiro.",
+        "targetWord": "frio",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/164d8683b5ba627b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lado",
+    "sentence": "Cada uma segue por um [[lado]] diferente da trilha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a side",
+      "options": [
+        "a side",
+        "an hour",
+        "a price",
+        "a name"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "Cada uma segue por um lado diferente da trilha.",
+        "targetWord": "lado",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9995c615b1ce41af.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "segue",
+    "sentence": "Cada uma delas _____ por um lado da trilha.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "segue",
+      "options": [
+        "segue",
+        "para",
+        "dorme",
+        "volta"
+      ],
+      "translation": "Each of them _____ along one side of the trail.",
+      "optionTranslations": [
+        "goes on",
+        "stops",
+        "sleeps",
+        "comes back"
+      ],
+      "audioClip": {
+        "storySlug": "a-chuva-dura-dez-minutos",
+        "storySource": "user",
+        "sentence": "Cada uma delas segue por um lado da trilha.",
+        "targetWord": "segue",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7bbdd33accdf427e.mp3"
+      }
+    },
+    "featured": false
+  }
+]

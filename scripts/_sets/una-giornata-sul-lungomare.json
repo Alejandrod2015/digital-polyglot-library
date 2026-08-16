@@ -1,0 +1,597 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "mare,cielo,porto,canzone",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "mare",
+     "answer": "sea",
+     "options": [
+      "sea",
+      "sky",
+      "port",
+      "song"
+     ]
+    },
+    {
+     "word": "cielo",
+     "answer": "sky",
+     "options": [
+      "sea",
+      "sky",
+      "port",
+      "song"
+     ]
+    },
+    {
+     "word": "porto",
+     "answer": "port",
+     "options": [
+      "sea",
+      "sky",
+      "port",
+      "song"
+     ]
+    },
+    {
+     "word": "canzone",
+     "answer": "song",
+     "options": [
+      "sea",
+      "sky",
+      "port",
+      "song"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "calmo",
+  "sentence": "Il mare è [[calmo]] e pulito.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calm",
+   "options": [
+    "calm",
+    "rough",
+    "cold",
+    "deep"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Il mare è calmo e pulito.",
+    "targetWord": "calmo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "lente",
+  "sentence": "Le amiche passeggiano [[lente]] lungo la riva.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slow",
+   "options": [
+    "slow",
+    "fast",
+    "loud",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Le amiche passeggiano lente lungo la riva.",
+    "targetWord": "lente",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "vecchia",
+  "sentence": "Il pescatore canta una canzone [[vecchia]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "old",
+   "options": [
+    "old",
+    "new",
+    "short",
+    "sweet"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Il pescatore canta una canzone vecchia.",
+    "targetWord": "vecchia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "passeggiano",
+  "sentence": "Le amiche [[passeggiano]] lungo la riva.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "they stroll",
+   "options": [
+    "they stroll",
+    "they run",
+    "they sleep",
+    "they shout"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Le amiche passeggiano lungo la riva.",
+    "targetWord": "passeggiano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "galleggiano",
+  "sentence": "Molte barche [[galleggiano]] sull'acqua chiara.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "they float",
+   "options": [
+    "they float",
+    "they sink",
+    "they fly",
+    "they burn"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Molte barche galleggiano sull'acqua chiara.",
+    "targetWord": "galleggiano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "salta",
+  "sentence": "Un delfino [[salta]] vicino al porto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "jumps",
+   "options": [
+    "jumps",
+    "sleeps",
+    "sings",
+    "falls"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Un delfino salta vicino al porto.",
+    "targetWord": "salta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "nuota",
+  "sentence": "Il delfino [[nuota]] tra le onde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "swims",
+   "options": [
+    "swims",
+    "walks",
+    "flies",
+    "sits"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Il delfino nuota tra le onde.",
+    "targetWord": "nuota",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "apre",
+  "sentence": "Elena [[apre]] la bocca per lo stupore.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "opens",
+   "options": [
+    "opens",
+    "closes",
+    "breaks",
+    "hides"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Elena apre la bocca per lo stupore.",
+    "targetWord": "apre",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "riva",
+  "sentence": "Le amiche camminano lungo la _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "riva",
+   "options": [
+    "riva",
+    "barca",
+    "onda",
+    "porto"
+   ],
+   "translation": "The friends walk along the _____.",
+   "optionTranslations": [
+    "shore",
+    "boat",
+    "wave",
+    "port"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Le amiche camminano lungo la riva.",
+    "targetWord": "riva",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "aria",
+  "sentence": "Oggi l'_____ profuma di mare.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aria",
+   "options": [
+    "aria",
+    "acqua",
+    "riva",
+    "sale"
+   ],
+   "translation": "Today the _____ smells of the sea.",
+   "optionTranslations": [
+    "air",
+    "water",
+    "shore",
+    "salt"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Oggi l'aria profuma di mare.",
+    "targetWord": "aria",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "barche",
+  "sentence": "Molte _____ piccole galleggiano sull'acqua.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "barche",
+   "options": [
+    "barche",
+    "onde",
+    "dita",
+    "reti"
+   ],
+   "translation": "Many small _____ float on the water.",
+   "optionTranslations": [
+    "boats",
+    "waves",
+    "fingers",
+    "nets"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Molte barche piccole galleggiano sull'acqua.",
+    "targetWord": "barche",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "acqua",
+  "sentence": "Le barche galleggiano sull'_____ chiara.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "acqua",
+   "options": [
+    "acqua",
+    "aria",
+    "riva",
+    "sale"
+   ],
+   "translation": "The boats float on the clear _____.",
+   "optionTranslations": [
+    "water",
+    "air",
+    "shore",
+    "salt"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Le barche galleggiano sull'acqua chiara.",
+    "targetWord": "acqua",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "pescatore",
+  "sentence": "Un _____ prepara la sua rete.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pescatore",
+   "options": [
+    "pescatore",
+    "venditore",
+    "cuoco",
+    "amico"
+   ],
+   "translation": "A _____ prepares his net.",
+   "optionTranslations": [
+    "fisherman",
+    "seller",
+    "cook",
+    "friend"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Un pescatore prepara la sua rete.",
+    "targetWord": "pescatore",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "canta",
+  "sentence": "Il pescatore _____ una vecchia canzone.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "canta",
+   "options": [
+    "canta",
+    "ascolta",
+    "grida",
+    "nuota"
+   ],
+   "translation": "The fisherman _____ an old song.",
+   "optionTranslations": [
+    "sings",
+    "listens",
+    "shouts",
+    "swims"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Il pescatore canta una vecchia canzone.",
+    "targetWord": "canta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "ascolta",
+  "sentence": "Elena _____ con piacere.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ascolta",
+   "options": [
+    "ascolta",
+    "canta",
+    "guarda",
+    "salta"
+   ],
+   "translation": "Elena _____ with pleasure.",
+   "optionTranslations": [
+    "listens",
+    "sings",
+    "watches",
+    "jumps"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Elena ascolta con piacere.",
+    "targetWord": "ascolta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "dita",
+  "sentence": "Elena batte le _____ sul muro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dita",
+   "options": [
+    "dita",
+    "mani",
+    "onde",
+    "barche"
+   ],
+   "translation": "Elena taps her _____ on the wall.",
+   "optionTranslations": [
+    "fingers",
+    "hands",
+    "waves",
+    "boats"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Elena batte le dita sul muro.",
+    "targetWord": "dita",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "grida",
+  "sentence": "«Guarda là!», _____ Anna forte.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "grida",
+   "options": [
+    "grida",
+    "canta",
+    "ride",
+    "parla"
+   ],
+   "translation": "\"Look there!\", Anna _____ loudly.",
+   "optionTranslations": [
+    "shouts",
+    "sings",
+    "laughs",
+    "talks"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "«Guarda là!», grida Anna forte.",
+    "targetWord": "grida",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "bocca",
+  "sentence": "Elena apre la _____ per lo stupore.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bocca",
+   "options": [
+    "bocca",
+    "mano",
+    "dito",
+    "occhio"
+   ],
+   "translation": "Elena opens her _____ in surprise.",
+   "optionTranslations": [
+    "mouth",
+    "hand",
+    "finger",
+    "eye"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Elena apre la bocca per lo stupore.",
+    "targetWord": "bocca",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "onde",
+  "sentence": "Il delfino nuota tra le _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "onde",
+   "options": [
+    "onde",
+    "barche",
+    "dita",
+    "rive"
+   ],
+   "translation": "The dolphin swims among the _____.",
+   "optionTranslations": [
+    "waves",
+    "boats",
+    "fingers",
+    "shores"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Il delfino nuota tra le onde.",
+    "targetWord": "onde",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "guardano",
+  "sentence": "Le amiche _____ il mare calmo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guardano",
+   "options": [
+    "guardano",
+    "ascoltano",
+    "nuotano",
+    "saltano"
+   ],
+   "translation": "The friends _____ the calm sea.",
+   "optionTranslations": [
+    "they watch",
+    "they listen",
+    "they swim",
+    "they jump"
+   ],
+   "audioClip": {
+    "storySlug": "una-giornata-sul-lungomare",
+    "storySource": "user",
+    "sentence": "Le amiche guardano il mare calmo.",
+    "targetWord": "guardano",
+    "language": "italian"
+   }
+  }
+ }
+]

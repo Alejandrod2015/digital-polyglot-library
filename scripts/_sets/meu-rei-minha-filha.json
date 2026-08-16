@@ -1,0 +1,466 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "trinta,minuto,banco,loja",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "trinta",
+          "answer": "thirty",
+          "options": [
+            "thirty",
+            "a minute",
+            "a bench",
+            "a shop"
+          ]
+        },
+        {
+          "word": "minuto",
+          "answer": "a minute",
+          "options": [
+            "thirty",
+            "a minute",
+            "a bench",
+            "a shop"
+          ]
+        },
+        {
+          "word": "banco",
+          "answer": "a bench",
+          "options": [
+            "thirty",
+            "a minute",
+            "a bench",
+            "a shop"
+          ]
+        },
+        {
+          "word": "loja",
+          "answer": "a shop",
+          "options": [
+            "thirty",
+            "a minute",
+            "a bench",
+            "a shop"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dona",
+    "sentence": "A [[dona]] da loja trata todo mundo do mesmo jeito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the owner",
+      "options": [
+        "the owner",
+        "the client",
+        "the daughter",
+        "the neighbour"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "A dona da loja trata todo mundo do mesmo jeito.",
+        "targetWord": "dona",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d20e7d6515a2fe7c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "filha",
+    "sentence": "A dona chama ela de minha [[filha]] sem saber o nome.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "daughter",
+      "options": [
+        "daughter",
+        "sister",
+        "mother",
+        "friend"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "A dona chama ela de minha filha sem saber o nome.",
+        "targetWord": "filha",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d84dc73270234062.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "carrinho",
+    "sentence": "Um homem com [[carrinho]] de coco chama ela de amor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cart",
+      "options": [
+        "a cart",
+        "a bag",
+        "a bike",
+        "a box"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "Um homem com carrinho de coco chama ela de amor.",
+        "targetWord": "carrinho",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee1e2f929e9c311a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rapaz",
+    "sentence": "O [[rapaz]] da banca de fitas responde com calma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a young man",
+      "options": [
+        "a young man",
+        "an old man",
+        "a child",
+        "a woman"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "O rapaz da banca de fitas responde com calma.",
+        "targetWord": "rapaz",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/88959852c9a36b0b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rei",
+    "sentence": "O rapaz chama ela de meu [[rei]] e segue trabalhando.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "king",
+      "options": [
+        "king",
+        "queen",
+        "boss",
+        "guest"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "O rapaz chama ela de meu rei e segue trabalhando.",
+        "targetWord": "rei",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/902db62846d64e1a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amor",
+    "sentence": "O homem do coco chama ela de meu [[amor]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "love",
+      "options": [
+        "love",
+        "hunger",
+        "money",
+        "luck"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "O homem do coco chama ela de meu amor.",
+        "targetWord": "amor",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5932641b804117bb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "servir",
+    "sentence": "Os nomes ali [[servem]] para deixar a pessoa perto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "are for",
+      "options": [
+        "are for",
+        "are sold",
+        "are broken",
+        "are hidden"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "Os nomes ali servem para deixar a pessoa perto.",
+        "targetWord": "servem",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b470000b9dff7d0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estranhar",
+    "sentence": "O garçom não [[estranha]] o modo de falar dela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "finds it odd",
+      "options": [
+        "finds it odd",
+        "hears it",
+        "pays for it",
+        "repeats it"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "O garçom não estranha o modo de falar dela.",
+        "targetWord": "estranha",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bd1178b138a87c94.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "chama",
+    "sentence": "A dona _____ ela de minha filha.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "chama",
+      "options": [
+        "chama",
+        "paga",
+        "serve",
+        "ouve"
+      ],
+      "translation": "The owner _____ her my daughter.",
+      "optionTranslations": [
+        "calls",
+        "pays",
+        "serves",
+        "hears"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "A dona chama ela de minha filha.",
+        "targetWord": "chama",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/55c5d9349ed464e7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pergunta",
+    "sentence": "A dona fala assim antes de qualquer [[pergunta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a question",
+      "options": [
+        "a question",
+        "an answer",
+        "a price",
+        "a name"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "A dona fala assim antes de qualquer pergunta.",
+        "targetWord": "pergunta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b36cf06915c4b587.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "coco",
+    "sentence": "Um homem vende [[coco]] gelado na calçada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a coconut",
+      "options": [
+        "a coconut",
+        "a fish",
+        "a bread",
+        "a flower"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "Um homem vende coco gelado na calçada.",
+        "targetWord": "coco",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff5ec793fbcbd659.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conversa",
+    "sentence": "Ela procura o nome dela em algum lugar da [[conversa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a conversation",
+      "options": [
+        "a conversation",
+        "a letter",
+        "a song",
+        "a shop"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "Ela procura o nome dela em algum lugar da conversa.",
+        "targetWord": "conversa",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a66e3cbe103f94f2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "precisar",
+    "sentence": "As pessoas não parecem [[precisar]] do nome dela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to need",
+      "options": [
+        "to need",
+        "to hear",
+        "to write",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "As pessoas não parecem precisar do nome dela.",
+        "targetWord": "precisar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2273fa9cdef5377b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tarde",
+    "sentence": "Ela entende a regra no fim da [[tarde]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the afternoon",
+      "options": [
+        "the afternoon",
+        "the night",
+        "the morning",
+        "the week"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "Ela entende a regra no fim da tarde.",
+        "targetWord": "tarde",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0264c720da72b98.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "garçom",
+    "sentence": "Ela chama o [[garçom]] de meu rei e ele sorri.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a waiter",
+      "options": [
+        "a waiter",
+        "a driver",
+        "a doctor",
+        "a teacher"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "Ela chama o garçom de meu rei e ele sorri.",
+        "targetWord": "garçom",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4dc775445b867977.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "água",
+    "sentence": "Ela entra numa loja pequena para comprar [[água]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "water",
+      "options": [
+        "water",
+        "bread",
+        "soap",
+        "paper"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "Ela entra numa loja pequena para comprar água.",
+        "targetWord": "água",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a1be9f21ffeb204b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "responde",
+    "sentence": "Ele _____ tudo bem e volta ao trabalho.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "responde",
+      "options": [
+        "responde",
+        "pergunta",
+        "paga",
+        "sai"
+      ],
+      "translation": "He _____ all right and goes back to work.",
+      "optionTranslations": [
+        "answers",
+        "asks",
+        "pays",
+        "leaves"
+      ],
+      "audioClip": {
+        "storySlug": "meu-rei-minha-filha",
+        "storySource": "user",
+        "sentence": "Ele responde tudo bem e volta ao trabalho.",
+        "targetWord": "responde",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d0523e47683a1244.mp3"
+      }
+    },
+    "featured": false
+  }
+]

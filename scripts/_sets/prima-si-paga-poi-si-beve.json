@@ -1,0 +1,562 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "cassa,scontrino,tazzina,cucchiaino",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "cassa",
+     "answer": "the till",
+     "options": [
+      "the till",
+      "a receipt",
+      "an espresso cup",
+      "a teaspoon"
+     ]
+    },
+    {
+     "word": "scontrino",
+     "answer": "a receipt",
+     "options": [
+      "the till",
+      "a receipt",
+      "an espresso cup",
+      "a teaspoon"
+     ]
+    },
+    {
+     "word": "tazzina",
+     "answer": "an espresso cup",
+     "options": [
+      "the till",
+      "a receipt",
+      "an espresso cup",
+      "a teaspoon"
+     ]
+    },
+    {
+     "word": "cucchiaino",
+     "answer": "a teaspoon",
+     "options": [
+      "the till",
+      "a receipt",
+      "an espresso cup",
+      "a teaspoon"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "coda",
+  "sentence": "Lui si mette in [[coda]] dietro una signora.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a queue",
+   "options": [
+    "a queue",
+    "a corner",
+    "a chair",
+    "a street"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Lui si mette in coda dietro una signora.",
+    "targetWord": "coda",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b518cb841023666.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ordinare",
+  "sentence": "Lui [[ordina]] prima di pagare alla cassa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "orders",
+   "options": [
+    "orders",
+    "sleeps",
+    "runs",
+    "cleans"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Lui ordina prima di pagare alla cassa.",
+    "targetWord": "ordina",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/84f93afae24c6f0b.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "appoggiare",
+  "sentence": "Lui [[appoggia]] lo scontrino vicino alla macchina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rests it",
+   "options": [
+    "rests it",
+    "throws it",
+    "reads it",
+    "buys it"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Lui appoggia lo scontrino vicino alla macchina.",
+    "targetWord": "appoggia",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb8092e30d2e29ee.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "barista",
+  "sentence": "Il [[barista]] legge il foglietto e comincia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the barman",
+   "options": [
+    "the barman",
+    "the cashier",
+    "the waiter",
+    "the client"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Il barista legge il foglietto e comincia.",
+    "targetWord": "barista",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2c656702cc4ae8f0.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "riempire",
+  "sentence": "La macchina [[riempie]] la tazzina a metà.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fills",
+   "options": [
+    "fills",
+    "breaks",
+    "washes",
+    "moves"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "La macchina riempie la tazzina a metà.",
+    "targetWord": "riempie",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b2f081a006afe052.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "saltare",
+  "sentence": "Lui [[salta]] la cassa e nessuno lo serve.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "skips",
+   "options": [
+    "skips",
+    "pays",
+    "cleans",
+    "opens"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Lui salta la cassa e nessuno lo serve.",
+    "targetWord": "salta",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6faa7c29a83d0fbe.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "servire",
+  "sentence": "Il barista non lo [[serve]] senza foglietto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "serves",
+   "options": [
+    "serves",
+    "hears",
+    "follows",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Il barista non lo serve senza foglietto.",
+    "targetWord": "serve",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9ce6a2868e6fbf87.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cornetto",
+  "sentence": "Il [[cornetto]] è caldo e dolce.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an Italian croissant",
+   "options": [
+    "an Italian croissant",
+    "a cold drink",
+    "a small plate",
+    "a paper bag"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Il cornetto è caldo e dolce.",
+    "targetWord": "cornetto",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/605b97132d16c154.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "volere",
+  "sentence": "Lui [[vuole]] un caffè e un cornetto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wants",
+   "options": [
+    "wants",
+    "pays",
+    "brings",
+    "reads"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Lui vuole un caffè e un cornetto.",
+    "targetWord": "vuole",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6310760df68bc45a.mp3"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tazza",
+  "sentence": "Nella fila nessuno tiene una [[tazza]] in mano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a cup",
+   "options": [
+    "a cup",
+    "a bag",
+    "a coat",
+    "a book"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Nella fila nessuno tiene una tazza in mano.",
+    "targetWord": "tazza",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05bfc31653d21d7c.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cassiera",
+  "sentence": "La [[cassiera]] domanda che cosa vuole.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the cashier",
+   "options": [
+    "the cashier",
+    "the cook",
+    "the driver",
+    "the guest"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "La cassiera domanda che cosa vuole.",
+    "targetWord": "cassiera",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b64d36a0d47b5060.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ricevere",
+  "sentence": "Lui [[riceve]] un foglietto lungo e stretto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "receives",
+   "options": [
+    "receives",
+    "sells",
+    "breaks",
+    "hides"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Lui riceve un foglietto lungo e stretto.",
+    "targetWord": "riceve",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/163a5f65ddb847f0.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "foglietto",
+  "sentence": "Il [[foglietto]] dice che cosa ha già pagato.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a small slip of paper",
+   "options": [
+    "a small slip of paper",
+    "a heavy box",
+    "a glass door",
+    "a coffee cup"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Il foglietto dice che cosa ha già pagato.",
+    "targetWord": "foglietto",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1050a9a26c53a814.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "leggere",
+  "sentence": "Il barista [[legge]] lo scontrino senza parlare.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "reads",
+   "options": [
+    "reads",
+    "writes",
+    "pays",
+    "hides"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Il barista legge lo scontrino senza parlare.",
+    "targetWord": "legge",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/146b2245fc8e1b57.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zucchero",
+  "sentence": "Lui mette lo [[zucchero]] dentro il caffè.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sugar",
+   "options": [
+    "sugar",
+    "salt",
+    "milk",
+    "water"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Lui mette lo zucchero dentro il caffè.",
+    "targetWord": "zucchero",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e69d40dea3936210.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tovagliolo",
+  "sentence": "Il cornetto arriva sopra un [[tovagliolo]] bianco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a napkin",
+   "options": [
+    "a napkin",
+    "a plate",
+    "a spoon",
+    "a cup"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Il cornetto arriva sopra un tovagliolo bianco.",
+    "targetWord": "tovagliolo",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1677fe0550e109d6.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caldo",
+  "sentence": "Il cornetto è ancora [[caldo]] di forno.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hot",
+   "options": [
+    "hot",
+    "cold",
+    "hard",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Il cornetto è ancora caldo di forno.",
+    "targetWord": "caldo",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36d6b685ee33a00a.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dito",
+  "sentence": "Lui si pulisce le [[dita]] piene di zucchero.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fingers",
+   "options": [
+    "fingers",
+    "shoes",
+    "eyes",
+    "ears"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Lui si pulisce le dita piene di zucchero.",
+    "targetWord": "dita",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb5480b85d1062ce.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "turista",
+  "sentence": "Un [[turista]] ordina al banco senza scontrino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a tourist",
+   "options": [
+    "a tourist",
+    "a waiter",
+    "a cook",
+    "a driver"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Un turista ordina al banco senza scontrino.",
+    "targetWord": "turista",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa5e6ef5497264f0.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "riconosce",
+  "sentence": "Lui _____ se stesso di poco prima.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "riconosce",
+   "options": [
+    "riconosce",
+    "dimentica",
+    "paga",
+    "vende"
+   ],
+   "translation": "He _____ himself of fifteen minutes earlier.",
+   "optionTranslations": [
+    "recognises",
+    "forgets",
+    "pays",
+    "sells"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Lui riconosce se stesso di poco prima.",
+    "targetWord": "riconosce",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/93144f168dd85379.mp3"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "direttamente",
+  "sentence": "Il turista ordina _____ al banco.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "direttamente",
+   "options": [
+    "direttamente",
+    "lentamente",
+    "domani",
+    "dopo"
+   ],
+   "translation": "The tourist orders _____ at the counter.",
+   "optionTranslations": [
+    "directly",
+    "slowly",
+    "tomorrow",
+    "later"
+   ],
+   "audioClip": {
+    "storySlug": "prima-si-paga-poi-si-beve",
+    "storySource": "user",
+    "sentence": "Il turista ordina direttamente al banco.",
+    "targetWord": "direttamente",
+    "language": "italian",
+    "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c40aa1c36c8a64c.mp3"
+   }
+  },
+  "featured": false
+ }
+]

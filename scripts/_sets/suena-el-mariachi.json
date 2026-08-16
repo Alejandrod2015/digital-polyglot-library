@@ -1,0 +1,646 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "llegar",
+    "sentence": "Ella [[llega]] a la ciudad por la tarde.",
+    "payload": {
+      "answer": "to arrive",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to arrive",
+        "to leave",
+        "to wait",
+        "to return"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella llega a la ciudad por la tarde.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "llega",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/70100486d77277ff.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caminar",
+    "sentence": "Ella [[camina]] hacia la música con calma.",
+    "payload": {
+      "answer": "to walk",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to walk",
+        "to run",
+        "to jump",
+        "to swim"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella camina hacia la música con calma.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "camina",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad42918c2b19a93e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plaza",
+    "sentence": "Los músicos tocan en la [[plaza]] del centro.",
+    "payload": {
+      "answer": "a town square",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a town square",
+        "a bus station",
+        "a river bridge",
+        "a sandy beach"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los músicos tocan en la plaza del centro.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "plaza",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/398d3f2e23ff33b9.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tocar",
+    "sentence": "Él [[toca]] la guitarra con energía.",
+    "payload": {
+      "answer": "to play (an instrument)",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to play (an instrument)",
+        "to fix (an instrument)",
+        "to sell (an instrument)",
+        "to carry (an instrument)"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él toca la guitarra con energía.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "toca",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ffb700ae9f48cc5.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escuchar",
+    "sentence": "Ella [[escucha]] la canción con atención.",
+    "payload": {
+      "answer": "to listen",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to listen",
+        "to speak",
+        "to read",
+        "to sleep"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella escucha la canción con atención.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "escucha",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/04b45dbfb60ee885.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "canción",
+    "sentence": "Ella canta una [[canción]] muy bonita.",
+    "payload": {
+      "answer": "a song",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a song",
+        "a book",
+        "a dance",
+        "a game"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella canta una canción muy bonita.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "canción",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c9d7cd5684778e21.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cantar",
+    "sentence": "La gente [[canta]] cerca de la fuente.",
+    "payload": {
+      "answer": "to sing",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to sing",
+        "to shout",
+        "to whisper",
+        "to cry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La gente canta cerca de la fuente.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "canta",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/401eafadf2a1c867.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bailar",
+    "sentence": "Ella [[baila]] un poco entre la gente.",
+    "payload": {
+      "answer": "to dance",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to dance",
+        "to walk",
+        "to sit",
+        "to fall"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella baila un poco entre la gente.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "baila",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/890f689370015972.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "fuerte",
+    "sentence": "El ruido es tan _____ que tapo mis oídos.",
+    "payload": {
+      "answer": "fuerte",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "fuerte",
+        "suave",
+        "lento",
+        "corto"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El ruido es tan fuerte que tapo mis oídos.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "fuerte",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a02509ad93b7760d.mp3"
+      },
+      "translation": "The noise is so _____ that I cover my ears.",
+      "optionTranslations": [
+        "loud",
+        "soft",
+        "slow",
+        "short"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "llover",
+    "sentence": "Las nubes están grises y pronto va a _____.",
+    "payload": {
+      "answer": "llover",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "llover",
+        "nadar",
+        "cantar",
+        "saltar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las nubes están grises y pronto va a llover.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "llover",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8e3380db8dd59f2.mp3"
+      },
+      "translation": "The clouds are grey and soon it will _____.",
+      "optionTranslations": [
+        "rain",
+        "swim",
+        "sing",
+        "jump"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ciudad",
+    "sentence": "Ella vive en una [[ciudad]] muy grande.",
+    "payload": {
+      "answer": "a city",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a city",
+        "a farm",
+        "a beach",
+        "a forest"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella vive en una ciudad muy grande.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "ciudad",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c36ba0c0f3af20b0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tarde",
+    "sentence": "Ellos pasean por la [[tarde]] con calma.",
+    "payload": {
+      "answer": "afternoon",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "afternoon",
+        "morning",
+        "midnight",
+        "week"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ellos pasean por la tarde con calma.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "tarde",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8018bab63ce4c8b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "curiosidad",
+    "sentence": "Ella mira todo con mucha [[curiosidad]].",
+    "payload": {
+      "answer": "curiosity",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "curiosity",
+        "boredom",
+        "anger",
+        "fear"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira todo con mucha curiosidad.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "curiosidad",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f8a2052d75a034f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "energía",
+    "sentence": "Los músicos tocan con mucha [[energía]].",
+    "payload": {
+      "answer": "energy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "energy",
+        "silence",
+        "sadness",
+        "patience"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los músicos tocan con mucha energía.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "energía",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/235533a1b492647c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alegre",
+    "sentence": "La música de la fiesta es muy [[alegre]].",
+    "payload": {
+      "answer": "cheerful",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "cheerful",
+        "gloomy",
+        "silent",
+        "slow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La música de la fiesta es muy alegre.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "alegre",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/83c1d9d10a835462.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aplaudir",
+    "sentence": "La gente [[aplaude]] al final del concierto.",
+    "payload": {
+      "answer": "to clap",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to clap",
+        "to leave",
+        "to shout",
+        "to stand"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La gente aplaude al final del concierto.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "aplaude",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/da502d2278e16a1c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "traje",
+    "sentence": "Para la boda él lleva un _____ elegante.",
+    "payload": {
+      "answer": "traje",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "traje",
+        "sombrero",
+        "zapato",
+        "reloj"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Para la boda él lleva un traje elegante.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "traje",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4d9e40bc595467bb.mp3"
+      },
+      "translation": "For the wedding he wears an elegant _____.",
+      "optionTranslations": [
+        "suit",
+        "hat",
+        "shoe",
+        "watch"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "elegante",
+    "sentence": "Para la fiesta usa un vestido muy _____.",
+    "payload": {
+      "answer": "elegante",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "elegante",
+        "sucio",
+        "roto",
+        "viejo"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Para la fiesta usa un vestido muy elegante.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "elegante",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d03e3a07e47b7c6e.mp3"
+      },
+      "translation": "For the party she wears a very _____ dress.",
+      "optionTranslations": [
+        "elegant",
+        "dirty",
+        "torn",
+        "old"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "turista",
+    "sentence": "La persona que visita un país nuevo es un _____.",
+    "payload": {
+      "answer": "turista",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "turista",
+        "médico",
+        "vecino",
+        "cocinero"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La persona que visita un país nuevo es un turista.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "turista",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c11add9e13ae5ad6.mp3"
+      },
+      "translation": "The person who visits a new country is a _____.",
+      "optionTranslations": [
+        "tourist",
+        "doctor",
+        "neighbor",
+        "cook"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gente",
+    "sentence": "En la fiesta hay mucha _____ que baila.",
+    "payload": {
+      "answer": "gente",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "gente",
+        "comida",
+        "música",
+        "luz"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En la fiesta hay mucha gente que baila.",
+        "storySlug": "suena-el-mariachi",
+        "targetWord": "gente",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd8811ba30a9521d.mp3"
+      },
+      "translation": "At the party there are many _____ dancing.",
+      "optionTranslations": [
+        "people",
+        "food",
+        "music",
+        "light"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "trompeta,torre,fuente,catedral",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "trompeta",
+          "answer": "a trumpet",
+          "options": [
+            "a trumpet",
+            "a tower",
+            "a fountain",
+            "a cathedral"
+          ]
+        },
+        {
+          "word": "torre",
+          "answer": "a tower",
+          "options": [
+            "a trumpet",
+            "a tower",
+            "a fountain",
+            "a cathedral"
+          ]
+        },
+        {
+          "word": "fuente",
+          "answer": "a fountain",
+          "options": [
+            "a trumpet",
+            "a tower",
+            "a fountain",
+            "a cathedral"
+          ]
+        },
+        {
+          "word": "catedral",
+          "answer": "a cathedral",
+          "options": [
+            "a trumpet",
+            "a tower",
+            "a fountain",
+            "a cathedral"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "flor",
+    "sentence": "Sofía recibe una [[flor]] roja del mariachi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a flower",
+      "options": [
+        "a flower",
+        "a stone",
+        "a spoon",
+        "a cloud"
+      ],
+      "audioClip": {
+        "storySlug": "suena-el-mariachi",
+        "storySource": "user",
+        "sentence": "Sofía recibe una flor roja del mariachi.",
+        "targetWord": "flor",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fd09ea86826d1e05.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "regalar",
+    "sentence": "Javier le [[regala]] una canción a Sofía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gives a gift",
+      "options": [
+        "gives a gift",
+        "cleans",
+        "cooks",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "suena-el-mariachi",
+        "storySource": "user",
+        "sentence": "Javier le regala una canción a Sofía.",
+        "targetWord": "regala",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/86478139859d4251.mp3"
+      }
+    },
+    "featured": false
+  }
+]

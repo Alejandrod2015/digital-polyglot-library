@@ -1,0 +1,611 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Theater,Geschichte,Flöte,Problem",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Theater",
+     "answer": "theater",
+     "options": [
+      "theater",
+      "story",
+      "flute",
+      "problem"
+     ]
+    },
+    {
+     "word": "Geschichte",
+     "answer": "story",
+     "options": [
+      "theater",
+      "story",
+      "flute",
+      "problem"
+     ]
+    },
+    {
+     "word": "Flöte",
+     "answer": "flute",
+     "options": [
+      "theater",
+      "story",
+      "flute",
+      "problem"
+     ]
+    },
+    {
+     "word": "Problem",
+     "answer": "problem",
+     "options": [
+      "theater",
+      "story",
+      "flute",
+      "problem"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "weg",
+  "sentence": "Die Ratten sind bald [[weg]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gone",
+   "options": [
+    "gone",
+    "here",
+    "loud",
+    "sad"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Die Ratten sind bald weg.",
+    "targetWord": "weg",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "böse",
+  "sentence": "Der Mann wird [[böse]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "angry",
+   "options": [
+    "angry",
+    "happy",
+    "tired",
+    "kind"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Der Mann wird böse.",
+    "targetWord": "böse",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "traurig",
+  "sentence": "Wie [[traurig]] ist diese Geschichte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sad",
+   "options": [
+    "sad",
+    "funny",
+    "loud",
+    "easy"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Wie traurig ist diese Geschichte.",
+    "targetWord": "traurig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "sitzen",
+  "sentence": "Mia und Ben _____ im Theater.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sitzen",
+   "options": [
+    "sitzen",
+    "spielen",
+    "folgen",
+    "gehen"
+   ],
+   "translation": "Mia and Ben _____ in the theater.",
+   "optionTranslations": [
+    "to sit",
+    "to play",
+    "to follow",
+    "to go"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Mia und Ben sitzen im Theater.",
+    "targetWord": "sitzen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "beginnt",
+  "sentence": "Die Geschichte _____ jetzt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "beginnt",
+   "options": [
+    "beginnt",
+    "sitzt",
+    "folgt",
+    "spielt"
+   ],
+   "translation": "The story _____ now.",
+   "optionTranslations": [
+    "begins",
+    "sits",
+    "follows",
+    "plays"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Die Geschichte beginnt jetzt.",
+    "targetWord": "beginnt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Stadt",
+  "sentence": "Die _____ Hameln hat ein Problem.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Stadt",
+   "options": [
+    "Stadt",
+    "Flöte",
+    "Ratte",
+    "Geschichte"
+   ],
+   "translation": "The _____ of Hameln has a problem.",
+   "optionTranslations": [
+    "city",
+    "flute",
+    "rat",
+    "story"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Die Stadt Hameln hat ein Problem.",
+    "targetWord": "Stadt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Ratten",
+  "sentence": "Sie hat zu viele _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Ratten",
+   "options": [
+    "Ratten",
+    "Leute",
+    "Kinder",
+    "Flöten"
+   ],
+   "translation": "It has too many _____.",
+   "optionTranslations": [
+    "rats",
+    "people",
+    "children",
+    "flutes"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Sie hat zu viele Ratten.",
+    "targetWord": "Ratten",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "spielt",
+  "sentence": "Der Mann _____ Musik.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "spielt",
+   "options": [
+    "spielt",
+    "sitzt",
+    "folgt",
+    "nickt"
+   ],
+   "translation": "The man _____ music.",
+   "optionTranslations": [
+    "plays",
+    "sits",
+    "follows",
+    "nods"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Der Mann spielt Musik.",
+    "targetWord": "spielt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "folgen",
+  "sentence": "Alle Ratten _____ ihm.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "folgen",
+   "options": [
+    "folgen",
+    "spielen",
+    "sitzen",
+    "helfen"
+   ],
+   "translation": "All rats _____ him.",
+   "optionTranslations": [
+    "to follow",
+    "to play",
+    "to sit",
+    "to help"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Alle Ratten folgen ihm.",
+    "targetWord": "folgen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "wieder",
+  "sentence": "Die Stadt ist [[wieder]] ruhig.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "again",
+   "options": [
+    "again",
+    "never",
+    "almost",
+    "soon"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Die Stadt ist wieder ruhig.",
+    "targetWord": "wieder",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "immer",
+  "sentence": "Die Kinder sind für [[immer]] weg.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "forever",
+   "options": [
+    "forever",
+    "today",
+    "again",
+    "soon"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Die Kinder sind für immer weg.",
+    "targetWord": "immer",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "still",
+  "sentence": "Die Leute sind ganz [[still]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quiet",
+   "options": [
+    "quiet",
+    "loud",
+    "angry",
+    "glad"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Die Leute sind ganz still.",
+    "targetWord": "still",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "helfe",
+  "sentence": "Ich _____ euch gern.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "helfe",
+   "options": [
+    "helfe",
+    "spiele",
+    "sitze",
+    "folge"
+   ],
+   "translation": "I _____ you gladly.",
+   "optionTranslations": [
+    "help",
+    "play",
+    "sit",
+    "follow"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Ich helfe euch gern.",
+    "targetWord": "helfe",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "bezahlen",
+  "sentence": "Die Leute von Hameln _____ nicht.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bezahlen",
+   "options": [
+    "bezahlen",
+    "sitzen",
+    "folgen",
+    "spielen"
+   ],
+   "translation": "The people of Hameln do not _____.",
+   "optionTranslations": [
+    "to pay",
+    "to sit",
+    "to follow",
+    "to play"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Die Leute von Hameln bezahlen nicht.",
+    "targetWord": "bezahlen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "gehen",
+  "sentence": "Sie _____ aus der Stadt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gehen",
+   "options": [
+    "gehen",
+    "sitzen",
+    "spielen",
+    "folgen"
+   ],
+   "translation": "They _____ out of the city.",
+   "optionTranslations": [
+    "to go",
+    "to sit",
+    "to play",
+    "to follow"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Sie gehen aus der Stadt.",
+    "targetWord": "gehen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Leute",
+  "sentence": "Die _____ sind sehr unglücklich.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Leute",
+   "options": [
+    "Leute",
+    "Ratten",
+    "Kinder",
+    "Flöten"
+   ],
+   "translation": "The _____ are very unhappy.",
+   "optionTranslations": [
+    "people",
+    "rats",
+    "children",
+    "flutes"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Die Leute sind sehr unglücklich.",
+    "targetWord": "Leute",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Kinder",
+  "sentence": "Diesmal folgen die _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Kinder",
+   "options": [
+    "Kinder",
+    "Ratten",
+    "Leute",
+    "Flöten"
+   ],
+   "translation": "This time the _____ follow.",
+   "optionTranslations": [
+    "children",
+    "rats",
+    "people",
+    "flutes"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Diesmal folgen die Kinder.",
+    "targetWord": "Kinder",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "flüstert",
+  "sentence": "Mia _____ ganz leise.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "flüstert",
+   "options": [
+    "flüstert",
+    "nickt",
+    "sitzt",
+    "spielt"
+   ],
+   "translation": "Mia _____ very softly.",
+   "optionTranslations": [
+    "whispers",
+    "nods",
+    "sits",
+    "plays"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Mia flüstert ganz leise.",
+    "targetWord": "flüstert",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "nickt",
+  "sentence": "Ben _____ langsam.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nickt",
+   "options": [
+    "nickt",
+    "flüstert",
+    "sitzt",
+    "folgt"
+   ],
+   "translation": "Ben _____ slowly.",
+   "optionTranslations": [
+    "nods",
+    "whispers",
+    "sits",
+    "follows"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Ben nickt langsam.",
+    "targetWord": "nickt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Wahrheit",
+  "sentence": "Niemand kennt die _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Wahrheit",
+   "options": [
+    "Wahrheit",
+    "Flöte",
+    "Geschichte",
+    "Ratte"
+   ],
+   "translation": "Nobody knows the _____.",
+   "optionTranslations": [
+    "truth",
+    "flute",
+    "story",
+    "rat"
+   ],
+   "audioClip": {
+    "storySlug": "die-legende",
+    "storySource": "user",
+    "sentence": "Niemand kennt die Wahrheit.",
+    "targetWord": "Wahrheit",
+    "language": "german"
+   }
+  }
+ }
+]

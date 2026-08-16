@@ -1,0 +1,466 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "terceiro,cavaquinho,mesa,bar",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "terceiro",
+          "answer": "third",
+          "options": [
+            "third",
+            "a small four-string guitar",
+            "a table",
+            "a bar"
+          ]
+        },
+        {
+          "word": "cavaquinho",
+          "answer": "a small four-string guitar",
+          "options": [
+            "third",
+            "a small four-string guitar",
+            "a table",
+            "a bar"
+          ]
+        },
+        {
+          "word": "mesa",
+          "answer": "a table",
+          "options": [
+            "third",
+            "a small four-string guitar",
+            "a table",
+            "a bar"
+          ]
+        },
+        {
+          "word": "bar",
+          "answer": "a bar",
+          "options": [
+            "third",
+            "a small four-string guitar",
+            "a table",
+            "a bar"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "letra",
+    "sentence": "Ninguém ali precisa ler a [[letra]] da música.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the lyrics",
+      "options": [
+        "the lyrics",
+        "the price",
+        "the map",
+        "the menu"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "Ninguém ali precisa ler a letra da música.",
+        "targetWord": "letra",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b36b2c32d33a6e8a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "resto",
+    "sentence": "O cavaquinho entra primeiro e o [[resto]] entra junto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the rest",
+      "options": [
+        "the rest",
+        "the singer",
+        "the owner",
+        "the guest"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "O cavaquinho entra primeiro e o resto entra junto.",
+        "targetWord": "resto",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/12cc5fce67c5d279.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cantar",
+    "sentence": "Ele fica atrás de duas mulheres que [[cantam]] tudo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sing",
+      "options": [
+        "sing",
+        "dance",
+        "cook",
+        "sleep"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "Ele fica atrás de duas mulheres que cantam tudo.",
+        "targetWord": "cantam",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30a73fecd6bb213c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perder",
+    "sentence": "Ele acompanha com a cabeça e [[perde]] a letra sempre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "loses",
+      "options": [
+        "loses",
+        "reads",
+        "writes",
+        "teaches"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "Ele acompanha com a cabeça e perde a letra sempre.",
+        "targetWord": "perde",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c1affdd9fe79995b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parte",
+    "sentence": "Cada música tem uma [[parte]] que o bar canta mais alto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a part",
+      "options": [
+        "a part",
+        "a price",
+        "a name",
+        "a rule"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "Cada música tem uma parte que o bar canta mais alto.",
+        "targetWord": "parte",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee0fe23130e38243.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barulho",
+    "sentence": "O resto da letra continua sendo um [[barulho]] bonito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "noise",
+      "options": [
+        "noise",
+        "silence",
+        "light",
+        "smell"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "O resto da letra continua sendo um barulho bonito.",
+        "targetWord": "barulho",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdcec361bc57b06c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "junto",
+    "sentence": "Ele espera a hora certa e canta [[junto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "together with them",
+      "options": [
+        "together with them",
+        "alone",
+        "later",
+        "outside"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "Ele espera a hora certa e canta junto.",
+        "targetWord": "junto",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0bbb5075b8cf615f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "decora",
+    "sentence": "Ele _____ seis palavras dessa parte da música.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "decora",
+      "options": [
+        "decora",
+        "escreve",
+        "canta",
+        "paga"
+      ],
+      "translation": "He _____ six words of that part of the song.",
+      "optionTranslations": [
+        "learns by heart",
+        "writes",
+        "sings",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "Ele decora seis palavras dessa parte da música.",
+        "targetWord": "decora",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d26d8535997b1c14.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "espera",
+    "sentence": "Ele _____ a hora certa e canta junto, baixo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "espera",
+      "options": [
+        "espera",
+        "perde",
+        "paga",
+        "abre"
+      ],
+      "translation": "He _____ for the right moment and sings along, softly.",
+      "optionTranslations": [
+        "waits",
+        "loses",
+        "pays",
+        "opens"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "Ele espera a hora certa e canta junto, baixo.",
+        "targetWord": "espera",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/53e042788ae16123.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "redondo",
+    "sentence": "Os músicos sentam em volta de uma mesa [[redonda]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "round",
+      "options": [
+        "round",
+        "square",
+        "long",
+        "high"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "Os músicos sentam em volta de uma mesa redonda.",
+        "targetWord": "redonda",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/683d2cbd988287f6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sala",
+    "sentence": "A mesa fica no meio da [[sala]] cheia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a room",
+      "options": [
+        "a room",
+        "a street",
+        "a garden",
+        "a kitchen"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "A mesa fica no meio da sala cheia.",
+        "targetWord": "sala",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/86e02791a7a29397.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "palavra",
+    "sentence": "Ele decora seis [[palavras]] dessa parte da música.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a word",
+      "options": [
+        "a word",
+        "a coin",
+        "a chair",
+        "a step"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "Ele decora seis palavras dessa parte da música.",
+        "targetWord": "palavras",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d26d8535997b1c14.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amiga",
+    "sentence": "Ela não fala nada e volta para as [[amigas]] dela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a friend",
+      "options": [
+        "a friend",
+        "a sister",
+        "a boss",
+        "a client"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "Ela não fala nada e volta para as amigas dela.",
+        "targetWord": "amigas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fe980cb4e3513e51.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bonito",
+    "sentence": "O resto da letra continua sendo um barulho [[bonito]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "beautiful",
+      "options": [
+        "beautiful",
+        "ugly",
+        "quiet",
+        "strange"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "O resto da letra continua sendo um barulho bonito.",
+        "targetWord": "bonito",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cdcec361bc57b06c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "música",
+    "sentence": "Cada [[música]] tem uma parte que todo mundo canta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a song",
+      "options": [
+        "a song",
+        "a book",
+        "a game",
+        "a meal"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "Cada música tem uma parte que todo mundo canta.",
+        "targetWord": "música",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/818e02bef62b65c5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frente",
+    "sentence": "A mulher da [[frente]] vira e canta com ele.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the front",
+      "options": [
+        "the front",
+        "the back",
+        "the corner",
+        "the door"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "A mulher da frente vira e canta com ele.",
+        "targetWord": "frente",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4a8fba719a00ce8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "volta",
+    "sentence": "Os músicos sentam em [[volta]] de uma mesa redonda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "around",
+      "options": [
+        "around",
+        "under",
+        "behind",
+        "inside"
+      ],
+      "audioClip": {
+        "storySlug": "a-parte-que-todo-mundo-canta",
+        "storySource": "user",
+        "sentence": "Os músicos sentam em volta de uma mesa redonda.",
+        "targetWord": "volta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/683d2cbd988287f6.mp3"
+      }
+    },
+    "featured": false
+  }
+]

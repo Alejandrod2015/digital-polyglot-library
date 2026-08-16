@@ -1,0 +1,621 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "comprar",
+    "sentence": "Él [[compra]] pan cada día.",
+    "payload": {
+      "answer": "to buy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to buy",
+        "to sell",
+        "to wash",
+        "to open"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él compra pan cada día.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "compra",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a2b16de1cdce336.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "naranja",
+    "sentence": "Las [[naranjas]] son de aquí.",
+    "payload": {
+      "answer": "an orange",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "an orange",
+        "an apple",
+        "a grape",
+        "a lemon"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las naranjas son de aquí.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "naranjas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec4edfd04cf66ba6.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amigo",
+    "sentence": "Él es mi mejor [[amigo]].",
+    "payload": {
+      "answer": "a friend",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a friend",
+        "a brother",
+        "a neighbor",
+        "a teacher"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él es mi mejor amigo.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "amigo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/74ac31a032655fe9.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "vive",
+    "sentence": "Ella _____ en una casa pequeña.",
+    "payload": {
+      "answer": "vive",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "vive",
+        "come",
+        "corre",
+        "canta"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella vive en una casa pequeña.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "vive",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c870d16e7e7dd00d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She _____ in a small house.",
+      "optionTranslations": [
+        "lives",
+        "eats",
+        "runs",
+        "sings"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mujer",
+    "sentence": "Una [[mujer]] trabaja en el mercado.",
+    "payload": {
+      "answer": "a woman",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a woman",
+        "a man",
+        "a girl",
+        "a boy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Una mujer trabaja en el mercado.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "mujer",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a4bbe916da1736f1.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "vende",
+    "sentence": "Ella _____ fruta en el mercado.",
+    "payload": {
+      "answer": "vende",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "vende",
+        "lava",
+        "pinta",
+        "rompe"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella vende fruta en el mercado.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "vende",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2c16a61caff3962e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She _____ fruit at the market.",
+      "optionTranslations": [
+        "sells",
+        "washes",
+        "paints",
+        "breaks"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hablar",
+    "sentence": "Ella [[habla]] con una amiga.",
+    "payload": {
+      "answer": "to speak",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to speak",
+        "to eat",
+        "to walk",
+        "to sleep"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella habla con una amiga.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "habla",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ddfca79504c571c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dulce",
+    "sentence": "Las naranjas están muy [[dulces]].",
+    "payload": {
+      "answer": "sweet",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "sweet",
+        "sour",
+        "salty",
+        "bitter"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las naranjas están muy dulces.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "dulces",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/efb73d1990c3b400.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "grande",
+    "sentence": "Un elefante es un animal muy _____.",
+    "payload": {
+      "answer": "grande",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "grande",
+        "pequeño",
+        "rápido",
+        "limpio"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Un elefante es un animal muy grande.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "grande",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b71632140a96f78.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "An elephant is a very _____ animal.",
+      "optionTranslations": [
+        "big",
+        "small",
+        "fast",
+        "clean"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contento",
+    "sentence": "Ella está muy [[contenta]] hoy.",
+    "payload": {
+      "answer": "happy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "happy",
+        "tired",
+        "sad",
+        "sick"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella está muy contenta hoy.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "contenta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/648b8a8a0dca762b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "visitar",
+    "sentence": "Ella [[visita]] a una amiga.",
+    "payload": {
+      "answer": "to visit",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to visit",
+        "to call",
+        "to help",
+        "to know"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella visita a una amiga.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "visita",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cf5a0bbcd06fdb7a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fresco",
+    "sentence": "Las frutas están muy [[frescas]].",
+    "payload": {
+      "answer": "fresh",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "fresh",
+        "dry",
+        "warm",
+        "old"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las frutas están muy frescas.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "frescas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2f3774902ab39780.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tocar",
+    "sentence": "Ella [[toca]] la fruta con la mano.",
+    "payload": {
+      "answer": "to touch",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to touch",
+        "to smell",
+        "to break",
+        "to throw"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella toca la fruta con la mano.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "toca",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f09979663c35957.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oler",
+    "sentence": "La fruta [[huele]] muy bien.",
+    "payload": {
+      "answer": "to smell",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to smell",
+        "to taste",
+        "to shine",
+        "to weigh"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La fruta huele muy bien.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "huele",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32a7a1f750eabe64.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verdura",
+    "sentence": "Ella vende [[verdura]] fresca.",
+    "payload": {
+      "answer": "a vegetable",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a vegetable",
+        "a fruit",
+        "a drink",
+        "a plate"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella vende verdura fresca.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "verdura",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a3adc11730b04deb.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mejor",
+    "sentence": "Estas naranjas son las [[mejores]].",
+    "payload": {
+      "answer": "best",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "best",
+        "worst",
+        "cheapest",
+        "newest"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Estas naranjas son las mejores.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "mejores",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/88908a738c339d87.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pesa",
+    "sentence": "La bolsa está llena y _____ mucho.",
+    "payload": {
+      "answer": "pesa",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "pesa",
+        "brilla",
+        "habla",
+        "corre"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La bolsa está llena y pesa mucho.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "pesa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fca33803889f7eec.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The bag is full and _____ a lot.",
+      "optionTranslations": [
+        "weighs",
+        "shines",
+        "talks",
+        "runs"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reírse",
+    "sentence": "Ella [[se ríe]] con la broma.",
+    "payload": {
+      "answer": "to laugh",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to laugh",
+        "to cry",
+        "to shout",
+        "to sing"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella se ríe con la broma.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "se ríe",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9a9cb6443b63df4.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "trabaja",
+    "sentence": "Ella _____ en el mercado cada día.",
+    "payload": {
+      "answer": "trabaja",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "trabaja",
+        "duerme",
+        "juega",
+        "llora"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella trabaja en el mercado cada día.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "trabaja",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c0d01606fa3487f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She _____ at the market every day.",
+      "optionTranslations": [
+        "works",
+        "sleeps",
+        "plays",
+        "cries"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "brilla",
+    "sentence": "En el día el sol _____ mucho.",
+    "payload": {
+      "answer": "brilla",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "brilla",
+        "cae",
+        "sube",
+        "para"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En el día el sol brilla mucho.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "brilla",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa1f8b4cba924953.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "During the day the sun _____ a lot.",
+      "optionTranslations": [
+        "shines",
+        "falls",
+        "rises",
+        "stops"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preguntar",
+    "sentence": "Ella [[pregunta]] el precio.",
+    "payload": {
+      "answer": "to ask",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to ask",
+        "to answer",
+        "to pay",
+        "to count"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella pregunta el precio.",
+        "storySlug": "naranjas-en-el-mercado",
+        "targetWord": "pregunta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f899c81c8283c950.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "mercado,fruta,bolsa,calle",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "mercado",
+          "answer": "a market",
+          "options": [
+            "a market",
+            "fruit",
+            "a bag",
+            "a street"
+          ]
+        },
+        {
+          "word": "fruta",
+          "answer": "fruit",
+          "options": [
+            "a market",
+            "fruit",
+            "a bag",
+            "a street"
+          ]
+        },
+        {
+          "word": "bolsa",
+          "answer": "a bag",
+          "options": [
+            "a market",
+            "fruit",
+            "a bag",
+            "a street"
+          ]
+        },
+        {
+          "word": "calle",
+          "answer": "a street",
+          "options": [
+            "a market",
+            "fruit",
+            "a bag",
+            "a street"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

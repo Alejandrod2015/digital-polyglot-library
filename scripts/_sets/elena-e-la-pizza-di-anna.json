@@ -1,0 +1,597 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "treno,stazione,forno,valigia",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "treno",
+     "answer": "train",
+     "options": [
+      "train",
+      "station",
+      "oven",
+      "suitcase"
+     ]
+    },
+    {
+     "word": "stazione",
+     "answer": "station",
+     "options": [
+      "train",
+      "station",
+      "oven",
+      "suitcase"
+     ]
+    },
+    {
+     "word": "forno",
+     "answer": "oven",
+     "options": [
+      "train",
+      "station",
+      "oven",
+      "suitcase"
+     ]
+    },
+    {
+     "word": "valigia",
+     "answer": "suitcase",
+     "options": [
+      "train",
+      "station",
+      "oven",
+      "suitcase"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "contenta",
+  "sentence": "Anna è molto [[contenta]] alla stazione.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "glad",
+   "options": [
+    "glad",
+    "tired",
+    "angry",
+    "scared"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Anna è molto contenta alla stazione.",
+    "targetWord": "contenta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "allegra",
+  "sentence": "Il locale è pieno di gente [[allegra]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cheerful",
+   "options": [
+    "cheerful",
+    "gloomy",
+    "quiet",
+    "rude"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Il locale è pieno di gente allegra.",
+    "targetWord": "allegra",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "pieno",
+  "sentence": "Il locale è [[pieno]] di gente allegra.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "full",
+   "options": [
+    "full",
+    "empty",
+    "dirty",
+    "broken"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Il locale è pieno di gente allegra.",
+    "targetWord": "pieno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "veloci",
+  "sentence": "Le sue mani sono [[veloci]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fast",
+   "options": [
+    "fast",
+    "slow",
+    "weak",
+    "soft"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Le sue mani sono veloci.",
+    "targetWord": "veloci",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "rotonda",
+  "sentence": "La pizza esce [[rotonda]] e calda.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "round",
+   "options": [
+    "round",
+    "square",
+    "flat",
+    "tall"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "La pizza esce rotonda e calda.",
+    "targetWord": "rotonda",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "abbracciano",
+  "sentence": "Le due ragazze si [[abbracciano]] forte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "they hug",
+   "options": [
+    "they hug",
+    "they wave",
+    "they run",
+    "they cry"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Le due ragazze si abbracciano forte.",
+    "targetWord": "abbracciano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "entrano",
+  "sentence": "Poi le amiche [[entrano]] in pizzeria.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "they enter",
+   "options": [
+    "they enter",
+    "they leave",
+    "they sleep",
+    "they wait"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Poi le amiche entrano in pizzeria.",
+    "targetWord": "entrano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "dice",
+  "sentence": "Anna [[dice]] benvenuta con gioia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "says",
+   "options": [
+    "says",
+    "asks",
+    "forgets",
+    "hears"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Anna dice benvenuta con gioia.",
+    "targetWord": "dice",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "amica",
+  "sentence": "Anna è la sua _____ del cuore.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "amica",
+   "options": [
+    "amica",
+    "valigia",
+    "fetta",
+    "gioia"
+   ],
+   "translation": "Anna is her dearest _____.",
+   "optionTranslations": [
+    "friend",
+    "suitcase",
+    "slice",
+    "joy"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Anna è la sua amica del cuore.",
+    "targetWord": "amica",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "abita",
+  "sentence": "Anna _____ in questa città vivace.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "abita",
+   "options": [
+    "abita",
+    "mangia",
+    "canta",
+    "dorme"
+   ],
+   "translation": "Anna _____ in this lively city.",
+   "optionTranslations": [
+    "lives",
+    "eats",
+    "sings",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Anna abita in questa città vivace.",
+    "targetWord": "abita",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "ragazze",
+  "sentence": "Le due _____ si abbracciano forte.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ragazze",
+   "options": [
+    "ragazze",
+    "mani",
+    "fette",
+    "gioie"
+   ],
+   "translation": "The two _____ hug tightly.",
+   "optionTranslations": [
+    "girls",
+    "hands",
+    "slices",
+    "joys"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Le due ragazze si abbracciano forte.",
+    "targetWord": "ragazze",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "gioia",
+  "sentence": "Anna dice benvenuta con _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gioia",
+   "options": [
+    "gioia",
+    "gente",
+    "fame",
+    "sera"
+   ],
+   "translation": "Anna says welcome with _____.",
+   "optionTranslations": [
+    "joy",
+    "people",
+    "hunger",
+    "evening"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Anna dice benvenuta con gioia.",
+    "targetWord": "gioia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "locale",
+  "sentence": "Il _____ è pieno di gente.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "locale",
+   "options": [
+    "locale",
+    "forno",
+    "binario",
+    "tavolo"
+   ],
+   "translation": "The _____ is full of people.",
+   "optionTranslations": [
+    "venue",
+    "oven",
+    "track",
+    "table"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Il locale è pieno di gente.",
+    "targetWord": "locale",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "gente",
+  "sentence": "Il locale è pieno di _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gente",
+   "options": [
+    "gente",
+    "gioia",
+    "fame",
+    "pizza"
+   ],
+   "translation": "The venue is full of _____.",
+   "optionTranslations": [
+    "people",
+    "joy",
+    "hunger",
+    "pizza"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Il locale è pieno di gente.",
+    "targetWord": "gente",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "cuoco",
+  "sentence": "Un _____ lavora vicino al forno.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cuoco",
+   "options": [
+    "cuoco",
+    "fratello",
+    "amico",
+    "treno"
+   ],
+   "translation": "A _____ works near the oven.",
+   "optionTranslations": [
+    "cook",
+    "brother",
+    "friend",
+    "train"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Un cuoco lavora vicino al forno.",
+    "targetWord": "cuoco",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "lavora",
+  "sentence": "Il cuoco _____ vicino al forno caldo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lavora",
+   "options": [
+    "lavora",
+    "mangia",
+    "ride",
+    "dorme"
+   ],
+   "translation": "The cook _____ near the hot oven.",
+   "optionTranslations": [
+    "works",
+    "eats",
+    "laughs",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Il cuoco lavora vicino al forno caldo.",
+    "targetWord": "lavora",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "mani",
+  "sentence": "Le sue _____ sono veloci.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mani",
+   "options": [
+    "mani",
+    "dita",
+    "occhi",
+    "piedi"
+   ],
+   "translation": "His _____ are fast.",
+   "optionTranslations": [
+    "hands",
+    "fingers",
+    "eyes",
+    "feet"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Le sue mani sono veloci.",
+    "targetWord": "mani",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "chiude",
+  "sentence": "Elena _____ gli occhi felice.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chiude",
+   "options": [
+    "chiude",
+    "apre",
+    "mangia",
+    "guarda"
+   ],
+   "translation": "Elena _____ her eyes happily.",
+   "optionTranslations": [
+    "closes",
+    "opens",
+    "eats",
+    "watches"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Elena chiude gli occhi felice.",
+    "targetWord": "chiude",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "fetta",
+  "sentence": "Elena mangia una _____ di pizza.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fetta",
+   "options": [
+    "fetta",
+    "pizza",
+    "forno",
+    "valigia"
+   ],
+   "translation": "Elena eats a _____ of pizza.",
+   "optionTranslations": [
+    "slice",
+    "pizza",
+    "oven",
+    "suitcase"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Elena mangia una fetta di pizza.",
+    "targetWord": "fetta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "binario",
+  "sentence": "Sul _____ c'è Anna.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "binario",
+   "options": [
+    "binario",
+    "stazione",
+    "treno",
+    "locale"
+   ],
+   "translation": "On the _____ there is Anna.",
+   "optionTranslations": [
+    "track",
+    "station",
+    "train",
+    "venue"
+   ],
+   "audioClip": {
+    "storySlug": "elena-e-la-pizza-di-anna",
+    "storySource": "user",
+    "sentence": "Sul binario c'è Anna.",
+    "targetWord": "binario",
+    "language": "italian"
+   }
+  }
+ }
+]

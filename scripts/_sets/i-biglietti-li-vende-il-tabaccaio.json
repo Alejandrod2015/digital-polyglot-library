@@ -1,0 +1,562 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "autobus,tabaccaio,portafoglio,moneta",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "autobus",
+          "answer": "a bus",
+          "options": [
+            "a bus",
+            "a tobacconist's shop",
+            "a wallet",
+            "a coin"
+          ]
+        },
+        {
+          "word": "tabaccaio",
+          "answer": "a tobacconist's shop",
+          "options": [
+            "a bus",
+            "a tobacconist's shop",
+            "a wallet",
+            "a coin"
+          ]
+        },
+        {
+          "word": "portafoglio",
+          "answer": "a wallet",
+          "options": [
+            "a bus",
+            "a tobacconist's shop",
+            "a wallet",
+            "a coin"
+          ]
+        },
+        {
+          "word": "moneta",
+          "answer": "a coin",
+          "options": [
+            "a bus",
+            "a tobacconist's shop",
+            "a wallet",
+            "a coin"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rotto",
+    "sentence": "La macchina dei biglietti è [[rotta]] da giorni.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "broken",
+      "options": [
+        "broken",
+        "new",
+        "open",
+        "free"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "La macchina dei biglietti è rotta da giorni.",
+        "targetWord": "rotta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/10e014ebf10700b7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "blocchetto",
+    "sentence": "Lui prende un [[blocchetto]] di biglietti dal cassetto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a small pad of tickets",
+      "options": [
+        "a small pad of tickets",
+        "a cup of coffee",
+        "a plastic bag",
+        "a wooden box"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "Lui prende un blocchetto di biglietti dal cassetto.",
+        "targetWord": "blocchetto",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2e229b5a2ff53da7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "staccare",
+    "sentence": "Lui [[stacca]] due biglietti dal blocchetto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tears off",
+      "options": [
+        "tears off",
+        "pays for",
+        "reads",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "Lui stacca due biglietti dal blocchetto.",
+        "targetWord": "stacca",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1fab4d070542749f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "infilare",
+    "sentence": "Lei [[infila]] i biglietti nel portafoglio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slips them into",
+      "options": [
+        "slips them into",
+        "throws away",
+        "counts",
+        "sells"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "Lei infila i biglietti nel portafoglio.",
+        "targetWord": "infila",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8fee81f26f8d93c6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "puntuale",
+    "sentence": "L'autobus arriva [[puntuale]] alla fermata.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on time",
+      "options": [
+        "on time",
+        "late",
+        "empty",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "L'autobus arriva puntuale alla fermata.",
+        "targetWord": "puntuale",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/18bb4b98b10d6bd3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "autista",
+    "sentence": "La macchinetta sta accanto all'[[autista]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the driver",
+      "options": [
+        "the driver",
+        "the passenger",
+        "the seller",
+        "the guard"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "La macchinetta sta accanto all'autista.",
+        "targetWord": "autista",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ad2ec287d4fa89c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "chiede",
+    "sentence": "Lei _____ aiuto a un ragazzo per strada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "chiede",
+      "options": [
+        "chiede",
+        "paga",
+        "vende",
+        "lava"
+      ],
+      "translation": "She _____ a young man in the street for help.",
+      "optionTranslations": [
+        "asks",
+        "pays",
+        "sells",
+        "washes"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "Lei chiede aiuto a un ragazzo per strada.",
+        "targetWord": "chiede",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d320c8767b009e75.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "attraversano",
+    "sentence": "Loro _____ la strada insieme.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "attraversano",
+      "options": [
+        "attraversano",
+        "pagano",
+        "dormono",
+        "cantano"
+      ],
+      "translation": "They _____ the street together.",
+      "optionTranslations": [
+        "cross",
+        "pay",
+        "sleep",
+        "sing"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "Loro attraversano la strada insieme.",
+        "targetWord": "attraversano",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4bd8bd2e43a6c9b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "negozio",
+    "sentence": "Dentro il [[negozio]] ci sono caramelle e francobolli.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a shop",
+      "options": [
+        "a shop",
+        "a train",
+        "a church",
+        "a beach"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "Dentro il negozio ci sono caramelle e francobolli.",
+        "targetWord": "negozio",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5704827ba922f306.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lampeggiare",
+    "sentence": "Una luce rossa [[lampeggia]] sopra i tasti.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "flashes",
+      "options": [
+        "flashes",
+        "burns",
+        "falls",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "Una luce rossa lampeggia sopra i tasti.",
+        "targetWord": "lampeggia",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d817c8c785a5961d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "luce",
+    "sentence": "La [[luce]] rossa non si spegne mai.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a light",
+      "options": [
+        "a light",
+        "a sound",
+        "a coin",
+        "a door"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "La luce rossa non si spegne mai.",
+        "targetWord": "luce",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c58aa082f5b2458.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "museo",
+    "sentence": "L'autobus per il [[museo]] passa fra cinque minuti.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a museum",
+      "options": [
+        "a museum",
+        "a market",
+        "a beach",
+        "a hotel"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "L'autobus per il museo passa fra cinque minuti.",
+        "targetWord": "museo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8ace886ef07ddac7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aiuto",
+    "sentence": "Lei chiede [[aiuto]] a un ragazzo con il casco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "help",
+      "options": [
+        "help",
+        "money",
+        "water",
+        "time"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "Lei chiede aiuto a un ragazzo con il casco.",
+        "targetWord": "aiuto",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fc635de37d4fda62.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casco",
+    "sentence": "Il ragazzo tiene il [[casco]] sotto il braccio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a helmet",
+      "options": [
+        "a helmet",
+        "a bag",
+        "a book",
+        "a hat"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "Il ragazzo tiene il casco sotto il braccio.",
+        "targetWord": "casco",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/783243d0a3a55abf.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "braccio",
+    "sentence": "Lui porta il casco sotto il [[braccio]] destro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the arm",
+      "options": [
+        "the arm",
+        "the head",
+        "the foot",
+        "the back"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "Lui porta il casco sotto il braccio destro.",
+        "targetWord": "braccio",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e722ae787007641.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "stretto",
+    "sentence": "La porta del negozio è molto [[stretta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "narrow",
+      "options": [
+        "narrow",
+        "wide",
+        "open",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "La porta del negozio è molto stretta.",
+        "targetWord": "stretta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3aa2d61fac0d7717.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "strada",
+    "sentence": "Il negozio sta dall'altra parte della [[strada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the street",
+      "options": [
+        "the street",
+        "the station",
+        "the river",
+        "the roof"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "Il negozio sta dall'altra parte della strada.",
+        "targetWord": "strada",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e696a1eafe3f5b7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caramella",
+    "sentence": "Sul banco ci sono [[caramelle]] di tanti colori.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sweets",
+      "options": [
+        "sweets",
+        "stamps",
+        "tickets",
+        "coins"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "Sul banco ci sono caramelle di tanti colori.",
+        "targetWord": "caramelle",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1dbb2f7ff2d6d431.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "francobollo",
+    "sentence": "Il tabaccaio vende anche [[francobolli]] per le lettere.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stamps",
+      "options": [
+        "stamps",
+        "sweets",
+        "shoes",
+        "fruit"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "Il tabaccaio vende anche francobolli per le lettere.",
+        "targetWord": "francobolli",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/31f7f1806b769ad1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fila",
+    "sentence": "Dentro il negozio c'è una [[fila]] corta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a queue",
+      "options": [
+        "a queue",
+        "a wall",
+        "a chair",
+        "a price"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "Dentro il negozio c'è una fila corta.",
+        "targetWord": "fila",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/04bcc176b49a67bc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sottile",
+    "sentence": "I biglietti sono piccoli e [[sottili]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thin",
+      "options": [
+        "thin",
+        "thick",
+        "heavy",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "i-biglietti-li-vende-il-tabaccaio",
+        "storySource": "user",
+        "sentence": "I biglietti sono piccoli e sottili.",
+        "targetWord": "sottili",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/edf85fee0bfc6e10.mp3"
+      }
+    },
+    "featured": false
+  }
+]

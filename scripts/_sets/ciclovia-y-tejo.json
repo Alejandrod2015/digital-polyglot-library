@@ -1,0 +1,495 @@
+[
+  {
+    "type": "match_meaning",
+    "featured": true,
+    "word": "tejo,cancha,mecha,ciclovía",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        {
+          "word": "tejo",
+          "answer": "a throwing game",
+          "options": [
+            "a throwing game",
+            "an open court",
+            "a gunpowder fuse",
+            "car-free streets"
+          ]
+        },
+        {
+          "word": "cancha",
+          "answer": "an open court",
+          "options": [
+            "a throwing game",
+            "an open court",
+            "a gunpowder fuse",
+            "car-free streets"
+          ]
+        },
+        {
+          "word": "mecha",
+          "answer": "a gunpowder fuse",
+          "options": [
+            "a throwing game",
+            "an open court",
+            "a gunpowder fuse",
+            "car-free streets"
+          ]
+        },
+        {
+          "word": "ciclovía",
+          "answer": "car-free streets",
+          "options": [
+            "a throwing game",
+            "an open court",
+            "a gunpowder fuse",
+            "car-free streets"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "pedalear",
+    "sentence": "Manuela [[pedaleaba]] feliz entre el gentío dominguero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pedal",
+      "options": [
+        "to pedal",
+        "to stroll",
+        "to jog",
+        "to swim"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "Manuela pedaleaba feliz entre el gentío dominguero.",
+        "targetWord": "pedaleaba",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3875364e7b3dfca3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "muerto de la risa",
+    "sentence": "Nico gritó [[muerto de la risa]] sin frenos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "laughing very hard",
+      "options": [
+        "laughing very hard",
+        "scared stiff",
+        "bored to death",
+        "fast asleep"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "Nico gritó muerto de la risa sin frenos.",
+        "targetWord": "muerto de la risa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2e7c2e193f118c6f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "sudar la gota fría",
+    "sentence": "Manu [[sudaba la gota fría]] subiendo la loma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to struggle hard",
+      "options": [
+        "to struggle hard",
+        "to relax fully",
+        "to give up",
+        "to show off"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "Manu sudaba la gota fría subiendo la loma.",
+        "targetWord": "sudaba la gota fría",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ce3ce62340bea61.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "jadear",
+    "sentence": "Este plan está muy juicioso, [[jadeó]] Manu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pant",
+      "options": [
+        "to pant",
+        "to shout",
+        "to whisper",
+        "to laugh"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "Este plan está muy juicioso, jadeó Manu.",
+        "targetWord": "jadeó",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9757abd82145bcee.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "frenar en seco",
+    "sentence": "Manu [[frenó en seco]], fascinada por el contraste.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stop suddenly",
+      "options": [
+        "to stop suddenly",
+        "to speed up",
+        "to turn around",
+        "to fall down"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "Manu frenó en seco, fascinada por el contraste.",
+        "targetWord": "frenó en seco",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a1152e46c39a106f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "chimba",
+    "sentence": "Qué [[chimba]] de ciudad, soltó en voz baja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an awesome thing",
+      "options": [
+        "an awesome thing",
+        "a total mess",
+        "a boring place",
+        "a cheap trick"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "Qué chimba de ciudad, soltó en voz baja.",
+        "targetWord": "chimba",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/00f17f1f556e047c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "colarse",
+    "sentence": "Nico ya se había [[colado]] a la otra orilla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sneak in",
+      "options": [
+        "to sneak in",
+        "to sign up",
+        "to sit down",
+        "to give back"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "Nico ya se había colado a la otra orilla.",
+        "targetWord": "colado",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4312451774a049df.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "embocar",
+    "sentence": "Nico [[embocó]] su disco de hierro certero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hit the target",
+      "options": [
+        "to hit the target",
+        "to miss badly",
+        "to throw away",
+        "to pick up"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "Nico embocó su disco de hierro certero.",
+        "targetWord": "embocó",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e6ae93dcb019b07.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": true,
+    "word": "berraco",
+    "sentence": "Embocó el disco con puntería de [[berraco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tough and gutsy",
+      "options": [
+        "tough and gutsy",
+        "weak and shy",
+        "calm and quiet",
+        "rich and posh"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "Embocó el disco con puntería de berraco.",
+        "targetWord": "berraco",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/53bc230d8aa1a8a6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "featured": false,
+    "word": "el plan",
+    "sentence": "[[Este plan]] está muy juicioso para mi gusto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the outing",
+      "options": [
+        "the outing",
+        "the map",
+        "the price",
+        "the team"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "Este plan está muy juicioso para mi gusto.",
+        "targetWord": "Este plan",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95cb2699564e65f2.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "dominguero",
+    "sentence": "El gentío ____ llenaba la Séptima cerrada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dominguero",
+      "options": [
+        "dominguero",
+        "juicioso",
+        "berraco",
+        "gomelo"
+      ],
+      "translation": "The ____ crowd filled the closed Séptima.",
+      "optionTranslations": [
+        "lazy-Sunday",
+        "proper",
+        "gutsy",
+        "posh"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "El gentío dominguero llenaba la Séptima cerrada.",
+        "targetWord": "dominguero",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/503d1f894d768d94.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "parcero",
+    "sentence": "Camilo era su ____ de toda la vida.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "parcero",
+      "options": [
+        "parcero",
+        "gomelo",
+        "man",
+        "mecha"
+      ],
+      "translation": "Camilo was his lifelong ____.",
+      "optionTranslations": [
+        "buddy",
+        "posh kid",
+        "dude",
+        "fuse"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "Camilo era su parcero de toda la vida.",
+        "targetWord": "parcero",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c7c34c782edb049.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "gomelo",
+    "sentence": "Un ____ en sudadera trotaba por la ciclovía.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gomelo",
+      "options": [
+        "gomelo",
+        "parcero",
+        "man",
+        "tejo"
+      ],
+      "translation": "A ____ in sweats jogged along the ciclovía.",
+      "optionTranslations": [
+        "posh kid",
+        "buddy",
+        "dude",
+        "game"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "Un gomelo en sudadera trotaba por la ciclovía.",
+        "targetWord": "gomelo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1011e43d2cdde2ad.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "juicioso",
+    "sentence": "Este plan está muy ____ para mi gusto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "juicioso",
+      "options": [
+        "juicioso",
+        "dominguero",
+        "berraco",
+        "bacano"
+      ],
+      "translation": "This plan is too ____ for my taste.",
+      "optionTranslations": [
+        "proper",
+        "lazy-Sunday",
+        "gutsy",
+        "cool"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "Este plan está muy juicioso para mi gusto.",
+        "targetWord": "juicioso",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95cb2699564e65f2.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "man",
+    "sentence": "Ese ____ lanzaba discos contra la mecha.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "man",
+      "options": [
+        "man",
+        "gomelo",
+        "parcero",
+        "tejo"
+      ],
+      "translation": "That ____ threw discs at the fuse.",
+      "optionTranslations": [
+        "guy",
+        "posh kid",
+        "buddy",
+        "game"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "Ese man lanzaba discos contra la mecha.",
+        "targetWord": "man",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/98efd5c9863fe025.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "featured": false,
+    "word": "fio",
+    "sentence": "El otro jugador le ____ una cerveza a crédito.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "fio",
+      "options": [
+        "fio",
+        "prestó",
+        "pagó",
+        "cobró"
+      ],
+      "translation": "The other player ____ him a beer on credit.",
+      "optionTranslations": [
+        "sold on credit",
+        "lent",
+        "paid",
+        "charged"
+      ],
+      "audioClip": {
+        "storySlug": "ciclovia-y-tejo",
+        "storySource": "user",
+        "sentence": "El otro jugador le fio una cerveza a crédito.",
+        "targetWord": "fio",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5cdde3e067f4a72a.mp3"
+      }
+    }
+  }
+]

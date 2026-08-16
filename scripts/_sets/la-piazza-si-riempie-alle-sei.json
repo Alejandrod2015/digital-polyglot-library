@@ -1,0 +1,579 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "piazza,fontana,panchina,gelato",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "piazza",
+          "answer": "a square",
+          "options": [
+            "a square",
+            "a fountain",
+            "a bench",
+            "ice cream"
+          ]
+        },
+        {
+          "word": "fontana",
+          "answer": "a fountain",
+          "options": [
+            "a square",
+            "a fountain",
+            "a bench",
+            "ice cream"
+          ]
+        },
+        {
+          "word": "panchina",
+          "answer": "a bench",
+          "options": [
+            "a square",
+            "a fountain",
+            "a bench",
+            "ice cream"
+          ]
+        },
+        {
+          "word": "gelato",
+          "answer": "ice cream",
+          "options": [
+            "a square",
+            "a fountain",
+            "a bench",
+            "ice cream"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sole",
+    "sentence": "Alle cinque il [[sole]] batte sulle pietre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sun",
+      "options": [
+        "the sun",
+        "the wind",
+        "the rain",
+        "the shade"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Alle cinque il sole batte sulle pietre.",
+        "targetWord": "sole",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8258e73a63f94126.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "portico",
+    "sentence": "Nessuno cammina sotto i [[portici]] a quest'ora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the arcades",
+      "options": [
+        "the arcades",
+        "the stairs",
+        "the bridges",
+        "the gardens"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Nessuno cammina sotto i portici a quest'ora.",
+        "targetWord": "portici",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9e9dfab284f9dcd4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "serranda",
+    "sentence": "Verso le sei le [[serrande]] si alzano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the shop shutters",
+      "options": [
+        "the shop shutters",
+        "the church doors",
+        "the car windows",
+        "the street lamps"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Verso le sei le serrande si alzano.",
+        "targetWord": "serrande",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b6526e41c6a10ad6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guinzaglio",
+    "sentence": "Ogni cane porta il suo [[guinzaglio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lead, leash",
+      "options": [
+        "lead, leash",
+        "collar of gold",
+        "water bowl",
+        "small house"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Ogni cane porta il suo guinzaglio.",
+        "targetWord": "guinzaglio",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7cf3a87f475697f9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "segnale",
+    "sentence": "La piazza si riempie senza nessun [[segnale]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "signal",
+      "options": [
+        "signal",
+        "price",
+        "rule",
+        "door"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "La piazza si riempie senza nessun segnale.",
+        "targetWord": "segnale",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/92aefd738bdecd4b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "di corsa",
+    "sentence": "Nessuno qui va [[di corsa]] da nessuna parte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in a rush",
+      "options": [
+        "in a rush",
+        "on foot",
+        "by car",
+        "in silence"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Nessuno qui va di corsa da nessuna parte.",
+        "targetWord": "di corsa",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e81880b3664eda40.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "svuotarsi",
+    "sentence": "Alle otto la piazza [[si svuota]] quasi tutta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "empties",
+      "options": [
+        "empties",
+        "fills",
+        "closes",
+        "opens"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Alle otto la piazza si svuota quasi tutta.",
+        "targetWord": "si svuota",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/505003a9477704b8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "segreto",
+    "sentence": "Sembra un accordo [[segreto]] fra tutti.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "secret",
+      "options": [
+        "secret",
+        "written",
+        "expensive",
+        "noisy"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Sembra un accordo segreto fra tutti.",
+        "targetWord": "segreto",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81fa9632b7f1df9c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "passeggiata",
+    "sentence": "La _____ non ha un orario scritto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "passeggiata",
+      "options": [
+        "passeggiata",
+        "fontana",
+        "serranda",
+        "panchina"
+      ],
+      "translation": "The evening _____ has no written timetable.",
+      "optionTranslations": [
+        "walk",
+        "fountain",
+        "shutter",
+        "bench"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "La passeggiata non ha un orario scritto.",
+        "targetWord": "passeggiata",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8cfe3d243f3d8e9b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "battere",
+    "sentence": "Il sole [[batte]] forte sulla piazza vuota.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "beats down",
+      "options": [
+        "beats down",
+        "falls",
+        "rises",
+        "turns"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Il sole batte forte sulla piazza vuota.",
+        "targetWord": "batte",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d43eb2555abbbab.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pietra",
+    "sentence": "Le [[pietre]] gialle sono calde di sole.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the stones",
+      "options": [
+        "the stones",
+        "the doors",
+        "the trees",
+        "the tables"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Le pietre gialle sono calde di sole.",
+        "targetWord": "pietre",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c2e8ad170d6c061.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ragazzo",
+    "sentence": "Due [[ragazzi]] giocano davanti alla fontana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "young men",
+      "options": [
+        "young men",
+        "old women",
+        "small dogs",
+        "tall trees"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Due ragazzi giocano davanti alla fontana.",
+        "targetWord": "ragazzi",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/059cb7aa8879f099.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "giocare",
+    "sentence": "Loro [[giocano]] a pallone da mezz'ora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "play",
+      "options": [
+        "play",
+        "work",
+        "sleep",
+        "sing"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Loro giocano a pallone da mezz'ora.",
+        "targetWord": "giocano",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e853c43fcf106a45.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pallone",
+    "sentence": "Il [[pallone]] rimbalza contro il muro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the football",
+      "options": [
+        "the football",
+        "the bench",
+        "the bottle",
+        "the bag"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Il pallone rimbalza contro il muro.",
+        "targetWord": "pallone",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/662a3d498ae25bb6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "spento",
+    "sentence": "La fontana è [[spenta]] e senza acqua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "switched off",
+      "options": [
+        "switched off",
+        "full",
+        "new",
+        "open"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "La fontana è spenta e senza acqua.",
+        "targetWord": "spenta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7374221e33ae99f6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "famiglia",
+    "sentence": "Le [[famiglie]] arrivano piano piano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the families",
+      "options": [
+        "the families",
+        "the waiters",
+        "the tourists",
+        "the students"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Le famiglie arrivano piano piano.",
+        "targetWord": "famiglie",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4a4b52d804f7ae4c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cane",
+    "sentence": "I [[cani]] al guinzaglio camminano davanti.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the dogs",
+      "options": [
+        "the dogs",
+        "the cats",
+        "the birds",
+        "the horses"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "I cani al guinzaglio camminano davanti.",
+        "targetWord": "cani",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d89a0edef1185c03.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "voce",
+    "sentence": "Le [[voci]] alte riempiono tutta la piazza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the voices",
+      "options": [
+        "the voices",
+        "the shops",
+        "the lights",
+        "the bells"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Le voci alte riempiono tutta la piazza.",
+        "targetWord": "voci",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3538f2a5b7dd0a86.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "direzione",
+    "sentence": "Lei cammina senza una [[direzione]] precisa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "direction",
+      "options": [
+        "direction",
+        "hurry",
+        "reason",
+        "company"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Lei cammina senza una direzione precisa.",
+        "targetWord": "direzione",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a18416620eb44945.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avanti",
+    "sentence": "Tutti girano [[avanti]] e indietro molto piano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "forward",
+      "options": [
+        "forward",
+        "under",
+        "inside",
+        "away"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Tutti girano avanti e indietro molto piano.",
+        "targetWord": "avanti",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/537c458f2a823b21.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "indietro",
+    "sentence": "Loro tornano [[indietro]] e ricominciano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "backwards",
+      "options": [
+        "backwards",
+        "upwards",
+        "outside",
+        "home"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Loro tornano indietro e ricominciano.",
+        "targetWord": "indietro",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4622705a331d3b89.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "accordo",
+    "sentence": "Tutti seguono lo stesso [[accordo]], senza parlare.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "agreement",
+      "options": [
+        "agreement",
+        "mistake",
+        "price",
+        "game"
+      ],
+      "audioClip": {
+        "storySlug": "la-piazza-si-riempie-alle-sei",
+        "storySource": "user",
+        "sentence": "Tutti seguono lo stesso accordo, senza parlare.",
+        "targetWord": "accordo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7feb53cfe868eb0b.mp3"
+      }
+    },
+    "featured": false
+  }
+]

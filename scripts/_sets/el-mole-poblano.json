@@ -1,0 +1,939 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "olor",
+    "sentence": "El [[olor]] de la comida es delicioso.",
+    "payload": {
+      "answer": "a smell",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a smell",
+        "a taste",
+        "a sound",
+        "a color"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El olor de la comida es delicioso.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "olor",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7472e6607c8cba6a.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delicioso",
+    "sentence": "El olor de la salsa es [[delicioso]].",
+    "payload": {
+      "answer": "delicious",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "delicious",
+        "dirty",
+        "boring",
+        "empty"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El olor de la salsa es delicioso.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "delicioso",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16d32e725fce7a87.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preparar",
+    "sentence": "El hombre [[prepara]] la comida en el mercado.",
+    "payload": {
+      "answer": "to prepare",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to prepare",
+        "to sell",
+        "to eat",
+        "to bring"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El hombre prepara la comida en el mercado.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "prepara",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c83e2e69fb37d0e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "probar",
+    "sentence": "Ella [[prueba]] la comida con cuidado.",
+    "payload": {
+      "answer": "to taste",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to taste",
+        "to cook",
+        "to bring",
+        "to pay"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella prueba la comida con cuidado.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "prueba",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6fc9d57a8e49f673.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "picante",
+    "sentence": "El chile hace que la comida sea muy _____.",
+    "payload": {
+      "answer": "picante",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "picante",
+        "dulce",
+        "suave",
+        "fría"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El chile hace que la comida sea muy picante.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "picante",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/47859ed2c036017b.mp3"
+      },
+      "translation": "The chili makes the food very _____.",
+      "optionTranslations": [
+        "spicy",
+        "sweet",
+        "mild",
+        "cold"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "servir",
+    "sentence": "El hombre [[sirve]] un plato caliente.",
+    "payload": {
+      "answer": "to serve",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to serve",
+        "to order",
+        "to pay",
+        "to clean"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El hombre sirve un plato caliente.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "sirve",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3899fee617b040d6.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "hambre",
+    "sentence": "No como desde la mañana y tengo mucha _____.",
+    "payload": {
+      "answer": "hambre",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "hambre",
+        "sed",
+        "prisa",
+        "suerte"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "No como desde la mañana y tengo mucha hambre.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "hambre",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf66bc832d90f642.mp3"
+      },
+      "translation": "I have not eaten since morning and I have a lot of _____.",
+      "optionTranslations": [
+        "hunger",
+        "thirst",
+        "hurry",
+        "luck"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "famoso",
+    "sentence": "Este platillo es muy [[famoso]] en la región.",
+    "payload": {
+      "answer": "famous",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "famous",
+        "cheap",
+        "simple",
+        "quiet"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Este platillo es muy famoso en la región.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "famoso",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/47be47c035ceec4f.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dulce",
+    "sentence": "Ella come un [[dulce]] de la región.",
+    "payload": {
+      "answer": "a sweet",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a sweet",
+        "a soup",
+        "a drink",
+        "a bread"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella come un dulce de la región.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "dulce",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d5cacdb5a6d42180.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "caliente",
+    "sentence": "No toques la sopa porque está muy _____.",
+    "payload": {
+      "answer": "caliente",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "caliente",
+        "fría",
+        "dulce",
+        "salada"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "No toques la sopa porque está muy caliente.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "caliente",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7faf1fa0f35928f6.mp3"
+      },
+      "translation": "Do not touch the soup because it is very _____.",
+      "optionTranslations": [
+        "hot",
+        "cold",
+        "sweet",
+        "salty"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "camina",
+    "sentence": "Ella _____ despacio porque le duelen los pies.",
+    "payload": {
+      "answer": "camina",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "camina",
+        "corre",
+        "salta",
+        "nada"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella camina despacio porque le duelen los pies.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "camina",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8c6aea529ce22660.mp3"
+      },
+      "translation": "She _____ slowly because her feet hurt.",
+      "optionTranslations": [
+        "walks",
+        "runs",
+        "jumps",
+        "swims"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vende",
+    "sentence": "El hombre _____ frutas y recibe dinero.",
+    "payload": {
+      "answer": "vende",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "vende",
+        "compra",
+        "corta",
+        "lava"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El hombre vende frutas y recibe dinero.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "vende",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f3a458e8767438a7.mp3"
+      },
+      "translation": "The man _____ fruit and receives money.",
+      "optionTranslations": [
+        "sells",
+        "buys",
+        "cuts",
+        "washes"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "observar",
+    "sentence": "Ella [[observa]] la salsa oscura con atención.",
+    "payload": {
+      "answer": "to watch",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to watch",
+        "to taste",
+        "to cook",
+        "to buy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella observa la salsa oscura con atención.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "observa",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/65ec329ca152dace.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rápido",
+    "sentence": "Ella toma agua muy [[rápido]].",
+    "payload": {
+      "answer": "quickly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "quickly",
+        "slowly",
+        "quietly",
+        "softly"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella toma agua muy rápido.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "rápido",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cbc9408a8908126b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paciencia",
+    "sentence": "El hombre espera con mucha [[paciencia]].",
+    "payload": {
+      "answer": "patience",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "patience",
+        "anger",
+        "fear",
+        "hunger"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El hombre espera con mucha paciencia.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "paciencia",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8b05718ad17fd7c0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ofrecer",
+    "sentence": "El hombre [[ofrece]] un dulce típico.",
+    "payload": {
+      "answer": "to offer",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to offer",
+        "to sell",
+        "to hide",
+        "to eat"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El hombre ofrece un dulce típico.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "ofrece",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e084bc4b288a536.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camote",
+    "sentence": "El [[camote]] tiene un color rosa.",
+    "payload": {
+      "answer": "a sweet potato candy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a sweet potato candy",
+        "a corn drink",
+        "a green chili",
+        "a fried fish"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El camote tiene un color rosa.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "camote",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3979064f7752038d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suave",
+    "sentence": "El dulce es muy [[suave]] y rico.",
+    "payload": {
+      "answer": "soft",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "soft",
+        "hard",
+        "sour",
+        "bitter"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El dulce es muy suave y rico.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "suave",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/209722c8bf4d59e6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enorme",
+    "sentence": "La catedral es [[enorme]] y elegante.",
+    "payload": {
+      "answer": "huge",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "huge",
+        "tiny",
+        "narrow",
+        "short"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La catedral es enorme y elegante.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "enorme",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/76dc24e4f70ad167.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "espeso",
+    "sentence": "El mole es oscuro y [[espeso]].",
+    "payload": {
+      "answer": "thick",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "thick",
+        "thin",
+        "clear",
+        "cold"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El mole es oscuro y espeso.",
+        "storySlug": "el-mole-poblano",
+        "targetWord": "espeso",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/35109f1ba1427d7f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "centro,mercado,salsa,catedral",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "centro",
+          "answer": "the center",
+          "options": [
+            "the center",
+            "a market",
+            "a sauce",
+            "a cathedral"
+          ]
+        },
+        {
+          "word": "mercado",
+          "answer": "a market",
+          "options": [
+            "the center",
+            "a market",
+            "a sauce",
+            "a cathedral"
+          ]
+        },
+        {
+          "word": "salsa",
+          "answer": "a sauce",
+          "options": [
+            "the center",
+            "a market",
+            "a sauce",
+            "a cathedral"
+          ]
+        },
+        {
+          "word": "catedral",
+          "answer": "a cathedral",
+          "options": [
+            "the center",
+            "a market",
+            "a sauce",
+            "a cathedral"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llegar",
+    "sentence": "Sofía [[llega]] al mercado con mucha hambre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "arrives",
+      "options": [
+        "arrives",
+        "sleeps",
+        "cooks",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "el-mole-poblano",
+        "storySource": "user",
+        "sentence": "Sofía llega al mercado con mucha hambre.",
+        "targetWord": "llega",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/537ca76ed0c87da8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "solo",
+    "sentence": "Sofía camina [[sola]] por el mercado grande.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "alone",
+      "options": [
+        "alone",
+        "tired",
+        "sick",
+        "tall"
+      ],
+      "audioClip": {
+        "storySlug": "el-mole-poblano",
+        "storySource": "user",
+        "sentence": "Sofía camina sola por el mercado grande.",
+        "targetWord": "sola",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/50883bb7a33f7200.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conocer",
+    "sentence": "Sofía [[conoce]] a Memo desde hace muchos años.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "knows",
+      "options": [
+        "knows",
+        "calls",
+        "misses",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "el-mole-poblano",
+        "storySource": "user",
+        "sentence": "Sofía conoce a Memo desde hace muchos años.",
+        "targetWord": "conoce",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/853e6afff5f9d7db.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escuchar",
+    "sentence": "Sofía [[escucha]] la música suave del mercado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "listens",
+      "options": [
+        "listens",
+        "reads",
+        "buys",
+        "opens"
+      ],
+      "audioClip": {
+        "storySlug": "el-mole-poblano",
+        "storySource": "user",
+        "sentence": "Sofía escucha la música suave del mercado.",
+        "targetWord": "escucha",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5fa9c8348f763322.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rosa",
+    "sentence": "Memo te ofrece un dulce de color [[rosa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pink",
+      "options": [
+        "pink",
+        "green",
+        "blue",
+        "brown"
+      ],
+      "audioClip": {
+        "storySlug": "el-mole-poblano",
+        "storySource": "user",
+        "sentence": "Memo te ofrece un dulce de color rosa.",
+        "targetWord": "rosa",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1589a75f8c916fb0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "torre",
+    "sentence": "La catedral tiene dos [[torres]] muy altas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "towers",
+      "options": [
+        "towers",
+        "doors",
+        "chairs",
+        "windows"
+      ],
+      "audioClip": {
+        "storySlug": "el-mole-poblano",
+        "storySource": "user",
+        "sentence": "La catedral tiene dos torres muy altas.",
+        "targetWord": "torres",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d0038ce8332ca907.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "puesto",
+    "sentence": "Memo trabaja en un [[puesto]] pequeño del mercado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a stall",
+      "options": [
+        "a stall",
+        "a car",
+        "a book",
+        "a river"
+      ],
+      "audioClip": {
+        "storySlug": "el-mole-poblano",
+        "storySource": "user",
+        "sentence": "Memo trabaja en un puesto pequeño del mercado.",
+        "targetWord": "puesto",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6218ba79c13b2f63.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entero",
+    "sentence": "El mole se cocina durante un día [[entero]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "whole",
+      "options": [
+        "whole",
+        "short",
+        "cold",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "el-mole-poblano",
+        "storySource": "user",
+        "sentence": "El mole se cocina durante un día entero.",
+        "targetWord": "entero",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c3326e23a75fe67a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorprendido",
+    "sentence": "Sofía mira el mole y queda muy [[sorprendida]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "surprised",
+      "options": [
+        "surprised",
+        "bored",
+        "angry",
+        "calm"
+      ],
+      "audioClip": {
+        "storySlug": "el-mole-poblano",
+        "storySource": "user",
+        "sentence": "Sofía mira el mole y queda muy sorprendida.",
+        "targetWord": "sorprendida",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40f5a1c405d21969.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oscuro",
+    "sentence": "El mole es una salsa espesa y [[oscura]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dark",
+      "options": [
+        "dark",
+        "wet",
+        "loud",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "el-mole-poblano",
+        "storySource": "user",
+        "sentence": "El mole es una salsa espesa y oscura.",
+        "targetWord": "oscura",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/958de514b856fbdb.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cielo",
+    "sentence": "La catedral es alta y sube hacia el [[cielo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sky",
+      "options": [
+        "the sky",
+        "the floor",
+        "the door",
+        "the sea"
+      ],
+      "audioClip": {
+        "storySlug": "el-mole-poblano",
+        "storySource": "user",
+        "sentence": "La catedral es alta y sube hacia el cielo.",
+        "targetWord": "cielo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/22d1b9860271ff8b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sol",
+    "sentence": "Por la mañana, el [[sol]] brilla sobre el mercado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sun",
+      "options": [
+        "the sun",
+        "the rain",
+        "the wind",
+        "the moon"
+      ],
+      "audioClip": {
+        "storySlug": "el-mole-poblano",
+        "storySource": "user",
+        "sentence": "Por la mañana, el sol brilla sobre el mercado.",
+        "targetWord": "sol",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec6d1b2b6b0eadd0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tortilla",
+    "sentence": "Sofía prueba el mole con una [[tortilla]] caliente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "corn flatbread",
+      "options": [
+        "corn flatbread",
+        "a spoon",
+        "a chair",
+        "a window"
+      ],
+      "audioClip": {
+        "storySlug": "el-mole-poblano",
+        "storySource": "user",
+        "sentence": "Sofía prueba el mole con una tortilla caliente.",
+        "targetWord": "tortilla",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b97550f0f19498a8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oler",
+    "sentence": "El mole [[huele]] muy rico y caliente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "smells",
+      "options": [
+        "smells",
+        "breaks",
+        "falls",
+        "floats"
+      ],
+      "audioClip": {
+        "storySlug": "el-mole-poblano",
+        "storySource": "user",
+        "sentence": "El mole huele muy rico y caliente.",
+        "targetWord": "huele",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9b1e291ea9700a7e.mp3"
+      }
+    },
+    "featured": false
+  }
+]

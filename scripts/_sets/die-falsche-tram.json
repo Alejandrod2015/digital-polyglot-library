@@ -1,0 +1,602 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Tourist,Student,Hilfe,Problem",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Tourist",
+     "answer": "tourist",
+     "options": [
+      "tourist",
+      "student",
+      "help",
+      "problem"
+     ]
+    },
+    {
+     "word": "Student",
+     "answer": "student",
+     "options": [
+      "tourist",
+      "student",
+      "help",
+      "problem"
+     ]
+    },
+    {
+     "word": "Hilfe",
+     "answer": "help",
+     "options": [
+      "tourist",
+      "student",
+      "help",
+      "problem"
+     ]
+    },
+    {
+     "word": "Problem",
+     "answer": "problem",
+     "options": [
+      "tourist",
+      "student",
+      "help",
+      "problem"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "will",
+  "sentence": "Sie _____ zur Altstadt fahren.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "will",
+   "options": [
+    "will",
+    "nimmt",
+    "schaut",
+    "fragt"
+   ],
+   "translation": "She _____ to go to the old town.",
+   "optionTranslations": [
+    "wants",
+    "takes",
+    "looks",
+    "asks"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Sie will zur Altstadt fahren.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "will"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "nimmt",
+  "sentence": "Aber Sofia _____ die falsche Tram.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nimmt",
+   "options": [
+    "nimmt",
+    "will",
+    "sucht",
+    "zeigt"
+   ],
+   "translation": "But Sofia _____ the wrong tram.",
+   "optionTranslations": [
+    "takes",
+    "wants",
+    "looks for",
+    "shows"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Aber Sofia nimmt die falsche Tram.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "nimmt"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "schaut",
+  "sentence": "Sie _____ auf den Plan.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schaut",
+   "options": [
+    "schaut",
+    "fragt",
+    "nimmt",
+    "sucht"
+   ],
+   "translation": "She _____ at the map.",
+   "optionTranslations": [
+    "looks",
+    "asks",
+    "takes",
+    "looks for"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Sie schaut auf den Plan.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "schaut"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "fragt",
+  "sentence": "Max _____ sie freundlich.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fragt",
+   "options": [
+    "fragt",
+    "schaut",
+    "zeigt",
+    "sucht"
+   ],
+   "translation": "Max _____ her in a friendly way.",
+   "optionTranslations": [
+    "asks",
+    "looks",
+    "shows",
+    "looks for"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Max fragt sie freundlich.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "fragt"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "suche",
+  "sentence": "Ich _____ die Altstadt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "suche",
+   "options": [
+    "suche",
+    "schaue",
+    "frage",
+    "zeige"
+   ],
+   "translation": "I _____ the old town.",
+   "optionTranslations": [
+    "look for",
+    "look",
+    "ask",
+    "show"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Ich suche die Altstadt.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "suche"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "falsch",
+  "sentence": "Aber Sofia nimmt die [[falsche]] Tram.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wrong",
+   "options": [
+    "wrong",
+    "empty",
+    "next",
+    "slow"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Aber Sofia nimmt die falsche Tram.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "falsche"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "nervös",
+  "sentence": "Sie versteht nichts und wird [[nervös]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nervous",
+   "options": [
+    "nervous",
+    "happy",
+    "tired",
+    "angry"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Sie versteht nichts und wird nervös.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "nervös"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "freundlich",
+  "sentence": "Max ist sehr [[freundlich]] zu Sofia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "friendly",
+   "options": [
+    "friendly",
+    "quiet",
+    "serious",
+    "sad"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Max ist sehr freundlich zu Sofia.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "freundlich"
+   }
+  }
+ },
+ {
+  "type": "listen_choose",
+  "featured": true,
+  "word": "zusammen",
+  "sentence": "",
+  "payload": {
+   "prompt": "Listen and choose the word you hear.",
+   "answer": "zusammen",
+   "options": [
+    "zusammen",
+    "direkt",
+    "langsam",
+    "richtig"
+   ],
+   "optionTranslations": [
+    "together",
+    "directly",
+    "slowly",
+    "correct"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Sie gehen zusammen zur Tram.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "zusammen"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "fahren",
+  "sentence": "Sie will zur Altstadt _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fahren",
+   "options": [
+    "fahren",
+    "suchen",
+    "zeigen",
+    "fragen"
+   ],
+   "translation": "She wants to go to the old town by _____.",
+   "optionTranslations": [
+    "to go",
+    "to look for",
+    "to show",
+    "to ask"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Sie will zur Altstadt fahren.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "fahren"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Plan",
+  "sentence": "Sie schaut auf den _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Plan",
+   "options": [
+    "Plan",
+    "Student",
+    "Tourist",
+    "Koffer"
+   ],
+   "translation": "She looks at the _____.",
+   "optionTranslations": [
+    "map",
+    "student",
+    "tourist",
+    "suitcase"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Sie schaut auf den Plan.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "Plan"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "verstehen",
+  "sentence": "Sofia [[versteht]] jetzt alles gut.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "understands",
+   "options": [
+    "understands",
+    "forgets",
+    "asks",
+    "shows"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Sofia versteht jetzt alles gut.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "versteht"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "jung",
+  "sentence": "Ein [[junger]] Mann sitzt neben ihr.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "young",
+   "options": [
+    "young",
+    "old",
+    "tall",
+    "kind"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Ein junger Mann sitzt neben ihr.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "junger"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "lächeln",
+  "sentence": "Max [[lächelt]] und ist freundlich.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "smiles",
+   "options": [
+    "smiles",
+    "cries",
+    "sleeps",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Max lächelt und ist freundlich.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "lächelt"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "zeigt",
+  "sentence": "Max _____ ihr die richtige Tram.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zeigt",
+   "options": [
+    "zeigt",
+    "fragt",
+    "sucht",
+    "nimmt"
+   ],
+   "translation": "Max _____ her the right tram.",
+   "optionTranslations": [
+    "shows",
+    "asks",
+    "looks for",
+    "takes"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Max zeigt ihr die richtige Tram.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "zeigt"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "richtig",
+  "sentence": "Max zeigt ihr die [[richtige]] Tram.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right",
+   "options": [
+    "right",
+    "wrong",
+    "full",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Max zeigt ihr die richtige Tram.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "richtige"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "direkt",
+  "sentence": "Die Tram fährt [[direkt]] zur Altstadt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "directly",
+   "options": [
+    "directly",
+    "slowly",
+    "later",
+    "back"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Die Tram fährt direkt zur Altstadt.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "direkt"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "danke",
+  "sentence": "Vielen [[Dank]], Max, sagt Sofia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thanks",
+   "options": [
+    "thanks",
+    "sorry",
+    "hello",
+    "please"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Vielen Dank, Max, sagt Sofia.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "Dank"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "bitte",
+  "sentence": "Ja, _____, sagt Sofia.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bitte",
+   "options": [
+    "bitte",
+    "danke",
+    "richtig",
+    "genau"
+   ],
+   "translation": "Yes, _____, says Sofia.",
+   "optionTranslations": [
+    "please",
+    "thanks",
+    "right",
+    "exactly"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Ja, bitte, sagt Sofia.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "bitte"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "froh",
+  "sentence": "Sofia ist sehr [[froh]] in Dresden.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "glad",
+   "options": [
+    "glad",
+    "tired",
+    "nervous",
+    "wrong"
+   ],
+   "audioClip": {
+    "storySlug": "die-falsche-tram",
+    "storySource": "user",
+    "sentence": "Sofia ist sehr froh in Dresden.",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx",
+    "targetWord": "froh"
+   }
+  }
+ }
+]

@@ -1,0 +1,463 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "die Vorfreude",
+    "sentence": "Voller [[Vorfreude]] zückt Nadia am Hafen ihr Handy.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "happy anticipation",
+      "options": [
+        "happy anticipation",
+        "sudden dread",
+        "deep boredom",
+        "quiet anger"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "Voller Vorfreude zückt Nadia am Hafen ihr Handy.",
+        "targetWord": "Vorfreude",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f73a21b9bcb82cc4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "zücken",
+    "sentence": "Voller Vorfreude [[zückt]] Nadia am Hafen ihr Handy.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to whip out",
+      "options": [
+        "to whip out",
+        "to put away",
+        "to drop",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "Voller Vorfreude zückt Nadia am Hafen ihr Handy.",
+        "targetWord": "zückt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f73a21b9bcb82cc4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lotsen",
+    "sentence": "Hauke und Frauke [[lotsen]] sie in die andere Richtung.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to steer, to guide",
+      "options": [
+        "to steer, to guide",
+        "to chase away",
+        "to leave behind",
+        "to call over"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "Hauke und Frauke lotsen sie in die andere Richtung.",
+        "targetWord": "lotsen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7a0d42a5a95ac885.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aufeinanderprallen",
+    "sentence": "Zwei Hamburgs [[prallen]] aufeinander.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to collide head on",
+      "options": [
+        "to collide head on",
+        "to blend smoothly",
+        "to drift apart",
+        "to line up neatly"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "Zwei Hamburgs prallen aufeinander.",
+        "targetWord": "prallen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/129b6e150f904cbd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Kontrast",
+    "sentence": "Der [[Kontrast]] könnte kaum größer sein.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a stark difference",
+      "options": [
+        "a stark difference",
+        "a close match",
+        "a long delay",
+        "a fair price"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "Der Kontrast könnte kaum größer sein.",
+        "targetWord": "Kontrast",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/83fea2fa22793071.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "begreifen",
+    "sentence": "Mit einem Mal [[begreift]] sie, was sie fast verpasst hätte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to finally grasp",
+      "options": [
+        "to finally grasp",
+        "to slowly forget",
+        "to loudly deny",
+        "to briefly doubt"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "Mit einem Mal begreift sie, was sie fast verpasst hätte.",
+        "targetWord": "begreift",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f2fbb05502b8ff42.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "genüsslich",
+    "sentence": "Er beißt [[genüsslich]] in sein eigenes Brötchen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with relish",
+      "options": [
+        "with relish",
+        "in a hurry",
+        "with disgust",
+        "by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "Er beißt genüsslich in sein eigenes Brötchen.",
+        "targetWord": "genüsslich",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29a228e11cb0820b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "knipsen",
+    "sentence": "Am Aussichtspunkt will jeder das schöne Tal _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "knipsen",
+      "options": [
+        "knipsen",
+        "hören",
+        "kochen",
+        "kaufen"
+      ],
+      "translation": "At the viewpoint everyone wants to _____ the pretty valley.",
+      "optionTranslations": [
+        "snap a photo of",
+        "listen to",
+        "cook",
+        "buy"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "Am Aussichtspunkt will jeder das schöne Tal knipsen.",
+        "targetWord": "knipsen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d91c67e7788756f9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "nieselt",
+    "sentence": "Nimm einen Schirm mit, draußen _____ es schon wieder.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "nieselt",
+      "options": [
+        "nieselt",
+        "brennt",
+        "klingelt",
+        "wächst"
+      ],
+      "translation": "Take an umbrella, outside it is _____ again.",
+      "optionTranslations": [
+        "drizzling",
+        "burning",
+        "ringing",
+        "growing"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "Nimm einen Schirm mit, draußen nieselt es schon wieder.",
+        "targetWord": "nieselt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ce55e7dbae359a27.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "dämmert",
+    "sentence": "Nach langem Nachdenken _____ ihm endlich die Lösung.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dämmert",
+      "options": [
+        "dämmert",
+        "entfällt",
+        "gefällt",
+        "entgeht"
+      ],
+      "translation": "After long thought the solution finally _____ on him.",
+      "optionTranslations": [
+        "dawns",
+        "slips away",
+        "pleases",
+        "escapes"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "Nach langem Nachdenken dämmert ihm endlich die Lösung.",
+        "targetWord": "dämmert",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/47b5fa6b07acd180.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "elegant",
+    "sentence": "Sie schaut zum [[eleganten]] Konzerthaus in der Ferne.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sleek and stylish",
+      "options": [
+        "sleek and stylish",
+        "plain and rough",
+        "old and broken",
+        "small and cheap"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "Sie schaut zum eleganten Konzerthaus in der Ferne.",
+        "targetWord": "eleganten",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/969a4a76ee53c423.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rau",
+    "sentence": "das [[raue]] Hamburg für die Leute, die hier wohnen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rough, unpolished",
+      "options": [
+        "rough, unpolished",
+        "sleek and shiny",
+        "warm and soft",
+        "brand new"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "das raue Hamburg für die Leute, die hier wohnen.",
+        "targetWord": "raue",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d981aecd5a553b95.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "urig",
+    "sentence": "das raue, [[urige]] Hamburg für die echten Bewohner.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "quaint and characterful",
+      "options": [
+        "quaint and characterful",
+        "cold and modern",
+        "loud and busy",
+        "clean and empty"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "das raue, urige Hamburg für die echten Bewohner.",
+        "targetWord": "urige",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85bb96088a3db958.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nölen",
+    "sentence": "\"Schmeckt's?\", [[nölt]] Hauke trocken.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to grumble drily",
+      "options": [
+        "to grumble drily",
+        "to cheer loudly",
+        "to sing softly",
+        "to ask politely"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "\"Schmeckt's?\", nölt Hauke trocken.",
+        "targetWord": "nölt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f3da5d18fffca30c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "albern",
+    "sentence": "Mit dem großen Hut siehst du wirklich _____ aus.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "albern",
+      "options": [
+        "albern",
+        "elegant",
+        "müde",
+        "reich"
+      ],
+      "translation": "With that big hat you really look _____.",
+      "optionTranslations": [
+        "silly",
+        "elegant",
+        "tired",
+        "rich"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "Mit dem großen Hut siehst du wirklich albern aus.",
+        "targetWord": "albern",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3302995203ab6d37.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "posiert",
+    "sentence": "Vor der Kamera _____ das Model mit einem breiten Lächeln.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "posiert",
+      "options": [
+        "posiert",
+        "schläft",
+        "kocht",
+        "weint"
+      ],
+      "translation": "In front of the camera the model _____ with a broad smile.",
+      "optionTranslations": [
+        "poses",
+        "sleeps",
+        "cooks",
+        "cries"
+      ],
+      "audioClip": {
+        "storySlug": "ein-fischbrotchen-im-nieselregen",
+        "storySource": "user",
+        "sentence": "Vor der Kamera posiert das Model mit einem breiten Lächeln.",
+        "targetWord": "posiert",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b17dde9f5d37fd6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "Möwen,Imbiss,Beton,Fischbrötchen",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "Möwen",
+          "answer": "seagulls",
+          "options": [
+            "seagulls",
+            "a snack stand",
+            "concrete",
+            "a fish sandwich"
+          ]
+        },
+        {
+          "word": "Imbiss",
+          "answer": "a snack stand",
+          "options": [
+            "seagulls",
+            "a snack stand",
+            "concrete",
+            "a fish sandwich"
+          ]
+        },
+        {
+          "word": "Beton",
+          "answer": "concrete",
+          "options": [
+            "seagulls",
+            "a snack stand",
+            "concrete",
+            "a fish sandwich"
+          ]
+        },
+        {
+          "word": "Fischbrötchen",
+          "answer": "a fish sandwich",
+          "options": [
+            "seagulls",
+            "a snack stand",
+            "concrete",
+            "a fish sandwich"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

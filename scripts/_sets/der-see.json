@@ -1,0 +1,604 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "See,Spiegel,Stein,Vogel",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "See",
+     "answer": "lake",
+     "options": [
+      "lake",
+      "mirror",
+      "stone",
+      "bird"
+     ]
+    },
+    {
+     "word": "Spiegel",
+     "answer": "mirror",
+     "options": [
+      "lake",
+      "mirror",
+      "stone",
+      "bird"
+     ]
+    },
+    {
+     "word": "Stein",
+     "answer": "stone",
+     "options": [
+      "lake",
+      "mirror",
+      "stone",
+      "bird"
+     ]
+    },
+    {
+     "word": "Vogel",
+     "answer": "bird",
+     "options": [
+      "lake",
+      "mirror",
+      "stone",
+      "bird"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "klar",
+  "sentence": "Das Wasser ist [[klar]] und still.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clear",
+   "options": [
+    "clear",
+    "deep",
+    "warm",
+    "wet"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Das Wasser ist klar und still.",
+    "targetWord": "klar",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "friedlich",
+  "sentence": "„Es ist sehr [[friedlich]]\", sagt Emma.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "peaceful",
+   "options": [
+    "peaceful",
+    "loud",
+    "cold",
+    "busy"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "„Es ist sehr friedlich\", sagt Emma.",
+    "targetWord": "friedlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "müde",
+  "sentence": "Sie ist [[müde]], aber sehr glücklich.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tired",
+   "options": [
+    "tired",
+    "happy",
+    "afraid",
+    "hungry"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Sie ist müde, aber sehr glücklich.",
+    "targetWord": "müde",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Wasser",
+  "sentence": "Das _____ ist klar und still.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Wasser",
+   "options": [
+    "Wasser",
+    "Wald",
+    "Berg",
+    "Stein"
+   ],
+   "translation": "The _____ is clear and still.",
+   "optionTranslations": [
+    "water",
+    "forest",
+    "mountain",
+    "stone"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Das Wasser ist klar und still.",
+    "targetWord": "Wasser",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Berge",
+  "sentence": "_____ und Wald sind überall.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Berge",
+   "options": [
+    "Berge",
+    "Vögel",
+    "Steine",
+    "Fische"
+   ],
+   "translation": "_____ and forest are everywhere.",
+   "optionTranslations": [
+    "mountains",
+    "birds",
+    "stones",
+    "fish"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Berge und Wald sind überall.",
+    "targetWord": "Berge",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "Wald",
+  "sentence": "Berge und _____ sind überall.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Wald",
+   "options": [
+    "Wald",
+    "See",
+    "Stein",
+    "Vogel"
+   ],
+   "translation": "Mountains and _____ are everywhere.",
+   "optionTranslations": [
+    "forest",
+    "lake",
+    "stone",
+    "bird"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Berge und Wald sind überall.",
+    "targetWord": "Wald",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "setzt",
+  "sentence": "Emma _____ sich auf einen Stein.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "setzt",
+   "options": [
+    "setzt",
+    "schaut",
+    "atmet",
+    "bleibt"
+   ],
+   "translation": "Emma _____ down on a stone.",
+   "optionTranslations": [
+    "sits",
+    "looks",
+    "breathes",
+    "stays"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Emma setzt sich auf einen Stein.",
+    "targetWord": "setzt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "schaut",
+  "sentence": "Sie _____ auf das Wasser.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schaut",
+   "options": [
+    "schaut",
+    "setzt",
+    "fliegt",
+    "bleibt"
+   ],
+   "translation": "She _____ at the water.",
+   "optionTranslations": [
+    "looks",
+    "sits",
+    "flies",
+    "stays"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Sie schaut auf das Wasser.",
+    "targetWord": "schaut",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "bleiben",
+  "sentence": "Wir _____ noch ein bisschen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bleiben",
+   "options": [
+    "bleiben",
+    "gehen",
+    "warten",
+    "schauen"
+   ],
+   "translation": "We _____ a little longer.",
+   "optionTranslations": [
+    "stay",
+    "go",
+    "wait",
+    "look"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Wir bleiben noch ein bisschen.",
+    "targetWord": "bleiben",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "still",
+  "sentence": "Das Wasser ist klar und [[still]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quiet",
+   "options": [
+    "quiet",
+    "loud",
+    "warm",
+    "deep"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Das Wasser ist klar und still.",
+    "targetWord": "still",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "leise",
+  "sentence": "Der Wind ist sehr [[leise]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "soft",
+   "options": [
+    "soft",
+    "loud",
+    "deep",
+    "bright"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Der Wind ist sehr leise.",
+    "targetWord": "leise",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "neben",
+  "sentence": "Leon setzt sich [[neben]] sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "next to",
+   "options": [
+    "next to",
+    "behind",
+    "under",
+    "far from"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Leon setzt sich neben sie.",
+    "targetWord": "neben",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "tief",
+  "sentence": "Emma atmet [[tief]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "deep",
+   "options": [
+    "deep",
+    "shallow",
+    "quick",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Emma atmet tief.",
+    "targetWord": "tief",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Stadt",
+  "sentence": "Keine _____, kein Lärm.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Stadt",
+   "options": [
+    "Stadt",
+    "Natur",
+    "Berg",
+    "Wald"
+   ],
+   "translation": "No _____, no noise.",
+   "optionTranslations": [
+    "city",
+    "nature",
+    "mountain",
+    "forest"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Keine Stadt, kein Lärm.",
+    "targetWord": "Stadt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Lärm",
+  "sentence": "Keine Stadt, kein _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Lärm",
+   "options": [
+    "Lärm",
+    "Wind",
+    "See",
+    "Stein"
+   ],
+   "translation": "No city, no _____.",
+   "optionTranslations": [
+    "noise",
+    "wind",
+    "lake",
+    "stone"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Keine Stadt, kein Lärm.",
+    "targetWord": "Lärm",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Natur",
+  "sentence": "Nur die ruhige _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Natur",
+   "options": [
+    "Natur",
+    "Stadt",
+    "Farbe",
+    "Zeit"
+   ],
+   "translation": "Only the calm _____.",
+   "optionTranslations": [
+    "nature",
+    "city",
+    "color",
+    "time"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Nur die ruhige Natur.",
+    "targetWord": "Natur",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Lieblingsort",
+  "sentence": "Das ist mein _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Lieblingsort",
+   "options": [
+    "Lieblingsort",
+    "Spiegel",
+    "Stein",
+    "Vogel"
+   ],
+   "translation": "That is my _____.",
+   "optionTranslations": [
+    "favorite place",
+    "mirror",
+    "stone",
+    "bird"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Das ist mein Lieblingsort.",
+    "targetWord": "Lieblingsort",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "fliegt",
+  "sentence": "Ein Vogel _____ über den See.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fliegt",
+   "options": [
+    "fliegt",
+    "schwimmt",
+    "setzt",
+    "schaut"
+   ],
+   "translation": "A bird _____ over the lake.",
+   "optionTranslations": [
+    "flies",
+    "swims",
+    "sits",
+    "looks"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Ein Vogel fliegt über den See.",
+    "targetWord": "fliegt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "atmet",
+  "sentence": "Emma _____ tief.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "atmet",
+   "options": [
+    "atmet",
+    "schaut",
+    "setzt",
+    "bleibt"
+   ],
+   "translation": "Emma _____ deeply.",
+   "optionTranslations": [
+    "breathes",
+    "looks",
+    "sits",
+    "stays"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Emma atmet tief.",
+    "targetWord": "atmet",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "lange",
+  "sentence": "Sie sitzen _____ am Wasser.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lange",
+   "options": [
+    "lange",
+    "leise",
+    "tief",
+    "still"
+   ],
+   "translation": "They sit _____ by the water.",
+   "optionTranslations": [
+    "for a long time",
+    "quietly",
+    "deeply",
+    "still"
+   ],
+   "audioClip": {
+    "storySlug": "der-see",
+    "storySource": "user",
+    "sentence": "Sie sitzen lange am Wasser.",
+    "targetWord": "lange",
+    "language": "german"
+   }
+  }
+ }
+]

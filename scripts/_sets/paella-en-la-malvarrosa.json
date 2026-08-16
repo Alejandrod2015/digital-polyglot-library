@@ -1,0 +1,607 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "comer",
+    "sentence": "Tengo hambre y quiero _____ algo ya.",
+    "payload": {
+      "answer": "comer",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "comer",
+        "dormir",
+        "correr",
+        "cantar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Tengo hambre y quiero comer algo ya.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "comer",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f89d562be2d28da0.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I am hungry and want to _____ something now.",
+      "optionTranslations": [
+        "eat",
+        "sleep",
+        "run",
+        "sing"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "caminan",
+    "sentence": "Ellos _____ por la playa cada tarde.",
+    "payload": {
+      "answer": "caminan",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "caminan",
+        "nadan",
+        "duermen",
+        "cantan"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ellos caminan por la playa cada tarde.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "caminan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/09ab09862f9bd257.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "They _____ along the beach every afternoon.",
+      "optionTranslations": [
+        "walk",
+        "swim",
+        "sleep",
+        "sing"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calor",
+    "sentence": "Hoy hace mucho [[calor]].",
+    "payload": {
+      "answer": "heat",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "heat",
+        "cold",
+        "rain",
+        "wind"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hoy hace mucho calor.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "calor",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5fcf74f03dd8e0d0.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frío",
+    "sentence": "El agua del mar está muy [[fría]].",
+    "payload": {
+      "answer": "cold",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "cold",
+        "hot",
+        "sweet",
+        "dry"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El agua del mar está muy fría.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "fría",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/df5444f9b0e9e9a2.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arroz",
+    "sentence": "El plato tiene [[arroz]] y pollo.",
+    "payload": {
+      "answer": "rice",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "rice",
+        "bread",
+        "cheese",
+        "fish"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El plato tiene arroz y pollo.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "arroz",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/675c6dddd02f4112.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pollo",
+    "sentence": "La paella lleva [[pollo]] y verduras.",
+    "payload": {
+      "answer": "chicken",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "chicken",
+        "fish",
+        "beef",
+        "egg"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La paella lleva pollo y verduras.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "pollo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e128cd48a7f3817b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "azul",
+    "sentence": "El mar es grande y [[azul]].",
+    "payload": {
+      "answer": "blue",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "blue",
+        "green",
+        "red",
+        "gray"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El mar es grande y azul.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "azul",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/01009da5f5877729.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camarero",
+    "sentence": "El [[camarero]] trae la comida.",
+    "payload": {
+      "answer": "a waiter",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a waiter",
+        "a cook",
+        "a driver",
+        "a doctor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El camarero trae la comida.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "camarero",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7feb66ef44a17372.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "probar",
+    "sentence": "Ella [[prueba]] un poco de paella.",
+    "payload": {
+      "answer": "to taste",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to taste",
+        "to buy",
+        "to cook",
+        "to bring"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella prueba un poco de paella.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "prueba",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cad9e1a109cd8d78.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonreír",
+    "sentence": "Ella [[sonríe]] muy feliz.",
+    "payload": {
+      "answer": "to smile",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to smile",
+        "to cry",
+        "to shout",
+        "to sleep"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella sonríe muy feliz.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "sonríe",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/94431614e3926571.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llevar",
+    "sentence": "Él la [[lleva]] a la playa.",
+    "payload": {
+      "answer": "to take",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to take",
+        "to call",
+        "to leave",
+        "to buy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él la lleva a la playa.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "lleva",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/841d1ba627d7e01e.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "famoso",
+    "sentence": "Esta playa es muy [[famosa]].",
+    "payload": {
+      "answer": "famous",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "famous",
+        "quiet",
+        "cheap",
+        "empty"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Esta playa es muy famosa.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "famosa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c97841d43da0fd9.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arena",
+    "sentence": "Ella camina por la [[arena]] caliente.",
+    "payload": {
+      "answer": "sand",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "sand",
+        "water",
+        "grass",
+        "snow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella camina por la arena caliente.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "arena",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9ace6037975019c1.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dorado",
+    "sentence": "La arena de la playa es [[dorada]].",
+    "payload": {
+      "answer": "golden",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "golden",
+        "silver",
+        "dark",
+        "green"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La arena de la playa es dorada.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "dorada",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2c36325dd83f6271.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "meter",
+    "sentence": "Ella quiere _____ los pies en el agua.",
+    "payload": {
+      "answer": "meter",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "meter",
+        "sacar",
+        "secar",
+        "mirar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella quiere meter los pies en el agua.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "meter",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b174b8f535c5e0d0.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "She wants to _____ her feet in the water.",
+      "optionTranslations": [
+        "put in",
+        "take out",
+        "dry",
+        "look at"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pie",
+    "sentence": "Ella mete los [[pies]] en el agua.",
+    "payload": {
+      "answer": "a foot",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a foot",
+        "a hand",
+        "an arm",
+        "a head"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mete los pies en el agua.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "pies",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c8026696b169e66.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amarillo",
+    "sentence": "La paella es grande y [[amarilla]].",
+    "payload": {
+      "answer": "yellow",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "yellow",
+        "blue",
+        "white",
+        "black"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La paella es grande y amarilla.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "amarilla",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9f1d0c4d28bda534.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Ellos comen muy [[despacio]].",
+    "payload": {
+      "answer": "slowly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "slowly",
+        "quickly",
+        "loudly",
+        "early"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ellos comen muy despacio.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "despacio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bfb7882d1b0f0c35.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonar",
+    "sentence": "El mar [[suena]] cerca de aquí.",
+    "payload": {
+      "answer": "to sound",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to sound",
+        "to smell",
+        "to break",
+        "to fly"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El mar suena cerca de aquí.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "suena",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7daeb2025d90c89a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "robar",
+    "sentence": "Un pájaro quiere _____ la comida del plato.",
+    "payload": {
+      "answer": "robar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "robar",
+        "lavar",
+        "vender",
+        "guardar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Un pájaro quiere robar la comida del plato.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "robar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0792ec05c412d8b4.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "A bird wants to _____ the food from the plate.",
+      "optionTranslations": [
+        "steal",
+        "wash",
+        "sell",
+        "keep"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de repente",
+    "sentence": "[[De repente]], empieza a llover.",
+    "payload": {
+      "answer": "suddenly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "suddenly",
+        "slowly",
+        "always",
+        "never"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "De repente, empieza a llover.",
+        "storySlug": "paella-en-la-malvarrosa",
+        "targetWord": "De repente",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ffd09b38788ba381.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "playa,mar,plato,pájaro",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "playa",
+          "answer": "a beach",
+          "options": [
+            "a beach",
+            "the sea",
+            "a plate",
+            "a bird"
+          ]
+        },
+        {
+          "word": "mar",
+          "answer": "the sea",
+          "options": [
+            "a beach",
+            "the sea",
+            "a plate",
+            "a bird"
+          ]
+        },
+        {
+          "word": "plato",
+          "answer": "a plate",
+          "options": [
+            "a beach",
+            "the sea",
+            "a plate",
+            "a bird"
+          ]
+        },
+        {
+          "word": "pájaro",
+          "answer": "a bird",
+          "options": [
+            "a beach",
+            "the sea",
+            "a plate",
+            "a bird"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

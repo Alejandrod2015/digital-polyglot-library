@@ -1,0 +1,507 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "padeiro,fornada,língua,casca",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "padeiro",
+          "answer": "a baker",
+          "options": [
+            "a baker",
+            "a batch from the oven",
+            "a tongue",
+            "a crust"
+          ]
+        },
+        {
+          "word": "fornada",
+          "answer": "a batch from the oven",
+          "options": [
+            "a baker",
+            "a batch from the oven",
+            "a tongue",
+            "a crust"
+          ]
+        },
+        {
+          "word": "língua",
+          "answer": "a tongue",
+          "options": [
+            "a baker",
+            "a batch from the oven",
+            "a tongue",
+            "a crust"
+          ]
+        },
+        {
+          "word": "casca",
+          "answer": "a crust",
+          "options": [
+            "a baker",
+            "a batch from the oven",
+            "a tongue",
+            "a crust"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dourado",
+    "sentence": "Os pães saem redondos e [[dourados]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "golden",
+      "options": [
+        "golden",
+        "white",
+        "grey",
+        "green"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "Os pães saem redondos e dourados.",
+        "targetWord": "dourados",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/06cc89404f2e57aa.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "soprar",
+    "sentence": "Ele [[sopra]] o segundo antes de morder.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to blow",
+      "options": [
+        "to blow",
+        "to bite",
+        "to cut",
+        "to hold"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "Ele sopra o segundo antes de morder.",
+        "targetWord": "sopra",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d07d70de80263683.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "morder",
+    "sentence": "Ele sopra o segundo antes de [[morder]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bite",
+      "options": [
+        "to bite",
+        "to swallow",
+        "to smell",
+        "to pour"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "Ele sopra o segundo antes de morder.",
+        "targetWord": "morder",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d07d70de80263683.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "assobiar",
+    "sentence": "O padeiro [[assobia]] a mesma música do rádio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to whistle",
+      "options": [
+        "to whistle",
+        "to shout",
+        "to read",
+        "to cook"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "O padeiro assobia a mesma música do rádio.",
+        "targetWord": "assobia",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/635bc17deb93f340.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pão de queijo",
+    "sentence": "Os [[pães de queijo]] saem redondos e dourados.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cheese bread",
+      "options": [
+        "cheese bread",
+        "white bread",
+        "sweet cake",
+        "fried dough"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "Os pães de queijo saem redondos e dourados.",
+        "targetWord": "pães de queijo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ecf5b3b1cfbeceab.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "baixo",
+    "sentence": "O rádio não incomoda porque toca bem _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "baixo",
+      "options": [
+        "baixo",
+        "alto",
+        "longe",
+        "rápido"
+      ],
+      "translation": "The radio does not bother anyone because it plays very _____.",
+      "optionTranslations": [
+        "softly",
+        "loudly",
+        "far",
+        "fast"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "O rádio não incomoda porque toca bem baixo.",
+        "targetWord": "baixo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6bdfb8da811ea671.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "primeiro",
+    "sentence": "Ele é o [[primeiro]] cliente do dia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "first",
+      "options": [
+        "first",
+        "last",
+        "only",
+        "next"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "Ele é o primeiro cliente do dia.",
+        "targetWord": "primeiro",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e91a1eb195d18c4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ponta",
+    "sentence": "O primeiro pão queima a [[ponta]] da língua dele.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the tip",
+      "options": [
+        "the tip",
+        "the middle",
+        "the side",
+        "the back"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "O primeiro pão queima a ponta da língua dele.",
+        "targetWord": "ponta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b177682415de4e22.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tirar",
+    "sentence": "O padeiro [[tira]] uma bandeja do forno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take out",
+      "options": [
+        "to take out",
+        "to put in",
+        "to wash",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "O padeiro tira uma bandeja do forno.",
+        "targetWord": "tira",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a007ba2c15de921.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sala",
+    "sentence": "O cheiro do forno toma a [[sala]] inteira.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the room",
+      "options": [
+        "the room",
+        "the street",
+        "the garden",
+        "the roof"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "O cheiro do forno toma a sala inteira.",
+        "targetWord": "sala",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/65d8bba83a2c01fa.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "redondo",
+    "sentence": "Os pães saem [[redondos]] e dourados.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "round",
+      "options": [
+        "round",
+        "square",
+        "long",
+        "flat"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "Os pães saem redondos e dourados.",
+        "targetWord": "redondos",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/06cc89404f2e57aa.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ar",
+    "sentence": "Os pães saem cheios de [[ar]] quente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "air",
+      "options": [
+        "air",
+        "water",
+        "sugar",
+        "salt"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "Os pães saem cheios de ar quente.",
+        "targetWord": "ar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/400614d7d552dd28.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pedir",
+    "sentence": "Ele [[pede]] dois e espera de pé.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to ask for",
+      "options": [
+        "to ask for",
+        "to pay",
+        "to carry",
+        "to open"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "Ele pede dois e espera de pé.",
+        "targetWord": "pede",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0d0b61c4428a2e7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acordar",
+    "sentence": "A cidade [[acorda]] meia hora depois.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wake up",
+      "options": [
+        "to wake up",
+        "to sleep",
+        "to close",
+        "to grow"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "A cidade acorda meia hora depois.",
+        "targetWord": "acorda",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a327872e1e503307.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cidade",
+    "sentence": "A [[cidade]] acorda meia hora depois.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the city",
+      "options": [
+        "the city",
+        "the shop",
+        "the beach",
+        "the forest"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "A cidade acorda meia hora depois.",
+        "targetWord": "cidade",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a327872e1e503307.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hora",
+    "sentence": "A cidade acorda meia [[hora]] depois.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an hour",
+      "options": [
+        "an hour",
+        "a day",
+        "a week",
+        "a month"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "A cidade acorda meia hora depois.",
+        "targetWord": "hora",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a327872e1e503307.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abrir",
+    "sentence": "A padaria [[abre]] às seis e meia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to open",
+      "options": [
+        "to open",
+        "to close",
+        "to clean",
+        "to build"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "A padaria abre às seis e meia.",
+        "targetWord": "abre",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/099b98e06d91a5ed.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ônibus",
+    "sentence": "Um [[ônibus]] vazio passa na rua.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bus",
+      "options": [
+        "a bus",
+        "a car",
+        "a bike",
+        "a train"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "Um ônibus vazio passa na rua.",
+        "targetWord": "ônibus",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b1502d77d103c8a8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ninguém",
+    "sentence": "Um ônibus vazio passa e [[ninguém]] desce.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nobody",
+      "options": [
+        "nobody",
+        "everybody",
+        "somebody",
+        "anybody"
+      ],
+      "audioClip": {
+        "storySlug": "a-primeira-fornada-sai-quente",
+        "storySource": "user",
+        "sentence": "Um ônibus vazio passa e ninguém desce.",
+        "targetWord": "ninguém",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ce33d1fc97278b5a.mp3"
+      }
+    },
+    "featured": false
+  }
+]

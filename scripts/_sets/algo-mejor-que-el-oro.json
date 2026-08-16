@@ -1,0 +1,615 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "ventana,sofá,llave,bolsa",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "ventana",
+     "answer": "a window",
+     "options": [
+      "a window",
+      "a sofa",
+      "a key",
+      "a bag"
+     ]
+    },
+    {
+     "word": "sofá",
+     "answer": "a sofa",
+     "options": [
+      "a window",
+      "a sofa",
+      "a key",
+      "a bag"
+     ]
+    },
+    {
+     "word": "llave",
+     "answer": "a key",
+     "options": [
+      "a window",
+      "a sofa",
+      "a key",
+      "a bag"
+     ]
+    },
+    {
+     "word": "bolsa",
+     "answer": "a bag",
+     "options": [
+      "a window",
+      "a sofa",
+      "a key",
+      "a bag"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "telefonillo",
+  "sentence": "Suena el [[telefonillo]] y Hugo baja a abrir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the door intercom",
+   "options": [
+    "the door intercom",
+    "the oven timer",
+    "the alarm clock",
+    "the washing machine"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Suena el telefonillo y Hugo baja a abrir.",
+    "targetWord": "telefonillo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "portal",
+  "sentence": "Hugo baja al [[portal]] a recoger el equipaje.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the entrance hall",
+   "options": [
+    "the entrance hall",
+    "the back garden",
+    "the top floor",
+    "the car park"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Hugo baja al portal a recoger el equipaje.",
+    "targetWord": "portal",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "equipaje",
+  "sentence": "Hugo pregunta dónde mete el [[equipaje]] de Rosario.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "luggage",
+   "options": [
+    "luggage",
+    "furniture",
+    "shopping",
+    "rubbish"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Hugo pregunta dónde mete el equipaje de Rosario.",
+    "targetWord": "equipaje",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "al fondo",
+  "sentence": "Desde la ventana se ve la Alhambra [[al fondo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in the background",
+   "options": [
+    "in the background",
+    "right in front",
+    "on the left",
+    "up above"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Desde la ventana se ve la Alhambra al fondo.",
+    "targetWord": "al fondo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "a toda prisa",
+  "sentence": "Marta y Hugo recogen el piso [[a toda prisa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in a big hurry",
+   "options": [
+    "in a big hurry",
+    "very carefully",
+    "without a word",
+    "one at a time"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Marta y Hugo recogen el piso a toda prisa.",
+    "targetWord": "a toda prisa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de mal humor",
+  "sentence": "Hugo dice que Marta va a estar [[de mal humor]] toda la semana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in a bad mood",
+   "options": [
+    "in a bad mood",
+    "out of the house",
+    "short of money",
+    "away on a trip"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Hugo dice que Marta va a estar de mal humor toda la semana.",
+    "targetWord": "de mal humor",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "callado te lo tienes",
+  "sentence": "Marta le dice a Rosario: qué [[callado te lo tienes]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "you are keeping that very quiet",
+   "options": [
+    "you are keeping that very quiet",
+    "you say it far too often",
+    "you explain it very well",
+    "you forget it every time"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Marta le dice a Rosario: qué callado te lo tienes.",
+    "targetWord": "callado te lo tienes",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de acuerdo",
+  "sentence": "Rosario le pide que no lo toque, ¿[[de acuerdo]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "all right",
+   "options": [
+    "all right",
+    "as usual",
+    "by the way",
+    "of course not"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Rosario le pide que no lo toque, ¿de acuerdo?",
+    "targetWord": "de acuerdo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rincón",
+  "sentence": "Rosario le pide que deje el baúl en ese [[rincón]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a corner of the room",
+   "options": [
+    "a corner of the room",
+    "the middle of the hall",
+    "the top of the shelf",
+    "the end of the street"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Rosario le pide que deje el baúl en ese rincón.",
+    "targetWord": "rincón",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "recoger",
+  "featured": false,
+  "sentence": "Marta y Hugo se ponen a [[recoger]] el piso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to tidy up",
+   "options": [
+    "to tidy up",
+    "to paint",
+    "to rent",
+    "to sell"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Marta y Hugo se ponen a recoger el piso.",
+    "targetWord": "recoger",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tejado",
+  "featured": false,
+  "sentence": "Desde la ventana se ven los [[tejados]] del Albaicín.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a roof",
+   "options": [
+    "a roof",
+    "a garden",
+    "a bridge",
+    "a tower"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Desde la ventana se ven los tejados del Albaicín.",
+    "targetWord": "tejados",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hermano",
+  "featured": false,
+  "sentence": "Marta y su [[hermano]] Hugo viven en el mismo piso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a brother",
+   "options": [
+    "a brother",
+    "a cousin",
+    "a flatmate",
+    "a workmate"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Marta y su hermano Hugo viven en el mismo piso.",
+    "targetWord": "hermano",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cargado",
+  "featured": false,
+  "sentence": "Hugo vuelve [[cargado]] con una bolsa y un baúl.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "loaded down",
+   "options": [
+    "loaded down",
+    "empty handed",
+    "out of breath",
+    "in a temper"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Hugo vuelve cargado con una bolsa y un baúl.",
+    "targetWord": "cargado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "madera",
+  "featured": false,
+  "sentence": "El baúl es de [[madera]] oscura y pesa mucho.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wood",
+   "options": [
+    "wood",
+    "glass",
+    "leather",
+    "plastic"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "El baúl es de madera oscura y pesa mucho.",
+    "targetWord": "madera",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piedra",
+  "featured": false,
+  "sentence": "Hugo dice que el baúl pesa como una [[piedra]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a stone",
+   "options": [
+    "a stone",
+    "a feather",
+    "a cushion",
+    "a basket"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Hugo dice que el baúl pesa como una piedra.",
+    "targetWord": "piedra",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bolsillo",
+  "featured": false,
+  "sentence": "Rosario prefiere guardar la llave en el [[bolsillo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a pocket",
+   "options": [
+    "a pocket",
+    "a drawer",
+    "a wallet",
+    "a cupboard"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Rosario prefiere guardar la llave en el bolsillo.",
+    "targetWord": "bolsillo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guardar",
+  "featured": false,
+  "sentence": "Rosario prefiere [[guardar]] la llave ella misma.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to keep safe",
+   "options": [
+    "to keep safe",
+    "to throw away",
+    "to lend out",
+    "to copy"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Rosario prefiere guardar la llave ella misma.",
+    "targetWord": "guardar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cuarto",
+  "featured": false,
+  "sentence": "Duermo en el _____ pequeño, al lado de la cocina.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cuarto",
+   "options": [
+    "cuarto",
+    "coche",
+    "jardín",
+    "banco"
+   ],
+   "translation": "I sleep in the small _____, next to the kitchen.",
+   "optionTranslations": [
+    "bedroom",
+    "car",
+    "garden",
+    "bench"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Duermo en el cuarto pequeño, al lado de la cocina.",
+    "targetWord": "cuarto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "oscura",
+  "featured": false,
+  "sentence": "La calle está muy _____, no funcionan las farolas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "oscura",
+   "options": [
+    "oscura",
+    "clara",
+    "ancha",
+    "corta"
+   ],
+   "translation": "The street is very _____, the street lamps do not work.",
+   "optionTranslations": [
+    "dark",
+    "bright",
+    "wide",
+    "short"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "La calle está muy oscura, no funcionan las farolas.",
+    "targetWord": "oscura",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cansada",
+  "featured": false,
+  "sentence": "Llego _____ del trabajo y me acuesto pronto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cansada",
+   "options": [
+    "cansada",
+    "contenta",
+    "enferma",
+    "mojada"
+   ],
+   "translation": "I get home _____ from work and go to bed early.",
+   "optionTranslations": [
+    "tired",
+    "happy",
+    "ill",
+    "wet"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Llego cansada del trabajo y me acuesto pronto.",
+    "targetWord": "cansada",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cerrado",
+  "featured": false,
+  "sentence": "El museo está _____ los lunes, no se puede entrar.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cerrado",
+   "options": [
+    "cerrado",
+    "abierto",
+    "lleno",
+    "libre"
+   ],
+   "translation": "The museum is _____ on Mondays, you cannot go in.",
+   "optionTranslations": [
+    "closed",
+    "open",
+    "full",
+    "free"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "El museo está cerrado los lunes, no se puede entrar.",
+    "targetWord": "cerrado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "noche",
+  "featured": false,
+  "sentence": "Esa _____ no pude dormir y vi amanecer.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "noche",
+   "options": [
+    "noche",
+    "semana",
+    "hora",
+    "casa"
+   ],
+   "translation": "That _____ I could not sleep and I saw the sun come up.",
+   "optionTranslations": [
+    "night",
+    "week",
+    "hour",
+    "house"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "Esa noche no pude dormir y vi amanecer.",
+    "targetWord": "noche",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "viaje",
+  "featured": false,
+  "sentence": "El _____ en tren dura seis horas largas.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "viaje",
+   "options": [
+    "viaje",
+    "partido",
+    "concierto",
+    "examen"
+   ],
+   "translation": "The _____ by train takes six long hours.",
+   "optionTranslations": [
+    "trip",
+    "match",
+    "concert",
+    "exam"
+   ],
+   "audioClip": {
+    "storySlug": "algo-mejor-que-el-oro",
+    "storySource": "user",
+    "sentence": "El viaje en tren dura seis horas largas.",
+    "targetWord": "viaje",
+    "language": "spanish"
+   }
+  }
+ }
+]

@@ -1,0 +1,621 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "sonar",
+    "sentence": "El teléfono [[suena]] muy temprano hoy.",
+    "payload": {
+      "answer": "to ring",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to ring",
+        "to break",
+        "to fall",
+        "to close"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El teléfono suena muy temprano hoy.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "suena",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d4034b959799578.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caminar",
+    "sentence": "Ellos [[caminan]] por el parque cada tarde.",
+    "payload": {
+      "answer": "to walk",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to walk",
+        "to jump",
+        "to swim",
+        "to drive"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ellos caminan por el parque cada tarde.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "caminan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/200d27c704692176.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "viento",
+    "sentence": "Hoy hace mucho _____ y mi sombrero vuela.",
+    "payload": {
+      "answer": "viento",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "viento",
+        "barro",
+        "humo",
+        "hielo"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hoy hace mucho viento y mi sombrero vuela.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "viento",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9eb71fe40146809.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Today there is a lot of _____ and my hat flies.",
+      "optionTranslations": [
+        "wind",
+        "mud",
+        "smoke",
+        "ice"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "subir",
+    "sentence": "Vamos a [[subir]] al piso más alto.",
+    "payload": {
+      "answer": "to go up",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to go up",
+        "to go down",
+        "to sit",
+        "to wait"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Vamos a subir al piso más alto.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "subir",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4992539a86460527.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "tejado",
+    "sentence": "La lluvia cae sobre el _____ de la casa.",
+    "payload": {
+      "answer": "tejado",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "tejado",
+        "sótano",
+        "pasillo",
+        "salón"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La lluvia cae sobre el tejado de la casa.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "tejado",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/88363838cd46927f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The rain falls on the _____ of the house.",
+      "optionTranslations": [
+        "roof",
+        "basement",
+        "hallway",
+        "living room"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arriba",
+    "sentence": "Miro [[arriba]] y veo el cielo azul.",
+    "payload": {
+      "answer": "up above",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "up above",
+        "down below",
+        "far away",
+        "close by"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Miro arriba y veo el cielo azul.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "arriba",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c4250ecf13fd89ea.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hermoso",
+    "sentence": "La vista desde la torre es [[hermosa]].",
+    "payload": {
+      "answer": "beautiful",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "beautiful",
+        "ugly",
+        "small",
+        "dark"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La vista desde la torre es hermosa.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "hermosa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/346adba6ef87acba.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "alto",
+    "sentence": "Ese edificio es muy _____; llega a las nubes.",
+    "payload": {
+      "answer": "alto",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "alto",
+        "bajo",
+        "corto",
+        "ancho"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ese edificio es muy alto; llega a las nubes.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "alto",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d3198d1b74841676.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "That building is very _____; it reaches the clouds.",
+      "optionTranslations": [
+        "tall",
+        "low",
+        "short",
+        "wide"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "señalar",
+    "sentence": "Ella [[señala]] la casa blanca con el dedo.",
+    "payload": {
+      "answer": "to point at",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to point at",
+        "to hide",
+        "to build",
+        "to sell"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella señala la casa blanca con el dedo.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "señala",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ade2567e6e32cbe.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bajar",
+    "sentence": "Ellas [[bajan]] las escaleras despacio.",
+    "payload": {
+      "answer": "to go down",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to go down",
+        "to go up",
+        "to open",
+        "to clean"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ellas bajan las escaleras despacio.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "bajan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb91155e6676f479.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fuerte",
+    "sentence": "El ruido del tren es muy [[fuerte]].",
+    "payload": {
+      "answer": "loud",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "loud",
+        "soft",
+        "slow",
+        "dark"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El ruido del tren es muy fuerte.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "fuerte",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d0d93f85fb4ecf1c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delante",
+    "sentence": "El coche está [[delante]] de la casa.",
+    "payload": {
+      "answer": "in front",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "in front",
+        "behind",
+        "below",
+        "inside"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El coche está delante de la casa.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "delante",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff2b4c05edf788fe.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Ella habla [[despacio]] para entender bien.",
+    "payload": {
+      "answer": "slowly",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "slowly",
+        "quickly",
+        "loudly",
+        "early"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella habla despacio para entender bien.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "despacio",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa9b0c2883930ed8.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "difícil",
+    "sentence": "Este examen es muy [[difícil]] para mí.",
+    "payload": {
+      "answer": "hard",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "hard",
+        "easy",
+        "cheap",
+        "heavy"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Este examen es muy difícil para mí.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "difícil",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad677f43b2b0d287.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fresco",
+    "sentence": "El viento de la tarde es [[fresco]].",
+    "payload": {
+      "answer": "cool",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "cool",
+        "hot",
+        "dry",
+        "wet"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El viento de la tarde es fresco.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "fresco",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e4985b243306ec43.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oído",
+    "sentence": "Me tapo los [[oídos]] por el ruido fuerte.",
+    "payload": {
+      "answer": "the ear",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the ear",
+        "the eye",
+        "the hand",
+        "the nose"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Me tapo los oídos por el ruido fuerte.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "oídos",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1e393abac3ae8dfc.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonido",
+    "sentence": "El [[sonido]] de la música es muy bonito.",
+    "payload": {
+      "answer": "a sound",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a sound",
+        "a color",
+        "a smell",
+        "a taste"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El sonido de la música es muy bonito.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "sonido",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/541eb8a57aa652bd.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rampa",
+    "sentence": "Subo con la silla de ruedas por la _____.",
+    "payload": {
+      "answer": "rampa",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "rampa",
+        "escalera",
+        "pared",
+        "ventana"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Subo con la silla de ruedas por la rampa.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "rampa",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4a03d0bc3809f4a.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I go up with the wheelchair on the _____.",
+      "optionTranslations": [
+        "ramp",
+        "staircase",
+        "wall",
+        "window"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "respirar",
+    "sentence": "Subo rápido y necesito _____ aire fresco.",
+    "payload": {
+      "answer": "respirar",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "respirar",
+        "beber",
+        "tocar",
+        "mirar"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Subo rápido y necesito respirar aire fresco.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "respirar",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/39b309fc8808a1ac.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I climb fast and I need to _____ fresh air.",
+      "optionTranslations": [
+        "to breathe",
+        "to drink",
+        "to touch",
+        "to look at"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rojo",
+    "sentence": "Los tomates maduros son de color _____.",
+    "payload": {
+      "answer": "rojo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "rojo",
+        "azul",
+        "verde",
+        "gris"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los tomates maduros son de color rojo.",
+        "storySlug": "la-giralda-desde-arriba",
+        "targetWord": "rojo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2616b156895d2471.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Ripe tomatoes are _____ in color.",
+      "optionTranslations": [
+        "red",
+        "blue",
+        "green",
+        "gray"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "campana,torre,puente,plaza",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "campana",
+          "answer": "a bell",
+          "options": [
+            "a bell",
+            "a tower",
+            "a bridge",
+            "a square"
+          ]
+        },
+        {
+          "word": "torre",
+          "answer": "a tower",
+          "options": [
+            "a bell",
+            "a tower",
+            "a bridge",
+            "a square"
+          ]
+        },
+        {
+          "word": "puente",
+          "answer": "a bridge",
+          "options": [
+            "a bell",
+            "a tower",
+            "a bridge",
+            "a square"
+          ]
+        },
+        {
+          "word": "plaza",
+          "answer": "a square",
+          "options": [
+            "a bell",
+            "a tower",
+            "a bridge",
+            "a square"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suenan",
+    "sentence": "Las campanas [[suenan]] muy fuerte por la mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ring",
+      "options": [
+        "ring",
+        "break",
+        "fall",
+        "close"
+      ],
+      "audioClip": {
+        "storySlug": "la-giralda-desde-arriba",
+        "storySource": "user",
+        "sentence": "Las campanas suenan muy fuerte por la mañana.",
+        "targetWord": "suenan",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8073ead6cc52aa1.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

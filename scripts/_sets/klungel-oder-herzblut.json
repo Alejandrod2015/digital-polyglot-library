@@ -1,0 +1,470 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "Büdchen,Halve Hahn,Vetter,Kumpel",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "Büdchen",
+          "answer": "a street kiosk",
+          "options": [
+            "a street kiosk",
+            "a cheese roll",
+            "a male cousin",
+            "a good buddy"
+          ]
+        },
+        {
+          "word": "Halve Hahn",
+          "answer": "a cheese roll",
+          "options": [
+            "a street kiosk",
+            "a cheese roll",
+            "a male cousin",
+            "a good buddy"
+          ]
+        },
+        {
+          "word": "Vetter",
+          "answer": "a male cousin",
+          "options": [
+            "a street kiosk",
+            "a cheese roll",
+            "a male cousin",
+            "a good buddy"
+          ]
+        },
+        {
+          "word": "Kumpel",
+          "answer": "a good buddy",
+          "options": [
+            "a street kiosk",
+            "a cheese roll",
+            "a male cousin",
+            "a good buddy"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Klüngel",
+    "sentence": "Der [[Klüngel]] hat sie längst aufgenommen, nicht ausgeschlossen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a favor network",
+      "options": [
+        "a favor network",
+        "a city map",
+        "a bank account",
+        "a train ticket"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "Der Klüngel hat sie längst aufgenommen, nicht ausgeschlossen.",
+        "targetWord": "Klüngel",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1285109d41c59706.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Strüßjer",
+    "sentence": "Er drückt ihr ein kleines [[Strüßjer]] in die Arme.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a little bouquet",
+      "options": [
+        "a little bouquet",
+        "a paper bag",
+        "a warm hug",
+        "a small note"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "Er drückt ihr ein kleines Strüßjer in die Arme.",
+        "targetWord": "Strüßjer",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2bb2f605f12451b6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "et hätt noch immer jot jejange",
+    "sentence": "\"[[Et hätt noch immer jot jejange]]\", sagt er.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it always turns out fine",
+      "options": [
+        "it always turns out fine",
+        "money is always tight",
+        "no one ever helps here",
+        "rules are rules here"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "\"Et hätt noch immer jot jejange\", sagt er.",
+        "targetWord": "jejange",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46a5f76680361a9d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Kungelei",
+    "sentence": "Diese ganze [[Kungelei]] lässt sie klein wirken.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "quiet dealmaking",
+      "options": [
+        "quiet dealmaking",
+        "open honesty",
+        "loud arguing",
+        "hard work"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "Diese ganze Kungelei lässt sie klein wirken.",
+        "targetWord": "Kungelei",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/347756fa71ce2a29.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ausverkauft",
+    "sentence": "Karten für die [[ausverkaufte]] Karnevalssitzung.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sold out",
+      "options": [
+        "sold out",
+        "brand new",
+        "far away",
+        "very cheap"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "Karten für die ausverkaufte Karnevalssitzung.",
+        "targetWord": "ausverkaufte",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f5169e505b72147c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "augenzwinkernd",
+    "sentence": "Ollie klingelt an ihrer Tür, [[augenzwinkernd]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with a wink",
+      "options": [
+        "with a wink",
+        "with a frown",
+        "in a hurry",
+        "half asleep"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "Ollie klingelt an ihrer Tür, augenzwinkernd.",
+        "targetWord": "augenzwinkernd",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d3b4d6ade0285ba5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Karte",
+    "sentence": "Nadia will nur zwei [[Karten]] für die Sitzung.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a ticket",
+      "options": [
+        "a ticket",
+        "a coin",
+        "a bag",
+        "a key"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "Nadia will nur zwei Karten für die Sitzung.",
+        "targetWord": "Karten",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad03293fe8d59c09.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Gefallen",
+    "sentence": "Jeder kleine [[Gefallen]] wird heimlich eingefädelt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a favor",
+      "options": [
+        "a favor",
+        "a mistake",
+        "a payment",
+        "a promise"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "Jeder kleine Gefallen wird heimlich eingefädelt.",
+        "targetWord": "Gefallen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eaafaa88ce8a0684.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Außenseiter",
+    "sentence": "So bleibt Nadia stets der ewige [[Außenseiter]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an outsider",
+      "options": [
+        "an outsider",
+        "a local hero",
+        "a close friend",
+        "a group leader"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "So bleibt Nadia stets der ewige Außenseiter.",
+        "targetWord": "Außenseiter",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fc1b48eb44609971.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verweben",
+    "sentence": "\"Du bist jetzt fest mit uns [[verwoben]], Nadia\", lacht Ollie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to weave in",
+      "options": [
+        "to weave in",
+        "to shut out",
+        "to walk away",
+        "to argue"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "\"Du bist jetzt fest mit uns verwoben, Nadia\", lacht Ollie.",
+        "targetWord": "verwoben",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9052ecbaaff15131.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "besorgen",
+    "sentence": "Kannst du mir bitte Brot vom Markt _____?",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "besorgen",
+      "options": [
+        "besorgen",
+        "verlieren",
+        "verkaufen",
+        "vergessen"
+      ],
+      "translation": "Can you please _____ me bread from the market?",
+      "optionTranslations": [
+        "to get",
+        "to lose",
+        "to sell",
+        "to forget"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "Kannst du mir bitte Brot vom Markt besorgen?",
+        "targetWord": "besorgen",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/27505365f652e041.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mauschelt",
+    "sentence": "Der Händler _____ heimlich mit seinen besten Kunden.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mauschelt",
+      "options": [
+        "mauschelt",
+        "streitet",
+        "schläft",
+        "singt"
+      ],
+      "translation": "The dealer secretly _____ with his best customers.",
+      "optionTranslations": [
+        "makes shady deals",
+        "argues",
+        "sleeps",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "Der Händler mauschelt heimlich mit seinen besten Kunden.",
+        "targetWord": "mauschelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/23caeb87112e3cac.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "schmeißt",
+    "sentence": "Zum Geburtstag _____ sie eine große Party.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schmeißt",
+      "options": [
+        "schmeißt",
+        "putzt",
+        "kauft",
+        "sucht"
+      ],
+      "translation": "For her birthday she _____ a big party.",
+      "optionTranslations": [
+        "throws",
+        "cleans",
+        "buys",
+        "searches"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "Zum Geburtstag schmeißt sie eine große Party.",
+        "targetWord": "schmeißt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1f42054bc461c21f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "schuldet",
+    "sentence": "Er hat kein Bargeld und _____ dem Freund zwanzig Euro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schuldet",
+      "options": [
+        "schuldet",
+        "schenkt",
+        "zahlt",
+        "leiht"
+      ],
+      "translation": "He has no cash and _____ his friend twenty euros.",
+      "optionTranslations": [
+        "owes",
+        "gives",
+        "pays",
+        "lends"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "Er hat kein Bargeld und schuldet dem Freund zwanzig Euro.",
+        "targetWord": "schuldet",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae09e62b0f57c78b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "eingefädelt",
+    "sentence": "Sie hat das Treffen heimlich und geschickt _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "eingefädelt",
+      "options": [
+        "eingefädelt",
+        "vergessen",
+        "abgesagt",
+        "verpasst"
+      ],
+      "translation": "She secretly and cleverly _____ the meeting.",
+      "optionTranslations": [
+        "arranged",
+        "forgotten",
+        "cancelled",
+        "missed"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "Sie hat das Treffen heimlich und geschickt eingefädelt.",
+        "targetWord": "eingefädelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c396bb99c4267927.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Hand",
+    "sentence": "Die Karten bekommt er nur unter der _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Hand",
+      "options": [
+        "Hand",
+        "Tür",
+        "Bank",
+        "Woche"
+      ],
+      "translation": "He gets the tickets only under the _____.",
+      "optionTranslations": [
+        "hand (on the quiet)",
+        "door",
+        "bench",
+        "week"
+      ],
+      "audioClip": {
+        "storySlug": "klungel-oder-herzblut",
+        "storySource": "user",
+        "sentence": "Die Karten bekommt er nur unter der Hand.",
+        "targetWord": "Hand",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3b33bf828c1c7985.mp3"
+      }
+    },
+    "featured": false
+  }
+]

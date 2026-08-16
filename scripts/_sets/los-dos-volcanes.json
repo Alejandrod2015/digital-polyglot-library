@@ -1,0 +1,939 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "caminar",
+    "sentence": "[[Camino]] por las calles del centro.",
+    "payload": {
+      "answer": "to walk",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to walk",
+        "to run",
+        "to drive",
+        "to rest"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Camino por las calles del centro.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "Camino",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16b191099fd8bc0e.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guía",
+    "sentence": "El [[guía]] conoce toda la historia local.",
+    "payload": {
+      "answer": "a guide",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a guide",
+        "a driver",
+        "a cook",
+        "a doctor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El guía conoce toda la historia local.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "guía",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9efca79c6931096.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mostrar",
+    "sentence": "Él me [[muestra]] la ciudad antigua.",
+    "payload": {
+      "answer": "to show",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to show",
+        "to sell",
+        "to hide",
+        "to build"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él me muestra la ciudad antigua.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "muestra",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4e5c018d81535d54.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "señalar",
+    "sentence": "Él [[señala]] unas montañas lejanas.",
+    "payload": {
+      "answer": "to point at",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to point at",
+        "to climb",
+        "to paint",
+        "to count"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Él señala unas montañas lejanas.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "señala",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c61b1f5209fb0130.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nube",
+    "sentence": "Hay muchas [[nubes]] en el cielo.",
+    "payload": {
+      "answer": "a cloud",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a cloud",
+        "a star",
+        "a bird",
+        "a plane"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hay muchas nubes en el cielo.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "nubes",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b250ae6d164ed0a8.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cielo",
+    "sentence": "Las nubes blancas están en el _____.",
+    "payload": {
+      "answer": "cielo",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "cielo",
+        "mar",
+        "suelo",
+        "jardín"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las nubes blancas están en el cielo.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "cielo",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/160f8ac922b11ad6.mp3"
+      },
+      "translation": "The white clouds are in the _____.",
+      "optionTranslations": [
+        "sky",
+        "sea",
+        "ground",
+        "garden"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "viento",
+    "sentence": "Hace mucho _____ y mi sombrero vuela.",
+    "payload": {
+      "answer": "viento",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "viento",
+        "sol",
+        "frío",
+        "ruido"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Hace mucho viento y mi sombrero vuela.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "viento",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa8341e81edd6586.mp3"
+      },
+      "translation": "There is a lot of _____ and my hat flies away.",
+      "optionTranslations": [
+        "wind",
+        "sun",
+        "cold",
+        "noise"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aparecer",
+    "sentence": "Los volcanes [[aparecen]] entre las nubes.",
+    "payload": {
+      "answer": "to appear",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to appear",
+        "to fall",
+        "to hide",
+        "to grow"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los volcanes aparecen entre las nubes.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "aparecen",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f22118a6ce6b7c93.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vista",
+    "sentence": "La [[vista]] desde la montaña es hermosa.",
+    "payload": {
+      "answer": "a view",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a view",
+        "a sound",
+        "a smell",
+        "a path"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La vista desde la montaña es hermosa.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "vista",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8f5483fd3ac82bc.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "espectacular",
+    "sentence": "El paisaje es realmente [[espectacular]].",
+    "payload": {
+      "answer": "spectacular",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "spectacular",
+        "ordinary",
+        "ugly",
+        "boring"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El paisaje es realmente espectacular.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "espectacular",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a3252b795ac8e58a.mp3"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colonial",
+    "sentence": "Las casas [[coloniales]] son muy antiguas.",
+    "payload": {
+      "answer": "colonial",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "colonial",
+        "modern",
+        "empty",
+        "tall"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las casas coloniales son muy antiguas.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "coloniales",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2db25091ace03375.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "color",
+    "sentence": "Las casas tienen [[colores]] muy alegres.",
+    "payload": {
+      "answer": "a color",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a color",
+        "a window",
+        "a door",
+        "a roof"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las casas tienen colores muy alegres.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "colores",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e2d3ed828efd5fcd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bonito",
+    "sentence": "Los paisajes de la ciudad son [[bonitos]].",
+    "payload": {
+      "answer": "pretty",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "pretty",
+        "ugly",
+        "boring",
+        "dark"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Los paisajes de la ciudad son bonitos.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "bonitos",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc753483b0af443a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "triste",
+    "sentence": "Ella llora porque está muy _____.",
+    "payload": {
+      "answer": "triste",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "triste",
+        "feliz",
+        "cansada",
+        "ocupada"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella llora porque está muy triste.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "triste",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9cfa375e7e37730d.mp3"
+      },
+      "translation": "She cries because she is very _____.",
+      "optionTranslations": [
+        "sad",
+        "happy",
+        "tired",
+        "busy"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "curiosidad",
+    "sentence": "Ella hace muchas preguntas por _____.",
+    "payload": {
+      "answer": "curiosidad",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "curiosidad",
+        "miedo",
+        "sueño",
+        "hambre"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella hace muchas preguntas por curiosidad.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "curiosidad",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/725998862606c650.mp3"
+      },
+      "translation": "She asks many questions out of _____.",
+      "optionTranslations": [
+        "curiosity",
+        "fear",
+        "sleepiness",
+        "hunger"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "visibles",
+    "sentence": "Sin nubes, las montañas son _____ desde aquí.",
+    "payload": {
+      "answer": "visibles",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "visibles",
+        "verdes",
+        "altas",
+        "lejanas"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Sin nubes, las montañas son visibles desde aquí.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "visibles",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb92db57e62b6df4.mp3"
+      },
+      "translation": "Without clouds, the mountains are _____ from here.",
+      "optionTranslations": [
+        "visible",
+        "green",
+        "tall",
+        "far"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alegría",
+    "sentence": "Ella mira la escena con [[alegría]].",
+    "payload": {
+      "answer": "joy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "joy",
+        "anger",
+        "fear",
+        "boredom"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira la escena con alegría.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "alegría",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a6032f5bc0e5cf4b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mover",
+    "sentence": "El viento [[mueve]] las nubes despacio.",
+    "payload": {
+      "answer": "to move",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to move",
+        "to stop",
+        "to break",
+        "to hold"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El viento mueve las nubes despacio.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "mueve",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/57a53ec0932b6a3d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paisaje",
+    "sentence": "Esta región tiene [[paisajes]] increíbles.",
+    "payload": {
+      "answer": "a landscape",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a landscape",
+        "a building",
+        "a market",
+        "a river"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Esta región tiene paisajes increíbles.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "paisajes",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d78ab285bf845467.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cubrir",
+    "sentence": "La nieve [[cubre]] los picos altos.",
+    "payload": {
+      "answer": "to cover",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to cover",
+        "to melt",
+        "to climb",
+        "to show"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "La nieve cubre los picos altos.",
+        "storySlug": "los-dos-volcanes",
+        "targetWord": "cubre",
+        "storySource": "user",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e40b119cc705aa1c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "calle,casa,montaña,volcán",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "calle",
+          "answer": "a street",
+          "options": [
+            "a street",
+            "a house",
+            "a mountain",
+            "a volcano"
+          ]
+        },
+        {
+          "word": "casa",
+          "answer": "a house",
+          "options": [
+            "a street",
+            "a house",
+            "a mountain",
+            "a volcano"
+          ]
+        },
+        {
+          "word": "montaña",
+          "answer": "a mountain",
+          "options": [
+            "a street",
+            "a house",
+            "a mountain",
+            "a volcano"
+          ]
+        },
+        {
+          "word": "volcán",
+          "answer": "a volcano",
+          "options": [
+            "a street",
+            "a house",
+            "a mountain",
+            "a volcano"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "solo",
+    "sentence": "En la casa grande tú vives [[solo]] y sin amigos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "alone",
+      "options": [
+        "alone",
+        "tired",
+        "hungry",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "los-dos-volcanes",
+        "storySource": "user",
+        "sentence": "En la casa grande tú vives solo y sin amigos.",
+        "targetWord": "solo",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb22661b5f11887a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conocer",
+    "sentence": "Iván [[conoce]] a la familia de Sofía muy bien.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "knows",
+      "options": [
+        "knows",
+        "sells",
+        "washes",
+        "paints"
+      ],
+      "audioClip": {
+        "storySlug": "los-dos-volcanes",
+        "storySource": "user",
+        "sentence": "Iván conoce a la familia de Sofía muy bien.",
+        "targetWord": "conoce",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/11671ea829ff13b1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lejos",
+    "sentence": "La montaña está muy [[lejos]] de aquí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "far away",
+      "options": [
+        "far away",
+        "slowly",
+        "today",
+        "together"
+      ],
+      "audioClip": {
+        "storySlug": "los-dos-volcanes",
+        "storySource": "user",
+        "sentence": "La montaña está muy lejos de aquí.",
+        "targetWord": "lejos",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6c112171d803d84.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "famoso",
+    "sentence": "Ese pintor es muy [[famoso]] en todo el mundo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "famous",
+      "options": [
+        "famous",
+        "cheap",
+        "empty",
+        "heavy"
+      ],
+      "audioClip": {
+        "storySlug": "los-dos-volcanes",
+        "storySource": "user",
+        "sentence": "Ese pintor es muy famoso en todo el mundo.",
+        "targetWord": "famoso",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d9118b754cdf0a5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pared",
+    "sentence": "Las [[paredes]] de la sala tienen muchas fotos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "walls",
+      "options": [
+        "walls",
+        "chairs",
+        "spoons",
+        "rivers"
+      ],
+      "audioClip": {
+        "storySlug": "los-dos-volcanes",
+        "storySource": "user",
+        "sentence": "Las paredes de la sala tienen muchas fotos.",
+        "targetWord": "paredes",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/43fcf820c05183a1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lleno",
+    "sentence": "Las cajas están [[llenas]] de ropa nueva.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "full",
+      "options": [
+        "full",
+        "broken",
+        "clean",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "los-dos-volcanes",
+        "storySource": "user",
+        "sentence": "Las cajas están llenas de ropa nueva.",
+        "targetWord": "llenas",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f1c7a28f9bd19512.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plaza",
+    "sentence": "En la [[plaza]] hay muchos árboles y bancos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "town square",
+      "options": [
+        "town square",
+        "kitchen",
+        "beach",
+        "forest"
+      ],
+      "audioClip": {
+        "storySlug": "los-dos-volcanes",
+        "storySource": "user",
+        "sentence": "En la plaza hay muchos árboles y bancos.",
+        "targetWord": "plaza",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1bf7799e48617594.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paciencia",
+    "sentence": "Tú esperas con mucha [[paciencia]] cada día.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "patience",
+      "options": [
+        "patience",
+        "hunger",
+        "money",
+        "music"
+      ],
+      "audioClip": {
+        "storySlug": "los-dos-volcanes",
+        "storySource": "user",
+        "sentence": "Tú esperas con mucha paciencia cada día.",
+        "targetWord": "paciencia",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9aa466136837688d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abrir",
+    "sentence": "Sofía [[abre]] la ventana de su cuarto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "opens",
+      "options": [
+        "opens",
+        "eats",
+        "sells",
+        "reads"
+      ],
+      "audioClip": {
+        "storySlug": "los-dos-volcanes",
+        "storySource": "user",
+        "sentence": "Sofía abre la ventana de su cuarto.",
+        "targetWord": "abre",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd11bd89b0eaa370.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sol",
+    "sentence": "El [[sol]] brilla fuerte sobre las montañas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sun",
+      "options": [
+        "sun",
+        "door",
+        "table",
+        "shoe"
+      ],
+      "audioClip": {
+        "storySlug": "los-dos-volcanes",
+        "storySource": "user",
+        "sentence": "El sol brilla fuerte sobre las montañas.",
+        "targetWord": "sol",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/74f914864bb8ee59.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enorme",
+    "sentence": "El museo es [[enorme]] y tiene muchas salas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "huge",
+      "options": [
+        "huge",
+        "cold",
+        "dirty",
+        "cheap"
+      ],
+      "audioClip": {
+        "storySlug": "los-dos-volcanes",
+        "storySource": "user",
+        "sentence": "El museo es enorme y tiene muchas salas.",
+        "targetWord": "enorme",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/48d60ee9a5888a91.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "sentence": "Sofía [[mira]] las fotos con mucha atención.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "looks at",
+      "options": [
+        "looks at",
+        "buys",
+        "cooks",
+        "washes"
+      ],
+      "audioClip": {
+        "storySlug": "los-dos-volcanes",
+        "storySource": "user",
+        "sentence": "Sofía mira las fotos con mucha atención.",
+        "targetWord": "mira",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e3af999e64513ddc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de repente",
+    "sentence": "[[De repente]] el gato salta a la mesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "suddenly",
+      "options": [
+        "suddenly",
+        "slowly",
+        "every day",
+        "on time"
+      ],
+      "audioClip": {
+        "storySlug": "los-dos-volcanes",
+        "storySource": "user",
+        "sentence": "De repente el gato salta a la mesa.",
+        "targetWord": "De repente",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b4bd4fc6abb2a525.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "con calma",
+    "sentence": "Iván habla [[con calma]] con los turistas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calmly",
+      "options": [
+        "calmly",
+        "quickly",
+        "loudly",
+        "together"
+      ],
+      "audioClip": {
+        "storySlug": "los-dos-volcanes",
+        "storySource": "user",
+        "sentence": "Iván habla con calma con los turistas.",
+        "targetWord": "con calma",
+        "language": "spanish",
+        "voiceId": "FXGrCtY3PEyfqczBAlqm",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/59d752ddaaabcf2c.mp3"
+      }
+    },
+    "featured": false
+  }
+]

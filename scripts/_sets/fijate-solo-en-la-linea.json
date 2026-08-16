@@ -1,0 +1,546 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "panel,pasillo,ventanilla,tren",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "panel",
+     "answer": "a departure board",
+     "options": [
+      "a departure board",
+      "a corridor",
+      "a train window",
+      "a train"
+     ]
+    },
+    {
+     "word": "pasillo",
+     "answer": "a corridor",
+     "options": [
+      "a departure board",
+      "a corridor",
+      "a train window",
+      "a train"
+     ]
+    },
+    {
+     "word": "ventanilla",
+     "answer": "a train window",
+     "options": [
+      "a departure board",
+      "a corridor",
+      "a train window",
+      "a train"
+     ]
+    },
+    {
+     "word": "tren",
+     "answer": "a train",
+     "options": [
+      "a departure board",
+      "a corridor",
+      "a train window",
+      "a train"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "menos mal",
+  "sentence": "Clara reconoce a David y dice: ¡[[menos mal]]!",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thank goodness",
+   "options": [
+    "thank goodness",
+    "what a pity",
+    "not again",
+    "how strange"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "Clara reconoce a David y dice: ¡menos mal!",
+    "targetWord": "menos mal",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "con los ojos cerrados",
+  "sentence": "David dice que luego lo haces [[con los ojos cerrados]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "very easily",
+   "options": [
+    "very easily",
+    "half asleep",
+    "in the dark",
+    "by mistake"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "David dice que luego lo haces con los ojos cerrados.",
+    "targetWord": "con los ojos cerrados",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se hace corto",
+  "sentence": "David dice que hoy el viaje [[se hace corto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the time passes quickly",
+   "options": [
+    "the time passes quickly",
+    "the train is very short",
+    "the route has fewer stops",
+    "the day ends early"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "David dice que hoy el viaje se hace corto.",
+    "targetWord": "se hace corto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "horarios",
+  "sentence": "Clara mira el panel de [[horarios]] sin entender nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "timetables",
+   "options": [
+    "timetables",
+    "prices",
+    "warnings",
+    "adverts"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "Clara mira el panel de horarios sin entender nada.",
+    "targetWord": "horarios",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "coger",
+  "sentence": "David [[coge]] ese tren cada día para ir a trabajar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to catch a train",
+   "options": [
+    "to catch a train",
+    "to miss a train",
+    "to drive a train",
+    "to clean a train"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "David coge ese tren cada día para ir a trabajar.",
+    "targetWord": "coge",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "paradas",
+  "sentence": "David se baja dos [[paradas]] antes que Clara.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stops",
+   "options": [
+    "stops",
+    "streets",
+    "carriages",
+    "minutes"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "David se baja dos paradas antes que Clara.",
+    "targetWord": "paradas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "línea",
+  "sentence": "David le dice que se fije solo en el número de la [[línea]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the route a train follows",
+   "options": [
+    "the route a train follows",
+    "the queue at the door",
+    "the row of seats",
+    "the edge of the platform"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "David le dice que se fije solo en el número de la línea.",
+    "targetWord": "línea",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aventura",
+  "sentence": "Clara dice que a ella ya le parece una [[aventura]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an adventure",
+   "options": [
+    "an adventure",
+    "a routine",
+    "a mistake",
+    "a bother"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "Clara dice que a ella ya le parece una aventura.",
+    "targetWord": "aventura",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "barrios",
+  "sentence": "Clara mira por la ventanilla los [[barrios]] que no conocía.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "neighbourhoods",
+   "options": [
+    "neighbourhoods",
+    "factories",
+    "mountains",
+    "beaches"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "Clara mira por la ventanilla los barrios que no conocía.",
+    "targetWord": "barrios",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salen",
+  "featured": false,
+  "sentence": "Hay trenes que [[salen]] de la estación cada poco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to depart",
+   "options": [
+    "to depart",
+    "to arrive",
+    "to stop",
+    "to turn"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "Hay trenes que salen de la estación cada poco.",
+    "targetWord": "salen",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lleva",
+  "featured": false,
+  "sentence": "David la [[lleva]] por un pasillo hasta la vía tres.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take somebody",
+   "options": [
+    "to take somebody",
+    "to call somebody",
+    "to leave somebody",
+    "to follow somebody"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "David la lleva por un pasillo hasta la vía tres.",
+    "targetWord": "lleva",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aviso",
+  "featured": false,
+  "sentence": "David dice que él la [[aviso]] antes de bajarse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to let somebody know",
+   "options": [
+    "to let somebody know",
+    "to wake somebody up",
+    "to help somebody down",
+    "to sit beside somebody"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "David dice que él la aviso antes de bajarse.",
+    "targetWord": "aviso",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "creer",
+  "featured": false,
+  "sentence": "Clara dice que no se lo puede [[creer]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to believe",
+   "options": [
+    "to believe",
+    "to explain",
+    "to accept",
+    "to remember"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "Clara dice que no se lo puede creer.",
+    "targetWord": "creer",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "número",
+  "featured": false,
+  "sentence": "Hay que mirar el [[número]] de la línea, no el destino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a number",
+   "options": [
+    "a number",
+    "a colour",
+    "a name",
+    "a symbol"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "Hay que mirar el número de la línea, no el destino.",
+    "targetWord": "número",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "perdida",
+  "featured": false,
+  "sentence": "Estoy completamente _____, no sé volver al hotel.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "perdida",
+   "options": [
+    "perdida",
+    "cansada",
+    "contenta",
+    "sola"
+   ],
+   "translation": "I am completely _____, I do not know how to get back to the hotel.",
+   "optionTranslations": [
+    "lost",
+    "tired",
+    "happy",
+    "alone"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "Estoy completamente perdida, no sé volver al hotel.",
+    "targetWord": "perdida",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "adónde",
+  "featured": false,
+  "sentence": "Dime _____ vas y te acerco en coche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "adónde",
+   "options": [
+    "adónde",
+    "cuánto",
+    "quién",
+    "cómo"
+   ],
+   "translation": "Tell me _____ you are going and I will give you a lift.",
+   "optionTranslations": [
+    "where to",
+    "how much",
+    "who",
+    "how"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "Dime adónde vas y te acerco en coche.",
+    "targetWord": "adónde",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "difícil",
+  "featured": false,
+  "sentence": "El primer día es _____, después ya es fácil.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "difícil",
+   "options": [
+    "difícil",
+    "sencillo",
+    "corto",
+    "barato"
+   ],
+   "translation": "The first day is _____, after that it is easy.",
+   "optionTranslations": [
+    "hard",
+    "simple",
+    "short",
+    "cheap"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "El primer día es difícil, después ya es fácil.",
+    "targetWord": "difícil",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "primer",
+  "featured": false,
+  "sentence": "Vivo en el _____ piso, subiendo las escaleras.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "primer",
+   "options": [
+    "primer",
+    "último",
+    "mismo",
+    "otro"
+   ],
+   "translation": "I live on the _____ floor, up the stairs.",
+   "optionTranslations": [
+    "first",
+    "last",
+    "same",
+    "other"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "Vivo en el primer piso, subiendo las escaleras.",
+    "targetWord": "primer",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "grande",
+  "featured": false,
+  "sentence": "Madrid es más _____ de lo que parece en el mapa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "grande",
+   "options": [
+    "grande",
+    "pequeño",
+    "antiguo",
+    "tranquilo"
+   ],
+   "translation": "Madrid is _____ than it looks on the map.",
+   "optionTranslations": [
+    "bigger",
+    "smaller",
+    "older",
+    "quieter"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "Madrid es más grande de lo que parece en el mapa.",
+    "targetWord": "grande",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "poco",
+  "featured": false,
+  "sentence": "Los autobuses pasan cada _____, no esperes mucho.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "poco",
+   "options": [
+    "poco",
+    "hora",
+    "noche",
+    "mes"
+   ],
+   "translation": "The buses come every little _____, do not wait long.",
+   "optionTranslations": [
+    "while",
+    "hour",
+    "night",
+    "month"
+   ],
+   "audioClip": {
+    "storySlug": "fijate-solo-en-la-linea",
+    "storySource": "user",
+    "sentence": "Los autobuses pasan cada poco, no esperes mucho.",
+    "targetWord": "poco",
+    "language": "spanish"
+   }
+  }
+ }
+]

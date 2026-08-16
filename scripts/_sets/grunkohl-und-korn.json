@@ -1,0 +1,456 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "dampfen",
+    "sentence": "[[Dampfende]] Töpfe und ein warmer Ofen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to steam",
+      "options": [
+        "to steam",
+        "to freeze",
+        "to shine",
+        "to crack"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Dampfende Töpfe und ein warmer Ofen.",
+        "targetWord": "Dampfende",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a51eb041bcc55c46.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "deftig",
+    "sentence": "Grünkohl mit allem, was dazu [[deftig]] sein muss.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hearty and rich",
+      "options": [
+        "hearty and rich",
+        "light and sweet",
+        "cold and plain",
+        "sour and sharp"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Grünkohl mit allem, was dazu deftig sein muss.",
+        "targetWord": "deftig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/04645806831b461d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mollig",
+    "sentence": "Drinnen ist es dafür [[mollig]] warm.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "snug and cosy",
+      "options": [
+        "snug and cosy",
+        "damp and chilly",
+        "loud and busy",
+        "bare and empty"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Drinnen ist es dafür mollig warm.",
+        "targetWord": "mollig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0936ea0ae46cea1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "redselig",
+    "sentence": "Die stille Runde wird ein Stückchen [[redseliger]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "chatty, talkative",
+      "options": [
+        "chatty, talkative",
+        "silent and shy",
+        "tired and grumpy",
+        "strict and cold"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Die stille Runde wird ein Stückchen redseliger.",
+        "targetWord": "redseliger",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/216ccc7e88c485d1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Schale",
+    "sentence": "Die kühle [[Schale]] hat Nadia am Anfang verwirrt.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a hard outer shell",
+      "options": [
+        "a hard outer shell",
+        "a warm welcome",
+        "a loud voice",
+        "an open door"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Die kühle Schale hat Nadia am Anfang verwirrt.",
+        "targetWord": "Schale",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f0cc61b8ca60b1b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gerührt",
+    "sentence": "Nadia hört [[gerührt]] zu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "touched, moved",
+      "options": [
+        "touched, moved",
+        "bored stiff",
+        "wide awake",
+        "slightly annoyed"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Nadia hört gerührt zu.",
+        "targetWord": "gerührt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/22599e56945aa369.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "zufrieden",
+    "sentence": "Satt und rundum [[zufrieden]] sitzt die Runde beisammen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "content, at ease",
+      "options": [
+        "content, at ease",
+        "worried and tense",
+        "cross and bitter",
+        "cold and distant"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Satt und rundum zufrieden sitzt die Runde beisammen.",
+        "targetWord": "zufrieden",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8dc39bf70bc9ba66.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "unterhaken",
+    "sentence": "Frauke hakt sich bei ihr [[unter]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to link arms",
+      "options": [
+        "to link arms",
+        "to wave goodbye",
+        "to step back",
+        "to sit down"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Frauke hakt sich bei ihr unter.",
+        "targetWord": "unter",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/182959f36d08b12a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ziert",
+    "sentence": "Sie mag den Kuchen, aber sie _____ sich und nimmt nichts.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ziert",
+      "options": [
+        "ziert",
+        "freut",
+        "beeilt",
+        "ärgert"
+      ],
+      "translation": "She likes the cake, but she _____ and takes nothing.",
+      "optionTranslations": [
+        "acts coy",
+        "is glad",
+        "hurries",
+        "gets annoyed"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Sie mag den Kuchen, aber sie ziert sich und nimmt nichts.",
+        "targetWord": "ziert",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4326bb3d42434db2.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "schmunzeln",
+    "sentence": "Über den kleinen Scherz musste sie leise _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "schmunzeln",
+      "options": [
+        "schmunzeln",
+        "weinen",
+        "brüllen",
+        "gähnen"
+      ],
+      "translation": "At the little joke she had to _____ quietly.",
+      "optionTranslations": [
+        "smile to herself",
+        "cry",
+        "bellow",
+        "yawn"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Über den kleinen Scherz musste sie leise schmunzeln.",
+        "targetWord": "schmunzeln",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e1ef90ddfff17a59.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pfeifen",
+    "sentence": "Draußen [[pfeift]] der Wind ums Haus.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to whistle",
+      "options": [
+        "to whistle",
+        "to melt",
+        "to glow",
+        "to rest"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Draußen pfeift der Wind ums Haus.",
+        "targetWord": "pfeift",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/65c6aafc80f38713.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "halblaut",
+    "sentence": "Sie erzählt [[halblaut]] von früher.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in a low voice",
+      "options": [
+        "in a low voice",
+        "at full volume",
+        "word for word",
+        "far away"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Sie erzählt halblaut von früher.",
+        "targetWord": "halblaut",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3d3a731e36d51ec6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "satt",
+    "sentence": "[[Satt]] und rundum zufrieden sitzt die Runde beisammen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pleasantly full",
+      "options": [
+        "pleasantly full",
+        "still hungry",
+        "wide awake",
+        "quite tired"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Satt und rundum zufrieden sitzt die Runde beisammen.",
+        "targetWord": "satt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8dc39bf70bc9ba66.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Höflichkeit",
+    "sentence": "Aus der anfänglichen [[Höflichkeit]] wurde eine echte Freundschaft.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "polite courtesy",
+      "options": [
+        "polite courtesy",
+        "open warmth",
+        "cold anger",
+        "loud pride"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Aus der anfänglichen Höflichkeit wurde eine echte Freundschaft.",
+        "targetWord": "Höflichkeit",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ea1312b509f8882.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "reihum",
+    "sentence": "Der Gastgeber schenkt _____ allen Gästen Wein nach.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reihum",
+      "options": [
+        "reihum",
+        "niemals",
+        "rückwärts",
+        "heimlich"
+      ],
+      "translation": "The host tops up wine for all guests _____.",
+      "optionTranslations": [
+        "one after another",
+        "never",
+        "backwards",
+        "secretly"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Der Gastgeber schenkt reihum allen Gästen Wein nach.",
+        "targetWord": "reihum",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3901c811dcd762d1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gefrotzelt",
+    "sentence": "Die alten Freunde haben den ganzen Abend nur freundschaftlich _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gefrotzelt",
+      "options": [
+        "gefrotzelt",
+        "geschwiegen",
+        "geschlafen",
+        "gestritten"
+      ],
+      "translation": "The old friends spent all evening just fondly _____.",
+      "optionTranslations": [
+        "teasing each other",
+        "staying silent",
+        "sleeping",
+        "quarrelling"
+      ],
+      "audioClip": {
+        "storySlug": "grunkohl-und-korn",
+        "storySource": "user",
+        "sentence": "Die alten Freunde haben den ganzen Abend nur freundschaftlich gefrotzelt.",
+        "targetWord": "gefrotzelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8a3d9fda03b5c61f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "Grünkohl,Korn,Klönschnack,Besucherin",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "Grünkohl",
+          "answer": "a winter kale dish",
+          "options": [
+            "a winter kale dish",
+            "a grain schnapps",
+            "a cosy chinwag",
+            "a visitor"
+          ]
+        },
+        {
+          "word": "Korn",
+          "answer": "a grain schnapps",
+          "options": [
+            "a winter kale dish",
+            "a grain schnapps",
+            "a cosy chinwag",
+            "a visitor"
+          ]
+        },
+        {
+          "word": "Klönschnack",
+          "answer": "a cosy chinwag",
+          "options": [
+            "a winter kale dish",
+            "a grain schnapps",
+            "a cosy chinwag",
+            "a visitor"
+          ]
+        },
+        {
+          "word": "Besucherin",
+          "answer": "a visitor",
+          "options": [
+            "a winter kale dish",
+            "a grain schnapps",
+            "a cosy chinwag",
+            "a visitor"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

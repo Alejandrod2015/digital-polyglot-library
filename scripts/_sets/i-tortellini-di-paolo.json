@@ -1,0 +1,583 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "sugo,carne,farina,brodo",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "sugo",
+     "answer": "sauce",
+     "options": [
+      "sauce",
+      "meat",
+      "flour",
+      "broth"
+     ]
+    },
+    {
+     "word": "carne",
+     "answer": "meat",
+     "options": [
+      "sauce",
+      "meat",
+      "flour",
+      "broth"
+     ]
+    },
+    {
+     "word": "farina",
+     "answer": "flour",
+     "options": [
+      "sauce",
+      "meat",
+      "flour",
+      "broth"
+     ]
+    },
+    {
+     "word": "brodo",
+     "answer": "broth",
+     "options": [
+      "sauce",
+      "meat",
+      "flour",
+      "broth"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "aspetta",
+  "sentence": "Paolo [[aspetta]] la sua amica Elena.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "waits for",
+   "options": [
+    "waits for",
+    "looks at",
+    "calls",
+    "greets"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "Paolo aspetta la sua amica Elena.",
+    "targetWord": "aspetta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "taglia",
+  "sentence": "Elena [[taglia]] la carne piccola piccola.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cuts",
+   "options": [
+    "cuts",
+    "cooks",
+    "buys",
+    "washes"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "Elena taglia la carne piccola piccola.",
+    "targetWord": "taglia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "mescola",
+  "sentence": "Poi [[mescola]] le uova con la farina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mixes",
+   "options": [
+    "mixes",
+    "breaks",
+    "counts",
+    "hides"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "Poi mescola le uova con la farina.",
+    "targetWord": "mescola",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "fanno",
+  "sentence": "Insieme [[fanno]] la pasta sul tavolo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "make",
+   "options": [
+    "make",
+    "eat",
+    "sell",
+    "clean"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "Insieme fanno la pasta sul tavolo.",
+    "targetWord": "fanno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "abbraccia",
+  "sentence": "Paolo la [[abbraccia]] con affetto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hugs",
+   "options": [
+    "hugs",
+    "pushes",
+    "leaves",
+    "follows"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "Paolo la abbraccia con affetto.",
+    "targetWord": "abbraccia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "vanno",
+  "sentence": "I due amici [[vanno]] in cucina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "go",
+   "options": [
+    "go",
+    "sit",
+    "sleep",
+    "sing"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "I due amici vanno in cucina.",
+    "targetWord": "vanno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "chiede",
+  "sentence": "Elena [[chiede]] la ricetta a Paolo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "asks for",
+   "options": [
+    "asks for",
+    "gives",
+    "forgets",
+    "pays"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "Elena chiede la ricetta a Paolo.",
+    "targetWord": "chiede",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "subito",
+  "sentence": "Elena entra [[subito]] nella cucina calda.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "immediately",
+   "options": [
+    "immediately",
+    "quietly",
+    "alone",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "Elena entra subito nella cucina calda.",
+    "targetWord": "subito",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "insieme",
+  "sentence": "I due amici lavorano [[insieme]] felici.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "together",
+   "options": [
+    "together",
+    "apart",
+    "tired",
+    "fast"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "I due amici lavorano insieme felici.",
+    "targetWord": "insieme",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "buonissimi",
+  "sentence": "I tortellini sono [[buonissimi]] oggi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "very good",
+   "options": [
+    "very good",
+    "too cold",
+    "quite small",
+    "still raw"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "I tortellini sono buonissimi oggi.",
+    "targetWord": "buonissimi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "treno",
+  "sentence": "Il ____ arriva puntuale alla stazione.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "treno",
+   "options": [
+    "treno",
+    "tavolo",
+    "brodo",
+    "dolce"
+   ],
+   "translation": "The ____ arrives on time at the station.",
+   "optionTranslations": [
+    "train",
+    "table",
+    "broth",
+    "dessert"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "Il treno arriva puntuale alla stazione.",
+    "targetWord": "treno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "fame",
+  "sentence": "Ho una gran ____!",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fame",
+   "options": [
+    "fame",
+    "carne",
+    "casa",
+    "nonna"
+   ],
+   "translation": "I have a great ____!",
+   "optionTranslations": [
+    "hunger",
+    "meat",
+    "house",
+    "grandmother"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "Ho una gran fame!",
+    "targetWord": "fame",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "casa",
+  "sentence": "La ____ di Paolo è vicina alla stazione.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "casa",
+   "options": [
+    "casa",
+    "cucina",
+    "carne",
+    "farina"
+   ],
+   "translation": "Paolo's ____ is near the station.",
+   "optionTranslations": [
+    "house",
+    "kitchen",
+    "meat",
+    "flour"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "La casa di Paolo è vicina alla stazione.",
+    "targetWord": "casa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "uova",
+  "sentence": "Elena mescola le ____ con la farina.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "uova",
+   "options": [
+    "uova",
+    "carne",
+    "brodo",
+    "sugo"
+   ],
+   "translation": "Elena mixes the ____ with the flour.",
+   "optionTranslations": [
+    "eggs",
+    "meat",
+    "broth",
+    "sauce"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "Elena mescola le uova con la farina.",
+    "targetWord": "uova",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "compleanno",
+  "sentence": "Oggi è il ____ di Elena!",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "compleanno",
+   "options": [
+    "compleanno",
+    "dolce",
+    "treno",
+    "sugo"
+   ],
+   "translation": "Today is Elena's ____!",
+   "optionTranslations": [
+    "birthday",
+    "dessert",
+    "train",
+    "sauce"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "Oggi è il compleanno di Elena!",
+    "targetWord": "compleanno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "cucina",
+  "sentence": "I due amici vanno in ____ calda.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cucina",
+   "options": [
+    "cucina",
+    "casa",
+    "nonna",
+    "farina"
+   ],
+   "translation": "The two friends go into the warm ____.",
+   "optionTranslations": [
+    "kitchen",
+    "house",
+    "grandmother",
+    "flour"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "I due amici vanno in cucina calda.",
+    "targetWord": "cucina",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "tavolo",
+  "sentence": "Fanno la pasta sul ____ di legno.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tavolo",
+   "options": [
+    "tavolo",
+    "treno",
+    "brodo",
+    "dolce"
+   ],
+   "translation": "They make the pasta on the wooden ____.",
+   "optionTranslations": [
+    "table",
+    "train",
+    "broth",
+    "dessert"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "Fanno la pasta sul tavolo di legno.",
+    "targetWord": "tavolo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "legno",
+  "sentence": "Il ____ del tavolo è vecchio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "legno",
+   "options": [
+    "legno",
+    "brodo",
+    "sugo",
+    "dolce"
+   ],
+   "translation": "The ____ of the table is old.",
+   "optionTranslations": [
+    "wood",
+    "broth",
+    "sauce",
+    "dessert"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "Il legno del tavolo è vecchio.",
+    "targetWord": "legno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "nonna",
+  "sentence": "La ricetta è un segreto di ____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nonna",
+   "options": [
+    "nonna",
+    "casa",
+    "cucina",
+    "carne"
+   ],
+   "translation": "The recipe is a secret of ____.",
+   "optionTranslations": [
+    "grandmother",
+    "house",
+    "kitchen",
+    "meat"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "La ricetta è un segreto di nonna.",
+    "targetWord": "nonna",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "dolce",
+  "sentence": "Paolo porta un ____ con una candela.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dolce",
+   "options": [
+    "dolce",
+    "treno",
+    "tavolo",
+    "brodo"
+   ],
+   "translation": "Paolo brings a ____ with a candle.",
+   "optionTranslations": [
+    "dessert",
+    "train",
+    "table",
+    "broth"
+   ],
+   "audioClip": {
+    "storySlug": "i-tortellini-di-paolo",
+    "storySource": "user",
+    "sentence": "Paolo porta un dolce con una candela.",
+    "targetWord": "dolce",
+    "language": "italian"
+   }
+  }
+ }
+]

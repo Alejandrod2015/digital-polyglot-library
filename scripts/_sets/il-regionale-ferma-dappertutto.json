@@ -1,0 +1,562 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "tabellone,finestrino,zaino,ulivo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "tabellone",
+          "answer": "a departures board",
+          "options": [
+            "a departures board",
+            "a train window",
+            "a backpack",
+            "an olive tree"
+          ]
+        },
+        {
+          "word": "finestrino",
+          "answer": "a train window",
+          "options": [
+            "a departures board",
+            "a train window",
+            "a backpack",
+            "an olive tree"
+          ]
+        },
+        {
+          "word": "zaino",
+          "answer": "a backpack",
+          "options": [
+            "a departures board",
+            "a train window",
+            "a backpack",
+            "an olive tree"
+          ]
+        },
+        {
+          "word": "ulivo",
+          "answer": "an olive tree",
+          "options": [
+            "a departures board",
+            "a train window",
+            "a backpack",
+            "an olive tree"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "economico",
+    "sentence": "Il treno regionale è molto più [[economico]] del veloce.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cheap",
+      "options": [
+        "cheap",
+        "expensive",
+        "fast",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Il treno regionale è molto più economico del veloce.",
+        "targetWord": "economico",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0eae468057dbb3fb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "metà",
+    "sentence": "Il biglietto costa la [[metà]] dell'altro treno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half",
+      "options": [
+        "half",
+        "double",
+        "triple",
+        "all"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Il biglietto costa la metà dell'altro treno.",
+        "targetWord": "metà",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f860c3d5153a67b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paese",
+    "sentence": "Il regionale si ferma in ogni [[paese]] piccolo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "small town",
+      "options": [
+        "small town",
+        "big city",
+        "station",
+        "field"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Il regionale si ferma in ogni paese piccolo.",
+        "targetWord": "paese",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6a2a73494ed63ae2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fermata",
+    "sentence": "Il treno fa molte [[fermate]] prima di Firenze.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stops",
+      "options": [
+        "stops",
+        "turns",
+        "doors",
+        "seats"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Il treno fa molte fermate prima di Firenze.",
+        "targetWord": "fermate",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae5be8ff25a3c2e7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "durare",
+    "sentence": "Il viaggio [[dura]] quasi tre ore.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lasts",
+      "options": [
+        "lasts",
+        "costs",
+        "stops",
+        "starts"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Il viaggio dura quasi tre ore.",
+        "targetWord": "dura",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46b96235f29d2a0c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ritardo",
+    "sentence": "Il treno arriva con un lungo [[ritardo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "delay",
+      "options": [
+        "delay",
+        "discount",
+        "speed",
+        "silence"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Il treno arriva con un lungo ritardo.",
+        "targetWord": "ritardo",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a9ad3033d841ce58.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "stanco",
+    "sentence": "Lei ha le gambe [[stanche]] dopo il viaggio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tired",
+      "options": [
+        "tired",
+        "strong",
+        "cold",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Lei ha le gambe stanche dopo il viaggio.",
+        "targetWord": "stanche",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/30c8ee626720f804.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "offre",
+    "sentence": "La signora le _____ un panino senza parlare.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "offre",
+      "options": [
+        "offre",
+        "vende",
+        "chiede",
+        "paga"
+      ],
+      "translation": "The lady _____ her a sandwich without speaking.",
+      "optionTranslations": [
+        "offers",
+        "sells",
+        "asks",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "La signora le offre un panino senza parlare.",
+        "targetWord": "offre",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/681e6d6fcccdb4ff.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "rallenta",
+    "sentence": "Il treno _____ prima di ogni paese.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rallenta",
+      "options": [
+        "rallenta",
+        "parte",
+        "paga",
+        "canta"
+      ],
+      "translation": "The train _____ before every small town.",
+      "optionTranslations": [
+        "slows down",
+        "leaves",
+        "pays",
+        "sings"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Il treno rallenta prima di ogni paese.",
+        "targetWord": "rallenta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d75375fe0e408728.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "scegliere",
+    "sentence": "Lei [[sceglie]] il treno più lento e più economico.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "chooses",
+      "options": [
+        "chooses",
+        "pays",
+        "misses",
+        "cleans"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Lei sceglie il treno più lento e più economico.",
+        "targetWord": "sceglie",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4434488a6bd01dcf.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "veloce",
+    "sentence": "Il treno [[veloce]] arriva un'ora prima.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fast",
+      "options": [
+        "fast",
+        "slow",
+        "late",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Il treno veloce arriva un'ora prima.",
+        "targetWord": "veloce",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3d83c03309a29649.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "orario",
+    "sentence": "Il treno parte in [[orario]], senza un minuto di ritardo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on time",
+      "options": [
+        "on time",
+        "late",
+        "early",
+        "never"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Il treno parte in orario, senza un minuto di ritardo.",
+        "targetWord": "orario",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8e1906fd237395db.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "borsa",
+    "sentence": "Le signore salgono con le [[borse]] della spesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bags",
+      "options": [
+        "bags",
+        "shoes",
+        "hats",
+        "books"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Le signore salgono con le borse della spesa.",
+        "targetWord": "borse",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5be6616cb7d0508e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "spesa",
+    "sentence": "Loro tornano a casa con la [[spesa]] del mercato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the food shopping",
+      "options": [
+        "the food shopping",
+        "the newspaper",
+        "the ticket",
+        "the money"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Loro tornano a casa con la spesa del mercato.",
+        "targetWord": "spesa",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7e3cca31b3205663.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bicicletta",
+    "sentence": "Un ragazzo sale con la [[bicicletta]] in mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bicycle",
+      "options": [
+        "a bicycle",
+        "a suitcase",
+        "a dog",
+        "a chair"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Un ragazzo sale con la bicicletta in mano.",
+        "targetWord": "bicicletta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8ebbd931c1d7efa5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contare",
+    "sentence": "Lei [[conta]] le fermate fino a Firenze.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "counts",
+      "options": [
+        "counts",
+        "forgets",
+        "writes",
+        "asks"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Lei conta le fermate fino a Firenze.",
+        "targetWord": "conta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2fa9b9a26875a4e4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "campo",
+    "sentence": "Fuori passano [[campi]] gialli e case basse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fields",
+      "options": [
+        "fields",
+        "shops",
+        "rivers",
+        "bridges"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Fuori passano campi gialli e case basse.",
+        "targetWord": "campi",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08f57836d38c3a63.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "collina",
+    "sentence": "Le [[colline]] sono piene di alberi grigi.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hills",
+      "options": [
+        "hills",
+        "streets",
+        "beaches",
+        "lakes"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Le colline sono piene di alberi grigi.",
+        "targetWord": "colline",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/caa32aa31bf6a8ad.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sacchetto",
+    "sentence": "La signora apre un [[sacchetto]] di carta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a small paper bag",
+      "options": [
+        "a small paper bag",
+        "a suitcase",
+        "a bottle",
+        "a window"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "La signora apre un sacchetto di carta.",
+        "targetWord": "sacchetto",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/74152d65ab16fd1f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "accettare",
+    "sentence": "Lei [[accetta]] il panino e ringrazia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "accepts",
+      "options": [
+        "accepts",
+        "refuses",
+        "buys",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Lei accetta il panino e ringrazia.",
+        "targetWord": "accetta",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d9016745344c696b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marciapiede",
+    "sentence": "Lei scende sul [[marciapiede]] della stazione.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the platform",
+      "options": [
+        "the platform",
+        "the field",
+        "the roof",
+        "the boat"
+      ],
+      "audioClip": {
+        "storySlug": "il-regionale-ferma-dappertutto",
+        "storySource": "user",
+        "sentence": "Lei scende sul marciapiede della stazione.",
+        "targetWord": "marciapiede",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/efaba8c1b61d9477.mp3"
+      }
+    },
+    "featured": false
+  }
+]

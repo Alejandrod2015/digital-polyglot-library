@@ -1,0 +1,218 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "traje,andén,altavoz,estación",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    { "word": "traje", "answer": "a suit", "options": ["a suit", "a platform", "a loudspeaker", "a station"] },
+    { "word": "andén", "answer": "a platform", "options": ["a suit", "a platform", "a loudspeaker", "a station"] },
+    { "word": "altavoz", "answer": "a loudspeaker", "options": ["a suit", "a platform", "a loudspeaker", "a station"] },
+    { "word": "estación", "answer": "a station", "options": ["a suit", "a platform", "a loudspeaker", "a station"] }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cercanías",
+  "sentence": "Paco le dice que tire para la estación de [[cercanías]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the local commuter trains",
+   "options": ["the local commuter trains", "the long distance coaches", "the airport shuttle bus", "the night tram service"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Paco le dice que tire para la estación de cercanías.", "targetWord": "cercanías", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abono",
+  "sentence": "Paco dice que con su [[abono]] le vale igual.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a monthly travel pass",
+   "options": ["a monthly travel pass", "a paper receipt", "a bank card", "a student card"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Paco dice que con su abono le vale igual.", "targetWord": "abono", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "portero",
+  "sentence": "Paco, el [[portero]], barre la entrada del edificio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the man who minds the door",
+   "options": ["the man who minds the door", "the man who drives the bus", "the man who sells tickets", "the man who runs the bar"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Paco, el portero, barre la entrada del edificio.", "targetWord": "portero", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de mil maneras",
+  "sentence": "Paco dice que de aquí se sale [[de mil maneras]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in lots of different ways",
+   "options": ["in lots of different ways", "only on foot", "with a lot of luck", "after a long wait"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Paco dice que de aquí se sale de mil maneras.", "targetWord": "de mil maneras", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cortada",
+  "sentence": "La línea está [[cortada]] por una avería.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "closed and not running",
+   "options": ["closed and not running", "full of passengers", "under construction", "running late today"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "La línea está cortada por una avería.", "targetWord": "cortada", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "susto",
+  "sentence": "Clara vuelve a la calle con cara de [[susto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a fright",
+   "options": ["a fright", "a smile", "a doubt", "a yawn"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Clara vuelve a la calle con cara de susto.", "targetWord": "susto", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trayecto",
+  "sentence": "Paco dice que ese [[trayecto]] lo hizo quince años.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the journey",
+   "options": ["the journey", "the timetable", "the ticket", "the platform"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Paco dice que ese trayecto lo hizo quince años.", "targetWord": "trayecto", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "billete",
+  "sentence": "Clara no sabe ni dónde se compra el [[billete]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a ticket",
+   "options": ["a ticket", "a coin", "a map", "a seat"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Clara no sabe ni dónde se compra el billete.", "targetWord": "billete", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zona",
+  "sentence": "Clara le pregunta si trabajaba por esa [[zona]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an area",
+   "options": ["an area", "a company", "a shift", "a building"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Clara le pregunta si trabajaba por esa zona.", "targetWord": "zona", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "queda",
+  "featured": false,
+  "sentence": "Clara se [[queda]] mirando a Paco, que sigue barriendo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stay",
+   "options": ["to stay", "to leave", "to shout", "to point"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Clara se queda mirando a Paco, que sigue barriendo.", "targetWord": "queda", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sigue",
+  "featured": false,
+  "sentence": "Paco [[sigue]] barriendo tan tranquilo mientras habla.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to carry on",
+   "options": ["to carry on", "to stop", "to start", "to hurry"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Paco sigue barriendo tan tranquilo mientras habla.", "targetWord": "sigue", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trabajaba",
+  "featured": false,
+  "sentence": "Clara pregunta si Paco [[trabajaba]] por aquella calle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to work",
+   "options": ["to work", "to live", "to study", "to drive"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Clara pregunta si Paco trabajaba por aquella calle.", "targetWord": "trabajaba", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "corre",
+  "featured": false,
+  "sentence": "Paco le dice que [[corre]], que el tren no espera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hurry",
+   "options": ["to hurry", "to wait", "to look", "to call"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Paco le dice que corre, que el tren no espera.", "targetWord": "corre", "language": "spanish" }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "espera",
+  "featured": false,
+  "sentence": "Paco dice que el de las nueve y diez no [[espera]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wait",
+   "options": ["to wait", "to stop", "to return", "to arrive"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Paco dice que el de las nueve y diez no espera.", "targetWord": "espera", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "tranquilo",
+  "featured": false,
+  "sentence": "Es un barrio muy _____, casi no pasan coches.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tranquilo",
+   "options": ["tranquilo", "ruidoso", "caro", "lejano"],
+   "translation": "It is a very _____ neighbourhood, hardly any cars go by.",
+   "optionTranslations": ["quiet", "noisy", "expensive", "distant"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Es un barrio muy tranquilo, casi no pasan coches.", "targetWord": "tranquilo", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "ahora",
+  "featured": false,
+  "sentence": "Sal _____, que el autobús está a punto de llegar.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ahora",
+   "options": ["ahora", "luego", "ayer", "nunca"],
+   "translation": "Leave _____, the bus is about to arrive.",
+   "optionTranslations": ["now", "later", "yesterday", "never"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "Sal ahora, que el autobús está a punto de llegar.", "targetWord": "ahora", "language": "spanish" }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "diez",
+  "featured": false,
+  "sentence": "El tren sale a las nueve y _____ en punto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "diez",
+   "options": ["diez", "cien", "mil", "medio"],
+   "translation": "The train leaves at _____ past nine exactly.",
+   "optionTranslations": ["ten", "a hundred", "a thousand", "half"],
+   "audioClip": { "storySlug": "se-sale-de-mil-maneras", "storySource": "user", "sentence": "El tren sale a las nueve y diez en punto.", "targetWord": "diez", "language": "spanish" }
+  }
+ }
+]

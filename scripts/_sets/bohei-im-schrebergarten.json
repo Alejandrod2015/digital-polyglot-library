@@ -1,0 +1,487 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "der Prolo",
+    "sentence": "Er sei doch bloß ein alter [[Prolo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rough working-class guy",
+      "options": [
+        "rough working-class guy",
+        "wealthy banker",
+        "young student",
+        "shy stranger"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Er sei doch bloß ein alter Prolo.",
+        "targetWord": "Prolo",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c313d29d015ef8cf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "das Bohei",
+    "sentence": "Um das bisschen Verschenken macht er ein richtiges [[Bohei]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "big loud fuss",
+      "options": [
+        "big loud fuss",
+        "quiet moment",
+        "small gift",
+        "long speech"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Um das bisschen Verschenken macht er ein richtiges Bohei.",
+        "targetWord": "Bohei",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7d0f24d8b178cc6a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "die Bagage",
+    "sentence": "Du gehörst jetzt zur [[Bagage]], ob du willst oder nich.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the whole gang, crew",
+      "options": [
+        "the whole gang, crew",
+        "the long queue",
+        "the old town",
+        "the guest list"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Du gehörst jetzt zur Bagage, ob du willst oder nich.",
+        "targetWord": "Bagage",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a47ea42e24f6e4b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "der Rost",
+    "sentence": "Kalle wuchtet das Grillgut auf den [[Rost]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the grill grate",
+      "options": [
+        "the grill grate",
+        "the wooden bench",
+        "the garden fence",
+        "the beer crate"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Kalle wuchtet das Grillgut auf den Rost.",
+        "targetWord": "Rost",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/768616b1e144531c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poltern",
+    "sentence": "Nimm schon mit, [[poltert]] er.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bluster, to boom out",
+      "options": [
+        "to bluster, to boom out",
+        "to whisper",
+        "to giggle",
+        "to sing"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Nimm schon mit, poltert er.",
+        "targetWord": "poltert",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d94fb2eeb262ec99.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abwiegeln",
+    "sentence": "Als Jette anstößt, [[wiegelt]] Kalle sofort ab.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to play down",
+      "options": [
+        "to play down",
+        "to speak up",
+        "to join in",
+        "to give up"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Als Jette anstößt, wiegelt Kalle sofort ab.",
+        "targetWord": "wiegelt",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/22d88eac0a37d8f4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "drucksen",
+    "sentence": "Timo [[druckst]] nur rum und sagt nichts.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stall, to hedge",
+      "options": [
+        "to stall, to hedge",
+        "to shout out",
+        "to laugh loud",
+        "to walk off"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Timo druckst nur rum und sagt nichts.",
+        "targetWord": "druckst",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/52f85d189e4342cf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verdächtig",
+    "sentence": "Aber seine Augen sind [[verdächtig]] glasig.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "suspiciously",
+      "options": [
+        "suspiciously",
+        "clearly",
+        "barely",
+        "openly"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Aber seine Augen sind verdächtig glasig.",
+        "targetWord": "verdächtig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b2d6a6e8e3e7e9f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "auffe Arbeit",
+    "sentence": "Jette, die [[auffe]] Arbeit Kranführerin ist.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at work, on the job",
+      "options": [
+        "at work, on the job",
+        "after work",
+        "on the bus",
+        "at the pub"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Jette, die auffe Arbeit Kranführerin ist.",
+        "targetWord": "auffe",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad5521e83cd4826a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "am Hut haben",
+    "sentence": "Er hat mit Werkzeug nix mehr am [[Hut]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to care about, to bother with",
+      "options": [
+        "to care about, to bother with",
+        "to pay a lot for",
+        "to be afraid of",
+        "to laugh about"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Er hat mit Werkzeug nix mehr am Hut.",
+        "targetWord": "Hut",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49d1f8950a0743a9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "Alter Schwede",
+    "sentence": "Alter [[Schwede]], nimm schon mit.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wow, good grief",
+      "options": [
+        "wow, good grief",
+        "well done now",
+        "safe travels home",
+        "see you soon"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Alter Schwede, nimm schon mit.",
+        "targetWord": "Schwede",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7ed9cc11fd6d505.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "kein Trara machen",
+    "sentence": "Bloß kein [[Trara]], brummt er.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "no fuss, no show",
+      "options": [
+        "no fuss, no show",
+        "a short break",
+        "a small joke",
+        "a quick goodbye"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Bloß kein Trara, brummt er.",
+        "targetWord": "Trara",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61b16afb5aed3b2b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "flucht",
+    "sentence": "Wenn der Bus zu spät kommt, _____ mein Vater laut.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "flucht",
+      "options": [
+        "flucht",
+        "singt",
+        "lacht",
+        "träumt"
+      ],
+      "translation": "When the bus is late, my father _____ loudly.",
+      "optionTranslations": [
+        "swears",
+        "sings",
+        "laughs",
+        "dreams"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Wenn der Bus zu spät kommt, flucht mein Vater laut.",
+        "targetWord": "flucht",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c1dc9acf0148b685.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "wuchtet",
+    "sentence": "Der starke Mann _____ den schweren Sack auf den Wagen.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "wuchtet",
+      "options": [
+        "wuchtet",
+        "streichelt",
+        "zeichnet",
+        "bezahlt"
+      ],
+      "translation": "The strong man _____ the heavy sack onto the cart.",
+      "optionTranslations": [
+        "heaves",
+        "strokes",
+        "draws",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Der starke Mann wuchtet den schweren Sack auf den Wagen.",
+        "targetWord": "wuchtet",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1f986df3bc84782d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "ausbuddeln",
+    "sentence": "Alte Geheimnisse muss man nicht immer wieder _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ausbuddeln",
+      "options": [
+        "ausbuddeln",
+        "vergraben",
+        "verschenken",
+        "aufräumen"
+      ],
+      "translation": "Old secrets do not always have to be _____ again.",
+      "optionTranslations": [
+        "dug out",
+        "buried",
+        "given away",
+        "tidied up"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Alte Geheimnisse muss man nicht immer wieder ausbuddeln.",
+        "targetWord": "ausbuddeln",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/99305b654cdbdc41.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "glasig",
+    "sentence": "Nach der traurigen Nachricht wurden ihre Augen ganz _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "glasig",
+      "options": [
+        "glasig",
+        "staubig",
+        "eckig",
+        "streng"
+      ],
+      "translation": "After the sad news her eyes went all _____.",
+      "optionTranslations": [
+        "glassy",
+        "dusty",
+        "square",
+        "stern"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Nach der traurigen Nachricht wurden ihre Augen ganz glasig.",
+        "targetWord": "glasig",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/df7af8863c11dbb8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "lauthals",
+    "sentence": "Die Fans sangen _____ das Lied im Stadion.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lauthals",
+      "options": [
+        "lauthals",
+        "leise",
+        "heimlich",
+        "langsam"
+      ],
+      "translation": "The fans sang the song _____ in the stadium.",
+      "optionTranslations": [
+        "at the top of their voice",
+        "quietly",
+        "secretly",
+        "slowly"
+      ],
+      "audioClip": {
+        "storySlug": "bohei-im-schrebergarten",
+        "storySource": "user",
+        "sentence": "Die Fans sangen lauthals das Lied im Stadion.",
+        "targetWord": "lauthals",
+        "language": "german",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a370054edc0d952e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "der Schrebergarten,das Kabuff,das Gerümpel,die Rente",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "der Schrebergarten",
+          "answer": "allotment garden plot",
+          "options": [
+            "allotment garden plot",
+            "tiny cramped shed",
+            "old useless junk",
+            "retirement pension"
+          ]
+        },
+        {
+          "word": "das Kabuff",
+          "answer": "tiny cramped shed",
+          "options": [
+            "allotment garden plot",
+            "tiny cramped shed",
+            "old useless junk",
+            "retirement pension"
+          ]
+        },
+        {
+          "word": "das Gerümpel",
+          "answer": "old useless junk",
+          "options": [
+            "allotment garden plot",
+            "tiny cramped shed",
+            "old useless junk",
+            "retirement pension"
+          ]
+        },
+        {
+          "word": "die Rente",
+          "answer": "retirement pension",
+          "options": [
+            "allotment garden plot",
+            "tiny cramped shed",
+            "old useless junk",
+            "retirement pension"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,497 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "jugoso",
+    "sentence": "Marina traía un chisme bien [[jugoso]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "juicy and scandalous",
+      "options": [
+        "juicy and scandalous",
+        "dry and boring",
+        "short and sweet",
+        "old and stale"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "Marina traía un chisme bien jugoso.",
+        "targetWord": "jugoso",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c306e6dda7c1dab7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bacano",
+    "sentence": "Deje ese aparato, que esto está muy [[bacano]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cool and great",
+      "options": [
+        "cool and great",
+        "dull and flat",
+        "sad and heavy",
+        "rude and cold"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "Deje ese aparato, que esto está muy bacano.",
+        "targetWord": "bacano",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e21e4fbbc931500.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enredo",
+    "sentence": "Alguien andaba en un [[enredo]] tremendo con la vecina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tangled mess",
+      "options": [
+        "a tangled mess",
+        "a clear plan",
+        "a fair deal",
+        "a quiet chat"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "Alguien andaba en un enredo tremendo con la vecina.",
+        "targetWord": "enredo",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a9798f5c8e5e6265.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chismosear",
+    "sentence": "Valeria se sentó a [[chismosear]] también.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to gossip and swap stories",
+      "options": [
+        "to gossip and swap stories",
+        "to cook and clean",
+        "to work and save",
+        "to rest and sleep"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "Valeria se sentó a chismosear también.",
+        "targetWord": "chismosear",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8a61efa9e744f04b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tener en ascuas",
+    "sentence": "Cuente, cuente, no me deje [[en ascuas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in agonizing suspense",
+      "options": [
+        "in agonizing suspense",
+        "in a good mood",
+        "in a deep sleep",
+        "in a great hurry"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "Cuente, cuente, no me deje en ascuas.",
+        "targetWord": "en ascuas",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5dc8edc9dd31e193.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "visaje",
+    "sentence": "Arrancó con todo el [[visaje]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "showy drama and fuss",
+      "options": [
+        "showy drama and fuss",
+        "quiet honesty",
+        "cold silence",
+        "plain boredom"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "Arrancó con todo el visaje.",
+        "targetWord": "visaje",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7462e73c14d2b41.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a las malas",
+    "sentence": "Habló de una fiesta [[a las malas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "done on the sly",
+      "options": [
+        "done on the sly",
+        "done out loud",
+        "done for free",
+        "done on time"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "Habló de una fiesta a las malas.",
+        "targetWord": "a las malas",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c00526f1168217e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enganchado",
+    "sentence": "Julián quedó bien [[enganchado]] en el cuento.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hooked and absorbed",
+      "options": [
+        "hooked and absorbed",
+        "bored and sleepy",
+        "angry and cold",
+        "calm and distant"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "Julián quedó bien enganchado en el cuento.",
+        "targetWord": "enganchado",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8d60236aa8a544a0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de una",
+    "sentence": "\"Pare ahí\", los frenó [[de una]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right away",
+      "options": [
+        "right away",
+        "by mistake",
+        "little by little",
+        "one last time"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "\"Pare ahí\", los frenó de una.",
+        "targetWord": "de una",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f5e47fa81c860080.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "atar cabos",
+    "sentence": "Se quedó callada, [[atando cabos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "putting it together",
+      "options": [
+        "putting it together",
+        "giving it up",
+        "messing it up",
+        "letting it go"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "Se quedó callada, atando cabos.",
+        "targetWord": "atando cabos",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff1f2509c4579092.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sofocón",
+    "sentence": "Los frenó entre la risa y el [[sofocón]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fluster of shock",
+      "options": [
+        "a fluster of shock",
+        "a burst of joy",
+        "a wave of calm",
+        "a fit of sleep"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "Los frenó entre la risa y el sofocón.",
+        "targetWord": "sofocón",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c4b75a6e535f5de4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "achantado",
+    "sentence": "Marina, toda [[achantada]], juró que solo repetía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "embarrassed and sheepish",
+      "options": [
+        "embarrassed and sheepish",
+        "proud and smug",
+        "calm and cool",
+        "bored and tired"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "Marina, toda achantada, juró que solo repetía.",
+        "targetWord": "achantada",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e2f7762d08ff7f62.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "teléfono roto",
+    "sentence": "Se rieron del [[teléfono roto]] en que se volvió.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a message gone distorted",
+      "options": [
+        "a message gone distorted",
+        "a broken new phone",
+        "a lost old letter",
+        "a long quiet call"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "Se rieron del teléfono roto en que se volvió.",
+        "targetWord": "teléfono roto",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e471744a0add3455.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rajar",
+    "sentence": "No te pongas a _____ de la gente a sus espaldas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rajar",
+      "options": [
+        "rajar",
+        "ayudar",
+        "llamar",
+        "cuidar"
+      ],
+      "translation": "Do not start to _____ people behind their backs.",
+      "optionTranslations": [
+        "badmouth",
+        "help",
+        "call",
+        "look after"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "No te pongas a rajar de la gente a sus espaldas.",
+        "targetWord": "rajar",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d36e8c6f62554a22.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "momentico",
+    "sentence": "Espéreme un _____, ya casi termino esto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "momentico",
+      "options": [
+        "momentico",
+        "camión",
+        "cuaderno",
+        "zapato"
+      ],
+      "translation": "Wait for me a _____, I am almost done.",
+      "optionTranslations": [
+        "little moment",
+        "truck",
+        "notebook",
+        "shoe"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "Espéreme un momentico, ya casi termino esto.",
+        "targetWord": "momentico",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/22dbeee09c8b0f35.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "de boca en boca",
+    "sentence": "La noticia corrió _____ por todo el barrio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "de boca en boca",
+      "options": [
+        "de boca en boca",
+        "de reojo",
+        "de gratis",
+        "de sobra"
+      ],
+      "translation": "The news ran _____ across the whole neighborhood.",
+      "optionTranslations": [
+        "by word of mouth",
+        "out of the corner",
+        "for free",
+        "to spare"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "La noticia corrió de boca en boca por todo el barrio.",
+        "targetWord": "de boca en boca",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1de4cffeb09aebfc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "inflado",
+    "sentence": "El cuento llegó todo _____ y lejos de la verdad.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "inflado",
+      "options": [
+        "inflado",
+        "callado",
+        "dormido",
+        "limpio"
+      ],
+      "translation": "The story arrived all _____ and far from the truth.",
+      "optionTranslations": [
+        "blown up",
+        "quiet",
+        "asleep",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "marina-llega-con-visaje",
+        "storySource": "user",
+        "sentence": "El cuento llegó todo inflado y lejos de la verdad.",
+        "targetWord": "inflado",
+        "language": "spanish",
+        "voiceId": "JW8DGEuLp9WxIS5IdxMM",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/accfacc882717385.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "parce,tinto,man,parche",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "parce",
+          "answer": "buddy, mate (Colombian)",
+          "options": [
+            "buddy, mate (Colombian)",
+            "a small black coffee",
+            "a guy, a dude",
+            "the friend group"
+          ]
+        },
+        {
+          "word": "tinto",
+          "answer": "a small black coffee",
+          "options": [
+            "buddy, mate (Colombian)",
+            "a small black coffee",
+            "a guy, a dude",
+            "the friend group"
+          ]
+        },
+        {
+          "word": "man",
+          "answer": "a guy, a dude",
+          "options": [
+            "buddy, mate (Colombian)",
+            "a small black coffee",
+            "a guy, a dude",
+            "the friend group"
+          ]
+        },
+        {
+          "word": "parche",
+          "answer": "the friend group",
+          "options": [
+            "buddy, mate (Colombian)",
+            "a small black coffee",
+            "a guy, a dude",
+            "the friend group"
+          ]
+        }
+      ],
+      "audioClip": null
+    },
+    "featured": false
+  }
+]

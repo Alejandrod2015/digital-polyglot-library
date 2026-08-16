@@ -1,0 +1,615 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "mesa,plato,foto,flor",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "mesa",
+     "answer": "a table",
+     "options": [
+      "a table",
+      "a dish",
+      "a photo",
+      "a flower"
+     ]
+    },
+    {
+     "word": "plato",
+     "answer": "a dish",
+     "options": [
+      "a table",
+      "a dish",
+      "a photo",
+      "a flower"
+     ]
+    },
+    {
+     "word": "foto",
+     "answer": "a photo",
+     "options": [
+      "a table",
+      "a dish",
+      "a photo",
+      "a flower"
+     ]
+    },
+    {
+     "word": "flor",
+     "answer": "a flower",
+     "options": [
+      "a table",
+      "a dish",
+      "a photo",
+      "a flower"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "el tercero",
+  "sentence": "Rosario dice que creció en [[el tercero]] de este edificio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the third floor",
+   "options": [
+    "the third floor",
+    "the back flat",
+    "the corner shop",
+    "the top attic"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Rosario dice que creció en el tercero de este edificio.",
+    "targetWord": "el tercero",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "regadera",
+  "sentence": "Dentro del baúl hay fotos y una [[regadera]] vieja.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a watering can",
+   "options": [
+    "a watering can",
+    "a coffee pot",
+    "a metal bucket",
+    "a glass jar"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Dentro del baúl hay fotos y una regadera vieja.",
+    "targetWord": "regadera",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bajo el brazo",
+  "sentence": "Rosario llega con una carpeta [[bajo el brazo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "held under one arm",
+   "options": [
+    "held under one arm",
+    "hanging from a strap",
+    "hidden in a pocket",
+    "carried on her head"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Rosario llega con una carpeta bajo el brazo.",
+    "targetWord": "bajo el brazo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tiene razón",
+  "sentence": "Rosario le dice a don Andrés que [[tiene razón]] en lo del agua.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "he is right",
+   "options": [
+    "he is right",
+    "he is late",
+    "he is angry",
+    "he is joking"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Rosario le dice a don Andrés que tiene razón en lo del agua.",
+    "targetWord": "tiene razón",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "si puede saberse",
+  "sentence": "Don Andrés pregunta por qué tantas plantas, [[si puede saberse]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "if I may ask",
+   "options": [
+    "if I may ask",
+    "as everybody knows",
+    "for the last time",
+    "just in case"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Don Andrés pregunta por qué tantas plantas, si puede saberse.",
+    "targetWord": "si puede saberse",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "una vez más",
+  "sentence": "Rosario quería ver este patio [[una vez más]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "one more time",
+   "options": [
+    "one more time",
+    "every single day",
+    "from far away",
+    "for the first time"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Rosario quería ver este patio una vez más.",
+    "targetWord": "una vez más",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "igual que",
+  "sentence": "La vecina dice que su madre regaba la terraza [[igual que]] ella.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the same as",
+   "options": [
+    "the same as",
+    "instead of",
+    "long before",
+    "much better than"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "La vecina dice que su madre regaba la terraza igual que ella.",
+    "targetWord": "igual que",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "carpeta",
+  "sentence": "Rosario abre la [[carpeta]] y saca una foto antigua.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a folder",
+   "options": [
+    "a folder",
+    "a suitcase",
+    "a notebook",
+    "an envelope"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Rosario abre la carpeta y saca una foto antigua.",
+    "targetWord": "carpeta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "edificio",
+  "sentence": "Rosario nació en este [[edificio]] del Albaicín.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a block of flats",
+   "options": [
+    "a block of flats",
+    "a small village",
+    "a train station",
+    "a city park"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Rosario nació en este edificio del Albaicín.",
+    "targetWord": "edificio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arreglar",
+  "featured": false,
+  "sentence": "Rosario dice que lo del agua lo [[arreglamos]] hoy mismo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sort out",
+   "options": [
+    "to sort out",
+    "to argue about",
+    "to pay for",
+    "to forget"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Rosario dice que lo del agua lo arreglamos hoy mismo.",
+    "targetWord": "arreglamos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "niña",
+  "featured": false,
+  "sentence": "En la foto, una [[niña]] riega flores en la terraza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a little girl",
+   "options": [
+    "a little girl",
+    "an old lady",
+    "a young man",
+    "a small dog"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "En la foto, una niña riega flores en la terraza.",
+    "targetWord": "niña",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "crecer",
+  "featured": false,
+  "sentence": "Rosario dice que [[crecí]] en el tercero de este edificio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to grow up",
+   "options": [
+    "to grow up",
+    "to move in",
+    "to work",
+    "to visit"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Rosario dice que crecí en el tercero de este edificio.",
+    "targetWord": "crecí",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "volver",
+  "featured": false,
+  "sentence": "Rosario dice que por eso [[volví]] a este edificio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come back",
+   "options": [
+    "to come back",
+    "to move away",
+    "to write",
+    "to phone"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Rosario dice que por eso volví a este edificio.",
+    "targetWord": "volví",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "madre",
+  "featured": false,
+  "sentence": "La vecina dice que su [[madre]] le hablaba de la otra.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a mother",
+   "options": [
+    "a mother",
+    "a daughter",
+    "a teacher",
+    "a neighbour"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "La vecina dice que su madre le hablaba de la otra.",
+    "targetWord": "madre",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sobre",
+  "featured": false,
+  "sentence": "Dentro del baúl hay un [[sobre]] con el nombre de los dos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an envelope",
+   "options": [
+    "an envelope",
+    "a postcard",
+    "a ticket",
+    "a receipt"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Dentro del baúl hay un sobre con el nombre de los dos.",
+    "targetWord": "sobre",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nombre",
+  "featured": false,
+  "sentence": "El sobre lleva el [[nombre]] de Marta y de Hugo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a name",
+   "options": [
+    "a name",
+    "an address",
+    "a date",
+    "a price"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "El sobre lleva el nombre de Marta y de Hugo.",
+    "targetWord": "nombre",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "los dos",
+  "featured": false,
+  "sentence": "Rosario dice que hay algo para [[los dos]] dentro del baúl.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "both of them",
+   "options": [
+    "both of them",
+    "one of them",
+    "all the neighbours",
+    "nobody at all"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Rosario dice que hay algo para los dos dentro del baúl.",
+    "targetWord": "los dos",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "vieja",
+  "featured": false,
+  "sentence": "Esta bicicleta es muy _____, la compré hace veinte años.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vieja",
+   "options": [
+    "vieja",
+    "nueva",
+    "cara",
+    "rápida"
+   ],
+   "translation": "This bicycle is very _____, I bought it twenty years ago.",
+   "optionTranslations": [
+    "old",
+    "new",
+    "expensive",
+    "fast"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Esta bicicleta es muy vieja, la compré hace veinte años.",
+    "targetWord": "vieja",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "sentado",
+  "featured": false,
+  "sentence": "Hay poco sitio: mi padre está _____ y yo de pie.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sentado",
+   "options": [
+    "sentado",
+    "dormido",
+    "perdido",
+    "cansado"
+   ],
+   "translation": "There is little room: my father is _____ and I am standing.",
+   "optionTranslations": [
+    "seated",
+    "asleep",
+    "lost",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Hay poco sitio: mi padre está sentado y yo de pie.",
+    "targetWord": "sentado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "debajo",
+  "featured": false,
+  "sentence": "El gato se esconde _____ de la cama cuando llaman.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "debajo",
+   "options": [
+    "debajo",
+    "encima",
+    "delante",
+    "dentro"
+   ],
+   "translation": "The cat hides _____ the bed when somebody rings.",
+   "optionTranslations": [
+    "under",
+    "on top of",
+    "in front of",
+    "inside"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "El gato se esconde debajo de la cama cuando llaman.",
+    "targetWord": "debajo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "lleno",
+  "featured": false,
+  "sentence": "El vaso está _____, no cabe ni una gota más.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lleno",
+   "options": [
+    "lleno",
+    "vacío",
+    "sucio",
+    "roto"
+   ],
+   "translation": "The glass is _____, not one more drop fits.",
+   "optionTranslations": [
+    "full",
+    "empty",
+    "dirty",
+    "broken"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "El vaso está lleno, no cabe ni una gota más.",
+    "targetWord": "lleno",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "tarde",
+  "featured": false,
+  "sentence": "Por la _____ salgo a pasear con mi perro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tarde",
+   "options": [
+    "tarde",
+    "cocina",
+    "ventana",
+    "silla"
+   ],
+   "translation": "In the _____ I go out for a walk with my dog.",
+   "optionTranslations": [
+    "afternoon",
+    "kitchen",
+    "window",
+    "chair"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Por la tarde salgo a pasear con mi perro.",
+    "targetWord": "tarde",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "años",
+  "featured": false,
+  "sentence": "Mi hermana tiene treinta _____ y vive en Sevilla.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "años",
+   "options": [
+    "años",
+    "meses",
+    "horas",
+    "días"
+   ],
+   "translation": "My sister is thirty _____ old and lives in Seville.",
+   "optionTranslations": [
+    "years",
+    "months",
+    "hours",
+    "days"
+   ],
+   "audioClip": {
+    "storySlug": "esa-nina-soy-yo",
+    "storySource": "user",
+    "sentence": "Mi hermana tiene treinta años y vive en Sevilla.",
+    "targetWord": "años",
+    "language": "spanish"
+   }
+  }
+ }
+]

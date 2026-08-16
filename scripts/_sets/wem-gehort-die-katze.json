@@ -1,0 +1,630 @@
+[
+ {
+  "type": "match_meaning",
+  "featured": true,
+  "word": "Schild,Haus,Fenster,Bett",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match each word to its meaning.",
+   "pairs": [
+    {
+     "word": "Schild",
+     "answer": "sign",
+     "options": [
+      "sign",
+      "house",
+      "window",
+      "bed"
+     ]
+    },
+    {
+     "word": "Haus",
+     "answer": "house",
+     "options": [
+      "sign",
+      "house",
+      "window",
+      "bed"
+     ]
+    },
+    {
+     "word": "Fenster",
+     "answer": "window",
+     "options": [
+      "sign",
+      "house",
+      "window",
+      "bed"
+     ]
+    },
+    {
+     "word": "Bett",
+     "answer": "bed",
+     "options": [
+      "sign",
+      "house",
+      "window",
+      "bed"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "zufrieden",
+  "sentence": "Die Katze ist ruhig und [[zufrieden]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "content",
+   "options": [
+    "content",
+    "angry",
+    "hungry",
+    "scared"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Die Katze ist ruhig und zufrieden.",
+    "targetWord": "zufrieden",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "glücklich",
+  "sentence": "Die Katze ist [[glücklich]] hier.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "happy",
+   "options": [
+    "happy",
+    "sad",
+    "tired",
+    "bored"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Die Katze ist glücklich hier.",
+    "targetWord": "glücklich",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": true,
+  "word": "vielleicht",
+  "sentence": "[[Vielleicht]] mag ich Katzen doch.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "maybe",
+   "options": [
+    "maybe",
+    "never",
+    "always",
+    "already"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Vielleicht mag ich Katzen doch.",
+    "targetWord": "Vielleicht",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "schreiben",
+  "sentence": "Sie _____ ein kleines Schild.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schreiben",
+   "options": [
+    "schreiben",
+    "warten",
+    "kaufen",
+    "fragen"
+   ],
+   "translation": "They _____ a small sign.",
+   "optionTranslations": [
+    "write",
+    "wait",
+    "buy",
+    "ask"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Sie schreiben ein kleines Schild.",
+    "targetWord": "schreiben",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "hängt",
+  "sentence": "Das Schild _____ an der Tür.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hängt",
+   "options": [
+    "hängt",
+    "liegt",
+    "läuft",
+    "ruft"
+   ],
+   "translation": "The sign _____ on the door.",
+   "optionTranslations": [
+    "hangs",
+    "lies",
+    "runs",
+    "calls"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Das Schild hängt an der Tür.",
+    "targetWord": "hängt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "läuft",
+  "sentence": "Die Katze _____ durch die Wohnung.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "läuft",
+   "options": [
+    "läuft",
+    "liegt",
+    "wartet",
+    "schläft"
+   ],
+   "translation": "The cat _____ through the apartment.",
+   "optionTranslations": [
+    "runs",
+    "lies",
+    "waits",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Die Katze läuft durch die Wohnung.",
+    "targetWord": "läuft",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "liegt",
+  "sentence": "Die Katze _____ auf seinem Bett.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "liegt",
+   "options": [
+    "liegt",
+    "läuft",
+    "sitzt",
+    "hängt"
+   ],
+   "translation": "The cat _____ on his bed.",
+   "optionTranslations": [
+    "lies",
+    "runs",
+    "sits",
+    "hangs"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Die Katze liegt auf seinem Bett.",
+    "targetWord": "liegt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": true,
+  "word": "schnurrt",
+  "sentence": "Die Katze _____ laut und ruhig.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schnurrt",
+   "options": [
+    "schnurrt",
+    "schläft",
+    "trinkt",
+    "wartet"
+   ],
+   "translation": "The cat _____ loudly and calmly.",
+   "optionTranslations": [
+    "purrs",
+    "sleeps",
+    "drinks",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Die Katze schnurrt laut und ruhig.",
+    "targetWord": "schnurrt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "listen_choose",
+  "featured": true,
+  "word": "Frau",
+  "sentence": "",
+  "payload": {
+   "prompt": "Listen and choose the word you hear.",
+   "answer": "Frau",
+   "options": [
+    "Frau",
+    "Schild",
+    "Fenster",
+    "Bett"
+   ],
+   "optionTranslations": [
+    "woman",
+    "sign",
+    "window",
+    "bed"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Eine Frau aus dem Haus kommt.",
+    "targetWord": "Frau",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "gefunden",
+  "sentence": "Wir haben eine Katze _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gefunden",
+   "options": [
+    "gefunden",
+    "gesucht",
+    "gekauft",
+    "gefragt"
+   ],
+   "translation": "We have _____ a cat.",
+   "optionTranslations": [
+    "found",
+    "looked for",
+    "bought",
+    "asked"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Wir haben eine Katze gefunden.",
+    "targetWord": "gefunden",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "warten",
+  "sentence": "Marie und Jonas _____ einen Tag.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "warten",
+   "options": [
+    "warten",
+    "laufen",
+    "kaufen",
+    "rufen"
+   ],
+   "translation": "Marie and Jonas _____ one day.",
+   "optionTranslations": [
+    "wait",
+    "run",
+    "buy",
+    "call"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Marie und Jonas warten einen Tag.",
+    "targetWord": "warten",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Wohnung",
+  "sentence": "Die Katze läuft durch die _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Wohnung",
+   "options": [
+    "Wohnung",
+    "Tür",
+    "Fenster",
+    "Bett"
+   ],
+   "translation": "The cat runs through the _____.",
+   "optionTranslations": [
+    "apartment",
+    "door",
+    "window",
+    "bed"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Die Katze läuft durch die Wohnung.",
+    "targetWord": "Wohnung",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "ruft",
+  "sentence": "Jonas _____ am Abend laut.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ruft",
+   "options": [
+    "ruft",
+    "läuft",
+    "liegt",
+    "hängt"
+   ],
+   "translation": "Jonas _____ loudly in the evening.",
+   "optionTranslations": [
+    "calls",
+    "runs",
+    "lies",
+    "hangs"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Jonas ruft am Abend laut.",
+    "targetWord": "ruft",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "mag",
+  "sentence": "Vielleicht _____ ich Katzen doch.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mag",
+   "options": [
+    "mag",
+    "sehe",
+    "kaufe",
+    "frage"
+   ],
+   "translation": "Maybe I _____ cats after all.",
+   "optionTranslations": [
+    "like",
+    "see",
+    "buy",
+    "ask"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Vielleicht mag ich Katzen doch.",
+    "targetWord": "mag",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "fragt",
+  "sentence": "Niemand _____ nach der Katze.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fragt",
+   "options": [
+    "fragt",
+    "ruft",
+    "wartet",
+    "läuft"
+   ],
+   "translation": "Nobody _____ about the cat.",
+   "optionTranslations": [
+    "asks",
+    "calls",
+    "waits",
+    "runs"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Niemand fragt nach der Katze.",
+    "targetWord": "fragt",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "lächeln",
+  "sentence": "Marie und Jonas _____ beide.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lächeln",
+   "options": [
+    "lächeln",
+    "warten",
+    "laufen",
+    "fragen"
+   ],
+   "translation": "Marie and Jonas both _____.",
+   "optionTranslations": [
+    "smile",
+    "wait",
+    "run",
+    "ask"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Marie und Jonas lächeln beide.",
+    "targetWord": "lächeln",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "featured": false,
+  "word": "Tür",
+  "sentence": "Das Schild hängt an der _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Tür",
+   "options": [
+    "Tür",
+    "Wohnung",
+    "Fenster",
+    "Bett"
+   ],
+   "translation": "The sign hangs on the _____.",
+   "optionTranslations": [
+    "door",
+    "apartment",
+    "window",
+    "bed"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Das Schild hängt an der Tür.",
+    "targetWord": "Tür",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "gern",
+  "sentence": "Die Katze sitzt [[gern]] am Fenster.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gladly",
+   "options": [
+    "gladly",
+    "rarely",
+    "never",
+    "quickly"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Die Katze sitzt gern am Fenster.",
+    "targetWord": "gern",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "laut",
+  "sentence": "Die Katze schnurrt sehr [[laut]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "loud",
+   "options": [
+    "loud",
+    "quiet",
+    "soft",
+    "slow"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Die Katze schnurrt sehr laut.",
+    "targetWord": "laut",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "featured": false,
+  "word": "vorbei",
+  "sentence": "Drei Tage sind jetzt [[vorbei]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "over",
+   "options": [
+    "over",
+    "near",
+    "early",
+    "long"
+   ],
+   "audioClip": {
+    "storySlug": "wem-gehort-die-katze",
+    "storySource": "user",
+    "sentence": "Drei Tage sind jetzt vorbei.",
+    "targetWord": "vorbei",
+    "language": "german",
+    "voiceId": "Ww7Sq9tx9CCOiNOwWgsx"
+   }
+  }
+ }
+]

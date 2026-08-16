@@ -1,0 +1,621 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "nieve",
+    "sentence": "En invierno cae la [[nieve]] blanca.",
+    "payload": {
+      "answer": "snow",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "snow",
+        "rain",
+        "sand",
+        "smoke"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "En invierno cae la nieve blanca.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "nieve",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/781c6b17519c349c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "montaña",
+    "sentence": "A lo lejos hay [[montañas]] muy altas.",
+    "payload": {
+      "answer": "a mountain",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a mountain",
+        "a lake",
+        "a beach",
+        "a river"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "A lo lejos hay montañas muy altas.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "montañas",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37cbd8970c439b37.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "proponer",
+    "sentence": "Ella [[propone]] un plan muy bonito.",
+    "payload": {
+      "answer": "to suggest",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to suggest",
+        "to refuse",
+        "to explain",
+        "to finish"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella propone un plan muy bonito.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "propone",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e13f533d9dee5819.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "emocionado",
+    "sentence": "Voy a un viaje nuevo y estoy muy _____.",
+    "payload": {
+      "answer": "emocionado",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "emocionado",
+        "cansado",
+        "enfermo",
+        "tranquilo"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Voy a un viaje nuevo y estoy muy emocionado.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "emocionado",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a50bc40362715142.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I am going on a new trip and I am very _____.",
+      "optionTranslations": [
+        "excited",
+        "tired",
+        "sick",
+        "calm"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "frío",
+    "sentence": "El hielo siempre está muy _____.",
+    "payload": {
+      "answer": "frío",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "frío",
+        "limpio",
+        "dulce",
+        "blando"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El hielo siempre está muy frío.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "frío",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d579902ef75a7d11.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Ice is always very _____.",
+      "optionTranslations": [
+        "cold",
+        "clean",
+        "sweet",
+        "soft"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tocar",
+    "sentence": "Ella [[toca]] la nieve con las manos.",
+    "payload": {
+      "answer": "to touch",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to touch",
+        "to throw",
+        "to lift",
+        "to hide"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella toca la nieve con las manos.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "toca",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b47b59c61a62dede.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "suave",
+    "sentence": "El gato tiene el pelo muy _____.",
+    "payload": {
+      "answer": "suave",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "suave",
+        "ruidoso",
+        "rápido",
+        "caro"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El gato tiene el pelo muy suave.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "suave",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d874960a22aa612.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "The cat has very _____ fur.",
+      "optionTranslations": [
+        "soft",
+        "loud",
+        "fast",
+        "expensive"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alegría",
+    "sentence": "Ella se ríe de [[alegría]] pura.",
+    "payload": {
+      "answer": "joy",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "joy",
+        "fear",
+        "anger",
+        "hunger"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella se ríe de alegría pura.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "alegría",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/157d3e9b9b01cadf.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bola",
+    "sentence": "Ella hace una [[bola]] blanca de nieve.",
+    "payload": {
+      "answer": "a ball",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a ball",
+        "a box",
+        "a cup",
+        "a spoon"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella hace una bola blanca de nieve.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "bola",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6114ebeb7a9f09e1.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recuerdo",
+    "sentence": "Ella guarda un [[recuerdo]] bonito del viaje.",
+    "payload": {
+      "answer": "a memory",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a memory",
+        "a gift",
+        "a dream",
+        "a mistake"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella guarda un recuerdo bonito del viaje.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "recuerdo",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a1753c2012acb14b.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tomar",
+    "sentence": "Las amigas [[toman]] un café por la mañana.",
+    "payload": {
+      "answer": "to drink",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to drink",
+        "to cook",
+        "to sell",
+        "to break"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las amigas toman un café por la mañana.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "toman",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/10b3cf2092b285f9.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mañana",
+    "sentence": "Ella mira el cielo por la [[mañana]].",
+    "payload": {
+      "answer": "the morning",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "the morning",
+        "the night",
+        "the week",
+        "the winter"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira el cielo por la mañana.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "mañana",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5772526182559750.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ventana",
+    "sentence": "Ella mira la calle por la [[ventana]].",
+    "payload": {
+      "answer": "a window",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a window",
+        "a door",
+        "a wall",
+        "a floor"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella mira la calle por la ventana.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "ventana",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/03036a68e8464c2d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "carretera",
+    "sentence": "El autobús sube por la [[carretera]] larga.",
+    "payload": {
+      "answer": "a road",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "a road",
+        "a bridge",
+        "a tunnel",
+        "a garage"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "El autobús sube por la carretera larga.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "carretera",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9f1891e60aaa872.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llegar",
+    "sentence": "Al final ellas [[llegan]] a la montaña.",
+    "payload": {
+      "answer": "to arrive",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to arrive",
+        "to leave",
+        "to fall",
+        "to wait"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Al final ellas llegan a la montaña.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "llegan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ae2b2a9f6cdeeda.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jugar",
+    "sentence": "Las dos amigas [[juegan]] en la nieve.",
+    "payload": {
+      "answer": "to play",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to play",
+        "to sleep",
+        "to work",
+        "to read"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Las dos amigas juegan en la nieve.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "juegan",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/086f3f3f4fb27e3d.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guardar",
+    "sentence": "Ella [[guarda]] este recuerdo para siempre.",
+    "payload": {
+      "answer": "to keep",
+      "prompt": "Choose the meaning in context.",
+      "options": [
+        "to keep",
+        "to lose",
+        "to sell",
+        "to throw"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Ella guarda este recuerdo para siempre.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "guarda",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f130487a231543f.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "alta",
+    "sentence": "Esa montaña es enorme y muy _____.",
+    "payload": {
+      "answer": "alta",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "alta",
+        "redonda",
+        "sucia",
+        "nueva"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Esa montaña es enorme y muy alta.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "alta",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0857ba552bdda6ba.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "That mountain is huge and very _____.",
+      "optionTranslations": [
+        "tall",
+        "round",
+        "dirty",
+        "new"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "país",
+    "sentence": "Vivo en un _____ con muchas montañas.",
+    "payload": {
+      "answer": "país",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "país",
+        "plato",
+        "gorro",
+        "libro"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Vivo en un país con muchas montañas.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "país",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/27cccfed5cf55782.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "I live in a _____ with many mountains.",
+      "optionTranslations": [
+        "country",
+        "plate",
+        "hat",
+        "book"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rato",
+    "sentence": "Espera un _____, vuelvo pronto.",
+    "payload": {
+      "answer": "rato",
+      "prompt": "Complete the sentence.",
+      "options": [
+        "rato",
+        "plato",
+        "gorro",
+        "vaso"
+      ],
+      "audioClip": {
+        "language": "spanish",
+        "sentence": "Espera un rato, vuelvo pronto.",
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "targetWord": "rato",
+        "storySource": "user",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e42faefca7ab194c.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      },
+      "translation": "Wait a _____, I will come back soon.",
+      "optionTranslations": [
+        "while",
+        "plate",
+        "hat",
+        "glass"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "gorro,guantes,bufanda,abrigo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "gorro",
+          "answer": "a hat",
+          "options": [
+            "a hat",
+            "gloves",
+            "a scarf",
+            "a coat"
+          ]
+        },
+        {
+          "word": "guantes",
+          "answer": "gloves",
+          "options": [
+            "a hat",
+            "gloves",
+            "a scarf",
+            "a coat"
+          ]
+        },
+        {
+          "word": "bufanda",
+          "answer": "a scarf",
+          "options": [
+            "a hat",
+            "gloves",
+            "a scarf",
+            "a coat"
+          ]
+        },
+        {
+          "word": "abrigo",
+          "answer": "a coat",
+          "options": [
+            "a hat",
+            "gloves",
+            "a scarf",
+            "a coat"
+          ]
+        }
+      ],
+      "prompt": "Match the words to their meanings.",
+      "audioClip": null
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "altas",
+    "sentence": "A lo lejos hay montañas muy [[altas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tall",
+      "options": [
+        "tall",
+        "small",
+        "wide",
+        "near"
+      ],
+      "audioClip": {
+        "storySlug": "la-nieve-de-sierra-nevada",
+        "storySource": "user",
+        "sentence": "A lo lejos hay montañas muy altas.",
+        "targetWord": "altas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/37cbd8970c439b37.mp3",
+        "voiceId": "jipeLrCHZ6ByxrU2JP9i"
+      }
+    },
+    "featured": false
+  }
+]

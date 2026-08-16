@@ -1,0 +1,555 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "trattoria,tovaglia,forchetta,torre",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "trattoria",
+          "answer": "a small family restaurant",
+          "options": [
+            "a small family restaurant",
+            "a tablecloth",
+            "a fork",
+            "a tower"
+          ]
+        },
+        {
+          "word": "tovaglia",
+          "answer": "a tablecloth",
+          "options": [
+            "a small family restaurant",
+            "a tablecloth",
+            "a fork",
+            "a tower"
+          ]
+        },
+        {
+          "word": "forchetta",
+          "answer": "a fork",
+          "options": [
+            "a small family restaurant",
+            "a tablecloth",
+            "a fork",
+            "a tower"
+          ]
+        },
+        {
+          "word": "torre",
+          "answer": "a tower",
+          "options": [
+            "a small family restaurant",
+            "a tablecloth",
+            "a fork",
+            "a tower"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "menu",
+    "sentence": "Il [[menu]] sta appeso vicino alla porta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the menu",
+      "options": [
+        "the menu",
+        "the bill",
+        "the door",
+        "the plate"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Il menu sta appeso vicino alla porta.",
+        "targetWord": "menu",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8ef3a7856faea07.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oste",
+    "sentence": "L'[[oste]] sorride e spiega la differenza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the innkeeper",
+      "options": [
+        "the innkeeper",
+        "the guest",
+        "the cook's son",
+        "the waiter's boss"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "L'oste sorride e spiega la differenza.",
+        "targetWord": "oste",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/82ed2d3667aad8b1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ragù",
+    "sentence": "A Bologna il [[ragù]] sta sopra le tagliatelle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "meat sauce",
+      "options": [
+        "meat sauce",
+        "white cheese",
+        "green salad",
+        "sweet cream"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "A Bologna il ragù sta sopra le tagliatelle.",
+        "targetWord": "ragù",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b2efc3c8fa12776.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tagliatelle",
+    "sentence": "Le [[tagliatelle]] arrivano larghe e gialle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "flat egg pasta",
+      "options": [
+        "flat egg pasta",
+        "round bread",
+        "fried fish",
+        "cold soup"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Le tagliatelle arrivano larghe e gialle.",
+        "targetWord": "tagliatelle",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fde98dfffadf4ea6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "coperto",
+    "sentence": "Le tagliatelle sono [[coperte]] di ragù.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "covered",
+      "options": [
+        "covered",
+        "empty",
+        "dry",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Le tagliatelle sono coperte di ragù.",
+        "targetWord": "coperte",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d97b7af5d913317a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "denso",
+    "sentence": "Il ragù è [[denso]] e molto scuro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thick",
+      "options": [
+        "thick",
+        "liquid",
+        "sweet",
+        "salty"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Il ragù è denso e molto scuro.",
+        "targetWord": "denso",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/94b7d0f31ff89cd7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lentamente",
+    "sentence": "Lei mangia [[lentamente]] per far durare il piatto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slowly",
+      "options": [
+        "slowly",
+        "quickly",
+        "loudly",
+        "later"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Lei mangia lentamente per far durare il piatto.",
+        "targetWord": "lentamente",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46ad37492ce7687d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fame",
+    "sentence": "Il nome è sbagliato, però la [[fame]] è vera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hunger",
+      "options": [
+        "hunger",
+        "thirst",
+        "fear",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Il nome è sbagliato, però la fame è vera.",
+        "targetWord": "fame",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d61f2ccacf0e22cf.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "domanda",
+    "sentence": "L'oste _____ se va tutto bene.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "domanda",
+      "options": [
+        "domanda",
+        "paga",
+        "dorme",
+        "lava"
+      ],
+      "translation": "The innkeeper _____ whether everything is all right.",
+      "optionTranslations": [
+        "asks",
+        "pays",
+        "sleeps",
+        "washes"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "L'oste domanda se va tutto bene.",
+        "targetWord": "domanda",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/57120a95cc2b2f7a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tavolo",
+    "sentence": "Dentro ci sono sei [[tavoli]] e nessun turista.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tables",
+      "options": [
+        "tables",
+        "doors",
+        "windows",
+        "chairs"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Dentro ci sono sei tavoli e nessun turista.",
+        "targetWord": "tavoli",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49d67446fb66cb29.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grembiule",
+    "sentence": "L'uomo porta un [[grembiule]] bianco e pulito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an apron",
+      "options": [
+        "an apron",
+        "a jacket",
+        "a scarf",
+        "a hat"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "L'uomo porta un grembiule bianco e pulito.",
+        "targetWord": "grembiule",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a70bf2277375ba36.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bianco",
+    "sentence": "Il suo grembiule è [[bianco]] come la tovaglia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "white",
+      "options": [
+        "white",
+        "black",
+        "green",
+        "red"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Il suo grembiule è bianco come la tovaglia.",
+        "targetWord": "bianco",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/67db00014fc5dee5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "posto",
+    "sentence": "Lui le indica il [[posto]] vicino alla finestra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the seat",
+      "options": [
+        "the seat",
+        "the bill",
+        "the kitchen",
+        "the street"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Lui le indica il posto vicino alla finestra.",
+        "targetWord": "posto",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/79da908d04056b50.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "finestra",
+    "sentence": "Il tavolo sta accanto alla [[finestra]] grande.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the window",
+      "options": [
+        "the window",
+        "the door",
+        "the wall",
+        "the floor"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Il tavolo sta accanto alla finestra grande.",
+        "targetWord": "finestra",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dc316547f655755d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "spaghetti",
+    "sentence": "Lei cerca gli [[spaghetti]] alla bolognese sul menu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "spaghetti",
+      "options": [
+        "spaghetti",
+        "bread",
+        "cheese",
+        "soup"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Lei cerca gli spaghetti alla bolognese sul menu.",
+        "targetWord": "spaghetti",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ed511407c23ddab.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorridere",
+    "sentence": "L'oste [[sorride]] e non si offende.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "smiles",
+      "options": [
+        "smiles",
+        "shouts",
+        "cries",
+        "leaves"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "L'oste sorride e non si offende.",
+        "targetWord": "sorride",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/401b24dac1b53736.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "largo",
+    "sentence": "Le tagliatelle sono [[larghe]] e piatte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wide",
+      "options": [
+        "wide",
+        "narrow",
+        "short",
+        "soft"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Le tagliatelle sono larghe e piatte.",
+        "targetWord": "larghe",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7d9ec529a5698ed0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "girare",
+    "sentence": "Lei [[gira]] la forchetta molto piano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "turns",
+      "options": [
+        "turns",
+        "breaks",
+        "washes",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Lei gira la forchetta molto piano.",
+        "targetWord": "gira",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dcb24e769809eda8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "carne",
+    "sentence": "Nel ragù si sente la [[carne]] e il burro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "meat",
+      "options": [
+        "meat",
+        "fish",
+        "fruit",
+        "rice"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Nel ragù si sente la carne e il burro.",
+        "targetWord": "carne",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad382ae530dc1669.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "burro",
+    "sentence": "Il piatto sa di [[burro]] e di pomodoro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "butter",
+      "options": [
+        "butter",
+        "salt",
+        "sugar",
+        "oil"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "Il piatto sa di burro e di pomodoro.",
+        "targetWord": "burro",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2ae901ceca615368.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "schiena",
+    "sentence": "L'oste tiene le mani dietro la [[schiena]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the back",
+      "options": [
+        "the back",
+        "the head",
+        "the leg",
+        "the ear"
+      ],
+      "audioClip": {
+        "storySlug": "qui-non-ce-la-bolognese",
+        "storySource": "user",
+        "sentence": "L'oste tiene le mani dietro la schiena.",
+        "targetWord": "schiena",
+        "language": "italian",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b2ac7630e0d25648.mp3"
+      }
+    },
+    "featured": false
+  }
+]
