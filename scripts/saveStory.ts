@@ -103,8 +103,17 @@ function slugify(s: string): string {
   // 3x denser. Relaxing a gate so the output passes is exactly what
   // `feedback_calibrate_gates_to_gold_standard` forbids. A high count is
   // bounded by DISTRIBUTION (spread it), never by cutting the count.
+  // `names-match` SALE de la lista (2026-08-14). Entró aquí cuando comparaba
+  // los nombres de la sinopsis contra los HABLANTES del diálogo, que en prosa
+  // narrada no existen. Pero el check se arregló para buscar el nombre en todo
+  // el cuerpo (ver su comentario en validateGeneratedStory), y desde entonces
+  // funciona igual de bien narrado: una sinopsis que promete un personaje que
+  // no aparece es un defecto en cualquier formato. Nadie lo sacó de la lista al
+  // arreglarlo, así que llevaba tiempo sin comprobarse en todo el A0 y en los
+  // Friends C1 narrados. Mismo patrón que el de la habla citada: una exención
+  // que se come el requisito.
   const NARRATOR_EXEMPT = new Set([
-    "body-dialogue-ratio", "speakers-count", "speaker-lines", "names-match",
+    "body-dialogue-ratio", "speakers-count", "speaker-lines",
   ]);
   const ctx = {
     language: arg("lang", "ES")!,
@@ -180,6 +189,38 @@ function slugify(s: string): string {
     console.log(`\n=== ${tag} ${d.topic}#${d.slotIndex} "${d.title}"${narrator ? " [narrator]" : ""}  pass=${r.summary.pass} warn=${r.summary.warn} fail=${r.summary.fail}`);
     for (const f of fails) console.log("   FAIL " + f);
     for (const w of warns) console.log("   warn " + w);
+  }
+
+  // ── GATE DE LOTE: nadie habla en todo el lote ──────────────────
+  //
+  // POR QUÉ (2026-08-14). El spec pide que la prosa narrada lleve habla citada
+  // breve, pero los tres checks que miran diálogo están EXENTOS en perfil
+  // narrador porque asumen turnos "Personaje: línea". Resultado: entraron dos
+  // journeys COMPLETOS sin una sola línea hablada en 21 historias (portugués
+  // A0 Traveler y español México A0 Traveler). Cada historia pasaba sola; el
+  // defecto solo existía a nivel de conjunto, que es justo lo que ningún check
+  // por historia puede ver.
+  //
+  // Umbral calibrado con los journeys buenos, no inventado: italiano A0 20/21
+  // (95%), alemán C1 18/21 (86%), Colombia C1 18/21 (86%), España A0 14/19
+  // (74%). El suelo se pone en 50%, muy por debajo del peor bueno, para que
+  // solo salte ante un lote mudo de verdad. Una historia suelta sin voz sigue
+  // siendo legítima (el validador la marca como `warn`, no como fallo).
+  const narradas = results.filter((r) => !/^\s*[A-ZÁÉÍÓÚÑÜ][\wáéíóúñçüö' ]{1,20}:\s/m.test(r.d.text ?? ""));
+  if (narradas.length >= 3) {
+    const conVoz = narradas.filter((r) => /[«»""„"]|(^|\n)\s*[-—–]\s+\S/.test(r.d.text ?? ""));
+    const pct = Math.round((conVoz.length / narradas.length) * 100);
+    if (pct < 50) {
+      console.error(
+        `\n✗ LOTE MUDO: solo ${conVoz.length}/${narradas.length} historias narradas (${pct}%) tienen habla citada.\n` +
+        `  El registro narrado del spec es prosa en tercera persona CON habla citada breve dentro de los\n` +
+        `  párrafos del narrador. Un lote donde casi nadie habla se lee como un informe, no como una historia.\n` +
+        `  Referencia de los journeys buenos: italiano A0 95%, alemán C1 86%, Colombia C1 86%, España A0 74%.\n` +
+        `  Da voz a los personajes secundarios: una línea corta entrecomillada por historia basta.\n` +
+        `  NOTHING WRITTEN.`
+      );
+      process.exit(1);
+    }
   }
 
   const anyFail = results.some((r) => !r.ok);

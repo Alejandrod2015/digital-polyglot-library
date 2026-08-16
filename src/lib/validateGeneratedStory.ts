@@ -151,7 +151,7 @@ const VALID_VOCAB_TYPES = new Set([
 ]);
 
 // A0 profile (added 2026-07-19, calibrated to the 21 live es-LATAM A0 gold
-// stories): A0 bodies are a true floor — short (gold 132-149 words), no
+// stories): A0 bodies are a true floor; short (gold 132-149 words), no
 // arcType (all 21 null), short definitions (gold 4-13 words), and they teach
 // function words the C1 set omits (pronoun/phrase/conjunction/number). This is
 // a LEVEL PROFILE, not a relaxation: it only widens where A0 genuinely differs
@@ -1625,6 +1625,72 @@ export async function validateGeneratedStory(
     }
   }
 
+  // ─── longitud de frase en A0 ───────────────────────────
+  //
+  // El spec fija el suelo A0 como "one idea per short sentence", pero ningún
+  // check lo medía: `body-cefr-a0-grammar` mira construcciones de B1, no el
+  // largo. Calibrado con los journeys A0 publicados (medido 2026-08-14):
+  //
+  //   España Friends   mediana 10 · p90 16 · máx 22
+  //   Italia Traveler  mediana 12 · p90 14 · máx 17
+  //   Portugal/BR      mediana 11 · p90 13 · máx 17
+  //   México Traveler  mediana 15 · p90 19 · máx 28   ← el que se sale
+  //
+  // El techo se pone en la peor frase del mejor precedente (22 palabras, España)
+  // y la mediana en 14, por encima de los tres que cumplen y por debajo de
+  // México. No es un criterio mío: es el listón que ya tenían los buenos.
+  if (isA0) {
+    const frases = parsed.text
+      .split(/(?<=[.!?])\s+/)
+      .map((f) => f.trim().split(/\s+/).filter(Boolean).length)
+      .filter((n) => n > 0);
+    if (frases.length >= 5) {
+      const ordenadas = [...frases].sort((a, b) => a - b);
+      const mediana = ordenadas[Math.floor(ordenadas.length / 2)];
+      const largas = frases.filter((n) => n > 22).length;
+      const mal = mediana > 14 || largas > 0;
+      checks.push({
+        id: "body-a0-sentence-length",
+        label: "A0 sentences stay short (one idea each)",
+        status: mal ? "fail" : "pass",
+        detail: mal
+          ? `Median sentence ${mediana} words${largas ? `, and ${largas} sentence(s) over 22 words` : ""}. A0 is "one idea per short sentence": median must stay at or under 14 and no sentence over 22. Published A0 reference: Spain 10, Italy 12, Brazil 11. Split the long ones.`
+          : undefined,
+      });
+    }
+  }
+
+  // ─── habla citada en prosa narrada ─────────────────────
+  //
+  // POR QUÉ EXISTE (2026-08-14). El spec define el A0 narrado como "continuous
+  // third-person prose; BRIEF QUOTED SPEECH embedded inside narrator
+  // paragraphs". Pero los checks de formato que miran diálogo
+  // (`body-dialogue-ratio`, `speakers-count`, `speaker-lines`) están EXENTOS en
+  // perfil narrador, porque asumen turnos "Personaje: línea". Al eximirlos,
+  // nadie comprobaba que hubiera voz de nadie, y entraron DOS journeys enteros
+  // con 0 de 21 historias con una sola línea hablada: portugués A0 Traveler y
+  // español México A0 Traveler. El usuario lo detectó leyendo, no el gate.
+  //
+  // La exención se había comido el requisito. Este check lo devuelve, aplicado
+  // solo a prosa narrada (sin turnos), que es donde el hueco existía.
+  //
+  // Es `warn` por historia y no `fail` porque el patrón de referencia no es del
+  // 100%: italiano A0 20/21, alemán C1 18/21, Colombia C1 18/21, España A0
+  // 14/19. Una historia suelta sin voz es legítima; un journey entero sin
+  // ninguna no lo es, y ESO lo bloquea el gate de lote en scripts/saveStory.ts.
+  const tieneTurnos = /^\s*[A-ZÁÉÍÓÚÑÜ][\wáéíóúñçüö' ]{1,20}:\s/m.test(parsed.text);
+  if (!tieneTurnos) {
+    const hablaCitada = /[«»""„"]|(^|\n)\s*[-—–]\s+\S/.test(parsed.text);
+    checks.push({
+      id: "narrator-quoted-speech",
+      label: "Narrated prose contains brief quoted speech",
+      status: hablaCitada ? "pass" : "warn",
+      detail: hablaCitada
+        ? undefined
+        : "No quoted speech in a narrated story. The spec's A0/narrator register is third-person prose WITH brief quoted speech embedded in the narrator paragraphs; a story where nobody ever speaks reads like a report. Give a secondary character one short line.",
+    });
+  }
+
   // ─── arcType ───────────────────────────────────────────
   const arcTypeEmpty = parsed.arcType == null || parsed.arcType === "";
   checks.push({
@@ -1679,7 +1745,7 @@ export async function validateGeneratedStory(
     detail:
       lookupOnlyVocab.length === 0
         ? "no paperwork-label entries"
-        : `${lookupOnlyVocab.map((v) => `${v.word} — ${v.reason}`).join("; ")}. ` +
+        : `${lookupOnlyVocab.map((v) => `${v.word}: ${v.reason}`).join("; ")}. ` +
           `El lector la entiende con el quick lookup; una plaza de vocab es para lo que se lleva puesto. ` +
           `Cámbiala por una palabra que el usuario vaya a necesitar otra vez.`,
   });
@@ -1958,25 +2024,41 @@ export async function validateGeneratedStory(
     //
     // SLANG is exempt for the same reason (2026-07-09): the frequency judge
     // measures CEFR difficulty via corpus frequency, but slang/regionalisms
-    // ("albur", "neta", "carnala", "chido") are low-frequency by nature —
+    // ("albur", "neta", "carnala", "chido") are low-frequency by nature;
     // register, not difficulty. A journey that TEACHES colloquial/vulgar
     // register at C1 (e.g. "Friends" ES LATAM) must be able to curate slang
     // without the frequency gate flagging it C2. This is NOT a relaxation of
     // the bar: slang items are still governed by every other vocab check
     // (surface-literal, definition quality, no-same-root, distribution, type
-    // validity). Only the frequency axis — the wrong instrument for register
-    // — is skipped.
+    // validity). Only the frequency axis (the wrong instrument for register)
+    // is skipped.
     //
     // The exemption hangs off `register`, NOT `type` (fixed 2026-07-09).
     // `type` is the GRAMMATICAL category and the reader paints the pill colour
     // from it (StoryContent: verb/noun/adjective/adverb/expression). Keying the
-    // exemption on type forced authors to write type:"slang" to get it — and
+    // exemption on type forced authors to write type:"slang" to get it; and
     // since vocabTypes aliases slang → expression, every slang item collapsed
     // into one category and the whole story rendered in a single colour, with
     // `lana` (noun), `cachar` (verb) and `chido` (adjective) indistinguishable.
     // Register and part of speech are orthogonal: say `type:"noun"` +
     // `register:"slang"` and both the colour and the exemption are correct.
-    const REGISTER_EXEMPT = new Set(["slang", "colloquial", "vulgar", "coloquial", "argot", "jerga"]);
+    // CULTURAL is exempt on exactly the same grounds (2026-08-15). Realia
+    // ("socarrat", "queimada", "conxuro", "cercanías", "telefonillo") name
+    // things and practices specific to the target culture. They are rare in
+    // any frequency corpus BY DEFINITION; nobody says "socarrat" outside a
+    // paella; so the frequency judge reads them as C2 no matter the level of
+    // the story. But a Traveler journey through Spain exists precisely to
+    // teach them: strip the anchors and the journey is a generic phrasebook.
+    // Same shape as the slang exemption, same limits: only the frequency axis
+    // is skipped, every other vocab check still applies, and ordinary
+    // above-level words are still caught (`casualidad`, `cualquiera`,
+    // `promete` keep failing at A2 after this, which is the intended result).
+    // Use it ONLY for culture-bound items, never to smuggle a hard word past
+    // the level bar.
+    const REGISTER_EXEMPT = new Set([
+      "slang", "colloquial", "vulgar", "coloquial", "argot", "jerga",
+      "cultural", "realia",
+    ]);
     const vocabWords = parsed.vocab
       .filter((v) => {
         const type = (v.type ?? "").toLowerCase();
@@ -2177,9 +2259,18 @@ export async function validateGeneratedStory(
   if ((context.language ?? "").toUpperCase() !== "DE") {
     const synProperNouns = extractProperNouns(parsed.synopsis);
     const bodySpeakerSet = new Set(speakerNames.map((n) => n.toLowerCase()));
-    const missingFromBody = synProperNouns.filter(
-      (n) => !bodySpeakerSet.has(n.toLowerCase())
-    );
+    // The defect this rule exists for is a synopsis that names someone the
+    // body never mentions. Matching ONLY against dialogue speakers made it
+    // fire on two innocent cases: places the STOP list happens not to carry
+    // (Barcelona, Atocha, Ramblas, Cabrales…) and characters who appear in
+    // the narration but never get a dialogue line. Both are present in the
+    // body, so both are fine. Fall back to a whole-word body lookup: a name
+    // that truly appears nowhere in the body still fails, unchanged.
+    const bodyNorm = " " + parsed.text.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ") + " ";
+    const inBody = (n: string) =>
+      bodySpeakerSet.has(n.toLowerCase()) ||
+      bodyNorm.includes(" " + n.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ") + " ");
+    const missingFromBody = synProperNouns.filter((n) => !inBody(n));
     if (synProperNouns.length > 0) {
       checks.push({
         id: "names-match",
