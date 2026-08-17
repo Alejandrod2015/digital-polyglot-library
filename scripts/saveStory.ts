@@ -78,7 +78,7 @@ function slugify(s: string): string {
 (async () => {
   const dataFile = process.argv[2];
   if (!dataFile || dataFile.startsWith("--")) {
-    console.error("usage: saveStory.ts <data.json> --journey <id> [--lang ES --level c1 --variant LATAM] [--publish] [--dry]");
+    console.error("usage: saveStory.ts <data.json> --journey <id> [--lang ES --level c1 --variant LATAM] [--publish] [--dry] [--typography-only]");
     process.exit(2);
   }
   const journeyId = arg("journey");
@@ -90,6 +90,7 @@ function slugify(s: string): string {
   // (dialogue-ratio, speakers-count, speaker-lines) and NOTHING else — modismos,
   // defs, no-digits, arc, CEFR, distribution, cross-story dedup all still gate.
   const narrator = flag("narrator");
+  const typographyOnly = flag("typography-only");
   // These checks all assume the multivoice "Speaker: line" format: they read
   // character names / turns from speaker labels, which a narrated prose story
   // (names in the prose, not in labels) does not have. Exempt ONLY these — the
@@ -127,6 +128,98 @@ function slugify(s: string): string {
 
   const stories = JSON.parse(fs.readFileSync(dataFile, "utf8"));
   if (!Array.isArray(stories)) { console.error("FAIL: data file must be a JSON array."); process.exit(2); }
+
+  // ── MODO TIPOGRÁFICO (migración de comillas) ──────────────────
+  //
+  // Un cambio de comillas no introduce contenido nuevo, así que no hay nada
+  // que el gate editorial pueda juzgar. En su lugar corre una comprobación
+  // MÁS estricta que el gate: el texto nuevo tiene que ser idéntico al que
+  // ya está en la base de datos SALVO caracteres de comilla, y de la misma
+  // longitud (para que los offsets charStart/charEnd del karaoke sigan
+  // apuntando al mismo sitio). Si cambia una sola letra, no escribe nada.
+  //
+  // POR QUÉ EXISTE (2026-08-17): el validador canónico exige que la historia
+  // entera cumpla el estándar ACTUAL, y el corpus se escribió con estándares
+  // anteriores. Eso dejaba a las historias publicadas sin poder recibir ni
+  // una corrección tipográfica: fallaban por deuda propia (falta un ancla
+  // sensorial, un nombre solo en la sinopsis) y arrastraban a las vecinas de
+  // su topic. Esto NO relaja el gate; lo sustituye por una verificación
+  // mecánica, para el único caso en que el gate no puede aportar nada.
+  if (typographyOnly) {
+    if (!journeyId) { console.error("FAIL: --typography-only requiere --journey <id>."); process.exit(2); }
+    const QUOTE_CHARS = /[«»„“”"'‘’]/g;
+    const canon = (v: string) => v.replace(QUOTE_CHARS, "\u0001");
+    const countQuotes = (v: string) => (v.match(QUOTE_CHARS) ?? []).length;
+    const prisma = new PrismaClient();
+    try {
+      const plan: { id: string; slug: string; fields: Record<string, string>; swaps: number }[] = [];
+      for (const d of stories) {
+        const slot = await prisma.journeyStory.findFirst({
+          where: { journeyId, topic: d.topic, slotIndex: d.slotIndex },
+          select: { id: true, slug: true, title: true, text: true, synopsis: true, vocab: true },
+        });
+        if (!slot) { console.error(`FAIL: sin slot para ${d.topic}#${d.slotIndex}. Nada escrito.`); process.exit(1); }
+        const fields: Record<string, string> = {};
+        let swaps = 0;
+        // `vocab` es JSON. NO se puede comparar serializado: dentro del JSON
+        // una comilla recta va escapada (\" = 2 caracteres) y una inglesa no
+        // (“ = 1), así que el swap cambia la longitud del serializado aunque
+        // no cambie la de ningún valor. Se canoniza el OBJETO campo a campo.
+        const canonDeep = (v: unknown): unknown => {
+          if (typeof v === "string") return canon(v);
+          if (Array.isArray(v)) return v.map(canonDeep);
+          if (v && typeof v === "object") {
+            const o: Record<string, unknown> = {};
+            for (const [k, val] of Object.entries(v)) o[k] = canonDeep(val);
+            return o;
+          }
+          return v;
+        };
+        const lensDeep = (v: unknown, out: number[] = []): number[] => {
+          if (typeof v === "string") out.push(v.length);
+          else if (Array.isArray(v)) v.forEach((x) => lensDeep(x, out));
+          else if (v && typeof v === "object") Object.values(v).forEach((x) => lensDeep(x, out));
+          return out;
+        };
+        const beforeVocab = JSON.stringify(slot.vocab ?? null);
+        const afterVocab = JSON.stringify(d.vocab ?? null);
+        if (beforeVocab !== afterVocab) {
+          const lb = lensDeep(slot.vocab ?? null), la = lensDeep(d.vocab ?? null);
+          const sameLens = lb.length === la.length && lb.every((n, i) => n === la[i]);
+          if (!sameLens || JSON.stringify(canonDeep(slot.vocab ?? null)) !== JSON.stringify(canonDeep(d.vocab ?? null))) {
+            console.error(`FAIL ${slot.slug ?? slot.id} .vocab: el cambio NO es solo de comillas. Nada escrito.`);
+            process.exit(1);
+          }
+          (fields as Record<string, unknown>).vocab = d.vocab;
+          swaps += countQuotes(afterVocab);
+        }
+        for (const field of ["text", "synopsis", "title"] as const) {
+          const before = slot[field];
+          const after = d[field];
+          if (typeof before !== "string" || typeof after !== "string") continue;
+          if (before === after) continue;
+          if (before.length !== after.length || canon(before) !== canon(after)) {
+            console.error(`FAIL ${slot.slug ?? slot.id} .${field}: el cambio NO es solo de comillas. Nada escrito.`);
+            process.exit(1);
+          }
+          fields[field] = after;
+          swaps += countQuotes(after);
+        }
+        if (Object.keys(fields).length) plan.push({ id: slot.id, slug: slot.slug ?? slot.id, fields, swaps });
+      }
+      const total = plan.reduce((n, x) => n + x.swaps, 0);
+      console.log(`[typography-only] ${plan.length}/${stories.length} historias con comillas que cambiar (${total} comillas).`);
+      if (dry) { for (const x of plan) console.log(`  · ${x.slug} [${Object.keys(x.fields).join(", ")}]`); console.log("--dry: no DB write."); return; }
+      for (const x of plan) {
+        await prisma.journeyStory.update({ where: { id: x.id }, data: x.fields });
+        console.log(`  ✓ ${x.slug} [${Object.keys(x.fields).join(", ")}]`);
+      }
+      console.log(`[typography-only] ${plan.length} historias actualizadas.`);
+    } finally {
+      await prisma.$disconnect();
+    }
+    return;
+  }
 
   // ── GATE: canonical validator, in-process, zero tolerance ──
   // Each story is validated against its already-validated SIBLINGS in this
@@ -208,7 +301,7 @@ function slugify(s: string): string {
   // siendo legítima (el validador la marca como `warn`, no como fallo).
   const narradas = results.filter((r) => !/^\s*[A-ZÁÉÍÓÚÑÜ][\wáéíóúñçüö' ]{1,20}:\s/m.test(r.d.text ?? ""));
   if (narradas.length >= 3) {
-    const conVoz = narradas.filter((r) => /[«»""„"]|(^|\n)\s*[-—–]\s+\S/.test(r.d.text ?? ""));
+    const conVoz = narradas.filter((r) => /[«»“”""„"]|(^|\n)\s*[-—–]\s+\S/.test(r.d.text ?? ""));
     const pct = Math.round((conVoz.length / narradas.length) * 100);
     if (pct < 50) {
       console.error(
