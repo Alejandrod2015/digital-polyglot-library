@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllBlogSlugs, getBlogPost, renderBlogContent, type BlogPost } from "@/lib/blog";
-import { metaDescriptionFor } from "@/lib/blog-shared";
+import { excerptText, metaDescriptionFor } from "@/lib/blog-shared";
 import landing from "@/components/marketing/LandingPage.module.css";
 import blog from "@/components/marketing/Blog.module.css";
 import MarketingNav from "@/components/marketing/MarketingNav";
@@ -158,7 +158,7 @@ export default async function BlogPostPage(
           </div>
           <h1 className={blog.postTitle}>{post.title}</h1>
           {post.excerpt && (
-            <p className={blog.postSub}>{post.excerpt}</p>
+            <p className={blog.postSub}>{excerptText(post.excerpt)}</p>
           )}
           {post.hero && (
             // eslint-disable-next-line @next/next/no-img-element

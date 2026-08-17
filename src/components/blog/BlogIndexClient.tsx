@@ -17,6 +17,7 @@ import {
   DIALECTS,
   POST_TYPES,
   classifyType,
+  excerptText,
   getDialectMeta,
 } from "@/lib/blog-shared";
 import blog from "@/components/marketing/Blog.module.css";
@@ -205,7 +206,7 @@ export default function BlogIndexClient({
                     <span>{formatDate(post.date)}</span>
                   </span>
                   <h4 className={blog.postBodyTitle}>{post.title}</h4>
-                  {post.excerpt && <p className={blog.postBodyExcerpt}>{post.excerpt}</p>}
+                  {post.excerpt && <p className={blog.postBodyExcerpt}>{excerptText(post.excerpt)}</p>}
                   <div className={blog.postMeta}>
                     <span>{post.readingMinutes ?? 4} min read</span>
                     <span className={blog.langDot}>

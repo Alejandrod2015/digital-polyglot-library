@@ -28,6 +28,20 @@ export type BlogPostMeta = {
 };
 
 /**
+ * Excerpt as it should be shown to a reader.
+ *
+ * Los excerpts heredados de WordPress acaban en un "[...]" literal, que se
+ * estaba imprimiendo tal cual como subtitulo del articulo y en las tarjetas del
+ * indice. Es un marcador de la migracion, no texto que nadie escribiera.
+ */
+export function excerptText(excerpt: string | undefined): string {
+  return (excerpt ?? "")
+    .replace(/\s*\[(\.\.\.|…)\]\s*$/, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
  * Meta description for a post.
  *
  * Falling back to the raw `excerpt` was serving Google 250 to 300 character

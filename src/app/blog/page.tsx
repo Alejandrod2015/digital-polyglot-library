@@ -4,6 +4,7 @@ import {
   type BlogPostMeta,
   type DialectKey,
   type PostTypeKey,
+  excerptText,
   getBlogSeries,
   getDialectCounts,
   getDialectMeta,
@@ -128,7 +129,7 @@ export default function BlogIndex() {
                 </div>
                 <h2 className={blog.featuredTitle}>{featured.title}</h2>
                 {featured.excerpt && (
-                  <p className={blog.featuredExcerpt}>{featured.excerpt}</p>
+                  <p className={blog.featuredExcerpt}>{excerptText(featured.excerpt)}</p>
                 )}
                 <div className={blog.postMeta}>
                   <span>{featured.readingMinutes ?? 6} min read</span>
