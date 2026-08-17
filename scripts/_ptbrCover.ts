@@ -169,6 +169,38 @@ const SCENES: Record<string, string> = {
     "while three small brown monkeys sit on a branch just above her, one of " +
     "them holding a banana. She does not look at the viewer. Bright dappled " +
     "daylight through the leaves. Mouth closed, nobody laughing.",
+  // Las tres de meeting-people. Sustituyeron a las historias viejas del tema y
+  // heredaron su portada: *O acarajé de Célia* mostraba la de *Três nós na
+  // fita*. Escenas nuevas, dos personajes cada una, los de la historia.
+  "o-acaraje-de-celia":
+    "An acarajé stall on a square in Salvador, Brazil, in the late afternoon, " +
+    "the counter crowded with clay bowls of vatapá and salad, a deep pan of " +
+    "orange dendê oil, stacked paper plates, a jar of prawns and a hanging " +
+    "string of dried chillies, a church facade behind, but only two people in " +
+    "the frame. A Brazilian woman around 45 in a white headwrap stands behind " +
+    "the pan lifting a fritter out of the oil. A Brazilian woman around 30 " +
+    "stands at the counter looking at the food. Neither looks at the viewer. " +
+    "Warm low sunlight. Mouths closed, nobody laughing.",
+  "cafe-no-mercado-modelo":
+    "A busy indoor market hall in Salvador, Brazil, at lunchtime, small tables " +
+    "packed together with coffee cups, a metal jug, folded newspapers, a " +
+    "canvas backpack on the floor and craft stalls blurred behind, but only " +
+    "two people in the frame. A Brazilian man around 28 sits with an old " +
+    "nylon-string guitar across his lap, head tilted down towards the tuning " +
+    "pegs. A Brazilian woman around 30 sits across the small table with a cup " +
+    "of coffee in front of her, watching him tune it. Neither looks at the " +
+    "viewer. Mouths closed, nobody laughing.",
+  "agua-de-coco-no-dique":
+    "The edge of the Dique do Tororó lake in Salvador, Brazil, at the end of " +
+    "the afternoon, a green vendor cart loaded with whole coconuts, a machete " +
+    "on the board, white cocada squares in a glass box, paper straws and a " +
+    "wooden bench, and on the grass of the far bank a few small distant " +
+    "figures playing football, but only two people in the frame. A Brazilian " +
+    "woman around 40 in a plain unbranded yellow t-shirt with no logo, no " +
+    "crest and no lettering stands behind the cart holding out an opened " +
+    "coconut. A Brazilian woman around 30 sits on the bench taking it. " +
+    "Neither looks at the viewer. Low golden light. Mouths closed, nobody " +
+    "laughing, no teeth showing.",
   "os-peixes-nao-tem-medo":
     "A clear shallow river between two large rocks near Paraty, Brazil, the " +
     "riverbed of pale sand and pebbles visible through the water, with ferns, " +

@@ -1,0 +1,159 @@
+[
+ {
+  "topic": "music-nightlife",
+  "slotIndex": 3,
+  "title": "O refrão sai na rua",
+  "arcType": null,
+  "synopsis": "Vitor sai do bar com seis palavras na cabeça e descobre que elas continuam do lado de fora. A calçada inteira canta a mesma parte.",
+  "text": "Duas horas depois, Vitor já não conta as músicas. O bar ainda está cheio e a fila sai pela porta até a esquina. Ele paga a conta e sai para o ar frio da rua.\n\nA música atravessa a parede e chega mais baixa lá fora. Três pessoas fumam na calçada e cantam a mesma parte. Vitor reconhece as seis palavras e canta junto sem parar de andar.\n\nA rua desce até a próxima esquina, cheia de bar aberto. Cada porta solta uma música diferente na calçada. Vitor anda no meio disso com a letra na cabeça.\n\nO refrão some quando ele vira na avenida grande. Os carros fazem barulho e cobrem o resto da noite. Vitor continua cantando baixinho até o ponto de táxi.\n\nVitor chega em casa com as seis palavras, que servem para o caminho inteiro.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "hora",
+    "surface": "horas",
+    "register": "neutral",
+    "definition": "Hour; the sixty minutes that make part of a day."
+   },
+   {
+    "type": "noun",
+    "word": "porta",
+    "surface": "porta",
+    "register": "neutral",
+    "definition": "Door; the way in and out of a building."
+   },
+   {
+    "type": "noun",
+    "word": "esquina",
+    "surface": "esquina",
+    "register": "neutral",
+    "definition": "Corner; the point where two streets meet."
+   },
+   {
+    "type": "noun",
+    "word": "conta",
+    "surface": "conta",
+    "register": "neutral",
+    "definition": "Bill; the paper that says how much you must pay."
+   },
+   {
+    "type": "noun",
+    "word": "ar",
+    "surface": "ar",
+    "register": "neutral",
+    "definition": "Air; what you breathe, warm inside and cold outside."
+   },
+   {
+    "type": "adjective",
+    "word": "frio",
+    "surface": "frio",
+    "register": "neutral",
+    "definition": "Cold; with a low temperature you feel on the skin."
+   },
+   {
+    "type": "verb",
+    "word": "fumar",
+    "surface": "fumam",
+    "register": "neutral",
+    "definition": "Smokes; breathes in smoke from a cigarette."
+   },
+   {
+    "type": "noun",
+    "word": "calçada",
+    "surface": "calçada",
+    "register": "neutral",
+    "definition": "Pavement; the part of the street where people walk."
+   },
+   {
+    "type": "adjective",
+    "word": "aberto",
+    "surface": "aberto",
+    "register": "neutral",
+    "definition": "Open; still working and letting people in."
+   },
+   {
+    "type": "noun",
+    "word": "refrão",
+    "surface": "refrão",
+    "register": "neutral",
+    "definition": "Chorus; the part of a song that comes back again."
+   },
+   {
+    "type": "noun",
+    "word": "carro",
+    "surface": "carros",
+    "register": "neutral",
+    "definition": "Car; the small vehicle that carries four or five people."
+   },
+   {
+    "type": "verb",
+    "word": "cobrir",
+    "surface": "cobrem",
+    "register": "neutral",
+    "definition": "Covers; puts itself over another thing and hides it."
+   },
+   {
+    "type": "noun",
+    "word": "fila",
+    "surface": "fila",
+    "register": "neutral",
+    "definition": "Queue; a line of people waiting to get in."
+   },
+   {
+    "type": "adverb",
+    "word": "baixinho",
+    "surface": "baixinho",
+    "register": "neutral",
+    "definition": "Quietly; with a very small voice."
+   },
+   {
+    "type": "adjective",
+    "word": "próximo",
+    "surface": "próxima",
+    "register": "neutral",
+    "definition": "Next; the one that comes right after this one."
+   },
+   {
+    "type": "verb",
+    "word": "soltar",
+    "surface": "solta",
+    "register": "neutral",
+    "definition": "Lets out; sends a sound or a thing away from itself."
+   },
+   {
+    "type": "adjective",
+    "word": "inteiro",
+    "surface": "inteiro",
+    "register": "neutral",
+    "definition": "Whole; all of it, from start to end."
+   },
+   {
+    "type": "verb",
+    "word": "servir",
+    "surface": "servem",
+    "register": "neutral",
+    "definition": "Is enough for; does the job that is needed."
+   },
+   {
+    "type": "verb",
+    "word": "andar",
+    "surface": "andar",
+    "register": "neutral",
+    "definition": "Walks; moves along on foot."
+   },
+   {
+    "type": "verb",
+    "word": "virar",
+    "surface": "vira",
+    "register": "neutral",
+    "definition": "Turns; changes direction at a corner."
+   },
+   {
+    "type": "noun",
+    "word": "caminho",
+    "surface": "caminho",
+    "register": "neutral",
+    "definition": "Way; the road you take to get somewhere."
+   }
+  ]
+ }
+]

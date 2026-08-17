@@ -1,0 +1,917 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "aponta",
+    "sentence": "Márcia _____ a camisa dela e explica o nome.",
+    "payload": {
+      "answer": "aponta",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "torcer",
+        "gritar",
+        "escurecer",
+        "aponta"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/022ec6443819e44d.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Márcia aponta a camisa dela e explica o nome.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "apontar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apontar",
+    "sentence": "Márcia aponta a camisa dela e explica o nome.",
+    "payload": {
+      "answer": "to point at something with the finger",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to give something in exchange for money",
+        "metal coin used to pay",
+        "to point at something with the finger",
+        "to shout loudly so that people far away hear you"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/022ec6443819e44d.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Márcia aponta a camisa dela e explica o nome.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "apontar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "banco",
+    "sentence": "banco",
+    "payload": {
+      "answer": "banco",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "bola",
+        "lago",
+        "banco",
+        "camisa"
+      ],
+      "language": "portuguese"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "beira",
+    "sentence": "Márcia empurra o carrinho pela _____ do lago.",
+    "payload": {
+      "answer": "beira",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "beira",
+        "golpe",
+        "camisa",
+        "dique"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e881b7079c3c8e6d.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Márcia empurra o carrinho pela beira do lago.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "beira",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bola",
+    "sentence": "Um grupo joga bola do outro lado.",
+    "payload": {
+      "answer": "ball used to play games",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "ball used to play games",
+        "to get dark at the end of the day",
+        "small lake or reservoir inside a city",
+        "very cold, straight from the ice"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e41d0b4debd4bdeb.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Um grupo joga bola do outro lado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "bola",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "calmo",
+    "sentence": "calmo",
+    "payload": {
+      "answer": "calmo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "calmo",
+        "gelado",
+        "parado",
+        "seco"
+      ],
+      "language": "portuguese"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "gritar,entregar,camisa,escurecer",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "gritar",
+          "answer": "to shout loudly so that people far away hear you",
+          "options": [
+            "shirt, also a team jersey",
+            "to shout loudly so that people far away hear you",
+            "to get dark at the end of the day",
+            "to hand something to somebody"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2efa5912819b0f9c379a.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "entregar",
+          "answer": "to hand something to somebody",
+          "options": [
+            "shirt, also a team jersey",
+            "to shout loudly so that people far away hear you",
+            "to get dark at the end of the day",
+            "to hand something to somebody"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9ee4c2e1aea4a4e14ae1.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "camisa",
+          "answer": "shirt, also a team jersey",
+          "options": [
+            "shirt, also a team jersey",
+            "to shout loudly so that people far away hear you",
+            "to get dark at the end of the day",
+            "to hand something to somebody"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/422cd1de22eac5ebdde0.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "escurecer",
+          "answer": "to get dark at the end of the day",
+          "options": [
+            "shirt, also a team jersey",
+            "to shout loudly so that people far away hear you",
+            "to get dark at the end of the day",
+            "to hand something to somebody"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/09067d52afdd7b69eb75.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "canudo",
+    "sentence": "Ela põe um _____ dentro e entrega.",
+    "payload": {
+      "answer": "canudo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "dique",
+        "bola",
+        "gol",
+        "canudo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8149bc493932ca0.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Ela põe um canudo dentro e entrega.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "canudo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cocada",
+    "sentence": "Ela vende água de coco e cocada branca.",
+    "payload": {
+      "answer": "Brazilian sweet made of coconut and sugar",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to hand something to somebody",
+        "Brazilian sweet made of coconut and sugar",
+        "metal coin used to pay",
+        "ball used to play games"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/107a97fdb42dbb20.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Ela vende água de coco e cocada branca.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "cocada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "escurecer",
+    "sentence": "Nara fica no banco até _____.",
+    "payload": {
+      "answer": "escurecer",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "apontar",
+        "entregar",
+        "torcer",
+        "escurecer"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/38b322c4306c4b65.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Nara fica no banco até escurecer.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "escurecer",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "aponta",
+    "sentence": "Márcia _____ a camisa dela e explica o nome.",
+    "payload": {
+      "answer": "aponta",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "vender",
+        "aponta",
+        "empurrar",
+        "gritar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/022ec6443819e44d.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Márcia aponta a camisa dela e explica o nome.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "apontar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apontar",
+    "sentence": "Márcia aponta a camisa dela e explica o nome.",
+    "payload": {
+      "answer": "to point at something with the finger",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to point at something with the finger",
+        "Brazilian sweet made of coconut and sugar",
+        "to disappear from sight",
+        "to give something in exchange for money"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/022ec6443819e44d.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Márcia aponta a camisa dela e explica o nome.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "apontar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "banco",
+    "sentence": "banco",
+    "payload": {
+      "answer": "banco",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "dique",
+        "carrinho",
+        "banco",
+        "canudo"
+      ],
+      "language": "portuguese"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "entregar,gritar,sumir,apontar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "entregar",
+          "answer": "to hand something to somebody",
+          "options": [
+            "to disappear from sight",
+            "to hand something to somebody",
+            "to point at something with the finger",
+            "to shout loudly so that people far away hear you"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9ee4c2e1aea4a4e14ae1.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "gritar",
+          "answer": "to shout loudly so that people far away hear you",
+          "options": [
+            "to disappear from sight",
+            "to hand something to somebody",
+            "to point at something with the finger",
+            "to shout loudly so that people far away hear you"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2efa5912819b0f9c379a.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "sumir",
+          "answer": "to disappear from sight",
+          "options": [
+            "to disappear from sight",
+            "to hand something to somebody",
+            "to point at something with the finger",
+            "to shout loudly so that people far away hear you"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/bdc092df0326c6690bae.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "apontar",
+          "answer": "to point at something with the finger",
+          "options": [
+            "to disappear from sight",
+            "to hand something to somebody",
+            "to point at something with the finger",
+            "to shout loudly so that people far away hear you"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/2856bc3baca871dd9b9e.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "beira",
+    "sentence": "Márcia empurra o carrinho pela _____ do lago.",
+    "payload": {
+      "answer": "beira",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "beira",
+        "dique",
+        "canudo",
+        "carrinho"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e881b7079c3c8e6d.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Márcia empurra o carrinho pela beira do lago.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "beira",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bola",
+    "sentence": "Um grupo joga bola do outro lado.",
+    "payload": {
+      "answer": "ball used to play games",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "small lake or reservoir inside a city",
+        "to disappear from sight",
+        "ball used to play games",
+        "quiet, with little noise or movement"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e41d0b4debd4bdeb.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Um grupo joga bola do outro lado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "bola",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "calmo",
+    "sentence": "calmo",
+    "payload": {
+      "answer": "calmo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "calmo",
+        "seco",
+        "gelado",
+        "parado"
+      ],
+      "language": "portuguese"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "calmo,lago,moeda,beira",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "calmo",
+          "answer": "quiet, with little noise or movement",
+          "options": [
+            "body of still water surrounded by land",
+            "quiet, with little noise or movement",
+            "metal coin used to pay",
+            "edge of water or of a road"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ba105aa32a2ec265a94c.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "lago",
+          "answer": "body of still water surrounded by land",
+          "options": [
+            "body of still water surrounded by land",
+            "quiet, with little noise or movement",
+            "metal coin used to pay",
+            "edge of water or of a road"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/289573641694274dc6c1.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "moeda",
+          "answer": "metal coin used to pay",
+          "options": [
+            "body of still water surrounded by land",
+            "quiet, with little noise or movement",
+            "metal coin used to pay",
+            "edge of water or of a road"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/1413e8ca9c9d017e7fcb.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "beira",
+          "answer": "edge of water or of a road",
+          "options": [
+            "body of still water surrounded by land",
+            "quiet, with little noise or movement",
+            "metal coin used to pay",
+            "edge of water or of a road"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/fa19911195f82c861c2c.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "canudo",
+    "sentence": "Ela põe um _____ dentro e entrega.",
+    "payload": {
+      "answer": "canudo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "canudo",
+        "time",
+        "beira",
+        "cocada"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8149bc493932ca0.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Ela põe um canudo dentro e entrega.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "canudo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cocada",
+    "sentence": "Ela vende água de coco e cocada branca.",
+    "payload": {
+      "answer": "Brazilian sweet made of coconut and sugar",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "metal coin used to pay",
+        "goal scored in a football match",
+        "Brazilian sweet made of coconut and sugar",
+        "very cold, straight from the ice"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/107a97fdb42dbb20.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Ela vende água de coco e cocada branca.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "cocada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escurecer",
+    "sentence": "Nara fica no banco até escurecer.",
+    "payload": {
+      "answer": "to get dark at the end of the day",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "ball used to play games",
+        "to get dark at the end of the day",
+        "thin tube you use to drink from a coconut or glass",
+        "sports team, especially in football"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/38b322c4306c4b65.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Nara fica no banco até escurecer.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "escurecer",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gelado",
+    "sentence": "“Coco gelado?”, pergunta para Nara.",
+    "payload": {
+      "answer": "very cold, straight from the ice",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to shout loudly so that people far away hear you",
+        "very cold, straight from the ice",
+        "shirt, also a team jersey",
+        "Brazilian sweet made of coconut and sugar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ba42fbda8aea413b.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "“Coco gelado?”, pergunta para Nara.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "gelado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gol",
+    "sentence": "Márcia abre o coco com dois golpes secos.",
+    "payload": {
+      "answer": "goal scored in a football match",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to disappear from sight",
+        "small lake or reservoir inside a city",
+        "goal scored in a football match",
+        "to hand something to somebody"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a07338acf351fab.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Márcia abre o coco com dois golpes secos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "agua-de-coco-no-dique",
+        "targetWord": "gol",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "camisa",
+    "sentence": "camisa",
+    "payload": {
+      "answer": "camisa",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "lago",
+        "camisa",
+        "moeda",
+        "dique"
+      ],
+      "language": "portuguese"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "carrinho",
+    "sentence": "carrinho",
+    "payload": {
+      "answer": "carrinho",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "gol",
+        "camisa",
+        "cocada",
+        "carrinho"
+      ],
+      "language": "portuguese"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "dique",
+    "sentence": "dique",
+    "payload": {
+      "answer": "dique",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "dique",
+        "camisa",
+        "cocada",
+        "canudo"
+      ],
+      "language": "portuguese"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "banco,time,torcer,gelado",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "banco",
+          "answer": "public bench to sit on",
+          "options": [
+            "very cold, straight from the ice",
+            "public bench to sit on",
+            "to support a sports team",
+            "sports team, especially in football"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/fd4a54eee93bb979ff7b.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "time",
+          "answer": "sports team, especially in football",
+          "options": [
+            "very cold, straight from the ice",
+            "public bench to sit on",
+            "to support a sports team",
+            "sports team, especially in football"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/5a12327186cf90542236.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "torcer",
+          "answer": "to support a sports team",
+          "options": [
+            "very cold, straight from the ice",
+            "public bench to sit on",
+            "to support a sports team",
+            "sports team, especially in football"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/82ded5e034403ff5e1f0.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "gelado",
+          "answer": "very cold, straight from the ice",
+          "options": [
+            "very cold, straight from the ice",
+            "public bench to sit on",
+            "to support a sports team",
+            "sports team, especially in football"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/9bc9d3e8a64e5678d1db.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

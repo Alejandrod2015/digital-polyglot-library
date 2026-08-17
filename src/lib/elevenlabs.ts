@@ -54,6 +54,96 @@ function isStatementForGate(softenedText: string): boolean {
   return !softenedText.trim().endsWith("?");
 }
 
+// ── GATE DE CONTENIDO ────────────────────────────────────────────────────────
+//
+// El gemelo del gate F0: aquel mide CÓMO suena el final, este comprueba QUÉ se
+// dijo. Se transcribe cada fragmento recién sintetizado y se compara con su
+// texto; si el modelo se inventó, insertó o se comió algo, se re-tira.
+//
+// POR QUÉ (2026-08-17). El A0 portugués necesitó catorce re-tiros a mano y dos
+// reescrituras porque el modelo tropieza en construcciones concretas: "dobra a
+// esquina" salió "dobra-se" / "dobra a vera esquina" / "dobra near a esquina",
+// y "para a calçada" salió "para ma calçada" / "para sombrar a calçada". Todos
+// se encontraron DESPUÉS de pagar el audio de las 21 historias, historia por
+// historia y a oído. Contar el patrón no sirve de regla de escritura: aparece
+// 72 veces en el corpus y solo falla 6, o sea prohibirlo mutilaría el idioma
+// para evitar un 8%. Lo que sí escala es medir cada fragmento al generarlo, que
+// es exactamente lo que ya se hace con la entonación.
+//
+// El límite conocido: el reconocedor NORMALIZA hacia lo que espera oír, así que
+// hay defectos que no ve ("para ma calçada" se transcribió "para a calçada").
+// Este gate reduce el trabajo de oído, no lo sustituye.
+const CONTENT_GATE_MAX_TAKES = 3;
+let contentGateWarned = false;
+
+/** Texto plano de un fragmento, vía scribe_v1. Null si el STT no responde. */
+async function transcribeSegmentText(buffer: Buffer, apiKey: string, language?: string): Promise<string | null> {
+  try {
+    const fd = new FormData();
+    fd.append("model_id", "scribe_v1");
+    if (language) fd.append("language_code", language);
+    fd.append("file", new Blob([new Uint8Array(buffer)], { type: "audio/mpeg" }), "seg.mp3");
+    const res = await fetch("https://api.elevenlabs.io/v1/speech-to-text", {
+      method: "POST", headers: { "xi-api-key": apiKey }, body: fd,
+    });
+    if (!res.ok) throw new Error(`STT ${res.status}`);
+    return String(((await res.json()) as { text?: string }).text ?? "");
+  } catch (err) {
+    if (!contentGateWarned) {
+      contentGateWarned = true;
+      console.log(`[elevenlabs] WARN gate de contenido saltado (STT no disponible): ${err instanceof Error ? err.message : err}`);
+    }
+    return null;
+  }
+}
+
+/** Normaliza para comparar: sin tildes, sin puntuación, números en cifra. */
+function canonForContent(s: string): string {
+  return s.normalize("NFD").replace(/[̀-ͯ]/g, "")
+    .replace(/[^\p{L}\p{N}\s]/gu, " ").replace(/\s+/g, " ").trim().toLowerCase();
+}
+
+/**
+ * Palabras que se OYEN y no están en el texto. Devuelve null si el fragmento
+ * dice lo que debe.
+ *
+ * Solo mira lo que sobra, no lo que falta: el reconocedor se salta palabras
+ * sueltas continuamente sin que el audio tenga nada, y exigir la lista completa
+ * llenaría de re-tiros caros los fragmentos sanos. Lo que rompe una historia es
+ * lo que el modelo AÑADE, que es además el 100% de los fallos reales medidos.
+ *
+ * Se ignoran las diferencias que NO son de audio y que ya costaron horas de
+ * falsos positivos en el detector de historias: cifras (el reconocedor escribe
+ * "R$45" o "6h30" donde la voz dice el número en letra), nombres propios a una
+ * letra ("Victor" por Vitor, "Thiago" por Tiago) y las contracciones habladas
+ * ("pra" por "para a"), que caen solas en la comparación a una letra.
+ */
+function contentDivergence(expected: string, heard: string): string | null {
+  const e = canonForContent(expected).split(" ").filter(Boolean);
+  const h = canonForContent(heard).split(" ").filter(Boolean);
+  if (!e.length || !h.length) return null;
+
+  const aUnaLetra = (a: string, b: string): boolean => {
+    if (Math.abs(a.length - b.length) > 1) return false;
+    let i = 0, j = 0, dif = 0;
+    while (i < a.length && j < b.length) {
+      if (a[i] === b[j]) { i++; j++; continue; }
+      if (++dif > 1) return false;
+      if (a.length > b.length) i++; else if (b.length > a.length) j++; else { i++; j++; }
+    }
+    return dif + (a.length - i) + (b.length - j) <= 1;
+  };
+  const conjunto = new Set(e);
+  const inventadas = h.filter((w) =>
+    !conjunto.has(w) && !/\d/.test(w) && w.length >= 3 && !e.some((t) => aUnaLetra(w, t)));
+  if (!inventadas.length) return null;
+  return `se oye ${inventadas.slice(0, 4).map((w) => `"${w}"`).join(", ")}`;
+}
+
+/** Fragmentos que agotaron los re-tiros del gate de contenido: hay que
+ *  REESCRIBIR esas oraciones, no seguir pagando tomas. */
+export type ContentGateMiss = { text: string; voiceId: string; heard: string; detalle: string };
+
 /** Final-contour endpoint of an MP3 buffer in semitones above its median
  *  (scripts/_f0gate.py statement mode). Higher = more rising. Null when the
  *  venv is unavailable or the tail is unvoiced (caller then skips the gate). */
@@ -1064,6 +1154,13 @@ async function ttsSegment(args: {
    *  fragment is re-rolled until its final contour falls, keeping the least-
    *  rising take within F0_GATE_MAX_TAKES. Off by default. */
   antiUptalk?: boolean;
+  /** Gate de contenido (opt-in): transcribe cada toma y la re-tira si el modelo
+   *  se inventó, insertó o se comió algo. Tras CONTENT_GATE_MAX_TAKES sin
+   *  acertar, devuelve la última y apunta el fragmento en `contentMisses`
+   *  para que un humano REESCRIBA la oración. */
+  contentGate?: boolean;
+  /** Buzón donde el gate deja los fragmentos que no logró arreglar. */
+  contentMisses?: ContentGateMiss[];
 }): Promise<Buffer | null> {
   const model = args.model ?? ELEVENLABS_MODEL_V2;
   const softened = softenPunctuationForTts(args.text);
@@ -1199,6 +1296,40 @@ async function ttsSegment(args: {
     }
   };
 
+  // GATE DE CONTENIDO. Va ANTES del de entonación porque decide otra cosa: si
+  // la toma dice lo que debe. Una toma con la entonación perfecta que se
+  // inventa una palabra no sirve. Se aplica también a lo cacheado: la caché es
+  // por contenido del TEXTO, así que un fragmento malo cacheado se serviría
+  // eternamente (fue el caso de "dobra-se", que volvía toma tras toma).
+  const contentGate = args.contentGate === true && canonForContent(args.text).split(" ").length >= 4;
+  if (contentGate) {
+    let ultima: Buffer | null = null;
+    let ultimoOido = "";
+    let ultimoDetalle = "";
+    for (let intento = 0; intento < CONTENT_GATE_MAX_TAKES; intento++) {
+      const buf = intento === 0 ? ((await readCache()) ?? (await renderFresh())) : await renderFresh();
+      if (!buf) break;
+      ultima = buf;
+      const oido = await transcribeSegmentText(buf, args.apiKey, args.language);
+      if (oido === null) return buf; // sin STT no se bloquea nada
+      const div = contentDivergence(args.text, oido);
+      if (!div) {
+        if (intento > 0) await writeCacheBuffer(buf);
+        return buf;
+      }
+      ultimoOido = oido;
+      ultimoDetalle = div;
+      console.log(`[elevenlabs] contenido: toma ${intento + 1} diverge (${div}) ${cacheKey}`);
+    }
+    if (ultima) {
+      args.contentMisses?.push({
+        text: args.text, voiceId: args.voiceId, heard: ultimoOido, detalle: ultimoDetalle,
+      });
+      console.log(`[elevenlabs] contenido: AGOTADAS ${CONTENT_GATE_MAX_TAKES} tomas; hay que REESCRIBIR la oración`);
+      return ultima;
+    }
+  }
+
   // Fast path: no gate → cache read, else one fresh render (unchanged).
   const gate = args.antiUptalk === true && isStatementForGate(softened);
   if (!gate) {
@@ -1246,7 +1377,7 @@ async function ttsSegment(args: {
 // next with zero breath, which reads as robotic. The silence is generated to
 // match the segments' own sample rate + channel layout (probed from segment 0)
 // so the `-c copy` concat stays glitch-free.
-async function concatMp3Buffers(buffers: Buffer[], gapSec = 0): Promise<Buffer> {
+async function concatMp3Buffers(buffers: Buffer[], gapSec = 0, firstGapSec?: number): Promise<Buffer> {
   if (buffers.length <= 1) return Buffer.concat(buffers);
   const { writeFile, mkdtemp, rm } = await import("fs/promises");
   const { tmpdir } = await import("os");
@@ -1288,16 +1419,26 @@ async function concatMp3Buffers(buffers: Buffer[], gapSec = 0): Promise<Buffer> 
         if (nums[0]) sampleRate = nums[0];
         if (nums[1]) channels = nums[1];
       } catch { /* fall back to 44100 mono */ }
-      const silPath = path.join(dir, "silence.mp3");
-      await run("ffmpeg", [
-        "-y", "-loglevel", "error",
-        "-f", "lavfi", "-i", `anullsrc=r=${sampleRate}:cl=${channels >= 2 ? "stereo" : "mono"}`,
-        "-t", String(gapSec), "-c:a", "libmp3lame", "-b:a", "128k", silPath,
-      ]);
+      const cl = channels >= 2 ? "stereo" : "mono";
+      const mkSilence = async (secs: number, name: string) => {
+        const out = path.join(dir, name);
+        await run("ffmpeg", [
+          "-y", "-loglevel", "error",
+          "-f", "lavfi", "-i", `anullsrc=r=${sampleRate}:cl=${cl}`,
+          "-t", String(secs), "-c:a", "libmp3lame", "-b:a", "128k", out,
+        ]);
+        return out;
+      };
+      const silPath = await mkSilence(gapSec, "silence.mp3");
+      // La primera costura puede pedir más aire que el resto: es la que separa
+      // el título del cuerpo.
+      const firstSil = firstGapSec && firstGapSec > 0
+        ? await mkSilence(firstGapSec, "silence-first.mp3")
+        : silPath;
       orderedPaths = [];
       for (let i = 0; i < segPaths.length; i += 1) {
         orderedPaths.push(segPaths[i]);
-        if (i < segPaths.length - 1) orderedPaths.push(silPath);
+        if (i < segPaths.length - 1) orderedPaths.push(i === 0 ? firstSil : silPath);
       }
     }
 
@@ -1335,6 +1476,16 @@ async function concatMp3Buffers(buffers: Buffer[], gapSec = 0): Promise<Buffer> 
 // constant so the section-rebuild path reproduces the exact same gaps as
 // the original generation.
 export const DIALOGUE_GAP_SEC = 0.45;
+
+/**
+ * Pausa DESPUÉS del título, que es un encabezado y no una frase más.
+ *
+ * WHY (2026-08-17): el concat metía los mismos 0.45s en todas las costuras, así
+ * que el título se pegaba al primer párrafo y sonaba a que la historia empezaba
+ * a media frase. Un encabezado pide un silencio que se oiga como tal; 1.1s es
+ * lo que separa "esto es el título" de "esto ya es la historia".
+ */
+export const TITLE_GAP_SEC = 1.1;
 
 /**
  * Rebuild the merged master from an ordered list of section buffers,
@@ -1466,6 +1617,17 @@ export type AudioFragmentOffset = {
   url: string | null;
   /** The exact text synthesized for this section (so it can be re-rendered). */
   text: string;
+  /**
+   * Lo que este mp3 DICE, congelado en el momento de sintetizarlo. `text` es
+   * lo que DEBERÍA decir y `saveStory` lo re-sincroniza con el cuerpo cada vez
+   * que la historia se reescribe; si no lo hiciera, un re-tiro narraría la
+   * frase vieja. Pero al sincronizarlo se borraba el único testigo de lo
+   * grabado, y la comparación "fragmento contra texto" no podía fallar nunca:
+   * el 2026-08-17 dio "0 desfasados" en tres historias cuyos mp3 decían otra
+   * cosa. Este campo NO lo toca nadie más que el render y el empalme, así que
+   * `text !== renderedText` sí detecta el desfase.
+   */
+  renderedText?: string;
 };
 
 export async function generateAndUploadMultiVoiceAudio(args: {
@@ -1502,6 +1664,10 @@ export async function generateAndUploadMultiVoiceAudio(args: {
    *  narrator journeys) whose final contour rises, until it falls. Opt-in
    *  (default off). Uses scripts/_f0gate.py. */
   antiUptalkGate?: boolean;
+  /** Gate de contenido: transcribe cada fragmento recién sintetizado y lo
+   *  re-tira si el modelo se inventó o insertó algo. Se FUERZA a true en los
+   *  renders de narrador, igual que el gate de entonación (ver abajo). */
+  contentGate?: boolean;
 }): Promise<{
   url: string;
   filename: string;
@@ -1522,6 +1688,11 @@ export async function generateAndUploadMultiVoiceAudio(args: {
    *  are exact; the audio editor uses them for block boundaries instead
    *  of reconstructing them from (drift-prone) aeneas word timings. */
   fragments: AudioFragmentOffset[];
+  /** Oraciones que el gate de contenido no consiguió arreglar en tres tomas.
+   *  No son un fallo del render: son texto que HAY QUE REESCRIBIR, porque el
+   *  modelo tropieza siempre en el mismo punto (2026-08-17: "dobra a esquina",
+   *  "para a calçada"). Vacío es lo normal. */
+  contentMisses: ContentGateMiss[];
 } | null> {
   const apiKey = process.env.ELEVENLABS_API_KEY;
   if (!apiKey) {
@@ -1555,6 +1726,12 @@ export async function generateAndUploadMultiVoiceAudio(args: {
   const isAllNarrator = segments.every((s) => s.speaker.toLowerCase() === "narrator");
   const effDisableStitching = isAllNarrator ? true : args.disableStitching;
   const effAntiUptalkGate = isAllNarrator ? true : args.antiUptalkGate;
+  // El gate de contenido va SIEMPRE. Lo que comprueba (que el mp3 diga lo que
+  // pone) no es una preferencia de estilo que un llamador pueda querer distinta:
+  // un fragmento que se inventa una palabra está roto en cualquier journey. Se
+  // deja el flag solo para poder apagarlo en una prueba, nunca en producción.
+  const effContentGate = args.contentGate !== false;
+  const contentMisses: ContentGateMiss[] = [];
   if (isAllNarrator && (args.disableStitching !== true || args.antiUptalkGate !== true)) {
     console.log(
       "[elevenlabs] single-voice narrator render → FORCING gold config " +
@@ -1618,12 +1795,20 @@ export async function generateAndUploadMultiVoiceAudio(args: {
       voiceSettings: args.voiceSettingsMap?.[frag.voiceId],
       disableStitching: effDisableStitching,
       antiUptalk: effAntiUptalkGate,
+      contentGate: effContentGate,
+      contentMisses,
     });
     if (!buf) return null;
     audioBuffers.push(args.normalizePerSegment ? await normalizeLoudness(buf) : buf);
   }
 
-  const concatBuffer = await concatMp3Buffers(audioBuffers, DIALOGUE_GAP_SEC);
+  if (contentMisses.length) {
+    // Grito al final del render: en un log de 21 historias, un aviso por
+    // fragmento se pierde entre cientos de líneas y el audio se da por bueno.
+    console.log(`\n[elevenlabs] ${describeContentMisses(contentMisses)}\n`);
+  }
+
+  const concatBuffer = await concatMp3Buffers(audioBuffers, DIALOGUE_GAP_SEC, titleText ? TITLE_GAP_SEC : undefined);
   const normalized = await normalizeLoudness(concatBuffer);
 
   // Ground-truth per-fragment offsets in the merged timeline. Computed
@@ -1662,9 +1847,10 @@ export async function generateAndUploadMultiVoiceAudio(args: {
         endSec: Number((cursor + dur).toFixed(3)),
         url: secUrl,
         text: fragments[i].text,
+        renderedText: fragments[i].text,
       });
       cursor += dur;
-      if (i < fragments.length - 1) cursor += DIALOGUE_GAP_SEC;
+      if (i < fragments.length - 1) cursor += (i === 0 && titleText) ? TITLE_GAP_SEC : DIALOGUE_GAP_SEC;
     }
   }
   // ffprobe-derived durations: if ffprobe is unavailable (e.g. Vercel
@@ -1759,7 +1945,19 @@ export async function generateAndUploadMultiVoiceAudio(args: {
     audioQa,
     speakerVoiceMap,
     fragments: fragmentsValid ? fragmentOffsets : [],
+    contentMisses,
   };
+}
+
+/** Resumen legible de las oraciones que hay que reescribir, para que ningún
+ *  llamador tenga que saber leer `contentMisses`. Vacío devuelve "". */
+export function describeContentMisses(misses: ContentGateMiss[]): string {
+  if (!misses.length) return "";
+  const lineas = misses.map((m, i) =>
+    `  ${i + 1}. ${m.detalle}\n     texto: ${m.text.slice(0, 110)}\n     se oyó: ${m.heard.slice(0, 110)}`);
+  return `HAY QUE REESCRIBIR ${misses.length} oración(es): tres tomas seguidas ` +
+    `divergieron en el mismo punto, así que no es mala suerte y re-tirar más solo ` +
+    `gasta créditos.\n${lineas.join("\n")}`;
 }
 
 export async function analyzeExistingAudio(

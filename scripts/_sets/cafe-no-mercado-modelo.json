@@ -1,0 +1,1016 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "afina",
+    "sentence": "Ele _____ as cordas devagar, uma por uma.",
+    "payload": {
+      "answer": "afina",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "afina",
+        "misturar",
+        "procurar",
+        "tocar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/044efaadff207f68.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Ele afina as cordas devagar, uma por uma.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "afinar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "afinar",
+    "sentence": "Ele afina as cordas devagar, uma por uma.",
+    "payload": {
+      "answer": "to tune a musical instrument",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "acoustic guitar, very common in Brazilian music",
+        "to mix with something else",
+        "the sound a person makes when speaking",
+        "to tune a musical instrument"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/044efaadff207f68.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Ele afina as cordas devagar, uma por uma.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "afinar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "agradecer",
+    "sentence": "agradecer",
+    "payload": {
+      "answer": "agradecer",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "afinar",
+        "agradecer",
+        "sentar",
+        "tocar"
+      ],
+      "language": "portuguese"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "agradece",
+    "sentence": "Nara _____ e pede um café forte.",
+    "payload": {
+      "answer": "agradece",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "procurar",
+        "tocar",
+        "misturar",
+        "agradece"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c091eaee56747659.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Nara agradece e pede um café forte.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "agradecer",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "almoço",
+    "sentence": "O Mercado Modelo está cheio na hora do almoço.",
+    "payload": {
+      "answer": "the midday meal, the main one of the day in Brazil",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to say thank you to someone",
+        "party or celebration with people",
+        "the midday meal, the main one of the day in Brazil",
+        "the sound a person makes when speaking"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/095f26fba3b837d0.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "O Mercado Modelo está cheio na hora do almoço.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "almoço",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cadeira",
+    "sentence": "cadeira",
+    "payload": {
+      "answer": "cadeira",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "mercado",
+        "colo",
+        "cadeira",
+        "voz"
+      ],
+      "language": "portuguese"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "festa,mochila,corda,misturar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "festa",
+          "answer": "party or celebration with people",
+          "options": [
+            "to mix with something else",
+            "string of a musical instrument",
+            "bag carried on the back",
+            "party or celebration with people"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/dc0f05526ddb684f119a.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "mochila",
+          "answer": "bag carried on the back",
+          "options": [
+            "to mix with something else",
+            "string of a musical instrument",
+            "bag carried on the back",
+            "party or celebration with people"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/14dac3b5d240edac851e.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "corda",
+          "answer": "string of a musical instrument",
+          "options": [
+            "to mix with something else",
+            "string of a musical instrument",
+            "bag carried on the back",
+            "party or celebration with people"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/72e31ab90d2de3e7dcac.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "misturar",
+          "answer": "to mix with something else",
+          "options": [
+            "to mix with something else",
+            "string of a musical instrument",
+            "bag carried on the back",
+            "party or celebration with people"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/a298fe3fcd937013fbf5.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "colo",
+    "sentence": "Zeca tem um violão velho no _____.",
+    "payload": {
+      "answer": "colo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "colo",
+        "dedo",
+        "corda",
+        "rapaz"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dc19978566932b18.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Zeca tem um violão velho no colo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "colo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dedo",
+    "sentence": "Ele mostra as marcas nos dedos da mão esquerda.",
+    "payload": {
+      "answer": "finger of the hand",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "acoustic guitar, very common in Brazilian music",
+        "finger of the hand",
+        "to look for something you need",
+        "to mix with something else"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/63872827cc2507a9.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Ele mostra as marcas nos dedos da mão esquerda.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "dedo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "festa",
+    "sentence": "Zeca diz que toca em _____s pequenas.",
+    "payload": {
+      "answer": "festa",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cadeira",
+        "festa",
+        "dedo",
+        "mochila"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/21a6ee8d53352f9a.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Zeca diz que toca em festas pequenas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "festa",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "afina",
+    "sentence": "Ele _____ as cordas devagar, uma por uma.",
+    "payload": {
+      "answer": "afina",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "misturar",
+        "tocar",
+        "afina",
+        "agradecer"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/044efaadff207f68.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Ele afina as cordas devagar, uma por uma.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "afinar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "afinar",
+    "sentence": "Ele afina as cordas devagar, uma por uma.",
+    "payload": {
+      "answer": "to tune a musical instrument",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "lap, the top of your legs when sitting",
+        "to play a musical instrument",
+        "to tune a musical instrument",
+        "chair for one person"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/044efaadff207f68.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Ele afina as cordas devagar, uma por uma.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "afinar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "agradecer",
+    "sentence": "agradecer",
+    "payload": {
+      "answer": "agradecer",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "procurar",
+        "tocar",
+        "agradecer",
+        "sentar"
+      ],
+      "language": "portuguese"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "corda,vazio,festa,almoço",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "corda",
+          "answer": "string of a musical instrument",
+          "options": [
+            "party or celebration with people",
+            "string of a musical instrument",
+            "the midday meal, the main one of the day in Brazil",
+            "empty, with nothing inside"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/72e31ab90d2de3e7dcac.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "vazio",
+          "answer": "empty, with nothing inside",
+          "options": [
+            "party or celebration with people",
+            "string of a musical instrument",
+            "the midday meal, the main one of the day in Brazil",
+            "empty, with nothing inside"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/92998742ed4924d5408c.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "festa",
+          "answer": "party or celebration with people",
+          "options": [
+            "party or celebration with people",
+            "string of a musical instrument",
+            "the midday meal, the main one of the day in Brazil",
+            "empty, with nothing inside"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/dc0f05526ddb684f119a.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "almoço",
+          "answer": "the midday meal, the main one of the day in Brazil",
+          "options": [
+            "party or celebration with people",
+            "string of a musical instrument",
+            "the midday meal, the main one of the day in Brazil",
+            "empty, with nothing inside"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/46e239dcc17982df3c64.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "agradece",
+    "sentence": "Nara _____ e pede um café forte.",
+    "payload": {
+      "answer": "agradece",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "agradece",
+        "tocar",
+        "sentar",
+        "afinar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c091eaee56747659.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Nara agradece e pede um café forte.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "agradecer",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "almoço",
+    "sentence": "O Mercado Modelo está cheio na hora do almoço.",
+    "payload": {
+      "answer": "the midday meal, the main one of the day in Brazil",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "finger of the hand",
+        "the midday meal, the main one of the day in Brazil",
+        "party or celebration with people",
+        "bag carried on the back"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/095f26fba3b837d0.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "O Mercado Modelo está cheio na hora do almoço.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "almoço",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cadeira",
+    "sentence": "cadeira",
+    "payload": {
+      "answer": "cadeira",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "marca",
+        "cadeira",
+        "violão",
+        "xícara"
+      ],
+      "language": "portuguese"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "tocar,procurar,sentar,mercado",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "tocar",
+          "answer": "to play a musical instrument",
+          "options": [
+            "to look for something you need",
+            "to play a musical instrument",
+            "to sit down somewhere",
+            "covered place with many stalls selling goods"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/3a1f8cc94bba1dd4f6bc.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "procurar",
+          "answer": "to look for something you need",
+          "options": [
+            "to look for something you need",
+            "to play a musical instrument",
+            "to sit down somewhere",
+            "covered place with many stalls selling goods"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/e0d6879694f1d344aaa9.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "sentar",
+          "answer": "to sit down somewhere",
+          "options": [
+            "to look for something you need",
+            "to play a musical instrument",
+            "to sit down somewhere",
+            "covered place with many stalls selling goods"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d4f37cd3e9ad07fdecd7.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "mercado",
+          "answer": "covered place with many stalls selling goods",
+          "options": [
+            "to look for something you need",
+            "to play a musical instrument",
+            "to sit down somewhere",
+            "covered place with many stalls selling goods"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/400931526b46c4b02796.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "colo",
+    "sentence": "Zeca tem um violão velho no _____.",
+    "payload": {
+      "answer": "colo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "mochila",
+        "dedo",
+        "colo",
+        "cadeira"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dc19978566932b18.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Zeca tem um violão velho no colo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "colo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dedo",
+    "sentence": "Ele mostra as marcas nos dedos da mão esquerda.",
+    "payload": {
+      "answer": "finger of the hand",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "string of a musical instrument",
+        "to play a musical instrument",
+        "the sound a person makes when speaking",
+        "finger of the hand"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/63872827cc2507a9.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Ele mostra as marcas nos dedos da mão esquerda.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "dedo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "festa",
+    "sentence": "Zeca diz que toca em festas pequenas.",
+    "payload": {
+      "answer": "party or celebration with people",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "party or celebration with people",
+        "acoustic guitar, very common in Brazilian music",
+        "to say thank you to someone",
+        "to look for something you need"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/21a6ee8d53352f9a.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Zeca diz que toca em festas pequenas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "festa",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ir embora",
+    "sentence": "Zeca guarda o violão e vai embora.",
+    "payload": {
+      "answer": "to leave a place",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "string of a musical instrument",
+        "to tune a musical instrument",
+        "party or celebration with people",
+        "to leave a place"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d940ff341b89e7d.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Zeca guarda o violão e vai embora.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "ir embora",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "misturar",
+    "sentence": "O som se mistura com as vozes do mercado.",
+    "payload": {
+      "answer": "to mix with something else",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to mix with something else",
+        "party or celebration with people",
+        "to tune a musical instrument",
+        "small cup for coffee or tea"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee0aa68ca2c321cf.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "O som se mistura com as vozes do mercado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "misturar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mochila",
+    "sentence": "Ele tira a mochila da cadeira.",
+    "payload": {
+      "answer": "bag carried on the back",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "lap, the top of your legs when sitting",
+        "to play a musical instrument",
+        "bag carried on the back",
+        "to say thank you to someone"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d112ed6b7d0050a5.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Ele tira a mochila da cadeira.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "mochila",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mistura",
+    "sentence": "O som se _____ com as vozes do mercado.",
+    "payload": {
+      "answer": "mistura",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "procurar",
+        "tocar",
+        "afinar",
+        "mistura"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee0aa68ca2c321cf.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "O som se mistura com as vozes do mercado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "misturar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "procura",
+    "sentence": "Nara _____ uma mesa e não acha nenhuma.",
+    "payload": {
+      "answer": "procura",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "afinar",
+        "sentar",
+        "agradecer",
+        "procura"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b524b5737aec58e.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Nara procura uma mesa e não acha nenhuma.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cafe-no-mercado-modelo",
+        "targetWord": "procurar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cheio",
+    "sentence": "cheio",
+    "payload": {
+      "answer": "cheio",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cheio",
+        "esquerdo",
+        "dedo",
+        "vazio"
+      ],
+      "language": "portuguese"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "corda",
+    "sentence": "corda",
+    "payload": {
+      "answer": "corda",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "mochila",
+        "cadeira",
+        "corda",
+        "dedo"
+      ],
+      "language": "portuguese"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "esquerdo",
+    "sentence": "esquerdo",
+    "payload": {
+      "answer": "esquerdo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "corda",
+        "cheio",
+        "vazio",
+        "esquerdo"
+      ],
+      "language": "portuguese"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "ir embora,afinar,marca,xícara",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "ir embora",
+          "answer": "to leave a place",
+          "options": [
+            "to leave a place",
+            "small cup for coffee or tea",
+            "to tune a musical instrument",
+            "mark left on skin by repeated use"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f924c8be246a720bc31a.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "afinar",
+          "answer": "to tune a musical instrument",
+          "options": [
+            "to leave a place",
+            "small cup for coffee or tea",
+            "to tune a musical instrument",
+            "mark left on skin by repeated use"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/4c4acc6d2013b46820f4.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "marca",
+          "answer": "mark left on skin by repeated use",
+          "options": [
+            "to leave a place",
+            "small cup for coffee or tea",
+            "to tune a musical instrument",
+            "mark left on skin by repeated use"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/37c4ba434911cdf766c7.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "xícara",
+          "answer": "small cup for coffee or tea",
+          "options": [
+            "to leave a place",
+            "small cup for coffee or tea",
+            "to tune a musical instrument",
+            "mark left on skin by repeated use"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/018d5a5787708cb9f0a6.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

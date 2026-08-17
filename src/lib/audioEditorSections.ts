@@ -129,6 +129,8 @@ export type StoredFragment = {
   endSec: number;
   url: string;
   text: string;
+  /** Lo que este mp3 dice de verdad; ver AudioFragmentOffset.renderedText. */
+  renderedText?: string;
   prevUrl?: string | null;
 };
 
@@ -145,6 +147,7 @@ export function coerceFragments(value: unknown): StoredFragment[] | null {
       endSec: typeof f.endSec === "number" ? f.endSec : 0,
       url: f.url,
       text: typeof f.text === "string" ? f.text : "",
+      renderedText: typeof f.renderedText === "string" ? f.renderedText : undefined,
       prevUrl: typeof f.prevUrl === "string" ? f.prevUrl : null,
     });
   }
@@ -331,7 +334,11 @@ async function applyInPlace(args: {
   }
 
   const delta = newDur - (frag.endSec - frag.startSec);
-  frags[fragmentIndex] = { ...frag, url: args.newUrl, prevUrl: args.newPrevUrl, text: args.newText ?? frag.text, endSec: frag.startSec + newDur };
+  // `renderedText` sigue a la toma nueva, no al texto deseado: es el testigo de
+  // lo que este mp3 dice. Si el empalme no trae texto nuevo, la toma repite el
+  // `text` actual, que es lo que se acaba de sintetizar.
+  const spliced = args.newText ?? frag.text;
+  frags[fragmentIndex] = { ...frag, url: args.newUrl, prevUrl: args.newPrevUrl, text: spliced, renderedText: spliced, endSec: frag.startSec + newDur };
   for (let k = fragmentIndex + 1; k < frags.length; k += 1) {
     frags[k] = { ...frags[k], startSec: Number((frags[k].startSec + delta).toFixed(3)), endSec: Number((frags[k].endSec + delta).toFixed(3)) };
   }

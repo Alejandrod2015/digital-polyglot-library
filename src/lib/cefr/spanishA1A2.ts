@@ -79,7 +79,7 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "espesar","sonar","salmorejo","empanada","bizcocho","aceituna","verbena",
   "chocar","insistir","añadir","traducir","boda","excusa","postre","taller",
   "costumbre","pijama","silencio","cartera","regalo","duda","vino","prima",
-  "enorme","educado","gritar","colgar","recoger","quitar","respirar",
+  "enorme","educado","gritar","colgar","recoger","quitar","respirar","confundir",
   "lejano","flecha","timidez","almacén","durar","escalón","apellido","estanco",
   "cuñada","parentesco","barandilla","mesilla","tardar","repasar","escena","detalle",
   "señor","señora","señorita","persona","gente","alguien","todos",

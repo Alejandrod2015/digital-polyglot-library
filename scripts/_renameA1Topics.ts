@@ -61,13 +61,19 @@ const EVIDENCE: Record<string, string[]> = {
 // dos de veintitrés y traía de vuelta el marco Expat que el brief había
 // echado. Salen, y entran dos que sí sostienen los datos.
 const MAP: Array<{ from: string; to: string; label: string }> = [
-  { from: "neighbours-and-favours",       to: "neighbours-and-favours",       label: "Neighbours & Favours" },
-  { from: "bars-and-tapas",               to: "bars-and-tapas",               label: "Bars & Tapas" },
-  { from: "plans-and-invitations",        to: "plans-and-invitations",        label: "Plans & Invitations" },
-  { from: "meal-times-and-opening-hours", to: "timetables-and-meal-times",    label: "Timetables & Meal Times" },
-  { from: "family-and-relatives",         to: "family-and-relatives",         label: "Family & Relatives" },
-  { from: "health-and-symptoms",          to: "health-and-symptoms",          label: "Health & Symptoms" },
-  { from: "festivals-and-traditions",     to: "festivals-and-traditions",     label: "Festivals & Traditions" },
+  // ORDEN = FASES DE INSTALACIÓN (2026-08-17). El journey pasa a tipo Expat,
+  // que en el plan es mudanza interna dentro del propio país: una madrileña que
+  // se instala en un pueblo de Málaga. El eje deja de ser "dominios sueltos" y
+  // pasa a ser el orden en que te instalas: llegar y conocer al vecindario,
+  // aprender el horario, entrar en el bar, situar quién es quién, empezar a
+  // quedar, resolver un apuro, y por fin aportar en la fiesta.
+  { from: "neighbours-and-favours",     to: "neighbours-and-favours",     label: "Neighbours & Favours" },
+  { from: "timetables-and-meal-times",  to: "timetables-and-meal-times",  label: "Timetables & Meal Times" },
+  { from: "bars-and-tapas",             to: "bars-and-tapas",             label: "Bars & Tapas" },
+  { from: "family-and-relatives",       to: "family-and-relatives",       label: "Family & Relatives" },
+  { from: "plans-and-invitations",      to: "plans-and-invitations",      label: "Plans & Invitations" },
+  { from: "health-and-symptoms",        to: "health-and-symptoms",        label: "Health & Symptoms" },
+  { from: "festivals-and-traditions",   to: "festivals-and-traditions",   label: "Festivals & Traditions" },
 ];
 
 void (async () => {

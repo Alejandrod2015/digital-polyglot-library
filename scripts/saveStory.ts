@@ -366,12 +366,27 @@ function slugify(s: string): string {
             .sort((a, b) => a.index - b.index)
             .map((f, i) => {
               const esperado = i === 0 ? String(d.title).trim() : parrafos[i - 1];
+              // OJO: solo se toca `text`. `renderedText` es el testigo de lo que
+              // el mp3 DICE y no lo escribe nadie salvo el render y el empalme;
+              // pisarlo aquí dejaría la fila afirmando que el audio está al día.
               if (esperado && String(f.text ?? "").trim() !== esperado) { tocados++; return { ...f, text: esperado }; }
               return f;
             });
           if (tocados > 0) {
             await prisma.journeyStory.update({ where: { id: slot.id }, data: { audioFragments: nuevos as never } });
             console.log(`     ${tocados} fragmento(s) de audio re-sincronizados con el texto nuevo`);
+            // Normaliza igual que `scripts/_audioDrift.ts`: la base guarda
+            // comillas curvas y los ficheros de origen las llevan rectas, así
+            // que sin normalizar el aviso salta en CADA guardado y deja de
+            // significar nada. Un aviso que siempre suena no avisa.
+            const normTxt = (x: string) => x.trim().replace(/[“”«»"]/g, "").replace(/\s+/g, " ").replace(/[.]+$/, "");
+            const desfasados = nuevos.filter((f) => {
+              const r = (f as { renderedText?: string }).renderedText;
+              return typeof r === "string" && normTxt(r) !== normTxt(String(f.text ?? ""));
+            }).length;
+            if (desfasados > 0) {
+              console.log(`     AVISO: ${desfasados} fragmento(s) con audio DESFASADO (el mp3 dice otra cosa). Re-tíralos antes de publicar.`);
+            }
           }
         } else {
           console.log(`     aviso: ${fragmentos.length} fragmentos frente a ${parrafos.length + 1} párrafos; el audio quedó desfasado del texto`);

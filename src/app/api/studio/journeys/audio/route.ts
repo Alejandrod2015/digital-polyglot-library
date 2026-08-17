@@ -2,7 +2,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
-import { generateAndUploadAudio, generateAndUploadMultiVoiceAudio, parseDialogueSegments } from "@/lib/elevenlabs";
+import { describeContentMisses, generateAndUploadAudio, generateAndUploadMultiVoiceAudio, parseDialogueSegments, type ContentGateMiss } from "@/lib/elevenlabs";
 import { generateWordTimingsForStory } from "@/lib/audioWordTimings";
 import { multiVoiceGuardError } from "@/lib/multiVoiceGuard";
 import { auditTopicArc } from "@/lib/auditTopicArc";
@@ -126,6 +126,7 @@ export async function POST(request: Request) {
     const useMultiVoice = Array.isArray(spec) && spec.length > 0;
 
     let audioUrl: string;
+    let contentMisses: ContentGateMiss[] = [];
     let audioFilename: string;
     let audioSegments: any[];
     let audioQa: any;
@@ -147,6 +148,10 @@ export async function POST(request: Request) {
         disableStitching: true,
       });
       if (!result) throw new Error("Multi-voice audio generation returned null");
+      // Oraciones que el gate de contenido no logró arreglar en tres tomas: no
+      // son un fallo del render, son texto que hay que reescribir. Suben a la
+      // respuesta porque en el log de Studio nadie las ve.
+      contentMisses = result.contentMisses ?? [];
       audioUrl = result.url;
       audioFilename = result.filename;
       audioSegments = result.audioSegments;
@@ -199,7 +204,8 @@ export async function POST(request: Request) {
       );
     }
 
-    return NextResponse.json({ ok: true, audioUrl, audioQa, alignmentApplied });
+    return NextResponse.json({ ok: true, audioUrl, audioQa, alignmentApplied,
+      contentMisses, rewriteNeeded: describeContentMisses(contentMisses) || undefined });
   } catch (error) {
     console.error("[journeys/audio] Failed:", error);
     await prisma.journeyStory.update({ where: { id: storyId }, data: { audioStatus: "failed" } }).catch(() => {});

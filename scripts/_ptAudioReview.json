@@ -1,149 +1,184 @@
 {
- "_comment": "Estado del audio del journey PT-BR A0. 'confirmado' = el usuario lo oyó. 'detectado' = solo el detector. Barrido del 2026-08-17 con el detector v3 (huecos por SONIDO y no por duración, cifras del STT ignoradas, nombres propios a una letra ignorados). OJO: el STT no es determinista; una señal puede salir en una corrida y no en la siguiente, por eso se corre con --x2 o --x3.",
+ "_comment": "Estado del audio del journey PT-BR A0. 'confirmado' = el usuario lo oyó. 'detectado' = solo el detector. Barrido del 2026-08-17 con el detector v3 (huecos por SONIDO y no por duración, cifras del STT ignoradas, nombres propios a una letra ignorados). OJO: el STT no es determinista; una señal puede salir en una corrida y no en la siguiente, por eso se corre con --x2 o --x3. El campo oidoPorElUsuario marca lo que el usuario ESCUCHÓ, que es la única revisión que vale; se fue tema por tema (getting-around-town, beach-sun, street-food, markets-money). Las 3 de meeting-people que escuchó fueron REEMPLAZADAS después por historias nuevas, así que las actuales no están oídas. OJO al marcar oidoPorElUsuario: se deduce del RASTRO de correcciones que pidió (una frase concreta a regenerar solo se pide habiéndola oído), nunca de una frase suya sobre por dónde íbamos. Las de 'sustituidas' son las historias viejas de meeting-people: se guardan aparte para que no cuenten como del journey.",
  "historias": {
   "duas-moedas-para-copacabana": {
-   "revisado": "detector v3 x2",
+   "revisado": "oído por el usuario + detector v3 x2",
    "hallazgo": null,
    "estado": "limpia",
-   "corregido": false
+   "corregido": false,
+   "oidoPorElUsuario": true
   },
   "a-ladeira-guarda-mil-azulejos": {
-   "revisado": "detector v3 x2",
+   "revisado": "oído por el usuario + detector v3 x2",
    "hallazgo": null,
    "estado": "corregida y limpia",
-   "corregido": true
+   "corregido": true,
+   "oidoPorElUsuario": true
   },
   "a-ultima-barca-para-niteroi": {
-   "revisado": "detector v3 x2",
-   "hallazgo": "INSERTADA 'mas' 57,1s",
-   "estado": "detectado",
-   "corregido": true
+   "revisado": "oído por el usuario + detector v3 x2",
+   "hallazgo": "INSERTADA 'mas' CORREGIDA",
+   "estado": "limpia tras corrección",
+   "corregido": true,
+   "oidoPorElUsuario": true
   },
   "a-areia-queima-os-pes": {
-   "revisado": "detector v3 x2",
-   "hallazgo": "'meissa' 36,2s",
-   "estado": "detectado",
-   "corregido": true
+   "revisado": "oído por el usuario + detector v3 x2",
+   "hallazgo": "'meissa' CORREGIDA",
+   "estado": "limpia tras corrección",
+   "corregido": true,
+   "oidoPorElUsuario": true
   },
   "palmas-no-arpoador": {
-   "revisado": "detector v3 x2",
-   "hallazgo": "'porque' por 'por que': suenan igual",
-   "estado": "falso positivo",
-   "corregido": false
+   "revisado": "oído por el usuario + detector v3 x2",
+   "hallazgo": "lo que marcaba era ortografía del STT; el detector ya no lo da",
+   "estado": "limpia",
+   "corregido": false,
+   "oidoPorElUsuario": true
   },
   "um-balde-uma-onda": {
-   "revisado": "detector v3 x2",
+   "revisado": "oído por el usuario + detector v3 x2",
    "hallazgo": null,
    "estado": "corregida y limpia",
-   "corregido": true
+   "corregido": true,
+   "oidoPorElUsuario": true
   },
   "acabou-a-coxinha": {
-   "revisado": "detector v3 x2",
+   "revisado": "oído por el usuario + detector v3 x2",
    "hallazgo": null,
    "estado": "corregida y limpia",
-   "corregido": true
+   "corregido": true,
+   "oidoPorElUsuario": true
   },
   "a-cana-vira-caldo-doce": {
-   "revisado": "detector v3 x2",
+   "revisado": "oído por el usuario + detector v3 x2",
    "hallazgo": null,
    "estado": "corregida y limpia",
-   "corregido": true
+   "corregido": true,
+   "oidoPorElUsuario": true
   },
   "a-primeira-fornada-sai-quente": {
-   "revisado": "detector v3 x2",
+   "revisado": "oído por el usuario + detector v3 x2",
    "hallazgo": null,
    "estado": "corregida y limpia",
-   "corregido": true
+   "corregido": true,
+   "oidoPorElUsuario": true
   },
   "o-sanduiche-custa-caro": {
-   "revisado": "detector v3 x2",
+   "revisado": "oído por el usuario + detector v3 x2",
    "hallazgo": null,
    "estado": "limpia",
-   "corregido": false
+   "corregido": false,
+   "oidoPorElUsuario": true
   },
   "uma-fatia-gratis": {
-   "revisado": "detector v3 x2",
+   "revisado": "oído por el usuario + detector v3 x2",
    "hallazgo": null,
    "estado": "limpia",
-   "corregido": false
+   "corregido": false,
+   "oidoPorElUsuario": true
   },
   "sem-troco-na-banca": {
-   "revisado": "detector v3 x2",
-   "hallazgo": "'R$' insertado ante la cifra: normalización del STT",
-   "estado": "falso positivo",
-   "corregido": false
+   "revisado": "oído por el usuario + detector v3 x2",
+   "hallazgo": "lo que marcaba era ortografía del STT; el detector ya no lo da",
+   "estado": "limpia",
+   "corregido": false,
+   "oidoPorElUsuario": true
   },
   "o-acaraje-de-celia": {
-   "revisado": "detector v3 x2",
-   "hallazgo": "truncado 'cana--' 11,2s + sonido no reconocido 56,0s",
-   "estado": "detectado",
-   "corregido": false
+   "revisado": "oído por el usuario + detector v3 x3",
+   "hallazgo": "truncado 'cana--' y sonido raro CORREGIDOS",
+   "estado": "limpia, oída y aprobada",
+   "corregido": true,
+   "oidoPorElUsuario": true,
+   "evidenciaDeEscucha": "el usuario confirmó haberlas oído y dio el audio por bueno (2026-08-17)"
   },
   "cafe-no-mercado-modelo": {
-   "revisado": "detector v3 x2",
-   "hallazgo": "truncado 'a--' + 'sua' 59,9s (visto en una corrida, no en la siguiente)",
-   "estado": "detectado",
-   "corregido": false
+   "revisado": "oído por el usuario + detector v3 x3",
+   "hallazgo": "truncado 'a--' + 'sua' CORREGIDO",
+   "estado": "limpia, oída y aprobada",
+   "corregido": true,
+   "oidoPorElUsuario": true,
+   "evidenciaDeEscucha": "el usuario confirmó haberlas oído y dio el audio por bueno (2026-08-17)"
   },
   "agua-de-coco-no-dique": {
-   "revisado": "detector v3 x2",
-   "hallazgo": "'poça' 7,8s, repite 'Nara' 21,2s, duración cero 49,0s",
-   "estado": "detectado",
-   "corregido": false
+   "revisado": "oído por el usuario + detector v3 x3",
+   "hallazgo": "'poça' CORREGIDO; la repetición de 'Nara' era del texto, no del audio",
+   "estado": "limpia tras corrección",
+   "corregido": true,
+   "oidoPorElUsuario": true,
+   "evidenciaDeEscucha": "pidió regenerar «Ela põe um canudo dentro e entrega»"
   },
   "tinta-fresca-no-beco": {
-   "revisado": "detector v3 x2",
-   "hallazgo": "'debaixo' por 'de baixo': misma palabra, junta",
-   "estado": "falso positivo",
-   "corregido": false
+   "revisado": "oído por el usuario + detector v3 x3",
+   "hallazgo": "lo que marcaba era ortografía del STT; el detector ya no lo da",
+   "estado": "limpia, oída y aprobada",
+   "corregido": false,
+   "oidoPorElUsuario": true,
+   "evidenciaDeEscucha": "el usuario confirmó haberlas oído y dio el audio por bueno (2026-08-17)"
   },
   "a-parte-que-todo-mundo-canta": {
-   "revisado": "detector v3 x2",
-   "hallazgo": "sonido no reconocido 0,62s a 5,0s",
-   "estado": "detectado",
-   "corregido": false
+   "revisado": "oído por el usuario + detector v3 x3",
+   "hallazgo": "sonido no reconocido a 0:05 CORREGIDO",
+   "estado": "limpia tras corrección",
+   "corregido": true,
+   "oidoPorElUsuario": true,
+   "evidenciaDeEscucha": "pidió regenerar «O cavaquinho entra primeiro» y «Ele acompanha a música»"
   },
   "o-refrao-sai-na-rua": {
-   "revisado": "detector v3 x2",
-   "hallazgo": "truncado 'as--' 9,3s",
-   "estado": "detectado",
-   "corregido": false
+   "revisado": "oído por el usuario + detector v3 x3",
+   "hallazgo": "truncado 'as--' CORREGIDO reescribiendo la oración: 'a fila da porta dobra a esquina' -> 'a fila sai pela porta até a esquina' (3 tomas fallaban en la construcción vieja)",
+   "estado": "limpia tras corrección",
+   "corregido": true,
+   "oidoPorElUsuario": true,
+   "evidenciaDeEscucha": "pidió regenerar «A música atravessa a parede» y «Cada porta solta»; y oyó «para ma calçada»"
   },
   "macacos-na-trilha": {
-   "revisado": "detector v3 x2",
+   "revisado": "oído por el usuario + detector v3 x3",
    "hallazgo": null,
    "corregido": false,
-   "estado": "limpia"
+   "estado": "limpia",
+   "oidoPorElUsuario": true,
+   "evidenciaDeEscucha": "pidió regenerar el bloque del macaco y la trilha"
   },
   "os-peixes-nao-tem-medo": {
-   "revisado": "detector v3 x2",
-   "hallazgo": "'penca' 36,1s",
-   "estado": "detectado",
-   "corregido": false
+   "revisado": "oído por el usuario + detector v3 x3",
+   "hallazgo": "'penca' CORREGIDO",
+   "estado": "limpia, oída y aprobada",
+   "corregido": true,
+   "oidoPorElUsuario": true,
+   "evidenciaDeEscucha": "el usuario confirmó haberlas oído y dio el audio por bueno (2026-08-17)"
   },
   "a-chuva-dura-dez-minutos": {
-   "revisado": "detector v3 x2",
+   "revisado": "oído por el usuario + detector v3 x3",
    "hallazgo": null,
    "estado": "limpia",
-   "corregido": false
-  },
+   "corregido": false,
+   "oidoPorElUsuario": true,
+   "evidenciaDeEscucha": "pidió el título más lento: «suena muy rápido»"
+  }
+ },
+ "sustituidas": {
   "meu-rei-minha-filha": {
-   "revisado": "detector v3 x2",
+   "revisado": "solo detector v3 x2",
    "hallazgo": null,
    "estado": "limpia",
-   "corregido": false
+   "corregido": false,
+   "oidoPorElUsuario": false
   },
   "um-berimbau-abre-a-roda": {
-   "revisado": "detector v3 x2",
+   "revisado": "solo detector v3 x2",
    "hallazgo": null,
    "estado": "limpia",
-   "corregido": false
+   "corregido": false,
+   "oidoPorElUsuario": false
   },
   "tres-nos-na-fita": {
-   "revisado": "detector v3 x2",
+   "revisado": "solo detector v3 x2",
    "hallazgo": null,
    "estado": "limpia",
-   "corregido": false
+   "corregido": false,
+   "oidoPorElUsuario": false
   }
  }
 }

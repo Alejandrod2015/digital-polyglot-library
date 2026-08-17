@@ -171,8 +171,17 @@ async function transcribe(buf: Buffer): Promise<{ words: W[]; text: string }> {
       if (t < 2.5) continue;
       // 1. truncamiento
       if (/--\s*$/.test(w.text) || /\w--/.test(w.text)) rows.push({ slug, sev:"ALTA", t, que:`truncado "${w.text}"`, frase: oracionDe(i, words) });
-      // 2. repetición
-      if (i > 0 && norm(words[i-1].text) && norm(words[i-1].text) === norm(w.text)) rows.push({ slug, sev:"ALTA", t, que:`repite "${w.text}"`, frase: oracionDe(i, words) });
+      // 2. repetición. Solo cuenta si el TEXTO no la tiene: un párrafo que
+      //    acaba en "pergunta para Nara." seguido de otro que abre con "Nara
+      //    pede um" pone dos veces el mismo nombre, y el audio está bien. Es
+      //    una figura normal al enlazar párrafos, así que sin este cotejo la
+      //    señal acusa a la narradora de leer lo que pone (2026-08-17).
+      if (i > 0 && norm(words[i-1].text) && norm(words[i-1].text) === norm(w.text)) {
+        const par = `${canon(words[i-1].text)} ${canon(w.text)}`.trim();
+        if (par && !textoCanon.includes(par)) {
+          rows.push({ slug, sev:"ALTA", t, que:`repite "${w.text}"`, frase: oracionDe(i, words) });
+        }
+      }
       // 3. palabra que no está en el texto. Distinguimos DOS casos, porque no
       //    pesan igual: una contracción real del habla ("pra" por "para a") es
       //    ruido esperado; una palabra que no existe en portugués Y no está en
@@ -220,9 +229,18 @@ async function transcribe(buf: Buffer): Promise<{ words: W[]; text: string }> {
           return dif + (a.length - i) + (b.length - j) <= 1;
         };
         const esNombre = nombresTexto.some((n) => aUnaLetra(bare, n));
+        // Lo oído es DOS palabras del texto pegadas: "porque" por "por que",
+        // "debaixo" por "de baixo". Suenan igual; la separación es una
+        // convención de escritura, no algo que se pueda oír. El reconocedor
+        // elige la grafía más frecuente y el detector lo leía como palabra
+        // inventada.
+        const palabrasTexto = textoCanon.split(" ");
+        const esPegado = palabrasTexto.some((t, k) =>
+          k + 1 < palabrasTexto.length && t && palabrasTexto[k + 1] &&
+          `${t}${palabrasTexto[k + 1]}` === bare);
         const pareceDelTexto =
           !contieneUnaDelTexto &&
-          (esNombre || textoCanon.includes(raiz) ||
+          (esNombre || esPegado || textoCanon.includes(raiz) ||
             simple(textoCanon).includes(simple(bare)) ||
             (sinPlural.length >= 3 && new RegExp(`\\b${sinPlural}s?\\b`).test(textoCanon)));
         if (contieneUnaDelTexto) {
@@ -246,7 +264,10 @@ async function transcribe(buf: Buffer): Promise<{ words: W[]; text: string }> {
         const parAntes = `${antes} ${despues}`.trim();
         // Si el texto encadena las dos palabras vecinas SIN esta de por medio,
         // la de en medio sobra.
-        if (antes && despues && !textoCanon.includes(trio) && textoCanon.includes(parAntes)) {
+        // Un símbolo sin letras ("R$" ante la cifra) es ortografía del
+        // reconocedor, no una palabra que la voz haya dicho de más.
+        const soloSimbolo = !/\p{L}/u.test(w.text) || /^(R\$|US\$|[$€£¥%º°])$/i.test(w.text.trim());
+        if (!soloSimbolo && antes && despues && !textoCanon.includes(trio) && textoCanon.includes(parAntes)) {
           rows.push({ slug, sev:"ALTA", t, que:`INSERTADA: se oye "${w.text}" entre "${words[i-1].text}" y "${words[i+1].text}"`, frase: oracionDe(i, words) });
         }
       }
@@ -299,7 +320,12 @@ async function transcribe(buf: Buffer): Promise<{ words: W[]; text: string }> {
         // algo. Un hueco lleno de silencio real es la narradora respirando; un
         // hueco sin silencio tiene sonido que el reconocedor no supo escribir,
         // y eso es justo lo que hay que oír.
-        if (h >= 0.6) {
+        // Un token de cifra ("21h." por "às nove da noite") cubre varias
+        // palabras habladas, y su final cae antes de que acabe el habla: el
+        // hueco que sigue contiene voz y parece sonido no reconocido. El
+        // borde de una cifra no es medible, así que no se acusa.
+        const bordeCifra = /\d/.test(words[i-1].text) || /\d/.test(w.text);
+        if (h >= 0.6 && !bordeCifra) {
           const mudo = esSilencioReal((words[i-1].end ?? 0), t, sils);
           const sev = trasPuntuacion && mudo ? "BAJA" : mudo ? "MEDIA" : "ALTA";
           const como = trasPuntuacion ? "tras pausa" : "EN MITAD DE FRASE";

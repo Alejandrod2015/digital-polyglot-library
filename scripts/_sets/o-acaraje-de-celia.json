@@ -1,0 +1,866 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "acarajé",
+    "sentence": "Nara chega à barraca de _____ no fim da tarde.",
+    "payload": {
+      "answer": "acarajé",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "massa",
+        "camarão",
+        "pimenta",
+        "acarajé"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8746c62c854866bf.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Nara chega à barraca de acarajé no fim da tarde.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "acarajé",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camarão",
+    "sentence": "“Peça com camarão”, diz Iara.",
+    "payload": {
+      "answer": "shrimp, common in coastal Bahian dishes",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "list of dishes and prices at a food place",
+        "small street stall selling food or drinks",
+        "shrimp, common in coastal Bahian dishes",
+        "to cook something in hot oil"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28ce7ff4b90a426c.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "“Peça com camarão”, diz Iara.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "camarão",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "barraca",
+    "sentence": "barraca",
+    "payload": {
+      "answer": "barraca",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "salada",
+        "cardápio",
+        "barraca",
+        "cheiro"
+      ],
+      "language": "portuguese"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cardápio",
+    "sentence": "Nara olha o _____ e não entende as opções.",
+    "payload": {
+      "answer": "cardápio",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cardápio",
+        "vatapá",
+        "quinta",
+        "cheiro"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eac379bfce054674.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Nara olha o cardápio e não entende as opções.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "cardápio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cheiro",
+    "sentence": "O cheiro forte toma a praça inteira.",
+    "payload": {
+      "answer": "smell, especially a strong one from food",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to say you will surely do something",
+        "shrimp, common in coastal Bahian dishes",
+        "smell, especially a strong one from food",
+        "strong in taste, smell or force"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fff8653d3dfb9bd5.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "O cheiro forte toma a praça inteira.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "cheiro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "dendê",
+    "sentence": "dendê",
+    "payload": {
+      "answer": "dendê",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "quinta",
+        "salada",
+        "dendê",
+        "vatapá"
+      ],
+      "language": "portuguese"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "cardápio,devagar,trocar,fritar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cardápio",
+          "answer": "list of dishes and prices at a food place",
+          "options": [
+            "slowly and without hurry, taking your time to finish",
+            "to cook something in hot oil",
+            "to exchange one thing for another",
+            "list of dishes and prices at a food place"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d03211c93e4f7b6111fe.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "devagar",
+          "answer": "slowly and without hurry, taking your time to finish",
+          "options": [
+            "slowly and without hurry, taking your time to finish",
+            "to cook something in hot oil",
+            "to exchange one thing for another",
+            "list of dishes and prices at a food place"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6eab792fb659f65817da.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "trocar",
+          "answer": "to exchange one thing for another",
+          "options": [
+            "slowly and without hurry, taking your time to finish",
+            "to cook something in hot oil",
+            "to exchange one thing for another",
+            "list of dishes and prices at a food place"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/8e1b2173b156d5d7af0f.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "fritar",
+          "answer": "to cook something in hot oil",
+          "options": [
+            "slowly and without hurry, taking your time to finish",
+            "to cook something in hot oil",
+            "to exchange one thing for another",
+            "list of dishes and prices at a food place"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/6d1a6956d4acd8aab046.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "devagar",
+    "sentence": "O sol desce _____ atrás da igreja.",
+    "payload": {
+      "answer": "devagar",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "forte",
+        "acarajé",
+        "devagar",
+        "perto"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae78b505d34e84a4.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "O sol desce devagar atrás da igreja.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "devagar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "em pé",
+    "sentence": "As duas comem em pé, perto da barraca.",
+    "payload": {
+      "answer": "standing up, not sitting",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "standing up, not sitting",
+        "creamy Bahian paste of bread, nuts and palm oil",
+        "to say you will surely do something",
+        "next time, on the following occasion"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3351c7a17a59bc4c.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "As duas comem em pé, perto da barraca.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "em pé",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "escolha",
+    "sentence": "Iara pede muita e ri da _____ dela.",
+    "payload": {
+      "answer": "escolha",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "massa",
+        "escolha",
+        "quinta",
+        "salada"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7603ee81e3d69d87.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Iara pede muita e ri da escolha dela.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "escolha",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "acarajé",
+    "sentence": "Nara chega à barraca de _____ no fim da tarde.",
+    "payload": {
+      "answer": "acarajé",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "dendê",
+        "quinta",
+        "praça",
+        "acarajé"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8746c62c854866bf.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Nara chega à barraca de acarajé no fim da tarde.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "acarajé",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camarão",
+    "sentence": "“Peça com camarão”, diz Iara.",
+    "payload": {
+      "answer": "shrimp, common in coastal Bahian dishes",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "mix of raw vegetables served cold",
+        "to exchange one thing for another",
+        "shrimp, common in coastal Bahian dishes",
+        "hot pepper sauce added to food"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28ce7ff4b90a426c.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "“Peça com camarão”, diz Iara.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "camarão",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "barraca",
+    "sentence": "barraca",
+    "payload": {
+      "answer": "barraca",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "salada",
+        "praça",
+        "dendê",
+        "barraca"
+      ],
+      "language": "portuguese"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "cheiro,forte,em pé,na próxima",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cheiro",
+          "answer": "smell, especially a strong one from food",
+          "options": [
+            "strong in taste, smell or force",
+            "standing up, not sitting",
+            "next time, on the following occasion",
+            "smell, especially a strong one from food"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/5836070852b018275fbd.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "forte",
+          "answer": "strong in taste, smell or force",
+          "options": [
+            "strong in taste, smell or force",
+            "standing up, not sitting",
+            "next time, on the following occasion",
+            "smell, especially a strong one from food"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d140fed211d0136ac60a.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "em pé",
+          "answer": "standing up, not sitting",
+          "options": [
+            "strong in taste, smell or force",
+            "standing up, not sitting",
+            "next time, on the following occasion",
+            "smell, especially a strong one from food"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ff2ac937b89b40f492d3.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "na próxima",
+          "answer": "next time, on the following occasion",
+          "options": [
+            "strong in taste, smell or force",
+            "standing up, not sitting",
+            "next time, on the following occasion",
+            "smell, especially a strong one from food"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f46a312e63758925cb7b.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cardápio",
+    "sentence": "Nara olha o _____ e não entende as opções.",
+    "payload": {
+      "answer": "cardápio",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "barraca",
+        "escolha",
+        "cardápio",
+        "acarajé"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eac379bfce054674.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Nara olha o cardápio e não entende as opções.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "cardápio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cheiro",
+    "sentence": "O cheiro forte toma a praça inteira.",
+    "payload": {
+      "answer": "smell, especially a strong one from food",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "one of several things you can choose",
+        "smell, especially a strong one from food",
+        "knife used to cut food",
+        "creamy Bahian paste of bread, nuts and palm oil"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fff8653d3dfb9bd5.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "O cheiro forte toma a praça inteira.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "cheiro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "dendê",
+    "sentence": "dendê",
+    "payload": {
+      "answer": "dendê",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "dendê",
+        "opção",
+        "quinta",
+        "cardápio"
+      ],
+      "language": "portuguese"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "dendê,massa,barraca,faca",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "dendê",
+          "answer": "red palm oil, the base of Bahian cooking",
+          "options": [
+            "dough or batter before it is cooked",
+            "small street stall selling food or drinks",
+            "knife used to cut food",
+            "red palm oil, the base of Bahian cooking"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/0c71e0e38e377c366648.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "massa",
+          "answer": "dough or batter before it is cooked",
+          "options": [
+            "dough or batter before it is cooked",
+            "small street stall selling food or drinks",
+            "knife used to cut food",
+            "red palm oil, the base of Bahian cooking"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/59a8f982d29186b79888.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "barraca",
+          "answer": "small street stall selling food or drinks",
+          "options": [
+            "dough or batter before it is cooked",
+            "small street stall selling food or drinks",
+            "knife used to cut food",
+            "red palm oil, the base of Bahian cooking"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/666c127f6fa51ca40722.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "faca",
+          "answer": "knife used to cut food",
+          "options": [
+            "dough or batter before it is cooked",
+            "small street stall selling food or drinks",
+            "knife used to cut food",
+            "red palm oil, the base of Bahian cooking"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/7851bb98e6d5d160481b.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "devagar",
+    "sentence": "O sol desce _____ atrás da igreja.",
+    "payload": {
+      "answer": "devagar",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cardápio",
+        "perto",
+        "praça",
+        "devagar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae78b505d34e84a4.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "O sol desce devagar atrás da igreja.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "devagar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "em pé",
+    "sentence": "As duas comem em pé, perto da barraca.",
+    "payload": {
+      "answer": "standing up, not sitting",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to cook something in hot oil",
+        "shrimp, common in coastal Bahian dishes",
+        "smell, especially a strong one from food",
+        "standing up, not sitting"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3351c7a17a59bc4c.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "As duas comem em pé, perto da barraca.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "em pé",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escolha",
+    "sentence": "Iara pede muita e ri da escolha dela.",
+    "payload": {
+      "answer": "the option a person picks",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "near, at a short distance",
+        "red palm oil, the base of Bahian cooking",
+        "the option a person picks",
+        "one of several things you can choose"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7603ee81e3d69d87.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Iara pede muita e ri da escolha dela.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "escolha",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "faca",
+    "sentence": "Célia abre o acarajé com a faca.",
+    "payload": {
+      "answer": "knife used to cut food",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "slowly and without hurry, taking your time to finish",
+        "knife used to cut food",
+        "to cook something in hot oil",
+        "the option a person picks"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9bf800ca75383a4c.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "Célia abre o acarajé com a faca.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "faca",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "na próxima",
+    "sentence": "“Na próxima você pede muita”, diz Iara.",
+    "payload": {
+      "answer": "next time, on the following occasion",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to smile at someone",
+        "next time, on the following occasion",
+        "hot pepper sauce added to food",
+        "small street stall selling food or drinks"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/55e7988c6d2733e2.mp3",
+        "voiceId": null,
+        "language": "portuguese",
+        "sentence": "“Na próxima você pede muita”, diz Iara.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "o-acaraje-de-celia",
+        "targetWord": "na próxima",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "acarajé,cardápio,pedir,praça",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "acarajé",
+          "answer": "Bahian fritter of black-eyed pea dough fried in palm oil",
+          "options": [
+            "list of dishes and prices at a food place",
+            "Bahian fritter of black-eyed pea dough fried in palm oil",
+            "to ask for food or a favour",
+            "open public square in a town or city"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/ee73e849fc69962d5110.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "cardápio",
+          "answer": "list of dishes and prices at a food place",
+          "options": [
+            "list of dishes and prices at a food place",
+            "Bahian fritter of black-eyed pea dough fried in palm oil",
+            "to ask for food or a favour",
+            "open public square in a town or city"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/d03211c93e4f7b6111fe.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "pedir",
+          "answer": "to ask for food or a favour",
+          "options": [
+            "list of dishes and prices at a food place",
+            "Bahian fritter of black-eyed pea dough fried in palm oil",
+            "to ask for food or a favour",
+            "open public square in a town or city"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/c173f7312cbee6a46968.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        },
+        {
+          "word": "praça",
+          "answer": "open public square in a town or city",
+          "options": [
+            "list of dishes and prices at a food place",
+            "Bahian fritter of black-eyed pea dough fried in palm oil",
+            "to ask for food or a favour",
+            "open public square in a town or city"
+          ],
+          "voiceId": null,
+          "language": "portuguese",
+          "wordClipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/word-clip/f69c0850ac61032d6c6b.mp3",
+          "wordVoiceId": "7iqXtOF3wl3pomwXFY7G"
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]
