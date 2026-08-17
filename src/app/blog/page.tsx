@@ -4,7 +4,6 @@ import {
   type BlogPostMeta,
   type DialectKey,
   type PostTypeKey,
-  excerptText,
   getBlogSeries,
   getDialectCounts,
   getDialectMeta,
@@ -12,6 +11,7 @@ import {
   getPostTypeCounts,
   listBlogPosts,
 } from "@/lib/blog";
+import { excerptText } from "@/lib/blog-shared";
 import landing from "@/components/marketing/LandingPage.module.css";
 import blog from "@/components/marketing/Blog.module.css";
 import BlogIndexClient from "@/components/blog/BlogIndexClient";
