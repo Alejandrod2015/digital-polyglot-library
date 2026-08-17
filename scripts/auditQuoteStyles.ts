@@ -106,7 +106,7 @@ const isPresent = (n: number, total: number) => n >= 2 && n / total >= 0.05;
       for (const [c, n] of Object.entries(st.orphans)) orphans[c] = (orphans[c] || 0) + n;
       if (st.orphanCount) broken.push(`${s.slug ?? "(sin slug)"} → ${Object.entries(st.orphans).map(([c, n]) => `${n}×${c}`).join(", ")}`);
       const dom = KEYS.slice().sort((a, b) => st.pairs[b] - st.pairs[a])[0];
-      perStory.push({ slug: s.slug ?? "(sin slug)", dominant: st.total ? LABEL[dom] : "—" });
+      perStory.push({ slug: s.slug ?? "(sin slug)", dominant: st.total ? LABEL[dom] : "-" });
     }
 
     const total = KEYS.reduce((a, k) => a + pairs[k], 0);
@@ -121,7 +121,7 @@ const isPresent = (n: number, total: number) => n >= 2 && n / total >= 0.05;
     };
   });
 
-  const styleLabel = (k: StyleKey | null) => (k ? LABEL[k] : "—");
+  const styleLabel = (k: StyleKey | null) => (k ? LABEL[k] : "-");
   const counts = (r: (typeof rows)[number]) =>
     KEYS.filter((k) => r.pairs[k] > 0).sort((a, b) => r.pairs[b] - r.pairs[a])
       .map((k) => `${LABEL[k]} ${r.pairs[k]} (${r.storiesWith[k]}h)`).join(" · ") || "sin citas";
@@ -132,7 +132,7 @@ const isPresent = (n: number, total: number) => n >= 2 && n / total >= 0.05;
     console.log("| Journey | Idioma/variante | Nivel | Estado | Historias | Formato | Dominante | Recuento por estilo | ¿Mezcla? |");
     console.log("|---|---|---|---|---:|---|---|---|---|");
     for (const r of rows) {
-      console.log(`| ${r.j.name} | ${r.j.language}/${r.j.variant} | ${r.levels} | ${r.j.status === "active" ? "live" : "draft"} | ${r.j.stories.length} | ${format(r)} | ${styleLabel(r.dominant)}${r.dominant ? ` ${(r.share * 100).toFixed(0)}%` : ""} | ${counts(r)} | ${r.mixes ? `**sí** — ${r.present.map(styleLabel).join(" + ")}` : "no"} |`);
+      console.log(`| ${r.j.name} | ${r.j.language}/${r.j.variant} | ${r.levels} | ${r.j.status === "active" ? "live" : "draft"} | ${r.j.stories.length} | ${format(r)} | ${styleLabel(r.dominant)}${r.dominant ? ` ${(r.share * 100).toFixed(0)}%` : ""} | ${counts(r)} | ${r.mixes ? `**sí** - ${r.present.map(styleLabel).join(" + ")}` : "no"} |`);
     }
   } else {
     for (const r of rows) {
