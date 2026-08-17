@@ -27,6 +27,42 @@ export type BlogPostMeta = {
   type?: PostTypeKey;
 };
 
+/**
+ * Meta description for a post.
+ *
+ * Falling back to the raw `excerpt` was serving Google 250 to 300 character
+ * descriptions ending in a literal "[...]", left over from the WordPress
+ * migration: 99 of the 135 posts had no `metaDescription` of their own. Google
+ * cuts at ~155 characters, so what readers saw in the results was a sentence
+ * chopped mid-word. This trims the leftover marker and cuts at a sentence, or
+ * failing that at a word, so the snippet always ends cleanly.
+ *
+ * A hand written `metaDescription` in the frontmatter always wins.
+ */
+export function metaDescriptionFor(
+  post: Pick<BlogPostMeta, "metaDescription" | "excerpt">,
+  limit = 155,
+): string {
+  if (post.metaDescription) return post.metaDescription;
+
+  const clean = (post.excerpt ?? "")
+    .replace(/\s*\[(\.\.\.|…)\]\s*$/, "")   // marcador "[...]" de la migracion
+    .replace(/\s*(\.\.\.|…)\s*$/, "")
+    .replace(/<[^>]*>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (clean.length <= limit) return clean;
+
+  const head = clean.slice(0, limit);
+  // Preferimos cortar en final de frase; solo si eso deja algo demasiado corto
+  // caemos al ultimo espacio.
+  const sentence = Math.max(head.lastIndexOf(". "), head.lastIndexOf("! "), head.lastIndexOf("? "));
+  if (sentence >= limit * 0.5) return head.slice(0, sentence + 1).trim();
+
+  const word = head.lastIndexOf(" ");
+  return (word > 0 ? head.slice(0, word) : head).trim();
+}
+
 export type DialectKey =
   | "colombian"
   | "mexican"

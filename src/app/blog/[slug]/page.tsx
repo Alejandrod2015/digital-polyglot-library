@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllBlogSlugs, getBlogPost, renderBlogContent, type BlogPost } from "@/lib/blog";
+import { metaDescriptionFor } from "@/lib/blog-shared";
 import landing from "@/components/marketing/LandingPage.module.css";
 import blog from "@/components/marketing/Blog.module.css";
 import MarketingNav from "@/components/marketing/MarketingNav";
@@ -39,7 +40,7 @@ function blogPostingJsonLd(post: BlogPost): Record<string, unknown> {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.seoTitle ?? post.title,
-    description: post.metaDescription ?? post.excerpt,
+    description: metaDescriptionFor(post),
     ...(image ? { image } : {}),
     ...(published ? { datePublished: published, dateModified: published } : {}),
     author: { "@type": "Organization", name: post.author ?? "Digital Polyglot", url: SITE },
@@ -94,7 +95,7 @@ export async function generateMetadata(
   if (!post) return { title: "Not found · Digital Polyglot Blog" };
   const url = canonicalFor(post);
   const title = `${post.seoTitle ?? post.title} · Digital Polyglot`;
-  const description = post.metaDescription ?? post.excerpt;
+  const description = metaDescriptionFor(post);
   const image = absoluteUrl(post.hero);
   return {
     title,
