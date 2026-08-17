@@ -124,6 +124,62 @@ the Python subset ran; the canonical validator then found 4 fails):
   writing. If it fails, FIX the story; do not weaken the gate (see the
   gold-standard calibration rule).
 
+## Todos los personajes son nativos (HARD RULE, no excepciones)
+
+**Está PROHIBIDO que una historia tenga personajes que no sean hablantes
+nativos de la región del idioma del journey**, y prohibido escribir a nadie
+como APRENDIZ de ese idioma. La app enseña la lengua real de un sitio: todo
+lo que se lee y se oye es el MODELO. Un personaje no nativo produce español
+(o alemán, o italiano) que el alumno no debe copiar, y en audio obliga a un
+acento que no es el que viene a aprender.
+
+- **Molde correcto** (Friends ES/Spain A0, `cmrr5hnbl000032k1esry5n8g`): Lucía
+  es española y visita ciudades españolas, así que lo que no sabe son
+  **COSTUMBRES, nunca PALABRAS**.
+- **Sí vale**: fricción regional dentro del mismo idioma (una rola en Medellín,
+  una berlinesa en Múnich, una "recién llegada" a un pueblo), glosar jerga local
+  a otro hablante del mismo idioma, y extranjeros de fondo que no hablan.
+- **No vale nunca**: diccionario, traductor / app de traducción, "traducir la
+  frase", "en su país", "su idioma", comentar el propio nivel ("mi español es
+  malo", "ihr Deutsch klinge wie aus dem Lehrbuch"), "cómo se dice", llevar
+  frases preparadas, clases / cursos / libro de texto / `Vokabel`, o describir
+  a un personaje como extranjero o con acento extranjero.
+- **NUNCA escribas a la protagonista como sustituta del alumno.** Ese fue el
+  error de fondo.
+
+**La regla se aplica AL PLANEAR el journey, no solo al guardar la historia.**
+Cuando definas o toques un cast en `src/lib/journeyCasts.ts`, ningún brief
+puede decir "proxy del alumno", "expat", asignar un nivel de idioma al
+personaje (`alemán B1`), "aprende español" ni "se traba con". Si el concepto
+del journey exige un extranjero, eso NO es un journey válido: replantéalo
+antes de escribir una sola historia.
+
+Dos locks, uno por etapa:
+- **Planificación**: `npx tsx scripts/checkJourneyCasts.ts` lintea los briefs
+  de cast y falla (exit 1) con cualquier violación NUEVA. La deuda ya
+  publicada vive en su `KNOWN_PENDING` y se reporta en cada corrida sin
+  bloquear. NUNCA añadas a esa lista para que pase un plan nuevo.
+- **Guardado**: check **`body-non-native-character` (FAIL)** dentro del
+  validador canónico `src/lib/validateGeneratedStory.ts`, con tabla de
+  marcadores por idioma (ES/DE/IT/PT/FR) reutilizada por el guard anterior vía
+  `findNonNativeMarkers`. Solo mira el **cuerpo**: **la sinopsis se revisa a
+  mano**.
+
+Regresión: `npx tsx scripts/_nativeGateCases.ts`. Auditoría del catálogo
+entero: `npx tsx scripts/_auditNativeSpeakerGate.ts`. Detalle y lista completa
+de marcadores en `docs/story-quality-spec.md`
+§ "Todos los personajes son nativos de la región".
+
+**En la tabla de journeys, la columna "No nativos" (número de personajes no
+nativos) es OBLIGATORIA.** Ver `scripts/journeysTable.ts`.
+
+WHY (2026-08-17): el Friends ES/Spain A1 (`cmsvz6mz9000732gsgsfer0ko`, draft)
+escribió a Irene como madrileña Y como extranjera aprendiendo español a la vez:
+"Irene es de Madrid" convive con "En su país el medicamento está a la vista",
+"no ha traducido nada" y "con el diccionario abierto en la mesa". Como en el
+caso del gate de historias, la regla se pone en CÓDIGO porque el criterio solo
+no bastó. Si el gate falla, ARREGLA la historia; no debilites el gate.
+
 ## Safety Guard (BLOCKING — DO NOT BYPASS)
 
 This project has a Bash PreToolUse hook at `.claude/safety/pre-bash-guard.sh`

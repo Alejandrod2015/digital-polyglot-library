@@ -123,6 +123,35 @@ Every proper noun and every character in `title`, `synopsis` and `text` must use
 - Allowed letters per language: base A-Z plus the language's own set (DE `äöüß`, ES `áéíóúüñ¿¡`, IT `àèéìíîòóù`, PT `ãõáâàçéêíóôú`, FR `àâæçéèêëîïôœùûüÿ`).
 - Enforced mechanically: `scripts/storyClaude.ts` save has an orthography gate that rejects any letter outside the journey language's alphabet in title/synopsis/text.
 
+### Todos los personajes son nativos de la región (HARD) [2026-08-17]
+
+**Ningún personaje puede ser no nativo de la región cuyo idioma enseña el journey, ni estar escrito como APRENDIZ de ese idioma.** Todo lo que el alumno lee y oye es el MODELO: un personaje no nativo produce lengua que el alumno no debe copiar, y en audio obliga a un acento que no es el que viene a aprender.
+
+El caso que lo destapó: Friends ES/Spain **A1** (`cmsvz6mz9000732gsgsfer0ko`) escribió a Irene como madrileña Y como extranjera aprendiendo español a la vez. El cuerpo dice `Irene es de Madrid` (nerja-huele-a-pan) y también `En su país el medicamento está a la vista` (la-farmacia-no-tiene-estantes), `no ha traducido nada` (rechaza-la-boda-gana-el-postre) y `con el diccionario abierto en la mesa` (sale-con-jarabe-y-sin-ayuda). Una madrileña no traduce, no necesita diccionario y su país es ese. **La causa de fondo: la protagonista se escribió como sustituta del alumno.** No lo hagas.
+
+**El patrón correcto** ya existe en el catálogo: Friends ES/Spain **A0** (`cmrr5hnbl000032k1esry5n8g`). Lucía es española y visita ciudades españolas, así que lo que no sabe son **COSTUMBRES, nunca PALABRAS**, y todo lo que dice es español nativo correcto. Ese es el molde: la fricción viene del uso local (a qué hora se come, quién paga, cómo se pide), no del idioma.
+
+Lo que **sí** vale y no es infracción:
+
+- Fricción **regional dentro del mismo idioma**: una rola en Medellín, una berlinesa en Múnich, una porteña en Bariloche, una `recién llegada` a un pueblo. Sigue siendo hablante nativa.
+- **Glosar jerga local** a otro hablante del mismo idioma (`le fue traduciendo que causa y pata querían decir amigo del alma`).
+- Extranjeros **de fondo** que no hablan: turistas haciendo fotos, una cola de cruceristas. Decorado, no modelo.
+- Un personaje que **no entiende una costumbre** o se equivoca de horario. Eso es el material del catálogo.
+
+Lo que **no** vale nunca (marcadores prohibidos en el cuerpo):
+
+- Diccionario, traductor o app de traducción; traducir la frase / no haber traducido nada.
+- `en mi país` / `en su país`, `su idioma`, `lengua materna`.
+- Comentar el propio nivel (`mi español es malo`, `ihr Deutsch klinge wie aus dem Lehrbuch`).
+- `cómo se dice`, quedarse sin la palabra, llevar frases preparadas o escritas antes de salir.
+- Clases, cursos, profesores del idioma; libro de texto, vocabulario/`Vokabel`.
+- Un personaje descrito como extranjero (`sentirse extranjera`, `per abitudine straniera`) o con acento extranjero.
+
+**La regla muerde en dos etapas, porque el error de fondo es de PLAN, no de frase.**
+
+1. **Al planear el journey** (`src/lib/journeyCasts.ts`): ningún brief de cast puede declarar a un personaje como `proxy del alumno`, `expat`, `no nativo`, asignarle un nivel de idioma (`alemán B1`), decir que `aprende español` o que `se traba con` el idioma. Lock: `npx tsx scripts/checkJourneyCasts.ts`, que lintea los 51 briefs del fichero y sale con exit 1 ante cualquier violación NUEVA. La deuda ya publicada vive en su `KNOWN_PENDING` (hoy: Nadia, del journey Expat DE) y se reporta en cada corrida sin bloquear. Nunca añadas entradas ahí para que pase un plan nuevo. Si el concepto del journey exige un extranjero, el concepto es el que está mal.
+2. **Al guardar la historia**: **`body-non-native-character` (FAIL)** en `src/lib/validateGeneratedStory.ts`, con tabla de marcadores por idioma (ES/DE/IT/PT/FR) que el guard anterior reutiliza vía `findNonNativeMarkers`. Solo mira el **cuerpo**. Es de alta precisión a propósito: instituciones con la palabra dentro (`Ausländerbehörde`), el `traducir` metafórico y los extranjeros de decorado pasan. **La sinopsis todavía NO está cubierta** por el check; revísala a mano con esta misma lista.
+
 ### Narration crutches & repeated beats (HARD BAN on overuse)
 
 Added 2026-06-25 after the es-LATAM **A0** journey shipped with three template tics repeated across ~20 of 21 stories. Each story passed the per-story checks; the mold only showed up reading them back-to-back (the mandatory gestalt step). By then the audio was generated, so it couldn't be cheaply fixed. These are now caught at validation, **before** audio.
@@ -455,6 +484,7 @@ Before running the `save` script, walk through these ten binary questions. If an
 18. **Read-the-batch gestalt step (required when working on more than one story)**: dump the first sentences of every story in the journey side-by-side and read them as a sequence. Reject if the same opening template appears 3+ times (`opening-rhythm-rotation` check enforces this mechanically, but the human read catches subtler rhythm/tone repetition the regex can't). Anchor types to rotate through: time+place, sensory hook (smell/light/sound), weather/season, action, dialogue-immediate, character apposition, object-as-anchor. Never declare a journey "done" without doing this read.
 19. Does the body avoid the narrated-thought crutches (`Se pregunta: ¿…?`, `X piensa: [aforismo]`), avoid ending on a fortune-cookie maxim, and avoid cliché beats (e.g. "the photo can't capture it")? In the batch read, confirm no single narration device or emotional beat recurs in 3+ stories (`body-inner-monologue-tell` / `body-aphoristic-closing` / `body-cliche-beat` / `motif-cross-story` enforce this).
 20. **A0 only**: is the body free of B1 grammar — no present subjunctive (`aunque viva`), no `de lo que`, no `hace X tiempo que` + present? (`body-cefr-a0-grammar` fails on these.)
+21. **¿Es nativo de la región TODO el que habla?** Nadie es extranjero ni está escrito como aprendiz del idioma: sin diccionario, sin traducir, sin `en su país`, sin `cómo se dice`, sin comentar su propio nivel. Lo que el personaje no sabe son costumbres, nunca palabras. (`body-non-native-character` falla sobre el cuerpo; **la sinopsis la compruebas tú a mano**.)
 
 If 15 or more answers are `yes`, save. If fewer, revise.
 

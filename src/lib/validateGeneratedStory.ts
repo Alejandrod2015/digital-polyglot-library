@@ -224,6 +224,148 @@ const BANNED_BODY_TOKENS = [
 
 const HTML_TAG_RE = /<(?:p|blockquote|div|span|br|strong|em|i|b|h\d|a|ul|ol|li|img)\b/i;
 
+  // ─── Every character is a native speaker of the journey's region ───
+  // FAIL. Nobody in a body may be written as a non-native of the region
+  // whose language the journey teaches, nor as a LEARNER of that language.
+  //
+  // WHY (2026-08-17): everything the student reads and hears is the MODEL.
+  // A non-native character produces language the student must not copy, and
+  // in audio it forces an accent that is not the one they came to learn.
+  // The case that surfaced it: Friends ES/Spain A1 (cmsvz6mz9000732gsgsfer0ko)
+  // wrote Irene as a madrileña AND as a foreigner learning Spanish at the
+  // same time; the body says "Irene es de Madrid" (nerja-huele-a-pan) and
+  // also "En su país el medicamento está a la vista"
+  // (la-farmacia-no-tiene-estantes), "no ha traducido nada"
+  // (rechaza-la-boda-gana-el-postre) and "con el diccionario abierto en la
+  // mesa" (sale-con-jarabe-y-sin-ayuda). A madrileña does not translate, does
+  // not need a dictionary and her country IS this one. Root cause: the
+  // protagonist was written as a stand-in for the student.
+  //
+  // The pattern that IS allowed (Friends ES/Spain A0, cmrr5hnbl000032k1esry5n8g,
+  // Lucía): a native who travels inside her own language area, so what she
+  // does not know are CUSTOMS, never WORDS. Regional friction (a rola in
+  // Medellín, a Berlinerin in Munich, "recién llegada" to a village) is
+  // fine and deliberately NOT matched here: same language, native speaker.
+  //
+  // High precision on purpose: only markers that are essentially never used
+  // about a native. Everything softer stays an authoring rule in
+  // docs/story-quality-spec.md § "Todos los personajes son nativos".
+  type NativeMarker = { re: RegExp; label: string };
+  // Institution / fixed-name substrings that contain a marker word but say
+  // nothing about a character (e.g. the German immigration office).
+  const NON_NATIVE_TEXT_EXCEPTIONS: Record<string, RegExp[]> = {
+    DE: [/Ausländerbeh[oö]rde/gi, /Ausländeramt/gi, /Ausländerb[uü]ro/gi],
+  };
+  // "Translate" only counts when it is the character converting BETWEEN
+  // languages. Two legitimate uses stay out of the gate, both found in
+  // live stories: glossing local slang for another speaker of the same
+  // language ("Le fue traduciendo despacio que causa y pata querían decir
+  // amigo del alma", spanish/latam C1 pilar-no-entiende-nada), and the
+  // metaphor ("Yaneth le tradujo bajito cada imagen de esa tierra",
+  // spanish/colombia C1 contrapunteo-hasta-el-amanecer; "Übersetzung für
+  // Zugezogene", german Hanseat). Hence: perfect/modal forms about the
+  // character's own comprehension, plus the tool nouns, and nothing else.
+  const TRANSLATE_VERB: Record<string, RegExp> = {
+    ES: /(?:no |sin |ha |hab[ií]a |he |hemos |hab[ií]an )traducid[oa]|sabe traducir|traducir (?:la|una|el|un) (?:frase|palabra|carta|nota|instrucci)|traducir (?:del|al) |traducir mentalmente/iu,
+    DE: /(?:ins Deutsche|auf Deutsch|aus dem \p{Lu}\p{L}+en)\s+[uü]bersetz|[uü]bersetzt (?:sich )?(?:im Kopf|innerlich)/iu,
+    IT: /(?:non |senza |ha |aveva )tradotto|deve tradurre|tradurre (?:la|una) (?:frase|parola)|tradurre (?:dal|in) |tradurre mentalmente/iu,
+    PT: /(?:n[aã]o |sem |tinha |tem )traduzido|precisa traduzir|traduzir (?:a|uma) (?:frase|palavra)|traduzir (?:do|para o) |traduzir mentalmente/iu,
+    FR: /(?:n'a pas |sans |a )traduit|doit traduire|traduire (?:la|une) (?:phrase|expression)|traduire (?:du|en) |traduire mentalement/iu,
+  };
+  const NON_NATIVE_MARKERS: Record<string, NativeMarker[]> = {
+    ES: [
+      { re: /(?<![\p{L}\p{M}])(?:en|de|a)\s+(?:mi|su|tu)\s+pa[ií]s(?![\p{L}])/iu, label: "\"en/de su país\" (su país es este)" },
+      { re: /(?<![\p{L}\p{M}])(?:mi|su|tu)\s+(?:idioma|lengua)(?![\p{L}])|lengua materna|idioma materno/iu, label: "\"su idioma\" / \"lengua materna\"" },
+      { re: /(?<![\p{L}\p{M}])(?:mi|su|tu)\s+espa[nñ]ol(?![\p{L}])/iu, label: "comenta su propio español" },
+      { re: /(?<![\p{L}\p{M}])diccionarios?(?![\p{L}])/iu, label: "diccionario" },
+      { re: /(?<![\p{L}\p{M}])traductor[ae]?s?(?![\p{L}])|traducci[oó]n(?:es)?(?![\p{L}])|app de traducci/iu, label: "traductor / app de traducción" },
+      { re: /c[oó]mo se dice|no s[eé] c[oó]mo se dice|no sabe (?:c[oó]mo se dice|decirlo|c[oó]mo se pide)/iu, label: "\"cómo se dice\"" },
+      // Only a CHARACTER described as foreign. Foreigners as scenery
+      // ("combos de extranjeros tomando fotos", spanish/colombia C1
+      // la-comuna-13-no-es-museo) are background, not models, and pass.
+      { re: /(?:soy|eres|es|era|eran|son|somos|siendo|sentirse|sentirme|sentirte|se siente|me siento|te sientes|se sent[ií]a|me sent[ií]a|parece|parec[ií]a)\s+(?:una?\s+|m[aá]s\s+|menos\s+|muy\s+)?extranjer[oa]s?(?![\p{L}])|(?:acento|costumbre|man[ií]a|gesto|apellido|pasaporte)\s+extranjer[oa]/iu, label: "personaje extranjero/a" },
+      { re: /acento (?:extranjero|raro|de fuera)|con acento (?:alem[aá]n|ingl[eé]s|franc[eé]s)/iu, label: "acento extranjero" },
+      { re: /(?:no|apenas) habla espa[nñ]ol|habla poco espa[nñ]ol|habla muy poco espa[nñ]ol/iu, label: "no habla español" },
+      { re: /(?:aprend\p{L}+|estudia\p{L}*|practica\p{L}*)\s+(?:el\s+)?espa[nñ]ol(?![\p{L}])/iu, label: "aprende español" },
+      { re: /(?:clase|curso|profesor[ae]?|academia)\p{L}*\s+de\s+espa[nñ]ol|app de idiomas|aplicaci[oó]n de idiomas/iu, label: "clase / app de idiomas" },
+      { re: /(?:ensaya|memoriza|se aprende|lleva escrita?s?)\s+(?:la|una|las|tres|dos)\s+(?:frase|frases|palabras)/iu, label: "lleva la frase preparada" },
+    ],
+    DE: [
+      { re: /(?<![\p{L}\p{M}])W[oö]rterbuch\p{L}*/iu, label: "Wörterbuch" },
+      { re: /[UÜ]bersetzungsapp|[UÜ]bersetzer(?:in)?(?![\p{L}])/iu, label: "Übersetzungsapp / Übersetzer" },
+      { re: /wie sagt man|wie hei[sß]t das (?:auf|noch mal)/iu, label: "\"wie sagt man\"" },
+      { re: /in (?:meinem|ihrem|seinem|deinem) (?:alten )?Land|in (?:ihrer|seiner) alten Heimat/iu, label: "\"in ihrem Land\"" },
+      { re: /(?<![\p{L}\p{M}])(?:sein|ihr|mein|dein)\s+Deutsch(?![\p{L}])/iu, label: "kommentiert das eigene Deutsch" },
+      { re: /Muttersprache\p{L}*/iu, label: "Muttersprache" },
+      { re: /Deutschkurs|Sprachkurs|Sprachschule|Deutschlehrer\p{L}*|(?<![\p{L}\p{M}])Vokabel\p{L}*|(?<![\p{L}\p{M}])Lehrbuch(?![\p{L}])/iu, label: "Sprachkurs / Vokabel / Lehrbuch" },
+      { re: /(?<![\p{L}\p{M}])Akzent(?![\p{L}])/iu, label: "Akzent" },
+      { re: /(?:lernt|lernte|[uü]bt|[uü]bte)\s+(?:gerade\s+)?Deutsch(?![\p{L}])/iu, label: "lernt Deutsch" },
+      { re: /(?<![\p{L}\p{M}])Ausl[aä]nder\p{L}*/iu, label: "Ausländer" },
+    ],
+    IT: [
+      { re: /(?<![\p{L}\p{M}])dizionari\p{L}*/iu, label: "dizionario" },
+      { re: /traduttor[ei]|traduzion[ei]|app di traduzione/iu, label: "traduttore / app di traduzione" },
+      { re: /come si dice|non sa come si dice/iu, label: "\"come si dice\"" },
+      { re: /(?:nel|dal) (?:mio|suo|tuo) paese/iu, label: "\"nel suo paese\"" },
+      { re: /(?<![\p{L}\p{M}])(?:il mio|il suo|il tuo)\s+italiano(?![\p{L}])/iu, label: "commenta il proprio italiano" },
+      { re: /lingua madre|lingua straniera/iu, label: "lingua madre / straniera" },
+      { re: /(?:[eè]|sono|essere|sentirsi|si sente|mi sento|sembra|sembrava)\s+(?:una?\s+)?stranier[oa](?![\p{L}])|(?:abitudine|accento|gesto|usanza|abitudini)\s+stranier[ao](?![\p{L}])/iu, label: "personaggio straniero/a" },
+      { re: /corso di italiano|scuola di italiano|insegnante di italiano/iu, label: "corso di italiano" },
+      { re: /(?<![\p{L}\p{M}])accento(?![\p{L}])/iu, label: "accento" },
+      { re: /(?:impara|studia|esercita)\p{L}*\s+(?:l')?italiano(?![\p{L}])/iu, label: "impara l'italiano" },
+    ],
+    PT: [
+      { re: /(?<![\p{L}\p{M}])dicion[aá]ri\p{L}*/iu, label: "dicionário" },
+      { re: /tradutor(?:a)?(?![\p{L}])|tradu[cç][aã]o|app de tradu/iu, label: "tradutor / app de tradução" },
+      { re: /como se diz|n[aã]o sabe como se diz/iu, label: "\"como se diz\"" },
+      { re: /(?:no|do) (?:meu|seu|teu) pa[ií]s/iu, label: "\"no seu país\"" },
+      { re: /(?<![\p{L}\p{M}])(?:o meu|o seu|o teu)\s+portugu[eê]s(?![\p{L}])/iu, label: "comenta o próprio português" },
+      { re: /l[ií]ngua materna|l[ií]ngua estrangeira/iu, label: "língua materna / estrangeira" },
+      { re: /(?:sou|[ée]|era|eram|s[aã]o|somos|sendo|sentir-se|se sente|me sinto|parece|parecia)\s+(?:uma?\s+)?estrangeir[oa]s?(?![\p{L}])|(?:sotaque|costume|gesto|h[aá]bito)\s+estrangeir[oa]/iu, label: "personagem estrangeiro/a" },
+      { re: /curso de portugu[eê]s|escola de portugu[eê]s|professor\p{L}* de portugu[eê]s/iu, label: "curso de português" },
+      { re: /(?<![\p{L}\p{M}])sotaque(?![\p{L}])/iu, label: "sotaque" },
+      { re: /(?:aprende|estuda|pratica)\p{L}*\s+(?:o\s+)?portugu[eê]s(?![\p{L}])/iu, label: "aprende português" },
+    ],
+    FR: [
+      { re: /(?<![\p{L}\p{M}])dictionnaires?(?![\p{L}])/iu, label: "dictionnaire" },
+      { re: /traducteur|traductrice|traduction|appli de traduction/iu, label: "traducteur / appli de traduction" },
+      { re: /comment on dit|comment [cç]a se dit/iu, label: "\"comment on dit\"" },
+      { re: /dans (?:mon|son|ton) pays/iu, label: "\"dans son pays\"" },
+      { re: /(?<![\p{L}\p{M}])(?:mon|son|ton)\s+fran[cç]ais(?![\p{L}])/iu, label: "commente son propre français" },
+      { re: /langue maternelle|langue [eé]trang[eè]re/iu, label: "langue maternelle / étrangère" },
+      { re: /(?:suis|es|est|[eé]tait|sont|sommes|[eé]tant|se sentir|se sent|me sens|para[iî]t)\s+(?:une?\s+)?[eé]trang[eè]re?s?(?![\p{L}])|(?:accent|habitude|geste|coutume)\s+[eé]trang[eè]re?/iu, label: "personnage étranger/ère" },
+      { re: /cours de fran[cç]ais|professeur\p{L}* de fran[cç]ais/iu, label: "cours de français" },
+      { re: /(?<![\p{L}\p{M}])accent(?![\p{L}])/iu, label: "accent" },
+      { re: /(?:apprend|[eé]tudie|pratique)\p{L}*\s+le fran[cç]ais(?![\p{L}])/iu, label: "apprend le français" },
+    ],
+  };
+
+  /**
+   * Every non-native / language-learner marker in `text` for `langIso`
+   * (ES/DE/IT/PT/FR). Exported through `findNonNativeMarkers` below so the
+   * SAME criterion runs at PLANNING time (cast briefs in
+   * `src/lib/journeyCasts.ts`, checked by `scripts/checkJourneyCasts.ts`),
+   * not only when a body is saved. Returns [] for unknown languages.
+   */
+  export function findNonNativeMarkers(text: string, langIso: string): string[] {
+    const markers = NON_NATIVE_MARKERS[langIso];
+    if (!markers) return [];
+    // Blank out documented institution names so they can never match.
+    let hay = text;
+    for (const ex of NON_NATIVE_TEXT_EXCEPTIONS[langIso] ?? []) {
+      hay = hay.replace(ex, (m) => "·".repeat(m.length));
+    }
+    const hits: string[] = [];
+    for (const { re, label } of markers) {
+      const m = hay.match(re);
+      if (m) hits.push(`${label} → "${m[0].trim()}"`);
+    }
+    const translateRe = TRANSLATE_VERB[langIso];
+    const translateHit = translateRe ? hay.match(translateRe) : null;
+    if (translateHit) hits.push(`traduce entre idiomas → "${translateHit[0].trim()}"`);
+    return hits;
+  };
+
 const COGNATES_BY_LANG: Record<string, string[]> = {
   DE: [
     // Spanish-flavor cognates (audience cross-coverage).
@@ -1595,6 +1737,19 @@ export async function validateGeneratedStory(
       status: cefrHits.length === 0 ? "pass" : "warn",
       detail: cefrHits.length
         ? `Found: ${cefrHits.join(", ")} (B2+/C1 markers, revisa nivel)`
+        : undefined,
+    });
+  }
+
+  // Body gate for the rule documented above.
+  if (NON_NATIVE_MARKERS[ctxLang]) {
+    const nativeHits = findNonNativeMarkers(parsed.text, ctxLang);
+    checks.push({
+      id: "body-non-native-character",
+      label: "Every character is a native speaker of the journey's region",
+      status: nativeHits.length === 0 ? "pass" : "fail",
+      detail: nativeHits.length
+        ? `Found ${nativeHits.length} non-native / language-learner marker(s): ${nativeHits.join("; ")}. Nobody in this catalogue may be a foreigner or a learner of the language being taught: what the student reads and hears is the MODEL, and in audio a non-native forces an accent they did not come to learn. Rewrite so the character is a native of the region and what they do not know are CUSTOMS, never WORDS (the Friends ES/Spain A0 pattern). Do NOT write the protagonist as a stand-in for the student.`
         : undefined,
     });
   }

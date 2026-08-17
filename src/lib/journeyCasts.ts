@@ -29,6 +29,27 @@
  * personajes viejos/ancianos ni niños/adolescentes. Solo adultos en activo
  * (~25-55). Los abuelos/niños de casts legacy publicados quedan, pero no se
  * reusan en historias nuevas.
+ *
+ * REGLA DURA (usuario, 2026-08-17, "todos los personajes son nativos"): TODO
+ * miembro de un cast tiene que ser HABLANTE NATIVO de la región cuyo idioma
+ * enseña el journey, y NINGUNO puede estar planteado como aprendiz de ese
+ * idioma. Lo que el alumno lee y oye es el MODELO: un personaje no nativo
+ * produce lengua que no debe copiar y, en audio, un acento que no vino a
+ * aprender. Esta regla se aplica AQUÍ, al planear el cast, no solo al guardar
+ * la historia.
+ *   - Molde correcto: Friends ES/Spain A0 (Lucía es española y viaja por
+ *     España, así que lo que no sabe son COSTUMBRES, nunca PALABRAS).
+ *   - Sí vale: fricción regional dentro del mismo idioma (una rola en
+ *     Medellín, una berlinesa en Múnich, un Zugezogener en Hamburgo).
+ *   - NUNCA describas a un personaje como "proxy del alumno", ni le asignes
+ *     un nivel de idioma (A2/B1…), ni "aprende X", ni "se traba con".
+ *   Guard: `npx tsx scripts/checkJourneyCasts.ts` (lint de este fichero;
+ *   falla con cualquier brief NUEVO que lo incumpla). Gate hermano sobre el
+ *   cuerpo ya escrito: check `body-non-native-character` en
+ *   src/lib/validateGeneratedStory.ts. Detalle: docs/story-quality-spec.md
+ *   § "Todos los personajes son nativos de la región".
+ *   DEUDA CONOCIDA: GERMAN_EXPAT_B1_CAST (Nadia) incumple la regla de raíz;
+ *   está en KNOWN_PENDING del guard a la espera de la decisión del usuario.
  */
 
 import { SPANISH_DIALOGUE_VOICES, GERMAN_DIALOGUE_VOICES } from "@/lib/elevenlabs";
