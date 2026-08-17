@@ -1,4 +1,5 @@
 import { listBlogPosts, getBlogPost, renderBlogContent } from "@/lib/blog";
+import { excerptText } from "@/lib/blog-shared";
 
 const SITE = "https://www.digitalpolyglot.com";
 
@@ -24,7 +25,7 @@ export async function GET() {
       <link>${SITE}/blog/${meta.slug}</link>
       <guid isPermaLink="true">${SITE}/blog/${meta.slug}</guid>
       <pubDate>${new Date(meta.date).toUTCString()}</pubDate>
-      <description>${escapeXml(meta.excerpt ?? "")}</description>
+      <description>${escapeXml(excerptText(meta.excerpt))}</description>
       <content:encoded><![CDATA[${html}]]></content:encoded>
     </item>`;
     }),
