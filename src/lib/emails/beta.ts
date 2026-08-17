@@ -22,6 +22,7 @@ import {
   hi,
   badge,
 } from "./kit";
+import { publicBaseUrl } from "@/lib/emails/publicBaseUrl";
 import type { BuiltEmail } from "./lifecycle";
 
 export type BetaEmailKind =
@@ -98,7 +99,7 @@ export type BetaEmailData = {
 };
 
 function base(data?: BetaEmailData): string {
-  return data?.baseUrl ?? process.env.APP_BASE_URL ?? "https://digitalpolyglot.com";
+  return publicBaseUrl(data?.baseUrl);
 }
 
 function assetBase(data?: BetaEmailData): string {

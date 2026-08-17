@@ -1,0 +1,138 @@
+[
+  {
+    "topic": "plans-and-invitations",
+    "slotIndex": 3,
+    "title": "Rechaza la boda, gana el postre",
+    "slug": "rechaza-la-boda-gana-el-postre",
+    "text": "El sábado suena la lluvia en el patio y Rocío llama a Irene para una boda del pueblo vecino. Irene no conoce a los novios y le da pereza el autobús. Antes habría dicho que sí y luego habría puesto una excusa por mensaje.\n\nSe acuerda de cómo lo hace la gente aquí y respira antes de contestar. \"Ay, qué rabia, es que ese día viene mi hermana\", dice muy despacio. \"Y encima tengo el coche en el taller hasta el lunes\".\n\nRocío no insiste ni pone mala cara, y eso la sorprende. \"Pues nada, mujer, otra vez será\", contesta desde el otro lado. Irene entonces añade lo que ha aprendido oyéndola a ella.\n\n\"Pero el domingo que viene te invito yo a comer, que te debo una\", propone. \"Eso sí, y llevo el postre\", contesta Rocío enseguida. Por la noche Irene nota que no tradujo nada: le salió entero de golpe.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "boda",
+        "register": "cultural",
+        "definition": "Wedding; a village one lasts most of the day."
+      },
+      {
+        "type": "noun",
+        "word": "novios",
+        "register": "cultural",
+        "definition": "The couple; the two people getting married that day."
+      },
+      {
+        "type": "expression",
+        "word": "dar pereza",
+        "surface": "da pereza",
+        "register": "colloquial",
+        "definition": "Can't face it; the effort puts you off going."
+      },
+      {
+        "type": "noun",
+        "word": "excusa",
+        "definition": "Excuse; the reason you give for not turning up."
+      },
+      {
+        "type": "noun",
+        "word": "mensaje",
+        "definition": "Message; a few words sent from your phone."
+      },
+      {
+        "type": "verb",
+        "word": "respirar",
+        "surface": "respira",
+        "definition": "Breathes; takes a breath before saying something difficult."
+      },
+      {
+        "type": "expression",
+        "word": "qué rabia",
+        "register": "colloquial",
+        "definition": "What a shame; said when you really are sorry."
+      },
+      {
+        "type": "noun",
+        "word": "hermana",
+        "definition": "Sister; another daughter of your own two parents."
+      },
+      {
+        "type": "noun",
+        "word": "taller",
+        "definition": "Garage; where a car goes to be repaired."
+      },
+      {
+        "type": "verb",
+        "word": "insistir",
+        "surface": "insiste",
+        "definition": "Presses; asks again after you have said no."
+      },
+      {
+        "type": "expression",
+        "word": "mala cara",
+        "register": "colloquial",
+        "definition": "Sour face; a look that shows you are annoyed."
+      },
+      {
+        "type": "verb",
+        "word": "sorprender",
+        "surface": "sorprende",
+        "definition": "Surprises; turns out differently from what she expected."
+      },
+      {
+        "type": "expression",
+        "word": "otra vez será",
+        "register": "cultural",
+        "definition": "Another time then; the friendly way to close a no."
+      },
+      {
+        "type": "verb",
+        "word": "añadir",
+        "surface": "añade",
+        "definition": "Adds; puts one more thing after what was said."
+      },
+      {
+        "type": "expression",
+        "word": "que viene",
+        "definition": "Coming; the next one after this one, not this."
+      },
+      {
+        "type": "expression",
+        "word": "deber una",
+        "surface": "te debo una",
+        "register": "colloquial",
+        "definition": "I owe you one; a promise to make it up."
+      },
+      {
+        "type": "expression",
+        "word": "eso sí",
+        "register": "colloquial",
+        "definition": "Mind you; adding a condition to what you accepted."
+      },
+      {
+        "type": "noun",
+        "word": "postre",
+        "definition": "Pudding; the sweet part at the end of a meal."
+      },
+      {
+        "type": "adverb",
+        "word": "enseguida",
+        "definition": "Straight away; without leaving any pause at all."
+      },
+      {
+        "type": "verb",
+        "word": "traducir",
+        "surface": "tradujo",
+        "definition": "Translate; work the sentence out from your own language."
+      },
+      {
+        "type": "noun",
+        "word": "coche",
+        "definition": "Car; the vehicle now sitting in the garage."
+      },
+      {
+        "type": "expression",
+        "word": "pueblo vecino",
+        "definition": "Next village; the one just down the same road."
+      }
+    ],
+    "arcType": "harmonic-close",
+    "synopsis": "Un plan que no le apetece y la necesidad de rechazarlo sin romper nada. Irene ya sabe que un no seco deja mal cuerpo y que un sí falso se paga después, así que copia la fórmula que le ha oído a media escalera: una razón, otra razón encima y una fecha alternativa. Funciona a la primera y nadie se ofende. Por la noche se da cuenta de que no ha traducido la frase, le ha salido sola."
+  }
+]

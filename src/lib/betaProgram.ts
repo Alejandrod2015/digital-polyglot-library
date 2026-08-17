@@ -30,6 +30,7 @@ import { evaluateApplication, type BetaVerdict } from "@/lib/betaRules";
 import { getBetaRules } from "@/lib/betaRulesConfig";
 import { BETA_EMAIL_BUILDERS, type BetaEmailKind, type BetaEmailData } from "@/lib/emails/beta";
 import { buildPersonalEmail } from "@/lib/emails/personal";
+import { publicBaseUrl } from "@/lib/emails/publicBaseUrl";
 import type { BetaSignup } from "@/generated/prisma";
 
 const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
@@ -61,7 +62,7 @@ const TRANSACTIONAL_KINDS = new Set<BetaEmailKind>([
 ]);
 
 export function betaBaseUrl(): string {
-  return process.env.APP_BASE_URL ?? "https://digitalpolyglot.com";
+  return publicBaseUrl();
 }
 
 export async function countActiveTesters(): Promise<number> {

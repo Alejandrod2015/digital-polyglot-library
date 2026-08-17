@@ -1,0 +1,416 @@
+[
+  {
+    "topic": "health-and-symptoms",
+    "slotIndex": 2,
+    "title": "Rocío cuenta sus síntomas",
+    "slug": "rocio-cuenta-sus-sintomas",
+    "text": "Al día siguiente Rocío baja con Irene y le dice que no se preocupe. Marta las ve entrar juntas y deja el bolígrafo encima del mostrador. Hoy hay dos señoras esperando y un ventilador puesto que hace ruido.\n\n\"A ver, cuéntame qué te pasa, que hoy tenemos tiempo\", dice Marta, mirando a Irene. Irene empieza y se para en la tercera palabra, con la mano en el cuello. \"Le duele la garganta desde el sábado y no ha dormido\", contesta Rocío por ella.\n\n\"¿Y fiebre tiene, aunque sea un poco?\", pregunta Marta sin mirarla ya a ella. \"Un poco por la noche\", contesta otra vez Rocío. Irene mira las dos bocas hablando de su garganta.\n\nSalen con dos cajas y las instrucciones dichas dos veces en la puerta. \"Mañana ya se lo dices tú, que no muerde\", le suelta Rocío, y no lo dice de broma. Irene guarda la caja pequeña y se queda con esa frase toda la tarde.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "preocuparse",
+        "surface": "se preocupe",
+        "definition": "Worry; feel bad about something that has not happened."
+      },
+      {
+        "type": "noun",
+        "word": "señoras",
+        "definition": "Ladies; grown women waiting their turn in the shop."
+      },
+      {
+        "type": "adjective",
+        "word": "puesto",
+        "surface": "puesto",
+        "definition": "On; switched on and turning quietly in the corner."
+      },
+      {
+        "type": "expression",
+        "word": "a ver",
+        "register": "colloquial",
+        "definition": "Right then; the sound that opens a friendly question."
+      },
+      {
+        "type": "verb",
+        "word": "empezar",
+        "surface": "empieza",
+        "definition": "Starts; makes a beginning at saying something out loud."
+      },
+      {
+        "type": "noun",
+        "word": "cuello",
+        "definition": "Neck; the part between your head and your shoulders."
+      },
+      {
+        "type": "verb",
+        "word": "dormir",
+        "surface": "dormido",
+        "definition": "Sleep; rest at night with your eyes closed."
+      },
+      {
+        "type": "noun",
+        "word": "fiebre",
+        "definition": "Temperature; the heat your body gets when you are ill."
+      },
+      {
+        "type": "expression",
+        "word": "un poco",
+        "definition": "A bit; a small amount, not enough to be serious."
+      },
+      {
+        "type": "noun",
+        "word": "instrucciones",
+        "definition": "Directions; how many and how often you take them."
+      },
+      {
+        "type": "expression",
+        "word": "dos veces",
+        "definition": "Twice; said a second time so it is not forgotten."
+      },
+      {
+        "type": "verb",
+        "word": "soltar",
+        "surface": "suelta",
+        "definition": "Comes out with; says something suddenly and without softening."
+      },
+      {
+        "type": "verb",
+        "word": "morder",
+        "surface": "muerde",
+        "definition": "Bite; used as a joke that somebody is not frightening."
+      },
+      {
+        "type": "expression",
+        "word": "de broma",
+        "definition": "As a joke; said to be funny rather than meant."
+      },
+      {
+        "type": "noun",
+        "word": "caja",
+        "surface": "cajas",
+        "definition": "Box; medicine in Spain comes in small card boxes."
+      },
+      {
+        "type": "noun",
+        "word": "ventilador",
+        "definition": "Fan; the machine that moves air round a warm room."
+      },
+      {
+        "type": "noun",
+        "word": "tiempo",
+        "definition": "Time; enough of it to listen without any hurry."
+      },
+      {
+        "type": "expression",
+        "word": "aunque sea",
+        "definition": "Even if only; at least a little, however small."
+      },
+      {
+        "type": "expression",
+        "word": "por ella",
+        "definition": "For her; answering in her place, without being asked."
+      },
+      {
+        "type": "expression",
+        "word": "hablando de",
+        "definition": "Talking about; discussing a thing in front of you."
+      },
+      {
+        "type": "noun",
+        "word": "ruido",
+        "definition": "Noise; the sound the fan makes turning above them."
+      },
+      {
+        "type": "verb",
+        "word": "esperar",
+        "surface": "esperando",
+        "definition": "Waiting; standing there quietly until their turn arrives."
+      },
+      {
+        "type": "verb",
+        "word": "pararse",
+        "surface": "se para",
+        "definition": "Stops; breaks off in the middle of a sentence."
+      }
+    ],
+    "arcType": "recurring-character-callback",
+    "synopsis": "Una segunda visita con refuerzos y una conversación entera sobre su cuerpo en la que ella dice tres palabras. Irene arranca la frase y se atasca a la mitad, así que la vecina termina por ella cada respuesta y la farmacéutica acaba mirando solo a una de las dos. Salen con las cajas y las instrucciones repetidas en la puerta. La frase de despedida se le queda a Irene toda la tarde."
+  },
+  {
+    "topic": "plans-and-invitations",
+    "slotIndex": 3,
+    "title": "Rechaza la boda, gana el postre",
+    "slug": "rechaza-la-boda-gana-el-postre",
+    "text": "El sábado suena la lluvia en el patio y Rocío llama a Irene para una boda del pueblo vecino. Irene no conoce a los novios y le da pereza el autobús. Antes habría dicho que sí y luego habría puesto una excusa por mensaje.\n\nSe acuerda de cómo lo hace la gente aquí y respira antes de contestar. \"Ay, qué rabia, es que ese día viene mi hermana\", dice muy despacio. \"Y encima tengo el coche en el taller hasta el lunes\".\n\nRocío no insiste ni pone mala cara, y eso la sorprende. \"Pues nada, mujer, otra vez será\", contesta desde el otro lado. Irene entonces añade lo que ha aprendido oyéndola a ella.\n\n\"Pero el domingo que viene te invito yo a comer, que te debo una\", propone. \"Eso sí, y llevo el postre\", contesta Rocío enseguida. Por la noche Irene nota que no tradujo nada: le salió entero de golpe.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "boda",
+        "register": "cultural",
+        "definition": "Wedding; a village one lasts most of the day."
+      },
+      {
+        "type": "noun",
+        "word": "novios",
+        "register": "cultural",
+        "definition": "The couple; the two people getting married that day."
+      },
+      {
+        "type": "expression",
+        "word": "dar pereza",
+        "surface": "da pereza",
+        "register": "colloquial",
+        "definition": "Can't face it; the effort puts you off going."
+      },
+      {
+        "type": "noun",
+        "word": "excusa",
+        "definition": "Excuse; the reason you give for not turning up."
+      },
+      {
+        "type": "noun",
+        "word": "mensaje",
+        "definition": "Message; a few words sent from your phone."
+      },
+      {
+        "type": "verb",
+        "word": "respirar",
+        "surface": "respira",
+        "definition": "Breathes; takes a breath before saying something difficult."
+      },
+      {
+        "type": "expression",
+        "word": "qué rabia",
+        "register": "colloquial",
+        "definition": "What a shame; said when you really are sorry."
+      },
+      {
+        "type": "noun",
+        "word": "hermana",
+        "definition": "Sister; another daughter of your own two parents."
+      },
+      {
+        "type": "noun",
+        "word": "taller",
+        "definition": "Garage; where a car goes to be repaired."
+      },
+      {
+        "type": "verb",
+        "word": "insistir",
+        "surface": "insiste",
+        "definition": "Presses; asks again after you have said no."
+      },
+      {
+        "type": "expression",
+        "word": "mala cara",
+        "register": "colloquial",
+        "definition": "Sour face; a look that shows you are annoyed."
+      },
+      {
+        "type": "verb",
+        "word": "sorprender",
+        "surface": "sorprende",
+        "definition": "Surprises; turns out differently from what she expected."
+      },
+      {
+        "type": "expression",
+        "word": "otra vez será",
+        "register": "cultural",
+        "definition": "Another time then; the friendly way to close a no."
+      },
+      {
+        "type": "verb",
+        "word": "añadir",
+        "surface": "añade",
+        "definition": "Adds; puts one more thing after what was said."
+      },
+      {
+        "type": "expression",
+        "word": "que viene",
+        "definition": "Coming; the next one after this one, not this."
+      },
+      {
+        "type": "expression",
+        "word": "deber una",
+        "surface": "te debo una",
+        "register": "colloquial",
+        "definition": "I owe you one; a promise to make it up."
+      },
+      {
+        "type": "expression",
+        "word": "eso sí",
+        "register": "colloquial",
+        "definition": "Mind you; adding a condition to what you accepted."
+      },
+      {
+        "type": "noun",
+        "word": "postre",
+        "definition": "Pudding; the sweet part at the end of a meal."
+      },
+      {
+        "type": "adverb",
+        "word": "enseguida",
+        "definition": "Straight away; without leaving any pause at all."
+      },
+      {
+        "type": "verb",
+        "word": "traducir",
+        "surface": "tradujo",
+        "definition": "Translate; work the sentence out from your own language."
+      },
+      {
+        "type": "noun",
+        "word": "coche",
+        "definition": "Car; the vehicle now sitting in the garage."
+      },
+      {
+        "type": "expression",
+        "word": "pueblo vecino",
+        "definition": "Next village; the one just down the same road."
+      }
+    ],
+    "arcType": "harmonic-close",
+    "synopsis": "Un plan que no le apetece y la necesidad de rechazarlo sin romper nada. Irene ya sabe que un no seco deja mal cuerpo y que un sí falso se paga después, así que copia la fórmula que le ha oído a media escalera: una razón, otra razón encima y una fecha alternativa. Funciona a la primera y nadie se ofende. Por la noche se da cuenta de que no ha traducido la frase, le ha salido sola."
+  },
+  {
+    "topic": "plans-and-invitations",
+    "slotIndex": 2,
+    "title": "Invita el que cumple años",
+    "slug": "invita-el-que-cumple-anos",
+    "text": "Rocío le cuenta a Irene que Quique cumple años el viernes y lo celebra en el bar. Irene ve el papel colgado en la barra y se queda con una duda tonta. \"¿Y yo qué llevo, algo envuelto o algo de comer?\", le pregunta en la cola del pan.\n\n\"Nada, mujer, tú vas y ya está\", contesta Rocío sin levantar la vista. \"Y no saques la cartera, que paga él, que es el que cumple\". Irene se queda mirándola porque en su casa eso funciona justo al revés.\n\nEl viernes llega con un paquete pequeño escondido en el bolso. El bar huele a fritanga y hay una ronda entera pedida encima de la barra. Nadie lleva nada en las manos y todos gritan a la vez.\n\n\"¡Que invito yo, que el cumpleañero paga aquí!\", repite Quique cada dos minutos. Irene deja el regalo dentro del bolso y no lo saca en toda la noche. \"Felicidades, Quique\", dice cuando le llega el turno, y choca su vaso.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "celebrar",
+        "surface": "celebra",
+        "definition": "Celebrates; marks the day with other people around him."
+      },
+      {
+        "type": "adjective",
+        "word": "colgado",
+        "definition": "Pinned up; hanging where everybody walking past sees it."
+      },
+      {
+        "type": "noun",
+        "word": "duda",
+        "definition": "Doubt; a question you are not sure how to ask."
+      },
+      {
+        "type": "adjective",
+        "word": "envuelto",
+        "definition": "Wrapped; covered in paper because it is a present."
+      },
+      {
+        "type": "expression",
+        "word": "cola del pan",
+        "definition": "Bread queue; where village news gets passed around daily."
+      },
+      {
+        "type": "noun",
+        "word": "papel",
+        "definition": "Note; the sheet pinned up to tell everybody about it."
+      },
+      {
+        "type": "expression",
+        "word": "y ya está",
+        "register": "colloquial",
+        "definition": "And that's it; nothing else is expected of you."
+      },
+      {
+        "type": "expression",
+        "word": "sin levantar la vista",
+        "definition": "Without looking up; carrying on with her own work."
+      },
+      {
+        "type": "noun",
+        "word": "cartera",
+        "definition": "Wallet; where you keep your notes and your cards."
+      },
+      {
+        "type": "expression",
+        "word": "al revés",
+        "definition": "The other way round; the opposite of what you assumed."
+      },
+      {
+        "type": "verb",
+        "word": "funcionar",
+        "surface": "funciona",
+        "definition": "Works; is done that way in that particular place."
+      },
+      {
+        "type": "adverb",
+        "word": "justo",
+        "definition": "Exactly; precisely the opposite, with nothing in between."
+      },
+      {
+        "type": "adjective",
+        "word": "escondido",
+        "definition": "Hidden; put where nobody else is going to see it."
+      },
+      {
+        "type": "noun",
+        "word": "fritanga",
+        "register": "colloquial",
+        "definition": "Frying smell; the heavy smell of a busy Spanish kitchen."
+      },
+      {
+        "type": "noun",
+        "word": "ronda",
+        "register": "cultural",
+        "definition": "Round; drinks bought for the whole group at once."
+      },
+      {
+        "type": "noun",
+        "word": "paquete",
+        "definition": "Parcel; the small wrapped thing she brings just in case."
+      },
+      {
+        "type": "adjective",
+        "word": "pedida",
+        "definition": "Ordered; already asked for and waiting on the counter."
+      },
+      {
+        "type": "verb",
+        "word": "gritar",
+        "surface": "gritan",
+        "definition": "Shout; talk far louder than a quiet room needs."
+      },
+      {
+        "type": "noun",
+        "word": "cumpleañero",
+        "register": "cultural",
+        "definition": "Birthday person; in Spain the one who pays the round."
+      },
+      {
+        "type": "noun",
+        "word": "regalo",
+        "definition": "Present; the wrapped thing you bring to a party."
+      },
+      {
+        "type": "expression",
+        "word": "felicidades",
+        "register": "cultural",
+        "definition": "Congratulations; what you say to the birthday person here."
+      },
+      {
+        "type": "verb",
+        "word": "chocar",
+        "surface": "choca",
+        "definition": "Clinks; taps her glass against somebody else's glass."
+      },
+      {
+        "type": "verb",
+        "word": "repetir",
+        "surface": "repite",
+        "definition": "Says again; keeps saying the same thing all evening."
+      },
+      {
+        "type": "verb",
+        "word": "dejar",
+        "surface": "deja",
+        "definition": "Leaves; keeps the present inside the bag instead."
+      }
+    ],
+    "arcType": "recurring-character-callback",
+    "synopsis": "Un cumpleaños en el bar y una duda que en su país no existiría: qué se lleva y quién paga. Irene se presenta con un paquete envuelto y descubre que aquí el regalo sobra y que la cuenta la asume justamente quien cumple años, al revés de como ella lo entendía. La pescadera se lo explica sin darle importancia mientras reparten cañas. Irene aparta el regalo y aprende a decir la palabra que toca."
+  }
+]

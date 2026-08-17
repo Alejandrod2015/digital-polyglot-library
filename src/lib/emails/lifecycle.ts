@@ -3,6 +3,7 @@
 // Principles: direct language, identity messaging, concrete metrics, one CTA,
 // low-commitment actions, warm + self-aware tone.
 
+import { publicBaseUrl } from "@/lib/emails/publicBaseUrl";
 import {
   DPE,
   EMAIL_ASSET_BASE,
@@ -81,7 +82,7 @@ export type LifecycleData = {
 export type BuiltEmail = { subject: string; html: string; text: string };
 
 function base(data?: LifecycleData): string {
-  return data?.baseUrl ?? process.env.APP_BASE_URL ?? "https://digitalpolyglot.com";
+  return publicBaseUrl(data?.baseUrl);
 }
 
 function assetBase(data?: LifecycleData): string {

@@ -1,0 +1,138 @@
+[
+  {
+    "topic": "health-and-symptoms",
+    "slotIndex": 2,
+    "title": "Rocío cuenta sus síntomas",
+    "slug": "rocio-cuenta-sus-sintomas",
+    "text": "Al día siguiente Rocío baja con Irene y le dice que no se preocupe. Marta las ve entrar juntas y deja el bolígrafo encima del mostrador. Hoy hay dos señoras esperando y un ventilador puesto que hace ruido.\n\n\"A ver, cuéntame qué te pasa, que hoy tenemos tiempo\", dice Marta, mirando a Irene. Irene empieza y se para en la tercera palabra, con la mano en el cuello. \"Le duele la garganta desde el sábado y no ha dormido\", contesta Rocío por ella.\n\n\"¿Y fiebre tiene, aunque sea un poco?\", pregunta Marta sin mirarla ya a ella. \"Un poco por la noche\", contesta otra vez Rocío. Irene mira las dos bocas hablando de su garganta.\n\nSalen con dos cajas y las instrucciones dichas dos veces en la puerta. \"Mañana ya se lo dices tú, que no muerde\", le suelta Rocío, y no lo dice de broma. Irene guarda la caja pequeña y se queda con esa frase toda la tarde.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "preocuparse",
+        "surface": "se preocupe",
+        "definition": "Worry; feel bad about something that has not happened."
+      },
+      {
+        "type": "noun",
+        "word": "señoras",
+        "definition": "Ladies; grown women waiting their turn in the shop."
+      },
+      {
+        "type": "adjective",
+        "word": "puesto",
+        "surface": "puesto",
+        "definition": "On; switched on and turning quietly in the corner."
+      },
+      {
+        "type": "expression",
+        "word": "a ver",
+        "register": "colloquial",
+        "definition": "Right then; the sound that opens a friendly question."
+      },
+      {
+        "type": "verb",
+        "word": "empezar",
+        "surface": "empieza",
+        "definition": "Starts; makes a beginning at saying something out loud."
+      },
+      {
+        "type": "noun",
+        "word": "cuello",
+        "definition": "Neck; the part between your head and your shoulders."
+      },
+      {
+        "type": "verb",
+        "word": "dormir",
+        "surface": "dormido",
+        "definition": "Sleep; rest at night with your eyes closed."
+      },
+      {
+        "type": "noun",
+        "word": "fiebre",
+        "definition": "Temperature; the heat your body gets when you are ill."
+      },
+      {
+        "type": "expression",
+        "word": "un poco",
+        "definition": "A bit; a small amount, not enough to be serious."
+      },
+      {
+        "type": "noun",
+        "word": "instrucciones",
+        "definition": "Directions; how many and how often you take them."
+      },
+      {
+        "type": "expression",
+        "word": "dos veces",
+        "definition": "Twice; said a second time so it is not forgotten."
+      },
+      {
+        "type": "verb",
+        "word": "soltar",
+        "surface": "suelta",
+        "definition": "Comes out with; says something suddenly and without softening."
+      },
+      {
+        "type": "verb",
+        "word": "morder",
+        "surface": "muerde",
+        "definition": "Bite; used as a joke that somebody is not frightening."
+      },
+      {
+        "type": "expression",
+        "word": "de broma",
+        "definition": "As a joke; said to be funny rather than meant."
+      },
+      {
+        "type": "noun",
+        "word": "caja",
+        "surface": "cajas",
+        "definition": "Box; medicine in Spain comes in small card boxes."
+      },
+      {
+        "type": "noun",
+        "word": "ventilador",
+        "definition": "Fan; the machine that moves air round a warm room."
+      },
+      {
+        "type": "noun",
+        "word": "tiempo",
+        "definition": "Time; enough of it to listen without any hurry."
+      },
+      {
+        "type": "expression",
+        "word": "aunque sea",
+        "definition": "Even if only; at least a little, however small."
+      },
+      {
+        "type": "expression",
+        "word": "por ella",
+        "definition": "For her; answering in her place, without being asked."
+      },
+      {
+        "type": "expression",
+        "word": "hablando de",
+        "definition": "Talking about; discussing a thing in front of you."
+      },
+      {
+        "type": "noun",
+        "word": "ruido",
+        "definition": "Noise; the sound the fan makes turning above them."
+      },
+      {
+        "type": "verb",
+        "word": "esperar",
+        "surface": "esperando",
+        "definition": "Waiting; standing there quietly until their turn arrives."
+      },
+      {
+        "type": "verb",
+        "word": "pararse",
+        "surface": "se para",
+        "definition": "Stops; breaks off in the middle of a sentence."
+      }
+    ],
+    "arcType": "recurring-character-callback",
+    "synopsis": "Una segunda visita con refuerzos y una conversación entera sobre su cuerpo en la que ella dice tres palabras. Irene arranca la frase y se atasca a la mitad, así que la vecina termina por ella cada respuesta y la farmacéutica acaba mirando solo a una de las dos. Salen con las cajas y las instrucciones repetidas en la puerta. La frase de despedida se le queda a Irene toda la tarde."
+  }
+]

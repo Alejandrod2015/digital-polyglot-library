@@ -1,0 +1,144 @@
+[
+  {
+    "topic": "plans-and-invitations",
+    "slotIndex": 2,
+    "title": "Invita el que cumple años",
+    "slug": "invita-el-que-cumple-anos",
+    "text": "Rocío le cuenta a Irene que Quique cumple años el viernes y lo celebra en el bar. Irene ve el papel colgado en la barra y se queda con una duda tonta. \"¿Y yo qué llevo, algo envuelto o algo de comer?\", le pregunta en la cola del pan.\n\n\"Nada, mujer, tú vas y ya está\", contesta Rocío sin levantar la vista. \"Y no saques la cartera, que paga él, que es el que cumple\". Irene se queda mirándola porque en su casa eso funciona justo al revés.\n\nEl viernes llega con un paquete pequeño escondido en el bolso. El bar huele a fritanga y hay una ronda entera pedida encima de la barra. Nadie lleva nada en las manos y todos gritan a la vez.\n\n\"¡Que invito yo, que el cumpleañero paga aquí!\", repite Quique cada dos minutos. Irene deja el regalo dentro del bolso y no lo saca en toda la noche. \"Felicidades, Quique\", dice cuando le llega el turno, y choca su vaso.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "celebrar",
+        "surface": "celebra",
+        "definition": "Celebrates; marks the day with other people around him."
+      },
+      {
+        "type": "adjective",
+        "word": "colgado",
+        "definition": "Pinned up; hanging where everybody walking past sees it."
+      },
+      {
+        "type": "noun",
+        "word": "duda",
+        "definition": "Doubt; a question you are not sure how to ask."
+      },
+      {
+        "type": "adjective",
+        "word": "envuelto",
+        "definition": "Wrapped; covered in paper because it is a present."
+      },
+      {
+        "type": "expression",
+        "word": "cola del pan",
+        "definition": "Bread queue; where village news gets passed around daily."
+      },
+      {
+        "type": "noun",
+        "word": "papel",
+        "definition": "Note; the sheet pinned up to tell everybody about it."
+      },
+      {
+        "type": "expression",
+        "word": "y ya está",
+        "register": "colloquial",
+        "definition": "And that's it; nothing else is expected of you."
+      },
+      {
+        "type": "expression",
+        "word": "sin levantar la vista",
+        "definition": "Without looking up; carrying on with her own work."
+      },
+      {
+        "type": "noun",
+        "word": "cartera",
+        "definition": "Wallet; where you keep your notes and your cards."
+      },
+      {
+        "type": "expression",
+        "word": "al revés",
+        "definition": "The other way round; the opposite of what you assumed."
+      },
+      {
+        "type": "verb",
+        "word": "funcionar",
+        "surface": "funciona",
+        "definition": "Works; is done that way in that particular place."
+      },
+      {
+        "type": "adverb",
+        "word": "justo",
+        "definition": "Exactly; precisely the opposite, with nothing in between."
+      },
+      {
+        "type": "adjective",
+        "word": "escondido",
+        "definition": "Hidden; put where nobody else is going to see it."
+      },
+      {
+        "type": "noun",
+        "word": "fritanga",
+        "register": "colloquial",
+        "definition": "Frying smell; the heavy smell of a busy Spanish kitchen."
+      },
+      {
+        "type": "noun",
+        "word": "ronda",
+        "register": "cultural",
+        "definition": "Round; drinks bought for the whole group at once."
+      },
+      {
+        "type": "noun",
+        "word": "paquete",
+        "definition": "Parcel; the small wrapped thing she brings just in case."
+      },
+      {
+        "type": "adjective",
+        "word": "pedida",
+        "definition": "Ordered; already asked for and waiting on the counter."
+      },
+      {
+        "type": "verb",
+        "word": "gritar",
+        "surface": "gritan",
+        "definition": "Shout; talk far louder than a quiet room needs."
+      },
+      {
+        "type": "noun",
+        "word": "cumpleañero",
+        "register": "cultural",
+        "definition": "Birthday person; in Spain the one who pays the round."
+      },
+      {
+        "type": "noun",
+        "word": "regalo",
+        "definition": "Present; the wrapped thing you bring to a party."
+      },
+      {
+        "type": "expression",
+        "word": "felicidades",
+        "register": "cultural",
+        "definition": "Congratulations; what you say to the birthday person here."
+      },
+      {
+        "type": "verb",
+        "word": "chocar",
+        "surface": "choca",
+        "definition": "Clinks; taps her glass against somebody else's glass."
+      },
+      {
+        "type": "verb",
+        "word": "repetir",
+        "surface": "repite",
+        "definition": "Says again; keeps saying the same thing all evening."
+      },
+      {
+        "type": "verb",
+        "word": "dejar",
+        "surface": "deja",
+        "definition": "Leaves; keeps the present inside the bag instead."
+      }
+    ],
+    "arcType": "recurring-character-callback",
+    "synopsis": "Un cumpleaños en el bar y una duda que en su país no existiría: qué se lleva y quién paga. Irene se presenta con un paquete envuelto y descubre que aquí el regalo sobra y que la cuenta la asume justamente quien cumple años, al revés de como ella lo entendía. La pescadera se lo explica sin darle importancia mientras reparten cañas. Irene aparta el regalo y aprende a decir la palabra que toca."
+  }
+]
