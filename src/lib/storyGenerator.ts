@@ -226,7 +226,7 @@ const NARRATOR_BODY_FORMAT_BLOCK = `Body format is REQUIRED:
 - Plain text only. NO HTML. Do NOT use <blockquote>, <p>, <span>, or any tags.
 - Continuous prose carried by a close third-person narrator with strong internal focalization. A single TTS voice will read the whole body, so do NOT split lines by speaker.
 - Do NOT use the multi-voice "Speaker: line" format. Do NOT prefix any paragraph with a character name followed by a colon.
-- Dialogue is allowed and welcome, but it MUST stay embedded inside narrative paragraphs, using standard quotation marks native to the target language («», "", or curly quotes). Never use em-dashes as dialogue delimiters (em-dashes are banned project-wide).
+- Dialogue is allowed and welcome, but it MUST stay embedded inside narrative paragraphs, using CURLY DOUBLE QUOTES “…” (U+201C / U+201D) and nothing else. That is the house style for EVERY language in this project, applied to the whole corpus on 2026-08-17: do NOT use «», do NOT use straight "", do NOT use German low quotes „…". Never use em-dashes as dialogue delimiters (em-dashes are banned project-wide).
 - Split the body into 4 or more prose paragraphs separated by blank lines.
 - Quoted speech is a beat inside the prose, never the structural skeleton of the story.
 - A single-character contemplative arc is fully valid in this style; the narrator can carry the whole story without a second speaker.`;
